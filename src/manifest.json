@@ -1,0 +1,24 @@
+﻿{
+  "manifest_version": 2,
+  "name": "bitwarden",
+  "version": "0.0.1",
+  "description": "Secure and free password manager for all of your devices.",
+  "homepage_url": "https://bitwarden.com",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "96": "images/icon96.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon19.png",
+      "38": "images/icon38.png"
+    },
+    "default_title": "bitwarden"
+  }
+}
