@@ -1,0 +1,40 @@
+﻿<html ng-app="bit">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>bitwarden</title>
+
+    <link rel="stylesheet" href="../node_modules/ionic-framework-v1/css/ionic.css">
+    <script src="../node_modules/ionic-framework-v1/js/ionic.bundle.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+
+    <script src="app/current/currentModule.js"></script>
+    <script src="app/current/currentController.js"></script>
+
+    <script src="app/vault/vaultModule.js"></script>
+    <script src="app/vault/vaultController.js"></script>
+
+    <script src="app/settings/settingsModule.js"></script>
+    <script src="app/settings/settingsController.js"></script>
+
+    <script src="app/tools/toolsModule.js"></script>
+    <script src="app/tools/toolsController.js"></script>
+
+    <style>
+        body {
+            width: 320px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+</body>
+</html>

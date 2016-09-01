@@ -20,6 +20,6 @@
       "38": "images/icon38.png"
     },
     "default_title": "bitwarden",
-    "default_popup": "action_popup.html"
+    "default_popup": "browser_action/index.html"
   }
 }
