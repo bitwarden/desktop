@@ -19,6 +19,7 @@
       "19": "images/icon19.png",
       "38": "images/icon38.png"
     },
-    "default_title": "bitwarden"
+    "default_title": "bitwarden",
+    "default_popup": "action_popup.html"
   }
 }
