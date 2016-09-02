@@ -3,7 +3,9 @@
 
     .controller('accountsLoginController', function ($scope, $state) {
         $scope.login = function (model) {
-            $state.go('tabs.current');
+            g_authService.logIn(model.email, model.masterPassword, function () {
+                $state.go('tabs.current');
+            });
         };
 
         $scope.twoFactor = function (model) {

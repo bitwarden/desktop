@@ -125,4 +125,4 @@
     };
 
     return _service;
-};
+}();
