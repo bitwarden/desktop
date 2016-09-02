@@ -2,6 +2,7 @@
     .module('bit', [
         'ionic',
 
+        'bit.accounts',
         'bit.current',
         'bit.vault',
         'bit.settings',

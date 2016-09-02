@@ -1,0 +1,22 @@
+﻿<ion-view view-title="bitwarden">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <i class="icon ion-android-mail placeholder-icon"></i>
+                <input type="text" placeholder="Email address" ng-model="model.email">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-locked placeholder-icon"></i>
+                <input type="password" placeholder="Master password" ng-model="model.masterPassword">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="login(model)">
+                Log In
+            </button>
+            <p class="text-center">
+                <a href="#/hint">Get master password hint</a>
+            </p>
+        </div>
+    </ion-content>
+</ion-view>

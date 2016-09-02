@@ -4,6 +4,16 @@
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider
+            .state('login', {
+                url: "/login",
+                controller: 'accountsLoginController',
+                templateUrl: "app/accounts/views/accountsLogin.html"
+            })
+            .state('login.twoFactor', {
+                url: "/two-factor",
+                controller: 'accountsLoginController',
+                templateUrl: "app/accounts/views/accountsLoginTwoFactor.html"
+            })
             .state('tabs', {
                 url: "/tab",
                 abstract: true,
@@ -47,5 +57,5 @@
             });
 
 
-        $urlRouterProvider.otherwise("/tab/current");
+        $urlRouterProvider.otherwise("/login");
     });

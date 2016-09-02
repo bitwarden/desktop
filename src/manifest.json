@@ -21,5 +21,9 @@
     },
     "default_title": "bitwarden",
     "default_popup": "browser_action/index.html"
-  }
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ]
 }
