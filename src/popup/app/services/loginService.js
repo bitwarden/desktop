@@ -1,26 +1,22 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q) {
+    .factory('loginService', function (cryptoService, apiService, apiService, userService, tokenService, $q) {
         var _service = {};
 
         _service.logIn = function (email, masterPassword) {
             var key = cryptoService.makeKey(masterPassword, email);
-
-            var request = {
-                email: email,
-                masterPasswordHash: cryptoService.hashPassword(masterPassword, key)
-            };
+            var request = new TokenRequest(email, cryptoService.hashPassword(masterPassword, key));
 
             var deferred = $q.defer();
-            apiService.auth.token(request, function (response) {
-                if (!response || !response.Token) {
+            apiService.postToken(request, function (response) {
+                if (!response || !response.token) {
                     return;
                 }
 
-                tokenService.setToken(response.Token, function () {
+                tokenService.setToken(response.token, function () {
                     cryptoService.setKey(key, function () {
-                        userService.setUserProfile(response.Profile, function () {
+                        userService.setUserProfile(response.profile, function () {
                             deferred.resolve(response);
                         });
                     });
@@ -56,10 +52,11 @@
             return deferred.promise;
         };
 
-        _service.logOut = function () {
+        _service.logOut = function (callback) {
             tokenService.clearToken(function () {
                 cryptoService.clearKey(function () {
                     userService.clearUserProfile();
+                    callback();
                 });
             });
         };

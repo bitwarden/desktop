@@ -51,8 +51,9 @@ var ListResponse = function (data) {
 };
 
 var ErrorResponse = function (response) {
-    this.message = response.Message;
-    this.validationErrors = response.ValidationErrors;
+    this.message = response.responseJSON.Message;
+    this.validationErrors = response.responseJSON.ValidationErrors;
+    this.statusCode = response.status;
 };
 
 var DeviceResponse = function (response) {

@@ -9,4 +9,7 @@
     })
     .factory('userService', function () {
         return chrome.extension.getBackgroundPage().userService;
+    })
+    .factory('apiService', function () {
+        return chrome.extension.getBackgroundPage().apiService;
     });

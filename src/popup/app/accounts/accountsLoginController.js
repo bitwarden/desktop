@@ -7,7 +7,7 @@
 
             $scope.loginPromise.then(function () {
                 userService.getUserProfile(function (profile) {
-                    if (profile.twoFactor) {
+                    if (false && profile.twoFactor) {
                         $state.go('login.twoFactor');
                     }
                     else {

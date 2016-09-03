@@ -12,9 +12,12 @@ var FolderRequest = function (folder) {
     this.name = folder.name ? folder.name.encryptedString : null;
 };
 
-var TokenRequest = function () {
-    this.email = null;
-    this.masterPasswordHash = null;
+var TokenRequest = function (email, masterPasswordHash, device) {
+    this.email = email;
+    this.masterPasswordHash = masterPasswordHash;
+    if (device) {
+        this.device = new DeviceRequest(device);
+    }
     this.device = null;
 };
 

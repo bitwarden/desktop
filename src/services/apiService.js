@@ -4,6 +4,42 @@
 };
 
 !function () {
+    // Auth APIs
+
+    ApiService.prototype.postToken = function (tokenRequest, success, error) {
+        var self = this;
+        $.ajax({
+            type: 'POST',
+            url: self.baseUrl + '/auth/token',
+            data: JSON.stringify(tokenRequest),
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function (response) {
+                success(new TokenResponse(response))
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                handleError(error, jqXHR, textStatus, errorThrown);
+            }
+        });
+    };
+
+    ApiService.prototype.postTokenTwoFactor = function (twoFactorTokenRequest, success, error) {
+        var self = this;
+        $.ajax({
+            type: 'POST',
+            url: self.baseUrl + '/auth/token/two-factor',
+            data: JSON.stringify(twoFactorTokenRequest),
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function (response) {
+                success(new TokenResponse(response))
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                handleError(error, jqXHR, textStatus, errorThrown);
+            }
+        });
+    };
+
     // Account APIs
 
     ApiService.prototype.getProfile = function (success, error) {
@@ -48,7 +84,8 @@
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/sites?access_token=' + token,
-                data: siteRequest,
+                data: JSON.stringify(siteRequest),
+                contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (response) {
                     success(new SiteResponse(response))
@@ -66,7 +103,8 @@
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/sites/' + id + '?access_token=' + token,
-                data: siteRequest,
+                data: JSON.stringify(siteRequest),
+                contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (response) {
                     success(new SiteResponse(response))
@@ -103,7 +141,8 @@
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/folders?access_token=' + token,
-                data: folderRequest,
+                data: JSON.stringify(folderRequest),
+                contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (response) {
                     success(new FolderResponse(response))
@@ -121,7 +160,8 @@
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/folders/' + id + '?access_token=' + token,
-                data: folderRequest,
+                data: JSON.stringify(folderRequest),
+                contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: function (response) {
                     success(new FolderResponse(response))
@@ -180,6 +220,7 @@
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/ciphers/' + id + '/delete?access_token=' + token,
+                contentType: "application/json; charset=utf-8",
                 dataType: 'json',
                 success: success,
                 error: function (jqXHR, textStatus, errorThrown) {
