@@ -6,6 +6,12 @@
 !function () {
     var _userProfile = null;
 
+    UserService.prototype.getUserId = function (callback) {
+        this.getUserProfile(function (profile) {
+            callback(profile.id);
+        });
+    };
+
     UserService.prototype.getUserProfile = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';

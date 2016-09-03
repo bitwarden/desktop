@@ -1,104 +1,131 @@
-﻿function TokenService() {
-
+﻿function SiteService(cryptoService, userService, apiService) {
+    this.cryptoService = cryptoService;
+    this.userService = userService;
+    this.apiService = apiService;
 };
 
 !function () {
-    var _token;
+    var ciphersKey = 'ciphers_' + this.userService.userId;
 
-    TokenService.prototype.setToken = function (token, callback) {
+    SiteService.prototype.get = function (id, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        _token = token;
-        chrome.storage.local.set({
-            'authBearer': token
-        }, function () {
-            callback();
-        });
-    };
-
-    TokenService.prototype.getToken = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        if (_token) {
-            return callback(_token);
-        }
-
-        chrome.storage.local.get('authBearer', function (obj) {
-            if (obj && obj.authBearer) {
-                _token = obj.authBearer;
+        chrome.storage.local.get(ciphersKey, function (obj) {
+            if (!obj) {
+                callback(null);
             }
 
-            return callback(_token);
+            var sites = obj[ciphersKey];
+            if (id in sites) {
+                callback(new Site(sites[id]));
+                return;
+            }
+
+            callback(null);
         });
     };
 
-    TokenService.prototype.clearToken = function (callback) {
+    SiteService.prototype.getAll = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        _token = null;
-        chrome.storage.local.remove('authBearer', function () {
-            callback();
+        chrome.storage.local.get(ciphersKey, function (obj) {
+            if (!obj) {
+                callback([]);
+            }
+
+            var sites = obj[ciphersKey];
+            var response = [];
+            for (var id in sites) {
+                response.push(new Site(sites[id]));
+            }
+
+            callback(response);
         });
     };
 
-    // jwthelper methods
-    // ref https://github.com/auth0/angular-jwt/blob/master/src/angularJwt/services/jwt.js
-
-    TokenService.prototype.decodeToken = function (token) {
-        var parts = token.split('.');
-
-        if (parts.length !== 3) {
-            throw new Error('JWT must have 3 parts');
+    SiteService.prototype.save = function (site, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
         }
 
-        var decoded = urlBase64Decode(parts[1]);
-        if (!decoded) {
-            throw new Error('Cannot decode the token');
+        var newRecord = site.id === null,
+            self = this;
+
+        var request = new SiteRequest(site);
+        if (newRecord) {
+            self.apiService.postSite(request, apiSuccess, handleError);
+        }
+        else {
+            self.apiService.putSite(site.id, request, apiSuccess, handleError);
         }
 
-        return JSON.parse(decoded);
+        function apiSuccess(response) {
+            userService.getUserId(function (userId) {
+                var data = new SiteData(response, userId);
+
+                chrome.storage.local.get(ciphersKey, function (obj) {
+                    if (!obj) {
+                        obj = {};
+                        obj[ciphersKey] = [];
+                    }
+
+                    var sites = obj[ciphersKey];
+                    if (!newRecord && site.id in sites) {
+                        sites[site.id] = data;
+                    }
+                    else {
+                        sites.push(data);
+                        site.id = data.id;
+                    }
+
+                    obj[ciphersKey] = sites;
+                    chrome.storage.local.set(obj, function () {
+                        callback(site);
+                    });
+                });
+            });
+        }
     };
 
-    TokenService.prototype.getTokenExpirationDate = function (token) {
-        var decoded = this.decodeToken(token);
-
-        if (typeof decoded.exp === "undefined") {
-            return null;
+    SiteService.prototype.delete = function (id, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
         }
 
-        var d = new Date(0); // The 0 here is the key, which sets the date to the epoch
-        d.setUTCSeconds(decoded.exp);
+        self.apiService.deleteCipher(id, apiSuccess, handleError);
 
-        return d;
-    };
+        function apiSuccess(response) {
+            userService.getUserId(function (userId) {
+                chrome.storage.local.get(ciphersKey, function (obj) {
+                    if (!obj) {
+                        obj = {};
+                        obj[ciphersKey] = [];
+                    }
 
-    TokenService.prototype.isTokenExpired = function (token, offsetSeconds) {
-        var d = this.getTokenExpirationDate(token);
-        offsetSeconds = offsetSeconds || 0;
-        if (d === null) {
-            return false;
+                    var sites = obj[ciphersKey];
+                    if (id in sites) {
+                        var index = sites.indexOf(sites[id]);
+                        sites.splice(index, 1);
+
+                        obj[ciphersKey] = sites;
+                        chrome.storage.local.set(obj, function () {
+                            callback();
+                        });
+                    }
+                    else {
+                        callback();
+                    }
+                });
+            });
         }
-
-        // Token expired?
-        return !(d.valueOf() > (new Date().valueOf() + (offsetSeconds * 1000)));
     };
 
-    function urlBase64Decode(str) {
-        var output = str.replace(/-/g, '+').replace(/_/g, '/');
-        switch (output.length % 4) {
-            case 0: { break; }
-            case 2: { output += '=='; break; }
-            case 3: { output += '='; break; }
-            default: {
-                throw 'Illegal base64url string!';
-            }
-        }
-        return window.decodeURIComponent(escape(window.atob(output))); //polyfill https://github.com/davidchambers/Base64.js
-    };
+
+    function handleError() {
+        // TODO: check for unauth or forbidden and logout
+    }
 }();

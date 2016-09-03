@@ -108,21 +108,16 @@
         var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
         var iv = sjcl.codec.base64.fromBits(response.iv);
 
-        return iv + "|" + ct;
+        return new CipherString(iv + "|" + ct);
     };
 
-    CryptoService.prototype.decrypt = function (encValue) {
+    CryptoService.prototype.decrypt = function (cipherString) {
         if (!this.getAes()) {
             throw 'AES encryption unavailable.';
         }
 
-        var encPieces = encValue.split('|');
-        if (encPieces.length !== 2) {
-            return '';
-        }
-
-        var ivBits = sjcl.codec.base64.toBits(encPieces[0]);
-        var ctBits = sjcl.codec.base64.toBits(encPieces[1]);
+        var ivBits = sjcl.codec.base64.toBits(cipherString.initializationVector);
+        var ctBits = sjcl.codec.base64.toBits(cipherString.cipherText);
 
         var decBits = sjcl.mode.cbc.decrypt(this.getAes(), ctBits, ivBits, null);
         return sjcl.codec.utf8String.fromBits(decBits);

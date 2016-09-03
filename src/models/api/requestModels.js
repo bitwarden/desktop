@@ -1,15 +1,15 @@
-﻿var SiteRequest = function () {
-    this.folderId = null;
-    this.name = null;
-    this.uri = null;
-    this.username = null;
-    this.password = null;
-    this.notes = null;
-    this.favorite = false;
+﻿var SiteRequest = function (site) {
+    this.folderId = site.folderId;
+    this.name = site.name ? site.name.encryptedString : null;
+    this.uri = site.uri ? site.uri.encryptedString : null;
+    this.username = site.username ? site.username.encryptedString : null;
+    this.password = site.password ? site.password.encryptedString : null;
+    this.notes = site.notes ? site.notes.encryptedString : null;
+    this.favorite = site.favorite;
 };
 
-var FolderRequest = function () {
-    this.name = null;
+var FolderRequest = function (folder) {
+    this.name = folder.name ? folder.name.encryptedString : null;
 };
 
 var TokenRequest = function () {
