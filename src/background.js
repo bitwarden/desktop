@@ -1,3 +1,4 @@
 ﻿var cryptoService = new CryptoService();
 var tokenService = new TokenService();
-var userService = new UserService(tokenService);
+var apiService = new ApiService(tokenService);
+var userService = new UserService(tokenService, apiService);

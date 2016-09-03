@@ -13,11 +13,13 @@
   },
   "background": {
     "scripts": [
+      "node_modules/jquery/dist/jquery.min.js",
       "node_modules/sjcl/sjcl.js",
       "node_modules/sjcl/core/cbc.js",
       "node_modules/sjcl/core/bitArray.js",
       "services/cryptoService.js",
       "services/tokenService.js",
+      "services/apiService.js",
       "services/userService.js",
       "background.js"
     ]

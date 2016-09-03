@@ -1,5 +1,6 @@
-﻿function UserService(tokenService) {
+﻿function UserService(tokenService, apiService) {
     this.tokenService = tokenService;
+    this.apiService = apiService;
 };
 
 !function () {
@@ -43,10 +44,9 @@
                 loadProfile(profile, callback);
             }
             else if (!twoFactor && !profile) {
-                loadProfile({}, callback);
-                //apiService.accounts.getProfile({}, function (response) {
-                //    loadProfile(response, callback);
-                //});
+                this.apiService.getProfile(function (response) {
+                    loadProfile(response, callback);
+                });
             }
         });
 
