@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.vault', []);
+    .module('bit.vault', ['ionic']);
