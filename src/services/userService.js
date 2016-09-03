@@ -52,9 +52,9 @@
 
         function loadProfile(profile, callback) {
             _userProfile.extended = {
-                name: profile.Name,
-                twoFactorEnabled: profile.TwoFactorEnabled,
-                culture: profile.Culture
+                name: profile.name,
+                twoFactorEnabled: profile.twoFactorEnabled,
+                culture: profile.culture
             };
 
             callback();
