@@ -12,7 +12,15 @@
     "128": "images/icon128.png"
   },
   "background": {
-    "scripts": [ "background.js" ]
+    "scripts": [
+      "node_modules/sjcl/sjcl.js",
+      "node_modules/sjcl/core/cbc.js",
+      "node_modules/sjcl/core/bitArray.js",
+      "services/cryptoService.js",
+      "services/tokenService.js",
+      "services/userService.js",
+      "background.js"
+    ]
   },
   "browser_action": {
     "default_icon": {
@@ -20,10 +28,18 @@
       "38": "images/icon38.png"
     },
     "default_title": "bitwarden",
-    "default_popup": "browser_action/index.html"
+    "default_popup": "popup/index.html"
   },
   "permissions": [
+    "tabs",
+    "idle",
+    "notifications",
+    "contextMenus",
     "storage",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
   ]
 }

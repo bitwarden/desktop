@@ -1,9 +1,13 @@
-﻿var g_cryptoService = function () {
-    var _service = {}, _key, _b64Key, _aes;
+﻿function CryptoService() {
 
-    sjcl.beware['CBC mode is dangerous because it doesn\'t protect message integrity.']();
+};
 
-    _service.setKey = function (key, callback) {
+!function () {
+    var _key,
+        _b64Key,
+        _aes;
+
+    CryptoService.prototype.setKey = function (key, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
@@ -14,9 +18,9 @@
         }, function () {
             callback();
         });
-    };
+    }
 
-    _service.getKey = function (b64, callback) {
+    CryptoService.prototype.getKey = function (b64, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
@@ -42,7 +46,7 @@
         });
     };
 
-    _service.clearKey = function (callback) {
+    CryptoService.prototype.clearKey = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
@@ -53,7 +57,7 @@
         });
     };
 
-    _service.makeKey = function (password, salt, b64) {
+    CryptoService.prototype.makeKey = function (password, salt, b64) {
         var key = sjcl.misc.pbkdf2(password, salt, 5000, 256, null);
 
         if (b64 && b64 === true) {
@@ -63,9 +67,9 @@
         return key;
     };
 
-    _service.hashPassword = function (password, key) {
+    CryptoService.prototype.hashPassword = function (password, key) {
         if (!key) {
-            key = _service.getKey();
+            key = this.getKey();
         }
 
         if (!password || !key) {
@@ -76,21 +80,21 @@
         return sjcl.codec.base64.fromBits(hashBits);
     };
 
-    _service.getAes = function () {
-        if (!_aes && _service.getKey()) {
-            _aes = new sjcl.cipher.aes(_service.getKey());
+    CryptoService.prototype.getAes = function () {
+        if (!_aes && this.getKey()) {
+            _aes = new sjcl.cipher.aes(this.getKey());
         }
 
         return _aes;
     };
 
-    _service.encrypt = function (plaintextValue, key) {
-        if (!_service.getKey() && !key) {
+    CryptoService.prototype.encrypt = function (plaintextValue, key) {
+        if (!this.getKey() && !key) {
             throw 'Encryption key unavailable.';
         }
 
         if (!key) {
-            key = _service.getKey();
+            key = this.getKey();
         }
 
         var response = {};
@@ -107,8 +111,8 @@
         return iv + "|" + ct;
     };
 
-    _service.decrypt = function (encValue) {
-        if (!_service.getAes()) {
+    CryptoService.prototype.decrypt = function (encValue) {
+        if (!this.getAes()) {
             throw 'AES encryption unavailable.';
         }
 
@@ -120,9 +124,7 @@
         var ivBits = sjcl.codec.base64.toBits(encPieces[0]);
         var ctBits = sjcl.codec.base64.toBits(encPieces[1]);
 
-        var decBits = sjcl.mode.cbc.decrypt(_service.getAes(), ctBits, ivBits, null);
+        var decBits = sjcl.mode.cbc.decrypt(this.getAes(), ctBits, ivBits, null);
         return sjcl.codec.utf8String.fromBits(decBits);
     };
-
-    return _service;
 }();

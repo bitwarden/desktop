@@ -1,7 +1,11 @@
-﻿var g_tokenService = function () {
-    var _service = {}, _token;
+﻿function TokenService() {
 
-    _service.setToken = function (token, callback) {
+};
+
+!function () {
+    var _token;
+
+    TokenService.prototype.setToken = function (token, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
@@ -14,7 +18,7 @@
         });
     };
 
-    _service.getToken = function (callback) {
+    TokenService.prototype.getToken = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
@@ -23,16 +27,16 @@
             return callback(_token);
         }
 
-        chrome.storage.local.get('authBearer', function (authBearer) {
-            if (authBearer) {
-                _token = authBearer;
+        chrome.storage.local.get('authBearer', function (obj) {
+            if (obj && obj.authBearer) {
+                _token = obj.authBearer;
             }
 
             return callback(_token);
         });
     };
 
-    _service.clearToken = function (callback) {
+    TokenService.prototype.clearToken = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
@@ -42,6 +46,4 @@
             callback();
         });
     };
-
-    return _service;
 }();

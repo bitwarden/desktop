@@ -1,0 +1,68 @@
+﻿angular
+    .module('bit.services')
+
+    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q) {
+        var _service = {};
+
+        _service.logIn = function (email, masterPassword) {
+            var key = cryptoService.makeKey(masterPassword, email);
+
+            var request = {
+                email: email,
+                masterPasswordHash: cryptoService.hashPassword(masterPassword, key)
+            };
+
+            var deferred = $q.defer();
+            apiService.auth.token(request, function (response) {
+                if (!response || !response.Token) {
+                    return;
+                }
+
+                tokenService.setToken(response.Token, function () {
+                    cryptoService.setKey(key, function () {
+                        userService.setUserProfile(response.Profile, function () {
+                            deferred.resolve(response);
+                        });
+                    });
+                });
+            }, function (error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+        };
+
+        _service.logInTwoFactor = function (code, provider) {
+            var request = {
+                code: code,
+                provider: provider
+            };
+
+            var deferred = $q.defer();
+            apiService.auth.tokenTwoFactor(request, function (response) {
+                if (!response || !response.Token) {
+                    return;
+                }
+
+                tokenService.setToken(response.Token, function () {
+                    userService.setUserProfile(response.Profile, function () {
+                        deferred.resolve(response);
+                    });
+                });
+            }, function (error) {
+                deferred.reject(error);
+            });
+
+            return deferred.promise;
+        };
+
+        _service.logOut = function () {
+            tokenService.clearToken(function () {
+                cryptoService.clearKey(function () {
+                    userService.clearUserProfile();
+                });
+            });
+        };
+
+        return _service;
+    });
