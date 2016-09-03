@@ -85,12 +85,12 @@
                     }
                 });
     })
-    .run(function ($rootScope, userService, loginService, jwtHelper, tokenService, $state) {
+    .run(function ($rootScope, userService, loginService, tokenService, $state) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
             tokenService.getToken(function (token) {
                 userService.isAuthenticated(function (isAuthenticated) {
                     if (!toState.data || !toState.data.authorize) {
-                        if (isAuthenticated && !jwtHelper.isTokenExpired(token)) {
+                        if (isAuthenticated && !tokenService.isTokenExpired(token)) {
                             event.preventDefault();
                             $state.go('tabs.current');
                         }
@@ -98,7 +98,7 @@
                         return;
                     }
 
-                    if (!isAuthenticated || jwtHelper.isTokenExpired(token)) {
+                    if (!isAuthenticated || tokenService.isTokenExpired(token)) {
                         event.preventDefault();
                         loginService.logOut(function () {
                             $state.go('login');

@@ -30,13 +30,13 @@
                 return;
             }
 
-            //var decodedToken = jwtHelper.decodeToken(token);
-            var twoFactor = false;// decodedToken.authmethod === "TwoFactor";
+            var decodedToken = this.tokenService.decodeToken(token);
+            var twoFactor = decodedToken.authmethod === "TwoFactor";
 
             _userProfile = {
-                //id: decodedToken.nameid,
-                //email: decodedToken.email,
-                //twoFactor: twoFactor
+                id: decodedToken.nameid,
+                email: decodedToken.email,
+                twoFactor: twoFactor
             };
 
             if (!twoFactor && profile) {
