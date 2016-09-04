@@ -1,9 +1,11 @@
 ﻿function UserService(tokenService, apiService) {
     this.tokenService = tokenService;
     this.apiService = apiService;
+
+    initUserService();
 };
 
-!function () {
+function initUserService() {
     var _userProfile = null;
 
     UserService.prototype.getUserId = function (callback) {
@@ -90,4 +92,4 @@
             callback(profile !== null && profile.twoFactor);
         });
     };
-}();
+};

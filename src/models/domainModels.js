@@ -1,4 +1,4 @@
-﻿var CipherString = function (encryptedString) {
+var CipherString = function (encryptedString) {
     this.encryptedString = encryptedString;
 
     if (encryptedString) {
@@ -20,20 +20,35 @@
     };
 }();
 
-var Site = function (obj) {
-    var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
-
+var Site = function (obj, alreadyEncrypted) {
     this.id = obj.id;
     this.folderId = obj.folderId;
-    this.name = cryptoService.encrypt(obj.name);
-    this.uri = cryptoService.encrypt(obj.uri);
-    this.username = cryptoService.encrypt(obj.username);
-    this.password = cryptoService.encrypt(obj.password);
-    this.notes = cryptoService.encrypt(obj.notes);
+
+    if (alreadyEncrypted === true) {
+        this.name = obj.name;
+        this.uri = obj.uri;
+        this.username = obj.username;
+        this.password = obj.password;
+        this.notes = obj.notes;
+    }
+    else {
+        this.name = new CipherString(obj.name);
+        this.uri = new CipherString(obj.uri);
+        this.username = new CipherString(obj.username);
+        this.password = new CipherString(obj.password);
+        this.notes = new CipherString(obj.notes);
+    }
+
     this.favorite = new obj.favorite;
 };
 
-var Folder = function (obj) {
+var Folder = function (obj, alreadyEncrypted) {
     this.id = obj.id;
-    this.name = new CipherString(obj.name);
+
+    if (alreadyEncrypted === true) {
+        this.name = obj.name;
+    }
+    else {
+        this.name = new CipherString(obj.name);
+    }
 };

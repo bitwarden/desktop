@@ -1,8 +1,8 @@
 ﻿function CryptoService() {
-
+    initCryptoService();
 };
 
-!function () {
+function initCryptoService() {
     var _key,
         _b64Key,
         _aes;
@@ -32,9 +32,9 @@
             return callback(_key);
         }
 
-        chrome.storage.local.get('key', function (key) {
-            if (key) {
-                _key = sjcl.codec.base64.toBits(key);
+        chrome.storage.local.get('key', function (obj) {
+            if (obj && obj.key) {
+                _key = sjcl.codec.base64.toBits(obj.key);
             }
 
             if (b64 && b64 === true) {
@@ -80,46 +80,60 @@
         return sjcl.codec.base64.fromBits(hashBits);
     };
 
-    CryptoService.prototype.getAes = function () {
-        if (!_aes && this.getKey()) {
-            _aes = new sjcl.cipher.aes(this.getKey());
+    CryptoService.prototype.getAes = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
         }
 
-        return _aes;
+        this.getKey(false, function (key) {
+            if (!_aes && key) {
+                _aes = new sjcl.cipher.aes(key);
+            }
+
+            callback(_aes);
+        });
     };
 
-    CryptoService.prototype.encrypt = function (plaintextValue, key) {
-        if (!this.getKey() && !key) {
-            throw 'Encryption key unavailable.';
+    CryptoService.prototype.encrypt = function (plaintextValue, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
         }
 
-        if (!key) {
-            key = this.getKey();
-        }
+        this.getKey(false, function (key) {
+            if (!key) {
+                throw 'Encryption key unavailable.';
+            }
 
-        var response = {};
-        var params = {
-            mode: "cbc",
-            iv: sjcl.random.randomWords(4, 0)
-        };
+            var response = {};
+            var params = {
+                mode: "cbc",
+                iv: sjcl.random.randomWords(4, 0)
+            };
 
-        var ctJson = sjcl.encrypt(key, plaintextValue, params, response);
+            var ctJson = sjcl.encrypt(key, plaintextValue, params, response);
 
-        var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
-        var iv = sjcl.codec.base64.fromBits(response.iv);
+            var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
+            var iv = sjcl.codec.base64.fromBits(response.iv);
 
-        return new CipherString(iv + "|" + ct);
+            callback(new CipherString(iv + "|" + ct));
+        });
     };
 
-    CryptoService.prototype.decrypt = function (cipherString) {
-        if (!this.getAes()) {
-            throw 'AES encryption unavailable.';
+    CryptoService.prototype.decrypt = function (cipherStrin, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
         }
 
-        var ivBits = sjcl.codec.base64.toBits(cipherString.initializationVector);
-        var ctBits = sjcl.codec.base64.toBits(cipherString.cipherText);
+        this.getAes(function (aes) {
+            if (!aes) {
+                throw 'AES encryption unavailable.';
+            }
 
-        var decBits = sjcl.mode.cbc.decrypt(this.getAes(), ctBits, ivBits, null);
-        return sjcl.codec.utf8String.fromBits(decBits);
+            var ivBits = sjcl.codec.base64.toBits(cipherString.initializationVector);
+            var ctBits = sjcl.codec.base64.toBits(cipherString.cipherText);
+
+            var decBits = sjcl.mode.cbc.decrypt(aes, ctBits, ivBits, null);
+            callback(sjcl.codec.utf8String.fromBits(decBits));
+        });
     };
-}();
+};

@@ -1,10 +1,10 @@
-﻿<ion-modal-view>
+﻿<ion-modal-view ng-controller="vaultAddSiteController">
     <ion-header-bar class="bar bar-header bar-positive">
-        <button class="button button-clear button-primary" ng-click="addSiteModal.hide()">Cancel</button>
+        <button class="button button-clear button-primary" ng-click="close()">Cancel</button>
         <h1 class="title">Add Site</h1>
         <button class="button button-clear button-primary" ng-click="createSite(site)">Save</button>
     </ion-header-bar>
-    <ion-content ng-controller="vaultAddSiteController">
+    <ion-content>
         <div class="list">
             <div class="item item-divider">
                 Site Information

@@ -1,7 +1,41 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $ionicModal) {
+    .controller('vaultController', function ($scope, $ionicModal, siteService, folderService) {
+        $scope.parentScope = $scope;
+        $scope.sites = [];
+        $scope.folders = [];
+
+        var decSites = [];
+        var decFolders = [{
+            id: null,
+            name: '(none)'
+        }];
+
+        folderService.getAll(function (folders) {
+            siteService.getAll(function (sites) {
+                for (var i = 0; i < folders.length; i++) {
+                    decFolders.push({
+                        id: folders[i].id,
+                        name: folders[i].name.decrypt()
+                    });
+                }
+
+                for (var j = 0; j < sites.length; j++) {
+                    decSites.push({
+                        id: sites[j].id,
+                        folderId: sites[j].folderId,
+                        favorite: sites[j].favorite,
+                        name: sites[j].name.decrypt(),
+                        username: sites[j].username.decrypt()
+                    });
+                }
+
+                $scope.sites = decSites;
+                $scope.folders = decFolders;
+            });
+        });
+
         $scope.addSite = function () {
             $ionicModal.fromTemplateUrl('app/vault/views/vaultAddSite.html', {
                 scope: $scope,

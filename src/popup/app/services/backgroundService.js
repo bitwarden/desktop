@@ -13,6 +13,9 @@
     .factory('apiService', function () {
         return chrome.extension.getBackgroundPage().apiService;
     })
+    .factory('folderService', function () {
+        return chrome.extension.getBackgroundPage().folderService;
+    })
     .factory('siteService', function () {
         return chrome.extension.getBackgroundPage().siteService;
     });

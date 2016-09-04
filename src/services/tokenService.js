@@ -1,8 +1,8 @@
 ﻿function TokenService() {
-
+    initTokenService();
 };
 
-!function () {
+function initTokenService() {
     var _token;
 
     TokenService.prototype.setToken = function (token, callback) {
@@ -101,4 +101,4 @@
         }
         return window.decodeURIComponent(escape(window.atob(output))); //polyfill https://github.com/davidchambers/Base64.js
     };
-}();
+};

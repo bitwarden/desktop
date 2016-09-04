@@ -1,9 +1,11 @@
 ﻿function ApiService(tokenService) {
     this.baseUrl = 'https://api.bitwarden.com';
     this.tokenService = tokenService;
+
+    initApiService();
 };
 
-!function () {
+function initApiService() {
     // Auth APIs
 
     ApiService.prototype.postToken = function (tokenRequest, success, error) {
@@ -235,4 +237,4 @@
     function handleError(errorCallback, jqXHR, textStatus, errorThrown) {
         errorCallback(new ErrorResponse(jqXHR));
     }
-}();
+};
