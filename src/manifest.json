@@ -24,6 +24,7 @@
       "services/tokenService.js",
       "services/apiService.js",
       "services/userService.js",
+      "services/siteService.js",
       "background.js"
     ]
   },

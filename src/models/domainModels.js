@@ -21,13 +21,15 @@
 }();
 
 var Site = function (obj) {
+    var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
+
     this.id = obj.id;
     this.folderId = obj.folderId;
-    this.name = new CipherString(obj.name);
-    this.uri = new CipherString(obj.uri);
-    this.username = new CipherString(obj.username);
-    this.password = new CipherString(obj.password);
-    this.notes = new CipherString(obj.notes);
+    this.name = cryptoService.encrypt(obj.name);
+    this.uri = cryptoService.encrypt(obj.uri);
+    this.username = cryptoService.encrypt(obj.username);
+    this.password = cryptoService.encrypt(obj.password);
+    this.notes = cryptoService.encrypt(obj.notes);
     this.favorite = new obj.favorite;
 };
 

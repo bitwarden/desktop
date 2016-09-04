@@ -12,4 +12,7 @@
     })
     .factory('apiService', function () {
         return chrome.extension.getBackgroundPage().apiService;
+    })
+    .factory('siteService', function () {
+        return chrome.extension.getBackgroundPage().siteService;
     });
