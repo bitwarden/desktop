@@ -13,10 +13,13 @@ var CipherString = function (encryptedString) {
     CipherString.prototype.decrypt = function (callback) {
         if (!_decryptedValue) {
             var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
-            _decryptedValue = cryptoService.decrypt(this);
+            cryptoService.decrypt(this, function (decValue) {
+                _decryptedValue = decValue;
+                callback(_decryptedValue);
+            });
         }
 
-        return _decryptedValue;
+        callback(_decryptedValue);
     };
 }();
 

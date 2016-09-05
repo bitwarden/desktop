@@ -16,8 +16,11 @@
             siteService.getAll(function (sites) {
                 for (var i = 0; i < folders.length; i++) {
                     decFolders.push({
-                        id: folders[i].id,
-                        name: folders[i].name.decrypt()
+                        id: folders[i].id
+                    });
+
+                    folders[i].name.decrypt(function (name) {
+                        decFolders.name = name;
                     });
                 }
 
@@ -25,10 +28,20 @@
                     decSites.push({
                         id: sites[j].id,
                         folderId: sites[j].folderId,
-                        favorite: sites[j].favorite,
-                        name: sites[j].name.decrypt(),
-                        username: sites[j].username.decrypt()
+                        favorite: sites[j].favorite
                     });
+
+                    if (sites[j].name && sites[j].name.encryptedString) {
+                        sites[j].name.decrypt(function (name) {
+                            decSites.name = name;
+                        });
+                    }
+                    
+                    if (sites[j].username && sites[j].username.encryptedString) {
+                        sites[j].username.decrypt(function (username) {
+                            decSites.username = username;
+                        });
+                    }
                 }
 
                 $scope.sites = decSites;

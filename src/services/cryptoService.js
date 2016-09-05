@@ -132,7 +132,7 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
-        if (cipherString === null || cipherString === undefined) {
+        if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
             throw 'cannot decrypt nothing';
         }
 
