@@ -1,15 +1,15 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('loginService', function (cryptoService, apiService, apiService, userService, tokenService, $q) {
+    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q) {
         var _service = {};
 
         _service.logIn = function (email, masterPassword) {
             var key = cryptoService.makeKey(masterPassword, email);
+            var deferred = $q.defer();
             cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
                 var request = new TokenRequest(email, hashedPassword);
 
-                var deferred = $q.defer();
                 apiService.postToken(request, function (response) {
                     if (!response || !response.token) {
                         return;
@@ -25,9 +25,8 @@
                 }, function (error) {
                     deferred.reject(error);
                 });
-
-                return deferred.promise;
             });
+            return deferred.promise;
         };
 
         _service.logInTwoFactor = function (code, provider) {

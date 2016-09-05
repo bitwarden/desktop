@@ -7,6 +7,8 @@ function initCryptoService() {
         _b64Key,
         _aes;
 
+    sjcl.beware["CBC mode is dangerous because it doesn't protect message integrity."]();
+
     CryptoService.prototype.setKey = function (key, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
@@ -101,6 +103,10 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
+        if (plaintextValue === null || plaintextValue === undefined) {
+            callback(null);
+        }
+
         this.getKey(false, function (key) {
             if (!key) {
                 throw 'Encryption key unavailable.';
@@ -121,9 +127,13 @@ function initCryptoService() {
         });
     };
 
-    CryptoService.prototype.decrypt = function (cipherStrin, callback) {
+    CryptoService.prototype.decrypt = function (cipherString, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
+        }
+
+        if (cipherString === null || cipherString === undefined) {
+            throw 'cannot decrypt nothing';
         }
 
         this.getAes(function (aes) {

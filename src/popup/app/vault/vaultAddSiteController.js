@@ -7,8 +7,7 @@
         };
 
         $scope.createSite = function (model) {
-            var newModel = model;
-            encryptSite(newModel, function (siteModel) {
+            encryptSite(model, function (siteModel) {
                 var site = new Site(siteModel, true);
                 siteService.save(site, function () {
                     $scope.close();
@@ -20,16 +19,17 @@
             $scope.parentScope.closeAddSite();
         };
 
-        function encryptSite(siteModel, callback) {
-            cryptoService.encrypt(siteModel.name, function (nameCipherString) {
+        function encryptSite(model, callback) {
+            var siteModel = {};
+            cryptoService.encrypt(model.name, function (nameCipherString) {
                 siteModel.name = nameCipherString;
-                cryptoService.encrypt(siteModel.uri, function (uriCipherString) {
+                cryptoService.encrypt(model.uri, function (uriCipherString) {
                     siteModel.uri = uriCipherString;
-                    cryptoService.encrypt(siteModel.username, function (usernameCipherString) {
+                    cryptoService.encrypt(model.username, function (usernameCipherString) {
                         siteModel.username = usernameCipherString;
-                        cryptoService.encrypt(siteModel.password, function (passwordCipherString) {
+                        cryptoService.encrypt(model.password, function (passwordCipherString) {
                             siteModel.password = passwordCipherString;
-                            cryptoService.encrypt(siteModel.notes, function (notesCipherString) {
+                            cryptoService.encrypt(model.notes, function (notesCipherString) {
                                 siteModel.notes = notesCipherString;
                                 callback(siteModel);
                             });

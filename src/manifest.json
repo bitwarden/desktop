@@ -19,6 +19,8 @@
       "node_modules/sjcl/core/bitArray.js",
       "models/api/requestModels.js",
       "models/api/responseModels.js",
+      "models/dataModels.js",
+      "models/domainModels.js",
       "services/cryptoService.js",
       "services/cryptoService.js",
       "services/tokenService.js",

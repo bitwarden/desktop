@@ -7,13 +7,13 @@
 };
 
 function initFolderService() {
-    this.userService.getUserId(function (userId) {
-        var foldersKey = 'folders_' + userId;
+    FolderService.prototype.get = function (id, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
 
-        FolderService.prototype.get = function (id, callback) {
-            if (!callback || typeof callback !== 'function') {
-                throw 'callback function required';
-            }
+        this.userService.getUserId(function (userId) {
+            var foldersKey = 'folders_' + userId;
 
             chrome.storage.local.get(foldersKey, function (obj) {
                 var folders = obj[foldersKey];
@@ -24,12 +24,16 @@ function initFolderService() {
 
                 callback(null);
             });
-        };
+        });
+    };
 
-        FolderService.prototype.getAll = function (callback) {
-            if (!callback || typeof callback !== 'function') {
-                throw 'callback function required';
-            }
+    FolderService.prototype.getAll = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        this.userService.getUserId(function (userId) {
+            var foldersKey = 'folders_' + userId;
 
             chrome.storage.local.get(foldersKey, function (obj) {
                 var folders = obj[foldersKey];
@@ -41,10 +45,10 @@ function initFolderService() {
 
                 callback(response);
             });
-        };
+        });
+    };
 
-        function handleError() {
-            // TODO: check for unauth or forbidden and logout
-        }
-    });
+    function handleError() {
+        // TODO: check for unauth or forbidden and logout
+    }
 };

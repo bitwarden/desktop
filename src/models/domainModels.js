@@ -13,7 +13,7 @@ var CipherString = function (encryptedString) {
     CipherString.prototype.decrypt = function (callback) {
         if (!_decryptedValue) {
             var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
-            _decryptedValue = cryptoService.Decrypt(this);
+            _decryptedValue = cryptoService.decrypt(this);
         }
 
         return _decryptedValue;
@@ -39,7 +39,7 @@ var Site = function (obj, alreadyEncrypted) {
         this.notes = new CipherString(obj.notes);
     }
 
-    this.favorite = new obj.favorite;
+    this.favorite = obj.favorite ? true : false;
 };
 
 var Folder = function (obj, alreadyEncrypted) {
