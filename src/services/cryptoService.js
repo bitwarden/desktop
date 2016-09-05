@@ -67,17 +67,19 @@ function initCryptoService() {
         return key;
     };
 
-    CryptoService.prototype.hashPassword = function (password, key) {
-        if (!key) {
-            key = this.getKey();
-        }
+    CryptoService.prototype.hashPassword = function (password, key, callback) {
+        this.getKey(false, function (storedKey) {
+            if (!key) {
+                key = storedKey;
+            }
 
-        if (!password || !key) {
-            throw 'Invalid parameters.';
-        }
+            if (!password || !key) {
+                throw 'Invalid parameters.';
+            }
 
-        var hashBits = sjcl.misc.pbkdf2(key, password, 1, 256, null);
-        return sjcl.codec.base64.fromBits(hashBits);
+            var hashBits = sjcl.misc.pbkdf2(key, password, 1, 256, null);
+            callback(sjcl.codec.base64.fromBits(hashBits));
+        });
     };
 
     CryptoService.prototype.getAes = function (callback) {

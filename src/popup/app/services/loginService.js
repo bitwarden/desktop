@@ -6,26 +6,28 @@
 
         _service.logIn = function (email, masterPassword) {
             var key = cryptoService.makeKey(masterPassword, email);
-            var request = new TokenRequest(email, cryptoService.hashPassword(masterPassword, key));
+            cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
+                var request = new TokenRequest(email, hashedPassword);
 
-            var deferred = $q.defer();
-            apiService.postToken(request, function (response) {
-                if (!response || !response.token) {
-                    return;
-                }
+                var deferred = $q.defer();
+                apiService.postToken(request, function (response) {
+                    if (!response || !response.token) {
+                        return;
+                    }
 
-                tokenService.setToken(response.token, function () {
-                    cryptoService.setKey(key, function () {
-                        userService.setUserProfile(response.profile, function () {
-                            deferred.resolve(response);
+                    tokenService.setToken(response.token, function () {
+                        cryptoService.setKey(key, function () {
+                            userService.setUserProfile(response.profile, function () {
+                                deferred.resolve(response);
+                            });
                         });
                     });
+                }, function (error) {
+                    deferred.reject(error);
                 });
-            }, function (error) {
-                deferred.reject(error);
-            });
 
-            return deferred.promise;
+                return deferred.promise;
+            });
         };
 
         _service.logInTwoFactor = function (code, provider) {
