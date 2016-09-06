@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $ionicModal, siteService, folderService) {
+    .controller('vaultController', function ($scope, $ionicModal, siteService, folderService, $q) {
         $scope.parentScope = $scope;
         $scope.sites = [];
         $scope.folders = [];
@@ -14,14 +14,16 @@
 
         folderService.getAll(function (folders) {
             siteService.getAll(function (sites) {
+                var promises = [];
+
                 for (var i = 0; i < folders.length; i++) {
                     decFolders.push({
                         id: folders[i].id
                     });
 
-                    folders[i].name.decrypt(function (name) {
-                        decFolders.name = name;
-                    });
+                    promises.push(decrypt(folders[j].name, i).then(function (obj) {
+                        decFolders[obj.index].name = obj.val;
+                    }));
                 }
 
                 for (var j = 0; j < sites.length; j++) {
@@ -31,23 +33,34 @@
                         favorite: sites[j].favorite
                     });
 
-                    if (sites[j].name && sites[j].name.encryptedString) {
-                        sites[j].name.decrypt(function (name) {
-                            decSites.name = name;
-                        });
-                    }
-                    
-                    if (sites[j].username && sites[j].username.encryptedString) {
-                        sites[j].username.decrypt(function (username) {
-                            decSites.username = username;
-                        });
-                    }
+                    promises.push(decrypt(sites[j].name, j).then(function (obj) {
+                        decSites[obj.index].name = obj.val;
+                    }));
+
+                    promises.push(decrypt(sites[j].username, j).then(function (obj) {
+                        decSites[obj.index].username = obj.val;
+                    }));
                 }
 
-                $scope.sites = decSites;
-                $scope.folders = decFolders;
+                $q.all(promises).then(function () {
+                    $scope.sites = decSites;
+                    $scope.folders = decFolders;
+                });
             });
         });
+
+        function decrypt(cipherString, index) {
+            return $q(function(resolve, reject) {
+                if (!cipherString) {
+                    resolve({val: null, index: index});
+                }
+                else {
+                    cipherString.decrypt(function (decString) {
+                        resolve({ val: decString, index: index });
+                    });
+                }
+            });
+        }
 
         $scope.addSite = function () {
             $ionicModal.fromTemplateUrl('app/vault/views/vaultAddSite.html', {

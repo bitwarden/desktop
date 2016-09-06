@@ -1,4 +1,4 @@
-﻿function CryptoService() {
+function CryptoService() {
     initCryptoService();
 };
 
@@ -105,6 +105,7 @@ function initCryptoService() {
 
         if (plaintextValue === null || plaintextValue === undefined) {
             callback(null);
+            return;
         }
 
         this.getKey(false, function (key) {
@@ -123,7 +124,8 @@ function initCryptoService() {
             var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
             var iv = sjcl.codec.base64.fromBits(response.iv);
 
-            callback(new CipherString(iv + "|" + ct));
+            var cs = new CipherString(iv + "|" + ct);
+            callback(cs);
         });
     };
 
@@ -145,7 +147,8 @@ function initCryptoService() {
             var ctBits = sjcl.codec.base64.toBits(cipherString.cipherText);
 
             var decBits = sjcl.mode.cbc.decrypt(aes, ctBits, ivBits, null);
-            callback(sjcl.codec.utf8String.fromBits(decBits));
+            var decValue = sjcl.codec.utf8String.fromBits(decBits);
+            callback(decValue);
         });
     };
 };

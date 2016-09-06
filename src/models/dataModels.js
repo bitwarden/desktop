@@ -1,4 +1,4 @@
-﻿var FolderData = function (response, userId) {
+var FolderData = function (response, userId) {
     var data = null;
     if (response instanceof FolderResponse) {
         data = response;
@@ -10,10 +10,10 @@
         throw 'unsupported instance';
     }
 
-    this.id = response.Id;
+    this.id = response.id;
     this.userId = userId;
-    this.name = data.Name;
-    this.revisionDate = response.RevisionDate;
+    this.name = data.name;
+    this.revisionDate = response.revisionDate;
 };
 
 var SiteData = function (response, userId) {
@@ -28,14 +28,14 @@ var SiteData = function (response, userId) {
         throw 'unsupported instance';
     }
 
-    this.id = response.Id;
-    this.folderId = response.FolderId;
+    this.id = response.id;
+    this.folderId = response.folderId;
     this.userId = userId;
-    this.name = data.Name;
-    this.uri = data.Uri;
-    this.username = data.Username;
-    this.password = data.Password;
-    this.notes = data.Notes;
-    this.favorite = response.Favorite;
-    this.revisionDate = response.RevisionDate;
+    this.name = data.name;
+    this.uri = data.uri;
+    this.username = data.username;
+    this.password = data.password;
+    this.notes = data.notes;
+    this.favorite = response.favorite;
+    this.revisionDate = response.revisionDate;
 };

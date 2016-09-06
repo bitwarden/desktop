@@ -18,40 +18,41 @@ var CipherString = function (encryptedString) {
                 callback(_decryptedValue);
             });
         }
-
-        callback(_decryptedValue);
+        else {
+            callback(_decryptedValue);
+        }
     };
 }();
 
 var Site = function (obj, alreadyEncrypted) {
-    this.id = obj.id;
-    this.folderId = obj.folderId;
+    this.id = obj.id ? obj.id : null;
+    this.folderId = obj.folderId ? obj.folderId : null;
 
     if (alreadyEncrypted === true) {
-        this.name = obj.name;
-        this.uri = obj.uri;
-        this.username = obj.username;
-        this.password = obj.password;
-        this.notes = obj.notes;
+        this.name = obj.name ? obj.name : null;
+        this.uri = obj.uri ? obj.uri : null;
+        this.username = obj.username ? obj.username : null;
+        this.password = obj.password ? obj.password : null;
+        this.notes = obj.notes ? obj.notes : null;
     }
     else {
-        this.name = new CipherString(obj.name);
-        this.uri = new CipherString(obj.uri);
-        this.username = new CipherString(obj.username);
-        this.password = new CipherString(obj.password);
-        this.notes = new CipherString(obj.notes);
+        this.name = obj.name ? new CipherString(obj.name) : null;
+        this.uri = obj.uri ? new CipherString(obj.uri) : null;
+        this.username = obj.username ? new CipherString(obj.username) : null;
+        this.password = obj.password ? new CipherString(obj.password) : null;
+        this.notes = obj.notes ? new CipherString(obj.notes) : null;
     }
 
     this.favorite = obj.favorite ? true : false;
 };
 
 var Folder = function (obj, alreadyEncrypted) {
-    this.id = obj.id;
+    this.id = obj.id ? obj.id : null;
 
     if (alreadyEncrypted === true) {
-        this.name = obj.name;
+        this.name = obj.name ? obj.name : null;
     }
     else {
-        this.name = new CipherString(obj.name);
+        this.name = obj.name ? new CipherString(obj.name) : null;
     }
 };

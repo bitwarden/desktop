@@ -4,10 +4,16 @@
     </ion-nav-buttons>
     <ion-content>
         <div class="list">
-            <div class="item item-button-right">
-                Site 1
-                <button class="button button-clear button-dark"><i class="icon ion-more"></i></button>
-            </div>
+            <ng-repeat ng-repeat="folder in folders | orderBy: folderSort" ng-show="folders.length">
+                <div class="item item-divider">
+                    {{folder.name}}
+                </div>
+                <div class="item item-button-right" ng-repeat="site in folderSites = (sites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
+                    {{site.name}}<br />
+                    {{site.username}}
+                    <button class="button button-clear button-dark"><i class="icon ion-more"></i></button>
+                </div>
+            </ng-repeat>
         </div>
     </ion-content>
 </ion-view>
