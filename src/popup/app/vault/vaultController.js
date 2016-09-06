@@ -1,10 +1,11 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $ionicModal, siteService, folderService, $q) {
+    .controller('vaultController', function ($scope, $ionicModal, siteService, folderService, $q, cipherService) {
         $scope.parentScope = $scope;
         $scope.sites = [];
         $scope.folders = [];
+        $scope.focusedSiteId = null;
 
         $scope.$on("$ionicView.enter", function (event, data) {
             loadVault();
@@ -29,7 +30,7 @@
                             id: folders[i].id
                         });
 
-                        var folderNamePromise = decrypt(sites[i].name, i);
+                        var folderNamePromise = cipherService.decrypt(sites[i].name, i);
                         promises.push(folderNamePromise);
                         folderNamePromise.then(function (obj) {
                             decFolders[obj.index].name = obj.val;
@@ -43,13 +44,13 @@
                             favorite: sites[j].favorite
                         });
 
-                        var namePromise = decrypt(sites[j].name, j);
+                        var namePromise = cipherService.decrypt(sites[j].name, j);
                         promises.push(namePromise);
                         namePromise.then(function (obj) {
                             decSites[obj.index].name = obj.val;
                         });
 
-                        var usernamePromise = decrypt(sites[j].username, j);
+                        var usernamePromise = cipherService.decrypt(sites[j].username, j);
                         promises.push(usernamePromise);
                         usernamePromise.then(function (obj) {
                             decSites[obj.index].username = obj.val;
@@ -64,26 +65,8 @@
             });
         }
 
-        function decrypt(cipherString, index) {
-            return $q(function (resolve, reject) {
-                if (!cipherString) {
-                    resolve({
-                        val: null,
-                        index: index
-                    });
-                }
-                else {
-                    cipherString.decrypt(function (decString) {
-                        resolve({
-                            val: decString,
-                            index: index
-                        });
-                    });
-                }
-            });
-        }
-
         $scope.viewSite = function (site) {
+            $scope.focusedSiteId = site.id;
             $ionicModal.fromTemplateUrl('app/vault/views/vaultViewSite.html', {
                 scope: $scope,
                 animation: 'slide-in-up'
@@ -94,6 +77,7 @@
         };
 
         $scope.editSite = function (site) {
+            $scope.focusedSiteId = site.id;
             $ionicModal.fromTemplateUrl('app/vault/views/vaultEditSite.html', {
                 scope: $scope,
                 animation: 'slide-in-up'
@@ -119,10 +103,12 @@
 
         $scope.closeViewSite = function () {
             $scope.viewSiteModal.hide();
+            $scope.focusedSiteId = null;
         };
 
         $scope.closeEditSite = function () {
             $scope.editSiteModal.hide();
+            $scope.focusedSiteId = null;
         };
 
         $scope.$on('modal.hidden', function () {

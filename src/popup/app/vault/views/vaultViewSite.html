@@ -5,6 +5,35 @@
         <button class="button button-clear button-primary" ng-click="editSite()">Edit</button>
     </ion-header-bar>
     <ion-content>
-        View site
+        <div class="list">
+            <div class="item item-divider">
+                Site Information
+            </div>
+            <div class="item">
+                <div>Name</div>
+                {{site.name}}
+            </div>
+            <div class="item">
+                <div>Website</div>
+                {{site.uri}}
+            </div>
+            <div class="item">
+                <div>Username</div>
+                {{site.username}}
+            </div>
+            <div class="item">
+                <div>Password</div>
+                {{site.password}}
+            </div>
+            <div class="item item-divider">
+                Notes
+            </div>
+            <div class="item">
+                {{site.notes}}
+            </div>
+            <div class="item item-divider">
+                &nbsp;
+            </div>
+        </div>
     </ion-content>
 </ion-modal-view>
