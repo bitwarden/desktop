@@ -6,54 +6,63 @@
         $scope.sites = [];
         $scope.folders = [];
 
-        var decSites = [];
-        var decFolders = [{
-            id: null,
-            name: '(none)'
-        }];
+        $scope.$on("$ionicView.enter", function (event, data) {
+            loadVault();
+        });
 
-        folderService.getAll(function (folders) {
-            siteService.getAll(function (sites) {
-                var promises = [];
+        function loadVault() {
+            $scope.sites = [];
+            $scope.folders = [];
 
-                for (var i = 0; i < folders.length; i++) {
-                    decFolders.push({
-                        id: folders[i].id
+            var decSites = [];
+            var decFolders = [{
+                id: null,
+                name: '(none)'
+            }];
+
+            folderService.getAll(function (folders) {
+                siteService.getAll(function (sites) {
+                    var promises = [];
+
+                    for (var i = 0; i < folders.length; i++) {
+                        decFolders.push({
+                            id: folders[i].id
+                        });
+
+                        var folderNamePromise = decrypt(sites[i].name, i);
+                        promises.push(folderNamePromise);
+                        folderNamePromise.then(function (obj) {
+                            decFolders[obj.index].name = obj.val;
+                        });
+                    }
+
+                    for (var j = 0; j < sites.length; j++) {
+                        decSites.push({
+                            id: sites[j].id,
+                            folderId: sites[j].folderId,
+                            favorite: sites[j].favorite
+                        });
+
+                        var namePromise = decrypt(sites[j].name, j);
+                        promises.push(namePromise);
+                        namePromise.then(function (obj) {
+                            decSites[obj.index].name = obj.val;
+                        });
+
+                        var usernamePromise = decrypt(sites[j].username, j);
+                        promises.push(usernamePromise);
+                        usernamePromise.then(function (obj) {
+                            decSites[obj.index].username = obj.val;
+                        });
+                    }
+
+                    $q.all(promises).then(function () {
+                        $scope.sites = decSites;
+                        $scope.folders = decFolders;
                     });
-
-                    var folderNamePromise = decrypt(sites[i].name, i);
-                    promises.push(folderNamePromise);
-                    folderNamePromise.then(function (obj) {
-                        decFolders[obj.index].name = obj.val;
-                    });
-                }
-
-                for (var j = 0; j < sites.length; j++) {
-                    decSites.push({
-                        id: sites[j].id,
-                        folderId: sites[j].folderId,
-                        favorite: sites[j].favorite
-                    });
-
-                    var namePromise = decrypt(sites[j].name, j);
-                    promises.push(namePromise);
-                    namePromise.then(function (obj) {
-                        decSites[obj.index].name = obj.val;
-                    });
-
-                    var usernamePromise = decrypt(sites[j].username, j);
-                    promises.push(usernamePromise);
-                    usernamePromise.then(function (obj) {
-                        decSites[obj.index].username = obj.val;
-                    });
-                }
-
-                $q.all(promises).then(function () {
-                    $scope.sites = decSites;
-                    $scope.folders = decFolders;
                 });
             });
-        });
+        }
 
         function decrypt(cipherString, index) {
             return $q(function (resolve, reject) {
@@ -88,21 +97,8 @@
             $scope.addSiteModal.hide();
         };
 
-        // Cleanup the modal when we're done with it!
-        $scope.$on('$destroy', function () {
-            console.log('modal destroyed');
-            $scope.addSiteModal.remove();
-        });
-
-        // Execute action on hide modal
         $scope.$on('modal.hidden', function () {
             console.log('modal hidden');
-            // Execute action
-        });
-
-        // Execute action on remove modal
-        $scope.$on('modal.removed', function () {
-            console.log('modal removed');
-            // Execute action
+            loadVault();
         });
     });
