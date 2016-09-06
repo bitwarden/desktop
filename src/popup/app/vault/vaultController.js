@@ -83,6 +83,26 @@
             });
         }
 
+        $scope.viewSite = function (site) {
+            $ionicModal.fromTemplateUrl('app/vault/views/vaultViewSite.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function (modal) {
+                $scope.viewSiteModal = modal;
+                modal.show();
+            });
+        };
+
+        $scope.editSite = function (site) {
+            $ionicModal.fromTemplateUrl('app/vault/views/vaultEditSite.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function (modal) {
+                $scope.editSiteModal = modal;
+                modal.show();
+            });
+        };
+
         $scope.addSite = function () {
             $ionicModal.fromTemplateUrl('app/vault/views/vaultAddSite.html', {
                 scope: $scope,
@@ -95,6 +115,14 @@
 
         $scope.closeAddSite = function () {
             $scope.addSiteModal.hide();
+        };
+
+        $scope.closeViewSite = function () {
+            $scope.viewSiteModal.hide();
+        };
+
+        $scope.closeEditSite = function () {
+            $scope.editSiteModal.hide();
         };
 
         $scope.$on('modal.hidden', function () {
