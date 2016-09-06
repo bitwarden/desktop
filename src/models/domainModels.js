@@ -1,5 +1,6 @@
 var CipherString = function (encryptedString) {
     this.encryptedString = encryptedString;
+    this.decryptedValue = null;
 
     if (encryptedString) {
         this.initializationVector = this.encryptedString.split('|')[0];
@@ -8,18 +9,16 @@ var CipherString = function (encryptedString) {
 };
 
 !function () {
-    var _decryptedValue = null;
-
     CipherString.prototype.decrypt = function (callback) {
-        if (!_decryptedValue) {
+        if (!this.decryptedValue) {
             var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
             cryptoService.decrypt(this, function (decValue) {
-                _decryptedValue = decValue;
-                callback(_decryptedValue);
+                this.decryptedValue = decValue;
+                callback(this.decryptedValue);
             });
         }
         else {
-            callback(_decryptedValue);
+            callback(this.decryptedValue);
         }
     };
 }();
@@ -27,6 +26,7 @@ var CipherString = function (encryptedString) {
 var Site = function (obj, alreadyEncrypted) {
     this.id = obj.id ? obj.id : null;
     this.folderId = obj.folderId ? obj.folderId : null;
+    this.favorite = obj.favorite ? true : false;
 
     if (alreadyEncrypted === true) {
         this.name = obj.name ? obj.name : null;
@@ -42,8 +42,6 @@ var Site = function (obj, alreadyEncrypted) {
         this.password = obj.password ? new CipherString(obj.password) : null;
         this.notes = obj.notes ? new CipherString(obj.notes) : null;
     }
-
-    this.favorite = obj.favorite ? true : false;
 };
 
 var Folder = function (obj, alreadyEncrypted) {

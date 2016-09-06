@@ -21,9 +21,11 @@
                         id: folders[i].id
                     });
 
-                    promises.push(decrypt(folders[j].name, i).then(function (obj) {
+                    var folderNamePromise = decrypt(sites[i].name, i);
+                    promises.push(folderNamePromise);
+                    folderNamePromise.then(function (obj) {
                         decFolders[obj.index].name = obj.val;
-                    }));
+                    });
                 }
 
                 for (var j = 0; j < sites.length; j++) {
@@ -33,13 +35,17 @@
                         favorite: sites[j].favorite
                     });
 
-                    promises.push(decrypt(sites[j].name, j).then(function (obj) {
+                    var namePromise = decrypt(sites[j].name, j);
+                    promises.push(namePromise);
+                    namePromise.then(function (obj) {
                         decSites[obj.index].name = obj.val;
-                    }));
+                    });
 
-                    promises.push(decrypt(sites[j].username, j).then(function (obj) {
+                    var usernamePromise = decrypt(sites[j].username, j);
+                    promises.push(usernamePromise);
+                    usernamePromise.then(function (obj) {
                         decSites[obj.index].username = obj.val;
-                    }));
+                    });
                 }
 
                 $q.all(promises).then(function () {
@@ -50,13 +56,19 @@
         });
 
         function decrypt(cipherString, index) {
-            return $q(function(resolve, reject) {
+            return $q(function (resolve, reject) {
                 if (!cipherString) {
-                    resolve({val: null, index: index});
+                    resolve({
+                        val: null,
+                        index: index
+                    });
                 }
                 else {
                     cipherString.decrypt(function (decString) {
-                        resolve({ val: decString, index: index });
+                        resolve({
+                            val: decString,
+                            index: index
+                        });
                     });
                 }
             });
