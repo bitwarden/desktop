@@ -9,7 +9,7 @@
         $scope.createSite = function (model) {
             cipherService.encryptSite(model, function (siteModel) {
                 var site = new Site(siteModel, true);
-                siteService.save(site, function () {
+                siteService.saveWithServer(site, function () {
                     $scope.close();
                 });
             });

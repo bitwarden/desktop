@@ -51,16 +51,15 @@ function initSiteService() {
         });
     };
 
-    SiteService.prototype.save = function (site, callback) {
+    SiteService.prototype.saveWithServer = function (site, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        var newRecord = site.id ? false : true,
-            self = this;
+        var self = this,
+            request = new SiteRequest(site);
 
-        var request = new SiteRequest(site);
-        if (newRecord) {
+        if (!site.id) {
             self.apiService.postSite(request, apiSuccess, handleError);
         }
         else {
@@ -69,27 +68,59 @@ function initSiteService() {
 
         function apiSuccess(response) {
             site.id = response.id;
-
             userService.getUserId(function (userId) {
                 var data = new SiteData(response, userId);
-                var sitesKey = 'sites_' + userId;
-
-                chrome.storage.local.get(sitesKey, function (obj) {
-                    var sites = obj[sitesKey];
-                    if (!sites) {
-                        sites = {};
-                    }
-
-                    sites[site.id] = data;
-                    site.id = data.id;
-
-                    obj[sitesKey] = sites;
-                    chrome.storage.local.set(obj, function () {
-                        callback(site);
-                    });
+                self.upsert(data, function () {
+                    callback(site);
                 });
             });
         }
+    };
+
+    SiteService.prototype.upsert = function (site, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        userService.getUserId(function (userId) {
+            var sitesKey = 'sites_' + userId;
+
+            chrome.storage.local.get(sitesKey, function (obj) {
+                var sites = obj[sitesKey];
+                if (!sites) {
+                    sites = {};
+                }
+
+                if (site.constructor === Array) {
+                    for (var i = 0; i < site.length; i++) {
+                        sites[site[i].id] = site[i];
+                    }
+                }
+                else {
+                    sites[site.id] = site;
+                }
+
+                obj[sitesKey] = sites;
+
+                chrome.storage.local.set(obj, function () {
+                    callback();
+                });
+            });
+        });
+    };
+
+    SiteService.prototype.replace = function (sites, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        userService.getUserId(function (userId) {
+            var obj = {};
+            obj['sites_' + userId] = sites;
+            chrome.storage.local.set(obj, function () {
+                callback();
+            });
+        });
     };
 
     SiteService.prototype.delete = function (id, callback) {
@@ -97,29 +128,48 @@ function initSiteService() {
             throw 'callback function required';
         }
 
-        self.apiService.deleteCipher(id, apiSuccess, handleError);
+        userService.getUserId(function (userId) {
+            var sitesKey = 'sites_' + userId;
 
-        function apiSuccess(response) {
-            userService.getUserId(function (userId) {
-                var sitesKey = 'sites_' + userId;
+            chrome.storage.local.get(sitesKey, function (obj) {
+                var sites = obj[sitesKey];
+                if (!sites) {
+                    callback();
+                    return;
+                }
 
-                chrome.storage.local.get(sitesKey, function (obj) {
-                    var sites = obj[sitesKey];
-                    if (!sites) {
-                        sites = {};
+                if (id.constructor === Array) {
+                    for (var i = 0; i < id.length; i++) {
+                        if (id[i] in sites) {
+                            delete sites[id[i]];
+                        }
                     }
-                    if (id in sites) {
-                        delete obj[sitesKey];
-                        chrome.storage.local.set(obj, function () {
-                            callback();
-                        });
-                    }
-                    else {
-                        callback();
-                    }
+                }
+                else if (id in sites) {
+                    delete sites[id];
+                }
+                else {
+                    callback();
+                    return;
+                }
+
+                obj[sitesKey] = sites;
+                chrome.storage.local.set(obj, function () {
+                    callback();
                 });
             });
+        });
+    };
+
+    SiteService.prototype.deleteWithServer = function (id, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
         }
+
+        var self = this;
+        self.apiService.deleteCipher(id, function (response) {
+            self.delete(id, callback);
+        }, handleError);
     };
 
     function handleError() {
