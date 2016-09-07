@@ -28,6 +28,7 @@
       "services/userService.js",
       "services/folderService.js",
       "services/siteService.js",
+      "services/syncService.js",
       "background.js"
     ]
   },

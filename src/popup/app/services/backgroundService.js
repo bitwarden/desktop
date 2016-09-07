@@ -18,4 +18,7 @@
     })
     .factory('siteService', function () {
         return chrome.extension.getBackgroundPage().siteService;
+    })
+    .factory('syncService', function () {
+        return chrome.extension.getBackgroundPage().syncService;
     });

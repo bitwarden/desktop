@@ -40,7 +40,7 @@ function initUserService() {
             }
 
             var decodedToken = this.tokenService.decodeToken(token);
-            var twoFactor = decodedToken.authmethod === "TwoFactor";
+            var twoFactor = decodedToken.authmethod === 'TwoFactor';
 
             _userProfile = {
                 id: decodedToken.nameid,

@@ -1,41 +1,43 @@
 var FolderData = function (response, userId) {
-    var data = null;
+    this.id = response.id;
+    this.userId = userId;
+
     if (response instanceof FolderResponse) {
-        data = response;
+        this.name = response.name;
     }
     else if (response instanceof CipherResponse) {
-        data = response.Data;
+        this.name = response.data.Name;
     }
     else {
         throw 'unsupported instance';
     }
 
-    this.id = response.id;
-    this.userId = userId;
-    this.name = data.name;
     this.revisionDate = response.revisionDate;
 };
 
 var SiteData = function (response, userId) {
-    var data = null;
+    this.id = response.id;
+    this.folderId = response.folderId;
+    this.userId = userId;
+
     if (response instanceof SiteResponse) {
-        data = response;
+        this.name = response.name;
+        this.uri = response.uri;
+        this.username = response.username;
+        this.password = response.password;
+        this.notes = response.notes;
     }
     else if (response instanceof CipherResponse) {
-        data = response.Data;
+        this.name = response.data.Name;
+        this.uri = response.data.Uri;
+        this.username = response.data.Username;
+        this.password  = response.data.Password;
+        this.notes = response.notes = response.data.Notes;;
     }
     else {
         throw 'unsupported instance';
     }
 
-    this.id = response.id;
-    this.folderId = response.folderId;
-    this.userId = userId;
-    this.name = data.name;
-    this.uri = data.uri;
-    this.username = data.username;
-    this.password = data.password;
-    this.notes = data.notes;
     this.favorite = response.favorite;
     this.revisionDate = response.revisionDate;
 };

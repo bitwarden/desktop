@@ -15,39 +15,39 @@ function initSyncService() {
         }
 
         var self = this;
-        this.userService.isAuthenticated(function (isAuthenticated) {
+        self.userService.isAuthenticated(function (isAuthenticated) {
             if (!isAuthenticated) {
                 callback(false);
                 return;
             }
 
-            syncStarted();
-            var now = new Date();
-            var ciphers = self.apiService.getCiphers(function (response) {
-                var sites = {};
-                var folders = {};
+            self.userService.getUserId(function (userId) {
+                syncStarted();
+                var now = new Date();
+                var ciphers = self.apiService.getCiphers(function (response) {
+                    var sites = {};
+                    var folders = {};
 
-                for (var i = 0; i < response.Data.lenth; i++) {
-                    var data = response.Data[i];
-                    if (data.type === 1) {
-                        sites[data.id] = new SiteData(data);
+                    for (var i = 0; i < response.data.length; i++) {
+                        var data = response.data[i];
+                        if (data.type === 1) {
+                            sites[data.id] = new SiteData(data, userId);
+                        }
+                        else if (data.type === 0) {
+                            folders[data.id] = new FolderData(data, userId);
+                        }
                     }
-                    else if (data.type === 0) {
-                        folders[data.id] = new FolderData(data);
-                    }
-                }
 
-                folderService.replace(folders, function () {
-                    siteService.replace(sites, function () {
-                        setLastSync(now, function () {
-                            syncCompleted(true);
-                            callback(true);
+                    self.folderService.replace(folders, function () {
+                        self.siteService.replace(sites, function () {
+                            self.setLastSync(now, function () {
+                                syncCompleted(true);
+                                callback(true);
+                            });
                         });
                     });
-                });
-
-            }, handleError);
-
+                }, handleError);
+            });
         });
     };
 
@@ -71,12 +71,12 @@ function initSyncService() {
             self.userService.getUserId(function (userId) {
                 self.folderService.getAll(function (folders) {
                     var localFolders = {};
-                    for (var i = 0; i < folders.lenth; i++) {
+                    for (var i = 0; i < folders.length; i++) {
                         localFolders[folders[i].id] = folders[i];
                     }
 
                     var data = [];
-                    for (var j = 0; j < serverFolders.lenth; j++) {
+                    for (var j = 0; j < serverFolders.length; j++) {
                         var serverFolder = serverFolders[j];
                         var existingLocalFolder = localFolders[serverFolder.id];
 
@@ -105,12 +105,12 @@ function initSyncService() {
             self.userService.getUserId(function (userId) {
                 self.siteService.getAll(function (sites) {
                     var localSites = {};
-                    for (var i = 0; i < sites.lenth; i++) {
+                    for (var i = 0; i < sites.length; i++) {
                         localSites[sites[i].id] = sites[i];
                     }
 
                     var data = [];
-                    for (var j = 0; j < serverSites.lenth; j++) {
+                    for (var j = 0; j < serverSites.length; j++) {
                         var serverSite = serverSites[j];
                         var existingLocalSite = localSites[serverSite.id];
 

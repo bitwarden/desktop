@@ -7,14 +7,11 @@
         $scope.folders = [];
         $scope.focusedSiteId = null;
 
-        $scope.$on("$ionicView.enter", function (event, data) {
+        $scope.$on('$ionicView.enter', function (event, data) {
             loadVault();
         });
 
         function loadVault() {
-            $scope.sites = [];
-            $scope.folders = [];
-
             var decSites = [];
             var decFolders = [{
                 id: null,
@@ -25,12 +22,12 @@
                 siteService.getAll(function (sites) {
                     var promises = [];
 
-                    for (var i = 0; i < folders.length; i++) {
+                    for (var i = 1; i < folders.length; i++) {
                         decFolders.push({
                             id: folders[i].id
                         });
 
-                        var folderNamePromise = cipherService.decrypt(sites[i].name, i);
+                        var folderNamePromise = cipherService.decrypt(folders[i].name, i);
                         promises.push(folderNamePromise);
                         folderNamePromise.then(function (obj) {
                             decFolders[obj.index].name = obj.val;
@@ -64,6 +61,14 @@
                 });
             });
         }
+
+        $scope.folderSort = function (item) {
+            if (!item.id) {
+                return '';
+            }
+
+            return item.name.toLowerCase();
+        };
 
         $scope.viewSite = function (site) {
             $scope.focusedSiteId = site.id;
@@ -111,7 +116,7 @@
             $scope.focusedSiteId = null;
         };
 
-        $scope.$on('modal.hidden', function () {
+        $scope.$on('closeViewSite.hidden', function () {
             console.log('modal hidden');
             loadVault();
         });

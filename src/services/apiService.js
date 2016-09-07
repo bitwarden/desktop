@@ -203,8 +203,8 @@ function initApiService() {
                 dataType: 'json',
                 success: function (response) {
                     var data = [];
-                    for (var i = 0; i < response.length; i++) {
-                        data.push(new CipherResponse(response[i]));
+                    for (var i = 0; i < response.Data.length; i++) {
+                        data.push(new CipherResponse(response.Data[i]));
                     }
 
                     success(new ListResponse(data))

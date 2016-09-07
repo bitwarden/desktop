@@ -2,7 +2,7 @@
     this.id = response.Id;
     this.folderId = response.FolderId;
     this.type = response.Type;
-    this.favorite = response.favorite;
+    this.favorite = response.Favorite;
     this.data = response.Data;
     this.revisionDate = response.RevisionDate;
 };
@@ -21,7 +21,7 @@ var SiteResponse = function (response) {
     this.username = response.Username;
     this.password = response.Password;
     this.notes = response.Notes;
-    this.favorite = response.favorite;
+    this.favorite = response.Favorite;
     this.revisionDate = response.RevisionDate;
 
     if(response.Folder) {
@@ -47,7 +47,7 @@ var TokenResponse = function (response) {
 };
 
 var ListResponse = function (data) {
-    this.Data = data;
+    this.data = data;
 };
 
 var ErrorResponse = function (response) {
