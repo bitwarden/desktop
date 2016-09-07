@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.services', ['ngResource', 'angular-jwt']);
+    .module('bit.services', ['angular-jwt']);

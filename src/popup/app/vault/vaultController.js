@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $ionicModal, siteService, folderService, $q, cipherService) {
+    .controller('vaultController', function ($scope, siteService, folderService, $q, cipherService) {
         $scope.parentScope = $scope;
         $scope.sites = [];
         $scope.folders = [];
@@ -70,6 +70,7 @@
             return item.name.toLowerCase();
         };
 
+        /*
         $scope.viewSite = function (site) {
             $scope.focusedSiteId = site.id;
             $ionicModal.fromTemplateUrl('app/vault/views/vaultViewSite.html', {
@@ -101,6 +102,7 @@
                 modal.show();
             });
         };
+        */
 
         $scope.closeAddSite = function () {
             $scope.addSiteModal.hide();

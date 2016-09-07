@@ -1,6 +1,6 @@
 ﻿angular
     .module('bit', [
-        'ionic',
+        'ui.router',
         'angular-jwt',
 
         'bit.services',

@@ -13,10 +13,10 @@
   },
   "background": {
     "scripts": [
-      "node_modules/jquery/dist/jquery.min.js",
-      "node_modules/sjcl/sjcl.js",
-      "node_modules/sjcl/core/cbc.js",
-      "node_modules/sjcl/core/bitArray.js",
+      "lib/jquery/jquery.js",
+      "lib/sjcl/sjcl.js",
+      "lib/sjcl/cbc.js",
+      "lib/sjcl/bitArray.js",
       "models/api/requestModels.js",
       "models/api/responseModels.js",
       "models/dataModels.js",

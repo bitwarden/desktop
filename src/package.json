@@ -2,9 +2,26 @@
   "name": "bitwarden",
   "version": "0.0.1",
   "devDependencies": {
-    "ionic-framework-v1": "1.3.1",
     "sjcl": "1.0.3",
     "angular-jwt": "0.0.9",
-    "jquery": "3.1.0"
+    "jquery": "2.2.4",
+    "bootstrap": "3.3.7",
+    "font-awesome": "4.6.3",
+    "angular": "1.5.8",
+    "angular-ui-bootstrap": "2.1.3",
+    "angular-ui-router": "0.3.1",
+    "angular-animate": "1.5.8",
+    "gulp": "3.9.1",
+    "gulp-less": "3.1.0",
+    "gulp-preprocess": "2.0.0",
+    "gulp-concat": "2.6.0",
+    "gulp-rename": "1.2.2",
+    "rimraf": "2.5.4",
+    "jshint": "2.9.3",
+    "gulp-jshint": "2.0.1",
+    "run-sequence": "1.2.2",
+    "ngclipboard": "1.1.1",
+    "clipboard": "1.5.12",
+    "merge-stream": "1.0.0"
   }
 }
