@@ -9,10 +9,10 @@
     merge = require('merge-stream');
 
 var paths = {};
-paths.dist = '../dist/';
-paths.libDir = './lib/';
+paths.dist = './dist/';
+paths.libDir = './src/lib/';
 paths.npmDir = './node_modules/';
-paths.popupDir = './popup/';
+paths.popupDir = './src/popup/';
 paths.lessDir = paths.popupDir + 'less/';
 paths.cssDir = paths.popupDir + 'css/';
 
