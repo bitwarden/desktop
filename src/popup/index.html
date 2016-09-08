@@ -1,4 +1,5 @@
-﻿<html ng-app="bit">
+﻿<!DOCTYPE html>
+<html ng-app="bit">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -29,6 +30,10 @@
     <script src="app/services/loginService.js"></script>
     <script src="app/services/cipherService.js"></script>
 
+    <script src="app/global/globalModule.js"></script>
+    <script src="app/global/mainController.js"></script>
+    <script src="app/global/tabsController.js"></script>
+
     <script src="app/accounts/accountsModule.js"></script>
     <script src="app/accounts/accountsLoginController.js"></script>
 
@@ -46,19 +51,8 @@
 
     <script src="app/tools/toolsModule.js"></script>
     <script src="app/tools/toolsController.js"></script>
-
-    <style>
-        body {
-            width: 320px;
-            height: 568px;
-        }
-    </style>
 </head>
-<body>
-    <ion-nav-bar class="bar-positive">
-        <ion-nav-back-button>
-        </ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
+<body ng-controller="mainController as main">
+    <div ui-view></div>
 </body>
 </html>

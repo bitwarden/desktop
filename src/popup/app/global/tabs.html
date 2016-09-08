@@ -1,14 +1,9 @@
-﻿<ion-tabs class="tabs-icon-top tabs-positive">
-    <ion-tab title="Current Sites" icon="ion-arrow-swap" ui-sref="tabs.current">
-        <ion-nav-view name="current-tab"></ion-nav-view>
-    </ion-tab>
-    <ion-tab title="My Vault" icon="ion-android-lock" ui-sref="tabs.vault">
-        <ion-nav-view name="vault-tab"></ion-nav-view>
-    </ion-tab>
-    <ion-tab title="Tools" icon="ion-settings" ui-sref="tabs.tools">
-        <ion-nav-view name="tools-tab"></ion-nav-view>
-    </ion-tab>
-    <ion-tab title="Settings" icon="ion-gear-a" ui-sref="tabs.settings">
-        <ion-nav-view name="settings-tab"></ion-nav-view>
-    </ion-tab>
-</ion-tabs>
+﻿<div ui-view></div>
+<div class="tabs" ng-controller="tabsController">
+    <ul>
+        <li class="active"><a ui-sref="tabs.current"><i class="fa fa-star fa-2x"></i> Current</a></li>
+        <li><a ui-sref="tabs.vault"><i class="fa fa-lock fa-2x"></i> My Vault</a></li>
+        <li><a ui-sref="tabs.tools"><i class="fa fa-wrench fa-2x"></i> Tools</a></li>
+        <li><a ui-sref="tabs.settings"><i class="fa fa-cogs fa-2x"></i> Settings</a></li>
+    </ul>
+</div>
