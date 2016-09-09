@@ -13,6 +13,7 @@
     <script src="../lib/bootstrap/js/bootstrap.js"></script>
 
     <script src="../lib/angular/angular.js"></script>
+    <script src="../lib/angular-animate/angular-animate.js"></script>
     <script src="../lib/angular-ui-router/angular-ui-router.js"></script>
     <script src="../lib/angular-jwt/angular-jwt.js"></script>
 
@@ -52,7 +53,7 @@
     <script src="app/tools/toolsModule.js"></script>
     <script src="app/tools/toolsController.js"></script>
 </head>
-<body ng-controller="mainController as main">
-    <div ui-view></div>
+<body ng-controller="mainController as main" class="{{main.animation}}">
+    <div ui-view class="main-view"></div>
 </body>
 </html>

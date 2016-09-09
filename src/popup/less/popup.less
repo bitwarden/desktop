@@ -1,11 +1,19 @@
 ﻿@import "../../../node_modules/bootstrap/less/bootstrap.less";
 @import "variables.less";
 @import "components.less";
+@import "animations.less";
 
 body {
     width: 320px;
     height: 568px;
     background-color: @background-color;
+}
+
+.main-view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 980;
 }
 
 .content {
@@ -15,6 +23,7 @@ body {
     left: 0;
     right: 0;
     overflow: auto;
+    background-color: @background-color;
 
     &.content-tabs {
         bottom: 55px;

@@ -2,6 +2,7 @@
     .module('bit', [
         'ui.router',
         'angular-jwt',
+        'ngAnimate',
 
         'bit.services',
 

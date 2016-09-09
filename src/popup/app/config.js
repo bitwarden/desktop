@@ -30,20 +30,23 @@
                 url: "/login",
                 controller: 'accountsLoginController',
                 templateUrl: "app/accounts/views/accountsLogin.html",
-                data: { authorize: false }
+                data: { authorize: false },
+                params: { animation: null }
             })
             .state('twoFactor', {
                 url: "/two-factor",
                 controller: 'accountsLoginController',
                 templateUrl: "app/accounts/views/accountsLoginTwoFactor.html",
-                data: { authorize: false }
+                data: { authorize: false },
+                params: { animation: null }
             })
 
             .state('tabs', {
                 url: "/tab",
                 abstract: true,
                 templateUrl: "app/global/tabs.html",
-                data: { authorize: true }
+                data: { authorize: true },
+                params: { animation: null }
             })
                 .state('tabs.current', {
                     url: "/current",
@@ -70,19 +73,22 @@
                 url: "/view-site?siteId",
                 templateUrl: "app/vault/views/vaultViewSite.html",
                 controller: 'vaultViewSiteController',
-                data: { authorize: true }
+                data: { authorize: true },
+                params: { animation: null }
             })
             .state('addSite', {
                 url: "/add-site",
                 templateUrl: "app/vault/views/vaultAddSite.html",
                 controller: 'vaultAddSiteController',
-                data: { authorize: true }
+                data: { authorize: true },
+                params: { animation: null }
             })
             .state('editSite', {
                 url: "/edit-site?siteId",
                 templateUrl: "app/vault/views/vaultEditSite.html",
                 controller: 'vaultEditSiteController',
-                data: { authorize: true }
+                data: { authorize: true },
+                params: { animation: null }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {

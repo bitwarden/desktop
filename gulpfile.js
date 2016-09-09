@@ -66,6 +66,10 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'angular'
         },
         {
+            src: paths.npmDir + 'angular-animate/angular-animate.js',
+            dest: paths.libDir + 'angular-animate'
+        },
+        {
             src: paths.npmDir + 'angular-ui-bootstrap/dist/*tpls*.js',
             dest: paths.libDir + 'angular-ui-bootstrap'
         },
