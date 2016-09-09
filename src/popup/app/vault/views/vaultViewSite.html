@@ -1,39 +1,34 @@
-﻿<ion-modal-view ng-controller="vaultViewSiteController">
-    <ion-header-bar class="bar bar-header bar-positive">
-        <button class="button button-clear button-primary" ng-click="close()">Close</button>
-        <h1 class="title">View Site</h1>
-        <button class="button button-clear button-primary" ng-click="editSite()">Edit</button>
-    </ion-header-bar>
-    <ion-content>
-        <div class="list">
-            <div class="item item-divider">
-                Site Information
-            </div>
-            <div class="item">
-                <div>Name</div>
-                {{site.name}}
-            </div>
-            <div class="item">
-                <div>Website</div>
-                {{site.uri}}
-            </div>
-            <div class="item">
-                <div>Username</div>
-                {{site.username}}
-            </div>
-            <div class="item">
-                <div>Password</div>
-                {{site.password}}
-            </div>
-            <div class="item item-divider">
-                Notes
-            </div>
-            <div class="item">
-                {{site.notes}}
-            </div>
-            <div class="item item-divider">
-                &nbsp;
-            </div>
+﻿<div class="header">
+    <a ng-click="close()" class="left">Close</a>
+    <a ng-click="editSite()" class="right">Edit</a>
+    <div class="title">View Site</div>
+</div>
+<div class="content">
+    <div class="list">
+        <div class="list-divider">
+            Site Information
         </div>
-    </ion-content>
-</ion-modal-view>
+        <div class="list-item">
+            <div>Name</div>
+            {{site.name}}
+        </div>
+        <div class="list-item">
+            <div>Website</div>
+            {{site.uri}}
+        </div>
+        <div class="list-item">
+            <div>Username</div>
+            {{site.username}}
+        </div>
+        <div class="list-item">
+            <div>Password</div>
+            {{site.password}}
+        </div>
+        <div class="list-divider">
+            Notes
+        </div>
+        <div class="list-item">
+            {{site.notes}}
+        </div>
+    </div>
+</div>

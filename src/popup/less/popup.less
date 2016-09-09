@@ -21,15 +21,16 @@ body {
     left: 0;
     right: 0;
     overflow: hidden;
-    
+
     a {
         color: white !important;
         text-decoration: none;
-        
+
         &:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
     }
+
     .title {
         font-weight: bold;
         display: block;
@@ -38,11 +39,13 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
     .left {
         float: left;
         display: block;
         padding: 12px 10px;
     }
+
     .right {
         float: right;
         display: block;
@@ -69,20 +72,20 @@ body {
     left: 0;
     right: 0;
     overflow: hidden;
-    
+
     ul {
         width: 100%;
         list-style: none;
         padding: 0;
         margin: 0;
-        
+
         li {
             width: 25%;
             float: left;
             display: inline-block;
             padding: 0;
             margin: 0;
-            
+
             a {
                 text-align: center;
                 display: block;
@@ -93,17 +96,17 @@ body {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                
+
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.8);
                 }
-                
+
                 i {
                     display: block;
                     margin-bottom: 2px;
                 }
             }
-            
+
             &.active {
                 a {
                     color: @brand-primary;
@@ -121,17 +124,28 @@ body {
         border-bottom: 1px solid #ddd;
         color: #333;
         text-decoration: none;
-        
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
         &:last-child {
             border: none;
         }
+
         .text {
             display: block;
         }
+
         .detail {
             font-size: 12px;
             color: #777;
             display: block;
         }
+    }
+
+    .list-divider {
+        background-color: #eeeeee;
+        padding: 10px 10px;
+        border-bottom: 1px solid #ddd;
     }
 }

@@ -1,21 +1,19 @@
-﻿<ion-view view-title="My Vault">
-    <ion-nav-buttons side="secondary">
-        <button class="button button-icon icon ion-ios-plus-empty" ng-click="addSite()"></button>
-    </ion-nav-buttons>
-    <ion-content>
-        <div class="list">
-            <ng-repeat ng-repeat="folder in folders | orderBy: folderSort" ng-show="folders.length">
-                <div class="item item-divider">
-                    {{folder.name}}
-                </div>
-                <ng-repeat ng-repeat="site in folderSites = (sites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
-                    <a ng-click="viewSite(site)" class="item item-button-right">
-                        {{site.name}}<br />
-                        {{site.username}}
-                        <span class="button button-clear button-dark"><i class="icon ion-more"></i></span>
-                    </a>
-                </ng-repeat>
-            </ng-repeat>
-        </div>
-    </ion-content>
-</ion-view>
+﻿<div class="header">
+    <a href="#" class="left"><i class="fa fa-chevron-left"></i> Back</a>
+    <a class="right" ng-click="addSite()"><i class="fa fa-plus"></i></a>
+    <div class="title">My Vault</div>
+</div>
+<div class="content">
+    <div class="list">
+        <ng-repeat ng-repeat="folder in folders | orderBy: folderSort" ng-show="folders.length">
+            <div class="list-divider">
+                <i class="fa fa-folder-open"></i> {{folder.name}}
+            </div>
+            <a ng-click="viewSite(site)" class="list-item" ng-repeat="site in folderSites = (sites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
+                <span class="text">{{site.name}}</span>
+                <span class="detail">{{site.username}}</span>
+                <!--<span class="btn btn-link pull-right"><i class="fa fa-ellipsis-h"></i></span>-->
+            </a>
+        </ng-repeat>
+    </div>
+</div>

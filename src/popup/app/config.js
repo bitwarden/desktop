@@ -50,39 +50,36 @@
             })
                 .state('tabs.current', {
                     url: "/current",
-                    views: {
-                        'current-tab': {
-                            templateUrl: "app/current/views/current.html",
-                            controller: 'currentController'
-                        }
-                    }
+                    templateUrl: "app/current/views/current.html",
+                    controller: 'currentController'
                 })
                 .state('tabs.vault', {
                     url: "/vault",
-                    views: {
-                        'vault-tab': {
-                            templateUrl: "app/vault/views/vault.html",
-                            controller: 'vaultController'
-                        }
-                    }
+                    templateUrl: "app/vault/views/vault.html",
+                    controller: 'vaultController'
                 })
                 .state('tabs.settings', {
                     url: "/settings",
-                    views: {
-                        'settings-tab': {
-                            templateUrl: "app/settings/views/settings.html",
-                            controller: 'settingsController'
-                        }
-                    }
+                    templateUrl: "app/settings/views/settings.html",
+                    controller: 'settingsController'
                 })
                 .state('tabs.tools', {
                     url: "/tools",
-                    views: {
-                        'tools-tab': {
-                            templateUrl: "app/tools/views/tools.html",
-                            controller: 'toolsController'
-                        }
-                    }
+                    templateUrl: "app/tools/views/tools.html",
+                    controller: 'toolsController'
+                })
+            .state('empty', {
+                url: "/empty",
+                abstract: true,
+                templateUrl: "app/global/enoty.html",
+                data: {
+                    authorize: true
+                }
+            })
+                .state('empty.viewSite', {
+                    url: "/view-site",
+                    templateUrl: "app/vault/views/vaultViewSite.html",
+                    controller: 'vaultViewSiteController'
                 });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {

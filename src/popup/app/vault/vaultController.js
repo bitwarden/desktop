@@ -7,9 +7,7 @@
         $scope.folders = [];
         $scope.focusedSiteId = null;
 
-        $scope.$on('$ionicView.enter', function (event, data) {
-            loadVault();
-        });
+        loadVault();
 
         function loadVault() {
             var decSites = [];

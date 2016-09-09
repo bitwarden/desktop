@@ -23,7 +23,7 @@
                     });
                 });
             });
-        }
+        };
 
         _service.decryptSite = function (site) {
             var model = {
@@ -50,7 +50,7 @@
                     resolve(model);
                 });
             });
-        }
+        };
 
         _service.decrypt = decrypt;
 

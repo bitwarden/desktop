@@ -1,24 +1,25 @@
-﻿<ion-view view-title="Settings">
-    <ion-content>
-        <div class="list">
-            <div class="item item-divider">
-                Manage
-            </div>
-            <a class="item" href="#">
-                Folders
-            </a>
-            <a class="item" ng-click="sync()">
-                Sync
-            </a>
-            <div class="item item-divider">
-                Current Session
-            </div>
-            <a class="item" href="#">
-                Lock
-            </a>
-            <a class="item"  ng-click="logOut()">
-                Log out
-            </a>
+﻿<div class="header">
+    <div class="title">Settings</div>
+</div>
+<div class="content">
+    <div class="list">
+        <div class="list-divider">
+            Manage
         </div>
-    </ion-content>
-</ion-view>
+        <a class="list-item" href="#">
+            Folders
+        </a>
+        <a class="list-item" href="#" ng-click="sync()">
+            Sync
+        </a>
+        <div class="list-divider">
+            Current Session
+        </div>
+        <a class="list-item" href="#">
+            Lock
+        </a>
+        <a class="list-item" href="#" ng-click="logOut()">
+            Log out
+        </a>
+    </div>
+</div>

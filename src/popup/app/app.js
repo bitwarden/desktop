@@ -5,6 +5,7 @@
 
         'bit.services',
 
+        'bit.global',
         'bit.accounts',
         'bit.current',
         'bit.vault',
