@@ -5,49 +5,58 @@
 </div>
 <div class="content">
     <div class="list">
-        <div class="list-divider">
-            Site Information
+        <div class="list-section">
+            <div class="list-section-header">
+                Site Information
+            </div>
+            <div class="list-section-items">
+                <div class="list-section-item">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" ng-model="site.name">
+                </div>
+                <div class="list-section-item">
+                    <label for="uri">URI</label>
+                    <input id="uri" type="text" ng-model="site.uri">
+                </div>
+                <div class="list-section-item">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" ng-model="site.username">
+                </div>
+                <div class="list-section-item">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" ng-model="site.password">
+                </div>
+                <a class="list-section-item" href="#">
+                    Generate Password
+                    <i class="fa fa-chevron-right pull-right"></i>
+                </a>
+            </div>
         </div>
-        <div class="list-item">
-            <label>Name</label>
-            <input type="text" ng-model="site.name">
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item">
+                    <label for="folder">Folder</label>
+                    <select id="folder">
+                        <option>Blue</option>
+                        <option selected>Green</option>
+                        <option>Red</option>
+                    </select>
+                </div>
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="favorite">Favorite</label>
+                    <input id="favorite" type="checkbox" ng-model="site.favorite">
+                </div>
+            </div>
         </div>
-        <div class="list-item">
-            <label>URI</label>
-            <input type="text" ng-model="site.uri">
-        </div>
-        <div class="list-item">
-            <label>Username</label>
-            <input type="text" ng-model="site.username">
-        </div>
-        <div class="list-item">
-            <label>Password</label>
-            <input type="password" ng-model="site.password">
-        </div>
-        <a class="list-item" href="#">
-            Generate Password
-            <i class="fa fa-chevron-right"></i>
-        </a>
-        <div class="list-divider">
-            &nbsp;
-        </div>
-        <div class="list-item">
-            <label>Folder</label>
-            <select>
-                <option>Blue</option>
-                <option selected>Green</option>
-                <option>Red</option>
-            </select>
-        </div>
-        <div class="list-item">
-            <label>Favorite</label>
-            <input type="checkbox" ng-model="site.favorite">
-        </div>
-        <div class="list-divider">
-            Notes
-        </div>
-        <div class="list-item">
-            <textarea rows="5" ng-model="site.notes"></textarea>
+        <div class="list-section">
+            <div class="list-section-header">
+                <label for="notes">Notes</label>
+            </div>
+            <div class="list-section-items">
+                <div class="list-section-item">
+                    <textarea id="notes" rows="5" ng-model="site.notes"></textarea>
+                </div>
+            </div>
         </div>
     </div>
 </div>

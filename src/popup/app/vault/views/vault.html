@@ -2,13 +2,13 @@
     <a class="right" ui-sref="addSite"><i class="fa fa-plus fa-lg"></i></a>
     <div class="title">My Vault</div>
 </div>
-<div class="content">
+<div class="content content-tabs">
     <div class="list">
         <ng-repeat ng-repeat="folder in folders | orderBy: folderSort" ng-show="folders.length">
-            <div class="list-divider">
+            <div class="list-item-header">
                 <i class="fa fa-folder-open"></i> {{folder.name}}
             </div>
-            <a ui-sref="viewSite({siteId: site.id})" class="list-item" ng-repeat="site in folderSites = (sites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
+            <a ui-sref="viewSite({siteId: site.id})" class="list-item list-item-condensed" ng-repeat="site in folderSites = (sites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
                 <span class="text">{{site.name}}</span>
                 <span class="detail">{{site.username}}</span>
                 <!--<span class="btn btn-link pull-right"><i class="fa fa-ellipsis-h"></i></span>-->

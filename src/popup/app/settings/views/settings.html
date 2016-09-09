@@ -1,25 +1,36 @@
 ﻿<div class="header">
     <div class="title">Settings</div>
 </div>
-<div class="content">
+<div class="content content-tabs">
     <div class="list">
-        <div class="list-divider">
-            Manage
+        <div class="list-section">
+            <div class="list-section-header">
+                Manage
+            </div>
+            <div class="list-section-items">
+                <a class="list-section-item" href="#">
+                    Folders
+                </a>
+                <a class="list-section-item" href="#" ng-click="sync()">
+                    Sync
+                </a>
+            </div>
         </div>
-        <a class="list-item" href="#">
-            Folders
-        </a>
-        <a class="list-item" href="#" ng-click="sync()">
-            Sync
-        </a>
-        <div class="list-divider">
-            Current Session
+        <div class="list-section">
+            <div class="list-section-header">
+                Current Session
+            </div>
+            <div class="list-section-items">
+                <a class="list-section-item" href="#">
+                    Lock
+                </a>
+                <a class="list-section-item" href="#" ng-click="logOut()">
+                    Log out
+                </a>
+            </div>
+            <div class="list-section-footer">
+                This is a footer note.
+            </div>
         </div>
-        <a class="list-item" href="#">
-            Lock
-        </a>
-        <a class="list-item" href="#" ng-click="logOut()">
-            Log out
-        </a>
     </div>
 </div>

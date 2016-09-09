@@ -4,31 +4,39 @@
     <div class="title">View Site</div>
 </div>
 <div class="content">
-    <div class="list">
-        <div class="list-divider">
-            Site Information
+    <div class="list list-no-selection">
+        <div class="list-section">
+            <div class="list-section-header">
+                Site Information
+            </div>
+            <div class="list-section-items">
+                <div class="list-section-item">
+                    <span class="item-label">Name</span>
+                    {{site.name}}
+                </div>
+                <div class="list-section-item">
+                    <span class="item-label">Website</span>
+                    {{site.uri}}
+                </div>
+                <div class="list-section-item">
+                    <span class="item-label">Username</span>
+                    {{site.username}}
+                </div>
+                <div class="list-section-item">
+                    <span class="item-label">Password</span>
+                    {{site.password}}
+                </div>
+            </div>
         </div>
-        <div class="list-item">
-            <div>Name</div>
-            {{site.name}}
-        </div>
-        <div class="list-item">
-            <div>Website</div>
-            {{site.uri}}
-        </div>
-        <div class="list-item">
-            <div>Username</div>
-            {{site.username}}
-        </div>
-        <div class="list-item">
-            <div>Password</div>
-            {{site.password}}
-        </div>
-        <div class="list-divider">
-            Notes
-        </div>
-        <div class="list-item">
-            {{site.notes}}
+        <div class="list-section">
+            <div class="list-section-header">
+                Notes
+            </div>
+            <div class="list-section-items">
+                <div class="list-section-item">
+                    {{site.notes}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
