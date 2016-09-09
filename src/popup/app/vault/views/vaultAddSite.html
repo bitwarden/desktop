@@ -1,63 +1,53 @@
-﻿<ion-modal-view ng-controller="vaultAddSiteController">
-    <ion-header-bar class="bar bar-header bar-positive">
-        <button class="button button-clear button-primary" ng-click="close()">Cancel</button>
-        <h1 class="title">Add Site</h1>
-        <button class="button button-clear button-primary" ng-click="createSite(site)">Save</button>
-    </ion-header-bar>
-    <ion-content>
-        <div class="list">
-            <div class="item item-divider">
-                Site Information
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Name</span>
-                <input type="text" ng-model="site.name">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">URI</span>
-                <input type="text" ng-model="site.uri">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Username</span>
-                <input type="text" ng-model="site.username">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Password</span>
-                <input type="password" ng-model="site.password">
-            </label>
-            <a class="item item-icon-right" href="#">
-                Generate Password
-                <i class="icon ion-ios-arrow-right"></i>
-            </a>
-            <div class="item item-divider">
-                &nbsp;
-            </div>
-            <label class="item item-input item-select">
-                <div class="input-label">Folder</div>
-                <select>
-                    <option>Blue</option>
-                    <option selected>Green</option>
-                    <option>Red</option>
-                </select>
-            </label>
-            <div class="item item-toggle">
-                Favorite
-                <label class="toggle toggle-assertive">
-                    <input type="checkbox" ng-model="site.favorite">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
-            </div>
-            <div class="item item-divider">
-                Notes
-            </div>
-            <div class="item item-input">
-                <textarea rows="5" ng-model="site.notes"></textarea>
-            </div>
-            <div class="item item-divider">
-                &nbsp;
-            </div>
+﻿<div class="header">
+    <a ui-sref="tabs.vault" class="left">Close</a>
+    <a href="#" class="right">Save</a>
+    <div class="title">Add Site</div>
+</div>
+<div class="content">
+    <div class="list">
+        <div class="list-divider">
+            Site Information
         </div>
-    </ion-content>
-</ion-modal-view>
+        <div class="list-item">
+            <label>Name</label>
+            <input type="text" ng-model="site.name">
+        </div>
+        <div class="list-item">
+            <label>URI</label>
+            <input type="text" ng-model="site.uri">
+        </div>
+        <div class="list-item">
+            <label>Username</label>
+            <input type="text" ng-model="site.username">
+        </div>
+        <div class="list-item">
+            <label>Password</label>
+            <input type="password" ng-model="site.password">
+        </div>
+        <a class="list-item" href="#">
+            Generate Password
+            <i class="fa fa-chevron-right"></i>
+        </a>
+        <div class="list-divider">
+            &nbsp;
+        </div>
+        <div class="list-item">
+            <label>Folder</label>
+            <select>
+                <option>Blue</option>
+                <option selected>Green</option>
+                <option>Red</option>
+            </select>
+        </div>
+        <div class="list-item">
+            <label>Favorite</label>
+            <input type="checkbox" ng-model="site.favorite">
+        </div>
+        <div class="list-divider">
+            Notes
+        </div>
+        <div class="list-item">
+            <textarea rows="5" ng-model="site.notes"></textarea>
+        </div>
+    </div>
+</div>

@@ -30,23 +30,20 @@
                 url: "/login",
                 controller: 'accountsLoginController',
                 templateUrl: "app/accounts/views/accountsLogin.html",
-                data: {
-                    authorize: false
-                }
+                data: { authorize: false }
             })
-                .state('login.twoFactor', {
-                    url: "/two-factor",
-                    controller: 'accountsLoginController',
-                    templateUrl: "app/accounts/views/accountsLoginTwoFactor.html"
-                })
+            .state('twoFactor', {
+                url: "/two-factor",
+                controller: 'accountsLoginController',
+                templateUrl: "app/accounts/views/accountsLoginTwoFactor.html",
+                data: { authorize: false }
+            })
 
             .state('tabs', {
                 url: "/tab",
                 abstract: true,
                 templateUrl: "app/global/tabs.html",
-                data: {
-                    authorize: true
-                }
+                data: { authorize: true }
             })
                 .state('tabs.current', {
                     url: "/current",
@@ -68,16 +65,24 @@
                     templateUrl: "app/tools/views/tools.html",
                     controller: 'toolsController'
                 })
+
             .state('viewSite', {
                 url: "/view-site?siteId",
                 templateUrl: "app/vault/views/vaultViewSite.html",
                 controller: 'vaultViewSiteController',
-                params: {
-                    siteId: null
-                },
-                data: {
-                    authorize: true
-                }
+                data: { authorize: true }
+            })
+            .state('addSite', {
+                url: "/add-site",
+                templateUrl: "app/vault/views/vaultAddSite.html",
+                controller: 'vaultAddSiteController',
+                data: { authorize: true }
+            })
+            .state('editSite', {
+                url: "/edit-site?siteId",
+                templateUrl: "app/vault/views/vaultEditSite.html",
+                controller: 'vaultEditSiteController',
+                data: { authorize: true }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {
