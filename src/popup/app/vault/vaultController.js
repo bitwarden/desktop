@@ -2,7 +2,6 @@
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, siteService, folderService, $q, cipherService) {
-        $scope.parentScope = $scope;
         $scope.sites = [];
         $scope.folders = [];
         $scope.focusedSiteId = null;
@@ -69,17 +68,6 @@
         };
 
         /*
-        $scope.viewSite = function (site) {
-            $scope.focusedSiteId = site.id;
-            $ionicModal.fromTemplateUrl('app/vault/views/vaultViewSite.html', {
-                scope: $scope,
-                animation: 'slide-in-up'
-            }).then(function (modal) {
-                $scope.viewSiteModal = modal;
-                modal.show();
-            });
-        };
-
         $scope.editSite = function (site) {
             $scope.focusedSiteId = site.id;
             $ionicModal.fromTemplateUrl('app/vault/views/vaultEditSite.html', {

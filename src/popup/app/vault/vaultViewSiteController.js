@@ -1,19 +1,11 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultViewSiteController', function ($scope, siteService, cipherService) {
+    .controller('vaultViewSiteController', function ($scope, $stateParams, siteService, cipherService) {
         $scope.site = null;
-        siteService.get($scope.parentScope.focusedSiteId, function (site) {
+        siteService.get($stateParams.siteId, function (site) {
             cipherService.decryptSite(site).then(function (model) {
                 $scope.site = model;
             });
         });
-
-        $scope.editSite = function () {
-            // TODO
-        };
-
-        $scope.close = function () {
-            $scope.parentScope.closeViewSite();
-        };
     });

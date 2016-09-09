@@ -9,7 +9,7 @@
             <div class="list-divider">
                 <i class="fa fa-folder-open"></i> {{folder.name}}
             </div>
-            <a ng-click="viewSite(site)" class="list-item" ng-repeat="site in folderSites = (sites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
+            <a ui-sref="viewSite({siteId: site.id})" class="list-item" ng-repeat="site in folderSites = (sites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
                 <span class="text">{{site.name}}</span>
                 <span class="detail">{{site.username}}</span>
                 <!--<span class="btn btn-link pull-right"><i class="fa fa-ellipsis-h"></i></span>-->

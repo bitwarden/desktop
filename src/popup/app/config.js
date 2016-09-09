@@ -68,19 +68,17 @@
                     templateUrl: "app/tools/views/tools.html",
                     controller: 'toolsController'
                 })
-            .state('empty', {
-                url: "/empty",
-                abstract: true,
-                templateUrl: "app/global/enoty.html",
+            .state('viewSite', {
+                url: "/view-site?siteId",
+                templateUrl: "app/vault/views/vaultViewSite.html",
+                controller: 'vaultViewSiteController',
+                params: {
+                    siteId: null
+                },
                 data: {
                     authorize: true
                 }
-            })
-                .state('empty.viewSite', {
-                    url: "/view-site",
-                    templateUrl: "app/vault/views/vaultViewSite.html",
-                    controller: 'vaultViewSiteController'
-                });
+            });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
