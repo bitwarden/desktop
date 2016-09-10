@@ -1,10 +1,11 @@
-﻿<form name="theForm" ng-submit="theForm.$valid && save(site)">
+﻿<form name="theForm" ng-submit="theForm.$valid && save(site)" bit-form="savePromise">
     <div class="header">
         <div class="left">
-            <a ng-click="close()" href>Close</a>
+            <a ng-click="close()" href="">Close</a>
         </div>
         <div class="right">
-            <button type="submit" class="btn btn-link">Save</button>
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Save</button>
+            <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
         </div>
         <div class="title">Add Site</div>
     </div>
@@ -17,19 +18,19 @@
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="name">Name</label>
-                        <input id="name" type="text" ng-model="site.name">
+                        <input id="name" type="text" name="Name" ng-model="site.name" bit-field>
                     </div>
                     <div class="list-section-item">
                         <label for="uri">URI</label>
-                        <input id="uri" type="text" ng-model="site.uri">
+                        <input id="uri" type="text" name="Uri" ng-model="site.uri" bit-field>
                     </div>
                     <div class="list-section-item">
                         <label for="username">Username</label>
-                        <input id="username" type="text" ng-model="site.username">
+                        <input id="username" type="text" name="Username" ng-model="site.username" bit-field>
                     </div>
                     <div class="list-section-item">
                         <label for="password">Password</label>
-                        <input id="password" type="password" ng-model="site.password">
+                        <input id="password" type="password" name="Password" ng-model="site.password" bit-field>
                     </div>
                     <a class="list-section-item" href="#">
                         Generate Password
@@ -41,7 +42,7 @@
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="folder">Folder</label>
-                        <select id="folder">
+                        <select id="folder" name="FolderId">
                             <option>Blue</option>
                             <option selected>Green</option>
                             <option>Red</option>
@@ -49,7 +50,7 @@
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="favorite">Favorite</label>
-                        <input id="favorite" type="checkbox" ng-model="site.favorite">
+                        <input id="favorite" name="Favorite" type="checkbox" ng-model="site.favorite" bit-field>
                     </div>
                 </div>
             </div>
@@ -59,7 +60,7 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <textarea id="notes" rows="5" ng-model="site.notes"></textarea>
+                        <textarea id="notes" name="Notes" rows="5" ng-model="site.notes" bit-field></textarea>
                     </div>
                 </div>
             </div>

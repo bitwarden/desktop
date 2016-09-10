@@ -4,23 +4,25 @@
     .factory('cipherService', function (cryptoService, $q) {
         var _service = {};
 
-        _service.encryptSite = function (site, callback) {
+        _service.encryptSite = function (site) {
             var model = {};
 
-            cryptoService.encrypt(site.name, function (nameCipherString) {
-                model.name = nameCipherString;
-                cryptoService.encrypt(site.uri, function (uriCipherString) {
-                    model.uri = uriCipherString;
-                    cryptoService.encrypt(site.username, function (usernameCipherString) {
-                        model.username = usernameCipherString;
-                        cryptoService.encrypt(site.password, function (passwordCipherString) {
-                            model.password = passwordCipherString;
-                            cryptoService.encrypt(site.notes, function (notesCipherString) {
-                                model.notes = notesCipherString;
-                                callback(model);
-                            });
-                        });
-                    });
+            return $q(function (resolve, reject) {
+                encrypt(site.name).then(function (cs) {
+                    model.name = cs;
+                    return encrypt(site.uri);
+                }).then(function (cs) {
+                    model.uri = cs;
+                    return encrypt(site.username);
+                }).then(function (cs) {
+                    model.username = cs;
+                    return encrypt(site.password);
+                }).then(function (cs) {
+                    model.password = cs;
+                    return encrypt(site.notes);
+                }).then(function (cs) {
+                    model.notes = cs;
+                    resolve(model);
                 });
             });
         };
@@ -70,6 +72,14 @@
                         });
                     });
                 }
+            });
+        }
+
+        function encrypt(plaintextString) {
+            return $q(function (resolve, reject) {
+                cryptoService.encrypt(plaintextString, function (cipherString) {
+                    resolve(cipherString);
+                });
             });
         }
 

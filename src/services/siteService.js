@@ -51,19 +51,19 @@ function initSiteService() {
         });
     };
 
-    SiteService.prototype.saveWithServer = function (site, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
+    SiteService.prototype.saveWithServer = function (site, successCallback, errorCallback) {
         var self = this,
             request = new SiteRequest(site);
 
         if (!site.id) {
-            self.apiService.postSite(request, apiSuccess, handleError);
+            self.apiService.postSite(request, apiSuccess, function (response) {
+                handleError(response, errorCallback)
+            });
         }
         else {
-            self.apiService.putSite(site.id, request, apiSuccess, handleError);
+            self.apiService.putSite(site.id, request, apiSuccess, function (response) {
+                handleError(response, errorCallback)
+            });
         }
 
         function apiSuccess(response) {
@@ -71,7 +71,9 @@ function initSiteService() {
             userService.getUserId(function (userId) {
                 var data = new SiteData(response, userId);
                 self.upsert(data, function () {
-                    callback(site);
+                    if (successCallback) {
+                        successCallback(site);
+                    }
                 });
             });
         }
@@ -161,18 +163,27 @@ function initSiteService() {
         });
     };
 
-    SiteService.prototype.deleteWithServer = function (id, callback) {
+    SiteService.prototype.deleteWithServer = function (id, successCallback, errorCallback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
         var self = this;
         self.apiService.deleteCipher(id, function (response) {
-            self.delete(id, callback);
-        }, handleError);
+            self.delete(id, successCallback);
+        }, function (response) {
+            handleError(response, errorCallback)
+        });
     };
 
-    function handleError() {
-        // TODO: check for unauth or forbidden and logout
+    function handleError(error, callback) {
+        if (error.status == 401 || error.status == 403) {
+            // TODO: logout
+
+        }
+
+        if (callback) {
+            callback(error);
+        }
     }
 };

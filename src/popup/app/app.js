@@ -4,6 +4,7 @@
         'angular-jwt',
         'ngAnimate',
 
+        'bit.directives',
         'bit.services',
 
         'bit.global',
