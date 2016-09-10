@@ -13,6 +13,7 @@
     left: 0;
     right: 0;
     overflow: hidden;
+    position: relative;
 
     a, button {
         color: white !important;
@@ -29,21 +30,30 @@
         font-weight: bold;
         display: block;
         padding: 12px 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     .left {
-        float: left;
         display: block;
-        padding: 12px 10px;
+        position: absolute;
+        left: 0;
+
+        a, button {
+            padding: 12px 10px;
+            display: block;
+            float: left;
+        }
     }
 
     .right {
-        float: right;
         display: block;
-        padding: 12px 10px;
+        right: 0;
+        position: absolute;
+
+        a, button {
+            padding: 12px 10px;
+            display: block;
+            float: right;
+        }
     }
 }
 

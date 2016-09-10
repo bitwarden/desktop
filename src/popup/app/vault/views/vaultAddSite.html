@@ -1,7 +1,11 @@
 ﻿<form name="theForm" ng-submit="theForm.$valid && save(site)">
     <div class="header">
-        <a ng-click="close()" href class="left">Close</a>
-        <button type="submit" class="right btn btn-link">Save</button>
+        <div class="left">
+            <a ng-click="close()" href>Close</a>
+        </div>
+        <div class="right">
+            <button type="submit" class="btn btn-link">Save</button>
+        </div>
         <div class="title">Add Site</div>
     </div>
     <div class="content">
