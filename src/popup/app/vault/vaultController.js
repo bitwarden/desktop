@@ -1,14 +1,26 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, siteService, folderService, $q, cipherService) {
-        $scope.sites = [];
-        $scope.folders = [];
-        $scope.focusedSiteId = null;
+    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, cipherService) {
+        var delayLoad = true;
+        if (!$rootScope.vaultSites) {
+            $rootScope.vaultSites =[];
+            delayLoad = false;
+        }
+        if (!$rootScope.vaultFolders) {
+            $rootScope.vaultFolders = [];
+            delayLoad = false;
+        }
 
-        loadVault();
+        if (delayLoad) {
+            setTimeout(loadVault, 1000);
+        }
+        else {
+            loadVault();
+        }
 
         function loadVault() {
+            var promises = [];
             var decSites = [];
             var decFolders = [{
                 id: null,
@@ -17,8 +29,6 @@
 
             folderService.getAll(function (folders) {
                 siteService.getAll(function (sites) {
-                    var promises = [];
-
                     for (var i = 1; i < folders.length; i++) {
                         decFolders.push({
                             id: folders[i].id
@@ -52,8 +62,8 @@
                     }
 
                     $q.all(promises).then(function () {
-                        $scope.sites = decSites;
-                        $scope.folders = decFolders;
+                        $rootScope.vaultSites = decSites;
+                        $rootScope.vaultFolders = decFolders;
                     });
                 });
             });
@@ -66,46 +76,4 @@
 
             return item.name.toLowerCase();
         };
-
-        /*
-        $scope.editSite = function (site) {
-            $scope.focusedSiteId = site.id;
-            $ionicModal.fromTemplateUrl('app/vault/views/vaultEditSite.html', {
-                scope: $scope,
-                animation: 'slide-in-up'
-            }).then(function (modal) {
-                $scope.editSiteModal = modal;
-                modal.show();
-            });
-        };
-
-        $scope.addSite = function () {
-            $ionicModal.fromTemplateUrl('app/vault/views/vaultAddSite.html', {
-                scope: $scope,
-                animation: 'slide-in-up'
-            }).then(function (modal) {
-                $scope.addSiteModal = modal;
-                modal.show();
-            });
-        };
-        */
-
-        $scope.closeAddSite = function () {
-            $scope.addSiteModal.hide();
-        };
-
-        $scope.closeViewSite = function () {
-            $scope.viewSiteModal.hide();
-            $scope.focusedSiteId = null;
-        };
-
-        $scope.closeEditSite = function () {
-            $scope.editSiteModal.hide();
-            $scope.focusedSiteId = null;
-        };
-
-        $scope.$on('closeViewSite.hidden', function () {
-            console.log('modal hidden');
-            loadVault();
-        });
     });

@@ -14,12 +14,14 @@
     right: 0;
     overflow: hidden;
 
-    a {
+    a, button {
         color: white !important;
         text-decoration: none;
+        background: none;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
         }
     }
 
@@ -100,21 +102,11 @@
 }
 
 .list {
-    .list-item {
-        border-top: 1px solid @border-color;
-
-        &:first-child {
-            border: none;
-        }
-    }
-
-    .list-item-header {
-        background-color: transparent;
-        padding: 10px 10px;
-        color: @gray-light;
-
-        + .list-item {
-            border: none;
+    .list-grouped {
+        .list-grouped-header {
+            background-color: transparent;
+            padding: 10px 10px;
+            color: @gray-light;
         }
     }
 
@@ -139,14 +131,6 @@
         .list-section-items {
             border-top: 1px solid @border-color-dark;
             border-bottom: 1px solid @border-color-dark;
-
-            .list-section-item {
-                border-bottom: 1px solid @border-color;
-
-                &:last-child {
-                    border: none;
-                }
-            }
         }
 
         .list-section-footer {
@@ -156,7 +140,7 @@
         }
     }
 
-    .list-item, .list-section-item {
+    .list-grouped-item, .list-section-item {
         display: block;
         padding: 10px 10px;
         background-color: white;
@@ -165,12 +149,17 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: @text-color;
+        border-bottom: 1px solid @border-color;
+
+        &:last-child {
+            border: none;
+        }
 
         &:hover {
             background-color: @list-item-hover;
         }
 
-        &.list-item-condensed {
+        &.condensed {
             padding: 3px 10px;
         }
 
@@ -219,7 +208,7 @@
     }
 
     &.list-no-selection {
-        .list-item, .list-section-item {
+        .list-grouped-item, .list-section-item {
             &:hover {
                 background-color: white;
             }
