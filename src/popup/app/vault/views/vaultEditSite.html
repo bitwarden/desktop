@@ -43,7 +43,7 @@
                     <div class="list-section-item">
                         <label for="folder">Folder</label>
                         <select id="folder" name="FolderId" ng-model="site.folderId" bit-field>
-                            <option ng-repeat="folder in folders" value="{{folder.id}}">{{folder.name}}</option>
+                            <option ng-repeat="folder in folders | orderBy: ['name']" value="{{folder.id}}">{{folder.name}}</option>
                         </select>
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
