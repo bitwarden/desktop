@@ -195,19 +195,21 @@
             background-color: @list-item-hover;
         }
 
-        &.condensed {
-            padding: 3px 10px;
-        }
-
         .text {
             display: block;
             color: @text-color;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .detail {
             font-size: @font-size-small;
             color: @gray-light;
             display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         label, .item-label {
@@ -216,6 +218,21 @@
             display: block;
             width: 100%;
             font-weight: normal;
+        }
+
+        .btn-list {
+            cursor: pointer;
+            float: right;
+            display: block;
+            padding: 10px 8px 10px 12px;
+        }
+
+        &.condensed {
+            padding: 3px 10px;
+
+            .btn-list {
+                padding: 8px 8px 8px 12px;
+            }
         }
 
         input:not([type="checkbox"]), select, textarea {

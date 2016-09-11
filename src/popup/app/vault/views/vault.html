@@ -11,9 +11,9 @@
                 <i class="fa fa-folder-open"></i> {{folder.name}}
             </div>
             <a ui-sref="viewSite({siteId: site.id, animation: 'in-slide-up'})" class="list-grouped-item condensed" ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
+                <span class="btn-list"><i class="fa fa-lg fa-ellipsis-h text-muted"></i></span>
                 <span class="text">{{site.name}}</span>
                 <span class="detail">{{site.username}}</span>
-                <!--<span class="btn btn-link pull-right"><i class="fa fa-ellipsis-h"></i></span>-->
             </a>
         </div>
     </div>
