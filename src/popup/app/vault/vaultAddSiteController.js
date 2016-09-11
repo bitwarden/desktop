@@ -7,14 +7,7 @@
         };
 
         $('#name').focus();
-        $('.list-section-item').click(function (e) {
-            e.preventDefault();
-            $(this).find('input[type="text"], textarea, select').focus();
-            var checkbox = $(this).find('input[type="checkbox"]');
-            if (checkbox.length > 0) {
-                checkbox.prop('checked', !checkbox.is(':checked'));
-            }
-        });
+        popupUtils.initListSectionItemListeners();
 
         $scope.savePromise = null;
         $scope.save = function (model) {
