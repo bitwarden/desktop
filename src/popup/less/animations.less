@@ -49,3 +49,55 @@
         top: 100%;
     }
 }
+
+.in-slide-left {
+    .main-view.ng-enter,
+    .main-view.ng-leave {
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+
+    .main-view.ng-enter {
+        left: 100%;
+        z-index: 970;
+    }
+
+    .main-view.ng-enter.ng-enter-active {
+        left: 0;
+    }
+
+    .main-view.ng-leave {
+        left: 0;
+        z-index: 990;
+    }
+
+    .main-view.ng-leave.ng-leave-active {
+        left: -100%;
+    }
+}
+
+.out-slide-right {
+    .main-view.ng-enter,
+    .main-view.ng-leave {
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+
+    .main-view.ng-enter {
+        right: 100%;
+        z-index: 970;
+    }
+
+    .main-view.ng-enter.ng-enter-active {
+        right: 0;
+    }
+
+    .main-view.ng-leave {
+        right: 0;
+        z-index: 990;
+    }
+
+    .main-view.ng-leave.ng-leave-active {
+        right: -100%;
+    }
+}

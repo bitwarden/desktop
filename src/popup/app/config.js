@@ -88,7 +88,7 @@
                 templateUrl: "app/vault/views/vaultEditSite.html",
                 controller: 'vaultEditSiteController',
                 data: { authorize: true },
-                params: { animation: null }
+                params: { animation: null, fromView: true }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {

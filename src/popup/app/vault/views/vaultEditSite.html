@@ -1,63 +1,69 @@
-﻿<ion-modal-view ng-controller="vaultEditSiteController">
-    <ion-header-bar class="bar bar-header bar-positive">
-        <button class="button button-clear button-primary" ng-click="close()">Cancel</button>
-        <h1 class="title">Edit Site</h1>
-        <button class="button button-clear button-primary" ng-click="editSite(site)">Save</button>
-    </ion-header-bar>
-    <ion-content>
+﻿<form name="theForm" ng-submit="theForm.$valid && save(site)" bit-form="savePromise">
+    <div class="header">
+        <div class="left">
+            <a ng-click="close()" href="">Cancel</a>
+        </div>
+        <div class="right">
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Save</button>
+            <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
+        </div>
+        <div class="title">Edit Site</div>
+    </div>
+    <div class="content">
         <div class="list">
-            <div class="item item-divider">
-                Site Information
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Name</span>
-                <input type="text" ng-model="site.name">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">URI</span>
-                <input type="text" ng-model="site.uri">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Username</span>
-                <input type="text" ng-model="site.username">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Password</span>
-                <input type="password" ng-model="site.password">
-            </label>
-            <a class="item item-icon-right" href="#">
-                Generate Password
-                <i class="icon ion-ios-arrow-right"></i>
-            </a>
-            <div class="item item-divider">
-                &nbsp;
-            </div>
-            <label class="item item-input item-select">
-                <div class="input-label">Folder</div>
-                <select>
-                    <option>Blue</option>
-                    <option selected>Green</option>
-                    <option>Red</option>
-                </select>
-            </label>
-            <div class="item item-toggle">
-                Favorite
-                <label class="toggle toggle-assertive">
-                    <input type="checkbox" ng-model="site.favorite">
-                    <div class="track">
-                        <div class="handle"></div>
+            <div class="list-section">
+                <div class="list-section-header">
+                    Site Information
+                </div>
+                <div class="list-section-items">
+                    <div class="list-section-item">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" name="Name" ng-model="site.name" bit-field>
                     </div>
-                </label>
+                    <div class="list-section-item">
+                        <label for="uri">URI</label>
+                        <input id="uri" type="text" name="Uri" ng-model="site.uri" bit-field>
+                    </div>
+                    <div class="list-section-item">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" name="Username" ng-model="site.username" bit-field>
+                    </div>
+                    <div class="list-section-item">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="Password" ng-model="site.password" bit-field>
+                    </div>
+                    <a class="list-section-item" href="#">
+                        Generate Password
+                        <i class="fa fa-chevron-right pull-right"></i>
+                    </a>
+                </div>
             </div>
-            <div class="item item-divider">
-                Notes
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item">
+                        <label for="folder">Folder</label>
+                        <select id="folder" name="FolderId">
+                            <option>Blue</option>
+                            <option selected>Green</option>
+                            <option>Red</option>
+                        </select>
+                    </div>
+                    <div class="list-section-item list-section-item-checkbox">
+                        <label for="favorite">Favorite</label>
+                        <input id="favorite" name="Favorite" type="checkbox" ng-model="site.favorite" bit-field>
+                    </div>
+                </div>
             </div>
-            <div class="item item-input">
-                <textarea rows="5" ng-model="site.notes"></textarea>
-            </div>
-            <div class="item item-divider">
-                &nbsp;
+            <div class="list-section">
+                <div class="list-section-header">
+                    <label for="notes">Notes</label>
+                </div>
+                <div class="list-section-items">
+                    <div class="list-section-item">
+                        <textarea id="notes" name="Notes" rows="5" ng-model="site.notes" bit-field></textarea>
+                    </div>
+                </div>
             </div>
         </div>
-    </ion-content>
-</ion-modal-view>
+    </div>
+</form>
