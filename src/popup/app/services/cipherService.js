@@ -5,7 +5,11 @@
         var _service = {};
 
         _service.encryptSite = function (site) {
-            var model = {};
+            var model = {
+                id: site.id,
+                folderId: site.folderId,
+                favorite: site.favorite
+            };
 
             return $q(function (resolve, reject) {
                 encrypt(site.name).then(function (cs) {
