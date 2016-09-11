@@ -185,7 +185,10 @@
         }
 
         &:last-child {
-            border: none;
+            &:before {
+                border: none;
+                height: 0;
+            }
         }
 
         &:hover {
@@ -232,10 +235,12 @@
                 display: inline;
                 width: initial;
                 font-weight: normal;
+                float: left;
             }
 
             input[type="checkbox"] {
                 float: right;
+                display: inline-block;
             }
         }
     }
