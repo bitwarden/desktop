@@ -28,11 +28,11 @@
                 </div>
                 <div class="list-section-item">
                     <span class="item-label">Password</span>
-                    {{site.password}}
+                    {{site.maskedPassword}}
                 </div>
             </div>
         </div>
-        <div class="list-section">
+        <div class="list-section" ng-show="site.notes">
             <div class="list-section-header">
                 Notes
             </div>
