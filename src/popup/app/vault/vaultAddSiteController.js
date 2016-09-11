@@ -1,13 +1,37 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultAddSiteController', function ($scope, $state, siteService, cipherService, $q) {
+    .controller('vaultAddSiteController', function ($scope, $state, siteService, folderService, cipherService, $q) {
         $scope.site = {
             folderId: null
         };
 
         $('#name').focus();
         popupUtils.initListSectionItemListeners();
+
+        var promises = [];
+        var decFolders = [{
+            id: null,
+            name: '(none)'
+        }];
+
+        folderService.getAll(function (folders) {
+            for (var i = 1; i < folders.length; i++) {
+                decFolders.push({
+                    id: folders[i].id
+                });
+
+                var folderNamePromise = cipherService.decrypt(folders[i].name, i);
+                promises.push(folderNamePromise);
+                folderNamePromise.then(function (obj) {
+                    decFolders[obj.index].name = obj.val;
+                });
+            }
+
+            $q.all(promises).then(function () {
+                $scope.folders = decFolders;
+            });
+        });
 
         $scope.savePromise = null;
         $scope.save = function (model) {

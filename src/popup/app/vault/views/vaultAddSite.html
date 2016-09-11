@@ -42,10 +42,8 @@
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="folder">Folder</label>
-                        <select id="folder" name="FolderId">
-                            <option>Blue</option>
-                            <option selected>Green</option>
-                            <option>Red</option>
+                        <select id="folder" name="FolderId" ng-model="site.folderId" bit-field>
+                            <option ng-repeat="folder in folders" value="{{folder.id}}">{{folder.name}}</option>
                         </select>
                     </div>
                     <div class="list-section-item list-section-item-checkbox">

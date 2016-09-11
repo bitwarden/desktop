@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, cipherService, $q) {
+    .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService, cipherService, $q) {
         $scope.site = {
             folderId: null
         };
@@ -9,6 +9,30 @@
         siteService.get($stateParams.siteId, function (site) {
             cipherService.decryptSite(site).then(function (model) {
                 $scope.site = model;
+            });
+        });
+
+        var promises = [];
+        var decFolders = [{
+            id: null,
+            name: '(none)'
+        }];
+
+        folderService.getAll(function (folders) {
+            for (var i = 1; i < folders.length; i++) {
+                decFolders.push({
+                    id: folders[i].id
+                });
+
+                var folderNamePromise = cipherService.decrypt(folders[i].name, i);
+                promises.push(folderNamePromise);
+                folderNamePromise.then(function (obj) {
+                    decFolders[obj.index].name = obj.val;
+                });
+            }
+
+            $q.all(promises).then(function () {
+                $scope.folders = decFolders;
             });
         });
 
