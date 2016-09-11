@@ -105,7 +105,7 @@
                 text-overflow: ellipsis;
 
                 &:hover {
-                    background-color: rgba(255, 255, 255, 0.8);
+                    background-color: @list-item-hover;
                 }
 
                 i {
@@ -171,7 +171,18 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: @text-color;
-        border-bottom: 1px solid @border-color;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            width: 97%;
+            border-bottom: 1px solid @border-color;
+        }
 
         &:last-child {
             border: none;
