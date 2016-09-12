@@ -1,0 +1,60 @@
+﻿@import (reference) "variables.less";
+
+/* Toastr */
+
+#toast-container {
+    &.toast-bottom-center .toast {
+        width: 100%;
+        margin-bottom: 0;
+        margin-top: 6px;
+    }
+
+    .toast {
+        background-image: none !important;
+        border-radius: 0;
+        .box-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+
+        &.toast-danger, &.toast-error {
+            background-image: none !important;
+            background-color: @brand-danger;
+            &:before {
+                content: "\f0e7";
+            }
+        }
+
+        &.toast-warning {
+            background-image: none !important;
+            background-color: @brand-warning;
+            &:before {
+                content: "\f071";
+            }
+        }
+
+        &.toast-info {
+            background-image: none !important;
+            background-color: @brand-info;
+            &:before {
+                content: "\f005";
+            }
+        }
+
+        &.toast-success {
+            background-image: none !important;
+            background-color: @brand-success;
+            &:before {
+                content: "\f00C";
+            }
+        }
+
+        &:before {
+            position: fixed;
+            font-family: FontAwesome;
+            font-size: 24px;
+            line-height: 24px;
+            float: left;
+            color: #ffffff;
+            padding-right: 0.5em;
+            margin: auto 0.5em auto -1.5em;
+        }
+    }
+}

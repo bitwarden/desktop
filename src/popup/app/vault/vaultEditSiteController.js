@@ -1,7 +1,9 @@
-﻿angular
+angular
     .module('bit.vault')
 
-    .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService, cipherService, $q) {
+    .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService, cipherService, $q, toastr) {
+        var returnScrollY = $stateParams.returnScrollY;
+
         $scope.site = {
             folderId: null
         };
@@ -44,8 +46,8 @@
                 var site = new Site(siteModel, true);
                 return site;
             }).then(function (site) {
-                return saveSite(site, function (site) {
-                    alert('Saved ' + site.id + '!');
+                return saveSite(site).then(function (site) {
+                    toastr.success('Edited site');
                 });
             });
         };
@@ -55,7 +57,7 @@
                 $state.go('viewSite', { siteId: $stateParams.siteId, animation: 'out-slide-down' });
             }
             else {
-                $state.go('tabs.vault', { animation: 'out-slide-down' });
+                $state.go('tabs.vault', { animation: 'out-slide-down', scrollY: returnScrollY || 0 });
             }
         };
 

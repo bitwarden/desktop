@@ -1,6 +1,6 @@
 ﻿<div class="header">
     <div class="right">
-        <a ui-sref="addSite({animation: 'in-slide-up'})"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
     <div class="title">My Vault</div>
 </div>
@@ -10,7 +10,7 @@
             <div class="list-grouped-header">
                 <i class="fa fa-folder-open"></i> {{folder.name}}
             </div>
-            <a ui-sref="viewSite({siteId: site.id, animation: 'in-slide-up'})" class="list-grouped-item condensed" ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
+            <a href="" ng-click="viewSite(site)" class="list-grouped-item condensed" ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id } | orderBy: ['name', 'username'])">
                 <span class="btn-list"><i class="fa fa-lg fa-ellipsis-h text-muted"></i></span>
                 <span class="text">{{site.name}}</span>
                 <span class="detail">{{site.username}}</span>

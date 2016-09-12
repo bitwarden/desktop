@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.vault', ['ngAnimate']);
+    .module('bit.vault', ['ngAnimate', 'toastr']);

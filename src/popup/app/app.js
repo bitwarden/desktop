@@ -3,6 +3,7 @@
         'ui.router',
         'angular-jwt',
         'ngAnimate',
+        'toastr',
 
         'bit.directives',
         'bit.services',

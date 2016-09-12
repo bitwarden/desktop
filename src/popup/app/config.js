@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit')
 
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider, toastrConfig) {
         jwtInterceptorProvider.urlParam = 'access_token';
         jwtInterceptorProvider.tokenGetter = /*@ngInject*/ function (config, appSettings, tokenService) {
             if (config.url.indexOf(appSettings.apiUri) === 0) {
@@ -10,6 +10,13 @@
                 });
             }
         };
+
+        angular.extend(toastrConfig, {
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            positionClass: 'toast-bottom-center'
+        });
 
         if ($httpProvider.defaults.headers.post) {
             $httpProvider.defaults.headers.post = {};
@@ -56,7 +63,8 @@
                 .state('tabs.vault', {
                     url: "/vault",
                     templateUrl: "app/vault/views/vault.html",
-                    controller: 'vaultController'
+                    controller: 'vaultController',
+                    params: { scrollY: 0 }
                 })
                 .state('tabs.settings', {
                     url: "/settings",
@@ -74,21 +82,21 @@
                 templateUrl: "app/vault/views/vaultViewSite.html",
                 controller: 'vaultViewSiteController',
                 data: { authorize: true },
-                params: { animation: null }
+                params: { animation: null, returnScrollY: 0 }
             })
             .state('addSite', {
                 url: "/add-site",
                 templateUrl: "app/vault/views/vaultAddSite.html",
                 controller: 'vaultAddSiteController',
                 data: { authorize: true },
-                params: { animation: null }
+                params: { animation: null, returnScrollY: 0 }
             })
             .state('editSite', {
                 url: "/edit-site?siteId",
                 templateUrl: "app/vault/views/vaultEditSite.html",
                 controller: 'vaultEditSiteController',
                 data: { authorize: true },
-                params: { animation: null, fromView: true }
+                params: { animation: null, fromView: true, returnScrollY: 0 }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {

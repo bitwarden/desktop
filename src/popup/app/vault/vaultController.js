@@ -1,10 +1,10 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, cipherService) {
+    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, cipherService, $state, $stateParams) {
         var delayLoad = true;
         if (!$rootScope.vaultSites) {
-            $rootScope.vaultSites =[];
+            $rootScope.vaultSites = [];
             delayLoad = false;
         }
         if (!$rootScope.vaultFolders) {
@@ -13,6 +13,7 @@
         }
 
         if (delayLoad) {
+            setTimeout(setScrollY, 100);
             setTimeout(loadVault, 1000);
         }
         else {
@@ -64,6 +65,9 @@
                     $q.all(promises).then(function () {
                         $rootScope.vaultSites = decSites;
                         $rootScope.vaultFolders = decFolders;
+                        if (!delayLoad) {
+                            setScrollY();
+                        }
                     });
                 });
             });
@@ -75,5 +79,32 @@
             }
 
             return item.name.toLowerCase();
+        };
+
+        $scope.addSite = function () {
+            $state.go('addSite', {
+                animation: 'in-slide-up',
+                returnScrollY: getScrollY()
+            });
+        };
+
+        $scope.viewSite = function (site) {
+            $state.go('viewSite', {
+                siteId: site.id,
+                animation: 'in-slide-up',
+                returnScrollY: getScrollY()
+            });
+        };
+
+        function getScrollY() {
+            var content = document.getElementsByClassName('content')[0];
+            return content.scrollTop;
+        };
+
+        function setScrollY() {
+            if ($stateParams.scrollY) {
+                var content = document.getElementsByClassName('content')[0];
+                content.scrollTop = $stateParams.scrollY;
+            }
         };
     });

@@ -1,7 +1,9 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultViewSiteController', function ($scope, $stateParams, siteService, cipherService) {
+    .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, cipherService) {
+        var returnScrollY = $stateParams.returnScrollY;
+
         $scope.site = null;
         siteService.get($stateParams.siteId, function (site) {
             cipherService.decryptSite(site).then(function (model) {
@@ -17,4 +19,8 @@
                 }
             });
         });
+
+        $scope.close = function () {
+            $state.go('tabs.vault', { animation: 'out-slide-down', scrollY: returnScrollY || 0 });
+        };
     });

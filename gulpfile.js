@@ -82,15 +82,19 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'angular-ui-router'
         },
         {
+            src: [paths.npmDir + 'angular-toastr/dist/angular-toastr.tpls.js', paths.npmDir + 'angular-toastr/dist/angular-toastr.css'],
+            dest: paths.libDir + 'angular-toastr'
+        },
+        {
             src: [paths.npmDir + 'sjcl/core/cbc.js', paths.npmDir + 'sjcl/core/bitArray.js', paths.npmDir + 'sjcl/sjcl.js'],
             dest: paths.libDir + 'sjcl'
         },
         {
-            src: paths.npmDir + 'ngclipboard/dist/ngclipboard*.js',
+            src: paths.npmDir + 'ngclipboard/dist/ngclipboard.js',
             dest: paths.libDir + 'ngclipboard'
         },
         {
-            src: paths.npmDir + 'clipboard/dist/clipboard*.js',
+            src: paths.npmDir + 'clipboard/dist/clipboard.js',
             dest: paths.libDir + 'clipboard'
         }
     ];
