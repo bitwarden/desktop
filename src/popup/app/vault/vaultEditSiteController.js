@@ -3,6 +3,7 @@ angular
 
     .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService, cipherService, $q, toastr) {
         var returnScrollY = $stateParams.returnScrollY;
+        var returnSearchText = $stateParams.returnSearchText;
 
         $scope.site = {
             folderId: null
@@ -55,10 +56,19 @@ angular
 
         $scope.close = function () {
             if ($stateParams.fromView) {
-                $state.go('viewSite', { siteId: $stateParams.siteId, animation: 'out-slide-down' });
+                $state.go('viewSite', {
+                    siteId: $stateParams.siteId,
+                    animation: 'out-slide-down',
+                    returnScrollY: returnScrollY || 0,
+                    returnSearchText: returnSearchText
+                });
             }
             else {
-                $state.go('tabs.vault', { animation: 'out-slide-down', scrollY: returnScrollY || 0 });
+                $state.go('tabs.vault', {
+                    animation: 'out-slide-down',
+                    scrollY: returnScrollY || 0,
+                    searchText: returnSearchText
+                });
             }
         };
 

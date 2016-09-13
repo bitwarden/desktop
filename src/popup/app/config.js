@@ -64,7 +64,7 @@
                     url: "/vault",
                     templateUrl: "app/vault/views/vault.html",
                     controller: 'vaultController',
-                    params: { scrollY: 0 }
+                    params: { scrollY: 0, searchText: null }
                 })
                 .state('tabs.settings', {
                     url: "/settings",
@@ -82,21 +82,21 @@
                 templateUrl: "app/vault/views/vaultViewSite.html",
                 controller: 'vaultViewSiteController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0 }
+                params: { animation: null, returnScrollY: 0, returnSearchText: null }
             })
             .state('addSite', {
                 url: "/add-site",
                 templateUrl: "app/vault/views/vaultAddSite.html",
                 controller: 'vaultAddSiteController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0 }
+                params: { animation: null, returnScrollY: 0, returnSearchText: null }
             })
             .state('editSite', {
                 url: "/edit-site?siteId",
                 templateUrl: "app/vault/views/vaultEditSite.html",
                 controller: 'vaultEditSiteController',
                 data: { authorize: true },
-                params: { animation: null, fromView: true, returnScrollY: 0 }
+                params: { animation: null, fromView: true, returnScrollY: 0, returnSearchText: null }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {

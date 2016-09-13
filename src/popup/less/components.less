@@ -1,4 +1,5 @@
 ﻿@import (reference) "variables.less";
+@import (reference) "mixins.less";
 
 .header {
     min-height: 44px;
@@ -52,6 +53,7 @@
         display: block;
         right: 0;
         position: absolute;
+        z-index: 99999;
 
         a, button {
             padding: 12px 10px;
@@ -63,6 +65,35 @@
             padding: 15px;
             display: block;
             float: right;
+        }
+    }
+
+    .search {
+        text-align: left;
+        position: relative;
+
+        input {
+            background: darken(@brand-primary, 8%);
+            border: none;
+            color: white;
+            padding: 5px 10px 5px 30px;
+            border-radius: 5px;
+            width: 85%;
+            margin: 7px 0 0 7px;
+            .placeholder-color(lighten(@brand-primary, 35%));
+
+            &:focus {
+                border-radius: 5px;
+                outline: none;
+                background: darken(@brand-primary, 10%);
+            }
+        }
+
+        .fa-search {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: lighten(@brand-primary, 30%);
         }
     }
 }

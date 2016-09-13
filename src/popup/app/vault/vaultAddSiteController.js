@@ -3,6 +3,7 @@
 
     .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService, cipherService, $q) {
         var returnScrollY = $stateParams.returnScrollY;
+        var returnSearchText = $stateParams.returnSearchText;
 
         $scope.site = {
             folderId: null
@@ -49,7 +50,11 @@
         };
 
         $scope.close = function () {
-            $state.go('tabs.vault', { animation: 'out-slide-down', scrollY: returnScrollY || 0 });
+            $state.go('tabs.vault', {
+                animation: 'out-slide-down',
+                scrollY: returnScrollY || 0,
+                searchText: returnSearchText
+            });
         };
 
         function saveSite(site) {

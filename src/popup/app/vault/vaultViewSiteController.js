@@ -3,6 +3,7 @@
 
     .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, cipherService, tldjs, toastr) {
         var returnScrollY = $stateParams.returnScrollY;
+        var returnSearchText = $stateParams.returnSearchText;
 
         $scope.site = null;
         siteService.get($stateParams.siteId, function (site) {
@@ -34,8 +35,22 @@
             });
         });
 
+        $scope.edit = function (site) {
+            $state.go('editSite', {
+                animation: 'in-slide-up',
+                siteId: site.id,
+                fromView: true,
+                returnScrollY: returnScrollY || 0,
+                returnSearchText: returnSearchText
+            });
+        }
+
         $scope.close = function () {
-            $state.go('tabs.vault', { animation: 'out-slide-down', scrollY: returnScrollY || 0 });
+            $state.go('tabs.vault', {
+                animation: 'out-slide-down',
+                scrollY: returnScrollY || 0,
+                searchText: returnSearchText
+            });
         };
 
         $scope.launchWebsite = function (site) {

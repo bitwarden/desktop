@@ -2,6 +2,8 @@
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, cipherService, $state, $stateParams) {
+        $('#search').focus();
+
         var delayLoad = true;
         if (!$rootScope.vaultSites) {
             $rootScope.vaultSites = [];
@@ -73,6 +75,11 @@
             });
         }
 
+        $scope.searchText = null;
+        if ($stateParams.searchText) {
+            $scope.searchText = $stateParams.searchText;
+        }
+
         $scope.folderSort = function (item) {
             if (!item.id) {
                 return '';
@@ -81,10 +88,16 @@
             return item.name.toLowerCase();
         };
 
+        $scope.setFolderFilter = function (folder) {
+            $scope.folderFilter = {};
+            $scope.folderFilter.folderId = folder.id;
+        }
+
         $scope.addSite = function () {
             $state.go('addSite', {
                 animation: 'in-slide-up',
-                returnScrollY: getScrollY()
+                returnScrollY: getScrollY(),
+                returnSearchText: $scope.searchText
             });
         };
 
@@ -92,7 +105,8 @@
             $state.go('viewSite', {
                 siteId: site.id,
                 animation: 'in-slide-up',
-                returnScrollY: getScrollY()
+                returnScrollY: getScrollY(),
+                returnSearchText: $scope.searchText
             });
         };
 
