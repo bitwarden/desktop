@@ -18,21 +18,30 @@
                     <span class="item-label">Name</span>
                     {{site.name}}
                 </div>
-                <div class="list-section-item">
-                    <a class="btn-list" href=""><i class="fa fa-lg fa-share-square-o"></i></a>
+                <div class="list-section-item" ng-show="site.uri">
+                    <a class="btn-list" href="" ng-click="launchWebsite(site)" ng-show="site.showLaunch">
+                        <i class="fa fa-lg fa-share-square-o"></i>
+                    </a>
                     <span class="item-label">Website</span>
-                    {{site.uri}}
+                    {{site.website}}
                 </div>
-                <div class="list-section-item">
-                    <a class="btn-list" href=""><i class="fa fa-lg fa-clipboard"></i></a>
+                <div class="list-section-item" ng-show="site.username">
+                    <a class="btn-list" href="" ngclipboard ngclipboard-error="clipboardError(e)"
+                       ngclipboard-success="clipboardSuccess(e, 'Username')" data-clipboard-target="#username">
+                        <i class="fa fa-lg fa-clipboard"></i>
+                    </a>
                     <span class="item-label">Username</span>
-                    {{site.username}}
+                    <span id="username">{{site.username}}</span>
                 </div>
-                <div class="list-section-item">
-                    <a class="btn-list" href=""><i class="fa fa-lg fa-clipboard"></i></a>
-                    <a class="btn-list" href=""><i class="fa fa-lg fa-eye"></i></a>
+                <div class="list-section-item" ng-show="site.password">
+                    <a class="btn-list" href="" ngclipboard ngclipboard-error="clipboardError(e)"
+                       ngclipboard-success="clipboardSuccess(e, 'Password')" data-clipboard-target="#password">
+                        <i class="fa fa-lg fa-clipboard"></i>
+                    </a>
+                    <a class="btn-list" href="" ng-click="togglePassword()"><i class="fa fa-lg fa-eye"></i></a>
                     <span class="item-label">Password</span>
-                    {{site.maskedPassword}}
+                    <span ng-show="!showPassword">{{site.maskedPassword}}</span>
+                    <span id="password" ng-show="showPassword">{{site.password}}</span>
                 </div>
             </div>
         </div>
