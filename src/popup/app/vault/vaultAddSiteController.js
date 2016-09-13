@@ -43,6 +43,7 @@
             }).then(function (site) {
                 return saveSite(site).then(function (site) {
                     toastr.success('Added site');
+                    $scope.close();
                 });
             });
         };

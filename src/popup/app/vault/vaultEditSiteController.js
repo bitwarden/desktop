@@ -48,6 +48,7 @@ angular
             }).then(function (site) {
                 return saveSite(site).then(function (site) {
                     toastr.success('Edited site');
+                    $scope.close();
                 });
             });
         };
