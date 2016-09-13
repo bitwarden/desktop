@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, cipherService, $state, $stateParams) {
+    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, cipherService, $state, $stateParams, $uibModal, toastr) {
         $('#search').focus();
 
         var delayLoad = true;
@@ -62,6 +62,12 @@
                         usernamePromise.then(function (obj) {
                             decSites[obj.index].username = obj.val;
                         });
+
+                        var passwordPromise = cipherService.decrypt(sites[j].password, j);
+                        promises.push(passwordPromise);
+                        passwordPromise.then(function (obj) {
+                            decSites[obj.index].password = obj.val;
+                        });
                     }
 
                     $q.all(promises).then(function () {
@@ -91,7 +97,7 @@
         $scope.setFolderFilter = function (folder) {
             $scope.folderFilter = {};
             $scope.folderFilter.folderId = folder.id;
-        }
+        };
 
         $scope.addSite = function () {
             $state.go('addSite', {
@@ -110,15 +116,24 @@
             });
         };
 
+        $scope.clipboardError = function (e) {
+            toastr.info('Your web browser does not support easy clipboard copying. Copy it manually instead.');
+        };
+
+        $scope.clipboardSuccess = function (e, type) {
+            e.clearSelection();
+            toastr.info(type + ' copied!');
+        };
+
         function getScrollY() {
             var content = document.getElementsByClassName('content')[0];
             return content.scrollTop;
-        };
+        }
 
         function setScrollY() {
             if ($stateParams.scrollY) {
                 var content = document.getElementsByClassName('content')[0];
                 content.scrollTop = $stateParams.scrollY;
             }
-        };
+        }
     });

@@ -43,7 +43,7 @@
                 returnScrollY: returnScrollY || 0,
                 returnSearchText: returnSearchText
             });
-        }
+        };
 
         $scope.close = function () {
             $state.go('tabs.vault', {

@@ -253,14 +253,24 @@
             cursor: pointer;
             float: right;
             display: block;
-            padding: 10px 8px 10px 12px;
+            padding: 10px 8px 10px 8px;
+            background: none;
+            border: none;
+
+            &.disabled {
+                color: @text-disabled;
+
+                &:hover {
+                    color: @text-disabled;
+                }
+            }
         }
 
         &.condensed {
             padding: 3px 10px;
 
             .btn-list {
-                padding: 8px 8px 8px 12px;
+                padding: 8px;
             }
         }
 
