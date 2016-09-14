@@ -13,7 +13,7 @@
   },
   "content_scripts": [
     {
-      "js": [ "formDataContent.js" ],
+      "js": [ "autofillContent.js" ],
       "matches": [ "http://*/*", "https://*/*", "file:///*" ],
       "run_at": "document_start"
     },

@@ -76,12 +76,12 @@ End 1Password Extension
 */
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-    if (msg.text === 'collectFormData') {
-        var formData = collect(document);
-        sendResponse(JSON.parse(formData));
+    if (msg.command === 'collectPageDetails') {
+        var pageDetails = collect(document);
+        sendResponse(JSON.parse(pageDetails));
         return true;
     }
-    else if (msg.text === 'fillForm') {
+    else if (msg.command === 'fillForm') {
         fill(document, msg.fillScript);
         sendResponse();
         return true;
