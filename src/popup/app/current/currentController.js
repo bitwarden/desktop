@@ -142,14 +142,35 @@ angular
 
                 // First let's try to guess the correct login form by examining the form attribute strings
                 // for common login form attribute.
+                for (i = 0; i < passwordForms.length; i++) {
+                    var formDescriptor = (passwordForms[i].htmlName + '~' + passwordForms[i].htmlId
+                        + '~' + passwordForms[i].htmlAction).toLowerCase();
 
-                // TODO
+                    if (formDescriptor.indexOf('login') !== -1 || formDescriptor.indexOf('log-in') !== -1
+                         || formDescriptor.indexOf('signin') !== -1 || formDescriptor.indexOf('sign-in') !== -1
+                         || formDescriptor.indexOf('logon') !== -1 || formDescriptor.indexOf('log-on') !== -1) {
+                        loginForm = passwordForms[i];
+                        break;
+                    }
+                }
 
                 if (!loginForm) {
                     // Next we can try to find the login form that only has one password field. Typically
                     // a registration form may have two password fields for password confirmation.
+                    for (i = 0; i < passwordForms.length; i++) {
+                        var passwordFieldCount = 0;
 
-                    // TODO
+                        for (var j = 0; j < passwordFields.length; j++) {
+                            if (passwordForms[i].opid == passwordFields[j].form) {
+                                passwordFieldCount++;
+                            }
+                        }
+
+                        if (passwordFieldCount === 1) {
+                            loginForm = passwordForms[i];
+                            break;
+                        }
+                    }
                 }
             }
 
