@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.current', []);
+    .module('bit.current', ['toastr', 'ngclipboard']);

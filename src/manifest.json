@@ -11,6 +11,19 @@
     "96": "images/icon96.png",
     "128": "images/icon128.png"
   },
+  "content_scripts": [
+    {
+      "js": [ "formDataContent.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": true,
+      "js": [ "content.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_start"
+    }
+  ],
   "background": {
     "scripts": [
       "lib/jquery/jquery.js",

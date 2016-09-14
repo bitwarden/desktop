@@ -1,6 +1,22 @@
 ﻿<div class="header">
-    <div class="title">Current Sites</div>
+    <div class="title">Current Tab Sites</div>
 </div>
 <div class="content content-tabs">
-    Some content for your current sites.
+    <div class="list">
+        <div class="list-grouped">
+            <div ng-click="fillSite(site)" class="list-grouped-item condensed" style="cursor: pointer;"
+                 ng-repeat="site in theSites = (sites | orderBy: ['name', 'username'])">
+                <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Password" ngclipboard ngclipboard-error="clipboardError(e)"
+                   ngclipboard-success="clipboardSuccess(e, 'Password')" data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
+                    <i class="fa fa-lg fa-clipboard"></i>
+                </a>
+                <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Username" ngclipboard ngclipboard-error="clipboardError(e)"
+                   ngclipboard-success="clipboardSuccess(e, 'Username')" data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
+                    <i class="fa fa-lg fa-copy"></i>
+                </a>
+                <span class="text">{{site.name}}</span>
+                <span class="detail">{{site.username}}</span>
+            </div>
+        </div>
+    </div>
 </div>
