@@ -71,14 +71,18 @@ function fill(document, fillScript, undefined) {
     return JSON.stringify({'success': true});
 }
 
+/*
+End 1Password Extension
+*/
+
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.text === 'collectFormData') {
         var formData = collect(document);
         sendResponse(JSON.parse(formData));
         return true;
     }
-    if (msg.text === 'fillForm') {
-        fill(document, null);
+    else if (msg.text === 'fillForm') {
+        fill(document, msg.fillScript);
         sendResponse();
         return true;
     }
