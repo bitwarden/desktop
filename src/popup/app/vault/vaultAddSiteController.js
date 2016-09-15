@@ -4,12 +4,20 @@
     .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService, cipherService, $q) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
+        var fromCurrent = $stateParams.uri !== null;
 
         $scope.site = {
-            folderId: null
+            folderId: null,
+            name: $stateParams.name,
+            uri: $stateParams.uri
         };
 
-        $('#name').focus();
+        if ($scope.site.name && $scope.site.uri) {
+            $('#username').focus();
+        }
+        else {
+            $('#name').focus();
+        }
         popupUtils.initListSectionItemListeners();
 
         var promises = [];
@@ -50,11 +58,18 @@
         };
 
         $scope.close = function () {
-            $state.go('tabs.vault', {
-                animation: 'out-slide-down',
-                scrollY: returnScrollY || 0,
-                searchText: returnSearchText
-            });
+            if (fromCurrent) {
+                $state.go('tabs.current', {
+                    animation: 'out-slide-down'
+                });
+            }
+            else {
+                $state.go('tabs.vault', {
+                    animation: 'out-slide-down',
+                    scrollY: returnScrollY || 0,
+                    searchText: returnSearchText
+                });
+            }
         };
 
         function saveSite(site) {

@@ -1,13 +1,15 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, siteService, cipherService, tldjs, toastr, $q, $window) {
+    .controller('currentController', function ($scope, siteService, cipherService, tldjs, toastr, $q, $window, $state) {
         var pageDetails = null,
-            tabId = null;
+            tabId = null,
+            url = null,
+            domain = null;
+
         $scope.canAutofill = false;
 
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            var url = null;
             if (tabs.length > 0) {
                 url = tabs[0].url;
                 tabId = tabs[0].id;
@@ -16,7 +18,7 @@ angular
                 return;
             }
 
-            var domain = tldjs.getDomain(url);
+            domain = tldjs.getDomain(url);
             $scope.sites = [];
             if (!domain) {
                 return;
@@ -84,6 +86,14 @@ angular
                 });
             });
         });
+
+        $scope.addSite = function () {
+            $state.go('addSite', {
+                animation: 'in-slide-up',
+                name: domain,
+                uri: url
+            });
+        };
 
         $scope.fillSite = function (site) {
             var fillScript = null;

@@ -89,7 +89,7 @@
                 templateUrl: "app/vault/views/vaultAddSite.html",
                 controller: 'vaultAddSiteController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0, returnSearchText: null }
+                params: { animation: null, returnScrollY: 0, returnSearchText: null, name: null, uri: null }
             })
             .state('editSite', {
                 url: "/edit-site?siteId",
