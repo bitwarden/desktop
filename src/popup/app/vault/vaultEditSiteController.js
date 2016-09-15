@@ -45,8 +45,6 @@ angular
         $scope.save = function (model) {
             $scope.savePromise = cipherService.encryptSite(model).then(function (siteModel) {
                 var site = new Site(siteModel, true);
-                return site;
-            }).then(function (site) {
                 return saveSite(site).then(function (site) {
                     toastr.success('Edited site');
                     $scope.close();

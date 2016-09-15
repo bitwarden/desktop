@@ -96,6 +96,10 @@ gulp.task('lib', ['clean:lib'], function () {
         {
             src: paths.npmDir + 'clipboard/dist/clipboard.js',
             dest: paths.libDir + 'clipboard'
+        },
+        {
+            src: paths.npmDir + 'q/q.js',
+            dest: paths.libDir + 'q'
         }
     ];
 

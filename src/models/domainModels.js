@@ -8,21 +8,6 @@ var CipherString = function (encryptedString) {
     }
 };
 
-!function () {
-    CipherString.prototype.decrypt = function (callback) {
-        if (!this.decryptedValue) {
-            var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
-            cryptoService.decrypt(this, function (decValue) {
-                this.decryptedValue = decValue;
-                callback(this.decryptedValue);
-            });
-        }
-        else {
-            callback(this.decryptedValue);
-        }
-    };
-}();
-
 var Site = function (obj, alreadyEncrypted) {
     this.id = obj.id ? obj.id : null;
     this.folderId = obj.folderId ? obj.folderId : null;
@@ -54,3 +39,75 @@ var Folder = function (obj, alreadyEncrypted) {
         this.name = obj.name ? new CipherString(obj.name) : null;
     }
 };
+
+!function () {
+    CipherString.prototype.decrypt = function (callback) {
+        if (!this.decryptedValue) {
+            var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
+            cryptoService.decrypt(this, function (decValue) {
+                this.decryptedValue = decValue;
+                callback(this.decryptedValue);
+            });
+        }
+        else {
+            callback(this.decryptedValue);
+        }
+    };
+
+    CipherString.prototype.decryptWithPromise = function () {
+        var deferred = Q.defer();
+
+        if (!this) {
+            deferred.resolve(null);
+        }
+        else {
+            this.decrypt(function (decVal) {
+                deferred.resolve(decVal);
+            });
+        }
+
+        return deferred.promise;
+    }
+
+    Site.prototype.decrypt = function () {
+        var self = this;
+        var model = {
+            id: self.id,
+            folderId: self.folderId,
+            favorite: self.favorite
+        };
+
+        var deferred = Q.defer();
+
+        self.name.decryptWithPromise().then(function (val) {
+            model.name = val;
+            if (self.uri) {
+                return self.uri.decryptWithPromise();
+            }
+            return null;
+        }).then(function (val) {
+            model.uri = val;
+            if (self.username) {
+                return self.username.decryptWithPromise();
+            }
+            return null;
+        }).then(function (val) {
+            model.username = val;
+            if (self.password) {
+                return self.password.decryptWithPromise();
+            }
+            return null;
+        }).then(function (val) {
+            model.password = val;
+            if (self.notes) {
+                return self.notes.decryptWithPromise();
+            }
+            return null;
+        }).then(function (val) {
+            model.notes = val;
+            deferred.resolve(model);
+        });
+
+        return deferred.promise;
+    };
+}();

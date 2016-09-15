@@ -7,6 +7,45 @@
 };
 
 function initSiteService() {
+    SiteService.prototype.encrypt = function (site) {
+        var model = {
+            id: site.id,
+            folderId: site.folderId,
+            favorite: site.favorite
+        };
+
+        var deferred = Q.defer();
+
+        encryptWithPromise(site.name).then(function (cs) {
+            model.name = cs;
+            return encryptWithPromise(site.uri);
+        }).then(function (cs) {
+            model.uri = cs;
+            return encryptWithPromise(site.username);
+        }).then(function (cs) {
+            model.username = cs;
+            return encryptWithPromise(site.password);
+        }).then(function (cs) {
+            model.password = cs;
+            return encryptWithPromise(site.notes);
+        }).then(function (cs) {
+            model.notes = cs;
+            deferred.resolve(model);
+        });
+
+        return deferred.promise;
+    };
+
+    function encryptWithPromise(plaintextString) {
+        var deferred = Q.defer();
+
+        cryptoService.encrypt(plaintextString, function (cipherString) {
+            deferred.resolve(cipherString);
+        });
+
+        return deferred.promise;
+    }
+
     SiteService.prototype.get = function (id, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
