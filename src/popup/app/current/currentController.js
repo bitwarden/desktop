@@ -87,6 +87,15 @@ angular
             });
         });
 
+        $scope.clipboardError = function (e, password) {
+            toastr.info('Your web browser does not support easy clipboard copying. Copy it manually instead.');
+        };
+
+        $scope.clipboardSuccess = function (e, type) {
+            e.clearSelection();
+            toastr.info(type + ' copied!');
+        };
+
         $scope.addSite = function () {
             $state.go('addSite', {
                 animation: 'in-slide-up',
