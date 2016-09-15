@@ -1,7 +1,7 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, siteService, cipherService, tldjs, toastr, $q) {
+    .controller('currentController', function ($scope, siteService, cipherService, tldjs, toastr, $q, $window) {
         var pageDetails = null,
             tabId = null;
         $scope.canAutofill = false;
@@ -95,7 +95,12 @@ angular
                 chrome.tabs.sendMessage(tabId, {
                     command: 'fillForm',
                     fillScript: fillScript
-                }, function () { });
+                }, function () {
+                    $window.close()
+                });
+            }
+            else {
+                toastr.error('Unable to auto-fill the selected site. Copy/paste your username and/or password instead.');
             }
         };
 
@@ -143,12 +148,12 @@ angular
                 // First let's try to guess the correct login form by examining the form attribute strings
                 // for common login form attribute.
                 for (i = 0; i < passwordForms.length; i++) {
-                    var formDescriptor = (passwordForms[i].htmlName + '~' + passwordForms[i].htmlId
-                        + '~' + passwordForms[i].htmlAction).toLowerCase();
+                    var formDescriptor = (passwordForms[i].htmlName + '~' + passwordForms[i].htmlId +
+                        '~' + passwordForms[i].htmlAction).toLowerCase();
 
-                    if (formDescriptor.indexOf('login') !== -1 || formDescriptor.indexOf('log-in') !== -1
-                         || formDescriptor.indexOf('signin') !== -1 || formDescriptor.indexOf('sign-in') !== -1
-                         || formDescriptor.indexOf('logon') !== -1 || formDescriptor.indexOf('log-on') !== -1) {
+                    if (formDescriptor.indexOf('login') !== -1 || formDescriptor.indexOf('log-in') !== -1 ||
+                        formDescriptor.indexOf('signin') !== -1 || formDescriptor.indexOf('sign-in') !== -1 ||
+                        formDescriptor.indexOf('logon') !== -1 || formDescriptor.indexOf('log-on') !== -1) {
                         loginForm = passwordForms[i];
                         break;
                     }
