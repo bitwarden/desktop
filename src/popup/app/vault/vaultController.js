@@ -23,61 +23,31 @@
         }
 
         function loadVault() {
-            var promises = [];
+            var decFolders = [];
             var decSites = [];
-            var decFolders = [{
-                id: null,
-                name: '(none)'
-            }];
+            var promises = [];
 
-            folderService.getAll(function (folders) {
-                siteService.getAll(function (sites) {
-                    for (var i = 1; i < folders.length; i++) {
-                        decFolders.push({
-                            id: folders[i].id
-                        });
+            var folderPromise = $q.when(folderService.getAllDecrypted());
+            folderPromise.then(function (folders) {
+                decFolders = folders;
+            });
+            promises.push(folderPromise);
 
-                        var folderNamePromise = cipherService.decrypt(folders[i].name, i);
-                        promises.push(folderNamePromise);
-                        folderNamePromise.then(function (obj) {
-                            decFolders[obj.index].name = obj.val;
-                        });
-                    }
+            var sitePromise = $q.when(siteService.getAllDecrypted());
+            sitePromise.then(function (sites) {
+                decSites = sites;
+            });
+            promises.push(sitePromise);
 
-                    for (var j = 0; j < sites.length; j++) {
-                        decSites.push({
-                            id: sites[j].id,
-                            folderId: sites[j].folderId,
-                            favorite: sites[j].favorite
-                        });
-
-                        var namePromise = cipherService.decrypt(sites[j].name, j);
-                        promises.push(namePromise);
-                        namePromise.then(function (obj) {
-                            decSites[obj.index].name = obj.val;
-                        });
-
-                        var usernamePromise = cipherService.decrypt(sites[j].username, j);
-                        promises.push(usernamePromise);
-                        usernamePromise.then(function (obj) {
-                            decSites[obj.index].username = obj.val;
-                        });
-
-                        var passwordPromise = cipherService.decrypt(sites[j].password, j);
-                        promises.push(passwordPromise);
-                        passwordPromise.then(function (obj) {
-                            decSites[obj.index].password = obj.val;
-                        });
-                    }
-
-                    $q.all(promises).then(function () {
-                        $rootScope.vaultSites = decSites;
-                        $rootScope.vaultFolders = decFolders;
-                        if (!delayLoad) {
-                            setScrollY();
-                        }
-                    });
-                });
+            $q.all(promises).then(function () {
+                $rootScope.vaultFolders = decFolders.concat([{
+                    id: null,
+                    name: '(none)'
+                }]);
+                $rootScope.vaultSites = decSites;
+                if (!delayLoad) {
+                    setScrollY();
+                }
             });
         }
 

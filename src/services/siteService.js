@@ -2,6 +2,7 @@
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
+    this.decryptedSiteCache = null;
 
     initSiteService();
 };
@@ -88,6 +89,33 @@ function initSiteService() {
                 callback(response);
             });
         });
+    };
+
+    SiteService.prototype.getAllDecrypted = function () {
+        var deferred = Q.defer();
+
+        var self = this;
+        if (self.decryptedSiteCache) {
+            deferred.resolve(self.decryptedSiteCache);
+            return deferred.promise;
+        }
+
+        var promises = [];
+        var decSites = [];
+        self.getAll(function (sites) {
+            for (var i = 0; i < sites.length; i++) {
+                promises.push(sites[i].decrypt().then(function (site) {
+                    decSites.push(site);
+                }));
+            }
+
+            Q.all(promises).then(function () {
+                self.decryptedSiteCache = decSites;
+                deferred.resolve(self.decryptedSiteCache);
+            });
+        });
+
+        return deferred.promise;
     };
 
     SiteService.prototype.saveWithServer = function (site, successCallback, errorCallback) {

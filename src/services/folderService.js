@@ -2,11 +2,37 @@
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
+    this.decryptedFolderCache = null;
 
     initFolderService();
 };
 
 function initFolderService() {
+    FolderService.prototype.encrypt = function (folder) {
+        var model = {
+            id: folder.id
+        };
+
+        var deferred = Q.defer();
+
+        encryptWithPromise(folder.name).then(function (cs) {
+            model.name = cs;
+            deferred.resolve(model);
+        });
+
+        return deferred.promise;
+    };
+
+    function encryptWithPromise(plaintextString) {
+        var deferred = Q.defer();
+
+        cryptoService.encrypt(plaintextString, function (cipherString) {
+            deferred.resolve(cipherString);
+        });
+
+        return deferred.promise;
+    }
+
     FolderService.prototype.get = function (id, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
@@ -46,6 +72,33 @@ function initFolderService() {
                 callback(response);
             });
         });
+    };
+
+    FolderService.prototype.getAllDecrypted = function () {
+        var deferred = Q.defer();
+
+        var self = this;
+        if (self.decryptedFolderCache) {
+            deferred.resolve(self.decryptedFolderCache);
+            return deferred.promise;
+        }
+
+        var promises = [];
+        var decFolders = [];
+        self.getAll(function (folders) {
+            for (var i = 0; i < folders.length; i++) {
+                promises.push(folders[i].decrypt().then(function (folder) {
+                    decFolders.push(folder);
+                }));
+            }
+
+            Q.all(promises).then(function () {
+                self.decryptedFolderCache = decFolders;
+                deferred.resolve(self.decryptedFolderCache);
+            });
+        });
+
+        return deferred.promise;
     };
 
     FolderService.prototype.saveWithServer = function (folder, callback) {

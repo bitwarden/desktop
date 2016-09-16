@@ -110,4 +110,20 @@ var Folder = function (obj, alreadyEncrypted) {
 
         return deferred.promise;
     };
+
+    Folder.prototype.decrypt = function () {
+        var self = this;
+        var model = {
+            id: self.id
+        };
+
+        var deferred = Q.defer();
+
+        self.name.decryptWithPromise().then(function (val) {
+            model.name = val;
+            deferred.resolve(model);
+        });
+
+        return deferred.promise;
+    };
 }();
