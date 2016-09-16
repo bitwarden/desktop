@@ -29,9 +29,7 @@ angular
                 $scope.canAutofill = true;
             });
 
-            var filteredSites = [],
-                promises = [];
-
+            var filteredSites = [];
             var sitePromise = $q.when(siteService.getAllDecrypted());
             sitePromise.then(function (sites) {
                 for (var i = 0; i < sites.length; i++) {
@@ -39,10 +37,7 @@ angular
                         filteredSites.push(sites[i]);
                     }
                 }
-            });
-            promises.push(sitePromise);
 
-            $q.all(promises).then(function () {
                 $scope.sites = filteredSites;
             });
         });

@@ -13,13 +13,7 @@
   },
   "content_scripts": [
     {
-      "js": [ "autofillContent.js" ],
-      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
-      "run_at": "document_start"
-    },
-    {
-      "all_frames": true,
-      "js": [ "content.js" ],
+      "js": [ "content/autoFill.js" ],
       "matches": [ "http://*/*", "https://*/*", "file:///*" ],
       "run_at": "document_start"
     }
