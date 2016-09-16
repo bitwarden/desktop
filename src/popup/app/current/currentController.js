@@ -29,61 +29,21 @@ angular
                 $scope.canAutofill = true;
             });
 
-            var filteredPromises = [],
-                filteredSites = [],
-                promises = [],
-                decSites = [];
+            var filteredSites = [],
+                promises = [];
 
-            siteService.getAll(function (sites) {
+            var sitePromise = $q.when(siteService.getAllDecrypted());
+            sitePromise.then(function (sites) {
                 for (var i = 0; i < sites.length; i++) {
-                    var uriPromise = cipherService.decrypt(sites[i].uri, i);
-                    filteredPromises.push(uriPromise);
-                    uriPromise.then(function (obj) {
-                        if (!obj.val) {
-                            return;
-                        }
-
-                        var siteDomain = tldjs.getDomain(obj.val);
-                        if (!siteDomain || siteDomain != domain) {
-                            return;
-                        }
-
-                        filteredSites.push(obj.index);
-                    });
-                }
-
-                $q.all(filteredPromises).then(function () {
-                    for (var j = 0; j < filteredSites.length; j++) {
-                        var index = filteredSites[j];
-                        decSites.push({
-                            id: sites[index].id,
-                            folderId: sites[index].folderId,
-                            favorite: sites[index].favorite
-                        });
-
-                        var namePromise = cipherService.decrypt(sites[index].name, j);
-                        promises.push(namePromise);
-                        namePromise.then(function (obj) {
-                            decSites[obj.index].name = obj.val;
-                        });
-
-                        var usernamePromise = cipherService.decrypt(sites[index].username, j);
-                        promises.push(usernamePromise);
-                        usernamePromise.then(function (obj) {
-                            decSites[obj.index].username = obj.val;
-                        });
-
-                        var passwordPromise = cipherService.decrypt(sites[index].password, j);
-                        promises.push(passwordPromise);
-                        passwordPromise.then(function (obj) {
-                            decSites[obj.index].password = obj.val;
-                        });
+                    if (sites[i].domain && sites[i].domain == domain) {
+                        filteredSites.push(sites[i]);
                     }
+                }
+            });
+            promises.push(sitePromise);
 
-                    $q.all(promises).then(function () {
-                        $scope.sites = decSites;
-                    });
-                });
+            $q.all(promises).then(function () {
+                $scope.sites = filteredSites;
             });
         });
 
