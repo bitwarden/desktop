@@ -64,9 +64,19 @@
             return item.name.toLowerCase();
         };
 
-        $scope.setFolderFilter = function (folder) {
-            $scope.folderFilter = {};
-            $scope.folderFilter.folderId = folder.id;
+        $scope.filterByFolder = function (folder) {
+
+        };
+
+        $scope.searchSites = function () {
+            if (!$scope.searchText) {
+                return;
+            }
+
+            return function (site) {
+                return (site.name && site.name.indexOf($scope.searchText) !== -1) ||
+                    (site.username && site.username.indexOf($scope.searchText) !== -1);
+            };
         };
 
         $scope.addSite = function () {
