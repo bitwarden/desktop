@@ -27,4 +27,7 @@
     })
     .factory('autofillService', function () {
         return chrome.extension.getBackgroundPage().autofillService;
+    })
+    .factory('passwordGenerationService', function () {
+        return chrome.extension.getBackgroundPage().passwordGenerationService;
     });

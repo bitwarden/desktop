@@ -39,6 +39,7 @@
       "services/siteService.js",
       "services/syncService.js",
       "services/autofillService.js",
+      "services/passwordGenerationService.js",
       "background.js"
     ]
   },
