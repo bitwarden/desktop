@@ -1,13 +1,13 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, cipherService, tldjs, toastr) {
+    .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, tldjs, toastr, $q) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
 
         $scope.site = null;
         siteService.get($stateParams.siteId, function (site) {
-            cipherService.decryptSite(site).then(function (model) {
+            $q.when(site.decrypt()).then(function (model) {
                 $scope.site = model;
 
                 if (model.password) {

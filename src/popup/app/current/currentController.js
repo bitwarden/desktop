@@ -1,7 +1,7 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, siteService, cipherService, tldjs, toastr, $q, $window, $state) {
+    .controller('currentController', function ($scope, siteService, tldjs, toastr, $q, $window, $state) {
         var pageDetails = null,
             tabId = null,
             url = null,

@@ -15,37 +15,23 @@ function initSiteService() {
             favorite: site.favorite
         };
 
-        var deferred = Q.defer();
-
-        encryptWithPromise(site.name).then(function (cs) {
+        return cryptoService.encrypt(site.name).then(function (cs) {
             model.name = cs;
-            return encryptWithPromise(site.uri);
+            return cryptoService.encrypt(site.uri);
         }).then(function (cs) {
             model.uri = cs;
-            return encryptWithPromise(site.username);
+            return cryptoService.encrypt(site.username);
         }).then(function (cs) {
             model.username = cs;
-            return encryptWithPromise(site.password);
+            return cryptoService.encrypt(site.password);
         }).then(function (cs) {
             model.password = cs;
-            return encryptWithPromise(site.notes);
+            return cryptoService.encrypt(site.notes);
         }).then(function (cs) {
             model.notes = cs;
-            deferred.resolve(model);
+            return model;
         });
-
-        return deferred.promise;
     };
-
-    function encryptWithPromise(plaintextString) {
-        var deferred = Q.defer();
-
-        cryptoService.encrypt(plaintextString, function (cipherString) {
-            deferred.resolve(cipherString);
-        });
-
-        return deferred.promise;
-    }
 
     SiteService.prototype.get = function (id, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -118,18 +104,20 @@ function initSiteService() {
         return deferred.promise;
     };
 
-    SiteService.prototype.saveWithServer = function (site, successCallback, errorCallback) {
+    SiteService.prototype.saveWithServer = function (site) {
+        var deferred = Q.defer();
+
         var self = this,
             request = new SiteRequest(site);
 
         if (!site.id) {
             self.apiService.postSite(request, apiSuccess, function (response) {
-                handleError(response, errorCallback)
+                handleError(response, deferred)
             });
         }
         else {
             self.apiService.putSite(site.id, request, apiSuccess, function (response) {
-                handleError(response, errorCallback)
+                handleError(response, deferred)
             });
         }
 
@@ -138,12 +126,12 @@ function initSiteService() {
             userService.getUserId(function (userId) {
                 var data = new SiteData(response, userId);
                 self.upsert(data, function () {
-                    if (successCallback) {
-                        successCallback(site);
-                    }
+                    deferred.resolve(site);
                 });
             });
         }
+
+        return deferred.promise;
     };
 
     SiteService.prototype.upsert = function (site, callback) {
@@ -230,27 +218,26 @@ function initSiteService() {
         });
     };
 
-    SiteService.prototype.deleteWithServer = function (id, successCallback, errorCallback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
+    SiteService.prototype.deleteWithServer = function (id) {
+        var deferred = Q.defer();
 
         var self = this;
         self.apiService.deleteCipher(id, function (response) {
-            self.delete(id, successCallback);
+            self.delete(id, function () {
+                deferred.resolve();
+            });
         }, function (response) {
-            handleError(response, errorCallback)
+            handleError(response, deferred)
         });
+
+        return deferred.promise;
     };
 
-    function handleError(error, callback) {
+    function handleError(error, deferred) {
         if (error.status == 401 || error.status == 403) {
             // TODO: logout
-
         }
 
-        if (callback) {
-            callback(error);
-        }
+        deferred.reject(error);
     }
 };

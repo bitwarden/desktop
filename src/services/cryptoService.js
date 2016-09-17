@@ -98,41 +98,39 @@ function initCryptoService() {
         });
     };
 
-    CryptoService.prototype.encrypt = function (plaintextValue, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
+    CryptoService.prototype.encrypt = function (plaintextValue) {
+        var deferred = Q.defer();
 
         if (plaintextValue === null || plaintextValue === undefined) {
-            callback(null);
-            return;
+            deferred.resolve(null);
+        }
+        else {
+            this.getKey(false, function (key) {
+                if (!key) {
+                    throw 'Encryption key unavailable.';
+                }
+
+                var response = {};
+                var params = {
+                    mode: "cbc",
+                    iv: sjcl.random.randomWords(4, 0)
+                };
+
+                var ctJson = sjcl.encrypt(key, plaintextValue, params, response);
+
+                var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
+                var iv = sjcl.codec.base64.fromBits(response.iv);
+
+                var cs = new CipherString(iv + "|" + ct);
+                deferred.resolve(cs);
+            });
         }
 
-        this.getKey(false, function (key) {
-            if (!key) {
-                throw 'Encryption key unavailable.';
-            }
-
-            var response = {};
-            var params = {
-                mode: "cbc",
-                iv: sjcl.random.randomWords(4, 0)
-            };
-
-            var ctJson = sjcl.encrypt(key, plaintextValue, params, response);
-
-            var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
-            var iv = sjcl.codec.base64.fromBits(response.iv);
-
-            var cs = new CipherString(iv + "|" + ct);
-            callback(cs);
-        });
+        return deferred.promise;
     };
 
-    CryptoService.prototype.decrypt = function (cipherString, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
+    CryptoService.prototype.decrypt = function (cipherString) {
+        var deferred = Q.defer();
 
         if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
             throw 'cannot decrypt nothing';
@@ -148,7 +146,9 @@ function initCryptoService() {
 
             var decBits = sjcl.mode.cbc.decrypt(aes, ctBits, ivBits, null);
             var decValue = sjcl.codec.utf8String.fromBits(decBits);
-            callback(decValue);
+            deferred.resolve(decValue);
         });
+
+        return deferred.promise;
     };
 };

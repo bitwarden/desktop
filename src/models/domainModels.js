@@ -42,32 +42,22 @@ var Folder = function (obj, alreadyEncrypted) {
 
 !function () {
     CipherString.prototype.decrypt = function (callback) {
+         var deferred = Q.defer();
+
         if (!this.decryptedValue) {
             var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
-            cryptoService.decrypt(this, function (decValue) {
+            cryptoService.decrypt(this).then(function (decValue) {
                 this.decryptedValue = decValue;
-                callback(this.decryptedValue);
+                deferred.resolve(this.decryptedValue);
             });
         }
         else {
             callback(this.decryptedValue);
-        }
-    };
-
-    CipherString.prototype.decryptWithPromise = function () {
-        var deferred = Q.defer();
-
-        if (!this) {
-            deferred.resolve(null);
-        }
-        else {
-            this.decrypt(function (decVal) {
-                deferred.resolve(decVal);
-            });
+            deferred.resolve(this.decryptedValue);
         }
 
         return deferred.promise;
-    }
+    };
 
     Site.prototype.decrypt = function () {
         var self = this;
@@ -79,29 +69,29 @@ var Folder = function (obj, alreadyEncrypted) {
 
         var deferred = Q.defer();
 
-        self.name.decryptWithPromise().then(function (val) {
+        self.name.decrypt().then(function (val) {
             model.name = val;
             if (self.uri) {
-                return self.uri.decryptWithPromise();
+                return self.uri.decrypt();
             }
             return null;
         }).then(function (val) {
             model.uri = val;
             model.domain = tldjs.getDomain(val);
             if (self.username) {
-                return self.username.decryptWithPromise();
+                return self.username.decrypt();
             }
             return null;
         }).then(function (val) {
             model.username = val;
             if (self.password) {
-                return self.password.decryptWithPromise();
+                return self.password.decrypt();
             }
             return null;
         }).then(function (val) {
             model.password = val;
             if (self.notes) {
-                return self.notes.decryptWithPromise();
+                return self.notes.decrypt();
             }
             return null;
         }).then(function (val) {
@@ -120,7 +110,7 @@ var Folder = function (obj, alreadyEncrypted) {
 
         var deferred = Q.defer();
 
-        self.name.decryptWithPromise().then(function (val) {
+        self.name.decrypt().then(function (val) {
             model.name = val;
             deferred.resolve(model);
         });

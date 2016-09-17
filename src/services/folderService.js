@@ -13,25 +13,11 @@ function initFolderService() {
             id: folder.id
         };
 
-        var deferred = Q.defer();
-
-        encryptWithPromise(folder.name).then(function (cs) {
+        return cryptoService.encrypt(folder.name).then(function (cs) {
             model.name = cs;
-            deferred.resolve(model);
+            return model;
         });
-
-        return deferred.promise;
     };
-
-    function encryptWithPromise(plaintextString) {
-        var deferred = Q.defer();
-
-        cryptoService.encrypt(plaintextString, function (cipherString) {
-            deferred.resolve(cipherString);
-        });
-
-        return deferred.promise;
-    }
 
     FolderService.prototype.get = function (id, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -101,10 +87,8 @@ function initFolderService() {
         return deferred.promise;
     };
 
-    FolderService.prototype.saveWithServer = function (folder, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
+    FolderService.prototype.saveWithServer = function (folder) {
+        var deferred = Q.defer();
 
         var self = this,
             request = new FolderRequest(folder);
@@ -121,10 +105,12 @@ function initFolderService() {
             userService.getUserId(function (userId) {
                 var data = new FolderData(response, userId);
                 self.upsert(data, function () {
-                    callback(folder);
+                    deferred.resolve(folder);
                 });
             });
         }
+
+        return deferred.promise;
     };
 
     FolderService.prototype.upsert = function (folder, callback) {

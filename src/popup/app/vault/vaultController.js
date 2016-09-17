@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, cipherService, $state, $stateParams, toastr) {
+    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr) {
         $('#search').focus();
 
         var delayLoad = true;
