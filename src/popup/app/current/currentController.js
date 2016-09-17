@@ -8,6 +8,8 @@ angular
             domain = null,
             canAutofill = false;
 
+        $scope.loaded = false;
+
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             if (tabs.length > 0) {
                 url = tabs[0].url;
@@ -37,6 +39,7 @@ angular
                     }
                 }
 
+                $scope.loaded = true;
                 $scope.sites = filteredSites;
             });
         });

@@ -5,6 +5,7 @@
         $('#search').focus();
 
         var delayLoad = true;
+        $scope.loaded = true;
         if (!$rootScope.vaultSites) {
             $rootScope.vaultSites = [];
             delayLoad = false;
@@ -12,6 +13,7 @@
         if (!$rootScope.vaultFolders) {
             $rootScope.vaultFolders = [];
             delayLoad = false;
+            $scope.loaded = false;
         }
 
         if (delayLoad) {
@@ -40,6 +42,7 @@
             promises.push(sitePromise);
 
             $q.all(promises).then(function () {
+                $scope.loaded = true;
                 $rootScope.vaultFolders = decFolders.concat([{
                     id: null,
                     name: '(none)'
