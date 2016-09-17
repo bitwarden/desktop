@@ -104,9 +104,25 @@ function initAutofill() {
             }
         }
         else if (passwordFields.length == 1) {
+            // The page does not have any forms with password fields. Use the one password field on the page and the
+            // input field just before it as the username.
+
             password = passwordFields[0];
             if (password.elementNumber > 0) {
-                username = pageDetails.fields[password.elementNumber - 1];
+                for (i = 0; i < pageDetails.fields.length; i++) {
+                    f = pageDetails.fields[i];
+                    if (f.elementNumber > password.elementNumber) {
+                        break;
+                    }
+
+                    if (f.type === 'text' || f.type === 'email') {
+                        username = f;
+                    }
+                }
+
+                if (!username) {
+                    username = pageDetails.fields[password.elementNumber - 1];
+                }
             }
         }
 
