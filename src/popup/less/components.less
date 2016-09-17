@@ -196,12 +196,21 @@
         padding: 10px 10px;
         background-color: white;
         text-decoration: none;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         color: @text-color;
         position: relative;
         z-index: 1;
+
+        &:not(.wrap) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            .text, .detail {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
 
         &:before {
             content: "";
@@ -224,21 +233,22 @@
             background-color: @list-item-hover;
         }
 
+        .leading-icon {
+            font-size: 35px;
+            float: left;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
         .text {
             display: block;
             color: @text-color;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .detail {
             font-size: @font-size-small;
             color: @gray-light;
             display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         label, .item-label {
