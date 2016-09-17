@@ -106,12 +106,16 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-    if (info.parentMenuItemId === 'copy-username' || info.parentMenuItemId === 'copy-password') {
+    if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
+        info.parentMenuItemId === 'copy-password') {
         var id = info.menuItemId.split('_')[1];
         siteService.getAllDecrypted().then(function (sites) {
             for (var i = 0; i < sites.length; i++) {
                 if (sites[i].id == id) {
-                    if (info.parentMenuItemId === 'copy-username') {
+                    if (info.parentMenuItemId === 'autofill') {
+                        autofillPage(sites[i]);
+                    }
+                    else if (info.parentMenuItemId === 'copy-username') {
                         copyToClipboard(sites[i].username);
                     }
                     else if (info.parentMenuItemId === 'copy-password') {
@@ -123,6 +127,37 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         });
     }
 });
+
+function autofillPage(site) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tabId = null;
+        if (tabs.length > 0) {
+            tabId = tabs[0].id;
+        }
+        else {
+            return;
+        }
+
+        if (!tabId) {
+            return;
+        }
+
+        chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails' }, function (pageDetails) {
+            var fillScript = null;
+            if (site && pageDetails) {
+                fillScript = autofillService.generateFillScript(pageDetails, site.username, site.password);
+            }
+
+            if (tabId && fillScript) {
+                chrome.tabs.sendMessage(tabId, {
+                    command: 'fillForm',
+                    fillScript: fillScript
+                });
+            }
+        });
+    });
+
+}
 
 function sortSites(sites) {
     sites.sort(function (a, b) {

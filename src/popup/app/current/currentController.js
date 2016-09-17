@@ -69,7 +69,7 @@ angular
                     command: 'fillForm',
                     fillScript: fillScript
                 }, function () {
-                    $window.close()
+                    $window.close();
                 });
             }
             else {
