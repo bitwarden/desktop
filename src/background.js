@@ -11,28 +11,33 @@ function buildContextMenu() {
     chrome.contextMenus.create({
         type: 'normal',
         id: 'autofill',
+        contexts: ['all'],
         title: 'Auto-fill'
     });
 
     chrome.contextMenus.create({
         type: 'normal',
         id: 'copy-username',
+        contexts: ['all'],
         title: 'Copy Username'
     });
 
     chrome.contextMenus.create({
         type: 'normal',
         id: 'copy-password',
+        contexts: ['all'],
         title: 'Copy Password'
     });
 
     chrome.contextMenus.create({
-        type: 'separator'
+        type: 'separator',
+        contexts: ['all']
     });
 
     chrome.contextMenus.create({
         type: 'normal',
         id: 'generate-password',
+        contexts: ['all'],
         title: 'Generate Password'
     });
 }
@@ -156,6 +161,7 @@ function loadContextMenuOptions(site) {
         type: 'normal',
         id: 'autofill_' + site.id,
         parentId: 'autofill',
+        contexts: ['all'],
         title: title
     });
 
@@ -163,6 +169,7 @@ function loadContextMenuOptions(site) {
         type: 'normal',
         id: 'copy-username_' + site.id,
         parentId: 'copy-username',
+        contexts: ['all'],
         title: title
     });
 
@@ -170,6 +177,7 @@ function loadContextMenuOptions(site) {
         type: 'normal',
         id: 'copy-password_' + site.id,
         parentId: 'copy-password',
+        contexts: ['all'],
         title: title
     });
 }

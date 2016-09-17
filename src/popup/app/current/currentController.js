@@ -5,9 +5,8 @@ angular
         var pageDetails = null,
             tabId = null,
             url = null,
-            domain = null;
-
-        $scope.canAutofill = false;
+            domain = null,
+            canAutofill = false;
 
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             if (tabs.length > 0) {
@@ -26,7 +25,7 @@ angular
 
             chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails' }, function (details) {
                 pageDetails = details;
-                $scope.canAutofill = true;
+                canAutofill = true;
             });
 
             var filteredSites = [];
@@ -61,7 +60,7 @@ angular
 
         $scope.fillSite = function (site) {
             var fillScript = null;
-            if (site && $scope.canAutofill && pageDetails) {
+            if (site && canAutofill && pageDetails) {
                 fillScript = makeFillScript(site.username, site.password);
             }
 
@@ -94,7 +93,7 @@ angular
 
             var passwordFields = [];
             for (var i = 0; i < pageDetails.fields.length; i++) {
-                if (pageDetails.fields[i].type == 'password') {
+                if (pageDetails.fields[i].type === 'password') {
                     passwordFields.push(pageDetails.fields[i]);
                 }
             }
@@ -102,7 +101,7 @@ angular
             var passwordForms = [];
             for (var formKey in pageDetails.forms) {
                 for (var j = 0; j < passwordFields.length; j++) {
-                    if (formKey == passwordFields[j].form) {
+                    if (formKey === passwordFields[j].form) {
                         passwordForms.push(pageDetails.forms[formKey]);
                         break;
                     }
@@ -139,8 +138,8 @@ angular
                     for (i = 0; i < passwordForms.length; i++) {
                         var passwordFieldCount = 0;
 
-                        for (var j = 0; j < passwordFields.length; j++) {
-                            if (passwordForms[i].opid == passwordFields[j].form) {
+                        for (j = 0; j < passwordFields.length; j++) {
+                            if (passwordForms[i].opid === passwordFields[j].form) {
                                 passwordFieldCount++;
                             }
                         }
@@ -160,7 +159,7 @@ angular
             var password = null;
             for (i = 0; i < pageDetails.fields.length; i++) {
                 var f = pageDetails.fields[i];
-                if (f.form == loginForm.opid && f.type == 'password') {
+                if (f.form === loginForm.opid && f.type === 'password') {
                     password = f;
                     break;
                 }
@@ -168,8 +167,8 @@ angular
 
             var username = null;
             for (i = 0; i < pageDetails.fields.length; i++) {
-                var f = pageDetails.fields[i];
-                if (f.form == loginForm.opid && (f.type == 'text' || f.type == 'email')
+                f = pageDetails.fields[i];
+                if (f.form === loginForm.opid && (f.type === 'text' || f.type === 'email')
                     && f.elementNumber < password.elementNumber) {
                     username = f;
                 }
