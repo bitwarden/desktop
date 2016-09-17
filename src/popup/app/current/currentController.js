@@ -16,12 +16,14 @@ angular
                 tabId = tabs[0].id;
             }
             else {
+                $scope.loaded = true;
                 return;
             }
 
             domain = tldjs.getDomain(url);
             $scope.sites = [];
             if (!domain) {
+                $scope.loaded = true;
                 return;
             }
 

@@ -28,75 +28,83 @@
         $httpProvider.interceptors.push('jwtInterceptor');
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
-            var $state = $injector.get("$state");
-            $state.go("login");
+            var $state = $injector.get('$state');
+            $state.go('login');
         });
 
         $stateProvider
             .state('login', {
-                url: "/login",
+                url: '/login',
                 controller: 'accountsLoginController',
-                templateUrl: "app/accounts/views/accountsLogin.html",
+                templateUrl: 'app/accounts/views/accountsLogin.html',
                 data: { authorize: false },
                 params: { animation: null }
             })
             .state('twoFactor', {
-                url: "/two-factor",
+                url: '/two-factor',
                 controller: 'accountsLoginController',
-                templateUrl: "app/accounts/views/accountsLoginTwoFactor.html",
+                templateUrl: 'app/accounts/views/accountsLoginTwoFactor.html',
                 data: { authorize: false },
                 params: { animation: null }
             })
 
             .state('tabs', {
-                url: "/tab",
+                url: '/tab',
                 abstract: true,
-                templateUrl: "app/global/tabs.html",
+                templateUrl: 'app/global/tabs.html',
                 data: { authorize: true },
                 params: { animation: null }
             })
                 .state('tabs.current', {
-                    url: "/current",
-                    templateUrl: "app/current/views/current.html",
+                    url: '/current',
+                    templateUrl: 'app/current/views/current.html',
                     controller: 'currentController'
                 })
                 .state('tabs.vault', {
-                    url: "/vault",
-                    templateUrl: "app/vault/views/vault.html",
+                    url: '/vault',
+                    templateUrl: 'app/vault/views/vault.html',
                     controller: 'vaultController',
                     params: { scrollY: 0, searchText: null }
                 })
                 .state('tabs.settings', {
-                    url: "/settings",
-                    templateUrl: "app/settings/views/settings.html",
+                    url: '/settings',
+                    templateUrl: 'app/settings/views/settings.html',
                     controller: 'settingsController'
                 })
                 .state('tabs.tools', {
-                    url: "/tools",
-                    templateUrl: "app/tools/views/tools.html",
+                    url: '/tools',
+                    templateUrl: 'app/tools/views/tools.html',
                     controller: 'toolsController'
                 })
 
             .state('viewSite', {
-                url: "/view-site?siteId",
-                templateUrl: "app/vault/views/vaultViewSite.html",
+                url: '/view-site?siteId',
+                templateUrl: 'app/vault/views/vaultViewSite.html',
                 controller: 'vaultViewSiteController',
                 data: { authorize: true },
                 params: { animation: null, returnScrollY: 0, returnSearchText: null }
             })
             .state('addSite', {
-                url: "/add-site",
-                templateUrl: "app/vault/views/vaultAddSite.html",
+                url: '/add-site',
+                templateUrl: 'app/vault/views/vaultAddSite.html',
                 controller: 'vaultAddSiteController',
                 data: { authorize: true },
                 params: { animation: null, returnScrollY: 0, returnSearchText: null, name: null, uri: null }
             })
             .state('editSite', {
-                url: "/edit-site?siteId",
-                templateUrl: "app/vault/views/vaultEditSite.html",
+                url: '/edit-site?siteId',
+                templateUrl: 'app/vault/views/vaultEditSite.html',
                 controller: 'vaultEditSiteController',
                 data: { authorize: true },
                 params: { animation: null, fromView: true, returnScrollY: 0, returnSearchText: null }
+            })
+
+            .state('passwordGenerator', {
+                url: '/password-generator',
+                templateUrl: 'app/tools/views/toolsPasswordGenerator.html',
+                controller: 'toolsPasswordGeneratorController',
+                data: { authorize: true },
+                params: { animation: null, fromAdd: false, fromEdit: null }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {

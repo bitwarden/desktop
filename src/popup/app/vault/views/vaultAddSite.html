@@ -17,19 +17,19 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <label for="name">Name</label>
+                        <label for="name" class="item-label">Name</label>
                         <input id="name" type="text" name="Name" ng-model="site.name" bit-field>
                     </div>
                     <div class="list-section-item">
-                        <label for="uri">URI</label>
+                        <label for="uri" class="item-label">URI</label>
                         <input id="uri" type="text" name="Uri" ng-model="site.uri" bit-field>
                     </div>
                     <div class="list-section-item">
-                        <label for="username">Username</label>
+                        <label for="username" class="item-label">Username</label>
                         <input id="username" type="text" name="Username" ng-model="site.username" bit-field>
                     </div>
                     <div class="list-section-item">
-                        <label for="password">Password</label>
+                        <label for="password" class="item-label">Password</label>
                         <input id="password" type="password" name="Password" ng-model="site.password" bit-field>
                     </div>
                     <a class="list-section-item" href="#">
@@ -41,7 +41,7 @@
             <div class="list-section">
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <label for="folder">Folder</label>
+                        <label for="folder" class="item-label">Folder</label>
                         <select id="folder" name="FolderId" ng-model="site.folderId" bit-field>
                             <option ng-repeat="folder in folders | orderBy: ['name']" value="{{folder.id}}">{{folder.name}}</option>
                         </select>
