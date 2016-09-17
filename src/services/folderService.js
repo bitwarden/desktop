@@ -118,6 +118,8 @@ function initFolderService() {
             throw 'callback function required';
         }
 
+        var self = this;
+
         userService.getUserId(function (userId) {
             var foldersKey = 'folders_' + userId;
 
@@ -139,6 +141,7 @@ function initFolderService() {
                 obj[foldersKey] = folders;
 
                 chrome.storage.local.set(obj, function () {
+                    self.decryptedFolderCache = null;
                     callback();
                 });
             });
@@ -150,10 +153,13 @@ function initFolderService() {
             throw 'callback function required';
         }
 
+        var self = this;
+
         userService.getUserId(function (userId) {
             var obj = {};
             obj['folders_' + userId] = folders;
             chrome.storage.local.set(obj, function () {
+                self.decryptedFolderCache = null;
                 callback();
             });
         });
@@ -163,6 +169,8 @@ function initFolderService() {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
+
+        var self = this;
 
         userService.getUserId(function (userId) {
             var foldersKey = 'folders_' + userId;
@@ -191,6 +199,7 @@ function initFolderService() {
 
                 obj[foldersKey] = folders;
                 chrome.storage.local.set(obj, function () {
+                    self.decryptedFolderCache = null;
                     callback();
                 });
             });

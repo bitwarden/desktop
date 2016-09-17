@@ -139,6 +139,8 @@ function initSiteService() {
             throw 'callback function required';
         }
 
+        var self = this;
+
         userService.getUserId(function (userId) {
             var sitesKey = 'sites_' + userId;
 
@@ -160,6 +162,7 @@ function initSiteService() {
                 obj[sitesKey] = sites;
 
                 chrome.storage.local.set(obj, function () {
+                    self.decryptedSiteCache = null;
                     callback();
                 });
             });
@@ -171,10 +174,13 @@ function initSiteService() {
             throw 'callback function required';
         }
 
+        var self = this;
+
         userService.getUserId(function (userId) {
             var obj = {};
             obj['sites_' + userId] = sites;
             chrome.storage.local.set(obj, function () {
+                self.decryptedSiteCache = null;
                 callback();
             });
         });
@@ -184,6 +190,8 @@ function initSiteService() {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
+
+        var self = this;
 
         userService.getUserId(function (userId) {
             var sitesKey = 'sites_' + userId;
@@ -212,6 +220,7 @@ function initSiteService() {
 
                 obj[sitesKey] = sites;
                 chrome.storage.local.set(obj, function () {
+                    self.decryptedSiteCache = null;
                     callback();
                 });
             });
@@ -234,7 +243,7 @@ function initSiteService() {
     };
 
     function handleError(error, deferred) {
-        if (error.status == 401 || error.status == 403) {
+        if (error.status === 401 || error.status === 403) {
             // TODO: logout
         }
 
