@@ -24,4 +24,7 @@
     })
     .factory('tldjs', function () {
         return chrome.extension.getBackgroundPage().tldjs;
+    })
+    .factory('autofillService', function () {
+        return chrome.extension.getBackgroundPage().autofillService;
     });
