@@ -89,7 +89,7 @@
                 templateUrl: 'app/vault/views/vaultAddSite.html',
                 controller: 'vaultAddSiteController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0, returnSearchText: null, name: null, uri: null }
+                params: { animation: null, returnScrollY: 0, returnSearchText: null, name: null, uri: null, site: null }
             })
             .state('editSite', {
                 url: '/edit-site?siteId',
@@ -104,7 +104,7 @@
                 templateUrl: 'app/tools/views/toolsPasswordGenerator.html',
                 controller: 'toolsPasswordGeneratorController',
                 data: { authorize: true },
-                params: { animation: null, fromAdd: false, fromEdit: null }
+                params: { animation: null, addState: null, editState: null }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {

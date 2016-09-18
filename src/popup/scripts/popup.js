@@ -24,6 +24,9 @@
             }
             else if (checkbox.length > 0) {
                 checkbox.prop('checked', !checkbox.is(':checked'));
+                if (angular) {
+                    angular.element(checkbox[0]).triggerHandler('click');
+                }
             }
             else if (select.length > 0) {
                 select.openSelect();

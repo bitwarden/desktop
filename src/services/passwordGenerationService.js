@@ -1,24 +1,27 @@
 ﻿function PasswordGenerationService() {
+    this.optionsCache = null;
+
     initPasswordGenerationService();
 };
 
 function initPasswordGenerationService() {
-    PasswordGenerationService.prototype.generatePassword = function (options) {
-        var defaults = {
-            length: 10,
-            ambiguous: false,
-            number: true,
-            minNumber: 1,
-            uppercase: true,
-            minUppercase: 1,
-            lowercase: true,
-            minLowercase: 1,
-            special: false,
-            minSpecial: 1
-        };
+    var optionsKey = 'passwordGenerationOptions';
+    var defaultOptions = {
+        length: 10,
+        ambiguous: false,
+        number: true,
+        minNumber: 1,
+        uppercase: true,
+        minUppercase: 1,
+        lowercase: true,
+        minLowercase: 1,
+        special: false,
+        minSpecial: 1
+    };
 
+    PasswordGenerationService.prototype.generatePassword = function (options) {
         // overload defaults with given options
-        var o = angular.extend({}, defaults, options);
+        var o = extend({}, defaultOptions, options);
 
         // sanitize
         if (o.uppercase && o.minUppercase < 0) o.minUppercase = 1;
@@ -99,4 +102,52 @@ function initPasswordGenerationService() {
     function randomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
+    function extend() {
+        for (var i = 1; i < arguments.length; i++) {
+            for (var key in arguments[i]) {
+                if (arguments[i].hasOwnProperty(key)) {
+                    arguments[0][key] = arguments[i][key];
+                }
+            }
+        }
+
+        return arguments[0];
+    }
+
+    PasswordGenerationService.prototype.getOptions = function () {
+        var deferred = Q.defer();
+        var self = this;
+
+        if (self.optionsCache) {
+            deferred.resolve(self.optionsCache);
+            return deferred.promise;
+        }
+
+        chrome.storage.local.get(optionsKey, function (obj) {
+            var options = obj[optionsKey];
+            if (!options) {
+                options = defaultOptions;
+            }
+
+            self.optionsCache = options;
+            deferred.resolve(self.optionsCache);
+        });
+
+        return deferred.promise;
+    };
+
+    PasswordGenerationService.prototype.saveOptions = function (options) {
+        var deferred = Q.defer();
+        var self = this;
+
+        var obj = {};
+        obj[optionsKey] = options;
+        chrome.storage.local.set(obj, function () {
+            self.optionsCache = options;
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    };
 };
