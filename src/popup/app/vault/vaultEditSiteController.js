@@ -70,8 +70,7 @@ angular
                     showCancelButton: true,
                     confirmButtonText: 'Yes',
                     cancelButtonText: 'No'
-                },
-                function (confirm) {
+                }, function (confirm) {
                     if (confirm) {
                         goPasswordGenerator();
                     }
