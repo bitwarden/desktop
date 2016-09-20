@@ -1,7 +1,7 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService, cryptoService, $q, toastr) {
+    .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService, cryptoService, $q, toastr, SweetAlert) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
         var siteId = $stateParams.siteId;
@@ -61,10 +61,29 @@ angular
         };
 
         $scope.generatePassword = function () {
+            var confirmed = true;
             if ($scope.site.password) {
-                // TODO: confirmation
+                SweetAlert.swal({
+                    title: 'Warning',
+                    text: 'Are you sure you want to overwrite the current password?',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes',
+                    cancelButtonText: 'No'
+                },
+                function (confirm) {
+                    if (confirm) {
+                        goPasswordGenerator();
+                    }
+                });
+            }
+            else {
+                goPasswordGenerator();
             }
 
+        };
+
+        function goPasswordGenerator() {
             $state.go('passwordGenerator', {
                 animation: 'in-slide-up',
                 editState: {
@@ -75,5 +94,5 @@ angular
                     returnSearchText: returnSearchText
                 }
             });
-        };
+        }
     });

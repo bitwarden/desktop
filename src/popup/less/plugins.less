@@ -35,6 +35,7 @@
         &.toast-danger, &.toast-error {
             background-image: none !important;
             background-color: @brand-danger;
+
             &:before {
                 content: "\f0e7";
             }
@@ -43,6 +44,7 @@
         &.toast-warning {
             background-image: none !important;
             background-color: @brand-warning;
+
             &:before {
                 content: "\f071";
             }
@@ -51,6 +53,7 @@
         &.toast-info {
             background-image: none !important;
             background-color: @brand-info;
+
             &:before {
                 content: "\f005";
             }
@@ -59,6 +62,7 @@
         &.toast-success {
             background-image: none !important;
             background-color: @brand-success;
+
             &:before {
                 content: "\f00C";
             }
@@ -73,6 +77,66 @@
             color: #ffffff;
             padding-right: 0.5em;
             margin: auto 0.5em auto -1.5em;
+        }
+    }
+}
+
+/* Sweet alert */
+
+.sweet-alert {
+    p {
+        color: @text-color;
+        font-weight: normal;
+    }
+
+    h2 {
+        line-height: 30px;
+        font-size: 25px;
+    }
+
+    .sa-icon.sa-error {
+        border-color: @brand-danger;
+    }
+
+    .pulseErrorIns {
+        background-color: @brand-danger !important;
+    }
+
+    .sa-icon.sa-info {
+        border-color: @brand-info;
+    }
+
+    .pulseInfoIns {
+        background-color: @brand-info !important;
+    }
+
+    .sa-icon.sa-success {
+        border-color: @brand-success;
+    }
+
+    .pulseSuccessIns {
+        background-color: @brand-success !important;
+    }
+
+    .sa-icon.sa-warning {
+        border-color: @brand-warning;
+    }
+
+    .pulseWarningIns {
+        background-color: @brand-warning !important;
+    }
+
+    button {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+
+        &.confirm, &.confirm:hover {
+            background-color: @brand-primary !important;
+        }
+
+        &.cancel, &.cancel:hover {
+            background-color: @gray-light;
         }
     }
 }

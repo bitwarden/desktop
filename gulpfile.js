@@ -104,6 +104,10 @@ gulp.task('lib', ['clean:lib'], function () {
         {
             src: paths.npmDir + 'q/q.js',
             dest: paths.libDir + 'q'
+        },
+        {
+            src: [paths.npmDir + 'sweetalert/dist/sweetalert.css', paths.npmDir + 'sweetalert/dist/sweetalert.min.js', paths.npmDir + 'angular-sweetalert/SweetAlert.js'],
+            dest: paths.libDir + 'sweetalert'
         }
     ];
 

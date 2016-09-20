@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.vault', ['ngAnimate', 'toastr', 'ngclipboard']);
+    .module('bit.vault', ['ngAnimate', 'toastr', 'ngclipboard', 'oitozero.ngSweetAlert']);
