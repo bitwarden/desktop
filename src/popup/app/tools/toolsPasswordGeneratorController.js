@@ -5,6 +5,8 @@
         var addState = $stateParams.addState,
             editState = $stateParams.editState;
 
+        $scope.showSelect = $stateParams.addState || $stateParams.editState;
+
         popupUtils.initListSectionItemListeners();
         $scope.password = '-';
 
@@ -61,16 +63,38 @@
         };
 
         $scope.close = function () {
+            dismiss();
+        };
+
+        $scope.select = function () {
+            if (addState) {
+                addState.site.password = $scope.password;
+            }
+            else if (editState) {
+                editState.site.password = $scope.password;
+            }
+
+            dismiss();
+        };
+
+        function dismiss() {
             if (addState) {
                 $state.go('addSite', {
                     animation: 'out-slide-down',
-                    site: addState
+                    fromCurrent: addState.fromCurrent,
+                    site: addState.site,
+                    returnScrollY: addState.returnScrollY,
+                    returnSearchText: addState.returnSearchText
                 });
             }
             else if (editState) {
                 $state.go('editSite', {
                     animation: 'out-slide-down',
-                    siteId: editState
+                    site: editState.site,
+                    fromView: editState.fromView,
+                    siteId: editState.siteId,
+                    returnScrollY: editState.returnScrollY,
+                    returnSearchText: editState.returnSearchText
                 });
             }
             else {
@@ -78,5 +102,5 @@
                     animation: 'out-slide-down'
                 });
             }
-        };
+        }
     });

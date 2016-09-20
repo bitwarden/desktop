@@ -4,16 +4,23 @@ angular
     .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService, cryptoService, $q, toastr) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
+        var siteId = $stateParams.siteId;
+        var fromView = $stateParams.fromView;
 
         $scope.site = {
             folderId: null
         };
 
-        siteService.get($stateParams.siteId, function (site) {
-            $q.when(site.decrypt()).then(function (model) {
-                $scope.site = model;
+        if ($stateParams.site) {
+            angular.extend($scope.site, $stateParams.site);
+        }
+        else {
+            siteService.get(siteId, function (site) {
+                $q.when(site.decrypt()).then(function (model) {
+                    $scope.site = model;
+                });
             });
-        });
+        }
 
         $q.when(folderService.getAllDecrypted()).then(function (folders) {
             $scope.folders = folders.concat([{
@@ -36,9 +43,9 @@ angular
         };
 
         $scope.close = function () {
-            if ($stateParams.fromView) {
+            if (fromView) {
                 $state.go('viewSite', {
-                    siteId: $stateParams.siteId,
+                    siteId: siteId,
                     animation: 'out-slide-down',
                     returnScrollY: returnScrollY || 0,
                     returnSearchText: returnSearchText
@@ -51,5 +58,22 @@ angular
                     searchText: returnSearchText
                 });
             }
+        };
+
+        $scope.generatePassword = function () {
+            if ($scope.site.password) {
+                // TODO: confirmation
+            }
+
+            $state.go('passwordGenerator', {
+                animation: 'in-slide-up',
+                editState: {
+                    fromView: fromView,
+                    siteId: siteId,
+                    site: $scope.site,
+                    returnScrollY: returnScrollY,
+                    returnSearchText: returnSearchText
+                }
+            });
         };
     });

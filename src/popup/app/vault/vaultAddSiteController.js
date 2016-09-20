@@ -4,7 +4,7 @@
     .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService, cryptoService, $q, toastr) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
-        var fromCurrent = $stateParams.uri !== null;
+        var fromCurrent = $stateParams.fromCurrent || $stateParams.uri !== null;
 
         $scope.site = {
             folderId: null,
@@ -12,7 +12,11 @@
             uri: $stateParams.uri
         };
 
-        if ($scope.site.name && $scope.site.uri) {
+        if ($stateParams.site) {
+            angular.extend($scope.site, $stateParams.site);
+        }
+
+        if (!$stateParams.site && $scope.site.name && $scope.site.uri) {
             $('#username').focus();
         }
         else {
@@ -51,5 +55,17 @@
                     searchText: returnSearchText
                 });
             }
+        };
+
+        $scope.generatePassword = function () {
+            $state.go('passwordGenerator', {
+                animation: 'in-slide-up',
+                addState: {
+                    fromCurrent: fromCurrent,
+                    site: $scope.site,
+                    returnScrollY: returnScrollY,
+                    returnSearchText: returnSearchText
+                }
+            });
         };
     });
