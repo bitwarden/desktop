@@ -24,6 +24,7 @@
     "clipboard": "1.5.12",
     "merge-stream": "1.0.0",
     "angular-toastr": "2.1.1",
-    "q": "1.4.1"
+    "q": "1.4.1",
+    "angularjs-slider": "5.5.0"
   }
 }

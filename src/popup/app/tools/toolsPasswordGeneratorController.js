@@ -8,8 +8,27 @@
         popupUtils.initListSectionItemListeners();
         $scope.password = '-';
 
+        $scope.slider = {
+            value: 12,
+            options: {
+                floor: 5,
+                ceil: 64,
+                step: 1,
+                hideLimitLabels: true,
+                hidePointerLabels: true,
+                onChange: function () {
+                    $scope.options.length = $scope.slider.value;
+                    $scope.regenerate();
+                },
+                onEnd: function () {
+                    $scope.saveOptions($scope.options);
+                }
+            }
+        };
+
         $q.when(passwordGenerationService.getOptions()).then(function (options) {
             $scope.options = options;
+            $scope.slider.value = options.length;
             $scope.regenerate();
         });
 

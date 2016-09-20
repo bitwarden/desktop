@@ -94,6 +94,10 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'ngclipboard'
         },
         {
+            src: paths.npmDir + 'angularjs-slider/dist/rzslider.js',
+            dest: paths.libDir + 'angularjs-slider'
+        },
+        {
             src: paths.npmDir + 'clipboard/dist/clipboard.js',
             dest: paths.libDir + 'clipboard'
         },

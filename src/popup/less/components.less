@@ -331,6 +331,16 @@
                 text-align: right;
             }
         }
+
+        &.list-section-item-slider {
+            .slider-value {
+                color: @gray-light;
+
+                &:before {
+                    content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0";
+                }
+            }
+        }
     }
 
     &.list-no-selection {
@@ -340,4 +350,13 @@
             }
         }
     }
+}
+
+.generate-password-block {
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

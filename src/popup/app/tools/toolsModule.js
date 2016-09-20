@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.tools', ['ngAnimate', 'ngclipboard', 'toastr']);
+    .module('bit.tools', ['ngAnimate', 'ngclipboard', 'toastr', 'rzModule']);
