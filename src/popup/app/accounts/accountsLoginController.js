@@ -3,6 +3,7 @@
 
     .controller('accountsLoginController', function ($scope, $state, loginService, userService) {
         popupUtils.initListSectionItemListeners();
+        $('#email').focus();
 
         $scope.loginPromise = null;
         $scope.login = function (model) {

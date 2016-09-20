@@ -3,6 +3,7 @@
 
     .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q) {
         popupUtils.initListSectionItemListeners();
+        $('#email').focus();
 
         $scope.submitPromise = null;
         $scope.submit = function (model) {
