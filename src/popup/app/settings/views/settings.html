@@ -5,33 +5,23 @@
     <div class="list">
         <div class="list-section">
             <div class="list-section-header">
-                Security
-            </div>
-            <div class="list-section-items">
-                <a class="list-section-item" href="#">
-                    Lock Options
-                </a>
-                <a class="list-section-item" href="#">
-                    Unlock with PIN Code
-                </a>
-                <a class="list-section-item" href="#">
-                    Two-step Login
-                    <i class="fa fa-chevron-right fa-lg"></i>
-                </a>
-            </div>
-        </div>
-        <div class="list-section">
-            <div class="list-section-header">
                 Account
             </div>
             <div class="list-section-items">
-                <a class="list-section-item" href="#">
+                <a class="list-section-item" href="" ng-click="changePassword()">
                     Change Master Password
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
-                <a class="list-section-item" href="#">
+                <a class="list-section-item" href="" ng-click="changeEmail()">
                     Change Email
                     <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" href="" ng-click="twoStep()">
+                    Two-step Login
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" href="" ng-click="logOut()">
+                    Log out
                 </a>
             </div>
         </div>
@@ -52,19 +42,6 @@
         </div>
         <div class="list-section">
             <div class="list-section-header">
-                Current Session
-            </div>
-            <div class="list-section-items">
-                <a class="list-section-item" href="">
-                    Lock
-                </a>
-                <a class="list-section-item" href="" ng-click="logOut()">
-                    Log out
-                </a>
-            </div>
-        </div>
-        <div class="list-section">
-            <div class="list-section-header">
                 Other
             </div>
             <div class="list-section-items">
@@ -76,7 +53,7 @@
                     Help &amp; Feedback
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
-                <a class="list-section-item" href="#">
+                <a class="list-section-item" href="" ng-click="rate()">
                     Rate the Extension
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>

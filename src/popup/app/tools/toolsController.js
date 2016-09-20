@@ -22,8 +22,8 @@
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
-            }, function (confirm) {
-                if (confirm) {
+            }, function (confirmed) {
+                if (confirmed) {
                     chrome.tabs.create({ url: 'https://vault.bitwarden.com' });
                 }
             });

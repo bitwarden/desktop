@@ -61,7 +61,6 @@ angular
         };
 
         $scope.generatePassword = function () {
-            var confirmed = true;
             if ($scope.site.password) {
                 SweetAlert.swal({
                     title: 'Warning',
@@ -70,8 +69,8 @@ angular
                     showCancelButton: true,
                     confirmButtonText: 'Yes',
                     cancelButtonText: 'No'
-                }, function (confirm) {
-                    if (confirm) {
+                }, function (confirmed) {
+                    if (confirmed) {
                         goPasswordGenerator();
                     }
                 });
