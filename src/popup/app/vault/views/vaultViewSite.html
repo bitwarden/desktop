@@ -31,7 +31,7 @@
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
                     <span class="item-label">Username</span>
-                    <span id="username">{{site.username}}</span>
+                    <span id="username" class="monospaced">{{site.username}}</span>
                 </div>
                 <div class="list-section-item" ng-show="site.password">
                     <a class="btn-list" href="" title="Copy Password" ngclipboard ngclipboard-error="clipboardError(e)"
@@ -43,7 +43,7 @@
                     </a>
                     <span class="item-label">Password</span>
                     <span ng-show="!showPassword">{{site.maskedPassword}}</span>
-                    <span id="password" ng-show="showPassword">{{site.password}}</span>
+                    <span id="password" ng-show="showPassword" class="monospaced">{{site.password}}</span>
                 </div>
             </div>
         </div>
