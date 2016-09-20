@@ -29,10 +29,25 @@
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');
-            $state.go('login');
+            $state.go('splash');
         });
 
         $stateProvider
+            .state('splash', {
+                url: '/splash',
+                controller: 'splashController',
+                templateUrl: 'app/global/splash.html',
+                data: { authorize: false },
+                params: { animation: null }
+            })
+            .state('home', {
+                url: '/home',
+                controller: 'homeController',
+                templateUrl: 'app/global/home.html',
+                data: { authorize: false },
+                params: { animation: null }
+            })
+
             .state('login', {
                 url: '/login',
                 controller: 'accountsLoginController',
@@ -139,7 +154,7 @@
                     if (!isAuthenticated || tokenService.isTokenExpired(token)) {
                         event.preventDefault();
                         loginService.logOut(function () {
-                            $state.go('login');
+                            $state.go('home');
                         });
                     }
                 });

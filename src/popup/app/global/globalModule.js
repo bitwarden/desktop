@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.global', []);
+    .module('bit.global', ['ngAnimate']);

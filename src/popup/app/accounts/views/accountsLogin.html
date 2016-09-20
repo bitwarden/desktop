@@ -1,7 +1,7 @@
 ﻿<form name="theForm" ng-submit="theForm.$valid && login(model, theForm)" bit-form="loginPromise">
     <div class="header">
         <div class="left">
-            <a ng-click="close()" href="">Cancel</a>
+            <a ui-sref="home({animation: 'out-slide-down'})">Cancel</a>
         </div>
         <div class="right">
             <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Log In</button>
