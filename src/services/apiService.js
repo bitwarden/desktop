@@ -14,7 +14,7 @@ function initApiService() {
             type: 'POST',
             url: self.baseUrl + '/auth/token',
             data: JSON.stringify(tokenRequest),
-            contentType: "application/json; charset=utf-8",
+            contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             success: function (response) {
                 success(new TokenResponse(response))
@@ -31,7 +31,7 @@ function initApiService() {
             type: 'POST',
             url: self.baseUrl + '/auth/token/two-factor',
             data: JSON.stringify(twoFactorTokenRequest),
-            contentType: "application/json; charset=utf-8",
+            contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             success: function (response) {
                 success(new TokenResponse(response))
@@ -67,7 +67,7 @@ function initApiService() {
             type: 'POST',
             url: self.baseUrl + '/accounts/password-hint',
             data: JSON.stringify(request),
-            contentType: "application/json; charset=utf-8",
+            contentType: 'application/json; charset=utf-8',
             success: function (response) {
                 success();
             },
@@ -77,14 +77,13 @@ function initApiService() {
         });
     };
 
-    ApiService.prototype.register = function (request, success, error) {
+    ApiService.prototype.postRegister = function (request, success, error) {
         var self = this;
         $.ajax({
             type: 'POST',
             url: self.baseUrl + '/accounts/register',
             data: JSON.stringify(request),
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
             success: function (response) {
                 success();
             },
@@ -120,7 +119,7 @@ function initApiService() {
                 type: 'POST',
                 url: self.baseUrl + '/sites?access_token=' + token,
                 data: JSON.stringify(siteRequest),
-                contentType: "application/json; charset=utf-8",
+                contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
                     success(new SiteResponse(response))
@@ -139,7 +138,7 @@ function initApiService() {
                 type: 'POST',
                 url: self.baseUrl + '/sites/' + id + '?access_token=' + token,
                 data: JSON.stringify(siteRequest),
-                contentType: "application/json; charset=utf-8",
+                contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
                     success(new SiteResponse(response))
@@ -177,7 +176,7 @@ function initApiService() {
                 type: 'POST',
                 url: self.baseUrl + '/folders?access_token=' + token,
                 data: JSON.stringify(folderRequest),
-                contentType: "application/json; charset=utf-8",
+                contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
                     success(new FolderResponse(response))
@@ -196,7 +195,7 @@ function initApiService() {
                 type: 'POST',
                 url: self.baseUrl + '/folders/' + id + '?access_token=' + token,
                 data: JSON.stringify(folderRequest),
-                contentType: "application/json; charset=utf-8",
+                contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
                     success(new FolderResponse(response))
@@ -255,7 +254,7 @@ function initApiService() {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/ciphers/' + id + '/delete?access_token=' + token,
-                contentType: "application/json; charset=utf-8",
+                contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: success,
                 error: function (jqXHR, textStatus, errorThrown) {

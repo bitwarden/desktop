@@ -21,11 +21,11 @@ var TokenRequest = function (email, masterPasswordHash, device) {
     this.device = null;
 };
 
-var RegisterRequest = function () {
+var RegisterRequest = function (email, masterPasswordHash, masterPasswordHint) {
     this.name = null;
-    this.email = null;
-    this.masterPasswordHash = null;
-    this.masterPasswordHint = null;
+    this.email = email;
+    this.masterPasswordHash = masterPasswordHash;
+    this.masterPasswordHint = masterPasswordHint ? masterPasswordHint : null;
 };
 
 var PasswordHintRequest = function (email) {

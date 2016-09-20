@@ -1,9 +1,19 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginController', function ($scope, $state, loginService, userService) {
+    .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService) {
         popupUtils.initListSectionItemListeners();
-        $('#email').focus();
+
+        if ($stateParams.email) {
+            $('#master-password').focus();
+        }
+        else {
+            $('#email').focus();
+        }
+
+        $scope.model = {
+            email: $stateParams.email
+        };
 
         $scope.loginPromise = null;
         $scope.login = function (model) {

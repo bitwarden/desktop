@@ -1,0 +1,54 @@
+﻿<form name="theForm" ng-submit="theForm.$valid && submit(model)" bit-form="submitPromise">
+    <div class="header">
+        <div class="left">
+            <a ui-sref="home({animation: 'out-slide-down'})">Cancel</a>
+        </div>
+        <div class="right">
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Submit</button>
+            <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
+        </div>
+        <div class="title">Create Account</div>
+    </div>
+    <div class="content">
+        <div class="list">
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-icon-input">
+                        <i class="fa fa-envelope fa-lg fa-fw"></i>
+                        <label for="email" class="sr-only">Email Address</label>
+                        <input id="email" type="email" name="Email" placeholder="Email Address" ng-model="model.email">
+                    </div>
+                    <div class="list-section-item list-section-item-icon-input">
+                        <i class="fa fa-lock fa-lg fa-fw"></i>
+                        <label for="master-password" class="sr-only">Master Password</label>
+                        <input id="master-password" type="password" name="MasterPassword"
+                               placeholder="Master Password" ng-model="model.masterPassword">
+                    </div>
+                </div>
+                <div class="list-section-footer">
+                    The master password is the password you use to access your vault. It is very important that you do not.
+                    forget your master password. There is no way to recover the password in the event that you forget it.
+                </div>
+            </div>
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-icon-input">
+                        <i class="fa fa-lock fa-lg fa-fw"></i>
+                        <label for="master-password-retype" class="sr-only">Re-type Master Password</label>
+                        <input id="master-password-retype" type="password" name="MasterPasswordRetype"
+                               placeholder="Re-type Master Password" ng-model="model.masterPasswordRetype">
+                    </div>
+                    <div class="list-section-item list-section-item-icon-input">
+                        <i class="fa fa-lightbulb-o fa-lg fa-fw"></i>
+                        <label for="hint" class="sr-only">Master Password Hint (optional)</label>
+                        <input id="hint" type="text" name="Hint" placeholder="Master Password Hint (optional)"
+                               ng-model="model.hint">
+                    </div>
+                </div>
+                <div class="list-section-footer">
+                    A master password hint can help you remember your password if you forget it.
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

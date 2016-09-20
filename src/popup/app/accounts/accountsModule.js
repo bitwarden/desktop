@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.accounts', ['toastr']);
+    .module('bit.accounts', ['toastr', 'ngAnimate']);

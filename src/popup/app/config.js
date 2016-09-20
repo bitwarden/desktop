@@ -53,7 +53,7 @@
                 controller: 'accountsLoginController',
                 templateUrl: 'app/accounts/views/accountsLogin.html',
                 data: { authorize: false },
-                params: { animation: null }
+                params: { animation: null, email: null }
             })
             .state('hint', {
                 url: '/hint',
@@ -66,6 +66,13 @@
                 url: '/two-factor',
                 controller: 'accountsLoginController',
                 templateUrl: 'app/accounts/views/accountsLoginTwoFactor.html',
+                data: { authorize: false },
+                params: { animation: null }
+            })
+            .state('register', {
+                url: '/register',
+                controller: 'accountsRegisterController',
+                templateUrl: 'app/accounts/views/accountsRegister.html',
                 data: { authorize: false },
                 params: { animation: null }
             })
