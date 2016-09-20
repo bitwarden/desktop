@@ -2,7 +2,10 @@
     .module('bit.accounts')
 
     .controller('accountsLoginController', function ($scope, $state, loginService, userService) {
-        $scope.login = function (model) {
+        popupUtils.initListSectionItemListeners();
+
+        $scope.loginPromise = null;
+        $scope.login = function (model, form) {
             $scope.loginPromise = loginService.logIn(model.email, model.masterPassword);
 
             $scope.loginPromise.then(function () {

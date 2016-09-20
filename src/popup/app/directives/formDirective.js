@@ -18,9 +18,6 @@
                 return;
             }
 
-            // reset errors
-            form.$errors = null;
-
             // start loading
             form.$loading = true;
 
@@ -28,8 +25,7 @@
                 form.$loading = false;
             }, function failure(reason) {
                 form.$loading = false;
-                validationService.addErrors(form, reason);
-                scope.$broadcast('show-errors-check-validity');
+                validationService.showError(reason);
             });
         }
     });

@@ -18,19 +18,19 @@
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="name" class="item-label">Name</label>
-                        <input id="name" type="text" name="Name" ng-model="site.name" bit-field>
+                        <input id="name" type="text" name="Name" ng-model="site.name">
                     </div>
                     <div class="list-section-item">
                         <label for="uri" class="item-label">URI</label>
-                        <input id="uri" type="text" name="Uri" ng-model="site.uri" bit-field>
+                        <input id="uri" type="text" name="Uri" ng-model="site.uri">
                     </div>
                     <div class="list-section-item">
                         <label for="username" class="item-label">Username</label>
-                        <input id="username" type="text" name="Username" ng-model="site.username" bit-field>
+                        <input id="username" type="text" name="Username" ng-model="site.username">
                     </div>
                     <div class="list-section-item">
                         <label for="password" class="item-label">Password</label>
-                        <input id="password" type="password" name="Password" ng-model="site.password" bit-field>
+                        <input id="password" type="password" name="Password" ng-model="site.password">
                     </div>
                     <a class="list-section-item" href="" ng-click="generatePassword()">
                         Generate Password
@@ -42,13 +42,13 @@
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="folder" class="item-label">Folder</label>
-                        <select id="folder" name="FolderId" ng-model="site.folderId" bit-field>
+                        <select id="folder" name="FolderId" ng-model="site.folderId">
                             <option ng-repeat="folder in folders | orderBy: ['name']" value="{{folder.id}}">{{folder.name}}</option>
                         </select>
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="favorite">Favorite</label>
-                        <input id="favorite" name="Favorite" type="checkbox" ng-model="site.favorite" bit-field>
+                        <input id="favorite" name="Favorite" type="checkbox" ng-model="site.favorite">
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <textarea id="notes" name="Notes" rows="5" ng-model="site.notes" bit-field></textarea>
+                        <textarea id="notes" name="Notes" rows="5" ng-model="site.notes"></textarea>
                     </div>
                 </div>
             </div>

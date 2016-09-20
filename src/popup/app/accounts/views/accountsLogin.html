@@ -1,22 +1,33 @@
-﻿<ion-view view-title="bitwarden">
-    <ion-content>
+﻿<form name="theForm" ng-submit="theForm.$valid && login(model, theForm)" bit-form="loginPromise">
+    <div class="header">
+        <div class="left">
+            <a ng-click="close()" href="">Cancel</a>
+        </div>
+        <div class="right">
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Log In</button>
+            <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
+        </div>
+        <div class="title">bitwarden</div>
+    </div>
+    <div class="content">
         <div class="list">
-            <label class="item item-input">
-                <i class="icon ion-android-mail placeholder-icon"></i>
-                <input type="text" placeholder="Email address" ng-model="model.email">
-            </label>
-            <label class="item item-input">
-                <i class="icon ion-locked placeholder-icon"></i>
-                <input type="password" placeholder="Master password" ng-model="model.masterPassword">
-            </label>
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-icon-input">
+                        <i class="fa fa-envelope fa-lg fa-fw"></i>
+                        <label for="email" class="sr-only">Email Address</label>
+                        <input id="email" type="email" name="Email" placeholder="Email Address" ng-model="model.email">
+                    </div>
+                    <div class="list-section-item list-section-item-icon-input">
+                        <i class="fa fa-lock fa-lg fa-fw"></i>
+                        <label for="master-password" class="sr-only">Master Password</label>
+                        <input id="master-password" type="password" name="MasterPassword" placeholder="Master Password" ng-model="model.masterPassword">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="padding">
-            <button class="button button-block button-positive" ng-click="login(model)">
-                Log In
-            </button>
-            <p class="text-center">
-                <a href="#/hint">Get master password hint</a>
-            </p>
-        </div>
-    </ion-content>
-</ion-view>
+        <p class="text-center">
+            <a href="#/hint">Get master password hint</a>
+        </p>
+    </div>
+</form>
