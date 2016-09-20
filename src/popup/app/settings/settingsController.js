@@ -9,8 +9,19 @@
         };
 
         $scope.logOut = function () {
-            loginService.logOut(function () {
-                $state.go('login');
+            SweetAlert.swal({
+                title: 'Log out',
+                text: 'Are you sure you want to log out?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'Cancel'
+            }, function (confirmed) {
+                if (confirmed) {
+                    loginService.logOut(function () {
+                        $state.go('login');
+                    });
+                }
             });
         };
 
