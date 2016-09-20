@@ -14,7 +14,7 @@
                         $state.go('login.twoFactor');
                     }
                     else {
-                        $state.go('tabs.current');
+                        $state.go('tabs.current', { animation: 'in-slide-left' });
                     }
                 });
             });
