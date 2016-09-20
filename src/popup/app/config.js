@@ -105,6 +105,22 @@
                 controller: 'toolsPasswordGeneratorController',
                 data: { authorize: true },
                 params: { animation: null, addState: null, editState: null }
+            })
+
+            .state('about', {
+                url: '/about',
+                templateUrl: 'app/settings/views/settingsAbout.html',
+                controller: 'settingsAboutController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
+
+            .state('help', {
+                url: '/help',
+                templateUrl: 'app/settings/views/settingsHelp.html',
+                controller: 'settingsHelpController',
+                data: { authorize: true },
+                params: { animation: null }
             });
     })
     .run(function ($rootScope, userService, loginService, tokenService, $state) {
