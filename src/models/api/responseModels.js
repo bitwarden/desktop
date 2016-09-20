@@ -1,4 +1,4 @@
-﻿var CipherResponse = function (response) {
+var CipherResponse = function (response) {
     this.id = response.Id;
     this.folderId = response.FolderId;
     this.type = response.Type;
@@ -24,7 +24,7 @@ var SiteResponse = function (response) {
     this.favorite = response.Favorite;
     this.revisionDate = response.RevisionDate;
 
-    if(response.Folder) {
+    if (response.Folder) {
         this.folder = new FolderResponse(response.Folder);
     }
 };
@@ -51,8 +51,10 @@ var ListResponse = function (data) {
 };
 
 var ErrorResponse = function (response) {
-    this.message = response.responseJSON.Message;
-    this.validationErrors = response.responseJSON.ValidationErrors;
+    if (response.responseJSON) {
+        this.message = response.responseJSON.Message;
+        this.validationErrors = response.responseJSON.ValidationErrors;
+    }
     this.statusCode = response.status;
 };
 

@@ -61,6 +61,39 @@ function initApiService() {
         });
     };
 
+    ApiService.prototype.postPasswordHint = function (request, success, error) {
+        var self = this;
+        $.ajax({
+            type: 'POST',
+            url: self.baseUrl + '/accounts/password-hint',
+            data: JSON.stringify(request),
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                success();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                handleError(error, jqXHR, textStatus, errorThrown);
+            }
+        });
+    };
+
+    ApiService.prototype.register = function (request, success, error) {
+        var self = this;
+        $.ajax({
+            type: 'POST',
+            url: self.baseUrl + '/accounts/register',
+            data: JSON.stringify(request),
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function (response) {
+                success();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                handleError(error, jqXHR, textStatus, errorThrown);
+            }
+        });
+    };
+
     // Site APIs
 
     ApiService.prototype.getSite = function (id, success, error) {

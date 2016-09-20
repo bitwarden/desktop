@@ -28,8 +28,8 @@ var RegisterRequest = function () {
     this.masterPasswordHint = null;
 };
 
-var PasswordHintRequest = function () {
-    this.email = null;
+var PasswordHintRequest = function (email) {
+    this.email = email;
 };
 
 var TokenTwoFactorRequest = function () {

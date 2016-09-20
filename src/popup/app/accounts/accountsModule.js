@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.accounts', []);
+    .module('bit.accounts', ['toastr']);

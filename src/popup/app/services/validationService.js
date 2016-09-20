@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('validationService', function (SweetAlert) {
+    .factory('validationService', function (toastr) {
         var _service = {};
 
         _service.showError = function (data) {
@@ -32,13 +32,7 @@
             }
 
             if (errors.length) {
-                SweetAlert.swal({
-                    title: 'Error',
-                    text: errors[0],
-                    type: 'error',
-                    showCancelButton: false,
-                    confirmButtonText: 'Ok'
-                });
+                toastr.error(errors[0], 'Errors have occurred');
             }
 
             return errors;

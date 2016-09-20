@@ -29,7 +29,7 @@
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');
-            $state.go('splash');
+            $state.go('home');
         });
 
         $stateProvider
@@ -52,6 +52,13 @@
                 url: '/login',
                 controller: 'accountsLoginController',
                 templateUrl: 'app/accounts/views/accountsLogin.html',
+                data: { authorize: false },
+                params: { animation: null }
+            })
+            .state('hint', {
+                url: '/hint',
+                controller: 'accountsHintController',
+                templateUrl: 'app/accounts/views/accountsHint.html',
                 data: { authorize: false },
                 params: { animation: null }
             })

@@ -19,7 +19,7 @@
             }, function (confirmed) {
                 if (confirmed) {
                     loginService.logOut(function () {
-                        $state.go('login');
+                        $state.go('home');
                     });
                 }
             });

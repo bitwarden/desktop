@@ -5,7 +5,7 @@
         popupUtils.initListSectionItemListeners();
 
         $scope.loginPromise = null;
-        $scope.login = function (model, form) {
+        $scope.login = function (model) {
             $scope.loginPromise = loginService.logIn(model.email, model.masterPassword);
 
             $scope.loginPromise.then(function () {

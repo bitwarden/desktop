@@ -1,4 +1,4 @@
-﻿<form name="theForm" ng-submit="theForm.$valid && login(model, theForm)" bit-form="loginPromise">
+﻿<form name="theForm" ng-submit="theForm.$valid && login(model)" bit-form="loginPromise">
     <div class="header">
         <div class="left">
             <a ui-sref="home({animation: 'out-slide-down'})">Cancel</a>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <p class="text-center">
-            <a href="#/hint">Get master password hint</a>
+            <a ui-sref="hint({animation: 'in-slide-left'})">Get master password hint</a>
         </p>
     </div>
 </form>
