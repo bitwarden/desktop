@@ -19,9 +19,16 @@
         text-decoration: none;
         background: none;
 
-        &:hover {
+        &:hover, &:focus {
             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &:hover {
             text-decoration: none;
+        }
+
+        &:focus {
+            text-decoration: underline;
         }
     }
 
@@ -133,7 +140,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
 
-                &:hover {
+                &:hover, &:focus {
                     background-color: @list-item-hover;
                 }
 
@@ -234,7 +241,7 @@
             }
         }
 
-        &:hover {
+        &:hover, &:focus, &.active {
             background-color: @list-item-hover;
         }
 
@@ -271,6 +278,11 @@
             padding: 10px 8px 10px 8px;
             background: none;
             border: none;
+            color: @brand-primary;
+
+            &:hover, &:focus {
+                color: darken(@brand-primary, 10%);
+            }
 
             &.disabled {
                 color: @text-disabled;
@@ -380,59 +392,10 @@
     -moz-border-radius: 0;
 }
 
-.generate-password-block {
-    margin: 20px;
-    font-size: 19px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: @font-family-monospace;
+.btn-link {
+    color: @brand-primary-accent;
 }
 
-.about-page {
-    padding-top: 50px;
-    text-align: center;
-
-    img {
-        margin: 0 auto 20px;
-        width: 220px;
-        display: block;
-    }
-}
-
-.home-page {
-    padding: 120px 20px 20px;
-    text-align: center;
-    position: relative;
-    height: 100%;
-
-    img {
-        margin: 0 auto 30px;
-        width: 250px;
-        display: block;
-    }
-
-    p {
-        font-size: 18px;
-    }
-
-    .buttons {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        left: 0;
-        padding: 20px;
-    }
-}
-
-.splash-page {
-    text-align: center;
-    padding: 160px 20px 0;
-
-    img {
-        width: 250px;
-        display: block;
-        margin: 0 auto;
-    }
+.text-accent {
+    color: @brand-primary-accent;
 }

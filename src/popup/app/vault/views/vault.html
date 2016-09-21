@@ -1,6 +1,6 @@
 ﻿<div class="header">
     <div class="right">
-        <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="javascript:void(0)" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
     <div class="search">
         <input type="search" placeholder="Search vault" ng-model="searchText" id="search" />
@@ -15,25 +15,28 @@
                     <div class="list-grouped-header">
                         <i class="fa fa-folder-open"></i> {{folder.name}}
                     </div>
-                    <div ng-click="viewSite(site)" class="list-grouped-item condensed" style="cursor: pointer;"
-                         ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id } | filter: searchSites() | orderBy: ['name', 'username'])">
-                        <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Password" ngclipboard ngclipboard-error="clipboardError(e)"
-                           ngclipboard-success="clipboardSuccess(e, 'Password')" data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
+                    <a href="javascript:void(0)" ng-click="viewSite(site)" class="list-grouped-item condensed"
+                       ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id }
+                            | filter: searchSites() | orderBy: ['name', 'username'])">
+                        <span class="btn-list" ng-click="$event.stopPropagation()" title="Copy Password" ngclipboard
+                              ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, 'Password')"
+                              data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
                             <i class="fa fa-lg fa-key"></i>
-                        </a>
-                        <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Username" ngclipboard ngclipboard-error="clipboardError(e)"
-                           ngclipboard-success="clipboardSuccess(e, 'Username')" data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
+                        </span>
+                        <span class="btn-list" ng-click="$event.stopPropagation()" title="Copy Username" ngclipboard
+                              ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, 'Username')"
+                              data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
                             <i class="fa fa-lg fa-user"></i>
-                        </a>
+                        </span>
                         <span class="text">{{site.name}}</span>
                         <span class="detail">{{site.username}}</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
     <div ng-if="loaded && !vaultSites.length">
-        <p>No sites to list. <a href="" ng-click="addSite()">Add one</a></p>
+        <p>No sites to list. <a href="javascript:void(0)" ng-click="addSite()">Add one</a></p>
     </div>
     <div ng-if="!loaded">
         <p><i class="fa fa-lg fa-spinner fa-spin"></i></p>

@@ -32,6 +32,12 @@
                 select.openSelect();
             }
         });
+
+        $('.list-section-item input, .list-section-item select, .list-section-item textarea').focus(function (e) {
+            $(this).parent().addClass('active');
+        }).blur(function (e) {
+            $(this).parent().removeClass('active');
+        });
     }
 
     return self;
