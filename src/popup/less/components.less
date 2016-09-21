@@ -207,16 +207,13 @@
         color: @text-color;
         position: relative;
         z-index: 1;
+        &:extend(.clearfix all);
 
         &.text-primary {
             color: @brand-primary !important;
         }
 
         &:not(.wrap) {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-
             .text, .detail {
                 white-space: nowrap;
                 overflow: hidden;
@@ -373,6 +370,8 @@
             input {
                 display: inline-block;
                 margin-left: 10px;
+                float: left;
+                width: 250px;
             }
         }
     }
