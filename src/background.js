@@ -253,7 +253,7 @@ function copyToClipboard(text) {
 }
 
 fullSync();
-setInterval(fullSync, 60 * 1000);
+setInterval(fullSync, 6 * 60 * 1000);
 
 function fullSync() {
     syncService.fullSync(function() {});
