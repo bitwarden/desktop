@@ -1,13 +1,7 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsController', function ($scope, loginService, $state, syncService, SweetAlert, utilsService) {
-        $scope.sync = function () {
-            syncService.fullSync(function () {
-                alert('Sync done!');
-            });
-        };
-
+    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService) {
         $scope.logOut = function () {
             SweetAlert.swal({
                 title: 'Log Out',
