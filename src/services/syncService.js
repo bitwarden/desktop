@@ -169,10 +169,12 @@ function initSyncService() {
 
     function syncStarted() {
         this.syncInProgress = true;
+        chrome.runtime.sendMessage(null, { command: 'syncStarted' });
     }
 
     function syncCompleted(successfully) {
         this.syncInProgress = false;
+        chrome.runtime.sendMessage(null, { command: 'syncCompleted', successfully: successfully });
     }
 
     function handleError() {

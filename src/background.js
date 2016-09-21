@@ -85,7 +85,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 
         sortSites(sites);
         for (var i = 0; i < sites.length; i++) {
-            if (sites[i].domain && tabDomain == sites[i].domain) {
+            if (sites[i].domain && tabDomain === sites[i].domain) {
                 count++;
                 loadContextMenuOptions(sites[i]);
             }
@@ -118,7 +118,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         var id = info.menuItemId.split('_')[1];
         siteService.getAllDecrypted().then(function (sites) {
             for (var i = 0; i < sites.length; i++) {
-                if (sites[i].id == id) {
+                if (sites[i].id === id) {
                     if (info.parentMenuItemId === 'autofill') {
                         autofillPage(sites[i]);
                     }
@@ -191,7 +191,7 @@ function buildContextMenuOptions(url) {
     siteService.getAllDecrypted().then(function (sites) {
         sortSites(sites);
         for (var i = 0; i < sites.length; i++) {
-            if (sites[i].domain && tabDomain == sites[i].domain) {
+            if (sites[i].domain && tabDomain === sites[i].domain) {
                 loadContextMenuOptions(sites[i]);
             }
         }
@@ -250,4 +250,11 @@ function copyToClipboard(text) {
             document.body.removeChild(textarea);
         }
     }
+}
+
+fullSync();
+setInterval(fullSync, 60 * 1000);
+
+function fullSync() {
+    syncService.fullSync(function() {});
 }

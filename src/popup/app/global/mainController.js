@@ -15,4 +15,13 @@
                 self.animation = '';
             }
         });
+
+        chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+            if (msg.command === 'syncCompleted') {
+                $scope.$broadcast('syncCompleted');
+            }
+            else if (msg.command === 'syncStarted') {
+                $scope.$broadcast('syncStarted');
+            }
+        });
     });

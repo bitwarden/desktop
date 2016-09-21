@@ -109,7 +109,9 @@
         };
 
         $scope.$on('syncCompleted', function (event, args) {
-            setTimeout(loadVault, 500);
+            if ($scope.loaded) {
+                setTimeout(loadVault, 500);
+            }
         });
 
         function getScrollY() {
