@@ -20,11 +20,13 @@
             $scope.loginPromise = loginService.logIn(model.email, model.masterPassword);
 
             $scope.loginPromise.then(function () {
-                userService.getUserProfile(function (profile) {
-                    if (false && profile.twoFactor) {
+                userService.isTwoFactorAuthenticated(function (isTwoFactorAuthenticated) {
+                    if (isTwoFactorAuthenticated) {
                         $state.go('login.twoFactor');
                     }
                     else {
+                        // TODO: do full sync
+
                         $state.go('tabs.current', { animation: 'in-slide-left' });
                     }
                 });

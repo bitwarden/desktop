@@ -32,9 +32,9 @@ var PasswordHintRequest = function (email) {
     this.email = email;
 };
 
-var TokenTwoFactorRequest = function () {
-    this.code = null;
-    this.provider = null;
+var TokenTwoFactorRequest = function (code) {
+    this.code = code;
+    this.provider = "Authenticator";
     this.device = null;
 };
 

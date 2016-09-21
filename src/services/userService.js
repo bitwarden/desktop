@@ -1,76 +1,100 @@
-﻿function UserService(tokenService, apiService) {
+﻿function UserService(tokenService, apiService, cryptoService) {
     this.tokenService = tokenService;
     this.apiService = apiService;
+    this.cryptoService = cryptoService;
 
     initUserService();
 };
 
 function initUserService() {
-    var _userProfile = null;
+    var userIdKey = 'userId',
+        userEmailKey = 'userEmail';
+
+    var _userId = null,
+        _email = null;
+
+    UserService.prototype.setUserId = function (userId, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        _userId = userId;
+        var obj = {};
+        obj[userIdKey] = userId;
+        chrome.storage.local.set(obj, function () {
+            callback();
+        });
+    };
 
     UserService.prototype.getUserId = function (callback) {
-        this.getUserProfile(function (profile) {
-            callback(profile.id);
-        });
-    };
-
-    UserService.prototype.getUserProfile = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        if (_userProfile) {
-            callback(_userProfile);
-            return;
+        if (_userId) {
+            return callback(_userId);
         }
 
-        this.setUserProfile(null, function () {
-            callback(_userProfile);
+        chrome.storage.local.get(userIdKey, function (obj) {
+            if (obj && obj[userIdKey]) {
+                _userId = obj[userIdKey];
+            }
+
+            return callback(_userId);
         });
     };
 
-    UserService.prototype.setUserProfile = function (profile, callback) {
+    UserService.prototype.clearUserId = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        this.tokenService.getToken(function (token) {
-            if (!token) {
-                return;
-            }
-
-            var decodedToken = this.tokenService.decodeToken(token);
-            var twoFactor = decodedToken.authmethod === 'TwoFactor';
-
-            _userProfile = {
-                id: decodedToken.nameid,
-                email: decodedToken.email,
-                twoFactor: twoFactor
-            };
-
-            if (!twoFactor && profile) {
-                loadProfile(profile, callback);
-            }
-            else if (!twoFactor && !profile) {
-                this.apiService.getProfile(function (response) {
-                    loadProfile(response, callback);
-                });
-            }
-        });
-
-        function loadProfile(profile, callback) {
-            _userProfile.extended = {
-                name: profile.name,
-                twoFactorEnabled: profile.twoFactorEnabled,
-                culture: profile.culture
-            };
-
+        _userId = null;
+        chrome.storage.local.remove(userIdKey, function () {
             callback();
-        }
+        });
     };
 
-    UserService.prototype.clearUserProfile = function () {
-        _userProfile = null;
+    UserService.prototype.setEmail = function (email, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        _email = email;
+        var obj = {};
+        obj[userEmailKey] = email;
+        chrome.storage.local.set(obj, function () {
+            callback();
+        });
+    };
+
+    UserService.prototype.getEmail = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        if (_email) {
+            return callback(_email);
+        }
+
+        chrome.storage.local.get(userEmailKey, function (obj) {
+            if (obj && obj[userEmailKey]) {
+                _email = obj[userEmailKey];
+            }
+
+            return callback(_email);
+        });
+    };
+
+    UserService.prototype.clearEmail = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        _email = null;
+        chrome.storage.local.remove(userEmailKey, function () {
+            callback();
+        });
     };
 
     UserService.prototype.isAuthenticated = function (callback) {
@@ -78,8 +102,23 @@ function initUserService() {
             throw 'callback function required';
         }
 
-        this.getUserProfile(function (profile) {
-            callback(profile !== null && !profile.twoFactor);
+        var self = this;
+        self.cryptoService.getKey(false, function (key) {
+            if (!key) {
+                callback(false);
+            }
+            else {
+                self.tokenService.getToken(function (token) {
+                    if (!token) {
+                        callback(false);
+                    }
+                    else {
+                        self.getUserId(function (userId) {
+                            callback(userId !== null);
+                        });
+                    }
+                });
+            }
         });
     };
 
@@ -88,8 +127,23 @@ function initUserService() {
             throw 'callback function required';
         }
 
-        this.getUserProfile(function (profile) {
-            callback(profile !== null && profile.twoFactor);
+        var self = this;
+        self.cryptoService.getKey(false, function (key) {
+            if (!key) {
+                callback(false);
+            }
+            else {
+                self.tokenService.getToken(function (token) {
+                    if (!token) {
+                        callback(false);
+                    }
+                    else {
+                        self.getUserId(function (userId) {
+                            callback(userId === null);
+                        });
+                    }
+                });
+            }
         });
     };
 };

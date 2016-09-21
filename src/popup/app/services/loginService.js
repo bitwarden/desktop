@@ -5,6 +5,7 @@
         var _service = {};
 
         _service.logIn = function (email, masterPassword) {
+            email = email.toLowerCase();
             var key = cryptoService.makeKey(masterPassword, email);
             var deferred = $q.defer();
             cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
@@ -17,9 +18,16 @@
 
                     tokenService.setToken(response.token, function () {
                         cryptoService.setKey(key, function () {
-                            userService.setUserProfile(response.profile, function () {
+                            if (response.profile) {
+                                userService.setUserId(response.profile.id, function () {
+                                    userService.setEmail(response.profile.email, function () {
+                                        deferred.resolve(response);
+                                    });
+                                });
+                            }
+                            else {
                                 deferred.resolve(response);
-                            });
+                            }
                         });
                     });
                 }, function (error) {
@@ -29,21 +37,21 @@
             return deferred.promise;
         };
 
-        _service.logInTwoFactor = function (code, provider) {
-            var request = {
-                code: code,
-                provider: provider
-            };
+        _service.logInTwoFactor = function (code) {
+            var request = new TokenTwoFactorRequest(code);
 
             var deferred = $q.defer();
-            apiService.auth.tokenTwoFactor(request, function (response) {
-                if (!response || !response.Token) {
+            apiService.auth.postTokenTwoFactor(request, function (response) {
+                if (!response || !response.token) {
+                    deferred.reject();
                     return;
                 }
 
-                tokenService.setToken(response.Token, function () {
-                    userService.setUserProfile(response.Profile, function () {
-                        deferred.resolve(response);
+                tokenService.setToken(response.token, function () {
+                    userService.setUserId(response.profile.id, function () {
+                        userService.setEmail(response.profile.email, function () {
+                            deferred.resolve(response);
+                        });
                     });
                 });
             }, function (error) {
@@ -56,8 +64,11 @@
         _service.logOut = function (callback) {
             tokenService.clearToken(function () {
                 cryptoService.clearKey(function () {
-                    userService.clearUserProfile();
-                    callback();
+                    userService.clearUserId(function () {
+                        userService.clearEmail(function () {
+                            callback();
+                        });
+                    });
                 });
             });
         };
