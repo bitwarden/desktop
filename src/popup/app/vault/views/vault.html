@@ -1,6 +1,6 @@
 ﻿<div class="header">
     <div class="right">
-        <a href="javascript:void(0)" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
     <div class="search">
         <input type="search" placeholder="Search vault" ng-model="searchText" id="search" />
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div ng-if="loaded && !vaultSites.length">
-        <p>No sites to list. <a href="javascript:void(0)" ng-click="addSite()">Add one</a></p>
+        <p>No sites to list. <a href="" ng-click="addSite()">Add one</a></p>
     </div>
     <div ng-if="!loaded">
         <p><i class="fa fa-lg fa-spinner fa-spin"></i></p>
