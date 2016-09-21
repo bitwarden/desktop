@@ -18,7 +18,6 @@
             SweetAlert.swal({
                 title: 'Import Logins',
                 text: 'You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?',
-                type: 'info',
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'

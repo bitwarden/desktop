@@ -62,7 +62,6 @@ angular
                 SweetAlert.swal({
                     title: 'Warning',
                     text: 'Are you sure you want to overwrite the current password?',
-                    type: 'warning',
                     showCancelButton: true,
                     confirmButtonText: 'Yes',
                     cancelButtonText: 'No'

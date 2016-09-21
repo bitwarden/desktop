@@ -6,7 +6,6 @@
             SweetAlert.swal({
                 title: 'Log Out',
                 text: 'Are you sure you want to log out?',
-                type: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
@@ -23,7 +22,6 @@
             SweetAlert.swal({
                 title: 'Change Master Password',
                 text: 'You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?',
-                type: 'info',
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
@@ -34,7 +32,6 @@
             SweetAlert.swal({
                 title: 'Change Email',
                 text: 'You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?',
-                type: 'info',
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
@@ -45,7 +42,6 @@
             SweetAlert.swal({
                 title: 'Two-step Login',
                 text: 'Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?',
-                type: 'info',
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
