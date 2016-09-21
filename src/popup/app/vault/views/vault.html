@@ -35,10 +35,10 @@
             </div>
         </div>
     </div>
-    <div ng-if="loaded && !vaultSites.length">
+    <div class="no-results" ng-if="loaded && !vaultSites.length">
         <p>No sites to list. <a href="" ng-click="addSite()">Add one</a></p>
     </div>
-    <div ng-if="!loaded">
-        <p><i class="fa fa-lg fa-spinner fa-spin"></i></p>
+    <div class="page-loading" ng-if="!loaded">
+        <i class="fa fa-lg fa-spinner fa-spin"></i>
     </div>
 </div>

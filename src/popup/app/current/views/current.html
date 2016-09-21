@@ -24,10 +24,10 @@
             </div>
         </div>
     </div>
-    <div ng-if="loaded && !sites.length">
-        <p>No sites available for tab. <a href="" ng-click="addSite()">Add one</a></p>
+    <div class="no-results" ng-if="loaded && !sites.length">
+        <p>No sites available to auto-fill for the current browser tab. <a href="" ng-click="addSite()">Add one</a></p>
     </div>
-    <div ng-if="!loaded">
-        <p><i class="fa fa-lg fa-spinner fa-spin"></i></p>
+    <div class="page-loading" ng-if="!loaded">
+        <i class="fa fa-lg fa-spinner fa-spin"></i>
     </div>
 </div>
