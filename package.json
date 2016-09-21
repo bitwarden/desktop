@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "devDependencies": {
     "sjcl": "1.0.3",
-    "angular-jwt": "0.0.9",
     "jquery": "2.2.4",
     "bootstrap": "3.3.7",
     "font-awesome": "4.6.3",

@@ -1,31 +1,13 @@
 ﻿angular
     .module('bit')
 
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider, toastrConfig) {
-        jwtInterceptorProvider.urlParam = 'access_token';
-        jwtInterceptorProvider.tokenGetter = /*@ngInject*/ function (config, appSettings, tokenService) {
-            if (config.url.indexOf(appSettings.apiUri) === 0) {
-                tokenService.getToken(function (token) {
-                    return token;
-                });
-            }
-        };
-
+    .config(function ($stateProvider, $urlRouterProvider, toastrConfig) {
         angular.extend(toastrConfig, {
             closeButton: true,
             progressBar: true,
             showMethod: 'slideDown',
             positionClass: 'toast-bottom-center'
         });
-
-        if ($httpProvider.defaults.headers.post) {
-            $httpProvider.defaults.headers.post = {};
-        }
-
-        $httpProvider.defaults.headers.post['Content-Type'] = 'text/plain; charset=utf-8';
-
-        //$httpProvider.interceptors.push('apiInterceptor');
-        $httpProvider.interceptors.push('jwtInterceptor');
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');

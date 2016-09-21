@@ -74,10 +74,6 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'angular-ui-bootstrap'
         },
         {
-            src: paths.npmDir + 'angular-jwt/dist/*.js',
-            dest: paths.libDir + 'angular-jwt'
-        },
-        {
             src: paths.npmDir + 'angular-ui-router/release/*.js',
             dest: paths.libDir + 'angular-ui-router'
         },
