@@ -19,7 +19,10 @@
         </div>
     </div>
     <div class="centered-message" ng-if="loaded && !folders.length">
-        <p>No folders to list. <a ui-sref="addFolder({animation: 'in-slide-up'})">Add one</a></p>
+        <p>
+            No folders to list.
+            <a ui-sref="addFolder({animation: 'in-slide-up'})" class="btn btn-link btn-lg btn-block">Add a folder</a>
+        </p>
     </div>
     <div class="page-loading" ng-if="!loaded">
         <i class="fa fa-lg fa-spinner fa-spin"></i>

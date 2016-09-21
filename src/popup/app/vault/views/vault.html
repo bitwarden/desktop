@@ -36,7 +36,10 @@
         </div>
     </div>
     <div class="centered-message" ng-if="loaded && !vaultSites.length">
-        <p>No sites to list. <a href="" ng-click="addSite()">Add one</a></p>
+        <p>
+            No sites to list.
+            <button ng-click="addSite()" class="btn btn-link btn-lg btn-block">Add a site</button>
+        </p>
     </div>
     <div class="page-loading" ng-if="!loaded">
         <i class="fa fa-lg fa-spinner fa-spin"></i>
