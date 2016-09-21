@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    <div class="no-results" ng-if="loaded && !sites.length">
+    <div class="centered-message" ng-if="loaded && !sites.length">
         <p>No sites available to auto-fill for the current browser tab. <a href="" ng-click="addSite()">Add one</a></p>
     </div>
     <div class="page-loading" ng-if="!loaded">
