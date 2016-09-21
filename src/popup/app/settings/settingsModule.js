@@ -1,2 +1,2 @@
 ﻿angular
-    .module('bit.settings', ['oitozero.ngSweetAlert']);
+    .module('bit.settings', ['oitozero.ngSweetAlert', 'toastr']);

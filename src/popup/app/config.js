@@ -148,16 +148,16 @@
                 params: { animation: null }
             })
             .state('addFolder', {
-                url: '/folders',
+                url: '/addFolder',
                 templateUrl: 'app/settings/views/settingsAddFolder.html',
-                controller: 'settingsFoldersController',
+                controller: 'settingsAddFolderController',
                 data: { authorize: true },
                 params: { animation: null }
             })
-            .state('editFolder?folderId', {
-                url: '/folders',
+            .state('editFolder', {
+                url: '/editFolder?folderId',
                 templateUrl: 'app/settings/views/settingsEditFolder.html',
-                controller: 'settingsFoldersController',
+                controller: 'settingsEditFolderController',
                 data: { authorize: true },
                 params: { animation: null }
             });
