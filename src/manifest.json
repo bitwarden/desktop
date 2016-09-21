@@ -30,7 +30,7 @@
       "models/api/responseModels.js",
       "models/dataModels.js",
       "models/domainModels.js",
-      "services/cryptoService.js",
+      "services/utilsService.js",
       "services/cryptoService.js",
       "services/tokenService.js",
       "services/apiService.js",

@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsController', function ($scope, loginService, $state, syncService, SweetAlert) {
+    .controller('settingsController', function ($scope, loginService, $state, syncService, SweetAlert, utilsService) {
         $scope.sync = function () {
             syncService.fullSync(function () {
                 alert('Sync done!');
@@ -65,7 +65,22 @@
         }
 
         $scope.rate = function () {
-            // TODO: detect which extension store to send them to
-            chrome.tabs.create({ url: 'https://google.com' });
+            switch (utilsService.getBrowser()) {
+                case 'chrome':
+                    chrome.tabs.create({ url: 'https://chrome.com' });
+                    break;
+                case 'firefox':
+                    chrome.tabs.create({ url: 'https://firefox.com' });
+                    break;
+                case 'edge':
+                    chrome.tabs.create({ url: 'https://microsoft.com' });
+                    break;
+                case 'opera':
+                    chrome.tabs.create({ url: 'https://opera.com' });
+                    break;
+                default:
+                    return;
+            }
+            
         };
     });

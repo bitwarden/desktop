@@ -30,4 +30,7 @@
     })
     .factory('passwordGenerationService', function () {
         return chrome.extension.getBackgroundPage().passwordGenerationService;
+    })
+    .factory('utilsService', function () {
+        return chrome.extension.getBackgroundPage().utilsService;
     });
