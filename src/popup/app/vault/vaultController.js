@@ -64,10 +64,6 @@
             return item.name.toLowerCase();
         };
 
-        $scope.filterByFolder = function (folder) {
-
-        };
-
         $scope.searchSites = function () {
             if (!$scope.searchText) {
                 return;

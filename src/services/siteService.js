@@ -1,4 +1,4 @@
-﻿function SiteService(cryptoService, userService, apiService) {
+function SiteService(cryptoService, userService, apiService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
@@ -43,7 +43,7 @@ function initSiteService() {
 
             chrome.storage.local.get(sitesKey, function (obj) {
                 var sites = obj[sitesKey];
-                if (id in sites) {
+                if (sites && id in sites) {
                     callback(new Site(sites[id]));
                     return;
                 }
@@ -254,10 +254,6 @@ function initSiteService() {
     };
 
     function handleError(error, deferred) {
-        if (error.status === 401 || error.status === 403) {
-            // TODO: logout
-        }
-
         deferred.reject(error);
     }
 };

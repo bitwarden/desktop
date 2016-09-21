@@ -10,7 +10,7 @@
 
         $scope.logOut = function () {
             SweetAlert.swal({
-                title: 'Log out',
+                title: 'Log Out',
                 text: 'Are you sure you want to log out?',
                 type: 'warning',
                 showCancelButton: true,

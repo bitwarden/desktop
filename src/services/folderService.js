@@ -1,4 +1,4 @@
-﻿function FolderService(cryptoService, userService, apiService) {
+function FolderService(cryptoService, userService, apiService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
@@ -29,7 +29,7 @@ function initFolderService() {
 
             chrome.storage.local.get(foldersKey, function (obj) {
                 var folders = obj[foldersKey];
-                if (id in folders) {
+                if (folders && id in folders) {
                     callback(new Folder(folders[id]));
                     return;
                 }
@@ -97,10 +97,14 @@ function initFolderService() {
             request = new FolderRequest(folder);
 
         if (!folder.id) {
-            self.apiService.postFolder(request, apiSuccess, handleError);
+            self.apiService.postFolder(request, apiSuccess, function (response) {
+                handleError(response, deferred)
+            });
         }
         else {
-            self.apiService.putFolder(folder.id, request, apiSuccess, handleError);
+            self.apiService.putFolder(folder.id, request, apiSuccess, function (response) {
+                handleError(response, deferred)
+            });
         }
 
         function apiSuccess(response) {
@@ -219,4 +223,8 @@ function initFolderService() {
             });
         });
     };
+
+    function handleError(error, deferred) {
+        deferred.reject(error);
+    }
 };

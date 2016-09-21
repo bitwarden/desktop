@@ -1,4 +1,4 @@
-﻿function ApiService(tokenService) {
+function ApiService(tokenService) {
     this.baseUrl = 'https://api.bitwarden.com';
     this.tokenService = tokenService;
 
@@ -269,6 +269,11 @@ function initApiService() {
     // Helpers
 
     function handleError(errorCallback, jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status === 401 || jqXHR.status === 403) {
+            chrome.runtime.sendMessage(null, { command: 'logout' });
+            return;
+        }
+
         errorCallback(new ErrorResponse(jqXHR));
     }
 };
