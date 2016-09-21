@@ -1,0 +1,27 @@
+﻿<div class="header">
+    <div class="left">
+        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> Settings</a>
+    </div>
+    <div class="right">
+        <a href="" ng-click="addFolder()"><i class="fa fa-plus fa-lg"></i></a>
+    </div>
+    <div class="title">Folders</div>
+</div>
+<div class="content">
+    <div ng-if="folders.length">
+        <div class="list">
+            <div class="list-grouped">
+                <a ng-click="editFolder(folder)" class="list-grouped-item"
+                   ng-repeat="folder in theFolders = (folders | orderBy: ['name'])">
+                    <span class="text">{{folder.name}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="centered-message" ng-if="loaded && !folders.length">
+        <p>No folders to list. <a href="" ng-click="addFolder()">Add one</a></p>
+    </div>
+    <div class="page-loading" ng-if="!loaded">
+        <i class="fa fa-lg fa-spinner fa-spin"></i>
+    </div>
+</div>

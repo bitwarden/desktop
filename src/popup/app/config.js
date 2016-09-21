@@ -125,11 +125,39 @@
                 data: { authorize: true },
                 params: { animation: null }
             })
-
             .state('help', {
                 url: '/help',
                 templateUrl: 'app/settings/views/settingsHelp.html',
                 controller: 'settingsHelpController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
+            .state('sync', {
+                url: '/sync',
+                templateUrl: 'app/settings/views/settingsSync.html',
+                controller: 'settingsSyncController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
+
+            .state('folders', {
+                url: '/folders',
+                templateUrl: 'app/settings/views/settingsFolders.html',
+                controller: 'settingsFoldersController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
+            .state('addFolder', {
+                url: '/folders',
+                templateUrl: 'app/settings/views/settingsAddFolder.html',
+                controller: 'settingsFoldersController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
+            .state('editFolder?folderId', {
+                url: '/folders',
+                templateUrl: 'app/settings/views/settingsEditFolder.html',
+                controller: 'settingsFoldersController',
                 data: { authorize: true },
                 params: { animation: null }
             });
