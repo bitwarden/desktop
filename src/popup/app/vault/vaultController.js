@@ -43,10 +43,7 @@
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
-                $rootScope.vaultFolders = decFolders.concat([{
-                    id: null,
-                    name: '(none)'
-                }]);
+                $rootScope.vaultFolders = decFolders;
                 $rootScope.vaultSites = decSites;
                 if (!delayLoad) {
                     setScrollY();

@@ -23,10 +23,7 @@ angular
         }
 
         $q.when(folderService.getAllDecrypted()).then(function (folders) {
-            $scope.folders = folders.concat([{
-                id: null,
-                name: '(none)'
-            }]);
+            $scope.folders = folders;
         });
 
         popupUtils.initListSectionItemListeners();

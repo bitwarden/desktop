@@ -70,7 +70,10 @@ function initFolderService() {
         }
 
         var promises = [];
-        var decFolders = [];
+        var decFolders = [{
+            id: null,
+            name: '(none)'
+        }];
         self.getAll(function (folders) {
             for (var i = 0; i < folders.length; i++) {
                 promises.push(folders[i].decrypt().then(function (folder) {
