@@ -1,7 +1,6 @@
 ﻿angular
     .module('bit', [
         'ui.router',
-        'angular-jwt',
         'ngAnimate',
         'toastr',
 
