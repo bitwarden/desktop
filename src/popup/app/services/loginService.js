@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q) {
+    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q, syncService, $rootScope, siteService, folderService) {
         var _service = {};
 
         _service.logIn = function (email, masterPassword) {
@@ -21,6 +21,9 @@
                             if (response.profile) {
                                 userService.setUserId(response.profile.id, function () {
                                     userService.setEmail(response.profile.email, function () {
+                                        syncService.fullSync(function () {
+                                            $rootScope.$broadcast('syncCompleted');
+                                        });
                                         deferred.resolve(response);
                                     });
                                 });
@@ -62,11 +65,17 @@
         };
 
         _service.logOut = function (callback) {
-            tokenService.clearToken(function () {
-                cryptoService.clearKey(function () {
-                    userService.clearUserId(function () {
-                        userService.clearEmail(function () {
-                            callback();
+            userService.getUserId(function (userId) {
+                tokenService.clearToken(function () {
+                    cryptoService.clearKey(function () {
+                        userService.clearUserId(function () {
+                            userService.clearEmail(function () {
+                                siteService.clear(userId, function () {
+                                    folderService.clear(userId, function () {
+                                        callback();
+                                    });
+                                });
+                            });
                         });
                     });
                 });

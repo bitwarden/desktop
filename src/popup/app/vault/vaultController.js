@@ -108,6 +108,10 @@
             toastr.info(type + ' copied!');
         };
 
+        $scope.$on('syncCompleted', function (event, args) {
+            setTimeout(loadVault, 500);
+        });
+
         function getScrollY() {
             var content = document.getElementsByClassName('content')[0];
             return content.scrollTop;

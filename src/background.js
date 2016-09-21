@@ -103,6 +103,12 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
                 tabId: tabId
             });
         }
+        else {
+            chrome.browserAction.setBadgeText({
+                text: null,
+                tabId: tabId
+            });
+        }
     });
 });
 

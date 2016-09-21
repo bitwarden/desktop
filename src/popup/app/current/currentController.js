@@ -10,41 +10,44 @@ angular
 
         $scope.loaded = false;
 
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            if (tabs.length > 0) {
-                url = tabs[0].url;
-                tabId = tabs[0].id;
-            }
-            else {
-                $scope.loaded = true;
-                return;
-            }
-
-            domain = tldjs.getDomain(url);
-            $scope.sites = [];
-            if (!domain) {
-                $scope.loaded = true;
-                return;
-            }
-
-            chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails' }, function (details) {
-                pageDetails = details;
-                canAutofill = true;
-            });
-
-            var filteredSites = [];
-            var sitePromise = $q.when(siteService.getAllDecrypted());
-            sitePromise.then(function (sites) {
-                for (var i = 0; i < sites.length; i++) {
-                    if (sites[i].domain && sites[i].domain === domain) {
-                        filteredSites.push(sites[i]);
-                    }
+        loadVault();
+        function loadVault() {
+            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+                if (tabs.length > 0) {
+                    url = tabs[0].url;
+                    tabId = tabs[0].id;
+                }
+                else {
+                    $scope.loaded = true;
+                    return;
                 }
 
-                $scope.loaded = true;
-                $scope.sites = filteredSites;
+                domain = tldjs.getDomain(url);
+                $scope.sites = [];
+                if (!domain) {
+                    $scope.loaded = true;
+                    return;
+                }
+
+                chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails' }, function (details) {
+                    pageDetails = details;
+                    canAutofill = true;
+                });
+
+                var filteredSites = [];
+                var sitePromise = $q.when(siteService.getAllDecrypted());
+                sitePromise.then(function (sites) {
+                    for (var i = 0; i < sites.length; i++) {
+                        if (sites[i].domain && sites[i].domain === domain) {
+                            filteredSites.push(sites[i]);
+                        }
+                    }
+
+                    $scope.loaded = true;
+                    $scope.sites = filteredSites;
+                });
             });
-        });
+        }
 
         $scope.clipboardError = function (e, password) {
             toastr.info('Your web browser does not support easy clipboard copying. Copy it manually instead.');
@@ -81,4 +84,8 @@ angular
                 toastr.error('Unable to auto-fill the selected site. Copy/paste your username and/or password instead.');
             }
         };
+
+        $scope.$on('syncCompleted', function (event, args) {
+            setTimeout(loadVault, 500);
+        });
     });

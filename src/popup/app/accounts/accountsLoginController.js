@@ -25,8 +25,6 @@
                         $state.go('login.twoFactor');
                     }
                     else {
-                        // TODO: do full sync
-
                         $state.go('tabs.current', { animation: 'in-slide-left' });
                     }
                 });

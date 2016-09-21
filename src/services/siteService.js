@@ -186,6 +186,17 @@ function initSiteService() {
         });
     };
 
+    SiteService.prototype.clear = function (userId, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        chrome.storage.local.remove('sites_' + userId, function () {
+            self.decryptedSiteCache = null;
+            callback();
+        });
+    };
+
     SiteService.prototype.delete = function (id, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';

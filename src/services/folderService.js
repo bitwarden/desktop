@@ -165,6 +165,17 @@ function initFolderService() {
         });
     };
 
+    FolderService.prototype.clear = function (userId, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        chrome.storage.local.remove('folders_' + userId, function () {
+            self.decryptedFolderCache = null;
+            callback();
+        });
+    };
+
     FolderService.prototype.delete = function (id, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
