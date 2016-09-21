@@ -64,7 +64,7 @@
             })
             .state('twoFactor', {
                 url: '/two-factor',
-                controller: 'accountsLoginController',
+                controller: 'accountsLoginTwoFactorController',
                 templateUrl: 'app/accounts/views/accountsLoginTwoFactor.html',
                 data: { authorize: false },
                 params: { animation: null }

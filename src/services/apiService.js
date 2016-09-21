@@ -27,18 +27,20 @@ function initApiService() {
 
     ApiService.prototype.postTokenTwoFactor = function (twoFactorTokenRequest, success, error) {
         var self = this;
-        $.ajax({
-            type: 'POST',
-            url: self.baseUrl + '/auth/token/two-factor',
-            data: JSON.stringify(twoFactorTokenRequest),
-            contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
-            success: function (response) {
-                success(new TokenResponse(response))
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                handleError(error, jqXHR, textStatus, errorThrown);
-            }
+        this.tokenService.getToken(function (token) {
+            $.ajax({
+                type: 'POST',
+                url: self.baseUrl + '/auth/token/two-factor?access_token=' + token,
+                data: JSON.stringify(twoFactorTokenRequest),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (response) {
+                    success(new TokenResponse(response))
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, textStatus, errorThrown);
+                }
+            });
         });
     };
 

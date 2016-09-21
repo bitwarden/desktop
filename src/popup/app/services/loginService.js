@@ -21,9 +21,7 @@
                             if (response.profile) {
                                 userService.setUserId(response.profile.id, function () {
                                     userService.setEmail(response.profile.email, function () {
-                                        syncService.fullSync(function () {
-                                            $rootScope.$broadcast('syncCompleted');
-                                        });
+                                        syncService.fullSync(function () { });
                                         deferred.resolve(response);
                                     });
                                 });
@@ -44,7 +42,7 @@
             var request = new TokenTwoFactorRequest(code);
 
             var deferred = $q.defer();
-            apiService.auth.postTokenTwoFactor(request, function (response) {
+            apiService.postTokenTwoFactor(request, function (response) {
                 if (!response || !response.token) {
                     deferred.reject();
                     return;
@@ -53,6 +51,7 @@
                 tokenService.setToken(response.token, function () {
                     userService.setUserId(response.profile.id, function () {
                         userService.setEmail(response.profile.email, function () {
+                            syncService.fullSync(function () { });
                             deferred.resolve(response);
                         });
                     });

@@ -22,16 +22,12 @@
             $scope.loginPromise.then(function () {
                 userService.isTwoFactorAuthenticated(function (isTwoFactorAuthenticated) {
                     if (isTwoFactorAuthenticated) {
-                        $state.go('login.twoFactor');
+                        $state.go('twoFactor', { animation: 'in-slide-left' });
                     }
                     else {
-                        $state.go('tabs.current', { animation: 'in-slide-left' });
+                        $state.go('tabs.vault', { animation: 'in-slide-left' });
                     }
                 });
             });
-        };
-
-        $scope.twoFactor = function (model) {
-            $state.go('tabs.current');
         };
     });
