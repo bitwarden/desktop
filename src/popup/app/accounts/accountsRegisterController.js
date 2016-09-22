@@ -7,6 +7,19 @@
 
         $scope.submitPromise = null;
         $scope.submit = function (model) {
+            if (!model.email) {
+                toastr.error('Email is required.');
+                return;
+            }
+            if (!model.masterPassword) {
+                toastr.error('Master password is required.');
+                return;
+            }
+            if (model.masterPassword !== model.masterPasswordRetype) {
+                toastr.error('Master password confirmation does not match.');
+                return;
+            }
+
             var email = model.email.toLowerCase();
             var key = cryptoService.makeKey(model.masterPassword, email);
             $scope.submitPromise = registerPromise(key, model.masterPassword, email, model.hint);

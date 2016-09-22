@@ -1,4 +1,4 @@
-﻿<form name="theForm" ng-submit="theForm.$valid && login(model)" bit-form="loginPromise">
+﻿<form name="theForm" ng-submit="login(model)" bit-form="loginPromise">
     <div class="header">
         <div class="left">
             <a ui-sref="home({animation: 'out-slide-down'})">Cancel</a>
@@ -21,7 +21,8 @@
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-lock fa-lg fa-fw"></i>
                         <label for="master-password" class="sr-only">Master Password</label>
-                        <input id="master-password" type="password" name="MasterPassword" placeholder="Master Password" ng-model="model.masterPassword">
+                        <input id="master-password" type="password" name="MasterPassword" placeholder="Master Password"
+                               ng-model="model.masterPassword">
                     </div>
                 </div>
             </div>

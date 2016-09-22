@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService, cryptoService, $q, toastr) {
+    .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService,
+        cryptoService, $q, toastr) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
         var fromCurrent = $stateParams.fromCurrent || $stateParams.uri !== null;
@@ -30,6 +31,15 @@
 
         $scope.savePromise = null;
         $scope.save = function (model) {
+            if (!model.name) {
+                toastr.error('Name is required.');
+                return;
+            }
+            if (!model.password) {
+                toastr.error('Password is required.');
+                return;
+            }
+
             $scope.savePromise = $q.when(siteService.encrypt(model)).then(function (siteModel) {
                 var site = new Site(siteModel, true);
                 return $q.when(siteService.saveWithServer(site)).then(function (site) {

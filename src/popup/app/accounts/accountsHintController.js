@@ -7,6 +7,11 @@
 
         $scope.submitPromise = null;
         $scope.submit = function (model) {
+            if (!model.email) {
+                toastr.error('Email is required.');
+                return;
+            }
+
             var request = new PasswordHintRequest(model.email);
             $scope.submitPromise = hintPromise(request);
             $scope.submitPromise.then(function () {

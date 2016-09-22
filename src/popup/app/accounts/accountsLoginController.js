@@ -17,6 +17,15 @@
 
         $scope.loginPromise = null;
         $scope.login = function (model) {
+            if (!model.email) {
+                toastr.error('Email is required.');
+                return;
+            }
+            if (!model.masterPassword) {
+                toastr.error('Master password is required.');
+                return;
+            }
+
             $scope.loginPromise = loginService.logIn(model.email, model.masterPassword);
 
             $scope.loginPromise.then(function () {
