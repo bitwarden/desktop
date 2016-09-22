@@ -4,3 +4,5 @@ npm-debug.log
 lib/
 css/
 dist/
+*.crx
+*.pem
