@@ -49,6 +49,25 @@ angular
             });
         };
 
+        $scope.delete = function () {
+            SweetAlert.swal({
+                title: 'Delete Site',
+                text: 'Are you sure you want to delete this site?',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No'
+            }, function (confirmed) {
+                if (confirmed) {
+                    $q.when(siteService.deleteWithServer(siteId)).then(function () {
+                        toastr.success('Deleted site');
+                        $state.go('tabs.vault', {
+                            animation: 'out-slide-down'
+                        });
+                    });
+                }
+            });
+        };
+
         $scope.close = function () {
             if (fromView) {
                 $state.go('viewSite', {
@@ -70,7 +89,7 @@ angular
         $scope.generatePassword = function () {
             if ($scope.site.password) {
                 SweetAlert.swal({
-                    title: 'Warning',
+                    title: 'Overwrite Password',
                     text: 'Are you sure you want to overwrite the current password?',
                     showCancelButton: true,
                     confirmButtonText: 'Yes',

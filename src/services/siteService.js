@@ -242,7 +242,7 @@ function initSiteService() {
         var deferred = Q.defer();
 
         var self = this;
-        self.apiService.deleteCipher(id, function (response) {
+        self.apiService.deleteCipher(id, function () {
             self.delete(id, function () {
                 deferred.resolve();
             });

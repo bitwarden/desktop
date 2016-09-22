@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.vault')
 
     .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, tldjs, toastr, $q) {
@@ -7,6 +7,10 @@
 
         $scope.site = null;
         siteService.get($stateParams.siteId, function (site) {
+            if (!site) {
+                return;
+            }
+
             $q.when(site.decrypt()).then(function (model) {
                 $scope.site = model;
 

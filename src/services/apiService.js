@@ -17,7 +17,7 @@ function initApiService() {
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             success: function (response) {
-                success(new TokenResponse(response))
+                success(new TokenResponse(response));
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 handleError(error, jqXHR, textStatus, errorThrown);
@@ -35,7 +35,7 @@ function initApiService() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    success(new TokenResponse(response))
+                    success(new TokenResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -54,7 +54,7 @@ function initApiService() {
                 url: self.baseUrl + '/accounts/profile?access_token=' + token,
                 dataType: 'json',
                 success: function (response) {
-                    success(new ProfileResponse(response))
+                    success(new ProfileResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -105,7 +105,7 @@ function initApiService() {
                 url: self.baseUrl + '/sites/' + id + '?access_token=' + token,
                 dataType: 'json',
                 success: function (response) {
-                    success(new SiteResponse(response))
+                    success(new SiteResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -124,7 +124,7 @@ function initApiService() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    success(new SiteResponse(response))
+                    success(new SiteResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -143,7 +143,7 @@ function initApiService() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    success(new SiteResponse(response))
+                    success(new SiteResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -162,7 +162,7 @@ function initApiService() {
                 url: self.baseUrl + '/folders/' + id + '?access_token=' + token,
                 dataType: 'json',
                 success: function (response) {
-                    success(new FolderResponse(response))
+                    success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -181,7 +181,7 @@ function initApiService() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    success(new FolderResponse(response))
+                    success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -200,7 +200,7 @@ function initApiService() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    success(new FolderResponse(response))
+                    success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -219,7 +219,7 @@ function initApiService() {
                 url: self.baseUrl + '/ciphers/' + id + '?access_token=' + token,
                 dataType: 'json',
                 success: function (response) {
-                    success(new CipherResponse(response))
+                    success(new CipherResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -241,7 +241,7 @@ function initApiService() {
                         data.push(new CipherResponse(response.Data[i]));
                     }
 
-                    success(new ListResponse(data))
+                    success(new ListResponse(data));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -256,9 +256,9 @@ function initApiService() {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/ciphers/' + id + '/delete?access_token=' + token,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                success: success,
+                success: function (response) {
+                    success();
+                },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
                 }

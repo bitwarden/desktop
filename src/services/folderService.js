@@ -224,6 +224,21 @@ function initFolderService() {
         });
     };
 
+    FolderService.prototype.deleteWithServer = function (id) {
+        var deferred = Q.defer();
+
+        var self = this;
+        self.apiService.deleteCipher(id, function () {
+            self.delete(id, function () {
+                deferred.resolve();
+            });
+        }, function (response) {
+            handleError(response, deferred)
+        });
+
+        return deferred.promise;
+    };
+
     function handleError(error, deferred) {
         deferred.reject(error);
     }
