@@ -123,3 +123,29 @@ gulp.task('less', function () {
 gulp.task('watch', function () {
     gulp.watch(paths.lessDir + '*.less', ['less']);
 });
+
+gulp.task('dist:clean', function (cb) {
+    return rimraf(paths.dist, cb);
+});
+
+gulp.task('dist:move', function () {
+    var moves = [
+        {
+            src: ['src/**/*', '!src/popup/less{,/**/*}'],
+            dest: paths.dist
+        }
+    ];
+
+    var tasks = moves.map(function (move) {
+        return gulp.src(move.src).pipe(gulp.dest(move.dest));
+    });
+
+    return merge(tasks);
+});
+
+gulp.task('dist', ['build'], function (cb) {
+    return runSequence(
+        'dist:clean',
+        'dist:move',
+        cb);
+});
