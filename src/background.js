@@ -253,9 +253,17 @@ function copyToClipboard(text) {
     }
 }
 
-fullSync();
-setInterval(fullSync, 6 * 60 * 1000);
+// Sync polling
 
-function fullSync() {
-    syncService.fullSync(function() {});
+fullSync(true);
+setInterval(fullSync, 5 * 60 * 1000); // check every 5 minutes
+var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
+
+function fullSync(override) {
+    syncService.getLastSync(function (lastSync) {
+        var now = new Date();
+        if (override || !lastSync || (now - lastSync) >= syncInternal) {
+            syncService.fullSync(function () { });
+        }
+    });
 }
