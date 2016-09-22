@@ -1,14 +1,14 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService) {
+    .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService, toastr) {
         popupUtils.initListSectionItemListeners();
         $('#code').focus();
 
         $scope.loginPromise = null;
         $scope.login = function (model) {
             if (!model.code) {
-                toastr.error('Verification code is required.');
+                toastr.error('Verification code is required.', 'Errors have occurred');
                 return;
             }
 

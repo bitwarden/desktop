@@ -8,15 +8,19 @@
         $scope.submitPromise = null;
         $scope.submit = function (model) {
             if (!model.email) {
-                toastr.error('Email is required.');
+                toastr.error('Email address is required.', 'Errors have occurred');
+                return;
+            }
+            if (model.email.indexOf('@') === -1) {
+                toastr.error('Invalid email address.', 'Errors have occurred');
                 return;
             }
             if (!model.masterPassword) {
-                toastr.error('Master password is required.');
+                toastr.error('Master password is required.', 'Errors have occurred');
                 return;
             }
             if (model.masterPassword !== model.masterPasswordRetype) {
-                toastr.error('Master password confirmation does not match.');
+                toastr.error('Master password confirmation does not match.', 'Errors have occurred');
                 return;
             }
 

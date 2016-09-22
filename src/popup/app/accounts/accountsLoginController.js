@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService) {
+    .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService, toastr) {
         popupUtils.initListSectionItemListeners();
 
         if ($stateParams.email) {
@@ -18,11 +18,15 @@
         $scope.loginPromise = null;
         $scope.login = function (model) {
             if (!model.email) {
-                toastr.error('Email is required.');
+                toastr.error('Email address is required.', 'Errors have occurred');
+                return;
+            }
+            if (model.email.indexOf('@') === -1) {
+                toastr.error('Invalid email address.', 'Errors have occurred');
                 return;
             }
             if (!model.masterPassword) {
-                toastr.error('Master password is required.');
+                toastr.error('Master password is required.', 'Errors have occurred');
                 return;
             }
 

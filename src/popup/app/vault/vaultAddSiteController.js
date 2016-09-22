@@ -32,11 +32,11 @@
         $scope.savePromise = null;
         $scope.save = function (model) {
             if (!model.name) {
-                toastr.error('Name is required.');
+                toastr.error('Name is required.', 'Errors have occurred');
                 return;
             }
             if (!model.password) {
-                toastr.error('Password is required.');
+                toastr.error('Password is required.', 'Errors have occurred');
                 return;
             }
 

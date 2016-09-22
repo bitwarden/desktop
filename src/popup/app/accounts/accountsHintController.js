@@ -8,7 +8,11 @@
         $scope.submitPromise = null;
         $scope.submit = function (model) {
             if (!model.email) {
-                toastr.error('Email is required.');
+                toastr.error('Email address is required.', 'Errors have occurred');
+                return;
+            }
+            if (model.email.indexOf('@') === -1) {
+                toastr.error('Invalid email address.', 'Errors have occurred');
                 return;
             }
 
