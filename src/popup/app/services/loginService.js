@@ -72,6 +72,8 @@
                             userService.clearEmail(function () {
                                 siteService.clear(userId, function () {
                                     folderService.clear(userId, function () {
+                                        $rootScope.vaultSites = null;
+                                        $rootScope.vaultFolders = null;
                                         callback();
                                     });
                                 });

@@ -82,8 +82,10 @@ function initFolderService() {
             }
 
             Q.all(promises).then(function () {
-                self.decryptedFolderCache = decFolders;
-                deferred.resolve(self.decryptedFolderCache);
+                if (decFolders.length > 0) {
+                    self.decryptedFolderCache = decFolders;
+                }
+                deferred.resolve(decFolders);
             });
         });
 
@@ -176,6 +178,8 @@ function initFolderService() {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
+
+        var self = this;
 
         chrome.storage.local.remove('folders_' + userId, function () {
             self.decryptedFolderCache = null;

@@ -191,6 +191,8 @@ function initSiteService() {
             throw 'callback function required';
         }
 
+        var self = this;
+
         chrome.storage.local.remove('sites_' + userId, function () {
             self.decryptedSiteCache = null;
             callback();
