@@ -70,8 +70,15 @@
             }
 
             return function (site) {
-                return (site.name && site.name.indexOf($scope.searchText) !== -1) ||
-                    (site.username && site.username.indexOf($scope.searchText) !== -1);
+                var searchTerm = $scope.searchText.toLowerCase();
+                if (site.name && site.name.toLowerCase().indexOf(searchTerm) !== -1) {
+                    return true;
+                }
+                if (site.username && site.username.toLowerCase().indexOf(searchTerm) !== -1) {
+                    return true;
+                }
+
+                return false;
             };
         };
 
