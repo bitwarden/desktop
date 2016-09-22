@@ -78,7 +78,8 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'angular-ui-router'
         },
         {
-            src: [paths.npmDir + 'angular-toastr/dist/angular-toastr.tpls.js', paths.npmDir + 'angular-toastr/dist/angular-toastr.css'],
+            src: [paths.npmDir + 'angular-toastr/dist/angular-toastr.tpls.js',
+                paths.npmDir + 'angular-toastr/dist/angular-toastr.css'],
             dest: paths.libDir + 'angular-toastr'
         },
         {
@@ -102,7 +103,8 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'q'
         },
         {
-            src: [paths.npmDir + 'sweetalert/dist/sweetalert.css', paths.npmDir + 'sweetalert/dist/sweetalert.min.js', paths.npmDir + 'angular-sweetalert/SweetAlert.js'],
+            src: [paths.npmDir + 'sweetalert/dist/sweetalert.css', paths.npmDir + 'sweetalert/dist/sweetalert.min.js',
+                paths.npmDir + 'angular-sweetalert/SweetAlert.js'],
             dest: paths.libDir + 'sweetalert'
         }
     ];

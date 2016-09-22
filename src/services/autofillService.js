@@ -103,7 +103,7 @@ function initAutofill() {
                 fillScript.autosubmit = { focusOpid: password.opid };
             }
         }
-        else if (passwordFields.length == 1) {
+        else if (passwordFields.length === 1) {
             // The page does not have any forms with password fields. Use the one password field on the page and the
             // input field just before it as the username.
 

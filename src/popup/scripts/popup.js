@@ -29,7 +29,7 @@
                 }
             }
             else if (select.length > 0) {
-                select.openSelect();
+                select.focus();
             }
         });
 
@@ -42,22 +42,3 @@
 
     return self;
 }();
-
-
-// ref: http://stackoverflow.com/questions/19432610/jquery-open-select-by-button
-(function ($) {
-    "use strict";
-    $.fn.openSelect = function () {
-        return this.each(function (index, el) {
-            $(el).focus();
-            if (document.createEvent) {
-                var event = document.createEvent("MouseEvents");
-                event.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                el.dispatchEvent(event);
-            }
-            else if (element.fireEvent) {
-                el.fireEvent("onmousedown");
-            }
-        });
-    }
-}(jQuery));

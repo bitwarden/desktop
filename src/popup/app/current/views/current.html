@@ -10,12 +10,14 @@
             <div class="list-grouped">
                 <div ng-click="fillSite(site)" class="list-grouped-item condensed" style="cursor: pointer;"
                      ng-repeat="site in theSites = (sites | orderBy: ['name', 'username'])">
-                    <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Password" ngclipboard ngclipboard-error="clipboardError(e)"
-                       ngclipboard-success="clipboardSuccess(e, 'Password')" data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
+                    <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Password"
+                       ngclipboard ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, 'Password')"
+                       data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
                         <i class="fa fa-lg fa-key"></i>
                     </a>
-                    <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Username" ngclipboard ngclipboard-error="clipboardError(e)"
-                       ngclipboard-success="clipboardSuccess(e, 'Username')" data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
+                    <a class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Username"
+                       ngclipboard ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, 'Username')"
+                       data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </a>
                     <span class="text">{{site.name}}</span>

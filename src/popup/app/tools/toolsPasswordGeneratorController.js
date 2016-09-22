@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.tools')
 
-    .controller('toolsPasswordGeneratorController', function ($scope, $state, $stateParams, passwordGenerationService, toastr, $q) {
+    .controller('toolsPasswordGeneratorController', function ($scope, $state, $stateParams, passwordGenerationService,
+        toastr, $q) {
         var addState = $stateParams.addState,
             editState = $stateParams.editState;
 

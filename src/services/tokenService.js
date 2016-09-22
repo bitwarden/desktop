@@ -99,6 +99,8 @@ function initTokenService() {
                 throw 'Illegal base64url string!';
             }
         }
-        return window.decodeURIComponent(escape(window.atob(output))); //polyfill https://github.com/davidchambers/Base64.js
+
+        //polyfill https://github.com/davidchambers/Base64.js
+        return window.decodeURIComponent(escape(window.atob(output)));
     };
 };

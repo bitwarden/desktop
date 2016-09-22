@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q, syncService, $rootScope, siteService, folderService) {
+    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q, syncService,
+        $rootScope, siteService, folderService) {
         var _service = {};
 
         _service.logIn = function (email, masterPassword) {
