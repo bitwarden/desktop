@@ -72,7 +72,7 @@ angular
                 fillScript = autofillService.generateFillScript(pageDetails, site.username, site.password);
             }
 
-            if (tabId && fillScript) {
+            if (tabId && fillScript && fillScript.script && fillScript.script.length) {
                 chrome.tabs.sendMessage(tabId, {
                     command: 'fillForm',
                     fillScript: fillScript
@@ -81,7 +81,8 @@ angular
                 });
             }
             else {
-                toastr.error('Unable to auto-fill the selected site. Copy/paste your username and/or password instead.');
+                toastr.error('Unable to auto-fill the selected site on this page. ' +
+                    'Copy/paste your username and/or password instead.');
             }
         };
 
