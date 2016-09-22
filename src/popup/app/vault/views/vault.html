@@ -15,7 +15,8 @@
                     <div class="list-grouped-header">
                         <i class="fa fa-folder-open"></i> {{folder.name}}
                     </div>
-                    <a href="javascript:void(0)" ng-click="viewSite(site)" class="list-grouped-item condensed"
+                    <a href="javascript:void(0)" ng-click="viewSite(site)"
+                       class="list-grouped-item condensed" title="Edit {{site.name}}"
                        ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id }
                             | filter: searchSites() | orderBy: ['name', 'username'])">
                         <span class="btn-list" ng-click="$event.stopPropagation()" title="Copy Password" ngclipboard
