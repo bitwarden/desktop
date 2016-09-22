@@ -14,15 +14,17 @@ function initSyncService() {
             throw 'callback function required';
         }
 
+        syncStarted();
+
         var self = this;
         self.userService.isAuthenticated(function (isAuthenticated) {
             if (!isAuthenticated) {
+                syncCompleted(false);
                 callback(false);
                 return;
             }
 
             self.userService.getUserId(function (userId) {
-                syncStarted();
                 var now = new Date();
                 var ciphers = self.apiService.getCiphers(function (response) {
                     var sites = {};
@@ -178,6 +180,7 @@ function initSyncService() {
     }
 
     function handleError() {
+        syncCompleted(false);
         // TODO: check for unauth or forbidden and logout
     }
 };

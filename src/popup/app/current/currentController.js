@@ -86,7 +86,7 @@ angular
             }
         };
 
-        $scope.$on('syncCompleted', function (event, args) {
+        $scope.$on('syncCompleted', function (event, successfully) {
             if ($scope.loaded) {
                 setTimeout(loadVault, 500);
             }

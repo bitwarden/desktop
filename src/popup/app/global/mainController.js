@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.global')
 
     .controller('mainController', function ($scope, $state, loginService, toastr) {
@@ -18,7 +18,7 @@
 
         chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             if (msg.command === 'syncCompleted') {
-                $scope.$broadcast('syncCompleted');
+                $scope.$broadcast('syncCompleted', msg.successfully);
             }
             else if (msg.command === 'syncStarted') {
                 $scope.$broadcast('syncStarted');

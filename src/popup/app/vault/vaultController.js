@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr) {
+    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr,
+        syncService) {
         $('#search').focus();
 
         var delayLoad = true;
@@ -42,9 +43,11 @@
             promises.push(sitePromise);
 
             $q.all(promises).then(function () {
-                $scope.loaded = true;
-                $rootScope.vaultFolders = decFolders;
-                $rootScope.vaultSites = decSites;
+                if (decSites.length || !syncService.syncInProgress) {
+                    $scope.loaded = true;
+                    $rootScope.vaultFolders = decFolders;
+                    $rootScope.vaultSites = decSites;
+                }
                 if (!delayLoad) {
                     setScrollY();
                 }
@@ -108,10 +111,8 @@
             toastr.info(type + ' copied!');
         };
 
-        $scope.$on('syncCompleted', function (event, args) {
-            if ($scope.loaded) {
-                setTimeout(loadVault, 500);
-            }
+        $scope.$on('syncCompleted', function (event, successfully) {
+            setTimeout(loadVault, 500);
         });
 
         function getScrollY() {
