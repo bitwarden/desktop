@@ -2,6 +2,7 @@
     .module('bit.accounts')
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService, toastr) {
+        $scope.model = {};
         popupUtils.initListSectionItemListeners();
         $('#code').focus();
 

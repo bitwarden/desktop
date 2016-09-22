@@ -2,6 +2,7 @@
     .module('bit.accounts')
 
     .controller('accountsRegisterController', function ($scope, $state, cryptoService, toastr, $q, apiService) {
+        $scope.model = {};
         popupUtils.initListSectionItemListeners();
         $('#email').focus();
 

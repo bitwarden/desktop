@@ -2,6 +2,7 @@
     .module('bit.settings')
 
     .controller('settingsEditFolderController', function ($scope, $stateParams, folderService, toastr, $q, $state) {
+        $scope.folder = {};
         var folderId = $stateParams.folderId;
 
         folderService.get(folderId, function (folder) {

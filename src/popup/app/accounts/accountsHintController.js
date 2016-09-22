@@ -2,6 +2,8 @@
     .module('bit.accounts')
 
     .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q) {
+        $scope.model = {};
+
         popupUtils.initListSectionItemListeners();
         $('#email').focus();
 
