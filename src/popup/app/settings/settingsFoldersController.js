@@ -10,10 +10,13 @@
             foldersPromise.then(function (folders) {
                 if (folders.length > 0 && folders[0].id === null) {
                     // remove the "none" folder
-                    folders.splice(0, 1);
+                    $scope.folders = folders.slice(1);
                 }
+                else {
+                    $scope.folders = folders;
+                }
+
                 $scope.loaded = true;
-                $scope.folders = folders;
             });
         }
 
