@@ -40,7 +40,7 @@
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
                     <a class="btn-list" href="" title="Toggle Password" ng-click="togglePassword()">
-                        <i class="fa fa-lg fa-eye"></i>
+                        <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>
                     </a>
                     <span class="item-label">Password</span>
                     <span ng-show="!showPassword">{{site.maskedPassword}}</span>
