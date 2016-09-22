@@ -136,6 +136,32 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     }
 });
 
+function messageCurrentTab(command, data) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tabId = null;
+        if (tabs.length > 0) {
+            tabId = tabs[0].id;
+        }
+        else {
+            return;
+        }
+
+        if (!tabId) {
+            return;
+        }
+
+        var obj = {
+            command: command
+        };
+
+        if (data) {
+            obj['data'] = data;
+        }
+
+        chrome.tabs.sendMessage(tabId, obj);
+    });
+}
+
 function autofillPage(site) {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         var tabId = null;

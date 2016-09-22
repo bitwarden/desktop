@@ -16,6 +16,11 @@
       "js": [ "content/autoFill.js" ],
       "matches": [ "http://*/*", "https://*/*", "file:///*" ],
       "run_at": "document_start"
+    },
+    {
+      "js": [ "content/overlay.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_start"
     }
   ],
   "background": {
@@ -62,5 +67,8 @@
     "webRequestBlocking",
     "http://*/*",
     "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "overlay/popup.html"
   ]
 }
