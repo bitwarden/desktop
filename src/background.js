@@ -32,17 +32,17 @@ function buildContextMenu() {
         title: 'Copy Password'
     });
 
-    chrome.contextMenus.create({
-        type: 'separator',
-        contexts: ['all']
-    });
+    //chrome.contextMenus.create({
+    //    type: 'separator',
+    //    contexts: ['all']
+    //});
 
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'generate-password',
-        contexts: ['all'],
-        title: 'Generate Password'
-    });
+    //chrome.contextMenus.create({
+    //    type: 'normal',
+    //    id: 'generate-password',
+    //    contexts: ['all'],
+    //    title: 'Generate Password'
+    //});
 }
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {
@@ -88,7 +88,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         for (var i = 0; i < sites.length; i++) {
             if (sites[i].domain && tabDomain === sites[i].domain) {
                 count++;
-                loadContextMenuOptions(sites[i]);
+                loadSiteContextMenuOptions(sites[i]);
             }
         }
 
@@ -105,6 +105,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             });
         }
         else {
+            loadNoSitesContextMenuOptions();
             chrome.browserAction.setBadgeText({
                 text: null,
                 tabId: tabId
@@ -117,6 +118,10 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
         info.parentMenuItemId === 'copy-password') {
         var id = info.menuItemId.split('_')[1];
+        if (id === 'noop') {
+            return;
+        }
+
         siteService.getAllDecrypted().then(function (sites) {
             for (var i = 0; i < sites.length; i++) {
                 if (sites[i].id === id) {
@@ -182,7 +187,7 @@ function autofillPage(site) {
                 fillScript = autofillService.generateFillScript(pageDetails, site.username, site.password);
             }
 
-            if (tabId && fillScript) {
+            if (tabId && fillScript && fillScript.script) {
                 chrome.tabs.sendMessage(tabId, {
                     command: 'fillForm',
                     fillScript: fillScript
@@ -216,20 +221,37 @@ function buildContextMenuOptions(url) {
     }
 
     siteService.getAllDecrypted().then(function (sites) {
-        sortSites(sites);
-        for (var i = 0; i < sites.length; i++) {
-            if (sites[i].domain && tabDomain === sites[i].domain) {
-                loadContextMenuOptions(sites[i]);
+        var count = 0;
+        if (sites && sites.length) {
+            sortSites(sites);
+            for (var i = 0; i < sites.length; i++) {
+                if (sites[i].domain && tabDomain === sites[i].domain) {
+                    count++;
+                    loadSiteContextMenuOptions(sites[i]);
+                }
             }
+        }
+
+        if (!count) {
+            loadNoSitesContextMenuOptions();
         }
     });
 }
 
-function loadContextMenuOptions(site) {
+function loadSiteContextMenuOptions(site) {
     var title = site.name + ' (' + site.username + ')';
+    loadContextMenuOptions(title, site.id);
+}
+
+function loadNoSitesContextMenuOptions() {
+    var title = 'No matching sites.';
+    loadContextMenuOptions(title, 'noop');
+}
+
+function loadContextMenuOptions(title, idSuffix) {
     chrome.contextMenus.create({
         type: 'normal',
-        id: 'autofill_' + site.id,
+        id: 'autofill_' + idSuffix,
         parentId: 'autofill',
         contexts: ['all'],
         title: title
@@ -237,7 +259,7 @@ function loadContextMenuOptions(site) {
 
     chrome.contextMenus.create({
         type: 'normal',
-        id: 'copy-username_' + site.id,
+        id: 'copy-username_' + idSuffix,
         parentId: 'copy-username',
         contexts: ['all'],
         title: title
@@ -245,7 +267,7 @@ function loadContextMenuOptions(site) {
 
     chrome.contextMenus.create({
         type: 'normal',
-        id: 'copy-password_' + site.id,
+        id: 'copy-password_' + idSuffix,
         parentId: 'copy-password',
         contexts: ['all'],
         title: title
