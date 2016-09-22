@@ -3,10 +3,13 @@
 
     .controller('settingsSyncController', function ($scope, syncService, toastr) {
         $scope.lastSync = '--';
+        $scope.loading = false;
         setLastSync();
 
         $scope.sync = function () {
+            $scope.loading = true;
             syncService.fullSync(function () {
+                $scope.loading = false;
                 toastr.success('Syncing complete');
                 setLastSync();
             });

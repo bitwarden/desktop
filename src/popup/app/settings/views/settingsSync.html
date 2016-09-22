@@ -11,6 +11,9 @@
                 Sync Vault Now
             </a>
             <small class="text-muted">Last Sync: {{lastSync}}</small>
+            <span ng-show="loading" style="display: block; margin-top: 20px;">
+                <i class="text-muted fa fa-lg fa-spinner fa-spin"></i>
+            </span>
         </p>
     </div>
 </div>
