@@ -33,4 +33,7 @@
     })
     .factory('utilsService', function () {
         return chrome.extension.getBackgroundPage().utilsService;
+    })
+    .factory('appIdService', function () {
+        return chrome.extension.getBackgroundPage().appIdService;
     });

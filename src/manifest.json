@@ -60,13 +60,9 @@
   },
   "permissions": [
     "tabs",
-    "idle",
-    "notifications",
     "contextMenus",
     "storage",
     "unlimitedStorage",
-    "webRequest",
-    "webRequestBlocking",
     "http://*/*",
     "https://*/*"
   ],

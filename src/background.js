@@ -8,6 +8,7 @@ var folderService = new FolderService(cryptoService, userService, apiService);
 var syncService = new SyncService(siteService, folderService, userService, apiService);
 var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
+var appIdService = new AppIdService();
 
 function buildContextMenu() {
     chrome.contextMenus.removeAll();
