@@ -31,18 +31,6 @@ function buildContextMenu() {
         contexts: ['all'],
         title: 'Copy Password'
     });
-
-    //chrome.contextMenus.create({
-    //    type: 'separator',
-    //    contexts: ['all']
-    //});
-
-    //chrome.contextMenus.create({
-    //    type: 'normal',
-    //    id: 'generate-password',
-    //    contexts: ['all'],
-    //    title: 'Generate Password'
-    //});
 }
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {
@@ -61,16 +49,35 @@ chrome.tabs.onActivated.addListener(function (activeInfo) {
     });
 });
 
-var loadedMenuOnUpdate = false;
+var loadedMenu = false;
+chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tab = null;
+        if (tabs.length > 0) {
+            tab = tabs[0];
+        }
+
+        if (!tab) {
+            return;
+        }
+
+        loadMenuAndUpdateBadge(tab.url, tab.id, false);
+    });
+});
+
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    loadedMenuOnUpdate = false;
     buildContextMenu();
 
-    if (!tab.url) {
+    loadMenuAndUpdateBadge(tab.url, tabId, true);
+});
+
+function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
+    loadedMenu = false;
+    if (!url) {
         return;
     }
 
-    var tabDomain = tldjs.getDomain(tab.url);
+    var tabDomain = tldjs.getDomain(url);
     if (!tabDomain) {
         return;
     }
@@ -79,16 +86,19 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
 
     siteService.getAllDecrypted().then(function (sites) {
-        if (loadedMenuOnUpdate) {
+        if (loadedMenu) {
             return;
         }
-        loadedMenuOnUpdate = true;
+        loadedMenu = true;
 
         sortSites(sites);
         for (var i = 0; i < sites.length; i++) {
             if (sites[i].domain && tabDomain === sites[i].domain) {
                 count++;
-                loadSiteContextMenuOptions(sites[i]);
+
+                if (loadContextMenuOptions) {
+                    loadSiteContextMenuOptions(sites[i]);
+                }
             }
         }
 
@@ -112,7 +122,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             });
         }
     });
-});
+}
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
     if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
