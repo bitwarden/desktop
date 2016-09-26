@@ -1,9 +1,9 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService, toastr) {
+    .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService, toastr, utilsService) {
         $scope.model = {};
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
         $('#code').focus();
 
         $scope.loginPromise = null;

@@ -1,10 +1,10 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q) {
+    .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q, utilsService) {
         $scope.model = {};
 
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
         $('#email').focus();
 
         $scope.submitPromise = null;

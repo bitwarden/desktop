@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService,
-        cryptoService, $q, toastr, SweetAlert) {
+        cryptoService, $q, toastr, SweetAlert, utilsService) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
         var siteId = $stateParams.siteId;
@@ -27,7 +27,7 @@ angular
             $scope.folders = folders;
         });
 
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
 
         $scope.savePromise = null;
         $scope.save = function (model) {

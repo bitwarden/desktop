@@ -1,8 +1,9 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService, toastr) {
-        popupUtils.initListSectionItemListeners();
+    .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService, toastr,
+        utilsService) {
+        utilsService.initListSectionItemListeners($(document));
 
         if ($stateParams.email) {
             $('#master-password').focus();

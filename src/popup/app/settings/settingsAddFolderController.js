@@ -1,9 +1,9 @@
 angular
     .module('bit.settings')
 
-    .controller('settingsAddFolderController', function ($scope, $q, folderService, $state, toastr) {
+    .controller('settingsAddFolderController', function ($scope, $q, folderService, $state, toastr, utilsService) {
         $scope.folder = {};
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
         $('#name').focus();
 
         $scope.savePromise = null;

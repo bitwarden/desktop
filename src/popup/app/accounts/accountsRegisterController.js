@@ -1,9 +1,9 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsRegisterController', function ($scope, $state, cryptoService, toastr, $q, apiService) {
+    .controller('accountsRegisterController', function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService) {
         $scope.model = {};
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
         $('#email').focus();
 
         $scope.submitPromise = null;

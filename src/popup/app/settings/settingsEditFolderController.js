@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsEditFolderController', function ($scope, $stateParams, folderService, toastr, $q, $state, SweetAlert) {
+    .controller('settingsEditFolderController', function ($scope, $stateParams, folderService, toastr, $q, $state, SweetAlert,
+        utilsService) {
         $scope.folder = {};
         var folderId = $stateParams.folderId;
 
@@ -11,7 +12,7 @@
             });
         });
 
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
 
         $scope.savePromise = null;
         $scope.save = function (model) {

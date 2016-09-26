@@ -2,13 +2,13 @@
     .module('bit.tools')
 
     .controller('toolsPasswordGeneratorController', function ($scope, $state, $stateParams, passwordGenerationService,
-        toastr, $q) {
+        toastr, $q, utilsService) {
         var addState = $stateParams.addState,
             editState = $stateParams.editState;
 
         $scope.showSelect = $stateParams.addState || $stateParams.editState;
 
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
         $scope.password = '-';
 
         $scope.slider = {

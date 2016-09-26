@@ -2,7 +2,7 @@
     .module('bit.vault')
 
     .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService,
-        cryptoService, $q, toastr) {
+        cryptoService, $q, toastr, utilsService) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
         var fromCurrent = $stateParams.fromCurrent || $stateParams.uri !== null;
@@ -23,7 +23,7 @@
         else {
             $('#name').focus();
         }
-        popupUtils.initListSectionItemListeners();
+        utilsService.initListSectionItemListeners($(document));
 
         $q.when(folderService.getAllDecrypted()).then(function (folders) {
             $scope.folders = folders;
