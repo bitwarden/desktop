@@ -15,7 +15,7 @@
 
             $scope.loginPromise = loginService.logInTwoFactor(model.code);
             $scope.loginPromise.then(function () {
-                $state.go('tabs.vault', { animation: 'in-slide-left' });
+                $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
             });
         };
     });

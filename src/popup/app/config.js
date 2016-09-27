@@ -75,7 +75,7 @@
                     url: '/vault',
                     templateUrl: 'app/vault/views/vault.html',
                     controller: 'vaultController',
-                    params: { scrollY: 0, searchText: null }
+                    params: { scrollY: 0, searchText: null, syncOnLoad: false }
                 })
                 .state('tabs.settings', {
                     url: '/settings',

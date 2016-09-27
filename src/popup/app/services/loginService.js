@@ -1,8 +1,8 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q, syncService,
-        $rootScope, siteService, folderService) {
+    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q, $rootScope, siteService,
+        folderService) {
         var _service = {};
 
         _service.logIn = function (email, masterPassword) {
@@ -22,7 +22,6 @@
                             if (response.profile) {
                                 userService.setUserId(response.profile.id, function () {
                                     userService.setEmail(response.profile.email, function () {
-                                        syncService.fullSync(function () { });
                                         deferred.resolve(response);
                                     });
                                 });
@@ -52,7 +51,6 @@
                 tokenService.setToken(response.token, function () {
                     userService.setUserId(response.profile.id, function () {
                         userService.setEmail(response.profile.email, function () {
-                            syncService.fullSync(function () { });
                             deferred.resolve(response);
                         });
                     });

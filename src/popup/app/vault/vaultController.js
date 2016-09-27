@@ -2,8 +2,15 @@
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr,
-        syncService) {
+        syncService, utilsService) {
         $('#search').focus();
+
+        var syncOnLoad = $stateParams.syncOnLoad;
+        if (syncOnLoad) {
+            setTimeout(function () {
+                syncService.fullSync(function () { });
+            }, utilsService.isFirefox() ? 500 : 0);
+        }
 
         var delayLoad = true;
         $scope.loaded = true;
@@ -21,7 +28,7 @@
             setTimeout(setScrollY, 100);
             setTimeout(loadVault, 1000);
         }
-        else {
+        else if (!syncOnLoad) {
             loadVault();
         }
 
@@ -43,11 +50,10 @@
             promises.push(sitePromise);
 
             $q.all(promises).then(function () {
-                if (decSites.length || !syncService.syncInProgress) {
-                    $scope.loaded = true;
-                    $rootScope.vaultFolders = decFolders;
-                    $rootScope.vaultSites = decSites;
-                }
+                $scope.loaded = true;
+                $rootScope.vaultFolders = decFolders;
+                $rootScope.vaultSites = decSites;
+
                 if (!delayLoad) {
                     setScrollY();
                 }

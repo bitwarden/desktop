@@ -14,12 +14,12 @@ function initSyncService() {
             throw 'callback function required';
         }
 
-        syncStarted();
-
         var self = this;
+
+        self.syncStarted();
         self.userService.isAuthenticated(function (isAuthenticated) {
             if (!isAuthenticated) {
-                syncCompleted(false);
+                self.syncCompleted(false);
                 callback(false);
                 return;
             }
@@ -43,7 +43,7 @@ function initSyncService() {
                     self.folderService.replace(folders, function () {
                         self.siteService.replace(sites, function () {
                             self.setLastSync(now, function () {
-                                syncCompleted(true);
+                                self.syncCompleted(true);
                                 callback(true);
                             });
                         });
@@ -169,15 +169,15 @@ function initSyncService() {
         });
     };
 
-    function syncStarted() {
+    SyncService.prototype.syncStarted = function () {
         this.syncInProgress = true;
-        chrome.runtime.sendMessage(null, { command: 'syncStarted' });
-    }
+        chrome.runtime.sendMessage({ command: 'syncStarted' });
+    };
 
-    function syncCompleted(successfully) {
+    SyncService.prototype.syncCompleted = function (successfully) {
         this.syncInProgress = false;
-        chrome.runtime.sendMessage(null, { command: 'syncCompleted', successfully: successfully });
-    }
+        chrome.runtime.sendMessage({ command: 'syncCompleted', successfully: successfully });
+    };
 
     function handleError() {
         syncCompleted(false);

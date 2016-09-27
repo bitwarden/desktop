@@ -39,7 +39,7 @@
                         $state.go('twoFactor', { animation: 'in-slide-left' });
                     }
                     else {
-                        $state.go('tabs.vault', { animation: 'in-slide-left' });
+                        $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
                     }
                 });
             });

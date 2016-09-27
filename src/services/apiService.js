@@ -270,7 +270,7 @@ function initApiService() {
 
     function handleError(errorCallback, jqXHR, textStatus, errorThrown) {
         if (jqXHR.status === 401 || jqXHR.status === 403) {
-            chrome.runtime.sendMessage(null, { command: 'logout' });
+            chrome.runtime.sendMessage({ command: 'logout' });
             return;
         }
 
