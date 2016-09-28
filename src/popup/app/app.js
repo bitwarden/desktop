@@ -3,6 +3,8 @@
         'ui.router',
         'ngAnimate',
         'toastr',
+        'angulartics',
+        'angulartics.google.analytics',
 
         'bit.directives',
         'bit.services',

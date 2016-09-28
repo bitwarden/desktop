@@ -12,6 +12,7 @@
     "96": "images/icon96.png",
     "128": "images/icon128.png"
   },
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
   "content_scripts": [
     {
       "js": [ "content/autoFill.js" ],
@@ -32,6 +33,7 @@
       "lib/sjcl/bitArray.js",
       "lib/q/q.js",
       "scripts/tld.js",
+      "scripts/analyticsCode.js",
       "models/api/requestModels.js",
       "models/api/responseModels.js",
       "models/dataModels.js",
@@ -47,7 +49,8 @@
       "services/autofillService.js",
       "services/appIdService.js",
       "services/passwordGenerationService.js",
-      "background.js"
+      "background.js",
+      "scripts/analytics.js"
     ],
     "persistent": true
   },

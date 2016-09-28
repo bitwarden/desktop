@@ -106,6 +106,12 @@ gulp.task('lib', ['clean:lib'], function () {
             src: [paths.npmDir + 'sweetalert/dist/sweetalert.css', paths.npmDir + 'sweetalert/dist/sweetalert.min.js',
                 paths.npmDir + 'angular-sweetalert/SweetAlert.js'],
             dest: paths.libDir + 'sweetalert'
+        },
+        {
+            src: [paths.npmDir + 'angulartics-google-analytics/lib/angulartics*.js',
+                paths.npmDir + 'angulartics/src/angulartics.js'
+            ],
+            dest: paths.libDir + 'angulartics'
         }
     ];
 
