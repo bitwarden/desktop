@@ -3,10 +3,12 @@
         <img src="../../../../images/logo@3x.png" alt="bitwarden" />
         <p>Log in or create a new account to access your secure vault.</p>
         <div class="buttons">
-            <a class="btn btn-lg btn-primary btn-block" ui-sref="register({animation: 'in-slide-up'})">
+            <a class="btn btn-lg btn-primary btn-block" ui-sref="register({animation: 'in-slide-up'})"
+               analytics-on="click" analytics-event="Clicked Create Account">
                 <b>Create Account</b>
             </a>
-            <a class="btn btn-lg btn-link btn-block" ui-sref="login({animation: 'in-slide-up'})">
+            <a class="btn btn-lg btn-link btn-block" ui-sref="login({animation: 'in-slide-up'})"
+               analytics-on="click" analytics-event="Clicked Log In">
                 Log In
             </a>
         </div>
