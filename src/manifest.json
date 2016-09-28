@@ -23,6 +23,11 @@
       "js": [ "content/overlay.js" ],
       "matches": [ "http://*/*", "https://*/*", "file:///*" ],
       "run_at": "document_start"
+    },
+    {
+      "js": [ "content/field.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_start"
     }
   ],
   "background": {

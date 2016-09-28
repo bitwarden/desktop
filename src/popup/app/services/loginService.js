@@ -22,6 +22,7 @@
                             if (response.profile) {
                                 userService.setUserId(response.profile.id, function () {
                                     userService.setEmail(response.profile.email, function () {
+                                        chrome.runtime.sendMessage({ command: 'loggedIn' });
                                         deferred.resolve(response);
                                     });
                                 });
@@ -51,6 +52,7 @@
                 tokenService.setToken(response.token, function () {
                     userService.setUserId(response.profile.id, function () {
                         userService.setEmail(response.profile.email, function () {
+                            chrome.runtime.sendMessage({ command: 'loggedIn' });
                             deferred.resolve(response);
                         });
                     });
@@ -72,6 +74,7 @@
                                     folderService.clear(userId, function () {
                                         $rootScope.vaultSites = null;
                                         $rootScope.vaultFolders = null;
+                                        chrome.runtime.sendMessage({ command: 'loggedOut' });
                                         callback();
                                     });
                                 });

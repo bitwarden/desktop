@@ -11,12 +11,45 @@ var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 var appIdService = new AppIdService();
 
-chrome.runtime.onInstalled.addListener(function (details) {
-    ga('send', {
-        hitType: 'event',
-        eventAction: 'onInstalled ' + details.reason
-    });
+chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    if (msg.command === 'loggedOut') {
+        setIcon(true);
+        refreshBadgeAndMenu();
+    }
+    else if (msg.command === 'loggedIn') {
+        setIcon(false);
+    }
+    else if (msg.command === 'syncCompleted' && msg.successfully) {
+        setTimeout(refreshBadgeAndMenu, 2000);
+    }
 });
+
+userService.isAuthenticated(function (isAuthenticated) {
+    setIcon(!isAuthenticated);
+});
+
+function setIcon(grayedOut) {
+    var suffix = '';
+    if (grayedOut) {
+        suffix = '_gray';
+    }
+
+    chrome.browserAction.setIcon({
+        path: {
+            '19': 'images/icon19' + suffix + '.png',
+            '38': 'images/icon38' + suffix + '.png',
+        }
+    });
+}
+
+if (chrome.runtime.onInstalled) {
+    chrome.runtime.onInstalled.addListener(function (details) {
+        ga('send', {
+            hitType: 'event',
+            eventAction: 'onInstalled ' + details.reason
+        });
+    });
+}
 
 function buildContextMenu() {
     chrome.contextMenus.removeAll();
@@ -44,23 +77,16 @@ function buildContextMenu() {
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {
     buildContextMenu();
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        var tab = null;
-        if (tabs.length > 0) {
-            tab = tabs[0];
-        }
-
-        if (!tab || !tab.url) {
-            return;
-        }
-
-        buildContextMenuOptions(tab.url);
-    });
+    refreshBadgeAndMenu();
 });
 
 var loadedMenu = false;
 chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    refreshBadgeAndMenu();
+});
+
+function refreshBadgeAndMenu() {
+    chrome.tabs.query({ active: true }, function (tabs) {
         var tab = null;
         if (tabs.length > 0) {
             tab = tabs[0];
@@ -70,13 +96,13 @@ chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
             return;
         }
 
-        loadMenuAndUpdateBadge(tab.url, tab.id, false);
+        buildContextMenu();
+        loadMenuAndUpdateBadge(tab.url, tab.id, true);
     });
-});
+}
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     buildContextMenu();
-
     loadMenuAndUpdateBadge(tab.url, tabId, true);
 });
 
@@ -126,7 +152,7 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
         else {
             loadNoSitesContextMenuOptions();
             chrome.browserAction.setBadgeText({
-                text: null,
+                text: '',
                 tabId: tabId
             });
         }
