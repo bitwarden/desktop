@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService) {
+    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService, $analytics) {
         $scope.logOut = function () {
             SweetAlert.swal({
                 title: 'Log Out',
@@ -12,6 +12,7 @@
             }, function (confirmed) {
                 if (confirmed) {
                     loginService.logOut(function () {
+                        $analytics.eventTrack('Logged Out');
                         $state.go('home');
                     });
                 }
@@ -26,7 +27,10 @@
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
-            }, alertCallback);
+            }, function (confirmed) {
+                $analytics.eventTrack('Clicked Change Password');
+                alertCallback(confirmed);
+            });
         };
 
         $scope.changeEmail = function () {
@@ -37,7 +41,10 @@
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
-            }, alertCallback);
+            }, function (confirmed) {
+                $analytics.eventTrack('Clicked Change Email');
+                alertCallback(confirmed);
+            });
         };
 
         $scope.twoStep = function () {
@@ -49,7 +56,10 @@
                 showCancelButton: true,
                 confirmButtonText: 'Yes',
                 cancelButtonText: 'Cancel'
-            }, alertCallback);
+            }, function (confirmed) {
+                $analytics.eventTrack('Clicked Two-step Login');
+                alertCallback(confirmed);
+            });
         };
 
         function alertCallback(confirmed) {
@@ -59,6 +69,8 @@
         }
 
         $scope.rate = function () {
+            $analytics.eventTrack('Rate Extension');
+
             switch (utilsService.getBrowser()) {
                 case 'chrome':
                     chrome.tabs.create({ url: 'https://chrome.com' });

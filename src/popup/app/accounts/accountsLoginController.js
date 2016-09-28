@@ -2,7 +2,7 @@
     .module('bit.accounts')
 
     .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService, toastr,
-        utilsService) {
+        utilsService, $analytics) {
         utilsService.initListSectionItemListeners($(document));
 
         if ($stateParams.email) {
@@ -36,9 +36,11 @@
             $scope.loginPromise.then(function () {
                 userService.isTwoFactorAuthenticated(function (isTwoFactorAuthenticated) {
                     if (isTwoFactorAuthenticated) {
+                        $analytics.eventTrack('Logged In To Two-step');
                         $state.go('twoFactor', { animation: 'in-slide-left' });
                     }
                     else {
+                        $analytics.eventTrack('Logged In');
                         $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
                     }
                 });

@@ -2,7 +2,7 @@
     .module('bit.tools')
 
     .controller('toolsPasswordGeneratorController', function ($scope, $state, $stateParams, passwordGenerationService,
-        toastr, $q, utilsService) {
+        toastr, $q, utilsService, $analytics) {
         var addState = $stateParams.addState,
             editState = $stateParams.editState;
 
@@ -21,9 +21,10 @@
                 hidePointerLabels: true,
                 onChange: function () {
                     $scope.options.length = $scope.slider.value;
-                    $scope.regenerate();
+                    $scope.regenerate(false);
                 },
                 onEnd: function () {
+                    $analytics.eventTrack('Generated Password');
                     $scope.saveOptions($scope.options);
                 }
             }
@@ -32,10 +33,15 @@
         $q.when(passwordGenerationService.getOptions()).then(function (options) {
             $scope.options = options;
             $scope.slider.value = options.length;
-            $scope.regenerate();
+            $scope.regenerate(false);
+            $analytics.eventTrack('Generated Password');
         });
 
-        $scope.regenerate = function () {
+        $scope.regenerate = function (trackRegenerateEvent) {
+            if (trackRegenerateEvent) {
+                $analytics.eventTrack('Regenerated Password');
+            }
+
             $scope.password = passwordGenerationService.generatePassword($scope.options);
         };
 
@@ -51,7 +57,7 @@
             }
 
             passwordGenerationService.saveOptions(options);
-            $scope.regenerate();
+            $scope.regenerate(false);
         };
 
         $scope.clipboardError = function (e, password) {
@@ -59,6 +65,7 @@
         };
 
         $scope.clipboardSuccess = function (e) {
+            $analytics.eventTrack('Copied Generated Password');
             e.clearSelection();
             toastr.info('Password copied!');
         };
@@ -68,6 +75,8 @@
         };
 
         $scope.select = function () {
+            $analytics.eventTrack('Selected Generated Password');
+
             if (addState) {
                 addState.site.password = $scope.password;
             }

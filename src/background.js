@@ -138,12 +138,24 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
             for (var i = 0; i < sites.length; i++) {
                 if (sites[i].id === id) {
                     if (info.parentMenuItemId === 'autofill') {
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'Autofilled From Context Menu'
+                        });
                         autofillPage(sites[i]);
                     }
                     else if (info.parentMenuItemId === 'copy-username') {
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'Copied Username From Context Menu'
+                        });
                         copyToClipboard(sites[i].username);
                     }
                     else if (info.parentMenuItemId === 'copy-password') {
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'Copied Password From Context Menu'
+                        });
                         copyToClipboard(sites[i].password);
                     }
                     return;

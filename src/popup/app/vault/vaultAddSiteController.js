@@ -2,7 +2,7 @@
     .module('bit.vault')
 
     .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService,
-        cryptoService, $q, toastr, utilsService) {
+        cryptoService, $q, toastr, utilsService, $analytics) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
         var fromCurrent = $stateParams.fromCurrent || $stateParams.uri !== null;
@@ -43,6 +43,7 @@
             $scope.savePromise = $q.when(siteService.encrypt(model)).then(function (siteModel) {
                 var site = new Site(siteModel, true);
                 return $q.when(siteService.saveWithServer(site)).then(function (site) {
+                    $analytics.eventTrack('Added Site');
                     toastr.success('Added site');
                     $scope.close();
                 });
@@ -65,6 +66,7 @@
         };
 
         $scope.generatePassword = function () {
+            $analytics.eventTrack('Clicked Generate Password');
             $state.go('passwordGenerator', {
                 animation: 'in-slide-up',
                 addState: {

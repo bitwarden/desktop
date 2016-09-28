@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsRegisterController', function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService) {
+    .controller('accountsRegisterController', function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService,
+        $analytics) {
         $scope.model = {};
         utilsService.initListSectionItemListeners($(document));
         $('#email').focus();
@@ -29,6 +30,7 @@
             var key = cryptoService.makeKey(model.masterPassword, email);
             $scope.submitPromise = registerPromise(key, model.masterPassword, email, model.hint);
             $scope.submitPromise.then(function () {
+                $analytics.eventTrack('Registered');
                 toastr.success('Your new account has been created! You may now log in.');
                 $state.go('login', { email: email, animation: 'in-slide-left' });
             });

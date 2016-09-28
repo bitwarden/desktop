@@ -1,7 +1,8 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, tldjs, toastr, $q) {
+    .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, tldjs, toastr, $q,
+        $analytics) {
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
 
@@ -59,6 +60,7 @@ angular
 
         $scope.launchWebsite = function (site) {
             if (site.showLaunch) {
+                $analytics.eventTrack('Launched Website');
                 chrome.tabs.create({ url: site.uri });
             }
         };
@@ -69,11 +71,13 @@ angular
 
         $scope.clipboardSuccess = function (e, type) {
             e.clearSelection();
+            $analytics.eventTrack('Copied ' + type);
             toastr.info(type + ' copied!');
         };
 
         $scope.showPassword = false;
         $scope.togglePassword = function () {
+            $analytics.eventTrack('Toggled Password');
             $scope.showPassword = !$scope.showPassword;
         };
     });

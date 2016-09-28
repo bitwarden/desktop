@@ -2,7 +2,7 @@
     .module('bit.settings')
 
     .controller('settingsEditFolderController', function ($scope, $stateParams, folderService, toastr, $q, $state, SweetAlert,
-        utilsService) {
+        utilsService, $analytics) {
         $scope.folder = {};
         var folderId = $stateParams.folderId;
 
@@ -24,6 +24,7 @@
             $scope.savePromise = $q.when(folderService.encrypt(model)).then(function (folderModel) {
                 var folder = new Folder(folderModel, true);
                 return $q.when(folderService.saveWithServer(folder)).then(function (folder) {
+                    $analytics.eventTrack('Edited Folder');
                     toastr.success('Edited folder');
                     $state.go('folders', { animation: 'out-slide-down' });
                 });
@@ -40,6 +41,7 @@
             }, function (confirmed) {
                 if (confirmed) {
                     $q.when(folderService.deleteWithServer(folderId)).then(function () {
+                        $analytics.eventTrack('Deleted Folder');
                         toastr.success('Deleted folder');
                         $state.go('folders', {
                             animation: 'out-slide-down'

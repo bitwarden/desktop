@@ -2,7 +2,7 @@
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr,
-        syncService, utilsService) {
+        syncService, utilsService, $analytics) {
         $('#search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;
@@ -114,6 +114,7 @@
 
         $scope.clipboardSuccess = function (e, type) {
             e.clearSelection();
+            $analytics.eventTrack('Copied ' + type);
             toastr.info(type + ' copied!');
         };
 
