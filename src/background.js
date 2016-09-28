@@ -11,6 +11,13 @@ var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 var appIdService = new AppIdService();
 
+chrome.runtime.onInstalled.addListener(function (reason) {
+    ga('send', {
+        hitType: 'event',
+        eventAction: 'onInstalled ' + reason
+    });
+});
+
 function buildContextMenu() {
     chrome.contextMenus.removeAll();
     chrome.contextMenus.create({
