@@ -11,14 +11,6 @@ function initAppIdService() {
         makeAndGetAppId('appId');
     };
 
-    AppIdService.prototype.getAnonymousAppId = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        makeAndGetAppId('anonymousAppId');
-    };
-
     function makeAndGetAppId(key) {
         chrome.storage.local.get(key, function (obj) {
             if (obj && obj[key]) {
