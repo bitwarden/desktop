@@ -11,10 +11,10 @@ var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 var appIdService = new AppIdService();
 
-chrome.runtime.onInstalled.addListener(function (reason) {
+chrome.runtime.onInstalled.addListener(function (details) {
     ga('send', {
         hitType: 'event',
-        eventAction: 'onInstalled ' + reason
+        eventAction: 'onInstalled ' + details.reason
     });
 });
 
