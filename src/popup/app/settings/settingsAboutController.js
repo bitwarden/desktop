@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsAboutController', function ($scope, appSettings) {
+    .controller('settingsAboutController', function ($scope) {
         $scope.year = (new Date()).getFullYear();
-        $scope.version = appSettings.version;
+        $scope.version = chrome.runtime.getManifest().version;
     });
