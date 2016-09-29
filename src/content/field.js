@@ -1,4 +1,6 @@
 ﻿!(function () {
+    var icons = [];
+
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'setFieldOverlayIcons') {
             setFieldOverlayIcons();
@@ -13,20 +15,26 @@
         var bodies = document.querySelectorAll('body');
         if (bodies.length > 0) {
             observeDOM(bodies[0], function () {
-                setTimeout(setFieldOverlayIcons, 1000);
+                //causes infinite loop
+                //setTimeout(setFieldOverlayIcons, 1000);
             });
         }
     }, false);
 
     function setFieldOverlayIcons() {
+        for (var i = 0; i < icons.length; i++) {
+            icons[i].parentElement.removeChild(icons[i]);
+        }
+        icons = [];
+
         var pageDetails = JSON.parse(collect(document));
         if (pageDetails) {
-            var fields = [];
+            var iconFields = [];
 
-            for (var i = 0; i < pageDetails.fields.length; i++) {
+            for (i = 0; i < pageDetails.fields.length; i++) {
                 var f = pageDetails.fields[i];
                 if (f.type === 'password') {
-                    fields.push(f);
+                    iconFields.push(f);
 
                     var fieldJustBeforePassword = null;
                     for (var j = 0; j < pageDetails.fields.length; j++) {
@@ -36,21 +44,72 @@
                         }
                     }
 
-                    if (!fields.includes(fieldJustBeforePassword)) {
-                        fields.push(fieldJustBeforePassword);
+                    if (!iconFields.includes(fieldJustBeforePassword)) {
+                        iconFields.push(fieldJustBeforePassword);
                     }
                 }
             }
 
-            for (i = 0; i < fields.length; i++) {
-                var element = getElement(fields[i].opid);
+            for (i = 0; i < iconFields.length; i++) {
+                var element = getElement(iconFields[i].opid);
+                var div = document.createElement('div');
+                div.style.cssText = 'position: absolute; z-index: 99999; width: 25px; height: ' + element.offsetHeight + 'px;' +
+                    'background-position: center center; background-repeat: no-repeat; cursor: pointer;';
+                div.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/" +
+                    "9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFfSURBVHja1JO/aoNQFMY/" +
+                    "TQipkLEBFyHZM8YxU7ZAoVBcXBw69RFK3qJQkLxBxoJByBIQnCQkPoRDwERcmv/pPRcjWmtp6dQPPu/hes7v4PVcYTgc3gJ4Yb5j" +
+                    "vsHP9M5sMT9V2cNkvsfvRI0emCsEGNBOv99Ht9uFIAi4XC5pZr1eT+PT6YTD4QDP8zCdTmlrQIAaRY1GA5Ik5dqcz2eeTCtZlm" +
+                    "W0Wi2em6hWvUbZrlnAZDLhnUmqqnJAViL+qH8GEEWxHLBer7Hdbr8FKIrCD5ZyC4DFYgHf90uL2+02Op0OlssldwEQxzFs20YYhrl" +
+                    "C+oVUaBgGoiiCZVnYbDZfnwFN2Wg0QhAE6Z6u69A0DavVCqZpYrfb5RpUer3eM61ZyHw+5wdG39xsNuE4DsbjcaGYaU+TaCc3MTeBs9" +
+                    "mMFxDIdd10Gj/JJsAj82sCqV3fHI9H3rlEe+Y3us4fAgwAGf2Q/1DENX0AAAAASUVORK5CYII=')";
 
-                // TODO: insert icon for popup
+                document.body.insertBefore(div, document.body.lastChild);
 
-                //element.style.backgroundColor = 'yellow';
+                var icon = { element: element, icon: div };
+                adjustIconPosition(icon);
+                icons.push(icon);
+
+                div.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    for (var i = 0; i < icons.length; i++) {
+                        if (icons[i].icon == this) {
+                            var rect = icons[i].element.getBoundingClientRect();
+                            chrome.runtime.sendMessage({
+                                command: 'bgOpenOverlayPopup',
+                                data: {
+                                    position: {
+                                        left: rect.left,
+                                        top: rect.top + rect.height + 5
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }, false);
             }
         }
     }
+
+    window.addEventListener('resize', function (event) {
+        adjustIconPositions();
+    }, false);
+
+    function adjustIconPositions() {
+        for (var i = 0; i < icons.length; i++) {
+            adjustIconPosition(icons[i]);
+        }
+    }
+
+    function adjustIconPosition(i) {
+        var rect = i.element.getBoundingClientRect();
+        i.icon.style.top = rect.top + 'px';
+        i.icon.style.left = (rect.left + rect.width - 25) + 'px';
+    }
+
+
+    document.addEventListener('click', function (event) {
+        chrome.runtime.sendMessage({ command: 'bgCloseOverlayPopup' });
+    }, false);
 
     // ref http://stackoverflow.com/a/14570614/1090359
     var observeDOM = (function () {

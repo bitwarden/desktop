@@ -22,6 +22,12 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     else if (msg.command === 'syncCompleted' && msg.successfully) {
         setTimeout(refreshBadgeAndMenu, 2000);
     }
+    else if (msg.command === 'bgOpenOverlayPopup') {
+        messageCurrentTab('openOverlayPopup', msg.data);
+    }
+    else if (msg.command === 'bgCloseOverlayPopup') {
+        messageCurrentTab('closeOverlayPopup');
+    }
 });
 
 userService.isAuthenticated(function (isAuthenticated) {
