@@ -8,7 +8,7 @@
 
         $scope.showSelect = $stateParams.addState || $stateParams.editState;
 
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
         $scope.password = '-';
 
         $scope.slider = {

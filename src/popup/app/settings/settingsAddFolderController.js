@@ -4,7 +4,7 @@ angular
     .controller('settingsAddFolderController', function ($scope, $q, folderService, $state, toastr, utilsService,
         $analytics) {
         $scope.folder = {};
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
         $('#name').focus();
 
         $scope.savePromise = null;

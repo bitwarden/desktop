@@ -23,7 +23,7 @@
         else {
             $('#name').focus();
         }
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
 
         $q.when(folderService.getAllDecrypted()).then(function (folders) {
             $scope.folders = folders;

@@ -42,7 +42,7 @@ function initUtilsService() {
         return this.getBrowser() === 'opera';
     }
 
-    UtilsService.prototype.initListSectionItemListeners = function (doc) {
+    UtilsService.prototype.initListSectionItemListeners = function (doc, angular) {
         if (!doc) {
             throw 'doc parameter required';
         }

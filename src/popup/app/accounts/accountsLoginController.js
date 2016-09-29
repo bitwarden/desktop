@@ -3,7 +3,7 @@
 
     .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService, toastr,
         utilsService, $analytics) {
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
 
         if ($stateParams.email) {
             $('#master-password').focus();

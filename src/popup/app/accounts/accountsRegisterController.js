@@ -4,7 +4,7 @@
     .controller('accountsRegisterController', function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService,
         $analytics) {
         $scope.model = {};
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
         $('#email').focus();
 
         $scope.submitPromise = null;

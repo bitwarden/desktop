@@ -27,7 +27,7 @@ angular
             $scope.folders = folders;
         });
 
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
 
         $scope.savePromise = null;
         $scope.save = function (model) {

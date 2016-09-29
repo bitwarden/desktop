@@ -4,7 +4,7 @@
     .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService, toastr, utilsService,
         $analytics) {
         $scope.model = {};
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
         $('#code').focus();
 
         $scope.loginPromise = null;

@@ -5,7 +5,7 @@
         $analytics) {
         $scope.model = {};
 
-        utilsService.initListSectionItemListeners($(document));
+        utilsService.initListSectionItemListeners($(document), angular);
         $('#email').focus();
 
         $scope.submitPromise = null;
