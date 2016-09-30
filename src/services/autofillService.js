@@ -18,7 +18,11 @@ function initAutofill() {
         };
 
         var passwordFields = [],
-            passwordForms = [];
+            passwords = [],
+            usernames = [],
+            pf = null,
+            f = null,
+            username = null;
 
         for (var i = 0; i < pageDetails.fields.length; i++) {
             if (pageDetails.fields[i].type === 'password') {
@@ -27,113 +31,76 @@ function initAutofill() {
         }
 
         for (var formKey in pageDetails.forms) {
-            for (var j = 0; j < passwordFields.length; j++) {
-                if (formKey === passwordFields[j].form) {
-                    passwordForms.push(pageDetails.forms[formKey]);
-                    break;
+            var passwordFieldsForForm = [];
+            for (i = 0; i < passwordFields.length; i++) {
+                if (formKey === passwordFields[i].form) {
+                    passwordFieldsForForm.push(passwordFields[i]);
+                }
+            }
+
+            // Registration forms often have 2 password fields
+            if (passwordFieldsForForm.length === 1) {
+                pf = passwordFieldsForForm[0];
+                passwords.push(pf);
+
+                if (fillUsername) {
+                    for (i = 0; i < pageDetails.fields.length; i++) {
+                        f = pageDetails.fields[i];
+                        if (f.form === pf.form && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
+                            && f.elementNumber < pf.elementNumber) {
+                            username = f;
+                        }
+                    }
+
+                    if (username) {
+                        usernames.push(username);
+                    }
                 }
             }
         }
 
-        var password = null,
-            username = null,
-            loginForm = null;
-
-        if (passwordForms.length) {
-            if (passwordForms.length > 1) {
-                // More than one form with a password field is on the page.
-                // This usually occurs when a website has a login and signup form on the same page.
-                // Let's try to guess which one is the login form.
-
-                // First let's try to guess the correct login form by examining the form attribute strings
-                // for common login form attribute.
-                for (i = 0; i < passwordForms.length; i++) {
-                    var formDescriptor = (passwordForms[i].htmlName + '~' + passwordForms[i].htmlId +
-                        '~' + passwordForms[i].htmlAction).toLowerCase();
-
-                    if (formDescriptor.indexOf('login') !== -1 || formDescriptor.indexOf('log-in') !== -1 ||
-                        formDescriptor.indexOf('signin') !== -1 || formDescriptor.indexOf('sign-in') !== -1 ||
-                        formDescriptor.indexOf('logon') !== -1 || formDescriptor.indexOf('log-on') !== -1) {
-                        loginForm = passwordForms[i];
-                        break;
-                    }
-                }
-
-                if (!loginForm) {
-                    // Next we can try to find the login form that only has one password field. Typically
-                    // a registration form may have two password fields for password confirmation.
-                    for (i = 0; i < passwordForms.length; i++) {
-                        var passwordFieldCount = 0;
-
-                        for (j = 0; j < passwordFields.length; j++) {
-                            if (passwordForms[i].opid === passwordFields[j].form) {
-                                passwordFieldCount++;
-                            }
-                        }
-
-                        if (passwordFieldCount === 1) {
-                            loginForm = passwordForms[i];
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if (!loginForm) {
-                loginForm = passwordForms[0];
-            }
-
-            for (i = 0; i < pageDetails.fields.length; i++) {
-                var f = pageDetails.fields[i];
-                if (f.form === loginForm.opid && f.type === 'password') {
-                    password = f;
-                    break;
-                }
-            }
-
-            for (i = 0; i < pageDetails.fields.length; i++) {
-                f = pageDetails.fields[i];
-                if (f.form === loginForm.opid && (f.type === 'text' || f.type === 'email')
-                    && f.elementNumber < password.elementNumber) {
-                    username = f;
-                }
-            }
-
-            if (loginForm.htmlAction) {
-                fillScript.autosubmit = { focusOpid: password.opid };
-            }
-        }
-        else if (passwordFields.length === 1) {
+        if (passwordFields.length === 1 && !passwords.length) {
             // The page does not have any forms with password fields. Use the one password field on the page and the
             // input field just before it as the username.
 
-            password = passwordFields[0];
-            if (password.elementNumber > 0) {
+            pf = passwordFields[0];
+            passwords.push(pf);
+
+            if (fillUsername && pf.elementNumber > 0) {
+                username = null;
                 for (i = 0; i < pageDetails.fields.length; i++) {
                     f = pageDetails.fields[i];
-                    if (f.elementNumber > password.elementNumber) {
+                    if (f.elementNumber > pf.elementNumber) {
                         break;
                     }
 
-                    if (f.type === 'text' || f.type === 'email') {
+                    if (f.type === 'text' || f.type === 'email' || f.type === 'tel') {
                         username = f;
                     }
                 }
 
-                if (!username) {
-                    username = pageDetails.fields[password.elementNumber - 1];
+                if (username) {
+                    usernames.push(username);
+                }
+                else {
+                    // As a last resort use the field just before the password
+                    usernames.push(pageDetails.fields[pf.elementNumber - 1]);
                 }
             }
         }
 
-        if (username) {
-            fillScript.script.push(['click_on_opid', username.opid]);
-            fillScript.script.push(['fill_by_opid', username.opid, fillUsername]);
+        for (i = 0; i < usernames.length; i++) {
+            fillScript.script.push(['click_on_opid', usernames[i].opid]);
+            fillScript.script.push(['fill_by_opid', usernames[i].opid, fillUsername]);
         }
 
-        if (password) {
-            fillScript.script.push(['click_on_opid', password.opid]);
-            fillScript.script.push(['fill_by_opid', password.opid, fillPassword]);
+        for (i = 0; i < passwords.length; i++) {
+            fillScript.script.push(['click_on_opid', passwords[i].opid]);
+            fillScript.script.push(['fill_by_opid', passwords[i].opid, fillPassword]);
+        }
+
+        if (passwords.length) {
+            fillScript.autosubmit = { focusOpid: passwords[0].opid };
         }
 
         return fillScript;
