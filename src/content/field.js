@@ -12,18 +12,58 @@
     document.addEventListener('DOMContentLoaded', function () {
         setFieldOverlayIcons();
 
-        var bodies = document.querySelectorAll('body');
+        var bodies = document.querySelectorAll('body'),
+            setIconsTimeoutId = null;
+
         if (bodies.length > 0) {
-            observeDOM(bodies[0], function () {
-                //causes infinite loop
-                //setTimeout(setFieldOverlayIcons, 1000);
+            var obs = new window.MutationObserver(function (mutations, observer) {
+                var refreshIcons = false;
+                for (var i = 0; i < mutations.length; i++) {
+                    var mutation = mutations[i];
+                    for (var j = 0; j < mutation.addedNodes.length; j++) {
+                        if (mutation.addedNodes[j].className !== 'bitwarden-field-icon') {
+                            refreshIcons = true;
+                            break;
+                        }
+                    }
+
+                    if (refreshIcons) {
+                        break;
+                    }
+
+                    for (var j = 0; j < mutation.removedNodes.length; j++) {
+                        if (mutation.removedNodes[j].className !== 'bitwarden-field-icon') {
+                            refreshIcons = true;
+                            break;
+                        }
+                    }
+
+                    if (refreshIcons) {
+                        break;
+                    }
+                }
+
+                if (refreshIcons) {
+                    if (setIconsTimeoutId) {
+                        clearTimeout(setIconsTimeoutId);
+                        setIconsTimeoutId = null;
+                    }
+
+                    //setFieldOverlayIcons();
+                    setIconsTimeoutId = setTimeout(setFieldOverlayIcons, 1000);
+                }
+                else {
+                    adjustIconPositions();
+                }
             });
+
+            obs.observe(bodies[0], { childList: true, subtree: true, attributes: true, characterData: true, attributeFilter: ['style'] });
         }
     }, false);
 
     function setFieldOverlayIcons() {
         for (var i = 0; i < icons.length; i++) {
-            icons[i].parentElement.removeChild(icons[i]);
+            icons[i].icon.parentElement.removeChild(icons[i].icon);
         }
         icons = [];
 
@@ -52,7 +92,12 @@
 
             for (i = 0; i < iconFields.length; i++) {
                 var element = getElement(iconFields[i].opid);
+                if (!element.offsetHeight) {
+                    continue;
+                }
+
                 var div = document.createElement('div');
+                div.className = 'bitwarden-field-icon';
                 div.style.cssText = 'position: absolute; z-index: 99999; width: 25px; height: ' + element.offsetHeight + 'px;' +
                     'background-position: center center; background-repeat: no-repeat; cursor: pointer;';
                 div.style.backgroundImage = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/" +
