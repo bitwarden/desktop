@@ -2,6 +2,10 @@
 
 bitwarden – Free Password Manager
 
+# Summary
+
+A secure and free password manager for all of your devices
+
 # Description
 
 bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
