@@ -2,6 +2,10 @@
 
 A secure and free password manager for all of your devices
 
+# Screenshot - Sync
+
+Sync and access your vault from multiple devices
+
 # Screenshot - Vault
 
 Manage all your logins and passwords from a secure vault
