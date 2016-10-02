@@ -73,10 +73,16 @@
 
             switch (utilsService.getBrowser()) {
                 case 'chrome':
-                    chrome.tabs.create({ url: 'https://chrome.com' });
+                    chrome.tabs.create({
+                        url: 'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/' +
+                             'nngceckbapebfimnlniiiahkandclblb/reviews'
+                    });
                     break;
                 case 'firefox':
-                    chrome.tabs.create({ url: 'https://firefox.com' });
+                    chrome.tabs.create({
+                        url: 'https://addons.mozilla.org/en-US/firefox/addon/' +
+                             'bitwarden-password-manager/#reviews'
+                    });
                     break;
                 case 'edge':
                     chrome.tabs.create({ url: 'https://microsoft.com' });

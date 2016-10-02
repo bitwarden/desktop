@@ -9,7 +9,7 @@
 
         $scope.website = function () {
             $analytics.eventTrack('Selected Help Website');
-            chrome.tabs.create({ url: 'https://vault.bitwarden.com' });
+            chrome.tabs.create({ url: 'https://vault.bitwarden.com/contact/' });
         };
 
         $scope.bug = function () {
