@@ -1,18 +1,4 @@
-﻿var gaUtils = chrome.extension.getBackgroundPage().utilsService,
-    gaTrackingId = null;
-
-if (gaUtils.isChrome()) {
-    gaTrackingId = 'UA-81915606-6';
-}
-else if (gaUtils.isFirefox()) {
-    gaTrackingId = 'UA-81915606-7';
-}
-else if (gaUtils.isEdge()) {
-    gaTrackingId = 'UA-81915606-9';
-}
-else if (gaUtils.isOpera()) {
-    gaTrackingId = 'UA-81915606-8';
-}
+﻿var gaTrackingId = chrome.extension.getBackgroundPage().utilsService.analyticsId();
 
 if (gaTrackingId) {
     ga('create', gaTrackingId, 'auto');

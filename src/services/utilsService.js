@@ -2,6 +2,7 @@ function UtilsService() {
     initUtilsService();
 
     this.browserCache = null;
+    this.analyticsIdCache = null;
 };
 
 function initUtilsService() {
@@ -40,6 +41,27 @@ function initUtilsService() {
 
     UtilsService.prototype.isOpera = function () {
         return this.getBrowser() === 'opera';
+    }
+
+    UtilsService.prototype.analyticsId = function () {
+        if (this.analyticsIdCache) {
+            return this.analyticsIdCache;
+        }
+
+        if (this.isChrome()) {
+            this.analyticsIdCache = 'UA-81915606-6';
+        }
+        else if (this.isFirefox()) {
+            this.analyticsIdCache = 'UA-81915606-7';
+        }
+        else if (this.isEdge()) {
+            this.analyticsIdCache = 'UA-81915606-9';
+        }
+        else if (this.isOpera()) {
+            this.analyticsIdCache = 'UA-81915606-8';
+        }
+
+        return this.analyticsIdCache;
     }
 
     UtilsService.prototype.initListSectionItemListeners = function (doc, angular) {
