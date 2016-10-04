@@ -21,12 +21,10 @@
                 toastr.error('Master password is required.', 'Errors have occurred');
                 return;
             }
-            if (model.masterPassword.length < 8) {
-                toastr.error('Master password must be at least 8 characters long.', 'Errors have occurred');
-                return;
-            }
-            if (!/[a-z]/i.test(model.masterPassword) || !/\d/.test(model.masterPassword)) {
-                toastr.error('Master password requires at least 1 letter and 1 number.', 'Errors have occurred');
+            if (model.masterPassword.length < 8 || !/[a-z]/i.test(model.masterPassword) ||
+                /^[a-zA-Z]*$/.test(model.masterPassword)) {
+                toastr.error('Master password must be at least 8 characters long and contain at least 1 letter and 1 number ' +
+                    'or special character.', 'Errors have occurred');
                 return;
             }
             if (model.masterPassword !== model.masterPasswordRetype) {
