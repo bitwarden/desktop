@@ -38,14 +38,13 @@ function initAutofill() {
                 }
             }
 
-            // Registration forms often have 2 password fields
-            if (passwordFieldsForForm.length === 1) {
-                pf = passwordFieldsForForm[0];
+            for (i = 0; i < passwordFieldsForForm.length; i++) {
+                pf = passwordFieldsForForm[i];
                 passwords.push(pf);
 
                 if (fillUsername) {
-                    for (i = 0; i < pageDetails.fields.length; i++) {
-                        f = pageDetails.fields[i];
+                    for (var j = 0; j < pageDetails.fields.length; j++) {
+                        f = pageDetails.fields[j];
                         if (f.form === pf.form && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
                             && f.elementNumber < pf.elementNumber) {
                             username = f;
@@ -59,8 +58,8 @@ function initAutofill() {
             }
         }
 
-        if (passwordFields.length === 1 && !passwords.length) {
-            // The page does not have any forms with password fields. Use the one password field on the page and the
+        if (passwordFields.length && !passwords.length) {
+            // The page does not have any forms with password fields. Use the first password field on the page and the
             // input field just before it as the username.
 
             pf = passwordFields[0];
@@ -81,10 +80,6 @@ function initAutofill() {
 
                 if (username) {
                     usernames.push(username);
-                }
-                else {
-                    // As a last resort use the field just before the password
-                    usernames.push(pageDetails.fields[pf.elementNumber - 1]);
                 }
             }
         }
