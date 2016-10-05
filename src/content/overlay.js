@@ -1,6 +1,7 @@
 ﻿!(function () {
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openOverlayPopup') {
+            closePopup();
             openPopup(msg.data);
             sendResponse();
             return true;
