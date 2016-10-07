@@ -1,6 +1,6 @@
 {
   "name": "bitwarden",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "devDependencies": {
     "sjcl": "1.0.3",
     "jquery": "2.2.4",

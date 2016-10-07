@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "bitwarden - Free Password Manager",
   "short_name": "bitwarden",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "bitwarden is a secure and free password manager for all of your devices.",
   "homepage_url": "https://bitwarden.com",
   "icons": {
