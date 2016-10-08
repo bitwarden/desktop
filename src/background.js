@@ -13,6 +13,10 @@ var appIdService = new AppIdService();
 
 chrome.commands.onCommand.addListener(function (command) {
     if (command === 'generate_password') {
+        ga('send', {
+            hitType: 'event',
+            eventAction: 'Generated Password From Command'
+        });
         passwordGenerationService.getOptions().then(function (options) {
             var password = passwordGenerationService.generatePassword(options);
             copyToClipboard(password);
@@ -87,6 +91,17 @@ function buildContextMenu() {
         id: 'copy-password',
         contexts: ['all'],
         title: 'Copy Password'
+    });
+
+    chrome.contextMenus.create({
+        type: 'separator'
+    });
+
+    chrome.contextMenus.create({
+        type: 'normal',
+        id: 'generate-password',
+        contexts: ['all'],
+        title: 'Generate Password (copied)'
     });
 }
 
@@ -175,7 +190,17 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
 }
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-    if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
+    if (info.menuItemId === 'generate-password') {
+        ga('send', {
+            hitType: 'event',
+            eventAction: 'Generated Password From Context Menu'
+        });
+        passwordGenerationService.getOptions().then(function (options) {
+            var password = passwordGenerationService.generatePassword(options);
+            copyToClipboard(password);
+        });
+    }
+    else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
         info.parentMenuItemId === 'copy-password') {
         var id = info.menuItemId.split('_')[1];
         if (id === 'noop') {
