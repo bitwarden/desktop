@@ -58,6 +58,7 @@
 
             passwordGenerationService.saveOptions(options);
             $scope.regenerate(false);
+            return true;
         };
 
         $scope.clipboardError = function (e, password) {
