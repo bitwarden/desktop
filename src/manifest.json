@@ -65,6 +65,21 @@
     "http://*/*",
     "https://*/*"
   ],
+  "commands": {
+    "generate_password": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+O",
+        "mac": "Command+Shift+O"
+      },
+      "description": "Generate and copy a new random password to the clipboard."
+    },
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      }
+    }
+  },
   "web_accessible_resources": [
     "overlay/popup.html"
   ]

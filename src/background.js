@@ -11,6 +11,15 @@ var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 var appIdService = new AppIdService();
 
+chrome.commands.onCommand.addListener(function (command) {
+    if (command === 'generate_password') {
+        passwordGenerationService.getOptions().then(function (options) {
+            var password = passwordGenerationService.generatePassword(options);
+            copyToClipboard(password);
+        });
+    }
+});
+
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.command === 'loggedOut') {
         setIcon(true);
