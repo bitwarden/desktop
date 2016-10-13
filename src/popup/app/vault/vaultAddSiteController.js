@@ -35,10 +35,6 @@
                 toastr.error('Name is required.', 'Errors have occurred');
                 return;
             }
-            if (!model.password) {
-                toastr.error('Password is required.', 'Errors have occurred');
-                return;
-            }
 
             $scope.savePromise = $q.when(siteService.encrypt(model)).then(function (siteModel) {
                 var site = new Site(siteModel, true);
