@@ -336,39 +336,45 @@ function buildContextMenuOptions(url) {
 }
 
 function loadSiteContextMenuOptions(site) {
-    var title = site.name + ' (' + site.username + ')';
-    loadContextMenuOptions(title, site.id);
+    var title = site.name + (site.username && site.username !== '' ? ' (' + site.username + ')' : '');
+    loadContextMenuOptions(title, site.id, site);
 }
 
 function loadNoSitesContextMenuOptions() {
     var title = 'No matching sites.';
-    loadContextMenuOptions(title, 'noop');
+    loadContextMenuOptions(title, 'noop', null);
 }
 
-function loadContextMenuOptions(title, idSuffix) {
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'autofill_' + idSuffix,
-        parentId: 'autofill',
-        contexts: ['all'],
-        title: title
-    });
+function loadContextMenuOptions(title, idSuffix, site) {
+    if (site.password && site.password !== '') {
+        chrome.contextMenus.create({
+            type: 'normal',
+            id: 'autofill_' + idSuffix,
+            parentId: 'autofill',
+            contexts: ['all'],
+            title: title
+        });
+    }
 
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'copy-username_' + idSuffix,
-        parentId: 'copy-username',
-        contexts: ['all'],
-        title: title
-    });
+    if (site.username && site.username !== '') {
+        chrome.contextMenus.create({
+            type: 'normal',
+            id: 'copy-username_' + idSuffix,
+            parentId: 'copy-username',
+            contexts: ['all'],
+            title: title
+        });
+    }
 
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'copy-password_' + idSuffix,
-        parentId: 'copy-password',
-        contexts: ['all'],
-        title: title
-    });
+    if (site.password && site.password !== '') {
+        chrome.contextMenus.create({
+            type: 'normal',
+            id: 'copy-password_' + idSuffix,
+            parentId: 'copy-password',
+            contexts: ['all'],
+            title: title
+        });
+    }
 }
 
 function copyToClipboard(text) {

@@ -18,7 +18,7 @@
                     <span class="item-label">Name</span>
                     {{site.name}}
                 </div>
-                <div class="list-section-item" ng-show="site.uri">
+                <div class="list-section-item" ng-if="site.uri">
                     <a class="btn-list" href="" title="Launch Website" ng-click="launchWebsite(site)"
                        ng-show="site.showLaunch">
                         <i class="fa fa-lg fa-share-square-o"></i>
@@ -26,7 +26,7 @@
                     <span class="item-label">Website</span>
                     {{site.website}}
                 </div>
-                <div class="list-section-item" ng-show="site.username">
+                <div class="list-section-item" ng-if="site.username">
                     <a class="btn-list" href="" title="Copy Username" ngclipboard ngclipboard-error="clipboardError(e)"
                        ngclipboard-success="clipboardSuccess(e, 'Username')" data-clipboard-target="#username">
                         <i class="fa fa-lg fa-clipboard"></i>
@@ -34,7 +34,7 @@
                     <span class="item-label">Username</span>
                     <span id="username" class="monospaced">{{site.username}}</span>
                 </div>
-                <div class="list-section-item" ng-show="site.password">
+                <div class="list-section-item" ng-if="site.password">
                     <a class="btn-list" href="" title="Copy Password" ngclipboard ngclipboard-error="clipboardError(e)"
                        ngclipboard-success="clipboardSuccess(e, 'Password')" data-clipboard-target="#password">
                         <i class="fa fa-lg fa-clipboard"></i>
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-section" ng-show="site.notes">
+        <div class="list-section" ng-if="site.notes">
             <div class="list-section-header">
                 Notes
             </div>

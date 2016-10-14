@@ -4,7 +4,7 @@
 
 function initAutofill() {
     AutofillService.prototype.generateFillScript = function (pageDetails, fillUsername, fillPassword) {
-        if (!pageDetails) {
+        if (!pageDetails || !fillPassword || fillPassword === '') {
             return null;
         }
 
