@@ -346,7 +346,7 @@ function loadNoSitesContextMenuOptions() {
 }
 
 function loadContextMenuOptions(title, idSuffix, site) {
-    if (site.password && site.password !== '') {
+    if (!site || (site.password && site.password !== '')) {
         chrome.contextMenus.create({
             type: 'normal',
             id: 'autofill_' + idSuffix,
@@ -356,7 +356,7 @@ function loadContextMenuOptions(title, idSuffix, site) {
         });
     }
 
-    if (site.username && site.username !== '') {
+    if (!site || (site.username && site.username !== '')) {
         chrome.contextMenus.create({
             type: 'normal',
             id: 'copy-username_' + idSuffix,
@@ -366,7 +366,7 @@ function loadContextMenuOptions(title, idSuffix, site) {
         });
     }
 
-    if (site.password && site.password !== '') {
+    if (!site || (site.password && site.password !== '')) {
         chrome.contextMenus.create({
             type: 'normal',
             id: 'copy-password_' + idSuffix,
