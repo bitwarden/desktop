@@ -47,6 +47,10 @@
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it.",
     "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
+  "masterPassHintDesc": {
+    "message": "A master password hint can help you remember your password if you forget it.",
+    "description": "A master password hint can help you remember your password if you forget it."
+  },
   "reTypeMasterPass": {
     "message": "Re-type Master Password",
     "description": "Re-type Master Password"
@@ -358,6 +362,10 @@
   "rateExtension": {
     "message": "Rate the Extension",
     "description": "Rate the Extension"
+  },
+  "rateExtensionDesc": {
+    "message": "Please consider helping us out with a good review!",
+    "description": "Please consider helping us out with a good review!"
   },
   "browserNotSupportClipboard": {
     "message": "Your web browser does not support easy clipboard copying. Copy it manually instead.",

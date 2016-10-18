@@ -87,7 +87,10 @@ angular
         launchWebsite: chrome.i18n.getMessage("launchWebsite"),
         website: chrome.i18n.getMessage("website"),
         togglePassword: chrome.i18n.getMessage("togglePassword"),
+        manage: chrome.i18n.getMessage("manage"),
+        other: chrome.i18n.getMessage("other"),
         rateExtension: chrome.i18n.getMessage("rateExtension"),
+        rateExtensionDesc: chrome.i18n.getMessage("rateExtensionDesc"),
         browserNotSupportClipboard: chrome.i18n.getMessage("browserNotSupportClipboard")
     };
 });
