@@ -36,4 +36,7 @@
     })
     .factory('appIdService', function () {
         return chrome.extension.getBackgroundPage().appIdService;
+    })
+    .factory('i18nService', function () {
+        return chrome.extension.getBackgroundPage().i18nService;
     });

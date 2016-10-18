@@ -1,7 +1,4 @@
-angular
-.module('bit.services')
-
-.factory('i18nService', function () {
+function i18nService() {
     return {
         loginOrCreateNewAccount: chrome.i18n.getMessage("loginOrCreateNewAccount"),
         createAccount: chrome.i18n.getMessage("createAccount"),
@@ -93,4 +90,4 @@ angular
         rateExtensionDesc: chrome.i18n.getMessage("rateExtensionDesc"),
         browserNotSupportClipboard: chrome.i18n.getMessage("browserNotSupportClipboard")
     };
-});
+};

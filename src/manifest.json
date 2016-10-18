@@ -32,6 +32,7 @@
       "models/api/responseModels.js",
       "models/dataModels.js",
       "models/domainModels.js",
+      "services/i18nService.js",
       "services/utilsService.js",
       "services/cryptoService.js",
       "services/tokenService.js",
