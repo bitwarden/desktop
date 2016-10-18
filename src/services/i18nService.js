@@ -19,6 +19,8 @@ function i18nService() {
         currentTab: chrome.i18n.getMessage("currentTab"),
         copyPassword: chrome.i18n.getMessage("copyPassword"),
         copyUsername: chrome.i18n.getMessage("copyUsername"),
+        autoFill: chrome.i18n.getMessage("autoFill"),
+        generatePasswordCopied: chrome.i18n.getMessage("generatePasswordCopied"),
         autoFillInfo: chrome.i18n.getMessage("autoFillInfo"),
         addSite: chrome.i18n.getMessage("addSite"),
         passwordHint: chrome.i18n.getMessage("passwordHint"),

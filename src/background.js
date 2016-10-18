@@ -77,21 +77,21 @@ function buildContextMenu() {
         type: 'normal',
         id: 'autofill',
         contexts: ['all'],
-        title: 'Auto-fill'
+        title: i18nService.autoFill
     });
 
     chrome.contextMenus.create({
         type: 'normal',
         id: 'copy-username',
         contexts: ['all'],
-        title: 'Copy Username'
+        title: i18nService.copyUsername
     });
 
     chrome.contextMenus.create({
         type: 'normal',
         id: 'copy-password',
         contexts: ['all'],
-        title: 'Copy Password'
+        title: i18nService.copyPassword
     });
 
     chrome.contextMenus.create({
@@ -102,7 +102,7 @@ function buildContextMenu() {
         type: 'normal',
         id: 'generate-password',
         contexts: ['all'],
-        title: 'Generate Password (copied)'
+        title: i18nService.generatePasswordCopied
     });
 }
 

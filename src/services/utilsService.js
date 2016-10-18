@@ -11,13 +11,13 @@ function initUtilsService() {
             return this.browserCache;
         }
 
-        if (navigator.userAgent.indexOf("Firefox") !== -1 || navigator.userAgent.indexOf("Gecko/") !== -1) {
+        if (navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1) {
             this.browserCache = 'firefox';
         }
         else if ((!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0) {
             this.browserCache = 'opera';
         }
-        else if (navigator.userAgent.indexOf(" Edge/") !== -1) {
+        else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
             this.browserCache = 'edge';
         }
         else if (window.chrome) {

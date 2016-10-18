@@ -91,6 +91,14 @@
     "message": "Copy Username",
     "description": "Copy Username"
   },
+  "autoFill": {
+    "message": "Auto-fill",
+    "description": "Auto-fill"
+  },
+  "generatePasswordCopied": {
+    "message": "Generate Password (copied)",
+    "description": "Generate Password (copied)"
+  },
   "autoFillInfo": {
     "message": "There are no sites available to auto-fill for the current browser tab.",
     "description": "There are no sites available to auto-fill for the current browser tab."
