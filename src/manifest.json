@@ -26,7 +26,7 @@
       "lib/sjcl/cbc.js",
       "lib/sjcl/bitArray.js",
       "lib/q/q.js",
-      "scripts/tld.js",
+      "lib/tldjs/tld.js",
       "models/api/requestModels.js",
       "models/api/responseModels.js",
       "models/dataModels.js",

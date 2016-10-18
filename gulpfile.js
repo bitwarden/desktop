@@ -6,7 +6,9 @@
     preprocess = require('gulp-preprocess'),
     runSequence = require('run-sequence'),
     jshint = require('gulp-jshint'),
-    merge = require('merge-stream');
+    merge = require('merge-stream'),
+    browserify = require('browserify'),
+    source = require('vinyl-source-stream');
 
 var paths = {};
 paths.dist = './dist/';
@@ -25,7 +27,7 @@ gulp.task('lint', function () {
 gulp.task('build', function (cb) {
     return runSequence(
         'clean',
-        ['lib', 'less', 'lint'],
+        ['browserify', 'lib', 'less', 'lint'],
         cb);
 });
 
@@ -122,6 +124,14 @@ gulp.task('lib', ['clean:lib'], function () {
 
     return merge(tasks);
 });
+
+gulp.task('browserify', function () {
+    return browserify(paths.npmDir + 'tldjs/index.js', { standalone: 'tldjs' })
+        .bundle()
+        .pipe(source('tld.js'))
+        .pipe(gulp.dest(paths.libDir + 'tldjs'));
+});
+
 
 gulp.task('less', function () {
     return gulp.src(paths.lessDir + 'popup.less')
