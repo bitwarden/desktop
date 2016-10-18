@@ -1,15 +1,52 @@
 ﻿var gaTrackingId = chrome.extension.getBackgroundPage().utilsService.analyticsId();
+var gaFunc = null;
+window.ga = function (action, param1, param2, param3, param4) {
+    if (!gaFunc) {
+        return;
+    }
 
-if (gaTrackingId) {
-    ga('create', gaTrackingId, 'auto');
+    gaFunc(action, param1, param2, param3, param4);
+};
+
+function gaTrackEvent(options) {
+    return '&t=event&ec=' + (options.eventCategory ? encodeURIComponent(options.eventCategory) : 'Event') +
+        '&ea=' + encodeURIComponent(options.eventAction) +
+        (options.eventLabel ? '&el=' + encodeURIComponent(options.eventLabel) : '') +
+        (options.eventValue ? '&ev=' + encodeURIComponent(options.eventValue) : '') +
+        (options.page ? '&dp=' + encodeURIComponent(options.page) : '') +
+        (document && document.title ? '&dt=' + encodeURIComponent(document.title) : '');
 }
 
-// version dimension
-ga('set', 'dimension1', chrome.runtime.getManifest().version);
-
-// Removes failing protocol check. ref: http://stackoverflow.com/a/22152353/1958200
-ga('set', 'checkProtocolTask', function () { });
-
-if (typeof isBackground !== 'undefined') {
-    ga('send', 'pageview', '/background.html');
+function gaTrackPageView(pagePath) {
+    return '&t=pageview&dp=' + encodeURIComponent(pagePath) +
+        (document && document.title ? '&dt=' + encodeURIComponent(document.title) : '');
 }
+
+chrome.extension.getBackgroundPage().appIdService.getAnonymousAppId(function (gaAnonAppId) {
+    gaFunc = function (action, param1, param2, param3, param4) {
+        if (action !== 'send' || !param1) {
+            return;
+        }
+
+        var version = encodeURIComponent(chrome.runtime.getManifest().version);
+        var message = 'v=1&tid=' + gaTrackingId + '&cid=' + gaAnonAppId + '&cd1=' + version;
+
+        if (param1 === 'pageview' && param2) {
+            message += gaTrackPageView(param2);
+        }
+        else if (param1 === 'event' && param2) {
+            message += gaTrackEvent(param2);
+        }
+        else if (typeof param1 === 'object' && param1.hitType === 'event') {
+            message += gaTrackEvent(param1);
+        }
+
+        var request = new XMLHttpRequest();
+        request.open('POST', 'https://www.google-analytics.com/collect', true);
+        request.send(message);
+    };
+
+    if (typeof isBackground !== 'undefined') {
+        ga('send', 'pageview', '/background.html');
+    }
+});

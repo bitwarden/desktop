@@ -8,10 +8,18 @@ function initAppIdService() {
             throw 'callback function required';
         }
 
-        makeAndGetAppId('appId');
+        makeAndGetAppId('appId', callback);
     };
 
-    function makeAndGetAppId(key) {
+    AppIdService.prototype.getAnonymousAppId = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        makeAndGetAppId('anonymousAppId', callback);
+    };
+
+    function makeAndGetAppId(key, callback) {
         chrome.storage.local.get(key, function (obj) {
             if (obj && obj[key]) {
                 callback(obj[key]);
