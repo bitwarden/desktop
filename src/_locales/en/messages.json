@@ -5,7 +5,7 @@
   },
   "extName": {
     "message": "bitwarden - Free Password Manager",
-    "description": "Extension name."
+    "description": "Extension name"
   },
   "extDesc": {
     "message": "bitwarden is a secure and free password manager for all of your devices.",
@@ -26,6 +26,10 @@
   "cancel": {
     "message": "Cancel",
     "description": "Cancel"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close"
   },
   "submit": {
     "message": "Submit",
@@ -172,8 +176,8 @@
     "description": "There are no folders to list."
   },
   "helpFeedback": {
-    "message": "Help and Feedback",
-    "description": "Help and Feedback"
+    "message": "Help & Feedback",
+    "description": "Help & Feedback"
   },
   "emailUs": {
     "message": "Email Us",
