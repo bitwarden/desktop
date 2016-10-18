@@ -5,7 +5,13 @@ window.ga = function (action, param1, param2, param3, param4) {
         return;
     }
 
-    gaFunc(action, param1, param2, param3, param4);
+    chrome.storage.local.get('disableGa', function (obj) {
+        if (obj && obj['disableGa']) {
+            return;
+        }
+
+        gaFunc(action, param1, param2, param3, param4);
+    });
 };
 
 function gaTrackEvent(options) {
@@ -13,13 +19,11 @@ function gaTrackEvent(options) {
         '&ea=' + encodeURIComponent(options.eventAction) +
         (options.eventLabel ? '&el=' + encodeURIComponent(options.eventLabel) : '') +
         (options.eventValue ? '&ev=' + encodeURIComponent(options.eventValue) : '') +
-        (options.page ? '&dp=' + encodeURIComponent(options.page) : '') +
-        (document && document.title ? '&dt=' + encodeURIComponent(document.title) : '');
+        (options.page ? '&dp=' + encodeURIComponent(options.page) : '');
 }
 
 function gaTrackPageView(pagePath) {
-    return '&t=pageview&dp=' + encodeURIComponent(pagePath) +
-        (document && document.title ? '&dt=' + encodeURIComponent(document.title) : '');
+    return '&t=pageview&dp=' + encodeURIComponent(pagePath);
 }
 
 chrome.extension.getBackgroundPage().appIdService.getAnonymousAppId(function (gaAnonAppId) {

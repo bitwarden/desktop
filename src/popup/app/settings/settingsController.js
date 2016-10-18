@@ -1,8 +1,19 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService, $analytics, i18nService) {
+    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService, $analytics,
+        i18nService) {
+        var gaKey = 'disableGa';
+
+        $scope.disableGa = false;
         $scope.i18n = i18nService;
+
+        chrome.storage.local.get(gaKey, function (obj) {
+            if (obj && obj[gaKey]) {
+                $scope.disableGa = true;
+            }
+        });
+
         $scope.logOut = function () {
             SweetAlert.swal({
                 title: 'Log Out',
@@ -69,6 +80,23 @@
             }
         }
 
+        $scope.updateGa = function () {
+            chrome.storage.local.get(gaKey, function (obj) {
+                if (obj[gaKey]) {
+                    // enable
+                    obj[gaKey] = false;
+                }
+                else {
+                    // disable
+                    obj[gaKey] = true;
+                }
+
+                chrome.storage.local.set(obj, function () {
+                    $scope.disableGa = obj[gaKey];
+                });
+            });
+        };
+
         $scope.rate = function () {
             $analytics.eventTrack('Rate Extension');
 
@@ -94,6 +122,5 @@
                 default:
                     return;
             }
-
         };
     });
