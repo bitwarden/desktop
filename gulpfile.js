@@ -45,12 +45,13 @@ gulp.task('lib', ['clean:lib'], function () {
             src: [
                 paths.npmDir + 'bootstrap/dist/**/*',
                 '!' + paths.npmDir + 'bootstrap/dist/**/npm.js',
-                '!' + paths.npmDir + 'bootstrap/dist/**/css/*theme*'
+                '!' + paths.npmDir + 'bootstrap/dist/**/css/*theme*',
+                '!' + paths.npmDir + 'bootstrap/**/*.min*'
             ],
             dest: paths.libDir + 'bootstrap'
         },
         {
-            src: paths.npmDir + 'font-awesome/css/*',
+            src: paths.npmDir + 'font-awesome/css/font-awesome.css',
             dest: paths.libDir + 'font-awesome/css'
         },
         {
@@ -58,11 +59,11 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'font-awesome/fonts'
         },
         {
-            src: paths.npmDir + 'jquery/dist/*.js',
+            src: paths.npmDir + 'jquery/dist/jquery.js',
             dest: paths.libDir + 'jquery'
         },
         {
-            src: paths.npmDir + 'angular/angular*.js',
+            src: paths.npmDir + 'angular/angular.js',
             dest: paths.libDir + 'angular'
         },
         {
@@ -74,7 +75,7 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'angular-ui-bootstrap'
         },
         {
-            src: paths.npmDir + 'angular-ui-router/release/*.js',
+            src: paths.npmDir + 'angular-ui-router/release/angular-ui-router.js',
             dest: paths.libDir + 'angular-ui-router'
         },
         {
@@ -103,7 +104,7 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'q'
         },
         {
-            src: [paths.npmDir + 'sweetalert/dist/sweetalert.css', paths.npmDir + 'sweetalert/dist/sweetalert.min.js',
+            src: [paths.npmDir + 'sweetalert/dist/sweetalert.css', paths.npmDir + 'sweetalert/dist/sweetalert-dev.js',
                 paths.npmDir + 'angular-sweetalert/SweetAlert.js'],
             dest: paths.libDir + 'sweetalert'
         },
