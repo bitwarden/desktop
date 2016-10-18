@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsFoldersController', function ($scope, folderService, $q, $state) {
+    .controller('settingsFoldersController', function ($scope, folderService, $q, $state, i18nService) {
+        $scope.i18n = i18nService;
         $scope.loaded = false;
 
         load();

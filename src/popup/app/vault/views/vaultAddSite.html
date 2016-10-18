@@ -1,23 +1,23 @@
 ﻿<form name="theForm" ng-submit="save(site)" bit-form="savePromise">
     <div class="header">
         <div class="left">
-            <a ng-click="close()" href="">Cancel</a>
+            <a ng-click="close()" href="">{{ i18n.cancel }}</a>
         </div>
         <div class="right">
-            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Save</button>
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{ i18n.save }}</button>
             <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
         </div>
-        <div class="title">Add Site</div>
+        <div class="title">{{ i18n.addSite }}</div>
     </div>
     <div class="content">
         <div class="list">
             <div class="list-section">
                 <div class="list-section-header">
-                    Site Information
+                    {{ i18n.siteInformation }}
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <label for="name" class="item-label">Name</label>
+                        <label for="name" class="item-label">{{ i18n.name }}</label>
                         <input id="name" type="text" name="Name" ng-model="site.name">
                     </div>
                     <div class="list-section-item">
@@ -25,15 +25,15 @@
                         <input id="uri" type="text" name="Uri" ng-model="site.uri">
                     </div>
                     <div class="list-section-item">
-                        <label for="username" class="item-label">Username</label>
+                        <label for="username" class="item-label">{{ i18n.username }}</label>
                         <input id="username" type="text" name="Username" ng-model="site.username">
                     </div>
                     <div class="list-section-item">
-                        <label for="password" class="item-label">Password</label>
+                        <label for="password" class="item-label">{{ i18n.password }}</label>
                         <input id="password" type="password" name="Password" ng-model="site.password">
                     </div>
                     <a class="list-section-item" href="" ng-click="generatePassword()">
-                        Generate Password
+                        {{ i18n.generatePassword }}
                         <i class="fa fa-chevron-right"></i>
                     </a>
                 </div>
@@ -49,14 +49,14 @@
                         </select>
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
-                        <label for="favorite">Favorite</label>
+                        <label for="favorite">{{ i18n.favorite }}</label>
                         <input id="favorite" name="Favorite" type="checkbox" ng-model="site.favorite">
                     </div>
                 </div>
             </div>
             <div class="list-section">
                 <div class="list-section-header">
-                    <label for="notes">Notes</label>
+                    <label for="notes">{{ i18n.notes }}</label>
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">

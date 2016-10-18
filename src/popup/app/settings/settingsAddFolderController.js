@@ -2,7 +2,8 @@ angular
     .module('bit.settings')
 
     .controller('settingsAddFolderController', function ($scope, $q, folderService, $state, toastr, utilsService,
-        $analytics) {
+        $analytics, i18nService) {
+        $scope.i18n = i18nService;
         $scope.folder = {};
         utilsService.initListSectionItemListeners($(document), angular);
         $('#name').focus();

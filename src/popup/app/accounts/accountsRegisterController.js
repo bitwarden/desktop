@@ -1,8 +1,11 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsRegisterController', function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService,
-        $analytics) {
+    .controller(
+      'accountsRegisterController',
+      function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService, $analytics, i18nService) {
+        $scope.i18n = i18nService;
+
         $scope.model = {};
         utilsService.initListSectionItemListeners($(document), angular);
         $('#email').focus();

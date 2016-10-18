@@ -2,7 +2,8 @@
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr,
-        syncService, utilsService, $analytics) {
+        syncService, utilsService, $analytics, i18nService) {
+        $scope.i18n = i18nService;
         $('#search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;
@@ -109,7 +110,7 @@
         };
 
         $scope.clipboardError = function (e) {
-            toastr.info('Your web browser does not support easy clipboard copying. Copy it manually instead.');
+            toastr.info(i18n.browserNotSupportClipboard);
         };
 
         $scope.clipboardSuccess = function (e, type) {

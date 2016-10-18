@@ -1,60 +1,60 @@
 ﻿<div class="header">
-    <div class="title">Settings</div>
+    <div class="title">{{ i18n.settings }}</div>
 </div>
 <div class="content content-tabs">
     <div class="list">
         <div class="list-section">
             <div class="list-section-header">
-                Account
+                {{ i18n.account }}
             </div>
             <div class="list-section-items">
                 <a class="list-section-item" href="" ng-click="changePassword()">
-                    Change Master Password
+                    {{ i18n.changeMasterPassword }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="list-section-item" href="" ng-click="changeEmail()">
-                    Change Email
+                    {{ i18n.changeEmail }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="list-section-item" href="" ng-click="twoStep()">
-                    Two-step Login
+                    {{ i18n.twoStepLogin }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="list-section-item" href="" ng-click="logOut()">
-                    Log Out
+                    {{ i18n.logOut }}
                 </a>
             </div>
         </div>
         <div class="list-section">
             <div class="list-section-header">
-                Manage
+                {{ i18n.manage }}
             </div>
             <div class="list-section-items">
                 <a class="list-section-item" ui-sref="folders({animation: 'in-slide-left'})">
-                    Folders
+                    {{ i18n.folders }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="list-section-item" ui-sref="sync({animation: 'in-slide-left'})">
-                    Sync
+                    {{ i18n.sync }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
             </div>
         </div>
         <div class="list-section">
             <div class="list-section-header">
-                Other
+                {{ i18n.other }}
             </div>
             <div class="list-section-items">
                 <a class="list-section-item" ui-sref="about({animation: 'in-slide-left'})">
-                    About
+                    {{ i18n.about }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="list-section-item" ui-sref="help({animation: 'in-slide-left'})">
-                    Help &amp; Feedback
+                    {{ i18n.helpFeedback }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="list-section-item" href="" ng-click="rate()">
-                    Rate the Extension
+                    {{ i18n.rateExtension }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
             </div>

@@ -2,7 +2,7 @@
     <div class="right">
         <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
-    <div class="title">Current Tab</div>
+    <div class="title">{{ i18n.currentTab }}</div>
 </div>
 <div class="content content-tabs">
     <div ng-if="sites.length">
@@ -10,13 +10,13 @@
             <div class="list-grouped">
                 <a href="javascript:void(0)" ng-click="fillSite(site)" class="list-grouped-item condensed"
                    title="Auto-fill {{site.name}}" ng-repeat="site in theSites = (sites | orderBy: ['name', 'username'])">
-                    <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Password"
+                    <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{ i18n.copyPassword }}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, 'Password')"
                           data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
                         <i class="fa fa-lg fa-key"></i>
                     </span>
-                    <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="Copy Username"
+                    <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{ i18n.copyUsername }}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, 'Username')"
                           data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
@@ -30,8 +30,8 @@
     </div>
     <div class="centered-message" ng-if="loaded && !sites.length">
         <p>
-            There are no sites available to auto-fill for the current browser tab.
-            <button ng-click="addSite()" style="margin-top: 20px;" class="btn btn-link btn-block">Add a Site</button>
+            {{ i18n.autoFillInfo }}
+            <button ng-click="addSite()" style="margin-top: 20px;" class="btn btn-link btn-block">{{ i18n.addSite }}</button>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">

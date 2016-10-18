@@ -2,7 +2,9 @@ angular
     .module('bit.current')
 
     .controller('currentController', function ($scope, siteService, tldjs, toastr, $q, $window, $state, autofillService,
-        $analytics) {
+        $analytics, i18nService) {
+        $scope.i18n = i18nService;
+
         var pageDetails = null,
             tabId = null,
             url = null,
@@ -51,7 +53,7 @@ angular
         }
 
         $scope.clipboardError = function (e, password) {
-            toastr.info('Your web browser does not support easy clipboard copying. Copy it manually instead.');
+            toastr.info(i18n.browserNotSupportClipboard);
         };
 
         $scope.clipboardSuccess = function (e, type) {

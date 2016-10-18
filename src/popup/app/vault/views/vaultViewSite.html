@@ -1,48 +1,48 @@
 ﻿<div class="header">
     <div class="left">
-        <a href="" ng-click="close()">Close</a>
+        <a href="" ng-click="close()">{{ i18n.close }}</a>
     </div>
     <div class="right">
-        <a href="" ng-click="edit(site)">Edit</a>
+        <a href="" ng-click="edit(site)">{{ i18n.edit }}</a>
     </div>
-    <div class="title">View Site</div>
+    <div class="title">{{ i18n.viewSite }}</div>
 </div>
 <div class="content">
     <div class="list list-no-selection">
         <div class="list-section">
             <div class="list-section-header">
-                Site Information
+                {{ i18n.siteInformation }}
             </div>
             <div class="list-section-items">
                 <div class="list-section-item">
-                    <span class="item-label">Name</span>
+                    <span class="item-label">{{ i18n.name }}</span>
                     {{site.name}}
                 </div>
                 <div class="list-section-item" ng-if="site.uri">
-                    <a class="btn-list" href="" title="Launch Website" ng-click="launchWebsite(site)"
+                    <a class="btn-list" href="" title="{{ i18n.launchWebsite }}" ng-click="launchWebsite(site)"
                        ng-show="site.showLaunch">
                         <i class="fa fa-lg fa-share-square-o"></i>
                     </a>
-                    <span class="item-label">Website</span>
+                    <span class="item-label">{{ i18n.website }}</span>
                     {{site.website}}
                 </div>
                 <div class="list-section-item" ng-if="site.username">
-                    <a class="btn-list" href="" title="Copy Username" ngclipboard ngclipboard-error="clipboardError(e)"
+                    <a class="btn-list" href="" title="{{ i18n.copyUsername }}" ngclipboard ngclipboard-error="clipboardError(e)"
                        ngclipboard-success="clipboardSuccess(e, 'Username')" data-clipboard-target="#username">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
-                    <span class="item-label">Username</span>
+                    <span class="item-label">{{ i18n.username }}</span>
                     <span id="username" class="monospaced">{{site.username}}</span>
                 </div>
                 <div class="list-section-item" ng-if="site.password">
-                    <a class="btn-list" href="" title="Copy Password" ngclipboard ngclipboard-error="clipboardError(e)"
+                    <a class="btn-list" href="" title="{{ i18n.copyPassword }}" ngclipboard ngclipboard-error="clipboardError(e)"
                        ngclipboard-success="clipboardSuccess(e, 'Password')" data-clipboard-target="#password">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
-                    <a class="btn-list" href="" title="Toggle Password" ng-click="togglePassword()">
+                    <a class="btn-list" href="" title="{{ i18n.togglePassword }}" ng-click="togglePassword()">
                         <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>
                     </a>
-                    <span class="item-label">Password</span>
+                    <span class="item-label">{{ i18n.password }}</span>
                     <span ng-show="!showPassword">{{site.maskedPassword}}</span>
                     <span id="password" ng-show="showPassword" class="monospaced">{{site.password}}</span>
                 </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="list-section" ng-if="site.notes">
             <div class="list-section-header">
-                Notes
+                {{ i18n.notes }}
             </div>
             <div class="list-section-items">
                 <div class="list-section-item">

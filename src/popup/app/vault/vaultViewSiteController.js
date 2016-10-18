@@ -2,7 +2,8 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, tldjs, toastr, $q,
-        $analytics) {
+        $analytics, i18nService) {
+        $scope.i18n = i18nService;
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
 
@@ -66,7 +67,7 @@ angular
         };
 
         $scope.clipboardError = function (e, password) {
-            toastr.info('Your web browser does not support easy clipboard copying. Copy it manually instead.');
+            toastr.info(i18n.browserNotSupportClipboard);
         };
 
         $scope.clipboardSuccess = function (e, type) {

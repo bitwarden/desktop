@@ -1,0 +1,362 @@
+{
+  "appName": {
+    "message": "bitwarden",
+    "description": "bitwarden"
+  },
+  "extName": {
+    "message": "bitwarden - Free Password Manager",
+    "description": "Extension name."
+  },
+  "extDesc": {
+    "message": "bitwarden is a secure and free password manager for all of your devices.",
+    "description": "Extension description"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Log in or create a new account to access your secure vault.",
+    "description": "Log in or create a new account to access your secure vault."
+  },
+  "createAccount": {
+    "message": "Create Account",
+    "description": "Create Account"
+  },
+  "login": {
+    "message": "Log In",
+    "description": "Log In"
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel"
+  },
+  "submit": {
+    "message": "Submit",
+    "description": "submit"
+  },
+  "emailAddress": {
+    "message": "Email Address",
+    "description": "Email Address"
+  },
+  "masterPass": {
+    "message": "Master Password",
+    "description": "Master Password"
+  },
+  "masterPassDesc": {
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it.",
+    "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "reTypeMasterPass": {
+    "message": "Re-type Master Password",
+    "description": "Re-type Master Password"
+  },
+  "masterPassHint": {
+    "message": "Master Password Hint (optional)",
+    "description": "Master Password Hint (optional)"
+  },
+  "masterPassHintDecs": {
+    "message": "A master password hint can help you remember your password if you forget it.",
+    "description": "A master password hint can help you remember your password if you forget it."
+  },
+  "tab": {
+    "message": "Tab",
+    "description": "Tab"
+  },
+  "myVault": {
+    "message": "My Vault",
+    "description": "My Vault"
+  },
+  "tools": {
+    "message": "Tools",
+    "description": "Tools"
+  },
+  "settings": {
+    "message": "Settings",
+    "description": "Settings"
+  },
+  "currentTab": {
+    "message": "Current Tab",
+    "description": "Current Tab"
+  },
+  "copyPassword": {
+    "message": "Copy Password",
+    "description": "Copy Password"
+  },
+  "copyUsername": {
+    "message": "Copy Username",
+    "description": "Copy Username"
+  },
+  "autoFillInfo": {
+    "message": "There are no sites available to auto-fill for the current browser tab.",
+    "description": "There are no sites available to auto-fill for the current browser tab."
+  },
+  "addSite": {
+    "message": "Add a Site",
+    "description": "Add a Site"
+  },
+  "passwordHint": {
+    "message": "Password Hint",
+    "description": "Password Hint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Enter your account email address to receive your master password hint.",
+    "description": "Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint": {
+    "message": "Get master password hint",
+    "description": "Get master password hint"
+  },
+  "continue": {
+    "message": "Continue",
+    "description": "Continue"
+  },
+  "verificationCode": {
+    "message": "Verification Code",
+    "description": "Verification Code"
+  },
+  "enterTwoStepVerCode": {
+    "message": "Enter your two-step verification code.",
+    "description": "Enter your two-step verification code."
+  },
+  "account": {
+    "message": "Account",
+    "description": "Account"
+  },
+  "changeMasterPassword": {
+    "message": "Change Master Password",
+    "description": "Change Master Password"
+  },
+  "changeEmail": {
+    "message": "Change Email",
+    "description": "Change Email"
+  },
+  "twoStepLogin": {
+    "message": "Two-step Login",
+    "description": "Two-step Login"
+  },
+  "logOut": {
+    "message": "Log Out",
+    "description": "Log Out"
+  },
+  "about": {
+    "message": "About",
+    "description": "About"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Version"
+  },
+  "save": {
+    "message": "Save",
+    "description": "Save"
+  },
+  "addFolder": {
+    "message": "Add Folder",
+    "description": "Add Folder"
+  },
+  "name": {
+    "message": "Name",
+    "description": "Name"
+  },
+  "editFolder": {
+    "message": "Edit Folder",
+    "description": "Edit Folder"
+  },
+  "deleteFolder": {
+    "message": "Delete Folder",
+    "description": "Delete Folder"
+  },
+  "folders": {
+    "message": "Folders",
+    "description": "Folders"
+  },
+  "noFolders": {
+    "message": "There are no folders to list.",
+    "description": "There are no folders to list."
+  },
+  "helpFeedback": {
+    "message": "Help and Feedback",
+    "description": "Help and Feedback"
+  },
+  "emailUs": {
+    "message": "Email Us",
+    "description": "Email Us"
+  },
+  "emailUsDirectly": {
+    "message": "Email us directly to get help or leave feedback.",
+    "description": "Email us directly to get help or leave feedback."
+  },
+  "visitOurWebsite": {
+    "message": "Visit Our Website",
+    "description": "Visit Our Website"
+  },
+  "visitOurWebsiteDirectly": {
+    "message": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden.",
+    "description": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
+  },
+  "fileBugReport": {
+    "message": "File a Bug Report",
+    "description": "File a Bug Report"
+  },
+  "gitHubIssue": {
+    "message": "Open an issue at our GitHub repository.",
+    "description": "Open an issue at our GitHub repository."
+  },
+  "sync": {
+    "message": "Sync",
+    "description": "Sync"
+  },
+  "syncVaultNow": {
+    "message": "Sync Vault Now",
+    "description": "Sync Vault Now"
+  },
+  "lastSync": {
+    "message": "Last Sync:",
+    "description": "Last Sync:"
+  },
+  "passGen": {
+    "message": "Password Generator",
+    "description": "Password Generator"
+  },
+  "passGenInfo": {
+    "message": "Automatically generate strong, unique passwords for your logins.",
+    "description": "Automatically generate strong, unique passwords for your logins."
+  },
+  "bitWebVault": {
+    "message": "bitwarden Web Vault",
+    "description": "bitwarden Web Vault"
+  },
+  "bitWebVaultInfo": {
+    "message": "Manage your logins from any web browser with the bitwarden web vault.",
+    "description": "Manage your logins from any web browser with the bitwarden web vault."
+  },
+  "bitIosVault": {
+    "message": "bitwarden iOS Vault",
+    "description": "bitwarden iOS Vault"
+  },
+  "bitIosVaultInfo": {
+    "message": "Manage your logins from your mobile devices with the bitwarden iOS vault.",
+    "description": "Manage your logins from your mobile devices with the bitwarden iOS vault."
+  },
+  "bitAndrVault": {
+    "message": "bitwarden Android Vault",
+    "description": "bitwarden Android Vault"
+  },
+  "bitAndrVaultInfo": {
+    "message": "Manage your logins from your mobile devices with the bitwarden Android vault.",
+    "description": "Manage your logins from your mobile devices with the bitwarden Android vault."
+  },
+  "importLogins": {
+    "message": "Import Logins",
+    "description": "Import Logins"
+  },
+  "importLoginsInfo": {
+    "message": "Quickly bulk import your logins from other password management applications.",
+    "description": "Quickly bulk import your logins from other password management applications."
+  },
+  "select": {
+    "message": "Select",
+    "description": "Select"
+  },
+  "generatePassword": {
+    "message": "Generate Password",
+    "description": "Generate Password"
+  },
+  "regeneratePassword": {
+    "message": "Regenerate Password",
+    "description": "Regenerate Password"
+  },
+  "options": {
+    "message": "Options",
+    "description": "Options"
+  },
+  "length": {
+    "message": "Length",
+    "description": "Length"
+  },
+  "minNumbers": {
+    "message": "Minimum Numbers",
+    "description": "Minimum Numbers"
+  },
+  "minSpecial": {
+    "message": "Minimum Special",
+    "description": "Minimum Special"
+  },
+  "avoidAmbChar": {
+    "message": "Avoid Ambiguous Characters",
+    "description": "Avoid Ambiguous Characters"
+  },
+  "searchVault": {
+    "message": "Search vault",
+    "description": "Search vault"
+  },
+  "edit": {
+    "message": "Edit",
+    "description": "Edit"
+  },
+  "noSitesInList": {
+    "message": "There are no sites in list.",
+    "description": "There are no sites in list."
+  },
+  "siteInformation": {
+    "message": "Site Information",
+    "description": "Site Information"
+  },
+  "username": {
+    "message": "Username",
+    "description": "Username"
+  },
+  "password": {
+    "message": "Password",
+    "description": "Password"
+  },
+  "favorite": {
+    "message": "Favorite",
+    "description": "Favorite"
+  },
+  "notes": {
+    "message": "Notes",
+    "description": "Notes"
+  },
+  "editSite": {
+    "message": "Edit Site",
+    "description": "Edit Site"
+  },
+  "folder": {
+    "message": "Folder",
+    "description": "Folder"
+  },
+  "deleteSite": {
+    "message": "Delete Site",
+    "description": "Delete Site"
+  },
+  "viewSite": {
+    "message": "View Site",
+    "description": "View Site"
+  },
+  "launchWebsite": {
+    "message": "Launch Website",
+    "description": "Launch Website"
+  },
+  "website": {
+    "message": "Website",
+    "description": "Website"
+  },
+  "togglePassword": {
+    "message": "Toggle Password",
+    "description": "Toggle Password"
+  },
+  "manage": {
+    "message": "Manage",
+    "description": "Manage"
+  },
+  "other": {
+    "message": "Other",
+    "description": "Other"
+  },
+  "rateExtension": {
+    "message": "Rate the Extension",
+    "description": "Rate the Extension"
+  },
+  "browserNotSupportClipboard": {
+    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead.",
+    "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+  }
+}

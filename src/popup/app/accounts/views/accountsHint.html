@@ -4,10 +4,10 @@
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> Log In</a>
         </div>
         <div class="right">
-            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Submit</button>
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{ i18n.submit }}</button>
             <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
         </div>
-        <div class="title">Password Hint</div>
+        <div class="title">{{ i18n.passwordHint }}</div>
     </div>
     <div class="content">
         <div class="list">
@@ -15,12 +15,12 @@
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-envelope fa-lg fa-fw"></i>
-                        <label for="email" class="sr-only">Email Address</label>
-                        <input id="email" type="text" name="Email" placeholder="Email Address" ng-model="model.email">
+                        <label for="email" class="sr-only">{{ i18n.emailAddress }}</label>
+                        <input id="email" type="text" name="Email" placeholder="{{ i18n.emailAddress }}" ng-model="model.email">
                     </div>
                 </div>
                 <div class="list-section-footer">
-                    Enter your account email address to receive your master password hint.
+                    {{ i18n.enterEmailToGetHint }}
                 </div>
             </div>
         </div>

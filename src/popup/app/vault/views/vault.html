@@ -3,7 +3,7 @@
         <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
     <div class="search">
-        <input type="search" placeholder="Search vault" ng-model="searchText" id="search" />
+        <input type="search" placeholder="{{ i18n.searchVault }}" ng-model="searchText" id="search" />
         <i class="fa fa-search"></i>
     </div>
 </div>
@@ -16,7 +16,7 @@
                         <i class="fa fa-folder-open"></i> {{folder.name}}
                     </div>
                     <a href="javascript:void(0)" ng-click="viewSite(site)"
-                       class="list-grouped-item condensed" title="Edit {{site.name}}"
+                       class="list-grouped-item condensed" title="{{ i18n.edit }} {{site.name}}"
                        ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id }
                             | filter: searchSites() | orderBy: ['name', 'username'])">
                         <span class="btn-list" ng-click="$event.stopPropagation()" title="Copy Password" ngclipboard
@@ -24,7 +24,7 @@
                               data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
                             <i class="fa fa-lg fa-key"></i>
                         </span>
-                        <span class="btn-list" ng-click="$event.stopPropagation()" title="Copy Username" ngclipboard
+                        <span class="btn-list" ng-click="$event.stopPropagation()" title="{{ i18n.copyUsername }}" ngclipboard
                               ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, 'Username')"
                               data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
                             <i class="fa fa-lg fa-user"></i>
@@ -38,8 +38,8 @@
     </div>
     <div class="centered-message" ng-if="loaded && !vaultSites.length">
         <p>
-            There are no sites to list.
-            <button ng-click="addSite()" style="margin-top: 20px;" class="btn btn-link btn-block">Add a Site</button>
+            {{ i18n.noSitesInList }}
+            <button ng-click="addSite()" style="margin-top: 20px;" class="btn btn-link btn-block">{{ i18n.addSite }}</button>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">

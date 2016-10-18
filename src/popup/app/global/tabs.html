@@ -2,16 +2,16 @@
 <div class="tabs" ng-controller="tabsController">
     <ul>
         <li ng-class="{active: $state.includes('tabs.current')}">
-            <a ui-sref="tabs.current"><i class="fa fa-folder fa-2x"></i> Tab</a>
+            <a ui-sref="tabs.current"><i class="fa fa-folder fa-2x"></i>{{ i18n.tab }}</a>
         </li>
         <li ng-class="{active: $state.includes('tabs.vault')}">
-            <a ui-sref="tabs.vault"><i class="fa fa-lock fa-2x"></i> My Vault</a>
+            <a ui-sref="tabs.vault"><i class="fa fa-lock fa-2x"></i>{{ i18n.myVault }}</a>
         </li>
         <li ng-class="{active: $state.includes('tabs.tools')}">
-            <a ui-sref="tabs.tools"><i class="fa fa-wrench fa-2x"></i> Tools</a>
+            <a ui-sref="tabs.tools"><i class="fa fa-wrench fa-2x"></i>{{ i18n.tools }}</a>
         </li>
         <li ng-class="{active: $state.includes('tabs.settings')}">
-            <a ui-sref="tabs.settings"><i class="fa fa-cogs fa-2x"></i> Settings</a>
+            <a ui-sref="tabs.settings"><i class="fa fa-cogs fa-2x"></i>{{ i18n.settings }}</a>
         </li>
     </ul>
 </div>

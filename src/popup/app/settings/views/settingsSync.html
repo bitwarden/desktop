@@ -1,16 +1,16 @@
 ﻿<div class="header">
     <div class="left">
-        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> Settings</a>
+        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i>{{ i18n.settings }}</a>
     </div>
-    <div class="title">Sync</div>
+    <div class="title">{{ i18n.sync }}</div>
 </div>
 <div class="content">
     <div class="centered-message">
         <p style="margin-top: -50px;">
             <a href="" class="btn btn-lg btn-link btn-block" ng-click="sync()">
-                Sync Vault Now
+                {{ i18n.syncVaultNow }}
             </a>
-            <small class="text-muted">Last Sync: {{lastSync}}</small>
+            <small class="text-muted">{{ i18n.lastSync }} {{lastSync}}</small>
             <span ng-show="loading" style="display: block; margin-top: 20px;">
                 <i class="text-muted fa fa-lg fa-spinner fa-spin"></i>
             </span>

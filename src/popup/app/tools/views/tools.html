@@ -1,5 +1,5 @@
 ﻿<div class="header">
-    <div class="title">Tools</div>
+    <div class="title">{{ i18n.tools }}</div>
 </div>
 <div class="content content-tabs">
     <div class="list">
@@ -7,28 +7,28 @@
             <div class="list-section-items">
                 <a class="list-section-item wrap" href="" ui-sref="passwordGenerator({animation: 'in-slide-up'})">
                     <span class="leading-icon" style="color: #eba776;"><i class="fa fa-refresh fa-fw"></i></span>
-                    <span class="text">Password Generator</span>
-                    <span class="detail">Automatically generate strong, unique passwords for your logins.</span>
+                    <span class="text">{{ i18n.passGen }}</span>
+                    <span class="detail">{{ i18n.passGenInfo }}</span>
                 </a>
                 <a class="list-section-item wrap" href="" ng-click="launchWebVault()">
                     <span class="leading-icon" style="color: #5bb630;"><i class="fa fa-globe fa-fw"></i></span>
-                    <span class="text">bitwarden Web Vault</span>
-                    <span class="detail">Manage your logins from any web browser with the bitwarden web vault.</span>
+                    <span class="text">{{ i18n.bitWebVault }}</span>
+                    <span class="detail">{{ i18n.bitWebVaultInfo }}</span>
                 </a>
                 <a class="list-section-item wrap" href="" ng-click="launchiOS()">
                     <span class="leading-icon" style="color: #999999;"><i class="fa fa-apple fa-fw"></i></span>
-                    <span class="text">bitwarden iOS Vault</span>
-                    <span class="detail">Manage your logins from your mobile devices with the bitwarden iOS vault.</span>
+                    <span class="text">{{ i18n.bitIosVault }}</span>
+                    <span class="detail">{{ i18n.bitIosVaultInfo }}</span>
                 </a>
                 <a class="list-section-item wrap" href="" ng-click="launchAndroid()">
                     <span class="leading-icon" style="color: #a4c639;"><i class="fa fa-android fa-fw"></i></span>
-                    <span class="text">bitwarden Android Vault</span>
-                    <span class="detail">Manage your logins from your mobile devices with the bitwarden Android vault.</span>
+                    <span class="text">{{ i18n.bitAndrVault }}</span>
+                    <span class="detail">{{ i18n.bitAndrVaultInfo }}</span>
                 </a>
                 <a class="list-section-item wrap" href="" ng-click="launchImport()">
                     <span class="leading-icon" style="color: #6fc2ff;"><i class="fa fa-cloud-upload fa-fw"></i></span>
-                    <span class="text">Import Logins</span>
-                    <span class="detail">Quickly bulk import your logins from other password management applications.</span>
+                    <span class="text">{{ i18n.importLogins }}</span>
+                    <span class="detail">{{ i18n.importLoginsInfo }}</span>
                 </a>
             </div>
         </div>

@@ -2,7 +2,8 @@
     .module('bit.accounts')
 
     .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q, utilsService,
-        $analytics) {
+        $analytics, i18nService) {
+        $scope.i18n = i18nService;
         $scope.model = {};
 
         utilsService.initListSectionItemListeners($(document), angular);

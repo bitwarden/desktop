@@ -2,7 +2,8 @@ angular
     .module('bit.vault')
 
     .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService,
-        cryptoService, $q, toastr, SweetAlert, utilsService, $analytics) {
+        cryptoService, $q, toastr, SweetAlert, utilsService, $analytics, i18nService) {
+        $scope.i18n = i18nService;
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
         var siteId = $stateParams.siteId;

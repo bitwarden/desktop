@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService, $analytics) {
+    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService, $analytics, i18nService) {
+        $scope.i18n = i18nService;
         $scope.logOut = function () {
             SweetAlert.swal({
                 title: 'Log Out',

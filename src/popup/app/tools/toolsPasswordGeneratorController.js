@@ -2,7 +2,8 @@
     .module('bit.tools')
 
     .controller('toolsPasswordGeneratorController', function ($scope, $state, $stateParams, passwordGenerationService,
-        toastr, $q, utilsService, $analytics) {
+        toastr, $q, utilsService, $analytics, i18nService) {
+        $scope.i18n = i18nService;
         var addState = $stateParams.addState,
             editState = $stateParams.editState;
 
@@ -62,7 +63,7 @@
         };
 
         $scope.clipboardError = function (e, password) {
-            toastr.info('Your web browser does not support easy clipboard copying. Copy it manually instead.');
+            toastr.info(i18n.browserNotSupportClipboard);
         };
 
         $scope.clipboardSuccess = function (e) {

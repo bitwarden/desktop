@@ -1,6 +1,6 @@
 ﻿<div class="header">
     <div class="left">
-        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> Settings</a>
+        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i>{{ i18n.settings }}</a>
     </div>
     <div class="right">
         <a ui-sref="addFolder({animation: 'in-slide-up'})"><i class="fa fa-plus fa-lg"></i></a>
@@ -20,9 +20,9 @@
     </div>
     <div class="centered-message" ng-if="loaded && !folders.length">
         <p>
-            There are no folders to list.
+            {{ i18n.noFolders }}
             <a ui-sref="addFolder({animation: 'in-slide-up'})" style="margin-top: 20px;"
-               class="btn btn-link btn-block">Add a Folder</a>
+               class="btn btn-link btn-block">{{ i18n.addFolder }}</a>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">

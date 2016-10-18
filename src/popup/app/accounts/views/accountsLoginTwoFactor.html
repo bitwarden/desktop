@@ -4,10 +4,10 @@
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> Log In</a>
         </div>
         <div class="right">
-            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Continue</button>
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{ i18n.continue }}</button>
             <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
         </div>
-        <div class="title">Verification Code</div>
+        <div class="title">{{ i18n.verificationCode }}</div>
     </div>
     <div class="content">
         <div class="list">
@@ -15,12 +15,12 @@
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-lock fa-lg fa-fw"></i>
-                        <label for="code" class="sr-only">Verification Code</label>
-                        <input id="code" type="text" name="Code" placeholder="Verification Code" ng-model="model.code">
+                        <label for="code" class="sr-only">{{ i18n.verificationCode }}</label>
+                        <input id="code" type="text" name="Code" placeholder="{{ i18n.verificationCode }}" ng-model="model.code">
                     </div>
                 </div>
                 <div class="list-section-footer">
-                    Enter your two-step verification code.
+                    {{ i18n.enterTwoStepVerCode }}
                 </div>
             </div>
         </div>

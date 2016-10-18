@@ -1,13 +1,13 @@
 ﻿<form name="theForm" ng-submit="login(model)" bit-form="loginPromise">
     <div class="header">
         <div class="left">
-            <a ui-sref="home({animation: 'out-slide-down'})">Cancel</a>
+            <a ui-sref="home({animation: 'out-slide-down'})">{{ i18n.cancel }}</a>
         </div>
         <div class="right">
-            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">Log In</button>
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{ i18n.login }}</button>
             <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
         </div>
-        <div class="title">bitwarden</div>
+        <div class="title">{{ i18n.bitwarden }}</div>
     </div>
     <div class="content">
         <div class="list">
@@ -15,20 +15,20 @@
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-envelope fa-lg fa-fw"></i>
-                        <label for="email" class="sr-only">Email Address</label>
-                        <input id="email" type="text" name="Email" placeholder="Email Address" ng-model="model.email">
+                        <label for="email" class="sr-only">{{ i18n.emailAddress }}</label>
+                        <input id="email" type="text" name="Email" placeholder="{{ i18n.emailAddress }}" ng-model="model.email">
                     </div>
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-lock fa-lg fa-fw"></i>
-                        <label for="master-password" class="sr-only">Master Password</label>
-                        <input id="master-password" type="password" name="MasterPassword" placeholder="Master Password"
+                        <label for="master-password" class="sr-only">{{ i18n.masterPass }}</label>
+                        <input id="master-password" type="password" name="MasterPassword" placeholder="{{ i18n.masterPass }}"
                                ng-model="model.masterPassword">
                     </div>
                 </div>
             </div>
         </div>
         <p class="text-center text-accent">
-            <a ui-sref="hint({animation: 'in-slide-left'})">Get master password hint</a>
+            <a ui-sref="hint({animation: 'in-slide-left'})">{{ i18n.getMasterPasswordHint }}</a>
         </p>
     </div>
 </form>

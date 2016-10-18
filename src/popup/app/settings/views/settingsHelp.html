@@ -1,42 +1,42 @@
 ﻿<div class="header">
     <div class="left">
-        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> Settings</a>
+        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i>{{ i18n.settings }}</a>
     </div>
-    <div class="title">Help and Feedback</div>
+    <div class="title">{{ i18n.helpFeedback }}</div>
 </div>
 <div class="content">
     <div class="list">
         <div class="list-section">
             <div class="list-section-items">
                 <a class="list-section-item" href="" ng-click="email()">
-                    Email Us
+                    {{ i18n.emailUs }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
             </div>
             <div class="list-section-footer">
-                Email us directly to get help or leave feedback.
+                {{ i18n.emailUsDirectly }}
             </div>
         </div>
         <div class="list-section">
             <div class="list-section-items">
                 <a class="list-section-item" href="" ng-click="website()">
-                    Visit Our Website
+                    {{ i18n.visitOurWebsite }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
             </div>
             <div class="list-section-footer">
-                Visit our website to get help, news, email us, and/or learn more about how to use bitwarden.
+                {{ i18n.visitOurWebsiteDirectly }}
             </div>
         </div>
         <div class="list-section">
             <div class="list-section-items">
                 <a class="list-section-item" href="" ng-click="bug()">
-                    File a Bug Report
+                    {{ i18n.fileBugReport }}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
             </div>
             <div class="list-section-footer">
-                Open an issue at our GitHub repository.
+                {{ i18n.gitHubIssue }}
             </div>
         </div>
     </div>

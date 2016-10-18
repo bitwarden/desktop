@@ -2,7 +2,8 @@
     .module('bit.accounts')
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService, toastr, utilsService,
-        $analytics) {
+        $analytics, i18nService) {
+        $scope.i18n = i18nService;
         $scope.model = {};
         utilsService.initListSectionItemListeners($(document), angular);
         $('#code').focus();

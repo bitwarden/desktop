@@ -1,7 +1,8 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsHelpController', function ($scope, $analytics) {
+    .controller('settingsHelpController', function ($scope, $analytics, i18nService) {
+        $scope.i18n = i18nService;
         $scope.email = function () {
             $analytics.eventTrack('Selected Help Email');
             chrome.tabs.create({ url: 'mailto:hello@bitwarden.com' });
