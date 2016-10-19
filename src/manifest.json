@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_appName__",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "homepage_url": "https://bitwarden.com",
@@ -68,15 +68,13 @@
   "commands": {
     "generate_password": {
       "suggested_key": {
-        "default": "Ctrl+Shift+O",
-        "mac": "Command+Shift+O"
+        "default": "Ctrl+Shift+O"
       },
       "description": "Generate and copy a new random password to the clipboard."
     },
     "_execute_browser_action": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y"
+        "default": "Ctrl+Shift+Y"
       }
     }
   },
