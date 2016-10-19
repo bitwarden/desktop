@@ -5,6 +5,7 @@
         i18nService) {
         var gaKey = 'disableGa';
 
+        utilsService.initListSectionItemListeners($(document), angular);
         $scope.disableGa = false;
         $scope.i18n = i18nService;
 
@@ -88,11 +89,15 @@
                 }
                 else {
                     // disable
+                    $analytics.eventTrack('Disabled Google Analytics');
                     obj[gaKey] = true;
                 }
 
                 chrome.storage.local.set(obj, function () {
                     $scope.disableGa = obj[gaKey];
+                    if (!obj[gaKey]) {
+                        $analytics.eventTrack('Enabled Google Analytics');
+                    }
                 });
             });
         };

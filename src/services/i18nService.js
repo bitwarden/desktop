@@ -88,6 +88,7 @@ function i18nService() {
         togglePassword: chrome.i18n.getMessage('togglePassword'),
         manage: chrome.i18n.getMessage('manage'),
         other: chrome.i18n.getMessage('other'),
+        disableGa: chrome.i18n.getMessage('disableGa'),
         rateExtension: chrome.i18n.getMessage('rateExtension'),
         rateExtensionDesc: chrome.i18n.getMessage('rateExtensionDesc'),
         browserNotSupportClipboard: chrome.i18n.getMessage('browserNotSupportClipboard')

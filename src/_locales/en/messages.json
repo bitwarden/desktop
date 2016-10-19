@@ -367,6 +367,10 @@
     "message": "Other",
     "description": "Other"
   },
+  "disableGa": {
+    "message": "Disable Google Analytics",
+    "description": "Disable Google Analytics"
+  },
   "rateExtension": {
     "message": "Rate the Extension",
     "description": "Rate the Extension"
