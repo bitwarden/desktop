@@ -103,20 +103,13 @@ function initUserService() {
         }
 
         var self = this;
-        self.cryptoService.getKey(false, function (key) {
-            if (!key) {
+        self.tokenService.getToken(function (token) {
+            if (!token) {
                 callback(false);
             }
             else {
-                self.tokenService.getToken(function (token) {
-                    if (!token) {
-                        callback(false);
-                    }
-                    else {
-                        self.getUserId(function (userId) {
-                            callback(userId !== null);
-                        });
-                    }
+                self.getUserId(function (userId) {
+                    callback(userId !== null);
                 });
             }
         });
@@ -128,20 +121,13 @@ function initUserService() {
         }
 
         var self = this;
-        self.cryptoService.getKey(false, function (key) {
-            if (!key) {
+        self.tokenService.getToken(function (token) {
+            if (!token) {
                 callback(false);
             }
             else {
-                self.tokenService.getToken(function (token) {
-                    if (!token) {
-                        callback(false);
-                    }
-                    else {
-                        self.getUserId(function (userId) {
-                            callback(userId === null);
-                        });
-                    }
+                self.getUserId(function (userId) {
+                    callback(userId === null);
                 });
             }
         });
