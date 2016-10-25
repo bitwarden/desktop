@@ -5,6 +5,31 @@
     <div class="list">
         <div class="list-section">
             <div class="list-section-header">
+                {{i18n.security}}
+            </div>
+            <div class="list-section-items">
+                <div class="list-section-item">
+                    <label for="lock-option" class="item-label">{{i18n.lockOptions}}</label>
+                    <select id="lock-option" name="LockOption" ng-model="lockOption" ng-change="changeLockOption()">
+                        <option value="0">{{i18n.immediately}}</option>
+                        <option value="1">{{i18n.oneMinute}}</option>
+                        <option value="5">{{i18n.fiveMinutes}}</option>
+                        <option value="15">{{i18n.fifteedMinutes}}</option>
+                        <option value="30">{{i18n.thirtyMinutes}}</option>
+                        <option value="60">{{i18n.oneHour}}</option>
+                        <option value="240">{{i18n.fourHours}}</option>
+                        <option value="-1">{{i18n.onRestart}}</option>
+                        <option value="">{{i18n.never}}</option>
+                    </select>
+                </div>
+                <a class="list-section-item" href="" ng-click="twoStep()">
+                    {{i18n.twoStepLogin}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-header">
                 {{i18n.account}}
             </div>
             <div class="list-section-items">
@@ -14,10 +39,6 @@
                 </a>
                 <a class="list-section-item" href="" ng-click="changeEmail()">
                     {{i18n.changeEmail}}
-                    <i class="fa fa-chevron-right fa-lg"></i>
-                </a>
-                <a class="list-section-item" href="" ng-click="twoStep()">
-                    {{i18n.twoStepLogin}}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
                 <a class="list-section-item" href="" ng-click="logOut()">

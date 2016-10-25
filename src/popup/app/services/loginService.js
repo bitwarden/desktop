@@ -19,17 +19,19 @@
 
                     tokenService.setToken(response.token, function () {
                         cryptoService.setKey(key, function () {
-                            if (response.profile) {
-                                userService.setUserId(response.profile.id, function () {
-                                    userService.setEmail(response.profile.email, function () {
-                                        chrome.runtime.sendMessage({ command: 'loggedIn' });
-                                        deferred.resolve(response);
+                            cryptoService.setKeyHash(hashedPassword, function () {
+                                if (response.profile) {
+                                    userService.setUserId(response.profile.id, function () {
+                                        userService.setEmail(response.profile.email, function () {
+                                            chrome.runtime.sendMessage({ command: 'loggedIn' });
+                                            deferred.resolve(response);
+                                        });
                                     });
-                                });
-                            }
-                            else {
-                                deferred.resolve(response);
-                            }
+                                }
+                                else {
+                                    deferred.resolve(response);
+                                }
+                            });
                         });
                     });
                 }, function (error) {
@@ -68,14 +70,16 @@
             userService.getUserId(function (userId) {
                 tokenService.clearToken(function () {
                     cryptoService.clearKey(function () {
-                        userService.clearUserId(function () {
-                            userService.clearEmail(function () {
-                                siteService.clear(userId, function () {
-                                    folderService.clear(userId, function () {
-                                        $rootScope.vaultSites = null;
-                                        $rootScope.vaultFolders = null;
-                                        chrome.runtime.sendMessage({ command: 'loggedOut' });
-                                        callback();
+                        cryptoService.clearKeyHash(function () {
+                            userService.clearUserId(function () {
+                                userService.clearEmail(function () {
+                                    siteService.clear(userId, function () {
+                                        folderService.clear(userId, function () {
+                                            $rootScope.vaultSites = null;
+                                            $rootScope.vaultFolders = null;
+                                            chrome.runtime.sendMessage({ command: 'loggedOut' });
+                                            callback();
+                                        });
                                     });
                                 });
                             });

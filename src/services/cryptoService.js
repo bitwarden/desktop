@@ -1,10 +1,13 @@
-function CryptoService() {
+function CryptoService(constantsService) {
+    this.constantsService = constantsService;
     initCryptoService();
 };
 
 function initCryptoService() {
     var _key,
         _b64Key,
+        _keyHash,
+        _b64KeyHash,
         _aes;
 
     sjcl.beware["CBC mode is dangerous because it doesn't protect message integrity."]();
@@ -14,9 +17,33 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
+        var self = this;
         _key = key;
+
+        chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
+            if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
+                // if we have a lock option set, we do not store the key
+                callback();
+                return;
+            }
+
+            chrome.storage.local.set({
+                'key': sjcl.codec.base64.fromBits(key)
+            }, function () {
+                callback();
+            });
+        });
+    }
+
+    CryptoService.prototype.setKeyHash = function (keyHash, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        _keyHash = sjcl.codec.base64.toBits(keyHash);
+
         chrome.storage.local.set({
-            'key': sjcl.codec.base64.fromBits(key)
+            'keyHash': keyHash
         }, function () {
             callback();
         });
@@ -28,23 +55,73 @@ function initCryptoService() {
         }
 
         if (b64 && b64 === true && _b64Key) {
-            return callback(_b64Key);
+            callback(_b64Key);
+            return;
         }
         else if (!b64 && _key) {
-            return callback(_key);
+            callback(_key);
+            return;
+        }
+        else if (b64 && b64 === true && _key && !_b64Key) {
+            _b64Key = sjcl.codec.base64.fromBits(_key);
+            callback(_b64Key);
+            return;
         }
 
-        chrome.storage.local.get('key', function (obj) {
-            if (obj && obj.key) {
-                _key = sjcl.codec.base64.toBits(obj.key);
+        var self = this;
+        chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
+            if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
+                // if we have a lock option set, we do not try to fetch the storage key since it should not even be there
+                callback(null);
+                return;
             }
 
-            if (b64 && b64 === true) {
-                _b64Key = sjcl.codec.base64.fromBits(_key);
-                return callback(_b64Key);
+            chrome.storage.local.get('key', function (obj) {
+                if (obj && obj.key) {
+                    _key = sjcl.codec.base64.toBits(obj.key);
+
+                    if (b64 && b64 === true) {
+                        _b64Key = obj.key;
+                        callback(_b64Key);
+                        return;
+                    }
+                }
+
+                callback(_key);
+            });
+        });
+    };
+
+    CryptoService.prototype.getKeyHash = function (b64, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        if (b64 && b64 === true && _b64KeyHash) {
+            callback(_b64KeyHash);
+        }
+        else if (!b64 && _keyHash) {
+            callback(_keyHash);
+            return;
+        }
+        else if (b64 && b64 === true && _keyHash && !_b64KeyHash) {
+            _b64KeyHash = sjcl.codec.base64.fromBits(_keyHash);
+            callback(_b64KeyHash);
+            return;
+        }
+
+        chrome.storage.local.get('keyHash', function (obj) {
+            if (obj && obj.keyHash) {
+                _keyHash = sjcl.codec.base64.toBits(obj.keyHash);
+
+                if (b64 && b64 === true) {
+                    _b64KeyHash = obj.keyHash;
+                    callback(_b64KeyHash);
+                    return;
+                }
             }
 
-            return callback(_key);
+            callback(_keyHash);
         });
     };
 
@@ -56,6 +133,44 @@ function initCryptoService() {
         _key = _b64Key = _aes = null;
         chrome.storage.local.remove('key', function () {
             callback();
+        });
+    };
+
+    CryptoService.prototype.clearKeyHash = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        _keyHash = _b64KeyHash = null;
+        chrome.storage.local.remove('keyHash', function () {
+            callback();
+        });
+    };
+
+    CryptoService.prototype.toggleKey = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        var self = this;
+        self.getKey(false, function (key) {
+            chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
+                if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
+                    // if we have a lock option set, clear the key
+                    self.clearKey(function () {
+                        _key = key;
+                        callback();
+                        return;
+                    });
+                }
+                else {
+                    // no lock option, so store the current key
+                    self.setKey(key, function () {
+                        callback();
+                        return;
+                    });
+                }
+            });
         });
     };
 

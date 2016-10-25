@@ -1,7 +1,8 @@
 var isBackground = true;
 var i18nService = new i18nService();
+var constantsService = new ConstantsService();
 var utilsService = new UtilsService();
-var cryptoService = new CryptoService();
+var cryptoService = new CryptoService(constantsService);
 var tokenService = new TokenService();
 var apiService = new ApiService(tokenService);
 var userService = new UserService(tokenService, apiService, cryptoService);

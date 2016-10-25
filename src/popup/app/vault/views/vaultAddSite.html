@@ -41,7 +41,7 @@
             <div class="list-section">
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <label for="folder" class="item-label">Folder</label>
+                        <label for="folder" class="item-label">{{i18n.folder}}</label>
                         <select id="folder" name="FolderId" ng-model="site.folderId">
                             <option ng-repeat="folder in folders | orderBy: ['name']" value="{{folder.id}}">
                                 {{folder.name}}

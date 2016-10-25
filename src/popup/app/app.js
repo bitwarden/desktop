@@ -14,5 +14,6 @@
         'bit.current',
         'bit.vault',
         'bit.settings',
-        'bit.tools'
+        'bit.tools',
+        'bit.lock'
     ]);

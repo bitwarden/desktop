@@ -163,27 +163,41 @@
                 controller: 'settingsEditFolderController',
                 data: { authorize: true },
                 params: { animation: null }
+            })
+            .state('lock', {
+                url: '/lock',
+                templateUrl: 'app/lock/views/lock.html',
+                controller: 'lockController',
+                data: { authorize: true },
+                params: { animation: null }
             });
     })
-    .run(function ($rootScope, userService, loginService, tokenService, $state) {
+    .run(function ($rootScope, userService, loginService, cryptoService, tokenService, $state) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
-            tokenService.getToken(function (token) {
-                userService.isAuthenticated(function (isAuthenticated) {
-                    if (!toState.data || !toState.data.authorize) {
-                        if (isAuthenticated && !tokenService.isTokenExpired(token)) {
-                            event.preventDefault();
-                            $state.go('tabs.current');
+            cryptoService.getKey(false, function (key) {
+                tokenService.getToken(function (token) {
+                    userService.isAuthenticated(function (isAuthenticated) {
+                        if (!toState.data || !toState.data.authorize) {
+                            if (isAuthenticated && !tokenService.isTokenExpired(token)) {
+                                event.preventDefault();
+                                if (!key) {
+                                    $state.go('lock');
+                                }
+                                else {
+                                    $state.go('tabs.current');
+                                }
+                            }
+
+                            return;
                         }
 
-                        return;
-                    }
-
-                    if (!isAuthenticated || tokenService.isTokenExpired(token)) {
-                        event.preventDefault();
-                        loginService.logOut(function () {
-                            $state.go('home');
-                        });
-                    }
+                        if (!isAuthenticated || tokenService.isTokenExpired(token)) {
+                            event.preventDefault();
+                            loginService.logOut(function () {
+                                $state.go('home');
+                            });
+                        }
+                    });
                 });
             });
         });

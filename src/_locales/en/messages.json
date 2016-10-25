@@ -382,5 +382,61 @@
   "browserNotSupportClipboard": {
     "message": "Your web browser does not support easy clipboard copying. Copy it manually instead.",
     "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword": {
+    "message": "Verify Master Password",
+    "description": "Verify Master Password"
+  },
+  "invalidMasterPassword": {
+    "message": "Invalid master password",
+    "description": "Invalid master password"
+  },
+  "errorsHaveOccurred": {
+    "message": "Invalid master password",
+    "description": "Invalid master password"
+  },
+  "lockOptions": {
+    "message": "Lock Options",
+    "description": "Lock Options"
+  },
+  "immediately": {
+    "message": "Immediately",
+    "description": "Immediately"
+  },
+  "oneMinute": {
+    "message": "1 minute",
+    "description": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "5 minutes",
+    "description": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "15 minutes",
+    "description": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "30 minutes",
+    "description": "30 minutes"
+  },
+  "oneHour": {
+    "message": "1 hour",
+    "description": "1 hour"
+  },
+  "fourHours": {
+    "message": "4 hours",
+    "description": "4 hours"
+  },
+  "onRestart": {
+    "message": "On Restart",
+    "description": "On Restart"
+  },
+  "never": {
+    "message": "Never",
+    "description": "Never"
+  },
+  "security": {
+    "message": "Security",
+    "description": "Security"
   }
 }

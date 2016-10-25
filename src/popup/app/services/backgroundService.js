@@ -39,4 +39,7 @@
     })
     .factory('i18nService', function () {
         return chrome.extension.getBackgroundPage().i18nService;
+    })
+    .factory('constantsService', function () {
+        return chrome.extension.getBackgroundPage().constantsService;
     });

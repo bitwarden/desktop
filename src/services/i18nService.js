@@ -1,5 +1,6 @@
 function i18nService() {
     return {
+        appName: chrome.i18n.getMessage('appName'),
         loginOrCreateNewAccount: chrome.i18n.getMessage('loginOrCreateNewAccount'),
         createAccount: chrome.i18n.getMessage('createAccount'),
         login: chrome.i18n.getMessage('login'),
@@ -91,6 +92,20 @@ function i18nService() {
         disableGa: chrome.i18n.getMessage('disableGa'),
         rateExtension: chrome.i18n.getMessage('rateExtension'),
         rateExtensionDesc: chrome.i18n.getMessage('rateExtensionDesc'),
-        browserNotSupportClipboard: chrome.i18n.getMessage('browserNotSupportClipboard')
+        browserNotSupportClipboard: chrome.i18n.getMessage('browserNotSupportClipboard'),
+        verifyMasterPassword: chrome.i18n.getMessage('verifyMasterPassword'),
+        invalidMasterPassword: chrome.i18n.getMessage('invalidMasterPassword'),
+        errorsHaveOccurred: chrome.i18n.getMessage('errorsHaveOccurred'),
+        lockOptions: chrome.i18n.getMessage('lockOptions'),
+        immediately: chrome.i18n.getMessage('immediately'),
+        oneMinute: chrome.i18n.getMessage('oneMinute'),
+        fiveMinutes: chrome.i18n.getMessage('fiveMinutes'),
+        fifteenMinutes: chrome.i18n.getMessage('fifteenMinutes'),
+        thirtyMinutes: chrome.i18n.getMessage('thirtyMinutes'),
+        oneHour: chrome.i18n.getMessage('oneHour'),
+        fourHours: chrome.i18n.getMessage('fourHours'),
+        onRestart: chrome.i18n.getMessage('onRestart'),
+        never: chrome.i18n.getMessage('never'),
+        security: chrome.i18n.getMessage('security')
     };
 };

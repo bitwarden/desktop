@@ -2,18 +2,41 @@
     .module('bit.settings')
 
     .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService, $analytics,
-        i18nService) {
-        var gaKey = 'disableGa';
-
+        i18nService, constantsService, cryptoService) {
         utilsService.initListSectionItemListeners($(document), angular);
         $scope.disableGa = false;
+        $scope.lockOption = '';
         $scope.i18n = i18nService;
 
-        chrome.storage.local.get(gaKey, function (obj) {
-            if (obj && obj[gaKey]) {
+        chrome.storage.local.get(constantsService.disableGaKey, function (obj) {
+            if (obj && obj[constantsService.disableGaKey]) {
                 $scope.disableGa = true;
             }
+            else {
+                $scope.disableGa = false;
+            }
         });
+
+        chrome.storage.local.get(constantsService.lockOptionKey, function (obj) {
+            if (obj && (obj[constantsService.lockOptionKey] || obj[constantsService.lockOptionKey] === 0)) {
+                $scope.lockOption = obj[constantsService.lockOptionKey].toString();
+            }
+            else {
+                $scope.lockOption = '';
+            }
+        });
+
+        $scope.changeLockOption = function () {
+            var obj = {};
+            obj[constantsService.lockOptionKey] = null;
+            if ($scope.lockOption && $scope.lockOption !== '') {
+                obj[constantsService.lockOptionKey] = parseInt($scope.lockOption);
+            }
+
+            chrome.storage.local.set(obj, function () {
+                cryptoService.toggleKey(function () { });
+            });
+        };
 
         $scope.logOut = function () {
             SweetAlert.swal({
@@ -82,20 +105,20 @@
         }
 
         $scope.updateGa = function () {
-            chrome.storage.local.get(gaKey, function (obj) {
-                if (obj[gaKey]) {
+            chrome.storage.local.get(constantsService.disableGaKey, function (obj) {
+                if (obj[constantsService.disableGaKey]) {
                     // enable
-                    obj[gaKey] = false;
+                    obj[constantsService.disableGaKey] = false;
                 }
                 else {
                     // disable
                     $analytics.eventTrack('Disabled Google Analytics');
-                    obj[gaKey] = true;
+                    obj[constantsService.disableGaKey] = true;
                 }
 
                 chrome.storage.local.set(obj, function () {
-                    $scope.disableGa = obj[gaKey];
-                    if (!obj[gaKey]) {
+                    $scope.disableGa = obj[constantsService.disableGaKey];
+                    if (!obj[constantsService.disableGaKey]) {
                         $analytics.eventTrack('Enabled Google Analytics');
                     }
                 });
