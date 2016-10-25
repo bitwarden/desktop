@@ -8,6 +8,10 @@ function SiteService(cryptoService, userService, apiService) {
 };
 
 function initSiteService() {
+    SiteService.prototype.clearCache = function () {
+        this.decryptedSiteCache = null
+    };
+
     SiteService.prototype.encrypt = function (site) {
         var model = {
             id: site.id,
@@ -79,25 +83,32 @@ function initSiteService() {
 
     SiteService.prototype.getAllDecrypted = function () {
         var deferred = Q.defer();
-
         var self = this;
-        if (self.decryptedSiteCache) {
-            deferred.resolve(self.decryptedSiteCache);
-            return deferred.promise;
-        }
 
-        var promises = [];
-        var decSites = [];
-        self.getAll(function (sites) {
-            for (var i = 0; i < sites.length; i++) {
-                promises.push(sites[i].decrypt().then(function (site) {
-                    decSites.push(site);
-                }));
+        cryptoService.getKey(false, function (key) {
+            if (!key) {
+                deferred.reject();
+                return deferred.promise;
             }
 
-            Q.all(promises).then(function () {
-                self.decryptedSiteCache = decSites;
+            if (self.decryptedSiteCache) {
                 deferred.resolve(self.decryptedSiteCache);
+                return deferred.promise;
+            }
+
+            var promises = [];
+            var decSites = [];
+            self.getAll(function (sites) {
+                for (var i = 0; i < sites.length; i++) {
+                    promises.push(sites[i].decrypt().then(function (site) {
+                        decSites.push(site);
+                    }));
+                }
+
+                Q.all(promises).then(function () {
+                    self.decryptedSiteCache = decSites;
+                    deferred.resolve(self.decryptedSiteCache);
+                });
             });
         });
 

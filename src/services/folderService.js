@@ -8,6 +8,10 @@ function FolderService(cryptoService, userService, apiService) {
 };
 
 function initFolderService() {
+    FolderService.prototype.clearCache = function () {
+        this.decryptedFolderCache = null
+    };
+
     FolderService.prototype.encrypt = function (folder) {
         var model = {
             id: folder.id
@@ -62,30 +66,37 @@ function initFolderService() {
 
     FolderService.prototype.getAllDecrypted = function () {
         var deferred = Q.defer();
-
         var self = this;
-        if (self.decryptedFolderCache) {
-            deferred.resolve(self.decryptedFolderCache);
-            return deferred.promise;
-        }
 
-        var promises = [];
-        var decFolders = [{
-            id: null,
-            name: '(none)'
-        }];
-        self.getAll(function (folders) {
-            for (var i = 0; i < folders.length; i++) {
-                promises.push(folders[i].decrypt().then(function (folder) {
-                    decFolders.push(folder);
-                }));
+        cryptoService.getKey(false, function (key) {
+            if (!key) {
+                deferred.reject();
+                return deferred.promise;
             }
 
-            Q.all(promises).then(function () {
-                if (decFolders.length > 0) {
-                    self.decryptedFolderCache = decFolders;
+            if (self.decryptedFolderCache) {
+                deferred.resolve(self.decryptedFolderCache);
+                return deferred.promise;
+            }
+
+            var promises = [];
+            var decFolders = [{
+                id: null,
+                name: '(none)'
+            }];
+            self.getAll(function (folders) {
+                for (var i = 0; i < folders.length; i++) {
+                    promises.push(folders[i].decrypt().then(function (folder) {
+                        decFolders.push(folder);
+                    }));
                 }
-                deferred.resolve(decFolders);
+
+                Q.all(promises).then(function () {
+                    if (decFolders.length > 0) {
+                        self.decryptedFolderCache = decFolders;
+                    }
+                    deferred.resolve(decFolders);
+                });
             });
         });
 

@@ -22,6 +22,7 @@ function i18nService() {
         copyUsername: chrome.i18n.getMessage('copyUsername'),
         autoFill: chrome.i18n.getMessage('autoFill'),
         generatePasswordCopied: chrome.i18n.getMessage('generatePasswordCopied'),
+        noMatchingSites: chrome.i18n.getMessage('noMatchingSites'),
         autoFillInfo: chrome.i18n.getMessage('autoFillInfo'),
         addSite: chrome.i18n.getMessage('addSite'),
         passwordHint: chrome.i18n.getMessage('passwordHint'),

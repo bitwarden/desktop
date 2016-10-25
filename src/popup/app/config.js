@@ -172,11 +172,17 @@
                 params: { animation: null }
             });
     })
-    .run(function ($rootScope, userService, loginService, cryptoService, tokenService, $state) {
+    .run(function ($rootScope, userService, loginService, cryptoService, tokenService, $state, constantsService) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
             cryptoService.getKey(false, function (key) {
                 tokenService.getToken(function (token) {
                     userService.isAuthenticated(function (isAuthenticated) {
+                        if (isAuthenticated) {
+                            var obj = {};
+                            obj[constantsService.lastActiveKey] = (new Date()).getTime();
+                            chrome.storage.local.set(obj, function () { });
+                        }
+
                         if (!toState.data || !toState.data.authorize) {
                             if (isAuthenticated && !tokenService.isTokenExpired(token)) {
                                 event.preventDefault();

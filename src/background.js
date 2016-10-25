@@ -188,6 +188,12 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
                 tabId: tabId
             });
         }
+    }, function () {
+        loadNoSitesContextMenuOptions();
+        chrome.browserAction.setBadgeText({
+            text: '',
+            tabId: tabId
+        });
     });
 }
 
@@ -236,6 +242,8 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                     return;
                 }
             }
+        }, function () {
+
         });
     }
 });
@@ -313,38 +321,13 @@ function sortSites(sites) {
     });
 }
 
-function buildContextMenuOptions(url) {
-    var tabDomain = tldjs.getDomain(url);
-    if (!tabDomain) {
-        return;
-    }
-
-    siteService.getAllDecrypted().then(function (sites) {
-        var count = 0;
-        if (sites && sites.length) {
-            sortSites(sites);
-            for (var i = 0; i < sites.length; i++) {
-                if (sites[i].domain && tabDomain === sites[i].domain) {
-                    count++;
-                    loadSiteContextMenuOptions(sites[i]);
-                }
-            }
-        }
-
-        if (!count) {
-            loadNoSitesContextMenuOptions();
-        }
-    });
-}
-
 function loadSiteContextMenuOptions(site) {
     var title = site.name + (site.username && site.username !== '' ? ' (' + site.username + ')' : '');
     loadContextMenuOptions(title, site.id, site);
 }
 
 function loadNoSitesContextMenuOptions() {
-    var title = 'No matching sites.';
-    loadContextMenuOptions(title, 'noop', null);
+    loadContextMenuOptions(i18nService.noMatchingSites, 'noop', null);
 }
 
 function loadContextMenuOptions(title, idSuffix, site) {
@@ -420,3 +403,46 @@ function fullSync(override) {
         }
     });
 }
+
+// Locking
+
+checkLock();
+setInterval(checkLock, 10 * 1000); // check every 10 seconds
+
+function checkLock() {
+    if (chrome.extension.getViews({ type: 'popup' }).length > 0) {
+        // popup is open, do not lock
+        return;
+    }
+
+    cryptoService.getKey(false, function (key) {
+        if (!key) {
+            // no key so no need to lock
+            return;
+        }
+
+        chrome.storage.local.get(constantsService.lockOptionKey, function (obj) {
+            if (obj && !obj[constantsService.lockOptionKey] && obj[constantsService.lockOptionKey] !== 0) {
+                // no lock option set
+                return;
+            }
+
+            chrome.storage.local.get(constantsService.lastActiveKey, function (obj2) {
+                if (obj2 && obj2[constantsService.lastActiveKey]) {
+                    var lastActive = obj2[constantsService.lastActiveKey];
+                    var diffSeconds = ((new Date()).getTime() - lastActive) / 1000;
+                    var lockOptionSeconds = parseInt(obj[constantsService.lockOptionKey]) * 60;
+
+                    if (diffSeconds >= lockOptionSeconds) {
+                        // need to lock now
+                        cryptoService.clearKey(function () {
+                            folderService.clearCache();
+                            siteService.clearCache();
+                            refreshBadgeAndMenu();
+                        });
+                    }
+                }
+            });
+        });
+    });
+};

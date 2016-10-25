@@ -1,6 +1,7 @@
 function ConstantsService() {
     return {
         disableGaKey: 'disableGa',
-        lockOptionKey: 'lockOption'
+        lockOptionKey: 'lockOption',
+        lastActiveKey: 'lastActive'
     };
 };
