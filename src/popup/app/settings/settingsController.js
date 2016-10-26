@@ -41,7 +41,7 @@
                     else {
                         SweetAlert.swal({
                             title: 'Logging out',
-                            text: 'You\'ve recently updated to v1.2.0. You must re-log in to change your lock options.' +
+                            text: 'You\'ve recently updated to v1.2.0. You must re-log in to change your lock options. ' +
                                 'Do you want to log out now?',
                             showCancelButton: true,
                             confirmButtonText: 'Yes',
