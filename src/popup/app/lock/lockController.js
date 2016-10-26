@@ -7,21 +7,19 @@
         $('#master-password').focus();
 
         $scope.logOut = function () {
-            loginService.logOut(function () {
-                SweetAlert.swal({
-                    title: 'Log Out',
-                    text: 'Are you sure you want to log out?',
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes',
-                    cancelButtonText: 'Cancel'
-                }, function (confirmed) {
-                    if (confirmed) {
-                        loginService.logOut(function () {
-                            $analytics.eventTrack('Logged Out');
-                            $state.go('home');
-                        });
-                    }
-                });
+            SweetAlert.swal({
+                title: 'Log Out',
+                text: 'Are you sure you want to log out?',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'Cancel'
+            }, function (confirmed) {
+                if (confirmed) {
+                    loginService.logOut(function () {
+                        $analytics.eventTrack('Logged Out');
+                        $state.go('home');
+                    });
+                }
             });
         };
 

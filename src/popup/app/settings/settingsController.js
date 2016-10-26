@@ -34,7 +34,29 @@
             }
 
             chrome.storage.local.set(obj, function () {
-                cryptoService.toggleKey(function () { });
+                cryptoService.getKeyHash(false, function (keyHash) {
+                    if (keyHash) {
+                        cryptoService.toggleKey(function () { });
+                    }
+                    else {
+                        SweetAlert.swal({
+                            title: 'Logging out',
+                            text: 'You\'ve recently updated to v1.2.0. You must re-log in to change your lock options.' +
+                                'Do you want to log out now?',
+                            showCancelButton: true,
+                            confirmButtonText: 'Yes',
+                            cancelButtonText: 'Cancel'
+                        }, function (confirmed) {
+                            if (confirmed) {
+                                cryptoService.toggleKey(function () { });
+                                loginService.logOut(function () {
+                                    $analytics.eventTrack('Logged Out');
+                                    $state.go('home');
+                                });
+                            }
+                        });
+                    }
+                });
             });
         };
 
