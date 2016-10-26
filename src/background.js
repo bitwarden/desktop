@@ -26,12 +26,23 @@ chrome.commands.onCommand.addListener(function (command) {
     }
 });
 
+var loadMenuRan = false;
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.command === 'loggedOut' || msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
+        if (loadMenuRan) {
+            return;
+        }
+        loadMenuRan = true;
+
         setIcon();
         refreshBadgeAndMenu();
     }
     else if (msg.command === 'syncCompleted' && msg.successfully) {
+        if (loadMenuRan) {
+            return;
+        }
+        loadMenuRan = true;
+
         setTimeout(refreshBadgeAndMenu, 2000);
     }
     else if (msg.command === 'bgOpenOverlayPopup') {
@@ -148,7 +159,7 @@ function refreshBadgeAndMenu() {
 
         buildContextMenu(function () {
             loadMenuAndUpdateBadge(tab.url, tab.id, true);
-            onUpdatedRan = onReplacedRan = false;
+            onUpdatedRan = onReplacedRan = loadMenuRan = false;
         });
     });
 }
@@ -431,7 +442,8 @@ function checkLock() {
         }
 
         chrome.storage.local.get(constantsService.lockOptionKey, function (obj) {
-            if (obj && !obj[constantsService.lockOptionKey] && obj[constantsService.lockOptionKey] !== 0) {
+            if (obj && ((!obj[constantsService.lockOptionKey] && obj[constantsService.lockOptionKey] !== 0) ||
+                obj[constantsService.lockOptionKey] === -1)) {
                 // no lock option set
                 return;
             }
