@@ -72,48 +72,65 @@ if (chrome.runtime.onInstalled) {
     });
 }
 
-function buildContextMenu() {
-    chrome.contextMenus.removeAll();
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'autofill',
-        contexts: ['all'],
-        title: i18nService.autoFill
-    });
+function buildContextMenu(callback) {
+    chrome.contextMenus.removeAll(function () {
+        chrome.contextMenus.create({
+            type: 'normal',
+            id: 'autofill',
+            contexts: ['all'],
+            title: i18nService.autoFill
+        }, function () {
+            chrome.contextMenus.create({
+                type: 'normal',
+                id: 'copy-username',
+                contexts: ['all'],
+                title: i18nService.copyUsername
+            }, function () {
+                chrome.contextMenus.create({
+                    type: 'normal',
+                    id: 'copy-password',
+                    contexts: ['all'],
+                    title: i18nService.copyPassword
+                }, function () {
+                    chrome.contextMenus.create({
+                        type: 'separator'
+                    });
 
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'copy-username',
-        contexts: ['all'],
-        title: i18nService.copyUsername
-    });
-
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'copy-password',
-        contexts: ['all'],
-        title: i18nService.copyPassword
-    });
-
-    chrome.contextMenus.create({
-        type: 'separator'
-    });
-
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'generate-password',
-        contexts: ['all'],
-        title: i18nService.generatePasswordCopied
+                    chrome.contextMenus.create({
+                        type: 'normal',
+                        id: 'generate-password',
+                        contexts: ['all'],
+                        title: i18nService.generatePasswordCopied
+                    }, function () {
+                        if (callback) {
+                            callback();
+                        }
+                    });
+                });
+            });
+        });
     });
 }
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {
-    buildContextMenu();
     refreshBadgeAndMenu();
 });
 
-var loadedMenu = false;
+var onReplacedRan = false;
 chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
+    if (onReplacedRan) {
+        return;
+    }
+    onReplacedRan = true;
+    refreshBadgeAndMenu();
+});
+
+var onUpdatedRan = false;
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    if (onUpdatedRan) {
+        return;
+    }
+    onUpdatedRan = true;
     refreshBadgeAndMenu();
 });
 
@@ -128,18 +145,14 @@ function refreshBadgeAndMenu() {
             return;
         }
 
-        buildContextMenu();
-        loadMenuAndUpdateBadge(tab.url, tab.id, true);
+        buildContextMenu(function () {
+            loadMenuAndUpdateBadge(tab.url, tab.id, true);
+            onUpdatedRan = onReplacedRan = false;
+        });
     });
 }
 
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    buildContextMenu();
-    loadMenuAndUpdateBadge(tab.url, tabId, true);
-});
-
 function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
-    loadedMenu = false;
     if (!url) {
         return;
     }
@@ -153,11 +166,6 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
     chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
 
     siteService.getAllDecrypted().then(function (sites) {
-        if (loadedMenu) {
-            return;
-        }
-        loadedMenu = true;
-
         sortSites(sites);
         for (var i = 0; i < sites.length; i++) {
             if (sites[i].domain && tabDomain === sites[i].domain) {

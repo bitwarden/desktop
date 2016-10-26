@@ -71,12 +71,12 @@ function initFolderService() {
         cryptoService.getKey(false, function (key) {
             if (!key) {
                 deferred.reject();
-                return deferred.promise;
+                return;
             }
 
             if (self.decryptedFolderCache) {
                 deferred.resolve(self.decryptedFolderCache);
-                return deferred.promise;
+                return;
             }
 
             var promises = [];

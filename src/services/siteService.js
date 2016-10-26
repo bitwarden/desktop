@@ -88,12 +88,12 @@ function initSiteService() {
         cryptoService.getKey(false, function (key) {
             if (!key) {
                 deferred.reject();
-                return deferred.promise;
+                return;
             }
 
             if (self.decryptedSiteCache) {
                 deferred.resolve(self.decryptedSiteCache);
-                return deferred.promise;
+                return;
             }
 
             var promises = [];
