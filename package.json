@@ -31,6 +31,7 @@
     "angulartics-google-analytics": "0.2.1",
     "tldjs": "1.7.0",
     "browserify": "13.1.0",
-    "vinyl-source-stream": "1.1.0"
+    "vinyl-source-stream": "1.1.0",
+    "gulp-google-webfonts": "0.0.14"
   }
 }

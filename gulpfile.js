@@ -8,7 +8,8 @@
     jshint = require('gulp-jshint'),
     merge = require('merge-stream'),
     browserify = require('browserify'),
-    source = require('vinyl-source-stream');
+    source = require('vinyl-source-stream'),
+    googleWebFonts = require('gulp-google-webfonts');
 
 var paths = {};
 paths.dist = './dist/';
@@ -17,6 +18,7 @@ paths.npmDir = './node_modules/';
 paths.popupDir = './src/popup/';
 paths.lessDir = paths.popupDir + 'less/';
 paths.cssDir = paths.popupDir + 'css/';
+paths.webfontsDir = './src/webfonts/';
 
 gulp.task('lint', function () {
     return gulp.src(paths.popupDir + 'app/**/*.js')
@@ -27,7 +29,7 @@ gulp.task('lint', function () {
 gulp.task('build', function (cb) {
     return runSequence(
         'clean',
-        ['browserify', 'lib', 'less', 'lint'],
+        ['browserify', 'lib', 'less', 'lint', 'webfonts'],
         cb);
 });
 
@@ -39,7 +41,11 @@ gulp.task('clean:lib', function (cb) {
     return rimraf(paths.libDir, cb);
 });
 
-gulp.task('clean', ['clean:css', 'clean:lib']);
+gulp.task('clean:fonts', function (cb) {
+    return rimraf(paths.webfontsDir, cb);
+});
+
+gulp.task('clean', ['clean:css', 'clean:lib', 'clean:fonts']);
 
 gulp.task('lib', ['clean:lib'], function () {
     var libs = [
@@ -167,4 +173,11 @@ gulp.task('dist', ['build'], function (cb) {
         'dist:clean',
         'dist:move',
         cb);
+});
+
+gulp.task('webfonts', function () {
+    return gulp.src('./webfonts.list')
+        .pipe(googleWebFonts({}))
+        .pipe(gulp.dest(paths.webfontsDir))
+    ;
 });
