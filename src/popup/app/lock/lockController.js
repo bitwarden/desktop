@@ -32,6 +32,7 @@
                     cryptoService.getKeyHash(true, function (storedKeyHash) {
                         if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
                             cryptoService.setKey(key, function () {
+                                chrome.runtime.sendMessage({ command: 'unlocked' });
                                 $state.go('tabs.current');
                             });
                         }

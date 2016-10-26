@@ -27,12 +27,9 @@ chrome.commands.onCommand.addListener(function (command) {
 });
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-    if (msg.command === 'loggedOut') {
-        setIcon(true);
+    if (msg.command === 'loggedOut' || msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
+        setIcon();
         refreshBadgeAndMenu();
-    }
-    else if (msg.command === 'loggedIn') {
-        setIcon(false);
     }
     else if (msg.command === 'syncCompleted' && msg.successfully) {
         setTimeout(refreshBadgeAndMenu, 2000);
@@ -45,21 +42,25 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     }
 });
 
-userService.isAuthenticated(function (isAuthenticated) {
-    setIcon(!isAuthenticated);
-});
+setIcon();
+function setIcon() {
+    userService.isAuthenticated(function (isAuthenticated) {
+        cryptoService.getKey(false, function (key) {
+            var suffix = '';
+            if (!isAuthenticated) {
+                suffix = '_gray';
+            }
+            else if (!key) {
+                suffix = '_locked';
+            }
 
-function setIcon(grayedOut) {
-    var suffix = '';
-    if (grayedOut) {
-        suffix = '_gray';
-    }
-
-    chrome.browserAction.setIcon({
-        path: {
-            '19': 'images/icon19' + suffix + '.png',
-            '38': 'images/icon38' + suffix + '.png',
-        }
+            chrome.browserAction.setIcon({
+                path: {
+                    '19': 'images/icon19' + suffix + '.png',
+                    '38': 'images/icon38' + suffix + '.png',
+                }
+            });
+        });
     });
 }
 
@@ -190,14 +191,14 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
             });
         }
         else {
-            loadNoSitesContextMenuOptions();
+            loadNoSitesContextMenuOptions(i18nService.noMatchingSites);
             chrome.browserAction.setBadgeText({
                 text: '',
                 tabId: tabId
             });
         }
     }, function () {
-        loadNoSitesContextMenuOptions();
+        loadNoSitesContextMenuOptions(i18nService.vaultLocked);
         chrome.browserAction.setBadgeText({
             text: '',
             tabId: tabId
@@ -334,8 +335,8 @@ function loadSiteContextMenuOptions(site) {
     loadContextMenuOptions(title, site.id, site);
 }
 
-function loadNoSitesContextMenuOptions() {
-    loadContextMenuOptions(i18nService.noMatchingSites, 'noop', null);
+function loadNoSitesContextMenuOptions(noSitesMessage) {
+    loadContextMenuOptions(noSitesMessage, 'noop', null);
 }
 
 function loadContextMenuOptions(title, idSuffix, site) {
@@ -444,6 +445,7 @@ function checkLock() {
                     if (diffSeconds >= lockOptionSeconds) {
                         // need to lock now
                         cryptoService.clearKey(function () {
+                            setIcon();
                             folderService.clearCache();
                             siteService.clearCache();
                             refreshBadgeAndMenu();

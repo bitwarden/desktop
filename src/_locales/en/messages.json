@@ -103,6 +103,10 @@
     "message": "No matching sites.",
     "description": "No matching sites."
   },
+  "vaultLocked": {
+    "message": "Vault is locked.",
+    "description": "Vault is locked."
+  },
   "autoFillInfo": {
     "message": "There are no sites available to auto-fill for the current browser tab.",
     "description": "There are no sites available to auto-fill for the current browser tab."
