@@ -19,7 +19,7 @@
                        class="list-grouped-item condensed" title="{{i18n.edit}} {{site.name}}"
                        ng-repeat="site in folderSites = (vaultSites | filter: { folderId: folder.id }
                             | filter: searchSites() | orderBy: ['name', 'username'])">
-                        <span class="btn-list" ng-click="$event.stopPropagation()" title="Copy Password" ngclipboard
+                        <span class="btn-list" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}" ngclipboard
                               ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, 'Password')"
                               data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
                             <i class="fa fa-lg fa-key"></i>

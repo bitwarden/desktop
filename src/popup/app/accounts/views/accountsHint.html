@@ -1,7 +1,7 @@
 ﻿<form name="theForm" ng-submit="submit(model)" bit-form="submitPromise">
     <div class="header">
         <div class="left">
-            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> Log In</a>
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
         </div>
         <div class="right">
             <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{i18n.submit}}</button>
