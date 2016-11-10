@@ -417,15 +417,15 @@
   },
   "fiveMinutes": {
     "message": "5 分钟",
-    "description": "5 minute"
+    "description": "5 minutes"
   },
   "fifteenMinutes": {
     "message": "15 分钟",
-    "description": "15 minute"
+    "description": "15 minutes"
   },
   "thirtyMinutes": {
     "message": "30 分钟",
-    "description": "30 minute"
+    "description": "30 minutes"
   },
   "oneHour": {
     "message": "1 小时",
@@ -433,7 +433,7 @@
   },
   "fourHours": {
     "message": "4 小时",
-    "description": "4 hour"
+    "description": "4 hours"
   },
   "onRestart": {
     "message": "重启时",
