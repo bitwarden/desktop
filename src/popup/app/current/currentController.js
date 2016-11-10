@@ -92,6 +92,16 @@ angular
             }
         };
 
+        $scope.viewSite = function (site, e) {
+            e.stopPropagation();
+
+            $state.go('viewSite', {
+                siteId: site.id,
+                animation: 'in-slide-up',
+                fromCurrent: true
+            });
+        };
+
         $scope.$on('syncCompleted', function (event, successfully) {
             if ($scope.loaded) {
                 setTimeout(loadVault, 500);

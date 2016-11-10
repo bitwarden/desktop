@@ -22,6 +22,10 @@
                           data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </span>
+                    <span class="btn-list" href="" ng-click="viewSite(site, $event) && $event.stopPropagation()"
+                          title="{{i18n.edit}} {{site.name}}">
+                        <i class="fa fa-lg fa-pencil"></i>
+                    </span>
                     <span class="text">{{site.name}}</span>
                     <span class="detail">{{site.username}}</span>
                 </a>

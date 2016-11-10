@@ -6,6 +6,7 @@ angular
         $scope.i18n = i18nService;
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
+        var fromCurrent = $stateParams.fromCurrent;
 
         $scope.site = null;
         siteService.get($stateParams.siteId, function (site) {
@@ -47,16 +48,24 @@ angular
                 siteId: site.id,
                 fromView: true,
                 returnScrollY: returnScrollY || 0,
-                returnSearchText: returnSearchText
+                returnSearchText: returnSearchText,
+                fromCurrent: fromCurrent
             });
         };
 
         $scope.close = function () {
-            $state.go('tabs.vault', {
-                animation: 'out-slide-down',
-                scrollY: returnScrollY || 0,
-                searchText: returnSearchText
-            });
+            if (fromCurrent) {
+                $state.go('tabs.current', {
+                    animation: 'out-slide-down'
+                });
+            }
+            else {
+                $state.go('tabs.vault', {
+                    animation: 'out-slide-down',
+                    scrollY: returnScrollY || 0,
+                    searchText: returnSearchText
+                });
+            }
         };
 
         $scope.launchWebsite = function (site) {
