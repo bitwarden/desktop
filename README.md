@@ -6,11 +6,7 @@
 
 The bitwarden browser extension is written using the Chrome Web Extension API and AngularJS.
 
-# Screenshots
-
-![Alt text](http://i.imgur.com/5b16EPi.png "Current tab") ![Alt text](http://i.imgur.com/trvIC6g.png "Settings")
-
-![Alt text](http://i.imgur.com/FAfRFuC.png "My Vault") ![Alt text](http://i.imgur.com/FiESP2Z.png "Tools")
+![Alt text](http://imgur.com/C9p87nk.png "My Vault")
 
 # Contribute
 
