@@ -25,7 +25,7 @@ function initAutofill() {
             username = null;
 
         for (var i = 0; i < pageDetails.fields.length; i++) {
-            if (pageDetails.fields[i].type === 'password') {
+            if (pageDetails.fields[i].type === 'password' && pageDetails.fields[i].viewable) {
                 passwordFields.push(pageDetails.fields[i]);
             }
         }
@@ -45,7 +45,7 @@ function initAutofill() {
                 if (fillUsername) {
                     for (var j = 0; j < pageDetails.fields.length; j++) {
                         f = pageDetails.fields[j];
-                        if (f.form === pf.form && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
+                        if (f.form === pf.form && f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
                             && f.elementNumber < pf.elementNumber) {
                             username = f;
                         }
@@ -73,7 +73,7 @@ function initAutofill() {
                         break;
                     }
 
-                    if (f.type === 'text' || f.type === 'email' || f.type === 'tel') {
+                    if (f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
                         username = f;
                     }
                 }
