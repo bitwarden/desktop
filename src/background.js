@@ -81,6 +81,10 @@ if (chrome.runtime.onInstalled) {
             hitType: 'event',
             eventAction: 'onInstalled ' + details.reason
         });
+
+        if (details.reason === 'install') {
+            chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' }, function (tab) { });
+        }
     });
 }
 
