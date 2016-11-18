@@ -59,10 +59,6 @@
     "message": "主密码提示 (可选)",
     "description": "Master Password Hint (optional)"
   },
-  "masterPassHintDecs": {
-    "message": "主密码提示可以在你忘记密码时帮你回忆。",
-    "description": "A master password hint can help you remember your password if you forget it."
-  },
   "tab": {
     "message": "标签",
     "description": "Tab"

@@ -1,8 +1,8 @@
-# Nom
+# Name
 
 bitwarden – Gestionnaire de mots de passe gratuit
 
-# Résumé
+# Summary
 
 Un gestionnaire de mots de passe sécurisé et gratuit pour tous vos appareils
 

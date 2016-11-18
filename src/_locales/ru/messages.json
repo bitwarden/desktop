@@ -55,10 +55,6 @@
     "message": "Подсказка к мастер-паролю (необяз.)",
     "description": "Master Password Hint (optional)"
   },
-  "masterPassHintDecs": {
-    "message": "Подсказка к мастер-паролю может помочь Вам вспомнить Ваш мастер-пароль, если Вы забыли его.",
-    "description": "A master password hint can help you remember your password if you forget it."
-  },
   "tab": {
     "message": "Вкладка",
     "description": "Tab"

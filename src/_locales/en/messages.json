@@ -59,10 +59,6 @@
     "message": "Master Password Hint (optional)",
     "description": "Master Password Hint (optional)"
   },
-  "masterPassHintDecs": {
-    "message": "A master password hint can help you remember your password if you forget it.",
-    "description": "A master password hint can help you remember your password if you forget it."
-  },
   "tab": {
     "message": "Tab",
     "description": "Tab"
