@@ -21,4 +21,9 @@
                 $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
             });
         };
+
+        $scope.lostApp = function () {
+            $analytics.eventTrack('Selected Lost 2FA App');
+            chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/recover' });
+        };
     });

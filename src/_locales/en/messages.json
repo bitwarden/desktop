@@ -602,5 +602,9 @@
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?",
     "description": "Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp": {
+    "message": "Lost authenticator app?",
+    "description": "Lost authenticator app?"
   }
 }
