@@ -58,8 +58,8 @@ angular
 
         $scope.clipboardSuccess = function (e, type) {
             e.clearSelection();
-            toastr.info(type + ' copied!');
-            $analytics.eventTrack('Copied ' + type);
+            toastr.info(type + i18nService.valueCopied);
+            $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
         };
 
         $scope.addSite = function () {
@@ -87,8 +87,7 @@ angular
             }
             else {
                 $analytics.eventTrack('Autofilled Error');
-                toastr.error('Unable to auto-fill the selected site on this page. ' +
-                    'Copy/paste your username and/or password instead.');
+                toastr.error(i18nService.autofillError);
             }
         };
 

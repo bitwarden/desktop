@@ -11,7 +11,7 @@
         $scope.loginPromise = null;
         $scope.login = function (model) {
             if (!model.code) {
-                toastr.error('Verification code is required.', 'Errors have occurred');
+                toastr.error(i18nService.verificationCodeRequired, i18nService.errorsOccurred);
                 return;
             }
 

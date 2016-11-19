@@ -81,8 +81,8 @@ angular
 
         $scope.clipboardSuccess = function (e, type) {
             e.clearSelection();
-            $analytics.eventTrack('Copied ' + type);
-            toastr.info(type + ' copied!');
+            $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
+            toastr.info(type + i18nService.valueCopied);
         };
 
         $scope.showPassword = false;

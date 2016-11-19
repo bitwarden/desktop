@@ -12,11 +12,11 @@
         $scope.submitPromise = null;
         $scope.submit = function (model) {
             if (!model.email) {
-                toastr.error('Email address is required.', 'Errors have occurred');
+                toastr.error(i18nService.emailRequired, i18nService.errorsOccurred);
                 return;
             }
             if (model.email.indexOf('@') === -1) {
-                toastr.error('Invalid email address.', 'Errors have occurred');
+                toastr.error(i18nService.invalidEmail, i18nService.errorsOccurred);
                 return;
             }
 
@@ -24,7 +24,7 @@
             $scope.submitPromise = hintPromise(request);
             $scope.submitPromise.then(function () {
                 $analytics.eventTrack('Requested Hint');
-                toastr.success('We\'ve sent you an email with your master password hint.');
+                toastr.success(i18nService.masterPassSent);
                 $state.go('login');
             });
         };

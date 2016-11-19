@@ -1,7 +1,7 @@
 angular
     .module('bit.global')
 
-    .controller('mainController', function ($scope, $state, loginService, toastr) {
+    .controller('mainController', function ($scope, $state, loginService, toastr, i18nService) {
         var self = this;
         self.currentYear = new Date().getFullYear();
         self.animation = '';
@@ -25,7 +25,7 @@ angular
             }
             else if (msg.command === 'logout') {
                 loginService.logOut(function () {
-                    toastr.warning('Your login session has expired.', 'Logged out');
+                    toastr.warning(i18nService.loginExpired, i18nService.loggedOut);
                     $state.go('home');
                 });
             }

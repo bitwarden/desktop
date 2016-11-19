@@ -12,7 +12,7 @@
             syncService.fullSync(function () {
                 $analytics.eventTrack('Synced Full');
                 $scope.loading = false;
-                toastr.success('Syncing complete');
+                toastr.success(i18nService.syncingComplete);
                 setLastSync();
             });
         };
@@ -23,7 +23,7 @@
                     $scope.lastSync = lastSync.toLocaleDateString() + ' ' + lastSync.toLocaleTimeString();
                 }
                 else {
-                    $scope.lastSync = 'Never';
+                    $scope.lastSync = i18nService.never;
                 }
             });
         }

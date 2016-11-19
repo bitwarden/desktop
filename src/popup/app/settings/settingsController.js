@@ -40,12 +40,11 @@
                     }
                     else {
                         SweetAlert.swal({
-                            title: 'Logging out',
-                            text: 'You\'ve recently updated to v1.2.0. You must re-log in to change your lock options. ' +
-                                'Do you want to log out now?',
+                            title: i18nService.loggingOut,
+                            text: i18nService.loggingOutConfirmation,
                             showCancelButton: true,
-                            confirmButtonText: 'Yes',
-                            cancelButtonText: 'Cancel'
+                            confirmButtonText: i18nService.yes,
+                            cancelButtonText: i18nService.cancel
                         }, function (confirmed) {
                             if (confirmed) {
                                 cryptoService.toggleKey(function () { });
@@ -62,11 +61,11 @@
 
         $scope.logOut = function () {
             SweetAlert.swal({
-                title: 'Log Out',
-                text: 'Are you sure you want to log out?',
+                title: i18nService.logOut,
+                text: i18nService.logOutConfirmation,
                 showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'Cancel'
+                confirmButtonText: i18nService.yes,
+                cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 if (confirmed) {
                     loginService.logOut(function () {
@@ -79,12 +78,11 @@
 
         $scope.changePassword = function () {
             SweetAlert.swal({
-                title: 'Change Master Password',
-                text: 'You can change your master password on the bitwarden.com web vault. Do you want to visit the ' +
-                      'website now?',
+                title: i18nService.changeMasterPassword,
+                text: i18nService.changeMasterPasswordConfirmation,
                 showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'Cancel'
+                confirmButtonText: i18nService.yes,
+                cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 $analytics.eventTrack('Clicked Change Password');
                 alertCallback(confirmed);
@@ -93,12 +91,11 @@
 
         $scope.changeEmail = function () {
             SweetAlert.swal({
-                title: 'Change Email',
-                text: 'You can change your email address on the bitwarden.com web vault. Do you want to visit the ' +
-                      'website now?',
+                title: i18nService.changeEmail,
+                text: i18nService.changeEmailConfirmation,
                 showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'Cancel'
+                confirmButtonText: i18nService.yes,
+                cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 $analytics.eventTrack('Clicked Change Email');
                 alertCallback(confirmed);
@@ -107,13 +104,11 @@
 
         $scope.twoStep = function () {
             SweetAlert.swal({
-                title: 'Two-step Login',
-                text: 'Two-step login makes your account more secure by requiring you to enter a security code from an ' +
-                      'authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. ' +
-                      'Do you want to visit the website now?',
+                title: i18nService.twoStepLogin,
+                text: i18nService.twoStepLoginConfirmation,
                 showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'Cancel'
+                confirmButtonText: i18nService.yes,
+                cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 $analytics.eventTrack('Clicked Two-step Login');
                 alertCallback(confirmed);

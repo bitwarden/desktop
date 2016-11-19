@@ -12,13 +12,13 @@
                    title="Auto-fill {{site.name}}" ng-repeat="site in theSites = (sites | orderBy: ['name', 'username'])">
                     <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
-                          ngclipboard-success="clipboardSuccess(e, 'Password')"
+                          ngclipboard-success="clipboardSuccess(e, i18n.password)"
                           data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
                         <i class="fa fa-lg fa-key"></i>
                     </span>
                     <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyUsername}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
-                          ngclipboard-success="clipboardSuccess(e, 'Username')"
+                          ngclipboard-success="clipboardSuccess(e, i18n.username)"
                           data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </span>

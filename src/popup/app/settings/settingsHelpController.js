@@ -13,6 +13,11 @@
             chrome.tabs.create({ url: 'https://bitwarden.com/contact/' });
         };
 
+        $scope.tutorial = function () {
+            $analytics.eventTrack('Selected Help Tutorial');
+            chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
+        };
+
         $scope.bug = function () {
             $analytics.eventTrack('Selected Help Bug Report');
             chrome.tabs.create({ url: 'https://github.com/bitwarden/browser' });

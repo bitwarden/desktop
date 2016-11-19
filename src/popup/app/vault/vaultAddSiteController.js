@@ -33,7 +33,7 @@
         $scope.savePromise = null;
         $scope.save = function (model) {
             if (!model.name) {
-                toastr.error('Name is required.', 'Errors have occurred');
+                toastr.error(i18nService.nameRequired, i18nService.errorsOccurred);
                 return;
             }
 
@@ -41,7 +41,7 @@
                 var site = new Site(siteModel, true);
                 return $q.when(siteService.saveWithServer(site)).then(function (site) {
                     $analytics.eventTrack('Added Site');
-                    toastr.success('Added site');
+                    toastr.success(i18nService.addedSite);
                     $scope.close();
                 });
             });

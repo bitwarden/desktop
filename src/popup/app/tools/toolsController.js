@@ -17,11 +17,11 @@
 
         $scope.launchImport = function () {
             SweetAlert.swal({
-                title: 'Import Logins',
-                text: 'You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?',
+                title: i18nService.importLogins,
+                text: i18nService.importLoginsConfirmation,
                 showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'Cancel'
+                confirmButtonText: i18nService.yes,
+                cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 if (confirmed) {
                     chrome.tabs.create({ url: 'https://vault.bitwarden.com' });

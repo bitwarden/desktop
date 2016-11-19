@@ -20,15 +20,15 @@
         $scope.loginPromise = null;
         $scope.login = function (model) {
             if (!model.email) {
-                toastr.error('Email address is required.', 'Errors have occurred');
+                toastr.error(i18nService.emailRequired, i18nService.errorsOccurred);
                 return;
             }
             if (model.email.indexOf('@') === -1) {
-                toastr.error('Invalid email address.', 'Errors have occurred');
+                toastr.error(i18nService.invalidEmail, i18nService.errorsOccurred);
                 return;
             }
             if (!model.masterPassword) {
-                toastr.error('Master password is required.', 'Errors have occurred');
+                toastr.error(i18nService.masterPassRequired, i18nService.errorsOccurred);
                 return;
             }
 

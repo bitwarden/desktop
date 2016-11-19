@@ -1,11 +1,11 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('validationService', function (toastr) {
+    .factory('validationService', function (toastr, i18nService) {
         var _service = {};
 
         _service.showError = function (data) {
-            var defaultErrorMessage = 'An unexpected error has occured.';
+            var defaultErrorMessage = i18nService.unexpectedError;
             var errors = [];
 
             if (!data || !angular.isObject(data)) {
@@ -32,7 +32,7 @@
             }
 
             if (errors.length) {
-                toastr.error(errors[0], 'Errors have occurred');
+                toastr.error(errors[0], i18nService.errorsOccurred);
             }
 
             return errors;

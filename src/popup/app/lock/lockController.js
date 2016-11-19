@@ -8,11 +8,11 @@
 
         $scope.logOut = function () {
             SweetAlert.swal({
-                title: 'Log Out',
-                text: 'Are you sure you want to log out?',
+                title: i18nService.logOut,
+                text: i18nService.logOutConfirmation,
                 showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'Cancel'
+                confirmButtonText: i18nService.yes,
+                cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 if (confirmed) {
                     loginService.logOut(function () {

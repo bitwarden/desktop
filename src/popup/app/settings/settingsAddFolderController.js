@@ -11,7 +11,7 @@ angular
         $scope.savePromise = null;
         $scope.save = function (model) {
             if (!model.name) {
-                toastr.error('Name is required.', 'Errors have occurred');
+                toastr.error(i18nService.nameRequired, i18nService.errorsOccurred);
                 return;
             }
 
@@ -19,7 +19,7 @@ angular
                 var folder = new Folder(folderModel, true);
                 return $q.when(folderService.saveWithServer(folder)).then(function (folder) {
                     $analytics.eventTrack('Added Folder');
-                    toastr.success('Added folder');
+                    toastr.success(i18nService.addedFolder);
                     $state.go('folders', { animation: 'out-slide-down' });
                 });
             });

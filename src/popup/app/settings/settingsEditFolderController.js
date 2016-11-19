@@ -18,7 +18,7 @@
         $scope.savePromise = null;
         $scope.save = function (model) {
             if (!model.name) {
-                toastr.error('Name is required.', 'Errors have occurred');
+                toastr.error(i18nService.nameRequired, i18nService.errorsOccurred);
                 return;
             }
 
@@ -26,7 +26,7 @@
                 var folder = new Folder(folderModel, true);
                 return $q.when(folderService.saveWithServer(folder)).then(function (folder) {
                     $analytics.eventTrack('Edited Folder');
-                    toastr.success('Edited folder');
+                    toastr.success(i18nService.editedFolder);
                     $state.go('folders', { animation: 'out-slide-down' });
                 });
             });
@@ -34,16 +34,16 @@
 
         $scope.delete = function () {
             SweetAlert.swal({
-                title: 'Delete Folder',
-                text: 'Are you sure you want to delete this folder?',
+                title: i18nService.deleteFolder,
+                text: i18nService.deleteFolderConfirmation,
                 showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'No'
+                confirmButtonText: i18nService.yes,
+                cancelButtonText: i18nService.no
             }, function (confirmed) {
                 if (confirmed) {
                     $q.when(folderService.deleteWithServer(folderId)).then(function () {
                         $analytics.eventTrack('Deleted Folder');
-                        toastr.success('Deleted folder');
+                        toastr.success(i18nService.deletedFolder);
                         $state.go('folders', {
                             animation: 'out-slide-down'
                         });

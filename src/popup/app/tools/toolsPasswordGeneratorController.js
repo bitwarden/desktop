@@ -69,7 +69,7 @@
         $scope.clipboardSuccess = function (e) {
             $analytics.eventTrack('Copied Generated Password');
             e.clearSelection();
-            toastr.info('Password copied!');
+            toastr.info(i18nService.passwordCopied);
         };
 
         $scope.close = function () {
