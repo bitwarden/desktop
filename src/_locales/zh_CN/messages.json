@@ -132,7 +132,7 @@
     "description": "Verification Code"
   },
   "enterTwoStepVerCode": {
-    "message": "输入您的两步验证码。",
+    "message": "输入您的两步登录验证码。",
     "description": "Enter your two-step verification code."
   },
   "account": {
@@ -172,7 +172,7 @@
     "description": "Add Folder"
   },
   "name": {
-    "message": "名字",
+    "message": "名称",
     "description": "Name"
   },
   "editFolder": {
@@ -216,7 +216,7 @@
     "description": "File a Bug Report"
   },
   "gitHubIssue": {
-    "message": "在我们的GitHub存储库打开一个问题。",
+    "message": "在我们的 GitHub 存储库打开一个问题。",
     "description": "Open an issue at our GitHub repository."
   },
   "sync": {
@@ -268,7 +268,7 @@
     "description": "Import Logins"
   },
   "importLoginsInfo": {
-    "message": "快速从其他密码管理器批量导入您的登录信息。",
+    "message": "快速从其他密码管理应用批量导入您的登录信息。",
     "description": "Quickly bulk import your logins from other password management applications."
   },
   "select": {
@@ -442,5 +442,169 @@
   "security": {
     "message": "安全",
     "description": "Security"
+  },
+  "errorsOccurred": {
+    "message": "出错了",
+    "description": "Errors have occurred"
+  },
+  "emailRequired": {
+    "message": "必须填写 Email 地址。",
+    "description": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "无效的 email 地址.",
+    "description": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "必须填写主密码。",
+    "description": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "主密码至少需要 8 个字符。",
+    "description": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "两次填写的主密码不一致。",
+    "description": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "已经为您建立了账户，您可以登录了。",
+    "description": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "我们已经为您发送了包含主密码提示的邮件。",
+    "description": "We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired": {
+    "message": "必须填写验证码。",
+    "description": "Verification code is required."
+  },
+  "valueCopied": {
+    "message": " 已复制",
+    "description": "' copied'. This is part of a sentence to be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "无法在此页面自动填充所选择的网站。请手工 复制/粘贴 您的用户名、密码。",
+    "description": "Errors have occurred"
+  },
+  "loggedOut": {
+    "message": "已登出",
+    "description": "Logged out"
+  },
+  "loginExpired": {
+    "message": "您的登录会话已过期。",
+    "description": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "您确定要登出吗？",
+    "description": "Are you sure you want to log out?"
+  },
+  "yes": {
+    "message": "是",
+    "description": "Yes"
+  },
+  "no": {
+    "message": "否",
+    "description": "No"
+  },
+  "unexpectedError": {
+    "message": "发生意外错误。",
+    "description": "An unexpected error has occured."
+  },
+  "nameRequired": {
+    "message": "必须填写名称。",
+    "description": "Name is required."
+  },
+  "addedFolder": {
+    "message": "已添加的文件夹",
+    "description": "Added folder"
+  },
+  "changeMasterPass": {
+    "message": "修改主密码",
+    "description": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "您可以在 bitwarden.com 网页版修改您的主密码。现在为您跳转吗？",
+    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation": {
+    "message": "您可以在 bitwarden.com 网页版修改您的 email 地址。现在为您跳转吗？",
+    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "两步登录需要您登录时输入一个从认证应用获得的安全吗，这样能使您的账户更安全。两步登录可以在 bitwarden.com 网页版打开。现在为您跳转吗？",
+    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut": {
+    "message": "登出...",
+    "description": "Logging out"
+  },
+  "loggingOutConfirmation": {
+    "message": "您最近从一个旧版本更新了，您必须重新登录才能修改锁定的选项。您要立即登出吗？",
+    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder": {
+    "message": "已编辑的文件夹",
+    "description": "Edited Folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "您确定要删除此文件夹吗？",
+    "description": "Are you sure you want to delete this folder?"
+  },
+  "deletedFolder": {
+    "message": "已删除的文件夹",
+    "description": "Deleted folder"
+  },
+  "gettingStartedTutorial": {
+    "message": "入门教程",
+    "description": "Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "观看我们的入门教程，了解如何充分利用浏览器扩展。",
+    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete": {
+    "message": "同步完成",
+    "description": "Syncing complete"
+  },
+  "importLoginsConfirmation": {
+    "message": "您可以在 bitwarden.com 网页版批量导入登录信息。现在为您跳转吗？",
+    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied": {
+    "message": "密码已复制",
+    "description": "Password copied"
+  },
+  "uri": {
+    "message": "URI",
+    "description": "URI"
+  },
+  "addedSite": {
+    "message": "已添加的网站",
+    "description": "Added site"
+  },
+  "editedSite": {
+    "message": "已编辑的网站",
+    "description": "Edited site"
+  },
+  "deleteSiteConfirmation": {
+    "message": "您确定要删除次网站吗？",
+    "description": "Are you sure you want to delete this site?"
+  },
+  "deletedSite": {
+    "message": "已删除的的网站",
+    "description": "Deleted site"
+  },
+  "overwritePassword": {
+    "message": "覆盖密码",
+    "description": "Overwrite Password"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "您确定要覆盖当前密码吗？",
+    "description": "Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp": {
+    "message": "认证应用已丢失？",
+    "description": "Lost authenticator app?"
   }
 }
