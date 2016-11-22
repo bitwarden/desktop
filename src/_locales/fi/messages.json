@@ -485,7 +485,7 @@
   },
   "autofillError": {
     "message": "Automaattinen täydennys tälle sivustolle ei onnistu. Kopioi ja liitä käyttäjänimesi/salasanasi manuaalisesti.",
-    "description": "Errors have occurred"
+    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos",
