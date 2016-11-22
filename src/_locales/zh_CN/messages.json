@@ -485,7 +485,7 @@
   },
   "autofillError": {
     "message": "无法在此页面自动填充所选择的网站。请手工 复制/粘贴 您的用户名、密码。",
-    "description": "Errors have occurred"
+    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "已登出",
