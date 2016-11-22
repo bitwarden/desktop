@@ -442,5 +442,169 @@
   "security": {
     "message": "Sécurité",
     "description": "Security"
+  },
+   "errorsOccurred": {
+    "message": "Des erreurs sont survenues",
+    "description": "Errors have occurred"
+  },
+  "emailRequired": {
+    "message": "L'adresse e-mail est requise.",
+    "description": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Adresse e-mail invalide.",
+    "description": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Le mot de passe maître est requis.",
+    "description": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Le mot de passe maître doit au moins contenir 8 caractères.",
+    "description": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "La confirmation du mot de passe maître ne correspond pas.",
+    "description": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier.",
+    "description": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "Nous vous avons envoyé un e-mail contenant votre indice de mot de passe maître.",
+    "description": "We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired": {
+    "message": "Le code de vérification est requis.",
+    "description": "Verification code is required."
+  },
+  "valueCopied": {
+    "message": " copié",
+    "description": "' copied'. This is part of a sentence to be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Impossible de remplir automatiquement le site sélectionné sur cette page. Copiez/collez plutôt votre nom d'utilisateur et/ou votre mot de pase.",
+    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+  },
+  "loggedOut": {
+    "message": "Déconnecté",
+    "description": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Votre session a expiré.",
+    "description": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir vous déconnecter ?",
+    "description": "Are you sure you want to log out?"
+  },
+  "yes": {
+    "message": "Oui",
+    "description": "Yes"
+  },
+  "no": {
+    "message": "Non",
+    "description": "No"
+  },
+  "unexpectedError": {
+    "message": "Une erreur inattendue est survenue.",
+    "description": "An unexpected error has occured."
+  },
+  "nameRequired": {
+    "message": "Le nom est requis.",
+    "description": "Name is required."
+  },
+  "addedFolder": {
+    "message": "Dossier ajouté",
+    "description": "Added folder"
+  },
+  "changeMasterPass": {
+    "message": "Modifier le mot de passe maître",
+    "description": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
+    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation": {
+    "message": "Vous pouvez modifier votre adresse e-mail depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
+    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "L'authentification à double facteurs rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'authentification à double facteurs peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
+    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut": {
+    "message": "Déconnexion",
+    "description": "Logging out"
+  },
+  "loggingOutConfirmation": {
+    "message": "Vous avez récemment mis à jour depuis une ancienne version. Vous devez vous identifier à nouveau pour modifier vos options de verrouillage. Souhaitez-vous vous déconnecter maintenant ?",
+    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder": {
+    "message": "Dossier modifié",
+    "description": "Edited Folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir supprimer ce dossier ?",
+    "description": "Are you sure you want to delete this folder?"
+  },
+  "deletedFolder": {
+    "message": "Dossier supprimé",
+    "description": "Deleted folder"
+  },
+  "gettingStartedTutorial": {
+    "message": "Didacticiel",
+    "description": "Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Regardez notre didacticiel pour savoir comment parfaitement utiliser l'extension du navigateur.",
+    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete": {
+    "message": "Sycnhronisation terminée",
+    "description": "Syncing complete"
+  },
+  "importLoginsConfirmation": {
+    "message": "Vous pouvez importer en basse vos identifiants depuis le coffre web sur bitwarden.com. Souhaitez-vous vous déconnecter maintenant ?",
+    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied": {
+    "message": "Mot de passe copié",
+    "description": "Password copied"
+  },
+  "uri": {
+    "message": "URI",
+    "description": "URI"
+  },
+  "addedSite": {
+    "message": "Site ajouté",
+    "description": "Added site"
+  },
+  "editedSite": {
+    "message": "Site modifié",
+    "description": "Edited site"
+  },
+  "deleteSiteConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir supprimer ce site ?",
+    "description": "Are you sure you want to delete this site?"
+  },
+  "deletedSite": {
+    "message": "Site supprimé",
+    "description": "Deleted site"
+  },
+  "overwritePassword": {
+    "message": "Écreaser le mot de passe",
+    "description": "Overwrite Password"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?",
+    "description": "Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp": {
+    "message": "Appli d'authentification perdue ?",
+    "description": "Lost authenticator app?"
   }
 }
