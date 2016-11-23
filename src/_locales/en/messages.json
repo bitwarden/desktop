@@ -33,7 +33,7 @@
   },
   "submit": {
     "message": "Submit",
-    "description": "submit"
+    "description": "Submit"
   },
   "emailAddress": {
     "message": "Email Address",
@@ -481,7 +481,7 @@
   },
   "valueCopied": {
     "message": " copied",
-    "description": "' copied'. This is part of a sentence to be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead.",

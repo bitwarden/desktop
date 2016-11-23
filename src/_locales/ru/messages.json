@@ -33,7 +33,7 @@
   },
   "submit": {
     "message": "Отправить",
-    "description": "submit"
+    "description": "Submit"
   },
   "emailAddress": {
     "message": "Email",

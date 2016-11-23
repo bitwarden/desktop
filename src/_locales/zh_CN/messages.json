@@ -33,7 +33,7 @@
   },
   "submit": {
     "message": "提交",
-    "description": "submit"
+    "description": "Submit"
   },
   "emailAddress": {
     "message": "Email 地址",
@@ -481,7 +481,7 @@
   },
   "valueCopied": {
     "message": " 已复制",
-    "description": "' copied'. This is part of a sentence to be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
     "message": "无法在此页面自动填充所选择的网站。请手工 复制/粘贴 您的用户名、密码。",

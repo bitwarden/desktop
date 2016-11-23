@@ -481,7 +481,7 @@
   },
   "valueCopied": {
     "message": " kopioitu",
-    "description": "' copied'. This is part of a sentence to be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
     "message": "Automaattinen täydennys tälle sivustolle ei onnistu. Kopioi ja liitä käyttäjänimesi/salasanasi manuaalisesti.",
