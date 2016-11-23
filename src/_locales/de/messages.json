@@ -1,0 +1,610 @@
+{
+  "appName": {
+    "message": "bitwarden",
+    "description": "bitwarden"
+  },
+  "extName": {
+    "message": "bitwarden - Kostenloser Passwort Manager",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "bitwarden ist ein sicherer und kostenloser Passwort Manager für all deine Geräte.",
+    "description": "Extension description"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Einloggen oder einen neuen Account erstellen um auf den Tresor zuzugreifen.",
+    "description": "Log in or create a new account to access your secure vault."
+  },
+  "createAccount": {
+    "message": "Account Erstellen",
+    "description": "Create Account"
+  },
+  "login": {
+    "message": "Einloggen",
+    "description": "Log In"
+  },
+  "cancel": {
+    "message": "Abbrechen",
+    "description": "Cancel"
+  },
+  "close": {
+    "message": "Schließen",
+    "description": "Close"
+  },
+  "submit": {
+    "message": "Absenden",
+    "description": "submit"
+  },
+  "emailAddress": {
+    "message": "E-Mail Adresse",
+    "description": "Email Address"
+  },
+  "masterPass": {
+    "message": "Master-Passwort",
+    "description": "Master Password"
+  },
+  "masterPassDesc": {
+    "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass du das Passwort nicht vergisst, da es keine Möglichkeit gibt es zurückzusetzen.",
+    "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc": {
+    "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, solltest du es vergessen.",
+    "description": "A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass": {
+    "message": "Master-Passwort wiederholen",
+    "description": "Re-type Master Password"
+  },
+  "masterPassHint": {
+    "message": "Master-Passwort-Hinweis (optional)",
+    "description": "Master Password Hint (optional)"
+  },
+  "tab": {
+    "message": "Tab",
+    "description": "Tab"
+  },
+  "myVault": {
+    "message": "Mein Tresor",
+    "description": "My Vault"
+  },
+  "tools": {
+    "message": "Tools",
+    "description": "Tools"
+  },
+  "settings": {
+    "message": "Einstellungen",
+    "description": "Settings"
+  },
+  "currentTab": {
+    "message": "Aktueller Tab",
+    "description": "Current Tab"
+  },
+  "copyPassword": {
+    "message": "Passwort Kopieren",
+    "description": "Copy Password"
+  },
+  "copyUsername": {
+    "message": "Nutzernamen Kopieren",
+    "description": "Copy Username"
+  },
+  "autoFill": {
+    "message": "Auto-Ausfüllen",
+    "description": "Auto-fill"
+  },
+  "generatePasswordCopied": {
+    "message": "Passwort Generieren (kopiert)",
+    "description": "Generate Password (copied)"
+  },
+  "noMatchingSites": {
+    "message": "Keine passende Seite.",
+    "description": "No matching sites."
+  },
+  "vaultLocked": {
+    "message": "Der Tresor ist gesperrt.",
+    "description": "Vault is locked."
+  },
+  "autoFillInfo": {
+    "message": "Für den aktuellen Browser-Tab gibt es keine passenden Seiten, welche automatisch ausgefüllt werden können.",
+    "description": "There are no sites available to auto-fill for the current browser tab."
+  },
+  "addSite": {
+    "message": "Seite Hinzufügen",
+    "description": "Add a Site"
+  },
+  "passwordHint": {
+    "message": "Passwort-Hinweis",
+    "description": "Password Hint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Account-E-Mail angeben, um den Master-Passwort-Hinweis zugeschickt zu bekommen.",
+    "description": "Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint": {
+    "message": "Master-Passwort-Hinweis Zusenden",
+    "description": "Get master password hint"
+  },
+  "continue": {
+    "message": "Weiter",
+    "description": "Continue"
+  },
+  "verificationCode": {
+    "message": "Verifizierungscode",
+    "description": "Verification Code"
+  },
+  "enterTwoStepVerCode": {
+    "message": "Bitte den Two-Step-Verifizierungscode angeben.",
+    "description": "Enter your two-step verification code."
+  },
+  "account": {
+    "message": "Account",
+    "description": "Account"
+  },
+  "changeMasterPassword": {
+    "message": "Master-Passwort Ändern",
+    "description": "Change Master Password"
+  },
+  "changeEmail": {
+    "message": "E-Mail Adresse Ändern",
+    "description": "Change Email"
+  },
+  "twoStepLogin": {
+    "message": "Two-Step-Login",
+    "description": "Two-step Login"
+  },
+  "logOut": {
+    "message": "Abmelden",
+    "description": "Log Out"
+  },
+  "about": {
+    "message": "Über Uns",
+    "description": "About"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Version"
+  },
+  "save": {
+    "message": "Speichern",
+    "description": "Save"
+  },
+  "addFolder": {
+    "message": "Ordner Hinzufügen",
+    "description": "Add Folder"
+  },
+  "name": {
+    "message": "Name",
+    "description": "Name"
+  },
+  "editFolder": {
+    "message": "Ordner Bearbeiten",
+    "description": "Edit Folder"
+  },
+  "deleteFolder": {
+    "message": "Ordner Löschen",
+    "description": "Delete Folder"
+  },
+  "folders": {
+    "message": "Ordner",
+    "description": "Folders"
+  },
+  "noFolders": {
+    "message": "Es gibt keine Ordner zum Anzeigen.",
+    "description": "There are no folders to list."
+  },
+  "helpFeedback": {
+    "message": "Hilfe & Feedback",
+    "description": "Help & Feedback"
+  },
+  "emailUs": {
+    "message": "Kontaktiere Uns",
+    "description": "Email Us"
+  },
+  "emailUsDirectly": {
+    "message": "Kontaktiere uns direkt, um Hilfe zu bekommen oder um Feedback abzugeben.",
+    "description": "Email us directly to get help or leave feedback."
+  },
+  "visitOurWebsite": {
+    "message": "Unsere Website Besuchen",
+    "description": "Visit Our Website"
+  },
+  "visitOurWebsiteDirectly": {
+    "message": "Besuche unsere Website um Hilfe, News und mehr über die Verwendung von bitwarden zu erfahren.",
+    "description": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
+  },
+  "fileBugReport": {
+    "message": "Einen Fehler Melden",
+    "description": "File a Bug Report"
+  },
+  "gitHubIssue": {
+    "message": "Melde einen Fehler auf unserem GitHub-Repository.",
+    "description": "Open an issue at our GitHub repository."
+  },
+  "sync": {
+    "message": "Sync",
+    "description": "Sync"
+  },
+  "syncVaultNow": {
+    "message": "Tresor Jetzt Synchronisieren",
+    "description": "Sync Vault Now"
+  },
+  "lastSync": {
+    "message": "Letzte Synchronisation:",
+    "description": "Last Sync:"
+  },
+  "passGen": {
+    "message": "Passwort-Generator",
+    "description": "Password Generator"
+  },
+  "passGenInfo": {
+    "message": "Generiere automatisch sichere und eindeutige Passwörter für deine Logins.",
+    "description": "Automatically generate strong, unique passwords for your logins."
+  },
+  "bitWebVault": {
+    "message": "bitwarden Web-Tresor",
+    "description": "bitwarden Web Vault"
+  },
+  "bitWebVaultInfo": {
+    "message": "Verwalte deine Logins in jedem Browser mit dem bitwarden Web-Tresor.",
+    "description": "Manage your logins from any web browser with the bitwarden web vault."
+  },
+  "bitIosVault": {
+    "message": "bitwarden iOS-Tresor",
+    "description": "bitwarden iOS Vault"
+  },
+  "bitIosVaultInfo": {
+    "message": "Verwalte deine Logins von deinem Smartphone aus mit dem bitwarden iOS-Tresor.",
+    "description": "Manage your logins from your mobile devices with the bitwarden iOS vault."
+  },
+  "bitAndrVault": {
+    "message": "bitwarden Android-Tresor",
+    "description": "bitwarden Android Vault"
+  },
+  "bitAndrVaultInfo": {
+    "message": "Verwalte deine Logins von deinem Smartphone aus mit dem bitwarden Android-Tresor.",
+    "description": "Manage your logins from your mobile devices with the bitwarden Android vault."
+  },
+  "importLogins": {
+    "message": "Logins Importieren",
+    "description": "Import Logins"
+  },
+  "importLoginsInfo": {
+    "message": "Importiere all deine Logins schnell und einfach von anderen Passwort-Managern.",
+    "description": "Quickly bulk import your logins from other password management applications."
+  },
+  "select": {
+    "message": "Auswählen",
+    "description": "Select"
+  },
+  "generatePassword": {
+    "message": "Passwort Generieren",
+    "description": "Generate Password"
+  },
+  "regeneratePassword": {
+    "message": "Password Neu Generieren",
+    "description": "Regenerate Password"
+  },
+  "options": {
+    "message": "Optionen",
+    "description": "Options"
+  },
+  "length": {
+    "message": "Länge",
+    "description": "Length"
+  },
+  "minNumbers": {
+    "message": "Minimum Zahlen",
+    "description": "Minimum Numbers"
+  },
+  "minSpecial": {
+    "message": "Minimum Sonderzeichen",
+    "description": "Minimum Special"
+  },
+  "avoidAmbChar": {
+    "message": "Mehrdeutige Zeichen Vermeiden",
+    "description": "Avoid Ambiguous Characters"
+  },
+  "searchVault": {
+    "message": "Tresor Durchsuchen",
+    "description": "Search vault"
+  },
+  "edit": {
+    "message": "Bearbeiten",
+    "description": "Edit"
+  },
+  "noSitesInList": {
+    "message": "In dieser Liste sind keine Seiten vorhanden.",
+    "description": "There are no sites in list."
+  },
+  "siteInformation": {
+    "message": "Seiten-Informationen",
+    "description": "Site Information"
+  },
+  "username": {
+    "message": "Nutzername",
+    "description": "Username"
+  },
+  "password": {
+    "message": "Passwort",
+    "description": "Password"
+  },
+  "favorite": {
+    "message": "Favorisieren",
+    "description": "Favorite"
+  },
+  "notes": {
+    "message": "Notizen",
+    "description": "Notes"
+  },
+  "editSite": {
+    "message": "Seite Bearbeiten",
+    "description": "Edit Site"
+  },
+  "folder": {
+    "message": "Ordner",
+    "description": "Folder"
+  },
+  "deleteSite": {
+    "message": "Seite Löschen",
+    "description": "Delete Site"
+  },
+  "viewSite": {
+    "message": "Seite Anzeigen",
+    "description": "View Site"
+  },
+  "launchWebsite": {
+    "message": "Website Öffnen",
+    "description": "Launch Website"
+  },
+  "website": {
+    "message": "Website",
+    "description": "Website"
+  },
+  "togglePassword": {
+    "message": "Passwort-Sichtbarkeit Umschalten",
+    "description": "Toggle Password"
+  },
+  "manage": {
+    "message": "Verwalten",
+    "description": "Manage"
+  },
+  "other": {
+    "message": "Sonstige",
+    "description": "Other"
+  },
+  "disableGa": {
+    "message": "Google Analytics Deaktivieren",
+    "description": "Disable Google Analytics"
+  },
+  "rateExtension": {
+    "message": "Bewerte die Erweiterung",
+    "description": "Rate the Extension"
+  },
+  "rateExtensionDesc": {
+    "message": "Wir würden uns freuen, wenn du uns mit einer positiven Bewertung helfen könntest!",
+    "description": "Please consider helping us out with a good review!"
+  },
+  "browserNotSupportClipboard": {
+    "message": "Den Browser unterstützt das einfache Kopieren nicht. Bitte kopiere es manuell.",
+    "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword": {
+    "message": "Master-Passwort Verifizieren",
+    "description": "Verify Master Password"
+  },
+  "invalidMasterPassword": {
+    "message": "Ungültiges Master-Passwort",
+    "description": "Invalid master password"
+  },
+  "errorsHaveOccurred": {
+    "message": "Ungültiges Master-Passwort",
+    "description": "Invalid master password"
+  },
+  "lockOptions": {
+    "message": "Sperroptionen",
+    "description": "Lock Options"
+  },
+  "immediately": {
+    "message": "Sofort",
+    "description": "Immediately"
+  },
+  "oneMinute": {
+    "message": "1 Minute",
+    "description": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "5 Minuten",
+    "description": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "15 Minuten",
+    "description": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "30 Minuten",
+    "description": "30 minutes"
+  },
+  "oneHour": {
+    "message": "1 Stunde",
+    "description": "1 hour"
+  },
+  "fourHours": {
+    "message": "4 Stunde",
+    "description": "4 hours"
+  },
+  "onRestart": {
+    "message": "Bei Neustart",
+    "description": "On Restart"
+  },
+  "never": {
+    "message": "Nie",
+    "description": "Never"
+  },
+  "security": {
+    "message": "Sicherheit",
+    "description": "Security"
+  },
+  "errorsOccurred": {
+    "message": "Es sind Fehler aufgetreten",
+    "description": "Errors have occurred"
+  },
+  "emailRequired": {
+    "message": "Die E-Mail Adresse wird benötigt.",
+    "description": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Ungültige E-Mail Adresse.",
+    "description": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Das Master-Passwort wird benötigt.",
+    "description": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Das Master-Passwort muss mindestens 8 Zeichen lang sein.",
+    "description": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Die Master-Passwort-Wiederholung stimmt nicht überein.",
+    "description": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Dein neuer Account wurde erstellt! Du kannst dich nun einloggen.",
+    "description": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "Wir haben dir eine E-Mail mit dem Master-Passwort-Hinweis geschickt.",
+    "description": "We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired": {
+    "message": "Verifizierungscode wird benötigt.",
+    "description": "Verification code is required."
+  },
+  "valueCopied": {
+    "message": " kopiert",
+    "description": "' copied'. This is part of a sentence to be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Die Felder dieser Seite konnten nicht automatisch ausgefüllt werden. Bitte Nutzernamen und/oder Passwort manuell kopieren.",
+    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+  },
+  "loggedOut": {
+    "message": "Ausgeloggt",
+    "description": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Deine Login-Sitzung ist abgelaufen.",
+    "description": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Bist du sicher, dass du dich ausloggen möchtest?",
+    "description": "Are you sure you want to log out?"
+  },
+  "yes": {
+    "message": "Ja",
+    "description": "Yes"
+  },
+  "no": {
+    "message": "Nein",
+    "description": "No"
+  },
+  "unexpectedError": {
+    "message": "Ein unerwarteter Fehler ist aufgetreten.",
+    "description": "An unexpected error has occured."
+  },
+  "nameRequired": {
+    "message": "Der Name wird benötigt.",
+    "description": "Name is required."
+  },
+  "addedFolder": {
+    "message": "Ordner hinzugefügt",
+    "description": "Added folder"
+  },
+  "changeMasterPass": {
+    "message": "Master-Passwort Ändern",
+    "description": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Du kannst dein Master-Passwort im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?",
+    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation": {
+    "message": "Du kannst deine E-Mail Adresse im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?",
+    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Mit Two-Step-Login wird dein Account zusätzlich abgesichert, da bei jedem Login zusätzlich ein Sicherheitscode von einer Authentifizierungs-App benötigt wird. Two-Step-Login kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?",
+    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut": {
+    "message": "Logge aus",
+    "description": "Logging out"
+  },
+  "loggingOutConfirmation": {
+    "message": "Aufgrund einer neuen Version musst du dich erneut einloggen um deine Sperroptionen  zu ändern. Möchtest du dich jetzt ausloggen?",
+    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder": {
+    "message": "Ordner bearbeitet",
+    "description": "Edited Folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Bist du sicher, dass du diesen Ordner löschen möchtest?",
+    "description": "Are you sure you want to delete this folder?"
+  },
+  "deletedFolder": {
+    "message": "Ordner gelöscht",
+    "description": "Deleted folder"
+  },
+  "gettingStartedTutorial": {
+    "message": "Erste Schritte Anleitung",
+    "description": "Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Sieh dir unser Erste Schritte Tutorial an um zu sehen, wie du das Meiste aus der Browser-Erweiterung holen kannst.",
+    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete": {
+    "message": "Synchronisierung abgeschlossen",
+    "description": "Syncing complete"
+  },
+  "importLoginsConfirmation": {
+    "message": "Du kannst deine Logins über den bitwarden.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?",
+    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied": {
+    "message": "Passwort kopiert",
+    "description": "Password copied"
+  },
+  "uri": {
+    "message": "URI",
+    "description": "URI"
+  },
+  "addedSite": {
+    "message": "Seite hinzugefügt",
+    "description": "Added site"
+  },
+  "editedSite": {
+    "message": "Seite bearbeitet",
+    "description": "Edited site"
+  },
+  "deleteSiteConfirmation": {
+    "message": "Bist du sicher, dass du diese Seite löschen möchtest?",
+    "description": "Are you sure you want to delete this site?"
+  },
+  "deletedSite": {
+    "message": "Seite gelöscht",
+    "description": "Deleted site"
+  },
+  "overwritePassword": {
+    "message": "Passwort Ersetzen",
+    "description": "Overwrite Password"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Bist du sicher, dass du das aktuelle Passwort ersetzen möchtest?",
+    "description": "Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp": {
+    "message": "Authenticator-App verloren?",
+    "description": "Lost authenticator app?"
+  }
+}
