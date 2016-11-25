@@ -92,35 +92,47 @@ function buildContextMenu(callback) {
     chrome.contextMenus.removeAll(function () {
         chrome.contextMenus.create({
             type: 'normal',
-            id: 'autofill',
+            id: 'root',
             contexts: ['all'],
-            title: i18nService.autoFill
+            title: 'bitwarden'
         }, function () {
             chrome.contextMenus.create({
                 type: 'normal',
-                id: 'copy-username',
+                id: 'autofill',
+                parentId: 'root',
                 contexts: ['all'],
-                title: i18nService.copyUsername
+                title: i18nService.autoFill
             }, function () {
                 chrome.contextMenus.create({
                     type: 'normal',
-                    id: 'copy-password',
+                    id: 'copy-username',
+                    parentId: 'root',
                     contexts: ['all'],
-                    title: i18nService.copyPassword
+                    title: i18nService.copyUsername
                 }, function () {
                     chrome.contextMenus.create({
-                        type: 'separator'
-                    });
-
-                    chrome.contextMenus.create({
                         type: 'normal',
-                        id: 'generate-password',
+                        id: 'copy-password',
+                        parentId: 'root',
                         contexts: ['all'],
-                        title: i18nService.generatePasswordCopied
+                        title: i18nService.copyPassword
                     }, function () {
-                        if (callback) {
-                            callback();
-                        }
+                        chrome.contextMenus.create({
+                            type: 'separator',
+                            parentId: 'root'
+                        });
+
+                        chrome.contextMenus.create({
+                            type: 'normal',
+                            id: 'generate-password',
+                            parentId: 'root',
+                            contexts: ['all'],
+                            title: i18nService.generatePasswordCopied
+                        }, function () {
+                            if (callback) {
+                                callback();
+                            }
+                        });
                     });
                 });
             });
