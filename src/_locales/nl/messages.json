@@ -1,0 +1,610 @@
+{
+  "appName": {
+    "message": "bitwarden",
+    "description": "bitwarden"
+  },
+  "extName": {
+    "message": "bitwarden - Gratis Wachtwoordbeheerder",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "bitwarden is een gratis, veilige wachtwoordbeheerder voor al je apparaten.",
+    "description": "Extension description"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Log in of maak een account om toegang te krijgen tot je beveiligde kluis.",
+    "description": "Log in or create a new account to access your secure vault."
+  },
+  "createAccount": {
+    "message": "Maak Account",
+    "description": "Create Account"
+  },
+  "login": {
+    "message": "Log In",
+    "description": "Log In"
+  },
+  "cancel": {
+    "message": "Annuleer",
+    "description": "Cancel"
+  },
+  "close": {
+    "message": "Sluit",
+    "description": "Close"
+  },
+  "submit": {
+    "message": "Voer In",
+    "description": "Submit"
+  },
+  "emailAddress": {
+    "message": "E-mailadres",
+    "description": "Email Address"
+  },
+  "masterPass": {
+    "message": "Hoofdwachtwoord",
+    "description": "Master Password"
+  },
+  "masterPassDesc": {
+    "message": "Het hoofdwachtwoord is het wachtwoord waarme je toegang krijgt tot je beveiligde kluis. Zorg dat je deze onthoudt. Er is geen manier om hem te herstellen als je hem kwijtraakt.",
+    "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc": {
+    "message": "Een geheugensteuntje voor je hoofdwachtwoord, indien je deze vergeet.",
+    "description": "A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass": {
+    "message": "Herhaal je hoofdwachtwoord",
+    "description": "Re-type Master Password"
+  },
+  "masterPassHint": {
+    "message": "Hint voor hoofdwachtwoord (optioneel)",
+    "description": "Master Password Hint (optional)"
+  },
+  "tab": {
+    "message": "Tab",
+    "description": "Tab"
+  },
+  "myVault": {
+    "message": "Mijn Kluis",
+    "description": "My Vault"
+  },
+  "tools": {
+    "message": "Gereedschap",
+    "description": "Tools"
+  },
+  "settings": {
+    "message": "Instellingen",
+    "description": "Settings"
+  },
+  "currentTab": {
+    "message": "Huidige Tab",
+    "description": "Current Tab"
+  },
+  "copyPassword": {
+    "message": "Kopieer Wachtwoord",
+    "description": "Copy Password"
+  },
+  "copyUsername": {
+    "message": "Kopieer Gebruikersnaam",
+    "description": "Copy Username"
+  },
+  "autoFill": {
+    "message": "Auto-invullen",
+    "description": "Auto-fill"
+  },
+  "generatePasswordCopied": {
+    "message": "Genereer Wachtwoord (gekopieerd)",
+    "description": "Generate Password (copied)"
+  },
+  "noMatchingSites": {
+    "message": "Geen corresponderende websites..",
+    "description": "No matching sites."
+  },
+  "vaultLocked": {
+    "message": "Kluis zit op slot.",
+    "description": "Vault is locked."
+  },
+  "autoFillInfo": {
+    "message": "Er zijn geen beschikbare websites om het huidge browser-tabblad automatisch in te vullen.",
+    "description": "There are no sites available to auto-fill for the current browser tab."
+  },
+  "addSite": {
+    "message": "Voeg een website toe",
+    "description": "Add a Site"
+  },
+  "passwordHint": {
+    "message": "Wachtwoordhint",
+    "description": "Password Hint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Voer het e-mailadres van je account in om de hint voor je hoofdwachtwoord te ontvangen.",
+    "description": "Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint": {
+    "message": "Verkrijg hoofdwachtwoord-hint",
+    "description": "Get master password hint"
+  },
+  "continue": {
+    "message": "Ga verder",
+    "description": "Continue"
+  },
+  "verificationCode": {
+    "message": "Verificatiecode",
+    "description": "Verification Code"
+  },
+  "enterTwoStepVerCode": {
+    "message": "Voer je tweestaps-verificatiecode in.",
+    "description": "Enter your two-step verification code."
+  },
+  "account": {
+    "message": "Account",
+    "description": "Account"
+  },
+  "changeMasterPassword": {
+    "message": "Wijzig Hoofdwachtwoord",
+    "description": "Change Master Password"
+  },
+  "changeEmail": {
+    "message": "Wijzig E-mail",
+    "description": "Change Email"
+  },
+  "twoStepLogin": {
+    "message": "Tweestaps-login",
+    "description": "Two-step Login"
+  },
+  "logOut": {
+    "message": "Log Uit",
+    "description": "Log Out"
+  },
+  "about": {
+    "message": "Over",
+    "description": "About"
+  },
+  "version": {
+    "message": "Versie",
+    "description": "Version"
+  },
+  "save": {
+    "message": "Opslaan",
+    "description": "Save"
+  },
+  "addFolder": {
+    "message": "Nieuwe Map",
+    "description": "Add Folder"
+  },
+  "name": {
+    "message": "Naam",
+    "description": "Name"
+  },
+  "editFolder": {
+    "message": "Bewerk Map",
+    "description": "Edit Folder"
+  },
+  "deleteFolder": {
+    "message": "Verwijder Map",
+    "description": "Delete Folder"
+  },
+  "folders": {
+    "message": "Mappen",
+    "description": "Folders"
+  },
+  "noFolders": {
+    "message": "Er zijn geen mappen.",
+    "description": "There are no folders to list."
+  },
+  "helpFeedback": {
+    "message": "Hulp & Feedback",
+    "description": "Help & Feedback"
+  },
+  "emailUs": {
+    "message": "E-mail Ons",
+    "description": "Email Us"
+  },
+  "emailUsDirectly": {
+    "message": "E-mail ons direct om hulp te krijgen of feedback te geven.",
+    "description": "Email us directly to get help or leave feedback."
+  },
+  "visitOurWebsite": {
+    "message": "Bezoek Onze Website",
+    "description": "Visit Our Website"
+  },
+  "visitOurWebsiteDirectly": {
+    "message": "Bezoek onze website voor hulp, voor nieuws, om ons te mailen, en/of om meer te weten te komen over het gebruik van bitwarden.",
+    "description": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
+  },
+  "fileBugReport": {
+    "message": "Meld een Bug",
+    "description": "File a Bug Report"
+  },
+  "gitHubIssue": {
+    "message": "Open een issue in onze GitHub-repository.",
+    "description": "Open an issue at our GitHub repository."
+  },
+  "sync": {
+    "message": "Sync",
+    "description": "Sync"
+  },
+  "syncVaultNow": {
+    "message": "Sync Kluis Nu",
+    "description": "Sync Vault Now"
+  },
+  "lastSync": {
+    "message": "Laatste Sync:",
+    "description": "Last Sync:"
+  },
+  "passGen": {
+    "message": "Wachtwoordgenerator",
+    "description": "Password Generator"
+  },
+  "passGenInfo": {
+    "message": "Genereer automatisch sterke, unieke wachtwoorden voor je logins.",
+    "description": "Automatically generate strong, unique passwords for your logins."
+  },
+  "bitWebVault": {
+    "message": "bitwarden Webkluis",
+    "description": "bitwarden Web Vault"
+  },
+  "bitWebVaultInfo": {
+    "message": "Beheer je logins vanuit elke browser met de bitwarden webkluis.",
+    "description": "Manage your logins from any web browser with the bitwarden web vault."
+  },
+  "bitIosVault": {
+    "message": "bitwarden iOS-kluis",
+    "description": "bitwarden iOS Vault"
+  },
+  "bitIosVaultInfo": {
+    "message": "Beheer je logins vanuit elke browser met de bitwarden iOS-kluis.",
+    "description": "Manage your logins from your mobile devices with the bitwarden iOS vault."
+  },
+  "bitAndrVault": {
+    "message": "bitwarden Android-kluis",
+    "description": "bitwarden Android Vault"
+  },
+  "bitAndrVaultInfo": {
+    "message": "Beheer je logins vanuit elke browser met de bitwarden Android-kluis.",
+    "description": "Manage your logins from your mobile devices with the bitwarden Android vault."
+  },
+  "importLogins": {
+    "message": "Importeer Logins",
+    "description": "Import Logins"
+  },
+  "importLoginsInfo": {
+    "message": "Importeer snel al je logins vanuit andere wachtwoordbeheerders.",
+    "description": "Quickly bulk import your logins from other password management applications."
+  },
+  "select": {
+    "message": "Selecteer",
+    "description": "Select"
+  },
+  "generatePassword": {
+    "message": "Genereer Wachtwoord",
+    "description": "Generate Password"
+  },
+  "regeneratePassword": {
+    "message": "Hergenereer Wachtwoord",
+    "description": "Regenerate Password"
+  },
+  "options": {
+    "message": "Opties",
+    "description": "Options"
+  },
+  "length": {
+    "message": "Lengte",
+    "description": "Length"
+  },
+  "minNumbers": {
+    "message": "Minimum Aantal Getallen",
+    "description": "Minimum Numbers"
+  },
+  "minSpecial": {
+    "message": "Minimum Aantal Speciale Karakters",
+    "description": "Minimum Special"
+  },
+  "avoidAmbChar": {
+    "message": "Vermijd Ambigue Karakters",
+    "description": "Avoid Ambiguous Characters"
+  },
+  "searchVault": {
+    "message": "Doorzoek kluis",
+    "description": "Search vault"
+  },
+  "edit": {
+    "message": "Bewerk",
+    "description": "Edit"
+  },
+  "noSitesInList": {
+    "message": "Er zijn geen websites in de lijst.",
+    "description": "There are no sites in list."
+  },
+  "siteInformation": {
+    "message": "Website-informatie",
+    "description": "Site Information"
+  },
+  "username": {
+    "message": "Gebruikersnaam",
+    "description": "Username"
+  },
+  "password": {
+    "message": "Wachtwoord",
+    "description": "Password"
+  },
+  "favorite": {
+    "message": "Favoriet",
+    "description": "Favorite"
+  },
+  "notes": {
+    "message": "Aantekeningen",
+    "description": "Notes"
+  },
+  "editSite": {
+    "message": "Bewerk Website",
+    "description": "Edit Site"
+  },
+  "folder": {
+    "message": "Map",
+    "description": "Folder"
+  },
+  "deleteSite": {
+    "message": "Verwijder Website",
+    "description": "Delete Site"
+  },
+  "viewSite": {
+    "message": "Bekijk Website",
+    "description": "View Site"
+  },
+  "launchWebsite": {
+    "message": "Open Website",
+    "description": "Launch Website"
+  },
+  "website": {
+    "message": "Website",
+    "description": "Website"
+  },
+  "togglePassword": {
+    "message": "Wachtwoord Aan/Uit",
+    "description": "Toggle Password"
+  },
+  "manage": {
+    "message": "Beheer",
+    "description": "Manage"
+  },
+  "other": {
+    "message": "Anders",
+    "description": "Other"
+  },
+  "disableGa": {
+    "message": "Zet Google Analytics Uit",
+    "description": "Disable Google Analytics"
+  },
+  "rateExtension": {
+    "message": "Beoordeel de Extensie",
+    "description": "Rate the Extension"
+  },
+  "rateExtensionDesc": {
+    "message": "Overweeg alsjeblieft ons te helpen met een goede recensie",
+    "description": "Please consider helping us out with a good review!"
+  },
+  "browserNotSupportClipboard": {
+    "message": "Je browser ondersteunt geen kopiëren naar plakbord. Kopieer handmatig.",
+    "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword": {
+    "message": "Verifieer Hoofdwachtwoord",
+    "description": "Verify Master Password"
+  },
+  "invalidMasterPassword": {
+    "message": "Ongeldig hoofdwachtwoord",
+    "description": "Invalid master password"
+  },
+  "errorsHaveOccurred": {
+    "message": "Ongeldig hoofdwachtwoord",
+    "description": "Invalid master password"
+  },
+  "lockOptions": {
+    "message": "Versleutelopties",
+    "description": "Lock Options"
+  },
+  "immediately": {
+    "message": "Onmiddelijk",
+    "description": "Immediately"
+  },
+  "oneMinute": {
+    "message": "1 minuut",
+    "description": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "5 minuten",
+    "description": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "15 minuten",
+    "description": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "30 minuten",
+    "description": "30 minutes"
+  },
+  "oneHour": {
+    "message": "1 uur",
+    "description": "1 hour"
+  },
+  "fourHours": {
+    "message": "4 uur",
+    "description": "4 hours"
+  },
+  "onRestart": {
+    "message": "Na Herstart",
+    "description": "On Restart"
+  },
+  "never": {
+    "message": "Nooit",
+    "description": "Never"
+  },
+  "security": {
+    "message": "Beveiliging",
+    "description": "Security"
+  },
+  "errorsOccurred": {
+    "message": "Er is een fout opgetreden",
+    "description": "Errors have occurred"
+  },
+  "emailRequired": {
+    "message": "E-mailadres is vereist.",
+    "description": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Ongeldig e-mailadres.",
+    "description": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Hoofdwachtwoord is vereist.",
+    "description": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Hoofdwachtwoord moet minstens 8 karakters lang zijn.",
+    "description": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Hoofdwachtwoorden zijn niet gelijk.",
+    "description": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Je nieuwe account is aangemaakt! Je kunt nu inloggen.",
+    "description": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "We hebben je een mail gestuurd met de hint voor je hoofdwachtwoord.",
+    "description": "We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired": {
+    "message": "Verificatiecode is vereist.",
+    "description": "Verification code is required."
+  },
+  "valueCopied": {
+    "message": " gekopieerd",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Automatisch invullen mislukt. Kopieer en plak je gebruikersnaam en/of wachtwoord handmatig.",
+    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+  },
+  "loggedOut": {
+    "message": "Uitgelogd",
+    "description": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Je sessie is verlopen.",
+    "description": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Weet je zeker dat je wilt uitloggen?",
+    "description": "Are you sure you want to log out?"
+  },
+  "yes": {
+    "message": "Ja",
+    "description": "Yes"
+  },
+  "no": {
+    "message": "Nee",
+    "description": "No"
+  },
+  "unexpectedError": {
+    "message": "Een onverwachte fout heeft zich voorgedaan.",
+    "description": "An unexpected error has occured."
+  },
+  "nameRequired": {
+    "message": "Naam is vereist.",
+    "description": "Name is required."
+  },
+  "addedFolder": {
+    "message": "Map toegevoegd",
+    "description": "Added folder"
+  },
+  "changeMasterPass": {
+    "message": "Verander hoofdwachtwoord",
+    "description": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Je kunt je hoofdwachtwoord veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?",
+    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation": {
+    "message": "Je kunt je e-mailadres veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?",
+    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Tweestaps-verificatie maakt je account veiliger door je bij iedere login een code te vragen van een authenticatie-app. Tweestaps-verificatie kun je aanzetten in de webkluis op bitwarden.com. Wil je de website nu bezoeken?",
+    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut": {
+    "message": "Uitloggen",
+    "description": "Logging out"
+  },
+  "loggingOutConfirmation": {
+    "message": "Je hebt recent geüpdatet van een oudere versie. Je moet opnieuw inloggen om je versleutelopties te wijzigen. Wil je nu uitloggen?",
+    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder": {
+    "message": "Bewerkte Map",
+    "description": "Edited Folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Weet je zeker dat je deze map wilt verwijderen?",
+    "description": "Are you sure you want to delete this folder?"
+  },
+  "deletedFolder": {
+    "message": "Verwijderde map",
+    "description": "Deleted folder"
+  },
+  "gettingStartedTutorial": {
+    "message": "Aan-de-slag-handleiding",
+    "description": "Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Bekijk onze aan-de-slag-handleiding om te leren hoe je het meeste haalt uit je browserextensie.",
+    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete": {
+    "message": "Synchronisatie voltooid",
+    "description": "Syncing complete"
+  },
+  "importLoginsConfirmation": {
+    "message": "Je kunt snel al je logins importeren vanuit de webkluis op bitwarden.com. Wil je de website nu bezoeken?",
+    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied": {
+    "message": "Wachtwoord gekopieerd",
+    "description": "Password copied"
+  },
+  "uri": {
+    "message": "URI",
+    "description": "URI"
+  },
+  "addedSite": {
+    "message": "Website toegevoegd",
+    "description": "Added site"
+  },
+  "editedSite": {
+    "message": "Website bewerkt",
+    "description": "Edited site"
+  },
+  "deleteSiteConfirmation": {
+    "message": "Weet je zeker dat je deze website wilt verwijderen?",
+    "description": "Are you sure you want to delete this site?"
+  },
+  "deletedSite": {
+    "message": "Verwijderde website",
+    "description": "Deleted site"
+  },
+  "overwritePassword": {
+    "message": "Overschrijf Wachtwoord",
+    "description": "Overwrite Password"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Weet je zeker dat je het huidige wachtwoord wilt overschrijven?",
+    "description": "Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp": {
+    "message": "Authenticatie-app kwijt?",
+    "description": "Lost authenticator app?"
+  }
+}
