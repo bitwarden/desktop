@@ -33,7 +33,7 @@ function initAutofill() {
 
         loadPasswordFields(false);
         if (!passwordFields.length) {
-            // not able to find any visible password fields. maybe there are some "hidden" ones?
+            // not able to find any viewable password fields. maybe there are some "hidden" ones?
             loadPasswordFields(true);
         }
 
@@ -66,7 +66,7 @@ function initAutofill() {
                     username = findUsernameField(pf, false);
 
                     if (!username) {
-                        // not able to find any visible username fields. maybe there are some "hidden" ones?
+                        // not able to find any viewable username fields. maybe there are some "hidden" ones?
                         username = findUsernameField(pf, true);
                     }
 
@@ -104,6 +104,7 @@ function initAutofill() {
                 username = findUsernameFieldWithoutForm(pf, false);
 
                 if (!username) {
+                    // not able to find any viewable username fields. maybe there are some "hidden" ones?
                     username = findUsernameFieldWithoutForm(pf, true);
                 }
 
