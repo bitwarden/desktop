@@ -5,7 +5,7 @@ angular
         $analytics, i18nService) {
         $scope.i18n = i18nService;
 
-        var pageDetails = null,
+        var pageDetails = [],
             tabId = null,
             url = null,
             domain = null,
@@ -32,8 +32,7 @@ angular
                     return;
                 }
 
-                chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails' }, function (details) {
-                    pageDetails = details;
+                chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails', tabId: tabId }, function () {
                     canAutofill = true;
                 });
 
@@ -71,21 +70,31 @@ angular
         };
 
         $scope.fillSite = function (site) {
-            var fillScript = null;
-            if (site && canAutofill && pageDetails) {
-                fillScript = autofillService.generateFillScript(pageDetails, site.username, site.password);
+            var didAutofill = false;
+
+            if (site && canAutofill && pageDetails && pageDetails.length) {
+                for (var i = 0; i < pageDetails.length; i++) {
+                    if (pageDetails[i].tabId != tabId) {
+                        continue;
+                    }
+
+                    var fillScript = autofillService.generateFillScript(pageDetails[i].details, site.username, site.password);
+                    if (tabId && fillScript && fillScript.script && fillScript.script.length) {
+                        didAutofill = true;
+                        $analytics.eventTrack('Autofilled');
+                        chrome.tabs.sendMessage(tabId, {
+                            command: 'fillForm',
+                            fillScript: fillScript
+                        }, {
+                            frameId: pageDetails[i].frameId
+                        }, function () {
+                            $window.close();
+                        });
+                    }
+                }
             }
 
-            if (tabId && fillScript && fillScript.script && fillScript.script.length) {
-                $analytics.eventTrack('Autofilled');
-                chrome.tabs.sendMessage(tabId, {
-                    command: 'fillForm',
-                    fillScript: fillScript
-                }, function () {
-                    $window.close();
-                });
-            }
-            else {
+            if (!didAutofill) {
                 $analytics.eventTrack('Autofilled Error');
                 toastr.error(i18nService.autofillError);
             }
@@ -105,5 +114,9 @@ angular
             if ($scope.loaded) {
                 setTimeout(loadVault, 500);
             }
+        });
+
+        $scope.$on('collectPageDetailsResponse', function (event, details) {
+            pageDetails.push(details);
         });
     });

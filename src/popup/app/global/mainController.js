@@ -29,5 +29,12 @@ angular
                     $state.go('home');
                 });
             }
+            else if (msg.command === 'collectPageDetailsResponse') {
+                $scope.$broadcast('collectPageDetailsResponse', {
+                    frameId: sender.frameId,
+                    tabId: msg.tabId,
+                    details: msg.details
+                });
+            }
         });
     });

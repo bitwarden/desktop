@@ -26,7 +26,11 @@ chrome.commands.onCommand.addListener(function (command) {
     }
 });
 
-var loadMenuRan = false;
+var loadMenuRan = false,
+    siteToAutoFill = null,
+    pageDetailsToAutoFill = [],
+    autofillTimeout = null;
+
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.command === 'loggedOut' || msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
         if (loadMenuRan) {
@@ -50,6 +54,11 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     }
     else if (msg.command === 'bgCloseOverlayPopup') {
         messageCurrentTab('closeOverlayPopup');
+    }
+    else if (msg.command === 'collectPageDetailsResponse') {
+        clearTimeout(autofillTimeout);
+        pageDetailsToAutoFill.push({ frameId: sender.frameId, tabId: msg.tabId, details: msg.details });
+        autofillTimeout = setTimeout(autofillPage, 300);
     }
 });
 
@@ -259,7 +268,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                             hitType: 'event',
                             eventAction: 'Autofilled From Context Menu'
                         });
-                        autofillPage(sites[i]);
+                        startAutofillPage(sites[i]);
                     }
                     else if (info.parentMenuItemId === 'copy-username') {
                         ga('send', {
@@ -310,7 +319,8 @@ function messageCurrentTab(command, data) {
     });
 }
 
-function autofillPage(site) {
+function startAutofillPage(site) {
+    siteToAutoFill = site;
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         var tabId = null;
         if (tabs.length > 0) {
@@ -324,21 +334,49 @@ function autofillPage(site) {
             return;
         }
 
-        chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails' }, function (pageDetails) {
-            var fillScript = null;
-            if (site && pageDetails) {
-                fillScript = autofillService.generateFillScript(pageDetails, site.username, site.password);
-            }
-
-            if (tabId && fillScript && fillScript.script) {
-                chrome.tabs.sendMessage(tabId, {
-                    command: 'fillForm',
-                    fillScript: fillScript
-                });
-            }
-        });
+        chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails', tabId: tabId }, function () { });
     });
+}
 
+function autofillPage() {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tabId = null;
+        if (tabs.length > 0) {
+            tabId = tabs[0].id;
+        }
+        else {
+            return;
+        }
+
+        if (!tabId) {
+            return;
+        }
+
+        var fillScript = null;
+        if (siteToAutoFill && pageDetailsToAutoFill && pageDetailsToAutoFill.length) {
+            for (var i = 0; i < pageDetailsToAutoFill.length; i++) {
+                // make sure we're still on correct tab
+                if (pageDetailsToAutoFill[i].tabId != tabId) {
+                    continue;
+                }
+
+                var fillScript = autofillService.generateFillScript(pageDetailsToAutoFill[i].details, siteToAutoFill.username,
+                    siteToAutoFill.password);
+                if (tabId && fillScript && fillScript.script && fillScript.script.length) {
+                    chrome.tabs.sendMessage(tabId, {
+                        command: 'fillForm',
+                        fillScript: fillScript
+                    }, {
+                        frameId: pageDetailsToAutoFill[i].frameId
+                    });
+                }
+            }
+        }
+
+        // reset
+        siteToAutoFill = null;
+        pageDetailsToAutoFill = [];
+    });
 }
 
 function sortSites(sites) {

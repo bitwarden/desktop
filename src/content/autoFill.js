@@ -81,7 +81,15 @@
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'collectPageDetails') {
             var pageDetails = collect(document);
-            sendResponse(JSON.parse(pageDetails));
+            var pageDetailsObj = JSON.parse(pageDetails);
+            console.log(pageDetailsObj);
+            //sendResponse(pageDetailsObj);
+            chrome.runtime.sendMessage({
+                command: 'collectPageDetailsResponse',
+                tabId: msg.tabId,
+                details: pageDetailsObj
+            });
+            sendResponse();
             return true;
         }
         else if (msg.command === 'fillForm') {
