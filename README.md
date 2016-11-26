@@ -10,6 +10,7 @@ The bitwarden browser extension is written using the Chrome Web Extension API an
 
 # Contribute
 
-Code contributions are welcome! Please commit any pull requests against the `master` branch.
+Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute
+by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
 
 Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature.
