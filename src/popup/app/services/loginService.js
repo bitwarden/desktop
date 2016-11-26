@@ -42,7 +42,7 @@
         };
 
         _service.logInTwoFactor = function (code) {
-            var request = new TokenTwoFactorRequest(code);
+            var request = new TokenTwoFactorRequest(code.replace(' ', ''));
 
             var deferred = $q.defer();
             apiService.postTokenTwoFactor(request, function (response) {
