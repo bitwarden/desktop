@@ -21,18 +21,38 @@ function initAutofill() {
             passwords = [],
             usernames = [],
             pf = null,
-            f = null,
             username = null;
 
-        for (var i = 0; i < pageDetails.fields.length; i++) {
-            if (pageDetails.fields[i].type === 'password' && pageDetails.fields[i].viewable) {
-                passwordFields.push(pageDetails.fields[i]);
+        function loadPasswordFields(canBeHidden) {
+            for (var i = 0; i < pageDetails.fields.length; i++) {
+                if (pageDetails.fields[i].type === 'password' && (canBeHidden || pageDetails.fields[i].viewable)) {
+                    passwordFields.push(pageDetails.fields[i]);
+                }
             }
+        }
+
+        loadPasswordFields(false);
+        if (!passwordFields.length) {
+            // not able to find any visible password fields. maybe there are some "hidden" ones?
+            loadPasswordFields(true);
+        }
+
+        function findUsernameField(passwordField, canBeHidden) {
+            for (var i = 0; i < pageDetails.fields.length; i++) {
+                var f = pageDetails.fields[i];
+                if (f.form === passwordField.form && (canBeHidden || f.viewable)
+                    && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
+                    && f.elementNumber < passwordField.elementNumber) {
+                    return f;
+                }
+            }
+
+            return null;
         }
 
         for (var formKey in pageDetails.forms) {
             var passwordFieldsForForm = [];
-            for (i = 0; i < passwordFields.length; i++) {
+            for (var i = 0; i < passwordFields.length; i++) {
                 if (formKey === passwordFields[i].form) {
                     passwordFieldsForForm.push(passwordFields[i]);
                 }
@@ -43,12 +63,11 @@ function initAutofill() {
                 passwords.push(pf);
 
                 if (fillUsername) {
-                    for (var j = 0; j < pageDetails.fields.length; j++) {
-                        f = pageDetails.fields[j];
-                        if (f.form === pf.form && f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
-                            && f.elementNumber < pf.elementNumber) {
-                            username = f;
-                        }
+                    username = findUsernameField(pf, false);
+
+                    if (!username) {
+                        // not able to find any visible username fields. maybe there are some "hidden" ones?
+                        username = findUsernameField(pf, true);
                     }
 
                     if (username) {
@@ -56,6 +75,22 @@ function initAutofill() {
                     }
                 }
             }
+        }
+
+        function findUsernameFieldWithoutForm(passwordField, canBeHidden) {
+            var usernameField = null;
+            for (var i = 0; i < pageDetails.fields.length; i++) {
+                var f = pageDetails.fields[i];
+                if (f.elementNumber > passwordField.elementNumber) {
+                    break;
+                }
+
+                if ((canBeHidden || f.viewable) && (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
+                    usernameField = f;
+                }
+            }
+
+            return usernameField;
         }
 
         if (passwordFields.length && !passwords.length) {
@@ -66,16 +101,10 @@ function initAutofill() {
             passwords.push(pf);
 
             if (fillUsername && pf.elementNumber > 0) {
-                username = null;
-                for (i = 0; i < pageDetails.fields.length; i++) {
-                    f = pageDetails.fields[i];
-                    if (f.elementNumber > pf.elementNumber) {
-                        break;
-                    }
+                username = findUsernameFieldWithoutForm(pf, false);
 
-                    if (f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
-                        username = f;
-                    }
+                if (!username) {
+                    username = findUsernameFieldWithoutForm(pf, true);
                 }
 
                 if (username) {
