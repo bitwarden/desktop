@@ -352,11 +352,10 @@ function autofillPage() {
             return;
         }
 
-        var fillScript = null;
         if (siteToAutoFill && pageDetailsToAutoFill && pageDetailsToAutoFill.length) {
             for (var i = 0; i < pageDetailsToAutoFill.length; i++) {
                 // make sure we're still on correct tab
-                if (pageDetailsToAutoFill[i].tabId != tabId) {
+                if (pageDetailsToAutoFill[i].tabId !== tabId) {
                     continue;
                 }
 

@@ -5,6 +5,7 @@
   "version": "1.5.0",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
+  "author": "8bit Solutions LLC",
   "homepage_url": "https://bitwarden.com",
   "icons": {
     "16": "images/icon16.png",
