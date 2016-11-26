@@ -16,5 +16,8 @@ when creating your pull request:
    and `screenshots` folders to your new locale. We will update these based on your translations provided in
    `CAPTIONS.md`. Finally, do not translate the titles in the markdown files (ex. `# Name` and `# Screenshot - Sync`).
    These are only for reference.
+5. Test your translations to make sure they look correct in the extension. Sometimes the UI can break due to translations
+   taking up more space than the original UI was built for. If possible, use a shorter or abbreviated version of the
+   word/sentence to accomedate the available space.
 
 You can find an example of a proper translation pull request here: <https://github.com/bitwarden/browser/pull/49/files>
