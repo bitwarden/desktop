@@ -82,8 +82,6 @@
         if (msg.command === 'collectPageDetails') {
             var pageDetails = collect(document);
             var pageDetailsObj = JSON.parse(pageDetails);
-            console.log(pageDetailsObj);
-            //sendResponse(pageDetailsObj);
             chrome.runtime.sendMessage({
                 command: 'collectPageDetailsResponse',
                 tabId: msg.tabId,
