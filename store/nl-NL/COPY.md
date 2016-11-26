@@ -1,6 +1,6 @@
 # Name
 
-bitwarden ? Gratis Wachtwoordbeheerder
+bitwarden - Gratis Wachtwoordbeheerder
 
 # Summary
 
