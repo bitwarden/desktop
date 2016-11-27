@@ -17,7 +17,7 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "js": [ "content/autoFill.js" ],
+      "js": [ "content/autofill.js" ],
       "matches": [ "http://*/*", "https://*/*", "file:///*" ],
       "run_at": "document_start"
     }
