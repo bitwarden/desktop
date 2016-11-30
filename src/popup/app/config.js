@@ -131,6 +131,13 @@
                 data: { authorize: true },
                 params: { animation: null }
             })
+            .state('credits', {
+                url: '/credits',
+                templateUrl: 'app/settings/views/settingsCredits.html',
+                controller: 'settingsCreditsController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
             .state('help', {
                 url: '/help',
                 templateUrl: 'app/settings/views/settingsHelp.html',

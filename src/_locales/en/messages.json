@@ -602,5 +602,17 @@
   "lost2FAApp": {
     "message": "Lost authenticator app?",
     "description": "Lost authenticator app?"
+  },
+  "credits": {
+    "message": "Credits",
+    "description": "Credits (giving thanks to people that helped)"
+  },
+  "thankYou": {
+    "message": "Thank You",
+    "description": "Thank You"
+  },
+  "translations": {
+    "message": "Translations",
+    "description": "Translations"
   }
 }
