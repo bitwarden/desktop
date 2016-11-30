@@ -47,6 +47,10 @@
     "message": "Мастер-пароль - пароль для доступа к вашему безопасному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль нельзя.",
     "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
+  "masterPassHintDesc": {
+    "message": "Подсказка к мастер-паролю поможет Вам вспомнить Ваш пароль, если вы забыли его.",
+    "description": "A master password hint can help you remember your password if you forget it."
+  },
   "reTypeMasterPass": {
     "message": "Введите мастер-пароль повторно",
     "description": "Re-type Master Password"
@@ -90,6 +94,14 @@
   "generatePasswordCopied": {
     "message": "Сгенерировать пароль (с копированием)",
     "description": "Generate Password (copied)"
+  },
+  "noMatchingSites": {
+    "message": "Нет подходящих сайтов.",
+    "description": "No matching sites."
+  },
+  "vaultLocked": {
+    "message": "Хранилище заблокировано.",
+    "description": "Vault is locked."
   },
   "autoFillInfo": {
     "message": "Нет доступных учетных записей для автозаполнения в текущей вкладке браузера.",
@@ -372,7 +384,227 @@
     "description": "Please consider helping us out with a good review!"
   },
   "browserNotSupportClipboard": {
-    "message": "Ваш web-браузер не поддерживает \"лёгкое\" копирование данных в буфер обмена. Вам придётся копировать вручную.",
+    "message": "Ваш web-браузер не поддерживает копирование данных в буфер обмена. Вам придётся копировать вручную.",
     "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword": {
+    "message": "Проверка мастер-пароля",
+    "description": "Verify Master Password"
+  },
+  "invalidMasterPassword": {
+    "message": "Неверный мастер-пароль",
+    "description": "Invalid master password"
+  },
+  "errorsHaveOccurred": {
+    "message": "Неверный мастер-пароль",
+    "description": "Invalid master password"
+  },
+  "lockOptions": {
+    "message": "Настройки блокировки",
+    "description": "Lock Options"
+  },
+  "immediately": {
+    "message": "Немедленно",
+    "description": "Immediately"
+  },
+  "oneMinute": {
+    "message": "Через 1 минуту",
+    "description": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "Через 5 минут",
+    "description": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "Через 15 минут",
+    "description": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "Через 30 минут",
+    "description": "30 minutes"
+  },
+  "oneHour": {
+    "message": "Через 1 час",
+    "description": "1 hour"
+  },
+  "fourHours": {
+    "message": "Через 4 часа",
+    "description": "4 hours"
+  },
+  "onRestart": {
+    "message": "При перезапуске",
+    "description": "On Restart"
+  },
+  "never": {
+    "message": "Никогда",
+    "description": "Never"
+  },
+  "security": {
+    "message": "Безопасность",
+    "description": "Security"
+  },
+  "errorsOccurred": {
+    "message": "Произошла одна или несколько ошибок",
+    "description": "Errors have occurred"
+  },
+  "emailRequired": {
+    "message": "Требуется email.",
+    "description": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Неверный email.",
+    "description": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Требуется мастер-пароль.",
+    "description": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Мастер-пароль должен быть длиной не менее 8 символов.",
+    "description": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Мастер-пароли не совпадают.",
+    "description": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Ваш аккаунт был создан! Вы можете зайти сейчас.",
+    "description": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "Мы отправили на Ваш email подсказку к Вашему мастер-паролю.",
+    "description": "We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired": {
+    "message": "Необходим код подтверждения.",
+    "description": "Verification code is required."
+  },
+  "valueCopied": {
+    "message": " скопирован",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Не получается автоматически заполнить данные сайта на этой странице. Скопируйте и вставьте логин/пароль напрямую из своего хранилища.",
+    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+  },
+  "loggedOut": {
+    "message": "Вы вышли из хранилища",
+    "description": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Ваша логин-сессия истекла.",
+    "description": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Вы действительно хотите выйти?",
+    "description": "Are you sure you want to log out?"
+  },
+  "yes": {
+    "message": "Да",
+    "description": "Yes"
+  },
+  "no": {
+    "message": "Нет",
+    "description": "No"
+  },
+  "unexpectedError": {
+    "message": "Произошла незвестная ошибка.",
+    "description": "An unexpected error has occured."
+  },
+  "nameRequired": {
+    "message": "Требуется наименование.",
+    "description": "Name is required."
+  },
+  "addedFolder": {
+    "message": "Папка добавлена",
+    "description": "Added folder"
+  },
+  "changeMasterPass": {
+    "message": "Изменить мастер-пароль",
+    "description": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Вы можете изменить Ваш мастер-пароль на bitwarden.com. Хотите перейти на этот сайт сейчас?",
+    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation": {
+    "message": "Вы можете изменить Ваш email на bitwarden.com. Хотите перейти на этот сайт сейчас?",
+    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Двухфакторная аутентификация делает Ваш аккаунт более защищенным. При каждом входе в хранилище будет требоваться код из приложения Google Authenticator. Двухфакторная аутентификация включается на сайте bitwarden.com. Вы хотите посетить сайт сейчас?",
+    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut": {
+    "message": "Выход...",
+    "description": "Logging out"
+  },
+  "loggingOutConfirmation": {
+    "message": "Вы недавно обновились на более новую версию. Вы должны перезайти для изменения настроек блокировка. Вы хотите выйти сейчас?",
+    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder": {
+    "message": "Папка отредактирована",
+    "description": "Edited Folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Вы хотите удалить эту папку?",
+    "description": "Are you sure you want to delete this folder?"
+  },
+  "deletedFolder": {
+    "message": "Папка удалена",
+    "description": "Deleted folder"
+  },
+  "gettingStartedTutorial": {
+    "message": "Гайд для новичков",
+    "description": "Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Посмотрите наш гайд для новичков о том, как получить от браузерного расширения максимум.",
+    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete": {
+    "message": "Синхронизация завершена",
+    "description": "Syncing complete"
+  },
+  "importLoginsConfirmation": {
+    "message": "Вы можете импортировать сразу все свои данные из веб-хранилища bitwarden.com. Хотите сделать это сейчас?",
+    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied": {
+    "message": "Пароль скопирован",
+    "description": "Password copied"
+  },
+  "uri": {
+    "message": "URI",
+    "description": "URI"
+  },
+  "addedSite": {
+    "message": "Сайт добавлен",
+    "description": "Added site"
+  },
+  "editedSite": {
+    "message": "Сайт отредактирован",
+    "description": "Edited site"
+  },
+  "deleteSiteConfirmation": {
+    "message": "Вы хотите удалить этот сайт?",
+    "description": "Are you sure you want to delete this site?"
+  },
+  "deletedSite": {
+    "message": "Удалить сайт",
+    "description": "Deleted site"
+  },
+  "overwritePassword": {
+    "message": "Сменить пароль",
+    "description": "Overwrite Password"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Вы хотите сменить текущий пароль?",
+    "description": "Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp": {
+    "message": "Потеряли доступ к приложению Authenticator?",
+    "description": "Lost authenticator app?"
   }
 }
