@@ -395,10 +395,6 @@
     "message": "Ungültiges Master-Passwort",
     "description": "Invalid master password"
   },
-  "errorsHaveOccurred": {
-    "message": "Ungültiges Master-Passwort",
-    "description": "Invalid master password"
-  },
   "lockOptions": {
     "message": "Sperroptionen",
     "description": "Lock Options"

@@ -395,10 +395,6 @@
     "message": "Mot de passe maître invalide",
     "description": "Invalid master password"
   },
-  "errorsHaveOccurred": {
-    "message": "Mot de passe maître invalide",
-    "description": "Invalid master password"
-  },
   "lockOptions": {
     "message": "Options de verrouillage",
     "description": "Lock Options"

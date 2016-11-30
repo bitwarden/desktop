@@ -395,10 +395,6 @@
     "message": "Ongeldig hoofdwachtwoord",
     "description": "Invalid master password"
   },
-  "errorsHaveOccurred": {
-    "message": "Ongeldig hoofdwachtwoord",
-    "description": "Invalid master password"
-  },
   "lockOptions": {
     "message": "Versleutelopties",
     "description": "Lock Options"

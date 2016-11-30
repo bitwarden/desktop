@@ -35,7 +35,7 @@
                             });
                         }
                         else {
-                            toastr.error(i18nService.invalidMasterPassword, i18nService.errorsHaveOccurred);
+                            toastr.error(i18nService.invalidMasterPassword, i18nService.errorsOccurred);
                         }
                     });
                 });

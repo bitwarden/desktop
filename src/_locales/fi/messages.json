@@ -395,10 +395,6 @@
     "message": "Virheellinen pääsalasana",
     "description": "Invalid master password"
   },
-  "errorsHaveOccurred": {
-    "message": "Virheellinen pääsalasana",
-    "description": "Invalid master password"
-  },
   "lockOptions": {
     "message": "Lukitseminen",
     "description": "Lock Options"

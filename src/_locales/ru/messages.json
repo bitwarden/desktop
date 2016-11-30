@@ -395,10 +395,6 @@
     "message": "Неверный мастер-пароль",
     "description": "Invalid master password"
   },
-  "errorsHaveOccurred": {
-    "message": "Неверный мастер-пароль",
-    "description": "Invalid master password"
-  },
   "lockOptions": {
     "message": "Настройки блокировки",
     "description": "Lock Options"

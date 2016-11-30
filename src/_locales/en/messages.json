@@ -395,10 +395,6 @@
     "message": "Invalid master password",
     "description": "Invalid master password"
   },
-  "errorsHaveOccurred": {
-    "message": "Invalid master password",
-    "description": "Invalid master password"
-  },
   "lockOptions": {
     "message": "Lock Options",
     "description": "Lock Options"

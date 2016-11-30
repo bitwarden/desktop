@@ -395,10 +395,6 @@
     "message": "无效的主密码",
     "description": "Invalid master password"
   },
-  "errorsHaveOccurred": {
-    "message": "无效的主密码",
-    "description": "Invalid master password"
-  },
   "lockOptions": {
     "message": "锁定选项",
     "description": "Lock Options"
