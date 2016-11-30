@@ -528,7 +528,7 @@
     "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Двухфакторная аутентификация делает Ваш аккаунт более защищенным. При каждом входе в хранилище будет требоваться код из приложения Google Authenticator. Двухфакторная аутентификация включается на сайте bitwarden.com. Вы хотите посетить сайт сейчас?",
+    "message": "Двухфакторная аутентификация делает Ваш аккаунт более защищенным. При каждом входе в хранилище будет требоваться код из приложения Authenticator. Двухфакторная аутентификация включается на сайте bitwarden.com. Вы хотите посетить сайт сейчас?",
     "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut": {
