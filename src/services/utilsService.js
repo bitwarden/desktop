@@ -70,6 +70,10 @@ function initUtilsService() {
         }
 
         doc.on('click', '.list-section-item', function (e) {
+            if (e.isDefaultPrevented && e.isDefaultPrevented.name === 'returnTrue') {
+                return;
+            }
+
             var text = $(this).find('input, textarea').not('input[type="checkbox"], input[type="radio"], input[type="hidden"]');
             var checkbox = $(this).find('input[type="checkbox"]');
             var select = $(this).find('select');

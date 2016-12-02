@@ -1,6 +1,8 @@
 ﻿var gaTrackingId = chrome.extension.getBackgroundPage().utilsService.analyticsId();
 var gaFunc = null;
-window.ga = function (action, param1, param2, param3, param4) {
+
+window.GoogleAnalyticsObject = 'ga';
+window[window.GoogleAnalyticsObject] = function (action, param1, param2, param3, param4) {
     if (!gaFunc) {
         return;
     }
