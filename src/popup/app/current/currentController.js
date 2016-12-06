@@ -74,7 +74,7 @@ angular
 
             if (site && canAutofill && pageDetails && pageDetails.length) {
                 for (var i = 0; i < pageDetails.length; i++) {
-                    if (pageDetails[i].tabId != tabId) {
+                    if (pageDetails[i].tabId !== tabId) {
                         continue;
                     }
 
@@ -87,9 +87,7 @@ angular
                             fillScript: fillScript
                         }, {
                             frameId: pageDetails[i].frameId
-                        }, function () {
-                            $window.close();
-                        });
+                        }, $window.close);
                     }
                 }
             }
