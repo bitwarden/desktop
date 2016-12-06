@@ -312,8 +312,8 @@
     "description": "Edit"
   },
   "noSitesInList": {
-    "message": "There are no sites in list.",
-    "description": "There are no sites in list."
+    "message": "There are no sites to list.",
+    "description": "There are no sites to list."
   },
   "siteInformation": {
     "message": "Site Information",

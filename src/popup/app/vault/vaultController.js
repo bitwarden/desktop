@@ -75,22 +75,27 @@
         };
 
         $scope.searchSites = function () {
-            if (!$scope.searchText) {
+            if (!$scope.searchText || $scope.searchText.length < 3) {
                 return;
             }
 
-            return function (site) {
-                var searchTerm = $scope.searchText.toLowerCase();
-                if (site.name && site.name.toLowerCase().indexOf(searchTerm) !== -1) {
-                    return true;
-                }
-                if (site.username && site.username.toLowerCase().indexOf(searchTerm) !== -1) {
-                    return true;
-                }
-
-                return false;
-            };
+            return searchSite;
         };
+
+        function searchSite(site) {
+            var searchTerm = $scope.searchText.toLowerCase();
+            if (site.name && site.name.toLowerCase().indexOf(searchTerm) !== -1) {
+                return true;
+            }
+            if (site.username && site.username.toLowerCase().indexOf(searchTerm) !== -1) {
+                return true;
+            }
+            if (site.uri && site.uri.toLowerCase().indexOf(searchTerm) !== -1) {
+                return true;
+            }
+
+            return false;
+        }
 
         $scope.addSite = function () {
             $state.go('addSite', {
@@ -107,6 +112,10 @@
                 returnScrollY: getScrollY(),
                 returnSearchText: $scope.searchText
             });
+        };
+
+        $scope.viewFolder = function (folder) {
+            // TODO: vault folder page
         };
 
         $scope.clipboardError = function (e) {
