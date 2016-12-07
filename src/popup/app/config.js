@@ -93,14 +93,14 @@
                 templateUrl: 'app/vault/views/vaultViewFolder.html',
                 controller: 'vaultViewFolderController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0, returnSearchText: null, fromCurrent: false }
+                params: { animation: null, returnScrollY: 0, returnSearchText: null, from: 'vault' }
             })
             .state('viewSite', {
                 url: '/view-site?siteId',
                 templateUrl: 'app/vault/views/vaultViewSite.html',
                 controller: 'vaultViewSiteController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0, returnSearchText: null, fromCurrent: false }
+                params: { animation: null, returnScrollY: 0, returnSearchText: null, from: 'vault' }
             })
             .state('addSite', {
                 url: '/add-site',
@@ -109,7 +109,7 @@
                 data: { authorize: true },
                 params: {
                     animation: null, returnScrollY: 0, returnSearchText: null, name: null,
-                    uri: null, site: null, fromCurrent: false
+                    uri: null, site: null, from: 'vault'
                 }
             })
             .state('editSite', {
@@ -119,7 +119,7 @@
                 data: { authorize: true },
                 params: {
                     animation: null, fromView: true, returnScrollY: 0,
-                    returnSearchText: null, site: null, fromCurrent: false
+                    returnSearchText: null, site: null, from: 'vault'
                 }
             })
 

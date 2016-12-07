@@ -86,7 +86,8 @@
             $state.go('addSite', {
                 animation: 'in-slide-up',
                 returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText
+                returnSearchText: $scope.searchText,
+                from: 'folder'
             });
         };
 
@@ -95,7 +96,8 @@
                 siteId: site.id,
                 animation: 'in-slide-up',
                 returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText
+                returnSearchText: $scope.searchText,
+                from: 'folder'
             });
         };
 

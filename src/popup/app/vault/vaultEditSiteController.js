@@ -8,7 +8,7 @@ angular
         var returnSearchText = $stateParams.returnSearchText;
         var siteId = $stateParams.siteId;
         var fromView = $stateParams.fromView;
-        var fromCurrent = $stateParams.fromCurrent;
+        var from = $stateParams.from;
 
         $scope.site = {
             folderId: null
@@ -75,7 +75,7 @@ angular
                     animation: 'out-slide-down',
                     returnScrollY: returnScrollY || 0,
                     returnSearchText: returnSearchText,
-                    fromCurrent: fromCurrent
+                    from: from
                 });
             }
             else {

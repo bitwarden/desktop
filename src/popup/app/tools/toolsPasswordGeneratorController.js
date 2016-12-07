@@ -93,7 +93,7 @@
             if (addState) {
                 $state.go('addSite', {
                     animation: 'out-slide-down',
-                    fromCurrent: addState.fromCurrent,
+                    from: addState.from,
                     site: addState.site,
                     returnScrollY: addState.returnScrollY,
                     returnSearchText: addState.returnSearchText

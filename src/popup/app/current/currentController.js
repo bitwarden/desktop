@@ -104,7 +104,7 @@ angular
             $state.go('viewSite', {
                 siteId: site.id,
                 animation: 'in-slide-up',
-                fromCurrent: true
+                from: 'current'
             });
         };
 

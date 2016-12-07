@@ -19,8 +19,7 @@
                 </div>
                 <a href="javascript:void(0)" ng-click="viewSite(site)"
                    class="list-section-item condensed" title="{{i18n.edit}} {{site.name}}"
-                   ng-repeat="site in vaultSites | filter: { folderId: folder.id }
-                            | filter: searchSites() | orderBy: ['name', 'username']">
+                   ng-repeat="site in vaultSites | filter: searchSites() | orderBy: ['name', 'username']">
                     <span class="btn-list" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
                           data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">

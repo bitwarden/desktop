@@ -6,7 +6,7 @@
         $scope.i18n = i18nService;
         var returnScrollY = $stateParams.returnScrollY;
         var returnSearchText = $stateParams.returnSearchText;
-        var fromCurrent = $stateParams.fromCurrent || $stateParams.uri !== null;
+        var fromCurrent = $stateParams.from;
 
         $scope.site = {
             folderId: null,
@@ -48,12 +48,19 @@
         };
 
         $scope.close = function () {
-            if (fromCurrent) {
+            if (from === 'current') {
                 $state.go('tabs.current', {
                     animation: 'out-slide-down'
                 });
             }
-            else {
+            else if (from === 'folder') {
+                $state.go('viewFolder', {
+                    animation: 'out-slide-down',
+                    scrollY: returnScrollY || 0,
+                    searchText: returnSearchText
+                });
+            }
+            else if(from === 'vault') {
                 $state.go('tabs.vault', {
                     animation: 'out-slide-down',
                     scrollY: returnScrollY || 0,
@@ -67,7 +74,7 @@
             $state.go('passwordGenerator', {
                 animation: 'in-slide-up',
                 addState: {
-                    fromCurrent: fromCurrent,
+                    from: from,
                     site: $scope.site,
                     returnScrollY: returnScrollY,
                     returnSearchText: returnSearchText
