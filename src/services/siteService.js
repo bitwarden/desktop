@@ -115,6 +115,21 @@ function initSiteService() {
         return deferred.promise;
     };
 
+    SiteService.prototype.getAllDecryptedForFolder = function (folderId) {
+        var self = this;
+
+        return self.getAllDecrypted().then(function (sites) {
+            var sitesToReturn = [];
+            for (var i = 0; i < sites.length; i++) {
+                if (sites[i].folderId === folderId) {
+                    sitesToReturn.push(sites[i]);
+                }
+            }
+
+            return sitesToReturn;
+        });
+    };
+
     SiteService.prototype.saveWithServer = function (site) {
         var deferred = Q.defer();
 

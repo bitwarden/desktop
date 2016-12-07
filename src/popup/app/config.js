@@ -88,6 +88,13 @@
                     controller: 'toolsController'
                 })
 
+            .state('viewFolder', {
+                url: '/view-folder?folderId',
+                templateUrl: 'app/vault/views/vaultViewFolder.html',
+                controller: 'vaultViewFolderController',
+                data: { authorize: true },
+                params: { animation: null, returnScrollY: 0, returnSearchText: null, fromCurrent: false }
+            })
             .state('viewSite', {
                 url: '/view-site?siteId',
                 templateUrl: 'app/vault/views/vaultViewSite.html',

@@ -614,5 +614,9 @@
   "translations": {
     "message": "Translations",
     "description": "Translations"
+  },
+  "searchFolder": {
+    "message": "Search folder",
+    "description": "Search folder"
   }
 }

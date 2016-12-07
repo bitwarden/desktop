@@ -1,50 +1,36 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr,
-        syncService, utilsService, $analytics, i18nService) {
+    .controller('vaultViewFolderController', function ($scope, siteService, folderService, $q, $state, $stateParams, toastr,
+        syncService, $analytics, i18nService) {
+        $scope.folder = {
+            id: $stateParams.folderId || null,
+            name: '(none)'
+        };
         $scope.i18n = i18nService;
         $('#search').focus();
 
-        var syncOnLoad = $stateParams.syncOnLoad;
-        if (syncOnLoad) {
-            setTimeout(function () {
-                syncService.fullSync(function () { });
-            }, utilsService.isFirefox() ? 500 : 0);
-        }
-
-        var delayLoad = true;
-        $scope.loaded = true;
-        if (!$rootScope.vaultSites) {
-            $rootScope.vaultSites = [];
-            delayLoad = false;
-        }
-        if (!$rootScope.vaultFolders) {
-            $rootScope.vaultFolders = [];
-            delayLoad = false;
-            $scope.loaded = false;
-        }
-
-        if (delayLoad) {
-            setTimeout(setScrollY, 100);
-            setTimeout(loadVault, 1000);
-        }
-        else if (!syncOnLoad) {
-            loadVault();
-        }
+        $scope.loaded = false;
+        $scope.vaultSites = [];
+        loadVault();
 
         function loadVault() {
-            var decFolders = [];
+            var decFolder = null;
             var decSites = [];
             var promises = [];
 
-            var folderPromise = $q.when(folderService.getAllDecrypted());
-            folderPromise.then(function (folders) {
-                decFolders = folders;
-            });
-            promises.push(folderPromise);
+            if ($scope.folder.id) {
+                var folderDeferred = $q.defer();
+                folderService.get($scope.folder.id, function (folder) {
+                    $q.when(folder.decrypt()).then(function (model) {
+                        decFolder = model;
+                        folderDeferred.resolve();
+                    });
+                });
+                promises.push(folderDeferred.promise);
+            }
 
-            var sitePromise = $q.when(siteService.getAllDecrypted());
+            var sitePromise = $q.when(siteService.getAllDecryptedForFolder($scope.folder.id));
             sitePromise.then(function (sites) {
                 decSites = sites;
             });
@@ -52,12 +38,11 @@
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
-                $rootScope.vaultFolders = decFolders;
-                $rootScope.vaultSites = decSites;
-
-                if (!delayLoad) {
-                    setScrollY();
+                $scope.vaultSites = decSites;
+                if (decFolder) {
+                    $scope.folder.name = decFolder.name;
                 }
+                setScrollY();
             });
         }
 
@@ -109,15 +94,6 @@
             $state.go('viewSite', {
                 siteId: site.id,
                 animation: 'in-slide-up',
-                returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText
-            });
-        };
-
-        $scope.viewFolder = function (folder) {
-            $state.go('viewFolder', {
-                folderId: folder.id || '',
-                animation: 'in-slide-left',
                 returnScrollY: getScrollY(),
                 returnSearchText: $scope.searchText
             });
