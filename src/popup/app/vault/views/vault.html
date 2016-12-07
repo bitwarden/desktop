@@ -8,7 +8,7 @@
     </div>
 </div>
 <div class="content content-tabs">
-    <div ng-if="vaultSites.length && vaultSites.length >= 100 && vaultFolders.length && (!searchText || searchText.length < 3)">
+    <div ng-if="vaultSites.length && vaultSites.length >= 100 && vaultFolders.length && (!searchText || searchText.length < 2)">
         <div class="list">
             <div class="list-section">
                 <div class="list-section-header">
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div ng-if="vaultSites.length && (vaultSites.length < 100 || (searchText && searchText.length >= 3))">
+    <div ng-if="vaultSites.length && (vaultSites.length < 100 || (searchText && searchText.length >= 2))">
         <div class="list">
             <div class="list-grouped" ng-repeat="folder in vaultFolders | orderBy: folderSort" ng-show="vaultFolders.length">
                 <div ng-if="(vaultSites | filter: { folderId: folder.id } | filter: searchSites()).length">

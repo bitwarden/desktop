@@ -75,7 +75,7 @@
         };
 
         $scope.searchSites = function () {
-            if (!$scope.searchText || $scope.searchText.length < 3) {
+            if (!$scope.searchText || $scope.searchText.length < 2) {
                 return;
             }
 
