@@ -43,6 +43,9 @@
                 $scope.loaded = true;
                 $scope.vaultSites = decSites.sort(function (a, b) {
                     if (!a.name) {
+                        return -1;
+                    }
+                    if (!b.name) {
                         return 1;
                     }
 
@@ -56,6 +59,9 @@
                     }
 
                     if (!a.username) {
+                        return -1;
+                    }
+                    if (!b.username) {
                         return 1;
                     }
 
