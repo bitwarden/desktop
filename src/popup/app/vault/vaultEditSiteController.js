@@ -4,8 +4,6 @@ angular
     .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService,
         cryptoService, $q, toastr, SweetAlert, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
-        var returnScrollY = $stateParams.returnScrollY;
-        var returnSearchText = $stateParams.returnSearchText;
         var siteId = $stateParams.siteId;
         var fromView = $stateParams.fromView;
         var from = $stateParams.from;
@@ -73,16 +71,12 @@ angular
                 $state.go('viewSite', {
                     siteId: siteId,
                     animation: 'out-slide-down',
-                    returnScrollY: returnScrollY || 0,
-                    returnSearchText: returnSearchText,
                     from: from
                 });
             }
             else {
                 $state.go('tabs.vault', {
-                    animation: 'out-slide-down',
-                    scrollY: returnScrollY || 0,
-                    searchText: returnSearchText
+                    animation: 'out-slide-down'
                 });
             }
         };
@@ -114,9 +108,7 @@ angular
                 editState: {
                     fromView: fromView,
                     siteId: siteId,
-                    site: $scope.site,
-                    returnScrollY: returnScrollY,
-                    returnSearchText: returnSearchText
+                    site: $scope.site
                 }
             });
         }

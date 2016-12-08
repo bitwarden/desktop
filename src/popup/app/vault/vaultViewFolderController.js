@@ -2,13 +2,18 @@
     .module('bit.vault')
 
     .controller('vaultViewFolderController', function ($scope, siteService, folderService, $q, $state, $stateParams, toastr,
-        syncService, $analytics, i18nService) {
+        syncService, $analytics, i18nService, stateService) {
+        var stateKey = 'viewFolder',
+            state = stateService.getState(stateKey) || {};
+
+        state.folderId = $stateParams.folderId || state.folderId;
+
         var pageSize = 100,
             decFolder = null,
             decSites = [];
 
         $scope.folder = {
-            id: $stateParams.folderId || null,
+            id: !state.folderId || state.folderId === '0' ? null : state.folderId,
             name: '(none)'
         };
         $scope.i18n = i18nService;
@@ -17,6 +22,7 @@
         $scope.loaded = false;
         $scope.vaultSites = [];
         $scope.pagedVaultSites = [];
+        $scope.searchText = null;
         loadVault();
 
         function loadVault() {
@@ -46,7 +52,13 @@
                 if (decFolder) {
                     $scope.folder.name = decFolder.name;
                 }
-                setScrollY();
+
+                if (state.searchText) {
+                    $scope.searchText = state.searchText;
+                    $scope.searchSites();
+                }
+
+                setTimeout(setScrollY, 200);
             });
         }
 
@@ -95,11 +107,6 @@
             }
         };
 
-        $scope.searchText = null;
-        if ($stateParams.searchText) {
-            $scope.searchText = $stateParams.searchText;
-        }
-
         $scope.searchSites = function () {
             if (!$scope.searchText || $scope.searchText.length < 2) {
                 if ($scope.vaultSites.length !== decSites.length) {
@@ -140,20 +147,18 @@
         }
 
         $scope.addSite = function () {
+            storeState();
             $state.go('addSite', {
                 animation: 'in-slide-up',
-                returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText,
                 from: 'folder'
             });
         };
 
         $scope.viewSite = function (site) {
+            storeState();
             $state.go('viewSite', {
                 siteId: site.id,
                 animation: 'in-slide-up',
-                returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText,
                 from: 'folder'
             });
         };
@@ -168,15 +173,24 @@
             toastr.info(type + i18nService.valueCopied);
         };
 
+        function storeState() {
+            angular.extend(state, {
+                scrollY: getScrollY(),
+                searchText: $scope.searchText
+            });
+
+            stateService.saveState(stateKey, state);
+        }
+
         function getScrollY() {
             var content = document.getElementsByClassName('content')[0];
             return content.scrollTop;
         }
 
         function setScrollY() {
-            if ($stateParams.scrollY) {
+            if (state.scrollY) {
                 var content = document.getElementsByClassName('content')[0];
-                content.scrollTop = $stateParams.scrollY;
+                content.scrollTop = state.scrollY;
             }
         }
     });

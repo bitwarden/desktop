@@ -17,5 +17,13 @@
             return null;
         };
 
+        _service.removeState = function (key) {
+            delete _state[key];
+        };
+
+        _service.purgeState = function () {
+            _state = {};
+        };
+
         return _service;
     });

@@ -4,8 +4,6 @@ angular
     .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, tldjs, toastr, $q,
         $analytics, i18nService) {
         $scope.i18n = i18nService;
-        var returnScrollY = $stateParams.returnScrollY;
-        var returnSearchText = $stateParams.returnSearchText;
         var from = $stateParams.from;
 
         $scope.site = null;
@@ -47,8 +45,6 @@ angular
                 animation: 'in-slide-up',
                 siteId: site.id,
                 fromView: true,
-                returnScrollY: returnScrollY || 0,
-                returnSearchText: returnSearchText,
                 from: from
             });
         };
@@ -61,16 +57,12 @@ angular
             }
             else if (from === 'folder') {
                 $state.go('viewFolder', {
-                    animation: 'out-slide-down',
-                    scrollY: returnScrollY || 0,
-                    searchText: returnSearchText
+                    animation: 'out-slide-down'
                 });
             }
             else {
                 $state.go('tabs.vault', {
-                    animation: 'out-slide-down',
-                    scrollY: returnScrollY || 0,
-                    searchText: returnSearchText
+                    animation: 'out-slide-down'
                 });
             }
         };

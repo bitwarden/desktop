@@ -2,7 +2,10 @@
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr,
-        syncService, utilsService, $analytics, i18nService) {
+        syncService, utilsService, $analytics, i18nService, stateService) {
+        var stateKey = 'vault',
+            state = stateService.getState(stateKey) || {};
+
         $scope.i18n = i18nService;
         $('#search').focus();
 
@@ -62,8 +65,8 @@
         }
 
         $scope.searchText = null;
-        if ($stateParams.searchText) {
-            $scope.searchText = $stateParams.searchText;
+        if (state.searchText) {
+            $scope.searchText = state.searchText;
         }
 
         $scope.folderSort = function (item) {
@@ -98,28 +101,27 @@
         }
 
         $scope.addSite = function () {
+            storeState();
             $state.go('addSite', {
                 animation: 'in-slide-up',
-                returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText
+                from: 'vault'
             });
         };
 
         $scope.viewSite = function (site) {
+            storeState();
             $state.go('viewSite', {
                 siteId: site.id,
                 animation: 'in-slide-up',
-                returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText
+                from: 'vault'
             });
         };
 
         $scope.viewFolder = function (folder) {
+            storeState();
             $state.go('viewFolder', {
-                folderId: folder.id || '',
-                animation: 'in-slide-left',
-                returnScrollY: getScrollY(),
-                returnSearchText: $scope.searchText
+                folderId: folder.id || '0',
+                animation: 'in-slide-left'
             });
         };
 
@@ -137,15 +139,22 @@
             setTimeout(loadVault, 500);
         });
 
+        function storeState() {
+            stateService.saveState(stateKey, {
+                scrollY: getScrollY(),
+                searchText: $scope.searchText
+            });
+        }
+
         function getScrollY() {
             var content = document.getElementsByClassName('content')[0];
             return content.scrollTop;
         }
 
         function setScrollY() {
-            if ($stateParams.scrollY) {
+            if (state.scrollY) {
                 var content = document.getElementsByClassName('content')[0];
-                content.scrollTop = $stateParams.scrollY;
+                content.scrollTop = state.scrollY;
             }
         }
     });

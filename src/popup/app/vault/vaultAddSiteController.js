@@ -4,9 +4,7 @@
     .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService,
         cryptoService, $q, toastr, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
-        var returnScrollY = $stateParams.returnScrollY;
-        var returnSearchText = $stateParams.returnSearchText;
-        var fromCurrent = $stateParams.from;
+        var from = $stateParams.from;
 
         $scope.site = {
             folderId: null,
@@ -55,16 +53,12 @@
             }
             else if (from === 'folder') {
                 $state.go('viewFolder', {
-                    animation: 'out-slide-down',
-                    scrollY: returnScrollY || 0,
-                    searchText: returnSearchText
+                    animation: 'out-slide-down'
                 });
             }
-            else if(from === 'vault') {
+            else {
                 $state.go('tabs.vault', {
-                    animation: 'out-slide-down',
-                    scrollY: returnScrollY || 0,
-                    searchText: returnSearchText
+                    animation: 'out-slide-down'
                 });
             }
         };
@@ -75,9 +69,7 @@
                 animation: 'in-slide-up',
                 addState: {
                     from: from,
-                    site: $scope.site,
-                    returnScrollY: returnScrollY,
-                    returnSearchText: returnSearchText
+                    site: $scope.site
                 }
             });
         };

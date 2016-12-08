@@ -65,7 +65,8 @@ angular
             $state.go('addSite', {
                 animation: 'in-slide-up',
                 name: domain,
-                uri: url
+                uri: url,
+                from: 'current'
             });
         };
 

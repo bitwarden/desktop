@@ -94,9 +94,7 @@
                 $state.go('addSite', {
                     animation: 'out-slide-down',
                     from: addState.from,
-                    site: addState.site,
-                    returnScrollY: addState.returnScrollY,
-                    returnSearchText: addState.returnSearchText
+                    site: addState.site
                 });
             }
             else if (editState) {
@@ -104,9 +102,7 @@
                     animation: 'out-slide-down',
                     site: editState.site,
                     fromView: editState.fromView,
-                    siteId: editState.siteId,
-                    returnScrollY: editState.returnScrollY,
-                    returnSearchText: editState.returnSearchText
+                    siteId: editState.siteId
                 });
             }
             else {

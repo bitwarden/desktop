@@ -75,7 +75,7 @@
                     url: '/vault',
                     templateUrl: 'app/vault/views/vault.html',
                     controller: 'vaultController',
-                    params: { scrollY: 0, searchText: null, syncOnLoad: false }
+                    params: { syncOnLoad: false }
                 })
                 .state('tabs.settings', {
                     url: '/settings',
@@ -93,24 +93,21 @@
                 templateUrl: 'app/vault/views/vaultViewFolder.html',
                 controller: 'vaultViewFolderController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0, returnSearchText: null, from: 'vault' }
+                params: { animation: null, from: 'vault' }
             })
             .state('viewSite', {
                 url: '/view-site?siteId',
                 templateUrl: 'app/vault/views/vaultViewSite.html',
                 controller: 'vaultViewSiteController',
                 data: { authorize: true },
-                params: { animation: null, returnScrollY: 0, returnSearchText: null, from: 'vault' }
+                params: { animation: null, from: 'vault' }
             })
             .state('addSite', {
                 url: '/add-site',
                 templateUrl: 'app/vault/views/vaultAddSite.html',
                 controller: 'vaultAddSiteController',
                 data: { authorize: true },
-                params: {
-                    animation: null, returnScrollY: 0, returnSearchText: null, name: null,
-                    uri: null, site: null, from: 'vault'
-                }
+                params: { animation: null, name: null, uri: null, site: null, from: 'vault' }
             })
             .state('editSite', {
                 url: '/edit-site?siteId',
@@ -189,8 +186,12 @@
                 params: { animation: null }
             });
     })
-    .run(function ($rootScope, userService, loginService, cryptoService, tokenService, $state, constantsService) {
+    .run(function ($rootScope, userService, loginService, cryptoService, tokenService, $state, constantsService, stateService) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+            if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {
+                stateService.purgeState();
+            }
+
             cryptoService.getKey(false, function (key) {
                 tokenService.getToken(function (token) {
                     userService.isAuthenticated(function (isAuthenticated) {
