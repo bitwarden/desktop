@@ -32,6 +32,7 @@
     "tldjs": "1.7.0",
     "browserify": "13.1.1",
     "vinyl-source-stream": "1.1.0",
-    "gulp-google-webfonts": "0.0.14"
+    "gulp-google-webfonts": "0.0.14",
+    "ng-infinite-scroll": "1.3.0"
   }
 }

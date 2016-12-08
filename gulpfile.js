@@ -121,6 +121,10 @@ gulp.task('lib', ['clean:lib'], function () {
                 paths.npmDir + 'angulartics/src/angulartics.js'
             ],
             dest: paths.libDir + 'angulartics'
+        },
+        {
+            src: paths.npmDir + 'ng-infinite-scroll/build/ng-infinite-scroll.js',
+            dest: paths.libDir + 'ng-infinite-scroll'
         }
     ];
 

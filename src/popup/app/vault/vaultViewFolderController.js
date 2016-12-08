@@ -3,6 +3,8 @@
 
     .controller('vaultViewFolderController', function ($scope, siteService, folderService, $q, $state, $stateParams, toastr,
         syncService, $analytics, i18nService) {
+        var pageSize = 100;
+
         $scope.folder = {
             id: $stateParams.folderId || null,
             name: '(none)'
@@ -12,6 +14,7 @@
 
         $scope.loaded = false;
         $scope.vaultSites = [];
+        $scope.pagedVaultSites = [];
         loadVault();
 
         function loadVault() {
@@ -38,7 +41,37 @@
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
-                $scope.vaultSites = decSites;
+                $scope.vaultSites = decSites.sort(function (a, b) {
+                    if (!a.name) {
+                        return 1;
+                    }
+
+                    var aName = a.name.toLowerCase(),
+                        bName = b.name.toLowerCase();
+                    if (aName > bName) {
+                        return 1;
+                    }
+                    if (aName < bName) {
+                        return -1;
+                    }
+
+                    if (!a.username) {
+                        return 1;
+                    }
+
+                    var aUsername = a.username.toLowerCase(),
+                        bUsername = b.username.toLowerCase();
+                    if (aUsername > bUsername) {
+                        return 1;
+                    }
+                    if (aUsername < bUsername) {
+                        return -1;
+                    }
+
+                    // a must be equal to b
+                    return 0;
+                });;
+
                 if (decFolder) {
                     $scope.folder.name = decFolder.name;
                 }
@@ -46,18 +79,18 @@
             });
         }
 
+        $scope.loadMore = function () {
+            var pagedLength = $scope.pagedVaultSites.length;
+            if ($scope.vaultSites.length > pagedLength) {
+                $scope.pagedVaultSites =
+                    $scope.pagedVaultSites.concat($scope.vaultSites.slice(pagedLength, pagedLength + pageSize));
+            }
+        };
+
         $scope.searchText = null;
         if ($stateParams.searchText) {
             $scope.searchText = $stateParams.searchText;
         }
-
-        $scope.folderSort = function (item) {
-            if (!item.id) {
-                return '';
-            }
-
-            return item.name.toLowerCase();
-        };
 
         $scope.searchSites = function () {
             if (!$scope.searchText || $scope.searchText.length < 2) {
@@ -110,10 +143,6 @@
             $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
             toastr.info(type + i18nService.valueCopied);
         };
-
-        $scope.$on('syncCompleted', function (event, successfully) {
-            setTimeout(loadVault, 500);
-        });
 
         function getScrollY() {
             var content = document.getElementsByClassName('content')[0];
