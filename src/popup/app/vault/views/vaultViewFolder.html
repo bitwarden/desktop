@@ -6,7 +6,7 @@
         <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
     <div class="search">
-        <input type="search" placeholder="{{i18n.searchFolder}}" ng-model="searchText" id="search" />
+        <input type="search" placeholder="{{i18n.searchFolder}}" ng-model="searchText" ng-change="searchSites()" id="search" />
         <i class="fa fa-search"></i>
     </div>
 </div>

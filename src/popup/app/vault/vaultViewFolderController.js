@@ -3,7 +3,9 @@
 
     .controller('vaultViewFolderController', function ($scope, siteService, folderService, $q, $state, $stateParams, toastr,
         syncService, $analytics, i18nService) {
-        var pageSize = 100;
+        var pageSize = 100,
+            decFolder = null,
+            decSites = [];
 
         $scope.folder = {
             id: $stateParams.folderId || null,
@@ -18,8 +20,6 @@
         loadVault();
 
         function loadVault() {
-            var decFolder = null;
-            var decSites = [];
             var promises = [];
 
             if ($scope.folder.id) {
@@ -35,54 +35,56 @@
 
             var sitePromise = $q.when(siteService.getAllDecryptedForFolder($scope.folder.id));
             sitePromise.then(function (sites) {
-                decSites = sites;
+                decSites = sites.sort(siteSort);
             });
             promises.push(sitePromise);
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
-                $scope.vaultSites = decSites.sort(function (a, b) {
-                    if (!a.name) {
-                        return -1;
-                    }
-                    if (!b.name) {
-                        return 1;
-                    }
-
-                    var aName = a.name.toLowerCase(),
-                        bName = b.name.toLowerCase();
-                    if (aName > bName) {
-                        return 1;
-                    }
-                    if (aName < bName) {
-                        return -1;
-                    }
-
-                    if (!a.username) {
-                        return -1;
-                    }
-                    if (!b.username) {
-                        return 1;
-                    }
-
-                    var aUsername = a.username.toLowerCase(),
-                        bUsername = b.username.toLowerCase();
-                    if (aUsername > bUsername) {
-                        return 1;
-                    }
-                    if (aUsername < bUsername) {
-                        return -1;
-                    }
-
-                    // a must be equal to b
-                    return 0;
-                });;
+                $scope.vaultSites = decSites;
 
                 if (decFolder) {
                     $scope.folder.name = decFolder.name;
                 }
                 setScrollY();
             });
+        }
+
+        function siteSort(a, b) {
+            if (!a.name) {
+                return -1;
+            }
+            if (!b.name) {
+                return 1;
+            }
+
+            var aName = a.name.toLowerCase(),
+                bName = b.name.toLowerCase();
+            if (aName > bName) {
+                return 1;
+            }
+            if (aName < bName) {
+                return -1;
+            }
+
+            if (!a.username) {
+                return -1;
+            }
+            if (!b.username) {
+                return 1;
+            }
+
+            var aUsername = a.username.toLowerCase(),
+                bUsername = b.username.toLowerCase();
+            if (aUsername > bUsername) {
+                return 1;
+            }
+            if (aUsername < bUsername) {
+                return -1;
+            }
+
+            // a must be equal to b
+            return 0;
         }
 
         $scope.loadMore = function () {
@@ -100,11 +102,27 @@
 
         $scope.searchSites = function () {
             if (!$scope.searchText || $scope.searchText.length < 2) {
+                if ($scope.vaultSites.length !== decSites.length) {
+                    resetList(decSites);
+                }
                 return;
             }
 
-            return searchSite;
+            var matchedSites = [];
+            for (var i = 0; i < decSites.length; i++) {
+                if (searchSite(decSites[i])) {
+                    matchedSites.push(decSites[i]);
+                }
+            }
+
+            resetList(matchedSites);
         };
+
+        function resetList(sites) {
+            $scope.vaultSites = sites;
+            $scope.pagedVaultSites = [];
+            $scope.loadMore();
+        }
 
         function searchSite(site) {
             var searchTerm = $scope.searchText.toLowerCase();
