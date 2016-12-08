@@ -15,6 +15,9 @@
          infinite-scroll-immediate-check="true">
         <div class="list">
             <div class="list-section" style="padding-bottom: 0;">
+                <div class="list-section-header">
+                    {{folder.name}}
+                </div>
                 <a href="javascript:void(0)" ng-click="viewSite(site)"
                    class="list-section-item condensed" title="{{i18n.edit}} {{site.name}}"
                    ng-repeat="site in pagedVaultSites">
