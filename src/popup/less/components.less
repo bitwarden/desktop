@@ -12,7 +12,6 @@
     left: 0;
     right: 0;
     overflow: hidden;
-    position: relative;
 
     a, button {
         color: white !important;
@@ -42,6 +41,7 @@
         display: block;
         position: absolute;
         left: 0;
+        text-align: left;
 
         a, button {
             padding: 12px 10px;
@@ -104,11 +104,25 @@
         }
     }
 
-    .left ~ .right ~ .search {
-        margin-left: 92px;
+    &.header-search {
+        .left, .right, .search {
+            display: table-cell;
+            position: relative;
+        }
 
         input {
-            width: 77%;
+            width: 100%;
+            margin: 0;
+            float: none;
+        }
+
+        .search {
+            padding: 0 7px;
+        }
+
+        a {
+            white-space: nowrap;
+            float: none;
         }
     }
 }

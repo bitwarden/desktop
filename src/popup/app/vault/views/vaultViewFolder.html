@@ -1,13 +1,13 @@
-﻿<div class="header">
+﻿<div class="header header-search">
     <div class="left">
         <a ui-sref="tabs.vault({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.myVault}}</a>
-    </div>
-    <div class="right">
-        <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
     <div class="search">
         <input type="search" placeholder="{{i18n.searchFolder}}" ng-model="searchText" ng-change="searchSites()" id="search" />
         <i class="fa fa-search"></i>
+    </div>
+    <div class="right">
+        <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
 </div>
 <div class="content">
