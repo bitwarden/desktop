@@ -4,10 +4,11 @@
     .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService,
         cryptoService, $q, toastr, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
-        var from = $stateParams.from;
+        var from = $stateParams.from,
+            folderId = $stateParams.folderId;
 
         $scope.site = {
-            folderId: null,
+            folderId: folderId,
             name: $stateParams.name,
             uri: $stateParams.uri
         };
@@ -53,7 +54,8 @@
             }
             else if (from === 'folder') {
                 $state.go('viewFolder', {
-                    animation: 'out-slide-down'
+                    animation: 'out-slide-down',
+                    folderId: folderId
                 });
             }
             else {

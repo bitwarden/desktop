@@ -150,7 +150,8 @@
             storeState();
             $state.go('addSite', {
                 animation: 'in-slide-up',
-                from: 'folder'
+                from: 'folder',
+                folderId: $scope.folder.id
             });
         };
 

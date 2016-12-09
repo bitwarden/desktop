@@ -107,17 +107,14 @@
                 templateUrl: 'app/vault/views/vaultAddSite.html',
                 controller: 'vaultAddSiteController',
                 data: { authorize: true },
-                params: { animation: null, name: null, uri: null, site: null, from: 'vault' }
+                params: { animation: null, name: null, uri: null, folderId: null, site: null, from: 'vault' }
             })
             .state('editSite', {
                 url: '/edit-site?siteId',
                 templateUrl: 'app/vault/views/vaultEditSite.html',
                 controller: 'vaultEditSiteController',
                 data: { authorize: true },
-                params: {
-                    animation: null, fromView: true, returnScrollY: 0,
-                    returnSearchText: null, site: null, from: 'vault'
-                }
+                params: { animation: null, fromView: true, site: null, from: 'vault' }
             })
 
             .state('passwordGenerator', {
