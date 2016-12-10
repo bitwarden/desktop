@@ -3,8 +3,11 @@ var CipherString = function (encryptedString) {
     this.decryptedValue = null;
 
     if (encryptedString) {
-        this.initializationVector = this.encryptedString.split('|')[0];
-        this.cipherText = this.encryptedString.split('|')[1];
+        var encPieces = this.encryptedString.split('|');
+
+        this.initializationVector = encPieces[0];
+        this.cipherText = encPieces[1];
+        this.mac = encPieces.length > 2 ? encPieces[2] : null;
     }
 };
 
@@ -42,7 +45,7 @@ var Folder = function (obj, alreadyEncrypted) {
 
 !function () {
     CipherString.prototype.decrypt = function (callback) {
-         var deferred = Q.defer();
+        var deferred = Q.defer();
 
         if (!this.decryptedValue) {
             var cryptoService = chrome.extension.getBackgroundPage().cryptoService;

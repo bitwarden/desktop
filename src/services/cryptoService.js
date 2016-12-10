@@ -8,7 +8,8 @@ function initCryptoService() {
         _b64Key,
         _keyHash,
         _b64KeyHash,
-        _aes;
+        _aes,
+        _aesWithMac;
 
     sjcl.beware["CBC mode is dangerous because it doesn't protect message integrity."]();
 
@@ -92,6 +93,26 @@ function initCryptoService() {
         });
     };
 
+    CryptoService.prototype.getEncKey = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        this.getKey(false, function (key) {
+            callback(key.slice(0, 4));
+        });
+    };
+
+    CryptoService.prototype.getMacKey = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        this.getKey(false, function (key) {
+            callback(key.slice(4));
+        });
+    };
+
     CryptoService.prototype.getKeyHash = function (b64, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
@@ -130,7 +151,7 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
-        _key = _b64Key = _aes = null;
+        _key = _b64Key = _aes = _aesWithMac = null;
         chrome.storage.local.remove('key', function () {
             callback();
         });
@@ -213,31 +234,61 @@ function initCryptoService() {
         });
     };
 
+    CryptoService.prototype.getAesWithMac = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        this.getEncKey(function (encKey) {
+            if (!_aesWithMac && encKey) {
+                _aesWithMac = new sjcl.cipher.aes(encKey);
+            }
+
+            callback(_aesWithMac);
+        });
+    };
+
     CryptoService.prototype.encrypt = function (plaintextValue) {
+        var self = this;
         var deferred = Q.defer();
 
         if (plaintextValue === null || plaintextValue === undefined) {
             deferred.resolve(null);
         }
         else {
-            this.getKey(false, function (key) {
-                if (!key) {
-                    throw 'Encryption key unavailable.';
-                }
+            self.getKey(false, function (key) {
+                self.getEncKey(function (theEncKey) {
+                    self.getMacKey(function (macKey) {
+                        if (!key || !theEncKey || !macKey) {
+                            throw 'Encryption key unavailable.';
+                        }
 
-                var response = {};
-                var params = {
-                    mode: "cbc",
-                    iv: sjcl.random.randomWords(4, 10)
-                };
+                        // TODO: Turn on whenever ready to support encrypt-then-mac
+                        var encKey = false ? theEncKey : key;
 
-                var ctJson = sjcl.encrypt(key, plaintextValue, params, response);
+                        var response = {};
+                        var params = {
+                            mode: 'cbc',
+                            iv: sjcl.random.randomWords(4, 10)
+                        };
 
-                var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
-                var iv = sjcl.codec.base64.fromBits(response.iv);
+                        var ctJson = sjcl.encrypt(encKey, plaintextValue, params, response);
 
-                var cs = new CipherString(iv + "|" + ct);
-                deferred.resolve(cs);
+                        var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
+                        var iv = sjcl.codec.base64.fromBits(response.iv);
+
+                        var cipherString = iv + '|' + ct;
+
+                        // TODO: Turn on whenever ready to support encrypt-then-mac
+                        if (false) {
+                            var mac = computeMac(ct, response.iv, macKey);
+                            cipherString = cipherString + '|' + mac;
+                        }
+
+                        var cs = new CipherString(cipherString);
+                        deferred.resolve(cs);
+                    });
+                });
             });
         }
 
@@ -246,24 +297,56 @@ function initCryptoService() {
 
     CryptoService.prototype.decrypt = function (cipherString) {
         var deferred = Q.defer();
+        var self = this;
 
         if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
             throw 'cannot decrypt nothing';
         }
 
-        this.getAes(function (aes) {
-            if (!aes) {
-                throw 'AES encryption unavailable.';
+        self.getMacKey(function (macKey) {
+            if (!macKey) {
+                throw 'MAC key unavailable.';
             }
 
-            var ivBits = sjcl.codec.base64.toBits(cipherString.initializationVector);
-            var ctBits = sjcl.codec.base64.toBits(cipherString.cipherText);
+            self.getAes(function (aes) {
+                self.getAesWithMac(function (aesWithMac) {
+                    if (!aes || !aesWithMac) {
+                        throw 'AES encryption unavailable.';
+                    }
 
-            var decBits = sjcl.mode.cbc.decrypt(aes, ctBits, ivBits, null);
-            var decValue = sjcl.codec.utf8String.fromBits(decBits);
-            deferred.resolve(decValue);
+                    var ivBits = sjcl.codec.base64.toBits(cipherString.initializationVector);
+                    var ctBits = sjcl.codec.base64.toBits(cipherString.cipherText);
+
+                    var computedMac = null;
+                    if (cipherString.mac) {
+                        computedMac = computeMac(ctBits, ivBits, macKey);
+                        if (computedMac !== cipherString.mac) {
+                            console.error('MAC failed.');
+                            deferred.reject('MAC failed.');
+                        }
+                    }
+
+                    var decBits = sjcl.mode.cbc.decrypt(computedMac ? aesWithMac : aes, ctBits, ivBits, null);
+                    var decValue = sjcl.codec.utf8String.fromBits(decBits);
+                    deferred.resolve(decValue);
+                });
+            });
         });
 
         return deferred.promise;
     };
+
+    function computeMac(ct, iv, macKey) {
+        if (typeof ct === 'string') {
+            ct = sjcl.codec.base64.toBits(ct);
+        }
+        if (typeof iv === 'string') {
+            iv = sjcl.codec.base64.toBits(iv);
+        }
+
+        var hmac = new sjcl.misc.hmac(macKey, sjcl.hash.sha256);
+        var bits = iv.concat(ct);
+        var mac = hmac.encrypt(bits);
+        return sjcl.codec.base64.fromBits(mac);
+    }
 };
