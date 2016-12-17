@@ -102,7 +102,8 @@
                     animation: 'out-slide-down',
                     site: editState.site,
                     fromView: editState.fromView,
-                    siteId: editState.siteId
+                    siteId: editState.siteId,
+                    from: editState.from
                 });
             }
             else {

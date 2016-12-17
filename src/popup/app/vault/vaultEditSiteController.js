@@ -108,7 +108,8 @@ angular
                 editState: {
                     fromView: fromView,
                     siteId: siteId,
-                    site: $scope.site
+                    site: $scope.site,
+                    from: from
                 }
             });
         }
