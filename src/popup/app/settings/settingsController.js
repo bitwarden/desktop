@@ -162,7 +162,10 @@
                     chrome.tabs.create({ url: 'https://microsoft.com' });
                     break;
                 case 'opera':
-                    chrome.tabs.create({ url: 'https://opera.com' });
+                    chrome.tabs.create({
+                        url: 'https://addons.opera.com/en/extensions/details/'
+                            + 'bitwarden-free-password-manager/#feedback-container'
+                    });
                     break;
                 default:
                     return;
