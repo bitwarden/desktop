@@ -82,7 +82,7 @@ function initFolderService() {
             var promises = [];
             var decFolders = [{
                 id: null,
-                name: '(none)'
+                name: i18nService.noneFolder
             }];
             self.getAll(function (folders) {
                 for (var i = 0; i < folders.length; i++) {

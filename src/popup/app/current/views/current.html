@@ -9,7 +9,7 @@
         <div class="list">
             <div class="list-grouped">
                 <a href="javascript:void(0)" ng-click="fillSite(site)" class="list-grouped-item condensed"
-                   title="Auto-fill {{site.name}}" ng-repeat="site in theSites = (sites | orderBy: ['name', 'username'])">
+                   title="{{i18n.autoFill}} {{site.name}}" ng-repeat="site in theSites = (sites | orderBy: ['name', 'username'])">
                     <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, i18n.password)"

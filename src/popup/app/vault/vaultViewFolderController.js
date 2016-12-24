@@ -14,7 +14,7 @@
 
         $scope.folder = {
             id: !state.folderId || state.folderId === '0' ? null : state.folderId,
-            name: '(none)'
+            name: i18nService.noneFolder
         };
         $scope.i18n = i18nService;
         $('#search').focus();

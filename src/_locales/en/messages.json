@@ -618,5 +618,9 @@
   "searchFolder": {
     "message": "Search folder",
     "description": "Search folder"
+  },
+  "noneFolder": {
+    "message": "(none)",
+    "description": "(none) - this is the folder for uncategorized sites"
   }
 }
