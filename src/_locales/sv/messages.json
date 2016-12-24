@@ -1,0 +1,622 @@
+{
+  "appName": {
+    "message": "bitwarden",
+    "description": "bitwarden"
+  },
+  "extName": {
+    "message": "bitwarden - gratis lösenordshanterare",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "bitwarden är en säker och gratis lösenordshanterare för alla dina enheter.",
+    "description": "Extension description"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Logga in eller skapa ett nytt konto för att komma åt dina lösenord.",
+    "description": "Log in or create a new account to access your secure vault."
+  },
+  "createAccount": {
+    "message": "Skapa konto",
+    "description": "Create Account"
+  },
+  "login": {
+    "message": "Logga in",
+    "description": "Log In"
+  },
+  "cancel": {
+    "message": "Avbryt",
+    "description": "Cancel"
+  },
+  "close": {
+    "message": "Stäng",
+    "description": "Close"
+  },
+  "submit": {
+    "message": "Skicka",
+    "description": "Submit"
+  },
+  "emailAddress": {
+    "message": "E-postadress",
+    "description": "Email Address"
+  },
+  "masterPass": {
+    "message": "Huvudlösenord",
+    "description": "Master Password"
+  },
+  "masterPassDesc": {
+    "message": "Huvudlösenordet är det lösenord som du använder för att komma åt ditt valv. Det är väldigt viktigt att du inte glömmer bort ditt huvudlösenord eftersom det inte går att hämta lösenordet om du skulle glömma bort det.",
+    "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc": {
+    "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt huvudlösenord om du glömmer bort det.",
+    "description": "A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass": {
+    "message": "Skriv in huvudlösenordet igen",
+    "description": "Re-type Master Password"
+  },
+  "masterPassHint": {
+    "message": "Huvudlösenordsledtråd (frivilligt)",
+    "description": "Master Password Hint (optional)"
+  },
+  "tab": {
+    "message": "Flik",
+    "description": "Tab"
+  },
+  "myVault": {
+    "message": "Mitt valv",
+    "description": "My Vault"
+  },
+  "tools": {
+    "message": "Verktyg",
+    "description": "Tools"
+  },
+  "settings": {
+    "message": "Inställningar",
+    "description": "Settings"
+  },
+  "currentTab": {
+    "message": "Nuvarande flik",
+    "description": "Current Tab"
+  },
+  "copyPassword": {
+    "message": "Kopiera lösenord",
+    "description": "Copy Password"
+  },
+  "copyUsername": {
+    "message": "Kopiera användarnamn",
+    "description": "Copy Username"
+  },
+  "autoFill": {
+    "message": "Fyll i automatiskt",
+    "description": "Auto-fill"
+  },
+  "generatePasswordCopied": {
+    "message": "Skapa lösenord (kopierad)",
+    "description": "Generate Password (copied)"
+  },
+  "noMatchingSites": {
+    "message": "Inga matchande webbplatser.",
+    "description": "No matching sites."
+  },
+  "vaultLocked": {
+    "message": "Valvet är låst.",
+    "description": "Vault is locked."
+  },
+  "autoFillInfo": {
+    "message": "Det finns inga webbplatser tillgängliga för automatisk ifyllnad på den nuvarande fliken.",
+    "description": "There are no sites available to auto-fill for the current browser tab."
+  },
+  "addSite": {
+    "message": "Lägg till en webbplats",
+    "description": "Add a Site"
+  },
+  "passwordHint": {
+    "message": "Lösenordsledtråd",
+    "description": "Password Hint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Skriv in ditt kontos e-postadress för att hämta din huvudlösenordsledtråd.",
+    "description": "Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint": {
+    "message": "Hämta huvudlösenordsledtråd",
+    "description": "Get master password hint"
+  },
+  "continue": {
+    "message": "Fortsätt",
+    "description": "Continue"
+  },
+  "verificationCode": {
+    "message": "Verifieringskod",
+    "description": "Verification Code"
+  },
+  "enterTwoStepVerCode": {
+    "message": "Skriv in din tvåstegsverifieringskod.",
+    "description": "Enter your two-step verification code."
+  },
+  "account": {
+    "message": "Konto",
+    "description": "Account"
+  },
+  "changeMasterPassword": {
+    "message": "Ändra huvudlösenord",
+    "description": "Change Master Password"
+  },
+  "changeEmail": {
+    "message": "Ändra e-postadress",
+    "description": "Change Email"
+  },
+  "twoStepLogin": {
+    "message": "Tvåstegsverifiering",
+    "description": "Two-step Login"
+  },
+  "logOut": {
+    "message": "Logga ut",
+    "description": "Log Out"
+  },
+  "about": {
+    "message": "Om",
+    "description": "About"
+  },
+  "version": {
+    "message": "Version",
+    "description": "Version"
+  },
+  "save": {
+    "message": "Spara",
+    "description": "Save"
+  },
+  "addFolder": {
+    "message": "Skapa mapp",
+    "description": "Add Folder"
+  },
+  "name": {
+    "message": "Namn",
+    "description": "Name"
+  },
+  "editFolder": {
+    "message": "Ändra mapp",
+    "description": "Edit Folder"
+  },
+  "deleteFolder": {
+    "message": "Ta bort mapp",
+    "description": "Delete Folder"
+  },
+  "folders": {
+    "message": "Mappar",
+    "description": "Folders"
+  },
+  "noFolders": {
+    "message": "Det finns inga mappar att lista.",
+    "description": "There are no folders to list."
+  },
+  "helpFeedback": {
+    "message": "Hjälp & återkoppling",
+    "description": "Help & Feedback"
+  },
+  "emailUs": {
+    "message": "Mejla oss",
+    "description": "Email Us"
+  },
+  "emailUsDirectly": {
+    "message": "Mejla oss direkt för att få hjälp eller för att lämna återkoppling.",
+    "description": "Email us directly to get help or leave feedback."
+  },
+  "visitOurWebsite": {
+    "message": "Besök vår webbplats",
+    "description": "Visit Our Website"
+  },
+  "visitOurWebsiteDirectly": {
+    "message": "Besök vår webbplats direkt för att få hjälp, nyheter, mejla oss och/eller lära er mer om hur man använder bitwarden.",
+    "description": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
+  },
+  "fileBugReport": {
+    "message": "Skicka en buggrapport",
+    "description": "File a Bug Report"
+  },
+  "gitHubIssue": {
+    "message": "Öppna ett problemärende på vårt GitHub-arkiv.",
+    "description": "Open an issue at our GitHub repository."
+  },
+  "sync": {
+    "message": "Synka",
+    "description": "Sync"
+  },
+  "syncVaultNow": {
+    "message": "Synka valvet nu",
+    "description": "Sync Vault Now"
+  },
+  "lastSync": {
+    "message": "Senaste synkning:",
+    "description": "Last Sync:"
+  },
+  "passGen": {
+    "message": "Lösenordsgenerator",
+    "description": "Password Generator"
+  },
+  "passGenInfo": {
+    "message": "Skapa starka och unika lösenord automatiskt för dina inloggningar.",
+    "description": "Automatically generate strong, unique passwords for your logins."
+  },
+  "bitWebVault": {
+    "message": "bitwarden webbvalv",
+    "description": "bitwarden Web Vault"
+  },
+  "bitWebVaultInfo": {
+    "message": "Hantera dina inloggningar från valfri webbläsare med bitwardens webbvalv.",
+    "description": "Manage your logins from any web browser with the bitwarden web vault."
+  },
+  "bitIosVault": {
+    "message": "bitwarden iOS-valv",
+    "description": "bitwarden iOS Vault"
+  },
+  "bitIosVaultInfo": {
+    "message": "Hantera dina inloggingar från dina mobila enheter med bitwardens iOS-valv.",
+    "description": "Manage your logins from your mobile devices with the bitwarden iOS vault."
+  },
+  "bitAndrVault": {
+    "message": "bitwarden Android-valv",
+    "description": "bitwarden Android Vault"
+  },
+  "bitAndrVaultInfo": {
+    "message": "Hantera dina inloggningar från dina mobila enheter med bitwardens Android-valv.",
+    "description": "Manage your logins from your mobile devices with the bitwarden Android vault."
+  },
+  "importLogins": {
+    "message": "Importera inloggningar",
+    "description": "Import Logins"
+  },
+  "importLoginsInfo": {
+    "message": "Massimportera snabbt dina inloggningar från en annan lösenordshanterare.",
+    "description": "Quickly bulk import your logins from other password management applications."
+  },
+  "select": {
+    "message": "Välj",
+    "description": "Select"
+  },
+  "generatePassword": {
+    "message": "Skapa lösenord",
+    "description": "Generate Password"
+  },
+  "regeneratePassword": {
+    "message": "Skapa nytt lösenord",
+    "description": "Regenerate Password"
+  },
+  "options": {
+    "message": "Alternativ",
+    "description": "Options"
+  },
+  "length": {
+    "message": "Längd",
+    "description": "Length"
+  },
+  "minNumbers": {
+    "message": "Minst antal nummer",
+    "description": "Minimum Numbers"
+  },
+  "minSpecial": {
+    "message": "Minst antal speciella tecken",
+    "description": "Minimum Special"
+  },
+  "avoidAmbChar": {
+    "message": "Undvik tvetydiga tecken",
+    "description": "Avoid Ambiguous Characters"
+  },
+  "searchVault": {
+    "message": "Sök i valvet",
+    "description": "Search vault"
+  },
+  "edit": {
+    "message": "Ändra",
+    "description": "Edit"
+  },
+  "noSitesInList": {
+    "message": "Det finns inga webbplatser att lista.",
+    "description": "There are no sites to list."
+  },
+  "siteInformation": {
+    "message": "Webbplatsinformation",
+    "description": "Site Information"
+  },
+  "username": {
+    "message": "Användarnamn",
+    "description": "Username"
+  },
+  "password": {
+    "message": "Lösenord",
+    "description": "Password"
+  },
+  "favorite": {
+    "message": "Favorit",
+    "description": "Favorite"
+  },
+  "notes": {
+    "message": "Anteckningar",
+    "description": "Notes"
+  },
+  "editSite": {
+    "message": "Ändra webbplats",
+    "description": "Edit Site"
+  },
+  "folder": {
+    "message": "Mapp",
+    "description": "Folder"
+  },
+  "deleteSite": {
+    "message": "Ta bort webbplats",
+    "description": "Delete Site"
+  },
+  "viewSite": {
+    "message": "Visa webbplats",
+    "description": "View Site"
+  },
+  "launchWebsite": {
+    "message": "Öppna webbplats",
+    "description": "Launch Website"
+  },
+  "website": {
+    "message": "Webbsida",
+    "description": "Website"
+  },
+  "togglePassword": {
+    "message": "Visa/göm lösenord",
+    "description": "Toggle Password"
+  },
+  "manage": {
+    "message": "Hantera",
+    "description": "Manage"
+  },
+  "other": {
+    "message": "Annat",
+    "description": "Other"
+  },
+  "disableGa": {
+    "message": "Stäng av Google Analytics",
+    "description": "Disable Google Analytics"
+  },
+  "rateExtension": {
+    "message": "Betygsätt tillägget",
+    "description": "Rate the Extension"
+  },
+  "rateExtensionDesc": {
+    "message": "Överväg gärna att hjälpa oss genom att ge oss en bra recension!",
+    "description": "Please consider helping us out with a good review!"
+  },
+  "browserNotSupportClipboard": {
+    "message": "Din webbläsare har inte stöd för att enkelt kopiera till urklipp. Kopiera till urklipp manuellt istället.",
+    "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword": {
+    "message": "Verifiera huvudlösenord",
+    "description": "Verify Master Password"
+  },
+  "invalidMasterPassword": {
+    "message": "Felaktigt huvudlösenord",
+    "description": "Invalid master password"
+  },
+  "lockOptions": {
+    "message": "Låsalternativ",
+    "description": "Lock Options"
+  },
+  "immediately": {
+    "message": "Omedelbart",
+    "description": "Immediately"
+  },
+  "oneMinute": {
+    "message": "1 minut",
+    "description": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "5 minuter",
+    "description": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "15 minuter",
+    "description": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "30 minuter",
+    "description": "30 minutes"
+  },
+  "oneHour": {
+    "message": "1 timme",
+    "description": "1 hour"
+  },
+  "fourHours": {
+    "message": "4 timmar",
+    "description": "4 hours"
+  },
+  "onRestart": {
+    "message": "Vid omstart",
+    "description": "On Restart"
+  },
+  "never": {
+    "message": "Aldrig",
+    "description": "Never"
+  },
+  "security": {
+    "message": "Säkerhet",
+    "description": "Security"
+  },
+  "errorsOccurred": {
+    "message": "Ett fel har inträffat",
+    "description": "Errors have occurred"
+  },
+  "emailRequired": {
+    "message": "E-postadress krävs.",
+    "description": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Felaktig e-postadress.",
+    "description": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Huvudlösenord krävs.",
+    "description": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Huvudlösenordet måste vara minst 8 tecken långt.",
+    "description": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Bekräftelsen för huvudlösenordet stämde inte överens med huvudlösenordet.",
+    "description": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Ditt nya konto har blivit skapat! Du kan nu logga in.",
+    "description": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "Vi har skickat ett mejl till dig med din huvudlösenordsledtråd.",
+    "description": "We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired": {
+    "message": "Verifieringskod krävs.",
+    "description": "Verification code is required."
+  },
+  "valueCopied": {
+    "message": " kopierat",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Kunde inte automatiskt fylla i din inloggningsinformation på den här webbsidan. Klipp/klistra ditt användarnamn och/eller lösenord istället.",
+    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+  },
+  "loggedOut": {
+    "message": "Loggade ut",
+    "description": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Din inloggningssession har utgått.",
+    "description": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Är du säker på att du vill logga ut?",
+    "description": "Are you sure you want to log out?"
+  },
+  "yes": {
+    "message": "Ja",
+    "description": "Yes"
+  },
+  "no": {
+    "message": "Nej",
+    "description": "No"
+  },
+  "unexpectedError": {
+    "message": "Ett okänt fel har inträffat.",
+    "description": "An unexpected error has occured."
+  },
+  "nameRequired": {
+    "message": "Namn krävs.",
+    "description": "Name is required."
+  },
+  "addedFolder": {
+    "message": "Skapade mapp",
+    "description": "Added folder"
+  },
+  "changeMasterPass": {
+    "message": "Ändra huvudlösenord",
+    "description": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Du kan ändra ditt huvudlösenord på bitwarden.com webbvalv. Vill du besöka webbplatsen nu?",
+    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation": {
+    "message": "Du kan ändra din e-postadress på bitwarden.com webbvalv. Vill du besöka webbplatsen nu?",
+    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Tvåstegsverifiering gör ditt konto säkrare genom att kräva en verifieringskod från en autentiseringsapp på din mobila enhet när du loggar in. Tvåstegsverifiering kan aktiveras på bitwarden.com webbvalv. Vill du besöka webbplatsen nu?",
+    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut": {
+    "message": "Loggar ut",
+    "description": "Logging out"
+  },
+  "loggingOutConfirmation": {
+    "message": "Du har nyligen uppdaterat från en äldre version. Du måste logga ut och in igen för att ändra dina låsinställningar. Vill du logga ut nu?",
+    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder": {
+    "message": "Ändrade mapp",
+    "description": "Edited Folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Är du säker på att du vill ta bort den här mappen?",
+    "description": "Are you sure you want to delete this folder?"
+  },
+  "deletedFolder": {
+    "message": "Tog bort mapp",
+    "description": "Deleted folder"
+  },
+  "gettingStartedTutorial": {
+    "message": "Komma igång - Handledning",
+    "description": "Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Titta på vår 'Komma igång - Handledning'-video för att lära dig hur du får ut det mesta av webbläsartillägget.",
+    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete": {
+    "message": "Synkronisering genomförd",
+    "description": "Syncing complete"
+  },
+  "importLoginsConfirmation": {
+    "message": "Du kan massimportera inloggningar på bitwarden.com webbvalv. Vill du besöka webbsidan nu?",
+    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied": {
+    "message": "Lösenord kopierat",
+    "description": "Password copied"
+  },
+  "uri": {
+    "message": "URI",
+    "description": "URI"
+  },
+  "addedSite": {
+    "message": "Skapade webbplats",
+    "description": "Added site"
+  },
+  "editedSite": {
+    "message": "Ändrade webbplats",
+    "description": "Edited site"
+  },
+  "deleteSiteConfirmation": {
+    "message": "Är du säker på att du vill ta bort den här webbplatsen?",
+    "description": "Are you sure you want to delete this site?"
+  },
+  "deletedSite": {
+    "message": "Tog bort webbplatsen",
+    "description": "Deleted site"
+  },
+  "overwritePassword": {
+    "message": "Skriv över lösenord",
+    "description": "Overwrite Password"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Är du säker på att du vill skriva över det nuvarande lösenordet?",
+    "description": "Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp": {
+    "message": "Förlorat autentiseringsapp?",
+    "description": "Lost authenticator app?"
+  },
+  "credits": {
+    "message": "Tillskrivningar",
+    "description": "Credits (giving thanks to people that helped, like at the end of a movie)"
+  },
+  "thankYou": {
+    "message": "Tack",
+    "description": "Thank You"
+  },
+  "translations": {
+    "message": "Översättningar",
+    "description": "Translations"
+  },
+  "searchFolder": {
+    "message": "Sök i mapp",
+    "description": "Search folder"
+  }
+}
