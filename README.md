@@ -9,6 +9,30 @@ The bitwarden browser extension is written using the Chrome Web Extension API an
 
 ![Alt text](http://imgur.com/C9p87nk.png "My Vault")
 
+# Build/Run
+
+**Requirements**
+
+- Node.js
+- Gulp
+- Chrome (preferred), Opera, or Firefox browser
+
+By default the extension is targeting the production API. If you are running the [Core](https://github.com/bitwarden/core) API locally, you'll need to switch the extension to target your local API. Open `src/services/apiService.js` and set `this.baseUrl` to your local API instance (ex. `http://localhost:4000`).
+
+Then run the following commands:
+
+- `gulp build`
+
+You can now load the extension into your browser through the browser's extension tools page:
+
+- Chrome/Opera:
+  1. Type `chrome://extensions` in your address bar to bring up the extensions page.
+  2. Enable developer mode (checkbox)
+  3. Click the "Load unpacked extension" button, navigate to the `src` folder of your local extension instance, and click "Ok".
+- Firefox
+  1. Type `about:debugging` in your address bar to bring up the add-ons page.
+  2. Click the `Load Temporary Add-on` button, navigate to the `src/manifest.json` file, and "Open".
+
 # Contribute
 
 Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute
