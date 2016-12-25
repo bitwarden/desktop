@@ -56,7 +56,7 @@
     "description": "Re-type Master Password"
   },
   "masterPassHint": {
-    "message": "Huvudlösenordsledtråd (frivilligt)",
+    "message": "Huvudlösenordsledtråd (frivillig)",
     "description": "Master Password Hint (optional)"
   },
   "tab": {
@@ -96,7 +96,7 @@
     "description": "Generate Password (copied)"
   },
   "noMatchingSites": {
-    "message": "Inga matchande webbplatser.",
+    "message": "Inga matchande inloggningar.",
     "description": "No matching sites."
   },
   "vaultLocked": {
@@ -104,11 +104,11 @@
     "description": "Vault is locked."
   },
   "autoFillInfo": {
-    "message": "Det finns inga webbplatser tillgängliga för automatisk ifyllnad på den nuvarande fliken.",
+    "message": "Det finns inga inloggningar tillgängliga för automatisk ifyllnad på den nuvarande fliken.",
     "description": "There are no sites available to auto-fill for the current browser tab."
   },
   "addSite": {
-    "message": "Lägg till en webbplats",
+    "message": "Lägg till en inloggning",
     "description": "Add a Site"
   },
   "passwordHint": {
@@ -312,11 +312,11 @@
     "description": "Edit"
   },
   "noSitesInList": {
-    "message": "Det finns inga webbplatser att lista.",
+    "message": "Det finns inga inloggningar att lista.",
     "description": "There are no sites to list."
   },
   "siteInformation": {
-    "message": "Webbplatsinformation",
+    "message": "Inloggningsinformation",
     "description": "Site Information"
   },
   "username": {
@@ -336,7 +336,7 @@
     "description": "Notes"
   },
   "editSite": {
-    "message": "Ändra webbplats",
+    "message": "Ändra inloggning",
     "description": "Edit Site"
   },
   "folder": {
@@ -344,11 +344,11 @@
     "description": "Folder"
   },
   "deleteSite": {
-    "message": "Ta bort webbplats",
+    "message": "Ta bort inloggning",
     "description": "Delete Site"
   },
   "viewSite": {
-    "message": "Visa webbplats",
+    "message": "Visa inloggning",
     "description": "View Site"
   },
   "launchWebsite": {
@@ -572,23 +572,23 @@
     "description": "Password copied"
   },
   "uri": {
-    "message": "URI",
+    "message": "URI (länk)",
     "description": "URI"
   },
   "addedSite": {
-    "message": "Skapade webbplats",
+    "message": "Skapade inloggning",
     "description": "Added site"
   },
   "editedSite": {
-    "message": "Ändrade webbplats",
+    "message": "Ändrade inloggning",
     "description": "Edited site"
   },
   "deleteSiteConfirmation": {
-    "message": "Är du säker på att du vill ta bort den här webbplatsen?",
+    "message": "Är du säker på att du vill ta bort den här inloggningen?",
     "description": "Are you sure you want to delete this site?"
   },
   "deletedSite": {
-    "message": "Tog bort webbplatsen",
+    "message": "Tog bort inloggning",
     "description": "Deleted site"
   },
   "overwritePassword": {
@@ -618,5 +618,9 @@
   "searchFolder": {
     "message": "Sök i mapp",
     "description": "Search folder"
+  },
+  "noneFolder": {
+    "message": "(ingen)",
+    "description": "(none) - this is the folder for uncategorized sites"
   }
 }
