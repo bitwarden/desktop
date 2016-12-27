@@ -13,7 +13,7 @@
         if (syncOnLoad) {
             $scope.$on('$viewContentLoaded', function () {
                 $timeout(function () {
-                    syncService.fullSync(function () { })
+                    syncService.fullSync(function () { });
                 }, 0);
             });
         }
