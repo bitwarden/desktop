@@ -70,7 +70,6 @@ function initApiService() {
             url: self.baseUrl + '/accounts/password-hint',
             data: JSON.stringify(request),
             contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
             success: function (response) {
                 success();
             },
@@ -87,7 +86,6 @@ function initApiService() {
             url: self.baseUrl + '/accounts/register',
             data: JSON.stringify(request),
             contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
             success: function (response) {
                 success();
             },
@@ -258,7 +256,6 @@ function initApiService() {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/ciphers/' + id + '/delete?access_token=' + token,
-                dataType: 'json',
                 success: function (response) {
                     success();
                 },
