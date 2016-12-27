@@ -1,8 +1,8 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, siteService, tldjs, toastr, $q, $window, $state, autofillService,
-        $analytics, i18nService) {
+    .controller('currentController', function ($scope, $rootScope, siteService, tldjs, toastr, $q, $window, $state, $timeout,
+        autofillService, $analytics, i18nService) {
         $scope.i18n = i18nService;
 
         var pageDetails = [],
@@ -11,9 +11,13 @@ angular
             domain = null,
             canAutofill = false;
 
+        $scope.sites = [];
         $scope.loaded = false;
 
-        loadVault();
+        $scope.$on('$viewContentLoaded', function () {
+            $timeout(loadVault, 0);
+        });
+
         function loadVault() {
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
                 if (tabs.length > 0) {
@@ -22,13 +26,14 @@ angular
                 }
                 else {
                     $scope.loaded = true;
+                    $scope.$apply();
                     return;
                 }
 
                 domain = tldjs.getDomain(url);
-                $scope.sites = [];
                 if (!domain) {
                     $scope.loaded = true;
+                    $scope.$apply();
                     return;
                 }
 

@@ -2,7 +2,7 @@
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, siteService, folderService, $q, $state, $stateParams, toastr,
-        syncService, utilsService, $analytics, i18nService, stateService) {
+        syncService, utilsService, $analytics, i18nService, stateService, $timeout) {
         var stateKey = 'vault',
             state = stateService.getState(stateKey) || {};
 
@@ -11,9 +11,11 @@
 
         var syncOnLoad = $stateParams.syncOnLoad;
         if (syncOnLoad) {
-            setTimeout(function () {
-                syncService.fullSync(function () { });
-            }, utilsService.isFirefox() ? 500 : 0);
+            $scope.$on('$viewContentLoaded', function () {
+                $timeout(function () {
+                    syncService.fullSync(function () { })
+                }, 0);
+            });
         }
 
         var delayLoad = true;
@@ -29,8 +31,8 @@
         }
 
         if (delayLoad) {
-            setTimeout(setScrollY, 100);
-            setTimeout(loadVault, 1000);
+            $timeout(setScrollY, 100);
+            $timeout(loadVault, 1000);
         }
         else if (!syncOnLoad) {
             loadVault();
@@ -136,7 +138,7 @@
         };
 
         $scope.$on('syncCompleted', function (event, successfully) {
-            setTimeout(loadVault, 500);
+            $timeout(loadVault, 500);
         });
 
         function storeState() {
