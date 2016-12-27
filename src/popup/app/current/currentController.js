@@ -1,7 +1,7 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, $rootScope, siteService, tldjs, toastr, $q, $window, $state, $timeout,
+    .controller('currentController', function ($scope, siteService, tldjs, toastr, $q, $window, $state, $timeout,
         autofillService, $analytics, i18nService) {
         $scope.i18n = i18nService;
 
