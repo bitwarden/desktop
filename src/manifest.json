@@ -20,6 +20,12 @@
       "js": [ "content/autofill.js" ],
       "matches": [ "http://*/*", "https://*/*", "file:///*" ],
       "run_at": "document_start"
+    },
+    {
+      "all_frames": false,
+      "js": [ "content/notificationBar.js" ],
+      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "run_at": "document_start"
     }
   ],
   "background": {
@@ -82,6 +88,7 @@
     }
   },
   "web_accessible_resources": [
-    "overlay/popup.html"
+    "overlay/popup.html",
+    "notification/bar.html"
   ]
 }

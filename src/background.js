@@ -55,6 +55,12 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     else if (msg.command === 'bgCloseOverlayPopup') {
         messageCurrentTab('closeOverlayPopup');
     }
+    else if (msg.command === 'bgOpenNotificationBar') {
+        messageCurrentTab('openNotificationBar');
+    }
+    else if (msg.command === 'bgCloseNotificationBar') {
+        messageCurrentTab('closeNotificationBar');
+    }
     else if (msg.command === 'collectPageDetailsResponse') {
         clearTimeout(autofillTimeout);
         pageDetailsToAutoFill.push({ frameId: sender.frameId, tabId: msg.tabId, details: msg.details });
