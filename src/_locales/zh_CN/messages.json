@@ -618,5 +618,9 @@
   "searchFolder": {
     "message": "搜索文件夹",
     "description": "Search folder"
+  },
+  "noneFolder": {
+    "message": "(无)",
+    "description": "(none) - this is the folder for uncategorized sites"
   }
 }
