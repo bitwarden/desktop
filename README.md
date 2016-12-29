@@ -13,11 +13,13 @@ The bitwarden browser extension is written using the Chrome Web Extension API an
 
 **Requirements**
 
-- Node.js
-- Gulp
+- [Node.js](https://nodejs.org/en/)
+- [Gulp](http://gulpjs.com/) (`npm install --global gulp-cli`)
 - Chrome (preferred), Opera, or Firefox browser
 
-By default the extension is targeting the production API. If you are running the [Core](https://github.com/bitwarden/core) API locally, you'll need to switch the extension to target your local API. Open `src/services/apiService.js` and set `this.baseUrl` to your local API instance (ex. `http://localhost:4000`).
+By default the extension is targeting the production API. If you are running the [Core](https://github.com/bitwarden/core) API locally,
+you'll need to switch the extension to target your local API. Open `src/services/apiService.js` and set `this.baseUrl` to your local
+API instance (ex. `http://localhost:4000`).
 
 Then run the following commands:
 
