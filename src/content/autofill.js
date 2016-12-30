@@ -90,7 +90,8 @@
             chrome.runtime.sendMessage({
                 command: 'collectPageDetailsResponse',
                 tabId: msg.tabId,
-                details: pageDetailsObj
+                details: pageDetailsObj,
+                contentScript: msg.contentScript ? true : false
             });
             sendResponse();
             return true;

@@ -23,31 +23,10 @@ function initAutofill() {
             pf = null,
             username = null;
 
-        function loadPasswordFields(canBeHidden) {
-            for (var i = 0; i < pageDetails.fields.length; i++) {
-                if (pageDetails.fields[i].type === 'password' && (canBeHidden || pageDetails.fields[i].viewable)) {
-                    passwordFields.push(pageDetails.fields[i]);
-                }
-            }
-        }
-
-        loadPasswordFields(false);
+        passwordFields = loadPasswordFields(pageDetails, false);
         if (!passwordFields.length) {
             // not able to find any viewable password fields. maybe there are some "hidden" ones?
-            loadPasswordFields(true);
-        }
-
-        function findUsernameField(passwordField, canBeHidden) {
-            for (var i = 0; i < pageDetails.fields.length; i++) {
-                var f = pageDetails.fields[i];
-                if (f.form === passwordField.form && (canBeHidden || f.viewable)
-                    && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
-                    && f.elementNumber < passwordField.elementNumber) {
-                    return f;
-                }
-            }
-
-            return null;
+            passwordFields = loadPasswordFields(pageDetails, true);
         }
 
         for (var formKey in pageDetails.forms) {
@@ -63,11 +42,11 @@ function initAutofill() {
                 passwords.push(pf);
 
                 if (fillUsername) {
-                    username = findUsernameField(pf, false);
+                    username = findUsernameField(pageDetails, pf, false);
 
                     if (!username) {
                         // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                        username = findUsernameField(pf, true);
+                        username = findUsernameField(pageDetails, pf, true);
                     }
 
                     if (username) {
@@ -75,22 +54,6 @@ function initAutofill() {
                     }
                 }
             }
-        }
-
-        function findUsernameFieldWithoutForm(passwordField, canBeHidden) {
-            var usernameField = null;
-            for (var i = 0; i < pageDetails.fields.length; i++) {
-                var f = pageDetails.fields[i];
-                if (f.elementNumber > passwordField.elementNumber) {
-                    break;
-                }
-
-                if ((canBeHidden || f.viewable) && (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
-                    usernameField = f;
-                }
-            }
-
-            return usernameField;
         }
 
         if (passwordFields.length && !passwords.length) {
@@ -101,11 +64,11 @@ function initAutofill() {
             passwords.push(pf);
 
             if (fillUsername && pf.elementNumber > 0) {
-                username = findUsernameFieldWithoutForm(pf, false);
+                username = findUsernameFieldWithoutForm(pageDetails, pf, false);
 
                 if (!username) {
                     // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                    username = findUsernameFieldWithoutForm(pf, true);
+                    username = findUsernameFieldWithoutForm(pageDetails, pf, true);
                 }
 
                 if (username) {
@@ -130,4 +93,79 @@ function initAutofill() {
 
         return fillScript;
     };
+
+    AutofillService.prototype.getFormsWithPasswordFields = function (pageDetails) {
+        var passwordFields = [],
+            formData = [];
+
+        passwordFields = loadPasswordFields(pageDetails, false);
+        if (!passwordFields.length) {
+            // not able to find any viewable password fields. maybe there are some "hidden" ones?
+            passwordFields = loadPasswordFields(pageDetails, true);
+        }
+
+        if (passwordFields.length) {
+            for (var formKey in pageDetails.forms) {
+                for (var i = 0; i < passwordFields.length; i++) {
+                    var pf = passwordFields[i];
+                    if (formKey === pf.form) {
+                        var uf = findUsernameField(pageDetails, pf, false);
+                        if (!uf) {
+                            // not able to find any viewable username fields. maybe there are some "hidden" ones?
+                            uf = findUsernameField(pageDetails, pf, true);
+                        }
+
+                        formData.push({
+                            form: pageDetails.forms[formKey],
+                            password: pf,
+                            username: uf
+                        });
+                        break;
+                    }
+                }
+            }
+        }
+
+        return formData;
+    };
+
+    function loadPasswordFields(pageDetails, canBeHidden) {
+        var arr = [];
+        for (var i = 0; i < pageDetails.fields.length; i++) {
+            if (pageDetails.fields[i].type === 'password' && (canBeHidden || pageDetails.fields[i].viewable)) {
+                arr.push(pageDetails.fields[i]);
+            }
+        }
+
+        return arr;
+    }
+
+    function findUsernameField(pageDetails, passwordField, canBeHidden) {
+        for (var i = 0; i < pageDetails.fields.length; i++) {
+            var f = pageDetails.fields[i];
+            if (f.form === passwordField.form && (canBeHidden || f.viewable)
+                && (f.type === 'text' || f.type === 'email' || f.type === 'tel')
+                && f.elementNumber < passwordField.elementNumber) {
+                return f;
+            }
+        }
+
+        return null;
+    }
+
+    function findUsernameFieldWithoutForm(pageDetails, passwordField, canBeHidden) {
+        var usernameField = null;
+        for (var i = 0; i < pageDetails.fields.length; i++) {
+            var f = pageDetails.fields[i];
+            if (f.elementNumber > passwordField.elementNumber) {
+                break;
+            }
+
+            if ((canBeHidden || f.viewable) && (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
+                usernameField = f;
+            }
+        }
+
+        return usernameField;
+    }
 };

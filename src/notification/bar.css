@@ -1,0 +1,54 @@
+﻿body {
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    width: 100%;
+}
+
+.outter-table > tbody > tr > td {
+    padding: 0 0 0 10px;
+    border-bottom: 1px solid #333333;
+    height: 40px;
+}
+
+    .outter-table > tbody > tr > td:last-child {
+        padding-right: 10px;
+    }
+
+.inner-table td {
+    padding: 0 10px 0 0;
+}
+
+    .inner-table td:last-child {
+        padding: 0;
+    }
+
+    .inner-table td button {
+        margin-left: 5px;
+    }
+
+img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+#close {
+    width: 18px;
+    height: 18px;
+    display: block;
+}

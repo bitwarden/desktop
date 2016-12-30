@@ -1,4 +1,5 @@
 var isBackground = true;
+var loginsToAdd = [];
 var i18nService = new i18nService();
 var constantsService = new ConstantsService();
 var utilsService = new UtilsService();
@@ -56,15 +57,28 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         messageCurrentTab('closeOverlayPopup');
     }
     else if (msg.command === 'bgOpenNotificationBar') {
-        messageCurrentTab('openNotificationBar');
+        messageCurrentTab('openNotificationBar', msg.data);
     }
     else if (msg.command === 'bgCloseNotificationBar') {
         messageCurrentTab('closeNotificationBar');
     }
+    else if (msg.command === 'bgCollectPageDetails') {
+        collectPageDetailsForContentScript(sender.tab);
+    }
+    else if (msg.command === 'bgAddLogin') {
+        addLogin(msg.login, sender.tab);
+    }
     else if (msg.command === 'collectPageDetailsResponse') {
-        clearTimeout(autofillTimeout);
-        pageDetailsToAutoFill.push({ frameId: sender.frameId, tabId: msg.tabId, details: msg.details });
-        autofillTimeout = setTimeout(autofillPage, 300);
+        // messageCurrentTab('openNotificationBar', { type: 'add', typeData: null });
+        if (msg.contentScript) {
+            var forms = autofillService.getFormsWithPasswordFields(msg.details);
+            messageTab(msg.tabId, 'pageDetails', { details: msg.details, forms: forms });
+        }
+        else {
+            clearTimeout(autofillTimeout);
+            pageDetailsToAutoFill.push({ frameId: sender.frameId, tabId: msg.tabId, details: msg.details });
+            autofillTimeout = setTimeout(autofillPage, 300);
+        }
     }
 });
 
@@ -156,6 +170,7 @@ function buildContextMenu(callback) {
 }
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {
+    checkLoginsToAdd();
     refreshBadgeAndMenu();
 });
 
@@ -165,6 +180,7 @@ chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
         return;
     }
     onReplacedRan = true;
+    checkLoginsToAdd();
     refreshBadgeAndMenu();
 });
 
@@ -174,6 +190,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         return;
     }
     onUpdatedRan = true;
+    checkLoginsToAdd();
     refreshBadgeAndMenu();
 });
 
@@ -309,19 +326,75 @@ function messageCurrentTab(command, data) {
             return;
         }
 
+        messageTab(tabId, command, data);
+    });
+}
+
+function messageTab(tabId, command, data) {
+    if (!tabId) {
+        return;
+    }
+
+    var obj = {
+        command: command
+    };
+
+    if (data) {
+        obj['data'] = data;
+    }
+
+    chrome.tabs.sendMessage(tabId, obj);
+}
+
+function collectPageDetailsForContentScript(tab) {
+    chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tabId: tab.id, contentScript: true }, function () { });
+}
+
+function addLogin(login, tab) {
+    var loginDomain = tldjs.getDomain(login.url);
+    if (!loginDomain) {
+        return;
+    }
+
+    loginsToAdd.push({
+        username: login.username,
+        password: login.password,
+        name: loginDomain,
+        uri: login.url,
+        tabId: tab.id
+    });
+    checkLoginsToAdd();
+}
+
+function checkLoginsToAdd() {
+    if (!loginsToAdd.length) {
+        return;
+    }
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tabId = null;
+        if (tabs.length > 0) {
+            tabId = tabs[0].id;
+        }
+        else {
+            return;
+        }
+
         if (!tabId) {
             return;
         }
 
-        var obj = {
-            command: command
-        };
-
-        if (data) {
-            obj['data'] = data;
+        var tabDomain = tldjs.getDomain(tabs[0].url);
+        if (!tabDomain) {
+            return;
         }
 
-        chrome.tabs.sendMessage(tabId, obj);
+        for (var i = 0; i < loginsToAdd.length; i++) {
+            if (loginsToAdd[i].tabId === tabId && loginsToAdd[i].name === tabDomain) {
+                messageTab(tabId, 'openNotificationBar', { type: 'add' });
+                break;
+            }
+        }
     });
 }
 
