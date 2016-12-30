@@ -360,7 +360,7 @@ function addLogin(login, tab) {
     siteService.getAllDecryptedForDomain(loginDomain).then(function (sites) {
         var match = false;
         for (var i = 0; i < sites.length; i++) {
-            if (sites[i] === login.username) {
+            if (sites[i].username === login.username) {
                 match = true;
                 break;
             }
@@ -378,7 +378,7 @@ function addLogin(login, tab) {
                 tabId: tab.id,
                 expires: new Date((new Date()).getTime() + 30 * 60000) // 30 minutes
             });
-            checkLoginsToAdd();
+            checkLoginsToAdd(tab);
         }
     });
 }
@@ -430,36 +430,41 @@ function saveAddLogin(tab) {
     }
 }
 
-function checkLoginsToAdd() {
+function checkLoginsToAdd(tab) {
     if (!loginsToAdd.length) {
         return;
     }
 
+    if (tab) {
+        check();
+        return;
+    }
+
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        var tabId = null;
         if (tabs.length > 0) {
-            tabId = tabs[0].id;
+            tab = tabs[0];
+            check();
         }
-        else {
+    });
+
+    function check() {
+        if (!tab) {
             return;
         }
 
-        if (!tabId) {
-            return;
-        }
-
-        var tabDomain = tldjs.getDomain(tabs[0].url);
+        var tabDomain = tldjs.getDomain(tab.url);
         if (!tabDomain) {
             return;
         }
 
         for (var i = 0; i < loginsToAdd.length; i++) {
-            if (loginsToAdd[i].tabId === tabId && loginsToAdd[i].name === tabDomain) {
-                messageTab(tabId, 'openNotificationBar', { type: 'add' });
+            // loginsToAdd[x].name is the domain here
+            if (loginsToAdd[i].tabId === tab.id && loginsToAdd[i].name === tabDomain) {
+                messageTab(tab.id, 'openNotificationBar', { type: 'add' });
                 break;
             }
         }
-    });
+    }
 }
 
 function startAutofillPage(site) {
