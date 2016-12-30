@@ -312,8 +312,8 @@
     "description": "Edit"
   },
   "noSitesInList": {
-    "message": "Aucun site dans la liste.",
-    "description": "There are no sites in list."
+    "message": "Aucun site correspondant.",
+    "description": "There are no sites to list."
   },
   "siteInformation": {
     "message": "Informations du site",
@@ -602,5 +602,25 @@
   "lost2FAApp": {
     "message": "Appli d'authentification perdue ?",
     "description": "Lost authenticator app?"
+    },
+  "credits": {
+    "message": "Remerciements",
+    "description": "Credits (giving thanks to people that helped, like at the end of a movie)"
+  },
+  "thankYou": {
+    "message": "Merci",
+    "description": "Thank You"
+  },
+  "translations": {
+    "message": "Traductions",
+    "description": "Translations"
+  },
+  "searchFolder": {
+    "message": "Recherche dossier",
+    "description": "Search folder"
+  },
+  "noneFolder": {
+    "message": "(aucun)",
+    "description": "(none) - this is the folder for uncategorized sites"
   }
 }
