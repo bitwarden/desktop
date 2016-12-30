@@ -15,7 +15,7 @@ table {
 
 .outter-table > tbody > tr > td {
     padding: 0 0 0 10px;
-    border-bottom: 1px solid #333333;
+    border-bottom: 2px solid #3c8dbc;
     height: 40px;
 }
 
@@ -48,7 +48,21 @@ img {
 }
 
 #close {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     display: block;
+    padding: 5px 0;
 }
+
+button {
+    background-color: #3c8dbc;
+    padding: 5px 15px;
+    border-radius: 3px;
+    color: #ffffff;
+    border: 0;
+}
+
+    button:hover {
+        cursor: pointer;
+        background-color: #3681ad;
+    }
