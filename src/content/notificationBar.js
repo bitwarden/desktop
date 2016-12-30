@@ -1,13 +1,11 @@
 ﻿document.addEventListener('DOMContentLoaded', function (event) {
     var pageDetails = [],
-    formData = [],
-    barType = null;
+        formData = [],
+        barType = null;
 
-    setTimeout(function () {
-        chrome.runtime.sendMessage({
-            command: 'bgCollectPageDetails'
-        });
-    }, 1000);
+    chrome.runtime.sendMessage({
+        command: 'bgCollectPageDetails'
+    });
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
