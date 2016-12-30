@@ -7,8 +7,14 @@
         setContent(template_add);
 
         var add = $('#template-add-clone'),
-            addButton = $('#template-add-clone.add-save'),
-            neverButton = $('#template-add-clone.add-never');
+            addButton = $('#template-add-clone .add-save');
+
+        $(addButton).click(function (e) {
+            e.preventDefault();
+            chrome.runtime.sendMessage({
+                command: 'bgAddSave'
+            });
+        });
     }
     else if (getQueryVariable('info')) {
         setContent(template_alert);
@@ -28,7 +34,7 @@
 
         for (var i = 0; i < vars.length; i++) {
             var pair = vars[i].split('=');
-            if (pair[0] == variable) {
+            if (pair[0] === variable) {
                 return pair[1];
             }
         }

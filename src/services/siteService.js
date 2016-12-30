@@ -130,6 +130,21 @@ function initSiteService() {
         });
     };
 
+    SiteService.prototype.getAllDecryptedForDomain = function (domain) {
+        var self = this;
+
+        return self.getAllDecrypted().then(function (sites) {
+            var sitesToReturn = [];
+            for (var i = 0; i < sites.length; i++) {
+                if (sites[i].domain === domain) {
+                    sitesToReturn.push(sites[i]);
+                }
+            }
+
+            return sitesToReturn;
+        });
+    };
+
     SiteService.prototype.saveWithServer = function (site) {
         var deferred = Q.defer();
 

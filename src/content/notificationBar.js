@@ -1,24 +1,25 @@
 ﻿!(function () {
     var pageDetails = [],
-        formData = [];
+        formData = [],
+        barType = null;
+
     chrome.runtime.sendMessage({
         command: 'bgCollectPageDetails'
     });
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
-            closeBar();
+            closeBar(false);
             openBar(msg.data.type, msg.data.typeData);
             sendResponse();
             return true;
         }
         else if (msg.command === 'closeNotificationBar') {
-            closeBar();
+            closeBar(true);
             sendResponse();
             return true;
         }
         else if (msg.command === 'pageDetails') {
-            console.log(msg.data);
             pageDetails.push(msg.data.details);
             watchForms(msg.data.forms);
             sendResponse();
@@ -58,20 +59,21 @@
                 var password = null,
                     username = null,
                     passwordId = formData[i].password ? formData[i].password.htmlID : null,
-                    usernameId = formData[i].username ? formData[i].username.htmlID : null;
+                    usernameId = formData[i].username ? formData[i].username.htmlID : null,
+                    inputs = document.getElementsByTagName('input');
 
                 if (passwordId && passwordId !== '') {
                     password = document.getElementById(passwordId);
                 }
                 else if (formData[i].password) {
-                    password = document.getElementsByTagName('input')[formData[i].password.elementNumber];
+                    password = inputs[formData[i].password.elementNumber];
                 }
 
                 if (usernameId && usernameId !== '') {
                     username = document.getElementById(usernameId);
                 }
                 else if (formData[i].username) {
-                    username = document.getElementsByTagName('input')[formData[i].username.elementNumber];
+                    username = inputs[formData[i].username.elementNumber];
                 }
 
                 var login = {
@@ -80,7 +82,7 @@
                     url: document.URL
                 };
 
-                if (login.password && login.password !== '') {
+                if (login.username && login.username !== '' && login.password && login.password !== '') {
                     chrome.runtime.sendMessage({
                         command: 'bgAddLogin',
                         login: login
@@ -93,6 +95,7 @@
 
     function openBar(type, typeData) {
         var barPage = 'notification/bar.html';
+        barType = type;
         switch (type) {
             case 'info':
                 barPage = barPage + '?info=' + typeData.text;
@@ -108,8 +111,13 @@
                 break;
             case 'add':
                 barPage = barPage + '?add=1';
+                break;
             default:
                 break;
+        }
+
+        if (!document.body) {
+            return;
         }
 
         var iframe = document.createElement('iframe');
@@ -128,7 +136,7 @@
         document.body.insertBefore(spacer, document.body.firstChild);
     }
 
-    function closeBar() {
+    function closeBar(explicitClose) {
         var el = document.getElementById('bit-notification-bar');
         if (el) {
             el.parentElement.removeChild(el);
@@ -137,6 +145,20 @@
         el = document.getElementById('bit-notification-bar-spacer');
         if (el) {
             el.parentElement.removeChild(el);
+        }
+
+        if (!explicitClose) {
+            return;
+        }
+
+        switch (barType) {
+            case 'add':
+                chrome.runtime.sendMessage({
+                    command: 'bgAddClose'
+                });
+                break;
+            default:
+                break;
         }
     }
 })();

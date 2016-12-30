@@ -57,16 +57,22 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         messageCurrentTab('closeOverlayPopup');
     }
     else if (msg.command === 'bgOpenNotificationBar') {
-        messageCurrentTab('openNotificationBar', msg.data);
+        messageTab(sender.tab.id, 'openNotificationBar', msg.data);
     }
     else if (msg.command === 'bgCloseNotificationBar') {
-        messageCurrentTab('closeNotificationBar');
+        messageTab(sender.tab.id, 'closeNotificationBar');
     }
     else if (msg.command === 'bgCollectPageDetails') {
         collectPageDetailsForContentScript(sender.tab);
     }
     else if (msg.command === 'bgAddLogin') {
         addLogin(msg.login, sender.tab);
+    }
+    else if (msg.command === 'bgAddClose') {
+        removeAddLogin(sender.tab);
+    }
+    else if (msg.command === 'bgAddSave') {
+        saveAddLogin(sender.tab);
     }
     else if (msg.command === 'collectPageDetailsResponse') {
         // messageCurrentTab('openNotificationBar', { type: 'add', typeData: null });
@@ -222,28 +228,23 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
         return;
     }
 
-    var count = 0;
     chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
 
-    siteService.getAllDecrypted().then(function (sites) {
+    siteService.getAllDecryptedForDomain(tabDomain).then(function (sites) {
         sortSites(sites);
         for (var i = 0; i < sites.length; i++) {
-            if (sites[i].domain && tabDomain === sites[i].domain) {
-                count++;
-
-                if (loadContextMenuOptions) {
-                    loadSiteContextMenuOptions(sites[i]);
-                }
+            if (loadContextMenuOptions) {
+                loadSiteContextMenuOptions(sites[i]);
             }
         }
 
-        if (count > 0 && count < 9) {
+        if (sites.length > 0 && sites.length < 9) {
             chrome.browserAction.setBadgeText({
-                text: count.toString(),
+                text: sites.length.toString(),
                 tabId: tabId
             });
         }
-        else if (count > 0) {
+        else if (sites.length > 0) {
             chrome.browserAction.setBadgeText({
                 text: '9+',
                 tabId: tabId
@@ -356,14 +357,77 @@ function addLogin(login, tab) {
         return;
     }
 
-    loginsToAdd.push({
-        username: login.username,
-        password: login.password,
-        name: loginDomain,
-        uri: login.url,
-        tabId: tab.id
+    siteService.getAllDecryptedForDomain(loginDomain).then(function (sites) {
+        var match = false;
+        for (var i = 0; i < sites.length; i++) {
+            if (sites[i] === login.username) {
+                match = true;
+                break;
+            }
+        }
+
+        if (!match) {
+            // remove any old logins for this tab
+            removeAddLogin(tab);
+
+            loginsToAdd.push({
+                username: login.username,
+                password: login.password,
+                name: loginDomain,
+                uri: login.url,
+                tabId: tab.id,
+                expires: new Date((new Date()).getTime() + 30 * 60000) // 30 minutes
+            });
+            checkLoginsToAdd();
+        }
     });
-    checkLoginsToAdd();
+}
+
+cleanupLoginsToAdd();
+setInterval(cleanupLoginsToAdd, 2 * 60 * 1000); // check every 2 minutes
+function cleanupLoginsToAdd() {
+    var now = new Date();
+    for (var i = loginsToAdd.length - 1; i >= 0 ; i--) {
+        if (loginsToAdd[i].expires < now) {
+            loginsToAdd.splice(i, 1);
+        }
+    }
+}
+
+function removeAddLogin(tab) {
+    for (var i = loginsToAdd.length - 1; i >= 0 ; i--) {
+        if (loginsToAdd[i].tabId === tab.id) {
+            loginsToAdd.splice(i, 1);
+        }
+    }
+}
+
+function saveAddLogin(tab) {
+    for (var i = loginsToAdd.length - 1; i >= 0 ; i--) {
+        if (loginsToAdd[i].tabId === tab.id) {
+            var loginToAdd = loginsToAdd[i];
+            loginsToAdd.splice(i, 1);
+            siteService.encrypt({
+                id: null,
+                folderId: null,
+                favorite: false,
+                name: loginToAdd.name,
+                uri: loginToAdd.uri,
+                username: loginToAdd.username,
+                password: loginToAdd.password,
+                notes: null
+            }).then(function (siteModel) {
+                var site = new Site(siteModel, true);
+                siteService.saveWithServer(site).then(function (site) {
+                    ga('send', {
+                        hitType: 'event',
+                        eventAction: 'Added Site from Notification Bar'
+                    });
+                });
+            });
+            messageTab(tab.id, 'closeNotificationBar');
+        }
+    }
 }
 
 function checkLoginsToAdd() {
