@@ -1,11 +1,13 @@
-﻿!(function () {
+﻿document.addEventListener('DOMContentLoaded', function (event) {
     var pageDetails = [],
-        formData = [],
-        barType = null;
+    formData = [],
+    barType = null;
 
-    chrome.runtime.sendMessage({
-        command: 'bgCollectPageDetails'
-    });
+    setTimeout(function () {
+        chrome.runtime.sendMessage({
+            command: 'bgCollectPageDetails'
+        });
+    }, 1000);
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
@@ -161,4 +163,4 @@
                 break;
         }
     }
-})();
+});
