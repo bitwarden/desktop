@@ -3,8 +3,12 @@
         formData = [],
         barType = null;
 
-    chrome.runtime.sendMessage({
-        command: 'bgCollectPageDetails'
+    chrome.storage.local.get('disableAddSiteNotification', function (obj) {
+        if (!obj || !obj['disableAddSiteNotification']) {
+            chrome.runtime.sendMessage({
+                command: 'bgCollectPageDetails'
+            });
+        }
     });
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {

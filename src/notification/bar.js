@@ -1,10 +1,15 @@
 ﻿$(function () {
     var content = document.getElementById('content'),
-        template_add = document.getElementById('template-add'),
-        template_alert = document.getElementById('template-alert');
+        closeButton = $('#close-button');
+
+    // i18n
+    $('#logo-link').attr('title', chrome.i18n.getMessage('appName'));
+    closeButton.attr('title', chrome.i18n.getMessage('close'));
+    $('#template-add .add-save').text(chrome.i18n.getMessage('notificationAddSave'));
+    $('#template-add .add-text').text(chrome.i18n.getMessage('notificationAddDesc'));
 
     if (getQueryVariable('add')) {
-        setContent(template_add);
+        setContent(document.getElementById('template-add'));
 
         var add = $('#template-add-clone'),
             addButton = $('#template-add-clone .add-save');
@@ -17,11 +22,11 @@
         });
     }
     else if (getQueryVariable('info')) {
-        setContent(template_alert);
+        setContent(document.getElementById('template-alert'));
         $('#template-alert-clone').text(getQueryVariable('info'));
     }
 
-    $('#close-button').click(function (e) {
+    closeButton.click(function (e) {
         e.preventDefault();
         chrome.runtime.sendMessage({
             command: 'bgCloseNotificationBar'

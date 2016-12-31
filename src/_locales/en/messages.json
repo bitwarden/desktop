@@ -622,5 +622,29 @@
   "noneFolder": {
     "message": "(none)",
     "description": "(none) - this is the folder for uncategorized sites"
+  },
+  "features": {
+    "message": "Features",
+    "description": "Features"
+  },
+  "gaDesc": {
+    "message": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous.",
+    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableAddSiteNotification": {
+    "message": "Disable Add Site Notification",
+    "description": "Disable Add Site Notification"
+  },
+  "addSiteNotificationDesc": {
+    "message": "The \"Add Site Notification\" automatically prompts you to save new sites to your vault whenever you log into them for the first time.",
+    "description": "The \"Add Site Notification\" automatically prompts you to save new sites to your vault whenever you log into them for the first time."
+  },
+  "notificationAddDesc": {
+    "message": "Should bitwarden remember this password for you?",
+    "description": "Should bitwarden remember this password for you?"
+  },
+  "notificationAddSave": {
+    "message": "Yes, Save Now",
+    "description": "Yes, Save Now"
   }
 }

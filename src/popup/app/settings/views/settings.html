@@ -66,10 +66,10 @@
                 {{i18n.other}}
             </div>
             <div class="list-section-items">
-                <div class="list-section-item list-section-item-checkbox">
-                    <label for="ga">{{i18n.disableGa}}</label>
-                    <input id="ga" type="checkbox" ng-model="disableGa" ng-change="updateGa()">
-                </div>
+                <a class="list-section-item" ui-sref="features({animation: 'in-slide-left'})">
+                    {{i18n.features}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
                 <a class="list-section-item" ui-sref="about({animation: 'in-slide-left'})">
                     {{i18n.about}}
                     <i class="fa fa-chevron-right fa-lg"></i>

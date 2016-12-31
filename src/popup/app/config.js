@@ -139,6 +139,13 @@
                 data: { authorize: true },
                 params: { animation: null }
             })
+            .state('features', {
+                url: '/features',
+                templateUrl: 'app/settings/views/settingsFeatures.html',
+                controller: 'settingsFeaturesController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
             .state('help', {
                 url: '/help',
                 templateUrl: 'app/settings/views/settingsHelp.html',
