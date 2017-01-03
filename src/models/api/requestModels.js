@@ -1,11 +1,11 @@
-﻿var SiteRequest = function (site) {
-    this.folderId = site.folderId;
-    this.name = site.name ? site.name.encryptedString : null;
-    this.uri = site.uri ? site.uri.encryptedString : null;
-    this.username = site.username ? site.username.encryptedString : null;
-    this.password = site.password ? site.password.encryptedString : null;
-    this.notes = site.notes ? site.notes.encryptedString : null;
-    this.favorite = site.favorite;
+﻿var LoginRequest = function (login) {
+    this.folderId = login.folderId;
+    this.name = login.name ? login.name.encryptedString : null;
+    this.uri = login.uri ? login.uri.encryptedString : null;
+    this.username = login.username ? login.username.encryptedString : null;
+    this.password = login.password ? login.password.encryptedString : null;
+    this.notes = login.notes ? login.notes.encryptedString : null;
+    this.favorite = login.favorite;
 };
 
 var FolderRequest = function (folder) {

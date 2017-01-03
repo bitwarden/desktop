@@ -1,7 +1,7 @@
 angular
     .module('bit.global')
 
-    .controller('mainController', function ($scope, $state, loginService, toastr, i18nService) {
+    .controller('mainController', function ($scope, $state, authService, toastr, i18nService) {
         var self = this;
         self.currentYear = new Date().getFullYear();
         self.animation = '';
@@ -24,7 +24,7 @@ angular
                 $scope.$broadcast('syncStarted');
             }
             else if (msg.command === 'logout') {
-                loginService.logOut(function () {
+                authService.logOut(function () {
                     toastr.warning(i18nService.loginExpired, i18nService.loggedOut);
                     $state.go('home');
                 });

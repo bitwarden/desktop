@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsController', function ($scope, loginService, $state, SweetAlert, utilsService, $analytics,
+    .controller('settingsController', function ($scope, authService, $state, SweetAlert, utilsService, $analytics,
         i18nService, constantsService, cryptoService) {
         utilsService.initListSectionItemListeners($(document), angular);
         $scope.lockOption = '';
@@ -38,7 +38,7 @@
                         }, function (confirmed) {
                             if (confirmed) {
                                 cryptoService.toggleKey(function () { });
-                                loginService.logOut(function () {
+                                authService.logOut(function () {
                                     $analytics.eventTrack('Logged Out');
                                     $state.go('home');
                                 });
@@ -58,7 +58,7 @@
                 cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 if (confirmed) {
-                    loginService.logOut(function () {
+                    authService.logOut(function () {
                         $analytics.eventTrack('Logged Out');
                         $state.go('home');
                     });

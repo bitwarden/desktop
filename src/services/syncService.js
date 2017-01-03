@@ -1,5 +1,5 @@
-﻿function SyncService(siteService, folderService, userService, apiService) {
-    this.siteService = siteService;
+﻿function SyncService(loginService, folderService, userService, apiService) {
+    this.loginService = loginService;
     this.folderService = folderService;
     this.userService = userService;
     this.apiService = apiService;
@@ -27,13 +27,13 @@ function initSyncService() {
             self.userService.getUserId(function (userId) {
                 var now = new Date();
                 var ciphers = self.apiService.getCiphers(function (response) {
-                    var sites = {};
+                    var logins = {};
                     var folders = {};
 
                     for (var i = 0; i < response.data.length; i++) {
                         var data = response.data[i];
                         if (data.type === 1) {
-                            sites[data.id] = new SiteData(data, userId);
+                            logins[data.id] = new LoginData(data, userId);
                         }
                         else if (data.type === 0) {
                             folders[data.id] = new FolderData(data, userId);
@@ -41,7 +41,7 @@ function initSyncService() {
                     }
 
                     self.folderService.replace(folders, function () {
-                        self.siteService.replace(sites, function () {
+                        self.loginService.replace(logins, function () {
                             self.setLastSync(now, function () {
                                 self.syncCompleted(true);
                                 callback(true);
@@ -95,7 +95,7 @@ function initSyncService() {
         });
     }
 
-    function syncSites(serverSites, callback) {
+    function syncLogins(serverLogins, callback) {
         var self = this;
 
         self.userService.isAuthenticated(function (isAuthenticated) {
@@ -105,23 +105,23 @@ function initSyncService() {
             }
 
             self.userService.getUserId(function (userId) {
-                self.siteService.getAll(function (sites) {
-                    var localSites = {};
-                    for (var i = 0; i < sites.length; i++) {
-                        localSites[sites[i].id] = sites[i];
+                self.loginService.getAll(function (logins) {
+                    var localLogins = {};
+                    for (var i = 0; i < logins.length; i++) {
+                        localLogins[logins[i].id] = logins[i];
                     }
 
                     var data = [];
-                    for (var j = 0; j < serverSites.length; j++) {
-                        var serverSite = serverSites[j];
-                        var existingLocalSite = localSites[serverSite.id];
+                    for (var j = 0; j < serverLogins.length; j++) {
+                        var serverLogin = serverLogins[j];
+                        var existingLocalLogin = localLogins[serverLogin.id];
 
-                        if (!existingLocalSite || existingLocalSite.RevisionDate !== serverSite.RevisionDate) {
-                            data.push(new SiteData(serverSite, userId));
+                        if (!existingLocalLogin || existingLocalLogin.RevisionDate !== serverLogin.RevisionDate) {
+                            data.push(new LoginData(serverLogin, userId));
                         }
                     }
 
-                    self.siteService.upsert(data, function () {
+                    self.loginService.upsert(data, function () {
                         callback();
                     });
                 });

@@ -1,23 +1,23 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultAddSiteController', function ($scope, $state, $stateParams, siteService, folderService,
+    .controller('vaultAddLoginController', function ($scope, $state, $stateParams, loginService, folderService,
         cryptoService, $q, toastr, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
         var from = $stateParams.from,
             folderId = $stateParams.folderId;
 
-        $scope.site = {
+        $scope.login = {
             folderId: folderId,
             name: $stateParams.name,
             uri: $stateParams.uri
         };
 
-        if ($stateParams.site) {
-            angular.extend($scope.site, $stateParams.site);
+        if ($stateParams.login) {
+            angular.extend($scope.login, $stateParams.login);
         }
 
-        if (!$stateParams.site && $scope.site.name && $scope.site.uri) {
+        if (!$stateParams.login && $scope.login.name && $scope.login.uri) {
             $('#username').focus();
         }
         else {
@@ -36,11 +36,11 @@
                 return;
             }
 
-            $scope.savePromise = $q.when(siteService.encrypt(model)).then(function (siteModel) {
-                var site = new Site(siteModel, true);
-                return $q.when(siteService.saveWithServer(site)).then(function (site) {
-                    $analytics.eventTrack('Added Site');
-                    toastr.success(i18nService.addedSite);
+            $scope.savePromise = $q.when(loginService.encrypt(model)).then(function (loginModel) {
+                var login = new Login(loginModel, true);
+                return $q.when(loginService.saveWithServer(login)).then(function (login) {
+                    $analytics.eventTrack('Added Login');
+                    toastr.success(i18nService.addedLogin);
                     $scope.close();
                 });
             });
@@ -71,7 +71,7 @@
                 animation: 'in-slide-up',
                 addState: {
                     from: from,
-                    site: $scope.site
+                    login: $scope.login
                 }
             });
         };

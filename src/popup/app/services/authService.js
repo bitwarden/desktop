@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('loginService', function (cryptoService, apiService, userService, tokenService, $q, $rootScope, siteService,
+    .factory('authService', function (cryptoService, apiService, userService, tokenService, $q, $rootScope, loginService,
         folderService) {
         var _service = {};
 
@@ -73,9 +73,9 @@
                         cryptoService.clearKeyHash(function () {
                             userService.clearUserId(function () {
                                 userService.clearEmail(function () {
-                                    siteService.clear(userId, function () {
+                                    loginService.clear(userId, function () {
                                         folderService.clear(userId, function () {
-                                            $rootScope.vaultSites = null;
+                                            $rootScope.vaultLogins = null;
                                             $rootScope.vaultFolders = null;
                                             chrome.runtime.sendMessage({ command: 'loggedOut' });
                                             callback();

@@ -1,7 +1,7 @@
 function ConstantsService() {
     return {
         disableGaKey: 'disableGa',
-        disableAddSiteNotificationKey: 'disableAddSiteNotification',
+        disableAddLoginNotificationKey: 'disableAddLoginNotification',
         lockOptionKey: 'lockOption',
         lastActiveKey: 'lastActive'
     };

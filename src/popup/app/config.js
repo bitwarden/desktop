@@ -95,26 +95,26 @@
                 data: { authorize: true },
                 params: { animation: null, from: 'vault' }
             })
-            .state('viewSite', {
-                url: '/view-site?siteId',
-                templateUrl: 'app/vault/views/vaultViewSite.html',
-                controller: 'vaultViewSiteController',
+            .state('viewLogin', {
+                url: '/view-login?loginId',
+                templateUrl: 'app/vault/views/vaultViewLogin.html',
+                controller: 'vaultViewLoginController',
                 data: { authorize: true },
                 params: { animation: null, from: 'vault' }
             })
-            .state('addSite', {
-                url: '/add-site',
-                templateUrl: 'app/vault/views/vaultAddSite.html',
-                controller: 'vaultAddSiteController',
+            .state('addLogin', {
+                url: '/add-login',
+                templateUrl: 'app/vault/views/vaultAddLogin.html',
+                controller: 'vaultAddLoginController',
                 data: { authorize: true },
-                params: { animation: null, name: null, uri: null, folderId: null, site: null, from: 'vault' }
+                params: { animation: null, name: null, uri: null, folderId: null, login: null, from: 'vault' }
             })
-            .state('editSite', {
-                url: '/edit-site?siteId',
-                templateUrl: 'app/vault/views/vaultEditSite.html',
-                controller: 'vaultEditSiteController',
+            .state('editLogin', {
+                url: '/edit-login?loginId',
+                templateUrl: 'app/vault/views/vaultEditLogin.html',
+                controller: 'vaultEditLoginController',
                 data: { authorize: true },
-                params: { animation: null, fromView: true, site: null, from: 'vault' }
+                params: { animation: null, fromView: true, login: null, from: 'vault' }
             })
 
             .state('passwordGenerator', {
@@ -190,7 +190,7 @@
                 params: { animation: null }
             });
     })
-    .run(function ($rootScope, userService, loginService, cryptoService, tokenService, $state, constantsService, stateService) {
+    .run(function ($rootScope, userService, authService, cryptoService, tokenService, $state, constantsService, stateService) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
             if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {
                 stateService.purgeState();
@@ -221,7 +221,7 @@
 
                         if (!isAuthenticated || tokenService.isTokenExpired(token)) {
                             event.preventDefault();
-                            loginService.logOut(function () {
+                            authService.logOut(function () {
                                 $state.go('home');
                             });
                         }

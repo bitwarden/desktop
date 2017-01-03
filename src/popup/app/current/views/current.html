@@ -1,41 +1,41 @@
 ﻿<div class="header">
     <div class="right">
-        <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="" ng-click="addLogin()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
     <div class="title">{{i18n.currentTab}}</div>
 </div>
 <div class="content content-tabs">
-    <div ng-if="sites.length">
+    <div ng-if="logins.length">
         <div class="list">
             <div class="list-grouped">
-                <a href="javascript:void(0)" ng-click="fillSite(site)" class="list-grouped-item condensed"
-                   title="{{i18n.autoFill}} {{site.name}}" ng-repeat="site in theSites = (sites | orderBy: ['name', 'username'])">
+                <a href="javascript:void(0)" ng-click="fillLogin(login)" class="list-grouped-item condensed"
+                   title="{{i18n.autoFill}} {{login.name}}" ng-repeat="login in theLogins = (logins | orderBy: ['name', 'username'])">
                     <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, i18n.password)"
-                          data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
+                          data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">
                         <i class="fa fa-lg fa-key"></i>
                     </span>
                     <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyUsername}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, i18n.username)"
-                          data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
+                          data-clipboard-text="{{login.username}}" ng-class="{'disabled': !login.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </span>
-                    <span class="btn-list" href="" ng-click="viewSite(site, $event) && $event.stopPropagation()"
-                          title="{{i18n.edit}} {{site.name}}">
+                    <span class="btn-list" href="" ng-click="viewLogin(login, $event) && $event.stopPropagation()"
+                          title="{{i18n.edit}} {{login.name}}">
                         <i class="fa fa-lg fa-pencil"></i>
                     </span>
-                    <span class="text">{{site.name}}</span>
-                    <span class="detail">{{site.username}}</span>
+                    <span class="text">{{login.name}}</span>
+                    <span class="detail">{{login.username}}</span>
                 </a>
             </div>
         </div>
     </div>
-    <div class="centered-message" ng-if="loaded && !sites.length">
+    <div class="centered-message" ng-if="loaded && !logins.length">
         <p>
             {{i18n.autoFillInfo}}
-            <button ng-click="addSite()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addSite}}</button>
+            <button ng-click="addLogin()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addLogin}}</button>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">

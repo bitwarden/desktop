@@ -4,7 +4,7 @@
     .controller('settingsFeaturesController', function ($scope, i18nService, $analytics, constantsService) {
         $scope.i18n = i18nService;
         $scope.disableGa = false;
-        $scope.disableAddSiteNotification = false;
+        $scope.disableAddLoginNotification = false;
 
         chrome.storage.local.get(constantsService.disableGaKey, function (obj) {
             if (obj && obj[constantsService.disableGaKey]) {
@@ -15,12 +15,12 @@
             }
         });
 
-        chrome.storage.local.get(constantsService.disableAddSiteNotificationKey, function (obj) {
-            if (obj && obj[constantsService.disableAddSiteNotificationKey]) {
-                $scope.disableAddSiteNotification = true;
+        chrome.storage.local.get(constantsService.disableAddLoginNotificationKey, function (obj) {
+            if (obj && obj[constantsService.disableAddLoginNotificationKey]) {
+                $scope.disableAddLoginNotification = true;
             }
             else {
-                $scope.disableAddSiteNotification = false;
+                $scope.disableAddLoginNotification = false;
             }
         });
 
@@ -45,22 +45,22 @@
             });
         };
 
-        $scope.updateAddSiteNotification = function () {
-            chrome.storage.local.get(constantsService.disableAddSiteNotificationKey, function (obj) {
-                if (obj[constantsService.disableAddSiteNotificationKey]) {
+        $scope.updateAddLoginNotification = function () {
+            chrome.storage.local.get(constantsService.disableAddLoginNotificationKey, function (obj) {
+                if (obj[constantsService.disableAddLoginNotificationKey]) {
                     // enable
-                    obj[constantsService.disableAddSiteNotificationKey] = false;
+                    obj[constantsService.disableAddLoginNotificationKey] = false;
                 }
                 else {
                     // disable
-                    $analytics.eventTrack('Disabled Add Site Notification');
-                    obj[constantsService.disableAddSiteNotificationKey] = true;
+                    $analytics.eventTrack('Disabled Add Login Notification');
+                    obj[constantsService.disableAddLoginNotificationKey] = true;
                 }
 
                 chrome.storage.local.set(obj, function () {
-                    $scope.disableAddSiteNotification = obj[constantsService.disableAddSiteNotificationKey];
-                    if (!obj[constantsService.disableAddSiteNotificationKey]) {
-                        $analytics.eventTrack('Enabled Add Site Notification');
+                    $scope.disableAddLoginNotification = obj[constantsService.disableAddLoginNotificationKey];
+                    if (!obj[constantsService.disableAddLoginNotificationKey]) {
+                        $analytics.eventTrack('Enabled Add Login Notification');
                     }
                 });
             });

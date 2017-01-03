@@ -16,8 +16,8 @@
     .factory('folderService', function () {
         return chrome.extension.getBackgroundPage().folderService;
     })
-    .factory('siteService', function () {
-        return chrome.extension.getBackgroundPage().siteService;
+    .factory('loginService', function () {
+        return chrome.extension.getBackgroundPage().loginService;
     })
     .factory('syncService', function () {
         return chrome.extension.getBackgroundPage().syncService;

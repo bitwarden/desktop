@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginTwoFactorController', function ($scope, $state, loginService, toastr, utilsService,
+    .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService,
         $analytics, i18nService) {
         $scope.i18n = i18nService;
         $scope.model = {};
@@ -15,7 +15,7 @@
                 return;
             }
 
-            $scope.loginPromise = loginService.logInTwoFactor(model.code);
+            $scope.loginPromise = authService.logInTwoFactor(model.code);
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
                 $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });

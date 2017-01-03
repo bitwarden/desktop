@@ -1,7 +1,7 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, siteService, tldjs, toastr, $q, $window, $state, $timeout,
+    .controller('currentController', function ($scope, loginService, tldjs, toastr, $q, $window, $state, $timeout,
         autofillService, $analytics, i18nService) {
         $scope.i18n = i18nService;
 
@@ -11,7 +11,7 @@ angular
             domain = null,
             canAutofill = false;
 
-        $scope.sites = [];
+        $scope.logins = [];
         $scope.loaded = false;
 
         $scope.$on('$viewContentLoaded', function () {
@@ -41,17 +41,17 @@ angular
                     canAutofill = true;
                 });
 
-                var filteredSites = [];
-                var sitePromise = $q.when(siteService.getAllDecrypted());
-                sitePromise.then(function (sites) {
-                    for (var i = 0; i < sites.length; i++) {
-                        if (sites[i].domain && sites[i].domain === domain) {
-                            filteredSites.push(sites[i]);
+                var filteredLogins = [];
+                var loginPromise = $q.when(loginService.getAllDecrypted());
+                loginPromise.then(function (logins) {
+                    for (var i = 0; i < logins.length; i++) {
+                        if (logins[i].domain && logins[i].domain === domain) {
+                            filteredLogins.push(logins[i]);
                         }
                     }
 
                     $scope.loaded = true;
-                    $scope.sites = filteredSites;
+                    $scope.logins = filteredLogins;
                 });
             });
         }
@@ -66,8 +66,8 @@ angular
             $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
         };
 
-        $scope.addSite = function () {
-            $state.go('addSite', {
+        $scope.addLogin = function () {
+            $state.go('addLogin', {
                 animation: 'in-slide-up',
                 name: domain,
                 uri: url,
@@ -75,16 +75,16 @@ angular
             });
         };
 
-        $scope.fillSite = function (site) {
+        $scope.fillLogin = function (login) {
             var didAutofill = false;
 
-            if (site && canAutofill && pageDetails && pageDetails.length) {
+            if (login && canAutofill && pageDetails && pageDetails.length) {
                 for (var i = 0; i < pageDetails.length; i++) {
                     if (pageDetails[i].tabId !== tabId) {
                         continue;
                     }
 
-                    var fillScript = autofillService.generateFillScript(pageDetails[i].details, site.username, site.password);
+                    var fillScript = autofillService.generateFillScript(pageDetails[i].details, login.username, login.password);
                     if (tabId && fillScript && fillScript.script && fillScript.script.length) {
                         didAutofill = true;
                         $analytics.eventTrack('Autofilled');
@@ -104,11 +104,11 @@ angular
             }
         };
 
-        $scope.viewSite = function (site, e) {
+        $scope.viewLogin = function (login, e) {
             e.stopPropagation();
 
-            $state.go('viewSite', {
-                siteId: site.id,
+            $state.go('viewLogin', {
+                loginId: login.id,
                 animation: 'in-slide-up',
                 from: 'current'
             });

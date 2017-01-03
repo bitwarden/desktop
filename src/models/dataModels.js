@@ -15,12 +15,12 @@ var FolderData = function (response, userId) {
     this.revisionDate = response.revisionDate;
 };
 
-var SiteData = function (response, userId) {
+var LoginData = function (response, userId) {
     this.id = response.id;
     this.folderId = response.folderId;
     this.userId = userId;
 
-    if (response instanceof SiteResponse) {
+    if (response instanceof LoginResponse) {
         this.name = response.name;
         this.uri = response.uri;
         this.username = response.username;

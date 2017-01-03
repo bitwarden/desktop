@@ -1,19 +1,19 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultViewSiteController', function ($scope, $state, $stateParams, siteService, tldjs, toastr, $q,
+    .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, tldjs, toastr, $q,
         $analytics, i18nService) {
         $scope.i18n = i18nService;
         var from = $stateParams.from;
 
-        $scope.site = null;
-        siteService.get($stateParams.siteId, function (site) {
-            if (!site) {
+        $scope.login = null;
+        loginService.get($stateParams.loginId, function (login) {
+            if (!login) {
                 return;
             }
 
-            $q.when(site.decrypt()).then(function (model) {
-                $scope.site = model;
+            $q.when(login.decrypt()).then(function (model) {
+                $scope.login = model;
 
                 if (model.password) {
                     var maskedPassword = '';
@@ -21,29 +21,29 @@ angular
                         maskedPassword += '•';
                     }
 
-                    $scope.site.maskedPassword = maskedPassword;
+                    $scope.login.maskedPassword = maskedPassword;
                 }
 
                 if (model.uri) {
-                    $scope.site.showLaunch = model.uri.startsWith('http://') || model.uri.startsWith('https://');
+                    $scope.login.showLaunch = model.uri.startsWith('http://') || model.uri.startsWith('https://');
                     var domain = tldjs.getDomain(model.uri);
                     if (domain) {
-                        $scope.site.website = domain;
+                        $scope.login.website = domain;
                     }
                     else {
-                        $scope.site.website = model.uri;
+                        $scope.login.website = model.uri;
                     }
                 }
                 else {
-                    $scope.site.showLaunch = false;
+                    $scope.login.showLaunch = false;
                 }
             });
         });
 
-        $scope.edit = function (site) {
-            $state.go('editSite', {
+        $scope.edit = function (login) {
+            $state.go('editLogin', {
                 animation: 'in-slide-up',
-                siteId: site.id,
+                loginId: login.id,
                 fromView: true,
                 from: from
             });
@@ -67,10 +67,10 @@ angular
             }
         };
 
-        $scope.launchWebsite = function (site) {
-            if (site.showLaunch) {
+        $scope.launchWebsite = function (login) {
+            if (login.showLaunch) {
                 $analytics.eventTrack('Launched Website');
-                chrome.tabs.create({ url: site.uri });
+                chrome.tabs.create({ url: login.uri });
             }
         };
 

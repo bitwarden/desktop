@@ -1,24 +1,24 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultEditSiteController', function ($scope, $state, $stateParams, siteService, folderService,
+    .controller('vaultEditLoginController', function ($scope, $state, $stateParams, loginService, folderService,
         cryptoService, $q, toastr, SweetAlert, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
-        var siteId = $stateParams.siteId;
+        var loginId = $stateParams.loginId;
         var fromView = $stateParams.fromView;
         var from = $stateParams.from;
 
-        $scope.site = {
+        $scope.login = {
             folderId: null
         };
 
-        if ($stateParams.site) {
-            angular.extend($scope.site, $stateParams.site);
+        if ($stateParams.login) {
+            angular.extend($scope.login, $stateParams.login);
         }
         else {
-            siteService.get(siteId, function (site) {
-                $q.when(site.decrypt()).then(function (model) {
-                    $scope.site = model;
+            loginService.get(loginId, function (login) {
+                $q.when(login.decrypt()).then(function (model) {
+                    $scope.login = model;
                 });
             });
         }
@@ -36,11 +36,11 @@ angular
                 return;
             }
 
-            $scope.savePromise = $q.when(siteService.encrypt(model)).then(function (siteModel) {
-                var site = new Site(siteModel, true);
-                return $q.when(siteService.saveWithServer(site)).then(function (site) {
-                    $analytics.eventTrack('Edited Site');
-                    toastr.success(i18nService.editedSite);
+            $scope.savePromise = $q.when(loginService.encrypt(model)).then(function (loginModel) {
+                var login = new Login(loginModel, true);
+                return $q.when(loginService.saveWithServer(login)).then(function (login) {
+                    $analytics.eventTrack('Edited Login');
+                    toastr.success(i18nService.editedLogin);
                     $scope.close();
                 });
             });
@@ -48,16 +48,16 @@ angular
 
         $scope.delete = function () {
             SweetAlert.swal({
-                title: i18nService.deleteSite,
-                text: i18nService.deleteSiteConfirmation,
+                title: i18nService.deleteLogin,
+                text: i18nService.deleteLoginConfirmation,
                 showCancelButton: true,
                 confirmButtonText: i18nService.yes,
                 cancelButtonText: i18nService.no
             }, function (confirmed) {
                 if (confirmed) {
-                    $q.when(siteService.deleteWithServer(siteId)).then(function () {
-                        $analytics.eventTrack('Deleted Site');
-                        toastr.success(i18nService.deletedSite);
+                    $q.when(loginService.deleteWithServer(loginId)).then(function () {
+                        $analytics.eventTrack('Deleted Login');
+                        toastr.success(i18nService.deletedLogin);
                         $state.go('tabs.vault', {
                             animation: 'out-slide-down'
                         });
@@ -68,8 +68,8 @@ angular
 
         $scope.close = function () {
             if (fromView) {
-                $state.go('viewSite', {
-                    siteId: siteId,
+                $state.go('viewLogin', {
+                    loginId: loginId,
                     animation: 'out-slide-down',
                     from: from
                 });
@@ -82,7 +82,7 @@ angular
         };
 
         $scope.generatePassword = function () {
-            if ($scope.site.password) {
+            if ($scope.login.password) {
                 SweetAlert.swal({
                     title: i18nService.overwritePassword,
                     text: i18nService.overwritePasswordConfirmation,
@@ -107,8 +107,8 @@ angular
                 animation: 'in-slide-up',
                 editState: {
                     fromView: fromView,
-                    siteId: siteId,
-                    site: $scope.site,
+                    loginId: loginId,
+                    login: $scope.login,
                     from: from
                 }
             });

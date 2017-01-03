@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.lock')
 
-    .controller('lockController', function ($scope, $state, $analytics, i18nService, loginService, cryptoService, toastr,
+    .controller('lockController', function ($scope, $state, $analytics, i18nService, authService, cryptoService, toastr,
         userService, SweetAlert) {
         $scope.i18n = i18nService;
         $('#master-password').focus();
@@ -15,7 +15,7 @@
                 cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 if (confirmed) {
-                    loginService.logOut(function () {
+                    authService.logOut(function () {
                         $analytics.eventTrack('Logged Out');
                         $state.go('home');
                     });

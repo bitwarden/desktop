@@ -3,44 +3,44 @@
         <a ui-sref="tabs.vault({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.myVault}}</a>
     </div>
     <div class="search">
-        <input type="search" placeholder="{{i18n.searchFolder}}" ng-model="searchText" ng-change="searchSites()" id="search" />
+        <input type="search" placeholder="{{i18n.searchFolder}}" ng-model="searchText" ng-change="searchLogins()" id="search" />
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <a href="" ng-click="addSite()"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="" ng-click="addLogin()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
 </div>
 <div class="content">
-    <div ng-if="vaultSites.length" infinite-scroll="loadMore()" infinite-scroll-distance="1" infinite-scroll-parent="true"
+    <div ng-if="vaultLogins.length" infinite-scroll="loadMore()" infinite-scroll-distance="1" infinite-scroll-parent="true"
          infinite-scroll-immediate-check="true">
         <div class="list">
             <div class="list-section" style="padding-bottom: 0;">
                 <div class="list-section-header">
                     {{folder.name}}
                 </div>
-                <a href="javascript:void(0)" ng-click="viewSite(site)"
-                   class="list-section-item condensed" title="{{i18n.edit}} {{site.name}}"
-                   ng-repeat="site in pagedVaultSites">
+                <a href="javascript:void(0)" ng-click="viewLogin(login)"
+                   class="list-section-item condensed" title="{{i18n.edit}} {{login.name}}"
+                   ng-repeat="login in pagedVaultLogins">
                     <span class="btn-list" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
-                          data-clipboard-text="{{site.password}}" ng-class="{'disabled': !site.password}">
+                          data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">
                         <i class="fa fa-lg fa-key"></i>
                     </span>
                     <span class="btn-list" ng-click="$event.stopPropagation()" title="{{i18n.copyUsername}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.username)"
-                          data-clipboard-text="{{site.username}}" ng-class="{'disabled': !site.username}">
+                          data-clipboard-text="{{login.username}}" ng-class="{'disabled': !login.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </span>
-                    <span class="text">{{site.name}}</span>
-                    <span class="detail">{{site.username}}</span>
+                    <span class="text">{{login.name}}</span>
+                    <span class="detail">{{login.username}}</span>
                 </a>
             </div>
         </div>
     </div>
-    <div class="centered-message" ng-if="loaded && !vaultSites.length">
+    <div class="centered-message" ng-if="loaded && !vaultLogins.length">
         <p>
-            {{i18n.noSitesInList}}
-            <button ng-click="addSite()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addSite}}</button>
+            {{i18n.noLoginsInList}}
+            <button ng-click="addLogin()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addLogin}}</button>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">

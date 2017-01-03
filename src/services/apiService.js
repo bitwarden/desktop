@@ -97,9 +97,9 @@ function initApiService() {
         });
     };
 
-    // Site APIs
+    // Login APIs
 
-    ApiService.prototype.getSite = function (id, success, error) {
+    ApiService.prototype.getLogin = function (id, success, error) {
         var self = this;
         this.tokenService.getToken(function (token) {
             $.ajax({
@@ -107,7 +107,7 @@ function initApiService() {
                 url: self.baseUrl + '/sites/' + id + '?access_token=' + token,
                 dataType: 'json',
                 success: function (response) {
-                    success(new SiteResponse(response));
+                    success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -116,17 +116,17 @@ function initApiService() {
         });
     };
 
-    ApiService.prototype.postSite = function (siteRequest, success, error) {
+    ApiService.prototype.postLogin = function (loginRequest, success, error) {
         var self = this;
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/sites?access_token=' + token,
-                data: JSON.stringify(siteRequest),
+                data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    success(new SiteResponse(response));
+                    success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);
@@ -135,17 +135,17 @@ function initApiService() {
         });
     };
 
-    ApiService.prototype.putSite = function (id, siteRequest, success, error) {
+    ApiService.prototype.putLogin = function (id, loginRequest, success, error) {
         var self = this;
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/sites/' + id + '?access_token=' + token,
-                data: JSON.stringify(siteRequest),
+                data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    success(new SiteResponse(response));
+                    success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, textStatus, errorThrown);

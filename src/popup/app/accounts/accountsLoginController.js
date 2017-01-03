@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginController', function ($scope, $state, $stateParams, loginService, userService, toastr,
+    .controller('accountsLoginController', function ($scope, $state, $stateParams, authService, userService, toastr,
         utilsService, $analytics, i18nService) {
         utilsService.initListSectionItemListeners($(document), angular);
         $scope.i18n = i18nService;
@@ -32,7 +32,7 @@
                 return;
             }
 
-            $scope.loginPromise = loginService.logIn(model.email, model.masterPassword);
+            $scope.loginPromise = authService.logIn(model.email, model.masterPassword);
 
             $scope.loginPromise.then(function () {
                 userService.isTwoFactorAuthenticated(function (isTwoFactorAuthenticated) {

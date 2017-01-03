@@ -1,4 +1,4 @@
-﻿<form name="theForm" ng-submit="save(site)" bit-form="savePromise">
+﻿<form name="theForm" ng-submit="save(login)" bit-form="savePromise">
     <div class="header">
         <div class="left">
             <a ng-click="close()" href="">{{i18n.cancel}}</a>
@@ -7,30 +7,30 @@
             <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{i18n.save}}</button>
             <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
         </div>
-        <div class="title">{{i18n.addSite}}</div>
+        <div class="title">{{i18n.addLogin}}</div>
     </div>
     <div class="content">
         <div class="list">
             <div class="list-section">
                 <div class="list-section-header">
-                    {{i18n.siteInformation}}
+                    {{i18n.loginInformation}}
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="name" class="item-label">{{i18n.name}}</label>
-                        <input id="name" type="text" name="Name" ng-model="site.name">
+                        <input id="name" type="text" name="Name" ng-model="login.name">
                     </div>
                     <div class="list-section-item">
                         <label for="uri" class="item-label">{{i18n.uri}}</label>
-                        <input id="uri" type="text" name="Uri" ng-model="site.uri">
+                        <input id="uri" type="text" name="Uri" ng-model="login.uri">
                     </div>
                     <div class="list-section-item">
                         <label for="username" class="item-label">{{i18n.username}}</label>
-                        <input id="username" type="text" name="Username" ng-model="site.username">
+                        <input id="username" type="text" name="Username" ng-model="login.username">
                     </div>
                     <div class="list-section-item">
                         <label for="password" class="item-label">{{i18n.password}}</label>
-                        <input id="password" type="password" name="Password" ng-model="site.password">
+                        <input id="password" type="password" name="Password" ng-model="login.password">
                     </div>
                     <a class="list-section-item" href="" ng-click="generatePassword()">
                         {{i18n.generatePassword}}
@@ -42,7 +42,7 @@
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="folder" class="item-label">{{i18n.folder}}</label>
-                        <select id="folder" name="FolderId" ng-model="site.folderId">
+                        <select id="folder" name="FolderId" ng-model="login.folderId">
                             <option ng-repeat="folder in folders | orderBy: ['name']" value="{{folder.id}}">
                                 {{folder.name}}
                             </option>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="favorite">{{i18n.favorite}}</label>
-                        <input id="favorite" name="Favorite" type="checkbox" ng-model="site.favorite">
+                        <input id="favorite" name="Favorite" type="checkbox" ng-model="login.favorite">
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <textarea id="notes" name="Notes" rows="5" ng-model="site.notes"></textarea>
+                        <textarea id="notes" name="Notes" rows="5" ng-model="login.notes"></textarea>
                     </div>
                 </div>
             </div>

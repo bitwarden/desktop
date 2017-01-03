@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultViewFolderController', function ($scope, siteService, folderService, $q, $state, $stateParams, toastr,
+    .controller('vaultViewFolderController', function ($scope, loginService, folderService, $q, $state, $stateParams, toastr,
         syncService, $analytics, i18nService, stateService) {
         var stateKey = 'viewFolder',
             state = stateService.getState(stateKey) || {};
@@ -10,7 +10,7 @@
 
         var pageSize = 100,
             decFolder = null,
-            decSites = [];
+            decLogins = [];
 
         $scope.folder = {
             id: !state.folderId || state.folderId === '0' ? null : state.folderId,
@@ -20,8 +20,8 @@
         $('#search').focus();
 
         $scope.loaded = false;
-        $scope.vaultSites = [];
-        $scope.pagedVaultSites = [];
+        $scope.vaultLogins = [];
+        $scope.pagedVaultLogins = [];
         $scope.searchText = null;
         loadVault();
 
@@ -39,15 +39,15 @@
                 promises.push(folderDeferred.promise);
             }
 
-            var sitePromise = $q.when(siteService.getAllDecryptedForFolder($scope.folder.id));
-            sitePromise.then(function (sites) {
-                decSites = sites.sort(siteSort);
+            var loginPromise = $q.when(loginService.getAllDecryptedForFolder($scope.folder.id));
+            loginPromise.then(function (logins) {
+                decLogins = logins.sort(loginSort);
             });
-            promises.push(sitePromise);
+            promises.push(loginPromise);
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
-                $scope.vaultSites = decSites;
+                $scope.vaultLogins = decLogins;
 
                 if (decFolder) {
                     $scope.folder.name = decFolder.name;
@@ -55,14 +55,14 @@
 
                 if (state.searchText) {
                     $scope.searchText = state.searchText;
-                    $scope.searchSites();
+                    $scope.searchLogins();
                 }
 
                 setTimeout(setScrollY, 200);
             });
         }
 
-        function siteSort(a, b) {
+        function loginSort(a, b) {
             if (!a.name) {
                 return -1;
             }
@@ -100,65 +100,65 @@
         }
 
         $scope.loadMore = function () {
-            var pagedLength = $scope.pagedVaultSites.length;
-            if ($scope.vaultSites.length > pagedLength) {
-                $scope.pagedVaultSites =
-                    $scope.pagedVaultSites.concat($scope.vaultSites.slice(pagedLength, pagedLength + pageSize));
+            var pagedLength = $scope.pagedVaultLogins.length;
+            if ($scope.vaultLogins.length > pagedLength) {
+                $scope.pagedVaultLogins =
+                    $scope.pagedVaultLogins.concat($scope.vaultLogins.slice(pagedLength, pagedLength + pageSize));
             }
         };
 
-        $scope.searchSites = function () {
+        $scope.searchLogins = function () {
             if (!$scope.searchText || $scope.searchText.length < 2) {
-                if ($scope.vaultSites.length !== decSites.length) {
-                    resetList(decSites);
+                if ($scope.vaultLogins.length !== decLogins.length) {
+                    resetList(decLogins);
                 }
                 return;
             }
 
-            var matchedSites = [];
-            for (var i = 0; i < decSites.length; i++) {
-                if (searchSite(decSites[i])) {
-                    matchedSites.push(decSites[i]);
+            var matchedLogins = [];
+            for (var i = 0; i < decLogins.length; i++) {
+                if (searchLogin(decLogins[i])) {
+                    matchedLogins.push(decLogins[i]);
                 }
             }
 
-            resetList(matchedSites);
+            resetList(matchedLogins);
         };
 
-        function resetList(sites) {
-            $scope.vaultSites = sites;
-            $scope.pagedVaultSites = [];
+        function resetList(logins) {
+            $scope.vaultLogins = logins;
+            $scope.pagedVaultLogins = [];
             $scope.loadMore();
         }
 
-        function searchSite(site) {
+        function searchLogin(login) {
             var searchTerm = $scope.searchText.toLowerCase();
-            if (site.name && site.name.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (login.name && login.name.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
-            if (site.username && site.username.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (login.username && login.username.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
-            if (site.uri && site.uri.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (login.uri && login.uri.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
 
             return false;
         }
 
-        $scope.addSite = function () {
+        $scope.addLogin = function () {
             storeState();
-            $state.go('addSite', {
+            $state.go('addLogin', {
                 animation: 'in-slide-up',
                 from: 'folder',
                 folderId: $scope.folder.id
             });
         };
 
-        $scope.viewSite = function (site) {
+        $scope.viewLogin = function (login) {
             storeState();
-            $state.go('viewSite', {
-                siteId: site.id,
+            $state.go('viewLogin', {
+                loginId: login.id,
                 animation: 'in-slide-up',
                 from: 'folder'
             });

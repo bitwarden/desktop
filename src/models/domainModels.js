@@ -11,7 +11,7 @@ var CipherString = function (encryptedString) {
     }
 };
 
-var Site = function (obj, alreadyEncrypted) {
+var Login = function (obj, alreadyEncrypted) {
     this.id = obj.id ? obj.id : null;
     this.folderId = obj.folderId ? obj.folderId : null;
     this.favorite = obj.favorite ? true : false;
@@ -62,7 +62,7 @@ var Folder = function (obj, alreadyEncrypted) {
         return deferred.promise;
     };
 
-    Site.prototype.decrypt = function () {
+    Login.prototype.decrypt = function () {
         var self = this;
         var model = {
             id: self.id,

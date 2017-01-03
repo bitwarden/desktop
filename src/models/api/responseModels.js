@@ -13,7 +13,7 @@ var FolderResponse = function (response) {
     this.revisionDate = response.RevisionDate;
 };
 
-var SiteResponse = function (response) {
+var LoginResponse = function (response) {
     this.id = response.Id;
     this.folderId = response.FolderId;
     this.name = response.Name;
