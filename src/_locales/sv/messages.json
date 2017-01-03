@@ -622,5 +622,29 @@
   "noneFolder": {
     "message": "(ingen)",
     "description": "(none) - this is the folder for uncategorized sites"
+  },
+  "features": {
+    "message": "Funktioner",
+    "description": "Features"
+  },
+  "gaDesc": {
+    "message": "Vi använder Google Analytics för att bättre förstå hur tillägget används av användare så att vi kan göra förbättringar. All information samlas in anonymt.",
+    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableAddSiteNotification": {
+    "message": "Stäng av 'lägg till inloggning'-meddelanden",
+    "description": "Disable Add Site Notification"
+  },
+  "addSiteNotificationDesc": {
+    "message": "'Lägg till inloggning'-meddelanden frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan finns i ditt valv.",
+    "description": "The \"Add Site Notification\" automatically prompts you to save new sites to your vault whenever you log into them for the first time."
+  },
+  "notificationAddDesc": {
+    "message": "Ska bitwarden komma ihåg det här lösenordet åt dig?",
+    "description": "Should bitwarden remember this password for you?"
+  },
+  "notificationAddSave": {
+    "message": "Ja, spara nu",
+    "description": "Yes, Save Now"
   }
 }
