@@ -7,9 +7,9 @@ var cryptoService = new CryptoService(constantsService);
 var tokenService = new TokenService();
 var apiService = new ApiService(tokenService);
 var userService = new UserService(tokenService, apiService, cryptoService);
-var siteService = new SiteService(cryptoService, userService, apiService);
+var loginService = new LoginService(cryptoService, userService, apiService);
 var folderService = new FolderService(cryptoService, userService, apiService);
-var syncService = new SyncService(siteService, folderService, userService, apiService);
+var syncService = new SyncService(loginService, folderService, userService, apiService);
 var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 var appIdService = new AppIdService();
@@ -28,7 +28,7 @@ chrome.commands.onCommand.addListener(function (command) {
 });
 
 var loadMenuRan = false,
-    siteToAutoFill = null,
+    loginToAutoFill = null,
     pageDetailsToAutoFill = [],
     autofillTimeout = null;
 
@@ -230,35 +230,35 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
 
-    siteService.getAllDecryptedForDomain(tabDomain).then(function (sites) {
-        sortSites(sites);
-        for (var i = 0; i < sites.length; i++) {
+    loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
+        sortLogins(logins);
+        for (var i = 0; i < logins.length; i++) {
             if (loadContextMenuOptions) {
-                loadSiteContextMenuOptions(sites[i]);
+                loadLoginContextMenuOptions(logins[i]);
             }
         }
 
-        if (sites.length > 0 && sites.length < 9) {
+        if (logins.length > 0 && logins.length < 9) {
             chrome.browserAction.setBadgeText({
-                text: sites.length.toString(),
+                text: logins.length.toString(),
                 tabId: tabId
             });
         }
-        else if (sites.length > 0) {
+        else if (logins.length > 0) {
             chrome.browserAction.setBadgeText({
                 text: '9+',
                 tabId: tabId
             });
         }
         else {
-            loadNoSitesContextMenuOptions(i18nService.noMatchingSites);
+            loadNoLoginsContextMenuOptions(i18nService.noMatchingLogins);
             chrome.browserAction.setBadgeText({
                 text: '',
                 tabId: tabId
             });
         }
     }, function () {
-        loadNoSitesContextMenuOptions(i18nService.vaultLocked);
+        loadNoLoginsContextMenuOptions(i18nService.vaultLocked);
         chrome.browserAction.setBadgeText({
             text: '',
             tabId: tabId
@@ -284,29 +284,29 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
             return;
         }
 
-        siteService.getAllDecrypted().then(function (sites) {
-            for (var i = 0; i < sites.length; i++) {
-                if (sites[i].id === id) {
+        loginService.getAllDecrypted().then(function (logins) {
+            for (var i = 0; i < logins.length; i++) {
+                if (logins[i].id === id) {
                     if (info.parentMenuItemId === 'autofill') {
                         ga('send', {
                             hitType: 'event',
                             eventAction: 'Autofilled From Context Menu'
                         });
-                        startAutofillPage(sites[i]);
+                        startAutofillPage(logins[i]);
                     }
                     else if (info.parentMenuItemId === 'copy-username') {
                         ga('send', {
                             hitType: 'event',
                             eventAction: 'Copied Username From Context Menu'
                         });
-                        copyToClipboard(sites[i].username);
+                        copyToClipboard(logins[i].username);
                     }
                     else if (info.parentMenuItemId === 'copy-password') {
                         ga('send', {
                             hitType: 'event',
                             eventAction: 'Copied Password From Context Menu'
                         });
-                        copyToClipboard(sites[i].password);
+                        copyToClipboard(logins[i].password);
                     }
                     return;
                 }
@@ -357,10 +357,10 @@ function addLogin(login, tab) {
         return;
     }
 
-    siteService.getAllDecryptedForDomain(loginDomain).then(function (sites) {
+    loginService.getAllDecryptedForDomain(loginDomain).then(function (logins) {
         var match = false;
-        for (var i = 0; i < sites.length; i++) {
-            if (sites[i].username === login.username) {
+        for (var i = 0; i < logins.length; i++) {
+            if (logins[i].username === login.username) {
                 match = true;
                 break;
             }
@@ -407,7 +407,7 @@ function saveAddLogin(tab) {
         if (loginsToAdd[i].tabId === tab.id) {
             var loginToAdd = loginsToAdd[i];
             loginsToAdd.splice(i, 1);
-            siteService.encrypt({
+            loginService.encrypt({
                 id: null,
                 folderId: null,
                 favorite: false,
@@ -416,12 +416,12 @@ function saveAddLogin(tab) {
                 username: loginToAdd.username,
                 password: loginToAdd.password,
                 notes: null
-            }).then(function (siteModel) {
-                var site = new Site(siteModel, true);
-                siteService.saveWithServer(site).then(function (site) {
+            }).then(function (loginModel) {
+                var login = new Login(loginModel, true);
+                loginService.saveWithServer(login).then(function (login) {
                     ga('send', {
                         hitType: 'event',
-                        eventAction: 'Added Site from Notification Bar'
+                        eventAction: 'Added Login from Notification Bar'
                     });
                 });
             });
@@ -467,8 +467,8 @@ function checkLoginsToAdd(tab) {
     }
 }
 
-function startAutofillPage(site) {
-    siteToAutoFill = site;
+function startAutofillPage(login) {
+    loginToAutoFill = login;
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         var tabId = null;
         if (tabs.length > 0) {
@@ -500,15 +500,15 @@ function autofillPage() {
             return;
         }
 
-        if (siteToAutoFill && pageDetailsToAutoFill && pageDetailsToAutoFill.length) {
+        if (loginToAutoFill && pageDetailsToAutoFill && pageDetailsToAutoFill.length) {
             for (var i = 0; i < pageDetailsToAutoFill.length; i++) {
                 // make sure we're still on correct tab
                 if (pageDetailsToAutoFill[i].tabId !== tabId) {
                     continue;
                 }
 
-                var fillScript = autofillService.generateFillScript(pageDetailsToAutoFill[i].details, siteToAutoFill.username,
-                    siteToAutoFill.password);
+                var fillScript = autofillService.generateFillScript(pageDetailsToAutoFill[i].details, loginToAutoFill.username,
+                    loginToAutoFill.password);
                 if (tabId && fillScript && fillScript.script && fillScript.script.length) {
                     chrome.tabs.sendMessage(tabId, {
                         command: 'fillForm',
@@ -521,13 +521,13 @@ function autofillPage() {
         }
 
         // reset
-        siteToAutoFill = null;
+        loginToAutoFill = null;
         pageDetailsToAutoFill = [];
     });
 }
 
-function sortSites(sites) {
-    sites.sort(function (a, b) {
+function sortLogins(logins) {
+    logins.sort(function (a, b) {
         var nameA = (a.name + '_' + a.username).toUpperCase();
         var nameB = (b.name + '_' + b.username).toUpperCase();
 
@@ -542,17 +542,17 @@ function sortSites(sites) {
     });
 }
 
-function loadSiteContextMenuOptions(site) {
-    var title = site.name + (site.username && site.username !== '' ? ' (' + site.username + ')' : '');
-    loadContextMenuOptions(title, site.id, site);
+function loadLoginContextMenuOptions(login) {
+    var title = login.name + (login.username && login.username !== '' ? ' (' + login.username + ')' : '');
+    loadContextMenuOptions(title, login.id, login);
 }
 
-function loadNoSitesContextMenuOptions(noSitesMessage) {
-    loadContextMenuOptions(noSitesMessage, 'noop', null);
+function loadNoLoginsContextMenuOptions(noLoginsMessage) {
+    loadContextMenuOptions(noLoginsMessage, 'noop', null);
 }
 
-function loadContextMenuOptions(title, idSuffix, site) {
-    if (!site || (site.password && site.password !== '')) {
+function loadContextMenuOptions(title, idSuffix, login) {
+    if (!login || (login.password && login.password !== '')) {
         chrome.contextMenus.create({
             type: 'normal',
             id: 'autofill_' + idSuffix,
@@ -562,7 +562,7 @@ function loadContextMenuOptions(title, idSuffix, site) {
         });
     }
 
-    if (!site || (site.username && site.username !== '')) {
+    if (!login || (login.username && login.username !== '')) {
         chrome.contextMenus.create({
             type: 'normal',
             id: 'copy-username_' + idSuffix,
@@ -572,7 +572,7 @@ function loadContextMenuOptions(title, idSuffix, site) {
         });
     }
 
-    if (!site || (site.password && site.password !== '')) {
+    if (!login || (login.password && login.password !== '')) {
         chrome.contextMenus.create({
             type: 'normal',
             id: 'copy-password_' + idSuffix,
@@ -660,7 +660,7 @@ function checkLock() {
                         cryptoService.clearKey(function () {
                             setIcon();
                             folderService.clearCache();
-                            siteService.clearCache();
+                            loginService.clearCache();
                             refreshBadgeAndMenu();
                         });
                     }

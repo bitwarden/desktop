@@ -48,7 +48,7 @@
       "services/apiService.js",
       "services/userService.js",
       "services/folderService.js",
-      "services/siteService.js",
+      "services/loginService.js",
       "services/syncService.js",
       "services/autofillService.js",
       "services/appIdService.js",

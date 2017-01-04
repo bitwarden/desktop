@@ -95,9 +95,9 @@
     "message": "Сгенерировать пароль (с копированием)",
     "description": "Generate Password (copied)"
   },
-  "noMatchingSites": {
+  "noMatchingLogins": {
     "message": "Нет подходящих сайтов.",
-    "description": "No matching sites."
+    "description": "No matching logins."
   },
   "vaultLocked": {
     "message": "Хранилище заблокировано.",
@@ -105,11 +105,11 @@
   },
   "autoFillInfo": {
     "message": "Нет доступных учетных записей для автозаполнения в текущей вкладке браузера.",
-    "description": "There are no sites available to auto-fill for the current browser tab."
+    "description": "There are no logins available to auto-fill for the current browser tab."
   },
-  "addSite": {
+  "addLogin": {
     "message": "Добавить сайт",
-    "description": "Add a Site"
+    "description": "Add a Login"
   },
   "passwordHint": {
     "message": "Подсказка к паролю",
@@ -311,13 +311,13 @@
     "message": "Изменить",
     "description": "Edit"
   },
-  "noSitesInList": {
+  "noLoginsInList": {
     "message": "Нет сайтов для отображения.",
-    "description": "There are no sites in list."
+    "description": "There are no logins in list."
   },
-  "siteInformation": {
+  "loginInformation": {
     "message": "Информация о сайте",
-    "description": "Site Information"
+    "description": "Login Information"
   },
   "username": {
     "message": "Имя пользователя",
@@ -335,21 +335,21 @@
     "message": "Заметки",
     "description": "Notes"
   },
-  "editSite": {
+  "editLogin": {
     "message": "Изменение сайта",
-    "description": "Edit Site"
+    "description": "Edit Login"
   },
   "folder": {
     "message": "Папка",
     "description": "Folder"
   },
-  "deleteSite": {
+  "deleteLogin": {
     "message": "Удалить сайт",
-    "description": "Delete Site"
+    "description": "Delete Login"
   },
-  "viewSite": {
+  "viewLogin": {
     "message": "Просмотр сайта",
-    "description": "View Site"
+    "description": "View Login"
   },
   "launchWebsite": {
     "message": "Открыть сайт",
@@ -481,7 +481,7 @@
   },
   "autofillError": {
     "message": "Не получается автоматически заполнить данные сайта на этой странице. Скопируйте и вставьте логин/пароль напрямую из своего хранилища.",
-    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "Вы вышли из хранилища",
@@ -575,21 +575,21 @@
     "message": "URI",
     "description": "URI"
   },
-  "addedSite": {
+  "addedLogin": {
     "message": "Сайт добавлен",
-    "description": "Added site"
+    "description": "Added login"
   },
-  "editedSite": {
+  "editedLogin": {
     "message": "Сайт отредактирован",
-    "description": "Edited site"
+    "description": "Edited login"
   },
-  "deleteSiteConfirmation": {
+  "deleteLoginConfirmation": {
     "message": "Вы хотите удалить этот сайт?",
-    "description": "Are you sure you want to delete this site?"
+    "description": "Are you sure you want to delete this login?"
   },
-  "deletedSite": {
+  "deletedLogin": {
     "message": "Удалить сайт",
-    "description": "Deleted site"
+    "description": "Deleted login"
   },
   "overwritePassword": {
     "message": "Сменить пароль",

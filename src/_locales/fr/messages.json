@@ -95,9 +95,9 @@
     "message": "Générer un mot de passe (copié)",
     "description": "Generate Password (copied)"
   },
-  "noMatchingSites": {
+  "noMatchingLogins": {
     "message": "Aucun site correspondant.",
-    "description": "No matching sites."
+    "description": "No matching logins."
   },
   "vaultLocked": {
     "message": "Le coffre est verrouillé.",
@@ -105,11 +105,11 @@
   },
   "autoFillInfo": {
     "message": "Il n'existe aucun site disponible pour le remplissage automatique pour l'onglet actuel du navigateur.",
-    "description": "There are no sites available to auto-fill for the current browser tab."
+    "description": "There are no logins available to auto-fill for the current browser tab."
   },
-  "addSite": {
+  "addLogin": {
     "message": "Ajouter un site",
-    "description": "Add a Site"
+    "description": "Add a Login"
   },
   "passwordHint": {
     "message": "Indice mot de passe",
@@ -311,13 +311,13 @@
     "message": "Modifier",
     "description": "Edit"
   },
-  "noSitesInList": {
+  "noLoginsInList": {
     "message": "Aucun site correspondant.",
-    "description": "There are no sites to list."
+    "description": "There are no logins to list."
   },
-  "siteInformation": {
+  "loginInformation": {
     "message": "Informations du site",
-    "description": "Site Information"
+    "description": "Login Information"
   },
   "username": {
     "message": "Nom d'utilisateur",
@@ -335,21 +335,21 @@
     "message": "Notes",
     "description": "Notes"
   },
-  "editSite": {
+  "editLogin": {
     "message": "Modifier site",
-    "description": "Edit Site"
+    "description": "Edit Login"
   },
   "folder": {
     "message": "Dossier",
     "description": "Folder"
   },
-  "deleteSite": {
+  "deleteLogin": {
     "message": "Supprimer site",
-    "description": "Delete Site"
+    "description": "Delete Login"
   },
-  "viewSite": {
+  "viewLogin": {
     "message": "Afficher site",
-    "description": "View Site"
+    "description": "View Login"
   },
   "launchWebsite": {
     "message": "Lancer le site web",
@@ -481,7 +481,7 @@
   },
   "autofillError": {
     "message": "Impossible de remplir automatiquement le site sélectionné sur cette page. Copiez/collez plutôt votre nom d'utilisateur et/ou votre mot de pase.",
-    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "Déconnecté",
@@ -575,21 +575,21 @@
     "message": "URI",
     "description": "URI"
   },
-  "addedSite": {
+  "addedLogin": {
     "message": "Site ajouté",
-    "description": "Added site"
+    "description": "Added login"
   },
-  "editedSite": {
+  "editedLogin": {
     "message": "Site modifié",
-    "description": "Edited site"
+    "description": "Edited login"
   },
-  "deleteSiteConfirmation": {
+  "deleteLoginConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir supprimer ce site ?",
-    "description": "Are you sure you want to delete this site?"
+    "description": "Are you sure you want to delete this login?"
   },
-  "deletedSite": {
+  "deletedLogin": {
     "message": "Site supprimé",
-    "description": "Deleted site"
+    "description": "Deleted login"
   },
   "overwritePassword": {
     "message": "Écreaser le mot de passe",
@@ -621,6 +621,6 @@
   },
   "noneFolder": {
     "message": "(aucun)",
-    "description": "(none) - this is the folder for uncategorized sites"
+    "description": "(none) - this is the folder for uncategorized logins"
   }
 }

@@ -95,21 +95,21 @@
     "message": "Generate Password (copied)",
     "description": "Generate Password (copied)"
   },
-  "noMatchingSites": {
-    "message": "No matching sites.",
-    "description": "No matching sites."
+  "noMatchingLogins": {
+    "message": "No matching logins.",
+    "description": "No matching logins."
   },
   "vaultLocked": {
     "message": "Vault is locked.",
     "description": "Vault is locked."
   },
   "autoFillInfo": {
-    "message": "There are no sites available to auto-fill for the current browser tab.",
-    "description": "There are no sites available to auto-fill for the current browser tab."
+    "message": "There are no logins available to auto-fill for the current browser tab.",
+    "description": "There are no logins available to auto-fill for the current browser tab."
   },
-  "addSite": {
-    "message": "Add a Site",
-    "description": "Add a Site"
+  "addLogin": {
+    "message": "Add a Login",
+    "description": "Add a Login"
   },
   "passwordHint": {
     "message": "Password Hint",
@@ -311,13 +311,13 @@
     "message": "Edit",
     "description": "Edit"
   },
-  "noSitesInList": {
-    "message": "There are no sites to list.",
-    "description": "There are no sites to list."
+  "noLoginsInList": {
+    "message": "There are no logins to list.",
+    "description": "There are no logins to list."
   },
-  "siteInformation": {
-    "message": "Site Information",
-    "description": "Site Information"
+  "loginInformation": {
+    "message": "Login Information",
+    "description": "Login Information"
   },
   "username": {
     "message": "Username",
@@ -335,21 +335,21 @@
     "message": "Notes",
     "description": "Notes"
   },
-  "editSite": {
-    "message": "Edit Site",
-    "description": "Edit Site"
+  "editLogin": {
+    "message": "Edit Login",
+    "description": "Edit Login"
   },
   "folder": {
     "message": "Folder",
     "description": "Folder"
   },
-  "deleteSite": {
-    "message": "Delete Site",
-    "description": "Delete Site"
+  "deleteLogin": {
+    "message": "Delete Login",
+    "description": "Delete Login"
   },
-  "viewSite": {
-    "message": "View Site",
-    "description": "View Site"
+  "viewLogin": {
+    "message": "View Login",
+    "description": "View Login"
   },
   "launchWebsite": {
     "message": "Launch Website",
@@ -480,8 +480,8 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead.",
-    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+    "message": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead.",
+    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "Logged out",
@@ -575,21 +575,21 @@
     "message": "URI",
     "description": "URI"
   },
-  "addedSite": {
-    "message": "Added site",
-    "description": "Added site"
+  "addedLogin": {
+    "message": "Added login",
+    "description": "Added login"
   },
-  "editedSite": {
-    "message": "Edited site",
-    "description": "Edited site"
+  "editedLogin": {
+    "message": "Edited login",
+    "description": "Edited login"
   },
-  "deleteSiteConfirmation": {
-    "message": "Are you sure you want to delete this site?",
-    "description": "Are you sure you want to delete this site?"
+  "deleteLoginConfirmation": {
+    "message": "Are you sure you want to delete this login?",
+    "description": "Are you sure you want to delete this login?"
   },
-  "deletedSite": {
-    "message": "Deleted site",
-    "description": "Deleted site"
+  "deletedLogin": {
+    "message": "Deleted login",
+    "description": "Deleted login"
   },
   "overwritePassword": {
     "message": "Overwrite Password",
@@ -621,7 +621,7 @@
   },
   "noneFolder": {
     "message": "(none)",
-    "description": "(none) - this is the folder for uncategorized sites"
+    "description": "(none) - this is the folder for uncategorized logins"
   },
   "features": {
     "message": "Features",
@@ -631,13 +631,13 @@
     "message": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous.",
     "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
-  "disableAddSiteNotification": {
-    "message": "Disable Add Site Notification",
-    "description": "Disable Add Site Notification"
+  "disableAddLoginNotification": {
+    "message": "Disable Add Login Notification",
+    "description": "Disable Add Login Notification"
   },
-  "addSiteNotificationDesc": {
-    "message": "The \"Add Site Notification\" automatically prompts you to save new sites to your vault whenever you log into them for the first time.",
-    "description": "The \"Add Site Notification\" automatically prompts you to save new sites to your vault whenever you log into them for the first time."
+  "addLoginNotificationDesc": {
+    "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time.",
+    "description": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc": {
     "message": "Should bitwarden remember this password for you?",

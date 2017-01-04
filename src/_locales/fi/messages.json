@@ -95,9 +95,9 @@
     "message": "Luo salasana (kopioitu)",
     "description": "Generate Password (copied)"
   },
-  "noMatchingSites": {
+  "noMatchingLogins": {
     "message": "Ei täsmääviä sivustoja.",
-    "description": "No matching sites."
+    "description": "No matching logins."
   },
   "vaultLocked": {
     "message": "Holvi on lukittu.",
@@ -105,11 +105,11 @@
   },
   "autoFillInfo": {
     "message": "Selaimen nykyiselle välilehdelle ei ole automaattisesti täytettäviä kohteita.",
-    "description": "There are no sites available to auto-fill for the current browser tab."
+    "description": "There are no logins available to auto-fill for the current browser tab."
   },
-  "addSite": {
+  "addLogin": {
     "message": "Lisää sivusto",
-    "description": "Add a Site"
+    "description": "Add a Login"
   },
   "passwordHint": {
     "message": "Salasanavihje",
@@ -311,13 +311,13 @@
     "message": "Muokkaa",
     "description": "Edit"
   },
-  "noSitesInList": {
+  "noLoginsInList": {
     "message": "Ei sivustoja.",
-    "description": "There are no sites in list."
+    "description": "There are no logins in list."
   },
-  "siteInformation": {
+  "loginInformation": {
     "message": "Sivuston tiedot",
-    "description": "Site Information"
+    "description": "Login Information"
   },
   "username": {
     "message": "Käyttäjänimi",
@@ -335,21 +335,21 @@
     "message": "Merkinnät",
     "description": "Notes"
   },
-  "editSite": {
+  "editLogin": {
     "message": "Muokkaa sivustoa",
-    "description": "Edit Site"
+    "description": "Edit Login"
   },
   "folder": {
     "message": "Kansio",
     "description": "Folder"
   },
-  "deleteSite": {
+  "deleteLogin": {
     "message": "Poista sivusto",
-    "description": "Delete Site"
+    "description": "Delete Login"
   },
-  "viewSite": {
+  "viewLogin": {
     "message": "Tarkastele sivustoa",
-    "description": "View Site"
+    "description": "View Login"
   },
   "launchWebsite": {
     "message": "Avaa sivusto",
@@ -481,7 +481,7 @@
   },
   "autofillError": {
     "message": "Automaattinen täydennys tälle sivustolle ei onnistu. Kopioi ja liitä käyttäjänimesi/salasanasi manuaalisesti.",
-    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos",
@@ -575,21 +575,21 @@
     "message": "URI",
     "description": "URI"
   },
-  "addedSite": {
+  "addedLogin": {
     "message": "Sivusto lisätty",
-    "description": "Added site"
+    "description": "Added login"
   },
-  "editedSite": {
+  "editedLogin": {
     "message": "Sivustoa muokattu",
-    "description": "Edited site"
+    "description": "Edited login"
   },
-  "deleteSiteConfirmation": {
+  "deleteLoginConfirmation": {
     "message": "Haluatko varmasti poistaa tämän sivuston?",
-    "description": "Are you sure you want to delete this site?"
+    "description": "Are you sure you want to delete this login?"
   },
-  "deletedSite": {
+  "deletedLogin": {
     "message": "Sivusto poistettu",
-    "description": "Deleted site"
+    "description": "Deleted login"
   },
   "overwritePassword": {
     "message": "Salasanan korvaus",

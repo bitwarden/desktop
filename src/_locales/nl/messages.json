@@ -95,9 +95,9 @@
     "message": "Genereer Wachtwoord (gekopieerd)",
     "description": "Generate Password (copied)"
   },
-  "noMatchingSites": {
+  "noMatchingLogins": {
     "message": "Geen corresponderende websites..",
-    "description": "No matching sites."
+    "description": "No matching logins."
   },
   "vaultLocked": {
     "message": "Kluis zit op slot.",
@@ -105,11 +105,11 @@
   },
   "autoFillInfo": {
     "message": "Er zijn geen beschikbare websites om het huidge browser-tabblad automatisch in te vullen.",
-    "description": "There are no sites available to auto-fill for the current browser tab."
+    "description": "There are no logins available to auto-fill for the current browser tab."
   },
-  "addSite": {
+  "addLogin": {
     "message": "Voeg een website toe",
-    "description": "Add a Site"
+    "description": "Add a Login"
   },
   "passwordHint": {
     "message": "Wachtwoordhint",
@@ -311,13 +311,13 @@
     "message": "Bewerk",
     "description": "Edit"
   },
-  "noSitesInList": {
+  "noLoginsInList": {
     "message": "Er zijn geen websites in de lijst.",
-    "description": "There are no sites in list."
+    "description": "There are no logins in list."
   },
   "siteInformation": {
     "message": "Website-informatie",
-    "description": "Site Information"
+    "description": "Login Information"
   },
   "username": {
     "message": "Gebruikersnaam",
@@ -335,21 +335,21 @@
     "message": "Aantekeningen",
     "description": "Notes"
   },
-  "editSite": {
+  "editLogin": {
     "message": "Bewerk Website",
-    "description": "Edit Site"
+    "description": "Edit Login"
   },
   "folder": {
     "message": "Map",
     "description": "Folder"
   },
-  "deleteSite": {
+  "deleteLogin": {
     "message": "Verwijder Website",
-    "description": "Delete Site"
+    "description": "Delete Login"
   },
-  "viewSite": {
+  "viewLogin": {
     "message": "Bekijk Website",
-    "description": "View Site"
+    "description": "View Login"
   },
   "launchWebsite": {
     "message": "Open Website",
@@ -481,7 +481,7 @@
   },
   "autofillError": {
     "message": "Automatisch invullen mislukt. Kopieer en plak je gebruikersnaam en/of wachtwoord handmatig.",
-    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "Uitgelogd",
@@ -575,21 +575,21 @@
     "message": "URI",
     "description": "URI"
   },
-  "addedSite": {
+  "addedLogin": {
     "message": "Website toegevoegd",
-    "description": "Added site"
+    "description": "Added login"
   },
-  "editedSite": {
+  "editedLogin": {
     "message": "Website bewerkt",
-    "description": "Edited site"
+    "description": "Edited login"
   },
-  "deleteSiteConfirmation": {
+  "deleteLoginConfirmation": {
     "message": "Weet je zeker dat je deze website wilt verwijderen?",
-    "description": "Are you sure you want to delete this site?"
+    "description": "Are you sure you want to delete this login?"
   },
-  "deletedSite": {
+  "deletedLogin": {
     "message": "Verwijderde website",
-    "description": "Deleted site"
+    "description": "Deleted login"
   },
   "overwritePassword": {
     "message": "Overschrijf Wachtwoord",
@@ -621,7 +621,7 @@
   },
   "noneFolder": {
     "message": "(geen)",
-    "description": "(none) - this is the folder for uncategorized sites"
+    "description": "(none) - this is the folder for uncategorized logins"
   },
   "features": {
     "message": "Features",
@@ -631,13 +631,13 @@
     "message": "We gebruiken Google Analytics om te weten te komen hoe de extensie gebruikt wordt, zodat we deze kunnen verbeteren. Alle verzamelde data is anoniem.",
     "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
-  "disableAddSiteNotification": {
+  "disableAddLoginNotification": {
     "message": "Zet Notificatie bij Nieuwe Site Uit",
-    "description": "Disable Add Site Notification"
+    "description": "Disable Add Login Notification"
   },
-  "addSiteNotificationDesc": {
+  "addLoginNotificationDesc": {
     "message": "De \"Notificatie bij Nieuwe Site\" vraagt automatisch om nieuwe sites op te slaan in je kluis wanneer je voor de eerste keer inlogt.",
-    "description": "The \"Add Site Notification\" automatically prompts you to save new sites to your vault whenever you log into them for the first time."
+    "description": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc": {
     "message": "Moet bitwarden dit wachtwoord onthouden?",

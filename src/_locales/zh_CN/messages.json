@@ -95,9 +95,9 @@
     "message": "生成密码 (并复制)",
     "description": "Generate Password (copied)"
   },
-  "noMatchingSites": {
+  "noMatchingLogins": {
     "message": "没有匹配的网站。",
-    "description": "No matching sites."
+    "description": "No matching logins."
   },
   "vaultLocked": {
     "message": "密码库已锁定",
@@ -105,11 +105,11 @@
   },
   "autoFillInfo": {
     "message": "当前浏览器标签中没有可以自动填充的网站。",
-    "description": "There are no sites available to auto-fill for the current browser tab."
+    "description": "There are no logins available to auto-fill for the current browser tab."
   },
-  "addSite": {
+  "addLogin": {
     "message": "添加网站",
-    "description": "Add a Site"
+    "description": "Add a Login"
   },
   "passwordHint": {
     "message": "密码提示",
@@ -311,13 +311,13 @@
     "message": "编辑",
     "description": "Edit"
   },
-  "noSitesInList": {
+  "noLoginsInList": {
     "message": "列表里没有网站。",
-    "description": "There are no sites in list."
+    "description": "There are no logins in list."
   },
-  "siteInformation": {
+  "loginInformation": {
     "message": "网站信息",
-    "description": "Site Information"
+    "description": "Login Information"
   },
   "username": {
     "message": "用户名",
@@ -335,21 +335,21 @@
     "message": "笔记",
     "description": "Notes"
   },
-  "editSite": {
+  "editLogin": {
     "message": "编辑网站",
-    "description": "Edit Site"
+    "description": "Edit Login"
   },
   "folder": {
     "message": "文件夹",
     "description": "Folder"
   },
-  "deleteSite": {
+  "deleteLogin": {
     "message": "删除网站",
-    "description": "Delete Site"
+    "description": "Delete Login"
   },
-  "viewSite": {
+  "viewLogin": {
     "message": "查看网站",
-    "description": "View Site"
+    "description": "View Login"
   },
   "launchWebsite": {
     "message": "打开网站",
@@ -481,7 +481,7 @@
   },
   "autofillError": {
     "message": "无法在此页面自动填充所选择的网站。请手工 复制/粘贴 您的用户名、密码。",
-    "description": "Unable to auto-fill the selected site on this page. Copy/paste your username and/or password instead."
+    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
   },
   "loggedOut": {
     "message": "已登出",
@@ -575,21 +575,21 @@
     "message": "URI",
     "description": "URI"
   },
-  "addedSite": {
+  "addedLogin": {
     "message": "已添加的网站",
-    "description": "Added site"
+    "description": "Added login"
   },
-  "editedSite": {
+  "editedLogin": {
     "message": "已编辑的网站",
-    "description": "Edited site"
+    "description": "Edited login"
   },
-  "deleteSiteConfirmation": {
+  "deleteLoginConfirmation": {
     "message": "您确定要删除此网站吗？",
-    "description": "Are you sure you want to delete this site?"
+    "description": "Are you sure you want to delete this login?"
   },
-  "deletedSite": {
+  "deletedLogin": {
     "message": "已删除的的网站",
-    "description": "Deleted site"
+    "description": "Deleted login"
   },
   "overwritePassword": {
     "message": "覆盖密码",
@@ -621,6 +621,6 @@
   },
   "noneFolder": {
     "message": "(无)",
-    "description": "(none) - this is the folder for uncategorized sites"
+    "description": "(none) - this is the folder for uncategorized logins"
   }
 }
