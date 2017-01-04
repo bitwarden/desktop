@@ -23,6 +23,7 @@ API instance (ex. `http://localhost:4000`).
 
 Then run the following commands:
 
+- `npm install`
 - `gulp build`
 
 You can now load the extension into your browser through the browser's extension tools page:
