@@ -60,6 +60,18 @@
                 $rootScope.vaultFolders = decFolders;
                 $rootScope.vaultLogins = decLogins;
 
+                // compute site count for each folder
+                for (var i = 0; i < $rootScope.vaultFolders.length; i++) {
+                    var siteCount = 0;
+                    for (var j = 0; j < $rootScope.vaultLogins.length; j++) {
+                        if ($rootScope.vaultLogins[j].folderId == $rootScope.vaultFolders[i].id) {
+                            siteCount++;
+                        }
+                    }
+
+                    $rootScope.vaultFolders[i].siteCount = siteCount;
+                }
+
                 if (!delayLoad) {
                     setScrollY();
                 }
