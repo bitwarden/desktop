@@ -61,10 +61,10 @@
                 $rootScope.vaultLogins = decLogins;
 
                 // compute site count for each folder
-                for (var i = 0; i < $rootScope.vaultFolders.length; i++) {
+                for (var i = 0; i < decFolders.length; i++) {
                     var siteCount = 0;
-                    for (var j = 0; j < $rootScope.vaultLogins.length; j++) {
-                        if ($rootScope.vaultLogins[j].folderId == $rootScope.vaultFolders[i].id) {
+                    for (var j = 0; j < decLogins.length; j++) {
+                        if (decLogins[j].folderId == decFolders[i].id) {
                             siteCount++;
                         }
                     }
