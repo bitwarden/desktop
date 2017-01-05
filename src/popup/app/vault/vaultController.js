@@ -60,16 +60,16 @@
                 $rootScope.vaultFolders = decFolders;
                 $rootScope.vaultLogins = decLogins;
 
-                // compute site count for each folder
+                // compute item count for each folder
                 for (var i = 0; i < decFolders.length; i++) {
-                    var siteCount = 0;
+                    var itemCount = 0;
                     for (var j = 0; j < decLogins.length; j++) {
-                        if (decLogins[j].folderId == decFolders[i].id) {
-                            siteCount++;
+                        if (decLogins[j].folderId === decFolders[i].id) {
+                            itemCount++;
                         }
                     }
 
-                    $rootScope.vaultFolders[i].siteCount = siteCount;
+                    $rootScope.vaultFolders[i].itemCount = itemCount;
                 }
 
                 if (!delayLoad) {
