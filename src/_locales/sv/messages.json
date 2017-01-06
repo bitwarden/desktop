@@ -200,7 +200,7 @@
     "description": "Email Us"
   },
   "emailUsDirectly": {
-    "message": "Mejla oss direkt för att få hjälp eller för att lämna återkoppling.",
+    "message": "Mejla oss för att få hjälp eller för att lämna återkoppling.",
     "description": "Email us directly to get help or leave feedback."
   },
   "visitOurWebsite": {
@@ -208,7 +208,7 @@
     "description": "Visit Our Website"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Besök vår webbplats direkt för att få hjälp, nyheter, mejla oss och/eller lära er mer om hur man använder bitwarden.",
+    "message": "Besök vår webbplats för att få hjälp, nyheter, mejla oss och/eller lära er mer om hur man använder bitwarden.",
     "description": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
   },
   "fileBugReport": {
@@ -220,15 +220,15 @@
     "description": "Open an issue at our GitHub repository."
   },
   "sync": {
-    "message": "Synka",
+    "message": "Synkronisera",
     "description": "Sync"
   },
   "syncVaultNow": {
-    "message": "Synka valvet nu",
+    "message": "Synkronisera valvet nu",
     "description": "Sync Vault Now"
   },
   "lastSync": {
-    "message": "Senaste synkning:",
+    "message": "Senaste synkronisering:",
     "description": "Last Sync:"
   },
   "passGen": {
@@ -240,7 +240,7 @@
     "description": "Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault": {
-    "message": "bitwarden webbvalv",
+    "message": "bitwardens webbvalv",
     "description": "bitwarden Web Vault"
   },
   "bitWebVaultInfo": {
@@ -248,7 +248,7 @@
     "description": "Manage your logins from any web browser with the bitwarden web vault."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS-valv",
+    "message": "bitwardens iOS-valv",
     "description": "bitwarden iOS Vault"
   },
   "bitIosVaultInfo": {
@@ -256,7 +256,7 @@
     "description": "Manage your logins from your mobile devices with the bitwarden iOS vault."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android-valv",
+    "message": "bitwardens Android-valv",
     "description": "bitwarden Android Vault"
   },
   "bitAndrVaultInfo": {
@@ -268,7 +268,7 @@
     "description": "Import Logins"
   },
   "importLoginsInfo": {
-    "message": "Massimportera snabbt dina inloggningar från en annan lösenordshanterare.",
+    "message": "Massimportera dina inloggningar snabbt från en annan lösenordshanterare.",
     "description": "Quickly bulk import your logins from other password management applications."
   },
   "select": {
@@ -520,15 +520,15 @@
     "description": "Change Master Password"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Du kan ändra ditt huvudlösenord på bitwarden.com webbvalv. Vill du besöka webbplatsen nu?",
+    "message": "Du kan ändra ditt huvudlösenord på bitwardens webbvalv. Vill du besöka webbplatsen nu?",
     "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "changeEmailConfirmation": {
-    "message": "Du kan ändra din e-postadress på bitwarden.com webbvalv. Vill du besöka webbplatsen nu?",
+    "message": "Du kan ändra din e-postadress på bitwardens webbvalv. Vill du besöka webbplatsen nu?",
     "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Tvåstegsverifiering gör ditt konto säkrare genom att kräva en verifieringskod från en autentiseringsapp på din mobila enhet när du loggar in. Tvåstegsverifiering kan aktiveras på bitwarden.com webbvalv. Vill du besöka webbplatsen nu?",
+    "message": "Tvåstegsverifiering gör ditt konto säkrare genom att kräva en verifieringskod från en autentiseringsapp på din mobila enhet när du loggar in. Tvåstegsverifiering kan aktiveras på bitwardens webbvalv. Vill du besöka webbplatsen nu?",
     "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut": {
@@ -564,7 +564,7 @@
     "description": "Syncing complete"
   },
   "importLoginsConfirmation": {
-    "message": "Du kan massimportera inloggningar på bitwarden.com webbvalv. Vill du besöka webbsidan nu?",
+    "message": "Du kan massimportera inloggningar på bitwardens webbvalv. Vill du besöka webbsidan nu?",
     "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied": {
@@ -604,7 +604,7 @@
     "description": "Lost authenticator app?"
   },
   "credits": {
-    "message": "Tillskrivningar",
+    "message": "Credits",
     "description": "Credits (giving thanks to people that helped, like at the end of a movie)"
   },
   "thankYou": {
