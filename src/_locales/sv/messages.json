@@ -48,7 +48,7 @@
     "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc": {
-    "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt huvudlösenord om du glömmer bort det.",
+    "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det.",
     "description": "A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass": {
@@ -300,7 +300,7 @@
     "description": "Minimum Special"
   },
   "avoidAmbChar": {
-    "message": "Undvik tvetydiga tecken",
+    "message": "Undvik mångtydiga tecken",
     "description": "Avoid Ambiguous Characters"
   },
   "searchVault": {
@@ -441,7 +441,7 @@
   },
   "errorsOccurred": {
     "message": "Ett fel har inträffat",
-    "description": "Errors have occurred"
+    "description": "An error has occurred"
   },
   "emailRequired": {
     "message": "E-postadress krävs.",
@@ -460,7 +460,7 @@
     "description": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
-    "message": "Bekräftelsen för huvudlösenordet stämde inte överens med huvudlösenordet.",
+    "message": "Bekräftelsen för huvudlösenordet stämde ej.",
     "description": "Master password confirmation does not match."
   },
   "newAccountCreated": {
@@ -632,11 +632,11 @@
     "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
-    "message": "Stäng av 'lägg till inloggning'-meddelanden",
+    "message": "Stäng av notifikationer för tillägg av inlogg",
     "description": "Disable Add Login Notification"
   },
   "addLoginNotificationDesc": {
-    "message": "'Lägg till inloggning'-meddelanden frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan finns i ditt valv.",
+    "message": "Notifikationer för tillägg av inlogg frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan existerar.",
     "description": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc": {
