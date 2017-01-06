@@ -13,6 +13,7 @@
             <div class="list-section" style="padding-bottom: 0;">
                 <div class="list-section-header">
                     {{i18n.folders}}
+                    <span>{{vaultFolders.length}}</span>
                 </div>
                 <a href="javascript:void(0)" ng-click="viewFolder(folder)" class="list-section-item"
                    ng-repeat="folder in vaultFolders | orderBy: folderSort">
