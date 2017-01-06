@@ -12,15 +12,15 @@ Hantera alla dina inloggningar och lösenord från ett säkert valv
 
 # Screenshot - Autofill
 
-Fyll snabbt och automatiskt in din inloggningsinformation på vilken webbplats som helst som du besöker
+Fyll snabbt och automatiskt in din inloggningsinformation på alla webbplatser du besöker
 
 # Screenshot - Menu
 
-Ditt valv är också bekvämt tillgängligt genom högerklicksmenyn
+Ditt valv är bekvämt tillgängligt genom högerklicksmenyn
 
 # Screenshot - Password
 
-Skapa automatiskt starka, slumpmässiga och säkra lösenord
+Skapa automatiskt starka, slumpmässiga, och säkra lösenord
 
 # Screenshot - Edit
 
