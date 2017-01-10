@@ -96,7 +96,7 @@
     "description": "Generate Password (copied)"
   },
   "noMatchingLogins": {
-    "message": "Ei täsmääviä sivustoja.",
+    "message": "Ei täsmääviä kohteita.",
     "description": "No matching logins."
   },
   "vaultLocked": {
@@ -108,7 +108,7 @@
     "description": "There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin": {
-    "message": "Lisää sivusto",
+    "message": "Lisää kohde",
     "description": "Add a Login"
   },
   "passwordHint": {
@@ -312,11 +312,11 @@
     "description": "Edit"
   },
   "noLoginsInList": {
-    "message": "Ei sivustoja.",
+    "message": "Ei kohteita.",
     "description": "There are no logins in list."
   },
   "loginInformation": {
-    "message": "Sivuston tiedot",
+    "message": "Kohteen tiedot",
     "description": "Login Information"
   },
   "username": {
@@ -336,7 +336,7 @@
     "description": "Notes"
   },
   "editLogin": {
-    "message": "Muokkaa sivustoa",
+    "message": "Muokkaa kohdetta",
     "description": "Edit Login"
   },
   "folder": {
@@ -344,11 +344,11 @@
     "description": "Folder"
   },
   "deleteLogin": {
-    "message": "Poista sivusto",
+    "message": "Poista kohde",
     "description": "Delete Login"
   },
   "viewLogin": {
-    "message": "Tarkastele sivustoa",
+    "message": "Tarkastele kohdetta",
     "description": "View Login"
   },
   "launchWebsite": {
@@ -576,19 +576,19 @@
     "description": "URI"
   },
   "addedLogin": {
-    "message": "Sivusto lisätty",
+    "message": "Kohde lisätty",
     "description": "Added login"
   },
   "editedLogin": {
-    "message": "Sivustoa muokattu",
+    "message": "Kohdetta muokattu",
     "description": "Edited login"
   },
   "deleteLoginConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän sivuston?",
+    "message": "Haluatko varmasti poistaa tämän kohteen?",
     "description": "Are you sure you want to delete this login?"
   },
   "deletedLogin": {
-    "message": "Sivusto poistettu",
+    "message": "Kohde poistettu",
     "description": "Deleted login"
   },
   "overwritePassword": {
@@ -602,5 +602,49 @@
   "lost2FAApp": {
     "message": "Ei pääsyä tunnistautumispalveluun?",
     "description": "Lost authenticator app?"
+  },
+  "credits": {
+    "message": "Kiitokset",
+    "description": "Credits (giving thanks to people that helped, like at the end of a movie)"
+  },
+  "thankYou": {
+    "message": "Kiitokset",
+    "description": "Thank You"
+  },
+  "translations": {
+    "message": "Käännökset",
+    "description": "Translations"
+  },
+  "searchFolder": {
+    "message": "Hae kansiosta",
+    "description": "Search folder"
+  },
+  "noneFolder": {
+    "message": "(muut)",
+    "description": "(none) - this is the folder for uncategorized logins"
+  },
+  "features": {
+    "message": "Ominaisuudet",
+    "description": "Features"
+  },
+  "gaDesc": {
+    "message": "Käytämme Google Analyticsiä saadaksemme tietoa siitä, kuinka lisäosaa käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä.",
+    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableAddLoginNotification": {
+    "message": "Älä näytä tallennuskehotetta",
+    "description": "Disable Add Login Notification"
+  },
+  "addLoginNotificationDesc": {
+    "message": "Tallennuskehote kysyy, haluatko tallentaa kirjautumistiedot holviisi, kun kirjaudut sivustoille ensimmäistä kertaa.",
+    "description": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+  },
+  "notificationAddDesc": {
+    "message": "Haluatko, että bitwarden muistaa tämän salasanan puolestasi?",
+    "description": "Should bitwarden remember this password for you?"
+  },
+  "notificationAddSave": {
+    "message": "Kyllä, tallenna nyt",
+    "description": "Yes, Save Now"
   }
 }
