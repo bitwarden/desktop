@@ -622,5 +622,29 @@
   "noneFolder": {
     "message": "(无)",
     "description": "(none) - this is the folder for uncategorized logins"
+  },
+  "features": {
+    "message": "功能",
+    "description": "Features"
+  },
+  "gaDesc": {
+    "message": "我们使用 Google Analytics 来帮助分析扩展的使用情况，以便我们改进扩展。所有的数据收集完全是匿名的。",
+    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableAddLoginNotification": {
+    "message": "禁止添加登录提醒",
+    "description": "Disable Add Login Notification"
+  },
+  "addLoginNotificationDesc": {
+    "message": "当您第一次登录时，\"添加登录提醒\" 会自动提醒您在密码库里保存新的登录信息。",
+    "description": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+  },
+  "notificationAddDesc": {
+    "message": "希望 bitwarden 为您保存这个密码吗？",
+    "description": "Should bitwarden remember this password for you?"
+  },
+  "notificationAddSave": {
+    "message": "是，现在保存",
+    "description": "Yes, Save Now"
   }
 }
