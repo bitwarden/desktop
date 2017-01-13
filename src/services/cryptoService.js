@@ -292,21 +292,21 @@ function initCryptoService() {
                         throw 'MAC key unavailable.';
                     }
 
-                    var ivBits = forge.util.decode64(cipherString.initializationVector);
-                    var ctBits = forge.util.decode64(cipherString.cipherText);
+                    var ivBytes = forge.util.decode64(cipherString.initializationVector);
+                    var ctBytes = forge.util.decode64(cipherString.cipherText);
 
                     var computedMac = null;
                     if (cipherString.mac) {
-                        computedMac = computeMac(ctBits, ivBits, macKey);
+                        computedMac = computeMac(ctBytes, ivBytes, macKey);
                         if (computedMac !== cipherString.mac) {
                             console.error('MAC failed.');
                             deferred.reject('MAC failed.');
                         }
                     }
 
-                    var ctBuffer = forge.util.createBuffer(ctBits);
+                    var ctBuffer = forge.util.createBuffer(ctBytes);
                     var decipher = forge.cipher.createDecipher('AES-CBC', computedMac ? theEncKey : key);
-                    decipher.start({ iv: ivBits });
+                    decipher.start({ iv: ivBytes });
                     decipher.update(ctBuffer);
                     decipher.finish();
 
@@ -320,11 +320,10 @@ function initCryptoService() {
     };
 
     function computeMac(ct, iv, macKey) {
-        var bits = iv.concat(ct);
         var hmac = forge.hmac.create();
         hmac.start('sha256', macKey);
-        hmac.update(bits);
+        hmac.update(iv + ct);
         var mac = hmac.digest();
-        return forge.util.encode64(mac);
+        return forge.util.encode64(mac.getBytes());
     }
 };
