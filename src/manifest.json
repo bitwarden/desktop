@@ -31,11 +31,9 @@
   "background": {
     "scripts": [
       "lib/jquery/jquery.js",
-      "lib/sjcl/sjcl.js",
-      "lib/sjcl/cbc.js",
-      "lib/sjcl/bitArray.js",
       "lib/q/q.js",
       "lib/tldjs/tld.js",
+      "scripts/forge.js",
       "models/api/requestModels.js",
       "models/api/responseModels.js",
       "models/dataModels.js",

@@ -8,10 +8,8 @@ function initCryptoService() {
         _b64Key,
         _keyHash,
         _b64KeyHash,
-        _aes,
-        _aesWithMac;
-
-    sjcl.beware["CBC mode is dangerous because it doesn't protect message integrity."]();
+        _encKey,
+        _macKey;
 
     CryptoService.prototype.setKey = function (key, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -29,7 +27,7 @@ function initCryptoService() {
             }
 
             chrome.storage.local.set({
-                'key': sjcl.codec.base64.fromBits(key)
+                'key': forge.util.encode64(key)
             }, function () {
                 callback();
             });
@@ -41,7 +39,7 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
-        _keyHash = sjcl.codec.base64.toBits(keyHash);
+        _keyHash = forge.util.encode64(keyHash);
 
         chrome.storage.local.set({
             'keyHash': keyHash
@@ -64,7 +62,7 @@ function initCryptoService() {
             return;
         }
         else if (b64 && b64 === true && _key && !_b64Key) {
-            _b64Key = sjcl.codec.base64.fromBits(_key);
+            _b64Key = forge.util.encode64(_key);
             callback(_b64Key);
             return;
         }
@@ -79,7 +77,7 @@ function initCryptoService() {
 
             chrome.storage.local.get('key', function (obj) {
                 if (obj && obj.key) {
-                    _key = sjcl.codec.base64.toBits(obj.key);
+                    _key = forge.util.decode64(obj.key);
 
                     if (b64 && b64 === true) {
                         _b64Key = obj.key;
@@ -98,8 +96,14 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
+        if (_encKey) {
+            callback(_encKey);
+        }
+
         this.getKey(false, function (key) {
-            callback(key.slice(0, 4));
+            var buffer = forge.util.createBuffer(key);
+            _encKey = buffer.getBytes(16);
+            callback(_encKey);
         });
     };
 
@@ -108,8 +112,15 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
+        if (_macKey) {
+            callback(_macKey);
+        }
+
         this.getKey(false, function (key) {
-            callback(key.slice(4));
+            var buffer = forge.util.createBuffer(key);
+            buffer.getBytes(16);
+            _macKey = buffer.getBytes(16);
+            callback(_macKey);
         });
     };
 
@@ -126,14 +137,14 @@ function initCryptoService() {
             return;
         }
         else if (b64 && b64 === true && _keyHash && !_b64KeyHash) {
-            _b64KeyHash = sjcl.codec.base64.fromBits(_keyHash);
+            _b64KeyHash = forge.util.encode64(_keyHash);
             callback(_b64KeyHash);
             return;
         }
 
         chrome.storage.local.get('keyHash', function (obj) {
             if (obj && obj.keyHash) {
-                _keyHash = sjcl.codec.base64.toBits(obj.keyHash);
+                _keyHash = forge.util.decode64(obj.keyHash);
 
                 if (b64 && b64 === true) {
                     _b64KeyHash = obj.keyHash;
@@ -151,7 +162,7 @@ function initCryptoService() {
             throw 'callback function required';
         }
 
-        _key = _b64Key = _aes = _aesWithMac = null;
+        _key = _b64Key = _macKey = _encKey = null;
         chrome.storage.local.remove('key', function () {
             callback();
         });
@@ -196,10 +207,10 @@ function initCryptoService() {
     };
 
     CryptoService.prototype.makeKey = function (password, salt, b64) {
-        var key = sjcl.misc.pbkdf2(password, salt, 5000, 256, null);
+        var key = forge.pbkdf2(password, salt, 5000, 256 / 8, 'sha256');
 
         if (b64 && b64 === true) {
-            return sjcl.codec.base64.fromBits(key);
+            return forge.util.encode64(key);
         }
 
         return key;
@@ -215,36 +226,8 @@ function initCryptoService() {
                 throw 'Invalid parameters.';
             }
 
-            var hashBits = sjcl.misc.pbkdf2(key, password, 1, 256, null);
-            callback(sjcl.codec.base64.fromBits(hashBits));
-        });
-    };
-
-    CryptoService.prototype.getAes = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        this.getKey(false, function (key) {
-            if (!_aes && key) {
-                _aes = new sjcl.cipher.aes(key);
-            }
-
-            callback(_aes);
-        });
-    };
-
-    CryptoService.prototype.getAesWithMac = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        this.getEncKey(function (encKey) {
-            if (!_aesWithMac && encKey) {
-                _aesWithMac = new sjcl.cipher.aes(encKey);
-            }
-
-            callback(_aesWithMac);
+            var hashBits = forge.pbkdf2(key, password, 1, 256 / 8, 'sha256');
+            callback(forge.util.encode64(hashBits));
         });
     };
 
@@ -266,22 +249,21 @@ function initCryptoService() {
                         // TODO: Turn on whenever ready to support encrypt-then-mac
                         var encKey = false ? theEncKey : key;
 
-                        var response = {};
-                        var params = {
-                            mode: 'cbc',
-                            iv: sjcl.random.randomWords(4, 10)
-                        };
+                        var buffer = forge.util.createBuffer(plaintextValue, 'utf8');
+                        var ivBytes = forge.random.getBytesSync(16);
+                        var cipher = forge.cipher.createCipher('AES-CBC', encKey);
+                        cipher.start({ iv: ivBytes });
+                        cipher.update(buffer);
+                        cipher.finish();
 
-                        var ctJson = sjcl.encrypt(encKey, plaintextValue, params, response);
-
-                        var ct = ctJson.match(/"ct":"([^"]*)"/)[1];
-                        var iv = sjcl.codec.base64.fromBits(response.iv);
-
+                        var iv = forge.util.encode64(ivBytes);
+                        var ctBytes = cipher.output.getBytes();
+                        var ct = forge.util.encode64(ctBytes);
                         var cipherString = iv + '|' + ct;
 
                         // TODO: Turn on whenever ready to support encrypt-then-mac
                         if (false) {
-                            var mac = computeMac(ct, response.iv, macKey);
+                            var mac = computeMac(ctBytes, ivBytes, macKey);
                             cipherString = cipherString + '|' + mac;
                         }
 
@@ -303,19 +285,15 @@ function initCryptoService() {
             throw 'cannot decrypt nothing';
         }
 
-        self.getMacKey(function (macKey) {
-            if (!macKey) {
-                throw 'MAC key unavailable.';
-            }
-
-            self.getAes(function (aes) {
-                self.getAesWithMac(function (aesWithMac) {
-                    if (!aes || !aesWithMac) {
-                        throw 'AES encryption unavailable.';
+        self.getKey(false, function (key) {
+            self.getEncKey(function (theEncKey) {
+                self.getMacKey(function (macKey) {
+                    if (!macKey) {
+                        throw 'MAC key unavailable.';
                     }
 
-                    var ivBits = sjcl.codec.base64.toBits(cipherString.initializationVector);
-                    var ctBits = sjcl.codec.base64.toBits(cipherString.cipherText);
+                    var ivBits = forge.util.decode64(cipherString.initializationVector);
+                    var ctBits = forge.util.decode64(cipherString.cipherText);
 
                     var computedMac = null;
                     if (cipherString.mac) {
@@ -326,8 +304,13 @@ function initCryptoService() {
                         }
                     }
 
-                    var decBits = sjcl.mode.cbc.decrypt(computedMac ? aesWithMac : aes, ctBits, ivBits, null);
-                    var decValue = sjcl.codec.utf8String.fromBits(decBits);
+                    var ctBuffer = forge.util.createBuffer(ctBits);
+                    var decipher = forge.cipher.createDecipher('AES-CBC', computedMac ? theEncKey : key);
+                    decipher.start({ iv: ivBits });
+                    decipher.update(ctBuffer);
+                    decipher.finish();
+
+                    var decValue = decipher.output.toString('utf8');
                     deferred.resolve(decValue);
                 });
             });
@@ -337,16 +320,11 @@ function initCryptoService() {
     };
 
     function computeMac(ct, iv, macKey) {
-        if (typeof ct === 'string') {
-            ct = sjcl.codec.base64.toBits(ct);
-        }
-        if (typeof iv === 'string') {
-            iv = sjcl.codec.base64.toBits(iv);
-        }
-
-        var hmac = new sjcl.misc.hmac(macKey, sjcl.hash.sha256);
         var bits = iv.concat(ct);
-        var mac = hmac.encrypt(bits);
-        return sjcl.codec.base64.fromBits(mac);
+        var hmac = forge.hmac.create();
+        hmac.start('sha256', macKey);
+        hmac.update(bits);
+        var mac = hmac.digest();
+        return forge.util.encode64(mac);
     }
 };
