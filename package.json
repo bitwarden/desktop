@@ -2,7 +2,6 @@
   "name": "bitwarden",
   "version": "0.0.0",
   "devDependencies": {
-    "sjcl": "1.0.6",
     "jquery": "2.2.4",
     "bootstrap": "3.3.7",
     "font-awesome": "4.7.0",

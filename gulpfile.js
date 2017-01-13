@@ -92,10 +92,6 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'angular-toastr'
         },
         {
-            src: [paths.npmDir + 'sjcl/core/cbc.js', paths.npmDir + 'sjcl/core/bitArray.js', paths.npmDir + 'sjcl/sjcl.js'],
-            dest: paths.libDir + 'sjcl'
-        },
-        {
             src: paths.npmDir + 'ngclipboard/dist/ngclipboard.js',
             dest: paths.libDir + 'ngclipboard'
         },
