@@ -140,8 +140,13 @@ function initLoginService() {
                 for (var j = 0; j < eqDomains[i].length; j++) {
                     if (eqDomains[i][j] === domain) {
                         matchingDomains = matchingDomains.concat(eqDomains[i]);
+                        break;
                     }
                 }
+            }
+
+            if (!matchingDomains.length) {
+                matchingDomains.push(domain);
             }
 
             return matchingDomains;
