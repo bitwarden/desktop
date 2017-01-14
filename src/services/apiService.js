@@ -97,6 +97,25 @@ function initApiService() {
         });
     };
 
+    // Settings APIs
+
+    ApiService.prototype.getIncludedDomains = function (success, error) {
+        var self = this;
+        this.tokenService.getToken(function (token) {
+            $.ajax({
+                type: 'GET',
+                url: self.baseUrl + '/settings/domains?excluded=false&access_token=' + token,
+                dataType: 'json',
+                success: function (response) {
+                    success(new DomainsResponse(response));
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, textStatus, errorThrown);
+                }
+            });
+        });
+    };
+
     // Login APIs
 
     ApiService.prototype.getLogin = function (id, success, error) {

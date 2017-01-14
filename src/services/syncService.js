@@ -1,8 +1,9 @@
-﻿function SyncService(loginService, folderService, userService, apiService) {
+﻿function SyncService(loginService, folderService, userService, apiService, settingsService) {
     this.loginService = loginService;
     this.folderService = folderService;
     this.userService = userService;
     this.apiService = apiService;
+    this.settingsService = settingsService;
     this.syncInProgress = false;
 
     initSyncService();
@@ -26,40 +27,55 @@ function initSyncService() {
 
             self.userService.getUserId(function (userId) {
                 var now = new Date();
-                var ciphers = self.apiService.getCiphers(function (response) {
-                    var logins = {};
-                    var folders = {};
 
-                    for (var i = 0; i < response.data.length; i++) {
-                        var data = response.data[i];
-                        if (data.type === 1) {
-                            logins[data.id] = new LoginData(data, userId);
-                        }
-                        else if (data.type === 0) {
-                            folders[data.id] = new FolderData(data, userId);
-                        }
-                    }
+                var promises = [];
+                promises.push(syncVault(userId));
+                promises.push(syncSettings(userId));
 
-                    self.folderService.replace(folders, function () {
-                        self.loginService.replace(logins, function () {
-                            self.setLastSync(now, function () {
-                                self.syncCompleted(true);
-                                callback(true);
-                            });
-                        });
+                Q.all(promises).then(function () {
+                    self.setLastSync(now, function () {
+                        self.syncCompleted(true);
+                        callback(true);
                     });
-                }, handleError);
+                }, function () {
+                    self.syncCompleted(false);
+                    callback(false);
+                });
             });
         });
     };
 
-    SyncService.prototype.incrementalSync = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
+    function syncVault(userId) {
+        var deferred = Q.defer();
+        var self = this;
 
-        // TODO
-    };
+        self.apiService.getCiphers(function (response) {
+            var logins = {};
+            var folders = {};
+
+            for (var i = 0; i < response.data.length; i++) {
+                var data = response.data[i];
+                if (data.type === 1) {
+                    logins[data.id] = new LoginData(data, userId);
+                }
+                else if (data.type === 0) {
+                    folders[data.id] = new FolderData(data, userId);
+                }
+            }
+
+            self.folderService.replace(folders, function () {
+                self.loginService.replace(logins, function () {
+                    deferred.resolve();
+                    return;
+                });
+            });
+        }, function () {
+            deferred.reject();
+            return;
+        });
+
+        return deferred.promise
+    }
 
     function syncFolders(serverFolders, callback) {
         var self = this;
@@ -129,6 +145,33 @@ function initSyncService() {
         });
     }
 
+    function syncSettings(userId) {
+        var deferred = Q.defer();
+        var self = this;
+
+        var ciphers = self.apiService.getIncludedDomains(function (response) {
+            var eqDomains = [];
+            if (response && response.equivalentDomains) {
+                eqDomains = eqDomains.concat(response.equivalentDomains);
+            }
+            if (response && response.globalEquivalentDomains) {
+                for (var i = 0; i < response.globalEquivalentDomains.length; i++) {
+                    eqDomains = eqDomains.concat(response.globalEquivalentDomains[i].domains);
+                }
+            }
+
+            self.settingsService.setEquivalentDomains(eqDomains, function () {
+                deferred.resolve();
+                return;
+            });
+        }, function () {
+            deferred.reject();
+            return;
+        });
+
+        return deferred.promise;
+    };
+
     SyncService.prototype.getLastSync = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
@@ -178,9 +221,4 @@ function initSyncService() {
         this.syncInProgress = false;
         chrome.runtime.sendMessage({ command: 'syncCompleted', successfully: successfully });
     };
-
-    function handleError() {
-        syncCompleted(false);
-        // TODO: check for unauth or forbidden and logout
-    }
 };

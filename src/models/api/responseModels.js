@@ -71,8 +71,27 @@ var CipherHistoryResponse = function (response) {
 
     var revised = response.Revised;
     for (var i = 0; i < revised.length; i++) {
-        revised.push(new CipherResponse(revised[i]));
+        this.revised.push(new CipherResponse(revised[i]));
     }
 
     this.deleted = response.Deleted;
+};
+
+var DomainsResponse = function (response) {
+    var GlobalDomainResponse = function (response) {
+        this.type = response.Type;
+        this.domains = response.Domains;
+        this.excluded = response.Excluded;
+    };
+
+    this.equivalentDomains = response.EquivalentDomains;
+    this.globalEquivalentDomains = [];
+
+    var globalEquivalentDomains = response.GlobalEquivalentDomains;
+    if (!globalEquivalentDomains) {
+        return;
+    }
+    for (var i = 0; i < globalEquivalentDomains.length; i++) {
+        this.globalEquivalentDomains.push(new GlobalDomainResponse(globalEquivalentDomains[i]));
+    }
 };

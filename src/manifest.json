@@ -45,6 +45,7 @@
       "services/tokenService.js",
       "services/apiService.js",
       "services/userService.js",
+      "services/settingsService.js",
       "services/folderService.js",
       "services/loginService.js",
       "services/syncService.js",
