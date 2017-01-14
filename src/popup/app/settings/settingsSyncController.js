@@ -9,7 +9,7 @@
 
         $scope.sync = function () {
             $scope.loading = true;
-            syncService.fullSync(function () {
+            syncService.fullSync(true, function () {
                 $analytics.eventTrack('Synced Full');
                 $scope.loading = false;
                 toastr.success(i18nService.syncingComplete);

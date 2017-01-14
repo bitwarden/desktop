@@ -10,7 +10,7 @@
 };
 
 function initSyncService() {
-    SyncService.prototype.fullSync = function (callback) {
+    SyncService.prototype.fullSync = function (forceSync, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
@@ -27,23 +27,55 @@ function initSyncService() {
 
             self.userService.getUserId(function (userId) {
                 var now = new Date();
+                needsSyncing(self, forceSync, function (needsSync) {
+                    if (!needsSync) {
+                        self.syncCompleted(false);
+                        callback(false);
+                        return;
+                    }
 
-                var promises = [];
-                promises.push(syncVault(userId));
-                promises.push(syncSettings(userId));
+                    var promises = [];
+                    promises.push(syncVault(userId));
+                    promises.push(syncSettings(userId));
 
-                Q.all(promises).then(function () {
-                    self.setLastSync(now, function () {
-                        self.syncCompleted(true);
-                        callback(true);
+                    Q.all(promises).then(function () {
+                        self.setLastSync(now, function () {
+                            self.syncCompleted(true);
+                            callback(true);
+                        });
+                    }, function () {
+                        self.syncCompleted(false);
+                        callback(false);
                     });
-                }, function () {
-                    self.syncCompleted(false);
-                    callback(false);
                 });
             });
         });
     };
+
+    function needsSyncing(self, forceSync, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        if (forceSync) {
+            callback(true);
+            return;
+        }
+
+        self.getLastSync(function (lastSync) {
+            var now = new Date();
+
+            self.apiService.getAccountRevisionDate(function (response) {
+                var accountRevisionDate = new Date(response);
+                if (accountRevisionDate <= lastSync) {
+                    callback(false);
+                    return;
+                }
+
+                callback(true);
+            });
+        });
+    }
 
     function syncVault(userId) {
         var deferred = Q.defer();

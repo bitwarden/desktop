@@ -46,6 +46,23 @@ function initApiService() {
 
     // Account APIs
 
+    ApiService.prototype.getAccountRevisionDate = function (success, error) {
+        var self = this;
+        this.tokenService.getToken(function (token) {
+            $.ajax({
+                type: 'GET',
+                url: self.baseUrl + '/accounts/revision-date?access_token=' + token,
+                dataType: 'json',
+                success: function (response) {
+                    success(response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, textStatus, errorThrown);
+                }
+            });
+        });
+    };
+
     ApiService.prototype.getProfile = function (success, error) {
         var self = this;
         this.tokenService.getToken(function (token) {
