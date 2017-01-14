@@ -32,7 +32,13 @@ function initSettingsService() {
     };
 
     SettingsService.prototype.getEquivalentDomains = function (callback) {
-        getSettingsKey(this, 'equivalentDomains', callback);
+        var deferred = Q.defer();
+
+        getSettingsKey(this, 'equivalentDomains', function (domains) {
+            deferred.resolve(domains);
+        });
+
+        return deferred.promise;
     };
 
     function getSettingsKey(self, key, callback) {

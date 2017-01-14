@@ -1,7 +1,8 @@
-function LoginService(cryptoService, userService, apiService) {
+function LoginService(cryptoService, userService, apiService, settingsService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
+    this.settingsService = settingsService;
     this.decryptedLoginCache = null;
 
     initLoginService();
@@ -133,10 +134,29 @@ function initLoginService() {
     LoginService.prototype.getAllDecryptedForDomain = function (domain) {
         var self = this;
 
-        return self.getAllDecrypted().then(function (logins) {
+        var eqDomainsPromise = self.settingsService.getEquivalentDomains().then(function (eqDomains) {
+            var matchingDomains = [];
+            for (var i = 0; i < eqDomains.length; i++) {
+                for (var j = 0; j < eqDomains[i].length; j++) {
+                    if (eqDomains[i][j] === domain) {
+                        matchingDomains = matchingDomains.concat(eqDomains[i]);
+                    }
+                }
+            }
+
+            return matchingDomains;
+        });
+
+        var loginsPromise = self.getAllDecrypted().then(function (logins) {
+            return logins;
+        });
+
+        return Q.all([eqDomainsPromise, loginsPromise]).then(function (result) {
+            var matchingDomains = result[0];
+            var logins = result[1];
             var loginsToReturn = [];
             for (var i = 0; i < logins.length; i++) {
-                if (logins[i].domain === domain) {
+                if (logins[i].domain && matchingDomains.indexOf(logins[i].domain) >= 0) {
                     loginsToReturn.push(logins[i]);
                 }
             }

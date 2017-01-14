@@ -188,7 +188,9 @@ function initSyncService() {
             }
             if (response && response.globalEquivalentDomains) {
                 for (var i = 0; i < response.globalEquivalentDomains.length; i++) {
-                    eqDomains = eqDomains.concat(response.globalEquivalentDomains[i].domains);
+                    if (response.globalEquivalentDomains[i].domains.length) {
+                        eqDomains.push(response.globalEquivalentDomains[i].domains);
+                    }
                 }
             }
 
