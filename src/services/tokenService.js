@@ -3,7 +3,22 @@
 };
 
 function initTokenService() {
-    var _token;
+    var _token,
+        _decodedToken,
+        _refreshToken;
+
+    TokenService.prototype.setTokens = function (accessToken, refreshToken, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        var self = this;
+        self.setToken(accessToken, function () {
+            self.setRefreshToken(refreshToken, function () {
+                callback();
+            });
+        });
+    };
 
     TokenService.prototype.setToken = function (token, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -11,8 +26,9 @@ function initTokenService() {
         }
 
         _token = token;
+        _decodedToken = null;
         chrome.storage.local.set({
-            'authBearer': token
+            'accessToken': token
         }, function () {
             callback();
         });
@@ -27,12 +43,43 @@ function initTokenService() {
             return callback(_token);
         }
 
-        chrome.storage.local.get('authBearer', function (obj) {
-            if (obj && obj.authBearer) {
-                _token = obj.authBearer;
+        chrome.storage.local.get('accessToken', function (obj) {
+            if (obj && obj.accessToken) {
+                _token = obj.accessToken;
             }
 
             return callback(_token);
+        });
+    };
+
+    TokenService.prototype.setRefreshToken = function (refreshToken, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        _refreshToken = refreshToken;
+        chrome.storage.local.set({
+            'refreshToken': refreshToken
+        }, function () {
+            callback();
+        });
+    };
+
+    TokenService.prototype.getRefreshToken = function (callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        if (_refreshToken) {
+            return callback(_refreshToken);
+        }
+
+        chrome.storage.local.get('refreshToken', function (obj) {
+            if (obj && obj.refreshToken) {
+                _refreshToken = obj.refreshToken;
+            }
+
+            return callback(_refreshToken);
         });
     };
 
@@ -41,34 +88,43 @@ function initTokenService() {
             throw 'callback function required';
         }
 
-        _token = null;
-        chrome.storage.local.remove('authBearer', function () {
-            callback();
+        _token = _decodedToken = _refreshToken = null;
+        chrome.storage.local.remove('accessToken', function () {
+            chrome.storage.local.remove('refreshToken', function () {
+                callback();
+            });
         });
     };
 
     // jwthelper methods
     // ref https://github.com/auth0/angular-jwt/blob/master/src/angularJwt/services/jwt.js
 
-    TokenService.prototype.decodeToken = function (token) {
-        var parts = token.split('.');
+    TokenService.prototype.decodeToken = function () {
+        if (_decodedToken) {
+            return _decodedToken;
+        }
 
+        if (!_token) {
+            throw 'Token not found.';
+        }
+
+        var parts = _token.split('.');
         if (parts.length !== 3) {
-            throw new Error('JWT must have 3 parts');
+            throw 'JWT must have 3 parts';
         }
 
         var decoded = urlBase64Decode(parts[1]);
         if (!decoded) {
-            throw new Error('Cannot decode the token');
+            throw 'Cannot decode the token';
         }
 
         return JSON.parse(decoded);
     };
 
-    TokenService.prototype.getTokenExpirationDate = function (token) {
-        var decoded = this.decodeToken(token);
+    TokenService.prototype.getTokenExpirationDate = function () {
+        var decoded = this.decodeToken();
 
-        if (typeof decoded.exp === "undefined") {
+        if (typeof decoded.exp === 'undefined') {
             return null;
         }
 
@@ -78,8 +134,8 @@ function initTokenService() {
         return d;
     };
 
-    TokenService.prototype.isTokenExpired = function (token, offsetSeconds) {
-        var d = this.getTokenExpirationDate(token);
+    TokenService.prototype.isTokenExpired = function (offsetSeconds) {
+        var d = this.getTokenExpirationDate();
         offsetSeconds = offsetSeconds || 0;
         if (d === null) {
             return false;
@@ -87,6 +143,42 @@ function initTokenService() {
 
         // Token expired?
         return !(d.valueOf() > (new Date().valueOf() + (offsetSeconds * 1000)));
+    };
+
+    TokenService.prototype.isTwoFactorScheme = function () {
+        return this.getScheme() !== 'Application';
+    };
+
+    TokenService.prototype.getScheme = function () {
+        var decoded = this.decodeToken();
+
+        if (typeof decoded.amr === 'undefined' || !decoded.amr.length) {
+            throw 'No scheme found';
+        }
+
+        return decoded.amr[0];
+    };
+
+    TokenService.prototype.getUserId = function () {
+        var decoded = this.decodeToken();
+
+        if (typeof decoded.sub === 'undefined') {
+            throw 'No user id found';
+        }
+
+        return decoded.sub;
+    };
+
+    TokenService.prototype.getEmail = function () {
+        var decoded = this.decodeToken();
+
+        var email = decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'];
+
+        if (typeof email === 'undefined') {
+            throw 'No email found';
+        }
+
+        return email;
     };
 
     function urlBase64Decode(str) {

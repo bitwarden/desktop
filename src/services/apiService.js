@@ -8,29 +8,12 @@ function ApiService(tokenService) {
 function initApiService() {
     // Auth APIs
 
-    ApiService.prototype.postToken = function (tokenRequest, success, error) {
-        var self = this;
-        $.ajax({
-            type: 'POST',
-            url: self.baseUrl + '/auth/token',
-            data: JSON.stringify(tokenRequest),
-            contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
-            success: function (response) {
-                success(new TokenResponse(response));
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                handleError(error, jqXHR, textStatus, errorThrown);
-            }
-        });
-    };
-
     ApiService.prototype.postTokenTwoFactor = function (twoFactorTokenRequest, success, error) {
         var self = this;
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/auth/token/two-factor?access_token=' + token,
+                url: self.baseUrl + '/auth/token/two-factor?access_token2=' + token,
                 data: JSON.stringify(twoFactorTokenRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -44,6 +27,24 @@ function initApiService() {
         });
     };
 
+    ApiService.prototype.postIdentityToken = function (tokenRequest, success, error) {
+        var self = this;
+
+        $.ajax({
+            type: 'POST',
+            url: self.baseUrl + '/connect/token',
+            data: tokenRequest.toIdentityToken(),
+            contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+            dataType: 'json',
+            success: function (response) {
+                success(new IdentityTokenResponse(response));
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                handleError(error, jqXHR, textStatus, errorThrown);
+            }
+        });
+    };
+
     // Account APIs
 
     ApiService.prototype.getAccountRevisionDate = function (success, error) {
@@ -51,7 +52,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/revision-date?access_token=' + token,
+                url: self.baseUrl + '/accounts/revision-date?access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(response);
@@ -68,7 +69,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/profile?access_token=' + token,
+                url: self.baseUrl + '/accounts/profile?access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new ProfileResponse(response));
@@ -121,7 +122,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/settings/domains?excluded=false&access_token=' + token,
+                url: self.baseUrl + '/settings/domains?excluded=false&access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new DomainsResponse(response));
@@ -140,7 +141,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/sites/' + id + '?access_token=' + token,
+                url: self.baseUrl + '/sites/' + id + '?access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new LoginResponse(response));
@@ -157,7 +158,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/sites?access_token=' + token,
+                url: self.baseUrl + '/sites?access_token2=' + token,
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -176,7 +177,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/sites/' + id + '?access_token=' + token,
+                url: self.baseUrl + '/sites/' + id + '?access_token2=' + token,
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -197,7 +198,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/folders/' + id + '?access_token=' + token,
+                url: self.baseUrl + '/folders/' + id + '?access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new FolderResponse(response));
@@ -214,7 +215,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/folders?access_token=' + token,
+                url: self.baseUrl + '/folders?access_token2=' + token,
                 data: JSON.stringify(folderRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -233,7 +234,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/folders/' + id + '?access_token=' + token,
+                url: self.baseUrl + '/folders/' + id + '?access_token2=' + token,
                 data: JSON.stringify(folderRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -254,7 +255,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers/' + id + '?access_token=' + token,
+                url: self.baseUrl + '/ciphers/' + id + '?access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new CipherResponse(response));
@@ -271,7 +272,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers?access_token=' + token,
+                url: self.baseUrl + '/ciphers?access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     var data = [];
@@ -293,7 +294,7 @@ function initApiService() {
         this.tokenService.getToken(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/ciphers/' + id + '/delete?access_token=' + token,
+                url: self.baseUrl + '/ciphers/' + id + '/delete?access_token2=' + token,
                 dataType: 'text',
                 success: function (response) {
                     success();

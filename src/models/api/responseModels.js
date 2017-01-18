@@ -46,6 +46,15 @@ var TokenResponse = function (response) {
     }
 };
 
+var IdentityTokenResponse = function (response) {
+    this.accessToken = response.access_token;
+    this.expiresIn = response.expires_in;
+    this.refreshToken = response.refresh_token;
+    this.tokenType = response.token_type;
+
+    // TODO: extras
+};
+
 var ListResponse = function (data) {
     this.data = data;
 };

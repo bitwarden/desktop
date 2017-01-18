@@ -15,10 +15,29 @@ var FolderRequest = function (folder) {
 var TokenRequest = function (email, masterPasswordHash, device) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
+    this.device = null;
     if (device) {
         this.device = new DeviceRequest(device);
     }
-    this.device = null;
+
+    this.toIdentityToken = function () {
+        var obj = {
+            grant_type: 'password',
+            username: this.email,
+            password: this.masterPasswordHash,
+            scope: 'api offline_access',
+            client_id: 'browser'
+        };
+
+        if (this.device) {
+            obj.deviceType = this.device.type;
+            obj.deviceIdentifier = this.device.identifier;
+            obj.deviceName = this.device.name;
+            obj.devicePushToken = this.device.pushToken;
+        }
+
+        return obj;
+    };
 };
 
 var RegisterRequest = function (email, masterPasswordHash, masterPasswordHint) {

@@ -197,35 +197,33 @@
             }
 
             cryptoService.getKey(false, function (key) {
-                tokenService.getToken(function (token) {
-                    userService.isAuthenticated(function (isAuthenticated) {
-                        if (isAuthenticated) {
-                            var obj = {};
-                            obj[constantsService.lastActiveKey] = (new Date()).getTime();
-                            chrome.storage.local.set(obj, function () { });
-                        }
+                userService.isAuthenticated(function (isAuthenticated) {
+                    if (isAuthenticated) {
+                        var obj = {};
+                        obj[constantsService.lastActiveKey] = (new Date()).getTime();
+                        chrome.storage.local.set(obj, function () { });
+                    }
 
-                        if (!toState.data || !toState.data.authorize) {
-                            if (isAuthenticated && !tokenService.isTokenExpired(token)) {
-                                event.preventDefault();
-                                if (!key) {
-                                    $state.go('lock');
-                                }
-                                else {
-                                    $state.go('tabs.current');
-                                }
-                            }
-
-                            return;
-                        }
-
-                        if (!isAuthenticated || tokenService.isTokenExpired(token)) {
+                    if (!toState.data || !toState.data.authorize) {
+                        if (isAuthenticated && !tokenService.isTokenExpired()) {
                             event.preventDefault();
-                            authService.logOut(function () {
-                                $state.go('home');
-                            });
+                            if (!key) {
+                                $state.go('lock');
+                            }
+                            else {
+                                $state.go('tabs.current');
+                            }
                         }
-                    });
+
+                        return;
+                    }
+
+                    if (!isAuthenticated || tokenService.isTokenExpired()) {
+                        event.preventDefault();
+                        authService.logOut(function () {
+                            $state.go('home');
+                        });
+                    }
                 });
             });
         });

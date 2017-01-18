@@ -12,24 +12,24 @@
             cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
                 var request = new TokenRequest(email, hashedPassword);
 
-                apiService.postToken(request, function (response) {
-                    if (!response || !response.token) {
+                apiService.postIdentityToken(request, function (response) {
+                    if (!response || !response.accessToken) {
                         return;
                     }
 
-                    tokenService.setToken(response.token, function () {
+                    tokenService.setTokens(response.accessToken, response.refreshToken, function () {
                         cryptoService.setKey(key, function () {
                             cryptoService.setKeyHash(hashedPassword, function () {
-                                if (response.profile) {
-                                    userService.setUserId(response.profile.id, function () {
-                                        userService.setEmail(response.profile.email, function () {
+                                if (tokenService.isTwoFactorScheme()) {
+                                    deferred.resolve(response);
+                                }
+                                else {
+                                    userService.setUserId(tokenService.getUserId(), function () {
+                                        userService.setEmail(tokenService.getEmail(), function () {
                                             chrome.runtime.sendMessage({ command: 'loggedIn' });
                                             deferred.resolve(response);
                                         });
                                     });
-                                }
-                                else {
-                                    deferred.resolve(response);
                                 }
                             });
                         });
