@@ -622,7 +622,7 @@ function fullSync(override) {
     syncService.getLastSync(function (lastSync) {
         var now = new Date();
         if (override || !lastSync || (now - lastSync) >= syncInternal) {
-            syncService.fullSync(override, function () { });
+            syncService.fullSync(override || false, function () { });
         }
     });
 }

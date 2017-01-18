@@ -230,10 +230,6 @@ function initSyncService() {
             throw 'callback function required';
         }
 
-        if (!(date instanceof Date)) {
-            throw 'date must be a Date object';
-        }
-
         this.userService.getUserId(function (userId) {
             var lastSyncKey = 'lastSync_' + userId;
 

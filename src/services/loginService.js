@@ -137,11 +137,8 @@ function initLoginService() {
         var eqDomainsPromise = self.settingsService.getEquivalentDomains().then(function (eqDomains) {
             var matchingDomains = [];
             for (var i = 0; i < eqDomains.length; i++) {
-                for (var j = 0; j < eqDomains[i].length; j++) {
-                    if (eqDomains[i][j] === domain) {
-                        matchingDomains = matchingDomains.concat(eqDomains[i]);
-                        break;
-                    }
+                if (eqDomains[i].length && eqDomains[i].indexOf(domain) >= 0) {
+                    matchingDomains = matchingDomains.concat(eqDomains[i]);
                 }
             }
 

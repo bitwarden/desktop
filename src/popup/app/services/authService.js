@@ -2,7 +2,7 @@
     .module('bit.services')
 
     .factory('authService', function (cryptoService, apiService, userService, tokenService, $q, $rootScope, loginService,
-        folderService) {
+        folderService, settingsService, syncService) {
         var _service = {};
 
         _service.logIn = function (email, masterPassword) {
@@ -66,19 +66,24 @@
             return deferred.promise;
         };
 
+        // TODO: Fix callback hell by moving to promises
         _service.logOut = function (callback) {
             userService.getUserId(function (userId) {
-                tokenService.clearToken(function () {
-                    cryptoService.clearKey(function () {
-                        cryptoService.clearKeyHash(function () {
-                            userService.clearUserId(function () {
-                                userService.clearEmail(function () {
-                                    loginService.clear(userId, function () {
-                                        folderService.clear(userId, function () {
-                                            $rootScope.vaultLogins = null;
-                                            $rootScope.vaultFolders = null;
-                                            chrome.runtime.sendMessage({ command: 'loggedOut' });
-                                            callback();
+                syncService.setLastSync(new Date(0), function () {
+                    settingsService.clear(function () {
+                        tokenService.clearToken(function () {
+                            cryptoService.clearKey(function () {
+                                cryptoService.clearKeyHash(function () {
+                                    userService.clearUserId(function () {
+                                        userService.clearEmail(function () {
+                                            loginService.clear(userId, function () {
+                                                folderService.clear(userId, function () {
+                                                    $rootScope.vaultLogins = null;
+                                                    $rootScope.vaultFolders = null;
+                                                    chrome.runtime.sendMessage({ command: 'loggedOut' });
+                                                    callback();
+                                                });
+                                            });
                                         });
                                     });
                                 });

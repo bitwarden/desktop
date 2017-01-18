@@ -42,4 +42,7 @@
     })
     .factory('constantsService', function () {
         return chrome.extension.getBackgroundPage().constantsService;
+    })
+    .factory('settingsService', function () {
+        return chrome.extension.getBackgroundPage().settingsService;
     });
