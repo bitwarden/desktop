@@ -13,16 +13,23 @@ function initUserService() {
     var _userId = null,
         _email = null;
 
-    UserService.prototype.setUserId = function (userId, callback) {
+    UserService.prototype.setUserIdAndEmail = function (userId, email, callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
+        _email = email;
+        var emailObj = {};
+        emailObj[userEmailKey] = email;
+
         _userId = userId;
-        var obj = {};
-        obj[userIdKey] = userId;
-        chrome.storage.local.set(obj, function () {
-            callback();
+        var userIdObj = {};
+        userIdObj[userIdKey] = userId;
+
+        chrome.storage.local.set(userIdObj, function () {
+            chrome.storage.local.set(emailObj, function () {
+                callback();
+            });
         });
     };
 
@@ -44,30 +51,6 @@ function initUserService() {
         });
     };
 
-    UserService.prototype.clearUserId = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        _userId = null;
-        chrome.storage.local.remove(userIdKey, function () {
-            callback();
-        });
-    };
-
-    UserService.prototype.setEmail = function (email, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        _email = email;
-        var obj = {};
-        obj[userEmailKey] = email;
-        chrome.storage.local.set(obj, function () {
-            callback();
-        });
-    };
-
     UserService.prototype.getEmail = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
@@ -86,14 +69,16 @@ function initUserService() {
         });
     };
 
-    UserService.prototype.clearEmail = function (callback) {
+    UserService.prototype.clearUserIdAndEmail = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        _email = null;
-        chrome.storage.local.remove(userEmailKey, function () {
-            callback();
+        _userId = _email = null;
+        chrome.storage.local.remove(userIdKey, function () {
+            chrome.storage.local.remove(userEmailKey, function () {
+                callback();
+            });
         });
     };
 
@@ -110,24 +95,6 @@ function initUserService() {
             else {
                 self.getUserId(function (userId) {
                     callback(userId !== null);
-                });
-            }
-        });
-    };
-
-    UserService.prototype.isTwoFactorAuthenticated = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        var self = this;
-        self.tokenService.getToken(function (token) {
-            if (!token) {
-                callback(false);
-            }
-            else {
-                self.getUserId(function (userId) {
-                    callback(userId === null);
                 });
             }
         });

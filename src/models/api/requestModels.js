@@ -12,9 +12,11 @@ var FolderRequest = function (folder) {
     this.name = folder.name ? folder.name.encryptedString : null;
 };
 
-var TokenRequest = function (email, masterPasswordHash, device) {
+var TokenRequest = function (email, masterPasswordHash, code, device) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
+    this.code = code;
+    this.provider = 'Authenticator';
     this.device = null;
     if (device) {
         this.device = new DeviceRequest(device);
@@ -36,6 +38,11 @@ var TokenRequest = function (email, masterPasswordHash, device) {
             obj.devicePushToken = this.device.pushToken;
         }
 
+        if (this.code && this.provider) {
+            obj.twoFactorCode = this.code;
+            obj.twoFactorProvider = this.provider;
+        }
+
         return obj;
     };
 };
@@ -49,12 +56,6 @@ var RegisterRequest = function (email, masterPasswordHash, masterPasswordHint) {
 
 var PasswordHintRequest = function (email) {
     this.email = email;
-};
-
-var TokenTwoFactorRequest = function (code) {
-    this.code = code;
-    this.provider = "Authenticator";
-    this.device = null;
 };
 
 var DeviceTokenRequest = function () {

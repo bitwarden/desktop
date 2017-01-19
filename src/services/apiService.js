@@ -1,5 +1,5 @@
 function ApiService(tokenService) {
-    this.baseUrl = 'https://api.bitwarden.com';
+    this.baseUrl = 'http://localhost:4000';
     this.tokenService = tokenService;
 
     initApiService();
@@ -8,26 +8,7 @@ function ApiService(tokenService) {
 function initApiService() {
     // Auth APIs
 
-    ApiService.prototype.postTokenTwoFactor = function (twoFactorTokenRequest, success, error) {
-        var self = this;
-        this.tokenService.getToken(function (token) {
-            $.ajax({
-                type: 'POST',
-                url: self.baseUrl + '/auth/token/two-factor?access_token2=' + token,
-                data: JSON.stringify(twoFactorTokenRequest),
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                success: function (response) {
-                    success(new TokenResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
-                }
-            });
-        });
-    };
-
-    ApiService.prototype.postIdentityToken = function (tokenRequest, success, error) {
+    ApiService.prototype.postIdentityToken = function (tokenRequest, success, successWithTwoFactor, error) {
         var self = this;
 
         $.ajax({
@@ -40,7 +21,13 @@ function initApiService() {
                 success(new IdentityTokenResponse(response));
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                handleError(error, jqXHR, textStatus, errorThrown);
+                if (jqXHR.responseJSON && jqXHR.responseJSON.TwoFactorRequired &&
+                    jqXHR.responseJSON.TwoFactorRequired === true) {
+                    successWithTwoFactor();
+                }
+                else {
+                    error(new ErrorResponse(jqXHR, true));
+                }
             }
         });
     };

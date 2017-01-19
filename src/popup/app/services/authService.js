@@ -5,14 +5,15 @@
         folderService, settingsService, syncService) {
         var _service = {};
 
-        _service.logIn = function (email, masterPassword) {
+        _service.logIn = function (email, masterPassword, twoFactorCode) {
             email = email.toLowerCase();
             var key = cryptoService.makeKey(masterPassword, email);
             var deferred = $q.defer();
             cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
-                var request = new TokenRequest(email, hashedPassword);
+                var request = new TokenRequest(email, hashedPassword, twoFactorCode);
 
                 apiService.postIdentityToken(request, function (response) {
+                    // success
                     if (!response || !response.accessToken) {
                         return;
                     }
@@ -20,49 +21,21 @@
                     tokenService.setTokens(response.accessToken, response.refreshToken, function () {
                         cryptoService.setKey(key, function () {
                             cryptoService.setKeyHash(hashedPassword, function () {
-                                if (tokenService.isTwoFactorScheme()) {
-                                    deferred.resolve(response);
-                                }
-                                else {
-                                    userService.setUserId(tokenService.getUserId(), function () {
-                                        userService.setEmail(tokenService.getEmail(), function () {
-                                            chrome.runtime.sendMessage({ command: 'loggedIn' });
-                                            deferred.resolve(response);
-                                        });
-                                    });
-                                }
+                                userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(), function () {
+                                    chrome.runtime.sendMessage({ command: 'loggedIn' });
+                                    deferred.resolve(false);
+                                });
                             });
                         });
                     });
+                }, function () {
+                    // two factor required
+                    deferred.resolve(true);
                 }, function (error) {
+                    // error
                     deferred.reject(error);
                 });
             });
-            return deferred.promise;
-        };
-
-        _service.logInTwoFactor = function (code) {
-            var request = new TokenTwoFactorRequest(code.replace(' ', ''));
-
-            var deferred = $q.defer();
-            apiService.postTokenTwoFactor(request, function (response) {
-                if (!response || !response.token) {
-                    deferred.reject();
-                    return;
-                }
-
-                tokenService.setToken(response.token, function () {
-                    userService.setUserId(response.profile.id, function () {
-                        userService.setEmail(response.profile.email, function () {
-                            chrome.runtime.sendMessage({ command: 'loggedIn' });
-                            deferred.resolve(response);
-                        });
-                    });
-                });
-            }, function (error) {
-                deferred.reject(error);
-            });
-
             return deferred.promise;
         };
 
@@ -74,15 +47,13 @@
                         tokenService.clearToken(function () {
                             cryptoService.clearKey(function () {
                                 cryptoService.clearKeyHash(function () {
-                                    userService.clearUserId(function () {
-                                        userService.clearEmail(function () {
-                                            loginService.clear(userId, function () {
-                                                folderService.clear(userId, function () {
-                                                    $rootScope.vaultLogins = null;
-                                                    $rootScope.vaultFolders = null;
-                                                    chrome.runtime.sendMessage({ command: 'loggedOut' });
-                                                    callback();
-                                                });
+                                    userService.clearUserIdAndEmail(function () {
+                                        loginService.clear(userId, function () {
+                                            folderService.clear(userId, function () {
+                                                $rootScope.vaultLogins = null;
+                                                $rootScope.vaultFolders = null;
+                                                chrome.runtime.sendMessage({ command: 'loggedOut' });
+                                                callback();
                                             });
                                         });
                                     });

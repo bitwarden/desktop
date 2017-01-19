@@ -38,14 +38,6 @@ var ProfileResponse = function (response) {
     this.twoFactorEnabled = response.TwoFactorEnabled;
 };
 
-var TokenResponse = function (response) {
-    this.token = response.Token;
-
-    if (response.Profile) {
-        this.profile = new ProfileResponse(response.Profile);
-    }
-};
-
 var IdentityTokenResponse = function (response) {
     this.accessToken = response.access_token;
     this.expiresIn = response.expires_in;
@@ -59,10 +51,18 @@ var ListResponse = function (data) {
     this.data = data;
 };
 
-var ErrorResponse = function (response) {
-    if (response.responseJSON) {
-        this.message = response.responseJSON.Message;
-        this.validationErrors = response.responseJSON.ValidationErrors;
+var ErrorResponse = function (response, identityResponse) {
+    var errorModel = null;
+    if (identityResponse && identityResponse === true && response.responseJSON && response.responseJSON.ErrorModel) {
+        errorModel = response.responseJSON.ErrorModel;
+    }
+    else if (response.responseJSON) {
+        errorModel = response.responseJSON;
+    }
+
+    if (errorModel) {
+        this.message = errorModel.Message;
+        this.validationErrors = errorModel.ValidationErrors;
     }
     this.statusCode = response.status;
 };

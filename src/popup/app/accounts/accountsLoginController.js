@@ -32,19 +32,24 @@
                 return;
             }
 
-            $scope.loginPromise = authService.logIn(model.email, model.masterPassword);
+            $scope.loginPromise = authService.logIn(model.email, model.masterPassword, null);
 
-            $scope.loginPromise.then(function () {
-                userService.isTwoFactorAuthenticated(function (isTwoFactorAuthenticated) {
-                    if (isTwoFactorAuthenticated) {
-                        $analytics.eventTrack('Logged In To Two-step');
-                        $state.go('twoFactor', { animation: 'in-slide-left' });
-                    }
-                    else {
-                        $analytics.eventTrack('Logged In');
-                        $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
-                    }
-                });
+            $scope.loginPromise.then(function (twoFactor) {
+                if (twoFactor) {
+                    $analytics.eventTrack('Logged In To Two-step');
+                    $state.go('twoFactor', {
+                        animation: 'in-slide-left',
+                        email: model.email,
+                        masterPassword: model.masterPassword
+                    });
+                }
+                else {
+                    $analytics.eventTrack('Logged In');
+                    $state.go('tabs.vault', {
+                        animation: 'in-slide-left',
+                        syncOnLoad: true
+                    });
+                }
             });
         };
     });
