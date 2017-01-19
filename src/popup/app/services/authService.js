@@ -39,30 +39,10 @@
             return deferred.promise;
         };
 
-        // TODO: Fix callback hell by moving to promises
         _service.logOut = function (callback) {
-            userService.getUserId(function (userId) {
-                syncService.setLastSync(new Date(0), function () {
-                    settingsService.clear(function () {
-                        tokenService.clearToken(function () {
-                            cryptoService.clearKey(function () {
-                                cryptoService.clearKeyHash(function () {
-                                    userService.clearUserIdAndEmail(function () {
-                                        loginService.clear(userId, function () {
-                                            folderService.clear(userId, function () {
-                                                $rootScope.vaultLogins = null;
-                                                $rootScope.vaultFolders = null;
-                                                chrome.runtime.sendMessage({ command: 'loggedOut' });
-                                                callback();
-                                            });
-                                        });
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-            });
+            $rootScope.vaultLogins = null;
+            $rootScope.vaultFolders = null;
+            callback();
         };
 
         return _service;

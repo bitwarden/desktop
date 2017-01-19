@@ -1,5 +1,5 @@
 function ApiService(tokenService) {
-    this.baseUrl = 'http://localhost:4000';
+    this.baseUrl = 'https://api.bitwarden.com';
     this.tokenService = tokenService;
 
     initApiService();
@@ -36,7 +36,7 @@ function initApiService() {
 
     ApiService.prototype.getAccountRevisionDate = function (success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/accounts/revision-date?access_token2=' + token,
@@ -45,15 +45,17 @@ function initApiService() {
                     success(response);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
     ApiService.prototype.getProfile = function (success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/accounts/profile?access_token2=' + token,
@@ -62,9 +64,11 @@ function initApiService() {
                     success(new ProfileResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
@@ -80,7 +84,7 @@ function initApiService() {
                 success();
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                handleError(error, jqXHR, textStatus, errorThrown);
+                handleError(error, jqXHR);
             }
         });
     };
@@ -97,7 +101,7 @@ function initApiService() {
                 success();
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                handleError(error, jqXHR, textStatus, errorThrown);
+                handleError(error, jqXHR);
             }
         });
     };
@@ -106,7 +110,7 @@ function initApiService() {
 
     ApiService.prototype.getIncludedDomains = function (success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/settings/domains?excluded=false&access_token2=' + token,
@@ -115,9 +119,11 @@ function initApiService() {
                     success(new DomainsResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
@@ -125,7 +131,7 @@ function initApiService() {
 
     ApiService.prototype.getLogin = function (id, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/sites/' + id + '?access_token2=' + token,
@@ -134,15 +140,17 @@ function initApiService() {
                     success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
     ApiService.prototype.postLogin = function (loginRequest, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/sites?access_token2=' + token,
@@ -153,15 +161,17 @@ function initApiService() {
                     success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
     ApiService.prototype.putLogin = function (id, loginRequest, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/sites/' + id + '?access_token2=' + token,
@@ -172,9 +182,11 @@ function initApiService() {
                     success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
@@ -182,7 +194,7 @@ function initApiService() {
 
     ApiService.prototype.getFolder = function (id, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/folders/' + id + '?access_token2=' + token,
@@ -191,15 +203,17 @@ function initApiService() {
                     success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
-        });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
+    });
     };
 
     ApiService.prototype.postFolder = function (folderRequest, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/folders?access_token2=' + token,
@@ -210,15 +224,17 @@ function initApiService() {
                     success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
     ApiService.prototype.putFolder = function (id, folderRequest, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/folders/' + id + '?access_token2=' + token,
@@ -229,9 +245,11 @@ function initApiService() {
                     success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
@@ -239,7 +257,7 @@ function initApiService() {
 
     ApiService.prototype.getCipher = function (id, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/ciphers/' + id + '?access_token2=' + token,
@@ -248,15 +266,17 @@ function initApiService() {
                     success(new CipherResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
     ApiService.prototype.getCiphers = function (success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/ciphers?access_token2=' + token,
@@ -270,15 +290,17 @@ function initApiService() {
                     success(new ListResponse(data));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
     ApiService.prototype.deleteCipher = function (id, success, error) {
         var self = this;
-        this.tokenService.getToken(function (token) {
+        handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
                 url: self.baseUrl + '/ciphers/' + id + '/delete?access_token2=' + token,
@@ -287,20 +309,57 @@ function initApiService() {
                     success();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, textStatus, errorThrown);
+                    handleError(error, jqXHR);
                 }
             });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true);
         });
     };
 
     // Helpers
 
-    function handleError(errorCallback, jqXHR, textStatus, errorThrown) {
-        if (jqXHR.status === 401 || jqXHR.status === 403) {
-            chrome.runtime.sendMessage({ command: 'logout' });
+    function handleError(errorCallback, jqXHR, tokenError) {
+        if (tokenError || jqXHR.status === 401 || jqXHR.status === 403) {
+            chrome.runtime.sendMessage({ command: 'logout', expired: true });
             return;
         }
 
         errorCallback(new ErrorResponse(jqXHR));
+    }
+
+    function handleTokenState(self) {
+        var deferred = Q.defer();
+        self.tokenService.getToken(function (accessToken) {
+            if (self.tokenService.tokenNeedsRefresh()) {
+                self.tokenService.getRefreshToken(function (refreshToken) {
+                    $.ajax({
+                        type: 'POST',
+                        url: self.baseUrl + '/connect/token',
+                        data: {
+                            grant_type: 'refresh_token',
+                            client_id: 'browser',
+                            refresh_token: refreshToken
+                        },
+                        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                        dataType: 'json',
+                        success: function (response) {
+                            var token = new IdentityTokenResponse(response);
+                            tokenService.setTokens(token.accessToken, token.refreshToken, function () {
+                                deferred.resolve(token.accessToken);
+                            });
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            deferred.reject(jqXHR);
+                        }
+                    });
+                });
+            }
+            else {
+                deferred.resolve(accessToken);
+            }
+        });
+
+        return deferred.promise
     }
 };

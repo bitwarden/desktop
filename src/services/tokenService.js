@@ -145,6 +145,23 @@ function initTokenService() {
         return !(d.valueOf() > (new Date().valueOf() + (offsetSeconds * 1000)));
     };
 
+    TokenService.prototype.tokenSecondsRemaining = function (offsetSeconds) {
+        var d = this.getTokenExpirationDate();
+        offsetSeconds = offsetSeconds || 0;
+        if (d === null) {
+            return 0;
+        }
+
+        var msRemaining = d.valueOf() - (new Date().valueOf() + (offsetSeconds * 1000));
+        return Math.round(msRemaining / 1000);
+    };
+
+    TokenService.prototype.tokenNeedsRefresh = function (minutes) {
+        minutes = minutes || 5; // default 5 minutes
+        var sRemaining = this.tokenSecondsRemaining();
+        return sRemaining < (60 * minutes);
+    };
+
     TokenService.prototype.isTwoFactorScheme = function () {
         return this.getScheme() !== 'Application';
     };

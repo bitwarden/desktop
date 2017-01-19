@@ -34,7 +34,7 @@ var loadMenuRan = false,
     autofillTimeout = null;
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-    if (msg.command === 'loggedOut' || msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
+    if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
         if (loadMenuRan) {
             return;
         }
@@ -42,6 +42,17 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
         setIcon();
         refreshBadgeAndMenu();
+    }
+    else if (msg.command === 'logout') {
+        logout(msg.expired, function () {
+            if (loadMenuRan) {
+                return;
+            }
+            loadMenuRan = true;
+
+            setIcon();
+            refreshBadgeAndMenu();
+        });
     }
     else if (msg.command === 'syncCompleted' && msg.successfully) {
         if (loadMenuRan) {
@@ -582,6 +593,30 @@ function loadContextMenuOptions(title, idSuffix, login) {
             title: title
         });
     }
+}
+
+// TODO: Fix callback hell by moving to promises
+function logout(expired, callback) {
+    userService.getUserId(function (userId) {
+        syncService.setLastSync(new Date(0), function () {
+            settingsService.clear(function () {
+                tokenService.clearToken(function () {
+                    cryptoService.clearKey(function () {
+                        cryptoService.clearKeyHash(function () {
+                            userService.clearUserIdAndEmail(function () {
+                                loginService.clear(userId, function () {
+                                    folderService.clear(userId, function () {
+                                        chrome.runtime.sendMessage({ command: 'doneLoggingOut', expired: expired });
+                                        callback();
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
 }
 
 function copyToClipboard(text) {

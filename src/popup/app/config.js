@@ -190,7 +190,7 @@
                 params: { animation: null }
             });
     })
-    .run(function ($rootScope, userService, authService, cryptoService, tokenService, $state, constantsService, stateService) {
+    .run(function ($rootScope, userService, cryptoService, tokenService, $state, constantsService, stateService) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
             if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {
                 stateService.purgeState();
@@ -220,9 +220,7 @@
 
                     if (!isAuthenticated || tokenService.isTokenExpired()) {
                         event.preventDefault();
-                        authService.logOut(function () {
-                            $state.go('home');
-                        });
+                        chrome.runtime.sendMessage({ command: 'logout' });
                     }
                 });
             });
