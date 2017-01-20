@@ -44,109 +44,170 @@
             false !== canuf.a && 'input' === canuf.target.tagName.toLowerCase() && (canuf.target.dataset['com.agilebits.onepassword.userEdited'] = 'yes');
         }, true);
 
-        function sasrie(theDoc, oneShotId) {
-            function jihid(noosun, otab) {
-                var asril = noosun[otab];
-                if ('string' == typeof asril) {
-                    return asril;
+        function getPageDetails(theDoc, oneShotId) {
+            // start helpers
+
+            // get the value of a dom element's attribute
+            function getElementAttrValue(el, attrName) {
+                var attrVal = el[attrName];
+                if ('string' == typeof attrVal) {
+                    return attrVal;
                 }
-                asril = noosun.getAttribute(otab);
-                return 'string' == typeof asril ? asril : null;
+                attrVal = el.getAttribute(attrName);
+                return 'string' == typeof attrVal ? attrVal : null;
             }
 
-            function tepe(fige, nihat) {
-                if (-1 === ['text', 'password'].indexOf(nihat.type.toLowerCase()) || !(passwordRegEx.test(fige.value) || passwordRegEx.test(fige.htmlID) || passwordRegEx.test(fige.htmlName) || passwordRegEx.test(fige.placeholder) || passwordRegEx.test(fige['label-tag']) || passwordRegEx.test(fige['label-data']) || passwordRegEx.test(fige['label-aria']))) {
+            // has the element been fake tested?
+            function checkIfFakeTested(field, el) {
+                if (-1 === ['text', 'password'].indexOf(el.type.toLowerCase()) ||
+                        !(passwordRegEx.test(field.value) ||
+                        passwordRegEx.test(field.htmlID) || passwordRegEx.test(field.htmlName) ||
+                        passwordRegEx.test(field.placeholder) || passwordRegEx.test(field['label-tag']) ||
+                        passwordRegEx.test(field['label-data']) || passwordRegEx.test(field['label-aria']))) {
                     return false;
                 }
-                if (!fige.visible) {
+
+                if (!field.visible) {
                     return true;
                 }
-                if ('password' == nihat.type.toLowerCase()) {
+
+                if ('password' == el.type.toLowerCase()) {
                     return false;
                 }
-                var jeko = nihat.type;
-                jesceln(nihat, true);
-                return jeko !== nihat.type;
+
+                var elType = el.type;
+                focusElement(el, true);
+                return elType !== el.type;
             }
 
-            function sumu(bafo) {
-                switch (toLowerString(bafo.type)) {
+            // get the value of a dom element
+            function getElementValue(el) {
+                switch (toLowerString(el.type)) {
                     case 'checkbox':
-                        return bafo.checked ? '✓' : '';
+                        return el.checked ? '✓' : '';
 
                     case 'hidden':
-                        bafo = bafo.value;
-                        if (!bafo || 'number' != typeof bafo.length) {
+                        el = el.value;
+                        if (!el || 'number' != typeof el.length) {
                             return '';
                         }
-                        254 < bafo.length && (bafo = bafo.substr(0, 254) + '...SNIPPED');
-                        return bafo;
+                        254 < el.length && (el = el.substr(0, 254) + '...SNIPPED');
+                        return el;
 
                     default:
-                        return bafo.value;
+                        return el.value;
                 }
             }
 
-            function muri(goofu) {
-                return goofu.options ? (goofu = Array.prototype.slice.call(goofu.options).map(function (luebi) {
-                    var cituen = luebi.text, cituen = cituen ? toLowerString(cituen).replace(/\\s/gm, '').replace(/[~`!@$%^&*()\\-_+=:;'\"\\[\\]|\\\\,<.>\\?]/gm, '') : null;
-                    return [cituen ? cituen : null, luebi.value];
-                }), {
-                    options: goofu
-                }) : null;
+            // get all the options for a "select" element
+            function getSelectElementOptions(el) {
+                if (!el.options) {
+                    return null;
+                }
+
+                var options = Array.prototype.slice.call(el.options).map(function (option) {
+                    var optionText = option.text ?
+                    toLowerString(option.text).replace(/\\s/gm, '').replace(/[~`!@$%^&*()\\-_+=:;'\"\\[\\]|\\\\,<.>\\?]/gm, '') :
+                    null;
+
+                    return [optionText ? optionText : null, option.value];
+                })
+
+                return {
+                    options: options
+                };
             }
 
-            function cobu(mickuf) {
-                var rana;
-                for (mickuf = mickuf.parentElement || mickuf.parentNode; mickuf && 'td' != toLowerString(mickuf.tagName) ;) {
-                    mickuf = mickuf.parentElement || mickuf.parentNode;
+            // get the top label
+            function getLabelTop(el) {
+                var parent;
+                for (el = el.parentElement || el.parentNode; el && 'td' != toLowerString(el.tagName) ;) {
+                    el = el.parentElement || el.parentNode;
                 }
-                if (!mickuf || void 0 === mickuf) {
+
+                if (!el || void 0 === el) {
                     return null;
                 }
-                rana = mickuf.parentElement || mickuf.parentNode;
-                if ('tr' != rana.tagName.toLowerCase()) {
+
+                parent = el.parentElement || el.parentNode;
+                if ('tr' != parent.tagName.toLowerCase()) {
                     return null;
                 }
-                rana = rana.previousElementSibling;
-                if (!rana || 'tr' != (rana.tagName + '').toLowerCase() || rana.cells && mickuf.cellIndex >= rana.cells.length) {
+
+                parent = parent.previousElementSibling;
+                if (!parent || 'tr' != (parent.tagName + '').toLowerCase() ||
+                    parent.cells && el.cellIndex >= parent.cells.length) {
                     return null;
                 }
-                mickuf = rana.cells[mickuf.cellIndex];
-                mickuf = mickuf.textContent || mickuf.innerText;
-                return mickuf = loopi(mickuf);
+
+                el = parent.cells[el.cellIndex];
+                var elText = el.textContent || el.innerText;
+                return elText = cleanText(elText);
             }
 
-            function kasu(prifue) {
-                var jefu, hage = [];
-                if (prifue.labels && prifue.labels.length && 0 < prifue.labels.length) {
-                    hage = Array.prototype.slice.call(prifue.labels);
+            // get all the tags for a given label
+            function getLabelTag(el) {
+                var docLabel,
+                    theLabels = [];
+
+                if (el.labels && el.labels.length && 0 < el.labels.length) {
+                    theLabels = Array.prototype.slice.call(el.labels);
                 } else {
-                    prifue.id && (hage = hage.concat(Array.prototype.slice.call(queryDoc(theDoc, 'label[for=' + JSON.stringify(prifue.id) + ']'))));
-                    if (prifue.name) {
-                        jefu = queryDoc(theDoc, 'label[for=' + JSON.stringify(prifue.name) + ']');
-                        for (var dilaf = 0; dilaf < jefu.length; dilaf++) {
-                            -1 === hage.indexOf(jefu[dilaf]) && hage.push(jefu[dilaf]);
+                    if (el.id) {
+                        theLabels = theLabels.concat(Array.prototype.slice.call(
+                            queryDoc(theDoc, 'label[for=' + JSON.stringify(el.id) + ']')));
+                    }
+
+                    if (el.name) {
+                        docLabel = queryDoc(theDoc, 'label[for=' + JSON.stringify(el.name) + ']');
+
+                        for (var labelIndex = 0; labelIndex < docLabel.length; labelIndex++) {
+                            if (-1 === theLabels.indexOf(docLabel[labelIndex])) {
+                                theLabels.push(docLabel[labelIndex])
+                            }
                         }
                     }
-                    for (jefu = prifue; jefu && jefu != theDoc; jefu = jefu.parentNode) {
-                        'label' === toLowerString(jefu.tagName) && -1 === hage.indexOf(jefu) && hage.push(jefu);
+
+                    for (var theEl = el; theEl && theEl != theDoc; theEl = theEl.parentNode) {
+                        if ('label' === toLowerString(theEl.tagName) && -1 === theLabels.indexOf(theEl)) {
+                            theLabels.push(theEl);
+                        }
                     }
                 }
-                0 === hage.length && (jefu = prifue.parentNode, 'dd' === jefu.tagName.toLowerCase() && null !== jefu.previousElementSibling && 'dt' === jefu.previousElementSibling.tagName.toLowerCase() && hage.push(jefu.previousElementSibling));
-                return 0 < hage.length ? hage.map(function (noquo) {
-                    return (noquo.textContent || noquo.innerText).replace(/^\\s+/, '').replace(/\\s+$/, '').replace('\\n', '').replace(/\\s{2,}/, ' ');
-                }).join('') : null;
+
+                if (0 === theLabels.length) {
+                    theEl = el.parentNode;
+                    if ('dd' === theEl.tagName.toLowerCase() && null !== theEl.previousElementSibling
+                        && 'dt' === theEl.previousElementSibling.tagName.toLowerCase()) {
+                        theLabels.push(theEl.previousElementSibling);
+                    }
+                }
+
+                if (0 > theLabels.length) {
+                    return null;
+                }
+
+                return theLabels.map(function (l) {
+                    return (l.textContent || l.innerText)
+                        .replace(/^\\s+/, '').replace(/\\s+$/, '').replace('\\n', '').replace(/\\s{2,}/, ' ');
+                }).join('');
             }
 
-            function etit(kisa, puju, lofes, aynem) {
-                void 0 !== aynem && aynem === lofes || null === lofes || void 0 === lofes || (kisa[puju] = lofes);
+            // add property and value to the object if there is a value
+            function addProp(obj, prop, val, d) {
+                if (0 !== d && d === val || null === val || void 0 === val) {
+                    return;
+                }
+
+                obj[prop] = val;
             }
 
+            // lowercase helper
             function toLowerString(s) {
                 return 'string' === typeof s ? s.toLowerCase() : ('' + s).toLowerCase();
             }
 
+            // query the document helper
             function queryDoc(doc, query) {
                 var els = [];
                 try {
@@ -155,139 +216,162 @@
                 return els;
             }
 
+            // end helpers
+
             var theView = theDoc.defaultView ? theDoc.defaultView : window,
                 passwordRegEx = RegExp('((\\\\b|_|-)pin(\\\\b|_|-)|password|passwort|kennwort|(\\\\b|_|-)passe(\\\\b|_|-)|contraseña|senha|密码|adgangskode|hasło|wachtwoord)', 'i');
 
-            var theTitle = Array.prototype.slice.call(queryDoc(theDoc, 'form')).map(function (formEl, elIndex) {
+            // get all the docs
+            var theForms = Array.prototype.slice.call(queryDoc(theDoc, 'form')).map(function (formEl, elIndex) {
                 var op = {},
                     formOpId = '__form__' + elIndex;
 
                 formEl.opid = formOpId;
                 op.opid = formOpId;
-                etit(op, 'htmlName', jihid(formEl, 'name'));
-                etit(op, 'htmlID', jihid(formEl, 'id'));
-                formOpId = jihid(formEl, 'action');
+                addProp(op, 'htmlName', getElementAttrValue(formEl, 'name'));
+                addProp(op, 'htmlID', getElementAttrValue(formEl, 'id'));
+                formOpId = getElementAttrValue(formEl, 'action');
                 formOpId = new URL(formOpId, window.location.href);
-                etit(op, 'htmlAction', formOpId ? formOpId.href : null);
-                etit(op, 'htmlMethod', jihid(formEl, 'method'));
+                addProp(op, 'htmlAction', formOpId ? formOpId.href : null);
+                addProp(op, 'htmlMethod', getElementAttrValue(formEl, 'method'));
 
                 return op;
             });
 
-            var theFields = Array.prototype.slice.call(getFormElements(theDoc)).map(function (tadkak, shoho) {
-                var neref = {}, bosna = '__' + shoho, steyquif = -1 == tadkak.maxLength ? 999 : tadkak.maxLength;
-                if (!steyquif || 'number' === typeof steyquif && isNaN(steyquif)) {
-                    steyquif = 999;
-                }
-                theDoc.elementsByOPID[bosna] = tadkak;
-                tadkak.opid = bosna;
-                neref.opid = bosna;
-                neref.elementNumber = shoho;
-                etit(neref, 'maxLength', Math.min(steyquif, 999), 999);
-                neref.visible = ciquod(tadkak);
-                neref.viewable = blekey(tadkak);
-                etit(neref, 'htmlID', jihid(tadkak, 'id'));
-                etit(neref, 'htmlName', jihid(tadkak, 'name'));
-                etit(neref, 'htmlClass', jihid(tadkak, 'class'));
-                etit(neref, 'tabindex', jihid(tadkak, 'tabindex'));
-                etit(neref, 'title', jihid(tadkak, 'title'));
-                etit(neref, 'userEdited', !!tadkak.dataset['com.agilebits.onepassword.userEdited']);
+            // get all the form fields
+            var theFields = Array.prototype.slice.call(getFormElements(theDoc)).map(function (el, elIndex) {
+                var field = {},
+                    opId = '__' + elIndex,
+                    elMaxLen = -1 == el.maxLength ? 999 : el.maxLength;
 
-                if ('hidden' != toLowerString(tadkak.type)) {
-                    etit(neref, 'label-tag', kasu(tadkak));
-                    etit(neref, 'label-data', jihid(tadkak, 'data-label'));
-                    etit(neref, 'label-aria', jihid(tadkak, 'aria-label'));
-                    etit(neref, 'label-top', cobu(tadkak));
-                    bosna = [];
-                    for (steyquif = tadkak; steyquif && steyquif.nextSibling;) {
-                        steyquif = steyquif.nextSibling;
-                        if (quernaln(steyquif)) {
+                if (!elMaxLen || 'number' === typeof elMaxLen && isNaN(elMaxLen)) {
+                    elMaxLen = 999;
+                }
+
+                theDoc.elementsByOPID[opId] = el;
+                el.opid = opId;
+                field.opid = opId;
+                field.elementNumber = elIndex;
+                addProp(field, 'maxLength', Math.min(elMaxLen, 999), 999);
+                field.visible = isElementVisible(el);
+                field.viewable = isElementViewable(el);
+                addProp(field, 'htmlID', getElementAttrValue(el, 'id'));
+                addProp(field, 'htmlName', getElementAttrValue(el, 'name'));
+                addProp(field, 'htmlClass', getElementAttrValue(el, 'class'));
+                addProp(field, 'tabindex', getElementAttrValue(el, 'tabindex'));
+                addProp(field, 'title', getElementAttrValue(el, 'title'));
+                addProp(field, 'userEdited', !!el.dataset['com.agilebits.onepassword.userEdited']);
+
+                if ('hidden' != toLowerString(el.type)) {
+                    addProp(field, 'label-tag', getLabelTag(el));
+                    addProp(field, 'label-data', getElementAttrValue(el, 'data-label'));
+                    addProp(field, 'label-aria', getElementAttrValue(el, 'aria-label'));
+                    addProp(field, 'label-top', getLabelTop(el));
+                    var labelArr = [];
+                    for (var sib = el; sib && sib.nextSibling;) {
+                        sib = sib.nextSibling;
+                        if (isKnownTag(sib)) {
                             break;
                         }
-                        queka(bosna, steyquif);
+                        checkNodeType(labelArr, sib);
                     }
-                    etit(neref, 'label-right', bosna.join(''));
-                    bosna = [];
-                    bozoum(tadkak, bosna);
-                    bosna = bosna.reverse().join('');
-                    etit(neref, 'label-left', bosna);
-                    etit(neref, 'placeholder', jihid(tadkak, 'placeholder'));
+                    addProp(field, 'label-right', labelArr.join(''));
+                    labelArr = [];
+                    shiftForLeftLabel(el, labelArr);
+                    labelArr = labelArr.reverse().join('');
+                    addProp(field, 'label-left', labelArr);
+                    addProp(field, 'placeholder', getElementAttrValue(el, 'placeholder'));
                 }
 
-                etit(neref, 'rel', jihid(tadkak, 'rel'));
-                etit(neref, 'type', toLowerString(jihid(tadkak, 'type')));
-                etit(neref, 'value', sumu(tadkak));
-                etit(neref, 'checked', tadkak.checked, false);
-                etit(neref, 'autoCompleteType', tadkak.getAttribute('x-autocompletetype') || tadkak.getAttribute('autocompletetype') || tadkak.getAttribute('autocomplete'), 'off');
-                etit(neref, 'disabled', tadkak.disabled);
-                etit(neref, 'readonly', tadkak.b || tadkak.readOnly);
-                etit(neref, 'selectInfo', muri(tadkak));
-                etit(neref, 'aria-hidden', 'true' == tadkak.getAttribute('aria-hidden'), false);
-                etit(neref, 'aria-disabled', 'true' == tadkak.getAttribute('aria-disabled'), false);
-                etit(neref, 'aria-haspopup', 'true' == tadkak.getAttribute('aria-haspopup'), false);
-                etit(neref, 'data-unmasked', tadkak.dataset.unmasked);
-                etit(neref, 'data-stripe', jihid(tadkak, 'data-stripe'));
-                etit(neref, 'onepasswordFieldType', tadkak.dataset.onepasswordFieldType || tadkak.type);
-                etit(neref, 'onepasswordDesignation', tadkak.dataset.onepasswordDesignation);
-                etit(neref, 'onepasswordSignInUrl', tadkak.dataset.onepasswordSignInUrl);
-                etit(neref, 'onepasswordSectionTitle', tadkak.dataset.onepasswordSectionTitle);
-                etit(neref, 'onepasswordSectionFieldKind', tadkak.dataset.onepasswordSectionFieldKind);
-                etit(neref, 'onepasswordSectionFieldTitle', tadkak.dataset.onepasswordSectionFieldTitle);
-                etit(neref, 'onepasswordSectionFieldValue', tadkak.dataset.onepasswordSectionFieldValue);
-                tadkak.form && (neref.form = jihid(tadkak.form, 'opid'));
-                etit(neref, 'fakeTested', tepe(neref, tadkak), false);
+                addProp(field, 'rel', getElementAttrValue(el, 'rel'));
+                addProp(field, 'type', toLowerString(getElementAttrValue(el, 'type')));
+                addProp(field, 'value', getElementValue(el));
+                addProp(field, 'checked', el.checked, false);
+                addProp(field, 'autoCompleteType', el.getAttribute('x-autocompletetype') || el.getAttribute('autocompletetype') || el.getAttribute('autocomplete'), 'off');
+                addProp(field, 'disabled', el.disabled);
+                addProp(field, 'readonly', el.b || el.readOnly);
+                addProp(field, 'selectInfo', getSelectElementOptions(el));
+                addProp(field, 'aria-hidden', 'true' == el.getAttribute('aria-hidden'), false);
+                addProp(field, 'aria-disabled', 'true' == el.getAttribute('aria-disabled'), false);
+                addProp(field, 'aria-haspopup', 'true' == el.getAttribute('aria-haspopup'), false);
+                addProp(field, 'data-unmasked', el.dataset.unmasked);
+                addProp(field, 'data-stripe', getElementAttrValue(el, 'data-stripe'));
+                addProp(field, 'onepasswordFieldType', el.dataset.onepasswordFieldType || el.type);
+                addProp(field, 'onepasswordDesignation', el.dataset.onepasswordDesignation);
+                addProp(field, 'onepasswordSignInUrl', el.dataset.onepasswordSignInUrl);
+                addProp(field, 'onepasswordSectionTitle', el.dataset.onepasswordSectionTitle);
+                addProp(field, 'onepasswordSectionFieldKind', el.dataset.onepasswordSectionFieldKind);
+                addProp(field, 'onepasswordSectionFieldTitle', el.dataset.onepasswordSectionFieldTitle);
+                addProp(field, 'onepasswordSectionFieldValue', el.dataset.onepasswordSectionFieldValue);
 
-                return neref;
+                if (el.form) {
+                    field.form = getElementAttrValue(el.form, 'opid');
+                }
+
+                addProp(field, 'fakeTested', checkIfFakeTested(field, el), false);
+
+                return field;
             });
 
-            theFields.filter(function (hefik) {
-                return hefik.fakeTested;
-            }).forEach(function (kukip) {
-                var cisuf = theDoc.elementsByOPID[kukip.opid];
-                cisuf.getBoundingClientRect();
-                var jeechgan = cisuf.value;
-                !cisuf || cisuf && 'function' !== typeof cisuf.click || cisuf.click();
-                jesceln(cisuf, false);
-                cisuf.dispatchEvent(guna(cisuf, 'keydown'));
-                cisuf.dispatchEvent(guna(cisuf, 'keypress'));
-                cisuf.dispatchEvent(guna(cisuf, 'keyup'));
-                cisuf.value !== jeechgan && (cisuf.value = jeechgan);
-                cisuf.click && cisuf.click();
-                kukip.postFakeTestVisible = ciquod(cisuf);
-                kukip.postFakeTestViewable = blekey(cisuf);
-                kukip.postFakeTestType = cisuf.type;
-                kukip = cisuf.value;
-                var jeechgan = cisuf.ownerDocument.createEvent('HTMLEvents'), jalue = cisuf.ownerDocument.createEvent('HTMLEvents');
-                cisuf.dispatchEvent(guna(cisuf, 'keydown'));
-                cisuf.dispatchEvent(guna(cisuf, 'keypress'));
-                cisuf.dispatchEvent(guna(cisuf, 'keyup'));
-                jalue.initEvent('input', true, true);
-                cisuf.dispatchEvent(jalue);
-                jeechgan.initEvent('change', true, true);
-                cisuf.dispatchEvent(jeechgan);
-                cisuf.blur();
-                cisuf.value !== kukip && (cisuf.value = kukip);
+            // test form fields
+            theFields.filter(function (f) {
+                return f.fakeTested;
+            }).forEach(function (f) {
+                var el = theDoc.elementsByOPID[f.opid];
+                el.getBoundingClientRect();
+
+                var originalValue = el.value;
+                // click it
+                !el || el && 'function' !== typeof el.click || el.click();
+                focusElement(el, false);
+
+                el.dispatchEvent(doEventOnElement(el, 'keydown'));
+                el.dispatchEvent(doEventOnElement(el, 'keypress'));
+                el.dispatchEvent(doEventOnElement(el, 'keyup'));
+
+                el.value !== originalValue && (el.value = originalValue);
+
+                el.click && el.click();
+                f.postFakeTestVisible = isElementVisible(el);
+                f.postFakeTestViewable = isElementViewable(el);
+                f.postFakeTestType = el.type;
+
+                var elValue = el.value;
+
+                var event1 = el.ownerDocument.createEvent('HTMLEvents'),
+                    event2 = el.ownerDocument.createEvent('HTMLEvents');
+                el.dispatchEvent(doEventOnElement(el, 'keydown'));
+                el.dispatchEvent(doEventOnElement(el, 'keypress'));
+                el.dispatchEvent(doEventOnElement(el, 'keyup'));
+                event2.initEvent('input', true, true);
+                el.dispatchEvent(event2);
+                event.initEvent('change', true, true);
+
+                el.dispatchEvent(event);
+                el.blur();
+                el.value !== elValue && (el.value = elValue);
             });
 
+            // build out the page details object. this is the final result
             var pageDetails = {
                 documentUUID: oneShotId,
                 title: theDoc.title,
                 url: theView.location.href,
                 documentUrl: theDoc.location.href,
                 tabUrl: theView.location.href,
-                forms: function (basas) {
-                    var histstap = {};
-                    basas.forEach(function (quavu) {
-                        histstap[quavu.opid] = quavu;
+                forms: function (forms) {
+                    var formObj = {};
+                    forms.forEach(function (f) {
+                        formObj[f.opid] = f;
                     });
-                    return histstap;
-                }(theTitle),
+                    return formObj;
+                }(theForms),
                 fields: theFields,
                 collectedTimestamp: new Date().getTime()
             };
 
             // get proper page title. maybe they are using the special meta tag?
-            theTitle = document.querySelector('[data-onepassword-title]')
+            var theTitle = document.querySelector('[data-onepassword-title]')
             if (theTitle && theTitle.dataset[DISPLAY_TITLE_ATTRIBUE]) {
                 pageDetails.displayTitle = theTitle.dataset.onepasswordTitle;
             }
@@ -295,9 +379,9 @@
             return pageDetails;
         }
 
-        document.elementForOPID = jasu;
+        document.elementForOPID = getElementForOPID;
 
-        function guna(kedol, fonor) {
+        function doEventOnElement(kedol, fonor) {
             var quebo;
             isFirefox ? (quebo = document.createEvent('KeyboardEvent'), quebo.initKeyEvent(fonor, true, false, null, false, false, false, false, 0, 0)) : (quebo = kedol.ownerDocument.createEvent('Events'),
             quebo.initEvent(fonor, true, false), quebo.charCode = 0, quebo.keyCode = 0, quebo.which = 0,
@@ -305,6 +389,7 @@
             return quebo;
         }
 
+        // some useful globals
         window.LOGIN_TITLES = [/^\\W*log\\W*[oi]n\\W*$/i, /log\\W*[oi]n (?:securely|now)/i, /^\\W*sign\\W*[oi]n\\W*$/i, 'continue', 'submit', 'weiter', 'accès', 'вход', 'connexion', 'entrar', 'anmelden', 'accedi', 'valider', '登录', 'लॉग इन करें', 'change password'];
         window.LOGIN_RED_HERRING_TITLES = ['already have an account', 'sign in with'];
         window.REGISTER_TITLES = 'register;sign up;signup;join;create my account;регистрация;inscription;regístrate;cadastre-se;registrieren;registrazione;注册;साइन अप करें'.split(';');
@@ -313,110 +398,151 @@
         window.REMEMBER_ME_TITLES = ['remember me', 'rememberme', 'keep me signed in'];
         window.BACK_TITLES = ['back', 'назад'];
 
-        function loopi(segu) {
-            var bitou = null;
-            segu && (bitou = segu.replace(/^\\s+|\\s+$|\\r?\\n.*$/gm, ''), bitou = 0 < bitou.length ? bitou : null);
-            return bitou;
+        // clean up the text
+        function cleanText(s) {
+            var sVal = null;
+            s && (sVal = s.replace(/^\\s+|\\s+$|\\r?\\n.*$/gm, ''), sVal = 0 < sVal.length ? sVal : null);
+            return sVal;
         }
 
-        function queka(tigap, niela) {
-            var jahe;
-            jahe = '';
-            3 === niela.nodeType ? jahe = niela.nodeValue : 1 === niela.nodeType && (jahe = niela.textContent || niela.innerText);
-            (jahe = loopi(jahe)) && tigap.push(jahe);
+        // check the node type and adjust the array accordingly
+        function checkNodeType(arr, el) {
+            var theText = '';
+            3 === el.nodeType ? theText = el.nodeValue : 1 === el.nodeType && (theText = el.textContent || el.innerText);
+            (theText = cleanText(theText)) && arr.push(theText);
         }
 
-        function quernaln(ukag) {
-            var relu;
-            ukag && void 0 !== ukag ? (relu = 'select option input form textarea button table iframe body head script'.split(' '),
-            ukag ? (ukag = ukag ? (ukag.tagName || '').toLowerCase() : '', relu = relu.constructor == Array ? 0 <= relu.indexOf(ukag) : ukag === relu) : relu = false) : relu = true;
-            return relu;
+        function isKnownTag(el) {
+            if (el && void 0 !== el) {
+                var tags = 'select option input form textarea button table iframe body head script'.split(' ');
+
+                if (el) {
+                    var elTag = el ? (el.tagName || '').toLowerCase() : '';
+                    return tags.constructor == Array ? 0 <= tags.indexOf(elTag) : elTag === tags;
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                return true;
+            }
         }
 
-        function bozoum(edpuk, uday, siru) {
-            var quoto;
-            for (siru || (siru = 0) ; edpuk && edpuk.previousSibling;) {
-                edpuk = edpuk.previousSibling;
-                if (quernaln(edpuk)) {
+        function shiftForLeftLabel(el, arr, steps) {
+            var sib;
+            for (steps || (steps = 0) ; el && el.previousSibling;) {
+                el = el.previousSibling;
+                if (isKnownTag(el)) {
                     return;
                 }
-                queka(uday, edpuk);
+
+                checkNodeType(arr, el);
             }
-            if (edpuk && 0 === uday.length) {
-                for (quoto = null; !quoto;) {
-                    edpuk = edpuk.parentElement || edpuk.parentNode;
-                    if (!edpuk) {
+            if (el && 0 === arr.length) {
+                for (sib = null; !sib;) {
+                    el = el.parentElement || el.parentNode;
+                    if (!el) {
                         return;
                     }
-                    for (quoto = edpuk.previousSibling; quoto && !quernaln(quoto) && quoto.lastChild;) {
-                        quoto = quoto.lastChild;
+                    for (sib = el.previousSibling; sib && !isKnownTag(sib) && sib.lastChild;) {
+                        sib = sib.lastChild;
                     }
                 }
-                quernaln(quoto) || (queka(uday, quoto), 0 === uday.length && bozoum(quoto, uday, siru + 1));
+
+                // base case and recurse
+                isKnownTag(sib) || (checkNodeType(arr, sib), 0 === arr.length && shiftForLeftLabel(sib, arr, steps + 1));
             }
         }
 
-        function ciquod(hieku) {
-            var liji = hieku;
-            hieku = (hieku = hieku.ownerDocument) ? hieku.defaultView : {};
-            for (var teesi; liji && liji !== document;) {
-                teesi = hieku.getComputedStyle ? hieku.getComputedStyle(liji, null) : liji.style;
-                if (!teesi) {
+        // is a dom element visible on screen?
+        function isElementVisible(el) {
+            var theEl = el;
+            el = (el = el.ownerDocument) ? el.defaultView : {};
+
+            // walk the dom tree
+            for (var elStyle; theEl && theEl !== document;) {
+                elStyle = el.getComputedStyle ? el.getComputedStyle(theEl, null) : theEl.style;
+                if (!elStyle) {
                     return true;
                 }
-                if ('none' === teesi.display || 'hidden' == teesi.visibility) {
+
+                if ('none' === elStyle.display || 'hidden' == elStyle.visibility) {
                     return false;
                 }
-                liji = liji.parentNode;
+
+                // walk up
+                theEl = theEl.parentNode;
             }
-            return liji === document;
+
+            return theEl === document;
         }
 
-        function blekey(coufi) {
-            var pudu = coufi.ownerDocument.documentElement, muma = coufi.getBoundingClientRect(), gubuech = pudu.scrollWidth, kosri = pudu.scrollHeight, quophe = muma.left - pudu.clientLeft, pudu = muma.top - pudu.clientTop, temton;
-            if (!ciquod(coufi) || !coufi.offsetParent || 10 > coufi.clientWidth || 10 > coufi.clientHeight) {
+        // is a dom element "viewable" on screen?
+        function isElementViewable(el) {
+            var theDoc = el.ownerDocument.documentElement,
+                rect = el.getBoundingClientRect(),
+                docScrollWidth = theDoc.scrollWidth,
+                kosri = theDoc.scrollHeight,
+                leftOffset = rect.left - theDoc.clientLeft,
+                topOffset = rect.top - theDoc.clientTop,
+                theRect;
+
+            if (!isElementVisible(el) || !el.offsetParent || 10 > el.clientWidth || 10 > el.clientHeight) {
                 return false;
             }
-            var aley = coufi.getClientRects();
-            if (0 === aley.length) {
+
+            var rects = el.getClientRects();
+            if (0 === rects.length) {
                 return false;
             }
-            for (var sehi = 0; sehi < aley.length; sehi++) {
-                if (temton = aley[sehi], temton.left > gubuech || 0 > temton.right) {
+
+            for (var i = 0; i < rects.length; i++) {
+                if (theRect = rects[i], theRect.left > docScrollWidth || 0 > theRect.right) {
                     return false;
                 }
             }
-            if (0 > quophe || quophe > gubuech || 0 > pudu || pudu > kosri) {
+
+            if (0 > leftOffset || leftOffset > docScrollWidth || 0 > topOffset || topOffset > kosri) {
                 return false;
             }
-            for (muma = coufi.ownerDocument.elementFromPoint(quophe + (muma.right > window.innerWidth ? (window.innerWidth - quophe) / 2 : muma.width / 2), pudu + (muma.bottom > window.innerHeight ? (window.innerHeight - pudu) / 2 : muma.height / 2)) ; muma && muma !== coufi && muma !== document;) {
-                if (muma.tagName && 'string' === typeof muma.tagName && 'label' === muma.tagName.toLowerCase() && coufi.labels && 0 < coufi.labels.length) {
-                    return 0 <= Array.prototype.slice.call(coufi.labels).indexOf(muma);
+
+            // walk the tree
+            for (var pointEl = el.ownerDocument.elementFromPoint(leftOffset + (rect.right > window.innerWidth ? (window.innerWidth - leftOffset) / 2 : rect.width / 2), topOffset + (rect.bottom > window.innerHeight ? (window.innerHeight - topOffset) / 2 : rect.height / 2)) ; pointEl && pointEl !== el && pointEl !== document;) {
+                if (pointEl.tagName && 'string' === typeof pointEl.tagName && 'label' === pointEl.tagName.toLowerCase()
+                    && el.labels && 0 < el.labels.length) {
+                    return 0 <= Array.prototype.slice.call(el.labels).indexOf(pointEl);
                 }
-                muma = muma.parentNode;
+
+                // walk up
+                pointEl = pointEl.parentNode;
             }
-            return muma === coufi;
+
+            return pointEl === el;
         }
 
-        function jasu(sebe) {
-            var jutuem;
-            if (void 0 === sebe || null === sebe) {
+        function getElementForOPID(opId) {
+            var theEl;
+            if (void 0 === opId || null === opId) {
                 return null;
             }
+
             try {
-                var paraf = Array.prototype.slice.call(getFormElements(document)), viehi = paraf.filter(function (strukou) {
-                    return strukou.opid == sebe;
+                var formEls = Array.prototype.slice.call(getFormElements(document));
+                var filteredFormEls = formEls.filter(function (el) {
+                    return el.opid == opId;
                 });
-                if (0 < viehi.length) {
-                    jutuem = viehi[0], 1 < viehi.length && console.warn('More than one element found with opid ' + sebe);
+
+                if (0 < filteredFormEls.length) {
+                    theEl = filteredFormEls[0], 1 < filteredFormEls.length && console.warn('More than one element found with opid ' + opId);
                 } else {
-                    var jotun = parseInt(sebe.split('__')[1], 10);
-                    isNaN(jotun) || (jutuem = paraf[jotun]);
+                    var theIndex = parseInt(opId.split('__')[1], 10);
+                    isNaN(theIndex) || (theEl = formEls[theIndex]);
                 }
-            } catch (beynad) {
-                console.error('An unexpected error occurred: ' + beynad);
+            } catch (e) {
+                console.error('An unexpected error occurred: ' + e);
             } finally {
-                return jutuem;
+                return theEl;
             }
         }
 
@@ -429,17 +555,21 @@
             return els;
         }
 
-        function jesceln(calo, noru) {
-            if (noru) {
-                var klebup = calo.value;
-                calo.focus();
-                calo.value !== klebup && (calo.value = klebup);
+        // focus the element and optionally restore its original value
+        function focusElement(el, setVal) {
+            if (setVal) {
+                var initialValue = el.value;
+                el.focus();
+
+                if (el.value !== initialValue) {
+                    el.value = initialValue;
+                }
             } else {
-                calo.focus();
+                el.focus();
             }
         }
 
-        return JSON.stringify(sasrie(document, 'oneshotUUID'));
+        return JSON.stringify(getPageDetails(document, 'oneshotUUID'));
     }
 
     function fill(document, fillScript, undefined) {
