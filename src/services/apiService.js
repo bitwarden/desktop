@@ -1,4 +1,5 @@
 function ApiService(tokenService) {
+    //this.baseUrl = 'http://localhost:4000';
     this.baseUrl = 'https://api.bitwarden.com';
     this.tokenService = tokenService;
 
