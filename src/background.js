@@ -135,7 +135,13 @@ if (chrome.runtime.onInstalled) {
     });
 }
 
+var buildingContextMenu = false;
 function buildContextMenu(callback) {
+    if (buildingContextMenu) {
+        return;
+    }
+    buildingContextMenu = true;
+
     chrome.contextMenus.removeAll(function () {
         chrome.contextMenus.create({
             type: 'normal',
@@ -176,6 +182,7 @@ function buildContextMenu(callback) {
                             contexts: ['all'],
                             title: i18nService.generatePasswordCopied
                         }, function () {
+                            buildingContextMenu = false;
                             if (callback) {
                                 callback();
                             }
@@ -212,8 +219,16 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     refreshBadgeAndMenu();
 });
 
+chrome.windows.onFocusChanged.addListener(function (windowId) {
+    if (!windowId || windowId < 0) {
+        return;
+    }
+
+    refreshBadgeAndMenu();
+});
+
 function refreshBadgeAndMenu() {
-    chrome.tabs.query({ active: true }, function (tabs) {
+    chrome.tabs.query({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }, function (tabs) {
         var tab = null;
         if (tabs.length > 0) {
             tab = tabs[0];
@@ -563,7 +578,13 @@ function loadNoLoginsContextMenuOptions(noLoginsMessage) {
     loadContextMenuOptions(noLoginsMessage, 'noop', null);
 }
 
+var loadingContextMenuOptions = false;
 function loadContextMenuOptions(title, idSuffix, login) {
+    if (loadingContextMenuOptions) {
+        return;
+    }
+    loadingContextMenuOptions = true;
+
     if (!login || (login.password && login.password !== '')) {
         chrome.contextMenus.create({
             type: 'normal',
@@ -593,6 +614,8 @@ function loadContextMenuOptions(title, idSuffix, login) {
             title: title
         });
     }
+
+    loadingContextMenuOptions = false;
 }
 
 // TODO: Fix callback hell by moving to promises
