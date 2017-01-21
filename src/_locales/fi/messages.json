@@ -32,7 +32,7 @@
     "description": "Close"
   },
   "submit": {
-    "message": "Lähetä",
+    "message": "Jatka",
     "description": "Submit"
   },
   "emailAddress": {
@@ -600,7 +600,7 @@
     "description": "Are you sure you want to overwrite the current password?"
   },
   "lost2FAApp": {
-    "message": "Ei pääsyä tunnistautumispalveluun?",
+    "message": "Etkö pääse tunnistautumispalveluun?",
     "description": "Lost authenticator app?"
   },
   "credits": {
