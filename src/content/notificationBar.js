@@ -50,39 +50,63 @@
             }
 
             if (form) {
-                forms[i].formElement = form;
-                formData.push(forms[i]);
+                var formDataObj = {
+                    data: forms[i],
+                    formEl: form,
+                    usernameEl: null,
+                    passwordEl: null
+                };
+                locateFields(formDataObj);
+                formData.push(formDataObj);
                 form.addEventListener('submit', formSubmitted, false);
             }
         }
     }
 
+    function locateFields(formDataObj) {
+        var passwordId = formDataObj.data.password ? formDataObj.data.password.htmlID : null,
+            usernameId = formDataObj.data.username ? formDataObj.data.username.htmlID : null,
+            passwordName = formDataObj.data.password ? formDataObj.data.password.htmlName : null,
+            usernameName = formDataObj.data.username ? formDataObj.data.username.htmlName : null,
+            inputs = document.getElementsByTagName('input');
+
+        if (passwordId && passwordId !== '') {
+            formDataObj.passwordEl = formDataObj.formEl.querySelector('#' + passwordId);
+        }
+        if (!formDataObj.passwordEl && passwordName !== '') {
+            formDataObj.passwordEl = formDataObj.formEl.querySelector('input[name="' + passwordName + '"]');
+        }
+        if (!formDataObj.passwordEl && formDataObj.passwordEl) {
+            formDataObj.passwordEl = inputs[formDataObj.data.password.elementNumber];
+            if (formDataObj.passwordEl && formDataObj.passwordEl.type !== 'password') {
+                formDataObj.passwordEl = null;
+            }
+        }
+        if (!formDataObj.passwordEl) {
+            formDataObj.passwordEl = formDataObj.formEl.querySelector('input[type="password"]');
+        }
+
+        if (usernameId && usernameId !== '') {
+            formDataObj.usernameEl = formDataObj.formEl.querySelector('#' + usernameId);
+        }
+        if (!formDataObj.usernameEl && usernameName !== '') {
+            formDataObj.usernameEl = formDataObj.formEl.querySelector('input[name="' + usernameName + '"]');
+        }
+        if (!formDataObj.usernameEl && formDataObj.data.username) {
+            formDataObj.usernameEl = inputs[formDataObj.data.username.elementNumber];
+        }
+    }
+
     function formSubmitted(e) {
         for (var i = 0; i < formData.length; i++) {
-            if (formData[i].formElement === e.target) {
-                var password = null,
-                    username = null,
-                    passwordId = formData[i].password ? formData[i].password.htmlID : null,
-                    usernameId = formData[i].username ? formData[i].username.htmlID : null,
-                    inputs = document.getElementsByTagName('input');
-
-                if (passwordId && passwordId !== '') {
-                    password = document.getElementById(passwordId);
-                }
-                else if (formData[i].password) {
-                    password = inputs[formData[i].password.elementNumber];
-                }
-
-                if (usernameId && usernameId !== '') {
-                    username = document.getElementById(usernameId);
-                }
-                else if (formData[i].username) {
-                    username = inputs[formData[i].username.elementNumber];
+            if (formData[i].formEl === e.target) {
+                if (!formData[i].usernameEl || !formData[i].passwordEl) {
+                    break;
                 }
 
                 var login = {
-                    username: username.value,
-                    password: password.value,
+                    username: formData[i].usernameEl.value,
+                    password: formData[i].passwordEl.value,
                     url: document.URL
                 };
 
