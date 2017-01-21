@@ -345,9 +345,9 @@
                 el.dispatchEvent(doEventOnElement(el, 'keyup'));
                 event2.initEvent('input', true, true);
                 el.dispatchEvent(event2);
-                event.initEvent('change', true, true);
+                event1.initEvent('change', true, true);
+                el.dispatchEvent(event1);
 
-                el.dispatchEvent(event);
                 el.blur();
                 el.value !== elValue && (el.value = elValue);
             });
