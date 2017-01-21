@@ -71,6 +71,7 @@
     "contextMenus",
     "storage",
     "unlimitedStorage",
+    "clipboardWrite",
     "http://*/*",
     "https://*/*"
   ],

@@ -30,7 +30,8 @@ chrome.commands.onCommand.addListener(function (command) {
 var loadMenuRan = false,
     loginToAutoFill = null,
     pageDetailsToAutoFill = [],
-    autofillTimeout = null;
+    autofillTimeout = null,
+    menuOptionsLoaded = [];
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.command === 'loggedOut' || msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
@@ -144,6 +145,15 @@ function buildContextMenu(callback) {
                 contexts: ['all'],
                 title: i18nService.autoFill
             }, function () {
+                if (utilsService.isFirefox()) {
+                    // Firefox does not support writing to the clipboard from background
+                    buildingContextMenu = false;
+                    if (callback) {
+                        callback();
+                    }
+                    return;
+                }
+
                 chrome.contextMenus.create({
                     type: 'normal',
                     id: 'copy-username',
@@ -208,7 +218,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 });
 
 chrome.windows.onFocusChanged.addListener(function (windowId) {
-    if (!windowId || windowId < 0) {
+    if (windowId === null || windowId < 0) {
         return;
     }
 
@@ -245,10 +255,12 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
 
+    menuOptionsLoaded = [];
     loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
         sortLogins(logins);
-        for (var i = 0; i < logins.length; i++) {
-            if (loadContextMenuOptions) {
+
+        if (loadContextMenuOptions) {
+            for (var i = 0; i < logins.length; i++) {
                 loadLoginContextMenuOptions(logins[i]);
             }
         }
@@ -566,12 +578,11 @@ function loadNoLoginsContextMenuOptions(noLoginsMessage) {
     loadContextMenuOptions(noLoginsMessage, 'noop', null);
 }
 
-var loadingContextMenuOptions = false;
 function loadContextMenuOptions(title, idSuffix, login) {
-    if (loadingContextMenuOptions) {
+    if (menuOptionsLoaded.indexOf(idSuffix) > -1) {
         return;
     }
-    loadingContextMenuOptions = true;
+    menuOptionsLoaded.push(idSuffix);
 
     if (!login || (login.password && login.password !== '')) {
         chrome.contextMenus.create({
@@ -581,6 +592,11 @@ function loadContextMenuOptions(title, idSuffix, login) {
             contexts: ['all'],
             title: title
         });
+    }
+
+    if (utilsService.isFirefox()) {
+        // Firefox does not support writing to the clipboard from background
+        return;
     }
 
     if (!login || (login.username && login.username !== '')) {
@@ -602,8 +618,6 @@ function loadContextMenuOptions(title, idSuffix, login) {
             title: title
         });
     }
-
-    loadingContextMenuOptions = false;
 }
 
 function copyToClipboard(text) {
