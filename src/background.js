@@ -28,39 +28,23 @@ chrome.commands.onCommand.addListener(function (command) {
     }
 });
 
-var loadMenuRan = false,
-    loginToAutoFill = null,
+var loginToAutoFill = null,
     pageDetailsToAutoFill = [],
     autofillTimeout = null,
     menuOptionsLoaded = [];
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
-        if (loadMenuRan) {
-            return;
-        }
-        loadMenuRan = true;
-
         setIcon();
         refreshBadgeAndMenu();
     }
     else if (msg.command === 'logout') {
         logout(msg.expired, function () {
-            if (loadMenuRan) {
-                return;
-            }
-            loadMenuRan = true;
-
             setIcon();
             refreshBadgeAndMenu();
         });
     }
     else if (msg.command === 'syncCompleted' && msg.successfully) {
-        if (loadMenuRan) {
-            return;
-        }
-        loadMenuRan = true;
-
         setTimeout(refreshBadgeAndMenu, 2000);
     }
     else if (msg.command === 'bgOpenOverlayPopup') {
@@ -88,7 +72,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         saveAddLogin(sender.tab);
     }
     else if (msg.command === 'collectPageDetailsResponse') {
-        // messageCurrentTab('openNotificationBar', { type: 'add', typeData: null });
         if (msg.contentScript) {
             var forms = autofillService.getFormsWithPasswordFields(msg.details);
             messageTab(msg.tabId, 'pageDetails', { details: msg.details, forms: forms });
@@ -250,7 +233,7 @@ function refreshBadgeAndMenu() {
 
         buildContextMenu(function () {
             loadMenuAndUpdateBadge(tab.url, tab.id, true);
-            onUpdatedRan = onReplacedRan = loadMenuRan = false;
+            onUpdatedRan = onReplacedRan = false;
         });
     });
 }
