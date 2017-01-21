@@ -28,8 +28,8 @@
         <div class="list">
             <div class="list-grouped" ng-repeat="folder in vaultFolders | orderBy: folderSort" ng-show="vaultFolderLogins.length">
                 <div class="list-grouped-header">
-                    <i class="fa fa-folder-open"></i> {{folder.name}}
                     <small>{{vaultFolderLogins.length}}</small>
+                    <i class="fa fa-folder-open"></i> {{folder.name}}
                 </div>
                 <a href="javascript:void(0)" ng-click="viewLogin(login)"
                    class="list-grouped-item condensed" title="{{i18n.edit}} {{login.name}}"
