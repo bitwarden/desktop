@@ -342,7 +342,7 @@ function initApiService() {
             self.tokenService.getToken(function (accessToken) {
                 // handle transferring from old auth bearer
                 if (authBearer && !accessToken) {
-                    postConnectToken({
+                    postConnectToken(self, {
                         grant_type: 'password',
                         oldAuthBearer: authBearer,
                         scope: 'api offline_access',
@@ -364,7 +364,7 @@ function initApiService() {
                             return;
                         }
 
-                        postConnectToken({
+                        postConnectToken(self, {
                             grant_type: 'refresh_token',
                             client_id: 'browser',
                             refresh_token: refreshToken
@@ -390,7 +390,7 @@ function initApiService() {
         return deferred.promise
     }
 
-    function postConnectToken(data, success, error) {
+    function postConnectToken(self, data, success, error) {
         $.ajax({
             type: 'POST',
             url: self.baseUrl + '/connect/token',
