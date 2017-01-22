@@ -338,41 +338,71 @@ function initApiService() {
 
     function handleTokenState(self) {
         var deferred = Q.defer();
-        self.tokenService.getToken(function (accessToken) {
-            if (self.tokenService.tokenNeedsRefresh()) {
-                self.tokenService.getRefreshToken(function (refreshToken) {
-                    if (!refreshToken || refreshToken === '') {
-                        deferred.reject();
-                        return;
-                    }
-
-                    $.ajax({
-                        type: 'POST',
-                        url: self.baseUrl + '/connect/token',
-                        data: {
-                            grant_type: 'refresh_token',
-                            client_id: 'browser',
-                            refresh_token: refreshToken
-                        },
-                        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-                        dataType: 'json',
-                        success: function (response) {
-                            var token = new IdentityTokenResponse(response);
+        self.tokenService.getAuthBearer(function (authBearer) {
+            self.tokenService.getToken(function (accessToken) {
+                // handle transferring from old auth bearer
+                if (authBearer && !accessToken) {
+                    postConnectToken({
+                        grant_type: 'password',
+                        oldAuthBearer: authBearer,
+                        scope: 'api offline_access',
+                        client_id: 'browser'
+                    }, function (token) {
+                        self.tokenService.clearAuthBearer(function () {
                             tokenService.setTokens(token.accessToken, token.refreshToken, function () {
                                 deferred.resolve(token.accessToken);
                             });
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            deferred.reject(jqXHR);
-                        }
+                        });
+                    }, function (jqXHR) {
+                        deferred.reject(jqXHR);
                     });
-                });
-            }
-            else {
-                deferred.resolve(accessToken);
-            }
+                } // handle token refresh
+                else if (self.tokenService.tokenNeedsRefresh()) {
+                    self.tokenService.getRefreshToken(function (refreshToken) {
+                        if (!refreshToken || refreshToken === '') {
+                            deferred.reject();
+                            return;
+                        }
+
+                        postConnectToken({
+                            grant_type: 'refresh_token',
+                            client_id: 'browser',
+                            refresh_token: refreshToken
+                        }, function (token) {
+                            tokenService.setTokens(token.accessToken, token.refreshToken, function () {
+                                deferred.resolve(token.accessToken);
+                            });
+                        }, function (jqXHR) {
+                            deferred.reject(jqXHR);
+                        });
+                    });
+                }
+                else {
+                    if (authBearer) {
+                        self.tokenService.clearAuthBearer(function () { });
+                    }
+
+                    deferred.resolve(accessToken);
+                }
+            });
         });
 
         return deferred.promise
+    }
+
+    function postConnectToken(data, success, error) {
+        $.ajax({
+            type: 'POST',
+            url: self.baseUrl + '/connect/token',
+            data: data,
+            contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+            dataType: 'json',
+            success: function (response) {
+                success(new IdentityTokenResponse(response));
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                error(jqXHR);
+            }
+        });
     }
 };
