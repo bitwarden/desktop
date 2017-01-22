@@ -5,7 +5,7 @@ var constantsService = new ConstantsService();
 var utilsService = new UtilsService();
 var cryptoService = new CryptoService(constantsService);
 var tokenService = new TokenService();
-var apiService = new ApiService(tokenService);
+var apiService = new ApiService(tokenService, logout);
 var userService = new UserService(tokenService, apiService, cryptoService);
 var settingsService = new SettingsService(userService);
 var loginService = new LoginService(cryptoService, userService, apiService, settingsService);
@@ -39,10 +39,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         refreshBadgeAndMenu();
     }
     else if (msg.command === 'logout') {
-        logout(msg.expired, function () {
-            setIcon();
-            refreshBadgeAndMenu();
-        });
+        logout(msg.expired, function () { });
     }
     else if (msg.command === 'syncCompleted' && msg.successfully) {
         setTimeout(refreshBadgeAndMenu, 2000);
@@ -627,6 +624,8 @@ function logout(expired, callback) {
                                 loginService.clear(userId, function () {
                                     folderService.clear(userId, function () {
                                         chrome.runtime.sendMessage({ command: 'doneLoggingOut', expired: expired });
+                                        setIcon();
+                                        refreshBadgeAndMenu();
                                         callback();
                                     });
                                 });

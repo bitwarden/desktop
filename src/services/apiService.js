@@ -1,7 +1,8 @@
-function ApiService(tokenService) {
+function ApiService(tokenService, logoutCallback) {
     //this.baseUrl = 'http://localhost:4000';
     this.baseUrl = 'https://api.bitwarden.com';
     this.tokenService = tokenService;
+    this.logoutCallback = logoutCallback;
 
     initApiService();
 };
@@ -46,11 +47,11 @@ function initApiService() {
                     success(response);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -65,11 +66,11 @@ function initApiService() {
                     success(new ProfileResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -85,7 +86,7 @@ function initApiService() {
                 success();
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                handleError(error, jqXHR);
+                handleError(error, jqXHR, false, self);
             }
         });
     };
@@ -102,7 +103,7 @@ function initApiService() {
                 success();
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                handleError(error, jqXHR);
+                handleError(error, jqXHR, false, self);
             }
         });
     };
@@ -120,11 +121,11 @@ function initApiService() {
                     success(new DomainsResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -141,11 +142,11 @@ function initApiService() {
                     success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -162,11 +163,11 @@ function initApiService() {
                     success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -183,11 +184,11 @@ function initApiService() {
                     success(new LoginResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -204,12 +205,12 @@ function initApiService() {
                     success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
-    });
+            handleError(error, jqXHR, true, self);
+        });
     };
 
     ApiService.prototype.postFolder = function (folderRequest, success, error) {
@@ -225,11 +226,11 @@ function initApiService() {
                     success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -246,11 +247,11 @@ function initApiService() {
                     success(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -267,11 +268,11 @@ function initApiService() {
                     success(new CipherResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -291,11 +292,11 @@ function initApiService() {
                     success(new ListResponse(data));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -310,19 +311,25 @@ function initApiService() {
                     success();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR);
+                    handleError(error, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true);
+            handleError(error, jqXHR, true, self);
         });
     };
 
     // Helpers
 
-    function handleError(errorCallback, jqXHR, tokenError) {
+    function handleError(errorCallback, jqXHR, tokenError, self) {
         if (tokenError || jqXHR.status === 401 || jqXHR.status === 403) {
-            chrome.runtime.sendMessage({ command: 'logout', expired: true });
+            if (self && self.logoutCallback) {
+                self.logoutCallback(true, function () { })
+            }
+            else {
+                chrome.runtime.sendMessage({ command: 'logout', expired: true });
+            }
+
             return;
         }
 
@@ -334,6 +341,11 @@ function initApiService() {
         self.tokenService.getToken(function (accessToken) {
             if (self.tokenService.tokenNeedsRefresh()) {
                 self.tokenService.getRefreshToken(function (refreshToken) {
+                    if (!refreshToken || refreshToken === '') {
+                        deferred.reject();
+                        return;
+                    }
+
                     $.ajax({
                         type: 'POST',
                         url: self.baseUrl + '/connect/token',
