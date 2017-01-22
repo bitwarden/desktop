@@ -345,6 +345,8 @@ function initApiService() {
                     postConnectToken(self, {
                         grant_type: 'password',
                         oldAuthBearer: authBearer,
+                        username: 'abcdefgh', // has to be something
+                        password: 'abcdefgh', // has to be something
                         scope: 'api offline_access',
                         client_id: 'browser'
                     }, function (token) {

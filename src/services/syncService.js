@@ -34,14 +34,13 @@ function initSyncService() {
                         return;
                     }
 
-                    var promises = [];
-                    promises.push(syncVault(userId));
-                    promises.push(syncSettings(userId));
-
-                    Q.all(promises).then(function () {
-                        self.setLastSync(now, function () {
+                    syncVault(userId).then(function () {
+                        syncSettings(userId).then(function () {
                             self.syncCompleted(true);
                             callback(true);
+                        }, function () {
+                            self.syncCompleted(false);
+                            callback(false);
                         });
                     }, function () {
                         self.syncCompleted(false);
