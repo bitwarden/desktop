@@ -35,12 +35,11 @@ function initSyncService() {
                     }
 
                     syncVault(userId).then(function () {
-                        syncSettings(userId).then(function () {
+                        return syncSettings(userId);
+                    }).then(function () {
+                        self.setLastSync(new Date(), function () {
                             self.syncCompleted(true);
                             callback(true);
-                        }, function () {
-                            self.syncCompleted(false);
-                            callback(false);
                         });
                     }, function () {
                         self.syncCompleted(false);
