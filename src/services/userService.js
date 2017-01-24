@@ -89,14 +89,16 @@ function initUserService() {
 
         var self = this;
         self.tokenService.getToken(function (token) {
-            if (!token) {
-                callback(false);
-            }
-            else {
-                self.getUserId(function (userId) {
-                    callback(userId !== null);
-                });
-            }
+            self.tokenService.getAuthBearer(function (authBearer) {
+                if (!token && !authBearer) {
+                    callback(false);
+                }
+                else {
+                    self.getUserId(function (userId) {
+                        callback(userId !== null);
+                    });
+                }
+            });
         });
     };
 };
