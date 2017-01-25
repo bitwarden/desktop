@@ -12,10 +12,10 @@ var FolderRequest = function (folder) {
     this.name = folder.name ? folder.name.encryptedString : null;
 };
 
-var TokenRequest = function (email, masterPasswordHash, code, device) {
+var TokenRequest = function (email, masterPasswordHash, token, device) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
-    this.code = code;
+    this.token = token;
     this.provider = 'Authenticator';
     this.device = null;
     if (device) {
@@ -38,8 +38,8 @@ var TokenRequest = function (email, masterPasswordHash, code, device) {
             obj.devicePushToken = this.device.pushToken;
         }
 
-        if (this.code && this.provider) {
-            obj.twoFactorCode = this.code;
+        if (this.token && this.provider) {
+            obj.twoFactorToken = this.token;
             obj.twoFactorProvider = this.provider;
         }
 

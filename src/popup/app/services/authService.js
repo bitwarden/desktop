@@ -5,12 +5,12 @@
         folderService, settingsService, syncService) {
         var _service = {};
 
-        _service.logIn = function (email, masterPassword, twoFactorCode) {
+        _service.logIn = function (email, masterPassword, twoFactorToken) {
             email = email.toLowerCase();
             var key = cryptoService.makeKey(masterPassword, email);
             var deferred = $q.defer();
             cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
-                var request = new TokenRequest(email, hashedPassword, twoFactorCode);
+                var request = new TokenRequest(email, hashedPassword, twoFactorToken);
 
                 apiService.postIdentityToken(request, function (response) {
                     // success
