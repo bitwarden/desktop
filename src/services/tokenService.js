@@ -221,13 +221,21 @@ function initTokenService() {
     TokenService.prototype.getEmail = function () {
         var decoded = this.decodeToken();
 
-        var email = decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'];
-
-        if (typeof email === 'undefined') {
+        if (typeof decoded.email === 'undefined') {
             throw 'No email found';
         }
 
-        return email;
+        return decoded.email;
+    };
+
+    TokenService.prototype.getName = function () {
+        var decoded = this.decodeToken();
+
+        if (typeof decoded.name === 'undefined') {
+            throw 'No name found';
+        }
+
+        return decoded.name;
     };
 
     function urlBase64Decode(str) {
