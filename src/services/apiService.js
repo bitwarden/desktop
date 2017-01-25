@@ -1,6 +1,6 @@
 function ApiService(tokenService, logoutCallback) {
-    this.baseUrl = 'http://localhost:4000';
-    //this.baseUrl = 'https://api.bitwarden.com';
+    //this.baseUrl = 'http://localhost:4000';
+    this.baseUrl = 'https://api.bitwarden.com';
     this.tokenService = tokenService;
     this.logoutCallback = logoutCallback;
 
@@ -23,8 +23,8 @@ function initApiService() {
                 success(new IdentityTokenResponse(response));
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                if (jqXHR.responseJSON && jqXHR.responseJSON.TwoFactorRequired &&
-                    jqXHR.responseJSON.TwoFactorRequired === true) {
+                if (jqXHR.responseJSON && jqXHR.responseJSON.TwoFactorProviders &&
+                    jqXHR.responseJSON.TwoFactorProviders.length) {
                     successWithTwoFactor();
                 }
                 else {
