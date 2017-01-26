@@ -15,7 +15,7 @@ angular
         $scope.loaded = false;
 
         $scope.$on('$viewContentLoaded', function () {
-            $timeout(loadVault, 0);
+            $timeout(loadVault, 100);
         });
 
         function loadVault() {
