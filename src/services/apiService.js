@@ -1,8 +1,10 @@
-function ApiService(tokenService, logoutCallback) {
+function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
     //this.baseUrl = 'http://localhost:4000';
     this.baseUrl = 'https://api.bitwarden.com';
     this.tokenService = tokenService;
     this.logoutCallback = logoutCallback;
+    this.appIdService = appIdService;
+    this.utilsService = utilsService;
 
     initApiService();
 };
@@ -342,21 +344,26 @@ function initApiService() {
             self.tokenService.getToken(function (accessToken) {
                 // handle transferring from old auth bearer
                 if (authBearer && !accessToken) {
-                    postConnectToken(self, {
-                        grant_type: 'password',
-                        oldAuthBearer: authBearer,
-                        username: 'abcdefgh', // has to be something
-                        password: 'abcdefgh', // has to be something
-                        scope: 'api offline_access',
-                        client_id: 'browser'
-                    }, function (token) {
-                        self.tokenService.clearAuthBearer(function () {
-                            tokenService.setTokens(token.accessToken, token.refreshToken, function () {
-                                deferred.resolve(token.accessToken);
+                    self.appIdService.getAppId(function (appId) {
+                        postConnectToken(self, {
+                            grant_type: 'password',
+                            oldAuthBearer: authBearer,
+                            username: 'abcdefgh', // has to be something
+                            password: 'abcdefgh', // has to be something
+                            scope: 'api offline_access',
+                            client_id: 'browser',
+                            deviceIdentifier: appId,
+                            deviceType: self.utilsService.getDeviceType(),
+                            deviceName: self.utilsService.getBrowser()
+                        }, function (token) {
+                            self.tokenService.clearAuthBearer(function () {
+                                tokenService.setTokens(token.accessToken, token.refreshToken, function () {
+                                    deferred.resolve(token.accessToken);
+                                });
                             });
+                        }, function (jqXHR) {
+                            deferred.reject(jqXHR);
                         });
-                    }, function (jqXHR) {
-                        deferred.reject(jqXHR);
                     });
                 } // handle token refresh
                 else if (self.tokenService.tokenNeedsRefresh()) {

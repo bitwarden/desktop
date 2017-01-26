@@ -5,7 +5,8 @@ var constantsService = new ConstantsService();
 var utilsService = new UtilsService();
 var cryptoService = new CryptoService(constantsService);
 var tokenService = new TokenService();
-var apiService = new ApiService(tokenService, logout);
+var appIdService = new AppIdService();
+var apiService = new ApiService(tokenService, appIdService, utilsService, logout);
 var userService = new UserService(tokenService, apiService, cryptoService);
 var settingsService = new SettingsService(userService);
 var loginService = new LoginService(cryptoService, userService, apiService, settingsService);
@@ -13,7 +14,6 @@ var folderService = new FolderService(cryptoService, userService, apiService);
 var syncService = new SyncService(loginService, folderService, userService, apiService, settingsService);
 var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
-var appIdService = new AppIdService();
 
 chrome.commands.onCommand.addListener(function (command) {
     if (command === 'generate_password') {
