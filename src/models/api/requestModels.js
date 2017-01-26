@@ -16,10 +16,10 @@ var TokenRequest = function (email, masterPasswordHash, token, device) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
     this.token = token;
-    this.provider = 'Authenticator';
+    this.provider = 0; // authenticator
     this.device = null;
     if (device) {
-        this.device = new DeviceRequest(device);
+        this.device = device;
     }
 
     this.toIdentityToken = function () {
@@ -62,9 +62,9 @@ var DeviceTokenRequest = function () {
     this.pushToken = null;
 };
 
-var DeviceRequest = function () {
-    this.type = null;
-    this.name = null;
-    this.identifier = null;
+var DeviceRequest = function (appId, utilsService) {
+    this.type = utilsService.getDeviceType();
+    this.name = utilsService.getBrowser();
+    this.identifier = appId;
     this.pushToken = null;
 };

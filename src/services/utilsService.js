@@ -64,6 +64,23 @@ function initUtilsService() {
         return this.analyticsIdCache;
     }
 
+    UtilsService.prototype.getDeviceType = function () {
+        if (this.isChrome()) {
+            return 2;
+        }
+        else if (this.isFirefox()) {
+            return 3;
+        }
+        else if (this.isEdge()) {
+            return 5;
+        }
+        else if (this.isOpera()) {
+            return 4;
+        }
+
+        return -1;
+    }
+
     UtilsService.prototype.initListSectionItemListeners = function (doc, angular) {
         if (!doc) {
             throw 'doc parameter required';
