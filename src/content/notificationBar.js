@@ -13,8 +13,7 @@
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
-            closeBar(false);
-            openBar(msg.data.type, msg.data.typeData);
+            closeExistingAndOpenBar(msg.data.type, msg.data.typeData);
             sendResponse();
             return true;
         }
@@ -121,9 +120,8 @@
         }
     }
 
-    function openBar(type, typeData) {
+    function closeExistingAndOpenBar(type, typeData) {
         var barPage = 'notification/bar.html';
-        barType = type;
         switch (type) {
             case 'info':
                 barPage = barPage + '?info=' + typeData.text;
@@ -144,6 +142,18 @@
                 break;
         }
 
+        var frame = document.getElementById('bit-notification-bar-iframe');
+        if (frame && frame.src.indexOf(barPage) >= 0) {
+            return;
+        }
+
+        closeBar(false);
+        openBar(type, barPage);
+    }
+
+    function openBar(type, barPage) {
+        barType = type;
+
         if (!document.body) {
             return;
         }
@@ -151,6 +161,7 @@
         var iframe = document.createElement('iframe');
         iframe.src = chrome.extension.getURL(barPage);
         iframe.style.cssText = 'height: 42px; width: 100%; border: 0;';
+        iframe.id = 'bit-notification-bar-iframe';
 
         var frameDiv = document.createElement('div');
         frameDiv.id = 'bit-notification-bar';

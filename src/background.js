@@ -185,7 +185,6 @@ function buildContextMenu(callback) {
 }
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {
-    checkLoginsToAdd();
     refreshBadgeAndMenu();
 });
 
@@ -204,6 +203,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (onUpdatedRan) {
         return;
     }
+    console.log('onUpdated');
     onUpdatedRan = true;
     checkLoginsToAdd();
     refreshBadgeAndMenu();
@@ -350,7 +350,7 @@ function messageCurrentTab(command, data) {
     });
 }
 
-function messageTab(tabId, command, data) {
+function messageTab(tabId, command, data, callback) {
     if (!tabId) {
         return;
     }
@@ -363,11 +363,16 @@ function messageTab(tabId, command, data) {
         obj['data'] = data;
     }
 
-    chrome.tabs.sendMessage(tabId, obj);
+    chrome.tabs.sendMessage(tabId, obj, function () {
+        if (callback) {
+            callback();
+        }
+    });
 }
 
 function collectPageDetailsForContentScript(tab) {
-    chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tabId: tab.id, contentScript: true }, function () { });
+    chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tabId: tab.id, contentScript: true }, function () {
+    });
 }
 
 function addLogin(login, tab) {
@@ -393,6 +398,7 @@ function addLogin(login, tab) {
                 username: login.username,
                 password: login.password,
                 name: loginDomain,
+                domain: loginDomain,
                 uri: login.url,
                 tabId: tab.id,
                 expires: new Date((new Date()).getTime() + 30 * 60000) // 30 minutes
@@ -406,7 +412,7 @@ cleanupLoginsToAdd();
 setInterval(cleanupLoginsToAdd, 2 * 60 * 1000); // check every 2 minutes
 function cleanupLoginsToAdd() {
     var now = new Date();
-    for (var i = loginsToAdd.length - 1; i >= 0 ; i--) {
+    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
         if (loginsToAdd[i].expires < now) {
             loginsToAdd.splice(i, 1);
         }
@@ -414,7 +420,7 @@ function cleanupLoginsToAdd() {
 }
 
 function removeAddLogin(tab) {
-    for (var i = loginsToAdd.length - 1; i >= 0 ; i--) {
+    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
         if (loginsToAdd[i].tabId === tab.id) {
             loginsToAdd.splice(i, 1);
         }
@@ -422,35 +428,42 @@ function removeAddLogin(tab) {
 }
 
 function saveAddLogin(tab) {
-    for (var i = loginsToAdd.length - 1; i >= 0 ; i--) {
+    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
         if (loginsToAdd[i].tabId === tab.id) {
             var loginToAdd = loginsToAdd[i];
-            loginsToAdd.splice(i, 1);
-            loginService.encrypt({
-                id: null,
-                folderId: null,
-                favorite: false,
-                name: loginToAdd.name,
-                uri: loginToAdd.uri,
-                username: loginToAdd.username,
-                password: loginToAdd.password,
-                notes: null
-            }).then(function (loginModel) {
-                var login = new Login(loginModel, true);
-                loginService.saveWithServer(login).then(function (login) {
-                    ga('send', {
-                        hitType: 'event',
-                        eventAction: 'Added Login from Notification Bar'
+
+            var tabDomain = tldjs.getDomain(tab.url);
+            if (tabDomain && tabDomain === loginToAdd.domain) {
+                loginsToAdd.splice(i, 1);
+                loginService.encrypt({
+                    id: null,
+                    folderId: null,
+                    favorite: false,
+                    name: loginToAdd.name,
+                    uri: loginToAdd.uri,
+                    username: loginToAdd.username,
+                    password: loginToAdd.password,
+                    notes: null
+                }).then(function (loginModel) {
+                    var login = new Login(loginModel, true);
+                    loginService.saveWithServer(login).then(function (login) {
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'Added Login from Notification Bar'
+                        });
                     });
                 });
-            });
-            messageTab(tab.id, 'closeNotificationBar');
+                messageTab(tab.id, 'closeNotificationBar');
+            }
         }
     }
 }
 
-function checkLoginsToAdd(tab) {
+function checkLoginsToAdd(tab, callback) {
     if (!loginsToAdd.length) {
+        if (callback) {
+            callback();
+        }
         return;
     }
 
@@ -468,18 +481,29 @@ function checkLoginsToAdd(tab) {
 
     function check() {
         if (!tab) {
+            if (callback) {
+                callback();
+            }
             return;
         }
 
         var tabDomain = tldjs.getDomain(tab.url);
         if (!tabDomain) {
+            if (callback) {
+                callback();
+            }
             return;
         }
 
         for (var i = 0; i < loginsToAdd.length; i++) {
-            // loginsToAdd[x].name is the domain here
-            if (loginsToAdd[i].tabId === tab.id && loginsToAdd[i].name === tabDomain) {
-                messageTab(tab.id, 'openNotificationBar', { type: 'add' });
+            if (loginsToAdd[i].tabId === tab.id && loginsToAdd[i].domain === tabDomain) {
+                messageTab(tab.id, 'openNotificationBar', {
+                    type: 'add'
+                }, function () {
+                    if (callback) {
+                        callback();
+                    }
+                });
                 break;
             }
         }
@@ -501,7 +525,8 @@ function startAutofillPage(login) {
             return;
         }
 
-        chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails', tabId: tabId }, function () { });
+        chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails', tabId: tabId }, function () {
+        });
     });
 }
 
@@ -623,7 +648,9 @@ function logout(expired, callback) {
                             userService.clearUserIdAndEmail(function () {
                                 loginService.clear(userId, function () {
                                     folderService.clear(userId, function () {
-                                        chrome.runtime.sendMessage({ command: 'doneLoggingOut', expired: expired });
+                                        chrome.runtime.sendMessage({
+                                            command: 'doneLoggingOut', expired: expired
+                                        });
                                         setIcon();
                                         refreshBadgeAndMenu();
                                         callback();
@@ -676,7 +703,8 @@ function fullSync(override) {
     syncService.getLastSync(function (lastSync) {
         var now = new Date();
         if (override || !lastSync || (now - lastSync) >= syncInternal) {
-            syncService.fullSync(override || false, function () { });
+            syncService.fullSync(override || false, function () {
+            });
         }
     });
 }
