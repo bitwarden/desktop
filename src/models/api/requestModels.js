@@ -16,7 +16,7 @@ var TokenRequest = function (email, masterPasswordHash, token, device) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
     this.token = token;
-    this.provider = 'Authenticator';
+    this.provider = 0; // 0 = Authenticator
     this.device = null;
     if (device) {
         this.device = device;
