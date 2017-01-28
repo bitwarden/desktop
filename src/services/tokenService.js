@@ -194,20 +194,6 @@ function initTokenService() {
         return sRemaining < (60 * minutes);
     };
 
-    TokenService.prototype.isTwoFactorScheme = function () {
-        return this.getScheme() !== 'Application';
-    };
-
-    TokenService.prototype.getScheme = function () {
-        var decoded = this.decodeToken();
-
-        if (typeof decoded.amr === 'undefined' || !decoded.amr.length) {
-            throw 'No scheme found';
-        }
-
-        return decoded.amr[0];
-    };
-
     TokenService.prototype.getUserId = function () {
         var decoded = this.decodeToken();
 
