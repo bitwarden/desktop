@@ -38,7 +38,7 @@ var TokenRequest = function (email, masterPasswordHash, token, device) {
             obj.devicePushToken = this.device.pushToken;
         }
 
-        if (this.token && this.provider) {
+        if (this.token && this.provider != null && (typeof this.provider !== 'undefined')) {
             obj.twoFactorToken = this.token;
             obj.twoFactorProvider = this.provider;
         }
