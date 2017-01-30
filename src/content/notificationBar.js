@@ -3,13 +3,15 @@
         formData = [],
         barType = null;
 
-    chrome.storage.local.get('disableAddLoginNotification', function (obj) {
-        if (!obj || !obj['disableAddLoginNotification']) {
-            chrome.runtime.sendMessage({
-                command: 'bgCollectPageDetails'
-            });
-        }
-    });
+    if (window.location.hostname.indexOf('bitwarden.com') === -1) {
+        chrome.storage.local.get('disableAddLoginNotification', function (obj) {
+            if (!obj || !obj['disableAddLoginNotification']) {
+                chrome.runtime.sendMessage({
+                    command: 'bgCollectPageDetails'
+                });
+            }
+        });
+    }
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
