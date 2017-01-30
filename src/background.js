@@ -203,7 +203,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (onUpdatedRan) {
         return;
     }
-    console.log('onUpdated');
     onUpdatedRan = true;
     checkLoginsToAdd();
     refreshBadgeAndMenu();
