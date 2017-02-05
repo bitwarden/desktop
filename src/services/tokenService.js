@@ -150,7 +150,8 @@ function initTokenService() {
             throw 'Cannot decode the token';
         }
 
-        return JSON.parse(decoded);
+        _decodedToken = JSON.parse(decoded);
+        return _decodedToken;
     };
 
     TokenService.prototype.getTokenExpirationDate = function () {
