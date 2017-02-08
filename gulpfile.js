@@ -9,7 +9,8 @@
     merge = require('merge-stream'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
-    googleWebFonts = require('gulp-google-webfonts');
+    googleWebFonts = require('gulp-google-webfonts'),
+    webpack = require('webpack-stream');
 
 var paths = {};
 paths.dist = './dist/';
@@ -29,7 +30,7 @@ gulp.task('lint', function () {
 gulp.task('build', function (cb) {
     return runSequence(
         'clean',
-        ['browserify', 'lib', 'less', 'lint', 'webfonts'],
+        ['browserify', 'webpack', 'lib', 'less', 'lint', 'webfonts'],
         cb);
 });
 
@@ -131,13 +132,41 @@ gulp.task('lib', ['clean:lib'], function () {
     return merge(tasks);
 });
 
-gulp.task('browserify', function () {
+gulp.task('browserify', ['browserify:tldjs']);
+
+gulp.task('browserify:tldjs', function () {
     return browserify(paths.npmDir + 'tldjs/index.js', { standalone: 'tldjs' })
         .bundle()
         .pipe(source('tld.js'))
         .pipe(gulp.dest(paths.libDir + 'tldjs'));
 });
 
+gulp.task('webpack', ['webpack:forge']);
+
+gulp.task('webpack:forge', function () {
+    var forgeDir = paths.npmDir + '/node-forge/lib/';
+
+    return gulp.src([
+        forgeDir + 'pbkdf2.js',
+        forgeDir + 'aes.js',
+        forgeDir + 'hmac.js',
+        forgeDir + 'sha256.js',
+        forgeDir + 'random.js',
+        forgeDir + 'forge.js'
+    ]).pipe(webpack({
+        output: {
+            filename: 'forge.js',
+            library: 'forge',
+            libraryTarget: 'umd'
+        },
+        node: {
+            Buffer: false,
+            process: false,
+            crypto: false,
+            setImmediate: false
+        }
+    })).pipe(gulp.dest(paths.libDir + 'forge'));
+});
 
 gulp.task('less', function () {
     return gulp.src(paths.lessDir + 'popup.less')

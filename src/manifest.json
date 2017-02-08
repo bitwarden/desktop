@@ -33,7 +33,7 @@
       "lib/jquery/jquery.js",
       "lib/q/q.js",
       "lib/tldjs/tld.js",
-      "scripts/forge.js",
+      "lib/forge/forge.js",
       "models/api/requestModels.js",
       "models/api/responseModels.js",
       "models/dataModels.js",
