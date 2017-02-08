@@ -65,7 +65,7 @@ function initSyncService() {
 
             self.apiService.getAccountRevisionDate(function (response) {
                 var accountRevisionDate = new Date(response);
-                if (accountRevisionDate <= lastSync) {
+                if (lastSync && accountRevisionDate <= lastSync) {
                     callback(false);
                     return;
                 }
