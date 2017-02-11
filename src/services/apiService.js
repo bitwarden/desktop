@@ -324,7 +324,7 @@ function initApiService() {
     // Helpers
 
     function handleError(errorCallback, jqXHR, tokenError, self) {
-        if (tokenError || jqXHR.status === 401 || jqXHR.status === 403) {
+        if ((tokenError && jqXHR.status === 400) || jqXHR.status === 401 || jqXHR.status === 403) {
             if (self && self.logoutCallback) {
                 self.logoutCallback(true, function () { })
             }
