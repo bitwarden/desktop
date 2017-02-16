@@ -207,7 +207,8 @@ function initCryptoService() {
     };
 
     CryptoService.prototype.makeKey = function (password, salt, b64) {
-        var key = forge.pbkdf2(password, salt, 5000, 256 / 8, 'sha256');
+        var key = forge.pbkdf2(forge.util.encodeUtf8(password), forge.util.encodeUtf8(salt),
+            5000, 256 / 8, 'sha256');
 
         if (b64 && b64 === true) {
             return forge.util.encode64(key);
@@ -226,7 +227,7 @@ function initCryptoService() {
                 throw 'Invalid parameters.';
             }
 
-            var hashBits = forge.pbkdf2(key, password, 1, 256 / 8, 'sha256');
+            var hashBits = forge.pbkdf2(key, forge.util.encodeUtf8(password), 1, 256 / 8, 'sha256');
             callback(forge.util.encode64(hashBits));
         });
     };
