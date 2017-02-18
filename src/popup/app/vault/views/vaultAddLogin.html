@@ -43,7 +43,7 @@
                     <div class="list-section-item">
                         <label for="folder" class="item-label">{{i18n.folder}}</label>
                         <select id="folder" name="FolderId" ng-model="login.folderId">
-                            <option ng-repeat="folder in folders | orderBy: ['name']" value="{{folder.id}}">
+                            <option ng-repeat="folder in folders | orderBy: ['name'] track by $index" value="{{folder.id}}">
                                 {{folder.name}}
                             </option>
                         </select>

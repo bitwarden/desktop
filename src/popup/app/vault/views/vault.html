@@ -16,7 +16,7 @@
                     <span>{{vaultFolders.length}}</span>
                 </div>
                 <a href="javascript:void(0)" ng-click="viewFolder(folder)" class="list-section-item"
-                   ng-repeat="folder in vaultFolders | orderBy: folderSort">
+                   ng-repeat="folder in vaultFolders | orderBy: folderSort track by $index">
                     {{folder.name}}
                     <i class="fa fa-chevron-right fa-lg"></i>
                     <span class="item-sub-label">{{folder.itemCount}}</span>
@@ -26,7 +26,8 @@
     </div>
     <div ng-if="vaultLogins.length && (vaultLogins.length < 100 || (searchText && searchText.length >= 2))">
         <div class="list">
-            <div class="list-grouped" ng-repeat="folder in vaultFolders | orderBy: folderSort" ng-show="vaultFolderLogins.length">
+            <div class="list-grouped" ng-repeat="folder in vaultFolders | orderBy: folderSort track by $index"
+                 ng-show="vaultFolderLogins.length">
                 <div class="list-grouped-header">
                     <small>{{vaultFolderLogins.length}}</small>
                     <i class="fa fa-folder-open"></i> {{folder.name}}
@@ -34,7 +35,7 @@
                 <a href="javascript:void(0)" ng-click="viewLogin(login)"
                    class="list-grouped-item condensed" title="{{i18n.edit}} {{login.name}}"
                    ng-repeat="login in vaultFolderLogins = (vaultLogins | filter: { folderId: folder.id }
-                            | filter: searchLogins() | orderBy: ['name', 'username'])">
+                            | filter: searchLogins() | orderBy: ['name', 'username']) track by $index">
                     <span class="btn-list" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
                           data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">

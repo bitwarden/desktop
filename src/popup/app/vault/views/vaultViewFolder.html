@@ -21,7 +21,7 @@
                 </div>
                 <a href="javascript:void(0)" ng-click="viewLogin(login)"
                    class="list-section-item condensed" title="{{i18n.edit}} {{login.name}}"
-                   ng-repeat="login in pagedVaultLogins">
+                   ng-repeat="login in pagedVaultLogins track by $index">
                     <span class="btn-list" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
                           data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">
