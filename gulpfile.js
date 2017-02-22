@@ -10,7 +10,8 @@
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     googleWebFonts = require('gulp-google-webfonts'),
-    webpack = require('webpack-stream');
+    webpack = require('webpack-stream')
+    jeditor = require("gulp-json-editor");
 
 var paths = {};
 paths.dist = './dist/';
@@ -202,6 +203,20 @@ gulp.task('dist', ['build'], function (cb) {
         'dist:clean',
         'dist:move',
         cb);
+});
+
+gulp.task('dist-firefox', ['dist'], function (cb) {
+    gulp.src(paths.dist + 'manifest.json')
+      .pipe(jeditor(function (manifest) {
+          manifest.applications = {
+              gecko: {
+                  id: "addon@bitwarden.com",
+                  strict_min_version: "42.0"
+              }
+          };
+          return manifest;
+      }))
+      .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('webfonts', function () {
