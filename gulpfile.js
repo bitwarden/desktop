@@ -210,7 +210,7 @@ gulp.task('dist-firefox', ['dist'], function (cb) {
       .pipe(jeditor(function (manifest) {
           manifest.applications = {
               gecko: {
-                  id: "addon@bitwarden.com",
+                  id: "{446900e4-71c2-419f-a6a7-df9c091e268b}",
                   strict_min_version: "42.0"
               }
           };
