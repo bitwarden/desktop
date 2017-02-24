@@ -14,6 +14,8 @@
             else {
                 $scope.lockOption = '';
             }
+
+            $scope.$apply();
         });
 
         $scope.changeLockOption = function () {

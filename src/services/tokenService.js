@@ -167,17 +167,6 @@ function initTokenService() {
         return d;
     };
 
-    TokenService.prototype.isTokenExpired = function (offsetSeconds) {
-        var d = this.getTokenExpirationDate();
-        offsetSeconds = offsetSeconds || 0;
-        if (d === null) {
-            return false;
-        }
-
-        // Token expired?
-        return !(d.valueOf() > (new Date().valueOf() + (offsetSeconds * 1000)));
-    };
-
     TokenService.prototype.tokenSecondsRemaining = function (offsetSeconds) {
         var d = this.getTokenExpirationDate();
         offsetSeconds = offsetSeconds || 0;

@@ -28,7 +28,7 @@
                 </div>
                 <div class="list-section-item" ng-if="login.username">
                     <a class="btn-list" href="" title="{{i18n.copyUsername}}" ngclipboard ngclipboard-error="clipboardError(e)"
-                       ngclipboard-success="clipboardSuccess(e, i18n.username)" data-clipboard-target="#username">
+                       ngclipboard-success="clipboardSuccess(e, i18n.username)" data-clipboard-text="{{login.username}}">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
                     <span class="item-label">{{i18n.username}}</span>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="list-section-item" ng-if="login.password">
                     <a class="btn-list" href="" title="{{i18n.copyPassword}}" ngclipboard ngclipboard-error="clipboardError(e)"
-                       ngclipboard-success="clipboardSuccess(e, i18n.password)" data-clipboard-target="#password">
+                       ngclipboard-success="clipboardSuccess(e, i18n.password)" data-clipboard-text="{{login.password}}">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
                     <a class="btn-list" href="" title="{{i18n.togglePassword}}" ng-click="togglePassword()">

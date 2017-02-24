@@ -11,7 +11,24 @@
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');
-            $state.go('home');
+            var userService = $injector.get('userService');
+            var cryptoService = $injector.get('cryptoService');
+
+            cryptoService.getKey(false, function (key) {
+                userService.isAuthenticated(function (isAuthenticated) {
+                    if (isAuthenticated) {
+                        if (!key) {
+                            $state.go('lock');
+                        }
+                        else {
+                            $state.go('tabs.current');
+                        }
+                    }
+                    else {
+                        $state.go('home');
+                    }
+                });
+            });
         });
 
         $stateProvider
@@ -190,39 +207,22 @@
                 params: { animation: null }
             });
     })
-    .run(function ($rootScope, userService, cryptoService, tokenService, $state, constantsService, stateService) {
+    .run(function ($rootScope, userService, $state, constantsService, stateService) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
             if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {
                 stateService.purgeState();
             }
 
-            cryptoService.getKey(false, function (key) {
-                userService.isAuthenticated(function (isAuthenticated) {
-                    if (isAuthenticated) {
-                        var obj = {};
-                        obj[constantsService.lastActiveKey] = (new Date()).getTime();
-                        chrome.storage.local.set(obj, function () { });
-                    }
-
-                    if (!toState.data || !toState.data.authorize) {
-                        if (isAuthenticated && !tokenService.isTokenExpired()) {
-                            event.preventDefault();
-                            if (!key) {
-                                $state.go('lock');
-                            }
-                            else {
-                                $state.go('tabs.current');
-                            }
-                        }
-
-                        return;
-                    }
-
-                    if (!isAuthenticated || tokenService.isTokenExpired()) {
-                        event.preventDefault();
-                        chrome.runtime.sendMessage({ command: 'logout' });
-                    }
-                });
+            userService.isAuthenticated(function (isAuthenticated) {
+                if (isAuthenticated) {
+                    var obj = {};
+                    obj[constantsService.lastActiveKey] = (new Date()).getTime();
+                    chrome.storage.local.set(obj, function () { });
+                }
+                else if (toState.data && toState.data.authorize) {
+                    event.preventDefault();
+                    chrome.runtime.sendMessage({ command: 'logout' });
+                }
             });
         });
     });
