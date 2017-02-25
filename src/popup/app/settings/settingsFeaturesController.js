@@ -1,18 +1,22 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsFeaturesController', function ($scope, i18nService, $analytics, constantsService) {
+    .controller('settingsFeaturesController', function ($scope, i18nService, $analytics, constantsService, utilsService) {
         $scope.i18n = i18nService;
         $scope.disableGa = false;
         $scope.disableAddLoginNotification = false;
 
         chrome.storage.local.get(constantsService.disableGaKey, function (obj) {
-            if (obj && obj[constantsService.disableGaKey]) {
+            // Default for Firefox is disabled.
+            if ((utilsService.isFirefox() && obj[constantsService.disableGaKey] === undefined) ||
+                obj[constantsService.disableGaKey]) {
                 $scope.disableGa = true;
             }
             else {
                 $scope.disableGa = false;
             }
+
+            $scope.$apply();
         });
 
         chrome.storage.local.get(constantsService.disableAddLoginNotificationKey, function (obj) {
@@ -22,11 +26,15 @@
             else {
                 $scope.disableAddLoginNotification = false;
             }
+
+            $scope.$apply();
         });
 
         $scope.updateGa = function () {
             chrome.storage.local.get(constantsService.disableGaKey, function (obj) {
-                if (obj[constantsService.disableGaKey]) {
+                // Default for Firefox is disabled.
+                if ((utilsService.isFirefox() && obj[constantsService.disableGaKey] === undefined) ||
+                    obj[constantsService.disableGaKey]) {
                     // enable
                     obj[constantsService.disableGaKey] = false;
                 }
@@ -38,6 +46,7 @@
 
                 chrome.storage.local.set(obj, function () {
                     $scope.disableGa = obj[constantsService.disableGaKey];
+                    $scope.$apply();
                     if (!obj[constantsService.disableGaKey]) {
                         $analytics.eventTrack('Enabled Google Analytics');
                     }
@@ -59,6 +68,7 @@
 
                 chrome.storage.local.set(obj, function () {
                     $scope.disableAddLoginNotification = obj[constantsService.disableAddLoginNotificationKey];
+                    $scope.$apply();
                     if (!obj[constantsService.disableAddLoginNotificationKey]) {
                         $analytics.eventTrack('Enabled Add Login Notification');
                     }

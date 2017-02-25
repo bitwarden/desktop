@@ -1,5 +1,6 @@
 ﻿var gaTrackingId = chrome.extension.getBackgroundPage().utilsService.analyticsId();
 var gaFunc = null;
+var isFirefox = chrome.extension.getBackgroundPage().utilsService.isFirefox();
 
 window.GoogleAnalyticsObject = 'ga';
 window[window.GoogleAnalyticsObject] = function (action, param1, param2, param3, param4) {
@@ -8,7 +9,8 @@ window[window.GoogleAnalyticsObject] = function (action, param1, param2, param3,
     }
 
     chrome.storage.local.get('disableGa', function (obj) {
-        if (obj && obj['disableGa']) {
+        // Default for Firefox is disabled.
+        if ((isFirefox && obj['disableGa'] === undefined) || obj['disableGa']) {
             return;
         }
 
