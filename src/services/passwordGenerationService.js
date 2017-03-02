@@ -103,7 +103,7 @@ function initPasswordGenerationService() {
     // ref https://github.com/EFForg/OpenWireless/blob/master/app/js/diceware.js
     function randomInt(min, max) {
         var rval = 0;
-        var range = max - min;
+        var range = max - min + 1;
 
         var bits_needed = Math.ceil(Math.log2(range));
         if (bits_needed > 53) {
