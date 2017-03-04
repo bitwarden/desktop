@@ -78,6 +78,8 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             pageDetailsToAutoFill.push({ frameId: sender.frameId, tabId: msg.tabId, details: msg.details });
             autofillTimeout = setTimeout(autofillPage, 300);
         }
+    } else if (msg.command === 'bgUpdateContextMenu') {
+        refreshBadgeAndMenu();
     }
 });
 
@@ -227,11 +229,21 @@ function refreshBadgeAndMenu() {
             return;
         }
 
-        buildContextMenu(function () {
-            loadMenuAndUpdateBadge(tab.url, tab.id, true);
-            onUpdatedRan = onReplacedRan = false;
+        chrome.storage.local.get(constantsService.disableContextMenuItemKey, function (obj) {
+            if (! obj[constantsService.disableContextMenuItemKey]) {
+                buildContextMenu(function() { contextMenuReady(tab) });
+            }
+            else {
+                chrome.contextMenus.removeAll();
+                contextMenuReady(tab);
+            }
         });
     });
+}
+
+function contextMenuReady(tab) {
+    loadMenuAndUpdateBadge(tab.url, tab.id, true);
+    onUpdatedRan = onReplacedRan = false;
 }
 
 function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {

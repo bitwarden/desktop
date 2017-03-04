@@ -646,5 +646,13 @@
   "notificationAddSave": {
     "message": "Yes, Save Now",
     "description": "Yes, Save Now"
+  },
+  "disableContextMenuItem": {
+    "message": "Disable Context Menu Integration",
+    "description": "Disable Context Menu Integration"
+  },
+  "disableContextMenuItemDesc": {
+    "message": "bitwarden's context menu item provides quick access to logins for the current tab.",
+    "desription": "bitwarden's context menu item provides quick access to logins for the current tab."
   }
 }
