@@ -15,4 +15,3 @@ Il furto di password è un problema serio. I siti e le app che utilizzi sono sot
 Gli esperti di sicurezza raccomandano di utilizzare password casuali e diverse per ogni account che crei. Ma come gestire tutte quelle password? bitwarden ti rende facile creare, salvare e accedere alle tue password.
 
 bitwarden salva tutti i tuoi login in una cassaforte criptata che si sincronizza su tutti i tuoi dispositivi. Poichè è completamente criptata ancora prima di lasciare il tuo dispositivo, solo tu puoi accedere ai tuoi dati. Nemmeno il team di bitwarden può leggere i tuoi dati, anche se volessero. I tuoi dati sono criptati con algoritmo AES-256, salted hashing, e PBKDF2 SHA-256.
-
