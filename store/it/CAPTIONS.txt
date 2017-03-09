@@ -1,0 +1,27 @@
+# Tile
+
+Un gestore di password sicuro e gratuito per tutti i tuoi dispositivi
+
+# Screenshot - Sync
+
+Sincronizza e accedi alla tua cassaforte da più dispositivi
+
+# Screenshot - Vault
+
+Gestisci tutte le tue password ed i tuoi login da una cassaforte sicura
+
+# Screenshot - Autofill
+
+Completa velocemente tutte le tue credenziali di login in qualunque sito tu visiti
+
+# Screenshot - Menu
+
+La tua cassaforte è facilmente accessibile dal menu contestuale del tasto destro del mouse
+
+# Screenshot - Password
+
+Genera automaticamente password complesse, casuali e sicure
+
+# Screenshot - Edit
+
+Le tue informazioni sono salvate in modo sicuro grazie all'algoritmo di criptazione AES-256
