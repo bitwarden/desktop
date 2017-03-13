@@ -132,7 +132,7 @@
     "description": "Verification Code"
   },
   "enterTwoStepVerCode": {
-    "message": "Inserisci il codice	di verifica in due passaggi.",
+    "message": "Inserisci il codice di verifica in due passaggi.",
     "description": "Enter your two-step verification code."
   },
   "account": {
