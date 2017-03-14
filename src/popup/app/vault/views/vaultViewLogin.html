@@ -18,7 +18,7 @@
                     <span class="item-label">{{i18n.name}}</span>
                     {{login.name}}
                 </div>
-                <div class="list-section-item" ng-if="login.uri">
+                <div class="list-section-item" ng-if="login.uri" title="{{login.uri}}">
                     <a class="btn-list" href="" title="{{i18n.launchWebsite}}" ng-click="launchWebsite(login)"
                        ng-show="login.showLaunch">
                         <i class="fa fa-lg fa-share-square-o"></i>
