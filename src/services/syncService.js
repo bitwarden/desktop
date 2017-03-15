@@ -29,15 +29,17 @@ function initSyncService() {
                 var now = new Date();
                 needsSyncing(self, forceSync, function (needsSync) {
                     if (!needsSync) {
-                        self.syncCompleted(false);
-                        callback(false);
+                        self.setLastSync(now, function () {
+                            self.syncCompleted(false);
+                            callback(false);
+                        });
                         return;
                     }
 
                     syncVault(userId).then(function () {
                         return syncSettings(userId);
                     }).then(function () {
-                        self.setLastSync(new Date(), function () {
+                        self.setLastSync(now, function () {
                             self.syncCompleted(true);
                             callback(true);
                         });
@@ -61,8 +63,6 @@ function initSyncService() {
         }
 
         self.getLastSync(function (lastSync) {
-            var now = new Date();
-
             self.apiService.getAccountRevisionDate(function (response) {
                 var accountRevisionDate = new Date(response);
                 if (lastSync && accountRevisionDate <= lastSync) {
