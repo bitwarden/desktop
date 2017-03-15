@@ -648,11 +648,11 @@
     "description": "Yes, Save Now"
   },
   "disableContextMenuItem": {
-    "message": "Disable Context Menu Integration",
-    "description": "Disable Context Menu Integration"
+    "message": "Disable Context Menu Options",
+    "description": "Disable Context Menu Options"
   },
   "disableContextMenuItemDesc": {
-    "message": "bitwarden's context menu item provides quick access to logins for the current tab.",
-    "desription": "bitwarden's context menu item provides quick access to logins for the current tab."
+    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab.",
+    "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   }
 }

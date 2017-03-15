@@ -230,23 +230,25 @@ function refreshBadgeAndMenu() {
         }
 
         chrome.storage.local.get(constantsService.disableContextMenuItemKey, function (obj) {
-            if (! obj[constantsService.disableContextMenuItemKey]) {
-                buildContextMenu(function() { contextMenuReady(tab) });
+            if (!obj[constantsService.disableContextMenuItemKey]) {
+                buildContextMenu(function () {
+                    contextMenuReady(tab, true);
+                });
             }
             else {
                 chrome.contextMenus.removeAll();
-                contextMenuReady(tab);
+                contextMenuReady(tab, false);
             }
         });
     });
 }
 
-function contextMenuReady(tab) {
-    loadMenuAndUpdateBadge(tab.url, tab.id, true);
+function contextMenuReady(tab, contextMenuEnabled) {
+    loadMenuAndUpdateBadge(tab.url, tab.id, contextMenuEnabled);
     onUpdatedRan = onReplacedRan = false;
 }
 
-function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
+function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
     if (!url) {
         return;
     }
@@ -262,7 +264,7 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
     loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
         sortLogins(logins);
 
-        if (loadContextMenuOptions) {
+        if (contextMenuEnabled) {
             for (var i = 0; i < logins.length; i++) {
                 loadLoginContextMenuOptions(logins[i]);
             }
@@ -281,14 +283,18 @@ function loadMenuAndUpdateBadge(url, tabId, loadContextMenuOptions) {
             });
         }
         else {
-            loadNoLoginsContextMenuOptions(i18nService.noMatchingLogins);
+            if (contextMenuEnabled) {
+                loadNoLoginsContextMenuOptions(i18nService.noMatchingLogins);
+            }
             chrome.browserAction.setBadgeText({
                 text: '',
                 tabId: tabId
             });
         }
     }, function () {
-        loadNoLoginsContextMenuOptions(i18nService.vaultLocked);
+        if (contextMenuEnabled) {
+            loadNoLoginsContextMenuOptions(i18nService.vaultLocked);
+        }
         chrome.browserAction.setBadgeText({
             text: '',
             tabId: tabId

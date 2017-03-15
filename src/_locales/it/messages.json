@@ -649,10 +649,10 @@
   },
   "disableContextMenuItem": {
     "message": "Disabilita Integrazione Menu Contestuale",
-    "description": "Disable Context Menu Integration"
+    "description": "Disable Context Menu Options"
   },
   "disableContextMenuItemDesc": {
     "message": "il menu contestuale di bitwarden fornisce l'accesso rapido ai login per la tab corrente.",
-    "desription": "bitwarden's context menu item provides quick access to logins for the current tab."
+    "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   }
 }
