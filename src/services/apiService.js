@@ -324,7 +324,9 @@ function initApiService() {
     // Helpers
 
     function handleError(errorCallback, jqXHR, tokenError, self) {
-        if ((tokenError && jqXHR.status === 400) || jqXHR.status === 401 || jqXHR.status === 403) {
+        if (jqXHR && (tokenError && jqXHR.status === 400) || jqXHR.status === 401 || jqXHR.status === 403) {
+            console.log('Logging out from apiService at ' + new Date() + '. Reason: Status ' + jqXHR.status + '.');
+            console.log(jqXHR);
             if (self && self.logoutCallback) {
                 self.logoutCallback(true, function () { })
             }
