@@ -16,7 +16,7 @@
             value: 12,
             options: {
                 floor: 5,
-                ceil: 64,
+                ceil: 128,
                 step: 1,
                 hideLimitLabels: true,
                 hidePointerLabels: true,
