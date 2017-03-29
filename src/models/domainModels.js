@@ -80,7 +80,10 @@ var Folder = function (obj, alreadyEncrypted) {
             return null;
         }).then(function (val) {
             model.uri = val;
-            model.domain = tldjs.getDomain(val);
+
+            var utilsService = chrome.extension.getBackgroundPage().utilsService;
+            model.domain = utilsService.getDomain(val);
+
             if (self.username) {
                 return self.username.decrypt();
             }

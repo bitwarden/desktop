@@ -22,9 +22,6 @@
     .factory('syncService', function () {
         return chrome.extension.getBackgroundPage().syncService;
     })
-    .factory('tldjs', function () {
-        return chrome.extension.getBackgroundPage().tldjs;
-    })
     .factory('autofillService', function () {
         return chrome.extension.getBackgroundPage().autofillService;
     })

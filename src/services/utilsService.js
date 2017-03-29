@@ -128,4 +128,53 @@ function initUtilsService() {
             $(this).parent().removeClass('active');
         });
     }
+
+    UtilsService.prototype.getDomain = function (uriString) {
+        if (!uriString) {
+            return null;
+        }
+
+        uriString = uriString.trim();
+        if (uriString === '') {
+            return null;
+        }
+
+        if (uriString.startsWith('http://') || uriString.startsWith('https://')) {
+            try {
+                var url = new URL(uriString);
+                if (!url || !url.hostname) {
+                    return null;
+                }
+
+                if (url.hostname === 'localhost' || validIpAddress(url.hostname)) {
+                    return url.hostname;
+                }
+
+                if (tldjs) {
+                    var domain = tldjs.getDomain(uriString);
+                    if (domain) {
+                        return domain;
+                    }
+                }
+
+                return url.hostname;
+            }
+            catch (e) {
+                return null;
+            }
+        }
+        else if (tldjs) {
+            var domain2 = tldjs.getDomain(uriString);
+            if (domain2) {
+                return domain2;
+            }
+        }
+
+        return null;
+    }
+
+    function validIpAddress(ipString) {
+        var ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        return ipRegex.test(ipString);
+    }
 };

@@ -1,8 +1,8 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, tldjs, toastr, $q,
-        $analytics, i18nService) {
+    .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr, $q,
+        $analytics, i18nService, utilsService) {
         $scope.i18n = i18nService;
         var from = $stateParams.from;
 
@@ -26,7 +26,7 @@ angular
 
                 if (model.uri) {
                     $scope.login.showLaunch = model.uri.startsWith('http://') || model.uri.startsWith('https://');
-                    var domain = tldjs.getDomain(model.uri);
+                    var domain = utilsService.getDomain(model.uri);
                     if (domain) {
                         $scope.login.website = domain;
                     }

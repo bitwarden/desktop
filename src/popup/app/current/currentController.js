@@ -1,7 +1,7 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, loginService, tldjs, toastr, $q, $window, $state, $timeout,
+    .controller('currentController', function ($scope, loginService, utilsService, toastr, $q, $window, $state, $timeout,
         autofillService, $analytics, i18nService) {
         $scope.i18n = i18nService;
 
@@ -30,7 +30,7 @@ angular
                     return;
                 }
 
-                domain = tldjs.getDomain(url);
+                domain = utilsService.getDomain(url);
                 if (!domain) {
                     $scope.loaded = true;
                     $scope.$apply();

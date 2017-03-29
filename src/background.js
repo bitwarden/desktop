@@ -253,7 +253,7 @@ function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
         return;
     }
 
-    var tabDomain = tldjs.getDomain(url);
+    var tabDomain = utilsService.getDomain(url);
     if (!tabDomain) {
         return;
     }
@@ -393,7 +393,7 @@ function collectPageDetailsForContentScript(tab) {
 }
 
 function addLogin(login, tab) {
-    var loginDomain = tldjs.getDomain(login.url);
+    var loginDomain = utilsService.getDomain(login.url);
     if (!loginDomain) {
         return;
     }
@@ -449,7 +449,7 @@ function saveAddLogin(tab) {
         if (loginsToAdd[i].tabId === tab.id) {
             var loginToAdd = loginsToAdd[i];
 
-            var tabDomain = tldjs.getDomain(tab.url);
+            var tabDomain = utilsService.getDomain(tab.url);
             if (tabDomain && tabDomain === loginToAdd.domain) {
                 loginsToAdd.splice(i, 1);
                 loginService.encrypt({
@@ -504,7 +504,7 @@ function checkLoginsToAdd(tab, callback) {
             return;
         }
 
-        var tabDomain = tldjs.getDomain(tab.url);
+        var tabDomain = utilsService.getDomain(tab.url);
         if (!tabDomain) {
             if (callback) {
                 callback();
