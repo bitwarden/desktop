@@ -8,7 +8,7 @@ Um gestor de palavras-passe seguro e gratuito para todos os seus dispositivos
 
 # Description
 
-O bitwarden é a maneira mais fácil e segura de armazenar todos as as suas credenciais e palavras-passe mantendo-as convenientemente sincronizadas entre todos os seus dispositivos.
+O bitwarden é a maneira mais fácil e segura de armazenar todos as suas credenciais e palavras-passe mantendo-as convenientemente sincronizadas entre todos os seus dispositivos.
 
 O furto de palavras-passe é um problema sério. Os websites e aplicações que utiliza estão sob ataque todos os dias. Quebras de segurança ocorrem e as suas palavras-passe são furtadas. Quando reutiliza as mesmas palavras-passe entre aplicações e websites, os hackers podem facilmente aceder ao seu email, banco, e outras contas importantes.
 
