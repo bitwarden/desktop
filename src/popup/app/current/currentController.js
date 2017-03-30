@@ -106,6 +106,11 @@ angular
             });
         };
 
+        $scope.sortUriMatch = function(login) {
+            // exact matches should sort earlier.
+            return url && url.startsWith(login.uri) ? 0 : 1;
+        }
+
         $scope.$on('syncCompleted', function (event, successfully) {
             if ($scope.loaded) {
                 setTimeout(loadVault, 500);
