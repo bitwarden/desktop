@@ -1,4 +1,7 @@
-﻿!(function () {
+﻿// THIS FILE IS NOT CURRENTLY IN USE
+// IT IS NOT LOADED IN THE MANIFEST
+
+!(function () {
     var icons = [],
         setIconsIntervalId = null,
         setIconsIntervalRunCount = 0,

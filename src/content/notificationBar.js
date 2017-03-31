@@ -72,7 +72,10 @@
             inputs = document.getElementsByTagName('input');
 
         if (passwordId && passwordId !== '') {
-            formDataObj.passwordEl = formDataObj.formEl.querySelector('#' + passwordId);
+            try {
+                formDataObj.passwordEl = formDataObj.formEl.querySelector('#' + passwordId);
+            }
+            catch (e) { }
         }
         if (!formDataObj.passwordEl && passwordName !== '') {
             formDataObj.passwordEl = formDataObj.formEl.querySelector('input[name="' + passwordName + '"]');
@@ -88,7 +91,10 @@
         }
 
         if (usernameId && usernameId !== '') {
-            formDataObj.usernameEl = formDataObj.formEl.querySelector('#' + usernameId);
+            try {
+                formDataObj.usernameEl = formDataObj.formEl.querySelector('#' + usernameId);
+            }
+            catch (e) { }
         }
         if (!formDataObj.usernameEl && usernameName !== '') {
             formDataObj.usernameEl = formDataObj.formEl.querySelector('input[name="' + usernameName + '"]');

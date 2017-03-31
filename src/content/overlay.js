@@ -1,4 +1,7 @@
-﻿!(function () {
+﻿// THIS FILE IS NOT CURRENTLY IN USE
+// IT IS NOT LOADED IN THE MANIFEST
+
+!(function () {
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openOverlayPopup') {
             closePopup();
