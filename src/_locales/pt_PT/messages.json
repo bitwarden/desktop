@@ -654,5 +654,25 @@
   "disableContextMenuItemDesc": {
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de palavras-passe e credenciais para o website no seu separador atual.",
     "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "exportVault": {
+    "message": "Exportar cofre",
+    "desription": "Export Vault"
+  },
+  "warning": {
+    "message": "AVISO",
+    "desription": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "Esta exportação contém os seus dados não encriptados em formato .csv. Não deve armazená-los ou enviá-los através de canais inseguros (como por email). Elimine-os imediatamente após terminar de usá-los.",
+    "desription": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Digite a sua palavra-chave mestra para exportar os dados do seu cofre.",
+    "desription": "Enter your master password to export your vault data."
+  },
+  "exportVaultInfo": {
+    "message": "Exporte os dados do seu cofre em formato .csv para que possa modificá-los facilmente ou movê-los para outro lugar.",
+    "desription": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   }
 }
