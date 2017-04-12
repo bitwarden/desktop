@@ -131,6 +131,7 @@ function initCryptoService() {
 
         if (b64 && b64 === true && _b64KeyHash) {
             callback(_b64KeyHash);
+            return;
         }
         else if (!b64 && _keyHash) {
             callback(_keyHash);

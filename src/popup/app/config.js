@@ -141,6 +141,13 @@
                 data: { authorize: true },
                 params: { animation: null, addState: null, editState: null }
             })
+            .state('export', {
+                url: '/export',
+                templateUrl: 'app/tools/views/toolsExport.html',
+                controller: 'toolsExportController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
 
             .state('about', {
                 url: '/about',
