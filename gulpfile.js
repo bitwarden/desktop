@@ -125,7 +125,7 @@ gulp.task('lib', ['clean:lib'], function () {
             dest: paths.libDir + 'ng-infinite-scroll'
         },
         {
-            src: paths.npmDir + 'papaparse/papaparse*.js',
+            src: paths.npmDir + 'papaparse/papaparse.js',
             dest: paths.libDir + 'papaparse'
         }
     ];
