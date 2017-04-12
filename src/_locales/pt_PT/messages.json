@@ -148,7 +148,7 @@
     "description": "Change Email"
   },
   "twoStepLogin": {
-    "message": "Inicio de sessão de dois passos",
+    "message": "Início de sessão de dois passos",
     "description": "Two-step Login"
   },
   "logOut": {
@@ -280,7 +280,7 @@
     "description": "Generate Password"
   },
   "regeneratePassword": {
-    "message": "Re-gerar palavra-passe",
+    "message": "Regenerar palavra-passe",
     "description": "Regenerate Password"
   },
   "options": {
@@ -288,7 +288,7 @@
     "description": "Options"
   },
   "length": {
-    "message": "Tamanho",
+    "message": "Cumprimento",
     "description": "Length"
   },
   "minNumbers": {
@@ -296,7 +296,7 @@
     "description": "Minimum Numbers"
   },
   "minSpecial": {
-    "message": "Especial minímo",
+    "message": "Especiais minímos",
     "description": "Minimum Special"
   },
   "avoidAmbChar": {
@@ -316,7 +316,7 @@
     "description": "There are no logins to list."
   },
   "loginInformation": {
-    "message": "Informação de inicio de sessão",
+    "message": "Informação de início de sessão",
     "description": "Login Information"
   },
   "username": {
@@ -384,7 +384,7 @@
     "description": "Please consider helping us out with a good review!"
   },
   "browserNotSupportClipboard": {
-    "message": "O seu navegador web não suporta cópia fácil de área de transferência. Em alternativa, copie manualmente.",
+    "message": "O seu navegador web não suporta cópia fácil da área de transferência. Em alternativa, copie manualmente.",
     "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyMasterPassword": {
@@ -528,7 +528,7 @@
     "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation": {
-    "message": "O inicio de sessão de dois passos torna a sua conta mais segura ao requerer que digite um código de segurança de uma aplicação de autenticação quando inciar sessão. O inicio de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?",
+    "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que digite um código de segurança de uma aplicação de autenticação quando inciar sessão. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?",
     "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut": {
