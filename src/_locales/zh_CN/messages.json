@@ -646,5 +646,13 @@
   "notificationAddSave": {
     "message": "是，现在保存",
     "description": "Yes, Save Now"
+  },
+  "disableContextMenuItem": {
+    "message": "关闭上下文菜单选项",
+    "description": "Disable Context Menu Options"
+  },
+  "disableContextMenuItemDesc": {
+    "message": "上下文菜单选项可以让您快速访问密码生成器，也可以登陆当前标签的网站。",
+    "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   }
 }
