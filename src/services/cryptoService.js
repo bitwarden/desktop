@@ -66,7 +66,7 @@ function initCryptoService(constantsService) {
 
             chrome.storage.local.get('key', function (obj) {
                 if (obj && obj.key) {
-                    _key = new CryptoKey(obj.key, true);
+                    _key = new SymmetricCryptoKey(obj.key, true);
                 }
 
                 callback(_key);
@@ -146,7 +146,7 @@ function initCryptoService(constantsService) {
         var keyBytes = forge.pbkdf2(forge.util.encodeUtf8(password), forge.util.encodeUtf8(salt),
             5000, 256 / 8, 'sha256');
 
-        return new CryptoKey(keyBytes);
+        return new SymmetricCryptoKey(keyBytes);
     };
 
     CryptoService.prototype.hashPassword = function (password, key, callback) {
@@ -217,7 +217,7 @@ function initCryptoService(constantsService) {
                 key.encType === constantsService.encType.AesCbc256_B64) {
                 // Old encrypt-then-mac scheme, swap out the key
                 _legacyEtmKey = _legacyEtmKey ||
-                    new CryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
+                    new SymmetricCryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
                 key = _legacyEtmKey;
             }
 
@@ -268,7 +268,7 @@ function initCryptoService(constantsService) {
         return forge.util.encode64(mac.getBytes());
     }
 
-    function CryptoKey(keyBytes, b64KeyBytes, encType) {
+    function SymmetricCryptoKey(keyBytes, b64KeyBytes, encType) {
         if (b64KeyBytes) {
             keyBytes = forge.util.decode64(keyBytes);
         }
