@@ -1,13 +1,87 @@
-var CipherString = function (encryptedString) {
-    this.encryptedString = encryptedString;
+var CipherString = function () {
+    this.encryptedString = null;
+    this.encryptionType = null;
     this.decryptedValue = null;
+    this.cipherText = null;
+    this.initializationVector = null;
+    this.mac = null;
 
-    if (encryptedString) {
-        var encPieces = this.encryptedString.split('|');
+    if (arguments.length >= 2) {
+        this.encryptedString = arguments[0] + '.' + arguments[1];
 
-        this.initializationVector = encPieces[0];
-        this.cipherText = encPieces[1];
-        this.mac = encPieces.length > 2 ? encPieces[2] : null;
+        if (arguments.length > 2 && arguments[2]) {
+            this.encryptedString += ('|' + arguments[2]);
+        }
+
+        if (arguments.length > 3 && arguments[3]) {
+            this.encryptedString += ('|' + arguments[3]);
+        }
+
+        this.encryptionType = arguments[0];
+        this.cipherText = arguments[1];
+        this.initializationVector = arguments[2] || null;
+        this.mac = arguments[3] || null;
+
+        return;
+    }
+    else if (arguments.length !== 1) {
+        return;
+    }
+
+    this.encryptedString = arguments[0];
+    if (!this.encryptedString) {
+        return;
+    }
+
+    var constants = chrome.extension.getBackgroundPage().constantsService;
+
+    var headerPieces = this.encryptedString.split('.'),
+        encPieces;
+
+    if (headerPieces.length === 2) {
+        try {
+            this.encryptionType = parseInt(headerPieces[0]);
+            encPieces = headerPieces[1].split('|');
+        }
+        catch (e) {
+            return;
+        }
+    }
+    else {
+        encPieces = this.encryptedString.split('|');
+        this.encryptionType = encPieces.length === 3 ? constants.encType.AesCbc128_HmacSha256_B64 :
+            constants.encType.AesCbc256_B64;
+    }
+
+    switch (this.encryptionType) {
+        case constants.encType.AesCbc128_HmacSha256_B64:
+        case constants.encType.AesCbc256_HmacSha256_B64:
+            if (encPieces.length !== 3) {
+                return;
+            }
+
+            this.initializationVector = encPieces[0];
+            this.cipherText = encPieces[1];
+            this.mac = encPieces[2];
+            break;
+        case constants.encType.AesCbc256_B64:
+            if (encPieces.length !== 2) {
+                return;
+            }
+
+            this.initializationVector = encPieces[0];
+            this.cipherText = encPieces[1];
+            break;
+        case constants.encType.Rsa2048_OaepSha256_B64:
+        case constants.encType.Rsa2048_OaepSha1_B64:
+            if (encPieces.length !== 1) {
+                return;
+            }
+
+            this.cipherText = encPieces[0];
+            break;
+        default:
+            return;
     }
 };
 
@@ -51,6 +125,9 @@ var Folder = function (obj, alreadyEncrypted) {
             var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
             cryptoService.decrypt(this).then(function (decValue) {
                 this.decryptedValue = decValue;
+                deferred.resolve(this.decryptedValue);
+            }, function () {
+                this.decryptedValue = '[error: cannot decrypt]';
                 deferred.resolve(this.decryptedValue);
             });
         }

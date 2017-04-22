@@ -86,7 +86,7 @@ function initLoginService() {
         var deferred = Q.defer();
         var self = this;
 
-        cryptoService.getKey(false, function (key) {
+        cryptoService.getKey(function (key) {
             if (!key) {
                 deferred.reject();
                 return;

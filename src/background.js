@@ -86,7 +86,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 setIcon();
 function setIcon() {
     userService.isAuthenticated(function (isAuthenticated) {
-        cryptoService.getKey(false, function (key) {
+        cryptoService.getKey(function (key) {
             var suffix = '';
             if (!isAuthenticated) {
                 suffix = '_gray';
@@ -737,7 +737,7 @@ function checkLock() {
         return;
     }
 
-    cryptoService.getKey(false, function (key) {
+    cryptoService.getKey(function (key) {
         if (!key) {
             // no key so no need to lock
             return;

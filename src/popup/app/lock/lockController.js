@@ -24,7 +24,7 @@
             userService.getEmail(function (email) {
                 var key = cryptoService.makeKey($scope.masterPassword, email);
                 cryptoService.hashPassword($scope.masterPassword, key, function (keyHash) {
-                    cryptoService.getKeyHash(true, function (storedKeyHash) {
+                    cryptoService.getKeyHash(function (storedKeyHash) {
                         if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
                             cryptoService.setKey(key, function () {
                                 chrome.runtime.sendMessage({ command: 'unlocked' });

@@ -26,7 +26,7 @@
             }
 
             chrome.storage.local.set(obj, function () {
-                cryptoService.getKeyHash(false, function (keyHash) {
+                cryptoService.getKeyHash(function (keyHash) {
                     if (keyHash) {
                         cryptoService.toggleKey(function () { });
                     }
