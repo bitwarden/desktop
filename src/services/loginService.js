@@ -17,21 +17,26 @@ function initLoginService() {
         var model = {
             id: login.id,
             folderId: login.folderId,
-            favorite: login.favorite
+            favorite: login.favorite,
+            organizationId: login.organizationId
         };
 
-        return cryptoService.encrypt(login.name).then(function (cs) {
+        var orgKey = null;
+        return cryptoService.getOrgKey(login.organizationId).then(function (key) {
+            orgKey = key;
+            return cryptoService.encrypt(login.name, orgKey);
+        }).then(function (cs) {
             model.name = cs;
-            return cryptoService.encrypt(login.uri);
+            return cryptoService.encrypt(login.uri, orgKey);
         }).then(function (cs) {
             model.uri = cs;
-            return cryptoService.encrypt(login.username);
+            return cryptoService.encrypt(login.username, orgKey);
         }).then(function (cs) {
             model.username = cs;
-            return cryptoService.encrypt(login.password);
+            return cryptoService.encrypt(login.password, orgKey);
         }).then(function (cs) {
             model.password = cs;
-            return cryptoService.encrypt(login.notes);
+            return cryptoService.encrypt(login.notes, orgKey);
         }).then(function (cs) {
             model.notes = cs;
             return model;
