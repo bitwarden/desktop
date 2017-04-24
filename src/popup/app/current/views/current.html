@@ -27,7 +27,10 @@
                           title="{{i18n.edit}} {{login.name}}">
                         <i class="fa fa-lg fa-pencil"></i>
                     </span>
-                    <span class="text">{{login.name}}</span>
+                    <span class="text">
+                        {{login.name}}
+                        <i class="fa fa-share-alt text-muted" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
+                    </span>
                     <span class="detail">{{login.username}}</span>
                 </a>
             </div>
