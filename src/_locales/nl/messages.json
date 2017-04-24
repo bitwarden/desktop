@@ -372,8 +372,8 @@
     "description": "Other"
   },
   "disableGa": {
-    "message": "Zet Google Analytics Uit",
-    "description": "Disable Google Analytics"
+    "message": "Zet Analytics Uit",
+    "description": "Disable Analytics"
   },
   "rateExtension": {
     "message": "Beoordeel de Extensie",
@@ -628,8 +628,8 @@
     "description": "Features"
   },
   "gaDesc": {
-    "message": "We gebruiken Google Analytics om te weten te komen hoe de extensie gebruikt wordt, zodat we deze kunnen verbeteren. Alle verzamelde data is anoniem.",
-    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "We gebruiken analytics om te weten te komen hoe de extensie gebruikt wordt, zodat we deze kunnen verbeteren. Alle verzamelde data is anoniem.",
+    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
     "message": "Zet Notificatie bij Nieuwe Site Uit",

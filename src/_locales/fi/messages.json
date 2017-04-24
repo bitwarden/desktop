@@ -372,8 +372,8 @@
     "description": "Other"
   },
   "disableGa": {
-    "message": "Älä käytä Google Analyticsiä",
-    "description": "Disable Google Analytics"
+    "message": "Älä käytä Analyticsiä",
+    "description": "Disable Analytics"
   },
   "rateExtension": {
     "message": "Arvostele laajennus",
@@ -628,8 +628,8 @@
     "description": "Features"
   },
   "gaDesc": {
-    "message": "Käytämme Google Analyticsiä saadaksemme tietoa siitä, kuinka lisäosaa käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä.",
-    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Käytämme analyticsiä saadaksemme tietoa siitä, kuinka lisäosaa käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä.",
+    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
     "message": "Älä näytä tallennuskehotetta",

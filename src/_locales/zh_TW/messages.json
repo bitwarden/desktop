@@ -372,8 +372,8 @@
     "description": "Other"
   },
   "disableGa": {
-    "message": "禁用 Google Analytics",
-    "description": "Disable Google Analytics"
+    "message": "禁用 Analytics",
+    "description": "Disable Analytics"
   },
   "rateExtension": {
     "message": "為本擴充元件評分",
@@ -628,8 +628,8 @@
     "description": "Features"
   },
   "gaDesc": {
-    "message": "我们使用 Google Analytics 協助分析擴充元件的使用情況，以便我們改善程式。所有資料均為匿名。",
-    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "我们使用 analytics 協助分析擴充元件的使用情況，以便我們改善程式。所有資料均為匿名。",
+    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
     "message": "關閉新增網頁提示",

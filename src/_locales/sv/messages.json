@@ -372,8 +372,8 @@
     "description": "Other"
   },
   "disableGa": {
-    "message": "Stäng av Google Analytics",
-    "description": "Disable Google Analytics"
+    "message": "Stäng av Analytics",
+    "description": "Disable Analytics"
   },
   "rateExtension": {
     "message": "Betygsätt tillägget",
@@ -628,8 +628,8 @@
     "description": "Features"
   },
   "gaDesc": {
-    "message": "Vi använder Google Analytics för att bättre förstå hur tillägget används av användare så att vi kan göra förbättringar. All information samlas in anonymt.",
-    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Vi använder analytics för att bättre förstå hur tillägget används av användare så att vi kan göra förbättringar. All information samlas in anonymt.",
+    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
     "message": "Stäng av notifikationer för tillägg av inlogg",

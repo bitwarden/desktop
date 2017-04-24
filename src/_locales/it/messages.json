@@ -372,8 +372,8 @@
     "description": "Other"
   },
   "disableGa": {
-    "message": "Disabilita Google Analytics",
-    "description": "Disable Google Analytics"
+    "message": "Disabilita Analytics",
+    "description": "Disable Analytics"
   },
   "rateExtension": {
     "message": "Vota l'Estensione",
@@ -628,8 +628,8 @@
     "description": "Features"
   },
   "gaDesc": {
-    "message": "Usiamo Google Analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi.",
-    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi.",
+    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
     "message": "Disabilita Notifica di Aggiunta Login",

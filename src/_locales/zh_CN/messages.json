@@ -372,8 +372,8 @@
     "description": "Other"
   },
   "disableGa": {
-    "message": "禁用 Google Analytics",
-    "description": "Disable Google Analytics"
+    "message": "禁用 Analytics",
+    "description": "Disable Analytics"
   },
   "rateExtension": {
     "message": "为本扩展打分",
@@ -628,8 +628,8 @@
     "description": "Features"
   },
   "gaDesc": {
-    "message": "我们使用 Google Analytics 来帮助分析扩展的使用情况，以便我们改进扩展。所有的数据收集完全是匿名的。",
-    "description": "We use Google Analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "我们使用 analytics 来帮助分析扩展的使用情况，以便我们改进扩展。所有的数据收集完全是匿名的。",
+    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
     "message": "禁止添加登录提醒",

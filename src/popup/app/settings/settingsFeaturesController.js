@@ -52,7 +52,7 @@
                 }
                 else {
                     // disable
-                    $analytics.eventTrack('Disabled Google Analytics');
+                    $analytics.eventTrack('Disabled Analytics');
                     obj[constantsService.disableGaKey] = true;
                 }
 
@@ -60,7 +60,7 @@
                     $scope.disableGa = obj[constantsService.disableGaKey];
                     $scope.$apply();
                     if (!obj[constantsService.disableGaKey]) {
-                        $analytics.eventTrack('Enabled Google Analytics');
+                        $analytics.eventTrack('Enabled Analytics');
                     }
                 });
             });

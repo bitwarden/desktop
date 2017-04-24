@@ -372,8 +372,8 @@
     "description": "Other"
   },
   "disableGa": {
-    "message": "Google Analytics Deaktivieren",
-    "description": "Disable Google Analytics"
+    "message": "Analytics Deaktivieren",
+    "description": "Disable Analytics"
   },
   "rateExtension": {
     "message": "Bewerte die Erweiterung",
