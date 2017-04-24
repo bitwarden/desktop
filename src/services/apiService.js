@@ -215,6 +215,30 @@ function initApiService() {
         });
     };
 
+    ApiService.prototype.getFolders = function (success, error) {
+        var self = this;
+        handleTokenState(self).then(function (token) {
+            $.ajax({
+                type: 'GET',
+                url: self.baseUrl + '/folders?access_token2=' + token,
+                dataType: 'json',
+                success: function (response) {
+                    var data = [];
+                    for (var i = 0; i < response.Data.length; i++) {
+                        data.push(new FolderResponse(response.Data[i]));
+                    }
+
+                    success(new ListResponse(data));
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, false, self);
+                }
+            });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true, self);
+        });
+    };
+
     ApiService.prototype.postFolder = function (folderRequest, success, error) {
         var self = this;
         handleTokenState(self).then(function (token) {
@@ -283,7 +307,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers?includeFolders=true&includeShared=true&access_token2=' + token,
+                url: self.baseUrl + '/ciphers?includeFolders=false&includeShared=true&access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     var data = [];

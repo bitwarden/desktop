@@ -11,7 +11,7 @@ var userService = new UserService(tokenService, apiService, cryptoService);
 var settingsService = new SettingsService(userService);
 var loginService = new LoginService(cryptoService, userService, apiService, settingsService);
 var folderService = new FolderService(cryptoService, userService, apiService);
-var syncService = new SyncService(loginService, folderService, userService, apiService, settingsService);
+var syncService = new SyncService(loginService, folderService, userService, apiService, settingsService, cryptoService);
 var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 

@@ -1,9 +1,10 @@
-﻿function SyncService(loginService, folderService, userService, apiService, settingsService) {
+﻿function SyncService(loginService, folderService, userService, apiService, settingsService, cryptoService) {
     this.loginService = loginService;
     this.folderService = folderService;
     this.userService = userService;
     this.apiService = apiService;
     this.settingsService = settingsService;
+    this.cryptoService = settingsService;
     this.syncInProgress = false;
 
     initSyncService();
@@ -36,7 +37,11 @@ function initSyncService() {
                         return;
                     }
 
-                    syncVault(userId).then(function () {
+                    syncProfile().then(function () {
+                        return syncFolders(userId);
+                    }).then(function () {
+                        return syncCiphers(userId);
+                    }).then(function () {
                         return syncSettings(userId);
                     }).then(function () {
                         self.setLastSync(now, function () {
@@ -75,33 +80,61 @@ function initSyncService() {
         });
     }
 
-    function syncVault(userId) {
+    function syncProfile() {
+        var deferred = Q.defer();
+        var self = this;
+
+        self.apiService.getProfile(function (response) {
+            self.cryptoService.setOrgKeys(response.organizations).then(function () {
+                deferred.resolve();
+            });
+        }, function () {
+            deferred.reject();
+        });
+
+        return deferred.promise
+    }
+
+    function syncFolders(userId) {
+        var deferred = Q.defer();
+        var self = this;
+
+        self.apiService.getFolders(function (response) {
+            var folders = {};
+
+            for (var i = 0; i < response.data.length; i++) {
+                folders[response.data.id] = new FolderData(response.data[i], userId);
+            }
+
+            self.folderService.replace(folders, function () {
+                deferred.resolve();
+            });
+        }, function () {
+            deferred.reject();
+        });
+
+        return deferred.promise
+    }
+
+    function syncCiphers(userId) {
         var deferred = Q.defer();
         var self = this;
 
         self.apiService.getCiphers(function (response) {
             var logins = {};
-            var folders = {};
 
             for (var i = 0; i < response.data.length; i++) {
                 var data = response.data[i];
                 if (data.type === 1) {
                     logins[data.id] = new LoginData(data, userId);
                 }
-                else if (data.type === 0) {
-                    folders[data.id] = new FolderData(data, userId);
-                }
             }
 
-            self.folderService.replace(folders, function () {
-                self.loginService.replace(logins, function () {
-                    deferred.resolve();
-                    return;
-                });
+            self.loginService.replace(logins, function () {
+                deferred.resolve();
             });
         }, function () {
             deferred.reject();
-            return;
         });
 
         return deferred.promise
@@ -126,11 +159,9 @@ function initSyncService() {
 
             self.settingsService.setEquivalentDomains(eqDomains, function () {
                 deferred.resolve();
-                return;
             });
         }, function () {
             deferred.reject();
-            return;
         });
 
         return deferred.promise;

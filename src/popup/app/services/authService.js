@@ -30,13 +30,7 @@
                                         }
 
                                         cryptoService.setEncPrivateKey(response.privateKey).then(function () {
-                                            apiService.getProfile(function (profile) {
-                                                cryptoService.setOrgKeys(profile.organizations).then(function () {
-                                                    loggedIn(deferred);
-                                                });
-                                            }, function () {
-                                                loggedIn(deferred);
-                                            });
+                                            loggedIn(deferred);
                                         });
                                     });
                                 });
