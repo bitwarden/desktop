@@ -44,19 +44,19 @@
     "description": "Master Password"
   },
   "masterPassDesc": {
-    "message": "A palavra-chave mestra é a palavra-chave que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-chave mestra. Não existe maneira de recuperar a palavra-chave no caso de a esquecer.",
+    "message": "A palavra-passe mestra é a palavra-passe que utiliza para aceder ao seu cofre. É muito importante que não se esqueça da sua palavra-passe mestra. Não existe maneira de recuperar a palavra-passe no caso de a esquecer.",
     "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc": {
-    "message": "Uma dica da palavra-chave mestra pode ajudar a lembrar-se da sua palavra-chave se a esquecer.",
+    "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer.",
     "description": "A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass": {
-    "message": "Re-digite a palavra-chave mestra",
+    "message": "Re-digite a palavra-passe mestra",
     "description": "Re-type Master Password"
   },
   "masterPassHint": {
-    "message": "Dica da palavra-chave mestra (opcional)",
+    "message": "Dica da palavra-passe mestra (opcional)",
     "description": "Master Password Hint (optional)"
   },
   "tab": {
@@ -116,11 +116,11 @@
     "description": "Password Hint"
   },
   "enterEmailToGetHint": {
-    "message": "Digite o endereço de email da sua conta para receber a dica da sua palavra-chave mestra.",
+    "message": "Digite o endereço de email da sua conta para receber a dica da sua palavra-passe mestra.",
     "description": "Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint": {
-    "message": "Obter dica da palavra-chave mestra",
+    "message": "Obter dica da palavra-passe mestra",
     "description": "Get master password hint"
   },
   "continue": {
@@ -388,11 +388,11 @@
     "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyMasterPassword": {
-    "message": "Verificar palavra-chave mestra",
+    "message": "Verificar palavra-passe mestra",
     "description": "Verify Master Password"
   },
   "invalidMasterPassword": {
-    "message": "Palavra-chave mestra inválida",
+    "message": "Palavra-passe mestra inválida",
     "description": "Invalid master password"
   },
   "lockOptions": {
@@ -452,15 +452,15 @@
     "description": "Invalid email address."
   },
   "masterPassRequired": {
-    "message": "A palavra-chave mestra é requerida.",
+    "message": "A palavra-passe mestra é requerida.",
     "description": "Master password is required."
   },
   "masterPassLength": {
-    "message": "A palavra-chave mestra tem de ter pelo menos 8 caracteres.",
+    "message": "A palavra-passe mestra tem de ter pelo menos 8 caracteres.",
     "description": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
-    "message": "A confirmação da palavra-chave mestra não corresponde.",
+    "message": "A confirmação da palavra-passe mestra não corresponde.",
     "description": "Master password confirmation does not match."
   },
   "newAccountCreated": {
@@ -468,7 +468,7 @@
     "description": "Your new account has been created! You may now log in."
   },
   "masterPassSent": {
-    "message": "Enviámos-lhe um email com a dica da sua palavra-chave mestra.",
+    "message": "Enviámos-lhe um email com a dica da sua palavra-passe mestra.",
     "description": "We've sent you an email with your master password hint."
   },
   "verificationCodeRequired": {
@@ -516,11 +516,11 @@
     "description": "Added folder"
   },
   "changeMasterPass": {
-    "message": "Alterar palavra-chave mestra",
+    "message": "Alterar palavra-passe mestra",
     "description": "Change Master Password"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Pode alterar a sua palavra-chave mestra no cofre web bitwarden.com. Pretende visitar o website agora?",
+    "message": "Pode alterar a sua palavra-passe mestra no cofre web bitwarden.com. Pretende visitar o website agora?",
     "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "changeEmailConfirmation": {
@@ -668,7 +668,7 @@
     "desription": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword": {
-    "message": "Digite a sua palavra-chave mestra para exportar os dados do seu cofre.",
+    "message": "Digite a sua palavra-passe mestra para exportar os dados do seu cofre.",
     "desription": "Enter your master password to export your vault data."
   },
   "exportVaultInfo": {
