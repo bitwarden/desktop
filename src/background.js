@@ -756,7 +756,7 @@ function checkLock() {
 
                     if (diffSeconds >= lockOptionSeconds) {
                         // need to lock now
-                        Q.all([cryptoService.clearKey(), cryptoService.clearOrgKeys()]).then(function () {
+                        Q.all([cryptoService.clearKey(), cryptoService.clearOrgKeys(true)]).then(function () {
                             cryptoService.clearPrivateKey();
                             setIcon();
                             folderService.clearCache();

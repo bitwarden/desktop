@@ -236,13 +236,18 @@ function initCryptoService(constantsService) {
         _privateKey = null;
     };
 
-    CryptoService.prototype.clearOrgKeys = function () {
+    CryptoService.prototype.clearOrgKeys = function (memoryOnly) {
         var deferred = Q.defer();
 
-        _orgKeys = {};
-        chrome.storage.local.remove('encOrgKeys', function () {
+        _orgKeys = null;
+        if (memoryOnly) {
             deferred.resolve();
-        });
+        }
+        else {
+            chrome.storage.local.remove('encOrgKeys', function () {
+                deferred.resolve();
+            });
+        }
 
         return deferred.promise;
     };
