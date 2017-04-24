@@ -87,6 +87,7 @@ var CipherString = function () {
 
 var Login = function (obj, alreadyEncrypted) {
     this.id = obj.id ? obj.id : null;
+    this.organizationId = obj.organizationId ? obj.organizationId : null;
     this.folderId = obj.folderId ? obj.folderId : null;
     this.favorite = obj.favorite ? true : false;
 
@@ -118,41 +119,41 @@ var Folder = function (obj, alreadyEncrypted) {
 };
 
 !function () {
-    CipherString.prototype.decrypt = function (callback) {
-        var deferred = Q.defer();
-
-        if (!this.decryptedValue) {
-            var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
-            cryptoService.decrypt(this).then(function (decValue) {
-                this.decryptedValue = decValue;
-                deferred.resolve(this.decryptedValue);
-            }, function () {
-                this.decryptedValue = '[error: cannot decrypt]';
-                deferred.resolve(this.decryptedValue);
-            });
-        }
-        else {
-            callback(this.decryptedValue);
+    CipherString.prototype.decrypt = function (orgId) {
+        if (this.decryptedValue) {
+            var deferred = Q.defer();
             deferred.resolve(this.decryptedValue);
+            return deferred.promise;
         }
 
-        return deferred.promise;
+        var self = this;
+        var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
+        return cryptoService.getOrgKey(orgId).then(function (orgKey) {
+            return cryptoService.decrypt(self, orgKey);
+        }).then(function (decValue) {
+            self.decryptedValue = decValue;
+            return self.decryptedValue;
+        }).catch(function () {
+            self.decryptedValue = '[error: cannot decrypt]';
+            return self.decryptedValue;
+        });
     };
 
     Login.prototype.decrypt = function () {
         var self = this;
         var model = {
             id: self.id,
+            organizationId: self.organizationId,
             folderId: self.folderId,
             favorite: self.favorite
         };
 
         var deferred = Q.defer();
 
-        self.name.decrypt().then(function (val) {
+        self.name.decrypt(self.organizationId).then(function (val) {
             model.name = val;
             if (self.uri) {
-                return self.uri.decrypt();
+                return self.uri.decrypt(self.organizationId);
             }
             return null;
         }).then(function (val) {
@@ -162,19 +163,19 @@ var Folder = function (obj, alreadyEncrypted) {
             model.domain = utilsService.getDomain(val);
 
             if (self.username) {
-                return self.username.decrypt();
+                return self.username.decrypt(self.organizationId);
             }
             return null;
         }).then(function (val) {
             model.username = val;
             if (self.password) {
-                return self.password.decrypt();
+                return self.password.decrypt(self.organizationId);
             }
             return null;
         }).then(function (val) {
             model.password = val;
             if (self.notes) {
-                return self.notes.decrypt();
+                return self.notes.decrypt(self.organizationId);
             }
             return null;
         }).then(function (val) {

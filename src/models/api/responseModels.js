@@ -1,5 +1,6 @@
 var CipherResponse = function (response) {
     this.id = response.Id;
+    this.organizationId = response.OrganizationId;
     this.folderId = response.FolderId;
     this.type = response.Type;
     this.favorite = response.Favorite;
@@ -15,6 +16,7 @@ var FolderResponse = function (response) {
 
 var LoginResponse = function (response) {
     this.id = response.Id;
+    this.organizationId = response.OrganizationId;
     this.folderId = response.FolderId;
     this.name = response.Name;
     this.uri = response.Uri;
@@ -36,6 +38,22 @@ var ProfileResponse = function (response) {
     this.masterPasswordHint = response.MasterPasswordHint;
     this.culture = response.Culture;
     this.twoFactorEnabled = response.TwoFactorEnabled;
+
+    this.organizations = [];
+    if (response.Organizations) {
+        for (var i = 0; i < response.Organizations.length; i++) {
+            this.organizations.push(new ProfileOrganizationResponse(response.Organizations[i]));
+        }
+    }
+};
+
+var ProfileOrganizationResponse = function (response) {
+    this.id = response.Id;
+    this.name = response.Name;
+    this.key = response.Key;
+    this.status = response.Status;
+    this.type = response.Type;
+    this.enabled = response.Enabled;
 };
 
 var IdentityTokenResponse = function (response) {
@@ -44,7 +62,7 @@ var IdentityTokenResponse = function (response) {
     this.refreshToken = response.refresh_token;
     this.tokenType = response.token_type;
 
-    // TODO: extras
+    this.privateKey = response.PrivateKey;
 };
 
 var ListResponse = function (data) {

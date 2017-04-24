@@ -575,8 +575,8 @@ function autofillPage() {
                         command: 'fillForm',
                         fillScript: fillScript
                     }, {
-                        frameId: pageDetailsToAutoFill[i].frameId
-                    });
+                            frameId: pageDetailsToAutoFill[i].frameId
+                        });
                 }
             }
         }
@@ -660,18 +660,16 @@ function logout(expired, callback) {
         syncService.setLastSync(new Date(0), function () {
             settingsService.clear(function () {
                 tokenService.clearToken(function () {
-                    cryptoService.clearKey(function () {
-                        cryptoService.clearKeyHash(function () {
-                            userService.clearUserIdAndEmail(function () {
-                                loginService.clear(userId, function () {
-                                    folderService.clear(userId, function () {
-                                        chrome.runtime.sendMessage({
-                                            command: 'doneLoggingOut', expired: expired
-                                        });
-                                        setIcon();
-                                        refreshBadgeAndMenu();
-                                        callback();
+                    cryptoService.clearKeys(function () {
+                        userService.clearUserIdAndEmail(function () {
+                            loginService.clear(userId, function () {
+                                folderService.clear(userId, function () {
+                                    chrome.runtime.sendMessage({
+                                        command: 'doneLoggingOut', expired: expired
                                     });
+                                    setIcon();
+                                    refreshBadgeAndMenu();
+                                    callback();
                                 });
                             });
                         });
@@ -758,7 +756,8 @@ function checkLock() {
 
                     if (diffSeconds >= lockOptionSeconds) {
                         // need to lock now
-                        cryptoService.clearKey(function () {
+                        Q.all([cryptoService.clearKey(), cryptoService.clearOrgKeys()]).then(function () {
+                            cryptoService.clearPrivateKey();
                             setIcon();
                             folderService.clearCache();
                             loginService.clearCache();

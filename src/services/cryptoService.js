@@ -7,7 +7,8 @@ function initCryptoService(constantsService) {
     var _key,
         _legacyEtmKey,
         _keyHash,
-        _b64KeyHash;
+        _privateKey,
+        _orgKeys;
 
     CryptoService.prototype.setKey = function (key, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -44,6 +45,35 @@ function initCryptoService(constantsService) {
         }, function () {
             callback();
         });
+    }
+
+    CryptoService.prototype.setEncPrivateKey = function (encPrivateKey) {
+        var deferred = Q.defer();
+
+        chrome.storage.local.set({
+            'encPrivateKey': encPrivateKey
+        }, function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    }
+
+    CryptoService.prototype.setOrgKeys = function (orgs) {
+        var deferred = Q.defer();
+
+        var orgKeys = {};
+        for (var i = 0; i < orgs.length; i++) {
+            orgKeys[orgs[i].id] = orgs[i].key;
+        }
+
+        chrome.storage.local.set({
+            'encOrgKeys': orgKeys
+        }, function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise;
     }
 
     CryptoService.prototype.getKey = function (callback) {
@@ -93,24 +123,138 @@ function initCryptoService(constantsService) {
         });
     };
 
-    CryptoService.prototype.clearKey = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
+    CryptoService.prototype.getPrivateKey = function () {
+        var deferred = Q.defer();
+        if (_privateKey) {
+            deferred.resolve(_privateKey);
+            return deferred.promise;
         }
 
-        _key = _legacyEtmKey = null;
-        chrome.storage.local.remove('key', function () {
-            callback();
+        var self = this;
+        chrome.storage.local.get('encPrivateKey', function (obj) {
+            if (!obj || !obj.encPrivateKey) {
+                deferred.reject('Cannot get enc private key.');
+                return;
+            }
+
+            self.decrypt(new CipherString(obj.encPrivateKey), null, 'raw').then(function (privateKey) {
+                var privateKeyB64 = forge.util.encode64(privateKey);
+                _privateKey = fromB64ToBuffer(privateKeyB64);
+                deferred.resolve(_privateKey);
+            }, function () {
+                deferred.reject('Cannot get private key. Decryption failed.');
+            });
+        });
+
+        return deferred.promise;
+    };
+
+    CryptoService.prototype.getOrgKeys = function () {
+        var deferred = Q.defer();
+
+        if (_orgKeys && _orgKeys.length) {
+            deferred.resolve(_orgKeys);
+            return deferred.promise;
+        }
+
+        var self = this;
+        chrome.storage.local.get('encOrgKeys', function (obj) {
+            if (obj && obj.encOrgKeys) {
+                var orgKeys = {},
+                    setKey = false;
+
+                var decPromises = [];
+                for (var orgId in obj.encOrgKeys) {
+                    if (obj.encOrgKeys.hasOwnProperty(orgId)) {
+                        (function (orgIdInstance) {
+                            var promise = self.rsaDecrypt(obj.encOrgKeys[orgIdInstance]).then(function (decValueB64) {
+                                orgKeys[orgIdInstance] = new SymmetricCryptoKey(decValueB64, true);
+                                setKey = true;
+                            }, function (err) {
+                                console.log('getOrgKeys error: ' + err);
+                            });
+                            decPromises.push(promise);
+                        })(orgId);
+                    }
+                }
+
+                Q.all(decPromises).then(function () {
+                    if (setKey) {
+                        _orgKeys = orgKeys;
+                    }
+
+                    deferred.resolve(_orgKeys);
+                });
+            }
+            else {
+                deferred.resolve(null);
+            }
+        });
+
+        return deferred.promise;
+    };
+
+    CryptoService.prototype.getOrgKey = function (orgId) {
+        if (!orgId) {
+            var deferred = Q.defer();
+            deferred.resolve(null);
+            return deferred.promise;
+        }
+
+        return this.getOrgKeys().then(function (orgKeys) {
+            if (!orgKeys || !(orgId in orgKeys)) {
+                return null;
+            }
+
+            return orgKeys[orgId];
         });
     };
 
+    CryptoService.prototype.clearKey = function (callback) {
+        var deferred = Q.defer();
+
+        _key = _legacyEtmKey = null;
+        chrome.storage.local.remove('key', function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    };
+
     CryptoService.prototype.clearKeyHash = function (callback) {
+        var deferred = Q.defer();
+
+        _keyHash = null;
+        chrome.storage.local.remove('keyHash', function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    };
+
+    CryptoService.prototype.clearPrivateKey = function () {
+        _privateKey = null;
+    };
+
+    CryptoService.prototype.clearOrgKeys = function () {
+        var deferred = Q.defer();
+
+        _orgKeys = {};
+        chrome.storage.local.remove('encOrgKeys', function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    };
+
+    CryptoService.prototype.clearKeys = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        _keyHash = null;
-        chrome.storage.local.remove('keyHash', function () {
+        var self = this;
+        Q.all([self.clearKey(), self.clearKeyHash(), self.clearOrgKeys()]).then(function () {
+            self.clearPrivateKey();
             callback();
         });
     };
@@ -125,7 +269,7 @@ function initCryptoService(constantsService) {
             chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
                 if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
                     // if we have a lock option set, clear the key
-                    self.clearKey(function () {
+                    self.clearKey().then(function () {
                         _key = key;
                         callback();
                         return;
@@ -201,42 +345,42 @@ function initCryptoService(constantsService) {
         var deferred = Q.defer();
         var self = this;
 
-        if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
-            throw 'cannot decrypt nothing';
-        }
-
-        self.getKey(function (localKey) {
-            key = key || localKey;
-            if (!key) {
-                throw 'Encryption key unavailable.';
+        try {
+            if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
+                throw 'cannot decrypt nothing';
             }
 
-            outputEncoding = outputEncoding || 'utf8';
-
-            if (cipherString.encryptionType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
-                key.encType === constantsService.encType.AesCbc256_B64) {
-                // Old encrypt-then-mac scheme, swap out the key
-                _legacyEtmKey = _legacyEtmKey ||
-                    new SymmetricCryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
-                key = _legacyEtmKey;
-            }
-
-            if (cipherString.encryptionType !== key.encType) {
-                throw 'encType unavailable.';
-            }
-
-            var ivBytes = forge.util.decode64(cipherString.initializationVector);
-            var ctBytes = forge.util.decode64(cipherString.cipherText);
-
-            if (key.macKey && cipherString.mac) {
-                var computedMac = computeMac(ctBytes, ivBytes, key.macKey);
-                if (computedMac !== cipherString.mac) {
-                    console.error('MAC failed.');
-                    deferred.reject('MAC failed.');
+            self.getKey(function (localKey) {
+                key = key || localKey;
+                if (!key) {
+                    throw 'Encryption key unavailable.';
                 }
-            }
 
-            try {
+                outputEncoding = outputEncoding || 'utf8';
+
+                if (cipherString.encryptionType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
+                    key.encType === constantsService.encType.AesCbc256_B64) {
+                    // Old encrypt-then-mac scheme, swap out the key
+                    _legacyEtmKey = _legacyEtmKey ||
+                        new SymmetricCryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
+                    key = _legacyEtmKey;
+                }
+
+                if (cipherString.encryptionType !== key.encType) {
+                    throw 'encType unavailable.';
+                }
+
+                var ivBytes = forge.util.decode64(cipherString.initializationVector);
+                var ctBytes = forge.util.decode64(cipherString.cipherText);
+
+                if (key.macKey && cipherString.mac) {
+                    var computedMac = computeMac(ctBytes, ivBytes, key.macKey);
+                    if (computedMac !== cipherString.mac) {
+                        console.error('MAC failed.');
+                        deferred.reject('MAC failed.');
+                    }
+                }
+
                 var ctBuffer = forge.util.createBuffer(ctBytes);
                 var decipher = forge.cipher.createDecipher('AES-CBC', key.encKey);
                 decipher.start({ iv: ivBytes });
@@ -250,14 +394,76 @@ function initCryptoService(constantsService) {
                 else {
                     decValue = decipher.output.getBytes();
                 }
+
                 deferred.resolve(decValue);
-            }
-            catch (e) {
-                deferred.reject('Decryption failed.');
-            }
-        });
+            });
+        }
+        catch (e) {
+            deferred.reject('Decryption failed.');
+        }
 
         return deferred.promise;
+    };
+
+    CryptoService.prototype.rsaDecrypt = function (encValue) {
+        var headerPieces = encValue.split('.'),
+            encType,
+            encPiece;
+
+        if (headerPieces.length === 1) {
+            encType = constantsService.encType.Rsa2048_OaepSha256_B64;
+            encPiece = headerPieces[0];
+        }
+        else if (headerPieces.length === 2) {
+            try {
+                encType = parseInt(headerPieces[0]);
+                encPiece = headerPieces[1];
+            }
+            catch (e) { }
+        }
+
+        var padding = null;
+        if (encType === constantsService.encType.Rsa2048_OaepSha256_B64) {
+            padding = {
+                name: 'RSA-OAEP',
+                hash: { name: 'SHA-256' }
+            }
+        }
+        else if (encType === constantsService.encType.Rsa2048_OaepSha1_B64) {
+            padding = {
+                name: 'RSA-OAEP',
+                hash: { name: 'SHA-1' }
+            }
+        }
+        else {
+            throw 'encType unavailable.';
+        }
+
+        return this.getPrivateKey().then(function (privateKeyBytes) {
+            if (!privateKeyBytes) {
+                throw 'No private key.';
+            }
+
+            if (!padding) {
+                throw 'Cannot determine padding.';
+            }
+
+            return window.crypto.subtle.importKey('pkcs8', privateKeyBytes, padding, false, ['decrypt']);
+        }).then(function (privateKey) {
+            if (!encPiece) {
+                throw 'encPiece unavailable.';
+            }
+
+            var ctBytes = fromB64ToBuffer(encPiece);
+            return window.crypto.subtle.decrypt({ name: padding.name }, privateKey, ctBytes);
+        }, function () {
+            throw 'Cannot import privateKey.';
+        }).then(function (decBytes) {
+            var b64DecValue = toB64FromBuffer(decBytes);
+            return b64DecValue;
+        }, function () {
+            throw 'Cannot rsa decrypt.';
+        });
     };
 
     function computeMac(ct, iv, macKey) {
@@ -314,5 +520,25 @@ function initCryptoService(constantsService) {
         else {
             throw 'Unsupported encType/key length.';
         }
+    }
+
+    function fromB64ToBuffer(str) {
+        var binary_string = window.atob(str);
+        var len = binary_string.length;
+        var bytes = new Uint8Array(len);
+        for (var i = 0; i < len; i++) {
+            bytes[i] = binary_string.charCodeAt(i);
+        }
+        return bytes.buffer;
+    }
+
+    function toB64FromBuffer(buffer) {
+        var binary = '';
+        var bytes = new Uint8Array(buffer);
+        var len = bytes.byteLength;
+        for (var i = 0; i < len; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        return window.btoa(binary);
     }
 };

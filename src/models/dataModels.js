@@ -17,6 +17,7 @@ var FolderData = function (response, userId) {
 
 var LoginData = function (response, userId) {
     this.id = response.id;
+    this.organizationId = response.organizationId;
     this.folderId = response.folderId;
     this.userId = userId;
 

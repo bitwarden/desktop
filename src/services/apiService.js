@@ -283,7 +283,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers?access_token2=' + token,
+                url: self.baseUrl + '/ciphers?includeFolders=true&includeShared=true&access_token2=' + token,
                 dataType: 'json',
                 success: function (response) {
                     var data = [];

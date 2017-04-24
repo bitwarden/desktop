@@ -24,8 +24,20 @@
                             cryptoService.setKey(key, function () {
                                 cryptoService.setKeyHash(hashedPassword, function () {
                                     userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(), function () {
-                                        chrome.runtime.sendMessage({ command: 'loggedIn' });
-                                        deferred.resolve(false);
+                                        if (!response.privateKey) {
+                                            loggedIn(deferred);
+                                            return;
+                                        }
+
+                                        cryptoService.setEncPrivateKey(response.privateKey).then(function () {
+                                            apiService.getProfile(function (profile) {
+                                                cryptoService.setOrgKeys(profile.organizations).then(function () {
+                                                    loggedIn(deferred);
+                                                });
+                                            }, function () {
+                                                loggedIn(deferred);
+                                            });
+                                        });
                                     });
                                 });
                             });
@@ -47,6 +59,11 @@
             $rootScope.vaultFolders = null;
             callback();
         };
+
+        function loggedIn(deferred) {
+            chrome.runtime.sendMessage({ command: 'loggedIn' });
+            deferred.resolve(false);
+        }
 
         return _service;
     });
