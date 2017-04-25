@@ -678,5 +678,13 @@
   "shared": {
     "message": "Shared",
     "desription": "Shared"
+  },
+  "shareVault": {
+    "message": "Share Your Vault",
+    "desription": "Share Your Vault"
+  },
+  "shareVaultInfo": {
+    "message": "Create an organization to securely share your logins with other users.",
+    "desription": "Create an organization to securely share your logins with other users."
   }
 }

@@ -3,8 +3,8 @@
 
     .controller('toolsController', function ($scope, SweetAlert, i18nService) {
         $scope.i18n = i18nService;
-        $scope.launchWebVault = function () {
-            chrome.tabs.create({ url: 'https://vault.bitwarden.com' });
+        $scope.launchWebVault = function (createOrg) {
+            chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/' + (createOrg ? '?org=free' : '') });
         };
 
         $scope.launchiOS = function () {
