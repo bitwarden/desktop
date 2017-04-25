@@ -10,6 +10,7 @@
             $scope.submitPromise = checkPassword().then(function () {
                 return getCsv();
             }).then(function (csv) {
+                $analytics.eventTrack('Exported Data');
                 downloadFile(csv);
             }, function () {
                 toastr.error(i18nService.invalidMasterPassword, i18nService.errorsOccurred);
