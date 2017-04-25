@@ -1,6 +1,8 @@
 function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
-    this.baseUrl = 'http://localhost:4000';
-    //this.baseUrl = 'https://api.bitwarden.com';
+    this.baseUrl = 'http://localhost:4000'; // Desktop
+    //this.baseUrl = 'http://192.168.1.8:4000'; // Desktop external
+    //this.baseUrl = 'https://preview-api.bitwarden.com'; // Preview
+    //this.baseUrl = 'https://api.bitwarden.com'; // Production
     this.tokenService = tokenService;
     this.logoutCallback = logoutCallback;
     this.appIdService = appIdService;
