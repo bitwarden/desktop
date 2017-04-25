@@ -47,6 +47,11 @@ var ProfileResponse = function (response) {
     }
 };
 
+var KeysResponse = function (response) {
+    this.privateKey = response.PrivateKey;
+    this.publicKey = response.PublicKey;
+};
+
 var ProfileOrganizationResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;

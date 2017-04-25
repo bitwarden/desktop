@@ -85,8 +85,34 @@ function initSyncService() {
         var self = this;
 
         self.apiService.getProfile(function (response) {
-            self.cryptoService.setOrgKeys(response.organizations).then(function () {
-                deferred.resolve();
+            self.cryptoService.getPrivateKey().then(function (privateKey) {
+                if (response.organizations && !privateKey) {
+                    self.apiService.getKeys(function (keysResponse) {
+                        if (keysResponse.privateKey) {
+                            self.cryptoService.setEncPrivateKey(keysResponse.privateKey).then(function () {
+                                return self.cryptoService.setOrgKeys(response.organizations);
+                            }, function () {
+                                deferred.reject();
+                            }).then(function () {
+                                deferred.resolve();
+                            }, function () {
+                                deferred.reject();
+                            });
+                        }
+                        else {
+                            deferred.resolve();
+                        }
+                    }, function () {
+                        deferred.reject();
+                    });
+                }
+                else {
+                    self.cryptoService.setOrgKeys(response.organizations).then(function () {
+                        deferred.resolve();
+                    }, function () {
+                        deferred.reject();
+                    });
+                }
             });
         }, function () {
             deferred.reject();
@@ -103,7 +129,7 @@ function initSyncService() {
             var folders = {};
 
             for (var i = 0; i < response.data.length; i++) {
-                folders[response.data.id] = new FolderData(response.data[i], userId);
+                folders[response.data[i].id] = new FolderData(response.data[i], userId);
             }
 
             self.folderService.replace(folders, function () {

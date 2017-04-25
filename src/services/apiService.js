@@ -1,8 +1,8 @@
 function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
-    this.baseUrl = 'http://localhost:4000'; // Desktop
+    //this.baseUrl = 'http://localhost:4000'; // Desktop
     //this.baseUrl = 'http://192.168.1.8:4000'; // Desktop external
     //this.baseUrl = 'https://preview-api.bitwarden.com'; // Preview
-    //this.baseUrl = 'https://api.bitwarden.com'; // Production
+    this.baseUrl = 'https://api.bitwarden.com'; // Production
     this.tokenService = tokenService;
     this.logoutCallback = logoutCallback;
     this.appIdService = appIdService;
@@ -68,6 +68,25 @@ function initApiService() {
                 dataType: 'json',
                 success: function (response) {
                     success(new ProfileResponse(response));
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, false, self);
+                }
+            });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true, self);
+        });
+    };
+
+    ApiService.prototype.getKeys = function (success, error) {
+        var self = this;
+        handleTokenState(self).then(function (token) {
+            $.ajax({
+                type: 'GET',
+                url: self.baseUrl + '/accounts/keys?access_token2=' + token,
+                dataType: 'json',
+                success: function (response) {
+                    success(new KeysResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, false, self);
