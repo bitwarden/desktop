@@ -84,35 +84,41 @@ function initSyncService() {
         var deferred = Q.defer();
         var self = this;
 
+        function setKeys(hasPrivateKey, response, d) {
+            if (response.organizations && response.organizations.length && !hasPrivateKey) {
+                self.apiService.getKeys(function (keysResponse) {
+                    if (keysResponse.privateKey) {
+                        self.cryptoService.setEncPrivateKey(keysResponse.privateKey).then(function () {
+                            return self.cryptoService.setOrgKeys(response.organizations);
+                        }, function () {
+                            d.reject();
+                        }).then(function () {
+                            d.resolve();
+                        }, function () {
+                            d.reject();
+                        });
+                    }
+                    else {
+                        d.resolve();
+                    }
+                }, function () {
+                    d.reject();
+                });
+            }
+            else {
+                self.cryptoService.setOrgKeys(response.organizations).then(function () {
+                    d.resolve();
+                }, function () {
+                    d.reject();
+                });
+            }
+        }
+
         self.apiService.getProfile(function (response) {
             self.cryptoService.getPrivateKey().then(function (privateKey) {
-                if (response.organizations && !privateKey) {
-                    self.apiService.getKeys(function (keysResponse) {
-                        if (keysResponse.privateKey) {
-                            self.cryptoService.setEncPrivateKey(keysResponse.privateKey).then(function () {
-                                return self.cryptoService.setOrgKeys(response.organizations);
-                            }, function () {
-                                deferred.reject();
-                            }).then(function () {
-                                deferred.resolve();
-                            }, function () {
-                                deferred.reject();
-                            });
-                        }
-                        else {
-                            deferred.resolve();
-                        }
-                    }, function () {
-                        deferred.reject();
-                    });
-                }
-                else {
-                    self.cryptoService.setOrgKeys(response.organizations).then(function () {
-                        deferred.resolve();
-                    }, function () {
-                        deferred.reject();
-                    });
-                }
+                setKeys(!!privateKey, response, deferred);
+            }, function () {
+                setKeys(false, response, deferred);
             });
         }, function () {
             deferred.reject();
