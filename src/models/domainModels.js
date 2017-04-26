@@ -6,13 +6,23 @@ var CipherString = function () {
     this.initializationVector = null;
     this.mac = null;
 
-    if (arguments.length >= 2) {
-        this.encryptedString = arguments[0] + '.' + arguments[1];
+    var constants = chrome.extension.getBackgroundPage().constantsService;
 
+    if (arguments.length >= 2) {
+        // ct and optional header
+        if (arguments[0] === constants.encType.AesCbc256_B64) {
+            this.encryptedString = arguments[1];
+        }
+        else {
+            this.encryptedString = arguments[0] + '.' + arguments[1];
+        }
+
+        // iv
         if (arguments.length > 2 && arguments[2]) {
             this.encryptedString += ('|' + arguments[2]);
         }
 
+        // mac
         if (arguments.length > 3 && arguments[3]) {
             this.encryptedString += ('|' + arguments[3]);
         }
@@ -32,8 +42,6 @@ var CipherString = function () {
     if (!this.encryptedString) {
         return;
     }
-
-    var constants = chrome.extension.getBackgroundPage().constantsService;
 
     var headerPieces = this.encryptedString.split('.'),
         encPieces;
