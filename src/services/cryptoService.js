@@ -480,7 +480,7 @@ function initCryptoService(constantsService) {
         return b64Output ? forge.util.encode64(mac.getBytes()) : mac.getBytes();
     }
 
-    // Safely compare two MACs in a way that protects against timing attacks.
+    // Safely compare two MACs in a way that protects against timing attacks (Double HMAC Verification).
     // ref: https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2011/february/double-hmac-verification/
     function macsEqual(macKey, mac1, mac2) {
         var hmac = forge.hmac.create();
