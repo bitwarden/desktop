@@ -620,8 +620,8 @@
     "description": "Search folder"
   },
   "noneFolder": {
-    "message": "(geen)",
-    "description": "(none) - this is the folder for uncategorized logins"
+    "message": "Geen map",
+    "description": "No Folder - this is the folder for uncategorized logins"
   },
   "features": {
     "message": "Features",

@@ -620,8 +620,8 @@
     "description": "Search folder"
   },
   "noneFolder": {
-    "message": "(aucun)",
-    "description": "(none) - this is the folder for uncategorized logins"
+    "message": "Pas de dossier",
+    "description": "No Folder - this is the folder for uncategorized logins"
   },
   "features": {
     "message": "Fonctionnalités",
