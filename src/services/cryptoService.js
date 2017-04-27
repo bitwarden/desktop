@@ -336,7 +336,7 @@ function initCryptoService(constantsService) {
                 var iv = forge.util.encode64(ivBytes);
                 var ctBytes = cipher.output.getBytes();
                 var ct = forge.util.encode64(ctBytes);
-                var mac = !key.macKey ? null : computeMac(ctBytes, ivBytes, key.macKey);
+                var mac = !key.macKey ? null : computeMac(ctBytes, ivBytes, key.macKey, true);
 
                 var cs = new CipherString(key.encType, iv, ct, mac);
                 deferred.resolve(cs);
@@ -379,8 +379,9 @@ function initCryptoService(constantsService) {
                 var ctBytes = forge.util.decode64(cipherString.cipherText);
 
                 if (key.macKey && cipherString.mac) {
-                    var computedMac = computeMac(ctBytes, ivBytes, key.macKey);
-                    if (computedMac !== cipherString.mac) {
+                    var macBytes = forge.util.decode64(cipherString.mac);
+                    var computedMacBytes = computeMac(ctBytes, ivBytes, key.macKey, false);
+                    if (!macsEqual(key.macKey, computedMacBytes, macBytes)) {
                         console.error('MAC failed.');
                         deferred.reject('MAC failed.');
                     }
@@ -471,12 +472,28 @@ function initCryptoService(constantsService) {
         });
     };
 
-    function computeMac(ct, iv, macKey) {
+    function computeMac(ct, iv, macKey, b64Output) {
         var hmac = forge.hmac.create();
         hmac.start('sha256', macKey);
         hmac.update(iv + ct);
         var mac = hmac.digest();
-        return forge.util.encode64(mac.getBytes());
+        return b64Output ? forge.util.encode64(mac.getBytes()) : mac.getBytes();
+    }
+
+    // Safely compare two MACs in a way that protects against timing attacks.
+    // ref: https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2011/february/double-hmac-verification/
+    function macsEqual(macKey, mac1, mac2) {
+        var hmac = forge.hmac.create();
+
+        hmac.start('sha256', macKey);
+        hmac.update(mac1);
+        mac1 = hmac.digest().getBytes();
+
+        hmac.start(null, null);
+        hmac.update(mac2);
+        mac2 = hmac.digest().getBytes();
+
+        return mac1 === mac2;
     }
 
     function SymmetricCryptoKey(keyBytes, b64KeyBytes, encType) {
