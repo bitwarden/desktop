@@ -196,7 +196,7 @@
     "description": "Help & Feedback"
   },
   "emailUs": {
-    "message": "Envie-nos um email",
+    "message": "Enviar-nos um email",
     "description": "Email Us"
   },
   "emailUsDirectly": {
@@ -204,7 +204,7 @@
     "description": "Email us directly to get help or leave feedback."
   },
   "visitOurWebsite": {
-    "message": "Visite o nosso website",
+    "message": "Visitar o nosso website",
     "description": "Visit Our Website"
   },
   "visitOurWebsiteDirectly": {
@@ -388,7 +388,7 @@
     "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyMasterPassword": {
-    "message": "Verificar palavra-passe mestra",
+    "message": "Verificar palavra-passe",
     "description": "Verify Master Password"
   },
   "invalidMasterPassword": {
