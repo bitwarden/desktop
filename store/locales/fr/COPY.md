@@ -15,3 +15,31 @@ Le vol de mot de passe est un problème sérieux. Les sites web et les applicati
 Les experts en sécurité recommendent l'utilisation de mots de passe différents et générés aléatoirement pour chaque compte que vous créez. Mais comment allez-vous gérer tous ces mots de passe ? bitwarden facilite la création, le stockage et l'accès de vos mots de passe.
 
 bitwarden stocke tous vos identifiants dans un coffre chiffré qui est synchronisé entre tous vos appareils. Puisqu'il est entièrement chiffré avant même qu'il ne parte de votre appareil, vous êtes la seule personne à avoir accès à vos données. Pas même l'équipe de bitwarden ne peut lire vos données, même si nous le voulions. Vos données sont scellées par un chiffrement AES-256 bit, un salage et hachage ainsi que par un PBKDF2 SHA-256.
+
+# Asset - Tile
+
+Un gestionnaire de mot de passe sécurisé et gratuit pour tous vos appareils
+
+# Screenshot - Sync
+
+Synchroniser et accéder à votre coffre depuis plusieurs appareils
+
+# Screenshot - Vault
+
+Gérer tous vos identifiants depuis un coffre sécurisé
+
+# Screenshot - Autofill
+
+Remplissage automatique et rapide de vos identifiants sur n'importe quel site que vous visitez
+
+# Screenshot - Menu
+
+Votre coffre est facilement accessible depuis le menu contextuel de droite
+
+# Screenshot - Password
+
+Générer automatiquement des mots de passe forts, aléatoires et sécurisés
+
+# Screenshot - Edit
+
+Vos informations sont gérées de manière sécurisée grâce à un chiffrement AES-256 bit
