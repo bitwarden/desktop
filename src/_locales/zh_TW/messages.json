@@ -653,26 +653,26 @@
   },
   "disableContextMenuItemDesc": {
     "message": "右鍵選項幫你快速使用密碼生成器，也可以登入分頁的網頁。",
-    "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "exportVault": {
     "message": "匯出密碼庫",
-    "desription": "Export Vault"
+    "description": "Export Vault"
   },
   "warning": {
     "message": "警告",
-    "desription": "WARNING (should stay in capitalized letters if the language permits)"
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
     "message": "你的密碼將匯出成未加密的 .csv 檔案。你不應將它存放或經由未加密的方法傳送（例如電郵）。用完後請立即將它刪除。",
-    "desription": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "description": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword": {
     "message": "輸入你的主密碼以匯出密碼庫資料。",
-    "desription": "Enter your master password to export your vault data."
+    "description": "Enter your master password to export your vault data."
   },
   "exportVaultInfo": {
     "message": "將密碼庫資料匯出成 .csv 檔案，方便修改和轉移資料。",
-    "desription": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+    "description": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   }
 }

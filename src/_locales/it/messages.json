@@ -653,26 +653,26 @@
   },
   "disableContextMenuItemDesc": {
     "message": "il menu contestuale di bitwarden fornisce l'accesso rapido ai login per la tab corrente.",
-    "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "exportVault": {
     "message": "Esporta cassaforte",
-    "desription": "Export Vault"
+    "description": "Export Vault"
   },
   "warning": {
     "message": "ATTENZIONE",
-    "desription": "WARNING (should stay in capitalized letters if the language permits)"
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
     "message": "Il file esportato contiene dati non criptati in formato .csv. Non dovresti salvare o mandare il file attraverso un canale non sicuro (come, ad esempio, una email). Cancellalo immediatamente dopo aver finito di utilizzarlo.",
-    "desription": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "description": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati della tua cassaforte.",
-    "desription": "Enter your master password to export your vault data."
+    "description": "Enter your master password to export your vault data."
   },
   "exportVaultInfo": {
     "message": "Esporta i dati della tua cassaforte in formato .csv, così da poterli modificare facilmente o spostarli altrove.",
-    "desription": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+    "description": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   }
 }

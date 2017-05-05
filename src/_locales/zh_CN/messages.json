@@ -653,6 +653,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "上下文菜单选项可以让您快速访问密码生成器，也可以登陆当前标签的网站。",
-    "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   }
 }

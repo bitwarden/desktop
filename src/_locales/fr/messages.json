@@ -653,6 +653,6 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Les options de menu contextuelles permettent un accès rapide à la génération de mots de passe et d'identifiants pour le site web de l'onglet actuel",
-    "desription": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   }
 }
