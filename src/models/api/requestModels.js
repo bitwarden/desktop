@@ -1,5 +1,6 @@
 ﻿var LoginRequest = function (login) {
     this.folderId = login.folderId;
+    this.organizationId = login.organizationId;
     this.name = login.name ? login.name.encryptedString : null;
     this.uri = login.uri ? login.uri.encryptedString : null;
     this.username = login.username ? login.username.encryptedString : null;
