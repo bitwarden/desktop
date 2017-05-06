@@ -214,6 +214,16 @@ function initTokenService() {
         return decoded.name;
     };
 
+    TokenService.prototype.getIssuer = function () {
+        var decoded = this.decodeToken();
+
+        if (typeof decoded.iss === 'undefined') {
+            throw 'No issuer found';
+        }
+
+        return decoded.iss;
+    };
+
     function urlBase64Decode(str) {
         var output = str.replace(/-/g, '+').replace(/_/g, '/');
         switch (output.length % 4) {

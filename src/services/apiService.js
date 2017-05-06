@@ -19,7 +19,6 @@ function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
     this.logoutCallback = logoutCallback;
     this.appIdService = appIdService;
     this.utilsService = utilsService;
-    this.accessTokenQs = "access_token3=";
 
     initApiService();
 };
@@ -58,7 +57,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/revision-date?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/accounts/revision-date?' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(response);
@@ -77,7 +76,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/profile?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/accounts/profile?' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new ProfileResponse(response));
@@ -96,7 +95,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/keys?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/accounts/keys?' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new KeysResponse(response));
@@ -151,7 +150,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/settings/domains?excluded=false&' + self.accessTokenQs + token,
+                url: self.baseUrl + '/settings/domains?excluded=false&' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new DomainsResponse(response));
@@ -172,7 +171,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/sites/' + id + '?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/sites/' + id + '?' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new LoginResponse(response));
@@ -191,7 +190,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/sites?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/sites?' + token,
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -212,7 +211,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/sites/' + id + '?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/sites/' + id + '?' + token,
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -235,7 +234,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/folders/' + id + '?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/folders/' + id + '?' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new FolderResponse(response));
@@ -254,7 +253,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/folders?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/folders?' + token,
                 dataType: 'json',
                 success: function (response) {
                     var data = [];
@@ -278,7 +277,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/folders?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/folders?' + token,
                 data: JSON.stringify(folderRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -299,7 +298,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/folders/' + id + '?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/folders/' + id + '?' + token,
                 data: JSON.stringify(folderRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -322,7 +321,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers/' + id + '?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/ciphers/' + id + '?' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new CipherResponse(response));
@@ -341,8 +340,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers?includeFolders=false&includeShared=true&' +
-                    self.accessTokenQs + token,
+                url: self.baseUrl + '/ciphers?includeFolders=false&includeShared=true&' + token,
                 dataType: 'json',
                 success: function (response) {
                     var data = [];
@@ -366,7 +364,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/ciphers/' + id + '/delete?' + self.accessTokenQs + token,
+                url: self.baseUrl + '/ciphers/' + id + '/delete?' + token,
                 dataType: 'text',
                 success: function (response) {
                     success();
@@ -419,7 +417,7 @@ function initApiService() {
                         }, function (token) {
                             self.tokenService.clearAuthBearer(function () {
                                 tokenService.setTokens(token.accessToken, token.refreshToken, function () {
-                                    deferred.resolve(token.accessToken);
+                                    resolveTokenQs(token.accessToken, self, deferred);
                                 });
                             });
                         }, function (jqXHR) {
@@ -440,7 +438,7 @@ function initApiService() {
                             refresh_token: refreshToken
                         }, function (token) {
                             tokenService.setTokens(token.accessToken, token.refreshToken, function () {
-                                deferred.resolve(token.accessToken);
+                                resolveTokenQs(token.accessToken, self, deferred);
                             });
                         }, function (jqXHR) {
                             deferred.reject(jqXHR);
@@ -452,12 +450,22 @@ function initApiService() {
                         self.tokenService.clearAuthBearer(function () { });
                     }
 
-                    deferred.resolve(accessToken);
+                    resolveTokenQs(accessToken, self, deferred);
                 }
             });
         });
 
         return deferred.promise
+    }
+
+    function resolveTokenQs(token, self, deferred) {
+        var issuer = self.tokenService.getIssuer();
+        if (issuer === self.baseUrl) {
+            deferred.resolve('access_token2=' + token);
+        }
+        else {
+            deferred.resolve('access_token3=' + token);
+        }
     }
 
     function postConnectToken(self, data, success, error) {
