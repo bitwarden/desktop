@@ -646,5 +646,45 @@
   "notificationAddSave": {
     "message": "Kyllä, tallenna nyt",
     "description": "Yes, Save Now"
+  },
+  "disableContextMenuItem": {
+    "message": "Älä näytä toimintoja pikavalikossa",
+    "description": "Disable Context Menu Options"
+  },
+  "disableContextMenuItemDesc": {
+    "message": "Hiiren oikealla painikkeella ilmestyvän pikavalikon toiminnoilla voit nopeasti luoda itsellesi salasananan tai täyttää kirjautumiskentät nykyiselle välilehdelle.",
+    "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "exportVault": {
+    "message": "Vie holvi",
+    "description": "Export Vault"
+  },
+  "warning": {
+    "message": "VAROITUS",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "Tämä vienti sisältää tietosi suojaamattomana .csv-muodossa. Tiedostoa ei kannata tallentaa tai lähettää turvattomia kanavia pitkin (kuten sähköposti). Poista se välittömästi, kun et enää tarvitse sitä.",
+    "description": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Syötä pääsalasanasi viedäksesi holvisi tiedot.",
+    "description": "Enter your master password to export your vault data."
+  },
+  "exportVaultInfo": {
+    "message": "Vie holvin tiedot .csv-muodossa, jotta voit helposti muokata tietoja tai siirtää ne muualle.",
+    "description": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+  },
+  "shared": {
+    "message": "Jaettu",
+    "description": "Shared"
+  },
+  "shareVault": {
+    "message": "Jaa holvisi",
+    "description": "Share Your Vault"
+  },
+  "shareVaultInfo": {
+    "message": "Luo organisaatio jakaaksesi kirjautumistiedot turvallisesti muiden käyttäjien kanssa.",
+    "description": "Create an organization to securely share your logins with other users."
   }
 }
