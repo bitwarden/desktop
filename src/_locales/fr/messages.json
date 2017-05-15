@@ -654,5 +654,37 @@
   "disableContextMenuItemDesc": {
     "message": "Les options de menu contextuelles permettent un accès rapide à la génération de mots de passe et d'identifiants pour le site web de l'onglet actuel",
     "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "exportVault": {
+    "message": "Exporter le coffre",
+    "description": "Export Vault"
+  },
+  "warning": {
+    "message": "AVERTISSEMENT",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "Cet export contient des données non chiffrées au format .csv. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé.",
+    "description": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre.",
+    "description": "Enter your master password to export your vault data."
+  },
+  "exportVaultInfo": {
+    "message": "Exportez les données de votre coffre au format .csv afin de les modifier facilement ou les déplacer ailleurs.",
+    "description": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+  },
+  "shared": {
+    "message": "Partagé",
+    "description": "Shared"
+  },
+  "shareVault": {
+    "message": "Partager votre coffre",
+    "description": "Share Your Vault"
+  },
+  "shareVaultInfo": {
+    "message": "Créez une organisation pour partager de manière sécurisée vos identifiants avec d'autres utilisateurs.",
+    "description": "Create an organization to securely share your logins with other users."
   }
 }
