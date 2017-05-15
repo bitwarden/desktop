@@ -654,5 +654,37 @@
   "disableContextMenuItemDesc": {
     "message": "上下文菜单选项可以让您快速访问密码生成器，也可以登陆当前标签的网站。",
     "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "exportVault": {
+    "message": "导出密码库",
+    "description": "Export Vault"
+  },
+  "warning": {
+    "message": "警告",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "本次导出将你的数据未经加密存为 .csv 文件。你应该不应该保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。",
+    "description": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "导出密码库需要输入主密码。",
+    "description": "Enter your master password to export your vault data."
+  },
+  "exportVaultInfo": {
+    "message": "将你的密码库导出为 .csv 格式，以便你修改，或者保存到其他地方。",
+    "description": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+  },
+  "shared": {
+    "message": "分享",
+    "description": "Shared"
+  },
+  "shareVault": {
+    "message": "分享你的密码库",
+    "description": "Share Your Vault"
+  },
+  "shareVaultInfo": {
+    "message": "创建一个组织来安全地分享您的登录信息。",
+    "description": "Create an organization to securely share your logins with other users."
   }
 }
