@@ -368,11 +368,11 @@
     "description": "Manage"
   },
   "other": {
-    "message": "Outro(s)",
+    "message": "Outros",
     "description": "Other"
   },
   "disableGa": {
-    "message": "Desativar Analytics",
+    "message": "Desativar analítica",
     "description": "Disable Analytics"
   },
   "rateExtension": {
@@ -628,7 +628,7 @@
     "description": "Features"
   },
   "gaDesc": {
-    "message": "Utilizamos o analytics para aprender melhor como a extensão está a ser utilizada para que possamos torná-la melhor. Toda a recolha de dados é completamente anónima.",
+    "message": "Utilizamos analítica para aprender melhor como a extensão está a ser utilizada para que possamos torná-la melhor. Toda a recolha de dados é completamente anónima.",
     "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification": {
