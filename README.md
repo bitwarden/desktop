@@ -47,4 +47,4 @@ You can now load the extension into your browser through the browser's extension
 Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute
 by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
 
-Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature.
+Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature. You can read our security policy in the [`SECURITY.md`](SECURITY.md) file.
