@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden – Free Password Manager</value>
+    <value>bitwarden – Бесплатный менеджер паролей</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Надёжный и свободный менеджер паролей для всех Ваших устройств.</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>bitwarden - простой и надёжный способ хранить все Ваши логины и пароли и легко их синхронизировать между всеми Вашими устройствами.
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
+Кража паролей - серьёзная проблема. Web-сайты и приложения, которые Вы используете подвергаются атакам каждый день. Проблемы в их безопасности могут привести к краже Вашего пароля. Кроме того, когда Вы используете одни и те же пароли на разных сайтах и приложениях, то хакеры могут легко получить доступ к нескольким Вашим аккаунтам сразу (к почтовому ящику, к аккаунту банка и т.д.).
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? bitwarden makes it easy for you to create, store, and access your passwords.
+Эксперты по безопасности рекомендуют использовать разные случайно сгенерированные пароли для каждого созданного Вами аккаунта. Но как же управлять всеми этими паролями? bitwarden позволяет Вам легко получить доступ к Вашим паролям, а так же создавать и хранить их.
 
-bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.</value>
+bitwarden хранит все Ваши логины и пароли в зашифрованном хранилище, которое синхронизируется между всеми Вашими устройствами. До того, как данные покинут Ваше устройство они будут зашифрованы и только потом отправлены. Мы в bitwarden не сможем прочесть Ваши данные, даже если мы этого захотим. Ваши данные зашифрованны при помощи алгоритма AES-256 и PBKDF2 SHA256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Надёжный и бесплатный менеджер паролей для всех Ваших устройств</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>Синхронизируйте Ваше хранилище между несколькими устройствами</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Управляйте всеми своими логинами и паролями из безопасного хранилища</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Быстро заполняйте данны для ввода логина и пароля на любом сайте</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>У вас есть удобный доступ к хранилищу из контекстного меню</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Генерируйте стойкие, случайные и надёжные пароли</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Ваша информация надёжно хранится благодаря шифрованию AES-256</value>
   </data>
 </root>

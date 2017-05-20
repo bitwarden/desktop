@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden – Free Password Manager</value>
+    <value>bitwarden - Kostenloser Passwort-Manager</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Ein sicherer und kostenloser Passwort-Manager für all deine Geräte</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>bitwarden ist der einfachste und sicherste Weg all deine Logins und Passwörter zu speichern, während du sie zwischen all deinen Geräten synchronisierst.
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
+Passwort-Diebstahl ist ein echtes Problem. Die Webseiten und Apps, welche du verwendest, werden jeden Tag angegriffen und oftmals werden deine Passwörter dabei gestohlen. Wenn das gleiche Passwort bei mehreren Apps und Websites verwendet wird, können Hacker sich damit ganz einfach auch in deine E-Mails oder deinen Bank-Account einloggen.
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? bitwarden makes it easy for you to create, store, and access your passwords.
+Sicherheitsexperten empfehlen daher, dass du für jeden Account, den du erstellst, ein anderes, zufällig generiertes Passwort verwendest. Aber wie sollst du dir all diese Passwörter merken? bitwarden hilft dir dabei, deine Passwörter zu erstellen, speichern und zu verwalten.
 
-bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.</value>
+bitwarden speichert all deine Logins in einem verschlüsselten Tresor, der mit allen Geräten synchronisiert wird. Da er komplett verschlüsselt ist, bevor er überhaupt dein Gerät verlässt, hast nur du Zugriff auf deine Daten. Nicht einmal bitwarden kann deine Daten lesen, selbst, wenn wir es wollten. Deine Daten sind mit einer AES-256-Bit-Verschlüsselung, sowie Salted Hashing und PBKDR2 SHA-256 abgesichert.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>Ein sicherer und kostenloser Passwort-Manager für all deine Geräte</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>Synchronisiere und greife auf deinen Tresor von unterschiedlichen Geräten aus zu</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Verwalte all deine Logins und Passwörter mit einem sicheren Tresor</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Auto-Vervollständige alle Login-Informationen schnell auf jeder Website, die du besuchst</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Dein Tresor kann auch über das Kontextmenü einfach erreicht werden</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Generiere automatisch starke, zufällige und sichere Passwörter</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Deine Informationen sind sicher dank AES-256-Bit-Verschlüsselung</value>
   </data>
 </root>
