@@ -7,7 +7,7 @@ files:
         pt-BR: pt_BR
         zh-CN: zh_CN
         zh-TW: zh_TW
-  - source: /store/locales/en/COPY.md
+  - source: /store/locales/en/copy.xml
     translation: /store/locales/%two_letters_code%/%original_file_name%
     languages_mapping:
       two_letters_code:
@@ -15,3 +15,6 @@ files:
         pt-BR: pt_BR
         zh-CN: zh_CN
         zh-TW: zh_TW
+    content_segmentation: '0'
+    translatable_elements:
+      - /root/data/value
