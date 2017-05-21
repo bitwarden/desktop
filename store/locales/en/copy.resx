@@ -145,7 +145,7 @@ bitwarden stores all of your logins in an encrypted vault that syncs across all 
     <value>Quickly auto-fill your login credentials into any website that you visit</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Your vault is also conveniently accessible from the right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
     <value>Automatically generate strong, random, and secure passwords</value>
