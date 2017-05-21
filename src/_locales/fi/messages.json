@@ -1,690 +1,690 @@
 {
-  "appName": {
-    "message": "bitwarden",
-    "description": "bitwarden"
-  },
-  "extName": {
-    "message": "bitwarden – Ilmainen salasananhallintapalvelu",
-    "description": "Extension name"
-  },
-  "extDesc": {
-    "message": "bitwarden on turvallinen ja ilmainen salasananhallintapalvelu kaikille laitteillesi.",
-    "description": "Extension description"
-  },
-  "loginOrCreateNewAccount": {
-    "message": "Kirjaudu sisään tai luo tili päästäksesi suojattuun holviisi.",
-    "description": "Log in or create a new account to access your secure vault."
-  },
-  "createAccount": {
-    "message": "Luo tili",
-    "description": "Create Account"
-  },
-  "login": {
-    "message": "Kirjaudu",
-    "description": "Log In"
-  },
-  "cancel": {
-    "message": "Peruuta",
-    "description": "Cancel"
-  },
-  "close": {
-    "message": "Sulje",
-    "description": "Close"
-  },
-  "submit": {
-    "message": "Jatka",
-    "description": "Submit"
-  },
-  "emailAddress": {
-    "message": "Sähköpostiosoite",
-    "description": "Email Address"
-  },
-  "masterPass": {
-    "message": "Pääsalasana",
-    "description": "Master Password"
-  },
-  "masterPassDesc": {
-    "message": "Pääsalasanalla pääset käsiksi salasanaholviisi. On hyvin tärkeää, että muistat pääsalasanasi. Pääsalasanaa ei voida palauttaa mitenkään, jos satut unohtamaan sen.",
-    "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
-  },
-  "masterPassHintDesc": {
-    "message": "Salasanavihje voi auttaa sinua muistamaan pääsalasanasi, jos satut unohtamaan sen.",
-    "description": "A master password hint can help you remember your password if you forget it."
-  },
-  "reTypeMasterPass": {
-    "message": "Syötä pääsalasana uudelleen",
-    "description": "Re-type Master Password"
-  },
-  "masterPassHint": {
-    "message": "Salasanavihje (valinnainen)",
-    "description": "Master Password Hint (optional)"
-  },
-  "tab": {
-    "message": "Välilehti",
-    "description": "Tab"
-  },
-  "myVault": {
-    "message": "Minun holvini",
-    "description": "My Vault"
-  },
-  "tools": {
-    "message": "Työkalut",
-    "description": "Tools"
-  },
-  "settings": {
-    "message": "Asetukset",
-    "description": "Settings"
-  },
-  "currentTab": {
-    "message": "Nykyinen välilehti",
-    "description": "Current Tab"
-  },
-  "copyPassword": {
-    "message": "Kopioi salasana",
-    "description": "Copy Password"
-  },
-  "copyUsername": {
-    "message": "Kopioi käyttäjänimi",
-    "description": "Copy Username"
-  },
-  "autoFill": {
-    "message": "Täytä automaattisesti",
-    "description": "Auto-fill"
-  },
-  "generatePasswordCopied": {
-    "message": "Luo salasana (kopioitu)",
-    "description": "Generate Password (copied)"
-  },
-  "noMatchingLogins": {
-    "message": "Ei täsmääviä kohteita.",
-    "description": "No matching logins."
-  },
-  "vaultLocked": {
-    "message": "Holvi on lukittu.",
-    "description": "Vault is locked."
-  },
-  "autoFillInfo": {
-    "message": "Selaimen nykyiselle välilehdelle ei ole automaattisesti täytettäviä kohteita.",
-    "description": "There are no logins available to auto-fill for the current browser tab."
-  },
-  "addLogin": {
-    "message": "Lisää kohde",
-    "description": "Add a Login"
-  },
-  "passwordHint": {
-    "message": "Salasanavihje",
-    "description": "Password Hint"
-  },
-  "enterEmailToGetHint": {
-    "message": "Syötä tilisi sähköpostiosoite saadaksesi pääsalasanan vihjeen.",
-    "description": "Enter your account email address to receive your master password hint."
-  },
-  "getMasterPasswordHint": {
-    "message": "Pyydä salasanavihjettä",
-    "description": "Get master password hint"
-  },
-  "continue": {
-    "message": "Jatka",
-    "description": "Continue"
-  },
-  "verificationCode": {
-    "message": "Tunnistautumiskoodi",
-    "description": "Verification Code"
-  },
-  "enterTwoStepVerCode": {
-    "message": "Syötä kaksivaiheisen tunnistautumisen koodisi.",
-    "description": "Enter your two-step verification code."
-  },
-  "account": {
-    "message": "Tili",
-    "description": "Account"
-  },
-  "changeMasterPassword": {
-    "message": "Vaihda pääsalasana",
-    "description": "Change Master Password"
-  },
-  "changeEmail": {
-    "message": "Vaihda sähköpostiosoite",
-    "description": "Change Email"
-  },
-  "twoStepLogin": {
-    "message": "Kaksivaiheinen kirjautuminen",
-    "description": "Two-step Login"
-  },
-  "logOut": {
-    "message": "Kirjaudu ulos",
-    "description": "Log Out"
-  },
-  "about": {
-    "message": "Tietoja",
-    "description": "About"
-  },
-  "version": {
-    "message": "Versio",
-    "description": "Version"
-  },
-  "save": {
-    "message": "Tallenna",
-    "description": "Save"
-  },
-  "addFolder": {
-    "message": "Lisää kansio",
-    "description": "Add Folder"
-  },
-  "name": {
-    "message": "Nimi",
-    "description": "Name"
-  },
-  "editFolder": {
-    "message": "Muokkaa kansiota",
-    "description": "Edit Folder"
-  },
-  "deleteFolder": {
-    "message": "Poista kansio",
-    "description": "Delete Folder"
-  },
-  "folders": {
-    "message": "Kansiot",
-    "description": "Folders"
-  },
-  "noFolders": {
-    "message": "Ei kansioita näytettäväksi.",
-    "description": "There are no folders to list."
-  },
-  "helpFeedback": {
-    "message": "Tuki & palaute",
-    "description": "Help & Feedback"
-  },
-  "emailUs": {
-    "message": "Lähetä sähköpostia",
-    "description": "Email Us"
-  },
-  "emailUsDirectly": {
-    "message": "Lähetä meille sähköpostia saadaksesi tukea tai jättääksesi palautetta.",
-    "description": "Email us directly to get help or leave feedback."
-  },
-  "visitOurWebsite": {
-    "message": "Käy sivustollamme",
-    "description": "Visit Our Website"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Käy sivustollamme, jossa voit saada apua bitwardenin käyttämisessä, saada tietoosi palvelun uutisia tai lähettää meille sähköpostia.",
-    "description": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Jätä virheilmoitus",
-    "description": "File a Bug Report"
-  },
-  "gitHubIssue": {
-    "message": "Jätä ilmoitus GitHub-pakettivarastoomme.",
-    "description": "Open an issue at our GitHub repository."
-  },
-  "sync": {
-    "message": "Synkronointi",
-    "description": "Sync"
-  },
-  "syncVaultNow": {
-    "message": "Synkronoi holvi nyt",
-    "description": "Sync Vault Now"
-  },
-  "lastSync": {
-    "message": "Viimeisin synkronointi:",
-    "description": "Last Sync:"
-  },
-  "passGen": {
-    "message": "Salasanageneraattori",
-    "description": "Password Generator"
-  },
-  "passGenInfo": {
-    "message": "Luo automaattisesti vahvoja, sivustokohtaisia salasanoja kirjautumisiasi varten.",
-    "description": "Automatically generate strong, unique passwords for your logins."
-  },
-  "bitWebVault": {
-    "message": "bitwardenin verkkoholvi",
-    "description": "bitwarden Web Vault"
-  },
-  "bitWebVaultInfo": {
-    "message": "Hallitse kirjautumistietojasi millä tahansa selaimella bitwarden-verkkoholvissa.",
-    "description": "Manage your logins from any web browser with the bitwarden web vault."
-  },
-  "bitIosVault": {
-    "message": "bitwardenin iOS-holvi",
-    "description": "bitwarden iOS Vault"
-  },
-  "bitIosVaultInfo": {
-    "message": "Hallitse kirjautumistietojasi mobiililaitteillasi bitwardenin iOS-holvin avulla.",
-    "description": "Manage your logins from your mobile devices with the bitwarden iOS vault."
-  },
-  "bitAndrVault": {
-    "message": "bitwardenin Android-holvi",
-    "description": "bitwarden Android Vault"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Hallitse kirjautumistietojasi mobiililaitteillasi bitwardenin Android-holvin avulla.",
-    "description": "Manage your logins from your mobile devices with the bitwarden Android vault."
-  },
-  "importLogins": {
-    "message": "Tuo kirjautumistietoja",
-    "description": "Import Logins"
-  },
-  "importLoginsInfo": {
-    "message": "Tuo kerralla kaikki kirjautumistietosi muista salasananhallintapalveluista.",
-    "description": "Quickly bulk import your logins from other password management applications."
-  },
-  "select": {
-    "message": "Valitse",
-    "description": "Select"
-  },
-  "generatePassword": {
-    "message": "Luo salasana",
-    "description": "Generate Password"
-  },
-  "regeneratePassword": {
-    "message": "Luo uusi salasana",
-    "description": "Regenerate Password"
-  },
-  "options": {
-    "message": "Valinnat",
-    "description": "Options"
-  },
-  "length": {
-    "message": "Pituus",
-    "description": "Length"
-  },
-  "minNumbers": {
-    "message": "Numeroja vähintään",
-    "description": "Minimum Numbers"
-  },
-  "minSpecial": {
-    "message": "Erikoismerkkejä vähintään",
-    "description": "Minimum Special"
-  },
-  "avoidAmbChar": {
-    "message": "Vältä epäselviä merkkejä",
-    "description": "Avoid Ambiguous Characters"
-  },
-  "searchVault": {
-    "message": "Hae holvista",
-    "description": "Search vault"
-  },
-  "edit": {
-    "message": "Muokkaa",
-    "description": "Edit"
-  },
-  "noLoginsInList": {
-    "message": "Ei kohteita.",
-    "description": "There are no logins in list."
-  },
-  "loginInformation": {
-    "message": "Kohteen tiedot",
-    "description": "Login Information"
-  },
-  "username": {
-    "message": "Käyttäjänimi",
-    "description": "Username"
-  },
-  "password": {
-    "message": "Salasana",
-    "description": "Password"
-  },
-  "favorite": {
-    "message": "Suosikki",
-    "description": "Favorite"
-  },
-  "notes": {
-    "message": "Merkinnät",
-    "description": "Notes"
-  },
-  "editLogin": {
-    "message": "Muokkaa kohdetta",
-    "description": "Edit Login"
-  },
-  "folder": {
-    "message": "Kansio",
-    "description": "Folder"
-  },
-  "deleteLogin": {
-    "message": "Poista kohde",
-    "description": "Delete Login"
-  },
-  "viewLogin": {
-    "message": "Tarkastele kohdetta",
-    "description": "View Login"
-  },
-  "launchWebsite": {
-    "message": "Avaa sivusto",
-    "description": "Launch Website"
-  },
-  "website": {
-    "message": "Verkko-osoite",
-    "description": "Website"
-  },
-  "togglePassword": {
-    "message": "Näytä/piilota salasana",
-    "description": "Toggle Password"
-  },
-  "manage": {
-    "message": "Hallinta",
-    "description": "Manage"
-  },
-  "other": {
-    "message": "Muut",
-    "description": "Other"
-  },
-  "disableGa": {
-    "message": "Älä käytä Analyticsiä",
-    "description": "Disable Analytics"
-  },
-  "rateExtension": {
-    "message": "Arvostele laajennus",
-    "description": "Rate the Extension"
-  },
-  "rateExtensionDesc": {
-    "message": "Harkitsethan auttamistamme jättämällä positiivisen arvostelun!",
-    "description": "Please consider helping us out with a good review!"
-  },
-  "browserNotSupportClipboard": {
-    "message": "Selaimesi ei tue helppoa leikepöydälle kopiointia. Kopioi kohde manuaalisesti.",
-    "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
-  },
-  "verifyMasterPassword": {
-    "message": "Varmista pääsalasana",
-    "description": "Verify Master Password"
-  },
-  "invalidMasterPassword": {
-    "message": "Virheellinen pääsalasana",
-    "description": "Invalid master password"
-  },
-  "lockOptions": {
-    "message": "Lukitseminen",
-    "description": "Lock Options"
-  },
-  "immediately": {
-    "message": "Välittömästi",
-    "description": "Immediately"
-  },
-  "oneMinute": {
-    "message": "1 minuutti",
-    "description": "1 minute"
-  },
-  "fiveMinutes": {
-    "message": "5 minuuttia",
-    "description": "5 minutes"
-  },
-  "fifteenMinutes": {
-    "message": "15 minuuttia",
-    "description": "15 minutes"
-  },
-  "thirtyMinutes": {
-    "message": "30 minuuttia",
-    "description": "30 minutes"
-  },
-  "oneHour": {
-    "message": "1 tunti",
-    "description": "1 hour"
-  },
-  "fourHours": {
-    "message": "4 tuntia",
-    "description": "4 hours"
-  },
-  "onRestart": {
-    "message": "Uudelleenkäynnistyksen yhteydessä",
-    "description": "On Restart"
-  },
-  "never": {
-    "message": "Ei koskaan",
-    "description": "Never"
-  },
-  "security": {
-    "message": "Turvallisuus",
-    "description": "Security"
-  },
-  "errorsOccurred": {
-    "message": "Tapahtui virheitä",
-    "description": "Errors have occurred"
-  },
-  "emailRequired": {
-    "message": "Sähköpostiosoite vaaditaan.",
-    "description": "Email address is required."
-  },
-  "invalidEmail": {
-    "message": "Virheellinen sähköpostiosoite.",
-    "description": "Invalid email address."
-  },
-  "masterPassRequired": {
-    "message": "Pääsalasana vaaditaan.",
-    "description": "Master password is required."
-  },
-  "masterPassLength": {
-    "message": "Pääsalasanan on oltava vähintään 8 merkkiä pitkä.",
-    "description": "Master password must be at least 8 characters long."
-  },
-  "masterPassDoesntMatch": {
-    "message": "Pääsalasanan varmistus ei täsmää.",
-    "description": "Master password confirmation does not match."
-  },
-  "newAccountCreated": {
-    "message": "Uusi tilisi on luotu! Voit nyt kirjautua sisään.",
-    "description": "Your new account has been created! You may now log in."
-  },
-  "masterPassSent": {
-    "message": "Lähetimme sinulle sähköpostilla pääsalasanasi vihjeen.",
-    "description": "We've sent you an email with your master password hint."
-  },
-  "verificationCodeRequired": {
-    "message": "Tunnistautumiskoodi vaaditaan.",
-    "description": "Verification code is required."
-  },
-  "valueCopied": {
-    "message": " kopioitu",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
-  },
-  "autofillError": {
-    "message": "Automaattinen täydennys tälle sivustolle ei onnistu. Kopioi ja liitä käyttäjänimesi/salasanasi manuaalisesti.",
-    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
-  },
-  "loggedOut": {
-    "message": "Kirjauduttu ulos",
-    "description": "Logged out"
-  },
-  "loginExpired": {
-    "message": "Kirjautumisistuntosi on vanhentunut.",
-    "description": "Your login session has expired."
-  },
-  "logOutConfirmation": {
-    "message": "Haluatko varmasti kirjautua ulos?",
-    "description": "Are you sure you want to log out?"
-  },
-  "yes": {
-    "message": "Kyllä",
-    "description": "Yes"
-  },
-  "no": {
-    "message": "En",
-    "description": "No"
-  },
-  "unexpectedError": {
-    "message": "Tapahtui odottamaton virhe.",
-    "description": "An unexpected error has occured."
-  },
-  "nameRequired": {
-    "message": "Nimi vaaditaan.",
-    "description": "Name is required."
-  },
-  "addedFolder": {
-    "message": "Kansio lisätty",
-    "description": "Added folder"
-  },
-  "changeMasterPass": {
-    "message": "Vaihda pääsalasana",
-    "description": "Change Master Password"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
-    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "changeEmailConfirmation": {
-    "message": "Voit vaihtaa sähköpostiosoitteesi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
-    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "twoStepLoginConfirmation": {
-    "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman vaatimalla koodin tunnistautumispalvelusta joka kirjautumiskerralla. Voit ottaa kaksivaiheisen tunnistautumisen käyttöön bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
-    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "loggingOut": {
-    "message": "Kirjaudutaan ulos",
-    "description": "Logging out"
-  },
-  "loggingOutConfirmation": {
-    "message": "Olet hiljattain päivittänyt uuteen versioon. Sinun on kirjauduttava uudelleen vaihtaaksesi lukitsemisasetuksia. Haluatko kirjautua ulos nyt?",
-    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
-  },
-  "editedFolder": {
-    "message": "Kansiota muokattu",
-    "description": "Edited Folder"
-  },
-  "deleteFolderConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän kansion?",
-    "description": "Are you sure you want to delete this folder?"
-  },
-  "deletedFolder": {
-    "message": "Kansio poistettu",
-    "description": "Deleted folder"
-  },
-  "gettingStartedTutorial": {
-    "message": "Käytön aloittaminen",
-    "description": "Getting Started Tutorial"
-  },
-  "gettingStartedTutorialVideo": {
-    "message": "Katso käytön aloittaminen -ohjeemme saadaksesi tietää, kuinka saat kaiken irti selainlaajennuksesta.",
-    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
-  },
-  "syncingComplete": {
-    "message": "Synkronointi valmis",
-    "description": "Syncing complete"
-  },
-  "importLoginsConfirmation": {
-    "message": "Voit tuoda kerralla kaikki kirjautumistietosi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
-    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "passwordCopied": {
-    "message": "Salasana kopioitu",
-    "description": "Password copied"
-  },
-  "uri": {
-    "message": "URI",
-    "description": "URI"
-  },
-  "addedLogin": {
-    "message": "Kohde lisätty",
-    "description": "Added login"
-  },
-  "editedLogin": {
-    "message": "Kohdetta muokattu",
-    "description": "Edited login"
-  },
-  "deleteLoginConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän kohteen?",
-    "description": "Are you sure you want to delete this login?"
-  },
-  "deletedLogin": {
-    "message": "Kohde poistettu",
-    "description": "Deleted login"
-  },
-  "overwritePassword": {
-    "message": "Salasanan korvaus",
-    "description": "Salasanan korvaus"
-  },
-  "overwritePasswordConfirmation": {
-    "message": "Haluatko varmasti korvata nykyisen salasanasi?",
-    "description": "Are you sure you want to overwrite the current password?"
-  },
-  "lost2FAApp": {
-    "message": "Etkö pääse tunnistautumispalveluun?",
-    "description": "Lost authenticator app?"
-  },
-  "credits": {
-    "message": "Kiitokset",
-    "description": "Credits (giving thanks to people that helped, like at the end of a movie)"
-  },
-  "thankYou": {
-    "message": "Kiitokset",
-    "description": "Thank You"
-  },
-  "translations": {
-    "message": "Käännökset",
-    "description": "Translations"
-  },
-  "searchFolder": {
-    "message": "Hae kansiosta",
-    "description": "Search folder"
-  },
-  "noneFolder": {
-    "message": "Ei kansioa",
-    "description": "No Folder - this is the folder for uncategorized logins"
-  },
-  "features": {
-    "message": "Ominaisuudet",
-    "description": "Features"
-  },
-  "gaDesc": {
-    "message": "Käytämme analyticsiä saadaksemme tietoa siitä, kuinka lisäosaa käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä.",
-    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
-  },
-  "disableAddLoginNotification": {
-    "message": "Älä näytä tallennuskehotetta",
-    "description": "Disable Add Login Notification"
-  },
-  "addLoginNotificationDesc": {
-    "message": "Tallennuskehote kysyy, haluatko tallentaa kirjautumistiedot holviisi, kun kirjaudut sivustoille ensimmäistä kertaa.",
-    "description": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
-  },
-  "notificationAddDesc": {
-    "message": "Haluatko, että bitwarden muistaa tämän salasanan puolestasi?",
-    "description": "Should bitwarden remember this password for you?"
-  },
-  "notificationAddSave": {
-    "message": "Kyllä, tallenna nyt",
-    "description": "Yes, Save Now"
-  },
-  "disableContextMenuItem": {
-    "message": "Älä näytä toimintoja pikavalikossa",
-    "description": "Disable Context Menu Options"
-  },
-  "disableContextMenuItemDesc": {
-    "message": "Hiiren oikealla painikkeella ilmestyvän pikavalikon toiminnoilla voit nopeasti luoda itsellesi salasananan tai täyttää kirjautumiskentät nykyiselle välilehdelle.",
-    "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
-  },
-  "exportVault": {
-    "message": "Vie holvi",
-    "description": "Export Vault"
-  },
-  "warning": {
-    "message": "VAROITUS",
-    "description": "WARNING (should stay in capitalized letters if the language permits)"
-  },
-  "exportWarning": {
-    "message": "Tämä vienti sisältää tietosi suojaamattomana .csv-muodossa. Tiedostoa ei kannata tallentaa tai lähettää turvattomia kanavia pitkin (kuten sähköposti). Poista se välittömästi, kun et enää tarvitse sitä.",
-    "description": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
-  },
-  "exportMasterPassword": {
-    "message": "Syötä pääsalasanasi viedäksesi holvisi tiedot.",
-    "description": "Enter your master password to export your vault data."
-  },
-  "exportVaultInfo": {
-    "message": "Vie holvin tiedot .csv-muodossa, jotta voit helposti muokata tietoja tai siirtää ne muualle.",
-    "description": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
-  },
-  "shared": {
-    "message": "Jaettu",
-    "description": "Shared"
-  },
-  "shareVault": {
-    "message": "Jaa holvisi",
-    "description": "Share Your Vault"
-  },
-  "shareVaultInfo": {
-    "message": "Luo organisaatio jakaaksesi kirjautumistiedot turvallisesti muiden käyttäjien kanssa.",
-    "description": "Create an organization to securely share your logins with other users."
+  "appName":{
+    "message":"bitwarden",
+    "description":"bitwarden"
+  },
+  "extName":{
+    "message":"bitwarden – Ilmainen salasananhallintapalvelu",
+    "description":"Extension name"
+  },
+  "extDesc":{
+    "message":"bitwarden on turvallinen ja ilmainen salasananhallintapalvelu kaikille laitteillesi.",
+    "description":"Extension description"
+  },
+  "loginOrCreateNewAccount":{
+    "message":"Kirjaudu sisään tai luo tili päästäksesi suojattuun holviisi.",
+    "description":"Log in or create a new account to access your secure vault."
+  },
+  "createAccount":{
+    "message":"Luo tili",
+    "description":"Create Account"
+  },
+  "login":{
+    "message":"Kirjaudu",
+    "description":"Log In"
+  },
+  "cancel":{
+    "message":"Peruuta",
+    "description":"Cancel"
+  },
+  "close":{
+    "message":"Sulje",
+    "description":"Close"
+  },
+  "submit":{
+    "message":"Jatka",
+    "description":"Submit"
+  },
+  "emailAddress":{
+    "message":"Sähköpostiosoite",
+    "description":"Email Address"
+  },
+  "masterPass":{
+    "message":"Pääsalasana",
+    "description":"Master Password"
+  },
+  "masterPassDesc":{
+    "message":"Pääsalasanalla pääset käsiksi salasanaholviisi. On hyvin tärkeää, että muistat pääsalasanasi. Pääsalasanaa ei voida palauttaa mitenkään, jos satut unohtamaan sen.",
+    "description":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc":{
+    "message":"Salasanavihje voi auttaa sinua muistamaan pääsalasanasi, jos satut unohtamaan sen.",
+    "description":"A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass":{
+    "message":"Syötä pääsalasana uudelleen",
+    "description":"Re-type Master Password"
+  },
+  "masterPassHint":{
+    "message":"Salasanavihje (valinnainen)",
+    "description":"Master Password Hint (optional)"
+  },
+  "tab":{
+    "message":"Välilehti",
+    "description":"Tab"
+  },
+  "myVault":{
+    "message":"Minun holvini",
+    "description":"My Vault"
+  },
+  "tools":{
+    "message":"Työkalut",
+    "description":"Tools"
+  },
+  "settings":{
+    "message":"Asetukset",
+    "description":"Settings"
+  },
+  "currentTab":{
+    "message":"Nykyinen välilehti",
+    "description":"Current Tab"
+  },
+  "copyPassword":{
+    "message":"Kopioi salasana",
+    "description":"Copy Password"
+  },
+  "copyUsername":{
+    "message":"Kopioi käyttäjänimi",
+    "description":"Copy Username"
+  },
+  "autoFill":{
+    "message":"Täytä automaattisesti",
+    "description":"Auto-fill"
+  },
+  "generatePasswordCopied":{
+    "message":"Luo salasana (kopioitu)",
+    "description":"Generate Password (copied)"
+  },
+  "noMatchingLogins":{
+    "message":"Ei täsmääviä kohteita.",
+    "description":"No matching logins."
+  },
+  "vaultLocked":{
+    "message":"Holvi on lukittu.",
+    "description":"Vault is locked."
+  },
+  "autoFillInfo":{
+    "message":"Selaimen nykyiselle välilehdelle ei ole automaattisesti täytettäviä kohteita.",
+    "description":"There are no logins available to auto-fill for the current browser tab."
+  },
+  "addLogin":{
+    "message":"Lisää kohde",
+    "description":"Add a Login"
+  },
+  "passwordHint":{
+    "message":"Salasanavihje",
+    "description":"Password Hint"
+  },
+  "enterEmailToGetHint":{
+    "message":"Syötä tilisi sähköpostiosoite saadaksesi pääsalasanan vihjeen.",
+    "description":"Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint":{
+    "message":"Pyydä salasanavihjettä",
+    "description":"Get master password hint"
+  },
+  "continue":{
+    "message":"Jatka",
+    "description":"Continue"
+  },
+  "verificationCode":{
+    "message":"Tunnistautumiskoodi",
+    "description":"Verification Code"
+  },
+  "enterTwoStepVerCode":{
+    "message":"Syötä kaksivaiheisen tunnistautumisen koodisi.",
+    "description":"Enter your two-step verification code."
+  },
+  "account":{
+    "message":"Tili",
+    "description":"Account"
+  },
+  "changeMasterPassword":{
+    "message":"Vaihda pääsalasana",
+    "description":"Change Master Password"
+  },
+  "changeEmail":{
+    "message":"Vaihda sähköpostiosoite",
+    "description":"Change Email"
+  },
+  "twoStepLogin":{
+    "message":"Kaksivaiheinen kirjautuminen",
+    "description":"Two-step Login"
+  },
+  "logOut":{
+    "message":"Kirjaudu ulos",
+    "description":"Log Out"
+  },
+  "about":{
+    "message":"Tietoja",
+    "description":"About"
+  },
+  "version":{
+    "message":"Versio",
+    "description":"Version"
+  },
+  "save":{
+    "message":"Tallenna",
+    "description":"Save"
+  },
+  "addFolder":{
+    "message":"Lisää kansio",
+    "description":"Add Folder"
+  },
+  "name":{
+    "message":"Nimi",
+    "description":"Name"
+  },
+  "editFolder":{
+    "message":"Muokkaa kansiota",
+    "description":"Edit Folder"
+  },
+  "deleteFolder":{
+    "message":"Poista kansio",
+    "description":"Delete Folder"
+  },
+  "folders":{
+    "message":"Kansiot",
+    "description":"Folders"
+  },
+  "noFolders":{
+    "message":"Ei kansioita näytettäväksi.",
+    "description":"There are no folders to list."
+  },
+  "helpFeedback":{
+    "message":"Tuki & palaute",
+    "description":"Help & Feedback"
+  },
+  "emailUs":{
+    "message":"Lähetä sähköpostia",
+    "description":"Email Us"
+  },
+  "emailUsDirectly":{
+    "message":"Lähetä meille sähköpostia saadaksesi tukea tai jättääksesi palautetta.",
+    "description":"Email us directly to get help or leave feedback."
+  },
+  "visitOurWebsite":{
+    "message":"Käy sivustollamme",
+    "description":"Visit Our Website"
+  },
+  "visitOurWebsiteDirectly":{
+    "message":"Käy sivustollamme, jossa voit saada apua bitwardenin käyttämisessä, saada tietoosi palvelun uutisia tai lähettää meille sähköpostia.",
+    "description":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+  },
+  "fileBugReport":{
+    "message":"Jätä virheilmoitus",
+    "description":"File a Bug Report"
+  },
+  "gitHubIssue":{
+    "message":"Jätä ilmoitus GitHub-pakettivarastoomme.",
+    "description":"Open an issue at our GitHub repository."
+  },
+  "sync":{
+    "message":"Synkronointi",
+    "description":"Sync"
+  },
+  "syncVaultNow":{
+    "message":"Synkronoi holvi nyt",
+    "description":"Sync Vault Now"
+  },
+  "lastSync":{
+    "message":"Viimeisin synkronointi:",
+    "description":"Last Sync:"
+  },
+  "passGen":{
+    "message":"Salasanageneraattori",
+    "description":"Password Generator"
+  },
+  "passGenInfo":{
+    "message":"Luo automaattisesti vahvoja, sivustokohtaisia salasanoja kirjautumisiasi varten.",
+    "description":"Automatically generate strong, unique passwords for your logins."
+  },
+  "bitWebVault":{
+    "message":"bitwardenin verkkoholvi",
+    "description":"bitwarden Web Vault"
+  },
+  "bitWebVaultInfo":{
+    "message":"Hallitse kirjautumistietojasi millä tahansa selaimella bitwarden-verkkoholvissa.",
+    "description":"Manage your logins from any web browser with the bitwarden web vault."
+  },
+  "bitIosVault":{
+    "message":"bitwardenin iOS-holvi",
+    "description":"bitwarden iOS Vault"
+  },
+  "bitIosVaultInfo":{
+    "message":"Hallitse kirjautumistietojasi mobiililaitteillasi bitwardenin iOS-holvin avulla.",
+    "description":"Manage your logins from your mobile devices with the bitwarden iOS vault."
+  },
+  "bitAndrVault":{
+    "message":"bitwardenin Android-holvi",
+    "description":"bitwarden Android Vault"
+  },
+  "bitAndrVaultInfo":{
+    "message":"Hallitse kirjautumistietojasi mobiililaitteillasi bitwardenin Android-holvin avulla.",
+    "description":"Manage your logins from your mobile devices with the bitwarden Android vault."
+  },
+  "importLogins":{
+    "message":"Tuo kirjautumistietoja",
+    "description":"Import Logins"
+  },
+  "importLoginsInfo":{
+    "message":"Tuo kerralla kaikki kirjautumistietosi muista salasananhallintapalveluista.",
+    "description":"Quickly bulk import your logins from other password management applications."
+  },
+  "select":{
+    "message":"Valitse",
+    "description":"Select"
+  },
+  "generatePassword":{
+    "message":"Luo salasana",
+    "description":"Generate Password"
+  },
+  "regeneratePassword":{
+    "message":"Luo uusi salasana",
+    "description":"Regenerate Password"
+  },
+  "options":{
+    "message":"Valinnat",
+    "description":"Options"
+  },
+  "length":{
+    "message":"Pituus",
+    "description":"Length"
+  },
+  "minNumbers":{
+    "message":"Numeroja vähintään",
+    "description":"Minimum Numbers"
+  },
+  "minSpecial":{
+    "message":"Erikoismerkkejä vähintään",
+    "description":"Minimum Special"
+  },
+  "avoidAmbChar":{
+    "message":"Vältä epäselviä merkkejä",
+    "description":"Avoid Ambiguous Characters"
+  },
+  "searchVault":{
+    "message":"Hae holvista",
+    "description":"Search vault"
+  },
+  "edit":{
+    "message":"Muokkaa",
+    "description":"Edit"
+  },
+  "noLoginsInList":{
+    "message":"Ei kohteita.",
+    "description":"There are no logins to list."
+  },
+  "loginInformation":{
+    "message":"Kohteen tiedot",
+    "description":"Login Information"
+  },
+  "username":{
+    "message":"Käyttäjänimi",
+    "description":"Username"
+  },
+  "password":{
+    "message":"Salasana",
+    "description":"Password"
+  },
+  "favorite":{
+    "message":"Suosikki",
+    "description":"Favorite"
+  },
+  "notes":{
+    "message":"Merkinnät",
+    "description":"Notes"
+  },
+  "editLogin":{
+    "message":"Muokkaa kohdetta",
+    "description":"Edit Login"
+  },
+  "folder":{
+    "message":"Kansio",
+    "description":"Folder"
+  },
+  "deleteLogin":{
+    "message":"Poista kohde",
+    "description":"Delete Login"
+  },
+  "viewLogin":{
+    "message":"Tarkastele kohdetta",
+    "description":"View Login"
+  },
+  "launchWebsite":{
+    "message":"Avaa sivusto",
+    "description":"Launch Website"
+  },
+  "website":{
+    "message":"Verkko-osoite",
+    "description":"Website"
+  },
+  "togglePassword":{
+    "message":"Näytä\/piilota salasana",
+    "description":"Toggle Password"
+  },
+  "manage":{
+    "message":"Hallinta",
+    "description":"Manage"
+  },
+  "other":{
+    "message":"Muut",
+    "description":"Other"
+  },
+  "disableGa":{
+    "message":"Älä käytä Analyticsiä",
+    "description":"Disable Analytics"
+  },
+  "rateExtension":{
+    "message":"Arvostele laajennus",
+    "description":"Rate the Extension"
+  },
+  "rateExtensionDesc":{
+    "message":"Harkitsethan auttamistamme jättämällä positiivisen arvostelun!",
+    "description":"Please consider helping us out with a good review!"
+  },
+  "browserNotSupportClipboard":{
+    "message":"Selaimesi ei tue helppoa leikepöydälle kopiointia. Kopioi kohde manuaalisesti.",
+    "description":"Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword":{
+    "message":"Varmista pääsalasana",
+    "description":"Verify Master Password"
+  },
+  "invalidMasterPassword":{
+    "message":"Virheellinen pääsalasana",
+    "description":"Invalid master password"
+  },
+  "lockOptions":{
+    "message":"Lukitseminen",
+    "description":"Lock Options"
+  },
+  "immediately":{
+    "message":"Välittömästi",
+    "description":"Immediately"
+  },
+  "oneMinute":{
+    "message":"1 minuutti",
+    "description":"1 minute"
+  },
+  "fiveMinutes":{
+    "message":"5 minuuttia",
+    "description":"5 minutes"
+  },
+  "fifteenMinutes":{
+    "message":"15 minuuttia",
+    "description":"15 minutes"
+  },
+  "thirtyMinutes":{
+    "message":"30 minuuttia",
+    "description":"30 minutes"
+  },
+  "oneHour":{
+    "message":"1 tunti",
+    "description":"1 hour"
+  },
+  "fourHours":{
+    "message":"4 tuntia",
+    "description":"4 hours"
+  },
+  "onRestart":{
+    "message":"Uudelleenkäynnistyksen yhteydessä",
+    "description":"On Restart"
+  },
+  "never":{
+    "message":"Ei koskaan",
+    "description":"Never"
+  },
+  "security":{
+    "message":"Turvallisuus",
+    "description":"Security"
+  },
+  "errorsOccurred":{
+    "message":"Tapahtui virheitä",
+    "description":"Errors have occurred"
+  },
+  "emailRequired":{
+    "message":"Sähköpostiosoite vaaditaan.",
+    "description":"Email address is required."
+  },
+  "invalidEmail":{
+    "message":"Virheellinen sähköpostiosoite.",
+    "description":"Invalid email address."
+  },
+  "masterPassRequired":{
+    "message":"Pääsalasana vaaditaan.",
+    "description":"Master password is required."
+  },
+  "masterPassLength":{
+    "message":"Pääsalasanan on oltava vähintään 8 merkkiä pitkä.",
+    "description":"Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch":{
+    "message":"Pääsalasanan varmistus ei täsmää.",
+    "description":"Master password confirmation does not match."
+  },
+  "newAccountCreated":{
+    "message":"Uusi tilisi on luotu! Voit nyt kirjautua sisään.",
+    "description":"Your new account has been created! You may now log in."
+  },
+  "masterPassSent":{
+    "message":"Lähetimme sinulle sähköpostilla pääsalasanasi vihjeen.",
+    "description":"We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired":{
+    "message":"Tunnistautumiskoodi vaaditaan.",
+    "description":"Verification code is required."
+  },
+  "valueCopied":{
+    "message":" kopioitu",
+    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError":{
+    "message":"Automaattinen täydennys tälle sivustolle ei onnistu. Kopioi ja liitä käyttäjänimesi\/salasanasi manuaalisesti.",
+    "description":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+  },
+  "loggedOut":{
+    "message":"Kirjauduttu ulos",
+    "description":"Logged out"
+  },
+  "loginExpired":{
+    "message":"Kirjautumisistuntosi on vanhentunut.",
+    "description":"Your login session has expired."
+  },
+  "logOutConfirmation":{
+    "message":"Haluatko varmasti kirjautua ulos?",
+    "description":"Are you sure you want to log out?"
+  },
+  "yes":{
+    "message":"Kyllä",
+    "description":"Yes"
+  },
+  "no":{
+    "message":"En",
+    "description":"No"
+  },
+  "unexpectedError":{
+    "message":"Tapahtui odottamaton virhe.",
+    "description":"An unexpected error has occured."
+  },
+  "nameRequired":{
+    "message":"Nimi vaaditaan.",
+    "description":"Name is required."
+  },
+  "addedFolder":{
+    "message":"Kansio lisätty",
+    "description":"Added folder"
+  },
+  "changeMasterPass":{
+    "message":"Vaihda pääsalasana",
+    "description":"Change Master Password"
+  },
+  "changeMasterPasswordConfirmation":{
+    "message":"Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
+    "description":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation":{
+    "message":"Voit vaihtaa sähköpostiosoitteesi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
+    "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation":{
+    "message":"Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman vaatimalla koodin tunnistautumispalvelusta joka kirjautumiskerralla. Voit ottaa kaksivaiheisen tunnistautumisen käyttöön bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
+    "description":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut":{
+    "message":"Kirjaudutaan ulos",
+    "description":"Logging out"
+  },
+  "loggingOutConfirmation":{
+    "message":"Olet hiljattain päivittänyt uuteen versioon. Sinun on kirjauduttava uudelleen vaihtaaksesi lukitsemisasetuksia. Haluatko kirjautua ulos nyt?",
+    "description":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder":{
+    "message":"Kansiota muokattu",
+    "description":"Edited Folder"
+  },
+  "deleteFolderConfirmation":{
+    "message":"Haluatko varmasti poistaa tämän kansion?",
+    "description":"Are you sure you want to delete this folder?"
+  },
+  "deletedFolder":{
+    "message":"Kansio poistettu",
+    "description":"Deleted folder"
+  },
+  "gettingStartedTutorial":{
+    "message":"Käytön aloittaminen",
+    "description":"Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo":{
+    "message":"Katso käytön aloittaminen -ohjeemme saadaksesi tietää, kuinka saat kaiken irti selainlaajennuksesta.",
+    "description":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete":{
+    "message":"Synkronointi valmis",
+    "description":"Syncing complete"
+  },
+  "importLoginsConfirmation":{
+    "message":"Voit tuoda kerralla kaikki kirjautumistietosi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?",
+    "description":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied":{
+    "message":"Salasana kopioitu",
+    "description":"Password copied"
+  },
+  "uri":{
+    "message":"URI",
+    "description":"URI"
+  },
+  "addedLogin":{
+    "message":"Kohde lisätty",
+    "description":"Added login"
+  },
+  "editedLogin":{
+    "message":"Kohdetta muokattu",
+    "description":"Edited login"
+  },
+  "deleteLoginConfirmation":{
+    "message":"Haluatko varmasti poistaa tämän kohteen?",
+    "description":"Are you sure you want to delete this login?"
+  },
+  "deletedLogin":{
+    "message":"Kohde poistettu",
+    "description":"Deleted login"
+  },
+  "overwritePassword":{
+    "message":"Salasanan korvaus",
+    "description":"Overwrite Password"
+  },
+  "overwritePasswordConfirmation":{
+    "message":"Haluatko varmasti korvata nykyisen salasanasi?",
+    "description":"Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp":{
+    "message":"Etkö pääse tunnistautumispalveluun?",
+    "description":"Lost authenticator app?"
+  },
+  "credits":{
+    "message":"Kiitokset",
+    "description":"Credits (giving thanks to people that helped, like at the end of a movie)"
+  },
+  "thankYou":{
+    "message":"Kiitokset",
+    "description":"Thank You"
+  },
+  "translations":{
+    "message":"Käännökset",
+    "description":"Translations"
+  },
+  "searchFolder":{
+    "message":"Hae kansiosta",
+    "description":"Search folder"
+  },
+  "noneFolder":{
+    "message":"Ei kansioa",
+    "description":"No Folder - this is the folder for uncategorized logins"
+  },
+  "features":{
+    "message":"Ominaisuudet",
+    "description":"Features"
+  },
+  "gaDesc":{
+    "message":"Käytämme analyticsiä saadaksemme tietoa siitä, kuinka lisäosaa käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä.",
+    "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableAddLoginNotification":{
+    "message":"Älä näytä tallennuskehotetta",
+    "description":"Disable Add Login Notification"
+  },
+  "addLoginNotificationDesc":{
+    "message":"Tallennuskehote kysyy, haluatko tallentaa kirjautumistiedot holviisi, kun kirjaudut sivustoille ensimmäistä kertaa.",
+    "description":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+  },
+  "notificationAddDesc":{
+    "message":"Haluatko, että bitwarden muistaa tämän salasanan puolestasi?",
+    "description":"Should bitwarden remember this password for you?"
+  },
+  "notificationAddSave":{
+    "message":"Kyllä, tallenna nyt",
+    "description":"Yes, Save Now"
+  },
+  "disableContextMenuItem":{
+    "message":"Älä näytä toimintoja pikavalikossa",
+    "description":"Disable Context Menu Options"
+  },
+  "disableContextMenuItemDesc":{
+    "message":"Hiiren oikealla painikkeella ilmestyvän pikavalikon toiminnoilla voit nopeasti luoda itsellesi salasananan tai täyttää kirjautumiskentät nykyiselle välilehdelle.",
+    "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "exportVault":{
+    "message":"Vie holvi",
+    "description":"Export Vault"
+  },
+  "warning":{
+    "message":"VAROITUS",
+    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning":{
+    "message":"Tämä vienti sisältää tietosi suojaamattomana .csv-muodossa. Tiedostoa ei kannata tallentaa tai lähettää turvattomia kanavia pitkin (kuten sähköposti). Poista se välittömästi, kun et enää tarvitse sitä.",
+    "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword":{
+    "message":"Syötä pääsalasanasi viedäksesi holvisi tiedot.",
+    "description":"Enter your master password to export your vault data."
+  },
+  "exportVaultInfo":{
+    "message":"Vie holvin tiedot .csv-muodossa, jotta voit helposti muokata tietoja tai siirtää ne muualle.",
+    "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+  },
+  "shared":{
+    "message":"Jaettu",
+    "description":"Shared"
+  },
+  "shareVault":{
+    "message":"Jaa holvisi",
+    "description":"Share Your Vault"
+  },
+  "shareVaultInfo":{
+    "message":"Luo organisaatio jakaaksesi kirjautumistiedot turvallisesti muiden käyttäjien kanssa.",
+    "description":"Create an organization to securely share your logins with other users."
   }
 }

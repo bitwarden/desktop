@@ -1,690 +1,690 @@
 {
-  "appName": {
-    "message": "bitwarden",
-    "description": "bitwarden"
-  },
-  "extName": {
-    "message": "bitwarden - Gestionnaire de mots de passe gratuit",
-    "description": "Extension name"
-  },
-  "extDesc": {
-    "message": "bitwarden est un gestionnaire de mot de passe sécurisé et gratuit pour tous vos appareils.",
-    "description": "Extension description"
-  },
-  "loginOrCreateNewAccount": {
-    "message": "S'identifier ou créer un nouveau compte pour accéder à votre coffre sécurisé.",
-    "description": "Log in or create a new account to access your secure vault."
-  },
-  "createAccount": {
-    "message": "Créer un compte",
-    "description": "Create Account"
-  },
-  "login": {
-    "message": "S'identifier",
-    "description": "Log In"
-  },
-  "cancel": {
-    "message": "Annuler",
-    "description": "Cancel"
-  },
-  "close": {
-    "message": "Fermer",
-    "description": "Close"
-  },
-  "submit": {
-    "message": "Soumettre",
-    "description": "Submit"
-  },
-  "emailAddress": {
-    "message": "Adresse e-mail",
-    "description": "Email Address"
-  },
-  "masterPass": {
-    "message": "Mot de passe maître",
-    "description": "Master Password"
-  },
-  "masterPassDesc": {
-    "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez.",
-    "description": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
-  },
-  "masterPassHintDesc": {
-    "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli.",
-    "description": "A master password hint can help you remember your password if you forget it."
-  },
-  "reTypeMasterPass": {
-    "message": "Re-taper votre mot de passe maître",
-    "description": "Re-type Master Password"
-  },
-  "masterPassHint": {
-    "message": "Indice du mot de passe maître (facultatif)",
-    "description": "Master Password Hint (optional)"
-  },
-  "tab": {
-    "message": "Onglet",
-    "description": "Tab"
-  },
-  "myVault": {
-    "message": "Mon Coffre",
-    "description": "My Vault"
-  },
-  "tools": {
-    "message": "Outils",
-    "description": "Tools"
-  },
-  "settings": {
-    "message": "Paramètres",
-    "description": "Settings"
-  },
-  "currentTab": {
-    "message": "Onglet actif",
-    "description": "Current Tab"
-  },
-  "copyPassword": {
-    "message": "Copier mot de passe",
-    "description": "Copy Password"
-  },
-  "copyUsername": {
-    "message": "Copier nom d'utilisateur",
-    "description": "Copy Username"
-  },
-  "autoFill": {
-    "message": "Auto-remplissage",
-    "description": "Auto-fill"
-  },
-  "generatePasswordCopied": {
-    "message": "Générer un mot de passe (copié)",
-    "description": "Generate Password (copied)"
-  },
-  "noMatchingLogins": {
-    "message": "Aucun site correspondant.",
-    "description": "No matching logins."
-  },
-  "vaultLocked": {
-    "message": "Le coffre est verrouillé.",
-    "description": "Vault is locked."
-  },
-  "autoFillInfo": {
-    "message": "Il n'existe aucun site disponible pour le remplissage automatique pour l'onglet actuel du navigateur.",
-    "description": "There are no logins available to auto-fill for the current browser tab."
-  },
-  "addLogin": {
-    "message": "Ajouter un site",
-    "description": "Add a Login"
-  },
-  "passwordHint": {
-    "message": "Indice mot de passe",
-    "description": "Password Hint"
-  },
-  "enterEmailToGetHint": {
-    "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître.",
-    "description": "Enter your account email address to receive your master password hint."
-  },
-  "getMasterPasswordHint": {
-    "message": "Obtenir l'indice du mot de passe maître",
-    "description": "Get master password hint"
-  },
-  "continue": {
-    "message": "Continuer",
-    "description": "Continue"
-  },
-  "verificationCode": {
-    "message": "Code de vérification",
-    "description": "Verification Code"
-  },
-  "enterTwoStepVerCode": {
-    "message": "Saissiez votre code d'authentification à deux facteurs.",
-    "description": "Enter your two-step verification code."
-  },
-  "account": {
-    "message": "Compte",
-    "description": "Account"
-  },
-  "changeMasterPassword": {
-    "message": "Changer le mot de passe maître",
-    "description": "Change Master Password"
-  },
-  "changeEmail": {
-    "message": "Changer l'e-mail",
-    "description": "Change Email"
-  },
-  "twoStepLogin": {
-    "message": "Identification à deux facteurs",
-    "description": "Two-step Login"
-  },
-  "logOut": {
-    "message": "Déconnexion",
-    "description": "Log Out"
-  },
-  "about": {
-    "message": "À propos",
-    "description": "About"
-  },
-  "version": {
-    "message": "Version",
-    "description": "Version"
-  },
-  "save": {
-    "message": "Enregistrer",
-    "description": "Save"
-  },
-  "addFolder": {
-    "message": "Ajouter un dossier",
-    "description": "Add Folder"
-  },
-  "name": {
-    "message": "Nom",
-    "description": "Name"
-  },
-  "editFolder": {
-    "message": "Modifier le dossier",
-    "description": "Edit Folder"
-  },
-  "deleteFolder": {
-    "message": "Supprimer le dossier",
-    "description": "Delete Folder"
-  },
-  "folders": {
-    "message": "Dossiers",
-    "description": "Folders"
-  },
-  "noFolders": {
-    "message": "Aucun dossier à lister.",
-    "description": "There are no folders to list."
-  },
-  "helpFeedback": {
-    "message": "Aide et commentaires",
-    "description": "Help & Feedback"
-  },
-  "emailUs": {
-    "message": "Nous contacter",
-    "description": "Email Us"
-  },
-  "emailUsDirectly": {
-    "message": "Nous contacter directement pour obtenir de l'aide ou pour donner un avis.",
-    "description": "Email us directly to get help or leave feedback."
-  },
-  "visitOurWebsite": {
-    "message": "Visitez notre site web",
-    "description": "Visit Our Website"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Consultez notre site web pour obtenir de l'aide, les actualités, nous envoyer un e-mail et/ou mieux apprendre à utiliser bitwarden.",
-    "description": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Envoyer un rapport de bug",
-    "description": "File a Bug Report"
-  },
-  "gitHubIssue": {
-    "message": "Ouvrez un ticket sur le dépôt GitHub.",
-    "description": "Open an issue at our GitHub repository."
-  },
-  "sync": {
-    "message": "Synchroniser",
-    "description": "Sync"
-  },
-  "syncVaultNow": {
-    "message": "Synchroniser le coffre maintenant",
-    "description": "Sync Vault Now"
-  },
-  "lastSync": {
-    "message": "Dernière synchronisation :",
-    "description": "Last Sync:"
-  },
-  "passGen": {
-    "message": "Générateur de mot de passe",
-    "description": "Password Generator"
-  },
-  "passGenInfo": {
-    "message": "Générer automatiquement des mots de passe forts et uniques pour vos identifiants.",
-    "description": "Automatically generate strong, unique passwords for your logins."
-  },
-  "bitWebVault": {
-    "message": "Coffre en ligne de bitwarden",
-    "description": "bitwarden Web Vault"
-  },
-  "bitWebVaultInfo": {
-    "message": "Gérer vos identifiants depuis n'importe quel navigateur web à l'aide du coffre en ligne de bitwarden.",
-    "description": "Manage your logins from any web browser with the bitwarden web vault."
-  },
-  "bitIosVault": {
-    "message": "Coffre iOS bitwarden",
-    "description": "bitwarden iOS Vault"
-  },
-  "bitIosVaultInfo": {
-    "message": "Gérer vos identifiants depuis vos appareils mobiles à l'aide du coffre iOS bitwarden.",
-    "description": "Manage your logins from your mobile devices with the bitwarden iOS vault."
-  },
-  "bitAndrVault": {
-    "message": "Coffre Android bitwarden",
-    "description": "bitwarden Android Vault"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Gérer vos identifiants depuis vos appareils mobiles à l'aide du coffre Android bitwarden.",
-    "description": "Manage your logins from your mobile devices with the bitwarden Android vault."
-  },
-  "importLogins": {
-    "message": "Importer des identifiants",
-    "description": "Import Logins"
-  },
-  "importLoginsInfo": {
-    "message": "Import rapide en masse depuis d'autres applications de gestion de mots de passe.",
-    "description": "Quickly bulk import your logins from other password management applications."
-  },
-  "select": {
-    "message": "Sélectionner",
-    "description": "Select"
-  },
-  "generatePassword": {
-    "message": "Générer un mot de passe",
-    "description": "Generate Password"
-  },
-  "regeneratePassword": {
-    "message": "Re-générer un mot de passe",
-    "description": "Regenerate Password"
-  },
-  "options": {
-    "message": "Options",
-    "description": "Options"
-  },
-  "length": {
-    "message": "Longueur",
-    "description": "Length"
-  },
-  "minNumbers": {
-    "message": "Minimum de chiffres",
-    "description": "Minimum Numbers"
-  },
-  "minSpecial": {
-    "message": "Minimum de caractères spéciaux",
-    "description": "Minimum Special"
-  },
-  "avoidAmbChar": {
-    "message": "Éviter les caractères ambigus",
-    "description": "Avoid Ambiguous Characters"
-  },
-  "searchVault": {
-    "message": "Rechercher dans le coffre",
-    "description": "Search vault"
-  },
-  "edit": {
-    "message": "Modifier",
-    "description": "Edit"
-  },
-  "noLoginsInList": {
-    "message": "Aucun site correspondant.",
-    "description": "There are no logins to list."
-  },
-  "loginInformation": {
-    "message": "Informations du site",
-    "description": "Login Information"
-  },
-  "username": {
-    "message": "Nom d'utilisateur",
-    "description": "Username"
-  },
-  "password": {
-    "message": "Mot de passe",
-    "description": "Password"
-  },
-  "favorite": {
-    "message": "Favori",
-    "description": "Favorite"
-  },
-  "notes": {
-    "message": "Notes",
-    "description": "Notes"
-  },
-  "editLogin": {
-    "message": "Modifier site",
-    "description": "Edit Login"
-  },
-  "folder": {
-    "message": "Dossier",
-    "description": "Folder"
-  },
-  "deleteLogin": {
-    "message": "Supprimer site",
-    "description": "Delete Login"
-  },
-  "viewLogin": {
-    "message": "Afficher site",
-    "description": "View Login"
-  },
-  "launchWebsite": {
-    "message": "Ouvrir le site web",
-    "description": "Launch Website"
-  },
-  "website": {
-    "message": "Site web",
-    "description": "Website"
-  },
-  "togglePassword": {
-    "message": "Basculer le mot de passe",
-    "description": "Toggle Password"
-  },
-  "manage": {
-    "message": "Gérer",
-    "description": "Manage"
-  },
-  "other": {
-    "message": "Autre",
-    "description": "Other"
-  },
-  "disableGa": {
-    "message": "Désactiver Analytics",
-    "description": "Disable Analytics"
-  },
-  "rateExtension": {
-    "message": "Noter l'extension",
-    "description": "Rate the Extension"
-  },
-  "rateExtensionDesc": {
-    "message": "Merci de nous aider en mettant une bonne note !",
-    "description": "Please consider helping us out with a good review!"
-  },
-  "browserNotSupportClipboard": {
-    "message": "Votre navigateur web ne supporte pas la copie facilitée du presse-papier. Copiez-le manuellement à la place.",
-    "description": "Your web browser does not support easy clipboard copying. Copy it manually instead."
-  },
-  "verifyMasterPassword": {
-    "message": "Vérifiez votre mot de passe maître",
-    "description": "Verify Master Password"
-  },
-  "invalidMasterPassword": {
-    "message": "Mot de passe maître invalide",
-    "description": "Invalid master password"
-  },
-  "lockOptions": {
-    "message": "Options de verrouillage",
-    "description": "Lock Options"
-  },
-  "immediately": {
-    "message": "Immédiatement",
-    "description": "Immediately"
-  },
-  "oneMinute": {
-    "message": "1 minute",
-    "description": "1 minute"
-  },
-  "fiveMinutes": {
-    "message": "5 minutes",
-    "description": "5 minutes"
-  },
-  "fifteenMinutes": {
-    "message": "15 minutes",
-    "description": "15 minutes"
-  },
-  "thirtyMinutes": {
-    "message": "30 minutes",
-    "description": "30 minutes"
-  },
-  "oneHour": {
-    "message": "1 heure",
-    "description": "1 hour"
-  },
-  "fourHours": {
-    "message": "4 heures",
-    "description": "4 hours"
-  },
-  "onRestart": {
-    "message": "Au redémarrage",
-    "description": "On Restart"
-  },
-  "never": {
-    "message": "Jamais",
-    "description": "Never"
-  },
-  "security": {
-    "message": "Sécurité",
-    "description": "Security"
-  },
-   "errorsOccurred": {
-    "message": "Des erreurs sont survenues",
-    "description": "Errors have occurred"
-  },
-  "emailRequired": {
-    "message": "L'adresse e-mail est requise.",
-    "description": "Email address is required."
-  },
-  "invalidEmail": {
-    "message": "Adresse e-mail invalide.",
-    "description": "Invalid email address."
-  },
-  "masterPassRequired": {
-    "message": "Le mot de passe maître est requis.",
-    "description": "Master password is required."
-  },
-  "masterPassLength": {
-    "message": "Le mot de passe maître doit au moins contenir 8 caractères.",
-    "description": "Master password must be at least 8 characters long."
-  },
-  "masterPassDoesntMatch": {
-    "message": "La confirmation du mot de passe maître ne correspond pas.",
-    "description": "Master password confirmation does not match."
-  },
-  "newAccountCreated": {
-    "message": "Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier.",
-    "description": "Your new account has been created! You may now log in."
-  },
-  "masterPassSent": {
-    "message": "Nous vous avons envoyé un e-mail contenant votre indice de mot de passe maître.",
-    "description": "We've sent you an email with your master password hint."
-  },
-  "verificationCodeRequired": {
-    "message": "Le code de vérification est requis.",
-    "description": "Verification code is required."
-  },
-  "valueCopied": {
-    "message": " copié",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
-  },
-  "autofillError": {
-    "message": "Impossible de remplir automatiquement le site sélectionné sur cette page. Copiez/collez plutôt votre nom d'utilisateur et/ou votre mot de passe.",
-    "description": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
-  },
-  "loggedOut": {
-    "message": "Déconnecté",
-    "description": "Logged out"
-  },
-  "loginExpired": {
-    "message": "Votre session a expiré.",
-    "description": "Your login session has expired."
-  },
-  "logOutConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir vous déconnecter ?",
-    "description": "Are you sure you want to log out?"
-  },
-  "yes": {
-    "message": "Oui",
-    "description": "Yes"
-  },
-  "no": {
-    "message": "Non",
-    "description": "No"
-  },
-  "unexpectedError": {
-    "message": "Une erreur inattendue est survenue.",
-    "description": "An unexpected error has occured."
-  },
-  "nameRequired": {
-    "message": "Le nom est requis.",
-    "description": "Name is required."
-  },
-  "addedFolder": {
-    "message": "Dossier ajouté",
-    "description": "Added folder"
-  },
-  "changeMasterPass": {
-    "message": "Modifier le mot de passe maître",
-    "description": "Change Master Password"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
-    "description": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "changeEmailConfirmation": {
-    "message": "Vous pouvez modifier votre adresse e-mail depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
-    "description": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "twoStepLoginConfirmation": {
-    "message": "L'authentification à double facteurs rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'authentification à double facteurs peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
-    "description": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "loggingOut": {
-    "message": "Déconnexion",
-    "description": "Logging out"
-  },
-  "loggingOutConfirmation": {
-    "message": "Vous avez récemment mis à jour depuis une ancienne version. Vous devez vous identifier à nouveau pour modifier vos options de verrouillage. Souhaitez-vous vous déconnecter maintenant ?",
-    "description": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
-  },
-  "editedFolder": {
-    "message": "Dossier modifié",
-    "description": "Edited Folder"
-  },
-  "deleteFolderConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer ce dossier ?",
-    "description": "Are you sure you want to delete this folder?"
-  },
-  "deletedFolder": {
-    "message": "Dossier supprimé",
-    "description": "Deleted folder"
-  },
-  "gettingStartedTutorial": {
-    "message": "Didacticiel",
-    "description": "Getting Started Tutorial"
-  },
-  "gettingStartedTutorialVideo": {
-    "message": "Regardez notre didacticiel pour savoir comment parfaitement utiliser l'extension du navigateur.",
-    "description": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
-  },
-  "syncingComplete": {
-    "message": "Sycnhronisation terminée",
-    "description": "Syncing complete"
-  },
-  "importLoginsConfirmation": {
-    "message": "Vous pouvez importer en masse vos identifiants depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
-    "description": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
-  },
-  "passwordCopied": {
-    "message": "Mot de passe copié",
-    "description": "Password copied"
-  },
-  "uri": {
-    "message": "URI",
-    "description": "URI"
-  },
-  "addedLogin": {
-    "message": "Site ajouté",
-    "description": "Added login"
-  },
-  "editedLogin": {
-    "message": "Site modifié",
-    "description": "Edited login"
-  },
-  "deleteLoginConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer ce site ?",
-    "description": "Are you sure you want to delete this login?"
-  },
-  "deletedLogin": {
-    "message": "Site supprimé",
-    "description": "Deleted login"
-  },
-  "overwritePassword": {
-    "message": "Écraser le mot de passe",
-    "description": "Overwrite Password"
-  },
-  "overwritePasswordConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?",
-    "description": "Are you sure you want to overwrite the current password?"
-  },
-  "lost2FAApp": {
-    "message": "Appli d'authentification perdue ?",
-    "description": "Lost authenticator app?"
-    },
-  "credits": {
-    "message": "Remerciements",
-    "description": "Credits (giving thanks to people that helped, like at the end of a movie)"
-  },
-  "thankYou": {
-    "message": "Merci",
-    "description": "Thank You"
-  },
-  "translations": {
-    "message": "Traductions",
-    "description": "Translations"
-  },
-  "searchFolder": {
-    "message": "Recherche dossier",
-    "description": "Search folder"
-  },
-  "noneFolder": {
-    "message": "Pas de dossier",
-    "description": "No Folder - this is the folder for uncategorized logins"
-  },
-  "features": {
-    "message": "Fonctionnalités",
-    "description": "Features"
-  },
-  "gaDesc": {
-    "message": "Nous utilisons analytics pour mieux apprendre comment l'extension est utilisée et ainsi, la rendre meilleure. Toutes les données récoltées sont complètement anonymes.",
-    "description": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
-  },
-  "disableAddLoginNotification": {
-    "message": "Désactiver la notification de demande d'ajout d'identifiant",
-    "description": "Disable Add Login Notification"
-  },
-  "addLoginNotificationDesc": {
-    "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois.",
-    "description": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
-  },
-  "notificationAddDesc": {
-    "message": "Est-ce que bitwarden doit se souvenir de ce mot de passe pour vous?",
-    "description": "Should bitwarden remember this password for you?"
-  },
-  "notificationAddSave": {
-    "message": "Oui, enregistrer maintenant",
-    "description": "Yes, Save Now"
-  },
-  "disableContextMenuItem": {
-    "message": "Désactiver les options de menu contextuelles",
-    "description": "Disable Context Menu Options"
-  },
-  "disableContextMenuItemDesc": {
-    "message": "Les options de menu contextuelles permettent un accès rapide à la génération de mots de passe et d'identifiants pour le site web de l'onglet actuel",
-    "description": "Context menu options provide quick access to password generation and logins for the website in your current tab."
-  },
-  "exportVault": {
-    "message": "Exporter le coffre",
-    "description": "Export Vault"
-  },
-  "warning": {
-    "message": "AVERTISSEMENT",
-    "description": "WARNING (should stay in capitalized letters if the language permits)"
-  },
-  "exportWarning": {
-    "message": "Cet export contient des données non chiffrées au format .csv. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé.",
-    "description": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
-  },
-  "exportMasterPassword": {
-    "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre.",
-    "description": "Enter your master password to export your vault data."
-  },
-  "exportVaultInfo": {
-    "message": "Exportez les données de votre coffre au format .csv afin de les modifier facilement ou les déplacer ailleurs.",
-    "description": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
-  },
-  "shared": {
-    "message": "Partagé",
-    "description": "Shared"
-  },
-  "shareVault": {
-    "message": "Partager votre coffre",
-    "description": "Share Your Vault"
-  },
-  "shareVaultInfo": {
-    "message": "Créez une organisation pour partager de manière sécurisée vos identifiants avec d'autres utilisateurs.",
-    "description": "Create an organization to securely share your logins with other users."
+  "appName":{
+    "message":"bitwarden",
+    "description":"bitwarden"
+  },
+  "extName":{
+    "message":"bitwarden - Gestionnaire de mots de passe gratuit",
+    "description":"Extension name"
+  },
+  "extDesc":{
+    "message":"bitwarden est un gestionnaire de mot de passe sécurisé et gratuit pour tous vos appareils.",
+    "description":"Extension description"
+  },
+  "loginOrCreateNewAccount":{
+    "message":"S'identifier ou créer un nouveau compte pour accéder à votre coffre sécurisé.",
+    "description":"Log in or create a new account to access your secure vault."
+  },
+  "createAccount":{
+    "message":"Créer un compte",
+    "description":"Create Account"
+  },
+  "login":{
+    "message":"S'identifier",
+    "description":"Log In"
+  },
+  "cancel":{
+    "message":"Annuler",
+    "description":"Cancel"
+  },
+  "close":{
+    "message":"Fermer",
+    "description":"Close"
+  },
+  "submit":{
+    "message":"Soumettre",
+    "description":"Submit"
+  },
+  "emailAddress":{
+    "message":"Adresse e-mail",
+    "description":"Email Address"
+  },
+  "masterPass":{
+    "message":"Mot de passe maître",
+    "description":"Master Password"
+  },
+  "masterPassDesc":{
+    "message":"Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez.",
+    "description":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc":{
+    "message":"Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli.",
+    "description":"A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass":{
+    "message":"Re-taper votre mot de passe maître",
+    "description":"Re-type Master Password"
+  },
+  "masterPassHint":{
+    "message":"Indice du mot de passe maître (facultatif)",
+    "description":"Master Password Hint (optional)"
+  },
+  "tab":{
+    "message":"Onglet",
+    "description":"Tab"
+  },
+  "myVault":{
+    "message":"Mon Coffre",
+    "description":"My Vault"
+  },
+  "tools":{
+    "message":"Outils",
+    "description":"Tools"
+  },
+  "settings":{
+    "message":"Paramètres",
+    "description":"Settings"
+  },
+  "currentTab":{
+    "message":"Onglet actif",
+    "description":"Current Tab"
+  },
+  "copyPassword":{
+    "message":"Copier mot de passe",
+    "description":"Copy Password"
+  },
+  "copyUsername":{
+    "message":"Copier nom d'utilisateur",
+    "description":"Copy Username"
+  },
+  "autoFill":{
+    "message":"Auto-remplissage",
+    "description":"Auto-fill"
+  },
+  "generatePasswordCopied":{
+    "message":"Générer un mot de passe (copié)",
+    "description":"Generate Password (copied)"
+  },
+  "noMatchingLogins":{
+    "message":"Aucun site correspondant.",
+    "description":"No matching logins."
+  },
+  "vaultLocked":{
+    "message":"Le coffre est verrouillé.",
+    "description":"Vault is locked."
+  },
+  "autoFillInfo":{
+    "message":"Il n'existe aucun site disponible pour le remplissage automatique pour l'onglet actuel du navigateur.",
+    "description":"There are no logins available to auto-fill for the current browser tab."
+  },
+  "addLogin":{
+    "message":"Ajouter un site",
+    "description":"Add a Login"
+  },
+  "passwordHint":{
+    "message":"Indice mot de passe",
+    "description":"Password Hint"
+  },
+  "enterEmailToGetHint":{
+    "message":"Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître.",
+    "description":"Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint":{
+    "message":"Obtenir l'indice du mot de passe maître",
+    "description":"Get master password hint"
+  },
+  "continue":{
+    "message":"Continuer",
+    "description":"Continue"
+  },
+  "verificationCode":{
+    "message":"Code de vérification",
+    "description":"Verification Code"
+  },
+  "enterTwoStepVerCode":{
+    "message":"Saissiez votre code d'authentification à deux facteurs.",
+    "description":"Enter your two-step verification code."
+  },
+  "account":{
+    "message":"Compte",
+    "description":"Account"
+  },
+  "changeMasterPassword":{
+    "message":"Changer le mot de passe maître",
+    "description":"Change Master Password"
+  },
+  "changeEmail":{
+    "message":"Changer l'e-mail",
+    "description":"Change Email"
+  },
+  "twoStepLogin":{
+    "message":"Identification à deux facteurs",
+    "description":"Two-step Login"
+  },
+  "logOut":{
+    "message":"Déconnexion",
+    "description":"Log Out"
+  },
+  "about":{
+    "message":"À propos",
+    "description":"About"
+  },
+  "version":{
+    "message":"Version",
+    "description":"Version"
+  },
+  "save":{
+    "message":"Enregistrer",
+    "description":"Save"
+  },
+  "addFolder":{
+    "message":"Ajouter un dossier",
+    "description":"Add Folder"
+  },
+  "name":{
+    "message":"Nom",
+    "description":"Name"
+  },
+  "editFolder":{
+    "message":"Modifier le dossier",
+    "description":"Edit Folder"
+  },
+  "deleteFolder":{
+    "message":"Supprimer le dossier",
+    "description":"Delete Folder"
+  },
+  "folders":{
+    "message":"Dossiers",
+    "description":"Folders"
+  },
+  "noFolders":{
+    "message":"Aucun dossier à lister.",
+    "description":"There are no folders to list."
+  },
+  "helpFeedback":{
+    "message":"Aide et commentaires",
+    "description":"Help & Feedback"
+  },
+  "emailUs":{
+    "message":"Nous contacter",
+    "description":"Email Us"
+  },
+  "emailUsDirectly":{
+    "message":"Nous contacter directement pour obtenir de l'aide ou pour donner un avis.",
+    "description":"Email us directly to get help or leave feedback."
+  },
+  "visitOurWebsite":{
+    "message":"Visitez notre site web",
+    "description":"Visit Our Website"
+  },
+  "visitOurWebsiteDirectly":{
+    "message":"Consultez notre site web pour obtenir de l'aide, les actualités, nous envoyer un e-mail et\/ou mieux apprendre à utiliser bitwarden.",
+    "description":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+  },
+  "fileBugReport":{
+    "message":"Envoyer un rapport de bug",
+    "description":"File a Bug Report"
+  },
+  "gitHubIssue":{
+    "message":"Ouvrez un ticket sur le dépôt GitHub.",
+    "description":"Open an issue at our GitHub repository."
+  },
+  "sync":{
+    "message":"Synchroniser",
+    "description":"Sync"
+  },
+  "syncVaultNow":{
+    "message":"Synchroniser le coffre maintenant",
+    "description":"Sync Vault Now"
+  },
+  "lastSync":{
+    "message":"Dernière synchronisation :",
+    "description":"Last Sync:"
+  },
+  "passGen":{
+    "message":"Générateur de mot de passe",
+    "description":"Password Generator"
+  },
+  "passGenInfo":{
+    "message":"Générer automatiquement des mots de passe forts et uniques pour vos identifiants.",
+    "description":"Automatically generate strong, unique passwords for your logins."
+  },
+  "bitWebVault":{
+    "message":"Coffre en ligne de bitwarden",
+    "description":"bitwarden Web Vault"
+  },
+  "bitWebVaultInfo":{
+    "message":"Gérer vos identifiants depuis n'importe quel navigateur web à l'aide du coffre en ligne de bitwarden.",
+    "description":"Manage your logins from any web browser with the bitwarden web vault."
+  },
+  "bitIosVault":{
+    "message":"Coffre iOS bitwarden",
+    "description":"bitwarden iOS Vault"
+  },
+  "bitIosVaultInfo":{
+    "message":"Gérer vos identifiants depuis vos appareils mobiles à l'aide du coffre iOS bitwarden.",
+    "description":"Manage your logins from your mobile devices with the bitwarden iOS vault."
+  },
+  "bitAndrVault":{
+    "message":"Coffre Android bitwarden",
+    "description":"bitwarden Android Vault"
+  },
+  "bitAndrVaultInfo":{
+    "message":"Gérer vos identifiants depuis vos appareils mobiles à l'aide du coffre Android bitwarden.",
+    "description":"Manage your logins from your mobile devices with the bitwarden Android vault."
+  },
+  "importLogins":{
+    "message":"Importer des identifiants",
+    "description":"Import Logins"
+  },
+  "importLoginsInfo":{
+    "message":"Import rapide en masse depuis d'autres applications de gestion de mots de passe.",
+    "description":"Quickly bulk import your logins from other password management applications."
+  },
+  "select":{
+    "message":"Sélectionner",
+    "description":"Select"
+  },
+  "generatePassword":{
+    "message":"Générer un mot de passe",
+    "description":"Generate Password"
+  },
+  "regeneratePassword":{
+    "message":"Re-générer un mot de passe",
+    "description":"Regenerate Password"
+  },
+  "options":{
+    "message":"Options",
+    "description":"Options"
+  },
+  "length":{
+    "message":"Longueur",
+    "description":"Length"
+  },
+  "minNumbers":{
+    "message":"Minimum de chiffres",
+    "description":"Minimum Numbers"
+  },
+  "minSpecial":{
+    "message":"Minimum de caractères spéciaux",
+    "description":"Minimum Special"
+  },
+  "avoidAmbChar":{
+    "message":"Éviter les caractères ambigus",
+    "description":"Avoid Ambiguous Characters"
+  },
+  "searchVault":{
+    "message":"Rechercher dans le coffre",
+    "description":"Search vault"
+  },
+  "edit":{
+    "message":"Modifier",
+    "description":"Edit"
+  },
+  "noLoginsInList":{
+    "message":"Aucun site correspondant.",
+    "description":"There are no logins to list."
+  },
+  "loginInformation":{
+    "message":"Informations du site",
+    "description":"Login Information"
+  },
+  "username":{
+    "message":"Nom d'utilisateur",
+    "description":"Username"
+  },
+  "password":{
+    "message":"Mot de passe",
+    "description":"Password"
+  },
+  "favorite":{
+    "message":"Favori",
+    "description":"Favorite"
+  },
+  "notes":{
+    "message":"Notes",
+    "description":"Notes"
+  },
+  "editLogin":{
+    "message":"Modifier site",
+    "description":"Edit Login"
+  },
+  "folder":{
+    "message":"Dossier",
+    "description":"Folder"
+  },
+  "deleteLogin":{
+    "message":"Supprimer site",
+    "description":"Delete Login"
+  },
+  "viewLogin":{
+    "message":"Afficher site",
+    "description":"View Login"
+  },
+  "launchWebsite":{
+    "message":"Ouvrir le site web",
+    "description":"Launch Website"
+  },
+  "website":{
+    "message":"Site web",
+    "description":"Website"
+  },
+  "togglePassword":{
+    "message":"Basculer le mot de passe",
+    "description":"Toggle Password"
+  },
+  "manage":{
+    "message":"Gérer",
+    "description":"Manage"
+  },
+  "other":{
+    "message":"Autre",
+    "description":"Other"
+  },
+  "disableGa":{
+    "message":"Désactiver Analytics",
+    "description":"Disable Analytics"
+  },
+  "rateExtension":{
+    "message":"Noter l'extension",
+    "description":"Rate the Extension"
+  },
+  "rateExtensionDesc":{
+    "message":"Merci de nous aider en mettant une bonne note !",
+    "description":"Please consider helping us out with a good review!"
+  },
+  "browserNotSupportClipboard":{
+    "message":"Votre navigateur web ne supporte pas la copie facilitée du presse-papier. Copiez-le manuellement à la place.",
+    "description":"Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword":{
+    "message":"Vérifiez votre mot de passe maître",
+    "description":"Verify Master Password"
+  },
+  "invalidMasterPassword":{
+    "message":"Mot de passe maître invalide",
+    "description":"Invalid master password"
+  },
+  "lockOptions":{
+    "message":"Options de verrouillage",
+    "description":"Lock Options"
+  },
+  "immediately":{
+    "message":"Immédiatement",
+    "description":"Immediately"
+  },
+  "oneMinute":{
+    "message":"1 minute",
+    "description":"1 minute"
+  },
+  "fiveMinutes":{
+    "message":"5 minutes",
+    "description":"5 minutes"
+  },
+  "fifteenMinutes":{
+    "message":"15 minutes",
+    "description":"15 minutes"
+  },
+  "thirtyMinutes":{
+    "message":"30 minutes",
+    "description":"30 minutes"
+  },
+  "oneHour":{
+    "message":"1 heure",
+    "description":"1 hour"
+  },
+  "fourHours":{
+    "message":"4 heures",
+    "description":"4 hours"
+  },
+  "onRestart":{
+    "message":"Au redémarrage",
+    "description":"On Restart"
+  },
+  "never":{
+    "message":"Jamais",
+    "description":"Never"
+  },
+  "security":{
+    "message":"Sécurité",
+    "description":"Security"
+  },
+  "errorsOccurred":{
+    "message":"Des erreurs sont survenues",
+    "description":"Errors have occurred"
+  },
+  "emailRequired":{
+    "message":"L'adresse e-mail est requise.",
+    "description":"Email address is required."
+  },
+  "invalidEmail":{
+    "message":"Adresse e-mail invalide.",
+    "description":"Invalid email address."
+  },
+  "masterPassRequired":{
+    "message":"Le mot de passe maître est requis.",
+    "description":"Master password is required."
+  },
+  "masterPassLength":{
+    "message":"Le mot de passe maître doit au moins contenir 8 caractères.",
+    "description":"Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch":{
+    "message":"La confirmation du mot de passe maître ne correspond pas.",
+    "description":"Master password confirmation does not match."
+  },
+  "newAccountCreated":{
+    "message":"Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier.",
+    "description":"Your new account has been created! You may now log in."
+  },
+  "masterPassSent":{
+    "message":"Nous vous avons envoyé un e-mail contenant votre indice de mot de passe maître.",
+    "description":"We've sent you an email with your master password hint."
+  },
+  "verificationCodeRequired":{
+    "message":"Le code de vérification est requis.",
+    "description":"Verification code is required."
+  },
+  "valueCopied":{
+    "message":" copié",
+    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError":{
+    "message":"Impossible de remplir automatiquement le site sélectionné sur cette page. Copiez\/collez plutôt votre nom d'utilisateur et\/ou votre mot de passe.",
+    "description":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+  },
+  "loggedOut":{
+    "message":"Déconnecté",
+    "description":"Logged out"
+  },
+  "loginExpired":{
+    "message":"Votre session a expiré.",
+    "description":"Your login session has expired."
+  },
+  "logOutConfirmation":{
+    "message":"Êtes-vous sûr(e) de vouloir vous déconnecter ?",
+    "description":"Are you sure you want to log out?"
+  },
+  "yes":{
+    "message":"Oui",
+    "description":"Yes"
+  },
+  "no":{
+    "message":"Non",
+    "description":"No"
+  },
+  "unexpectedError":{
+    "message":"Une erreur inattendue est survenue.",
+    "description":"An unexpected error has occured."
+  },
+  "nameRequired":{
+    "message":"Le nom est requis.",
+    "description":"Name is required."
+  },
+  "addedFolder":{
+    "message":"Dossier ajouté",
+    "description":"Added folder"
+  },
+  "changeMasterPass":{
+    "message":"Modifier le mot de passe maître",
+    "description":"Change Master Password"
+  },
+  "changeMasterPasswordConfirmation":{
+    "message":"Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
+    "description":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmailConfirmation":{
+    "message":"Vous pouvez modifier votre adresse e-mail depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
+    "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLoginConfirmation":{
+    "message":"L'authentification à double facteurs rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'authentification à double facteurs peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
+    "description":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "loggingOut":{
+    "message":"Déconnexion",
+    "description":"Logging out"
+  },
+  "loggingOutConfirmation":{
+    "message":"Vous avez récemment mis à jour depuis une ancienne version. Vous devez vous identifier à nouveau pour modifier vos options de verrouillage. Souhaitez-vous vous déconnecter maintenant ?",
+    "description":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder":{
+    "message":"Dossier modifié",
+    "description":"Edited Folder"
+  },
+  "deleteFolderConfirmation":{
+    "message":"Êtes-vous sûr(e) de vouloir supprimer ce dossier ?",
+    "description":"Are you sure you want to delete this folder?"
+  },
+  "deletedFolder":{
+    "message":"Dossier supprimé",
+    "description":"Deleted folder"
+  },
+  "gettingStartedTutorial":{
+    "message":"Didacticiel",
+    "description":"Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo":{
+    "message":"Regardez notre didacticiel pour savoir comment parfaitement utiliser l'extension du navigateur.",
+    "description":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete":{
+    "message":"Sycnhronisation terminée",
+    "description":"Syncing complete"
+  },
+  "importLoginsConfirmation":{
+    "message":"Vous pouvez importer en masse vos identifiants depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?",
+    "description":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "passwordCopied":{
+    "message":"Mot de passe copié",
+    "description":"Password copied"
+  },
+  "uri":{
+    "message":"URI",
+    "description":"URI"
+  },
+  "addedLogin":{
+    "message":"Site ajouté",
+    "description":"Added login"
+  },
+  "editedLogin":{
+    "message":"Site modifié",
+    "description":"Edited login"
+  },
+  "deleteLoginConfirmation":{
+    "message":"Êtes-vous sûr(e) de vouloir supprimer ce site ?",
+    "description":"Are you sure you want to delete this login?"
+  },
+  "deletedLogin":{
+    "message":"Site supprimé",
+    "description":"Deleted login"
+  },
+  "overwritePassword":{
+    "message":"Écraser le mot de passe",
+    "description":"Overwrite Password"
+  },
+  "overwritePasswordConfirmation":{
+    "message":"Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?",
+    "description":"Are you sure you want to overwrite the current password?"
+  },
+  "lost2FAApp":{
+    "message":"Appli d'authentification perdue ?",
+    "description":"Lost authenticator app?"
+  },
+  "credits":{
+    "message":"Remerciements",
+    "description":"Credits (giving thanks to people that helped, like at the end of a movie)"
+  },
+  "thankYou":{
+    "message":"Merci",
+    "description":"Thank You"
+  },
+  "translations":{
+    "message":"Traductions",
+    "description":"Translations"
+  },
+  "searchFolder":{
+    "message":"Recherche dossier",
+    "description":"Search folder"
+  },
+  "noneFolder":{
+    "message":"Pas de dossier",
+    "description":"No Folder - this is the folder for uncategorized logins"
+  },
+  "features":{
+    "message":"Fonctionnalités",
+    "description":"Features"
+  },
+  "gaDesc":{
+    "message":"Nous utilisons analytics pour mieux apprendre comment l'extension est utilisée et ainsi, la rendre meilleure. Toutes les données récoltées sont complètement anonymes.",
+    "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableAddLoginNotification":{
+    "message":"Désactiver la notification de demande d'ajout d'identifiant",
+    "description":"Disable Add Login Notification"
+  },
+  "addLoginNotificationDesc":{
+    "message":"La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois.",
+    "description":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+  },
+  "notificationAddDesc":{
+    "message":"Est-ce que bitwarden doit se souvenir de ce mot de passe pour vous?",
+    "description":"Should bitwarden remember this password for you?"
+  },
+  "notificationAddSave":{
+    "message":"Oui, enregistrer maintenant",
+    "description":"Yes, Save Now"
+  },
+  "disableContextMenuItem":{
+    "message":"Désactiver les options de menu contextuelles",
+    "description":"Disable Context Menu Options"
+  },
+  "disableContextMenuItemDesc":{
+    "message":"Les options de menu contextuelles permettent un accès rapide à la génération de mots de passe et d'identifiants pour le site web de l'onglet actuel",
+    "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "exportVault":{
+    "message":"Exporter le coffre",
+    "description":"Export Vault"
+  },
+  "warning":{
+    "message":"AVERTISSEMENT",
+    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning":{
+    "message":"Cet export contient des données non chiffrées au format .csv. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé.",
+    "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword":{
+    "message":"Saisissez votre mot de passe maître pour exporter les données de votre coffre.",
+    "description":"Enter your master password to export your vault data."
+  },
+  "exportVaultInfo":{
+    "message":"Exportez les données de votre coffre au format .csv afin de les modifier facilement ou les déplacer ailleurs.",
+    "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+  },
+  "shared":{
+    "message":"Partagé",
+    "description":"Shared"
+  },
+  "shareVault":{
+    "message":"Partager votre coffre",
+    "description":"Share Your Vault"
+  },
+  "shareVaultInfo":{
+    "message":"Créez une organisation pour partager de manière sécurisée vos identifiants avec d'autres utilisateurs.",
+    "description":"Create an organization to securely share your logins with other users."
   }
 }
