@@ -322,7 +322,8 @@ function initCryptoService(constantsService) {
             self.getKey(function (localKey) {
                 key = key || localKey;
                 if (!key) {
-                    throw 'Encryption key unavailable.';
+                    deferred.reject('Encryption key unavailable.');
+                    return;
                 }
 
                 plainValueEncoding = plainValueEncoding || 'utf8';
@@ -350,63 +351,61 @@ function initCryptoService(constantsService) {
         var deferred = Q.defer();
         var self = this;
 
-        try {
-            if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
-                throw 'cannot decrypt nothing';
+        if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
+            deferred.reject('cannot decrypt nothing');
+            return;
+        }
+
+        self.getKey(function (localKey) {
+            key = key || localKey;
+            if (!key) {
+                deferred.reject('Encryption key unavailable.');
+                return;
             }
 
-            self.getKey(function (localKey) {
-                key = key || localKey;
-                if (!key) {
-                    throw 'Encryption key unavailable.';
+            outputEncoding = outputEncoding || 'utf8';
+
+            if (cipherString.encryptionType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
+                key.encType === constantsService.encType.AesCbc256_B64) {
+                // Old encrypt-then-mac scheme, swap out the key
+                _legacyEtmKey = _legacyEtmKey ||
+                    new SymmetricCryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
+                key = _legacyEtmKey;
+            }
+
+            if (cipherString.encryptionType !== key.encType) {
+                deferred.reject('encType unavailable.');
+                return;
+            }
+
+            var ivBytes = forge.util.decode64(cipherString.initializationVector);
+            var ctBytes = forge.util.decode64(cipherString.cipherText);
+
+            if (key.macKey && cipherString.mac) {
+                var macBytes = forge.util.decode64(cipherString.mac);
+                var computedMacBytes = computeMac(ctBytes, ivBytes, key.macKey, false);
+                if (!macsEqual(key.macKey, computedMacBytes, macBytes)) {
+                    console.error('MAC failed.');
+                    deferred.reject('MAC failed.');
                 }
+            }
 
-                outputEncoding = outputEncoding || 'utf8';
+            var ctBuffer = forge.util.createBuffer(ctBytes);
+            var decipher = forge.cipher.createDecipher('AES-CBC', key.encKey);
+            decipher.start({ iv: ivBytes });
+            decipher.update(ctBuffer);
+            decipher.finish();
 
-                if (cipherString.encryptionType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
-                    key.encType === constantsService.encType.AesCbc256_B64) {
-                    // Old encrypt-then-mac scheme, swap out the key
-                    _legacyEtmKey = _legacyEtmKey ||
-                        new SymmetricCryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
-                    key = _legacyEtmKey;
-                }
+            var decValue;
+            if (outputEncoding === 'utf8') {
+                decValue = decipher.output.toString('utf8');
+            }
+            else {
+                decValue = decipher.output.getBytes();
+            }
 
-                if (cipherString.encryptionType !== key.encType) {
-                    throw 'encType unavailable.';
-                }
-
-                var ivBytes = forge.util.decode64(cipherString.initializationVector);
-                var ctBytes = forge.util.decode64(cipherString.cipherText);
-
-                if (key.macKey && cipherString.mac) {
-                    var macBytes = forge.util.decode64(cipherString.mac);
-                    var computedMacBytes = computeMac(ctBytes, ivBytes, key.macKey, false);
-                    if (!macsEqual(key.macKey, computedMacBytes, macBytes)) {
-                        console.error('MAC failed.');
-                        deferred.reject('MAC failed.');
-                    }
-                }
-
-                var ctBuffer = forge.util.createBuffer(ctBytes);
-                var decipher = forge.cipher.createDecipher('AES-CBC', key.encKey);
-                decipher.start({ iv: ivBytes });
-                decipher.update(ctBuffer);
-                decipher.finish();
-
-                var decValue;
-                if (outputEncoding === 'utf8') {
-                    decValue = decipher.output.toString('utf8');
-                }
-                else {
-                    decValue = decipher.output.getBytes();
-                }
-
-                deferred.resolve(decValue);
-            });
-        }
-        catch (e) {
-            deferred.reject('Decryption failed.');
-        }
+            deferred.resolve(decValue);
+        });
 
         return deferred.promise;
     };
