@@ -425,10 +425,17 @@ function addLogin(login, tab) {
     });
 }
 
+var lastCleanupLoginCheck = null;
 cleanupLoginsToAdd();
 setInterval(cleanupLoginsToAdd, 2 * 60 * 1000); // check every 2 minutes
 function cleanupLoginsToAdd() {
     var now = new Date();
+    if (lastCleanupLoginCheck && (now - lastCleanupLoginCheck) < 10000) {
+        // can only check cleanup every 10 seconds
+        return;
+    }
+    lastCleanupLoginCheck = now;
+
     for (var i = loginsToAdd.length - 1; i >= 0; i--) {
         if (loginsToAdd[i].expires < now) {
             loginsToAdd.splice(i, 1);
@@ -709,14 +716,21 @@ function copyToClipboard(text) {
 
 // Sync polling
 
+var lastSyncCheck = null;
 fullSync(true);
 setInterval(fullSync, 5 * 60 * 1000); // check every 5 minutes
 var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
 
 function fullSync(override) {
+    var now = new Date();
+    if (lastSyncCheck && (now - lastSyncCheck) < 10000) {
+        // can only check sync every 10 seconds
+        return;
+    }
+    lastSyncCheck = now;
+
     override = override || false;
     syncService.getLastSync(function (lastSync) {
-        var now = new Date();
         if (override || !lastSync || (now - lastSync) >= syncInternal) {
             syncService.fullSync(override || false, function () {
             });
@@ -726,10 +740,18 @@ function fullSync(override) {
 
 // Locking
 
+var lastLockCheck = null;
 checkLock();
 setInterval(checkLock, 10 * 1000); // check every 10 seconds
 
 function checkLock() {
+    var now = new Date();
+    if (lastLockCheck && (now - lastLockCheck) < 5000) {
+        // can only check lock every 5 seconds
+        return;
+    }
+    lastLockCheck = now;
+
     if (chrome.extension.getViews({ type: 'popup' }).length > 0) {
         // popup is open, do not lock
         return;
