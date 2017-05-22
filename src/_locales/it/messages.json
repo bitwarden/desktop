@@ -676,15 +676,15 @@
     "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   },
   "shared":{
-    "message":"Shared",
+    "message":"Condiviso",
     "description":"Shared"
   },
   "shareVault":{
-    "message":"Share Your Vault",
+    "message":"Condividi La Tua Cassaforte",
     "description":"Share Your Vault"
   },
   "shareVaultInfo":{
-    "message":"Create an organization to securely share your logins with other users.",
+    "message":"Crea un'organizzazione per condividere in sicurezza i tuoi login con gli altri utenti.",
     "description":"Create an organization to securely share your logins with other users."
   }
 }
