@@ -118,7 +118,7 @@ function initSyncService() {
             self.cryptoService.getPrivateKey().then(function (privateKey) {
                 setKeys(!!privateKey, response, deferred);
             }, function () {
-                setKeys(false, response, deferred);
+                setKeys(true, response, deferred);
             });
         }, function () {
             deferred.reject();

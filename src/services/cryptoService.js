@@ -133,7 +133,7 @@ function initCryptoService(constantsService) {
         var self = this;
         chrome.storage.local.get('encPrivateKey', function (obj) {
             if (!obj || !obj.encPrivateKey) {
-                deferred.reject('Cannot get enc private key.');
+                deferred.resolve(null);
                 return;
             }
 
