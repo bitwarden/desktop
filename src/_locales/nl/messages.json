@@ -20,7 +20,7 @@
     "description":"Create Account"
   },
   "login":{
-    "message":"Log In",
+    "message":"Login",
     "description":"Log In"
   },
   "cancel":{
@@ -316,7 +316,7 @@
     "description":"There are no logins to list."
   },
   "loginInformation":{
-    "message":"Login Information",
+    "message":"Login informatie",
     "description":"Login Information"
   },
   "username":{
@@ -648,43 +648,43 @@
     "description":"Yes, Save Now"
   },
   "disableContextMenuItem":{
-    "message":"Disable Context Menu Options",
+    "message":"Context Menu-opties uitschakelen",
     "description":"Disable Context Menu Options"
   },
   "disableContextMenuItemDesc":{
-    "message":"Context menu options provide quick access to password generation and logins for the website in your current tab.",
+    "message":"Context menu-opties bieden snelle toegang tot wachtwoordgeneratie en logins voor de website in de huidige tab.",
     "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "exportVault":{
-    "message":"Export Vault",
+    "message":"Exporteer Kluis",
     "description":"Export Vault"
   },
   "warning":{
-    "message":"WARNING",
+    "message":"WAARSCHUWING",
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it.",
+    "message":"Deze export bevat niet-versleutelde gegevens in CSV-indeling. Deze dient niet te worden opgeslagen of over onveilige kanalen (zoals email) verstuurd te worden. Verwijder het zodra het niet meer nodig is.",
     "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword":{
-    "message":"Enter your master password to export your vault data.",
+    "message":"Voer uw hoofdwachtwoord om de gegevens in de kluis te exporteren.",
     "description":"Enter your master password to export your vault data."
   },
   "exportVaultInfo":{
-    "message":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere.",
+    "message":"Exporteer de gegevens in de kluis in CSV-indeling om deze gemakkelijk te bewerken of verplaatsen.",
     "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   },
   "shared":{
-    "message":"Shared",
+    "message":"Gedeeld",
     "description":"Shared"
   },
   "shareVault":{
-    "message":"Share Your Vault",
+    "message":"Deel uw kluis",
     "description":"Share Your Vault"
   },
   "shareVaultInfo":{
-    "message":"Create an organization to securely share your logins with other users.",
+    "message":"Maak een organisatie om uw logins veilig te delen met andere gebruikers.",
     "description":"Create an organization to securely share your logins with other users."
   }
 }
