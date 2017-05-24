@@ -4,571 +4,571 @@
     "description":"bitwarden"
   },
   "extName":{
-    "message":"bitwarden - Бесплатный менеджер паролей",
+    "message":"bitwarden - Bezplatný správca hesiel",
     "description":"Extension name"
   },
   "extDesc":{
-    "message":"bitwarden - защищённое и безопасное хранилище паролей для всех Ваших устройств.",
+    "message":"bitwarden je bezpečný a bezplatný správca hesiel pre všetky vaše zariadenia.",
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
-    "message":"Войдите или создайте новый аккаунт для доступа к Вашему безопасному хранилищу.",
+    "message":"Prihláste sa, alebo vytvorte nový účet pre prístup k vášmu bezpečnému trezoru.",
     "description":"Log in or create a new account to access your secure vault."
   },
   "createAccount":{
-    "message":"Создать аккаунт",
+    "message":"Vytvoriť účet",
     "description":"Create Account"
   },
   "login":{
-    "message":"Войти",
+    "message":"Prihlásiť sa",
     "description":"Log In"
   },
   "cancel":{
-    "message":"Отмена",
+    "message":"Zrušiť",
     "description":"Cancel"
   },
   "close":{
-    "message":"Закрыть",
+    "message":"Zavrieť",
     "description":"Close"
   },
   "submit":{
-    "message":"Отправить",
+    "message":"Potvrdiť",
     "description":"Submit"
   },
   "emailAddress":{
-    "message":"Email",
+    "message":"Emailová adresa",
     "description":"Email Address"
   },
   "masterPass":{
-    "message":"Мастер-пароль",
+    "message":"Hlavné heslo",
     "description":"Master Password"
   },
   "masterPassDesc":{
-    "message":"Мастер-пароль - пароль для доступа к вашему безопасному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль нельзя.",
+    "message":"Hlavné heslo je heslo, ktoré použijete na prístup k svojmu trezoru. Je veľmi dôležité, aby ste svoje hlavné heslo nezabudli. Neexistuje možnosť, ako heslo obnoviť v prípade, že ho zabudnete.",
     "description":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc":{
-    "message":"Подсказка к мастер-паролю поможет Вам вспомнить Ваш пароль, если вы забыли его.",
+    "message":"Nápoveda k hlavnému heslu vám môže pomôcť spomenúť si na heslo, ak ho zabudnete.",
     "description":"A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass":{
-    "message":"Введите мастер-пароль повторно",
+    "message":"Znovu zadajte hlavné heslo",
     "description":"Re-type Master Password"
   },
   "masterPassHint":{
-    "message":"Подсказка к мастер-паролю (необяз.)",
+    "message":"Nápoveda k hlavnému heslo (voliteľné)",
     "description":"Master Password Hint (optional)"
   },
   "tab":{
-    "message":"Вкладка",
+    "message":"Karta",
     "description":"Tab"
   },
   "myVault":{
-    "message":"Хранилище",
+    "message":"Môj trezor",
     "description":"My Vault"
   },
   "tools":{
-    "message":"Инструменты",
+    "message":"Nástroje",
     "description":"Tools"
   },
   "settings":{
-    "message":"Настройки",
+    "message":"Nastavenia",
     "description":"Settings"
   },
   "currentTab":{
-    "message":"Текущая вкладка",
+    "message":"Aktuálna karta",
     "description":"Current Tab"
   },
   "copyPassword":{
-    "message":"Копировать пароль",
+    "message":"Kopírovať heslo",
     "description":"Copy Password"
   },
   "copyUsername":{
-    "message":"Копировать имя пользователя",
+    "message":"Kopírovať používateľské meno",
     "description":"Copy Username"
   },
   "autoFill":{
-    "message":"Автозаполнение",
+    "message":"Automatické dopĺňanie",
     "description":"Auto-fill"
   },
   "generatePasswordCopied":{
-    "message":"Сгенерировать пароль (с копированием)",
+    "message":"Vygenerovať heslo (skopírované)",
     "description":"Generate Password (copied)"
   },
   "noMatchingLogins":{
-    "message":"Нет подходящих сайтов.",
+    "message":"Žiadne zodpovedajúce prihlasovacie mená.",
     "description":"No matching logins."
   },
   "vaultLocked":{
-    "message":"Хранилище заблокировано.",
+    "message":"Trezor je zamknutý.",
     "description":"Vault is locked."
   },
   "autoFillInfo":{
-    "message":"Нет доступных учетных записей для автозаполнения в текущей вкладке браузера.",
+    "message":"Nie sú prístupné žiadne prihlasovacie mená na automatické vyplnenie pre aktuálnu kartu.",
     "description":"There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin":{
-    "message":"Добавить сайт",
+    "message":"Pridať prihlasovacie údaje",
     "description":"Add a Login"
   },
   "passwordHint":{
-    "message":"Подсказка к паролю",
+    "message":"Nápoveda pre heslo",
     "description":"Password Hint"
   },
   "enterEmailToGetHint":{
-    "message":"Введите Ваш email для получения подсказки мастер-пароля.",
+    "message":"Zadajte emailovú adresu na zaslanie nápovedy pre vaše hlavné heslo.",
     "description":"Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint":{
-    "message":"Получить подсказку к мастер-паролю",
+    "message":"Získať nápovedu pre hlavné heslo",
     "description":"Get master password hint"
   },
   "continue":{
-    "message":"Продолжить",
+    "message":"Pokračovať",
     "description":"Continue"
   },
   "verificationCode":{
-    "message":"Введите код",
+    "message":"Overovací kód",
     "description":"Verification Code"
   },
   "enterTwoStepVerCode":{
-    "message":"Введите код подтверждения двухфакторной аутентификации.",
+    "message":"Zadajte dvojstupňový overovací kód.",
     "description":"Enter your two-step verification code."
   },
   "account":{
-    "message":"Аккаунт",
+    "message":"Účet",
     "description":"Account"
   },
   "changeMasterPassword":{
-    "message":"Изменить мастер-пароль",
+    "message":"Zmeniť hlavné heslo",
     "description":"Change Master Password"
   },
   "changeEmail":{
-    "message":"Изменить email",
+    "message":"Zmeniť email",
     "description":"Change Email"
   },
   "twoStepLogin":{
-    "message":"Двухфакторная аутентификация",
+    "message":"Dvojstupňové prihlásenie",
     "description":"Two-step Login"
   },
   "logOut":{
-    "message":"Выйти",
+    "message":"Odhlásiť sa",
     "description":"Log Out"
   },
   "about":{
-    "message":"О расширении",
+    "message":"O aplikácii",
     "description":"About"
   },
   "version":{
-    "message":"Версия",
+    "message":"Verzia",
     "description":"Version"
   },
   "save":{
-    "message":"Сохранить",
+    "message":"Uložiť",
     "description":"Save"
   },
   "addFolder":{
-    "message":"Добавить папку",
+    "message":"Pridať priečinok",
     "description":"Add Folder"
   },
   "name":{
-    "message":"Наименование",
+    "message":"Meno",
     "description":"Name"
   },
   "editFolder":{
-    "message":"Изменение папки",
+    "message":"Upraviť priečinok",
     "description":"Edit Folder"
   },
   "deleteFolder":{
-    "message":"Удалить папку",
+    "message":"Odstrániť priečinok",
     "description":"Delete Folder"
   },
   "folders":{
-    "message":"Папки",
+    "message":"Priečinky",
     "description":"Folders"
   },
   "noFolders":{
-    "message":"Нет папок для отображения.",
+    "message":"V zozname nie sú žiadne priečinky.",
     "description":"There are no folders to list."
   },
   "helpFeedback":{
-    "message":"Обратная связь",
+    "message":"Pomoc a spätná väzba",
     "description":"Help & Feedback"
   },
   "emailUs":{
-    "message":"Написать нам на email",
+    "message":"Napíšte nám",
     "description":"Email Us"
   },
   "emailUsDirectly":{
-    "message":"Напишите нам на email, чтобы мы помогли вам или чтобы оставить отзыв.",
+    "message":"Získajte pomoc alebo zanechajte spätnú väzbu zaslaním emailu.",
     "description":"Email us directly to get help or leave feedback."
   },
   "visitOurWebsite":{
-    "message":"Перейти на наш сайт",
+    "message":"Navštívte našu stránku",
     "description":"Visit Our Website"
   },
   "visitOurWebsiteDirectly":{
-    "message":"Посетите наш сайт для чтения справки, новостей. На нём Вы так же можете написать нам или почитать о том, как использовать bitwarden.",
+    "message":"Navštívte našu stránku pre získanie pomoci, noviniek, poslať nám email, alebo sa dozvedieť viac, ako používať bitwarden.",
     "description":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
   },
   "fileBugReport":{
-    "message":"Сообщить о проблеме",
+    "message":"Nahlásiť chybu",
     "description":"File a Bug Report"
   },
   "gitHubIssue":{
-    "message":"Откройте \"issue\" в GitHub-репозитории.",
+    "message":"Nahlásiť problém v našom GitHub repozitári.",
     "description":"Open an issue at our GitHub repository."
   },
   "sync":{
-    "message":"Синхронизация",
+    "message":"Synchronizácia",
     "description":"Sync"
   },
   "syncVaultNow":{
-    "message":"Синхронизировать сейчас",
+    "message":"Synchronizovať trezor teraz",
     "description":"Sync Vault Now"
   },
   "lastSync":{
-    "message":"Послед. синхронизация:",
+    "message":"Posledná synchronizácia:",
     "description":"Last Sync:"
   },
   "passGen":{
-    "message":"Генератор паролей",
+    "message":"Generátor hesla",
     "description":"Password Generator"
   },
   "passGenInfo":{
-    "message":"Автоматическая генерация стойких и уникальных паролей для Ваших аккаунтов.",
+    "message":"Automaticky generovať silné a unikátne heslá pre vaše prihlásenia.",
     "description":"Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault":{
-    "message":"Web-хранилище bitwarden",
+    "message":"bitwarden webový trezor",
     "description":"bitwarden Web Vault"
   },
   "bitWebVaultInfo":{
-    "message":"Управляйте своими аккаунтами из любого браузера при помощи web-хранилища bitwarden.",
+    "message":"Spravujte vaše prihlasovacie údaje z akéhokoľvek prehliadača s webovým trezorom bitwarden.",
     "description":"Manage your logins from any web browser with the bitwarden web vault."
   },
   "bitIosVault":{
-    "message":"iOS-хранилище bitwarden",
+    "message":"bitwarden iOS trezor",
     "description":"bitwarden iOS Vault"
   },
   "bitIosVaultInfo":{
-    "message":"Управляйте своими аккаунтами со своего мобильного устройства при помощи iOS-хранилища bitwarden.",
+    "message":"Spravujte vaše prihlasovacie údaje z vašich mobilných zariadení s bitwarden iOS trezorom.",
     "description":"Manage your logins from your mobile devices with the bitwarden iOS vault."
   },
   "bitAndrVault":{
-    "message":"Android-хранилище bitwarden",
+    "message":"bitwarden Android trezor",
     "description":"bitwarden Android Vault"
   },
   "bitAndrVaultInfo":{
-    "message":"Управляйте своими аккаунтами со своего мобильного устройства при помощи Android-хранилища bitwarden.",
+    "message":"Spravujte vaše prihlasovacie údaje z vašich mobilných zariadení s bitwarden Android trezorom.",
     "description":"Manage your logins from your mobile devices with the bitwarden Android vault."
   },
   "importLogins":{
-    "message":"Импорт аккаунтов",
+    "message":"Importovať prihlásenia",
     "description":"Import Logins"
   },
   "importLoginsInfo":{
-    "message":"Быстрый импорт Ваших учетных записей из других менеджеров паролей.",
+    "message":"Rýchlo hromadne importovať vaše prihlasovacie údaje z iných aplikácií na správu hesiel.",
     "description":"Quickly bulk import your logins from other password management applications."
   },
   "select":{
-    "message":"Выбрать",
+    "message":"Vybrať",
     "description":"Select"
   },
   "generatePassword":{
-    "message":"Генератор паролей",
+    "message":"Generovať heslo",
     "description":"Generate Password"
   },
   "regeneratePassword":{
-    "message":"Регенерировать пароль",
+    "message":"Vygenerovať nové heslo",
     "description":"Regenerate Password"
   },
   "options":{
-    "message":"Опции",
+    "message":"Možnosti",
     "description":"Options"
   },
   "length":{
-    "message":"Длина",
+    "message":"Dĺžka",
     "description":"Length"
   },
   "minNumbers":{
-    "message":"Мин. кол-во цифр",
+    "message":"Minimum číslic",
     "description":"Minimum Numbers"
   },
   "minSpecial":{
-    "message":"Мин. кол. спец. символов",
+    "message":"Minimum špeciálnych",
     "description":"Minimum Special"
   },
   "avoidAmbChar":{
-    "message":"Избегать неопределенные символы",
+    "message":"Vyhnúť sa dvojvýznamovým znakom",
     "description":"Avoid Ambiguous Characters"
   },
   "searchVault":{
-    "message":"Поиск по хранилищу",
+    "message":"Prehľadávať trezor",
     "description":"Search vault"
   },
   "edit":{
-    "message":"Изменить",
+    "message":"Upraviť",
     "description":"Edit"
   },
   "noLoginsInList":{
-    "message":"Нет сайтов для отображения.",
+    "message":"Neexistujú žiadne prihlasovacie údaje.",
     "description":"There are no logins to list."
   },
   "loginInformation":{
-    "message":"Информация о сайте",
+    "message":"Prihlasovacie údaje",
     "description":"Login Information"
   },
   "username":{
-    "message":"Имя пользователя",
+    "message":"Používateľské meno",
     "description":"Username"
   },
   "password":{
-    "message":"Пароль",
+    "message":"Heslo",
     "description":"Password"
   },
   "favorite":{
-    "message":"Избранный",
+    "message":"Obľúbené",
     "description":"Favorite"
   },
   "notes":{
-    "message":"Заметки",
+    "message":"Poznámky",
     "description":"Notes"
   },
   "editLogin":{
-    "message":"Изменение сайта",
+    "message":"Upraviť prihlásenie",
     "description":"Edit Login"
   },
   "folder":{
-    "message":"Папка",
+    "message":"Priečinok",
     "description":"Folder"
   },
   "deleteLogin":{
-    "message":"Удалить сайт",
+    "message":"Odstrániť prihlásenie",
     "description":"Delete Login"
   },
   "viewLogin":{
-    "message":"Просмотр сайта",
+    "message":"Zobraziť prihlásenie",
     "description":"View Login"
   },
   "launchWebsite":{
-    "message":"Открыть сайт",
+    "message":"Spustiť stránku",
     "description":"Launch Website"
   },
   "website":{
-    "message":"URL",
+    "message":"Webstránka",
     "description":"Website"
   },
   "togglePassword":{
-    "message":"Показать\/скрыть пароль",
+    "message":"Prepnúť heslo",
     "description":"Toggle Password"
   },
   "manage":{
-    "message":"Управление",
+    "message":"Spravovať",
     "description":"Manage"
   },
   "other":{
-    "message":"Прочее",
+    "message":"Ostatné",
     "description":"Other"
   },
   "disableGa":{
-    "message":"Отключить Analytics",
+    "message":"Vypnúť analytiku",
     "description":"Disable Analytics"
   },
   "rateExtension":{
-    "message":"Оценить расширение",
+    "message":"Ohodnotiť rozšírenie",
     "description":"Rate the Extension"
   },
   "rateExtensionDesc":{
-    "message":"Пожалуйста, обратите внимание, что Вы помогаете нам хорошей оценкой!",
+    "message":"Prosíme, zvážte pomôcť nám dobrým hodnotením!",
     "description":"Please consider helping us out with a good review!"
   },
   "browserNotSupportClipboard":{
-    "message":"Ваш web-браузер не поддерживает копирование данных в буфер обмена. Вам придётся копировать вручную.",
+    "message":"Váš webový prehliadač nepodporuje jednoduché kopírovanie do schránky. Skopírujte manuálne.",
     "description":"Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyMasterPassword":{
-    "message":"Проверка мастер-пароля",
+    "message":"Overenie hlavného hesla",
     "description":"Verify Master Password"
   },
   "invalidMasterPassword":{
-    "message":"Неверный мастер-пароль",
+    "message":"Neplatné hlavné heslo",
     "description":"Invalid master password"
   },
   "lockOptions":{
-    "message":"Настройки блокировки",
+    "message":"Možnosti zámku",
     "description":"Lock Options"
   },
   "immediately":{
-    "message":"Немедленно",
+    "message":"Okamžite",
     "description":"Immediately"
   },
   "oneMinute":{
-    "message":"Через 1 минуту",
+    "message":"1 minúta",
     "description":"1 minute"
   },
   "fiveMinutes":{
-    "message":"Через 5 минут",
+    "message":"5 minút",
     "description":"5 minutes"
   },
   "fifteenMinutes":{
-    "message":"Через 15 минут",
+    "message":"15 minút",
     "description":"15 minutes"
   },
   "thirtyMinutes":{
-    "message":"Через 30 минут",
+    "message":"30 minút",
     "description":"30 minutes"
   },
   "oneHour":{
-    "message":"Через 1 час",
+    "message":"1 hodina",
     "description":"1 hour"
   },
   "fourHours":{
-    "message":"Через 4 часа",
+    "message":"4 hodiny",
     "description":"4 hours"
   },
   "onRestart":{
-    "message":"При перезапуске",
+    "message":"Po reštarte",
     "description":"On Restart"
   },
   "never":{
-    "message":"Никогда",
+    "message":"Nikdy",
     "description":"Never"
   },
   "security":{
-    "message":"Безопасность",
+    "message":"Zabezpečenie",
     "description":"Security"
   },
   "errorsOccurred":{
-    "message":"Произошла одна или несколько ошибок",
+    "message":"Vyskytli sa chyby",
     "description":"Errors have occurred"
   },
   "emailRequired":{
-    "message":"Требуется email.",
+    "message":"Emailová adresa je povinná.",
     "description":"Email address is required."
   },
   "invalidEmail":{
-    "message":"Неверный email.",
+    "message":"Neplatná emailová adresa.",
     "description":"Invalid email address."
   },
   "masterPassRequired":{
-    "message":"Требуется мастер-пароль.",
+    "message":"Hlavné heslo je povinné.",
     "description":"Master password is required."
   },
   "masterPassLength":{
-    "message":"Мастер-пароль должен быть длиной не менее 8 символов.",
+    "message":"Hlavné heslo musí obsahovať aspoň 8 znakov.",
     "description":"Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch":{
-    "message":"Мастер-пароли не совпадают.",
+    "message":"Potvrdenie hlavného hesla sa nezhoduje.",
     "description":"Master password confirmation does not match."
   },
   "newAccountCreated":{
-    "message":"Ваш аккаунт был создан! Вы можете зайти сейчас.",
+    "message":"Váš nový účet bol vytvorený! Teraz sa môžete prihlásiť.",
     "description":"Your new account has been created! You may now log in."
   },
   "masterPassSent":{
-    "message":"Мы отправили на Ваш email подсказку к Вашему мастер-паролю.",
+    "message":"Poslali sme vám email s nápovedou k hlavnému heslu.",
     "description":"We've sent you an email with your master password hint."
   },
   "verificationCodeRequired":{
-    "message":"Необходим код подтверждения.",
+    "message":"Overovací kód je povinný.",
     "description":"Verification code is required."
   },
   "valueCopied":{
-    "message":" скопирован",
+    "message":" skopírované",
     "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError":{
-    "message":"Не получается автоматически заполнить данные сайта на этой странице. Скопируйте и вставьте логин\/пароль напрямую из своего хранилища.",
+    "message":"Na tejto stránke sa nedajú automaticky vyplniť prihlasovacie údaje. Namiesto toho skopírujte\/vložte prihlasovacie meno a\/alebo heslo.",
     "description":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
   },
   "loggedOut":{
-    "message":"Вы вышли из хранилища",
+    "message":"Odhlásený",
     "description":"Logged out"
   },
   "loginExpired":{
-    "message":"Ваша логин-сессия истекла.",
+    "message":"Vaša relácia vypršala.",
     "description":"Your login session has expired."
   },
   "logOutConfirmation":{
-    "message":"Вы действительно хотите выйти?",
+    "message":"Naozaj sa chcete odhlásiť?",
     "description":"Are you sure you want to log out?"
   },
   "yes":{
-    "message":"Да",
+    "message":"Áno",
     "description":"Yes"
   },
   "no":{
-    "message":"Нет",
+    "message":"Nie",
     "description":"No"
   },
   "unexpectedError":{
-    "message":"Произошла незвестная ошибка.",
+    "message":"Vyskytla sa neočakávaná chyba.",
     "description":"An unexpected error has occured."
   },
   "nameRequired":{
-    "message":"Требуется наименование.",
+    "message":"Meno je povinné.",
     "description":"Name is required."
   },
   "addedFolder":{
-    "message":"Папка добавлена",
+    "message":"Pridaný priečinok",
     "description":"Added folder"
   },
   "changeMasterPass":{
-    "message":"Изменить мастер-пароль",
+    "message":"Zmeniť hlavné heslo",
     "description":"Change Master Password"
   },
   "changeMasterPasswordConfirmation":{
-    "message":"Вы можете изменить Ваш мастер-пароль на bitwarden.com. Хотите перейти на этот сайт сейчас?",
+    "message":"Teraz si môžete zmeniť svoje hlavné heslo na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?",
     "description":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "changeEmailConfirmation":{
-    "message":"Вы можете изменить Ваш email на bitwarden.com. Хотите перейти на этот сайт сейчас?",
+    "message":"Teraz si môžete zmeniť svoju emailovú adresu na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?",
     "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Двухфакторная аутентификация делает Ваш аккаунт более защищенным. При каждом входе в хранилище будет требоваться код из приложения Authenticator. Двухфакторная аутентификация включается на сайте bitwarden.com. Вы хотите посетить сайт сейчас?",
+    "message":"Dvojstupňové prihlasovanie robí váš účet bezpečnejsí vyžadovaním bezpečnostného kódu z overovacej aplikácie vždy, keď sa prihlásite. Dvojstupňové prihlasovanie môžete povoliť na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?",
     "description":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
-    "message":"Выход...",
+    "message":"Odhlasuje sa",
     "description":"Logging out"
   },
   "loggingOutConfirmation":{
-    "message":"Вы недавно обновились на более новую версию. Вы должны перезайти для изменения настроек блокировка. Вы хотите выйти сейчас?",
+    "message":"Nedávno ste aktualizovali zo staršej verzie. Musíte sa znova prihlásiť, aby ste zmenili nastavenia zámku. Chcete sa odhlásiť teraz?",
     "description":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
   },
   "editedFolder":{
-    "message":"Папка отредактирована",
+    "message":"Upravený priečinok",
     "description":"Edited Folder"
   },
   "deleteFolderConfirmation":{
-    "message":"Вы хотите удалить эту папку?",
+    "message":"Naozaj chcete odstrániť tento priečinok?",
     "description":"Are you sure you want to delete this folder?"
   },
   "deletedFolder":{
-    "message":"Папка удалена",
+    "message":"Odstránený priečinok",
     "description":"Deleted folder"
   },
   "gettingStartedTutorial":{
-    "message":"Гайд для новичков",
+    "message":"Začiatočnícka príručka",
     "description":"Getting Started Tutorial"
   },
   "gettingStartedTutorialVideo":{
-    "message":"Посмотрите наш гайд для новичков о том, как получить от браузерного расширения максимум.",
+    "message":"Sledujte našu začiatočnícku príručku, aby ste sa naučili, ako dostať čo najviac z nášho rozšírenia prehliadača.",
     "description":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
   },
   "syncingComplete":{
-    "message":"Синхронизация завершена",
+    "message":"Synchronizácia kompletná",
     "description":"Syncing complete"
   },
   "importLoginsConfirmation":{
-    "message":"Вы можете импортировать сразу все свои данные из веб-хранилища bitwarden.com. Хотите сделать это сейчас?",
+    "message":"Môžete hromadne importovať prihlásenia z webového trezoru bitwarden.com. Chcete navštíviť túto stránku teraz?",
     "description":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
-    "message":"Пароль скопирован",
+    "message":"Heslo skopírované",
     "description":"Password copied"
   },
   "uri":{
@@ -576,115 +576,115 @@
     "description":"URI"
   },
   "addedLogin":{
-    "message":"Сайт добавлен",
+    "message":"Pridané prihlasovacie údaje",
     "description":"Added login"
   },
   "editedLogin":{
-    "message":"Сайт отредактирован",
+    "message":"Upravené prihlasovacie údaje",
     "description":"Edited login"
   },
   "deleteLoginConfirmation":{
-    "message":"Вы хотите удалить этот сайт?",
+    "message":"Naozaj chcete odstrániť tieto prihlasovacie údaje?",
     "description":"Are you sure you want to delete this login?"
   },
   "deletedLogin":{
-    "message":"Удалить сайт",
+    "message":"Odstránené prihlasovacie údaje",
     "description":"Deleted login"
   },
   "overwritePassword":{
-    "message":"Сменить пароль",
+    "message":"Prepísať heslo",
     "description":"Overwrite Password"
   },
   "overwritePasswordConfirmation":{
-    "message":"Вы хотите сменить текущий пароль?",
+    "message":"Naozaj chcete prepísať aktuálne heslo?",
     "description":"Are you sure you want to overwrite the current password?"
   },
   "lost2FAApp":{
-    "message":"Потеряли доступ к приложению Authenticator?",
+    "message":"Stratili ste overovaciu aplikáciu?",
     "description":"Lost authenticator app?"
   },
   "credits":{
-    "message":"Благодарности",
+    "message":"Poďakovania",
     "description":"Credits (giving thanks to people that helped, like at the end of a movie)"
   },
   "thankYou":{
-    "message":"Спасибо",
+    "message":"Ďakujeme Vám",
     "description":"Thank You"
   },
   "translations":{
-    "message":"Локализации",
+    "message":"Preklady",
     "description":"Translations"
   },
   "searchFolder":{
-    "message":"Поиск по папкам",
+    "message":"Prehľadávať priečinok",
     "description":"Search folder"
   },
   "noneFolder":{
-    "message":"Без папки",
+    "message":"Žiadny priečinok",
     "description":"No Folder - this is the folder for uncategorized logins"
   },
   "features":{
-    "message":"Функции",
+    "message":"Funkcie",
     "description":"Features"
   },
   "gaDesc":{
-    "message":"Мы собираем данные для того, чтобы лучше понять как используется расширение, и сделать его лучше. Все собранные данные полностью анонимны.",
+    "message":"Používame analytiku, aby sme zistili, ako je rozšírenie používané, aby sme ho mohli vylepšiť. Všetky zhromaždené údaje sú kompletne anonymné.",
     "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification":{
-    "message":"Отключить уведомления о добавлении логина",
+    "message":"Vypnúť notifikáciu Pridať prihlasovacie údaje",
     "description":"Disable Add Login Notification"
   },
   "addLoginNotificationDesc":{
-    "message":"\"Уведомление о добавлении логина\" автоматически напоминает вам сохранить новый логин в ваше хранилище сразу после того, как вы воспользуетесь им в первый раз.",
+    "message":"\"Notifikácia Pridať prihlasovacie údaje\" vás automaticky upozorní na uloženie nových údajov do vášho trezoru vždy, keď sa s nimi prihlasujete po prvý krát.",
     "description":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc":{
-    "message":"Разрешить bitwarden запомнить этот пароль для вас?",
+    "message":"Má si bitwarden pre vás zapamätať toto heslo?",
     "description":"Should bitwarden remember this password for you?"
   },
   "notificationAddSave":{
-    "message":"Да, сохранить сейчас",
+    "message":"Áno, uložiť teraz",
     "description":"Yes, Save Now"
   },
   "disableContextMenuItem":{
-    "message":"Отключить опции контекстного меню",
+    "message":"Vypnúť možnosti kontextového menu",
     "description":"Disable Context Menu Options"
   },
   "disableContextMenuItemDesc":{
-    "message":"Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта в текущей вкладке.",
+    "message":"Možnosti kontextového menu ponúkajú rýchly prístup k prihlasovacím údajom a generovaniu hesiel pre stránku vo vašej aktuálnej karte.",
     "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "exportVault":{
-    "message":"Экспортировать хранилище",
+    "message":"Export trezoru",
     "description":"Export Vault"
   },
   "warning":{
-    "message":"ВНИМАНИЕ",
+    "message":"UPOZORNENIE",
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"Этот файл содержит ваши незашифрованные данные в формате .csv. Не храните и не передавайте его по незащищенным каналам (например, email). Удалите их сразу после использования.",
+    "message":"Tento export obsahuje vaše nešifrované dáta vo formáte .csv. Nemali by ste ich ukladať, ani posielať cez nezabezpečené kanály (napr. email). Okamžite ho odstránte, keď ho prestanete používať.",
     "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword":{
-    "message":"Для экспорта данных из хранилища введите мастер-пароль.",
+    "message":"Zadajte vaše hlavné heslo pre export údajov trezoru.",
     "description":"Enter your master password to export your vault data."
   },
   "exportVaultInfo":{
-    "message":"Экспортировать хранилище в формате .csv для быстрого редактирования или перемещения.",
+    "message":"Export vašich dát trezoru v .csv formáte, aby ste ich mohli ľahko upraviť alebo premiestniť inde.",
     "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   },
   "shared":{
-    "message":"Общие",
+    "message":"Zdieľané",
     "description":"Shared"
   },
   "shareVault":{
-    "message":"Расшарить хранилище",
+    "message":"Zdieľať trezor",
     "description":"Share Your Vault"
   },
   "shareVaultInfo":{
-    "message":"Создание организации для безопасного обмена логинами с другими пользователями.",
+    "message":"Vytvorte organizáciu pre bezpečné zdieľanie vašich prihlasovacích údajov s inými používateľmi.",
     "description":"Create an organization to securely share your logins with other users."
   }
 }
