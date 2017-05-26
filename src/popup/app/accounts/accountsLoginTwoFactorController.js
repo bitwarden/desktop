@@ -27,6 +27,6 @@
 
         $scope.lostApp = function () {
             $analytics.eventTrack('Selected Lost 2FA App');
-            chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/recover' });
+            chrome.tabs.create({ url: 'https://help.bitwarden.com/article/lost-two-step-device/' });
         };
     });
