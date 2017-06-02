@@ -14,7 +14,7 @@
             var userService = $injector.get('userService');
             var cryptoService = $injector.get('cryptoService');
 
-            cryptoService.getKey(function (key) {
+            cryptoService.getKey().then(function (key) {
                 userService.isAuthenticated(function (isAuthenticated) {
                     if (isAuthenticated) {
                         if (!key) {

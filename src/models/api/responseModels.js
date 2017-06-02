@@ -38,6 +38,9 @@ var ProfileResponse = function (response) {
     this.masterPasswordHint = response.MasterPasswordHint;
     this.culture = response.Culture;
     this.twoFactorEnabled = response.TwoFactorEnabled;
+    this.key = response.Key;
+    this.privateKey = response.PrivateKey;
+    this.securityStamp = response.SecurityStamp;
 
     this.organizations = [];
     if (response.Organizations) {
@@ -68,6 +71,7 @@ var IdentityTokenResponse = function (response) {
     this.tokenType = response.token_type;
 
     this.privateKey = response.PrivateKey;
+    this.key = response.Key;
 };
 
 var ListResponse = function (data) {

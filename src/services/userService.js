@@ -8,10 +8,12 @@
 
 function initUserService() {
     var userIdKey = 'userId',
-        userEmailKey = 'userEmail';
+        userEmailKey = 'userEmail',
+        stampKey = 'securityStamp';
 
     var _userId = null,
-        _email = null;
+        _email = null,
+        _stamp = null;
 
     UserService.prototype.setUserIdAndEmail = function (userId, email, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -31,6 +33,20 @@ function initUserService() {
                 callback();
             });
         });
+    };
+
+    UserService.prototype.setSecurityStamp = function (stamp) {
+        var deferred = Q.defer();
+
+        _stamp = stamp;
+        var stampObj = {};
+        stampObj[stampKey] = stamp;
+
+        chrome.storage.local.set(stampObj, function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise
     };
 
     UserService.prototype.getUserId = function (callback) {
@@ -69,15 +85,35 @@ function initUserService() {
         });
     };
 
-    UserService.prototype.clearUserIdAndEmail = function (callback) {
+    UserService.prototype.getSecurityStamp = function () {
+        var deferred = Q.defer();
+
+        if (_stamp) {
+            deferred.resolve(_stamp);
+        }
+
+        chrome.storage.local.get(stampKey, function (obj) {
+            if (obj && obj[stampKey]) {
+                _stamp = obj[stampKey];
+            }
+
+            deferred.resolve(_stamp);
+        });
+
+        return deferred.promise
+    };
+
+    UserService.prototype.clear = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        _userId = _email = null;
+        _userId = _email = _stamp = null;
         chrome.storage.local.remove(userIdKey, function () {
             chrome.storage.local.remove(userEmailKey, function () {
-                callback();
+                chrome.storage.local.remove(stampKey, function () {
+                    callback();
+                });
             });
         });
     };

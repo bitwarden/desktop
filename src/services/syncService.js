@@ -1,11 +1,13 @@
-﻿function SyncService(loginService, folderService, userService, apiService, settingsService, cryptoService) {
+﻿function SyncService(loginService, folderService, userService, apiService, settingsService,
+    cryptoService, logoutCallback) {
     this.loginService = loginService;
     this.folderService = folderService;
     this.userService = userService;
     this.apiService = apiService;
     this.settingsService = settingsService;
-    this.cryptoService = settingsService;
+    this.cryptoService = cryptoService;
     this.syncInProgress = false;
+    this.logoutCallback = logoutCallback;
 
     initSyncService();
 };
@@ -37,12 +39,12 @@ function initSyncService() {
                         return;
                     }
 
-                    syncProfile().then(function () {
-                        return syncFolders(userId);
+                    syncProfile(self).then(function () {
+                        return syncFolders(self, userId);
                     }).then(function () {
-                        return syncCiphers(userId);
+                        return syncCiphers(self, userId);
                     }).then(function () {
-                        return syncSettings(userId);
+                        return syncSettings(self, userId);
                     }).then(function () {
                         self.setLastSync(now, function () {
                             self.syncCompleted(true);
@@ -80,45 +82,37 @@ function initSyncService() {
         });
     }
 
-    function syncProfile() {
+    function syncProfile(self) {
         var deferred = Q.defer();
-        var self = this;
-
-        function setKeys(hasPrivateKey, response, d) {
-            if (response.organizations && response.organizations.length && !hasPrivateKey) {
-                self.apiService.getKeys(function (keysResponse) {
-                    if (keysResponse.privateKey) {
-                        self.cryptoService.setEncPrivateKey(keysResponse.privateKey).then(function () {
-                            return self.cryptoService.setOrgKeys(response.organizations);
-                        }, function () {
-                            d.reject();
-                        }).then(function () {
-                            d.resolve();
-                        }, function () {
-                            d.reject();
-                        });
-                    }
-                    else {
-                        d.resolve();
-                    }
-                }, function () {
-                    d.reject();
-                });
-            }
-            else {
-                self.cryptoService.setOrgKeys(response.organizations).then(function () {
-                    d.resolve();
-                }, function () {
-                    d.reject();
-                });
-            }
-        }
 
         self.apiService.getProfile(function (response) {
-            self.cryptoService.getPrivateKey().then(function (privateKey) {
-                setKeys(!!privateKey, response, deferred);
+            self.userService.getSecurityStamp().then(function (stamp) {
+                if (stamp && stamp != response.securityStamp) {
+                    if (self.logoutCallback) {
+                        self.logoutCallback(true, function () { });
+                    }
+
+                    deferred.reject();
+                    return;
+                }
+
+                return self.cryptoService.setEncKey(response.key);
+            }).then(function () {
+                return self.cryptoService.setEncPrivateKey(response.privateKey);
             }, function () {
-                setKeys(true, response, deferred);
+                deferred.reject();
+            }).then(function () {
+                return self.cryptoService.setOrgKeys(response.organizations);
+            }, function () {
+                deferred.reject();
+            }).then(function () {
+                return self.userService.setSecurityStamp(response.securityStamp);
+            }, function () {
+                deferred.reject();
+            }).then(function () {
+                deferred.resolve();
+            }, function () {
+                deferred.reject();
             });
         }, function () {
             deferred.reject();
@@ -127,9 +121,8 @@ function initSyncService() {
         return deferred.promise
     }
 
-    function syncFolders(userId) {
+    function syncFolders(self, userId) {
         var deferred = Q.defer();
-        var self = this;
 
         self.apiService.getFolders(function (response) {
             var folders = {};
@@ -148,9 +141,8 @@ function initSyncService() {
         return deferred.promise
     }
 
-    function syncCiphers(userId) {
+    function syncCiphers(self, userId) {
         var deferred = Q.defer();
-        var self = this;
 
         self.apiService.getCiphers(function (response) {
             var logins = {};
@@ -172,9 +164,8 @@ function initSyncService() {
         return deferred.promise
     }
 
-    function syncSettings(userId) {
+    function syncSettings(self, userId) {
         var deferred = Q.defer();
-        var self = this;
 
         var ciphers = self.apiService.getIncludedDomains(function (response) {
             var eqDomains = [];

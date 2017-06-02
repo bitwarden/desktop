@@ -68,7 +68,7 @@ function initFolderService() {
         var deferred = Q.defer();
         var self = this;
 
-        cryptoService.getKey(function (key) {
+        cryptoService.getKey().then(function (key) {
             if (!key) {
                 deferred.reject();
                 return;

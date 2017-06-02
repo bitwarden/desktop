@@ -11,7 +11,8 @@ var userService = new UserService(tokenService, apiService, cryptoService);
 var settingsService = new SettingsService(userService);
 var loginService = new LoginService(cryptoService, userService, apiService, settingsService);
 var folderService = new FolderService(cryptoService, userService, apiService);
-var syncService = new SyncService(loginService, folderService, userService, apiService, settingsService, cryptoService);
+var syncService = new SyncService(loginService, folderService, userService, apiService, settingsService,
+    cryptoService, logout);
 var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 
@@ -86,7 +87,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 setIcon();
 function setIcon() {
     userService.isAuthenticated(function (isAuthenticated) {
-        cryptoService.getKey(function (key) {
+        cryptoService.getKey().then(function (key) {
             var suffix = '';
             if (!isAuthenticated) {
                 suffix = '_gray';
@@ -668,7 +669,7 @@ function logout(expired, callback) {
             settingsService.clear(function () {
                 tokenService.clearToken(function () {
                     cryptoService.clearKeys(function () {
-                        userService.clearUserIdAndEmail(function () {
+                        userService.clear(function () {
                             loginService.clear(userId, function () {
                                 folderService.clear(userId, function () {
                                     chrome.runtime.sendMessage({
@@ -757,7 +758,7 @@ function checkLock() {
         return;
     }
 
-    cryptoService.getKey(function (key) {
+    cryptoService.getKey().then(function (key) {
         if (!key) {
             // no key so no need to lock
             return;

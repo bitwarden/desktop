@@ -24,12 +24,9 @@
                             cryptoService.setKey(key, function () {
                                 cryptoService.setKeyHash(hashedPassword, function () {
                                     userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(), function () {
-                                        if (!response.privateKey) {
-                                            loggedIn(deferred);
-                                            return;
-                                        }
-
-                                        cryptoService.setEncPrivateKey(response.privateKey).then(function () {
+                                        cryptoService.setEncKey(response.key).then(function () {
+                                            return cryptoService.setEncPrivateKey(response.privateKey);
+                                        }).then(function () {
                                             loggedIn(deferred);
                                         });
                                     });

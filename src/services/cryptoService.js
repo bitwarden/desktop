@@ -5,6 +5,7 @@ function CryptoService(constantsService) {
 
 function initCryptoService(constantsService) {
     var _key,
+        _encKey,
         _legacyEtmKey,
         _keyHash,
         _privateKey,
@@ -47,12 +48,26 @@ function initCryptoService(constantsService) {
         });
     }
 
+    CryptoService.prototype.setEncKey = function (encKey) {
+        var deferred = Q.defer();
+
+        chrome.storage.local.set({
+            'encKey': encKey
+        }, function () {
+            _encKey = null;
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    }
+
     CryptoService.prototype.setEncPrivateKey = function (encPrivateKey) {
         var deferred = Q.defer();
 
         chrome.storage.local.set({
             'encPrivateKey': encPrivateKey
         }, function () {
+            _privateKey = null;
             deferred.resolve();
         });
 
@@ -76,21 +91,19 @@ function initCryptoService(constantsService) {
         return deferred.promise;
     }
 
-    CryptoService.prototype.getKey = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
+    CryptoService.prototype.getKey = function () {
+        var deferred = Q.defer();
 
         if (_key) {
-            callback(_key);
-            return;
+            deferred.resolve(_key);
+            return deferred.promise;
         }
 
         var self = this;
         chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
             if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
                 // if we have a lock option set, we do not try to fetch the storage key since it should not even be there
-                callback(null);
+                deferred.resolve(null);
                 return;
             }
 
@@ -99,9 +112,11 @@ function initCryptoService(constantsService) {
                     _key = new SymmetricCryptoKey(obj.key, true);
                 }
 
-                callback(_key);
+                deferred.resolve(_key);
             });
         });
+
+        return deferred.promise;
     };
 
     CryptoService.prototype.getKeyHash = function (callback) {
@@ -121,6 +136,33 @@ function initCryptoService(constantsService) {
 
             callback(_keyHash);
         });
+    };
+
+    CryptoService.prototype.getEncKey = function () {
+        var deferred = Q.defer();
+        if (_encKey) {
+            deferred.resolve(_encKey);
+            return deferred.promise;
+        }
+
+        var self = this;
+        chrome.storage.local.get('encKey', function (obj) {
+            if (!obj || !obj.encKey) {
+                deferred.resolve(null);
+                return;
+            }
+
+            self.getKey().then(function (key) {
+                return self.decrypt(new CipherString(obj.encKey), key, 'raw');
+            }).then(function (encKey) {
+                _encKey = new SymmetricCryptoKey(encKey);
+                deferred.resolve(_encKey);
+            }, function () {
+                deferred.reject('Cannot get enc key. Decryption failed.');
+            });
+        });
+
+        return deferred.promise;
     };
 
     CryptoService.prototype.getPrivateKey = function () {
@@ -232,8 +274,26 @@ function initCryptoService(constantsService) {
         return deferred.promise;
     };
 
+    CryptoService.prototype.clearEncKey = function () {
+        var deferred = Q.defer();
+
+        _encKey = null;
+        chrome.storage.local.remove('encKey', function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise;
+    };
+
     CryptoService.prototype.clearPrivateKey = function () {
+        var deferred = Q.defer();
+
         _privateKey = null;
+        chrome.storage.local.remove('encPrivateKey', function () {
+            deferred.resolve();
+        });
+
+        return deferred.promise;
     };
 
     CryptoService.prototype.clearOrgKeys = function (memoryOnly) {
@@ -258,8 +318,13 @@ function initCryptoService(constantsService) {
         }
 
         var self = this;
-        Q.all([self.clearKey(), self.clearKeyHash(), self.clearOrgKeys()]).then(function () {
-            self.clearPrivateKey();
+        Q.all([
+            self.clearKey(),
+            self.clearKeyHash(),
+            self.clearOrgKeys(),
+            self.clearEncKey(),
+            self.clearPrivateKey()
+        ]).then(function () {
             callback();
         });
     };
@@ -270,7 +335,7 @@ function initCryptoService(constantsService) {
         }
 
         var self = this;
-        self.getKey(function (key) {
+        self.getKey().then(function (key) {
             chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
                 if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
                     // if we have a lock option set, clear the key
@@ -299,7 +364,7 @@ function initCryptoService(constantsService) {
     };
 
     CryptoService.prototype.hashPassword = function (password, key, callback) {
-        this.getKey(function (storedKey) {
+        this.getKey().then(function (storedKey) {
             key = key || storedKey;
 
             if (!password || !key) {
@@ -311,6 +376,11 @@ function initCryptoService(constantsService) {
         });
     };
 
+    CryptoService.prototype.makeEncKey = function (key) {
+        var bytes = forge.random.getBytesSync(512 / 8);
+        return this.encrypt(bytes, key, 'raw');
+    };
+
     CryptoService.prototype.encrypt = function (plainValue, key, plainValueEncoding) {
         var self = this;
         var deferred = Q.defer();
@@ -319,8 +389,8 @@ function initCryptoService(constantsService) {
             deferred.resolve(null);
         }
         else {
-            self.getKey(function (localKey) {
-                key = key || localKey;
+            getKeyForEncryption(self, key).then(function (keyToUse) {
+                key = keyToUse;
                 if (!key) {
                     deferred.reject('Encryption key unavailable.');
                     return;
@@ -356,8 +426,8 @@ function initCryptoService(constantsService) {
             return;
         }
 
-        self.getKey(function (localKey) {
-            key = key || localKey;
+        getKeyForEncryption(self, key).then(function (keyToUse) {
+            key = keyToUse;
             if (!key) {
                 deferred.reject('Encryption key unavailable.');
                 return;
@@ -477,6 +547,23 @@ function initCryptoService(constantsService) {
         hmac.update(iv + ct);
         var mac = hmac.digest();
         return b64Output ? forge.util.encode64(mac.getBytes()) : mac.getBytes();
+    }
+
+    function getKeyForEncryption(self, key) {
+        var deferred = Q.defer();
+
+        if (key) {
+            deferred.resolve(key);
+        }
+        else {
+            self.getEncKey().then(function (encKey) {
+                return encKey || self.getKey();
+            }).then(function (keyToUse) {
+                deferred.resolve(keyToUse);
+            });
+        }
+
+        return deferred.promise;
     }
 
     // Safely compare two MACs in a way that protects against timing attacks (Double HMAC Verification).

@@ -2,8 +2,8 @@
     .module('bit.accounts')
 
     .controller(
-      'accountsRegisterController',
-      function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService, $analytics, i18nService) {
+    'accountsRegisterController',
+    function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
 
         $scope.model = {};
@@ -45,15 +45,17 @@
 
         function registerPromise(key, masterPassword, email, hint) {
             return $q(function (resolve, reject) {
-                cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
-                    var request = new RegisterRequest(email, hashedPassword, hint);
-                    apiService.postRegister(request,
-                        function () {
-                            resolve();
-                        },
-                        function (error) {
-                            reject(error);
-                        });
+                cryptoService.makeEncKey(key).then(function (encKey) {
+                    cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
+                        var request = new RegisterRequest(email, hashedPassword, hint, encKey.encryptedString);
+                        apiService.postRegister(request,
+                            function () {
+                                resolve();
+                            },
+                            function (error) {
+                                reject(error);
+                            });
+                    });
                 });
             });
         }

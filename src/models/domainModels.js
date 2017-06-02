@@ -9,13 +9,8 @@ var CipherString = function () {
     var constants = chrome.extension.getBackgroundPage().constantsService;
 
     if (arguments.length >= 2) {
-        // ct and optional header
-        if (arguments[0] === constants.encType.AesCbc256_B64) {
-            this.encryptedString = arguments[1];
-        }
-        else {
-            this.encryptedString = arguments[0] + '.' + arguments[1];
-        }
+        // ct and header
+        this.encryptedString = arguments[0] + '.' + arguments[1];
 
         // iv
         if (arguments.length > 2 && arguments[2]) {

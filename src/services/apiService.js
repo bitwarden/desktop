@@ -4,16 +4,16 @@ function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
     //this.identityBaseUrl = 'http://localhost:33656'; 
 
      // Desktop external
-    //this.baseUrl = 'http://192.168.1.8:4000';
-    //this.identityBaseUrl = 'http://192.168.1.8:33656';
+    this.baseUrl = 'http://192.168.1.6:4000';
+    this.identityBaseUrl = 'http://192.168.1.6:33656';
 
      // Preview
     //this.baseUrl = 'https://preview-api.bitwarden.com';
     //this.identityBaseUrl = 'https://preview-identity.bitwarden.com';
 
      // Production
-    this.baseUrl = 'https://api.bitwarden.com';
-    this.identityBaseUrl = 'https://identity.bitwarden.com';
+    //this.baseUrl = 'https://api.bitwarden.com';
+    //this.identityBaseUrl = 'https://identity.bitwarden.com';
 
     this.tokenService = tokenService;
     this.logoutCallback = logoutCallback;
