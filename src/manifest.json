@@ -1,4 +1,4 @@
-﻿{
+{
   "manifest_version": 2,
   "name": "__MSG_extName__",
   "short_name": "__MSG_appName__",
@@ -17,44 +17,31 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "js": [ "content/autofill.js" ],
-      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "js": [
+        "content/autofill.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
       "run_at": "document_start"
     },
     {
       "all_frames": false,
-      "js": [ "content/notificationBar.js" ],
-      "matches": [ "http://*/*", "https://*/*", "file:///*" ],
+      "js": [
+        "content/notificationBar.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
       "run_at": "document_start"
     }
   ],
   "background": {
-    "scripts": [
-      "lib/jquery/jquery.js",
-      "lib/q/q.js",
-      "lib/tldjs/tld.js",
-      "lib/forge/forge.js",
-      "models/api/requestModels.js",
-      "models/api/responseModels.js",
-      "models/dataModels.js",
-      "models/domainModels.js",
-      "services/i18nService.js",
-      "services/constantsService.js",
-      "services/utilsService.js",
-      "services/cryptoService.js",
-      "services/tokenService.js",
-      "services/apiService.js",
-      "services/userService.js",
-      "services/settingsService.js",
-      "services/folderService.js",
-      "services/loginService.js",
-      "services/syncService.js",
-      "services/autofillService.js",
-      "services/appIdService.js",
-      "services/passwordGenerationService.js",
-      "background.js",
-      "scripts/analytics.js"
-    ],
+    "page": "background.html",
     "persistent": true
   },
   "browser_action": {

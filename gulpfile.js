@@ -11,7 +11,7 @@
     source = require('vinyl-source-stream'),
     googleWebFonts = require('gulp-google-webfonts'),
     webpack = require('webpack-stream')
-    jeditor = require("gulp-json-editor");
+jeditor = require("gulp-json-editor");
 
 var paths = {};
 paths.dist = './dist/';
@@ -86,7 +86,7 @@ gulp.task('lib', ['clean:lib'], function () {
         },
         {
             src: [paths.npmDir + 'angular-toastr/dist/angular-toastr.tpls.js',
-                paths.npmDir + 'angular-toastr/dist/angular-toastr.css'],
+            paths.npmDir + 'angular-toastr/dist/angular-toastr.css'],
             dest: paths.libDir + 'angular-toastr'
         },
         {
@@ -107,12 +107,12 @@ gulp.task('lib', ['clean:lib'], function () {
         },
         {
             src: [paths.npmDir + 'sweetalert/dist/sweetalert.css', paths.npmDir + 'sweetalert/dist/sweetalert-dev.js',
-                paths.npmDir + 'angular-sweetalert/SweetAlert.js'],
+            paths.npmDir + 'angular-sweetalert/SweetAlert.js'],
             dest: paths.libDir + 'sweetalert'
         },
         {
             src: [paths.npmDir + 'angulartics-google-analytics/lib/angulartics*.js',
-                paths.npmDir + 'angulartics/src/angulartics.js'
+            paths.npmDir + 'angulartics/src/angulartics.js'
             ],
             dest: paths.libDir + 'angulartics'
         },
@@ -186,8 +186,23 @@ gulp.task('dist:clean', function (cb) {
 gulp.task('dist:move', function () {
     var moves = [
         {
-            src: ['src/**/*', '!src/popup/less{,/**/*}'],
+            src: ['src/**/*', '!src/popup/less{,/**/*}', '!src/edge{,/**/*}'],
             dest: paths.dist
+        }
+    ];
+
+    var tasks = moves.map(function (move) {
+        return gulp.src(move.src).pipe(gulp.dest(move.dest));
+    });
+
+    return merge(tasks);
+});
+
+gulp.task('dist:edge', ['dist'], function () {
+    var moves = [
+        {
+            src: ['src/edge/**/*'],
+            dest: paths.dist + 'edge'
         }
     ];
 
@@ -207,21 +222,33 @@ gulp.task('dist', ['build'], function (cb) {
 
 gulp.task('dist-firefox', ['dist'], function (cb) {
     gulp.src(paths.dist + 'manifest.json')
-      .pipe(jeditor(function (manifest) {
-          manifest.applications = {
-              gecko: {
-                  id: "{446900e4-71c2-419f-a6a7-df9c091e268b}",
-                  strict_min_version: "42.0"
-              }
-          };
-          return manifest;
-      }))
-      .pipe(gulp.dest(paths.dist));
+        .pipe(jeditor(function (manifest) {
+            manifest.applications = {
+                gecko: {
+                    id: '{446900e4-71c2-419f-a6a7-df9c091e268b}',
+                    strict_min_version: '42.0'
+                }
+            };
+            return manifest;
+        }))
+        .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('dist-edge', ['dist:edge'], function (cb) {
+    gulp.src(paths.dist + 'manifest.json')
+        .pipe(jeditor(function (manifest) {
+            manifest['-ms-preload'] = {
+                backgroundScript: 'edge/backgroundScriptsAPIBridge.js',
+                contentScript: 'edge/contentScriptsAPIBridge.js'
+            };
+            return manifest;
+        }))
+        .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('webfonts', function () {
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({}))
         .pipe(gulp.dest(paths.webfontsDir))
-    ;
+        ;
 });
