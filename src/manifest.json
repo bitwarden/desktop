@@ -58,6 +58,7 @@
     "storage",
     "unlimitedStorage",
     "clipboardWrite",
+    "idle",
     "http://*/*",
     "https://*/*"
   ],

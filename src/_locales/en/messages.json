@@ -427,6 +427,10 @@
     "message": "4 hours",
     "description": "4 hours"
   },
+  "onLocked": {
+    "message": "On Locked",
+    "description": "On Locked"
+  },
   "onRestart": {
     "message": "On Restart",
     "description": "On Restart"

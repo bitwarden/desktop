@@ -11,23 +11,26 @@ var userService = new UserService(tokenService, apiService, cryptoService);
 var settingsService = new SettingsService(userService);
 var loginService = new LoginService(cryptoService, userService, apiService, settingsService);
 var folderService = new FolderService(cryptoService, userService, apiService);
+var lockService = new LockService(constantsService, cryptoService, folderService, loginService, setIcon, refreshBadgeAndMenu);
 var syncService = new SyncService(loginService, folderService, userService, apiService, settingsService,
     cryptoService, logout);
 var autofillService = new AutofillService();
 var passwordGenerationService = new PasswordGenerationService();
 
-chrome.commands.onCommand.addListener(function (command) {
-    if (command === 'generate_password') {
-        ga('send', {
-            hitType: 'event',
-            eventAction: 'Generated Password From Command'
-        });
-        passwordGenerationService.getOptions().then(function (options) {
-            var password = passwordGenerationService.generatePassword(options);
-            copyToClipboard(password);
-        });
-    }
-});
+if (chrome.commands) {
+    chrome.commands.onCommand.addListener(function (command) {
+        if (command === 'generate_password') {
+            ga('send', {
+                hitType: 'event',
+                eventAction: 'Generated Password From Command'
+            });
+            passwordGenerationService.getOptions().then(function (options) {
+                var password = passwordGenerationService.generatePassword(options);
+                copyToClipboard(password);
+            });
+        }
+    });
+}
 
 var loginToAutoFill = null,
     pageDetailsToAutoFill = [],
@@ -738,57 +741,3 @@ function fullSync(override) {
         }
     });
 }
-
-// Locking
-
-var lastLockCheck = null;
-checkLock();
-setInterval(checkLock, 10 * 1000); // check every 10 seconds
-
-function checkLock() {
-    var now = new Date();
-    if (lastLockCheck && (now - lastLockCheck) < 5000) {
-        // can only check lock every 5 seconds
-        return;
-    }
-    lastLockCheck = now;
-
-    if (chrome.extension.getViews({ type: 'popup' }).length > 0) {
-        // popup is open, do not lock
-        return;
-    }
-
-    cryptoService.getKey().then(function (key) {
-        if (!key) {
-            // no key so no need to lock
-            return;
-        }
-
-        chrome.storage.local.get(constantsService.lockOptionKey, function (obj) {
-            if (obj && ((!obj[constantsService.lockOptionKey] && obj[constantsService.lockOptionKey] !== 0) ||
-                obj[constantsService.lockOptionKey] === -1)) {
-                // no lock option set
-                return;
-            }
-
-            chrome.storage.local.get(constantsService.lastActiveKey, function (obj2) {
-                if (obj2 && obj2[constantsService.lastActiveKey]) {
-                    var lastActive = obj2[constantsService.lastActiveKey];
-                    var diffSeconds = ((new Date()).getTime() - lastActive) / 1000;
-                    var lockOptionSeconds = parseInt(obj[constantsService.lockOptionKey]) * 60;
-
-                    if (diffSeconds >= lockOptionSeconds) {
-                        // need to lock now
-                        Q.all([cryptoService.clearKey(), cryptoService.clearOrgKeys(true)]).then(function () {
-                            cryptoService.clearPrivateKey();
-                            setIcon();
-                            folderService.clearCache();
-                            loginService.clearCache();
-                            refreshBadgeAndMenu();
-                        });
-                    }
-                }
-            });
-        });
-    });
-};
