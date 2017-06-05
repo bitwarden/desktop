@@ -68,8 +68,11 @@ function initLockService(self) {
     }
 
     LockService.prototype.lock = function () {
-        Q.all([self.cryptoService.clearKey(), self.cryptoService.clearOrgKeys(true)]).then(function () {
-            self.cryptoService.clearPrivateKey();
+        Q.all([
+            self.cryptoService.clearKey(),
+            self.cryptoService.clearOrgKeys(true),
+            self.cryptoService.clearPrivateKey(true)
+        ]).then(function () {
             self.setIcon();
             self.folderService.clearCache();
             self.loginService.clearCache();

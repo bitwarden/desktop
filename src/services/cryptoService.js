@@ -285,13 +285,18 @@ function initCryptoService(constantsService) {
         return deferred.promise;
     };
 
-    CryptoService.prototype.clearPrivateKey = function () {
+    CryptoService.prototype.clearPrivateKey = function (memoryOnly) {
         var deferred = Q.defer();
 
         _privateKey = null;
-        chrome.storage.local.remove('encPrivateKey', function () {
+        if (memoryOnly) {
             deferred.resolve();
-        });
+        }
+        else {
+            chrome.storage.local.remove('encPrivateKey', function () {
+                deferred.resolve();
+            });
+        }
 
         return deferred.promise;
     };
