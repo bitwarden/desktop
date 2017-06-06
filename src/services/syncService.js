@@ -87,7 +87,7 @@ function initSyncService() {
 
         self.apiService.getProfile(function (response) {
             self.userService.getSecurityStamp().then(function (stamp) {
-                if (stamp && stamp != response.securityStamp) {
+                if (stamp && stamp !== response.securityStamp) {
                     if (self.logoutCallback) {
                         self.logoutCallback(true, function () { });
                     }

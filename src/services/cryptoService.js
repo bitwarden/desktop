@@ -51,6 +51,11 @@ function initCryptoService(constantsService) {
     CryptoService.prototype.setEncKey = function (encKey) {
         var deferred = Q.defer();
 
+        if (encKey === undefined) {
+            deferred.resolve();
+            return deferred.promise;
+        }
+
         chrome.storage.local.set({
             'encKey': encKey
         }, function () {
@@ -63,6 +68,11 @@ function initCryptoService(constantsService) {
 
     CryptoService.prototype.setEncPrivateKey = function (encPrivateKey) {
         var deferred = Q.defer();
+
+        if (encPrivateKey === undefined) {
+            deferred.resolve();
+            return deferred.promise;
+        }
 
         chrome.storage.local.set({
             'encPrivateKey': encPrivateKey

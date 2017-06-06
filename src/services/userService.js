@@ -38,6 +38,11 @@ function initUserService() {
     UserService.prototype.setSecurityStamp = function (stamp) {
         var deferred = Q.defer();
 
+        if (stamp === undefined) {
+            deferred.resolve();
+            return deferred.promise;
+        }
+
         _stamp = stamp;
         var stampObj = {};
         stampObj[stampKey] = stamp;
