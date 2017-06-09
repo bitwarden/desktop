@@ -153,6 +153,11 @@
             $timeout(loadVault, 500);
         });
 
+        $scope.expandVault = function (e) {
+            $analytics.eventTrack('Expand Vault');
+            chrome.tabs.create({ url: '/popup/index.html#!/tab/vault' });
+        };
+
         function storeState() {
             stateService.saveState(stateKey, {
                 scrollY: getScrollY(),

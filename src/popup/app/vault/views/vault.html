@@ -1,10 +1,13 @@
-﻿<div class="header">
-    <div class="right">
-        <a href="" ng-click="addLogin()"><i class="fa fa-plus fa-lg"></i></a>
+﻿<div class="header header-search">
+    <div class="left">
+        <a href="" ng-click="expandVault()"><i class="fa fa-external-link fa-rotate-270 fa-lg"></i></a>
     </div>
     <div class="search">
         <input type="search" placeholder="{{i18n.searchVault}}" ng-model="searchText" id="search" />
         <i class="fa fa-search"></i>
+    </div>
+    <div class="right">
+        <a href="" ng-click="addLogin()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
 </div>
 <div class="content content-tabs">
