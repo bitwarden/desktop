@@ -8,7 +8,7 @@
     <div ng-if="logins.length">
         <div class="list">
             <div class="list-grouped">
-                <a href="javascript:void(0)" ng-click="fillLogin(login)" class="list-grouped-item condensed"
+                <a href="#" stop-click ng-click="fillLogin(login)" class="list-grouped-item condensed"
                    title="{{i18n.autoFill}} {{login.name}}"
                    ng-repeat="login in theLogins = (logins | orderBy: [sortUriMatch, 'name', 'username']) track by $index">
                     <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}"

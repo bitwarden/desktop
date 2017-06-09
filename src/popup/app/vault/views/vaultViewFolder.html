@@ -19,7 +19,7 @@
                     {{folder.name}}
                     <span>{{vaultLogins.length}}</span>
                 </div>
-                <a href="javascript:void(0)" ng-click="viewLogin(login)"
+                <a href="#" stop-click ng-click="viewLogin(login)"
                    class="list-section-item condensed" title="{{i18n.edit}} {{login.name}}"
                    ng-repeat="login in pagedVaultLogins track by $index">
                     <span class="btn-list" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}" ngclipboard
