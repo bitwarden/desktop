@@ -96,9 +96,7 @@ angular
             }
         };
 
-        $scope.viewLogin = function (login, e) {
-            e.stopPropagation();
-
+        $scope.viewLogin = function (login) {
             $state.go('viewLogin', {
                 loginId: login.id,
                 animation: 'in-slide-up',

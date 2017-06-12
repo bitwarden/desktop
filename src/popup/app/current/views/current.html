@@ -11,19 +11,19 @@
                 <a href="#" stop-click ng-click="fillLogin(login)" class="list-grouped-item condensed"
                    title="{{i18n.autoFill}} {{login.name}}"
                    ng-repeat="login in theLogins = (logins | orderBy: [sortUriMatch, 'name', 'username']) track by $index">
-                    <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyPassword}}"
+                    <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, i18n.password)"
                           data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">
                         <i class="fa fa-lg fa-key"></i>
                     </span>
-                    <span class="btn-list" href="" ng-click="$event.stopPropagation()" title="{{i18n.copyUsername}}"
+                    <span class="btn-list" stop-prop stop-click title="{{i18n.copyUsername}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, i18n.username)"
                           data-clipboard-text="{{login.username}}" ng-class="{'disabled': !login.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </span>
-                    <span class="btn-list" href="" ng-click="viewLogin(login, $event) && $event.stopPropagation()"
+                    <span class="btn-list" ng-click="viewLogin(login)" stop-prop stop-click
                           title="{{i18n.edit}} {{login.name}}">
                         <i class="fa fa-lg fa-pencil"></i>
                     </span>
