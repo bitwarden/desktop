@@ -72,6 +72,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     else if (msg.command === 'bgAddSave') {
         saveAddLogin(sender.tab);
     }
+    else if (msg.command === 'bgNeverSave') {
+        saveNever(sender.tab);
+    }
     else if (msg.command === 'collectPageDetailsResponse') {
         if (msg.contentScript) {
             var forms = autofillService.getFormsWithPasswordFields(msg.details);
@@ -481,6 +484,22 @@ function saveAddLogin(tab) {
                         });
                     });
                 });
+                messageTab(tab.id, 'closeNotificationBar');
+            }
+        }
+    }
+}
+
+function saveNever(tab) {
+    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
+        if (loginsToAdd[i].tabId === tab.id) {
+            var loginToAdd = loginsToAdd[i];
+
+            var tabDomain = utilsService.getDomain(tab.url);
+            if (tabDomain && tabDomain === loginToAdd.domain) {
+                loginsToAdd.splice(i, 1);
+                var hostname = utilsService.getHostname(tab.url);
+                loginService.saveNeverDomain(hostname);
                 messageTab(tab.id, 'closeNotificationBar');
             }
         }

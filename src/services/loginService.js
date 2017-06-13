@@ -323,6 +323,32 @@ function initLoginService() {
         return deferred.promise;
     };
 
+    LoginService.prototype.saveNeverDomain = function (domain) {
+        var deferred = Q.defer();
+        var neverKey = 'neverDomains';
+
+        if (!domain) {
+            deferred.resolve();
+        }
+        else {
+            chrome.storage.local.get(neverKey, function (obj) {
+                var domains = obj[neverKey];
+                if (!domains) {
+                    domains = {};
+                }
+
+                domains[domain] = null;
+                obj[neverKey] = domains;
+
+                chrome.storage.local.set(obj, function () {
+                    deferred.resolve();
+                });
+            });
+        }
+
+        return deferred.promise;
+    };
+
     function handleError(error, deferred) {
         deferred.reject(error);
     }

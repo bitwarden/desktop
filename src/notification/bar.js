@@ -6,18 +6,27 @@
     $('#logo-link').attr('title', chrome.i18n.getMessage('appName'));
     closeButton.attr('title', chrome.i18n.getMessage('close'));
     $('#template-add .add-save').text(chrome.i18n.getMessage('notificationAddSave'));
+    $('#template-add .never-save').text(chrome.i18n.getMessage('notificationNeverSave'));
     $('#template-add .add-text').text(chrome.i18n.getMessage('notificationAddDesc'));
 
     if (getQueryVariable('add')) {
         setContent(document.getElementById('template-add'));
 
         var add = $('#template-add-clone'),
-            addButton = $('#template-add-clone .add-save');
+            addButton = $('#template-add-clone .add-save'),
+            neverButton = $('#template-add-clone .never-save');
 
         $(addButton).click(function (e) {
             e.preventDefault();
             chrome.runtime.sendMessage({
                 command: 'bgAddSave'
+            });
+        });
+
+        $(neverButton).click(function (e) {
+            e.preventDefault();
+            chrome.runtime.sendMessage({
+                command: 'bgNeverSave'
             });
         });
     }

@@ -54,7 +54,7 @@ img {
     padding: 5px 0;
 }
 
-button {
+button:not(.link) {
     background-color: #3c8dbc;
     padding: 5px 15px;
     border-radius: 3px;
@@ -62,7 +62,20 @@ button {
     border: 0;
 }
 
-    button:hover {
+    button:not(.link):hover {
         cursor: pointer;
         background-color: #3681ad;
+    }
+
+button.link {
+    background: none;
+    padding: 5px 15px;
+    color: #3c8dbc;
+    border: 0;
+}
+
+    button.link:hover {
+        cursor: pointer;
+        background: none;
+        text-decoration: underline;
     }

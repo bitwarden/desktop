@@ -655,6 +655,10 @@
     "message": "Yes, Save Now",
     "description": "Yes, Save Now"
   },
+  "notificationNeverSave": {
+    "message": "Never for this website",
+    "description": "Never for this website"
+  },
   "disableContextMenuItem": {
     "message": "Disable Context Menu Options",
     "description": "Disable Context Menu Options"
