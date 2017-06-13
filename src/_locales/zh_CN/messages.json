@@ -399,6 +399,10 @@
     "message":"锁定选项",
     "description":"Lock Options"
   },
+  "lockNow":{
+    "message":"Lock Now",
+    "description":"Lock Now"
+  },
   "immediately":{
     "message":"立即",
     "description":"Immediately"
@@ -426,6 +430,10 @@
   "fourHours":{
     "message":"4 小时",
     "description":"4 hours"
+  },
+  "onLocked":{
+    "message":"On Locked",
+    "description":"On Locked"
   },
   "onRestart":{
     "message":"重启时",
@@ -647,6 +655,10 @@
     "message":"是，现在保存",
     "description":"Yes, Save Now"
   },
+  "notificationNeverSave":{
+    "message":"Never for this website",
+    "description":"Never for this website"
+  },
   "disableContextMenuItem":{
     "message":"关闭上下文菜单选项",
     "description":"Disable Context Menu Options"
@@ -686,5 +698,13 @@
   "shareVaultInfo":{
     "message":"创建一个组织来安全地分享您的登录信息。",
     "description":"Create an organization to securely share your logins with other users."
+  },
+  "contribute":{
+    "message":"You can contribute to!",
+    "description":"You can contribute to!"
+  },
+  "learnMore":{
+    "message":"Learn more",
+    "description":"Learn more"
   }
 }

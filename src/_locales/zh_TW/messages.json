@@ -399,6 +399,10 @@
     "message":"自動上鎖時間",
     "description":"Lock Options"
   },
+  "lockNow":{
+    "message":"Lock Now",
+    "description":"Lock Now"
+  },
   "immediately":{
     "message":"即時",
     "description":"Immediately"
@@ -426,6 +430,10 @@
   "fourHours":{
     "message":"4 小時",
     "description":"4 hours"
+  },
+  "onLocked":{
+    "message":"On Locked",
+    "description":"On Locked"
   },
   "onRestart":{
     "message":"重新啟動時",
@@ -647,6 +655,10 @@
     "message":"好，立即儲存",
     "description":"Yes, Save Now"
   },
+  "notificationNeverSave":{
+    "message":"Never for this website",
+    "description":"Never for this website"
+  },
   "disableContextMenuItem":{
     "message":"關閉右鍵選項",
     "description":"Disable Context Menu Options"
@@ -686,5 +698,13 @@
   "shareVaultInfo":{
     "message":"新增組織以安全地分享你的帳戶資料。",
     "description":"Create an organization to securely share your logins with other users."
+  },
+  "contribute":{
+    "message":"You can contribute to!",
+    "description":"You can contribute to!"
+  },
+  "learnMore":{
+    "message":"Learn more",
+    "description":"Learn more"
   }
 }

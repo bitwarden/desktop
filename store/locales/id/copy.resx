@@ -136,21 +136,21 @@ bitwarden stores all of your logins in an encrypted vault that syncs across all 
     <value>Sebuah manajer kata sandi yang aman dan gratis untuk semua perangkat Anda</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>Selaraskan dan akses beranglas Anda dari beberapa perangkat</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Kelola semua info masuk dan kata sandi Anda dari sebuah berangkas yang aman</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Secara otomatis mengisi info masuk Anda dengan cepat ke situs web manapun yang Anda kunjungi</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>Berangkas Anda juga mudah diakses dari menu klik kanan</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Secara otomatis menghasilkan kata sandi yang kuat, acak, dan aman</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Informasi Anda dikelola dengan aman menggunakan enkripsi AES-256 bit</value>
   </data>
 </root>

@@ -4,59 +4,59 @@
     "description":"bitwarden"
   },
   "extName":{
-    "message":"bitwarden - Free Password Manager",
+    "message":"bitwarden – Manajer Kata Sandi Gratis",
     "description":"Extension name"
   },
   "extDesc":{
-    "message":"bitwarden is a secure and free password manager for all of your devices.",
+    "message":"bitwarden adalah sebuah manajer kata sandi yang aman dan gratis untuk semua perangkat Anda.",
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
-    "message":"Log in or create a new account to access your secure vault.",
+    "message":"Masuk atau buat akun baru untuk mengakses brankas Anda.",
     "description":"Log in or create a new account to access your secure vault."
   },
   "createAccount":{
-    "message":"Create Account",
+    "message":"Buat Akun",
     "description":"Create Account"
   },
   "login":{
-    "message":"Log In",
+    "message":"Masuk",
     "description":"Log In"
   },
   "cancel":{
-    "message":"Cancel",
+    "message":"Batal",
     "description":"Cancel"
   },
   "close":{
-    "message":"Close",
+    "message":"Tutup",
     "description":"Close"
   },
   "submit":{
-    "message":"Submit",
+    "message":"Kirim",
     "description":"Submit"
   },
   "emailAddress":{
-    "message":"Email Address",
+    "message":"Alamat Email",
     "description":"Email Address"
   },
   "masterPass":{
-    "message":"Master Password",
+    "message":"Sandi Utama",
     "description":"Master Password"
   },
   "masterPassDesc":{
-    "message":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it.",
+    "message":"Kata sandi utama adalah kata sandi yang Anda gunakan untuk mengakses brankas Anda. Sangat penting bahwa Anda tidak lupa kata sandi utama Anda. Tidak ada cara untuk memulihkan kata sandi jika Anda melupakannya.",
     "description":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc":{
-    "message":"A master password hint can help you remember your password if you forget it.",
+    "message":"Petunjuk kata sandi utama dapat membantu Anda mengingat kata sandi Anda jika Anda melupakannya.",
     "description":"A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass":{
-    "message":"Re-type Master Password",
+    "message":"Ketik ulang Kata Sandi Utama",
     "description":"Re-type Master Password"
   },
   "masterPassHint":{
-    "message":"Master Password Hint (optional)",
+    "message":"Petunjuk Kata Sandi Utama (pilihan)",
     "description":"Master Password Hint (optional)"
   },
   "tab":{
@@ -64,47 +64,47 @@
     "description":"Tab"
   },
   "myVault":{
-    "message":"My Vault",
+    "message":"Berangkas Saya",
     "description":"My Vault"
   },
   "tools":{
-    "message":"Tools",
+    "message":"Peralatan",
     "description":"Tools"
   },
   "settings":{
-    "message":"Settings",
+    "message":"Pengaturan",
     "description":"Settings"
   },
   "currentTab":{
-    "message":"Current Tab",
+    "message":"Tab Saat Ini",
     "description":"Current Tab"
   },
   "copyPassword":{
-    "message":"Copy Password",
+    "message":"Salin Kata Sandi",
     "description":"Copy Password"
   },
   "copyUsername":{
-    "message":"Copy Username",
+    "message":"Salin Nama Pengguna",
     "description":"Copy Username"
   },
   "autoFill":{
-    "message":"Auto-fill",
+    "message":"Isi secara otomatis",
     "description":"Auto-fill"
   },
   "generatePasswordCopied":{
-    "message":"Generate Password (copied)",
+    "message":"Membuat Kata Sandi (tersalin)",
     "description":"Generate Password (copied)"
   },
   "noMatchingLogins":{
-    "message":"No matching logins.",
+    "message":"Masuk tidak cocok.",
     "description":"No matching logins."
   },
   "vaultLocked":{
-    "message":"Vault is locked.",
+    "message":"Berangkas terkunci.",
     "description":"Vault is locked."
   },
   "autoFillInfo":{
-    "message":"There are no logins available to auto-fill for the current browser tab.",
+    "message":"Tidak ada info masuk yang tersedia untuk mengisi sexara otomatis tab peramban saat ini.",
     "description":"There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin":{
@@ -399,6 +399,10 @@
     "message":"Lock Options",
     "description":"Lock Options"
   },
+  "lockNow":{
+    "message":"Lock Now",
+    "description":"Lock Now"
+  },
   "immediately":{
     "message":"Immediately",
     "description":"Immediately"
@@ -426,6 +430,10 @@
   "fourHours":{
     "message":"4 hours",
     "description":"4 hours"
+  },
+  "onLocked":{
+    "message":"On Locked",
+    "description":"On Locked"
   },
   "onRestart":{
     "message":"On Restart",
@@ -647,6 +655,10 @@
     "message":"Yes, Save Now",
     "description":"Yes, Save Now"
   },
+  "notificationNeverSave":{
+    "message":"Never for this website",
+    "description":"Never for this website"
+  },
   "disableContextMenuItem":{
     "message":"Disable Context Menu Options",
     "description":"Disable Context Menu Options"
@@ -686,5 +698,13 @@
   "shareVaultInfo":{
     "message":"Create an organization to securely share your logins with other users.",
     "description":"Create an organization to securely share your logins with other users."
+  },
+  "contribute":{
+    "message":"You can contribute to!",
+    "description":"You can contribute to!"
+  },
+  "learnMore":{
+    "message":"Learn more",
+    "description":"Learn more"
   }
 }

@@ -399,6 +399,10 @@
     "message":"Options de verrouillage",
     "description":"Lock Options"
   },
+  "lockNow":{
+    "message":"Lock Now",
+    "description":"Lock Now"
+  },
   "immediately":{
     "message":"Immédiatement",
     "description":"Immediately"
@@ -426,6 +430,10 @@
   "fourHours":{
     "message":"4 heures",
     "description":"4 hours"
+  },
+  "onLocked":{
+    "message":"On Locked",
+    "description":"On Locked"
   },
   "onRestart":{
     "message":"Au redémarrage",
@@ -647,6 +655,10 @@
     "message":"Oui, enregistrer maintenant",
     "description":"Yes, Save Now"
   },
+  "notificationNeverSave":{
+    "message":"Never for this website",
+    "description":"Never for this website"
+  },
   "disableContextMenuItem":{
     "message":"Désactiver les options de menu contextuelles",
     "description":"Disable Context Menu Options"
@@ -686,5 +698,13 @@
   "shareVaultInfo":{
     "message":"Créez une organisation pour partager de manière sécurisée vos identifiants avec d'autres utilisateurs.",
     "description":"Create an organization to securely share your logins with other users."
+  },
+  "contribute":{
+    "message":"You can contribute to!",
+    "description":"You can contribute to!"
+  },
+  "learnMore":{
+    "message":"Learn more",
+    "description":"Learn more"
   }
 }

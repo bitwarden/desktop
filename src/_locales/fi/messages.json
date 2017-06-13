@@ -399,6 +399,10 @@
     "message":"Lukitseminen",
     "description":"Lock Options"
   },
+  "lockNow":{
+    "message":"Lock Now",
+    "description":"Lock Now"
+  },
   "immediately":{
     "message":"Välittömästi",
     "description":"Immediately"
@@ -426,6 +430,10 @@
   "fourHours":{
     "message":"4 tuntia",
     "description":"4 hours"
+  },
+  "onLocked":{
+    "message":"On Locked",
+    "description":"On Locked"
   },
   "onRestart":{
     "message":"Uudelleenkäynnistyksen yhteydessä",
@@ -647,6 +655,10 @@
     "message":"Kyllä, tallenna nyt",
     "description":"Yes, Save Now"
   },
+  "notificationNeverSave":{
+    "message":"Never for this website",
+    "description":"Never for this website"
+  },
   "disableContextMenuItem":{
     "message":"Älä näytä toimintoja pikavalikossa",
     "description":"Disable Context Menu Options"
@@ -686,5 +698,13 @@
   "shareVaultInfo":{
     "message":"Luo organisaatio jakaaksesi kirjautumistiedot turvallisesti muiden käyttäjien kanssa.",
     "description":"Create an organization to securely share your logins with other users."
+  },
+  "contribute":{
+    "message":"You can contribute to!",
+    "description":"You can contribute to!"
+  },
+  "learnMore":{
+    "message":"Learn more",
+    "description":"Learn more"
   }
 }
