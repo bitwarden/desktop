@@ -238,7 +238,15 @@
         color: @text-color;
         position: relative;
         z-index: 1;
-        &:extend(.clearfix all);
+
+        &:not(.pre) {
+            &:extend(.clearfix all);
+        }
+
+        &.pre {
+            white-space: pre;
+            overflow-x: auto;
+        }
 
         &.text-primary {
             color: @brand-primary !important;
