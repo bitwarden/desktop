@@ -6,6 +6,7 @@
         $scope.i18n = i18nService;
         $scope.folder = {};
         var folderId = $stateParams.folderId;
+        $('#name').focus();
 
         folderService.get(folderId, function (folder) {
             $q.when(folder.decrypt()).then(function (model) {

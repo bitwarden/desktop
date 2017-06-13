@@ -49,6 +49,7 @@
         };
 
         $scope.lock = function () {
+            $analytics.eventTrack('Lock Now');
             lockService.lock().then(function () {
                 return $state.go('lock', {
                     animation: 'in-slide-up'

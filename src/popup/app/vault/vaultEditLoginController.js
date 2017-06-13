@@ -12,6 +12,8 @@ angular
             folderId: null
         };
 
+        $('#name').focus();
+
         if ($stateParams.login) {
             angular.extend($scope.login, $stateParams.login);
         }

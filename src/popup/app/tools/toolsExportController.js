@@ -5,6 +5,8 @@
         i18nService, cryptoService, userService, folderService, loginService) {
         $scope.i18n = i18nService;
 
+        $('#master-password').focus();
+
         $scope.submitPromise = null;
         $scope.submit = function () {
             $scope.submitPromise = checkPassword().then(function () {
