@@ -50,7 +50,7 @@ function initLockService(self) {
             var diffSeconds = ((new Date()).getTime() - lastActive) / 1000;
             if (diffSeconds >= lockOptionSeconds) {
                 // need to lock now
-                self.lock();
+                return self.lock();
             }
         });
     }
@@ -59,16 +59,18 @@ function initLockService(self) {
         chrome.idle.onStateChanged.addListener(function (newState) {
             if (newState === 'locked') {
                 getLockOption().then(function (lockOption) {
-                    if (lockOption === -2) {
-                        self.lock();
+                    if (lockOption !== -2) {
+                        return;
                     }
+
+                    return self.lock();
                 });
             }
         });
     }
 
     LockService.prototype.lock = function () {
-        Q.all([
+        return Q.all([
             self.cryptoService.clearKey(),
             self.cryptoService.clearOrgKeys(true),
             self.cryptoService.clearPrivateKey(true)

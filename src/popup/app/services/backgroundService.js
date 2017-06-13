@@ -42,4 +42,7 @@
     })
     .factory('settingsService', function () {
         return chrome.extension.getBackgroundPage().settingsService;
+    })
+    .factory('lockService', function () {
+        return chrome.extension.getBackgroundPage().lockService;
     });

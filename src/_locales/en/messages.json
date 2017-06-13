@@ -399,6 +399,10 @@
     "message": "Lock Options",
     "description": "Lock Options"
   },
+  "lockNow": {
+    "message": "Lock Now",
+    "description": "Lock Now"
+  },
   "immediately": {
     "message": "Immediately",
     "description": "Immediately"

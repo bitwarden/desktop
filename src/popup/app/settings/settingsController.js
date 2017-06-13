@@ -2,7 +2,7 @@
     .module('bit.settings')
 
     .controller('settingsController', function ($scope, $state, SweetAlert, utilsService, $analytics,
-        i18nService, constantsService, cryptoService) {
+        i18nService, constantsService, cryptoService, lockService) {
         utilsService.initListSectionItemListeners($(document), angular);
         $scope.lockOption = '';
         $scope.i18n = i18nService;
@@ -44,6 +44,14 @@
                             }
                         });
                     }
+                });
+            });
+        };
+
+        $scope.lock = function () {
+            lockService.lock().then(function () {
+                return $state.go('lock', {
+                    animation: 'in-slide-up'
                 });
             });
         };
@@ -114,13 +122,13 @@
                 case 'chrome':
                     chrome.tabs.create({
                         url: 'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/' +
-                             'nngceckbapebfimnlniiiahkandclblb/reviews'
+                        'nngceckbapebfimnlniiiahkandclblb/reviews'
                     });
                     break;
                 case 'firefox':
                     chrome.tabs.create({
                         url: 'https://addons.mozilla.org/en-US/firefox/addon/' +
-                             'bitwarden-password-manager/#reviews'
+                        'bitwarden-password-manager/#reviews'
                     });
                     break;
                 case 'edge':
@@ -129,7 +137,7 @@
                 case 'opera':
                     chrome.tabs.create({
                         url: 'https://addons.opera.com/en/extensions/details/' +
-                             'bitwarden-free-password-manager/#feedback-container'
+                        'bitwarden-free-password-manager/#feedback-container'
                     });
                     break;
                 default:
