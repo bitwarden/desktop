@@ -73,7 +73,8 @@ function initLockService(self) {
         return Q.all([
             self.cryptoService.clearKey(),
             self.cryptoService.clearOrgKeys(true),
-            self.cryptoService.clearPrivateKey(true)
+            self.cryptoService.clearPrivateKey(true),
+            self.cryptoService.clearEncKey(true)
         ]).then(function () {
             self.setIcon();
             self.folderService.clearCache();
