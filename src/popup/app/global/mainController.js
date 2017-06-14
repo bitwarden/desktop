@@ -5,7 +5,7 @@ angular
         var self = this;
         self.currentYear = new Date().getFullYear();
         self.animation = '';
-        self.isFirefox = utilsService.isFirefox();
+        self.lgBody = !utilsService.isFirefox();
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (toParams.animation) {
