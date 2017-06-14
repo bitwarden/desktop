@@ -1,10 +1,11 @@
 angular
     .module('bit.global')
 
-    .controller('mainController', function ($scope, $state, authService, toastr, i18nService, $analytics) {
+    .controller('mainController', function ($scope, $state, authService, toastr, i18nService, $analytics, utilsService) {
         var self = this;
         self.currentYear = new Date().getFullYear();
         self.animation = '';
+        self.isFirefox = utilsService.isFirefox();
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (toParams.animation) {
