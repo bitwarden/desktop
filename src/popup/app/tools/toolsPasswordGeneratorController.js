@@ -12,30 +12,20 @@
         utilsService.initListSectionItemListeners($(document), angular);
         $scope.password = '-';
 
-        $scope.slider = {
-            value: 12,
-            options: {
-                floor: 5,
-                ceil: 128,
-                step: 1,
-                hideLimitLabels: true,
-                hidePointerLabels: true,
-                onChange: function () {
-                    $scope.options.length = $scope.slider.value;
-                    $scope.regenerate(false);
-                },
-                onEnd: function () {
-                    $analytics.eventTrack('Generated Password');
-                    $scope.saveOptions($scope.options);
-                }
-            }
-        };
-
         $q.when(passwordGenerationService.getOptions()).then(function (options) {
             $scope.options = options;
-            $scope.slider.value = options.length;
             $scope.regenerate(false);
             $analytics.eventTrack('Generated Password');
+        });
+
+        $scope.sliderMoved = function () {
+            $scope.regenerate(false);
+        };
+
+        $('#length').change(function (e) {
+            e.preventDefault();
+            $analytics.eventTrack('Generated Password');
+            $scope.saveOptions($scope.options);
         });
 
         $scope.regenerate = function (trackRegenerateEvent) {

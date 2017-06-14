@@ -409,10 +409,24 @@
         &.list-section-item-slider {
             .slider-value {
                 color: @gray-light;
+                text-align: right;
+                min-width: 45px;
+            }
 
-                &:before {
-                    content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0";
-                }
+            > * {
+                display: table-cell !important;
+                vertical-align: middle;
+            }
+
+            input {
+                width: 100%;
+                margin: 0;
+            }
+
+            .slider-wrapper {
+                width: 100%;
+                padding: 0 0 0 20px;
+                max-width: 500px;
             }
         }
 
