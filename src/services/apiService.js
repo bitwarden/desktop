@@ -171,7 +171,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/sites/' + id + '?' + token,
+                url: self.baseUrl + '/logins/' + id + '?' + token,
                 dataType: 'json',
                 success: function (response) {
                     success(new LoginResponse(response));
@@ -190,7 +190,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/sites?' + token,
+                url: self.baseUrl + '/logins?' + token,
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
@@ -211,7 +211,7 @@ function initApiService() {
         handleTokenState(self).then(function (token) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/sites/' + id + '?' + token,
+                url: self.baseUrl + '/logins/' + id + '?' + token,
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
