@@ -427,7 +427,7 @@ function initCryptoService(constantsService) {
                 var iv = forge.util.encode64(ivBytes);
                 var ctBytes = cipher.output.getBytes();
                 var ct = forge.util.encode64(ctBytes);
-                var mac = !key.macKey ? null : computeMac(ctBytes, ivBytes, key.macKey, true);
+                var mac = !key.macKey ? null : computeMac(ivBytes + ctBytes, key.macKey, true);
 
                 var cs = new CipherString(key.encType, iv, ct, mac);
                 deferred.resolve(cs);
@@ -473,7 +473,7 @@ function initCryptoService(constantsService) {
 
             if (key.macKey && cipherString.mac) {
                 var macBytes = forge.util.decode64(cipherString.mac);
-                var computedMacBytes = computeMac(ctBytes, ivBytes, key.macKey, false);
+                var computedMacBytes = computeMac(ivBytes + ctBytes, key.macKey, false);
                 if (!macsEqual(key.macKey, computedMacBytes, macBytes)) {
                     console.error('MAC failed.');
                     deferred.reject('MAC failed.');
@@ -503,38 +503,64 @@ function initCryptoService(constantsService) {
     CryptoService.prototype.rsaDecrypt = function (encValue) {
         var headerPieces = encValue.split('.'),
             encType,
-            encPiece;
+            encPieces;
 
         if (headerPieces.length === 1) {
             encType = constantsService.encType.Rsa2048_OaepSha256_B64;
-            encPiece = headerPieces[0];
+            encPieces = [headerPieces[0]];
         }
         else if (headerPieces.length === 2) {
             try {
                 encType = parseInt(headerPieces[0]);
-                encPiece = headerPieces[1];
+                encPieces = headerPieces[1].split('|');
             }
             catch (e) { }
         }
 
-        var padding = null;
-        if (encType === constantsService.encType.Rsa2048_OaepSha256_B64) {
-            padding = {
-                name: 'RSA-OAEP',
-                hash: { name: 'SHA-256' }
-            }
-        }
-        else if (encType === constantsService.encType.Rsa2048_OaepSha1_B64) {
-            padding = {
-                name: 'RSA-OAEP',
-                hash: { name: 'SHA-1' }
-            }
-        }
-        else {
-            throw 'encType unavailable.';
+        switch (encType) {
+            case constantsService.encType.Rsa2048_OaepSha256_B64:
+            case constantsService.encType.Rsa2048_OaepSha1_B64:
+                if (encPieces.length !== 1) {
+                    throw 'Invalid cipher format.';
+                }
+                break;
+            case constantsService.encType.Rsa2048_OaepSha256_HmacSha256_B64:
+            case constantsService.encType.Rsa2048_OaepSha1_HmacSha256_B64:
+                if (encPieces.length !== 2) {
+                    throw 'Invalid cipher format.';
+                }
+                break;
+            default:
+                throw 'encType unavailable.';
         }
 
-        return this.getPrivateKey().then(function (privateKeyBytes) {
+        var padding = null;
+        switch (encType) {
+            case constantsService.encType.Rsa2048_OaepSha256_B64:
+            case constantsService.encType.Rsa2048_OaepSha256_HmacSha256_B64:
+                padding = {
+                    name: 'RSA-OAEP',
+                    hash: { name: 'SHA-256' }
+                }
+                break;
+            case constantsService.encType.Rsa2048_OaepSha1_B64:
+            case constantsService.encType.Rsa2048_OaepSha1_HmacSha256_B64:
+                padding = {
+                    name: 'RSA-OAEP',
+                    hash: { name: 'SHA-1' }
+                }
+                break;
+            default:
+                throw 'encType unavailable.';
+        }
+
+        var key = null,
+            self = this;
+
+        return self.getEncKey().then(function (encKey) {
+            key = encKey;
+            return self.getPrivateKey();
+        }).then(function (privateKeyBytes) {
             if (!privateKeyBytes) {
                 throw 'No private key.';
             }
@@ -545,12 +571,21 @@ function initCryptoService(constantsService) {
 
             return window.crypto.subtle.importKey('pkcs8', privateKeyBytes, padding, false, ['decrypt']);
         }).then(function (privateKey) {
-            if (!encPiece) {
-                throw 'encPiece unavailable.';
+            if (!encPieces || !encPieces.length) {
+                throw 'encPieces unavailable.';
             }
 
-            var ctBytes = fromB64ToBuffer(encPiece);
-            return window.crypto.subtle.decrypt({ name: padding.name }, privateKey, ctBytes);
+            if (key && key.macKey && encPieces.length > 1) {
+                var ctBytes = forge.util.decode64(encPieces[0]);
+                var macBytes = forge.util.decode64(encPieces[1]);
+                var computedMacBytes = computeMac(ctBytes, key.macKey, false);
+                if (!macsEqual(key.macKey, macBytes, computedMacBytes)) {
+                    throw 'MAC failed.';
+                }
+            }
+
+            var ctBuff = fromB64ToBuffer(encPieces[0]);
+            return window.crypto.subtle.decrypt({ name: padding.name }, privateKey, ctBuff);
         }, function () {
             throw 'Cannot import privateKey.';
         }).then(function (decBytes) {
@@ -561,10 +596,10 @@ function initCryptoService(constantsService) {
         });
     };
 
-    function computeMac(ct, iv, macKey, b64Output) {
+    function computeMac(dataBytes, macKey, b64Output) {
         var hmac = forge.hmac.create();
         hmac.start('sha256', macKey);
-        hmac.update(iv + ct);
+        hmac.update(dataBytes);
         var mac = hmac.digest();
         return b64Output ? forge.util.encode64(mac.getBytes()) : mac.getBytes();
     }
