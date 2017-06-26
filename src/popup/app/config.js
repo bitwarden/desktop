@@ -66,7 +66,7 @@
                 controller: 'accountsLoginTwoFactorController',
                 templateUrl: 'app/accounts/views/accountsLoginTwoFactor.html',
                 data: { authorize: false },
-                params: { animation: null, email: null, masterPassword: null }
+                params: { animation: null, email: null, masterPassword: null, providers: null, provider: null }
             })
             .state('register', {
                 url: '/register',

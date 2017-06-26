@@ -1,4 +1,5 @@
-﻿<form name="theForm" ng-submit="login(model)" bit-form="loginPromise">
+﻿<form name="theForm" ng-submit="login(token)" bit-form="loginPromise"
+      ng-if="providerType === constantsProvider.authenticator || providerType === constantsProvider.email">
     <div class="header">
         <div class="left">
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
@@ -16,7 +17,7 @@
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-lock fa-lg fa-fw"></i>
                         <label for="code" class="sr-only">{{i18n.verificationCode}}</label>
-                        <input id="code" type="text" name="Code" placeholder="{{i18n.verificationCode}}" ng-model="model.code">
+                        <input id="code" type="text" name="Code" placeholder="{{i18n.verificationCode}}" ng-model="token">
                     </div>
                 </div>
                 <div class="list-section-footer">
@@ -27,5 +28,65 @@
         <p class="text-center text-accent">
             <a href="" ng-click="lostApp()">{{i18n.lost2FAApp}}</a>
         </p>
+    </div>
+</form>
+
+<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.duo">
+    <div class="header">
+        <div class="left">
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+        </div>
+        <div class="title">Duo</div>
+    </div>
+    <div class="content">
+        <div id="duoFrameWrapper">
+            <iframe id="duo_iframe"></iframe>
+        </div>
+    </div>
+</form>
+
+<form name="theForm" ng-submit="login(token)" bit-form="loginPromise" ng-if="providerType === constantsProvider.yubikey">
+    <div class="header">
+        <div class="left">
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+        </div>
+        <div class="right">
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{i18n.continue}}</button>
+            <i class="fa fa-spinner fa-lg fa-spin" ng-show="theForm.$loading"></i>
+        </div>
+        <div class="title">YubiKey</div>
+    </div>
+    <div class="content">
+        <div class="list">
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-icon-input">
+                        <i class="fa fa-lock fa-lg fa-fw"></i>
+                        <label for="code" class="sr-only">{{i18n.verificationCode}}</label>
+                        <input id="code" type="password" name="Code" ng-model="token">
+                    </div>
+                </div>
+                <div class="list-section-footer">
+                    Touch the YubiKey button.
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.u2f">
+    <div class="header">
+        <div class="left">
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+        </div>
+        <div class="right">
+            <i class="fa fa-spinner fa-lg fa-spin" ng-show="theForm.$loading"></i>
+        </div>
+        <div class="title">FIDO U2F</div>
+    </div>
+    <div class="content">
+        <div ng-if="!u2fReady">Loading...</div>
+        <div ng-if="u2fReady">Touch button</div>
+        <iframe id="u2f_iframe"></iframe>
     </div>
 </form>

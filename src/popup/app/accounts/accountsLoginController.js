@@ -40,7 +40,8 @@
                     $state.go('twoFactor', {
                         animation: 'in-slide-left',
                         email: model.email,
-                        masterPassword: model.masterPassword
+                        masterPassword: model.masterPassword,
+                        providers: response.twoFactorProviders
                     });
                 }
                 else {

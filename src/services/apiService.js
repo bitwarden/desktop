@@ -1,21 +1,21 @@
 function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
-     // Desktop
+    // Desktop
     //this.baseUrl = 'http://localhost:4000';
     //this.identityBaseUrl = 'http://localhost:33656';
 
-     // Desktop HTTPS
+    // Desktop HTTPS
     //this.baseUrl = 'https://localhost:44377';
     //this.identityBaseUrl = 'https://localhost:44392';
 
-     // Desktop external
+    // Desktop external
     //this.baseUrl = 'http://192.168.1.6:4000';
     //this.identityBaseUrl = 'http://192.168.1.6:33656';
 
-     // Preview
+    // Preview
     //this.baseUrl = 'https://preview-api.bitwarden.com';
     //this.identityBaseUrl = 'https://preview-identity.bitwarden.com';
 
-     // Production
+    // Production
     this.baseUrl = 'https://api.bitwarden.com';
     this.identityBaseUrl = 'https://identity.bitwarden.com';
 
@@ -43,13 +43,30 @@ function initApiService() {
                 success(new IdentityTokenResponse(response));
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                if (jqXHR.responseJSON && jqXHR.responseJSON.TwoFactorProviders &&
-                    jqXHR.responseJSON.TwoFactorProviders.length) {
-                    successWithTwoFactor();
+                if (jqXHR.responseJSON && jqXHR.responseJSON.TwoFactorProviders2 &&
+                    Object.keys(jqXHR.responseJSON.TwoFactorProviders2).length) {
+                    successWithTwoFactor(jqXHR.responseJSON.TwoFactorProviders2);
                 }
                 else {
                     error(new ErrorResponse(jqXHR, true));
                 }
+            }
+        });
+    };
+
+    // Two Factor APIs
+
+    ApiService.prototype.postTwoFactorEmail = function (success, error) {
+        var self = this;
+        $.ajax({
+            type: 'POST',
+            url: self.baseUrl + '/two-factor/send-email?' + token,
+            dataType: 'json',
+            success: function (response) {
+                success(response);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                handleError(error, jqXHR, false, self);
             }
         });
     };
