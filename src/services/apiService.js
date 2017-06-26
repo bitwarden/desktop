@@ -1,7 +1,11 @@
 function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
      // Desktop
     //this.baseUrl = 'http://localhost:4000';
-    //this.identityBaseUrl = 'http://localhost:33656'; 
+    //this.identityBaseUrl = 'http://localhost:33656';
+
+     // Desktop HTTPS
+    //this.baseUrl = 'https://localhost:44377';
+    //this.identityBaseUrl = 'https://localhost:44392';
 
      // Desktop external
     //this.baseUrl = 'http://192.168.1.6:4000';
