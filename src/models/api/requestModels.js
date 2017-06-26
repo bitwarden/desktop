@@ -13,11 +13,11 @@ var FolderRequest = function (folder) {
     this.name = folder.name ? folder.name.encryptedString : null;
 };
 
-var TokenRequest = function (email, masterPasswordHash, token, device) {
+var TokenRequest = function (email, masterPasswordHash, provider, token, device) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
     this.token = token;
-    this.provider = 0; // 0 = Authenticator
+    this.provider = provider;
     this.device = null;
     if (device) {
         this.device = device;

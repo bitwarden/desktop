@@ -18,7 +18,7 @@
                 return;
             }
 
-            $scope.loginPromise = authService.logIn(email, masterPassword, model.code);
+            $scope.loginPromise = authService.logIn(email, masterPassword, 0, model.code);
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
                 $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });

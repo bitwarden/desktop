@@ -32,10 +32,10 @@
                 return;
             }
 
-            $scope.loginPromise = authService.logIn(model.email, model.masterPassword, null);
+            $scope.loginPromise = authService.logIn(model.email, model.masterPassword, null, null);
 
-            $scope.loginPromise.then(function (twoFactor) {
-                if (twoFactor) {
+            $scope.loginPromise.then(function (response) {
+                if (response.twoFactor) {
                     $analytics.eventTrack('Logged In To Two-step');
                     $state.go('twoFactor', {
                         animation: 'in-slide-left',
