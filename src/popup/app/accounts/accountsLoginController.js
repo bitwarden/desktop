@@ -41,7 +41,8 @@
                         animation: 'in-slide-left',
                         email: model.email,
                         masterPassword: model.masterPassword,
-                        providers: response.twoFactorProviders
+                        providers: response.twoFactorProviders,
+                        provider: null
                     });
                 }
                 else {

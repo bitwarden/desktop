@@ -68,6 +68,13 @@
                 data: { authorize: false },
                 params: { animation: null, email: null, masterPassword: null, providers: null, provider: null }
             })
+            .state('twoFactorMethods', {
+                url: '/two-factor-methods',
+                controller: 'accountsTwoFactorMethodsController',
+                templateUrl: 'app/accounts/views/accountsTwoFactorMethods.html',
+                data: { authorize: false },
+                params: { animation: null, email: null, masterPassword: null, providers: null, provider: null }
+            })
             .state('register', {
                 url: '/register',
                 controller: 'accountsRegisterController',

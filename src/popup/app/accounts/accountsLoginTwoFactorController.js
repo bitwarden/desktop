@@ -2,7 +2,7 @@
     .module('bit.accounts')
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService,
-        $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService) {
+        $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService) {
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
 
@@ -53,6 +53,17 @@
                 }
             }, function () {
                 toastr.error('Could not send verification email.');
+            });
+        };
+
+        $scope.anotherMethod = function () {
+            $analytics.eventTrack('Selected Another Two Factor Method');
+            $state.go('twoFactorMethods', {
+                animation: 'in-slide-up',
+                email: email,
+                masterPassword: masterPassword,
+                providers: providers,
+                provider: $scope.providerType
             });
         };
 

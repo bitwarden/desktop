@@ -19,6 +19,10 @@
                         <label for="code" class="sr-only">{{i18n.verificationCode}}</label>
                         <input id="code" type="text" name="Code" placeholder="{{i18n.verificationCode}}" ng-model="token">
                     </div>
+                    <div class="list-section-item list-section-item-checkbox">
+                        <label for="remember">Remember me</label>
+                        <input id="remember" name="Remember" type="checkbox" ng-model="remember">
+                    </div>
                 </div>
                 <div class="list-section-footer">
                     {{i18n.enterTwoStepVerCode}}
@@ -26,7 +30,7 @@
             </div>
         </div>
         <p class="text-center text-accent">
-            <a href="" ng-click="lostApp()">{{i18n.lost2FAApp}}</a>
+            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
         </p>
     </div>
 </form>
@@ -65,12 +69,19 @@
                         <label for="code" class="sr-only">{{i18n.verificationCode}}</label>
                         <input id="code" type="password" name="Code" ng-model="token">
                     </div>
+                    <div class="list-section-item list-section-item-checkbox">
+                        <label for="remember">Remember me</label>
+                        <input id="remember" name="Remember" type="checkbox" ng-model="remember">
+                    </div>
                 </div>
                 <div class="list-section-footer">
                     Touch the YubiKey button.
                 </div>
             </div>
         </div>
+        <p class="text-center text-accent">
+            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+        </p>
     </div>
 </form>
 
@@ -87,6 +98,9 @@
     <div class="content">
         <div ng-if="!u2fReady">Loading...</div>
         <div ng-if="u2fReady">Touch button</div>
-        <iframe id="u2f_iframe"></iframe>
+        <iframe id="u2f_iframe" class="hide"></iframe>
+        <p class="text-center text-accent">
+            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+        </p>
     </div>
 </form>

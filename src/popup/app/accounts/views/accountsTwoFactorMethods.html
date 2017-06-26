@@ -1,0 +1,19 @@
+﻿<div class="header">
+    <div class="left">
+        <a href="#" ng-click="cancel()" stop-click>{{i18n.cancel}}</a>
+    </div>
+    <div class="title">Two-step Login Options</div>
+</div>
+<div class="content content-tabs">
+    <div class="list">
+        <div class="list-section">
+            <div class="list-section-items">
+                <a class="list-section-item wrap" href="#" stop-click ng-click="choose(provider)"
+                   ng-repeat="provider in providers | orderBy: 'displayOrder'">
+                    <span class="text">{{provider.name}}</span>
+                    <span class="detail">{{provider.description}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
