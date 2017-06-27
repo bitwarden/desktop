@@ -2,47 +2,47 @@
     .module('bit.services')
 
     .factory('tokenService', function () {
-        return chrome.extension.getBackgroundPage().tokenService;
+        return chrome.extension.getBackgroundPage().bg_tokenService;
     })
     .factory('cryptoService', function () {
-        return chrome.extension.getBackgroundPage().cryptoService;
+        return chrome.extension.getBackgroundPage().bg_cryptoService;
     })
     .factory('userService', function () {
-        return chrome.extension.getBackgroundPage().userService;
+        return chrome.extension.getBackgroundPage().bg_userService;
     })
     .factory('apiService', function () {
-        return chrome.extension.getBackgroundPage().apiService;
+        return chrome.extension.getBackgroundPage().bg_apiService;
     })
     .factory('folderService', function () {
-        return chrome.extension.getBackgroundPage().folderService;
+        return chrome.extension.getBackgroundPage().bg_folderService;
     })
     .factory('loginService', function () {
-        return chrome.extension.getBackgroundPage().loginService;
+        return chrome.extension.getBackgroundPage().bg_loginService;
     })
     .factory('syncService', function () {
-        return chrome.extension.getBackgroundPage().syncService;
+        return chrome.extension.getBackgroundPage().bg_syncService;
     })
     .factory('autofillService', function () {
-        return chrome.extension.getBackgroundPage().autofillService;
+        return chrome.extension.getBackgroundPage().bg_autofillService;
     })
     .factory('passwordGenerationService', function () {
-        return chrome.extension.getBackgroundPage().passwordGenerationService;
+        return chrome.extension.getBackgroundPage().bg_passwordGenerationService;
     })
     .factory('utilsService', function () {
-        return chrome.extension.getBackgroundPage().utilsService;
+        return chrome.extension.getBackgroundPage().bg_utilsService;
     })
     .factory('appIdService', function () {
-        return chrome.extension.getBackgroundPage().appIdService;
+        return chrome.extension.getBackgroundPage().bg_appIdService;
     })
     .factory('i18nService', function () {
-        return chrome.extension.getBackgroundPage().i18nService;
+        return chrome.extension.getBackgroundPage().bg_i18nService;
     })
     .factory('constantsService', function () {
-        return chrome.extension.getBackgroundPage().constantsService;
+        return chrome.extension.getBackgroundPage().bg_constantsService;
     })
     .factory('settingsService', function () {
-        return chrome.extension.getBackgroundPage().settingsService;
+        return chrome.extension.getBackgroundPage().bg_settingsService;
     })
     .factory('lockService', function () {
-        return chrome.extension.getBackgroundPage().lockService;
+        return chrome.extension.getBackgroundPage().bg_lockService;
     });

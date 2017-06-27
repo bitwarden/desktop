@@ -87,7 +87,7 @@ function initLockService(self) {
         var deferred = Q.defer();
 
         chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
-            if (obj && obj[constantsService.lockOptionKey] === 0 || obj[constantsService.lockOptionKey]) {
+            if (obj && obj[self.constantsService.lockOptionKey] === 0 || obj[self.constantsService.lockOptionKey]) {
                 deferred.resolve(parseInt(obj[self.constantsService.lockOptionKey]));
             }
             else {
@@ -102,8 +102,8 @@ function initLockService(self) {
         var deferred = Q.defer();
 
         chrome.storage.local.get(self.constantsService.lastActiveKey, function (obj) {
-            if (obj && obj[constantsService.lastActiveKey]) {
-                deferred.resolve(obj[constantsService.lastActiveKey]);
+            if (obj && obj[self.constantsService.lastActiveKey]) {
+                deferred.resolve(obj[self.constantsService.lastActiveKey]);
             }
             else {
                 deferred.reject();

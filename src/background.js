@@ -1,21 +1,22 @@
 var isBackground = true;
-var loginsToAdd = [];
-var i18nService = new i18nService();
-var constantsService = new ConstantsService();
-var utilsService = new UtilsService();
-var cryptoService = new CryptoService(constantsService);
-var tokenService = new TokenService();
-var appIdService = new AppIdService();
-var apiService = new ApiService(tokenService, appIdService, utilsService, logout);
-var userService = new UserService(tokenService, apiService, cryptoService);
-var settingsService = new SettingsService(userService);
-var loginService = new LoginService(cryptoService, userService, apiService, settingsService);
-var folderService = new FolderService(cryptoService, userService, apiService);
-var lockService = new LockService(constantsService, cryptoService, folderService, loginService, setIcon, refreshBadgeAndMenu);
-var syncService = new SyncService(loginService, folderService, userService, apiService, settingsService,
-    cryptoService, logout);
-var autofillService = new AutofillService();
-var passwordGenerationService = new PasswordGenerationService();
+var bg_loginsToAdd = [];
+var bg_i18nService = new i18nService();
+var bg_constantsService = new ConstantsService();
+var bg_utilsService = new UtilsService();
+var bg_cryptoService = new CryptoService(bg_constantsService);
+var bg_tokenService = new TokenService();
+var bg_appIdService = new AppIdService();
+var bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, logout);
+var bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService);
+var bg_settingsService = new SettingsService(bg_userService);
+var bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService);
+var bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService);
+var bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_loginService, setIcon,
+    refreshBadgeAndMenu);
+var bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
+    bg_cryptoService, logout);
+var bg_autofillService = new AutofillService();
+var bg_passwordGenerationService = new PasswordGenerationService();
 
 if (chrome.commands) {
     chrome.commands.onCommand.addListener(function (command) {
@@ -24,8 +25,8 @@ if (chrome.commands) {
                 hitType: 'event',
                 eventAction: 'Generated Password From Command'
             });
-            passwordGenerationService.getOptions().then(function (options) {
-                var password = passwordGenerationService.generatePassword(options);
+            bg_passwordGenerationService.getOptions().then(function (options) {
+                var password = bg_passwordGenerationService.generatePassword(options);
                 copyToClipboard(password);
             });
         }
@@ -77,7 +78,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     }
     else if (msg.command === 'collectPageDetailsResponse') {
         if (msg.contentScript) {
-            var forms = autofillService.getFormsWithPasswordFields(msg.details);
+            var forms = bg_autofillService.getFormsWithPasswordFields(msg.details);
             messageTab(msg.tabId, 'pageDetails', { details: msg.details, forms: forms });
         }
         else {
@@ -92,8 +93,8 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
 setIcon();
 function setIcon() {
-    userService.isAuthenticated(function (isAuthenticated) {
-        cryptoService.getKey().then(function (key) {
+    bg_userService.isAuthenticated(function (isAuthenticated) {
+        bg_cryptoService.getKey().then(function (key) {
             var suffix = '';
             if (!isAuthenticated) {
                 suffix = '_gray';
@@ -144,9 +145,9 @@ function buildContextMenu(callback) {
                 id: 'autofill',
                 parentId: 'root',
                 contexts: ['all'],
-                title: i18nService.autoFill
+                title: bg_i18nService.autoFill
             }, function () {
-                if (utilsService.isFirefox()) {
+                if (bg_utilsService.isFirefox()) {
                     // Firefox does not support writing to the clipboard from background
                     buildingContextMenu = false;
                     if (callback) {
@@ -160,14 +161,14 @@ function buildContextMenu(callback) {
                     id: 'copy-username',
                     parentId: 'root',
                     contexts: ['all'],
-                    title: i18nService.copyUsername
+                    title: bg_i18nService.copyUsername
                 }, function () {
                     chrome.contextMenus.create({
                         type: 'normal',
                         id: 'copy-password',
                         parentId: 'root',
                         contexts: ['all'],
-                        title: i18nService.copyPassword
+                        title: bg_i18nService.copyPassword
                     }, function () {
                         chrome.contextMenus.create({
                             type: 'separator',
@@ -179,7 +180,7 @@ function buildContextMenu(callback) {
                             id: 'generate-password',
                             parentId: 'root',
                             contexts: ['all'],
-                            title: i18nService.generatePasswordCopied
+                            title: bg_i18nService.generatePasswordCopied
                         }, function () {
                             buildingContextMenu = false;
                             if (callback) {
@@ -203,7 +204,7 @@ chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
         return;
     }
     onReplacedRan = true;
-    checkLoginsToAdd();
+    checkbg_loginsToAdd();
     refreshBadgeAndMenu();
 });
 
@@ -213,7 +214,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         return;
     }
     onUpdatedRan = true;
-    checkLoginsToAdd();
+    checkbg_loginsToAdd();
     refreshBadgeAndMenu();
 });
 
@@ -236,8 +237,8 @@ function refreshBadgeAndMenu() {
             return;
         }
 
-        chrome.storage.local.get(constantsService.disableContextMenuItemKey, function (obj) {
-            if (!obj[constantsService.disableContextMenuItemKey]) {
+        chrome.storage.local.get(bg_constantsService.disableContextMenuItemKey, function (obj) {
+            if (!obj[bg_constantsService.disableContextMenuItemKey]) {
                 buildContextMenu(function () {
                     contextMenuReady(tab, true);
                 });
@@ -260,7 +261,7 @@ function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
         return;
     }
 
-    var tabDomain = utilsService.getDomain(url);
+    var tabDomain = bg_utilsService.getDomain(url);
     if (!tabDomain) {
         return;
     }
@@ -268,7 +269,7 @@ function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
     chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
 
     menuOptionsLoaded = [];
-    loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
+    bg_loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
         sortLogins(logins);
 
         if (contextMenuEnabled) {
@@ -291,7 +292,7 @@ function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
         }
         else {
             if (contextMenuEnabled) {
-                loadNoLoginsContextMenuOptions(i18nService.noMatchingLogins);
+                loadNoLoginsContextMenuOptions(bg_i18nService.noMatchingLogins);
             }
             chrome.browserAction.setBadgeText({
                 text: '',
@@ -300,7 +301,7 @@ function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
         }
     }, function () {
         if (contextMenuEnabled) {
-            loadNoLoginsContextMenuOptions(i18nService.vaultLocked);
+            loadNoLoginsContextMenuOptions(bg_i18nService.vaultLocked);
         }
         chrome.browserAction.setBadgeText({
             text: '',
@@ -315,8 +316,8 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
             hitType: 'event',
             eventAction: 'Generated Password From Context Menu'
         });
-        passwordGenerationService.getOptions().then(function (options) {
-            var password = passwordGenerationService.generatePassword(options);
+        bg_passwordGenerationService.getOptions().then(function (options) {
+            var password = bg_passwordGenerationService.generatePassword(options);
             copyToClipboard(password);
         });
     }
@@ -327,7 +328,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
             return;
         }
 
-        loginService.getAllDecrypted().then(function (logins) {
+        bg_loginService.getAllDecrypted().then(function (logins) {
             for (var i = 0; i < logins.length; i++) {
                 if (logins[i].id === id) {
                     if (info.parentMenuItemId === 'autofill') {
@@ -400,12 +401,12 @@ function collectPageDetailsForContentScript(tab) {
 }
 
 function addLogin(login, tab) {
-    var loginDomain = utilsService.getDomain(login.url);
+    var loginDomain = bg_utilsService.getDomain(login.url);
     if (!loginDomain) {
         return;
     }
 
-    loginService.getAllDecryptedForDomain(loginDomain).then(function (logins) {
+    bg_loginService.getAllDecryptedForDomain(loginDomain).then(function (logins) {
         var match = false;
         for (var i = 0; i < logins.length; i++) {
             if (logins[i].username === login.username) {
@@ -418,7 +419,7 @@ function addLogin(login, tab) {
             // remove any old logins for this tab
             removeAddLogin(tab);
 
-            loginsToAdd.push({
+            bg_loginsToAdd.push({
                 username: login.username,
                 password: login.password,
                 name: loginDomain,
@@ -427,15 +428,15 @@ function addLogin(login, tab) {
                 tabId: tab.id,
                 expires: new Date((new Date()).getTime() + 30 * 60000) // 30 minutes
             });
-            checkLoginsToAdd(tab);
+            checkbg_loginsToAdd(tab);
         }
     });
 }
 
 var lastCleanupLoginCheck = null;
-cleanupLoginsToAdd();
-setInterval(cleanupLoginsToAdd, 2 * 60 * 1000); // check every 2 minutes
-function cleanupLoginsToAdd() {
+cleanupbg_loginsToAdd();
+setInterval(cleanupbg_loginsToAdd, 2 * 60 * 1000); // check every 2 minutes
+function cleanupbg_loginsToAdd() {
     var now = new Date();
     if (lastCleanupLoginCheck && (now - lastCleanupLoginCheck) < 10000) {
         // can only check cleanup every 10 seconds
@@ -443,30 +444,30 @@ function cleanupLoginsToAdd() {
     }
     lastCleanupLoginCheck = now;
 
-    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
-        if (loginsToAdd[i].expires < now) {
-            loginsToAdd.splice(i, 1);
+    for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
+        if (bg_loginsToAdd[i].expires < now) {
+            bg_loginsToAdd.splice(i, 1);
         }
     }
 }
 
 function removeAddLogin(tab) {
-    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
-        if (loginsToAdd[i].tabId === tab.id) {
-            loginsToAdd.splice(i, 1);
+    for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
+        if (bg_loginsToAdd[i].tabId === tab.id) {
+            bg_loginsToAdd.splice(i, 1);
         }
     }
 }
 
 function saveAddLogin(tab) {
-    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
-        if (loginsToAdd[i].tabId === tab.id) {
-            var loginToAdd = loginsToAdd[i];
+    for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
+        if (bg_loginsToAdd[i].tabId === tab.id) {
+            var loginToAdd = bg_loginsToAdd[i];
 
-            var tabDomain = utilsService.getDomain(tab.url);
+            var tabDomain = bg_utilsService.getDomain(tab.url);
             if (tabDomain && tabDomain === loginToAdd.domain) {
-                loginsToAdd.splice(i, 1);
-                loginService.encrypt({
+                bg_loginsToAdd.splice(i, 1);
+                bg_loginService.encrypt({
                     id: null,
                     folderId: null,
                     favorite: false,
@@ -477,7 +478,7 @@ function saveAddLogin(tab) {
                     notes: null
                 }).then(function (loginModel) {
                     var login = new Login(loginModel, true);
-                    loginService.saveWithServer(login).then(function (login) {
+                    bg_loginService.saveWithServer(login).then(function (login) {
                         ga('send', {
                             hitType: 'event',
                             eventAction: 'Added Login from Notification Bar'
@@ -491,23 +492,23 @@ function saveAddLogin(tab) {
 }
 
 function saveNever(tab) {
-    for (var i = loginsToAdd.length - 1; i >= 0; i--) {
-        if (loginsToAdd[i].tabId === tab.id) {
-            var loginToAdd = loginsToAdd[i];
+    for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
+        if (bg_loginsToAdd[i].tabId === tab.id) {
+            var loginToAdd = bg_loginsToAdd[i];
 
-            var tabDomain = utilsService.getDomain(tab.url);
+            var tabDomain = bg_utilsService.getDomain(tab.url);
             if (tabDomain && tabDomain === loginToAdd.domain) {
-                loginsToAdd.splice(i, 1);
-                var hostname = utilsService.getHostname(tab.url);
-                loginService.saveNeverDomain(hostname);
+                bg_loginsToAdd.splice(i, 1);
+                var hostname = bg_utilsService.getHostname(tab.url);
+                bg_loginService.saveNeverDomain(hostname);
                 messageTab(tab.id, 'closeNotificationBar');
             }
         }
     }
 }
 
-function checkLoginsToAdd(tab, callback) {
-    if (!loginsToAdd.length) {
+function checkbg_loginsToAdd(tab, callback) {
+    if (!bg_loginsToAdd.length) {
         if (callback) {
             callback();
         }
@@ -534,7 +535,7 @@ function checkLoginsToAdd(tab, callback) {
             return;
         }
 
-        var tabDomain = utilsService.getDomain(tab.url);
+        var tabDomain = bg_utilsService.getDomain(tab.url);
         if (!tabDomain) {
             if (callback) {
                 callback();
@@ -542,8 +543,8 @@ function checkLoginsToAdd(tab, callback) {
             return;
         }
 
-        for (var i = 0; i < loginsToAdd.length; i++) {
-            if (loginsToAdd[i].tabId === tab.id && loginsToAdd[i].domain === tabDomain) {
+        for (var i = 0; i < bg_loginsToAdd.length; i++) {
+            if (bg_loginsToAdd[i].tabId === tab.id && bg_loginsToAdd[i].domain === tabDomain) {
                 messageTab(tab.id, 'openNotificationBar', {
                     type: 'add'
                 }, function () {
@@ -598,8 +599,8 @@ function autofillPage() {
                     continue;
                 }
 
-                var fillScript = autofillService.generateFillScript(pageDetailsToAutoFill[i].details, loginToAutoFill.username,
-                    loginToAutoFill.password);
+                var fillScript = bg_autofillService.generateFillScript(pageDetailsToAutoFill[i].details,
+                    loginToAutoFill.username, loginToAutoFill.password);
                 if (tabId && fillScript && fillScript.script && fillScript.script.length) {
                     chrome.tabs.sendMessage(tabId, {
                         command: 'fillForm',
@@ -658,7 +659,7 @@ function loadContextMenuOptions(title, idSuffix, login) {
         });
     }
 
-    if (utilsService.isFirefox()) {
+    if (bg_utilsService.isFirefox()) {
         // Firefox does not support writing to the clipboard from background
         return;
     }
@@ -686,14 +687,14 @@ function loadContextMenuOptions(title, idSuffix, login) {
 
 // TODO: Fix callback hell by moving to promises
 function logout(expired, callback) {
-    userService.getUserId(function (userId) {
-        syncService.setLastSync(new Date(0), function () {
-            settingsService.clear(function () {
-                tokenService.clearToken(function () {
-                    cryptoService.clearKeys(function () {
-                        userService.clear(function () {
-                            loginService.clear(userId, function () {
-                                folderService.clear(userId, function () {
+    bg_userService.getUserId(function (userId) {
+        bg_syncService.setLastSync(new Date(0), function () {
+            bg_settingsService.clear(function () {
+                bg_tokenService.clearToken(function () {
+                    bg_cryptoService.clearKeys(function () {
+                        bg_userService.clear(function () {
+                            bg_loginService.clear(userId, function () {
+                                bg_folderService.clear(userId, function () {
                                     chrome.runtime.sendMessage({
                                         command: 'doneLoggingOut', expired: expired
                                     });
@@ -753,9 +754,9 @@ function fullSync(override) {
     lastSyncCheck = now;
 
     override = override || false;
-    syncService.getLastSync(function (lastSync) {
+    bg_syncService.getLastSync(function (lastSync) {
         if (override || !lastSync || (now - lastSync) >= syncInternal) {
-            syncService.fullSync(override || false, function () {
+            bg_syncService.fullSync(override || false, function () {
             });
         }
     });

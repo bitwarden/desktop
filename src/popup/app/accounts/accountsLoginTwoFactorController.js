@@ -6,6 +6,19 @@
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
 
+        var u2f = new U2f(function (data) {
+            $scope.login(data);
+            $scope.$apply();
+        }, function (error) {
+            toastr.error(error, i18nService.errorsOccurred);
+            $scope.$apply();
+        }, function (info) {
+            if (info === 'ready') {
+                $scope.u2fReady = true;
+            }
+            $scope.$apply();
+        });
+
         var constants = constantsService;
         var email = $stateParams.email;
         var masterPassword = $stateParams.masterPassword;
@@ -31,7 +44,15 @@
                 return;
             }
 
-            if ($scope.providerType === constants.twoFactorProvider.email ||
+            if ($scope.providerType === constants.twoFactorProvider.u2f) {
+                if (u2f) {
+                    u2f.stop();
+                }
+                else {
+                    return;
+                }
+            }
+            else if ($scope.providerType === constants.twoFactorProvider.email ||
                 $scope.providerType === constants.twoFactorProvider.authenticator) {
                 token = token.replace(' ', '')
             }
@@ -40,6 +61,9 @@
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
                 $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
+                u2f = null;
+            }, function () {
+                u2f.start();
             });
         };
 
@@ -67,13 +91,22 @@
         };
 
         $scope.anotherMethod = function () {
-            $analytics.eventTrack('Selected Another Two Factor Method');
+            u2f.stop();
+            u2f = null;
             $state.go('twoFactorMethods', {
                 animation: 'in-slide-up',
                 email: email,
                 masterPassword: masterPassword,
                 providers: providers,
                 provider: $scope.providerType
+            });
+        };
+
+        $scope.back = function () {
+            u2f.stop();
+            u2f = null;
+            $state.go('login', {
+                animation: 'out-slide-right'
             });
         };
 
@@ -97,6 +130,8 @@
         }
 
         function init() {
+            u2f.stop();
+
             $timeout(function () {
                 $('#code').focus();
 
@@ -115,19 +150,6 @@
                 else if ($scope.providerType === constants.twoFactorProvider.u2f) {
                     var params = providers[constants.twoFactorProvider.u2f];
                     var challenges = JSON.parse(params.Challenges);
-
-                    var u2f = new U2f(function (data) {
-                        $scope.login(data);
-                        $scope.$apply();
-                    }, function (error) {
-                        toastr.error(error, i18nService.errorsOccurred);
-                        $scope.$apply();
-                    }, function (info) {
-                        if (info === 'ready') {
-                            $scope.u2fReady = true;
-                        }
-                        $scope.$apply();
-                    });
 
                     u2f.init({
                         appId: challenges[0].appId,

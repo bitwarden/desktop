@@ -6,7 +6,7 @@ var CipherString = function () {
     this.initializationVector = null;
     this.mac = null;
 
-    var constants = chrome.extension.getBackgroundPage().constantsService;
+    var constants = chrome.extension.getBackgroundPage().bg_constantsService;
 
     if (arguments.length >= 2) {
         // ct and header
@@ -130,7 +130,7 @@ var Folder = function (obj, alreadyEncrypted) {
         }
 
         var self = this;
-        var cryptoService = chrome.extension.getBackgroundPage().cryptoService;
+        var cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService;
         return cryptoService.getOrgKey(orgId).then(function (orgKey) {
             return cryptoService.decrypt(self, orgKey);
         }).then(function (decValue) {
@@ -162,7 +162,7 @@ var Folder = function (obj, alreadyEncrypted) {
         }).then(function (val) {
             model.uri = val;
 
-            var utilsService = chrome.extension.getBackgroundPage().utilsService;
+            var utilsService = chrome.extension.getBackgroundPage().bg_utilsService;
             model.domain = utilsService.getDomain(val);
 
             if (self.username) {

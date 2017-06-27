@@ -25,7 +25,7 @@
         if (providers.hasOwnProperty(constants.twoFactorProvider.duo)) {
             add(constants.twoFactorProvider.duo);
         }
-        if (providers.hasOwnProperty(constants.twoFactorProvider.u2f) && (utilsService.isChrome() || !utilsService.isOpera())) {
+        if (providers.hasOwnProperty(constants.twoFactorProvider.u2f) && (utilsService.isChrome() || utilsService.isOpera())) {
             add(constants.twoFactorProvider.u2f);
         }
 

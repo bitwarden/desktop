@@ -17,7 +17,7 @@ function initFolderService() {
             id: folder.id
         };
 
-        return cryptoService.encrypt(folder.name).then(function (cs) {
+        return self.cryptoService.encrypt(folder.name).then(function (cs) {
             model.name = cs;
             return model;
         });
@@ -68,7 +68,7 @@ function initFolderService() {
         var deferred = Q.defer();
         var self = this;
 
-        cryptoService.getKey().then(function (key) {
+        self.cryptoService.getKey().then(function (key) {
             if (!key) {
                 deferred.reject();
                 return;
@@ -122,7 +122,7 @@ function initFolderService() {
 
         function apiSuccess(response) {
             folder.id = response.id;
-            userService.getUserId(function (userId) {
+            self.userService.getUserId(function (userId) {
                 var data = new FolderData(response, userId);
                 self.upsert(data, function () {
                     deferred.resolve(folder);
@@ -140,7 +140,7 @@ function initFolderService() {
 
         var self = this;
 
-        userService.getUserId(function (userId) {
+        self.userService.getUserId(function (userId) {
             var foldersKey = 'folders_' + userId;
 
             chrome.storage.local.get(foldersKey, function (obj) {
@@ -175,7 +175,7 @@ function initFolderService() {
 
         var self = this;
 
-        userService.getUserId(function (userId) {
+        self.userService.getUserId(function (userId) {
             var obj = {};
             obj['folders_' + userId] = folders;
             chrome.storage.local.set(obj, function () {
@@ -205,7 +205,7 @@ function initFolderService() {
 
         var self = this;
 
-        userService.getUserId(function (userId) {
+        self.userService.getUserId(function (userId) {
             var foldersKey = 'folders_' + userId;
 
             chrome.storage.local.get(foldersKey, function (obj) {

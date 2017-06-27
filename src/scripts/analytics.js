@@ -1,6 +1,6 @@
-﻿var gaTrackingId = chrome.extension.getBackgroundPage().utilsService.analyticsId();
+﻿var gaTrackingId = chrome.extension.getBackgroundPage().bg_utilsService.analyticsId();
 var gaFunc = null;
-var isFirefox = chrome.extension.getBackgroundPage().utilsService.isFirefox();
+var isFirefox = chrome.extension.getBackgroundPage().bg_utilsService.isFirefox();
 
 window.GoogleAnalyticsObject = 'ga';
 window[window.GoogleAnalyticsObject] = function (action, param1, param2, param3, param4) {
@@ -30,7 +30,7 @@ function gaTrackPageView(pagePath) {
     return '&t=pageview&dp=' + encodeURIComponent(pagePath);
 }
 
-chrome.extension.getBackgroundPage().appIdService.getAnonymousAppId(function (gaAnonAppId) {
+chrome.extension.getBackgroundPage().bg_appIdService.getAnonymousAppId(function (gaAnonAppId) {
     gaFunc = function (action, param1, param2, param3, param4) {
         if (action !== 'send' || !param1) {
             return;

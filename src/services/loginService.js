@@ -14,6 +14,8 @@ function initLoginService() {
     };
 
     LoginService.prototype.encrypt = function (login) {
+        var self = this;
+
         var model = {
             id: login.id,
             folderId: login.folderId,
@@ -22,21 +24,21 @@ function initLoginService() {
         };
 
         var orgKey = null;
-        return cryptoService.getOrgKey(login.organizationId).then(function (key) {
+        return self.cryptoService.getOrgKey(login.organizationId).then(function (key) {
             orgKey = key;
-            return cryptoService.encrypt(login.name, orgKey);
+            return self.cryptoService.encrypt(login.name, orgKey);
         }).then(function (cs) {
             model.name = cs;
-            return cryptoService.encrypt(login.uri, orgKey);
+            return self.cryptoService.encrypt(login.uri, orgKey);
         }).then(function (cs) {
             model.uri = cs;
-            return cryptoService.encrypt(login.username, orgKey);
+            return self.cryptoService.encrypt(login.username, orgKey);
         }).then(function (cs) {
             model.username = cs;
-            return cryptoService.encrypt(login.password, orgKey);
+            return self.cryptoService.encrypt(login.password, orgKey);
         }).then(function (cs) {
             model.password = cs;
-            return cryptoService.encrypt(login.notes, orgKey);
+            return self.cryptoService.encrypt(login.notes, orgKey);
         }).then(function (cs) {
             model.notes = cs;
             return model;
@@ -91,7 +93,7 @@ function initLoginService() {
         var deferred = Q.defer();
         var self = this;
 
-        cryptoService.getKey().then(function (key) {
+        self.cryptoService.getKey().then(function (key) {
             if (!key) {
                 deferred.reject();
                 return;
@@ -209,7 +211,7 @@ function initLoginService() {
 
         var self = this;
 
-        userService.getUserId(function (userId) {
+        self.userService.getUserId(function (userId) {
             var loginsKey = 'sites_' + userId;
 
             chrome.storage.local.get(loginsKey, function (obj) {
@@ -244,7 +246,7 @@ function initLoginService() {
 
         var self = this;
 
-        userService.getUserId(function (userId) {
+        self.userService.getUserId(function (userId) {
             var obj = {};
             obj['sites_' + userId] = logins;
             chrome.storage.local.set(obj, function () {
@@ -274,7 +276,7 @@ function initLoginService() {
 
         var self = this;
 
-        userService.getUserId(function (userId) {
+        self.userService.getUserId(function (userId) {
             var loginsKey = 'sites_' + userId;
 
             chrome.storage.local.get(loginsKey, function (obj) {
