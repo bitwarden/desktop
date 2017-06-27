@@ -3,16 +3,19 @@
     this.error = errorCallback;
     this.info = infoCallback;
     this.iframe = null;
+    this.connectorLink = document.createElement('a');
 };
 
 U2f.prototype.init = function (data) {
     var self = this;
 
-    iframe = document.getElementById('u2f_iframe');
-    iframe.src = 'https://vault.bitwarden.com/u2f-connector.html' +
+    self.connectorLink.href = 'https://vault.bitwarden.com/u2f-connector.html' +
         '?data=' + this.base64Encode(JSON.stringify(data)) +
         '&parent=' + encodeURIComponent(document.location.href) +
         '&v=1';
+
+    self.iframe = document.getElementById('u2f_iframe');
+    self.iframe.src = self.connectorLink.href;
 
     window.addEventListener('message', function (event) {
         if (!self.validMessage(event)) {
@@ -36,12 +39,29 @@ U2f.prototype.init = function (data) {
 };
 
 U2f.prototype.validMessage = function (event) {
-    if (event.origin !== 'https://vault.bitwarden.com') {
+    if (!event.origin || event.origin === '' || event.origin !== this.connectorLink.origin) {
         return false;
     }
 
     return event.data.indexOf('success|') === 0 || event.data.indexOf('error|') === 0 || event.data.indexOf('info|') === 0;
 }
+
+U2f.prototype.stop = function () {
+    this.sendMessage('stop');
+};
+
+U2f.prototype.start = function () {
+    this.sendMessage('start');
+};
+
+U2f.prototype.sendMessage = function (message) {
+    var self = this;
+    if (!self.iframe || !self.iframe.src || !self.iframe.contentWindow) {
+        return;
+    }
+
+    self.iframe.contentWindow.postMessage(message, self.iframe.src);
+};
 
 U2f.prototype.base64Encode = function (str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
