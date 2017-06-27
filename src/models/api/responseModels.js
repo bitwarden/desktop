@@ -72,6 +72,7 @@ var IdentityTokenResponse = function (response) {
 
     this.privateKey = response.PrivateKey;
     this.key = response.Key;
+    this.twoFactorToken = response.TwoFactorToken;
 };
 
 var ListResponse = function (data) {

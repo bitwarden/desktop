@@ -45,7 +45,9 @@ function initApiService() {
             error: function (jqXHR, textStatus, errorThrown) {
                 if (jqXHR.responseJSON && jqXHR.responseJSON.TwoFactorProviders2 &&
                     Object.keys(jqXHR.responseJSON.TwoFactorProviders2).length) {
-                    successWithTwoFactor(jqXHR.responseJSON.TwoFactorProviders2);
+                    self.tokenService.clearTwoFactorToken(tokenRequest.email, function () {
+                        successWithTwoFactor(jqXHR.responseJSON.TwoFactorProviders2);
+                    });
                 }
                 else {
                     error(new ErrorResponse(jqXHR, true));
@@ -56,12 +58,14 @@ function initApiService() {
 
     // Two Factor APIs
 
-    ApiService.prototype.postTwoFactorEmail = function (success, error) {
+    ApiService.prototype.postTwoFactorEmail = function (request, success, error) {
         var self = this;
         $.ajax({
             type: 'POST',
-            url: self.baseUrl + '/two-factor/send-email?' + token,
-            dataType: 'json',
+            url: self.baseUrl + '/two-factor/send-email-login',
+            dataType: 'text',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(request),
             success: function (response) {
                 success(response);
             },

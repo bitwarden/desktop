@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.accounts')
 
-    .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService,
+    .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService, SweetAlert,
         $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService) {
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
@@ -11,11 +11,17 @@
         var masterPassword = $stateParams.masterPassword;
         var providers = $stateParams.providers;
 
+        if (!email || !masterPassword || !providers) {
+            $state.go('login');
+            return;
+        }
+
+        $scope.providerType = $stateParams.provider ? $stateParams.provider : getDefaultProvider(providers);
         $scope.twoFactorEmail = null;
         $scope.token = null;
         $scope.constantsProvider = constants.twoFactorProvider;
-        $scope.providerType = $stateParams.provider ? $stateParams.provider : getDefaultProvider(providers);
         $scope.u2fReady = false;
+        $scope.remember = { checked: false };
         init();
 
         $scope.loginPromise = null;
@@ -25,7 +31,12 @@
                 return;
             }
 
-            $scope.loginPromise = authService.logIn(email, masterPassword, $scope.providerType, token);
+            if ($scope.providerType === constants.twoFactorProvider.email ||
+                $scope.providerType === constants.twoFactorProvider.authenticator) {
+                token = token.replace(' ', '')
+            }
+
+            $scope.loginPromise = authService.logIn(email, masterPassword, $scope.providerType, token, $scope.remember.checked);
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
                 $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
@@ -43,16 +54,15 @@
             }
 
             var key = cryptoService.makeKey(masterPassword, email);
-            var hash = cryptoService.hashPassword(masterPassword, key);
-            apiService.postTwoFactorEmail({
-                email: email,
-                masterPasswordHash: hash
-            }, function () {
-                if (doToast) {
-                    toastr.success('Verification email sent to ' + $scope.twoFactorEmail + '.');
-                }
-            }, function () {
-                toastr.error('Could not send verification email.');
+            cryptoService.hashPassword(masterPassword, key, function (hash) {
+                var request = new TwoFactorEmailRequest(email, hash);
+                apiService.postTwoFactorEmail(request, function () {
+                    if (doToast) {
+                        toastr.success('Verification email sent to ' + $scope.twoFactorEmail + '.');
+                    }
+                }, function () {
+                    toastr.error('Could not send verification email.');
+                });
             });
         };
 
@@ -131,7 +141,27 @@
                 else if ($scope.providerType === constants.twoFactorProvider.email) {
                     var params = providers[constants.twoFactorProvider.email];
                     $scope.twoFactorEmail = params.Email;
-                    if (Object.keys(providers).length > 1) {
+
+                    if (chrome.extension.getViews({ type: 'popup' }).length > 0) {
+                        SweetAlert.swal({
+                            title: 'Two-step Login',
+                            text: 'Clicking outside the popup window to check your email for your verification code will ' +
+                            'cause this popup to close. ' +
+                            'Do you want to open this popup in a new window so that it does not close?',
+                            showCancelButton: true,
+                            confirmButtonText: i18nService.yes,
+                            cancelButtonText: i18nService.no
+                        }, function (confirmed) {
+                            if (confirmed) {
+                                chrome.tabs.create({ url: '/popup/index.html#!/login' });
+                                return;
+                            }
+                            else if (Object.keys(providers).length > 1) {
+                                $scope.sendEmail(false);
+                            }
+                        });
+                    }
+                    else if (Object.keys(providers).length > 1) {
                         $scope.sendEmail(false);
                     }
                 }

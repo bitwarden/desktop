@@ -102,6 +102,46 @@ function initTokenService() {
         });
     };
 
+    TokenService.prototype.setTwoFactorToken = function (token, email, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        var obj = {};
+        obj['twoFactorToken_' + email] = token;
+
+        chrome.storage.local.set(obj, function () {
+            callback();
+        });
+    };
+
+    TokenService.prototype.getTwoFactorToken = function (email, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        var prop = 'twoFactorToken_' + email;
+
+        chrome.storage.local.get(prop, function (obj) {
+            if (obj && obj[prop]) {
+                callback(obj[prop]);
+                return;
+            }
+
+            return callback(null);
+        });
+    };
+
+    TokenService.prototype.clearTwoFactorToken = function (email, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        chrome.storage.local.remove('twoFactorToken_' + email, function () {
+            callback();
+        });
+    };
+
     TokenService.prototype.clearAuthBearer = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';

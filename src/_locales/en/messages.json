@@ -131,10 +131,6 @@
     "message": "Verification Code",
     "description": "Verification Code"
   },
-  "enterTwoStepVerCode": {
-    "message": "Enter your two-step verification code.",
-    "description": "Enter your two-step verification code."
-  },
   "account": {
     "message": "Account",
     "description": "Account"

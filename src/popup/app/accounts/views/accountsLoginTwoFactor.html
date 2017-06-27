@@ -11,6 +11,14 @@
         <div class="title">{{i18n.verificationCode}}</div>
     </div>
     <div class="content">
+        <div class="two-factor-key-page">
+            <p ng-if="providerType === constantsProvider.authenticator">
+                Enter the 6 digit verification code from your authenticator app.
+            </p>
+            <p ng-if="providerType === constantsProvider.email">
+                Enter the 6 digit verification code that was emailed to <b>{{twoFactorEmail}}</b>.
+            </p>
+        </div>
         <div class="list">
             <div class="list-section">
                 <div class="list-section-items">
@@ -21,14 +29,14 @@
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="remember">Remember me</label>
-                        <input id="remember" name="Remember" type="checkbox" ng-model="remember">
+                        <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
                     </div>
-                </div>
-                <div class="list-section-footer">
-                    {{i18n.enterTwoStepVerCode}}
                 </div>
             </div>
         </div>
+        <p class="text-center text-accent" ng-if="providerType === constantsProvider.email">
+            <a href="#" stop-click ng-click="sendEmail(true)">Send verification code email again</a>
+        </p>
         <p class="text-center text-accent">
             <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
         </p>
@@ -61,6 +69,10 @@
         <div class="title">YubiKey</div>
     </div>
     <div class="content">
+        <div class="two-factor-key-page">
+            <p>Insert your YubiKey into your computer's USB port, then touch its button.</p>
+            <img src="../images/two-factor/yubikey.jpg" alt="" class="img-rounded img-responsive" />
+        </div>
         <div class="list">
             <div class="list-section">
                 <div class="list-section-items">
@@ -71,11 +83,8 @@
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="remember">Remember me</label>
-                        <input id="remember" name="Remember" type="checkbox" ng-model="remember">
+                        <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
                     </div>
-                </div>
-                <div class="list-section-footer">
-                    Touch the YubiKey button.
                 </div>
             </div>
         </div>
@@ -96,10 +105,27 @@
         <div class="title">FIDO U2F</div>
     </div>
     <div class="content">
-        <div ng-if="!u2fReady">Loading...</div>
-        <div ng-if="u2fReady">Touch button</div>
-        <iframe id="u2f_iframe" class="hide"></iframe>
-        <p class="text-center text-accent">
+        <div class="two-factor-key-page">
+            <iframe id="u2f_iframe" class="hide"></iframe>
+            <p ng-if="!u2fReady">Loading...</p>
+            <div ng-if="u2fReady">
+                <p>
+                    Insert your Security Key into your computer's USB port. If it has a button, touch it.
+                </p>
+                <img src="../images/two-factor/u2fkey.jpg" alt="" class="img-rounded img-responsive" />
+            </div>
+        </div>
+        <div class="list">
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-checkbox">
+                        <label for="remember">Remember me</label>
+                        <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-accent text-center">
             <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
         </p>
     </div>
