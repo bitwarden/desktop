@@ -106,7 +106,7 @@
     </div>
     <div class="content">
         <div class="two-factor-key-page">
-            <iframe id="u2f_iframe"></iframe>
+            <iframe id="u2f_iframe" class="hide"></iframe>
             <p ng-if="!u2fReady">Loading...</p>
             <div ng-if="u2fReady">
                 <p>
@@ -130,3 +130,27 @@
         </p>
     </div>
 </form>
+
+<div ng-if="providerType === null">
+    <div class="header">
+        <div class="left">
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+        </div>
+        <div class="title">Login Unavailable</div>
+    </div>
+    <div class="content">
+        <div class="two-factor-key-page">
+            <p>
+                This account has two-factor login enabled, however, none of the configured two-factor providers are
+                supported by this web browser.
+            </p>
+            <p>
+                Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported
+                across web browsers (such as an authenticator app).
+            </p>
+        </div>
+        <p class="text-accent text-center">
+            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+        </p>
+    </div>
+</div>

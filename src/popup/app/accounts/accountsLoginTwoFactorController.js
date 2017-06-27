@@ -67,11 +67,6 @@
             });
         };
 
-        $scope.lostApp = function () {
-            $analytics.eventTrack('Selected Lost 2FA App');
-            chrome.tabs.create({ url: 'https://help.bitwarden.com/article/lost-two-step-device/' });
-        };
-
         $scope.sendEmail = function (doToast) {
             if ($scope.providerType !== constants.twoFactorProvider.email) {
                 return;
@@ -126,7 +121,7 @@
                     providerPriority = provider[0].priority;
                 }
             }
-            return parseInt(providerType);
+            return providerType == null ? null : parseInt(providerType);
         }
 
         function init() {

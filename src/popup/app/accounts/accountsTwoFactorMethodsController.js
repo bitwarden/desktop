@@ -2,7 +2,7 @@
     .module('bit.accounts')
 
     .controller('accountsTwoFactorMethodsController', function ($scope, $state, $stateParams, constantsService,
-        utilsService, i18nService) {
+        utilsService, i18nService, $analytics) {
         $scope.i18n = i18nService;
 
         var constants = constantsService;
@@ -47,6 +47,11 @@
                 providers: providers,
                 provider: provider
             });
+        };
+
+        $scope.recover = function () {
+            $analytics.eventTrack('Selected Recover');
+            chrome.tabs.create({ url: 'https://help.bitwarden.com/article/lost-two-step-device/' });
         };
 
         function add(type) {
