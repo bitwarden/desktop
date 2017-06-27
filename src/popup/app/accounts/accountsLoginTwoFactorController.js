@@ -29,7 +29,8 @@
             return;
         }
 
-        $scope.providerType = $stateParams.provider ? $stateParams.provider : getDefaultProvider(providers);
+        $scope.providerType = $stateParams.provider || $stateParams.provider === 0 ? $stateParams.provider :
+            getDefaultProvider(providers);
         $scope.twoFactorEmail = null;
         $scope.token = null;
         $scope.constantsProvider = constants.twoFactorProvider;
