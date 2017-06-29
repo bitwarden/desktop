@@ -54,6 +54,19 @@
         <div id="duoFrameWrapper">
             <iframe id="duo_iframe"></iframe>
         </div>
+        <div class="list">
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-checkbox">
+                        <label for="remember">Remember me</label>
+                        <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-accent text-center">
+            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+        </p>
     </div>
 </form>
 
