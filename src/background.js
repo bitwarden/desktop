@@ -10,7 +10,7 @@ var bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsSer
 var bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService);
 var bg_settingsService = new SettingsService(bg_userService);
 var bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService);
-var bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService);
+var bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService);
 var bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_loginService, setIcon,
     refreshBadgeAndMenu);
 var bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,

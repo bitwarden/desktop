@@ -1,7 +1,8 @@
-function FolderService(cryptoService, userService, apiService) {
+function FolderService(cryptoService, userService, apiService, i18nService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
+    this.i18nService = i18nService;
     this.decryptedFolderCache = null;
 
     initFolderService();
@@ -82,7 +83,7 @@ function initFolderService() {
             var promises = [];
             var decFolders = [{
                 id: null,
-                name: i18nService.noneFolder
+                name: self.i18nService.noneFolder
             }];
             self.getAll(function (folders) {
                 for (var i = 0; i < folders.length; i++) {
