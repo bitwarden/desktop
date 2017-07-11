@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr, $q,
-        $analytics, i18nService, utilsService, totpService, $timeout) {
+        $analytics, i18nService, utilsService, totpService, $timeout, tokenService) {
         $scope.i18n = i18nService;
         var from = $stateParams.from,
             totpInterval = null;
@@ -39,7 +39,7 @@ angular
                     $scope.login.showLaunch = false;
                 }
 
-                if (model.totp && (login.organizationUseTotp || false)) {
+                if (model.totp && (login.organizationUseTotp || tokenService.getPremium())) {
                     totpUpdateCode();
                     totpTick();
 

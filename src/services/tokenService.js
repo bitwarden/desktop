@@ -254,6 +254,16 @@ function initTokenService() {
         return decoded.name;
     };
 
+    TokenService.prototype.getPremium = function () {
+        var decoded = this.decodeToken();
+
+        if (typeof decoded.premium === 'undefined') {
+            return false;
+        }
+
+        return !!decoded.premium;
+    };
+
     TokenService.prototype.getIssuer = function () {
         var decoded = this.decodeToken();
 
