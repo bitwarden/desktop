@@ -702,5 +702,17 @@
   "learnMore": {
     "message": "Learn more",
     "description": "Learn more"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Authenticator Key (TOTP)",
+    "description": "Authenticator Key (TOTP)"
+  },
+  "verificationCodeTotp": {
+    "message": "Verification Code (TOTP)",
+    "description": "Verification Code (TOTP)"
+  },
+  "copyVerificationCode": {
+    "message": "Copy Verification Code",
+    "description": "Copy Verification Code"
   }
 }

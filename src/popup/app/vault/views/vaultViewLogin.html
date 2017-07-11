@@ -48,8 +48,9 @@
                     <span id="password" ng-show="showPassword" class="monospaced">{{login.password}}</span>
                 </div>
                 <div class="list-section-item totp" ng-class="{'low': totpLow}" ng-if="login.totp && totpCode">
-                    <a class="btn-list" href="" title="Copy TOTP" ngclipboard ngclipboard-error="clipboardError(e)"
-                       ngclipboard-success="clipboardSuccess(e, 'Totp')" data-clipboard-text="{{totpCode}}">
+                    <a class="btn-list" href="" title="{{i18n.copyVerificationCode}}"
+                       ngclipboard ngclipboard-error="clipboardError(e)"
+                       ngclipboard-success="clipboardSuccess(e, i18n.verificationCodeTotp)" data-clipboard-text="{{totpCode}}">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
                     <span class="totp-countdown">
@@ -62,8 +63,8 @@
                             </g>
                         </svg>
                     </span>
-                    <span class="item-label">Verification Code (TOTP)</span>
-                    <span id="totp" class="totp-code" ng-class="{'text-danger': totpLow}">{{totpCodeFormatted}}</span>
+                    <span class="item-label">{{i18n.verificationCodeTotp}}</span>
+                    <span id="totp" class="totp-code">{{totpCodeFormatted}}</span>
                 </div>
             </div>
         </div>
