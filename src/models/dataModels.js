@@ -20,6 +20,8 @@ var LoginData = function (response, userId) {
     this.organizationId = response.organizationId;
     this.folderId = response.folderId;
     this.userId = userId;
+    this.edit = response.edit;
+    this.organizationUseTotp = response.organizationUseTotp;
 
     if (response instanceof LoginResponse) {
         this.name = response.name;

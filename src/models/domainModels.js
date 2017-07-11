@@ -93,6 +93,8 @@ var Login = function (obj, alreadyEncrypted) {
     this.organizationId = obj.organizationId ? obj.organizationId : null;
     this.folderId = obj.folderId ? obj.folderId : null;
     this.favorite = obj.favorite ? true : false;
+    this.organizationUseTotp = obj.organizationUseTotp ? true : false;
+    this.edit = obj.edit ? true : false;
 
     if (alreadyEncrypted === true) {
         this.name = obj.name ? obj.name : null;

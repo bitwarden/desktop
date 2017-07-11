@@ -39,7 +39,7 @@ angular
                     $scope.login.showLaunch = false;
                 }
 
-                if (model.totp) {
+                if (model.totp && (login.organizationUseTotp || false)) {
                     totpUpdateCode();
                     totpTick();
 
