@@ -112,6 +112,30 @@ var Login = function (obj, alreadyEncrypted) {
         this.notes = obj.notes ? new CipherString(obj.notes) : null;
         this.totp = obj.totp ? new CipherString(obj.totp) : null;
     }
+
+    if (response.attachments) {
+        this.attachments = [];
+        for (var i = 0; i < response.attachments.length; i++) {
+            this.attachments.push(new Attachment(response.attachments[i], alreadyEncrypted));
+        }
+    }
+    else {
+        this.attachments = null;
+    }
+};
+
+var Attachment = function (obj, alreadyEncrypted) {
+    this.id = obj.id ? obj.id : null;
+    this.url = obj.url ? obj.url : null;
+    this.size = obj.size ? obj.size : null;
+    this.sizeName = obj.sizeName ? obj.sizeName : null;
+
+    if (alreadyEncrypted === true) {
+        this.fileName = obj.fileName ? obj.fileName : null;
+    }
+    else {
+        this.fileName = obj.fileName ? new CipherString(obj.fileName) : null;
+    }
 };
 
 var Folder = function (obj, alreadyEncrypted) {

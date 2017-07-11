@@ -45,4 +45,19 @@ var LoginData = function (response, userId) {
 
     this.favorite = response.favorite;
     this.revisionDate = response.revisionDate;
+
+    if (response.attachments) {
+        this.attachments = [];
+        for (var i = 0; i < response.attachments.length; i++) {
+            this.attachments.push(new AttachmentData(response.attachments[i]));
+        }
+    }
+};
+
+var AttachmentData = function (response) {
+    this.id = response.id;
+    this.url = response.url;
+    this.fileName = response.fileName;
+    this.size = response.size;
+    this.sizeName = response.sizeName;
 };
