@@ -2,9 +2,10 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr, $q,
-        $analytics, i18nService, utilsService) {
+        $analytics, i18nService, utilsService, totpService, $timeout) {
         $scope.i18n = i18nService;
-        var from = $stateParams.from;
+        var from = $stateParams.from,
+            totpInterval = null;
 
         $scope.login = null;
         loginService.get($stateParams.loginId, function (login) {
@@ -36,6 +37,19 @@ angular
                 }
                 else {
                     $scope.login.showLaunch = false;
+                }
+
+                if (model.totp) {
+                    totpUpdateCode();
+                    totpTick();
+
+                    if (totpInterval) {
+                        clearInterval(totpInterval);
+                    }
+
+                    totpInterval = setInterval(function () {
+                        totpTick();
+                    }, 1000);
                 }
             });
         });
@@ -88,5 +102,47 @@ angular
         $scope.togglePassword = function () {
             $analytics.eventTrack('Toggled Password');
             $scope.showPassword = !$scope.showPassword;
+        };
+
+        $scope.$on("$destroy", function () {
+            if (totpInterval) {
+                clearInterval(totpInterval);
+            }
+        });
+
+        function totpUpdateCode() {
+            if (!$scope.login.totp) {
+                return;
+            }
+
+            totpService.getCode($scope.login.totp).then(function (code) {
+                $timeout(function () {
+                    if (code) {
+                        $scope.totpCodeFormatted = code.substring(0, 3) + ' ' + code.substring(3);
+                        $scope.totpCode = code;
+                    }
+                    else {
+                        $scope.totpCode = $scope.totpCodeFormatted = null;
+                        if (totpInterval) {
+                            clearInterval(totpInterval);
+                        }
+                    }
+                });
+            });
+        };
+
+        function totpTick() {
+            $timeout(function () {
+                var epoch = Math.round(new Date().getTime() / 1000.0);
+                var mod = (epoch % 30);
+                var sec = 30 - mod;
+
+                $scope.totpSec = sec;
+                $scope.totpDash = (2.62 * mod).toFixed(2);
+                $scope.totpLow = sec <= 7;
+                if (epoch % 30 == 0) {
+                    totpUpdateCode();
+                }
+            });
         };
     });

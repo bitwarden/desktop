@@ -506,3 +506,58 @@
         border: none;
     }
 }
+
+.totp {
+    .totp-code {
+        font-family: @font-family-monospace;
+        font-size: 1.1em;
+    }
+
+    .totp-countdown {
+        margin: 3px 3px 0 0;
+        display: block;
+        user-select: none;
+        float: right;
+
+        .totp-sec {
+            font-size: 0.85em;
+            position: absolute;
+            line-height: 32px;
+            width: 32px;
+            text-align: center;
+        }
+
+        svg {
+            width: 32px;
+            height: 32px;
+            transform: rotate(-90deg);
+        }
+
+        .totp-circle {
+            stroke: @brand-primary;
+            fill: none;
+
+            &.inner {
+                stroke-width: 3;
+                stroke-dasharray: 78.6;
+                stroke-dashoffset: 0px;
+            }
+
+            &.outer {
+                stroke-width: 2;
+                stroke-dasharray: 88;
+                stroke-dashoffset: 0px;
+            }
+        }
+    }
+
+    &.low {
+        .totp-sec, .totp-code {
+            color: @brand-danger;
+        }
+
+        .totp-circle {
+            stroke: @brand-danger;
+        }
+    }
+}

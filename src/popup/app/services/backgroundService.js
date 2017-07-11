@@ -45,4 +45,7 @@
     })
     .factory('lockService', function () {
         return chrome.extension.getBackgroundPage().bg_lockService;
+    })
+    .factory('totpService', function () {
+        return chrome.extension.getBackgroundPage().bg_totpService;
     });

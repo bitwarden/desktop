@@ -8,8 +8,8 @@ function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
     //this.identityBaseUrl = 'https://localhost:44392';
 
     // Desktop external
-    //this.baseUrl = 'http://192.168.1.6:4000';
-    //this.identityBaseUrl = 'http://192.168.1.6:33656';
+    //this.baseUrl = 'http://192.168.1.4:4000';
+    //this.identityBaseUrl = 'http://192.168.1.4:33656';
 
     // Preview
     //this.baseUrl = 'https://preview-api.bitwarden.com';
@@ -441,7 +441,7 @@ function initApiService() {
                             deviceName: self.utilsService.getBrowser()
                         }, function (token) {
                             self.tokenService.clearAuthBearer(function () {
-                                tokenService.setTokens(token.accessToken, token.refreshToken, function () {
+                                self.tokenService.setTokens(token.accessToken, token.refreshToken, function () {
                                     resolveTokenQs(token.accessToken, self, deferred);
                                 });
                             });
@@ -462,7 +462,7 @@ function initApiService() {
                             client_id: 'browser',
                             refresh_token: refreshToken
                         }, function (token) {
-                            tokenService.setTokens(token.accessToken, token.refreshToken, function () {
+                            self.tokenService.setTokens(token.accessToken, token.refreshToken, function () {
                                 resolveTokenQs(token.accessToken, self, deferred);
                             });
                         }, function (jqXHR) {

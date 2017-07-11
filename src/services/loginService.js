@@ -41,6 +41,9 @@ function initLoginService() {
             return self.cryptoService.encrypt(login.notes, orgKey);
         }).then(function (cs) {
             model.notes = cs;
+            return self.cryptoService.encrypt(login.totp, orgKey);
+        }).then(function (cs) {
+            model.totp = cs;
             return model;
         });
     };
@@ -193,7 +196,7 @@ function initLoginService() {
 
         function apiSuccess(response) {
             login.id = response.id;
-            userService.getUserId(function (userId) {
+            self.userService.getUserId(function (userId) {
                 var data = new LoginData(response, userId);
                 self.upsert(data, function () {
                     deferred.resolve(login);

@@ -17,6 +17,7 @@ var bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userS
     bg_cryptoService, logout);
 var bg_autofillService = new AutofillService();
 var bg_passwordGenerationService = new PasswordGenerationService();
+var bg_totpService = new TotpService();
 
 if (chrome.commands) {
     chrome.commands.onCommand.addListener(function (command) {
