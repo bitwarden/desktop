@@ -4,8 +4,17 @@ var CipherResponse = function (response) {
     this.folderId = response.FolderId;
     this.type = response.Type;
     this.favorite = response.Favorite;
+    this.edit = response.Edit;
+    this.organizationUseTotp = response.OrganizationUseTotp;
     this.data = response.Data;
     this.revisionDate = response.RevisionDate;
+
+    if (response.Attachments) {
+        this.attachments = [];
+        for (var i = 0; i < response.Attachments.length; i++) {
+            this.attachments.push(new AttachmentResponse(response.Attachments[i]));
+        }
+    }
 };
 
 var FolderResponse = function (response) {
@@ -18,16 +27,26 @@ var LoginResponse = function (response) {
     this.id = response.Id;
     this.organizationId = response.OrganizationId;
     this.folderId = response.FolderId;
+    this.edit = response.Edit;
     this.name = response.Name;
     this.uri = response.Uri;
     this.username = response.Username;
     this.password = response.Password;
     this.notes = response.Notes;
+    this.totp = response.Totp;
     this.favorite = response.Favorite;
     this.revisionDate = response.RevisionDate;
+    this.organizationUseTotp = response.OrganizationUseTotp;
 
     if (response.Folder) {
         this.folder = new FolderResponse(response.Folder);
+    }
+
+    if (response.Attachments) {
+        this.attachments = [];
+        for (var i = 0; i < response.Attachments.length; i++) {
+            this.attachments.push(new AttachmentResponse(response.Attachments[i]));
+        }
     }
 };
 
@@ -35,7 +54,9 @@ var ProfileResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;
     this.email = response.Email;
+    this.emailVerified = response.EmailVerified;
     this.masterPasswordHint = response.MasterPasswordHint;
+    this.premium = response.Premium;
     this.culture = response.Culture;
     this.twoFactorEnabled = response.TwoFactorEnabled;
     this.key = response.Key;
@@ -58,10 +79,23 @@ var KeysResponse = function (response) {
 var ProfileOrganizationResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;
+    this.useGroups = response.UseGroups;
+    this.useDirectory = response.UseDirectory;
+    this.useTotp = response.UseTotp;
+    this.seats = response.Seats;
+    this.maxCollections = response.MaxCollections;
+    this.maxStorageGb = response.MaxStorageGb;
     this.key = response.Key;
     this.status = response.Status;
     this.type = response.Type;
-    this.enabled = response.Enabled;
+};
+
+var AttachmentResponse = function (response) {
+    this.id = response.Id;
+    this.url = response.Url;
+    this.fileName = response.FileName;
+    this.size = response.Size;
+    this.sizeName = response.SizeName;
 };
 
 var IdentityTokenResponse = function (response) {

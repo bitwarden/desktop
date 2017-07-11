@@ -6,6 +6,7 @@
     this.username = login.username ? login.username.encryptedString : null;
     this.password = login.password ? login.password.encryptedString : null;
     this.notes = login.notes ? login.notes.encryptedString : null;
+    this.totp = login.totp ? login.totp.encryptedString : null;
     this.favorite = login.favorite;
 };
 

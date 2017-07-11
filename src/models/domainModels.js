@@ -100,6 +100,7 @@ var Login = function (obj, alreadyEncrypted) {
         this.username = obj.username ? obj.username : null;
         this.password = obj.password ? obj.password : null;
         this.notes = obj.notes ? obj.notes : null;
+        this.totp = obj.totp ? obj.totp : null;
     }
     else {
         this.name = obj.name ? new CipherString(obj.name) : null;
@@ -107,6 +108,7 @@ var Login = function (obj, alreadyEncrypted) {
         this.username = obj.username ? new CipherString(obj.username) : null;
         this.password = obj.password ? new CipherString(obj.password) : null;
         this.notes = obj.notes ? new CipherString(obj.notes) : null;
+        this.totp = obj.totp ? new CipherString(obj.totp) : null;
     }
 };
 
@@ -183,6 +185,12 @@ var Folder = function (obj, alreadyEncrypted) {
             return null;
         }).then(function (val) {
             model.notes = val;
+            if (self.totp) {
+                return self.totp.decrypt(self.organizationId);
+            }
+            return null;
+        }).then(function (val) {
+            model.totp = val;
             deferred.resolve(model);
         });
 

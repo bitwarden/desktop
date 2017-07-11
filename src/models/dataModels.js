@@ -27,13 +27,15 @@ var LoginData = function (response, userId) {
         this.username = response.username;
         this.password = response.password;
         this.notes = response.notes;
+        this.totp = response.totp;
     }
     else if (response instanceof CipherResponse) {
         this.name = response.data.Name;
         this.uri = response.data.Uri;
         this.username = response.data.Username;
         this.password  = response.data.Password;
-        this.notes = response.notes = response.data.Notes;;
+        this.notes = response.notes = response.data.Notes;
+        this.totp = response.notes = response.data.Totp;
     }
     else {
         throw 'unsupported instance';
