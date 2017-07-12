@@ -339,6 +339,25 @@ function initApiService() {
         });
     };
 
+    ApiService.prototype.deleteFolder = function (id, success, error) {
+        var self = this;
+        handleTokenState(self).then(function (token) {
+            $.ajax({
+                type: 'POST',
+                url: self.baseUrl + '/folders/' + id + '/delete?' + token,
+                dataType: 'text',
+                success: function (response) {
+                    success();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, false, self);
+                }
+            });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true, self);
+        });
+    };
+
     // Cipher APIs
 
     ApiService.prototype.getCipher = function (id, success, error) {

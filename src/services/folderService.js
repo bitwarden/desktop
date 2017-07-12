@@ -18,7 +18,7 @@ function initFolderService() {
             id: folder.id
         };
 
-        return self.cryptoService.encrypt(folder.name).then(function (cs) {
+        return this.cryptoService.encrypt(folder.name).then(function (cs) {
             model.name = cs;
             return model;
         });
@@ -206,6 +206,8 @@ function initFolderService() {
 
         var self = this;
 
+        // TODO: Delete folder reference for associated ciphers
+
         self.userService.getUserId(function (userId) {
             var foldersKey = 'folders_' + userId;
 
@@ -244,7 +246,7 @@ function initFolderService() {
         var deferred = Q.defer();
 
         var self = this;
-        self.apiService.deleteCipher(id, function () {
+        self.apiService.deleteFolder(id, function () {
             self.delete(id, function () {
                 deferred.resolve();
             });
