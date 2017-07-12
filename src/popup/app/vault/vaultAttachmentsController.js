@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultAttachmentsController', function ($scope, $state, $stateParams, loginService, $q, toastr,
-        SweetAlert, utilsService, $analytics, i18nService) {
+        SweetAlert, utilsService, $analytics, i18nService, cryptoService) {
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
 
@@ -12,8 +12,31 @@ angular
             });
         });
 
+        $scope.canUseAttachments = false;
+        cryptoService.getEncKey().then(function (key) {
+            $scope.canUseAttachments = !!key;
+            if (!$scope.canUseAttachments) {
+                SweetAlert.swal({
+                    title: i18nService.featureUnavailable,
+                    text: i18nService.updateKey,
+                    showCancelButton: true,
+                    confirmButtonText: i18nService.learnMore,
+                    cancelButtonText: i18nService.cancel
+                }, function (confirmed) {
+                    if (confirmed) {
+                        chrome.tabs.create({ url: 'https://help.bitwarden.com' });
+                    }
+                });
+            }
+        });
+
         $scope.submitPromise = null;
         $scope.submit = function () {
+            if (!$scope.canUseAttachments) {
+                toastr.error(i18nService.updateKey);
+                return;
+            }
+
             var files = document.getElementById('file').files;
             if (!files || !files.length) {
                 toastr.error(i18nService.selectFile, i18nService.errorsOccurred);

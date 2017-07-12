@@ -754,5 +754,13 @@
   "maxFileSize": {
     "message": "Maximum file size is 100 MB.",
     "description": "Maximum file size is 100 MB."
+  },
+  "featureUnavailable": {
+    "message": "Feature Unavailable",
+    "description": "Feature Unavailable"
+  },
+  "updateKey": {
+    "message": "You cannot use this feature until you update your encryption key.",
+    "description": "You cannot use this feature until you update your encryption key."
   }
 }
