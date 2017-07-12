@@ -37,7 +37,8 @@ angular
                 return;
             }
 
-            var files = document.getElementById('file').files;
+            var fileEl = document.getElementById('file');
+            var files = fileEl.files;
             if (!files || !files.length) {
                 toastr.error(i18nService.selectFile, i18nService.errorsOccurred);
                 return;
@@ -54,6 +55,12 @@ angular
                 });
                 $analytics.eventTrack('Added Attachment');
                 toastr.success(i18nService.attachmentSaved);
+
+                // reset file input
+                // ref: https://stackoverflow.com/a/20552042
+                fileEl.type = '';
+                fileEl.type = 'file';
+                fileEl.value = '';
             }, function (err) {
                 if (err) {
                     toastr.error(err);
