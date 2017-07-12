@@ -403,6 +403,47 @@ function initApiService() {
         });
     };
 
+    ApiService.prototype.postCipherAttachment = function (id, formData, success, error) {
+        var self = this;
+        handleTokenState(self).then(function (token) {
+            $.ajax({
+                type: 'POST',
+                url: self.baseUrl + '/ciphers/' + id + '/attachment?' + token,
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: 'json',
+                success: function (response) {
+                    success(new CipherResponse(response));
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, false, self);
+                }
+            });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true, self);
+        });
+    };
+
+    ApiService.prototype.deleteCipherAttachment = function (id, attachmentId, success, error) {
+        var self = this;
+        handleTokenState(self).then(function (token) {
+            $.ajax({
+                type: 'POST',
+                url: self.baseUrl + '/ciphers/' + id + '/attachment/' + attachmentId + '/delete?' + token,
+                dataType: 'text',
+                success: function (response) {
+                    success();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, false, self);
+                }
+            });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true, self);
+        });
+    };
+
     // Helpers
 
     function handleError(errorCallback, jqXHR, tokenError, self) {

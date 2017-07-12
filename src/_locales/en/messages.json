@@ -739,8 +739,20 @@
     "message": "No attachments.",
     "description": "No attachments."
   },
+  "attachmentSaved": {
+    "message": "The attachment has been saved.",
+    "description": "The attachment has been saved."
+  },
   "file": {
     "message": "File",
     "description": "File"
+  },
+  "selectFile": {
+    "message": "Select a file.",
+    "description": "Select a file."
+  },
+  "fileTooLarge": {
+    "message": "Maximum file size is 100 MB.",
+    "description": "Maximum file size is 100 MB."
   }
 }

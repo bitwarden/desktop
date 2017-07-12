@@ -322,7 +322,7 @@ function initLoginService() {
                 deferred.resolve();
             });
         }, function (response) {
-            handleError(response, deferred)
+            handleError(response, deferred);
         });
 
         return deferred.promise;
@@ -350,6 +350,93 @@ function initLoginService() {
                 });
             });
         }
+
+        return deferred.promise;
+    };
+
+    LoginService.prototype.saveAttachmentWithServer = function (login, unencryptedFile) {
+        var deferred = Q.defer();
+        var self = this;
+
+        var key, encFileName;
+        var reader = new FileReader();
+        reader.readAsArrayBuffer(unencryptedFile);
+        reader.onload = function (evt) {
+            self.cryptoService.getOrgKey(login.organizationId).then(function (theKey) {
+                key = theKey;
+                return self.cryptoService.encrypt(unencryptedFile.name, key);
+            }).then(function (fileName) {
+                encFileName = fileName;
+                return self.cryptoService.encryptToBytes(evt.target.result, key);
+            }).then(function (encData) {
+                var fd = new FormData();
+                var blob = new Blob([encData], { type: 'application/octet-stream' });
+                fd.append('data', blob, encFileName.encryptedString);
+
+                self.apiService.postCipherAttachment(login.id, fd,
+                    function (response) {
+                        self.userService.getUserId(function (userId) {
+                            var data = new LoginData(response, userId);
+                            self.upsert(data, function () {
+                                deferred.resolve(new Login(data));
+                            });
+                        });
+                    },
+                    function (response) {
+                        handleError(response, deferred);
+                    });
+            });
+        };
+        reader.onerror = function (evt) {
+            deferred.reject('Error reading file.');
+        };
+
+        return deferred.promise;
+    };
+
+    LoginService.prototype.deleteAttachment = function (id, attachmentId, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        var self = this;
+
+        self.userService.getUserId(function (userId) {
+            var loginsKey = 'sites_' + userId;
+
+            chrome.storage.local.get(loginsKey, function (obj) {
+                var logins = obj[loginsKey];
+                if (logins && id in logins && logins[id].attachments) {
+                    for (var i = 0; i < logins[id].attachments.length; i++) {
+                        if (logins[id].attachments[i].id === attachmentId) {
+                            logins[id].attachments.splice(i, 1);
+                        }
+                    }
+
+                    obj[loginsKey] = logins;
+                    chrome.storage.local.set(obj, function () {
+                        self.decryptedLoginCache = null;
+                        callback();
+                    });
+                }
+                else {
+                    callback()
+                }
+            });
+        });
+    };
+
+    LoginService.prototype.deleteAttachmentWithServer = function (id, attachmentId) {
+        var deferred = Q.defer();
+
+        var self = this;
+        self.apiService.deleteCipherAttachment(id, attachmentId, function () {
+            self.deleteAttachment(id, attachmentId, function () {
+                deferred.resolve();
+            });
+        }, function (response) {
+            handleError(response, deferred);
+        });
 
         return deferred.promise;
     };
