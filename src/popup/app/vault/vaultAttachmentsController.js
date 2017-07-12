@@ -21,7 +21,7 @@ angular
             }
 
             if (files[0].size > 104857600) { // 100 MB
-                toastr.error(i18nService.fileTooLarge, i18nService.errorsOccurred);
+                toastr.error(i18nService.maxFileSize, i18nService.errorsOccurred);
                 return deferred.promise;
             }
 

@@ -28,7 +28,7 @@
             }, function (confirmed) {
                 if (confirmed) {
                     $analytics.eventTrack('Launch Web Vault For Import');
-                    chrome.tabs.create({ url: 'https://vault.bitwarden.com' });
+                    chrome.tabs.create({ url: 'https://help.bitwarden.com/article/import-data/' });
                 }
             });
         };

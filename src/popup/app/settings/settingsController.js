@@ -80,7 +80,9 @@
                 cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 $analytics.eventTrack('Clicked Change Password');
-                alertCallback(confirmed);
+                if (confirmed) {
+                    chrome.tabs.create({ url: 'https://help.bitwarden.com/article/change-your-master-password/' });
+                }
             });
         };
 
@@ -93,7 +95,9 @@
                 cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 $analytics.eventTrack('Clicked Change Email');
-                alertCallback(confirmed);
+                if (confirmed) {
+                    chrome.tabs.create({ url: 'https://help.bitwarden.com/article/change-your-email/' });
+                }
             });
         };
 
@@ -106,15 +110,11 @@
                 cancelButtonText: i18nService.cancel
             }, function (confirmed) {
                 $analytics.eventTrack('Clicked Two-step Login');
-                alertCallback(confirmed);
+                if (confirmed) {
+                    chrome.tabs.create({ url: 'https://help.bitwarden.com/article/setup-two-step-login/' });
+                }
             });
         };
-
-        function alertCallback(confirmed) {
-            if (confirmed) {
-                chrome.tabs.create({ url: 'https://vault.bitwarden.com' });
-            }
-        }
 
         $scope.rate = function () {
             $analytics.eventTrack('Rate Extension');

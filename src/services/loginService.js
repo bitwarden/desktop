@@ -383,7 +383,7 @@ function initLoginService() {
                         });
                     },
                     function (response) {
-                        handleError(response, deferred);
+                        handleErrorMessage(response, deferred);
                     });
             });
         };
@@ -435,7 +435,7 @@ function initLoginService() {
                 deferred.resolve();
             });
         }, function (response) {
-            handleError(response, deferred);
+            handleErrorMessage(response, deferred);
         });
 
         return deferred.promise;
@@ -443,5 +443,21 @@ function initLoginService() {
 
     function handleError(error, deferred) {
         deferred.reject(error);
+    }
+
+    function handleErrorMessage(error, deferred) {
+        if (error.validationErrors) {
+            for (var key in error.validationErrors) {
+                if (!error.validationErrors.hasOwnProperty(key)) {
+                    continue;
+                }
+                if (error.validationErrors[key].length) {
+                    deferred.reject(error.validationErrors[key][0]);
+                    return;
+                }
+            }
+        }
+        deferred.reject(error.message);
+        return;
     }
 };

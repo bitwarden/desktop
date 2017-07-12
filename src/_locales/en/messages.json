@@ -751,7 +751,7 @@
     "message": "Select a file.",
     "description": "Select a file."
   },
-  "fileTooLarge": {
+  "maxFileSize": {
     "message": "Maximum file size is 100 MB.",
     "description": "Maximum file size is 100 MB."
   }
