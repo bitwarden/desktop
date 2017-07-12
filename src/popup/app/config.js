@@ -140,6 +140,13 @@
                 data: { authorize: true },
                 params: { animation: null, fromView: true, login: null, from: 'vault' }
             })
+            .state('attachments', {
+                url: '/attachments?id',
+                templateUrl: 'app/vault/views/vaultAttachments.html',
+                controller: 'vaultAttachmentsController',
+                data: { authorize: true },
+                params: { animation: null, fromView: true, login: null, from: 'vault' }
+            })
 
             .state('passwordGenerator', {
                 url: '/password-generator',

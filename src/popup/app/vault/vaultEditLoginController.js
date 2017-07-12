@@ -68,6 +68,16 @@ angular
             });
         };
 
+        $scope.attachments = function () {
+            $state.go('attachments', {
+                id: loginId,
+                login: $scope.login,
+                animation: 'in-slide-up',
+                from: from,
+                fromView: fromView
+            });
+        };
+
         $scope.close = function () {
             if (fromView) {
                 $state.go('viewLogin', {

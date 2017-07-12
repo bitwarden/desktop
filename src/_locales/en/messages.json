@@ -718,5 +718,29 @@
   "attachments": {
     "message": "Attachments",
     "description": "Attachments"
+  },
+  "deleteAttachment": {
+    "message": "Delete attachment",
+    "description": "Delete attachment"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Are you sure you want to delete this attachment?",
+    "description": "Are you sure you want to delete this attachment?"
+  },
+  "deletedAttachment": {
+    "message": "Deleted attachment",
+    "description": "Deleted attachment"
+  },
+  "newAttachment": {
+    "message": "Add New Attachment",
+    "description": "Add New Attachment"
+  },
+  "noAttachments": {
+    "message": "No attachments.",
+    "description": "No attachments."
+  },
+  "file": {
+    "message": "File",
+    "description": "File"
   }
 }
