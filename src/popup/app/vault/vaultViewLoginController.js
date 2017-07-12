@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr, $q,
-        $analytics, i18nService, utilsService, totpService, $timeout, tokenService) {
+        $analytics, i18nService, utilsService, totpService, $timeout, tokenService, $window, cryptoService) {
         $scope.i18n = i18nService;
         var from = $stateParams.from,
             totpInterval = null;
@@ -102,6 +102,49 @@ angular
         $scope.togglePassword = function () {
             $analytics.eventTrack('Toggled Password');
             $scope.showPassword = !$scope.showPassword;
+        };
+
+        $scope.download = function (attachment) {
+            if (attachment.downloading) {
+                return;
+            }
+
+            attachment.downloading = true;
+            var req = new XMLHttpRequest();
+            req.open('GET', attachment.url, true);
+            req.responseType = 'arraybuffer';
+            req.onload = function (evt) {
+                if (!req.response) {
+                    toastr.error(i18n.errorsOccurred);
+                    $timeout(function () {
+                        attachment.downloading = false;
+                    });
+                    return;
+                }
+
+                cryptoService.getOrgKey($scope.login.organizationId).then(function (key) {
+                    return cryptoService.decryptFromBytes(req.response, key);
+                }).then(function (decBuf) {
+                    var blob = new Blob([decBuf]);
+
+                    var a = $window.document.createElement('a');
+                    a.href = $window.URL.createObjectURL(blob);
+                    a.download = attachment.fileName;
+                    $window.document.body.appendChild(a);
+                    a.click();
+                    $window.document.body.removeChild(a);
+
+                    $timeout(function () {
+                        attachment.downloading = false;
+                    });
+                }, function () {
+                    toastr.error(i18n.errorsOccurred);
+                    $timeout(function () {
+                        attachment.downloading = false;
+                    });
+                });
+            };
+            req.send(null);
         };
 
         $scope.$on("$destroy", function () {

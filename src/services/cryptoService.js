@@ -9,7 +9,9 @@ function initCryptoService(constantsService) {
         _legacyEtmKey,
         _keyHash,
         _privateKey,
-        _orgKeys;
+        _orgKeys,
+        _crypto = window.crypto,
+        _subtle = window.crypto.subtle;
 
     CryptoService.prototype.setKey = function (key, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -191,7 +193,7 @@ function initCryptoService(constantsService) {
 
             self.decrypt(new CipherString(obj.encPrivateKey), null, 'raw').then(function (privateKey) {
                 var privateKeyB64 = forge.util.encode64(privateKey);
-                _privateKey = fromB64ToBuffer(privateKeyB64);
+                _privateKey = fromB64ToArray(privateKeyB64).buffer;
                 deferred.resolve(_privateKey);
             }, function () {
                 deferred.reject('Cannot get private key. Decryption failed.');
@@ -402,103 +404,175 @@ function initCryptoService(constantsService) {
     };
 
     CryptoService.prototype.encrypt = function (plainValue, key, plainValueEncoding) {
-        var self = this;
-        var deferred = Q.defer();
-
         if (plainValue === null || plainValue === undefined) {
-            deferred.resolve(null);
-        }
-        else {
-            getKeyForEncryption(self, key).then(function (keyToUse) {
-                key = keyToUse;
-                if (!key) {
-                    deferred.reject('Encryption key unavailable.');
-                    return;
-                }
-
-                plainValueEncoding = plainValueEncoding || 'utf8';
-                var buffer = forge.util.createBuffer(plainValue, plainValueEncoding);
-                var ivBytes = forge.random.getBytesSync(16);
-                var cipher = forge.cipher.createCipher('AES-CBC', key.encKey);
-                cipher.start({ iv: ivBytes });
-                cipher.update(buffer);
-                cipher.finish();
-
-                var iv = forge.util.encode64(ivBytes);
-                var ctBytes = cipher.output.getBytes();
-                var ct = forge.util.encode64(ctBytes);
-                var mac = !key.macKey ? null : computeMac(ivBytes + ctBytes, key.macKey, true);
-
-                var cs = new CipherString(key.encType, iv, ct, mac);
-                deferred.resolve(cs);
+            return Q.fcall(function () {
+                return null;
             });
         }
 
-        return deferred.promise;
-    };
-
-    CryptoService.prototype.decrypt = function (cipherString, key, outputEncoding) {
-        var deferred = Q.defer();
-        var self = this;
-
-        if (cipherString === null || cipherString === undefined || !cipherString.encryptedString) {
-            deferred.reject('cannot decrypt nothing');
-            return;
+        plainValueEncoding = plainValueEncoding || 'utf8'
+        if (plainValueEncoding === 'utf8') {
+            plainValue = fromUtf8ToArray(plainValue);
         }
 
-        getKeyForEncryption(self, key).then(function (keyToUse) {
-            key = keyToUse;
-            if (!key) {
-                deferred.reject('Encryption key unavailable.');
-                return;
+        return aesEncrypt(this, plainValue.buffer, key).then(function (encValue) {
+            var encType = encValue.key.encType;
+            var iv = fromBufferToB64(encValue.iv);
+            var ct = fromBufferToB64(encValue.ct);
+            var mac = encValue.mac ? fromBufferToB64(encValue.mac) : null;
+            return new CipherString(encType, iv, ct, mac);
+        });
+    };
+
+    CryptoService.prototype.encryptToBytes = function (plainValue, key) {
+        return aesEncrypt(this, plainValue, key).then(function (encValue) {
+            var macLen = 0;
+            if (encValue.mac) {
+                macLen = encValue.mac.length
             }
 
-            outputEncoding = outputEncoding || 'utf8';
+            var encBytes = new Uint8Array(1 + encValue.iv.length + macLen + encValue.ct.length);
 
-            if (cipherString.encryptionType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
-                key.encType === constantsService.encType.AesCbc256_B64) {
-                // Old encrypt-then-mac scheme, swap out the key
-                _legacyEtmKey = _legacyEtmKey ||
-                    new SymmetricCryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
-                key = _legacyEtmKey;
+            encBytes.set([encValue.key.encType]);
+            encBytes.set(encValue.iv, 1);
+            if (encValue.mac) {
+                encBytes.set(encValue.mac, 1 + encValue.iv.length);
+            }
+            encBytes.set(encValue.ct, 1 + encValue.iv.length + macLen);
+
+            return encBytes.buffer;
+        });
+    };
+
+    function aesEncrypt(self, plainValue, key) {
+        var obj = {
+            iv: new Uint8Array(16),
+            ct: null,
+            mac: null,
+            key: null
+        };
+
+        _crypto.getRandomValues(obj.iv);
+        var keyBuf;
+
+        return getKeyForEncryption(self, key).then(function (keyToUse) {
+            obj.key = keyToUse;
+            keyBuf = keyToUse.getBuffers();
+            return _subtle.importKey('raw', keyBuf.encKey, { name: 'AES-CBC' }, false, ['encrypt']);
+        }).then(function (encKey) {
+            return _subtle.encrypt({ name: 'AES-CBC', iv: obj.iv }, encKey, plainValue);
+        }).then(function (encValue) {
+            obj.ct = new Uint8Array(encValue);
+            if (!keyBuf.macKey) {
+                return null;
             }
 
-            if (cipherString.encryptionType !== key.encType) {
-                deferred.reject('encType unavailable.');
-                return;
+            var data = new Uint8Array(obj.iv.length + obj.ct.length);
+            data.set(obj.iv, 0);
+            data.set(obj.ct, obj.iv.length);
+            return computeMacWC(data.buffer, keyBuf.macKey);
+        }).then(function (mac) {
+            if (mac) {
+                obj.mac = new Uint8Array(mac);
             }
+            return obj;
+        });
+    }
 
-            var ivBytes = forge.util.decode64(cipherString.initializationVector);
-            var ctBytes = forge.util.decode64(cipherString.cipherText);
+    CryptoService.prototype.decrypt = function (cipherString, key, outputEncoding) {
+        outputEncoding = outputEncoding || 'utf8'
 
-            if (key.macKey && cipherString.mac) {
-                var macBytes = forge.util.decode64(cipherString.mac);
-                var computedMacBytes = computeMac(ivBytes + ctBytes, key.macKey, false);
-                if (!macsEqual(key.macKey, computedMacBytes, macBytes)) {
-                    console.error('MAC failed.');
-                    deferred.reject('MAC failed.');
-                }
-            }
+        var ivBuf = fromB64ToArray(cipherString.initializationVector).buffer;
+        var ctBuf = fromB64ToArray(cipherString.cipherText).buffer;
+        var macBuf = cipherString.mac ? fromB64ToArray(cipherString.mac).buffer : null;
 
-            var ctBuffer = forge.util.createBuffer(ctBytes);
-            var decipher = forge.cipher.createDecipher('AES-CBC', key.encKey);
-            decipher.start({ iv: ivBytes });
-            decipher.update(ctBuffer);
-            decipher.finish();
-
-            var decValue;
+        return aesDecrypt(this, cipherString.encryptionType, ctBuf, ivBuf, macBuf, key).then(function (decValue) {
             if (outputEncoding === 'utf8') {
-                decValue = decipher.output.toString('utf8');
+                return fromBufferToUtf8(decValue);
             }
             else {
-                decValue = decipher.output.getBytes();
+                var b64 = fromBufferToB64(decValue);
+                return forge.util.decode64(b64);
+            }
+        });
+    };
+
+    CryptoService.prototype.decryptFromBytes = function (encBuf, key) {
+        if (!encBuf) {
+            throw 'no encBuf.';
+        }
+
+        var encBytes = new Uint8Array(encBuf),
+            encType = encBytes[0],
+            ctBytes = null,
+            ivBytes = null,
+            macBytes = null;
+
+        switch (encType) {
+            case constantsService.encType.AesCbc128_HmacSha256_B64:
+            case constantsService.encType.AesCbc256_HmacSha256_B64:
+                if (encBytes.length <= 49) { // 1 + 16 + 32 + ctLength
+                    return null;
+                }
+
+                ivBytes = encBytes.slice(1, 17);
+                macBytes = encBytes.slice(17, 49);
+                ctBytes = encBytes.slice(49);
+                break;
+            case constantsService.encType.AesCbc256_B64:
+                if (encBytes.length <= 17) { // 1 + 16 + ctLength
+                    return null;
+                }
+
+                ivBytes = encBytes.slice(1, 17);
+                ctBytes = encBytes.slice(17);
+                break;
+            default:
+                return null;
+        }
+
+        return aesDecrypt(this, encType, ctBytes.buffer, ivBytes.buffer, macBytes ? macBytes.buffer : null, key);
+    };
+
+    function aesDecrypt(self, encType, ctBuf, ivBuf, macBuf, key) {
+        var keyBuf,
+            encKey;
+
+        return getKeyForEncryption(self, key).then(function (theKey) {
+            if (encType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
+                theKey.encType === constantsService.encType.AesCbc256_B64) {
+                // Old encrypt-then-mac scheme, swap out the key
+                _legacyEtmKey = _legacyEtmKey ||
+                    new SymmetricCryptoKey(theKey.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
+                theKey = _legacyEtmKey;
             }
 
-            deferred.resolve(decValue);
-        });
+            keyBuf = theKey.getBuffers();
+            return _subtle.importKey('raw', keyBuf.encKey, { name: 'AES-CBC' }, false, ['decrypt']);
+        }).then(function (theEncKey) {
+            encKey = theEncKey;
 
-        return deferred.promise;
-    };
+            if (!keyBuf.macKey || !macBuf) {
+                return null;
+            }
+
+            var data = new Uint8Array(ivBuf.byteLength + ctBuf.byteLength);
+            data.set(new Uint8Array(ivBuf), 0);
+            data.set(new Uint8Array(ctBuf), ivBuf.byteLength);
+            return computeMacWC(data.buffer, keyBuf.macKey);
+        }).then(function (computedMacBuf) {
+            if (computedMacBuf === null) {
+                return null;
+            }
+            return macsEqualWC(keyBuf.macKey, macBuf, computedMacBuf);
+        }).then(function (macsMatch) {
+            if (macsMatch === false) {
+                console.error('MAC failed.');
+                return null;
+            }
+            return _subtle.decrypt({ name: 'AES-CBC', iv: ivBuf }, encKey, ctBuf);
+        });
+    }
 
     CryptoService.prototype.rsaDecrypt = function (encValue) {
         var headerPieces = encValue.split('.'),
@@ -569,7 +643,7 @@ function initCryptoService(constantsService) {
                 throw 'Cannot determine padding.';
             }
 
-            return window.crypto.subtle.importKey('pkcs8', privateKeyBytes, padding, false, ['decrypt']);
+            return _subtle.importKey('pkcs8', privateKeyBytes, padding, false, ['decrypt']);
         }).then(function (privateKey) {
             if (!encPieces || !encPieces.length) {
                 throw 'encPieces unavailable.';
@@ -584,12 +658,12 @@ function initCryptoService(constantsService) {
                 }
             }
 
-            var ctBuff = fromB64ToBuffer(encPieces[0]);
-            return window.crypto.subtle.decrypt({ name: padding.name }, privateKey, ctBuff);
+            var ctArr = fromB64ToArray(encPieces[0]);
+            return _subtle.decrypt({ name: padding.name }, privateKey, ctArr.buffer);
         }, function () {
             throw 'Cannot import privateKey.';
         }).then(function (decBytes) {
-            var b64DecValue = toB64FromBuffer(decBytes);
+            var b64DecValue = fromBufferToB64(decBytes);
             return b64DecValue;
         }, function () {
             throw 'Cannot rsa decrypt.';
@@ -602,6 +676,13 @@ function initCryptoService(constantsService) {
         hmac.update(dataBytes);
         var mac = hmac.digest();
         return b64Output ? forge.util.encode64(mac.getBytes()) : mac.getBytes();
+    }
+
+    function computeMacWC(dataBuf, macKeyBuf) {
+        return _subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } }, false, ['sign'])
+            .then(function (key) {
+                return _subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, key, dataBuf);
+            });
     }
 
     function getKeyForEncryption(self, key) {
@@ -635,6 +716,35 @@ function initCryptoService(constantsService) {
         mac2 = hmac.digest().getBytes();
 
         return mac1 === mac2;
+    }
+
+    function macsEqualWC(macKeyBuf, mac1Buf, mac2Buf) {
+        var mac1,
+            macKey;
+
+        return window.crypto.subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } }, false, ['sign'])
+            .then(function (key) {
+                macKey = key;
+                return window.crypto.subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, macKey, mac1Buf);
+            }).then(function (mac) {
+                mac1 = mac;
+                return window.crypto.subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, macKey, mac2Buf);
+            }).then(function (mac2) {
+                if (mac1.byteLength !== mac2.byteLength) {
+                    return false;
+                }
+
+                var arr1 = new Uint8Array(mac1);
+                var arr2 = new Uint8Array(mac2);
+
+                for (var i = 0; i < arr2.length; i++) {
+                    if (arr1[i] !== arr2[i]) {
+                        return false;
+                    }
+                }
+
+                return true;
+            });
     }
 
     function SymmetricCryptoKey(keyBytes, b64KeyBytes, encType) {
@@ -685,17 +795,31 @@ function initCryptoService(constantsService) {
         }
     }
 
-    function fromB64ToBuffer(str) {
-        var binary_string = window.atob(str);
-        var len = binary_string.length;
-        var bytes = new Uint8Array(len);
-        for (var i = 0; i < len; i++) {
-            bytes[i] = binary_string.charCodeAt(i);
+    SymmetricCryptoKey.prototype.getBuffers = function () {
+        if (this.keyBuf) {
+            return this.keyBuf;
         }
-        return bytes.buffer;
-    }
 
-    function toB64FromBuffer(buffer) {
+        var key = fromB64ToArray(this.keyB64);
+
+        var keys = {
+            key: key.buffer
+        };
+
+        if (this.macKey) {
+            keys.encKey = key.slice(0, key.length / 2).buffer;
+            keys.macKey = key.slice(key.length / 2).buffer;
+        }
+        else {
+            keys.encKey = key.buffer;
+            keys.macKey = null;
+        }
+
+        this.keyBuf = keys;
+        return this.keyBuf;
+    };
+
+    function fromBufferToB64(buffer) {
         var binary = '';
         var bytes = new Uint8Array(buffer);
         var len = bytes.byteLength;
@@ -703,5 +827,30 @@ function initCryptoService(constantsService) {
             binary += String.fromCharCode(bytes[i]);
         }
         return window.btoa(binary);
+    }
+
+    function fromBufferToUtf8(buffer) {
+        var bytes = new Uint8Array(buffer);
+        var encodedString = String.fromCharCode.apply(null, bytes);
+        return decodeURIComponent(escape(encodedString));
+    }
+
+    function fromB64ToArray(str) {
+        var binary_string = window.atob(str);
+        var len = binary_string.length;
+        var bytes = new Uint8Array(len);
+        for (var i = 0; i < len; i++) {
+            bytes[i] = binary_string.charCodeAt(i);
+        }
+        return bytes;
+    }
+
+    function fromUtf8ToArray(str) {
+        var strUtf8 = unescape(encodeURIComponent(str));
+        var arr = new Uint8Array(strUtf8.length);
+        for (var i = 0; i < strUtf8.length; i++) {
+            arr[i] = strUtf8.charCodeAt(i);
+        }
+        return arr;
     }
 };

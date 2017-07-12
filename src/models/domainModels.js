@@ -113,10 +113,10 @@ var Login = function (obj, alreadyEncrypted) {
         this.totp = obj.totp ? new CipherString(obj.totp) : null;
     }
 
-    if (response.attachments) {
+    if (obj.attachments) {
         this.attachments = [];
-        for (var i = 0; i < response.attachments.length; i++) {
-            this.attachments.push(new Attachment(response.attachments[i], alreadyEncrypted));
+        for (var i = 0; i < obj.attachments.length; i++) {
+            this.attachments.push(new Attachment(obj.attachments[i], alreadyEncrypted));
         }
     }
     else {
@@ -179,6 +179,7 @@ var Folder = function (obj, alreadyEncrypted) {
             favorite: self.favorite
         };
 
+        var attachments = [];
         var deferred = Q.defer();
 
         self.name.decrypt(self.organizationId).then(function (val) {
@@ -217,6 +218,41 @@ var Folder = function (obj, alreadyEncrypted) {
             return null;
         }).then(function (val) {
             model.totp = val;
+
+            if (self.attachments) {
+                var attachmentPromises = [];
+                for (var i = 0; i < self.attachments.length; i++) {
+                    (function (attachment) {
+                        var promise = attachment.decrypt(self.organizationId).then(function (decAttachment) {
+                            attachments.push(decAttachment);
+                        });
+                        attachmentPromises.push(promise);
+                    })(self.attachments[i]);
+                }
+                return Q.all(attachmentPromises);
+            }
+            return;
+        }).then(function () {
+            model.attachments = attachments.length ? attachments : null;
+            deferred.resolve(model);
+        });
+
+        return deferred.promise;
+    };
+
+    Attachment.prototype.decrypt = function (orgId) {
+        var self = this;
+        var model = {
+            id: self.id,
+            size: self.size,
+            sizeName: self.sizeName,
+            url: self.url
+        };
+
+        var deferred = Q.defer();
+
+        self.fileName.decrypt(orgId).then(function (val) {
+            model.fileName = val;
             deferred.resolve(model);
         });
 

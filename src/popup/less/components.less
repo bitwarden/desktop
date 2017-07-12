@@ -354,6 +354,10 @@
             color: @gray-light;
         }
 
+        small.item-sub-label {
+            margin-top: 2px;
+        }
+
         &.condensed {
             padding: 3px 10px;
 
@@ -449,7 +453,7 @@
     }
 
     &.list-no-selection {
-        .list-grouped-item, .list-section-item {
+        .list-grouped-item:not(.list-allow-selection), .list-section-item:not(.list-allow-selection) {
             &:hover {
                 background-color: white;
             }

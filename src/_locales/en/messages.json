@@ -714,5 +714,9 @@
   "copyVerificationCode": {
     "message": "Copy Verification Code",
     "description": "Copy Verification Code"
+  },
+  "attachments": {
+    "message": "Attachments",
+    "description": "Attachments"
   }
 }
