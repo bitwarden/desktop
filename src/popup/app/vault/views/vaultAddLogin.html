@@ -36,14 +36,14 @@
                         {{i18n.generatePassword}}
                         <i class="fa fa-chevron-right"></i>
                     </a>
-                    <div class="list-section-item">
-                        <label for="totp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
-                        <input id="totp" type="text" name="Totp" ng-model="login.totp">
-                    </div>
                 </div>
             </div>
             <div class="list-section">
                 <div class="list-section-items">
+                    <div class="list-section-item">
+                        <label for="totp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
+                        <input id="totp" type="text" name="Totp" ng-model="login.totp">
+                    </div>
                     <div class="list-section-item">
                         <label for="folder" class="item-label">{{i18n.folder}}</label>
                         <select id="folder" name="FolderId" ng-model="login.folderId">

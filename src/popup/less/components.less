@@ -342,7 +342,7 @@
             }
         }
 
-        .fa-chevron-right {
+        .fa-chevron-right, .right-icon {
             float: right;
             margin-top: 4px;
             color: @list-icon-color;
@@ -458,6 +458,12 @@
                 background-color: white;
             }
         }
+    }
+}
+
+.no-animation {
+    &.ng-hide.ng-hide-animate, &.ng-leave {
+        display: none !important;
     }
 }
 

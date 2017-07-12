@@ -85,8 +85,8 @@
                    ng-repeat="attachment in login.attachments"
                    ng-click="download(attachment)">
                     {{attachment.fileName}}
-                    <i class="fa fa-spin fa-spinner text-muted" ng-if="attachment.downloading"></i>
-                    <i class="fa fa-chevron-right"></i>
+                    <i class="fa fa-download right-icon fa-fw no-animation" ng-if="!attachment.downloading"></i>
+                    <i class="fa fa-spin fa-spinner right-icon fa-fw no-animation" ng-if="attachment.downloading"></i>
                     <small class="item-sub-label">{{attachment.sizeName}}</small>
                 </a>
             </div>
