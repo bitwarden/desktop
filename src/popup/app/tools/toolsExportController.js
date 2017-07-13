@@ -66,7 +66,8 @@
                         username: decLogins[i].username,
                         password: decLogins[i].password,
                         notes: decLogins[i].notes,
-                        folder: null
+                        folder: null,
+                        totp: decLogins[i].totp
                     };
 
                     for (var j = 0; j < decFolders.length; j++) {
