@@ -39,11 +39,25 @@ function initTotpService() {
     }
 
     var b32tohex = function (s) {
+        s = s.toUpperCase();
+        var cleanedInput = '';
+        for (var i = 0; i < s.length; i++) {
+            if (b32Chars.indexOf(s[i]) < 0) {
+                continue;
+            }
+
+            cleanedInput += s[i];
+        }
+        s = cleanedInput;
+
         var bits = '';
         var hex = '';
         for (var i = 0; i < s.length; i++) {
-            var val = b32Chars.indexOf(s.charAt(i).toUpperCase());
-            bits += leftpad(val.toString(2), 5, '0');
+            var byteIndex = b32Chars.indexOf(s.charAt(i));
+            if (byteIndex < 0) {
+                continue;
+            }
+            bits += leftpad(byteIndex.toString(2), 5, '0');
         }
         for (var i = 0; i + 4 <= bits.length; i += 4) {
             var chunk = bits.substr(i, 4);

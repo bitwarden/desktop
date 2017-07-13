@@ -177,13 +177,13 @@ angular
         function totpTick() {
             $timeout(function () {
                 var epoch = Math.round(new Date().getTime() / 1000.0);
-                var mod = (epoch % 30);
+                var mod = epoch % 30;
                 var sec = 30 - mod;
 
                 $scope.totpSec = sec;
                 $scope.totpDash = (2.62 * mod).toFixed(2);
                 $scope.totpLow = sec <= 7;
-                if (epoch % 30 == 0) {
+                if (mod == 0) {
                     totpUpdateCode();
                 }
             });
