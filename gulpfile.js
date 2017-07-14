@@ -11,7 +11,7 @@
     source = require('vinyl-source-stream'),
     googleWebFonts = require('gulp-google-webfonts'),
     webpack = require('webpack-stream')
-jeditor = require("gulp-json-editor");
+    jeditor = require("gulp-json-editor");
 
 var paths = {};
 paths.dist = './dist/';
