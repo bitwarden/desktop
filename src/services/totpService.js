@@ -26,7 +26,7 @@ function initTotpService() {
             bytes[i / 2] = parseInt(s.substr(i, 2), 16);
         }
         return bytes;
-    }
+    };
 
     var buff2hex = function (buff) {
         var bytes = new Uint8Array(buff);
@@ -36,7 +36,7 @@ function initTotpService() {
             hex.push((bytes[i] & 0xF).toString(16));
         }
         return hex.join('');
-    }
+    };
 
     var b32tohex = function (s) {
         s = s.toUpperCase();

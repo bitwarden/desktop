@@ -172,7 +172,7 @@ angular
                     }
                 });
             });
-        };
+        }
 
         function totpTick() {
             $timeout(function () {
@@ -183,9 +183,9 @@ angular
                 $scope.totpSec = sec;
                 $scope.totpDash = (2.62 * mod).toFixed(2);
                 $scope.totpLow = sec <= 7;
-                if (mod == 0) {
+                if (mod === 0) {
                     totpUpdateCode();
                 }
             });
-        };
+        }
     });

@@ -55,7 +55,7 @@
             }
             else if ($scope.providerType === constants.twoFactorProvider.email ||
                 $scope.providerType === constants.twoFactorProvider.authenticator) {
-                token = token.replace(' ', '')
+                token = token.replace(' ', '');
             }
 
             $scope.loginPromise = authService.logIn(email, masterPassword, $scope.providerType, token, $scope.remember.checked);
@@ -122,7 +122,7 @@
                     providerPriority = provider[0].priority;
                 }
             }
-            return providerType == null ? null : parseInt(providerType);
+            return providerType === null ? null : parseInt(providerType);
         }
 
         function init() {
@@ -131,8 +131,9 @@
             $timeout(function () {
                 $('#code').focus();
 
+                var params;
                 if ($scope.providerType === constants.twoFactorProvider.duo) {
-                    var params = providers[constants.twoFactorProvider.duo];
+                    params = providers[constants.twoFactorProvider.duo];
 
                     $window.Duo.init({
                         host: params.Host,
@@ -144,7 +145,7 @@
                     });
                 }
                 else if ($scope.providerType === constants.twoFactorProvider.u2f) {
-                    var params = providers[constants.twoFactorProvider.u2f];
+                    params = providers[constants.twoFactorProvider.u2f];
                     var challenges = JSON.parse(params.Challenges);
 
                     u2f.init({
@@ -157,7 +158,7 @@
                     });
                 }
                 else if ($scope.providerType === constants.twoFactorProvider.email) {
-                    var params = providers[constants.twoFactorProvider.email];
+                    params = providers[constants.twoFactorProvider.email];
                     $scope.twoFactorEmail = params.Email;
 
                     if (chrome.extension.getViews({ type: 'popup' }).length > 0) {
