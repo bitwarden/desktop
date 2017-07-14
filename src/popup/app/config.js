@@ -198,6 +198,13 @@
                 data: { authorize: true },
                 params: { animation: null }
             })
+            .state('premium', {
+                url: '/premium',
+                templateUrl: 'app/settings/views/settingsPremium.html',
+                controller: 'settingsPremiumController',
+                data: { authorize: true },
+                params: { animation: null }
+            })
 
             .state('folders', {
                 url: '/folders',

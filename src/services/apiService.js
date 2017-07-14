@@ -56,6 +56,18 @@ function initApiService() {
         });
     };
 
+    ApiService.prototype.refreshIdentityToken = function (success, error) {
+        refreshToken(this, function () {
+            success();
+        }, function (jqXHR) {
+            if (jqXHR) {
+                handleError(error, jqXHR, false, self);
+                return;
+            }
+            error();
+        });
+    };
+
     // Two Factor APIs
 
     ApiService.prototype.postTwoFactorEmail = function (request, success, error) {
@@ -511,23 +523,10 @@ function initApiService() {
                     });
                 } // handle token refresh
                 else if (self.tokenService.tokenNeedsRefresh()) {
-                    self.tokenService.getRefreshToken(function (refreshToken) {
-                        if (!refreshToken || refreshToken === '') {
-                            deferred.reject();
-                            return;
-                        }
-
-                        postConnectToken(self, {
-                            grant_type: 'refresh_token',
-                            client_id: 'browser',
-                            refresh_token: refreshToken
-                        }, function (token) {
-                            self.tokenService.setTokens(token.accessToken, token.refreshToken, function () {
-                                resolveTokenQs(token.accessToken, self, deferred);
-                            });
-                        }, function (jqXHR) {
-                            deferred.reject(jqXHR);
-                        });
+                    refreshToken(self, function (accessToken) {
+                        resolveTokenQs(accessToken, self, deferred);
+                    }, function (err) {
+                        deferred.reject(err);
                     });
                 }
                 else {
@@ -541,6 +540,27 @@ function initApiService() {
         });
 
         return deferred.promise
+    }
+
+    function refreshToken(self, success, error) {
+        self.tokenService.getRefreshToken(function (refreshToken) {
+            if (!refreshToken || refreshToken === '') {
+                error();
+                return;
+            }
+
+            postConnectToken(self, {
+                grant_type: 'refresh_token',
+                client_id: 'browser',
+                refresh_token: refreshToken
+            }, function (token) {
+                self.tokenService.setTokens(token.accessToken, token.refreshToken, function () {
+                    success(token.accessToken);
+                });
+            }, function (jqXHR) {
+                error(jqXHR);
+            });
+        });
     }
 
     function resolveTokenQs(token, self, deferred) {
