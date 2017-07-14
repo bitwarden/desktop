@@ -1,6 +1,6 @@
 ﻿function TotpService() {
     initTotpService();
-};
+}
 
 function initTotpService() {
     var b32Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
@@ -41,7 +41,8 @@ function initTotpService() {
     var b32tohex = function (s) {
         s = s.toUpperCase();
         var cleanedInput = '';
-        for (var i = 0; i < s.length; i++) {
+        var i;
+        for (i = 0; i < s.length; i++) {
             if (b32Chars.indexOf(s[i]) < 0) {
                 continue;
             }
@@ -52,14 +53,14 @@ function initTotpService() {
 
         var bits = '';
         var hex = '';
-        for (var i = 0; i < s.length; i++) {
+        for (i = 0; i < s.length; i++) {
             var byteIndex = b32Chars.indexOf(s.charAt(i));
             if (byteIndex < 0) {
                 continue;
             }
             bits += leftpad(byteIndex.toString(2), 5, '0');
         }
-        for (var i = 0; i + 4 <= bits.length; i += 4) {
+        for (i = 0; i + 4 <= bits.length; i += 4) {
             var chunk = bits.substr(i, 4);
             hex = hex + parseInt(chunk, 2).toString(16);
         }
@@ -104,4 +105,4 @@ function initTotpService() {
             return otp;
         });
     };
-};
+}

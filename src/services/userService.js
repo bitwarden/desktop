@@ -4,7 +4,7 @@
     this.cryptoService = cryptoService;
 
     initUserService();
-};
+}
 
 function initUserService() {
     var userIdKey = 'userId',
@@ -51,7 +51,7 @@ function initUserService() {
             deferred.resolve();
         });
 
-        return deferred.promise
+        return deferred.promise;
     };
 
     UserService.prototype.getUserId = function (callback) {
@@ -105,7 +105,7 @@ function initUserService() {
             deferred.resolve(_stamp);
         });
 
-        return deferred.promise
+        return deferred.promise;
     };
 
     UserService.prototype.clear = function (callback) {
@@ -142,4 +142,4 @@ function initUserService() {
             });
         });
     };
-};
+}

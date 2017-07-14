@@ -3,7 +3,7 @@ function UtilsService() {
 
     this.browserCache = null;
     this.analyticsIdCache = null;
-};
+}
 
 function initUtilsService() {
     UtilsService.prototype.getBrowser = function () {
@@ -29,19 +29,19 @@ function initUtilsService() {
 
     UtilsService.prototype.isFirefox = function () {
         return this.getBrowser() === 'firefox';
-    }
+    };
 
     UtilsService.prototype.isChrome = function () {
         return this.getBrowser() === 'chrome';
-    }
+    };
 
     UtilsService.prototype.isEdge = function () {
         return this.getBrowser() === 'edge';
-    }
+    };
 
     UtilsService.prototype.isOpera = function () {
         return this.getBrowser() === 'opera';
-    }
+    };
 
     UtilsService.prototype.analyticsId = function () {
         if (this.analyticsIdCache) {
@@ -62,7 +62,7 @@ function initUtilsService() {
         }
 
         return this.analyticsIdCache;
-    }
+    };
 
     UtilsService.prototype.getDeviceType = function () {
         if (this.isChrome()) {
@@ -79,7 +79,7 @@ function initUtilsService() {
         }
 
         return -1;
-    }
+    };
 
     UtilsService.prototype.initListSectionItemListeners = function (doc, angular) {
         if (!doc) {
@@ -127,7 +127,7 @@ function initUtilsService() {
         doc.on('blur', '.list-section-item input, .list-section-item select, .list-section-item textarea', function (e) {
             $(this).parent().removeClass('active');
         });
-    }
+    };
 
     UtilsService.prototype.getDomain = function (uriString) {
         if (!uriString) {
@@ -171,7 +171,7 @@ function initUtilsService() {
         }
 
         return null;
-    }
+    };
 
     UtilsService.prototype.getHostname = function (uriString) {
         if (!uriString) {
@@ -198,10 +198,10 @@ function initUtilsService() {
         }
 
         return null;
-    }
+    };
 
     function validIpAddress(ipString) {
         var ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
         return ipRegex.test(ipString);
     }
-};
+}

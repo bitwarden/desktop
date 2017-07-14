@@ -6,11 +6,11 @@ function LoginService(cryptoService, userService, apiService, settingsService) {
     this.decryptedLoginCache = null;
 
     initLoginService();
-};
+}
 
 function initLoginService() {
     LoginService.prototype.clearCache = function () {
-        this.decryptedLoginCache = null
+        this.decryptedLoginCache = null;
     };
 
     LoginService.prototype.encrypt = function (login) {
@@ -185,12 +185,12 @@ function initLoginService() {
 
         if (!login.id) {
             self.apiService.postLogin(request, apiSuccess, function (response) {
-                handleError(response, deferred)
+                handleError(response, deferred);
             });
         }
         else {
             self.apiService.putLogin(login.id, request, apiSuccess, function (response) {
-                handleError(response, deferred)
+                handleError(response, deferred);
             });
         }
 
@@ -420,7 +420,7 @@ function initLoginService() {
                     });
                 }
                 else {
-                    callback()
+                    callback();
                 }
             });
         });
@@ -460,4 +460,4 @@ function initLoginService() {
         deferred.reject(error.message);
         return;
     }
-};
+}

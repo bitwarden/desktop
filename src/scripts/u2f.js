@@ -4,7 +4,7 @@
     this.info = infoCallback;
     this.iframe = null;
     this.connectorLink = document.createElement('a');
-};
+}
 
 U2f.prototype.init = function (data) {
     var self = this;
@@ -44,7 +44,7 @@ U2f.prototype.validMessage = function (event) {
     }
 
     return event.data.indexOf('success|') === 0 || event.data.indexOf('error|') === 0 || event.data.indexOf('info|') === 0;
-}
+};
 
 U2f.prototype.stop = function () {
     this.sendMessage('stop');
@@ -67,4 +67,4 @@ U2f.prototype.base64Encode = function (str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
         return String.fromCharCode('0x' + p1);
     }));
-}
+};

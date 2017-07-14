@@ -386,7 +386,7 @@ function messageTab(tabId, command, data, callback) {
     };
 
     if (data) {
-        obj['data'] = data;
+        obj.data = data;
     }
 
     chrome.tabs.sendMessage(tabId, obj, function () {

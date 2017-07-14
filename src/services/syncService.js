@@ -11,7 +11,7 @@
     this.lastRevisionCheck = null;
 
     initSyncService();
-};
+}
 
 function initSyncService() {
     SyncService.prototype.fullSync = function (forceSync, callback) {
@@ -133,7 +133,7 @@ function initSyncService() {
             deferred.reject();
         });
 
-        return deferred.promise
+        return deferred.promise;
     }
 
     function syncFolders(self, userId) {
@@ -153,7 +153,7 @@ function initSyncService() {
             deferred.reject();
         });
 
-        return deferred.promise
+        return deferred.promise;
     }
 
     function syncCiphers(self, userId) {
@@ -176,7 +176,7 @@ function initSyncService() {
             deferred.reject();
         });
 
-        return deferred.promise
+        return deferred.promise;
     }
 
     function syncSettings(self, userId) {
@@ -203,7 +203,7 @@ function initSyncService() {
         });
 
         return deferred.promise;
-    };
+    }
 
     SyncService.prototype.getLastSync = function (callback) {
         if (!callback || typeof callback !== 'function') {
@@ -250,4 +250,4 @@ function initSyncService() {
         this.syncInProgress = false;
         chrome.runtime.sendMessage({ command: 'syncCompleted', successfully: successfully });
     };
-};
+}

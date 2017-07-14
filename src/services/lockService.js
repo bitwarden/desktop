@@ -8,7 +8,7 @@
     this.refreshBadgeAndMenu = refreshBadgeAndMenu;
 
     initLockService(this);
-};
+}
 
 function initLockService(self) {
     checkLock();
@@ -128,4 +128,4 @@ function initLockService(self) {
 
         return deferred.promise;
     }
-};
+}

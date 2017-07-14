@@ -7,4 +7,4 @@ function i18nService() {
             throw 'set not allowed for i18n';
         }
     });
-};
+}

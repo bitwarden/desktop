@@ -6,11 +6,11 @@ function FolderService(cryptoService, userService, apiService, i18nService) {
     this.decryptedFolderCache = null;
 
     initFolderService();
-};
+}
 
 function initFolderService() {
     FolderService.prototype.clearCache = function () {
-        this.decryptedFolderCache = null
+        this.decryptedFolderCache = null;
     };
 
     FolderService.prototype.encrypt = function (folder) {
@@ -112,12 +112,12 @@ function initFolderService() {
 
         if (!folder.id) {
             self.apiService.postFolder(request, apiSuccess, function (response) {
-                handleError(response, deferred)
+                handleError(response, deferred);
             });
         }
         else {
             self.apiService.putFolder(folder.id, request, apiSuccess, function (response) {
-                handleError(response, deferred)
+                handleError(response, deferred);
             });
         }
 
@@ -251,7 +251,7 @@ function initFolderService() {
                 deferred.resolve();
             });
         }, function (response) {
-            handleError(response, deferred)
+            handleError(response, deferred);
         });
 
         return deferred.promise;
@@ -260,4 +260,4 @@ function initFolderService() {
     function handleError(error, deferred) {
         deferred.reject(error);
     }
-};
+}

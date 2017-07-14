@@ -25,7 +25,7 @@ function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
     this.utilsService = utilsService;
 
     initApiService();
-};
+}
 
 function initApiService() {
     // Auth APIs
@@ -482,7 +482,7 @@ function initApiService() {
             console.log('Logging out from apiService at ' + new Date() + '. Reason: Status ' + jqXHR.status + '.');
             console.log(jqXHR);
             if (self && self.logoutCallback) {
-                self.logoutCallback(true, function () { })
+                self.logoutCallback(true, function () { });
             }
             else {
                 chrome.runtime.sendMessage({ command: 'logout', expired: true });
@@ -539,7 +539,7 @@ function initApiService() {
             });
         });
 
-        return deferred.promise
+        return deferred.promise;
     }
 
     function refreshToken(self, success, error) {
@@ -588,4 +588,4 @@ function initApiService() {
             }
         });
     }
-};
+}

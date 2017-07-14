@@ -10,7 +10,7 @@ window[window.GoogleAnalyticsObject] = function (action, param1, param2, param3,
 
     chrome.storage.local.get('disableGa', function (obj) {
         // Default for Firefox is disabled.
-        if ((isFirefox && obj['disableGa'] === undefined) || obj['disableGa']) {
+        if ((isFirefox && obj.disableGa === undefined) || obj.disableGa) {
             return;
         }
 

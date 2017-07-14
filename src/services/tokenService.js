@@ -1,6 +1,6 @@
 ﻿function TokenService() {
     initTokenService();
-};
+}
 
 function initTokenService() {
     var _token,
@@ -287,5 +287,5 @@ function initTokenService() {
 
         //polyfill https://github.com/davidchambers/Base64.js
         return window.decodeURIComponent(escape(window.atob(output)));
-    };
-};
+    }
+}

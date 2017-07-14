@@ -149,7 +149,7 @@ var Folder = function (obj, alreadyEncrypted) {
     }
 };
 
-!function () {
+(function () {
     CipherString.prototype.decrypt = function (orgId) {
         if (this.decryptedValue) {
             var deferred = Q.defer();
@@ -274,4 +274,4 @@ var Folder = function (obj, alreadyEncrypted) {
 
         return deferred.promise;
     };
-}();
+})();

@@ -5,13 +5,13 @@
 
     if (window.location.hostname.indexOf('bitwarden.com') === -1) {
         chrome.storage.local.get('neverDomains', function (obj) {
-            var domains = obj['neverDomains'];
+            var domains = obj.neverDomains;
             if (domains && domains.hasOwnProperty(window.location.hostname)) {
                 return;
             }
 
             chrome.storage.local.get('disableAddLoginNotification', function (obj) {
-                if (!obj || !obj['disableAddLoginNotification']) {
+                if (!obj || !obj.disableAddLoginNotification) {
                     chrome.runtime.sendMessage({
                         command: 'bgCollectPageDetails'
                     });

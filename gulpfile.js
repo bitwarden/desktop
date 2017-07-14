@@ -23,7 +23,16 @@ paths.cssDir = paths.popupDir + 'css/';
 paths.webfontsDir = './src/webfonts/';
 
 gulp.task('lint', function () {
-    return gulp.src(paths.popupDir + 'app/**/*.js')
+    return gulp.src([
+        paths.popupDir + '**/*.js',
+        './src/services/**/*.js',
+        './src/notification/**/*.js',
+        './src/models/**/*.js',
+        './src/scripts/**/*.js',
+        //'./src/content/**/*.js',
+        './src/overlay/**/*.js',
+        './src/background.js'
+    ])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });

@@ -1,7 +1,7 @@
 function CryptoService(constantsService) {
     this.constantsService = constantsService;
     initCryptoService(constantsService);
-};
+}
 
 function initCryptoService(constantsService) {
     var _key,
@@ -34,7 +34,7 @@ function initCryptoService(constantsService) {
                 callback();
             });
         });
-    }
+    };
 
     CryptoService.prototype.setKeyHash = function (keyHash, callback) {
         if (!callback || typeof callback !== 'function') {
@@ -48,7 +48,7 @@ function initCryptoService(constantsService) {
         }, function () {
             callback();
         });
-    }
+    };
 
     CryptoService.prototype.setEncKey = function (encKey) {
         var deferred = Q.defer();
@@ -66,7 +66,7 @@ function initCryptoService(constantsService) {
         });
 
         return deferred.promise;
-    }
+    };
 
     CryptoService.prototype.setEncPrivateKey = function (encPrivateKey) {
         var deferred = Q.defer();
@@ -84,7 +84,7 @@ function initCryptoService(constantsService) {
         });
 
         return deferred.promise;
-    }
+    };
 
     CryptoService.prototype.setOrgKeys = function (orgs) {
         var deferred = Q.defer();
@@ -101,7 +101,7 @@ function initCryptoService(constantsService) {
         });
 
         return deferred.promise;
-    }
+    };
 
     CryptoService.prototype.getKey = function () {
         var deferred = Q.defer();
@@ -410,7 +410,7 @@ function initCryptoService(constantsService) {
             });
         }
 
-        plainValueEncoding = plainValueEncoding || 'utf8'
+        plainValueEncoding = plainValueEncoding || 'utf8';
         if (plainValueEncoding === 'utf8') {
             plainValue = fromUtf8ToArray(plainValue);
         }
@@ -428,7 +428,7 @@ function initCryptoService(constantsService) {
         return aesEncrypt(this, plainValue, key).then(function (encValue) {
             var macLen = 0;
             if (encValue.mac) {
-                macLen = encValue.mac.length
+                macLen = encValue.mac.length;
             }
 
             var encBytes = new Uint8Array(1 + encValue.iv.length + macLen + encValue.ct.length);
@@ -480,7 +480,7 @@ function initCryptoService(constantsService) {
     }
 
     CryptoService.prototype.decrypt = function (cipherString, key, outputEncoding) {
-        outputEncoding = outputEncoding || 'utf8'
+        outputEncoding = outputEncoding || 'utf8';
 
         var ivBuf = fromB64ToArray(cipherString.initializationVector).buffer;
         var ctBuf = fromB64ToArray(cipherString.cipherText).buffer;
@@ -615,14 +615,14 @@ function initCryptoService(constantsService) {
                 padding = {
                     name: 'RSA-OAEP',
                     hash: { name: 'SHA-256' }
-                }
+                };
                 break;
             case constantsService.encType.Rsa2048_OaepSha1_B64:
             case constantsService.encType.Rsa2048_OaepSha1_HmacSha256_B64:
                 padding = {
                     name: 'RSA-OAEP',
                     hash: { name: 'SHA-1' }
-                }
+                };
                 break;
             default:
                 throw 'encType unavailable.';
@@ -853,4 +853,4 @@ function initCryptoService(constantsService) {
         }
         return arr;
     }
-};
+}

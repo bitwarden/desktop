@@ -2,7 +2,7 @@
     this.optionsCache = null;
 
     initPasswordGenerationService();
-};
+}
 
 function initPasswordGenerationService() {
     var optionsKey = 'passwordGenerationOptions';
@@ -181,4 +181,4 @@ function initPasswordGenerationService() {
 
         return deferred.promise;
     };
-};
+}

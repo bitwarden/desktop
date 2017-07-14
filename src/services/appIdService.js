@@ -1,6 +1,6 @@
 function AppIdService() {
     initAppIdService();
-};
+}
 
 function initAppIdService() {
     AppIdService.prototype.getAppId = function (callback) {
@@ -41,4 +41,4 @@ function initAppIdService() {
             return v.toString(16);
         });
     }
-};
+}

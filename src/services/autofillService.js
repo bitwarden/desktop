@@ -1,6 +1,6 @@
 ﻿function AutofillService() {
     initAutofill();
-};
+}
 
 function initAutofill() {
     AutofillService.prototype.generateFillScript = function (pageDetails, fillUsername, fillPassword) {
@@ -29,9 +29,10 @@ function initAutofill() {
             passwordFields = loadPasswordFields(pageDetails, true);
         }
 
+        var i;
         for (var formKey in pageDetails.forms) {
             var passwordFieldsForForm = [];
-            for (var i = 0; i < passwordFields.length; i++) {
+            for (i = 0; i < passwordFields.length; i++) {
                 if (formKey === passwordFields[i].form) {
                     passwordFieldsForForm.push(passwordFields[i]);
                 }
@@ -156,4 +157,4 @@ function initAutofill() {
 
         return usernameField;
     }
-};
+}

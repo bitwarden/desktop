@@ -3,11 +3,11 @@ function SettingsService(userService) {
     this.settingsCache = null;
 
     initSettingsService();
-};
+}
 
 function initSettingsService() {
     SettingsService.prototype.clearCache = function () {
-        this.settingsCache = null
+        this.settingsCache = null;
     };
 
     SettingsService.prototype.getSettings = function (callback) {
@@ -103,4 +103,4 @@ function initSettingsService() {
     function handleError(error, deferred) {
         deferred.reject(error);
     }
-};
+}
