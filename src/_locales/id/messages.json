@@ -4,11 +4,11 @@
     "description":"bitwarden"
   },
   "extName":{
-    "message":"bitwarden – Manajer Kata Sandi Gratis",
+    "message":"bitwarden - Pengelola Sandi Gratis",
     "description":"Extension name"
   },
   "extDesc":{
-    "message":"bitwarden adalah sebuah manajer kata sandi yang aman dan gratis untuk semua perangkat Anda.",
+    "message":"bitwarden adalah sebuah pengelola sandi yang aman dan gratis untuk semua perangkat Anda.",
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
@@ -64,15 +64,15 @@
     "description":"Tab"
   },
   "myVault":{
-    "message":"Berangkas Saya",
+    "message":"Brankas Saya",
     "description":"My Vault"
   },
   "tools":{
-    "message":"Peralatan",
+    "message":"Alat",
     "description":"Tools"
   },
   "settings":{
-    "message":"Pengaturan",
+    "message":"Setelan",
     "description":"Settings"
   },
   "currentTab":{
@@ -88,7 +88,7 @@
     "description":"Copy Username"
   },
   "autoFill":{
-    "message":"Isi secara otomatis",
+    "message":"Isi otomatis",
     "description":"Auto-fill"
   },
   "generatePasswordCopied":{
@@ -96,7 +96,7 @@
     "description":"Generate Password (copied)"
   },
   "noMatchingLogins":{
-    "message":"Masuk tidak cocok.",
+    "message":"Tidak ada info masuk yang cocok.",
     "description":"No matching logins."
   },
   "vaultLocked":{
@@ -108,71 +108,67 @@
     "description":"There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin":{
-    "message":"Add a Login",
+    "message":"Tambahkan Info Masuk",
     "description":"Add a Login"
   },
   "passwordHint":{
-    "message":"Password Hint",
+    "message":"Petunjuk Sandi",
     "description":"Password Hint"
   },
   "enterEmailToGetHint":{
-    "message":"Enter your account email address to receive your master password hint.",
+    "message":"Masukkan email akun Anda untuk menerima pentunjuk sandi utama Anda.",
     "description":"Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint":{
-    "message":"Get master password hint",
+    "message":"Dapatkan petunjuk sandi utama",
     "description":"Get master password hint"
   },
   "continue":{
-    "message":"Continue",
+    "message":"Lanjutkan",
     "description":"Continue"
   },
   "verificationCode":{
-    "message":"Verification Code",
+    "message":"Kode Verifikasi",
     "description":"Verification Code"
   },
-  "enterTwoStepVerCode":{
-    "message":"Enter your two-step verification code.",
-    "description":"Enter your two-step verification code."
-  },
   "account":{
-    "message":"Account",
+    "message":"Akun",
     "description":"Account"
   },
   "changeMasterPassword":{
-    "message":"Change Master Password",
+    "message":"Ubah Kata Sandi Utama",
     "description":"Change Master Password"
   },
   "changeEmail":{
-    "message":"Change Email",
+    "message":"Ubah Email",
     "description":"Change Email"
   },
   "twoStepLogin":{
-    "message":"Two-step Login",
+    "message":"Info masuk dua langkah",
     "description":"Two-step Login"
   },
   "logOut":{
-    "message":"Log Out",
+    "message":"Keluar",
     "description":"Log Out"
   },
   "about":{
-    "message":"About",
+    "message":"Tentang",
     "description":"About"
   },
   "version":{
-    "message":"Version",
+    "message":"Versi",
     "description":"Version"
   },
   "save":{
-    "message":"Save",
+    "message":"Simpan",
     "description":"Save"
   },
   "addFolder":{
-    "message":"Add Folder",
+    "message":"Tambah Folder",
     "description":"Add Folder"
   },
   "name":{
-    "message":"Name",
+    "message":"Nama",
     "description":"Name"
   },
   "editFolder":{
@@ -180,131 +176,131 @@
     "description":"Edit Folder"
   },
   "deleteFolder":{
-    "message":"Delete Folder",
+    "message":"Hapus Folder",
     "description":"Delete Folder"
   },
   "folders":{
-    "message":"Folders",
+    "message":"Folder",
     "description":"Folders"
   },
   "noFolders":{
-    "message":"There are no folders to list.",
+    "message":"Tidak ada folder yang dapat dicantumkan.",
     "description":"There are no folders to list."
   },
   "helpFeedback":{
-    "message":"Help & Feedback",
+    "message":"Bantuan & Umpan Balik",
     "description":"Help & Feedback"
   },
   "emailUs":{
-    "message":"Email Us",
+    "message":"Kirim Email Ke Kami",
     "description":"Email Us"
   },
   "emailUsDirectly":{
-    "message":"Email us directly to get help or leave feedback.",
+    "message":"Email kami secara langsung untuk mendapatkan bantuan atau memberikan umpan balik.",
     "description":"Email us directly to get help or leave feedback."
   },
   "visitOurWebsite":{
-    "message":"Visit Our Website",
+    "message":"Kunjungi Situs Web Kami",
     "description":"Visit Our Website"
   },
   "visitOurWebsiteDirectly":{
-    "message":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden.",
+    "message":"Kunjungi situs web kami untuk mendapatkan bantuan, berita, email kami, dan\/atau mempelajari lebih lanjut tentang bagaimana menggunakan bitwarden.",
     "description":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
   },
   "fileBugReport":{
-    "message":"File a Bug Report",
+    "message":"Buat Laporan Masalah",
     "description":"File a Bug Report"
   },
   "gitHubIssue":{
-    "message":"Open an issue at our GitHub repository.",
+    "message":"Buka sebuah isu di repositori GitHub kami.",
     "description":"Open an issue at our GitHub repository."
   },
   "sync":{
-    "message":"Sync",
+    "message":"Sinkronisasi",
     "description":"Sync"
   },
   "syncVaultNow":{
-    "message":"Sync Vault Now",
+    "message":"Sinkronkan Brankas Sekarang",
     "description":"Sync Vault Now"
   },
   "lastSync":{
-    "message":"Last Sync:",
+    "message":"Sinkronisasi Terakhir:",
     "description":"Last Sync:"
   },
   "passGen":{
-    "message":"Password Generator",
+    "message":"Pembuat Kata Sandi",
     "description":"Password Generator"
   },
   "passGenInfo":{
-    "message":"Automatically generate strong, unique passwords for your logins.",
+    "message":"Secara otomatis membuat sandi yang kuat dan unik untuk info masuk Anda.",
     "description":"Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault":{
-    "message":"bitwarden Web Vault",
+    "message":"Brankas Web bitwarden",
     "description":"bitwarden Web Vault"
   },
   "bitWebVaultInfo":{
-    "message":"Manage your logins from any web browser with the bitwarden web vault.",
+    "message":"Kelola info masuk Anda dari berbagai peramban web dengan brankas web bitwarden.",
     "description":"Manage your logins from any web browser with the bitwarden web vault."
   },
   "bitIosVault":{
-    "message":"bitwarden iOS Vault",
+    "message":"Brankas iOS bitwarden",
     "description":"bitwarden iOS Vault"
   },
   "bitIosVaultInfo":{
-    "message":"Manage your logins from your mobile devices with the bitwarden iOS vault.",
+    "message":"Kelola info masuk Anda dari ponsel Anda dengan brankas iOS bitwarden.",
     "description":"Manage your logins from your mobile devices with the bitwarden iOS vault."
   },
   "bitAndrVault":{
-    "message":"bitwarden Android Vault",
+    "message":"Brankas Android bitwarden",
     "description":"bitwarden Android Vault"
   },
   "bitAndrVaultInfo":{
-    "message":"Manage your logins from your mobile devices with the bitwarden Android vault.",
+    "message":"Kelola info masuk Anda dari ponsel Anda dengan brankas Android bitwarden.",
     "description":"Manage your logins from your mobile devices with the bitwarden Android vault."
   },
   "importLogins":{
-    "message":"Import Logins",
+    "message":"Impor Info Masuk",
     "description":"Import Logins"
   },
   "importLoginsInfo":{
-    "message":"Quickly bulk import your logins from other password management applications.",
+    "message":"Mengimpor massal info masuk Anda dari aplikasi pengelola sandi lainnya dengan cepat.",
     "description":"Quickly bulk import your logins from other password management applications."
   },
   "select":{
-    "message":"Select",
+    "message":"Pilih",
     "description":"Select"
   },
   "generatePassword":{
-    "message":"Generate Password",
+    "message":"Buat Kata Sandi",
     "description":"Generate Password"
   },
   "regeneratePassword":{
-    "message":"Regenerate Password",
+    "message":"Buat Ulang Sandi",
     "description":"Regenerate Password"
   },
   "options":{
-    "message":"Options",
+    "message":"Pilihan",
     "description":"Options"
   },
   "length":{
-    "message":"Length",
+    "message":"Panjang",
     "description":"Length"
   },
   "minNumbers":{
-    "message":"Minimum Numbers",
+    "message":"Angka Minimum",
     "description":"Minimum Numbers"
   },
   "minSpecial":{
-    "message":"Minimum Special",
+    "message":"Karakter Khusus Minimum",
     "description":"Minimum Special"
   },
   "avoidAmbChar":{
-    "message":"Avoid Ambiguous Characters",
+    "message":"Hindari Karakter Ambigu",
     "description":"Avoid Ambiguous Characters"
   },
   "searchVault":{
-    "message":"Search vault",
+    "message":"Cari brankas",
     "description":"Search vault"
   },
   "edit":{
@@ -312,31 +308,31 @@
     "description":"Edit"
   },
   "noLoginsInList":{
-    "message":"There are no logins to list.",
+    "message":"Tidak ada info masuk yang dapat dicantumkan.",
     "description":"There are no logins to list."
   },
   "loginInformation":{
-    "message":"Login Information",
+    "message":"Informasi Info Masuk",
     "description":"Login Information"
   },
   "username":{
-    "message":"Username",
+    "message":"Nama Pengguna",
     "description":"Username"
   },
   "password":{
-    "message":"Password",
+    "message":"Kata Sandi",
     "description":"Password"
   },
   "favorite":{
-    "message":"Favorite",
+    "message":"Favorit",
     "description":"Favorite"
   },
   "notes":{
-    "message":"Notes",
+    "message":"Catatan",
     "description":"Notes"
   },
   "editLogin":{
-    "message":"Edit Login",
+    "message":"Edit Info Masuk",
     "description":"Edit Login"
   },
   "folder":{
@@ -344,239 +340,239 @@
     "description":"Folder"
   },
   "deleteLogin":{
-    "message":"Delete Login",
+    "message":"Hapus Info Masuk",
     "description":"Delete Login"
   },
   "viewLogin":{
-    "message":"View Login",
+    "message":"Lihat Info Masuk",
     "description":"View Login"
   },
   "launchWebsite":{
-    "message":"Launch Website",
+    "message":"Buka Situs Web",
     "description":"Launch Website"
   },
   "website":{
-    "message":"Website",
+    "message":"Situs Web",
     "description":"Website"
   },
   "togglePassword":{
-    "message":"Toggle Password",
+    "message":"Sakelar Sandi",
     "description":"Toggle Password"
   },
   "manage":{
-    "message":"Manage",
+    "message":"Kelola",
     "description":"Manage"
   },
   "other":{
-    "message":"Other",
+    "message":"Lainnya",
     "description":"Other"
   },
   "disableGa":{
-    "message":"Disable Analytics",
+    "message":"Nonaktifkan Analitik",
     "description":"Disable Analytics"
   },
   "rateExtension":{
-    "message":"Rate the Extension",
+    "message":"Nilai Ekstensi",
     "description":"Rate the Extension"
   },
   "rateExtensionDesc":{
-    "message":"Please consider helping us out with a good review!",
+    "message":"Mohon pertimbangkan membantu kami dengan ulasan yang baik!",
     "description":"Please consider helping us out with a good review!"
   },
   "browserNotSupportClipboard":{
-    "message":"Your web browser does not support easy clipboard copying. Copy it manually instead.",
+    "message":"Peramban Anda tidak mendukung menyalin clipboard dengan mudah. Salin secara manual.",
     "description":"Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyMasterPassword":{
-    "message":"Verify Master Password",
+    "message":"Verifikasi Kata Sandi Utama",
     "description":"Verify Master Password"
   },
   "invalidMasterPassword":{
-    "message":"Invalid master password",
+    "message":"Sandi utama tidak valid",
     "description":"Invalid master password"
   },
   "lockOptions":{
-    "message":"Lock Options",
+    "message":"Pilihan Penguncian",
     "description":"Lock Options"
   },
   "lockNow":{
-    "message":"Lock Now",
+    "message":"Kunci Sekarang",
     "description":"Lock Now"
   },
   "immediately":{
-    "message":"Immediately",
+    "message":"Segera",
     "description":"Immediately"
   },
   "oneMinute":{
-    "message":"1 minute",
+    "message":"1 menit",
     "description":"1 minute"
   },
   "fiveMinutes":{
-    "message":"5 minutes",
+    "message":"5 menit",
     "description":"5 minutes"
   },
   "fifteenMinutes":{
-    "message":"15 minutes",
+    "message":"15 menit",
     "description":"15 minutes"
   },
   "thirtyMinutes":{
-    "message":"30 minutes",
+    "message":"30 menit",
     "description":"30 minutes"
   },
   "oneHour":{
-    "message":"1 hour",
+    "message":"1 jam",
     "description":"1 hour"
   },
   "fourHours":{
-    "message":"4 hours",
+    "message":"4 jam",
     "description":"4 hours"
   },
   "onLocked":{
-    "message":"On Locked",
+    "message":"Saat Komputer Terkunci",
     "description":"On Locked"
   },
   "onRestart":{
-    "message":"On Restart",
+    "message":"Pada Mulai Ulang",
     "description":"On Restart"
   },
   "never":{
-    "message":"Never",
+    "message":"Jangan pernah",
     "description":"Never"
   },
   "security":{
-    "message":"Security",
+    "message":"Keamanan",
     "description":"Security"
   },
   "errorsOccurred":{
-    "message":"Errors have occurred",
+    "message":"Terjadi kesalahan",
     "description":"Errors have occurred"
   },
   "emailRequired":{
-    "message":"Email address is required.",
+    "message":"Alamat email diperlukan.",
     "description":"Email address is required."
   },
   "invalidEmail":{
-    "message":"Invalid email address.",
+    "message":"Alamat email tidak valid.",
     "description":"Invalid email address."
   },
   "masterPassRequired":{
-    "message":"Master password is required.",
+    "message":"Sandi utama diperlukan.",
     "description":"Master password is required."
   },
   "masterPassLength":{
-    "message":"Master password must be at least 8 characters long.",
+    "message":"Kata sandi utama sedikitnya harus 8 karakter.",
     "description":"Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch":{
-    "message":"Master password confirmation does not match.",
+    "message":"Konfirmasi sandi utama tidak cocok.",
     "description":"Master password confirmation does not match."
   },
   "newAccountCreated":{
-    "message":"Your new account has been created! You may now log in.",
+    "message":"Akun baru Anda telah dibuat! Sekarang Anda bisa masuk.",
     "description":"Your new account has been created! You may now log in."
   },
   "masterPassSent":{
-    "message":"We've sent you an email with your master password hint.",
+    "message":"Kami telah mengirimi Anda email dengan petunjuk sandi utama Anda.",
     "description":"We've sent you an email with your master password hint."
   },
   "verificationCodeRequired":{
-    "message":"Verification code is required.",
+    "message":"Kode verifikasi diperlukan.",
     "description":"Verification code is required."
   },
   "valueCopied":{
-    "message":" copied",
+    "message":" disalin",
     "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError":{
-    "message":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead.",
+    "message":"Tidak dapat mengisi otomatis info masuk yang dipilih pada laman ini. Salin\/tempel nama pengguna dan\/atau sandi Anda.",
     "description":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
   },
   "loggedOut":{
-    "message":"Logged out",
+    "message":"Keluar",
     "description":"Logged out"
   },
   "loginExpired":{
-    "message":"Your login session has expired.",
+    "message":"Sesi masuk Anda telah berakhir.",
     "description":"Your login session has expired."
   },
   "logOutConfirmation":{
-    "message":"Are you sure you want to log out?",
+    "message":"Anda yakin ingin keluar?",
     "description":"Are you sure you want to log out?"
   },
   "yes":{
-    "message":"Yes",
+    "message":"Ya",
     "description":"Yes"
   },
   "no":{
-    "message":"No",
+    "message":"Tidak",
     "description":"No"
   },
   "unexpectedError":{
-    "message":"An unexpected error has occured.",
+    "message":"Terjadi kesalahan yang tak diduga.",
     "description":"An unexpected error has occured."
   },
   "nameRequired":{
-    "message":"Name is required.",
+    "message":"Nama diperlukan.",
     "description":"Name is required."
   },
   "addedFolder":{
-    "message":"Added folder",
+    "message":"Tambah Folder",
     "description":"Added folder"
   },
   "changeMasterPass":{
-    "message":"Change Master Password",
+    "message":"Ubah Kata Sandi Utama",
     "description":"Change Master Password"
   },
   "changeMasterPasswordConfirmation":{
-    "message":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Anda dapat mengubah kata sandi utama Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?",
     "description":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "changeEmailConfirmation":{
-    "message":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Anda dapat mengubah alamat email Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?",
     "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation":{
     "message":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?",
-    "description":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "description":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
-    "message":"Logging out",
+    "message":"Keluar",
     "description":"Logging out"
   },
   "loggingOutConfirmation":{
-    "message":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?",
+    "message":"Anda baru saja diperbarui dari versi yang lebih lawas. Anda harus masuk kembali untuk mengubah pilihan penguncian Anda. Apakah Anda ingin keluar sekarang?",
     "description":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
   },
   "editedFolder":{
-    "message":"Edited Folder",
+    "message":"Folder yang di Edit",
     "description":"Edited Folder"
   },
   "deleteFolderConfirmation":{
-    "message":"Are you sure you want to delete this folder?",
+    "message":"Anda yakin Anda ingin menghapus folder ini?",
     "description":"Are you sure you want to delete this folder?"
   },
   "deletedFolder":{
-    "message":"Deleted folder",
+    "message":"Folder dihapus",
     "description":"Deleted folder"
   },
   "gettingStartedTutorial":{
-    "message":"Getting Started Tutorial",
+    "message":"Tutorial Perkenalan",
     "description":"Getting Started Tutorial"
   },
   "gettingStartedTutorialVideo":{
-    "message":"Watch our getting started tutorial to learn how to get the most out of the browser extension.",
+    "message":"Lihat tutorial perkenalan kami untuk mempelajari bagaimana mendapatkan hasil maksimal dari ekstensi peramban.",
     "description":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
   },
   "syncingComplete":{
-    "message":"Syncing complete",
+    "message":"Sinkronisasi selesai",
     "description":"Syncing complete"
   },
   "importLoginsConfirmation":{
-    "message":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Anda dapat mengimpor massal info masuk dari brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?",
     "description":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
-    "message":"Password copied",
+    "message":"Sandi disalin",
     "description":"Password copied"
   },
   "uri":{
@@ -584,127 +580,255 @@
     "description":"URI"
   },
   "addedLogin":{
-    "message":"Added login",
+    "message":"Info masuk yang ditambahkan",
     "description":"Added login"
   },
   "editedLogin":{
-    "message":"Edited login",
+    "message":"Info masuk yang diedit",
     "description":"Edited login"
   },
   "deleteLoginConfirmation":{
-    "message":"Are you sure you want to delete this login?",
+    "message":"Anda yakin Anda ingin menghapus info masuk ini?",
     "description":"Are you sure you want to delete this login?"
   },
   "deletedLogin":{
-    "message":"Deleted login",
+    "message":"Info masuk dihapus",
     "description":"Deleted login"
   },
   "overwritePassword":{
-    "message":"Overwrite Password",
+    "message":"Timpa Sandi",
     "description":"Overwrite Password"
   },
   "overwritePasswordConfirmation":{
-    "message":"Are you sure you want to overwrite the current password?",
+    "message":"Anda yakin ingin menimpa sandi saat ini?",
     "description":"Are you sure you want to overwrite the current password?"
   },
   "lost2FAApp":{
-    "message":"Lost authenticator app?",
+    "message":"Kehilangan aplikasi autentikasi?",
     "description":"Lost authenticator app?"
   },
   "credits":{
-    "message":"Credits",
+    "message":"Kredit",
     "description":"Credits (giving thanks to people that helped, like at the end of a movie)"
   },
   "thankYou":{
-    "message":"Thank You",
+    "message":"Terima Kasih",
     "description":"Thank You"
   },
   "translations":{
-    "message":"Translations",
+    "message":"Terjemahan",
     "description":"Translations"
   },
   "searchFolder":{
-    "message":"Search folder",
+    "message":"Cari folder",
     "description":"Search folder"
   },
   "noneFolder":{
-    "message":"No Folder",
+    "message":"Tidak Ada Folder",
     "description":"No Folder - this is the folder for uncategorized logins"
   },
   "features":{
-    "message":"Features",
+    "message":"Fitur",
     "description":"Features"
   },
   "gaDesc":{
-    "message":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous.",
+    "message":"Kami menggunakan analitik untuk mempelajari lebih baik bagaimana ekstensi sedang digunakan sehingga kami dapat membuatnya lebih baik. Semua pengumpulan data benar-benar anonim.",
     "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification":{
-    "message":"Disable Add Login Notification",
+    "message":"Nonaktifkan Pemberitahuan Penambahan Info Masuk",
     "description":"Disable Add Login Notification"
   },
   "addLoginNotificationDesc":{
-    "message":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time.",
+    "message":"\"Notifikasi Penambahan Info Masuk\" secara otomatis akan meminta Anda untuk menyimpan info masuk baru ke brankas Anda saat Anda masuk untuk pertama kalinya.",
     "description":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc":{
-    "message":"Should bitwarden remember this password for you?",
+    "message":"Haruskah bitwarden mengingat sandi ini untuk Anda?",
     "description":"Should bitwarden remember this password for you?"
   },
   "notificationAddSave":{
-    "message":"Yes, Save Now",
+    "message":"Ya, Simpan Sekarang",
     "description":"Yes, Save Now"
   },
   "notificationNeverSave":{
-    "message":"Never for this website",
+    "message":"Jangan pernah untuk situs ini",
     "description":"Never for this website"
   },
   "disableContextMenuItem":{
-    "message":"Disable Context Menu Options",
+    "message":"Nonaktifkan Pilihan Menu Konteks",
     "description":"Disable Context Menu Options"
   },
   "disableContextMenuItemDesc":{
-    "message":"Context menu options provide quick access to password generation and logins for the website in your current tab.",
+    "message":"Pilihan menu konteks menyediakan akses cepat ke pembuat sandi dan info masuk untuk situs web di tab Anda saat ini.",
     "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "exportVault":{
-    "message":"Export Vault",
+    "message":"Ekspor Brankas",
     "description":"Export Vault"
   },
   "warning":{
-    "message":"WARNING",
+    "message":"PERINGATAN",
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it.",
+    "message":"Ekspor ini berisi data Anda yang tidak terenkripsi dalam format .csv. Anda seharusnya tidak menyimpan atau mengirimnya melalui kanal yang tidak aman (seperti email). Hapus berkas ini segera setelah Anda selesai menggunakannya.",
     "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword":{
-    "message":"Enter your master password to export your vault data.",
+    "message":"Masukkan sandi utama Anda untuk mengekspor data brankas Anda.",
     "description":"Enter your master password to export your vault data."
   },
   "exportVaultInfo":{
-    "message":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere.",
+    "message":"Ekspor data brankas Anda dalam format .csv sehingga Anda dapat dengan mudah mengubahnya atau memindahkannya ke tempat lain.",
     "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   },
   "shared":{
-    "message":"Shared",
+    "message":"Dibagikan",
     "description":"Shared"
   },
   "shareVault":{
-    "message":"Share Your Vault",
+    "message":"Bagikan Brankas Anda",
     "description":"Share Your Vault"
   },
   "shareVaultInfo":{
-    "message":"Create an organization to securely share your logins with other users.",
+    "message":"Buat organisasi untuk berbagi info masuk Anda dengan aman dengan pengguna lain.",
     "description":"Create an organization to securely share your logins with other users."
   },
   "contribute":{
     "message":"You can contribute to!",
-    "description":"You can contribute to!"
+    "description":"You can contribute too!"
   },
   "learnMore":{
-    "message":"Learn more",
+    "message":"Pelajari lebih lanjut",
     "description":"Learn more"
+  },
+  "authenticatorKeyTotp":{
+    "message":"Authenticator Key (TOTP)",
+    "description":"Authenticator Key (TOTP)"
+  },
+  "verificationCodeTotp":{
+    "message":"Verification Code (TOTP)",
+    "description":"Verification Code (TOTP)"
+  },
+  "copyVerificationCode":{
+    "message":"Copy Verification Code",
+    "description":"Copy Verification Code"
+  },
+  "attachments":{
+    "message":"Attachments",
+    "description":"Attachments"
+  },
+  "deleteAttachment":{
+    "message":"Delete attachment",
+    "description":"Delete attachment"
+  },
+  "deleteAttachmentConfirmation":{
+    "message":"Are you sure you want to delete this attachment?",
+    "description":"Are you sure you want to delete this attachment?"
+  },
+  "deletedAttachment":{
+    "message":"Deleted attachment",
+    "description":"Deleted attachment"
+  },
+  "newAttachment":{
+    "message":"Add New Attachment",
+    "description":"Add New Attachment"
+  },
+  "noAttachments":{
+    "message":"No attachments.",
+    "description":"No attachments."
+  },
+  "attachmentSaved":{
+    "message":"The attachment has been saved.",
+    "description":"The attachment has been saved."
+  },
+  "file":{
+    "message":"File",
+    "description":"File"
+  },
+  "selectFile":{
+    "message":"Select a file.",
+    "description":"Select a file."
+  },
+  "maxFileSize":{
+    "message":"Maximum file size is 100 MB.",
+    "description":"Maximum file size is 100 MB."
+  },
+  "featureUnavailable":{
+    "message":"Feature Unavailable",
+    "description":"Feature Unavailable"
+  },
+  "updateKey":{
+    "message":"You cannot use this feature until you update your encryption key.",
+    "description":"You cannot use this feature until you update your encryption key."
+  },
+  "premiumMembership":{
+    "message":"Premium Membership",
+    "description":"Premium Membership"
+  },
+  "premiumManage":{
+    "message":"Manage Membership",
+    "description":"Manage Membership"
+  },
+  "premiumManageAlert":{
+    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumRefresh":{
+    "message":"Refresh Membership",
+    "description":"Refresh Membership"
+  },
+  "premiumNotCurrentMember":{
+    "message":"You are not currently a premium member.",
+    "description":"You are not currently a premium member."
+  },
+  "premiumSignUpAndGet":{
+    "message":"Sign up for a premium membership and get:",
+    "description":"Sign up for a premium membership and get:"
+  },
+  "ppremiumSignUpStorage":{
+    "message":"1 GB of encrypted file storage.",
+    "description":"1 GB of encrypted file storage."
+  },
+  "ppremiumSignUpTwoStep":{
+    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo.",
+    "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "ppremiumSignUpTotp":{
+    "message":"TOTP verification code (2FA) generator for logins in your vault.",
+    "description":"TOTP verification code (2FA) generator for logins in your vault."
+  },
+  "ppremiumSignUpSupport":{
+    "message":"Priority customer support.",
+    "description":"Priority customer support."
+  },
+  "ppremiumSignUpFuture":{
+    "message":"All future premium features. More coming soon!",
+    "description":"All future premium features. More coming soon!"
+  },
+  "premiumPurchase":{
+    "message":"Purchase Premium",
+    "description":"Purchase Premium"
+  },
+  "premiumPurchaseAlert":{
+    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumCurrentMember":{
+    "message":"You are a premium member!",
+    "description":"You are a premium member!"
+  },
+  "premiumCurrentMemberThanks":{
+    "message":"Thank you for supporting bitwarden.",
+    "description":"Thank you for supporting bitwarden."
+  },
+  "premiumPrice":{
+    "message":"All for just %price% \/year!",
+    "description":"All for just %price% \/year!"
+  },
+  "refreshComplete":{
+    "message":"Refresh complete",
+    "description":"Refresh complete"
   }
 }

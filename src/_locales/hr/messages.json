@@ -4,703 +4,703 @@
     "description":"bitwarden"
   },
   "extName":{
-    "message":"bitwarden - Gestor de contraseñas gratuito",
+    "message":"bitwarden - Besplatni upravitelj lozinki",
     "description":"Extension name"
   },
   "extDesc":{
-    "message":"bitwarden es un gestor de contraseñas seguro y gratuito para todos tus dispositivos.",
+    "message":"bitwarden je siguran i besplatan upravitelj lozinki za sve vaše uređaje.",
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
-    "message":"Identifícate o crea una nueva cuenta para acceder a tu bóveda segura.",
+    "message":"Prijavite se ili stvorite novi račun kako biste pristupili svom sigurnom trezoru.",
     "description":"Log in or create a new account to access your secure vault."
   },
   "createAccount":{
-    "message":"Crear cuenta",
+    "message":"Stvori račun",
     "description":"Create Account"
   },
   "login":{
-    "message":"Identificarse",
+    "message":"Prijavi se",
     "description":"Log In"
   },
   "cancel":{
-    "message":"Cancelar",
+    "message":"Odustani",
     "description":"Cancel"
   },
   "close":{
-    "message":"Cerrar",
+    "message":"Zatvori",
     "description":"Close"
   },
   "submit":{
-    "message":"Enviar",
+    "message":"Pošalji",
     "description":"Submit"
   },
   "emailAddress":{
-    "message":"Correo electrónico",
+    "message":"Adresa e-pošte",
     "description":"Email Address"
   },
   "masterPass":{
-    "message":"Contraseña maestra",
+    "message":"Glavna lozinka",
     "description":"Master Password"
   },
   "masterPassDesc":{
-    "message":"La contraseña maestra es la clave que utilizas para acceder a tu bóveda. Es muy importante que no olvides tu contraseña maestra. No hay forma de recuperarla en el caso de que la hayas olvidado.",
+    "message":"Glavna lozinka je lozinka koju koristite za pristup vašem trezoru. Vrlo je važno da ne zaboravite glavnu lozinku. Ne postoji način za oporavak lozinke u slučaju da je zaboravite.",
     "description":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc":{
-    "message":"Una pista de tu contraseña maestra puede ayudarte a recordarla en caso de que la olvides.",
+    "message":"Podsjetnik glavne lozinke Vam može pomoći da se prisjetite svoje lozinke ako je zaboravite.",
     "description":"A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass":{
-    "message":"Vuelve a escribir tu contraseña maestra",
+    "message":"Ponovno upišite glavnu lozinku",
     "description":"Re-type Master Password"
   },
   "masterPassHint":{
-    "message":"Pista de contraseña maestra (opcional)",
+    "message":"Podsjetnik glavne lozinke (izborno)",
     "description":"Master Password Hint (optional)"
   },
   "tab":{
-    "message":"Pestaña",
+    "message":"Kartica",
     "description":"Tab"
   },
   "myVault":{
-    "message":"Mi bóveda",
+    "message":"Moj trezor",
     "description":"My Vault"
   },
   "tools":{
-    "message":"Herramientas",
+    "message":"Alati",
     "description":"Tools"
   },
   "settings":{
-    "message":"Ajustes",
+    "message":"Postavke",
     "description":"Settings"
   },
   "currentTab":{
-    "message":"Pestaña actual",
+    "message":"Trenutna kartica",
     "description":"Current Tab"
   },
   "copyPassword":{
-    "message":"Copiar contraseña",
+    "message":"Kopiraj lozinku",
     "description":"Copy Password"
   },
   "copyUsername":{
-    "message":"Copiar usuario",
+    "message":"Kopiraj korisničko ime",
     "description":"Copy Username"
   },
   "autoFill":{
-    "message":"Autorellenar",
+    "message":"Automatsko popunjavanje",
     "description":"Auto-fill"
   },
   "generatePasswordCopied":{
-    "message":"Generar contraseña (copiada)",
+    "message":"Generiranje lozinke (kopirano)",
     "description":"Generate Password (copied)"
   },
   "noMatchingLogins":{
-    "message":"Sin entradas coincidentes.",
+    "message":"Nema podudarajućih prijava.",
     "description":"No matching logins."
   },
   "vaultLocked":{
-    "message":"La bóveda está bloqueada.",
+    "message":"Trezor je zaključan.",
     "description":"Vault is locked."
   },
   "autoFillInfo":{
-    "message":"No hay entradas disponibles para autorellenar en la pestaña actual del navegador.",
+    "message":"Nema dostupnih prijava za automatsko popunjavanje za trenutnu karticu preglednika.",
     "description":"There are no logins available to auto-fill for the current browser tab."
   },
   "addLogin":{
-    "message":"Añadir entrada",
+    "message":"Dodaj prijavu",
     "description":"Add a Login"
   },
   "passwordHint":{
-    "message":"Pista de contraseña",
+    "message":"Podsjetnik za lozinku",
     "description":"Password Hint"
   },
   "enterEmailToGetHint":{
-    "message":"Introduce el correo electrónico de tu cuenta para recibir la pista de tu contraseña maestra.",
+    "message":"Unesite adresu e-pošte svog računa da biste zaprimili podsjetnik za glavnu lozinku.",
     "description":"Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint":{
-    "message":"Obtener pista de la contraseña maestra",
+    "message":"Dobijte podsjetnik za glavnu lozinku",
     "description":"Get master password hint"
   },
   "continue":{
-    "message":"Continuar",
+    "message":"Nastavi",
     "description":"Continue"
   },
   "verificationCode":{
-    "message":"Código de verificación",
+    "message":"Kod za provjeru",
     "description":"Verification Code"
   },
   "account":{
-    "message":"Cuenta",
+    "message":"Račun",
     "description":"Account"
   },
   "changeMasterPassword":{
-    "message":"Cambiar contraseña maestra",
+    "message":"Promjena glavne lozinke",
     "description":"Change Master Password"
   },
   "changeEmail":{
-    "message":"Cambiar correo electrónico",
+    "message":"Promijeni e-poštu",
     "description":"Change Email"
   },
   "twoStepLogin":{
-    "message":"Autenticación en dos pasos",
+    "message":"Prijava u dva koraka",
     "description":"Two-step Login"
   },
   "logOut":{
-    "message":"Cerrar sesión",
+    "message":"Odjavi se",
     "description":"Log Out"
   },
   "about":{
-    "message":"Acerca de",
+    "message":"O aplikaciji",
     "description":"About"
   },
   "version":{
-    "message":"Versión",
+    "message":"Verzija",
     "description":"Version"
   },
   "save":{
-    "message":"Guardar",
+    "message":"Spremi",
     "description":"Save"
   },
   "addFolder":{
-    "message":"Añadir carpeta",
+    "message":"Dodaj mapu",
     "description":"Add Folder"
   },
   "name":{
-    "message":"Nombre",
+    "message":"Ime",
     "description":"Name"
   },
   "editFolder":{
-    "message":"Editar carpeta",
+    "message":"Uredi mapu",
     "description":"Edit Folder"
   },
   "deleteFolder":{
-    "message":"Borrar carpeta",
+    "message":"Izbriši mapu",
     "description":"Delete Folder"
   },
   "folders":{
-    "message":"Carpetas",
+    "message":"Mape",
     "description":"Folders"
   },
   "noFolders":{
-    "message":"No hay carpetas que listar.",
+    "message":"Nema mapa na popisu.",
     "description":"There are no folders to list."
   },
   "helpFeedback":{
-    "message":"Ayuda & Comentarios",
+    "message":"Pomoć i povratne informacije",
     "description":"Help & Feedback"
   },
   "emailUs":{
-    "message":"Envíanos un correo",
+    "message":"Pošaljite nam e-poštu",
     "description":"Email Us"
   },
   "emailUsDirectly":{
-    "message":"Envíanos un correo directamente para obtener ayuda o dejar tus comentarios.",
+    "message":"Pošaljite nam izravno e-poštu kako biste dobili pomoć ili ostavite povratnu informaciju.",
     "description":"Email us directly to get help or leave feedback."
   },
   "visitOurWebsite":{
-    "message":"Visita nuestro sitio web",
+    "message":"Posjetite našu web stranicu",
     "description":"Visit Our Website"
   },
   "visitOurWebsiteDirectly":{
-    "message":"Visita nuestro sitio web para recibir ayuda, noticias, contactarnos por correo y\/o aprender más sobre como utilizar bitwarden.",
+    "message":"Posjetite našu web stranicu kako biste dobili pomoć, vijesti, e-poštu i \/ ili saznali više o tome kako koristiti bitwarden.",
     "description":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
   },
   "fileBugReport":{
-    "message":"Reportar un fallo",
+    "message":"Pošaljite Izvješće o pogrešci",
     "description":"File a Bug Report"
   },
   "gitHubIssue":{
-    "message":"Abrir una incidencia en el repositorio de GitHub.",
+    "message":"Otvorite problem u našem GitHub repozitoriju.",
     "description":"Open an issue at our GitHub repository."
   },
   "sync":{
-    "message":"Sincronizar",
+    "message":"Sinkronizacija",
     "description":"Sync"
   },
   "syncVaultNow":{
-    "message":"Sincronizar bóveda ahora",
+    "message":"Sinkronizirajte trezor sada",
     "description":"Sync Vault Now"
   },
   "lastSync":{
-    "message":"Última sincronización:",
+    "message":"Posljednja sinkronizacija:",
     "description":"Last Sync:"
   },
   "passGen":{
-    "message":"Generador de contraseñas",
+    "message":"Generator lozinke",
     "description":"Password Generator"
   },
   "passGenInfo":{
-    "message":"Genera contraseñas fuertes y únicas para tus accesos automáticamente.",
+    "message":"Automatski generirajte jake, jedinstvene zaporke za prijavu.",
     "description":"Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault":{
-    "message":"Bóveda web de bitwarden",
+    "message":"bitwarden Web trezor",
     "description":"bitwarden Web Vault"
   },
   "bitWebVaultInfo":{
-    "message":"Gestiona tus usuarios de cualquier web con la bóveda web de bitwarden.",
+    "message":"Upravljajte svojim prijavama s bilo kojeg web-preglednika pomoću bitwarden web trezora.",
     "description":"Manage your logins from any web browser with the bitwarden web vault."
   },
   "bitIosVault":{
-    "message":"Bóveda bitwarden de iOS",
+    "message":"bitwarden iOS trezor",
     "description":"bitwarden iOS Vault"
   },
   "bitIosVaultInfo":{
-    "message":"Gestiona tus usuarios de cualquier web con la bóveda bitwarden de iOS",
+    "message":"Upravljajte svojim prijavama s mobilnih uređaja pomoću bitwarden iOS trezora.",
     "description":"Manage your logins from your mobile devices with the bitwarden iOS vault."
   },
   "bitAndrVault":{
-    "message":"Bóveda bitwarden de Android",
+    "message":"bitwarden Android trezor",
     "description":"bitwarden Android Vault"
   },
   "bitAndrVaultInfo":{
-    "message":"Gestiona tus usuarios de cualquier web con la bóveda bitwarden de Android",
+    "message":"Upravljajte svojim prijavama s mobilnih uređaja pomoću bitwarden Android trezora.",
     "description":"Manage your logins from your mobile devices with the bitwarden Android vault."
   },
   "importLogins":{
-    "message":"Importar entradas",
+    "message":"Uvezi prijave",
     "description":"Import Logins"
   },
   "importLoginsInfo":{
-    "message":"Importa rápida y masivamente entradas de otras aplicaciones de gestión de contraseñas.",
+    "message":"Brzo uvezite svoje prijave iz drugih aplikacija za upravljanje lozinkama.",
     "description":"Quickly bulk import your logins from other password management applications."
   },
   "select":{
-    "message":"Seleccionar",
+    "message":"Odaberi",
     "description":"Select"
   },
   "generatePassword":{
-    "message":"Generar contraseña",
+    "message":"Generiraj lozinku",
     "description":"Generate Password"
   },
   "regeneratePassword":{
-    "message":"Regenerar contraseña",
+    "message":"Obnovi lozinku",
     "description":"Regenerate Password"
   },
   "options":{
-    "message":"Opciones",
+    "message":"Opcije",
     "description":"Options"
   },
   "length":{
-    "message":"Longitud",
+    "message":"Dužina",
     "description":"Length"
   },
   "minNumbers":{
-    "message":"Mínimo de caracteres numéricos",
+    "message":"Najmanje brojeva",
     "description":"Minimum Numbers"
   },
   "minSpecial":{
-    "message":"Mínimo de caracteres especiales",
+    "message":"Najmanje specijalnih",
     "description":"Minimum Special"
   },
   "avoidAmbChar":{
-    "message":"Evitar caracteres ambiguos",
+    "message":"Izbjegavajte dvosmislene znakove",
     "description":"Avoid Ambiguous Characters"
   },
   "searchVault":{
-    "message":"Buscar en la bóveda",
+    "message":"Pretraživanje trezora",
     "description":"Search vault"
   },
   "edit":{
-    "message":"Editar",
+    "message":"Uredi",
     "description":"Edit"
   },
   "noLoginsInList":{
-    "message":"No hay entradas que listar.",
+    "message":"Nema prijava na popisu.",
     "description":"There are no logins to list."
   },
   "loginInformation":{
-    "message":"Información de acceso",
+    "message":"Podaci za prijavu",
     "description":"Login Information"
   },
   "username":{
-    "message":"Usuario",
+    "message":"Korisničko ime",
     "description":"Username"
   },
   "password":{
-    "message":"Contraseña",
+    "message":"Lozinka",
     "description":"Password"
   },
   "favorite":{
-    "message":"Favorito",
+    "message":"Favorit",
     "description":"Favorite"
   },
   "notes":{
-    "message":"Notas",
+    "message":"Bilješke",
     "description":"Notes"
   },
   "editLogin":{
-    "message":"Editar entrada",
+    "message":"Uredi prijavu",
     "description":"Edit Login"
   },
   "folder":{
-    "message":"Carpeta",
+    "message":"Mapa",
     "description":"Folder"
   },
   "deleteLogin":{
-    "message":"Eliminar entrada",
+    "message":"Izbriši prijavu",
     "description":"Delete Login"
   },
   "viewLogin":{
-    "message":"Ver entrada",
+    "message":"Prikaži prijavu",
     "description":"View Login"
   },
   "launchWebsite":{
-    "message":"Ir a la web",
+    "message":"Pokreni web stranicu",
     "description":"Launch Website"
   },
   "website":{
-    "message":"Web",
+    "message":"Web stranica",
     "description":"Website"
   },
   "togglePassword":{
-    "message":"Mostrar contraseña",
+    "message":"Uključi lozinku",
     "description":"Toggle Password"
   },
   "manage":{
-    "message":"Gestionar",
+    "message":"Upravljanje",
     "description":"Manage"
   },
   "other":{
-    "message":"Otros",
+    "message":"Ostalo",
     "description":"Other"
   },
   "disableGa":{
-    "message":"Deshabilitar análisis",
+    "message":"Onemogućite uslugu Google Analytics",
     "description":"Disable Analytics"
   },
   "rateExtension":{
-    "message":"Valora la extensión",
+    "message":"Ocijenite ovo proširenje",
     "description":"Rate the Extension"
   },
   "rateExtensionDesc":{
-    "message":"¡Por favor, considera ayudarnos con una buena reseña!",
+    "message":"Molimo razmislite o tome da nam pomognete s dobrom recenzijom!",
     "description":"Please consider helping us out with a good review!"
   },
   "browserNotSupportClipboard":{
-    "message":"Tu navegador web no soporta copiar al portapapeles facilmente. Cópialo manualmente.",
+    "message":"Vaš web preglednik ne podržava jednostavno kopiranje međuspremnika. Umjesto toga ručno kopirajte.",
     "description":"Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
   "verifyMasterPassword":{
-    "message":"Verificar contraseña maestra",
+    "message":"Potvrdite glavnu lozinku",
     "description":"Verify Master Password"
   },
   "invalidMasterPassword":{
-    "message":"Contraseña maestra no válida",
+    "message":"Nevažeća glavna lozinka",
     "description":"Invalid master password"
   },
   "lockOptions":{
-    "message":"Opciones de bloqueo",
+    "message":"Opcije zaključavanja",
     "description":"Lock Options"
   },
   "lockNow":{
-    "message":"Bloquear",
+    "message":"Zaključaj sada",
     "description":"Lock Now"
   },
   "immediately":{
-    "message":"Inmediatamente",
+    "message":"Odmah",
     "description":"Immediately"
   },
   "oneMinute":{
-    "message":"1 minuto",
+    "message":"1 minuta",
     "description":"1 minute"
   },
   "fiveMinutes":{
-    "message":"5 minutos",
+    "message":"5 minuta",
     "description":"5 minutes"
   },
   "fifteenMinutes":{
-    "message":"15 minutos",
+    "message":"15 minuta",
     "description":"15 minutes"
   },
   "thirtyMinutes":{
-    "message":"30 minutos",
+    "message":"30 minuta",
     "description":"30 minutes"
   },
   "oneHour":{
-    "message":"1 hora",
+    "message":"1 sat",
     "description":"1 hour"
   },
   "fourHours":{
-    "message":"4 horas",
+    "message":"4 sata",
     "description":"4 hours"
   },
   "onLocked":{
-    "message":"Bloquear con el sistema",
+    "message":"Kod zaključavanja",
     "description":"On Locked"
   },
   "onRestart":{
-    "message":"Al reiniciar",
+    "message":"Kod ponovnog pokretanja",
     "description":"On Restart"
   },
   "never":{
-    "message":"Nunca",
+    "message":"Nikad",
     "description":"Never"
   },
   "security":{
-    "message":"Seguridad",
+    "message":"Sigurnost",
     "description":"Security"
   },
   "errorsOccurred":{
-    "message":"Ha ocurrido algún error",
+    "message":"Došlo je do pogreške",
     "description":"Errors have occurred"
   },
   "emailRequired":{
-    "message":"Correo electrónico requerido.",
+    "message":"Adresa e-pošte je obavezna.",
     "description":"Email address is required."
   },
   "invalidEmail":{
-    "message":"Correo electrónico no válido.",
+    "message":"Nevažeća adresa e-pošte.",
     "description":"Invalid email address."
   },
   "masterPassRequired":{
-    "message":"Contraseña maestra requerida.",
+    "message":"Potrebna je glavna lozinka.",
     "description":"Master password is required."
   },
   "masterPassLength":{
-    "message":"La contraseña maestra debe tener al menos 8 caracteres.",
+    "message":"Glavna lozinka mora imati najmanje 8 znakova.",
     "description":"Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch":{
-    "message":"La confirmación de contraseña maestra no coincide.",
+    "message":"Potvrda glavne lozinke ne odgovara.",
     "description":"Master password confirmation does not match."
   },
   "newAccountCreated":{
-    "message":"¡Tu nueva cuenta ha sido creada! Ahora puedes acceder.",
+    "message":"Vaš novi račun je kreiran! Sada se možete prijaviti.",
     "description":"Your new account has been created! You may now log in."
   },
   "masterPassSent":{
-    "message":"Te hemos enviado un correo electrónico con la pista de tu contraseña maestra.",
+    "message":"Poslali smo vam e-poštu s podsjetnikom glavne lozinke.",
     "description":"We've sent you an email with your master password hint."
   },
   "verificationCodeRequired":{
-    "message":"Código de verificación requerido.",
+    "message":"Potvrdni kôd je obavezan.",
     "description":"Verification code is required."
   },
   "valueCopied":{
-    "message":" copiado",
+    "message":" kopirano",
     "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError":{
-    "message":"No se ha podido autorellenar la entrada seleccionada en esta página. Copia\/pega tu usuario y\/o contraseña.",
+    "message":"Nije moguće automatski ispuniti odabranu prijavu na ovoj stranici. Umjesto toga kopirajte \/ zalijepite korisničko ime i \/ ili zaporku.",
     "description":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
   },
   "loggedOut":{
-    "message":"Sesión terminada",
+    "message":"Odjavljen",
     "description":"Logged out"
   },
   "loginExpired":{
-    "message":"Tu sesión ha expirado.",
+    "message":"Vaša sesija je istekla.",
     "description":"Your login session has expired."
   },
   "logOutConfirmation":{
-    "message":"¿Estás seguro de querer cerrar sesión?",
+    "message":"Jeste li sigurni da se želite odjaviti?",
     "description":"Are you sure you want to log out?"
   },
   "yes":{
-    "message":"Si",
+    "message":"Da",
     "description":"Yes"
   },
   "no":{
-    "message":"No",
+    "message":"Ne",
     "description":"No"
   },
   "unexpectedError":{
-    "message":"Ha ocurrido un error inesperado.",
+    "message":"Došlo je do neočekivane pogreške.",
     "description":"An unexpected error has occured."
   },
   "nameRequired":{
-    "message":"Nombre requerido.",
+    "message":"Ime je obavezno.",
     "description":"Name is required."
   },
   "addedFolder":{
-    "message":"Carpeta añadida",
+    "message":"Dodana je mapa",
     "description":"Added folder"
   },
   "changeMasterPass":{
-    "message":"Cambiar contraseña maestra",
+    "message":"Promjena glavne lozinke",
     "description":"Change Master Password"
   },
   "changeMasterPasswordConfirmation":{
-    "message":"Puedes cambiar tu contraseña maestra en la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?",
+    "message":"Možete promijeniti svoju glavnu lozinku na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?",
     "description":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "changeEmailConfirmation":{
-    "message":"Puedes cambiar tu correo electrónico en la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?",
+    "message":"Adresu e-pošte možete promijeniti na trezoru web sučelja bitwarden.com. Želite li sada posjetiti web stranicu?",
     "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation":{
-    "message":"La autenticación en dos pasos hace que tu cuenta sea mucho más segura requiriendo que introduzcas un código de seguridad de una aplicación de autenticación cada vez que accedes. La autenticación en dos pasos puede ser habilitada en la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?",
+    "message":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?",
     "description":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
-    "message":"Sessión finalizada",
+    "message":"Odjavljivanje",
     "description":"Logging out"
   },
   "loggingOutConfirmation":{
-    "message":"Has actualizado desde una versión antigua recientemente. Debes volver a identificarte para cambiar las opciones de bloqueo. ¿Quiere cerrar sesión ahora?",
+    "message":"Nedavno je odrađeno ažuriranje. Morate se ponovo prijaviti da biste promijenili opcije zaključavanja. Želite li se odjaviti sada?",
     "description":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
   },
   "editedFolder":{
-    "message":"Editar carpeta",
+    "message":"Uređena mapa",
     "description":"Edited Folder"
   },
   "deleteFolderConfirmation":{
-    "message":"¿Estás seguro de querer eliminar esta carpeta?",
+    "message":"Jeste li sigurni da želite izbrisati ovu mapu?",
     "description":"Are you sure you want to delete this folder?"
   },
   "deletedFolder":{
-    "message":"Carpeta eliminada",
+    "message":"Izbrisana mapa",
     "description":"Deleted folder"
   },
   "gettingStartedTutorial":{
-    "message":"Tutorial de primeros pasos",
+    "message":"Priručnik za početak rada",
     "description":"Getting Started Tutorial"
   },
   "gettingStartedTutorialVideo":{
-    "message":"Revisa nuestro tutorial de primeros pasos para aprender a sacar lo máximo de la extensión del navegador.",
+    "message":"Pogledajte naš početni vodič da biste saznali kako najbolje iskoristiti proširenje preglednika.",
     "description":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
   },
   "syncingComplete":{
-    "message":"Sincronización completada",
+    "message":"Sinkronizacija dovršena",
     "description":"Syncing complete"
   },
   "importLoginsConfirmation":{
-    "message":"Puedes importar entradas masivamente desde la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?",
+    "message":"Možete masovno uvesti prijave sa web-trezora bitwarden.com. Želite li sada posjetiti web stranicu?",
     "description":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
-    "message":"Contraseña copiada",
+    "message":"Lozinka kopirana",
     "description":"Password copied"
   },
   "uri":{
-    "message":"URI",
+    "message":"URL",
     "description":"URI"
   },
   "addedLogin":{
-    "message":"Entrada añadida",
+    "message":"Dodana prijava",
     "description":"Added login"
   },
   "editedLogin":{
-    "message":"Entrada editada",
+    "message":"Uređena prijava",
     "description":"Edited login"
   },
   "deleteLoginConfirmation":{
-    "message":"¿Estás seguro de que quieres eliminar esta entrada?",
+    "message":"Jeste li sigurni da želite izbrisati ovu prijavu?",
     "description":"Are you sure you want to delete this login?"
   },
   "deletedLogin":{
-    "message":"Entrada eliminada",
+    "message":"Izbrisana prijava",
     "description":"Deleted login"
   },
   "overwritePassword":{
-    "message":"Sobreescribir contraseña",
+    "message":"Prebriši zaporku",
     "description":"Overwrite Password"
   },
   "overwritePasswordConfirmation":{
-    "message":"¿Estás seguro de que quieres sobreescribir la contraseña actual?",
+    "message":"Jeste li sigurni da želite prebrisati trenutnu zaporku?",
     "description":"Are you sure you want to overwrite the current password?"
   },
   "lost2FAApp":{
-    "message":"¿Has perdido la autenticación en dos pasos?",
+    "message":"Izgubljena aplikacija autentifikatora?",
     "description":"Lost authenticator app?"
   },
   "credits":{
-    "message":"Créditos",
+    "message":"Zasluge",
     "description":"Credits (giving thanks to people that helped, like at the end of a movie)"
   },
   "thankYou":{
-    "message":"Gracias",
+    "message":"Hvala Vam",
     "description":"Thank You"
   },
   "translations":{
-    "message":"Traducciones",
+    "message":"Prijevodi",
     "description":"Translations"
   },
   "searchFolder":{
-    "message":"Buscar carpeta",
+    "message":"Mapa pretraživanja",
     "description":"Search folder"
   },
   "noneFolder":{
-    "message":"Sin carpeta",
+    "message":"Nema mape",
     "description":"No Folder - this is the folder for uncategorized logins"
   },
   "features":{
-    "message":"Características",
+    "message":"Značajke",
     "description":"Features"
   },
   "gaDesc":{
-    "message":"Realizamos análisis para aprender de como se utiliza la extensión para poder mejorarla. Toda la información recogida es completamente anónima.",
+    "message":"Koristimo Google Analytics kako bismo saznali na koji način se proširenje upotrebljava kako bismo ga mogli poboljšati. Svako prikupljanje podataka potpuno je anonimno.",
     "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification":{
-    "message":"Deshabilitar notificación para añadir entradas",
+    "message":"Onemogući obavijest o dodavanju prijave",
     "description":"Disable Add Login Notification"
   },
   "addLoginNotificationDesc":{
-    "message":"La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres salvar nuevas entradas en tu bóveda cuando te identificas en un sitio web por primera vez.",
+    "message":"\"Obavijest o dodavanju prijave\" automatski vas traži da spremite nove prijave u svoj trezor kad god se prvi put prijavite na njih.",
     "description":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc":{
-    "message":"¿Deberías bitwarden recordar esta contraseña por ti?",
+    "message":"Treba li bitwarden zapamtiti ovu lozinku za vas?",
     "description":"Should bitwarden remember this password for you?"
   },
   "notificationAddSave":{
-    "message":"Si, guardarla",
+    "message":"Da, spremi sad",
     "description":"Yes, Save Now"
   },
   "notificationNeverSave":{
-    "message":"Nunca para este sitio",
+    "message":"Nikad za ovu stranicu",
     "description":"Never for this website"
   },
   "disableContextMenuItem":{
-    "message":"Deshabilitar opciones del menú contextual",
+    "message":"Onemogući mogućnosti kontekstnog izbornika",
     "description":"Disable Context Menu Options"
   },
   "disableContextMenuItemDesc":{
-    "message":"Las opciones del menú contextual permiten un acceso rápido al generador de contraseñas y a las entradas para el sitio abierto en tu pestaña actual.",
+    "message":"Opcije kontekstnog izbotnika omogućuju brzi pristup generiranju lozinke i prijavama za web stranicu na vašoj trenutačnoj kartici.",
     "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "exportVault":{
-    "message":"Exportar bóveda",
+    "message":"Izvoz trezora",
     "description":"Export Vault"
   },
   "warning":{
-    "message":"ADVERTENCIA",
+    "message":"UPOZORENJE",
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"La exportación contiene tus datos no cifrados en formato .csv. No deberías almacenarlo o enviarlo por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo.",
+    "message":"Ovaj izvoz sadrži vaše nešifirane podatke u .csv formatu. Ne biste ga trebali spremati ili poslati preko nesigurnih kanala (kao što je e-pošta). Obrišite ga odmah nakon što ste završili s upotrebom.",
     "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword":{
-    "message":"Introduce tu contraseña maestra para exportar la información de tu bóveda.",
+    "message":"Unesite glavnu lozinku za izvoz podataka iz trezora.",
     "description":"Enter your master password to export your vault data."
   },
   "exportVaultInfo":{
-    "message":"Exportar tu información en formato .csv para poder modificarla facilmente o moverla a cualquiera sitio.",
+    "message":"Izvoz podataka iz trezora u .csv formatu je iz razloga da ga možete jednostavno modificirati ili premjestiti drugdje.",
     "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   },
   "shared":{
-    "message":"Compartido",
+    "message":"Dijeljeno",
     "description":"Shared"
   },
   "shareVault":{
-    "message":"Comparte tu bóveda",
+    "message":"Podijelite trezor",
     "description":"Share Your Vault"
   },
   "shareVaultInfo":{
-    "message":"Crear una organización para compartir tus entradas de forma segura con otros usuarios.",
+    "message":"Izradite organizaciju kako biste sigurno dijelili svoje prijave s drugim korisnicima.",
     "description":"Create an organization to securely share your logins with other users."
   },
   "contribute":{
-    "message":"You can contribute to!",
+    "message":"You can contribute too!",
     "description":"You can contribute too!"
   },
   "learnMore":{
-    "message":"Más información",
+    "message":"Saznaj više",
     "description":"Learn more"
   },
   "authenticatorKeyTotp":{

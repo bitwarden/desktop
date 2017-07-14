@@ -131,10 +131,6 @@
     "message":"验证码",
     "description":"Verification Code"
   },
-  "enterTwoStepVerCode":{
-    "message":"输入您的两步登录验证码。",
-    "description":"Enter your two-step verification code."
-  },
   "account":{
     "message":"账户",
     "description":"Account"
@@ -400,7 +396,7 @@
     "description":"Lock Options"
   },
   "lockNow":{
-    "message":"Lock Now",
+    "message":"立即锁定",
     "description":"Lock Now"
   },
   "immediately":{
@@ -432,7 +428,7 @@
     "description":"4 hours"
   },
   "onLocked":{
-    "message":"On Locked",
+    "message":"电脑锁定时",
     "description":"On Locked"
   },
   "onRestart":{
@@ -537,7 +533,7 @@
   },
   "twoStepLoginConfirmation":{
     "message":"两步登录需要您登录时输入一个从认证应用获得的安全吗，这样能使您的账户更安全。两步登录可以在 bitwarden.com 网页版打开。现在为您跳转吗？",
-    "description":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "description":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
     "message":"登出...",
@@ -656,7 +652,7 @@
     "description":"Yes, Save Now"
   },
   "notificationNeverSave":{
-    "message":"Never for this website",
+    "message":"忽略此网站",
     "description":"Never for this website"
   },
   "disableContextMenuItem":{
@@ -701,10 +697,138 @@
   },
   "contribute":{
     "message":"You can contribute to!",
-    "description":"You can contribute to!"
+    "description":"You can contribute too!"
   },
   "learnMore":{
-    "message":"Learn more",
+    "message":"进一步了解",
     "description":"Learn more"
+  },
+  "authenticatorKeyTotp":{
+    "message":"Authenticator Key (TOTP)",
+    "description":"Authenticator Key (TOTP)"
+  },
+  "verificationCodeTotp":{
+    "message":"Verification Code (TOTP)",
+    "description":"Verification Code (TOTP)"
+  },
+  "copyVerificationCode":{
+    "message":"Copy Verification Code",
+    "description":"Copy Verification Code"
+  },
+  "attachments":{
+    "message":"Attachments",
+    "description":"Attachments"
+  },
+  "deleteAttachment":{
+    "message":"Delete attachment",
+    "description":"Delete attachment"
+  },
+  "deleteAttachmentConfirmation":{
+    "message":"Are you sure you want to delete this attachment?",
+    "description":"Are you sure you want to delete this attachment?"
+  },
+  "deletedAttachment":{
+    "message":"Deleted attachment",
+    "description":"Deleted attachment"
+  },
+  "newAttachment":{
+    "message":"Add New Attachment",
+    "description":"Add New Attachment"
+  },
+  "noAttachments":{
+    "message":"No attachments.",
+    "description":"No attachments."
+  },
+  "attachmentSaved":{
+    "message":"The attachment has been saved.",
+    "description":"The attachment has been saved."
+  },
+  "file":{
+    "message":"File",
+    "description":"File"
+  },
+  "selectFile":{
+    "message":"Select a file.",
+    "description":"Select a file."
+  },
+  "maxFileSize":{
+    "message":"Maximum file size is 100 MB.",
+    "description":"Maximum file size is 100 MB."
+  },
+  "featureUnavailable":{
+    "message":"Feature Unavailable",
+    "description":"Feature Unavailable"
+  },
+  "updateKey":{
+    "message":"You cannot use this feature until you update your encryption key.",
+    "description":"You cannot use this feature until you update your encryption key."
+  },
+  "premiumMembership":{
+    "message":"Premium Membership",
+    "description":"Premium Membership"
+  },
+  "premiumManage":{
+    "message":"Manage Membership",
+    "description":"Manage Membership"
+  },
+  "premiumManageAlert":{
+    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumRefresh":{
+    "message":"Refresh Membership",
+    "description":"Refresh Membership"
+  },
+  "premiumNotCurrentMember":{
+    "message":"You are not currently a premium member.",
+    "description":"You are not currently a premium member."
+  },
+  "premiumSignUpAndGet":{
+    "message":"Sign up for a premium membership and get:",
+    "description":"Sign up for a premium membership and get:"
+  },
+  "ppremiumSignUpStorage":{
+    "message":"1 GB of encrypted file storage.",
+    "description":"1 GB of encrypted file storage."
+  },
+  "ppremiumSignUpTwoStep":{
+    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo.",
+    "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "ppremiumSignUpTotp":{
+    "message":"TOTP verification code (2FA) generator for logins in your vault.",
+    "description":"TOTP verification code (2FA) generator for logins in your vault."
+  },
+  "ppremiumSignUpSupport":{
+    "message":"Priority customer support.",
+    "description":"Priority customer support."
+  },
+  "ppremiumSignUpFuture":{
+    "message":"All future premium features. More coming soon!",
+    "description":"All future premium features. More coming soon!"
+  },
+  "premiumPurchase":{
+    "message":"Purchase Premium",
+    "description":"Purchase Premium"
+  },
+  "premiumPurchaseAlert":{
+    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumCurrentMember":{
+    "message":"You are a premium member!",
+    "description":"You are a premium member!"
+  },
+  "premiumCurrentMemberThanks":{
+    "message":"Thank you for supporting bitwarden.",
+    "description":"Thank you for supporting bitwarden."
+  },
+  "premiumPrice":{
+    "message":"All for just %price% \/year!",
+    "description":"All for just %price% \/year!"
+  },
+  "refreshComplete":{
+    "message":"Refresh complete",
+    "description":"Refresh complete"
   }
 }

@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden - Pengelola Sandi Gratis</value>
+    <value>bitwarden - Besplatni upravitelj lozinki</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Pengelola sandi yang aman dan gratis untuk semua perangkat Anda</value>
+    <value>Siguran i besplatan upravitelj lozinki za sve vaše uređaje</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden adalah cara termudah dan teraman untuk menyimpan semua info masuk dan sandi Anda sambil tetap menjaga mereka disinkronkan di antara semua perangkat Anda.
+    <value>bitwarden je najlakši i najsigurniji način pohranjivanja svih vaših prijava i lozinki, dok su iste sinkronizirane među svim vašim uređajima.
 
-Pencurian sandi adalah masalah serius. Situs web dan aplikasi yang Anda gunakan diserang setiap hari. Pelanggaran keamanan terjadi dan sandi Anda dicuri. Ketika Anda menggunakan sandi yang sama di aplikasi dan situs web peretas dapat dengan mudah mengakses email, bank, dan akun penting Anda yang lain.
+Krađa lozinki ozbiljan je problem. Web-lokacije i aplikacije koje upotrebljavate svakodnevno su napadnute. Pojavljuju se sigurnosne povrede, a vaše lozinke su ukradene. Ako ponovno upotrebljavate iste zaporke u aplikacijama i web-lokacijama, hakeri mogu lako pristupiti vašoj e-pošti, banci i drugim važnim računima.
 
-Pakar keamanan merekomendasikan agar Anda menggunakan sandi yang berbeda dan dibuat secara acak untuk setiap akun yang Anda buat. Tapi bagaimana mengelola semua sandi tersebut? bitwarden membuatnya menjadi mudah untuk Anda membuat, menyimpan dan mengakses sandi Anda.
+Sigurnosni stručnjaci preporučuju da koristite različitu, nasumično generiranu lozinku za svaki račun koji stvorite. Ali kako upravljati svim tim lozinkama? Bitwarden vam olakšava stvaranje, pohranu i pristup lozinkama.
 
-bitwarden menyimpan semua info masuk Anda di brankas terenkripsi yang disinkronkan di semua perangkat Anda. Karena sepenuhnya dienkripsi sebelum meninggalkan perangkat Anda, hanya Anda yang memiliki akses ke data Anda. Bahkan tim di bitwarden tidak dapat membaca data Anda, bahkan jika kami mau. Data Anda disegel dengan ekripsi AES-256 bit, hash yang di-salt, dan PBKDF2 SHA-256.</value>
+bitwarden pohranjuje sve vaše prijave u šifrirani trezor koji se sinkronizira na svim vašim uređajima. Budući da je potpuno šifriran prije nego ikada napusti uređaj, samo vi imate pristup podacima. Čak ni tim u bitwardenu ne može vidjeti vaše podatke. Vaši su podaci zapečaćeni s AES-256 bitnim šifriranjem, salt hashom i PBKDF2 SHA-256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Pengelola sandi yang aman dan gratis untuk semua perangkat Anda</value>
+    <value>Siguran i besplatan upravitelj lozinki za sve vaše uređaje</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sinkronkan dan akses brankas Anda dari beberapa perangkat</value>
+    <value>Sinkronizirajte i pristupite trezoru s više uređaja</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Kelola semua info masuk dan sandi Anda dari brankas yang aman</value>
+    <value>Upravljajte svim svojim prijavama i lozinkama iz sigurnog trezora</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Mengisi info masuk dengan cepat dan otomatis ke situs web yang Anda kunjungi</value>
+    <value>Brzo automatsko popunjavanje vjerodajnica za prijavu na bilo kojoj web stranici koje posjećujete</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Brankas Anda juga mudah diakses dari menu klik kanan</value>
+    <value>Vaš trezor je lako dostupan iz izbornika desnim klikom</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Secara otomatis menghasilkan sandi yang kuat, acak dan aman</value>
+    <value>Automatski generirajte jake, nasumične i sigurne lozinke</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Informasi Anda dikelola dengan aman menggunakan enkripsi AES-256 bit</value>
+    <value>Vašim se podacima sigurno upravlja AES-256 bitnim šifriranjem</value>
   </data>
 </root>
