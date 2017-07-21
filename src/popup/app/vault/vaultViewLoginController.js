@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr, $q,
-        $analytics, i18nService, utilsService, totpService, $timeout, tokenService, $window, cryptoService) {
+        $analytics, i18nService, utilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert) {
         $scope.i18n = i18nService;
         var from = $stateParams.from,
             totpInterval = null;
@@ -105,6 +105,21 @@ angular
         };
 
         $scope.download = function (attachment) {
+            if (!$scope.login.organizationId && !tokenService.getPremium()) {
+                SweetAlert.swal({
+                    title: i18nService.premiumRequired,
+                    text: i18nService.premiumRequiredDesc,
+                    showCancelButton: true,
+                    confirmButtonText: i18nService.learnMore,
+                    cancelButtonText: i18nService.cancel
+                }, function (confirmed) {
+                    if (confirmed) {
+                        chrome.tabs.create({ url: 'https://bitwarden.com' });
+                    }
+                });
+                return;
+            }
+
             if (attachment.downloading) {
                 return;
             }

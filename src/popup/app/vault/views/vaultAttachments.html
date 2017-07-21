@@ -17,8 +17,7 @@
                         {{i18n.noAttachments}}
                     </div>
                     <div class="list-section-item" ng-repeat="attachment in login.attachments">
-                        <a href="#" stop-click ng-click="download(attachment)">{{attachment.fileName}}</a>
-                        <i class="fa fa-spin fa-spinner text-muted no-animation" ng-if="attachment.downloading"></i>
+                        {{attachment.fileName}}
                         <span class="btn-list no-padding" stop-prop stop-click title="{{i18n.deleteAttachment}}"
                               ng-click="delete(attachment)">
                             <i class="fa fa-lg fa-trash"></i>
