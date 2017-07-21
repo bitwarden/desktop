@@ -200,6 +200,33 @@ function initUtilsService() {
         return null;
     };
 
+    UtilsService.prototype.copyToClipboard = function (text) {
+        if (window.clipboardData && window.clipboardData.setData) {
+            // IE specific code path to prevent textarea being shown while dialog is visible.
+            return clipboardData.setData('Text', text);
+        }
+        else if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+            var textarea = document.createElement('textarea');
+            textarea.textContent = text;
+            // Prevent scrolling to bottom of page in MS Edge.
+            textarea.style.position = 'fixed';
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                // Security exception may be thrown by some browsers.
+                return document.execCommand('copy');
+            }
+            catch (ex) {
+                console.warn('Copy to clipboard failed.', ex);
+                return false;
+            }
+            finally {
+                document.body.removeChild(textarea);
+            }
+        }
+    };
+
     function validIpAddress(ipString) {
         var ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
         return ipRegex.test(ipString);

@@ -2,7 +2,7 @@ angular
     .module('bit.current')
 
     .controller('currentController', function ($scope, loginService, utilsService, toastr, $q, $window, $state, $timeout,
-        autofillService, $analytics, i18nService) {
+        autofillService, $analytics, i18nService, totpService, tokenService) {
         $scope.i18n = i18nService;
 
         var pageDetails = [],
@@ -83,9 +83,13 @@ angular
                         chrome.tabs.sendMessage(tabId, {
                             command: 'fillForm',
                             fillScript: fillScript
-                        }, {
-                            frameId: pageDetails[i].frameId
-                        }, $window.close);
+                        }, { frameId: pageDetails[i].frameId }, $window.close);
+
+                        if (login.totp && tokenService.getPremium()) {
+                            totpService.getCode(login.totp).then(function (code) {
+                                utilsService.copyToClipboard(code);
+                            });
+                        }
                     }
                 }
             }

@@ -28,7 +28,7 @@ if (chrome.commands) {
             });
             bg_passwordGenerationService.getOptions().then(function (options) {
                 var password = bg_passwordGenerationService.generatePassword(options);
-                copyToClipboard(password);
+                bg_utilsService.copyToClipboard(password);
             });
         }
     });
@@ -319,7 +319,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         });
         bg_passwordGenerationService.getOptions().then(function (options) {
             var password = bg_passwordGenerationService.generatePassword(options);
-            copyToClipboard(password);
+            bg_utilsService.copyToClipboard(password);
         });
     }
     else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
@@ -344,14 +344,14 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                             hitType: 'event',
                             eventAction: 'Copied Username From Context Menu'
                         });
-                        copyToClipboard(logins[i].username);
+                        bg_utilsService.copyToClipboard(logins[i].username);
                     }
                     else if (info.parentMenuItemId === 'copy-password') {
                         ga('send', {
                             hitType: 'event',
                             eventAction: 'Copied Password From Context Menu'
                         });
-                        copyToClipboard(logins[i].password);
+                        bg_utilsService.copyToClipboard(logins[i].password);
                     }
                     return;
                 }
@@ -606,9 +606,13 @@ function autofillPage() {
                     chrome.tabs.sendMessage(tabId, {
                         command: 'fillForm',
                         fillScript: fillScript
-                    }, {
-                            frameId: pageDetailsToAutoFill[i].frameId
+                    }, { frameId: pageDetailsToAutoFill[i].frameId });
+
+                    if (!bg_utilsService.isFirefox() && loginToAutoFill.totp && bg_tokenService.getPremium()) {
+                        bg_totpService.getCode(loginToAutoFill.totp).then(function (code) {
+                            bg_utilsService.copyToClipboard(code);
                         });
+                    }
                 }
             }
         }
@@ -710,33 +714,6 @@ function logout(expired, callback) {
             });
         });
     });
-}
-
-function copyToClipboard(text) {
-    if (window.clipboardData && window.clipboardData.setData) {
-        // IE specific code path to prevent textarea being shown while dialog is visible.
-        return clipboardData.setData('Text', text);
-    }
-    else if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
-        var textarea = document.createElement('textarea');
-        textarea.textContent = text;
-        // Prevent scrolling to bottom of page in MS Edge.
-        textarea.style.position = 'fixed';
-        document.body.appendChild(textarea);
-        textarea.select();
-
-        try {
-            // Security exception may be thrown by some browsers.
-            return document.execCommand('copy');
-        }
-        catch (ex) {
-            console.warn('Copy to clipboard failed.', ex);
-            return false;
-        }
-        finally {
-            document.body.removeChild(textarea);
-        }
-    }
 }
 
 // Sync polling
