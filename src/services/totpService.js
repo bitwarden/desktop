@@ -1,4 +1,5 @@
-﻿function TotpService() {
+﻿function TotpService(constantsService) {
+    this.constantsService = constantsService;
     initTotpService();
 }
 
@@ -104,5 +105,21 @@ function initTotpService() {
             otp = (otp).substr(otp.length - 6, 6);
             return otp;
         });
+    };
+
+    TotpService.prototype.isAutoCopyEnabled = function () {
+        var deferred = Q.defer();
+        var self = this;
+
+        chrome.storage.local.get(self.constantsService.disableAutoTotpCopyKey, function (obj) {
+            if (obj && !!obj[self.constantsService.disableAutoTotpCopyKey]) {
+                deferred.resolve(false);
+            }
+            else {
+                deferred.resolve(true);
+            }
+        });
+
+        return deferred.promise;
     };
 }

@@ -9,6 +9,17 @@
         <div class="list-section">
             <div class="list-section-items">
                 <div class="list-section-item list-section-item-checkbox">
+                    <label for="totp-copy">{{i18n.disableAutoTotpCopy}}</label>
+                    <input id="totp-copy" type="checkbox" ng-model="disableAutoTotpCopy" ng-change="updateAutoTotpCopy()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{i18n.disableAutoTotpCopyDesc}}
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
                     <label for="ga">{{i18n.disableGa}}</label>
                     <input id="ga" type="checkbox" ng-model="disableGa" ng-change="updateGa()">
                 </div>

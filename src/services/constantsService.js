@@ -3,6 +3,7 @@ function ConstantsService() {
         disableGaKey: 'disableGa',
         disableAddLoginNotificationKey: 'disableAddLoginNotification',
         disableContextMenuItemKey: 'disableContextMenuItem',
+        disableAutoTotpCopyKey: 'disableAutoTotpCopy',
         lockOptionKey: 'lockOption',
         lastActiveKey: 'lastActive',
         encType: {

@@ -17,7 +17,7 @@ var bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userS
     bg_cryptoService, logout);
 var bg_autofillService = new AutofillService();
 var bg_passwordGenerationService = new PasswordGenerationService();
-var bg_totpService = new TotpService();
+var bg_totpService = new TotpService(bg_constantsService);
 
 if (chrome.commands) {
     chrome.commands.onCommand.addListener(function (command) {
@@ -609,8 +609,17 @@ function autofillPage() {
                     }, { frameId: pageDetailsToAutoFill[i].frameId });
 
                     if (!bg_utilsService.isFirefox() && loginToAutoFill.totp && bg_tokenService.getPremium()) {
-                        bg_totpService.getCode(loginToAutoFill.totp).then(function (code) {
-                            bg_utilsService.copyToClipboard(code);
+                        var totpKey = loginToAutoFill.totp;
+                        bg_totpService.isAutoCopyEnabled().then(function (enabled) {
+                            if (enabled) {
+                                return bg_totpService.getCode(totpKey);
+                            }
+
+                            return null;
+                        }).then(function (code) {
+                            if (code) {
+                                bg_utilsService.copyToClipboard(code);
+                            }
                         });
                     }
                 }

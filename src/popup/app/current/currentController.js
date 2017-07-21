@@ -86,8 +86,16 @@ angular
                         }, { frameId: pageDetails[i].frameId }, $window.close);
 
                         if (login.totp && tokenService.getPremium()) {
-                            totpService.getCode(login.totp).then(function (code) {
-                                utilsService.copyToClipboard(code);
+                            totpService.isAutoCopyEnabled().then(function (enabled) {
+                                if (enabled) {
+                                    return totpService.getCode(login.totp);
+                                }
+
+                                return null;
+                            }).then(function (code) {
+                                if (code) {
+                                    utilsService.copyToClipboard(code);
+                                }
                             });
                         }
                     }
