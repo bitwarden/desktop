@@ -7,6 +7,7 @@ angular
         var from = $stateParams.from,
             totpInterval = null;
 
+        $scope.isPremium = tokenService.getPremium();
         $scope.login = null;
         loginService.get($stateParams.loginId, function (login) {
             if (!login) {

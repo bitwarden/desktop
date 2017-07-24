@@ -3,7 +3,7 @@
         <div class="left">
             <a href="" ng-click="close()">{{i18n.close}}</a>
         </div>
-        <div class="right">
+        <div class="right" ng-if="isPremium">
             <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{i18n.submit}}</button>
             <i class="fa fa-spinner fa-lg fa-spin no-animation" ng-show="theForm.$loading"></i>
         </div>
@@ -17,16 +17,16 @@
                         {{i18n.noAttachments}}
                     </div>
                     <div class="list-section-item" ng-repeat="attachment in login.attachments">
-                        {{attachment.fileName}}
                         <span class="btn-list no-padding" stop-prop stop-click title="{{i18n.deleteAttachment}}"
                               ng-click="delete(attachment)">
                             <i class="fa fa-lg fa-trash"></i>
                         </span>
                         <small class="item-sub-label">{{attachment.sizeName}}</small>
+                        <span class="text">{{attachment.fileName}}</span>
                     </div>
                 </div>
             </div>
-            <div class="list-section">
+            <div class="list-section" ng-if="isPremium">
                 <div class="list-section-header">
                     {{i18n.newAttachment}}
                 </div>

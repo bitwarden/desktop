@@ -76,7 +76,7 @@
                 <div class="list-section-item pre">{{login.notes}}</div>
             </div>
         </div>
-        <div class="list-section" ng-if="login.attachments && login.attachments.length">
+        <div class="list-section" ng-if="isPremium && login.attachments && login.attachments.length">
             <div class="list-section-header">
                 {{i18n.attachments}}
             </div>
@@ -84,10 +84,10 @@
                 <a class="list-section-item list-allow-selection" href="#" stop-click
                    ng-repeat="attachment in login.attachments"
                    ng-click="download(attachment)">
-                    {{attachment.fileName}}
                     <i class="fa fa-download right-icon fa-fw no-animation" ng-if="!attachment.downloading"></i>
                     <i class="fa fa-spin fa-spinner right-icon fa-fw no-animation" ng-if="attachment.downloading"></i>
                     <small class="item-sub-label">{{attachment.sizeName}}</small>
+                    <span class="text">{{attachment.fileName}}</span>
                 </a>
             </div>
         </div>

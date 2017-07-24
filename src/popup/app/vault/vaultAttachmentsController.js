@@ -2,10 +2,11 @@ angular
     .module('bit.vault')
 
     .controller('vaultAttachmentsController', function ($scope, $state, $stateParams, loginService, $q, toastr,
-        SweetAlert, utilsService, $analytics, i18nService, cryptoService) {
+        SweetAlert, utilsService, $analytics, i18nService, cryptoService, tokenService) {
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
 
+        $scope.isPremium = tokenService.getPremium();
         loginService.get($stateParams.id, function (login) {
             $q.when(login.decrypt()).then(function (model) {
                 $scope.login = model;
@@ -15,7 +16,7 @@ angular
         $scope.canUseAttachments = false;
         cryptoService.getEncKey().then(function (key) {
             $scope.canUseAttachments = !!key;
-            if (!$scope.canUseAttachments) {
+            if (!$scope.canUseAttachments && $scope.isPremium) {
                 SweetAlert.swal({
                     title: i18nService.featureUnavailable,
                     text: i18nService.updateKey,
