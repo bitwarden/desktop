@@ -128,7 +128,7 @@
     "description":"Continue"
   },
   "verificationCode":{
-    "message":"Введите код",
+    "message":"Код подтверждения",
     "description":"Verification Code"
   },
   "account":{
@@ -696,7 +696,7 @@
     "description":"Create an organization to securely share your logins with other users."
   },
   "contribute":{
-    "message":"You can contribute to!",
+    "message":"Вы тоже можете внести свой вклад!",
     "description":"You can contribute too!"
   },
   "learnMore":{
@@ -704,131 +704,147 @@
     "description":"Learn more"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)",
+    "message":"Ключ проверки подлинности (TOTP)",
     "description":"Authenticator Key (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)",
+    "message":"Код подтверждения (TOTP)",
     "description":"Verification Code (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code",
+    "message":"Копировать код подтверждения",
     "description":"Copy Verification Code"
   },
   "attachments":{
-    "message":"Attachments",
+    "message":"Вложения",
     "description":"Attachments"
   },
   "deleteAttachment":{
-    "message":"Delete attachment",
+    "message":"Удалить вложение",
     "description":"Delete attachment"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?",
+    "message":"Вы действительно хотите удалить это вложение?",
     "description":"Are you sure you want to delete this attachment?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment",
+    "message":"Удаленное вложение",
     "description":"Deleted attachment"
   },
   "newAttachment":{
-    "message":"Add New Attachment",
+    "message":"Добавить новое вложение",
     "description":"Add New Attachment"
   },
   "noAttachments":{
-    "message":"No attachments.",
+    "message":"Без вложений.",
     "description":"No attachments."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved.",
+    "message":"Вложение сохранено.",
     "description":"The attachment has been saved."
   },
   "file":{
-    "message":"File",
+    "message":"Файл",
     "description":"File"
   },
   "selectFile":{
-    "message":"Select a file.",
+    "message":"Выберите файл.",
     "description":"Select a file."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB.",
+    "message":"Максимальный размер файла 100 МБ.",
     "description":"Maximum file size is 100 MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable",
+    "message":"Функция недоступна",
     "description":"Feature Unavailable"
   },
   "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key.",
+    "message":"Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования.",
     "description":"You cannot use this feature until you update your encryption key."
   },
   "premiumMembership":{
-    "message":"Premium Membership",
+    "message":"Премиум-статус",
     "description":"Premium Membership"
   },
   "premiumManage":{
-    "message":"Manage Membership",
+    "message":"Управление статусом",
     "description":"Manage Membership"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Вы можете управлять своим статусом на bitwarden.com. Хотите перейти на сайт сейчас?",
     "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership",
+    "message":"Обновить статус",
     "description":"Refresh Membership"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member.",
+    "message":"В настоящее время у вас нет премиум-статуса.",
     "description":"You are not currently a premium member."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:",
+    "message":"Подпишитесь на премиум-статус и получите:",
     "description":"Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage.",
+    "message":"1 ГБ зашифрованного хранилища файлов.",
     "description":"1 GB of encrypted file storage."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo.",
+    "message":"Дополнительные варианты двухфакторной аутентификации, такие как YubiKey, FIDO U2F и Duo.",
     "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault.",
+    "message":"Генератор кода подтверждения TOTP для входа в ваше хранилище.",
     "description":"TOTP verification code (2FA) generator for logins in your vault."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support.",
+    "message":"Приоритетную поддержку.",
     "description":"Priority customer support."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!",
+    "message":"Все будущие функции премиум-статуса. Их будет больше!",
     "description":"All future premium features. More coming soon!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium",
+    "message":"Купить премиум",
     "description":"Purchase Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Вы можете купить премиум-статус на bitwarden.com. Хотите перейти на сайт сейчас?",
     "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!",
+    "message":"У вас премиум-статус!",
     "description":"You are a premium member!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden.",
+    "message":"Благодарим вас за поддержку bitwarden.",
     "description":"Thank you for supporting bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!",
+    "message":"Всего лишь %price% \/в год!",
     "description":"All for just %price% \/year!"
   },
   "refreshComplete":{
-    "message":"Refresh complete",
+    "message":"Обновление завершено",
     "description":"Refresh complete"
+  },
+  "disableAutoTotpCopy":{
+    "message":"Disable Automatic TOTP Copy",
+    "description":"Disable Automatic TOTP Copy"
+  },
+  "disableAutoTotpCopyDesc":{
+    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+  },
+  "premiumRequired":{
+    "message":"Premium Required",
+    "description":"Premium Required"
+  },
+  "premiumRequiredDesc":{
+    "message":"A premium membership is required to use this feature.",
+    "description":"A premium membership is required to use this feature."
   }
 }

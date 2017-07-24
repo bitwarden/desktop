@@ -532,7 +532,7 @@
     "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Tvåstegsverifiering gör ditt konto säkrare genom att kräva en verifieringskod från en autentiseringsapp på din mobila enhet när du loggar in. Tvåstegsverifiering kan aktiveras på bitwardens webbvalv. Vill du besöka webbplatsen nu?",
+    "message":"Tvåstegsverifiering gör ditt konto säkrare genom att kräva att du verifierar din inloggning med en annan enhet, till exempel genom en säkerhetsnyckel, autentiseringsapp, SMS, telefonsamtal eller mejl. Tvåstegsverifiering kan aktiveras på bitwardens webbvalv. Vill du besöka webbplatsen nu?",
     "description":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
@@ -672,7 +672,7 @@
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"Genom att exportera dina inloggningar lagras dessa okrypterade i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (t.ex. genom din mail). Radera filen efter du är färdig med den.",
+    "message":"Genom att exportera dina inloggningar lagras dessa okrypterade i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (genom t.ex. mejl). Radera filen efter du är färdig med den.",
     "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword":{
@@ -696,7 +696,7 @@
     "description":"Create an organization to securely share your logins with other users."
   },
   "contribute":{
-    "message":"You can contribute to!",
+    "message":"Du kan också bidra!",
     "description":"You can contribute too!"
   },
   "learnMore":{
@@ -704,131 +704,147 @@
     "description":"Learn more"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)",
+    "message":"Autentiseringsnyckel (TOTP)",
     "description":"Authenticator Key (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)",
+    "message":"Verifieringskod (TOTP)",
     "description":"Verification Code (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code",
+    "message":"Kopiera verifieringskod",
     "description":"Copy Verification Code"
   },
   "attachments":{
-    "message":"Attachments",
+    "message":"Bifogade filer",
     "description":"Attachments"
   },
   "deleteAttachment":{
-    "message":"Delete attachment",
+    "message":"Ta bort bilaga",
     "description":"Delete attachment"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?",
+    "message":"Är du säker på att du vill radera bilagan?",
     "description":"Are you sure you want to delete this attachment?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment",
+    "message":"Tog bort bilaga",
     "description":"Deleted attachment"
   },
   "newAttachment":{
-    "message":"Add New Attachment",
+    "message":"Bifoga ny fil",
     "description":"Add New Attachment"
   },
   "noAttachments":{
-    "message":"No attachments.",
+    "message":"Inga bilagor.",
     "description":"No attachments."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved.",
+    "message":"Den bifogade filen har sparats.",
     "description":"The attachment has been saved."
   },
   "file":{
-    "message":"File",
+    "message":"Fil",
     "description":"File"
   },
   "selectFile":{
-    "message":"Select a file.",
+    "message":"Välj en fil.",
     "description":"Select a file."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB.",
+    "message":"Filen får vara maximalt 100 MB.",
     "description":"Maximum file size is 100 MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable",
+    "message":"Funktionen är inte tillgänglig",
     "description":"Feature Unavailable"
   },
   "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key.",
+    "message":"Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel.",
     "description":"You cannot use this feature until you update your encryption key."
   },
   "premiumMembership":{
-    "message":"Premium Membership",
+    "message":"Premium-medlemskap",
     "description":"Premium Membership"
   },
   "premiumManage":{
-    "message":"Manage Membership",
+    "message":"Hantera medlemskap",
     "description":"Manage Membership"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Du kan hantera ditt medlemskap på bitwardens webbvalv. Vill du besöka webbplatsen nu?",
     "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership",
+    "message":"Uppdatera medlemskap",
     "description":"Refresh Membership"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member.",
+    "message":"Du är för närvarande inte en premium-medlem.",
     "description":"You are not currently a premium member."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:",
+    "message":"Registrera dig för premium-medlemskap och få:",
     "description":"Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage.",
+    "message":"1 GB lagring av krypterade filer.",
     "description":"1 GB of encrypted file storage."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo.",
+    "message":"Ytterligare alternativ för tvåstegsverifiering såsom YubiKey, FIDO U2F och Duo.",
     "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault.",
+    "message":"TOTP verifieringskod-generator (2FA) för inloggningar i ditt valv.",
     "description":"TOTP verification code (2FA) generator for logins in your vault."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support.",
+    "message":"Prioriterad kundsupport.",
     "description":"Priority customer support."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!",
+    "message":"Alla framtida premium-funktioner. Mer kommer snart!",
     "description":"All future premium features. More coming soon!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium",
+    "message":"Köp premium",
     "description":"Purchase Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Du kan köpa premium-medlemskap på bitwardens webbvalv. Vill du besöka webbplatsen nu?",
     "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!",
+    "message":"Du är en premium-medlem!",
     "description":"You are a premium member!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden.",
+    "message":"Tack för att du stödjer bitwarden.",
     "description":"Thank you for supporting bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!",
+    "message":"Allt för endast %price%\/år!",
     "description":"All for just %price% \/year!"
   },
   "refreshComplete":{
-    "message":"Refresh complete",
+    "message":"Uppdatering färdig",
     "description":"Refresh complete"
+  },
+  "disableAutoTotpCopy":{
+    "message":"Disable Automatic TOTP Copy",
+    "description":"Disable Automatic TOTP Copy"
+  },
+  "disableAutoTotpCopyDesc":{
+    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+  },
+  "premiumRequired":{
+    "message":"Premium Required",
+    "description":"Premium Required"
+  },
+  "premiumRequiredDesc":{
+    "message":"A premium membership is required to use this feature.",
+    "description":"A premium membership is required to use this feature."
   }
 }

@@ -704,131 +704,147 @@
     "description":"Learn more"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)",
+    "message":"Clé d'authentification (TOTP)",
     "description":"Authenticator Key (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)",
+    "message":"Code de vérification (TOTP)",
     "description":"Verification Code (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code",
+    "message":"Copier le code de vérification",
     "description":"Copy Verification Code"
   },
   "attachments":{
-    "message":"Attachments",
+    "message":"Pièces jointes",
     "description":"Attachments"
   },
   "deleteAttachment":{
-    "message":"Delete attachment",
+    "message":"Supprimer la pièce jointe",
     "description":"Delete attachment"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?",
+    "message":"Êtes-vous sûr⋅e de vouloir supprimer cette pièce jointe ?",
     "description":"Are you sure you want to delete this attachment?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment",
+    "message":"Pièce jointe supprimée",
     "description":"Deleted attachment"
   },
   "newAttachment":{
-    "message":"Add New Attachment",
+    "message":"Ajouter une nouvelle pièce jointe",
     "description":"Add New Attachment"
   },
   "noAttachments":{
-    "message":"No attachments.",
+    "message":"Aucune pièce jointe.",
     "description":"No attachments."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved.",
+    "message":"La pièce jointe a été enregistrée.",
     "description":"The attachment has been saved."
   },
   "file":{
-    "message":"File",
+    "message":"Fichier",
     "description":"File"
   },
   "selectFile":{
-    "message":"Select a file.",
+    "message":"Sélectionnez un fichier.",
     "description":"Select a file."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB.",
+    "message":"La taille maximale du fichier est de 100 Mo.",
     "description":"Maximum file size is 100 MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable",
+    "message":"Fonctionnalité non disponible",
     "description":"Feature Unavailable"
   },
   "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key.",
+    "message":"Vous ne pouvez pas utiliser cette fonctionnalité tant que vous ne mettez à jour votre clé de chiffrement.",
     "description":"You cannot use this feature until you update your encryption key."
   },
   "premiumMembership":{
-    "message":"Premium Membership",
+    "message":"Adhésion Premium",
     "description":"Premium Membership"
   },
   "premiumManage":{
-    "message":"Manage Membership",
+    "message":"Gérer l'adhésion",
     "description":"Manage Membership"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Vous pouvez gérer votre adhésion depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?",
     "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership",
+    "message":"Actualiser l'adhésion",
     "description":"Refresh Membership"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member.",
+    "message":"Vous n'êtes actuellement pas un membre premium.",
     "description":"You are not currently a premium member."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:",
+    "message":"Devenez un membre premium et obtenez :",
     "description":"Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage.",
+    "message":"1 Go de stockage de fichiers chiffrés.",
     "description":"1 GB of encrypted file storage."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo.",
+    "message":"Options d'identification à double facteurs additionnelles comme YubiKey, FIDO U2F et Duo.",
     "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault.",
+    "message":"La génération d'un code de vérification TOTP (double facteurs \/ 2FA) pour les identifiants de votre coffre.",
     "description":"TOTP verification code (2FA) generator for logins in your vault."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support.",
+    "message":"Support client prioritaire.",
     "description":"Priority customer support."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!",
+    "message":"Toutes les futures options premium. Prochainement !",
     "description":"All future premium features. More coming soon!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium",
+    "message":"Achat Premium",
     "description":"Purchase Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?",
     "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!",
+    "message":"Vous êtes un adhérent premium !",
     "description":"You are a premium member!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden.",
+    "message":"Merci de supporter bitwarden.",
     "description":"Thank you for supporting bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!",
+    "message":"Tout pour seulement %price% \/an !",
     "description":"All for just %price% \/year!"
   },
   "refreshComplete":{
-    "message":"Refresh complete",
+    "message":"Actualisation terminée",
     "description":"Refresh complete"
+  },
+  "disableAutoTotpCopy":{
+    "message":"Disable Automatic TOTP Copy",
+    "description":"Disable Automatic TOTP Copy"
+  },
+  "disableAutoTotpCopyDesc":{
+    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+  },
+  "premiumRequired":{
+    "message":"Premium Required",
+    "description":"Premium Required"
+  },
+  "premiumRequiredDesc":{
+    "message":"A premium membership is required to use this feature.",
+    "description":"A premium membership is required to use this feature."
   }
 }

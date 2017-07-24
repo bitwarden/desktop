@@ -830,5 +830,21 @@
   "refreshComplete":{
     "message":"Refresh complete",
     "description":"Refresh complete"
+  },
+  "disableAutoTotpCopy":{
+    "message":"Disable Automatic TOTP Copy",
+    "description":"Disable Automatic TOTP Copy"
+  },
+  "disableAutoTotpCopyDesc":{
+    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+  },
+  "premiumRequired":{
+    "message":"Premium Required",
+    "description":"Premium Required"
+  },
+  "premiumRequiredDesc":{
+    "message":"A premium membership is required to use this feature.",
+    "description":"A premium membership is required to use this feature."
   }
 }

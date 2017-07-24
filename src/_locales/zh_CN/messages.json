@@ -532,7 +532,7 @@
     "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation":{
-    "message":"两步登录需要您登录时输入一个从认证应用获得的安全吗，这样能使您的账户更安全。两步登录可以在 bitwarden.com 网页版打开。现在为您跳转吗？",
+    "message":"两步登录使您在登录时需要输入一个从认证应用获取的安全码，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版启用。现在要访问吗？",
     "description":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
@@ -704,131 +704,147 @@
     "description":"Learn more"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)",
+    "message":"验证器密钥 (TOTP)",
     "description":"Authenticator Key (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)",
+    "message":"验证代码 (TOTP)",
     "description":"Verification Code (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code",
+    "message":"复制验证代码",
     "description":"Copy Verification Code"
   },
   "attachments":{
-    "message":"Attachments",
+    "message":"附件",
     "description":"Attachments"
   },
   "deleteAttachment":{
-    "message":"Delete attachment",
+    "message":"删除附件",
     "description":"Delete attachment"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?",
+    "message":"确定删除这个附件？",
     "description":"Are you sure you want to delete this attachment?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment",
+    "message":"附件已删除",
     "description":"Deleted attachment"
   },
   "newAttachment":{
-    "message":"Add New Attachment",
+    "message":"添加新附件",
     "description":"Add New Attachment"
   },
   "noAttachments":{
-    "message":"No attachments.",
+    "message":"无附件。",
     "description":"No attachments."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved.",
+    "message":"该附件已保存。",
     "description":"The attachment has been saved."
   },
   "file":{
-    "message":"File",
+    "message":"文件",
     "description":"File"
   },
   "selectFile":{
-    "message":"Select a file.",
+    "message":"选择一个文件。",
     "description":"Select a file."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB.",
+    "message":"文件最大为 100 MB。",
     "description":"Maximum file size is 100 MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable",
+    "message":"功能不可用",
     "description":"Feature Unavailable"
   },
   "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key.",
+    "message":"在您更新加密密钥前，您不能使用此功能。",
     "description":"You cannot use this feature until you update your encryption key."
   },
   "premiumMembership":{
-    "message":"Premium Membership",
+    "message":"高级会员",
     "description":"Premium Membership"
   },
   "premiumManage":{
-    "message":"Manage Membership",
+    "message":"管理会员资格",
     "description":"Manage Membership"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"您可以在 bitwarden.com 网页版管理您的会员资格。现在要访问吗？",
     "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership",
+    "message":"刷新会员资格",
     "description":"Refresh Membership"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member.",
+    "message":"您目前不是一名高级会员。",
     "description":"You are not currently a premium member."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:",
+    "message":"注册高级会员，获得：",
     "description":"Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage.",
+    "message":"1 GB 加密文件存储。",
     "description":"1 GB of encrypted file storage."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo.",
+    "message":"YubiKey、FIDO U2F 和 Duo 作为两步验证登录选项。",
     "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault.",
+    "message":"为您的密码库登录采用 TOTP 验证码（两步验证）生成器。",
     "description":"TOTP verification code (2FA) generator for logins in your vault."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support.",
+    "message":"优先客户支持。",
     "description":"Priority customer support."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!",
+    "message":"未来所有高级功能。即将到来！",
     "description":"All future premium features. More coming soon!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium",
+    "message":"购买高级版",
     "description":"Purchase Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?",
+    "message":"您可以在 bitwarden.com 网页版购买高级会员。现在要访问吗？",
     "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!",
+    "message":"您是一名高级会员！",
     "description":"You are a premium member!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden.",
+    "message":"感谢您支持 bitwarden。",
     "description":"Thank you for supporting bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!",
+    "message":"只需 %price% \/每年！",
     "description":"All for just %price% \/year!"
   },
   "refreshComplete":{
-    "message":"Refresh complete",
+    "message":"刷新完成",
     "description":"Refresh complete"
+  },
+  "disableAutoTotpCopy":{
+    "message":"Disable Automatic TOTP Copy",
+    "description":"Disable Automatic TOTP Copy"
+  },
+  "disableAutoTotpCopyDesc":{
+    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+  },
+  "premiumRequired":{
+    "message":"Premium Required",
+    "description":"Premium Required"
+  },
+  "premiumRequiredDesc":{
+    "message":"A premium membership is required to use this feature.",
+    "description":"A premium membership is required to use this feature."
   }
 }
