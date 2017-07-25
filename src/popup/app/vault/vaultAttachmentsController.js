@@ -25,7 +25,7 @@ angular
                     cancelButtonText: i18nService.cancel
                 }, function (confirmed) {
                     if (confirmed) {
-                        chrome.tabs.create({ url: 'https://help.bitwarden.com' });
+                        chrome.tabs.create({ url: 'https://help.bitwarden.com/article/update-encryption-key/' });
                     }
                 });
             }
