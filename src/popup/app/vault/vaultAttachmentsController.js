@@ -7,33 +7,52 @@ angular
         utilsService.initListSectionItemListeners($(document), angular);
 
         $scope.isPremium = tokenService.getPremium();
+        $scope.canAccessAttachments = $scope.isPremium;
+        $scope.hasUpdatedKey = false;
+
         loginService.get($stateParams.id, function (login) {
             $q.when(login.decrypt()).then(function (model) {
                 $scope.login = model;
-            });
-        });
+                $scope.canAccessAttachments = $scope.isPremium || !!$scope.login.organizationId;
 
-        $scope.canUseAttachments = false;
-        cryptoService.getEncKey().then(function (key) {
-            $scope.canUseAttachments = !!key;
-            if (!$scope.canUseAttachments && $scope.isPremium) {
-                SweetAlert.swal({
-                    title: i18nService.featureUnavailable,
-                    text: i18nService.updateKey,
-                    showCancelButton: true,
-                    confirmButtonText: i18nService.learnMore,
-                    cancelButtonText: i18nService.cancel
-                }, function (confirmed) {
-                    if (confirmed) {
-                        chrome.tabs.create({ url: 'https://help.bitwarden.com/article/update-encryption-key/' });
-                    }
-                });
-            }
+                if (!$scope.canAccessAttachments) {
+                    SweetAlert.swal({
+                        title: i18nService.premiumRequired,
+                        text: i18nService.premiumRequiredDesc,
+                        showCancelButton: true,
+                        confirmButtonText: i18nService.learnMore,
+                        cancelButtonText: i18nService.cancel
+                    }, function (confirmed) {
+                        if (confirmed) {
+                            chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/?premium=purchase' });
+                        }
+                    });
+                    return;
+                }
+                else {
+                    cryptoService.getEncKey().then(function (key) {
+                        $scope.hasUpdatedKey = !!key;
+                        if (!$scope.hasUpdatedKey) {
+                            SweetAlert.swal({
+                                title: i18nService.featureUnavailable,
+                                text: i18nService.updateKey,
+                                showCancelButton: true,
+                                confirmButtonText: i18nService.learnMore,
+                                cancelButtonText: i18nService.cancel
+                            }, function (confirmed) {
+                                if (confirmed) {
+                                    chrome.tabs.create({ url: 'https://help.bitwarden.com/article/update-encryption-key/' });
+                                }
+                            });
+                        }
+                    });
+                }
+            });
         });
 
         $scope.submitPromise = null;
         $scope.submit = function () {
-            if (!$scope.canUseAttachments) {
+            if (!$scope.hasUpdatedKey) {
                 toastr.error(i18nService.updateKey);
                 return;
             }
