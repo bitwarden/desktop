@@ -7,16 +7,19 @@
         utilsService.initListSectionItemListeners($(document), angular);
 
         var u2f = new U2f(function (data) {
-            $scope.login(data);
-            $scope.$apply();
+            $timeout(function () {
+                $scope.login(data);
+            });
         }, function (error) {
-            toastr.error(error, i18nService.errorsOccurred);
-            $scope.$apply();
+            $timeout(function () {
+                toastr.error(error, i18nService.errorsOccurred);
+            });
         }, function (info) {
-            if (info === 'ready') {
-                $scope.u2fReady = true;
-            }
-            $scope.$apply();
+            $timeout(function () {
+                if (info === 'ready') {
+                    $scope.u2fReady = true;
+                }
+            });
         });
 
         var constants = constantsService;
@@ -62,7 +65,6 @@
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
                 $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
-                u2f = null;
             }, function () {
                 u2f.start();
             });
@@ -87,8 +89,6 @@
         };
 
         $scope.anotherMethod = function () {
-            u2f.stop();
-            u2f = null;
             $state.go('twoFactorMethods', {
                 animation: 'in-slide-up',
                 email: email,
@@ -99,12 +99,16 @@
         };
 
         $scope.back = function () {
-            u2f.stop();
-            u2f = null;
             $state.go('login', {
                 animation: 'out-slide-right'
             });
         };
+
+        $scope.$on('$destroy', function () {
+            u2f.stop();
+            u2f.cleanup();
+            u2f = null;
+        });
 
         function getDefaultProvider(twoFactorProviders) {
             var keys = Object.keys(twoFactorProviders);
@@ -127,6 +131,7 @@
 
         function init() {
             u2f.stop();
+            u2f.cleanup();
 
             $timeout(function () {
                 $('#code').focus();
