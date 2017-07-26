@@ -840,11 +840,11 @@
     "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired":{
-    "message":"Premium Required",
+    "message":"需要高级版",
     "description":"Premium Required"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature.",
+    "message":"使用此功能需要高级会员资格。",
     "description":"A premium membership is required to use this feature."
   }
 }

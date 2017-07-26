@@ -368,7 +368,7 @@
     "description":"Other"
   },
   "disableGa":{
-    "message":"Stäng av Analytics",
+    "message":"Inaktivera Analytics",
     "description":"Disable Analytics"
   },
   "rateExtension":{
@@ -636,7 +636,7 @@
     "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableAddLoginNotification":{
-    "message":"Stäng av aviseringar för nya inloggningar",
+    "message":"Inaktivera aviseringar för nya inloggningar",
     "description":"Disable Add Login Notification"
   },
   "addLoginNotificationDesc":{
@@ -656,7 +656,7 @@
     "description":"Never for this website"
   },
   "disableContextMenuItem":{
-    "message":"Stäng av innehållsmenyn",
+    "message":"Inaktivera innehållsmenyn",
     "description":"Disable Context Menu Options"
   },
   "disableContextMenuItemDesc":{
@@ -832,19 +832,19 @@
     "description":"Refresh complete"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy",
+    "message":"Inaktivera automatisk TOTP-kopiering",
     "description":"Disable Automatic TOTP Copy"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "message":"Om din inloggning har en autentiseringsnyckel kopplad till den, kommer TOTP-verifieringskoden att automatiskt kopieras till urklipp när du automatiskt fyller i inloggningen.",
     "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired":{
-    "message":"Premium Required",
+    "message":"Premium krävs",
     "description":"Premium Required"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature.",
+    "message":"Ett premium-medlemskap krävs för att använda den här funktionen.",
     "description":"A premium membership is required to use this feature."
   }
 }

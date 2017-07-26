@@ -712,51 +712,51 @@
     "description":"Verification Code (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code",
+    "message":"Salin Kode Verifikasi",
     "description":"Copy Verification Code"
   },
   "attachments":{
-    "message":"Attachments",
+    "message":"Lampiran",
     "description":"Attachments"
   },
   "deleteAttachment":{
-    "message":"Delete attachment",
+    "message":"Hapus lampiran",
     "description":"Delete attachment"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?",
+    "message":"Anda yakin akan menghapus lampiran ini?",
     "description":"Are you sure you want to delete this attachment?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment",
+    "message":"Hapus lampiran",
     "description":"Deleted attachment"
   },
   "newAttachment":{
-    "message":"Add New Attachment",
+    "message":"Tambah lampiran baru",
     "description":"Add New Attachment"
   },
   "noAttachments":{
-    "message":"No attachments.",
+    "message":"Tidak ada lampiran.",
     "description":"No attachments."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved.",
+    "message":"Lampiran telah disimpan.",
     "description":"The attachment has been saved."
   },
   "file":{
-    "message":"File",
+    "message":"Berkas",
     "description":"File"
   },
   "selectFile":{
-    "message":"Select a file.",
+    "message":"Pilih berkas.",
     "description":"Select a file."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB.",
+    "message":"Ukuran berkas maksimal adalah 100 MB.",
     "description":"Maximum file size is 100 MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable",
+    "message":"Fitur tidak tersedia",
     "description":"Feature Unavailable"
   },
   "updateKey":{
@@ -764,11 +764,11 @@
     "description":"You cannot use this feature until you update your encryption key."
   },
   "premiumMembership":{
-    "message":"Premium Membership",
+    "message":"Keanggotaan Premium",
     "description":"Premium Membership"
   },
   "premiumManage":{
-    "message":"Manage Membership",
+    "message":"Kelola Keanggotaan",
     "description":"Manage Membership"
   },
   "premiumManageAlert":{
@@ -776,19 +776,19 @@
     "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership",
+    "message":"Segarkan keanggotaan",
     "description":"Refresh Membership"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member.",
+    "message":"Anda saat ini bukan anggota premium.",
     "description":"You are not currently a premium member."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:",
+    "message":"Daftar untuk keanggotaan premium dan mendapatkan:",
     "description":"Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage.",
+    "message":"1 GB penyimpanan file yang dienkripsi.",
     "description":"1 GB of encrypted file storage."
   },
   "ppremiumSignUpTwoStep":{
@@ -828,23 +828,23 @@
     "description":"All for just %price% \/year!"
   },
   "refreshComplete":{
-    "message":"Refresh complete",
+    "message":"Penyegaran selesai",
     "description":"Refresh complete"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy",
+    "message":"Menonaktifkan salinan TOTP otomatis",
     "description":"Disable Automatic TOTP Copy"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "message":"Jika formulir masuk Anda memiliki kunci authenticator yang menyertainya, kode verifikasi TOTP akan disalin secara otomatis ke clipboard Anda setiap kali Anda mengisi formulir masuk secara otomatis.",
     "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired":{
-    "message":"Premium Required",
+    "message":"Diperlukan Premium",
     "description":"Premium Required"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature.",
+    "message":"Keanggotaan premium diperlukan untuk menggunakan fitur ini.",
     "description":"A premium membership is required to use this feature."
   }
 }

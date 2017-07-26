@@ -832,19 +832,19 @@
     "description":"Refresh complete"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy",
+    "message":"Desativar cópia automática de TOTP",
     "description":"Disable Automatic TOTP Copy"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "message":"Se o seu início de sessão tem uma chave de autenticador anexada ao mesmo, o código de verificação TOTP é copiado automaticamente para a sua área de transferência quando quer que auto-preencha o início de sessão.",
     "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired":{
-    "message":"Premium Required",
+    "message":"Premium requerido",
     "description":"Premium Required"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature.",
+    "message":"É requerida uma adesão premium para utilizar esta funcionalidade.",
     "description":"A premium membership is required to use this feature."
   }
 }

@@ -832,19 +832,19 @@
     "description":"Refresh complete"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy",
+    "message":"Отключить автоматическое копирование TOTP",
     "description":"Disable Automatic TOTP Copy"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
+    "message":"Если ваш логин имеет прикрепленный к нему ключ проверки подлинности, код подтверждения TOTP автоматически копируется в буфер обмена всякий раз, когда вы автоматически заполняете логин.",
     "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired":{
-    "message":"Premium Required",
+    "message":"Необходим премиум-статус",
     "description":"Premium Required"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature.",
+    "message":"Для использования этой функции требуется премиум-статус.",
     "description":"A premium membership is required to use this feature."
   }
 }
