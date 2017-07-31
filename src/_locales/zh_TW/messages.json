@@ -1,7 +1,6 @@
 {
   "appName":{
-    "message":"bitwarden",
-    "description":"bitwarden"
+    "message":"bitwarden"
   },
   "extName":{
     "message":"bitwarden - 免費密碼管理器",
@@ -12,839 +11,699 @@
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
-    "message":"登入或新增帳戶。",
-    "description":"Log in or create a new account to access your secure vault."
+    "message":"登入或新增帳戶。"
   },
   "createAccount":{
-    "message":"新增帳戶",
-    "description":"Create Account"
+    "message":"新增帳戶"
   },
   "login":{
-    "message":"登入",
-    "description":"Log In"
+    "message":"登入"
   },
   "cancel":{
-    "message":"取消",
-    "description":"Cancel"
+    "message":"取消"
   },
   "close":{
-    "message":"關閉",
-    "description":"Close"
+    "message":"關閉"
   },
   "submit":{
-    "message":"提交",
-    "description":"Submit"
+    "message":"提交"
   },
   "emailAddress":{
-    "message":"電郵",
-    "description":"Email Address"
+    "message":"電郵"
   },
   "masterPass":{
-    "message":"主密碼",
-    "description":"Master Password"
+    "message":"主密碼"
   },
   "masterPassDesc":{
-    "message":"主密碼是你存取密碼庫的密碼。請勿忘記主密碼，我們無法將你的主密碼復原或重置。",
-    "description":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message":"主密碼是你存取密碼庫的密碼。請勿忘記主密碼，我們無法將你的主密碼復原或重置。"
   },
   "masterPassHintDesc":{
-    "message":"主密碼提示可以幫你回想起主密碼。",
-    "description":"A master password hint can help you remember your password if you forget it."
+    "message":"主密碼提示可以幫你回想起主密碼。"
   },
   "reTypeMasterPass":{
-    "message":"重新輸入主密碼",
-    "description":"Re-type Master Password"
+    "message":"重新輸入主密碼"
   },
   "masterPassHint":{
-    "message":"主密码提示（非必須）",
-    "description":"Master Password Hint (optional)"
+    "message":"主密码提示（非必須）"
   },
   "tab":{
-    "message":"分頁",
-    "description":"Tab"
+    "message":"分頁"
   },
   "myVault":{
-    "message":"密碼庫",
-    "description":"My Vault"
+    "message":"密碼庫"
   },
   "tools":{
-    "message":"工具",
-    "description":"Tools"
+    "message":"工具"
   },
   "settings":{
-    "message":"設定",
-    "description":"Settings"
+    "message":"設定"
   },
   "currentTab":{
-    "message":"目前分頁",
-    "description":"Current Tab"
+    "message":"目前分頁"
   },
   "copyPassword":{
-    "message":"複製密碼",
-    "description":"Copy Password"
+    "message":"複製密碼"
   },
   "copyUsername":{
-    "message":"複製用戶名稱",
-    "description":"Copy Username"
+    "message":"複製用戶名稱"
   },
   "autoFill":{
-    "message":"自動輸入",
-    "description":"Auto-fill"
+    "message":"自動輸入"
   },
   "generatePasswordCopied":{
-    "message":"生成及複製密碼",
-    "description":"Generate Password (copied)"
+    "message":"生成及複製密碼"
   },
   "noMatchingLogins":{
-    "message":"無吻合網頁。",
-    "description":"No matching logins."
+    "message":"無吻合網頁。"
   },
   "vaultLocked":{
-    "message":"密碼庫已上鎖",
-    "description":"Vault is locked."
+    "message":"密碼庫已上鎖"
   },
   "autoFillInfo":{
-    "message":"目前瀏覽器分頁無可以自動填寫登入資訊的位置。",
-    "description":"There are no logins available to auto-fill for the current browser tab."
+    "message":"目前瀏覽器分頁無可以自動填寫登入資訊的位置。"
   },
   "addLogin":{
-    "message":"新增網頁",
-    "description":"Add a Login"
+    "message":"新增網頁"
   },
   "passwordHint":{
-    "message":"密碼提示",
-    "description":"Password Hint"
+    "message":"密碼提示"
   },
   "enterEmailToGetHint":{
-    "message":"請輸入帳戶電郵以獲取主密碼提示。",
-    "description":"Enter your account email address to receive your master password hint."
+    "message":"請輸入帳戶電郵以獲取主密碼提示。"
   },
   "getMasterPasswordHint":{
-    "message":"獲取主密碼提示",
-    "description":"Get master password hint"
+    "message":"獲取主密碼提示"
   },
   "continue":{
-    "message":"繼續",
-    "description":"Continue"
+    "message":"繼續"
   },
   "verificationCode":{
-    "message":"驗證碼",
-    "description":"Verification Code"
+    "message":"驗證碼"
   },
   "account":{
-    "message":"帳戶",
-    "description":"Account"
+    "message":"帳戶"
   },
   "changeMasterPassword":{
-    "message":"修改主密碼",
-    "description":"Change Master Password"
+    "message":"修改主密碼"
   },
   "changeEmail":{
-    "message":"修改電郵",
-    "description":"Change Email"
+    "message":"修改電郵"
   },
   "twoStepLogin":{
-    "message":"兩步驟登入",
-    "description":"Two-step Login"
+    "message":"兩步驟登入"
   },
   "logOut":{
-    "message":"登出",
-    "description":"Log Out"
+    "message":"登出"
   },
   "about":{
-    "message":"關於",
-    "description":"About"
+    "message":"關於"
   },
   "version":{
-    "message":"版本",
-    "description":"Version"
+    "message":"版本"
   },
   "save":{
-    "message":"儲存",
-    "description":"Save"
+    "message":"儲存"
   },
   "addFolder":{
-    "message":"新增文件夾",
-    "description":"Add Folder"
+    "message":"新增文件夾"
   },
   "name":{
-    "message":"名稱",
-    "description":"Name"
+    "message":"名稱"
   },
   "editFolder":{
-    "message":"編輯文件夾",
-    "description":"Edit Folder"
+    "message":"編輯文件夾"
   },
   "deleteFolder":{
-    "message":"刪除文件夾",
-    "description":"Delete Folder"
+    "message":"刪除文件夾"
   },
   "folders":{
-    "message":"文件夾",
-    "description":"Folders"
+    "message":"文件夾"
   },
   "noFolders":{
-    "message":"無文件夾可顯示。",
-    "description":"There are no folders to list."
+    "message":"無文件夾可顯示。"
   },
   "helpFeedback":{
-    "message":"協助與反映",
-    "description":"Help & Feedback"
+    "message":"協助與反映"
   },
   "emailUs":{
-    "message":"電郵我們",
-    "description":"Email Us"
+    "message":"電郵我們"
   },
   "emailUsDirectly":{
-    "message":"直接電郵我們以獲取協助或提供反映。",
-    "description":"Email us directly to get help or leave feedback."
+    "message":"直接電郵我們以獲取協助或提供反映。"
   },
   "visitOurWebsite":{
-    "message":"瀏覽我們的網頁",
-    "description":"Visit Our Website"
+    "message":"瀏覽我們的網頁"
   },
   "visitOurWebsiteDirectly":{
-    "message":"瀏覽我們的網頁以獲取協助、了解新消息、email 我們或瀏覽更多使用 bitwarden 的秘訣。",
-    "description":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+    "message":"瀏覽我們的網頁以獲取協助、了解新消息、email 我們或瀏覽更多使用 bitwarden 的秘訣。"
   },
   "fileBugReport":{
-    "message":"提交 Bug",
-    "description":"File a Bug Report"
+    "message":"提交 Bug"
   },
   "gitHubIssue":{
-    "message":"在我們的 GitHub 庫中新增問題。",
-    "description":"Open an issue at our GitHub repository."
+    "message":"在我們的 GitHub 庫中新增問題。"
   },
   "sync":{
-    "message":"同步",
-    "description":"Sync"
+    "message":"同步"
   },
   "syncVaultNow":{
-    "message":"立即同步密碼庫",
-    "description":"Sync Vault Now"
+    "message":"立即同步密碼庫"
   },
   "lastSync":{
-    "message":"上次同步在：",
-    "description":"Last Sync:"
+    "message":"上次同步在："
   },
   "passGen":{
-    "message":"密碼生成器",
-    "description":"Password Generator"
+    "message":"密碼生成器"
   },
   "passGenInfo":{
-    "message":"自動生成安全、獨特的密碼予帳戶。",
-    "description":"Automatically generate strong, unique passwords for your logins."
+    "message":"自動生成安全、獨特的密碼予帳戶。"
   },
   "bitWebVault":{
-    "message":"bitwarden 網頁版",
-    "description":"bitwarden Web Vault"
+    "message":"bitwarden 網頁版"
   },
   "bitWebVaultInfo":{
-    "message":"使用 bitwarden 網頁版，從瀏覽器管理你的密碼。",
-    "description":"Manage your logins from any web browser with the bitwarden web vault."
+    "message":"使用 bitwarden 網頁版，從瀏覽器管理你的密碼。"
   },
   "bitIosVault":{
-    "message":"bitwarden iOS 版",
-    "description":"bitwarden iOS Vault"
+    "message":"bitwarden iOS 版"
   },
   "bitIosVaultInfo":{
-    "message":"使用 bitwarden iOS 版，從 iOS 裝置管理你的密碼。",
-    "description":"Manage your logins from your mobile devices with the bitwarden iOS vault."
+    "message":"使用 bitwarden iOS 版，從 iOS 裝置管理你的密碼。"
   },
   "bitAndrVault":{
-    "message":"bitwarden Android 版",
-    "description":"bitwarden Android Vault"
+    "message":"bitwarden Android 版"
   },
   "bitAndrVaultInfo":{
-    "message":"使用 bitwarden Android 版，從 Android 裝置管理您的密碼。",
-    "description":"Manage your logins from your mobile devices with the bitwarden Android vault."
+    "message":"使用 bitwarden Android 版，從 Android 裝置管理您的密碼。"
   },
   "importLogins":{
     "message":"匯入密碼",
     "description":"Import Logins"
   },
   "importLoginsInfo":{
-    "message":"從其他密碼管理器匯入你的密碼。",
-    "description":"Quickly bulk import your logins from other password management applications."
+    "message":"從其他密碼管理器匯入你的密碼。"
   },
   "select":{
-    "message":"選擇",
-    "description":"Select"
+    "message":"選擇"
   },
   "generatePassword":{
-    "message":"生成密碼",
-    "description":"Generate Password"
+    "message":"生成密碼"
   },
   "regeneratePassword":{
-    "message":"重新生成密碼",
-    "description":"Regenerate Password"
+    "message":"重新生成密碼"
   },
   "options":{
-    "message":"設定",
-    "description":"Options"
+    "message":"設定"
   },
   "length":{
-    "message":"長度",
-    "description":"Length"
+    "message":"長度"
   },
   "minNumbers":{
-    "message":"數字",
-    "description":"Minimum Numbers"
+    "message":"數字"
   },
   "minSpecial":{
-    "message":"符號",
-    "description":"Minimum Special"
+    "message":"符號"
   },
   "avoidAmbChar":{
-    "message":"避免易混淆的字符",
-    "description":"Avoid Ambiguous Characters"
+    "message":"避免易混淆的字符"
   },
   "searchVault":{
-    "message":"搜尋",
-    "description":"Search vault"
+    "message":"搜尋"
   },
   "edit":{
-    "message":"編輯",
-    "description":"Edit"
+    "message":"編輯"
   },
   "noLoginsInList":{
-    "message":"無紀錄可顯示。",
-    "description":"There are no logins to list."
+    "message":"無紀錄可顯示。"
   },
   "loginInformation":{
-    "message":"網頁資訊",
-    "description":"Login Information"
+    "message":"網頁資訊"
   },
   "username":{
-    "message":"帳戶名稱",
-    "description":"Username"
+    "message":"帳戶名稱"
   },
   "password":{
-    "message":"密碼",
-    "description":"Password"
+    "message":"密碼"
   },
   "favorite":{
-    "message":"書籤",
-    "description":"Favorite"
+    "message":"書籤"
   },
   "notes":{
-    "message":"筆記",
-    "description":"Notes"
+    "message":"筆記"
   },
   "editLogin":{
-    "message":"編輯網頁",
-    "description":"Edit Login"
+    "message":"編輯網頁"
   },
   "folder":{
-    "message":"文件夾",
-    "description":"Folder"
+    "message":"文件夾"
   },
   "deleteLogin":{
-    "message":"刪除網頁",
-    "description":"Delete Login"
+    "message":"刪除網頁"
   },
   "viewLogin":{
-    "message":"查看網頁",
-    "description":"View Login"
+    "message":"查看網頁"
   },
   "launchWebsite":{
-    "message":"開啟網頁",
-    "description":"Launch Website"
+    "message":"開啟網頁"
   },
   "website":{
-    "message":"網頁",
-    "description":"Website"
+    "message":"網頁"
   },
   "togglePassword":{
-    "message":"切換密碼能見度",
-    "description":"Toggle Password"
+    "message":"切換密碼能見度"
   },
   "manage":{
-    "message":"管理",
-    "description":"Manage"
+    "message":"管理"
   },
   "other":{
-    "message":"其他",
-    "description":"Other"
+    "message":"其他"
   },
   "disableGa":{
-    "message":"禁用 Analytics",
-    "description":"Disable Analytics"
+    "message":"禁用 Analytics"
   },
   "rateExtension":{
-    "message":"為本擴充元件評分",
-    "description":"Rate the Extension"
+    "message":"為本擴充元件評分"
   },
   "rateExtensionDesc":{
-    "message":"給我們留個好評吧！",
-    "description":"Please consider helping us out with a good review!"
+    "message":"給我們留個好評吧！"
   },
   "browserNotSupportClipboard":{
-    "message":"你的瀏覽器不支援簡單複製，請手動複製。",
-    "description":"Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message":"你的瀏覽器不支援簡單複製，請手動複製。"
   },
   "verifyMasterPassword":{
-    "message":"驗證主密碼",
-    "description":"Verify Master Password"
+    "message":"驗證主密碼"
   },
   "invalidMasterPassword":{
-    "message":"主密碼無效",
-    "description":"Invalid master password"
+    "message":"主密碼無效"
   },
   "lockOptions":{
-    "message":"自動上鎖時間",
-    "description":"Lock Options"
+    "message":"自動上鎖時間"
   },
   "lockNow":{
-    "message":"Lock Now",
-    "description":"Lock Now"
+    "message":"Lock Now"
   },
   "immediately":{
-    "message":"即時",
-    "description":"Immediately"
+    "message":"即時"
   },
   "oneMinute":{
-    "message":"1 分鐘",
-    "description":"1 minute"
+    "message":"1 分鐘"
   },
   "fiveMinutes":{
-    "message":"5 分鐘",
-    "description":"5 minutes"
+    "message":"5 分鐘"
   },
   "fifteenMinutes":{
-    "message":"15 分鐘",
-    "description":"15 minutes"
+    "message":"15 分鐘"
   },
   "thirtyMinutes":{
-    "message":"30 分鐘",
-    "description":"30 minutes"
+    "message":"30 分鐘"
   },
   "oneHour":{
-    "message":"1 小時",
-    "description":"1 hour"
+    "message":"1 小時"
   },
   "fourHours":{
-    "message":"4 小時",
-    "description":"4 hours"
+    "message":"4 小時"
   },
   "onLocked":{
-    "message":"On Locked",
-    "description":"On Locked"
+    "message":"On Locked"
   },
   "onRestart":{
-    "message":"重新啟動時",
-    "description":"On Restart"
+    "message":"重新啟動時"
   },
   "never":{
-    "message":"永不",
-    "description":"Never"
+    "message":"永不"
   },
   "security":{
-    "message":"安全",
-    "description":"Security"
+    "message":"安全"
   },
   "errorsOccurred":{
-    "message":"錯誤",
-    "description":"Errors have occurred"
+    "message":"錯誤"
   },
   "emailRequired":{
-    "message":"必須填寫電郵 。",
-    "description":"Email address is required."
+    "message":"必須填寫電郵 。"
   },
   "invalidEmail":{
-    "message":"電郵無效。",
-    "description":"Invalid email address."
+    "message":"電郵無效。"
   },
   "masterPassRequired":{
-    "message":"必須填寫主密碼。",
-    "description":"Master password is required."
+    "message":"必須填寫主密碼。"
   },
   "masterPassLength":{
-    "message":"主密碼需要至少8個字符。",
-    "description":"Master password must be at least 8 characters long."
+    "message":"主密碼需要至少8個字符。"
   },
   "masterPassDoesntMatch":{
-    "message":"兩次主密碼輸入不一致。",
-    "description":"Master password confirmation does not match."
+    "message":"兩次主密碼輸入不一致。"
   },
   "newAccountCreated":{
-    "message":"帳戶已建立！你可以登入了。",
-    "description":"Your new account has been created! You may now log in."
+    "message":"帳戶已建立！你可以登入了。"
   },
   "masterPassSent":{
-    "message":"包含你的主密碼提示的電郵已寄出。",
-    "description":"We've sent you an email with your master password hint."
+    "message":"包含你的主密碼提示的電郵已寄出。"
   },
   "verificationCodeRequired":{
-    "message":"必須填寫驗證碼。",
-    "description":"Verification code is required."
+    "message":"必須填寫驗證碼。"
   },
   "valueCopied":{
     "message":" 已複製",
     "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError":{
-    "message":"無法自動輸入你的帳戶資料。請手動複製／貼上你的帳戶名稱及密碼。",
-    "description":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+    "message":"無法自動輸入你的帳戶資料。請手動複製／貼上你的帳戶名稱及密碼。"
   },
   "loggedOut":{
-    "message":"已登出",
-    "description":"Logged out"
+    "message":"已登出"
   },
   "loginExpired":{
-    "message":"你的登入階段已過期。",
-    "description":"Your login session has expired."
+    "message":"你的登入階段已過期。"
   },
   "logOutConfirmation":{
-    "message":"您決定要登出嗎？",
-    "description":"Are you sure you want to log out?"
+    "message":"您決定要登出嗎？"
   },
   "yes":{
-    "message":"是",
-    "description":"Yes"
+    "message":"是"
   },
   "no":{
-    "message":"否",
-    "description":"No"
+    "message":"否"
   },
   "unexpectedError":{
-    "message":"非預期錯誤。",
-    "description":"An unexpected error has occured."
+    "message":"非預期錯誤。"
   },
   "nameRequired":{
-    "message":"必須填寫名稱。",
-    "description":"Name is required."
+    "message":"必須填寫名稱。"
   },
   "addedFolder":{
-    "message":"已新增文件夾",
-    "description":"Added folder"
+    "message":"已新增文件夾"
   },
   "changeMasterPass":{
-    "message":"修改主密碼",
-    "description":"Change Master Password"
+    "message":"修改主密碼"
   },
   "changeMasterPasswordConfirmation":{
-    "message":"你可以在 bitwarden 網頁版修改主密碼。現在前往？",
-    "description":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"你可以在 bitwarden 網頁版修改主密碼。現在前往？"
   },
   "changeEmailConfirmation":{
-    "message":"你可以在 bitwarden 網頁版修改電郵。現在前往？",
-    "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"你可以在 bitwarden 網頁版修改電郵。現在前往？"
   },
   "twoStepLoginConfirmation":{
-    "message":"兩步驟登入需要你登入時輸入由驗證碼程式提供的安全碼，令你的帳戶更安全。兩步驟登入可以在 bitwarden 網頁版開啟。現在前往？",
-    "description":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"兩步驟登入需要你登入時輸入由驗證碼程式提供的安全碼，令你的帳戶更安全。兩步驟登入可以在 bitwarden 網頁版開啟。現在前往？"
   },
   "loggingOut":{
-    "message":"登出中...",
-    "description":"Logging out"
+    "message":"登出中..."
   },
   "loggingOutConfirmation":{
-    "message":"你最近由一個舊版本更新。你需要重新登入才可修改上鎖設定。立即登出？",
-    "description":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+    "message":"你最近由一個舊版本更新。你需要重新登入才可修改上鎖設定。立即登出？"
   },
   "editedFolder":{
-    "message":"文件夾已編輯",
-    "description":"Edited Folder"
+    "message":"文件夾已編輯"
   },
   "deleteFolderConfirmation":{
-    "message":"您肯定要删除此文件夾嗎？",
-    "description":"Are you sure you want to delete this folder?"
+    "message":"您肯定要删除此文件夾嗎？"
   },
   "deletedFolder":{
-    "message":"文件夾已刪除",
-    "description":"Deleted folder"
+    "message":"文件夾已刪除"
   },
   "gettingStartedTutorial":{
-    "message":"新手教學",
-    "description":"Getting Started Tutorial"
+    "message":"新手教學"
   },
   "gettingStartedTutorialVideo":{
-    "message":"觀看我們的新手教學，了解如何充分利用我們的瀏覽器擴充元件。",
-    "description":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message":"觀看我們的新手教學，了解如何充分利用我們的瀏覽器擴充元件。"
   },
   "syncingComplete":{
-    "message":"同步完成",
-    "description":"Syncing complete"
+    "message":"同步完成"
   },
   "importLoginsConfirmation":{
-    "message":"你可以在 bitwarden 網頁版匯入密碼。現在前往？",
-    "description":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"你可以在 bitwarden 網頁版匯入密碼。現在前往？"
   },
   "passwordCopied":{
-    "message":"密碼已複製",
-    "description":"Password copied"
+    "message":"密碼已複製"
   },
   "uri":{
-    "message":"URI",
-    "description":"URI"
+    "message":"URI"
   },
   "addedLogin":{
-    "message":"已添加網頁",
-    "description":"Added login"
+    "message":"已添加網頁"
   },
   "editedLogin":{
-    "message":"已編輯網頁",
-    "description":"Edited login"
+    "message":"已編輯網頁"
   },
   "deleteLoginConfirmation":{
-    "message":"您確定要删除網頁嗎？",
-    "description":"Are you sure you want to delete this login?"
+    "message":"您確定要删除網頁嗎？"
   },
   "deletedLogin":{
-    "message":"已删除的網頁",
-    "description":"Deleted login"
+    "message":"已删除的網頁"
   },
   "overwritePassword":{
-    "message":"修改密碼",
-    "description":"Overwrite Password"
+    "message":"修改密碼"
   },
   "overwritePasswordConfirmation":{
-    "message":"您确定要修改目的密碼嗎？",
-    "description":"Are you sure you want to overwrite the current password?"
-  },
-  "lost2FAApp":{
-    "message":"違失了驗證碼程式？",
-    "description":"Lost authenticator app?"
+    "message":"您确定要修改目的密碼嗎？"
   },
   "credits":{
-    "message":"製作人員",
-    "description":"Credits (giving thanks to people that helped, like at the end of a movie)"
+    "message":"製作人員"
   },
   "thankYou":{
-    "message":"感謝",
-    "description":"Thank You"
+    "message":"感謝"
   },
   "translations":{
-    "message":"譯者",
-    "description":"Translations"
+    "message":"譯者"
   },
   "searchFolder":{
-    "message":"文件夾",
-    "description":"Search folder"
+    "message":"文件夾"
   },
   "noneFolder":{
     "message":"沒有文件夾",
-    "description":"No Folder - this is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized logins"
   },
   "features":{
-    "message":"功能",
-    "description":"Features"
+    "message":"功能"
   },
   "gaDesc":{
-    "message":"我们使用 analytics 協助分析擴充元件的使用情況，以便我們改善程式。所有資料均為匿名。",
-    "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message":"我们使用 analytics 協助分析擴充元件的使用情況，以便我們改善程式。所有資料均為匿名。"
   },
   "disableAddLoginNotification":{
-    "message":"關閉新增網頁提示",
-    "description":"Disable Add Login Notification"
+    "message":"關閉新增網頁提示"
   },
   "addLoginNotificationDesc":{
-    "message":"當你首次登入時，\"新增網頁提示\" 會自動提醒你在密碼庫加入新網頁。",
-    "description":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message":"當你首次登入時，\"新增網頁提示\" 會自動提醒你在密碼庫加入新網頁。"
   },
   "notificationAddDesc":{
-    "message":"希望 bitwarden 幫你儲存這個密碼嗎？",
-    "description":"Should bitwarden remember this password for you?"
+    "message":"希望 bitwarden 幫你儲存這個密碼嗎？"
   },
   "notificationAddSave":{
-    "message":"好，立即儲存",
-    "description":"Yes, Save Now"
+    "message":"好，立即儲存"
   },
   "notificationNeverSave":{
-    "message":"Never for this website",
-    "description":"Never for this website"
+    "message":"Never for this website"
   },
   "disableContextMenuItem":{
-    "message":"關閉右鍵選項",
-    "description":"Disable Context Menu Options"
+    "message":"關閉右鍵選項"
   },
   "disableContextMenuItemDesc":{
-    "message":"右鍵選項幫你快速使用密碼生成器，也可以登入分頁的網頁。",
-    "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message":"右鍵選項幫你快速使用密碼生成器，也可以登入分頁的網頁。"
   },
   "exportVault":{
-    "message":"匯出密碼庫",
-    "description":"Export Vault"
+    "message":"匯出密碼庫"
   },
   "warning":{
     "message":"警告",
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"你的密碼將匯出成未加密的 .csv 檔案。你不應將它存放或經由未加密的方法傳送（例如電郵）。用完後請立即將它刪除。",
-    "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message":"你的密碼將匯出成未加密的 .csv 檔案。你不應將它存放或經由未加密的方法傳送（例如電郵）。用完後請立即將它刪除。"
   },
   "exportMasterPassword":{
-    "message":"輸入你的主密碼以匯出密碼庫資料。",
-    "description":"Enter your master password to export your vault data."
+    "message":"輸入你的主密碼以匯出密碼庫資料。"
   },
   "exportVaultInfo":{
-    "message":"將密碼庫資料匯出成 .csv 檔案，方便修改和轉移資料。",
-    "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+    "message":"將密碼庫資料匯出成 .csv 檔案，方便修改和轉移資料。"
   },
   "shared":{
-    "message":"共用",
-    "description":"Shared"
+    "message":"共用"
   },
   "shareVault":{
-    "message":"分享你的密碼庫",
-    "description":"Share Your Vault"
+    "message":"分享你的密碼庫"
   },
   "shareVaultInfo":{
-    "message":"新增組織以安全地分享你的帳戶資料。",
-    "description":"Create an organization to securely share your logins with other users."
+    "message":"新增組織以安全地分享你的帳戶資料。"
   },
   "contribute":{
-    "message":"You can contribute to!",
-    "description":"You can contribute too!"
+    "message":"You can contribute to!"
   },
   "learnMore":{
-    "message":"Learn more",
-    "description":"Learn more"
+    "message":"Learn more"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)",
-    "description":"Authenticator Key (TOTP)"
+    "message":"Authenticator Key (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)",
-    "description":"Verification Code (TOTP)"
+    "message":"Verification Code (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code",
-    "description":"Copy Verification Code"
+    "message":"Copy Verification Code"
   },
   "attachments":{
-    "message":"Attachments",
-    "description":"Attachments"
+    "message":"Attachments"
   },
   "deleteAttachment":{
-    "message":"Delete attachment",
-    "description":"Delete attachment"
+    "message":"Delete attachment"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?",
-    "description":"Are you sure you want to delete this attachment?"
+    "message":"Are you sure you want to delete this attachment?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment",
-    "description":"Deleted attachment"
+    "message":"Deleted attachment"
   },
   "newAttachment":{
-    "message":"Add New Attachment",
-    "description":"Add New Attachment"
+    "message":"Add New Attachment"
   },
   "noAttachments":{
-    "message":"No attachments.",
-    "description":"No attachments."
+    "message":"No attachments."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved.",
-    "description":"The attachment has been saved."
+    "message":"The attachment has been saved."
   },
   "file":{
-    "message":"File",
-    "description":"File"
+    "message":"File"
   },
   "selectFile":{
-    "message":"Select a file.",
-    "description":"Select a file."
+    "message":"Select a file."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB.",
-    "description":"Maximum file size is 100 MB."
+    "message":"Maximum file size is 100 MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable",
-    "description":"Feature Unavailable"
+    "message":"Feature Unavailable"
   },
   "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key.",
-    "description":"You cannot use this feature until you update your encryption key."
+    "message":"You cannot use this feature until you update your encryption key."
   },
   "premiumMembership":{
-    "message":"Premium Membership",
-    "description":"Premium Membership"
+    "message":"Premium Membership"
   },
   "premiumManage":{
-    "message":"Manage Membership",
-    "description":"Manage Membership"
+    "message":"Manage Membership"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?",
-    "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership",
-    "description":"Refresh Membership"
+    "message":"Refresh Membership"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member.",
-    "description":"You are not currently a premium member."
+    "message":"You are not currently a premium member."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:",
-    "description":"Sign up for a premium membership and get:"
+    "message":"Sign up for a premium membership and get:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage.",
-    "description":"1 GB of encrypted file storage."
+    "message":"1 GB of encrypted file storage."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo.",
-    "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault.",
-    "description":"TOTP verification code (2FA) generator for logins in your vault."
+    "message":"TOTP verification code (2FA) generator for logins in your vault."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support.",
-    "description":"Priority customer support."
+    "message":"Priority customer support."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!",
-    "description":"All future premium features. More coming soon!"
+    "message":"All future premium features. More coming soon!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium",
-    "description":"Purchase Premium"
+    "message":"Purchase Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?",
-    "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!",
-    "description":"You are a premium member!"
+    "message":"You are a premium member!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden.",
-    "description":"Thank you for supporting bitwarden."
+    "message":"Thank you for supporting bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!",
-    "description":"All for just %price% \/year!"
+    "message":"All for just %price% \/year!"
   },
   "refreshComplete":{
-    "message":"Refresh complete",
-    "description":"Refresh complete"
+    "message":"Refresh complete"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy",
-    "description":"Disable Automatic TOTP Copy"
+    "message":"Disable Automatic TOTP Copy"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login.",
-    "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired":{
-    "message":"Premium Required",
-    "description":"Premium Required"
+    "message":"Premium Required"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature.",
-    "description":"A premium membership is required to use this feature."
+    "message":"A premium membership is required to use this feature."
+  },
+  "enterVerificationCodeApp":{
+    "message":"Enter the 6 digit verification code from your authenticator app."
+  },
+  "enterVerificationCodeEmail":{
+    "message":"Enter the 6 digit verification code that was emailed to"
+  },
+  "rememberMe":{
+    "message":"Remember me"
+  },
+  "sendVerificationCodeEmailAgain":{
+    "message":"Send verification code email again"
+  },
+  "useAnotherTwoStepMethod":{
+    "message":"Use another two-step login method"
+  },
+  "insertYubiKey":{
+    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+  },
+  "insertU2f":{
+    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+  },
+  "loginUnavailable":{
+    "message":"Login Unavailable"
+  },
+  "noTwoStepProviders":{
+    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+  },
+  "noTwoStepProviders2":{
+    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+  },
+  "twoStepOptions":{
+    "message":"Two-step Login Options"
+  },
+  "recoveryCodeDesc":{
+    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+  },
+  "recoveryCodeTitle":{
+    "message":"Recovery Code"
+  },
+  "authenticatorAppTitle":{
+    "message":"Authenticator App"
+  },
+  "authenticatorAppDesc":{
+    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle":{
+    "message":"YubiKey OTP Security Key"
+  },
+  "yubiKeyDesc":{
+    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+  },
+  "duoDesc":{
+    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc":{
+    "message":"Use any FIDO U2F enabled security key to access your account."
+  },
+  "u2fTitle":{
+    "message":"FIDO U2F Security Key"
+  },
+  "emailTitle":{
+    "message":"Email"
+  },
+  "emailDesc":{
+    "message":"Verification codes will be emailed to you."
   }
 }

@@ -3,150 +3,150 @@
     "message":"bitwarden"
   },
   "extName":{
-    "message":"bitwarden - नि: शुल्क पासवर्ड प्रबंधक   password ",
+    "message":"bitwarden - Ingyenes Jelszó Kezelő",
     "description":"Extension name"
   },
   "extDesc":{
-    "message":"bitwarden is a secure and free password manager for all of your devices.",
+    "message":"bitwarden egy biztonságos és ingyenes jelsző kezelő az összes eszközödre.",
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
-    "message":"Log in or create a new account to access your secure vault."
+    "message":"Jelentkezz be vagy készíts új felhasználót a biztonsági széfed eléréshez."
   },
   "createAccount":{
-    "message":"Create Account"
+    "message":"Felhasználó létrehozása"
   },
   "login":{
-    "message":"Log In"
+    "message":"Bejelentkezés"
   },
   "cancel":{
-    "message":"Cancel"
+    "message":"Mégse"
   },
   "close":{
-    "message":"Close"
+    "message":"Bezár"
   },
   "submit":{
-    "message":"Submit"
+    "message":"Beküld"
   },
   "emailAddress":{
-    "message":"Email Address"
+    "message":"E-mail cím"
   },
   "masterPass":{
-    "message":"Master Password"
+    "message":"Mesterjelszó"
   },
   "masterPassDesc":{
-    "message":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message":"A mesterjelszó az a jelszó amit a széfed eléréséhez fogsz használni. Nagyon fontos, hogy ne felejtsd el a mesterjelszavad, mivel nincs lehetőséged visszaállítani még ha elfejeted is."
   },
   "masterPassHintDesc":{
-    "message":"A master password hint can help you remember your password if you forget it."
+    "message":"A mesterjelszó emlékeztető segíthet emlékezni a jelszavadra ha elfejetetted volna."
   },
   "reTypeMasterPass":{
-    "message":"Re-type Master Password"
+    "message":"Írd be újra a mesterjelszavad"
   },
   "masterPassHint":{
-    "message":"Master Password Hint (optional)"
+    "message":"Mesterjelszó emlékeztető (nem kötelező)"
   },
   "tab":{
-    "message":"Tab"
+    "message":"Fül"
   },
   "myVault":{
-    "message":"My Vault"
+    "message":"Széfem"
   },
   "tools":{
-    "message":"Tools"
+    "message":"Eszközök"
   },
   "settings":{
-    "message":"Settings"
+    "message":"Beállítások"
   },
   "currentTab":{
-    "message":"Current Tab"
+    "message":"Jelenlegi fül"
   },
   "copyPassword":{
-    "message":"Copy Password"
+    "message":"Jelszó másolása"
   },
   "copyUsername":{
-    "message":"Copy Username"
+    "message":"Felhasználónév másolása"
   },
   "autoFill":{
-    "message":"Auto-fill"
+    "message":"Automatikus kitöltés"
   },
   "generatePasswordCopied":{
-    "message":"Generate Password (copied)"
+    "message":"Jelszó generálás (másolt)"
   },
   "noMatchingLogins":{
-    "message":"No matching logins."
+    "message":"Nincsenek egyező bejelentkezések."
   },
   "vaultLocked":{
-    "message":"Vault is locked."
+    "message":"A széf zárolva van."
   },
   "autoFillInfo":{
-    "message":"There are no logins available to auto-fill for the current browser tab."
+    "message":"Nincsenek elérhető bejelentkezések ehhez a fülhöz ezért az automatikus kitöltés nem működik."
   },
   "addLogin":{
-    "message":"Add a Login"
+    "message":"Adj hozzá egy Bejelentkezést"
   },
   "passwordHint":{
-    "message":"Password Hint"
+    "message":"Jelszó emlékeztető"
   },
   "enterEmailToGetHint":{
-    "message":"Enter your account email address to receive your master password hint."
+    "message":"Írd be a felhasználóhoz kötött e-mail címed, hogy megkapd a mesterjelszó emlékeztetőt."
   },
   "getMasterPasswordHint":{
-    "message":"Get master password hint"
+    "message":"Kérj mesterjelszó emlékeztetőt"
   },
   "continue":{
-    "message":"Continue"
+    "message":"Folytatás"
   },
   "verificationCode":{
-    "message":"Verification Code"
+    "message":"Ellenőrző Kód"
   },
   "account":{
-    "message":"Account"
+    "message":"Felhasználó"
   },
   "changeMasterPassword":{
-    "message":"Change Master Password"
+    "message":"Mesterjelszó módosítása"
   },
   "changeEmail":{
-    "message":"Change Email"
+    "message":"E-mail cím módosítása"
   },
   "twoStepLogin":{
-    "message":"Two-step Login"
+    "message":"Kétlépcsős bejelentkezés"
   },
   "logOut":{
-    "message":"Log Out"
+    "message":"Kijelentkezés"
   },
   "about":{
-    "message":"About"
+    "message":"Névjegy"
   },
   "version":{
-    "message":"Version"
+    "message":"Verzió"
   },
   "save":{
-    "message":"Save"
+    "message":"Mentés"
   },
   "addFolder":{
-    "message":"Add Folder"
+    "message":"Mappa hozzáadása"
   },
   "name":{
-    "message":"Name"
+    "message":"Név"
   },
   "editFolder":{
-    "message":"Edit Folder"
+    "message":"Mappa szerkesztése"
   },
   "deleteFolder":{
-    "message":"Delete Folder"
+    "message":"Mappa törlése"
   },
   "folders":{
-    "message":"Folders"
+    "message":"Mappák"
   },
   "noFolders":{
-    "message":"There are no folders to list."
+    "message":"Nincsenek megjeleníthető mappák."
   },
   "helpFeedback":{
-    "message":"Help & Feedback"
+    "message":"Súgó és visszajelzés"
   },
   "emailUs":{
-    "message":"Email Us"
+    "message":"Küldj e-mailt nekünk"
   },
   "emailUsDirectly":{
     "message":"Email us directly to get help or leave feedback."
@@ -324,7 +324,7 @@
     "message":"4 hours"
   },
   "onLocked":{
-    "message":"On Locked"
+    "message":"On Lock"
   },
   "onRestart":{
     "message":"On Restart"
@@ -403,7 +403,7 @@
     "message":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
     "message":"Logging out"
@@ -525,7 +525,7 @@
     "message":"Create an organization to securely share your logins with other users."
   },
   "contribute":{
-    "message":"You can contribute to!"
+    "message":"You can contribute too!"
   },
   "learnMore":{
     "message":"Learn more"

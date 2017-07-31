@@ -1,7 +1,6 @@
 {
   "appName":{
-    "message":"bitwarden",
-    "description":"bitwarden"
+    "message":"bitwarden"
   },
   "extName":{
     "message":"bitwarden - бесплатный менеджер паролей",
@@ -12,839 +11,699 @@
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
-    "message":"Войдите или создайте новый аккаунт для доступа к вашему безопасному хранилищу.",
-    "description":"Log in or create a new account to access your secure vault."
+    "message":"Войдите или создайте новый аккаунт для доступа к вашему безопасному хранилищу."
   },
   "createAccount":{
-    "message":"Создать аккаунт",
-    "description":"Create Account"
+    "message":"Создать аккаунт"
   },
   "login":{
-    "message":"Войти",
-    "description":"Log In"
+    "message":"Войти"
   },
   "cancel":{
-    "message":"Отмена",
-    "description":"Cancel"
+    "message":"Отмена"
   },
   "close":{
-    "message":"Закрыть",
-    "description":"Close"
+    "message":"Закрыть"
   },
   "submit":{
-    "message":"Отправить",
-    "description":"Submit"
+    "message":"Отправить"
   },
   "emailAddress":{
-    "message":"Адрес email",
-    "description":"Email Address"
+    "message":"Адрес email"
   },
   "masterPass":{
-    "message":"Мастер-пароль",
-    "description":"Master Password"
+    "message":"Мастер-пароль"
   },
   "masterPassDesc":{
-    "message":"Мастер-пароль - пароль для доступа к вашему безопасному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно.",
-    "description":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message":"Мастер-пароль - пароль для доступа к вашему безопасному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
   },
   "masterPassHintDesc":{
-    "message":"Подсказка к мастер-паролю может помочь вам вспомнить свой пароль, если вы его забудете.",
-    "description":"A master password hint can help you remember your password if you forget it."
+    "message":"Подсказка к мастер-паролю может помочь вам вспомнить свой пароль, если вы его забудете."
   },
   "reTypeMasterPass":{
-    "message":"Введите мастер-пароль повторно",
-    "description":"Re-type Master Password"
+    "message":"Введите мастер-пароль повторно"
   },
   "masterPassHint":{
-    "message":"Подсказка к мастер-паролю (необяз.)",
-    "description":"Master Password Hint (optional)"
+    "message":"Подсказка к мастер-паролю (необяз.)"
   },
   "tab":{
-    "message":"Вкладка",
-    "description":"Tab"
+    "message":"Вкладка"
   },
   "myVault":{
-    "message":"Хранилище",
-    "description":"My Vault"
+    "message":"Хранилище"
   },
   "tools":{
-    "message":"Инструменты",
-    "description":"Tools"
+    "message":"Инструменты"
   },
   "settings":{
-    "message":"Настройки",
-    "description":"Settings"
+    "message":"Настройки"
   },
   "currentTab":{
-    "message":"Текущая вкладка",
-    "description":"Current Tab"
+    "message":"Текущая вкладка"
   },
   "copyPassword":{
-    "message":"Копировать пароль",
-    "description":"Copy Password"
+    "message":"Копировать пароль"
   },
   "copyUsername":{
-    "message":"Копировать имя пользователя",
-    "description":"Copy Username"
+    "message":"Копировать имя пользователя"
   },
   "autoFill":{
-    "message":"Автозаполнение",
-    "description":"Auto-fill"
+    "message":"Автозаполнение"
   },
   "generatePasswordCopied":{
-    "message":"Сгенерировать пароль (с копированием)",
-    "description":"Generate Password (copied)"
+    "message":"Сгенерировать пароль (с копированием)"
   },
   "noMatchingLogins":{
-    "message":"Нет подходящих сайтов.",
-    "description":"No matching logins."
+    "message":"Нет подходящих сайтов."
   },
   "vaultLocked":{
-    "message":"Хранилище заблокировано.",
-    "description":"Vault is locked."
+    "message":"Хранилище заблокировано."
   },
   "autoFillInfo":{
-    "message":"Нет доступных учетных записей для автозаполнения в текущей вкладке браузера.",
-    "description":"There are no logins available to auto-fill for the current browser tab."
+    "message":"Нет доступных учетных записей для автозаполнения в текущей вкладке браузера."
   },
   "addLogin":{
-    "message":"Добавить сайт",
-    "description":"Add a Login"
+    "message":"Добавить сайт"
   },
   "passwordHint":{
-    "message":"Подсказка к паролю",
-    "description":"Password Hint"
+    "message":"Подсказка к паролю"
   },
   "enterEmailToGetHint":{
-    "message":"Введите Ваш email для получения подсказки мастер-пароля.",
-    "description":"Enter your account email address to receive your master password hint."
+    "message":"Введите Ваш email для получения подсказки мастер-пароля."
   },
   "getMasterPasswordHint":{
-    "message":"Получить подсказку к мастер-паролю",
-    "description":"Get master password hint"
+    "message":"Получить подсказку к мастер-паролю"
   },
   "continue":{
-    "message":"Продолжить",
-    "description":"Continue"
+    "message":"Продолжить"
   },
   "verificationCode":{
-    "message":"Код подтверждения",
-    "description":"Verification Code"
+    "message":"Код подтверждения"
   },
   "account":{
-    "message":"Аккаунт",
-    "description":"Account"
+    "message":"Аккаунт"
   },
   "changeMasterPassword":{
-    "message":"Изменить мастер-пароль",
-    "description":"Change Master Password"
+    "message":"Изменить мастер-пароль"
   },
   "changeEmail":{
-    "message":"Изменить email",
-    "description":"Change Email"
+    "message":"Изменить email"
   },
   "twoStepLogin":{
-    "message":"Двухфакторная аутентификация",
-    "description":"Two-step Login"
+    "message":"Двухфакторная аутентификация"
   },
   "logOut":{
-    "message":"Выйти",
-    "description":"Log Out"
+    "message":"Выйти"
   },
   "about":{
-    "message":"О расширении",
-    "description":"About"
+    "message":"О расширении"
   },
   "version":{
-    "message":"Версия",
-    "description":"Version"
+    "message":"Версия"
   },
   "save":{
-    "message":"Сохранить",
-    "description":"Save"
+    "message":"Сохранить"
   },
   "addFolder":{
-    "message":"Добавить папку",
-    "description":"Add Folder"
+    "message":"Добавить папку"
   },
   "name":{
-    "message":"Название",
-    "description":"Name"
+    "message":"Название"
   },
   "editFolder":{
-    "message":"Изменить папку",
-    "description":"Edit Folder"
+    "message":"Изменить папку"
   },
   "deleteFolder":{
-    "message":"Удалить папку",
-    "description":"Delete Folder"
+    "message":"Удалить папку"
   },
   "folders":{
-    "message":"Папки",
-    "description":"Folders"
+    "message":"Папки"
   },
   "noFolders":{
-    "message":"Нет папок для отображения.",
-    "description":"There are no folders to list."
+    "message":"Нет папок для отображения."
   },
   "helpFeedback":{
-    "message":"Помощь и отзывы",
-    "description":"Help & Feedback"
+    "message":"Помощь и обратная связь"
   },
   "emailUs":{
-    "message":"Связь с нами",
-    "description":"Email Us"
+    "message":"Напишите нам"
   },
   "emailUsDirectly":{
-    "message":"Напишите нам на email, чтобы получить помощь или оставить отзыв.",
-    "description":"Email us directly to get help or leave feedback."
+    "message":"Напишите нам на email, чтобы получить помощь или оставить отзыв."
   },
   "visitOurWebsite":{
-    "message":"Перейти на наш сайт",
-    "description":"Visit Our Website"
+    "message":"Перейти на наш сайт"
   },
   "visitOurWebsiteDirectly":{
-    "message":"Посетите наш веб-сайт, чтобы получить помощь, прочесть новости, связаться с нами или узнать больше о том, как использовать bitwarden.",
-    "description":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+    "message":"Посетите наш веб-сайт, чтобы получить помощь, прочесть новости, связаться с нами или узнать больше о том, как использовать bitwarden."
   },
   "fileBugReport":{
-    "message":"Сообщить об ошибке",
-    "description":"File a Bug Report"
+    "message":"Сообщить об ошибке"
   },
   "gitHubIssue":{
-    "message":"Откройте проблему в нашем репозитории на GitHub.",
-    "description":"Open an issue at our GitHub repository."
+    "message":"Откройте проблему в нашем репозитории на GitHub."
   },
   "sync":{
-    "message":"Синхронизация",
-    "description":"Sync"
+    "message":"Синхронизация"
   },
   "syncVaultNow":{
-    "message":"Синхронизировать сейчас",
-    "description":"Sync Vault Now"
+    "message":"Синхронизировать сейчас"
   },
   "lastSync":{
-    "message":"Последняя синхронизация:",
-    "description":"Last Sync:"
+    "message":"Последняя синхронизация:"
   },
   "passGen":{
-    "message":"Генератор паролей",
-    "description":"Password Generator"
+    "message":"Генератор паролей"
   },
   "passGenInfo":{
-    "message":"Автоматическая генерация стойких и уникальных паролей для ваших аккаунтов.",
-    "description":"Automatically generate strong, unique passwords for your logins."
+    "message":"Автоматическая генерация стойких и уникальных паролей для ваших аккаунтов."
   },
   "bitWebVault":{
-    "message":"Веб-хранилище bitwarden",
-    "description":"bitwarden Web Vault"
+    "message":"Веб-хранилище bitwarden"
   },
   "bitWebVaultInfo":{
-    "message":"Управляйте своими логинами из любого браузера при помощи веб-хранилища bitwarden.",
-    "description":"Manage your logins from any web browser with the bitwarden web vault."
+    "message":"Управляйте своими логинами из любого браузера при помощи веб-хранилища bitwarden."
   },
   "bitIosVault":{
-    "message":"iOS-хранилище bitwarden",
-    "description":"bitwarden iOS Vault"
+    "message":"iOS-хранилище bitwarden"
   },
   "bitIosVaultInfo":{
-    "message":"Управляйте своими логинами со своего мобильного устройства при помощи iOS-хранилища bitwarden.",
-    "description":"Manage your logins from your mobile devices with the bitwarden iOS vault."
+    "message":"Управляйте своими логинами со своего мобильного устройства при помощи iOS-хранилища bitwarden."
   },
   "bitAndrVault":{
-    "message":"Android-хранилище bitwarden",
-    "description":"bitwarden Android Vault"
+    "message":"Android-хранилище bitwarden"
   },
   "bitAndrVaultInfo":{
-    "message":"Управляйте своими логинами со своего мобильного устройства при помощи Android-хранилища bitwarden.",
-    "description":"Manage your logins from your mobile devices with the bitwarden Android vault."
+    "message":"Управляйте своими логинами со своего мобильного устройства при помощи Android-хранилища bitwarden."
   },
   "importLogins":{
     "message":"Импорт логинов",
     "description":"Import Logins"
   },
   "importLoginsInfo":{
-    "message":"Быстрый импорт ваших логинов из других менеджеров паролей.",
-    "description":"Quickly bulk import your logins from other password management applications."
+    "message":"Быстрый импорт ваших логинов из других менеджеров паролей."
   },
   "select":{
-    "message":"Выбрать",
-    "description":"Select"
+    "message":"Выбрать"
   },
   "generatePassword":{
-    "message":"Сгенерировать пароль",
-    "description":"Generate Password"
+    "message":"Сгенерировать пароль"
   },
   "regeneratePassword":{
-    "message":"Создать новый пароль",
-    "description":"Regenerate Password"
+    "message":"Создать новый пароль"
   },
   "options":{
-    "message":"Опции",
-    "description":"Options"
+    "message":"Опции"
   },
   "length":{
-    "message":"Длина",
-    "description":"Length"
+    "message":"Длина"
   },
   "minNumbers":{
-    "message":"Мин. кол-во цифр",
-    "description":"Minimum Numbers"
+    "message":"Мин. кол-во цифр"
   },
   "minSpecial":{
-    "message":"Мин. кол-во символов",
-    "description":"Minimum Special"
+    "message":"Мин. кол-во символов"
   },
   "avoidAmbChar":{
-    "message":"Избегать неоднозначных символов",
-    "description":"Avoid Ambiguous Characters"
+    "message":"Избегать неоднозначных символов"
   },
   "searchVault":{
-    "message":"Поиск",
-    "description":"Search vault"
+    "message":"Поиск"
   },
   "edit":{
-    "message":"Изменить",
-    "description":"Edit"
+    "message":"Изменить"
   },
   "noLoginsInList":{
-    "message":"Нет элементов.",
-    "description":"There are no logins to list."
+    "message":"Нет элементов."
   },
   "loginInformation":{
-    "message":"Информация о логине",
-    "description":"Login Information"
+    "message":"Информация о логине"
   },
   "username":{
-    "message":"Имя пользователя",
-    "description":"Username"
+    "message":"Имя пользователя"
   },
   "password":{
-    "message":"Пароль",
-    "description":"Password"
+    "message":"Пароль"
   },
   "favorite":{
-    "message":"Избранный",
-    "description":"Favorite"
+    "message":"Избранный"
   },
   "notes":{
-    "message":"Заметки",
-    "description":"Notes"
+    "message":"Заметки"
   },
   "editLogin":{
-    "message":"Изменить логин",
-    "description":"Edit Login"
+    "message":"Изменить логин"
   },
   "folder":{
-    "message":"Папка",
-    "description":"Folder"
+    "message":"Папка"
   },
   "deleteLogin":{
-    "message":"Удалить логин",
-    "description":"Delete Login"
+    "message":"Удалить логин"
   },
   "viewLogin":{
-    "message":"Просмотр логина",
-    "description":"View Login"
+    "message":"Просмотр логина"
   },
   "launchWebsite":{
-    "message":"Открыть сайт",
-    "description":"Launch Website"
+    "message":"Открыть сайт"
   },
   "website":{
-    "message":"Веб-сайт",
-    "description":"Website"
+    "message":"Веб-сайт"
   },
   "togglePassword":{
-    "message":"Отобразить пароль",
-    "description":"Toggle Password"
+    "message":"Отобразить пароль"
   },
   "manage":{
-    "message":"Управление",
-    "description":"Manage"
+    "message":"Управление"
   },
   "other":{
-    "message":"Прочее",
-    "description":"Other"
+    "message":"Прочее"
   },
   "disableGa":{
-    "message":"Отключить аналитику",
-    "description":"Disable Analytics"
+    "message":"Отключить аналитику"
   },
   "rateExtension":{
-    "message":"Оценить расширение",
-    "description":"Rate the Extension"
+    "message":"Оценить расширение"
   },
   "rateExtensionDesc":{
-    "message":"Пожалуйста, подумайте о том, чтобы помочь нам хорошим отзывом!",
-    "description":"Please consider helping us out with a good review!"
+    "message":"Пожалуйста, подумайте о том, чтобы помочь нам хорошим отзывом!"
   },
   "browserNotSupportClipboard":{
-    "message":"Ваш браузер не поддерживает копирование данных в буфер обмена. Скопируйте вручную.",
-    "description":"Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message":"Ваш браузер не поддерживает копирование данных в буфер обмена. Скопируйте вручную."
   },
   "verifyMasterPassword":{
-    "message":"Проверка мастер-пароля",
-    "description":"Verify Master Password"
+    "message":"Проверка мастер-пароля"
   },
   "invalidMasterPassword":{
-    "message":"Неверный мастер-пароль",
-    "description":"Invalid master password"
+    "message":"Неверный мастер-пароль"
   },
   "lockOptions":{
-    "message":"Настройки блокировки",
-    "description":"Lock Options"
+    "message":"Настройки блокировки"
   },
   "lockNow":{
-    "message":"Заблокировать",
-    "description":"Lock Now"
+    "message":"Заблокировать"
   },
   "immediately":{
-    "message":"Немедленно",
-    "description":"Immediately"
+    "message":"Немедленно"
   },
   "oneMinute":{
-    "message":"Через 1 минуту",
-    "description":"1 minute"
+    "message":"Через 1 минуту"
   },
   "fiveMinutes":{
-    "message":"Через 5 минут",
-    "description":"5 minutes"
+    "message":"Через 5 минут"
   },
   "fifteenMinutes":{
-    "message":"Через 15 минут",
-    "description":"15 minutes"
+    "message":"Через 15 минут"
   },
   "thirtyMinutes":{
-    "message":"Через 30 минут",
-    "description":"30 minutes"
+    "message":"Через 30 минут"
   },
   "oneHour":{
-    "message":"Через 1 час",
-    "description":"1 hour"
+    "message":"Через 1 час"
   },
   "fourHours":{
-    "message":"Через 4 часа",
-    "description":"4 hours"
+    "message":"Через 4 часа"
   },
   "onLocked":{
-    "message":"Заблокировано",
-    "description":"On Locked"
+    "message":"Заблокировано"
   },
   "onRestart":{
-    "message":"При перезапуске",
-    "description":"On Restart"
+    "message":"При перезапуске"
   },
   "never":{
-    "message":"Никогда",
-    "description":"Never"
+    "message":"Никогда"
   },
   "security":{
-    "message":"Безопасность",
-    "description":"Security"
+    "message":"Безопасность"
   },
   "errorsOccurred":{
-    "message":"Произошли ошибки",
-    "description":"Errors have occurred"
+    "message":"Произошли ошибки"
   },
   "emailRequired":{
-    "message":"Требуется адрес электронной почты.",
-    "description":"Email address is required."
+    "message":"Требуется адрес электронной почты."
   },
   "invalidEmail":{
-    "message":"Неверный адрес электронной почты.",
-    "description":"Invalid email address."
+    "message":"Неверный адрес электронной почты."
   },
   "masterPassRequired":{
-    "message":"Требуется мастер-пароль.",
-    "description":"Master password is required."
+    "message":"Требуется мастер-пароль."
   },
   "masterPassLength":{
-    "message":"Мастер-пароль должен содержать не менее 8 символов.",
-    "description":"Master password must be at least 8 characters long."
+    "message":"Мастер-пароль должен содержать не менее 8 символов."
   },
   "masterPassDoesntMatch":{
-    "message":"Мастер-пароли не совпадают.",
-    "description":"Master password confirmation does not match."
+    "message":"Мастер-пароли не совпадают."
   },
   "newAccountCreated":{
-    "message":"Ваш аккаунт был создан! Теперь вы можете войти в систему.",
-    "description":"Your new account has been created! You may now log in."
+    "message":"Ваш аккаунт был создан! Теперь вы можете войти в систему."
   },
   "masterPassSent":{
-    "message":"Мы отправили вам электронное письмо с подсказкой.",
-    "description":"We've sent you an email with your master password hint."
+    "message":"Мы отправили вам электронное письмо с подсказкой."
   },
   "verificationCodeRequired":{
-    "message":"Необходим код подтверждения.",
-    "description":"Verification code is required."
+    "message":"Необходим код подтверждения."
   },
   "valueCopied":{
     "message":" скопирован",
     "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError":{
-    "message":"Не получается автоматически заполнить выбранный логин на этой странице. Скопируйте и вставьте логин\/пароль напрямую из своего хранилища.",
-    "description":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+    "message":"Не получается автоматически заполнить выбранный логин на этой странице. Скопируйте и вставьте логин\/пароль напрямую из своего хранилища."
   },
   "loggedOut":{
-    "message":"Вы вышли из хранилища",
-    "description":"Logged out"
+    "message":"Вы вышли из хранилища"
   },
   "loginExpired":{
-    "message":"Ваша логин-сессия истекла.",
-    "description":"Your login session has expired."
+    "message":"Ваша логин-сессия истекла."
   },
   "logOutConfirmation":{
-    "message":"Вы действительно хотите выйти?",
-    "description":"Are you sure you want to log out?"
+    "message":"Вы действительно хотите выйти?"
   },
   "yes":{
-    "message":"Да",
-    "description":"Yes"
+    "message":"Да"
   },
   "no":{
-    "message":"Нет",
-    "description":"No"
+    "message":"Нет"
   },
   "unexpectedError":{
-    "message":"Произошла непредвиденная ошибка.",
-    "description":"An unexpected error has occured."
+    "message":"Произошла непредвиденная ошибка."
   },
   "nameRequired":{
-    "message":"Требуется наименование.",
-    "description":"Name is required."
+    "message":"Требуется наименование."
   },
   "addedFolder":{
-    "message":"Добавлена папка",
-    "description":"Added folder"
+    "message":"Добавлена папка"
   },
   "changeMasterPass":{
-    "message":"Изменить мастер-пароль",
-    "description":"Change Master Password"
+    "message":"Изменить мастер-пароль"
   },
   "changeMasterPasswordConfirmation":{
-    "message":"Вы можете изменить свой мастер-пароль на bitwarden.com. Хотите перейти на сайт сейчас?",
-    "description":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Вы можете изменить свой мастер-пароль на bitwarden.com. Хотите перейти на сайт сейчас?"
   },
   "changeEmailConfirmation":{
-    "message":"Вы можете изменить свой адрес электронной почты на bitwarden.com. Хотите перейти на сайт сейчас?",
-    "description":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Вы можете изменить свой адрес электронной почты на bitwarden.com. Хотите перейти на сайт сейчас?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Двухфакторная аутентификация делает ваш аккаунт более защищенным, требуя ввода кода безопасности из приложения-аутентификатора при каждом входе в систему. Двухфакторная аутентификация включается на сайте bitwarden.com. Хотите перейти на сайт сейчас?",
-    "description":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Двухфакторная аутентификация делает ваш аккаунт более защищенным, требуя ввода кода безопасности из приложения-аутентификатора при каждом входе в систему. Двухфакторная аутентификация включается на сайте bitwarden.com. Хотите перейти на сайт сейчас?"
   },
   "loggingOut":{
-    "message":"Выход...",
-    "description":"Logging out"
+    "message":"Выход..."
   },
   "loggingOutConfirmation":{
-    "message":"Вы недавно обновились на более новую версию. Вы должны повторно войти в систему, чтобы изменить параметры блокировки. Вы хотите выйти сейчас?",
-    "description":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+    "message":"Вы недавно обновились на более новую версию. Вы должны повторно войти в систему, чтобы изменить параметры блокировки. Вы хотите выйти сейчас?"
   },
   "editedFolder":{
-    "message":"Папка отредактирована",
-    "description":"Edited Folder"
+    "message":"Папка отредактирована"
   },
   "deleteFolderConfirmation":{
-    "message":"Вы хотите удалить эту папку?",
-    "description":"Are you sure you want to delete this folder?"
+    "message":"Вы хотите удалить эту папку?"
   },
   "deletedFolder":{
-    "message":"Папка удалена",
-    "description":"Deleted folder"
+    "message":"Папка удалена"
   },
   "gettingStartedTutorial":{
-    "message":"Гид по bitwarden",
-    "description":"Getting Started Tutorial"
+    "message":"Гид по bitwarden"
   },
   "gettingStartedTutorialVideo":{
-    "message":"Посмотрите небольшой обучающий материал, чтобы узнать, как получить максимальную отдачу от расширения браузера.",
-    "description":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message":"Посмотрите небольшой обучающий материал, чтобы узнать, как получить максимальную отдачу от расширения браузера."
   },
   "syncingComplete":{
-    "message":"Синхронизация завершена",
-    "description":"Syncing complete"
+    "message":"Синхронизация завершена"
   },
   "importLoginsConfirmation":{
-    "message":"Вы можете легко импортировать свои логины из других менеджеров паролей в свое веб-хранилище bitwarden. Хотите сделать это сейчас?",
-    "description":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Вы можете легко импортировать свои логины из других менеджеров паролей в свое веб-хранилище bitwarden. Хотите сделать это сейчас?"
   },
   "passwordCopied":{
-    "message":"Пароль скопирован",
-    "description":"Password copied"
+    "message":"Пароль скопирован"
   },
   "uri":{
-    "message":"URI",
-    "description":"URI"
+    "message":"URI"
   },
   "addedLogin":{
-    "message":"Логин добавлен",
-    "description":"Added login"
+    "message":"Логин добавлен"
   },
   "editedLogin":{
-    "message":"Логин отредактирован",
-    "description":"Edited login"
+    "message":"Логин отредактирован"
   },
   "deleteLoginConfirmation":{
-    "message":"Вы хотите удалить этот логин?",
-    "description":"Are you sure you want to delete this login?"
+    "message":"Вы хотите удалить этот логин?"
   },
   "deletedLogin":{
-    "message":"Логин удален",
-    "description":"Deleted login"
+    "message":"Логин удален"
   },
   "overwritePassword":{
-    "message":"Перезаписать пароль",
-    "description":"Overwrite Password"
+    "message":"Перезаписать пароль"
   },
   "overwritePasswordConfirmation":{
-    "message":"Вы хотите перезаписать текущий пароль?",
-    "description":"Are you sure you want to overwrite the current password?"
-  },
-  "lost2FAApp":{
-    "message":"Потеряли доступ к приложению для аутентификации?",
-    "description":"Lost authenticator app?"
+    "message":"Вы хотите перезаписать текущий пароль?"
   },
   "credits":{
-    "message":"Благодарности",
-    "description":"Credits (giving thanks to people that helped, like at the end of a movie)"
+    "message":"Благодарности"
   },
   "thankYou":{
-    "message":"Спасибо",
-    "description":"Thank You"
+    "message":"Спасибо"
   },
   "translations":{
-    "message":"Локализации",
-    "description":"Translations"
+    "message":"Локализации"
   },
   "searchFolder":{
-    "message":"Поиск папки",
-    "description":"Search folder"
+    "message":"Поиск папки"
   },
   "noneFolder":{
     "message":"Без папки",
-    "description":"No Folder - this is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized logins"
   },
   "features":{
-    "message":"Дополнительно",
-    "description":"Features"
+    "message":"Дополнительно"
   },
   "gaDesc":{
-    "message":"Мы используем аналитику для понимания как используется расширение, чтобы сделать его лучше. Все собранные данные полностью анонимны.",
-    "description":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message":"Мы используем аналитику для понимания как используется расширение, чтобы сделать его лучше. Все собранные данные полностью анонимны."
   },
   "disableAddLoginNotification":{
-    "message":"Отключить уведомление о добавлении логина",
-    "description":"Disable Add Login Notification"
+    "message":"Отключить уведомление о добавлении логина"
   },
   "addLoginNotificationDesc":{
-    "message":"Уведомление о добавлении логина автоматически предложит вам сохранить новые логины в хранилище.",
-    "description":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message":"Уведомление о добавлении логина автоматически предложит вам сохранить новые логины в хранилище."
   },
   "notificationAddDesc":{
-    "message":"Разрешить bitwarden запомнить этот пароль для вас?",
-    "description":"Should bitwarden remember this password for you?"
+    "message":"Разрешить bitwarden запомнить этот пароль для вас?"
   },
   "notificationAddSave":{
-    "message":"Да, сохранить сейчас",
-    "description":"Yes, Save Now"
+    "message":"Да, сохранить сейчас"
   },
   "notificationNeverSave":{
-    "message":"Никогда для этого сайта",
-    "description":"Never for this website"
+    "message":"Никогда для этого сайта"
   },
   "disableContextMenuItem":{
-    "message":"Отключить опции контекстного меню",
-    "description":"Disable Context Menu Options"
+    "message":"Отключить опции контекстного меню"
   },
   "disableContextMenuItemDesc":{
-    "message":"Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта в текущей вкладке.",
-    "description":"Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message":"Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта на текущей вкладке."
   },
   "exportVault":{
-    "message":"Экспортировать хранилище",
-    "description":"Export Vault"
+    "message":"Экспортировать хранилище"
   },
   "warning":{
     "message":"ВНИМАНИЕ",
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"Этот файл содержит ваши незашифрованные данные в формате .csv. Не храните и не передавайте его по незащищенным каналам (например, email). Удалите его сразу после использования.",
-    "description":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message":"Этот файл содержит ваши незашифрованные данные в формате .csv. Не храните и не передавайте его по незащищенным каналам (например, email). Удалите его сразу после использования."
   },
   "exportMasterPassword":{
-    "message":"Для экспорта данных из хранилища введите мастер-пароль.",
-    "description":"Enter your master password to export your vault data."
+    "message":"Для экспорта данных из хранилища введите мастер-пароль."
   },
   "exportVaultInfo":{
-    "message":"Экспортировать хранилище в формате .csv для быстрого редактирования или перемещения.",
-    "description":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+    "message":"Экспортировать хранилище в формате .csv для быстрого редактирования или перемещения."
   },
   "shared":{
-    "message":"Общие",
-    "description":"Shared"
+    "message":"Общие"
   },
   "shareVault":{
-    "message":"Поделиться вашим хранилищем",
-    "description":"Share Your Vault"
+    "message":"Поделиться вашим хранилищем"
   },
   "shareVaultInfo":{
-    "message":"Создайте организацию, чтобы безопасно делиться своими логинами с другими пользователями.",
-    "description":"Create an organization to securely share your logins with other users."
+    "message":"Создайте организацию, чтобы безопасно делиться своими логинами с другими пользователями."
   },
   "contribute":{
-    "message":"Вы тоже можете внести свой вклад!",
-    "description":"You can contribute too!"
+    "message":"Вы тоже можете внести свой вклад!"
   },
   "learnMore":{
-    "message":"Подробнее",
-    "description":"Learn more"
+    "message":"Подробнее"
   },
   "authenticatorKeyTotp":{
-    "message":"Ключ проверки подлинности (TOTP)",
-    "description":"Authenticator Key (TOTP)"
+    "message":"Ключ проверки подлинности (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Код подтверждения (TOTP)",
-    "description":"Verification Code (TOTP)"
+    "message":"Код подтверждения (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Копировать код подтверждения",
-    "description":"Copy Verification Code"
+    "message":"Копировать код подтверждения"
   },
   "attachments":{
-    "message":"Вложения",
-    "description":"Attachments"
+    "message":"Вложения"
   },
   "deleteAttachment":{
-    "message":"Удалить вложение",
-    "description":"Delete attachment"
+    "message":"Удалить вложение"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Вы действительно хотите удалить это вложение?",
-    "description":"Are you sure you want to delete this attachment?"
+    "message":"Вы действительно хотите удалить это вложение?"
   },
   "deletedAttachment":{
-    "message":"Удаленное вложение",
-    "description":"Deleted attachment"
+    "message":"Удаленное вложение"
   },
   "newAttachment":{
-    "message":"Добавить новое вложение",
-    "description":"Add New Attachment"
+    "message":"Добавить новое вложение"
   },
   "noAttachments":{
-    "message":"Без вложений.",
-    "description":"No attachments."
+    "message":"Без вложений."
   },
   "attachmentSaved":{
-    "message":"Вложение сохранено.",
-    "description":"The attachment has been saved."
+    "message":"Вложение сохранено."
   },
   "file":{
-    "message":"Файл",
-    "description":"File"
+    "message":"Файл"
   },
   "selectFile":{
-    "message":"Выберите файл.",
-    "description":"Select a file."
+    "message":"Выберите файл."
   },
   "maxFileSize":{
-    "message":"Максимальный размер файла 100 МБ.",
-    "description":"Maximum file size is 100 MB."
+    "message":"Максимальный размер файла 100 МБ."
   },
   "featureUnavailable":{
-    "message":"Функция недоступна",
-    "description":"Feature Unavailable"
+    "message":"Функция недоступна"
   },
   "updateKey":{
-    "message":"Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования.",
-    "description":"You cannot use this feature until you update your encryption key."
+    "message":"Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
   },
   "premiumMembership":{
-    "message":"Премиум-статус",
-    "description":"Premium Membership"
+    "message":"Премиум-статус"
   },
   "premiumManage":{
-    "message":"Управление статусом",
-    "description":"Manage Membership"
+    "message":"Управление статусом"
   },
   "premiumManageAlert":{
-    "message":"Вы можете управлять своим статусом на bitwarden.com. Хотите перейти на сайт сейчас?",
-    "description":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Вы можете управлять своим статусом на bitwarden.com. Хотите перейти на сайт сейчас?"
   },
   "premiumRefresh":{
-    "message":"Обновить статус",
-    "description":"Refresh Membership"
+    "message":"Обновить статус"
   },
   "premiumNotCurrentMember":{
-    "message":"В настоящее время у вас нет премиум-статуса.",
-    "description":"You are not currently a premium member."
+    "message":"В настоящее время у вас нет премиум-статуса."
   },
   "premiumSignUpAndGet":{
-    "message":"Подпишитесь на премиум-статус и получите:",
-    "description":"Sign up for a premium membership and get:"
+    "message":"Подпишитесь на премиум-статус и получите:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 ГБ зашифрованного хранилища файлов.",
-    "description":"1 GB of encrypted file storage."
+    "message":"1 ГБ зашифрованного хранилища файлов."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Дополнительные варианты двухфакторной аутентификации, такие как YubiKey, FIDO U2F и Duo.",
-    "description":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message":"Дополнительные варианты двухфакторной аутентификации, такие как YubiKey, FIDO U2F и Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"Генератор кода подтверждения TOTP для входа в ваше хранилище.",
-    "description":"TOTP verification code (2FA) generator for logins in your vault."
+    "message":"Генератор кода подтверждения TOTP для входа в ваше хранилище."
   },
   "ppremiumSignUpSupport":{
-    "message":"Приоритетную поддержку.",
-    "description":"Priority customer support."
+    "message":"Приоритетную поддержку."
   },
   "ppremiumSignUpFuture":{
-    "message":"Все будущие функции премиум-статуса. Их будет больше!",
-    "description":"All future premium features. More coming soon!"
+    "message":"Все будущие функции премиум-статуса. Их будет больше!"
   },
   "premiumPurchase":{
-    "message":"Купить премиум",
-    "description":"Purchase Premium"
+    "message":"Купить премиум"
   },
   "premiumPurchaseAlert":{
-    "message":"Вы можете купить премиум-статус на bitwarden.com. Хотите перейти на сайт сейчас?",
-    "description":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Вы можете купить премиум-статус на bitwarden.com. Хотите перейти на сайт сейчас?"
   },
   "premiumCurrentMember":{
-    "message":"У вас премиум-статус!",
-    "description":"You are a premium member!"
+    "message":"У вас премиум-статус!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Благодарим вас за поддержку bitwarden.",
-    "description":"Thank you for supporting bitwarden."
+    "message":"Благодарим вас за поддержку bitwarden."
   },
   "premiumPrice":{
-    "message":"Всего лишь %price% \/в год!",
-    "description":"All for just %price% \/year!"
+    "message":"Всего лишь %price% \/в год!"
   },
   "refreshComplete":{
-    "message":"Обновление завершено",
-    "description":"Refresh complete"
+    "message":"Обновление завершено"
   },
   "disableAutoTotpCopy":{
-    "message":"Отключить автоматическое копирование TOTP",
-    "description":"Disable Automatic TOTP Copy"
+    "message":"Отключить автоматическое копирование TOTP"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"Если ваш логин имеет прикрепленный к нему ключ проверки подлинности, код подтверждения TOTP автоматически копируется в буфер обмена всякий раз, когда вы автоматически заполняете логин.",
-    "description":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message":"Если ваш логин имеет прикрепленный к нему ключ проверки подлинности, код подтверждения TOTP автоматически копируется в буфер обмена всякий раз, когда вы автоматически заполняете логин."
   },
   "premiumRequired":{
-    "message":"Необходим премиум-статус",
-    "description":"Premium Required"
+    "message":"Необходим премиум-статус"
   },
   "premiumRequiredDesc":{
-    "message":"Для использования этой функции требуется премиум-статус.",
-    "description":"A premium membership is required to use this feature."
+    "message":"Для использования этой функции требуется премиум-статус."
+  },
+  "enterVerificationCodeApp":{
+    "message":"Enter the 6 digit verification code from your authenticator app."
+  },
+  "enterVerificationCodeEmail":{
+    "message":"Enter the 6 digit verification code that was emailed to"
+  },
+  "rememberMe":{
+    "message":"Remember me"
+  },
+  "sendVerificationCodeEmailAgain":{
+    "message":"Send verification code email again"
+  },
+  "useAnotherTwoStepMethod":{
+    "message":"Use another two-step login method"
+  },
+  "insertYubiKey":{
+    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+  },
+  "insertU2f":{
+    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+  },
+  "loginUnavailable":{
+    "message":"Login Unavailable"
+  },
+  "noTwoStepProviders":{
+    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+  },
+  "noTwoStepProviders2":{
+    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+  },
+  "twoStepOptions":{
+    "message":"Two-step Login Options"
+  },
+  "recoveryCodeDesc":{
+    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+  },
+  "recoveryCodeTitle":{
+    "message":"Recovery Code"
+  },
+  "authenticatorAppTitle":{
+    "message":"Authenticator App"
+  },
+  "authenticatorAppDesc":{
+    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle":{
+    "message":"YubiKey OTP Security Key"
+  },
+  "yubiKeyDesc":{
+    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+  },
+  "duoDesc":{
+    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc":{
+    "message":"Use any FIDO U2F enabled security key to access your account."
+  },
+  "u2fTitle":{
+    "message":"FIDO U2F Security Key"
+  },
+  "emailTitle":{
+    "message":"Email"
+  },
+  "emailDesc":{
+    "message":"Verification codes will be emailed to you."
   }
 }
