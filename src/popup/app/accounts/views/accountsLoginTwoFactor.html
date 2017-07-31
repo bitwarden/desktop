@@ -13,10 +13,10 @@
     <div class="content">
         <div class="two-factor-key-page">
             <p ng-if="providerType === constantsProvider.authenticator">
-                Enter the 6 digit verification code from your authenticator app.
+                {{i18n.enterVerificationCodeApp}}
             </p>
             <p ng-if="providerType === constantsProvider.email">
-                Enter the 6 digit verification code that was emailed to <b>{{twoFactorEmail}}</b>.
+                {{i18n.enterVerificationCodeEmail}} <b>{{twoFactorEmail}}</b>.
             </p>
         </div>
         <div class="list">
@@ -28,17 +28,17 @@
                         <input id="code" type="text" name="Code" placeholder="{{i18n.verificationCode}}" ng-model="token">
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
-                        <label for="remember">Remember me</label>
+                        <label for="remember">{{i18n.rememberMe}}</label>
                         <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
                     </div>
                 </div>
             </div>
         </div>
         <p class="text-center text-accent" ng-if="providerType === constantsProvider.email">
-            <a href="#" stop-click ng-click="sendEmail(true)">Send verification code email again</a>
+            <a href="#" stop-click ng-click="sendEmail(true)">{{i18n.sendVerificationCodeEmailAgain}}</a>
         </p>
         <p class="text-center text-accent">
-            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+            <a href="#" stop-click ng-click="anotherMethod()">{{i18n.useAnotherTwoStepMethod}}</a>
         </p>
     </div>
 </form>
@@ -58,14 +58,14 @@
             <div class="list-section">
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-checkbox">
-                        <label for="remember">Remember me</label>
+                        <label for="remember">{{i18n.rememberMe}}</label>
                         <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
                     </div>
                 </div>
             </div>
         </div>
         <p class="text-accent text-center">
-            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+            <a href="#" stop-click ng-click="anotherMethod()">{{i18n.useAnotherTwoStepMethod}}</a>
         </p>
     </div>
 </form>
@@ -83,7 +83,7 @@
     </div>
     <div class="content">
         <div class="two-factor-key-page">
-            <p>Insert your YubiKey into your computer's USB port, then touch its button.</p>
+            <p>{{i18n.insertYubiKey}}</p>
             <img src="../images/two-factor/yubikey.jpg" alt="" class="img-rounded img-responsive" />
         </div>
         <div class="list">
@@ -95,14 +95,14 @@
                         <input id="code" type="password" name="Code" ng-model="token">
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
-                        <label for="remember">Remember me</label>
+                        <label for="remember">{{i18n.rememberMe}}</label>
                         <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
                     </div>
                 </div>
             </div>
         </div>
         <p class="text-center text-accent">
-            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+            <a href="#" stop-click ng-click="anotherMethod()">{{i18n.useAnotherTwoStepMethod}}</a>
         </p>
     </div>
 </form>
@@ -122,9 +122,7 @@
             <iframe id="u2f_iframe" class="hide"></iframe>
             <p ng-if="!u2fReady">Loading...</p>
             <div ng-if="u2fReady">
-                <p>
-                    Insert your Security Key into your computer's USB port. If it has a button, touch it.
-                </p>
+                <p>{{i18n.insertU2f}}</p>
                 <img src="../images/two-factor/u2fkey.jpg" alt="" class="img-rounded img-responsive" />
             </div>
         </div>
@@ -132,14 +130,14 @@
             <div class="list-section">
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-checkbox">
-                        <label for="remember">Remember me</label>
+                        <label for="remember">{{i18n.rememberMe}}</label>
                         <input id="remember" name="Remember" type="checkbox" ng-model="remember.checked">
                     </div>
                 </div>
             </div>
         </div>
         <p class="text-accent text-center">
-            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+            <a href="#" stop-click ng-click="anotherMethod()">{{i18n.useAnotherTwoStepMethod}}</a>
         </p>
     </div>
 </form>
@@ -149,21 +147,15 @@
         <div class="left">
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
         </div>
-        <div class="title">Login Unavailable</div>
+        <div class="title">{{i18n.loginUnavailable}}</div>
     </div>
     <div class="content">
         <div class="two-factor-key-page">
-            <p>
-                This account has two-step login enabled, however, none of the configured two-step providers are
-                supported by this web browser.
-            </p>
-            <p>
-                Please use a supported web browser (such as Chrome) and/or add additional providers that are better supported
-                across web browsers (such as an authenticator app).
-            </p>
+            <p>{{i18n.noTwoStepProviders}}</p>
+            <p>{{i18n.noTwoStepProviders2}}</p>
         </div>
         <p class="text-accent text-center">
-            <a href="#" stop-click ng-click="anotherMethod()">Use another two-step login method</a>
+            <a href="#" stop-click ng-click="anotherMethod()">{{i18n.useAnotherTwoStepMethod}}</a>
         </p>
     </div>
 </div>

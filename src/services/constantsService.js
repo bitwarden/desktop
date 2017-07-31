@@ -1,4 +1,4 @@
-function ConstantsService() {
+function ConstantsService(i18nService) {
     return {
         disableGaKey: 'disableGa',
         disableAddLoginNotificationKey: 'disableAddLoginNotification',
@@ -26,9 +26,8 @@ function ConstantsService() {
         twoFactorProviderInfo: [
             {
                 type: 0,
-                name: 'Authenticator App',
-                description: 'Use an authenticator app (such as Authy or Google Authenticator) to generate time-based ' +
-                'verification codes.',
+                name: i18nService.authenticatorAppTitle,
+                description: i18nService.authenticatorAppDesc,
                 active: true,
                 free: true,
                 displayOrder: 0,
@@ -36,8 +35,8 @@ function ConstantsService() {
             },
             {
                 type: 3,
-                name: 'YubiKey OTP Security Key',
-                description: 'Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices.',
+                name: i18nService.yubiKeyTitle,
+                description: i18nService.yubiKeyDesc,
                 active: true,
                 displayOrder: 1,
                 priority: 3
@@ -45,23 +44,23 @@ function ConstantsService() {
             {
                 type: 2,
                 name: 'Duo',
-                description: 'Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.',
+                description: i18nService.duoDesc,
                 active: true,
                 displayOrder: 2,
                 priority: 2
             },
             {
                 type: 4,
-                name: 'FIDO U2F Security Key',
-                description: 'Use any FIDO U2F enabled security key to access your account.',
+                name: i18nService.u2fTitle,
+                description: i18nService.u2fDesc,
                 active: true,
                 displayOrder: 3,
                 priority: 4
             },
             {
                 type: 1,
-                name: 'Email',
-                description: 'Verification codes will be emailed to you.',
+                name: i18nService.emailTitle,
+                description: i18nService.emailDesc,
                 active: true,
                 displayOrder: 4,
                 priority: 0

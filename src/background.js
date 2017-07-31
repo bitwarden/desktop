@@ -1,7 +1,7 @@
 var isBackground = true;
 var bg_loginsToAdd = [];
 var bg_i18nService = new i18nService();
-var bg_constantsService = new ConstantsService();
+var bg_constantsService = new ConstantsService(bg_i18nService);
 var bg_utilsService = new UtilsService();
 var bg_cryptoService = new CryptoService(bg_constantsService);
 var bg_tokenService = new TokenService();

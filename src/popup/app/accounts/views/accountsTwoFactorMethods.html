@@ -2,7 +2,7 @@
     <div class="left">
         <a href="#" ng-click="cancel()" stop-click>{{i18n.cancel}}</a>
     </div>
-    <div class="title">Two-step Login Options</div>
+    <div class="title">{{i18n.twoStepOptions}}</div>
 </div>
 <div class="content content-tabs">
     <div class="list">
@@ -14,10 +14,9 @@
                     <span class="detail">{{provider.description}}</span>
                 </a>
                 <a class="list-section-item wrap" href="#" stop-click ng-click="recover()">
-                    <span class="text">Recovery Code</span>
+                    <span class="text">{{i18n.recoveryCodeTitle}}</span>
                     <span class="detail">
-                        Lost access to all of your two-factor providers? Use your recovery code to disable
-                        all two-factor providers from your account.
+                        {{i18n.recoveryCodeDesc}}
                     </span>
                 </a>
             </div>
