@@ -639,53 +639,53 @@
     "message":"使用此功能需要高级会员资格。"
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"请输入您的身份验证器应用中的 6 位验证码。"
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"请输入 6 位验证码，我们将其已发至"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"记住我"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"重发验证代码邮件"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"使用其他两步登录方法"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"将您的 YubiKey 插入计算机的 USB 端口，然后触摸它的按钮。"
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"将您的安全钥匙插入计算机的 USB 端口。如果它有一个按钮，触碰它。"
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"登录不可用"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"此账户已启用两步登录，但此浏览器不支持任何已配置的两步登录方法。"
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"请使用支持的网页浏览器（例如 Chrome）和\/或添加其他支持更广泛的验证方法（例如验证器应用）。"
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"两步登录选项"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"您丢失了所有的两步登录方式？使用您的恢复代码来为您的账户禁用所有两步登录方式。"
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"恢复代码"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"验证器应用"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"使用身份验证器应用（例如 Authy 或 Google Authenticator）来生成基于时间的验证码。",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"YubiKey OTP 安全钥匙"
   },
   "yubiKeyDesc":{
     "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
@@ -698,12 +698,12 @@
     "message":"Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"FIDO U2F 安全钥匙"
   },
   "emailTitle":{
-    "message":"Email"
+    "message":"电子邮件"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"验证代码已发到您的邮箱。"
   }
 }

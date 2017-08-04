@@ -35,7 +35,7 @@
     "message":"Huvudlösenord"
   },
   "masterPassDesc":{
-    "message":"Huvudlösenordet är det lösenord som du använder för att komma åt ditt valv. Det är väldigt viktigt att du inte glömmer bort ditt huvudlösenord eftersom det inte går att hämta lösenordet om du skulle glömma bort det."
+    "message":"Huvudlösenordet är det lösenord som du använder för att komma åt ditt valv. Det är väldigt viktigt att du inte glömmer bort ditt huvudlösenord, eftersom det inte går att återställa lösenordet om du skulle glömma bort det."
   },
   "masterPassHintDesc":{
     "message":"En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det."
@@ -639,71 +639,71 @@
     "message":"Ett premium-medlemskap krävs för att använda den här funktionen."
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"Ange den 6-siffriga verifieringskoden från din autentiseringsapp."
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"Ange den 6-siffriga verifieringskoden som skickades till"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"Kom ihåg mig"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"Skicka verifieringskod-mejlet igen"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Använd en annan inloggningsmetod för tvåstegsverifiering"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Sätt i din YubiKey i en av datorns USB-portar och sätt fingret på knappen."
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"Sätt i din säkerhetsnyckel i en av datorns USB-portar. Om nyckeln har en knapp, sätt fingret på den."
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"Inloggning inte tillgänglig"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"Detta konto har tvåstegsverifiering aktiverat, men inget av de aktiverade alternativen stöds av den här webbläsaren."
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"Vänligen använd en webbläsare som stöds (till exempel Chrome) och\/eller lägg till fler alternativ som stöds bättre över webbläsare (till exempel en autentiseringsapp)."
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"Alternativ för tvåstegsverifiering"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"Förlorat åtkomst till alla dina tvåstegsverifierings-alternativ? Använd din återställningskod för att inaktivera tvåstegsverifiering på ditt konto."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Återställningskod"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"Autentiseringsapp"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"Använd en autentiseringsapp (till exempel Authy eller Google Authenticator) för att skapa tidsbaserade verifieringskoder.",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"YubiKey OTP säkerhetsnyckel"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Använd en YubiKey för att få åtkomst till ditt konto. Fungerar med YubiKey 4, 4 Nano, 4C och NEO enheter."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Verifiera med Duo Security genom att använda Duo Mobile-appen, SMS, telefonsamtal eller en U2F säkerhetsnyckel.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"Använd en FIDO U2F-aktiverad säkerhetsnyckel för att få åtkomst till ditt konto."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"FIDO U2F säkerhetsnyckel"
   },
   "emailTitle":{
-    "message":"Email"
+    "message":"E-post"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"Verifieringskoder kommer att skickas till dig."
   }
 }

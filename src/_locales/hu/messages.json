@@ -7,7 +7,7 @@
     "description":"Extension name"
   },
   "extDesc":{
-    "message":"bitwarden egy biztonságos és ingyenes jelsző kezelő az összes eszközödre.",
+    "message":"bitwarden egy biztonságos és ingyenes jelszó kezelő az összes eszközödre.",
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
@@ -149,561 +149,561 @@
     "message":"Küldj e-mailt nekünk"
   },
   "emailUsDirectly":{
-    "message":"Email us directly to get help or leave feedback."
+    "message":"Írjon nekünk E-mailt közvetlenül a segítség kéréshez vagy visszajelzés beküldéséhez."
   },
   "visitOurWebsite":{
-    "message":"Visit Our Website"
+    "message":"Látogasd meg a weboldalunkat"
   },
   "visitOurWebsiteDirectly":{
-    "message":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+    "message":"Látogasd meg a weboldalunkat segítség kéréshez, hírekért, küldj nekünk e-mailt vagy\/és tanuld meg hogyan használd a bitwarden-t."
   },
   "fileBugReport":{
-    "message":"File a Bug Report"
+    "message":"Hiba jelentése"
   },
   "gitHubIssue":{
-    "message":"Open an issue at our GitHub repository."
+    "message":"Nyiss egy Issuet a mi Gthub repositorynkban."
   },
   "sync":{
-    "message":"Sync"
+    "message":"Szinkronizálás"
   },
   "syncVaultNow":{
-    "message":"Sync Vault Now"
+    "message":"Széf szinkronizálása most"
   },
   "lastSync":{
-    "message":"Last Sync:"
+    "message":"Utolsó szinkronizálás:"
   },
   "passGen":{
-    "message":"Password Generator"
+    "message":"Jelszó generátor"
   },
   "passGenInfo":{
-    "message":"Automatically generate strong, unique passwords for your logins."
+    "message":"Automatikusan létrehoz erős, egyedi jelszavakat a bejelentkezéseidhez."
   },
   "bitWebVault":{
-    "message":"bitwarden Web Vault"
+    "message":"bitwarden webes széf"
   },
   "bitWebVaultInfo":{
-    "message":"Manage your logins from any web browser with the bitwarden web vault."
+    "message":"Kezeld az összes bejelentkezésedet bármely böngészőből a bitwarden webes széfével."
   },
   "bitIosVault":{
-    "message":"bitwarden iOS Vault"
+    "message":"bitwarden iOS széf"
   },
   "bitIosVaultInfo":{
-    "message":"Manage your logins from your mobile devices with the bitwarden iOS vault."
+    "message":"Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden iOS széfével."
   },
   "bitAndrVault":{
-    "message":"bitwarden Android Vault"
+    "message":"bitwarden Android széf"
   },
   "bitAndrVaultInfo":{
-    "message":"Manage your logins from your mobile devices with the bitwarden Android vault."
+    "message":"Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden Android széfével."
   },
   "importLogins":{
-    "message":"Import Logins",
+    "message":"Bejelentkezések importálása",
     "description":"Import Logins"
   },
   "importLoginsInfo":{
-    "message":"Quickly bulk import your logins from other password management applications."
+    "message":"Gyorsan importálj több bejelentkezést egyszerre egy másik jelszó kezelő alkalmazásból."
   },
   "select":{
-    "message":"Select"
+    "message":"Kiválaszt"
   },
   "generatePassword":{
-    "message":"Generate Password"
+    "message":"Jelszó generálása"
   },
   "regeneratePassword":{
-    "message":"Regenerate Password"
+    "message":"Jelszó újragenerálása"
   },
   "options":{
-    "message":"Options"
+    "message":"Beállítások"
   },
   "length":{
-    "message":"Length"
+    "message":"Hossz"
   },
   "minNumbers":{
-    "message":"Minimum Numbers"
+    "message":"Legkevesebb szám"
   },
   "minSpecial":{
-    "message":"Minimum Special"
+    "message":"Legkevesebb speciális"
   },
   "avoidAmbChar":{
-    "message":"Avoid Ambiguous Characters"
+    "message":"Kerüld el a félreérthető karaktereket"
   },
   "searchVault":{
-    "message":"Search vault"
+    "message":"Keresés a széfben"
   },
   "edit":{
-    "message":"Edit"
+    "message":"Szerkesztés"
   },
   "noLoginsInList":{
-    "message":"There are no logins to list."
+    "message":"Nincsenek bejelentkezések amiket listázni lehetne."
   },
   "loginInformation":{
-    "message":"Login Information"
+    "message":"Belépési adatok"
   },
   "username":{
-    "message":"Username"
+    "message":"Felhasználónév"
   },
   "password":{
-    "message":"Password"
+    "message":"Jelszó"
   },
   "favorite":{
-    "message":"Favorite"
+    "message":"Kedvenc"
   },
   "notes":{
-    "message":"Notes"
+    "message":"Jegyzetek"
   },
   "editLogin":{
-    "message":"Edit Login"
+    "message":"Bejelentkezés szerkesztése"
   },
   "folder":{
-    "message":"Folder"
+    "message":"Mappa"
   },
   "deleteLogin":{
-    "message":"Delete Login"
+    "message":"Bejelentkezés törlése"
   },
   "viewLogin":{
-    "message":"View Login"
+    "message":"Bejelentkezési megtekintése"
   },
   "launchWebsite":{
-    "message":"Launch Website"
+    "message":"Weboldal megtekintése"
   },
   "website":{
-    "message":"Website"
+    "message":"Weboldal"
   },
   "togglePassword":{
-    "message":"Toggle Password"
+    "message":"Jelszó láthatóság ki\/be kapcsolása"
   },
   "manage":{
-    "message":"Manage"
+    "message":"Kezelés"
   },
   "other":{
-    "message":"Other"
+    "message":"Egyéb"
   },
   "disableGa":{
-    "message":"Disable Analytics"
+    "message":"Analitika kikapcsolása"
   },
   "rateExtension":{
-    "message":"Rate the Extension"
+    "message":"Bővítmény értékelése"
   },
   "rateExtensionDesc":{
-    "message":"Please consider helping us out with a good review!"
+    "message":"Kérlek, fontold meg egy jó értékelés hagyását, ezzel segítve nekünk!"
   },
   "browserNotSupportClipboard":{
-    "message":"Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message":"A webböngésződ nem támogat könnyű vágólap másolást. Másold manuálisan inkább."
   },
   "verifyMasterPassword":{
-    "message":"Verify Master Password"
+    "message":"Hitelesítsd mesterjelszavad"
   },
   "invalidMasterPassword":{
-    "message":"Invalid master password"
+    "message":"Hibás mesterjelszó"
   },
   "lockOptions":{
-    "message":"Lock Options"
+    "message":"Zárolási beállítások"
   },
   "lockNow":{
-    "message":"Lock Now"
+    "message":"Zárolás most"
   },
   "immediately":{
-    "message":"Immediately"
+    "message":"Azonnal"
   },
   "oneMinute":{
-    "message":"1 minute"
+    "message":"1 perc"
   },
   "fiveMinutes":{
-    "message":"5 minutes"
+    "message":"5 perc"
   },
   "fifteenMinutes":{
-    "message":"15 minutes"
+    "message":"15 perc"
   },
   "thirtyMinutes":{
-    "message":"30 minutes"
+    "message":"30 perc"
   },
   "oneHour":{
-    "message":"1 hour"
+    "message":"1 óra"
   },
   "fourHours":{
-    "message":"4 hours"
+    "message":"4 óra"
   },
   "onLocked":{
-    "message":"On Lock"
+    "message":"Zároláskor"
   },
   "onRestart":{
-    "message":"On Restart"
+    "message":"Újraindításkor"
   },
   "never":{
-    "message":"Never"
+    "message":"Soha"
   },
   "security":{
-    "message":"Security"
+    "message":"Biztonság"
   },
   "errorsOccurred":{
-    "message":"Errors have occurred"
+    "message":"Hibák történtek"
   },
   "emailRequired":{
-    "message":"Email address is required."
+    "message":"E-mail cím megadása kötelező."
   },
   "invalidEmail":{
-    "message":"Invalid email address."
+    "message":"Érvénytelen email cím."
   },
   "masterPassRequired":{
-    "message":"Master password is required."
+    "message":"Mesterjelszó megadása kötelező."
   },
   "masterPassLength":{
-    "message":"Master password must be at least 8 characters long."
+    "message":"Mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
   },
   "masterPassDoesntMatch":{
-    "message":"Master password confirmation does not match."
+    "message":"A megadott két jelszó nem egyezik meg."
   },
   "newAccountCreated":{
-    "message":"Your new account has been created! You may now log in."
+    "message":"Felhasználódat létrehoztuk. Most már be tudsz jelentkezni."
   },
   "masterPassSent":{
-    "message":"We've sent you an email with your master password hint."
+    "message":"Elküldtünk neked egy mesterjelszó emlékeztetődet tartalmazó E-mailt."
   },
   "verificationCodeRequired":{
-    "message":"Verification code is required."
+    "message":"Ellenőrző kód szükséges."
   },
   "valueCopied":{
-    "message":" copied",
+    "message":" másolva",
     "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError":{
-    "message":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+    "message":"Nem sikerült automatikusan kitölteni a bejelentkezést ezen a weboldalon. Helyette másold\/illeszt be a felhasználóneved és\/vagy a jelszavadat."
   },
   "loggedOut":{
-    "message":"Logged out"
+    "message":"Kijelentkezett"
   },
   "loginExpired":{
-    "message":"Your login session has expired."
+    "message":"Bejelentkezési munkamenete lejárt."
   },
   "logOutConfirmation":{
-    "message":"Are you sure you want to log out?"
+    "message":"Biztos benne, hogy ki szeretnél jelentkezni?"
   },
   "yes":{
-    "message":"Yes"
+    "message":"Igen"
   },
   "no":{
-    "message":"No"
+    "message":"Nem"
   },
   "unexpectedError":{
-    "message":"An unexpected error has occured."
+    "message":"Váratlan hiba történt."
   },
   "nameRequired":{
-    "message":"Name is required."
+    "message":"Név megadása kötelező."
   },
   "addedFolder":{
-    "message":"Added folder"
+    "message":"Hozzáadott mappa"
   },
   "changeMasterPass":{
-    "message":"Change Master Password"
+    "message":"Mesterjelszó módosítása"
   },
   "changeMasterPasswordConfirmation":{
-    "message":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Mesterjelszavadat a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
   "changeEmailConfirmation":{
-    "message":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"E-mail címedet a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"A kétlépcsős bejelentkezés biztonságosabbá teszi a felhasználódat azáltal, hogy ellenőrizned kell a bejelentkezésedet egy másik készülékkel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy e-mail. Kétlépcsős bejelentkezést a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
   "loggingOut":{
-    "message":"Logging out"
+    "message":"Kijelentkezés folyamatban"
   },
   "loggingOutConfirmation":{
-    "message":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+    "message":"Nemrég frissítettél egy régebbi verzióról. Be kell újra jelentkezned a zárolási beállításaidnak módosításához. Szeretnél most kijelentkezni?"
   },
   "editedFolder":{
-    "message":"Edited Folder"
+    "message":"Szerkesztett mappa"
   },
   "deleteFolderConfirmation":{
-    "message":"Are you sure you want to delete this folder?"
+    "message":"Biztos, hogy törölni akarod ezt a mappát?"
   },
   "deletedFolder":{
-    "message":"Deleted folder"
+    "message":"Törölt mappa"
   },
   "gettingStartedTutorial":{
-    "message":"Getting Started Tutorial"
+    "message":"Első lépések-oktatóprogram"
   },
   "gettingStartedTutorialVideo":{
-    "message":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message":"Nézd meg az első lépések oktatóprogramunkat, hogy megtanuld, hogyan hozd ki a legtöbbet a böngésző kiterjesztésből."
   },
   "syncingComplete":{
-    "message":"Syncing complete"
+    "message":"Szinkronizálás befejezve"
   },
   "importLoginsConfirmation":{
-    "message":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Több bejelentkezést egyszerre a bitwarden.com webes széfén tudsz importálni. Szeretnéd meglátogatni a most a weboldalt?"
   },
   "passwordCopied":{
-    "message":"Password copied"
+    "message":"Jelszó másolva"
   },
   "uri":{
     "message":"URI"
   },
   "addedLogin":{
-    "message":"Added login"
+    "message":"Hozzáadott bejelentkezés"
   },
   "editedLogin":{
-    "message":"Edited login"
+    "message":"Szerkesztett bejelentkezés"
   },
   "deleteLoginConfirmation":{
-    "message":"Are you sure you want to delete this login?"
+    "message":"Biztosan törölni szeretnéd ezt a bejelentkezést?"
   },
   "deletedLogin":{
-    "message":"Deleted login"
+    "message":"Bejelentkezés törlése"
   },
   "overwritePassword":{
-    "message":"Overwrite Password"
+    "message":"Jelszó felülírása"
   },
   "overwritePasswordConfirmation":{
-    "message":"Are you sure you want to overwrite the current password?"
+    "message":"Biztosan felül akarod írni a jelenlegi jelszavad?"
   },
   "credits":{
-    "message":"Credits"
+    "message":"Készítők"
   },
   "thankYou":{
-    "message":"Thank You"
+    "message":"Köszönjük"
   },
   "translations":{
-    "message":"Translations"
+    "message":"Fordítások"
   },
   "searchFolder":{
-    "message":"Search folder"
+    "message":"Mappa keresése"
   },
   "noneFolder":{
-    "message":"No Folder",
+    "message":"Nincs mappa",
     "description":"This is the folder for uncategorized logins"
   },
   "features":{
-    "message":"Features"
+    "message":"Funkciók"
   },
   "gaDesc":{
-    "message":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message":"Mi analitikát használunk, hogy megtudjunk többet arról, hogy hogyan használod a kiterjesztést, hogy jobbá tudjuk tenni. Az összes adat gyűjtés teljesen névtelen."
   },
   "disableAddLoginNotification":{
-    "message":"Disable Add Login Notification"
+    "message":"Add hozzá a bejelentkezést értesítések kikapcsolása"
   },
   "addLoginNotificationDesc":{
-    "message":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message":"Az \"add hozzá a bejelentkezést\" automatikusan felajánlja neked neked a bejelentkezésed mentését a széfbe első bejelentkezéskor."
   },
   "notificationAddDesc":{
-    "message":"Should bitwarden remember this password for you?"
+    "message":"Akarod hogy a bitwarden megjegyezze ezt a jelszót?"
   },
   "notificationAddSave":{
-    "message":"Yes, Save Now"
+    "message":"Igen, mentés most"
   },
   "notificationNeverSave":{
-    "message":"Never for this website"
+    "message":"Ezen az weboldalon soha"
   },
   "disableContextMenuItem":{
-    "message":"Disable Context Menu Options"
+    "message":"Helyi menü opciók kikapcsolása"
   },
   "disableContextMenuItemDesc":{
-    "message":"Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message":"Helyi menü opciók gyors hozzáférést biztosít jelszó generáláshoz és bejelentkezésekhez a weboldalhoz amin éppen vagy."
   },
   "exportVault":{
-    "message":"Export Vault"
+    "message":"Széf exportálása"
   },
   "warning":{
-    "message":"WARNING",
+    "message":"FIGYELEM",
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message":"Ez az exportálás nem titkosított adatokat tartalmaz .csv formátumban. Ne tárold, vagy küldd el nem biztonságos csatornákon (mint például e-mail). Töröld azonnal miután végeztél a használatával."
   },
   "exportMasterPassword":{
-    "message":"Enter your master password to export your vault data."
+    "message":"Add meg a jelszavad a széf adataid exportálásához."
   },
   "exportVaultInfo":{
-    "message":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+    "message":"Exportáld a széf adataidat .csv formátumban, hogy könnyen módosíthasd vagy mozgathasd máshova."
   },
   "shared":{
-    "message":"Shared"
+    "message":"Megosztott"
   },
   "shareVault":{
-    "message":"Share Your Vault"
+    "message":"Széfed megosztása"
   },
   "shareVaultInfo":{
-    "message":"Create an organization to securely share your logins with other users."
+    "message":"Hozz létre egy szervezetet, hogy biztonságosan megoszthasd bejelentkezéseid másokkal."
   },
   "contribute":{
-    "message":"You can contribute too!"
+    "message":"Te is hozzájárulhatsz!"
   },
   "learnMore":{
-    "message":"Learn more"
+    "message":"Tudjon meg többet"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)"
+    "message":"Hitelesítő kulcs (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)"
+    "message":"Ellenőrző kód (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code"
+    "message":"Ellenőrző kód másolása"
   },
   "attachments":{
-    "message":"Attachments"
+    "message":"Mellékletek"
   },
   "deleteAttachment":{
-    "message":"Delete attachment"
+    "message":"Mellékletek törlése"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?"
+    "message":"Biztos törölni akarod ezt a mellékletet?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment"
+    "message":"Mellékletek törlése"
   },
   "newAttachment":{
-    "message":"Add New Attachment"
+    "message":"Melléklet hozzáadása"
   },
   "noAttachments":{
-    "message":"No attachments."
+    "message":"Nincsenek mellékletek."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved."
+    "message":"A melléklet mentésre került."
   },
   "file":{
-    "message":"File"
+    "message":"Fájl"
   },
   "selectFile":{
-    "message":"Select a file."
+    "message":"Válassz ki egy fájlt."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB."
+    "message":"Maximális fájl méret 100 MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable"
+    "message":"Ez a funkció nem érhető el"
   },
   "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key."
+    "message":"Ez a funkció nem használható, amíg nem frissíted a titkosítási kulcsod."
   },
   "premiumMembership":{
-    "message":"Premium Membership"
+    "message":"Prémium tagság"
   },
   "premiumManage":{
-    "message":"Manage Membership"
+    "message":"Tagság kezelése"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Prémium tagságod a bitwarden.com webes széfén tudod kezelni. Szeretnéd meglátogatni a most a weboldalt?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership"
+    "message":"Tagságod frissítése"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member."
+    "message":"Pillanatnyilag nem vagy prémium tag."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:"
+    "message":"Regisztrálj prémium tagságra az alábbi funkciókért:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage."
+    "message":"1 GB titkosított fájl tárhely."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message":"További két lépcsős bejelentkezés lehetőségek, mint például YubiKey, FIDO U2F és Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault."
+    "message":"TOTP ellenőrző kód (2FA) generátor a széfedben lévő bejelentkezésekhez."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support."
+    "message":"Kiemelt ügyfélszolgálati."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!"
+    "message":"Minden jövőbeli prémium funkció. Hamarosan jön még több!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium"
+    "message":"Prémium vásárlása"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Prémium tagságot a bitwarden.com webes széfén tudsz venni. Szeretnéd meglátogatni a most a weboldalt?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!"
+    "message":"Te egy prémium tag vagy!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden."
+    "message":"Köszönjük, hogy támogatod a bitwardent."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!"
+    "message":"Mindez csak %price% évente!"
   },
   "refreshComplete":{
-    "message":"Refresh complete"
+    "message":"Frissítés megtörtént"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy"
+    "message":"Automatikus TOTP másolás kikapcsolása"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message":"Ha a bejelentkezésedhez csatolva van egy hitelesítő kód, a TOTP ellenőrző kód automatikusan másolva lesz a vágólapodra bejelentkezésed automatikus kitöltése esetén."
   },
   "premiumRequired":{
-    "message":"Premium Required"
+    "message":"Prémium szükséges"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature."
+    "message":"Prémium tagság szükséges ennek a funkciónak eléréséhez."
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"Add meg a 6 számjegyű ellenőrző kódot a hitelesítő alkalmazásodból."
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"Add meg a 6 számjegyű ellenőrző kódot ami el lett küldve neked e-mailben"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"Emlékezz rám"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"Megerősítő kód e-mail újra küldése"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Más két lépcsős bejelentkezés használata"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Illeszd be a YubiKey-t a számítógéped egyik USB portjába, majd nyomd meg a gombját."
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"Illesz be biztonsági kulcsod a számítógéped egyik USB portjába. Ha van rajta egy gomb, nyomd le."
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"Bejelentkezés nem érhető el"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"Ezen a felhasználón engedélyezve van két lépcsős bejelentkezés, de ez a böngésző nem támogatja az egyik beállított két lépcsős szolgáltatót sem."
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"Kérlek használj támogatott böngészőt (mint például a Chrome) és\/vagy adj hozzá jobban támogatott szolgáltatásokat melyek jobban támogatottak más böngészőkben is (mint például egy hitelesítő alkalmazás)."
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"Kétlépcsős bejelentkezés opciók"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"Elvesztetted a hozzáférésed az összes kétlépcsős szolgáltatásodhoz? Használd a visszaállítókódod a kétlépcsős kiszolgálok kikapcsolásához a felhasználódon."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Helyreállító kód"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"Hitelesítő alkalmazás"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"Használj egy másik alkalmazást (mint például az Authy vagy a Google Authenticator) idő alapú ellenőrzőkód generálásához.",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"YubiKey OTP biztonsági kulcs"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Használj egy YubiKey-t, hogy hozzá férhess a felhasználódhoz. Működik a YubiKey 4, 4 Nano, 4C, és NEO eszközökkel."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Ellenőrizd Duo Security-val a Duo Mobile alkalmazás, SMS, telefon hívás vagy U2F biztonsági kulcs segítségével.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"Használj bármilyen FIDO U2F engedélyezett biztonsági kulcsot ennek a felhasználónak eléréséhez."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"FIDO U2F biztonsági kulcs"
   },
   "emailTitle":{
-    "message":"Email"
+    "message":"E-mail"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"Ellenőrző kódok el lesznek e-mailbe küldve neked."
   }
 }
