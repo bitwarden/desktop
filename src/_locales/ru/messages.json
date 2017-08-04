@@ -324,7 +324,7 @@
     "message":"Через 4 часа"
   },
   "onLocked":{
-    "message":"Заблокировано"
+    "message":"Вместе с компьютером"
   },
   "onRestart":{
     "message":"При перезапуске"
@@ -639,71 +639,71 @@
     "message":"Для использования этой функции требуется премиум-статус."
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"Введите 6-значный код подтверждения из вашего приложения-аутентификатора."
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"Введите 6-значный код подтверждения, который был отправлен на"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"Запомнить меня"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"Отправить код подтверждения еще раз"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Использовать другой метод двухфакторной аутентификации"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Вставьте свой YubiKey в USB-порт компьютера, затем нажмите его кнопку."
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"Вставьте свой ключ безопасности в USB-порт компьютера. Если у него есть кнопка, нажмите ее."
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"Вход недоступен"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"У этой учетной записи включена двухфакторная аутентификация, однако ни один из настроенных вариантов не поддерживается этим веб-браузером."
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"Используйте поддерживаемый веб-браузер (например, Chrome) и\/или добавьте дополнительные варианты аутентификации, которые поддерживаются в веб-браузерах (например, приложение-аутентификатор)."
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"Параметры двухфакторной аутентификации"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"Потеряли доступ ко всем вариантам двухфакторной аутентификации? Используйте код восстановления, чтобы отключить двухфакторную аутентификацию для вашей учетной записи."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Код восстановления"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"Приложение-аутентификатор"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"Используйте приложение-аутентификатор (например, Authy или Google Authenticator) для создания кодов проверки на основе времени.",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"Ключ безопасности YubiKey OTP"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Используйте YubiKey для доступа к вашей учетной записи. Работает с устройствами YubiKey 4, 4 Nano, 4C и NEO."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Проверьте с помощью Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"Используйте любой защищенный ключ FIDO U2F для доступа к вашей учетной записи."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"Ключ безопасности FIDO U2F"
   },
   "emailTitle":{
     "message":"Email"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"Коды подтверждения будут отправлены вам по электронной почте."
   }
 }

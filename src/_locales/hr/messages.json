@@ -639,71 +639,71 @@
     "message":"Za korištenje ove značajke potrebno je premium članstvo."
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"Unesite 6-znamenkasti kontrolni kôd iz aplikacije autentifikatora."
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"Unesite 6-znamenkasti kontrolni kôd koji je poslan e-poštom na"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"Zapamti me"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"Ponovno pošaljite kontrolni kod na adresu e-pošte"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Koristiti drugi način prijave u dva koraka"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Umetnite YubiKey u USB priključak računala, a zatim dodirnite njegov gumb."
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"Umetnite sigurnosni ključ u USB priključak računala. Ako ima gumb, dodirnite ga."
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"Prijava nije dostupna"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"Ovaj račun ima omogućenu prijavu u dva koraka, međutim, niti jedan od konfiguriranih pružatelja u dva koraka ne podržava ovaj web-preglednik."
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"Koristite podržani web-preglednik (kao što je Chrome) i\/ili dodajte dodatne usluge koje su bolje podržane u web preglednicima (kao što je aplikacija autentifikatora)."
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"Mogućnosti prijave u dva koraka"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"Izgubili ste pristup svim pružateljima dvofaktorskih usluga? Koristite svoj kôd za oporavak da biste onemogućili sve pružatelje dvofaktorskih usluga sa svog računa."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Kôd za oporavak"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"Aplikacija autentifikatora"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"Upotrijebite aplikaciju autentifikatora (kao što su Authy ili Google Authenticator) da biste generirali kontrolne kodove.",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"YubiKey OTP sigurnosni ključ"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Upotrijebite YubiKey da biste pristupili svom računu. Radi s YubiKey 4, 4 Nano, 4C i NEO uređajima."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Potvrdite s Duo Security pomoću Duo Mobile aplikacije, SMS-a, telefonskog poziva ili sigurnosnog ključa U2F.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"Koristite bilo koji FIDO U2F sigurnosni ključ koji je omogućen za pristup vašem računu."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"FIDO U2F sigurnosni ključ"
   },
   "emailTitle":{
-    "message":"Email"
+    "message":"E-pošta"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"Kontrolni kodovi bit će vam poslani e-poštom."
   }
 }

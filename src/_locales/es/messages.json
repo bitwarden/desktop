@@ -182,7 +182,7 @@
     "message":"Bóveda web de bitwarden"
   },
   "bitWebVaultInfo":{
-    "message":"Gestiona tus usuarios de cualquier web con la bóveda web de bitwarden."
+    "message":"Gestiona tus usuarios desde cualquier navegador web con la bóveda web de bitwarden."
   },
   "bitIosVault":{
     "message":"Bóveda bitwarden de iOS"
@@ -324,7 +324,7 @@
     "message":"4 horas"
   },
   "onLocked":{
-    "message":"Bloquear con el sistema"
+    "message":"Bloqueado"
   },
   "onRestart":{
     "message":"Al reiniciar"
@@ -525,185 +525,185 @@
     "message":"Crear una organización para compartir tus entradas de forma segura con otros usuarios."
   },
   "contribute":{
-    "message":"You can contribute to!"
+    "message":"¡Tu también puedes contribuir!"
   },
   "learnMore":{
     "message":"Más información"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)"
+    "message":"Clave de autenticación (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)"
+    "message":"Código de verificación (TOTP)"
   },
   "copyVerificationCode":{
-    "message":"Copy Verification Code"
+    "message":"Copiar código de verificación"
   },
   "attachments":{
-    "message":"Attachments"
+    "message":"Adjuntos"
   },
   "deleteAttachment":{
-    "message":"Delete attachment"
+    "message":"Eliminar adjunto"
   },
   "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?"
+    "message":"¿Estás seguro de querer eliminar este adjunto?"
   },
   "deletedAttachment":{
-    "message":"Deleted attachment"
+    "message":"Adjunto eliminado"
   },
   "newAttachment":{
-    "message":"Add New Attachment"
+    "message":"Añadir nuevo adjunto"
   },
   "noAttachments":{
-    "message":"No attachments."
+    "message":"Sin adjuntos."
   },
   "attachmentSaved":{
-    "message":"The attachment has been saved."
+    "message":"El adjunto se ha guardado."
   },
   "file":{
-    "message":"File"
+    "message":"Archivo"
   },
   "selectFile":{
-    "message":"Select a file."
+    "message":"Selecciona un archivo."
   },
   "maxFileSize":{
-    "message":"Maximum file size is 100 MB."
+    "message":"El tamaño máximo de archivo es de 100MB."
   },
   "featureUnavailable":{
-    "message":"Feature Unavailable"
+    "message":"Característica no disponible"
   },
   "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key."
+    "message":"No puedes usar esta característica hasta que actualices tu clave de cifrado."
   },
   "premiumMembership":{
-    "message":"Premium Membership"
+    "message":"Membrasía Premium"
   },
   "premiumManage":{
-    "message":"Manage Membership"
+    "message":"Gestionar membrasía"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Puedes gestionar tu membrasía en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership"
+    "message":"Actualizar membrasía"
   },
   "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member."
+    "message":"Actualmente no eres un miembro premium."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:"
+    "message":"Registrate como miembro Premium y obtén:"
   },
   "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage."
+    "message":"1GB de espacio en disco cifrado."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message":"Métodos de autenticación en dos pasos adicionales como YubiKey, FIDO U2F y Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault."
+    "message":"Generación de códigos TOTP (2FA) para registros de tu bóveda."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support."
+    "message":"Soporte prioritario."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!"
+    "message":"Acceso a nuevas características premium en el futuro. ¡Hay más en camino!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium"
+    "message":"Comprar Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Puedes comprar la membrasía Premium en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!"
+    "message":"¡Eres un miembro Premium!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden."
+    "message":"Gracias por apoyar el desarrollo de bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!"
+    "message":"¡Todo por solo %price% \/año!"
   },
   "refreshComplete":{
-    "message":"Refresh complete"
+    "message":"Actualización completada"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy"
+    "message":"Deshabilitar copiado automático de códigos TOTP"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message":"Si tu entrada tiene una clave de autenticación adjunta, el código de verificación TOTP es copiado automáticamente al portapapeles cuando autorellenas una entrada."
   },
   "premiumRequired":{
-    "message":"Premium Required"
+    "message":"Premium requerido"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature."
+    "message":"Una membrasía Premium es requerida para utilizar esta característica."
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"Introduce el código de verificación de 6 dígitos de tu aplicación autenticadora."
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"Introduce el código de verificación de 6 dígitos que te ha sido enviado por correo electrónico"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"Recordarme"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"Reenviar código de verificación por correo electrónico"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Utilizar otro método de autenticación en dos pasos"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Inserta tu YubiKey en el puerto USB de tu equipo y posteriormente pulsa su botón."
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"Inserta tu llave de seguridad en el puerto USB de tu equipo. Si tiene un botón, púlsalo."
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"Inicio de sesión no disponible"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"Esta cuenta tiene autenticación en dos pasos habilitado, pero ninguno de lo métodos configurados es soportado por este navegador web."
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"Por favor, utiliza un navegador soportado (como Chrome) y\/o añade métodos de autenticación adicionales que tengan mejor soporte en diferentes navegadores web (como una aplicación de autenticación)."
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"Opciones de la autenticación en dos pasos"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"¿Has perdido el acceso a todos tus métodos de autenticación en dos pasos? Utiliza tu código de recuperación para deshabilitar todos lo mótodos de autenticación en dos pasos de tu cuenta."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Código de recuperación"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"Aplicación de autenticación"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"Utiliza una aplicación de autenticación (como Authy o Google Authenticator) para generar código de verificación basados en tiempo.",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"Llave de seguridad YubiKey OTP"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Usa un Yubikey para acceder a tu cuenta. Funciona con YubiKey 4, 4 Nano, 4C y dispositivos NEO."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Verificar con Duo Security usando la aplicación Duo Mobile, SMS, llamada telefónica o llave de seguridad U2F.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"Usa cualquier llave de seguridad FIDO U2F habilitada para acceder a tu cuenta."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"Llave de seguridad FIDO U2F"
   },
   "emailTitle":{
-    "message":"Email"
+    "message":"Correo electrónico"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"Los códigos de verificación te serán enviados por correo electrónico."
   }
 }

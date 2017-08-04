@@ -531,10 +531,10 @@
     "message":"Zistiť viac"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)"
+    "message":"Kľúč overovateľa (TOTP)"
   },
   "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)"
+    "message":"Overovací kód (TOTP)"
   },
   "copyVerificationCode":{
     "message":"Kopírovať overovací kód"
@@ -600,110 +600,110 @@
     "message":"Ďalšie možnosti dvojstupňového prihlásenia ako YubiKey, FIDO U2F a Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault."
+    "message":"Generátor TOTP verifikačného kódu (2FA) pre prihlásenie do vášho trezora."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support."
+    "message":"Prioritná zákaznícka podpora."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!"
+    "message":"Všetky budúce prémiové funkcie. Viac už čoskoro!"
   },
   "premiumPurchase":{
-    "message":"Purchase Premium"
+    "message":"Zakúpiť Prémiový účet"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Svoje prémiové členstvo môžete zakúpiť na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "premiumCurrentMember":{
-    "message":"You are a premium member!"
+    "message":"Ste prémiovým členom!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden."
+    "message":"Ďakujeme, že podporujete bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!"
+    "message":"Všetko len za %price% \/rok!"
   },
   "refreshComplete":{
-    "message":"Refresh complete"
+    "message":"Obnova kompletná"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy"
+    "message":"Vypnúť automatické kopírovanie TOTP"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message":"Ak je kľúč overovateľa spojený s vašim prihlásením, TOTP verifikačný kód bude automaticky skopírovaný do schránky vždy, keď použijete automatické vypĺňanie."
   },
   "premiumRequired":{
-    "message":"Premium Required"
+    "message":"Vyžaduje prémiový účet"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature."
+    "message":"Pre použitie tejto funkcie je potrebné prémiové členstvo."
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"Zadajte 6-miestny verifikačný kód z vašej overovacej aplikácie."
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"Zadajte 6-miestny verifikačný kód, ktorý vám bol zaslaný emailom"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"Zapamätať si ma"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"Znovu zaslať overovací kód emailom"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Použiť inú dvojstupňovú metódu prihlásenia"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Vložte váš YubiKey do USB portu počítača a stlačte jeho tlačidlo."
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"Vložte váš bezpečnostný kľúč do USB portu počítača. Ak má tlačidlo, stlačte ho."
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"Prihlásenie nedostupné"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"Tento účet má povolené dvojstupňové prihlásenie, ale žiadny z konfigurovaných poskytovateľov nie je podporovaný týmto prehliadačom."
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"Prosím, použite podporovaný prehliadač (napríklad Chrome) a\/alebo pridajte iných poskytovateľov lepšie podporovanými prehliadačmi (ako napríklad overovacia aplikácia)."
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"Možnosti dvojstupňového prihlásenia"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"Stratili ste prístup ku všetkým vašim dvojstupňovým poskytovateľom? Použite váš záchranný kód pre vypnutie všetkých poskytovateľov vo vašom účte."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Záchranný kód"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"Overovacia aplikácia"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"Použite overovaciu aplikáciu (napríklad Authy alebo Google Authenticator) na generovanie časovo závislých overovacích kódov.",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"YubiKey OTP bezpečnostný kľúč"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Použiť YubiKey pre pístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a NEO zariadeniami."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Overiť s Duo Security použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"Použiť akýkoľvek FIDO U2F bezpečnostný kľúč pre prístup k vášmu účtu."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"FIDO U2F bezpečnostný kľúč"
   },
   "emailTitle":{
     "message":"Email"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"Verifikačné kódy vám budú zaslané emailom."
   }
 }
