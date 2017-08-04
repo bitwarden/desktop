@@ -399,7 +399,8 @@ function initCryptoService(constantsService) {
     };
 
     CryptoService.prototype.makeEncKey = function (key) {
-        var bytes = forge.random.getBytesSync(512 / 8);
+        var bytes = new Uint8Array(512 / 8);
+        _crypto.getRandomValues(bytes);
         return this.encrypt(bytes, key, 'raw');
     };
 
