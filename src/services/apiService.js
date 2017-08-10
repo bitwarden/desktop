@@ -564,13 +564,7 @@ function initApiService() {
     }
 
     function resolveTokenQs(token, self, deferred) {
-        var issuer = self.tokenService.getIssuer();
-        if (issuer === self.baseUrl) {
-            deferred.resolve('access_token2=' + token);
-        }
-        else {
-            deferred.resolve('access_token3=' + token);
-        }
+        deferred.resolve('access_token=' + token);
     }
 
     function postConnectToken(self, data, success, error) {
