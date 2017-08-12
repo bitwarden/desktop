@@ -83,21 +83,26 @@ angular
                         chrome.tabs.sendMessage(tabId, {
                             command: 'fillForm',
                             fillScript: fillScript
-                        }, { frameId: pageDetails[i].frameId }, $window.close);
+                        }, { frameId: pageDetails[i].frameId }, function () {
+                            if (login.totp && tokenService.getPremium()) {
+                                totpService.isAutoCopyEnabled().then(function (enabled) {
+                                    if (enabled) {
+                                        return totpService.getCode(login.totp);
+                                    }
 
-                        if (login.totp && tokenService.getPremium()) {
-                            totpService.isAutoCopyEnabled().then(function (enabled) {
-                                if (enabled) {
-                                    return totpService.getCode(login.totp);
-                                }
+                                    return null;
+                                }).then(function (code) {
+                                    if (code) {
+                                        utilsService.copyToClipboard(code);
+                                    }
 
-                                return null;
-                            }).then(function (code) {
-                                if (code) {
-                                    utilsService.copyToClipboard(code);
-                                }
-                            });
-                        }
+                                    $window.close();
+                                });
+                            }
+                            else {
+                                $window.close();
+                            }
+                        });
                     }
                 }
             }
