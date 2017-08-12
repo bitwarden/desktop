@@ -3,22 +3,8 @@
         formData = [],
         barType = null;
 
-    if (window.location.hostname.indexOf('bitwarden.com') === -1) {
-        chrome.storage.local.get('neverDomains', function (obj) {
-            var domains = obj.neverDomains;
-            if (domains && domains.hasOwnProperty(window.location.hostname)) {
-                return;
-            }
-
-            chrome.storage.local.get('disableAddLoginNotification', function (obj) {
-                if (!obj || !obj.disableAddLoginNotification) {
-                    chrome.runtime.sendMessage({
-                        command: 'bgCollectPageDetails'
-                    });
-                }
-            });
-        });
-    }
+    setTimeout(collect, 1000);
+    window.addEventListener('popstate', collect);
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
@@ -39,6 +25,25 @@
         }
     });
 
+    function collect() {
+        if (window.location.hostname.indexOf('bitwarden.com') === -1) {
+            chrome.storage.local.get('neverDomains', function (obj) {
+                var domains = obj.neverDomains;
+                if (domains && domains.hasOwnProperty(window.location.hostname)) {
+                    return;
+                }
+
+                chrome.storage.local.get('disableAddLoginNotification', function (obj) {
+                    if (!obj || !obj.disableAddLoginNotification) {
+                        chrome.runtime.sendMessage({
+                            command: 'bgCollectPageDetails'
+                        });
+                    }
+                });
+            });
+        }
+    }
+
     function watchForms(forms) {
         if (!forms || !forms.length) {
             return;
@@ -57,7 +62,7 @@
                 form = document.getElementsByTagName('form')[index];
             }
 
-            if (form) {
+            if (form && form.dataset.bitwardenWatching !== '1') {
                 var formDataObj = {
                     data: forms[i],
                     formEl: form,
@@ -66,8 +71,19 @@
                 };
                 locateFields(formDataObj);
                 formData.push(formDataObj);
-                form.addEventListener('submit', formSubmitted, false);
+                listen(form);
+                form.dataset.bitwardenWatching = '1';
             }
+        }
+    }
+
+    function listen(form) {
+        form.removeEventListener('submit', formSubmitted, false);
+        form.addEventListener('submit', formSubmitted, false);
+        var submitButton = form.querySelector('input[type="submit"], button[type="submit"]');
+        if (submitButton) {
+            submitButton.removeEventListener('click', formSubmitted, false);
+            submitButton.addEventListener('click', formSubmitted, false);
         }
     }
 
@@ -112,8 +128,20 @@
     }
 
     function formSubmitted(e) {
+        var form = null;
+        if (e.type === 'click') {
+            form = e.target.closest('form');
+        }
+        else {
+            form = e.target;
+        }
+
+        if (!form || form.dataset.bitwardenProcessed === '1') {
+            return;
+        }
+
         for (var i = 0; i < formData.length; i++) {
-            if (formData[i].formEl === e.target) {
+            if (formData[i].formEl === form) {
                 if (!formData[i].usernameEl || !formData[i].passwordEl) {
                     break;
                 }
@@ -125,6 +153,11 @@
                 };
 
                 if (login.username && login.username !== '' && login.password && login.password !== '') {
+                    form.dataset.bitwardenProcessed = '1';
+                    setTimeout(function () {
+                        form.dataset.bitwardenProcessed = '0';
+                    }, 500);
+
                     chrome.runtime.sendMessage({
                         command: 'bgAddLogin',
                         login: login
