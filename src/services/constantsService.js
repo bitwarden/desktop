@@ -1,5 +1,8 @@
 function ConstantsService(i18nService) {
     return {
+        baseUrlKey: 'baseUrl',
+        apiUrlKey: 'apiUrl',
+        identityUrlKey: 'identityUrl',
         disableGaKey: 'disableGa',
         disableAddLoginNotificationKey: 'disableAddLoginNotification',
         disableContextMenuItemKey: 'disableContextMenuItem',

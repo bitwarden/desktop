@@ -705,5 +705,29 @@
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
+  },
+  "selfHostedEnvironment": {
+    "message": "Self-hosted Environment"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+  },
+  "customEnvironment": {
+    "message": "Custom Environment"
+  },
+  "customEnvironmentFooter": {
+    "message": "For advanced users. You can specify the base URL of each service independently."
+  },
+  "baseUrl": {
+    "message": "Server URL"
+  },
+  "apiUrl": {
+    "message": "API Server URL"
+  },
+  "identityUrl": {
+    "message": "Identity Server URL"
+  },
+  "environmentSaved": {
+    "message": "The environment URLs have been saved."
   }
 }

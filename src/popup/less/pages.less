@@ -17,13 +17,13 @@
 
     img {
         margin: 0 auto 20px;
-        width: 220px;
+        width: 270px;
         display: block;
     }
 }
 
 .home-page {
-    padding: 100px 20px 20px;
+    padding: 150px 20px 20px;
     text-align: center;
     position: relative;
     height: 100%;
@@ -36,6 +36,26 @@
 
     p {
         font-size: 18px;
+    }
+
+    a.settings-icon {
+        color: #bbbbbb;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        span {
+            visibility: hidden;
+        }
+
+        &:hover {
+            color: @link-hover-color;
+            text-decoration: none;
+
+            span {
+                visibility: visible;
+            }
+        }
     }
 }
 

@@ -1,33 +1,53 @@
-function ApiService(tokenService, appIdService, utilsService, logoutCallback) {
-    // Desktop
-    //this.baseUrl = 'http://localhost:4000';
-    //this.identityBaseUrl = 'http://localhost:33656';
-
-    // Desktop HTTPS
-    //this.baseUrl = 'https://localhost:44377';
-    //this.identityBaseUrl = 'https://localhost:44392';
-
-    // Desktop external
-    //this.baseUrl = 'http://192.168.1.4:4000';
-    //this.identityBaseUrl = 'http://192.168.1.4:33656';
-
-    // Preview
-    //this.baseUrl = 'https://preview-api.bitwarden.com';
-    //this.identityBaseUrl = 'https://preview-identity.bitwarden.com';
-
-    // Production
-    this.baseUrl = 'https://api.bitwarden.com';
-    this.identityBaseUrl = 'https://identity.bitwarden.com';
-
+function ApiService(tokenService, appIdService, utilsService, constantsService, logoutCallback) {
     this.tokenService = tokenService;
     this.logoutCallback = logoutCallback;
     this.appIdService = appIdService;
     this.utilsService = utilsService;
+    this.constantsService = constantsService;
 
     initApiService();
+    this.setUrls();
 }
 
 function initApiService() {
+    ApiService.prototype.setUrls = function () {
+        var storedBaseUrl = window.localStorage.getItem(this.constantsService.baseUrlKey);
+
+        if (storedBaseUrl) {
+            this.baseUrl = storedBaseUrl + '/api';
+            this.identityBaseUrl = storedBaseUrl + '/identity';
+            return;
+        }
+
+        var storedApiUrl = window.localStorage.getItem(this.constantsService.apiUrlKey);
+        var storedIdentityUrl = window.localStorage.getItem(this.constantsService.identityUrlKey);
+        if (storedApiUrl && storedIdentityUrl) {
+            this.baseUrl = storedApiUrl;
+            this.identityBaseUrl = storedIdentityUrl;
+            return;
+        }
+
+        // Desktop
+        //this.baseUrl = 'http://localhost:4000';
+        //this.identityBaseUrl = 'http://localhost:33656';
+
+        // Desktop HTTPS
+        //this.baseUrl = 'https://localhost:44377';
+        //this.identityBaseUrl = 'https://localhost:44392';
+
+        // Desktop external
+        //this.baseUrl = 'http://192.168.1.4:4000';
+        //this.identityBaseUrl = 'http://192.168.1.4:33656';
+
+        // Preview
+        //this.baseUrl = 'https://preview-api.bitwarden.com';
+        //this.identityBaseUrl = 'https://preview-identity.bitwarden.com';
+
+        // Production
+        this.baseUrl = 'https://api.bitwarden.com';
+        this.identityBaseUrl = 'https://identity.bitwarden.com';
+    };
+
     // Auth APIs
 
     ApiService.prototype.postIdentityToken = function (tokenRequest, success, successWithTwoFactor, error) {

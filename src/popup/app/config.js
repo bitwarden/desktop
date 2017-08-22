@@ -90,27 +90,27 @@
                 data: { authorize: true },
                 params: { animation: null }
             })
-                .state('tabs.current', {
-                    url: '/current',
-                    templateUrl: 'app/current/views/current.html',
-                    controller: 'currentController'
-                })
-                .state('tabs.vault', {
-                    url: '/vault',
-                    templateUrl: 'app/vault/views/vault.html',
-                    controller: 'vaultController',
-                    params: { syncOnLoad: false }
-                })
-                .state('tabs.settings', {
-                    url: '/settings',
-                    templateUrl: 'app/settings/views/settings.html',
-                    controller: 'settingsController'
-                })
-                .state('tabs.tools', {
-                    url: '/tools',
-                    templateUrl: 'app/tools/views/tools.html',
-                    controller: 'toolsController'
-                })
+            .state('tabs.current', {
+                url: '/current',
+                templateUrl: 'app/current/views/current.html',
+                controller: 'currentController'
+            })
+            .state('tabs.vault', {
+                url: '/vault',
+                templateUrl: 'app/vault/views/vault.html',
+                controller: 'vaultController',
+                params: { syncOnLoad: false }
+            })
+            .state('tabs.settings', {
+                url: '/settings',
+                templateUrl: 'app/settings/views/settings.html',
+                controller: 'settingsController'
+            })
+            .state('tabs.tools', {
+                url: '/tools',
+                templateUrl: 'app/tools/views/tools.html',
+                controller: 'toolsController'
+            })
 
             .state('viewFolder', {
                 url: '/view-folder?folderId',
@@ -225,6 +225,13 @@
                 templateUrl: 'app/settings/views/settingsEditFolder.html',
                 controller: 'settingsEditFolderController',
                 data: { authorize: true },
+                params: { animation: null }
+            })
+            .state('environment', {
+                url: '/environment',
+                templateUrl: 'app/settings/views/settingsEnvironment.html',
+                controller: 'settingsEnvironmentController',
+                data: { authorize: false },
                 params: { animation: null }
             })
             .state('lock', {
