@@ -434,22 +434,15 @@ function addLogin(login, tab) {
     });
 }
 
-var lastCleanupLoginCheck = null;
 cleanupbg_loginsToAdd();
-setInterval(cleanupbg_loginsToAdd, 2 * 60 * 1000); // check every 2 minutes
 function cleanupbg_loginsToAdd() {
-    var now = new Date();
-    if (lastCleanupLoginCheck && (now - lastCleanupLoginCheck) < 10000) {
-        // can only check cleanup every 10 seconds
-        return;
-    }
-    lastCleanupLoginCheck = now;
-
     for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
-        if (bg_loginsToAdd[i].expires < now) {
+        if (bg_loginsToAdd[i].expires < new Date()) {
             bg_loginsToAdd.splice(i, 1);
         }
     }
+
+    setTimeout(cleanupbg_loginsToAdd, 2 * 60 * 1000); // check every 2 minutes
 }
 
 function removeAddLogin(tab) {
@@ -727,24 +720,17 @@ function logout(expired, callback) {
 
 // Sync polling
 
-var lastSyncCheck = null;
 fullSync(true);
-setInterval(fullSync, 5 * 60 * 1000); // check every 5 minutes
-var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
-
 function fullSync(override) {
-    var now = new Date();
-    if (lastSyncCheck && (now - lastSyncCheck) < 10000) {
-        // can only check sync every 10 seconds
-        return;
-    }
-    lastSyncCheck = now;
-
     override = override || false;
     bg_syncService.getLastSync(function (lastSync) {
-        if (override || !lastSync || (now - lastSync) >= syncInternal) {
+        var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
+        var lastSyncAgo = new Date() - lastSync;
+        if (override || !lastSync || lastSyncAgo >= syncInternal) {
             bg_syncService.fullSync(override || false, function () {
+                // done
             });
         }
     });
+    setTimeout(fullSync, 5 * 60 * 1000); // check every 5 minutes
 }
