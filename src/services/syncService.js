@@ -8,7 +8,6 @@
     this.cryptoService = cryptoService;
     this.syncInProgress = false;
     this.logoutCallback = logoutCallback;
-    this.lastRevisionCheck = null;
 
     initSyncService();
 }
@@ -76,14 +75,6 @@ function initSyncService() {
             return;
         }
 
-        var now = new Date();
-        if (self.lastRevisionCheck && (now - self.lastRevisionCheck) < 10000) {
-            // can only check revision every 10 seconds
-            callback(false, true);
-            return;
-        }
-        self.lastRevisionCheck = now;
-
         self.getLastSync(function (lastSync) {
             self.apiService.getAccountRevisionDate(function (response) {
                 var accountRevisionDate = new Date(response);
@@ -93,6 +84,8 @@ function initSyncService() {
                 }
 
                 callback(true, false);
+            }, function () {
+                callback(false, true);
             });
         });
     }
