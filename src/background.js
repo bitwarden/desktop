@@ -15,9 +15,9 @@ var bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_f
     refreshBadgeAndMenu);
 var bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
     bg_cryptoService, logout);
-var bg_autofillService = new AutofillService();
 var bg_passwordGenerationService = new PasswordGenerationService();
 var bg_totpService = new TotpService(bg_constantsService);
+var bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_loginService);
 
 if (chrome.commands) {
     chrome.commands.onCommand.addListener(function (command) {
@@ -63,7 +63,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         messageTab(sender.tab.id, 'closeNotificationBar');
     }
     else if (msg.command === 'bgCollectPageDetails') {
-        collectPageDetailsForContentScript(sender.tab);
+        collectPageDetailsForContentScript(sender.tab, msg.sender);
     }
     else if (msg.command === 'bgAddLogin') {
         addLogin(msg.login, sender.tab);
@@ -78,13 +78,18 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         saveNever(sender.tab);
     }
     else if (msg.command === 'collectPageDetailsResponse') {
-        if (msg.contentScript) {
+        if (msg.sender === 'notificationBar') {
             var forms = bg_autofillService.getFormsWithPasswordFields(msg.details);
-            messageTab(msg.tabId, 'pageDetails', { details: msg.details, forms: forms });
+            messageTab(msg.tab.id, 'pageDetails', { details: msg.details, forms: forms });
+        }
+        else if (msg.sender === 'autofiller') {
+            bg_autofillService.doAutoFillForFirstLogin([{
+                frameId: sender.frameId, tab: msg.tab, details: msg.details
+            }]);
         }
         else {
             clearTimeout(autofillTimeout);
-            pageDetailsToAutoFill.push({ frameId: sender.frameId, tabId: msg.tabId, details: msg.details });
+            pageDetailsToAutoFill.push({ frameId: sender.frameId, tab: msg.tab, details: msg.details });
             autofillTimeout = setTimeout(autofillPage, 300);
         }
     } else if (msg.command === 'bgUpdateContextMenu') {
@@ -396,8 +401,8 @@ function messageTab(tabId, command, data, callback) {
     });
 }
 
-function collectPageDetailsForContentScript(tab) {
-    chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tabId: tab.id, contentScript: true }, function () {
+function collectPageDetailsForContentScript(tab, sender) {
+    chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: sender }, function () {
     });
 }
 
@@ -555,74 +560,28 @@ function checkbg_loginsToAdd(tab, callback) {
 function startAutofillPage(login) {
     loginToAutoFill = login;
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        var tabId = null;
+        var tab = null;
         if (tabs.length > 0) {
-            tabId = tabs[0].id;
+            tab = tabs[0];
         }
         else {
             return;
         }
 
-        if (!tabId) {
+        if (!tab) {
             return;
         }
 
-        chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails', tabId: tabId }, function () {
+        chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab }, function () {
         });
     });
 }
 
 function autofillPage() {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        var tabId = null;
-        if (tabs.length > 0) {
-            tabId = tabs[0].id;
-        }
-        else {
-            return;
-        }
-
-        if (!tabId) {
-            return;
-        }
-
-        if (loginToAutoFill && pageDetailsToAutoFill && pageDetailsToAutoFill.length) {
-            for (var i = 0; i < pageDetailsToAutoFill.length; i++) {
-                // make sure we're still on correct tab
-                if (pageDetailsToAutoFill[i].tabId !== tabId) {
-                    continue;
-                }
-
-                var fillScript = bg_autofillService.generateFillScript(pageDetailsToAutoFill[i].details,
-                    loginToAutoFill.username, loginToAutoFill.password);
-                if (tabId && fillScript && fillScript.script && fillScript.script.length) {
-                    chrome.tabs.sendMessage(tabId, {
-                        command: 'fillForm',
-                        fillScript: fillScript
-                    }, { frameId: pageDetailsToAutoFill[i].frameId });
-
-                    if (!bg_utilsService.isFirefox() && loginToAutoFill.totp && bg_tokenService.getPremium()) {
-                        var totpKey = loginToAutoFill.totp;
-                        bg_totpService.isAutoCopyEnabled().then(function (enabled) {
-                            if (enabled) {
-                                return bg_totpService.getCode(totpKey);
-                            }
-
-                            return null;
-                        }).then(function (code) {
-                            if (code) {
-                                bg_utilsService.copyToClipboard(code);
-                            }
-                        });
-                    }
-                }
-            }
-        }
-
-        // reset
-        loginToAutoFill = null;
-        pageDetailsToAutoFill = [];
-    });
+    bg_autofillService.doAutoFill(loginToAutoFill, pageDetailsToAutoFill, true);
+    // reset
+    loginToAutoFill = null;
+    pageDetailsToAutoFill = [];
 }
 
 function sortLogins(logins) {

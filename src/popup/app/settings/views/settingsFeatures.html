@@ -9,6 +9,19 @@
         <div class="list-section">
             <div class="list-section-items">
                 <div class="list-section-item list-section-item-checkbox">
+                    <label for="totp-copy">{{i18n.enableAutoFillOnPageLoad}}</label>
+                    <input id="totp-copy" type="checkbox" ng-model="enableAutoFillOnPageLoad"
+                           ng-change="updateAutoFillOnPageLoad()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{i18n.enableAutoFillOnPageLoadDesc}}
+                <b>{{i18n.warning}}</b>: {{i18n.experimentalFeature}}
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
                     <label for="totp-copy">{{i18n.disableAutoTotpCopy}}</label>
                     <input id="totp-copy" type="checkbox" ng-model="disableAutoTotpCopy" ng-change="updateAutoTotpCopy()">
                 </div>

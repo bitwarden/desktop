@@ -962,9 +962,9 @@
             var pageDetailsObj = JSON.parse(pageDetails);
             chrome.runtime.sendMessage({
                 command: 'collectPageDetailsResponse',
-                tabId: msg.tabId,
+                tab: msg.tab,
                 details: pageDetailsObj,
-                contentScript: msg.contentScript ? true : false
+                sender: msg.sender
             });
             sendResponse();
             return true;

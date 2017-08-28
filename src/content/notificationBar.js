@@ -36,7 +36,8 @@
                 chrome.storage.local.get('disableAddLoginNotification', function (obj) {
                     if (!obj || !obj.disableAddLoginNotification) {
                         chrome.runtime.sendMessage({
-                            command: 'bgCollectPageDetails'
+                            command: 'bgCollectPageDetails',
+                            sender: 'notificationBar'
                         });
                     }
                 });

@@ -7,6 +7,14 @@
         $scope.disableGa = false;
         $scope.disableAddLoginNotification = false;
         $scope.disableContextMenuItem = false;
+        $scope.disableAutoTotpCopy = false;
+        $scope.enableAutoFillOnPageLoad = false;
+
+        chrome.storage.local.get(constantsService.enableAutoFillOnPageLoadKey, function (obj) {
+            $timeout(function () {
+                $scope.enableAutoFillOnPageLoad = obj && obj[constantsService.enableAutoFillOnPageLoadKey] === true;
+            });
+        });
 
         chrome.storage.local.get(constantsService.disableGaKey, function (obj) {
             $timeout(function () {
@@ -141,6 +149,29 @@
                     });
                     if (!obj[constantsService.disableAutoTotpCopyKey]) {
                         $analytics.eventTrack('Enabled Auto Copy TOTP');
+                    }
+                });
+            });
+        };
+
+        $scope.updateAutoFillOnPageLoad = function () {
+            chrome.storage.local.get(constantsService.enableAutoFillOnPageLoadKey, function (obj) {
+                if (obj[constantsService.enableAutoFillOnPageLoadKey]) {
+                    // disable
+                    obj[constantsService.enableAutoFillOnPageLoadKey] = false;
+                }
+                else {
+                    // enable
+                    $analytics.eventTrack('Enable Auto-fill Page Load');
+                    obj[constantsService.enableAutoFillOnPageLoadKey] = true;
+                }
+
+                chrome.storage.local.set(obj, function () {
+                    $timeout(function () {
+                        $scope.enableAutoFillOnPageLoad = obj[constantsService.enableAutoFillOnPageLoadKey];
+                    });
+                    if (!obj[constantsService.enableAutoFillOnPageLoadKey]) {
+                        $analytics.eventTrack('Disable Auto-fill Page Load');
                     }
                 });
             });

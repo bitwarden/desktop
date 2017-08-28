@@ -6,7 +6,6 @@ angular
         $scope.i18n = i18nService;
 
         var pageDetails = [],
-            tabId = null,
             url = null,
             domain = null,
             canAutofill = false;
@@ -22,7 +21,6 @@ angular
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
                 if (tabs.length > 0) {
                     url = tabs[0].url;
-                    tabId = tabs[0].id;
                 }
                 else {
                     $scope.loaded = true;
@@ -37,9 +35,10 @@ angular
                     return;
                 }
 
-                chrome.tabs.sendMessage(tabId, { command: 'collectPageDetails', tabId: tabId }, function () {
-                    canAutofill = true;
-                });
+                chrome.tabs.sendMessage(tabs[0].id,
+                    { command: 'collectPageDetails', tab: tabs[0], sender: 'currentController' }, function () {
+                        canAutofill = true;
+                    });
 
                 $q.when(loginService.getAllDecryptedForDomain(domain)).then(function (logins) {
                     $scope.loaded = true;
@@ -68,49 +67,18 @@ angular
         };
 
         $scope.fillLogin = function (login) {
-            var didAutofill = false;
-
-            if (login && canAutofill && pageDetails && pageDetails.length) {
-                for (var i = 0; i < pageDetails.length; i++) {
-                    if (pageDetails[i].tabId !== tabId) {
-                        continue;
-                    }
-
-                    var fillScript = autofillService.generateFillScript(pageDetails[i].details, login.username, login.password);
-                    if (tabId && fillScript && fillScript.script && fillScript.script.length) {
-                        didAutofill = true;
-                        $analytics.eventTrack('Autofilled');
-                        chrome.tabs.sendMessage(tabId, {
-                            command: 'fillForm',
-                            fillScript: fillScript
-                        }, { frameId: pageDetails[i].frameId }, function () {
-                            if (login.totp && tokenService.getPremium()) {
-                                totpService.isAutoCopyEnabled().then(function (enabled) {
-                                    if (enabled) {
-                                        return totpService.getCode(login.totp);
-                                    }
-
-                                    return null;
-                                }).then(function (code) {
-                                    if (code) {
-                                        utilsService.copyToClipboard(code);
-                                    }
-
-                                    $window.close();
-                                });
-                            }
-                            else {
-                                $window.close();
-                            }
-                        });
-                    }
-                }
-            }
-
-            if (!didAutofill) {
+            if (!canAutofill) {
                 $analytics.eventTrack('Autofilled Error');
                 toastr.error(i18nService.autofillError);
             }
+
+            autofillService.doAutoFill(login, pageDetails, false).then(function () {
+                $analytics.eventTrack('Autofilled');
+                $window.close();
+            }, function () {
+                $analytics.eventTrack('Autofilled Error');
+                toastr.error(i18nService.autofillError);
+            });
         };
 
         $scope.viewLogin = function (login) {

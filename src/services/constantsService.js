@@ -7,6 +7,7 @@ function ConstantsService(i18nService) {
         disableAddLoginNotificationKey: 'disableAddLoginNotification',
         disableContextMenuItemKey: 'disableContextMenuItem',
         disableAutoTotpCopyKey: 'disableAutoTotpCopy',
+        enableAutoFillOnPageLoadKey: 'enableAutoFillOnPageLoad',
         lockOptionKey: 'lockOption',
         lastActiveKey: 'lastActive',
         encType: {

@@ -1,4 +1,9 @@
-﻿function AutofillService() {
+﻿function AutofillService(utilsService, totpService, tokenService, loginService) {
+    this.utilsService = utilsService;
+    this.totpService = totpService;
+    this.tokenService = tokenService;
+    this.loginService = loginService;
+
     initAutofill();
 }
 
@@ -129,6 +134,106 @@ function initAutofill() {
 
         return formData;
     };
+
+    AutofillService.prototype.doAutoFill = function (login, pageDetails, fromBackground, skipTotp) {
+        var deferred = Q.defer();
+        var self = this;
+
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            var tab = null;
+            if (tabs.length > 0) {
+                tab = tabs[0];
+            }
+            else {
+                deferred.reject();
+                return;
+            }
+
+            if (!tab || !login || !pageDetails || !pageDetails.length) {
+                deferred.reject();
+                return;
+            }
+
+            var didAutofill = false;
+            for (var i = 0; i < pageDetails.length; i++) {
+                // make sure we're still on correct tab
+                if (pageDetails[i].tab.id !== tab.id || pageDetails[i].tab.url !== tab.url) {
+                    continue;
+                }
+
+                var fillScript = self.generateFillScript(pageDetails[i].details,
+                    login.username, login.password);
+                if (!fillScript || !fillScript.script || !fillScript.script.length) {
+                    continue;
+                }
+
+                didAutofill = true;
+
+                chrome.tabs.sendMessage(tab.id, {
+                    command: 'fillForm',
+                    fillScript: fillScript
+                }, { frameId: pageDetails[i].frameId });
+
+                if ((fromBackground && self.utilsService.isFirefox()) ||
+                    skipTotp || !login.totp || !self.tokenService.getPremium()) {
+                    deferred.resolve();
+                    return;
+                }
+
+                self.totpService.isAutoCopyEnabled().then(function (enabled) {
+                    if (enabled) {
+                        return self.totpService.getCode(login.totp);
+                    }
+
+                    return null;
+                }).then(function (code) {
+                    if (code) {
+                        self.utilsService.copyToClipboard(code);
+                    }
+
+                    deferred.resolve();
+                    return;
+                });
+
+                break;
+            }
+
+            if (!didAutofill) {
+                deferred.reject();
+                return;
+            }
+        });
+
+        return deferred.promise;
+    };
+
+    AutofillService.prototype.doAutoFillForFirstLogin = function (pageDetails) {
+        var self = this;
+
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            var tab = null;
+            if (tabs.length > 0) {
+                tab = tabs[0];
+            }
+
+            if (!tab || !tab.url) {
+                return;
+            }
+
+            var tabDomain = self.utilsService.getDomain(tab.url);
+            if (!tabDomain) {
+                return;
+            }
+
+            self.loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
+                if (!logins.length) {
+                    return;
+                }
+
+                self.doAutoFill(logins[0], pageDetails, true, true);
+            });
+        });
+    }
 
     function loadPasswordFields(pageDetails, canBeHidden) {
         var arr = [];

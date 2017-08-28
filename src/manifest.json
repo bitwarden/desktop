@@ -28,6 +28,18 @@
       "run_at": "document_start"
     },
     {
+      "all_frames": true,
+      "js": [
+        "content/autofiller.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
+      "run_at": "document_start"
+    },
+    {
       "all_frames": false,
       "js": [
         "content/notificationBar.js"
