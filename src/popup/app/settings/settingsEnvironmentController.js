@@ -8,6 +8,7 @@
         utilsService.initListSectionItemListeners($(document), angular);
 
         $scope.baseUrl = $window.localStorage.getItem(constantsService.baseUrlKey) || '';
+        $scope.webVaultUrl = $window.localStorage.getItem(constantsService.webVaultUrlKey) || '';
         $scope.apiUrl = $window.localStorage.getItem(constantsService.apiUrlKey) || '';
         $scope.identityUrl = $window.localStorage.getItem(constantsService.identityUrlKey) || '';
 
@@ -18,6 +19,14 @@
             }
             else {
                 $window.localStorage.removeItem(constantsService.baseUrlKey);
+            }
+
+            if ($scope.webVaultUrl && $scope.webVaultUrl !== '') {
+                $scope.webVaultUrl = formatUrl($scope.webVaultUrl);
+                $window.localStorage.setItem(constantsService.webVaultUrlKey, $scope.webVaultUrl);
+            }
+            else {
+                $window.localStorage.removeItem(constantsService.webVaultUrlKey);
             }
 
             if ($scope.apiUrl && $scope.apiUrl !== '') {

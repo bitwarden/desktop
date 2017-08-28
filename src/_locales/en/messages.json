@@ -724,6 +724,9 @@
   "apiUrl": {
     "message": "API Server URL"
   },
+  "webVaultUrl": {
+    "message": "Web Vault Server URL"
+  },
   "identityUrl": {
     "message": "Identity Server URL"
   },

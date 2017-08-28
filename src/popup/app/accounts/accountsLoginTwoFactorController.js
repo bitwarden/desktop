@@ -2,11 +2,24 @@
     .module('bit.accounts')
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService, SweetAlert,
-        $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService) {
+        $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService,
+        $window) {
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
 
-        var u2f = new U2f(function (data) {
+        var customWebVaultUrl = null;
+        var storedBaseUrl = $window.localStorage.getItem(constantsService.baseUrlKey);
+        if (storedBaseUrl) {
+            customWebVaultUrl = storedBaseUrl;
+        }
+        else {
+            var storedWebVaultUrl = $window.localStorage.getItem(constantsService.webVaultUrlKey);
+            if (storedWebVaultUrl) {
+                customWebVaultUrl = storedWebVaultUrl;
+            }
+        }
+
+        var u2f = new U2f(customWebVaultUrl, function (data) {
             $timeout(function () {
                 $scope.login(data);
             });

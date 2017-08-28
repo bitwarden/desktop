@@ -1,9 +1,10 @@
-﻿function U2f(successCallback, errorCallback, infoCallback) {
+﻿function U2f(webVaultUrl, successCallback, errorCallback, infoCallback) {
     this.success = successCallback;
     this.error = errorCallback;
     this.info = infoCallback;
     this.iframe = null;
     this.connectorLink = document.createElement('a');
+    this.webVaultUrl = webVaultUrl && webVaultUrl !== '' ? webVaultUrl : 'https://vault.bitwarden.com';
 }
 
 (function () {
@@ -12,7 +13,7 @@
     U2f.prototype.init = function (data) {
         var self = thisU2f = this;
 
-        self.connectorLink.href = 'https://vault.bitwarden.com/u2f-connector.html' +
+        self.connectorLink.href = self.webVaultUrl + '/u2f-connector.html' +
             '?data=' + this.base64Encode(JSON.stringify(data)) +
             '&parent=' + encodeURIComponent(document.location.href) +
             '&v=1';

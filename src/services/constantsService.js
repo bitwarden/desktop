@@ -1,6 +1,7 @@
 function ConstantsService(i18nService) {
     return {
         baseUrlKey: 'baseUrl',
+        webVaultUrlKey: 'webVaultUrl',
         apiUrlKey: 'apiUrl',
         identityUrlKey: 'identityUrl',
         disableGaKey: 'disableGa',
