@@ -94,6 +94,10 @@ angular
             return url && url.startsWith(login.uri) ? 0 : 1;
         };
 
+        $scope.sortLastUsed = function (login) {
+            return login.localData && login.localData.lastUsedDate ? -1 * login.localData.lastUsedDate : 0;
+        };
+
         $scope.$on('syncCompleted', function (event, successfully) {
             if ($scope.loaded) {
                 setTimeout(loadVault, 500);
