@@ -501,11 +501,18 @@ function initLoginService() {
         var aLastUsed = a.localData && a.localData.lastUsedDate ? a.localData.lastUsedDate : null;
         var bLastUsed = b.localData && b.localData.lastUsedDate ? b.localData.lastUsedDate : null;
 
-        if (aLastUsed && (!bLastUsed || aLastUsed < bLastUsed)) {
+        if (aLastUsed && bLastUsed && aLastUsed < bLastUsed) {
             return 1;
         }
-        if (bLastUsed && (!aLastUsed || aLastUsed > bLastUsed)) {
+        if (aLastUsed && !bLastUsed) {
             return -1;
+        }
+
+        if (bLastUsed && aLastUsed && aLastUsed > bLastUsed) {
+            return -1;
+        }
+        if (bLastUsed && !aLastUsed) {
+            return 1;
         }
 
         return 0;
