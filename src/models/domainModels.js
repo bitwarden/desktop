@@ -88,13 +88,14 @@ var CipherString = function () {
     }
 };
 
-var Login = function (obj, alreadyEncrypted) {
+var Login = function (obj, alreadyEncrypted, localData) {
     this.id = obj.id ? obj.id : null;
     this.organizationId = obj.organizationId ? obj.organizationId : null;
     this.folderId = obj.folderId ? obj.folderId : null;
     this.favorite = obj.favorite ? true : false;
     this.organizationUseTotp = obj.organizationUseTotp ? true : false;
     this.edit = obj.edit ? true : false;
+    this.localData = localData;
 
     if (alreadyEncrypted === true) {
         this.name = obj.name ? obj.name : null;
@@ -176,7 +177,8 @@ var Folder = function (obj, alreadyEncrypted) {
             id: self.id,
             organizationId: self.organizationId,
             folderId: self.folderId,
-            favorite: self.favorite
+            favorite: self.favorite,
+            localData: self.localData
         };
 
         var attachments = [];

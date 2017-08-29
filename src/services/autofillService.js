@@ -135,7 +135,7 @@ function initAutofill() {
         return formData;
     };
 
-    AutofillService.prototype.doAutoFill = function (login, pageDetails, fromBackground, skipTotp) {
+    AutofillService.prototype.doAutoFill = function (login, pageDetails, fromBackground, skipTotp, skipLastUsed) {
         var deferred = Q.defer();
         var self = this;
 
@@ -168,6 +168,9 @@ function initAutofill() {
                 }
 
                 didAutofill = true;
+                if (!skipLastUsed) {
+                    self.loginService.updateLastUsedDate(login.id, function () { });
+                }
 
                 chrome.tabs.sendMessage(tab.id, {
                     command: 'fillForm',
@@ -207,7 +210,7 @@ function initAutofill() {
         return deferred.promise;
     };
 
-    AutofillService.prototype.doAutoFillForFirstLogin = function (pageDetails) {
+    AutofillService.prototype.doAutoFillForLastUsedLogin = function (pageDetails) {
         var self = this;
 
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -230,10 +233,11 @@ function initAutofill() {
                     return;
                 }
 
-                self.doAutoFill(logins[0], pageDetails, true, true);
+                var sortedLogins = logins.sort(self.loginService.sortLoginsByLastUsed);
+                self.doAutoFill(sortedLogins[0], pageDetails, true, true, true);
             });
         });
-    }
+    };
 
     function loadPasswordFields(pageDetails, canBeHidden) {
         var arr = [];

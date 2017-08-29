@@ -83,7 +83,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             messageTab(msg.tab.id, 'pageDetails', { details: msg.details, forms: forms });
         }
         else if (msg.sender === 'autofiller') {
-            bg_autofillService.doAutoFillForFirstLogin([{
+            bg_autofillService.doAutoFillForLastUsedLogin([{
                 frameId: sender.frameId, tab: msg.tab, details: msg.details
             }]);
         }

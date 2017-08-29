@@ -55,15 +55,23 @@ function initLoginService() {
 
         this.userService.getUserId(function (userId) {
             var loginsKey = 'sites_' + userId;
+            var localDataKey = 'sitesLocalData';
 
-            chrome.storage.local.get(loginsKey, function (obj) {
-                var logins = obj[loginsKey];
-                if (logins && id in logins) {
-                    callback(new Login(logins[id]));
-                    return;
+            chrome.storage.local.get(localDataKey, function (localDataObj) {
+                var localData = localDataObj[localDataKey];
+                if (!localData) {
+                    localData = {};
                 }
 
-                callback(null);
+                chrome.storage.local.get(loginsKey, function (obj) {
+                    var logins = obj[loginsKey];
+                    if (logins && id in logins) {
+                        callback(new Login(logins[id], false, localData[id]));
+                        return;
+                    }
+
+                    callback(null);
+                });
             });
         });
     };
@@ -75,19 +83,27 @@ function initLoginService() {
 
         this.userService.getUserId(function (userId) {
             var loginsKey = 'sites_' + userId;
+            var localDataKey = 'sitesLocalData';
 
-            chrome.storage.local.get(loginsKey, function (obj) {
-                var logins = obj[loginsKey];
-                var response = [];
-                for (var id in logins) {
-                    if (!id) {
-                        continue;
-                    }
-
-                    response.push(new Login(logins[id]));
+            chrome.storage.local.get(localDataKey, function (localDataObj) {
+                var localData = localDataObj[localDataKey];
+                if (!localData) {
+                    localData = {};
                 }
 
-                callback(response);
+                chrome.storage.local.get(loginsKey, function (obj) {
+                    var logins = obj[loginsKey];
+                    var response = [];
+                    for (var id in logins) {
+                        if (!id) {
+                            continue;
+                        }
+
+                        response.push(new Login(logins[id], false, localData[id]));
+                    }
+
+                    callback(response);
+                });
             });
         });
     };
@@ -238,6 +254,46 @@ function initLoginService() {
                     self.decryptedLoginCache = null;
                     callback();
                 });
+            });
+        });
+    };
+
+    LoginService.prototype.updateLastUsedDate = function (id, callback) {
+        if (!callback || typeof callback !== 'function') {
+            throw 'callback function required';
+        }
+
+        var self = this;
+        var localDataKey = 'sitesLocalData';
+
+        chrome.storage.local.get(localDataKey, function (obj) {
+            var loginsLocalData = obj[localDataKey];
+            if (!loginsLocalData) {
+                loginsLocalData = {};
+            }
+
+            if (loginsLocalData[id]) {
+                loginsLocalData[id].lastUsedDate = new Date().getTime();
+            }
+            else {
+                loginsLocalData[id] = {
+                    lastUsedDate: new Date().getTime()
+                };
+            }
+
+            obj[localDataKey] = loginsLocalData;
+
+            chrome.storage.local.set(obj, function () {
+                if (self.decryptedLoginCache) {
+                    for (var i = 0; i < self.decryptedLoginCache.length; i++) {
+                        if (self.decryptedLoginCache[i].id === id) {
+                            self.decryptedLoginCache[i].localData = loginsLocalData[id];
+                            break;
+                        }
+                    }
+                }
+
+                callback();
             });
         });
     };
@@ -439,6 +495,20 @@ function initLoginService() {
         });
 
         return deferred.promise;
+    };
+
+    LoginService.prototype.sortLoginsByLastUsed = function (a, b) {
+        var aLastUsed = a.localData && a.localData.lastUsedDate ? a.localData.lastUsedDate : null;
+        var bLastUsed = b.localData && b.localData.lastUsedDate ? b.localData.lastUsedDate : null;
+
+        if (aLastUsed && (!bLastUsed || aLastUsed < bLastUsed)) {
+            return 1;
+        }
+        if (bLastUsed && (!aLastUsed || aLastUsed > bLastUsed)) {
+            return -1;
+        }
+
+        return 0;
     };
 
     function handleError(error, deferred) {
