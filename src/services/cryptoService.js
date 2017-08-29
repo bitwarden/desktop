@@ -660,7 +660,7 @@ function initCryptoService(constantsService) {
             }
 
             var ctArr = fromB64ToArray(encPieces[0]);
-            return _subtle.decrypt({ name: padding.name }, privateKey, ctArr.buffer);
+            return _subtle.decrypt(padding, privateKey, ctArr.buffer);
         }, function () {
             throw 'Cannot import privateKey.';
         }).then(function (decBytes) {

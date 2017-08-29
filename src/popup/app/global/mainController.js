@@ -6,8 +6,8 @@ angular
         var self = this;
         self.currentYear = new Date().getFullYear();
         self.animation = '';
-        self.shBody = $window.screen.availHeight < 600;
-        self.lgBody = !utilsService.isFirefox() && !self.shBody;
+        self.shBody = $window.screen.availHeight < 650;
+        self.lgBody = !utilsService.isFirefox() && !utilsService.isEdge() && !self.shBody;
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (toParams.animation) {
