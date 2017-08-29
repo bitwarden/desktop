@@ -586,6 +586,21 @@ function autofillPage() {
 
 function sortLogins(logins) {
     logins.sort(function (a, b) {
+        var lastUsedA = a.localData && a.localData.lastUsedDate ? a.localData.lastUsedDate : null;
+        var lastUsedB = b.localData && b.localData.lastUsedDate ? b.localData.lastUsedDate : null;
+        if (lastUsedA && lastUsedB && lastUsedA > lastUsedB) {
+            return -1;
+        }
+        if (lastUsedA && lastUsedB && lastUsedA < lastUsedB) {
+            return 1;
+        }
+        if (lastUsedA && !lastUsedB) {
+            return -1;
+        }
+        if (!lastUsedA && lastUsedB) {
+            return 1;
+        }
+
         var nameA = (a.name + '_' + a.username).toUpperCase();
         var nameB = (b.name + '_' + b.username).toUpperCase();
 
