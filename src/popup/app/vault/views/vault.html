@@ -3,7 +3,7 @@
         <a href="" ng-click="expandVault()"><i class="fa fa-external-link fa-rotate-270 fa-lg"></i></a>
     </div>
     <div class="search">
-        <input type="search" placeholder="{{i18n.searchVault}}" ng-model="searchText" id="search" />
+        <input type="search" placeholder="{{i18n.searchVault}}" ng-model="searchText" id="search" ng-disabled="disableSearch" />
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
@@ -22,7 +22,7 @@
                    ng-repeat="folder in vaultFolders | orderBy: folderSort track by $index">
                     {{folder.name}}
                     <i class="fa fa-chevron-right fa-lg"></i>
-                    <span class="item-sub-label">{{folder.itemCount}}</span>
+                    <span class="item-sub-label" ng-if="showFolderCounts">{{folder.itemCount}}</span>
                 </a>
             </div>
         </div>

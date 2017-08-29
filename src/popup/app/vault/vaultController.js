@@ -7,6 +7,8 @@
             state = stateService.getState(stateKey) || {};
 
         $scope.i18n = i18nService;
+        $scope.showFolderCounts = !utilsService.isEdge();
+        $scope.disableSearch = utilsService.isEdge();
         $('#search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;
@@ -60,16 +62,18 @@
                 $rootScope.vaultFolders = decFolders;
                 $rootScope.vaultLogins = decLogins;
 
-                // compute item count for each folder
-                for (var i = 0; i < decFolders.length; i++) {
-                    var itemCount = 0;
-                    for (var j = 0; j < decLogins.length; j++) {
-                        if (decLogins[j].folderId === decFolders[i].id) {
-                            itemCount++;
+                if ($scope.showFolderCounts) {
+                    // compute item count for each folder
+                    for (var i = 0; i < decFolders.length; i++) {
+                        var itemCount = 0;
+                        for (var j = 0; j < decLogins.length; j++) {
+                            if (decLogins[j].folderId === decFolders[i].id) {
+                                itemCount++;
+                            }
                         }
-                    }
 
-                    $rootScope.vaultFolders[i].itemCount = itemCount;
+                        $rootScope.vaultFolders[i].itemCount = itemCount;
+                    }
                 }
 
                 if (!delayLoad) {

@@ -2,7 +2,7 @@
     .module('bit.vault')
 
     .controller('vaultViewFolderController', function ($scope, loginService, folderService, $q, $state, $stateParams, toastr,
-        syncService, $analytics, i18nService, stateService) {
+        syncService, $analytics, i18nService, stateService, utilsService) {
         var stateKey = 'viewFolder',
             state = stateService.getState(stateKey) || {};
 
@@ -41,7 +41,13 @@
 
             var loginPromise = $q.when(loginService.getAllDecryptedForFolder($scope.folder.id));
             loginPromise.then(function (logins) {
-                decLogins = logins.sort(loginSort);
+                if (utilsService.isEdge()) {
+                    // Edge is super slow at sorting
+                    decLogins = logins;
+                }
+                else {
+                    decLogins = logins.sort(loginSort);
+                }
             });
             promises.push(loginPromise);
 
