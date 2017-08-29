@@ -4,6 +4,7 @@ angular
     .controller('vaultEditLoginController', function ($scope, $state, $stateParams, loginService, folderService,
         cryptoService, $q, toastr, SweetAlert, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
+        $scope.showAttachments = !utilsService.isEdge();
         var loginId = $stateParams.loginId;
         var fromView = $stateParams.fromView;
         var from = $stateParams.from;

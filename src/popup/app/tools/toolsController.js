@@ -1,8 +1,9 @@
 ﻿angular
     .module('bit.tools')
 
-    .controller('toolsController', function ($scope, SweetAlert, i18nService, $analytics) {
+    .controller('toolsController', function ($scope, SweetAlert, i18nService, $analytics, utilsService) {
         $scope.i18n = i18nService;
+        $scope.showExport = !utilsService.isEdge();
         $scope.launchWebVault = function (createOrg) {
             $analytics.eventTrack('Launch Web Vault' + (createOrg ? ' For Share' : ''));
             chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/' + (createOrg ? '?org=free' : '') });

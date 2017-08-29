@@ -76,7 +76,7 @@
                 <div class="list-section-item pre">{{login.notes}}</div>
             </div>
         </div>
-        <div class="list-section" ng-if="isPremium && login.attachments && login.attachments.length">
+        <div class="list-section" ng-if="showAttachments && isPremium && login.attachments && login.attachments.length">
             <div class="list-section-header">
                 {{i18n.attachments}}
             </div>

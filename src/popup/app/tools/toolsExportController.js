@@ -2,7 +2,7 @@
     .module('bit.tools')
 
     .controller('toolsExportController', function ($scope, $state, toastr, $q, $analytics,
-        i18nService, cryptoService, userService, folderService, loginService) {
+        i18nService, cryptoService, userService, folderService, loginService, $window) {
         $scope.i18n = i18nService;
 
         $('#master-password').focus();
@@ -89,16 +89,21 @@
 
         function downloadFile(csvString) {
             var csvBlob = new Blob([csvString]);
-            if (window.navigator.msSaveOrOpenBlob) {
-                window.navigator.msSaveBlob(csvBlob, makeFileName());
+            var fileName = makeFileName();
+
+            if ($window.navigator.msSaveOrOpenBlob) {
+                // Currently bugged in Edge. See
+                // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8178877/
+                // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8477778/
+                $window.navigator.msSaveBlob(csvBlob, fileName);
             }
             else {
-                var a = window.document.createElement('a');
-                a.href = window.URL.createObjectURL(csvBlob, { type: 'text/plain' });
-                a.download = makeFileName();
-                document.body.appendChild(a);
+                var a = $window.document.createElement('a');
+                a.href = $window.URL.createObjectURL(csvBlob, { type: 'text/plain' });
+                a.download = fileName;
+                $window.document.body.appendChild(a);
                 a.click();
-                document.body.removeChild(a);
+                $window.document.body.removeChild(a);
             }
         }
 
