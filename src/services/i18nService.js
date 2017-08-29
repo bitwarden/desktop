@@ -9,7 +9,7 @@ function i18nService(utilsService) {
         rawFile.open('GET', '../_locales/en/messages.json', false);
         rawFile.onreadystatechange = function () {
             if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status == 0) {
+                if (rawFile.status === 200 || rawFile.status === 0) {
                     var locales = JSON.parse(rawFile.responseText);
                     for (var property in locales) {
                         if (locales.hasOwnProperty(property)) {
@@ -18,7 +18,7 @@ function i18nService(utilsService) {
                     }
                 }
             }
-        }
+        };
         rawFile.send(null);
 
         return self.messages;
