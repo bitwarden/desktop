@@ -240,7 +240,11 @@
         z-index: 1;
 
         &:not(.pre) {
-            &:extend(.clearfix all);
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
         }
 
         &.pre {
