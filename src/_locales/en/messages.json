@@ -734,7 +734,7 @@
     "message": "The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "Enable Auto-fill On Page Load"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
