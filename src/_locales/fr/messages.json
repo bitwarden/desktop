@@ -705,5 +705,41 @@
   },
   "emailDesc":{
     "message":"Les codes de vérification vont vous être envoyés par e-mail."
+  },
+  "selfHostedEnvironment":{
+    "message":"Self-hosted Environment"
+  },
+  "selfHostedEnvironmentFooter":{
+    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+  },
+  "customEnvironment":{
+    "message":"Custom Environment"
+  },
+  "customEnvironmentFooter":{
+    "message":"For advanced users. You can specify the base URL of each service independently."
+  },
+  "baseUrl":{
+    "message":"Server URL"
+  },
+  "apiUrl":{
+    "message":"API Server URL"
+  },
+  "webVaultUrl":{
+    "message":"Web Vault Server URL"
+  },
+  "identityUrl":{
+    "message":"Identity Server URL"
+  },
+  "environmentSaved":{
+    "message":"The environment URLs have been saved."
+  },
+  "enableAutoFillOnPageLoad":{
+    "message":"Enable Auto-fill On Page Load."
+  },
+  "enableAutoFillOnPageLoadDesc":{
+    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+  },
+  "experimentalFeature":{
+    "message":"This is currently an experimental feature. Use at your own risk."
   }
 }

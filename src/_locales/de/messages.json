@@ -500,7 +500,7 @@
     "message":"Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "exportVault":{
-    "message":"Export Vault"
+    "message":"Exportiere Tresor"
   },
   "warning":{
     "message":"WARNUNG",
@@ -510,19 +510,19 @@
     "message":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
   "exportMasterPassword":{
-    "message":"Enter your master password to export your vault data."
+    "message":"Geben Sie das Masterpasswort ein um Ihre Tresordaten zu exportieren."
   },
   "exportVaultInfo":{
     "message":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   },
   "shared":{
-    "message":"Shared"
+    "message":"Freigegeben"
   },
   "shareVault":{
-    "message":"Share Your Vault"
+    "message":"Teilen Sie Ihren Tresor"
   },
   "shareVaultInfo":{
-    "message":"Create an organization to securely share your logins with other users."
+    "message":"Erstellen Sie eine Organisation um Ihre Logindaten sicher für andere Benutzer freizugeben."
   },
   "contribute":{
     "message":"You can contribute to!"
@@ -624,7 +624,7 @@
     "message":"Das alles für %price% im Jahr!"
   },
   "refreshComplete":{
-    "message":"Refresh complete"
+    "message":"Aktualisierung abgeschlossen"
   },
   "disableAutoTotpCopy":{
     "message":"Disable Automatic TOTP Copy"
@@ -645,7 +645,7 @@
     "message":"Enter the 6 digit verification code that was emailed to"
   },
   "rememberMe":{
-    "message":"Remember me"
+    "message":"Eingeloggt bleiben"
   },
   "sendVerificationCodeEmailAgain":{
     "message":"Send verification code email again"
@@ -675,7 +675,7 @@
     "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Wiederherstellungscode"
   },
   "authenticatorAppTitle":{
     "message":"Authenticator App"
@@ -685,7 +685,7 @@
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"YubiKey OTP Sicherheitsschlüssel"
   },
   "yubiKeyDesc":{
     "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
@@ -698,12 +698,48 @@
     "message":"Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+    "message":"FIDO U2F Sicherheitsschlüssel"
   },
   "emailTitle":{
-    "message":"Email"
+    "message":"E-Mail"
   },
   "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+    "message":"Bestätigungscodes werden Ihnen per E-Mail zugesandt."
+  },
+  "selfHostedEnvironment":{
+    "message":"Self-hosted Environment"
+  },
+  "selfHostedEnvironmentFooter":{
+    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+  },
+  "customEnvironment":{
+    "message":"Custom Environment"
+  },
+  "customEnvironmentFooter":{
+    "message":"For advanced users. You can specify the base URL of each service independently."
+  },
+  "baseUrl":{
+    "message":"Server URL"
+  },
+  "apiUrl":{
+    "message":"API Server URL"
+  },
+  "webVaultUrl":{
+    "message":"Web Vault Server URL"
+  },
+  "identityUrl":{
+    "message":"Identity Server URL"
+  },
+  "environmentSaved":{
+    "message":"The environment URLs have been saved."
+  },
+  "enableAutoFillOnPageLoad":{
+    "message":"Enable Auto-fill On Page Load."
+  },
+  "enableAutoFillOnPageLoadDesc":{
+    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+  },
+  "experimentalFeature":{
+    "message":"This is currently an experimental feature. Use at your own risk."
   }
 }
