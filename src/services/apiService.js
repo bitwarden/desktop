@@ -584,7 +584,7 @@ function initApiService() {
     }
 
     function resolveTokenQs(token, self, deferred) {
-        deferred.resolve('access_token=' + token);
+        deferred.resolve('access_token3=' + token);
     }
 
     function postConnectToken(self, data, success, error) {
