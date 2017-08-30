@@ -402,6 +402,10 @@ function messageTab(tabId, command, data, callback) {
 }
 
 function collectPageDetailsForContentScript(tab, sender) {
+    if (!tab || !tab.id) {
+        return;
+    }
+
     chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: sender }, function () {
     });
 }
