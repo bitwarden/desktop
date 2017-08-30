@@ -2,8 +2,7 @@
     .module('bit.accounts')
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService, SweetAlert,
-        $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService,
-        $window) {
+        $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService) {
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
 
