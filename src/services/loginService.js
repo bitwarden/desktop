@@ -497,7 +497,28 @@ function initLoginService() {
         return deferred.promise;
     };
 
-    LoginService.prototype.sortLoginsByLastUsed = function (a, b) {
+    LoginService.prototype.sortLoginsByLastUsed = sortLoginsByLastUsed;
+
+    LoginService.prototype.sortLoginsByLastUsedThenName = function (a, b) {
+        var result = sortLoginsByLastUsed(a, b);
+        if (result !== 0) {
+            return result;
+        }
+
+        var nameA = (a.name + '_' + a.username).toUpperCase();
+        var nameB = (b.name + '_' + b.username).toUpperCase();
+
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+
+        return 0;
+    };
+
+    function sortLoginsByLastUsed(a ,b) {
         var aLastUsed = a.localData && a.localData.lastUsedDate ? a.localData.lastUsedDate : null;
         var bLastUsed = b.localData && b.localData.lastUsedDate ? b.localData.lastUsedDate : null;
 
@@ -516,26 +537,7 @@ function initLoginService() {
         }
 
         return 0;
-    };
-
-    LoginService.prototype.sortLoginsByLastUsedThenName = function (a, b) {
-        var result = this.sortLoginsByLastUsed(a, b);
-        if (result !== 0) {
-            return result;
-        }
-
-        var nameA = (a.name + '_' + a.username).toUpperCase();
-        var nameB = (b.name + '_' + b.username).toUpperCase();
-
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-
-        return 0;
-    };
+    }
 
     function handleError(error, deferred) {
         deferred.reject(error);
