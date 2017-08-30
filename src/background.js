@@ -276,7 +276,7 @@ function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
 
     menuOptionsLoaded = [];
     bg_loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
-        sortLogins(logins);
+        logins.sort(bg_loginService.sortLoginsByLastUsedThenName);
 
         if (contextMenuEnabled) {
             for (var i = 0; i < logins.length; i++) {
@@ -586,37 +586,6 @@ function autofillPage() {
     // reset
     loginToAutoFill = null;
     pageDetailsToAutoFill = [];
-}
-
-function sortLogins(logins) {
-    logins.sort(function (a, b) {
-        var lastUsedA = a.localData && a.localData.lastUsedDate ? a.localData.lastUsedDate : null;
-        var lastUsedB = b.localData && b.localData.lastUsedDate ? b.localData.lastUsedDate : null;
-        if (lastUsedA && lastUsedB && lastUsedA > lastUsedB) {
-            return -1;
-        }
-        if (lastUsedA && lastUsedB && lastUsedA < lastUsedB) {
-            return 1;
-        }
-        if (lastUsedA && !lastUsedB) {
-            return -1;
-        }
-        if (!lastUsedA && lastUsedB) {
-            return 1;
-        }
-
-        var nameA = (a.name + '_' + a.username).toUpperCase();
-        var nameB = (b.name + '_' + b.username).toUpperCase();
-
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-
-        return 0;
-    });
 }
 
 function loadLoginContextMenuOptions(login) {
