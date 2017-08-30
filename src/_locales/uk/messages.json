@@ -1,0 +1,745 @@
+{
+  "appName":{
+    "message":"bitwarden"
+  },
+  "extName":{
+    "message":"bitwarden - Безкоштовний менеджер паролів",
+    "description":"Extension name"
+  },
+  "extDesc":{
+    "message":"bitwarden - це захищений і безкоштовний менеджер паролів для всіх ваших пристроїв.",
+    "description":"Extension description"
+  },
+  "loginOrCreateNewAccount":{
+    "message":"Для доступу до сховища увійдіть в обліковий запис, або створіть новий."
+  },
+  "createAccount":{
+    "message":"Створити обліковий запис"
+  },
+  "login":{
+    "message":"Вхід"
+  },
+  "cancel":{
+    "message":"Скасувати"
+  },
+  "close":{
+    "message":"Закрити"
+  },
+  "submit":{
+    "message":"Відправити"
+  },
+  "emailAddress":{
+    "message":"Адреса електронної пошти"
+  },
+  "masterPass":{
+    "message":"Головний пароль"
+  },
+  "masterPassDesc":{
+    "message":"Головний пароль використовується для доступу до вашого сховища. Дуже важливо, щоб ви запам'ятали його. Якщо ви забудете головний пароль, його неможливо буде відновити."
+  },
+  "masterPassHintDesc":{
+    "message":"Якщо ви забудете головний пароль, підказка може допомогти вам згадати його."
+  },
+  "reTypeMasterPass":{
+    "message":"Введіть головний пароль ще раз"
+  },
+  "masterPassHint":{
+    "message":"Підказка для головного пароля (необов'язково)"
+  },
+  "tab":{
+    "message":"Вкладка"
+  },
+  "myVault":{
+    "message":"Моє сховище"
+  },
+  "tools":{
+    "message":"Інструменти"
+  },
+  "settings":{
+    "message":"Налаштування"
+  },
+  "currentTab":{
+    "message":"Поточна вкладка"
+  },
+  "copyPassword":{
+    "message":"Копіювати пароль"
+  },
+  "copyUsername":{
+    "message":"Копіювати ім'я користувача"
+  },
+  "autoFill":{
+    "message":"Автозаповнення"
+  },
+  "generatePasswordCopied":{
+    "message":"Генерувати пароль (з копіюванням)"
+  },
+  "noMatchingLogins":{
+    "message":"Немає відповідних записів."
+  },
+  "vaultLocked":{
+    "message":"Сховище заблоковано."
+  },
+  "autoFillInfo":{
+    "message":"Для поточної вкладки браузера немає записів для автозаповнення."
+  },
+  "addLogin":{
+    "message":"Додати запис"
+  },
+  "passwordHint":{
+    "message":"Підказка для пароля"
+  },
+  "enterEmailToGetHint":{
+    "message":"Введіть свою адресу електронної пошти, щоб отримати підказку для головного пароля."
+  },
+  "getMasterPasswordHint":{
+    "message":"Отримати підказку для головного пароля"
+  },
+  "continue":{
+    "message":"Продовжити"
+  },
+  "verificationCode":{
+    "message":"Код підтвердження"
+  },
+  "account":{
+    "message":"Обліковий запис"
+  },
+  "changeMasterPassword":{
+    "message":"Змінити головний пароль"
+  },
+  "changeEmail":{
+    "message":"Змінити адресу електронної пошти"
+  },
+  "twoStepLogin":{
+    "message":"Двоетапна авторизація"
+  },
+  "logOut":{
+    "message":"Вихід"
+  },
+  "about":{
+    "message":"Про"
+  },
+  "version":{
+    "message":"Версія"
+  },
+  "save":{
+    "message":"Зберегти"
+  },
+  "addFolder":{
+    "message":"Додати теку"
+  },
+  "name":{
+    "message":"Назва"
+  },
+  "editFolder":{
+    "message":"Редагувати теку"
+  },
+  "deleteFolder":{
+    "message":"Видалити теку"
+  },
+  "folders":{
+    "message":"Теки"
+  },
+  "noFolders":{
+    "message":"Немає тек для відображення."
+  },
+  "helpFeedback":{
+    "message":"Допомога і зворотній зв'язок"
+  },
+  "emailUs":{
+    "message":"Напишіть нам"
+  },
+  "emailUsDirectly":{
+    "message":"Напишіть нам, щоб отримати допомогу чи залишити відгук."
+  },
+  "visitOurWebsite":{
+    "message":"Відвідайте наш веб-сайт"
+  },
+  "visitOurWebsiteDirectly":{
+    "message":"Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо bitwarden."
+  },
+  "fileBugReport":{
+    "message":"Повідомити про помилку"
+  },
+  "gitHubIssue":{
+    "message":"Створіть звіт в нашому репозиторії на GitHub."
+  },
+  "sync":{
+    "message":"Синхронізація"
+  },
+  "syncVaultNow":{
+    "message":"Синхронізувати зараз"
+  },
+  "lastSync":{
+    "message":"Остання синхронізація:"
+  },
+  "passGen":{
+    "message":"Генератор паролів"
+  },
+  "passGenInfo":{
+    "message":"Автоматичне генерування стійких, унікальних паролів."
+  },
+  "bitWebVault":{
+    "message":"Веб-сховище bitwarden"
+  },
+  "bitWebVaultInfo":{
+    "message":"Керуйте своїми паролями з будь-якого браузера за допомогою веб-сховища bitwarden."
+  },
+  "bitIosVault":{
+    "message":"bitwarden для iOS"
+  },
+  "bitIosVaultInfo":{
+    "message":"Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для iOS."
+  },
+  "bitAndrVault":{
+    "message":"bitwarden для Android"
+  },
+  "bitAndrVaultInfo":{
+    "message":"Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для Android."
+  },
+  "importLogins":{
+    "message":"Імпорт записів",
+    "description":"Import Logins"
+  },
+  "importLoginsInfo":{
+    "message":"Швидкий імпорт ваших записів з інших програм керування паролями."
+  },
+  "select":{
+    "message":"Обрати"
+  },
+  "generatePassword":{
+    "message":"Генерувати пароль"
+  },
+  "regeneratePassword":{
+    "message":"Генерувати новий"
+  },
+  "options":{
+    "message":"Налаштування"
+  },
+  "length":{
+    "message":"Довжина"
+  },
+  "minNumbers":{
+    "message":"Мінімум цифр"
+  },
+  "minSpecial":{
+    "message":"Мінімум спеціальних символів"
+  },
+  "avoidAmbChar":{
+    "message":"Уникати неоднозначних символів"
+  },
+  "searchVault":{
+    "message":"Пошук"
+  },
+  "edit":{
+    "message":"Змінити"
+  },
+  "noLoginsInList":{
+    "message":"Немає записів для відображення."
+  },
+  "loginInformation":{
+    "message":"Інформація про запис"
+  },
+  "username":{
+    "message":"Ім'я користувача"
+  },
+  "password":{
+    "message":"Пароль"
+  },
+  "favorite":{
+    "message":"Обране"
+  },
+  "notes":{
+    "message":"Нотатки"
+  },
+  "editLogin":{
+    "message":"Змінити запис"
+  },
+  "folder":{
+    "message":"Тека"
+  },
+  "deleteLogin":{
+    "message":"Видалити запис"
+  },
+  "viewLogin":{
+    "message":"Перегляд запису"
+  },
+  "launchWebsite":{
+    "message":"Відкрити веб-сайт"
+  },
+  "website":{
+    "message":"Веб-сайт"
+  },
+  "togglePassword":{
+    "message":"Показати пароль"
+  },
+  "manage":{
+    "message":"Керування"
+  },
+  "other":{
+    "message":"Інше"
+  },
+  "disableGa":{
+    "message":"Вимкнути аналітику"
+  },
+  "rateExtension":{
+    "message":"Оцінити розширення"
+  },
+  "rateExtensionDesc":{
+    "message":"Будь ласка, подумайте про те, щоб допомогти нам хорошим відгуком!"
+  },
+  "browserNotSupportClipboard":{
+    "message":"Ваш веб-браузер не підтримує копіювання даних в буфер обміну. Скопіюйте вручну."
+  },
+  "verifyMasterPassword":{
+    "message":"Перевірка головного пароля"
+  },
+  "invalidMasterPassword":{
+    "message":"Неправильний головний пароль"
+  },
+  "lockOptions":{
+    "message":"Налаштування блокування"
+  },
+  "lockNow":{
+    "message":"Заблокувати зараз"
+  },
+  "immediately":{
+    "message":"Негайно"
+  },
+  "oneMinute":{
+    "message":"1 хвилина"
+  },
+  "fiveMinutes":{
+    "message":"5 хвилин"
+  },
+  "fifteenMinutes":{
+    "message":"15 хвилин"
+  },
+  "thirtyMinutes":{
+    "message":"30 хвилин"
+  },
+  "oneHour":{
+    "message":"1 година"
+  },
+  "fourHours":{
+    "message":"4 години"
+  },
+  "onLocked":{
+    "message":"Разом з комп'ютером"
+  },
+  "onRestart":{
+    "message":"При перезавантаженні"
+  },
+  "never":{
+    "message":"Ніколи"
+  },
+  "security":{
+    "message":"Безпека"
+  },
+  "errorsOccurred":{
+    "message":"Виникли помилки"
+  },
+  "emailRequired":{
+    "message":"Потрібна адреса електронної пошти."
+  },
+  "invalidEmail":{
+    "message":"Неправильна адреса електронної пошти."
+  },
+  "masterPassRequired":{
+    "message":"Потрібен головний пароль."
+  },
+  "masterPassLength":{
+    "message":"Довжина головного пароля повинна бути не менше 8 символів."
+  },
+  "masterPassDoesntMatch":{
+    "message":"Підтвердження головного пароля не збігається."
+  },
+  "newAccountCreated":{
+    "message":"Ваш обліковий запис створений! Тепер ви можете увійти."
+  },
+  "masterPassSent":{
+    "message":"Ми надіслали вам лист з підказкою для головного пароля."
+  },
+  "verificationCodeRequired":{
+    "message":"Потрібний код підтвердження."
+  },
+  "valueCopied":{
+    "message":" скопійовано",
+    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError":{
+    "message":"Не вдається заповнити пароль на цій сторінці. Скопіюйте і вставте ім'я користувача та\/або пароль."
+  },
+  "loggedOut":{
+    "message":"Ви вийшли"
+  },
+  "loginExpired":{
+    "message":"Тривалість вашого сеансу завершилась."
+  },
+  "logOutConfirmation":{
+    "message":"Ви дійсно хочете вийти?"
+  },
+  "yes":{
+    "message":"Так"
+  },
+  "no":{
+    "message":"Ні"
+  },
+  "unexpectedError":{
+    "message":"Сталася неочікувана помилка."
+  },
+  "nameRequired":{
+    "message":"Потрібна назва."
+  },
+  "addedFolder":{
+    "message":"Додано теку"
+  },
+  "changeMasterPass":{
+    "message":"Змінити головний пароль"
+  },
+  "changeMasterPasswordConfirmation":{
+    "message":"Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  },
+  "changeEmailConfirmation":{
+    "message":"Ви можете змінити адресу електронної пошти в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  },
+  "twoStepLoginConfirmation":{
+    "message":"Двоетапна авторизація робить ваш обліковий запис більш захищеним, вимагаючи підтвердження вашого входу за допомогою іншого пристрою, наприклад, код безпеки, програма авторизації, SMS, телефонний дзвінок, або електронна пошта. Ви можете увімкнути двоетапну авторизацію в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  },
+  "loggingOut":{
+    "message":"Вихід"
+  },
+  "loggingOutConfirmation":{
+    "message":"Ви нещодавно оновилися зі старішої версії. Ви повинні повторно увійти, щоб змінити налаштування блокування. Хочете вийти зараз?"
+  },
+  "editedFolder":{
+    "message":"Тека змінена"
+  },
+  "deleteFolderConfirmation":{
+    "message":"Ви дійсно хочете видалити цю теку?"
+  },
+  "deletedFolder":{
+    "message":"Теку видалено"
+  },
+  "gettingStartedTutorial":{
+    "message":"Знайомство"
+  },
+  "gettingStartedTutorialVideo":{
+    "message":"Перегляньте знайомство, щоб дізнатися про можливості розширення для браузера."
+  },
+  "syncingComplete":{
+    "message":"Синхронізація завершена"
+  },
+  "importLoginsConfirmation":{
+    "message":"Ви можете робити масовий імпорт записів зі сховища на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  },
+  "passwordCopied":{
+    "message":"Пароль скопійовано"
+  },
+  "uri":{
+    "message":"URI"
+  },
+  "addedLogin":{
+    "message":"Запис додано"
+  },
+  "editedLogin":{
+    "message":"Запис змінено"
+  },
+  "deleteLoginConfirmation":{
+    "message":"Ви дійсно хочете видалити цей запис?"
+  },
+  "deletedLogin":{
+    "message":"Запис видалено"
+  },
+  "overwritePassword":{
+    "message":"Перезаписати пароль"
+  },
+  "overwritePasswordConfirmation":{
+    "message":"Ви дійсно хочете перезаписати поточний пароль?"
+  },
+  "credits":{
+    "message":"Подяки"
+  },
+  "thankYou":{
+    "message":"Дякуємо"
+  },
+  "translations":{
+    "message":"Переклади"
+  },
+  "searchFolder":{
+    "message":"Пошук теки"
+  },
+  "noneFolder":{
+    "message":"Без теки",
+    "description":"This is the folder for uncategorized logins"
+  },
+  "features":{
+    "message":"Розширені налаштування"
+  },
+  "gaDesc":{
+    "message":"Ми використовуємо аналітику для розуміння того, як використовується розширення, щоб зробити його кращим. Всі зібрані дані цілком анонімні."
+  },
+  "disableAddLoginNotification":{
+    "message":"Вимкнути сповіщення про додавання запису"
+  },
+  "addLoginNotificationDesc":{
+    "message":"Сповіщення про додавання пароля автоматично пропонує зберегти нові паролі у вашому сховищі під час першого входу."
+  },
+  "notificationAddDesc":{
+    "message":"Чи повинен bitwarden запам'ятати цей пароль?"
+  },
+  "notificationAddSave":{
+    "message":"Так, зберегти зараз"
+  },
+  "notificationNeverSave":{
+    "message":"Ніколи для цього сайту"
+  },
+  "disableContextMenuItem":{
+    "message":"Вимкнути в контекстному меню"
+  },
+  "disableContextMenuItemDesc":{
+    "message":"Можливості контекстного меню забезпечують швидкий доступ до генерування пароля й входу для веб-сайту поточної вкладки."
+  },
+  "exportVault":{
+    "message":"Експорт сховища"
+  },
+  "warning":{
+    "message":"ПОПЕРЕДЖЕННЯ",
+    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning":{
+    "message":"При експорті ваші дані зберігаються в незашифрованому вигляді в форматі .csv. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, електронною поштою). Після використання негайно видаліть їх."
+  },
+  "exportMasterPassword":{
+    "message":"Введіть головний пароль, щоб експортувати дані сховища."
+  },
+  "exportVaultInfo":{
+    "message":"Експортуйте дані сховища в формат .csv для швидкого редагування чи переміщення."
+  },
+  "shared":{
+    "message":"Спільні"
+  },
+  "shareVault":{
+    "message":"Поділитися своїм сховищем"
+  },
+  "shareVaultInfo":{
+    "message":"Створіть організацію, щоб безпечно ділитися записами з іншими користувачами."
+  },
+  "contribute":{
+    "message":"Ви також можете допомогти!"
+  },
+  "learnMore":{
+    "message":"Докладніше"
+  },
+  "authenticatorKeyTotp":{
+    "message":"Ключ авторизації (TOTP)"
+  },
+  "verificationCodeTotp":{
+    "message":"Код підтвердження (TOTP)"
+  },
+  "copyVerificationCode":{
+    "message":"Копіювати код підтвердження"
+  },
+  "attachments":{
+    "message":"Вкладення"
+  },
+  "deleteAttachment":{
+    "message":"Видалити вкладення"
+  },
+  "deleteAttachmentConfirmation":{
+    "message":"Ви дійсно хочете видалити це вкладення?"
+  },
+  "deletedAttachment":{
+    "message":"Вкладення видалено"
+  },
+  "newAttachment":{
+    "message":"Додати нове вкладення"
+  },
+  "noAttachments":{
+    "message":"Немає вкладень."
+  },
+  "attachmentSaved":{
+    "message":"Вкладення збережено."
+  },
+  "file":{
+    "message":"Файл"
+  },
+  "selectFile":{
+    "message":"Оберіть файл."
+  },
+  "maxFileSize":{
+    "message":"Максимальний розмір файлу 100 Мб."
+  },
+  "featureUnavailable":{
+    "message":"Функція недоступна"
+  },
+  "updateKey":{
+    "message":"Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
+  },
+  "premiumMembership":{
+    "message":"Преміум статус"
+  },
+  "premiumManage":{
+    "message":"Керувати статусом"
+  },
+  "premiumManageAlert":{
+    "message":"Ви можете керувати своїм статусом у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  },
+  "premiumRefresh":{
+    "message":"Оновити статус"
+  },
+  "premiumNotCurrentMember":{
+    "message":"У вас зараз преміум статус."
+  },
+  "premiumSignUpAndGet":{
+    "message":"Підпишіться на преміум статус і отримайте:"
+  },
+  "ppremiumSignUpStorage":{
+    "message":"1 ГБ зашифрованого сховища для файлів."
+  },
+  "ppremiumSignUpTwoStep":{
+    "message":"Додаткові можливості двоетапної авторизації, наприклад, YubiKey, FIDO U2F та Duo."
+  },
+  "ppremiumSignUpTotp":{
+    "message":"Генератор коду авторизації TOTP (2FA) для входу в сховище."
+  },
+  "ppremiumSignUpSupport":{
+    "message":"Пріоритетну технічну підтримку."
+  },
+  "ppremiumSignUpFuture":{
+    "message":"Всі майбутні функції преміум статусу. Їх буде більше!"
+  },
+  "premiumPurchase":{
+    "message":"Придбати преміум"
+  },
+  "premiumPurchaseAlert":{
+    "message":"Ви можете придбати преміум статус у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  },
+  "premiumCurrentMember":{
+    "message":"У вас преміум статус!"
+  },
+  "premiumCurrentMemberThanks":{
+    "message":"Дякуємо за підтримку bitwarden."
+  },
+  "premiumPrice":{
+    "message":"Всього лише %price% \/ за рік!"
+  },
+  "refreshComplete":{
+    "message":"Оновлення завершено"
+  },
+  "disableAutoTotpCopy":{
+    "message":"Вимкнути автоматичне копіювання TOTP"
+  },
+  "disableAutoTotpCopyDesc":{
+    "message":"Якщо ваш запис має вкладений ключ авторизації, код підтвердження TOTP автоматично копіюється до буфера обміну щоразу при автозаповненні."
+  },
+  "premiumRequired":{
+    "message":"Необхідний преміум статус"
+  },
+  "premiumRequiredDesc":{
+    "message":"Для використання цієї функції необхідний преміум статус."
+  },
+  "enterVerificationCodeApp":{
+    "message":"Введіть 6-значних код підтвердження з програми авторизації."
+  },
+  "enterVerificationCodeEmail":{
+    "message":"Введіть 6-значний код підтвердження, надісланий на"
+  },
+  "rememberMe":{
+    "message":"Запам'ятати мене"
+  },
+  "sendVerificationCodeEmailAgain":{
+    "message":"Надіслати код підтвердження ще раз"
+  },
+  "useAnotherTwoStepMethod":{
+    "message":"Використати інший спосіб двоетапної авторизації"
+  },
+  "insertYubiKey":{
+    "message":"Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
+  },
+  "insertU2f":{
+    "message":"Вставте свій ключ безпеки в USB порт комп'ютера. Якщо в нього є кнопка, натисніть її."
+  },
+  "loginUnavailable":{
+    "message":"Вхід недоступний"
+  },
+  "noTwoStepProviders":{
+    "message":"Для цього облікового запису увімкнено двоетапну авторизацію. Однак, жоден з налаштованих провайдерів двоетапної авторизації не підтримується цим веб-браузером."
+  },
+  "noTwoStepProviders2":{
+    "message":"Будь ласка, скористайтеся підтримуваним веб-браузером (наприклад, Chrome) та\/або іншими провайдерами, що краще підтримуються веб-браузерами (наприклад, програма авторизації)."
+  },
+  "twoStepOptions":{
+    "message":"Налаштування двоетапної авторизації"
+  },
+  "recoveryCodeDesc":{
+    "message":"Втратили доступ до всіх провайдерів двоетапної авторизації? Скористайтеся кодом відновлення, щоб вимкнути двоетапну авторизацію для свого облікового запису."
+  },
+  "recoveryCodeTitle":{
+    "message":"Код відновлення"
+  },
+  "authenticatorAppTitle":{
+    "message":"Програма авторизації"
+  },
+  "authenticatorAppDesc":{
+    "message":"Використовуйте програму авторизації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
+    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle":{
+    "message":"Ключ безпеки YubiKey OTP"
+  },
+  "yubiKeyDesc":{
+    "message":"Використовуйте YubiKey для доступу до сховища. Працює з YubiKey 4, 4 Nano, 4C та пристроями NEO."
+  },
+  "duoDesc":{
+    "message":"Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
+    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc":{
+    "message":"Використовуйте будь-який ключ безпеки FIDO U2F для доступу до сховища."
+  },
+  "u2fTitle":{
+    "message":"Ключ безпеки FIDO U2F"
+  },
+  "emailTitle":{
+    "message":"Електронна пошта"
+  },
+  "emailDesc":{
+    "message":"Коди підтвердження будуть надсилатися на вашу пошту."
+  },
+  "selfHostedEnvironment":{
+    "message":"Self-hosted Environment"
+  },
+  "selfHostedEnvironmentFooter":{
+    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+  },
+  "customEnvironment":{
+    "message":"Custom Environment"
+  },
+  "customEnvironmentFooter":{
+    "message":"For advanced users. You can specify the base URL of each service independently."
+  },
+  "baseUrl":{
+    "message":"Server URL"
+  },
+  "apiUrl":{
+    "message":"API Server URL"
+  },
+  "webVaultUrl":{
+    "message":"Web Vault Server URL"
+  },
+  "identityUrl":{
+    "message":"Identity Server URL"
+  },
+  "environmentSaved":{
+    "message":"The environment URLs have been saved."
+  },
+  "enableAutoFillOnPageLoad":{
+    "message":"Enable Auto-fill On Page Load"
+  },
+  "enableAutoFillOnPageLoadDesc":{
+    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+  },
+  "experimentalFeature":{
+    "message":"This is currently an experimental feature. Use at your own risk."
+  }
+}
