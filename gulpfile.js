@@ -10,8 +10,10 @@
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     googleWebFonts = require('gulp-google-webfonts'),
-    webpack = require('webpack-stream')
-    jeditor = require("gulp-json-editor");
+    webpack = require('webpack-stream'),
+    jeditor = require("gulp-json-editor"),
+    gulpUtil = require('gulp-util'),
+    child = require('child_process');
 
 var paths = {};
 paths.dist = './dist/';
@@ -254,6 +256,23 @@ gulp.task('dist-edge', ['dist:edge'], function (cb) {
 gulp.task('webfonts', function () {
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({}))
-        .pipe(gulp.dest(paths.webfontsDir))
-        ;
+        .pipe(gulp.dest(paths.webfontsDir));
+});
+
+function npmCommand(commands, cb) {
+    var npmLogger = (buffer) => {
+        buffer.toString()
+            .split(/\n/)
+            .forEach((message) => gulpUtil.log(message));
+    };
+    var npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+    var npmChild = child.spawn(npmCommand, commands);
+    npmChild.stdout.on('data', npmLogger);
+    npmChild.stderr.on('data', npmLogger);
+    npmChild.stderr.on('close', cb);
+    return npmChild;
+}
+
+gulp.task('webext:firefox', function (cb) {
+    return npmCommand(['run', 'start:firefox'], cb);
 });

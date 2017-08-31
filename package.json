@@ -1,6 +1,9 @@
 {
   "name": "bitwarden",
   "version": "0.0.0",
+  "scripts": {
+    "start:firefox": "web-ext run --source-dir ./dist/"
+  },
   "devDependencies": {
     "jquery": "2.2.4",
     "bootstrap": "3.3.7",
@@ -34,6 +37,9 @@
     "node-forge": "0.7.1",
     "webpack-stream": "4.0.0",
     "gulp-json-editor": "2.2.1",
-    "papaparse": "4.3.5"
+    "papaparse": "4.3.5",
+    "web-ext": "2.0.0",
+    "child_process": "1.0.2",
+    "gulp-util": "3.0.8"
   }
 }
