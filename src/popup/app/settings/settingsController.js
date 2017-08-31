@@ -4,12 +4,17 @@
     .controller('settingsController', function ($scope, $state, SweetAlert, utilsService, $analytics,
         i18nService, constantsService, cryptoService, lockService) {
         utilsService.initListSectionItemListeners($(document), angular);
+        $scope.showOnLocked = !utilsService.isFirefox() && !utilsService.isEdge();
         $scope.lockOption = '';
         $scope.i18n = i18nService;
 
         chrome.storage.local.get(constantsService.lockOptionKey, function (obj) {
             if (obj && (obj[constantsService.lockOptionKey] || obj[constantsService.lockOptionKey] === 0)) {
-                $scope.lockOption = obj[constantsService.lockOptionKey].toString();
+                var option = obj[constantsService.lockOptionKey].toString();
+                if (option === '-2' && !$scope.showOnLocked) {
+                    option = '-1';
+                }
+                $scope.lockOption = option;
             }
             else {
                 $scope.lockOption = '';

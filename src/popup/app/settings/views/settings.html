@@ -18,7 +18,7 @@
                         <option value="30">{{i18n.thirtyMinutes}}</option>
                         <option value="60">{{i18n.oneHour}}</option>
                         <option value="240">{{i18n.fourHours}}</option>
-                        <option value="-2">{{i18n.onLocked}}</option>
+                        <option value="-2" ng-if="showOnLocked">{{i18n.onLocked}}</option>
                         <option value="-1">{{i18n.onRestart}}</option>
                         <option value="">{{i18n.never}}</option>
                     </select>
