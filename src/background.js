@@ -418,6 +418,9 @@ function collectPageDetailsForContentScript(tab, sender) {
     }
 
     chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: sender }, function () {
+        if (chrome.runtime.lastError) {
+            return;
+        }
     });
 }
 
