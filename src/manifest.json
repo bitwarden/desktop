@@ -79,13 +79,13 @@
       "suggested_key": {
         "default": "Ctrl+Shift+L"
       },
-      "description": "Auto-fill the last used login for the current website."
+      "description": "__MSG_commandAutofillDesc__"
     },
     "generate_password": {
       "suggested_key": {
         "default": "Ctrl+Shift+Period"
       },
-      "description": "Generate and copy a new random password to the clipboard."
+      "description": "__MSG_commandGeneratePasswordDesc__"
     },
     "_execute_browser_action": {
       "suggested_key": {
