@@ -31,6 +31,17 @@ if (chrome.commands) {
                 bg_utilsService.copyToClipboard(password);
             });
         }
+        else if (command === 'autofill_login') {
+            chrome.tabs.query({ active: true }, function (tabs) {
+                if (tabs.length) {
+                    ga('send', {
+                        hitType: 'event',
+                        eventAction: 'Autofilled From Command'
+                    });
+                    collectPageDetailsForContentScript(tabs[0], 'autofill_cmd');
+                }
+            });
+        }
     });
 }
 
@@ -82,7 +93,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             var forms = bg_autofillService.getFormsWithPasswordFields(msg.details);
             messageTab(msg.tab.id, 'pageDetails', { details: msg.details, forms: forms });
         }
-        else if (msg.sender === 'autofiller') {
+        else if (msg.sender === 'autofiller' || msg.sender === 'autofill_cmd') {
             bg_autofillService.doAutoFillForLastUsedLogin([{
                 frameId: sender.frameId, tab: msg.tab, details: msg.details
             }]);

@@ -75,15 +75,22 @@
     "https://*/*"
   ],
   "commands": {
+    "autofill_login": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      },
+      "description": "Auto-fill the last used login for the current website."
+    },
     "generate_password": {
       "suggested_key": {
-        "default": "Ctrl+Shift+O"
+        "default": "Ctrl+Shift+Period"
       },
       "description": "Generate and copy a new random password to the clipboard."
     },
     "_execute_browser_action": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Y"
+        "default": "Ctrl+Shift+Y",
+        "linux": "Ctrl+Shift+U"
       }
     }
   },
