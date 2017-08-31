@@ -688,14 +688,14 @@
     "message":"YubiKey OTP 安全钥匙"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"使用 YubiKey 来访问您的账户。可配合 YubiKey 4、4 Nano、4C 和 NEO 设备。"
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全钥匙验证身份。",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"使用任何 FIDO U2F 安全钥匙来访问您的账户。"
   },
   "u2fTitle":{
     "message":"FIDO U2F 安全钥匙"
@@ -707,39 +707,45 @@
     "message":"验证代码已发到您的邮箱。"
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"自我托管环境"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"指定自己配置、托管的 bitwarden 环境的基础 URL。"
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"自定义环境"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"适用于高级用户。你可以分别指定各个服务的基础 URL。"
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"服务器 URL"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"API 服务器 URL"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"Web 存储库服务器 URL"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"身份服务器 URL"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"各环境 URL 已保存。"
   },
   "enableAutoFillOnPageLoad":{
     "message":"Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"如果网页加载时检测到登录表单，自动进行表单填写。"
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"目前这是一项实验功能。使用需自担风险。"
+  },
+  "commandAutofillDesc":{
+    "message":"Auto-fill the last used login for the current website."
+  },
+  "commandGeneratePasswordDesc":{
+    "message":"Generate and copy a new random password to the clipboard."
   }
 }

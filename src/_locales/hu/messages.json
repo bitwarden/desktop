@@ -741,5 +741,11 @@
   },
   "experimentalFeature":{
     "message":"This is currently an experimental feature. Use at your own risk."
+  },
+  "commandAutofillDesc":{
+    "message":"Auto-fill the last used login for the current website."
+  },
+  "commandGeneratePasswordDesc":{
+    "message":"Generate and copy a new random password to the clipboard."
   }
 }

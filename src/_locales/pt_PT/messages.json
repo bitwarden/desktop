@@ -707,39 +707,45 @@
     "message":"Os códigos de verificação vão ser enviados para si."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Ambiente auto-hospedado"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Especifique o URL de base da sua instalação local do bitwarden."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Ambiente personalizado"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Para utilizadores avançados. Pode especificar o URL de base de cada serviço independentemente."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"URL do servidor"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"URL do servidor da API"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"URL do servidor do cofre web"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"URL do servidor de identidade"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"Os URLs de ambiente foram guardados."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Ativar auto-preenchimento no carregar da página"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Se um formulário de início de sessão foram detetado, realizar automaticamente um auto-preenchimento quando a página web carregar."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Esta é atualmente uma funcionalidade experimental. Utilize por sua conta e risco."
+  },
+  "commandAutofillDesc":{
+    "message":"Auto-fill the last used login for the current website."
+  },
+  "commandGeneratePasswordDesc":{
+    "message":"Generate and copy a new random password to the clipboard."
   }
 }

@@ -707,39 +707,45 @@
     "message":"Verifikačné kódy vám budú zaslané emailom."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Vlastné prostredie hostu"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Špecifikujte základnú URL hosta vašej bitwarden inštalácie."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Vlastné prostredie"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Pre pokročilých používateľov. Možete špecifikovať základnú URL pre každú službu nezávisle."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"URL servera"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"URL API servera"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"URL servera webového trezora"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"URL servera identít"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"URL prostredia boli uložené."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Povoliť automatické vypĺňanie pri načítaní stránky"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Ak je detekovaný prihlasovací formulár, automaticky vykonať vypĺňanie keď sa stránka načíta."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
+  },
+  "commandAutofillDesc":{
+    "message":"Auto-fill the last used login for the current website."
+  },
+  "commandGeneratePasswordDesc":{
+    "message":"Generate and copy a new random password to the clipboard."
   }
 }

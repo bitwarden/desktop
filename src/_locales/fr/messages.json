@@ -734,12 +734,18 @@
     "message":"Les URLs d'environnement ont été enregistrées."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Activer l’auto-complétion au chargement de la page"
   },
   "enableAutoFillOnPageLoadDesc":{
     "message":"Si un formulaire de connexion est détecté, compléter automatiquement les champs au chargement de la page web."
   },
   "experimentalFeature":{
     "message":"Ceci est actuellement une fonctionnalité expérimentale. À utiliser avec prudence."
+  },
+  "commandAutofillDesc":{
+    "message":"Auto-fill the last used login for the current website."
+  },
+  "commandGeneratePasswordDesc":{
+    "message":"Generate and copy a new random password to the clipboard."
   }
 }
