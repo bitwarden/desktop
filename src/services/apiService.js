@@ -516,47 +516,17 @@ function initApiService() {
 
     function handleTokenState(self) {
         var deferred = Q.defer();
-        self.tokenService.getAuthBearer(function (authBearer) {
-            self.tokenService.getToken(function (accessToken) {
-                // handle transferring from old auth bearer
-                if (authBearer && !accessToken) {
-                    self.appIdService.getAppId(function (appId) {
-                        postConnectToken(self, {
-                            grant_type: 'password',
-                            oldAuthBearer: authBearer,
-                            username: 'abcdefgh', // has to be something
-                            password: 'abcdefgh', // has to be something
-                            scope: 'api offline_access',
-                            client_id: 'browser',
-                            deviceIdentifier: appId,
-                            deviceType: self.utilsService.getDeviceType(),
-                            deviceName: self.utilsService.getBrowser()
-                        }, function (token) {
-                            self.tokenService.clearAuthBearer(function () {
-                                self.tokenService.setTokens(token.accessToken, token.refreshToken, function () {
-                                    resolveTokenQs(token.accessToken, self, deferred);
-                                });
-                            });
-                        }, function (jqXHR) {
-                            deferred.reject(jqXHR);
-                        });
-                    });
-                } // handle token refresh
-                else if (self.tokenService.tokenNeedsRefresh()) {
-                    refreshToken(self, function (accessToken) {
-                        resolveTokenQs(accessToken, self, deferred);
-                    }, function (err) {
-                        deferred.reject(err);
-                    });
-                }
-                else {
-                    if (authBearer) {
-                        self.tokenService.clearAuthBearer(function () { });
-                    }
-
+        self.tokenService.getToken(function (accessToken) {
+            if (self.tokenService.tokenNeedsRefresh()) {
+                refreshToken(self, function (accessToken) {
                     resolveTokenQs(accessToken, self, deferred);
-                }
-            });
+                }, function (err) {
+                    deferred.reject(err);
+                });
+            }
+            else {
+                resolveTokenQs(accessToken, self, deferred);
+            }
         });
 
         return deferred.promise;

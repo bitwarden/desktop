@@ -28,23 +28,23 @@ function initSyncService() {
                 return;
             }
 
-            self.userService.getUserId(function (userId) {
-                var now = new Date();
-                needsSyncing(self, forceSync, function (needsSync, skipped) {
-                    if (skipped) {
+            var now = new Date();
+            needsSyncing(self, forceSync, function (needsSync, skipped) {
+                if (skipped) {
+                    self.syncCompleted(false);
+                    callback(false);
+                    return;
+                }
+
+                if (!needsSync) {
+                    self.setLastSync(now, function () {
                         self.syncCompleted(false);
                         callback(false);
-                        return;
-                    }
+                    });
+                    return;
+                }
 
-                    if (!needsSync) {
-                        self.setLastSync(now, function () {
-                            self.syncCompleted(false);
-                            callback(false);
-                        });
-                        return;
-                    }
-
+                self.userService.getUserId(function (userId) {
                     syncProfile(self).then(function () {
                         return syncFolders(self, userId);
                     }).then(function () {
@@ -75,18 +75,18 @@ function initSyncService() {
             return;
         }
 
-        self.getLastSync(function (lastSync) {
-            self.apiService.getAccountRevisionDate(function (response) {
-                var accountRevisionDate = new Date(response);
+        self.apiService.getAccountRevisionDate(function (response) {
+            var accountRevisionDate = new Date(response);
+            self.getLastSync(function (lastSync) {
                 if (lastSync && accountRevisionDate <= lastSync) {
                     callback(false, false);
                     return;
                 }
 
                 callback(true, false);
-            }, function () {
-                callback(false, true);
             });
+        }, function () {
+            callback(false, true);
         });
     }
 

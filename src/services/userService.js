@@ -130,16 +130,14 @@ function initUserService() {
 
         var self = this;
         self.tokenService.getToken(function (token) {
-            self.tokenService.getAuthBearer(function (authBearer) {
-                if (!token && !authBearer) {
-                    callback(false);
-                }
-                else {
-                    self.getUserId(function (userId) {
-                        callback(userId !== null);
-                    });
-                }
-            });
+            if (!token) {
+                callback(false);
+            }
+            else {
+                self.getUserId(function (userId) {
+                    callback(userId !== null);
+                });
+            }
         });
     };
 }

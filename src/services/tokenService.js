@@ -4,7 +4,6 @@
 
 function initTokenService() {
     var _token,
-        _authBearer,
         _decodedToken,
         _refreshToken;
 
@@ -50,24 +49,6 @@ function initTokenService() {
             }
 
             return callback(_token);
-        });
-    };
-
-    TokenService.prototype.getAuthBearer = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        if (_authBearer) {
-            return callback(_authBearer);
-        }
-
-        chrome.storage.local.get('authBearer', function (obj) {
-            if (obj && obj.authBearer) {
-                _authBearer = obj.authBearer;
-            }
-
-            return callback(_authBearer);
         });
     };
 
@@ -142,28 +123,15 @@ function initTokenService() {
         });
     };
 
-    TokenService.prototype.clearAuthBearer = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        _authBearer = null;
-        chrome.storage.local.remove('authBearer', function () {
-            callback();
-        });
-    };
-
     TokenService.prototype.clearToken = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
         }
 
-        _token = _decodedToken = _refreshToken = _authBearer = null;
-        chrome.storage.local.remove('authBearer', function () {
-            chrome.storage.local.remove('accessToken', function () {
-                chrome.storage.local.remove('refreshToken', function () {
-                    callback();
-                });
+        _token = _decodedToken = _refreshToken = null;
+        chrome.storage.local.remove('accessToken', function () {
+            chrome.storage.local.remove('refreshToken', function () {
+                callback();
             });
         });
     };
