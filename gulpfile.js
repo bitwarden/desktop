@@ -13,7 +13,8 @@
     webpack = require('webpack-stream'),
     jeditor = require("gulp-json-editor"),
     gulpUtil = require('gulp-util'),
-    child = require('child_process');
+    child = require('child_process'),
+    zip = require('gulp-zip');
 
 var paths = {};
 paths.dist = './dist/';
@@ -239,6 +240,7 @@ gulp.task('dist-firefox', ['dist'], function (cb) {
             return manifest;
         }))
         .pipe(gulp.dest(paths.dist));
+    return zipDist('dist-firefox');
 });
 
 gulp.task('dist-edge', ['dist:edge'], function (cb) {
@@ -251,7 +253,18 @@ gulp.task('dist-edge', ['dist:edge'], function (cb) {
             return manifest;
         }))
         .pipe(gulp.dest(paths.dist));
+    return zipDist('dist-edge');
 });
+
+gulp.task('dist-other', ['dist'], function (cb) {
+    return zipDist('dist-other');
+});
+
+function zipDist(fileName) {
+    return gulp.src(paths.dist + '**/*')
+        .pipe(zip(fileName + '.zip'))
+        .pipe(gulp.dest(paths.dist));
+}
 
 gulp.task('webfonts', function () {
     return gulp.src('./webfonts.list')

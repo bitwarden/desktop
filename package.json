@@ -40,6 +40,7 @@
     "papaparse": "4.3.5",
     "web-ext": "2.0.0",
     "child_process": "1.0.2",
-    "gulp-util": "3.0.8"
+    "gulp-util": "3.0.8",
+    "gulp-zip": "4.0.0"
   }
 }
