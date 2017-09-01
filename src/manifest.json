@@ -83,7 +83,7 @@
     },
     "generate_password": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Period"
+        "default": "Ctrl+Shift+E"
       },
       "description": "__MSG_commandGeneratePasswordDesc__"
     },
