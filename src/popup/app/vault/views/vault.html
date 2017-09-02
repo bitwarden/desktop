@@ -2,8 +2,8 @@
     <div class="left">
         <a href="" ng-click="expandVault()"><i class="fa fa-external-link fa-rotate-270 fa-lg"></i></a>
     </div>
-    <div class="search">
-        <input type="search" placeholder="{{i18n.searchVault}}" ng-model="searchText" id="search" ng-disabled="disableSearch" />
+    <div class="search" ng-style="{'visibility': disableSearch ? 'hidden' : 'visible'}">
+        <input type="search" placeholder="{{i18n.searchVault}}" ng-model="searchText" id="search" />
         <i class="fa fa-search"></i>
     </div>
     <div class="right">

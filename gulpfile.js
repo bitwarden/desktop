@@ -266,9 +266,17 @@ gulp.task('dist-edge', ['dist'], function (cb) {
             })
         });
     }).then(function () {
+        // move custom angular build to dist libs
+        return new Promise(function (resolve, reject) {
+            gulp.src('src/edge/angular.js')
+                .on('error', reject)
+                .pipe(gulp.dest(paths.dist + 'Extension/lib/angular'))
+                .on('end', resolve);
+        });
+    }).then(function () {
         // move src edge folder to dist
         return new Promise(function (resolve, reject) {
-            gulp.src('src/edge/**/*')
+            gulp.src(['src/edge/**/*', '!src/edge/angular.js'])
                 .on('error', reject)
                 .pipe(gulp.dest(paths.dist + 'Extension/edge'))
                 .on('end', resolve);
