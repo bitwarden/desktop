@@ -206,21 +206,6 @@ gulp.task('dist:move', function () {
     return merge(tasks);
 });
 
-gulp.task('dist:edge', ['dist'], function () {
-    var moves = [
-        {
-            src: ['src/edge/**/*'],
-            dest: paths.dist + 'edge'
-        }
-    ];
-
-    var tasks = moves.map(function (move) {
-        return gulp.src(move.src).pipe(gulp.dest(move.dest));
-    });
-
-    return merge(tasks);
-});
-
 gulp.task('dist', ['build'], function (cb) {
     return runSequence(
         'dist:clean',
@@ -243,17 +228,73 @@ gulp.task('dist-firefox', ['dist'], function (cb) {
     return zipDist('dist-firefox');
 });
 
-gulp.task('dist-edge', ['dist:edge'], function (cb) {
-    gulp.src(paths.dist + 'manifest.json')
-        .pipe(jeditor(function (manifest) {
-            manifest['-ms-preload'] = {
-                backgroundScript: 'edge/backgroundScriptsAPIBridge.js',
-                contentScript: 'edge/contentScriptsAPIBridge.js'
-            };
-            return manifest;
-        }))
-        .pipe(gulp.dest(paths.dist));
-    return zipDist('dist-edge');
+gulp.task('dist-edge', ['dist'], function (cb) {
+    // move dist to temp extension folder
+    new Promise(function (resolve, reject) {
+        gulp.src(paths.dist + '**/*')
+            .on('error', reject)
+            .pipe(gulp.dest('temp/Extension/'))
+            .on('end', resolve);
+    }).then(function () {
+        // move windows store files to temp folder
+        return new Promise(function (resolve, reject) {
+            gulp.src('store/windows/**/*')
+                .on('error', reject)
+                .pipe(gulp.dest('temp/'))
+                .on('end', resolve);
+        });
+    }).then(function () {
+        // delete dist folder
+        return new Promise(function (resolve, reject) {
+            rimraf(paths.dist, function () {
+                resolve();
+            })
+        });
+    }).then(function () {
+        // move temp back to dist
+        return new Promise(function (resolve, reject) {
+            gulp.src('temp/**/*')
+                .on('error', reject)
+                .pipe(gulp.dest(paths.dist))
+                .on('end', resolve);
+        });
+    }).then(function () {
+        // delete temp folder
+        return new Promise(function (resolve, reject) {
+            rimraf('temp', function () {
+                resolve();
+            })
+        });
+    }).then(function () {
+        // move src edge folder to dist
+        return new Promise(function (resolve, reject) {
+            gulp.src('src/edge/**/*')
+                .on('error', reject)
+                .pipe(gulp.dest(paths.dist + 'Extension/edge'))
+                .on('end', resolve);
+        });
+    }).then(function () {
+        // modify manifest with edge preload stuff
+        return new Promise(function (resolve, reject) {
+            gulp.src(paths.dist + 'Extension/manifest.json')
+                .pipe(jeditor(function (manifest) {
+                    manifest['-ms-preload'] = {
+                        backgroundScript: 'edge/backgroundScriptsAPIBridge.js',
+                        contentScript: 'edge/contentScriptsAPIBridge.js'
+                    };
+                    return manifest;
+                }))
+                .on('error', reject)
+                .pipe(gulp.dest(paths.dist + 'Extension'))
+                .on('end', resolve);
+        });
+    }).then(function () {
+        // makeappx.exe must be in your system's path already
+        child.spawn('makeappx.exe', ['pack', '/h', 'SHA256', '/d', paths.dist, '/p', paths.dist + 'bitwarden.appx']);
+        cb();
+    }, function () {
+        cb();
+    });
 });
 
 gulp.task('dist-other', ['dist'], function (cb) {
