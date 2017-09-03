@@ -11,20 +11,26 @@ function ApiService(tokenService, appIdService, utilsService, constantsService, 
 
 function initApiService() {
     ApiService.prototype.setUrls = function () {
-        var storedBaseUrl = window.localStorage.getItem(this.constantsService.baseUrlKey);
+        try {
+            var storedBaseUrl = window.localStorage.getItem(this.constantsService.baseUrlKey);
 
-        if (storedBaseUrl) {
-            this.baseUrl = storedBaseUrl + '/api';
-            this.identityBaseUrl = storedBaseUrl + '/identity';
-            return;
+            if (storedBaseUrl) {
+                this.baseUrl = storedBaseUrl + '/api';
+                this.identityBaseUrl = storedBaseUrl + '/identity';
+                return;
+            }
+
+            var storedApiUrl = window.localStorage.getItem(this.constantsService.apiUrlKey);
+            var storedIdentityUrl = window.localStorage.getItem(this.constantsService.identityUrlKey);
+            if (storedApiUrl && storedIdentityUrl) {
+                this.baseUrl = storedApiUrl;
+                this.identityBaseUrl = storedIdentityUrl;
+                return;
+            }
         }
-
-        var storedApiUrl = window.localStorage.getItem(this.constantsService.apiUrlKey);
-        var storedIdentityUrl = window.localStorage.getItem(this.constantsService.identityUrlKey);
-        if (storedApiUrl && storedIdentityUrl) {
-            this.baseUrl = storedApiUrl;
-            this.identityBaseUrl = storedIdentityUrl;
-            return;
+        catch (e) {
+            console.log('Unable to set custom environment URLs:');
+            console.log(e);
         }
 
         // Desktop
