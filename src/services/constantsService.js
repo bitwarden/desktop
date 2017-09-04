@@ -1,9 +1,6 @@
 function ConstantsService(i18nService) {
     return {
-        baseUrlKey: 'baseUrl',
-        webVaultUrlKey: 'webVaultUrl',
-        apiUrlKey: 'apiUrl',
-        identityUrlKey: 'identityUrl',
+        environmentUrlsKey: 'environmentUrls',
         disableGaKey: 'disableGa',
         disableAddLoginNotificationKey: 'disableAddLoginNotification',
         disableContextMenuItemKey: 'disableContextMenuItem',

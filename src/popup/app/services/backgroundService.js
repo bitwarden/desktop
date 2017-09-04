@@ -48,4 +48,7 @@
     })
     .factory('totpService', function () {
         return chrome.extension.getBackgroundPage().bg_totpService;
+    })
+    .factory('environmentService', function () {
+        return chrome.extension.getBackgroundPage().bg_environmentService;
     });

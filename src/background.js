@@ -1,5 +1,11 @@
-var isBackground = true;
+var isBackground = true,
+    loginToAutoFill = null,
+    pageDetailsToAutoFill = [],
+    autofillTimeout = null,
+    menuOptionsLoaded = [];
+
 var bg_loginsToAdd = [];
+
 var bg_utilsService = new UtilsService();
 var bg_i18nService = new i18nService(bg_utilsService);
 var bg_constantsService = new ConstantsService(bg_i18nService);
@@ -7,6 +13,7 @@ var bg_cryptoService = new CryptoService(bg_constantsService);
 var bg_tokenService = new TokenService();
 var bg_appIdService = new AppIdService();
 var bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
+var bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
 var bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService);
 var bg_settingsService = new SettingsService(bg_userService);
 var bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService);
@@ -44,11 +51,6 @@ if (chrome.commands) {
         }
     });
 }
-
-var loginToAutoFill = null,
-    pageDetailsToAutoFill = [],
-    autofillTimeout = null,
-    menuOptionsLoaded = [];
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
@@ -108,28 +110,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     }
 });
 
-setIcon();
-function setIcon() {
-    bg_userService.isAuthenticated(function (isAuthenticated) {
-        bg_cryptoService.getKey().then(function (key) {
-            var suffix = '';
-            if (!isAuthenticated) {
-                suffix = '_gray';
-            }
-            else if (!key) {
-                suffix = '_locked';
-            }
-
-            chrome.browserAction.setIcon({
-                path: {
-                    '19': 'images/icon19' + suffix + '.png',
-                    '38': 'images/icon38' + suffix + '.png',
-                }
-            });
-        });
-    });
-}
-
 if (chrome.runtime.onInstalled) {
     chrome.runtime.onInstalled.addListener(function (details) {
         ga('send', {
@@ -142,6 +122,89 @@ if (chrome.runtime.onInstalled) {
         }
     });
 }
+
+chrome.tabs.onActivated.addListener(function (activeInfo) {
+    refreshBadgeAndMenu();
+});
+
+var onReplacedRan = false;
+chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
+    if (onReplacedRan) {
+        return;
+    }
+    onReplacedRan = true;
+    checkbg_loginsToAdd();
+    refreshBadgeAndMenu();
+});
+
+var onUpdatedRan = false;
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    if (onUpdatedRan) {
+        return;
+    }
+    onUpdatedRan = true;
+    checkbg_loginsToAdd();
+    refreshBadgeAndMenu();
+});
+
+chrome.windows.onFocusChanged.addListener(function (windowId) {
+    if (windowId === null || windowId < 0) {
+        return;
+    }
+
+    refreshBadgeAndMenu();
+});
+
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    if (info.menuItemId === 'generate-password') {
+        ga('send', {
+            hitType: 'event',
+            eventAction: 'Generated Password From Context Menu'
+        });
+        bg_passwordGenerationService.getOptions().then(function (options) {
+            var password = bg_passwordGenerationService.generatePassword(options);
+            bg_utilsService.copyToClipboard(password);
+        });
+    }
+    else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
+        info.parentMenuItemId === 'copy-password') {
+        var id = info.menuItemId.split('_')[1];
+        if (id === 'noop') {
+            return;
+        }
+
+        bg_loginService.getAllDecrypted().then(function (logins) {
+            for (var i = 0; i < logins.length; i++) {
+                if (logins[i].id === id) {
+                    if (info.parentMenuItemId === 'autofill') {
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'Autofilled From Context Menu'
+                        });
+                        startAutofillPage(logins[i]);
+                    }
+                    else if (info.parentMenuItemId === 'copy-username') {
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'Copied Username From Context Menu'
+                        });
+                        bg_utilsService.copyToClipboard(logins[i].username);
+                    }
+                    else if (info.parentMenuItemId === 'copy-password') {
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'Copied Password From Context Menu'
+                        });
+                        bg_utilsService.copyToClipboard(logins[i].password);
+                    }
+                    return;
+                }
+            }
+        }, function () {
+
+        });
+    }
+});
 
 var buildingContextMenu = false;
 function buildContextMenu(callback) {
@@ -211,37 +274,26 @@ function buildContextMenu(callback) {
     });
 }
 
-chrome.tabs.onActivated.addListener(function (activeInfo) {
-    refreshBadgeAndMenu();
-});
+function setIcon() {
+    bg_userService.isAuthenticated(function (isAuthenticated) {
+        bg_cryptoService.getKey().then(function (key) {
+            var suffix = '';
+            if (!isAuthenticated) {
+                suffix = '_gray';
+            }
+            else if (!key) {
+                suffix = '_locked';
+            }
 
-var onReplacedRan = false;
-chrome.tabs.onReplaced.addListener(function (addedTabId, removedTabId) {
-    if (onReplacedRan) {
-        return;
-    }
-    onReplacedRan = true;
-    checkbg_loginsToAdd();
-    refreshBadgeAndMenu();
-});
-
-var onUpdatedRan = false;
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    if (onUpdatedRan) {
-        return;
-    }
-    onUpdatedRan = true;
-    checkbg_loginsToAdd();
-    refreshBadgeAndMenu();
-});
-
-chrome.windows.onFocusChanged.addListener(function (windowId) {
-    if (windowId === null || windowId < 0) {
-        return;
-    }
-
-    refreshBadgeAndMenu();
-});
+            chrome.browserAction.setIcon({
+                path: {
+                    '19': 'images/icon19' + suffix + '.png',
+                    '38': 'images/icon38' + suffix + '.png',
+                }
+            });
+        });
+    });
+}
 
 function refreshBadgeAndMenu() {
     chrome.tabs.query({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }, function (tabs) {
@@ -327,57 +379,6 @@ function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
     });
 }
 
-chrome.contextMenus.onClicked.addListener(function (info, tab) {
-    if (info.menuItemId === 'generate-password') {
-        ga('send', {
-            hitType: 'event',
-            eventAction: 'Generated Password From Context Menu'
-        });
-        bg_passwordGenerationService.getOptions().then(function (options) {
-            var password = bg_passwordGenerationService.generatePassword(options);
-            bg_utilsService.copyToClipboard(password);
-        });
-    }
-    else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
-        info.parentMenuItemId === 'copy-password') {
-        var id = info.menuItemId.split('_')[1];
-        if (id === 'noop') {
-            return;
-        }
-
-        bg_loginService.getAllDecrypted().then(function (logins) {
-            for (var i = 0; i < logins.length; i++) {
-                if (logins[i].id === id) {
-                    if (info.parentMenuItemId === 'autofill') {
-                        ga('send', {
-                            hitType: 'event',
-                            eventAction: 'Autofilled From Context Menu'
-                        });
-                        startAutofillPage(logins[i]);
-                    }
-                    else if (info.parentMenuItemId === 'copy-username') {
-                        ga('send', {
-                            hitType: 'event',
-                            eventAction: 'Copied Username From Context Menu'
-                        });
-                        bg_utilsService.copyToClipboard(logins[i].username);
-                    }
-                    else if (info.parentMenuItemId === 'copy-password') {
-                        ga('send', {
-                            hitType: 'event',
-                            eventAction: 'Copied Password From Context Menu'
-                        });
-                        bg_utilsService.copyToClipboard(logins[i].password);
-                    }
-                    return;
-                }
-            }
-        }, function () {
-
-        });
-    }
-});
-
 function messageCurrentTab(command, data) {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         var tabId = null;
@@ -457,7 +458,6 @@ function addLogin(login, tab) {
     });
 }
 
-cleanupbg_loginsToAdd();
 function cleanupbg_loginsToAdd() {
     for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
         if (bg_loginsToAdd[i].expires < new Date()) {
@@ -679,9 +679,6 @@ function logout(expired, callback) {
     });
 }
 
-// Sync polling
-
-fullSync(true);
 function fullSync(override) {
     override = override || false;
     bg_syncService.getLastSync(function (lastSync) {
@@ -695,3 +692,11 @@ function fullSync(override) {
     });
     setTimeout(fullSync, 5 * 60 * 1000); // check every 5 minutes
 }
+
+// Bootstrap
+
+bg_environmentService.setUrlsFromStorage(function () {
+    setIcon();
+    cleanupbg_loginsToAdd();
+    fullSync(true);
+});
