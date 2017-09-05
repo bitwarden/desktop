@@ -25,7 +25,8 @@
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-lock fa-lg fa-fw"></i>
                         <label for="code" class="sr-only">{{i18n.verificationCode}}</label>
-                        <input id="code" type="text" name="Code" placeholder="{{i18n.verificationCode}}" ng-model="token">
+                        <input id="code" type="text" name="Code" placeholder="{{i18n.verificationCode}}" ng-model="token"
+                               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="remember">{{i18n.rememberMe}}</label>
