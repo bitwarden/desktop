@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class="content content-tabs">
-    <div ng-if="vaultLogins.length && vaultLogins.length >= 100 && vaultFolders.length && (!searchText || searchText.length < 2)">
+    <div ng-if="vaultLogins.length && (showOnlyFolderView || vaultLogins.length >= 100) && vaultFolders.length && (!searchText || searchText.length < 2)">
         <div class="list">
             <div class="list-section" style="padding-bottom: 0;">
                 <div class="list-section-header">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div ng-if="vaultLogins.length && (vaultLogins.length < 100 || (searchText && searchText.length >= 2))">
+    <div ng-if="vaultLogins.length && ((vaultLogins.length < 100 && !showOnlyFolderView) || (searchText && searchText.length >= 2))">
         <div class="list">
             <div class="list-grouped" ng-repeat="folder in vaultFolders | orderBy: folderSort track by $index"
                  ng-show="vaultFolderLogins.length">
