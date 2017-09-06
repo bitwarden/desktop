@@ -227,8 +227,8 @@ function buildContextMenu(callback) {
                 contexts: ['all'],
                 title: bg_i18nService.autoFill
             }, function () {
-                if (bg_utilsService.isFirefox()) {
-                    // Firefox does not support writing to the clipboard from background
+                if (bg_utilsService.isFirefox() || bg_utilsService.isEdge()) {
+                    // Firefox & Edge do not support writing to the clipboard from background
                     buildingContextMenu = false;
                     if (callback) {
                         callback();
