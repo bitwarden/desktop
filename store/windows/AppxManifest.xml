@@ -8,7 +8,7 @@
   <Identity
     Name="8bitSolutionsLLC.bitwarden-FreePasswordManager"
     Publisher="CN=14D52771-DE3C-4886-B8BF-825BA7690418"
-    Version="1.15.4.0"/>
+    Version="0.0.0.0"/>
 
   <Properties>
     <DisplayName>bitwarden - Free Password Manager</DisplayName>

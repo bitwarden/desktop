@@ -14,7 +14,9 @@
     jeditor = require("gulp-json-editor"),
     gulpUtil = require('gulp-util'),
     child = require('child_process'),
-    zip = require('gulp-zip');
+    zip = require('gulp-zip'),
+    manifest = require('./src/manifest.json'),
+    xmlpoke = require('gulp-xmlpoke');
 
 var paths = {};
 paths.dist = './dist/';
@@ -294,6 +296,23 @@ gulp.task('dist-edge', ['dist'], function (cb) {
                 }))
                 .on('error', reject)
                 .pipe(gulp.dest(paths.dist + 'Extension'))
+                .on('end', resolve);
+        });
+    }).then(function () {
+        // modify appxmanifest
+        return new Promise(function (resolve, reject) {
+            gulp.src(paths.dist + '/AppxManifest.xml')
+                .pipe(xmlpoke({
+                    replacements: [{
+                        xpath: '/p:Package/p:Identity/@Version',
+                        value: manifest.version + '.0',
+                        namespaces: {
+                            'p': 'http://schemas.microsoft.com/appx/manifest/foundation/windows10'
+                        }
+                    }]
+                }))
+                .on('error', reject)
+                .pipe(gulp.dest(paths.dist))
                 .on('end', resolve);
         });
     }).then(function () {
