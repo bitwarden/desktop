@@ -5,8 +5,16 @@
     // i18n
     $('#logo-link').attr('title', chrome.i18n.getMessage('appName'));
     closeButton.attr('title', chrome.i18n.getMessage('close'));
-    $('#template-add .add-save').text(chrome.i18n.getMessage('notificationAddSave'));
-    $('#template-add .never-save').text(chrome.i18n.getMessage('notificationNeverSave'));
+
+    if (window.innerWidth < 768) {
+        $('#template-add .add-save').text(chrome.i18n.getMessage('yes'));
+        $('#template-add .never-save').text(chrome.i18n.getMessage('never'));
+    }
+    else {
+        $('#template-add .add-save').text(chrome.i18n.getMessage('notificationAddSave'));
+        $('#template-add .never-save').text(chrome.i18n.getMessage('notificationNeverSave'));
+    }
+
     $('#template-add .add-text').text(chrome.i18n.getMessage('notificationAddDesc'));
 
     if (getQueryVariable('add')) {
@@ -40,6 +48,13 @@
         chrome.runtime.sendMessage({
             command: 'bgCloseNotificationBar'
         });
+    });
+
+    chrome.runtime.sendMessage({
+        command: 'bgAdjustNotificationBar',
+        data: {
+            height: document.body.scrollHeight
+        }
     });
 
     function getQueryVariable(variable) {

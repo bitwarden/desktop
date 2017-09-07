@@ -75,6 +75,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     else if (msg.command === 'bgCloseNotificationBar') {
         messageTab(sender.tab.id, 'closeNotificationBar');
     }
+    else if (msg.command === 'bgAdjustNotificationBar') {
+        messageTab(sender.tab.id, 'adjustNotificationBar', msg.data);
+    }
     else if (msg.command === 'bgCollectPageDetails') {
         collectPageDetailsForContentScript(sender.tab, msg.sender);
     }

@@ -79,3 +79,13 @@ button.link {
         background: none;
         text-decoration: underline;
     }
+
+.add-buttons {
+    width: 175px;
+}
+
+@media (min-width: 768px) {
+    .add-buttons {
+        width: 320px;
+    }
+}

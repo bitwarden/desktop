@@ -17,6 +17,11 @@
             sendResponse();
             return true;
         }
+        else if (msg.command === 'adjustNotificationBar') {
+            adjustBar(msg.data);
+            sendResponse();
+            return true;
+        }
         else if (msg.command === 'pageDetails') {
             pageDetails.push(msg.data.details);
             watchForms(msg.data.forms);
@@ -247,6 +252,22 @@
                 break;
             default:
                 break;
+        }
+    }
+
+    function adjustBar(data) {
+        if (data.height !== 42) {
+            var newHeight = data.height + 'px';
+            doHeightAdjustment('bit-notification-bar-iframe', newHeight);
+            doHeightAdjustment('bit-notification-bar', newHeight);
+            doHeightAdjustment('bit-notification-bar-spacer', newHeight);
+        }
+    }
+
+    function doHeightAdjustment(elId, heightStyle) {
+        var el = document.getElementById(elId);
+        if (el) {
+            el.style.height = heightStyle;
         }
     }
 });
