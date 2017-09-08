@@ -264,7 +264,7 @@ chrome.webRequest.onAuthRequired.addListener(function (details, callback) {
             callback();
         });
     }
-}, { urls: ['http://*/*'] }, [bg_utilsService.isFirefox() ? 'blocking' : 'asyncBlocking']);
+}, { urls: ['http://*/*', 'https://*/*'] }, [bg_utilsService.isFirefox() ? 'blocking' : 'asyncBlocking']);
 
 chrome.webRequest.onCompleted.addListener(completeAuthRequest, { urls: ['http://*/*'] });
 chrome.webRequest.onErrorOccurred.addListener(completeAuthRequest, { urls: ['http://*/*'] });
