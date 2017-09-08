@@ -83,7 +83,7 @@ function initApiService() {
     };
 
     ApiService.prototype.refreshIdentityToken = function (success, error) {
-        refreshToken(this, function () {
+        doRefreshToken(this, function () {
             success();
         }, function (jqXHR) {
             if (jqXHR) {
@@ -530,52 +530,59 @@ function initApiService() {
 
             if (!self.tokenService.tokenNeedsRefresh()) {
                 log('Token doesn\'t need refreshing');
-                resolveTokenQs(accessToken, self, deferred);
+                resolveTokenQs(accessToken, deferred);
                 return;
             }
 
             log('Token needs refresh');
 
-            self.tokenService.getRefreshToken(function (refreshToken) {
-                if (!refreshToken || refreshToken === '') {
-                    log('No existing refresh token.');
-                    error();
-                    return;
-                }
-
-                log('Got existing refresh token. Do refresh call.');
-
-                $.ajax({
-                    type: 'POST',
-                    url: self.identityBaseUrl + '/connect/token',
-                    data: {
-                        grant_type: 'refresh_token',
-                        client_id: 'browser',
-                        refresh_token: refreshToken
-                    },
-                    contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-                    dataType: 'json',
-                    success: function (response) {
-                        log('Successfully refreshed.');
-
-                        var tokenResponse = new IdentityTokenResponse(response);
-                        self.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken, function () {
-                            log('New token set.');
-                            resolveTokenQs(tokenResponse.accessToken, self, deferred);
-                        });
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        log('Error refreshing.');
-                        deferred.reject(jqXHR);
-                    }
+            doRefreshToken(self, function (response) {
+                var tokenResponse = new IdentityTokenResponse(response);
+                self.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken, function () {
+                    log('New token set.');
+                    resolveTokenQs(tokenResponse.accessToken, deferred);
                 });
+            }, function (jqXHR) {
+                deferred.reject(jqXHR);
             });
         });
 
         return deferred.promise;
     }
 
-    function resolveTokenQs(token, self, deferred) {
+    function doRefreshToken(self, success, error) {
+        self.tokenService.getRefreshToken(function (refreshToken) {
+            if (!refreshToken || refreshToken === '') {
+                log('No existing refresh token.');
+                error();
+                return;
+            }
+
+            log('Got existing refresh token. Do refresh call.');
+
+            $.ajax({
+                type: 'POST',
+                url: self.identityBaseUrl + '/connect/token',
+                data: {
+                    grant_type: 'refresh_token',
+                    client_id: 'browser',
+                    refresh_token: refreshToken
+                },
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                dataType: 'json',
+                success: function (response) {
+                    log('Successfully refreshed.');
+                    success(response);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    log('Error refreshing.');
+                    error(jqXHR);
+                }
+            });
+        });
+    }
+
+    function resolveTokenQs(token, deferred) {
         log('Resolving token.');
         deferred.resolve('access_token3=' + token);
     }
