@@ -193,6 +193,21 @@ function initLoginService() {
         });
     };
 
+    LoginService.prototype.getLastUsedForDomain = function (domain) {
+        var self = this;
+        var deferred = Q.defer();
+        self.getAllDecryptedForDomain(domain).then(function (logins) {
+            if (!logins.length) {
+                deferred.reject();
+                return;
+            }
+
+            var sortedLogins = logins.sort(self.sortLoginsByLastUsed);
+            deferred.resolve(sortedLogins[0]);
+        });
+        return deferred.promise;
+    };
+
     LoginService.prototype.saveWithServer = function (login) {
         var deferred = Q.defer();
 

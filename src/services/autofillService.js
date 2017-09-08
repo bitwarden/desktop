@@ -228,13 +228,12 @@ function initAutofill() {
                 return;
             }
 
-            self.loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
-                if (!logins.length) {
+            self.loginService.getLastUsedForDomain(tabDomain).then(function (login) {
+                if (!login) {
                     return;
                 }
-
-                var sortedLogins = logins.sort(self.loginService.sortLoginsByLastUsed);
-                self.doAutoFill(sortedLogins[0], pageDetails, true, true, true);
+                
+                self.doAutoFill(login, pageDetails, true, true, true);
             });
         });
     };

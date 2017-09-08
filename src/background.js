@@ -2,7 +2,8 @@ var isBackground = true,
     loginToAutoFill = null,
     pageDetailsToAutoFill = [],
     autofillTimeout = null,
-    menuOptionsLoaded = [];
+    menuOptionsLoaded = [],
+    pendingAuthRequests = [];
 
 var bg_loginsToAdd = [];
 
@@ -208,6 +209,72 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         });
     }
 });
+
+chrome.webRequest.onAuthRequired.addListener(function (details, callback) {
+    if (!details.url || pendingAuthRequests.indexOf(details.requestId) != -1) {
+        if (callback) {
+            callback();
+        }
+        return;
+    }
+
+    var domain = bg_utilsService.getDomain(details.url);
+    if (!domain) {
+        if (callback) {
+            callback();
+        }
+        return;
+    }
+
+    pendingAuthRequests.push(details.requestId);
+
+    if (bg_utilsService.isFirefox()) {
+        return new Promise(function (resolve, reject) {
+            bg_loginService.getAllDecryptedForDomain(domain).then(function (logins) {
+                if (!logins || logins.length !== 1) {
+                    reject();
+                    return;
+                }
+
+                resolve({
+                    authCredentials: {
+                        username: logins[0].username,
+                        password: logins[0].password
+                    }
+                });
+            }, function () {
+                reject();
+            });
+        });
+    }
+    else {
+        bg_loginService.getAllDecryptedForDomain(domain).then(function (logins) {
+            if (!logins || logins.length !== 1) {
+                callback();
+                return;
+            }
+
+            callback({
+                authCredentials: {
+                    username: logins[0].username,
+                    password: logins[0].password
+                }
+            });
+        }, function () {
+            callback();
+        });
+    }
+}, { urls: ['http://*/*'] }, [bg_utilsService.isFirefox() ? 'blocking' : 'asyncBlocking']);
+
+chrome.webRequest.onCompleted.addListener(completeAuthRequest, { urls: ['http://*/*'] });
+chrome.webRequest.onErrorOccurred.addListener(completeAuthRequest, { urls: ['http://*/*'] });
+
+function completeAuthRequest(details) {
+    var i = pendingAuthRequests.indexOf(details.requestId);
+    if (i > -1) {
+        pendingAuthRequests.splice(i, 1);
+    }
+}
 
 var buildingContextMenu = false;
 function buildContextMenu(callback) {

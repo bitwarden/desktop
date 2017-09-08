@@ -72,7 +72,9 @@
     "clipboardWrite",
     "idle",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "webRequest",
+    "webRequestBlocking"
   ],
   "commands": {
     "autofill_login": {
