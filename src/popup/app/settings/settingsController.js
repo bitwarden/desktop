@@ -138,7 +138,9 @@
                     });
                     break;
                 case 'edge':
-                    chrome.tabs.create({ url: 'https://microsoft.com' });
+                    chrome.tabs.create({
+                        url: 'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl'
+                    });
                     break;
                 case 'opera':
                     chrome.tabs.create({
