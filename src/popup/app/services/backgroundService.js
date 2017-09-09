@@ -2,53 +2,70 @@
     .module('bit.services')
 
     .factory('tokenService', function () {
-        return chrome.extension.getBackgroundPage().bg_tokenService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_tokenService : null;
     })
     .factory('cryptoService', function () {
-        return chrome.extension.getBackgroundPage().bg_cryptoService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_cryptoService : null;
     })
     .factory('userService', function () {
-        return chrome.extension.getBackgroundPage().bg_userService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_userService : null;
     })
     .factory('apiService', function () {
-        return chrome.extension.getBackgroundPage().bg_apiService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_apiService : null;
     })
     .factory('folderService', function () {
-        return chrome.extension.getBackgroundPage().bg_folderService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_folderService : null;
     })
     .factory('loginService', function () {
-        return chrome.extension.getBackgroundPage().bg_loginService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_loginService : null;
     })
     .factory('syncService', function () {
-        return chrome.extension.getBackgroundPage().bg_syncService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_syncService : null;
     })
     .factory('autofillService', function () {
-        return chrome.extension.getBackgroundPage().bg_autofillService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_autofillService : null;
     })
     .factory('passwordGenerationService', function () {
-        return chrome.extension.getBackgroundPage().bg_passwordGenerationService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_passwordGenerationService : null;
     })
     .factory('utilsService', function () {
-        return chrome.extension.getBackgroundPage().bg_utilsService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_utilsService : null;
     })
     .factory('appIdService', function () {
-        return chrome.extension.getBackgroundPage().bg_appIdService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_appIdService : null;
     })
     .factory('i18nService', function () {
-        return chrome.extension.getBackgroundPage().bg_i18nService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_i18nService : null;
     })
     .factory('constantsService', function () {
-        return chrome.extension.getBackgroundPage().bg_constantsService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_constantsService : null;
     })
     .factory('settingsService', function () {
-        return chrome.extension.getBackgroundPage().bg_settingsService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_settingsService : null;
     })
     .factory('lockService', function () {
-        return chrome.extension.getBackgroundPage().bg_lockService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_lockService : null;
     })
     .factory('totpService', function () {
-        return chrome.extension.getBackgroundPage().bg_totpService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_totpService : null;
     })
     .factory('environmentService', function () {
-        return chrome.extension.getBackgroundPage().bg_environmentService;
+        var page = chrome.extension.getBackgroundPage();
+        return page ? page.bg_environmentService : null;
     });

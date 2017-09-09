@@ -11,6 +11,12 @@
 
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');
+
+            if (!chrome.extension.getBackgroundPage()) {
+                $state.go('privateMode');
+                return;
+            }
+
             var userService = $injector.get('userService');
             var cryptoService = $injector.get('cryptoService');
 
@@ -34,14 +40,21 @@
         $stateProvider
             .state('splash', {
                 url: '/splash',
-                controller: 'splashController',
+                controller: 'baseController',
                 templateUrl: 'app/global/splash.html',
+                data: { authorize: false },
+                params: { animation: null }
+            })
+            .state('privateMode', {
+                url: '/private-mode',
+                controller: 'privateModeController',
+                templateUrl: 'app/global/privateMode.html',
                 data: { authorize: false },
                 params: { animation: null }
             })
             .state('home', {
                 url: '/home',
-                controller: 'homeController',
+                controller: 'baseController',
                 templateUrl: 'app/global/home.html',
                 data: { authorize: false },
                 params: { animation: null }
@@ -246,6 +259,10 @@
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
             if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {
                 stateService.purgeState();
+            }
+
+            if (!userService) {
+                return;
             }
 
             userService.isAuthenticated(function (isAuthenticated) {
