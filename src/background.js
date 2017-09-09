@@ -3,7 +3,8 @@ var isBackground = true,
     pageDetailsToAutoFill = [],
     autofillTimeout = null,
     menuOptionsLoaded = [],
-    pendingAuthRequests = [];
+    pendingAuthRequests = [],
+    bg_syncTimeout = null;
 
 var bg_loginsToAdd = [];
 
@@ -751,16 +752,41 @@ function logout(expired, callback) {
 
 function fullSync(override) {
     override = override || false;
+    log('check fullSync - ' + override);
     bg_syncService.getLastSync(function (lastSync) {
+        log('got last sync - ' + lastSync);
         var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
         var lastSyncAgo = new Date() - lastSync;
+        log('lastSyncAgo - ' + lastSyncAgo);
         if (override || !lastSync || lastSyncAgo >= syncInternal) {
+            log('let\'s do the fullSync');
             bg_syncService.fullSync(override || false, function () {
-                // done
+                log('done with fullSync');
+                scheduleNextSync();
             });
         }
+        else {
+            log('don\'t need to sync right now');
+            scheduleNextSync();
+        }
     });
-    setTimeout(fullSync, 5 * 60 * 1000); // check every 5 minutes
+}
+
+function scheduleNextSync() {
+    if (bg_syncTimeout) {
+        log('clearing bg_syncTimeout');
+        clearTimeout(bg_syncTimeout);
+    }
+    else {
+        log('don\'t need to clear bg_syncTimeout');
+    }
+
+    log('scheduleNextSync');
+    bg_syncTimeout = setTimeout(fullSync, 5 * 60 * 1000); // check every 5 minutes
+}
+
+function log(msg) {
+    console.log(new Date() + ' - Background: ' + msg);
 }
 
 // Bootstrap
