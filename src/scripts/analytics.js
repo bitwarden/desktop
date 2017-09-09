@@ -54,7 +54,7 @@ chrome.extension.getBackgroundPage().bg_appIdService.getAnonymousAppId(function 
         request.send(message);
     };
 
-    if (typeof isBackground !== 'undefined') {
+    if (typeof bg_isBackground !== 'undefined') {
         ga('send', 'pageview', '/background.html');
     }
 });

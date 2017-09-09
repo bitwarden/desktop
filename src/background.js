@@ -1,4 +1,4 @@
-var isBackground = true,
+var bg_isBackground = true,
     bg_utilsService,
     bg_i18nService,
     bg_constantsService,
