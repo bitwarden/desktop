@@ -11,6 +11,7 @@
     </div>
 </div>
 <div class="content content-tabs">
+    <!-- Folder List -->
     <div ng-if="vaultLogins.length && (showOnlyFolderView || vaultLogins.length >= 100) && vaultFolders.length && (!searchText || searchText.length < 2)">
         <div class="list">
             <div class="list-section" style="padding-bottom: 0;">
@@ -27,7 +28,8 @@
             </div>
         </div>
     </div>
-    <div ng-if="vaultLogins.length && ((vaultLogins.length < 100 && !showOnlyFolderView) || (searchText && searchText.length >= 2))">
+    <!-- Grouped List -->
+    <div ng-if="vaultLogins.length && !showOnlyFolderView && vaultLogins.length < 100 && (!searchText || searchText.length < 2)">
         <div class="list">
             <div class="list-grouped" ng-repeat="folder in vaultFolders | orderBy: folderSort track by $index"
                  ng-show="vaultFolderLogins.length">
@@ -39,6 +41,34 @@
                    class="list-grouped-item condensed" title="{{i18n.edit}} {{login.name}}"
                    ng-repeat="login in vaultFolderLogins = (vaultLogins | filter: { folderId: folder.id }
                             | filter: searchLogins() | orderBy: ['name', 'username']) track by $index">
+                    <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}" ngclipboard
+                          ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
+                          data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">
+                        <i class="fa fa-lg fa-key"></i>
+                    </span>
+                    <span class="btn-list" stop-prop stop-click title="{{i18n.copyUsername}}" ngclipboard
+                          ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.username)"
+                          data-clipboard-text="{{login.username}}" ng-class="{'disabled': !login.username}">
+                        <i class="fa fa-lg fa-user"></i>
+                    </span>
+                    <span class="text">
+                        {{login.name}}
+                        <i class="fa fa-share-alt text-muted" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
+                        <i class="fa fa-paperclip text-muted" ng-if="login.attachments" title="{{i18n.attachments}}"></i>
+                    </span>
+                    <span class="detail">{{login.username}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Search Results List -->
+    <div ng-if="vaultLogins.length && searchText && searchText.length >= 2">
+        <div class="list">
+            <div class="list-section" style="padding-top: 0; padding-bottom: 0;">
+                <a href="#" stop-click ng-click="viewLogin(login)"
+                   class="list-section-item condensed" title="{{i18n.edit}} {{login.name}}"
+                   ng-repeat="login in searchResults = (vaultLogins | filter: searchLogins() | orderBy: ['name', 'username'])
+                    track by $index">
                     <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
                           data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">

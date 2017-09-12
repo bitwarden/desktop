@@ -35,6 +35,7 @@
                     <span class="text">
                         {{login.name}}
                         <i class="fa fa-share-alt text-muted" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
+                        <i class="fa fa-paperclip text-muted" ng-if="login.attachments" title="{{i18n.attachments}}"></i>
                     </span>
                     <span class="detail">{{login.username}}</span>
                 </a>
