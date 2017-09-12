@@ -743,9 +743,12 @@
     "message":"Toto je momentálně experimentální funkce. Použijte na vlastní riziko."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Automaticky vyplnit poslední použité přihlašovací údaje pro aktuální web."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Vygenerovat a zkopírovat nové náhodné heslo do schránky."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }

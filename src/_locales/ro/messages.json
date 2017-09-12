@@ -707,45 +707,48 @@
     "message":"Codurile de verificare vor fi trimise prin e-mail."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Mediu găzduit în mod automat"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Specificați adresa URL de bază a instalării bitwarden."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Mediu particularizat"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Pentru utilizatorii avansați. Puteți specifica adresa URL de bază a fiecărui serviciu independent."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"URL-ul serverului"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"URL-ul serverului API"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"URL-ul serverului seifului web"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"URL-ul serverului de identitate"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"Adresele URL de mediu au fost salvate."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Activați completarea automată la încărcarea paginii"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Dacă se detectează un formular de autentificare, efectuați automat o umplere automată când pagina web se încarcă."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Aceasta este în prezent o caracteristică experimentală. Folosiți pe propria răspundere."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Completați automat ultimele date de autentificare utilizate pentru site-ul web curent."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Generați și copiați o nouă parolă aleatorie în clipboard."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }

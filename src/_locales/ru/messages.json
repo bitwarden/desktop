@@ -743,9 +743,12 @@
     "message":"Это экспериментальная функция. Используйте на свой страх и риск."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Автозаполнение последнего использованного логина для текущего веб-сайта."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Создавать и копировать новый случайный пароль в буфер обмена."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }

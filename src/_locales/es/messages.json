@@ -707,45 +707,48 @@
     "message":"Los códigos de verificación te serán enviados por correo electrónico."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Entorno de alojamiento propio"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Especifica la URL base de tu instalación de bitwarden de alojamiento propio."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Entorno personalizado"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Para usuario avanzados. Puedes especificar la URL base de cada servicio de forma independiente."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"URL del servidor"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"URL del servidor de la API"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"URL del servidor de la bóveda web"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"URL del servidor de identidad"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"La URLs del entorno han sido guardadas."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Habilitar autorellenar al carga la página"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Si un formulario es detectado, realizar automáticamente un autorellenado cuando la web cargue."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Esta es una características experimental. Usala bajo tu propio riesgo."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Autorellenar la última entrada utilizada para la página actual."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Generar y copiar una nueva contraseña aleatoria al portapapeles."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }
