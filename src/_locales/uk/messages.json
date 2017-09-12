@@ -473,7 +473,7 @@
     "description":"This is the folder for uncategorized logins"
   },
   "features":{
-    "message":"Розширені налаштування"
+    "message":"Додатково"
   },
   "gaDesc":{
     "message":"Ми використовуємо аналітику для розуміння того, як використовується розширення, щоб зробити його кращим. Всі зібрані дані цілком анонімні."
@@ -743,9 +743,12 @@
     "message":"Це експериментальна функція. При її використанні ви берете ризик на себе."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Автозаповнення останнього використаного запису для цього веб-сайту."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Генерувати і копіювати новий пароль в буфер обміну."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }

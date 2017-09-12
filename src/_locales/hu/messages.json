@@ -707,45 +707,48 @@
     "message":"Ellenőrző kódok el lesznek e-mailbe küldve neked."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Magad hosztolt környezet"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Add meg az alap URL-t a helyileg hosztolt bitwarden telepítésedhez."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Egyéni környezet"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Haladó felhasználóknak. Meg tudod adni az alap URL-t külön minden egyes szolgáltatásnak."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"Szerver URL"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"API szerver URL"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"Webes széf szerver URL"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"Identitás szerver URL"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"A környezet URL-ok mentésre kerültek."
   },
   "enableAutoFillOnPageLoad":{
     "message":"Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Ez jelenleg egy kísérleti funkció. Használd saját felelősségre."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Automatikusan töltse ki az utólag használt bejelentkezést ezen a weboldalon."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Generálj és másolj egy új véletlenszerű jelszót a vágólapra."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }

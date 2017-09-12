@@ -743,9 +743,12 @@
     "message":"Ceci est actuellement une fonctionnalité expérimentale. À utiliser avec prudence."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Remplir automatiquement le dernier identifiant utilisé pour le site web en-cours."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Générer et copier un nouveau mot de passe aléatoire dans le presse-papiers."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }

@@ -457,7 +457,7 @@
     "message":"您确定要覆盖当前密码吗？"
   },
   "credits":{
-    "message":"贡献人员"
+    "message":"鸣谢"
   },
   "thankYou":{
     "message":"非常感谢"
@@ -743,9 +743,12 @@
     "message":"目前这是一项实验功能。使用需自担风险。"
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"自动用最后一次登录填充当前网站"
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"生成并将一个新的随机密码复制到剪贴板中。"
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }

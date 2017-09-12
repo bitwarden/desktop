@@ -707,45 +707,48 @@
     "message":"Kontrolni kodovi bit će vam poslani e-poštom."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Vlastito hosting okruženje"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Navedite osnovni URL Vaše lokalno hostirane bitwarden instalacije."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Prilagođeno okruženje"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Za napredne korisnike. Samostalno možete odrediti osnovni URL svake usluge."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"URL poslužitelja"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"API poslužiteljskog URL-a"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"URL poslužitelja web trezora"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"URL identiteta poslužitelja"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"URL-ovi okoline su spremljeni."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Omogući automatsko popunjavanje nakon učitavanja stranice"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Ako se otkrije obrazac za prijavu, automatski se izvršava automatsko popunjavanje kada se web stranica učita."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Ovo je trenutno eksperimentalna značajka. Koristite na vlastitu odgovornost."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Automatski popunite zadnje korištenu prijavu za trenutačnu web stranicu."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Generirajte i kopirajte novu nasumičnu lozinku u međuspremnik."
+  },
+  "privateModeMessage":{
+    "message":"Unfortunately this window is not available in private mode for this browser."
   }
 }
