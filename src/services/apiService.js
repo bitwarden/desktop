@@ -118,12 +118,13 @@ function initApiService() {
     ApiService.prototype.getAccountRevisionDate = function (success, error) {
         log('getAccountRevisionDate invoked');
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             log('Revision Date API Call');
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/revision-date?' + token,
+                url: self.baseUrl + '/accounts/revision-date',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(response);
                 },
@@ -139,11 +140,12 @@ function initApiService() {
 
     ApiService.prototype.getProfile = function (success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/profile?' + token,
+                url: self.baseUrl + '/accounts/profile',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new ProfileResponse(response));
                 },
@@ -158,11 +160,12 @@ function initApiService() {
 
     ApiService.prototype.getKeys = function (success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/accounts/keys?' + token,
+                url: self.baseUrl + '/accounts/keys',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new KeysResponse(response));
                 },
@@ -213,11 +216,12 @@ function initApiService() {
 
     ApiService.prototype.getIncludedDomains = function (success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/settings/domains?excluded=false&' + token,
+                url: self.baseUrl + '/settings/domains?excluded=false',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new DomainsResponse(response));
                 },
@@ -234,11 +238,12 @@ function initApiService() {
 
     ApiService.prototype.getLogin = function (id, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/logins/' + id + '?' + token,
+                url: self.baseUrl + '/logins/' + id,
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new LoginResponse(response));
                 },
@@ -253,13 +258,14 @@ function initApiService() {
 
     ApiService.prototype.postLogin = function (loginRequest, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/logins?' + token,
+                url: self.baseUrl + '/logins',
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new LoginResponse(response));
                 },
@@ -274,13 +280,14 @@ function initApiService() {
 
     ApiService.prototype.putLogin = function (id, loginRequest, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
-                type: 'POST',
-                url: self.baseUrl + '/logins/' + id + '?' + token,
+                type: 'PUT',
+                url: self.baseUrl + '/logins/' + id,
                 data: JSON.stringify(loginRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new LoginResponse(response));
                 },
@@ -297,11 +304,12 @@ function initApiService() {
 
     ApiService.prototype.getFolder = function (id, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/folders/' + id + '?' + token,
+                url: self.baseUrl + '/folders/' + id,
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new FolderResponse(response));
                 },
@@ -316,11 +324,12 @@ function initApiService() {
 
     ApiService.prototype.getFolders = function (success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/folders?' + token,
+                url: self.baseUrl + '/folders',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     var data = [];
                     for (var i = 0; i < response.Data.length; i++) {
@@ -340,13 +349,14 @@ function initApiService() {
 
     ApiService.prototype.postFolder = function (folderRequest, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/folders?' + token,
+                url: self.baseUrl + '/folders',
                 data: JSON.stringify(folderRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new FolderResponse(response));
                 },
@@ -361,13 +371,14 @@ function initApiService() {
 
     ApiService.prototype.putFolder = function (id, folderRequest, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
-                type: 'POST',
-                url: self.baseUrl + '/folders/' + id + '?' + token,
+                type: 'PUT',
+                url: self.baseUrl + '/folders/' + id,
                 data: JSON.stringify(folderRequest),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new FolderResponse(response));
                 },
@@ -382,11 +393,12 @@ function initApiService() {
 
     ApiService.prototype.deleteFolder = function (id, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
-                type: 'POST',
-                url: self.baseUrl + '/folders/' + id + '/delete?' + token,
+                type: 'DELETE',
+                url: self.baseUrl + '/folders/' + id,
                 dataType: 'text',
+                headers: tokenHeader,
                 success: function (response) {
                     success();
                 },
@@ -403,11 +415,12 @@ function initApiService() {
 
     ApiService.prototype.getCipher = function (id, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers/' + id + '?' + token,
+                url: self.baseUrl + '/ciphers/' + id,
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new CipherResponse(response));
                 },
@@ -422,11 +435,12 @@ function initApiService() {
 
     ApiService.prototype.getCiphers = function (success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'GET',
-                url: self.baseUrl + '/ciphers?includeFolders=false&includeShared=true&' + token,
+                url: self.baseUrl + '/ciphers',
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     var data = [];
                     for (var i = 0; i < response.Data.length; i++) {
@@ -446,11 +460,12 @@ function initApiService() {
 
     ApiService.prototype.deleteCipher = function (id, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
-                type: 'POST',
-                url: self.baseUrl + '/ciphers/' + id + '/delete?' + token,
+                type: 'DELETE',
+                url: self.baseUrl + '/ciphers/' + id,
                 dataType: 'text',
+                headers: tokenHeader,
                 success: function (response) {
                     success();
                 },
@@ -465,14 +480,15 @@ function initApiService() {
 
     ApiService.prototype.postCipherAttachment = function (id, formData, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'POST',
-                url: self.baseUrl + '/ciphers/' + id + '/attachment?' + token,
+                url: self.baseUrl + '/ciphers/' + id + '/attachment',
                 data: formData,
                 processData: false,
                 contentType: false,
                 dataType: 'json',
+                headers: tokenHeader,
                 success: function (response) {
                     success(new CipherResponse(response));
                 },
@@ -487,11 +503,12 @@ function initApiService() {
 
     ApiService.prototype.deleteCipherAttachment = function (id, attachmentId, success, error) {
         var self = this;
-        handleTokenState(self).then(function (token) {
+        handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
-                type: 'POST',
-                url: self.baseUrl + '/ciphers/' + id + '/attachment/' + attachmentId + '/delete?' + token,
+                type: 'DELETE',
+                url: self.baseUrl + '/ciphers/' + id + '/attachment/' + attachmentId,
                 dataType: 'text',
+                headers: tokenHeader,
                 success: function (response) {
                     success();
                 },
@@ -584,7 +601,9 @@ function initApiService() {
 
     function resolveTokenQs(token, deferred) {
         log('Resolving token.');
-        deferred.resolve('access_token3=' + token);
+        deferred.resolve({
+            'Authorization': 'Bearer ' + token
+        });
     }
 
     function log(msg) {
