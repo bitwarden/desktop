@@ -219,7 +219,7 @@
 
         var frameDiv = document.createElement('div');
         frameDiv.id = 'bit-notification-bar';
-        frameDiv.style.cssText = 'height: 42px; width: 100%; top: 0; left: 0; padding: 0; position: fixed; z-index: 1000000099; visibility: visible;';
+        frameDiv.style.cssText = 'height: 42px; width: 100%; top: 0; left: 0; padding: 0; position: fixed; z-index: 2147483647; visibility: visible;';
         frameDiv.appendChild(iframe);
         document.body.appendChild(frameDiv);
 
