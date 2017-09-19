@@ -483,17 +483,20 @@ function initCryptoService(constantsService) {
     CryptoService.prototype.decrypt = function (cipherString, key, outputEncoding) {
         outputEncoding = outputEncoding || 'utf8';
 
-        var ivBuf = fromB64ToArray(cipherString.initializationVector).buffer;
-        var ctBuf = fromB64ToArray(cipherString.cipherText).buffer;
-        var macBuf = cipherString.mac ? fromB64ToArray(cipherString.mac).buffer : null;
+        var ivBytes = forge.util.decode64(cipherString.initializationVector);
+        var ctBytes = forge.util.decode64(cipherString.cipherText);
+        var macBytes = cipherString.mac ? forge.util.decode64(cipherString.mac) : null;
 
-        return aesDecrypt(this, cipherString.encryptionType, ctBuf, ivBuf, macBuf, key).then(function (decValue) {
+        return aesDecrypt(this, cipherString.encryptionType, ctBytes, ivBytes, macBytes, key).then(function (decipher) {
+            if (!decipher) {
+                return null;
+            }
+
             if (outputEncoding === 'utf8') {
-                return fromBufferToUtf8(decValue);
+                return decipher.output.toString('utf8');
             }
             else {
-                var b64 = fromBufferToB64(decValue);
-                return forge.util.decode64(b64);
+                return decipher.output.getBytes();
             }
         });
     };
@@ -532,22 +535,42 @@ function initCryptoService(constantsService) {
                 return null;
         }
 
-        return aesDecrypt(this, encType, ctBytes.buffer, ivBytes.buffer, macBytes ? macBytes.buffer : null, key);
+        return aesDecryptWC(this, encType, ctBytes.buffer, ivBytes.buffer, macBytes ? macBytes.buffer : null, key);
     };
 
-    function aesDecrypt(self, encType, ctBuf, ivBuf, macBuf, key) {
+    function aesDecrypt(self, encType, ctBytes, ivBytes, macBytes, key) {
+        return getKeyForEncryption(self, key).then(function (theKey) {
+            theKey = resolveLegacyKey(encType, theKey);
+
+            if (encType !== theKey.encType) {
+                console.error('encType unavailable.');
+                return null;
+            }
+
+            if (theKey.macKey && macBytes) {
+                var computedMacBytes = computeMac(ivBytes + ctBytes, theKey.macKey, false);
+                if (!macsEqual(theKey.macKey, computedMacBytes, macBytes)) {
+                    console.error('MAC failed.');
+                    return null;
+                }
+            }
+
+            var ctBuffer = forge.util.createBuffer(ctBytes);
+            var decipher = forge.cipher.createDecipher('AES-CBC', theKey.encKey);
+            decipher.start({ iv: ivBytes });
+            decipher.update(ctBuffer);
+            decipher.finish();
+
+            return decipher;
+        });
+    }
+
+    function aesDecryptWC(self, encType, ctBuf, ivBuf, macBuf, key) {
         var keyBuf,
             encKey;
 
         return getKeyForEncryption(self, key).then(function (theKey) {
-            if (encType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
-                theKey.encType === constantsService.encType.AesCbc256_B64) {
-                // Old encrypt-then-mac scheme, swap out the key
-                _legacyEtmKey = _legacyEtmKey ||
-                    new SymmetricCryptoKey(theKey.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
-                theKey = _legacyEtmKey;
-            }
-
+            theKey = resolveLegacyKey(encType, theKey);
             keyBuf = theKey.getBuffers();
             return _subtle.importKey('raw', keyBuf.encKey, { name: 'AES-CBC' }, false, ['decrypt']);
         }).then(function (theEncKey) {
@@ -573,6 +596,18 @@ function initCryptoService(constantsService) {
             }
             return _subtle.decrypt({ name: 'AES-CBC', iv: ivBuf }, encKey, ctBuf);
         });
+    }
+
+    function resolveLegacyKey(encType, key) {
+        if (encType === constantsService.encType.AesCbc128_HmacSha256_B64 &&
+            key.encType === constantsService.encType.AesCbc256_B64) {
+            // Old encrypt-then-mac scheme, make a new key
+            _legacyEtmKey = _legacyEtmKey ||
+                new SymmetricCryptoKey(key.key, false, constantsService.encType.AesCbc128_HmacSha256_B64);
+            return _legacyEtmKey;
+        }
+
+        return key;
     }
 
     CryptoService.prototype.rsaDecrypt = function (encValue) {
