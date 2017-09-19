@@ -80,12 +80,12 @@ button.link {
         text-decoration: underline;
     }
 
-.add-buttons {
+body[class*='lang-en'] .add-buttons {
     width: 175px;
 }
 
 @media (min-width: 768px) {
-    .add-buttons {
+    body[class*='lang-en'] .add-buttons {
         width: 320px;
     }
 }

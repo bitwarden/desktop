@@ -3,6 +3,8 @@
         closeButton = $('#close-button');
 
     // i18n
+    $('body').addClass('lang-' + chrome.i18n.getUILanguage());
+
     $('#logo-link').attr('title', chrome.i18n.getMessage('appName'));
     closeButton.attr('title', chrome.i18n.getMessage('close'));
 
