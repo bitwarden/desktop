@@ -30,8 +30,8 @@ function initApiService() {
         }
 
         // Desktop
-        self.baseUrl = 'http://localhost:4000';
-        self.identityBaseUrl = 'http://localhost:33656';
+        //self.baseUrl = 'http://localhost:4000';
+        //self.identityBaseUrl = 'http://localhost:33656';
 
         // Desktop HTTPS
         //self.baseUrl = 'https://localhost:44377';
@@ -46,8 +46,8 @@ function initApiService() {
         //self.identityBaseUrl = 'https://preview-identity.bitwarden.com';
 
         // Production
-        //self.baseUrl = 'https://api.bitwarden.com';
-        //self.identityBaseUrl = 'https://identity.bitwarden.com';
+        self.baseUrl = 'https://api.bitwarden.com';
+        self.identityBaseUrl = 'https://identity.bitwarden.com';
     };
 
     // Auth APIs
@@ -189,93 +189,7 @@ function initApiService() {
         });
     };
 
-    // Login APIs
-
-    ApiService.prototype.getLogin = function (id, success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'GET',
-                url: self.baseUrl + '/logins/' + id,
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    success(new LoginResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
-        });
-    };
-
-    ApiService.prototype.postLogin = function (loginRequest, success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'POST',
-                url: self.baseUrl + '/logins',
-                data: JSON.stringify(loginRequest),
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    success(new LoginResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
-        });
-    };
-
-    ApiService.prototype.putLogin = function (id, loginRequest, success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'PUT',
-                url: self.baseUrl + '/logins/' + id,
-                data: JSON.stringify(loginRequest),
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    success(new LoginResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
-        });
-    };
-
     // Folder APIs
-
-    ApiService.prototype.getFolder = function (id, success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'GET',
-                url: self.baseUrl + '/folders/' + id,
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    success(new FolderResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
-        });
-    };
 
     ApiService.prototype.postFolder = function (folderRequest, success, error) {
         var self = this;
@@ -343,12 +257,36 @@ function initApiService() {
 
     // Cipher APIs
 
-    ApiService.prototype.getCipher = function (id, success, error) {
+    ApiService.prototype.postCipher = function (cipherRequest, success, error) {
         var self = this;
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
-                type: 'GET',
+                type: 'POST',
+                url: self.baseUrl + '/ciphers',
+                data: JSON.stringify(cipherRequest),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                headers: tokenHeader,
+                success: function (response) {
+                    success(new CipherResponse(response));
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, false, self);
+                }
+            });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true, self);
+        });
+    };
+
+    ApiService.prototype.putCipher = function (id, cipherRequest, success, error) {
+        var self = this;
+        handleTokenState(self).then(function (tokenHeader) {
+            $.ajax({
+                type: 'PUT',
                 url: self.baseUrl + '/ciphers/' + id,
+                data: JSON.stringify(cipherRequest),
+                contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 headers: tokenHeader,
                 success: function (response) {

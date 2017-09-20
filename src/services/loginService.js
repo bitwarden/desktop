@@ -212,15 +212,15 @@ function initLoginService() {
         var deferred = Q.defer();
 
         var self = this,
-            request = new LoginRequest(login);
+            request = new CipherRequest(login, 1); // 1 = Login
 
         if (!login.id) {
-            self.apiService.postLogin(request, apiSuccess, function (response) {
+            self.apiService.postCipher(request, apiSuccess, function (response) {
                 handleError(response, deferred);
             });
         }
         else {
-            self.apiService.putLogin(login.id, request, apiSuccess, function (response) {
+            self.apiService.putCipher(login.id, request, apiSuccess, function (response) {
                 handleError(response, deferred);
             });
         }

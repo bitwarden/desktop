@@ -1,13 +1,18 @@
-﻿var LoginRequest = function (login) {
-    this.folderId = login.folderId;
-    this.organizationId = login.organizationId;
-    this.name = login.name ? login.name.encryptedString : null;
-    this.uri = login.uri ? login.uri.encryptedString : null;
-    this.username = login.username ? login.username.encryptedString : null;
-    this.password = login.password ? login.password.encryptedString : null;
-    this.notes = login.notes ? login.notes.encryptedString : null;
-    this.totp = login.totp ? login.totp.encryptedString : null;
-    this.favorite = login.favorite;
+﻿var CipherRequest = function (cipher, type) {
+    this.type = type;
+    this.folderId = cipher.folderId;
+    this.organizationId = cipher.organizationId;
+    this.name = cipher.name ? cipher.name.encryptedString : null;
+    this.favorite = cipher.favorite;
+
+    if (type === 1) {
+        // login
+        this.uri = cipher.uri ? cipher.uri.encryptedString : null;
+        this.username = cipher.username ? cipher.username.encryptedString : null;
+        this.password = cipher.password ? cipher.password.encryptedString : null;
+        this.totp = cipher.totp ? cipher.totp.encryptedString : null;
+        this.notes = cipher.notes ? cipher.notes.encryptedString : null;
+    }
 };
 
 var FolderRequest = function (folder) {

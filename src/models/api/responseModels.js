@@ -23,33 +23,6 @@ var FolderResponse = function (response) {
     this.revisionDate = response.RevisionDate;
 };
 
-var LoginResponse = function (response) {
-    this.id = response.Id;
-    this.organizationId = response.OrganizationId;
-    this.folderId = response.FolderId;
-    this.edit = response.Edit;
-    this.name = response.Name;
-    this.uri = response.Uri;
-    this.username = response.Username;
-    this.password = response.Password;
-    this.notes = response.Notes;
-    this.totp = response.Totp;
-    this.favorite = response.Favorite;
-    this.revisionDate = response.RevisionDate;
-    this.organizationUseTotp = response.OrganizationUseTotp;
-
-    if (response.Folder) {
-        this.folder = new FolderResponse(response.Folder);
-    }
-
-    if (response.Attachments) {
-        this.attachments = [];
-        for (var i = 0; i < response.Attachments.length; i++) {
-            this.attachments.push(new AttachmentResponse(response.Attachments[i]));
-        }
-    }
-};
-
 var ProfileResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;
