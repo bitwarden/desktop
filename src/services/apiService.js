@@ -30,8 +30,8 @@ function initApiService() {
         }
 
         // Desktop
-        //self.baseUrl = 'http://localhost:4000';
-        //self.identityBaseUrl = 'http://localhost:33656';
+        self.baseUrl = 'http://localhost:4000';
+        self.identityBaseUrl = 'http://localhost:33656';
 
         // Desktop HTTPS
         //self.baseUrl = 'https://localhost:44377';
@@ -46,8 +46,8 @@ function initApiService() {
         //self.identityBaseUrl = 'https://preview-identity.bitwarden.com';
 
         // Production
-        self.baseUrl = 'https://api.bitwarden.com';
-        self.identityBaseUrl = 'https://identity.bitwarden.com';
+        //self.baseUrl = 'https://api.bitwarden.com';
+        //self.identityBaseUrl = 'https://identity.bitwarden.com';
     };
 
     // Auth APIs
@@ -138,26 +138,6 @@ function initApiService() {
         });
     };
 
-    ApiService.prototype.getProfile = function (success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'GET',
-                url: self.baseUrl + '/accounts/profile',
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    success(new ProfileResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
-        });
-    };
-
     ApiService.prototype.getKeys = function (success, error) {
         var self = this;
         handleTokenState(self).then(function (tokenHeader) {
@@ -209,28 +189,6 @@ function initApiService() {
             error: function (jqXHR, textStatus, errorThrown) {
                 handleError(error, jqXHR, false, self);
             }
-        });
-    };
-
-    // Settings APIs
-
-    ApiService.prototype.getIncludedDomains = function (success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'GET',
-                url: self.baseUrl + '/settings/domains?excluded=false',
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    success(new DomainsResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
         });
     };
 
@@ -312,31 +270,6 @@ function initApiService() {
                 headers: tokenHeader,
                 success: function (response) {
                     success(new FolderResponse(response));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
-        });
-    };
-
-    ApiService.prototype.getFolders = function (success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'GET',
-                url: self.baseUrl + '/folders',
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    var data = [];
-                    for (var i = 0; i < response.Data.length; i++) {
-                        data.push(new FolderResponse(response.Data[i]));
-                    }
-
-                    success(new ListResponse(data));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, false, self);
@@ -433,31 +366,6 @@ function initApiService() {
         });
     };
 
-    ApiService.prototype.getCiphers = function (success, error) {
-        var self = this;
-        handleTokenState(self).then(function (tokenHeader) {
-            $.ajax({
-                type: 'GET',
-                url: self.baseUrl + '/ciphers',
-                dataType: 'json',
-                headers: tokenHeader,
-                success: function (response) {
-                    var data = [];
-                    for (var i = 0; i < response.Data.length; i++) {
-                        data.push(new CipherResponse(response.Data[i]));
-                    }
-
-                    success(new ListResponse(data));
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
-                }
-            });
-        }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
-        });
-    };
-
     ApiService.prototype.deleteCipher = function (id, success, error) {
         var self = this;
         handleTokenState(self).then(function (tokenHeader) {
@@ -511,6 +419,28 @@ function initApiService() {
                 headers: tokenHeader,
                 success: function (response) {
                     success();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    handleError(error, jqXHR, false, self);
+                }
+            });
+        }, function (jqXHR) {
+            handleError(error, jqXHR, true, self);
+        });
+    };
+
+    // Sync APIs
+
+    ApiService.prototype.getSync = function (success, error) {
+        var self = this;
+        handleTokenState(self).then(function (tokenHeader) {
+            $.ajax({
+                type: 'GET',
+                url: self.baseUrl + '/sync',
+                dataType: 'json',
+                headers: tokenHeader,
+                success: function (response) {
+                    success(new SyncResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     handleError(error, jqXHR, false, self);

@@ -53,26 +53,28 @@ function initSyncService() {
 
                 log('starting sync');
                 self.userService.getUserId(function (userId) {
-                    log('sync profile');
-                    syncProfile(self).then(function () {
-                        log('sync folders');
-                        return syncFolders(self, userId);
-                    }).then(function () {
-                        log('sync ciphers');
-                        return syncCiphers(self, userId);
-                    }).then(function () {
-                        log('sync settings');
-                        return syncSettings(self, userId);
-                    }).then(function () {
-                        log('all done with the syncs - ' + now);
-                        self.setLastSync(now, function () {
-                            self.syncCompleted(true);
-                            callback(true);
+                    self.apiService.getSync(function (response) {
+                        log('sync profile');
+                        syncProfile(self, response.profile).then(function () {
+                            log('sync folders');
+                            return syncFolders(self, userId, response.folders);
+                        }).then(function () {
+                            log('sync ciphers');
+                            return syncCiphers(self, userId, response.ciphers);
+                        }).then(function () {
+                            log('sync settings');
+                            return syncSettings(self, userId, response.domains);
+                        }).then(function () {
+                            log('all done with the syncs - ' + now);
+                            self.setLastSync(now, function () {
+                                self.syncCompleted(true);
+                                callback(true);
+                            });
+                        }, function () {
+                            log('and error happened during the syncs');
+                            self.syncCompleted(false);
+                            callback(false);
                         });
-                    }, function () {
-                        log('and error happened during the syncs');
-                        self.syncCompleted(false);
-                        callback(false);
                     });
                 });
             });
@@ -110,38 +112,34 @@ function initSyncService() {
         });
     }
 
-    function syncProfile(self) {
+    function syncProfile(self, response) {
         var deferred = Q.defer();
 
-        self.apiService.getProfile(function (response) {
-            self.userService.getSecurityStamp().then(function (stamp) {
-                if (stamp && stamp !== response.securityStamp) {
-                    if (self.logoutCallback) {
-                        self.logoutCallback(true, function () { });
-                    }
-
-                    deferred.reject();
-                    return;
+        self.userService.getSecurityStamp().then(function (stamp) {
+            if (stamp && stamp !== response.securityStamp) {
+                if (self.logoutCallback) {
+                    self.logoutCallback(true, function () { });
                 }
 
-                return self.cryptoService.setEncKey(response.key);
-            }).then(function () {
-                return self.cryptoService.setEncPrivateKey(response.privateKey);
-            }, function () {
                 deferred.reject();
-            }).then(function () {
-                return self.cryptoService.setOrgKeys(response.organizations);
-            }, function () {
-                deferred.reject();
-            }).then(function () {
-                return self.userService.setSecurityStamp(response.securityStamp);
-            }, function () {
-                deferred.reject();
-            }).then(function () {
-                deferred.resolve();
-            }, function () {
-                deferred.reject();
-            });
+                return;
+            }
+
+            return self.cryptoService.setEncKey(response.key);
+        }).then(function () {
+            return self.cryptoService.setEncPrivateKey(response.privateKey);
+        }, function () {
+            deferred.reject();
+        }).then(function () {
+            return self.cryptoService.setOrgKeys(response.organizations);
+        }, function () {
+            deferred.reject();
+        }).then(function () {
+            return self.userService.setSecurityStamp(response.securityStamp);
+        }, function () {
+            deferred.reject();
+        }).then(function () {
+            deferred.resolve();
         }, function () {
             deferred.reject();
         });
@@ -149,70 +147,58 @@ function initSyncService() {
         return deferred.promise;
     }
 
-    function syncFolders(self, userId) {
+    function syncFolders(self, userId, response) {
         var deferred = Q.defer();
 
-        self.apiService.getFolders(function (response) {
-            var folders = {};
+        var folders = {};
 
-            for (var i = 0; i < response.data.length; i++) {
-                folders[response.data[i].id] = new FolderData(response.data[i], userId);
-            }
+        for (var i = 0; i < response.length; i++) {
+            folders[response[i].id] = new FolderData(response[i], userId);
+        }
 
-            self.folderService.replace(folders, function () {
-                deferred.resolve();
-            });
-        }, function () {
-            deferred.reject();
+        self.folderService.replace(folders, function () {
+            deferred.resolve();
         });
 
         return deferred.promise;
     }
 
-    function syncCiphers(self, userId) {
+    function syncCiphers(self, userId, response) {
         var deferred = Q.defer();
 
-        self.apiService.getCiphers(function (response) {
-            var logins = {};
+        var logins = {};
 
-            for (var i = 0; i < response.data.length; i++) {
-                var data = response.data[i];
-                if (data.type === 1) {
-                    logins[data.id] = new LoginData(data, userId);
-                }
+        for (var i = 0; i < response.length; i++) {
+            var data = response[i];
+            if (data.type === 1) {
+                logins[data.id] = new LoginData(data, userId);
             }
+        }
 
-            self.loginService.replace(logins, function () {
-                deferred.resolve();
-            });
-        }, function () {
-            deferred.reject();
+        self.loginService.replace(logins, function () {
+            deferred.resolve();
         });
 
         return deferred.promise;
     }
 
-    function syncSettings(self, userId) {
+    function syncSettings(self, userId, response) {
         var deferred = Q.defer();
 
-        var ciphers = self.apiService.getIncludedDomains(function (response) {
-            var eqDomains = [];
-            if (response && response.equivalentDomains) {
-                eqDomains = eqDomains.concat(response.equivalentDomains);
-            }
-            if (response && response.globalEquivalentDomains) {
-                for (var i = 0; i < response.globalEquivalentDomains.length; i++) {
-                    if (response.globalEquivalentDomains[i].domains.length) {
-                        eqDomains.push(response.globalEquivalentDomains[i].domains);
-                    }
+        var eqDomains = [];
+        if (response && response.equivalentDomains) {
+            eqDomains = eqDomains.concat(response.equivalentDomains);
+        }
+        if (response && response.globalEquivalentDomains) {
+            for (var i = 0; i < response.globalEquivalentDomains.length; i++) {
+                if (response.globalEquivalentDomains[i].domains.length) {
+                    eqDomains.push(response.globalEquivalentDomains[i].domains);
                 }
             }
+        }
 
-            self.settingsService.setEquivalentDomains(eqDomains, function () {
-                deferred.resolve();
-            });
-        }, function () {
-            deferred.reject();
+        self.settingsService.setEquivalentDomains(eqDomains, function () {
+            deferred.resolve();
         });
 
         return deferred.promise;

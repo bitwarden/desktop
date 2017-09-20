@@ -166,3 +166,27 @@ var DomainsResponse = function (response) {
         this.globalEquivalentDomains.push(new GlobalDomainResponse(globalEquivalentDomains[i]));
     }
 };
+
+var SyncResponse = function (response) {
+    if (response.Profile) {
+        this.profile = new ProfileResponse(response.Profile);
+    }
+
+    this.folders = [];
+    if (response.Folders) {
+        for (var i = 0; i < response.Folders.length; i++) {
+            this.folders.push(new FolderResponse(response.Folders[i]));
+        }
+    }
+
+    this.ciphers = [];
+    if (response.Ciphers) {
+        for (var i = 0; i < response.Ciphers.length; i++) {
+            this.ciphers.push(new CipherResponse(response.Ciphers[i]));
+        }
+    }
+
+    if (response.Domains) {
+        this.domains = new DomainsResponse(response.Domains);
+    }
+};
