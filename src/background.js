@@ -785,21 +785,15 @@ var bg_isBackground = true,
 
     function fullSync(override) {
         override = override || false;
-        log('check fullSync - ' + override);
         bg_syncService.getLastSync(function (lastSync) {
-            log('got last sync - ' + lastSync);
             var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
             var lastSyncAgo = new Date() - lastSync;
-            log('lastSyncAgo - ' + lastSyncAgo);
             if (override || !lastSync || lastSyncAgo >= syncInternal) {
-                log('let\'s do the fullSync');
                 bg_syncService.fullSync(override || false, function () {
-                    log('done with fullSync');
                     scheduleNextSync();
                 });
             }
             else {
-                log('don\'t need to sync right now');
                 scheduleNextSync();
             }
         });
@@ -807,19 +801,10 @@ var bg_isBackground = true,
 
     function scheduleNextSync() {
         if (syncTimeout) {
-            log('clearing syncTimeout');
             clearTimeout(syncTimeout);
         }
-        else {
-            log('don\'t need to clear syncTimeout');
-        }
 
-        log('scheduleNextSync');
         syncTimeout = setTimeout(fullSync, 5 * 60 * 1000); // check every 5 minutes
-    }
-
-    function log(msg) {
-        console.log(new Date() + ' - Background: ' + msg);
     }
 
     // Bootstrap

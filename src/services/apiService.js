@@ -116,10 +116,8 @@ function initApiService() {
     // Account APIs
 
     ApiService.prototype.getAccountRevisionDate = function (success, error) {
-        log('getAccountRevisionDate invoked');
         var self = this;
         handleTokenState(self).then(function (tokenHeader) {
-            log('Revision Date API Call');
             $.ajax({
                 type: 'GET',
                 url: self.baseUrl + '/accounts/revision-date',
@@ -133,7 +131,6 @@ function initApiService() {
                 }
             });
         }, function (jqXHR) {
-            log('Error handling token state for Revision Date API Call');
             handleError(error, jqXHR, true, self);
         });
     };
@@ -455,7 +452,7 @@ function initApiService() {
 
     function handleError(errorCallback, jqXHR, tokenError, self) {
         if (jqXHR && (tokenError && jqXHR.status === 400) || jqXHR.status === 401 || jqXHR.status === 403) {
-            log('Logging out. Reason: Status ' + jqXHR.status + '.');
+            console.log('API Service: Logging out. Reason: Status ' + jqXHR.status + '.');
             console.log(jqXHR);
             if (self && self.logoutCallback) {
                 self.logoutCallback(true, function () { });
@@ -473,20 +470,14 @@ function initApiService() {
     function handleTokenState(self) {
         var deferred = Q.defer();
         self.tokenService.getToken(function (accessToken) {
-            log('Got access token');
-
             if (!self.tokenService.tokenNeedsRefresh()) {
-                log('Token doesn\'t need refreshing');
                 resolveTokenQs(accessToken, deferred);
                 return;
             }
 
-            log('Token needs refresh');
-
             doRefreshToken(self, function (response) {
                 var tokenResponse = new IdentityTokenResponse(response);
                 self.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken, function () {
-                    log('New token set.');
                     resolveTokenQs(tokenResponse.accessToken, deferred);
                 });
             }, function (jqXHR) {
@@ -500,12 +491,9 @@ function initApiService() {
     function doRefreshToken(self, success, error) {
         self.tokenService.getRefreshToken(function (refreshToken) {
             if (!refreshToken || refreshToken === '') {
-                log('No existing refresh token.');
                 error();
                 return;
             }
-
-            log('Got existing refresh token. Do refresh call.');
 
             $.ajax({
                 type: 'POST',
@@ -518,11 +506,9 @@ function initApiService() {
                 contentType: 'application/x-www-form-urlencoded; charset=utf-8',
                 dataType: 'json',
                 success: function (response) {
-                    log('Successfully refreshed.');
                     success(response);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    log('Error refreshing.');
                     error(jqXHR);
                 }
             });
@@ -530,13 +516,8 @@ function initApiService() {
     }
 
     function resolveTokenQs(token, deferred) {
-        log('Resolving token.');
         deferred.resolve({
             'Authorization': 'Bearer ' + token
         });
-    }
-
-    function log(msg) {
-        console.log(new Date() + ' - API Service: ' + msg);
     }
 }
