@@ -3,15 +3,20 @@
     this.folderId = cipher.folderId;
     this.organizationId = cipher.organizationId;
     this.name = cipher.name ? cipher.name.encryptedString : null;
+    this.notes = cipher.notes ? cipher.notes.encryptedString : null;
     this.favorite = cipher.favorite;
 
-    if (type === 1) {
-        // login
-        this.uri = cipher.uri ? cipher.uri.encryptedString : null;
-        this.username = cipher.username ? cipher.username.encryptedString : null;
-        this.password = cipher.password ? cipher.password.encryptedString : null;
-        this.totp = cipher.totp ? cipher.totp.encryptedString : null;
-        this.notes = cipher.notes ? cipher.notes.encryptedString : null;
+    switch (type) {
+        case 1: // login
+            this.login = {
+                uri: cipher.uri ? cipher.uri.encryptedString : null,
+                username: cipher.username ? cipher.username.encryptedString : null,
+                password: cipher.password ? cipher.password.encryptedString : null,
+                totp: cipher.totp ? cipher.totp.encryptedString : null
+            };
+            break;
+        default:
+            break;
     }
 };
 

@@ -385,7 +385,7 @@
     "message": "No"
   },
   "unexpectedError": {
-    "message": "An unexpected error has occured."
+    "message": "An unexpected error has occurred."
   },
   "nameRequired": {
     "message": "Name is required."
@@ -428,6 +428,9 @@
   },
   "syncingComplete": {
     "message": "Syncing complete"
+  },
+  "syncingFailed": {
+    "message": "Syncing failed"
   },
   "importLoginsConfirmation": {
     "message": "You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"

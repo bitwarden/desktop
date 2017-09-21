@@ -9,11 +9,16 @@
 
         $scope.sync = function () {
             $scope.loading = true;
-            syncService.fullSync(true, function () {
-                $analytics.eventTrack('Synced Full');
+            syncService.fullSync(true, function (success) {
                 $scope.loading = false;
-                toastr.success(i18nService.syncingComplete);
                 setLastSync();
+                if (success) {
+                    $analytics.eventTrack('Synced Full');
+                    toastr.success(i18nService.syncingComplete);
+                }
+                else {
+                    toastr.error(i18nService.syncingFailed);
+                }
             });
         };
 

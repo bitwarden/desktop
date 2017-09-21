@@ -61,6 +61,9 @@ function initSyncService() {
                             self.syncCompleted(false);
                             callback(false);
                         });
+                    }, function () {
+                        self.syncCompleted(false);
+                        callback(false);
                     });
                 });
             });
