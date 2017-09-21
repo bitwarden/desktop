@@ -190,7 +190,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('dist:clean', function (cb) {
-    return rimraf(paths.dist, cb);
+    return rimraf(paths.dist + '**/*', cb);
 });
 
 gulp.task('dist:move', function () {
