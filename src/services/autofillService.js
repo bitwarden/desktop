@@ -8,8 +8,12 @@
 }
 
 function initAutofill() {
-    AutofillService.prototype.generateFillScript = function (pageDetails, fillUsername, fillPassword) {
-        if (!pageDetails || !fillPassword || fillPassword === '') {
+    // Add other languages to this array
+    var usernameFieldNames = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
+        'userid', 'user id'];
+
+    AutofillService.prototype.generateFillScript = function (pageDetails, fill) {
+        if (!pageDetails) {
             return null;
         }
 
@@ -25,8 +29,47 @@ function initAutofill() {
         var passwordFields = [],
             passwords = [],
             usernames = [],
+            filledOpIds = [],
             pf = null,
-            username = null;
+            username = null,
+            i = 0;
+
+        if (fill.fields && fill.fields.length) {
+            var fieldNames = [];
+
+            for (i = 0; i < fill.fields.length; i++) {
+                if (fill.fields[i].name && fill.fields[i].name !== '') {
+                    fieldNames.push(fill.fields[i].name.toLowerCase());
+                }
+                else {
+                    fieldNames.push(null);
+                }
+            }
+
+            for (i = 0; i < pageDetails.fields.length; i++) {
+                var field = pageDetails.fields[i];
+                if (filledOpIds.indexOf(field.opid) > -1 || !field.viewable) {
+                    continue;
+                }
+
+                var matchingIndex = findMatchingFieldIndex(field, fieldNames);
+                if (matchingIndex > -1) {
+                    filledOpIds.push(field.opid);
+                    fillScript.script.push(['click_on_opid', field.opid]);
+                    fillScript.script.push(['fill_by_opid', field.opid, fill.fields[matchingIndex].value]);
+                }
+            }
+        }
+
+        if (!fill.password || fill.password === '') {
+            // No password for this login. Maybe they just wanted to auto-fill some custom fields?
+            if (!filledOpIds.length) {
+                return null;
+            }
+
+            fillScript.script.push(['focus_by_opid', filledOpIds[filledOpIds.length - 1]]);
+            return fillScript;
+        }
 
         passwordFields = loadPasswordFields(pageDetails, false);
         if (!passwordFields.length) {
@@ -34,7 +77,6 @@ function initAutofill() {
             passwordFields = loadPasswordFields(pageDetails, true);
         }
 
-        var i;
         for (var formKey in pageDetails.forms) {
             var passwordFieldsForForm = [];
             for (i = 0; i < passwordFields.length; i++) {
@@ -47,7 +89,7 @@ function initAutofill() {
                 pf = passwordFieldsForForm[i];
                 passwords.push(pf);
 
-                if (fillUsername) {
+                if (fill.username) {
                     username = findUsernameField(pageDetails, pf, false, false);
 
                     if (!username) {
@@ -69,7 +111,7 @@ function initAutofill() {
             pf = passwordFields[0];
             passwords.push(pf);
 
-            if (fillUsername && pf.elementNumber > 0) {
+            if (fill.username && pf.elementNumber > 0) {
                 username = findUsernameField(pageDetails, pf, false, true);
 
                 if (!username) {
@@ -83,18 +125,38 @@ function initAutofill() {
             }
         }
 
+        if (!passwordFields.length) {
+            // No password fields on this page. Let's try to just fuzzy fill the username.
+            for (i = 0; i < pageDetails.fields.length; i++) {
+                var f = pageDetails.fields[i];
+                if (f.type === 'text' || f.type === 'email' || f.type === 'tel' && fieldIsFuzzyMatch(f, usernameFieldNames)) {
+                    usernames.push(f);
+                }
+            }
+        }
+
         for (i = 0; i < usernames.length; i++) {
+            if (filledOpIds.indexOf(usernames[i].opid) > -1) {
+                continue;
+            }
+
+            filledOpIds.push(usernames[i].opid);
             fillScript.script.push(['click_on_opid', usernames[i].opid]);
-            fillScript.script.push(['fill_by_opid', usernames[i].opid, fillUsername]);
+            fillScript.script.push(['fill_by_opid', usernames[i].opid, fill.username]);
         }
 
         for (i = 0; i < passwords.length; i++) {
+            if (filledOpIds.indexOf(passwords[i].opid) > -1) {
+                continue;
+            }
+
+            filledOpIds.push(passwords[i].opid);
             fillScript.script.push(['click_on_opid', passwords[i].opid]);
-            fillScript.script.push(['fill_by_opid', passwords[i].opid, fillPassword]);
+            fillScript.script.push(['fill_by_opid', passwords[i].opid, fill.password]);
         }
 
-        if (passwords.length) {
-            fillScript.autosubmit = { focusOpid: passwords[0].opid };
+        if (filledOpIds.length) {
+            fillScript.script.push(['focus_by_opid', filledOpIds[filledOpIds.length - 1]]);
         }
 
         return fillScript;
@@ -161,8 +223,11 @@ function initAutofill() {
                     continue;
                 }
 
-                var fillScript = self.generateFillScript(pageDetails[i].details,
-                    login.username, login.password);
+                var fillScript = self.generateFillScript(pageDetails[i].details, {
+                    username: login.username,
+                    password: login.password,
+                    fields: login.fields
+                });
                 if (!fillScript || !fillScript.script || !fillScript.script.length) {
                     continue;
                 }
@@ -232,7 +297,7 @@ function initAutofill() {
                 if (!login) {
                     return;
                 }
-                
+
                 self.doAutoFill(login, pageDetails, true, true, true);
             });
         });
@@ -260,9 +325,64 @@ function initAutofill() {
             if ((withoutForm || f.form === passwordField.form) && (canBeHidden || f.viewable) &&
                 (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
                 usernameField = f;
+
+                if (findMatchingFieldIndex(f, usernameFieldNames) > -1) {
+                    // We found an exact match. No need to keep looking.
+                    break;
+                }
             }
         }
 
         return usernameField;
+    }
+
+    function findMatchingFieldIndex(field, names) {
+        var matchingIndex = -1;
+        if (field.htmlID && field.htmlID !== '') {
+            matchingIndex = names.indexOf(field.htmlID.toLowerCase());
+        }
+        if (matchingIndex < 0 && field.htmlName && field.htmlName !== '') {
+            matchingIndex = names.indexOf(field.htmlName.toLowerCase());
+        }
+        if (matchingIndex < 0 && field['label-tag'] && field['label-tag'] !== '') {
+            matchingIndex = names.indexOf(field['label-tag'].replace(/(?:\r\n|\r|\n)/g, '').trim().toLowerCase());
+        }
+        if (matchingIndex < 0 && field.placeholder && field.placeholder !== '') {
+            matchingIndex = names.indexOf(field.placeholder.toLowerCase());
+        }
+
+        return matchingIndex;
+    }
+
+    function fieldIsFuzzyMatch(field, names) {
+        if (field.htmlID && field.htmlID !== '' && fuzzyMatch(names, field.htmlID.toLowerCase())) {
+            return true;
+        }
+        if (field.htmlName && field.htmlName !== '' && fuzzyMatch(names, field.htmlName.toLowerCase())) {
+            return true;
+        }
+        if (field['label-tag'] && field['label-tag'] !== '' &&
+            fuzzyMatch(names, field['label-tag'].replace(/(?:\r\n|\r|\n)/g, '').trim().toLowerCase())) {
+            return true;
+        }
+        if (field.placeholder && field.placeholder !== '' && fuzzyMatch(names, field.placeholder.toLowerCase())) {
+            return true;
+        }
+
+        return false;
+    }
+
+    function fuzzyMatch(options, value) {
+        if (!options || !options.length || !value || value === '') {
+            return false;
+        }
+
+        for (var i = 0; i < options.length; i++) {
+            if (value.indexOf(options[i]) > -1) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
