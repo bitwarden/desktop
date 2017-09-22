@@ -260,13 +260,15 @@ function initAutofill() {
                     if (code) {
                         self.utilsService.copyToClipboard(code);
                     }
+
+                    return code;
                 });
             }
 
             if (didAutofill) {
                 if (totpPromise) {
-                    totpPromise.then(function () {
-                        deferred.resolve();
+                    totpPromise.then(function (totpCode) {
+                        deferred.resolve(totpCode);
                     });
                 }
                 else {

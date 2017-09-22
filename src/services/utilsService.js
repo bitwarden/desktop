@@ -200,29 +200,30 @@ function initUtilsService() {
         return null;
     };
 
-    UtilsService.prototype.copyToClipboard = function (text) {
+    UtilsService.prototype.copyToClipboard = function (text, doc) {
+        doc = doc || document;
         if (window.clipboardData && window.clipboardData.setData) {
             // IE specific code path to prevent textarea being shown while dialog is visible.
             return clipboardData.setData('Text', text);
         }
-        else if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
-            var textarea = document.createElement('textarea');
+        else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
+            var textarea = doc.createElement('textarea');
             textarea.textContent = text;
             // Prevent scrolling to bottom of page in MS Edge.
             textarea.style.position = 'fixed';
-            document.body.appendChild(textarea);
+            doc.body.appendChild(textarea);
             textarea.select();
 
             try {
                 // Security exception may be thrown by some browsers.
-                return document.execCommand('copy');
+                return doc.execCommand('copy');
             }
             catch (ex) {
                 console.warn('Copy to clipboard failed.', ex);
                 return false;
             }
             finally {
-                document.body.removeChild(textarea);
+                doc.body.removeChild(textarea);
             }
         }
     };

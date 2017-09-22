@@ -72,8 +72,11 @@ angular
                 toastr.error(i18nService.autofillError);
             }
 
-            autofillService.doAutoFill(login, pageDetails, false).then(function () {
+            autofillService.doAutoFill(login, pageDetails, false).then(function (totpCode) {
                 $analytics.eventTrack('Autofilled');
+                if (totpCode && utilsService.isFirefox()) {
+                    utilsService.copyToClipboard(totpCode, document);
+                }
                 $window.close();
             }, function () {
                 $analytics.eventTrack('Autofilled Error');
