@@ -17,6 +17,16 @@ function ConstantsService(i18nService) {
             Rsa2048_OaepSha256_HmacSha256_B64: 5,
             Rsa2048_OaepSha1_HmacSha256_B64: 6
         },
+        cipherType: {
+            login: 1,
+            secureNote: 2,
+            card: 3
+        },
+        fieldType: {
+            text: 0,
+            hidden: 1,
+            boolean: 2
+        },
         twoFactorProvider: {
             u2f: 4,
             yubikey: 3,

@@ -114,14 +114,38 @@ var Login = function (obj, alreadyEncrypted, localData) {
         this.totp = obj.totp ? new CipherString(obj.totp) : null;
     }
 
+    var i;
     if (obj.attachments) {
         this.attachments = [];
-        for (var i = 0; i < obj.attachments.length; i++) {
+        for (i = 0; i < obj.attachments.length; i++) {
             this.attachments.push(new Attachment(obj.attachments[i], alreadyEncrypted));
         }
     }
     else {
         this.attachments = null;
+    }
+
+    if (obj.fields) {
+        this.fields = [];
+        for (i = 0; i < obj.fields.length; i++) {
+            this.fields.push(new Field(obj.fields[i], alreadyEncrypted));
+        }
+    }
+    else {
+        this.fields = null;
+    }
+};
+
+var Field = function (obj, alreadyEncrypted) {
+    this.type = obj.type;
+
+    if (alreadyEncrypted === true) {
+        this.name = obj.name ? obj.name : null;
+        this.value = obj.value ? obj.value : null;
+    }
+    else {
+        this.name = obj.name ? new CipherString(obj.name) : null;
+        this.value = obj.value ? new CipherString(obj.value) : null;
     }
 };
 
@@ -182,9 +206,9 @@ var Folder = function (obj, alreadyEncrypted) {
         };
 
         var attachments = [];
-        var deferred = Q.defer();
+        var fields = [];
 
-        self.name.decrypt(self.organizationId).then(function (val) {
+        return self.name.decrypt(self.organizationId).then(function (val) {
             model.name = val;
             if (self.uri) {
                 return self.uri.decrypt(self.organizationId);
@@ -222,24 +246,58 @@ var Folder = function (obj, alreadyEncrypted) {
             model.totp = val;
 
             if (self.attachments) {
-                var attachmentPromises = [];
-                for (var i = 0; i < self.attachments.length; i++) {
-                    (function (attachment) {
-                        var promise = attachment.decrypt(self.organizationId).then(function (decAttachment) {
-                            attachments.push(decAttachment);
-                        });
-                        attachmentPromises.push(promise);
-                    })(self.attachments[i]);
-                }
-                return Q.all(attachmentPromises);
+                return self.attachments.reduce(function (promise, attachment) {
+                    return promise.then(function () {
+                        return attachment.decrypt(self.organizationId);
+                    }).then(function (decAttachment) {
+                        attachments.push(decAttachment);
+                    });
+                }, Q());
             }
             return;
         }).then(function () {
             model.attachments = attachments.length ? attachments : null;
-            deferred.resolve(model);
-        });
 
-        return deferred.promise;
+            if (self.fields) {
+                return self.fields.reduce(function (promise, field) {
+                    return promise.then(function () {
+                        return field.decrypt(self.organizationId);
+                    }).then(function (decField) {
+                        fields.push(decField);
+                    });
+                }, Q());
+            }
+            return;
+        }).then(function () {
+            model.fields = fields.length ? fields : null;
+            return model;
+        }, function (e) {
+            console.log(e);
+        });
+    };
+
+    Field.prototype.decrypt = function (orgId) {
+        var self = this;
+        var model = {
+            type: self.type
+        };
+
+        return Q().then(function () {
+            if (self.name) {
+                return self.name.decrypt(orgId);
+            }
+            return null;
+        }).then(function (val) {
+            model.name = val;
+
+            if (self.value) {
+                return self.value.decrypt(orgId);
+            }
+            return null;
+        }).then(function (val) {
+            model.value = val;
+            return model;
+        });
     };
 
     Attachment.prototype.decrypt = function (orgId) {
@@ -251,14 +309,10 @@ var Folder = function (obj, alreadyEncrypted) {
             url: self.url
         };
 
-        var deferred = Q.defer();
-
-        self.fileName.decrypt(orgId).then(function (val) {
+        return self.fileName.decrypt(orgId).then(function (val) {
             model.fileName = val;
-            deferred.resolve(model);
+            return model;
         });
-
-        return deferred.promise;
     };
 
     Folder.prototype.decrypt = function () {
@@ -267,13 +321,9 @@ var Folder = function (obj, alreadyEncrypted) {
             id: self.id
         };
 
-        var deferred = Q.defer();
-
-        self.name.decrypt().then(function (val) {
+        return self.name.decrypt().then(function (val) {
             model.name = val;
-            deferred.resolve(model);
+            return model;
         });
-
-        return deferred.promise;
     };
 })();

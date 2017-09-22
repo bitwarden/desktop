@@ -44,6 +44,51 @@ function initLoginService() {
             return self.cryptoService.encrypt(login.totp, orgKey);
         }).then(function (cs) {
             model.totp = cs;
+            return self.encryptFields(login.fields, orgKey);
+        }).then(function (fields) {
+            model.fields = fields;
+            return model;
+        });
+    };
+
+    LoginService.prototype.encryptFields = function (fields, key) {
+        var self = this;
+        if (!fields || !fields.length) {
+            return null;
+        }
+
+        var encFields = [];
+        return fields.reduce(function (promise, field) {
+            return promise.then(function () {
+                return self.encryptField(field, key);
+            }).then(function (encField) {
+                encFields.push(encField);
+            });
+        }, Q()).then(function () {
+            return encFields;
+        });
+    };
+
+    LoginService.prototype.encryptField = function (field, key) {
+        var self = this;
+
+        var model = {
+            type: field.type
+        };
+
+        return Q().then(function () {
+            if (!field.name || field.name === '') {
+                return null;
+            }
+            return self.cryptoService.encrypt(field.name, key);
+        }).then(function (cs) {
+            model.name = cs;
+            if (!field.value || field.value === '') {
+                return null;
+            }
+            return self.cryptoService.encrypt(field.value, key);
+        }).then(function (cs) {
+            model.value = cs;
             return model;
         });
     };
@@ -533,7 +578,7 @@ function initLoginService() {
         return 0;
     };
 
-    function sortLoginsByLastUsed(a ,b) {
+    function sortLoginsByLastUsed(a, b) {
         var aLastUsed = a.localData && a.localData.lastUsedDate ? a.localData.lastUsedDate : null;
         var bLastUsed = b.localData && b.localData.lastUsedDate ? b.localData.lastUsedDate : null;
 

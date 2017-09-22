@@ -30,8 +30,8 @@ function initApiService() {
         }
 
         // Desktop
-        //self.baseUrl = 'http://localhost:4000';
-        //self.identityBaseUrl = 'http://localhost:33656';
+        self.baseUrl = 'http://localhost:4000';
+        self.identityBaseUrl = 'http://localhost:33656';
 
         // Desktop HTTPS
         //self.baseUrl = 'https://localhost:44377';
@@ -46,8 +46,8 @@ function initApiService() {
         //self.identityBaseUrl = 'https://preview-identity.bitwarden.com';
 
         // Production
-        self.baseUrl = 'https://api.bitwarden.com';
-        self.identityBaseUrl = 'https://identity.bitwarden.com';
+        //self.baseUrl = 'https://api.bitwarden.com';
+        //self.identityBaseUrl = 'https://identity.bitwarden.com';
     };
 
     // Auth APIs

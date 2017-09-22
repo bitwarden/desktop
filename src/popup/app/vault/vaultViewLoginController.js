@@ -2,7 +2,9 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr, $q,
-        $analytics, i18nService, utilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert) {
+        $analytics, i18nService, utilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert,
+        constantsService) {
+        $scope.constants = constantsService;
         $scope.i18n = i18nService;
         $scope.showAttachments = !utilsService.isEdge();
         var from = $stateParams.from,
@@ -19,12 +21,7 @@ angular
                 $scope.login = model;
 
                 if (model.password) {
-                    var maskedPassword = '';
-                    for (var i = 0; i < model.password.length; i++) {
-                        maskedPassword += '•';
-                    }
-
-                    $scope.login.maskedPassword = maskedPassword;
+                    $scope.login.maskedPassword = $scope.maskValue(model.password);
                 }
 
                 if (model.uri) {
@@ -65,6 +62,10 @@ angular
             });
         };
 
+        $scope.toggleFieldValue = function (field) {
+            field.showValue = !field.showValue;
+        };
+
         $scope.close = function () {
             if (from === 'current') {
                 $state.go('tabs.current', {
@@ -92,6 +93,18 @@ angular
 
         $scope.clipboardError = function (e, password) {
             toastr.info(i18n.browserNotSupportClipboard);
+        };
+
+        $scope.maskValue = function (value) {
+            if (!value) {
+                return value;
+            }
+
+            var masked = '';
+            for (var i = 0; i < value.length; i++) {
+                masked += '•';
+            }
+            return masked;
         };
 
         $scope.clipboardSuccess = function (e, type) {

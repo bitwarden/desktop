@@ -145,16 +145,17 @@ var SyncResponse = function (response) {
         this.profile = new ProfileResponse(response.Profile);
     }
 
+    var i;
     this.folders = [];
     if (response.Folders) {
-        for (var i = 0; i < response.Folders.length; i++) {
+        for (i = 0; i < response.Folders.length; i++) {
             this.folders.push(new FolderResponse(response.Folders[i]));
         }
     }
 
     this.ciphers = [];
     if (response.Ciphers) {
-        for (var i = 0; i < response.Ciphers.length; i++) {
+        for (i = 0; i < response.Ciphers.length; i++) {
             this.ciphers.push(new CipherResponse(response.Ciphers[i]));
         }
     }

@@ -2,8 +2,9 @@ angular
     .module('bit.vault')
 
     .controller('vaultEditLoginController', function ($scope, $state, $stateParams, loginService, folderService,
-        cryptoService, $q, toastr, SweetAlert, utilsService, $analytics, i18nService) {
+        cryptoService, $q, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
+        $scope.constants = constantsService;
         $scope.showAttachments = !utilsService.isEdge();
         var loginId = $stateParams.loginId;
         var fromView = $stateParams.fromView;

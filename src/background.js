@@ -289,12 +289,12 @@ var bg_isBackground = true,
 
         chrome.webRequest.onCompleted.addListener(completeAuthRequest, { urls: ['http://*/*'] });
         chrome.webRequest.onErrorOccurred.addListener(completeAuthRequest, { urls: ['http://*/*'] });
+    }
 
-        function completeAuthRequest(details) {
-            var i = pendingAuthRequests.indexOf(details.requestId);
-            if (i > -1) {
-                pendingAuthRequests.splice(i, 1);
-            }
+    function completeAuthRequest(details) {
+        var i = pendingAuthRequests.indexOf(details.requestId);
+        if (i > -1) {
+            pendingAuthRequests.splice(i, 1);
         }
     }
 

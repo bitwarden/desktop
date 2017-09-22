@@ -31,9 +31,17 @@ var LoginData = function (response, userId) {
     this.favorite = response.favorite;
     this.revisionDate = response.revisionDate;
 
+    var i;
+    if (response.data.Fields) {
+        this.fields = [];
+        for (i = 0; i < response.data.Fields.length; i++) {
+            this.fields.push(new FieldData(response.data.Fields[i]));
+        }
+    }
+
     if (response.attachments) {
         this.attachments = [];
-        for (var i = 0; i < response.attachments.length; i++) {
+        for (i = 0; i < response.attachments.length; i++) {
             this.attachments.push(new AttachmentData(response.attachments[i]));
         }
     }
@@ -45,4 +53,10 @@ var AttachmentData = function (response) {
     this.fileName = response.fileName;
     this.size = response.size;
     this.sizeName = response.sizeName;
+};
+
+var FieldData = function (response) {
+    this.type = response.Type;
+    this.name = response.Name;
+    this.value = response.Value;
 };

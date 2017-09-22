@@ -18,6 +18,17 @@
         default:
             break;
     }
+
+    if (cipher.fields) {
+        this.fields = [];
+        for (var i = 0; i < cipher.fields.length; i++) {
+            this.fields.push({
+                type: cipher.fields[i].type,
+                name: cipher.fields[i].name ? cipher.fields[i].name.encryptedString : null,
+                value: cipher.fields[i].value ? cipher.fields[i].value.encryptedString : null,
+            });
+        }
+    }
 };
 
 var FolderRequest = function (folder) {
