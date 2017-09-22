@@ -129,7 +129,8 @@ function initAutofill() {
             // No password fields on this page. Let's try to just fuzzy fill the username.
             for (i = 0; i < pageDetails.fields.length; i++) {
                 var f = pageDetails.fields[i];
-                if (f.type === 'text' || f.type === 'email' || f.type === 'tel' && fieldIsFuzzyMatch(f, usernameFieldNames)) {
+                if ((f.type === 'text' || f.type === 'email' || f.type === 'tel') &&
+                    fieldIsFuzzyMatch(f, usernameFieldNames)) {
                     usernames.push(f);
                 }
             }
@@ -199,7 +200,8 @@ function initAutofill() {
 
     AutofillService.prototype.doAutoFill = function (login, pageDetails, fromBackground, skipTotp, skipLastUsed) {
         var deferred = Q.defer();
-        var self = this;
+        var self = this,
+            totpPromise = null;
 
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             var tab = null;
@@ -228,6 +230,7 @@ function initAutofill() {
                     password: login.password,
                     fields: login.fields
                 });
+
                 if (!fillScript || !fillScript.script || !fillScript.script.length) {
                     continue;
                 }
@@ -242,13 +245,12 @@ function initAutofill() {
                     fillScript: fillScript
                 }, { frameId: pageDetails[i].frameId });
 
-                if ((fromBackground && self.utilsService.isFirefox()) ||
+                if (totpPromise || (fromBackground && self.utilsService.isFirefox()) ||
                     skipTotp || !login.totp || !self.tokenService.getPremium()) {
-                    deferred.resolve();
-                    return;
+                    continue;
                 }
 
-                self.totpService.isAutoCopyEnabled().then(function (enabled) {
+                totpPromise = self.totpService.isAutoCopyEnabled().then(function (enabled) {
                     if (enabled) {
                         return self.totpService.getCode(login.totp);
                     }
@@ -258,17 +260,21 @@ function initAutofill() {
                     if (code) {
                         self.utilsService.copyToClipboard(code);
                     }
-
-                    deferred.resolve();
-                    return;
                 });
-
-                break;
             }
 
-            if (!didAutofill) {
+            if (didAutofill) {
+                if (totpPromise) {
+                    totpPromise.then(function () {
+                        deferred.resolve();
+                    });
+                }
+                else {
+                    deferred.resolve();
+                }
+            }
+            else {
                 deferred.reject();
-                return;
             }
         });
 

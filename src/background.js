@@ -682,7 +682,7 @@ var bg_isBackground = true,
                 return;
             }
 
-            chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab }, function () {
+            chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: 'contextMenu' }, function () {
             });
         });
     }
