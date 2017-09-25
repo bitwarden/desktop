@@ -2,8 +2,10 @@
     .module('bit.vault')
 
     .controller('vaultAddLoginController', function ($scope, $state, $stateParams, loginService, folderService,
-        cryptoService, $q, toastr, utilsService, $analytics, i18nService) {
+        cryptoService, $q, toastr, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
+        $scope.constants = constantsService;
+        $scope.addFieldType = constantsService.fieldType.text.toString();
         var from = $stateParams.from,
             folderId = $stateParams.folderId;
 
@@ -62,6 +64,25 @@
                 $state.go('tabs.vault', {
                     animation: 'out-slide-down'
                 });
+            }
+        };
+
+        $scope.addField = function (type) {
+            if (!$scope.login.fields) {
+                $scope.login.fields = [];
+            }
+
+            $scope.login.fields.push({
+                type: parseInt(type),
+                name: null,
+                value: null
+            });
+        };
+
+        $scope.removeField = function (field) {
+            var index = $scope.login.fields.indexOf(field);
+            if (index > -1) {
+                $scope.login.fields.splice(index, 1);
             }
         };
 

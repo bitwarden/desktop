@@ -68,6 +68,45 @@
                     </div>
                 </div>
             </div>
+
+            <div class="list-section">
+                <div class="list-section-header">
+                    {{i18n.customFields}}
+                </div>
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-table"
+                         ng-if="login.fields && login.fields.length" ng-repeat="field in login.fields"
+                         ng-class="{'list-section-item-checkbox' : field.type === constants.fieldType.boolean}">
+                        <a href="#" stop-click ng-click="removeField(field)" class="action-button text-danger">
+                            <i class="fa fa-close fa-lg"></i>
+                        </a>
+                        <div class="action-button-content">
+                            <input id="field_name{{$index}}" type="text" name="Field.Name{{$index}}"
+                                   ng-model="field.name" class="item-label" 
+                                   placeholder="{{i18n.name}}">
+                            <input id="field_value{{$index}}" type="text" name="Field.Value{{$index}}"
+                                   ng-model="field.value" ng-if="field.type === constants.fieldType.text" 
+                                   placeholder="{{i18n.value}}">
+                            <input id="field_value{{$index}}" type="password" name="Field.Value{{$index}}"
+                                   ng-model="field.value" ng-if="field.type === constants.fieldType.hidden" 
+                                   placeholder="{{i18n.value}}">
+                            <input id="field_value{{$index}}" name="Field.Value{{$index}}" type="checkbox"
+                                   ng-model="field.value" data-ng-true-value="'true'"
+                                   ng-if="field.type === constants.fieldType.boolean">
+                        </div>
+                    </div>
+                    <div class="list-section-item">
+                        <a href="#" stop-click ng-click="addField(addFieldType)">
+                            <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{i18n.newCustomField}}
+                        </a>
+                        <select ng-model="addFieldType" class="field-type">
+                            <option value="0">{{i18n.cfTypeText}}</option>
+                            <option value="1">{{i18n.cfTypeHidden}}</option>
+                            <option value="2">{{i18n.cfTypeBoolean}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </form>

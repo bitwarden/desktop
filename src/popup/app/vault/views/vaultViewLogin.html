@@ -44,7 +44,7 @@
                         <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>
                     </a>
                     <span class="item-label">{{i18n.password}}</span>
-                    <span ng-show="!showPassword">{{login.maskedPassword}}</span>
+                    <span ng-show="!showPassword" class="monospaced">{{login.maskedPassword}}</span>
                     <span id="password" ng-show="showPassword" class="monospaced">{{login.password}}</span>
                 </div>
                 <div class="list-section-item totp" ng-class="{'low': totpLow}" ng-if="login.totp && totpCode">
@@ -96,7 +96,7 @@
                         {{field.value || '&nbsp;'}}
                     </div>
                     <div ng-if="field.type === constants.fieldType.hidden">
-                        <span ng-show="!field.showValue">{{maskValue(field.value)}}</span>
+                        <span ng-show="!field.showValue" class="monospaced">{{maskValue(field.value)}}</span>
                         <span ng-show="field.showValue" class="monospaced">{{field.value}}</span>
                     </div>
                     <div ng-if="field.type === constants.fieldType.boolean">

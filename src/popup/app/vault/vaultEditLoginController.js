@@ -6,6 +6,7 @@ angular
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.showAttachments = !utilsService.isEdge();
+        $scope.addFieldType = constantsService.fieldType.text.toString();
         var loginId = $stateParams.loginId;
         var fromView = $stateParams.fromView;
         var from = $stateParams.from;
@@ -91,6 +92,25 @@ angular
                 $state.go('tabs.vault', {
                     animation: 'out-slide-down'
                 });
+            }
+        };
+
+        $scope.addField = function (type) {
+            if (!$scope.login.fields) {
+                $scope.login.fields = [];
+            }
+
+            $scope.login.fields.push({
+                type: parseInt(type),
+                name: null,
+                value: null
+            });
+        };
+
+        $scope.removeField = function (field) {
+            var index = $scope.login.fields.indexOf(field);
+            if (index > -1) {
+                $scope.login.fields.splice(index, 1);
             }
         };
 

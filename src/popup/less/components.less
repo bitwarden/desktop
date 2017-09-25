@@ -318,6 +318,29 @@
             display: block;
             width: 100%;
             font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        &.list-section-item-table {
+            display: table;
+            width: 100%;
+        }
+
+        .action-button {
+            padding: 8px 10px 8px 5px;
+            display: table-cell;
+            width: 20px;
+            vertical-align: middle;
+        }
+
+        .action-button-content {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .field-type {
+            margin: 5px 0 0 27px;
+            width: ~"calc(100% - 27px)";
         }
 
         .btn-list {
@@ -387,7 +410,7 @@
         }
 
         &.list-section-item-checkbox, &.list-section-item-input, &.list-section-item-slider {
-            label {
+            label, .item-label {
                 font-size: @font-size-base;
                 color: @text-color;
                 display: inline;
