@@ -171,64 +171,68 @@ var bg_isBackground = true,
         refreshBadgeAndMenu();
     });
 
-    chrome.windows.onFocusChanged.addListener(function (windowId) {
-        if (windowId === null || windowId < 0) {
-            return;
-        }
-
-        refreshBadgeAndMenu();
-    });
-
-    chrome.contextMenus.onClicked.addListener(function (info, tab) {
-        if (info.menuItemId === 'generate-password') {
-            ga('send', {
-                hitType: 'event',
-                eventAction: 'Generated Password From Context Menu'
-            });
-            bg_passwordGenerationService.getOptions().then(function (options) {
-                var password = bg_passwordGenerationService.generatePassword(options);
-                bg_utilsService.copyToClipboard(password);
-            });
-        }
-        else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
-            info.parentMenuItemId === 'copy-password') {
-            var id = info.menuItemId.split('_')[1];
-            if (id === 'noop') {
+    if (chrome.windows) {
+        chrome.windows.onFocusChanged.addListener(function (windowId) {
+            if (windowId === null || windowId < 0) {
                 return;
             }
 
-            bg_loginService.getAllDecrypted().then(function (logins) {
-                for (var i = 0; i < logins.length; i++) {
-                    if (logins[i].id === id) {
-                        if (info.parentMenuItemId === 'autofill') {
-                            ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Autofilled From Context Menu'
-                            });
-                            startAutofillPage(logins[i]);
-                        }
-                        else if (info.parentMenuItemId === 'copy-username') {
-                            ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Copied Username From Context Menu'
-                            });
-                            bg_utilsService.copyToClipboard(logins[i].username);
-                        }
-                        else if (info.parentMenuItemId === 'copy-password') {
-                            ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Copied Password From Context Menu'
-                            });
-                            bg_utilsService.copyToClipboard(logins[i].password);
-                        }
-                        return;
-                    }
-                }
-            }, function () {
+            refreshBadgeAndMenu();
+        });
+    }
 
-            });
-        }
-    });
+    if (chrome.contextMenus) {
+        chrome.contextMenus.onClicked.addListener(function (info, tab) {
+            if (info.menuItemId === 'generate-password') {
+                ga('send', {
+                    hitType: 'event',
+                    eventAction: 'Generated Password From Context Menu'
+                });
+                bg_passwordGenerationService.getOptions().then(function (options) {
+                    var password = bg_passwordGenerationService.generatePassword(options);
+                    bg_utilsService.copyToClipboard(password);
+                });
+            }
+            else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
+                info.parentMenuItemId === 'copy-password') {
+                var id = info.menuItemId.split('_')[1];
+                if (id === 'noop') {
+                    return;
+                }
+
+                bg_loginService.getAllDecrypted().then(function (logins) {
+                    for (var i = 0; i < logins.length; i++) {
+                        if (logins[i].id === id) {
+                            if (info.parentMenuItemId === 'autofill') {
+                                ga('send', {
+                                    hitType: 'event',
+                                    eventAction: 'Autofilled From Context Menu'
+                                });
+                                startAutofillPage(logins[i]);
+                            }
+                            else if (info.parentMenuItemId === 'copy-username') {
+                                ga('send', {
+                                    hitType: 'event',
+                                    eventAction: 'Copied Username From Context Menu'
+                                });
+                                bg_utilsService.copyToClipboard(logins[i].username);
+                            }
+                            else if (info.parentMenuItemId === 'copy-password') {
+                                ga('send', {
+                                    hitType: 'event',
+                                    eventAction: 'Copied Password From Context Menu'
+                                });
+                                bg_utilsService.copyToClipboard(logins[i].password);
+                            }
+                            return;
+                        }
+                    }
+                }, function () {
+
+                });
+            }
+        });
+    }
 
     if (chrome.webRequest && chrome.webRequest.onAuthRequired) {
         chrome.webRequest.onAuthRequired.addListener(function (details, callback) {
@@ -300,7 +304,7 @@ var bg_isBackground = true,
 
     var buildingContextMenu = false;
     function buildContextMenu(callback) {
-        if (buildingContextMenu) {
+        if (!chrome.contextMenus || buildingContextMenu) {
             return;
         }
         buildingContextMenu = true;
@@ -367,6 +371,10 @@ var bg_isBackground = true,
     }
 
     function setIcon() {
+        if (!chrome.browserAction.setIcon) {
+            return;
+        }
+
         bg_userService.isAuthenticated(function (isAuthenticated) {
             bg_cryptoService.getKey().then(function (key) {
                 var suffix = '';
@@ -388,6 +396,10 @@ var bg_isBackground = true,
     }
 
     function refreshBadgeAndMenu() {
+        if (!chrome.windows || !chrome.contextMenus) {
+            return;
+        }
+
         chrome.tabs.query({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }, function (tabs) {
             var tab = null;
             if (tabs.length > 0) {
@@ -418,7 +430,7 @@ var bg_isBackground = true,
     }
 
     function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
-        if (!url) {
+        if (!chrome.browserAction.setBadgeBackgroundColor || !url) {
             return;
         }
 
@@ -428,6 +440,10 @@ var bg_isBackground = true,
         }
 
         chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
+
+        if (!chrome.browserAction.setBadgeText) {
+            return;
+        }
 
         menuOptionsLoaded = [];
         bg_loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
@@ -704,7 +720,7 @@ var bg_isBackground = true,
     }
 
     function loadContextMenuOptions(title, idSuffix, login) {
-        if (menuOptionsLoaded.indexOf(idSuffix) > -1) {
+        if (!chrome.contextMenus || menuOptionsLoaded.indexOf(idSuffix) > -1) {
             return;
         }
         menuOptionsLoaded.push(idSuffix);
