@@ -44,7 +44,7 @@
     </div>
 </form>
 
-<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.duo">
+<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.duo" autocomplete="off">
     <div class="header">
         <div class="left">
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
@@ -71,7 +71,8 @@
     </div>
 </form>
 
-<form name="theForm" ng-submit="login(token)" bit-form="loginPromise" ng-if="providerType === constantsProvider.yubikey">
+<form name="theForm" ng-submit="login(token)" bit-form="loginPromise" ng-if="providerType === constantsProvider.yubikey"
+      autocomplete="off">
     <div class="header">
         <div class="left">
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
@@ -108,7 +109,7 @@
     </div>
 </form>
 
-<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.u2f">
+<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.u2f" autocomplete="off">
     <div class="header">
         <div class="left">
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
