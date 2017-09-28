@@ -2,9 +2,12 @@
     .module('bit.lock')
 
     .controller('lockController', function ($scope, $state, $analytics, i18nService, cryptoService, toastr,
-        userService, SweetAlert) {
+        userService, SweetAlert, $timeout) {
         $scope.i18n = i18nService;
-        $('#master-password').focus();
+
+        $timeout(function () {
+            $('#master-password').focus();
+        });
 
         $scope.logOut = function () {
             SweetAlert.swal({

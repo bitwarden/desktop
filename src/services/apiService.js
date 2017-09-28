@@ -57,7 +57,7 @@ function initApiService() {
 
         // Hack for Edge. For some reason tokenRequest loses proto. Rebuild it here.
         tokenRequest = new TokenRequest(tokenRequest.email, tokenRequest.masterPasswordHash, tokenRequest.provider,
-            tokenRequest.token, tokenRequest.remeber, tokenRequest.device);
+            tokenRequest.token, tokenRequest.remember, tokenRequest.device);
 
         $.ajax({
             type: 'POST',

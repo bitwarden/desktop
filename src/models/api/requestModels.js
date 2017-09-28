@@ -40,7 +40,7 @@ var TokenRequest = function (email, masterPasswordHash, provider, token, remembe
     this.masterPasswordHash = masterPasswordHash;
     this.token = token;
     this.provider = provider;
-    this.remember = remember || remember !== false;
+    this.remember = remember === true;
     this.device = null;
     if (device) {
         this.device = device;
