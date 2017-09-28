@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Sincronizare completă"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Puteți să importați datele de conectare din seiful web bitwarden.com. Doriți să vizitați site-ul acum?"
   },
@@ -749,6 +752,30 @@
     "message":"Generați și copiați o nouă parolă aleatorie în clipboard."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Din păcate această fereastră nu este disponibilă în modul privat pentru acest browser."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

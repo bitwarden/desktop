@@ -89,7 +89,7 @@
     "message":"Подсказка к паролю"
   },
   "enterEmailToGetHint":{
-    "message":"Введите Ваш email для получения подсказки мастер-пароля."
+    "message":"Введите свой email для получения подсказки мастер-пароля."
   },
   "getMasterPasswordHint":{
     "message":"Получить подсказку к мастер-паролю"
@@ -149,7 +149,7 @@
     "message":"Напишите нам"
   },
   "emailUsDirectly":{
-    "message":"Напишите нам на email, чтобы получить помощь или оставить отзыв."
+    "message":"Чтобы получить помощь или оставить отзыв, отправьте нам письмо."
   },
   "visitOurWebsite":{
     "message":"Перейти на наш сайт"
@@ -428,6 +428,9 @@
   },
   "syncingComplete":{
     "message":"Синхронизация завершена"
+  },
+  "syncingFailed":{
+    "message":"Syncing failed"
   },
   "importLoginsConfirmation":{
     "message":"Вы можете легко импортировать свои логины из других менеджеров паролей в свое веб-хранилище bitwarden. Хотите сделать это сейчас?"
@@ -749,6 +752,30 @@
     "message":"Создавать и копировать новый случайный пароль в буфер обмена."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"К сожалению, это окно недоступно в приватном режиме этого браузера."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

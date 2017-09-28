@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"同步完成"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"你可以在 bitwarden 網頁版匯入密碼。現在前往？"
   },
@@ -707,48 +710,72 @@
     "message":"驗證碼將會電郵給你。"
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"自我託管的環境"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"指定自己設定、託管的 bitwarden 環境之基礎 URL。"
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"自訂環境"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"適用於進階使用者。你可以單獨指定各個服務的基礎 URL。"
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"伺服器 URL"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"API 伺服器 URL"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"Web 保存庫伺服器 URL"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"身分伺服器 URL"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"環境 URL 已儲存。"
   },
   "enableAutoFillOnPageLoad":{
     "message":"Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"如果網頁載入時偵測到登入表單，則自動執行表單填寫。"
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"目前這是一項實驗性功能。要使用需自行承擔風險。"
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"自動使用最後一次登入的帳號填寫目前網站"
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"產生並將一個新的隨機密碼複製到剪貼簿中。"
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"很遺憾，在這個瀏覽器的隱私模式下，此視窗無法使用。"
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

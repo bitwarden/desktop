@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Sincronização completada"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Pode importar em massa as suas credenciais a partir do cofre web bitwarden.com. Pretende visitar o website agora?"
   },
@@ -749,6 +752,30 @@
     "message":"Gerar e copiar uma nova palavra-passe aleatória para a área de transferência."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Infelizmente esta janela não está disponível no modo privado para este navegador."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

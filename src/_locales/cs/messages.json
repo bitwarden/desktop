@@ -11,7 +11,7 @@
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
-    "message":"Přihlašte se nebo si vytvořte nový účet pro přístup do vašeho bezpečného trezoru."
+    "message":"Pro přístup do vašeho bezpečného trezoru se přihlašte nebo si vytvořte nový účet."
   },
   "createAccount":{
     "message":"Vytvořit účet"
@@ -35,7 +35,7 @@
     "message":"Hlavní heslo"
   },
   "masterPassDesc":{
-    "message":"Hlavní heslo je heslo, které používáte k přístupu do vašeho trezoru. Je velmi důležité, abyste své hlavní heslo nezapomněli. Neexistuje totiž žádný způsob, jak heslo obnovit v případě, že jste na něj zapomněli."
+    "message":"Hlavní heslo je heslo, které používáte k přístupu do vašeho trezoru. Je velmi důležité, abyste jej nezapomněli. Neexistuje totiž žádný způsob, jak heslo obnovit v případě, že jste na něj zapomněli."
   },
   "masterPassHintDesc":{
     "message":"Nápověda k hlavnímu heslu vám pomůže zapamatovat si heslo, pokud ho zapomenete."
@@ -80,7 +80,7 @@
     "message":"Trezor je zamknutý."
   },
   "autoFillInfo":{
-    "message":"Pro aktuální kartu prohlížeče neexistují žádné přihlašovací údaje k automatickému vyplnění."
+    "message":"Pro aktuální stránku neexistují žádné přihlašovací údaje."
   },
   "addLogin":{
     "message":"Přidat přihlašovací údaje"
@@ -89,7 +89,7 @@
     "message":"Nápověda k heslu"
   },
   "enterEmailToGetHint":{
-    "message":"Zadejte emailovou adresu pro zaslání nápovědy k vašemu hlavnímu heslu."
+    "message":"Zadejte emailovou adresu pro zaslání nápovědy k hlavnímu heslu."
   },
   "getMasterPasswordHint":{
     "message":"Získat nápovědu pro hlavní heslo"
@@ -176,25 +176,25 @@
     "message":"Generátor hesla"
   },
   "passGenInfo":{
-    "message":"Vygenerujte si silné a unikátní heslo pro vaše přihlašovací údaje."
+    "message":"Vygenerujte si silné a unikátní heslo pro přihlašovací údaje."
   },
   "bitWebVault":{
     "message":"Webová aplikace"
   },
   "bitWebVaultInfo":{
-    "message":"Spravujte vaše přihlašovací údaje z jakéhokoliv prohlížeče pomocí webové aplikace bitwarden."
+    "message":"Spravujte přihlašovací údaje z jakéhokoliv prohlížeče pomocí webové aplikace bitwarden."
   },
   "bitIosVault":{
     "message":"Aplikace pro iOS"
   },
   "bitIosVaultInfo":{
-    "message":"Spravujte vaše přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí iOS aplikace bitwarden."
+    "message":"Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí iOS aplikace bitwarden."
   },
   "bitAndrVault":{
     "message":"Aplikace pro Android"
   },
   "bitAndrVaultInfo":{
-    "message":"Spravujte vaše přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí Android aplikace bitwarden."
+    "message":"Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí Android aplikace bitwarden."
   },
   "importLogins":{
     "message":"Import přihlašovacích údajů",
@@ -225,7 +225,7 @@
     "message":"Minimální počet speciálních znaků"
   },
   "avoidAmbChar":{
-    "message":"Nepoužít snadno zaměnitelné znaky"
+    "message":"Nepoužít zaměnitelné znaky"
   },
   "searchVault":{
     "message":"Vyhledat v trezoru"
@@ -234,7 +234,7 @@
     "message":"Upravit"
   },
   "noLoginsInList":{
-    "message":"Neexistují žádné přihlašovací údaje k zobrazení."
+    "message":"Žádné přihlašovací údaje."
   },
   "loginInformation":{
     "message":"Přihlašovací údaje"
@@ -354,7 +354,7 @@
     "message":"Potvrzení hlavního hesla se neshoduje."
   },
   "newAccountCreated":{
-    "message":"Váš nový účet byl vytvořen! Můžete se přihlásit."
+    "message":"Váš účet byl vytvořen! Můžete se přihlásit."
   },
   "masterPassSent":{
     "message":"Poslali jsme vám email s nápovědou k hlavnímu heslu."
@@ -403,7 +403,7 @@
     "message":"Emailovou adresu si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Dvoufázové přihlášení dělá váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód z ověřovací aplikace, SMS, telefonního hovoru nebo emailu. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+    "message":"Dvoufázové přihlášení činí váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód z aplikace, SMS, telefonního hovoru nebo emailu. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "loggingOut":{
     "message":"Odhlašování"
@@ -428,6 +428,9 @@
   },
   "syncingComplete":{
     "message":"Synchronizace je dokončena"
+  },
+  "syncingFailed":{
+    "message":"Syncing failed"
   },
   "importLoginsConfirmation":{
     "message":"Přihlašovací údaje můžete hromadně importovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
@@ -466,7 +469,7 @@
     "message":"Preklady"
   },
   "searchFolder":{
-    "message":"Hledat složku"
+    "message":"Hledat ve složce"
   },
   "noneFolder":{
     "message":"Žádné složky",
@@ -507,13 +510,13 @@
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"Tento export obsahuje vaše nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Odstraňte jej okamžitě po jeho použití."
+    "message":"Tento export obsahuje nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Odstraňte jej okamžitě po jeho použití."
   },
   "exportMasterPassword":{
     "message":"Zadejte své hlavní heslo pro export dat."
   },
   "exportVaultInfo":{
-    "message":"Exportujte svá data ve formátů .csv pro snadnou úpravu nebo přesun jinam."
+    "message":"Exportujte svá data z trezoru ve formátů .csv pro jejich snadnou úpravu nebo přesunutí do jiné aplikace."
   },
   "shared":{
     "message":"Sdílené"
@@ -600,7 +603,7 @@
     "message":"Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do vašeho trezoru."
+    "message":"Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
   },
   "ppremiumSignUpSupport":{
     "message":"Prioritní zákaznickou podporu."
@@ -654,7 +657,7 @@
     "message":"Použít jinou metodu dvoufázového přihlášení"
   },
   "insertYubiKey":{
-    "message":"Vložte svůj YubiKey do USB portu vašeho počítače a stiskněte jeho tlačítko."
+    "message":"Vložte YubiKey do USB portu vašeho počítače a stiskněte jeho tlačítko."
   },
   "insertU2f":{
     "message":"Vložte svůj bezpečnostní klíč do USB portu vašeho počítače a pokud má tlačítko, tak jej stiskněte."
@@ -672,7 +675,7 @@
     "message":"Možnosti dvoufázového přihlášení"
   },
   "recoveryCodeDesc":{
-    "message":"Ztratili jste přístup ke všem nastaveným poskytovatelům dvoufázového přihlášení? Použijte váš obnovovací kód pro vypnutí dvoufázového přihlášení."
+    "message":"Ztratili jste přístup ke všem nastaveným poskytovatelům dvoufázového přihlášení? Použijte obnovovací kód pro vypnutí dvoufázového přihlášení."
   },
   "recoveryCodeTitle":{
     "message":"Kód pro obnovení"
@@ -749,6 +752,30 @@
     "message":"Vygenerovat a zkopírovat nové náhodné heslo do schránky."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Bohužel toto okno není v tomto prohlížeči k dispozici v soukromém režimu."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Sinkronisasi selesai"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Anda dapat mengimpor massal info masuk dari brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
@@ -750,5 +753,29 @@
   },
   "privateModeMessage":{
     "message":"Unfortunately this window is not available in private mode for this browser."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

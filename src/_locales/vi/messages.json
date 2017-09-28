@@ -7,7 +7,7 @@
     "description":"Extension name"
   },
   "extDesc":{
-    "message":"bitwarden は、すべてのデバイスの安全で無料のパスワード マネージャーです。",
+    "message":"bitwarden is a secure and free password manager for all of your devices.",
     "description":"Extension description"
   },
   "loginOrCreateNewAccount":{
@@ -17,7 +17,7 @@
     "message":"Create Account"
   },
   "login":{
-    "message":"ログイン"
+    "message":"Log In"
   },
   "cancel":{
     "message":"Cancel"
@@ -324,7 +324,7 @@
     "message":"4 hours"
   },
   "onLocked":{
-    "message":"On Locked"
+    "message":"On Lock"
   },
   "onRestart":{
     "message":"On Restart"
@@ -385,7 +385,7 @@
     "message":"No"
   },
   "unexpectedError":{
-    "message":"An unexpected error has occured."
+    "message":"An unexpected error has occurred."
   },
   "nameRequired":{
     "message":"Name is required."
@@ -403,7 +403,7 @@
     "message":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut":{
     "message":"Logging out"
@@ -528,7 +528,7 @@
     "message":"Create an organization to securely share your logins with other users."
   },
   "contribute":{
-    "message":"You can contribute to!"
+    "message":"You can contribute too!"
   },
   "learnMore":{
     "message":"Learn more"
@@ -737,7 +737,7 @@
     "message":"The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Enable Auto-fill On Page Load"
   },
   "enableAutoFillOnPageLoadDesc":{
     "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."

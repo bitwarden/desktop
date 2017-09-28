@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Synchronisierung abgeschlossen"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Du kannst deine Logins über den bitwarden.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?"
   },
@@ -476,10 +479,10 @@
     "message":"Eigenschaften"
   },
   "gaDesc":{
-    "message":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message":"Wir verwenden Analytics, um zu erfahren, wie die Erweiterung genutzt wird, sodass wir sie verbessern können. Alle gesammelten Daten sind völlig anonym."
   },
   "disableAddLoginNotification":{
-    "message":"Disable Add Login Notification"
+    "message":"\"Login hinzufügen\" Benachrichtigung deaktivieren"
   },
   "addLoginNotificationDesc":{
     "message":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
@@ -497,7 +500,7 @@
     "message":"Kontextmenü-Optionen deaktivieren"
   },
   "disableContextMenuItemDesc":{
-    "message":"Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message":"Kontextmenü-Optionen bieten schnellen Zugriff auf Passwort-Generierung und Anmeldungen für die Website in Ihrer aktuellen Registerkarte."
   },
   "exportVault":{
     "message":"Exportiere Tresor"
@@ -507,13 +510,13 @@
     "description":"WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning":{
-    "message":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message":"Dieser Export enthält Ihre unverschlüsselten Daten im CSV-Format. Sie sollten sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Löschen Sie sie sofort nach ihrer Verwendung."
   },
   "exportMasterPassword":{
     "message":"Geben Sie das Masterpasswort ein um Ihre Tresordaten zu exportieren."
   },
   "exportVaultInfo":{
-    "message":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+    "message":"Exportieren Sie Ihre Tresordaten im .csv-Format, so dass Sie sie leicht ändern oder verschieben können."
   },
   "shared":{
     "message":"Freigegeben"
@@ -525,13 +528,13 @@
     "message":"Erstellen Sie eine Organisation um Ihre Logindaten sicher für andere Benutzer freizugeben."
   },
   "contribute":{
-    "message":"You can contribute to!"
+    "message":"Sie können auch dazu beitragen!"
   },
   "learnMore":{
     "message":"Erfahren Sie mehr"
   },
   "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)"
+    "message":"Authenticator Schlüssel (TOTP)"
   },
   "verificationCodeTotp":{
     "message":"Verifizierungscode (TOTP)"
@@ -600,25 +603,25 @@
     "message":"Zusätzliche Zweifaktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault."
+    "message":"TOTP Prüfcode (2FA) Generator für Anmeldungen in Ihrem Tresor."
   },
   "ppremiumSignUpSupport":{
-    "message":"Priority customer support."
+    "message":"Vorrangiger Kunden-Support."
   },
   "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!"
+    "message":"Alle zukünftigen Premium-Features. Mehr in Kürze!"
   },
   "premiumPurchase":{
     "message":"Erweiterte Mitgliedschaft kaufen"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Sie können Ihre Premium-Mitgliedschaft im bitwarden.com Web-Tresor kaufen. Möchten Sie die Webseite jetzt besuchen?"
   },
   "premiumCurrentMember":{
     "message":"Sie sind jetzt Premium-Mitglied!"
   },
   "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden."
+    "message":"Vielen Dank für die Unterstützung von bitwarden."
   },
   "premiumPrice":{
     "message":"Das alles für %price% im Jahr!"
@@ -627,7 +630,7 @@
     "message":"Aktualisierung abgeschlossen"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy"
+    "message":"Deaktivieren Sie automatisches TOTP Kopieren"
   },
   "disableAutoTotpCopyDesc":{
     "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
@@ -639,28 +642,28 @@
     "message":"Eine erweiterte Mitgliedschaft ist notwendig um diese Funktion zu nutzen."
   },
   "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+    "message":"Geben Sie den 6-stelliegn Bestätigungscode aus Ihrer Authenticator App ein."
   },
   "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+    "message":"Geben Sie den 6-stelligen Bestätigungscode ein der per E-Mail gesendet wurde an"
   },
   "rememberMe":{
     "message":"Eingeloggt bleiben"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"E-Mail mit Bestätigungscode erneut versenden"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Verwenden Sie eine andere zweistufige Login-Methode"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Stecken Sie Ihren YubiKey in den USB-Port Ihres Computers, dann berühren Sie den Button."
   },
   "insertU2f":{
     "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "loginUnavailable":{
-    "message":"Login Unavailable"
+    "message":"Login nicht verfügbar"
   },
   "noTwoStepProviders":{
     "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
@@ -669,7 +672,7 @@
     "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
   },
   "twoStepOptions":{
-    "message":"Two-step Login Options"
+    "message":"Optionen für Zwei-Faktor Authentifizierung"
   },
   "recoveryCodeDesc":{
     "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
@@ -678,17 +681,17 @@
     "message":"Wiederherstellungscode"
   },
   "authenticatorAppTitle":{
-    "message":"Authenticator App"
+    "message":"Authentifizierungs-App"
   },
   "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message":"Verwende eine Authentifizierungs-App (wie zum Beispiel Authy oder Google Authenticator) um zeitbasierte Verifizierungscodes zu generieren.",
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
     "message":"YubiKey OTP Sicherheitsschlüssel"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Verwenden Sie einen YubiKey um auf Ihr Konto zuzugreifen. Funtioniert mit YubiKey 4, Nano 4, 4C und NEO Geräten."
   },
   "duoDesc":{
     "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
@@ -725,7 +728,7 @@
     "message":"API Server URL"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"Web-Tresor Server URL"
   },
   "identityUrl":{
     "message":"Identity Server URL"
@@ -740,15 +743,39 @@
     "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Den zuletzt verwendeten Login für die aktuelle Webseite automatisch ausfüllen lassen."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Generieren und ein neues zufälliges Passwort in die Zwischenablage kopieren."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Leider ist dieses Fenster nicht im privaten Modus für diesen Browser verfügbar."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

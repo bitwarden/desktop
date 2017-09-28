@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Синхронізація завершена"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Ви можете робити масовий імпорт записів зі сховища на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
@@ -749,6 +752,30 @@
     "message":"Генерувати і копіювати новий пароль в буфер обміну."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Шкода, але це вікно недоступне в приватному режимі для цього браузера."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

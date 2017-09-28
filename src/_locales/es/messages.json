@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Sincronización completada"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Puedes importar entradas masivamente desde la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
@@ -576,16 +579,16 @@
     "message":"No puedes usar esta característica hasta que actualices tu clave de cifrado."
   },
   "premiumMembership":{
-    "message":"Membrasía Premium"
+    "message":"Membresía Premium"
   },
   "premiumManage":{
-    "message":"Gestionar membrasía"
+    "message":"Gestionar membresía"
   },
   "premiumManageAlert":{
-    "message":"Puedes gestionar tu membrasía en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
+    "message":"Puedes gestionar tu membresía en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumRefresh":{
-    "message":"Actualizar membrasía"
+    "message":"Actualizar membresía"
   },
   "premiumNotCurrentMember":{
     "message":"Actualmente no eres un miembro premium."
@@ -612,7 +615,7 @@
     "message":"Comprar Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"Puedes comprar la membrasía Premium en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
+    "message":"Puedes comprar la membresía Premium en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumCurrentMember":{
     "message":"¡Eres un miembro Premium!"
@@ -636,7 +639,7 @@
     "message":"Premium requerido"
   },
   "premiumRequiredDesc":{
-    "message":"Una membrasía Premium es requerida para utilizar esta característica."
+    "message":"Una membresía Premium es requerida para utilizar esta característica."
   },
   "enterVerificationCodeApp":{
     "message":"Introduce el código de verificación de 6 dígitos de tu aplicación autenticadora."
@@ -716,7 +719,7 @@
     "message":"Entorno personalizado"
   },
   "customEnvironmentFooter":{
-    "message":"Para usuario avanzados. Puedes especificar la URL base de cada servicio de forma independiente."
+    "message":"Para usuarios avanzados. Puedes especificar la URL base de cada servicio de forma independiente."
   },
   "baseUrl":{
     "message":"URL del servidor"
@@ -731,16 +734,16 @@
     "message":"URL del servidor de identidad"
   },
   "environmentSaved":{
-    "message":"La URLs del entorno han sido guardadas."
+    "message":"Las URLs del entorno han sido guardadas."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Habilitar autorellenar al carga la página"
+    "message":"Habilitar autorellenar al cargar la página"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"Si un formulario es detectado, realizar automáticamente un autorellenado cuando la web cargue."
+    "message":"Si se detecta un formulario, realizar automáticamente un autorellenado cuando la web cargue."
   },
   "experimentalFeature":{
-    "message":"Esta es una características experimental. Usala bajo tu propio riesgo."
+    "message":"Esta es una característica experimental. Úsala bajo tu propio riesgo."
   },
   "commandAutofillDesc":{
     "message":"Autorellenar la última entrada utilizada para la página actual."
@@ -749,6 +752,30 @@
     "message":"Generar y copiar una nueva contraseña aleatoria al portapapeles."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Lamentablemente esta ventana no está disponible en el modo privado de este navegador."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

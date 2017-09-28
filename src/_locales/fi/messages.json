@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Synkronointi valmis"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Voit tuoda kerralla kaikki kirjautumistietosi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
@@ -750,5 +753,29 @@
   },
   "privateModeMessage":{
     "message":"Unfortunately this window is not available in private mode for this browser."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

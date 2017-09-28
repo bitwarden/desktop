@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"同步完成"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"您可以在 bitwarden.com 网页版批量导入登录信息。现在为您跳转吗？"
   },
@@ -750,5 +753,29 @@
   },
   "privateModeMessage":{
     "message":"Unfortunately this window is not available in private mode for this browser."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Synkronisering genomförd"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Du kan massimportera inloggningar på bitwardens webbvalv. Vill du besöka webbsidan nu?"
   },
@@ -749,6 +752,30 @@
     "message":"Generera och kopiera ett nytt slumpmässigt lösenord till Urklipp."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Det här fönstret är tyvärr inte tillgängligt i privat läge för denna webbläsare."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }

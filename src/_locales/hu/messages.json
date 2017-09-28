@@ -429,6 +429,9 @@
   "syncingComplete":{
     "message":"Szinkronizálás befejezve"
   },
+  "syncingFailed":{
+    "message":"Syncing failed"
+  },
   "importLoginsConfirmation":{
     "message":"Több bejelentkezést egyszerre a bitwarden.com webes széfén tudsz importálni. Szeretnéd meglátogatni a most a weboldalt?"
   },
@@ -716,7 +719,7 @@
     "message":"Egyéni környezet"
   },
   "customEnvironmentFooter":{
-    "message":"Haladó felhasználóknak. Meg tudod adni az alap URL-t külön minden egyes szolgáltatásnak."
+    "message":"Haladó felhasználóknak. Minden egyes szolgáltatás alap URL-jét külön megadhatod."
   },
   "baseUrl":{
     "message":"Szerver URL"
@@ -731,16 +734,16 @@
     "message":"Identitás szerver URL"
   },
   "environmentSaved":{
-    "message":"A környezet URL-ok mentésre kerültek."
+    "message":"A környezet URL-ek mentésre kerültek."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"Automatikus kitöltés engedélyezése oldal betöltéskor"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat."
+    "message":"Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat az oldal betöltésekor."
   },
   "experimentalFeature":{
-    "message":"Ez jelenleg egy kísérleti funkció. Használd saját felelősségre."
+    "message":"Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
   },
   "commandAutofillDesc":{
     "message":"Automatikusan töltse ki az utólag használt bejelentkezést ezen a weboldalon."
@@ -749,6 +752,30 @@
     "message":"Generálj és másolj egy új véletlenszerű jelszót a vágólapra."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
+  },
+  "customFields":{
+    "message":"Custom Fields"
+  },
+  "copyValue":{
+    "message":"Copy Value"
+  },
+  "toggleValue":{
+    "message":"Toggle Value"
+  },
+  "value":{
+    "message":"Value"
+  },
+  "newCustomField":{
+    "message":"New Custom Field"
+  },
+  "cfTypeText":{
+    "message":"Text"
+  },
+  "cfTypeHidden":{
+    "message":"Hidden"
+  },
+  "cfTypeBoolean":{
+    "message":"Boolean"
   }
 }
