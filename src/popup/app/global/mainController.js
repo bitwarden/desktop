@@ -9,6 +9,7 @@ angular
         self.xsBody = $window.screen.availHeight < 600;
         self.smBody = !self.xsBody && $window.screen.availHeight <= 800;
         self.lgBody = !self.xsBody && !self.smBody && utilsService && !utilsService.isFirefox() && !utilsService.isEdge();
+        self.disableSearch = utilsService.isEdge();
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (toParams.animation) {
@@ -19,6 +20,11 @@ angular
                 self.animation = '';
             }
         });
+
+        self.expandVault = function (e) {
+            $analytics.eventTrack('Expand Vault');
+            chrome.tabs.create({ url: $window.location.href });
+        };
 
         chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             if (msg.command === 'syncCompleted') {

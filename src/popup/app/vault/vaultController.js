@@ -9,7 +9,6 @@
         $scope.i18n = i18nService;
         $scope.showFolderCounts = !utilsService.isEdge();
         $scope.showOnlyFolderView = utilsService.isEdge();
-        $scope.disableSearch = utilsService.isEdge();
         $('#search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;
@@ -84,8 +83,8 @@
         }
 
         $scope.searchText = null;
-        if (state.searchText) {
-            $scope.searchText = state.searchText;
+        if (state.searchText || $stateParams.searchText) {
+            $scope.searchText = state.searchText || $stateParams.searchText;
         }
 
         $scope.folderSort = function (item) {
@@ -157,11 +156,6 @@
         $scope.$on('syncCompleted', function (event, successfully) {
             $timeout(loadVault, 500);
         });
-
-        $scope.expandVault = function (e) {
-            $analytics.eventTrack('Expand Vault');
-            chrome.tabs.create({ url: '/popup/index.html#!/tab/vault' });
-        };
 
         function storeState() {
             stateService.saveState(stateKey, {

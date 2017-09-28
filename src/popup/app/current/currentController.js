@@ -12,6 +12,8 @@ angular
 
         $scope.logins = [];
         $scope.loaded = false;
+        $scope.searchText = null;
+        $('#search').focus();
 
         $scope.$on('$viewContentLoaded', function () {
             $timeout(loadVault, 100);
@@ -99,6 +101,12 @@ angular
 
         $scope.sortLastUsed = function (login) {
             return login.localData && login.localData.lastUsedDate ? -1 * login.localData.lastUsedDate : 0;
+        };
+
+        $scope.searchVault = function () {
+            $state.go('tabs.vault', {
+                searchText: $scope.searchText
+            });
         };
 
         $scope.$on('syncCompleted', function (event, successfully) {

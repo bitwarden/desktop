@@ -112,7 +112,7 @@
                 url: '/vault',
                 templateUrl: 'app/vault/views/vault.html',
                 controller: 'vaultController',
-                params: { syncOnLoad: false }
+                params: { syncOnLoad: false, searchText: null }
             })
             .state('tabs.settings', {
                 url: '/settings',

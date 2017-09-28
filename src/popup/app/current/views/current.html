@@ -1,8 +1,14 @@
-﻿<div class="header">
+﻿<div class="header header-search">
+    <div class="left">
+        <a href="" ng-click="main.expandVault()"><i class="fa fa-external-link fa-rotate-270 fa-lg"></i></a>
+    </div>
+    <div class="search" ng-style="{'visibility': main.disableSearch ? 'hidden' : 'visible'}">
+        <input type="search" placeholder="{{i18n.searchVault}}" id="search" ng-model="searchText" ng-change="searchVault()" />
+        <i class="fa fa-search"></i>
+    </div>
     <div class="right">
         <a href="" ng-click="addLogin()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
-    <div class="title">{{i18n.currentTab}}</div>
 </div>
 <div class="content content-tabs">
     <div ng-if="logins.length">
