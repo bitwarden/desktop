@@ -215,6 +215,12 @@ gulp.task('dist', ['build'], function (cb) {
         cb);
 });
 
+var sidebarActionManifestObj = {
+    "default_title": "bitwarden",
+    "default_panel": "popup/index.html?sidebar=true",
+    "default_icon": "images/icon19.png"
+};
+
 gulp.task('dist-firefox', ['dist'], function (cb) {
     gulp.src(paths.dist + 'manifest.json')
         .pipe(jeditor(function (manifest) {
@@ -224,10 +230,22 @@ gulp.task('dist-firefox', ['dist'], function (cb) {
                     strict_min_version: '42.0'
                 }
             };
+
+            manifest['sidebar_action'] = sidebarActionManifestObj;
             return manifest;
         }))
         .pipe(gulp.dest(paths.dist));
     return zipDist('dist-firefox');
+});
+
+gulp.task('dist-opera', ['dist'], function (cb) {
+    gulp.src(paths.dist + 'manifest.json')
+        .pipe(jeditor(function (manifest) {
+            manifest['sidebar_action'] = sidebarActionManifestObj;
+            return manifest;
+        }))
+        .pipe(gulp.dest(paths.dist));
+    return zipDist('dist-opera');
 });
 
 gulp.task('dist-edge', ['dist'], function (cb) {

@@ -175,12 +175,10 @@
                     params = providers[constants.twoFactorProvider.email];
                     $scope.twoFactorEmail = params.Email;
 
-                    if (chrome.extension.getViews({ type: 'popup' }).length > 0) {
+                    if (chrome.extension.getViews({ type: 'popup' }).length > 0 && !utilsService.inSidebar($window)) {
                         SweetAlert.swal({
-                            title: 'Two-step Login',
-                            text: 'Clicking outside the popup window to check your email for your verification code will ' +
-                            'cause this popup to close. ' +
-                            'Do you want to open this popup in a new window so that it does not close?',
+                            title: i18nService.twoStepLogin,
+                            text: i18nService.popup2faCloseMessage,
                             showCancelButton: true,
                             confirmButtonText: i18nService.yes,
                             cancelButtonText: i18nService.no

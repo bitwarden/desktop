@@ -109,6 +109,10 @@ angular
             });
         };
 
+        $scope.refresh = function () {
+            loadVault();
+        };
+
         $scope.$on('syncCompleted', function (event, successfully) {
             if ($scope.loaded) {
                 setTimeout(loadVault, 500);

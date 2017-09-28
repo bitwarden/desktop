@@ -1,9 +1,10 @@
-﻿function LockService(constantsService, cryptoService, folderService, loginService, setIcon, refreshBadgeAndMenu) {
+﻿function LockService(constantsService, cryptoService, folderService, loginService, utilsService, setIcon, refreshBadgeAndMenu) {
     this.lastLockCheck = null;
     this.constantsService = constantsService;
     this.cryptoService = cryptoService;
     this.folderService = folderService;
     this.loginService = loginService;
+    this.utilsService = utilsService;
     this.setIcon = setIcon;
     this.refreshBadgeAndMenu = refreshBadgeAndMenu;
 
@@ -22,8 +23,12 @@ function initLockService(self) {
         }
         self.lastLockCheck = now;
 
-        if (chrome.extension.getViews({ type: 'popup' }).length > 0) {
-            // popup is open, do not lock
+        var popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
+        var sidebarViewName = self.utilsService.sidebarViewName();
+        var sidebarOpen = sidebarViewName && chrome.extension.getViews({ type: sidebarViewName }).length > 0;
+
+        if (popupOpen || sidebarOpen) {
+            // Do not lock
             return;
         }
 

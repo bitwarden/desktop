@@ -1,6 +1,9 @@
 ﻿<div class="header header-search">
-    <div class="left">
+    <div class="left" ng-if="!main.inSidebar">
         <a href="" ng-click="main.expandVault()"><i class="fa fa-external-link fa-rotate-270 fa-lg"></i></a>
+    </div>
+    <div class="left" ng-if="main.inSidebar">
+        <a href="" ng-click="refresh()"><i class="fa fa-refresh fa-lg"></i></a>
     </div>
     <div class="search" ng-style="{'visibility': main.disableSearch ? 'hidden' : 'visible'}">
         <input type="search" placeholder="{{i18n.searchVault}}" id="search" ng-model="searchText" ng-change="searchVault()" />
@@ -16,7 +19,7 @@
             <div class="list-grouped">
                 <a href="#" stop-click ng-click="fillLogin(login)" class="list-grouped-item condensed"
                    title="{{i18n.autoFill}} {{login.name}}"
-                   ng-repeat="login in theLogins = (logins | orderBy: [sortUriMatch, sortLastUsed, 'name', 'username']) 
+                   ng-repeat="login in theLogins = (logins | orderBy: [sortUriMatch, sortLastUsed, 'name', 'username'])
                         track by $index">
                     <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"

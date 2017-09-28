@@ -39,8 +39,8 @@ var bg_isBackground = true,
     bg_settingsService = new SettingsService(bg_userService);
     bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService);
     bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService);
-    bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_loginService, setIcon,
-        refreshBadgeAndMenu);
+    bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_loginService, bg_utilsService,
+        setIcon, refreshBadgeAndMenu);
     bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
         bg_cryptoService, logout);
     bg_passwordGenerationService = new PasswordGenerationService();
@@ -371,7 +371,7 @@ var bg_isBackground = true,
     }
 
     function setIcon() {
-        if (!chrome.browserAction.setIcon) {
+        if (!chrome.browserAction && !chrome.sidebarAction) {
             return;
         }
 
@@ -385,14 +385,21 @@ var bg_isBackground = true,
                     suffix = '_locked';
                 }
 
-                chrome.browserAction.setIcon({
+                actionSetIcon(chrome.browserAction, suffix);
+                actionSetIcon(chrome.sidebarAction, suffix);
+            });
+        });
+
+        function actionSetIcon(theAction, suffix) {
+            if (theAction && theAction.setIcon) {
+                theAction.setIcon({
                     path: {
                         '19': 'images/icon19' + suffix + '.png',
                         '38': 'images/icon38' + suffix + '.png',
                     }
                 });
-            });
-        });
+            }
+        }
     }
 
     function refreshBadgeAndMenu() {
