@@ -24,7 +24,8 @@ var bg_isBackground = true,
         menuOptionsLoaded = [],
         pendingAuthRequests = [],
         syncTimeout = null,
-        bg_loginsToAdd = [];
+        bg_loginsToAdd = [],
+        bg_sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ? opr.sidebarAction : chrome.sidebarAction;
 
     // init services
     bg_utilsService = new UtilsService();
@@ -371,7 +372,7 @@ var bg_isBackground = true,
     }
 
     function setIcon() {
-        if (!chrome.browserAction && !chrome.sidebarAction) {
+        if (!chrome.browserAction && !bg_sidebarAction) {
             return;
         }
 
@@ -386,7 +387,7 @@ var bg_isBackground = true,
                 }
 
                 actionSetIcon(chrome.browserAction, suffix);
-                actionSetIcon(chrome.sidebarAction, suffix);
+                actionSetIcon(bg_sidebarAction, suffix);
             });
         });
 
@@ -437,7 +438,11 @@ var bg_isBackground = true,
     }
 
     function loadMenuAndUpdateBadge(url, tabId, contextMenuEnabled) {
-        if (!chrome.browserAction.setBadgeBackgroundColor || !url) {
+        if (!chrome.browserAction && !bg_sidebarAction) {
+            return;
+        }
+
+        if (!url) {
             return;
         }
 
@@ -446,11 +451,8 @@ var bg_isBackground = true,
             return;
         }
 
-        chrome.browserAction.setBadgeBackgroundColor({ color: '#294e5f' });
-
-        if (!chrome.browserAction.setBadgeText) {
-            return;
-        }
+        setActionBadgeColor(chrome.browserAction);
+        setActionBadgeColor(bg_sidebarAction);
 
         menuOptionsLoaded = [];
         bg_loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
@@ -462,36 +464,66 @@ var bg_isBackground = true,
                 }
             }
 
+            var theText = '';
             if (logins.length > 0 && logins.length < 9) {
-                chrome.browserAction.setBadgeText({
-                    text: logins.length.toString(),
-                    tabId: tabId
-                });
+                theText = logins.length.toString();
             }
             else if (logins.length > 0) {
-                chrome.browserAction.setBadgeText({
-                    text: '9+',
-                    tabId: tabId
-                });
+                theText = '9+';
             }
             else {
                 if (contextMenuEnabled) {
                     loadNoLoginsContextMenuOptions(bg_i18nService.noMatchingLogins);
                 }
-                chrome.browserAction.setBadgeText({
-                    text: '',
-                    tabId: tabId
-                });
             }
+
+            setBrowserActionText(theText, tabId);
+            setSidebarActionText(theText, tabId);
         }, function () {
             if (contextMenuEnabled) {
                 loadNoLoginsContextMenuOptions(bg_i18nService.vaultLocked);
             }
-            chrome.browserAction.setBadgeText({
-                text: '',
-                tabId: tabId
-            });
+            setBrowserActionText('', tabId);
+            setSidebarActionText('', tabId);
         });
+
+        function setActionBadgeColor(theAction) {
+            if (theAction && theAction.setBadgeBackgroundColor) {
+                theAction.setBadgeBackgroundColor({ color: '#294e5f' });
+            }
+        }
+
+        function setBrowserActionText(text, tabId) {
+            if (chrome.browserAction && chrome.browserAction.setBadgeText) {
+                chrome.browserAction.setBadgeText({
+                    text: text,
+                    tabId: tabId
+                });
+            }
+        }
+
+        function setSidebarActionText(text, tabId) {
+            if (!bg_sidebarAction) {
+                return;
+            }
+
+            if (bg_sidebarAction.setBadgeText) {
+                bg_sidebarAction.setBadgeText({
+                    text: text,
+                    tabId: tabId
+                });
+            }
+            else if (bg_sidebarAction.setTitle) {
+                var title = 'bitwarden';
+                if (text && text !== '') {
+                    title += (' [' + text + ']');
+                }
+                bg_sidebarAction.setTitle({
+                    title: title,
+                    tabId: tabId
+                });
+            }
+        }
     }
 
     function messageCurrentTab(command, data) {
