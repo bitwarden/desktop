@@ -29,7 +29,7 @@ function initAutofill() {
         var passwordFields = [],
             passwords = [],
             usernames = [],
-            filledOpIds = [],
+            filledFields = {},
             pf = null,
             username = null,
             i = 0;
@@ -48,13 +48,13 @@ function initAutofill() {
 
             for (i = 0; i < pageDetails.fields.length; i++) {
                 var field = pageDetails.fields[i];
-                if (filledOpIds.indexOf(field.opid) > -1 || !field.viewable) {
+                if (filledFields.hasOwnProperty(field.opid) || !field.viewable) {
                     continue;
                 }
 
                 var matchingIndex = findMatchingFieldIndex(field, fieldNames);
                 if (matchingIndex > -1) {
-                    filledOpIds.push(field.opid);
+                    filledFields[field.opid] = field;
                     fillScript.script.push(['click_on_opid', field.opid]);
                     fillScript.script.push(['fill_by_opid', field.opid, fill.fields[matchingIndex].value]);
                 }
@@ -63,11 +63,7 @@ function initAutofill() {
 
         if (!fill.password || fill.password === '') {
             // No password for this login. Maybe they just wanted to auto-fill some custom fields?
-            if (!filledOpIds.length) {
-                return null;
-            }
-
-            fillScript.script.push(['focus_by_opid', filledOpIds[filledOpIds.length - 1]]);
+            fillScript = setFillScriptForFocus(filledFields, fillScript);
             return fillScript;
         }
 
@@ -129,7 +125,7 @@ function initAutofill() {
             // No password fields on this page. Let's try to just fuzzy fill the username.
             for (i = 0; i < pageDetails.fields.length; i++) {
                 var f = pageDetails.fields[i];
-                if ((f.type === 'text' || f.type === 'email' || f.type === 'tel') &&
+                if (f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel') &&
                     fieldIsFuzzyMatch(f, usernameFieldNames)) {
                     usernames.push(f);
                 }
@@ -137,29 +133,26 @@ function initAutofill() {
         }
 
         for (i = 0; i < usernames.length; i++) {
-            if (filledOpIds.indexOf(usernames[i].opid) > -1) {
+            if (filledFields.hasOwnProperty(usernames[i].opid)) {
                 continue;
             }
 
-            filledOpIds.push(usernames[i].opid);
+            filledFields[usernames[i].opid] = usernames[i];
             fillScript.script.push(['click_on_opid', usernames[i].opid]);
             fillScript.script.push(['fill_by_opid', usernames[i].opid, fill.username]);
         }
 
         for (i = 0; i < passwords.length; i++) {
-            if (filledOpIds.indexOf(passwords[i].opid) > -1) {
+            if (filledFields.hasOwnProperty(passwords[i].opid)) {
                 continue;
             }
 
-            filledOpIds.push(passwords[i].opid);
+            filledFields[passwords[i].opid] = passwords[i];
             fillScript.script.push(['click_on_opid', passwords[i].opid]);
             fillScript.script.push(['fill_by_opid', passwords[i].opid, fill.password]);
         }
 
-        if (filledOpIds.length) {
-            fillScript.script.push(['focus_by_opid', filledOpIds[filledOpIds.length - 1]]);
-        }
-
+        fillScript = setFillScriptForFocus(filledFields, fillScript);
         return fillScript;
     };
 
@@ -392,5 +385,30 @@ function initAutofill() {
         }
 
         return false;
+    }
+
+    function setFillScriptForFocus(filledFields, fillScript) {
+        var lastField = null,
+            lastPasswordField = null;
+
+        for (var opid in filledFields) {
+            if (filledFields.hasOwnProperty(opid) && filledFields[opid].viewable) {
+                lastField = filledFields[opid];
+
+                if (filledFields[opid].type === 'password') {
+                    lastPasswordField = filledFields[opid];
+                }
+            }
+        }
+
+        // Prioritize password field over others.
+        if (lastPasswordField) {
+            fillScript.script.push(['focus_by_opid', lastPasswordField.opid]);
+        }
+        else if (lastField) {
+            fillScript.script.push(['focus_by_opid', lastField.opid]);
+        }
+
+        return fillScript;
     }
 }
