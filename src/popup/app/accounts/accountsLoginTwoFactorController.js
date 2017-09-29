@@ -126,7 +126,7 @@
             for (var i = 0; i < keys.length; i++) {
                 var provider = $filter('filter')(constants.twoFactorProviderInfo, { type: keys[i], active: true });
                 if (provider.length && provider[0].priority > providerPriority) {
-                    if (provider[0].type == constants.twoFactorProvider.u2f &&
+                    if (provider[0].type == constants.twoFactorProvider.u2f && (typeof $window.u2f === 'undefined') &&
                         !utilsService.isChrome() && !utilsService.isOpera()) {
                         continue;
                     }
