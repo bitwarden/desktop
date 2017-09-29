@@ -24,8 +24,8 @@ function initLockService(self) {
         self.lastLockCheck = now;
 
         var popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
-        var sidebarViewName = self.utilsService.sidebarViewName();
-        var sidebarOpen = sidebarViewName && chrome.extension.getViews({ type: sidebarViewName }).length > 0;
+        var sidebarView = sidebarViewName(self.utilsService);
+        var sidebarOpen = sidebarView && chrome.extension.getViews({ type: sidebarView }).length > 0;
 
         if (popupOpen || sidebarOpen) {
             // Do not lock
@@ -133,4 +133,15 @@ function initLockService(self) {
 
         return deferred.promise;
     }
+
+    function sidebarViewName(utilsService) {
+        if (chrome.sidebarAction && utilsService.isFirefox()) {
+            return 'sidebar';
+        }
+        else if (utilsService.isOpera() && (typeof opr !== 'undefined') && opr.sidebarAction) {
+            return 'sidebar_panel';
+        }
+
+        return null;
+    };
 }

@@ -232,17 +232,6 @@ function initUtilsService() {
         return theWindow.location.search && theWindow.location.search.indexOf('sidebar=true') > -1;
     };
 
-    UtilsService.prototype.sidebarViewName = function () {
-        if (this.isFirefox()) {
-            return 'sidebar';
-        }
-        else if (this.isOpera()) {
-            return 'sidebar_panel';
-        }
-
-        return null;
-    };
-
     function validIpAddress(ipString) {
         var ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
         return ipRegex.test(ipString);
