@@ -67,8 +67,22 @@
                         password: decLogins[i].password,
                         notes: decLogins[i].notes,
                         folder: null,
-                        totp: decLogins[i].totp
+                        totp: decLogins[i].totp,
+                        fields: null
                     };
+
+                    if (decLogins[i].fields) {
+                        for (var j = 0; j < decLogins[i].fields.length; j++) {
+                            if (!login.fields) {
+                                login.fields = '';
+                            }
+                            else {
+                                login.fields += '\n';
+                            }
+
+                            login.fields += (decLogins[i].fields[j].name + ': ' + decLogins[i].fields[j].value);
+                        }
+                    }
 
                     for (var j = 0; j < decFolders.length; j++) {
                         if (decFolders[j].id === decLogins[i].folderId && decFolders[j].name !== i18nService.noneFolder) {
