@@ -67,7 +67,7 @@ var bg_isBackground = true,
                             hitType: 'event',
                             eventAction: 'Autofilled From Command'
                         });
-                        collectPageDetailsForContentScript(tabs[0], 'autofill_cmd', false);
+                        collectPageDetailsForContentScript(tabs[0], 'autofill_cmd');
                     }
                 });
             }
@@ -101,7 +101,7 @@ var bg_isBackground = true,
             messageTab(sender.tab.id, 'adjustNotificationBar', msg.data);
         }
         else if (msg.command === 'bgCollectPageDetails') {
-            collectPageDetailsForContentScript(sender.tab, msg.sender, msg.noVisibleChecks);
+            collectPageDetailsForContentScript(sender.tab, msg.sender);
         }
         else if (msg.command === 'bgAddLogin') {
             addLogin(msg.login, sender.tab);
@@ -560,17 +560,12 @@ var bg_isBackground = true,
         });
     }
 
-    function collectPageDetailsForContentScript(tab, sender, noVisibleChecks) {
+    function collectPageDetailsForContentScript(tab, sender) {
         if (!tab || !tab.id) {
             return;
         }
 
-        chrome.tabs.sendMessage(tab.id, {
-            command: 'collectPageDetails',
-            tab: tab,
-            sender: sender,
-            noVisibleChecks: noVisibleChecks
-        }, function () {
+        chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: sender }, function () {
             if (chrome.runtime.lastError) {
                 return;
             }
@@ -742,12 +737,7 @@ var bg_isBackground = true,
                 return;
             }
 
-            chrome.tabs.sendMessage(tab.id, {
-                command: 'collectPageDetails',
-                tab: tab,
-                sender: 'contextMenu',
-                noVisibleChecks: false
-            }, function () {
+            chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: 'contextMenu' }, function () {
             });
         });
     }

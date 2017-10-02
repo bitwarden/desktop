@@ -37,14 +37,10 @@ angular
                     return;
                 }
 
-                chrome.tabs.sendMessage(tabs[0].id, {
-                    command: 'collectPageDetails',
-                    tab: tabs[0],
-                    sender: 'currentController',
-                    noVisibleChecks: false
-                }, function () {
-                    canAutofill = true;
-                });
+                chrome.tabs.sendMessage(tabs[0].id,
+                    { command: 'collectPageDetails', tab: tabs[0], sender: 'currentController' }, function () {
+                        canAutofill = true;
+                    });
 
                 $q.when(loginService.getAllDecryptedForDomain(domain)).then(function (logins) {
                     $scope.loaded = true;
