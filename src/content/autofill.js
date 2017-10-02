@@ -34,6 +34,7 @@
     1. Populate isFirefox
     2. Remove isChrome and isSafari since they are not used.
     3. Unminify and format to meet Mozilla review requirements.
+    4. Remove button from getFormElements query selector
     */
 
     function collect(document, undefined) {
@@ -550,7 +551,7 @@
         function getFormElements(theDoc) {
             var els = [];
             try {
-                els = theDoc.querySelectorAll('input, select, button');
+                els = theDoc.querySelectorAll('input, select');
             } catch (e) { }
             return els;
         }
