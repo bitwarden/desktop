@@ -42,7 +42,8 @@
                     if (!obj || !obj.disableAddLoginNotification) {
                         chrome.runtime.sendMessage({
                             command: 'bgCollectPageDetails',
-                            sender: 'notificationBar'
+                            sender: 'notificationBar',
+                            noVisibleChecks: true
                         });
                     }
                 });

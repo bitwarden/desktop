@@ -36,7 +36,7 @@
     3. Unminify and format to meet Mozilla review requirements.
     */
 
-    function collect(document, undefined) {
+    function collect(document, undefined, noVisibleChecks) {
         var isFirefox = navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1;
 
         document.elementsByOPID = {};
@@ -457,6 +457,10 @@
 
         // is a dom element visible on screen?
         function isElementVisible(el) {
+            if (noVisibleChecks) {
+                return true;
+            }
+
             var theEl = el;
             el = (el = el.ownerDocument) ? el.defaultView : {};
 
@@ -480,6 +484,10 @@
 
         // is a dom element "viewable" on screen?
         function isElementViewable(el) {
+            if (noVisibleChecks) {
+                return true;
+            }
+
             var theDoc = el.ownerDocument.documentElement,
                 rect = el.getBoundingClientRect(),
                 docScrollWidth = theDoc.scrollWidth,
@@ -958,7 +966,7 @@
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'collectPageDetails') {
-            var pageDetails = collect(document);
+            var pageDetails = collect(document, msg.noVisibleChecks || false);
             var pageDetailsObj = JSON.parse(pageDetails);
             chrome.runtime.sendMessage({
                 command: 'collectPageDetailsResponse',

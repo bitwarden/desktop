@@ -9,7 +9,8 @@
     function fill() {
         chrome.runtime.sendMessage({
             command: 'bgCollectPageDetails',
-            sender: 'autofiller'
+            sender: 'autofiller',
+            noVisibleChecks: false
         });
     }
 });
