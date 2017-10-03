@@ -34,7 +34,7 @@
     1. Populate isFirefox
     2. Remove isChrome and isSafari since they are not used.
     3. Unminify and format to meet Mozilla review requirements.
-    4. Remove button from getFormElements query selector
+    4. Remove button and limit input types from getFormElements query selector
     */
 
     function collect(document, undefined) {
@@ -61,7 +61,7 @@
             // has the element been fake tested?
             function checkIfFakeTested(field, el) {
                 if (-1 === ['text', 'password'].indexOf(el.type.toLowerCase()) ||
-                        !(passwordRegEx.test(field.value) ||
+                    !(passwordRegEx.test(field.value) ||
                         passwordRegEx.test(field.htmlID) || passwordRegEx.test(field.htmlName) ||
                         passwordRegEx.test(field.placeholder) || passwordRegEx.test(field['label-tag']) ||
                         passwordRegEx.test(field['label-data']) || passwordRegEx.test(field['label-aria']))) {
@@ -108,8 +108,8 @@
 
                 var options = Array.prototype.slice.call(el.options).map(function (option) {
                     var optionText = option.text ?
-                    toLowerString(option.text).replace(/\\s/gm, '').replace(/[~`!@$%^&*()\\-_+=:;'\"\\[\\]|\\\\,<.>\\?]/gm, '') :
-                    null;
+                        toLowerString(option.text).replace(/\\s/gm, '').replace(/[~`!@$%^&*()\\-_+=:;'\"\\[\\]|\\\\,<.>\\?]/gm, '') :
+                        null;
 
                     return [optionText ? optionText : null, option.value];
                 })
@@ -122,7 +122,7 @@
             // get the top label
             function getLabelTop(el) {
                 var parent;
-                for (el = el.parentElement || el.parentNode; el && 'td' != toLowerString(el.tagName) ;) {
+                for (el = el.parentElement || el.parentNode; el && 'td' != toLowerString(el.tagName);) {
                     el = el.parentElement || el.parentNode;
                 }
 
@@ -385,8 +385,8 @@
         function doEventOnElement(kedol, fonor) {
             var quebo;
             isFirefox ? (quebo = document.createEvent('KeyboardEvent'), quebo.initKeyEvent(fonor, true, false, null, false, false, false, false, 0, 0)) : (quebo = kedol.ownerDocument.createEvent('Events'),
-            quebo.initEvent(fonor, true, false), quebo.charCode = 0, quebo.keyCode = 0, quebo.which = 0,
-            quebo.srcElement = kedol, quebo.target = kedol);
+                quebo.initEvent(fonor, true, false), quebo.charCode = 0, quebo.keyCode = 0, quebo.which = 0,
+                quebo.srcElement = kedol, quebo.target = kedol);
             return quebo;
         }
 
@@ -432,7 +432,7 @@
 
         function shiftForLeftLabel(el, arr, steps) {
             var sib;
-            for (steps || (steps = 0) ; el && el.previousSibling;) {
+            for (steps || (steps = 0); el && el.previousSibling;) {
                 el = el.previousSibling;
                 if (isKnownTag(el)) {
                     return;
@@ -509,7 +509,7 @@
             }
 
             // walk the tree
-            for (var pointEl = el.ownerDocument.elementFromPoint(leftOffset + (rect.right > window.innerWidth ? (window.innerWidth - leftOffset) / 2 : rect.width / 2), topOffset + (rect.bottom > window.innerHeight ? (window.innerHeight - topOffset) / 2 : rect.height / 2)) ; pointEl && pointEl !== el && pointEl !== document;) {
+            for (var pointEl = el.ownerDocument.elementFromPoint(leftOffset + (rect.right > window.innerWidth ? (window.innerWidth - leftOffset) / 2 : rect.width / 2), topOffset + (rect.bottom > window.innerHeight ? (window.innerHeight - topOffset) / 2 : rect.height / 2)); pointEl && pointEl !== el && pointEl !== document;) {
                 if (pointEl.tagName && 'string' === typeof pointEl.tagName && 'label' === pointEl.tagName.toLowerCase()
                     && el.labels && 0 < el.labels.length) {
                     return 0 <= Array.prototype.slice.call(el.labels).indexOf(pointEl);
@@ -551,7 +551,8 @@
         function getFormElements(theDoc) {
             var els = [];
             try {
-                els = theDoc.querySelectorAll('input, select');
+                els = theDoc.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="reset"])' +
+                    ':not([type="button"]):not([type="image"]):not([type="file"]), select');
             } catch (e) { }
             return els;
         }
@@ -587,8 +588,8 @@
             }
 
             return 0 === savedURL.indexOf('https://') && 'http:' === document.location.protocol && (passwordInputs = document.querySelectorAll('input[type=password]'),
-            0 < passwordInputs.length && (confirmResult = confirm('Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page.\\n\\nDo you still wish to fill this login?'),
-            0 == confirmResult)) ? true : false;
+                0 < passwordInputs.length && (confirmResult = confirm('Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page.\\n\\nDo you still wish to fill this login?'),
+                    0 == confirmResult)) ? true : false;
         }
 
         function doFill(fillScript) {
@@ -600,8 +601,8 @@
                 operationsToDo = [];
 
             fillScriptProperties &&
-            fillScriptProperties.delay_between_operations &&
-            (operationDelayMs = fillScriptProperties.delay_between_operations);
+                fillScriptProperties.delay_between_operations &&
+                (operationDelayMs = fillScriptProperties.delay_between_operations);
 
             if (urlNotSecure(fillScript.savedURL)) {
                 return;
@@ -633,7 +634,7 @@
 
             if (fillScriptOps = fillScript.options) {
                 fillScriptOps.hasOwnProperty('animate') && (animateTheFilling = fillScriptOps.animate),
-                fillScriptOps.hasOwnProperty('markFilling') && (markTheFilling = fillScriptOps.markFilling);
+                    fillScriptOps.hasOwnProperty('markFilling') && (markTheFilling = fillScriptOps.markFilling);
             }
 
             // don't mark a password filling
@@ -688,7 +689,7 @@
             } else {
                 if ('[object Array]' === Object.prototype.toString.call(op)) {
                     thisOperation = op[0],
-                    op = op.splice(1);
+                        op = op.splice(1);
                 } else {
                     return null;
                 }
@@ -726,7 +727,7 @@
             var el = getElementByOpId(opId)
             if (el) {
                 'function' === typeof el.click && el.click(),
-                'function' === typeof el.focus && doFocusElement(el, true);
+                    'function' === typeof el.focus && doFocusElement(el, true);
             }
 
             return null;
@@ -756,7 +757,7 @@
             yes: true,
             '✓': true
         },
-        styleTimeout = 200;
+            styleTimeout = 200;
 
         // fill an element
         function fillTheElement(el, op) {
@@ -787,9 +788,9 @@
             afterValSetFunc(el);
             setValueForElementByEvent(el);
             canSeeElementToStyle(el) && (el.className += ' com-agilebits-onepassword-extension-animated-fill',
-            setTimeout(function () {
-                el && el.className && (el.className = el.className.replace(/(\\s)?com-agilebits-onepassword-extension-animated-fill/, ''));
-            }, styleTimeout));
+                setTimeout(function () {
+                    el && el.className && (el.className = el.className.replace(/(\\s)?com-agilebits-onepassword-extension-animated-fill/, ''));
+                }, styleTimeout));
         }
 
         document.elementForOPID = getElementByOpId;
@@ -914,7 +915,7 @@
                 });
                 if (0 < filteredElements.length) {
                     theElement = filteredElements[0],
-                    1 < filteredElements.length && console.warn('More than one element found with opid ' + theOpId);
+                        1 < filteredElements.length && console.warn('More than one element found with opid ' + theOpId);
                 } else {
                     var elIndex = parseInt(theOpId.split('__')[1], 10);
                     isNaN(elIndex) || (theElement = elements[elIndex]);
