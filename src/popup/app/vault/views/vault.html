@@ -51,6 +51,10 @@
                           data-clipboard-text="{{login.username}}" ng-class="{'disabled': !login.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </span>
+                    <span class="btn-list" stop-prop stop-click title="{{i18n.launchWebsite}}" ng-click="launchWebsite(login)"
+                          ng-class="{'disabled': !login.uri}">
+                        <i class="fa fa-lg fa-share-square-o"></i>
+                    </span>
                     <span class="text">
                         {{login.name}}
                         <i class="fa fa-share-alt text-muted" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
@@ -78,6 +82,10 @@
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.username)"
                           data-clipboard-text="{{login.username}}" ng-class="{'disabled': !login.username}">
                         <i class="fa fa-lg fa-user"></i>
+                    </span>
+                    <span class="btn-list" stop-prop stop-click title="{{i18n.launchWebsite}}" ng-click="launchWebsite(login)"
+                          ng-class="{'disabled': !login.uri}">
+                        <i class="fa fa-lg fa-share-square-o"></i>
                     </span>
                     <span class="text">
                         {{login.name}}

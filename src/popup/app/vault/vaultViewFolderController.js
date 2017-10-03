@@ -131,6 +131,13 @@
             resetList(matchedLogins);
         };
 
+        $scope.launchWebsite = function (login) {
+            if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
+                $analytics.eventTrack('Launched Website From Listing');
+                chrome.tabs.create({ url: login.uri });
+            }
+        };
+
         function resetList(logins) {
             $scope.vaultLogins = logins;
             $scope.pagedVaultLogins = [];

@@ -153,6 +153,13 @@
             toastr.info(type + i18nService.valueCopied);
         };
 
+        $scope.launchWebsite = function (login) {
+            if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
+                $analytics.eventTrack('Launched Website From Listing');
+                chrome.tabs.create({ url: login.uri });
+            }
+        };
+
         $scope.$on('syncCompleted', function (event, successfully) {
             $timeout(loadVault, 500);
         });
