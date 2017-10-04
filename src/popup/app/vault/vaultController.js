@@ -127,12 +127,32 @@
         };
 
         $scope.viewLogin = function (login) {
-            storeState();
-            $state.go('viewLogin', {
-                loginId: login.id,
-                animation: 'in-slide-up',
-                from: 'vault'
-            });
+            if (login.clicked) {
+                login.cancelClick = true;
+                $scope.launchWebsite(login);
+                return;
+            }
+
+            login.clicked = true;
+
+            $timeout(function () {
+                if (login.cancelClick) {
+                    login.cancelClick = false;
+                    login.clicked = false;
+                    return;
+                }
+
+                storeState();
+                $state.go('viewLogin', {
+                    loginId: login.id,
+                    animation: 'in-slide-up',
+                    from: 'vault'
+                });
+
+                // clean up
+                login.cancelClick = false;
+                login.clicked = false;
+            }, 200);
         };
 
         $scope.viewFolder = function (folder) {
@@ -154,10 +174,12 @@
         };
 
         $scope.launchWebsite = function (login) {
-            if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
-                $analytics.eventTrack('Launched Website From Listing');
-                chrome.tabs.create({ url: login.uri });
-            }
+            $timeout(function () {
+                if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
+                    $analytics.eventTrack('Launched Website From Listing');
+                    chrome.tabs.create({ url: login.uri });
+                }
+            });
         };
 
         $scope.$on('syncCompleted', function (event, successfully) {

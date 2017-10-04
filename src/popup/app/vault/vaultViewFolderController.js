@@ -2,7 +2,7 @@
     .module('bit.vault')
 
     .controller('vaultViewFolderController', function ($scope, loginService, folderService, $q, $state, $stateParams, toastr,
-        syncService, $analytics, i18nService, stateService, utilsService) {
+        syncService, $analytics, i18nService, stateService, utilsService, $timeout) {
         var stateKey = 'viewFolder',
             state = stateService.getState(stateKey) || {};
 
@@ -64,7 +64,7 @@
                     $scope.searchLogins();
                 }
 
-                setTimeout(setScrollY, 200);
+                $timeout(setScrollY, 200);
             });
         }
 
@@ -132,10 +132,12 @@
         };
 
         $scope.launchWebsite = function (login) {
-            if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
-                $analytics.eventTrack('Launched Website From Listing');
-                chrome.tabs.create({ url: login.uri });
-            }
+            $timeout(function () {
+                if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
+                    $analytics.eventTrack('Launched Website From Listing');
+                    chrome.tabs.create({ url: login.uri });
+                }
+            });
         };
 
         function resetList(logins) {
@@ -169,12 +171,32 @@
         };
 
         $scope.viewLogin = function (login) {
-            storeState();
-            $state.go('viewLogin', {
-                loginId: login.id,
-                animation: 'in-slide-up',
-                from: 'folder'
-            });
+            if (login.clicked) {
+                login.cancelClick = true;
+                $scope.launchWebsite(login);
+                return;
+            }
+
+            login.clicked = true;
+
+            $timeout(function () {
+                if (login.cancelClick) {
+                    login.cancelClick = false;
+                    login.clicked = false;
+                    return;
+                }
+
+                storeState();
+                $state.go('viewLogin', {
+                    loginId: login.id,
+                    animation: 'in-slide-up',
+                    from: 'folder'
+                });
+
+                // clean up
+                login.cancelClick = false;
+                login.clicked = false;
+            }, 200);
         };
 
         $scope.clipboardError = function (e) {
