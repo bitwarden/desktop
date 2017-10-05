@@ -42,6 +42,7 @@
     "child_process": "1.0.2",
     "gulp-util": "3.0.8",
     "gulp-zip": "4.0.0",
-    "gulp-xmlpoke": "0.2.1"
+    "gulp-xmlpoke": "0.2.1",
+    "gulp-angular-embed-templates": "2.3.0"
   }
 }

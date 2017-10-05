@@ -16,7 +16,8 @@
     child = require('child_process'),
     zip = require('gulp-zip'),
     manifest = require('./src/manifest.json'),
-    xmlpoke = require('gulp-xmlpoke');
+    xmlpoke = require('gulp-xmlpoke'),
+    embedTemplates = require('gulp-angular-embed-templates');
 
 var paths = {};
 paths.dist = './dist/';
@@ -25,7 +26,7 @@ paths.npmDir = './node_modules/';
 paths.popupDir = './src/popup/';
 paths.lessDir = paths.popupDir + 'less/';
 paths.cssDir = paths.popupDir + 'css/';
-paths.webfontsDir = './src/webfonts/';
+paths.webfontsDir = paths.cssDir + 'webfonts/';
 
 gulp.task('lint', function () {
     return gulp.src([
@@ -57,11 +58,7 @@ gulp.task('clean:lib', function (cb) {
     return rimraf(paths.libDir, cb);
 });
 
-gulp.task('clean:fonts', function (cb) {
-    return rimraf(paths.webfontsDir, cb);
-});
-
-gulp.task('clean', ['clean:css', 'clean:lib', 'clean:fonts']);
+gulp.task('clean', ['clean:css', 'clean:lib']);
 
 gulp.task('lib', ['clean:lib'], function () {
     var libs = [
@@ -196,7 +193,70 @@ gulp.task('dist:clean', function (cb) {
 gulp.task('dist:move', function () {
     var moves = [
         {
-            src: ['src/**/*', '!src/popup/less{,/**/*}', '!src/edge{,/**/*}'],
+            src: 'src/_locales/**/*',
+            dest: paths.dist + '_locales'
+        },
+        {
+            src: [
+                'src/content/**/*',
+                '!src/content/field.js',
+                '!src/content/overlay.js'
+            ],
+            dest: paths.dist + 'content'
+        },
+        {
+            src: 'src/images/**/*',
+            dest: paths.dist + 'images'
+        },
+        {
+            src: 'src/notification/**/*',
+            dest: paths.dist + 'notification'
+        },
+        {
+            src: 'src/popup/index.html',
+            dest: paths.dist + 'popup'
+        },
+        {
+            src: 'src/popup/css/fonts/**/*',
+            dest: paths.dist + 'popup/fonts'
+        },
+        {
+            src: paths.libDir + 'font-awesome/fonts/**/*',
+            dest: paths.dist + 'popup/fonts'
+        },
+        {
+            src: 'src/services/**/*',
+            dest: paths.dist + 'services'
+        },
+        {
+            src: paths.libDir + 'forge/**/*',
+            dest: paths.dist + 'lib/forge'
+        },
+        {
+            src: paths.libDir + 'jquery/**/*',
+            dest: paths.dist + 'lib/jquery'
+        },
+        {
+            src: paths.libDir + 'tldjs/**/*',
+            dest: paths.dist + 'lib/tldjs'
+        },
+        {
+            src: paths.libDir + 'q/**/*',
+            dest: paths.dist + 'lib/q'
+        },
+        {
+            src: 'src/models/**/*',
+            dest: paths.dist + 'models'
+        },
+        {
+            src: 'src/scripts/analytics.js',
+            dest: paths.dist + 'scripts'
+        },
+        {
+            src: [
+                'src/background.*',
+                'src/manifest.json'
+            ],
             dest: paths.dist
         }
     ];
@@ -208,10 +268,68 @@ gulp.task('dist:move', function () {
     return merge(tasks);
 });
 
+gulp.task('dist:css', function () {
+    return gulp
+        .src([
+            // libs
+            paths.libDir + '**/*.css',
+            '!' + paths.libDir + '**/*.min.css',
+            // app
+            paths.cssDir + 'popup.css'
+        ])
+        .pipe(concat(paths.dist + 'popup/popup.css'))
+        .pipe(gulp.dest('.'));
+});
+
+gulp.task('dist:js', function () {
+    var appTask = gulp
+        .src([
+            // models/scripts
+            './src/models/**/*.js',
+            './src/scripts/*.js',
+            // app
+            paths.popupDir + 'app/app.js',
+            paths.popupDir + 'app/**/*Module.js',
+            paths.popupDir + 'app/**/*.js'
+        ])
+        .pipe(embedTemplates({
+            basePath: './src/popup/',
+            minimize: { empty: true }
+        }))
+        .pipe(concat(paths.dist + 'popup/app.js'))
+        .pipe(gulp.dest('.'));
+
+    var libTask = gulp
+        .src([
+            paths.libDir + 'jquery/jquery.js',
+            paths.libDir + 'bootstrap/js/bootstrap.js',
+            paths.libDir + 'angular/angular.js',
+            paths.libDir + '**/*.js',
+            '!' + paths.libDir + 'q/**/*',
+            '!' + paths.libDir + 'tldjs/**/*',
+            '!' + paths.libDir + 'forge/**/*',
+            '!' + paths.libDir + '**/*.min.js'
+        ])
+        .pipe(concat(paths.dist + 'popup/lib.js'))
+        .pipe(gulp.dest('.'));
+
+    return merge(appTask, libTask);
+});
+
+gulp.task('dist:preprocess', function () {
+    return gulp
+        .src([
+            paths.dist + 'popup/index.html'
+        ], { base: '.' })
+        .pipe(preprocess({ context: {} }))
+        .pipe(gulp.dest('.'));
+});
+
 gulp.task('dist', ['build'], function (cb) {
     return runSequence(
         'dist:clean',
-        'dist:move',
+        ['dist:move', 'dist:css', 'dist:js'],
+        'dist:preprocess',
         cb);
 });
 
@@ -354,8 +472,11 @@ function zipDist(fileName) {
 
 gulp.task('webfonts', function () {
     return gulp.src('./webfonts.list')
-        .pipe(googleWebFonts({}))
-        .pipe(gulp.dest(paths.webfontsDir));
+        .pipe(googleWebFonts({
+            fontsDir: 'fonts',
+            cssFilename: 'webfonts.css'
+        }))
+        .pipe(gulp.dest(paths.cssDir));
 });
 
 function npmCommand(commands, cb) {
