@@ -282,6 +282,14 @@ gulp.task('dist:css', function () {
 });
 
 gulp.task('dist:js', function () {
+    return distJs(false);
+});
+
+gulp.task('dist:js:edge', function () {
+    return distJs(true);
+});
+
+function distJs(edge) {
     var appTask = gulp
         .src([
             // models/scripts
@@ -303,7 +311,7 @@ gulp.task('dist:js', function () {
         .src([
             paths.libDir + 'jquery/jquery.js',
             paths.libDir + 'bootstrap/js/bootstrap.js',
-            paths.libDir + 'angular/angular.js',
+            edge ? './src/edge/angular.js' : (paths.libDir + 'angular/angular.js'),
             paths.libDir + '**/*.js',
             '!' + paths.libDir + 'q/**/*',
             '!' + paths.libDir + 'tldjs/**/*',
@@ -314,7 +322,7 @@ gulp.task('dist:js', function () {
         .pipe(gulp.dest('.'));
 
     return merge(appTask, libTask);
-});
+}
 
 gulp.task('dist:preprocess', function () {
     return gulp
@@ -326,12 +334,20 @@ gulp.task('dist:preprocess', function () {
 });
 
 gulp.task('dist', ['build'], function (cb) {
+    return dist(false, cb);
+});
+
+gulp.task('dist:edge', ['build'], function (cb) {
+    return dist(true, cb);
+});
+
+function dist(edge, cb) {
     return runSequence(
         'dist:clean',
-        ['dist:move', 'dist:css', 'dist:js'],
+        ['dist:move', 'dist:css', edge ? 'dist:js:edge' : 'dist:js'],
         'dist:preprocess',
         cb);
-});
+}
 
 var sidebarActionManifestObj = {
     "default_title": "bitwarden",
@@ -366,7 +382,7 @@ gulp.task('dist-opera', ['dist'], function (cb) {
     return zipDist('dist-opera');
 });
 
-gulp.task('dist-edge', ['dist'], function (cb) {
+gulp.task('dist-edge', ['dist:edge'], function (cb) {
     // move dist to temp extension folder
     new Promise(function (resolve, reject) {
         gulp.src(paths.dist + '**/*')
@@ -402,14 +418,6 @@ gulp.task('dist-edge', ['dist'], function (cb) {
             rimraf('temp', function () {
                 resolve();
             })
-        });
-    }).then(function () {
-        // move custom angular build to dist libs
-        return new Promise(function (resolve, reject) {
-            gulp.src('src/edge/angular.js')
-                .on('error', reject)
-                .pipe(gulp.dest(paths.dist + 'Extension/lib/angular'))
-                .on('end', resolve);
         });
     }).then(function () {
         // move src edge folder to dist
