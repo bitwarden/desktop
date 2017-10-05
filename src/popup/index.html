@@ -8,8 +8,6 @@
 
     <!-- @if true !>
     <link rel="stylesheet" href="popup.css">
-    <script src="lib.js"></script>
-    <script src="app.js"></script>
     <!-- @endif -->
     <!-- @exclude -->
     <link rel="stylesheet" href="css/webfonts.css">
@@ -17,14 +15,21 @@
     <link rel="stylesheet" href="../lib/angular-toastr/angular-toastr.css">
     <link rel="stylesheet" href="../lib/sweetalert/sweetalert.css">
     <link rel="stylesheet" href="css/popup.css">
+    <!-- @endexclude -->
+</head>
+<body ng-controller="mainController as main" class="{{main.animation}}"
+      ng-class="{lg: main.lgBody, sm: main.smBody, xs: main.xsBody }">
+    <div ui-view class="main-view"></div>
 
+    <!-- @if true !>
+    <script src="lib.js"></script>
+    <script src="app.js"></script>
+    <!-- @endif -->
+    <!-- @exclude -->
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../lib/bootstrap/js/bootstrap.js"></script>
     <script src="../lib/papaparse/papaparse.js"></script>
     <script src="../lib/clipboard/clipboard.js"></script>
-    <script src="../scripts/analytics.js"></script>
-    <script src="../scripts/duo.js"></script>
-    <script src="../scripts/u2f.js"></script>
 
     <script src="../lib/angular/angular.js"></script>
     <script src="../lib/angular-animate/angular-animate.js"></script>
@@ -37,13 +42,17 @@
     <script src="../lib/angulartics/angulartics-ga.js"></script>
     <script src="../lib/ng-infinite-scroll/ng-infinite-scroll.js"></script>
 
-    <script src="app/app.js"></script>
-    <script src="app/config.js"></script>
+    <script src="../scripts/analytics.js"></script>
+    <script src="../scripts/duo.js"></script>
+    <script src="../scripts/u2f.js"></script>
 
     <script src="../models/api/requestModels.js"></script>
     <script src="../models/api/responseModels.js"></script>
     <script src="../models/dataModels.js"></script>
     <script src="../models/domainModels.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
 
     <script src="app/directives/directivesModule.js"></script>
     <script src="app/directives/formDirective.js"></script>
@@ -101,9 +110,5 @@
     <script src="app/lock/lockModule.js"></script>
     <script src="app/lock/lockController.js"></script>
     <!-- @endexclude -->
-</head>
-<body ng-controller="mainController as main" class="{{main.animation}}" 
-      ng-class="{lg: main.lgBody, sm: main.smBody, xs: main.xsBody }">
-    <div ui-view class="main-view"></div>
 </body>
 </html>

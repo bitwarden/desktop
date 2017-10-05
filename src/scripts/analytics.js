@@ -29,11 +29,19 @@
             '&ea=' + encodeURIComponent(options.eventAction) +
             (options.eventLabel ? '&el=' + encodeURIComponent(options.eventLabel) : '') +
             (options.eventValue ? '&ev=' + encodeURIComponent(options.eventValue) : '') +
-            (options.page ? '&dp=' + encodeURIComponent(options.page) : '');
+            (options.page ? '&dp=' + cleanPagePath(options.page) : '');
     }
 
     function gaTrackPageView(pagePath) {
-        return '&t=pageview&dp=' + encodeURIComponent(pagePath);
+        return '&t=pageview&dp=' + cleanPagePath(pagePath);
+    }
+
+    function cleanPagePath(pagePath) {
+        var paramIndex = pagePath.indexOf('?');
+        if (paramIndex > -1) {
+            pagePath = pagePath.substring(0, paramIndex);
+        }
+        return encodeURIComponent(pagePath)
     }
 
     bgPage.bg_appIdService.getAnonymousAppId(function (gaAnonAppId) {
@@ -47,6 +55,9 @@
 
             if (param1 === 'pageview' && param2) {
                 message += gaTrackPageView(param2);
+            }
+            else if (typeof param1 === 'object' && param1.hitType === 'pageview') {
+                message += gaTrackPageView(param1.page);
             }
             else if (param1 === 'event' && param2) {
                 message += gaTrackEvent(param2);
