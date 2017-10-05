@@ -217,8 +217,8 @@ gulp.task('dist:move', function () {
             dest: paths.dist + 'popup'
         },
         {
-            src: 'src/popup/css/fonts/**/*',
-            dest: paths.dist + 'popup/fonts'
+            src: 'src/popup/css/webfonts/**/*',
+            dest: paths.dist + 'popup/css/webfonts'
         },
         {
             src: paths.libDir + 'font-awesome/fonts/**/*',
@@ -277,7 +277,7 @@ gulp.task('dist:css', function () {
             // app
             paths.cssDir + 'popup.css'
         ])
-        .pipe(concat(paths.dist + 'popup/popup.css'))
+        .pipe(concat(paths.dist + 'popup/css/popup.css'))
         .pipe(gulp.dest('.'));
 });
 
@@ -473,7 +473,7 @@ function zipDist(fileName) {
 gulp.task('webfonts', function () {
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({
-            fontsDir: 'fonts',
+            fontsDir: 'webfonts',
             cssFilename: 'webfonts.css'
         }))
         .pipe(gulp.dest(paths.cssDir));
