@@ -66,13 +66,25 @@
 
     function observeDom() {
         var bodies = document.querySelectorAll('body');
-        if (bodies.length > 0) {
+        if (bodies && bodies.length > 0) {
             observer = new window.MutationObserver(function (mutations) {
+                if (!mutations || !mutations.length) {
+                    return;
+                }
+
                 var doCollect = false;
                 for (var i = 0; i < mutations.length; i++) {
+                    if (!mutations[i].addedNodes || !mutations[i].addedNodes.length) {
+                        continue;
+                    }
+
                     for (var j = 0; j < mutations[i].addedNodes.length; j++) {
+                        if (!mutations[i].addedNodes[j]) {
+                            continue;
+                        }
+
                         var forms = mutations[i].addedNodes[j].querySelectorAll('form:not([data-bitwarden-watching])');
-                        if (forms.length) {
+                        if (forms && forms.length) {
                             doCollect = true;
                             break;
                         }
