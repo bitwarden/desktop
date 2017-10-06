@@ -87,9 +87,11 @@ function initFolderService() {
             }];
             self.getAll(function (folders) {
                 for (var i = 0; i < folders.length; i++) {
+                    /* jshint ignore:start */
                     promises.push(folders[i].decrypt().then(function (folder) {
                         decFolders.push(folder);
                     }));
+                    /* jshint ignore:end */
                 }
 
                 Q.all(promises).then(function () {

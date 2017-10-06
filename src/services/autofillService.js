@@ -240,13 +240,17 @@ function initAutofill() {
 
                 totpPromise = self.totpService.isAutoCopyEnabled().then(function (enabled) {
                     if (enabled) {
+                        /* jshint ignore:start */
                         return self.totpService.getCode(login.totp);
+                        /* jshint ignore:end */
                     }
 
                     return null;
                 }).then(function (code) {
                     if (code) {
+                        /* jshint ignore:start */
                         self.utilsService.copyToClipboard(code);
+                        /* jshint ignore:end */
                     }
 
                     return code;

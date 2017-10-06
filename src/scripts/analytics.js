@@ -41,7 +41,7 @@
         if (paramIndex > -1) {
             pagePath = pagePath.substring(0, paramIndex);
         }
-        return encodeURIComponent(pagePath)
+        return encodeURIComponent(pagePath);
     }
 
     bgPage.bg_appIdService.getAnonymousAppId(function (gaAnonAppId) {

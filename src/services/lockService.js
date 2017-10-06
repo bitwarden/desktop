@@ -144,5 +144,5 @@ function initLockService(self) {
         }
 
         return null;
-    };
+    }
 }

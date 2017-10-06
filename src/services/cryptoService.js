@@ -220,6 +220,7 @@ function initCryptoService(constantsService) {
                 var decPromises = [];
                 for (var orgId in obj.encOrgKeys) {
                     if (obj.encOrgKeys.hasOwnProperty(orgId)) {
+                        /* jshint ignore:start */
                         (function (orgIdInstance) {
                             var promise = self.rsaDecrypt(obj.encOrgKeys[orgIdInstance]).then(function (decValueB64) {
                                 orgKeys[orgIdInstance] = new SymmetricCryptoKey(decValueB64, true);
@@ -229,6 +230,7 @@ function initCryptoService(constantsService) {
                             });
                             decPromises.push(promise);
                         })(orgId);
+                        /* jshint ignore:end */
                     }
                 }
 

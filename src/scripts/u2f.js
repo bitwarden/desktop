@@ -11,7 +11,9 @@
     var thisU2f = null;
 
     U2f.prototype.init = function (data) {
+        /* jshint ignore:start */
         var self = thisU2f = this;
+        /* jshint ignore:end */
 
         self.connectorLink.href = self.webVaultUrl + '/u2f-connector.html' +
             '?data=' + this.base64Encode(JSON.stringify(data)) +

@@ -172,9 +172,11 @@ function initLoginService() {
             var decLogins = [];
             self.getAll(function (logins) {
                 for (var i = 0; i < logins.length; i++) {
+                    /* jshint ignore:start */
                     promises.push(logins[i].decrypt().then(function (login) {
                         decLogins.push(login);
                     }));
+                    /* jshint ignore:end */
                 }
 
                 Q.all(promises).then(function () {

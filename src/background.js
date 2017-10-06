@@ -631,6 +631,8 @@ var bg_isBackground = true,
                 var tabDomain = bg_utilsService.getDomain(tab.url);
                 if (tabDomain && tabDomain === loginToAdd.domain) {
                     bg_loginsToAdd.splice(i, 1);
+
+                    /* jshint ignore:start */
                     bg_loginService.encrypt({
                         id: null,
                         folderId: null,
@@ -649,6 +651,8 @@ var bg_isBackground = true,
                             });
                         });
                     });
+                    /* jshint ignore:end */
+
                     messageTab(tab.id, 'closeNotificationBar');
                 }
             }
@@ -671,11 +675,8 @@ var bg_isBackground = true,
         }
     }
 
-    function checkbg_loginsToAdd(tab, callback) {
+    function checkbg_loginsToAdd(tab) {
         if (!bg_loginsToAdd.length) {
-            if (callback) {
-                callback();
-            }
             return;
         }
 
@@ -693,17 +694,11 @@ var bg_isBackground = true,
 
         function check() {
             if (!tab) {
-                if (callback) {
-                    callback();
-                }
                 return;
             }
 
             var tabDomain = bg_utilsService.getDomain(tab.url);
             if (!tabDomain) {
-                if (callback) {
-                    callback();
-                }
                 return;
             }
 
@@ -711,11 +706,7 @@ var bg_isBackground = true,
                 if (bg_loginsToAdd[i].tabId === tab.id && bg_loginsToAdd[i].domain === tabDomain) {
                     messageTab(tab.id, 'openNotificationBar', {
                         type: 'add'
-                    }, function () {
-                        if (callback) {
-                            callback();
-                        }
-                    });
+                    }, function () { });
                     break;
                 }
             }
