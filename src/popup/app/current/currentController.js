@@ -79,7 +79,9 @@ angular
                 if (totpCode && utilsService.isFirefox()) {
                     utilsService.copyToClipboard(totpCode, document);
                 }
-                $window.close();
+                if (!utilsService.inSidebar($window)) {
+                    $window.close();
+                }
             }, function () {
                 $analytics.eventTrack('Autofilled Error');
                 toastr.error(i18nService.autofillError);
