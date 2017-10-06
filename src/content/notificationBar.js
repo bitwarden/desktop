@@ -2,7 +2,9 @@
     var pageDetails = [],
         formData = [],
         barType = null,
-        pageHref = null;
+        pageHref = null,
+        observer = null,
+        domObservationCollectTimeout = null;
 
     if (window.location.hostname.indexOf('bitwarden.com') === -1) {
         chrome.storage.local.get('neverDomains', function (obj) {
@@ -43,14 +45,56 @@
         }
     });
 
+    function observeDom() {
+        var bodies = document.querySelectorAll('body');
+        if (bodies.length > 0) {
+            observer = new window.MutationObserver(function (mutations) {
+                var doCollect = false;
+                for (var i = 0; i < mutations.length; i++) {
+                    for (var j = 0; j < mutations[i].addedNodes.length; j++) {
+                        var forms = mutations[i].addedNodes[j].querySelectorAll('form:not([data-bitwarden-watching])');
+                        if (forms.length) {
+                            doCollect = true;
+                            break;
+                        }
+                    }
+
+                    if (doCollect) {
+                        break;
+                    }
+                }
+
+                if (doCollect) {
+                    if (domObservationCollectTimeout) {
+                        clearTimeout(domObservationCollectTimeout);
+                    }
+
+                    domObservationCollectTimeout = setTimeout(collect, 1000);
+                }
+            });
+
+            observer.observe(bodies[0], { childList: true });
+        }
+    }
+
     function collectIfNeeded() {
         if (pageHref !== window.location.href) {
             pageHref = window.location.href;
-            chrome.runtime.sendMessage({
-                command: 'bgCollectPageDetails',
-                sender: 'notificationBar'
-            });
+            if (observer) {
+                observer.disconnect();
+                observer = null;
+            }
+
+            collect();
+            observeDom();
         }
+    }
+
+    function collect() {
+        chrome.runtime.sendMessage({
+            command: 'bgCollectPageDetails',
+            sender: 'notificationBar'
+        });
     }
 
     function watchForms(forms) {
