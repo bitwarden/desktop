@@ -9,8 +9,8 @@ angular
         self.xsBody = $window.screen.availHeight < 600;
         self.smBody = !self.xsBody && $window.screen.availHeight <= 800;
         self.lgBody = !self.xsBody && !self.smBody && utilsService && !utilsService.isFirefox() && !utilsService.isEdge();
-        self.disableSearch = utilsService.isEdge();
-        self.inSidebar = utilsService.inSidebar($window);
+        self.disableSearch = utilsService && utilsService.isEdge();
+        self.inSidebar = utilsService && utilsService.inSidebar($window);
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             if (toParams.animation) {
