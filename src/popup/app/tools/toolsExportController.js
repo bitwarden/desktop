@@ -71,8 +71,10 @@
                         fields: null
                     };
 
+                    var j;
+
                     if (decLogins[i].fields) {
-                        for (var j = 0; j < decLogins[i].fields.length; j++) {
+                        for (j = 0; j < decLogins[i].fields.length; j++) {
                             if (!login.fields) {
                                 login.fields = '';
                             }
@@ -84,7 +86,7 @@
                         }
                     }
 
-                    for (var j = 0; j < decFolders.length; j++) {
+                    for (j = 0; j < decFolders.length; j++) {
                         if (decFolders[j].id === decLogins[i].folderId && decFolders[j].name !== i18nService.noneFolder) {
                             login.folder = decFolders[j].name;
                             break;
