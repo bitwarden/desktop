@@ -178,7 +178,7 @@
                 if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
                     $analytics.eventTrack('Launched Website From Listing');
                     chrome.tabs.create({ url: login.uri });
-                    if (!utilsService.inSidebar($window)) {
+                    if (utilsService.inPopup($window)) {
                         $window.close();
                     }
                 }

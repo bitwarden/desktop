@@ -229,7 +229,15 @@ function initUtilsService() {
     };
 
     UtilsService.prototype.inSidebar = function (theWindow) {
-        return theWindow.location.search && theWindow.location.search.indexOf('sidebar=true') > -1;
+        return theWindow.location.search && theWindow.location.search.indexOf('uilocation=sidebar') > -1;
+    };
+
+    UtilsService.prototype.inTab = function (theWindow) {
+        return theWindow.location.search && theWindow.location.search.indexOf('uilocation=tab') > -1;
+    };
+
+    UtilsService.prototype.inPopup = function (theWindow) {
+        return theWindow.location.search && theWindow.location.search.indexOf('uilocation=popup') > -1;
     };
 
     function validIpAddress(ipString) {

@@ -24,10 +24,11 @@ function initLockService(self) {
         self.lastLockCheck = now;
 
         var popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
+        var tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
         var sidebarView = sidebarViewName(self.utilsService);
         var sidebarOpen = sidebarView && chrome.extension.getViews({ type: sidebarView }).length > 0;
 
-        if (popupOpen || sidebarOpen) {
+        if (popupOpen || tabOpen || sidebarOpen) {
             // Do not lock
             return;
         }

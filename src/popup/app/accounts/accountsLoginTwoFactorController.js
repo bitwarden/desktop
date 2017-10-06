@@ -175,7 +175,9 @@
                     params = providers[constants.twoFactorProvider.email];
                     $scope.twoFactorEmail = params.Email;
 
-                    if (chrome.extension.getViews({ type: 'popup' }).length > 0 && !utilsService.inSidebar($window)) {
+                    if (chrome.extension.getViews({ type: 'popup' }).length > 0 &&
+                        !utilsService.inSidebar($window) &&
+                        !utilsService.inTab($window)) {
                         SweetAlert.swal({
                             title: i18nService.twoStepLogin,
                             text: i18nService.popup2faCloseMessage,
@@ -184,7 +186,7 @@
                             cancelButtonText: i18nService.no
                         }, function (confirmed) {
                             if (confirmed) {
-                                chrome.tabs.create({ url: '/popup/index.html#!/login' });
+                                chrome.tabs.create({ url: '/popup/index.html?uilocation=tab#!/login' });
                                 return;
                             }
                             else if (Object.keys(providers).length > 1) {

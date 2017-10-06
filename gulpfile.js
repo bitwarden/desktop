@@ -351,7 +351,7 @@ function dist(edge, cb) {
 
 var sidebarActionManifestObj = {
     "default_title": "bitwarden",
-    "default_panel": "popup/index.html?sidebar=true",
+    "default_panel": "popup/index.html?uilocation=sidebar",
     "default_icon": "images/icon19.png"
 };
 

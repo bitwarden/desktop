@@ -33,6 +33,7 @@ angular
                 }
             }
 
+            href = href.replace('uilocation=popup', 'uilocation=tab').replace('uilocation=sidebar', 'uilocation=tab');
             chrome.tabs.create({ url: href });
         };
 

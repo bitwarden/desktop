@@ -79,7 +79,7 @@ angular
                 if (totpCode && utilsService.isFirefox()) {
                     utilsService.copyToClipboard(totpCode, document);
                 }
-                if (!utilsService.inSidebar($window)) {
+                if (utilsService.inPopup($window)) {
                     $window.close();
                 }
             }, function () {
