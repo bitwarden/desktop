@@ -1,10 +1,18 @@
 ﻿document.addEventListener('DOMContentLoaded', function (event) {
+    var pageHref = null;
+
     chrome.storage.local.get('enableAutoFillOnPageLoad', function (obj) {
         if (obj && obj.enableAutoFillOnPageLoad === true) {
-            setTimeout(fill, 500);
-            window.addEventListener('popstate', fill);
+            setInterval(doFillIfNeeded, 500);
         }
     });
+
+    function doFillIfNeeded() {
+        if (pageHref !== window.location.href) {
+            pageHref = window.location.href;
+            fill();
+        }
+    }
 
     function fill() {
         chrome.runtime.sendMessage({

@@ -160,12 +160,7 @@ function initAutofill() {
         var passwordFields = [],
             formData = [];
 
-        passwordFields = loadPasswordFields(pageDetails, false);
-        if (!passwordFields.length) {
-            // not able to find any viewable password fields. maybe there are some "hidden" ones?
-            passwordFields = loadPasswordFields(pageDetails, true);
-        }
-
+        passwordFields = loadPasswordFields(pageDetails, true);
         if (passwordFields.length) {
             for (var formKey in pageDetails.forms) {
                 for (var i = 0; i < passwordFields.length; i++) {

@@ -1,10 +1,23 @@
 ﻿document.addEventListener('DOMContentLoaded', function (event) {
     var pageDetails = [],
         formData = [],
-        barType = null;
+        barType = null,
+        pageHref = null;
 
-    setTimeout(collect, 1000);
-    window.addEventListener('popstate', collect);
+    if (window.location.hostname.indexOf('bitwarden.com') === -1) {
+        chrome.storage.local.get('neverDomains', function (obj) {
+            var domains = obj.neverDomains;
+            if (domains && domains.hasOwnProperty(window.location.hostname)) {
+                return;
+            }
+
+            chrome.storage.local.get('disableAddLoginNotification', function (obj) {
+                if (!obj || !obj.disableAddLoginNotification) {
+                    setInterval(collectIfNeeded, 1000);
+                }
+            });
+        });
+    }
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
@@ -22,7 +35,7 @@
             sendResponse();
             return true;
         }
-        else if (msg.command === 'pageDetails') {
+        else if (msg.command === 'notificationBarPageDetails') {
             pageDetails.push(msg.data.details);
             watchForms(msg.data.forms);
             sendResponse();
@@ -30,22 +43,12 @@
         }
     });
 
-    function collect() {
-        if (window.location.hostname.indexOf('bitwarden.com') === -1) {
-            chrome.storage.local.get('neverDomains', function (obj) {
-                var domains = obj.neverDomains;
-                if (domains && domains.hasOwnProperty(window.location.hostname)) {
-                    return;
-                }
-
-                chrome.storage.local.get('disableAddLoginNotification', function (obj) {
-                    if (!obj || !obj.disableAddLoginNotification) {
-                        chrome.runtime.sendMessage({
-                            command: 'bgCollectPageDetails',
-                            sender: 'notificationBar'
-                        });
-                    }
-                });
+    function collectIfNeeded() {
+        if (pageHref !== window.location.href) {
+            pageHref = window.location.href;
+            chrome.runtime.sendMessage({
+                command: 'bgCollectPageDetails',
+                sender: 'notificationBar'
             });
         }
     }

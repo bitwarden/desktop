@@ -118,7 +118,7 @@ var bg_isBackground = true,
         else if (msg.command === 'collectPageDetailsResponse') {
             if (msg.sender === 'notificationBar') {
                 var forms = bg_autofillService.getFormsWithPasswordFields(msg.details);
-                messageTab(msg.tab.id, 'pageDetails', { details: msg.details, forms: forms });
+                messageTab(msg.tab.id, 'notificationBarPageDetails', { details: msg.details, forms: forms });
             }
             else if (msg.sender === 'autofiller' || msg.sender === 'autofill_cmd') {
                 bg_autofillService.doAutoFillForLastUsedLogin([{
