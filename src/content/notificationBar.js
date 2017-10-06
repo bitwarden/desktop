@@ -4,7 +4,8 @@
         barType = null,
         pageHref = null,
         observer = null,
-        domObservationCollectTimeout = null;
+        domObservationCollectTimeout = null,
+        iframed = isIframed();
 
     if (window.location.hostname.indexOf('bitwarden.com') === -1) {
         chrome.storage.local.get('neverDomains', function (obj) {
@@ -23,16 +24,25 @@
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'openNotificationBar') {
+            if (iframed) {
+                return;
+            }
             closeExistingAndOpenBar(msg.data.type, msg.data.typeData);
             sendResponse();
             return true;
         }
         else if (msg.command === 'closeNotificationBar') {
+            if (iframed) {
+                return;
+            }
             closeBar(true);
             sendResponse();
             return true;
         }
         else if (msg.command === 'adjustNotificationBar') {
+            if (iframed) {
+                return;
+            }
             adjustBar(msg.data);
             sendResponse();
             return true;
@@ -44,6 +54,15 @@
             return true;
         }
     });
+
+    function isIframed() {
+        try {
+            return window.self !== window.top;
+        }
+        catch (e) {
+            return true;
+        }
+    }
 
     function observeDom() {
         var bodies = document.querySelectorAll('body');
