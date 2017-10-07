@@ -121,7 +121,7 @@ function initAutofill() {
             }
         }
 
-        if (!passwordFields.length) {
+        if (!passwordFields.length && !fill.skipUsernameOnlyFill) {
             // No password fields on this page. Let's try to just fuzzy fill the username.
             for (i = 0; i < pageDetails.fields.length; i++) {
                 var f = pageDetails.fields[i];
@@ -186,7 +186,7 @@ function initAutofill() {
         return formData;
     };
 
-    AutofillService.prototype.doAutoFill = function (login, pageDetails, fromBackground, skipTotp, skipLastUsed) {
+    AutofillService.prototype.doAutoFill = function (options) {
         var deferred = Q.defer();
         var self = this,
             totpPromise = null;
@@ -201,22 +201,23 @@ function initAutofill() {
                 return;
             }
 
-            if (!tab || !login || !pageDetails || !pageDetails.length) {
+            if (!tab || !options.login || !options.pageDetails || !options.pageDetails.length) {
                 deferred.reject();
                 return;
             }
 
             var didAutofill = false;
-            for (var i = 0; i < pageDetails.length; i++) {
+            for (var i = 0; i < options.pageDetails.length; i++) {
                 // make sure we're still on correct tab
-                if (pageDetails[i].tab.id !== tab.id || pageDetails[i].tab.url !== tab.url) {
+                if (options.pageDetails[i].tab.id !== tab.id || options.pageDetails[i].tab.url !== tab.url) {
                     continue;
                 }
 
-                var fillScript = self.generateFillScript(pageDetails[i].details, {
-                    username: login.username,
-                    password: login.password,
-                    fields: login.fields
+                var fillScript = self.generateFillScript(options.pageDetails[i].details, {
+                    username: options.login.username,
+                    password: options.login.password,
+                    fields: options.login.fields,
+                    skipUsernameOnlyFill: options.skipUsernameOnlyFill || false
                 });
 
                 if (!fillScript || !fillScript.script || !fillScript.script.length) {
@@ -224,24 +225,24 @@ function initAutofill() {
                 }
 
                 didAutofill = true;
-                if (!skipLastUsed) {
-                    self.loginService.updateLastUsedDate(login.id, function () { });
+                if (!options.skipLastUsed) {
+                    self.loginService.updateLastUsedDate(options.login.id, function () { });
                 }
 
                 chrome.tabs.sendMessage(tab.id, {
                     command: 'fillForm',
                     fillScript: fillScript
-                }, { frameId: pageDetails[i].frameId });
+                }, { frameId: options.pageDetails[i].frameId });
 
-                if (totpPromise || (fromBackground && self.utilsService.isFirefox()) ||
-                    skipTotp || !login.totp || !self.tokenService.getPremium()) {
+                if (totpPromise || (options.fromBackground && self.utilsService.isFirefox()) ||
+                    options.skipTotp || !options.login.totp || !self.tokenService.getPremium()) {
                     continue;
                 }
 
                 totpPromise = self.totpService.isAutoCopyEnabled().then(function (enabled) {
                     if (enabled) {
                         /* jshint ignore:start */
-                        return self.totpService.getCode(login.totp);
+                        return self.totpService.getCode(options.login.totp);
                         /* jshint ignore:end */
                     }
 
@@ -298,7 +299,14 @@ function initAutofill() {
                     return;
                 }
 
-                self.doAutoFill(login, pageDetails, true, true, true);
+                self.doAutoFill({
+                    login: login,
+                    pageDetails: pageDetails,
+                    fromBackground: true,
+                    skipTotp: true,
+                    skipLastUsed: true,
+                    skipUsernameOnlyFill: true
+                });
             });
         });
     };

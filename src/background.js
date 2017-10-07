@@ -734,7 +734,11 @@ var bg_isBackground = true,
     }
 
     function autofillPage() {
-        bg_autofillService.doAutoFill(loginToAutoFill, pageDetailsToAutoFill, true);
+        bg_autofillService.doAutoFill({
+            login: loginToAutoFill,
+            pageDetails: pageDetailsToAutoFill,
+            fromBackground: true
+        });
         // reset
         loginToAutoFill = null;
         pageDetailsToAutoFill = [];
