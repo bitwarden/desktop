@@ -276,7 +276,7 @@ function initAutofill() {
         return deferred.promise;
     };
 
-    AutofillService.prototype.doAutoFillForLastUsedLogin = function (pageDetails) {
+    AutofillService.prototype.doAutoFillForLastUsedLogin = function (pageDetails, fromCommand) {
         var self = this;
 
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -305,7 +305,7 @@ function initAutofill() {
                     fromBackground: true,
                     skipTotp: true,
                     skipLastUsed: true,
-                    skipUsernameOnlyFill: true
+                    skipUsernameOnlyFill: !fromCommand
                 });
             });
         });

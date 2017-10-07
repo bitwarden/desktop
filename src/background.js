@@ -123,7 +123,7 @@ var bg_isBackground = true,
             else if (msg.sender === 'autofiller' || msg.sender === 'autofill_cmd') {
                 bg_autofillService.doAutoFillForLastUsedLogin([{
                     frameId: sender.frameId, tab: msg.tab, details: msg.details
-                }]);
+                }], msg.sender === 'autofill_cmd');
             }
             else {
                 clearTimeout(autofillTimeout);
