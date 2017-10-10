@@ -269,6 +269,18 @@ gulp.task('dist:move', function () {
 });
 
 gulp.task('dist:css', function () {
+    distCss({});
+});
+
+gulp.task('dist:css:edge', function () {
+    distCss({ edge: true });
+});
+
+gulp.task('dist:css:firefox', function () {
+    distCss({ firefox: true });
+});
+
+function distCss(preprocessContext) {
     return gulp
         .src([
             // libs
@@ -277,9 +289,10 @@ gulp.task('dist:css', function () {
             // app
             paths.cssDir + 'popup.css'
         ])
+        .pipe(preprocess({ context: preprocessContext }))
         .pipe(concat(paths.dist + 'popup/css/popup.css'))
         .pipe(gulp.dest('.'));
-});
+}
 
 gulp.task('dist:js', function () {
     return distJs(false);
@@ -334,17 +347,24 @@ gulp.task('dist:preprocess', function () {
 });
 
 gulp.task('dist', ['build'], function (cb) {
-    return dist(false, cb);
+    return dist({}, cb);
 });
 
 gulp.task('dist:edge', ['build'], function (cb) {
-    return dist(true, cb);
+    return dist({ edge: true }, cb);
 });
 
-function dist(edge, cb) {
+gulp.task('dist:firefox', ['build'], function (cb) {
+    return dist({ firefox: true }, cb);
+});
+
+function dist(o, cb) {
+    var distCss = o.edge ? 'dist:css:edge' : o.firefox ? 'dist:css:firefox' : 'dist:css';
+    var distJs = o.edge ? 'dist:js:edge' : 'dist:js';
+
     return runSequence(
         'dist:clean',
-        ['dist:move', 'dist:css', edge ? 'dist:js:edge' : 'dist:js'],
+        ['dist:move', distCss, distJs],
         'dist:preprocess',
         cb);
 }
@@ -355,7 +375,7 @@ var sidebarActionManifestObj = {
     "default_icon": "images/icon19.png"
 };
 
-gulp.task('dist-firefox', ['dist'], function (cb) {
+gulp.task('dist-firefox', ['dist:firefox'], function (cb) {
     gulp.src(paths.dist + 'manifest.json')
         .pipe(jeditor(function (manifest) {
             manifest.applications = {

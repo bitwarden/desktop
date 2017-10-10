@@ -18,10 +18,14 @@ body {
     overflow: hidden;
 }
 
-body.lg {
+/* @ifndef firefox */
+/* @ifndef edge */
+body {
     width: 375px !important;
     height: 667px !important;
 }
+/* @endif */
+/* @endif */
 
 body.sm {
     width: 375px !important;
