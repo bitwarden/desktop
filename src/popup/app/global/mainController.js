@@ -33,8 +33,28 @@ angular
                 }
             }
 
-            href = href.replace('uilocation=popup', 'uilocation=tab').replace('uilocation=sidebar', 'uilocation=tab');
-            chrome.tabs.create({ url: href });
+            if (chrome.windows.create) {
+                href = href.replace('uilocation=popup', 'uilocation=popout').replace('uilocation=tab', 'uilocation=popout')
+                    .replace('uilocation=sidebar', 'uilocation=popout');
+
+                chrome.windows.create({
+                    url: href,
+                    type: 'popup',
+                    width: $('body').width() + 60,
+                    height: $('body').height()
+                });
+
+                if (utilsService.inPopup($window)) {
+                    $window.close();
+                }
+            }
+            else {
+                href = href.replace('uilocation=popup', 'uilocation=tab').replace('uilocation=popout', 'uilocation=tab')
+                    .replace('uilocation=sidebar', 'uilocation=tab');
+                chrome.tabs.create({
+                    url: href
+                });
+            }
         };
 
         chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
