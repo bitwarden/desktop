@@ -430,7 +430,7 @@
     "message":"Synchronizace je dokončena"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Synchronizace selhala"
   },
   "importLoginsConfirmation":{
     "message":"Přihlašovací údaje můžete hromadně importovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
@@ -755,27 +755,30 @@
     "message":"Bohužel toto okno není v tomto prohlížeči k dispozici v soukromém režimu."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Vlastní pole"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Zkopírovat hodnotu"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Přepnout hodnotu"
   },
   "value":{
-    "message":"Value"
+    "message":"Hodnota"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Nové vlastní pole"
   },
   "cfTypeText":{
     "message":"Text"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Skryté"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Ano\/Ne"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

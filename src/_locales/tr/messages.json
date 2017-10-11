@@ -430,7 +430,7 @@
     "message":"Eşleme tamamlandı"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Eşitleme başarısız"
   },
   "importLoginsConfirmation":{
     "message":"bitwarden.com web kasasından topluca giriş bilgilerinizi içe aktarabilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
@@ -719,16 +719,16 @@
     "message":"Custom Environment"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Üst düzey kullanıcılar için. Her servisin taban URL'sini bağımsız olarak belirleyebilirsiniz."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"Sunucu URL"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"API Sunucu URL"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"Web Kasası Sunucu URL"
   },
   "identityUrl":{
     "message":"Identity Server URL"
@@ -737,45 +737,48 @@
     "message":"The environment URLs have been saved."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load"
+    "message":"Sayfa Yüklendiğinde Otomatik Doldurmayı Etkinleştir"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Eğer bir oturum açma formu tespit edilirse, sayfa yüklendiğinde otomatik olarak veriler formlar doldurulur."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Bu şu anda deneysel bir özelliktir. Kullanımı sizin sorumluluğunuzdadır."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Geçerli site için son kullanılan giriş verisini otomatik doldur."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Rastgele yeni bir parola oluştur ve panoya kopyala."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Ne yazık ki bu pencere bu tarayıcının özel modunda kullanılabilir değildir."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Özel Alanlar"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Değeri kopyala"
   },
   "toggleValue":{
     "message":"Toggle Value"
   },
   "value":{
-    "message":"Value"
+    "message":"Değer"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Yeni Özel Alan"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Metin"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Gizli"
   },
   "cfTypeBoolean":{
     "message":"Boolean"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

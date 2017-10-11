@@ -430,7 +430,7 @@
     "message":"同步完成"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"同步失敗"
   },
   "importLoginsConfirmation":{
     "message":"你可以在 bitwarden 網頁版匯入密碼。現在前往？"
@@ -737,7 +737,7 @@
     "message":"環境 URL 已儲存。"
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+    "message":"啟用頁面載入時自動填寫表單"
   },
   "enableAutoFillOnPageLoadDesc":{
     "message":"如果網頁載入時偵測到登入表單，則自動執行表單填寫。"
@@ -755,27 +755,30 @@
     "message":"很遺憾，在這個瀏覽器的隱私模式下，此視窗無法使用。"
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"自訂欄位"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"複製值"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"切換值"
   },
   "value":{
-    "message":"Value"
+    "message":"值"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"新增自訂欄位"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"文字"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"已隱藏"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"布林值"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

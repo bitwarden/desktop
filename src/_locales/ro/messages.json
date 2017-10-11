@@ -430,7 +430,7 @@
     "message":"Sincronizare completă"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Sincronizare eșuată"
   },
   "importLoginsConfirmation":{
     "message":"Puteți să importați datele de conectare din seiful web bitwarden.com. Doriți să vizitați site-ul acum?"
@@ -755,27 +755,30 @@
     "message":"Din păcate această fereastră nu este disponibilă în modul privat pentru acest browser."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Câmpuri particularizate"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Copiere valoare"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Comutare valoare"
   },
   "value":{
-    "message":"Value"
+    "message":"Valoare"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Câmp personalizat nou"
   },
   "cfTypeText":{
     "message":"Text"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Ascuns"
   },
   "cfTypeBoolean":{
     "message":"Boolean"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

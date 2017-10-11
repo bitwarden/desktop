@@ -430,7 +430,7 @@
     "message":"Synchronizácia kompletná"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Synchronizácia neúspešná"
   },
   "importLoginsConfirmation":{
     "message":"Môžete hromadne importovať prihlásenia z webového trezoru bitwarden.com. Chcete navštíviť túto stránku teraz?"
@@ -746,36 +746,39 @@
     "message":"Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Automaticky vyplniť naposledy použité prihlasovacie údaje pre túto stránku."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Vygenerovať a skopírovať nové náhodné heslo do schránky."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Bohužiaľ, toto okno nie je dostupné v privátnom režime prehliadača."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Vlastné polia"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Kopírovať hodnotu"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Skryť\/zobraziť hodnotu"
   },
   "value":{
-    "message":"Value"
+    "message":"Hodnota"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Nové vlastné pole"
   },
   "cfTypeText":{
     "message":"Text"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Skryté"
   },
   "cfTypeBoolean":{
     "message":"Boolean"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

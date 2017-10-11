@@ -430,7 +430,7 @@
     "message":"Synkronisering genomförd"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Synkroniseringen misslyckades"
   },
   "importLoginsConfirmation":{
     "message":"Du kan massimportera inloggningar på bitwardens webbvalv. Vill du besöka webbsidan nu?"
@@ -755,27 +755,30 @@
     "message":"Det här fönstret är tyvärr inte tillgängligt i privat läge för denna webbläsare."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Anpassade fält"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Kopiera värde"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Visa\/göm värde"
   },
   "value":{
-    "message":"Value"
+    "message":"Värde"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Nytt anpassat fält"
   },
   "cfTypeText":{
     "message":"Text"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Dold"
   },
   "cfTypeBoolean":{
     "message":"Boolean"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

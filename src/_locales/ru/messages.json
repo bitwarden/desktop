@@ -385,7 +385,7 @@
     "message":"Нет"
   },
   "unexpectedError":{
-    "message":"Произошла непредвиденная ошибка."
+    "message":"Произошла неожиданная ошибка."
   },
   "nameRequired":{
     "message":"Требуется наименование."
@@ -430,7 +430,7 @@
     "message":"Синхронизация завершена"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Ошибка синхронизации"
   },
   "importLoginsConfirmation":{
     "message":"Вы можете легко импортировать свои логины из других менеджеров паролей в свое веб-хранилище bitwarden. Хотите сделать это сейчас?"
@@ -755,27 +755,30 @@
     "message":"К сожалению, это окно недоступно в приватном режиме этого браузера."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Пользовательские поля"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Копировать значение"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Показать\/Скрыть"
   },
   "value":{
-    "message":"Value"
+    "message":"Значение"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Новое пользовательское поле"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Текст"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Скрыто"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Логическое"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

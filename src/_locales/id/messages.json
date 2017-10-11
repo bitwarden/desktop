@@ -430,7 +430,7 @@
     "message":"Sinkronisasi selesai"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Gagal menyelaraskan"
   },
   "importLoginsConfirmation":{
     "message":"Anda dapat mengimpor massal info masuk dari brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
@@ -755,27 +755,30 @@
     "message":"Unfortunately this window is not available in private mode for this browser."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Bidang kustom"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Salin Nilai"
   },
   "toggleValue":{
     "message":"Toggle Value"
   },
   "value":{
-    "message":"Value"
+    "message":"Nilai"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Bidang Kustom Baru"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Teks"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Tersembunyi"
   },
   "cfTypeBoolean":{
     "message":"Boolean"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

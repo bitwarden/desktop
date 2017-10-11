@@ -430,7 +430,7 @@
     "message":"Szinkronizálás befejezve"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Sikertelen szinkronizálás"
   },
   "importLoginsConfirmation":{
     "message":"Több bejelentkezést egyszerre a bitwarden.com webes széfén tudsz importálni. Szeretnéd meglátogatni a most a weboldalt?"
@@ -755,27 +755,30 @@
     "message":"Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Egyedi mezők"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Érték másolása"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Érték megjelenítése"
   },
   "value":{
-    "message":"Value"
+    "message":"Érték"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Új egyedi mező"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Szöveg"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Rejtett"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Boolean (Logikai)"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

@@ -430,7 +430,7 @@
     "message":"同步完成"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"同步失败"
   },
   "importLoginsConfirmation":{
     "message":"您可以在 bitwarden.com 网页版批量导入登录信息。现在为您跳转吗？"
@@ -752,30 +752,33 @@
     "message":"生成并将一个新的随机密码复制到剪贴板中。"
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"非常不幸，本窗口不能用在本浏览器的隐私模式中。"
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"自定义字段"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"复制数值"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"切换值"
   },
   "value":{
-    "message":"Value"
+    "message":"值"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"新建自定义字段"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"文本"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"隐藏的"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"布尔值"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

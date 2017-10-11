@@ -300,7 +300,7 @@
     "message":"Impostazioni di Chiusura Automatica"
   },
   "lockNow":{
-    "message":"Blocca ora"
+    "message":"Blocca Ora"
   },
   "immediately":{
     "message":"Immediatamente"
@@ -430,7 +430,7 @@
     "message":"Sincronizzazione completata"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Sinconizzazione fallita"
   },
   "importLoginsConfirmation":{
     "message":"Puoi importare in massa i tuoi login dalla cassaforte online di bitwarden.com. Vuoi visitare ora al sito?"
@@ -579,31 +579,31 @@
     "message":"Non puoi utilizzare questa funzione finchè non aggiorni la tua chiave di crittografia."
   },
   "premiumMembership":{
-    "message":"Premium Membership"
+    "message":"Abbonamento premium"
   },
   "premiumManage":{
-    "message":"Manage Membership"
+    "message":"Gestisci Abbonamento"
   },
   "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Puoi gestire il tuo abbonamento premium online su bitwarden.com. Vuoi visitare ora il sito?"
   },
   "premiumRefresh":{
-    "message":"Refresh Membership"
+    "message":"Aggiorna Premium"
   },
   "premiumNotCurrentMember":{
     "message":"Al momento non sei un membro premium."
   },
   "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:"
+    "message":"Iscriviti ad un abbonamento premium e ottieni:"
   },
   "ppremiumSignUpStorage":{
     "message":"1 GB di spazio di archiviazione crittografato."
   },
   "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message":"Opzioni di login in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
   },
   "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault."
+    "message":"Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
   },
   "ppremiumSignUpSupport":{
     "message":"Supporto clienti prioritario."
@@ -615,7 +615,7 @@
     "message":"Acquista Premium"
   },
   "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message":"Puoi acquistare il tuo abbonamento premium online su bitwarden.com. Vuoi visitare ora il sito?"
   },
   "premiumCurrentMember":{
     "message":"Sei un membro premium!"
@@ -624,22 +624,22 @@
     "message":"Grazie per il tuo supporto a bitwarden."
   },
   "premiumPrice":{
-    "message":"All for just %price% \/year!"
+    "message":"Il tutto per solo %price% all'anno!"
   },
   "refreshComplete":{
     "message":"Aggiornamento completato"
   },
   "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy"
+    "message":"Disattiva copia TOTP automatica"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message":"Se il tuo login ha un autenticatore collegato, il codice ti verifica TOTP è automaticamente copiato negli appunti ogni volta che auto-completi il login."
   },
   "premiumRequired":{
-    "message":"Premium Required"
+    "message":"Abbonamento Premium Richiesto"
   },
   "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature."
+    "message":"Un abbonamento premium è richiesto per utilizzare questa funzionalità."
   },
   "enterVerificationCodeApp":{
     "message":"Inserisci il codice di verifica a 6 cifre dalla tua app di autenticazione."
@@ -651,13 +651,13 @@
     "message":"Ricordami"
   },
   "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+    "message":"Invia nuovamente codice di verifica email"
   },
   "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+    "message":"Usa un altro metodo di login in due passaggi"
   },
   "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+    "message":"Inserisci la tua YubiKey nella porta USB del computer, poi premi il suo bottone."
   },
   "insertU2f":{
     "message":"Inserisci la tua security key nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
@@ -675,10 +675,10 @@
     "message":"Opzioni di login in due passaggi"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"Hai perso l'accesso a tutti i tuoi provider a due passaggi? Usa il tuo codice di recuper per disattivarli su tutto il tuo account."
   },
   "recoveryCodeTitle":{
-    "message":"Recovery Code"
+    "message":"Codice di Recupero"
   },
   "authenticatorAppTitle":{
     "message":"App di autenticazione"
@@ -688,13 +688,13 @@
     "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+    "message":"Chiave di Sicurezza YubiKey OTP"
   },
   "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message":"Usa YubiKey per accedere al tuo account. Funziona con YubiKey 4, 4 Nano, 4C, e dispositivi NEO."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
@@ -710,72 +710,75 @@
     "message":"I codici di verifica ti saranno inviati per e-mail."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Ambiente Self-Hosted"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Specifica l'URL principale della tua installazione bitwarden self-hosted."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Ambiente Personalizzato"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Per utenti avanzati. Puoi specificare l'URL principale di ogni servizio indipendentemente."
   },
   "baseUrl":{
-    "message":"Server URL"
+    "message":"URL sel Server"
   },
   "apiUrl":{
-    "message":"API Server URL"
+    "message":"URL del Server API"
   },
   "webVaultUrl":{
-    "message":"Web Vault Server URL"
+    "message":"URL della Cassaforte Online"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"URL del Server di Identità"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"Gli URL dell'ambiente sono stati salvati."
   },
   "enableAutoFillOnPageLoad":{
     "message":"Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Se viene rilevato un form di login, effettua un auto-completamento quando la pagina web si carica."
   },
   "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+    "message":"Al momento questa funzionalità è sperimentale. Usa a tuo rischio e pericolo."
   },
   "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+    "message":"Auto-completa con l'ultimo login utilizzato sul sito corrente."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+    "message":"Genera e copia una nuova password casuale negli appunti."
   },
   "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+    "message":"Purtroppo questa finestra non è disponibile nella modalità anonima per questo browser."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Campi Personalizzati"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Copia Valore"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Mostra\/Nascondi Valore"
   },
   "value":{
-    "message":"Value"
+    "message":"Valore"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Nuovo campo personalizzato"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Testo"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Nascosto"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Booleano"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

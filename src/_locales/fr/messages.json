@@ -430,7 +430,7 @@
     "message":"Sycnhronisation terminée"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Échec de la synchronisation"
   },
   "importLoginsConfirmation":{
     "message":"Vous pouvez importer en masse vos identifiants depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
@@ -746,7 +746,7 @@
     "message":"Ceci est actuellement une fonctionnalité expérimentale. À utiliser avec prudence."
   },
   "commandAutofillDesc":{
-    "message":"Remplir automatiquement le dernier identifiant utilisé pour le site web en-cours."
+    "message":"Remplir automatiquement le dernier identifiant utilisé pour le site web actuel."
   },
   "commandGeneratePasswordDesc":{
     "message":"Générer et copier un nouveau mot de passe aléatoire dans le presse-papiers."
@@ -755,27 +755,30 @@
     "message":"Malheureusement cette fenêtre n'est pas disponible en mode incognito pour ce navigateur."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Champs personnalisés"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Copier la valeur"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Changer la valeur"
   },
   "value":{
-    "message":"Value"
+    "message":"Valeur"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Nouveau champ personnalisé"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Texte"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Masqué"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Booléen"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

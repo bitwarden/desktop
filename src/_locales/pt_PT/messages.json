@@ -430,7 +430,7 @@
     "message":"Sincronização completada"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Sincronização falhada"
   },
   "importLoginsConfirmation":{
     "message":"Pode importar em massa as suas credenciais a partir do cofre web bitwarden.com. Pretende visitar o website agora?"
@@ -755,27 +755,30 @@
     "message":"Infelizmente esta janela não está disponível no modo privado para este navegador."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Campos personalizados"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Copiar valor"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Alternar valor"
   },
   "value":{
-    "message":"Value"
+    "message":"Valor"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Novo campo personalizado"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Texto"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Ocultado"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Booleano"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

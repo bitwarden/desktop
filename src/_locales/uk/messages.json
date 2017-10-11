@@ -430,7 +430,7 @@
     "message":"Синхронізація завершена"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Не вдалося синхронізувати"
   },
   "importLoginsConfirmation":{
     "message":"Ви можете робити масовий імпорт записів зі сховища на bitwarden.com. Хочете перейти на веб-сайт зараз?"
@@ -755,27 +755,30 @@
     "message":"Шкода, але це вікно недоступне в приватному режимі для цього браузера."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Власні поля"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Копіювати значення"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Перемкнути значення"
   },
   "value":{
-    "message":"Value"
+    "message":"Значення"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Нове власне поле"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Текст"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Приховано"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Логічне значення"
+  },
+  "popup2faCloseMessage":{
+    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   }
 }

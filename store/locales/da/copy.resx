@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden – Free Password Manager</value>
+    <value>bitwarden - Gratis Adgangskode Administrator</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>En sikker og gratis adgangskode administrator for alle dine enheder</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>bitwarden er den letteste og sikreste måde at opbevare alle dine login og adgangskoder samtidig med at de er synkronisere mellem alle dine enheder.
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
+Tyveri af adgangskoder er et seriøst problem. Hjemmesider og apps du bruger er under angreb hver dag. Sikkerheden bristes og så er dine adgangskoder væk. Når du genbruger de samme adgangskoder på hjemmesider og apps kan hackere nemt få adgang til din email, bank konti og andre vigtige kontier.
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? bitwarden makes it easy for you to create, store, and access your passwords.
+Sikkerhedseksperter anbefaler at man bruger et unikt, tilfældig genreret adgangskode for hver konto man opretter. Men hvordan administrere man alle disse adganskoder? bitwarden gør det nemt for dig at oprette, gemme og få adgang til dine adgangskoder.
 
-bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.</value>
+bitwarden gemmer alle dine login i en kryptere boks der synkroniseres over alle dine enheder. Siden det er komplet krypteret før det forlader dine enheder, er det kun dig der har adgang til din data. Ikke engang de ansatte ved bitwarden can få adgang til data, også selvom de prøvede. Dine data er sikret med AES-256 bit kryptering, saltet hasing og PBKDF2 SHA-256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>En sikker og gratis adgangskode administrator til alle dine enheder</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>Synkroniser, og få adgang til din boks fra flere enheder</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Administrer alle din logins og adgangskoder fra en sikker boks</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>Hurtigt auto-udfyld dine login oplysninger på enhver hjemmeside, som du besøger</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>Din boks er også bekvemt tilgængeligt fra højreklik-menuen</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Automatisk generere stærke, tilfældige og sikre adgangskoder</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>Dine oplysninger håndteres sikkert ved hjælp af AES-256 bit kryptering</value>
   </data>
 </root>
