@@ -34,7 +34,7 @@
     1. Populate isFirefox
     2. Remove isChrome and isSafari since they are not used.
     3. Unminify and format to meet Mozilla review requirements.
-    4. Remove button and limit input types from getFormElements query selector
+    4. Remove unnecessary input types from getFormElements query selector and limit number of elements returned.
     */
 
     function collect(document, undefined) {
@@ -240,7 +240,7 @@
             });
 
             // get all the form fields
-            var theFields = Array.prototype.slice.call(getFormElements(theDoc)).map(function (el, elIndex) {
+            var theFields = Array.prototype.slice.call(getFormElements(theDoc, 50)).map(function (el, elIndex) {
                 var field = {},
                     opId = '__' + elIndex,
                     elMaxLen = -1 == el.maxLength ? 999 : el.maxLength;
@@ -548,13 +548,14 @@
         }
 
         // get all the form elements that we care about
-        function getFormElements(theDoc) {
+        function getFormElements(theDoc, limit) {
             var els = [];
             try {
                 els = theDoc.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="reset"])' +
                     ':not([type="button"]):not([type="image"]):not([type="file"]), select');
             } catch (e) { }
-            return els;
+
+            return limit && els.length > limit ? els.slice(0, limit) : els;
         }
 
         // focus the element and optionally restore its original value
