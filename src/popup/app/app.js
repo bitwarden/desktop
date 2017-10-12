@@ -7,6 +7,7 @@
         'angulartics.google.analytics',
 
         'bit.directives',
+        'bit.components',
         'bit.services',
 
         'bit.global',

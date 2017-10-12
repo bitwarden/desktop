@@ -4,6 +4,7 @@ function ConstantsService(i18nService) {
         disableGaKey: 'disableGa',
         disableAddLoginNotificationKey: 'disableAddLoginNotification',
         disableContextMenuItemKey: 'disableContextMenuItem',
+        disableFaviconKey: 'disableFavicon',
         disableAutoTotpCopyKey: 'disableAutoTotpCopy',
         enableAutoFillOnPageLoadKey: 'enableAutoFillOnPageLoad',
         lockOptionKey: 'lockOption',

@@ -65,5 +65,17 @@
                 {{i18n.disableContextMenuItemDesc}}
             </div>
         </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="context-menu">{{i18n.disableFavicon}}</label>
+                    <input id="context-menu" type="checkbox" ng-model="disableFavicon"
+                           ng-change="updateDisableFavicon()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{i18n.disableFaviconDesc}}
+            </div>
+        </div>
     </div>
 </div>

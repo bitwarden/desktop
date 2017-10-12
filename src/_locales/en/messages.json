@@ -780,5 +780,11 @@
   },
   "popup2faCloseMessage": {
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  },
+  "disableFavicon": {
+    "message": "Disable Website Icons"
+  },
+  "disableFaviconDesc": {
+    "message": "Website Icons, also known as \"Favicons\", provides an image next to the login vault."
   }
 }

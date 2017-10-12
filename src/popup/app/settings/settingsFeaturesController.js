@@ -2,13 +2,14 @@
     .module('bit.settings')
 
     .controller('settingsFeaturesController', function ($scope, i18nService, $analytics, constantsService, utilsService,
-        totpService, $timeout) {
+        totpService, stateService, $timeout) {
         $scope.i18n = i18nService;
         $scope.disableGa = false;
         $scope.disableAddLoginNotification = false;
         $scope.disableContextMenuItem = false;
         $scope.disableAutoTotpCopy = false;
         $scope.enableAutoFillOnPageLoad = false;
+        $scope.disableFavicon = false;
 
         chrome.storage.local.get(constantsService.enableAutoFillOnPageLoadKey, function (obj) {
             $timeout(function () {
@@ -54,6 +55,12 @@
         totpService.isAutoCopyEnabled().then(function (enabled) {
             $timeout(function () {
                 $scope.disableAutoTotpCopy = !enabled;
+            });
+        });
+
+        chrome.storage.local.get(constantsService.disableFaviconKey, function (obj) {
+            $timeout(function () {
+                $scope.disableFavicon = obj && obj[constantsService.disableFaviconKey] === true;
             });
         });
 
@@ -172,6 +179,30 @@
                     });
                     if (!obj[constantsService.enableAutoFillOnPageLoadKey]) {
                         $analytics.eventTrack('Disable Auto-fill Page Load');
+                    }
+                });
+            });
+        };
+
+        $scope.updateDisableFavicon = function () {
+            chrome.storage.local.get(constantsService.disableFaviconKey, function (obj) {
+                if (obj[constantsService.disableFaviconKey]) {
+                    // enable
+                    obj[constantsService.disableFaviconKey] = false;
+                }
+                else {
+                    // disable
+                    $analytics.eventTrack('Disabled Favicon');
+                    obj[constantsService.disableFaviconKey] = true;
+                }
+
+                chrome.storage.local.set(obj, function () {
+                    $timeout(function () {
+                        $scope.disableFavicon = obj[constantsService.disableFaviconKey];
+                        stateService.saveState('faviconEnabled', !$scope.disableFavicon);
+                    });
+                    if (!obj[constantsService.disableFaviconKey]) {
+                        $analytics.eventTrack('Enabled Favicon');
                     }
                 });
             });
