@@ -551,8 +551,9 @@
         function getFormElements(theDoc, limit) {
             var els = [];
             try {
-                els = theDoc.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="reset"])' +
+                var elsList = theDoc.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="reset"])' +
                     ':not([type="button"]):not([type="image"]):not([type="file"]), select');
+                els = Array.prototype.slice.call(elsList);
             } catch (e) { }
 
             return limit && els.length > limit ? els.slice(0, limit) : els;
