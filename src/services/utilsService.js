@@ -229,19 +229,20 @@ function initUtilsService() {
     };
 
     UtilsService.prototype.inSidebar = function (theWindow) {
-        return theWindow.location.search && theWindow.location.search.indexOf('uilocation=sidebar') > -1;
+        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=sidebar') > -1;
     };
 
     UtilsService.prototype.inTab = function (theWindow) {
-        return theWindow.location.search && theWindow.location.search.indexOf('uilocation=tab') > -1;
+        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=tab') > -1;
     };
 
     UtilsService.prototype.inPopout = function (theWindow) {
-        return theWindow.location.search && theWindow.location.search.indexOf('uilocation=popout') > -1;
+        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=popout') > -1;
     };
 
     UtilsService.prototype.inPopup = function (theWindow) {
-        return theWindow.location.search && theWindow.location.search.indexOf('uilocation=popup') > -1;
+        return theWindow.location.search === '' || theWindow.location.search.indexOf('uilocation=') === -1 ||
+            theWindow.location.search.indexOf('uilocation=popup') > -1;
     };
 
     function validIpAddress(ipString) {

@@ -62,7 +62,7 @@
       "38": "images/icon38.png"
     },
     "default_title": "bitwarden",
-    "default_popup": "popup/index.html?uilocation=popup"
+    "default_popup": "popup/index.html"
   },
   "permissions": [
     "tabs",

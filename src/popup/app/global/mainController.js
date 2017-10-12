@@ -33,8 +33,14 @@ angular
             }
 
             if (chrome.windows.create) {
-                href = href.replace('uilocation=popup', 'uilocation=popout').replace('uilocation=tab', 'uilocation=popout')
-                    .replace('uilocation=sidebar', 'uilocation=popout');
+                if (href.indexOf('?uilocation=') > -1) {
+                    href = href.replace('uilocation=popup', 'uilocation=popout').replace('uilocation=tab', 'uilocation=popout')
+                        .replace('uilocation=sidebar', 'uilocation=popout');
+                }
+                else {
+                    var hrefParts = href.split('#');
+                    href = hrefParts[0] + '?uilocation=popout' + (hrefParts.length > 0 ? '#' + hrefParts[1] : '');
+                }
 
                 chrome.windows.create({
                     url: href,
