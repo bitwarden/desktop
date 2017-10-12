@@ -303,7 +303,7 @@ function initAutofill() {
                     login: login,
                     pageDetails: pageDetails,
                     fromBackground: true,
-                    skipTotp: true,
+                    skipTotp: !fromCommand,
                     skipLastUsed: true,
                     skipUsernameOnlyFill: !fromCommand
                 });
