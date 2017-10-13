@@ -140,13 +140,13 @@ var Login = function (obj, alreadyEncrypted, localData) {
 var Cipher = function (obj, alreadyEncrypted, localData) {
     buildDomainModel(this, obj, {
         id: 'id',
-        type: 'type',
         organizationId: 'organizationId',
         folderId: 'folderId',
         name: 'name',
         notes: 'notes'
-    }, alreadyEncrypted, ['id', 'type', 'organizationId', 'folderId']);
+    }, alreadyEncrypted, ['id', 'organizationId', 'folderId']);
 
+    this.type = obj.type;
     this.favorite = obj.favorite ? true : false;
     this.organizationUseTotp = obj.organizationUseTotp ? true : false;
     this.edit = obj.edit ? true : false;
@@ -235,27 +235,25 @@ var Card = function (obj, alreadyEncrypted) {
 };
 
 var SecureNote = function (obj, alreadyEncrypted) {
-    buildDomainModel(this, obj, {
-        type: 'type'
-    }, alreadyEncrypted, ['type']);
+    this.type = obj.type;
 };
 
 var Field = function (obj, alreadyEncrypted) {
-    buildModel(this, obj, {
-        type: 'type',
+    this.type = obj.type;
+    buildDomainModel(this, obj, {
         name: 'name',
         value: 'value'
-    }, alreadyEncrypted, ['type']);
+    }, alreadyEncrypted, []);
 };
 
 var Attachment = function (obj, alreadyEncrypted) {
+    this.size = obj.size;
     buildDomainModel(this, obj, {
         id: 'id',
         url: 'url',
-        size: 'size',
         sizeName: 'sizeName',
         fileName: 'fileName'
-    }, alreadyEncrypted, ['id', 'url', 'size', 'sizeName']);
+    }, alreadyEncrypted, ['id', 'url', 'sizeName']);
 };
 
 var Folder = function (obj, alreadyEncrypted) {
@@ -550,17 +548,21 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
         var promises = [];
         for (var prop in map) {
             if (map.hasOwnProperty(prop)) {
-                var promise = Q().then(function () {
-                    if (self[map[prop]]) {
-                        return self[map[prop]].decrypt(orgId);
-                    }
-                    return null;
-                }).then(function (val) {
-                    model[prop] = val;
-                    return;
-                });
+                /* jshint ignore:start */
+                (function (theProp) {
+                    var promise = Q().then(function () {
+                        if (self[map[theProp]]) {
+                            return self[map[theProp]].decrypt(orgId);
+                        }
+                        return null;
+                    }).then(function (val) {
+                        model[theProp] = val;
+                        return;
+                    });
 
-                promises.push(promise);
+                    promises.push(promise);
+                })(prop);
+                /* jshint ignore:end */
             }
         }
 
