@@ -88,6 +88,7 @@ var CipherString = function () {
     }
 };
 
+// deprecated
 var Login = function (obj, alreadyEncrypted, localData) {
     this.id = obj.id ? obj.id : null;
     this.organizationId = obj.organizationId ? obj.organizationId : null;
@@ -136,43 +137,147 @@ var Login = function (obj, alreadyEncrypted, localData) {
     }
 };
 
-var Field = function (obj, alreadyEncrypted) {
-    this.type = obj.type;
+var Cipher = function (obj, alreadyEncrypted, localData) {
+    buildDomainModel(this, obj, {
+        id: 'id',
+        type: 'type',
+        organizationId: 'organizationId',
+        folderId: 'folderId',
+        name: 'name',
+        notes: 'notes'
+    }, alreadyEncrypted, ['id', 'type', 'organizationId', 'folderId']);
 
-    if (alreadyEncrypted === true) {
-        this.name = obj.name ? obj.name : null;
-        this.value = obj.value ? obj.value : null;
+    this.favorite = obj.favorite ? true : false;
+    this.organizationUseTotp = obj.organizationUseTotp ? true : false;
+    this.edit = obj.edit ? true : false;
+    this.localData = localData;
+
+    switch (this.type) {
+        case 1: // cipherType.login
+            this.login = new Login2(obj.login);
+            break;
+        case 2: // cipherType.secureNote
+            this.secureNote = new SecureNote(obj.secureNote);
+            break;
+        case 3: // cipherType.card
+            this.card = new Card(obj.card);
+            break;
+        case 4: // cipherType.identity
+            this.identity = new Identity(obj.identity);
+            break;
+        default:
+            break;
+    }
+
+    var i;
+    if (obj.attachments) {
+        this.attachments = [];
+        for (i = 0; i < obj.attachments.length; i++) {
+            this.attachments.push(new Attachment(obj.attachments[i], alreadyEncrypted));
+        }
     }
     else {
-        this.name = obj.name ? new CipherString(obj.name) : null;
-        this.value = obj.value ? new CipherString(obj.value) : null;
+        this.attachments = null;
     }
+
+    if (obj.fields) {
+        this.fields = [];
+        for (i = 0; i < obj.fields.length; i++) {
+            this.fields.push(new Field(obj.fields[i], alreadyEncrypted));
+        }
+    }
+    else {
+        this.fields = null;
+    }
+};
+
+var Login2 = function (obj, alreadyEncrypted) {
+    buildDomainModel(this, obj, {
+        uri: 'uri',
+        username: 'username',
+        password: 'password',
+        totp: 'totp'
+    }, alreadyEncrypted, []);
+};
+
+var Identity = function (obj, alreadyEncrypted) {
+    buildDomainModel(this, obj, {
+        title: 'title',
+        firstName: 'firstName',
+        middleName: 'middleName',
+        lastName: 'lastName',
+        address1: 'address1',
+        address2: 'address2',
+        address3: 'address3',
+        city: 'city',
+        state: 'state',
+        postalCode: 'postalCode',
+        country: 'country',
+        company: 'company',
+        email: 'email',
+        phone: 'phone',
+        ssn: 'ssn',
+        username: 'username',
+        passportNumber: 'passportNumber',
+        licenseNumber: 'licenseNumber'
+    }, alreadyEncrypted, []);
+};
+
+var Card = function (obj, alreadyEncrypted) {
+    buildDomainModel(this, obj, {
+        cardholderName: 'cardholderName',
+        brand: 'brand',
+        number: 'number',
+        expMonth: 'expMonth',
+        expYear: 'expYear',
+        code: 'code'
+    }, alreadyEncrypted, []);
+};
+
+var SecureNote = function (obj, alreadyEncrypted) {
+    buildDomainModel(this, obj, {
+        type: 'type'
+    }, alreadyEncrypted, ['type']);
+};
+
+var Field = function (obj, alreadyEncrypted) {
+    buildModel(this, obj, {
+        type: 'type',
+        name: 'name',
+        value: 'value'
+    }, alreadyEncrypted, ['type']);
 };
 
 var Attachment = function (obj, alreadyEncrypted) {
-    this.id = obj.id ? obj.id : null;
-    this.url = obj.url ? obj.url : null;
-    this.size = obj.size ? obj.size : null;
-    this.sizeName = obj.sizeName ? obj.sizeName : null;
-
-    if (alreadyEncrypted === true) {
-        this.fileName = obj.fileName ? obj.fileName : null;
-    }
-    else {
-        this.fileName = obj.fileName ? new CipherString(obj.fileName) : null;
-    }
+    buildDomainModel(this, obj, {
+        id: 'id',
+        url: 'url',
+        size: 'size',
+        sizeName: 'sizeName',
+        fileName: 'fileName'
+    }, alreadyEncrypted, ['id', 'url', 'size', 'sizeName']);
 };
 
 var Folder = function (obj, alreadyEncrypted) {
-    this.id = obj.id ? obj.id : null;
-
-    if (alreadyEncrypted === true) {
-        this.name = obj.name ? obj.name : null;
-    }
-    else {
-        this.name = obj.name ? new CipherString(obj.name) : null;
-    }
+    buildDomainModel(this, obj, {
+        id: 'id',
+        name: 'name'
+    }, alreadyEncrypted, ['id']);
 };
+
+function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
+    notEncList = notEncList || [];
+    for (var prop in map) {
+        if (map.hasOwnProperty(prop)) {
+            if (alreadyEncrypted === true || notEncList.indexOf(prop) > -1) {
+                model[prop] = obj[map[prop]] ? obj[map[prop]] : null;
+            }
+            else {
+                model[prop] = obj[map[prop]] ? new CipherString(obj[map[prop]]) : null;
+            }
+        }
+    }
+}
 
 (function () {
     CipherString.prototype.decrypt = function (orgId) {
@@ -195,6 +300,7 @@ var Folder = function (obj, alreadyEncrypted) {
         });
     };
 
+    // deprecated
     Login.prototype.decrypt = function () {
         var self = this;
         var model = {
@@ -276,43 +382,157 @@ var Folder = function (obj, alreadyEncrypted) {
         });
     };
 
-    Field.prototype.decrypt = function (orgId) {
-        var self = this;
-        var model = {
-            type: self.type
-        };
-
-        return Q().then(function () {
-            if (self.name) {
-                return self.name.decrypt(orgId);
-            }
-            return null;
-        }).then(function (val) {
-            model.name = val;
-
-            if (self.value) {
-                return self.value.decrypt(orgId);
-            }
-            return null;
-        }).then(function (val) {
-            model.value = val;
-            return model;
-        });
-    };
-
-    Attachment.prototype.decrypt = function (orgId) {
+    Cipher.prototype.decrypt = function () {
         var self = this;
         var model = {
             id: self.id,
-            size: self.size,
-            sizeName: self.sizeName,
-            url: self.url
+            organizationId: self.organizationId,
+            folderId: self.folderId,
+            favorite: self.favorite,
+            type: self.type,
+            localData: self.localData
         };
 
-        return self.fileName.decrypt(orgId).then(function (val) {
-            model.fileName = val;
+        var attachments = [];
+        var fields = [];
+
+        return decryptObj(model, this, {
+            name: 'name',
+            notes: 'notes'
+        }, null).then(function () {
+            switch (self.type) {
+                case 1: // cipherType.login
+                    return self.login.decrypt(self.organizationId);
+                case 2: // cipherType.secureNote
+                    return self.secureNote.decrypt(self.organizationId);
+                case 3: // cipherType.card
+                    return self.card.decrypt(self.organizationId);
+                case 4: // cipherType.identity
+                    return self.identity.decrypt(self.organizationId);
+                default:
+                    return;
+            }
+        }).then(function (decObj) {
+            switch (self.type) {
+                case 1: // cipherType.login
+                    model.login = decObj;
+                    break;
+                case 2: // cipherType.secureNote
+                    model.secureNote = decObj;
+                    break;
+                case 3: // cipherType.card
+                    model.card = decObj;
+                    break;
+                case 4: // cipherType.identity
+                    model.identity = decObj;
+                    break;
+                default:
+                    break;
+            }
+            return;
+        }).then(function () {
+            if (self.attachments) {
+                return self.attachments.reduce(function (promise, attachment) {
+                    return promise.then(function () {
+                        return attachment.decrypt(self.organizationId);
+                    }).then(function (decAttachment) {
+                        attachments.push(decAttachment);
+                    });
+                }, Q());
+            }
+            return;
+        }).then(function () {
+            model.attachments = attachments.length ? attachments : null;
+
+            if (self.fields) {
+                return self.fields.reduce(function (promise, field) {
+                    return promise.then(function () {
+                        return field.decrypt(self.organizationId);
+                    }).then(function (decField) {
+                        fields.push(decField);
+                    });
+                }, Q());
+            }
+            return;
+        }).then(function () {
+            model.fields = fields.length ? fields : null;
             return model;
+        }, function (e) {
+            console.log(e);
         });
+    };
+
+    Login2.prototype.decrypt = function (orgId) {
+        return decryptObj({}, this, {
+            uri: 'uri',
+            username: 'username',
+            password: 'password',
+            totp: 'totp'
+        }, orgId);
+    };
+
+    Card.prototype.decrypt = function (orgId) {
+        return decryptObj({}, this, {
+            cardholderName: 'cardholderName',
+            brand: 'brand',
+            number: 'number',
+            expMonth: 'expMonth',
+            expYear: 'expYear',
+            code: 'code'
+        }, orgId);
+    };
+
+    SecureNote.prototype.decrypt = function (orgId) {
+        return {
+            type: this.type
+        };
+    };
+
+    Identity.prototype.decrypt = function (orgId) {
+        return decryptObj({}, this, {
+            title: 'title',
+            firstName: 'firstName',
+            middleName: 'middleName',
+            lastName: 'lastName',
+            address1: 'address1',
+            address2: 'address2',
+            address3: 'address3',
+            city: 'city',
+            state: 'state',
+            postalCode: 'postalCode',
+            country: 'country',
+            company: 'company',
+            email: 'email',
+            phone: 'phone',
+            ssn: 'ssn',
+            username: 'username',
+            passportNumber: 'passportNumber',
+            licenseNumber: 'licenseNumber'
+        }, orgId);
+    };
+
+    Field.prototype.decrypt = function (orgId) {
+        var model = {
+            type: this.type
+        };
+
+        return decryptObj(model, this, {
+            name: 'name',
+            value: 'value'
+        }, orgId);
+    };
+
+    Attachment.prototype.decrypt = function (orgId) {
+        var model = {
+            id: this.id,
+            size: this.size,
+            sizeName: this.sizeName,
+            url: this.url
+        };
+
+        return decryptObj(model, this, {
+            fileName: 'fileName'
+        }, orgId);
     };
 
     Folder.prototype.decrypt = function () {
@@ -321,9 +541,31 @@ var Folder = function (obj, alreadyEncrypted) {
             id: self.id
         };
 
-        return self.name.decrypt().then(function (val) {
-            model.name = val;
+        return decryptObj(model, this, {
+            name: 'name'
+        }, null);
+    };
+
+    function decryptObj(model, self, map, orgId) {
+        var promises = [];
+        for (var prop in map) {
+            if (map.hasOwnProperty(prop)) {
+                var promise = Q().then(function () {
+                    if (self[map[prop]]) {
+                        return self[map[prop]].decrypt(orgId);
+                    }
+                    return null;
+                }).then(function (val) {
+                    model[prop] = val;
+                    return;
+                });
+
+                promises.push(promise);
+            }
+        }
+
+        return Q.all(promises).then(function () {
             return model;
         });
-    };
+    }
 })();

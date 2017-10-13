@@ -21,7 +21,8 @@ function ConstantsService(i18nService) {
         cipherType: {
             login: 1,
             secureNote: 2,
-            card: 3
+            card: 3,
+            identity: 4
         },
         fieldType: {
             text: 0,
