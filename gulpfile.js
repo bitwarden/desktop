@@ -26,7 +26,6 @@ paths.npmDir = './node_modules/';
 paths.popupDir = './src/popup/';
 paths.lessDir = paths.popupDir + 'less/';
 paths.cssDir = paths.popupDir + 'css/';
-paths.webfontsDir = paths.cssDir + 'webfonts/';
 
 gulp.task('lint', function () {
     return gulp.src([
@@ -287,7 +286,8 @@ function distCss(preprocessContext) {
             paths.libDir + '**/*.css',
             '!' + paths.libDir + '**/*.min.css',
             // app
-            paths.cssDir + 'popup.css'
+            paths.cssDir + 'popup.css',
+            paths.cssDir + 'webfonts.css'
         ])
         .pipe(preprocess({ context: preprocessContext }))
         .pipe(concat(paths.dist + 'popup/css/popup.css'))
