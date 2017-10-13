@@ -1,5 +1,6 @@
-function SettingsService(userService) {
+function SettingsService(userService, utilsService) {
     this.userService = userService;
+    this.utilsService = utilsService;
     this.settingsCache = null;
 
     initSettingsService();
@@ -85,18 +86,10 @@ function initSettingsService() {
         });
     }
 
-    SettingsService.prototype.clear = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
+    SettingsService.prototype.clear = function (userId) {
         var self = this;
-
-        this.userService.getUserId(function (userId) {
-            chrome.storage.local.remove('settings_' + userId, function () {
-                self.settingsCache = null;
-                callback();
-            });
+        return self.utilsService.removeFromStorage('settings_' + userId).then(function () {
+            self.settingsCache = null;
         });
     };
 

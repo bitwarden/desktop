@@ -336,21 +336,15 @@ function initCryptoService(constantsService) {
         return deferred.promise;
     };
 
-    CryptoService.prototype.clearKeys = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
+    CryptoService.prototype.clearKeys = function () {
         var self = this;
-        Q.all([
+        return Q.all([
             self.clearKey(),
             self.clearKeyHash(),
             self.clearOrgKeys(),
             self.clearEncKey(),
             self.clearPrivateKey()
-        ]).then(function () {
-            callback();
-        });
+        ]);
     };
 
     CryptoService.prototype.toggleKey = function (callback) {

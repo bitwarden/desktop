@@ -257,8 +257,10 @@ function initApiService() {
 
     // Cipher APIs
 
-    ApiService.prototype.postCipher = function (cipherRequest, success, error) {
-        var self = this;
+    ApiService.prototype.postCipher = function (cipherRequest) {
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'POST',
@@ -268,19 +270,23 @@ function initApiService() {
                 dataType: 'json',
                 headers: tokenHeader,
                 success: function (response) {
-                    success(new CipherResponse(response));
+                    deferred.resolve(new CipherResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
-    ApiService.prototype.putCipher = function (id, cipherRequest, success, error) {
-        var self = this;
+    ApiService.prototype.putCipher = function (id, cipherRequest) {
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'PUT',
@@ -290,19 +296,23 @@ function initApiService() {
                 dataType: 'json',
                 headers: tokenHeader,
                 success: function (response) {
-                    success(new CipherResponse(response));
+                    deferred.resolve(new CipherResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
-    ApiService.prototype.deleteCipher = function (id, success, error) {
-        var self = this;
+    ApiService.prototype.deleteCipher = function (id) {
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'DELETE',
@@ -310,19 +320,23 @@ function initApiService() {
                 dataType: 'text',
                 headers: tokenHeader,
                 success: function (response) {
-                    success();
+                    deferred.resolve(response);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
-    ApiService.prototype.postCipherAttachment = function (id, formData, success, error) {
-        var self = this;
+    ApiService.prototype.postCipherAttachment = function (id, formData) {
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'POST',
@@ -333,19 +347,23 @@ function initApiService() {
                 dataType: 'json',
                 headers: tokenHeader,
                 success: function (response) {
-                    success(new CipherResponse(response));
+                    deferred.resolve(new CipherResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
     ApiService.prototype.deleteCipherAttachment = function (id, attachmentId, success, error) {
-        var self = this;
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'DELETE',
@@ -353,15 +371,17 @@ function initApiService() {
                 dataType: 'text',
                 headers: tokenHeader,
                 success: function (response) {
-                    success();
+                    deferred.resolve(response);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
     // Sync APIs

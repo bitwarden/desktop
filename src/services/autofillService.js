@@ -226,7 +226,7 @@ function initAutofill() {
 
                 didAutofill = true;
                 if (!options.skipLastUsed) {
-                    self.loginService.updateLastUsedDate(options.login.id, function () { });
+                    self.loginService.updateLastUsedDate(options.login.id);
                 }
 
                 chrome.tabs.sendMessage(tab.id, {

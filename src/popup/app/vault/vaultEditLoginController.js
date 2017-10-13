@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultEditLoginController', function ($scope, $state, $stateParams, loginService, folderService,
-        cryptoService, $q, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService) {
+        cryptoService, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.showAttachments = !utilsService.isEdge();
@@ -21,14 +21,14 @@ angular
             angular.extend($scope.login, $stateParams.login);
         }
         else {
-            loginService.get(loginId, function (login) {
-                $q.when(login.decrypt()).then(function (model) {
-                    $scope.login = model;
-                });
+            loginService.get(loginId).then(function (login) {
+                return login.decrypt();
+            }).then(function (model) {
+                $scope.login = model;
             });
         }
 
-        $q.when(folderService.getAllDecrypted()).then(function (folders) {
+        folderService.getAllDecrypted().then(function (folders) {
             $scope.folders = folders;
         });
 
@@ -41,9 +41,9 @@ angular
                 return;
             }
 
-            $scope.savePromise = $q.when(loginService.encrypt(model)).then(function (loginModel) {
+            $scope.savePromise = loginService.encrypt(model).then(function (loginModel) {
                 var login = new Login(loginModel, true);
-                return $q.when(loginService.saveWithServer(login)).then(function (login) {
+                return loginService.saveWithServer(login).then(function (login) {
                     $analytics.eventTrack('Edited Login');
                     toastr.success(i18nService.editedLogin);
                     $scope.close();
@@ -60,7 +60,7 @@ angular
                 cancelButtonText: i18nService.no
             }, function (confirmed) {
                 if (confirmed) {
-                    $q.when(loginService.deleteWithServer(loginId)).then(function () {
+                    loginService.deleteWithServer(loginId).then(function () {
                         $analytics.eventTrack('Deleted Login');
                         toastr.success(i18nService.deletedLogin);
                         $state.go('tabs.vault', {

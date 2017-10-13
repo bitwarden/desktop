@@ -1,4 +1,5 @@
-﻿function TokenService() {
+﻿function TokenService(utilsService) {
+    this.utilsService = utilsService;
     initTokenService();
 }
 
@@ -123,16 +124,13 @@ function initTokenService() {
         });
     };
 
-    TokenService.prototype.clearToken = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        _token = _decodedToken = _refreshToken = null;
-        chrome.storage.local.remove('accessToken', function () {
-            chrome.storage.local.remove('refreshToken', function () {
-                callback();
-            });
+    TokenService.prototype.clearToken = function () {
+        var self = this;
+        return Q.all([
+            self.utilsService.removeFromStorage('accessToken'),
+            self.utilsService.removeFromStorage('refreshToken')
+        ]).then(function () {
+            _token = _decodedToken = _refreshToken = null;
         });
     };
 

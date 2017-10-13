@@ -1,7 +1,8 @@
-﻿function UserService(tokenService, apiService, cryptoService) {
+﻿function UserService(tokenService, apiService, cryptoService, utilsService) {
     this.tokenService = tokenService;
     this.apiService = apiService;
     this.cryptoService = cryptoService;
+    this.utilsService = utilsService;
 
     initUserService();
 }
@@ -72,6 +73,21 @@ function initUserService() {
         });
     };
 
+    UserService.prototype.getUserIdPromise = function () {
+        if (_userId) {
+            return Q.fcall(function () {
+                return _userId;
+            });
+        }
+
+        return utilsService.getObjFromStorage(userIdKey).then(function (obj) {
+            if (obj) {
+                _userId = obj;
+            }
+            return _userId;
+        });
+    };
+
     UserService.prototype.getEmail = function (callback) {
         if (!callback || typeof callback !== 'function') {
             throw 'callback function required';
@@ -108,18 +124,14 @@ function initUserService() {
         return deferred.promise;
     };
 
-    UserService.prototype.clear = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        _userId = _email = _stamp = null;
-        chrome.storage.local.remove(userIdKey, function () {
-            chrome.storage.local.remove(userEmailKey, function () {
-                chrome.storage.local.remove(stampKey, function () {
-                    callback();
-                });
-            });
+    UserService.prototype.clear = function () {
+        var self = this;
+        return Q.all([
+            self.utilsService.removeFromStorage(userIdKey),
+            self.utilsService.removeFromStorage(userEmailKey),
+            self.utilsService.removeFromStorage(stampKey)
+        ]).then(function () {
+            _userId = _email = _stamp = null;
         });
     };
 

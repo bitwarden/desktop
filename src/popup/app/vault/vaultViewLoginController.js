@@ -1,7 +1,7 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr, $q,
+    .controller('vaultViewLoginController', function ($scope, $state, $stateParams, loginService, toastr,
         $analytics, i18nService, utilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert,
         constantsService) {
         $scope.constants = constantsService;
@@ -12,45 +12,45 @@ angular
 
         $scope.isPremium = tokenService.getPremium();
         $scope.login = null;
-        loginService.get($stateParams.loginId, function (login) {
+        loginService.get($stateParams.loginId).then(function (login) {
             if (!login) {
                 return;
             }
 
-            $q.when(login.decrypt()).then(function (model) {
-                $scope.login = model;
+            return login.decrypt();
+        }).then(function (model) {
+            $scope.login = model;
 
-                if (model.password) {
-                    $scope.login.maskedPassword = $scope.maskValue(model.password);
-                }
+            if (model.password) {
+                $scope.login.maskedPassword = $scope.maskValue(model.password);
+            }
 
-                if (model.uri) {
-                    $scope.login.showLaunch = model.uri.startsWith('http://') || model.uri.startsWith('https://');
-                    var domain = utilsService.getDomain(model.uri);
-                    if (domain) {
-                        $scope.login.website = domain;
-                    }
-                    else {
-                        $scope.login.website = model.uri;
-                    }
+            if (model.uri) {
+                $scope.login.showLaunch = model.uri.startsWith('http://') || model.uri.startsWith('https://');
+                var domain = utilsService.getDomain(model.uri);
+                if (domain) {
+                    $scope.login.website = domain;
                 }
                 else {
-                    $scope.login.showLaunch = false;
+                    $scope.login.website = model.uri;
+                }
+            }
+            else {
+                $scope.login.showLaunch = false;
+            }
+
+            if (model.totp && (login.organizationUseTotp || tokenService.getPremium())) {
+                totpUpdateCode();
+                totpTick();
+
+                if (totpInterval) {
+                    clearInterval(totpInterval);
                 }
 
-                if (model.totp && (login.organizationUseTotp || tokenService.getPremium())) {
-                    totpUpdateCode();
+                totpInterval = setInterval(function () {
                     totpTick();
-
-                    if (totpInterval) {
-                        clearInterval(totpInterval);
-                    }
-
-                    totpInterval = setInterval(function () {
-                        totpTick();
-                    }, 1000);
-                }
-            });
+                }, 1000);
+            }
         });
 
         $scope.edit = function (login) {

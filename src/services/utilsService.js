@@ -245,6 +245,37 @@ function initUtilsService() {
             theWindow.location.search.indexOf('uilocation=popup') > -1;
     };
 
+    UtilsService.prototype.saveObjToStorage = function (key, obj) {
+        var deferred = Q.defer();
+        var storedObj = {};
+        storedObj[key] = obj;
+        chrome.storage.local.set(storedObj, function () {
+            deferred.resolve();
+        });
+        return deferred.promise;
+    };
+
+    UtilsService.prototype.removeFromStorage = function (key) {
+        var deferred = Q.defer();
+        chrome.storage.local.remove(key, function () {
+            deferred.resolve();
+        });
+        return deferred.promise;
+    };
+
+    UtilsService.prototype.getObjFromStorage = function (key) {
+        var deferred = Q.defer();
+        chrome.storage.local.get(key, function (obj) {
+            if (obj && obj[key]) {
+                deferred.resolve(obj[key]);
+            }
+            else {
+                deferred.resolve(null);
+            }
+        });
+        return deferred.promise;
+    };
+
     function validIpAddress(ipString) {
         var ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
         return ipRegex.test(ipString);

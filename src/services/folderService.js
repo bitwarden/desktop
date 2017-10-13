@@ -1,8 +1,9 @@
-function FolderService(cryptoService, userService, apiService, i18nService) {
+function FolderService(cryptoService, userService, apiService, i18nService, utilsService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
     this.i18nService = i18nService;
+    this.utilsService = utilsService;
     this.decryptedFolderCache = null;
 
     initFolderService();
@@ -171,33 +172,19 @@ function initFolderService() {
         });
     };
 
-    FolderService.prototype.replace = function (folders, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
+    FolderService.prototype.replace = function (folders) {
         var self = this;
-
-        self.userService.getUserId(function (userId) {
-            var obj = {};
-            obj['folders_' + userId] = folders;
-            chrome.storage.local.set(obj, function () {
-                self.decryptedFolderCache = null;
-                callback();
-            });
+        self.userService.getUserIdPromise().then(function (userId) {
+            return self.utilsService.saveObjToStorage('folders_' + userId, folders);
+        }).then(function () {
+            self.decryptedFolderCache = null;
         });
     };
 
-    FolderService.prototype.clear = function (userId, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
+    FolderService.prototype.clear = function (userId) {
         var self = this;
-
-        chrome.storage.local.remove('folders_' + userId, function () {
+        return self.utilsService.removeFromStorage('folders_' + userId).then(function () {
             self.decryptedFolderCache = null;
-            callback();
         });
     };
 

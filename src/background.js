@@ -32,14 +32,14 @@ var bg_isBackground = true,
     bg_i18nService = new i18nService(bg_utilsService);
     bg_constantsService = new ConstantsService(bg_i18nService);
     bg_cryptoService = new CryptoService(bg_constantsService);
-    bg_tokenService = new TokenService();
+    bg_tokenService = new TokenService(bg_utilsService);
     bg_appIdService = new AppIdService();
     bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
     bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
-    bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService);
-    bg_settingsService = new SettingsService(bg_userService);
-    bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService);
-    bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService);
+    bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
+    bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
+    bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService);
+    bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService, bg_utilsService);
     bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_loginService, bg_utilsService,
         setIcon, refreshBadgeAndMenu);
     bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
@@ -807,27 +807,23 @@ var bg_isBackground = true,
         }
     }
 
-    // TODO: Fix callback hell by moving to promises
     function logout(expired, callback) {
-        bg_userService.getUserId(function (userId) {
-            bg_syncService.setLastSync(new Date(0), function () {
-                bg_settingsService.clear(function () {
-                    bg_tokenService.clearToken(function () {
-                        bg_cryptoService.clearKeys(function () {
-                            bg_userService.clear(function () {
-                                bg_loginService.clear(userId, function () {
-                                    bg_folderService.clear(userId, function () {
-                                        chrome.runtime.sendMessage({
-                                            command: 'doneLoggingOut', expired: expired
-                                        });
-                                        setIcon();
-                                        refreshBadgeAndMenu();
-                                        callback();
-                                    });
-                                });
-                            });
-                        });
+        bg_syncService.setLastSync(new Date(0), function () {
+            bg_userService.getUserIdPromise().then(function (userId) {
+                return Q.all([
+                    bg_tokenService.clearToken(),
+                    bg_cryptoService.clearKeys(),
+                    bg_userService.clear(),
+                    bg_settingsService.clear(userId),
+                    bg_loginService.clear(userId),
+                    bg_folderService.clear(userId)
+                ]).then(function () {
+                    chrome.runtime.sendMessage({
+                        command: 'doneLoggingOut', expired: expired
                     });
+                    setIcon();
+                    refreshBadgeAndMenu();
+                    callback();
                 });
             });
         });
