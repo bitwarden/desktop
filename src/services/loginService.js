@@ -22,33 +22,75 @@ function initLoginService() {
             id: login.id,
             folderId: login.folderId,
             favorite: login.favorite,
-            organizationId: login.organizationId
+            organizationId: login.organizationId,
+            type: login.type
         };
 
-        var orgKey = null;
+        function encryptCipherData(cipher, model, key, self) {
+            switch (cipher.type) {
+                case 1: // cipherType.login
+                    return encryptObjProperty(cipher.login, model.login, {
+                        uri: 'uri',
+                        username: 'username',
+                        password: 'password',
+                        totp: 'totp'
+                    }, key, self);
+                    break;
+                case 2: // cipherType.secureNote
+                    model.secureNote = {
+                        type: cipher.secureNote.type
+                    };
+                    return Q();
+                    break;
+                case 3: // cipherType.card
+                    return encryptObjProperty(cipher.card, model.card, {
+                        cardholderName: 'cardholderName',
+                        brand: 'brand',
+                        number: 'number',
+                        expMonth: 'expMonth',
+                        expYear: 'expYear',
+                        code: 'code'
+                    }, key, self);
+                    break;
+                case 4: // cipherType.identity
+                    return encryptObjProperty(cipher.identity, model.identity, {
+                        title: 'title',
+                        firstName: 'firstName',
+                        middleName: 'middleName',
+                        lastName: 'lastName',
+                        address1: 'address1',
+                        address2: 'address2',
+                        address3: 'address3',
+                        city: 'city',
+                        state: 'state',
+                        postalCode: 'postalCode',
+                        country: 'country',
+                        company: 'company',
+                        email: 'email',
+                        phone: 'phone',
+                        ssn: 'ssn',
+                        username: 'username',
+                        passportNumber: 'passportNumber',
+                        licenseNumber: 'licenseNumber'
+                    }, key, self);
+                    break;
+                default:
+                    break;
+            }
+        }
+
         return self.cryptoService.getOrgKey(login.organizationId).then(function (key) {
-            orgKey = key;
-            return self.cryptoService.encrypt(login.name, orgKey);
-        }).then(function (cs) {
-            model.name = cs;
-            return self.cryptoService.encrypt(login.uri, orgKey);
-        }).then(function (cs) {
-            model.uri = cs;
-            return self.cryptoService.encrypt(login.username, orgKey);
-        }).then(function (cs) {
-            model.username = cs;
-            return self.cryptoService.encrypt(login.password, orgKey);
-        }).then(function (cs) {
-            model.password = cs;
-            return self.cryptoService.encrypt(login.notes, orgKey);
-        }).then(function (cs) {
-            model.notes = cs;
-            return self.cryptoService.encrypt(login.totp, orgKey);
-        }).then(function (cs) {
-            model.totp = cs;
-            return self.encryptFields(login.fields, orgKey);
-        }).then(function (fields) {
-            model.fields = fields;
+            return Q.all([
+                encryptObjProperty(login, model, {
+                    name: 'name',
+                    notes: 'notes'
+                }, key, self),
+                encryptCipherData(login, model, key),
+                self.encryptFields(login.fields, key).then(function (fields) {
+                    model.fields = fields;
+                })
+            ]);
+        }).then(function () {
             return model;
         });
     };
@@ -78,22 +120,39 @@ function initLoginService() {
             type: field.type
         };
 
-        return Q().then(function () {
-            if (!field.name || field.name === '') {
-                return null;
-            }
-            return self.cryptoService.encrypt(field.name, key);
-        }).then(function (cs) {
-            model.name = cs;
-            if (!field.value || field.value === '') {
-                return null;
-            }
-            return self.cryptoService.encrypt(field.value, key);
-        }).then(function (cs) {
-            model.value = cs;
+        return encryptObjProperty(field, model, {
+            name: 'name',
+            value: 'value'
+        }, key, self).then(function () {
             return model;
         });
     };
+
+    function encryptObjProperty(obj, model, map, key, self) {
+        var promises = [];
+
+        for (var prop in map) {
+            if (map.hasOwnProperty(prop)) {
+                /* jshint ignore:start */
+                (function (theProp) {
+                    var promise = Q().then(function () {
+                        if (obj[map[theProp]] && obj[map[theProp]] !== '') {
+                            return self.cryptoService.encrypt(obj[map[theProp]], key);
+                        }
+                        return null;
+                    }).then(function (val) {
+                        model[theProp] = val;
+                        return;
+                    });
+
+                    promises.push(promise);
+                })(prop);
+                /* jshint ignore:end */
+            }
+        }
+
+        return Q.all(promises);
+    }
 
     LoginService.prototype.get = function (id) {
         var self = this,

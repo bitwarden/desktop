@@ -154,16 +154,16 @@ var Cipher = function (obj, alreadyEncrypted, localData) {
 
     switch (this.type) {
         case 1: // cipherType.login
-            this.login = new Login2(obj.login);
+            this.login = new Login2(obj.login, alreadyEncrypted);
             break;
         case 2: // cipherType.secureNote
-            this.secureNote = new SecureNote(obj.secureNote);
+            this.secureNote = new SecureNote(obj.secureNote, alreadyEncrypted);
             break;
         case 3: // cipherType.card
-            this.card = new Card(obj.card);
+            this.card = new Card(obj.card, alreadyEncrypted);
             break;
         case 4: // cipherType.identity
-            this.identity = new Identity(obj.identity);
+            this.identity = new Identity(obj.identity, alreadyEncrypted);
             break;
         default:
             break;
@@ -278,6 +278,9 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
 }
 
 (function () {
+    var bg = chrome.extension.getBackgroundPage(),
+        cryptoService = bg ? bg.bg_cryptoService : null;
+
     CipherString.prototype.decrypt = function (orgId) {
         if (this.decryptedValue) {
             var deferred = Q.defer();
@@ -286,7 +289,6 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
         }
 
         var self = this;
-        var cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService;
         return cryptoService.getOrgKey(orgId).then(function (orgKey) {
             return cryptoService.decrypt(self, orgKey);
         }).then(function (decValue) {
