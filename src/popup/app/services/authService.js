@@ -72,7 +72,7 @@
         };
 
         _service.logOut = function (callback) {
-            $rootScope.vaultLogins = null;
+            $rootScope.vaultCiphers = null;
             $rootScope.vaultFolders = null;
             callback();
         };

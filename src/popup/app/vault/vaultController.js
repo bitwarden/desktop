@@ -22,8 +22,8 @@
 
         var delayLoad = true;
         $scope.loaded = true;
-        if (!$rootScope.vaultLogins) {
-            $rootScope.vaultLogins = [];
+        if (!$rootScope.vaultCiphers) {
+            $rootScope.vaultCiphers = [];
             delayLoad = false;
         }
         if (!$rootScope.vaultFolders) {
@@ -42,32 +42,30 @@
 
         function loadVault() {
             var decFolders = [];
-            var decLogins = [];
+            var decCiphers = [];
             var promises = [];
 
-            var folderPromise = $q.when(folderService.getAllDecrypted());
-            folderPromise.then(function (folders) {
+            var folderPromise = folderService.getAllDecrypted().then(function (folders) {
                 decFolders = folders;
             });
             promises.push(folderPromise);
 
-            var cipherPromise = loginService.getAllDecrypted();
-            cipherPromise.then(function (ciphers) {
-                decLogins = ciphers;
+            var cipherPromise = loginService.getAllDecrypted().then(function (ciphers) {
+                decCiphers = ciphers;
             });
             promises.push(cipherPromise);
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
                 $rootScope.vaultFolders = decFolders;
-                $rootScope.vaultLogins = decLogins;
+                $rootScope.vaultCiphers = decCiphers;
 
                 if ($scope.showFolderCounts) {
                     // compute item count for each folder
                     for (var i = 0; i < decFolders.length; i++) {
                         var itemCount = 0;
-                        for (var j = 0; j < decLogins.length; j++) {
-                            if (decLogins[j].folderId === decFolders[i].id) {
+                        for (var j = 0; j < decCiphers.length; j++) {
+                            if (decCiphers[j].folderId === decFolders[i].id) {
                                 itemCount++;
                             }
                         }
@@ -95,30 +93,30 @@
             return item.name.toLowerCase();
         };
 
-        $scope.searchLogins = function () {
+        $scope.searchCiphers = function () {
             if (!$scope.searchText || $scope.searchText.length < 2) {
                 return;
             }
 
-            return searchLogin;
+            return searchCipher;
         };
 
-        function searchLogin(login) {
+        function searchCipher(cipher) {
             var searchTerm = $scope.searchText.toLowerCase();
-            if (login.name && login.name.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (cipher.name && cipher.name.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
-            if (login.username && login.username.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (cipher.username && cipher.username.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
-            if (login.uri && login.uri.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (cipher.login && cipher.login.uri && cipher.login.uri.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
 
             return false;
         }
 
-        $scope.addLogin = function () {
+        $scope.addCipher = function () {
             storeState();
             $state.go('addLogin', {
                 animation: 'in-slide-up',
@@ -126,32 +124,32 @@
             });
         };
 
-        $scope.viewLogin = function (login) {
-            if (login.clicked) {
-                login.cancelClick = true;
-                $scope.launchWebsite(login);
+        $scope.viewCipher = function (cipher) {
+            if (cipher.clicked) {
+                cipher.cancelClick = true;
+                $scope.launchWebsite(cipher);
                 return;
             }
 
-            login.clicked = true;
+            cipher.clicked = true;
 
             $timeout(function () {
-                if (login.cancelClick) {
-                    login.cancelClick = false;
-                    login.clicked = false;
+                if (cipher.cancelClick) {
+                    cipher.cancelClick = false;
+                    cipher.clicked = false;
                     return;
                 }
 
                 storeState();
                 $state.go('viewLogin', {
-                    loginId: login.id,
+                    loginId: cipher.id,
                     animation: 'in-slide-up',
                     from: 'vault'
                 });
 
                 // clean up
-                login.cancelClick = false;
-                login.clicked = false;
+                cipher.cancelClick = false;
+                cipher.clicked = false;
             }, 200);
         };
 
@@ -173,11 +171,11 @@
             toastr.info(type + i18nService.valueCopied);
         };
 
-        $scope.launchWebsite = function (login) {
+        $scope.launchWebsite = function (cipher) {
             $timeout(function () {
-                if (login.uri.startsWith('http://') || login.uri.startsWith('https://')) {
+                if (cipher.uri.startsWith('http://') || cipher.uri.startsWith('https://')) {
                     $analytics.eventTrack('Launched Website From Listing');
-                    chrome.tabs.create({ url: login.uri });
+                    chrome.tabs.create({ url: cipher.uri });
                     if (utilsService.inPopup($window)) {
                         $window.close();
                     }
