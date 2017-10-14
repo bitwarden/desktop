@@ -398,7 +398,7 @@ function initLoginService() {
 
     LoginService.prototype.saveNeverDomain = function (domain) {
         if (!domain) {
-            return Q.fcall(function () { });
+            return Q();
         }
 
         var key = 'neverDomains';

@@ -90,9 +90,7 @@ function initTotpService() {
         var keyBytes = b32tobytes(keyb32);
 
         if (!keyBytes.length || !timeBytes.length) {
-            return Q.fcall(function () {
-                return null;
-            });
+            return Q(null);
         }
 
         return sign(keyBytes, timeBytes).then(function (hashHex) {

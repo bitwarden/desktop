@@ -402,9 +402,7 @@ function initCryptoService(constantsService) {
 
     CryptoService.prototype.encrypt = function (plainValue, key, plainValueEncoding) {
         if (plainValue === null || plainValue === undefined) {
-            return Q.fcall(function () {
-                return null;
-            });
+            return Q(null);
         }
 
         plainValueEncoding = plainValueEncoding || 'utf8';

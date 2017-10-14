@@ -75,9 +75,7 @@ function initUserService() {
 
     UserService.prototype.getUserIdPromise = function () {
         if (_userId) {
-            return Q.fcall(function () {
-                return _userId;
-            });
+            return Q(_userId);
         }
 
         return utilsService.getObjFromStorage(userIdKey).then(function (obj) {
