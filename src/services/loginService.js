@@ -1,11 +1,13 @@
-function LoginService(cryptoService, userService, apiService, settingsService, utilsService) {
+function LoginService(cryptoService, userService, apiService, settingsService, utilsService, constantsService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
     this.settingsService = settingsService;
     this.utilsService = utilsService;
+    this.constantsService = constantsService;
     this.decryptedCipherCache = null;
     this.localDataKey = 'sitesLocalData';
+    this.neverDomainsKey = 'neverDomains';
 
     initLoginService();
 }
@@ -28,62 +30,58 @@ function initLoginService() {
 
         function encryptCipherData(cipher, model, key, self) {
             switch (cipher.type) {
-                case 1: // cipherType.login
+                case constantsService.cipherType.login:
                     return encryptObjProperty(cipher.login, model.login, {
-                        uri: 'uri',
-                        username: 'username',
-                        password: 'password',
-                        totp: 'totp'
+                        uri: null,
+                        username: null,
+                        password: null,
+                        totp: null
                     }, key, self);
-                    break;
-                case 2: // cipherType.secureNote
+                case constantsService.cipherType.secureNote:
                     model.secureNote = {
                         type: cipher.secureNote.type
                     };
                     return Q();
-                    break;
-                case 3: // cipherType.card
+                case constantsService.cipherType.card:
                     return encryptObjProperty(cipher.card, model.card, {
-                        cardholderName: 'cardholderName',
-                        brand: 'brand',
-                        number: 'number',
-                        expMonth: 'expMonth',
-                        expYear: 'expYear',
-                        code: 'code'
+                        cardholderName: null,
+                        brand: null,
+                        number: null,
+                        expMonth: null,
+                        expYear: null,
+                        code: null
                     }, key, self);
-                    break;
-                case 4: // cipherType.identity
+                case constantsService.cipherType.identity:
                     return encryptObjProperty(cipher.identity, model.identity, {
-                        title: 'title',
-                        firstName: 'firstName',
-                        middleName: 'middleName',
-                        lastName: 'lastName',
-                        address1: 'address1',
-                        address2: 'address2',
-                        address3: 'address3',
-                        city: 'city',
-                        state: 'state',
-                        postalCode: 'postalCode',
-                        country: 'country',
-                        company: 'company',
-                        email: 'email',
-                        phone: 'phone',
-                        ssn: 'ssn',
-                        username: 'username',
-                        passportNumber: 'passportNumber',
-                        licenseNumber: 'licenseNumber'
+                        title: null,
+                        firstName: null,
+                        middleName: null,
+                        lastName: null,
+                        address1: null,
+                        address2: null,
+                        address3: null,
+                        city: null,
+                        state: null,
+                        postalCode: null,
+                        country: null,
+                        company: null,
+                        email: null,
+                        phone: null,
+                        ssn: null,
+                        username: null,
+                        passportNumber: null,
+                        licenseNumber: null
                     }, key, self);
-                    break;
                 default:
-                    break;
+                    throw 'Unknown type.';
             }
         }
 
         return self.cryptoService.getOrgKey(login.organizationId).then(function (key) {
             return Q.all([
                 encryptObjProperty(login, model, {
-                    name: 'name',
-                    notes: 'notes'
+                    name: null,
+                    notes: null
                 }, key, self),
                 encryptCipherData(login, model, key),
                 self.encryptFields(login.fields, key).then(function (fields) {
@@ -121,8 +119,8 @@ function initLoginService() {
         };
 
         return encryptObjProperty(field, model, {
-            name: 'name',
-            value: 'value'
+            name: null,
+            value: null
         }, key, self).then(function () {
             return model;
         });
@@ -136,8 +134,9 @@ function initLoginService() {
                 /* jshint ignore:start */
                 (function (theProp) {
                     var promise = Q().then(function () {
-                        if (obj[map[theProp]] && obj[map[theProp]] !== '') {
-                            return self.cryptoService.encrypt(obj[map[theProp]], key);
+                        var objProb = obj[(map[theProp] || theProp)];
+                        if (objProb && objProb !== '') {
+                            return self.cryptoService.encrypt(objProb, key);
                         }
                         return null;
                     }).then(function (val) {
@@ -204,22 +203,26 @@ function initLoginService() {
     };
 
     LoginService.prototype.getAllDecrypted = function () {
-        var self = this,
-            decCiphers = [];
+        if (this.decryptedCipherCache) {
+            return Q(this.decryptedCipherCache);
+        }
 
-        return self.cryptoService.getKey().then(function (key) {
+        var deferred = Q.defer(),
+            decCiphers = [],
+            self = this;
+
+        self.cryptoService.getKey().then(function (key) {
             if (!key) {
                 deferred.reject();
-                return;
-            }
-
-            if (self.decryptedCipherCache) {
-                deferred.resolve(self.decryptedCipherCache);
-                return;
+                return true;
             }
 
             return self.getAll();
         }).then(function (ciphers) {
+            if (ciphers === true) {
+                return;
+            }
+
             var promises = [];
             for (var i = 0; i < ciphers.length; i++) {
                 /* jshint ignore:start */
@@ -230,10 +233,16 @@ function initLoginService() {
             }
 
             return Q.all(promises);
-        }).then(function () {
+        }).then(function (stop) {
+            if (stop === true) {
+                return;
+            }
+
             self.decryptedCipherCache = decCiphers;
-            return self.decryptedCipherCache;
+            deferred.resolve(self.decryptedCipherCache);
         });
+
+        return deferred.promise;
     };
 
     LoginService.prototype.getAllDecryptedForFolder = function (folderId) {
@@ -460,8 +469,8 @@ function initLoginService() {
             return Q();
         }
 
-        var key = 'neverDomains';
-        return self.utilsService.getObjFromStorage(key).then(function (domains) {
+        var self = this;
+        return self.utilsService.getObjFromStorage(self.neverDomainsKey).then(function (domains) {
             if (!domains) {
                 domains = {};
             }

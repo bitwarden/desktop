@@ -6,8 +6,9 @@
     this.notes = cipher.notes ? cipher.notes.encryptedString : null;
     this.favorite = cipher.favorite;
 
+    var constantsService = chrome.extension.getBackgroundPage().bg_constantsService;
     switch (type) {
-        case 1: // cipherType.login
+        case constantsService.cipherType.login:
             this.login = {
                 uri: cipher.login.uri ? cipher.login.uri.encryptedString : null,
                 username: cipher.login.username ? cipher.login.username.encryptedString : null,
@@ -15,12 +16,12 @@
                 totp: cipher.login.totp ? cipher.login.totp.encryptedString : null
             };
             break;
-        case 2: // cipherType.secureNote
+        case constantsService.cipherType.secureNote:
             this.secureNote = {
                 type: cipher.secureNote.type
             };
             break;
-        case 3: // cipherType.card
+        case constantsService.cipherType.card:
             this.card = {
                 cardholderName: cipher.card.cardholderName ? cipher.card.cardholderName.encryptedString : null,
                 brand: cipher.card.brand ? cipher.card.brand.encryptedString : null,
@@ -30,7 +31,7 @@
                 code: cipher.card.code ? cipher.card.code.encryptedString : null
             };
             break;
-        case 4: // cipherType.identity
+        case constantsService.cipherType.identity:
             this.identity = {
                 title: cipher.identity.title ? cipher.identity.title.encryptedString : null,
                 firstName: cipher.identity.firstName ? cipher.identity.firstName.encryptedString : null,

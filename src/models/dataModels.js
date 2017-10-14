@@ -62,17 +62,18 @@ var CipherData = function (response, userId) {
     this.name = response.data.Name;
     this.notes = response.notes = response.data.Notes;
 
+    var constantsService = chrome.extension.getBackgroundPage().bg_constantsService;
     switch (this.type) {
-        case 1: // cipherType.login
+        case constantsService.cipherType.login:
             this.login = new LoginData2(response.data);
             break;
-        case 2: // cipherType.secureNote
+        case constantsService.cipherType.secureNote:
             this.secureNote = new SecureNoteData(response.data);
             break;
-        case 3: // cipherType.card
+        case constantsService.cipherType.card:
             this.card = new CardData(response.data);
             break;
-        case 4: // cipherType.identity
+        case constantsService.cipherType.identity:
             this.identity = new IdentityData(response.data);
             break;
         default:

@@ -5,6 +5,7 @@ var CipherString = function () {
     this.cipherText = null;
     this.initializationVector = null;
     this.mac = null;
+    this.cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService;
 
     var constants = chrome.extension.getBackgroundPage().bg_constantsService;
 
@@ -138,12 +139,14 @@ var Login = function (obj, alreadyEncrypted, localData) {
 };
 
 var Cipher = function (obj, alreadyEncrypted, localData) {
+    this.constantsService = chrome.extension.getBackgroundPage().bg_constantsService;
+
     buildDomainModel(this, obj, {
-        id: 'id',
-        organizationId: 'organizationId',
-        folderId: 'folderId',
-        name: 'name',
-        notes: 'notes'
+        id: null,
+        organizationId: null,
+        folderId: null,
+        name: null,
+        notes: null
     }, alreadyEncrypted, ['id', 'organizationId', 'folderId']);
 
     this.type = obj.type;
@@ -153,16 +156,16 @@ var Cipher = function (obj, alreadyEncrypted, localData) {
     this.localData = localData;
 
     switch (this.type) {
-        case 1: // cipherType.login
+        case this.constantsService.cipherType.login:
             this.login = new Login2(obj.login, alreadyEncrypted);
             break;
-        case 2: // cipherType.secureNote
+        case this.constantsService.cipherType.secureNote:
             this.secureNote = new SecureNote(obj.secureNote, alreadyEncrypted);
             break;
-        case 3: // cipherType.card
+        case this.constantsService.cipherType.card:
             this.card = new Card(obj.card, alreadyEncrypted);
             break;
-        case 4: // cipherType.identity
+        case this.constantsService.cipherType.identity:
             this.identity = new Identity(obj.identity, alreadyEncrypted);
             break;
         default:
@@ -193,44 +196,44 @@ var Cipher = function (obj, alreadyEncrypted, localData) {
 
 var Login2 = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
-        uri: 'uri',
-        username: 'username',
-        password: 'password',
-        totp: 'totp'
+        uri: null,
+        username: null,
+        password: null,
+        totp: null
     }, alreadyEncrypted, []);
 };
 
 var Identity = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
-        title: 'title',
-        firstName: 'firstName',
-        middleName: 'middleName',
-        lastName: 'lastName',
-        address1: 'address1',
-        address2: 'address2',
-        address3: 'address3',
-        city: 'city',
-        state: 'state',
-        postalCode: 'postalCode',
-        country: 'country',
-        company: 'company',
-        email: 'email',
-        phone: 'phone',
-        ssn: 'ssn',
-        username: 'username',
-        passportNumber: 'passportNumber',
-        licenseNumber: 'licenseNumber'
+        title: null,
+        firstName: null,
+        middleName: null,
+        lastName: null,
+        address1: null,
+        address2: null,
+        address3: null,
+        city: null,
+        state: null,
+        postalCode: null,
+        country: null,
+        company: null,
+        email: null,
+        phone: null,
+        ssn: null,
+        username: null,
+        passportNumber: null,
+        licenseNumber: null
     }, alreadyEncrypted, []);
 };
 
 var Card = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
-        cardholderName: 'cardholderName',
-        brand: 'brand',
-        number: 'number',
-        expMonth: 'expMonth',
-        expYear: 'expYear',
-        code: 'code'
+        cardholderName: null,
+        brand: null,
+        number: null,
+        expMonth: null,
+        expYear: null,
+        code: null
     }, alreadyEncrypted, []);
 };
 
@@ -241,25 +244,25 @@ var SecureNote = function (obj, alreadyEncrypted) {
 var Field = function (obj, alreadyEncrypted) {
     this.type = obj.type;
     buildDomainModel(this, obj, {
-        name: 'name',
-        value: 'value'
+        name: null,
+        value: null
     }, alreadyEncrypted, []);
 };
 
 var Attachment = function (obj, alreadyEncrypted) {
     this.size = obj.size;
     buildDomainModel(this, obj, {
-        id: 'id',
-        url: 'url',
-        sizeName: 'sizeName',
-        fileName: 'fileName'
+        id: null,
+        url: null,
+        sizeName: null,
+        fileName: null
     }, alreadyEncrypted, ['id', 'url', 'sizeName']);
 };
 
 var Folder = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
-        id: 'id',
-        name: 'name'
+        id: null,
+        name: null
     }, alreadyEncrypted, ['id']);
 };
 
@@ -267,11 +270,12 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
     notEncList = notEncList || [];
     for (var prop in map) {
         if (map.hasOwnProperty(prop)) {
+            var objProp = obj[(map[prop] || prop)];
             if (alreadyEncrypted === true || notEncList.indexOf(prop) > -1) {
-                model[prop] = obj[map[prop]] ? obj[map[prop]] : null;
+                model[prop] = objProp ? objProp : null;
             }
             else {
-                model[prop] = obj[map[prop]] ? new CipherString(obj[map[prop]]) : null;
+                model[prop] = objProp ? new CipherString(objProp) : null;
             }
         }
     }
@@ -283,10 +287,9 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
             return Q(this.decryptedValue);
         }
 
-        var self = this,
-            cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService;
-        return cryptoService.getOrgKey(orgId).then(function (orgKey) {
-            return cryptoService.decrypt(self, orgKey);
+        var self = this;
+        return self.cryptoService.getOrgKey(orgId).then(function (orgKey) {
+            return self.cryptoService.decrypt(self, orgKey);
         }).then(function (decValue) {
             self.decryptedValue = decValue;
             return self.decryptedValue;
@@ -380,6 +383,7 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
 
     Cipher.prototype.decrypt = function () {
         var self = this;
+
         var model = {
             id: self.id,
             organizationId: self.organizationId,
@@ -393,36 +397,36 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
         var fields = [];
 
         return decryptObj(model, this, {
-            name: 'name',
-            notes: 'notes'
-        }, null).then(function () {
+            name: null,
+            notes: null
+        }, self.organizationId).then(function () {
             switch (self.type) {
-                case 1: // cipherType.login
+                case self.constantsService.cipherType.login:
                     return self.login.decrypt(self.organizationId);
-                case 2: // cipherType.secureNote
+                case self.constantsService.cipherType.secureNote:
                     return self.secureNote.decrypt(self.organizationId);
-                case 3: // cipherType.card
+                case self.constantsService.cipherType.card:
                     return self.card.decrypt(self.organizationId);
-                case 4: // cipherType.identity
+                case self.constantsService.cipherType.identity:
                     return self.identity.decrypt(self.organizationId);
                 default:
                     return;
             }
         }).then(function (decObj) {
             switch (self.type) {
-                case 1: // cipherType.login
+                case self.constantsService.cipherType.login:
                     model.login = decObj;
                     model.subTitle = model.login.username;
                     break;
-                case 2: // cipherType.secureNote
+                case self.constantsService.cipherType.secureNote:
                     model.secureNote = decObj;
                     model.subTitle = '-';
                     break;
-                case 3: // cipherType.card
+                case self.constantsService.cipherType.card:
                     model.card = decObj;
                     model.subTitle = model.identity.brand;
                     break;
-                case 4: // cipherType.identity
+                case self.constantsService.cipherType.identity:
                     model.identity = decObj;
                     model.subTitle = model.identity.firstName;
                     break;
@@ -464,21 +468,21 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
 
     Login2.prototype.decrypt = function (orgId) {
         return decryptObj({}, this, {
-            uri: 'uri',
-            username: 'username',
-            password: 'password',
-            totp: 'totp'
+            uri: null,
+            username: null,
+            password: null,
+            totp: null
         }, orgId);
     };
 
     Card.prototype.decrypt = function (orgId) {
         return decryptObj({}, this, {
-            cardholderName: 'cardholderName',
-            brand: 'brand',
-            number: 'number',
-            expMonth: 'expMonth',
-            expYear: 'expYear',
-            code: 'code'
+            cardholderName: null,
+            brand: null,
+            number: null,
+            expMonth: null,
+            expYear: null,
+            code: null
         }, orgId);
     };
 
@@ -490,24 +494,24 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
 
     Identity.prototype.decrypt = function (orgId) {
         return decryptObj({}, this, {
-            title: 'title',
-            firstName: 'firstName',
-            middleName: 'middleName',
-            lastName: 'lastName',
-            address1: 'address1',
-            address2: 'address2',
-            address3: 'address3',
-            city: 'city',
-            state: 'state',
-            postalCode: 'postalCode',
-            country: 'country',
-            company: 'company',
-            email: 'email',
-            phone: 'phone',
-            ssn: 'ssn',
-            username: 'username',
-            passportNumber: 'passportNumber',
-            licenseNumber: 'licenseNumber'
+            title: null,
+            firstName: null,
+            middleName: null,
+            lastName: null,
+            address1: null,
+            address2: null,
+            address3: null,
+            city: null,
+            state: null,
+            postalCode: null,
+            country: null,
+            company: null,
+            email: null,
+            phone: null,
+            ssn: null,
+            username: null,
+            passportNumber: null,
+            licenseNumber: null
         }, orgId);
     };
 
@@ -517,8 +521,8 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
         };
 
         return decryptObj(model, this, {
-            name: 'name',
-            value: 'value'
+            name: null,
+            value: null
         }, orgId);
     };
 
@@ -531,7 +535,7 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
         };
 
         return decryptObj(model, this, {
-            fileName: 'fileName'
+            fileName: null
         }, orgId);
     };
 
@@ -542,7 +546,7 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
         };
 
         return decryptObj(model, this, {
-            name: 'name'
+            name: null
         }, null);
     };
 
@@ -553,8 +557,9 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
                 /* jshint ignore:start */
                 (function (theProp) {
                     var promise = Q().then(function () {
-                        if (self[map[theProp]]) {
-                            return self[map[theProp]].decrypt(orgId);
+                        var mapProp = map[theProp] || theProp;
+                        if (self[mapProp]) {
+                            return self[mapProp].decrypt(orgId);
                         }
                         return null;
                     }).then(function (val) {

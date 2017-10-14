@@ -38,7 +38,8 @@ var bg_isBackground = true,
     bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
     bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
     bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
-    bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService);
+    bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
+        bg_constantsService);
     bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService, bg_utilsService);
     bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_loginService, bg_utilsService,
         setIcon, refreshBadgeAndMenu);
