@@ -1,4 +1,4 @@
-﻿<form name="theForm" ng-submit="save(login)" bit-form="savePromise" autocomplete="off">
+﻿<form name="theForm" ng-submit="save()" bit-form="savePromise" autocomplete="off">
     <div class="header">
         <div class="left">
             <a ng-click="close()" href="">{{i18n.cancel}}</a>
@@ -17,36 +17,105 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
+                        <label for="type" class="item-label">{{i18n.type}}</label>
+                        <select id="type" name="Type" ng-model="selectedType" ng-change="typeChanged()">
+                            <option value="{{constants.cipherType.login}}">{{i18n.typeLogin}}</option>
+                            <option value="{{constants.cipherType.secureNote}}">{{i18n.typeSecureNote}}</option>
+                            <option value="{{constants.cipherType.card}}">{{i18n.typeCard}}</option>
+                            <option value="{{constants.cipherType.identity}}">{{i18n.typeIdentity}}</option>
+                        </select>
+                    </div>
+                    <div class="list-section-item">
                         <label for="name" class="item-label">{{i18n.name}}</label>
-                        <input id="name" type="text" name="Name" ng-model="login.name">
+                        <input id="name" type="text" name="Name" ng-model="cipher.name">
                     </div>
-                    <div class="list-section-item">
-                        <label for="uri" class="item-label">{{i18n.uri}}</label>
-                        <input id="uri" type="text" name="Uri" ng-model="login.uri">
+                    <div ng-if="cipher.type === constants.cipherType.login">
+                        <div class="list-section-item">
+                            <label for="loginUri" class="item-label">{{i18n.uri}}</label>
+                            <input id="loginUri" type="text" name="Login.Uri" ng-model="cipher.login.uri">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="loginUsername" class="item-label">{{i18n.username}}</label>
+                            <input id="loginUsername" type="text" name="Login.Username" ng-model="cipher.login.username">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="loginPassword" class="item-label">{{i18n.password}}</label>
+                            <input id="loginPassword" type="password" name="Login.Password" ng-model="cipher.login.password">
+                        </div>
+                        <a class="list-section-item" href="" ng-click="generatePassword()">
+                            {{i18n.generatePassword}}
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
                     </div>
-                    <div class="list-section-item">
-                        <label for="username" class="item-label">{{i18n.username}}</label>
-                        <input id="username" type="text" name="Username" ng-model="login.username">
+                    <div ng-if="cipher.type === constants.cipherType.card">
+                        <div class="list-section-item">
+                            <label for="cardCardholderName" class="item-label">{{i18n.cardholderName}}</label>
+                            <input id="cardCardholderName" type="text" name="Card.CardholderName"
+                                   ng-model="cipher.card.cardholderName">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="cardNumber" class="item-label">{{i18n.number}}</label>
+                            <input id="cardNumber" type="text" name="Card.Number" ng-model="cipher.card.number">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="cardBrand" class="item-label">{{i18n.brand}}</label>
+                            <select id="cardBrand" name="Card.Brand" ng-model="cipher.card.brand">
+                                <option value="{{i18n.visa}}">{{i18n.visa}}</option>
+                                <option value="{{i18n.mastercard}}">{{i18n.mastercard}}</option>
+                                <option value="{{i18n.amex}}">{{i18n.amex}}</option>
+                                <option value="{{i18n.discover}}">{{i18n.discover}}</option>
+                                <option value="{{i18n.dinersClub}}">{{i18n.dinersClub}}</option>
+                                <option value="{{i18n.jcb}}">{{i18n.jcb}}</option>
+                                <option value="{{i18n.maestro}}">{{i18n.maestro}}</option>
+                                <option value="{{i18n.unionPay}}">{{i18n.unionPay}}</option>
+                                <option value="{{i18n.other}}">{{i18n.other}}</option>
+                            </select>
+                        </div>
+                        <div class="list-section-item">
+                            <label for="cardExpMonth" class="item-label">{{i18n.expMonth}}</label>
+                            <select id="cardExpMonth" name="Card.ExpMonth" ng-model="cipher.card.expMonth">
+                                <option value="1">01 - {{i18n.january}}</option>
+                                <option value="2">02 - {{i18n.february}}</option>
+                                <option value="3">03 - {{i18n.march}}</option>
+                                <option value="4">04 - {{i18n.april}}</option>
+                                <option value="5">05 - {{i18n.may}}</option>
+                                <option value="6">06 - {{i18n.june}}</option>
+                                <option value="7">07 - {{i18n.july}}</option>
+                                <option value="8">08 - {{i18n.august}}</option>
+                                <option value="9">09 - {{i18n.september}}</option>
+                                <option value="10">10 - {{i18n.october}}</option>
+                                <option value="11">11 - {{i18n.november}}</option>
+                                <option value="12">12 - {{i18n.december}}</option>
+                            </select>
+                        </div>
+                        <div class="list-section-item">
+                            <label for="cardExpYear" class="item-label">{{i18n.expYear}}</label>
+                            <input id="cardExpYear" type="text" name="Card.ExpYear" ng-model="cipher.card.expYear">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="cardCode" class="item-label">{{i18n.securityCode}}</label>
+                            <input id="cardCode" type="text" name="Card.Code" ng-model="cipher.card.code">
+                        </div>
                     </div>
-                    <div class="list-section-item">
-                        <label for="password" class="item-label">{{i18n.password}}</label>
-                        <input id="password" type="password" name="Password" ng-model="login.password">
+                    <div ng-if="cipher.type === constants.cipherType.identity">
+                        
                     </div>
-                    <a class="list-section-item" href="" ng-click="generatePassword()">
-                        {{i18n.generatePassword}}
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
+                    <div ng-if="cipher.type === constants.cipherType.secureNote">
+                        
+                    </div>
                 </div>
             </div>
             <div class="list-section">
                 <div class="list-section-items">
-                    <div class="list-section-item">
-                        <label for="totp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
-                        <input id="totp" type="text" name="Totp" ng-model="login.totp">
+                    <div ng-if="cipher.type === constants.cipherType.login">
+                        <div class="list-section-item">
+                            <label for="loginTotp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
+                            <input id="loginTotp" type="text" name="Login.Totp" ng-model="cipher.login.totp">
+                        </div>
                     </div>
                     <div class="list-section-item">
                         <label for="folder" class="item-label">{{i18n.folder}}</label>
-                        <select id="folder" name="FolderId" ng-model="login.folderId">
+                        <select id="folder" name="FolderId" ng-model="cipher.folderId">
                             <option ng-repeat="folder in folders | orderBy: ['name'] track by $index" value="{{folder.id}}">
                                 {{folder.name}}
                             </option>
@@ -54,7 +123,7 @@
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="favorite">{{i18n.favorite}}</label>
-                        <input id="favorite" name="Favorite" type="checkbox" ng-model="login.favorite">
+                        <input id="favorite" name="Favorite" type="checkbox" ng-model="cipher.favorite">
                     </div>
                 </div>
             </div>
@@ -64,18 +133,17 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <textarea id="notes" name="Notes" rows="5" ng-model="login.notes"></textarea>
+                        <textarea id="notes" name="Notes" rows="5" ng-model="cipher.notes"></textarea>
                     </div>
                 </div>
             </div>
-
             <div class="list-section">
                 <div class="list-section-header">
                     {{i18n.customFields}}
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-table"
-                         ng-if="login.fields && login.fields.length" ng-repeat="field in login.fields"
+                         ng-if="cipher.fields && cipher.fields.length" ng-repeat="field in cipher.fields"
                          ng-class="{'list-section-item-checkbox' : field.type === constants.fieldType.boolean}">
                         <a href="#" stop-click ng-click="removeField(field)" class="action-button text-danger">
                             <i class="fa fa-close fa-lg"></i>

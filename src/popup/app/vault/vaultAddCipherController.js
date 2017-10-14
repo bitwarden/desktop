@@ -2,24 +2,33 @@
     .module('bit.vault')
 
     .controller('vaultAddCipherController', function ($scope, $state, $stateParams, loginService, folderService,
-        cryptoService, $q, toastr, utilsService, $analytics, i18nService, constantsService) {
+        cryptoService, toastr, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.addFieldType = constantsService.fieldType.text.toString();
+        $scope.selectedType = constantsService.cipherType.login.toString();
         var from = $stateParams.from,
             folderId = $stateParams.folderId;
 
         $scope.cipher = {
             folderId: folderId,
             name: $stateParams.name,
-            uri: $stateParams.uri
+            type: constantsService.cipherType.login,
+            login: {},
+            secureNote: {
+                type: 0 // generic note
+            }
         };
+
+        if($stateParams.uri) {
+            $scope.cipher.login.uri = $stateParams.uri;
+        }
 
         if ($stateParams.cipher) {
             angular.extend($scope.cipher, $stateParams.cipher);
         }
 
-        if (!$stateParams.cipher && $scope.cipher.name && $scope.cipher.uri) {
+        if (!$stateParams.cipher && $scope.cipher.name && $scope.cipher.login && $scope.cipher.login.uri) {
             $('#username').focus();
         }
         else {
@@ -27,24 +36,28 @@
         }
         utilsService.initListSectionItemListeners($(document), angular);
 
-        $q.when(folderService.getAllDecrypted()).then(function (folders) {
+        folderService.getAllDecrypted().then(function (folders) {
             $scope.folders = folders;
         });
 
+        $scope.typeChanged = function() {
+            $scope.cipher.type = parseInt($scope.selectedType);
+        };
+
         $scope.savePromise = null;
-        $scope.save = function (model) {
-            if (!model.name) {
+        $scope.save = function () {
+            if (!cipher.name || cipher.name === '') {
                 toastr.error(i18nService.nameRequired, i18nService.errorsOccurred);
                 return;
             }
 
-            $scope.savePromise = loginService.encrypt(model).then(function (cipherModel) {
+            $scope.savePromise = loginService.encrypt($scope.cipher).then(function (cipherModel) {
                 var cipher = new Cipher(cipherModel, true);
-                return loginService.saveWithServer(cipher).then(function (c) {
-                    $analytics.eventTrack('Added Cipher');
-                    toastr.success(i18nService.addedLogin);
-                    $scope.close();
-                });
+                return loginService.saveWithServer(cipher);
+            }).then(function (c) {
+                $analytics.eventTrack('Added Cipher');
+                toastr.success(i18nService.addedLogin);
+                $scope.close();
             });
         };
 
