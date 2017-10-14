@@ -1,4 +1,4 @@
-﻿<form name="theForm" ng-submit="save(login)" bit-form="savePromise" autocomplete="off">
+﻿<form name="theForm" ng-submit="save(cipher)" bit-form="savePromise" autocomplete="off">
     <div class="header">
         <div class="left">
             <a ng-click="close()" href="">{{i18n.cancel}}</a>
@@ -14,24 +14,24 @@
             <div class="list-section">
                 <div class="list-section-header">
                     {{i18n.loginInformation}}
-                    <i class="fa fa-share-alt fa-lg pull-right" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
+                    <i class="fa fa-share-alt fa-lg pull-right" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="name" class="item-label">{{i18n.name}}</label>
-                        <input id="name" type="text" name="Name" ng-model="login.name">
+                        <input id="name" type="text" name="Name" ng-model="cipher.name">
                     </div>
                     <div class="list-section-item">
                         <label for="uri" class="item-label">{{i18n.uri}}</label>
-                        <input id="uri" type="text" name="Uri" ng-model="login.uri">
+                        <input id="uri" type="text" name="Uri" ng-model="cipher.uri">
                     </div>
                     <div class="list-section-item">
                         <label for="username" class="item-label">{{i18n.username}}</label>
-                        <input id="username" type="text" name="Username" ng-model="login.username">
+                        <input id="username" type="text" name="Username" ng-model="cipher.username">
                     </div>
                     <div class="list-section-item">
                         <label for="password" class="item-label">{{i18n.password}}</label>
-                        <input id="password" type="password" name="Password" ng-model="login.password">
+                        <input id="password" type="password" name="Password" ng-model="cipher.password">
                     </div>
                     <a class="list-section-item" href="" ng-click="generatePassword()">
                         {{i18n.generatePassword}}
@@ -43,11 +43,11 @@
                 <div class="list-section-items">
                     <div class="list-section-item">
                         <label for="totp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
-                        <input id="totp" type="text" name="Totp" ng-model="login.totp">
+                        <input id="totp" type="text" name="Totp" ng-model="cipher.totp">
                     </div>
                     <div class="list-section-item">
                         <label for="folder" class="item-label">{{i18n.folder}}</label>
-                        <select id="folder" name="FolderId" ng-model="login.folderId">
+                        <select id="folder" name="FolderId" ng-model="cipher.folderId">
                             <option ng-repeat="folder in folders | orderBy: ['name'] track by $index" value="{{folder.id}}">
                                 {{folder.name}}
                             </option>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="list-section-item list-section-item-checkbox">
                         <label for="favorite">{{i18n.favorite}}</label>
-                        <input id="favorite" name="Favorite" type="checkbox" ng-model="login.favorite">
+                        <input id="favorite" name="Favorite" type="checkbox" ng-model="cipher.favorite">
                     </div>
                     <a class="list-section-item" href="#" stop-click ng-click="attachments()" ng-if="showAttachments">
                         {{i18n.attachments}}
@@ -69,7 +69,7 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item">
-                        <textarea id="notes" name="Notes" rows="5" ng-model="login.notes"></textarea>
+                        <textarea id="notes" name="Notes" rows="5" ng-model="cipher.notes"></textarea>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-table" 
-                         ng-if="login.fields && login.fields.length" ng-repeat="field in login.fields"
+                         ng-if="cipher.fields && cipher.fields.length" ng-repeat="field in cipher.fields"
                          ng-class="{'list-section-item-checkbox' : field.type === constants.fieldType.boolean}">
                         <a href="#" stop-click ng-click="removeField(field)" class="action-button text-danger">
                             <i class="fa fa-close fa-lg"></i>

@@ -134,26 +134,26 @@
                 data: { authorize: true },
                 params: { animation: null, from: 'vault' }
             })
-            .state('viewLogin', {
-                url: '/view-login?loginId',
-                templateUrl: 'app/vault/views/vaultViewLogin.html',
-                controller: 'vaultViewLoginController',
+            .state('viewCipher', {
+                url: '/view-cipher?cipherId',
+                templateUrl: 'app/vault/views/vaultViewCipher.html',
+                controller: 'vaultViewCipherController',
                 data: { authorize: true },
                 params: { animation: null, from: 'vault' }
             })
-            .state('addLogin', {
-                url: '/add-login',
-                templateUrl: 'app/vault/views/vaultAddLogin.html',
-                controller: 'vaultAddLoginController',
+            .state('addCipher', {
+                url: '/add-cipher',
+                templateUrl: 'app/vault/views/vaultAddCipher.html',
+                controller: 'vaultAddCipherController',
                 data: { authorize: true },
-                params: { animation: null, name: null, uri: null, folderId: null, login: null, from: 'vault' }
+                params: { animation: null, name: null, uri: null, folderId: null, cipher: null, from: 'vault' }
             })
-            .state('editLogin', {
-                url: '/edit-login?loginId',
-                templateUrl: 'app/vault/views/vaultEditLogin.html',
-                controller: 'vaultEditLoginController',
+            .state('editCipher', {
+                url: '/edit-cipher?cipherId',
+                templateUrl: 'app/vault/views/vaultEditCipher.html',
+                controller: 'vaultEditCipherController',
                 data: { authorize: true },
-                params: { animation: null, fromView: true, login: null, from: 'vault' }
+                params: { animation: null, fromView: true, cipher: null, from: 'vault' }
             })
             .state('attachments', {
                 url: '/attachments?id',

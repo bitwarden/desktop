@@ -190,7 +190,7 @@
 
                 storeState();
                 $state.go('viewLogin', {
-                    loginId: cipher.id,
+                    cipherId: cipher.id,
                     animation: 'in-slide-up',
                     from: 'folder'
                 });

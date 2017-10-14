@@ -10,47 +10,47 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <a href="" ng-click="addLogin()"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="" ng-click="addCipher()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
 </div>
 <div class="content content-tabs">
-    <div ng-if="logins.length">
+    <div ng-if="ciphers.length">
         <div class="list">
             <div class="list-grouped">
-                <a href="#" stop-click ng-click="fillLogin(login)" class="list-grouped-item condensed"
-                   title="{{i18n.autoFill}} {{login.name}}"
-                   ng-repeat="login in theLogins = (logins | orderBy: [sortUriMatch, sortLastUsed, 'name', 'username'])
+                <a href="#" stop-click ng-click="fillCipher(cipher)" class="list-grouped-item condensed"
+                   title="{{i18n.autoFill}} {{cipher.name}}"
+                   ng-repeat="cipher in theCiphers = (ciphers | orderBy: [sortUriMatch, sortLastUsed, 'name', 'subTitle'])
                         track by $index">
                     <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, i18n.password)"
-                          data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">
+                          data-clipboard-text="{{cipher.password}}" ng-class="{'disabled': !cipher.password}">
                         <i class="fa fa-lg fa-key"></i>
                     </span>
                     <span class="btn-list" stop-prop stop-click title="{{i18n.copyUsername}}"
                           ngclipboard ngclipboard-error="clipboardError(e)"
                           ngclipboard-success="clipboardSuccess(e, i18n.username)"
-                          data-clipboard-text="{{login.username}}" ng-class="{'disabled': !login.username}">
+                          data-clipboard-text="{{cipher.username}}" ng-class="{'disabled': !cipher.username}">
                         <i class="fa fa-lg fa-user"></i>
                     </span>
-                    <span class="btn-list" ng-click="viewLogin(login)" stop-prop stop-click
-                          title="{{i18n.edit}} {{login.name}}">
+                    <span class="btn-list" ng-click="viewCipher(cipher)" stop-prop stop-click
+                          title="{{i18n.edit}} {{cipher.name}}">
                         <i class="fa fa-lg fa-pencil"></i>
                     </span>
-                    <icon uri="login.uri"></icon>
+                    <icon uri="cipher.uri"></icon>
                     <span class="text">
-                        {{login.name}}
-                        <i class="fa fa-share-alt text-muted" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
+                        {{cipher.name}}
+                        <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
                     </span>
-                    <span class="detail">{{login.username}}</span>
+                    <span class="detail">{{cipher.subTitle}}</span>
                 </a>
             </div>
         </div>
     </div>
-    <div class="centered-message" ng-if="loaded && !logins.length">
+    <div class="centered-message" ng-if="loaded && !ciphers.length">
         <p>
             {{i18n.autoFillInfo}}
-            <button ng-click="addLogin()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addLogin}}</button>
+            <button ng-click="addCipher()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addLogin}}</button>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">

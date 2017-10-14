@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultAddLoginController', function ($scope, $state, $stateParams, loginService, folderService,
+    .controller('vaultAddCipherController', function ($scope, $state, $stateParams, loginService, folderService,
         cryptoService, $q, toastr, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
@@ -9,17 +9,17 @@
         var from = $stateParams.from,
             folderId = $stateParams.folderId;
 
-        $scope.login = {
+        $scope.cipher = {
             folderId: folderId,
             name: $stateParams.name,
             uri: $stateParams.uri
         };
 
-        if ($stateParams.login) {
-            angular.extend($scope.login, $stateParams.login);
+        if ($stateParams.cipher) {
+            angular.extend($scope.cipher, $stateParams.cipher);
         }
 
-        if (!$stateParams.login && $scope.login.name && $scope.login.uri) {
+        if (!$stateParams.cipher && $scope.cipher.name && $scope.cipher.uri) {
             $('#username').focus();
         }
         else {
@@ -38,10 +38,10 @@
                 return;
             }
 
-            $scope.savePromise = $q.when(loginService.encrypt(model)).then(function (loginModel) {
-                var login = new Login(loginModel, true);
-                return $q.when(loginService.saveWithServer(login)).then(function (login) {
-                    $analytics.eventTrack('Added Login');
+            $scope.savePromise = loginService.encrypt(model).then(function (cipherModel) {
+                var cipher = new Cipher(cipherModel, true);
+                return loginService.saveWithServer(cipher).then(function (c) {
+                    $analytics.eventTrack('Added Cipher');
                     toastr.success(i18nService.addedLogin);
                     $scope.close();
                 });
@@ -68,11 +68,11 @@
         };
 
         $scope.addField = function (type) {
-            if (!$scope.login.fields) {
-                $scope.login.fields = [];
+            if (!$scope.cipher.fields) {
+                $scope.cipher.fields = [];
             }
 
-            $scope.login.fields.push({
+            $scope.cipher.fields.push({
                 type: parseInt(type),
                 name: null,
                 value: null
@@ -80,9 +80,9 @@
         };
 
         $scope.removeField = function (field) {
-            var index = $scope.login.fields.indexOf(field);
+            var index = $scope.cipher.fields.indexOf(field);
             if (index > -1) {
-                $scope.login.fields.splice(index, 1);
+                $scope.cipher.fields.splice(index, 1);
             }
         };
 
@@ -92,7 +92,7 @@
                 animation: 'in-slide-up',
                 addState: {
                     from: from,
-                    login: $scope.login
+                    cipher: $scope.cipher
                 }
             });
         };

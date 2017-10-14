@@ -3,7 +3,7 @@
         <a href="" ng-click="close()">{{i18n.close}}</a>
     </div>
     <div class="right">
-        <a href="" ng-click="edit(login)">{{i18n.edit}}</a>
+        <a href="" ng-click="edit(cipher)">{{i18n.edit}}</a>
     </div>
     <div class="title">{{i18n.viewLogin}}</div>
 </div>
@@ -12,42 +12,42 @@
         <div class="list-section">
             <div class="list-section-header">
                 {{i18n.loginInformation}}
-                <i class="fa fa-share-alt fa-lg pull-right" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
+                <i class="fa fa-share-alt fa-lg pull-right" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
             </div>
             <div class="list-section-items">
                 <div class="list-section-item">
                     <span class="item-label">{{i18n.name}}</span>
-                    {{login.name}}
+                    {{cipher.name}}
                 </div>
-                <div class="list-section-item" ng-if="login.uri" title="{{login.uri}}">
-                    <a class="btn-list" href="" title="{{i18n.launchWebsite}}" ng-click="launchWebsite(login)"
-                       ng-show="login.showLaunch">
+                <div class="list-section-item" ng-if="cipher.uri" title="{{cipher.uri}}">
+                    <a class="btn-list" href="" title="{{i18n.launchWebsite}}" ng-click="launchWebsite(cipher)"
+                       ng-show="cipher.showLaunch">
                         <i class="fa fa-lg fa-share-square-o"></i>
                     </a>
                     <span class="item-label">{{i18n.website}}</span>
-                    {{login.website}}
+                    {{cipher.website}}
                 </div>
-                <div class="list-section-item" ng-if="login.username">
+                <div class="list-section-item" ng-if="cipher.username">
                     <a class="btn-list" href="" title="{{i18n.copyUsername}}" ngclipboard ngclipboard-error="clipboardError(e)"
-                       ngclipboard-success="clipboardSuccess(e, i18n.username)" data-clipboard-text="{{login.username}}">
+                       ngclipboard-success="clipboardSuccess(e, i18n.username)" data-clipboard-text="{{cipher.username}}">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
                     <span class="item-label">{{i18n.username}}</span>
-                    <span id="username">{{login.username}}</span>
+                    <span id="username">{{cipher.username}}</span>
                 </div>
-                <div class="list-section-item" ng-if="login.password">
+                <div class="list-section-item" ng-if="cipher.password">
                     <a class="btn-list" href="" title="{{i18n.copyPassword}}" ngclipboard ngclipboard-error="clipboardError(e)"
-                       ngclipboard-success="clipboardSuccess(e, i18n.password)" data-clipboard-text="{{login.password}}">
+                       ngclipboard-success="clipboardSuccess(e, i18n.password)" data-clipboard-text="{{cipher.password}}">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
                     <a class="btn-list" href="" title="{{i18n.togglePassword}}" ng-click="togglePassword()">
                         <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>
                     </a>
                     <span class="item-label">{{i18n.password}}</span>
-                    <span ng-show="!showPassword" class="monospaced">{{login.maskedPassword}}</span>
-                    <span id="password" ng-show="showPassword" class="monospaced">{{login.password}}</span>
+                    <span ng-show="!showPassword" class="monospaced">{{cipher.maskedPassword}}</span>
+                    <span id="password" ng-show="showPassword" class="monospaced">{{cipher.password}}</span>
                 </div>
-                <div class="list-section-item totp" ng-class="{'low': totpLow}" ng-if="login.totp && totpCode">
+                <div class="list-section-item totp" ng-class="{'low': totpLow}" ng-if="cipher.totp && totpCode">
                     <a class="btn-list" href="" title="{{i18n.copyVerificationCode}}"
                        ngclipboard ngclipboard-error="clipboardError(e)"
                        ngclipboard-success="clipboardSuccess(e, i18n.verificationCodeTotp)" data-clipboard-text="{{totpCode}}">
@@ -68,20 +68,20 @@
                 </div>
             </div>
         </div>
-        <div class="list-section" ng-if="login.notes">
+        <div class="list-section" ng-if="cipher.notes">
             <div class="list-section-header">
                 {{i18n.notes}}
             </div>
             <div class="list-section-items">
-                <div class="list-section-item pre">{{login.notes}}</div>
+                <div class="list-section-item pre">{{cipher.notes}}</div>
             </div>
         </div>
-        <div class="list-section" ng-if="login.fields && login.fields.length">
+        <div class="list-section" ng-if="cipher.fields && cipher.fields.length">
             <div class="list-section-header">
                 {{i18n.customFields}}
             </div>
             <div class="list-section-items">
-                <div class="list-section-item" ng-repeat="field in login.fields">
+                <div class="list-section-item" ng-repeat="field in cipher.fields">
                     <a class="btn-list" href="" title="{{i18n.copyValue}}" ngclipboard ngclipboard-error="clipboardError(e)"
                        ngclipboard-success="clipboardSuccess(e, i18n.value)" data-clipboard-text="{{field.value}}"
                        ng-if="field.type !== constants.fieldType.boolean && field.value">
@@ -106,13 +106,13 @@
                 </div>
             </div>
         </div>
-        <div class="list-section" ng-if="showAttachments && isPremium && login.attachments && login.attachments.length">
+        <div class="list-section" ng-if="showAttachments && isPremium && cipher.attachments && cipher.attachments.length">
             <div class="list-section-header">
                 {{i18n.attachments}}
             </div>
             <div class="list-section-items">
                 <a class="list-section-item list-allow-selection" href="#" stop-click
-                   ng-repeat="attachment in login.attachments"
+                   ng-repeat="attachment in cipher.attachments"
                    ng-click="download(attachment)">
                     <i class="fa fa-download right-icon fa-fw no-animation" ng-if="!attachment.downloading"></i>
                     <i class="fa fa-spin fa-spinner right-icon fa-fw no-animation" ng-if="attachment.downloading"></i>

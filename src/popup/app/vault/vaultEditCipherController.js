@@ -1,30 +1,30 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultEditLoginController', function ($scope, $state, $stateParams, loginService, folderService,
+    .controller('vaultEditCipherController', function ($scope, $state, $stateParams, loginService, folderService,
         cryptoService, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.showAttachments = !utilsService.isEdge();
         $scope.addFieldType = constantsService.fieldType.text.toString();
-        var loginId = $stateParams.loginId;
+        var cipherId = $stateParams.cipherId;
         var fromView = $stateParams.fromView;
         var from = $stateParams.from;
 
-        $scope.login = {
+        $scope.cipher = {
             folderId: null
         };
 
         $('#name').focus();
 
-        if ($stateParams.login) {
-            angular.extend($scope.login, $stateParams.login);
+        if ($stateParams.cipher) {
+            angular.extend($scope.cipher, $stateParams.cipher);
         }
         else {
-            loginService.get(loginId).then(function (login) {
-                return login.decrypt();
+            loginService.get(cipherId).then(function (cipher) {
+                return cipher.decrypt();
             }).then(function (model) {
-                $scope.login = model;
+                $scope.cipher = model;
             });
         }
 
@@ -41,10 +41,10 @@ angular
                 return;
             }
 
-            $scope.savePromise = loginService.encrypt(model).then(function (loginModel) {
-                var login = new Login(loginModel, true);
-                return loginService.saveWithServer(login).then(function (login) {
-                    $analytics.eventTrack('Edited Login');
+            $scope.savePromise = loginService.encrypt(model).then(function (cipherModel) {
+                var cipher = new Cipher(cipherModel, true);
+                return loginService.saveWithServer(cipher).then(function (c) {
+                    $analytics.eventTrack('Edited Cipher');
                     toastr.success(i18nService.editedLogin);
                     $scope.close();
                 });
@@ -60,8 +60,8 @@ angular
                 cancelButtonText: i18nService.no
             }, function (confirmed) {
                 if (confirmed) {
-                    loginService.deleteWithServer(loginId).then(function () {
-                        $analytics.eventTrack('Deleted Login');
+                    loginService.deleteWithServer(cipherId).then(function () {
+                        $analytics.eventTrack('Deleted Cipher');
                         toastr.success(i18nService.deletedLogin);
                         $state.go('tabs.vault', {
                             animation: 'out-slide-down'
@@ -73,7 +73,7 @@ angular
 
         $scope.attachments = function () {
             $state.go('attachments', {
-                id: loginId,
+                id: cipherId,
                 animation: 'in-slide-up',
                 from: from,
                 fromView: fromView
@@ -82,8 +82,8 @@ angular
 
         $scope.close = function () {
             if (fromView) {
-                $state.go('viewLogin', {
-                    loginId: loginId,
+                $state.go('viewCipher', {
+                    cipherId: cipherId,
                     animation: 'out-slide-down',
                     from: from
                 });
@@ -96,11 +96,11 @@ angular
         };
 
         $scope.addField = function (type) {
-            if (!$scope.login.fields) {
-                $scope.login.fields = [];
+            if (!$scope.cipher.fields) {
+                $scope.cipher.fields = [];
             }
 
-            $scope.login.fields.push({
+            $scope.cipher.fields.push({
                 type: parseInt(type),
                 name: null,
                 value: null
@@ -108,14 +108,14 @@ angular
         };
 
         $scope.removeField = function (field) {
-            var index = $scope.login.fields.indexOf(field);
+            var index = $scope.cipher.fields.indexOf(field);
             if (index > -1) {
-                $scope.login.fields.splice(index, 1);
+                $scope.cipher.fields.splice(index, 1);
             }
         };
 
         $scope.generatePassword = function () {
-            if ($scope.login.password) {
+            if ($scope.cipher.password) {
                 SweetAlert.swal({
                     title: i18nService.overwritePassword,
                     text: i18nService.overwritePasswordConfirmation,
@@ -140,8 +140,8 @@ angular
                 animation: 'in-slide-up',
                 editState: {
                     fromView: fromView,
-                    loginId: loginId,
-                    login: $scope.login,
+                    cipherId: cipherId,
+                    cipher: $scope.cipher,
                     from: from
                 }
             });

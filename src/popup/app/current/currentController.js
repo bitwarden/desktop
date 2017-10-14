@@ -1,7 +1,7 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, loginService, utilsService, toastr, $q, $window, $state, $timeout,
+    .controller('currentController', function ($scope, loginService, utilsService, toastr, $window, $state, $timeout,
         autofillService, $analytics, i18nService, totpService, tokenService) {
         $scope.i18n = i18nService;
 
@@ -10,7 +10,7 @@ angular
             domain = null,
             canAutofill = false;
 
-        $scope.logins = [];
+        $scope.ciphers = [];
         $scope.loaded = false;
         $scope.searchText = null;
         $('#search').focus();
@@ -42,9 +42,9 @@ angular
                         canAutofill = true;
                     });
 
-                $q.when(loginService.getAllDecryptedForDomain(domain)).then(function (logins) {
+                loginService.getAllDecryptedForDomain(domain).then(function (logins) {
                     $scope.loaded = true;
-                    $scope.logins = logins;
+                    $scope.ciphers = ciphers;
                 });
             });
         }
@@ -59,8 +59,8 @@ angular
             $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
         };
 
-        $scope.addLogin = function () {
-            $state.go('addLogin', {
+        $scope.addCipher = function () {
+            $state.go('addCipher', {
                 animation: 'in-slide-up',
                 name: domain,
                 uri: url,
@@ -68,14 +68,14 @@ angular
             });
         };
 
-        $scope.fillLogin = function (login) {
+        $scope.fillCipher = function (cipher) {
             if (!canAutofill) {
                 $analytics.eventTrack('Autofilled Error');
                 toastr.error(i18nService.autofillError);
             }
 
             autofillService.doAutoFill({
-                login: login,
+                cipher: cipher,
                 pageDetails: pageDetails,
                 fromBackground: false
             }).then(function (totpCode) {
@@ -92,21 +92,21 @@ angular
             });
         };
 
-        $scope.viewLogin = function (login) {
-            $state.go('viewLogin', {
-                loginId: login.id,
+        $scope.viewCipher = function (cipher) {
+            $state.go('viewCipher', {
+                cipherId: cipher.id,
                 animation: 'in-slide-up',
                 from: 'current'
             });
         };
 
-        $scope.sortUriMatch = function (login) {
+        $scope.sortUriMatch = function (cipher) {
             // exact matches should sort earlier.
-            return url && url.startsWith(login.uri) ? 0 : 1;
+            return url && url.startsWith(cipher.uri) ? 0 : 1;
         };
 
-        $scope.sortLastUsed = function (login) {
-            return login.localData && login.localData.lastUsedDate ? -1 * login.localData.lastUsedDate : 0;
+        $scope.sortLastUsed = function (cipher) {
+            return cipher.localData && cipher.localData.lastUsedDate ? -1 * cipher.localData.lastUsedDate : 0;
         };
 
         $scope.searchVault = function () {
