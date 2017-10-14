@@ -182,7 +182,7 @@ function initLoginService() {
             key = null,
             localData = null;
 
-        self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserIdPromise().then(function (userId) {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(self.localDataKey);
         }).then(function (data) {
@@ -191,11 +191,11 @@ function initLoginService() {
                 localData = {};
             }
             return self.utilsService.getObjFromStorage(key);
-        }).then(function (logins) {
+        }).then(function (ciphers) {
             var response = [];
-            for (var id in logins) {
+            for (var id in ciphers) {
                 if (id) {
-                    response.push(new Login(logins[id], false, localData[id]));
+                    response.push(new Cipher(ciphers[id], false, localData[id]));
                 }
             }
 
@@ -205,7 +205,7 @@ function initLoginService() {
 
     LoginService.prototype.getAllDecrypted = function () {
         var self = this,
-            decLogins = [];
+            decCiphers = [];
 
         return self.cryptoService.getKey().then(function (key) {
             if (!key) {
@@ -219,19 +219,19 @@ function initLoginService() {
             }
 
             return self.getAll();
-        }).then(function (logins) {
+        }).then(function (ciphers) {
             var promises = [];
-            for (var i = 0; i < logins.length; i++) {
+            for (var i = 0; i < ciphers.length; i++) {
                 /* jshint ignore:start */
-                promises.push(logins[i].decrypt().then(function (login) {
-                    decLogins.push(login);
+                promises.push(ciphers[i].decrypt().then(function (cipher) {
+                    decCiphers.push(cipher);
                 }));
                 /* jshint ignore:end */
             }
 
             return Q.all(promises);
         }).then(function () {
-            self.decryptedCipherCache = decLogins;
+            self.decryptedCipherCache = decCiphers;
             return self.decryptedCipherCache;
         });
     };

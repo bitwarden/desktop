@@ -40,7 +40,7 @@
                 <a href="#" stop-click ng-click="viewLogin(login)"
                    class="list-grouped-item condensed" title="{{i18n.edit}} {{login.name}}"
                    ng-repeat="login in vaultFolderLogins = (vaultLogins | filter: { folderId: folder.id }
-                            | filter: searchLogins() | orderBy: ['name', 'username']) track by $index">
+                            | filter: searchLogins() | orderBy: ['name', 'subTitle']) track by $index">
                     <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
                           data-clipboard-text="{{login.password}}" ng-class="{'disabled': !login.password}">
@@ -61,7 +61,7 @@
                         <i class="fa fa-share-alt text-muted" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
                         <i class="fa fa-paperclip text-muted" ng-if="login.attachments" title="{{i18n.attachments}}"></i>
                     </span>
-                    <span class="detail">{{login.username}}</span>
+                    <span class="detail">{{login.subTitle}}</span>
                 </a>
             </div>
         </div>
@@ -72,7 +72,7 @@
             <div class="list-section" style="padding-top: 0; padding-bottom: 0;">
                 <a href="#" stop-click ng-click="viewLogin(login)"
                    class="list-section-item condensed" title="{{i18n.edit}} {{login.name}}"
-                   ng-repeat="login in searchResults = (vaultLogins | filter: searchLogins() | orderBy: ['name', 'username'])
+                   ng-repeat="login in searchResults = (vaultLogins | filter: searchLogins() | orderBy: ['name', 'subTitle'])
                     track by $index">
                     <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}" ngclipboard
                           ngclipboard-error="clipboardError(e)" ngclipboard-success="clipboardSuccess(e, i18n.password)"
@@ -94,7 +94,7 @@
                         <i class="fa fa-share-alt text-muted" ng-if="login.organizationId" title="{{i18n.shared}}"></i>
                         <i class="fa fa-paperclip text-muted" ng-if="login.attachments" title="{{i18n.attachments}}"></i>
                     </span>
-                    <span class="detail">{{login.username}}</span>
+                    <span class="detail">{{login.subTitle}}</span>
                 </a>
             </div>
         </div>

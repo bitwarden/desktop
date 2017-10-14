@@ -278,17 +278,13 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
 }
 
 (function () {
-    var bg = chrome.extension.getBackgroundPage(),
-        cryptoService = bg ? bg.bg_cryptoService : null;
-
     CipherString.prototype.decrypt = function (orgId) {
         if (this.decryptedValue) {
-            var deferred = Q.defer();
-            deferred.resolve(this.decryptedValue);
-            return deferred.promise;
+            return Q(this.decryptedValue);
         }
 
-        var self = this;
+        var self = this,
+            cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService;
         return cryptoService.getOrgKey(orgId).then(function (orgKey) {
             return cryptoService.decrypt(self, orgKey);
         }).then(function (decValue) {
@@ -416,15 +412,19 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
             switch (self.type) {
                 case 1: // cipherType.login
                     model.login = decObj;
+                    model.subTitle = model.login.username;
                     break;
                 case 2: // cipherType.secureNote
                     model.secureNote = decObj;
+                    model.subTitle = '-';
                     break;
                 case 3: // cipherType.card
                     model.card = decObj;
+                    model.subTitle = model.identity.brand;
                     break;
                 case 4: // cipherType.identity
                     model.identity = decObj;
+                    model.subTitle = model.identity.firstName;
                     break;
                 default:
                     break;

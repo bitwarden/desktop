@@ -51,11 +51,11 @@
             });
             promises.push(folderPromise);
 
-            var loginPromise = $q.when(loginService.getAllDecrypted());
-            loginPromise.then(function (logins) {
-                decLogins = logins;
+            var cipherPromise = loginService.getAllDecrypted();
+            cipherPromise.then(function (ciphers) {
+                decLogins = ciphers;
             });
-            promises.push(loginPromise);
+            promises.push(cipherPromise);
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;

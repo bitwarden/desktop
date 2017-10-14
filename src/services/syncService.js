@@ -139,14 +139,11 @@ function initSyncService() {
     }
 
     function syncCiphers(self, userId, response) {
-        var logins = {};
+        var ciphers = {};
         for (var i = 0; i < response.length; i++) {
-            var data = response[i];
-            if (data.type === 1) {
-                logins[data.id] = new LoginData(data, userId);
-            }
+            ciphers[response[i].id] = new CipherData(response[i], userId);
         }
-        return self.loginService.replace(logins);
+        return self.loginService.replace(ciphers);
     }
 
     function syncSettings(self, userId, response) {

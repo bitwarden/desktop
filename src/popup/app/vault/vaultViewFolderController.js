@@ -39,17 +39,17 @@
                 promises.push(folderDeferred.promise);
             }
 
-            var loginPromise = $q.when(loginService.getAllDecryptedForFolder($scope.folder.id));
-            loginPromise.then(function (logins) {
+            var cipherPromise = loginService.getAllDecryptedForFolder($scope.folder.id);
+            cipherPromise.then(function (ciphers) {
                 if (utilsService.isEdge()) {
                     // Edge is super slow at sorting
-                    decLogins = logins;
+                    decLogins = ciphers;
                 }
                 else {
-                    decLogins = logins.sort(loginSort);
+                    decLogins = ciphers.sort(cipherSort);
                 }
             });
-            promises.push(loginPromise);
+            promises.push(cipherPromise);
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
@@ -68,7 +68,7 @@
             });
         }
 
-        function loginSort(a, b) {
+        function cipherSort(a, b) {
             if (!a.name) {
                 return -1;
             }
@@ -85,19 +85,19 @@
                 return -1;
             }
 
-            if (!a.username) {
+            if (!a.subTitle) {
                 return -1;
             }
-            if (!b.username) {
+            if (!b.subTitle) {
                 return 1;
             }
 
-            var aUsername = a.username.toLowerCase(),
-                bUsername = b.username.toLowerCase();
-            if (aUsername > bUsername) {
+            var aSubTitle = a.subTitle.toLowerCase(),
+                bSubTitle = b.subTitle.toLowerCase();
+            if (aSubTitle > bSubTitle) {
                 return 1;
             }
-            if (aUsername < bUsername) {
+            if (aSubTitle < bSubTitle) {
                 return -1;
             }
 
@@ -123,7 +123,7 @@
 
             var matchedLogins = [];
             for (var i = 0; i < decLogins.length; i++) {
-                if (searchLogin(decLogins[i])) {
+                if (searchCipher(decLogins[i])) {
                     matchedLogins.push(decLogins[i]);
                 }
             }
@@ -149,15 +149,15 @@
             $scope.loadMore();
         }
 
-        function searchLogin(login) {
+        function searchCipher(cipher) {
             var searchTerm = $scope.searchText.toLowerCase();
-            if (login.name && login.name.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (cipher.name && cipher.name.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
-            if (login.username && login.username.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (cipher.subTitle && cipher.subTitle.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
-            if (login.uri && login.uri.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (cipher.login && cipher.login.uri && cipher.login.uri.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
 
