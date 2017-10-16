@@ -70,10 +70,10 @@
             $analytics.eventTrack('Selected Generated Password');
 
             if (addState) {
-                addState.login.password = $scope.password;
+                addState.cipher.login.password = $scope.password;
             }
             else if (editState) {
-                editState.login.password = $scope.password;
+                editState.cipher.login.password = $scope.password;
             }
 
             dismiss();
@@ -81,18 +81,18 @@
 
         function dismiss() {
             if (addState) {
-                $state.go('addLogin', {
+                $state.go('addCipher', {
                     animation: 'out-slide-down',
                     from: addState.from,
-                    login: addState.login
+                    cipher: addState.cipher
                 });
             }
             else if (editState) {
-                $state.go('editLogin', {
+                $state.go('editCipher', {
                     animation: 'out-slide-down',
-                    login: editState.login,
+                    cipher: editState.cipher,
                     fromView: editState.fromView,
-                    loginId: editState.loginId,
+                    cipherId: editState.cipherId,
                     from: editState.from
                 });
             }
