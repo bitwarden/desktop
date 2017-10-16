@@ -6,13 +6,13 @@ angular
             cipher: '<'
         },
         template: '<div class="icon" ng-if="$ctrl.enabled">' +
-        '<img src="{{$ctrl.image}}" fallback-src="{{$ctrl.fallbackImage}}" ng-if="$ctrl.image" alt="" />' +
+        '<img ng-src="{{$ctrl.image}}" fallback-src="{{$ctrl.fallbackImage}}" ng-if="$ctrl.image" alt="" />' +
         '<i class="fa fa-fw fa-lg {{$ctrl.icon}}" ng-if="!$ctrl.image"></i>' +
         '</div>',
         controller: function (stateService, constantsService) {
             var ctrl = this;
 
-            ctrl.$onInit = function () {
+            ctrl.$onChanges = function () {
                 ctrl.enabled = stateService.getState('faviconEnabled');
                 if (ctrl.enabled) {
                     switch (ctrl.cipher.type) {
@@ -34,12 +34,6 @@ angular
                 }
             };
 
-            ctrl.$onChanges = function () {
-                if (ctrl.cipher.type === constantsService.cipherType.login) {
-                    setLoginIcon(ctrl.cipher);
-                }
-            };
-
             function setLoginIcon() {
                 if (ctrl.cipher.login.uri) {
                     var hostnameUri = ctrl.cipher.login.uri,
@@ -47,9 +41,11 @@ angular
 
                     if (hostnameUri.indexOf('androidapp://') === 0) {
                         ctrl.icon = 'fa-android';
+                        ctrl.image = null;
                     }
                     else if (hostnameUri.indexOf('iosapp://') === 0) {
                         ctrl.icon = 'fa-apple';
+                        ctrl.image = null;
                     }
                     else if (hostnameUri.indexOf('://') === -1 && hostnameUri.indexOf('http://') !== 0 &&
                         hostnameUri.indexOf('https://') !== 0) {
@@ -61,6 +57,7 @@ angular
                     }
 
                     if (isWebsite) {
+                        ctrl.icon = 'fa-globe';
                         try {
                             var url = new URL(hostnameUri);
                             ctrl.image = 'https://icons.bitwarden.com/' + url.hostname + '/icon.png';
@@ -69,9 +66,9 @@ angular
                         catch (e) { }
                     }
                 }
-
-                if (!ctrl.icon) {
+                else {
                     ctrl.icon = 'fa-globe';
+                    ctrl.image = null;
                 }
             }
         }
