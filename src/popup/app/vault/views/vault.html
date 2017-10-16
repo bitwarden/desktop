@@ -55,7 +55,7 @@
                           ng-class="{'disabled': !cipher.uri}">
                         <i class="fa fa-lg fa-share-square-o"></i>
                     </span>
-                    <icon uri="cipher.uri"></icon>
+                    <icon cipher="cipher"></icon>
                     <span class="text">
                         {{cipher.name}}
                         <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
@@ -88,7 +88,7 @@
                           ng-class="{'disabled': !cipher.uri}">
                         <i class="fa fa-lg fa-share-square-o"></i>
                     </span>
-                    <icon uri="cipher.uri"></icon>
+                    <icon cipher="cipher"></icon>
                     <span class="text">
                         {{cipher.name}}
                         <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
