@@ -420,15 +420,33 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
                     break;
                 case self.constantsService.cipherType.secureNote:
                     model.secureNote = decObj;
-                    model.subTitle = '-';
+                    model.subTitle = null;
                     break;
                 case self.constantsService.cipherType.card:
                     model.card = decObj;
-                    model.subTitle = model.identity.brand;
+                    model.subTitle = model.card.brand;
+                    if (model.card.brand) {
+                        model.subTitle = model.card.brand;
+                    }
+                    if (model.card.number && model.card.number.length >= 4) {
+                        if (model.subTitle !== '') {
+                            model.subTitle += ', ';
+                        }
+                        model.subTitle += ('*' + model.card.number.substr(model.card.number.length - 4));
+                    }
                     break;
                 case self.constantsService.cipherType.identity:
                     model.identity = decObj;
-                    model.subTitle = model.identity.firstName;
+                    model.subTitle = '';
+                    if (model.identity.firstName) {
+                        model.subTitle = model.identity.firstName;
+                    }
+                    if (model.identity.lastName) {
+                        if (model.subTitle !== '') {
+                            model.subTitle += ' ';
+                        }
+                        model.subTitle += model.identity.lastName;
+                    }
                     break;
                 default:
                     break;

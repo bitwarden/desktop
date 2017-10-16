@@ -1,5 +1,5 @@
-﻿var CipherRequest = function (cipher, type) {
-    this.type = type;
+﻿var CipherRequest = function (cipher) {
+    this.type = cipher.type;
     this.folderId = cipher.folderId;
     this.organizationId = cipher.organizationId;
     this.name = cipher.name ? cipher.name.encryptedString : null;
@@ -7,7 +7,7 @@
     this.favorite = cipher.favorite;
 
     var constantsService = chrome.extension.getBackgroundPage().bg_constantsService;
-    switch (type) {
+    switch (this.type) {
         case constantsService.cipherType.login:
             this.login = {
                 uri: cipher.login.uri ? cipher.login.uri.encryptedString : null,

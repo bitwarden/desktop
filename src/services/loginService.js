@@ -314,8 +314,7 @@ function initLoginService() {
         var deferred = Q.defer();
 
         var self = this,
-            // TODO
-            request = new CipherRequest(cipher, 1); // 1 = Login
+            request = new CipherRequest(cipher);
 
         if (!cipher.id) {
             self.apiService.postCipher(request).then(apiSuccess, function (response) {
