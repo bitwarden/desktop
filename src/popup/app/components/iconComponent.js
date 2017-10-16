@@ -11,9 +11,9 @@ angular
         '</div>',
         controller: function (stateService, constantsService) {
             var ctrl = this;
+            ctrl.enabled = stateService.getState('faviconEnabled');
 
             ctrl.$onChanges = function () {
-                ctrl.enabled = stateService.getState('faviconEnabled');
                 if (ctrl.enabled) {
                     switch (ctrl.cipher.type) {
                         case constantsService.cipherType.login:
