@@ -12,34 +12,38 @@ angular
 
         $scope.isPremium = tokenService.getPremium();
         $scope.cipher = null;
+        var cipherObj = null;
         loginService.get($stateParams.cipherId).then(function (cipher) {
             if (!cipher) {
                 return;
             }
 
+            cipherObj = cipher;
             return cipher.decrypt();
         }).then(function (model) {
             $scope.cipher = model;
 
-            if (model.password) {
-                $scope.cipher.maskedPassword = $scope.maskValue(model.password);
-            }
+            if (model.type == constantsService.cipherType.login && model.login) {
+                if (model.login.password) {
+                    $scope.cipher.maskedPassword = $scope.maskValue(model.login.password);
+                }
 
-            if (model.uri) {
-                $scope.cipher.showLaunch = model.uri.startsWith('http://') || model.uri.startsWith('https://');
-                var domain = utilsService.getDomain(model.uri);
-                if (domain) {
-                    $scope.cipher.website = domain;
+                if (model.login.uri) {
+                    $scope.cipher.showLaunch = model.login.uri.startsWith('http://') || model.login.uri.startsWith('https://');
+                    var domain = utilsService.getDomain(model.login.uri);
+                    if (domain) {
+                        $scope.cipher.login.website = domain;
+                    }
+                    else {
+                        $scope.cipher.login.website = model.login.uri;
+                    }
                 }
                 else {
-                    $scope.cipher.website = model.uri;
+                    $scope.cipher.showLaunch = false;
                 }
             }
-            else {
-                $scope.cipher.showLaunch = false;
-            }
 
-            if (model.totp && (cipher.organizationUseTotp || tokenService.getPremium())) {
+            if (model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
                 totpUpdateCode();
                 totpTick();
 
@@ -87,7 +91,7 @@ angular
         $scope.launchWebsite = function (cipher) {
             if (cipher.showLaunch) {
                 $analytics.eventTrack('Launched Website');
-                chrome.tabs.create({ url: cipher.uri });
+                chrome.tabs.create({ url: cipher.login.uri });
             }
         };
 
@@ -192,11 +196,11 @@ angular
         });
 
         function totpUpdateCode() {
-            if (!$scope.cipher.totp) {
+            if ($scope.cipher.type !== constantsService.cipherType.login || !$scope.cipher.login.totp) {
                 return;
             }
 
-            totpService.getCode($scope.cipher.totp).then(function (code) {
+            totpService.getCode($scope.cipher.login.totp).then(function (code) {
                 $timeout(function () {
                     if (code) {
                         $scope.totpCodeFormatted = code.substring(0, 3) + ' ' + code.substring(3);

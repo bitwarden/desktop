@@ -28,62 +28,13 @@ function initLoginService() {
             type: login.type
         };
 
-        function encryptCipherData(cipher, model, key, self) {
-            switch (cipher.type) {
-                case constantsService.cipherType.login:
-                    return encryptObjProperty(cipher.login, model.login, {
-                        uri: null,
-                        username: null,
-                        password: null,
-                        totp: null
-                    }, key, self);
-                case constantsService.cipherType.secureNote:
-                    model.secureNote = {
-                        type: cipher.secureNote.type
-                    };
-                    return Q();
-                case constantsService.cipherType.card:
-                    return encryptObjProperty(cipher.card, model.card, {
-                        cardholderName: null,
-                        brand: null,
-                        number: null,
-                        expMonth: null,
-                        expYear: null,
-                        code: null
-                    }, key, self);
-                case constantsService.cipherType.identity:
-                    return encryptObjProperty(cipher.identity, model.identity, {
-                        title: null,
-                        firstName: null,
-                        middleName: null,
-                        lastName: null,
-                        address1: null,
-                        address2: null,
-                        address3: null,
-                        city: null,
-                        state: null,
-                        postalCode: null,
-                        country: null,
-                        company: null,
-                        email: null,
-                        phone: null,
-                        ssn: null,
-                        username: null,
-                        passportNumber: null,
-                        licenseNumber: null
-                    }, key, self);
-                default:
-                    throw 'Unknown type.';
-            }
-        }
-
         return self.cryptoService.getOrgKey(login.organizationId).then(function (key) {
             return Q.all([
                 encryptObjProperty(login, model, {
                     name: null,
                     notes: null
                 }, key, self),
-                encryptCipherData(login, model, key),
+                encryptCipherData(login, model, key, self),
                 self.encryptFields(login.fields, key).then(function (fields) {
                     model.fields = fields;
                 })
@@ -93,10 +44,62 @@ function initLoginService() {
         });
     };
 
+    function encryptCipherData(cipher, model, key, self) {
+        switch (cipher.type) {
+            case self.constantsService.cipherType.login:
+                model.login = {};
+                return encryptObjProperty(cipher.login, model.login, {
+                    uri: null,
+                    username: null,
+                    password: null,
+                    totp: null
+                }, key, self);
+            case self.constantsService.cipherType.secureNote:
+                model.secureNote = {
+                    type: cipher.secureNote.type
+                };
+                return Q();
+            case self.constantsService.cipherType.card:
+                model.card = {};
+                return encryptObjProperty(cipher.card, model.card, {
+                    cardholderName: null,
+                    brand: null,
+                    number: null,
+                    expMonth: null,
+                    expYear: null,
+                    code: null
+                }, key, self);
+            case self.constantsService.cipherType.identity:
+                model.identity = {};
+                return encryptObjProperty(cipher.identity, model.identity, {
+                    title: null,
+                    firstName: null,
+                    middleName: null,
+                    lastName: null,
+                    address1: null,
+                    address2: null,
+                    address3: null,
+                    city: null,
+                    state: null,
+                    postalCode: null,
+                    country: null,
+                    company: null,
+                    email: null,
+                    phone: null,
+                    ssn: null,
+                    username: null,
+                    passportNumber: null,
+                    licenseNumber: null
+                }, key, self);
+            default:
+                throw 'Unknown type.';
+        }
+    }
+
     LoginService.prototype.encryptFields = function (fields, key) {
         var self = this;
         if (!fields || !fields.length) {
-            return null;
+            return Q(null);
         }
 
         var encFields = [];
@@ -132,20 +135,19 @@ function initLoginService() {
         for (var prop in map) {
             if (map.hasOwnProperty(prop)) {
                 /* jshint ignore:start */
-                (function (theProp) {
+                (function (theProp, theModel) {
                     var promise = Q().then(function () {
-                        var objProb = obj[(map[theProp] || theProp)];
-                        if (objProb && objProb !== '') {
-                            return self.cryptoService.encrypt(objProb, key);
+                        var objProp = obj[(map[theProp] || theProp)];
+                        if (objProp && objProp !== '') {
+                            return self.cryptoService.encrypt(objProp, key);
                         }
                         return null;
                     }).then(function (val) {
-                        model[theProp] = val;
-                        return;
+                        theModel[theProp] = val;
                     });
 
                     promises.push(promise);
-                })(prop);
+                })(prop, model);
                 /* jshint ignore:end */
             }
         }
@@ -169,7 +171,7 @@ function initLoginService() {
             return self.utilsService.getObjFromStorage(key);
         }).then(function (ciphers) {
             if (ciphers && id in ciphers) {
-                return new Login(ciphers[id], false, localData[id]);
+                return new Cipher(ciphers[id], false, localData[id]);
             }
 
             return null;
@@ -329,7 +331,7 @@ function initLoginService() {
         function apiSuccess(response) {
             cipher.id = response.id;
             self.userService.getUserIdPromise().then(function (userId) {
-                var data = new LoginData(response, userId);
+                var data = new CipherData(response, userId);
                 return self.upsert(data);
             }).then(function () {
                 deferred.resolve(cipher);
@@ -514,11 +516,11 @@ function initLoginService() {
                     return;
                 }
 
-                data = new LoginData(response, userId);
+                data = new CipherData(response, userId);
                 return self.upsert(data);
             }).then(function () {
                 if (data) {
-                    deferred.resolve(new Login(data));
+                    deferred.resolve(new CipherData(data));
                 }
             });
         };

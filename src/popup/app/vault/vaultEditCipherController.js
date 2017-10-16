@@ -7,6 +7,7 @@ angular
         $scope.constants = constantsService;
         $scope.showAttachments = !utilsService.isEdge();
         $scope.addFieldType = constantsService.fieldType.text.toString();
+        $scope.selectedType = constantsService.cipherType.login.toString();
         var cipherId = $stateParams.cipherId;
         var fromView = $stateParams.fromView;
         var from = $stateParams.from;
@@ -34,14 +35,18 @@ angular
 
         utilsService.initListSectionItemListeners($(document), angular);
 
+        $scope.typeChanged = function () {
+            $scope.cipher.type = parseInt($scope.selectedType);
+        };
+
         $scope.savePromise = null;
-        $scope.save = function (model) {
-            if (!model.name) {
+        $scope.save = function () {
+            if (!$scope.cipher.name || $scope.cipher.name === '') {
                 toastr.error(i18nService.nameRequired, i18nService.errorsOccurred);
                 return;
             }
 
-            $scope.savePromise = loginService.encrypt(model).then(function (cipherModel) {
+            $scope.savePromise = loginService.encrypt($scope.cipher).then(function (cipherModel) {
                 var cipher = new Cipher(cipherModel, true);
                 return loginService.saveWithServer(cipher).then(function (c) {
                     $analytics.eventTrack('Edited Cipher');

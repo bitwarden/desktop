@@ -46,7 +46,7 @@
 
         $scope.savePromise = null;
         $scope.save = function () {
-            if (!cipher.name || cipher.name === '') {
+            if (!$scope.cipher.name || $scope.cipher.name === '') {
                 toastr.error(i18nService.nameRequired, i18nService.errorsOccurred);
                 return;
             }
