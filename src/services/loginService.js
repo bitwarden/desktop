@@ -284,7 +284,8 @@ function initLoginService() {
                 ciphersToReturn = [];
 
             for (var i = 0; i < ciphers.length; i++) {
-                if (ciphers[i].domain && matchingDomains.indexOf(ciphers[i].domain) > -1) {
+                if (ciphers[i].type === self.constantsService.cipherType.login && ciphers[i].login.domain &&
+                    matchingDomains.indexOf(ciphers[i].login.domain) > -1) {
                     ciphersToReturn.push(ciphers[i]);
                 }
             }

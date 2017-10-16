@@ -366,29 +366,34 @@
             }
         }
 
-        .btn-list {
-            cursor: pointer;
+
+
+        .action-buttons {
             float: right;
-            display: block;
-            padding: 10px 8px 10px 8px;
-            background: none;
-            border: none;
-            color: @brand-primary;
 
-            &:hover, &:focus {
-                color: darken(@brand-primary, 10%);
-            }
+            .btn-list {
+                float: left;
+                cursor: pointer;
+                padding: 10px 8px;
+                background: none;
+                border: none;
+                color: @brand-primary;
 
-            &.disabled {
-                color: @list-icon-color;
-
-                &:hover {
-                    color: @list-icon-color;
+                &:hover, &:focus {
+                    color: darken(@brand-primary, 10%);
                 }
-            }
 
-            &:first-child {
-                padding-right: 2px !important;
+                &.disabled {
+                    color: @list-icon-color;
+
+                    &:hover {
+                        color: @list-icon-color;
+                    }
+                }
+
+                &:last-child {
+                    padding-right: 2px !important;
+                }
             }
         }
 
@@ -412,8 +417,10 @@
         &.condensed {
             padding: 3px 10px;
 
-            .btn-list {
-                padding: 8px 5px;
+            .action-buttons {
+                .btn-list {
+                    padding: 8px 5px;
+                }
             }
 
             &:not(:hover):focus {

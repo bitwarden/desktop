@@ -140,6 +140,7 @@ var Login = function (obj, alreadyEncrypted, localData) {
 
 var Cipher = function (obj, alreadyEncrypted, localData) {
     this.constantsService = chrome.extension.getBackgroundPage().bg_constantsService;
+    this.utilsService = chrome.extension.getBackgroundPage().bg_utilsService;
 
     buildDomainModel(this, obj, {
         id: null,
@@ -417,6 +418,9 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
                 case self.constantsService.cipherType.login:
                     model.login = decObj;
                     model.subTitle = model.login.username;
+                    if (model.login.uri) {
+                        model.login.domain = self.utilsService.getDomain(model.login.uri);
+                    }
                     break;
                 case self.constantsService.cipherType.secureNote:
                     model.secureNote = decObj;

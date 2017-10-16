@@ -25,15 +25,17 @@ angular
                     url = tabs[0].url;
                 }
                 else {
-                    $scope.loaded = true;
-                    $scope.$apply();
+                    $timeout(function () {
+                        $scope.loaded = true;
+                    });
                     return;
                 }
 
                 domain = utilsService.getDomain(url);
                 if (!domain) {
-                    $scope.loaded = true;
-                    $scope.$apply();
+                    $timeout(function () {
+                        $scope.loaded = true;
+                    });
                     return;
                 }
 
@@ -42,22 +44,14 @@ angular
                         canAutofill = true;
                     });
 
-                loginService.getAllDecryptedForDomain(domain).then(function (logins) {
-                    $scope.loaded = true;
-                    $scope.ciphers = ciphers;
+                loginService.getAllDecryptedForDomain(domain).then(function (ciphers) {
+                    $timeout(function () {
+                        $scope.loaded = true;
+                        $scope.ciphers = ciphers;
+                    });
                 });
             });
         }
-
-        $scope.clipboardError = function (e, password) {
-            toastr.info(i18n.browserNotSupportClipboard);
-        };
-
-        $scope.clipboardSuccess = function (e, type) {
-            e.clearSelection();
-            toastr.info(type + i18nService.valueCopied);
-            $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
-        };
 
         $scope.addCipher = function () {
             $state.go('addCipher', {

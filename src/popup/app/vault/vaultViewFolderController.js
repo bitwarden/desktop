@@ -130,18 +130,6 @@
             resetList(matchedCiphers);
         };
 
-        $scope.launchWebsite = function (cipher) {
-            $timeout(function () {
-                if (cipher.uri.startsWith('http://') || cipher.uri.startsWith('https://')) {
-                    $analytics.eventTrack('Launched Website From Listing');
-                    chrome.tabs.create({ url: cipher.uri });
-                    if (utilsService.inPopup($window)) {
-                        $window.close();
-                    }
-                }
-            });
-        };
-
         function resetList(ciphers) {
             $scope.vaultCiphers = ciphers;
             $scope.pagedVaultCiphers = [];
@@ -199,16 +187,6 @@
                 cipher.cancelClick = false;
                 cipher.clicked = false;
             }, 200);
-        };
-
-        $scope.clipboardError = function (e) {
-            toastr.info(i18n.browserNotSupportClipboard);
-        };
-
-        $scope.clipboardSuccess = function (e, type) {
-            e.clearSelection();
-            $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
-            toastr.info(type + i18nService.valueCopied);
         };
 
         function storeState() {

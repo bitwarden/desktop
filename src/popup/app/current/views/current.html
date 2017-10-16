@@ -21,23 +21,8 @@
                    title="{{i18n.autoFill}} {{cipher.name}}"
                    ng-repeat="cipher in theCiphers = (ciphers | orderBy: [sortUriMatch, sortLastUsed, 'name', 'subTitle'])
                         track by $index">
-                    <span class="btn-list" stop-prop stop-click title="{{i18n.copyPassword}}"
-                          ngclipboard ngclipboard-error="clipboardError(e)"
-                          ngclipboard-success="clipboardSuccess(e, i18n.password)"
-                          data-clipboard-text="{{cipher.password}}" ng-class="{'disabled': !cipher.password}">
-                        <i class="fa fa-lg fa-key"></i>
-                    </span>
-                    <span class="btn-list" stop-prop stop-click title="{{i18n.copyUsername}}"
-                          ngclipboard ngclipboard-error="clipboardError(e)"
-                          ngclipboard-success="clipboardSuccess(e, i18n.username)"
-                          data-clipboard-text="{{cipher.username}}" ng-class="{'disabled': !cipher.username}">
-                        <i class="fa fa-lg fa-user"></i>
-                    </span>
-                    <span class="btn-list" ng-click="viewCipher(cipher)" stop-prop stop-click
-                          title="{{i18n.edit}} {{cipher.name}}">
-                        <i class="fa fa-lg fa-pencil"></i>
-                    </span>
-                    <icon uri="cipher.uri"></icon>
+                    <action-buttons cipher="cipher" show-view="true" on-view="viewCipher(cipher)"></action-buttons>
+                    <icon cipher="cipher"></icon>
                     <span class="text">
                         {{cipher.name}}
                         <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>

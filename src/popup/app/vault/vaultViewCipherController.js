@@ -111,9 +111,9 @@ angular
             return masked;
         };
 
-        $scope.clipboardSuccess = function (e, type) {
+        $scope.clipboardSuccess = function (e, type, aType) {
             e.clearSelection();
-            $analytics.eventTrack('Copied ' + (type === i18nService.username ? 'Username' : 'Password'));
+            $analytics.eventTrack('Copied ' + aType);
             toastr.info(type + i18nService.valueCopied);
         };
 

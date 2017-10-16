@@ -64,8 +64,17 @@
   "copyPassword": {
     "message": "Copy Password"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "copyUsername": {
     "message": "Copy Username"
+  },
+  "copyNumber": {
+    "message": "Copy Number"
+  },
+  "copySecurityCode": {
+    "message": "Copy Security Code"
   },
   "autoFill": {
     "message": "Auto-fill"
