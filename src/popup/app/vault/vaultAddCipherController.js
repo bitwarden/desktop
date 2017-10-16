@@ -20,7 +20,7 @@
             }
         };
 
-        if($stateParams.uri) {
+        if ($stateParams.uri) {
             $scope.cipher.login.uri = $stateParams.uri;
         }
 
@@ -40,7 +40,7 @@
             $scope.folders = folders;
         });
 
-        $scope.typeChanged = function() {
+        $scope.typeChanged = function () {
             $scope.cipher.type = parseInt($scope.selectedType);
         };
 

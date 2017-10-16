@@ -785,7 +785,127 @@
     "message": "Disable Website Icons"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons, also known as \"Favicons\", provides an image next to the login vault."
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName": {
+    "message": "Cardholder Name"
+  },
+  "number": {
+    "message": "Number"
+  },
+  "brand": {
+    "message": "Brand"
+  },
+  "expirationMonth": {
+    "message": "Expiration Month"
+  },
+  "expirationYear": {
+    "message": "Expiration Year"
+  },
+  "january": {
+    "message": "January"
+  },
+  "february": {
+    "message": "February"
+  },
+  "march": {
+    "message": "March"
+  },
+  "april": {
+    "message": "April"
+  },
+  "may": {
+    "message": "May"
+  },
+  "june": {
+    "message": "June"
+  },
+  "july": {
+    "message": "July"
+  },
+  "august": {
+    "message": "August"
+  },
+  "september": {
+    "message": "September"
+  },
+  "october": {
+    "message": "October"
+  },
+  "november": {
+    "message": "November"
+  },
+  "december": {
+    "message": "December"
+  },
+  "securityCode": {
+    "message": "Security Code"
+  },
+  "ex": {
+    "message": "ex."
+  },
+  "title": {
+    "message": "Title"
+  },
+  "mr": {
+    "message": "Mr"
+  },
+  "mrs": {
+    "message": "Mrs"
+  },
+  "ms": {
+    "message": "Ms"
+  },
+  "dr": {
+    "message": "Dr"
+  },
+  "firstName": {
+    "message": "First Name"
+  },
+  "middleName": {
+    "message": "Middle Name"
+  },
+  "lastName": {
+    "message": "Last Name"
+  },
+  "company": {
+    "message": "Company"
+  },
+  "ssn": {
+    "message": "Social Security Number"
+  },
+  "passportNumber": {
+    "message": "Passport Number"
+  },
+  "licenseNumber": {
+    "message": "License Number"
+  },
+  "email": {
+    "message": "Email"
+  },
+  "phone": {
+    "message": "Phone"
+  },
+  "address1": {
+    "message": "Address 1"
+  },
+  "address2": {
+    "message": "Address 2"
+  },
+  "address3": {
+    "message": "Address 3"
+  },
+  "cityTown": {
+    "message": "City / Town"
+  },
+  "stateProvince": {
+    "message": "State / Province"
+  },
+  "zipPostalCode": {
+    "message": "Zip / Postal Code"
+  },
+  "country": {
+    "message": "Country"
   },
   "type": {
     "message": "Type"

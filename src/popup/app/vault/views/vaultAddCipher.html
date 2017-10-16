@@ -20,9 +20,9 @@
                         <label for="type" class="item-label">{{i18n.type}}</label>
                         <select id="type" name="Type" ng-model="selectedType" ng-change="typeChanged()">
                             <option value="{{constants.cipherType.login}}">{{i18n.typeLogin}}</option>
-                            <option value="{{constants.cipherType.secureNote}}">{{i18n.typeSecureNote}}</option>
                             <option value="{{constants.cipherType.card}}">{{i18n.typeCard}}</option>
                             <option value="{{constants.cipherType.identity}}">{{i18n.typeIdentity}}</option>
+                            <option value="{{constants.cipherType.secureNote}}">{{i18n.typeSecureNote}}</option>
                         </select>
                     </div>
                     <div class="list-section-item">
@@ -60,20 +60,22 @@
                         <div class="list-section-item">
                             <label for="cardBrand" class="item-label">{{i18n.brand}}</label>
                             <select id="cardBrand" name="Card.Brand" ng-model="cipher.card.brand">
-                                <option value="{{i18n.visa}}">{{i18n.visa}}</option>
-                                <option value="{{i18n.mastercard}}">{{i18n.mastercard}}</option>
-                                <option value="{{i18n.amex}}">{{i18n.amex}}</option>
-                                <option value="{{i18n.discover}}">{{i18n.discover}}</option>
-                                <option value="{{i18n.dinersClub}}">{{i18n.dinersClub}}</option>
-                                <option value="{{i18n.jcb}}">{{i18n.jcb}}</option>
-                                <option value="{{i18n.maestro}}">{{i18n.maestro}}</option>
-                                <option value="{{i18n.unionPay}}">{{i18n.unionPay}}</option>
-                                <option value="{{i18n.other}}">{{i18n.other}}</option>
+                                <option value="">-- {{i18n.select}} --</option>
+                                <option value="Visa">Visa</option>
+                                <option value="Mastercard">Mastercard</option>
+                                <option value="Amex">American Express</option>
+                                <option value="Discover">Discover</option>
+                                <option value="Diners Club">Diners Club</option>
+                                <option value="JCB">JCB</option>
+                                <option value="Maestro">Maestro</option>
+                                <option value="UnionPay">UnionPay</option>
+                                <option value="Other">{{i18n.other}}</option>
                             </select>
                         </div>
                         <div class="list-section-item">
-                            <label for="cardExpMonth" class="item-label">{{i18n.expMonth}}</label>
+                            <label for="cardExpMonth" class="item-label">{{i18n.expirationMonth}}</label>
                             <select id="cardExpMonth" name="Card.ExpMonth" ng-model="cipher.card.expMonth">
+                                <option value="">-- {{i18n.select}} --</option>
                                 <option value="1">01 - {{i18n.january}}</option>
                                 <option value="2">02 - {{i18n.february}}</option>
                                 <option value="3">03 - {{i18n.march}}</option>
@@ -89,8 +91,9 @@
                             </select>
                         </div>
                         <div class="list-section-item">
-                            <label for="cardExpYear" class="item-label">{{i18n.expYear}}</label>
-                            <input id="cardExpYear" type="text" name="Card.ExpYear" ng-model="cipher.card.expYear">
+                            <label for="cardExpYear" class="item-label">{{i18n.expirationYear}}</label>
+                            <input id="cardExpYear" type="text" name="Card.ExpYear" ng-model="cipher.card.expYear"
+                                   placeholder="{{i18n.ex}} 2019">
                         </div>
                         <div class="list-section-item">
                             <label for="cardCode" class="item-label">{{i18n.securityCode}}</label>
@@ -98,10 +101,94 @@
                         </div>
                     </div>
                     <div ng-if="cipher.type === constants.cipherType.identity">
-                        
+                        <div class="list-section-item">
+                            <label for="identityTitle" class="item-label">{{i18n.title}}</label>
+                            <select id="identityTitle" name="Identity.Title" ng-model="cipher.identity.title">
+                                <option value="">-- {{i18n.select}} --</option>
+                                <option value="{{i18n.mr}}">{{i18n.mr}}</option>
+                                <option value="{{i18n.mrs}}">{{i18n.mrs}}</option>
+                                <option value="{{i18n.ms}}">{{i18n.ms}}</option>
+                                <option value="{{i18n.dr}}">{{i18n.dr}}</option>
+                            </select>
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityFirstName" class="item-label">{{i18n.firstName}}</label>
+                            <input id="identityFirstName" type="text" name="Identity.FirstName"
+                                   ng-model="cipher.identity.firstName">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityMiddleName" class="item-label">{{i18n.middleName}}</label>
+                            <input id="identityMiddleName" type="text" name="Identity.MiddleName"
+                                   ng-model="cipher.identity.middleName">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityLastName" class="item-label">{{i18n.lastName}}</label>
+                            <input id="identityLastName" type="text" name="Identity.LastName"
+                                   ng-model="cipher.identity.lastName">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityUsername" class="item-label">{{i18n.username}}</label>
+                            <input id="identityUsername" type="text" name="Identity.Username"
+                                   ng-model="cipher.identity.username">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityCompany" class="item-label">{{i18n.company}}</label>
+                            <input id="identityCompany" type="text" name="Identity.Company" ng-model="cipher.identity.company">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identitySsn" class="item-label">{{i18n.ssn}}</label>
+                            <input id="identitySsn" type="text" name="Identity.SSN" ng-model="cipher.identity.ssn">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityPassportNumber" class="item-label">{{i18n.passportNumber}}</label>
+                            <input id="identityPassportNumber" type="text" name="Identity.PassportNumber"
+                                   ng-model="cipher.identity.passportNumber">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityLicenseNumber" class="item-label">{{i18n.licenseNumber}}</label>
+                            <input id="identityLicenseNumber" type="text" name="Identity.LicenseNumber"
+                                   ng-model="cipher.identity.licenseNumber">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityEmail" class="item-label">{{i18n.email}}</label>
+                            <input id="identityEmail" type="text" name="Identity.Email" ng-model="cipher.identity.email">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityPhone" class="item-label">{{i18n.phone}}</label>
+                            <input id="identityPhone" type="text" name="Identity.Phone" ng-model="cipher.identity.phone">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityAddress1" class="item-label">{{i18n.address1}}</label>
+                            <input id="identityAddress1" type="text" name="Identity.Address1" ng-model="cipher.identity.address1">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityAddress2" class="item-label">{{i18n.address2}}</label>
+                            <input id="identityAddress2" type="text" name="Identity.Address2" ng-model="cipher.identity.address2">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityAddress3" class="item-label">{{i18n.address3}}</label>
+                            <input id="identityAddress3" type="text" name="Identity.Address3" ng-model="cipher.identity.address3">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityCity" class="item-label">{{i18n.cityTown}}</label>
+                            <input id="identityCity" type="text" name="Identity.City" ng-model="cipher.identity.city">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityState" class="item-label">{{i18n.stateProvince}}</label>
+                            <input id="identityState" type="text" name="Identity.State" ng-model="cipher.identity.state">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityPostalCode" class="item-label">{{i18n.zipPostalCode}}</label>
+                            <input id="identityPostalCode" type="text" name="Identity.PostalCode"
+                                   ng-model="cipher.identity.postalCode">
+                        </div>
+                        <div class="list-section-item">
+                            <label for="identityCountry" class="item-label">{{i18n.country}}</label>
+                            <input id="identityCountry" type="text" name="Identity.Country" ng-model="cipher.identity.country">
+                        </div>
                     </div>
                     <div ng-if="cipher.type === constants.cipherType.secureNote">
-                        
+
                     </div>
                 </div>
             </div>
@@ -150,13 +237,13 @@
                         </a>
                         <div class="action-button-content">
                             <input id="field_name{{$index}}" type="text" name="Field.Name{{$index}}"
-                                   ng-model="field.name" class="item-label" 
+                                   ng-model="field.name" class="item-label"
                                    placeholder="{{i18n.name}}">
                             <input id="field_value{{$index}}" type="text" name="Field.Value{{$index}}"
-                                   ng-model="field.value" ng-if="field.type === constants.fieldType.text" 
+                                   ng-model="field.value" ng-if="field.type === constants.fieldType.text"
                                    placeholder="{{i18n.value}}">
                             <input id="field_value{{$index}}" type="password" name="Field.Value{{$index}}"
-                                   ng-model="field.value" ng-if="field.type === constants.fieldType.hidden" 
+                                   ng-model="field.value" ng-if="field.type === constants.fieldType.hidden"
                                    placeholder="{{i18n.value}}">
                             <input id="field_value{{$index}}" name="Field.Value{{$index}}" type="checkbox"
                                    ng-model="field.value" data-ng-true-value="'true'"
