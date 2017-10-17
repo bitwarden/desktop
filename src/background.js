@@ -45,7 +45,7 @@ var bg_isBackground = true,
         setIcon, refreshBadgeAndMenu);
     bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
         bg_cryptoService, logout);
-    bg_passwordGenerationService = new PasswordGenerationService();
+    bg_passwordGenerationService = new PasswordGenerationService(bg_constantsService, bg_utilsService, bg_cryptoService);
     bg_totpService = new TotpService(bg_constantsService);
     bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService);
 
@@ -59,6 +59,7 @@ var bg_isBackground = true,
                 bg_passwordGenerationService.getOptions().then(function (options) {
                     var password = bg_passwordGenerationService.generatePassword(options);
                     bg_utilsService.copyToClipboard(password);
+                    bg_passwordGenerationService.addHistory(password);
                 });
             }
             else if (command === 'autofill_login') {
@@ -193,6 +194,7 @@ var bg_isBackground = true,
                 bg_passwordGenerationService.getOptions().then(function (options) {
                     var password = bg_passwordGenerationService.generatePassword(options);
                     bg_utilsService.copyToClipboard(password);
+                    bg_passwordGenerationService.addHistory(password);
                 });
             }
             else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
@@ -817,7 +819,8 @@ var bg_isBackground = true,
                     bg_userService.clear(),
                     bg_settingsService.clear(userId),
                     bg_cipherService.clear(userId),
-                    bg_folderService.clear(userId)
+                    bg_folderService.clear(userId),
+                    bg_passwordGenerationService.clear()
                 ]).then(function () {
                     chrome.runtime.sendMessage({
                         command: 'doneLoggingOut', expired: expired

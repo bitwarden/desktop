@@ -57,6 +57,7 @@
         };
 
         $scope.clipboardSuccess = function (e) {
+            passwordGenerationService.addHistory(e.text);
             $analytics.eventTrack('Copied Generated Password');
             e.clearSelection();
             toastr.info(i18nService.passwordCopied);
@@ -77,6 +78,14 @@
             }
 
             dismiss();
+        };
+
+        $scope.goHistory = function () {
+            $state.go('^.passwordGeneratorHistory', {
+                animation: 'in-slide-left',
+                addState: $stateParams.addState,
+                editState: $stateParams.editState
+            });
         };
 
         function dismiss() {

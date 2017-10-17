@@ -171,6 +171,13 @@
                 data: { authorize: true },
                 params: { animation: null, addState: null, editState: null }
             })
+            .state('passwordGeneratorHistory', {
+                url: '/history',
+                templateUrl: 'app/tools/views/toolsPasswordGeneratorHistory.html',
+                controller: 'toolsPasswordGeneratorHistoryController',
+                data: { authorize: true },
+                params: { animation: null, addState: null, editState: null }
+            })
             .state('export', {
                 url: '/export',
                 templateUrl: 'app/tools/views/toolsExport.html',

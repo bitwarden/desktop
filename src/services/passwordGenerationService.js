@@ -1,10 +1,14 @@
-﻿function PasswordGenerationService() {
+﻿function PasswordGenerationService(constantsService, utilsService, cryptoService) {
     this.optionsCache = null;
+    this.constantsService = constantsService;
+    this.utilsService = utilsService;
+    this.cryptoService = cryptoService;
+    this.history = [];
 
-    initPasswordGenerationService();
+    initPasswordGenerationService(this);
 }
 
-function initPasswordGenerationService() {
+function initPasswordGenerationService(self) {
     var optionsKey = 'passwordGenerationOptions';
     var defaultOptions = {
         length: 10,
@@ -181,4 +185,85 @@ function initPasswordGenerationService() {
 
         return deferred.promise;
     };
+
+    // History
+    var key = self.constantsService.generatedPasswordHistory;
+    var MAX_PASSWORDS_IN_HISTORY = 10;
+
+    self.utilsService
+        .getObjFromStorage(key)
+        .then(function(encrypted) {
+            return decrypt(encrypted);
+        }).then(function(history) {
+            history.forEach(function(item) {
+                self.history.push(item);
+            });
+        });
+
+    PasswordGenerationService.prototype.getHistory = function () {
+        return self.history;
+    };
+
+    PasswordGenerationService.prototype.addHistory = function (password) {
+        // Prevent duplicates
+        if (matchesPrevious(password)) {
+            return;
+        }
+
+        self.history.push({
+            password: password,
+            date: Date.now()
+        });
+
+        // Remove old items.
+        if (self.history.length > MAX_PASSWORDS_IN_HISTORY) {
+            self.history.shift();
+        }
+
+        save();
+    };
+
+    PasswordGenerationService.prototype.clear = function () {
+        self.history = [];
+        self.utilsService.removeFromStorage(key);
+    };
+
+    function save() {
+        return encryptHistory()
+            .then(function(history) {
+                return self.utilsService.saveObjToStorage(key, history);
+            });
+    }
+
+    function encryptHistory() {
+        var promises = self.history.map(function(historyItem) {
+            return self.cryptoService.encrypt(historyItem.password).then(function(encrypted) {
+                return {
+                    password: encrypted.encryptedString,
+                    date: historyItem.date
+                };
+            });
+        });
+
+        return Q.all(promises);
+    }
+
+    function decrypt(history) {
+        var promises = history.map(function(item) {
+            return self.cryptoService.decrypt(new CipherString(item.password)).then(function(decrypted) {
+                return {
+                    password: decrypted,
+                    date: item.date
+                };
+            });
+        });
+
+        return Q.all(promises);
+    }
+
+    function matchesPrevious(password) {
+        var len = self.history.length;
+        return len !== 0 && self.history[len-1].password === password;
+    }
+
 }

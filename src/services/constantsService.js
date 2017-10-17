@@ -9,6 +9,7 @@ function ConstantsService(i18nService) {
         enableAutoFillOnPageLoadKey: 'enableAutoFillOnPageLoad',
         lockOptionKey: 'lockOption',
         lastActiveKey: 'lastActive',
+        generatedPasswordHistory: 'generatedPasswordHistory',
         encType: {
             AesCbc256_B64: 0,
             AesCbc128_HmacSha256_B64: 1,
