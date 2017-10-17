@@ -1,9 +1,15 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('stateService', function () {
+    .factory('stateService', function (utilsService, constantsService) {
         var _service = {},
             _state = {};
+
+        _service.init = function () {
+            utilsService.getObjFromStorage(constantsService.disableFaviconKey).then(function (disabledFavicons) {
+                _service.saveState('faviconEnabled', !disabledFavicons);
+            });
+        };
 
         _service.saveState = function (key, data) {
             _state[key] = data;

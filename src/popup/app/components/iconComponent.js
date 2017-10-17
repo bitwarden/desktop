@@ -5,32 +5,28 @@ angular
         bindings: {
             cipher: '<'
         },
-        template: '<div class="icon" ng-if="$ctrl.enabled">' +
-        '<img ng-src="{{$ctrl.image}}" fallback-src="{{$ctrl.fallbackImage}}" ng-if="$ctrl.image" alt="" />' +
-        '<i class="fa fa-fw fa-lg {{$ctrl.icon}}" ng-if="!$ctrl.image"></i>' +
-        '</div>',
+        templateUrl: 'app/components/views/icon.html',
         controller: function (stateService, constantsService) {
             var ctrl = this;
-            ctrl.enabled = stateService.getState('faviconEnabled');
+            ctrl.imageEnabled = stateService.getState('faviconEnabled');
 
             ctrl.$onChanges = function () {
-                if (ctrl.enabled) {
-                    switch (ctrl.cipher.type) {
-                        case constantsService.cipherType.login:
-                            setLoginIcon(ctrl.cipher);
-                            break;
-                        case constantsService.cipherType.secureNote:
-                            ctrl.icon = 'fa-sticky-note-o';
-                            break;
-                        case constantsService.cipherType.card:
-                            ctrl.icon = 'fa-credit-card';
-                            break;
-                        case constantsService.cipherType.identity:
-                            ctrl.icon = 'fa-id-card-o';
-                            break;
-                        default:
-                            break;
-                    }
+                switch (ctrl.cipher.type) {
+                    case constantsService.cipherType.login:
+                        ctrl.icon = 'fa-globe';
+                        setLoginIcon(ctrl.cipher);
+                        break;
+                    case constantsService.cipherType.secureNote:
+                        ctrl.icon = 'fa-sticky-note-o';
+                        break;
+                    case constantsService.cipherType.card:
+                        ctrl.icon = 'fa-credit-card';
+                        break;
+                    case constantsService.cipherType.identity:
+                        ctrl.icon = 'fa-id-card-o';
+                        break;
+                    default:
+                        break;
                 }
             };
 
@@ -47,18 +43,16 @@ angular
                         ctrl.icon = 'fa-apple';
                         ctrl.image = null;
                     }
-                    else if (hostnameUri.indexOf('://') === -1 && hostnameUri.indexOf('http://') !== 0 &&
+                    else if (ctrl.imageEnabled && hostnameUri.indexOf('://') === -1 && hostnameUri.indexOf('http://') !== 0 &&
                         hostnameUri.indexOf('https://') !== 0) {
                         hostnameUri = "http://" + hostnameUri;
                         isWebsite = true;
-                        ctrl.icon = 'fa-globe';
                     }
-                    else {
+                    else if (ctrl.imageEnabled) {
                         isWebsite = hostnameUri.indexOf('http') === 0 && hostnameUri.indexOf('.') > 0;
-                        ctrl.icon = 'fa-globe';
                     }
 
-                    if (isWebsite) {
+                    if (ctrl.imageEnabled && isWebsite) {
                         try {
                             var url = new URL(hostnameUri);
                             ctrl.image = 'https://icons.bitwarden.com/' + url.hostname + '/icon.png';
@@ -68,7 +62,6 @@ angular
                     }
                 }
                 else {
-                    ctrl.icon = 'fa-globe';
                     ctrl.image = null;
                 }
             }

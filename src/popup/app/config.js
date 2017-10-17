@@ -2,7 +2,8 @@
     .module('bit')
 
     .config(function ($stateProvider, $urlRouterProvider, $compileProvider, $sceDelegateProvider, toastrConfig) {
-        $compileProvider.imgSrcSanitizationWhitelist(/^\s*((https?|ftp|file|blob):|data:image\/|(moz|chrome|ms-browser)-extension)/);
+        $compileProvider.imgSrcSanitizationWhitelist(
+            /^\s*((https?|ftp|file|blob):|data:image\/|(moz|chrome|ms-browser)-extension)/);
 
         angular.extend(toastrConfig, {
             closeButton: true,
@@ -258,9 +259,7 @@
             });
     })
     .run(function ($rootScope, userService, $state, constantsService, stateService) {
-        chrome.storage.local.get(constantsService.disableFaviconKey, function(obj) {
-            stateService.saveState('faviconEnabled', !obj[constantsService.disableFaviconKey]);
-        });
+        stateService.init();
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
             if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {

@@ -1,0 +1,4 @@
+﻿<div class="icon">
+    <img ng-src="{{$ctrl.image}}" fallback-src="{{$ctrl.fallbackImage}}" ng-if="$ctrl.imageEnabled && $ctrl.image" alt="" />
+    <i class="fa fa-fw fa-lg {{$ctrl.icon}}" ng-if="!$ctrl.imageEnabled || !$ctrl.image"></i>
+</div>
