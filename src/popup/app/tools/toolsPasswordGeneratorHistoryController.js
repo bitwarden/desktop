@@ -1,10 +1,9 @@
 angular
     .module('bit.tools')
 
-    .controller('toolsPasswordGeneratorHistoryController', function (
-        $scope, $state, $stateParams, toastr, $analytics, i18nService, passwordGenerationService) {
+    .controller('toolsPasswordGeneratorHistoryController', function ($scope, $state, $stateParams, toastr, $analytics,
+        i18nService, passwordGenerationService) {
         $scope.i18n = i18nService;
-
         $scope.passwords = passwordGenerationService.getHistory();
 
         $scope.clipboardError = function (e, password) {

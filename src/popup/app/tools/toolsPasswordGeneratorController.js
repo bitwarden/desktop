@@ -2,7 +2,7 @@
     .module('bit.tools')
 
     .controller('toolsPasswordGeneratorController', function ($scope, $state, $stateParams, passwordGenerationService,
-        toastr, $q, utilsService, $analytics, i18nService) {
+        toastr, utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
         var addState = $stateParams.addState,
             editState = $stateParams.editState;
@@ -12,10 +12,11 @@
         utilsService.initListSectionItemListeners($(document), angular);
         $scope.password = '-';
 
-        $q.when(passwordGenerationService.getOptions()).then(function (options) {
+        passwordGenerationService.getOptions().then(function (options) {
             $scope.options = options;
             $scope.regenerate(false);
             $analytics.eventTrack('Generated Password');
+            passwordGenerationService.addHistory($scope.password);
         });
 
         $scope.sliderMoved = function () {
@@ -26,14 +27,16 @@
             e.preventDefault();
             $analytics.eventTrack('Generated Password');
             $scope.saveOptions($scope.options);
+            passwordGenerationService.addHistory($scope.password);
         });
 
-        $scope.regenerate = function (trackRegenerateEvent) {
-            if (trackRegenerateEvent) {
-                $analytics.eventTrack('Regenerated Password');
-            }
-
+        $scope.regenerate = function (trackEvent) {
             $scope.password = passwordGenerationService.generatePassword($scope.options);
+
+            if (trackEvent) {
+                $analytics.eventTrack('Regenerated Password');
+                passwordGenerationService.addHistory($scope.password);
+            }
         };
 
         $scope.saveOptions = function (options) {
@@ -57,7 +60,6 @@
         };
 
         $scope.clipboardSuccess = function (e) {
-            passwordGenerationService.addHistory(e.text);
             $analytics.eventTrack('Copied Generated Password');
             e.clearSelection();
             toastr.info(i18nService.passwordCopied);

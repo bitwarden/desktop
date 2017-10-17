@@ -946,11 +946,8 @@
   "typeIdentity": {
     "message": "Identity"
   },
-  "viewPasswordHistory": {
-    "message": "View Password History"
-  },
-  "generatePasswordHistory": {
-    "message": "Generated Passwords History"
+  "passwordHistory": {
+    "message": "Password History"
   },
   "back": {
     "message": "Back"

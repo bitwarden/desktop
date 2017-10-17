@@ -2,7 +2,7 @@
       ng-if="providerType === constantsProvider.authenticator || providerType === constantsProvider.email">
     <div class="header">
         <div class="left">
-            <a href="#" ng-click="back()"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+            <a href="#" ng-click="back()"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
         </div>
         <div class="right">
             <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{i18n.continue}}</button>
@@ -47,7 +47,7 @@
 <form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.duo" autocomplete="off">
     <div class="header">
         <div class="left">
-            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
         </div>
         <div class="title">Duo</div>
     </div>
@@ -75,7 +75,7 @@
       autocomplete="off">
     <div class="header">
         <div class="left">
-            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
         </div>
         <div class="right">
             <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{i18n.continue}}</button>
@@ -112,7 +112,7 @@
 <form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.u2f" autocomplete="off">
     <div class="header">
         <div class="left">
-            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
         </div>
         <div class="right">
             <i class="fa fa-spinner fa-lg fa-spin" ng-show="theForm.$loading"></i>
@@ -147,7 +147,7 @@
 <div ng-if="providerType === null">
     <div class="header">
         <div class="left">
-            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.login}}</a>
+            <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
         </div>
         <div class="title">{{i18n.loginUnavailable}}</div>
     </div>

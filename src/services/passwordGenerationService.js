@@ -187,18 +187,17 @@ function initPasswordGenerationService(self) {
     };
 
     // History
-    var key = self.constantsService.generatedPasswordHistory;
-    var MAX_PASSWORDS_IN_HISTORY = 10;
 
-    self.utilsService
-        .getObjFromStorage(key)
-        .then(function(encrypted) {
-            return decrypt(encrypted);
-        }).then(function(history) {
-            history.forEach(function(item) {
-                self.history.push(item);
-            });
+    var historyKey = self.constantsService.generatedPasswordHistory;
+    var maxPasswordsInHistory = 100;
+
+    self.utilsService.getObjFromStorage(historyKey).then(function (encrypted) {
+        return decrypt(encrypted);
+    }).then(function (history) {
+        history.forEach(function (item) {
+            self.history.push(item);
         });
+    });
 
     PasswordGenerationService.prototype.getHistory = function () {
         return self.history;
@@ -216,7 +215,7 @@ function initPasswordGenerationService(self) {
         });
 
         // Remove old items.
-        if (self.history.length > MAX_PASSWORDS_IN_HISTORY) {
+        if (self.history.length > maxPasswordsInHistory) {
             self.history.shift();
         }
 
@@ -225,19 +224,18 @@ function initPasswordGenerationService(self) {
 
     PasswordGenerationService.prototype.clear = function () {
         self.history = [];
-        self.utilsService.removeFromStorage(key);
+        self.utilsService.removeFromStorage(historyKey);
     };
 
     function save() {
-        return encryptHistory()
-            .then(function(history) {
-                return self.utilsService.saveObjToStorage(key, history);
-            });
+        return encryptHistory().then(function (history) {
+            return self.utilsService.saveObjToStorage(historyKey, history);
+        });
     }
 
     function encryptHistory() {
-        var promises = self.history.map(function(historyItem) {
-            return self.cryptoService.encrypt(historyItem.password).then(function(encrypted) {
+        var promises = self.history.map(function (historyItem) {
+            return self.cryptoService.encrypt(historyItem.password).then(function (encrypted) {
                 return {
                     password: encrypted.encryptedString,
                     date: historyItem.date
@@ -249,8 +247,8 @@ function initPasswordGenerationService(self) {
     }
 
     function decrypt(history) {
-        var promises = history.map(function(item) {
-            return self.cryptoService.decrypt(new CipherString(item.password)).then(function(decrypted) {
+        var promises = history.map(function (item) {
+            return self.cryptoService.decrypt(new CipherString(item.password)).then(function (decrypted) {
                 return {
                     password: decrypted,
                     date: item.date
@@ -263,7 +261,6 @@ function initPasswordGenerationService(self) {
 
     function matchesPrevious(password) {
         var len = self.history.length;
-        return len !== 0 && self.history[len-1].password === password;
+        return len !== 0 && self.history[len - 1].password === password;
     }
-
 }
