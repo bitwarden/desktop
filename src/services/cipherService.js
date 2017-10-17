@@ -576,10 +576,10 @@ function initCipherService() {
         return deferred.promise;
     };
 
-    CipherService.prototype.sortLoginsByLastUsed = sortLoginsByLastUsed;
+    CipherService.prototype.sortCiphersByLastUsed = sortCiphersByLastUsed;
 
-    CipherService.prototype.sortLoginsByLastUsedThenName = function (a, b) {
-        var result = sortLoginsByLastUsed(a, b);
+    CipherService.prototype.sortCiphersByLastUsedThenName = function (a, b) {
+        var result = sortCiphersByLastUsed(a, b);
         if (result !== 0) {
             return result;
         }
@@ -597,7 +597,7 @@ function initCipherService() {
         return 0;
     };
 
-    function sortLoginsByLastUsed(a, b) {
+    function sortCiphersByLastUsed(a, b) {
         var aLastUsed = a.localData && a.localData.lastUsedDate ? a.localData.lastUsedDate : null;
         var bLastUsed = b.localData && b.localData.lastUsedDate ? b.localData.lastUsedDate : null;
 

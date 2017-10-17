@@ -457,7 +457,7 @@ var bg_isBackground = true,
 
         menuOptionsLoaded = [];
         bg_cipherService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
-            logins.sort(bg_cipherService.sortLoginsByLastUsedThenName);
+            logins.sort(bg_cipherService.sortCiphersByLastUsedThenName);
 
             if (contextMenuEnabled) {
                 for (var i = 0; i < logins.length; i++) {
