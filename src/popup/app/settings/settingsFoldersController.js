@@ -7,8 +7,7 @@
 
         load();
         function load() {
-            var foldersPromise = $q.when(folderService.getAllDecrypted());
-            foldersPromise.then(function (folders) {
+            folderService.getAllDecrypted().then(function (folders) {
                 if (folders.length > 0 && folders[0].id === null) {
                     // remove the "none" folder
                     $scope.folders = folders.slice(1);

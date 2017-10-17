@@ -29,14 +29,12 @@
             var promises = [];
 
             if ($scope.folder.id) {
-                var folderDeferred = $q.defer();
-                folderService.get($scope.folder.id, function (folder) {
-                    folder.decrypt().then(function (model) {
-                        decFolder = model;
-                        folderDeferred.resolve();
-                    });
+                var getPromise = folderService.get($scope.folder.id).then(function (folder) {
+                    return folder.decrypt();
+                }).then(function (model) {
+                    decFolder = model;
                 });
-                promises.push(folderDeferred.promise);
+                promises.push(getPromise);
             }
 
             var cipherPromise = cipherService.getAllDecryptedForFolder($scope.folder.id).then(function (ciphers) {

@@ -45,14 +45,12 @@
             var decLogins = [];
             var promises = [];
 
-            var folderPromise = $q.when(folderService.getAllDecrypted());
-            folderPromise.then(function (folders) {
+            var folderPromise = folderService.getAllDecrypted().then(function (folders) {
                 decFolders = folders;
             });
             promises.push(folderPromise);
 
-            var loginPromise = $q.when(cipherService.getAllDecrypted());
-            loginPromise.then(function (logins) {
+            var loginPromise = cipherService.getAllDecrypted().then(function (logins) {
                 decLogins = logins;
             });
             promises.push(loginPromise);

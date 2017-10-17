@@ -222,7 +222,7 @@ function initCipherService() {
             return self.getAll();
         }).then(function (ciphers) {
             if (ciphers === true) {
-                return;
+                return true;
             }
 
             var promises = [];
@@ -405,7 +405,7 @@ function initCipherService() {
 
     CipherService.prototype.replace = function (ciphers) {
         var self = this;
-        self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserIdPromise().then(function (userId) {
             return self.utilsService.saveObjToStorage('ciphers_' + userId, ciphers);
         }).then(function () {
             self.decryptedCipherCache = null;
@@ -423,7 +423,7 @@ function initCipherService() {
         var self = this,
             key = null;
 
-        self.userService.getUserIdPromise().then(function () {
+        return self.userService.getUserIdPromise().then(function () {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (ciphers) {
@@ -535,7 +535,7 @@ function initCipherService() {
         var self = this,
             key = null;
 
-        self.userService.getUserIdPromise().then(function () {
+        return self.userService.getUserIdPromise().then(function () {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (ciphers) {

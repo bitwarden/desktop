@@ -191,8 +191,10 @@ function initApiService() {
 
     // Folder APIs
 
-    ApiService.prototype.postFolder = function (folderRequest, success, error) {
-        var self = this;
+    ApiService.prototype.postFolder = function (folderRequest) {
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'POST',
@@ -202,19 +204,21 @@ function initApiService() {
                 dataType: 'json',
                 headers: tokenHeader,
                 success: function (response) {
-                    success(new FolderResponse(response));
+                    deferred.resolve(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
     };
 
-    ApiService.prototype.putFolder = function (id, folderRequest, success, error) {
-        var self = this;
+    ApiService.prototype.putFolder = function (id, folderRequest) {
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'PUT',
@@ -224,19 +228,21 @@ function initApiService() {
                 dataType: 'json',
                 headers: tokenHeader,
                 success: function (response) {
-                    success(new FolderResponse(response));
+                    deferred.resolve(new FolderResponse(response));
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
     };
 
-    ApiService.prototype.deleteFolder = function (id, success, error) {
-        var self = this;
+    ApiService.prototype.deleteFolder = function (id) {
+        var self = this,
+            deferred = Q.defer();
+
         handleTokenState(self).then(function (tokenHeader) {
             $.ajax({
                 type: 'DELETE',
@@ -244,14 +250,14 @@ function initApiService() {
                 dataType: 'text',
                 headers: tokenHeader,
                 success: function (response) {
-                    success();
+                    deferred.resolve();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    handleError(error, jqXHR, false, self);
+                    handleError(deferred.reject, jqXHR, false, self);
                 }
             });
         }, function (jqXHR) {
-            handleError(error, jqXHR, true, self);
+            handleError(deferred.reject, jqXHR, true, self);
         });
     };
 

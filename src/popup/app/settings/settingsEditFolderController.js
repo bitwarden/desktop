@@ -1,17 +1,17 @@
 ﻿angular
     .module('bit.settings')
 
-    .controller('settingsEditFolderController', function ($scope, $stateParams, folderService, toastr, $q, $state, SweetAlert,
+    .controller('settingsEditFolderController', function ($scope, $stateParams, folderService, toastr, $state, SweetAlert,
         utilsService, $analytics, i18nService) {
         $scope.i18n = i18nService;
         $scope.folder = {};
         var folderId = $stateParams.folderId;
         $('#name').focus();
 
-        folderService.get(folderId, function (folder) {
-            $q.when(folder.decrypt()).then(function (model) {
-                $scope.folder = model;
-            });
+        folderService.get(folderId).then(function (folder) {
+            return folder.decrypt();
+        }).then(function (model) {
+            $scope.folder = model;
         });
 
         utilsService.initListSectionItemListeners($(document), angular);
@@ -23,9 +23,9 @@
                 return;
             }
 
-            $scope.savePromise = $q.when(folderService.encrypt(model)).then(function (folderModel) {
+            $scope.savePromise = folderService.encrypt(model).then(function (folderModel) {
                 var folder = new Folder(folderModel, true);
-                return $q.when(folderService.saveWithServer(folder)).then(function (folder) {
+                return folderService.saveWithServer(folder).then(function (folder) {
                     $analytics.eventTrack('Edited Folder');
                     toastr.success(i18nService.editedFolder);
                     $state.go('folders', { animation: 'out-slide-down' });
@@ -42,7 +42,7 @@
                 cancelButtonText: i18nService.no
             }, function (confirmed) {
                 if (confirmed) {
-                    $q.when(folderService.deleteWithServer(folderId)).then(function () {
+                    folderService.deleteWithServer(folderId).then(function () {
                         $analytics.eventTrack('Deleted Folder');
                         toastr.success(i18nService.deletedFolder);
                         $state.go('folders', {
