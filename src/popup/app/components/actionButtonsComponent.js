@@ -28,7 +28,7 @@ angular
                 };
 
                 ctrl.clipboardError = function (e) {
-                    toastr.info(i18n.browserNotSupportClipboard);
+                    toastr.info(i18nService.browserNotSupportClipboard);
                 };
 
                 ctrl.clipboardSuccess = function (e, type, aType) {

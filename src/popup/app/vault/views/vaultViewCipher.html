@@ -90,20 +90,12 @@
                 </div>
                 <div ng-if="cipher.type === constants.cipherType.card">
                     <div class="list-section-item" ng-if="cipher.card.cardholderName">
-                        <div class="action-buttons">
-                            <a class="btn-list" href="" title="{{i18n.copy}}"
-                               ngclipboard ngclipboard-error="clipboardError(e)"
-                               ngclipboard-success="clipboardSuccess(e, i18n.cardholderName, 'Cardholder Name')"
-                               data-clipboard-text="{{cipher.card.cardholderName}}">
-                                <i class="fa fa-lg fa-clipboard"></i>
-                            </a>
-                        </div>
                         <span class="item-label">{{i18n.cardholderName}}</span>
-                        <span id="username">{{cipher.card.cardholderName}}</span>
+                        {{cipher.card.cardholderName}}
                     </div>
                     <div class="list-section-item" ng-if="cipher.card.number">
                         <div class="action-buttons">
-                            <a class="btn-list" href="" title="{{i18n.copy}}"
+                            <a class="btn-list" href="" title="{{i18n.copyNumber}}"
                                ngclipboard ngclipboard-error="clipboardError(e)"
                                ngclipboard-success="clipboardSuccess(e, i18n.number, 'Number')"
                                data-clipboard-text="{{cipher.card.number}}">
@@ -111,21 +103,77 @@
                             </a>
                         </div>
                         <span class="item-label">{{i18n.number}}</span>
-                        <span id="username">{{cipher.card.number}}</span>
+                        {{cipher.card.number}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.card.brand">
+                        <span class="item-label">{{i18n.brand}}</span>
+                        {{cipher.card.brand}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.card.expMonth || cipher.card.expYear">
+                        <span class="item-label">{{i18n.expiration}}</span>
+                        {{cipher.card.expMonth ? ('0' + cipher.card.expMonth).slice(-2) : '-'}}/{{cipher.card.expYear || '-'}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.card.code">
+                        <div class="action-buttons">
+                            <a class="btn-list" href="" title="{{i18n.copySecurityCode}}"
+                               ngclipboard ngclipboard-error="clipboardError(e)"
+                               ngclipboard-success="clipboardSuccess(e, i18n.securityCode, 'Security Code')"
+                               data-clipboard-text="{{cipher.card.code}}">
+                                <i class="fa fa-lg fa-clipboard"></i>
+                            </a>
+                        </div>
+                        <span class="item-label">{{i18n.securityCode}}</span>
+                        {{cipher.card.code}}
                     </div>
                 </div>
                 <div ng-if="cipher.type === constants.cipherType.identity">
-                    <div class="list-section-item" ng-if="cipher.identity.firstName">
-                        <span class="item-label">{{i18n.firstName}}</span>
+                    <div class="list-section-item" ng-if="cipher.identity.firstName || cipher.identity.lastName">
+                        <span class="item-label">{{i18n.identityName}}</span>
+                        {{cipher.identity.title}}
                         {{cipher.identity.firstName}}
-                    </div>
-                    <div class="list-section-item" ng-if="cipher.identity.middleName">
-                        <span class="item-label">{{i18n.middleName}}</span>
                         {{cipher.identity.middleName}}
-                    </div>
-                    <div class="list-section-item" ng-if="cipher.identity.lastName">
-                        <span class="item-label">{{i18n.lastName}}</span>
                         {{cipher.identity.lastName}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.identity.username">
+                        <span class="item-label">{{i18n.username}}</span>
+                        {{cipher.identity.username}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.identity.company">
+                        <span class="item-label">{{i18n.company}}</span>
+                        {{cipher.identity.company}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.identity.ssn">
+                        <span class="item-label">{{i18n.ssn}}</span>
+                        {{cipher.identity.ssn}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.identity.passportNumber">
+                        <span class="item-label">{{i18n.passportNumber}}</span>
+                        {{cipher.identity.passportNumber}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.identity.licenseNumber">
+                        <span class="item-label">{{i18n.licenseNumber}}</span>
+                        {{cipher.identity.licenseNumber}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.identity.email">
+                        <span class="item-label">{{i18n.email}}</span>
+                        {{cipher.identity.email}}
+                    </div>
+                    <div class="list-section-item" ng-if="cipher.identity.phone">
+                        <span class="item-label">{{i18n.phone}}</span>
+                        {{cipher.identity.phone}}
+                    </div>
+                    <div class="list-section-item"
+                         ng-if="cipher.identity.address1 || cipher.identity.city || cipher.identity.country">
+                        <span class="item-label">{{i18n.address}}</span>
+                        <div ng-if="cipher.identity.address1">{{cipher.identity.address1}}</div>
+                        <div ng-if="cipher.identity.address2">{{cipher.identity.address2}}</div>
+                        <div ng-if="cipher.identity.address3">{{cipher.identity.address3}}</div>
+                        <div ng-if="cipher.identity.city || cipher.identity.state || cipher.identity.postalCode">
+                            {{cipher.identity.city || '-'}},
+                            {{cipher.identity.state || '-'}},
+                            {{cipher.identity.postalCode || '-'}}
+                        </div>
+                        <div ng-if="cipher.identity.country">{{cipher.identity.country}}</div>
                     </div>
                 </div>
                 <div ng-if="cipher.type === constants.cipherType.secureNote">
