@@ -29,7 +29,7 @@
                 cryptoService.hashPassword($scope.masterPassword, key, function (keyHash) {
                     cryptoService.getKeyHash(function (storedKeyHash) {
                         if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
-                            cryptoService.setKey(key, function () {
+                            cryptoService.setKey(key).then(function () {
                                 chrome.runtime.sendMessage({ command: 'unlocked' });
                                 $state.go('tabs.current');
                             });

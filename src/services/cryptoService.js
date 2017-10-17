@@ -1,5 +1,7 @@
-function CryptoService(constantsService) {
+function CryptoService(constantsService, utilsService) {
     this.constantsService = constantsService;
+    this.utilsService = utilsService;
+
     initCryptoService(constantsService);
 }
 
@@ -11,29 +13,25 @@ function initCryptoService(constantsService) {
         _privateKey,
         _orgKeys,
         _crypto = window.crypto,
-        _subtle = window.crypto.subtle;
+        _subtle = window.crypto.subtle,
+        keyKey = 'key',
+        encOrgKeysKey = 'encOrgKeys',
+        encPrivateKeyKey = 'encPrivateKey',
+        encKeyKey = 'encKey',
+        keyHashKey = 'keyHash';
 
-    CryptoService.prototype.setKey = function (key, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
+    CryptoService.prototype.setKey = function (key) {
         var self = this;
         _key = key;
 
-        chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
-            if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
+        return self.utilsService.getObjFromStorage(self.constantsService.lockOptionKey).then(function (option) {
+            if (option || option === 0) {
                 // if we have a lock option set, we do not store the key
-                callback();
                 return;
             }
 
-            chrome.storage.local.set({
-                'key': key.keyB64
-            }, function () {
-                callback();
-            });
-        });
+            return self.utilsService.saveObjToStorage(keyKey, key.keyB64);
+        })
     };
 
     CryptoService.prototype.setKeyHash = function (keyHash, callback) {
@@ -51,84 +49,52 @@ function initCryptoService(constantsService) {
     };
 
     CryptoService.prototype.setEncKey = function (encKey) {
-        var deferred = Q.defer();
-
         if (encKey === undefined) {
-            deferred.resolve();
-            return deferred.promise;
+            return Q();
         }
 
-        chrome.storage.local.set({
-            'encKey': encKey
-        }, function () {
+        return this.utilsService.saveObjToStorage(encKeyKey, encKey).then(function () {
             _encKey = null;
-            deferred.resolve();
         });
-
-        return deferred.promise;
     };
 
     CryptoService.prototype.setEncPrivateKey = function (encPrivateKey) {
-        var deferred = Q.defer();
-
         if (encPrivateKey === undefined) {
-            deferred.resolve();
-            return deferred.promise;
+            return Q();
         }
 
-        chrome.storage.local.set({
-            'encPrivateKey': encPrivateKey
-        }, function () {
+        return this.utilsService.saveObjToStorage(encPrivateKeyKey, encPrivateKey).then(function () {
             _privateKey = null;
-            deferred.resolve();
         });
-
-        return deferred.promise;
     };
 
     CryptoService.prototype.setOrgKeys = function (orgs) {
-        var deferred = Q.defer();
-
         var orgKeys = {};
         for (var i = 0; i < orgs.length; i++) {
             orgKeys[orgs[i].id] = orgs[i].key;
         }
 
-        chrome.storage.local.set({
-            'encOrgKeys': orgKeys
-        }, function () {
-            deferred.resolve();
-        });
-
-        return deferred.promise;
+        return this.utilsService.saveObjToStorage(encOrgKeysKey, orgKeys);
     };
 
     CryptoService.prototype.getKey = function () {
-        var deferred = Q.defer();
-
         if (_key) {
-            deferred.resolve(_key);
-            return deferred.promise;
+            return Q(_key);
         }
 
         var self = this;
-        chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
-            if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
-                // if we have a lock option set, we do not try to fetch the storage key since it should not even be there
-                deferred.resolve(null);
-                return;
+        return self.utilsService.getObjFromStorage(self.constantsService.lockOptionKey).then(function (option) {
+            if (option || option === 0) {
+                return false;
             }
 
-            chrome.storage.local.get('key', function (obj) {
-                if (obj && obj.key) {
-                    _key = new SymmetricCryptoKey(obj.key, true);
-                }
-
-                deferred.resolve(_key);
-            });
+            return self.utilsService.getObjFromStorage(keyKey);
+        }).then(function (key) {
+            if (key) {
+                _key = new SymmetricCryptoKey(key, true);
+            }
+            return key === false ? null : _key;
         });
-
-        return deferred.promise;
     };
 
     CryptoService.prototype.getKeyHash = function (callback) {
@@ -141,7 +107,7 @@ function initCryptoService(constantsService) {
             return;
         }
 
-        chrome.storage.local.get('keyHash', function (obj) {
+        chrome.storage.local.get(keyHashKey, function (obj) {
             if (obj && obj.keyHash) {
                 _keyHash = obj.keyHash;
             }
@@ -151,56 +117,59 @@ function initCryptoService(constantsService) {
     };
 
     CryptoService.prototype.getEncKey = function () {
-        var deferred = Q.defer();
         if (_encKey) {
-            deferred.resolve(_encKey);
-            return deferred.promise;
+            return Q(_encKey);
         }
 
-        var self = this;
-        chrome.storage.local.get('encKey', function (obj) {
-            if (!obj || !obj.encKey) {
-                deferred.resolve(null);
-                return;
+        var self = this,
+            encKey = null;
+        return self.utilsService.getObjFromStorage(encKeyKey).then(function (theEncKey) {
+            if (!theEncKey) {
+                return null;
             }
 
-            self.getKey().then(function (key) {
-                return self.decrypt(new CipherString(obj.encKey), key, 'raw');
-            }).then(function (encKey) {
-                _encKey = new SymmetricCryptoKey(encKey);
-                deferred.resolve(_encKey);
-            }, function () {
-                deferred.reject('Cannot get enc key. Decryption failed.');
-            });
-        });
+            encKey = theEncKey;
+            return self.getKey();
+        }).then(function (key) {
+            if (!key) {
+                return null;
+            }
 
-        return deferred.promise;
+            return self.decrypt(new CipherString(encKey), key, 'raw');
+        }).then(function (decEncKey) {
+            if (decEncKey) {
+                _encKey = new SymmetricCryptoKey(decEncKey);
+                return _encKey;
+            }
+
+            return null;
+        }, function () {
+            throw 'Cannot get enc key. Decryption failed.';
+        });
     };
 
     CryptoService.prototype.getPrivateKey = function () {
-        var deferred = Q.defer();
         if (_privateKey) {
-            deferred.resolve(_privateKey);
-            return deferred.promise;
+            return Q(_privateKey);
         }
 
         var self = this;
-        chrome.storage.local.get('encPrivateKey', function (obj) {
-            if (!obj || !obj.encPrivateKey) {
-                deferred.resolve(null);
-                return;
+        return self.utilsService.getObjFromStorage(encPrivateKeyKey).then(function (encPrivateKey) {
+            if (!encPrivateKey) {
+                return null;
             }
-
-            self.decrypt(new CipherString(obj.encPrivateKey), null, 'raw').then(function (privateKey) {
+            return self.decrypt(new CipherString(encPrivateKey), null, 'raw');
+        }).then(function (privateKey) {
+            if (privateKey) {
                 var privateKeyB64 = forge.util.encode64(privateKey);
                 _privateKey = fromB64ToArray(privateKeyB64).buffer;
-                deferred.resolve(_privateKey);
-            }, function () {
-                deferred.reject('Cannot get private key. Decryption failed.');
-            });
-        });
+                return _privateKey;
+            }
 
-        return deferred.promise;
+            return null;
+        }, function () {
+            throw 'Cannot get private key. Decryption failed.';
+        });
     };
 
     CryptoService.prototype.getOrgKeys = function () {
@@ -212,7 +181,7 @@ function initCryptoService(constantsService) {
         }
 
         var self = this;
-        chrome.storage.local.get('encOrgKeys', function (obj) {
+        chrome.storage.local.get(encOrgKeysKey, function (obj) {
             if (obj && obj.encOrgKeys) {
                 var orgKeys = {},
                     setKey = false;
@@ -252,9 +221,7 @@ function initCryptoService(constantsService) {
 
     CryptoService.prototype.getOrgKey = function (orgId) {
         if (!orgId) {
-            var deferred = Q.defer();
-            deferred.resolve(null);
-            return deferred.promise;
+            return Q(null);
         }
 
         return this.getOrgKeys().then(function (orgKeys) {
@@ -267,73 +234,37 @@ function initCryptoService(constantsService) {
     };
 
     CryptoService.prototype.clearKey = function (callback) {
-        var deferred = Q.defer();
-
         _key = _legacyEtmKey = null;
-        chrome.storage.local.remove('key', function () {
-            deferred.resolve();
-        });
-
-        return deferred.promise;
+        return this.utilsService.removeFromStorage(keyKey);
     };
 
     CryptoService.prototype.clearKeyHash = function (callback) {
-        var deferred = Q.defer();
-
         _keyHash = null;
-        chrome.storage.local.remove('keyHash', function () {
-            deferred.resolve();
-        });
-
-        return deferred.promise;
+        return this.utilsService.removeFromStorage(keyHashKey);
     };
 
     CryptoService.prototype.clearEncKey = function (memoryOnly) {
-        var deferred = Q.defer();
-
         _encKey = null;
         if (memoryOnly) {
-            deferred.resolve();
+            return Q();
         }
-        else {
-            chrome.storage.local.remove('encKey', function () {
-                deferred.resolve();
-            });
-        }
-
-        return deferred.promise;
+        return this.utilsService.removeFromStorage(encKeyKey);
     };
 
     CryptoService.prototype.clearPrivateKey = function (memoryOnly) {
-        var deferred = Q.defer();
-
         _privateKey = null;
         if (memoryOnly) {
-            deferred.resolve();
+            return Q();
         }
-        else {
-            chrome.storage.local.remove('encPrivateKey', function () {
-                deferred.resolve();
-            });
-        }
-
-        return deferred.promise;
+        return this.utilsService.removeFromStorage(encPrivateKeyKey);
     };
 
     CryptoService.prototype.clearOrgKeys = function (memoryOnly) {
-        var deferred = Q.defer();
-
         _orgKeys = null;
         if (memoryOnly) {
-            deferred.resolve();
+            return Q();
         }
-        else {
-            chrome.storage.local.remove('encOrgKeys', function () {
-                deferred.resolve();
-            });
-        }
-
-        return deferred.promise;
+        return this.utilsService.removeFromStorage(encOrgKeysKey);
     };
 
     CryptoService.prototype.clearKeys = function () {
@@ -347,30 +278,24 @@ function initCryptoService(constantsService) {
         ]);
     };
 
-    CryptoService.prototype.toggleKey = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
+    CryptoService.prototype.toggleKey = function () {
+        var self = this,
+            key = null;
 
-        var self = this;
-        self.getKey().then(function (key) {
-            chrome.storage.local.get(self.constantsService.lockOptionKey, function (obj) {
-                if (obj && (obj[self.constantsService.lockOptionKey] || obj[self.constantsService.lockOptionKey] === 0)) {
-                    // if we have a lock option set, clear the key
-                    self.clearKey().then(function () {
-                        _key = key;
-                        callback();
-                        return;
-                    });
-                }
-                else {
-                    // no lock option, so store the current key
-                    self.setKey(key, function () {
-                        callback();
-                        return;
-                    });
-                }
-            });
+        return self.getKey().then(function (theKey) {
+            key = theKey;
+            return self.utilsService.getObjFromStorage(self.constantsService.lockOptionKey);
+        }).then(function (option) {
+            if (option || option === 0) {
+                // if we have a lock option set, clear the key
+                return self.clearKey().then(function () {
+                    _key = key;
+                });
+            }
+            else {
+                // no lock option, so store the current key
+                return self.setKey(key);
+            }
         });
     };
 

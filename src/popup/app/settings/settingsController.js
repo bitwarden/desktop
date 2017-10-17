@@ -33,7 +33,7 @@
             chrome.storage.local.set(obj, function () {
                 cryptoService.getKeyHash(function (keyHash) {
                     if (keyHash) {
-                        cryptoService.toggleKey(function () { });
+                        cryptoService.toggleKey();
                     }
                     else {
                         SweetAlert.swal({
@@ -44,7 +44,7 @@
                             cancelButtonText: i18nService.cancel
                         }, function (confirmed) {
                             if (confirmed) {
-                                cryptoService.toggleKey(function () { });
+                                cryptoService.toggleKey();
                                 chrome.runtime.sendMessage({ command: 'logout' });
                             }
                         });

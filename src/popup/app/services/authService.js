@@ -41,7 +41,7 @@
                         }
 
                         tokenService.setTokens(response.accessToken, response.refreshToken, function () {
-                            cryptoService.setKey(key, function () {
+                            cryptoService.setKey(key).then(function () {
                                 cryptoService.setKeyHash(hashedPassword, function () {
                                     userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(),
                                         function () {
