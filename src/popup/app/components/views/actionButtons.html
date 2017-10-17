@@ -1,20 +1,20 @@
 ﻿<div class="action-buttons">
     <div ng-if="$ctrl.cipher.type === $ctrl.constants.cipherType.login">
-        <span class="btn-list" stop-prop stop-click title="{{$ctrl.i18n.launchWebsite}}" ng-click="$ctrl.launch()"
+        <span class="btn-list" stop-prop stop-click title="{{::$ctrl.i18n.launchWebsite}}" ng-click="$ctrl.launch()"
               ng-if="!$ctrl.showView" ng-class="{disabled: !$ctrl.cipher.login.uri}">
             <i class="fa fa-lg fa-share-square-o"></i>
         </span>
-        <span class="btn-list" ng-click="$ctrl.onView($ctrl.cipher)" stop-prop stop-click title="{{i18n.view}}"
+        <span class="btn-list" ng-click="$ctrl.onView($ctrl.cipher)" stop-prop stop-click title="{{::$ctrl.i18n.view}}"
               ng-if="$ctrl.showView">
             <i class="fa fa-lg fa-eye"></i>
         </span>
-        <span class="btn-list" stop-prop stop-click title="{{$ctrl.i18n.copyUsername}}" ngclipboard
+        <span class="btn-list" stop-prop stop-click title="{{::$ctrl.i18n.copyUsername}}" ngclipboard
               ngclipboard-error="$ctrl.clipboardError(e)"
               ngclipboard-success="$ctrl.clipboardSuccess(e, $ctrl.i18n.username, 'Username')"
               data-clipboard-text="{{$ctrl.cipher.login.username}}" ng-class="{disabled: !$ctrl.cipher.login.username}">
             <i class="fa fa-lg fa-user"></i>
         </span>
-        <span class="btn-list" stop-prop stop-click title="{{$ctrl.i18n.copyPassword}}" ngclipboard
+        <span class="btn-list" stop-prop stop-click title="{{::$ctrl.i18n.copyPassword}}" ngclipboard
               ngclipboard-error="$ctrl.clipboardError(e)"
               ngclipboard-success="$ctrl.clipboardSuccess(e, $ctrl.i18n.password, 'Password')"
               data-clipboard-text="{{$ctrl.cipher.login.password}}" ng-class="{disabled: !$ctrl.cipher.login.password}">
@@ -22,17 +22,17 @@
         </span>
     </div>
     <div ng-if="$ctrl.cipher.type === $ctrl.constants.cipherType.card">
-        <span class="btn-list" ng-click="$ctrl.onView($ctrl.cipher)" stop-prop stop-click title="{{i18n.view}}"
+        <span class="btn-list" ng-click="$ctrl.onView($ctrl.cipher)" stop-prop stop-click title="{{::$ctrl.i18n.view}}"
               ng-if="$ctrl.showView">
             <i class="fa fa-lg fa-eye"></i>
         </span>
-        <span class="btn-list" stop-prop stop-click title="{{$ctrl.i18n.copyNumber}}" ngclipboard
+        <span class="btn-list" stop-prop stop-click title="{{::$ctrl.i18n.copyNumber}}" ngclipboard
               ngclipboard-error="$ctrl.clipboardError(e)"
               ngclipboard-success="$ctrl.clipboardSuccess(e, $ctrl.i18n.number, 'Card Number')"
               data-clipboard-text="{{$ctrl.cipher.card.number}}" ng-class="{disabled: !$ctrl.cipher.card.number}">
             <i class="fa fa-lg fa-hashtag"></i>
         </span>
-        <span class="btn-list" stop-prop stop-click title="{{$ctrl.i18n.copySecurityCode}}" ngclipboard
+        <span class="btn-list" stop-prop stop-click title="{{::$ctrl.i18n.copySecurityCode}}" ngclipboard
               ngclipboard-error="$ctrl.clipboardError(e)"
               ngclipboard-success="$ctrl.clipboardSuccess(e, $ctrl.i18n.securityCode, 'Security Code')"
               data-clipboard-text="{{$ctrl.cipher.card.code}}" ng-class="{disabled: !$ctrl.cipher.card.code}">
@@ -40,7 +40,7 @@
         </span>
     </div>
     <div ng-if="$ctrl.cipher.type === $ctrl.constants.cipherType.identity">
-        <span class="btn-list" ng-click="$ctrl.onView($ctrl.cipher)" stop-prop stop-click title="{{i18n.view}}"
+        <span class="btn-list" ng-click="$ctrl.onView($ctrl.cipher)" stop-prop stop-click title="{{::$ctrl.i18n.view}}"
               ng-if="$ctrl.showView">
             <i class="fa fa-lg fa-eye"></i>
         </span>

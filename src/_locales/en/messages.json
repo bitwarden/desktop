@@ -242,6 +242,9 @@
   "edit": {
     "message": "Edit"
   },
+  "view": {
+    "message": "View"
+  },
   "noItemsInList": {
     "message": "There are no items to list."
   },

@@ -3,7 +3,7 @@
         <a href="" ng-click="main.expandVault()"><i class="fa fa-external-link fa-rotate-270 fa-lg"></i></a>
     </div>
     <div class="search" ng-style="{'visibility': main.disableSearch ? 'hidden' : 'visible'}">
-        <input type="search" placeholder="{{i18n.searchVault}}" id="search" ng-model="searchText" />
+        <input type="search" placeholder="{{::i18n.searchVault}}" id="search" ng-model="searchText" />
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
@@ -16,7 +16,7 @@
         <div class="list">
             <div class="list-section" style="padding-bottom: 0;">
                 <div class="list-section-header">
-                    {{i18n.folders}}
+                    {{::i18n.folders}}
                     <span>{{vaultFolders.length}}</span>
                 </div>
                 <a href="#" stop-click ng-click="viewFolder(folder)" class="list-section-item"
@@ -38,15 +38,15 @@
                     <i class="fa fa-folder-open"></i> {{folder.name}}
                 </div>
                 <a href="#" stop-click ng-click="viewCipher(cipher)"
-                   class="list-grouped-item condensed" title="{{i18n.edit}} {{cipher.name}}"
+                   class="list-grouped-item condensed" title="{{::i18n.view}}"
                    ng-repeat="cipher in vaultFolderCiphers = (vaultCiphers | filter: { folderId: folder.id }
                             | filter: searchCiphers() | orderBy: ['name', 'subTitle']) track by $index">
                     <action-buttons cipher="cipher"></action-buttons>
                     <icon cipher="cipher"></icon>
                     <span class="text">
                         {{cipher.name}}
-                        <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
-                        <i class="fa fa-paperclip text-muted" ng-if="cipher.attachments" title="{{i18n.attachments}}"></i>
+                        <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{::i18n.shared}}"></i>
+                        <i class="fa fa-paperclip text-muted" ng-if="cipher.attachments" title="{{::i18n.attachments}}"></i>
                     </span>
                     <span class="detail">{{cipher.subTitle}}</span>
                 </a>
@@ -58,15 +58,15 @@
         <div class="list">
             <div class="list-section" style="padding-top: 0; padding-bottom: 0;">
                 <a href="#" stop-click ng-click="viewCipher(cipher)"
-                   class="list-section-item condensed" title="{{i18n.edit}} {{cipher.name}}"
+                   class="list-section-item condensed" title="{{::i18n.view}}"
                    ng-repeat="cipher in searchResults = (vaultCiphers | filter: searchCiphers() | orderBy: ['name', 'subTitle'])
                     track by $index">
                     <action-buttons cipher="cipher"></action-buttons>
                     <icon cipher="cipher"></icon>
                     <span class="text">
                         {{cipher.name}}
-                        <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
-                        <i class="fa fa-paperclip text-muted" ng-if="cipher.attachments" title="{{i18n.attachments}}"></i>
+                        <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{::i18n.shared}}"></i>
+                        <i class="fa fa-paperclip text-muted" ng-if="cipher.attachments" title="{{::i18n.attachments}}"></i>
                     </span>
                     <span class="detail">{{cipher.subTitle}}</span>
                 </a>
@@ -76,7 +76,7 @@
     <div class="centered-message" ng-if="loaded && !vaultCiphers.length">
         <p>
             {{i18n.noItemsInList}}
-            <button ng-click="addCipher()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addLogin}}</button>
+            <button ng-click="addCipher()" style="margin-top: 20px;" class="btn btn-link btn-block">{{::i18n.addLogin}}</button>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">
