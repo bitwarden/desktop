@@ -108,13 +108,13 @@ function initFolderService() {
             request = new FolderRequest(folder);
 
         if (!folder.id) {
-            self.apiService.postFolder(request, apiSuccess, function (response) {
-                handleError(response, deferred);
+            self.apiService.postFolder(request).then(apiSuccess, function (response) {
+                deferred.reject(response);
             });
         }
         else {
-            self.apiService.putFolder(folder.id, request, apiSuccess, function (response) {
-                handleError(response, deferred);
+            self.apiService.putFolder(folder.id, request).then(apiSuccess, function (response) {
+                deferred.reject(response);
             });
         }
 
@@ -222,8 +222,4 @@ function initFolderService() {
             return self.delete(id);
         });
     };
-
-    function handleError(error, deferred) {
-        deferred.reject(error);
-    }
 }
