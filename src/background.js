@@ -9,7 +9,7 @@ var bg_isBackground = true,
     bg_environmentService,
     bg_userService,
     bg_settingsService,
-    bg_loginService,
+    bg_cipherService,
     bg_folderService,
     bg_lockService,
     bg_syncService,
@@ -38,16 +38,16 @@ var bg_isBackground = true,
     bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
     bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
     bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
-    bg_loginService = new LoginService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
+    bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
         bg_constantsService);
     bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService, bg_utilsService);
-    bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_loginService, bg_utilsService,
+    bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_cipherService, bg_utilsService,
         setIcon, refreshBadgeAndMenu);
-    bg_syncService = new SyncService(bg_loginService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
+    bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
         bg_cryptoService, logout);
     bg_passwordGenerationService = new PasswordGenerationService();
     bg_totpService = new TotpService(bg_constantsService);
-    bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_loginService);
+    bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService);
 
     if (chrome.commands) {
         chrome.commands.onCommand.addListener(function (command) {
@@ -202,7 +202,7 @@ var bg_isBackground = true,
                     return;
                 }
 
-                bg_loginService.getAllDecrypted().then(function (logins) {
+                bg_cipherService.getAllDecrypted().then(function (logins) {
                     for (var i = 0; i < logins.length; i++) {
                         if (logins[i].id === id) {
                             if (info.parentMenuItemId === 'autofill') {
@@ -257,7 +257,7 @@ var bg_isBackground = true,
 
             if (bg_utilsService.isFirefox()) {
                 return new Promise(function (resolve, reject) {
-                    bg_loginService.getAllDecryptedForDomain(domain).then(function (logins) {
+                    bg_cipherService.getAllDecryptedForDomain(domain).then(function (logins) {
                         if (!logins || logins.length !== 1) {
                             reject();
                             return;
@@ -275,7 +275,7 @@ var bg_isBackground = true,
                 });
             }
             else {
-                bg_loginService.getAllDecryptedForDomain(domain).then(function (logins) {
+                bg_cipherService.getAllDecryptedForDomain(domain).then(function (logins) {
                     if (!logins || logins.length !== 1) {
                         callback();
                         return;
@@ -456,8 +456,8 @@ var bg_isBackground = true,
         setActionBadgeColor(bg_sidebarAction);
 
         menuOptionsLoaded = [];
-        bg_loginService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
-            logins.sort(bg_loginService.sortLoginsByLastUsedThenName);
+        bg_cipherService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
+            logins.sort(bg_cipherService.sortLoginsByLastUsedThenName);
 
             if (contextMenuEnabled) {
                 for (var i = 0; i < logins.length; i++) {
@@ -579,7 +579,7 @@ var bg_isBackground = true,
             return;
         }
 
-        bg_loginService.getAllDecryptedForDomain(loginDomain).then(function (logins) {
+        bg_cipherService.getAllDecryptedForDomain(loginDomain).then(function (logins) {
             var match = false;
             for (var i = 0; i < logins.length; i++) {
                 if (logins[i].username === login.username) {
@@ -634,7 +634,7 @@ var bg_isBackground = true,
                     bg_loginsToAdd.splice(i, 1);
 
                     /* jshint ignore:start */
-                    bg_loginService.encrypt({
+                    bg_cipherService.encrypt({
                         id: null,
                         folderId: null,
                         favorite: false,
@@ -645,7 +645,7 @@ var bg_isBackground = true,
                         notes: null
                     }).then(function (loginModel) {
                         var login = new Login(loginModel, true);
-                        bg_loginService.saveWithServer(login).then(function (login) {
+                        bg_cipherService.saveWithServer(login).then(function (login) {
                             ga('send', {
                                 hitType: 'event',
                                 eventAction: 'Added Login from Notification Bar'
@@ -669,7 +669,7 @@ var bg_isBackground = true,
                 if (tabDomain && tabDomain === loginToAdd.domain) {
                     bg_loginsToAdd.splice(i, 1);
                     var hostname = bg_utilsService.getHostname(tab.url);
-                    bg_loginService.saveNeverDomain(hostname);
+                    bg_cipherService.saveNeverDomain(hostname);
                     messageTab(tab.id, 'closeNotificationBar');
                 }
             }
@@ -816,7 +816,7 @@ var bg_isBackground = true,
                     bg_cryptoService.clearKeys(),
                     bg_userService.clear(),
                     bg_settingsService.clear(userId),
-                    bg_loginService.clear(userId),
+                    bg_cipherService.clear(userId),
                     bg_folderService.clear(userId)
                 ]).then(function () {
                     chrome.runtime.sendMessage({

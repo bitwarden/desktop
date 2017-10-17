@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.services')
 
-    .factory('authService', function (cryptoService, apiService, userService, tokenService, $q, $rootScope, loginService,
+    .factory('authService', function (cryptoService, apiService, userService, tokenService, $q, $rootScope,
         folderService, settingsService, syncService, appIdService, utilsService, constantsService) {
         var _service = {};
 

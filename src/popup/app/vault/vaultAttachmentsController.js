@@ -1,7 +1,7 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultAttachmentsController', function ($scope, $state, $stateParams, loginService, toastr,
+    .controller('vaultAttachmentsController', function ($scope, $state, $stateParams, cipherService, toastr,
         SweetAlert, utilsService, $analytics, i18nService, cryptoService, tokenService) {
         $scope.i18n = i18nService;
         utilsService.initListSectionItemListeners($(document), angular);
@@ -10,7 +10,7 @@ angular
         $scope.canAccessAttachments = $scope.isPremium;
         $scope.hasUpdatedKey = false;
 
-        loginService.get($stateParams.id).then(function (login) {
+        cipherService.get($stateParams.id).then(function (login) {
             return login.decrypt();
         }).then(function (model) {
             $scope.login = model;
@@ -69,7 +69,7 @@ angular
                 return deferred.promise;
             }
 
-            $scope.submitPromise = loginService.saveAttachmentWithServer($scope.login, files[0]).then(function (login) {
+            $scope.submitPromise = cipherService.saveAttachmentWithServer($scope.login, files[0]).then(function (login) {
                 login.decrypt().then(function (model) {
                     $scope.login = model;
                 });
@@ -100,7 +100,7 @@ angular
                 cancelButtonText: i18nService.no
             }, function (confirmed) {
                 if (confirmed) {
-                    loginService.deleteAttachmentWithServer($stateParams.id, attachment.id).then(function () {
+                    cipherService.deleteAttachmentWithServer($stateParams.id, attachment.id).then(function () {
                         var index = $scope.login.attachments.indexOf(attachment);
                         if (index > -1) {
                             $scope.login.attachments.splice(index, 1);

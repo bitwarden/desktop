@@ -1,7 +1,7 @@
 angular
     .module('bit.current')
 
-    .controller('currentController', function ($scope, loginService, utilsService, toastr, $window, $state, $timeout,
+    .controller('currentController', function ($scope, cipherService, utilsService, toastr, $window, $state, $timeout,
         autofillService, $analytics, i18nService, totpService, tokenService) {
         $scope.i18n = i18nService;
 
@@ -44,7 +44,7 @@ angular
                         canAutofill = true;
                     });
 
-                loginService.getAllDecryptedForDomain(domain).then(function (ciphers) {
+                cipherService.getAllDecryptedForDomain(domain).then(function (ciphers) {
                     $timeout(function () {
                         $scope.loaded = true;
                         $scope.ciphers = ciphers;

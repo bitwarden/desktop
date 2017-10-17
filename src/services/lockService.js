@@ -1,9 +1,9 @@
-﻿function LockService(constantsService, cryptoService, folderService, loginService, utilsService, setIcon, refreshBadgeAndMenu) {
+﻿function LockService(constantsService, cryptoService, folderService, cipherService, utilsService, setIcon, refreshBadgeAndMenu) {
     this.lastLockCheck = null;
     this.constantsService = constantsService;
     this.cryptoService = cryptoService;
     this.folderService = folderService;
-    this.loginService = loginService;
+    this.cipherService = cipherService;
     this.utilsService = utilsService;
     this.setIcon = setIcon;
     this.refreshBadgeAndMenu = refreshBadgeAndMenu;
@@ -84,7 +84,7 @@ function initLockService(self) {
         ]).then(function () {
             self.setIcon();
             self.folderService.clearCache();
-            self.loginService.clearCache();
+            self.cipherService.clearCache();
             self.refreshBadgeAndMenu();
         });
     };

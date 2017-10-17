@@ -21,9 +21,9 @@
         var page = chrome.extension.getBackgroundPage();
         return page ? page.bg_folderService : null;
     })
-    .factory('loginService', function () {
+    .factory('cipherService', function () {
         var page = chrome.extension.getBackgroundPage();
-        return page ? page.bg_loginService : null;
+        return page ? page.bg_cipherService : null;
     })
     .factory('syncService', function () {
         var page = chrome.extension.getBackgroundPage();

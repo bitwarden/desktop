@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultAddCipherController', function ($scope, $state, $stateParams, loginService, folderService,
+    .controller('vaultAddCipherController', function ($scope, $state, $stateParams, cipherService, folderService,
         cryptoService, toastr, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
@@ -51,9 +51,9 @@
                 return;
             }
 
-            $scope.savePromise = loginService.encrypt($scope.cipher).then(function (cipherModel) {
+            $scope.savePromise = cipherService.encrypt($scope.cipher).then(function (cipherModel) {
                 var cipher = new Cipher(cipherModel, true);
-                return loginService.saveWithServer(cipher);
+                return cipherService.saveWithServer(cipher);
             }).then(function (c) {
                 $analytics.eventTrack('Added Cipher');
                 toastr.success(i18nService.addedLogin);

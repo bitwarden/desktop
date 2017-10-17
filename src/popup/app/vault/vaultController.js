@@ -1,7 +1,7 @@
 ﻿angular
     .module('bit.vault')
 
-    .controller('vaultController', function ($scope, $rootScope, loginService, folderService, $q, $state, $stateParams, toastr,
+    .controller('vaultController', function ($scope, $rootScope, cipherService, folderService, $q, $state, $stateParams, toastr,
         syncService, utilsService, $analytics, i18nService, stateService, $timeout, $window) {
         var stateKey = 'vault',
             state = stateService.getState(stateKey) || {};
@@ -50,7 +50,7 @@
             });
             promises.push(folderPromise);
 
-            var cipherPromise = loginService.getAllDecrypted().then(function (ciphers) {
+            var cipherPromise = cipherService.getAllDecrypted().then(function (ciphers) {
                 decCiphers = ciphers;
             });
             promises.push(cipherPromise);

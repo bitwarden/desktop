@@ -1,8 +1,8 @@
-﻿function AutofillService(utilsService, totpService, tokenService, loginService) {
+﻿function AutofillService(utilsService, totpService, tokenService, cipherService) {
     this.utilsService = utilsService;
     this.totpService = totpService;
     this.tokenService = tokenService;
-    this.loginService = loginService;
+    this.cipherService = cipherService;
 
     initAutofill();
 }
@@ -226,7 +226,7 @@ function initAutofill() {
 
                 didAutofill = true;
                 if (!options.skipLastUsed) {
-                    self.loginService.updateLastUsedDate(options.login.id);
+                    self.cipherService.updateLastUsedDate(options.login.id);
                 }
 
                 chrome.tabs.sendMessage(tab.id, {
@@ -294,13 +294,13 @@ function initAutofill() {
                 return;
             }
 
-            self.loginService.getLastUsedForDomain(tabDomain).then(function (login) {
-                if (!login) {
+            self.cipherService.getLastUsedForDomain(tabDomain).then(function (cipher) {
+                if (!cipher) {
                     return;
                 }
 
                 self.doAutoFill({
-                    login: login,
+                    login: cipher,
                     pageDetails: pageDetails,
                     fromBackground: true,
                     skipTotp: !fromCommand,

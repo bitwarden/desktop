@@ -1,7 +1,7 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultEditCipherController', function ($scope, $state, $stateParams, loginService, folderService,
+    .controller('vaultEditCipherController', function ($scope, $state, $stateParams, cipherService, folderService,
         cryptoService, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
@@ -22,7 +22,7 @@ angular
             angular.extend($scope.cipher, $stateParams.cipher);
         }
         else {
-            loginService.get(cipherId).then(function (cipher) {
+            cipherService.get(cipherId).then(function (cipher) {
                 return cipher.decrypt();
             }).then(function (model) {
                 $scope.cipher = model;
@@ -46,9 +46,9 @@ angular
                 return;
             }
 
-            $scope.savePromise = loginService.encrypt($scope.cipher).then(function (cipherModel) {
+            $scope.savePromise = cipherService.encrypt($scope.cipher).then(function (cipherModel) {
                 var cipher = new Cipher(cipherModel, true);
-                return loginService.saveWithServer(cipher).then(function (c) {
+                return cipherService.saveWithServer(cipher).then(function (c) {
                     $analytics.eventTrack('Edited Cipher');
                     toastr.success(i18nService.editedLogin);
                     $scope.close();
@@ -65,7 +65,7 @@ angular
                 cancelButtonText: i18nService.no
             }, function (confirmed) {
                 if (confirmed) {
-                    loginService.deleteWithServer(cipherId).then(function () {
+                    cipherService.deleteWithServer(cipherId).then(function () {
                         $analytics.eventTrack('Deleted Cipher');
                         toastr.success(i18nService.deletedLogin);
                         $state.go('tabs.vault', {

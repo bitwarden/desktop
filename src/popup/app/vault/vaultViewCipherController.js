@@ -1,7 +1,7 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultViewCipherController', function ($scope, $state, $stateParams, loginService, toastr,
+    .controller('vaultViewCipherController', function ($scope, $state, $stateParams, cipherService, toastr,
         $analytics, i18nService, utilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert,
         constantsService) {
         $scope.constants = constantsService;
@@ -13,7 +13,7 @@ angular
         $scope.isPremium = tokenService.getPremium();
         $scope.cipher = null;
         var cipherObj = null;
-        loginService.get($stateParams.cipherId).then(function (cipher) {
+        cipherService.get($stateParams.cipherId).then(function (cipher) {
             if (!cipher) {
                 return;
             }

@@ -1,6 +1,6 @@
-﻿function SyncService(loginService, folderService, userService, apiService, settingsService,
+﻿function SyncService(cipherService, folderService, userService, apiService, settingsService,
     cryptoService, logoutCallback) {
-    this.loginService = loginService;
+    this.cipherService = cipherService;
     this.folderService = folderService;
     this.userService = userService;
     this.apiService = apiService;
@@ -143,7 +143,7 @@ function initSyncService() {
         for (var i = 0; i < response.length; i++) {
             ciphers[response[i].id] = new CipherData(response[i], userId);
         }
-        return self.loginService.replace(ciphers);
+        return self.cipherService.replace(ciphers);
     }
 
     function syncSettings(self, userId, response) {

@@ -1,4 +1,4 @@
-function LoginService(cryptoService, userService, apiService, settingsService, utilsService, constantsService) {
+function CipherService(cryptoService, userService, apiService, settingsService, utilsService, constantsService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
@@ -9,33 +9,33 @@ function LoginService(cryptoService, userService, apiService, settingsService, u
     this.localDataKey = 'sitesLocalData';
     this.neverDomainsKey = 'neverDomains';
 
-    initLoginService();
+    initCipherService();
 }
 
-function initLoginService() {
-    LoginService.prototype.clearCache = function () {
+function initCipherService() {
+    CipherService.prototype.clearCache = function () {
         this.decryptedCipherCache = null;
     };
 
-    LoginService.prototype.encrypt = function (login) {
+    CipherService.prototype.encrypt = function (cipher) {
         var self = this;
 
         var model = {
-            id: login.id,
-            folderId: login.folderId,
-            favorite: login.favorite,
-            organizationId: login.organizationId,
-            type: login.type
+            id: cipher.id,
+            folderId: cipher.folderId,
+            favorite: cipher.favorite,
+            organizationId: cipher.organizationId,
+            type: cipher.type
         };
 
-        return self.cryptoService.getOrgKey(login.organizationId).then(function (key) {
+        return self.cryptoService.getOrgKey(cipher.organizationId).then(function (key) {
             return Q.all([
-                encryptObjProperty(login, model, {
+                encryptObjProperty(cipher, model, {
                     name: null,
                     notes: null
                 }, key, self),
-                encryptCipherData(login, model, key, self),
-                self.encryptFields(login.fields, key).then(function (fields) {
+                encryptCipherData(cipher, model, key, self),
+                self.encryptFields(cipher.fields, key).then(function (fields) {
                     model.fields = fields;
                 })
             ]);
@@ -96,7 +96,7 @@ function initLoginService() {
         }
     }
 
-    LoginService.prototype.encryptFields = function (fields, key) {
+    CipherService.prototype.encryptFields = function (fields, key) {
         var self = this;
         if (!fields || !fields.length) {
             return Q(null);
@@ -114,7 +114,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.encryptField = function (field, key) {
+    CipherService.prototype.encryptField = function (field, key) {
         var self = this;
 
         var model = {
@@ -155,7 +155,7 @@ function initLoginService() {
         return Q.all(promises);
     }
 
-    LoginService.prototype.get = function (id) {
+    CipherService.prototype.get = function (id) {
         var self = this,
             key = null,
             localData;
@@ -178,7 +178,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.getAll = function () {
+    CipherService.prototype.getAll = function () {
         var self = this,
             key = null,
             localData = null;
@@ -204,7 +204,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.getAllDecrypted = function () {
+    CipherService.prototype.getAllDecrypted = function () {
         if (this.decryptedCipherCache) {
             return Q(this.decryptedCipherCache);
         }
@@ -247,7 +247,7 @@ function initLoginService() {
         return deferred.promise;
     };
 
-    LoginService.prototype.getAllDecryptedForFolder = function (folderId) {
+    CipherService.prototype.getAllDecryptedForFolder = function (folderId) {
         return this.getAllDecrypted().then(function (ciphers) {
             var ciphersToReturn = [];
             for (var i = 0; i < ciphers.length; i++) {
@@ -260,7 +260,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.getAllDecryptedForDomain = function (domain) {
+    CipherService.prototype.getAllDecryptedForDomain = function (domain) {
         var self = this;
 
         var eqDomainsPromise = self.settingsService.getEquivalentDomains().then(function (eqDomains) {
@@ -294,7 +294,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.getLastUsedForDomain = function (domain) {
+    CipherService.prototype.getLastUsedForDomain = function (domain) {
         var self = this,
             deferred = Q.defer();
 
@@ -311,7 +311,7 @@ function initLoginService() {
         return deferred.promise;
     };
 
-    LoginService.prototype.saveWithServer = function (cipher) {
+    CipherService.prototype.saveWithServer = function (cipher) {
         var deferred = Q.defer();
 
         var self = this,
@@ -341,7 +341,7 @@ function initLoginService() {
         return deferred.promise;
     };
 
-    LoginService.prototype.upsert = function (cipher) {
+    CipherService.prototype.upsert = function (cipher) {
         var self = this,
             key = null;
 
@@ -368,7 +368,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.updateLastUsedDate = function (id) {
+    CipherService.prototype.updateLastUsedDate = function (id) {
         var self = this;
 
         var ciphersLocalData = null;
@@ -403,7 +403,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.replace = function (ciphers) {
+    CipherService.prototype.replace = function (ciphers) {
         var self = this;
         self.userService.getUserIdPromise().then(function (userId) {
             return self.utilsService.saveObjToStorage('ciphers_' + userId, ciphers);
@@ -412,46 +412,46 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.clear = function (userId) {
+    CipherService.prototype.clear = function (userId) {
         var self = this;
         return self.utilsService.removeFromStorage('ciphers_' + userId).then(function () {
             self.decryptedCipherCache = null;
         });
     };
 
-    LoginService.prototype.delete = function (id) {
+    CipherService.prototype.delete = function (id) {
         var self = this,
             key = null;
 
         self.userService.getUserIdPromise().then(function () {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
-        }).then(function (logins) {
-            if (!logins) {
+        }).then(function (ciphers) {
+            if (!ciphers) {
                 return null;
             }
 
             if (id.constructor === Array) {
                 for (var i = 0; i < id.length; i++) {
-                    if (id[i] in logins) {
-                        delete logins[id[i]];
+                    if (id[i] in ciphers) {
+                        delete ciphers[id[i]];
                     }
                 }
             }
-            else if (id in logins) {
-                delete logins[id];
+            else if (id in ciphers) {
+                delete ciphers[id];
             }
             else {
                 return null;
             }
 
-            return logins;
-        }).then(function (logins) {
-            if (!logins) {
+            return ciphers;
+        }).then(function (ciphers) {
+            if (!ciphers) {
                 return false;
             }
 
-            return self.utilsService.saveObjToStorage(key, logins);
+            return self.utilsService.saveObjToStorage(key, ciphers);
         }).then(function (clearCache) {
             if (clearCache !== false) {
                 self.decryptedCipherCache = null;
@@ -459,14 +459,14 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.deleteWithServer = function (id) {
+    CipherService.prototype.deleteWithServer = function (id) {
         var self = this;
         return self.apiService.deleteCipher(id).then(function () {
             return self.delete(id);
         });
     };
 
-    LoginService.prototype.saveNeverDomain = function (domain) {
+    CipherService.prototype.saveNeverDomain = function (domain) {
         if (!domain) {
             return Q();
         }
@@ -482,7 +482,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.saveAttachmentWithServer = function (cipher, unencryptedFile) {
+    CipherService.prototype.saveAttachmentWithServer = function (cipher, unencryptedFile) {
         var deferred = Q.defer(),
             self = this,
             response = null,
@@ -531,22 +531,22 @@ function initLoginService() {
         return deferred.promise;
     };
 
-    LoginService.prototype.deleteAttachment = function (id, attachmentId) {
+    CipherService.prototype.deleteAttachment = function (id, attachmentId) {
         var self = this,
             key = null;
 
         self.userService.getUserIdPromise().then(function () {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
-        }).then(function (logins) {
-            if (logins && id in logins && logins[id].attachments) {
-                for (var i = 0; i < logins[id].attachments.length; i++) {
-                    if (logins[id].attachments[i].id === attachmentId) {
-                        logins[id].attachments.splice(i, 1);
+        }).then(function (ciphers) {
+            if (ciphers && id in ciphers && ciphers[id].attachments) {
+                for (var i = 0; i < ciphers[id].attachments.length; i++) {
+                    if (ciphers[id].attachments[i].id === attachmentId) {
+                        ciphers[id].attachments.splice(i, 1);
                     }
                 }
 
-                return self.utilsService.saveObjToStorage(key, logins);
+                return self.utilsService.saveObjToStorage(key, ciphers);
             }
             else {
                 return false;
@@ -558,7 +558,7 @@ function initLoginService() {
         });
     };
 
-    LoginService.prototype.deleteAttachmentWithServer = function (id, attachmentId) {
+    CipherService.prototype.deleteAttachmentWithServer = function (id, attachmentId) {
         var self = this,
             deferred = Q.defer();
 
@@ -576,9 +576,9 @@ function initLoginService() {
         return deferred.promise;
     };
 
-    LoginService.prototype.sortLoginsByLastUsed = sortLoginsByLastUsed;
+    CipherService.prototype.sortLoginsByLastUsed = sortLoginsByLastUsed;
 
-    LoginService.prototype.sortLoginsByLastUsedThenName = function (a, b) {
+    CipherService.prototype.sortLoginsByLastUsedThenName = function (a, b) {
         var result = sortLoginsByLastUsed(a, b);
         if (result !== 0) {
             return result;
