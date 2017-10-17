@@ -51,13 +51,14 @@ angular
                         hostnameUri.indexOf('https://') !== 0) {
                         hostnameUri = "http://" + hostnameUri;
                         isWebsite = true;
+                        ctrl.icon = 'fa-globe';
                     }
                     else {
                         isWebsite = hostnameUri.indexOf('http') === 0 && hostnameUri.indexOf('.') > 0;
+                        ctrl.icon = 'fa-globe';
                     }
 
                     if (isWebsite) {
-                        ctrl.icon = 'fa-globe';
                         try {
                             var url = new URL(hostnameUri);
                             ctrl.image = 'https://icons.bitwarden.com/' + url.hostname + '/icon.png';
