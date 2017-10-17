@@ -44,7 +44,7 @@
         return encodeURIComponent(pagePath);
     }
 
-    bgPage.bg_appIdService.getAnonymousAppId(function (gaAnonAppId) {
+    bgPage.bg_appIdService.getAnonymousAppId().then(function (gaAnonAppId) {
         gaFunc = function (action, param1, param2, param3, param4) {
             if (action !== 'send' || !param1) {
                 return;

@@ -1,35 +1,27 @@
-function AppIdService() {
+function AppIdService(utilsService) {
+    this.utilsService = utilsService;
+
     initAppIdService();
 }
 
 function initAppIdService() {
-    AppIdService.prototype.getAppId = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        makeAndGetAppId('appId', callback);
+    AppIdService.prototype.getAppId = function () {
+        return makeAndGetAppId('appId', this);
     };
 
-    AppIdService.prototype.getAnonymousAppId = function (callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        makeAndGetAppId('anonymousAppId', callback);
+    AppIdService.prototype.getAnonymousAppId = function () {
+        return makeAndGetAppId('anonymousAppId', this);
     };
 
-    function makeAndGetAppId(key, callback) {
-        chrome.storage.local.get(key, function (obj) {
-            if (obj && obj[key]) {
-                callback(obj[key]);
-                return;
+    function makeAndGetAppId(key, self) {
+        return self.utilsService.getObjFromStorage(key).then(function (obj) {
+            if (obj) {
+                return obj;
             }
 
-            var setObj = {};
-            setObj[key] = newGuid();
-            chrome.storage.local.set(setObj, function () {
-                callback(setObj[key]);
+            var guid = newGuid();
+            return self.utilsService.saveObjToStorage(key, guid).then(function () {
+                return guid;
             });
         });
     }

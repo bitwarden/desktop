@@ -1,5 +1,6 @@
 ﻿function TokenService(utilsService) {
     this.utilsService = utilsService;
+
     initTokenService();
 }
 
@@ -97,20 +98,9 @@ function initTokenService() {
         });
     };
 
-    TokenService.prototype.getTwoFactorToken = function (email, callback) {
-        if (!callback || typeof callback !== 'function') {
-            throw 'callback function required';
-        }
-
-        var prop = 'twoFactorToken_' + email;
-
-        chrome.storage.local.get(prop, function (obj) {
-            if (obj && obj[prop]) {
-                callback(obj[prop]);
-                return;
-            }
-
-            return callback(null);
+    TokenService.prototype.getTwoFactorToken = function (email) {
+        return this.utilsService.getObjFromStorage('twoFactorToken_' + email).then(function (token) {
+            return token;
         });
     };
 
