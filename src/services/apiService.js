@@ -38,16 +38,16 @@ function initApiService() {
         //self.identityBaseUrl = 'https://localhost:44392';
 
         // Desktop external
-        self.baseUrl = 'http://192.168.1.3:4000';
-        self.identityBaseUrl = 'http://192.168.1.3:33656';
+        //self.baseUrl = 'http://192.168.1.3:4000';
+        //self.identityBaseUrl = 'http://192.168.1.3:33656';
 
         // Preview
         //self.baseUrl = 'https://preview-api.bitwarden.com';
         //self.identityBaseUrl = 'https://preview-identity.bitwarden.com';
 
         // Production
-        //self.baseUrl = 'https://api.bitwarden.com';
-        //self.identityBaseUrl = 'https://identity.bitwarden.com';
+        self.baseUrl = 'https://api.bitwarden.com';
+        self.identityBaseUrl = 'https://identity.bitwarden.com';
     };
 
     // Auth APIs
