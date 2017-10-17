@@ -173,14 +173,13 @@ function initCryptoService(constantsService) {
     };
 
     CryptoService.prototype.getOrgKeys = function () {
-        var deferred = Q.defer();
-
         if (_orgKeys && _orgKeys.length) {
-            deferred.resolve(_orgKeys);
-            return deferred.promise;
+            return Q(_orgKeys);
         }
 
-        var self = this;
+        var self = this,
+            deferred = Q.defer();
+
         chrome.storage.local.get(encOrgKeysKey, function (obj) {
             if (obj && obj.encOrgKeys) {
                 var orgKeys = {},
