@@ -120,7 +120,7 @@ function initFolderService() {
 
         function apiSuccess(response) {
             folder.id = response.id;
-            self.userService.getUserId(function (userId) {
+            self.userService.getUserIdPromise().then(function (userId) {
                 var data = new FolderData(response, userId);
                 return self.upsert(data);
             }).then(function () {
@@ -135,7 +135,7 @@ function initFolderService() {
         var self = this,
             key = null;
 
-        return self.userService.getUserIdPromise(function (userId) {
+        return self.userService.getUserIdPromise().then(function (userId) {
             key = 'folders_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (folders) {
@@ -152,7 +152,7 @@ function initFolderService() {
                 folders[folder.id] = folder;
             }
 
-            return self.utilsService.saveObjToStorage(key, ciphers);
+            return self.utilsService.saveObjToStorage(key, folders);
         }).then(function () {
             self.decryptedFolderCache = null;
         });

@@ -213,6 +213,8 @@ function initApiService() {
         }, function (jqXHR) {
             handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
     ApiService.prototype.putFolder = function (id, folderRequest) {
@@ -237,6 +239,8 @@ function initApiService() {
         }, function (jqXHR) {
             handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
     ApiService.prototype.deleteFolder = function (id) {
@@ -259,6 +263,8 @@ function initApiService() {
         }, function (jqXHR) {
             handleError(deferred.reject, jqXHR, true, self);
         });
+
+        return deferred.promise;
     };
 
     // Cipher APIs
