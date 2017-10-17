@@ -1,0 +1,11 @@
+﻿<a href="#" stop-click ng-click="$ctrl.select(cipher)" class="list-section-item condensed"
+   title="{{$ctrl.selectionTitle}}" ng-repeat="cipher in $ctrl.ciphers track by $index">
+    <action-buttons cipher="cipher" show-view="true" on-view="$ctrl.view(cipher)"></action-buttons>
+    <icon cipher="cipher"></icon>
+    <span class="text">
+        {{cipher.name}}
+        <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{$ctrl.i18n.shared}}"></i>
+        <i class="fa fa-paperclip text-muted" ng-if="cipher.attachments" title="{{$ctrl.i18n.attachments}}"></i>
+    </span>
+    <span class="detail">{{cipher.subTitle}}</span>
+</a>

@@ -242,8 +242,8 @@
   "edit": {
     "message": "Edit"
   },
-  "noLoginsInList": {
-    "message": "There are no logins to list."
+  "noItemsInList": {
+    "message": "There are no items to list."
   },
   "loginInformation": {
     "message": "Login Information"
@@ -930,6 +930,9 @@
   },
   "typeLogin": {
     "message": "Login"
+  },
+  "typeLogins": {
+    "message": "Logins"
   },
   "typeSecureNote": {
     "message": "Secure Note"

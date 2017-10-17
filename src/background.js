@@ -736,7 +736,7 @@ var bg_isBackground = true,
 
     function autofillPage() {
         bg_autofillService.doAutoFill({
-            login: loginToAutoFill,
+            cipher: loginToAutoFill,
             pageDetails: pageDetailsToAutoFill,
             fromBackground: true
         });

@@ -260,7 +260,7 @@ function initCipherService() {
         });
     };
 
-    CipherService.prototype.getAllDecryptedForDomain = function (domain) {
+    CipherService.prototype.getAllDecryptedForDomain = function (domain, includeOtherTypes) {
         var self = this;
 
         var eqDomainsPromise = self.settingsService.getEquivalentDomains().then(function (eqDomains) {
@@ -286,6 +286,9 @@ function initCipherService() {
             for (var i = 0; i < ciphers.length; i++) {
                 if (ciphers[i].type === self.constantsService.cipherType.login && ciphers[i].login.domain &&
                     matchingDomains.indexOf(ciphers[i].login.domain) > -1) {
+                    ciphersToReturn.push(ciphers[i]);
+                }
+                else if (includeOtherTypes && includeOtherTypes.indexOf(ciphers[i].type) > -1) {
                     ciphersToReturn.push(ciphers[i]);
                 }
             }

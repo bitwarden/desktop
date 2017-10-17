@@ -201,7 +201,7 @@ function initAutofill() {
                 return;
             }
 
-            if (!tab || !options.login || !options.pageDetails || !options.pageDetails.length) {
+            if (!tab || !options.cipher || !options.pageDetails || !options.pageDetails.length) {
                 deferred.reject();
                 return;
             }
@@ -213,20 +213,24 @@ function initAutofill() {
                     continue;
                 }
 
-                var fillScript = self.generateFillScript(options.pageDetails[i].details, {
-                    username: options.login.username,
-                    password: options.login.password,
-                    fields: options.login.fields,
+                var fillOptions = {
+                    fields: options.cipher.fields,
                     skipUsernameOnlyFill: options.skipUsernameOnlyFill || false
-                });
+                };
 
+                if (options.cipher.login) {
+                    fillOptions.username = options.cipher.login.username;
+                    fillOptions.password = options.cipher.login.password;
+                }
+
+                var fillScript = self.generateFillScript(options.pageDetails[i].details, fillOptions);
                 if (!fillScript || !fillScript.script || !fillScript.script.length) {
                     continue;
                 }
 
                 didAutofill = true;
                 if (!options.skipLastUsed) {
-                    self.cipherService.updateLastUsedDate(options.login.id);
+                    self.cipherService.updateLastUsedDate(options.cipher.id);
                 }
 
                 chrome.tabs.sendMessage(tab.id, {
@@ -235,14 +239,14 @@ function initAutofill() {
                 }, { frameId: options.pageDetails[i].frameId });
 
                 if (totpPromise || (options.fromBackground && self.utilsService.isFirefox()) ||
-                    options.skipTotp || !options.login.totp || !self.tokenService.getPremium()) {
+                    options.skipTotp || !options.cipher.login || !options.cipher.login.totp || !self.tokenService.getPremium()) {
                     continue;
                 }
 
                 totpPromise = self.totpService.isAutoCopyEnabled().then(function (enabled) {
                     if (enabled) {
                         /* jshint ignore:start */
-                        return self.totpService.getCode(options.login.totp);
+                        return self.totpService.getCode(options.cipher.login.totp);
                         /* jshint ignore:end */
                     }
 
@@ -300,7 +304,7 @@ function initAutofill() {
                 }
 
                 self.doAutoFill({
-                    login: cipher,
+                    cipher: cipher,
                     pageDetails: pageDetails,
                     fromBackground: true,
                     skipTotp: !fromCommand,

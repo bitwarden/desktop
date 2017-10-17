@@ -2,7 +2,7 @@ angular
     .module('bit.current')
 
     .controller('currentController', function ($scope, cipherService, utilsService, toastr, $window, $state, $timeout,
-        autofillService, $analytics, i18nService, totpService, tokenService) {
+        autofillService, $analytics, i18nService, totpService, tokenService, constantsService, $filter) {
         $scope.i18n = i18nService;
 
         var pageDetails = [],
@@ -10,7 +10,8 @@ angular
             domain = null,
             canAutofill = false;
 
-        $scope.ciphers = [];
+        $scope.loginCiphers = [];
+        $scope.otherCiphers = [];
         $scope.loaded = false;
         $scope.searchText = null;
         $('#search').focus();
@@ -44,10 +45,24 @@ angular
                         canAutofill = true;
                     });
 
-                cipherService.getAllDecryptedForDomain(domain).then(function (ciphers) {
+                var otherTypes = [constantsService.cipherType.card, constantsService.cipherType.identity];
+                cipherService.getAllDecryptedForDomain(domain, otherTypes).then(function (ciphers) {
+                    var loginCiphers = [],
+                        otherCiphers = [];
+
+                    for (var i = 0; i < ciphers.length; i++) {
+                        if (ciphers[i].type === constantsService.cipherType.login) {
+                            loginCiphers.push(ciphers[i]);
+                        }
+                        else {
+                            otherCiphers.push(ciphers[i]);
+                        }
+                    }
+
                     $timeout(function () {
+                        $scope.loginCiphers = $filter('orderBy')(loginCiphers, [sortUriMatch, sortLastUsed, 'name', 'subTitle']);
+                        $scope.otherCiphers = $filter('orderBy')(otherCiphers, [sortLastUsed, 'name', 'subTitle']);
                         $scope.loaded = true;
-                        $scope.ciphers = ciphers;
                     });
                 });
             });
@@ -94,14 +109,14 @@ angular
             });
         };
 
-        $scope.sortUriMatch = function (cipher) {
+        function sortUriMatch(cipher) {
             // exact matches should sort earlier.
             return url && url.startsWith(cipher.uri) ? 0 : 1;
-        };
+        }
 
-        $scope.sortLastUsed = function (cipher) {
+        function sortLastUsed(cipher) {
             return cipher.localData && cipher.localData.lastUsedDate ? -1 * cipher.localData.lastUsedDate : 0;
-        };
+        }
 
         $scope.searchVault = function () {
             $state.go('tabs.vault', {

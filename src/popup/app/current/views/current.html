@@ -14,29 +14,30 @@
     </div>
 </div>
 <div class="content content-tabs">
-    <div ng-if="ciphers.length">
-        <div class="list">
-            <div class="list-grouped">
-                <a href="#" stop-click ng-click="fillCipher(cipher)" class="list-grouped-item condensed"
-                   title="{{i18n.autoFill}} {{cipher.name}}"
-                   ng-repeat="cipher in theCiphers = (ciphers | orderBy: [sortUriMatch, sortLastUsed, 'name', 'subTitle'])
-                        track by $index">
-                    <action-buttons cipher="cipher" show-view="true" on-view="viewCipher(cipher)"></action-buttons>
-                    <icon cipher="cipher"></icon>
-                    <span class="text">
-                        {{cipher.name}}
-                        <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
-                    </span>
-                    <span class="detail">{{cipher.subTitle}}</span>
-                </a>
+    <div class="list" ng-if="loaded">
+        <div class="list-section">
+            <div class="list-section-header">
+                {{i18n.typeLogins}}
+            </div>
+            <div class="list-section-items" ng-class="{'list-no-selection': !loginCiphers.length}">
+                <div class="list-section-item" ng-if="loaded && !loginCiphers.length">
+                    <p>{{i18n.autoFillInfo}}</p>
+                    <button ng-click="addCipher()" class="btn btn-link btn-block">{{i18n.addLogin}}</button>
+                </div>
+                <cipher-items ng-if="loginCiphers.length" ciphers="loginCiphers" on-view="viewCipher"
+                              on-selected="fillCipher" selection-title="i18n.autoFill"></cipher-items>
             </div>
         </div>
-    </div>
-    <div class="centered-message" ng-if="loaded && !ciphers.length">
-        <p>
-            {{i18n.autoFillInfo}}
-            <button ng-click="addCipher()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addLogin}}</button>
-        </p>
+        <div class="list-section" ng-class="{'list-no-selection': !otherCiphers.length}">
+            <div class="list-section-header">
+                {{i18n.other}}
+            </div>
+            <div class="list-section-items">
+                <div class="list-section-item" ng-if="loaded && !otherCiphers.length">{{i18n.noItemsInList}}</div>
+                <cipher-items ng-if="otherCiphers.length" ciphers="otherCiphers" on-view="viewCipher"
+                              on-selected="fillCipher" selection-title="i18n.autoFill"></cipher-items>
+            </div>
+        </div>
     </div>
     <div class="page-loading" ng-if="!loaded">
         <i class="fa fa-lg fa-spinner fa-spin"></i>
