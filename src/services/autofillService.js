@@ -3,7 +3,7 @@
     this.totpService = totpService;
     this.tokenService = tokenService;
     this.cipherService = cipherService;
-    this.cipherService = cipherService;
+    this.constantsService = constantsService;
 
     initAutofill();
 }
@@ -12,150 +12,6 @@ function initAutofill() {
     // Add other languages to this array
     var usernameFieldNames = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
         'userid', 'user id'];
-
-    AutofillService.prototype.generateFillScript = function (pageDetails, fill) {
-        if (!pageDetails) {
-            return null;
-        }
-
-        var fillScript = {
-            documentUUID: pageDetails.documentUUID,
-            script: [],
-            autosubmit: null,
-            properties: {},
-            options: {},
-            metadata: {}
-        };
-
-        var passwordFields = [],
-            passwords = [],
-            usernames = [],
-            filledFields = {},
-            pf = null,
-            username = null,
-            i = 0;
-
-        if (fill.fields && fill.fields.length) {
-            var fieldNames = [];
-
-            for (i = 0; i < fill.fields.length; i++) {
-                if (fill.fields[i].name && fill.fields[i].name !== '') {
-                    fieldNames.push(fill.fields[i].name.toLowerCase());
-                }
-                else {
-                    fieldNames.push(null);
-                }
-            }
-
-            for (i = 0; i < pageDetails.fields.length; i++) {
-                var field = pageDetails.fields[i];
-                if (filledFields.hasOwnProperty(field.opid) || !field.viewable) {
-                    continue;
-                }
-
-                var matchingIndex = findMatchingFieldIndex(field, fieldNames);
-                if (matchingIndex > -1) {
-                    filledFields[field.opid] = field;
-                    fillScript.script.push(['click_on_opid', field.opid]);
-                    fillScript.script.push(['fill_by_opid', field.opid, fill.fields[matchingIndex].value]);
-                }
-            }
-        }
-
-        if (!fill.password || fill.password === '') {
-            // No password for this login. Maybe they just wanted to auto-fill some custom fields?
-            fillScript = setFillScriptForFocus(filledFields, fillScript);
-            return fillScript;
-        }
-
-        passwordFields = loadPasswordFields(pageDetails, false);
-        if (!passwordFields.length) {
-            // not able to find any viewable password fields. maybe there are some "hidden" ones?
-            passwordFields = loadPasswordFields(pageDetails, true);
-        }
-
-        for (var formKey in pageDetails.forms) {
-            var passwordFieldsForForm = [];
-            for (i = 0; i < passwordFields.length; i++) {
-                if (formKey === passwordFields[i].form) {
-                    passwordFieldsForForm.push(passwordFields[i]);
-                }
-            }
-
-            for (i = 0; i < passwordFieldsForForm.length; i++) {
-                pf = passwordFieldsForForm[i];
-                passwords.push(pf);
-
-                if (fill.username) {
-                    username = findUsernameField(pageDetails, pf, false, false);
-
-                    if (!username) {
-                        // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                        username = findUsernameField(pageDetails, pf, true, false);
-                    }
-
-                    if (username) {
-                        usernames.push(username);
-                    }
-                }
-            }
-        }
-
-        if (passwordFields.length && !passwords.length) {
-            // The page does not have any forms with password fields. Use the first password field on the page and the
-            // input field just before it as the username.
-
-            pf = passwordFields[0];
-            passwords.push(pf);
-
-            if (fill.username && pf.elementNumber > 0) {
-                username = findUsernameField(pageDetails, pf, false, true);
-
-                if (!username) {
-                    // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                    username = findUsernameField(pageDetails, pf, true, true);
-                }
-
-                if (username) {
-                    usernames.push(username);
-                }
-            }
-        }
-
-        if (!passwordFields.length && !fill.skipUsernameOnlyFill) {
-            // No password fields on this page. Let's try to just fuzzy fill the username.
-            for (i = 0; i < pageDetails.fields.length; i++) {
-                var f = pageDetails.fields[i];
-                if (f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel') &&
-                    fieldIsFuzzyMatch(f, usernameFieldNames)) {
-                    usernames.push(f);
-                }
-            }
-        }
-
-        for (i = 0; i < usernames.length; i++) {
-            if (filledFields.hasOwnProperty(usernames[i].opid)) {
-                continue;
-            }
-
-            filledFields[usernames[i].opid] = usernames[i];
-            fillScript.script.push(['click_on_opid', usernames[i].opid]);
-            fillScript.script.push(['fill_by_opid', usernames[i].opid, fill.username]);
-        }
-
-        for (i = 0; i < passwords.length; i++) {
-            if (filledFields.hasOwnProperty(passwords[i].opid)) {
-                continue;
-            }
-
-            filledFields[passwords[i].opid] = passwords[i];
-            fillScript.script.push(['click_on_opid', passwords[i].opid]);
-            fillScript.script.push(['fill_by_opid', passwords[i].opid, fill.password]);
-        }
-
-        fillScript = setFillScriptForFocus(filledFields, fillScript);
-        return fillScript;
-    };
 
     AutofillService.prototype.getFormsWithPasswordFields = function (pageDetails) {
         var passwordFields = [],
@@ -214,17 +70,10 @@ function initAutofill() {
                     continue;
                 }
 
-                var fillOptions = {
-                    fields: options.cipher.fields,
-                    skipUsernameOnlyFill: options.skipUsernameOnlyFill || false
-                };
-
-                if (options.cipher.login) {
-                    fillOptions.username = options.cipher.login.username;
-                    fillOptions.password = options.cipher.login.password;
-                }
-
-                var fillScript = self.generateFillScript(options.pageDetails[i].details, fillOptions);
+                var fillScript = generateFillScript(self, options.pageDetails[i].details, {
+                    skipUsernameOnlyFill: options.skipUsernameOnlyFill || false,
+                    cipher: options.cipher
+                });
                 if (!fillScript || !fillScript.script || !fillScript.script.length) {
                     continue;
                 }
@@ -316,6 +165,190 @@ function initAutofill() {
             });
         });
     };
+
+    function generateFillScript(self, pageDetails, options) {
+        if (!pageDetails) {
+            return null;
+        }
+
+        var fillScript = {
+            documentUUID: pageDetails.documentUUID,
+            script: [],
+            autosubmit: null,
+            properties: {},
+            options: {},
+            metadata: {}
+        };
+
+        switch (options.cipher.type) {
+            case self.constantsService.cipherType.login:
+                fillScript = generateLoginFillScript(fillScript, pageDetails, options);
+                break;
+            case self.constantsService.cipherType.card:
+                fillScript = generateLoginFillScript(fillScript, pageDetails, options);
+                break;
+            case self.constantsService.cipherType.identity:
+                fillScript = generateLoginFillScript(fillScript, pageDetails, options);
+                break;
+            default:
+                return null;
+        }
+
+        return fillScript;
+    }
+
+    function generateLoginFillScript(fillScript, pageDetails, options) {
+        if (!options.cipher.login) {
+            return null;
+        }
+
+        var passwordFields = [],
+            passwords = [],
+            usernames = [],
+            filledFields = {},
+            pf = null,
+            username = null,
+            i = 0,
+            fields = options.cipher.fields,
+            login = options.cipher.login;
+
+        if (fields && fields.length) {
+            var fieldNames = [];
+
+            for (i = 0; i < fields.length; i++) {
+                if (fields[i].name && fields[i].name !== '') {
+                    fieldNames.push(fields[i].name.toLowerCase());
+                }
+                else {
+                    fieldNames.push(null);
+                }
+            }
+
+            for (i = 0; i < pageDetails.fields.length; i++) {
+                var field = pageDetails.fields[i];
+                if (filledFields.hasOwnProperty(field.opid) || !field.viewable) {
+                    continue;
+                }
+
+                var matchingIndex = findMatchingFieldIndex(field, fieldNames);
+                if (matchingIndex > -1) {
+                    filledFields[field.opid] = field;
+                    fillScript.script.push(['click_on_opid', field.opid]);
+                    fillScript.script.push(['fill_by_opid', field.opid, fields[matchingIndex].value]);
+                }
+            }
+        }
+
+        if (!login.password || login.password === '') {
+            // No password for this login. Maybe they just wanted to auto-fill some custom fields?
+            fillScript = setFillScriptForFocus(filledFields, fillScript);
+            return fillScript;
+        }
+
+        passwordFields = loadPasswordFields(pageDetails, false);
+        if (!passwordFields.length) {
+            // not able to find any viewable password fields. maybe there are some "hidden" ones?
+            passwordFields = loadPasswordFields(pageDetails, true);
+        }
+
+        for (var formKey in pageDetails.forms) {
+            var passwordFieldsForForm = [];
+            for (i = 0; i < passwordFields.length; i++) {
+                if (formKey === passwordFields[i].form) {
+                    passwordFieldsForForm.push(passwordFields[i]);
+                }
+            }
+
+            for (i = 0; i < passwordFieldsForForm.length; i++) {
+                pf = passwordFieldsForForm[i];
+                passwords.push(pf);
+
+                if (login.username) {
+                    username = findUsernameField(pageDetails, pf, false, false);
+
+                    if (!username) {
+                        // not able to find any viewable username fields. maybe there are some "hidden" ones?
+                        username = findUsernameField(pageDetails, pf, true, false);
+                    }
+
+                    if (username) {
+                        usernames.push(username);
+                    }
+                }
+            }
+        }
+
+        if (passwordFields.length && !passwords.length) {
+            // The page does not have any forms with password fields. Use the first password field on the page and the
+            // input field just before it as the username.
+
+            pf = passwordFields[0];
+            passwords.push(pf);
+
+            if (login.username && pf.elementNumber > 0) {
+                username = findUsernameField(pageDetails, pf, false, true);
+
+                if (!username) {
+                    // not able to find any viewable username fields. maybe there are some "hidden" ones?
+                    username = findUsernameField(pageDetails, pf, true, true);
+                }
+
+                if (username) {
+                    usernames.push(username);
+                }
+            }
+        }
+
+        if (!passwordFields.length && !options.skipUsernameOnlyFill) {
+            // No password fields on this page. Let's try to just fuzzy fill the username.
+            for (i = 0; i < pageDetails.fields.length; i++) {
+                var f = pageDetails.fields[i];
+                if (f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel') &&
+                    fieldIsFuzzyMatch(f, usernameFieldNames)) {
+                    usernames.push(f);
+                }
+            }
+        }
+
+        for (i = 0; i < usernames.length; i++) {
+            if (filledFields.hasOwnProperty(usernames[i].opid)) {
+                continue;
+            }
+
+            filledFields[usernames[i].opid] = usernames[i];
+            fillScript.script.push(['click_on_opid', usernames[i].opid]);
+            fillScript.script.push(['fill_by_opid', usernames[i].opid, login.username]);
+        }
+
+        for (i = 0; i < passwords.length; i++) {
+            if (filledFields.hasOwnProperty(passwords[i].opid)) {
+                continue;
+            }
+
+            filledFields[passwords[i].opid] = passwords[i];
+            fillScript.script.push(['click_on_opid', passwords[i].opid]);
+            fillScript.script.push(['fill_by_opid', passwords[i].opid, login.password]);
+        }
+
+        fillScript = setFillScriptForFocus(filledFields, fillScript);
+        return fillScript;
+    }
+
+    function generateCardFillScript(fillScript, pageDetails, options) {
+        if (!options.cipher.card) {
+            return null;
+        }
+
+        var card = options.cipher.card;
+    }
+
+    function generateIdentityFillScript(fillScript, pageDetails, options) {
+        if (!options.cipher.identity) {
+            return null;
+        }
+
+        var id = options.cipher.identity;
+    }
 
     function loadPasswordFields(pageDetails, canBeHidden) {
         var arr = [];
