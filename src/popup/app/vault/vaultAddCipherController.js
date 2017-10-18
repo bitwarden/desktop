@@ -56,7 +56,7 @@
                 return cipherService.saveWithServer(cipher);
             }).then(function (c) {
                 $analytics.eventTrack('Added Cipher');
-                toastr.success(i18nService.addedLogin);
+                toastr.success(i18nService.addedItem);
                 $scope.close();
             });
         };

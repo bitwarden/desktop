@@ -21,8 +21,8 @@
 
         $scope.launchImport = function () {
             SweetAlert.swal({
-                title: i18nService.importLogins,
-                text: i18nService.importLoginsConfirmation,
+                title: i18nService.importItems,
+                text: i18nService.importItemsConfirmation,
                 showCancelButton: true,
                 confirmButtonText: i18nService.yes,
                 cancelButtonText: i18nService.cancel

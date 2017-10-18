@@ -50,7 +50,7 @@ angular
                 var cipher = new Cipher(cipherModel, true);
                 return cipherService.saveWithServer(cipher).then(function (c) {
                     $analytics.eventTrack('Edited Cipher');
-                    toastr.success(i18nService.editedLogin);
+                    toastr.success(i18nService.editedItem);
                     $scope.close();
                 });
             });
@@ -58,8 +58,8 @@ angular
 
         $scope.delete = function () {
             SweetAlert.swal({
-                title: i18nService.deleteLogin,
-                text: i18nService.deleteLoginConfirmation,
+                title: i18nService.deleteItem,
+                text: i18nService.deleteItemConfirmation,
                 showCancelButton: true,
                 confirmButtonText: i18nService.yes,
                 cancelButtonText: i18nService.no
@@ -67,7 +67,7 @@ angular
                 if (confirmed) {
                     cipherService.deleteWithServer(cipherId).then(function () {
                         $analytics.eventTrack('Deleted Cipher');
-                        toastr.success(i18nService.deletedLogin);
+                        toastr.success(i18nService.deletedItem);
                         $state.go('tabs.vault', {
                             animation: 'out-slide-down'
                         });

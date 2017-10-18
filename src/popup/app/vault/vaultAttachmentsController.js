@@ -113,7 +113,7 @@ angular
         };
 
         $scope.close = function () {
-            $state.go('editLogin', {
+            $state.go('editCipher', {
                 loginId: $stateParams.id,
                 animation: 'out-slide-down',
                 from: $stateParams.from,

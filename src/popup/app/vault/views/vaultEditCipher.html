@@ -7,13 +7,13 @@
             <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{i18n.save}}</button>
             <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
         </div>
-        <div class="title">{{i18n.editLogin}}</div>
+        <div class="title">{{i18n.editItem}}</div>
     </div>
     <div class="content">
         <div class="list">
             <div class="list-section">
                 <div class="list-section-header">
-                    {{i18n.loginInformation}}
+                    {{i18n.itemInformation}}
                     <i class="fa fa-share-alt fa-lg pull-right" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
                 </div>
                 <div class="list-section-items">
@@ -262,7 +262,7 @@
             <div class="list-section">
                 <div class="list-section-items">
                     <a href="" ng-click="delete()" class="list-section-item text-danger">
-                        <i class="fa fa-trash fa-fw fa-lg"></i> {{i18n.deleteLogin}}
+                        <i class="fa fa-trash fa-fw fa-lg"></i> {{i18n.deleteItem}}
                     </a>
                 </div>
             </div>

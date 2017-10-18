@@ -151,7 +151,7 @@
 
         $scope.addCipher = function () {
             storeState();
-            $state.go('addLogin', {
+            $state.go('addCipher', {
                 animation: 'in-slide-up',
                 from: 'folder',
                 folderId: $scope.folder.id
@@ -175,7 +175,7 @@
                 }
 
                 storeState();
-                $state.go('viewLogin', {
+                $state.go('viewCipher', {
                     cipherId: cipher.id,
                     animation: 'in-slide-up',
                     from: 'folder'
