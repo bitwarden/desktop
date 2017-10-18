@@ -9,7 +9,10 @@
 }
 
 function initAutofill() {
-    // Add other languages to this array
+    var cardAttributes = ['autocomplete', 'data-stripe', 'htmlName', 'htmlID'];
+    var identityAttributes = ['autocomplete', 'htmlName', 'htmlID'];
+
+    // Add other languages values
     var usernameFieldNames = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
         'userid', 'user id'];
 
@@ -216,10 +219,10 @@ function initAutofill() {
                 fillScript = generateLoginFillScript(fillScript, pageDetails, filledFields, options);
                 break;
             case self.constantsService.cipherType.card:
-                fillScript = generateLoginFillScript(fillScript, pageDetails, filledFields, options);
+                fillScript = generateCardFillScript(fillScript, pageDetails, filledFields, options);
                 break;
             case self.constantsService.cipherType.identity:
-                fillScript = generateLoginFillScript(fillScript, pageDetails, filledFields, options);
+                fillScript = generateIdentityFillScript(fillScript, pageDetails, filledFields, options);
                 break;
             default:
                 return null;
@@ -341,7 +344,63 @@ function initAutofill() {
             return null;
         }
 
-        var card = options.cipher.card;
+        var fillFields = {};
+
+        for (var i = 0; i < pageDetails.fields.length; i++) {
+            var f = pageDetails.fields[i];
+            for (var j = 0; j < cardAttributes.length; j++) {
+                var attr = cardAttributes[j];
+                if (f.hasOwnProperty(attr) && f[attr]) {
+                    switch (f[attr].toLowerCase()) {
+                        case 'cc-name': case 'ccname': case 'cardname': case 'card-name': case 'cardholder':
+                        case 'cardholdername': case 'cardholder-name': case 'name':
+                            if (!fillFields.cardholderName) {
+                                fillFields.cardholderName = f;
+                            }
+                            break;
+                        case 'cc-number': case 'ccnumber': case 'cardnumber': case 'card-number': case 'number':
+                            if (!fillFields.number) {
+                                fillFields.number = f;
+                            }
+                            break;
+                        case 'exp-month': case 'expmonth': case 'ccexpmonth': case 'cc-exp-month': case 'cc-month':
+                        case 'ccmonth': case 'card-month': case 'cardmonth':
+                            if (!fillFields.expMonth) {
+                                fillFields.expMonth = f;
+                            }
+                            break;
+                        case 'exp-year': case 'expyear': case 'ccexpyear': case 'cc-exp-year': case 'cc-year': case 'ccyear':
+                        case 'card-year': case 'cardyear':
+                            if (!fillFields.expYear) {
+                                fillFields.expYear = f;
+                            }
+                            break;
+                        case 'cvc': case 'cvv': case 'cvv2': case 'cc-csc': case 'cc-cvv': case 'card-csc': case 'cardcsc':
+                        case 'cvd': case 'cid': case 'cvc2': case 'cvn': case 'cvn2':
+                            if (!fillFields.code) {
+                                fillFields.code = f;
+                            }
+                            break;
+                        case 'card-type': case 'cc-type': case 'cardtype': case 'cctype':
+                            if (!fillFields.brand) {
+                                fillFields.brand = f;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'cardholderName');
+        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'number');
+        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'expMonth');
+        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'expYear');
+        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'code');
+        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'brand');
+
+        return fillScript;
     }
 
     function generateIdentityFillScript(fillScript, pageDetails, filledFields, options) {
@@ -349,7 +408,20 @@ function initAutofill() {
             return null;
         }
 
-        var id = options.cipher.identity;
+        var id = options.cipher.identity,
+            i = 0;
+
+        return fillScript;
+    }
+
+
+    function makeScriptAction(fillScript, cipherData, fillFields, filledFields, dataProp, fieldProp) {
+        fieldProp = fieldProp || dataProp;
+        if (cipherData[dataProp] && fillFields[fieldProp]) {
+            filledFields[fillFields[fieldProp].opid] = fillFields[fieldProp];
+            fillScript.script.push(['click_on_opid', fillFields[fieldProp].opid]);
+            fillScript.script.push(['fill_by_opid', fillFields[fieldProp].opid, cipherData[dataProp]]);
+        }
     }
 
     function loadPasswordFields(pageDetails, canBeHidden) {
