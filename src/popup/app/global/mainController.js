@@ -78,7 +78,7 @@ angular
                     $state.go('home');
                 });
             }
-            else if (msg.command === 'collectPageDetailsResponse') {
+            else if (msg.command === 'collectPageDetailsResponse' && msg.sender === 'currentController') {
                 $scope.$broadcast('collectPageDetailsResponse', {
                     frameId: sender.frameId,
                     tab: msg.tab,

@@ -40,10 +40,13 @@ angular
                     return;
                 }
 
-                chrome.tabs.sendMessage(tabs[0].id,
-                    { command: 'collectPageDetails', tab: tabs[0], sender: 'currentController' }, function () {
-                        canAutofill = true;
-                    });
+                chrome.tabs.sendMessage(tabs[0].id, {
+                    command: 'collectPageDetails',
+                    tab: tabs[0],
+                    sender: 'currentController'
+                }, function () {
+                    canAutofill = true;
+                });
 
                 var otherTypes = [constantsService.cipherType.card, constantsService.cipherType.identity];
                 cipherService.getAllDecryptedForDomain(domain, otherTypes).then(function (ciphers) {

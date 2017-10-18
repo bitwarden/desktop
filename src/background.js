@@ -128,7 +128,7 @@ var bg_isBackground = true,
                     frameId: sender.frameId, tab: msg.tab, details: msg.details
                 }], msg.sender === 'autofill_cmd');
             }
-            else {
+            else if (msg.sender === 'contextMenu') {
                 clearTimeout(autofillTimeout);
                 pageDetailsToAutoFill.push({ frameId: sender.frameId, tab: msg.tab, details: msg.details });
                 autofillTimeout = setTimeout(autofillPage, 300);
@@ -569,7 +569,11 @@ var bg_isBackground = true,
             return;
         }
 
-        chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: sender }, function () {
+        chrome.tabs.sendMessage(tab.id, {
+            command: 'collectPageDetails',
+            tab: tab,
+            sender: sender
+        }, function () {
             if (chrome.runtime.lastError) {
                 return;
             }
@@ -732,7 +736,11 @@ var bg_isBackground = true,
                 return;
             }
 
-            chrome.tabs.sendMessage(tab.id, { command: 'collectPageDetails', tab: tab, sender: 'contextMenu' }, function () {
+            chrome.tabs.sendMessage(tab.id, {
+                command: 'collectPageDetails',
+                tab: tab,
+                sender: 'contextMenu'
+            }, function () {
             });
         });
     }
