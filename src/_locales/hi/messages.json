@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Copy Password"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Copy Username"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Auto-fill"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Add a Login"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Password Hint"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Manage your logins from your mobile devices with the bitwarden Android vault."
   },
-  "importLogins":{
-    "message":"Import Logins",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Quickly bulk import your logins from other password management applications."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Select"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Edit"
   },
-  "noLoginsInList":{
-    "message":"There are no logins to list."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Login Information"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Username"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Notes"
   },
-  "editLogin":{
-    "message":"Edit Login"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Folder"
   },
-  "deleteLogin":{
-    "message":"Delete Login"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"View Login"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Launch Website"
@@ -432,8 +446,8 @@
   "syncingFailed":{
     "message":"Syncing failed"
   },
-  "importLoginsConfirmation":{
-    "message":"You can bulk import logins from the bitwarden.com web vault. Do you want to visit the website now?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Password copied"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI"
   },
-  "addedLogin":{
-    "message":"Added login"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Edited login"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"Are you sure you want to delete this login?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Deleted login"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Overwrite Password"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"No Folder",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"Features"
@@ -780,5 +794,164 @@
   },
   "popup2faCloseMessage":{
     "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

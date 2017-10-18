@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Kopiraj lozinku"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Kopiraj korisničko ime"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Automatsko popunjavanje"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Dodaj prijavu"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Podsjetnik za lozinku"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Upravljajte svojim prijavama s mobilnih uređaja pomoću bitwarden Android trezora."
   },
-  "importLogins":{
-    "message":"Uvezi prijave",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Brzo uvezite svoje prijave iz drugih aplikacija za upravljanje lozinkama."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Odaberi"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Uredi"
   },
-  "noLoginsInList":{
-    "message":"Nema prijava na popisu."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Podaci za prijavu"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Korisničko ime"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Bilješke"
   },
-  "editLogin":{
-    "message":"Uredi prijavu"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Mapa"
   },
-  "deleteLogin":{
-    "message":"Izbriši prijavu"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"Prikaži prijavu"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Pokreni web stranicu"
@@ -430,10 +444,10 @@
     "message":"Sinkronizacija dovršena"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Sinkronizacija nije uspjela"
   },
-  "importLoginsConfirmation":{
-    "message":"Možete masovno uvesti prijave sa web-trezora bitwarden.com. Želite li sada posjetiti web stranicu?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Lozinka kopirana"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URL"
   },
-  "addedLogin":{
-    "message":"Dodana prijava"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Uređena prijava"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"Jeste li sigurni da želite izbrisati ovu prijavu?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Izbrisana prijava"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Prebriši zaporku"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"Nema mape",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"Značajke"
@@ -755,30 +769,189 @@
     "message":"Nažalost, ovaj prozor nije dostupan u privatnom načinu za ovaj preglednik."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Prilagođena polja"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Kopiraj vrijednost"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Prikaži\/sakrij sadržaj"
   },
   "value":{
-    "message":"Value"
+    "message":"Vrijednost"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Novo prilagođeno polje"
   },
   "cfTypeText":{
-    "message":"Text"
+    "message":"Tekst"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Skriveno"
   },
   "cfTypeBoolean":{
     "message":"Boolean"
   },
   "popup2faCloseMessage":{
-    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message":"Ako dodirnete izvan popup prozora za provjeru e-pošte za vaš kontrolni kôd, skočni prozor će biti zatvoren. Želite li otvoriti ovaj skočni prozor u novom prozoru tako da se ne zatvori?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

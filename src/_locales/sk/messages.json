@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Kopírovať heslo"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Kopírovať používateľské meno"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Automatické dopĺňanie"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Pridať prihlasovacie údaje"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Nápoveda pre heslo"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Spravujte vaše prihlasovacie údaje z vašich mobilných zariadení s bitwarden Android trezorom."
   },
-  "importLogins":{
-    "message":"Importovať prihlásenia",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Rýchlo hromadne importovať vaše prihlasovacie údaje z iných aplikácií na správu hesiel."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Vybrať"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Upraviť"
   },
-  "noLoginsInList":{
-    "message":"Neexistujú žiadne prihlasovacie údaje."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Prihlasovacie údaje"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Používateľské meno"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Poznámky"
   },
-  "editLogin":{
-    "message":"Upraviť prihlásenie"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Priečinok"
   },
-  "deleteLogin":{
-    "message":"Odstrániť prihlásenie"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"Zobraziť prihlásenie"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Spustiť stránku"
@@ -432,8 +446,8 @@
   "syncingFailed":{
     "message":"Synchronizácia neúspešná"
   },
-  "importLoginsConfirmation":{
-    "message":"Môžete hromadne importovať prihlásenia z webového trezoru bitwarden.com. Chcete navštíviť túto stránku teraz?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Heslo skopírované"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI"
   },
-  "addedLogin":{
-    "message":"Pridané prihlasovacie údaje"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Upravené prihlasovacie údaje"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"Naozaj chcete odstrániť tieto prihlasovacie údaje?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Odstránené prihlasovacie údaje"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Prepísať heslo"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"Žiadny priečinok",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"Funkcie"
@@ -780,5 +794,164 @@
   },
   "popup2faCloseMessage":{
     "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

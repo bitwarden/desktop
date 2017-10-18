@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Kopioi salasana"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Kopioi käyttäjänimi"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Täytä automaattisesti"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Lisää kohde"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Salasanavihje"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Hallitse kirjautumistietojasi mobiililaitteillasi bitwardenin Android-holvin avulla."
   },
-  "importLogins":{
-    "message":"Tuo kirjautumistietoja",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Tuo kerralla kaikki kirjautumistietosi muista salasananhallintapalveluista."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Valitse"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Muokkaa"
   },
-  "noLoginsInList":{
-    "message":"Ei kohteita."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Kohteen tiedot"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Käyttäjänimi"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Merkinnät"
   },
-  "editLogin":{
-    "message":"Muokkaa kohdetta"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Kansio"
   },
-  "deleteLogin":{
-    "message":"Poista kohde"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"Tarkastele kohdetta"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Avaa sivusto"
@@ -432,8 +446,8 @@
   "syncingFailed":{
     "message":"Syncing failed"
   },
-  "importLoginsConfirmation":{
-    "message":"Voit tuoda kerralla kaikki kirjautumistietosi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Salasana kopioitu"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI"
   },
-  "addedLogin":{
-    "message":"Kohde lisätty"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Kohdetta muokattu"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"Haluatko varmasti poistaa tämän kohteen?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Kohde poistettu"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Salasanan korvaus"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"Ei kansioa",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"Ominaisuudet"
@@ -780,5 +794,164 @@
   },
   "popup2faCloseMessage":{
     "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

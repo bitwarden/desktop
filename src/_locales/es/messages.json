@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Copiar contraseña"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Copiar usuario"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Autorellenar"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Añadir entrada"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Pista de contraseña"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Gestiona tus usuarios de cualquier web con la bóveda bitwarden de Android"
   },
-  "importLogins":{
-    "message":"Importar entradas",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Importa rápida y masivamente entradas de otras aplicaciones de gestión de contraseñas."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Seleccionar"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Editar"
   },
-  "noLoginsInList":{
-    "message":"No hay entradas que listar."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Información de acceso"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Usuario"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Notas"
   },
-  "editLogin":{
-    "message":"Editar entrada"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Carpeta"
   },
-  "deleteLogin":{
-    "message":"Eliminar entrada"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"Ver entrada"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Ir a la web"
@@ -324,7 +338,7 @@
     "message":"4 horas"
   },
   "onLocked":{
-    "message":"Bloqueado"
+    "message":"Bloquear con el sistema"
   },
   "onRestart":{
     "message":"Al reiniciar"
@@ -432,8 +446,8 @@
   "syncingFailed":{
     "message":"Sincronización fallida"
   },
-  "importLoginsConfirmation":{
-    "message":"Puedes importar entradas masivamente desde la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Contraseña copiada"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI"
   },
-  "addedLogin":{
-    "message":"Entrada añadida"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Entrada editada"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"¿Estás seguro de que quieres eliminar esta entrada?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Entrada eliminada"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Sobreescribir contraseña"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"Sin carpeta",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"Características"
@@ -779,6 +793,165 @@
     "message":"Booleano"
   },
   "popup2faCloseMessage":{
-    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message":"Pulsar fuera de la ventana emergente para comprobar tu correo de verificación, hará que esta se cierre. ¿Quieres abrir esta ventana emergente en una nueva ventana para evitar su cierre?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

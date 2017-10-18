@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Kopiera lösenord"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Kopiera användarnamn"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Fyll i automatiskt"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Lägg till en inloggning"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Lösenordsledtråd"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Hantera dina inloggningar från dina mobila enheter med bitwardens Android-valv."
   },
-  "importLogins":{
-    "message":"Importera inloggningar",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Massimportera dina inloggningar snabbt från en annan lösenordshanterare."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Välj"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Ändra"
   },
-  "noLoginsInList":{
-    "message":"Det finns inga inloggningar att lista."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Inloggningsinformation"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Användarnamn"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Anteckningar"
   },
-  "editLogin":{
-    "message":"Ändra inloggning"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Mapp"
   },
-  "deleteLogin":{
-    "message":"Ta bort inloggning"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"Visa inloggning"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Öppna webbplats"
@@ -432,8 +446,8 @@
   "syncingFailed":{
     "message":"Synkroniseringen misslyckades"
   },
-  "importLoginsConfirmation":{
-    "message":"Du kan massimportera inloggningar på bitwardens webbvalv. Vill du besöka webbsidan nu?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Lösenord kopierat"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI (länk)"
   },
-  "addedLogin":{
-    "message":"Skapade inloggning"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Ändrade inloggning"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"Är du säker på att du vill ta bort den här inloggningen?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Tog bort inloggning"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Skriv över lösenord"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"Ingen mapp",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"Funktioner"
@@ -779,6 +793,165 @@
     "message":"Boolean"
   },
   "popup2faCloseMessage":{
-    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message":"Om du klickar utanför popup-fönstret för att kontrollera din email efter din verifieringskod så stängs popup-fönstret. Vill du öppna popup-fönstret i ett nytt fönster, så att det inte stängs?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

@@ -47,7 +47,7 @@
     "message":"Indiciu pentru parola principală (opțional)"
   },
   "tab":{
-    "message":"Filă"
+    "message":"Pagină"
   },
   "myVault":{
     "message":"Seiful meu"
@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Copiere parolă"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Copiere nume utilizator"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Completare automată"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Adăugare autentificare"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Indiciu parolă"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Gestionați datele de conectare de pe dispozitivele mobile cu seiful bitwarden Android."
   },
-  "importLogins":{
-    "message":"Import autentificări",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Import rapid a datelor de conectare din alte aplicaţii de gestionare a parolelor."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Selectare"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Editare"
   },
-  "noLoginsInList":{
-    "message":"Nu sunt autentificări în listă."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Informaţii de autentificare"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Nume de utilizator"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Note"
   },
-  "editLogin":{
-    "message":"Editare Login"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Dosar"
   },
-  "deleteLogin":{
-    "message":"Ştergeţi datele de autentificare"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"Vizualizare autentificare"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Lansarea site-ului web"
@@ -385,7 +399,7 @@
     "message":"Nu"
   },
   "unexpectedError":{
-    "message":"A survenit o eroare neașteptată."
+    "message":"A apărut o eroare neașteptată."
   },
   "nameRequired":{
     "message":"Numele este obligatoriu."
@@ -432,8 +446,8 @@
   "syncingFailed":{
     "message":"Sincronizare eșuată"
   },
-  "importLoginsConfirmation":{
-    "message":"Puteți să importați datele de conectare din seiful web bitwarden.com. Doriți să vizitați site-ul acum?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Parolă copiată"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI"
   },
-  "addedLogin":{
-    "message":"Date de autentificare adăugate"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Date de autentificare editate"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"Sigur ștergeți aceste date de autentificare?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Date de autentificare şterse"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Suprascrie parola"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"Niciun dosar",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"Caracteristici"
@@ -710,75 +724,234 @@
     "message":"Codurile de verificare vor fi trimise prin e-mail."
   },
   "selfHostedEnvironment":{
-    "message":"Mediu găzduit în mod automat"
+    "message":"Mediu de găzduire personal"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specificați adresa URL de bază a instalării bitwarden."
+    "message":"Specificați URL-ul implementări locale, personale a bitwarden."
   },
   "customEnvironment":{
-    "message":"Mediu particularizat"
+    "message":"Mediu personalizat"
   },
   "customEnvironmentFooter":{
-    "message":"Pentru utilizatorii avansați. Puteți specifica adresa URL de bază a fiecărui serviciu independent."
+    "message":"Pentru utilizatorii avansați. Puteți specifica URL-ul de bază al fiecărui serviciu în mod independent."
   },
   "baseUrl":{
-    "message":"URL-ul serverului"
+    "message":"URL server"
   },
   "apiUrl":{
-    "message":"URL-ul serverului API"
+    "message":"URL server API"
   },
   "webVaultUrl":{
-    "message":"URL-ul serverului seifului web"
+    "message":"URL seif web"
   },
   "identityUrl":{
-    "message":"URL-ul serverului de identitate"
+    "message":"URL server de identificare"
   },
   "environmentSaved":{
-    "message":"Adresele URL de mediu au fost salvate."
+    "message":"URL-urile mediului bitwarden au fost salvate."
   },
   "enableAutoFillOnPageLoad":{
-    "message":"Activați completarea automată la încărcarea paginii"
+    "message":"Activare completare automată la încărcarea paginii"
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"Dacă se detectează un formular de autentificare, efectuați automat o umplere automată când pagina web se încarcă."
+    "message":"Dacă este detectat un formular de autentificare, se efectuează automat o completare a acestuia la încărcarea paginii."
   },
   "experimentalFeature":{
-    "message":"Aceasta este în prezent o caracteristică experimentală. Folosiți pe propria răspundere."
+    "message":"În acest moment, aceasta funcțiune este experimentală. O puteți folosi pe propria răspundere."
   },
   "commandAutofillDesc":{
-    "message":"Completați automat ultimele date de autentificare utilizate pentru site-ul web curent."
+    "message":"Completare automată a ultimelor date de autentificare utilizate pentru saitul web curent."
   },
   "commandGeneratePasswordDesc":{
-    "message":"Generați și copiați o nouă parolă aleatorie în clipboard."
+    "message":"Generare parolă aleatorie și copiere în clipboard."
   },
   "privateModeMessage":{
-    "message":"Din păcate această fereastră nu este disponibilă în modul privat pentru acest browser."
+    "message":"Din păcate această fereastră nu este disponibilă în modul de navigare privat pentru acest navigator."
   },
   "customFields":{
-    "message":"Câmpuri particularizate"
+    "message":"Câmpuri personalizate"
   },
   "copyValue":{
-    "message":"Copiere valoare"
+    "message":"Copiere"
   },
   "toggleValue":{
-    "message":"Comutare valoare"
+    "message":"Afișați \/ Ascundeți"
   },
   "value":{
     "message":"Valoare"
   },
   "newCustomField":{
-    "message":"Câmp personalizat nou"
+    "message":"Câmp nou"
   },
   "cfTypeText":{
     "message":"Text"
   },
   "cfTypeHidden":{
-    "message":"Ascuns"
+    "message":"Text cu caractere ascunse"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Bifat\/Nebifat, Da\/Nu"
   },
   "popup2faCloseMessage":{
-    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message":"Dacă dați clic pentru a verifica e-mailul în afara acestei casete, aceasta se va închide. Doriți să afișați aceste informații într-o filă nouă, astfel încât aceasta să nu se închidă?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

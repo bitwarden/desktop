@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"Passwort kopieren"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"Nutzernamen Kopieren"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"Auto-Ausfüllen"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"Seite Hinzufügen"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"Passwort-Hinweis"
@@ -164,7 +176,7 @@
     "message":"Melde einen Fehler auf unserem GitHub-Repository."
   },
   "sync":{
-    "message":"Synchronisation"
+    "message":"Synchronisierung"
   },
   "syncVaultNow":{
     "message":"Tresor Jetzt Synchronisieren"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"Verwalte deine Logins von deinem Smartphone aus mit dem bitwarden Android-Tresor."
   },
-  "importLogins":{
-    "message":"Logins Importieren",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"Importiere all deine Logins schnell und einfach von anderen Passwort-Managern."
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"Auswählen"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"Bearbeiten"
   },
-  "noLoginsInList":{
-    "message":"In dieser Liste sind keine Seiten vorhanden."
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"Seiten-Informationen"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"Nutzername"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"Notizen"
   },
-  "editLogin":{
-    "message":"Seite Bearbeiten"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"Ordner"
   },
-  "deleteLogin":{
-    "message":"Seite Löschen"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"Seite Anzeigen"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"Website Öffnen"
@@ -324,7 +338,7 @@
     "message":"4 Stunde"
   },
   "onLocked":{
-    "message":"On Locked"
+    "message":"Bei Abmeldung"
   },
   "onRestart":{
     "message":"Bei Neustart"
@@ -403,7 +417,7 @@
     "message":"Du kannst deine E-Mail Adresse im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "twoStepLoginConfirmation":{
-    "message":"Mit Two-Step-Login wird dein Account zusätzlich abgesichert, da bei jedem Login zusätzlich ein Sicherheitscode von einer Authentifizierungs-App benötigt wird. Two-Step-Login kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
+    "message":"Mit Zwei-Faktor Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Zwei-Faktor Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
   },
   "loggingOut":{
     "message":"Logge aus"
@@ -430,10 +444,10 @@
     "message":"Synchronisierung abgeschlossen"
   },
   "syncingFailed":{
-    "message":"Syncing failed"
+    "message":"Synchronisierung fehlgeschlagen"
   },
-  "importLoginsConfirmation":{
-    "message":"Du kannst deine Logins über den bitwarden.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"Passwort kopiert"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI"
   },
-  "addedLogin":{
-    "message":"Seite hinzugefügt"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"Seite bearbeitet"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"Bist du sicher, dass du diese Seite löschen möchtest?"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"Seite gelöscht"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"Passwort Ersetzen"
@@ -472,11 +486,11 @@
     "message":"Ordner durchsuchen"
   },
   "noneFolder":{
-    "message":"Kein Verzeichnis",
-    "description":"This is the folder for uncategorized logins"
+    "message":"Kein Ordner",
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
-    "message":"Eigenschaften"
+    "message":"Funktionen"
   },
   "gaDesc":{
     "message":"Wir verwenden Analytics, um zu erfahren, wie die Erweiterung genutzt wird, sodass wir sie verbessern können. Alle gesammelten Daten sind völlig anonym."
@@ -485,16 +499,16 @@
     "message":"\"Login hinzufügen\" Benachrichtigung deaktivieren"
   },
   "addLoginNotificationDesc":{
-    "message":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message":"Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch ob du neue Zugangsdaten im Tresor speichern möchtest wenn du dich zum ersten mal mit ihnen anmeldest."
   },
   "notificationAddDesc":{
-    "message":"Soll bitwarden sich Ihr Passwort merken?"
+    "message":"Soll bitwarden sich dein Passwort merken?"
   },
   "notificationAddSave":{
-    "message":"Ja, jetzt abspeichern"
+    "message":"Ja, jetzt speichern"
   },
   "notificationNeverSave":{
-    "message":"Nie für diese Webseite"
+    "message":"Niemals für diese Webseite"
   },
   "disableContextMenuItem":{
     "message":"Kontextmenü-Optionen deaktivieren"
@@ -633,7 +647,7 @@
     "message":"Deaktivieren Sie automatisches TOTP Kopieren"
   },
   "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message":"Wenn deine Zugangsdaten mit einem Authentifizierungsschlüssel verknüpft sind, wird der TOTP Verifizierungscode automatisch in deine Zwischenablage kopiert wenn du die Zugangsdaten automatisch ausfüllen lässt."
   },
   "premiumRequired":{
     "message":"Erweiterte Mitgliedschaft wird benötigt"
@@ -660,22 +674,22 @@
     "message":"Stecken Sie Ihren YubiKey in den USB-Port Ihres Computers, dann berühren Sie den Button."
   },
   "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message":"Stecke deinen Sicherheitsschlüssel in den USB Port deines Computers. Falls vorhanden, den Knopf drücken."
   },
   "loginUnavailable":{
     "message":"Login nicht verfügbar"
   },
   "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message":"Dieses Konto hat eine aktive Zwei-Faktor Authentifizierung, allerdings wird keiner der konfigurierten Zwei-Faktor Anbieter von diesem Browser unterstützt."
   },
   "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message":"Bitte benutze einen unterstützten Browser (z.B. Chrome) und \/ oder füge zusätzliche Anbieter hinzu, die von mehr Browsern unterstützt werden (wie eine Authentifizierungs-App)."
   },
   "twoStepOptions":{
     "message":"Optionen für Zwei-Faktor Authentifizierung"
   },
   "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message":"Zugang zu allen Zwei-Faktor Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor Anbieter in deinem Konto zu deaktivieren."
   },
   "recoveryCodeTitle":{
     "message":"Wiederherstellungscode"
@@ -694,11 +708,11 @@
     "message":"Verwenden Sie einen YubiKey um auf Ihr Konto zuzugreifen. Funtioniert mit YubiKey 4, Nano 4, 4C und NEO Geräten."
   },
   "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message":"Verifiziere mit Duo Security, indem du die Duo Mobile App, SMS, Anrufe oder U2F Sicherheitsschlüssel benutzt.",
     "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+    "message":"Benutze einen FIDO U2F-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
   },
   "u2fTitle":{
     "message":"FIDO U2F Sicherheitsschlüssel"
@@ -710,16 +724,16 @@
     "message":"Bestätigungscodes werden Ihnen per E-Mail zugesandt."
   },
   "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+    "message":"Selbstgehostete Umgebung"
   },
   "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+    "message":"Bitte gebe die Basis-URL deiner vor Ort gehosteten bitwarden-Installation an."
   },
   "customEnvironment":{
-    "message":"Custom Environment"
+    "message":"Benutzerdefinierte Umgebung"
   },
   "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+    "message":"Für fortgeschrittene Benutzer. Du kannst die Basis-URL der jeweiligen Dienste unabhängig voneinander festlegen."
   },
   "baseUrl":{
     "message":"Server URL"
@@ -731,16 +745,16 @@
     "message":"Web-Tresor Server URL"
   },
   "identityUrl":{
-    "message":"Identity Server URL"
+    "message":"URL des Identitätsservers"
   },
   "environmentSaved":{
-    "message":"The environment URLs have been saved."
+    "message":"Die URLs der Umgebung wurden gespeichert."
   },
   "enableAutoFillOnPageLoad":{
     "message":"Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message":"Wenn eine Zugangsmaske erkannt wird, füge automatisch die Zugangsdaten ein während die Webseite lädt."
   },
   "experimentalFeature":{
     "message":"Dies ist derzeit ein experimentelles Feature. Verwendung auf eigene Gefahr."
@@ -755,30 +769,189 @@
     "message":"Leider ist dieses Fenster nicht im privaten Modus für diesen Browser verfügbar."
   },
   "customFields":{
-    "message":"Custom Fields"
+    "message":"Benutzerdefinierte Felder"
   },
   "copyValue":{
-    "message":"Copy Value"
+    "message":"Inhalt kopieren"
   },
   "toggleValue":{
-    "message":"Toggle Value"
+    "message":"Inhalt zeigen \/ verstecken"
   },
   "value":{
-    "message":"Value"
+    "message":"Inhalt"
   },
   "newCustomField":{
-    "message":"New Custom Field"
+    "message":"Neues benutzerdefiniertes Feld"
   },
   "cfTypeText":{
     "message":"Text"
   },
   "cfTypeHidden":{
-    "message":"Hidden"
+    "message":"Versteckt"
   },
   "cfTypeBoolean":{
-    "message":"Boolean"
+    "message":"Ja\/Nein"
   },
   "popup2faCloseMessage":{
-    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message":"Dieses Pop-up Fenster wird geschlossen, wenn du außerhalb des Fensters klickst um in deinen E-Mails nach dem Verifizierungscode zu suchen. Möchtest du, dass dieses Pop-up in einem separaten Fenster geöffnet wird, damit es nicht geschlossen wird?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }

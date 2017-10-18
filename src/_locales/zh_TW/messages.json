@@ -64,8 +64,17 @@
   "copyPassword":{
     "message":"複製密碼"
   },
+  "copyUri":{
+    "message":"Copy URI"
+  },
   "copyUsername":{
     "message":"複製用戶名稱"
+  },
+  "copyNumber":{
+    "message":"Copy Number"
+  },
+  "copySecurityCode":{
+    "message":"Copy Security Code"
   },
   "autoFill":{
     "message":"自動輸入"
@@ -84,6 +93,9 @@
   },
   "addLogin":{
     "message":"新增網頁"
+  },
+  "addItem":{
+    "message":"Add Item"
   },
   "passwordHint":{
     "message":"密碼提示"
@@ -196,12 +208,11 @@
   "bitAndrVaultInfo":{
     "message":"使用 bitwarden Android 版，從 Android 裝置管理您的密碼。"
   },
-  "importLogins":{
-    "message":"匯入密碼",
-    "description":"Import Logins"
+  "importItems":{
+    "message":"Import Items"
   },
-  "importLoginsInfo":{
-    "message":"從其他密碼管理器匯入你的密碼。"
+  "importItemsInfo":{
+    "message":"Quickly bulk import your items from other password management applications."
   },
   "select":{
     "message":"選擇"
@@ -233,11 +244,14 @@
   "edit":{
     "message":"編輯"
   },
-  "noLoginsInList":{
-    "message":"無紀錄可顯示。"
+  "view":{
+    "message":"View"
   },
-  "loginInformation":{
-    "message":"網頁資訊"
+  "noItemsInList":{
+    "message":"There are no items to list."
+  },
+  "itemInformation":{
+    "message":"Item Information"
   },
   "username":{
     "message":"帳戶名稱"
@@ -251,17 +265,17 @@
   "notes":{
     "message":"筆記"
   },
-  "editLogin":{
-    "message":"編輯網頁"
+  "editItem":{
+    "message":"Edit Item"
   },
   "folder":{
     "message":"文件夾"
   },
-  "deleteLogin":{
-    "message":"刪除網頁"
+  "deleteItem":{
+    "message":"Delete Item"
   },
-  "viewLogin":{
-    "message":"查看網頁"
+  "viewItem":{
+    "message":"View Item"
   },
   "launchWebsite":{
     "message":"開啟網頁"
@@ -385,7 +399,7 @@
     "message":"否"
   },
   "unexpectedError":{
-    "message":"非預期錯誤。"
+    "message":"發生異常錯誤。"
   },
   "nameRequired":{
     "message":"必須填寫名稱。"
@@ -432,8 +446,8 @@
   "syncingFailed":{
     "message":"同步失敗"
   },
-  "importLoginsConfirmation":{
-    "message":"你可以在 bitwarden 網頁版匯入密碼。現在前往？"
+  "importItemsConfirmation":{
+    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied":{
     "message":"密碼已複製"
@@ -441,17 +455,17 @@
   "uri":{
     "message":"URI"
   },
-  "addedLogin":{
-    "message":"已添加網頁"
+  "addedItem":{
+    "message":"Added item"
   },
-  "editedLogin":{
-    "message":"已編輯網頁"
+  "editedItem":{
+    "message":"Edited item"
   },
-  "deleteLoginConfirmation":{
-    "message":"您確定要删除網頁嗎？"
+  "deleteItemConfirmation":{
+    "message":"Are you sure you want to delete this item?"
   },
-  "deletedLogin":{
-    "message":"已删除的網頁"
+  "deletedItem":{
+    "message":"Deleted item"
   },
   "overwritePassword":{
     "message":"修改密碼"
@@ -473,7 +487,7 @@
   },
   "noneFolder":{
     "message":"沒有文件夾",
-    "description":"This is the folder for uncategorized logins"
+    "description":"This is the folder for uncategorized items"
   },
   "features":{
     "message":"功能"
@@ -722,10 +736,10 @@
     "message":"適用於進階使用者。你可以單獨指定各個服務的基礎 URL。"
   },
   "baseUrl":{
-    "message":"伺服器 URL"
+    "message":"伺服器網址"
   },
   "apiUrl":{
-    "message":"API 伺服器 URL"
+    "message":"API 伺服器網址"
   },
   "webVaultUrl":{
     "message":"Web 保存庫伺服器 URL"
@@ -773,12 +787,171 @@
     "message":"文字"
   },
   "cfTypeHidden":{
-    "message":"已隱藏"
+    "message":"隱藏"
   },
   "cfTypeBoolean":{
     "message":"布林值"
   },
   "popup2faCloseMessage":{
     "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  },
+  "disableFavicon":{
+    "message":"Disable Website Icons"
+  },
+  "disableFaviconDesc":{
+    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  },
+  "cardholderName":{
+    "message":"Cardholder Name"
+  },
+  "number":{
+    "message":"Number"
+  },
+  "brand":{
+    "message":"Brand"
+  },
+  "expirationMonth":{
+    "message":"Expiration Month"
+  },
+  "expirationYear":{
+    "message":"Expiration Year"
+  },
+  "expiration":{
+    "message":"Expiration"
+  },
+  "january":{
+    "message":"January"
+  },
+  "february":{
+    "message":"February"
+  },
+  "march":{
+    "message":"March"
+  },
+  "april":{
+    "message":"April"
+  },
+  "may":{
+    "message":"May"
+  },
+  "june":{
+    "message":"June"
+  },
+  "july":{
+    "message":"July"
+  },
+  "august":{
+    "message":"August"
+  },
+  "september":{
+    "message":"September"
+  },
+  "october":{
+    "message":"October"
+  },
+  "november":{
+    "message":"November"
+  },
+  "december":{
+    "message":"December"
+  },
+  "securityCode":{
+    "message":"Security Code"
+  },
+  "ex":{
+    "message":"ex."
+  },
+  "title":{
+    "message":"Title"
+  },
+  "mr":{
+    "message":"Mr"
+  },
+  "mrs":{
+    "message":"Mrs"
+  },
+  "ms":{
+    "message":"Ms"
+  },
+  "dr":{
+    "message":"Dr"
+  },
+  "firstName":{
+    "message":"First Name"
+  },
+  "middleName":{
+    "message":"Middle Name"
+  },
+  "lastName":{
+    "message":"Last Name"
+  },
+  "identityName":{
+    "message":"Identity Name"
+  },
+  "company":{
+    "message":"Company"
+  },
+  "ssn":{
+    "message":"Social Security Number"
+  },
+  "passportNumber":{
+    "message":"Passport Number"
+  },
+  "licenseNumber":{
+    "message":"License Number"
+  },
+  "email":{
+    "message":"Email"
+  },
+  "phone":{
+    "message":"Phone"
+  },
+  "address":{
+    "message":"Address"
+  },
+  "address1":{
+    "message":"Address 1"
+  },
+  "address2":{
+    "message":"Address 2"
+  },
+  "address3":{
+    "message":"Address 3"
+  },
+  "cityTown":{
+    "message":"City \/ Town"
+  },
+  "stateProvince":{
+    "message":"State \/ Province"
+  },
+  "zipPostalCode":{
+    "message":"Zip \/ Postal Code"
+  },
+  "country":{
+    "message":"Country"
+  },
+  "type":{
+    "message":"Type"
+  },
+  "typeLogin":{
+    "message":"Login"
+  },
+  "typeLogins":{
+    "message":"Logins"
+  },
+  "typeSecureNote":{
+    "message":"Secure Note"
+  },
+  "typeCard":{
+    "message":"Card"
+  },
+  "typeIdentity":{
+    "message":"Identity"
+  },
+  "passwordHistory":{
+    "message":"Password History"
+  },
+  "back":{
+    "message":"Back"
   }
 }
