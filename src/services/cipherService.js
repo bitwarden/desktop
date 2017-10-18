@@ -527,7 +527,7 @@ function initCipherService() {
                 return self.upsert(data);
             }).then(function () {
                 if (data) {
-                    deferred.resolve(new CipherData(data));
+                    deferred.resolve(new Cipher(data));
                 }
             });
         };
@@ -542,7 +542,7 @@ function initCipherService() {
         var self = this,
             key = null;
 
-        return self.userService.getUserIdPromise().then(function () {
+        return self.userService.getUserIdPromise().then(function (userId) {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (ciphers) {

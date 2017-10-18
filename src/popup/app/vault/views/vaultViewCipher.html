@@ -48,7 +48,7 @@
                         <span class="item-label">{{i18n.username}}</span>
                         <span id="username">{{cipher.login.username}}</span>
                     </div>
-                    <div class="list-section-item" ng-if="cipher.login.password">
+                    <div class="list-section-item wrap" ng-if="cipher.login.password">
                         <div class="action-buttons">
                             <a class="btn-list" href="" title="{{i18n.togglePassword}}" ng-click="togglePassword()">
                                 <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>

@@ -13,14 +13,16 @@
         <div class="list list-no-selection">
             <div class="list-section">
                 <div class="list-section-items">
-                    <div class="list-section-item" ng-if="!login.attachments.length">
+                    <div class="list-section-item" ng-if="!cipher.attachments.length">
                         {{i18n.noAttachments}}
                     </div>
-                    <div class="list-section-item" ng-repeat="attachment in login.attachments">
-                        <span class="btn-list no-padding" stop-prop stop-click title="{{i18n.deleteAttachment}}"
-                              ng-click="delete(attachment)">
-                            <i class="fa fa-lg fa-trash"></i>
-                        </span>
+                    <div class="list-section-item" ng-repeat="attachment in cipher.attachments">
+                        <div class="action-buttons">
+                            <span class="btn-list no-padding" stop-prop stop-click title="{{i18n.deleteAttachment}}"
+                                  ng-click="delete(attachment)">
+                                <i class="fa fa-lg fa-trash"></i>
+                            </span>
+                        </div>
                         <small class="item-sub-label">{{attachment.sizeName}}</small>
                         <span class="text">{{attachment.fileName}}</span>
                     </div>

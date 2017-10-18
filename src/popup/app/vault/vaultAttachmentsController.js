@@ -10,11 +10,11 @@ angular
         $scope.canAccessAttachments = $scope.isPremium;
         $scope.hasUpdatedKey = false;
 
-        cipherService.get($stateParams.id).then(function (login) {
-            return login.decrypt();
+        cipherService.get($stateParams.id).then(function (cipher) {
+            return cipher.decrypt();
         }).then(function (model) {
-            $scope.login = model;
-            $scope.canAccessAttachments = $scope.isPremium || !!$scope.login.organizationId;
+            $scope.cipher = model;
+            $scope.canAccessAttachments = $scope.isPremium || !!$scope.cipher.organizationId;
 
             if (!$scope.canAccessAttachments) {
                 SweetAlert.swal({
@@ -69,9 +69,9 @@ angular
                 return deferred.promise;
             }
 
-            $scope.submitPromise = cipherService.saveAttachmentWithServer($scope.login, files[0]).then(function (login) {
-                login.decrypt().then(function (model) {
-                    $scope.login = model;
+            $scope.submitPromise = cipherService.saveAttachmentWithServer($scope.cipher, files[0]).then(function (cipher) {
+                cipher.decrypt().then(function (model) {
+                    $scope.cipher = model;
                 });
                 $analytics.eventTrack('Added Attachment');
                 toastr.success(i18nService.attachmentSaved);
@@ -101,9 +101,9 @@ angular
             }, function (confirmed) {
                 if (confirmed) {
                     cipherService.deleteAttachmentWithServer($stateParams.id, attachment.id).then(function () {
-                        var index = $scope.login.attachments.indexOf(attachment);
+                        var index = $scope.cipher.attachments.indexOf(attachment);
                         if (index > -1) {
-                            $scope.login.attachments.splice(index, 1);
+                            $scope.cipher.attachments.splice(index, 1);
                         }
                         $analytics.eventTrack('Deleted Attachment');
                         toastr.success(i18nService.deletedAttachment);
@@ -114,7 +114,7 @@ angular
 
         $scope.close = function () {
             $state.go('editCipher', {
-                loginId: $stateParams.id,
+                cipherId: $stateParams.id,
                 animation: 'out-slide-down',
                 from: $stateParams.from,
                 fromView: $stateParams.fromView

@@ -205,29 +205,29 @@ var bg_isBackground = true,
                     return;
                 }
 
-                bg_cipherService.getAllDecrypted().then(function (logins) {
-                    for (var i = 0; i < logins.length; i++) {
-                        if (logins[i].id === id) {
+                bg_cipherService.getAllDecrypted().then(function (ciphers) {
+                    for (var i = 0; i < ciphers.length; i++) {
+                        if (ciphers[i].id === id) {
                             if (info.parentMenuItemId === 'autofill') {
                                 ga('send', {
                                     hitType: 'event',
                                     eventAction: 'Autofilled From Context Menu'
                                 });
-                                startAutofillPage(logins[i]);
+                                startAutofillPage(ciphers[i]);
                             }
                             else if (info.parentMenuItemId === 'copy-username') {
                                 ga('send', {
                                     hitType: 'event',
                                     eventAction: 'Copied Username From Context Menu'
                                 });
-                                bg_utilsService.copyToClipboard(logins[i].username);
+                                bg_utilsService.copyToClipboard(ciphers[i].login.username);
                             }
                             else if (info.parentMenuItemId === 'copy-password') {
                                 ga('send', {
                                     hitType: 'event',
                                     eventAction: 'Copied Password From Context Menu'
                                 });
-                                bg_utilsService.copyToClipboard(logins[i].password);
+                                bg_utilsService.copyToClipboard(ciphers[i].login.password);
                             }
                             return;
                         }
@@ -260,16 +260,16 @@ var bg_isBackground = true,
 
             if (bg_utilsService.isFirefox()) {
                 return new Promise(function (resolve, reject) {
-                    bg_cipherService.getAllDecryptedForDomain(domain).then(function (logins) {
-                        if (!logins || logins.length !== 1) {
+                    bg_cipherService.getAllDecryptedForDomain(domain).then(function (ciphers) {
+                        if (!ciphers || ciphers.length !== 1) {
                             reject();
                             return;
                         }
 
                         resolve({
                             authCredentials: {
-                                username: logins[0].username,
-                                password: logins[0].password
+                                username: ciphers[0].login.username,
+                                password: ciphers[0].login.password
                             }
                         });
                     }, function () {
@@ -278,16 +278,16 @@ var bg_isBackground = true,
                 });
             }
             else {
-                bg_cipherService.getAllDecryptedForDomain(domain).then(function (logins) {
-                    if (!logins || logins.length !== 1) {
+                bg_cipherService.getAllDecryptedForDomain(domain).then(function (ciphers) {
+                    if (!ciphers || ciphers.length !== 1) {
                         callback();
                         return;
                     }
 
                     callback({
                         authCredentials: {
-                            username: logins[0].username,
-                            password: logins[0].password
+                            username: ciphers[0].login.username,
+                            password: ciphers[0].login.password
                         }
                     });
                 }, function () {
@@ -580,16 +580,16 @@ var bg_isBackground = true,
         });
     }
 
-    function addLogin(login, tab) {
-        var loginDomain = bg_utilsService.getDomain(login.url);
+    function addLogin(loginInfo, tab) {
+        var loginDomain = bg_utilsService.getDomain(loginInfo.url);
         if (!loginDomain) {
             return;
         }
 
-        bg_cipherService.getAllDecryptedForDomain(loginDomain).then(function (logins) {
+        bg_cipherService.getAllDecryptedForDomain(loginDomain).then(function (ciphers) {
             var match = false;
-            for (var i = 0; i < logins.length; i++) {
-                if (logins[i].username === login.username) {
+            for (var i = 0; i < ciphers.length; i++) {
+                if (ciphers[i].login.username === loginInfo.username) {
                     match = true;
                     break;
                 }
@@ -600,11 +600,11 @@ var bg_isBackground = true,
                 removeAddLogin(tab);
 
                 bg_loginsToAdd.push({
-                    username: login.username,
-                    password: login.password,
+                    username: loginInfo.username,
+                    password: loginInfo.password,
                     name: loginDomain,
                     domain: loginDomain,
-                    uri: login.url,
+                    uri: loginInfo.url,
                     tabId: tab.id,
                     expires: new Date((new Date()).getTime() + 30 * 60000) // 30 minutes
                 });
@@ -633,53 +633,62 @@ var bg_isBackground = true,
 
     function saveAddLogin(tab) {
         for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
-            if (bg_loginsToAdd[i].tabId === tab.id) {
-                var loginToAdd = bg_loginsToAdd[i];
-
-                var tabDomain = bg_utilsService.getDomain(tab.url);
-                if (tabDomain && tabDomain === loginToAdd.domain) {
-                    bg_loginsToAdd.splice(i, 1);
-
-                    /* jshint ignore:start */
-                    bg_cipherService.encrypt({
-                        id: null,
-                        folderId: null,
-                        favorite: false,
-                        name: loginToAdd.name,
-                        uri: loginToAdd.uri,
-                        username: loginToAdd.username,
-                        password: loginToAdd.password,
-                        notes: null
-                    }).then(function (loginModel) {
-                        var login = new Login(loginModel, true);
-                        bg_cipherService.saveWithServer(login).then(function (login) {
-                            ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Added Login from Notification Bar'
-                            });
-                        });
-                    });
-                    /* jshint ignore:end */
-
-                    messageTab(tab.id, 'closeNotificationBar');
-                }
+            if (bg_loginsToAdd[i].tabId !== tab.id) {
+                continue;
             }
+
+            var loginInfo = bg_loginsToAdd[i];
+            var tabDomain = bg_utilsService.getDomain(tab.url);
+            if (tabDomain && tabDomain !== loginInfo.domain) {
+                continue;
+            }
+
+            bg_loginsToAdd.splice(i, 1);
+
+            /* jshint ignore:start */
+            bg_cipherService.encrypt({
+                id: null,
+                folderId: null,
+                favorite: false,
+                name: loginInfo.name,
+                notes: null,
+                type: bg_constantsService.cipherType.login,
+                login: {
+                    uri: loginInfo.uri,
+                    username: loginInfo.username,
+                    password: loginInfo
+                }
+            }).then(function (model) {
+                var cipher = new Cipher(model, true);
+                return bg_cipherService.saveWithServer(cipher);
+            }).then(function (login) {
+                ga('send', {
+                    hitType: 'event',
+                    eventAction: 'Added Login from Notification Bar'
+                });
+            });
+            /* jshint ignore:end */
+
+            messageTab(tab.id, 'closeNotificationBar');
         }
     }
 
     function saveNever(tab) {
         for (var i = bg_loginsToAdd.length - 1; i >= 0; i--) {
-            if (bg_loginsToAdd[i].tabId === tab.id) {
-                var loginToAdd = bg_loginsToAdd[i];
-
-                var tabDomain = bg_utilsService.getDomain(tab.url);
-                if (tabDomain && tabDomain === loginToAdd.domain) {
-                    bg_loginsToAdd.splice(i, 1);
-                    var hostname = bg_utilsService.getHostname(tab.url);
-                    bg_cipherService.saveNeverDomain(hostname);
-                    messageTab(tab.id, 'closeNotificationBar');
-                }
+            if (bg_loginsToAdd[i].tabId !== tab.id) {
+                continue;
             }
+
+            var loginInfo = bg_loginsToAdd[i];
+            var tabDomain = bg_utilsService.getDomain(tab.url);
+            if (tabDomain && tabDomain !== loginInfo.domain) {
+                continue;
+            }
+
+            bg_loginsToAdd.splice(i, 1);
+            var hostname = bg_utilsService.getHostname(tab.url);
+            bg_cipherService.saveNeverDomain(hostname);
+            messageTab(tab.id, 'closeNotificationBar');
         }
     }
 
@@ -711,18 +720,20 @@ var bg_isBackground = true,
             }
 
             for (var i = 0; i < bg_loginsToAdd.length; i++) {
-                if (bg_loginsToAdd[i].tabId === tab.id && bg_loginsToAdd[i].domain === tabDomain) {
-                    messageTab(tab.id, 'openNotificationBar', {
-                        type: 'add'
-                    }, function () { });
-                    break;
+                if (bg_loginsToAdd[i].tabId !== tab.id || bg_loginsToAdd[i].domain !== tabDomain) {
+                    continue;
                 }
+
+                messageTab(tab.id, 'openNotificationBar', {
+                    type: 'add'
+                }, function () { });
+                break;
             }
         }
     }
 
-    function startAutofillPage(login) {
-        loginToAutoFill = login;
+    function startAutofillPage(cipher) {
+        loginToAutoFill = cipher;
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             var tab = null;
             if (tabs.length > 0) {
@@ -740,8 +751,7 @@ var bg_isBackground = true,
                 command: 'collectPageDetails',
                 tab: tab,
                 sender: 'contextMenu'
-            }, function () {
-            });
+            }, function () { });
         });
     }
 

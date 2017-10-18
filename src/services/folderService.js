@@ -180,7 +180,7 @@ function initFolderService() {
 
         // TODO: Delete folder reference for associated ciphers
 
-        return self.userService.getUserIdPromise().then(function () {
+        return self.userService.getUserIdPromise().then(function (userId) {
             key = 'folders_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (folders) {
