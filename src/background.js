@@ -47,7 +47,8 @@ var bg_isBackground = true,
         bg_cryptoService, logout);
     bg_passwordGenerationService = new PasswordGenerationService(bg_constantsService, bg_utilsService, bg_cryptoService);
     bg_totpService = new TotpService(bg_constantsService);
-    bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService);
+    bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
+        bg_constantsService);
 
     if (chrome.commands) {
         chrome.commands.onCommand.addListener(function (command) {

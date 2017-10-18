@@ -1,7 +1,8 @@
-﻿function AutofillService(utilsService, totpService, tokenService, cipherService) {
+﻿function AutofillService(utilsService, totpService, tokenService, cipherService, constantsService) {
     this.utilsService = utilsService;
     this.totpService = totpService;
     this.tokenService = tokenService;
+    this.cipherService = cipherService;
     this.cipherService = cipherService;
 
     initAutofill();
@@ -238,8 +239,9 @@ function initAutofill() {
                     fillScript: fillScript
                 }, { frameId: options.pageDetails[i].frameId });
 
-                if (totpPromise || (options.fromBackground && self.utilsService.isFirefox()) ||
-                    options.skipTotp || !options.cipher.login || !options.cipher.login.totp || !self.tokenService.getPremium()) {
+                if (options.cipher.type !== self.constantsService.cipherType.login || totpPromise ||
+                    (options.fromBackground && self.utilsService.isFirefox()) || options.skipTotp ||
+                    !options.cipher.login.totp || !self.tokenService.getPremium()) {
                     continue;
                 }
 
