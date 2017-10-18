@@ -33,12 +33,6 @@ angular
                 }
 
                 domain = utilsService.getDomain(url);
-                if (!domain) {
-                    $timeout(function () {
-                        $scope.loaded = true;
-                    });
-                    return;
-                }
 
                 chrome.tabs.sendMessage(tabs[0].id, {
                     command: 'collectPageDetails',

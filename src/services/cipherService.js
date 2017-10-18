@@ -263,7 +263,11 @@ function initCipherService() {
     CipherService.prototype.getAllDecryptedForDomain = function (domain, includeOtherTypes) {
         var self = this;
 
-        var eqDomainsPromise = self.settingsService.getEquivalentDomains().then(function (eqDomains) {
+        if (!domain && !includeOtherTypes) {
+            return Q([]);
+        }
+
+        var eqDomainsPromise = !domain ? Q([]) : self.settingsService.getEquivalentDomains().then(function (eqDomains) {
             var matchingDomains = [];
             for (var i = 0; i < eqDomains.length; i++) {
                 if (eqDomains[i].length && eqDomains[i].indexOf(domain) >= 0) {
@@ -284,7 +288,7 @@ function initCipherService() {
                 ciphersToReturn = [];
 
             for (var i = 0; i < ciphers.length; i++) {
-                if (ciphers[i].type === self.constantsService.cipherType.login && ciphers[i].login.domain &&
+                if (domain && ciphers[i].type === self.constantsService.cipherType.login && ciphers[i].login.domain &&
                     matchingDomains.indexOf(ciphers[i].login.domain) > -1) {
                     ciphersToReturn.push(ciphers[i]);
                 }
