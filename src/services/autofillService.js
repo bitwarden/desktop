@@ -10,7 +10,7 @@
 
 function initAutofill() {
     var cardAttributes = ['autocomplete', 'data-stripe', 'htmlName', 'htmlID'];
-    var identityAttributes = ['autocomplete', 'htmlName', 'htmlID'];
+    var identityAttributes = ['autocomplete', 'data-stripe', 'htmlName', 'htmlID'];
 
     // Add other languages values
     var usernameFieldNames = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
@@ -351,6 +351,8 @@ function initAutofill() {
             for (var j = 0; j < cardAttributes.length; j++) {
                 var attr = cardAttributes[j];
                 if (f.hasOwnProperty(attr) && f[attr]) {
+                    // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+                    // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
                     switch (f[attr].toLowerCase()) {
                         case 'cc-name': case 'ccname': case 'cardname': case 'card-name': case 'cardholder':
                         case 'cardholdername': case 'cardholder-name': case 'name':
@@ -408,16 +410,189 @@ function initAutofill() {
             return null;
         }
 
-        var id = options.cipher.identity,
-            i = 0;
+        var fillFields = {};
+
+        for (var i = 0; i < pageDetails.fields.length; i++) {
+            var f = pageDetails.fields[i];
+            for (var j = 0; j < identityAttributes.length; j++) {
+                var attr = identityAttributes[j];
+                if (f.hasOwnProperty(attr) && f[attr]) {
+                    // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+                    // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
+                    switch (f[attr].toLowerCase()) {
+                        case 'name': case 'full-name': case 'fullname': case 'your-name': case 'yourname': case 'full_name':
+                        case 'your_name':
+                            if (!fillFields.name) {
+                                fillFields.name = f;
+                            }
+                            break;
+                        case 'fname': case 'firstname': case 'first-name': case 'given-name': case 'givenname':
+                        case 'first_name': case 'given_name':
+                            if (!fillFields.firstName) {
+                                fillFields.firstName = f;
+                            }
+                            break;
+                        case 'mname': case 'middlename': case 'middle-name': case 'additional-name': case 'additionalname':
+                        case 'middle_name': case 'additional_name':
+                            if (!fillFields.middleName) {
+                                fillFields.middleName = f;
+                            }
+                            break;
+                        case 'lname': case 'lastname': case 'last-name': case 'family-name': case 'familyname': case 'surname':
+                        case 'sname': case 'last_name': case 'family_name':
+                            if (!fillFields.lastName) {
+                                fillFields.lastName = f;
+                            }
+                            break;
+                        case 'honorific-prefix': case 'prefix': case 'honorific_prefix':
+                            if (!fillFields.title) {
+                                fillFields.title = f;
+                            }
+                            break;
+                        case 'email': case 'e-mail': case 'email-address': case 'emailaddress': case 'email_address':
+                            if (!fillFields.email) {
+                                fillFields.email = f;
+                            }
+                            break;
+                        case 'address': case 'street_address': case 'street-address': case 'streetaddress':
+                            if (!fillFields.address) {
+                                fillFields.address = f;
+                            }
+                            break;
+                        case 'address1': case 'address-1': case 'address-line1': case 'address_1': case 'address_line1':
+                            if (!fillFields.address1) {
+                                fillFields.address1 = f;
+                            }
+                            break;
+                        case 'address2': case 'address-2': case 'address-line2': case 'address_2': case 'address_line2':
+                            if (!fillFields.address2) {
+                                fillFields.address2 = f;
+                            }
+                            break;
+                        case 'address3': case 'address-3': case 'address-line3': case 'address_3': case 'address_line3':
+                            if (!fillFields.address3) {
+                                fillFields.address3 = f;
+                            }
+                            break;
+                        case 'city': case 'town': case 'address-level2': case 'address_level2': case 'address_city':
+                        case 'address_town': case 'address-city':
+                            if (!fillFields.city) {
+                                fillFields.city = f;
+                            }
+                            break;
+                        case 'state': case 'province': case 'provence': case 'address-level1': case 'address_level1':
+                        case 'address_state': case 'address_province': case 'address-state': case 'address-province':
+                            if (!fillFields.state) {
+                                fillFields.state = f;
+                            }
+                            break;
+                        case 'postal': case 'postal-code': case 'zip': case 'zip2': case 'zip-code': case 'zipcode':
+                        case 'postalcode': case 'postal_code': case 'zip_code': case 'address_zip': case 'address_postal':
+                        case 'address-postal-code': case 'address_postal_code': case 'address_code': case 'address_postalcode':
+                        case 'address_zip_code':
+                            if (!fillFields.postalCode) {
+                                fillFields.postalCode = f;
+                            }
+                            break;
+                        case 'country': case 'country-code': case 'countrycode': case 'countryname': case 'country-name':
+                        case 'country_name': case 'country_code': case 'address_country': case 'address-country':
+                        case 'address-countryname': case 'address-countrycode': case 'address_countryname':
+                        case 'address_countrycode':
+                            if (!fillFields.country) {
+                                fillFields.country = f;
+                            }
+                            break;
+                        case 'phone': case 'mobile': case 'mobile-phone': case 'tel': case 'telephone': case 'mobile_phone':
+                            if (!fillFields.phone) {
+                                fillFields.phone = f;
+                            }
+                            break;
+                        case 'username': case 'user-name': case 'userid': case 'user-id': case 'user_name': case 'user_id':
+                            if (!fillFields.username) {
+                                fillFields.username = f;
+                            }
+                            break;
+                        case 'company': case 'organization': case 'organisation': case 'company_name': case 'organization_name':
+                            if (!fillFields.company) {
+                                fillFields.company = f;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        var identity = options.cipher.identity;
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'title');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'firstName');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'middleName');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'lastName');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'address1');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'address2');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'address3');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'city');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'state');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'postalCode');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'country');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'company');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'email');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'phone');
+        makeScriptAction(fillScript, identity, fillFields, filledFields, 'username');
+
+        if (fillFields.name && (identity.firstName || identity.lastName)) {
+            var fullName = '';
+            if (identity.firstName && identity.firstName !== '') {
+                fullName = identity.firstName;
+            }
+            if (identity.middleName && identity.middleName !== '') {
+                if (fullName !== '') {
+                    fullName += ' ';
+                }
+                fullName += identity.middleName;
+            }
+            if (identity.lastName && identity.lastName !== '') {
+                if (fullName !== '') {
+                    fullName += ' ';
+                }
+                fullName += identity.lastName;
+            }
+
+            filledFields[fillFields.name.opid] = fillFields.name;
+            fillScript.script.push(['click_on_opid', fillFields.name.opid]);
+            fillScript.script.push(['fill_by_opid', fillFields.name.opid, fullName]);
+        }
+
+        if (fillFields.address && identity.address1 && identity.address1 !== '') {
+            var address = '';
+            if (identity.address1 && identity.address1 !== '') {
+                address = identity.address1;
+            }
+            if (identity.address2 && identity.address2 !== '') {
+                if (address !== '') {
+                    address += ', ';
+                }
+                address += identity.address2;
+            }
+            if (identity.address3 && identity.address3 !== '') {
+                if (address !== '') {
+                    address += ', ';
+                }
+                address += identity.address3;
+            }
+
+            filledFields[fillFields.address.opid] = fillFields.address;
+            fillScript.script.push(['click_on_opid', fillFields.address.opid]);
+            fillScript.script.push(['fill_by_opid', fillFields.address.opid, address]);
+        }
 
         return fillScript;
     }
 
-
     function makeScriptAction(fillScript, cipherData, fillFields, filledFields, dataProp, fieldProp) {
         fieldProp = fieldProp || dataProp;
-        if (cipherData[dataProp] && fillFields[fieldProp]) {
+        if (cipherData[dataProp] && cipherData[dataProp] !== '' && fillFields[fieldProp]) {
             filledFields[fillFields[fieldProp].opid] = fillFields[fieldProp];
             fillScript.script.push(['click_on_opid', fillFields[fieldProp].opid]);
             fillScript.script.push(['fill_by_opid', fillFields[fieldProp].opid, cipherData[dataProp]]);
