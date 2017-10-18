@@ -167,7 +167,7 @@ function initAutofill() {
     };
 
     function generateFillScript(self, pageDetails, options) {
-        if (!pageDetails) {
+        if (!pageDetails || !options.cipher) {
             return null;
         }
 
@@ -180,37 +180,9 @@ function initAutofill() {
             metadata: {}
         };
 
-        switch (options.cipher.type) {
-            case self.constantsService.cipherType.login:
-                fillScript = generateLoginFillScript(fillScript, pageDetails, options);
-                break;
-            case self.constantsService.cipherType.card:
-                fillScript = generateLoginFillScript(fillScript, pageDetails, options);
-                break;
-            case self.constantsService.cipherType.identity:
-                fillScript = generateLoginFillScript(fillScript, pageDetails, options);
-                break;
-            default:
-                return null;
-        }
-
-        return fillScript;
-    }
-
-    function generateLoginFillScript(fillScript, pageDetails, options) {
-        if (!options.cipher.login) {
-            return null;
-        }
-
-        var passwordFields = [],
-            passwords = [],
-            usernames = [],
-            filledFields = {},
-            pf = null,
-            username = null,
+        var filledFields = {},
             i = 0,
-            fields = options.cipher.fields,
-            login = options.cipher.login;
+            fields = options.cipher.fields;
 
         if (fields && fields.length) {
             var fieldNames = [];
@@ -238,6 +210,36 @@ function initAutofill() {
                 }
             }
         }
+
+        switch (options.cipher.type) {
+            case self.constantsService.cipherType.login:
+                fillScript = generateLoginFillScript(fillScript, pageDetails, filledFields, options);
+                break;
+            case self.constantsService.cipherType.card:
+                fillScript = generateLoginFillScript(fillScript, pageDetails, filledFields, options);
+                break;
+            case self.constantsService.cipherType.identity:
+                fillScript = generateLoginFillScript(fillScript, pageDetails, filledFields, options);
+                break;
+            default:
+                return null;
+        }
+
+        return fillScript;
+    }
+
+    function generateLoginFillScript(fillScript, pageDetails, filledFields, options) {
+        if (!options.cipher.login) {
+            return null;
+        }
+
+        var passwordFields = [],
+            passwords = [],
+            usernames = [],
+            pf = null,
+            username = null,
+            i = 0,
+            login = options.cipher.login;
 
         if (!login.password || login.password === '') {
             // No password for this login. Maybe they just wanted to auto-fill some custom fields?
@@ -334,7 +336,7 @@ function initAutofill() {
         return fillScript;
     }
 
-    function generateCardFillScript(fillScript, pageDetails, options) {
+    function generateCardFillScript(fillScript, pageDetails, filledFields, options) {
         if (!options.cipher.card) {
             return null;
         }
@@ -342,7 +344,7 @@ function initAutofill() {
         var card = options.cipher.card;
     }
 
-    function generateIdentityFillScript(fillScript, pageDetails, options) {
+    function generateIdentityFillScript(fillScript, pageDetails, filledFields, options) {
         if (!options.cipher.identity) {
             return null;
         }
