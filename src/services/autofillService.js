@@ -9,8 +9,8 @@
 }
 
 function initAutofill() {
-    var cardAttributes = ['autocomplete', 'data-stripe', 'htmlName', 'htmlID'];
-    var identityAttributes = ['autocomplete', 'data-stripe', 'htmlName', 'htmlID'];
+    var cardAttributes = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID'];
+    var identityAttributes = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID'];
 
     // Add other languages values
     var usernameFieldNames = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
