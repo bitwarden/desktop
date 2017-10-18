@@ -43,13 +43,12 @@ angular
                         ctrl.icon = 'fa-apple';
                         ctrl.image = null;
                     }
-                    else if (ctrl.imageEnabled && hostnameUri.indexOf('://') === -1 && hostnameUri.indexOf('http://') !== 0 &&
-                        hostnameUri.indexOf('https://') !== 0) {
+                    else if (ctrl.imageEnabled && hostnameUri.indexOf('://') === -1 && hostnameUri.indexOf('.') > -1) {
                         hostnameUri = "http://" + hostnameUri;
                         isWebsite = true;
                     }
                     else if (ctrl.imageEnabled) {
-                        isWebsite = hostnameUri.indexOf('http') === 0 && hostnameUri.indexOf('.') > 0;
+                        isWebsite = hostnameUri.indexOf('http') === 0 && hostnameUri.indexOf('.') > -1;
                     }
 
                     if (ctrl.imageEnabled && isWebsite) {
