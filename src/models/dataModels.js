@@ -15,39 +15,6 @@ var FolderData = function (response, userId) {
     this.revisionDate = response.revisionDate;
 };
 
-// deprecated
-var LoginData = function (response, userId) {
-    this.id = response.id;
-    this.organizationId = response.organizationId;
-    this.folderId = response.folderId;
-    this.userId = userId;
-    this.edit = response.edit;
-    this.organizationUseTotp = response.organizationUseTotp;
-    this.name = response.data.Name;
-    this.uri = response.data.Uri;
-    this.username = response.data.Username;
-    this.password = response.data.Password;
-    this.notes = response.notes = response.data.Notes;
-    this.totp = response.notes = response.data.Totp;
-    this.favorite = response.favorite;
-    this.revisionDate = response.revisionDate;
-
-    var i;
-    if (response.data.Fields) {
-        this.fields = [];
-        for (i = 0; i < response.data.Fields.length; i++) {
-            this.fields.push(new FieldData(response.data.Fields[i]));
-        }
-    }
-
-    if (response.attachments) {
-        this.attachments = [];
-        for (i = 0; i < response.attachments.length; i++) {
-            this.attachments.push(new AttachmentData(response.attachments[i]));
-        }
-    }
-};
-
 var CipherData = function (response, userId) {
     this.id = response.id;
     this.organizationId = response.organizationId;
@@ -65,7 +32,7 @@ var CipherData = function (response, userId) {
     var constantsService = chrome.extension.getBackgroundPage().bg_constantsService;
     switch (this.type) {
         case constantsService.cipherType.login:
-            this.login = new LoginData2(response.data);
+            this.login = new LoginData(response.data);
             break;
         case constantsService.cipherType.secureNote:
             this.secureNote = new SecureNoteData(response.data);
@@ -110,7 +77,7 @@ var FieldData = function (response) {
     this.value = response.Value;
 };
 
-var LoginData2 = function (data) {
+var LoginData = function (data) {
     this.uri = data.Uri;
     this.username = data.Username;
     this.password = data.Password;
