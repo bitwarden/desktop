@@ -111,7 +111,9 @@
                     </div>
                     <div class="list-section-item" ng-if="cipher.card.expMonth || cipher.card.expYear">
                         <span class="item-label">{{i18n.expiration}}</span>
-                        {{cipher.card.expMonth ? ('0' + cipher.card.expMonth).slice(-2) : '-'}}/{{cipher.card.expYear || '-'}}
+                        {{cipher.card.expMonth ? ('0' + cipher.card.expMonth).slice(-2) : '__'}}
+                        /
+                        {{cipher.card.expYear ? formatYear(cipher.card.expYear) : '____'}}
                     </div>
                     <div class="list-section-item" ng-if="cipher.card.code">
                         <div class="action-buttons">

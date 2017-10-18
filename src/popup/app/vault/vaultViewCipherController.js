@@ -195,6 +195,14 @@ angular
             }
         });
 
+        $scope.formatYear = function (year) {
+            if (year.length == 2) {
+                return '20' + year;
+            }
+
+            return year;
+        };
+
         function totpUpdateCode() {
             if ($scope.cipher.type !== constantsService.cipherType.login || !$scope.cipher.login.totp) {
                 return;

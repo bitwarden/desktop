@@ -365,6 +365,12 @@ function initAutofill() {
                                 fillFields.number = f;
                             }
                             break;
+                        case 'cc-exp': case 'ccexp': case 'cardexp': case 'card-exp': case 'cc-expiration':
+                        case 'ccexpiration': case 'card-expiration': case 'cardexpiration':
+                            if (!fillFields.exp) {
+                                fillFields.exp = f;
+                            }
+                            break;
                         case 'exp-month': case 'expmonth': case 'ccexpmonth': case 'cc-exp-month': case 'cc-month':
                         case 'ccmonth': case 'card-month': case 'cardmonth':
                             if (!fillFields.expMonth) {
@@ -395,12 +401,25 @@ function initAutofill() {
             }
         }
 
-        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'cardholderName');
-        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'number');
-        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'expMonth');
-        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'expYear');
-        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'code');
-        makeScriptAction(fillScript, options.cipher.card, fillFields, filledFields, 'brand');
+        var card = options.cipher.card;
+        makeScriptAction(fillScript, card, fillFields, filledFields, 'cardholderName');
+        makeScriptAction(fillScript, card, fillFields, filledFields, 'number');
+        makeScriptAction(fillScript, card, fillFields, filledFields, 'expMonth');
+        makeScriptAction(fillScript, card, fillFields, filledFields, 'expYear');
+        makeScriptAction(fillScript, card, fillFields, filledFields, 'code');
+        makeScriptAction(fillScript, card, fillFields, filledFields, 'brand');
+
+        if (fillFields.exp && card.expMonth && card.expYear) {
+            var year = card.expYear;
+            if (year.length == 2) {
+                year = '20' + year;
+            }
+            var exp = year + '-' + ('0' + card.expMonth).slice(-2);
+
+            filledFields[fillFields.exp.opid] = fillFields.exp;
+            fillScript.script.push(['click_on_opid', fillFields.exp.opid]);
+            fillScript.script.push(['fill_by_opid', fillFields.exp.opid, exp]);
+        }
 
         return fillScript;
     }
