@@ -459,20 +459,20 @@ var bg_isBackground = true,
         setActionBadgeColor(bg_sidebarAction);
 
         menuOptionsLoaded = [];
-        bg_cipherService.getAllDecryptedForDomain(tabDomain).then(function (logins) {
-            logins.sort(bg_cipherService.sortCiphersByLastUsedThenName);
+        bg_cipherService.getAllDecryptedForDomain(tabDomain).then(function (ciphers) {
+            ciphers.sort(bg_cipherService.sortCiphersByLastUsedThenName);
 
             if (contextMenuEnabled) {
-                for (var i = 0; i < logins.length; i++) {
-                    loadLoginContextMenuOptions(logins[i]);
+                for (var i = 0; i < ciphers.length; i++) {
+                    loadLoginContextMenuOptions(ciphers[i]);
                 }
             }
 
             var theText = '';
-            if (logins.length > 0 && logins.length < 9) {
-                theText = logins.length.toString();
+            if (ciphers.length > 0 && ciphers.length < 9) {
+                theText = ciphers.length.toString();
             }
-            else if (logins.length > 0) {
+            else if (ciphers.length > 0) {
                 theText = '9+';
             }
             else {
@@ -756,22 +756,28 @@ var bg_isBackground = true,
         pageDetailsToAutoFill = [];
     }
 
-    function loadLoginContextMenuOptions(login) {
-        var title = login.name + (login.username && login.username !== '' ? ' (' + login.username + ')' : '');
-        loadContextMenuOptions(title, login.id, login);
+    function loadLoginContextMenuOptions(cipher) {
+        if (!cipher || cipher.type !== bg_constantsService.cipherType.login) {
+            return;
+        }
+
+        var title = cipher.name + (cipher.login.username && cipher.login.username !== '' ?
+            ' (' + cipher.login.username + ')' : '');
+        loadContextMenuOptions(title, cipher.id, cipher);
     }
 
     function loadNoLoginsContextMenuOptions(noLoginsMessage) {
         loadContextMenuOptions(noLoginsMessage, 'noop', null);
     }
 
-    function loadContextMenuOptions(title, idSuffix, login) {
-        if (!chrome.contextMenus || menuOptionsLoaded.indexOf(idSuffix) > -1) {
+    function loadContextMenuOptions(title, idSuffix, cipher) {
+        if (!chrome.contextMenus || menuOptionsLoaded.indexOf(idSuffix) > -1 ||
+            (cipher && cipher.type !== bg_constantsService.cipherType.login)) {
             return;
         }
         menuOptionsLoaded.push(idSuffix);
 
-        if (!login || (login.password && login.password !== '')) {
+        if (!cipher || (cipher.login.password && cipher.login.password !== '')) {
             chrome.contextMenus.create({
                 type: 'normal',
                 id: 'autofill_' + idSuffix,
@@ -790,7 +796,7 @@ var bg_isBackground = true,
             return;
         }
 
-        if (!login || (login.username && login.username !== '')) {
+        if (!cipher || (cipher.login.username && cipher.login.username !== '')) {
             chrome.contextMenus.create({
                 type: 'normal',
                 id: 'copy-username_' + idSuffix,
@@ -804,7 +810,7 @@ var bg_isBackground = true,
             });
         }
 
-        if (!login || (login.password && login.password !== '')) {
+        if (!cipher || (cipher.login.password && cipher.login.password !== '')) {
             chrome.contextMenus.create({
                 type: 'normal',
                 id: 'copy-password_' + idSuffix,
