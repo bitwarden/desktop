@@ -26,6 +26,33 @@
     }
 }
 
+.in-slide-down {
+    .main-view.ng-enter,
+    .main-view.ng-leave {
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+
+    .main-view.ng-enter {
+        bottom: 100%;
+        z-index: 990;
+        .box-shadow(0 4px 2px -2px gray);
+    }
+
+    .main-view.ng-enter.ng-enter-active {
+        bottom: 0;
+    }
+
+    .main-view.ng-leave {
+        top: 0;
+        z-index: 970;
+    }
+
+    .main-view.ng-leave.ng-leave-active {
+        top: 0;
+    }
+}
+
 .out-slide-down {
     .main-view.ng-enter,
     .main-view.ng-leave {
