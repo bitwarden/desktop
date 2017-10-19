@@ -198,15 +198,14 @@ var bg_isBackground = true,
                     bg_passwordGenerationService.addHistory(password);
                 });
             }
-            else if (info.menuItemId === 'autofill_noop') {
-                if (bg_utilsService.isFirefox() && chrome.browserAction.openPopup) {
-                    chrome.browserAction.openPopup();
-                }
-            }
             else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
                 info.parentMenuItemId === 'copy-password') {
                 var id = info.menuItemId.split('_')[1];
                 if (id === 'noop') {
+                    if (chrome.browserAction.openPopup) {
+                        chrome.browserAction.openPopup();
+                    }
+
                     return;
                 }
 
