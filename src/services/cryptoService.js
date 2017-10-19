@@ -31,7 +31,7 @@ function initCryptoService(constantsService) {
             }
 
             return self.utilsService.saveObjToStorage(keyKey, key.keyB64);
-        })
+        });
     };
 
     CryptoService.prototype.setKeyHash = function (keyHash, callback) {
