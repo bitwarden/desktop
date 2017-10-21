@@ -298,9 +298,6 @@ function buildDomainModel(model, obj, map, alreadyEncrypted, notEncList) {
                 case self.constantsService.cipherType.card:
                     model.card = decObj;
                     model.subTitle = model.card.brand;
-                    if (model.card.brand) {
-                        model.subTitle = model.card.brand;
-                    }
                     if (model.card.number && model.card.number.length >= 4) {
                         if (model.subTitle !== '') {
                             model.subTitle += ', ';

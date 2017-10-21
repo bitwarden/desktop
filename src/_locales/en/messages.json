@@ -799,7 +799,7 @@
     "message": "Disable Website Icons"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "cardholderName": {
     "message": "Cardholder Name"
