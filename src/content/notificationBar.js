@@ -104,7 +104,7 @@
                 }
             });
 
-            observer.observe(bodies[0], { childList: true });
+            observer.observe(bodies[0], { childList: true, subtree: true });
         }
     }
 
