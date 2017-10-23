@@ -2,7 +2,7 @@
     .module('bit.tools')
 
     .controller('toolsExportController', function ($scope, $state, toastr, $q, $analytics,
-        i18nService, cryptoService, userService, folderService, cipherService, $window) {
+        i18nService, cryptoService, userService, folderService, cipherService, $window, constantsService) {
         $scope.i18n = i18nService;
 
         $('#master-password').focus();
@@ -40,9 +40,8 @@
         }
 
         function getCsv() {
-            var deferred = $q.defer();
             var decFolders = [];
-            var decLogins = [];
+            var decCiphers = [];
             var promises = [];
 
             var folderPromise = folderService.getAllDecrypted().then(function (folders) {
@@ -50,55 +49,75 @@
             });
             promises.push(folderPromise);
 
-            var loginPromise = cipherService.getAllDecrypted().then(function (logins) {
-                decLogins = logins;
+            var ciphersPromise = cipherService.getAllDecrypted().then(function (ciphers) {
+                decCiphers = ciphers;
             });
-            promises.push(loginPromise);
+            promises.push(ciphersPromise);
 
-            $q.all(promises).then(function () {
-                var exportLogins = [];
-                for (var i = 0; i < decLogins.length; i++) {
-                    var login = {
-                        name: decLogins[i].name,
-                        uri: decLogins[i].uri,
-                        username: decLogins[i].username,
-                        password: decLogins[i].password,
-                        notes: decLogins[i].notes,
-                        folder: null,
-                        totp: decLogins[i].totp,
-                        fields: null
-                    };
-
-                    var j;
-
-                    if (decLogins[i].fields) {
-                        for (j = 0; j < decLogins[i].fields.length; j++) {
-                            if (!login.fields) {
-                                login.fields = '';
-                            }
-                            else {
-                                login.fields += '\n';
-                            }
-
-                            login.fields += (decLogins[i].fields[j].name + ': ' + decLogins[i].fields[j].value);
-                        }
-                    }
-
-                    for (j = 0; j < decFolders.length; j++) {
-                        if (decFolders[j].id === decLogins[i].folderId && decFolders[j].name !== i18nService.noneFolder) {
-                            login.folder = decFolders[j].name;
-                            break;
-                        }
-                    }
-
-                    exportLogins.push(login);
+            return $q.all(promises).then(function () {
+                var foldersDict = {};
+                for (var i = 0; i < decFolders.length; i++) {
+                    foldersDict[decFolders[i].id] = decFolders[i];
                 }
 
-                var csv = Papa.unparse(exportLogins);
-                deferred.resolve(csv);
-            });
+                var exportCiphers = [];
+                for (i = 0; i < decCiphers.length; i++) {
+                    // only export logins and secure notes
+                    if (decCiphers[i].type !== constantsService.cipherType.login &&
+                        decCiphers[i].type !== constantsService.cipherType.secureNote) {
+                        continue;
+                    }
 
-            return deferred.promise;
+                    var cipher = {
+                        folder: decCiphers[i].folderId && (decCiphers[i].folderId in foldersDict) ?
+                            foldersDict[decCiphers[i].folderId].name : null,
+                        favorite: decCiphers[i].favorite ? 1 : null,
+                        type: null,
+                        name: decCiphers[i].name,
+                        notes: decCiphers[i].notes,
+                        fields: null,
+                        // Login props
+                        login_uri: null,
+                        login_username: null,
+                        login_password: null,
+                        login_totp: null
+                    };
+
+                    if (decCiphers[i].fields) {
+                        for (var j = 0; j < decCiphers[i].fields.length; j++) {
+                            if (!cipher.fields) {
+                                cipher.fields = '';
+                            }
+                            else {
+                                cipher.fields += '\n';
+                            }
+
+                            cipher.fields += ((decCiphers[i].fields[j].name || '') + ': ' + decCiphers[i].fields[j].value);
+                        }
+                    }
+
+                    switch (decCiphers[i].type) {
+                        case constantsService.cipherType.login:
+                            cipher.type = 'login';
+                            cipher.login_uri = decCiphers[i].login.uri;
+                            cipher.login_username = decCiphers[i].login.username;
+                            cipher.login_password = decCiphers[i].login.password;
+                            cipher.login_totp = decCiphers[i].login.totp;
+                            break;
+                        case constantsService.cipherType.secureNote:
+                            cipher.type = 'note';
+                            break;
+                        default:
+                            continue;
+                            break;
+                    }
+
+                    exportCiphers.push(cipher);
+                }
+
+                var csv = Papa.unparse(exportCiphers);
+                return csv;
+            });
         }
 
         function downloadFile(csvString) {
