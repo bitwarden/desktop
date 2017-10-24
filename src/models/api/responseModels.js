@@ -94,6 +94,9 @@ var ErrorResponse = function (response, identityResponse) {
     else if (response.responseJSON) {
         errorModel = response.responseJSON;
     }
+    else if (response.responseText && response.responseText.indexOf('{') === 0) {
+        errorModel = JSON.parse(response.responseText);
+    }
 
     if (errorModel) {
         this.message = errorModel.Message;
