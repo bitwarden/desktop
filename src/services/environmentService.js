@@ -6,6 +6,7 @@ function EnvironmentService(constantsService, apiService) {
     this.webVaultUrl = null;
     this.apiUrl = null;
     this.identityUrl = null;
+    this.iconsUrl = null;
 
     initEnvironmentService();
 }
@@ -19,6 +20,7 @@ function initEnvironmentService() {
                 base: null,
                 api: null,
                 identity: null,
+                icons: null,
                 webVault: null
             };
 
@@ -34,6 +36,7 @@ function initEnvironmentService() {
             self.webVaultUrl = urls.webVault;
             self.apiUrl = urls.api;
             self.identityUrl = urls.identity;
+            self.iconsUrl = urls.icons;
 
             self.apiService.setUrls({
                 api: self.apiUrl,
@@ -51,13 +54,15 @@ function initEnvironmentService() {
         urls.webVault = formatUrl(urls.webVault);
         urls.api = formatUrl(urls.api);
         urls.identity = formatUrl(urls.identity);
+        urls.icons = formatUrl(urls.icons);
 
         var urlsObj = {};
         urlsObj[self.constantsService.environmentUrlsKey] = {
             base: urls.base,
             api: urls.api,
             identity: urls.identity,
-            webVault: urls.webVault
+            webVault: urls.webVault,
+            icons: urls.icons
         };
 
         chrome.storage.local.set(urlsObj, function () {
@@ -65,6 +70,7 @@ function initEnvironmentService() {
             self.webVaultUrl = urls.webVault;
             self.apiUrl = urls.api;
             self.identityUrl = urls.identity;
+            self.iconsUrl = urls.icons;
 
             if (self.baseUrl) {
                 self.apiService.setUrls({

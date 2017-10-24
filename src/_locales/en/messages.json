@@ -747,6 +747,9 @@
   "identityUrl": {
     "message": "Identity Server URL"
   },
+  "iconsUrl": {
+    "message": "Icons Server URL"
+  },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
   },

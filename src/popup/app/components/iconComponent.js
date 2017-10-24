@@ -6,9 +6,19 @@ angular
             cipher: '<'
         },
         templateUrl: 'app/components/views/icon.html',
-        controller: function (stateService, constantsService) {
+        controller: function (stateService, constantsService, environmentService) {
             var ctrl = this;
             ctrl.imageEnabled = stateService.getState('faviconEnabled');
+
+            var iconsUrl = environmentService.iconsUrl;
+            if (!iconsUrl) {
+                if (environmentService.baseUrl) {
+                    iconsUrl = environmentService.baseUrl = '/icons';
+                }
+                else {
+                    iconsUrl = 'https://icons.bitwarden.com';
+                }
+            }
 
             ctrl.$onChanges = function () {
                 switch (ctrl.cipher.type) {
@@ -54,7 +64,7 @@ angular
                     if (ctrl.imageEnabled && isWebsite) {
                         try {
                             var url = new URL(hostnameUri);
-                            ctrl.image = 'https://icons.bitwarden.com/' + url.hostname + '/icon.png';
+                            ctrl.image = iconsUrl + '/' + url.hostname + '/icon.png';
                             ctrl.fallbackImage = chrome.extension.getURL('images/fa-globe.png');
                         }
                         catch (e) { }
