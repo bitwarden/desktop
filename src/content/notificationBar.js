@@ -5,8 +5,9 @@
         pageHref = null,
         observer = null,
         domObservationCollectTimeout = null,
+        collectIfNeededTimeout = null,
         iframed = isIframed(),
-        submitButtonNames = ['log in', 'sign in', 'login', 'go', 'submit', 'continue'];
+        submitButtonNames = ['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next'];
 
     if (window.location.hostname.indexOf('bitwarden.com') === -1) {
         chrome.storage.local.get('neverDomains', function (obj) {
@@ -17,7 +18,7 @@
 
             chrome.storage.local.get('disableAddLoginNotification', function (obj) {
                 if (!obj || !obj.disableAddLoginNotification) {
-                    setInterval(collectIfNeeded, 1000);
+                    collectIfNeeded();
                 }
             });
         });
@@ -69,7 +70,7 @@
         var bodies = document.querySelectorAll('body');
         if (bodies && bodies.length > 0) {
             observer = new window.MutationObserver(function (mutations) {
-                if (!mutations || !mutations.length) {
+                if (!mutations || !mutations.length || pageHref !== window.location.href) {
                     return;
                 }
 
@@ -131,6 +132,11 @@
             collect();
             observeDom();
         }
+
+        if (collectIfNeededTimeout) {
+            clearTimeout(collectIfNeededTimeout);
+        }
+        collectIfNeededTimeout = setTimeout(collectIfNeeded, 1000);
     }
 
     function collect() {
