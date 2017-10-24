@@ -13,7 +13,7 @@ angular
             var iconsUrl = environmentService.iconsUrl;
             if (!iconsUrl) {
                 if (environmentService.baseUrl) {
-                    iconsUrl = environmentService.baseUrl = '/icons';
+                    iconsUrl = environmentService.baseUrl + '/icons';
                 }
                 else {
                     iconsUrl = 'https://icons.bitwarden.com';
