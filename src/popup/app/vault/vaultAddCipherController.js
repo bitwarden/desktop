@@ -15,6 +15,8 @@
             name: $stateParams.name,
             type: constantsService.cipherType.login,
             login: {},
+            identity: {},
+            card: {},
             secureNote: {
                 type: 0 // generic note
             }
