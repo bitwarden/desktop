@@ -665,7 +665,7 @@ var bg_isBackground = true,
                 login: {
                     uri: loginInfo.uri,
                     username: loginInfo.username,
-                    password: loginInfo
+                    password: loginInfo.password
                 }
             }).then(function (model) {
                 var cipher = new Cipher(model, true);
