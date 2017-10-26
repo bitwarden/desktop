@@ -6,6 +6,7 @@
         observer = null,
         domObservationCollectTimeout = null,
         collectIfNeededTimeout = null,
+        observeDomTimeout = null,
         iframed = isIframed(),
         submitButtonNames = ['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next'];
 
@@ -130,7 +131,11 @@
             }
 
             collect();
-            observeDom();
+
+            if (observeDomTimeout) {
+                clearTimeout(observeDomTimeout);
+            }
+            observeDomTimeout = setTimeout(observeDom, 1000);
         }
 
         if (collectIfNeededTimeout) {
