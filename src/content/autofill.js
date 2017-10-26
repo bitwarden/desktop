@@ -562,7 +562,25 @@
                 els = Array.prototype.slice.call(elsList);
             } catch (e) { }
 
-            return limit && els.length > limit ? els.slice(0, limit) : els;
+            if (!limit || els.length <= limit) {
+                return els;
+            }
+
+            // non-checkboxes have higher priority
+            els = els.sort(function (a, b) {
+                var aType = a.type ? a.type.toLowerCase() : a.type;
+                var bType = b.type ? b.type.toLowerCase() : b.type;
+
+                if (aType !== 'checkbox' && bType === 'checkbox') {
+                    return -1;
+                }
+                if (aType === 'checkbox' && bType !== 'checkbox') {
+                    return 1;
+                }
+                return 0;
+            });
+
+            return els.slice(0, limit);
             // END MODIFICATION
         }
 
