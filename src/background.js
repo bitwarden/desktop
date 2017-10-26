@@ -104,7 +104,7 @@ var bg_isBackground = true,
             messageTab(sender.tab.id, 'adjustNotificationBar', msg.data);
         }
         else if (msg.command === 'bgCollectPageDetails') {
-            collectPageDetailsForContentScript(sender.tab, msg.sender);
+            collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
         }
         else if (msg.command === 'bgAddLogin') {
             addLogin(msg.login, sender.tab);
@@ -568,16 +568,21 @@ var bg_isBackground = true,
         });
     }
 
-    function collectPageDetailsForContentScript(tab, sender) {
+    function collectPageDetailsForContentScript(tab, sender, frameId) {
         if (!tab || !tab.id) {
             return;
+        }
+
+        var options = {};
+        if (frameId || frameId === 0) {
+            options.frameId = frameId;
         }
 
         chrome.tabs.sendMessage(tab.id, {
             command: 'collectPageDetails',
             tab: tab,
             sender: sender
-        }, function () {
+        }, options, function () {
             if (chrome.runtime.lastError) {
                 return;
             }
