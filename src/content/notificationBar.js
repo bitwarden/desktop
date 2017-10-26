@@ -19,7 +19,10 @@
 
             chrome.storage.local.get('disableAddLoginNotification', function (obj) {
                 if (!obj || !obj.disableAddLoginNotification) {
-                    collectIfNeeded();
+                    if (collectIfNeededTimeout) {
+                        clearTimeout(collectIfNeededTimeout);
+                    }
+                    collectIfNeededTimeout = setTimeout(collectIfNeeded, 1000);
                 }
             });
         });
