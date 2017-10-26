@@ -24,9 +24,7 @@ The bitwarden browser extension is written using the Chrome Web Extension API an
 - [Gulp](http://gulpjs.com/) (`npm install --global gulp-cli`)
 - Chrome (preferred), Opera, or Firefox browser
 
-By default the extension is targeting the production API. If you are running the [Core](https://github.com/bitwarden/core) API locally,
-you'll need to switch the extension to target your local API. Open `src/services/apiService.js` and set `this.baseUrl` to your local
-API instance (ex. `http://localhost:4000`).
+By default the extension is targeting the production API. If you are running the [Core](https://github.com/bitwarden/core) API locally, you'll need to switch the extension to target your local instance. Open `src/services/apiService.js` and set `self.baseUrl` and `self.identityBaseUrl` to your local API instance (ex. `http://localhost:5000`).
 
 Then run the following commands:
 
@@ -45,7 +43,6 @@ You can now load the extension into your browser through the browser's extension
 
 # Contribute
 
-Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute
-by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
+Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
 
 Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature. You can read our security policy in the [`SECURITY.md`](SECURITY.md) file.
