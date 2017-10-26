@@ -395,7 +395,7 @@ function initCipherService() {
                 };
             }
 
-            return self.utilsService.saveObjToStorage(key, ciphersLocalData);
+            return self.utilsService.saveObjToStorage(self.localDataKey, ciphersLocalData);
         }).then(function () {
             if (!self.decryptedCipherCache) {
                 return;
@@ -485,7 +485,7 @@ function initCipherService() {
             }
 
             domains[domain] = null;
-            return self.utilsService.saveObjToStorage(key, domains);
+            return self.utilsService.saveObjToStorage(self.neverDomainsKey, domains);
         });
     };
 
