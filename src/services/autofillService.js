@@ -78,16 +78,8 @@ function initAutofill() {
     };
 
     var isoProvinces = {
-        alberta: 'AB',
-        'british columbia': 'BC',
-        manitoba: 'MB',
-        'new brunswick': 'NB',
-        'newfoundland and labrador': 'NL',
-        'nova scotia': 'NS',
-        ontario: 'ON',
-        'prince edward island': 'PE',
-        quebec: 'QC',
-        saskatchewan: 'SK'
+        alberta: 'AB', 'british columbia': 'BC', manitoba: 'MB', 'new brunswick': 'NB', 'newfoundland and labrador': 'NL',
+        'nova scotia': 'NS', ontario: 'ON', 'prince edward island': 'PE', quebec: 'QC', saskatchewan: 'SK'
     };
 
     AutofillService.prototype.getFormsWithPasswordFields = function (pageDetails) {
@@ -95,25 +87,29 @@ function initAutofill() {
             formData = [];
 
         passwordFields = loadPasswordFields(pageDetails, true);
-        if (passwordFields.length) {
-            for (var formKey in pageDetails.forms) {
-                for (var i = 0; i < passwordFields.length; i++) {
-                    var pf = passwordFields[i];
-                    if (formKey === pf.form) {
-                        var uf = findUsernameField(pageDetails, pf, false, false);
-                        if (!uf) {
-                            // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                            uf = findUsernameField(pageDetails, pf, true, false);
-                        }
+        if (!passwordFields.length) {
+            return formData;
+        }
 
-                        formData.push({
-                            form: pageDetails.forms[formKey],
-                            password: pf,
-                            username: uf
-                        });
-                        break;
-                    }
+        for (var formKey in pageDetails.forms) {
+            for (var i = 0; i < passwordFields.length; i++) {
+                var pf = passwordFields[i];
+                if (formKey !== pf.form) {
+                    continue;
                 }
+
+                var uf = findUsernameField(pageDetails, pf, false, false);
+                if (!uf) {
+                    // not able to find any viewable username fields. maybe there are some "hidden" ones?
+                    uf = findUsernameField(pageDetails, pf, true, false);
+                }
+
+                formData.push({
+                    form: pageDetails.forms[formKey],
+                    password: pf,
+                    username: uf
+                });
+                break;
             }
         }
 
