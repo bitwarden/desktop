@@ -64,7 +64,7 @@ var bg_isBackground = true,
                 });
             }
             else if (command === 'autofill_login') {
-                chrome.tabs.query({ active: true }, function (tabs) {
+                chrome.tabs.query({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }, function (tabs) {
                     if (tabs.length) {
                         ga('send', {
                             hitType: 'event',
