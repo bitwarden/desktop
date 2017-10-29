@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "ES2016",
+    "allowJs": true,
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist/**"
+  ]
+}

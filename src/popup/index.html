@@ -1,121 +1,13 @@
 ﻿<!DOCTYPE html>
-<html ng-app="bit" ng-csp>
+<html ng-csp class="__BROWSER__">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
     <title>bitwarden</title>
-
-    <!-- @if true !>
-    <link rel="stylesheet" href="css/popup.css">
-    <!-- @endif -->
-    <!-- @exclude -->
-    <link rel="stylesheet" href="css/webfonts.css">
-    <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="../lib/angular-toastr/angular-toastr.css">
-    <link rel="stylesheet" href="../lib/sweetalert/sweetalert.css">
-    <link rel="stylesheet" href="css/popup.css">
-    <!-- @endexclude -->
 </head>
 <body ng-controller="mainController as main" class="{{main.animation}}"
       ng-class="{sm: main.smBody, xs: main.xsBody }">
     <div ui-view class="main-view"></div>
-
-    <!-- @if true !>
-    <script src="lib.js"></script>
-    <script src="app.js"></script>
-    <!-- @endif -->
-    <!-- @exclude -->
-    <script src="../lib/jquery/jquery.js"></script>
-    <script src="../lib/bootstrap/js/bootstrap.js"></script>
-    <script src="../lib/papaparse/papaparse.js"></script>
-    <script src="../lib/clipboard/clipboard.js"></script>
-
-    <script src="../lib/angular/angular.js"></script>
-    <script src="../lib/angular-animate/angular-animate.js"></script>
-    <script src="../lib/angular-ui-router/angular-ui-router.js"></script>
-    <script src="../lib/angular-toastr/angular-toastr.tpls.js"></script>
-    <script src="../lib/ngclipboard/ngclipboard.js"></script>
-    <script src="../lib/sweetalert/sweetalert-dev.js"></script>
-    <script src="../lib/sweetalert/SweetAlert.js"></script>
-    <script src="../lib/angulartics/angulartics.js"></script>
-    <script src="../lib/angulartics/angulartics-ga.js"></script>
-    <script src="../lib/ng-infinite-scroll/ng-infinite-scroll.js"></script>
-
-    <script src="../scripts/analytics.js"></script>
-    <script src="../scripts/duo.js"></script>
-    <script src="../scripts/u2f.js"></script>
-
-    <script src="../models/api/requestModels.js"></script>
-    <script src="../models/api/responseModels.js"></script>
-    <script src="../models/dataModels.js"></script>
-    <script src="../models/domainModels.js"></script>
-
-    <script src="app/app.js"></script>
-    <script src="app/config.js"></script>
-
-    <script src="app/directives/directivesModule.js"></script>
-    <script src="app/directives/formDirective.js"></script>
-    <script src="app/directives/stopClickDirective.js"></script>
-    <script src="app/directives/stopPropDirective.js"></script>
-    <script src="app/directives/fallbackSrcDirective.js"></script>
-
-    <script src="app/components/componentsModule.js"></script>
-    <script src="app/components/iconComponent.js"></script>
-    <script src="app/components/actionButtonsComponent.js"></script>
-    <script src="app/components/cipherItemsComponent.js"></script>
-
-    <script src="app/services/servicesModule.js"></script>
-    <script src="app/services/backgroundService.js"></script>
-    <script src="app/services/authService.js"></script>
-    <script src="app/services/validationService.js"></script>
-    <script src="app/services/stateService.js"></script>
-
-    <script src="app/global/globalModule.js"></script>
-    <script src="app/global/mainController.js"></script>
-    <script src="app/global/tabsController.js"></script>
-    <script src="app/global/baseController.js"></script>
-    <script src="app/global/privateModeController.js"></script>
-
-    <script src="app/accounts/accountsModule.js"></script>
-    <script src="app/accounts/accountsLoginController.js"></script>
-    <script src="app/accounts/accountsLoginTwoFactorController.js"></script>
-    <script src="app/accounts/accountsTwoFactorMethodsController.js"></script>
-    <script src="app/accounts/accountsHintController.js"></script>
-    <script src="app/accounts/accountsRegisterController.js"></script>
-
-    <script src="app/current/currentModule.js"></script>
-    <script src="app/current/currentController.js"></script>
-
-    <script src="app/vault/vaultModule.js"></script>
-    <script src="app/vault/vaultController.js"></script>
-    <script src="app/vault/vaultViewFolderController.js"></script>
-    <script src="app/vault/vaultAddCipherController.js"></script>
-    <script src="app/vault/vaultEditCipherController.js"></script>
-    <script src="app/vault/vaultViewCipherController.js"></script>
-    <script src="app/vault/vaultAttachmentsController.js"></script>
-
-    <script src="app/settings/settingsModule.js"></script>
-    <script src="app/settings/settingsController.js"></script>
-    <script src="app/settings/settingsHelpController.js"></script>
-    <script src="app/settings/settingsAboutController.js"></script>
-    <script src="app/settings/settingsCreditsController.js"></script>
-    <script src="app/settings/settingsFeaturesController.js"></script>
-    <script src="app/settings/settingsSyncController.js"></script>
-    <script src="app/settings/settingsFoldersController.js"></script>
-    <script src="app/settings/settingsAddFolderController.js"></script>
-    <script src="app/settings/settingsEditFolderController.js"></script>
-    <script src="app/settings/settingsPremiumController.js"></script>
-    <script src="app/settings/settingsEnvironmentController.js"></script>
-
-    <script src="app/tools/toolsModule.js"></script>
-    <script src="app/tools/toolsController.js"></script>
-    <script src="app/tools/toolsPasswordGeneratorController.js"></script>
-    <script src="app/tools/toolsPasswordGeneratorHistoryController.js"></script>
-    <script src="app/tools/toolsExportController.js"></script>
-
-    <script src="app/lock/lockModule.js"></script>
-    <script src="app/lock/lockController.js"></script>
-    <!-- @endexclude -->
 </body>
 </html>

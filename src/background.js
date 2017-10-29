@@ -1,3 +1,5 @@
+import LockService from './services/lockService.js';
+
 var bg_isBackground = true,
     bg_utilsService,
     bg_i18nService,
@@ -28,27 +30,29 @@ var bg_isBackground = true,
         bg_sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ? opr.sidebarAction : chrome.sidebarAction;
 
     // init services
-    bg_utilsService = new UtilsService();
-    bg_i18nService = new i18nService(bg_utilsService);
-    bg_constantsService = new ConstantsService(bg_i18nService);
-    bg_cryptoService = new CryptoService(bg_constantsService, bg_utilsService);
-    bg_tokenService = new TokenService(bg_utilsService);
-    bg_appIdService = new AppIdService(bg_utilsService);
-    bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
-    bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
-    bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
-    bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
-    bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
+    window.bg_utilsService = bg_utilsService = new UtilsService();
+    window.bg_i18nService = bg_i18nService = new i18nService(bg_utilsService);
+    window.bg_constantsService = bg_constantsService = new ConstantsService(bg_i18nService);
+    window.bg_cryptoService = bg_cryptoService = new CryptoService(bg_constantsService, bg_utilsService);
+    window.bg_tokenService = bg_tokenService = new TokenService(bg_utilsService);
+    window.bg_appIdService = bg_appIdService = new AppIdService(bg_utilsService);
+    window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
+    window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
+    window.bg_userService = bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
+    window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
+    window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
         bg_constantsService);
-    bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService, bg_utilsService);
-    bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_cipherService, bg_utilsService,
+    window.bg_folderService = bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService, bg_utilsService);
+    window.bg_lockService = bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_cipherService, bg_utilsService,
         setIcon, refreshBadgeAndMenu);
-    bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
+    window.bg_syncService = bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
         bg_cryptoService, logout);
-    bg_passwordGenerationService = new PasswordGenerationService(bg_constantsService, bg_utilsService, bg_cryptoService);
-    bg_totpService = new TotpService(bg_constantsService);
-    bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
+    window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_constantsService, bg_utilsService, bg_cryptoService);
+    window.bg_totpService = bg_totpService = new TotpService(bg_constantsService);
+    window.bg_autofillService = bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
         bg_constantsService);
+
+    require('./scripts/analytics.js');
 
     if (chrome.commands) {
         chrome.commands.onCommand.addListener(function (command) {

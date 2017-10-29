@@ -1,4 +1,4 @@
-﻿function UserService(tokenService, apiService, cryptoService, utilsService) {
+function UserService(tokenService, apiService, cryptoService, utilsService) {
     this.tokenService = tokenService;
     this.apiService = apiService;
     this.cryptoService = cryptoService;

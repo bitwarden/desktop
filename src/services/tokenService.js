@@ -1,4 +1,4 @@
-﻿function TokenService(utilsService) {
+function TokenService(utilsService) {
     this.utilsService = utilsService;
 
     initTokenService();

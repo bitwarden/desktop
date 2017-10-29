@@ -1,4 +1,6 @@
-﻿$(function () {
+﻿require('./bar.less');
+
+$(function () {
     var content = document.getElementById('content'),
         closeButton = $('#close-button');
 

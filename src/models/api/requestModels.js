@@ -1,4 +1,4 @@
-﻿var CipherRequest = function (cipher) {
+window.CipherRequest = function (cipher) {
     this.type = cipher.type;
     this.folderId = cipher.folderId;
     this.organizationId = cipher.organizationId;
@@ -69,11 +69,11 @@
     }
 };
 
-var FolderRequest = function (folder) {
+window.FolderRequest = function (folder) {
     this.name = folder.name ? folder.name.encryptedString : null;
 };
 
-var TokenRequest = function (email, masterPasswordHash, provider, token, remember, device) {
+window.TokenRequest = function (email, masterPasswordHash, provider, token, remember, device) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
     this.token = token;
@@ -85,7 +85,7 @@ var TokenRequest = function (email, masterPasswordHash, provider, token, remembe
     }
 };
 
-TokenRequest.prototype.toIdentityToken = function () {
+window.TokenRequest.prototype.toIdentityToken = function () {
     var obj = {
         grant_type: 'password',
         username: this.email,
@@ -110,7 +110,7 @@ TokenRequest.prototype.toIdentityToken = function () {
     return obj;
 };
 
-var RegisterRequest = function (email, masterPasswordHash, masterPasswordHint, key) {
+window.RegisterRequest = function (email, masterPasswordHash, masterPasswordHint, key) {
     this.name = null;
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
@@ -118,20 +118,20 @@ var RegisterRequest = function (email, masterPasswordHash, masterPasswordHint, k
     this.key = key;
 };
 
-var PasswordHintRequest = function (email) {
+window.PasswordHintRequest = function (email) {
     this.email = email;
 };
 
-var TwoFactorEmailRequest = function (email, masterPasswordHash) {
+window.TwoFactorEmailRequest = function (email, masterPasswordHash) {
     this.email = email;
     this.masterPasswordHash = masterPasswordHash;
 };
 
-var DeviceTokenRequest = function () {
+window.DeviceTokenRequest = function () {
     this.pushToken = null;
 };
 
-var DeviceRequest = function (appId, utilsService) {
+window.DeviceRequest = function (appId, utilsService) {
     this.type = utilsService.getDeviceType();
     this.name = utilsService.getBrowser();
     this.identifier = appId;

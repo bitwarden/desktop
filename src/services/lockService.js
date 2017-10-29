@@ -1,4 +1,4 @@
-﻿function LockService(constantsService, cryptoService, folderService, cipherService, utilsService, setIcon, refreshBadgeAndMenu) {
+export default function LockService(constantsService, cryptoService, folderService, cipherService, utilsService, setIcon, refreshBadgeAndMenu) {
     this.lastLockCheck = null;
     this.constantsService = constantsService;
     this.cryptoService = cryptoService;

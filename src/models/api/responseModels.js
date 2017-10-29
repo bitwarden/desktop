@@ -1,4 +1,4 @@
-var CipherResponse = function (response) {
+window.CipherResponse = function (response) {
     this.id = response.Id;
     this.organizationId = response.OrganizationId;
     this.folderId = response.FolderId;
@@ -17,13 +17,13 @@ var CipherResponse = function (response) {
     }
 };
 
-var FolderResponse = function (response) {
+window.FolderResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;
     this.revisionDate = response.RevisionDate;
 };
 
-var ProfileResponse = function (response) {
+window.ProfileResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;
     this.email = response.Email;
@@ -44,12 +44,12 @@ var ProfileResponse = function (response) {
     }
 };
 
-var KeysResponse = function (response) {
+window.KeysResponse = function (response) {
     this.privateKey = response.PrivateKey;
     this.publicKey = response.PublicKey;
 };
 
-var ProfileOrganizationResponse = function (response) {
+window.ProfileOrganizationResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;
     this.useGroups = response.UseGroups;
@@ -63,7 +63,7 @@ var ProfileOrganizationResponse = function (response) {
     this.type = response.Type;
 };
 
-var AttachmentResponse = function (response) {
+window.AttachmentResponse = function (response) {
     this.id = response.Id;
     this.url = response.Url;
     this.fileName = response.FileName;
@@ -71,7 +71,7 @@ var AttachmentResponse = function (response) {
     this.sizeName = response.SizeName;
 };
 
-var IdentityTokenResponse = function (response) {
+window.IdentityTokenResponse = function (response) {
     this.accessToken = response.access_token;
     this.expiresIn = response.expires_in;
     this.refreshToken = response.refresh_token;
@@ -82,11 +82,11 @@ var IdentityTokenResponse = function (response) {
     this.twoFactorToken = response.TwoFactorToken;
 };
 
-var ListResponse = function (data) {
+window.ListResponse = function (data) {
     this.data = data;
 };
 
-var ErrorResponse = function (response, identityResponse) {
+window.ErrorResponse = function (response, identityResponse) {
     var errorModel = null;
     if (identityResponse && identityResponse === true && response.responseJSON && response.responseJSON.ErrorModel) {
         errorModel = response.responseJSON.ErrorModel;
@@ -105,7 +105,7 @@ var ErrorResponse = function (response, identityResponse) {
     this.statusCode = response.status;
 };
 
-var DeviceResponse = function (response) {
+window.DeviceResponse = function (response) {
     this.id = response.Id;
     this.name = response.Name;
     this.identifier = response.Identifier;
@@ -113,7 +113,7 @@ var DeviceResponse = function (response) {
     this.creationDate = response.CreationDate;
 };
 
-var CipherHistoryResponse = function (response) {
+window.CipherHistoryResponse = function (response) {
     this.revised = [];
 
     var revised = response.Revised;
@@ -124,7 +124,7 @@ var CipherHistoryResponse = function (response) {
     this.deleted = response.Deleted;
 };
 
-var DomainsResponse = function (response) {
+window.DomainsResponse = function (response) {
     var GlobalDomainResponse = function (response) {
         this.type = response.Type;
         this.domains = response.Domains;
@@ -143,7 +143,7 @@ var DomainsResponse = function (response) {
     }
 };
 
-var SyncResponse = function (response) {
+window.SyncResponse = function (response) {
     if (response.Profile) {
         this.profile = new ProfileResponse(response.Profile);
     }
