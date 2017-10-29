@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "start:firefox": "web-ext run --source-dir ./dist/",
-    "dev": "webpack --config webpack.dev.js",
-    "dev:watch": "webpack --config webpack.dev.js --watch",
-    "prod": "webpack --config webpack.prod.js"
+    "dev": "gulp build && webpack --config webpack.dev.js",
+    "dev:watch": "gulp build && webpack --config webpack.dev.js --watch",
+    "prod": "gulp build && webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "angular": "1.6.6",
