@@ -10,3 +10,4 @@ webfonts/
 *.pem
 *.zip
 releases/
+package-lock.json
