@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require("webpack");
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -48,11 +48,11 @@ module.exports = {
             'Q': 'q'
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: "popup/vendor",
+            name: 'popup/vendor',
             chunks: ['popup/app'],
             minChunks: function (module) {
                 // this assumes your vendor imports exist in the node_modules directory
-                return module.context && module.context.indexOf("node_modules") !== -1;
+                return module.context && module.context.indexOf('node_modules') !== -1;
             }
         }),
         new HtmlWebpackPlugin({
@@ -87,7 +87,7 @@ module.exports = {
         ])
     ],
     resolve: {
-        extensions: [ ".tsx", ".ts", ".js" ]
+        extensions: ['.tsx', '.ts', '.js']
     },
     output: {
         filename: '[name].js',
