@@ -81,7 +81,7 @@ gulp.task('dist:edge', function (cb) {
 });
 
 function copyDistEdge(source, dest) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'edge')))
@@ -98,7 +98,7 @@ function copyDistEdge(source, dest) {
 }
 
 function copyAssetsEdge(source, dest) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
             .pipe(gulpif('AppxManifest.xml', xmlpoke({
@@ -133,7 +133,7 @@ gulp.task('webfonts', function () {
 
 // LEGACY CODE!
 //
-// Needed untill background.js is converted into a proper webpack compatible file.
+// Needed until background.js is converted into a proper webpack compatible file.
 
 gulp.task('lint', function () {
     return gulp.src([

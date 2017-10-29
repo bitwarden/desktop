@@ -1,8 +1,7 @@
-﻿class StateService {
-    
+class StateService {
     private state: any = {};
 
-    constructor (private utilsService: any, private constantsService: any) {
+    constructor(private utilsService: any, private constantsService: any) {
     }
 
     async init() {
