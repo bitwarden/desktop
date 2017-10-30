@@ -1,957 +1,960 @@
 {
-  "appName":{
-    "message":"bitwarden"
+  "appName": {
+    "message": "bitwarden"
   },
-  "extName":{
-    "message":"bitwarden – Bezplatný správce hesel",
-    "description":"Extension name"
+  "extName": {
+    "message": "bitwarden – Bezplatný správce hesel",
+    "description": "Extension name"
   },
-  "extDesc":{
-    "message":"bitwarden je bezpečný a bezplatný správce hesel pro všechna vaše zařízení.",
-    "description":"Extension description"
+  "extDesc": {
+    "message": "bitwarden je bezpečný a bezplatný správce hesel pro všechna vaše zařízení.",
+    "description": "Extension description"
   },
-  "loginOrCreateNewAccount":{
-    "message":"Pro přístup do vašeho bezpečného trezoru se přihlašte nebo si vytvořte nový účet."
+  "loginOrCreateNewAccount": {
+    "message": "Pro přístup do vašeho bezpečného trezoru se přihlašte nebo si vytvořte nový účet."
   },
-  "createAccount":{
-    "message":"Vytvořit účet"
+  "createAccount": {
+    "message": "Vytvořit účet"
   },
-  "login":{
-    "message":"Přihlásit se"
+  "login": {
+    "message": "Přihlásit se"
   },
-  "cancel":{
-    "message":"Zrušit"
+  "cancel": {
+    "message": "Zrušit"
   },
-  "close":{
-    "message":"Zavřít"
+  "close": {
+    "message": "Zavřít"
   },
-  "submit":{
-    "message":"Potvrdit"
+  "submit": {
+    "message": "Potvrdit"
   },
-  "emailAddress":{
-    "message":"Emailová adresa"
+  "emailAddress": {
+    "message": "Emailová adresa"
   },
-  "masterPass":{
-    "message":"Hlavní heslo"
+  "masterPass": {
+    "message": "Hlavní heslo"
   },
-  "masterPassDesc":{
-    "message":"Hlavní heslo je heslo, které používáte k přístupu do vašeho trezoru. Je velmi důležité, abyste jej nezapomněli. Neexistuje totiž žádný způsob, jak heslo obnovit v případě, že jste na něj zapomněli."
+  "masterPassDesc": {
+    "message": "Hlavní heslo je heslo, které používáte k přístupu do vašeho trezoru. Je velmi důležité, abyste jej nezapomněli. Neexistuje totiž žádný způsob, jak heslo obnovit v případě, že jste na něj zapomněli."
   },
-  "masterPassHintDesc":{
-    "message":"Nápověda k hlavnímu heslu vám pomůže zapamatovat si heslo, pokud ho zapomenete."
+  "masterPassHintDesc": {
+    "message": "Nápověda k hlavnímu heslu vám pomůže zapamatovat si heslo, pokud ho zapomenete."
   },
-  "reTypeMasterPass":{
-    "message":"Znovu zadejte hlavní heslo"
+  "reTypeMasterPass": {
+    "message": "Znovu zadejte hlavní heslo"
   },
-  "masterPassHint":{
-    "message":"Nápověda k hlavnímu heslu (volitelné)"
+  "masterPassHint": {
+    "message": "Nápověda k hlavnímu heslu (volitelné)"
   },
-  "tab":{
-    "message":"Karta"
+  "tab": {
+    "message": "Karta"
   },
-  "myVault":{
-    "message":"Můj trezor"
+  "myVault": {
+    "message": "Můj trezor"
   },
-  "tools":{
-    "message":"Nástroje"
+  "tools": {
+    "message": "Nástroje"
   },
-  "settings":{
-    "message":"Nastavení"
+  "settings": {
+    "message": "Nastavení"
   },
-  "currentTab":{
-    "message":"Aktuální karta"
+  "currentTab": {
+    "message": "Aktuální karta"
   },
-  "copyPassword":{
-    "message":"Kopírovat heslo"
+  "copyPassword": {
+    "message": "Kopírovat heslo"
   },
-  "copyUri":{
-    "message":"Copy URI"
+  "copyUri": {
+    "message": "Kopírovat URL"
   },
-  "copyUsername":{
-    "message":"Kopírovat uživatelské jméno"
+  "copyUsername": {
+    "message": "Kopírovat uživatelské jméno"
   },
-  "copyNumber":{
-    "message":"Copy Number"
+  "copyNumber": {
+    "message": "Kopírovat číslo"
   },
-  "copySecurityCode":{
-    "message":"Copy Security Code"
+  "copySecurityCode": {
+    "message": "Kopírovat bezpečnostní kód"
   },
-  "autoFill":{
-    "message":"Automatické vyplnění"
+  "autoFill": {
+    "message": "Automatické vyplnění"
   },
-  "generatePasswordCopied":{
-    "message":"Vygenerovat heslo a zkopírovat do schránky"
+  "generatePasswordCopied": {
+    "message": "Vygenerovat heslo a zkopírovat do schránky"
   },
-  "noMatchingLogins":{
-    "message":"Žádné odpovídající přihlašovací údaje."
+  "noMatchingLogins": {
+    "message": "Žádné odpovídající přihlašovací údaje."
   },
-  "vaultLocked":{
-    "message":"Trezor je zamknutý."
+  "vaultLocked": {
+    "message": "Trezor je zamknutý."
   },
-  "autoFillInfo":{
-    "message":"Pro aktuální stránku neexistují žádné přihlašovací údaje."
+  "autoFillInfo": {
+    "message": "Pro aktuální stránku neexistují žádné přihlašovací údaje."
   },
-  "addLogin":{
-    "message":"Přidat přihlašovací údaje"
+  "addLogin": {
+    "message": "Přidat přihlašovací údaje"
   },
-  "addItem":{
-    "message":"Add Item"
+  "addItem": {
+    "message": "Přidat položku"
   },
-  "passwordHint":{
-    "message":"Nápověda k heslu"
+  "passwordHint": {
+    "message": "Nápověda k heslu"
   },
-  "enterEmailToGetHint":{
-    "message":"Zadejte emailovou adresu pro zaslání nápovědy k hlavnímu heslu."
+  "enterEmailToGetHint": {
+    "message": "Zadejte emailovou adresu pro zaslání nápovědy k hlavnímu heslu."
   },
-  "getMasterPasswordHint":{
-    "message":"Získat nápovědu pro hlavní heslo"
+  "getMasterPasswordHint": {
+    "message": "Získat nápovědu pro hlavní heslo"
   },
-  "continue":{
-    "message":"Pokračovat"
+  "continue": {
+    "message": "Pokračovat"
   },
-  "verificationCode":{
-    "message":"Ověřovací kód"
+  "verificationCode": {
+    "message": "Ověřovací kód"
   },
-  "account":{
-    "message":"Účet"
+  "account": {
+    "message": "Účet"
   },
-  "changeMasterPassword":{
-    "message":"Změnit hlavní heslo"
+  "changeMasterPassword": {
+    "message": "Změnit hlavní heslo"
   },
-  "changeEmail":{
-    "message":"Změnit email"
+  "changeEmail": {
+    "message": "Změnit email"
   },
-  "twoStepLogin":{
-    "message":"Dvoufázové přihlášení"
+  "twoStepLogin": {
+    "message": "Dvoufázové přihlášení"
   },
-  "logOut":{
-    "message":"Odhlásit se"
+  "logOut": {
+    "message": "Odhlásit se"
   },
-  "about":{
-    "message":"O rozšíření"
+  "about": {
+    "message": "O rozšíření"
   },
-  "version":{
-    "message":"Verze"
+  "version": {
+    "message": "Verze"
   },
-  "save":{
-    "message":"Uložit"
+  "save": {
+    "message": "Uložit"
   },
-  "addFolder":{
-    "message":"Přidat složku"
+  "addFolder": {
+    "message": "Přidat složku"
   },
-  "name":{
-    "message":"Název"
+  "name": {
+    "message": "Název"
   },
-  "editFolder":{
-    "message":"Upravit složku"
+  "editFolder": {
+    "message": "Upravit složku"
   },
-  "deleteFolder":{
-    "message":"Odstranit složku"
+  "deleteFolder": {
+    "message": "Odstranit složku"
   },
-  "folders":{
-    "message":"Složky"
+  "folders": {
+    "message": "Složky"
   },
-  "noFolders":{
-    "message":"Nejsou k dispozici žádné složky."
+  "noFolders": {
+    "message": "Nejsou k dispozici žádné složky."
   },
-  "helpFeedback":{
-    "message":"Nápověda a zpětná vazba"
+  "helpFeedback": {
+    "message": "Nápověda a zpětná vazba"
   },
-  "emailUs":{
-    "message":"Napište nám"
+  "emailUs": {
+    "message": "Napište nám"
   },
-  "emailUsDirectly":{
-    "message":"Napište nám email pro získání pomoci nebo zanechání zpětné vazby."
+  "emailUsDirectly": {
+    "message": "Napište nám email pro získání pomoci nebo zanechání zpětné vazby."
   },
-  "visitOurWebsite":{
-    "message":"Navštivit naší webovou stránku"
+  "visitOurWebsite": {
+    "message": "Navštivit naší webovou stránku"
   },
-  "visitOurWebsiteDirectly":{
-    "message":"Navštivte webovou stránku aplikace pro zobrazení nejnovějších zpráv, nápovědy nebo návodu jak používat bitwarden."
+  "visitOurWebsiteDirectly": {
+    "message": "Navštivte webovou stránku aplikace pro zobrazení nejnovějších zpráv, nápovědy nebo návodu jak používat bitwarden."
   },
-  "fileBugReport":{
-    "message":"Nahlásit chybu"
+  "fileBugReport": {
+    "message": "Nahlásit chybu"
   },
-  "gitHubIssue":{
-    "message":"Nahlaste chybu přímo v našem GitHub repositáři."
+  "gitHubIssue": {
+    "message": "Nahlaste chybu přímo v našem GitHub repositáři."
   },
-  "sync":{
-    "message":"Synchronizace"
+  "sync": {
+    "message": "Synchronizace"
   },
-  "syncVaultNow":{
-    "message":"Synchronizovat nyní"
+  "syncVaultNow": {
+    "message": "Synchronizovat nyní"
   },
-  "lastSync":{
-    "message":"Poslední synchronizace:"
+  "lastSync": {
+    "message": "Poslední synchronizace:"
   },
-  "passGen":{
-    "message":"Generátor hesla"
+  "passGen": {
+    "message": "Generátor hesla"
   },
-  "passGenInfo":{
-    "message":"Vygenerujte si silné a unikátní heslo pro přihlašovací údaje."
+  "passGenInfo": {
+    "message": "Vygenerujte si silné a unikátní heslo pro přihlašovací údaje."
   },
-  "bitWebVault":{
-    "message":"Webová aplikace"
+  "bitWebVault": {
+    "message": "Webová aplikace"
   },
-  "bitWebVaultInfo":{
-    "message":"Spravujte přihlašovací údaje z jakéhokoliv prohlížeče pomocí webové aplikace bitwarden."
+  "bitWebVaultInfo": {
+    "message": "Spravujte přihlašovací údaje z jakéhokoliv prohlížeče pomocí webové aplikace bitwarden."
   },
-  "bitIosVault":{
-    "message":"Aplikace pro iOS"
+  "bitIosVault": {
+    "message": "Aplikace pro iOS"
   },
-  "bitIosVaultInfo":{
-    "message":"Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí iOS aplikace bitwarden."
+  "bitIosVaultInfo": {
+    "message": "Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí iOS aplikace bitwarden."
   },
-  "bitAndrVault":{
-    "message":"Aplikace pro Android"
+  "bitAndrVault": {
+    "message": "Aplikace pro Android"
   },
-  "bitAndrVaultInfo":{
-    "message":"Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí Android aplikace bitwarden."
+  "bitAndrVaultInfo": {
+    "message": "Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí Android aplikace bitwarden."
   },
-  "importItems":{
-    "message":"Import Items"
+  "importItems": {
+    "message": "Importovat položky"
   },
-  "importItemsInfo":{
-    "message":"Quickly bulk import your items from other password management applications."
+  "importItemsInfo": {
+    "message": "Importujte rychle a hromadně údaje z jiných aplikací pro správu hesel."
   },
-  "select":{
-    "message":"Vybrat"
+  "select": {
+    "message": "Vybrat"
   },
-  "generatePassword":{
-    "message":"Vygenerovat heslo"
+  "generatePassword": {
+    "message": "Vygenerovat heslo"
   },
-  "regeneratePassword":{
-    "message":"Vygenerovat další heslo"
+  "regeneratePassword": {
+    "message": "Vygenerovat další heslo"
   },
-  "options":{
-    "message":"Možnosti"
+  "options": {
+    "message": "Možnosti"
   },
-  "length":{
-    "message":"Délka"
+  "length": {
+    "message": "Délka"
   },
-  "minNumbers":{
-    "message":"Minimální počet čísel"
+  "minNumbers": {
+    "message": "Minimální počet čísel"
   },
-  "minSpecial":{
-    "message":"Minimální počet speciálních znaků"
+  "minSpecial": {
+    "message": "Minimální počet speciálních znaků"
   },
-  "avoidAmbChar":{
-    "message":"Nepoužít zaměnitelné znaky"
+  "avoidAmbChar": {
+    "message": "Nepoužít zaměnitelné znaky"
   },
-  "searchVault":{
-    "message":"Vyhledat v trezoru"
+  "searchVault": {
+    "message": "Vyhledat v trezoru"
   },
-  "edit":{
-    "message":"Upravit"
+  "edit": {
+    "message": "Upravit"
   },
-  "view":{
-    "message":"View"
+  "view": {
+    "message": "Zobrazit"
   },
-  "noItemsInList":{
-    "message":"There are no items to list."
+  "noItemsInList": {
+    "message": "Žádné položky k zobrazení."
   },
-  "itemInformation":{
-    "message":"Item Information"
+  "itemInformation": {
+    "message": "Informace o položce"
   },
-  "username":{
-    "message":"Uživatelské jméno"
+  "username": {
+    "message": "Uživatelské jméno"
   },
-  "password":{
-    "message":"Heslo"
+  "password": {
+    "message": "Heslo"
   },
-  "favorite":{
-    "message":"Oblíbené"
+  "favorite": {
+    "message": "Oblíbené"
   },
-  "notes":{
-    "message":"Poznámky"
+  "notes": {
+    "message": "Poznámky"
   },
-  "editItem":{
-    "message":"Edit Item"
+  "editItem": {
+    "message": "Upravit položku"
   },
-  "folder":{
-    "message":"Složka"
+  "folder": {
+    "message": "Složka"
   },
-  "deleteItem":{
-    "message":"Delete Item"
+  "deleteItem": {
+    "message": "Smazat položku"
   },
-  "viewItem":{
-    "message":"View Item"
+  "viewItem": {
+    "message": "Zobrazit položku"
   },
-  "launchWebsite":{
-    "message":"Otevřít webovou stránku"
+  "launchWebsite": {
+    "message": "Otevřít webovou stránku"
   },
-  "website":{
-    "message":"Webová stránka"
+  "website": {
+    "message": "Webová stránka"
   },
-  "togglePassword":{
-    "message":"Zobrazit\/Skrýt heslo"
+  "togglePassword": {
+    "message": "Zobrazit\/Skrýt heslo"
   },
-  "manage":{
-    "message":"Správa"
+  "manage": {
+    "message": "Správa"
   },
-  "other":{
-    "message":"Ostatní"
+  "other": {
+    "message": "Ostatní"
   },
-  "disableGa":{
-    "message":"Vypnout analytiku"
+  "disableGa": {
+    "message": "Vypnout analytiku"
   },
-  "rateExtension":{
-    "message":"Ohodnotit rozšíření"
+  "rateExtension": {
+    "message": "Ohodnotit rozšíření"
   },
-  "rateExtensionDesc":{
-    "message":"Pomozte nám získat napsáním dobré recenze!"
+  "rateExtensionDesc": {
+    "message": "Pomozte nám získat napsáním dobré recenze!"
   },
-  "browserNotSupportClipboard":{
-    "message":"Váš webový prohlížeč nepodporuje automatické kopírování do schránky. Musíte ho zkopírovat ručně."
+  "browserNotSupportClipboard": {
+    "message": "Váš webový prohlížeč nepodporuje automatické kopírování do schránky. Musíte ho zkopírovat ručně."
   },
-  "verifyMasterPassword":{
-    "message":"Ověření hlavního hesla"
+  "verifyMasterPassword": {
+    "message": "Ověření hlavního hesla"
   },
-  "invalidMasterPassword":{
-    "message":"Chybné hlavní heslo"
+  "invalidMasterPassword": {
+    "message": "Chybné hlavní heslo"
   },
-  "lockOptions":{
-    "message":"Možnosti zamknutí"
+  "lockOptions": {
+    "message": "Možnosti zamknutí"
   },
-  "lockNow":{
-    "message":"Zamknout nyní"
+  "lockNow": {
+    "message": "Zamknout nyní"
   },
-  "immediately":{
-    "message":"Okamžitě"
+  "immediately": {
+    "message": "Okamžitě"
   },
-  "oneMinute":{
-    "message":"Po 1 minutě"
+  "oneMinute": {
+    "message": "Po 1 minutě"
   },
-  "fiveMinutes":{
-    "message":"Po 5 minutách"
+  "fiveMinutes": {
+    "message": "Po 5 minutách"
   },
-  "fifteenMinutes":{
-    "message":"Po 15 minutách"
+  "fifteenMinutes": {
+    "message": "Po 15 minutách"
   },
-  "thirtyMinutes":{
-    "message":"Po 30 minutách"
+  "thirtyMinutes": {
+    "message": "Po 30 minutách"
   },
-  "oneHour":{
-    "message":"Po 1 hodině"
+  "oneHour": {
+    "message": "Po 1 hodině"
   },
-  "fourHours":{
-    "message":"Po 4 hodinách"
+  "fourHours": {
+    "message": "Po 4 hodinách"
   },
-  "onLocked":{
-    "message":"Při uzamčení"
+  "onLocked": {
+    "message": "Při uzamčení"
   },
-  "onRestart":{
-    "message":"Při restartu"
+  "onRestart": {
+    "message": "Při restartu"
   },
-  "never":{
-    "message":"Nikdy"
+  "never": {
+    "message": "Nikdy"
   },
-  "security":{
-    "message":"Bezpečnost"
+  "security": {
+    "message": "Bezpečnost"
   },
-  "errorsOccurred":{
-    "message":"Došlo k chybám"
+  "errorsOccurred": {
+    "message": "Došlo k chybám"
   },
-  "emailRequired":{
-    "message":"Emailová adresa je povinná."
+  "emailRequired": {
+    "message": "Emailová adresa je povinná."
   },
-  "invalidEmail":{
-    "message":"Chybná emailová adresa."
+  "invalidEmail": {
+    "message": "Chybná emailová adresa."
   },
-  "masterPassRequired":{
-    "message":"Hlavní heslo je povinné."
+  "masterPassRequired": {
+    "message": "Hlavní heslo je povinné."
   },
-  "masterPassLength":{
-    "message":"Hlavní heslo musí obsahovat alespoň 8 znaků."
+  "masterPassLength": {
+    "message": "Hlavní heslo musí obsahovat alespoň 8 znaků."
   },
-  "masterPassDoesntMatch":{
-    "message":"Potvrzení hlavního hesla se neshoduje."
+  "masterPassDoesntMatch": {
+    "message": "Potvrzení hlavního hesla se neshoduje."
   },
-  "newAccountCreated":{
-    "message":"Váš účet byl vytvořen! Můžete se přihlásit."
+  "newAccountCreated": {
+    "message": "Váš účet byl vytvořen! Můžete se přihlásit."
   },
-  "masterPassSent":{
-    "message":"Poslali jsme vám email s nápovědou k hlavnímu heslu."
+  "masterPassSent": {
+    "message": "Poslali jsme vám email s nápovědou k hlavnímu heslu."
   },
-  "verificationCodeRequired":{
-    "message":"Ověřovací kód je povinný."
+  "verificationCodeRequired": {
+    "message": "Ověřovací kód je povinný."
   },
-  "valueCopied":{
-    "message":" zkopírováno",
-    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  "valueCopied": {
+    "message": " zkopírováno",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
-  "autofillError":{
-    "message":"Vybrané přihlašovací údaje nelze na této stránce automaticky vyplnit. Zkopírujte a vložte své přihlašovací údaje ručně."
+  "autofillError": {
+    "message": "Vybrané přihlašovací údaje nelze na této stránce automaticky vyplnit. Zkopírujte a vložte své přihlašovací údaje ručně."
   },
-  "loggedOut":{
-    "message":"Odhlášení"
+  "loggedOut": {
+    "message": "Odhlášení"
   },
-  "loginExpired":{
-    "message":"Platnost přihlášení vypršela."
+  "loginExpired": {
+    "message": "Platnost přihlášení vypršela."
   },
-  "logOutConfirmation":{
-    "message":"Opravdu se chcete odhlásit?"
+  "logOutConfirmation": {
+    "message": "Opravdu se chcete odhlásit?"
   },
-  "yes":{
-    "message":"Ano"
+  "yes": {
+    "message": "Ano"
   },
-  "no":{
-    "message":"Ne"
+  "no": {
+    "message": "Ne"
   },
-  "unexpectedError":{
-    "message":"Došlo k neznámé chybě."
+  "unexpectedError": {
+    "message": "Došlo k neznámé chybě."
   },
-  "nameRequired":{
-    "message":"Název je povinný."
+  "nameRequired": {
+    "message": "Název je povinný."
   },
-  "addedFolder":{
-    "message":"Složka byla úspěšně přidána"
+  "addedFolder": {
+    "message": "Složka byla úspěšně přidána"
   },
-  "changeMasterPass":{
-    "message":"Změnit hlavní heslo"
+  "changeMasterPass": {
+    "message": "Změnit hlavní heslo"
   },
-  "changeMasterPasswordConfirmation":{
-    "message":"Hlavní heslo si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  "changeMasterPasswordConfirmation": {
+    "message": "Hlavní heslo si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "changeEmailConfirmation":{
-    "message":"Emailovou adresu si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  "changeEmailConfirmation": {
+    "message": "Emailovou adresu si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "twoStepLoginConfirmation":{
-    "message":"Dvoufázové přihlášení činí váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, emailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  "twoStepLoginConfirmation": {
+    "message": "Dvoufázové přihlášení činí váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, emailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "loggingOut":{
-    "message":"Odhlašování"
+  "loggingOut": {
+    "message": "Odhlašování"
   },
-  "loggingOutConfirmation":{
-    "message":"Nedávno proběhla aktualizace na nejnovější verzi. Pro změnu nastavení zámku se musíte znovu odhlásit a přihlásit. Chcete se nyní odhlásit?"
+  "loggingOutConfirmation": {
+    "message": "Nedávno proběhla aktualizace na nejnovější verzi. Pro změnu nastavení zámku se musíte znovu odhlásit a přihlásit. Chcete se nyní odhlásit?"
   },
-  "editedFolder":{
-    "message":"Upravená složka"
+  "editedFolder": {
+    "message": "Upravená složka"
   },
-  "deleteFolderConfirmation":{
-    "message":"Opravdu chcete tuto složku smazat?"
+  "deleteFolderConfirmation": {
+    "message": "Opravdu chcete tuto složku smazat?"
   },
-  "deletedFolder":{
-    "message":"Smazaná složka"
+  "deletedFolder": {
+    "message": "Smazaná složka"
   },
-  "gettingStartedTutorial":{
-    "message":"Průvodce pro začátečníky"
+  "gettingStartedTutorial": {
+    "message": "Průvodce pro začátečníky"
   },
-  "gettingStartedTutorialVideo":{
-    "message":"Podívejte se na našeho průvodce pro začátečníky a zjistěte, jak používat naše rozšíření prohlížeče."
+  "gettingStartedTutorialVideo": {
+    "message": "Podívejte se na našeho průvodce pro začátečníky a zjistěte, jak používat naše rozšíření prohlížeče."
   },
-  "syncingComplete":{
-    "message":"Synchronizace je dokončena"
+  "syncingComplete": {
+    "message": "Synchronizace je dokončena"
   },
-  "syncingFailed":{
-    "message":"Synchronizace selhala"
+  "syncingFailed": {
+    "message": "Synchronizace selhala"
   },
-  "importItemsConfirmation":{
-    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+  "importItemsConfirmation": {
+    "message": "Můžete hromadně importovat položky do vašeho trezoru na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "passwordCopied":{
-    "message":"Heslo bylo úspěšně zkopírováno"
+  "passwordCopied": {
+    "message": "Heslo bylo úspěšně zkopírováno"
   },
-  "uri":{
-    "message":"URL"
+  "uri": {
+    "message": "URL"
   },
-  "addedItem":{
-    "message":"Added item"
+  "addedItem": {
+    "message": "Přidaná položka"
   },
-  "editedItem":{
-    "message":"Edited item"
+  "editedItem": {
+    "message": "Upravená položka"
   },
-  "deleteItemConfirmation":{
-    "message":"Are you sure you want to delete this item?"
+  "deleteItemConfirmation": {
+    "message": "Opravdu chcete tuto položku smazat?"
   },
-  "deletedItem":{
-    "message":"Deleted item"
+  "deletedItem": {
+    "message": "Smazaná položka"
   },
-  "overwritePassword":{
-    "message":"Přepsat heslo"
+  "overwritePassword": {
+    "message": "Přepsat heslo"
   },
-  "overwritePasswordConfirmation":{
-    "message":"Opravdu chcete přepsat aktuální heslo?"
+  "overwritePasswordConfirmation": {
+    "message": "Opravdu chcete přepsat aktuální heslo?"
   },
-  "credits":{
-    "message":"Autoři"
+  "credits": {
+    "message": "Autoři"
   },
-  "thankYou":{
-    "message":"Poděkování"
+  "thankYou": {
+    "message": "Poděkování"
   },
-  "translations":{
-    "message":"Preklady"
+  "translations": {
+    "message": "Preklady"
   },
-  "searchFolder":{
-    "message":"Vyhledat ve složce"
+  "searchFolder": {
+    "message": "Vyhledat ve složce"
   },
-  "noneFolder":{
-    "message":"Žádné složky",
-    "description":"This is the folder for uncategorized items"
+  "noneFolder": {
+    "message": "Žádné složky",
+    "description": "This is the folder for uncategorized items"
   },
-  "features":{
-    "message":"Funkce"
+  "features": {
+    "message": "Funkce"
   },
-  "gaDesc":{
-    "message":"Používáme analytiku ke sbírání údajů jak je rozšíření používáno, abychom jej mohli nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
+  "gaDesc": {
+    "message": "Používáme analytiku ke sbírání údajů jak je rozšíření používáno, abychom jej mohli nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
   },
-  "disableAddLoginNotification":{
-    "message":"Vypnout notifikaci Přidat přihlašovací údaje"
+  "disableAddLoginNotification": {
+    "message": "Vypnout notifikaci Přidat přihlašovací údaje"
   },
-  "addLoginNotificationDesc":{
-    "message":"Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
+  "addLoginNotificationDesc": {
+    "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
   },
-  "notificationAddDesc":{
-    "message":"Má si pro vás bitwarden toto heslo pamatovat?"
+  "notificationAddDesc": {
+    "message": "Má si pro vás bitwarden toto heslo pamatovat?"
   },
-  "notificationAddSave":{
-    "message":"Ano, uložit nyní"
+  "notificationAddSave": {
+    "message": "Ano, uložit nyní"
   },
-  "notificationNeverSave":{
-    "message":"Nikdy pro tuto stránku"
+  "notificationNeverSave": {
+    "message": "Nikdy pro tuto stránku"
   },
-  "disableContextMenuItem":{
-    "message":"Vypnout kontextové menu"
+  "disableContextMenuItem": {
+    "message": "Vypnout kontextové menu"
   },
-  "disableContextMenuItemDesc":{
-    "message":"Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
+  "disableContextMenuItemDesc": {
+    "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
   },
-  "exportVault":{
-    "message":"Exportovat přihlašovací údaje"
+  "exportVault": {
+    "message": "Exportovat přihlašovací údaje"
   },
-  "warning":{
-    "message":"VAROVÁNÍ",
-    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  "warning": {
+    "message": "VAROVÁNÍ",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning":{
-    "message":"Tento export obsahuje nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Odstraňte jej okamžitě po jeho použití."
+  "exportWarning": {
+    "message": "Tento export obsahuje nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Odstraňte jej okamžitě po jeho použití."
   },
-  "exportMasterPassword":{
-    "message":"Zadejte své hlavní heslo pro export dat."
+  "exportMasterPassword": {
+    "message": "Zadejte své hlavní heslo pro export dat."
   },
-  "exportVaultInfo":{
-    "message":"Exportujte svá data z trezoru ve formátů .csv pro jejich snadnou úpravu nebo přesunutí do jiné aplikace."
+  "exportVaultInfo": {
+    "message": "Exportujte svá data z trezoru ve formátů .csv pro jejich snadnou úpravu nebo přesunutí do jiné aplikace."
   },
-  "shared":{
-    "message":"Sdílené"
+  "shared": {
+    "message": "Sdílené"
   },
-  "shareVault":{
-    "message":"Sdílet trezor"
+  "shareVault": {
+    "message": "Sdílet trezor"
   },
-  "shareVaultInfo":{
-    "message":"Vytvořte organizaci pro bezpečné sdílení přihlašovacích údajů s dalšími uživateli."
+  "shareVaultInfo": {
+    "message": "Vytvořte organizaci pro bezpečné sdílení přihlašovacích údajů s dalšími uživateli."
   },
-  "contribute":{
-    "message":"Také můžete přispět!"
+  "contribute": {
+    "message": "Také můžete přispět!"
   },
-  "learnMore":{
-    "message":"Dozvědět se více"
+  "learnMore": {
+    "message": "Dozvědět se více"
   },
-  "authenticatorKeyTotp":{
-    "message":"Autentizační klíč (TOTP)"
+  "authenticatorKeyTotp": {
+    "message": "Autentizační klíč (TOTP)"
   },
-  "verificationCodeTotp":{
-    "message":"Ověřovací kód (TOTP)"
+  "verificationCodeTotp": {
+    "message": "Ověřovací kód (TOTP)"
   },
-  "copyVerificationCode":{
-    "message":"Zkopírovat ověřovací kód"
+  "copyVerificationCode": {
+    "message": "Zkopírovat ověřovací kód"
   },
-  "attachments":{
-    "message":"Přílohy"
+  "attachments": {
+    "message": "Přílohy"
   },
-  "deleteAttachment":{
-    "message":"Smazat přílohu"
+  "deleteAttachment": {
+    "message": "Smazat přílohu"
   },
-  "deleteAttachmentConfirmation":{
-    "message":"Opravdu chcete tuto přílohu smazat?"
+  "deleteAttachmentConfirmation": {
+    "message": "Opravdu chcete tuto přílohu smazat?"
   },
-  "deletedAttachment":{
-    "message":"Příloha byla úspěšně smazána"
+  "deletedAttachment": {
+    "message": "Příloha byla úspěšně smazána"
   },
-  "newAttachment":{
-    "message":"Přidat přílohu"
+  "newAttachment": {
+    "message": "Přidat přílohu"
   },
-  "noAttachments":{
-    "message":"Žádné přílohy."
+  "noAttachments": {
+    "message": "Žádné přílohy."
   },
-  "attachmentSaved":{
-    "message":"Příloha byla úspěšně uložena."
+  "attachmentSaved": {
+    "message": "Příloha byla úspěšně uložena."
   },
-  "file":{
-    "message":"Soubor"
+  "file": {
+    "message": "Soubor"
   },
-  "selectFile":{
-    "message":"Vybrat soubor."
+  "selectFile": {
+    "message": "Vybrat soubor."
   },
-  "maxFileSize":{
-    "message":"Maximální velikost souboru je 100 MB."
+  "maxFileSize": {
+    "message": "Maximální velikost souboru je 100 MB."
   },
-  "featureUnavailable":{
-    "message":"Funkce není dostupná"
+  "featureUnavailable": {
+    "message": "Funkce není dostupná"
   },
-  "updateKey":{
-    "message":"Tuto funkci nemůžete použít dokud neaktualizujete svůj šifrovací klíč."
+  "updateKey": {
+    "message": "Tuto funkci nemůžete použít dokud neaktualizujete svůj šifrovací klíč."
   },
-  "premiumMembership":{
-    "message":"Prémiové členství"
+  "premiumMembership": {
+    "message": "Prémiové členství"
   },
-  "premiumManage":{
-    "message":"Spravovat členství"
+  "premiumManage": {
+    "message": "Spravovat členství"
   },
-  "premiumManageAlert":{
-    "message":"Své členství můžete spravovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  "premiumManageAlert": {
+    "message": "Své členství můžete spravovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "premiumRefresh":{
-    "message":"Obnovit členství"
+  "premiumRefresh": {
+    "message": "Obnovit členství"
   },
-  "premiumNotCurrentMember":{
-    "message":"Momentálně nejste prémiovým členem."
+  "premiumNotCurrentMember": {
+    "message": "Momentálně nejste prémiovým členem."
   },
-  "premiumSignUpAndGet":{
-    "message":"Přihlaste se k prémiovému členství a získejte:"
+  "premiumSignUpAndGet": {
+    "message": "Přihlaste se k prémiovému členství a získejte:"
   },
-  "ppremiumSignUpStorage":{
-    "message":"1 GB šifrovaného uložiště."
+  "ppremiumSignUpStorage": {
+    "message": "1 GB šifrovaného uložiště."
   },
-  "ppremiumSignUpTwoStep":{
-    "message":"Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
+  "ppremiumSignUpTwoStep": {
+    "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
   },
-  "ppremiumSignUpTotp":{
-    "message":"Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
+  "ppremiumSignUpTotp": {
+    "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
   },
-  "ppremiumSignUpSupport":{
-    "message":"Prioritní zákaznickou podporu."
+  "ppremiumSignUpSupport": {
+    "message": "Prioritní zákaznickou podporu."
   },
-  "ppremiumSignUpFuture":{
-    "message":"Všechny budoucí prémiové funkce. Více již brzy!"
+  "ppremiumSignUpFuture": {
+    "message": "Všechny budoucí prémiové funkce. Více již brzy!"
   },
-  "premiumPurchase":{
-    "message":"Zakoupit prémiové členství"
+  "premiumPurchase": {
+    "message": "Zakoupit prémiové členství"
   },
-  "premiumPurchaseAlert":{
-    "message":"Prémiové členství můžete zakoupit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  "premiumPurchaseAlert": {
+    "message": "Prémiové členství můžete zakoupit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "premiumCurrentMember":{
-    "message":"Jste prémiovým členem!"
+  "premiumCurrentMember": {
+    "message": "Jste prémiovým členem!"
   },
-  "premiumCurrentMemberThanks":{
-    "message":"Děkujeme za podporu bitwarden."
+  "premiumCurrentMemberThanks": {
+    "message": "Děkujeme za podporu bitwarden."
   },
-  "premiumPrice":{
-    "message":"Vše jen za %price% ročně!"
+  "premiumPrice": {
+    "message": "Vše jen za %price% ročně!"
   },
-  "refreshComplete":{
-    "message":"Obnova je dokončena"
+  "refreshComplete": {
+    "message": "Obnova je dokončena"
   },
-  "disableAutoTotpCopy":{
-    "message":"Vypnout automatické kopírování kódu TOTP"
+  "disableAutoTotpCopy": {
+    "message": "Vypnout automatické kopírování kódu TOTP"
   },
-  "disableAutoTotpCopyDesc":{
-    "message":"Pokud mají vaše přihlašovací údaje přidán autentizační klíč pro TOTP, vygenerovaný ověřovací kód (TOTP) se automaticky zkopíruje do schránky při každém automatickém vyplnění přihlašovacích údajů."
+  "disableAutoTotpCopyDesc": {
+    "message": "Pokud mají vaše přihlašovací údaje přidán autentizační klíč pro TOTP, vygenerovaný ověřovací kód (TOTP) se automaticky zkopíruje do schránky při každém automatickém vyplnění přihlašovacích údajů."
   },
-  "premiumRequired":{
-    "message":"Vyžaduje prémiové členství"
+  "premiumRequired": {
+    "message": "Vyžaduje prémiové členství"
   },
-  "premiumRequiredDesc":{
-    "message":"Pro použití této funkce je potřebné prémiové členství."
+  "premiumRequiredDesc": {
+    "message": "Pro použití této funkce je potřebné prémiové členství."
   },
-  "enterVerificationCodeApp":{
-    "message":"Zadejte 6-místný kód z ověřovací aplikace."
+  "enterVerificationCodeApp": {
+    "message": "Zadejte 6-místný kód z ověřovací aplikace."
   },
-  "enterVerificationCodeEmail":{
-    "message":"Zadejte 6-místný kód z emailu."
+  "enterVerificationCodeEmail": {
+    "message": "Zadejte 6-místný kód z emailu."
   },
-  "rememberMe":{
-    "message":"Pamatuj si mě"
+  "rememberMe": {
+    "message": "Pamatuj si mě"
   },
-  "sendVerificationCodeEmailAgain":{
-    "message":"Zaslat znovu ověřovací kód na email"
+  "sendVerificationCodeEmailAgain": {
+    "message": "Zaslat znovu ověřovací kód na email"
   },
-  "useAnotherTwoStepMethod":{
-    "message":"Použít jinou metodu dvoufázového přihlášení"
+  "useAnotherTwoStepMethod": {
+    "message": "Použít jinou metodu dvoufázového přihlášení"
   },
-  "insertYubiKey":{
-    "message":"Vložte YubiKey do USB portu vašeho počítače a stiskněte jeho tlačítko."
+  "insertYubiKey": {
+    "message": "Vložte YubiKey do USB portu vašeho počítače a stiskněte jeho tlačítko."
   },
-  "insertU2f":{
-    "message":"Vložte svůj bezpečnostní klíč do USB portu vašeho počítače a pokud má tlačítko, tak jej stiskněte."
+  "insertU2f": {
+    "message": "Vložte svůj bezpečnostní klíč do USB portu vašeho počítače a pokud má tlačítko, tak jej stiskněte."
   },
-  "loginUnavailable":{
-    "message":"Přihlášení není dostupné"
+  "loginUnavailable": {
+    "message": "Přihlášení není dostupné"
   },
-  "noTwoStepProviders":{
-    "message":"Tento účet má zapnuté dvoufázové ověřování, ale žádný z nastavených poskytovalů dvoufázového přihlášení není v tomto prohlížeči podporován."
+  "noTwoStepProviders": {
+    "message": "Tento účet má zapnuté dvoufázové ověřování, ale žádný z nastavených poskytovalů dvoufázového přihlášení není v tomto prohlížeči podporován."
   },
-  "noTwoStepProviders2":{
-    "message":"Použijte prosím podporovaný webový prohlížeč (například Chrome) a přidejte další poskytovatele, kteří lépe podporují více různých webových prohlížečích (jako například ověřovací aplikace)."
+  "noTwoStepProviders2": {
+    "message": "Použijte prosím podporovaný webový prohlížeč (například Chrome) a přidejte další poskytovatele, kteří lépe podporují více různých webových prohlížečích (jako například ověřovací aplikace)."
   },
-  "twoStepOptions":{
-    "message":"Možnosti dvoufázového přihlášení"
+  "twoStepOptions": {
+    "message": "Možnosti dvoufázového přihlášení"
   },
-  "recoveryCodeDesc":{
-    "message":"Ztratili jste přístup ke všem nastaveným poskytovatelům dvoufázového přihlášení? Použijte obnovovací kód pro vypnutí dvoufázového přihlášení."
+  "recoveryCodeDesc": {
+    "message": "Ztratili jste přístup ke všem nastaveným poskytovatelům dvoufázového přihlášení? Použijte obnovovací kód pro vypnutí dvoufázového přihlášení."
   },
-  "recoveryCodeTitle":{
-    "message":"Kód pro obnovení"
+  "recoveryCodeTitle": {
+    "message": "Kód pro obnovení"
   },
-  "authenticatorAppTitle":{
-    "message":"Ověřovací aplikace"
+  "authenticatorAppTitle": {
+    "message": "Ověřovací aplikace"
   },
-  "authenticatorAppDesc":{
-    "message":"Použijte ověřovací aplikaci (jako je Authy nebo Google Authenticator) pro generování časově omezených kódů.",
-    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDesc": {
+    "message": "Použijte ověřovací aplikaci (jako je Authy nebo Google Authenticator) pro generování časově omezených kódů.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
-  "yubiKeyTitle":{
-    "message":"YubiKey OTP bezpečnostní klíč"
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP bezpečnostní klíč"
   },
-  "yubiKeyDesc":{
-    "message":"Použít YubiKey pro přístup k vašemu trezoru. Podporuje YubiKey 4, 4 Nano, 4C a NEO zařízení."
+  "yubiKeyDesc": {
+    "message": "Použít YubiKey pro přístup k vašemu trezoru. Podporuje YubiKey 4, 4 Nano, 4C a NEO zařízení."
   },
-  "duoDesc":{
-    "message":"Ověřit pomocí Duo Security prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo U2F bezpečnostního kódu.",
-    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  "duoDesc": {
+    "message": "Ověřit pomocí Duo Security prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo U2F bezpečnostního kódu.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc":{
-    "message":"Použít jakýkoliv FIDO U2F bezpečnostní klíč pro přístup k vašemu trezoru."
+  "u2fDesc": {
+    "message": "Použít jakýkoliv FIDO U2F bezpečnostní klíč pro přístup k vašemu trezoru."
   },
-  "u2fTitle":{
-    "message":"FIDO U2F bezpečnostní klíč"
+  "u2fTitle": {
+    "message": "FIDO U2F bezpečnostní klíč"
   },
-  "emailTitle":{
-    "message":"Email"
+  "emailTitle": {
+    "message": "Email"
   },
-  "emailDesc":{
-    "message":"Ověřovací kódy vám budou zaslány emailem."
+  "emailDesc": {
+    "message": "Ověřovací kódy vám budou zaslány emailem."
   },
-  "selfHostedEnvironment":{
-    "message":"Vlastnoručně hostované prostředí"
+  "selfHostedEnvironment": {
+    "message": "Vlastnoručně hostované prostředí"
   },
-  "selfHostedEnvironmentFooter":{
-    "message":"Zadejte základní URL adresu vlastnoručně hostované aplikace bitwarden."
+  "selfHostedEnvironmentFooter": {
+    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace bitwarden."
   },
-  "customEnvironment":{
-    "message":"Vlastní prostředí"
+  "customEnvironment": {
+    "message": "Vlastní prostředí"
   },
-  "customEnvironmentFooter":{
-    "message":"Pro pokročilé uživatele. Můžete zadat základní URL adresu každé služby zvlášť."
+  "customEnvironmentFooter": {
+    "message": "Pro pokročilé uživatele. Můžete zadat základní URL adresu každé služby zvlášť."
   },
-  "baseUrl":{
-    "message":"URL serveru"
+  "baseUrl": {
+    "message": "URL serveru"
   },
-  "apiUrl":{
-    "message":"URL serveru API"
+  "apiUrl": {
+    "message": "URL serveru API"
   },
-  "webVaultUrl":{
-    "message":"URL serveru webového trezoru"
+  "webVaultUrl": {
+    "message": "URL serveru webového trezoru"
   },
-  "identityUrl":{
-    "message":"URL serveru identity"
+  "identityUrl": {
+    "message": "URL serveru identity"
   },
-  "environmentSaved":{
-    "message":"URL adresy vlastního prostředí byly uloženy."
+  "iconsUrl": {
+    "message": "Icons Server URL"
   },
-  "enableAutoFillOnPageLoad":{
-    "message":"Povolit automatické vyplnění při načtení stránky"
+  "environmentSaved": {
+    "message": "URL adresy vlastního prostředí byly uloženy."
   },
-  "enableAutoFillOnPageLoadDesc":{
-    "message":"Pokud je zjištěn přihlašovací formulář, automaticky se při načítání webové stránky vyplní přihlašovací údaje."
+  "enableAutoFillOnPageLoad": {
+    "message": "Povolit automatické vyplnění při načtení stránky"
   },
-  "experimentalFeature":{
-    "message":"Toto je momentálně experimentální funkce. Použijte na vlastní riziko."
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "Pokud je zjištěn přihlašovací formulář, automaticky se při načítání webové stránky vyplní přihlašovací údaje."
   },
-  "commandAutofillDesc":{
-    "message":"Automaticky vyplnit poslední použité přihlašovací údaje pro tuto stránku."
+  "experimentalFeature": {
+    "message": "Toto je momentálně experimentální funkce. Použijte na vlastní riziko."
   },
-  "commandGeneratePasswordDesc":{
-    "message":"Vygenerovat a zkopírovat nové náhodné heslo do schránky."
+  "commandAutofillDesc": {
+    "message": "Automaticky vyplnit poslední použité přihlašovací údaje pro tuto stránku."
   },
-  "privateModeMessage":{
-    "message":"Bohužel toto okno není v tomto prohlížeči k dispozici v soukromém režimu."
+  "commandGeneratePasswordDesc": {
+    "message": "Vygenerovat a zkopírovat nové náhodné heslo do schránky."
   },
-  "customFields":{
-    "message":"Vlastní pole"
+  "privateModeMessage": {
+    "message": "Bohužel toto okno není v tomto prohlížeči k dispozici v soukromém režimu."
   },
-  "copyValue":{
-    "message":"Zkopírovat hodnotu"
+  "customFields": {
+    "message": "Vlastní pole"
   },
-  "toggleValue":{
-    "message":"Přepnout hodnotu"
+  "copyValue": {
+    "message": "Zkopírovat hodnotu"
   },
-  "value":{
-    "message":"Hodnota"
+  "toggleValue": {
+    "message": "Přepnout hodnotu"
   },
-  "newCustomField":{
-    "message":"Nové vlastní pole"
+  "value": {
+    "message": "Hodnota"
   },
-  "cfTypeText":{
-    "message":"Text"
+  "newCustomField": {
+    "message": "Nové vlastní pole"
   },
-  "cfTypeHidden":{
-    "message":"Skryté"
+  "cfTypeText": {
+    "message": "Text"
   },
-  "cfTypeBoolean":{
-    "message":"Ano\/Ne"
+  "cfTypeHidden": {
+    "message": "Skryté"
   },
-  "popup2faCloseMessage":{
-    "message":"Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na email způsobí zavření vyskakovacího okna. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
+  "cfTypeBoolean": {
+    "message": "Ano\/Ne"
   },
-  "disableFavicon":{
-    "message":"Disable Website Icons"
+  "popup2faCloseMessage": {
+    "message": "Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na email způsobí zavření vyskakovacího okna. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
   },
-  "disableFaviconDesc":{
-    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  "disableFavicon": {
+    "message": "Zakázat ikonky webových stránek"
   },
-  "cardholderName":{
-    "message":"Cardholder Name"
+  "disableFaviconDesc": {
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
-  "number":{
-    "message":"Number"
+  "cardholderName": {
+    "message": "Jméno držitele karty"
   },
-  "brand":{
-    "message":"Brand"
+  "number": {
+    "message": "Číslo"
   },
-  "expirationMonth":{
-    "message":"Expiration Month"
+  "brand": {
+    "message": "Značka"
   },
-  "expirationYear":{
-    "message":"Expiration Year"
+  "expirationMonth": {
+    "message": "Měsíc expirace"
   },
-  "expiration":{
-    "message":"Expiration"
+  "expirationYear": {
+    "message": "Rok expirace"
   },
-  "january":{
-    "message":"January"
+  "expiration": {
+    "message": "Expirace"
   },
-  "february":{
-    "message":"February"
+  "january": {
+    "message": "Leden"
   },
-  "march":{
-    "message":"March"
+  "february": {
+    "message": "Únor"
   },
-  "april":{
-    "message":"April"
+  "march": {
+    "message": "Březen"
   },
-  "may":{
-    "message":"May"
+  "april": {
+    "message": "Duben"
   },
-  "june":{
-    "message":"June"
+  "may": {
+    "message": "Květen"
   },
-  "july":{
-    "message":"July"
+  "june": {
+    "message": "Červen"
   },
-  "august":{
-    "message":"August"
+  "july": {
+    "message": "Červenec"
   },
-  "september":{
-    "message":"September"
+  "august": {
+    "message": "Srpen"
   },
-  "october":{
-    "message":"October"
+  "september": {
+    "message": "Záři"
   },
-  "november":{
-    "message":"November"
+  "october": {
+    "message": "Říjen"
   },
-  "december":{
-    "message":"December"
+  "november": {
+    "message": "Listopad"
   },
-  "securityCode":{
-    "message":"Security Code"
+  "december": {
+    "message": "Prosinec"
   },
-  "ex":{
-    "message":"ex."
+  "securityCode": {
+    "message": "Bezpečnostní kód"
   },
-  "title":{
-    "message":"Title"
+  "ex": {
+    "message": "např."
   },
-  "mr":{
-    "message":"Mr"
+  "title": {
+    "message": "Oslovení"
   },
-  "mrs":{
-    "message":"Mrs"
+  "mr": {
+    "message": "Pan"
   },
-  "ms":{
-    "message":"Ms"
+  "mrs": {
+    "message": "Paní"
   },
-  "dr":{
-    "message":"Dr"
+  "ms": {
+    "message": "Slečna"
   },
-  "firstName":{
-    "message":"First Name"
+  "dr": {
+    "message": "MUDr"
   },
-  "middleName":{
-    "message":"Middle Name"
+  "firstName": {
+    "message": "Jméno"
   },
-  "lastName":{
-    "message":"Last Name"
+  "middleName": {
+    "message": "Druhé jméno"
   },
-  "identityName":{
-    "message":"Identity Name"
+  "lastName": {
+    "message": "Příjmení"
   },
-  "company":{
-    "message":"Company"
+  "identityName": {
+    "message": "Název identity"
   },
-  "ssn":{
-    "message":"Social Security Number"
+  "company": {
+    "message": "Firma"
   },
-  "passportNumber":{
-    "message":"Passport Number"
+  "ssn": {
+    "message": "Číslo sociálního pojištění"
   },
-  "licenseNumber":{
-    "message":"License Number"
+  "passportNumber": {
+    "message": "Číslo cestovního pasu"
   },
-  "email":{
-    "message":"Email"
+  "licenseNumber": {
+    "message": "Licenční číslo"
   },
-  "phone":{
-    "message":"Phone"
+  "email": {
+    "message": "Email"
   },
-  "address":{
-    "message":"Address"
+  "phone": {
+    "message": "Telefon"
   },
-  "address1":{
-    "message":"Address 1"
+  "address": {
+    "message": "Adresa"
   },
-  "address2":{
-    "message":"Address 2"
+  "address1": {
+    "message": "Adresa 1"
   },
-  "address3":{
-    "message":"Address 3"
+  "address2": {
+    "message": "Adresa 2"
   },
-  "cityTown":{
-    "message":"City \/ Town"
+  "address3": {
+    "message": "Adresa 3"
   },
-  "stateProvince":{
-    "message":"State \/ Province"
+  "cityTown": {
+    "message": "Město"
   },
-  "zipPostalCode":{
-    "message":"Zip \/ Postal Code"
+  "stateProvince": {
+    "message": "Kraj \/ Provincie"
   },
-  "country":{
-    "message":"Country"
+  "zipPostalCode": {
+    "message": "PSČ"
   },
-  "type":{
-    "message":"Type"
+  "country": {
+    "message": "Stát"
   },
-  "typeLogin":{
-    "message":"Login"
+  "type": {
+    "message": "Typ"
   },
-  "typeLogins":{
-    "message":"Logins"
+  "typeLogin": {
+    "message": "Přihlášení"
   },
-  "typeSecureNote":{
-    "message":"Secure Note"
+  "typeLogins": {
+    "message": "Přihlašovací údaje"
   },
-  "typeCard":{
-    "message":"Card"
+  "typeSecureNote": {
+    "message": "Zabezpečená poznámka"
   },
-  "typeIdentity":{
-    "message":"Identity"
+  "typeCard": {
+    "message": "Kreditní karta"
   },
-  "passwordHistory":{
-    "message":"Password History"
+  "typeIdentity": {
+    "message": "Identita"
   },
-  "back":{
-    "message":"Back"
+  "passwordHistory": {
+    "message": "Historie hesel"
+  },
+  "back": {
+    "message": "Zpět"
   }
 }

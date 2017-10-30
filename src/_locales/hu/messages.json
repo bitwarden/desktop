@@ -1,957 +1,960 @@
 {
-  "appName":{
-    "message":"bitwarden"
+  "appName": {
+    "message": "bitwarden"
   },
-  "extName":{
-    "message":"bitwarden - Ingyenes Jelszó Kezelő",
-    "description":"Extension name"
+  "extName": {
+    "message": "bitwarden - Ingyenes Jelszó Kezelő",
+    "description": "Extension name"
   },
-  "extDesc":{
-    "message":"bitwarden egy biztonságos és ingyenes jelszó kezelő az összes eszközödre.",
-    "description":"Extension description"
+  "extDesc": {
+    "message": "bitwarden egy biztonságos és ingyenes jelszó kezelő az összes eszközödre.",
+    "description": "Extension description"
   },
-  "loginOrCreateNewAccount":{
-    "message":"Jelentkezz be vagy készíts új felhasználót a biztonsági széfed eléréshez."
+  "loginOrCreateNewAccount": {
+    "message": "Jelentkezz be vagy készíts új felhasználót a biztonsági széfed eléréshez."
   },
-  "createAccount":{
-    "message":"Felhasználó létrehozása"
+  "createAccount": {
+    "message": "Felhasználó létrehozása"
   },
-  "login":{
-    "message":"Bejelentkezés"
+  "login": {
+    "message": "Bejelentkezés"
   },
-  "cancel":{
-    "message":"Mégse"
+  "cancel": {
+    "message": "Mégse"
   },
-  "close":{
-    "message":"Bezár"
+  "close": {
+    "message": "Bezár"
   },
-  "submit":{
-    "message":"Beküld"
+  "submit": {
+    "message": "Beküld"
   },
-  "emailAddress":{
-    "message":"E-mail cím"
+  "emailAddress": {
+    "message": "E-mail cím"
   },
-  "masterPass":{
-    "message":"Mesterjelszó"
+  "masterPass": {
+    "message": "Mesterjelszó"
   },
-  "masterPassDesc":{
-    "message":"A mesterjelszó az a jelszó amit a széfed eléréséhez fogsz használni. Nagyon fontos, hogy ne felejtsd el a mesterjelszavad, mivel nincs lehetőséged visszaállítani még ha elfejeted is."
+  "masterPassDesc": {
+    "message": "A mesterjelszó az a jelszó amit a széfed eléréséhez fogsz használni. Nagyon fontos, hogy ne felejtsd el a mesterjelszavad, mivel nincs lehetőséged visszaállítani még ha elfejeted is."
   },
-  "masterPassHintDesc":{
-    "message":"A mesterjelszó emlékeztető segíthet emlékezni a jelszavadra ha elfejetetted volna."
+  "masterPassHintDesc": {
+    "message": "A mesterjelszó emlékeztető segíthet emlékezni a jelszavadra ha elfejetetted volna."
   },
-  "reTypeMasterPass":{
-    "message":"Írd be újra a mesterjelszavad"
+  "reTypeMasterPass": {
+    "message": "Írd be újra a mesterjelszavad"
   },
-  "masterPassHint":{
-    "message":"Mesterjelszó emlékeztető (nem kötelező)"
+  "masterPassHint": {
+    "message": "Mesterjelszó emlékeztető (nem kötelező)"
   },
-  "tab":{
-    "message":"Fül"
+  "tab": {
+    "message": "Fül"
   },
-  "myVault":{
-    "message":"Széfem"
+  "myVault": {
+    "message": "Széfem"
   },
-  "tools":{
-    "message":"Eszközök"
+  "tools": {
+    "message": "Eszközök"
   },
-  "settings":{
-    "message":"Beállítások"
+  "settings": {
+    "message": "Beállítások"
   },
-  "currentTab":{
-    "message":"Jelenlegi fül"
+  "currentTab": {
+    "message": "Jelenlegi fül"
   },
-  "copyPassword":{
-    "message":"Jelszó másolása"
+  "copyPassword": {
+    "message": "Jelszó másolása"
   },
-  "copyUri":{
-    "message":"Copy URI"
+  "copyUri": {
+    "message": "URI másolása"
   },
-  "copyUsername":{
-    "message":"Felhasználónév másolása"
+  "copyUsername": {
+    "message": "Felhasználónév másolása"
   },
-  "copyNumber":{
-    "message":"Copy Number"
+  "copyNumber": {
+    "message": "Szám másolása"
   },
-  "copySecurityCode":{
-    "message":"Copy Security Code"
+  "copySecurityCode": {
+    "message": "Biztonsági kód másolása"
   },
-  "autoFill":{
-    "message":"Automatikus kitöltés"
+  "autoFill": {
+    "message": "Automatikus kitöltés"
   },
-  "generatePasswordCopied":{
-    "message":"Jelszó generálás (másolt)"
+  "generatePasswordCopied": {
+    "message": "Jelszó generálás (másolt)"
   },
-  "noMatchingLogins":{
-    "message":"Nincsenek egyező bejelentkezések."
+  "noMatchingLogins": {
+    "message": "Nincsenek egyező bejelentkezések."
   },
-  "vaultLocked":{
-    "message":"A széf zárolva van."
+  "vaultLocked": {
+    "message": "A széf zárolva van."
   },
-  "autoFillInfo":{
-    "message":"Nincsenek elérhető bejelentkezések ehhez a fülhöz ezért az automatikus kitöltés nem működik."
+  "autoFillInfo": {
+    "message": "Nincsenek elérhető bejelentkezések ehhez a fülhöz ezért az automatikus kitöltés nem működik."
   },
-  "addLogin":{
-    "message":"Adj hozzá egy Bejelentkezést"
+  "addLogin": {
+    "message": "Adj hozzá egy Bejelentkezést"
   },
-  "addItem":{
-    "message":"Add Item"
+  "addItem": {
+    "message": "Elem hozzáadása"
   },
-  "passwordHint":{
-    "message":"Jelszó emlékeztető"
+  "passwordHint": {
+    "message": "Jelszó emlékeztető"
   },
-  "enterEmailToGetHint":{
-    "message":"Írd be a felhasználóhoz kötött e-mail címed, hogy megkapd a mesterjelszó emlékeztetőt."
+  "enterEmailToGetHint": {
+    "message": "Írd be a felhasználóhoz kötött e-mail címed, hogy megkapd a mesterjelszó emlékeztetőt."
   },
-  "getMasterPasswordHint":{
-    "message":"Kérj mesterjelszó emlékeztetőt"
+  "getMasterPasswordHint": {
+    "message": "Kérj mesterjelszó emlékeztetőt"
   },
-  "continue":{
-    "message":"Folytatás"
+  "continue": {
+    "message": "Folytatás"
   },
-  "verificationCode":{
-    "message":"Ellenőrző Kód"
+  "verificationCode": {
+    "message": "Ellenőrző Kód"
   },
-  "account":{
-    "message":"Felhasználó"
+  "account": {
+    "message": "Felhasználó"
   },
-  "changeMasterPassword":{
-    "message":"Mesterjelszó módosítása"
+  "changeMasterPassword": {
+    "message": "Mesterjelszó módosítása"
   },
-  "changeEmail":{
-    "message":"E-mail cím módosítása"
+  "changeEmail": {
+    "message": "E-mail cím módosítása"
   },
-  "twoStepLogin":{
-    "message":"Kétlépcsős bejelentkezés"
+  "twoStepLogin": {
+    "message": "Kétlépcsős bejelentkezés"
   },
-  "logOut":{
-    "message":"Kijelentkezés"
+  "logOut": {
+    "message": "Kijelentkezés"
   },
-  "about":{
-    "message":"Névjegy"
+  "about": {
+    "message": "Névjegy"
   },
-  "version":{
-    "message":"Verzió"
+  "version": {
+    "message": "Verzió"
   },
-  "save":{
-    "message":"Mentés"
+  "save": {
+    "message": "Mentés"
   },
-  "addFolder":{
-    "message":"Mappa hozzáadása"
+  "addFolder": {
+    "message": "Mappa hozzáadása"
   },
-  "name":{
-    "message":"Név"
+  "name": {
+    "message": "Név"
   },
-  "editFolder":{
-    "message":"Mappa szerkesztése"
+  "editFolder": {
+    "message": "Mappa szerkesztése"
   },
-  "deleteFolder":{
-    "message":"Mappa törlése"
+  "deleteFolder": {
+    "message": "Mappa törlése"
   },
-  "folders":{
-    "message":"Mappák"
+  "folders": {
+    "message": "Mappák"
   },
-  "noFolders":{
-    "message":"Nincsenek megjeleníthető mappák."
+  "noFolders": {
+    "message": "Nincsenek megjeleníthető mappák."
   },
-  "helpFeedback":{
-    "message":"Súgó és visszajelzés"
+  "helpFeedback": {
+    "message": "Súgó és visszajelzés"
   },
-  "emailUs":{
-    "message":"Küldj e-mailt nekünk"
+  "emailUs": {
+    "message": "Küldj e-mailt nekünk"
   },
-  "emailUsDirectly":{
-    "message":"Írjon nekünk E-mailt közvetlenül a segítség kéréshez vagy visszajelzés beküldéséhez."
+  "emailUsDirectly": {
+    "message": "Írjon nekünk E-mailt közvetlenül a segítség kéréshez vagy visszajelzés beküldéséhez."
   },
-  "visitOurWebsite":{
-    "message":"Látogasd meg a weboldalunkat"
+  "visitOurWebsite": {
+    "message": "Látogasd meg a weboldalunkat"
   },
-  "visitOurWebsiteDirectly":{
-    "message":"Látogasd meg a weboldalunkat segítség kéréshez, hírekért, küldj nekünk e-mailt vagy\/és tanuld meg hogyan használd a bitwarden-t."
+  "visitOurWebsiteDirectly": {
+    "message": "Látogasd meg a weboldalunkat segítség kéréshez, hírekért, küldj nekünk e-mailt vagy\/és tanuld meg hogyan használd a bitwarden-t."
   },
-  "fileBugReport":{
-    "message":"Hiba jelentése"
+  "fileBugReport": {
+    "message": "Hiba jelentése"
   },
-  "gitHubIssue":{
-    "message":"Nyiss egy Issuet a mi Gthub repositorynkban."
+  "gitHubIssue": {
+    "message": "Nyiss egy Issuet a mi Gthub repositorynkban."
   },
-  "sync":{
-    "message":"Szinkronizálás"
+  "sync": {
+    "message": "Szinkronizálás"
   },
-  "syncVaultNow":{
-    "message":"Széf szinkronizálása most"
+  "syncVaultNow": {
+    "message": "Széf szinkronizálása most"
   },
-  "lastSync":{
-    "message":"Utolsó szinkronizálás:"
+  "lastSync": {
+    "message": "Utolsó szinkronizálás:"
   },
-  "passGen":{
-    "message":"Jelszó generátor"
+  "passGen": {
+    "message": "Jelszó generátor"
   },
-  "passGenInfo":{
-    "message":"Automatikusan létrehoz erős, egyedi jelszavakat a bejelentkezéseidhez."
+  "passGenInfo": {
+    "message": "Automatikusan létrehoz erős, egyedi jelszavakat a bejelentkezéseidhez."
   },
-  "bitWebVault":{
-    "message":"bitwarden webes széf"
+  "bitWebVault": {
+    "message": "bitwarden webes széf"
   },
-  "bitWebVaultInfo":{
-    "message":"Kezeld az összes bejelentkezésedet bármely böngészőből a bitwarden webes széfével."
+  "bitWebVaultInfo": {
+    "message": "Kezeld az összes bejelentkezésedet bármely böngészőből a bitwarden webes széfével."
   },
-  "bitIosVault":{
-    "message":"bitwarden iOS széf"
+  "bitIosVault": {
+    "message": "bitwarden iOS széf"
   },
-  "bitIosVaultInfo":{
-    "message":"Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden iOS széfével."
+  "bitIosVaultInfo": {
+    "message": "Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden iOS széfével."
   },
-  "bitAndrVault":{
-    "message":"bitwarden Android széf"
+  "bitAndrVault": {
+    "message": "bitwarden Android széf"
   },
-  "bitAndrVaultInfo":{
-    "message":"Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden Android széfével."
+  "bitAndrVaultInfo": {
+    "message": "Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden Android széfével."
   },
-  "importItems":{
-    "message":"Import Items"
+  "importItems": {
+    "message": "Elemek importálása"
   },
-  "importItemsInfo":{
-    "message":"Quickly bulk import your items from other password management applications."
+  "importItemsInfo": {
+    "message": "Elemek tömeges gyors importálása más jelszókezelő alkalmazásokból."
   },
-  "select":{
-    "message":"Kiválaszt"
+  "select": {
+    "message": "Kiválaszt"
   },
-  "generatePassword":{
-    "message":"Jelszó generálása"
+  "generatePassword": {
+    "message": "Jelszó generálása"
   },
-  "regeneratePassword":{
-    "message":"Jelszó újragenerálása"
+  "regeneratePassword": {
+    "message": "Jelszó újragenerálása"
   },
-  "options":{
-    "message":"Beállítások"
+  "options": {
+    "message": "Beállítások"
   },
-  "length":{
-    "message":"Hossz"
+  "length": {
+    "message": "Hossz"
   },
-  "minNumbers":{
-    "message":"Legkevesebb szám"
+  "minNumbers": {
+    "message": "Legkevesebb szám"
   },
-  "minSpecial":{
-    "message":"Legkevesebb speciális"
+  "minSpecial": {
+    "message": "Legkevesebb speciális"
   },
-  "avoidAmbChar":{
-    "message":"Kerüld el a félreérthető karaktereket"
+  "avoidAmbChar": {
+    "message": "Kerüld el a félreérthető karaktereket"
   },
-  "searchVault":{
-    "message":"Keresés a széfben"
+  "searchVault": {
+    "message": "Keresés a széfben"
   },
-  "edit":{
-    "message":"Szerkesztés"
+  "edit": {
+    "message": "Szerkesztés"
   },
-  "view":{
-    "message":"View"
+  "view": {
+    "message": "Nézet"
   },
-  "noItemsInList":{
-    "message":"There are no items to list."
+  "noItemsInList": {
+    "message": "Nincsenek megjeleníthető tételek."
   },
-  "itemInformation":{
-    "message":"Item Information"
+  "itemInformation": {
+    "message": "Elem információ"
   },
-  "username":{
-    "message":"Felhasználónév"
+  "username": {
+    "message": "Felhasználónév"
   },
-  "password":{
-    "message":"Jelszó"
+  "password": {
+    "message": "Jelszó"
   },
-  "favorite":{
-    "message":"Kedvenc"
+  "favorite": {
+    "message": "Kedvenc"
   },
-  "notes":{
-    "message":"Jegyzetek"
+  "notes": {
+    "message": "Jegyzetek"
   },
-  "editItem":{
-    "message":"Edit Item"
+  "editItem": {
+    "message": "Elem szerkesztése"
   },
-  "folder":{
-    "message":"Mappa"
+  "folder": {
+    "message": "Mappa"
   },
-  "deleteItem":{
-    "message":"Delete Item"
+  "deleteItem": {
+    "message": "Elem törlése"
   },
-  "viewItem":{
-    "message":"View Item"
+  "viewItem": {
+    "message": "Elem megtekintése"
   },
-  "launchWebsite":{
-    "message":"Weboldal megtekintése"
+  "launchWebsite": {
+    "message": "Weboldal megtekintése"
   },
-  "website":{
-    "message":"Weboldal"
+  "website": {
+    "message": "Weboldal"
   },
-  "togglePassword":{
-    "message":"Jelszó láthatóság ki\/be kapcsolása"
+  "togglePassword": {
+    "message": "Jelszó láthatóság ki\/be kapcsolása"
   },
-  "manage":{
-    "message":"Kezelés"
+  "manage": {
+    "message": "Kezelés"
   },
-  "other":{
-    "message":"Egyéb"
+  "other": {
+    "message": "Egyéb"
   },
-  "disableGa":{
-    "message":"Analitika kikapcsolása"
+  "disableGa": {
+    "message": "Analitika kikapcsolása"
   },
-  "rateExtension":{
-    "message":"Bővítmény értékelése"
+  "rateExtension": {
+    "message": "Bővítmény értékelése"
   },
-  "rateExtensionDesc":{
-    "message":"Kérlek, fontold meg egy jó értékelés hagyását, ezzel segítve nekünk!"
+  "rateExtensionDesc": {
+    "message": "Kérlek, fontold meg egy jó értékelés hagyását, ezzel segítve nekünk!"
   },
-  "browserNotSupportClipboard":{
-    "message":"A webböngésződ nem támogat könnyű vágólap másolást. Másold manuálisan inkább."
+  "browserNotSupportClipboard": {
+    "message": "A webböngésződ nem támogat könnyű vágólap másolást. Másold manuálisan inkább."
   },
-  "verifyMasterPassword":{
-    "message":"Hitelesítsd mesterjelszavad"
+  "verifyMasterPassword": {
+    "message": "Hitelesítsd mesterjelszavad"
   },
-  "invalidMasterPassword":{
-    "message":"Hibás mesterjelszó"
+  "invalidMasterPassword": {
+    "message": "Hibás mesterjelszó"
   },
-  "lockOptions":{
-    "message":"Zárolási beállítások"
+  "lockOptions": {
+    "message": "Zárolási beállítások"
   },
-  "lockNow":{
-    "message":"Zárolás most"
+  "lockNow": {
+    "message": "Zárolás most"
   },
-  "immediately":{
-    "message":"Azonnal"
+  "immediately": {
+    "message": "Azonnal"
   },
-  "oneMinute":{
-    "message":"1 perc"
+  "oneMinute": {
+    "message": "1 perc"
   },
-  "fiveMinutes":{
-    "message":"5 perc"
+  "fiveMinutes": {
+    "message": "5 perc"
   },
-  "fifteenMinutes":{
-    "message":"15 perc"
+  "fifteenMinutes": {
+    "message": "15 perc"
   },
-  "thirtyMinutes":{
-    "message":"30 perc"
+  "thirtyMinutes": {
+    "message": "30 perc"
   },
-  "oneHour":{
-    "message":"1 óra"
+  "oneHour": {
+    "message": "1 óra"
   },
-  "fourHours":{
-    "message":"4 óra"
+  "fourHours": {
+    "message": "4 óra"
   },
-  "onLocked":{
-    "message":"Zároláskor"
+  "onLocked": {
+    "message": "Zároláskor"
   },
-  "onRestart":{
-    "message":"Újraindításkor"
+  "onRestart": {
+    "message": "Újraindításkor"
   },
-  "never":{
-    "message":"Soha"
+  "never": {
+    "message": "Soha"
   },
-  "security":{
-    "message":"Biztonság"
+  "security": {
+    "message": "Biztonság"
   },
-  "errorsOccurred":{
-    "message":"Hibák történtek"
+  "errorsOccurred": {
+    "message": "Hibák történtek"
   },
-  "emailRequired":{
-    "message":"E-mail cím megadása kötelező."
+  "emailRequired": {
+    "message": "E-mail cím megadása kötelező."
   },
-  "invalidEmail":{
-    "message":"Érvénytelen email cím."
+  "invalidEmail": {
+    "message": "Érvénytelen email cím."
   },
-  "masterPassRequired":{
-    "message":"Mesterjelszó megadása kötelező."
+  "masterPassRequired": {
+    "message": "Mesterjelszó megadása kötelező."
   },
-  "masterPassLength":{
-    "message":"Mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
+  "masterPassLength": {
+    "message": "Mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
   },
-  "masterPassDoesntMatch":{
-    "message":"A megadott két jelszó nem egyezik meg."
+  "masterPassDoesntMatch": {
+    "message": "A megadott két jelszó nem egyezik meg."
   },
-  "newAccountCreated":{
-    "message":"Felhasználódat létrehoztuk. Most már be tudsz jelentkezni."
+  "newAccountCreated": {
+    "message": "Felhasználódat létrehoztuk. Most már be tudsz jelentkezni."
   },
-  "masterPassSent":{
-    "message":"Elküldtünk neked egy mesterjelszó emlékeztetődet tartalmazó E-mailt."
+  "masterPassSent": {
+    "message": "Elküldtünk neked egy mesterjelszó emlékeztetődet tartalmazó E-mailt."
   },
-  "verificationCodeRequired":{
-    "message":"Ellenőrző kód szükséges."
+  "verificationCodeRequired": {
+    "message": "Ellenőrző kód szükséges."
   },
-  "valueCopied":{
-    "message":" másolva",
-    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  "valueCopied": {
+    "message": " másolva",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
-  "autofillError":{
-    "message":"Nem sikerült automatikusan kitölteni a bejelentkezést ezen a weboldalon. Helyette másold\/illeszt be a felhasználóneved és\/vagy a jelszavadat."
+  "autofillError": {
+    "message": "Nem sikerült automatikusan kitölteni a bejelentkezést ezen a weboldalon. Helyette másold\/illeszt be a felhasználóneved és\/vagy a jelszavadat."
   },
-  "loggedOut":{
-    "message":"Kijelentkezett"
+  "loggedOut": {
+    "message": "Kijelentkezett"
   },
-  "loginExpired":{
-    "message":"Bejelentkezési munkamenete lejárt."
+  "loginExpired": {
+    "message": "Bejelentkezési munkamenete lejárt."
   },
-  "logOutConfirmation":{
-    "message":"Biztos benne, hogy ki szeretnél jelentkezni?"
+  "logOutConfirmation": {
+    "message": "Biztos benne, hogy ki szeretnél jelentkezni?"
   },
-  "yes":{
-    "message":"Igen"
+  "yes": {
+    "message": "Igen"
   },
-  "no":{
-    "message":"Nem"
+  "no": {
+    "message": "Nem"
   },
-  "unexpectedError":{
-    "message":"Váratlan hiba történt."
+  "unexpectedError": {
+    "message": "Váratlan hiba történt."
   },
-  "nameRequired":{
-    "message":"Név megadása kötelező."
+  "nameRequired": {
+    "message": "Név megadása kötelező."
   },
-  "addedFolder":{
-    "message":"Hozzáadott mappa"
+  "addedFolder": {
+    "message": "Hozzáadott mappa"
   },
-  "changeMasterPass":{
-    "message":"Mesterjelszó módosítása"
+  "changeMasterPass": {
+    "message": "Mesterjelszó módosítása"
   },
-  "changeMasterPasswordConfirmation":{
-    "message":"Mesterjelszavadat a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
+  "changeMasterPasswordConfirmation": {
+    "message": "Mesterjelszavadat a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
-  "changeEmailConfirmation":{
-    "message":"E-mail címedet a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
+  "changeEmailConfirmation": {
+    "message": "E-mail címedet a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
-  "twoStepLoginConfirmation":{
-    "message":"A kétlépcsős bejelentkezés biztonságosabbá teszi a felhasználódat azáltal, hogy ellenőrizned kell a bejelentkezésedet egy másik készülékkel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy e-mail. Kétlépcsős bejelentkezést a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
+  "twoStepLoginConfirmation": {
+    "message": "A kétlépcsős bejelentkezés biztonságosabbá teszi a felhasználódat azáltal, hogy ellenőrizned kell a bejelentkezésedet egy másik készülékkel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy e-mail. Kétlépcsős bejelentkezést a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
-  "loggingOut":{
-    "message":"Kijelentkezés folyamatban"
+  "loggingOut": {
+    "message": "Kijelentkezés folyamatban"
   },
-  "loggingOutConfirmation":{
-    "message":"Nemrég frissítettél egy régebbi verzióról. Be kell újra jelentkezned a zárolási beállításaidnak módosításához. Szeretnél most kijelentkezni?"
+  "loggingOutConfirmation": {
+    "message": "Nemrég frissítettél egy régebbi verzióról. Be kell újra jelentkezned a zárolási beállításaidnak módosításához. Szeretnél most kijelentkezni?"
   },
-  "editedFolder":{
-    "message":"Szerkesztett mappa"
+  "editedFolder": {
+    "message": "Szerkesztett mappa"
   },
-  "deleteFolderConfirmation":{
-    "message":"Biztos, hogy törölni akarod ezt a mappát?"
+  "deleteFolderConfirmation": {
+    "message": "Biztos, hogy törölni akarod ezt a mappát?"
   },
-  "deletedFolder":{
-    "message":"Törölt mappa"
+  "deletedFolder": {
+    "message": "Törölt mappa"
   },
-  "gettingStartedTutorial":{
-    "message":"Első lépések-oktatóprogram"
+  "gettingStartedTutorial": {
+    "message": "Első lépések-oktatóprogram"
   },
-  "gettingStartedTutorialVideo":{
-    "message":"Nézd meg az első lépések oktatóprogramunkat, hogy megtanuld, hogyan hozd ki a legtöbbet a böngésző kiterjesztésből."
+  "gettingStartedTutorialVideo": {
+    "message": "Nézd meg az első lépések oktatóprogramunkat, hogy megtanuld, hogyan hozd ki a legtöbbet a böngésző kiterjesztésből."
   },
-  "syncingComplete":{
-    "message":"Szinkronizálás befejezve"
+  "syncingComplete": {
+    "message": "Szinkronizálás befejezve"
   },
-  "syncingFailed":{
-    "message":"Sikertelen szinkronizálás"
+  "syncingFailed": {
+    "message": "Sikertelen szinkronizálás"
   },
-  "importItemsConfirmation":{
-    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+  "importItemsConfirmation": {
+    "message": "Elemek tömeges importálása a bitwarden.com webes széfből. Szeretnéd most meglátogatni a weboldalt?"
   },
-  "passwordCopied":{
-    "message":"Jelszó másolva"
+  "passwordCopied": {
+    "message": "Jelszó másolva"
   },
-  "uri":{
-    "message":"URI"
+  "uri": {
+    "message": "URI"
   },
-  "addedItem":{
-    "message":"Added item"
+  "addedItem": {
+    "message": "Elem hozzáadva"
   },
-  "editedItem":{
-    "message":"Edited item"
+  "editedItem": {
+    "message": "Elem szerkesztve"
   },
-  "deleteItemConfirmation":{
-    "message":"Are you sure you want to delete this item?"
+  "deleteItemConfirmation": {
+    "message": "Biztosan törlöd ezt az elemet?"
   },
-  "deletedItem":{
-    "message":"Deleted item"
+  "deletedItem": {
+    "message": "Törölt elem"
   },
-  "overwritePassword":{
-    "message":"Jelszó felülírása"
+  "overwritePassword": {
+    "message": "Jelszó felülírása"
   },
-  "overwritePasswordConfirmation":{
-    "message":"Biztosan felül akarod írni a jelenlegi jelszavad?"
+  "overwritePasswordConfirmation": {
+    "message": "Biztosan felül akarod írni a jelenlegi jelszavad?"
   },
-  "credits":{
-    "message":"Készítők"
+  "credits": {
+    "message": "Készítők"
   },
-  "thankYou":{
-    "message":"Köszönjük"
+  "thankYou": {
+    "message": "Köszönjük"
   },
-  "translations":{
-    "message":"Fordítások"
+  "translations": {
+    "message": "Fordítások"
   },
-  "searchFolder":{
-    "message":"Mappa keresése"
+  "searchFolder": {
+    "message": "Mappa keresése"
   },
-  "noneFolder":{
-    "message":"Nincs mappa",
-    "description":"This is the folder for uncategorized items"
+  "noneFolder": {
+    "message": "Nincs mappa",
+    "description": "This is the folder for uncategorized items"
   },
-  "features":{
-    "message":"Funkciók"
+  "features": {
+    "message": "Funkciók"
   },
-  "gaDesc":{
-    "message":"Mi analitikát használunk, hogy megtudjunk többet arról, hogy hogyan használod a kiterjesztést, hogy jobbá tudjuk tenni. Az összes adat gyűjtés teljesen névtelen."
+  "gaDesc": {
+    "message": "Mi analitikát használunk, hogy megtudjunk többet arról, hogy hogyan használod a kiterjesztést, hogy jobbá tudjuk tenni. Az összes adat gyűjtés teljesen névtelen."
   },
-  "disableAddLoginNotification":{
-    "message":"Add hozzá a bejelentkezést értesítések kikapcsolása"
+  "disableAddLoginNotification": {
+    "message": "Add hozzá a bejelentkezést értesítések kikapcsolása"
   },
-  "addLoginNotificationDesc":{
-    "message":"Az \"add hozzá a bejelentkezést\" automatikusan felajánlja neked neked a bejelentkezésed mentését a széfbe első bejelentkezéskor."
+  "addLoginNotificationDesc": {
+    "message": "Az \"add hozzá a bejelentkezést\" automatikusan felajánlja neked neked a bejelentkezésed mentését a széfbe első bejelentkezéskor."
   },
-  "notificationAddDesc":{
-    "message":"Akarod hogy a bitwarden megjegyezze ezt a jelszót?"
+  "notificationAddDesc": {
+    "message": "Akarod hogy a bitwarden megjegyezze ezt a jelszót?"
   },
-  "notificationAddSave":{
-    "message":"Igen, mentés most"
+  "notificationAddSave": {
+    "message": "Igen, mentés most"
   },
-  "notificationNeverSave":{
-    "message":"Ezen az weboldalon soha"
+  "notificationNeverSave": {
+    "message": "Ezen az weboldalon soha"
   },
-  "disableContextMenuItem":{
-    "message":"Helyi menü opciók kikapcsolása"
+  "disableContextMenuItem": {
+    "message": "Helyi menü opciók kikapcsolása"
   },
-  "disableContextMenuItemDesc":{
-    "message":"Helyi menü opciók gyors hozzáférést biztosít jelszó generáláshoz és bejelentkezésekhez a weboldalhoz amin éppen vagy."
+  "disableContextMenuItemDesc": {
+    "message": "Helyi menü opciók gyors hozzáférést biztosít jelszó generáláshoz és bejelentkezésekhez a weboldalhoz amin éppen vagy."
   },
-  "exportVault":{
-    "message":"Széf exportálása"
+  "exportVault": {
+    "message": "Széf exportálása"
   },
-  "warning":{
-    "message":"FIGYELEM",
-    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  "warning": {
+    "message": "FIGYELEM",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning":{
-    "message":"Ez az exportálás nem titkosított adatokat tartalmaz .csv formátumban. Ne tárold, vagy küldd el nem biztonságos csatornákon (mint például e-mail). Töröld azonnal miután végeztél a használatával."
+  "exportWarning": {
+    "message": "Ez az exportálás nem titkosított adatokat tartalmaz .csv formátumban. Ne tárold, vagy küldd el nem biztonságos csatornákon (mint például e-mail). Töröld azonnal miután végeztél a használatával."
   },
-  "exportMasterPassword":{
-    "message":"Add meg a jelszavad a széf adataid exportálásához."
+  "exportMasterPassword": {
+    "message": "Add meg a jelszavad a széf adataid exportálásához."
   },
-  "exportVaultInfo":{
-    "message":"Exportáld a széf adataidat .csv formátumban, hogy könnyen módosíthasd vagy mozgathasd máshova."
+  "exportVaultInfo": {
+    "message": "Exportáld a széf adataidat .csv formátumban, hogy könnyen módosíthasd vagy mozgathasd máshova."
   },
-  "shared":{
-    "message":"Megosztott"
+  "shared": {
+    "message": "Megosztott"
   },
-  "shareVault":{
-    "message":"Széfed megosztása"
+  "shareVault": {
+    "message": "Széfed megosztása"
   },
-  "shareVaultInfo":{
-    "message":"Hozz létre egy szervezetet, hogy biztonságosan megoszthasd bejelentkezéseid másokkal."
+  "shareVaultInfo": {
+    "message": "Hozz létre egy szervezetet, hogy biztonságosan megoszthasd bejelentkezéseid másokkal."
   },
-  "contribute":{
-    "message":"Te is hozzájárulhatsz!"
+  "contribute": {
+    "message": "Te is hozzájárulhatsz!"
   },
-  "learnMore":{
-    "message":"Tudjon meg többet"
+  "learnMore": {
+    "message": "Tudjon meg többet"
   },
-  "authenticatorKeyTotp":{
-    "message":"Hitelesítő kulcs (TOTP)"
+  "authenticatorKeyTotp": {
+    "message": "Hitelesítő kulcs (TOTP)"
   },
-  "verificationCodeTotp":{
-    "message":"Ellenőrző kód (TOTP)"
+  "verificationCodeTotp": {
+    "message": "Ellenőrző kód (TOTP)"
   },
-  "copyVerificationCode":{
-    "message":"Ellenőrző kód másolása"
+  "copyVerificationCode": {
+    "message": "Ellenőrző kód másolása"
   },
-  "attachments":{
-    "message":"Mellékletek"
+  "attachments": {
+    "message": "Mellékletek"
   },
-  "deleteAttachment":{
-    "message":"Mellékletek törlése"
+  "deleteAttachment": {
+    "message": "Mellékletek törlése"
   },
-  "deleteAttachmentConfirmation":{
-    "message":"Biztos törölni akarod ezt a mellékletet?"
+  "deleteAttachmentConfirmation": {
+    "message": "Biztos törölni akarod ezt a mellékletet?"
   },
-  "deletedAttachment":{
-    "message":"Mellékletek törlése"
+  "deletedAttachment": {
+    "message": "Mellékletek törlése"
   },
-  "newAttachment":{
-    "message":"Melléklet hozzáadása"
+  "newAttachment": {
+    "message": "Melléklet hozzáadása"
   },
-  "noAttachments":{
-    "message":"Nincsenek mellékletek."
+  "noAttachments": {
+    "message": "Nincsenek mellékletek."
   },
-  "attachmentSaved":{
-    "message":"A melléklet mentésre került."
+  "attachmentSaved": {
+    "message": "A melléklet mentésre került."
   },
-  "file":{
-    "message":"Fájl"
+  "file": {
+    "message": "Fájl"
   },
-  "selectFile":{
-    "message":"Válassz ki egy fájlt."
+  "selectFile": {
+    "message": "Válassz ki egy fájlt."
   },
-  "maxFileSize":{
-    "message":"Maximális fájl méret 100 MB."
+  "maxFileSize": {
+    "message": "Maximális fájl méret 100 MB."
   },
-  "featureUnavailable":{
-    "message":"Ez a funkció nem érhető el"
+  "featureUnavailable": {
+    "message": "Ez a funkció nem érhető el"
   },
-  "updateKey":{
-    "message":"Ez a funkció nem használható, amíg nem frissíted a titkosítási kulcsod."
+  "updateKey": {
+    "message": "Ez a funkció nem használható, amíg nem frissíted a titkosítási kulcsod."
   },
-  "premiumMembership":{
-    "message":"Prémium tagság"
+  "premiumMembership": {
+    "message": "Prémium tagság"
   },
-  "premiumManage":{
-    "message":"Tagság kezelése"
+  "premiumManage": {
+    "message": "Tagság kezelése"
   },
-  "premiumManageAlert":{
-    "message":"Prémium tagságod a bitwarden.com webes széfén tudod kezelni. Szeretnéd meglátogatni a most a weboldalt?"
+  "premiumManageAlert": {
+    "message": "Prémium tagságod a bitwarden.com webes széfén tudod kezelni. Szeretnéd meglátogatni a most a weboldalt?"
   },
-  "premiumRefresh":{
-    "message":"Tagságod frissítése"
+  "premiumRefresh": {
+    "message": "Tagságod frissítése"
   },
-  "premiumNotCurrentMember":{
-    "message":"Pillanatnyilag nem vagy prémium tag."
+  "premiumNotCurrentMember": {
+    "message": "Pillanatnyilag nem vagy prémium tag."
   },
-  "premiumSignUpAndGet":{
-    "message":"Regisztrálj prémium tagságra az alábbi funkciókért:"
+  "premiumSignUpAndGet": {
+    "message": "Regisztrálj prémium tagságra az alábbi funkciókért:"
   },
-  "ppremiumSignUpStorage":{
-    "message":"1 GB titkosított fájl tárhely."
+  "ppremiumSignUpStorage": {
+    "message": "1 GB titkosított fájl tárhely."
   },
-  "ppremiumSignUpTwoStep":{
-    "message":"További két lépcsős bejelentkezés lehetőségek, mint például YubiKey, FIDO U2F és Duo."
+  "ppremiumSignUpTwoStep": {
+    "message": "További két lépcsős bejelentkezés lehetőségek, mint például YubiKey, FIDO U2F és Duo."
   },
-  "ppremiumSignUpTotp":{
-    "message":"TOTP ellenőrző kód (2FA) generátor a széfedben lévő bejelentkezésekhez."
+  "ppremiumSignUpTotp": {
+    "message": "TOTP ellenőrző kód (2FA) generátor a széfedben lévő bejelentkezésekhez."
   },
-  "ppremiumSignUpSupport":{
-    "message":"Kiemelt ügyfélszolgálati."
+  "ppremiumSignUpSupport": {
+    "message": "Kiemelt ügyfélszolgálati."
   },
-  "ppremiumSignUpFuture":{
-    "message":"Minden jövőbeli prémium funkció. Hamarosan jön még több!"
+  "ppremiumSignUpFuture": {
+    "message": "Minden jövőbeli prémium funkció. Hamarosan jön még több!"
   },
-  "premiumPurchase":{
-    "message":"Prémium vásárlása"
+  "premiumPurchase": {
+    "message": "Prémium vásárlása"
   },
-  "premiumPurchaseAlert":{
-    "message":"Prémium tagságot a bitwarden.com webes széfén tudsz venni. Szeretnéd meglátogatni a most a weboldalt?"
+  "premiumPurchaseAlert": {
+    "message": "Prémium tagságot a bitwarden.com webes széfén tudsz venni. Szeretnéd meglátogatni a most a weboldalt?"
   },
-  "premiumCurrentMember":{
-    "message":"Te egy prémium tag vagy!"
+  "premiumCurrentMember": {
+    "message": "Te egy prémium tag vagy!"
   },
-  "premiumCurrentMemberThanks":{
-    "message":"Köszönjük, hogy támogatod a bitwardent."
+  "premiumCurrentMemberThanks": {
+    "message": "Köszönjük, hogy támogatod a bitwardent."
   },
-  "premiumPrice":{
-    "message":"Mindez csak %price% évente!"
+  "premiumPrice": {
+    "message": "Mindez csak %price% évente!"
   },
-  "refreshComplete":{
-    "message":"Frissítés megtörtént"
+  "refreshComplete": {
+    "message": "Frissítés megtörtént"
   },
-  "disableAutoTotpCopy":{
-    "message":"Automatikus TOTP másolás kikapcsolása"
+  "disableAutoTotpCopy": {
+    "message": "Automatikus TOTP másolás kikapcsolása"
   },
-  "disableAutoTotpCopyDesc":{
-    "message":"Ha a bejelentkezésedhez csatolva van egy hitelesítő kód, a TOTP ellenőrző kód automatikusan másolva lesz a vágólapodra bejelentkezésed automatikus kitöltése esetén."
+  "disableAutoTotpCopyDesc": {
+    "message": "Ha a bejelentkezésedhez csatolva van egy hitelesítő kód, a TOTP ellenőrző kód automatikusan másolva lesz a vágólapodra bejelentkezésed automatikus kitöltése esetén."
   },
-  "premiumRequired":{
-    "message":"Prémium szükséges"
+  "premiumRequired": {
+    "message": "Prémium szükséges"
   },
-  "premiumRequiredDesc":{
-    "message":"Prémium tagság szükséges ennek a funkciónak eléréséhez."
+  "premiumRequiredDesc": {
+    "message": "Prémium tagság szükséges ennek a funkciónak eléréséhez."
   },
-  "enterVerificationCodeApp":{
-    "message":"Add meg a 6 számjegyű ellenőrző kódot a hitelesítő alkalmazásodból."
+  "enterVerificationCodeApp": {
+    "message": "Add meg a 6 számjegyű ellenőrző kódot a hitelesítő alkalmazásodból."
   },
-  "enterVerificationCodeEmail":{
-    "message":"Add meg a 6 számjegyű ellenőrző kódot ami el lett küldve neked e-mailben"
+  "enterVerificationCodeEmail": {
+    "message": "Add meg a 6 számjegyű ellenőrző kódot ami el lett küldve neked e-mailben"
   },
-  "rememberMe":{
-    "message":"Emlékezz rám"
+  "rememberMe": {
+    "message": "Emlékezz rám"
   },
-  "sendVerificationCodeEmailAgain":{
-    "message":"Megerősítő kód e-mail újra küldése"
+  "sendVerificationCodeEmailAgain": {
+    "message": "Megerősítő kód e-mail újra küldése"
   },
-  "useAnotherTwoStepMethod":{
-    "message":"Más két lépcsős bejelentkezés használata"
+  "useAnotherTwoStepMethod": {
+    "message": "Más két lépcsős bejelentkezés használata"
   },
-  "insertYubiKey":{
-    "message":"Illeszd be a YubiKey-t a számítógéped egyik USB portjába, majd nyomd meg a gombját."
+  "insertYubiKey": {
+    "message": "Illeszd be a YubiKey-t a számítógéped egyik USB portjába, majd nyomd meg a gombját."
   },
-  "insertU2f":{
-    "message":"Illesz be biztonsági kulcsod a számítógéped egyik USB portjába. Ha van rajta egy gomb, nyomd le."
+  "insertU2f": {
+    "message": "Illesz be biztonsági kulcsod a számítógéped egyik USB portjába. Ha van rajta egy gomb, nyomd le."
   },
-  "loginUnavailable":{
-    "message":"Bejelentkezés nem érhető el"
+  "loginUnavailable": {
+    "message": "Bejelentkezés nem érhető el"
   },
-  "noTwoStepProviders":{
-    "message":"Ezen a felhasználón engedélyezve van két lépcsős bejelentkezés, de ez a böngésző nem támogatja az egyik beállított két lépcsős szolgáltatót sem."
+  "noTwoStepProviders": {
+    "message": "Ezen a felhasználón engedélyezve van két lépcsős bejelentkezés, de ez a böngésző nem támogatja az egyik beállított két lépcsős szolgáltatót sem."
   },
-  "noTwoStepProviders2":{
-    "message":"Kérlek használj támogatott böngészőt (mint például a Chrome) és\/vagy adj hozzá jobban támogatott szolgáltatásokat melyek jobban támogatottak más böngészőkben is (mint például egy hitelesítő alkalmazás)."
+  "noTwoStepProviders2": {
+    "message": "Kérlek használj támogatott böngészőt (mint például a Chrome) és\/vagy adj hozzá jobban támogatott szolgáltatásokat melyek jobban támogatottak más böngészőkben is (mint például egy hitelesítő alkalmazás)."
   },
-  "twoStepOptions":{
-    "message":"Kétlépcsős bejelentkezés opciók"
+  "twoStepOptions": {
+    "message": "Kétlépcsős bejelentkezés opciók"
   },
-  "recoveryCodeDesc":{
-    "message":"Elvesztetted a hozzáférésed az összes kétlépcsős szolgáltatásodhoz? Használd a visszaállítókódod a kétlépcsős kiszolgálok kikapcsolásához a felhasználódon."
+  "recoveryCodeDesc": {
+    "message": "Elvesztetted a hozzáférésed az összes kétlépcsős szolgáltatásodhoz? Használd a visszaállítókódod a kétlépcsős kiszolgálok kikapcsolásához a felhasználódon."
   },
-  "recoveryCodeTitle":{
-    "message":"Helyreállító kód"
+  "recoveryCodeTitle": {
+    "message": "Helyreállító kód"
   },
-  "authenticatorAppTitle":{
-    "message":"Hitelesítő alkalmazás"
+  "authenticatorAppTitle": {
+    "message": "Hitelesítő alkalmazás"
   },
-  "authenticatorAppDesc":{
-    "message":"Használj egy másik alkalmazást (mint például az Authy vagy a Google Authenticator) idő alapú ellenőrzőkód generálásához.",
-    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDesc": {
+    "message": "Használj egy másik alkalmazást (mint például az Authy vagy a Google Authenticator) idő alapú ellenőrzőkód generálásához.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
-  "yubiKeyTitle":{
-    "message":"YubiKey OTP biztonsági kulcs"
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP biztonsági kulcs"
   },
-  "yubiKeyDesc":{
-    "message":"Használj egy YubiKey-t, hogy hozzá férhess a felhasználódhoz. Működik a YubiKey 4, 4 Nano, 4C, és NEO eszközökkel."
+  "yubiKeyDesc": {
+    "message": "Használj egy YubiKey-t, hogy hozzá férhess a felhasználódhoz. Működik a YubiKey 4, 4 Nano, 4C, és NEO eszközökkel."
   },
-  "duoDesc":{
-    "message":"Ellenőrizd Duo Security-val a Duo Mobile alkalmazás, SMS, telefon hívás vagy U2F biztonsági kulcs segítségével.",
-    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  "duoDesc": {
+    "message": "Ellenőrizd Duo Security-val a Duo Mobile alkalmazás, SMS, telefon hívás vagy U2F biztonsági kulcs segítségével.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc":{
-    "message":"Használj bármilyen FIDO U2F engedélyezett biztonsági kulcsot ennek a felhasználónak eléréséhez."
+  "u2fDesc": {
+    "message": "Használj bármilyen FIDO U2F engedélyezett biztonsági kulcsot ennek a felhasználónak eléréséhez."
   },
-  "u2fTitle":{
-    "message":"FIDO U2F biztonsági kulcs"
+  "u2fTitle": {
+    "message": "FIDO U2F biztonsági kulcs"
   },
-  "emailTitle":{
-    "message":"E-mail"
+  "emailTitle": {
+    "message": "E-mail"
   },
-  "emailDesc":{
-    "message":"Ellenőrző kódok el lesznek e-mailbe küldve neked."
+  "emailDesc": {
+    "message": "Ellenőrző kódok el lesznek e-mailbe küldve neked."
   },
-  "selfHostedEnvironment":{
-    "message":"Magad hosztolt környezet"
+  "selfHostedEnvironment": {
+    "message": "Magad hosztolt környezet"
   },
-  "selfHostedEnvironmentFooter":{
-    "message":"Add meg az alap URL-t a helyileg hosztolt bitwarden telepítésedhez."
+  "selfHostedEnvironmentFooter": {
+    "message": "Add meg az alap URL-t a helyileg hosztolt bitwarden telepítésedhez."
   },
-  "customEnvironment":{
-    "message":"Egyéni környezet"
+  "customEnvironment": {
+    "message": "Egyéni környezet"
   },
-  "customEnvironmentFooter":{
-    "message":"Haladó felhasználóknak. Minden egyes szolgáltatás alap URL-jét külön megadhatod."
+  "customEnvironmentFooter": {
+    "message": "Haladó felhasználóknak. Minden egyes szolgáltatás alap URL-jét külön megadhatod."
   },
-  "baseUrl":{
-    "message":"Szerver URL"
+  "baseUrl": {
+    "message": "Szerver URL"
   },
-  "apiUrl":{
-    "message":"API szerver URL"
+  "apiUrl": {
+    "message": "API szerver URL"
   },
-  "webVaultUrl":{
-    "message":"Webes széf szerver URL"
+  "webVaultUrl": {
+    "message": "Webes széf szerver URL"
   },
-  "identityUrl":{
-    "message":"Identitás szerver URL"
+  "identityUrl": {
+    "message": "Identitás szerver URL"
   },
-  "environmentSaved":{
-    "message":"A környezet URL-ek mentésre kerültek."
+  "iconsUrl": {
+    "message": "Icons Server URL"
   },
-  "enableAutoFillOnPageLoad":{
-    "message":"Automatikus kitöltés engedélyezése oldal betöltéskor"
+  "environmentSaved": {
+    "message": "A környezet URL-ek mentésre kerültek."
   },
-  "enableAutoFillOnPageLoadDesc":{
-    "message":"Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat az oldal betöltésekor."
+  "enableAutoFillOnPageLoad": {
+    "message": "Automatikus kitöltés engedélyezése oldal betöltéskor"
   },
-  "experimentalFeature":{
-    "message":"Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "Ha egy bejelentkezési űrlap észlelésre került, automatikusan töltse ki az adatokat az oldal betöltésekor."
   },
-  "commandAutofillDesc":{
-    "message":"Automatikusan töltse ki az utólag használt bejelentkezést ezen a weboldalon."
+  "experimentalFeature": {
+    "message": "Ez jelenleg egy kísérleti funkció. Csak saját felelősségedre használd."
   },
-  "commandGeneratePasswordDesc":{
-    "message":"Generálj és másolj egy új véletlenszerű jelszót a vágólapra."
+  "commandAutofillDesc": {
+    "message": "Automatikusan töltse ki az utólag használt bejelentkezést ezen a weboldalon."
   },
-  "privateModeMessage":{
-    "message":"Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
+  "commandGeneratePasswordDesc": {
+    "message": "Generálj és másolj egy új véletlenszerű jelszót a vágólapra."
   },
-  "customFields":{
-    "message":"Egyedi mezők"
+  "privateModeMessage": {
+    "message": "Ebben a böngészőben ez az ablak sajnos nem érhető el privát módban."
   },
-  "copyValue":{
-    "message":"Érték másolása"
+  "customFields": {
+    "message": "Egyedi mezők"
   },
-  "toggleValue":{
-    "message":"Érték megjelenítése"
+  "copyValue": {
+    "message": "Érték másolása"
   },
-  "value":{
-    "message":"Érték"
+  "toggleValue": {
+    "message": "Érték megjelenítése"
   },
-  "newCustomField":{
-    "message":"Új egyedi mező"
+  "value": {
+    "message": "Érték"
   },
-  "cfTypeText":{
-    "message":"Szöveg"
+  "newCustomField": {
+    "message": "Új egyedi mező"
   },
-  "cfTypeHidden":{
-    "message":"Rejtett"
+  "cfTypeText": {
+    "message": "Szöveg"
   },
-  "cfTypeBoolean":{
-    "message":"Boolean (Logikai)"
+  "cfTypeHidden": {
+    "message": "Rejtett"
   },
-  "popup2faCloseMessage":{
-    "message":"Az ellenőrző kódot tartalmazó email egy olyan felugró ablakban nyílik meg, mely a mellette levő területre kattinva bezáródik. Szeretnéd az emailt egy olyan ablakban megnyitni, ami nem záródhat így be?"
+  "cfTypeBoolean": {
+    "message": "Boolean (Logikai)"
   },
-  "disableFavicon":{
-    "message":"Disable Website Icons"
+  "popup2faCloseMessage": {
+    "message": "Az ellenőrző kódot tartalmazó email egy olyan felugró ablakban nyílik meg, mely a mellette levő területre kattinva bezáródik. Szeretnéd az emailt egy olyan ablakban megnyitni, ami nem záródhat így be?"
   },
-  "disableFaviconDesc":{
-    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  "disableFavicon": {
+    "message": "Honlap ikonok letiltása"
   },
-  "cardholderName":{
-    "message":"Cardholder Name"
+  "disableFaviconDesc": {
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
-  "number":{
-    "message":"Number"
+  "cardholderName": {
+    "message": "Kártyatulajdonos neve"
   },
-  "brand":{
-    "message":"Brand"
+  "number": {
+    "message": "Szám"
   },
-  "expirationMonth":{
-    "message":"Expiration Month"
+  "brand": {
+    "message": "Márka"
   },
-  "expirationYear":{
-    "message":"Expiration Year"
+  "expirationMonth": {
+    "message": "Lejárati hónap"
   },
-  "expiration":{
-    "message":"Expiration"
+  "expirationYear": {
+    "message": "Lejárati év"
   },
-  "january":{
-    "message":"January"
+  "expiration": {
+    "message": "Lejárat"
   },
-  "february":{
-    "message":"February"
+  "january": {
+    "message": "Január"
   },
-  "march":{
-    "message":"March"
+  "february": {
+    "message": "Február"
   },
-  "april":{
-    "message":"April"
+  "march": {
+    "message": "Március"
   },
-  "may":{
-    "message":"May"
+  "april": {
+    "message": "Április"
   },
-  "june":{
-    "message":"June"
+  "may": {
+    "message": "Május"
   },
-  "july":{
-    "message":"July"
+  "june": {
+    "message": "Június"
   },
-  "august":{
-    "message":"August"
+  "july": {
+    "message": "Július"
   },
-  "september":{
-    "message":"September"
+  "august": {
+    "message": "Augusztus"
   },
-  "october":{
-    "message":"October"
+  "september": {
+    "message": "Szeptember"
   },
-  "november":{
-    "message":"November"
+  "october": {
+    "message": "Október"
   },
-  "december":{
-    "message":"December"
+  "november": {
+    "message": "November"
   },
-  "securityCode":{
-    "message":"Security Code"
+  "december": {
+    "message": "December"
   },
-  "ex":{
-    "message":"ex."
+  "securityCode": {
+    "message": "Biztonsági Kód"
   },
-  "title":{
-    "message":"Title"
+  "ex": {
+    "message": "pl."
   },
-  "mr":{
-    "message":"Mr"
+  "title": {
+    "message": "Titulus"
   },
-  "mrs":{
-    "message":"Mrs"
+  "mr": {
+    "message": "Úr"
   },
-  "ms":{
-    "message":"Ms"
+  "mrs": {
+    "message": "Asszony"
   },
-  "dr":{
-    "message":"Dr"
+  "ms": {
+    "message": "Kisasszony"
   },
-  "firstName":{
-    "message":"First Name"
+  "dr": {
+    "message": "Dr"
   },
-  "middleName":{
-    "message":"Middle Name"
+  "firstName": {
+    "message": "Keresztnév"
   },
-  "lastName":{
-    "message":"Last Name"
+  "middleName": {
+    "message": "Középső név"
   },
-  "identityName":{
-    "message":"Identity Name"
+  "lastName": {
+    "message": "Családnév"
   },
-  "company":{
-    "message":"Company"
+  "identityName": {
+    "message": "Identitásnév"
   },
-  "ssn":{
-    "message":"Social Security Number"
+  "company": {
+    "message": "Cég"
   },
-  "passportNumber":{
-    "message":"Passport Number"
+  "ssn": {
+    "message": "Társadalombiztosítási szám"
   },
-  "licenseNumber":{
-    "message":"License Number"
+  "passportNumber": {
+    "message": "Útlevélszám"
   },
-  "email":{
-    "message":"Email"
+  "licenseNumber": {
+    "message": "Vezetői engedély száma"
   },
-  "phone":{
-    "message":"Phone"
+  "email": {
+    "message": "E-mail"
   },
-  "address":{
-    "message":"Address"
+  "phone": {
+    "message": "Telefonszám"
   },
-  "address1":{
-    "message":"Address 1"
+  "address": {
+    "message": "Lakcím"
   },
-  "address2":{
-    "message":"Address 2"
+  "address1": {
+    "message": "Cím 1"
   },
-  "address3":{
-    "message":"Address 3"
+  "address2": {
+    "message": "Cím 2"
   },
-  "cityTown":{
-    "message":"City \/ Town"
+  "address3": {
+    "message": "Cím 3"
   },
-  "stateProvince":{
-    "message":"State \/ Province"
+  "cityTown": {
+    "message": "Település neve"
   },
-  "zipPostalCode":{
-    "message":"Zip \/ Postal Code"
+  "stateProvince": {
+    "message": "Megye"
   },
-  "country":{
-    "message":"Country"
+  "zipPostalCode": {
+    "message": "Irányítószám"
   },
-  "type":{
-    "message":"Type"
+  "country": {
+    "message": "Ország"
   },
-  "typeLogin":{
-    "message":"Login"
+  "type": {
+    "message": "Típus"
   },
-  "typeLogins":{
-    "message":"Logins"
+  "typeLogin": {
+    "message": "Bejelentkezés"
   },
-  "typeSecureNote":{
-    "message":"Secure Note"
+  "typeLogins": {
+    "message": "Bejelentkezések"
   },
-  "typeCard":{
-    "message":"Card"
+  "typeSecureNote": {
+    "message": "Biztonságos jegyzet"
   },
-  "typeIdentity":{
-    "message":"Identity"
+  "typeCard": {
+    "message": "Kártya"
   },
-  "passwordHistory":{
-    "message":"Password History"
+  "typeIdentity": {
+    "message": "Személyazonosság"
   },
-  "back":{
-    "message":"Back"
+  "passwordHistory": {
+    "message": "Jelszó előzmények"
+  },
+  "back": {
+    "message": "Vissza"
   }
 }

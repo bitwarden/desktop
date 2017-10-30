@@ -126,14 +126,14 @@
   <data name="Description" xml:space="preserve">
     <value>bitwarden este cea mai ușoară și cea mai sigură metodă de a stoca toate datele de autentificare și parolele dvs. păstrându-le în același timp sincronizate între toate dispozitivele dvs.
 
-Furtul de parole este o problemă serioasă. Saiturile web și aplicațiile pe care le utilizați sunt atacate în fiecare zi. Se înregistrează încălcări ale securității și parolele dvs. sunt furate. Când reutilizați aceleași parole pe aplicații și saituri web, hackerii pot accesa cu ușurință emailurile, conturile bancare și alte conturi importante.
+Furtul de parole este o problemă serioasă. Saiturile web și aplicațiile pe care le utilizați sunt atacate în fiecare zi. Se înregistrează încălcări ale securității și parolele dvs. sunt furate. Când reutilizați aceleași parole pe aplicații și saituri web, hackerii pot accesa cu ușurință e-mailurile, conturile bancare și alte conturi importante.
 
 Experții în securitate vă recomandă să utilizați câte o parolă diferită, generată aleatoriu, pentru fiecare cont pe care îl utilizați. Dar cum veți gestiona toate aceste parole? bitwarden vă ușurează crearea, stocarea și accesarea parolelor dvs.
 
 bitwarden stochează toate date dvs. de autentificare într-un seif criptat care se sincronizează pe toate dispozitivele dvs. Deoarece seiful este complet criptat înainte de a fi transmis prin internet, numai dvs. aveți acces la date. Nici măcar echipa bitwarden nu poate citi datele dvs. chiar dacă ar dori. Datele dvs. sunt codificate prin criptare AES-256, salted hashing și PBKDF2 SHA-256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Un manager de parole sigur și gratuit pentru toate dispozitivele dvs</value>
+    <value>Un manager de parole sigur și gratuit, pentru toate dispozitivele dvs.</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
     <value>Sincronizează și accesează seiful dvs. de pe multiple dispozitive</value>
@@ -142,15 +142,15 @@ bitwarden stochează toate date dvs. de autentificare într-un seif criptat care
     <value>Gestionează toate datele de autentificare și parolele dintr-un seif securizat</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Auto-completează rapid datele dvs. de autentificare în orice sait web pe care îl vizitați</value>
+    <value>Completează automat și rapid datele dvs. de autentificare în orice sait web pe care îl vizitați</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Seiful dvs. este, de asemenea, accesibil într-un mod convenabil din meniul contextual</value>
+    <value>Asigură accesarea seifului dvs., într-un mod convenabil, din meniul contextual</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
     <value>Generează automat parole sigure, aleatoare și puternice</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Informațiile dvs. sunt gestionate în siguranța folosind criptarea AES pe 256 de biți</value>
+    <value>Gestionează informațiile dvs. în siguranța folosind criptarea AES pe 256 de biți</value>
   </data>
 </root>

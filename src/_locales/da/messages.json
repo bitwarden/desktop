@@ -1,957 +1,960 @@
 {
-  "appName":{
-    "message":"bitwarden"
+  "appName": {
+    "message": "bitwarden"
   },
-  "extName":{
-    "message":"bitwarden - Gratis Adgangskode Administrator",
-    "description":"Extension name"
+  "extName": {
+    "message": "bitwarden - Gratis Adgangskode Administrator",
+    "description": "Extension name"
   },
-  "extDesc":{
-    "message":"bitwarden er en sikker og gratis adgangskode administrator for alle dine enheder.",
-    "description":"Extension description"
+  "extDesc": {
+    "message": "bitwarden er en sikker og gratis adgangskode administrator for alle dine enheder.",
+    "description": "Extension description"
   },
-  "loginOrCreateNewAccount":{
-    "message":"Log ind eller opret en ny konto for at få adgang til din sikre boks."
+  "loginOrCreateNewAccount": {
+    "message": "Log ind eller opret en ny konto for at få adgang til din sikre boks."
   },
-  "createAccount":{
-    "message":"Opret Konto"
+  "createAccount": {
+    "message": "Opret Konto"
   },
-  "login":{
-    "message":"Log Ind"
+  "login": {
+    "message": "Log Ind"
   },
-  "cancel":{
-    "message":"Annuller"
+  "cancel": {
+    "message": "Annuller"
   },
-  "close":{
-    "message":"Luk"
+  "close": {
+    "message": "Luk"
   },
-  "submit":{
-    "message":"Bekræft"
+  "submit": {
+    "message": "Bekræft"
   },
-  "emailAddress":{
-    "message":"E-post Adresse"
+  "emailAddress": {
+    "message": "E-post Adresse"
   },
-  "masterPass":{
-    "message":"Hovedadgangskode"
+  "masterPass": {
+    "message": "Hovedadgangskode"
   },
-  "masterPassDesc":{
-    "message":"Hovedadgangskoden er den adgangskode, du bruger til at få adgang til din boks. Det er meget vigtigt, at du ikke glemmer din hovedadgangskode. Der er ingen måde at genoprette koden i tilfælde af at du glemmer det."
+  "masterPassDesc": {
+    "message": "Hovedadgangskoden er den adgangskode, du bruger til at få adgang til din boks. Det er meget vigtigt, at du ikke glemmer din hovedadgangskode. Der er ingen måde at genoprette koden i tilfælde af at du glemmer det."
   },
-  "masterPassHintDesc":{
-    "message":"Et tip til hovedeadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer det."
+  "masterPassHintDesc": {
+    "message": "Et tip til hovedeadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer det."
   },
-  "reTypeMasterPass":{
-    "message":"Bekræft hovedadgangskode"
+  "reTypeMasterPass": {
+    "message": "Bekræft hovedadgangskode"
   },
-  "masterPassHint":{
-    "message":"Hovedadgangskode tip (valgfri)"
+  "masterPassHint": {
+    "message": "Hovedadgangskode tip (valgfri)"
   },
-  "tab":{
-    "message":"Fane"
+  "tab": {
+    "message": "Fane"
   },
-  "myVault":{
-    "message":"Min Boks"
+  "myVault": {
+    "message": "Min Boks"
   },
-  "tools":{
-    "message":"Værktøjer"
+  "tools": {
+    "message": "Værktøjer"
   },
-  "settings":{
-    "message":"Indstillinger"
+  "settings": {
+    "message": "Indstillinger"
   },
-  "currentTab":{
-    "message":"Aktuel Fane"
+  "currentTab": {
+    "message": "Aktuel Fane"
   },
-  "copyPassword":{
-    "message":"Kopier Adgangskode"
+  "copyPassword": {
+    "message": "Kopier Adgangskode"
   },
-  "copyUri":{
-    "message":"Copy URI"
+  "copyUri": {
+    "message": "Kopier URI"
   },
-  "copyUsername":{
-    "message":"Kopier Brugernavn"
+  "copyUsername": {
+    "message": "Kopier Brugernavn"
   },
-  "copyNumber":{
-    "message":"Copy Number"
+  "copyNumber": {
+    "message": "Kopier Nummer"
   },
-  "copySecurityCode":{
-    "message":"Copy Security Code"
+  "copySecurityCode": {
+    "message": "Kopier Sikkerhedskode"
   },
-  "autoFill":{
-    "message":"Auto-fyld"
+  "autoFill": {
+    "message": "Auto-fyld"
   },
-  "generatePasswordCopied":{
-    "message":"Generer Adgangskode (kopieret)"
+  "generatePasswordCopied": {
+    "message": "Generer Adgangskode (kopieret)"
   },
-  "noMatchingLogins":{
-    "message":"Ingen matchende logins."
+  "noMatchingLogins": {
+    "message": "Ingen matchende logins."
   },
-  "vaultLocked":{
-    "message":"Boksen er låst."
+  "vaultLocked": {
+    "message": "Boksen er låst."
   },
-  "autoFillInfo":{
-    "message":"Der findes ingen logins til auto-fyld for den nuværende browserfane."
+  "autoFillInfo": {
+    "message": "Der findes ingen logins til auto-fyld for den nuværende browserfane."
   },
-  "addLogin":{
-    "message":"Tilføj et Login"
+  "addLogin": {
+    "message": "Tilføj et Login"
   },
-  "addItem":{
-    "message":"Add Item"
+  "addItem": {
+    "message": "Tilføj Emne"
   },
-  "passwordHint":{
-    "message":"Adgangskodetip"
+  "passwordHint": {
+    "message": "Adgangskodetip"
   },
-  "enterEmailToGetHint":{
-    "message":"Indtast din kontos e-post adresse for at modtage din hovedadgangskodetip."
+  "enterEmailToGetHint": {
+    "message": "Indtast din kontos e-post adresse for at modtage din hovedadgangskodetip."
   },
-  "getMasterPasswordHint":{
-    "message":"Få hovedadgangskodetip"
+  "getMasterPasswordHint": {
+    "message": "Få hovedadgangskodetip"
   },
-  "continue":{
-    "message":"Forsæt"
+  "continue": {
+    "message": "Forsæt"
   },
-  "verificationCode":{
-    "message":"Bekræftelseskode"
+  "verificationCode": {
+    "message": "Bekræftelseskode"
   },
-  "account":{
-    "message":"Konto"
+  "account": {
+    "message": "Konto"
   },
-  "changeMasterPassword":{
-    "message":"Skift Hovedadgangskode"
+  "changeMasterPassword": {
+    "message": "Skift Hovedadgangskode"
   },
-  "changeEmail":{
-    "message":"Skift E-postadresse"
+  "changeEmail": {
+    "message": "Skift E-postadresse"
   },
-  "twoStepLogin":{
-    "message":"To-trins Login"
+  "twoStepLogin": {
+    "message": "To-trins Login"
   },
-  "logOut":{
-    "message":"Log Ud"
+  "logOut": {
+    "message": "Log Ud"
   },
-  "about":{
-    "message":"Om"
+  "about": {
+    "message": "Om"
   },
-  "version":{
-    "message":"Version"
+  "version": {
+    "message": "Version"
   },
-  "save":{
-    "message":"Gem"
+  "save": {
+    "message": "Gem"
   },
-  "addFolder":{
-    "message":"Tilføj Mappe"
+  "addFolder": {
+    "message": "Tilføj Mappe"
   },
-  "name":{
-    "message":"Navn"
+  "name": {
+    "message": "Navn"
   },
-  "editFolder":{
-    "message":"Rediger Mappe"
+  "editFolder": {
+    "message": "Rediger Mappe"
   },
-  "deleteFolder":{
-    "message":"Slet Mappe"
+  "deleteFolder": {
+    "message": "Slet Mappe"
   },
-  "folders":{
-    "message":"Mapper"
+  "folders": {
+    "message": "Mapper"
   },
-  "noFolders":{
-    "message":"Der er ingen mapper at vise."
+  "noFolders": {
+    "message": "Der er ingen mapper at vise."
   },
-  "helpFeedback":{
-    "message":"Hjælp & Feedback"
+  "helpFeedback": {
+    "message": "Hjælp & Feedback"
   },
-  "emailUs":{
-    "message":"Email Os"
+  "emailUs": {
+    "message": "Email Os"
   },
-  "emailUsDirectly":{
-    "message":"Email os direkte for at få hjælp eller give feedback."
+  "emailUsDirectly": {
+    "message": "Email os direkte for at få hjælp eller give feedback."
   },
-  "visitOurWebsite":{
-    "message":"Besøg Vores Hjemmeside"
+  "visitOurWebsite": {
+    "message": "Besøg Vores Hjemmeside"
   },
-  "visitOurWebsiteDirectly":{
-    "message":"Besøg vores hjemmeside for at få hjælp, nyheder, send os en e-mail og\/eller lære mere om hvordan du bruger bitwarden."
+  "visitOurWebsiteDirectly": {
+    "message": "Besøg vores hjemmeside for at få hjælp, nyheder, send os en e-mail og\/eller lære mere om hvordan du bruger bitwarden."
   },
-  "fileBugReport":{
-    "message":"Indsend en Fejlrapport"
+  "fileBugReport": {
+    "message": "Indsend en Fejlrapport"
   },
-  "gitHubIssue":{
-    "message":"Åbn et emne på vores GitHub opbevaringssted."
+  "gitHubIssue": {
+    "message": "Åbn et emne på vores GitHub opbevaringssted."
   },
-  "sync":{
-    "message":"Synkroniser"
+  "sync": {
+    "message": "Synkroniser"
   },
-  "syncVaultNow":{
-    "message":"Synkroniser Boksen Nu"
+  "syncVaultNow": {
+    "message": "Synkroniser Boksen Nu"
   },
-  "lastSync":{
-    "message":"Sidst Synkroniseret:"
+  "lastSync": {
+    "message": "Sidst Synkroniseret:"
   },
-  "passGen":{
-    "message":"Adgangskodegenerator"
+  "passGen": {
+    "message": "Adgangskodegenerator"
   },
-  "passGenInfo":{
-    "message":"Automatisk generere stærke, unikke adgangskoder til dine logins."
+  "passGenInfo": {
+    "message": "Automatisk generere stærke, unikke adgangskoder til dine logins."
   },
-  "bitWebVault":{
-    "message":"bitwarden Web Boks"
+  "bitWebVault": {
+    "message": "bitwarden Web Boks"
   },
-  "bitWebVaultInfo":{
-    "message":"Administrere dine logins fra enhver webbrowser med bitwarden web boks."
+  "bitWebVaultInfo": {
+    "message": "Administrere dine logins fra enhver webbrowser med bitwarden web boks."
   },
-  "bitIosVault":{
-    "message":"bitwarden iOS Boks"
+  "bitIosVault": {
+    "message": "bitwarden iOS Boks"
   },
-  "bitIosVaultInfo":{
-    "message":"Administrere dine logins fra dine mobile enheder med bitwarden iOS boks."
+  "bitIosVaultInfo": {
+    "message": "Administrere dine logins fra dine mobile enheder med bitwarden iOS boks."
   },
-  "bitAndrVault":{
-    "message":"bitwarden Android Boks"
+  "bitAndrVault": {
+    "message": "bitwarden Android Boks"
   },
-  "bitAndrVaultInfo":{
-    "message":"Administrere dine logins fra dine mobile enheder med bitwarden Android boks."
+  "bitAndrVaultInfo": {
+    "message": "Administrere dine logins fra dine mobile enheder med bitwarden Android boks."
   },
-  "importItems":{
-    "message":"Import Items"
+  "importItems": {
+    "message": "Importer Emner"
   },
-  "importItemsInfo":{
-    "message":"Quickly bulk import your items from other password management applications."
+  "importItemsInfo": {
+    "message": "Quickly bulk import your items from other password management applications."
   },
-  "select":{
-    "message":"Vælg"
+  "select": {
+    "message": "Vælg"
   },
-  "generatePassword":{
-    "message":"Generere Adgangskode"
+  "generatePassword": {
+    "message": "Generere Adgangskode"
   },
-  "regeneratePassword":{
-    "message":"Regenerere Adgangskode"
+  "regeneratePassword": {
+    "message": "Regenerere Adgangskode"
   },
-  "options":{
-    "message":"Indstillinger"
+  "options": {
+    "message": "Indstillinger"
   },
-  "length":{
-    "message":"Længde"
+  "length": {
+    "message": "Længde"
   },
-  "minNumbers":{
-    "message":"Mindste Antal Tal"
+  "minNumbers": {
+    "message": "Mindste Antal Tal"
   },
-  "minSpecial":{
-    "message":"Mindste Antal Special"
+  "minSpecial": {
+    "message": "Mindste Antal Special"
   },
-  "avoidAmbChar":{
-    "message":"Undgå tvetydige figurer"
+  "avoidAmbChar": {
+    "message": "Undgå tvetydige figurer"
   },
-  "searchVault":{
-    "message":"Søg i Boksen"
+  "searchVault": {
+    "message": "Søg i Boksen"
   },
-  "edit":{
-    "message":"Redigér"
+  "edit": {
+    "message": "Redigér"
   },
-  "view":{
-    "message":"View"
+  "view": {
+    "message": "View"
   },
-  "noItemsInList":{
-    "message":"There are no items to list."
+  "noItemsInList": {
+    "message": "There are no items to list."
   },
-  "itemInformation":{
-    "message":"Item Information"
+  "itemInformation": {
+    "message": "Item Information"
   },
-  "username":{
-    "message":"Brugernavn"
+  "username": {
+    "message": "Brugernavn"
   },
-  "password":{
-    "message":"Adgangskode"
+  "password": {
+    "message": "Adgangskode"
   },
-  "favorite":{
-    "message":"Favorit"
+  "favorite": {
+    "message": "Favorit"
   },
-  "notes":{
-    "message":"Noter"
+  "notes": {
+    "message": "Noter"
   },
-  "editItem":{
-    "message":"Edit Item"
+  "editItem": {
+    "message": "Edit Item"
   },
-  "folder":{
-    "message":"Mappe"
+  "folder": {
+    "message": "Mappe"
   },
-  "deleteItem":{
-    "message":"Delete Item"
+  "deleteItem": {
+    "message": "Delete Item"
   },
-  "viewItem":{
-    "message":"View Item"
+  "viewItem": {
+    "message": "View Item"
   },
-  "launchWebsite":{
-    "message":"Åben Hjemmeside"
+  "launchWebsite": {
+    "message": "Åben Hjemmeside"
   },
-  "website":{
-    "message":"Hjemmeside"
+  "website": {
+    "message": "Hjemmeside"
   },
-  "togglePassword":{
-    "message":"Skifte Adgangskode"
+  "togglePassword": {
+    "message": "Skifte Adgangskode"
   },
-  "manage":{
-    "message":"Administrer"
+  "manage": {
+    "message": "Administrer"
   },
-  "other":{
-    "message":"Andre"
+  "other": {
+    "message": "Andre"
   },
-  "disableGa":{
-    "message":"Deaktivere Analytics"
+  "disableGa": {
+    "message": "Deaktivere Analytics"
   },
-  "rateExtension":{
-    "message":"Vurder Udvidelsen"
+  "rateExtension": {
+    "message": "Vurder Udvidelsen"
   },
-  "rateExtensionDesc":{
-    "message":"Vil du overveje at hjælpe os med en god anmeldelse!"
+  "rateExtensionDesc": {
+    "message": "Vil du overveje at hjælpe os med en god anmeldelse!"
   },
-  "browserNotSupportClipboard":{
-    "message":"Din webbrowser understøtter ikke let udklipsholderen kopiering. Kopiere det manuelt i stedet."
+  "browserNotSupportClipboard": {
+    "message": "Din webbrowser understøtter ikke let udklipsholderen kopiering. Kopiere det manuelt i stedet."
   },
-  "verifyMasterPassword":{
-    "message":"Bekræft Hovedadgangskode"
+  "verifyMasterPassword": {
+    "message": "Bekræft Hovedadgangskode"
   },
-  "invalidMasterPassword":{
-    "message":"Ugyldig hovedadgangskode"
+  "invalidMasterPassword": {
+    "message": "Ugyldig hovedadgangskode"
   },
-  "lockOptions":{
-    "message":"Låseindstillinger"
+  "lockOptions": {
+    "message": "Låseindstillinger"
   },
-  "lockNow":{
-    "message":"Lås Nu"
+  "lockNow": {
+    "message": "Lås Nu"
   },
-  "immediately":{
-    "message":"Straks"
+  "immediately": {
+    "message": "Straks"
   },
-  "oneMinute":{
-    "message":"1 minut"
+  "oneMinute": {
+    "message": "1 minut"
   },
-  "fiveMinutes":{
-    "message":"5 minutter"
+  "fiveMinutes": {
+    "message": "5 minutter"
   },
-  "fifteenMinutes":{
-    "message":"15 minutter"
+  "fifteenMinutes": {
+    "message": "15 minutter"
   },
-  "thirtyMinutes":{
-    "message":"30 minutter"
+  "thirtyMinutes": {
+    "message": "30 minutter"
   },
-  "oneHour":{
-    "message":"1 time"
+  "oneHour": {
+    "message": "1 time"
   },
-  "fourHours":{
-    "message":"4 timer"
+  "fourHours": {
+    "message": "4 timer"
   },
-  "onLocked":{
-    "message":"Når Låst"
+  "onLocked": {
+    "message": "Når Låst"
   },
-  "onRestart":{
-    "message":"Ved Genstart"
+  "onRestart": {
+    "message": "Ved Genstart"
   },
-  "never":{
-    "message":"Aldrig"
+  "never": {
+    "message": "Aldrig"
   },
-  "security":{
-    "message":"Sikkerhed"
+  "security": {
+    "message": "Sikkerhed"
   },
-  "errorsOccurred":{
-    "message":"Der er opstået fejl"
+  "errorsOccurred": {
+    "message": "Der er opstået fejl"
   },
-  "emailRequired":{
-    "message":"E-post adresse er påkrævet."
+  "emailRequired": {
+    "message": "E-post adresse er påkrævet."
   },
-  "invalidEmail":{
-    "message":"Ugyldig e-post adresse."
+  "invalidEmail": {
+    "message": "Ugyldig e-post adresse."
   },
-  "masterPassRequired":{
-    "message":"Hovedadgangskode er påkrævet."
+  "masterPassRequired": {
+    "message": "Hovedadgangskode er påkrævet."
   },
-  "masterPassLength":{
-    "message":"Hovedadgangskode skal være mindst 8 tegn."
+  "masterPassLength": {
+    "message": "Hovedadgangskode skal være mindst 8 tegn."
   },
-  "masterPassDoesntMatch":{
-    "message":"De to adgangskoder matcher ikke."
+  "masterPassDoesntMatch": {
+    "message": "De to adgangskoder matcher ikke."
   },
-  "newAccountCreated":{
-    "message":"Din nye konto er oprettet! Du kan nu logge ind."
+  "newAccountCreated": {
+    "message": "Din nye konto er oprettet! Du kan nu logge ind."
   },
-  "masterPassSent":{
-    "message":"Vi har sendt dig en e-mail med dit hovedadgangskodetip."
+  "masterPassSent": {
+    "message": "Vi har sendt dig en e-mail med dit hovedadgangskodetip."
   },
-  "verificationCodeRequired":{
-    "message":"Bekræftelseskode er påkrævet."
+  "verificationCodeRequired": {
+    "message": "Bekræftelseskode er påkrævet."
   },
-  "valueCopied":{
-    "message":" kopieret",
-    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  "valueCopied": {
+    "message": " kopieret",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
-  "autofillError":{
-    "message":"Ikke i stand til at auto-udfylde den valgte login på denne side. Kopier\/Indsæt dit Brugernavn og\/eller adgangskoden i stedet."
+  "autofillError": {
+    "message": "Ikke i stand til at auto-udfylde den valgte login på denne side. Kopier\/Indsæt dit Brugernavn og\/eller adgangskoden i stedet."
   },
-  "loggedOut":{
-    "message":"Logget ud"
+  "loggedOut": {
+    "message": "Logget ud"
   },
-  "loginExpired":{
-    "message":"Din login-session er udløbet."
+  "loginExpired": {
+    "message": "Din login-session er udløbet."
   },
-  "logOutConfirmation":{
-    "message":"Er du sikker på, du vil logge ud?"
+  "logOutConfirmation": {
+    "message": "Er du sikker på, du vil logge ud?"
   },
-  "yes":{
-    "message":"Ja"
+  "yes": {
+    "message": "Ja"
   },
-  "no":{
-    "message":"Nej"
+  "no": {
+    "message": "Nej"
   },
-  "unexpectedError":{
-    "message":"Der opstod en uventet fejl."
+  "unexpectedError": {
+    "message": "Der opstod en uventet fejl."
   },
-  "nameRequired":{
-    "message":"Navn er påkrævet."
+  "nameRequired": {
+    "message": "Navn er påkrævet."
   },
-  "addedFolder":{
-    "message":"Tilføjede mappe"
+  "addedFolder": {
+    "message": "Tilføjede mappe"
   },
-  "changeMasterPass":{
-    "message":"Ændre Hovedadgangskode"
+  "changeMasterPass": {
+    "message": "Ændre Hovedadgangskode"
   },
-  "changeMasterPasswordConfirmation":{
-    "message":"Du kan ændre din hovedadgangskode på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
+  "changeMasterPasswordConfirmation": {
+    "message": "Du kan ændre din hovedadgangskode på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
   },
-  "changeEmailConfirmation":{
-    "message":"Du kan ændre din e-mail adresse på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
+  "changeEmailConfirmation": {
+    "message": "Du kan ændre din e-mail adresse på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
   },
-  "twoStepLoginConfirmation":{
-    "message":"To-trins login gør din konto mere sikker ved at kræve du verificere dit login med en anden enhed med en sikkerhedsnøgle, autentificering app, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
+  "twoStepLoginConfirmation": {
+    "message": "To-trins login gør din konto mere sikker ved at kræve du verificere dit login med en anden enhed med en sikkerhedsnøgle, autentificering app, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
   },
-  "loggingOut":{
-    "message":"Logger ud"
+  "loggingOut": {
+    "message": "Logger ud"
   },
-  "loggingOutConfirmation":{
-    "message":"Du har for nylig opdateret fra en ældre version. Du skal igen logge ind for at ændre din låseindstillinger. Vil du logge af nu?"
+  "loggingOutConfirmation": {
+    "message": "Du har for nylig opdateret fra en ældre version. Du skal igen logge ind for at ændre din låseindstillinger. Vil du logge af nu?"
   },
-  "editedFolder":{
-    "message":"Redigerede Mappe"
+  "editedFolder": {
+    "message": "Redigerede Mappe"
   },
-  "deleteFolderConfirmation":{
-    "message":"Er du sikker på du vil slette denne mappe?"
+  "deleteFolderConfirmation": {
+    "message": "Er du sikker på du vil slette denne mappe?"
   },
-  "deletedFolder":{
-    "message":"Slettede mappe"
+  "deletedFolder": {
+    "message": "Slettede mappe"
   },
-  "gettingStartedTutorial":{
-    "message":"Sådan Kommer Du I Gang"
+  "gettingStartedTutorial": {
+    "message": "Sådan Kommer Du I Gang"
   },
-  "gettingStartedTutorialVideo":{
-    "message":"Se vores Introduktion for at lære hvordan du får mest ud af browser-udvidelsen."
+  "gettingStartedTutorialVideo": {
+    "message": "Se vores Introduktion for at lære hvordan du får mest ud af browser-udvidelsen."
   },
-  "syncingComplete":{
-    "message":"Synkronisering komplet"
+  "syncingComplete": {
+    "message": "Synkronisering komplet"
   },
-  "syncingFailed":{
-    "message":"Synkronisering mislykkedes"
+  "syncingFailed": {
+    "message": "Synkronisering mislykkedes"
   },
-  "importItemsConfirmation":{
-    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+  "importItemsConfirmation": {
+    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "passwordCopied":{
-    "message":"Adgangskode kopieret"
+  "passwordCopied": {
+    "message": "Adgangskode kopieret"
   },
-  "uri":{
-    "message":"URI"
+  "uri": {
+    "message": "URI"
   },
-  "addedItem":{
-    "message":"Added item"
+  "addedItem": {
+    "message": "Added item"
   },
-  "editedItem":{
-    "message":"Edited item"
+  "editedItem": {
+    "message": "Edited item"
   },
-  "deleteItemConfirmation":{
-    "message":"Are you sure you want to delete this item?"
+  "deleteItemConfirmation": {
+    "message": "Are you sure you want to delete this item?"
   },
-  "deletedItem":{
-    "message":"Deleted item"
+  "deletedItem": {
+    "message": "Deleted item"
   },
-  "overwritePassword":{
-    "message":"Overskriv Adgangskode"
+  "overwritePassword": {
+    "message": "Overskriv Adgangskode"
   },
-  "overwritePasswordConfirmation":{
-    "message":"Er du sikker du vil overskrive den aktuelle adgangskode?"
+  "overwritePasswordConfirmation": {
+    "message": "Er du sikker du vil overskrive den aktuelle adgangskode?"
   },
-  "credits":{
-    "message":"Tak til"
+  "credits": {
+    "message": "Tak til"
   },
-  "thankYou":{
-    "message":"Tak"
+  "thankYou": {
+    "message": "Tak"
   },
-  "translations":{
-    "message":"Oversættelser"
+  "translations": {
+    "message": "Oversættelser"
   },
-  "searchFolder":{
-    "message":"Søg mappe"
+  "searchFolder": {
+    "message": "Søg mappe"
   },
-  "noneFolder":{
-    "message":"Ingen Mappe",
-    "description":"This is the folder for uncategorized items"
+  "noneFolder": {
+    "message": "Ingen Mappe",
+    "description": "This is the folder for uncategorized items"
   },
-  "features":{
-    "message":"Funktioner"
+  "features": {
+    "message": "Funktioner"
   },
-  "gaDesc":{
-    "message":"Vi bruge analytics til at bedre lære hvordan udvidelsen bruges, således at vi kan gøre det bedre. Al dataindsamling er helt anonym."
+  "gaDesc": {
+    "message": "Vi bruge analytics til at bedre lære hvordan udvidelsen bruges, således at vi kan gøre det bedre. Al dataindsamling er helt anonym."
   },
-  "disableAddLoginNotification":{
-    "message":"Deaktiver Tilføj Login Notifikation"
+  "disableAddLoginNotification": {
+    "message": "Deaktiver Tilføj Login Notifikation"
   },
-  "addLoginNotificationDesc":{
-    "message":"\"Tilføje Login anmeldelse\" beder automatisk dig gemme nye login til din boks, hver gang du logger ind på dem for første gang."
+  "addLoginNotificationDesc": {
+    "message": "\"Tilføje Login anmeldelse\" beder automatisk dig gemme nye login til din boks, hver gang du logger ind på dem for første gang."
   },
-  "notificationAddDesc":{
-    "message":"Bør bitwarden huske denne adgangskode for dig?"
+  "notificationAddDesc": {
+    "message": "Bør bitwarden huske denne adgangskode for dig?"
   },
-  "notificationAddSave":{
-    "message":"Ja, Gem Nu"
+  "notificationAddSave": {
+    "message": "Ja, Gem Nu"
   },
-  "notificationNeverSave":{
-    "message":"Aldrig for denne hjemmeside"
+  "notificationNeverSave": {
+    "message": "Aldrig for denne hjemmeside"
   },
-  "disableContextMenuItem":{
-    "message":"Deaktivere Kontekst Menu Valgmuligheder"
+  "disableContextMenuItem": {
+    "message": "Deaktivere Kontekst Menu Valgmuligheder"
   },
-  "disableContextMenuItemDesc":{
-    "message":"Kontekst menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
+  "disableContextMenuItemDesc": {
+    "message": "Kontekst menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
   },
-  "exportVault":{
-    "message":"Eksporter Boks"
+  "exportVault": {
+    "message": "Eksporter Boks"
   },
-  "warning":{
-    "message":"ADVARSEL",
-    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  "warning": {
+    "message": "ADVARSEL",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning":{
-    "message":"Denne eksport indeholder din ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. e-mail). Slette det umiddelbart efter du er færdig med at bruge det."
+  "exportWarning": {
+    "message": "Denne eksport indeholder din ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. e-mail). Slette det umiddelbart efter du er færdig med at bruge det."
   },
-  "exportMasterPassword":{
-    "message":"Indtast din hovedadgangskode for at eksportere data fra boksen."
+  "exportMasterPassword": {
+    "message": "Indtast din hovedadgangskode for at eksportere data fra boksen."
   },
-  "exportVaultInfo":{
-    "message":"Eksportere dataene fra din boks i .csv-format, så du kan nemt redigere det eller flytte det til et andet sted."
+  "exportVaultInfo": {
+    "message": "Eksportere dataene fra din boks i .csv-format, så du kan nemt redigere det eller flytte det til et andet sted."
   },
-  "shared":{
-    "message":"Delt"
+  "shared": {
+    "message": "Delt"
   },
-  "shareVault":{
-    "message":"Del Din Boks"
+  "shareVault": {
+    "message": "Del Din Boks"
   },
-  "shareVaultInfo":{
-    "message":"Oprette en organisation for at sikkert dele dine logins med andre brugere."
+  "shareVaultInfo": {
+    "message": "Oprette en organisation for at sikkert dele dine logins med andre brugere."
   },
-  "contribute":{
-    "message":"Du kan også bidrage!"
+  "contribute": {
+    "message": "Du kan også bidrage!"
   },
-  "learnMore":{
-    "message":"Lær mere"
+  "learnMore": {
+    "message": "Lær mere"
   },
-  "authenticatorKeyTotp":{
-    "message":"Autentificering nøgle (TOTP)"
+  "authenticatorKeyTotp": {
+    "message": "Autentificering nøgle (TOTP)"
   },
-  "verificationCodeTotp":{
-    "message":"Bekræftelseskode (TOTP)"
+  "verificationCodeTotp": {
+    "message": "Bekræftelseskode (TOTP)"
   },
-  "copyVerificationCode":{
-    "message":"Kopiere Bekræftelseskoden"
+  "copyVerificationCode": {
+    "message": "Kopiere Bekræftelseskoden"
   },
-  "attachments":{
-    "message":"Vedhæftelser"
+  "attachments": {
+    "message": "Vedhæftelser"
   },
-  "deleteAttachment":{
-    "message":"Slet vedhæftelse"
+  "deleteAttachment": {
+    "message": "Slet vedhæftelse"
   },
-  "deleteAttachmentConfirmation":{
-    "message":"Er du sikker på du vil slette denne vedhæftelse?"
+  "deleteAttachmentConfirmation": {
+    "message": "Er du sikker på du vil slette denne vedhæftelse?"
   },
-  "deletedAttachment":{
-    "message":"Slettet vedhæftelse"
+  "deletedAttachment": {
+    "message": "Slettet vedhæftelse"
   },
-  "newAttachment":{
-    "message":"Tilføj Ny Vedhæftelse"
+  "newAttachment": {
+    "message": "Tilføj Ny Vedhæftelse"
   },
-  "noAttachments":{
-    "message":"Ingen vedhæftelser."
+  "noAttachments": {
+    "message": "Ingen vedhæftelser."
   },
-  "attachmentSaved":{
-    "message":"Den vedhæftede fil er blevet gemt."
+  "attachmentSaved": {
+    "message": "Den vedhæftede fil er blevet gemt."
   },
-  "file":{
-    "message":"Fil"
+  "file": {
+    "message": "Fil"
   },
-  "selectFile":{
-    "message":"Vælg en fil."
+  "selectFile": {
+    "message": "Vælg en fil."
   },
-  "maxFileSize":{
-    "message":"Maks fil størrelse er 100 MB."
+  "maxFileSize": {
+    "message": "Maks fil størrelse er 100 MB."
   },
-  "featureUnavailable":{
-    "message":"Funktionen Ikke Tilgængelig"
+  "featureUnavailable": {
+    "message": "Funktionen Ikke Tilgængelig"
   },
-  "updateKey":{
-    "message":"Du kan ikke bruge denne funktion, før du opdaterer din krypteringsnøgle."
+  "updateKey": {
+    "message": "Du kan ikke bruge denne funktion, før du opdaterer din krypteringsnøgle."
   },
-  "premiumMembership":{
-    "message":"Premium-medlemskab"
+  "premiumMembership": {
+    "message": "Premium-medlemskab"
   },
-  "premiumManage":{
-    "message":"Administrer Medlemsskab"
+  "premiumManage": {
+    "message": "Administrer Medlemsskab"
   },
-  "premiumManageAlert":{
-    "message":"Du kan administrere dit medlemskab på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
+  "premiumManageAlert": {
+    "message": "Du kan administrere dit medlemskab på bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
   },
-  "premiumRefresh":{
-    "message":"Opdater Medlemskab"
+  "premiumRefresh": {
+    "message": "Opdater Medlemskab"
   },
-  "premiumNotCurrentMember":{
-    "message":"Du er ikke i øjeblikket premium-medlem."
+  "premiumNotCurrentMember": {
+    "message": "Du er ikke i øjeblikket premium-medlem."
   },
-  "premiumSignUpAndGet":{
-    "message":"Tilmeld dig for et premium medlemskab og få:"
+  "premiumSignUpAndGet": {
+    "message": "Tilmeld dig for et premium medlemskab og få:"
   },
-  "ppremiumSignUpStorage":{
-    "message":"1 GB krypteret fil opbevaring."
+  "ppremiumSignUpStorage": {
+    "message": "1 GB krypteret fil opbevaring."
   },
-  "ppremiumSignUpTwoStep":{
-    "message":"Yderligere to-trins login muligheder såsom YubiKey, FIDO U2F og Duo."
+  "ppremiumSignUpTwoStep": {
+    "message": "Yderligere to-trins login muligheder såsom YubiKey, FIDO U2F og Duo."
   },
-  "ppremiumSignUpTotp":{
-    "message":"TOTP verifikations kode (2FA) generator for logon i din boks."
+  "ppremiumSignUpTotp": {
+    "message": "TOTP verifikations kode (2FA) generator for logon i din boks."
   },
-  "ppremiumSignUpSupport":{
-    "message":"Prioriteret kundeservice."
+  "ppremiumSignUpSupport": {
+    "message": "Prioriteret kundeservice."
   },
-  "ppremiumSignUpFuture":{
-    "message":"Alle fremtidige premium-funktioner. Mere kommer snart!"
+  "ppremiumSignUpFuture": {
+    "message": "Alle fremtidige premium-funktioner. Mere kommer snart!"
   },
-  "premiumPurchase":{
-    "message":"Køb Premium"
+  "premiumPurchase": {
+    "message": "Køb Premium"
   },
-  "premiumPurchaseAlert":{
-    "message":"Du kan købe premium-medlemskab på din bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
+  "premiumPurchaseAlert": {
+    "message": "Du kan købe premium-medlemskab på din bitwarden.com web boks. Vil du besøge hjemmesiden nu?"
   },
-  "premiumCurrentMember":{
-    "message":"Du er premium-medlem!"
+  "premiumCurrentMember": {
+    "message": "Du er premium-medlem!"
   },
-  "premiumCurrentMemberThanks":{
-    "message":"Tak for at støtte bitwarden."
+  "premiumCurrentMemberThanks": {
+    "message": "Tak for at støtte bitwarden."
   },
-  "premiumPrice":{
-    "message":"Alt for kun %price% \/år!"
+  "premiumPrice": {
+    "message": "Alt for kun %price% \/år!"
   },
-  "refreshComplete":{
-    "message":"Opdater komplet"
+  "refreshComplete": {
+    "message": "Opdater komplet"
   },
-  "disableAutoTotpCopy":{
-    "message":"Deaktivere Automatisk TOTP Kopi"
+  "disableAutoTotpCopy": {
+    "message": "Deaktivere Automatisk TOTP Kopi"
   },
-  "disableAutoTotpCopyDesc":{
-    "message":"Hvis dit login har en autentificerings nøgle knyttet til det, kopieres TOTP verifikations koden automatisk til din udklipsholder når du auto-udfylder login."
+  "disableAutoTotpCopyDesc": {
+    "message": "Hvis dit login har en autentificerings nøgle knyttet til det, kopieres TOTP verifikations koden automatisk til din udklipsholder når du auto-udfylder login."
   },
-  "premiumRequired":{
-    "message":"Premium Kræves"
+  "premiumRequired": {
+    "message": "Premium Kræves"
   },
-  "premiumRequiredDesc":{
-    "message":"Premium-medlemskab kræves for at anvende denne funktion."
+  "premiumRequiredDesc": {
+    "message": "Premium-medlemskab kræves for at anvende denne funktion."
   },
-  "enterVerificationCodeApp":{
-    "message":"Indtast 6 ciffer verifikations kode fra din autentificering app."
+  "enterVerificationCodeApp": {
+    "message": "Indtast 6 ciffer verifikations kode fra din autentificering app."
   },
-  "enterVerificationCodeEmail":{
-    "message":"Indtaste den 6 cifrede verifikations kode, der blev sendt til"
+  "enterVerificationCodeEmail": {
+    "message": "Indtaste den 6 cifrede verifikations kode, der blev sendt til"
   },
-  "rememberMe":{
-    "message":"Husk mig"
+  "rememberMe": {
+    "message": "Husk mig"
   },
-  "sendVerificationCodeEmailAgain":{
-    "message":"Send verifikations kode email igen"
+  "sendVerificationCodeEmailAgain": {
+    "message": "Send verifikations kode email igen"
   },
-  "useAnotherTwoStepMethod":{
-    "message":"Brug en anden to-trins login metode"
+  "useAnotherTwoStepMethod": {
+    "message": "Brug en anden to-trins login metode"
   },
-  "insertYubiKey":{
-    "message":"Indsæt din YubiKey i din computers USB-port, så tryk på knappen."
+  "insertYubiKey": {
+    "message": "Indsæt din YubiKey i din computers USB-port, så tryk på knappen."
   },
-  "insertU2f":{
-    "message":"Indsæt din sikkerhedsnøgle til computerens USB-port. Hvis den har en knap, tryk på den."
+  "insertU2f": {
+    "message": "Indsæt din sikkerhedsnøgle til computerens USB-port. Hvis den har en knap, tryk på den."
   },
-  "loginUnavailable":{
-    "message":"Login Ikke Tilgængelig"
+  "loginUnavailable": {
+    "message": "Login Ikke Tilgængelig"
   },
-  "noTwoStepProviders":{
-    "message":"Denne konto har to-trins login aktiveret, men ingen af de konfigurerede to-trins udbydere understøttes af denne webbrowser."
+  "noTwoStepProviders": {
+    "message": "Denne konto har to-trins login aktiveret, men ingen af de konfigurerede to-trins udbydere understøttes af denne webbrowser."
   },
-  "noTwoStepProviders2":{
-    "message":"Du skal bruge en understøttet webbrowser (såsom Chrome) og\/eller tilføje ekstra udbydere, der understøttes bedre på tværs af webbrowsere (f.eks. en autentificering app)."
+  "noTwoStepProviders2": {
+    "message": "Du skal bruge en understøttet webbrowser (såsom Chrome) og\/eller tilføje ekstra udbydere, der understøttes bedre på tværs af webbrowsere (f.eks. en autentificering app)."
   },
-  "twoStepOptions":{
-    "message":"To-trins Login Muligheder"
+  "twoStepOptions": {
+    "message": "To-trins Login Muligheder"
   },
-  "recoveryCodeDesc":{
-    "message":"Mistet adgang til alle dine to-faktor-udbydere? Bruge din genoprettelseskode til at deaktivere alle to-faktor udbydere fra din konto."
+  "recoveryCodeDesc": {
+    "message": "Mistet adgang til alle dine to-faktor-udbydere? Bruge din genoprettelseskode til at deaktivere alle to-faktor udbydere fra din konto."
   },
-  "recoveryCodeTitle":{
-    "message":"Gendannelseskode"
+  "recoveryCodeTitle": {
+    "message": "Gendannelseskode"
   },
-  "authenticatorAppTitle":{
-    "message":"Autentificerings App"
+  "authenticatorAppTitle": {
+    "message": "Autentificerings App"
   },
-  "authenticatorAppDesc":{
-    "message":"Brug en autentificerings app (f.eks. Authy eller Google Autentificering) til at generere tidsbaserede bekræftelseskoder.",
-    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDesc": {
+    "message": "Brug en autentificerings app (f.eks. Authy eller Google Autentificering) til at generere tidsbaserede bekræftelseskoder.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
-  "yubiKeyTitle":{
-    "message":"YubiKey OTP Sikkerhedsnøgle"
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP Sikkerhedsnøgle"
   },
-  "yubiKeyDesc":{
-    "message":"Brug en YubiKey til at få adgang til din konto. Virker med YubiKey 4, 4 Nano, 4C og NEO enheder."
+  "yubiKeyDesc": {
+    "message": "Brug en YubiKey til at få adgang til din konto. Virker med YubiKey 4, 4 Nano, 4C og NEO enheder."
   },
-  "duoDesc":{
-    "message":"Kontroller med Duo sikkerhed ved hjælp af Duo Mobile app, SMS, telefonopkald eller U2F sikkerhedsnøgle.",
-    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  "duoDesc": {
+    "message": "Kontroller med Duo sikkerhed ved hjælp af Duo Mobile app, SMS, telefonopkald eller U2F sikkerhedsnøgle.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc":{
-    "message":"Brug hvilken som helst FIDO U2F aktiveret sikkerhedsnøglen til at få adgang til din konto."
+  "u2fDesc": {
+    "message": "Brug hvilken som helst FIDO U2F aktiveret sikkerhedsnøglen til at få adgang til din konto."
   },
-  "u2fTitle":{
-    "message":"FIDO U2F Sikkerhedsnøgle"
+  "u2fTitle": {
+    "message": "FIDO U2F Sikkerhedsnøgle"
   },
-  "emailTitle":{
-    "message":"E-mail"
+  "emailTitle": {
+    "message": "E-mail"
   },
-  "emailDesc":{
-    "message":"Bekræftelseskoder vil blive E-mailet til dig."
+  "emailDesc": {
+    "message": "Bekræftelseskoder vil blive E-mailet til dig."
   },
-  "selfHostedEnvironment":{
-    "message":"Self-Hosted miljø"
+  "selfHostedEnvironment": {
+    "message": "Self-Hosted miljø"
   },
-  "selfHostedEnvironmentFooter":{
-    "message":"Angiv grund URL i din lokal hostede bitwarden installation."
+  "selfHostedEnvironmentFooter": {
+    "message": "Angiv grund URL i din lokal hostede bitwarden installation."
   },
-  "customEnvironment":{
-    "message":"Brugerdefinerede Miljø"
+  "customEnvironment": {
+    "message": "Brugerdefinerede Miljø"
   },
-  "customEnvironmentFooter":{
-    "message":"For avancerede brugere. Du kan angive grund URL for hver service uafhængigt."
+  "customEnvironmentFooter": {
+    "message": "For avancerede brugere. Du kan angive grund URL for hver service uafhængigt."
   },
-  "baseUrl":{
-    "message":"Server URL"
+  "baseUrl": {
+    "message": "Server URL"
   },
-  "apiUrl":{
-    "message":"API Server URL"
+  "apiUrl": {
+    "message": "API Server URL"
   },
-  "webVaultUrl":{
-    "message":"Web Boks Server URL"
+  "webVaultUrl": {
+    "message": "Web Boks Server URL"
   },
-  "identityUrl":{
-    "message":"Identificering Server URL"
+  "identityUrl": {
+    "message": "Identificering Server URL"
   },
-  "environmentSaved":{
-    "message":"Miljøet URLs er blevet gemt."
+  "iconsUrl": {
+    "message": "Icons Server URL"
   },
-  "enableAutoFillOnPageLoad":{
-    "message":"Aktivere Auto-udfyld Ved Side Indlæsning"
+  "environmentSaved": {
+    "message": "Miljøet URLs er blevet gemt."
   },
-  "enableAutoFillOnPageLoadDesc":{
-    "message":"Hvis en login-formular er opdaget, automatisk udføre en auto-udfyld, når hjemmesiden indlæses."
+  "enableAutoFillOnPageLoad": {
+    "message": "Aktivere Auto-udfyld Ved Side Indlæsning"
   },
-  "experimentalFeature":{
-    "message":"Dette er i øjeblikket en eksperimentel funktion. Brug på egen risiko."
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "Hvis en login-formular er opdaget, automatisk udføre en auto-udfyld, når hjemmesiden indlæses."
   },
-  "commandAutofillDesc":{
-    "message":"Auto-udfyld den sidste anvendte login for den aktuelle hjemmeside."
+  "experimentalFeature": {
+    "message": "Dette er i øjeblikket en eksperimentel funktion. Brug på egen risiko."
   },
-  "commandGeneratePasswordDesc":{
-    "message":"Generere og kopiere en ny tilfældig adgangskode til udklipsholderen."
+  "commandAutofillDesc": {
+    "message": "Auto-udfyld den sidste anvendte login for den aktuelle hjemmeside."
   },
-  "privateModeMessage":{
-    "message":"Desværre er dette vindue ikke tilgængelig i privat modus i denne browser."
+  "commandGeneratePasswordDesc": {
+    "message": "Generere og kopiere en ny tilfældig adgangskode til udklipsholderen."
   },
-  "customFields":{
-    "message":"Brugerdefinerede felter"
+  "privateModeMessage": {
+    "message": "Desværre er dette vindue ikke tilgængelig i privat modus i denne browser."
   },
-  "copyValue":{
-    "message":"Kopier Værdi"
+  "customFields": {
+    "message": "Brugerdefinerede felter"
   },
-  "toggleValue":{
-    "message":"Skift Værdien"
+  "copyValue": {
+    "message": "Kopier Værdi"
   },
-  "value":{
-    "message":"Værdi"
+  "toggleValue": {
+    "message": "Skift Værdien"
   },
-  "newCustomField":{
-    "message":"Nye Brugerdefinerede Felt"
+  "value": {
+    "message": "Værdi"
   },
-  "cfTypeText":{
-    "message":"Tekst"
+  "newCustomField": {
+    "message": "Nye Brugerdefinerede Felt"
   },
-  "cfTypeHidden":{
-    "message":"Skjult"
+  "cfTypeText": {
+    "message": "Tekst"
   },
-  "cfTypeBoolean":{
-    "message":"Boolsk"
+  "cfTypeHidden": {
+    "message": "Skjult"
   },
-  "popup2faCloseMessage":{
-    "message":"Ved at klikke uden for pop-up-vinduet for at tjekke din e-mail for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
+  "cfTypeBoolean": {
+    "message": "Boolsk"
   },
-  "disableFavicon":{
-    "message":"Disable Website Icons"
+  "popup2faCloseMessage": {
+    "message": "Ved at klikke uden for pop-up-vinduet for at tjekke din e-mail for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
   },
-  "disableFaviconDesc":{
-    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  "disableFavicon": {
+    "message": "Disable Website Icons"
   },
-  "cardholderName":{
-    "message":"Cardholder Name"
+  "disableFaviconDesc": {
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
-  "number":{
-    "message":"Number"
+  "cardholderName": {
+    "message": "Cardholder Name"
   },
-  "brand":{
-    "message":"Brand"
+  "number": {
+    "message": "Number"
   },
-  "expirationMonth":{
-    "message":"Expiration Month"
+  "brand": {
+    "message": "Brand"
   },
-  "expirationYear":{
-    "message":"Expiration Year"
+  "expirationMonth": {
+    "message": "Expiration Month"
   },
-  "expiration":{
-    "message":"Expiration"
+  "expirationYear": {
+    "message": "Expiration Year"
   },
-  "january":{
-    "message":"January"
+  "expiration": {
+    "message": "Expiration"
   },
-  "february":{
-    "message":"February"
+  "january": {
+    "message": "January"
   },
-  "march":{
-    "message":"March"
+  "february": {
+    "message": "February"
   },
-  "april":{
-    "message":"April"
+  "march": {
+    "message": "March"
   },
-  "may":{
-    "message":"May"
+  "april": {
+    "message": "April"
   },
-  "june":{
-    "message":"June"
+  "may": {
+    "message": "May"
   },
-  "july":{
-    "message":"July"
+  "june": {
+    "message": "June"
   },
-  "august":{
-    "message":"August"
+  "july": {
+    "message": "July"
   },
-  "september":{
-    "message":"September"
+  "august": {
+    "message": "August"
   },
-  "october":{
-    "message":"October"
+  "september": {
+    "message": "September"
   },
-  "november":{
-    "message":"November"
+  "october": {
+    "message": "October"
   },
-  "december":{
-    "message":"December"
+  "november": {
+    "message": "November"
   },
-  "securityCode":{
-    "message":"Security Code"
+  "december": {
+    "message": "December"
   },
-  "ex":{
-    "message":"ex."
+  "securityCode": {
+    "message": "Security Code"
   },
-  "title":{
-    "message":"Title"
+  "ex": {
+    "message": "ex."
   },
-  "mr":{
-    "message":"Mr"
+  "title": {
+    "message": "Title"
   },
-  "mrs":{
-    "message":"Mrs"
+  "mr": {
+    "message": "Mr"
   },
-  "ms":{
-    "message":"Ms"
+  "mrs": {
+    "message": "Mrs"
   },
-  "dr":{
-    "message":"Dr"
+  "ms": {
+    "message": "Ms"
   },
-  "firstName":{
-    "message":"First Name"
+  "dr": {
+    "message": "Dr"
   },
-  "middleName":{
-    "message":"Middle Name"
+  "firstName": {
+    "message": "First Name"
   },
-  "lastName":{
-    "message":"Last Name"
+  "middleName": {
+    "message": "Middle Name"
   },
-  "identityName":{
-    "message":"Identity Name"
+  "lastName": {
+    "message": "Last Name"
   },
-  "company":{
-    "message":"Company"
+  "identityName": {
+    "message": "Identity Name"
   },
-  "ssn":{
-    "message":"Social Security Number"
+  "company": {
+    "message": "Company"
   },
-  "passportNumber":{
-    "message":"Passport Number"
+  "ssn": {
+    "message": "Social Security Number"
   },
-  "licenseNumber":{
-    "message":"License Number"
+  "passportNumber": {
+    "message": "Passport Number"
   },
-  "email":{
-    "message":"Email"
+  "licenseNumber": {
+    "message": "License Number"
   },
-  "phone":{
-    "message":"Phone"
+  "email": {
+    "message": "Email"
   },
-  "address":{
-    "message":"Address"
+  "phone": {
+    "message": "Phone"
   },
-  "address1":{
-    "message":"Address 1"
+  "address": {
+    "message": "Address"
   },
-  "address2":{
-    "message":"Address 2"
+  "address1": {
+    "message": "Address 1"
   },
-  "address3":{
-    "message":"Address 3"
+  "address2": {
+    "message": "Address 2"
   },
-  "cityTown":{
-    "message":"City \/ Town"
+  "address3": {
+    "message": "Address 3"
   },
-  "stateProvince":{
-    "message":"State \/ Province"
+  "cityTown": {
+    "message": "City \/ Town"
   },
-  "zipPostalCode":{
-    "message":"Zip \/ Postal Code"
+  "stateProvince": {
+    "message": "State \/ Province"
   },
-  "country":{
-    "message":"Country"
+  "zipPostalCode": {
+    "message": "Zip \/ Postal Code"
   },
-  "type":{
-    "message":"Type"
+  "country": {
+    "message": "Country"
   },
-  "typeLogin":{
-    "message":"Login"
+  "type": {
+    "message": "Type"
   },
-  "typeLogins":{
-    "message":"Logins"
+  "typeLogin": {
+    "message": "Login"
   },
-  "typeSecureNote":{
-    "message":"Secure Note"
+  "typeLogins": {
+    "message": "Logins"
   },
-  "typeCard":{
-    "message":"Card"
+  "typeSecureNote": {
+    "message": "Secure Note"
   },
-  "typeIdentity":{
-    "message":"Identity"
+  "typeCard": {
+    "message": "Card"
   },
-  "passwordHistory":{
-    "message":"Password History"
+  "typeIdentity": {
+    "message": "Identity"
   },
-  "back":{
-    "message":"Back"
+  "passwordHistory": {
+    "message": "Password History"
+  },
+  "back": {
+    "message": "Back"
   }
 }

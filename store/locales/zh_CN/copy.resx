@@ -139,10 +139,10 @@ bitwarden 将您的登录信息保存在加密的密码库，可以在您的所�
     <value>同步后可以从多台设备访问密码库</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>在一个安全的密码库管理您的登录信息</value>
+    <value>在一个安全的密码库管理您的登录项目</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>在您访问网站的时候快速自动填充登录信息</value>
+    <value>在您访问网站的时候快速自动填充登录项目</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
     <value>您也可以通过鼠标右键菜单快捷地访问密码库</value>
