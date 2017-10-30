@@ -8,11 +8,11 @@ class CipherItemsController implements ng.IController {
 
     }
 
-    public view(cipher: any) {
+    view(cipher: any) {
         return this.onView()(cipher);
     }
 
-    public select(cipher: any) {
+    select(cipher: any) {
         return this.onSelected()(cipher);
     }
 
@@ -22,9 +22,9 @@ export const CipherItemsComponent = {
     bindings: {
         ciphers: '<',
         selectionTitle: '<',
+        onSelected: '&',
         onView: '&',
-        onSelected: '&'
     },
-    template: template,
-    controller: CipherItemsController
-}
+    controller: CipherItemsController,
+    template,
+};

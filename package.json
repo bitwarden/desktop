@@ -5,7 +5,9 @@
     "start:firefox": "web-ext run --source-dir ./dist/",
     "dev": "gulp build && webpack --config webpack.dev.js",
     "dev:watch": "gulp build && webpack --config webpack.dev.js --watch",
-    "prod": "gulp build && webpack --config webpack.prod.js"
+    "prod": "gulp build && webpack --config webpack.prod.js",
+    "lint": "tslint src/**/*.ts || true",
+    "lint:fix": "tslint src/**/*.ts --fix"
   },
   "devDependencies": {
     "angular": "1.6.6",
@@ -52,6 +54,8 @@
     "sweetalert": "1.1.3",
     "tldjs": "2.0.0",
     "ts-loader": "^3.0.5",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
     "typescript": "^2.5.3",
     "vinyl-source-stream": "1.1.0",
     "web-ext": "2.0.0",
