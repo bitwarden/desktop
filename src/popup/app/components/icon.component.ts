@@ -1,9 +1,6 @@
 import * as template from './icon.component.html';
 
 class IconController implements ng.IController {
-    onSelected: Function;
-    onView: Function;
-
     cipher: any;
     icon: string;
     image: string;
