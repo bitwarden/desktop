@@ -59,7 +59,6 @@ require('./directives/formDirective.js');
 require('./directives/stopClickDirective.js');
 require('./directives/stopPropDirective.js');
 require('./directives/fallbackSrcDirective.js');
-require('./components/iconComponent.js');
 require('./components/actionButtonsComponent.js');
 require('./services/backgroundService.js');
 require('./services/authService.js');

@@ -15,7 +15,6 @@ class CipherItemsController implements ng.IController {
     select(cipher: any) {
         return this.onSelected()(cipher);
     }
-
 }
 
 export const CipherItemsComponent = {
