@@ -16,8 +16,7 @@ class IconController implements ng.IController {
         if (!this.iconsUrl) {
             if (environmentService.baseUrl) {
                 this.iconsUrl = environmentService.baseUrl + '/icons';
-            }
-            else {
+            } else {
                 this.iconsUrl = 'https://icons.bitwarden.com';
             }
         }
@@ -51,16 +50,13 @@ class IconController implements ng.IController {
             if (hostnameUri.indexOf('androidapp://') === 0) {
                 this.icon = 'fa-android';
                 this.image = null;
-            }
-            else if (hostnameUri.indexOf('iosapp://') === 0) {
+            } else if (hostnameUri.indexOf('iosapp://') === 0) {
                 this.icon = 'fa-apple';
                 this.image = null;
-            }
-            else if (this.imageEnabled && hostnameUri.indexOf('://') === -1 && hostnameUri.indexOf('.') > -1) {
+            } else if (this.imageEnabled && hostnameUri.indexOf('://') === -1 && hostnameUri.indexOf('.') > -1) {
                 hostnameUri = 'http://' + hostnameUri;
                 isWebsite = true;
-            }
-            else if (this.imageEnabled) {
+            } else if (this.imageEnabled) {
                 isWebsite = hostnameUri.indexOf('http') === 0 && hostnameUri.indexOf('.') > -1;
             }
 
@@ -69,11 +65,9 @@ class IconController implements ng.IController {
                     const url = new URL(hostnameUri);
                     this.image = this.iconsUrl + '/' + url.hostname + '/icon.png';
                     this.fallbackImage = chrome.extension.getURL('images/fa-globe.png');
-                }
-                catch (e) { }
+                } catch (e) { }
             }
-        }
-        else {
+        } else {
             this.image = null;
         }
     }

@@ -7,7 +7,7 @@ class TokenRequest {
     device?: any;
 
     constructor(email: string, masterPasswordHash: string, provider: number,
-        token: string, remember: boolean, device?: any) {
+                token: string, remember: boolean, device?: any) {
         this.email = email;
         this.masterPasswordHash = masterPasswordHash;
         this.token = token;

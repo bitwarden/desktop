@@ -9,7 +9,7 @@ class ActionButtonsController implements ng.IController {
     constants: any;
 
     constructor(private i18nService: any, private $analytics: any, private constantsService: any, private toastr: any,
-        private $timeout: any, private $window: any, private utilsService: any) {
+                private $timeout: any, private $window: any, private utilsService: any) {
         this.i18n = i18nService;
         this.constants = constantsService;
     }

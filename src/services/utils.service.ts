@@ -23,7 +23,8 @@ export default class UtilsService {
 
         if (navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1) {
             this.browserCache = Browser.Firefox;
-        } else if ((!!(window as any).opr && !!(window as any).opr.addons) || !!(window as any).opera || navigator.userAgent.indexOf(' OPR/') >= 0) {
+        } else if ((!!(window as any).opr && !!(window as any).opr.addons) || !!(window as any).opera ||
+            navigator.userAgent.indexOf(' OPR/') >= 0) {
             this.browserCache = Browser.Opera;
         } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
             this.browserCache = Browser.Edge;
@@ -74,7 +75,8 @@ export default class UtilsService {
                 return;
             }
 
-            const text = $(this).find('input, textarea').not('input[type="checkbox"], input[type="radio"], input[type="hidden"]');
+            const text = $(this).find('input, textarea')
+                .not('input[type="checkbox"], input[type="radio"], input[type="hidden"]');
             const checkbox = $(this).find('input[type="checkbox"]');
             const select = $(this).find('select');
 
