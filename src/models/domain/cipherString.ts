@@ -92,9 +92,7 @@ class CipherString {
         const self = this;
 
         if (this.decryptedValue) {
-            return new Promise((resolve) => {
-                resolve(self.decryptedValue);
-            });
+            return Promise.resolve(self.decryptedValue);
         }
 
         return self.cryptoService.getOrgKey(orgId).then((orgKey: any) => {
