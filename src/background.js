@@ -1,6 +1,40 @@
+// Service imports
 import LockService from './services/lockService.js';
 import UtilsService from './services/utils.service';
-import * as models from './models/models';
+
+// Model imports
+import { AttachmentData } from './models/data/attachmentData';
+import { CardData } from './models/data/cardData';
+import { CipherData } from './models/data/cipherData';
+import { FieldData } from './models/data/fieldData';
+import { FolderData } from './models/data/folderData';
+import { IdentityData } from './models/data/identityData';
+import { LoginData } from './models/data/loginData';
+import { SecureNoteData } from './models/data/secureNoteData';
+
+import { CipherString } from './models/domain/cipherString';
+
+import { DeviceRequest } from './models/request/deviceRequest';
+import { DeviceTokenRequest } from './models/request/deviceTokenRequest';
+import { FolderRequest } from './models/request/folderRequest';
+import { PasswordHintRequest } from './models/request/passwordHintRequest';
+import { RegisterRequest } from './models/request/registerRequest';
+import { TokenRequest } from './models/request/tokenRequest';
+import { TwoFactorEmailRequest } from './models/request/twoFactorEmailRequest';
+
+import { AttachmentResponse } from './models/response/attachmentResponse';
+import { CipherResponse } from './models/response/cipherResponse';
+import { DeviceResponse } from './models/response/deviceResponse';
+import { DomainsResponse } from './models/response/domainsResponse';
+import { ErrorResponse } from './models/response/errorResponse';
+import { FolderResponse } from './models/response/folderResponse';
+import { GlobalDomainResponse } from './models/response/globalDomainResponse';
+import { IdentityTokenResponse } from './models/response/identityTokenResponse';
+import { KeysResponse } from './models/response/keysResponse';
+import { ListResponse } from './models/response/listResponse';
+import { ProfileOrganizationResponse } from './models/response/profileOrganizationResponse';
+import { ProfileResponse } from './models/response/profileResponse';
+import { SyncResponse } from './models/response/syncResponse';
 
 var bg_isBackground = true,
     bg_utilsService,
