@@ -13,7 +13,6 @@ const AnalyticsIds = {
 };
 
 export default class UtilsService {
-
     private browserCache: Browser = null;
     private analyticsIdCache: string = null;
 
