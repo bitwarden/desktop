@@ -1,4 +1,4 @@
-function i18nService(utilsService) {
+export default function i18nService(utilsService) {
     this.utilsService = utilsService;
     this.messages = {};
 
