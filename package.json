@@ -64,6 +64,8 @@
     "webpack-stream": "4.0.0"
   },
   "dependencies": {
-    "@types/angular": "^1.6.34"
+    "@types/angular": "^1.6.34",
+    "@types/chrome": "0.0.51",
+    "@types/jquery": "^3.2.16"
   }
 }

@@ -1,4 +1,5 @@
 import LockService from './services/lockService.js';
+import UtilsService from './services/utils.service';
 
 var bg_isBackground = true,
     bg_utilsService,
