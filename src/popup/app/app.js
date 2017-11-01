@@ -6,7 +6,7 @@ require('clipboard');
 require('angular');
 
 require('angular-animate');
-require('angular-ui-router');
+const uiRouter = require('@uirouter/angularjs').default;
 require('angular-toastr');
 
 require('ngclipboard');
@@ -65,7 +65,7 @@ import { SyncResponse } from '../../models/response/syncResponse';
 
 angular
     .module('bit', [
-        'ui.router',
+        uiRouter,
         'ngAnimate',
         'toastr',
         'angulartics',

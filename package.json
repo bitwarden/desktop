@@ -14,7 +14,6 @@
     "angular-animate": "1.6.6",
     "angular-sweetalert": "1.1.2",
     "angular-toastr": "2.1.1",
-    "angular-ui-router": "0.4.2",
     "angulartics": "1.4.0",
     "angulartics-google-analytics": "0.4.0",
     "bootstrap": "3.3.7",
@@ -66,6 +65,7 @@
   "dependencies": {
     "@types/angular": "^1.6.34",
     "@types/chrome": "0.0.51",
-    "@types/jquery": "^3.2.16"
+    "@types/jquery": "^3.2.16",
+    "@uirouter/angularjs": "^1.0.10"
   }
 }

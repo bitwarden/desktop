@@ -265,20 +265,27 @@
                 params: { animation: null }
             });
     })
-    .run(function ($rootScope, userService, $state, constantsService, stateService) {
+    .run(function ($trace, $transitions, userService, $state, constantsService, stateService) {
+        $trace.enable('TRANSITION');
+
         stateService.init();
 
-        $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+        $transitions.onStart({}, function(trans) {
+            const $state = trans.router.stateService;
+            const toState = trans.to();
+
             if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {
                 stateService.removeState('vault');
                 stateService.removeState('viewFolder');
             }
 
+            const userService = trans.injector().get('userService');
+
             if (!userService) {
                 return;
             }
 
-            userService.isAuthenticated(function (isAuthenticated) {
+            userService.isAuthenticated((isAuthenticated) => {
                 if (isAuthenticated) {
                     var obj = {};
                     obj[constantsService.lastActiveKey] = (new Date()).getTime();
