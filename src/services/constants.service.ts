@@ -1,5 +1,16 @@
 export default class ConstantsService {
-    // TODO: these should probably all be made static
+    static readonly environmentUrlsKey: string = 'environmentUrls';
+    static readonly disableGaKey: string = 'disableGa';
+    static readonly disableAddLoginNotificationKey: string = 'disableAddLoginNotification';
+    static readonly disableContextMenuItemKey: string = 'disableContextMenuItem';
+    static readonly disableFaviconKey: string = 'disableFavicon';
+    static readonly disableAutoTotpCopyKey: string = 'disableAutoTotpCopy';
+    static readonly enableAutoFillOnPageLoadKey: string = 'enableAutoFillOnPageLoad';
+    static readonly lockOptionKey: string = 'lockOption';
+    static readonly lastActiveKey: string = 'lastActive';
+    static readonly generatedPasswordHistoryKey: string = 'generatedPasswordHistory';
+
+    // TODO: remove these instance properties once all references are reading from the static properties
     readonly environmentUrlsKey: string = 'environmentUrls';
     readonly disableGaKey: string = 'disableGa';
     readonly disableAddLoginNotificationKey: string = 'disableAddLoginNotification';
