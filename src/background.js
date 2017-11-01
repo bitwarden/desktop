@@ -1,5 +1,6 @@
 import LockService from './services/lockService.js';
 import UtilsService from './services/utils.service';
+import * as models from './models/models';
 
 var bg_isBackground = true,
     bg_utilsService,

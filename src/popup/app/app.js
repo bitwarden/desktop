@@ -22,14 +22,14 @@ require('../../scripts/duo.js');
 require('../../scripts/u2f.js');
 
 require('../../models/api/requestModels.js');
-require('../../models/api/responseModels.js');
-require('../../models/dataModels.js');
 require('../../models/domainModels.js');
 
 require('../less/libs.less');
 require('../less/popup.less');
 
 import ComponentsModule from './components/components.module';
+
+import * as models from '../../models/models';
 
 angular
     .module('bit', [
@@ -103,6 +103,6 @@ require('./lock/lockModule.js');
 require('./lock/lockController.js');
 
 // Bootstrap the angular application
-angular.element(function() {
+angular.element(function () {
     angular.bootstrap(document, ['bit']);
 });
