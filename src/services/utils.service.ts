@@ -2,7 +2,7 @@ enum Browser {
     Chrome = 2,
     Firefox = 3,
     Opera = 4,
-    Edge= 5,
+    Edge = 5,
 }
 
 const AnalyticsIds = {
@@ -107,12 +107,12 @@ export default class UtilsService {
             'focus',
             '.list-section-item input, .list-section-item select, .list-section-item textarea',
             (e: Event) => {
-            $(this).parent().addClass('active');
-        });
+                $(this).parent().addClass('active');
+            });
         doc.on(
             'blur', '.list-section-item input, .list-section-item select, .list-section-item textarea', (e: Event) => {
-            $(this).parent().removeClass('active');
-        });
+                $(this).parent().removeClass('active');
+            });
     }
 
     getDomain(uriString: string) {
@@ -228,7 +228,7 @@ export default class UtilsService {
 
     saveObjToStorage(key: string, obj: any) {
         return new Promise((resolve) => {
-            chrome.storage.local.set({[key]: obj}, () => {
+            chrome.storage.local.set({ [key]: obj }, () => {
                 resolve();
             });
         });
