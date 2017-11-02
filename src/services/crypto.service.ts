@@ -76,7 +76,7 @@ export default class CryptoService {
 
     async getKey(): Promise<SymmetricCryptoKey> {
         if (this.key != null) {
-            return;
+            return this.key;
         }
 
         const option = await this.utilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
@@ -126,7 +126,7 @@ export default class CryptoService {
 
     async getPrivateKey(): Promise<ArrayBuffer> {
         if (this.privateKey != null) {
-            return Promise.resolve(this.privateKey);
+            return this.privateKey;
         }
 
         const encPrivateKey = await this.utilsService.getObjFromStorage<string>(Keys.encPrivateKey);

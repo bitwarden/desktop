@@ -9,12 +9,14 @@ angular
             email = email.toLowerCase();
             var key = cryptoService.makeKey(masterPassword, email),
                 deferred = $q.defer(),
-                deviceRequest = null;
+                deviceRequest = null,
+                twoFactorRememberedToken;
 
             appIdService.getAppId().then(function (appId) {
                 deviceRequest = new DeviceRequest(appId, utilsService);
                 return tokenService.getTwoFactorToken(email);
-            }).then(function (twoFactorRememberedToken) {
+            }).then(function (theTwoFactorRememberedToken) {
+                twoFactorRememberedToken = theTwoFactorRememberedToken;
                 return cryptoService.hashPassword(masterPassword, key);
             }).then(function (hashedPassword) {
                 var request;

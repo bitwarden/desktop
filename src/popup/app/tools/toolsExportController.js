@@ -24,7 +24,9 @@ angular
 
             userService.getEmail(function (email) {
                 var key = cryptoService.makeKey($scope.masterPassword, email);
-                cryptoService.hashPassword($scope.masterPassword, key).then(function (keyHash) {
+                var keyHash;
+                cryptoService.hashPassword($scope.masterPassword, key).then(function (theKeyHash) {
+                    keyHash = theKeyHash;
                     return cryptoService.getKeyHash();
                 }).then(function (storedKeyHash) {
                     if (storedKeyHash && keyHash && storedKeyHash === keyHash) {

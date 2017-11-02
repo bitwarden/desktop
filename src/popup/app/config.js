@@ -265,7 +265,7 @@ angular
             });
     })
     .run(function ($trace, $transitions, userService, $state, constantsService, stateService) {
-        $trace.enable('TRANSITION');
+        //$trace.enable('TRANSITION');
 
         stateService.init();
 
