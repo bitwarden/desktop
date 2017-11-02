@@ -11,7 +11,7 @@ export default class AppIdService {
 
     private static async makeAndGetAppId(key: string) {
         const existingId = await UtilsService.getObjFromStorage<string>(key);
-        if(existingId != null) {
+        if (existingId != null) {
             return existingId;
         }
 
