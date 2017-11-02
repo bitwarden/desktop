@@ -1,41 +1,42 @@
+import { EncryptionType } from '../../enums/encryptionType.enum';
+import CryptoService from '../../services/crypto.service';
+
 class CipherString {
     encryptedString?: string;
-    encryptionType?: number; // TODO: enum
+    encryptionType?: EncryptionType;
     decryptedValue?: string;
     cipherText?: string;
     initializationVector?: string;
     mac?: string;
-    cryptoService: any; // TODO: type
+    cryptoService: CryptoService;
 
-    constructor() {
-        this.cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService;
-        const constants = chrome.extension.getBackgroundPage().bg_constantsService;
+    constructor(encryptedStringOrType: string | EncryptionType, ct?: string, iv?: string, mac?: string) {
+        this.cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService as CryptoService;
 
-        if (arguments.length >= 2) {
+        if (ct != null) {
             // ct and header
-            this.encryptedString = arguments[0] + '.' + arguments[1];
+            const encType = encryptedStringOrType as EncryptionType;
+            this.encryptedString = encType + '.' + ct;
 
             // iv
-            if (arguments.length > 2 && arguments[2]) {
-                this.encryptedString += ('|' + arguments[2]);
+            if (iv != null) {
+                this.encryptedString += ('|' + iv);
             }
 
             // mac
-            if (arguments.length > 3 && arguments[3]) {
-                this.encryptedString += ('|' + arguments[3]);
+            if (mac != null) {
+                this.encryptedString += ('|' + mac);
             }
 
-            this.encryptionType = arguments[0];
-            this.cipherText = arguments[1];
-            this.initializationVector = arguments[2] || null;
-            this.mac = arguments[3] || null;
+            this.encryptionType = encType;
+            this.cipherText = ct;
+            this.initializationVector = iv;
+            this.mac = mac;
 
-            return;
-        } else if (arguments.length !== 1) {
             return;
         }
 
-        this.encryptedString = arguments[0];
+        this.encryptedString = encryptedStringOrType as string;
         if (!this.encryptedString) {
             return;
         }
@@ -52,13 +53,13 @@ class CipherString {
             }
         } else {
             encPieces = this.encryptedString.split('|');
-            this.encryptionType = encPieces.length === 3 ? constants.encType.AesCbc128_HmacSha256_B64 :
-                constants.encType.AesCbc256_B64;
+            this.encryptionType = encPieces.length === 3 ? EncryptionType.AesCbc128_HmacSha256_B64 :
+                EncryptionType.AesCbc256_B64;
         }
 
         switch (this.encryptionType) {
-            case constants.encType.AesCbc128_HmacSha256_B64:
-            case constants.encType.AesCbc256_HmacSha256_B64:
+            case EncryptionType.AesCbc128_HmacSha256_B64:
+            case EncryptionType.AesCbc256_HmacSha256_B64:
                 if (encPieces.length !== 3) {
                     return;
                 }
@@ -67,7 +68,7 @@ class CipherString {
                 this.cipherText = encPieces[1];
                 this.mac = encPieces[2];
                 break;
-            case constants.encType.AesCbc256_B64:
+            case EncryptionType.AesCbc256_B64:
                 if (encPieces.length !== 2) {
                     return;
                 }
@@ -75,8 +76,8 @@ class CipherString {
                 this.initializationVector = encPieces[0];
                 this.cipherText = encPieces[1];
                 break;
-            case constants.encType.Rsa2048_OaepSha256_B64:
-            case constants.encType.Rsa2048_OaepSha1_B64:
+            case EncryptionType.Rsa2048_OaepSha256_B64:
+            case EncryptionType.Rsa2048_OaepSha1_B64:
                 if (encPieces.length !== 1) {
                     return;
                 }

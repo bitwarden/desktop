@@ -3,6 +3,7 @@ import ConstantsService from './services/constants.service';
 import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import UtilsService from './services/utils.service';
+import CryptoService from './services/crypto.service';
 
 // Model imports
 import { AttachmentData } from './models/data/attachmentData';
@@ -71,7 +72,7 @@ var bg_isBackground = true,
     window.bg_utilsService = bg_utilsService = new UtilsService();
     window.bg_i18nService = bg_i18nService = new i18nService(bg_utilsService);
     window.bg_constantsService = bg_constantsService = new ConstantsService(bg_i18nService);
-    window.bg_cryptoService = bg_cryptoService = new CryptoService(bg_constantsService, bg_utilsService);
+    window.bg_cryptoService = bg_cryptoService = new CryptoService(bg_utilsService);
     window.bg_tokenService = bg_tokenService = new TokenService(bg_utilsService);
     window.bg_appIdService = bg_appIdService = new AppIdService(bg_utilsService);
     window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
