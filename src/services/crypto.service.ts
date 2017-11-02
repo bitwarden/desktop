@@ -1,6 +1,7 @@
 import { EncryptionType } from '../enums/encryptionType.enum';
 
 import { CipherString } from '../models/domain/cipherString';
+import EncryptedObject from '../models/domain/encryptedObject';
 import SymmetricCryptoKey from '../models/domain/symmetricCryptoKey';
 
 import ConstantsService from './constants.service';
@@ -16,13 +17,6 @@ const Keys = {
 
 const Crypto = window.crypto;
 const Subtle = Crypto.subtle;
-
-class EncryptedObject {
-    iv: Uint8Array;
-    ct: Uint8Array;
-    mac: Uint8Array;
-    key: SymmetricCryptoKey;
-}
 
 export default class CryptoService {
     private key: SymmetricCryptoKey;
@@ -73,8 +67,8 @@ export default class CryptoService {
 
     // TODO: proper response model type for orgs
     setOrgKeys(orgs: any) {
-        let orgKeys: any = {};
-        for (let org of orgs) {
+        const orgKeys: any = {};
+        for (const org of orgs) {
             orgKeys[org.id] = org.key;
         }
 
@@ -108,62 +102,44 @@ export default class CryptoService {
         return this.utilsService.getObjFromStorage<string>(Keys.keyHash);
     }
 
-    getEncKey(): Promise<SymmetricCryptoKey> {
+    async getEncKey(): Promise<SymmetricCryptoKey> {
         if (this.encKey != null) {
-            return Promise.resolve(this.encKey);
+            return this.encKey;
         }
 
-        const self = this;
-        let encKey: string = null;
-        return this.utilsService.getObjFromStorage<string>(Keys.encKey).then((theEncKey?: string) => {
-            if (theEncKey == null) {
-                return null;
-            }
+        const encKey = await this.utilsService.getObjFromStorage<string>(Keys.encKey);
+        if (encKey == null) {
+            return null;
+        }
 
-            encKey = theEncKey;
-            return self.getKey();
-        }).then((key: SymmetricCryptoKey) => {
-            if (key == null) {
-                return null;
-            }
+        const key = await this.getKey();
+        if (key == null) {
+            return null;
+        }
 
-            // TODO: decrypt with local func
-            // return self.decrypt(new CipherString(encKey), key, 'raw');
-        }).then((decEncKey: string) => {
-            if (decEncKey == null) {
-                return null;
-            }
+        const decEncKey = await this.decrypt(new CipherString(encKey), key, 'raw');
+        if (decEncKey == null) {
+            return null;
+        }
 
-            self.encKey = new SymmetricCryptoKey(decEncKey);
-            return self.encKey;
-        }, () => {
-            throw new Error('Cannot get enc key. Decryption failed.');
-        });
+        this.encKey = new SymmetricCryptoKey(decEncKey);
+        return this.encKey;
     }
 
-    getPrivateKey(): Promise<ArrayBuffer> {
+    async getPrivateKey(): Promise<ArrayBuffer> {
         if (this.privateKey != null) {
             return Promise.resolve(this.privateKey);
         }
 
-        var self = this;
-        return this.utilsService.getObjFromStorage<string>(Keys.encPrivateKey).then((encPrivateKey: string) => {
-            if (encPrivateKey == null) {
-                return null;
-            }
-            // TODO: decrypt with local func
-            //return self.decrypt(new CipherString(encPrivateKey), null, 'raw');
-        }).then((privateKey: string) => {
-            if (privateKey != null) {
-                let privateKeyB64 = forge.util.encode64(privateKey);
-                this.privateKey = UtilsService.fromB64ToArray(privateKeyB64).buffer;
-                return this.privateKey;
-            }
-
+        const encPrivateKey = await this.utilsService.getObjFromStorage<string>(Keys.encPrivateKey);
+        if (encPrivateKey == null) {
             return null;
-        }, () => {
-            throw new Error('Cannot get private key. Decryption failed.');
-        });
+        }
+
+        const privateKey = await this.decrypt(new CipherString(encPrivateKey), null, 'raw');
+        const privateKeyB64 = forge.util.encode64(privateKey);
+        this.privateKey = UtilsService.fromB64ToArray(privateKeyB64).buffer;
+        return this.privateKey;
     }
 
     async getOrgKeys(): Promise<Map<string, SymmetricCryptoKey>> {
@@ -172,23 +148,25 @@ export default class CryptoService {
         }
 
         const self = this;
-        let encOrgKeys = await this.utilsService.getObjFromStorage<any>(Keys.encOrgKeys);
+        const encOrgKeys = await this.utilsService.getObjFromStorage<any>(Keys.encOrgKeys);
         if (!encOrgKeys) {
             return null;
         }
 
-        let decPromises: Promise<any>[] = [];
-        let orgKeys: Map<string, SymmetricCryptoKey> = new Map<string, SymmetricCryptoKey>();
+        const decPromises: Array<Promise<any>> = [];
+        const orgKeys: Map<string, SymmetricCryptoKey> = new Map<string, SymmetricCryptoKey>();
         let setKey = false;
 
-        for (var orgId in encOrgKeys) {
+        for (const orgId in encOrgKeys) {
             if (encOrgKeys.hasOwnProperty(orgId)) {
                 /* jshint ignore:start */
+                // tslint:disable-next-line
                 (function (orgIdInstance) {
                     const p = self.rsaDecrypt(encOrgKeys[orgIdInstance]).then((decValueB64: string) => {
                         orgKeys.set(orgIdInstance, new SymmetricCryptoKey(decValueB64, true));
                         setKey = true;
                     }, (e: any) => {
+                        // tslint:disable-next-line
                         console.log('getOrgKeys error: ' + e);
                     });
                     decPromises.push(p);
@@ -210,7 +188,7 @@ export default class CryptoService {
             return null;
         }
 
-        var orgKeys = await this.getOrgKeys();
+        const orgKeys = await this.getOrgKeys();
         if (orgKeys == null || !orgKeys.has(orgId)) {
             return null;
         }
@@ -253,13 +231,12 @@ export default class CryptoService {
     }
 
     clearKeys(): Promise<any> {
-        var self = this;
         return Promise.all([
-            self.clearKey(),
-            self.clearKeyHash(),
-            self.clearOrgKeys(),
-            self.clearEncKey(),
-            self.clearPrivateKey()
+            this.clearKey(),
+            this.clearKeyHash(),
+            this.clearOrgKeys(),
+            this.clearEncKey(),
+            this.clearPrivateKey(),
         ]);
     }
 
@@ -285,29 +262,29 @@ export default class CryptoService {
     // TODO: convert uses to promises
     async hashPassword(password: string, key: SymmetricCryptoKey): Promise<string> {
         const storedKey = await this.getKey();
-        key = key || storedKey
+        key = key || storedKey;
         if (!password || !key) {
             throw new Error('Invalid parameters.');
         }
 
-        let hashBits = forge.pbkdf2(key.key, forge.util.encodeUtf8(password), 1, 256 / 8, 'sha256');
+        const hashBits = forge.pbkdf2(key.key, forge.util.encodeUtf8(password), 1, 256 / 8, 'sha256');
         return forge.util.encode64(hashBits);
     }
 
     makeEncKey(key: SymmetricCryptoKey): Promise<CipherString> {
-        let bytes = new Uint8Array(512 / 8);
+        const bytes = new Uint8Array(512 / 8);
         Crypto.getRandomValues(bytes);
         return this.encrypt(bytes, key, 'raw');
     }
 
     async encrypt(plainValue: string | Uint8Array, key: SymmetricCryptoKey,
-        plainValueEncoding: string = 'utf8'): Promise<CipherString> {
+                  plainValueEncoding: string = 'utf8'): Promise<CipherString> {
         if (!plainValue) {
             return Promise.resolve(null);
         }
 
         let plainValueArr: Uint8Array;
-        if (plainValueEncoding == 'utf8') {
+        if (plainValueEncoding === 'utf8') {
             plainValueArr = this.fromUtf8ToArray(plainValue as string);
         } else {
             plainValueArr = plainValue as Uint8Array;
@@ -336,9 +313,10 @@ export default class CryptoService {
         encBytes.set(encValue.ct, 1 + encValue.iv.length + macLen);
 
         return encBytes.buffer;
-    };
+    }
 
-    async decrypt(cipherString: CipherString, key: SymmetricCryptoKey, outputEncoding: string = 'utf8'): Promise<string> {
+    async decrypt(cipherString: CipherString, key: SymmetricCryptoKey,
+                  outputEncoding: string = 'utf8'): Promise<string> {
         const ivBytes: string = forge.util.decode64(cipherString.initializationVector);
         const ctBytes: string = forge.util.decode64(cipherString.cipherText);
         const macBytes: string = cipherString.mac ? forge.util.decode64(cipherString.mac) : null;
@@ -348,7 +326,7 @@ export default class CryptoService {
             return null;
         }
 
-        if (outputEncoding == 'utf8') {
+        if (outputEncoding === 'utf8') {
             return decipher.output.toString('utf8');
         } else {
             return decipher.output.getBytes();
@@ -397,12 +375,12 @@ export default class CryptoService {
         let encType: EncryptionType = null;
         let encPieces: string[];
 
-        if (headerPieces.length == 1) {
+        if (headerPieces.length === 1) {
             encType = EncryptionType.Rsa2048_OaepSha256_B64;
             encPieces = [headerPieces[0]];
-        } else if (headerPieces.length == 2) {
+        } else if (headerPieces.length === 2) {
             try {
-                encType = parseInt(headerPieces[0]);
+                encType = parseInt(headerPieces[0], null);
                 encPieces = headerPieces[1].split('|');
             } catch (e) { }
         }
@@ -450,14 +428,14 @@ export default class CryptoService {
             case EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64:
                 padding = {
                     name: 'RSA-OAEP',
-                    hash: { name: 'SHA-256' }
+                    hash: { name: 'SHA-256' },
                 };
                 break;
             case EncryptionType.Rsa2048_OaepSha1_B64:
             case EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64:
                 padding = {
                     name: 'RSA-OAEP',
-                    hash: { name: 'SHA-1' }
+                    hash: { name: 'SHA-1' },
                 };
                 break;
             default:
@@ -466,7 +444,7 @@ export default class CryptoService {
 
         const privateKey = await Subtle.importKey('pkcs8', privateKeyBytes, padding, false, ['decrypt']);
 
-        var ctArr = UtilsService.fromB64ToArray(encPieces[0]);
+        const ctArr = UtilsService.fromB64ToArray(encPieces[0]);
         const decBytes = await Subtle.decrypt(padding, privateKey, ctArr.buffer);
 
         const b64DecValue = this.fromBufferToB64(decBytes);
@@ -488,7 +466,7 @@ export default class CryptoService {
         obj.ct = new Uint8Array(encValue);
 
         if (keyBuf.macKey) {
-            let data = new Uint8Array(obj.iv.length + obj.ct.length);
+            const data = new Uint8Array(obj.iv.length + obj.ct.length);
             data.set(obj.iv, 0);
             data.set(obj.ct, obj.iv.length);
             const mac = await this.computeMacWC(data.buffer, keyBuf.macKey);
@@ -499,25 +477,27 @@ export default class CryptoService {
     }
 
     private async aesDecrypt(encType: EncryptionType, ctBytes: string, ivBytes: string, macBytes: string,
-        key: SymmetricCryptoKey): Promise<any> {
+                             key: SymmetricCryptoKey): Promise<any> {
         const keyForEnc = await this.getKeyForEncryption(key);
         const theKey = this.resolveLegacyKey(encType, keyForEnc);
 
-        if (encType != theKey.encType) {
+        if (encType !== theKey.encType) {
+            // tslint:disable-next-line
             console.error('encType unavailable.');
             return null;
         }
 
         if (theKey.macKey != null && macBytes != null) {
-            var computedMacBytes = this.computeMac(ivBytes + ctBytes, theKey.macKey, false);
+            const computedMacBytes = this.computeMac(ivBytes + ctBytes, theKey.macKey, false);
             if (!this.macsEqual(theKey.macKey, computedMacBytes, macBytes)) {
+                // tslint:disable-next-line
                 console.error('MAC failed.');
                 return null;
             }
         }
 
-        var ctBuffer = forge.util.createBuffer(ctBytes);
-        var decipher = forge.cipher.createDecipher('AES-CBC', theKey.encKey);
+        const ctBuffer = forge.util.createBuffer(ctBytes);
+        const decipher = forge.cipher.createDecipher('AES-CBC', theKey.encKey);
         decipher.start({ iv: ivBytes });
         decipher.update(ctBuffer);
         decipher.finish();
@@ -526,7 +506,7 @@ export default class CryptoService {
     }
 
     private async aesDecryptWC(encType: EncryptionType, ctBuf: ArrayBuffer, ivBuf: ArrayBuffer,
-        macBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
+                               macBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
         const theKey = await this.getKeyForEncryption(key);
         const keyBuf = theKey.getBuffers();
         const encKey = await Subtle.importKey('raw', keyBuf.encKey, { name: 'AES-CBC' }, false, ['decrypt']);
@@ -544,6 +524,7 @@ export default class CryptoService {
 
         const macsMatch = await this.macsEqualWC(keyBuf.macKey, macBuf, computedMacBuf);
         if (macsMatch === false) {
+            // tslint:disable-next-line
             console.error('MAC failed.');
             return null;
         }
@@ -560,7 +541,8 @@ export default class CryptoService {
     }
 
     private async computeMacWC(dataBuf: ArrayBuffer, macKeyBuf: ArrayBuffer): Promise<ArrayBuffer> {
-        const key = await Subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } }, false, ['sign']);
+        const key = await Subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } },
+            false, ['sign']);
         return await Subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, key, dataBuf);
     }
 
@@ -571,21 +553,22 @@ export default class CryptoService {
 
         hmac.start('sha256', macKey);
         hmac.update(mac1);
-        let mac1Bytes = hmac.digest().getBytes();
+        const mac1Bytes = hmac.digest().getBytes();
 
         hmac.start(null, null);
         hmac.update(mac2);
-        let mac2Bytes = hmac.digest().getBytes();
+        const mac2Bytes = hmac.digest().getBytes();
 
-        return mac1Bytes == mac2Bytes;
+        return mac1Bytes === mac2Bytes;
     }
 
     private async macsEqualWC(macKeyBuf: ArrayBuffer, mac1Buf: ArrayBuffer, mac2Buf: ArrayBuffer): Promise<boolean> {
-        const macKey = await Subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } }, false, ['sign']);
+        const macKey = await Subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } },
+            false, ['sign']);
         const mac1 = await Subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, macKey, mac1Buf);
         const mac2 = await Subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, macKey, mac2Buf);
 
-        if (mac1.byteLength != mac2.byteLength) {
+        if (mac1.byteLength !== mac2.byteLength) {
             return false;
         }
 
@@ -611,7 +594,7 @@ export default class CryptoService {
     }
 
     private resolveLegacyKey(encType: EncryptionType, key: SymmetricCryptoKey): SymmetricCryptoKey {
-        if (encType == EncryptionType.AesCbc128_HmacSha256_B64 && key.encType == EncryptionType.AesCbc256_B64) {
+        if (encType === EncryptionType.AesCbc128_HmacSha256_B64 && key.encType === EncryptionType.AesCbc256_B64) {
             // Old encrypt-then-mac scheme, make a new key
             this.legacyEtmKey = this.legacyEtmKey ||
                 new SymmetricCryptoKey(key.key, false, EncryptionType.AesCbc128_HmacSha256_B64);
@@ -638,7 +621,7 @@ export default class CryptoService {
 
     private fromUtf8ToArray(str: string): Uint8Array {
         const strUtf8 = unescape(encodeURIComponent(str));
-        let arr = new Uint8Array(strUtf8.length);
+        const arr = new Uint8Array(strUtf8.length);
         for (let i = 0; i < strUtf8.length; i++) {
             arr[i] = strUtf8.charCodeAt(i);
         }

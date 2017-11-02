@@ -1,4 +1,4 @@
-﻿import UtilsService from '../../../services/utils.service';
+import UtilsService from '../../../services/utils.service';
 import * as template from './views/tools.html';
 
 class ToolsController {
@@ -6,8 +6,7 @@ class ToolsController {
     i18n: any;
 
     constructor(private SweetAlert: any, private i18nService: any,
-        private $analytics: any, private utilsService: UtilsService) {
-
+                private $analytics: any, private utilsService: UtilsService) {
         this.i18n = i18nService;
         this.showExport = !utilsService.isEdge();
     }
@@ -24,7 +23,10 @@ class ToolsController {
 
     launchiOS() {
         this.$analytics.eventTrack('Launch iOS');
-        chrome.tabs.create({ url: 'https://itunes.apple.com/us/app/bitwarden-free-password-manager/id1137397744?mt=8' });
+        chrome.tabs.create({
+            url: 'https://itunes.apple.com/us/app/bitwarden-free-password-manager/' +
+            'id1137397744?mt=8',
+        });
     }
 
     launchImport() {
@@ -33,14 +35,14 @@ class ToolsController {
             text: this.i18nService.importItemsConfirmation,
             showCancelButton: true,
             confirmButtonText: this.i18nService.yes,
-            cancelButtonText: this.i18nService.cancel
+            cancelButtonText: this.i18nService.cancel,
         }, (confirmed: boolean) => {
             if (confirmed) {
                 this.$analytics.eventTrack('Launch Web Vault For Import');
                 chrome.tabs.create({ url: 'https://help.bitwarden.com/article/import-data/' });
             }
         });
-    };
+    }
 }
 
 export const ToolsComponent = {
