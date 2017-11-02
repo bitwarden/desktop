@@ -1,35 +1,39 @@
-enum Browser {
-    Chrome = 2,
-    Firefox = 3,
-    Opera = 4,
-    Edge = 5,
-}
+import { BrowserType } from '../enums/browserType.enum';
 
 const AnalyticsIds = {
-    [Browser.Chrome]: 'UA-81915606-6',
-    [Browser.Firefox]: 'UA-81915606-7',
-    [Browser.Opera]: 'UA-81915606-8',
-    [Browser.Edge]: 'UA-81915606-9',
+    [BrowserType.Chrome]: 'UA-81915606-6',
+    [BrowserType.Firefox]: 'UA-81915606-7',
+    [BrowserType.Opera]: 'UA-81915606-8',
+    [BrowserType.Edge]: 'UA-81915606-9',
 };
 
 export default class UtilsService {
-    private browserCache: Browser = null;
+    static fromB64ToArray(str: string): Uint8Array {
+        const binaryString = window.atob(str);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+        }
+        return bytes;
+    }
+
+    private browserCache: BrowserType = null;
     private analyticsIdCache: string = null;
 
-    getBrowser(): Browser {
+    getBrowser(): BrowserType {
         if (this.browserCache) {
             return this.browserCache;
         }
 
         if (navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1) {
-            this.browserCache = Browser.Firefox;
+            this.browserCache = BrowserType.Firefox;
         } else if ((!!(window as any).opr && !!(window as any).opr.addons) || !!(window as any).opera ||
             navigator.userAgent.indexOf(' OPR/') >= 0) {
-            this.browserCache = Browser.Opera;
+            this.browserCache = BrowserType.Opera;
         } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
-            this.browserCache = Browser.Edge;
+            this.browserCache = BrowserType.Edge;
         } else if ((window as any).chrome) {
-            this.browserCache = Browser.Chrome;
+            this.browserCache = BrowserType.Chrome;
         }
 
         return this.browserCache;
@@ -40,19 +44,19 @@ export default class UtilsService {
     }
 
     isFirefox(): boolean {
-        return this.getBrowser() === Browser.Firefox;
+        return this.getBrowser() === BrowserType.Firefox;
     }
 
     isChrome(): boolean {
-        return this.getBrowser() === Browser.Chrome;
+        return this.getBrowser() === BrowserType.Chrome;
     }
 
     isEdge(): boolean {
-        return this.getBrowser() === Browser.Edge;
+        return this.getBrowser() === BrowserType.Edge;
     }
 
     isOpera(): boolean {
-        return this.getBrowser() === Browser.Opera;
+        return this.getBrowser() === BrowserType.Opera;
     }
 
     analyticsId(): string {
@@ -243,11 +247,11 @@ export default class UtilsService {
         });
     }
 
-    getObjFromStorage(key: string) {
+    getObjFromStorage<T>(key: string): Promise<T> {
         return new Promise((resolve) => {
             chrome.storage.local.get(key, (obj: any) => {
                 if (obj && obj[key]) {
-                    resolve(obj[key]);
+                    resolve(obj[key] as T);
                 } else {
                     resolve(null);
                 }
