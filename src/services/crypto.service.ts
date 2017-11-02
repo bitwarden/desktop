@@ -15,6 +15,15 @@ const Keys = {
     keyHash: 'keyHash',
 };
 
+const SigningAlgorithm = {
+    name: 'HMAC',
+    hash: { name: 'SHA-256' }
+};
+
+const AesAlgorithm = {
+    name: 'AES-CBC'
+};
+
 const Crypto = window.crypto;
 const Subtle = Crypto.subtle;
 
@@ -293,8 +302,8 @@ export default class CryptoService {
         if (encValue.mac) {
             encBytes.set(encValue.mac, 1 + encValue.iv.length);
         }
-        encBytes.set(encValue.ct, 1 + encValue.iv.length + macLen);
 
+        encBytes.set(encValue.ct, 1 + encValue.iv.length + macLen);
         return encBytes.buffer;
     }
 
@@ -303,7 +312,6 @@ export default class CryptoService {
         const ivBytes: string = forge.util.decode64(cipherString.initializationVector);
         const ctBytes: string = forge.util.decode64(cipherString.cipherText);
         const macBytes: string = cipherString.mac ? forge.util.decode64(cipherString.mac) : null;
-
         const decipher = await this.aesDecrypt(cipherString.encryptionType, ctBytes, ivBytes, macBytes, key);
         if (!decipher) {
             return null;
@@ -405,18 +413,18 @@ export default class CryptoService {
             throw new Error('No private key.');
         }
 
-        let padding: any = null;
+        let rsaAlgorithm: any = null;
         switch (encType) {
             case EncryptionType.Rsa2048_OaepSha256_B64:
             case EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64:
-                padding = {
+                rsaAlgorithm = {
                     name: 'RSA-OAEP',
                     hash: { name: 'SHA-256' },
                 };
                 break;
             case EncryptionType.Rsa2048_OaepSha1_B64:
             case EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64:
-                padding = {
+                rsaAlgorithm = {
                     name: 'RSA-OAEP',
                     hash: { name: 'SHA-1' },
                 };
@@ -425,11 +433,9 @@ export default class CryptoService {
                 throw new Error('encType unavailable.');
         }
 
-        const privateKey = await Subtle.importKey('pkcs8', privateKeyBytes, padding, false, ['decrypt']);
-
+        const privateKey = await Subtle.importKey('pkcs8', privateKeyBytes, rsaAlgorithm, false, ['decrypt']);
         const ctArr = UtilsService.fromB64ToArray(encPieces[0]);
-        const decBytes = await Subtle.decrypt(padding, privateKey, ctArr.buffer);
-
+        const decBytes = await Subtle.decrypt(rsaAlgorithm, privateKey, ctArr.buffer);
         const b64DecValue = UtilsService.fromBufferToB64(decBytes);
         return b64DecValue;
     }
@@ -444,7 +450,7 @@ export default class CryptoService {
         obj.iv = new Uint8Array(16);
         Crypto.getRandomValues(obj.iv);
 
-        const encKey = await Subtle.importKey('raw', keyBuf.encKey, { name: 'AES-CBC' }, false, ['encrypt']);
+        const encKey = await Subtle.importKey('raw', keyBuf.encKey, AesAlgorithm, false, ['encrypt']);
         const encValue = await Subtle.encrypt({ name: 'AES-CBC', iv: obj.iv }, encKey, plainValue);
         obj.ct = new Uint8Array(encValue);
 
@@ -492,7 +498,7 @@ export default class CryptoService {
                                macBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
         const theKey = await this.getKeyForEncryption(key);
         const keyBuf = theKey.getBuffers();
-        const encKey = await Subtle.importKey('raw', keyBuf.encKey, { name: 'AES-CBC' }, false, ['decrypt']);
+        const encKey = await Subtle.importKey('raw', keyBuf.encKey, AesAlgorithm, false, ['decrypt']);
         if (!keyBuf.macKey || !macBuf) {
             return null;
         }
@@ -524,9 +530,8 @@ export default class CryptoService {
     }
 
     private async computeMacWC(dataBuf: ArrayBuffer, macKeyBuf: ArrayBuffer): Promise<ArrayBuffer> {
-        const key = await Subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } },
-            false, ['sign']);
-        return await Subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, key, dataBuf);
+        const key = await Subtle.importKey('raw', macKeyBuf, SigningAlgorithm, false, ['sign']);
+            return await Subtle.sign(SigningAlgorithm, key, dataBuf);
     }
 
     // Safely compare two MACs in a way that protects against timing attacks (Double HMAC Verification).
@@ -546,10 +551,9 @@ export default class CryptoService {
     }
 
     private async macsEqualWC(macKeyBuf: ArrayBuffer, mac1Buf: ArrayBuffer, mac2Buf: ArrayBuffer): Promise<boolean> {
-        const macKey = await Subtle.importKey('raw', macKeyBuf, { name: 'HMAC', hash: { name: 'SHA-256' } },
-            false, ['sign']);
-        const mac1 = await Subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, macKey, mac1Buf);
-        const mac2 = await Subtle.sign({ name: 'HMAC', hash: { name: 'SHA-256' } }, macKey, mac2Buf);
+        const macKey = await Subtle.importKey('raw', macKeyBuf, SigningAlgorithm, false, ['sign']);
+        const mac1 = await Subtle.sign(SigningAlgorithm, macKey, mac1Buf);
+        const mac2 = await Subtle.sign(SigningAlgorithm, macKey, mac2Buf);
 
         if (mac1.byteLength !== mac2.byteLength) {
             return false;
