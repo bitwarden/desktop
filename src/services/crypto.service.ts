@@ -26,32 +26,28 @@ export default class CryptoService {
     private privateKey: ArrayBuffer;
     private orgKeys: Map<string, SymmetricCryptoKey>;
 
-    constructor(private utilsService: UtilsService) {
-    }
-
     async setKey(key: SymmetricCryptoKey) {
-        const self = this;
         this.key = key;
 
-        const option = await this.utilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
+        const option = await UtilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
         if (option != null) {
             // if we have a lock option set, we do not store the key
             return;
         }
 
-        return self.utilsService.saveObjToStorage(Keys.key, key.keyB64);
+        return UtilsService.saveObjToStorage(Keys.key, key.keyB64);
     }
 
     setKeyHash(keyHash: string): Promise<{}> {
         this.keyHash = keyHash;
-        return this.utilsService.saveObjToStorage(Keys.keyHash, keyHash);
+        return UtilsService.saveObjToStorage(Keys.keyHash, keyHash);
     }
 
     async setEncKey(encKey: string) {
         if (encKey == null) {
             return;
         }
-        await this.utilsService.saveObjToStorage(Keys.encKey, encKey);
+        await UtilsService.saveObjToStorage(Keys.encKey, encKey);
         this.encKey = null;
     }
 
@@ -60,7 +56,7 @@ export default class CryptoService {
             return;
         }
 
-        await this.utilsService.saveObjToStorage(Keys.encPrivateKey, encPrivateKey);
+        await UtilsService.saveObjToStorage(Keys.encPrivateKey, encPrivateKey);
         this.privateKey = null;
     }
 
@@ -71,7 +67,7 @@ export default class CryptoService {
             orgKeys[org.id] = org.key;
         }
 
-        return this.utilsService.saveObjToStorage(Keys.encOrgKeys, orgKeys);
+        return UtilsService.saveObjToStorage(Keys.encOrgKeys, orgKeys);
     }
 
     async getKey(): Promise<SymmetricCryptoKey> {
@@ -79,12 +75,12 @@ export default class CryptoService {
             return this.key;
         }
 
-        const option = await this.utilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
+        const option = await UtilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
         if (option != null) {
             return null;
         }
 
-        const key = await this.utilsService.getObjFromStorage<string>(Keys.key);
+        const key = await UtilsService.getObjFromStorage<string>(Keys.key);
         if (key) {
             this.key = new SymmetricCryptoKey(key, true);
         }
@@ -97,7 +93,7 @@ export default class CryptoService {
             return Promise.resolve(this.keyHash);
         }
 
-        return this.utilsService.getObjFromStorage<string>(Keys.keyHash);
+        return UtilsService.getObjFromStorage<string>(Keys.keyHash);
     }
 
     async getEncKey(): Promise<SymmetricCryptoKey> {
@@ -105,7 +101,7 @@ export default class CryptoService {
             return this.encKey;
         }
 
-        const encKey = await this.utilsService.getObjFromStorage<string>(Keys.encKey);
+        const encKey = await UtilsService.getObjFromStorage<string>(Keys.encKey);
         if (encKey == null) {
             return null;
         }
@@ -129,7 +125,7 @@ export default class CryptoService {
             return this.privateKey;
         }
 
-        const encPrivateKey = await this.utilsService.getObjFromStorage<string>(Keys.encPrivateKey);
+        const encPrivateKey = await UtilsService.getObjFromStorage<string>(Keys.encPrivateKey);
         if (encPrivateKey == null) {
             return null;
         }
@@ -146,34 +142,24 @@ export default class CryptoService {
         }
 
         const self = this;
-        const encOrgKeys = await this.utilsService.getObjFromStorage<any>(Keys.encOrgKeys);
+        const encOrgKeys = await UtilsService.getObjFromStorage<any>(Keys.encOrgKeys);
         if (!encOrgKeys) {
             return null;
         }
 
-        const decPromises: Array<Promise<any>> = [];
         const orgKeys: Map<string, SymmetricCryptoKey> = new Map<string, SymmetricCryptoKey>();
         let setKey = false;
 
         for (const orgId in encOrgKeys) {
-            if (encOrgKeys.hasOwnProperty(orgId)) {
-                /* jshint ignore:start */
-                // tslint:disable-next-line
-                (function (orgIdInstance) {
-                    const p = self.rsaDecrypt(encOrgKeys[orgIdInstance]).then((decValueB64: string) => {
-                        orgKeys.set(orgIdInstance, new SymmetricCryptoKey(decValueB64, true));
-                        setKey = true;
-                    }, (e: any) => {
-                        // tslint:disable-next-line
-                        console.log('getOrgKeys error: ' + e);
-                    });
-                    decPromises.push(p);
-                })(orgId);
-                /* jshint ignore:end */
+            if (!encOrgKeys.hasOwnProperty(orgId)) {
+                continue;
             }
+
+            const decValueB64 = await this.rsaDecrypt(encOrgKeys[orgId]);
+            orgKeys.set(orgId, new SymmetricCryptoKey(decValueB64, true));
+            setKey = true;
         }
 
-        await Promise.all(decPromises);
         if (setKey) {
             this.orgKeys = orgKeys;
         }
@@ -196,12 +182,12 @@ export default class CryptoService {
 
     clearKey(): Promise<any> {
         this.key = this.legacyEtmKey = null;
-        return this.utilsService.removeFromStorage(Keys.key);
+        return UtilsService.removeFromStorage(Keys.key);
     }
 
     clearKeyHash(): Promise<any> {
         this.keyHash = null;
-        return this.utilsService.removeFromStorage(Keys.keyHash);
+        return UtilsService.removeFromStorage(Keys.keyHash);
     }
 
     clearEncKey(memoryOnly?: boolean): Promise<any> {
@@ -209,7 +195,7 @@ export default class CryptoService {
         if (memoryOnly) {
             return Promise.resolve();
         }
-        return this.utilsService.removeFromStorage(Keys.encKey);
+        return UtilsService.removeFromStorage(Keys.encKey);
     }
 
     clearPrivateKey(memoryOnly?: boolean): Promise<any> {
@@ -217,7 +203,7 @@ export default class CryptoService {
         if (memoryOnly) {
             return Promise.resolve();
         }
-        return this.utilsService.removeFromStorage(Keys.encPrivateKey);
+        return UtilsService.removeFromStorage(Keys.encPrivateKey);
     }
 
     clearOrgKeys(memoryOnly?: boolean): Promise<any> {
@@ -225,7 +211,7 @@ export default class CryptoService {
         if (memoryOnly) {
             return Promise.resolve();
         }
-        return this.utilsService.removeFromStorage(Keys.encOrgKeys);
+        return UtilsService.removeFromStorage(Keys.encOrgKeys);
     }
 
     clearKeys(): Promise<any> {
@@ -240,7 +226,7 @@ export default class CryptoService {
 
     async toggleKey(): Promise<any> {
         const key = await this.getKey();
-        const option = await this.utilsService.getObjFromStorage(ConstantsService.lockOptionKey);
+        const option = await UtilsService.getObjFromStorage(ConstantsService.lockOptionKey);
         if (option != null || option === 0) {
             // if we have a lock option set, clear the key
             await this.clearKey();
@@ -282,15 +268,15 @@ export default class CryptoService {
 
         let plainValueArr: Uint8Array;
         if (plainValueEncoding === 'utf8') {
-            plainValueArr = this.fromUtf8ToArray(plainValue as string);
+            plainValueArr = UtilsService.fromUtf8ToArray(plainValue as string);
         } else {
             plainValueArr = plainValue as Uint8Array;
         }
 
         const encValue = await this.aesEncrypt(plainValueArr.buffer, key);
-        const iv = this.fromBufferToB64(encValue.iv.buffer);
-        const ct = this.fromBufferToB64(encValue.ct.buffer);
-        const mac = encValue.mac ? this.fromBufferToB64(encValue.mac.buffer) : null;
+        const iv = UtilsService.fromBufferToB64(encValue.iv.buffer);
+        const ct = UtilsService.fromBufferToB64(encValue.ct.buffer);
+        const mac = encValue.mac ? UtilsService.fromBufferToB64(encValue.mac.buffer) : null;
         return new CipherString(encValue.key.encType, iv, ct, mac);
     }
 
@@ -444,7 +430,7 @@ export default class CryptoService {
         const ctArr = UtilsService.fromB64ToArray(encPieces[0]);
         const decBytes = await Subtle.decrypt(padding, privateKey, ctArr.buffer);
 
-        const b64DecValue = this.fromBufferToB64(decBytes);
+        const b64DecValue = UtilsService.fromBufferToB64(decBytes);
         return b64DecValue;
     }
 
@@ -599,29 +585,5 @@ export default class CryptoService {
         }
 
         return key;
-    }
-
-    private fromBufferToB64(buffer: ArrayBuffer): string {
-        let binary = '';
-        const bytes = new Uint8Array(buffer);
-        for (let i = 0; i < bytes.byteLength; i++) {
-            binary += String.fromCharCode(bytes[i]);
-        }
-        return window.btoa(binary);
-    }
-
-    private fromBufferToUtf8(buffer: ArrayBuffer): string {
-        const bytes = new Uint8Array(buffer);
-        const encodedString = String.fromCharCode.apply(null, bytes);
-        return decodeURIComponent(escape(encodedString));
-    }
-
-    private fromUtf8ToArray(str: string): Uint8Array {
-        const strUtf8 = unescape(encodeURIComponent(str));
-        const arr = new Uint8Array(strUtf8.length);
-        for (let i = 0; i < strUtf8.length; i++) {
-            arr[i] = strUtf8.charCodeAt(i);
-        }
-        return arr;
     }
 }

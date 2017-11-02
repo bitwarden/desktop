@@ -17,6 +17,58 @@ export default class UtilsService {
         return bytes;
     }
 
+    static fromBufferToB64(buffer: ArrayBuffer): string {
+        let binary = '';
+        const bytes = new Uint8Array(buffer);
+        for (let i = 0; i < bytes.byteLength; i++) {
+            binary += String.fromCharCode(bytes[i]);
+        }
+        return window.btoa(binary);
+    }
+
+    static fromBufferToUtf8(buffer: ArrayBuffer): string {
+        const bytes = new Uint8Array(buffer);
+        const encodedString = String.fromCharCode.apply(null, bytes);
+        return decodeURIComponent(escape(encodedString));
+    }
+
+    static fromUtf8ToArray(str: string): Uint8Array {
+        const strUtf8 = unescape(encodeURIComponent(str));
+        const arr = new Uint8Array(strUtf8.length);
+        for (let i = 0; i < strUtf8.length; i++) {
+            arr[i] = strUtf8.charCodeAt(i);
+        }
+        return arr;
+    }
+
+    static saveObjToStorage(key: string, obj: any) {
+        return new Promise((resolve) => {
+            chrome.storage.local.set({ [key]: obj }, () => {
+                resolve();
+            });
+        });
+    }
+
+    static removeFromStorage(key: string) {
+        return new Promise((resolve) => {
+            chrome.storage.local.remove(key, () => {
+                resolve();
+            });
+        });
+    }
+
+    static getObjFromStorage<T>(key: string): Promise<T> {
+        return new Promise((resolve) => {
+            chrome.storage.local.get(key, (obj: any) => {
+                if (obj && obj[key]) {
+                    resolve(obj[key] as T);
+                } else {
+                    resolve(null);
+                }
+            });
+        });
+    }
+
     private browserCache: BrowserType = null;
     private analyticsIdCache: string = null;
 
@@ -231,6 +283,8 @@ export default class UtilsService {
             theWindow.location.search.indexOf('uilocation=popup') > -1;
     }
 
+    // remove these in favor of static
+
     saveObjToStorage(key: string, obj: any) {
         return new Promise((resolve) => {
             chrome.storage.local.set({ [key]: obj }, () => {
@@ -247,11 +301,11 @@ export default class UtilsService {
         });
     }
 
-    getObjFromStorage<T>(key: string): Promise<T> {
+    getObjFromStorage(key: string) {
         return new Promise((resolve) => {
             chrome.storage.local.get(key, (obj: any) => {
                 if (obj && obj[key]) {
-                    resolve(obj[key] as T);
+                    resolve(obj[key]);
                 } else {
                     resolve(null);
                 }
