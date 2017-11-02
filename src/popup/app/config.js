@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit')
 
     .config(function ($stateProvider, $urlRouterProvider, $compileProvider, $sceDelegateProvider, toastrConfig) {
@@ -124,8 +124,7 @@
             })
             .state('tabs.tools', {
                 url: '/tools',
-                //component: 'tools',
-                template: '<tools></tools>'
+                component: 'tools'
             })
 
             .state('viewFolder', {
