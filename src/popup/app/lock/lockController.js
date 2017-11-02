@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.lock')
 
     .controller('lockController', function ($scope, $state, $analytics, i18nService, cryptoService, toastr,
@@ -26,18 +26,18 @@
         $scope.submit = function () {
             userService.getEmail(function (email) {
                 var key = cryptoService.makeKey($scope.masterPassword, email);
-                cryptoService.hashPassword($scope.masterPassword, key, function (keyHash) {
-                    cryptoService.getKeyHash(function (storedKeyHash) {
-                        if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
-                            cryptoService.setKey(key).then(function () {
-                                chrome.runtime.sendMessage({ command: 'unlocked' });
-                                $state.go('tabs.current');
-                            });
-                        }
-                        else {
-                            toastr.error(i18nService.invalidMasterPassword, i18nService.errorsOccurred);
-                        }
-                    });
+                cryptoService.hashPassword($scope.masterPassword, key).then(function (keyHash) {
+                    return cryptoService.getKeyHash();
+                }).then(function (storedKeyHash) {
+                    if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
+                        cryptoService.setKey(key).then(function () {
+                            chrome.runtime.sendMessage({ command: 'unlocked' });
+                            $state.go('tabs.current');
+                        });
+                    }
+                    else {
+                        toastr.error(i18nService.invalidMasterPassword, i18nService.errorsOccurred);
+                    }
                 });
             });
         };

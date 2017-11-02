@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.settings')
 
     .controller('settingsController', function ($scope, $state, SweetAlert, utilsService, $analytics,
@@ -31,7 +31,7 @@
             }
 
             chrome.storage.local.set(obj, function () {
-                cryptoService.getKeyHash(function (keyHash) {
+                cryptoService.getKeyHash().then(function (keyHash) {
                     if (keyHash) {
                         cryptoService.toggleKey();
                     }

@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.tools')
 
     .controller('toolsExportController', function ($scope, $state, toastr, $q, $analytics,
@@ -24,15 +24,15 @@
 
             userService.getEmail(function (email) {
                 var key = cryptoService.makeKey($scope.masterPassword, email);
-                cryptoService.hashPassword($scope.masterPassword, key, function (keyHash) {
-                    cryptoService.getKeyHash(function (storedKeyHash) {
-                        if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
-                            deferred.resolve();
-                        }
-                        else {
-                            deferred.reject();
-                        }
-                    });
+                cryptoService.hashPassword($scope.masterPassword, key).then(function (keyHash) {
+                    return cryptoService.getKeyHash();
+                }).then(function (storedKeyHash) {
+                    if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
+                        deferred.resolve();
+                    }
+                    else {
+                        deferred.reject();
+                    }
                 });
             });
 

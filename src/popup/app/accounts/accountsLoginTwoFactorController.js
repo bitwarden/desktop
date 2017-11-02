@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.accounts')
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService, SweetAlert,
@@ -85,7 +85,7 @@
             }
 
             var key = cryptoService.makeKey(masterPassword, email);
-            cryptoService.hashPassword(masterPassword, key, function (hash) {
+            cryptoService.hashPassword(masterPassword, key).then(function (hash) {
                 var request = new TwoFactorEmailRequest(email, hash);
                 apiService.postTwoFactorEmail(request, function () {
                     if (doToast) {

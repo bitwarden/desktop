@@ -42,8 +42,7 @@ export default class CryptoService {
         return self.utilsService.saveObjToStorage(Keys.key, key.keyB64);
     }
 
-    // TODO: convert uses to promises
-    setKeyHash(keyHash: string) {
+    setKeyHash(keyHash: string): Promise<{}> {
         this.keyHash = keyHash;
         return this.utilsService.saveObjToStorage(Keys.keyHash, keyHash);
     }
@@ -66,7 +65,7 @@ export default class CryptoService {
     }
 
     // TODO: proper response model type for orgs
-    setOrgKeys(orgs: any) {
+    setOrgKeys(orgs: any): Promise<{}> {
         const orgKeys: any = {};
         for (const org of orgs) {
             orgKeys[org.id] = org.key;
@@ -93,7 +92,6 @@ export default class CryptoService {
         return key == null ? null : this.key;
     }
 
-    // TODO: convert uses to promises
     getKeyHash(): Promise<string> {
         if (this.keyHash != null) {
             return Promise.resolve(this.keyHash);
@@ -259,7 +257,6 @@ export default class CryptoService {
         return new SymmetricCryptoKey(keyBytes);
     }
 
-    // TODO: convert uses to promises
     async hashPassword(password: string, key: SymmetricCryptoKey): Promise<string> {
         const storedKey = await this.getKey();
         key = key || storedKey;
