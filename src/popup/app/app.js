@@ -28,6 +28,7 @@ require('../less/libs.less');
 require('../less/popup.less');
 
 import ComponentsModule from './components/components.module';
+import ToolsModule from './tools/tools.module';
 
 // Model imports
 import { AttachmentData } from '../../models/data/attachmentData';
@@ -80,7 +81,7 @@ angular
         'bit.current',
         'bit.vault',
         'bit.settings',
-        'bit.tools',
+        ToolsModule,
         'bit.lock'
     ]);
 
@@ -126,8 +127,6 @@ require('./settings/settingsAddFolderController.js');
 require('./settings/settingsEditFolderController.js');
 require('./settings/settingsPremiumController.js');
 require('./settings/settingsEnvironmentController.js');
-require('./tools/toolsModule.js');
-require('./tools/toolsController.js');
 require('./tools/toolsPasswordGeneratorController.js');
 require('./tools/toolsPasswordGeneratorHistoryController.js');
 require('./tools/toolsExportController.js');
