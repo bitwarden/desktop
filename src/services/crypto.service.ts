@@ -17,11 +17,11 @@ const Keys = {
 
 const SigningAlgorithm = {
     name: 'HMAC',
-    hash: { name: 'SHA-256' }
+    hash: { name: 'SHA-256' },
 };
 
 const AesAlgorithm = {
-    name: 'AES-CBC'
+    name: 'AES-CBC',
 };
 
 const Crypto = window.crypto;
@@ -269,7 +269,7 @@ export default class CryptoService {
         return this.encrypt(bytes, key, 'raw');
     }
 
-    async encrypt(plainValue: string | Uint8Array, key: SymmetricCryptoKey,
+    async encrypt(plainValue: string | Uint8Array, key?: SymmetricCryptoKey,
                   plainValueEncoding: string = 'utf8'): Promise<CipherString> {
         if (!plainValue) {
             return Promise.resolve(null);
@@ -307,7 +307,7 @@ export default class CryptoService {
         return encBytes.buffer;
     }
 
-    async decrypt(cipherString: CipherString, key: SymmetricCryptoKey,
+    async decrypt(cipherString: CipherString, key?: SymmetricCryptoKey,
                   outputEncoding: string = 'utf8'): Promise<string> {
         const ivBytes: string = forge.util.decode64(cipherString.initializationVector);
         const ctBytes: string = forge.util.decode64(cipherString.cipherText);
@@ -531,7 +531,7 @@ export default class CryptoService {
 
     private async computeMacWC(dataBuf: ArrayBuffer, macKeyBuf: ArrayBuffer): Promise<ArrayBuffer> {
         const key = await Subtle.importKey('raw', macKeyBuf, SigningAlgorithm, false, ['sign']);
-            return await Subtle.sign(SigningAlgorithm, key, dataBuf);
+        return await Subtle.sign(SigningAlgorithm, key, dataBuf);
     }
 
     // Safely compare two MACs in a way that protects against timing attacks (Double HMAC Verification).

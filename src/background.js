@@ -4,6 +4,7 @@ import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import UtilsService from './services/utils.service';
 import CryptoService from './services/crypto.service';
+import PasswordGenerationService from './services/passwordGeneration.service';
 
 // Model imports
 import { AttachmentData } from './models/data/attachmentData';
@@ -86,7 +87,7 @@ var bg_isBackground = true,
         setIcon, refreshBadgeAndMenu);
     window.bg_syncService = bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
         bg_cryptoService, logout);
-    window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_constantsService, bg_utilsService, bg_cryptoService);
+    window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_cryptoService);
     window.bg_totpService = bg_totpService = new TotpService(bg_constantsService);
     window.bg_autofillService = bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
         bg_constantsService);
@@ -101,7 +102,7 @@ var bg_isBackground = true,
                     eventAction: 'Generated Password From Command'
                 });
                 bg_passwordGenerationService.getOptions().then(function (options) {
-                    var password = bg_passwordGenerationService.generatePassword(options);
+                    var password = PasswordGenerationService.generatePassword(options);
                     bg_utilsService.copyToClipboard(password);
                     bg_passwordGenerationService.addHistory(password);
                 });
@@ -236,7 +237,7 @@ var bg_isBackground = true,
                     eventAction: 'Generated Password From Context Menu'
                 });
                 bg_passwordGenerationService.getOptions().then(function (options) {
-                    var password = bg_passwordGenerationService.generatePassword(options);
+                    var password = PasswordGenerationService.generatePassword(options);
                     bg_utilsService.copyToClipboard(password);
                     bg_passwordGenerationService.addHistory(password);
                 });
