@@ -1,4 +1,5 @@
 // Service imports
+import AppIdService from './services/appId.service';
 import ConstantsService from './services/constants.service';
 import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
@@ -73,9 +74,9 @@ var bg_isBackground = true,
     window.bg_utilsService = bg_utilsService = new UtilsService();
     window.bg_i18nService = bg_i18nService = new i18nService(bg_utilsService);
     window.bg_constantsService = bg_constantsService = new ConstantsService(bg_i18nService);
-    window.bg_cryptoService = bg_cryptoService = new CryptoService(bg_utilsService);
+    window.bg_cryptoService = bg_cryptoService = new CryptoService();
     window.bg_tokenService = bg_tokenService = new TokenService(bg_utilsService);
-    window.bg_appIdService = bg_appIdService = new AppIdService(bg_utilsService);
+    window.bg_appIdService = bg_appIdService = new AppIdService();
     window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
     window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
     window.bg_userService = bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
