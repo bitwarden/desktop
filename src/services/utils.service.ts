@@ -8,7 +8,25 @@ const AnalyticsIds = {
 };
 
 export default class UtilsService {
-     // ref: http://stackoverflow.com/a/2117523/1090359
+    static urlBase64Decode(str: string): string {
+        let output = str.replace(/-/g, '+').replace(/_/g, '/');
+        switch (output.length % 4) {
+            case 0:
+                break;
+            case 2:
+                output += '==';
+                break;
+            case 3:
+                output += '=';
+                break;
+            default:
+                throw new Error('Illegal base64url string!');
+        }
+
+        return decodeURIComponent(escape(window.atob(output)));
+    }
+
+    // ref: http://stackoverflow.com/a/2117523/1090359
     static newGuid(): string {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
             // tslint:disable-next-line

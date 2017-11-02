@@ -1,11 +1,11 @@
 // Service imports
 import AppIdService from './services/appId.service';
 import ConstantsService from './services/constants.service';
+import CryptoService from './services/crypto.service';
 import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
-import UtilsService from './services/utils.service';
-import CryptoService from './services/crypto.service';
 import PasswordGenerationService from './services/passwordGeneration.service';
+import UtilsService from './services/utils.service';
 
 // Model imports
 import { AttachmentData } from './models/data/attachmentData';
