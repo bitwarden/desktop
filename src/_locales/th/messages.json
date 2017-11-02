@@ -1,957 +1,960 @@
 {
-  "appName":{
-    "message":"bitwarden"
+  "appName": {
+    "message": "bitwarden"
   },
-  "extName":{
-    "message":"bitwarden - Free Password Manager",
-    "description":"Extension name"
+  "extName": {
+    "message": "bitwarden - Free Password Manager",
+    "description": "Extension name"
   },
-  "extDesc":{
-    "message":"bitwarden is a secure and free password manager for all of your devices.",
-    "description":"Extension description"
+  "extDesc": {
+    "message": "bitwarden is a secure and free password manager for all of your devices.",
+    "description": "Extension description"
   },
-  "loginOrCreateNewAccount":{
-    "message":"Log in or create a new account to access your secure vault."
+  "loginOrCreateNewAccount": {
+    "message": "Log in or create a new account to access your secure vault."
   },
-  "createAccount":{
-    "message":"Create Account"
+  "createAccount": {
+    "message": "สร้างบัญชี"
   },
-  "login":{
-    "message":"Log In"
+  "login": {
+    "message": "เข้าสู่ระบบ"
   },
-  "cancel":{
-    "message":"Cancel"
+  "cancel": {
+    "message": "ยกเลิก"
   },
-  "close":{
-    "message":"Close"
+  "close": {
+    "message": "ปิด"
   },
-  "submit":{
-    "message":"Submit"
+  "submit": {
+    "message": "Submit"
   },
-  "emailAddress":{
-    "message":"Email Address"
+  "emailAddress": {
+    "message": "ที่อยู่อีเมล"
   },
-  "masterPass":{
-    "message":"Master Password"
+  "masterPass": {
+    "message": "Master Password"
   },
-  "masterPassDesc":{
-    "message":"The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  "masterPassDesc": {
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
-  "masterPassHintDesc":{
-    "message":"A master password hint can help you remember your password if you forget it."
+  "masterPassHintDesc": {
+    "message": "A master password hint can help you remember your password if you forget it."
   },
-  "reTypeMasterPass":{
-    "message":"Re-type Master Password"
+  "reTypeMasterPass": {
+    "message": "Re-type Master Password"
   },
-  "masterPassHint":{
-    "message":"Master Password Hint (optional)"
+  "masterPassHint": {
+    "message": "Master Password Hint (optional)"
   },
-  "tab":{
-    "message":"Tab"
+  "tab": {
+    "message": "แท็บ"
   },
-  "myVault":{
-    "message":"My Vault"
+  "myVault": {
+    "message": "My Vault"
   },
-  "tools":{
-    "message":"Tools"
+  "tools": {
+    "message": "เครื่องมือ"
   },
-  "settings":{
-    "message":"Settings"
+  "settings": {
+    "message": "การตั้งค่า"
   },
-  "currentTab":{
-    "message":"Current Tab"
+  "currentTab": {
+    "message": "แท็บปัจจุบัน"
   },
-  "copyPassword":{
-    "message":"Copy Password"
+  "copyPassword": {
+    "message": "คัดลอกรหัสผ่าน"
   },
-  "copyUri":{
-    "message":"Copy URI"
+  "copyUri": {
+    "message": "คัดลอก URI"
   },
-  "copyUsername":{
-    "message":"Copy Username"
+  "copyUsername": {
+    "message": "คัดลอกชื่อผู้ใช้"
   },
-  "copyNumber":{
-    "message":"Copy Number"
+  "copyNumber": {
+    "message": "คัดลอกหมายเลข"
   },
-  "copySecurityCode":{
-    "message":"Copy Security Code"
+  "copySecurityCode": {
+    "message": "คัดลอกรหัสรักษาความปลอดภัย"
   },
-  "autoFill":{
-    "message":"Auto-fill"
+  "autoFill": {
+    "message": "กรอกข้อมูลอัตโนมัติ"
   },
-  "generatePasswordCopied":{
-    "message":"Generate Password (copied)"
+  "generatePasswordCopied": {
+    "message": "Generate Password (copied)"
   },
-  "noMatchingLogins":{
-    "message":"No matching logins."
+  "noMatchingLogins": {
+    "message": "No matching logins."
   },
-  "vaultLocked":{
-    "message":"Vault is locked."
+  "vaultLocked": {
+    "message": "Vault is locked."
   },
-  "autoFillInfo":{
-    "message":"There are no logins available to auto-fill for the current browser tab."
+  "autoFillInfo": {
+    "message": "There are no logins available to auto-fill for the current browser tab."
   },
-  "addLogin":{
-    "message":"Add a Login"
+  "addLogin": {
+    "message": "Add a Login"
   },
-  "addItem":{
-    "message":"Add Item"
+  "addItem": {
+    "message": "เพิ่มรายการ"
   },
-  "passwordHint":{
-    "message":"Password Hint"
+  "passwordHint": {
+    "message": "คำใบ้รหัสผ่าน"
   },
-  "enterEmailToGetHint":{
-    "message":"Enter your account email address to receive your master password hint."
+  "enterEmailToGetHint": {
+    "message": "Enter your account email address to receive your master password hint."
   },
-  "getMasterPasswordHint":{
-    "message":"Get master password hint"
+  "getMasterPasswordHint": {
+    "message": "Get master password hint"
   },
-  "continue":{
-    "message":"Continue"
+  "continue": {
+    "message": "ดำเนินการต่อไป"
   },
-  "verificationCode":{
-    "message":"Verification Code"
+  "verificationCode": {
+    "message": "Verification Code"
   },
-  "account":{
-    "message":"Account"
+  "account": {
+    "message": "บัญชี"
   },
-  "changeMasterPassword":{
-    "message":"Change Master Password"
+  "changeMasterPassword": {
+    "message": "Change Master Password"
   },
-  "changeEmail":{
-    "message":"Change Email"
+  "changeEmail": {
+    "message": "เปลี่ยนอีเมล"
   },
-  "twoStepLogin":{
-    "message":"Two-step Login"
+  "twoStepLogin": {
+    "message": "Two-step Login"
   },
-  "logOut":{
-    "message":"Log Out"
+  "logOut": {
+    "message": "ออกจากระบบ"
   },
-  "about":{
-    "message":"About"
+  "about": {
+    "message": "เกี่ยวกับ"
   },
-  "version":{
-    "message":"Version"
+  "version": {
+    "message": "เวอร์ชัน"
   },
-  "save":{
-    "message":"Save"
+  "save": {
+    "message": "บันทึก"
   },
-  "addFolder":{
-    "message":"Add Folder"
+  "addFolder": {
+    "message": "เพิ่มโฟลเดอร์"
   },
-  "name":{
-    "message":"Name"
+  "name": {
+    "message": "ชื่อ"
   },
-  "editFolder":{
-    "message":"Edit Folder"
+  "editFolder": {
+    "message": "แก้ไขโฟลเดอร์"
   },
-  "deleteFolder":{
-    "message":"Delete Folder"
+  "deleteFolder": {
+    "message": "ลบโฟลเดอร์"
   },
-  "folders":{
-    "message":"Folders"
+  "folders": {
+    "message": "โฟลเดอร์"
   },
-  "noFolders":{
-    "message":"There are no folders to list."
+  "noFolders": {
+    "message": "There are no folders to list."
   },
-  "helpFeedback":{
-    "message":"Help & Feedback"
+  "helpFeedback": {
+    "message": "Help & Feedback"
   },
-  "emailUs":{
-    "message":"Email Us"
+  "emailUs": {
+    "message": "Email Us"
   },
-  "emailUsDirectly":{
-    "message":"Email us directly to get help or leave feedback."
+  "emailUsDirectly": {
+    "message": "Email us directly to get help or leave feedback."
   },
-  "visitOurWebsite":{
-    "message":"Visit Our Website"
+  "visitOurWebsite": {
+    "message": "Visit Our Website"
   },
-  "visitOurWebsiteDirectly":{
-    "message":"Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+  "visitOurWebsiteDirectly": {
+    "message": "Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
   },
-  "fileBugReport":{
-    "message":"File a Bug Report"
+  "fileBugReport": {
+    "message": "File a Bug Report"
   },
-  "gitHubIssue":{
-    "message":"Open an issue at our GitHub repository."
+  "gitHubIssue": {
+    "message": "Open an issue at our GitHub repository."
   },
-  "sync":{
-    "message":"Sync"
+  "sync": {
+    "message": "Sync"
   },
-  "syncVaultNow":{
-    "message":"Sync Vault Now"
+  "syncVaultNow": {
+    "message": "Sync Vault Now"
   },
-  "lastSync":{
-    "message":"Last Sync:"
+  "lastSync": {
+    "message": "Last Sync:"
   },
-  "passGen":{
-    "message":"Password Generator"
+  "passGen": {
+    "message": "Password Generator"
   },
-  "passGenInfo":{
-    "message":"Automatically generate strong, unique passwords for your logins."
+  "passGenInfo": {
+    "message": "Automatically generate strong, unique passwords for your logins."
   },
-  "bitWebVault":{
-    "message":"bitwarden Web Vault"
+  "bitWebVault": {
+    "message": "bitwarden Web Vault"
   },
-  "bitWebVaultInfo":{
-    "message":"Manage your logins from any web browser with the bitwarden web vault."
+  "bitWebVaultInfo": {
+    "message": "Manage your logins from any web browser with the bitwarden web vault."
   },
-  "bitIosVault":{
-    "message":"bitwarden iOS Vault"
+  "bitIosVault": {
+    "message": "bitwarden iOS Vault"
   },
-  "bitIosVaultInfo":{
-    "message":"Manage your logins from your mobile devices with the bitwarden iOS vault."
+  "bitIosVaultInfo": {
+    "message": "Manage your logins from your mobile devices with the bitwarden iOS vault."
   },
-  "bitAndrVault":{
-    "message":"bitwarden Android Vault"
+  "bitAndrVault": {
+    "message": "bitwarden Android Vault"
   },
-  "bitAndrVaultInfo":{
-    "message":"Manage your logins from your mobile devices with the bitwarden Android vault."
+  "bitAndrVaultInfo": {
+    "message": "Manage your logins from your mobile devices with the bitwarden Android vault."
   },
-  "importItems":{
-    "message":"Import Items"
+  "importItems": {
+    "message": "Import Items"
   },
-  "importItemsInfo":{
-    "message":"Quickly bulk import your items from other password management applications."
+  "importItemsInfo": {
+    "message": "Quickly bulk import your items from other password management applications."
   },
-  "select":{
-    "message":"Select"
+  "select": {
+    "message": "Select"
   },
-  "generatePassword":{
-    "message":"Generate Password"
+  "generatePassword": {
+    "message": "Generate Password"
   },
-  "regeneratePassword":{
-    "message":"Regenerate Password"
+  "regeneratePassword": {
+    "message": "Regenerate Password"
   },
-  "options":{
-    "message":"Options"
+  "options": {
+    "message": "Options"
   },
-  "length":{
-    "message":"Length"
+  "length": {
+    "message": "Length"
   },
-  "minNumbers":{
-    "message":"Minimum Numbers"
+  "minNumbers": {
+    "message": "Minimum Numbers"
   },
-  "minSpecial":{
-    "message":"Minimum Special"
+  "minSpecial": {
+    "message": "Minimum Special"
   },
-  "avoidAmbChar":{
-    "message":"Avoid Ambiguous Characters"
+  "avoidAmbChar": {
+    "message": "Avoid Ambiguous Characters"
   },
-  "searchVault":{
-    "message":"Search vault"
+  "searchVault": {
+    "message": "Search vault"
   },
-  "edit":{
-    "message":"Edit"
+  "edit": {
+    "message": "Edit"
   },
-  "view":{
-    "message":"View"
+  "view": {
+    "message": "View"
   },
-  "noItemsInList":{
-    "message":"There are no items to list."
+  "noItemsInList": {
+    "message": "There are no items to list."
   },
-  "itemInformation":{
-    "message":"Item Information"
+  "itemInformation": {
+    "message": "Item Information"
   },
-  "username":{
-    "message":"Username"
+  "username": {
+    "message": "ชื่อผู้ใช้"
   },
-  "password":{
-    "message":"Password"
+  "password": {
+    "message": "รหัสผ่าน"
   },
-  "favorite":{
-    "message":"Favorite"
+  "favorite": {
+    "message": "รายการโปรด"
   },
-  "notes":{
-    "message":"Notes"
+  "notes": {
+    "message": "โน้ต"
   },
-  "editItem":{
-    "message":"Edit Item"
+  "editItem": {
+    "message": "แก้ไขรายการ"
   },
-  "folder":{
-    "message":"Folder"
+  "folder": {
+    "message": "โฟลเดอร์"
   },
-  "deleteItem":{
-    "message":"Delete Item"
+  "deleteItem": {
+    "message": "ลบรายการ"
   },
-  "viewItem":{
-    "message":"View Item"
+  "viewItem": {
+    "message": "ดูรายการ"
   },
-  "launchWebsite":{
-    "message":"Launch Website"
+  "launchWebsite": {
+    "message": "เปิดเว็บไซต์"
   },
-  "website":{
-    "message":"Website"
+  "website": {
+    "message": "เว็บไซต์"
   },
-  "togglePassword":{
-    "message":"Toggle Password"
+  "togglePassword": {
+    "message": "Toggle Password"
   },
-  "manage":{
-    "message":"Manage"
+  "manage": {
+    "message": "จัดการ"
   },
-  "other":{
-    "message":"Other"
+  "other": {
+    "message": "อื่น ๆ"
   },
-  "disableGa":{
-    "message":"Disable Analytics"
+  "disableGa": {
+    "message": "Disable Analytics"
   },
-  "rateExtension":{
-    "message":"Rate the Extension"
+  "rateExtension": {
+    "message": "Rate the Extension"
   },
-  "rateExtensionDesc":{
-    "message":"Please consider helping us out with a good review!"
+  "rateExtensionDesc": {
+    "message": "Please consider helping us out with a good review!"
   },
-  "browserNotSupportClipboard":{
-    "message":"Your web browser does not support easy clipboard copying. Copy it manually instead."
+  "browserNotSupportClipboard": {
+    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
   },
-  "verifyMasterPassword":{
-    "message":"Verify Master Password"
+  "verifyMasterPassword": {
+    "message": "Verify Master Password"
   },
-  "invalidMasterPassword":{
-    "message":"Invalid master password"
+  "invalidMasterPassword": {
+    "message": "Invalid master password"
   },
-  "lockOptions":{
-    "message":"Lock Options"
+  "lockOptions": {
+    "message": "ตัวเลือกการล็อก"
   },
-  "lockNow":{
-    "message":"Lock Now"
+  "lockNow": {
+    "message": "Lock Now"
   },
-  "immediately":{
-    "message":"Immediately"
+  "immediately": {
+    "message": "ทันที"
   },
-  "oneMinute":{
-    "message":"1 minute"
+  "oneMinute": {
+    "message": "1 นาที"
   },
-  "fiveMinutes":{
-    "message":"5 minutes"
+  "fiveMinutes": {
+    "message": "5 นาที"
   },
-  "fifteenMinutes":{
-    "message":"15 minutes"
+  "fifteenMinutes": {
+    "message": "15 นาที"
   },
-  "thirtyMinutes":{
-    "message":"30 minutes"
+  "thirtyMinutes": {
+    "message": "30 นาที"
   },
-  "oneHour":{
-    "message":"1 hour"
+  "oneHour": {
+    "message": "1 ชั่วโมง"
   },
-  "fourHours":{
-    "message":"4 hours"
+  "fourHours": {
+    "message": "4 ชั่วโมง"
   },
-  "onLocked":{
-    "message":"On Locked"
+  "onLocked": {
+    "message": "On Locked"
   },
-  "onRestart":{
-    "message":"On Restart"
+  "onRestart": {
+    "message": "On Restart"
   },
-  "never":{
-    "message":"Never"
+  "never": {
+    "message": "Never"
   },
-  "security":{
-    "message":"Security"
+  "security": {
+    "message": "Security"
   },
-  "errorsOccurred":{
-    "message":"Errors have occurred"
+  "errorsOccurred": {
+    "message": "Errors have occurred"
   },
-  "emailRequired":{
-    "message":"Email address is required."
+  "emailRequired": {
+    "message": "Email address is required."
   },
-  "invalidEmail":{
-    "message":"Invalid email address."
+  "invalidEmail": {
+    "message": "ที่อยู่อีเมลไม่ถูกต้อง"
   },
-  "masterPassRequired":{
-    "message":"Master password is required."
+  "masterPassRequired": {
+    "message": "Master password is required."
   },
-  "masterPassLength":{
-    "message":"Master password must be at least 8 characters long."
+  "masterPassLength": {
+    "message": "Master password must be at least 8 characters long."
   },
-  "masterPassDoesntMatch":{
-    "message":"Master password confirmation does not match."
+  "masterPassDoesntMatch": {
+    "message": "Master password confirmation does not match."
   },
-  "newAccountCreated":{
-    "message":"Your new account has been created! You may now log in."
+  "newAccountCreated": {
+    "message": "Your new account has been created! You may now log in."
   },
-  "masterPassSent":{
-    "message":"We've sent you an email with your master password hint."
+  "masterPassSent": {
+    "message": "We've sent you an email with your master password hint."
   },
-  "verificationCodeRequired":{
-    "message":"Verification code is required."
+  "verificationCodeRequired": {
+    "message": "Verification code is required."
   },
-  "valueCopied":{
-    "message":" copied",
-    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  "valueCopied": {
+    "message": " copied",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
-  "autofillError":{
-    "message":"Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+  "autofillError": {
+    "message": "Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
   },
-  "loggedOut":{
-    "message":"Logged out"
+  "loggedOut": {
+    "message": "Logged out"
   },
-  "loginExpired":{
-    "message":"Your login session has expired."
+  "loginExpired": {
+    "message": "Your login session has expired."
   },
-  "logOutConfirmation":{
-    "message":"Are you sure you want to log out?"
+  "logOutConfirmation": {
+    "message": "Are you sure you want to log out?"
   },
-  "yes":{
-    "message":"Yes"
+  "yes": {
+    "message": "ใช่"
   },
-  "no":{
-    "message":"No"
+  "no": {
+    "message": "ไม่ใช่"
   },
-  "unexpectedError":{
-    "message":"An unexpected error has occured."
+  "unexpectedError": {
+    "message": "An unexpected error has occured."
   },
-  "nameRequired":{
-    "message":"Name is required."
+  "nameRequired": {
+    "message": "Name is required."
   },
-  "addedFolder":{
-    "message":"Added folder"
+  "addedFolder": {
+    "message": "Added folder"
   },
-  "changeMasterPass":{
-    "message":"Change Master Password"
+  "changeMasterPass": {
+    "message": "Change Master Password"
   },
-  "changeMasterPasswordConfirmation":{
-    "message":"You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  "changeMasterPasswordConfirmation": {
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "changeEmailConfirmation":{
-    "message":"You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  "changeEmailConfirmation": {
+    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "twoStepLoginConfirmation":{
-    "message":"Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  "twoStepLoginConfirmation": {
+    "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "loggingOut":{
-    "message":"Logging out"
+  "loggingOut": {
+    "message": "Logging out"
   },
-  "loggingOutConfirmation":{
-    "message":"You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  "loggingOutConfirmation": {
+    "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
   },
-  "editedFolder":{
-    "message":"Edited Folder"
+  "editedFolder": {
+    "message": "Edited Folder"
   },
-  "deleteFolderConfirmation":{
-    "message":"Are you sure you want to delete this folder?"
+  "deleteFolderConfirmation": {
+    "message": "Are you sure you want to delete this folder?"
   },
-  "deletedFolder":{
-    "message":"Deleted folder"
+  "deletedFolder": {
+    "message": "Deleted folder"
   },
-  "gettingStartedTutorial":{
-    "message":"Getting Started Tutorial"
+  "gettingStartedTutorial": {
+    "message": "Getting Started Tutorial"
   },
-  "gettingStartedTutorialVideo":{
-    "message":"Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  "gettingStartedTutorialVideo": {
+    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
   },
-  "syncingComplete":{
-    "message":"Syncing complete"
+  "syncingComplete": {
+    "message": "Syncing complete"
   },
-  "syncingFailed":{
-    "message":"Syncing failed"
+  "syncingFailed": {
+    "message": "Syncing failed"
   },
-  "importItemsConfirmation":{
-    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+  "importItemsConfirmation": {
+    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "passwordCopied":{
-    "message":"Password copied"
+  "passwordCopied": {
+    "message": "Password copied"
   },
-  "uri":{
-    "message":"URI"
+  "uri": {
+    "message": "URI"
   },
-  "addedItem":{
-    "message":"Added item"
+  "addedItem": {
+    "message": "Added item"
   },
-  "editedItem":{
-    "message":"Edited item"
+  "editedItem": {
+    "message": "Edited item"
   },
-  "deleteItemConfirmation":{
-    "message":"Are you sure you want to delete this item?"
+  "deleteItemConfirmation": {
+    "message": "Are you sure you want to delete this item?"
   },
-  "deletedItem":{
-    "message":"Deleted item"
+  "deletedItem": {
+    "message": "Deleted item"
   },
-  "overwritePassword":{
-    "message":"Overwrite Password"
+  "overwritePassword": {
+    "message": "Overwrite Password"
   },
-  "overwritePasswordConfirmation":{
-    "message":"Are you sure you want to overwrite the current password?"
+  "overwritePasswordConfirmation": {
+    "message": "Are you sure you want to overwrite the current password?"
   },
-  "credits":{
-    "message":"Credits"
+  "credits": {
+    "message": "Credits"
   },
-  "thankYou":{
-    "message":"Thank You"
+  "thankYou": {
+    "message": "Thank You"
   },
-  "translations":{
-    "message":"Translations"
+  "translations": {
+    "message": "Translations"
   },
-  "searchFolder":{
-    "message":"Search folder"
+  "searchFolder": {
+    "message": "Search folder"
   },
-  "noneFolder":{
-    "message":"No Folder",
-    "description":"This is the folder for uncategorized items"
+  "noneFolder": {
+    "message": "No Folder",
+    "description": "This is the folder for uncategorized items"
   },
-  "features":{
-    "message":"Features"
+  "features": {
+    "message": "Features"
   },
-  "gaDesc":{
-    "message":"We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+  "gaDesc": {
+    "message": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
   },
-  "disableAddLoginNotification":{
-    "message":"Disable Add Login Notification"
+  "disableAddLoginNotification": {
+    "message": "Disable Add Login Notification"
   },
-  "addLoginNotificationDesc":{
-    "message":"The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+  "addLoginNotificationDesc": {
+    "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
-  "notificationAddDesc":{
-    "message":"Should bitwarden remember this password for you?"
+  "notificationAddDesc": {
+    "message": "Should bitwarden remember this password for you?"
   },
-  "notificationAddSave":{
-    "message":"Yes, Save Now"
+  "notificationAddSave": {
+    "message": "Yes, Save Now"
   },
-  "notificationNeverSave":{
-    "message":"Never for this website"
+  "notificationNeverSave": {
+    "message": "Never for this website"
   },
-  "disableContextMenuItem":{
-    "message":"Disable Context Menu Options"
+  "disableContextMenuItem": {
+    "message": "Disable Context Menu Options"
   },
-  "disableContextMenuItemDesc":{
-    "message":"Context menu options provide quick access to password generation and logins for the website in your current tab."
+  "disableContextMenuItemDesc": {
+    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
-  "exportVault":{
-    "message":"Export Vault"
+  "exportVault": {
+    "message": "Export Vault"
   },
-  "warning":{
-    "message":"WARNING",
-    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  "warning": {
+    "message": "WARNING",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning":{
-    "message":"This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  "exportWarning": {
+    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
   },
-  "exportMasterPassword":{
-    "message":"Enter your master password to export your vault data."
+  "exportMasterPassword": {
+    "message": "Enter your master password to export your vault data."
   },
-  "exportVaultInfo":{
-    "message":"Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+  "exportVaultInfo": {
+    "message": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
   },
-  "shared":{
-    "message":"Shared"
+  "shared": {
+    "message": "Shared"
   },
-  "shareVault":{
-    "message":"Share Your Vault"
+  "shareVault": {
+    "message": "Share Your Vault"
   },
-  "shareVaultInfo":{
-    "message":"Create an organization to securely share your logins with other users."
+  "shareVaultInfo": {
+    "message": "Create an organization to securely share your logins with other users."
   },
-  "contribute":{
-    "message":"You can contribute to!"
+  "contribute": {
+    "message": "You can contribute to!"
   },
-  "learnMore":{
-    "message":"Learn more"
+  "learnMore": {
+    "message": "Learn more"
   },
-  "authenticatorKeyTotp":{
-    "message":"Authenticator Key (TOTP)"
+  "authenticatorKeyTotp": {
+    "message": "Authenticator Key (TOTP)"
   },
-  "verificationCodeTotp":{
-    "message":"Verification Code (TOTP)"
+  "verificationCodeTotp": {
+    "message": "Verification Code (TOTP)"
   },
-  "copyVerificationCode":{
-    "message":"Copy Verification Code"
+  "copyVerificationCode": {
+    "message": "Copy Verification Code"
   },
-  "attachments":{
-    "message":"Attachments"
+  "attachments": {
+    "message": "Attachments"
   },
-  "deleteAttachment":{
-    "message":"Delete attachment"
+  "deleteAttachment": {
+    "message": "Delete attachment"
   },
-  "deleteAttachmentConfirmation":{
-    "message":"Are you sure you want to delete this attachment?"
+  "deleteAttachmentConfirmation": {
+    "message": "Are you sure you want to delete this attachment?"
   },
-  "deletedAttachment":{
-    "message":"Deleted attachment"
+  "deletedAttachment": {
+    "message": "Deleted attachment"
   },
-  "newAttachment":{
-    "message":"Add New Attachment"
+  "newAttachment": {
+    "message": "Add New Attachment"
   },
-  "noAttachments":{
-    "message":"No attachments."
+  "noAttachments": {
+    "message": "No attachments."
   },
-  "attachmentSaved":{
-    "message":"The attachment has been saved."
+  "attachmentSaved": {
+    "message": "The attachment has been saved."
   },
-  "file":{
-    "message":"File"
+  "file": {
+    "message": "File"
   },
-  "selectFile":{
-    "message":"Select a file."
+  "selectFile": {
+    "message": "Select a file."
   },
-  "maxFileSize":{
-    "message":"Maximum file size is 100 MB."
+  "maxFileSize": {
+    "message": "Maximum file size is 100 MB."
   },
-  "featureUnavailable":{
-    "message":"Feature Unavailable"
+  "featureUnavailable": {
+    "message": "Feature Unavailable"
   },
-  "updateKey":{
-    "message":"You cannot use this feature until you update your encryption key."
+  "updateKey": {
+    "message": "You cannot use this feature until you update your encryption key."
   },
-  "premiumMembership":{
-    "message":"Premium Membership"
+  "premiumMembership": {
+    "message": "Premium Membership"
   },
-  "premiumManage":{
-    "message":"Manage Membership"
+  "premiumManage": {
+    "message": "Manage Membership"
   },
-  "premiumManageAlert":{
-    "message":"You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  "premiumManageAlert": {
+    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "premiumRefresh":{
-    "message":"Refresh Membership"
+  "premiumRefresh": {
+    "message": "Refresh Membership"
   },
-  "premiumNotCurrentMember":{
-    "message":"You are not currently a premium member."
+  "premiumNotCurrentMember": {
+    "message": "You are not currently a premium member."
   },
-  "premiumSignUpAndGet":{
-    "message":"Sign up for a premium membership and get:"
+  "premiumSignUpAndGet": {
+    "message": "Sign up for a premium membership and get:"
   },
-  "ppremiumSignUpStorage":{
-    "message":"1 GB of encrypted file storage."
+  "ppremiumSignUpStorage": {
+    "message": "1 GB of encrypted file storage."
   },
-  "ppremiumSignUpTwoStep":{
-    "message":"Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  "ppremiumSignUpTwoStep": {
+    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
-  "ppremiumSignUpTotp":{
-    "message":"TOTP verification code (2FA) generator for logins in your vault."
+  "ppremiumSignUpTotp": {
+    "message": "TOTP verification code (2FA) generator for logins in your vault."
   },
-  "ppremiumSignUpSupport":{
-    "message":"Priority customer support."
+  "ppremiumSignUpSupport": {
+    "message": "Priority customer support."
   },
-  "ppremiumSignUpFuture":{
-    "message":"All future premium features. More coming soon!"
+  "ppremiumSignUpFuture": {
+    "message": "All future premium features. More coming soon!"
   },
-  "premiumPurchase":{
-    "message":"Purchase Premium"
+  "premiumPurchase": {
+    "message": "Purchase Premium"
   },
-  "premiumPurchaseAlert":{
-    "message":"You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  "premiumPurchaseAlert": {
+    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "premiumCurrentMember":{
-    "message":"You are a premium member!"
+  "premiumCurrentMember": {
+    "message": "You are a premium member!"
   },
-  "premiumCurrentMemberThanks":{
-    "message":"Thank you for supporting bitwarden."
+  "premiumCurrentMemberThanks": {
+    "message": "Thank you for supporting bitwarden."
   },
-  "premiumPrice":{
-    "message":"All for just %price% \/year!"
+  "premiumPrice": {
+    "message": "All for just %price% \/year!"
   },
-  "refreshComplete":{
-    "message":"Refresh complete"
+  "refreshComplete": {
+    "message": "Refresh complete"
   },
-  "disableAutoTotpCopy":{
-    "message":"Disable Automatic TOTP Copy"
+  "disableAutoTotpCopy": {
+    "message": "Disable Automatic TOTP Copy"
   },
-  "disableAutoTotpCopyDesc":{
-    "message":"If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+  "disableAutoTotpCopyDesc": {
+    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
-  "premiumRequired":{
-    "message":"Premium Required"
+  "premiumRequired": {
+    "message": "Premium Required"
   },
-  "premiumRequiredDesc":{
-    "message":"A premium membership is required to use this feature."
+  "premiumRequiredDesc": {
+    "message": "A premium membership is required to use this feature."
   },
-  "enterVerificationCodeApp":{
-    "message":"Enter the 6 digit verification code from your authenticator app."
+  "enterVerificationCodeApp": {
+    "message": "Enter the 6 digit verification code from your authenticator app."
   },
-  "enterVerificationCodeEmail":{
-    "message":"Enter the 6 digit verification code that was emailed to"
+  "enterVerificationCodeEmail": {
+    "message": "Enter the 6 digit verification code that was emailed to"
   },
-  "rememberMe":{
-    "message":"Remember me"
+  "rememberMe": {
+    "message": "Remember me"
   },
-  "sendVerificationCodeEmailAgain":{
-    "message":"Send verification code email again"
+  "sendVerificationCodeEmailAgain": {
+    "message": "Send verification code email again"
   },
-  "useAnotherTwoStepMethod":{
-    "message":"Use another two-step login method"
+  "useAnotherTwoStepMethod": {
+    "message": "Use another two-step login method"
   },
-  "insertYubiKey":{
-    "message":"Insert your YubiKey into your computer's USB port, then touch its button."
+  "insertYubiKey": {
+    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
   },
-  "insertU2f":{
-    "message":"Insert your security key into your computer's USB port. If it has a button, touch it."
+  "insertU2f": {
+    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
-  "loginUnavailable":{
-    "message":"Login Unavailable"
+  "loginUnavailable": {
+    "message": "Login Unavailable"
   },
-  "noTwoStepProviders":{
-    "message":"This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+  "noTwoStepProviders": {
+    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
   },
-  "noTwoStepProviders2":{
-    "message":"Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+  "noTwoStepProviders2": {
+    "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
   },
-  "twoStepOptions":{
-    "message":"Two-step Login Options"
+  "twoStepOptions": {
+    "message": "Two-step Login Options"
   },
-  "recoveryCodeDesc":{
-    "message":"Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+  "recoveryCodeDesc": {
+    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
-  "recoveryCodeTitle":{
-    "message":"Recovery Code"
+  "recoveryCodeTitle": {
+    "message": "Recovery Code"
   },
-  "authenticatorAppTitle":{
-    "message":"Authenticator App"
+  "authenticatorAppTitle": {
+    "message": "Authenticator App"
   },
-  "authenticatorAppDesc":{
-    "message":"Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
-    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDesc": {
+    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
-  "yubiKeyTitle":{
-    "message":"YubiKey OTP Security Key"
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP Security Key"
   },
-  "yubiKeyDesc":{
-    "message":"Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+  "yubiKeyDesc": {
+    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
   },
-  "duoDesc":{
-    "message":"Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
-    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  "duoDesc": {
+    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc":{
-    "message":"Use any FIDO U2F enabled security key to access your account."
+  "u2fDesc": {
+    "message": "Use any FIDO U2F enabled security key to access your account."
   },
-  "u2fTitle":{
-    "message":"FIDO U2F Security Key"
+  "u2fTitle": {
+    "message": "FIDO U2F Security Key"
   },
-  "emailTitle":{
-    "message":"Email"
+  "emailTitle": {
+    "message": "Email"
   },
-  "emailDesc":{
-    "message":"Verification codes will be emailed to you."
+  "emailDesc": {
+    "message": "Verification codes will be emailed to you."
   },
-  "selfHostedEnvironment":{
-    "message":"Self-hosted Environment"
+  "selfHostedEnvironment": {
+    "message": "Self-hosted Environment"
   },
-  "selfHostedEnvironmentFooter":{
-    "message":"Specify the base URL of your on-premise hosted bitwarden installation."
+  "selfHostedEnvironmentFooter": {
+    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
   },
-  "customEnvironment":{
-    "message":"Custom Environment"
+  "customEnvironment": {
+    "message": "Custom Environment"
   },
-  "customEnvironmentFooter":{
-    "message":"For advanced users. You can specify the base URL of each service independently."
+  "customEnvironmentFooter": {
+    "message": "For advanced users. You can specify the base URL of each service independently."
   },
-  "baseUrl":{
-    "message":"Server URL"
+  "baseUrl": {
+    "message": "Server URL"
   },
-  "apiUrl":{
-    "message":"API Server URL"
+  "apiUrl": {
+    "message": "API Server URL"
   },
-  "webVaultUrl":{
-    "message":"Web Vault Server URL"
+  "webVaultUrl": {
+    "message": "Web Vault Server URL"
   },
-  "identityUrl":{
-    "message":"Identity Server URL"
+  "identityUrl": {
+    "message": "Identity Server URL"
   },
-  "environmentSaved":{
-    "message":"The environment URLs have been saved."
+  "iconsUrl": {
+    "message": "Icons Server URL"
   },
-  "enableAutoFillOnPageLoad":{
-    "message":"Enable Auto-fill On Page Load."
+  "environmentSaved": {
+    "message": "The environment URLs have been saved."
   },
-  "enableAutoFillOnPageLoadDesc":{
-    "message":"If a login form is detected, automatically perform an auto-fill when the web page loads."
+  "enableAutoFillOnPageLoad": {
+    "message": "Enable Auto-fill On Page Load."
   },
-  "experimentalFeature":{
-    "message":"This is currently an experimental feature. Use at your own risk."
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
   },
-  "commandAutofillDesc":{
-    "message":"Auto-fill the last used login for the current website."
+  "experimentalFeature": {
+    "message": "This is currently an experimental feature. Use at your own risk."
   },
-  "commandGeneratePasswordDesc":{
-    "message":"Generate and copy a new random password to the clipboard."
+  "commandAutofillDesc": {
+    "message": "Auto-fill the last used login for the current website."
   },
-  "privateModeMessage":{
-    "message":"Unfortunately this window is not available in private mode for this browser."
+  "commandGeneratePasswordDesc": {
+    "message": "Generate and copy a new random password to the clipboard."
   },
-  "customFields":{
-    "message":"Custom Fields"
+  "privateModeMessage": {
+    "message": "Unfortunately this window is not available in private mode for this browser."
   },
-  "copyValue":{
-    "message":"Copy Value"
+  "customFields": {
+    "message": "Custom Fields"
   },
-  "toggleValue":{
-    "message":"Toggle Value"
+  "copyValue": {
+    "message": "Copy Value"
   },
-  "value":{
-    "message":"Value"
+  "toggleValue": {
+    "message": "Toggle Value"
   },
-  "newCustomField":{
-    "message":"New Custom Field"
+  "value": {
+    "message": "Value"
   },
-  "cfTypeText":{
-    "message":"Text"
+  "newCustomField": {
+    "message": "New Custom Field"
   },
-  "cfTypeHidden":{
-    "message":"Hidden"
+  "cfTypeText": {
+    "message": "Text"
   },
-  "cfTypeBoolean":{
-    "message":"Boolean"
+  "cfTypeHidden": {
+    "message": "Hidden"
   },
-  "popup2faCloseMessage":{
-    "message":"Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  "cfTypeBoolean": {
+    "message": "Boolean"
   },
-  "disableFavicon":{
-    "message":"Disable Website Icons"
+  "popup2faCloseMessage": {
+    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
-  "disableFaviconDesc":{
-    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  "disableFavicon": {
+    "message": "Disable Website Icons"
   },
-  "cardholderName":{
-    "message":"Cardholder Name"
+  "disableFaviconDesc": {
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
-  "number":{
-    "message":"Number"
+  "cardholderName": {
+    "message": "Cardholder Name"
   },
-  "brand":{
-    "message":"Brand"
+  "number": {
+    "message": "Number"
   },
-  "expirationMonth":{
-    "message":"Expiration Month"
+  "brand": {
+    "message": "Brand"
   },
-  "expirationYear":{
-    "message":"Expiration Year"
+  "expirationMonth": {
+    "message": "Expiration Month"
   },
-  "expiration":{
-    "message":"Expiration"
+  "expirationYear": {
+    "message": "Expiration Year"
   },
-  "january":{
-    "message":"January"
+  "expiration": {
+    "message": "วันหมดอายุ"
   },
-  "february":{
-    "message":"February"
+  "january": {
+    "message": "มกราคม"
   },
-  "march":{
-    "message":"March"
+  "february": {
+    "message": "กุมภาพันธ์"
   },
-  "april":{
-    "message":"April"
+  "march": {
+    "message": "มีนาคม"
   },
-  "may":{
-    "message":"May"
+  "april": {
+    "message": "เมษายน"
   },
-  "june":{
-    "message":"June"
+  "may": {
+    "message": "พฤษภาคม"
   },
-  "july":{
-    "message":"July"
+  "june": {
+    "message": "มิถุนายน"
   },
-  "august":{
-    "message":"August"
+  "july": {
+    "message": "กรกฎาคม"
   },
-  "september":{
-    "message":"September"
+  "august": {
+    "message": "สิงหาคม"
   },
-  "october":{
-    "message":"October"
+  "september": {
+    "message": "กันยายน"
   },
-  "november":{
-    "message":"November"
+  "october": {
+    "message": "ตุลาคม"
   },
-  "december":{
-    "message":"December"
+  "november": {
+    "message": "พฤศจิกายน"
   },
-  "securityCode":{
-    "message":"Security Code"
+  "december": {
+    "message": "ธันวาคม"
   },
-  "ex":{
-    "message":"ex."
+  "securityCode": {
+    "message": "Security Code"
   },
-  "title":{
-    "message":"Title"
+  "ex": {
+    "message": "ex."
   },
-  "mr":{
-    "message":"Mr"
+  "title": {
+    "message": "Title"
   },
-  "mrs":{
-    "message":"Mrs"
+  "mr": {
+    "message": "Mr"
   },
-  "ms":{
-    "message":"Ms"
+  "mrs": {
+    "message": "Mrs"
   },
-  "dr":{
-    "message":"Dr"
+  "ms": {
+    "message": "Ms"
   },
-  "firstName":{
-    "message":"First Name"
+  "dr": {
+    "message": "Dr"
   },
-  "middleName":{
-    "message":"Middle Name"
+  "firstName": {
+    "message": "First Name"
   },
-  "lastName":{
-    "message":"Last Name"
+  "middleName": {
+    "message": "Middle Name"
   },
-  "identityName":{
-    "message":"Identity Name"
+  "lastName": {
+    "message": "Last Name"
   },
-  "company":{
-    "message":"Company"
+  "identityName": {
+    "message": "Identity Name"
   },
-  "ssn":{
-    "message":"Social Security Number"
+  "company": {
+    "message": "บริษัท"
   },
-  "passportNumber":{
-    "message":"Passport Number"
+  "ssn": {
+    "message": "หมายเลขประกันสังคม"
   },
-  "licenseNumber":{
-    "message":"License Number"
+  "passportNumber": {
+    "message": "หมายเลขหนังสือเดินทาง"
   },
-  "email":{
-    "message":"Email"
+  "licenseNumber": {
+    "message": "หมายเลขใบอนุญาต"
   },
-  "phone":{
-    "message":"Phone"
+  "email": {
+    "message": "อีเมล"
   },
-  "address":{
-    "message":"Address"
+  "phone": {
+    "message": "โทรศัพท์"
   },
-  "address1":{
-    "message":"Address 1"
+  "address": {
+    "message": "ที่อยู่"
   },
-  "address2":{
-    "message":"Address 2"
+  "address1": {
+    "message": "ที่อยู่ 1"
   },
-  "address3":{
-    "message":"Address 3"
+  "address2": {
+    "message": "ที่อยู่ 2"
   },
-  "cityTown":{
-    "message":"City \/ Town"
+  "address3": {
+    "message": "ที่อยู่ 3"
   },
-  "stateProvince":{
-    "message":"State \/ Province"
+  "cityTown": {
+    "message": "เมือง"
   },
-  "zipPostalCode":{
-    "message":"Zip \/ Postal Code"
+  "stateProvince": {
+    "message": "รัฐ \/ จังหวัด"
   },
-  "country":{
-    "message":"Country"
+  "zipPostalCode": {
+    "message": "รหัสไปรษณีย์"
   },
-  "type":{
-    "message":"Type"
+  "country": {
+    "message": "ประเทศ"
   },
-  "typeLogin":{
-    "message":"Login"
+  "type": {
+    "message": "Type"
   },
-  "typeLogins":{
-    "message":"Logins"
+  "typeLogin": {
+    "message": "Login"
   },
-  "typeSecureNote":{
-    "message":"Secure Note"
+  "typeLogins": {
+    "message": "Logins"
   },
-  "typeCard":{
-    "message":"Card"
+  "typeSecureNote": {
+    "message": "Secure Note"
   },
-  "typeIdentity":{
-    "message":"Identity"
+  "typeCard": {
+    "message": "Card"
   },
-  "passwordHistory":{
-    "message":"Password History"
+  "typeIdentity": {
+    "message": "Identity"
   },
-  "back":{
-    "message":"Back"
+  "passwordHistory": {
+    "message": "Password History"
+  },
+  "back": {
+    "message": "ย้อนกลับ"
   }
 }

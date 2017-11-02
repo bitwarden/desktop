@@ -1,957 +1,960 @@
 {
-  "appName":{
-    "message":"bitwarden"
+  "appName": {
+    "message": "bitwarden"
   },
-  "extName":{
-    "message":"bitwarden - Безкоштовний менеджер паролів",
-    "description":"Extension name"
+  "extName": {
+    "message": "bitwarden - Безкоштовний менеджер паролів",
+    "description": "Extension name"
   },
-  "extDesc":{
-    "message":"bitwarden - це захищений і безкоштовний менеджер паролів для всіх ваших пристроїв.",
-    "description":"Extension description"
+  "extDesc": {
+    "message": "bitwarden - це захищений і безкоштовний менеджер паролів для всіх ваших пристроїв.",
+    "description": "Extension description"
   },
-  "loginOrCreateNewAccount":{
-    "message":"Для доступу до сховища увійдіть в обліковий запис, або створіть новий."
+  "loginOrCreateNewAccount": {
+    "message": "Для доступу до сховища увійдіть в обліковий запис, або створіть новий."
   },
-  "createAccount":{
-    "message":"Створити обліковий запис"
+  "createAccount": {
+    "message": "Створити обліковий запис"
   },
-  "login":{
-    "message":"Вхід"
+  "login": {
+    "message": "Вхід"
   },
-  "cancel":{
-    "message":"Скасувати"
+  "cancel": {
+    "message": "Скасувати"
   },
-  "close":{
-    "message":"Закрити"
+  "close": {
+    "message": "Закрити"
   },
-  "submit":{
-    "message":"Відправити"
+  "submit": {
+    "message": "Відправити"
   },
-  "emailAddress":{
-    "message":"Адреса електронної пошти"
+  "emailAddress": {
+    "message": "Адреса електронної пошти"
   },
-  "masterPass":{
-    "message":"Головний пароль"
+  "masterPass": {
+    "message": "Головний пароль"
   },
-  "masterPassDesc":{
-    "message":"Головний пароль використовується для доступу до вашого сховища. Дуже важливо, щоб ви запам'ятали його. Якщо ви забудете головний пароль, його неможливо буде відновити."
+  "masterPassDesc": {
+    "message": "Головний пароль використовується для доступу до вашого сховища. Дуже важливо, щоб ви запам'ятали його. Якщо ви забудете головний пароль, його неможливо буде відновити."
   },
-  "masterPassHintDesc":{
-    "message":"Якщо ви забудете головний пароль, підказка може допомогти вам згадати його."
+  "masterPassHintDesc": {
+    "message": "Якщо ви забудете головний пароль, підказка може допомогти вам згадати його."
   },
-  "reTypeMasterPass":{
-    "message":"Введіть головний пароль ще раз"
+  "reTypeMasterPass": {
+    "message": "Введіть головний пароль ще раз"
   },
-  "masterPassHint":{
-    "message":"Підказка для головного пароля (необов'язково)"
+  "masterPassHint": {
+    "message": "Підказка для головного пароля (необов'язково)"
   },
-  "tab":{
-    "message":"Вкладка"
+  "tab": {
+    "message": "Вкладка"
   },
-  "myVault":{
-    "message":"Моє сховище"
+  "myVault": {
+    "message": "Моє сховище"
   },
-  "tools":{
-    "message":"Інструменти"
+  "tools": {
+    "message": "Інструменти"
   },
-  "settings":{
-    "message":"Налаштування"
+  "settings": {
+    "message": "Налаштування"
   },
-  "currentTab":{
-    "message":"Поточна вкладка"
+  "currentTab": {
+    "message": "Поточна вкладка"
   },
-  "copyPassword":{
-    "message":"Копіювати пароль"
+  "copyPassword": {
+    "message": "Копіювати пароль"
   },
-  "copyUri":{
-    "message":"Copy URI"
+  "copyUri": {
+    "message": "Копіювати URI"
   },
-  "copyUsername":{
-    "message":"Копіювати ім'я користувача"
+  "copyUsername": {
+    "message": "Копіювати ім'я користувача"
   },
-  "copyNumber":{
-    "message":"Copy Number"
+  "copyNumber": {
+    "message": "Копіювати номер"
   },
-  "copySecurityCode":{
-    "message":"Copy Security Code"
+  "copySecurityCode": {
+    "message": "Копіювати код безпеки"
   },
-  "autoFill":{
-    "message":"Автозаповнення"
+  "autoFill": {
+    "message": "Автозаповнення"
   },
-  "generatePasswordCopied":{
-    "message":"Генерувати пароль (з копіюванням)"
+  "generatePasswordCopied": {
+    "message": "Генерувати пароль (з копіюванням)"
   },
-  "noMatchingLogins":{
-    "message":"Немає відповідних записів."
+  "noMatchingLogins": {
+    "message": "Немає відповідних записів."
   },
-  "vaultLocked":{
-    "message":"Сховище заблоковано."
+  "vaultLocked": {
+    "message": "Сховище заблоковано."
   },
-  "autoFillInfo":{
-    "message":"Для поточної вкладки браузера немає записів для автозаповнення."
+  "autoFillInfo": {
+    "message": "Для поточної вкладки браузера немає записів для автозаповнення."
   },
-  "addLogin":{
-    "message":"Додати запис"
+  "addLogin": {
+    "message": "Додати запис"
   },
-  "addItem":{
-    "message":"Add Item"
+  "addItem": {
+    "message": "Додати запис"
   },
-  "passwordHint":{
-    "message":"Підказка для пароля"
+  "passwordHint": {
+    "message": "Підказка для пароля"
   },
-  "enterEmailToGetHint":{
-    "message":"Введіть свою адресу електронної пошти, щоб отримати підказку для головного пароля."
+  "enterEmailToGetHint": {
+    "message": "Введіть свою адресу електронної пошти, щоб отримати підказку для головного пароля."
   },
-  "getMasterPasswordHint":{
-    "message":"Отримати підказку для головного пароля"
+  "getMasterPasswordHint": {
+    "message": "Отримати підказку для головного пароля"
   },
-  "continue":{
-    "message":"Продовжити"
+  "continue": {
+    "message": "Продовжити"
   },
-  "verificationCode":{
-    "message":"Код підтвердження"
+  "verificationCode": {
+    "message": "Код підтвердження"
   },
-  "account":{
-    "message":"Обліковий запис"
+  "account": {
+    "message": "Обліковий запис"
   },
-  "changeMasterPassword":{
-    "message":"Змінити головний пароль"
+  "changeMasterPassword": {
+    "message": "Змінити головний пароль"
   },
-  "changeEmail":{
-    "message":"Змінити адресу електронної пошти"
+  "changeEmail": {
+    "message": "Змінити адресу електронної пошти"
   },
-  "twoStepLogin":{
-    "message":"Двоетапна авторизація"
+  "twoStepLogin": {
+    "message": "Двоетапна авторизація"
   },
-  "logOut":{
-    "message":"Вихід"
+  "logOut": {
+    "message": "Вихід"
   },
-  "about":{
-    "message":"Про"
+  "about": {
+    "message": "Про"
   },
-  "version":{
-    "message":"Версія"
+  "version": {
+    "message": "Версія"
   },
-  "save":{
-    "message":"Зберегти"
+  "save": {
+    "message": "Зберегти"
   },
-  "addFolder":{
-    "message":"Додати теку"
+  "addFolder": {
+    "message": "Додати теку"
   },
-  "name":{
-    "message":"Назва"
+  "name": {
+    "message": "Назва"
   },
-  "editFolder":{
-    "message":"Редагувати теку"
+  "editFolder": {
+    "message": "Редагувати теку"
   },
-  "deleteFolder":{
-    "message":"Видалити теку"
+  "deleteFolder": {
+    "message": "Видалити теку"
   },
-  "folders":{
-    "message":"Теки"
+  "folders": {
+    "message": "Теки"
   },
-  "noFolders":{
-    "message":"Немає тек для відображення."
+  "noFolders": {
+    "message": "Немає тек для відображення."
   },
-  "helpFeedback":{
-    "message":"Допомога і зворотній зв'язок"
+  "helpFeedback": {
+    "message": "Допомога і зворотній зв'язок"
   },
-  "emailUs":{
-    "message":"Напишіть нам"
+  "emailUs": {
+    "message": "Напишіть нам"
   },
-  "emailUsDirectly":{
-    "message":"Напишіть нам, щоб отримати допомогу чи залишити відгук."
+  "emailUsDirectly": {
+    "message": "Напишіть нам, щоб отримати допомогу чи залишити відгук."
   },
-  "visitOurWebsite":{
-    "message":"Відвідайте наш веб-сайт"
+  "visitOurWebsite": {
+    "message": "Відвідайте наш веб-сайт"
   },
-  "visitOurWebsiteDirectly":{
-    "message":"Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо bitwarden."
+  "visitOurWebsiteDirectly": {
+    "message": "Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо bitwarden."
   },
-  "fileBugReport":{
-    "message":"Повідомити про помилку"
+  "fileBugReport": {
+    "message": "Повідомити про помилку"
   },
-  "gitHubIssue":{
-    "message":"Створіть звіт в нашому репозиторії на GitHub."
+  "gitHubIssue": {
+    "message": "Створіть звіт в нашому репозиторії на GitHub."
   },
-  "sync":{
-    "message":"Синхронізація"
+  "sync": {
+    "message": "Синхронізація"
   },
-  "syncVaultNow":{
-    "message":"Синхронізувати зараз"
+  "syncVaultNow": {
+    "message": "Синхронізувати зараз"
   },
-  "lastSync":{
-    "message":"Остання синхронізація:"
+  "lastSync": {
+    "message": "Остання синхронізація:"
   },
-  "passGen":{
-    "message":"Генератор паролів"
+  "passGen": {
+    "message": "Генератор паролів"
   },
-  "passGenInfo":{
-    "message":"Автоматичне генерування стійких, унікальних паролів."
+  "passGenInfo": {
+    "message": "Автоматичне генерування стійких, унікальних паролів."
   },
-  "bitWebVault":{
-    "message":"Веб-сховище bitwarden"
+  "bitWebVault": {
+    "message": "Веб-сховище bitwarden"
   },
-  "bitWebVaultInfo":{
-    "message":"Керуйте своїми паролями з будь-якого браузера за допомогою веб-сховища bitwarden."
+  "bitWebVaultInfo": {
+    "message": "Керуйте своїми паролями з будь-якого браузера за допомогою веб-сховища bitwarden."
   },
-  "bitIosVault":{
-    "message":"bitwarden для iOS"
+  "bitIosVault": {
+    "message": "bitwarden для iOS"
   },
-  "bitIosVaultInfo":{
-    "message":"Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для iOS."
+  "bitIosVaultInfo": {
+    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для iOS."
   },
-  "bitAndrVault":{
-    "message":"bitwarden для Android"
+  "bitAndrVault": {
+    "message": "bitwarden для Android"
   },
-  "bitAndrVaultInfo":{
-    "message":"Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для Android."
+  "bitAndrVaultInfo": {
+    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для Android."
   },
-  "importItems":{
-    "message":"Import Items"
+  "importItems": {
+    "message": "Імпорт записів"
   },
-  "importItemsInfo":{
-    "message":"Quickly bulk import your items from other password management applications."
+  "importItemsInfo": {
+    "message": "Швидкий імпорт ваших записів з інших програм керування паролями."
   },
-  "select":{
-    "message":"Обрати"
+  "select": {
+    "message": "Обрати"
   },
-  "generatePassword":{
-    "message":"Генерувати пароль"
+  "generatePassword": {
+    "message": "Генерувати пароль"
   },
-  "regeneratePassword":{
-    "message":"Генерувати новий"
+  "regeneratePassword": {
+    "message": "Генерувати новий"
   },
-  "options":{
-    "message":"Налаштування"
+  "options": {
+    "message": "Налаштування"
   },
-  "length":{
-    "message":"Довжина"
+  "length": {
+    "message": "Довжина"
   },
-  "minNumbers":{
-    "message":"Мінімум цифр"
+  "minNumbers": {
+    "message": "Мінімум цифр"
   },
-  "minSpecial":{
-    "message":"Мінімум спеціальних символів"
+  "minSpecial": {
+    "message": "Мінімум спеціальних символів"
   },
-  "avoidAmbChar":{
-    "message":"Уникати неоднозначних символів"
+  "avoidAmbChar": {
+    "message": "Уникати неоднозначних символів"
   },
-  "searchVault":{
-    "message":"Пошук"
+  "searchVault": {
+    "message": "Пошук"
   },
-  "edit":{
-    "message":"Змінити"
+  "edit": {
+    "message": "Змінити"
   },
-  "view":{
-    "message":"View"
+  "view": {
+    "message": "Перегляд"
   },
-  "noItemsInList":{
-    "message":"There are no items to list."
+  "noItemsInList": {
+    "message": "Немає записів для відображення."
   },
-  "itemInformation":{
-    "message":"Item Information"
+  "itemInformation": {
+    "message": "Інформація про запис"
   },
-  "username":{
-    "message":"Ім'я користувача"
+  "username": {
+    "message": "Ім'я користувача"
   },
-  "password":{
-    "message":"Пароль"
+  "password": {
+    "message": "Пароль"
   },
-  "favorite":{
-    "message":"Обране"
+  "favorite": {
+    "message": "Обране"
   },
-  "notes":{
-    "message":"Нотатки"
+  "notes": {
+    "message": "Нотатки"
   },
-  "editItem":{
-    "message":"Edit Item"
+  "editItem": {
+    "message": "Змінити запис"
   },
-  "folder":{
-    "message":"Тека"
+  "folder": {
+    "message": "Тека"
   },
-  "deleteItem":{
-    "message":"Delete Item"
+  "deleteItem": {
+    "message": "Видалити запис"
   },
-  "viewItem":{
-    "message":"View Item"
+  "viewItem": {
+    "message": "Переглянути запис"
   },
-  "launchWebsite":{
-    "message":"Відкрити веб-сайт"
+  "launchWebsite": {
+    "message": "Відкрити веб-сайт"
   },
-  "website":{
-    "message":"Веб-сайт"
+  "website": {
+    "message": "Веб-сайт"
   },
-  "togglePassword":{
-    "message":"Показати пароль"
+  "togglePassword": {
+    "message": "Показати пароль"
   },
-  "manage":{
-    "message":"Керування"
+  "manage": {
+    "message": "Керування"
   },
-  "other":{
-    "message":"Інше"
+  "other": {
+    "message": "Інше"
   },
-  "disableGa":{
-    "message":"Вимкнути аналітику"
+  "disableGa": {
+    "message": "Вимкнути аналітику"
   },
-  "rateExtension":{
-    "message":"Оцінити розширення"
+  "rateExtension": {
+    "message": "Оцінити розширення"
   },
-  "rateExtensionDesc":{
-    "message":"Будь ласка, подумайте про те, щоб допомогти нам хорошим відгуком!"
+  "rateExtensionDesc": {
+    "message": "Будь ласка, подумайте про те, щоб допомогти нам хорошим відгуком!"
   },
-  "browserNotSupportClipboard":{
-    "message":"Ваш веб-браузер не підтримує копіювання даних в буфер обміну. Скопіюйте вручну."
+  "browserNotSupportClipboard": {
+    "message": "Ваш веб-браузер не підтримує копіювання даних в буфер обміну. Скопіюйте вручну."
   },
-  "verifyMasterPassword":{
-    "message":"Перевірка головного пароля"
+  "verifyMasterPassword": {
+    "message": "Перевірка головного пароля"
   },
-  "invalidMasterPassword":{
-    "message":"Неправильний головний пароль"
+  "invalidMasterPassword": {
+    "message": "Неправильний головний пароль"
   },
-  "lockOptions":{
-    "message":"Налаштування блокування"
+  "lockOptions": {
+    "message": "Налаштування блокування"
   },
-  "lockNow":{
-    "message":"Заблокувати зараз"
+  "lockNow": {
+    "message": "Заблокувати зараз"
   },
-  "immediately":{
-    "message":"Негайно"
+  "immediately": {
+    "message": "Негайно"
   },
-  "oneMinute":{
-    "message":"1 хвилина"
+  "oneMinute": {
+    "message": "1 хвилина"
   },
-  "fiveMinutes":{
-    "message":"5 хвилин"
+  "fiveMinutes": {
+    "message": "5 хвилин"
   },
-  "fifteenMinutes":{
-    "message":"15 хвилин"
+  "fifteenMinutes": {
+    "message": "15 хвилин"
   },
-  "thirtyMinutes":{
-    "message":"30 хвилин"
+  "thirtyMinutes": {
+    "message": "30 хвилин"
   },
-  "oneHour":{
-    "message":"1 година"
+  "oneHour": {
+    "message": "1 година"
   },
-  "fourHours":{
-    "message":"4 години"
+  "fourHours": {
+    "message": "4 години"
   },
-  "onLocked":{
-    "message":"Разом з комп'ютером"
+  "onLocked": {
+    "message": "Разом з комп'ютером"
   },
-  "onRestart":{
-    "message":"При перезавантаженні"
+  "onRestart": {
+    "message": "При перезавантаженні"
   },
-  "never":{
-    "message":"Ніколи"
+  "never": {
+    "message": "Ніколи"
   },
-  "security":{
-    "message":"Безпека"
+  "security": {
+    "message": "Безпека"
   },
-  "errorsOccurred":{
-    "message":"Виникли помилки"
+  "errorsOccurred": {
+    "message": "Виникли помилки"
   },
-  "emailRequired":{
-    "message":"Потрібна адреса електронної пошти."
+  "emailRequired": {
+    "message": "Потрібна адреса електронної пошти."
   },
-  "invalidEmail":{
-    "message":"Неправильна адреса електронної пошти."
+  "invalidEmail": {
+    "message": "Неправильна адреса електронної пошти."
   },
-  "masterPassRequired":{
-    "message":"Потрібен головний пароль."
+  "masterPassRequired": {
+    "message": "Потрібен головний пароль."
   },
-  "masterPassLength":{
-    "message":"Довжина головного пароля повинна бути не менше 8 символів."
+  "masterPassLength": {
+    "message": "Довжина головного пароля повинна бути не менше 8 символів."
   },
-  "masterPassDoesntMatch":{
-    "message":"Підтвердження головного пароля не збігається."
+  "masterPassDoesntMatch": {
+    "message": "Підтвердження головного пароля не збігається."
   },
-  "newAccountCreated":{
-    "message":"Ваш обліковий запис створений! Тепер ви можете увійти."
+  "newAccountCreated": {
+    "message": "Ваш обліковий запис створений! Тепер ви можете увійти."
   },
-  "masterPassSent":{
-    "message":"Ми надіслали вам лист з підказкою для головного пароля."
+  "masterPassSent": {
+    "message": "Ми надіслали вам лист з підказкою для головного пароля."
   },
-  "verificationCodeRequired":{
-    "message":"Потрібний код підтвердження."
+  "verificationCodeRequired": {
+    "message": "Потрібний код підтвердження."
   },
-  "valueCopied":{
-    "message":" скопійовано",
-    "description":"' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  "valueCopied": {
+    "message": " скопійовано",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
-  "autofillError":{
-    "message":"Не вдається заповнити пароль на цій сторінці. Скопіюйте і вставте ім'я користувача та\/або пароль."
+  "autofillError": {
+    "message": "Не вдається заповнити пароль на цій сторінці. Скопіюйте і вставте ім'я користувача та\/або пароль."
   },
-  "loggedOut":{
-    "message":"Ви вийшли"
+  "loggedOut": {
+    "message": "Ви вийшли"
   },
-  "loginExpired":{
-    "message":"Тривалість вашого сеансу завершилась."
+  "loginExpired": {
+    "message": "Тривалість вашого сеансу завершилась."
   },
-  "logOutConfirmation":{
-    "message":"Ви дійсно хочете вийти?"
+  "logOutConfirmation": {
+    "message": "Ви дійсно хочете вийти?"
   },
-  "yes":{
-    "message":"Так"
+  "yes": {
+    "message": "Так"
   },
-  "no":{
-    "message":"Ні"
+  "no": {
+    "message": "Ні"
   },
-  "unexpectedError":{
-    "message":"Сталася неочікувана помилка."
+  "unexpectedError": {
+    "message": "Сталася неочікувана помилка."
   },
-  "nameRequired":{
-    "message":"Потрібна назва."
+  "nameRequired": {
+    "message": "Потрібна назва."
   },
-  "addedFolder":{
-    "message":"Додано теку"
+  "addedFolder": {
+    "message": "Додано теку"
   },
-  "changeMasterPass":{
-    "message":"Змінити головний пароль"
+  "changeMasterPass": {
+    "message": "Змінити головний пароль"
   },
-  "changeMasterPasswordConfirmation":{
-    "message":"Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  "changeMasterPasswordConfirmation": {
+    "message": "Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
-  "changeEmailConfirmation":{
-    "message":"Ви можете змінити адресу електронної пошти в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  "changeEmailConfirmation": {
+    "message": "Ви можете змінити адресу електронної пошти в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
-  "twoStepLoginConfirmation":{
-    "message":"Двоетапна авторизація робить ваш обліковий запис більш захищеним, вимагаючи підтвердження вашого входу за допомогою іншого пристрою, наприклад, код безпеки, програма авторизації, SMS, телефонний дзвінок, або електронна пошта. Ви можете увімкнути двоетапну авторизацію в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  "twoStepLoginConfirmation": {
+    "message": "Двоетапна авторизація робить ваш обліковий запис більш захищеним, вимагаючи підтвердження вашого входу за допомогою іншого пристрою, наприклад, код безпеки, програма авторизації, SMS, телефонний дзвінок, або електронна пошта. Ви можете увімкнути двоетапну авторизацію в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
-  "loggingOut":{
-    "message":"Вихід"
+  "loggingOut": {
+    "message": "Вихід"
   },
-  "loggingOutConfirmation":{
-    "message":"Ви нещодавно оновилися зі старішої версії. Ви повинні повторно увійти, щоб змінити налаштування блокування. Хочете вийти зараз?"
+  "loggingOutConfirmation": {
+    "message": "Ви нещодавно оновилися зі старішої версії. Ви повинні повторно увійти, щоб змінити налаштування блокування. Хочете вийти зараз?"
   },
-  "editedFolder":{
-    "message":"Тека змінена"
+  "editedFolder": {
+    "message": "Тека змінена"
   },
-  "deleteFolderConfirmation":{
-    "message":"Ви дійсно хочете видалити цю теку?"
+  "deleteFolderConfirmation": {
+    "message": "Ви дійсно хочете видалити цю теку?"
   },
-  "deletedFolder":{
-    "message":"Теку видалено"
+  "deletedFolder": {
+    "message": "Теку видалено"
   },
-  "gettingStartedTutorial":{
-    "message":"Знайомство"
+  "gettingStartedTutorial": {
+    "message": "Знайомство"
   },
-  "gettingStartedTutorialVideo":{
-    "message":"Перегляньте знайомство, щоб дізнатися про можливості розширення для браузера."
+  "gettingStartedTutorialVideo": {
+    "message": "Перегляньте знайомство, щоб дізнатися про можливості розширення для браузера."
   },
-  "syncingComplete":{
-    "message":"Синхронізація завершена"
+  "syncingComplete": {
+    "message": "Синхронізація завершена"
   },
-  "syncingFailed":{
-    "message":"Не вдалося синхронізувати"
+  "syncingFailed": {
+    "message": "Не вдалося синхронізувати"
   },
-  "importItemsConfirmation":{
-    "message":"You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+  "importItemsConfirmation": {
+    "message": "Ви можете робити масовий імпорт записів зі сховища на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
-  "passwordCopied":{
-    "message":"Пароль скопійовано"
+  "passwordCopied": {
+    "message": "Пароль скопійовано"
   },
-  "uri":{
-    "message":"URI"
+  "uri": {
+    "message": "URI"
   },
-  "addedItem":{
-    "message":"Added item"
+  "addedItem": {
+    "message": "Доданий запис"
   },
-  "editedItem":{
-    "message":"Edited item"
+  "editedItem": {
+    "message": "Змінений запис"
   },
-  "deleteItemConfirmation":{
-    "message":"Are you sure you want to delete this item?"
+  "deleteItemConfirmation": {
+    "message": "Ви дійсно хочете видалити цей запис?"
   },
-  "deletedItem":{
-    "message":"Deleted item"
+  "deletedItem": {
+    "message": "Видалений запис"
   },
-  "overwritePassword":{
-    "message":"Перезаписати пароль"
+  "overwritePassword": {
+    "message": "Перезаписати пароль"
   },
-  "overwritePasswordConfirmation":{
-    "message":"Ви дійсно хочете перезаписати поточний пароль?"
+  "overwritePasswordConfirmation": {
+    "message": "Ви дійсно хочете перезаписати поточний пароль?"
   },
-  "credits":{
-    "message":"Подяки"
+  "credits": {
+    "message": "Подяки"
   },
-  "thankYou":{
-    "message":"Дякуємо"
+  "thankYou": {
+    "message": "Дякуємо"
   },
-  "translations":{
-    "message":"Переклади"
+  "translations": {
+    "message": "Переклади"
   },
-  "searchFolder":{
-    "message":"Пошук теки"
+  "searchFolder": {
+    "message": "Пошук в теці"
   },
-  "noneFolder":{
-    "message":"Без теки",
-    "description":"This is the folder for uncategorized items"
+  "noneFolder": {
+    "message": "Без теки",
+    "description": "This is the folder for uncategorized items"
   },
-  "features":{
-    "message":"Додатково"
+  "features": {
+    "message": "Додатково"
   },
-  "gaDesc":{
-    "message":"Ми використовуємо аналітику для розуміння того, як використовується розширення, щоб зробити його кращим. Всі зібрані дані цілком анонімні."
+  "gaDesc": {
+    "message": "Ми використовуємо аналітику для розуміння того, як використовується розширення, щоб зробити його кращим. Всі зібрані дані цілком анонімні."
   },
-  "disableAddLoginNotification":{
-    "message":"Вимкнути сповіщення про додавання запису"
+  "disableAddLoginNotification": {
+    "message": "Вимкнути сповіщення про додавання запису"
   },
-  "addLoginNotificationDesc":{
-    "message":"Сповіщення про додавання пароля автоматично пропонує зберегти нові паролі у вашому сховищі під час першого входу."
+  "addLoginNotificationDesc": {
+    "message": "Сповіщення про додавання пароля автоматично пропонує зберегти нові паролі у вашому сховищі під час першого входу."
   },
-  "notificationAddDesc":{
-    "message":"Чи повинен bitwarden запам'ятати цей пароль?"
+  "notificationAddDesc": {
+    "message": "Чи повинен bitwarden запам'ятати цей пароль?"
   },
-  "notificationAddSave":{
-    "message":"Так, зберегти зараз"
+  "notificationAddSave": {
+    "message": "Так, зберегти зараз"
   },
-  "notificationNeverSave":{
-    "message":"Ніколи для цього сайту"
+  "notificationNeverSave": {
+    "message": "Ніколи для цього сайту"
   },
-  "disableContextMenuItem":{
-    "message":"Вимкнути в контекстному меню"
+  "disableContextMenuItem": {
+    "message": "Вимкнути в контекстному меню"
   },
-  "disableContextMenuItemDesc":{
-    "message":"Можливості контекстного меню забезпечують швидкий доступ до генерування пароля й входу для веб-сайту поточної вкладки."
+  "disableContextMenuItemDesc": {
+    "message": "Можливості контекстного меню забезпечують швидкий доступ до генерування пароля й входу для веб-сайту поточної вкладки."
   },
-  "exportVault":{
-    "message":"Експорт сховища"
+  "exportVault": {
+    "message": "Експорт сховища"
   },
-  "warning":{
-    "message":"ПОПЕРЕДЖЕННЯ",
-    "description":"WARNING (should stay in capitalized letters if the language permits)"
+  "warning": {
+    "message": "ПОПЕРЕДЖЕННЯ",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning":{
-    "message":"При експорті ваші дані зберігаються в незашифрованому вигляді в форматі .csv. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, електронною поштою). Після використання негайно видаліть їх."
+  "exportWarning": {
+    "message": "При експорті ваші дані зберігаються в незашифрованому вигляді в форматі .csv. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, електронною поштою). Після використання негайно видаліть їх."
   },
-  "exportMasterPassword":{
-    "message":"Введіть головний пароль, щоб експортувати дані сховища."
+  "exportMasterPassword": {
+    "message": "Введіть головний пароль, щоб експортувати дані сховища."
   },
-  "exportVaultInfo":{
-    "message":"Експортуйте дані сховища в формат .csv для швидкого редагування чи переміщення."
+  "exportVaultInfo": {
+    "message": "Експортуйте дані сховища в формат .csv для швидкого редагування чи переміщення."
   },
-  "shared":{
-    "message":"Спільні"
+  "shared": {
+    "message": "Спільні"
   },
-  "shareVault":{
-    "message":"Поділитися своїм сховищем"
+  "shareVault": {
+    "message": "Поділитися своїм сховищем"
   },
-  "shareVaultInfo":{
-    "message":"Створіть організацію, щоб безпечно ділитися записами з іншими користувачами."
+  "shareVaultInfo": {
+    "message": "Створіть організацію, щоб безпечно ділитися записами з іншими користувачами."
   },
-  "contribute":{
-    "message":"Ви також можете допомогти!"
+  "contribute": {
+    "message": "Ви також можете допомогти!"
   },
-  "learnMore":{
-    "message":"Докладніше"
+  "learnMore": {
+    "message": "Докладніше"
   },
-  "authenticatorKeyTotp":{
-    "message":"Ключ авторизації (TOTP)"
+  "authenticatorKeyTotp": {
+    "message": "Ключ авторизації (TOTP)"
   },
-  "verificationCodeTotp":{
-    "message":"Код підтвердження (TOTP)"
+  "verificationCodeTotp": {
+    "message": "Код підтвердження (TOTP)"
   },
-  "copyVerificationCode":{
-    "message":"Копіювати код підтвердження"
+  "copyVerificationCode": {
+    "message": "Копіювати код підтвердження"
   },
-  "attachments":{
-    "message":"Вкладення"
+  "attachments": {
+    "message": "Вкладення"
   },
-  "deleteAttachment":{
-    "message":"Видалити вкладення"
+  "deleteAttachment": {
+    "message": "Видалити вкладення"
   },
-  "deleteAttachmentConfirmation":{
-    "message":"Ви дійсно хочете видалити це вкладення?"
+  "deleteAttachmentConfirmation": {
+    "message": "Ви дійсно хочете видалити це вкладення?"
   },
-  "deletedAttachment":{
-    "message":"Вкладення видалено"
+  "deletedAttachment": {
+    "message": "Вкладення видалено"
   },
-  "newAttachment":{
-    "message":"Додати нове вкладення"
+  "newAttachment": {
+    "message": "Додати нове вкладення"
   },
-  "noAttachments":{
-    "message":"Немає вкладень."
+  "noAttachments": {
+    "message": "Немає вкладень."
   },
-  "attachmentSaved":{
-    "message":"Вкладення збережено."
+  "attachmentSaved": {
+    "message": "Вкладення збережено."
   },
-  "file":{
-    "message":"Файл"
+  "file": {
+    "message": "Файл"
   },
-  "selectFile":{
-    "message":"Оберіть файл."
+  "selectFile": {
+    "message": "Оберіть файл."
   },
-  "maxFileSize":{
-    "message":"Максимальний розмір файлу 100 Мб."
+  "maxFileSize": {
+    "message": "Максимальний розмір файлу 100 Мб."
   },
-  "featureUnavailable":{
-    "message":"Функція недоступна"
+  "featureUnavailable": {
+    "message": "Функція недоступна"
   },
-  "updateKey":{
-    "message":"Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
+  "updateKey": {
+    "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
   },
-  "premiumMembership":{
-    "message":"Преміум статус"
+  "premiumMembership": {
+    "message": "Преміум статус"
   },
-  "premiumManage":{
-    "message":"Керувати статусом"
+  "premiumManage": {
+    "message": "Керувати статусом"
   },
-  "premiumManageAlert":{
-    "message":"Ви можете керувати своїм статусом у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  "premiumManageAlert": {
+    "message": "Ви можете керувати своїм статусом у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
-  "premiumRefresh":{
-    "message":"Оновити статус"
+  "premiumRefresh": {
+    "message": "Оновити статус"
   },
-  "premiumNotCurrentMember":{
-    "message":"У вас зараз преміум статус."
+  "premiumNotCurrentMember": {
+    "message": "У вас зараз преміум статус."
   },
-  "premiumSignUpAndGet":{
-    "message":"Підпишіться на преміум статус і отримайте:"
+  "premiumSignUpAndGet": {
+    "message": "Підпишіться на преміум статус і отримайте:"
   },
-  "ppremiumSignUpStorage":{
-    "message":"1 ГБ зашифрованого сховища для файлів."
+  "ppremiumSignUpStorage": {
+    "message": "1 ГБ зашифрованого сховища для файлів."
   },
-  "ppremiumSignUpTwoStep":{
-    "message":"Додаткові можливості двоетапної авторизації, наприклад, YubiKey, FIDO U2F та Duo."
+  "ppremiumSignUpTwoStep": {
+    "message": "Додаткові можливості двоетапної авторизації, наприклад, YubiKey, FIDO U2F та Duo."
   },
-  "ppremiumSignUpTotp":{
-    "message":"Генератор коду авторизації TOTP (2FA) для входу в сховище."
+  "ppremiumSignUpTotp": {
+    "message": "Генератор коду авторизації TOTP (2FA) для входу в сховище."
   },
-  "ppremiumSignUpSupport":{
-    "message":"Пріоритетну технічну підтримку."
+  "ppremiumSignUpSupport": {
+    "message": "Пріоритетну технічну підтримку."
   },
-  "ppremiumSignUpFuture":{
-    "message":"Всі майбутні функції преміум статусу. Їх буде більше!"
+  "ppremiumSignUpFuture": {
+    "message": "Всі майбутні функції преміум статусу. Їх буде більше!"
   },
-  "premiumPurchase":{
-    "message":"Придбати преміум"
+  "premiumPurchase": {
+    "message": "Придбати преміум"
   },
-  "premiumPurchaseAlert":{
-    "message":"Ви можете придбати преміум статус у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+  "premiumPurchaseAlert": {
+    "message": "Ви можете придбати преміум статус у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
-  "premiumCurrentMember":{
-    "message":"У вас преміум статус!"
+  "premiumCurrentMember": {
+    "message": "У вас преміум статус!"
   },
-  "premiumCurrentMemberThanks":{
-    "message":"Дякуємо за підтримку bitwarden."
+  "premiumCurrentMemberThanks": {
+    "message": "Дякуємо за підтримку bitwarden."
   },
-  "premiumPrice":{
-    "message":"Всього лише %price% \/ за рік!"
+  "premiumPrice": {
+    "message": "Всього лише %price% \/ за рік!"
   },
-  "refreshComplete":{
-    "message":"Оновлення завершено"
+  "refreshComplete": {
+    "message": "Оновлення завершено"
   },
-  "disableAutoTotpCopy":{
-    "message":"Вимкнути автоматичне копіювання TOTP"
+  "disableAutoTotpCopy": {
+    "message": "Вимкнути автоматичне копіювання TOTP"
   },
-  "disableAutoTotpCopyDesc":{
-    "message":"Якщо ваш запис має вкладений ключ авторизації, код підтвердження TOTP автоматично копіюється до буфера обміну щоразу при автозаповненні."
+  "disableAutoTotpCopyDesc": {
+    "message": "Якщо ваш запис має вкладений ключ авторизації, код підтвердження TOTP автоматично копіюється до буфера обміну щоразу при автозаповненні."
   },
-  "premiumRequired":{
-    "message":"Необхідний преміум статус"
+  "premiumRequired": {
+    "message": "Необхідний преміум статус"
   },
-  "premiumRequiredDesc":{
-    "message":"Для використання цієї функції необхідний преміум статус."
+  "premiumRequiredDesc": {
+    "message": "Для використання цієї функції необхідний преміум статус."
   },
-  "enterVerificationCodeApp":{
-    "message":"Введіть 6-значних код підтвердження з програми авторизації."
+  "enterVerificationCodeApp": {
+    "message": "Введіть 6-значних код підтвердження з програми авторизації."
   },
-  "enterVerificationCodeEmail":{
-    "message":"Введіть 6-значний код підтвердження, надісланий на"
+  "enterVerificationCodeEmail": {
+    "message": "Введіть 6-значний код підтвердження, надісланий на"
   },
-  "rememberMe":{
-    "message":"Запам'ятати мене"
+  "rememberMe": {
+    "message": "Запам'ятати мене"
   },
-  "sendVerificationCodeEmailAgain":{
-    "message":"Надіслати код підтвердження ще раз"
+  "sendVerificationCodeEmailAgain": {
+    "message": "Надіслати код підтвердження ще раз"
   },
-  "useAnotherTwoStepMethod":{
-    "message":"Використати інший спосіб двоетапної авторизації"
+  "useAnotherTwoStepMethod": {
+    "message": "Використати інший спосіб двоетапної авторизації"
   },
-  "insertYubiKey":{
-    "message":"Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
+  "insertYubiKey": {
+    "message": "Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
   },
-  "insertU2f":{
-    "message":"Вставте свій ключ безпеки в USB порт комп'ютера. Якщо в нього є кнопка, натисніть її."
+  "insertU2f": {
+    "message": "Вставте свій ключ безпеки в USB порт комп'ютера. Якщо в нього є кнопка, натисніть її."
   },
-  "loginUnavailable":{
-    "message":"Вхід недоступний"
+  "loginUnavailable": {
+    "message": "Вхід недоступний"
   },
-  "noTwoStepProviders":{
-    "message":"Для цього облікового запису увімкнено двоетапну авторизацію. Однак, жоден з налаштованих провайдерів двоетапної авторизації не підтримується цим веб-браузером."
+  "noTwoStepProviders": {
+    "message": "Для цього облікового запису увімкнено двоетапну авторизацію. Однак, жоден з налаштованих провайдерів двоетапної авторизації не підтримується цим веб-браузером."
   },
-  "noTwoStepProviders2":{
-    "message":"Будь ласка, скористайтеся підтримуваним веб-браузером (наприклад, Chrome) та\/або іншими провайдерами, що краще підтримуються веб-браузерами (наприклад, програма авторизації)."
+  "noTwoStepProviders2": {
+    "message": "Будь ласка, скористайтеся підтримуваним веб-браузером (наприклад, Chrome) та\/або іншими провайдерами, що краще підтримуються веб-браузерами (наприклад, програма авторизації)."
   },
-  "twoStepOptions":{
-    "message":"Налаштування двоетапної авторизації"
+  "twoStepOptions": {
+    "message": "Налаштування двоетапної авторизації"
   },
-  "recoveryCodeDesc":{
-    "message":"Втратили доступ до всіх провайдерів двоетапної авторизації? Скористайтеся кодом відновлення, щоб вимкнути двоетапну авторизацію для свого облікового запису."
+  "recoveryCodeDesc": {
+    "message": "Втратили доступ до всіх провайдерів двоетапної авторизації? Скористайтеся кодом відновлення, щоб вимкнути двоетапну авторизацію для свого облікового запису."
   },
-  "recoveryCodeTitle":{
-    "message":"Код відновлення"
+  "recoveryCodeTitle": {
+    "message": "Код відновлення"
   },
-  "authenticatorAppTitle":{
-    "message":"Програма авторизації"
+  "authenticatorAppTitle": {
+    "message": "Програма авторизації"
   },
-  "authenticatorAppDesc":{
-    "message":"Використовуйте програму авторизації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
-    "description":"'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDesc": {
+    "message": "Використовуйте програму авторизації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
-  "yubiKeyTitle":{
-    "message":"Ключ безпеки YubiKey OTP"
+  "yubiKeyTitle": {
+    "message": "Ключ безпеки YubiKey OTP"
   },
-  "yubiKeyDesc":{
-    "message":"Використовуйте YubiKey для доступу до сховища. Працює з YubiKey 4, 4 Nano, 4C та пристроями NEO."
+  "yubiKeyDesc": {
+    "message": "Використовуйте YubiKey для доступу до сховища. Працює з YubiKey 4, 4 Nano, 4C та пристроями NEO."
   },
-  "duoDesc":{
-    "message":"Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
-    "description":"'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  "duoDesc": {
+    "message": "Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc":{
-    "message":"Використовуйте будь-який ключ безпеки FIDO U2F для доступу до сховища."
+  "u2fDesc": {
+    "message": "Використовуйте будь-який ключ безпеки FIDO U2F для доступу до сховища."
   },
-  "u2fTitle":{
-    "message":"Ключ безпеки FIDO U2F"
+  "u2fTitle": {
+    "message": "Ключ безпеки FIDO U2F"
   },
-  "emailTitle":{
-    "message":"Електронна пошта"
+  "emailTitle": {
+    "message": "Електронна пошта"
   },
-  "emailDesc":{
-    "message":"Коди підтвердження будуть надсилатися на вашу пошту."
+  "emailDesc": {
+    "message": "Коди підтвердження будуть надсилатися на вашу пошту."
   },
-  "selfHostedEnvironment":{
-    "message":"Середовище власного хостингу"
+  "selfHostedEnvironment": {
+    "message": "Середовище власного хостингу"
   },
-  "selfHostedEnvironmentFooter":{
-    "message":"Вкажіть основну URL-адресу вашого локально розміщеного встановлення bitwarden."
+  "selfHostedEnvironmentFooter": {
+    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення bitwarden."
   },
-  "customEnvironment":{
-    "message":"Власне середовище"
+  "customEnvironment": {
+    "message": "Власне середовище"
   },
-  "customEnvironmentFooter":{
-    "message":"Для досвідчених користувачів. Ви можете вказати основну URL-адресу окремо для кожної служби."
+  "customEnvironmentFooter": {
+    "message": "Для досвідчених користувачів. Ви можете вказати основну URL-адресу окремо для кожної служби."
   },
-  "baseUrl":{
-    "message":"URL-адреса сервера"
+  "baseUrl": {
+    "message": "URL-адреса сервера"
   },
-  "apiUrl":{
-    "message":"URL-адреса API"
+  "apiUrl": {
+    "message": "URL-адреса API"
   },
-  "webVaultUrl":{
-    "message":"URL-адреса сервера веб-сховища"
+  "webVaultUrl": {
+    "message": "URL-адреса сервера веб-сховища"
   },
-  "identityUrl":{
-    "message":"URL-адреса сервера ідентифікації"
+  "identityUrl": {
+    "message": "URL-адреса сервера ідентифікації"
   },
-  "environmentSaved":{
-    "message":"URL-адреси середовища збережено."
+  "iconsUrl": {
+    "message": "Icons Server URL"
   },
-  "enableAutoFillOnPageLoad":{
-    "message":"Автозаповнення при завантаженні сторінки"
+  "environmentSaved": {
+    "message": "URL-адреси середовища збережено."
   },
-  "enableAutoFillOnPageLoadDesc":{
-    "message":"При виявленні форми входу виконувати автоматичне її заповнення під час завантаження сторінки."
+  "enableAutoFillOnPageLoad": {
+    "message": "Автозаповнення при завантаженні сторінки"
   },
-  "experimentalFeature":{
-    "message":"Це експериментальна функція. При її використанні ви берете ризик на себе."
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "При виявленні форми входу виконувати автоматичне її заповнення під час завантаження сторінки."
   },
-  "commandAutofillDesc":{
-    "message":"Автозаповнення останнього використаного запису для цього веб-сайту."
+  "experimentalFeature": {
+    "message": "Це експериментальна функція. При її використанні ви берете ризик на себе."
   },
-  "commandGeneratePasswordDesc":{
-    "message":"Генерувати і копіювати новий пароль в буфер обміну."
+  "commandAutofillDesc": {
+    "message": "Автозаповнення останнього використаного запису для цього веб-сайту."
   },
-  "privateModeMessage":{
-    "message":"Шкода, але це вікно недоступне в приватному режимі для цього браузера."
+  "commandGeneratePasswordDesc": {
+    "message": "Генерувати і копіювати новий пароль в буфер обміну."
   },
-  "customFields":{
-    "message":"Власні поля"
+  "privateModeMessage": {
+    "message": "Шкода, але це вікно недоступне в приватному режимі для цього браузера."
   },
-  "copyValue":{
-    "message":"Копіювати значення"
+  "customFields": {
+    "message": "Власні поля"
   },
-  "toggleValue":{
-    "message":"Перемкнути значення"
+  "copyValue": {
+    "message": "Копіювати значення"
   },
-  "value":{
-    "message":"Значення"
+  "toggleValue": {
+    "message": "Показати\/Сховати"
   },
-  "newCustomField":{
-    "message":"Нове власне поле"
+  "value": {
+    "message": "Значення"
   },
-  "cfTypeText":{
-    "message":"Текст"
+  "newCustomField": {
+    "message": "Нове власне поле"
   },
-  "cfTypeHidden":{
-    "message":"Приховано"
+  "cfTypeText": {
+    "message": "Текст"
   },
-  "cfTypeBoolean":{
-    "message":"Логічне значення"
+  "cfTypeHidden": {
+    "message": "Приховано"
   },
-  "popup2faCloseMessage":{
-    "message":"Натискання поза межами спливаючого вікна для перевірки коду підтвердження в пошті спричинить його закриття. Хочете відкрити його в новому вікні, щоб воно не закрилося?"
+  "cfTypeBoolean": {
+    "message": "Логічне значення"
   },
-  "disableFavicon":{
-    "message":"Disable Website Icons"
+  "popup2faCloseMessage": {
+    "message": "Натискання поза межами спливаючого вікна для перевірки коду підтвердження в пошті спричинить його закриття. Хочете відкрити його в новому вікні, щоб воно не закрилося?"
   },
-  "disableFaviconDesc":{
-    "message":"Website Icons provides a recognizable icon next to each login item in your vault."
+  "disableFavicon": {
+    "message": "Вимкнути піктограми веб-сайтів"
   },
-  "cardholderName":{
-    "message":"Cardholder Name"
+  "disableFaviconDesc": {
+    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
-  "number":{
-    "message":"Number"
+  "cardholderName": {
+    "message": "Ім'я власника картки"
   },
-  "brand":{
-    "message":"Brand"
+  "number": {
+    "message": "Номер"
   },
-  "expirationMonth":{
-    "message":"Expiration Month"
+  "brand": {
+    "message": "Тип картки"
   },
-  "expirationYear":{
-    "message":"Expiration Year"
+  "expirationMonth": {
+    "message": "Місяць завершення"
   },
-  "expiration":{
-    "message":"Expiration"
+  "expirationYear": {
+    "message": "Рік завершення"
   },
-  "january":{
-    "message":"January"
+  "expiration": {
+    "message": "Термін дії"
   },
-  "february":{
-    "message":"February"
+  "january": {
+    "message": "Січень"
   },
-  "march":{
-    "message":"March"
+  "february": {
+    "message": "Лютий"
   },
-  "april":{
-    "message":"April"
+  "march": {
+    "message": "Березень"
   },
-  "may":{
-    "message":"May"
+  "april": {
+    "message": "Квітень"
   },
-  "june":{
-    "message":"June"
+  "may": {
+    "message": "Травень"
   },
-  "july":{
-    "message":"July"
+  "june": {
+    "message": "Червень"
   },
-  "august":{
-    "message":"August"
+  "july": {
+    "message": "Липень"
   },
-  "september":{
-    "message":"September"
+  "august": {
+    "message": "Серпень"
   },
-  "october":{
-    "message":"October"
+  "september": {
+    "message": "Вересень"
   },
-  "november":{
-    "message":"November"
+  "october": {
+    "message": "Жовтень"
   },
-  "december":{
-    "message":"December"
+  "november": {
+    "message": "Листопад"
   },
-  "securityCode":{
-    "message":"Security Code"
+  "december": {
+    "message": "Грудень"
   },
-  "ex":{
-    "message":"ex."
+  "securityCode": {
+    "message": "Код безпеки"
   },
-  "title":{
-    "message":"Title"
+  "ex": {
+    "message": "ex."
   },
-  "mr":{
-    "message":"Mr"
+  "title": {
+    "message": "Звернення"
   },
-  "mrs":{
-    "message":"Mrs"
+  "mr": {
+    "message": "Mr"
   },
-  "ms":{
-    "message":"Ms"
+  "mrs": {
+    "message": "Mrs"
   },
-  "dr":{
-    "message":"Dr"
+  "ms": {
+    "message": "Ms"
   },
-  "firstName":{
-    "message":"First Name"
+  "dr": {
+    "message": "Dr"
   },
-  "middleName":{
-    "message":"Middle Name"
+  "firstName": {
+    "message": "Ім’я"
   },
-  "lastName":{
-    "message":"Last Name"
+  "middleName": {
+    "message": "По батькові"
   },
-  "identityName":{
-    "message":"Identity Name"
+  "lastName": {
+    "message": "Прізвище"
   },
-  "company":{
-    "message":"Company"
+  "identityName": {
+    "message": "Назва"
   },
-  "ssn":{
-    "message":"Social Security Number"
+  "company": {
+    "message": "Компанія"
   },
-  "passportNumber":{
-    "message":"Passport Number"
+  "ssn": {
+    "message": "Номер соціального страхування"
   },
-  "licenseNumber":{
-    "message":"License Number"
+  "passportNumber": {
+    "message": "Номер паспорта"
   },
-  "email":{
-    "message":"Email"
+  "licenseNumber": {
+    "message": "Номер ліцензії"
   },
-  "phone":{
-    "message":"Phone"
+  "email": {
+    "message": "Е-пошта"
   },
-  "address":{
-    "message":"Address"
+  "phone": {
+    "message": "Телефон"
   },
-  "address1":{
-    "message":"Address 1"
+  "address": {
+    "message": "Адреса"
   },
-  "address2":{
-    "message":"Address 2"
+  "address1": {
+    "message": "Адреса 1"
   },
-  "address3":{
-    "message":"Address 3"
+  "address2": {
+    "message": "Адреса 2"
   },
-  "cityTown":{
-    "message":"City \/ Town"
+  "address3": {
+    "message": "Адреса 3"
   },
-  "stateProvince":{
-    "message":"State \/ Province"
+  "cityTown": {
+    "message": "Місто \/ Селище"
   },
-  "zipPostalCode":{
-    "message":"Zip \/ Postal Code"
+  "stateProvince": {
+    "message": "Штат \/ Область"
   },
-  "country":{
-    "message":"Country"
+  "zipPostalCode": {
+    "message": "Поштовий індекс"
   },
-  "type":{
-    "message":"Type"
+  "country": {
+    "message": "Країна"
   },
-  "typeLogin":{
-    "message":"Login"
+  "type": {
+    "message": "Тип"
   },
-  "typeLogins":{
-    "message":"Logins"
+  "typeLogin": {
+    "message": "Запис"
   },
-  "typeSecureNote":{
-    "message":"Secure Note"
+  "typeLogins": {
+    "message": "Записи"
   },
-  "typeCard":{
-    "message":"Card"
+  "typeSecureNote": {
+    "message": "Захищена нотатка"
   },
-  "typeIdentity":{
-    "message":"Identity"
+  "typeCard": {
+    "message": "Картка"
   },
-  "passwordHistory":{
-    "message":"Password History"
+  "typeIdentity": {
+    "message": "Особисті дані"
   },
-  "back":{
-    "message":"Back"
+  "passwordHistory": {
+    "message": "Історія паролів"
+  },
+  "back": {
+    "message": "Назад"
   }
 }
