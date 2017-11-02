@@ -106,7 +106,7 @@
             if (cipher.name && cipher.name.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
-            if (cipher.subTitle && cipher.subTitle.toLowerCase().indexOf(searchTerm) !== -1) {
+            if (cipher.username && cipher.username.toLowerCase().indexOf(searchTerm) !== -1) {
                 return true;
             }
             if (cipher.login && cipher.login.uri && cipher.login.uri.toLowerCase().indexOf(searchTerm) !== -1) {
