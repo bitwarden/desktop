@@ -147,8 +147,6 @@ function initSyncService() {
     }
 
     function syncSettings(self, userId, response) {
-        var deferred = Q.defer();
-
         var eqDomains = [];
         if (response && response.equivalentDomains) {
             eqDomains = eqDomains.concat(response.equivalentDomains);
@@ -161,11 +159,7 @@ function initSyncService() {
             }
         }
 
-        self.settingsService.setEquivalentDomains(eqDomains, function () {
-            deferred.resolve();
-        });
-
-        return deferred.promise;
+        return self.settingsService.setEquivalentDomains(eqDomains);
     }
 
     SyncService.prototype.getLastSync = function (callback) {

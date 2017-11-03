@@ -7,6 +7,7 @@ import EnvironmentService from './services/environment.service';
 import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import PasswordGenerationService from './services/passwordGeneration.service';
+import SettingsService from './services/settings.service';
 import TokenService from './services/token.service';
 import TotpService from './services/totp.service';
 import UserService from './services/user.service';
@@ -86,7 +87,7 @@ var bg_isBackground = true,
     window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, logout);
     window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_apiService);
     window.bg_userService = bg_userService = new UserService(bg_tokenService);
-    window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
+    window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService);
     window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
         bg_constantsService);
     window.bg_folderService = bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService, bg_utilsService);
