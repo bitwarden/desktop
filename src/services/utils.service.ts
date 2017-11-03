@@ -364,31 +364,15 @@ export default class UtilsService {
     // remove these in favor of static
 
     saveObjToStorage(key: string, obj: any) {
-        return new Promise((resolve) => {
-            chrome.storage.local.set({ [key]: obj }, () => {
-                resolve();
-            });
-        });
+        return UtilsService.saveObjToStorage(key, obj);
     }
 
     removeFromStorage(key: string) {
-        return new Promise((resolve) => {
-            chrome.storage.local.remove(key, () => {
-                resolve();
-            });
-        });
+        return UtilsService.removeFromStorage(key);
     }
 
     getObjFromStorage(key: string) {
-        return new Promise((resolve) => {
-            chrome.storage.local.get(key, (obj: any) => {
-                if (obj && obj[key]) {
-                    resolve(obj[key]);
-                } else {
-                    resolve(null);
-                }
-            });
-        });
+        return UtilsService.getObjFromStorage(key);
     }
 
     private validIpAddress(ipString: string) {
