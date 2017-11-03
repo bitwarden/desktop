@@ -22,7 +22,7 @@ angular
         function checkPassword() {
             var deferred = $q.defer();
 
-            userService.getEmail(function (email) {
+            userService.getEmail().then(function (email) {
                 var key = cryptoService.makeKey($scope.masterPassword, email);
                 var keyHash;
                 cryptoService.hashPassword($scope.masterPassword, key).then(function (theKeyHash) {

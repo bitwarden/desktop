@@ -436,19 +436,21 @@ var bg_isBackground = true,
             return;
         }
 
-        bg_userService.isAuthenticated(function (isAuthenticated) {
-            bg_cryptoService.getKey().then(function (key) {
-                var suffix = '';
-                if (!isAuthenticated) {
-                    suffix = '_gray';
-                }
-                else if (!key) {
-                    suffix = '_locked';
-                }
+        var isAuthenticated;
+        bg_userService.isAuthenticated().then(function (theIsAuthenticated) {
+            isAuthenticated = theIsAuthenticated;
+            return bg_cryptoService.getKey();
+        }).then(function (key) {
+            var suffix = '';
+            if (!isAuthenticated) {
+                suffix = '_gray';
+            }
+            else if (!key) {
+                suffix = '_locked';
+            }
 
-                actionSetIcon(chrome.browserAction, suffix);
-                actionSetIcon(bg_sidebarAction, suffix);
-            });
+            actionSetIcon(chrome.browserAction, suffix);
+            actionSetIcon(bg_sidebarAction, suffix);
         });
 
         function actionSetIcon(theAction, suffix) {

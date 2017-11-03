@@ -31,7 +31,6 @@ export default class UserService {
         return UtilsService.saveObjToStorage(Keys.stamp, stamp);
     }
 
-    // TODO: callbacks
     async getUserId(): Promise<string> {
         if (this.userId != null) {
             return this.userId;
@@ -41,7 +40,6 @@ export default class UserService {
         return this.userId;
     }
 
-    // TODO: callbacks
     async getEmail(): Promise<string> {
         if (this.email != null) {
             return this.email;
@@ -70,7 +68,6 @@ export default class UserService {
         this.userId = this.email = this.stamp = null;
     }
 
-    // TODO: fix callbacks
     async isAuthenticated(): Promise<boolean> {
         const token = await this.tokenService.getToken();
         if (token == null) {

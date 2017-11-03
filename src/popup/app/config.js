@@ -23,20 +23,22 @@ angular
             var userService = $injector.get('userService');
             var cryptoService = $injector.get('cryptoService');
 
-            cryptoService.getKey().then(function (key) {
-                userService.isAuthenticated(function (isAuthenticated) {
-                    if (isAuthenticated) {
-                        if (!key) {
-                            $state.go('lock');
-                        }
-                        else {
-                            $state.go('tabs.current');
-                        }
+            var key;
+            cryptoService.getKey().then(function (theKey) {
+                key = theKey;
+                return userService.isAuthenticated();
+            }).then(function (isAuthenticated) {
+                if (isAuthenticated) {
+                    if (!key) {
+                        $state.go('lock');
                     }
                     else {
-                        $state.go('home');
+                        $state.go('tabs.current');
                     }
-                });
+                }
+                else {
+                    $state.go('home');
+                }
             });
         });
 
@@ -269,7 +271,7 @@ angular
 
         stateService.init();
 
-        $transitions.onStart({}, function(trans) {
+        $transitions.onStart({}, function (trans) {
             const $state = trans.router.stateService;
             const toState = trans.to();
 
@@ -284,7 +286,7 @@ angular
                 return;
             }
 
-            userService.isAuthenticated((isAuthenticated) => {
+            userService.isAuthenticated().then((isAuthenticated) => {
                 if (isAuthenticated) {
                     var obj = {};
                     obj[constantsService.lastActiveKey] = (new Date()).getTime();

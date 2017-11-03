@@ -21,7 +21,7 @@ function initSyncService() {
         var self = this;
 
         self.syncStarted();
-        self.userService.isAuthenticated(function (isAuthenticated) {
+        self.userService.isAuthenticated().then(function (isAuthenticated) {
             if (!isAuthenticated) {
                 self.syncCompleted(false);
                 callback(false);
