@@ -12,7 +12,6 @@ export default class TokenService {
     decodedToken: any;
     refreshToken: string;
 
-    // TODO: fix callbacks
     setTokens(accessToken: string, refreshToken: string): Promise<any> {
         return Promise.all([
             this.setToken(accessToken),
@@ -20,14 +19,12 @@ export default class TokenService {
         ]);
     }
 
-    // TODO: fix callback implementations
     setToken(token: string): Promise<any> {
         this.token = token;
         this.decodedToken = null;
         return UtilsService.saveObjToStorage(Keys.accessToken, token);
     }
 
-    // TODO: fix callback implementations
     async getToken(): Promise<string> {
         if (this.token != null) {
             return this.token;
@@ -37,13 +34,11 @@ export default class TokenService {
         return this.token;
     }
 
-    // TODO: fix callback implementations
     setRefreshToken(refreshToken: string): Promise<any> {
         this.refreshToken = refreshToken;
         return UtilsService.saveObjToStorage(Keys.refreshToken, refreshToken);
     }
 
-    // TODO: fix callback implementations
     async getRefreshToken(): Promise<string> {
         if (this.refreshToken != null) {
             return this.refreshToken;
@@ -53,7 +48,6 @@ export default class TokenService {
         return this.refreshToken;
     }
 
-    // TODO: fix callback implementations
     setTwoFactorToken(token: string, email: string): Promise<any> {
         return UtilsService.saveObjToStorage(Keys.twoFactorTokenPrefix + email, token);
     }
@@ -62,7 +56,6 @@ export default class TokenService {
         return UtilsService.getObjFromStorage<string>(Keys.twoFactorTokenPrefix + email);
     }
 
-    // TODO: fix callback implementations
     clearTwoFactorToken(email: string): Promise<any> {
         return UtilsService.removeFromStorage(Keys.twoFactorTokenPrefix + email);
     }

@@ -71,7 +71,7 @@ function initApiService() {
             error: function (jqXHR, textStatus, errorThrown) {
                 if (jqXHR.responseJSON && jqXHR.responseJSON.TwoFactorProviders2 &&
                     Object.keys(jqXHR.responseJSON.TwoFactorProviders2).length) {
-                    self.tokenService.clearTwoFactorToken(tokenRequest.email, function () {
+                    self.tokenService.clearTwoFactorToken(tokenRequest.email).then(function () {
                         successWithTwoFactor(jqXHR.responseJSON.TwoFactorProviders2);
                     });
                 }
@@ -439,7 +439,7 @@ function initApiService() {
 
     function handleTokenState(self) {
         var deferred = Q.defer();
-        self.tokenService.getToken(function (accessToken) {
+        self.tokenService.getToken().then(function (accessToken) {
             if (!self.tokenService.tokenNeedsRefresh()) {
                 resolveTokenQs(accessToken, deferred);
                 return;
@@ -447,7 +447,7 @@ function initApiService() {
 
             doRefreshToken(self, function (response) {
                 var tokenResponse = new IdentityTokenResponse(response);
-                self.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken, function () {
+                self.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken).then(function () {
                     resolveTokenQs(tokenResponse.accessToken, deferred);
                 });
             }, function (jqXHR) {
@@ -459,7 +459,7 @@ function initApiService() {
     }
 
     function doRefreshToken(self, success, error) {
-        self.tokenService.getRefreshToken(function (refreshToken) {
+        self.tokenService.getRefreshToken().then(function (refreshToken) {
             if (!refreshToken || refreshToken === '') {
                 error();
                 return;

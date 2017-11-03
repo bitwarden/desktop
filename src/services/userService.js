@@ -139,7 +139,7 @@ function initUserService() {
         }
 
         var self = this;
-        self.tokenService.getToken(function (token) {
+        self.tokenService.getToken().then(function (token) {
             if (!token) {
                 callback(false);
             }

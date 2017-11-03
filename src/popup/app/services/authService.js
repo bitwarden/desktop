@@ -40,26 +40,26 @@ angular
                     }
 
                     if (response.twoFactorToken) {
-                        tokenService.setTwoFactorToken(response.twoFactorToken, email, function () { });
+                        tokenService.setTwoFactorToken(response.twoFactorToken, email);
                     }
 
-                    tokenService.setTokens(response.accessToken, response.refreshToken, function () {
-                        cryptoService.setKey(key).then(function () {
-                            return cryptoService.setKeyHash(hashedPassword);
-                        }).then(function () {
-                            userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(),
-                                function () {
-                                    cryptoService.setEncKey(response.key).then(function () {
-                                        return cryptoService.setEncPrivateKey(response.privateKey);
-                                    }).then(function () {
-                                        chrome.runtime.sendMessage({ command: 'loggedIn' });
-                                        deferred.resolve({
-                                            twoFactor: false,
-                                            twoFactorProviders: null
-                                        });
+                    tokenService.setTokens(response.accessToken, response.refreshToken).then(function () {
+                        return cryptoService.setKey(key);
+                    }).then(function () {
+                        return cryptoService.setKeyHash(hashedPassword);
+                    }).then(function () {
+                        userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(),
+                            function () {
+                                cryptoService.setEncKey(response.key).then(function () {
+                                    return cryptoService.setEncPrivateKey(response.privateKey);
+                                }).then(function () {
+                                    chrome.runtime.sendMessage({ command: 'loggedIn' });
+                                    deferred.resolve({
+                                        twoFactor: false,
+                                        twoFactorProviders: null
                                     });
                                 });
-                        });
+                            });
                     });
                 }, function (providers) {
                     // two factor required

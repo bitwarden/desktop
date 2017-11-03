@@ -5,6 +5,7 @@ import CryptoService from './services/crypto.service';
 import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import PasswordGenerationService from './services/passwordGeneration.service';
+import TokenService from './services/token.service';
 import UtilsService from './services/utils.service';
 
 // Model imports
@@ -75,7 +76,7 @@ var bg_isBackground = true,
     window.bg_i18nService = bg_i18nService = new i18nService(bg_utilsService);
     window.bg_constantsService = bg_constantsService = new ConstantsService(bg_i18nService);
     window.bg_cryptoService = bg_cryptoService = new CryptoService();
-    window.bg_tokenService = bg_tokenService = new TokenService(bg_utilsService);
+    window.bg_tokenService = bg_tokenService = new TokenService();
     window.bg_appIdService = bg_appIdService = new AppIdService();
     window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
     window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
