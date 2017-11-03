@@ -23,7 +23,7 @@ function initSettingsService() {
             return;
         }
 
-        this.userService.getUserId(function (userId) {
+        this.userService.getUserId().then(function (userId) {
             var key = 'settings_' + userId;
             chrome.storage.local.get(key, function (obj) {
                 self.settingsCache = obj[key];
@@ -66,7 +66,7 @@ function initSettingsService() {
             throw 'callback function required';
         }
 
-        self.userService.getUserId(function (userId) {
+        self.userService.getUserId().then(function (userId) {
             var settingsKey = 'settings_' + userId;
 
             self.getSettings(function (settings) {

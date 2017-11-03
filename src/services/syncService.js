@@ -44,7 +44,7 @@ function initSyncService() {
                     return;
                 }
 
-                self.userService.getUserId(function (userId) {
+                self.userService.getUserId().then(function (userId) {
                     self.apiService.getSync().then(function (response) {
                         syncProfile(self, response.profile).then(function () {
                             return syncFolders(self, userId, response.folders);
@@ -173,7 +173,7 @@ function initSyncService() {
             throw 'callback function required';
         }
 
-        this.userService.getUserId(function (userId) {
+        this.userService.getUserId().then(function (userId) {
             var lastSyncKey = 'lastSync_' + userId;
             chrome.storage.local.get(lastSyncKey, function (obj) {
                 var lastSync = obj[lastSyncKey];
@@ -192,7 +192,7 @@ function initSyncService() {
             throw 'callback function required';
         }
 
-        this.userService.getUserId(function (userId) {
+        this.userService.getUserId().then(function (userId) {
             var lastSyncKey = 'lastSync_' + userId;
 
             var obj = {};

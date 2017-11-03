@@ -160,7 +160,7 @@ function initCipherService() {
             key = null,
             localData;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(self.localDataKey);
         }).then(function (data) {
@@ -183,7 +183,7 @@ function initCipherService() {
             key = null,
             localData = null;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(self.localDataKey);
         }).then(function (data) {
@@ -337,7 +337,7 @@ function initCipherService() {
 
         function apiSuccess(response) {
             cipher.id = response.id;
-            self.userService.getUserIdPromise().then(function (userId) {
+            self.userService.getUserId().then(function (userId) {
                 var data = new CipherData(response, userId);
                 return self.upsert(data);
             }).then(function () {
@@ -352,7 +352,7 @@ function initCipherService() {
         var self = this,
             key = null;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (ciphers) {
@@ -412,7 +412,7 @@ function initCipherService() {
 
     CipherService.prototype.replace = function (ciphers) {
         var self = this;
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             return self.utilsService.saveObjToStorage('ciphers_' + userId, ciphers);
         }).then(function () {
             self.decryptedCipherCache = null;
@@ -430,7 +430,7 @@ function initCipherService() {
         var self = this,
             key = null;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (ciphers) {
@@ -514,7 +514,7 @@ function initCipherService() {
                 return self.apiService.postCipherAttachment(cipher.id, fd);
             }).then(function (resp) {
                 response = resp;
-                return self.userService.getUserIdPromise();
+                return self.userService.getUserId();
             }, function (resp) {
                 apiErrored = true;
                 handleErrorMessage(resp, deferred);
@@ -542,7 +542,7 @@ function initCipherService() {
         var self = this,
             key = null;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             key = 'ciphers_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (ciphers) {

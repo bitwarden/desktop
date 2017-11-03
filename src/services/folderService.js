@@ -28,7 +28,7 @@ function initFolderService() {
     FolderService.prototype.get = function (id) {
         var self = this;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             return self.utilsService.getObjFromStorage('folders_' + userId);
         }).then(function (folders) {
             if (folders && id in folders) {
@@ -42,7 +42,7 @@ function initFolderService() {
     FolderService.prototype.getAll = function () {
         var self = this;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             return self.utilsService.getObjFromStorage('folders_' + userId);
         }).then(function (folders) {
             var response = [];
@@ -120,7 +120,7 @@ function initFolderService() {
 
         function apiSuccess(response) {
             folder.id = response.id;
-            self.userService.getUserIdPromise().then(function (userId) {
+            self.userService.getUserId().then(function (userId) {
                 var data = new FolderData(response, userId);
                 return self.upsert(data);
             }).then(function () {
@@ -135,7 +135,7 @@ function initFolderService() {
         var self = this,
             key = null;
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             key = 'folders_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (folders) {
@@ -160,7 +160,7 @@ function initFolderService() {
 
     FolderService.prototype.replace = function (folders) {
         var self = this;
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             return self.utilsService.saveObjToStorage('folders_' + userId, folders);
         }).then(function () {
             self.decryptedFolderCache = null;
@@ -180,7 +180,7 @@ function initFolderService() {
 
         // TODO: Delete folder reference for associated ciphers
 
-        return self.userService.getUserIdPromise().then(function (userId) {
+        return self.userService.getUserId().then(function (userId) {
             key = 'folders_' + userId;
             return self.utilsService.getObjFromStorage(key);
         }).then(function (folders) {

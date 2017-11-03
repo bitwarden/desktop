@@ -9,6 +9,7 @@ import LockService from './services/lockService.js';
 import PasswordGenerationService from './services/passwordGeneration.service';
 import TokenService from './services/token.service';
 import TotpService from './services/totp.service';
+import UserService from './services/user.service';
 import UtilsService from './services/utils.service';
 
 // Model imports
@@ -84,7 +85,7 @@ var bg_isBackground = true,
     window.bg_appIdService = bg_appIdService = new AppIdService();
     window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, logout);
     window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_apiService);
-    window.bg_userService = bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
+    window.bg_userService = bg_userService = new UserService(bg_tokenService);
     window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
     window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
         bg_constantsService);
@@ -896,7 +897,7 @@ var bg_isBackground = true,
 
     function logout(expired, callback) {
         bg_syncService.setLastSync(new Date(0), function () {
-            bg_userService.getUserIdPromise().then(function (userId) {
+            bg_userService.getUserId().then(function (userId) {
                 return Q.all([
                     bg_tokenService.clearToken(),
                     bg_cryptoService.clearKeys(),
