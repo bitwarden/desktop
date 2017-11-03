@@ -1,4 +1,4 @@
-var Cipher = function (obj, alreadyEncrypted, localData) {
+var Cipher = window.Cipher = function (obj, alreadyEncrypted, localData) {
     this.constantsService = chrome.extension.getBackgroundPage().bg_constantsService;
     this.utilsService = chrome.extension.getBackgroundPage().bg_utilsService;
 
@@ -55,7 +55,7 @@ var Cipher = function (obj, alreadyEncrypted, localData) {
     }
 };
 
-var Login2 = function (obj, alreadyEncrypted) {
+var Login2 = window.Login2 = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
         uri: null,
         username: null,
@@ -64,7 +64,7 @@ var Login2 = function (obj, alreadyEncrypted) {
     }, alreadyEncrypted, []);
 };
 
-var Identity = function (obj, alreadyEncrypted) {
+var Identity = window.Identity = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
         title: null,
         firstName: null,
@@ -87,7 +87,7 @@ var Identity = function (obj, alreadyEncrypted) {
     }, alreadyEncrypted, []);
 };
 
-var Card = function (obj, alreadyEncrypted) {
+var Card = window.Card = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
         cardholderName: null,
         brand: null,
@@ -98,11 +98,11 @@ var Card = function (obj, alreadyEncrypted) {
     }, alreadyEncrypted, []);
 };
 
-var SecureNote = function (obj, alreadyEncrypted) {
+var SecureNote = window.SecureNote = function (obj, alreadyEncrypted) {
     this.type = obj.type;
 };
 
-var Field = function (obj, alreadyEncrypted) {
+var Field = window.Field = function (obj, alreadyEncrypted) {
     this.type = obj.type;
     buildDomainModel(this, obj, {
         name: null,
@@ -110,7 +110,7 @@ var Field = function (obj, alreadyEncrypted) {
     }, alreadyEncrypted, []);
 };
 
-var Attachment = function (obj, alreadyEncrypted) {
+var Attachment = window.Attachment = function (obj, alreadyEncrypted) {
     this.size = obj.size;
     buildDomainModel(this, obj, {
         id: null,
@@ -120,7 +120,7 @@ var Attachment = function (obj, alreadyEncrypted) {
     }, alreadyEncrypted, ['id', 'url', 'sizeName']);
 };
 
-var Folder = function (obj, alreadyEncrypted) {
+var Folder = window.Folder = function (obj, alreadyEncrypted) {
     buildDomainModel(this, obj, {
         id: null,
         name: null

@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.settings')
 
     .controller('settingsPremiumController', function ($scope, i18nService, tokenService, apiService, toastr, SweetAlert,
@@ -8,7 +8,7 @@
         $scope.price = '$10';
 
         $scope.refresh = function () {
-            apiService.refreshIdentityToken(function () {
+            apiService.refreshIdentityToken().then(function () {
                 toastr.success(i18nService.refreshComplete);
                 $timeout(function () {
                     $scope.isPremium = tokenService.getPremium();

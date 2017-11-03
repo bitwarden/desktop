@@ -10,7 +10,8 @@ angular
             var key = cryptoService.makeKey(masterPassword, email),
                 deferred = $q.defer(),
                 deviceRequest = null,
-                twoFactorRememberedToken;
+                twoFactorRememberedToken,
+                hashedPassword;
 
             appIdService.getAppId().then(function (appId) {
                 deviceRequest = new DeviceRequest(appId, utilsService);
@@ -18,7 +19,8 @@ angular
             }).then(function (theTwoFactorRememberedToken) {
                 twoFactorRememberedToken = theTwoFactorRememberedToken;
                 return cryptoService.hashPassword(masterPassword, key);
-            }).then(function (hashedPassword) {
+            }).then(function (theHashedPassword) {
+                hashedPassword = theHashedPassword;
                 var request;
 
                 if (twoFactorToken && typeof (twoFactorProvider) !== 'undefined' && twoFactorProvider !== null) {
@@ -33,45 +35,48 @@ angular
                     request = new TokenRequest(email, hashedPassword, null, null, false, deviceRequest);
                 }
 
-                apiService.postIdentityToken(request, function (response) {
-                    // success
-                    if (!response || !response.accessToken) {
-                        return;
-                    }
+                return apiService.postIdentityToken(request);
+            }).then(function (response) {
+                if (!response) {
+                    return;
+                }
 
-                    if (response.twoFactorToken) {
-                        tokenService.setTwoFactorToken(response.twoFactorToken, email);
-                    }
-
-                    tokenService.setTokens(response.accessToken, response.refreshToken).then(function () {
-                        return cryptoService.setKey(key);
-                    }).then(function () {
-                        return cryptoService.setKeyHash(hashedPassword);
-                    }).then(function () {
-                        userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(),
-                            function () {
-                                cryptoService.setEncKey(response.key).then(function () {
-                                    return cryptoService.setEncPrivateKey(response.privateKey);
-                                }).then(function () {
-                                    chrome.runtime.sendMessage({ command: 'loggedIn' });
-                                    deferred.resolve({
-                                        twoFactor: false,
-                                        twoFactorProviders: null
-                                    });
-                                });
-                            });
-                    });
-                }, function (providers) {
+                if (!response.accessToken) {
                     // two factor required
                     deferred.resolve({
                         twoFactor: true,
-                        twoFactorProviders: providers
+                        twoFactorProviders: response
                     });
-                }, function (error) {
-                    // error
-                    deferred.reject(error);
+                    return;
+                }
+
+                if (response.twoFactorToken) {
+                    tokenService.setTwoFactorToken(response.twoFactorToken, email);
+                }
+
+                return tokenService.setTokens(response.accessToken, response.refreshToken).then(function () {
+                    return cryptoService.setKey(key);
+                }).then(function () {
+                    return cryptoService.setKeyHash(hashedPassword);
+                }).then(function () {
+                    userService.setUserIdAndEmail(tokenService.getUserId(), tokenService.getEmail(),
+                        function () {
+                            cryptoService.setEncKey(response.key).then(function () {
+                                return cryptoService.setEncPrivateKey(response.privateKey);
+                            }).then(function () {
+                                chrome.runtime.sendMessage({ command: 'loggedIn' });
+                                deferred.resolve({
+                                    twoFactor: false,
+                                    twoFactorProviders: null
+                                });
+                            });
+                        });
                 });
+            }, function (error) {
+                // error
+                deferred.reject(error);
             });
+
             return deferred.promise;
         };
 

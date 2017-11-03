@@ -1,4 +1,4 @@
-﻿function SyncService(cipherService, folderService, userService, apiService, settingsService,
+function SyncService(cipherService, folderService, userService, apiService, settingsService,
     cryptoService, logoutCallback) {
     this.cipherService = cipherService;
     this.folderService = folderService;
@@ -45,7 +45,7 @@ function initSyncService() {
                 }
 
                 self.userService.getUserId(function (userId) {
-                    self.apiService.getSync(function (response) {
+                    self.apiService.getSync().then(function (response) {
                         syncProfile(self, response.profile).then(function () {
                             return syncFolders(self, userId, response.folders);
                         }).then(function () {
@@ -80,7 +80,7 @@ function initSyncService() {
             return;
         }
 
-        self.apiService.getAccountRevisionDate(function (response) {
+        self.apiService.getAccountRevisionDate().then(function (response) {
             var accountRevisionDate = new Date(response);
             self.getLastSync(function (lastSync) {
                 if (lastSync && accountRevisionDate <= lastSync) {
@@ -90,7 +90,7 @@ function initSyncService() {
 
                 callback(true, false);
             });
-        }, function () {
+        }, function (error) {
             callback(false, true);
         });
     }

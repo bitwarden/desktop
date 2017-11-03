@@ -45,17 +45,17 @@ angular
 
         function registerPromise(key, masterPassword, email, hint) {
             var deferred = $q.defer();
-            cryptoService.makeEncKey(key).then(function (encKey) {
+            var encKey;
+            cryptoService.makeEncKey(key).then(function (theEncKey) {
+                encKey = theEncKey;
                 return cryptoService.hashPassword(masterPassword, key);
             }).then(function (hashedPassword) {
                 var request = new RegisterRequest(email, hashedPassword, hint, encKey.encryptedString);
-                apiService.postRegister(request,
-                    function () {
-                        deferred.resolve();
-                    },
-                    function (error) {
-                        deferred.reject(error);
-                    });
+                apiService.postRegister(request).then(function () {
+                    deferred.resolve();
+                }, function (error) {
+                    deferred.reject(error);
+                });
             });
             return deferred.promise;
         }

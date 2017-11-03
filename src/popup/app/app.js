@@ -21,7 +21,6 @@ require('../../scripts/analytics.js');
 require('../../scripts/duo.js');
 require('../../scripts/u2f.js');
 
-require('../../models/api/requestModels.js');
 require('../../models/domainModels.js');
 
 require('../less/libs.less');
@@ -42,6 +41,7 @@ import { SecureNoteData } from '../../models/data/secureNoteData';
 
 import { CipherString } from '../../models/domain/cipherString';
 
+import { CipherRequest } from '../../models/request/cipherRequest';
 import { DeviceRequest } from '../../models/request/deviceRequest';
 import { DeviceTokenRequest } from '../../models/request/deviceTokenRequest';
 import { FolderRequest } from '../../models/request/folderRequest';

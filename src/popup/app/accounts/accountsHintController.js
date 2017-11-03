@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.accounts')
 
     .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q, utilsService,
@@ -31,13 +31,11 @@
 
         function hintPromise(request) {
             return $q(function (resolve, reject) {
-                apiService.postPasswordHint(request,
-                    function () {
-                        resolve();
-                    },
-                    function (error) {
-                        reject(error);
-                    });
+                apiService.postPasswordHint(request).then(function () {
+                    resolve();
+                }, function (error) {
+                    reject(error);
+                });
             });
         }
     });

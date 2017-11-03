@@ -1,4 +1,5 @@
 // Service imports
+import ApiService from './services/api.service';
 import AppIdService from './services/appId.service';
 import ConstantsService from './services/constants.service';
 import CryptoService from './services/crypto.service';
@@ -20,6 +21,7 @@ import { SecureNoteData } from './models/data/secureNoteData';
 
 import { CipherString } from './models/domain/cipherString';
 
+import { CipherRequest } from './models/request/cipherRequest';
 import { DeviceRequest } from './models/request/deviceRequest';
 import { DeviceTokenRequest } from './models/request/deviceTokenRequest';
 import { FolderRequest } from './models/request/folderRequest';
@@ -78,7 +80,7 @@ var bg_isBackground = true,
     window.bg_cryptoService = bg_cryptoService = new CryptoService();
     window.bg_tokenService = bg_tokenService = new TokenService();
     window.bg_appIdService = bg_appIdService = new AppIdService();
-    window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
+    window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, logout);
     window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
     window.bg_userService = bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
     window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
@@ -907,7 +909,9 @@ var bg_isBackground = true,
                     });
                     setIcon();
                     refreshBadgeAndMenu();
-                    callback();
+                    if (callback) {
+                        callback();
+                    }
                 });
             });
         });
