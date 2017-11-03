@@ -3,6 +3,7 @@ import ApiService from './services/api.service';
 import AppIdService from './services/appId.service';
 import ConstantsService from './services/constants.service';
 import CryptoService from './services/crypto.service';
+import EnvironmentService from './services/environment.service';
 import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import PasswordGenerationService from './services/passwordGeneration.service';
@@ -81,7 +82,7 @@ var bg_isBackground = true,
     window.bg_tokenService = bg_tokenService = new TokenService();
     window.bg_appIdService = bg_appIdService = new AppIdService();
     window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, logout);
-    window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
+    window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_apiService);
     window.bg_userService = bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
     window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
     window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
@@ -943,7 +944,7 @@ var bg_isBackground = true,
 
     // Bootstrap
 
-    bg_environmentService.setUrlsFromStorage(function () {
+    bg_environmentService.setUrlsFromStorage().then(function () {
         setIcon();
         cleanupbg_loginsToAdd();
         fullSync(true);

@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.settings')
 
     .controller('settingsEnvironmentController', function ($scope, i18nService, $analytics, utilsService,
@@ -20,7 +20,7 @@
                 identity: $scope.identityUrl,
                 webVault: $scope.webVaultUrl,
                 icons: $scope.iconsUrl
-            }, function (resUrls) {
+            }).then(function (resUrls) {
                 $timeout(function () {
                     // re-set urls since service can change them, ex: prefixing https://
                     $scope.baseUrl = resUrls.base;
