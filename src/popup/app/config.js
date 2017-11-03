@@ -260,8 +260,7 @@ angular
             })
             .state('lock', {
                 url: '/lock',
-                templateUrl: 'app/lock/views/lock.html',
-                controller: 'lockController',
+                component: 'lock',
                 data: { authorize: true },
                 params: { animation: null }
             });

@@ -29,6 +29,7 @@ require('../less/popup.less');
 import ComponentsModule from './components/components.module';
 import ToolsModule from './tools/tools.module';
 import ServicesModule from './services/services.module';
+import LockModule from './lock/lock.module';
 
 // Model imports
 import { AttachmentData } from '../../models/data/attachmentData';
@@ -83,7 +84,7 @@ angular
         'bit.vault',
         'bit.settings',
         ToolsModule,
-        'bit.lock'
+        LockModule
     ]);
 
 require('./config');
@@ -127,8 +128,6 @@ require('./settings/settingsEnvironmentController.js');
 require('./tools/toolsPasswordGeneratorController.js');
 require('./tools/toolsPasswordGeneratorHistoryController.js');
 require('./tools/toolsExportController.js');
-require('./lock/lockModule.js');
-require('./lock/lockController.js');
 
 // Bootstrap the angular application
 angular.element(function () {

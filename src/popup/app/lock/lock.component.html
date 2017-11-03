@@ -1,9 +1,9 @@
-﻿<form name="theForm" ng-submit="submit()" bit-form="submitPromise">
+﻿<form name="theForm" ng-submit="$ctrl.submit()" bit-form="submitPromise">
     <div class="header">
         <div class="right">
-            <button type="submit" class="btn btn-link">{{i18n.submit}}</button>
+            <button type="submit" class="btn btn-link">{{$ctrl.i18n.submit}}</button>
         </div>
-        <div class="title">{{i18n.verifyMasterPassword}}</div>
+        <div class="title">{{$ctrl.i18n.verifyMasterPassword}}</div>
     </div>
     <div class="content">
         <div class="list">
@@ -11,15 +11,15 @@
                 <div class="list-section-items">
                     <div class="list-section-item list-section-item-icon-input">
                         <i class="fa fa-lock fa-lg fa-fw"></i>
-                        <label for="master-password" class="sr-only">{{i18n.masterPass}}</label>
-                        <input id="master-password" type="password" name="MasterPassword" placeholder="{{i18n.masterPass}}"
+                        <label for="master-password" class="sr-only">{{$ctrl.i18n.masterPass}}</label>
+                        <input id="master-password" type="password" name="MasterPassword" placeholder="{{$ctrl.i18n.masterPass}}"
                                ng-model="masterPassword">
                     </div>
                 </div>
             </div>
         </div>
         <p class="text-center text-accent">
-            <a ng-click="logOut()" href="">{{i18n.logOut}}</a>
+            <a ng-click="$ctrl.logOut()" href="">{{$ctrl.i18n.logOut}}</a>
         </p>
     </div>
 </form>
