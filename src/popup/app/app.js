@@ -28,6 +28,7 @@ require('../less/popup.less');
 
 import ComponentsModule from './components/components.module';
 import ToolsModule from './tools/tools.module';
+import ServicesModule from './services/services.module';
 
 // Model imports
 import { AttachmentData } from '../../models/data/attachmentData';
@@ -74,7 +75,7 @@ angular
 
         'bit.directives',
         ComponentsModule,
-        'bit.services',
+        ServicesModule,
 
         'bit.global',
         'bit.accounts',
@@ -85,16 +86,12 @@ angular
         'bit.lock'
     ]);
 
-require('./services/services.module');
 require('./config');
 require('./directives/directivesModule.js');
 require('./directives/formDirective.js');
 require('./directives/stopClickDirective.js');
 require('./directives/stopPropDirective.js');
 require('./directives/fallbackSrcDirective.js');
-require('./services/backgroundService.js');
-require('./services/authService.js');
-require('./services/validationService.js');
 require('./global/globalModule.js');
 require('./global/mainController.js');
 require('./global/tabsController.js');
