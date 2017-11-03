@@ -204,7 +204,7 @@ export default class UtilsService {
             throw new Error('doc parameter required');
         }
 
-        doc.on('click', '.list-section-item', (e: JQuery.Event) => {
+        doc.on('click', '.list-section-item', function(e: JQuery.Event) {
             if (e.isDefaultPrevented && e.isDefaultPrevented.name === 'returnTrue') {
                 return;
             }
@@ -241,11 +241,12 @@ export default class UtilsService {
         doc.on(
             'focus',
             '.list-section-item input, .list-section-item select, .list-section-item textarea',
-            (e: Event) => {
+            function(e: Event) {
                 $(this).parent().addClass('active');
             });
         doc.on(
-            'blur', '.list-section-item input, .list-section-item select, .list-section-item textarea', (e: Event) => {
+            'blur', '.list-section-item input, .list-section-item select, .list-section-item textarea',
+            function(e: Event) {
                 $(this).parent().removeClass('active');
             });
     }
