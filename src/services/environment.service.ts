@@ -16,12 +16,12 @@ export default class EnvironmentService {
 
     async setUrlsFromStorage(): Promise<void> {
         const urlsObj: any = await UtilsService.getObjFromStorage(ConstantsService.environmentUrlsKey);
-        const urls = urlsObj[ConstantsService.environmentUrlsKey] || {
+        const urls = urlsObj || {
             base: null,
             api: null,
             identity: null,
             icons: null,
-            webVault: null
+            webVault: null,
         };
 
         const envUrls = new EnvironmentUrls();
@@ -51,7 +51,7 @@ export default class EnvironmentService {
             api: urls.api,
             identity: urls.identity,
             webVault: urls.webVault,
-            icons: urls.icons
+            icons: urls.icons,
         });
 
         this.baseUrl = urls.base;
@@ -78,7 +78,7 @@ export default class EnvironmentService {
         }
 
         url = url.replace(/\/+$/g, '');
-        if (!url.startsWith("http://") && !url.startsWith('https://')) {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
             url = 'https://' + url;
         }
 

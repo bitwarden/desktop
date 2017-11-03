@@ -8,6 +8,7 @@ import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import PasswordGenerationService from './services/passwordGeneration.service';
 import TokenService from './services/token.service';
+import TotpService from './services/totp.service';
 import UtilsService from './services/utils.service';
 
 // Model imports
@@ -93,7 +94,7 @@ var bg_isBackground = true,
     window.bg_syncService = bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
         bg_cryptoService, logout);
     window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_cryptoService);
-    window.bg_totpService = bg_totpService = new TotpService(bg_constantsService);
+    window.bg_totpService = bg_totpService = new TotpService();
     window.bg_autofillService = bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
         bg_constantsService);
 
