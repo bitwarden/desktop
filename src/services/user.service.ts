@@ -15,7 +15,6 @@ export default class UserService {
     constructor(private tokenService: TokenService) {
     }
 
-    // TODO: fix callbacks
     setUserIdAndEmail(userId: string, email: string): Promise<any> {
         this.email = email;
         this.userId = userId;

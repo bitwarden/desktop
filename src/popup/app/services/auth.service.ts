@@ -4,7 +4,7 @@ import { TokenRequest } from '../../../models/request/tokenRequest';
 class AuthService {
 
     constructor(public cryptoService: any, public apiService: any, public userService: any, public tokenService: any,
-                public $rootScope: any,  public appIdService: any, public utilsService: any,
+                public $rootScope: any, public appIdService: any, public utilsService: any,
                 public constantsService: any) {
 
     }
@@ -52,7 +52,7 @@ class AuthService {
         await this.tokenService.setTokens(response.accessToken, response.refreshToken);
         await this.cryptoService.setKey(key);
         await this.cryptoService.setKeyHash(hashedPassword);
-        await this.setUserIdAndEmail(this.tokenService.getUserId(), this.tokenService.getEmail());
+        await this.userService.setUserIdAndEmail(this.tokenService.getUserId(), this.tokenService.getEmail());
         await this.cryptoService.setEncKey(response.key);
         await this.cryptoService.setEncPrivateKey(response.privateKey);
 
@@ -61,12 +61,6 @@ class AuthService {
             twoFactor: false,
             twoFactorProviders: null,
         };
-    }
-
-    setUserIdAndEmail(userId: any, email: any) {
-        return new Promise((resolve) => {
-            return this.userService.setUserIdAndEmail(userId, email, resolve);
-        });
     }
 
     logOut(callback: Function) {
