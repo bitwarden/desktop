@@ -566,21 +566,30 @@
                 return els;
             }
 
-            // non-checkboxes have higher priority
-            els = els.sort(function (a, b) {
-                var aType = a.type ? a.type.toLowerCase() : a.type;
-                var bType = b.type ? b.type.toLowerCase() : b.type;
-
-                if (aType !== 'checkbox' && bType === 'checkbox') {
-                    return -1;
+            // non-checkboxes/radios have higher priority
+            var returnEls = [];
+            var unimportantEls = [];
+            for (var i = 0; i < els.length; i++) {
+                if (returnEls.length >= limit) {
+                    break;
                 }
-                if (aType === 'checkbox' && bType !== 'checkbox') {
-                    return 1;
-                }
-                return 0;
-            });
 
-            return els.slice(0, limit);
+                var el = els[i];
+                var type = el.type ? el.type.toLowerCase() : el.type;
+                if (type === 'checkbox' || type === 'radio') {
+                    unimportantEls.push(el);
+                }
+                else {
+                    returnEls.push(el);
+                }
+            }
+
+            var unimportantElsToAdd = limit - returnEls.length;
+            if (unimportantElsToAdd > 0) {
+                returnEls = returnEls.concat(unimportantEls.slice(0, unimportantElsToAdd));
+            }
+
+            return returnEls;
             // END MODIFICATION
         }
 
