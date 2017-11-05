@@ -1,7 +1,7 @@
-import { CipherString } from './cipherString';
-import { FolderData } from '../data/folderData'
+import { FolderData } from '../data/folderData';
 
-import Domain from './domain'
+import { CipherString } from './cipherString';
+import Domain from './domain';
 
 class Folder extends Domain {
     id: string;
@@ -9,24 +9,23 @@ class Folder extends Domain {
 
     constructor(obj?: FolderData, alreadyEncrypted: boolean = false) {
         super();
-        if(obj == null) {
+        if (obj == null) {
             return;
         }
 
         this.buildDomainModel(this, obj, {
             id: null,
-            name: null
+            name: null,
         }, alreadyEncrypted, ['id']);
     }
 
     async decrypt(): Promise<any> {
-        var self = this;
-        var model = {
-            id: self.id
+        const model = {
+            id: this.id,
         };
 
         return await this.decryptObj(model, this, {
-            name: null
+            name: null,
         }, null);
     }
 }

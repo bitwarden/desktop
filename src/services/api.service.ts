@@ -82,10 +82,10 @@ export default class ApiService {
         const response = await fetch(new Request(this.identityBaseUrl + '/connect/token', {
             body: this.qsStringify(request.toIdentityToken()),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
                 'Accept': 'application/json',
-            },
+            }),
             method: 'POST',
         }));
 
@@ -114,9 +114,9 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/two-factor/send-email-login', {
             body: JSON.stringify(request),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
-            },
+            }),
             method: 'POST',
         }));
 
@@ -132,10 +132,10 @@ export default class ApiService {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/accounts/revision-date', {
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 Accept: 'application/json',
                 Authorization: authHeader,
-            },
+            }),
         }));
 
         if (response.status === 200) {
@@ -150,9 +150,9 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/accounts/password-hint', {
             body: JSON.stringify(request),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
-            },
+            }),
             method: 'POST',
         }));
 
@@ -166,9 +166,9 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/accounts/register', {
             body: JSON.stringify(request),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
-            },
+            }),
             method: 'POST',
         }));
 
@@ -185,11 +185,11 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/folders', {
             body: JSON.stringify(request),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-            },
+            }),
             method: 'POST',
         }));
 
@@ -207,11 +207,11 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/folders/' + id, {
             body: JSON.stringify(request),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-            },
+            }),
             method: 'PUT',
         }));
 
@@ -228,9 +228,9 @@ export default class ApiService {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/folders/' + id, {
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 Authorization: authHeader,
-            },
+            }),
             method: 'DELETE',
         }));
 
@@ -247,11 +247,11 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/ciphers', {
             body: JSON.stringify(request),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-            },
+            }),
             method: 'POST',
         }));
 
@@ -269,11 +269,11 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id, {
             body: JSON.stringify(request),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-            },
+            }),
             method: 'PUT',
         }));
 
@@ -290,9 +290,9 @@ export default class ApiService {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id, {
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 Authorization: authHeader,
-            },
+            }),
             method: 'DELETE',
         }));
 
@@ -309,10 +309,10 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id + '/attachment', {
             body: data,
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 Accept: 'application/json',
                 Authorization: authHeader,
-            },
+            }),
             method: 'POST',
         }));
 
@@ -329,9 +329,9 @@ export default class ApiService {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id + '/attachment/' + attachmentId, {
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 Authorization: authHeader,
-            },
+            }),
             method: 'DELETE',
         }));
 
@@ -347,10 +347,10 @@ export default class ApiService {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/sync', {
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 Accept: 'application/json',
                 Authorization: authHeader,
-            },
+            }),
         }));
 
         if (response.status === 200) {
@@ -407,10 +407,10 @@ export default class ApiService {
                 refresh_token: refreshToken,
             }),
             cache: 'no-cache',
-            headers: {
+            headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
                 'Accept': 'application/json',
-            },
+            }),
             method: 'POST',
         }));
 

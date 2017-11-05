@@ -32,7 +32,7 @@ import ServicesModule from './services/services.module';
 import LockModule from './lock/lock.module';
 
 // Model imports
-import { Folder } from './models/domain/folder';
+import { Folder } from '../../models/domain/folder';
 
 import { AttachmentData } from '../../models/data/attachmentData';
 import { CardData } from '../../models/data/cardData';
