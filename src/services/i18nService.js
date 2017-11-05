@@ -1,7 +1,8 @@
 export default function i18nService(utilsService) {
+    this.__edgeMessages = {};
+    const self = this;
+
     if (utilsService.isEdge()) {
-        this.__edgeMessages = {};
-        const self = this;
         fetch('../_locales/en/messages.json').then((file) => {
             return file.json();
         }).then((locales) => {
