@@ -4,6 +4,7 @@ import AppIdService from './services/appId.service';
 import ConstantsService from './services/constants.service';
 import CryptoService from './services/crypto.service';
 import EnvironmentService from './services/environment.service';
+import FolderService from './services/folder.service';
 import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import PasswordGenerationService from './services/passwordGeneration.service';
@@ -14,6 +15,8 @@ import UserService from './services/user.service';
 import UtilsService from './services/utils.service';
 
 // Model imports
+import { Folder } from './models/domain/folder';
+
 import { AttachmentData } from './models/data/attachmentData';
 import { CardData } from './models/data/cardData';
 import { CipherData } from './models/data/cipherData';
