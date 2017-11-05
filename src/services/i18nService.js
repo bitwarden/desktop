@@ -1,27 +1,18 @@
 export default function i18nService(utilsService) {
-    this.utilsService = utilsService;
-    this.messages = {};
-
-    var self = this;
-
-    if (self.utilsService.isEdge()) {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open('GET', '../_locales/en/messages.json', false);
-        rawFile.onreadystatechange = function () {
-            if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status === 0) {
-                    var locales = JSON.parse(rawFile.responseText);
-                    for (var property in locales) {
-                        if (locales.hasOwnProperty(property)) {
-                            self.messages[property] = chrome.i18n.getMessage(property);
-                        }
-                    }
+    if (utilsService.isEdge()) {
+        this.__edgeMessages = {};
+        const self = this;
+        fetch('../_locales/en/messages.json').then((file) => {
+            return file.json();
+        }).then((locales) => {
+            for (const prop in locales) {
+                if (locales.hasOwnProperty(prop)) {
+                    self.__edgeMessages[prop] = chrome.i18n.getMessage(prop);
                 }
             }
-        };
-        rawFile.send(null);
+        });
 
-        return self.messages;
+        return this.__edgeMessages;
     }
 
     return new Proxy({}, {
