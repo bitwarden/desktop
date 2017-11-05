@@ -29,27 +29,32 @@ export default class FolderService {
 
     async encrypt(model: any): Promise<Folder> {
         const folder = new Folder();
+        folder.id = model.id;
         folder.name = await this.cryptoService.encrypt(model.name);
         return folder;
     }
 
     async get(id: string): Promise<Folder> {
         const userId = await this.userService.getUserId();
-        const folders = await UtilsService.getObjFromStorage<Map<string, FolderData>>(Keys.foldersPrefix + userId);
-        if (folders == null || !folders.has(id)) {
+        const folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+            Keys.foldersPrefix + userId);
+        if (folders == null || !folders.hasOwnProperty(id)) {
             return null;
         }
 
-        return new Folder(folders.get(id));
+        return new Folder(folders[id]);
     }
 
     async getAll(): Promise<Folder[]> {
         const userId = await this.userService.getUserId();
-        const folders = await UtilsService.getObjFromStorage<Map<string, FolderData>>(Keys.foldersPrefix + userId);
+        const folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+            Keys.foldersPrefix + userId);
         const response: Folder[] = [];
-        folders.forEach((folder) => {
-            response.push(new Folder(folder));
-        });
+        for (const id in folders) {
+            if (folders.hasOwnProperty(id)) {
+                response.push(new Folder(folders[id]));
+            }
+        }
         return response;
     }
 
@@ -99,17 +104,18 @@ export default class FolderService {
 
     async upsert(folder: FolderData | FolderData[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let folders = await UtilsService.getObjFromStorage<Map<string, FolderData>>(Keys.foldersPrefix + userId);
+        let folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+            Keys.foldersPrefix + userId);
         if (folders == null) {
-            folders = new Map<string, FolderData>();
+            folders = {};
         }
 
         if (folder instanceof FolderData) {
             const f = folder as FolderData;
-            folders.set(f.id, f);
+            folders[f.id] = f;
         } else {
             for (const f of (folder as FolderData[])) {
-                folders.set(f.id, f);
+                folders[f.id] = f;
             }
         }
 
@@ -130,17 +136,18 @@ export default class FolderService {
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const folders = await UtilsService.getObjFromStorage<Map<string, FolderData>>(Keys.foldersPrefix + userId);
+        const folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+            Keys.foldersPrefix + userId);
         if (folders == null) {
             return;
         }
 
-        if (id instanceof String) {
+        if (typeof id === 'string') {
             const i = id as string;
-            folders.delete(i);
+            delete folders[id];
         } else {
             for (const i of (id as string[])) {
-                folders.delete(i);
+                delete folders[i];
             }
         }
 

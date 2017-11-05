@@ -178,4 +178,4 @@ class Cipher extends Domain {
 }
 
 export { Cipher };
-(window as any).Attachment = Cipher;
+(window as any).Cipher = Cipher;

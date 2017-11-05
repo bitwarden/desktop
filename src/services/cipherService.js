@@ -1,4 +1,11 @@
-function CipherService(cryptoService, userService, apiService, settingsService, utilsService, constantsService) {
+import { Cipher } from '../models/domain/cipher';
+
+import { CipherData } from '../models/data/cipherData';
+
+import { CipherRequest } from '../models/request/cipherRequest';
+import { CipherResponse } from '../models/response/cipherResponse';
+
+export default function CipherService(cryptoService, userService, apiService, settingsService, utilsService, constantsService) {
     this.cryptoService = cryptoService;
     this.userService = userService;
     this.apiService = apiService;
