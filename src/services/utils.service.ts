@@ -147,6 +147,76 @@ export default class UtilsService {
         });
     }
 
+    static getDomain(uriString: string): string {
+        if (uriString == null) {
+            return null;
+        }
+
+        uriString = uriString.trim();
+        if (uriString === '') {
+            return null;
+        }
+
+        if (uriString.startsWith('http://') || uriString.startsWith('https://')) {
+            try {
+                const url = new URL(uriString);
+                if (!url || !url.hostname) {
+                    return null;
+                }
+
+                if (url.hostname === 'localhost' || UtilsService.validIpAddress(url.hostname)) {
+                    return url.hostname;
+                }
+
+                if ((window as any).tldjs) {
+                    const domain = (window as any).tldjs.getDomain(uriString);
+                    if (domain) {
+                        return domain;
+                    }
+                }
+
+                return url.hostname;
+            } catch (e) { }
+        } else if ((window as any).tldjs) {
+            const domain: string = (window as any).tldjs.getDomain(uriString);
+            if (domain != null) {
+                return domain;
+            }
+        }
+
+        return null;
+    }
+
+    static validIpAddress(ipString: string): boolean {
+        // tslint:disable-next-line
+        const ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        return ipRegex.test(ipString);
+    }
+
+    static getHostname(uriString: string): string {
+        if (uriString == null) {
+            return null;
+        }
+
+        uriString = uriString.trim();
+        if (uriString === '') {
+            return null;
+        }
+
+        if (uriString.startsWith('http://') || uriString.startsWith('https://')) {
+            try {
+                const url = new URL(uriString);
+                if (!url || !url.hostname) {
+                    return null;
+                }
+
+                return url.hostname;
+            } catch (e) { }
+        }
+
+        return null;
+    }
+
     private browserCache: BrowserType = null;
     private analyticsIdCache: string = null;
 
@@ -195,7 +265,6 @@ export default class UtilsService {
         }
 
         this.analyticsIdCache = AnalyticsIds[this.getBrowser()];
-
         return this.analyticsIdCache;
     }
 
@@ -238,85 +307,22 @@ export default class UtilsService {
             }
         });
 
-        doc.on(
-            'focus',
-            '.list-section-item input, .list-section-item select, .list-section-item textarea',
+        doc.on('focus', '.list-section-item input, .list-section-item select, .list-section-item textarea',
             function(e: Event) {
                 $(this).parent().addClass('active');
             });
-        doc.on(
-            'blur', '.list-section-item input, .list-section-item select, .list-section-item textarea',
+        doc.on('blur', '.list-section-item input, .list-section-item select, .list-section-item textarea',
             function(e: Event) {
                 $(this).parent().removeClass('active');
             });
     }
 
-    getDomain(uriString: string) {
-        if (!uriString) {
-            return null;
-        }
-
-        uriString = uriString.trim();
-        if (uriString === '') {
-            return null;
-        }
-
-        if (uriString.startsWith('http://') || uriString.startsWith('https://')) {
-            try {
-                const url = new URL(uriString);
-                if (!url || !url.hostname) {
-                    return null;
-                }
-
-                if (url.hostname === 'localhost' || this.validIpAddress(url.hostname)) {
-                    return url.hostname;
-                }
-
-                if ((window as any).tldjs) {
-                    const domain = (window as any).tldjs.getDomain(uriString);
-                    if (domain) {
-                        return domain;
-                    }
-                }
-
-                return url.hostname;
-            } catch (e) {
-                return null;
-            }
-        } else if ((window as any).tldjs) {
-            const domain2 = (window as any).tldjs.getDomain(uriString);
-            if (domain2) {
-                return domain2;
-            }
-        }
-
-        return null;
+    getDomain(uriString: string): string {
+        return UtilsService.getDomain(uriString);
     }
 
-    getHostname(uriString: string) {
-        if (!uriString) {
-            return null;
-        }
-
-        uriString = uriString.trim();
-        if (uriString === '') {
-            return null;
-        }
-
-        if (uriString.startsWith('http://') || uriString.startsWith('https://')) {
-            try {
-                const url = new URL(uriString);
-                if (!url || !url.hostname) {
-                    return null;
-                }
-
-                return url.hostname;
-            } catch (e) {
-                return null;
-            }
-        }
-
-        return null;
+    getHostname(uriString: string): string {
+        return UtilsService.getHostname(uriString);
     }
 
     copyToClipboard(text: string, doc: Document) {
@@ -374,11 +380,5 @@ export default class UtilsService {
 
     getObjFromStorage(key: string) {
         return UtilsService.getObjFromStorage(key);
-    }
-
-    private validIpAddress(ipString: string) {
-        // tslint:disable-next-line
-        const ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-        return ipRegex.test(ipString);
     }
 }

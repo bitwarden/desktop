@@ -19,12 +19,12 @@ class Folder extends Domain {
         }, alreadyEncrypted, ['id']);
     }
 
-    async decrypt(): Promise<any> {
+    decrypt(): Promise<any> {
         const model = {
             id: this.id,
         };
 
-        return await this.decryptObj(model, this, {
+        return this.decryptObj(model, this, {
             name: null,
         }, null);
     }

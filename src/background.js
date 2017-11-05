@@ -15,7 +15,14 @@ import UserService from './services/user.service';
 import UtilsService from './services/utils.service';
 
 // Model imports
+import { Attachment } from './models/domain/attachment';
+import { Card } from './models/domain/card';
+import { Cipher } from './models/domain/cipher';
+import { Field } from './models/domain/field';
 import { Folder } from './models/domain/folder';
+import { Identity } from './models/domain/identity';
+import { Login } from './models/domain/login';
+import { SecureNote } from './models/domain/secureNote';
 
 import { AttachmentData } from './models/data/attachmentData';
 import { CardData } from './models/data/cardData';

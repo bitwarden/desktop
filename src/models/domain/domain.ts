@@ -1,7 +1,7 @@
 import { CipherString } from '../domain/cipherString';
 
 export default abstract class Domain {
-    protected buildDomainModel(model: any, obj: any, map: any, alreadyEncrypted: boolean, notEncList: any = []) {
+    protected buildDomainModel(model: any, obj: any, map: any, alreadyEncrypted: boolean, notEncList: any[] = []) {
         for (const prop in map) {
             if (!map.hasOwnProperty(prop)) {
                 continue;
