@@ -325,7 +325,7 @@ export default class UtilsService {
         return UtilsService.getHostname(uriString);
     }
 
-    copyToClipboard(text: string, doc: Document) {
+    copyToClipboard(text: string, doc?: Document) {
         doc = doc || document;
         if ((window as any).clipboardData && (window as any).clipboardData.setData) {
             // IE specific code path to prevent textarea being shown while dialog is visible.

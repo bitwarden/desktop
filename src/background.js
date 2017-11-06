@@ -1,6 +1,7 @@
 // Service imports
 import ApiService from './services/api.service';
 import AppIdService from './services/appId.service';
+import AutofillService from './services/autofill.service';
 import CipherService from './services/cipher.service';
 import ConstantsService from './services/constants.service';
 import CryptoService from './services/crypto.service';
@@ -107,8 +108,7 @@ var bg_isBackground = true,
     window.bg_syncService = bg_syncService = new SyncService(bg_userService, bg_apiService, bg_settingsService, bg_folderService, bg_cipherService, bg_cryptoService, logout);
     window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_cryptoService);
     window.bg_totpService = bg_totpService = new TotpService();
-    window.bg_autofillService = bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
-        bg_constantsService);
+    window.bg_autofillService = bg_autofillService = new AutofillService(bg_cipherService, bg_tokenService, bg_totpService, bg_utilsService);
 
     require('./scripts/analytics.js');
 
