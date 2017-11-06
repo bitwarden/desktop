@@ -28,7 +28,7 @@ class Field extends Domain {
             type: this.type,
         };
 
-        return this.decryptObj(model, this, {
+        return this.decryptObj(model, {
             name: null,
             value: null,
         }, orgId);

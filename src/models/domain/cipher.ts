@@ -103,7 +103,7 @@ class Cipher extends Domain {
             fields: null as any[],
         };
 
-        await this.decryptObj(model, this, {
+        await this.decryptObj(model, {
             name: null,
             notes: null,
         }, this.organizationId);

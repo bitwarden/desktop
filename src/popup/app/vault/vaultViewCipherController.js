@@ -43,7 +43,7 @@ angular
                 }
             }
 
-            if (model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
+            if (model.login && model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
                 totpUpdateCode();
                 totpTick();
 

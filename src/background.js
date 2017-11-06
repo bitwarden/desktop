@@ -1,7 +1,7 @@
 // Service imports
 import ApiService from './services/api.service';
 import AppIdService from './services/appId.service';
-import CipherService from './services/cipherService.js';
+import CipherService from './services/cipher.service';
 import ConstantsService from './services/constants.service';
 import CryptoService from './services/crypto.service';
 import EnvironmentService from './services/environment.service';
@@ -99,8 +99,7 @@ var bg_isBackground = true,
     window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_apiService);
     window.bg_userService = bg_userService = new UserService(bg_tokenService);
     window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService);
-    window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
-        bg_constantsService);
+    window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_settingsService, bg_apiService);
     window.bg_folderService = bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_i18nService, bg_apiService);
     window.bg_lockService = bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_cipherService, bg_utilsService,
         setIcon, refreshBadgeAndMenu);

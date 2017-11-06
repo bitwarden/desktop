@@ -10,7 +10,7 @@ class CipherResponse {
     organizationUseTotp: boolean;
     data: any;
     revisionDate: string;
-    attachments: AttachmentResponse[] = [];
+    attachments: AttachmentResponse[];
 
     constructor(response: any) {
         this.id = response.Id;
@@ -23,7 +23,8 @@ class CipherResponse {
         this.data = response.Data;
         this.revisionDate = response.RevisionDate;
 
-        if (response.Attachments) {
+        if (response.Attachments != null) {
+            this.attachments = [];
             for (const attachment of response.Attachments) {
                 this.attachments.push(new AttachmentResponse(attachment));
             }

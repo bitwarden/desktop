@@ -24,7 +24,7 @@ class Folder extends Domain {
             id: this.id,
         };
 
-        return this.decryptObj(model, this, {
+        return this.decryptObj(model, {
             name: null,
         }, null);
     }

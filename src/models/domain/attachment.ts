@@ -33,7 +33,7 @@ class Attachment extends Domain {
             url: this.url,
         };
 
-        return this.decryptObj(model, this, {
+        return this.decryptObj(model, {
             fileName: null,
         }, orgId);
     }

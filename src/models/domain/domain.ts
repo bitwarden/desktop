@@ -16,8 +16,10 @@ export default abstract class Domain {
         }
     }
 
-    protected async decryptObj(model: any, self: any, map: any, orgId: string) {
+    protected async decryptObj(model: any, map: any, orgId: string) {
         const promises = [];
+        const self: any = this;
+
         for (const prop in map) {
             if (!map.hasOwnProperty(prop)) {
                 continue;
@@ -33,7 +35,6 @@ export default abstract class Domain {
                     return null;
                 }).then((val: any) => {
                     model[theProp] = val;
-                    return;
                 });
                 promises.push(p);
             })(prop);

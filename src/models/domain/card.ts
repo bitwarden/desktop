@@ -28,7 +28,7 @@ class Card extends Domain {
     }
 
     decrypt(orgId: string): Promise<any> {
-        return this.decryptObj({}, this, {
+        return this.decryptObj({}, {
             cardholderName: null,
             brand: null,
             number: null,

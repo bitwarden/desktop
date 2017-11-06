@@ -1,3 +1,5 @@
+import { CipherType } from '../../enums/cipherType.enum';
+
 import { AttachmentData } from './attachmentData';
 import { CardData } from './cardData';
 import { FieldData } from './fieldData';
@@ -16,7 +18,7 @@ class CipherData {
     organizationUseTotp: boolean;
     favorite: boolean;
     revisionDate: string;
-    type: number; // TODO: enum
+    type: CipherType;
     sizeName: string;
     name: string;
     notes: string;
@@ -41,32 +43,31 @@ class CipherData {
         this.name = response.data.Name;
         this.notes = response.data.Notes;
 
-        const constantsService = chrome.extension.getBackgroundPage().bg_constantsService; // TODO: enum
         switch (this.type) {
-            case constantsService.cipherType.login:
+            case CipherType.Login:
                 this.login = new LoginData(response.data);
                 break;
-            case constantsService.cipherType.secureNote:
+            case CipherType.SecureNote:
                 this.secureNote = new SecureNoteData(response.data);
                 break;
-            case constantsService.cipherType.card:
+            case CipherType.Card:
                 this.card = new CardData(response.data);
                 break;
-            case constantsService.cipherType.identity:
+            case CipherType.Identity:
                 this.identity = new IdentityData(response.data);
                 break;
             default:
                 break;
         }
 
-        if (response.data.Fields) {
+        if (response.data.Fields != null) {
             this.fields = [];
             for (const field of response.data.Fields) {
                 this.fields.push(new FieldData(field));
             }
         }
 
-        if (response.attachments) {
+        if (response.attachments != null) {
             this.attachments = [];
             for (const attachment of response.attachments) {
                 this.attachments.push(new AttachmentData(attachment));

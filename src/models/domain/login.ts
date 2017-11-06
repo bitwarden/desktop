@@ -24,7 +24,7 @@ class Login extends Domain {
     }
 
     decrypt(orgId: string): Promise<any> {
-        return this.decryptObj({}, this, {
+        return this.decryptObj({}, {
             uri: null,
             username: null,
             password: null,

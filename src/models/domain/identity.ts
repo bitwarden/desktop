@@ -52,7 +52,7 @@ class Identity extends Domain {
     }
 
     decrypt(orgId: string): Promise<any> {
-        return this.decryptObj({}, this, {
+        return this.decryptObj({}, {
             title: null,
             firstName: null,
             middleName: null,
