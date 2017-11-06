@@ -32,7 +32,7 @@ export default class TotpService {
     }
 
     async isAutoCopyEnabled(): Promise<boolean> {
-        return await UtilsService.getObjFromStorage<boolean>(ConstantsService.disableAutoTotpCopyKey);
+        return !(await UtilsService.getObjFromStorage<boolean>(ConstantsService.disableAutoTotpCopyKey));
     }
 
     // Helpers
