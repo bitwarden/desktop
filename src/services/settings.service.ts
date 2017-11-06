@@ -20,7 +20,7 @@ export default class SettingsService {
         return this.getSettingsKey(Keys.equivalentDomains);
     }
 
-    async setEquivalentDomains(equivalentDomains: any) {
+    async setEquivalentDomains(equivalentDomains: string[][]) {
         await this.setSettingsKey(Keys.equivalentDomains, equivalentDomains);
     }
 

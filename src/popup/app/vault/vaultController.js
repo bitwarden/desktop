@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, cipherService, folderService, $q, $state, $stateParams, toastr,
@@ -15,7 +15,7 @@
         if (syncOnLoad) {
             $scope.$on('$viewContentLoaded', function () {
                 $timeout(function () {
-                    syncService.fullSync(true, function () { });
+                    syncService.fullSync(true);
                 }, 0);
             });
         }

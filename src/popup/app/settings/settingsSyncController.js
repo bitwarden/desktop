@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.settings')
 
     .controller('settingsSyncController', function ($scope, syncService, toastr, $analytics, i18nService) {
@@ -9,7 +9,7 @@
 
         $scope.sync = function () {
             $scope.loading = true;
-            syncService.fullSync(true, function (success) {
+            syncService.fullSync(true).then(function (success) {
                 $scope.loading = false;
                 setLastSync();
                 if (success) {
@@ -23,7 +23,7 @@
         };
 
         function setLastSync() {
-            syncService.getLastSync(function (lastSync) {
+            syncService.getLastSync().then(function (lastSync) {
                 if (lastSync) {
                     $scope.lastSync = lastSync.toLocaleDateString() + ' ' + lastSync.toLocaleTimeString();
                 }

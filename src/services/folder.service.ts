@@ -123,7 +123,7 @@ export default class FolderService {
         this.decryptedFolderCache = null;
     }
 
-    async replace(folders: FolderData[]): Promise<any> {
+    async replace(folders: { [id: string]: FolderData; }): Promise<any> {
         const userId = await this.userService.getUserId();
         await UtilsService.saveObjToStorage(Keys.foldersPrefix + userId, folders);
         this.decryptedFolderCache = null;

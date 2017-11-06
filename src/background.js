@@ -10,6 +10,7 @@ import i18nService from './services/i18nService.js';
 import LockService from './services/lockService.js';
 import PasswordGenerationService from './services/passwordGeneration.service';
 import SettingsService from './services/settings.service';
+import SyncService from './services/sync.service';
 import TokenService from './services/token.service';
 import TotpService from './services/totp.service';
 import UserService from './services/user.service';
@@ -103,8 +104,7 @@ var bg_isBackground = true,
     window.bg_folderService = bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_i18nService, bg_apiService);
     window.bg_lockService = bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_cipherService, bg_utilsService,
         setIcon, refreshBadgeAndMenu);
-    window.bg_syncService = bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
-        bg_cryptoService, logout);
+    window.bg_syncService = bg_syncService = new SyncService(bg_userService, bg_apiService, bg_settingsService, bg_folderService, bg_cipherService, bg_cryptoService, logout);
     window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_cryptoService);
     window.bg_totpService = bg_totpService = new TotpService();
     window.bg_autofillService = bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
@@ -909,26 +909,25 @@ var bg_isBackground = true,
     }
 
     function logout(expired, callback) {
-        bg_syncService.setLastSync(new Date(0), function () {
-            bg_userService.getUserId().then(function (userId) {
-                return Q.all([
-                    bg_tokenService.clearToken(),
-                    bg_cryptoService.clearKeys(),
-                    bg_userService.clear(),
-                    bg_settingsService.clear(userId),
-                    bg_cipherService.clear(userId),
-                    bg_folderService.clear(userId),
-                    bg_passwordGenerationService.clear()
-                ]).then(function () {
-                    chrome.runtime.sendMessage({
-                        command: 'doneLoggingOut', expired: expired
-                    });
-                    setIcon();
-                    refreshBadgeAndMenu();
-                    if (callback) {
-                        callback();
-                    }
+        bg_userService.getUserId().then(function (userId) {
+            return Q.all([
+                bg_syncService.setLastSync(new Date(0)),
+                bg_tokenService.clearToken(),
+                bg_cryptoService.clearKeys(),
+                bg_userService.clear(),
+                bg_settingsService.clear(userId),
+                bg_cipherService.clear(userId),
+                bg_folderService.clear(userId),
+                bg_passwordGenerationService.clear()
+            ]).then(function () {
+                chrome.runtime.sendMessage({
+                    command: 'doneLoggingOut', expired: expired
                 });
+                setIcon();
+                refreshBadgeAndMenu();
+                if (callback) {
+                    callback();
+                }
             });
         });
     }
@@ -939,7 +938,7 @@ var bg_isBackground = true,
             var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
             var lastSyncAgo = new Date() - lastSync;
             if (override || !lastSync || lastSyncAgo >= syncInternal) {
-                bg_syncService.fullSync(override || false, function () {
+                bg_syncService.fullSync(override || false).then(function () {
                     scheduleNextSync();
                 });
             }

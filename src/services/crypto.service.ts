@@ -3,6 +3,7 @@ import { EncryptionType } from '../enums/encryptionType.enum';
 import { CipherString } from '../models/domain/cipherString';
 import EncryptedObject from '../models/domain/encryptedObject';
 import SymmetricCryptoKey from '../models/domain/symmetricCryptoKey';
+import { ProfileOrganizationResponse } from '../models/response/profileOrganizationResponse';
 
 import ConstantsService from './constants.service';
 import UtilsService from './utils.service';
@@ -69,8 +70,7 @@ export default class CryptoService {
         this.privateKey = null;
     }
 
-    // TODO: proper response model type for orgs
-    setOrgKeys(orgs: any): Promise<{}> {
+    setOrgKeys(orgs: ProfileOrganizationResponse[]): Promise<{}> {
         const orgKeys: any = {};
         for (const org of orgs) {
             orgKeys[org.id] = org.key;

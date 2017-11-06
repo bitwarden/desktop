@@ -347,7 +347,7 @@ export default class CipherService {
         this.decryptedCipherCache = null;
     }
 
-    async replace(ciphers: CipherData[]): Promise<any> {
+    async replace(ciphers: { [id: string]: CipherData; }): Promise<any> {
         const userId = await this.userService.getUserId();
         await UtilsService.saveObjToStorage(Keys.ciphersPrefix + userId, ciphers);
         this.decryptedCipherCache = null;
