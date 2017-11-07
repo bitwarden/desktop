@@ -91,7 +91,6 @@ module.exports = {
             { from: './src/models', to: 'models' },
             { from: './src/overlay', to: 'overlay' },
             { from: './src/scripts', to: 'scripts' },
-            { from: './src/services', to: 'services' },
             { from: './src/content/autofill.css', to: 'content' },
             './src/background.js'
         ])
