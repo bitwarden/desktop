@@ -909,7 +909,7 @@ var bg_isBackground = true,
 
     function logout(expired, callback) {
         bg_userService.getUserId().then(function (userId) {
-            return Q.all([
+            return Promise.all([
                 bg_syncService.setLastSync(new Date(0)),
                 bg_tokenService.clearToken(),
                 bg_cryptoService.clearKeys(),

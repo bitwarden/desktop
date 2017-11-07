@@ -163,10 +163,6 @@ gulp.task('lib', ['clean:lib'], function () {
         {
             src: paths.npmDir + 'jquery/dist/jquery.js',
             dest: paths.libDir + 'jquery'
-        },
-        {
-            src: paths.npmDir + 'q/q.js',
-            dest: paths.libDir + 'q'
         }
     ];
 

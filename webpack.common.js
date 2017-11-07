@@ -59,8 +59,7 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'Q': 'q'
+            'window.jQuery': 'jquery'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'popup/vendor',
