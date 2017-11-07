@@ -163,7 +163,7 @@ export default class UtilsService {
     static getObjFromStorage<T>(key: string): Promise<T> {
         return new Promise((resolve) => {
             chrome.storage.local.get(key, (obj: any) => {
-                if (obj && obj[key]) {
+                if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
                     resolve(obj[key] as T);
                 } else {
                     resolve(null);
@@ -252,7 +252,7 @@ export default class UtilsService {
 
         if (navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1) {
             this.browserCache = BrowserType.Firefox;
-        } else if ((!!(window as any).opr && !!(window as any).opr.addons) || !!(window as any).opera ||
+        } else if ((!!(window as any).opr && !!opr.addons) || !!(window as any).opera ||
             navigator.userAgent.indexOf(' OPR/') >= 0) {
             this.browserCache = BrowserType.Opera;
         } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
