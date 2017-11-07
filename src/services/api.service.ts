@@ -102,8 +102,9 @@ export default class ApiService {
     }
 
     async refreshIdentityToken(): Promise<any> {
-        const response = await this.doRefreshToken();
-        if (response.status !== 200) {
+        try {
+            await this.doRefreshToken();
+        } catch (e) {
             return Promise.reject(null);
         }
     }
@@ -380,21 +381,19 @@ export default class ApiService {
     }
 
     private async handleTokenState(): Promise<string> {
-        const accessToken = await this.tokenService.getToken();
-        if (!this.tokenService.tokenNeedsRefresh()) {
-            return 'Bearer ' + accessToken;
+        let accessToken: string;
+        if (this.tokenService.tokenNeedsRefresh()) {
+            const tokenResponse = await this.doRefreshToken();
+            accessToken = tokenResponse.accessToken;
+        } else {
+            accessToken = await this.tokenService.getToken();
         }
 
-        const response = await this.doRefreshToken();
-        const responseJson = await response.json();
-        const tokenResponse = new IdentityTokenResponse(responseJson);
-        await this.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken);
-        return 'Bearer ' + tokenResponse.accessToken;
-
+        return 'Bearer ' + accessToken;
         // TODO: handle error
     }
 
-    private async doRefreshToken(): Promise<Response> {
+    private async doRefreshToken(): Promise<IdentityTokenResponse> {
         const refreshToken = await this.tokenService.getRefreshToken();
         if (refreshToken == null || refreshToken === '') {
             throw new Error();
@@ -415,7 +414,10 @@ export default class ApiService {
         }));
 
         if (response.status === 200) {
-            return response;
+            const responseJson = await response.json();
+            const tokenResponse = new IdentityTokenResponse(responseJson);
+            await this.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken);
+            return tokenResponse;
         } else {
             return Promise.reject(response);
         }
