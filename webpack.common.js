@@ -39,6 +39,16 @@ module.exports = {
                         publicPath: '/'
                     }
                 }]
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        useRelativePath: true
+                    }
+                }]
             }
         ]
     },
@@ -76,13 +86,6 @@ module.exports = {
             chunks: ['notification/bar']
         }),
         new CopyWebpackPlugin([
-            // Temporarily copy the whole app folder, can be removed once
-            // the templates uses template rather than using templateUrl.
-            {
-                context: 'src/popup/app',
-                from: '**/*.html',
-                to: 'popup/app'
-            },
             './src/manifest.json',
             { from: './src/_locales', to: '_locales' },
             { from: './src/edge', to: 'edge' },
