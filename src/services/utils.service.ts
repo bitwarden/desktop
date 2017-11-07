@@ -8,6 +8,31 @@ const AnalyticsIds = {
 };
 
 export default class UtilsService {
+    static copyToClipboard(text: string, doc?: Document): void {
+        doc = doc || document;
+        if ((window as any).clipboardData && (window as any).clipboardData.setData) {
+            // IE specific code path to prevent textarea being shown while dialog is visible.
+            (window as any).clipboardData.setData('Text', text);
+        } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
+            const textarea = doc.createElement('textarea');
+            textarea.textContent = text;
+            // Prevent scrolling to bottom of page in MS Edge.
+            textarea.style.position = 'fixed';
+            doc.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                // Security exception may be thrown by some browsers.
+                doc.execCommand('copy');
+            } catch (e) {
+                // tslint:disable-next-line
+                console.warn('Copy to clipboard failed.', e);
+            } finally {
+                doc.body.removeChild(textarea);
+            }
+        }
+    }
+
     static urlBase64Decode(str: string): string {
         let output = str.replace(/-/g, '+').replace(/_/g, '/');
         switch (output.length % 4) {
@@ -326,29 +351,7 @@ export default class UtilsService {
     }
 
     copyToClipboard(text: string, doc?: Document) {
-        doc = doc || document;
-        if ((window as any).clipboardData && (window as any).clipboardData.setData) {
-            // IE specific code path to prevent textarea being shown while dialog is visible.
-            return (window as any).clipboardData.setData('Text', text);
-        } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
-            const textarea = doc.createElement('textarea');
-            textarea.textContent = text;
-            // Prevent scrolling to bottom of page in MS Edge.
-            textarea.style.position = 'fixed';
-            doc.body.appendChild(textarea);
-            textarea.select();
-
-            try {
-                // Security exception may be thrown by some browsers.
-                return doc.execCommand('copy');
-            } catch (ex) {
-                // tslint:disable-next-line
-                console.warn('Copy to clipboard failed.', ex);
-                return false;
-            } finally {
-                doc.body.removeChild(textarea);
-            }
-        }
+        UtilsService.copyToClipboard(text, doc);
     }
 
     inSidebar(theWindow: Window) {

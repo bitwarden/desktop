@@ -174,7 +174,7 @@ export default class AutofillService {
                 return null;
             }).then((code: string) => {
                 if (code) {
-                    this.utilsService.copyToClipboard(code);
+                    UtilsService.copyToClipboard(code);
                 }
 
                 return code;
