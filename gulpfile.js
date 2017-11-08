@@ -1,5 +1,6 @@
 const gulp = require('gulp'),
     gulpif = require('gulp-if'),
+    filter = require('gulp-filter'),
     replace = require('gulp-replace'),
     jshint = require('gulp-jshint'),
     googleWebFonts = require('gulp-google-webfonts'),
@@ -7,8 +8,7 @@ const gulp = require('gulp'),
     child = require('child_process'),
     zip = require('gulp-zip'),
     manifest = require('./src/manifest.json'),
-    xmlpoke = require('gulp-xmlpoke'),
-    del = require("del");
+    xmlpoke = require('gulp-xmlpoke');
 
 const paths = {
     releases: './releases/',
@@ -27,9 +27,9 @@ const sidebarActionManifestObj = {
 
 function dist(browserName, manifest) {
     return gulp.src(paths.dist + '**/*')
+        .pipe(gulpif(browserName !== 'edge', filter(['**', '!dist/edge/**/*'])))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
-        //.pipe(gulpif(browserName !== 'edge', del(['edge/**'])))
         .pipe(zip(`dist-${browserName}.zip`))
         .pipe(gulp.dest(paths.releases));
 }
