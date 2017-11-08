@@ -120,6 +120,15 @@ export default class UtilsService {
         return bytes;
     }
 
+    static fromUtf8ToArray(str: string): Uint8Array {
+        const strUtf8 = unescape(encodeURIComponent(str));
+        const arr = new Uint8Array(strUtf8.length);
+        for (let i = 0; i < strUtf8.length; i++) {
+            arr[i] = strUtf8.charCodeAt(i);
+        }
+        return arr;
+    }
+
     static fromBufferToB64(buffer: ArrayBuffer): string {
         let binary = '';
         const bytes = new Uint8Array(buffer);
@@ -133,15 +142,6 @@ export default class UtilsService {
         const bytes = new Uint8Array(buffer);
         const encodedString = String.fromCharCode.apply(null, bytes);
         return decodeURIComponent(escape(encodedString));
-    }
-
-    static fromUtf8ToArray(str: string): Uint8Array {
-        const strUtf8 = unescape(encodeURIComponent(str));
-        const arr = new Uint8Array(strUtf8.length);
-        for (let i = 0; i < strUtf8.length; i++) {
-            arr[i] = strUtf8.charCodeAt(i);
-        }
-        return arr;
     }
 
     static saveObjToStorage(key: string, obj: any) {
@@ -185,7 +185,7 @@ export default class UtilsService {
         if (uriString.startsWith('http://') || uriString.startsWith('https://')) {
             try {
                 const url = new URL(uriString);
-                if (!url || !url.hostname) {
+                if (!url.hostname) {
                     return null;
                 }
 
@@ -193,29 +193,23 @@ export default class UtilsService {
                     return url.hostname;
                 }
 
-                if ((window as any).tldjs) {
-                    const domain = (window as any).tldjs.getDomain(uriString);
-                    if (domain) {
+                if (typeof tldjs !== 'undefined' && tldjs) {
+                    const domain = tldjs.getDomain(url.hostname);
+                    if (domain != null) {
                         return domain;
                     }
                 }
 
                 return url.hostname;
             } catch (e) { }
-        } else if ((window as any).tldjs) {
-            const domain: string = (window as any).tldjs.getDomain(uriString);
+        } else if (typeof tldjs !== 'undefined' && tldjs) {
+            const domain = tldjs.getDomain(uriString);
             if (domain != null) {
                 return domain;
             }
         }
 
         return null;
-    }
-
-    static validIpAddress(ipString: string): boolean {
-        // tslint:disable-next-line
-        const ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-        return ipRegex.test(ipString);
     }
 
     static getHostname(uriString: string): string {
@@ -231,7 +225,7 @@ export default class UtilsService {
         if (uriString.startsWith('http://') || uriString.startsWith('https://')) {
             try {
                 const url = new URL(uriString);
-                if (!url || !url.hostname) {
+                if (!url.hostname) {
                     return null;
                 }
 
@@ -240,6 +234,12 @@ export default class UtilsService {
         }
 
         return null;
+    }
+
+    private static validIpAddress(ipString: string): boolean {
+        // tslint:disable-next-line
+        const ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        return ipRegex.test(ipString);
     }
 
     private browserCache: BrowserType = null;

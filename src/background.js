@@ -1,3 +1,7 @@
+require('jquery');
+require('node-forge');
+require('tldjs');
+
 // Service imports
 import ApiService from './services/api.service';
 import AppIdService from './services/appId.service';

@@ -4,6 +4,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const isVendorModule = (module) => {
+    // returns true for everything in node_modules
+    return module.context && module.context.indexOf('node_modules') !== -1;
+};
+
 module.exports = {
     entry: {
         'popup/app': './src/popup/app/app.js',
@@ -64,10 +69,12 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'popup/vendor',
             chunks: ['popup/app'],
-            minChunks: function (module) {
-                // this assumes your vendor imports exist in the node_modules directory
-                return module.context && module.context.indexOf('node_modules') !== -1;
-            }
+            minChunks: isVendorModule
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            chunks: ['background'],
+            minChunks: isVendorModule
         }),
         new HtmlWebpackPlugin({
             template: './src/popup/index.html',
@@ -77,7 +84,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/background.html',
             filename: 'background.html',
-            chunks: ['background']
+            chunks: ['vendor', 'background']
         }),
         new HtmlWebpackPlugin({
             template: './src/notification/bar.html',
@@ -86,15 +93,14 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             './src/manifest.json',
+            './src/background.js',
             { from: './src/_locales', to: '_locales' },
             { from: './src/edge', to: 'edge' },
             { from: './src/images', to: 'images' },
             { from: './src/lib', to: 'lib' },
             { from: './src/models', to: 'models' },
-            { from: './src/overlay', to: 'overlay' },
             { from: './src/scripts', to: 'scripts' },
-            { from: './src/content/autofill.css', to: 'content' },
-            './src/background.js'
+            { from: './src/content/autofill.css', to: 'content' }
         ])
     ],
     resolve: {

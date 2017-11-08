@@ -1,19 +1,14 @@
 const gulp = require('gulp'),
     gulpif = require('gulp-if'),
     replace = require('gulp-replace'),
-    rimraf = require('rimraf'),
-    runSequence = require('run-sequence'),
     jshint = require('gulp-jshint'),
-    merge = require('merge-stream'),
-    browserify = require('browserify'),
-    source = require('vinyl-source-stream'),
     googleWebFonts = require('gulp-google-webfonts'),
-    webpack = require('webpack-stream'),
     jeditor = require("gulp-json-editor"),
     child = require('child_process'),
     zip = require('gulp-zip'),
     manifest = require('./src/manifest.json'),
-    xmlpoke = require('gulp-xmlpoke');
+    xmlpoke = require('gulp-xmlpoke'),
+    del = require("del");
 
 const paths = {
     releases: './releases/',
@@ -34,9 +29,12 @@ function dist(browserName, manifest) {
     return gulp.src(paths.dist + '**/*')
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
+        //.pipe(gulpif(browserName !== 'edge', del(['edge/**'])))
         .pipe(zip(`dist-${browserName}.zip`))
         .pipe(gulp.dest(paths.releases));
 }
+
+gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge']);
 
 gulp.task('dist:firefox', function (cb) {
     return dist('firefox', function (manifest) {
@@ -63,7 +61,7 @@ gulp.task('dist:chrome', function (cb) {
     return dist('chrome', function (manifest) {
         return manifest;
     });
-})
+});
 
 // Since Edge extensions require makeappx to be run we temporarily store it in a folder.
 gulp.task('dist:edge', function (cb) {
@@ -74,7 +72,7 @@ gulp.task('dist:edge', function (cb) {
         .then(copyAssetsEdge('./store/windows/**/*', edgePath))
         .then(function () {
             // makeappx.exe must be in your system's path already
-            child.spawn('makeappx.exe', ['pack', '/h', 'SHA256', '/d', edgePath, '/p', paths.releases + 'bitwarden.appx']);
+            child.spawn('makeappx.exe', ['pack', '/h', 'SHA256', '/d', edgePath, '/p', paths.releases + 'dist-edge.appx']);
             cb();
         }, function () {
             cb();
@@ -116,12 +114,7 @@ function copyAssetsEdge(source, dest) {
     });
 }
 
-gulp.task('build', function (cb) {
-    return runSequence(
-        'clean',
-        ['browserify', 'webpack', 'lib', 'lint', 'webfonts'],
-        cb);
-});
+gulp.task('build', ['lint', 'webfonts']);
 
 gulp.task('webfonts', function () {
     return gulp.src('./webfonts.list')
@@ -133,8 +126,6 @@ gulp.task('webfonts', function () {
 });
 
 // LEGACY CODE!
-//
-// Needed until background.js is converted into a proper webpack compatible file.
 
 gulp.task('lint', function () {
     return gulp.src([
@@ -150,61 +141,4 @@ gulp.task('lint', function () {
             esversion: 6
         }))
         .pipe(jshint.reporter('default'));
-});
-
-gulp.task('clean:lib', function (cb) {
-    return rimraf(paths.libDir, cb);
-});
-
-gulp.task('clean', ['clean:lib']);
-
-gulp.task('lib', ['clean:lib'], function () {
-    var libs = [
-        {
-            src: paths.npmDir + 'jquery/dist/jquery.js',
-            dest: paths.libDir + 'jquery'
-        }
-    ];
-
-    var tasks = libs.map(function (lib) {
-        return gulp.src(lib.src).pipe(gulp.dest(lib.dest));
-    });
-
-    return merge(tasks);
-});
-
-gulp.task('browserify', ['browserify:tldjs']);
-
-gulp.task('browserify:tldjs', function () {
-    return browserify(paths.npmDir + 'tldjs/index.js', { standalone: 'tldjs' })
-        .bundle()
-        .pipe(source('tld.js'))
-        .pipe(gulp.dest(paths.libDir + 'tldjs'));
-});
-
-gulp.task('webpack', ['webpack:forge']);
-
-gulp.task('webpack:forge', function () {
-    var forgeDir = paths.npmDir + '/node-forge/lib/';
-
-    return gulp.src([
-        forgeDir + 'pbkdf2.js',
-        forgeDir + 'aes.js',
-        forgeDir + 'hmac.js',
-        forgeDir + 'sha256.js',
-        forgeDir + 'random.js',
-        forgeDir + 'forge.js'
-    ]).pipe(webpack({
-        output: {
-            filename: 'forge.js',
-            library: 'forge',
-            libraryTarget: 'umd'
-        },
-        node: {
-            Buffer: false,
-            process: false,
-            crypto: false,
-            setImmediate: false
-        }
-    })).pipe(gulp.dest(paths.libDir + 'forge'));
 });
