@@ -54,7 +54,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin([
-            path.resolve(__dirname, 'dist')
+            path.resolve(__dirname, 'dist/*')
         ]),
         new webpack.ProvidePlugin({
             $: 'jquery',
