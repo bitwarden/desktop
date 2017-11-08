@@ -93,7 +93,6 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             './src/manifest.json',
-            './src/background.js',
             { from: './src/_locales', to: '_locales' },
             { from: './src/edge', to: 'edge' },
             { from: './src/images', to: 'images' },
