@@ -15,13 +15,14 @@ const gulp = require('gulp'),
     manifest = require('./src/manifest.json'),
     xmlpoke = require('gulp-xmlpoke');
 
-const paths = {};
-paths.releases = './releases/';
-paths.dist = './dist/';
-paths.libDir = './src/lib/';
-paths.npmDir = './node_modules/';
-paths.popupDir = './src/popup/';
-paths.cssDir = paths.popupDir + 'css/';
+const paths = {
+    releases: './releases/',
+    dist: './dist/',
+    libDir: './src/lib/',
+    npmDir: './node_modules/',
+    popupDir: './src/popup/',
+    cssDir: './src/popup/css/'
+};
 
 const sidebarActionManifestObj = {
     "default_title": "bitwarden",
@@ -140,7 +141,6 @@ gulp.task('lint', function () {
         paths.popupDir + '**/*.js',
         './src/services/**/*.js',
         './src/notification/**/*.js',
-        './src/models/**/*.js',
         './src/scripts/**/*.js',
         //'./src/content/**/*.js',
         './src/overlay/**/*.js',
