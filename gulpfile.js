@@ -36,8 +36,8 @@ function dist(browserName, manifest) {
 
 gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge']);
 
-gulp.task('dist:firefox', function (cb) {
-    return dist('firefox', function (manifest) {
+gulp.task('dist:firefox', (cb) => {
+    return dist('firefox', (manifest) => {
         manifest.applications = {
             gecko: {
                 id: '{446900e4-71c2-419f-a6a7-df9c091e268b}',
@@ -50,32 +50,32 @@ gulp.task('dist:firefox', function (cb) {
     });
 });
 
-gulp.task('dist:opera', function (cb) {
-    return dist('opera', function (manifest) {
+gulp.task('dist:opera', (cb) => {
+    return dist('opera', (manifest) => {
         manifest['sidebar_action'] = sidebarActionManifestObj;
         return manifest;
     });
 });
 
-gulp.task('dist:chrome', function (cb) {
-    return dist('chrome', function (manifest) {
+gulp.task('dist:chrome', (cb) => {
+    return dist('chrome', (manifest) => {
         return manifest;
     });
 });
 
 // Since Edge extensions require makeappx to be run we temporarily store it in a folder.
-gulp.task('dist:edge', function (cb) {
+gulp.task('dist:edge', (cb) => {
     const edgePath = paths.releases + 'Edge/';
     const extensionPath = edgePath + 'Extension/';
 
-    copyDistEdge(paths.dist + '**/*', extensionPath)
+    return copyDistEdge(paths.dist + '**/*', extensionPath)
         .then(copyAssetsEdge('./store/windows/**/*', edgePath))
-        .then(function () {
+        .then(() => {
             // makeappx.exe must be in your system's path already
             child.spawn('makeappx.exe', ['pack', '/h', 'SHA256', '/d', edgePath, '/p', paths.releases + 'dist-edge.appx']);
-            cb();
-        }, function () {
-            cb();
+            return cb;
+        }, () => {
+            return cb;
         });
 });
 
@@ -84,7 +84,7 @@ function copyDistEdge(source, dest) {
         gulp.src(source)
             .on('error', reject)
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'edge')))
-            .pipe(gulpif('manifest.json', jeditor(function (manifest) {
+            .pipe(gulpif('manifest.json', jeditor((manifest) => {
                 manifest['-ms-preload'] = {
                     backgroundScript: 'edge/backgroundScriptsAPIBridge.js',
                     contentScript: 'edge/contentScriptsAPIBridge.js'
@@ -116,7 +116,7 @@ function copyAssetsEdge(source, dest) {
 
 gulp.task('build', ['lint', 'webfonts']);
 
-gulp.task('webfonts', function () {
+gulp.task('webfonts', () => {
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({
             fontsDir: 'webfonts',
@@ -127,7 +127,7 @@ gulp.task('webfonts', function () {
 
 // LEGACY CODE!
 
-gulp.task('lint', function () {
+gulp.task('lint', () => {
     return gulp.src([
         paths.popupDir + '**/*.js',
         './src/services/**/*.js',
