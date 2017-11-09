@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 const webpack = require('webpack');
 
 const extractLess = new ExtractTextPlugin({
-    filename: 'popup/css/[name].css',
+    filename: '[name].css',
     disable: false,
     allChunks: true
 });
