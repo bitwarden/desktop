@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+//const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
 
@@ -28,6 +29,13 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
+        // UglifyJS does not support es6
+        // ref: https://github.com/webpack/webpack/issues/2972#issuecomment-261705632
+        //new UglifyJSPlugin({
+        //    uglifyOptions: {
+        //        mangle: false
+        //    }
+        //}),
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].js.map',
             include: ['background.js', 'popup/app.js']
