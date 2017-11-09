@@ -96,8 +96,6 @@ module.exports = {
             { from: './src/_locales', to: '_locales' },
             { from: './src/edge', to: 'edge' },
             { from: './src/images', to: 'images' },
-            { from: './src/lib', to: 'lib' },
-            { from: './src/models', to: 'models' },
             { from: './src/content/autofill.css', to: 'content' }
         ])
     ],
