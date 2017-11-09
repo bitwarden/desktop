@@ -2,10 +2,12 @@ angular
     .module('bit.vault')
 
     .controller('vaultAttachmentsController', function ($scope, $state, $stateParams, cipherService, toastr,
-        SweetAlert, utilsService, $analytics, i18nService, cryptoService, tokenService) {
-        $scope.i18n = i18nService;
-        utilsService.initListSectionItemListeners($(document), angular);
+        SweetAlert, utilsService, $analytics, i18nService, cryptoService, tokenService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+        }, 500);
 
+        $scope.i18n = i18nService;
         $scope.isPremium = tokenService.getPremium();
         $scope.canAccessAttachments = $scope.isPremium;
         $scope.hasUpdatedKey = false;

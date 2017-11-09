@@ -2,12 +2,14 @@ angular
     .module('bit.settings')
 
     .controller('settingsAddFolderController', function ($scope, $q, folderService, $state, toastr, utilsService,
-        $analytics, i18nService) {
+        $analytics, i18nService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('name').focus();
+        }, 500);
+
         $scope.i18n = i18nService;
         $scope.folder = {};
-        utilsService.initListSectionItemListeners($(document), angular);
-        $('#name').focus();
-
         $scope.savePromise = null;
         $scope.save = function (model) {
             if (!model.name) {

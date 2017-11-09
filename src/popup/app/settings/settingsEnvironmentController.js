@@ -3,10 +3,11 @@ angular
 
     .controller('settingsEnvironmentController', function ($scope, i18nService, $analytics, utilsService,
         environmentService, toastr, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+        }, 500);
+
         $scope.i18n = i18nService;
-
-        utilsService.initListSectionItemListeners($(document), angular);
-
         $scope.baseUrl = environmentService.baseUrl || '';
         $scope.webVaultUrl = environmentService.webVaultUrl || '';
         $scope.apiUrl = environmentService.apiUrl || '';

@@ -4,8 +4,11 @@ angular
     .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService, SweetAlert,
         $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService,
         environmentService) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+        }, 500);
+
         $scope.i18n = i18nService;
-        utilsService.initListSectionItemListeners($(document), angular);
 
         var customWebVaultUrl = null;
         if (environmentService.baseUrl) {

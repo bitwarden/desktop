@@ -2,8 +2,11 @@ angular
     .module('bit.settings')
 
     .controller('settingsController', function ($scope, $state, SweetAlert, utilsService, $analytics,
-        i18nService, constantsService, cryptoService, lockService) {
-        utilsService.initListSectionItemListeners($(document), angular);
+        i18nService, constantsService, cryptoService, lockService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+        }, 500);
+
         $scope.showOnLocked = !utilsService.isFirefox() && !utilsService.isEdge();
         $scope.lockOption = '';
         $scope.i18n = i18nService;

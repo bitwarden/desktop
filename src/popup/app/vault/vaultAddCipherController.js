@@ -1,8 +1,8 @@
-﻿angular
+angular
     .module('bit.vault')
 
     .controller('vaultAddCipherController', function ($scope, $state, $stateParams, cipherService, folderService,
-        cryptoService, toastr, utilsService, $analytics, i18nService, constantsService) {
+        cryptoService, toastr, utilsService, $analytics, i18nService, constantsService, $timeout) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.addFieldType = constantsService.fieldType.text.toString();
@@ -30,13 +30,16 @@
             angular.extend($scope.cipher, $stateParams.cipher);
         }
 
-        if (!$stateParams.cipher && $scope.cipher.name && $scope.cipher.login && $scope.cipher.login.uri) {
-            $('#username').focus();
-        }
-        else {
-            $('#name').focus();
-        }
-        utilsService.initListSectionItemListeners($(document), angular);
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+
+            if (!$stateParams.cipher && $scope.cipher.name && $scope.cipher.login && $scope.cipher.login.uri) {
+                document.getElementById('loginUsername').focus();
+            }
+            else {
+                document.getElementById('name').focus();
+            }
+        }, 500);
 
         folderService.getAllDecrypted().then(function (folders) {
             $scope.folders = folders;

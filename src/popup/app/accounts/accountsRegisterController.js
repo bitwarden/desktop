@@ -3,13 +3,14 @@ angular
 
     .controller(
     'accountsRegisterController',
-    function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService, $analytics, i18nService) {
+    function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService, $analytics, i18nService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('email').focus();
+        }, 500);
+
         $scope.i18n = i18nService;
-
         $scope.model = {};
-        utilsService.initListSectionItemListeners($(document), angular);
-        $('#email').focus();
-
         $scope.submitPromise = null;
         $scope.submit = function (model) {
             if (!model.email) {

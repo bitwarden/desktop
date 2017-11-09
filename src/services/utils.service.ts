@@ -293,53 +293,70 @@ export default class UtilsService {
         return this.analyticsIdCache;
     }
 
-    initListSectionItemListeners(doc: any, angular: any) {
+    initListSectionItemListeners(doc: Document, angular: any) {
         if (!doc) {
-            throw new Error('doc parameter required');
+            throw new Error('theDoc parameter required');
         }
 
-        doc.on('click', '.list-section-item', function(e: JQuery.Event) {
-            if (e.isDefaultPrevented && e.isDefaultPrevented.name === 'returnTrue') {
-                return;
-            }
-
-            const text = $(this).find('input, textarea')
-                .not('input[type="checkbox"], input[type="radio"], input[type="hidden"]');
-            const checkbox = $(this).find('input[type="checkbox"]');
-            const select = $(this).find('select');
-
-            if (text.length > 0 && e.target === text[0]) {
-                return;
-            }
-            if (checkbox.length > 0 && e.target === checkbox[0]) {
-                return;
-            }
-            if (select.length > 0 && e.target === select[0]) {
-                return;
-            }
-
-            e.preventDefault();
-
-            if (text.length > 0) {
-                text.focus();
-            } else if (checkbox.length > 0) {
-                checkbox.prop('checked', !checkbox.is(':checked'));
-                if (angular) {
-                    angular.element(checkbox[0]).triggerHandler('click');
+        const sectionItems = doc.querySelectorAll('.list-section-item');
+        for (const item of sectionItems) {
+            item.addEventListener('click', (e) => {
+                if (e.defaultPrevented) {
+                    return;
                 }
-            } else if (select.length > 0) {
-                select.focus();
-            }
-        });
 
-        doc.on('focus', '.list-section-item input, .list-section-item select, .list-section-item textarea',
-            function(e: Event) {
-                $(this).parent().addClass('active');
-            });
-        doc.on('blur', '.list-section-item input, .list-section-item select, .list-section-item textarea',
-            function(e: Event) {
-                $(this).parent().removeClass('active');
-            });
+                const el = e.target as HTMLElement;
+
+                // Labels will already focus the input
+                if (el.tagName != null && el.tagName.toLowerCase() === 'label') {
+                    return;
+                }
+
+                const textFilter = 'input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"])';
+                const text = el.querySelectorAll(textFilter + ',textarea');
+                const checkbox = el.querySelectorAll('input[type="checkbox"]');
+                const select = el.querySelectorAll('select');
+
+                // Return if they click the actual element
+                if (text.length > 0 && el === text[0]) {
+                    return;
+                }
+                if (checkbox.length > 0 && el === checkbox[0]) {
+                    return;
+                }
+                if (select.length > 0 && el === select[0]) {
+                    return;
+                }
+
+                e.preventDefault();
+
+                if (text.length > 0) {
+                    (text[0] as HTMLElement).focus();
+                } else if (select.length > 0) {
+                    (select[0] as HTMLElement).focus();
+                } else if (checkbox.length > 0) {
+                    const cb = checkbox[0] as HTMLInputElement;
+                    cb.checked = !cb.checked;
+                    if (angular) {
+                        angular.element(checkbox[0]).triggerHandler('click');
+                    }
+                }
+            }, false);
+        }
+
+        const sectionFormItems = doc.querySelectorAll(
+            '.list-section-item input, .list-section-item select, .list-section-item textarea');
+        for (const item of sectionFormItems) {
+            item.addEventListener('focus', (e: Event) => {
+                const el = e.target as HTMLElement;
+                el.parentElement.classList.add('active');
+            }, false);
+
+            item.addEventListener('blur', (e: Event) => {
+                const el = e.target as HTMLElement;
+                el.parentElement.classList.remove('active');
+            }, false);
+        }
     }
 
     getDomain(uriString: string): string {

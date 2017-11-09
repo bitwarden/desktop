@@ -1,18 +1,19 @@
-﻿angular
+angular
     .module('bit.accounts')
 
     .controller('accountsLoginController', function ($scope, $state, $stateParams, authService, userService, toastr,
-        utilsService, $analytics, i18nService) {
-        utilsService.initListSectionItemListeners($(document), angular);
+        utilsService, $analytics, i18nService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            if ($stateParams.email) {
+                document.getElementById('master-password').focus();
+            }
+            else {
+                document.getElementById('email').focus();
+            }
+        }, 500);
+
         $scope.i18n = i18nService;
-
-        if ($stateParams.email) {
-            $('#master-password').focus();
-        }
-        else {
-            $('#email').focus();
-        }
-
         $scope.model = {
             email: $stateParams.email
         };

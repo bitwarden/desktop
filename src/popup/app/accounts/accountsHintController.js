@@ -2,12 +2,14 @@ angular
     .module('bit.accounts')
 
     .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q, utilsService,
-        $analytics, i18nService) {
+        $analytics, i18nService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('email').focus();
+        }, 500);
+
         $scope.i18n = i18nService;
         $scope.model = {};
-
-        utilsService.initListSectionItemListeners($(document), angular);
-        $('#email').focus();
 
         $scope.submitPromise = null;
         $scope.submit = function (model) {
