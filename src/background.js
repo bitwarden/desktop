@@ -1,6 +1,6 @@
-require('jquery');
-require('node-forge');
-require('tldjs');
+window.$ = window.jQuery = require('jquery');
+window.forge = require('node-forge');
+window.tldjs = require('tldjs');
 
 // Service imports
 import ApiService from './services/api.service';
