@@ -11,11 +11,9 @@ export class PasswordGeneratorController {
     i18n: any;
 
     constructor(private $state: any, private passwordGenerationService: any,
-                private toastr: any, utilsService: any, private $analytics: any,
-                private i18nService: any) {
+                private toastr: any, private utilsService: any, private $analytics: any,
+                private i18nService: any, private $timeout: any) {
         this.i18n = i18nService;
-
-        utilsService.initListSectionItemListeners($(document), angular);
 
         passwordGenerationService.getOptions().then((options: any) => {
             this.options = options;
@@ -40,6 +38,11 @@ export class PasswordGeneratorController {
         this.editState = params.editState;
 
         this.showSelect = this.addState || this.editState;
+
+        const self = this;
+        this.$timeout(() => {
+            self.utilsService.initListSectionItemListeners(document, angular);
+        }, 500);
     }
 
     sliderMoved() {
