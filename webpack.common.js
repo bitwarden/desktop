@@ -61,11 +61,6 @@ module.exports = {
         new CleanWebpackPlugin([
             path.resolve(__dirname, 'dist/*')
         ]),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery'
-        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'popup/vendor',
             chunks: ['popup/app'],
