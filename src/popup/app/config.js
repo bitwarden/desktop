@@ -167,8 +167,7 @@ angular
 
             .state('passwordGenerator', {
                 url: '/password-generator',
-                template: require('./tools/views/toolsPasswordGenerator.html'),
-                controller: 'toolsPasswordGeneratorController',
+                component: 'passwordGenerator',
                 data: { authorize: true },
                 params: { animation: null, addState: null, editState: null }
             })

@@ -132,7 +132,6 @@ require('./settings/settingsAddFolderController.js');
 require('./settings/settingsEditFolderController.js');
 require('./settings/settingsPremiumController.js');
 require('./settings/settingsEnvironmentController.js');
-require('./tools/toolsPasswordGeneratorController.js');
 require('./tools/toolsPasswordGeneratorHistoryController.js');
 require('./tools/toolsExportController.js');
 
