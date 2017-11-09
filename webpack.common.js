@@ -98,7 +98,6 @@ module.exports = {
             { from: './src/images', to: 'images' },
             { from: './src/lib', to: 'lib' },
             { from: './src/models', to: 'models' },
-            { from: './src/scripts', to: 'scripts' },
             { from: './src/content/autofill.css', to: 'content' }
         ])
     ],

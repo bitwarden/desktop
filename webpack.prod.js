@@ -1,6 +1,13 @@
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const common = require('./webpack.common.js');
+const webpack = require('webpack');
+
+const extractLess = new ExtractTextPlugin({
+    filename: 'popup/css/[name].css',
+    disable: false,
+    allChunks: true
+});
 
 module.exports = merge(common, {
     module: {
@@ -23,12 +30,8 @@ module.exports = merge(common, {
     plugins: [
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].js.map',
-            exclude: ['vendor.js', 'popup/vendor.js']
+            include: ['background.js', 'popup/app.js']
         }),
-        new ExtractTextPlugin({
-            filename: 'popup/css/[name].css',
-            disable: false,
-            allChunks: true
-        })
+        extractLess
     ]
 });
