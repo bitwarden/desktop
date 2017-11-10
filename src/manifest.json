@@ -50,6 +50,18 @@
         "file:///*"
       ],
       "run_at": "document_start"
+    },
+    {
+      "all_frames": true,
+      "css": [
+        "content/autofill.css"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
+      "run_at": "document_end"
     }
   ],
   "background": {

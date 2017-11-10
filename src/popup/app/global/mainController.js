@@ -1,7 +1,7 @@
 angular
     .module('bit.global')
 
-    .controller('mainController', function ($scope, $state, authService, toastr, i18nService, $analytics, utilsService,
+    .controller('mainController', function ($scope, $transitions, $state, authService, toastr, i18nService, $analytics, utilsService,
         $window) {
         var self = this;
         self.currentYear = new Date().getFullYear();
@@ -11,12 +11,13 @@ angular
         self.disableSearch = utilsService && utilsService.isEdge();
         self.inSidebar = utilsService && utilsService.inSidebar($window);
 
-        $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        $transitions.onSuccess({}, function(transition) {
+            const toParams = transition.params("to");
+
             if (toParams.animation) {
                 self.animation = toParams.animation;
                 return;
-            }
-            else {
+            } else {
                 self.animation = '';
             }
         });
@@ -42,11 +43,12 @@ angular
                     href = hrefParts[0] + '?uilocation=popout' + (hrefParts.length > 0 ? '#' + hrefParts[1] : '');
                 }
 
+                var bodyRect = document.querySelector('body').getBoundingClientRect();
                 chrome.windows.create({
                     url: href,
                     type: 'popup',
-                    width: $('body').width() + 60,
-                    height: $('body').height()
+                    width: bodyRect.width + 60,
+                    height: bodyRect.height
                 });
 
                 if (utilsService.inPopup($window)) {

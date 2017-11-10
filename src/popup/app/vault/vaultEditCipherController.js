@@ -2,7 +2,12 @@ angular
     .module('bit.vault')
 
     .controller('vaultEditCipherController', function ($scope, $state, $stateParams, cipherService, folderService,
-        cryptoService, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService) {
+        cryptoService, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('name').focus();
+        }, 500);
+
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.showAttachments = !utilsService.isEdge();
@@ -15,8 +20,6 @@ angular
         $scope.cipher = {
             folderId: null
         };
-
-        $('#name').focus();
 
         if ($stateParams.cipher) {
             angular.extend($scope.cipher, $stateParams.cipher);
@@ -32,8 +35,6 @@ angular
         folderService.getAllDecrypted().then(function (folders) {
             $scope.folders = folders;
         });
-
-        utilsService.initListSectionItemListeners($(document), angular);
 
         $scope.typeChanged = function () {
             $scope.cipher.type = parseInt($scope.selectedType);

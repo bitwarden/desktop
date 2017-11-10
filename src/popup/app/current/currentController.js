@@ -14,7 +14,7 @@ angular
         $scope.otherCiphers = [];
         $scope.loaded = false;
         $scope.searchText = null;
-        $('#search').focus();
+        document.getElementById('search').focus();
 
         $scope.$on('$viewContentLoaded', function () {
             $timeout(loadVault, 100);

@@ -1,31 +1,29 @@
-﻿@import "../../../node_modules/bootstrap/less/bootstrap.less";
-@import (less) "../../../node_modules/angular/angular-csp.css";
+@import "~bootstrap/less/bootstrap.less";
+@import (less) "~angular/angular-csp.css";
 @import "variables.less";
 @import "mixins.less";
 @import "components.less";
 @import "animations.less";
 @import "plugins.less";
 @import "pages.less";
+@import (less) "../css/webfonts.css";
 
 html {
     -webkit-font-smoothing: antialiased;
 }
 
 body {
-    width: 320px !important;
-    height: 568px !important;
+    width: 375px !important;
+    height: 667px !important;
     background-color: @background-color;
     overflow: hidden;
 }
 
-/* @ifndef firefox */
-/* @ifndef edge */
-body {
-    width: 375px !important;
-    height: 667px !important;
+html.firefox body,
+html.edge body {
+    width: 320px !important;
+    height: 568px !important;
 }
-/* @endif */
-/* @endif */
 
 body.sm {
     width: 375px !important;

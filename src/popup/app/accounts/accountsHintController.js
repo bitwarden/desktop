@@ -1,13 +1,15 @@
-﻿angular
+angular
     .module('bit.accounts')
 
     .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q, utilsService,
-        $analytics, i18nService) {
+        $analytics, i18nService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('email').focus();
+        }, 500);
+
         $scope.i18n = i18nService;
         $scope.model = {};
-
-        utilsService.initListSectionItemListeners($(document), angular);
-        $('#email').focus();
 
         $scope.submitPromise = null;
         $scope.submit = function (model) {
@@ -31,13 +33,11 @@
 
         function hintPromise(request) {
             return $q(function (resolve, reject) {
-                apiService.postPasswordHint(request,
-                    function () {
-                        resolve();
-                    },
-                    function (error) {
-                        reject(error);
-                    });
+                apiService.postPasswordHint(request).then(function () {
+                    resolve();
+                }, function (error) {
+                    reject(error);
+                });
             });
         }
     });

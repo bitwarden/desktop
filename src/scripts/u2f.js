@@ -1,11 +1,11 @@
-﻿function U2f(webVaultUrl, successCallback, errorCallback, infoCallback) {
+window.U2f = U2f = function U2f(webVaultUrl, successCallback, errorCallback, infoCallback) {
     this.success = successCallback;
     this.error = errorCallback;
     this.info = infoCallback;
     this.iframe = null;
     this.connectorLink = document.createElement('a');
     this.webVaultUrl = webVaultUrl && webVaultUrl !== '' ? webVaultUrl : 'https://vault.bitwarden.com';
-}
+};
 
 (function () {
     var thisU2f = null;

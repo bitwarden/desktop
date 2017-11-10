@@ -1,3 +1,69 @@
+window.forge = require('node-forge');
+window.tldjs = require('tldjs');
+
+// Service imports
+import ApiService from './services/api.service';
+import AppIdService from './services/appId.service';
+import AutofillService from './services/autofill.service';
+import CipherService from './services/cipher.service';
+import ConstantsService from './services/constants.service';
+import CryptoService from './services/crypto.service';
+import EnvironmentService from './services/environment.service';
+import FolderService from './services/folder.service';
+import i18nService from './services/i18nService.js';
+import LockService from './services/lock.service';
+import PasswordGenerationService from './services/passwordGeneration.service';
+import SettingsService from './services/settings.service';
+import SyncService from './services/sync.service';
+import TokenService from './services/token.service';
+import TotpService from './services/totp.service';
+import UserService from './services/user.service';
+import UtilsService from './services/utils.service';
+
+// Model imports
+import { Attachment } from './models/domain/attachment';
+import { Card } from './models/domain/card';
+import { Cipher } from './models/domain/cipher';
+import { Field } from './models/domain/field';
+import { Folder } from './models/domain/folder';
+import { Identity } from './models/domain/identity';
+import { Login } from './models/domain/login';
+import { SecureNote } from './models/domain/secureNote';
+
+import { AttachmentData } from './models/data/attachmentData';
+import { CardData } from './models/data/cardData';
+import { CipherData } from './models/data/cipherData';
+import { FieldData } from './models/data/fieldData';
+import { FolderData } from './models/data/folderData';
+import { IdentityData } from './models/data/identityData';
+import { LoginData } from './models/data/loginData';
+import { SecureNoteData } from './models/data/secureNoteData';
+
+import { CipherString } from './models/domain/cipherString';
+
+import { CipherRequest } from './models/request/cipherRequest';
+import { DeviceRequest } from './models/request/deviceRequest';
+import { DeviceTokenRequest } from './models/request/deviceTokenRequest';
+import { FolderRequest } from './models/request/folderRequest';
+import { PasswordHintRequest } from './models/request/passwordHintRequest';
+import { RegisterRequest } from './models/request/registerRequest';
+import { TokenRequest } from './models/request/tokenRequest';
+import { TwoFactorEmailRequest } from './models/request/twoFactorEmailRequest';
+
+import { AttachmentResponse } from './models/response/attachmentResponse';
+import { CipherResponse } from './models/response/cipherResponse';
+import { DeviceResponse } from './models/response/deviceResponse';
+import { DomainsResponse } from './models/response/domainsResponse';
+import { ErrorResponse } from './models/response/errorResponse';
+import { FolderResponse } from './models/response/folderResponse';
+import { GlobalDomainResponse } from './models/response/globalDomainResponse';
+import { IdentityTokenResponse } from './models/response/identityTokenResponse';
+import { KeysResponse } from './models/response/keysResponse';
+import { ListResponse } from './models/response/listResponse';
+import { ProfileOrganizationResponse } from './models/response/profileOrganizationResponse';
+import { ProfileResponse } from './models/response/profileResponse';
+import { SyncResponse } from './models/response/syncResponse';
+
 var bg_isBackground = true,
     bg_utilsService,
     bg_i18nService,
@@ -28,27 +94,25 @@ var bg_isBackground = true,
         bg_sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ? opr.sidebarAction : chrome.sidebarAction;
 
     // init services
-    bg_utilsService = new UtilsService();
-    bg_i18nService = new i18nService(bg_utilsService);
-    bg_constantsService = new ConstantsService(bg_i18nService);
-    bg_cryptoService = new CryptoService(bg_constantsService, bg_utilsService);
-    bg_tokenService = new TokenService(bg_utilsService);
-    bg_appIdService = new AppIdService(bg_utilsService);
-    bg_apiService = new ApiService(bg_tokenService, bg_appIdService, bg_utilsService, bg_constantsService, logout);
-    bg_environmentService = new EnvironmentService(bg_constantsService, bg_apiService);
-    bg_userService = new UserService(bg_tokenService, bg_apiService, bg_cryptoService, bg_utilsService);
-    bg_settingsService = new SettingsService(bg_userService, bg_utilsService);
-    bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_apiService, bg_settingsService, bg_utilsService,
-        bg_constantsService);
-    bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_apiService, bg_i18nService, bg_utilsService);
-    bg_lockService = new LockService(bg_constantsService, bg_cryptoService, bg_folderService, bg_cipherService, bg_utilsService,
-        setIcon, refreshBadgeAndMenu);
-    bg_syncService = new SyncService(bg_cipherService, bg_folderService, bg_userService, bg_apiService, bg_settingsService,
-        bg_cryptoService, logout);
-    bg_passwordGenerationService = new PasswordGenerationService(bg_constantsService, bg_utilsService, bg_cryptoService);
-    bg_totpService = new TotpService(bg_constantsService);
-    bg_autofillService = new AutofillService(bg_utilsService, bg_totpService, bg_tokenService, bg_cipherService,
-        bg_constantsService);
+    window.bg_utilsService = bg_utilsService = new UtilsService();
+    window.bg_i18nService = bg_i18nService = new i18nService(bg_utilsService);
+    window.bg_constantsService = bg_constantsService = new ConstantsService(bg_i18nService);
+    window.bg_cryptoService = bg_cryptoService = new CryptoService();
+    window.bg_tokenService = bg_tokenService = new TokenService();
+    window.bg_appIdService = bg_appIdService = new AppIdService();
+    window.bg_apiService = bg_apiService = new ApiService(bg_tokenService, logout);
+    window.bg_environmentService = bg_environmentService = new EnvironmentService(bg_apiService);
+    window.bg_userService = bg_userService = new UserService(bg_tokenService);
+    window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService);
+    window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_settingsService, bg_apiService);
+    window.bg_folderService = bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_i18nService, bg_apiService);
+    window.bg_lockService = bg_lockService = new LockService(bg_cipherService, bg_folderService, bg_cryptoService, bg_utilsService, setIcon, refreshBadgeAndMenu);
+    window.bg_syncService = bg_syncService = new SyncService(bg_userService, bg_apiService, bg_settingsService, bg_folderService, bg_cipherService, bg_cryptoService, logout);
+    window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_cryptoService);
+    window.bg_totpService = bg_totpService = new TotpService();
+    window.bg_autofillService = bg_autofillService = new AutofillService(bg_cipherService, bg_tokenService, bg_totpService, bg_utilsService);
+
+    require('./scripts/analytics.js');
 
     if (chrome.commands) {
         chrome.commands.onCommand.addListener(function (command) {
@@ -58,7 +122,7 @@ var bg_isBackground = true,
                     eventAction: 'Generated Password From Command'
                 });
                 bg_passwordGenerationService.getOptions().then(function (options) {
-                    var password = bg_passwordGenerationService.generatePassword(options);
+                    var password = PasswordGenerationService.generatePassword(options);
                     bg_utilsService.copyToClipboard(password);
                     bg_passwordGenerationService.addHistory(password);
                 });
@@ -193,7 +257,7 @@ var bg_isBackground = true,
                     eventAction: 'Generated Password From Context Menu'
                 });
                 bg_passwordGenerationService.getOptions().then(function (options) {
-                    var password = bg_passwordGenerationService.generatePassword(options);
+                    var password = PasswordGenerationService.generatePassword(options);
                     bg_utilsService.copyToClipboard(password);
                     bg_passwordGenerationService.addHistory(password);
                 });
@@ -384,19 +448,21 @@ var bg_isBackground = true,
             return;
         }
 
-        bg_userService.isAuthenticated(function (isAuthenticated) {
-            bg_cryptoService.getKey().then(function (key) {
-                var suffix = '';
-                if (!isAuthenticated) {
-                    suffix = '_gray';
-                }
-                else if (!key) {
-                    suffix = '_locked';
-                }
+        var isAuthenticated;
+        bg_userService.isAuthenticated().then(function (theIsAuthenticated) {
+            isAuthenticated = theIsAuthenticated;
+            return bg_cryptoService.getKey();
+        }).then(function (key) {
+            var suffix = '';
+            if (!isAuthenticated) {
+                suffix = '_gray';
+            }
+            else if (!key) {
+                suffix = '_locked';
+            }
 
-                actionSetIcon(chrome.browserAction, suffix);
-                actionSetIcon(bg_sidebarAction, suffix);
-            });
+            actionSetIcon(chrome.browserAction, suffix);
+            actionSetIcon(bg_sidebarAction, suffix);
         });
 
         function actionSetIcon(theAction, suffix) {
@@ -845,24 +911,25 @@ var bg_isBackground = true,
     }
 
     function logout(expired, callback) {
-        bg_syncService.setLastSync(new Date(0), function () {
-            bg_userService.getUserIdPromise().then(function (userId) {
-                return Q.all([
-                    bg_tokenService.clearToken(),
-                    bg_cryptoService.clearKeys(),
-                    bg_userService.clear(),
-                    bg_settingsService.clear(userId),
-                    bg_cipherService.clear(userId),
-                    bg_folderService.clear(userId),
-                    bg_passwordGenerationService.clear()
-                ]).then(function () {
-                    chrome.runtime.sendMessage({
-                        command: 'doneLoggingOut', expired: expired
-                    });
-                    setIcon();
-                    refreshBadgeAndMenu();
-                    callback();
+        bg_userService.getUserId().then(function (userId) {
+            return Promise.all([
+                bg_syncService.setLastSync(new Date(0)),
+                bg_tokenService.clearToken(),
+                bg_cryptoService.clearKeys(),
+                bg_userService.clear(),
+                bg_settingsService.clear(userId),
+                bg_cipherService.clear(userId),
+                bg_folderService.clear(userId),
+                bg_passwordGenerationService.clear()
+            ]).then(function () {
+                chrome.runtime.sendMessage({
+                    command: 'doneLoggingOut', expired: expired
                 });
+                setIcon();
+                refreshBadgeAndMenu();
+                if (callback) {
+                    callback();
+                }
             });
         });
     }
@@ -873,7 +940,7 @@ var bg_isBackground = true,
             var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
             var lastSyncAgo = new Date() - lastSync;
             if (override || !lastSync || lastSyncAgo >= syncInternal) {
-                bg_syncService.fullSync(override || false, function () {
+                bg_syncService.fullSync(override || false).then(function () {
                     scheduleNextSync();
                 });
             }
@@ -893,7 +960,7 @@ var bg_isBackground = true,
 
     // Bootstrap
 
-    bg_environmentService.setUrlsFromStorage(function () {
+    bg_environmentService.setUrlsFromStorage().then(function () {
         setIcon();
         cleanupbg_loginsToAdd();
         fullSync(true);

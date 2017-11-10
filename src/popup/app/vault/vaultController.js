@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, cipherService, folderService, $q, $state, $stateParams, toastr,
@@ -9,13 +9,13 @@
         $scope.i18n = i18nService;
         $scope.showFolderCounts = !utilsService.isEdge();
         $scope.showOnlyFolderView = utilsService.isEdge();
-        $('#search').focus();
+        document.getElementById('search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;
         if (syncOnLoad) {
             $scope.$on('$viewContentLoaded', function () {
                 $timeout(function () {
-                    syncService.fullSync(true, function () { });
+                    syncService.fullSync(true);
                 }, 0);
             });
         }

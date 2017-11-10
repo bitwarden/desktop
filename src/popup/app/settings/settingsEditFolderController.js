@@ -1,20 +1,22 @@
-﻿angular
+angular
     .module('bit.settings')
 
     .controller('settingsEditFolderController', function ($scope, $stateParams, folderService, toastr, $state, SweetAlert,
-        utilsService, $analytics, i18nService) {
+        utilsService, $analytics, i18nService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('name').focus();
+        }, 500);
+
         $scope.i18n = i18nService;
         $scope.folder = {};
         var folderId = $stateParams.folderId;
-        $('#name').focus();
 
         folderService.get(folderId).then(function (folder) {
             return folder.decrypt();
         }).then(function (model) {
             $scope.folder = model;
         });
-
-        utilsService.initListSectionItemListeners($(document), angular);
 
         $scope.savePromise = null;
         $scope.save = function (model) {

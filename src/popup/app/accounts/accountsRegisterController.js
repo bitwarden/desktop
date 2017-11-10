@@ -1,15 +1,16 @@
-﻿angular
+angular
     .module('bit.accounts')
 
     .controller(
     'accountsRegisterController',
-    function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService, $analytics, i18nService) {
+    function ($scope, $state, cryptoService, toastr, $q, apiService, utilsService, $analytics, i18nService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('email').focus();
+        }, 500);
+
         $scope.i18n = i18nService;
-
         $scope.model = {};
-        utilsService.initListSectionItemListeners($(document), angular);
-        $('#email').focus();
-
         $scope.submitPromise = null;
         $scope.submit = function (model) {
             if (!model.email) {
@@ -45,16 +46,16 @@
 
         function registerPromise(key, masterPassword, email, hint) {
             var deferred = $q.defer();
-            cryptoService.makeEncKey(key).then(function (encKey) {
-                cryptoService.hashPassword(masterPassword, key, function (hashedPassword) {
-                    var request = new RegisterRequest(email, hashedPassword, hint, encKey.encryptedString);
-                    apiService.postRegister(request,
-                        function () {
-                            deferred.resolve();
-                        },
-                        function (error) {
-                            deferred.reject(error);
-                        });
+            var encKey;
+            cryptoService.makeEncKey(key).then(function (theEncKey) {
+                encKey = theEncKey;
+                return cryptoService.hashPassword(masterPassword, key);
+            }).then(function (hashedPassword) {
+                var request = new RegisterRequest(email, hashedPassword, hint, encKey.encryptedString);
+                apiService.postRegister(request).then(function () {
+                    deferred.resolve();
+                }, function (error) {
+                    deferred.reject(error);
                 });
             });
             return deferred.promise;

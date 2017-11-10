@@ -1,11 +1,10 @@
-﻿angular
+angular
     .module('bit.tools')
 
     .controller('toolsExportController', function ($scope, $state, toastr, $q, $analytics,
         i18nService, cryptoService, userService, folderService, cipherService, $window, constantsService) {
         $scope.i18n = i18nService;
-
-        $('#master-password').focus();
+        document.getElementById('master-password').focus();
 
         $scope.submitPromise = null;
         $scope.submit = function () {
@@ -22,17 +21,19 @@
         function checkPassword() {
             var deferred = $q.defer();
 
-            userService.getEmail(function (email) {
+            userService.getEmail().then(function (email) {
                 var key = cryptoService.makeKey($scope.masterPassword, email);
-                cryptoService.hashPassword($scope.masterPassword, key, function (keyHash) {
-                    cryptoService.getKeyHash(function (storedKeyHash) {
-                        if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
-                            deferred.resolve();
-                        }
-                        else {
-                            deferred.reject();
-                        }
-                    });
+                var keyHash;
+                cryptoService.hashPassword($scope.masterPassword, key).then(function (theKeyHash) {
+                    keyHash = theKeyHash;
+                    return cryptoService.getKeyHash();
+                }).then(function (storedKeyHash) {
+                    if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
+                        deferred.resolve();
+                    }
+                    else {
+                        deferred.reject();
+                    }
                 });
             });
 

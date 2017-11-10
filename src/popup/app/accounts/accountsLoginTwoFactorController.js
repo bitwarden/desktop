@@ -1,11 +1,14 @@
-﻿angular
+angular
     .module('bit.accounts')
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService, SweetAlert,
         $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService,
         environmentService) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+        }, 500);
+
         $scope.i18n = i18nService;
-        utilsService.initListSectionItemListeners($(document), angular);
 
         var customWebVaultUrl = null;
         if (environmentService.baseUrl) {
@@ -85,7 +88,7 @@
             }
 
             var key = cryptoService.makeKey(masterPassword, email);
-            cryptoService.hashPassword(masterPassword, key, function (hash) {
+            cryptoService.hashPassword(masterPassword, key).then(function (hash) {
                 var request = new TwoFactorEmailRequest(email, hash);
                 apiService.postTwoFactorEmail(request, function () {
                     if (doToast) {
@@ -143,7 +146,10 @@
             u2f.cleanup();
 
             $timeout(function () {
-                $('#code').focus();
+                var codeInput = document.getElementById('code');
+                if (codeInput) {
+                    codeInput.focus();
+                }
 
                 var params;
                 if ($scope.providerType === constants.twoFactorProvider.duo) {
@@ -153,8 +159,10 @@
                         host: params.Host,
                         sig_request: params.Signature,
                         submit_callback: function (theForm) {
-                            var response = $(theForm).find('input[name="sig_response"]').val();
-                            $scope.login(response);
+                            var sigElement = theForm.querySelector('input[name="sig_response"]');
+                            if (sigElement) {
+                                $scope.login(sigElement.value);
+                            }
                         }
                     });
                 }
