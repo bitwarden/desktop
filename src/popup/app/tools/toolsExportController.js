@@ -4,8 +4,7 @@ angular
     .controller('toolsExportController', function ($scope, $state, toastr, $q, $analytics,
         i18nService, cryptoService, userService, folderService, cipherService, $window, constantsService) {
         $scope.i18n = i18nService;
-
-        $('#master-password').focus();
+        document.getElementById('master-password').focus();
 
         $scope.submitPromise = null;
         $scope.submit = function () {

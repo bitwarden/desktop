@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.vault')
 
     .controller('vaultViewFolderController', function ($scope, cipherService, folderService, $q, $state, $stateParams, toastr,
@@ -17,7 +17,7 @@
             name: i18nService.noneFolder
         };
         $scope.i18n = i18nService;
-        $('#search').focus();
+        document.getElementById('search').focus();
 
         $scope.loaded = false;
         $scope.vaultCiphers = [];

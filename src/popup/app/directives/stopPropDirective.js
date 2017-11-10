@@ -1,10 +1,10 @@
-﻿angular
+angular
     .module('bit.directives')
 
     .directive('stopProp', function () {
         return function (scope, element, attrs) {
-            $(element).click(function (event) {
-                event.stopPropagation();
+            element[0].addEventListener('click', function (e) {
+                e.stopPropagation();
             });
         };
     });

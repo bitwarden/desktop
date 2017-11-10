@@ -146,7 +146,10 @@ angular
             u2f.cleanup();
 
             $timeout(function () {
-                $('#code').focus();
+                var codeInput = document.getElementById('code');
+                if (codeInput) {
+                    codeInput.focus();
+                }
 
                 var params;
                 if ($scope.providerType === constants.twoFactorProvider.duo) {
@@ -156,8 +159,10 @@ angular
                         host: params.Host,
                         sig_request: params.Signature,
                         submit_callback: function (theForm) {
-                            var response = $(theForm).find('input[name="sig_response"]').val();
-                            $scope.login(response);
+                            var sigElement = theForm.querySelector('input[name="sig_response"]');
+                            if (sigElement) {
+                                $scope.login(sigElement.value);
+                            }
                         }
                     });
                 }

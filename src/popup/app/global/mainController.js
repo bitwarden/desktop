@@ -43,11 +43,12 @@ angular
                     href = hrefParts[0] + '?uilocation=popout' + (hrefParts.length > 0 ? '#' + hrefParts[1] : '');
                 }
 
+                var bodyRect = document.querySelector('body').getBoundingClientRect();
                 chrome.windows.create({
                     url: href,
                     type: 'popup',
-                    width: $('body').width() + 60,
-                    height: $('body').height()
+                    width: bodyRect.width + 60,
+                    height: bodyRect.height
                 });
 
                 if (utilsService.inPopup($window)) {
