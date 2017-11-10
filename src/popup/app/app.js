@@ -1,4 +1,4 @@
-require('papaparse');
+window.Papa = require('papaparse');
 require('clipboard');
 
 require('angular');
