@@ -295,7 +295,7 @@ export default class UtilsService {
 
     initListSectionItemListeners(doc: Document, angular: any) {
         if (!doc) {
-            throw new Error('theDoc parameter required');
+            throw new Error('doc parameter required');
         }
 
         const sectionItems = doc.querySelectorAll('.list-section-item');
@@ -307,28 +307,25 @@ export default class UtilsService {
 
                 const el = e.target as HTMLElement;
 
-                // Labels will already focus the input
-                if (el.tagName != null && el.tagName.toLowerCase() === 'label') {
+                // Some elements will already focus properly
+                if (el.tagName != null) {
+                    switch (el.tagName.toLowerCase()) {
+                        case 'label': case 'input': case 'textarea': case 'select':
+                            return;
+                        default:
+                            break;
+                    }
+                }
+
+                const cell = el.closest('.list-section-item');
+                if (!cell) {
                     return;
                 }
 
                 const textFilter = 'input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"])';
-                const text = el.querySelectorAll(textFilter + ',textarea');
-                const checkbox = el.querySelectorAll('input[type="checkbox"]');
-                const select = el.querySelectorAll('select');
-
-                // Return if they click the actual element
-                if (text.length > 0 && el === text[0]) {
-                    return;
-                }
-                if (checkbox.length > 0 && el === checkbox[0]) {
-                    return;
-                }
-                if (select.length > 0 && el === select[0]) {
-                    return;
-                }
-
-                e.preventDefault();
+                const text = cell.querySelectorAll(textFilter + ', textarea');
+                const checkbox = cell.querySelectorAll('input[type="checkbox"]');
+                const select = cell.querySelectorAll('select');
 
                 if (text.length > 0) {
                     (text[0] as HTMLElement).focus();
@@ -349,12 +346,22 @@ export default class UtilsService {
         for (const item of sectionFormItems) {
             item.addEventListener('focus', (e: Event) => {
                 const el = e.target as HTMLElement;
-                el.parentElement.classList.add('active');
+                const cell = el.closest('.list-section-item');
+                if (!cell) {
+                    return;
+                }
+
+                cell.classList.add('active');
             }, false);
 
             item.addEventListener('blur', (e: Event) => {
                 const el = e.target as HTMLElement;
-                el.parentElement.classList.remove('active');
+                const cell = el.closest('.list-section-item');
+                if (!cell) {
+                    return;
+                }
+
+                cell.classList.remove('active');
             }, false);
         }
     }
