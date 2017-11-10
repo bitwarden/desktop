@@ -36,6 +36,7 @@ module.exports = {
             },
             {
                 test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                exclude: /loading.svg/,
                 use: [{
                     loader: 'file-loader',
                     options: {
