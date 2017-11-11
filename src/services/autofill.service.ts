@@ -407,40 +407,42 @@ export default class AutofillService {
 
         for (const f of pageDetails.fields) {
             for (const attr of CardAttributes) {
-                if (f.hasOwnProperty(attr) && f[attr]) {
-                    // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
-                    // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
-                    if (!fillFields.cardholderName && this.isFieldMatch(f[attr],
-                        ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'name'],
-                        ['cc-name', 'card-name', 'cardholder-name', 'cardholder'])) {
-                        fillFields.cardholderName = f;
-                    } else if (!fillFields.number && this.isFieldMatch(f[attr],
-                        ['cc-number', 'cc-num', 'card-number', 'card-num', 'number'],
-                        ['cc-number', 'cc-num', 'card-number', 'card-num'])) {
-                        fillFields.number = f;
-                    } else if (!fillFields.exp && this.isFieldMatch(f[attr],
-                        ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex'],
-                        [])) {
-                        fillFields.exp = f;
-                    } else if (!fillFields.expMonth && this.isFieldMatch(f[attr],
-                        ['exp-month', 'cc-exp-month', 'cc-month', 'card-month', 'cc-mo', 'card-mo', 'exp-mo',
-                            'card-exp-mo', 'cc-exp-mo', 'card-expiration-month', 'expiration-month',
-                            'cc-mm', 'card-mm', 'card-exp-mm', 'cc-exp-mm', 'exp-mm'])) {
-                        fillFields.expMonth = f;
-                    } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
-                        ['exp-year', 'cc-exp-year', 'cc-year', 'card-year', 'cc-yr', 'card-yr', 'exp-yr',
-                            'card-exp-yr', 'cc-exp-yr', 'card-expiration-year', 'expiration-year',
-                            'cc-yy', 'card-yy', 'card-exp-yy', 'cc-exp-yy', 'exp-yy',
-                            'cc-yyyy', 'card-yyyy', 'card-exp-yyyy', 'cc-exp-yyyy'])) {
-                        fillFields.expYear = f;
-                    } else if (!fillFields.code && this.isFieldMatch(f[attr],
-                        ['cvv', 'cvc', 'cvv2', 'cc-csc', 'cc-cvv', 'card-csc', 'card-cvv', 'cvd',
-                            'cid', 'cvc2', 'cnv', 'cvn2', 'cc-code', 'card-code'])) {
-                        fillFields.code = f;
-                    } else if (!fillFields.brand && this.isFieldMatch(f[attr],
-                        ['cc-type', 'card-type', 'card-brand', 'cc-brand'])) {
-                        fillFields.brand = f;
-                    }
+                if (!f.hasOwnProperty(attr) || !f[attr]) {
+                    continue;
+                }
+
+                // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+                // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
+                if (!fillFields.cardholderName && this.isFieldMatch(f[attr],
+                    ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'name'],
+                    ['cc-name', 'card-name', 'cardholder-name', 'cardholder'])) {
+                    fillFields.cardholderName = f;
+                } else if (!fillFields.number && this.isFieldMatch(f[attr],
+                    ['cc-number', 'cc-num', 'card-number', 'card-num', 'number'],
+                    ['cc-number', 'cc-num', 'card-number', 'card-num'])) {
+                    fillFields.number = f;
+                } else if (!fillFields.exp && this.isFieldMatch(f[attr],
+                    ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex'],
+                    [])) {
+                    fillFields.exp = f;
+                } else if (!fillFields.expMonth && this.isFieldMatch(f[attr],
+                    ['exp-month', 'cc-exp-month', 'cc-month', 'card-month', 'cc-mo', 'card-mo', 'exp-mo',
+                        'card-exp-mo', 'cc-exp-mo', 'card-expiration-month', 'expiration-month',
+                        'cc-mm', 'card-mm', 'card-exp-mm', 'cc-exp-mm', 'exp-mm'])) {
+                    fillFields.expMonth = f;
+                } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
+                    ['exp-year', 'cc-exp-year', 'cc-year', 'card-year', 'cc-yr', 'card-yr', 'exp-yr',
+                        'card-exp-yr', 'cc-exp-yr', 'card-expiration-year', 'expiration-year',
+                        'cc-yy', 'card-yy', 'card-exp-yy', 'cc-exp-yy', 'exp-yy',
+                        'cc-yyyy', 'card-yyyy', 'card-exp-yyyy', 'cc-exp-yyyy'])) {
+                    fillFields.expYear = f;
+                } else if (!fillFields.code && this.isFieldMatch(f[attr],
+                    ['cvv', 'cvc', 'cvv2', 'cc-csc', 'cc-cvv', 'card-csc', 'card-cvv', 'cvd',
+                        'cid', 'cvc2', 'cnv', 'cvn2', 'cc-code', 'card-code'])) {
+                    fillFields.code = f;
+                } else if (!fillFields.brand && this.isFieldMatch(f[attr],
+                    ['cc-type', 'card-type', 'card-brand', 'cc-brand'])) {
+                    fillFields.brand = f;
                 }
             }
         }
@@ -479,64 +481,66 @@ export default class AutofillService {
 
         for (const f of pageDetails.fields) {
             for (const attr of IdentityAttributes) {
-                if (f.hasOwnProperty(attr) && f[attr]) {
-                    // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
-                    // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
-                    if (!fillFields.name && this.isFieldMatch(f[attr],
-                        ['name', 'full-name', 'your-name'], ['full-name', 'your-name'])) {
-                        fillFields.name = f;
-                    } else if (!fillFields.firstName && this.isFieldMatch(f[attr],
-                        ['f-name', 'first-name', 'given-name', 'first-n'])) {
-                        fillFields.firstName = f;
-                    } else if (!fillFields.middleName && this.isFieldMatch(f[attr],
-                        ['m-name', 'middle-name', 'additional-name', 'middle-initial', 'middle-n', 'middle-i'])) {
-                        fillFields.middleName = f;
-                    } else if (!fillFields.lastName && this.isFieldMatch(f[attr],
-                        ['l-name', 'last-name', 's-name', 'surname', 'family-name', 'family-n', 'last-n'])) {
-                        fillFields.lastName = f;
-                    } else if (!fillFields.title && this.isFieldMatch(f[attr],
-                        ['honorific-prefix', 'prefix', 'title'])) {
-                        fillFields.title = f;
-                    } else if (!fillFields.email && this.isFieldMatch(f[attr],
-                        ['e-mail', 'email-address'])) {
-                        fillFields.email = f;
-                    } else if (!fillFields.address && this.isFieldMatch(f[attr],
-                        ['address', 'street-address'], [])) {
-                        fillFields.address = f;
-                    } else if (!fillFields.address1 && this.isFieldMatch(f[attr],
-                        ['address-1', 'address-line-1'])) {
-                        fillFields.address1 = f;
-                    } else if (!fillFields.address2 && this.isFieldMatch(f[attr],
-                        ['address-2', 'address-line-2'])) {
-                        fillFields.address2 = f;
-                    } else if (!fillFields.address3 && this.isFieldMatch(f[attr],
-                        ['address-3', 'address-line-3'])) {
-                        fillFields.address3 = f;
-                    } else if (!fillFields.city && this.isFieldMatch(f[attr],
-                        ['city', 'town', 'address-level-2', 'address-city', 'address-town'])) {
-                        fillFields.city = f;
-                    } else if (!fillFields.state && this.isFieldMatch(f[attr],
-                        ['state', 'province', 'provence', 'address-level-1', 'address-state',
-                            'address-province'])) {
-                        fillFields.state = f;
-                    } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],
-                        ['postal', 'zip', 'zip2', 'zip-code', 'postal-code', 'address-zip', 'address-postal',
-                            'address-code', 'address-postal-code', 'address-zip-code'])) {
-                        fillFields.postalCode = f;
-                    } else if (!fillFields.country && this.isFieldMatch(f[attr],
-                        ['country', 'country-code', 'country-name', 'address-country', 'address-country-name',
-                            'address-country-code'])) {
-                        fillFields.country = f;
-                    } else if (!fillFields.phone && this.isFieldMatch(f[attr],
-                        ['phone', 'mobile', 'mobile-phone', 'tel', 'telephone', 'phone-number'])) {
-                        fillFields.phone = f;
-                    } else if (!fillFields.username && this.isFieldMatch(f[attr],
-                        ['user-name', 'user-id', 'screen-name'])) {
-                        fillFields.username = f;
-                    } else if (!fillFields.company && this.isFieldMatch(f[attr],
-                        ['company', 'company-name', 'organization', 'organization-name'])) {
-                        fillFields.company = f;
-                    }
+                if (!f.hasOwnProperty(attr) || !f[attr]) {
+                    continue;
+                }
+
+                // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
+                // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
+                if (!fillFields.name && this.isFieldMatch(f[attr],
+                    ['name', 'full-name', 'your-name'], ['full-name', 'your-name'])) {
+                    fillFields.name = f;
+                } else if (!fillFields.firstName && this.isFieldMatch(f[attr],
+                    ['f-name', 'first-name', 'given-name', 'first-n'])) {
+                    fillFields.firstName = f;
+                } else if (!fillFields.middleName && this.isFieldMatch(f[attr],
+                    ['m-name', 'middle-name', 'additional-name', 'middle-initial', 'middle-n', 'middle-i'])) {
+                    fillFields.middleName = f;
+                } else if (!fillFields.lastName && this.isFieldMatch(f[attr],
+                    ['l-name', 'last-name', 's-name', 'surname', 'family-name', 'family-n', 'last-n'])) {
+                    fillFields.lastName = f;
+                } else if (!fillFields.title && this.isFieldMatch(f[attr],
+                    ['honorific-prefix', 'prefix', 'title'])) {
+                    fillFields.title = f;
+                } else if (!fillFields.email && this.isFieldMatch(f[attr],
+                    ['e-mail', 'email-address'])) {
+                    fillFields.email = f;
+                } else if (!fillFields.address && this.isFieldMatch(f[attr],
+                    ['address', 'street-address'], [])) {
+                    fillFields.address = f;
+                } else if (!fillFields.address1 && this.isFieldMatch(f[attr],
+                    ['address-1', 'address-line-1'])) {
+                    fillFields.address1 = f;
+                } else if (!fillFields.address2 && this.isFieldMatch(f[attr],
+                    ['address-2', 'address-line-2'])) {
+                    fillFields.address2 = f;
+                } else if (!fillFields.address3 && this.isFieldMatch(f[attr],
+                    ['address-3', 'address-line-3'])) {
+                    fillFields.address3 = f;
+                } else if (!fillFields.city && this.isFieldMatch(f[attr],
+                    ['city', 'town', 'address-level-2', 'address-city', 'address-town'])) {
+                    fillFields.city = f;
+                } else if (!fillFields.state && this.isFieldMatch(f[attr],
+                    ['state', 'province', 'provence', 'address-level-1', 'address-state',
+                        'address-province'])) {
+                    fillFields.state = f;
+                } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],
+                    ['postal', 'zip', 'zip2', 'zip-code', 'postal-code', 'address-zip', 'address-postal',
+                        'address-code', 'address-postal-code', 'address-zip-code'])) {
+                    fillFields.postalCode = f;
+                } else if (!fillFields.country && this.isFieldMatch(f[attr],
+                    ['country', 'country-code', 'country-name', 'address-country', 'address-country-name',
+                        'address-country-code'])) {
+                    fillFields.country = f;
+                } else if (!fillFields.phone && this.isFieldMatch(f[attr],
+                    ['phone', 'mobile', 'mobile-phone', 'tel', 'telephone', 'phone-number'])) {
+                    fillFields.phone = f;
+                } else if (!fillFields.username && this.isFieldMatch(f[attr],
+                    ['user-name', 'user-id', 'screen-name'])) {
+                    fillFields.username = f;
+                } else if (!fillFields.company && this.isFieldMatch(f[attr],
+                    ['company', 'company-name', 'organization', 'organization-name'])) {
+                    fillFields.company = f;
                 }
             }
         }
