@@ -9,9 +9,9 @@ import TokenService from './token.service';
 import TotpService from './totp.service';
 import UtilsService from './utils.service';
 
-const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID'];
+const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag'];
 
-const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID'];
+const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag'];
 
 const UsernameFieldNames: string[] = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
     'userid', 'user id'];
@@ -86,7 +86,7 @@ var IsoProvinces: { [id: string]: string; } = {
 
 export default class AutofillService {
     constructor(public cipherService: CipherService, public tokenService: TokenService,
-                public totpService: TotpService, public utilsService: UtilsService) {
+        public totpService: TotpService, public utilsService: UtilsService) {
     }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
@@ -286,8 +286,8 @@ export default class AutofillService {
     }
 
     private generateLoginFillScript(fillScript: AutofillScript, pageDetails: any,
-                                    filledFields: { [id: string]: AutofillField; },
-                                    options: any): AutofillScript {
+        filledFields: { [id: string]: AutofillField; },
+        options: any): AutofillScript {
         if (!options.cipher.login) {
             return null;
         }
@@ -397,8 +397,8 @@ export default class AutofillService {
     }
 
     private generateCardFillScript(fillScript: AutofillScript, pageDetails: any,
-                                   filledFields: { [id: string]: AutofillField; },
-                                   options: any): AutofillScript {
+        filledFields: { [id: string]: AutofillField; },
+        options: any): AutofillScript {
         if (!options.cipher.card) {
             return null;
         }
@@ -410,49 +410,36 @@ export default class AutofillService {
                 if (f.hasOwnProperty(attr) && f[attr]) {
                     // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
                     // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
-                    switch (f[attr].toLowerCase()) {
-                        case 'cc-name': case 'ccname': case 'cardname': case 'card-name': case 'cardholder':
-                        case 'cardholdername': case 'cardholder-name': case 'name':
-                            if (!fillFields.cardholderName) {
-                                fillFields.cardholderName = f;
-                            }
-                            break;
-                        case 'cc-number': case 'ccnumber': case 'cardnumber': case 'card-number': case 'number':
-                            if (!fillFields.number) {
-                                fillFields.number = f;
-                            }
-                            break;
-                        case 'cc-exp': case 'ccexp': case 'cardexp': case 'card-exp': case 'cc-expiration':
-                        case 'ccexpiration': case 'card-expiration': case 'cardexpiration':
-                            if (!fillFields.exp) {
-                                fillFields.exp = f;
-                            }
-                            break;
-                        case 'exp-month': case 'expmonth': case 'ccexpmonth': case 'cc-exp-month': case 'cc-month':
-                        case 'ccmonth': case 'card-month': case 'cardmonth':
-                            if (!fillFields.expMonth) {
-                                fillFields.expMonth = f;
-                            }
-                            break;
-                        case 'exp-year': case 'expyear': case 'ccexpyear': case 'cc-exp-year': case 'cc-year':
-                        case 'ccyear': case 'card-year': case 'cardyear':
-                            if (!fillFields.expYear) {
-                                fillFields.expYear = f;
-                            }
-                            break;
-                        case 'cvc': case 'cvv': case 'cvv2': case 'cc-csc': case 'cc-cvv': case 'card-csc':
-                        case 'cardcsc': case 'cvd': case 'cid': case 'cvc2': case 'cvn': case 'cvn2':
-                            if (!fillFields.code) {
-                                fillFields.code = f;
-                            }
-                            break;
-                        case 'card-type': case 'cc-type': case 'cardtype': case 'cctype':
-                            if (!fillFields.brand) {
-                                fillFields.brand = f;
-                            }
-                            break;
-                        default:
-                            break;
+                    if (!fillFields.cardholderName && this.isFieldMatch(f[attr],
+                        ['cc-name', 'card-name', 'cardholder-name', 'cardholder', 'name'],
+                        ['cc-name', 'card-name', 'cardholder-name', 'cardholder'])) {
+                        fillFields.cardholderName = f;
+                    } else if (!fillFields.number && this.isFieldMatch(f[attr],
+                        ['cc-number', 'cc-num', 'card-number', 'card-num', 'number'],
+                        ['cc-number', 'cc-num', 'card-number', 'card-num'])) {
+                        fillFields.number = f;
+                    } else if (!fillFields.exp && this.isFieldMatch(f[attr],
+                        ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex'],
+                        [])) {
+                        fillFields.exp = f;
+                    } else if (!fillFields.expMonth && this.isFieldMatch(f[attr],
+                        ['exp-month', 'cc-exp-month', 'cc-month', 'card-month', 'cc-mo', 'card-mo', 'exp-mo',
+                            'card-exp-mo', 'cc-exp-mo', 'card-expiration-month', 'expiration-month',
+                            'cc-mm', 'card-mm', 'card-exp-mm', 'cc-exp-mm', 'exp-mm'])) {
+                        fillFields.expMonth = f;
+                    } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
+                        ['exp-year', 'cc-exp-year', 'cc-year', 'card-year', 'cc-yr', 'card-yr', 'exp-yr',
+                            'card-exp-yr', 'cc-exp-yr', 'card-expiration-year', 'expiration-year',
+                            'cc-yy', 'card-yy', 'card-exp-yy', 'cc-exp-yy', 'exp-yy',
+                            'cc-yyyy', 'card-yyyy', 'card-exp-yyyy', 'cc-exp-yyyy'])) {
+                        fillFields.expYear = f;
+                    } else if (!fillFields.code && this.isFieldMatch(f[attr],
+                        ['cvv', 'cvc', 'cvv2', 'cc-csc', 'cc-cvv', 'card-csc', 'card-cvv', 'cvd',
+                            'cid', 'cvc2', 'cnv', 'cvn2', 'cc-code', 'card-code'])) {
+                        fillFields.code = f;
+                    } else if (!fillFields.brand && this.isFieldMatch(f[attr],
+                        ['cc-type', 'card-type', 'card-brand', 'cc-brand'])) {
+                        fillFields.brand = f;
                     }
                 }
             }
@@ -482,8 +469,8 @@ export default class AutofillService {
     }
 
     private generateIdentityFillScript(fillScript: AutofillScript, pageDetails: any,
-                                       filledFields: { [id: string]: AutofillField; },
-                                       options: any): AutofillScript {
+        filledFields: { [id: string]: AutofillField; },
+        options: any): AutofillScript {
         if (!options.cipher.identity) {
             return null;
         }
@@ -495,113 +482,60 @@ export default class AutofillService {
                 if (f.hasOwnProperty(attr) && f[attr]) {
                     // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
                     // ref https://developers.google.com/web/fundamentals/design-and-ux/input/forms/
-                    switch (f[attr].toLowerCase()) {
-                        case 'name': case 'full-name': case 'fullname': case 'your-name': case 'yourname':
-                        case 'full_name': case 'your_name':
-                            if (!fillFields.name) {
-                                fillFields.name = f;
-                            }
-                            break;
-                        case 'fname': case 'firstname': case 'first-name': case 'given-name': case 'givenname':
-                        case 'first_name': case 'given_name':
-                            if (!fillFields.firstName) {
-                                fillFields.firstName = f;
-                            }
-                            break;
-                        case 'mname': case 'middlename': case 'middle-name': case 'additional-name':
-                        case 'additionalname': case 'middle_name': case 'additional_name':
-                            if (!fillFields.middleName) {
-                                fillFields.middleName = f;
-                            }
-                            break;
-                        case 'lname': case 'lastname': case 'last-name': case 'family-name': case 'familyname':
-                        case 'surname': case 'sname': case 'last_name': case 'family_name':
-                            if (!fillFields.lastName) {
-                                fillFields.lastName = f;
-                            }
-                            break;
-                        case 'honorific-prefix': case 'prefix': case 'honorific_prefix':
-                            if (!fillFields.title) {
-                                fillFields.title = f;
-                            }
-                            break;
-                        case 'email': case 'e-mail': case 'email-address': case 'emailaddress': case 'email_address':
-                            if (!fillFields.email) {
-                                fillFields.email = f;
-                            }
-                            break;
-                        case 'address': case 'street_address': case 'street-address': case 'streetaddress':
-                            if (!fillFields.address) {
-                                fillFields.address = f;
-                            }
-                            break;
-                        case 'address1': case 'address-1': case 'address-line1': case 'address_1':
-                        case 'address_line1':
-                            if (!fillFields.address1) {
-                                fillFields.address1 = f;
-                            }
-                            break;
-                        case 'address2': case 'address-2': case 'address-line2': case 'address_2':
-                        case 'address_line2':
-                            if (!fillFields.address2) {
-                                fillFields.address2 = f;
-                            }
-                            break;
-                        case 'address3': case 'address-3': case 'address-line3': case 'address_3':
-                        case 'address_line3':
-                            if (!fillFields.address3) {
-                                fillFields.address3 = f;
-                            }
-                            break;
-                        case 'city': case 'town': case 'address-level2': case 'address_level2': case 'address_city':
-                        case 'address_town': case 'address-city':
-                            if (!fillFields.city) {
-                                fillFields.city = f;
-                            }
-                            break;
-                        case 'state': case 'province': case 'provence': case 'address-level1': case 'address_level1':
-                        case 'address_state': case 'address_province': case 'address-state': case 'address-province':
-                            if (!fillFields.state) {
-                                fillFields.state = f;
-                            }
-                            break;
-                        case 'postal': case 'postal-code': case 'zip': case 'zip2': case 'zip-code':
-                        case 'zipcode': case 'postalcode': case 'postal_code': case 'zip_code':
-                        case 'address_zip': case 'address_postal': case 'address-postal-code':
-                        case 'address_postal_code': case 'address_code': case 'address_postalcode':
-                        case 'address_zip_code':
-                            if (!fillFields.postalCode) {
-                                fillFields.postalCode = f;
-                            }
-                            break;
-                        case 'country': case 'country-code': case 'countrycode': case 'countryname':
-                        case 'country-name': case 'country_name': case 'country_code': case 'address_country':
-                        case 'address-country': case 'address-countryname': case 'address-countrycode':
-                        case 'address_countryname': case 'address_countrycode':
-                            if (!fillFields.country) {
-                                fillFields.country = f;
-                            }
-                            break;
-                        case 'phone': case 'mobile': case 'mobile-phone': case 'tel': case 'telephone':
-                        case 'mobile_phone':
-                            if (!fillFields.phone) {
-                                fillFields.phone = f;
-                            }
-                            break;
-                        case 'username': case 'user-name': case 'userid': case 'user-id': case 'user_name':
-                        case 'user_id':
-                            if (!fillFields.username) {
-                                fillFields.username = f;
-                            }
-                            break;
-                        case 'company': case 'organization': case 'organisation': case 'company_name':
-                        case 'organization_name':
-                            if (!fillFields.company) {
-                                fillFields.company = f;
-                            }
-                            break;
-                        default:
-                            break;
+                    if (!fillFields.name && this.isFieldMatch(f[attr],
+                        ['name', 'full-name', 'your-name'], ['full-name', 'your-name'])) {
+                        fillFields.name = f;
+                    } else if (!fillFields.firstName && this.isFieldMatch(f[attr],
+                        ['f-name', 'first-name', 'given-name', 'first-n'])) {
+                        fillFields.firstName = f;
+                    } else if (!fillFields.middleName && this.isFieldMatch(f[attr],
+                        ['m-name', 'middle-name', 'additional-name', 'middle-initial', 'middle-n', 'middle-i'])) {
+                        fillFields.middleName = f;
+                    } else if (!fillFields.lastName && this.isFieldMatch(f[attr],
+                        ['l-name', 'last-name', 's-name', 'surname', 'family-name', 'family-n', 'last-n'])) {
+                        fillFields.lastName = f;
+                    } else if (!fillFields.title && this.isFieldMatch(f[attr],
+                        ['honorific-prefix', 'prefix', 'title'])) {
+                        fillFields.title = f;
+                    } else if (!fillFields.email && this.isFieldMatch(f[attr],
+                        ['e-mail', 'email-address'])) {
+                        fillFields.email = f;
+                    } else if (!fillFields.address && this.isFieldMatch(f[attr],
+                        ['address', 'street-address'], [])) {
+                        fillFields.address = f;
+                    } else if (!fillFields.address1 && this.isFieldMatch(f[attr],
+                        ['address-1', 'address-line-1'])) {
+                        fillFields.address1 = f;
+                    } else if (!fillFields.address2 && this.isFieldMatch(f[attr],
+                        ['address-2', 'address-line-2'])) {
+                        fillFields.address2 = f;
+                    } else if (!fillFields.address3 && this.isFieldMatch(f[attr],
+                        ['address-3', 'address-line-3'])) {
+                        fillFields.address3 = f;
+                    } else if (!fillFields.city && this.isFieldMatch(f[attr],
+                        ['city', 'town', 'address-level-2', 'address-city', 'address-town'])) {
+                        fillFields.city = f;
+                    } else if (!fillFields.state && this.isFieldMatch(f[attr],
+                        ['state', 'province', 'provence', 'address-level-1', 'address-state',
+                            'address-province'])) {
+                        fillFields.state = f;
+                    } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],
+                        ['postal', 'zip', 'zip2', 'zip-code', 'postal-code', 'address-zip', 'address-postal',
+                            'address-code', 'address-postal-code', 'address-zip-code'])) {
+                        fillFields.postalCode = f;
+                    } else if (!fillFields.country && this.isFieldMatch(f[attr],
+                        ['country', 'country-code', 'country-name', 'address-country', 'address-country-name',
+                            'address-country-code'])) {
+                        fillFields.country = f;
+                    } else if (!fillFields.phone && this.isFieldMatch(f[attr],
+                        ['phone', 'mobile', 'mobile-phone', 'tel', 'telephone', 'phone-number'])) {
+                        fillFields.phone = f;
+                    } else if (!fillFields.username && this.isFieldMatch(f[attr],
+                        ['user-name', 'user-id', 'screen-name'])) {
+                        fillFields.username = f;
+                    } else if (!fillFields.company && this.isFieldMatch(f[attr],
+                        ['company', 'company-name', 'organization', 'organization-name'])) {
+                        fillFields.company = f;
                     }
                 }
             }
@@ -703,9 +637,22 @@ export default class AutofillService {
         return fillScript;
     }
 
+    private isFieldMatch(value: string, options: string[], containsOptions?: string[]): boolean {
+        value = value.trim().toLowerCase().replace(/-|_| /g, '');
+        for (let option of options) {
+            const checkValueContains = containsOptions == null || containsOptions.indexOf(option) > -1;
+            option = option.replace(/-/g, '');
+            if (value === option || (checkValueContains && value.indexOf(option) > -1)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private makeScriptAction(fillScript: AutofillScript, cipherData: any, fillFields: any,
-                             filledFields: { [id: string]: AutofillField; }, dataProp: string,
-                             fieldProp?: string) {
+        filledFields: { [id: string]: AutofillField; }, dataProp: string,
+        fieldProp?: string) {
         fieldProp = fieldProp || dataProp;
         if (cipherData[dataProp] && cipherData[dataProp] !== '' && fillFields[fieldProp]) {
             filledFields[fillFields[fieldProp].opid] = fillFields[fieldProp];
@@ -726,7 +673,7 @@ export default class AutofillService {
     }
 
     private findUsernameField(pageDetails: AutofillPageDetails, passwordField: AutofillField, canBeHidden: boolean,
-                              withoutForm: boolean) {
+        withoutForm: boolean) {
         let usernameField: AutofillField = null;
         for (const f of pageDetails.fields) {
             if (f.elementNumber >= passwordField.elementNumber) {
@@ -799,7 +746,7 @@ export default class AutofillService {
     }
 
     private setFillScriptForFocus(filledFields: { [id: string]: AutofillField; },
-                                  fillScript: AutofillScript): AutofillScript {
+        fillScript: AutofillScript): AutofillScript {
         let lastField: AutofillField = null;
         let lastPasswordField: AutofillField = null;
 
