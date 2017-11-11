@@ -121,7 +121,7 @@ angular
         };
 
         $scope.generatePassword = function () {
-            if ($scope.cipher.password) {
+            if ($scope.cipher.login.password) {
                 SweetAlert.swal({
                     title: i18nService.overwritePassword,
                     text: i18nService.overwritePasswordConfirmation,
