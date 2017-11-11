@@ -1,7 +1,7 @@
-﻿document.addEventListener('DOMContentLoaded', function (event) {
-    var pageHref = null;
+document.addEventListener('DOMContentLoaded', (event) => {
+    let pageHref = null;
 
-    chrome.storage.local.get('enableAutoFillOnPageLoad', function (obj) {
+    chrome.storage.local.get('enableAutoFillOnPageLoad', (obj) => {
         if (obj && obj.enableAutoFillOnPageLoad === true) {
             setInterval(doFillIfNeeded, 500);
         }
@@ -10,14 +10,10 @@
     function doFillIfNeeded() {
         if (pageHref !== window.location.href) {
             pageHref = window.location.href;
-            fill();
+            chrome.runtime.sendMessage({
+                command: 'bgCollectPageDetails',
+                sender: 'autofiller'
+            });
         }
-    }
-
-    function fill() {
-        chrome.runtime.sendMessage({
-            command: 'bgCollectPageDetails',
-            sender: 'autofiller'
-        });
     }
 });
