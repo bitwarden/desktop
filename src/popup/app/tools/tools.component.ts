@@ -1,5 +1,5 @@
 import UtilsService from '../../../services/utils.service';
-import * as template from './views/tools.html';
+import * as template from './tools.component.html';
 
 class ToolsController {
     showExport: boolean;

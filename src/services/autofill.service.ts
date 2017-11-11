@@ -16,7 +16,6 @@ const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlNa
 const UsernameFieldNames: string[] = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
     'userid', 'user id'];
 
-
 /* tslint:disable */
 const IsoCountries: { [id: string]: string; } = {
     afghanistan: "AF", "aland islands": "AX", albania: "AL", algeria: "DZ", "american samoa": "AS", andorra: "AD",
