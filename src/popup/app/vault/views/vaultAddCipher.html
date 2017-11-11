@@ -194,11 +194,9 @@
             </div>
             <div class="list-section">
                 <div class="list-section-items">
-                    <div ng-if="cipher.type === constants.cipherType.login">
-                        <div class="list-section-item">
-                            <label for="loginTotp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
-                            <input id="loginTotp" type="text" name="Login.Totp" ng-model="cipher.login.totp">
-                        </div>
+                    <div class="list-section-item" ng-if="cipher.type === constants.cipherType.login">
+                        <label for="loginTotp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
+                        <input id="loginTotp" type="text" name="Login.Totp" ng-model="cipher.login.totp">
                     </div>
                     <div class="list-section-item">
                         <label for="folder" class="item-label">{{i18n.folder}}</label>
