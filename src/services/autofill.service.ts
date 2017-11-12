@@ -9,9 +9,11 @@ import TokenService from './token.service';
 import TotpService from './totp.service';
 import UtilsService from './utils.service';
 
-const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag'];
+const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
+    'placeholder'];
 
-const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag'];
+const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
+    'placeholder'];
 
 const UsernameFieldNames: string[] = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
     'userid', 'user id'];
@@ -86,7 +88,7 @@ var IsoProvinces: { [id: string]: string; } = {
 
 export default class AutofillService {
     constructor(public cipherService: CipherService, public tokenService: TokenService,
-        public totpService: TotpService, public utilsService: UtilsService) {
+                public totpService: TotpService, public utilsService: UtilsService) {
     }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
@@ -286,8 +288,8 @@ export default class AutofillService {
     }
 
     private generateLoginFillScript(fillScript: AutofillScript, pageDetails: any,
-        filledFields: { [id: string]: AutofillField; },
-        options: any): AutofillScript {
+                                    filledFields: { [id: string]: AutofillField; },
+                                    options: any): AutofillScript {
         if (!options.cipher.login) {
             return null;
         }
@@ -397,8 +399,8 @@ export default class AutofillService {
     }
 
     private generateCardFillScript(fillScript: AutofillScript, pageDetails: any,
-        filledFields: { [id: string]: AutofillField; },
-        options: any): AutofillScript {
+                                   filledFields: { [id: string]: AutofillField; },
+                                   options: any): AutofillScript {
         if (!options.cipher.card) {
             return null;
         }
@@ -407,7 +409,7 @@ export default class AutofillService {
 
         for (const f of pageDetails.fields) {
             for (const attr of CardAttributes) {
-                if (!f.hasOwnProperty(attr) || !f[attr]) {
+                if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
                     continue;
                 }
 
@@ -471,8 +473,8 @@ export default class AutofillService {
     }
 
     private generateIdentityFillScript(fillScript: AutofillScript, pageDetails: any,
-        filledFields: { [id: string]: AutofillField; },
-        options: any): AutofillScript {
+                                       filledFields: { [id: string]: AutofillField; },
+                                       options: any): AutofillScript {
         if (!options.cipher.identity) {
             return null;
         }
@@ -481,7 +483,7 @@ export default class AutofillService {
 
         for (const f of pageDetails.fields) {
             for (const attr of IdentityAttributes) {
-                if (!f.hasOwnProperty(attr) || !f[attr]) {
+                if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
                     continue;
                 }
 
@@ -642,7 +644,7 @@ export default class AutofillService {
     }
 
     private isFieldMatch(value: string, options: string[], containsOptions?: string[]): boolean {
-        value = value.trim().toLowerCase().replace(/-|_| /g, '');
+        value = value.trim().toLowerCase().replace(/[^a-zA-Z]+/g, '');
         for (let option of options) {
             const checkValueContains = containsOptions == null || containsOptions.indexOf(option) > -1;
             option = option.replace(/-/g, '');
@@ -655,8 +657,8 @@ export default class AutofillService {
     }
 
     private makeScriptAction(fillScript: AutofillScript, cipherData: any, fillFields: any,
-        filledFields: { [id: string]: AutofillField; }, dataProp: string,
-        fieldProp?: string) {
+                             filledFields: { [id: string]: AutofillField; }, dataProp: string,
+                             fieldProp?: string) {
         fieldProp = fieldProp || dataProp;
         if (cipherData[dataProp] && cipherData[dataProp] !== '' && fillFields[fieldProp]) {
             filledFields[fillFields[fieldProp].opid] = fillFields[fieldProp];
@@ -677,7 +679,7 @@ export default class AutofillService {
     }
 
     private findUsernameField(pageDetails: AutofillPageDetails, passwordField: AutofillField, canBeHidden: boolean,
-        withoutForm: boolean) {
+                              withoutForm: boolean) {
         let usernameField: AutofillField = null;
         for (const f of pageDetails.fields) {
             if (f.elementNumber >= passwordField.elementNumber) {
@@ -750,7 +752,7 @@ export default class AutofillService {
     }
 
     private setFillScriptForFocus(filledFields: { [id: string]: AutofillField; },
-        fillScript: AutofillScript): AutofillScript {
+                                  fillScript: AutofillScript): AutofillScript {
         let lastField: AutofillField = null;
         let lastPasswordField: AutofillField = null;
 
