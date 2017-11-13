@@ -4,7 +4,6 @@ angular
     .controller('mainController', function ($scope, $transitions, $state, authService, toastr, i18nService, $analytics, utilsService,
         $window) {
         var self = this;
-        self.currentYear = new Date().getFullYear();
         self.animation = '';
         self.xsBody = $window.screen.availHeight < 600;
         self.smBody = !self.xsBody && $window.screen.availHeight <= 800;
