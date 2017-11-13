@@ -1,4 +1,5 @@
 import { BrowserType } from '../enums/browserType.enum';
+import { UtilsService as UtilsServiceInterface } from './abstractions/utils.service';
 
 const AnalyticsIds = {
     [BrowserType.Chrome]: 'UA-81915606-6',
@@ -7,7 +8,7 @@ const AnalyticsIds = {
     [BrowserType.Edge]: 'UA-81915606-9',
 };
 
-export default class UtilsService {
+export default class UtilsService implements UtilsServiceInterface {
     static copyToClipboard(text: string, doc?: Document): void {
         doc = doc || document;
         if ((window as any).clipboardData && (window as any).clipboardData.setData) {
@@ -264,8 +265,8 @@ export default class UtilsService {
         return this.browserCache;
     }
 
-    getDeviceType(): number {
-        return this.getBrowser();
+    getBrowserString(): string {
+        return BrowserType[this.getBrowser()].toLowerCase();
     }
 
     isFirefox(): boolean {
@@ -293,7 +294,7 @@ export default class UtilsService {
         return this.analyticsIdCache;
     }
 
-    initListSectionItemListeners(doc: Document, angular: any) {
+    initListSectionItemListeners(doc: Document, angular: any): void {
         if (!doc) {
             throw new Error('doc parameter required');
         }
@@ -378,34 +379,32 @@ export default class UtilsService {
         UtilsService.copyToClipboard(text, doc);
     }
 
-    inSidebar(theWindow: Window) {
+    inSidebar(theWindow: Window): boolean {
         return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=sidebar') > -1;
     }
 
-    inTab(theWindow: Window) {
+    inTab(theWindow: Window): boolean {
         return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=tab') > -1;
     }
 
-    inPopout(theWindow: Window) {
+    inPopout(theWindow: Window): boolean {
         return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=popout') > -1;
     }
 
-    inPopup(theWindow: Window) {
+    inPopup(theWindow: Window): boolean {
         return theWindow.location.search === '' || theWindow.location.search.indexOf('uilocation=') === -1 ||
             theWindow.location.search.indexOf('uilocation=popup') > -1;
     }
 
-    // remove these in favor of static
-
-    saveObjToStorage(key: string, obj: any) {
+    saveObjToStorage(key: string, obj: any): Promise<any> {
         return UtilsService.saveObjToStorage(key, obj);
     }
 
-    removeFromStorage(key: string) {
+    removeFromStorage(key: string): Promise<any> {
         return UtilsService.removeFromStorage(key);
     }
 
-    getObjFromStorage(key: string) {
-        return UtilsService.getObjFromStorage(key);
+    getObjFromStorage<T>(key: string): Promise<T> {
+        return UtilsService.getObjFromStorage<T>(key);
     }
 }

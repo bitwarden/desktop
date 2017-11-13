@@ -1,24 +1,26 @@
-﻿function getBackgroundService(service: string) {
-    return () => {
+import { UtilsService } from '../../../services/abstractions/utils.service';
+
+function getBackgroundService<T>(service: string) {
+    return (): T => {
         const page = chrome.extension.getBackgroundPage();
-        return page ? page['bg_' + service] : null;
+        return page ? page['bg_' + service] as T : null;
     };
 }
 
-export const tokenService = getBackgroundService('tokenService');
-export const cryptoService = getBackgroundService('cryptoService');
-export const userService = getBackgroundService('userService');
-export const apiService = getBackgroundService('apiService');
-export const folderService = getBackgroundService('folderService');
-export const cipherService = getBackgroundService('cipherService');
-export const syncService = getBackgroundService('syncService');
-export const autofillService = getBackgroundService('autofillService');
-export const passwordGenerationService = getBackgroundService('passwordGenerationService');
-export const utilsService = getBackgroundService('utilsService');
-export const appIdService = getBackgroundService('appIdService');
-export const i18nService = getBackgroundService('i18nService');
-export const constantsService = getBackgroundService('constantsService');
-export const settingsService = getBackgroundService('settingsService');
-export const lockService = getBackgroundService('lockService');
-export const totpService = getBackgroundService('totpService');
-export const environmentService = getBackgroundService('environmentService');
+export const tokenService = getBackgroundService<any>('tokenService');
+export const cryptoService = getBackgroundService<any>('cryptoService');
+export const userService = getBackgroundService<any>('userService');
+export const apiService = getBackgroundService<any>('apiService');
+export const folderService = getBackgroundService<any>('folderService');
+export const cipherService = getBackgroundService<any>('cipherService');
+export const syncService = getBackgroundService<any>('syncService');
+export const autofillService = getBackgroundService<any>('autofillService');
+export const passwordGenerationService = getBackgroundService<any>('passwordGenerationService');
+export const utilsService = getBackgroundService<UtilsService>('utilsService');
+export const appIdService = getBackgroundService<any>('appIdService');
+export const i18nService = getBackgroundService<any>('i18nService');
+export const constantsService = getBackgroundService<any>('constantsService');
+export const settingsService = getBackgroundService<any>('settingsService');
+export const lockService = getBackgroundService<any>('lockService');
+export const totpService = getBackgroundService<any>('totpService');
+export const environmentService = getBackgroundService<any>('environmentService');

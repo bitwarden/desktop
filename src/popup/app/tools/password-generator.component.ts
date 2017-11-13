@@ -1,6 +1,8 @@
 import * as angular from 'angular';
 import * as template from './password-generator.component.html';
 
+import { UtilsService } from '../../../services/abstractions/utils.service';
+
 export class PasswordGeneratorController {
     $transition$: any;
     options: any;
@@ -11,7 +13,7 @@ export class PasswordGeneratorController {
     i18n: any;
 
     constructor(private $state: any, private passwordGenerationService: any,
-                private toastr: any, private utilsService: any, private $analytics: any,
+                private toastr: any, private utilsService: UtilsService, private $analytics: any,
                 private i18nService: any, private $timeout: any) {
         this.i18n = i18nService;
 

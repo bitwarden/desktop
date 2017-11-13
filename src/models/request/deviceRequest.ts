@@ -1,12 +1,15 @@
+import { BrowserType } from '../../enums/browserType.enum';
+import { UtilsService } from '../../services/abstractions/utils.service';
+
 class DeviceRequest {
-    type: number; // TODO: enum
+    type: BrowserType;
     name: string;
     identifier: string;
     pushToken?: string;
 
-    constructor(appId: string, utilsService: any) { // TODO: utils service type
-        this.type = utilsService.getDeviceType();
-        this.name = utilsService.getBrowser();
+    constructor(appId: string, utilsService: UtilsService) {
+        this.type = utilsService.getBrowser();
+        this.name = utilsService.getBrowserString();
         this.identifier = appId;
         this.pushToken = null;
     }

@@ -11,7 +11,7 @@ import { Identity } from './identity';
 import { Login } from './login';
 import { SecureNote } from './secureNote';
 
-import UtilsService from '../../services/utils.service';
+import { UtilsService } from '../../services/abstractions/utils.service';
 
 class Cipher extends Domain {
     id: string;
@@ -30,6 +30,8 @@ class Cipher extends Domain {
     secureNote: SecureNote;
     attachments: Attachment[];
     fields: Field[];
+
+    private utilsService: UtilsService;
 
     constructor(obj?: CipherData, alreadyEncrypted: boolean = false, localData: any = null) {
         super();
@@ -113,7 +115,11 @@ class Cipher extends Domain {
                 model.login = await this.login.decrypt(this.organizationId);
                 model.subTitle = model.login.username;
                 if (model.login.uri) {
-                    model.login.domain = UtilsService.getDomain(model.login.uri);
+                    if (this.utilsService == null) {
+                        this.utilsService = chrome.extension.getBackgroundPage().bg_utilsService as UtilsService;
+                    }
+
+                    model.login.domain = this.utilsService.getDomain(model.login.uri);
                 }
                 break;
             case CipherType.SecureNote:

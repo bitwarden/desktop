@@ -127,7 +127,7 @@ angular
         $scope.rate = function () {
             $analytics.eventTrack('Rate Extension');
 
-            switch (utilsService.getBrowser()) {
+            switch (utilsService.getBrowserString()) {
                 case 'chrome':
                     chrome.tabs.create({
                         url: 'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/' +

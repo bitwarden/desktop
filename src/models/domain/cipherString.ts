@@ -8,11 +8,10 @@ class CipherString {
     cipherText?: string;
     initializationVector?: string;
     mac?: string;
-    cryptoService: CryptoService;
+
+    private cryptoService: CryptoService;
 
     constructor(encryptedStringOrType: string | EncryptionType, ct?: string, iv?: string, mac?: string) {
-        this.cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService as CryptoService;
-
         if (ct != null) {
             // ct and header
             const encType = encryptedStringOrType as EncryptionType;
@@ -90,13 +89,16 @@ class CipherString {
     }
 
     decrypt(orgId: string) {
-        const self = this;
-
         if (this.decryptedValue) {
-            return Promise.resolve(self.decryptedValue);
+            return Promise.resolve(this.decryptedValue);
         }
 
-        return self.cryptoService.getOrgKey(orgId).then((orgKey: any) => {
+        const self = this;
+        if (this.cryptoService == null) {
+            this.cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService as CryptoService;
+        }
+
+        return this.cryptoService.getOrgKey(orgId).then((orgKey: any) => {
             return self.cryptoService.decrypt(self, orgKey);
         }).then((decValue: any) => {
             self.decryptedValue = decValue;

@@ -1,10 +1,11 @@
 import { DeviceRequest } from '../../../models/request/deviceRequest';
 import { TokenRequest } from '../../../models/request/tokenRequest';
 
-class AuthService {
+import { UtilsService } from '../../../services/abstractions/utils.service';
 
+class AuthService {
     constructor(public cryptoService: any, public apiService: any, public userService: any, public tokenService: any,
-                public $rootScope: any, public appIdService: any, public utilsService: any,
+                public $rootScope: any, public appIdService: any, public utilsService: UtilsService,
                 public constantsService: any) {
 
     }
