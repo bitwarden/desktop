@@ -1,7 +1,9 @@
+import { Folder } from '../domain/folder';
+
 class FolderRequest {
     name: string;
 
-    constructor(folder: any) { // TODO: folder type
+    constructor(folder: Folder) {
         this.name = folder.name ? folder.name.encryptedString : null;
     }
 }

@@ -1,5 +1,7 @@
+import { SecureNoteType } from '../../enums/secureNoteType.enum';
+
 class SecureNoteData {
-    type: number; // TODO: enum
+    type: SecureNoteType;
 
     constructor(data: any) {
         this.type = data.Type;

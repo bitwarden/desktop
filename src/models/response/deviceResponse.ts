@@ -1,8 +1,10 @@
+import { BrowserType } from '../../enums/browserType.enum';
+
 class DeviceResponse {
     id: string;
     name: number;
     identifier: string;
-    type: number; // TODO: Convert to enum
+    type: BrowserType;
     creationDate: string;
 
     constructor(response: any) {

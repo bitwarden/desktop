@@ -1,5 +1,7 @@
+import { FieldType } from '../../enums/fieldType.enum';
+
 class FieldData {
-    type: number; // TODO: enum
+    type: FieldType;
     name: string;
     value: string;
 
