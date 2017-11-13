@@ -1,10 +1,12 @@
 import * as template from './lock.component.html';
 
+import { CryptoService } from '../../../services/abstractions/crypto.service';
+
 class LockController {
     i18n: any;
 
     constructor(public $scope: any, public $state: any, public i18nService: any,
-                public cryptoService: any, public toastr: any, public userService: any,
+                public cryptoService: CryptoService, public toastr: any, public userService: any,
                 public SweetAlert: any, public $timeout: any) {
         this.i18n = i18nService;
 

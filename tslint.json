@@ -1,6 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "align": [ true, "statements", "members" ],
     "ban-types": {
       "options": [
         [ "Object", "Avoid using the `Object` type. Did you mean `object`?" ],

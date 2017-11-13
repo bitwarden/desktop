@@ -1,13 +1,13 @@
 import { DeviceRequest } from '../../../models/request/deviceRequest';
 import { TokenRequest } from '../../../models/request/tokenRequest';
 
+import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
 class AuthService {
-    constructor(public cryptoService: any, public apiService: any, public userService: any, public tokenService: any,
-                public $rootScope: any, public appIdService: any, public utilsService: UtilsService,
-                public constantsService: any) {
-
+    constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
+        public tokenService: any, public $rootScope: any, public appIdService: any, public utilsService: UtilsService,
+        public constantsService: any) {
     }
 
     async logIn(email: string, masterPassword: string, twoFactorProvider?: number,

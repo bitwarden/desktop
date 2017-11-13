@@ -1,3 +1,4 @@
+import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
 function getBackgroundService<T>(service: string) {
@@ -12,7 +13,7 @@ export const cryptoService = getBackgroundService<any>('cryptoService');
 export const userService = getBackgroundService<any>('userService');
 export const apiService = getBackgroundService<any>('apiService');
 export const folderService = getBackgroundService<any>('folderService');
-export const cipherService = getBackgroundService<any>('cipherService');
+export const cipherService = getBackgroundService<CryptoService>('cipherService');
 export const syncService = getBackgroundService<any>('syncService');
 export const autofillService = getBackgroundService<any>('autofillService');
 export const passwordGenerationService = getBackgroundService<any>('passwordGenerationService');

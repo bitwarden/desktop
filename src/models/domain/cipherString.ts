@@ -1,5 +1,5 @@
 import { EncryptionType } from '../../enums/encryptionType.enum';
-import CryptoService from '../../services/crypto.service';
+import { CryptoService } from '../../services/abstractions/crypto.service';
 
 class CipherString {
     encryptedString?: string;

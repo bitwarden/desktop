@@ -8,6 +8,8 @@ import { ProfileOrganizationResponse } from '../models/response/profileOrganizat
 import ConstantsService from './constants.service';
 import UtilsService from './utils.service';
 
+import { CryptoService as CryptoServiceInterface } from './abstractions/crypto.service';
+
 const Keys = {
     key: 'key',
     encOrgKeys: 'encOrgKeys',
@@ -28,7 +30,7 @@ const AesAlgorithm = {
 const Crypto = window.crypto;
 const Subtle = Crypto.subtle;
 
-export default class CryptoService {
+export default class CryptoService implements CryptoServiceInterface {
     private key: SymmetricCryptoKey;
     private encKey: SymmetricCryptoKey;
     private legacyEtmKey: SymmetricCryptoKey;
@@ -36,7 +38,7 @@ export default class CryptoService {
     private privateKey: ArrayBuffer;
     private orgKeys: Map<string, SymmetricCryptoKey>;
 
-    async setKey(key: SymmetricCryptoKey) {
+    async setKey(key: SymmetricCryptoKey): Promise<any> {
         this.key = key;
 
         const option = await UtilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
@@ -53,7 +55,7 @@ export default class CryptoService {
         return UtilsService.saveObjToStorage(Keys.keyHash, keyHash);
     }
 
-    async setEncKey(encKey: string) {
+    async setEncKey(encKey: string): Promise<{}> {
         if (encKey == null) {
             return;
         }
@@ -61,7 +63,7 @@ export default class CryptoService {
         this.encKey = null;
     }
 
-    async setEncPrivateKey(encPrivateKey: string) {
+    async setEncPrivateKey(encPrivateKey: string): Promise<{}> {
         if (encPrivateKey == null) {
             return;
         }
@@ -246,7 +248,7 @@ export default class CryptoService {
         await this.setKey(key);
     }
 
-    makeKey(password: string, salt: string) {
+    makeKey(password: string, salt: string): SymmetricCryptoKey {
         const keyBytes: string = forge.pbkdf2(forge.util.encodeUtf8(password), forge.util.encodeUtf8(salt),
             5000, 256 / 8, 'sha256');
         return new SymmetricCryptoKey(keyBytes);
@@ -270,7 +272,7 @@ export default class CryptoService {
     }
 
     async encrypt(plainValue: string | Uint8Array, key?: SymmetricCryptoKey,
-                  plainValueEncoding: string = 'utf8'): Promise<CipherString> {
+        plainValueEncoding: string = 'utf8'): Promise<CipherString> {
         if (!plainValue) {
             return Promise.resolve(null);
         }
@@ -308,7 +310,7 @@ export default class CryptoService {
     }
 
     async decrypt(cipherString: CipherString, key?: SymmetricCryptoKey,
-                  outputEncoding: string = 'utf8'): Promise<string> {
+        outputEncoding: string = 'utf8'): Promise<string> {
         const ivBytes: string = forge.util.decode64(cipherString.initializationVector);
         const ctBytes: string = forge.util.decode64(cipherString.cipherText);
         const macBytes: string = cipherString.mac ? forge.util.decode64(cipherString.mac) : null;
@@ -361,7 +363,7 @@ export default class CryptoService {
         return await this.aesDecryptWC(encType, ctBytes.buffer, ivBytes.buffer, macBytes ? macBytes.buffer : null, key);
     }
 
-    async rsaDecrypt(encValue: string) {
+    async rsaDecrypt(encValue: string): Promise<string> {
         const headerPieces = encValue.split('.');
         let encType: EncryptionType = null;
         let encPieces: string[];
@@ -466,7 +468,7 @@ export default class CryptoService {
     }
 
     private async aesDecrypt(encType: EncryptionType, ctBytes: string, ivBytes: string, macBytes: string,
-                             key: SymmetricCryptoKey): Promise<any> {
+        key: SymmetricCryptoKey): Promise<any> {
         const keyForEnc = await this.getKeyForEncryption(key);
         const theKey = this.resolveLegacyKey(encType, keyForEnc);
 
@@ -495,7 +497,7 @@ export default class CryptoService {
     }
 
     private async aesDecryptWC(encType: EncryptionType, ctBuf: ArrayBuffer, ivBuf: ArrayBuffer,
-                               macBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
+        macBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
         const theKey = await this.getKeyForEncryption(key);
         const keyBuf = theKey.getBuffers();
         const encKey = await Subtle.importKey('raw', keyBuf.encKey, AesAlgorithm, false, ['decrypt']);

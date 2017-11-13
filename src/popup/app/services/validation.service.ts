@@ -1,7 +1,6 @@
-﻿import * as angular from 'angular';
+import * as angular from 'angular';
 
 class ValidationService {
-
     constructor(private toastr: any, private i18nService: any) {
     }
 
