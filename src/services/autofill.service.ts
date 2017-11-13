@@ -701,21 +701,42 @@ export default class AutofillService {
     }
 
     private findMatchingFieldIndex(field: AutofillField, names: string[]): number {
-        let matchingIndex = -1;
-        if (field.htmlID != null && field.htmlID !== '') {
-            matchingIndex = names.indexOf(field.htmlID.toLowerCase());
-        }
-        if (matchingIndex < 0 && field.htmlName != null && field.htmlName !== '') {
-            matchingIndex = names.indexOf(field.htmlName.toLowerCase());
-        }
-        if (matchingIndex < 0 && field['label-tag'] != null && field['label-tag'] !== '') {
-            matchingIndex = names.indexOf(field['label-tag'].replace(/(?:\r\n|\r|\n)/g, '').trim().toLowerCase());
-        }
-        if (matchingIndex < 0 && field.placeholder != null && field.placeholder !== '') {
-            matchingIndex = names.indexOf(field.placeholder.toLowerCase());
+        for (let i = 0; i < names.length; i++) {
+            if (this.fieldPropertyIsMatch(field, 'htmlID', names[i])) {
+                return i;
+            }
+            if (this.fieldPropertyIsMatch(field, 'htmlName', names[i])) {
+                return i;
+            }
+            if (this.fieldPropertyIsMatch(field, 'label-tag', names[i])) {
+                return i;
+            }
+            if (this.fieldPropertyIsMatch(field, 'placeholder', names[i])) {
+                return i;
+            }
         }
 
-        return matchingIndex;
+        return -1;
+    }
+
+    private fieldPropertyIsMatch(field: any, property: string, name: string): boolean {
+        let fieldVal = field[property] as string;
+        if (fieldVal == null || fieldVal === '') {
+            return false;
+        }
+
+        fieldVal = fieldVal.replace(/(?:\r\n|\r|\n)/g, '');
+        if (name.startsWith('regex:')) {
+            try {
+                const regexParts = name.split(':', 2);
+                if (regexParts.length === 2) {
+                    const regex = new RegExp(regexParts[1], 'i');
+                    return regex.test(fieldVal);
+                }
+            } catch (e) { }
+        }
+
+        return fieldVal.toLowerCase() === name;
     }
 
     private fieldIsFuzzyMatch(field: AutofillField, names: string[]): boolean {
