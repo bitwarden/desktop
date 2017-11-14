@@ -14,6 +14,8 @@ angular
         $scope.otherCiphers = [];
         $scope.loaded = false;
         $scope.searchText = null;
+        $scope.inSidebar = utilsService.inSidebar($window);
+        $scope.disableSearch = utilsService.isEdge();
         document.getElementById('search').focus();
 
         $scope.$on('$viewContentLoaded', function () {

@@ -7,8 +7,6 @@ angular
         self.animation = '';
         self.xsBody = $window.screen.availHeight < 600;
         self.smBody = !self.xsBody && $window.screen.availHeight <= 800;
-        self.disableSearch = utilsService && utilsService.isEdge();
-        self.inSidebar = utilsService && utilsService.inSidebar($window);
 
         $transitions.onSuccess({}, function(transition) {
             const toParams = transition.params("to");

@@ -9,6 +9,7 @@ angular
         $scope.i18n = i18nService;
         $scope.showFolderCounts = !utilsService.isEdge();
         $scope.showOnlyFolderView = utilsService.isEdge();
+        $scope.disableSearch = utilsService.isEdge();
         document.getElementById('search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;
