@@ -1,6 +1,4 @@
-window.Papa = require('papaparse');
 require('clipboard');
-
 require('angular');
 
 require('angular-animate');
@@ -131,7 +129,6 @@ require('./settings/settingsEditFolderController.js');
 require('./settings/settingsPremiumController.js');
 require('./settings/settingsEnvironmentController.js');
 require('./tools/toolsPasswordGeneratorHistoryController.js');
-require('./tools/toolsExportController.js');
 
 // Bootstrap the angular application
 angular.element(function () {

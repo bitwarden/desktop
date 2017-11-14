@@ -180,8 +180,7 @@ angular
             })
             .state('export', {
                 url: '/export',
-                template: require('./tools/views/toolsExport.html'),
-                controller: 'toolsExportController',
+                component: 'export',
                 data: { authorize: true },
                 params: { animation: null }
             })
