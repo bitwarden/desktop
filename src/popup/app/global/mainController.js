@@ -21,48 +21,6 @@ angular
             }
         });
 
-        self.expandVault = function (e) {
-            $analytics.eventTrack('Expand Vault');
-
-            var href = $window.location.href;
-            if (utilsService.isEdge()) {
-                var popupIndex = href.indexOf('/popup/');
-                if (popupIndex > -1) {
-                    href = href.substring(popupIndex);
-                }
-            }
-
-            if (chrome.windows.create) {
-                if (href.indexOf('?uilocation=') > -1) {
-                    href = href.replace('uilocation=popup', 'uilocation=popout').replace('uilocation=tab', 'uilocation=popout')
-                        .replace('uilocation=sidebar', 'uilocation=popout');
-                }
-                else {
-                    var hrefParts = href.split('#');
-                    href = hrefParts[0] + '?uilocation=popout' + (hrefParts.length > 0 ? '#' + hrefParts[1] : '');
-                }
-
-                var bodyRect = document.querySelector('body').getBoundingClientRect();
-                chrome.windows.create({
-                    url: href,
-                    type: 'popup',
-                    width: bodyRect.width + 60,
-                    height: bodyRect.height
-                });
-
-                if (utilsService.inPopup($window)) {
-                    $window.close();
-                }
-            }
-            else {
-                href = href.replace('uilocation=popup', 'uilocation=tab').replace('uilocation=popout', 'uilocation=tab')
-                    .replace('uilocation=sidebar', 'uilocation=tab');
-                chrome.tabs.create({
-                    url: href
-                });
-            }
-        };
-
         chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
             if (msg.command === 'syncCompleted') {
                 $scope.$broadcast('syncCompleted', msg.successfully);

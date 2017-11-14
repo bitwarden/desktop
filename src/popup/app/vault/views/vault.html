@@ -1,6 +1,6 @@
 ﻿<div class="header header-search">
     <div class="left">
-        <a href="" ng-click="main.expandVault()"><i class="fa fa-external-link fa-rotate-270 fa-lg"></i></a>
+        <pop-out></pop-out>
     </div>
     <div class="search" ng-style="{'visibility': main.disableSearch ? 'hidden' : 'visible'}">
         <input type="search" placeholder="{{::i18n.searchVault}}" id="search" ng-model="searchText" />
