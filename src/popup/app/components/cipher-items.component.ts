@@ -9,11 +9,11 @@ class CipherItemsController implements ng.IController {
     }
 
     view(cipher: any) {
-        return this.onView()(cipher);
+        return this.onView({cipher});
     }
 
     select(cipher: any) {
-        return this.onSelected()(cipher);
+        return this.onSelected({cipher});
     }
 }
 

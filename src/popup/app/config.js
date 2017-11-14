@@ -110,8 +110,7 @@ angular
             })
             .state('tabs.current', {
                 url: '/current',
-                template: require('./current/views/current.html'),
-                controller: 'currentController'
+                component: 'current'
             })
             .state('tabs.vault', {
                 url: '/vault',
