@@ -31,7 +31,8 @@ class TokenRequest {
             obj.deviceType = this.device.type;
             obj.deviceIdentifier = this.device.identifier;
             obj.deviceName = this.device.name;
-            obj.devicePushToken = this.device.pushToken;
+            // no push tokens for browser apps yet
+            // obj.devicePushToken = this.device.pushToken;
         }
 
         if (this.token && this.provider !== null && (typeof this.provider !== 'undefined')) {
