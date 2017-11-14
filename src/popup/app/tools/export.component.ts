@@ -11,28 +11,35 @@ export class ExportController {
     i18n: any;
     masterPassword: string;
 
-    constructor(private $scope: any, private $state: any, private cryptoService: CryptoService,
+    constructor(private $state: any, private cryptoService: CryptoService,
         private toastr: any, private utilsService: UtilsService, private $analytics: any,
         private i18nService: any, private folderService: any, private cipherService: any,
         private $window: any, private userService: any) {
         this.i18n = i18nService;
-        this.$scope.submitPromise = null;
     }
 
     $onInit() {
         document.getElementById('master-password').focus();
     }
 
-    submit() {
-        const self = this;
-        this.$scope.submitPromise = this.checkPassword().then(() => {
-            return self.getCsv();
-        }).then((csv) => {
-            self.$analytics.eventTrack('Exported Data');
-            self.downloadFile(csv);
-        }, () => {
-            this.toastr.error(self.i18n.invalidMasterPassword, self.i18n.errorsOccurred);
-        });
+    async submit() {
+        if (this.masterPassword == null || this.masterPassword === '') {
+            this.toastr.error(this.i18nService.invalidMasterPassword, this.i18nService.errorsOccurred);
+            return;
+        }
+
+        const email = await this.userService.getEmail();
+        const key = this.cryptoService.makeKey(this.masterPassword, email);
+        const keyHash = await this.cryptoService.hashPassword(this.masterPassword, key);
+        const storedKeyHash = await this.cryptoService.getKeyHash();
+
+        if (storedKeyHash != null && keyHash != null && storedKeyHash === keyHash) {
+            const csv = await this.getCsv();
+            this.$analytics.eventTrack('Exported Data');
+            this.downloadFile(csv);
+        } else {
+            this.toastr.error(this.i18n.invalidMasterPassword, this.i18n.errorsOccurred);
+        }
     }
 
     private async checkPassword() {

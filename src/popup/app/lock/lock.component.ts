@@ -4,15 +4,16 @@ import { CryptoService } from '../../../services/abstractions/crypto.service';
 
 class LockController {
     i18n: any;
+    masterPassword: string;
 
-    constructor(public $scope: any, public $state: any, public i18nService: any,
-                public cryptoService: CryptoService, public toastr: any, public userService: any,
-                public SweetAlert: any, public $timeout: any) {
+    constructor(public $state: any, public i18nService: any,
+        public cryptoService: CryptoService, public toastr: any, public userService: any,
+        public SweetAlert: any) {
         this.i18n = i18nService;
+    }
 
-        $timeout(() => {
-            document.getElementById('master-password').focus();
-        });
+    $onInit() {
+        document.getElementById('master-password').focus();
     }
 
     logOut() {
@@ -30,12 +31,17 @@ class LockController {
     }
 
     async submit() {
+        if (this.masterPassword == null || this.masterPassword === '') {
+            this.toastr.error(this.i18nService.invalidMasterPassword, this.i18nService.errorsOccurred);
+            return;
+        }
+
         const email = await this.userService.getEmail();
-        const key = this.cryptoService.makeKey(this.$scope.masterPassword, email);
-        const keyHash = await this.cryptoService.hashPassword(this.$scope.masterPassword, key);
+        const key = this.cryptoService.makeKey(this.masterPassword, email);
+        const keyHash = await this.cryptoService.hashPassword(this.masterPassword, key);
         const storedKeyHash = await this.cryptoService.getKeyHash();
 
-        if (storedKeyHash && keyHash && storedKeyHash === keyHash) {
+        if (storedKeyHash != null && keyHash != null && storedKeyHash === keyHash) {
             await this.cryptoService.setKey(key);
             chrome.runtime.sendMessage({ command: 'unlocked' });
             this.$state.go('tabs.current');
