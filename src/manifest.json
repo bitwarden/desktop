@@ -111,5 +111,20 @@
   "web_accessible_resources": [
     "overlay/popup.html",
     "notification/bar.html"
-  ]
+  ],
+  "-ms-preload": {
+    "backgroundScript": "edge/backgroundScriptsAPIBridge.js",
+    "contentScript": "edge/contentScriptsAPIBridge.js"
+  },
+  "applications": {
+    "gecko": {
+      "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
+      "strict_min_version": "42.0"
+    }
+  },
+  "sidebar_action": {
+    "default_title": "bitwarden",
+    "default_panel": "popup/index.html?uilocation=sidebar",
+    "default_icon": "images/icon19.png"
+  }
 }

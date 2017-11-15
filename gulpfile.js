@@ -19,12 +19,6 @@ const paths = {
     cssDir: './src/popup/css/'
 };
 
-const sidebarActionManifestObj = {
-    "default_title": "bitwarden",
-    "default_panel": "popup/index.html?uilocation=sidebar",
-    "default_icon": "images/icon19.png"
-};
-
 function dist(browserName, manifest) {
     return gulp.src(paths.dist + '**/*')
         .pipe(gulpif(browserName !== 'edge', filter([
@@ -44,27 +38,24 @@ gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge']);
 
 gulp.task('dist:firefox', (cb) => {
     return dist('firefox', (manifest) => {
-        manifest.applications = {
-            gecko: {
-                id: '{446900e4-71c2-419f-a6a7-df9c091e268b}',
-                strict_min_version: '42.0'
-            }
-        };
-
-        manifest['sidebar_action'] = sidebarActionManifestObj;
+        delete manifest['-ms-preload'];
         return manifest;
     });
 });
 
 gulp.task('dist:opera', (cb) => {
     return dist('opera', (manifest) => {
-        manifest['sidebar_action'] = sidebarActionManifestObj;
+        delete manifest['-ms-preload'];
+        delete manifest.applications;
         return manifest;
     });
 });
 
 gulp.task('dist:chrome', (cb) => {
     return dist('chrome', (manifest) => {
+        delete manifest['-ms-preload'];
+        delete manifest.applications;
+        delete manifest.sidebar_action;
         return manifest;
     });
 });
@@ -97,10 +88,8 @@ function copyDistEdge(source, dest) {
             ]))
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'edge')))
             .pipe(gulpif('manifest.json', jeditor((manifest) => {
-                manifest['-ms-preload'] = {
-                    backgroundScript: 'edge/backgroundScriptsAPIBridge.js',
-                    contentScript: 'edge/contentScriptsAPIBridge.js'
-                };
+                delete manifest.applications;
+                delete manifest.sidebar_action;
                 return manifest;
             })))
             .pipe(gulp.dest(dest))
