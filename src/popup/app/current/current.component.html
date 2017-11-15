@@ -1,7 +1,5 @@
 ﻿<div class="header header-search">
-    <div class="left" ng-if="!$ctrl.inSidebar">
-        <pop-out></pop-out>
-    </div>
+    <pop-out ng-if="!$ctrl.inSidebar"></pop-out>
     <div class="left" ng-if="$ctrl.inSidebar">
         <a href="" ng-click="$ctrl.refresh()"><i class="fa fa-refresh fa-lg"></i></a>
     </div>
