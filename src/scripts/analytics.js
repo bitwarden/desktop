@@ -41,6 +41,9 @@
         if (paramIndex > -1) {
             pagePath = pagePath.substring(0, paramIndex);
         }
+        if (pagePath.indexOf('/!/') === 0) {
+            pagePath = pagePath.substring(2);
+        }
         return encodeURIComponent(pagePath);
     }
 
