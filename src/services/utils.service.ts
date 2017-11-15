@@ -300,7 +300,7 @@ export default class UtilsService implements UtilsServiceInterface {
         }
 
         const sectionItems = doc.querySelectorAll('.list-section-item');
-        for (const item of sectionItems) {
+        sectionItems.forEach((item) => {
             item.addEventListener('click', (e) => {
                 if (e.defaultPrevented) {
                     return;
@@ -340,11 +340,11 @@ export default class UtilsService implements UtilsServiceInterface {
                     }
                 }
             }, false);
-        }
+        });
 
         const sectionFormItems = doc.querySelectorAll(
             '.list-section-item input, .list-section-item select, .list-section-item textarea');
-        for (const item of sectionFormItems) {
+        sectionFormItems.forEach((item) => {
             item.addEventListener('focus', (e: Event) => {
                 const el = e.target as HTMLElement;
                 const cell = el.closest('.list-section-item');
@@ -364,7 +364,7 @@ export default class UtilsService implements UtilsServiceInterface {
 
                 cell.classList.remove('active');
             }, false);
-        }
+        });
     }
 
     getDomain(uriString: string): string {
