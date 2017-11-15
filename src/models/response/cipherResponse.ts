@@ -25,9 +25,9 @@ class CipherResponse {
 
         if (response.Attachments != null) {
             this.attachments = [];
-            for (const attachment of response.Attachments) {
+            response.Attachments.forEach((attachment: any) => {
                 this.attachments.push(new AttachmentResponse(attachment));
-            }
+            });
         }
     }
 }

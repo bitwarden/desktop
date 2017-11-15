@@ -1,3 +1,5 @@
+import { CipherType } from '../../../enums/cipherType.enum';
+
 import { UtilsService } from '../../../services/abstractions/utils.service';
 import * as template from './current.component.html';
 
@@ -15,10 +17,8 @@ class CurrentController {
     disableSearch: boolean = false;
 
     constructor($scope: any, private cipherService: any, private utilsService: UtilsService, private toastr: any,
-                private $window: any, private $state: any, private $timeout: any, private autofillService: any,
-                private $analytics: any, private i18nService: any, private constantsService: any,
-                private $filter: any) {
-
+        private $window: any, private $state: any, private $timeout: any, private autofillService: any,
+        private $analytics: any, private i18nService: any, private $filter: any) {
         this.i18n = i18nService;
         this.inSidebar = utilsService.inSidebar($window);
         this.disableSearch = utilsService.isEdge();
@@ -67,25 +67,22 @@ class CurrentController {
             this.toastr.error(this.i18nService.autofillError);
         }
 
-        this.autofillService
-            .doAutoFill({
-                cipher,
-                pageDetails: this.pageDetails,
-                fromBackground: false,
-            })
-            .then((totpCode: string) => {
-                this.$analytics.eventTrack('Autofilled');
-                if (totpCode && this.utilsService.isFirefox()) {
-                    this.utilsService.copyToClipboard(totpCode, document);
-                }
-                if (this.utilsService.inPopup(this.$window)) {
-                    this.$window.close();
-                }
-            })
-            .catch(() => {
-                this.$analytics.eventTrack('Autofilled Error');
-                this.toastr.error(this.i18nService.autofillError);
-            });
+        this.autofillService.doAutoFill({
+            cipher,
+            pageDetails: this.pageDetails,
+            fromBackground: false,
+        }).then((totpCode: string) => {
+            this.$analytics.eventTrack('Autofilled');
+            if (totpCode && this.utilsService.isFirefox()) {
+                this.utilsService.copyToClipboard(totpCode, document);
+            }
+            if (this.utilsService.inPopup(this.$window)) {
+                this.$window.close();
+            }
+        }).catch(() => {
+            this.$analytics.eventTrack('Autofilled Error');
+            this.toastr.error(this.i18nService.autofillError);
+        });
     }
 
     searchVault() {
@@ -116,21 +113,21 @@ class CurrentController {
             });
 
             const otherTypes = [
-                this.constantsService.cipherType.card,
-                this.constantsService.cipherType.identity,
+                CipherType.Card,
+                CipherType.Identity,
             ];
 
-            this.cipherService.getAllDecryptedForDomain(this.domain, otherTypes).then((ciphers: any) => {
+            this.cipherService.getAllDecryptedForDomain(this.domain, otherTypes).then((ciphers: any[]) => {
                 const loginCiphers: any = [];
                 const otherCiphers: any = [];
 
-                for (const cipher of ciphers) {
-                    if (cipher.type === this.constantsService.cipherType.login) {
+                ciphers.forEach((cipher) => {
+                    if (cipher.type === CipherType.Login) {
                         loginCiphers.push(cipher);
                     } else {
                         otherCiphers.push(cipher);
                     }
-                }
+                });
 
                 this.$timeout(() => {
                     this.loginCiphers = this.$filter('orderBy')(

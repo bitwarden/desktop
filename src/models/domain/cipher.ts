@@ -71,18 +71,18 @@ class Cipher extends Domain {
 
         if (obj.attachments != null) {
             this.attachments = [];
-            for (const attachment of obj.attachments) {
+            obj.attachments.forEach((attachment) => {
                 this.attachments.push(new Attachment(attachment, alreadyEncrypted));
-            }
+            });
         } else {
             this.attachments = null;
         }
 
         if (obj.fields != null) {
             this.fields = [];
-            for (const field of obj.fields) {
+            obj.fields.forEach((field) => {
                 this.fields.push(new Field(field, alreadyEncrypted));
-            }
+            });
         } else {
             this.fields = null;
         }

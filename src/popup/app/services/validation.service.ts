@@ -13,11 +13,11 @@ class ValidationService {
         } else if (!data.validationErrors) {
             errors.push(data.message ? data.message : defaultErrorMessage);
         } else {
-            for (const error of data.validationErrors) {
+            data.validationErrors.forEach((error: any) => {
                 error.forEach((item: string) => {
                     errors.push(item);
                 });
-            }
+            });
         }
 
         if (errors.length) {

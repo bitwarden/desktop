@@ -74,13 +74,13 @@ class CipherRequest {
 
         if (cipher.fields) {
             this.fields = [];
-            for (const field of cipher.fields) {
+            cipher.fields.forEach((field: any) => {
                 this.fields.push({
                     type: field.type,
                     name: field.name ? field.name.encryptedString : null,
                     value: field.value ? field.value.encryptedString : null,
                 });
-            }
+            });
         }
     }
 }
