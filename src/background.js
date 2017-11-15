@@ -936,7 +936,7 @@ var bg_isBackground = true,
 
     function fullSync(override) {
         override = override || false;
-        bg_syncService.getLastSync(function (lastSync) {
+        bg_syncService.getLastSync().then(function (lastSync) {
             var syncInternal = 6 * 60 * 60 * 1000; // 6 hours
             var lastSyncAgo = new Date() - lastSync;
             if (override || !lastSync || lastSyncAgo >= syncInternal) {
