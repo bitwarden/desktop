@@ -299,8 +299,16 @@ export default class UtilsService implements UtilsServiceInterface {
             throw new Error('doc parameter required');
         }
 
-        const sectionItems = doc.querySelectorAll('.list-section-item');
+        const sectionItems = doc.querySelectorAll(
+            '.list-section-item:not([data-bw-events="1"])');
+        const sectionFormItems = doc.querySelectorAll(
+            '.list-section-item:not([data-bw-events="1"]) input, ' +
+            '.list-section-item:not([data-bw-events="1"]) select, ' +
+            '.list-section-item:not([data-bw-events="1"]) textarea');
+
         sectionItems.forEach((item) => {
+            (item as HTMLElement).dataset.bwEvents = '1';
+
             item.addEventListener('click', (e) => {
                 if (e.defaultPrevented) {
                     return;
@@ -342,9 +350,10 @@ export default class UtilsService implements UtilsServiceInterface {
             }, false);
         });
 
-        const sectionFormItems = doc.querySelectorAll(
-            '.list-section-item input, .list-section-item select, .list-section-item textarea');
         sectionFormItems.forEach((item) => {
+            const itemCell = item.closest('.list-section-item');
+            (itemCell as HTMLElement).dataset.bwEvents = '1';
+
             item.addEventListener('focus', (e: Event) => {
                 const el = e.target as HTMLElement;
                 const cell = el.closest('.list-section-item');

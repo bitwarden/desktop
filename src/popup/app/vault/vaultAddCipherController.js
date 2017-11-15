@@ -47,6 +47,10 @@ angular
 
         $scope.typeChanged = function () {
             $scope.cipher.type = parseInt($scope.selectedType);
+
+            $timeout(function () {
+                utilsService.initListSectionItemListeners(document, angular);
+            }, 500);
         };
 
         $scope.savePromise = null;
@@ -95,6 +99,10 @@ angular
                 name: null,
                 value: null
             });
+
+            $timeout(function () {
+                utilsService.initListSectionItemListeners(document, angular);
+            }, 500);
         };
 
         $scope.removeField = function (field) {
