@@ -27,7 +27,13 @@ const sidebarActionManifestObj = {
 
 function dist(browserName, manifest) {
     return gulp.src(paths.dist + '**/*')
-        .pipe(gulpif(browserName !== 'edge', filter(['**', '!dist/edge/**/*', '!dist/popup/fonts/glyphicons*'])))
+        .pipe(gulpif(browserName !== 'edge', filter([
+            '**',
+            '!dist/edge/**/*',
+            '!dist/popup/fonts/*',
+            'dist/popup/fonts/Open_Sans*.woff',
+            'dist/popup/fonts/fontawesome*.woff'
+        ])))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
         .pipe(zip(`dist-${browserName}.zip`))
@@ -83,7 +89,12 @@ function copyDistEdge(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter(['**', '!dist/popup/fonts/glyphicons*']))
+            .pipe(filter([
+                '**',
+                '!dist/popup/fonts/*',
+                'dist/popup/fonts/Open_Sans*.woff',
+                'dist/popup/fonts/fontawesome*.woff'
+            ]))
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'edge')))
             .pipe(gulpif('manifest.json', jeditor((manifest) => {
                 manifest['-ms-preload'] = {
