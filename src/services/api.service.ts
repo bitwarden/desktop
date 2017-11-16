@@ -89,16 +89,23 @@ export default class ApiService {
             method: 'POST',
         }));
 
-        const responseJson = await response.json();
-        if (response.status === 200) {
-            return new IdentityTokenResponse(responseJson);
-        } else if (response.status === 400 && responseJson && responseJson.TwoFactorProviders2 &&
-            Object.keys(responseJson.TwoFactorProviders2).length) {
-            await this.tokenService.clearTwoFactorToken(request.email);
-            return responseJson.TwoFactorProviders2;
-        } else {
-            return Promise.reject(new ErrorResponse(responseJson, response.status, true));
+        let responseJson: any = null;
+        const typeHeader = response.headers.get('content-type');
+        if (typeHeader != null && typeHeader.indexOf('application/json') > -1) {
+            responseJson = await response.json();
         }
+
+        if (responseJson != null) {
+            if (response.status === 200) {
+                return new IdentityTokenResponse(responseJson);
+            } else if (response.status === 400 && responseJson.TwoFactorProviders2 &&
+                Object.keys(responseJson.TwoFactorProviders2).length) {
+                await this.tokenService.clearTwoFactorToken(request.email);
+                return responseJson.TwoFactorProviders2;
+            }
+        }
+
+        return Promise.reject(new ErrorResponse(responseJson, response.status, true));
     }
 
     async refreshIdentityToken(): Promise<any> {
@@ -375,8 +382,13 @@ export default class ApiService {
             return null;
         }
 
-        const responseJson = await response.json();
-        return new ErrorResponse(responseJson, response.status);
+        let responseJson: any = null;
+        const typeHeader = response.headers.get('content-type');
+        if (typeHeader != null && typeHeader.indexOf('application/json') > -1) {
+            responseJson = await response.json();
+        }
+
+        return new ErrorResponse(responseJson, response.status, tokenError);
     }
 
     private async handleTokenState(): Promise<string> {
@@ -389,7 +401,6 @@ export default class ApiService {
         }
 
         return 'Bearer ' + accessToken;
-        // TODO: handle error
     }
 
     private async doRefreshToken(): Promise<IdentityTokenResponse> {
@@ -418,7 +429,8 @@ export default class ApiService {
             await this.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken);
             return tokenResponse;
         } else {
-            return Promise.reject(response);
+            const error = await this.handleError(response, true);
+            return Promise.reject(error);
         }
     }
 
