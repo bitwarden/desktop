@@ -60,7 +60,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin([
-            path.resolve(__dirname, 'dist/*')
+            path.resolve(__dirname, 'build/*')
         ]),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'popup/vendor',
@@ -100,6 +100,6 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'build')
     }
 };

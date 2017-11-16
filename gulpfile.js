@@ -12,7 +12,7 @@ const gulp = require('gulp'),
     del = require('del');
 
 const paths = {
-    releases: './releases/',
+    build: './build/',
     dist: './dist/',
     libDir: './src/lib/',
     npmDir: './node_modules/',
@@ -21,18 +21,18 @@ const paths = {
 };
 
 const fontsFilter = [
-    '!dist/popup/fonts/*',
-    'dist/popup/fonts/Open_Sans*.woff',
-    'dist/popup/fonts/fontawesome*.woff'
+    '!build/popup/fonts/*',
+    'build/popup/fonts/Open_Sans*.woff',
+    'build/popup/fonts/fontawesome*.woff'
 ];
 
 function dist(browserName, manifest) {
-    return gulp.src(paths.dist + '**/*')
-        .pipe(filter(['**', '!dist/edge/**/*'].concat(fontsFilter)))
+    return gulp.src(paths.build + '**/*')
+        .pipe(filter(['**', '!build/edge/**/*'].concat(fontsFilter)))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
         .pipe(zip(`dist-${browserName}.zip`))
-        .pipe(gulp.dest(paths.releases));
+        .pipe(gulp.dest(paths.dist));
 }
 
 gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge']);
@@ -63,12 +63,12 @@ gulp.task('dist:chrome', (cb) => {
 
 // Since Edge extensions require makeappx to be run we temporarily store it in a folder.
 gulp.task('dist:edge', (cb) => {
-    const edgePath = paths.releases + 'Edge/';
+    const edgePath = paths.dist + 'Edge/';
     const extensionPath = edgePath + 'Extension/';
-    const appxPath = paths.releases + 'dist-edge.appx';
+    const appxPath = paths.dist + 'dist-edge.appx';
 
     return del([edgePath, appxPath])
-        .then(() => edgeCopyDist(paths.dist + '**/*', extensionPath))
+        .then(() => edgeCopyBuild(paths.build + '**/*', extensionPath))
         .then(() => edgeCopyAssets('./store/windows/**/*', edgePath))
         .then(() => {
             // makeappx.exe must be in your system's path already
@@ -79,7 +79,7 @@ gulp.task('dist:edge', (cb) => {
         });
 });
 
-function edgeCopyDist(source, dest) {
+function edgeCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)

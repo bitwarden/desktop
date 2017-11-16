@@ -9,5 +9,5 @@ webfonts/
 *.crx
 *.pem
 *.zip
-releases/
+build/
 package-lock.json
