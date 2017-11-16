@@ -8,7 +8,8 @@ const gulp = require('gulp'),
     child = require('child_process'),
     zip = require('gulp-zip'),
     manifest = require('./src/manifest.json'),
-    xmlpoke = require('gulp-xmlpoke');
+    xmlpoke = require('gulp-xmlpoke'),
+    del = require('del');
 
 const paths = {
     releases: './releases/',
@@ -19,15 +20,15 @@ const paths = {
     cssDir: './src/popup/css/'
 };
 
+const fontsFilter = [
+    '!dist/popup/fonts/*',
+    'dist/popup/fonts/Open_Sans*.woff',
+    'dist/popup/fonts/fontawesome*.woff'
+];
+
 function dist(browserName, manifest) {
     return gulp.src(paths.dist + '**/*')
-        .pipe(gulpif(browserName !== 'edge', filter([
-            '**',
-            '!dist/edge/**/*',
-            '!dist/popup/fonts/*',
-            'dist/popup/fonts/Open_Sans*.woff',
-            'dist/popup/fonts/fontawesome*.woff'
-        ])))
+        .pipe(filter(['**', '!dist/edge/**/*'].concat(fontsFilter)))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
         .pipe(zip(`dist-${browserName}.zip`))
@@ -64,28 +65,25 @@ gulp.task('dist:chrome', (cb) => {
 gulp.task('dist:edge', (cb) => {
     const edgePath = paths.releases + 'Edge/';
     const extensionPath = edgePath + 'Extension/';
+    const appxPath = paths.releases + 'dist-edge.appx';
 
-    return copyDistEdge(paths.dist + '**/*', extensionPath)
-        .then(copyAssetsEdge('./store/windows/**/*', edgePath))
+    return del([edgePath, appxPath])
+        .then(() => edgeCopyDist(paths.dist + '**/*', extensionPath))
+        .then(() => edgeCopyAssets('./store/windows/**/*', edgePath))
         .then(() => {
             // makeappx.exe must be in your system's path already
-            child.spawn('makeappx.exe', ['pack', '/h', 'SHA256', '/d', edgePath, '/p', paths.releases + 'dist-edge.appx']);
+            child.spawn('makeappx.exe', ['pack', '/h', 'SHA256', '/d', edgePath, '/p', appxPath]);
             return cb;
         }, () => {
             return cb;
         });
 });
 
-function copyDistEdge(source, dest) {
+function edgeCopyDist(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter([
-                '**',
-                '!dist/popup/fonts/*',
-                'dist/popup/fonts/Open_Sans*.woff',
-                'dist/popup/fonts/fontawesome*.woff'
-            ]))
+            .pipe(filter(['**'].concat(fontsFilter)))
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'edge')))
             .pipe(gulpif('manifest.json', jeditor((manifest) => {
                 delete manifest.applications;
@@ -97,7 +95,7 @@ function copyDistEdge(source, dest) {
     });
 }
 
-function copyAssetsEdge(source, dest) {
+function edgeCopyAssets(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
@@ -137,9 +135,7 @@ gulp.task('lint', () => {
         //'./src/content/**/*.js',
         './src/overlay/**/*.js',
         './src/background.js'
-    ])
-        .pipe(jshint({
-            esversion: 6
-        }))
-        .pipe(jshint.reporter('default'));
+    ]).pipe(jshint({
+        esversion: 6
+    })).pipe(jshint.reporter('default'));
 });
