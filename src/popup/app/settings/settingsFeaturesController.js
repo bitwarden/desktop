@@ -1,8 +1,12 @@
-﻿angular
+angular
     .module('bit.settings')
 
     .controller('settingsFeaturesController', function ($scope, i18nService, $analytics, constantsService, utilsService,
         totpService, stateService, $timeout) {
+        $timeout(function () {
+            utilsService.initListSectionItemListeners(document, angular);
+        }, 500);
+
         $scope.i18n = i18nService;
         $scope.disableGa = false;
         $scope.disableAddLoginNotification = false;
