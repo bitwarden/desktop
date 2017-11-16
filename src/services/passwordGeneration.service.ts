@@ -156,7 +156,6 @@ export default class PasswordGenerationService {
         });
     }
 
-    // TODO: remove in favor of static
     generatePassword(options: any) {
         return PasswordGenerationService.generatePassword(options);
     }

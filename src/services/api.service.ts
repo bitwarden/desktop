@@ -366,8 +366,7 @@ export default class ApiService {
     // Helpers
 
     private async handleError(response: Response, tokenError: boolean): Promise<ErrorResponse> {
-        if (response != null && (tokenError && response.status === 400) ||
-            response.status === 401 || response.status === 403) {
+        if ((tokenError && response.status === 400) || response.status === 401 || response.status === 403) {
             if (this.logoutCallback) {
                 this.logoutCallback(true);
             } else {

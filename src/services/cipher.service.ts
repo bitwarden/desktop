@@ -68,7 +68,7 @@ export default class CipherService {
     decryptedCipherCache: any[];
 
     constructor(private cryptoService: CryptoService, private userService: UserService,
-                private settingsService: SettingsService, private apiService: ApiService) {
+        private settingsService: SettingsService, private apiService: ApiService) {
     }
 
     clearCache(): void {
@@ -312,12 +312,19 @@ export default class CipherService {
                 const blob = new Blob([encData], { type: 'application/octet-stream' });
                 fd.append('data', blob, encFileName.encryptedString);
 
-                const response = await self.apiService.postCipherAttachment(cipher.id, fd);
-                // TODO: handle error response
+                let response: CipherResponse;
+                try {
+                    response = await self.apiService.postCipherAttachment(cipher.id, fd);
+                } catch (e) {
+                    reject((e as ErrorResponse).getSingleMessage());
+                    return;
+                }
+
                 const userId = await self.userService.getUserId();
                 const data = new CipherData(response, userId);
                 this.upsert(data);
                 resolve(new Cipher(data));
+
             };
 
             reader.onerror = (evt) => {
@@ -404,12 +411,13 @@ export default class CipherService {
     }
 
     async deleteAttachmentWithServer(id: string, attachmentId: string): Promise<void> {
-        await this.apiService.deleteCipherAttachment(id, attachmentId);
+        try {
+            await this.apiService.deleteCipherAttachment(id, attachmentId);
+        } catch (e) {
+            return Promise.reject((e as ErrorResponse).getSingleMessage());
+        }
         await this.deleteAttachment(id, attachmentId);
-        // TODO: handle error
     }
-
-    // TODO: remove in favor of static refs
 
     sortCiphersByLastUsed(a: any, b: any): number {
         return CipherService.sortCiphersByLastUsed(a, b);
@@ -498,21 +506,5 @@ export default class CipherService {
             default:
                 throw new Error('Unknown cipher type.');
         }
-    }
-
-    private handleErrorMessage(error: ErrorResponse, reject: Function): void {
-        if (error.validationErrors) {
-            for (const key in error.validationErrors) {
-                if (!error.validationErrors.hasOwnProperty(key)) {
-                    continue;
-                }
-                if (error.validationErrors[key].length) {
-                    reject(error.validationErrors[key][0]);
-                    return;
-                }
-            }
-        }
-        reject(error.message);
-        return;
     }
 }

@@ -9,8 +9,6 @@ class ErrorResponse {
             errorModel = response.ErrorModel;
         } else if (response) {
             errorModel = response;
-        //} else if (response.responseText && response.responseText.indexOf('{') === 0) {
-        //    errorModel = JSON.parse(response.responseText);
         }
 
         if (errorModel) {
@@ -18,6 +16,20 @@ class ErrorResponse {
             this.validationErrors = errorModel.ValidationErrors;
         }
         this.statusCode = status;
+    }
+
+    getSingleMessage(): string {
+        if (this.validationErrors) {
+            for (const key in this.validationErrors) {
+                if (!this.validationErrors.hasOwnProperty(key)) {
+                    continue;
+                }
+                if (this.validationErrors[key].length) {
+                    return this.validationErrors[key][0];
+                }
+            }
+        }
+        return this.message;
     }
 }
 
