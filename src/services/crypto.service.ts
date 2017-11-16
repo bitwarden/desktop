@@ -74,9 +74,9 @@ export default class CryptoService implements CryptoServiceInterface {
 
     setOrgKeys(orgs: ProfileOrganizationResponse[]): Promise<{}> {
         const orgKeys: any = {};
-        for (const org of orgs) {
+        orgs.forEach((org) => {
             orgKeys[org.id] = org.key;
-        }
+        });
 
         return UtilsService.saveObjToStorage(Keys.encOrgKeys, orgKeys);
     }

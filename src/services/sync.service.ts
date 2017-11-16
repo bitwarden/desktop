@@ -23,9 +23,9 @@ export default class SyncService {
     syncInProgress: boolean = false;
 
     constructor(private userService: UserService, private apiService: ApiService,
-                private settingsService: SettingsService, private folderService: FolderService,
-                private cipherService: CipherService, private cryptoService: CryptoService,
-                private logoutCallback: Function) {
+        private settingsService: SettingsService, private folderService: FolderService,
+        private cipherService: CipherService, private cryptoService: CryptoService,
+        private logoutCallback: Function) {
     }
 
     async getLastSync() {
@@ -135,17 +135,17 @@ export default class SyncService {
 
     private async syncFolders(userId: string, response: FolderResponse[]) {
         const folders: { [id: string]: FolderData; } = {};
-        for (const f of response) {
+        response.forEach((f) => {
             folders[f.id] = new FolderData(f, userId);
-        }
+        });
         return await this.folderService.replace(folders);
     }
 
     private async syncCiphers(userId: string, response: CipherResponse[]) {
         const ciphers: { [id: string]: CipherData; } = {};
-        for (const c of response) {
+        response.forEach((c) => {
             ciphers[c.id] = new CipherData(c, userId);
-        }
+        });
         return await this.cipherService.replace(ciphers);
     }
 
@@ -156,11 +156,11 @@ export default class SyncService {
         }
 
         if (response != null && response.globalEquivalentDomains != null) {
-            for (const global of response.globalEquivalentDomains) {
+            response.globalEquivalentDomains.forEach((global) => {
                 if (global.domains.length > 0) {
                     eqDomains.push(global.domains);
                 }
-            }
+            });
         }
 
         return this.settingsService.setEquivalentDomains(eqDomains);

@@ -20,7 +20,7 @@ export default class FolderService {
     decryptedFolderCache: any[];
 
     constructor(private cryptoService: CryptoService, private userService: UserService,
-                private i18nService: any, private apiService: ApiService) {
+        private i18nService: any, private apiService: ApiService) {
     }
 
     clearCache(): void {
@@ -73,13 +73,13 @@ export default class FolderService {
             throw new Error('No key.');
         }
 
-        const promises = [];
+        const promises: Array<Promise<any>> = [];
         const folders = await this.getAll();
-        for (const folder of folders) {
+        folders.forEach((folder) => {
             promises.push(folder.decrypt().then((f: any) => {
                 decFolders.push(f);
             }));
-        }
+        });
 
         await Promise.all(promises);
         this.decryptedFolderCache = decFolders;
@@ -114,9 +114,9 @@ export default class FolderService {
             const f = folder as FolderData;
             folders[f.id] = f;
         } else {
-            for (const f of (folder as FolderData[])) {
+            (folder as FolderData[]).forEach((f) => {
                 folders[f.id] = f;
-            }
+            });
         }
 
         await UtilsService.saveObjToStorage(Keys.foldersPrefix + userId, folders);
@@ -146,9 +146,9 @@ export default class FolderService {
             const i = id as string;
             delete folders[id];
         } else {
-            for (const i of (id as string[])) {
+            (id as string[]).forEach((i) => {
                 delete folders[i];
-            }
+            });
         }
 
         await UtilsService.saveObjToStorage(Keys.foldersPrefix + userId, folders);

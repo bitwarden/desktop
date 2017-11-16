@@ -28,9 +28,9 @@ class ProfileResponse {
         this.securityStamp = response.SecurityStamp;
 
         if (response.Organizations) {
-            for (const org of response.Organizations) {
+            response.Organizations.forEach((org: any) => {
                 this.organizations.push(new ProfileOrganizationResponse(org));
-            }
+            });
         }
     }
 }

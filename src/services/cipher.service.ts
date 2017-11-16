@@ -165,13 +165,13 @@ export default class CipherService {
             throw new Error('No key.');
         }
 
-        const promises = [];
+        const promises: any[] = [];
         const ciphers = await this.getAll();
-        for (const cipher of ciphers) {
+        ciphers.forEach((cipher) => {
             promises.push(cipher.decrypt().then((c: any) => {
                 decCiphers.push(c);
             }));
-        }
+        });
 
         await Promise.all(promises);
         this.decryptedCipherCache = decCiphers;
@@ -180,13 +180,13 @@ export default class CipherService {
 
     async getAllDecryptedForFolder(folderId: string): Promise<any[]> {
         const ciphers = await this.getAllDecrypted();
-        const ciphersToReturn = [];
+        const ciphersToReturn: any[] = [];
 
-        for (const cipher of ciphers) {
+        ciphers.forEach((cipher) => {
             if (cipher.folderId === folderId) {
                 ciphersToReturn.push(cipher);
             }
-        }
+        });
 
         return ciphersToReturn;
     }
@@ -199,11 +199,11 @@ export default class CipherService {
         const eqDomainsPromise = domain == null ? Promise.resolve([]) :
             this.settingsService.getEquivalentDomains().then((eqDomains: any[][]) => {
                 let matches: any[] = [];
-                for (const eqDomain of eqDomains) {
+                eqDomains.forEach((eqDomain) => {
                     if (eqDomain.length && eqDomain.indexOf(domain) >= 0) {
                         matches = matches.concat(eqDomain);
                     }
-                }
+                });
 
                 if (!matches.length) {
                     matches.push(domain);
@@ -215,16 +215,16 @@ export default class CipherService {
         const result = await Promise.all([eqDomainsPromise, this.getAllDecrypted()]);
         const matchingDomains = result[0];
         const ciphers = result[1];
-        const ciphersToReturn = [];
+        const ciphersToReturn: any[] = [];
 
-        for (const cipher of ciphers) {
+        ciphers.forEach((cipher) => {
             if (domain && cipher.type === CipherType.Login && cipher.login.domain &&
                 matchingDomains.indexOf(cipher.login.domain) > -1) {
                 ciphersToReturn.push(cipher);
             } else if (includeOtherTypes && includeOtherTypes.indexOf(cipher.type) > -1) {
                 ciphersToReturn.push(cipher);
             }
-        }
+        });
 
         return ciphersToReturn;
     }
@@ -259,7 +259,8 @@ export default class CipherService {
             return;
         }
 
-        for (const cached of this.decryptedCipherCache) {
+        for (let i = 0; i < this.decryptedCipherCache.length; i++) {
+            const cached = this.decryptedCipherCache[i];
             if (cached.id === id) {
                 cached.localData = ciphersLocalData[id];
                 break;
@@ -345,9 +346,9 @@ export default class CipherService {
             const c = cipher as CipherData;
             ciphers[c.id] = c;
         } else {
-            for (const c of (cipher as CipherData[])) {
+            (cipher as CipherData[]).forEach((c) => {
                 ciphers[c.id] = c;
-            }
+            });
         }
 
         await UtilsService.saveObjToStorage(Keys.ciphersPrefix + userId, ciphers);
@@ -377,9 +378,9 @@ export default class CipherService {
             const i = id as string;
             delete ciphers[id];
         } else {
-            for (const i of (id as string[])) {
+            (id as string[]).forEach((i) => {
                 delete ciphers[i];
-            }
+            });
         }
 
         await UtilsService.saveObjToStorage(Keys.ciphersPrefix + userId, ciphers);

@@ -9,9 +9,9 @@ class DomainsResponse {
 
         this.globalEquivalentDomains = [];
         if (response.GlobalEquivalentDomains) {
-            for (const domain of response.GlobalEquivalentDomains) {
+            response.GlobalEquivalentDomains.forEach((domain: any) => {
                 this.globalEquivalentDomains.push(new GlobalDomainResponse(domain));
-            }
+            });
         }
     }
 }

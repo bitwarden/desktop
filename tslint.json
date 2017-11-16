@@ -36,6 +36,7 @@
     ],
     "no-empty": [ true, "allow-empty-catch" ],
     "object-literal-sort-keys": false,
+    "prefer-for-of": false,
     "quotemark": [ true, "single" ],
     "whitespace": [
       true,

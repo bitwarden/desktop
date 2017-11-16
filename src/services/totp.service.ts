@@ -62,13 +62,13 @@ export default class TotpService {
 
     private buff2hex(buff: ArrayBuffer): string {
         const bytes = new Uint8Array(buff);
-        const hex = [];
-        for (const b of bytes) {
+        const hex: string[] = [];
+        bytes.forEach((b) => {
             // tslint:disable-next-line
             hex.push((b >>> 4).toString(16));
             // tslint:disable-next-line
             hex.push((b & 0xF).toString(16));
-        }
+        });
         return hex.join('');
     }
 
@@ -76,12 +76,12 @@ export default class TotpService {
         s = s.toUpperCase();
         let cleanedInput = '';
 
-        for (const c of s) {
-            if (b32Chars.indexOf(c) < 0) {
+        for (let i = 0; i < s.length; i++) {
+            if (b32Chars.indexOf(s[i]) < 0) {
                 continue;
             }
 
-            cleanedInput += c;
+            cleanedInput += s[i];
         }
         s = cleanedInput;
 

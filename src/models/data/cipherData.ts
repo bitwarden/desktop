@@ -62,16 +62,16 @@ class CipherData {
 
         if (response.data.Fields != null) {
             this.fields = [];
-            for (const field of response.data.Fields) {
+            response.data.Fields.forEach((field: any) => {
                 this.fields.push(new FieldData(field));
-            }
+            });
         }
 
         if (response.attachments != null) {
             this.attachments = [];
-            for (const attachment of response.attachments) {
+            response.attachments.forEach((attachment) => {
                 this.attachments.push(new AttachmentData(attachment));
-            }
+            });
         }
     }
 }

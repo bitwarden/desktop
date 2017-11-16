@@ -15,15 +15,15 @@ class SyncResponse {
         }
 
         if (response.Folders) {
-            for (const folder of response.Folders) {
+            response.Folders.forEach((folder: any) => {
                 this.folders.push(new FolderResponse(folder));
-            }
+            });
         }
 
         if (response.Ciphers) {
-            for (const cipher of response.Ciphers) {
+            response.Ciphers.forEach((cipher: any) => {
                 this.ciphers.push(new CipherResponse(cipher));
-            }
+            });
         }
 
         if (response.Domains) {

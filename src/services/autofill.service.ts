@@ -104,7 +104,8 @@ export default class AutofillService {
                 continue;
             }
 
-            for (const pf of passwordFields) {
+            for (let i = 0; i < passwordFields.length; i++) {
+                const pf = passwordFields[i];
                 if (formKey !== pf.form) {
                     continue;
                 }
@@ -135,10 +136,10 @@ export default class AutofillService {
         }
 
         let didAutofill = false;
-        for (const pd of options.pageDetails) {
+        options.pageDetails.forEach((pd: any) => {
             // make sure we're still on correct tab
             if (pd.tab.id !== tab.id || pd.tab.url !== tab.url) {
-                continue;
+                return;
             }
 
             const fillScript = this.generateFillScript(pd.details, {
@@ -147,7 +148,7 @@ export default class AutofillService {
             });
 
             if (!fillScript || !fillScript.script || !fillScript.script.length) {
-                continue;
+                return;
             }
 
             didAutofill = true;
@@ -164,7 +165,7 @@ export default class AutofillService {
             if (options.cipher.type !== CipherType.Login || totpPromise ||
                 (options.fromBackground && this.utilsService.isFirefox()) || options.skipTotp ||
                 !options.cipher.login.totp || !this.tokenService.getPremium()) {
-                continue;
+                return;
             }
 
             totpPromise = this.totpService.isAutoCopyEnabled().then((enabled) => {
@@ -180,7 +181,7 @@ export default class AutofillService {
 
                 return code;
             });
-        }
+        });
 
         if (didAutofill) {
             if (totpPromise != null) {
@@ -248,17 +249,17 @@ export default class AutofillService {
         if (fields && fields.length) {
             const fieldNames: string[] = [];
 
-            for (const f of fields) {
+            fields.forEach((f: any) => {
                 if (f.name && f.name !== '') {
                     fieldNames.push(f.name.toLowerCase());
                 } else {
                     fieldNames.push(null);
                 }
-            }
+            });
 
-            for (const field of pageDetails.fields) {
+            pageDetails.fields.forEach((field: any) => {
                 if (filledFields.hasOwnProperty(field.opid) || !field.viewable) {
-                    continue;
+                    return;
                 }
 
                 const matchingIndex = this.findMatchingFieldIndex(field, fieldNames);
@@ -267,7 +268,7 @@ export default class AutofillService {
                     fillScript.script.push(['click_on_opid', field.opid]);
                     fillScript.script.push(['fill_by_opid', field.opid, fields[matchingIndex].value]);
                 }
-            }
+            });
         }
 
         switch (options.cipher.type) {
@@ -318,13 +319,13 @@ export default class AutofillService {
             }
 
             const passwordFieldsForForm: AutofillField[] = [];
-            for (const passField of passwordFields) {
+            passwordFields.forEach((passField) => {
                 if (formKey === passField.form) {
                     passwordFieldsForForm.push(passField);
                 }
-            }
+            });
 
-            for (const passField of passwordFields) {
+            passwordFields.forEach((passField) => {
                 pf = passField;
                 passwords.push(pf);
 
@@ -340,7 +341,7 @@ export default class AutofillService {
                         usernames.push(username);
                     }
                 }
-            }
+            });
         }
 
         if (passwordFields.length && !passwords.length) {
@@ -366,33 +367,33 @@ export default class AutofillService {
 
         if (!passwordFields.length && !options.skipUsernameOnlyFill) {
             // No password fields on this page. Let's try to just fuzzy fill the username.
-            for (const f of pageDetails.fields) {
+            pageDetails.fields.forEach((f: any) => {
                 if (f.viewable && (f.type === 'text' || f.type === 'email' || f.type === 'tel') &&
                     this.fieldIsFuzzyMatch(f, UsernameFieldNames)) {
                     usernames.push(f);
                 }
-            }
+            });
         }
 
-        for (const u of usernames) {
+        usernames.forEach((u) => {
             if (filledFields.hasOwnProperty(u.opid)) {
-                continue;
+                return;
             }
 
             filledFields[u.opid] = u;
             fillScript.script.push(['click_on_opid', u.opid]);
             fillScript.script.push(['fill_by_opid', u.opid, login.username]);
-        }
+        });
 
-        for (const p of passwords) {
+        passwords.forEach((p) => {
             if (filledFields.hasOwnProperty(p.opid)) {
-                continue;
+                return;
             }
 
             filledFields[p.opid] = p;
             fillScript.script.push(['click_on_opid', p.opid]);
             fillScript.script.push(['fill_by_opid', p.opid, login.password]);
-        }
+        });
 
         fillScript = this.setFillScriptForFocus(filledFields, fillScript);
         return fillScript;
@@ -407,10 +408,10 @@ export default class AutofillService {
 
         const fillFields: { [id: string]: AutofillField; } = {};
 
-        for (const f of pageDetails.fields) {
-            for (const attr of CardAttributes) {
+        pageDetails.fields.forEach((f: any) => {
+            CardAttributes.forEach((attr) => {
                 if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
-                    continue;
+                    return;
                 }
 
                 // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
@@ -446,8 +447,8 @@ export default class AutofillService {
                     ['cc-type', 'card-type', 'card-brand', 'cc-brand'])) {
                     fillFields.brand = f;
                 }
-            }
-        }
+            });
+        });
 
         const card = options.cipher.card;
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'cardholderName');
@@ -481,10 +482,10 @@ export default class AutofillService {
 
         const fillFields: { [id: string]: AutofillField; } = {};
 
-        for (const f of pageDetails.fields) {
-            for (const attr of IdentityAttributes) {
+        pageDetails.fields.forEach((f: any) => {
+            IdentityAttributes.forEach((attr) => {
                 if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
-                    continue;
+                    return;
                 }
 
                 // ref https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill
@@ -544,8 +545,8 @@ export default class AutofillService {
                     ['company', 'company-name', 'organization', 'organization-name'])) {
                     fillFields.company = f;
                 }
-            }
-        }
+            });
+        });
 
         const identity = options.cipher.identity;
         this.makeScriptAction(fillScript, identity, fillFields, filledFields, 'title');
@@ -645,7 +646,8 @@ export default class AutofillService {
 
     private isFieldMatch(value: string, options: string[], containsOptions?: string[]): boolean {
         value = value.trim().toLowerCase().replace(/[^a-zA-Z]+/g, '');
-        for (let option of options) {
+        for (let i = 0; i < options.length; i++) {
+            let option = options[i];
             const checkValueContains = containsOptions == null || containsOptions.indexOf(option) > -1;
             option = option.replace(/-/g, '');
             if (value === option || (checkValueContains && value.indexOf(option) > -1)) {
@@ -669,11 +671,11 @@ export default class AutofillService {
 
     private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean) {
         const arr: AutofillField[] = [];
-        for (const f of pageDetails.fields) {
+        pageDetails.fields.forEach((f: any) => {
             if (f.type === 'password' && (canBeHidden || f.viewable)) {
                 arr.push(f);
             }
-        }
+        });
 
         return arr;
     }
@@ -681,7 +683,8 @@ export default class AutofillService {
     private findUsernameField(pageDetails: AutofillPageDetails, passwordField: AutofillField, canBeHidden: boolean,
         withoutForm: boolean) {
         let usernameField: AutofillField = null;
-        for (const f of pageDetails.fields) {
+        for (let i = 0; i < pageDetails.fields.length; i++) {
+            const f = pageDetails.fields[i];
             if (f.elementNumber >= passwordField.elementNumber) {
                 break;
             }
@@ -738,7 +741,8 @@ export default class AutofillService {
             const csvParts = name.split('=', 2);
             if (csvParts.length === 2) {
                 const csvVals = csvParts[1].split(',');
-                for (const val of csvVals) {
+                for (let i = 0; i < csvVals.length; i++) {
+                    const val = csvVals[i];
                     if (val != null && val.trim().toLowerCase() === fieldVal.toLowerCase()) {
                         return true;
                     }
@@ -774,8 +778,8 @@ export default class AutofillService {
             return false;
         }
 
-        for (const o of options) {
-            if (value.indexOf(o) > -1) {
+        for (let i = 0; i < options.length; i++) {
+            if (value.indexOf(options[i]) > -1) {
                 return true;
             }
         }
