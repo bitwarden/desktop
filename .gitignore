@@ -11,3 +11,4 @@ webfonts/
 *.zip
 build/
 package-lock.json
+coverage/

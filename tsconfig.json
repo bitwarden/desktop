@@ -4,7 +4,10 @@
     "module": "es6",
     "target": "ES2016",
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "types": [
+      "jasmine"
+    ]
   },
   "exclude": [
     "node_modules",
