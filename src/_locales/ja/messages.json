@@ -11,10 +11,10 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "安全なデータ保管庫へアクセスするためにログインまたはアカウントを作成してください。"
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "アカウントの作成"
   },
   "login": {
     "message": "ログイン"
@@ -26,157 +26,157 @@
     "message": "閉じる"
   },
   "submit": {
-    "message": "Submit"
+    "message": "送信"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Eメールアドレス"
   },
   "masterPass": {
     "message": "マスターパスワード"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "マスターパスワードは、パスワード保管庫へのアクセスに使用するパスワードです。あなたのマスターパスワードを忘れないように注意してください。忘れた場合、パスワードを回復する方法はありません。"
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "マスターパスワードのヒントは、パスワードを忘れた場合に役立ちます。"
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "新しいパスワードを再入力"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "マスターパスワードのヒント (省略可能)"
   },
   "tab": {
-    "message": "Tab"
+    "message": "タブ"
   },
   "myVault": {
     "message": "My Vault"
   },
   "tools": {
-    "message": "Tools"
+    "message": "ツール"
   },
   "settings": {
-    "message": "Settings"
+    "message": "設定"
   },
   "currentTab": {
-    "message": "Current Tab"
+    "message": "現在のタブ"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "パスワードをコピー"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URIをコピー"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "ユーザー名をコピー"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "番号をコピー"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "セキュリティコードのコピー"
   },
   "autoFill": {
-    "message": "Auto-fill"
+    "message": "自動入力"
   },
   "generatePasswordCopied": {
-    "message": "Generate Password (copied)"
+    "message": "パスワードを生成(コピーされました)"
   },
   "noMatchingLogins": {
-    "message": "No matching logins."
+    "message": "一致するログインがありません。"
   },
   "vaultLocked": {
-    "message": "Vault is locked."
+    "message": "保管庫がロックされています。"
   },
   "autoFillInfo": {
-    "message": "There are no logins available to auto-fill for the current browser tab."
+    "message": "現在のブラウザータブに自動入力するログインはありません。"
   },
   "addLogin": {
-    "message": "Add a Login"
+    "message": "ログインを追加"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "アイテムを追加"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "パスワードのヒント"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "マスターパスワードのヒントを受信するアカウントのメールアドレスを入力してください。"
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "マスターパスワードのヒントを取得する"
   },
   "continue": {
     "message": "続ける"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "認証コード"
   },
   "account": {
-    "message": "Account"
+    "message": "アカウント"
   },
   "changeMasterPassword": {
-    "message": "Change Master Password"
+    "message": "マスターパスワードの変更"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "メールアドレスを変更"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "2段階認証"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "ログアウト"
   },
   "about": {
-    "message": "About"
+    "message": "アプリついて"
   },
   "version": {
-    "message": "Version"
+    "message": "バージョン"
   },
   "save": {
     "message": "保存"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "フォルダを追加"
   },
   "name": {
-    "message": "Name"
+    "message": "名前"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "フォルダを編集"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "フォルダを削除"
   },
   "folders": {
-    "message": "Folders"
+    "message": "フォルダ"
   },
   "noFolders": {
-    "message": "There are no folders to list."
+    "message": "一覧表示するフォルダはありません。"
   },
   "helpFeedback": {
     "message": "ヘルプ＆フィードバック"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "メールでのお問い合わせ"
   },
   "emailUsDirectly": {
-    "message": "Email us directly to get help or leave feedback."
+    "message": "ヘルプ、またはフィードバックを送信するために直接Eメールを送ります。"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "私達のWebサイトへ移動します。"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+    "message": "ヘルプ、ニュース、Eメール、および\/または bitwardenを使用する方法について詳しく知りたい場合はホームページをご覧ください。"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "バグレポートを提出します。"
   },
   "gitHubIssue": {
-    "message": "Open an issue at our GitHub repository."
+    "message": "私たちのGitHubリポジトリでissueを作成してください。"
   },
   "sync": {
-    "message": "Sync"
+    "message": "同期"
   },
   "syncVaultNow": {
     "message": "Sync Vault Now"
@@ -341,156 +341,156 @@
     "message": "On Locked"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "再起動時"
   },
   "never": {
-    "message": "Never"
+    "message": "行わない"
   },
   "security": {
-    "message": "Security"
+    "message": "セキュリティ"
   },
   "errorsOccurred": {
-    "message": "Errors have occurred"
+    "message": "エラーが発生しました。"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Eメールアドレスは必須項目です。"
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "無効なEメールアドレスです。"
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "マスターパスワードは必須項目です。"
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "マスターパスワードは、少なくとも8文字の長さでなければなりません。"
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "マスターパスワードが一致しません。"
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "新しいアカウントを作成されました! 今すぐにログインできます。"
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "あなたのマスターパスワードのヒントを記載したメールを送信しました。"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "認証コードは必須項目です。"
   },
   "valueCopied": {
-    "message": " copied",
+    "message": " コピーされました",
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "ログアウトしました"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "ログインセッションの有効期限が切れています。"
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "ログアウトしてもよろしいですか？"
   },
   "yes": {
-    "message": "Yes"
+    "message": "はい"
   },
   "no": {
-    "message": "No"
+    "message": "いいえ"
   },
   "unexpectedError": {
     "message": "An unexpected error has occured."
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "名前は必須項目です。"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "フォルダーを追加しました"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "マスターパスワードの変更"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "マスターパスワードはBitwarden.com web vaultで変更することができます。ウェブサイトへ移動しますか。"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "EメールアドレスはBitwarden.com web vaultで変更することができます。ウェブサイトへ移動しますか。"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "loggingOut": {
-    "message": "Logging out"
+    "message": "ログアウトしています"
   },
   "loggingOutConfirmation": {
-    "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+    "message": "最近古いバージョンから更新されました。ロックオプションを変更するには、再度ログインする必要があります。ログアウトしますか。"
   },
   "editedFolder": {
-    "message": "Edited Folder"
+    "message": "編集したフォルダ"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "フォルダを削除しますか？"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "フォルダーを削除"
   },
   "gettingStartedTutorial": {
-    "message": "Getting Started Tutorial"
+    "message": "使い方のチュートリアル"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "ブラウザの拡張機能を最大限に活用するための方法を学習するチュートリアルを見る。"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "同期が完了しました"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "同期に失敗しました"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Bitwarden.com web vault から一括でインポートすることができます。ウェブサイトへ移動しますか。"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "パスワードをコピーしました"
   },
   "uri": {
     "message": "URI"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "追加された項目"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "編集された項目"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "このアイテムを削除しますか？"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "削除済みの項目"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "パスワードを上書き"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "現在のパスワードを上書きしてよろしいですか?"
   },
   "credits": {
-    "message": "Credits"
+    "message": "謝辞"
   },
   "thankYou": {
-    "message": "Thank You"
+    "message": "ありがとうございます"
   },
   "translations": {
-    "message": "Translations"
+    "message": "翻訳"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "フォルダの検索"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
   },
   "features": {
-    "message": "Features"
+    "message": "機能"
   },
   "gaDesc": {
     "message": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."

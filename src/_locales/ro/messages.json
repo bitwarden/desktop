@@ -65,16 +65,16 @@
     "message": "Copiere parolă"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Copiere URL"
   },
   "copyUsername": {
     "message": "Copiere nume utilizator"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "Copiere număr"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "Copiere cod de securitate"
   },
   "autoFill": {
     "message": "Completare automată"
@@ -95,7 +95,7 @@
     "message": "Adăugare autentificare"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Adăugare articol"
   },
   "passwordHint": {
     "message": "Indiciu parolă"
@@ -194,7 +194,7 @@
     "message": "seif Web bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gestionați datele de conectare din orice browser web cu seiful web bitwarden."
+    "message": "Gestionați datele de conectare din orice navigator cu seiful web bitwarden."
   },
   "bitIosVault": {
     "message": "Seif bitwarden iOS"
@@ -209,10 +209,10 @@
     "message": "Gestionați datele de conectare de pe dispozitivele mobile cu seiful bitwarden Android."
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "Import articole"
   },
   "importItemsInfo": {
-    "message": "Quickly bulk import your items from other password management applications."
+    "message": "Import rapid al datelor de conectare din alte aplicații de gestionare a parolelor."
   },
   "select": {
     "message": "Selectare"
@@ -245,13 +245,13 @@
     "message": "Editare"
   },
   "view": {
-    "message": "View"
+    "message": "Vizualizare"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Nu există niciun articol de afișat."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Informații de autentificare"
   },
   "username": {
     "message": "Nume de utilizator"
@@ -266,16 +266,16 @@
     "message": "Note"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Editare articol"
   },
   "folder": {
     "message": "Dosar"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Ștergere articol"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Vizualizare articol"
   },
   "launchWebsite": {
     "message": "Lansarea site-ului web"
@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Imposibil de completat automat datele de autentificare selectate pe această pagină. În schimb, copiați\/lipiţi numele de utilizator și\/sau parola."
+    "message": "Nu se pot completa automat datele de autentificare selectate în această pagină. În schimb, puteți copia și lipi numele de utilizator și\/sau parola."
   },
   "loggedOut": {
     "message": "Deconectat"
@@ -447,7 +447,7 @@
     "message": "Sincronizare eșuată"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Puteți să importați date de conectare din seiful web bitwarden.com. Doriți să vizitați saitul acum?"
   },
   "passwordCopied": {
     "message": "Parolă copiată"
@@ -456,16 +456,16 @@
     "message": "URI"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Articol adăugat"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Articol editat"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Sigur ștergeți acest articol?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Articol șters"
   },
   "overwritePassword": {
     "message": "Suprascrie parola"
@@ -748,7 +748,7 @@
     "message": "URL server de identificare"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL server de pictograme"
   },
   "environmentSaved": {
     "message": "URL-urile mediului bitwarden au fost salvate."
@@ -799,162 +799,162 @@
     "message": "Dacă dați clic pentru a verifica e-mailul în afara acestei casete, aceasta se va închide. Doriți să afișați aceste informații într-o filă nouă, astfel încât aceasta să nu se închidă?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Dezactivare pictograme"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Pictogramele oferă o imagine recognoscibilă alături de fiecare element de conectare din seiful dvs."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Deținător card"
   },
   "number": {
-    "message": "Number"
+    "message": "Număr card"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Tip card"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Luna expirării"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Anul expirării"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Expirare"
   },
   "january": {
-    "message": "January"
+    "message": "ianuarie"
   },
   "february": {
-    "message": "February"
+    "message": "februarie"
   },
   "march": {
-    "message": "March"
+    "message": "martie"
   },
   "april": {
-    "message": "April"
+    "message": "aprilie"
   },
   "may": {
-    "message": "May"
+    "message": "mai"
   },
   "june": {
-    "message": "June"
+    "message": "iunie"
   },
   "july": {
-    "message": "July"
+    "message": "iulie"
   },
   "august": {
-    "message": "August"
+    "message": "august"
   },
   "september": {
-    "message": "September"
+    "message": "septembrie"
   },
   "october": {
-    "message": "October"
+    "message": "octombrie"
   },
   "november": {
-    "message": "November"
+    "message": "noiembrie"
   },
   "december": {
-    "message": "December"
+    "message": "decembrie"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Cod CVV2\/CVC2"
   },
   "ex": {
     "message": "ex."
   },
   "title": {
-    "message": "Title"
+    "message": "Titlu"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Dl"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Dna"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Dra"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr."
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Prenume"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Al doilea prenume"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Nume"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Identitate"
   },
   "company": {
-    "message": "Company"
+    "message": "Companie"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "CNP"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Număr CI\/pașaport"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Număr licență"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresă"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresă 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adresă 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adresă 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Localitate"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Județ"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Cod poștal"
   },
   "country": {
-    "message": "Country"
+    "message": "Țară"
   },
   "type": {
-    "message": "Type"
+    "message": "Tip"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Autentificare"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "Autentificări"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Mențiune securizată"
   },
   "typeCard": {
     "message": "Card"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitate"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Istoric parole"
   },
   "back": {
-    "message": "Back"
+    "message": "Înapoi"
   }
 }

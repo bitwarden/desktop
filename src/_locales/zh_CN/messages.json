@@ -748,7 +748,7 @@
     "message": "身份服务器 URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "图标服务器 URL"
   },
   "environmentSaved": {
     "message": "各环境 URL 已保存。"
@@ -802,7 +802,7 @@
     "message": "禁用网站图标"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "在您密码库的每个登录项目旁边显示一个可识别的图标。"
   },
   "cardholderName": {
     "message": "持卡人姓名"
@@ -943,10 +943,10 @@
     "message": "登录项目"
   },
   "typeSecureNote": {
-    "message": "安全说明"
+    "message": "安全笔记"
   },
   "typeCard": {
-    "message": "卡"
+    "message": "卡片"
   },
   "typeIdentity": {
     "message": "身份"

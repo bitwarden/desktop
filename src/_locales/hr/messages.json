@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Nije moguće automatski ispuniti odabranu prijavu na ovoj stranici. Umjesto toga kopirajte \/ zalijepite korisničko ime i \/ ili zaporku."
+    "message": "Nije moguće automatski ispuniti odabranu prijavu na ovoj stranici. Umjesto toga kopirajte\/zalijepite korisničko ime i\/ili zaporku."
   },
   "loggedOut": {
     "message": "Odjavljen"
@@ -748,7 +748,7 @@
     "message": "URL identiteta poslužitelja"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL poslužitelja ikona"
   },
   "environmentSaved": {
     "message": "URL-ovi okoline su spremljeni."
@@ -802,7 +802,7 @@
     "message": "Onemogući ikone web mjesta"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Ikone web mjesta nude prepoznatljivu ikonu pokraj svake stavke za prijavu u vašem trezoru."
   },
   "cardholderName": {
     "message": "Ime vlasnika kartice"

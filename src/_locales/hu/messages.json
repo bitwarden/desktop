@@ -748,7 +748,7 @@
     "message": "Identitás szerver URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikonok kiszolgáló URL-címe"
   },
   "environmentSaved": {
     "message": "A környezet URL-ek mentésre kerültek."
@@ -802,7 +802,7 @@
     "message": "Honlap ikonok letiltása"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "A webhelyek ikonjai felismerhető ikonként jelennek meg a széfed minden eleme mellett."
   },
   "cardholderName": {
     "message": "Kártyatulajdonos neve"

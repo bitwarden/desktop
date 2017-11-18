@@ -748,7 +748,7 @@
     "message": "Identitetsserver-URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikoner Server-URL"
   },
   "environmentSaved": {
     "message": "Miljö-URL:er har sparats."
@@ -802,7 +802,7 @@
     "message": "Inaktivera webbplatsikoner"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Webbplatsikoner ger en igenkännbar ikon bredvid varje inloggningsobjekt i ditt valv."
   },
   "cardholderName": {
     "message": "Kortinnehavarens namn"

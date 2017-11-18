@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden – Free Password Manager</value>
+    <value>bitwarden -フリーのパスワード・マネージャー</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>あなたのすべてのデバイスで使える安全で無料のパスワード・マネージャー</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
@@ -133,7 +133,7 @@ Security experts recommend that you use a different, randomly generated password
 bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>あなたのすべてのデバイスで使える安全で無料のパスワード・マネージャー</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
     <value>Sync and access your vault from multiple devices</value>

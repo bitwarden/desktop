@@ -95,7 +95,7 @@
     "message": "Ajouter un site"
   },
   "addItem": {
-    "message": "Ajouter un identifiant"
+    "message": "Ajouter un élément"
   },
   "passwordHint": {
     "message": "Indice mot de passe"
@@ -462,7 +462,7 @@
     "message": "Identifiant modifié"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr•e de vouloir supprimer cet identifiant ?"
+    "message": "Êtes-vous sûr·e de vouloir supprimer cet identifiant ?"
   },
   "deletedItem": {
     "message": "Identifiant supprimé"
@@ -748,7 +748,7 @@
     "message": "URL du serveur d'identification"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Icônes de l'URL du serveur"
   },
   "environmentSaved": {
     "message": "Les URLs d'environnement ont été enregistrées."
@@ -802,7 +802,7 @@
     "message": "Désactiver les icônes des sites web"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
   },
   "cardholderName": {
     "message": "Nom de l'adhérent"

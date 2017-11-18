@@ -293,7 +293,7 @@
     "message": "Ostatní"
   },
   "disableGa": {
-    "message": "Vypnout analytiku"
+    "message": "Zakázat analytiku"
   },
   "rateExtension": {
     "message": "Ohodnotit rozšíření"
@@ -493,10 +493,10 @@
     "message": "Funkce"
   },
   "gaDesc": {
-    "message": "Používáme analytiku ke sbírání údajů jak je rozšíření používáno, abychom jej mohli nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
+    "message": "Používáme analytiku ke sběru informací jakým způsobem je rozšíření používáno, abychom jej mohli i nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
   },
   "disableAddLoginNotification": {
-    "message": "Vypnout notifikaci Přidat přihlašovací údaje"
+    "message": "Zakázat oznámení Přidat přihlašovací údaje"
   },
   "addLoginNotificationDesc": {
     "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
@@ -511,7 +511,7 @@
     "message": "Nikdy pro tuto stránku"
   },
   "disableContextMenuItem": {
-    "message": "Vypnout kontextové menu"
+    "message": "Zakázat kontextové menu"
   },
   "disableContextMenuItemDesc": {
     "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
@@ -644,7 +644,7 @@
     "message": "Obnova je dokončena"
   },
   "disableAutoTotpCopy": {
-    "message": "Vypnout automatické kopírování kódu TOTP"
+    "message": "Zakázat automatické kopírování TOTP kódu"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Pokud mají vaše přihlašovací údaje přidán autentizační klíč pro TOTP, vygenerovaný ověřovací kód (TOTP) se automaticky zkopíruje do schránky při každém automatickém vyplnění přihlašovacích údajů."
@@ -748,7 +748,7 @@
     "message": "URL serveru identity"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL serveru ikonek"
   },
   "environmentSaved": {
     "message": "URL adresy vlastního prostředí byly uloženy."
@@ -802,7 +802,7 @@
     "message": "Zakázat ikonky webových stránek"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Ikonky webových stránek zobrazí snadno rozeznatelný obrázek vedle každé položky ve vašem trezoru."
   },
   "cardholderName": {
     "message": "Jméno držitele karty"

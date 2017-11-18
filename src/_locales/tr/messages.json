@@ -65,16 +65,16 @@
     "message": "Parolayı Kopyala"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Linki kopyala"
   },
   "copyUsername": {
     "message": "Kullanıcı Adını Kopyala"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "Numarayı Kopyala"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "Güvenlik Kodunu Kopyala"
   },
   "autoFill": {
     "message": "Otomatik doldur"
@@ -95,7 +95,7 @@
     "message": "Oturum Ekle"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Hesap Ekle"
   },
   "passwordHint": {
     "message": "Parola İpucu"
@@ -209,10 +209,10 @@
     "message": "bitwarden Android kasası ile mobil aygıtlarınızdan oturumlarınızı yönetin."
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "Hesapları İçe Aktar"
   },
   "importItemsInfo": {
-    "message": "Quickly bulk import your items from other password management applications."
+    "message": "Diğer parola yöneticisi uygulamalardan hesaplarınızı topluca ve hızlıca içe aktarın."
   },
   "select": {
     "message": "Seç"
@@ -245,13 +245,13 @@
     "message": "Düzenle"
   },
   "view": {
-    "message": "View"
+    "message": "Görüntüle"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Listelenecek hesap yok."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Hesap Bilgisi"
   },
   "username": {
     "message": "Kullanıcı Adı"
@@ -266,16 +266,16 @@
     "message": "Notlar"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Hesabı düzenle"
   },
   "folder": {
     "message": "Klasör"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Hesabı Sil"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Hesabı Görüntüle"
   },
   "launchWebsite": {
     "message": "Siteye Git"
@@ -447,7 +447,7 @@
     "message": "Eşitleme başarısız"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "bitwarden.com web kasasından topluca hesaplarınızı içe aktarabilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "passwordCopied": {
     "message": "Parola kopyalandı"
@@ -456,16 +456,16 @@
     "message": "URl"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Hesap eklendi"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Hesap düzenlendi"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Bu hesap bilgilerini silmek istediğinizden emin misiniz?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Hesap bilgileri silindi"
   },
   "overwritePassword": {
     "message": "Parola Üzerine Yaz"
@@ -748,7 +748,7 @@
     "message": "Kimlik Sunucu URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Sunucu URL simgeleri"
   },
   "environmentSaved": {
     "message": "Çevre URL'ler kaydedildi."
@@ -799,162 +799,162 @@
     "message": "Onay kodunuzu alacağınız e-postanızı kontrol etmek için açılan pencerenin dışına tıklamanız bu açılır pencerenin kapanmasına neden olacaktır. Bu açılır pencereyi kapatmamak için yeni bir pencerede açmak istiyor musunuz?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Site simgelerini devre sışı bırak"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Web Sitesi Simgeleri, kasanızdaki her giriş bilgisinin yanında o siteyi tanımanıza yardımcı olacak bir görüntü verir."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Kart Sahibinin Adı"
   },
   "number": {
-    "message": "Number"
+    "message": "Numara"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Marka"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Son Kullanma Ayı"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Son Kullanma Yılı"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Son Kullanma Tarihi"
   },
   "january": {
-    "message": "January"
+    "message": "Ocak"
   },
   "february": {
-    "message": "February"
+    "message": "Şubat"
   },
   "march": {
-    "message": "March"
+    "message": "Mart"
   },
   "april": {
-    "message": "April"
+    "message": "Nisan"
   },
   "may": {
     "message": "May"
   },
   "june": {
-    "message": "June"
+    "message": "Haziran"
   },
   "july": {
-    "message": "July"
+    "message": "Temmuz"
   },
   "august": {
-    "message": "August"
+    "message": "Ağustos"
   },
   "september": {
-    "message": "September"
+    "message": "Eylül"
   },
   "october": {
-    "message": "October"
+    "message": "Ekim"
   },
   "november": {
-    "message": "November"
+    "message": "Kasım"
   },
   "december": {
-    "message": "December"
+    "message": "Aralık"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Güvenlik Kodu"
   },
   "ex": {
-    "message": "ex."
+    "message": "ör."
   },
   "title": {
-    "message": "Title"
+    "message": "Başlık"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Bay"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Bayan"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Bayan"
   },
   "dr": {
     "message": "Dr"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "İlk Ad"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "İkinci Ad"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Soyad"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Kimlik Adı"
   },
   "company": {
-    "message": "Company"
+    "message": "Şirket"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Sosyal Güvenlik Numarası"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Pasaport Numarası"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Ehliyet Numarası"
   },
   "email": {
-    "message": "Email"
+    "message": "E-posta"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adres"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adres 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adres 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adres 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Kent \/ Şehir"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Eyalet \/ İl"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Posta Kodu"
   },
   "country": {
-    "message": "Country"
+    "message": "Ülke"
   },
   "type": {
-    "message": "Type"
+    "message": "Tür"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Hesap"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "Hesaplar"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Güvenli Not"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kart"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Kimlik"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Paeola Geçmişi"
   },
   "back": {
-    "message": "Back"
+    "message": "Geri"
   }
 }

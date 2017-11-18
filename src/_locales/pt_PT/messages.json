@@ -748,7 +748,7 @@
     "message": "URL do servidor de identidade"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL do servidor de ícones"
   },
   "environmentSaved": {
     "message": "Os URLs de ambiente foram guardados."
@@ -802,7 +802,7 @@
     "message": "Desativar ícones de websites"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Os ícones de websites providenciam uma imagem reconhecível ao lado de cada item de credencial no seu cofre."
   },
   "cardholderName": {
     "message": "Titular do cartão"

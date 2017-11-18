@@ -748,7 +748,7 @@
     "message": "URL-адреса сервера ідентифікації"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL-адреса сервера піктограм"
   },
   "environmentSaved": {
     "message": "URL-адреси середовища збережено."
@@ -802,7 +802,7 @@
     "message": "Вимкнути піктограми веб-сайтів"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Впізнавані піктограми веб-сайтів додаються біля кожного запису вашого сховища."
   },
   "cardholderName": {
     "message": "Ім'я власника картки"
@@ -862,7 +862,7 @@
     "message": "Код безпеки"
   },
   "ex": {
-    "message": "ex."
+    "message": "н-д."
   },
   "title": {
     "message": "Звернення"
