@@ -27,12 +27,12 @@ const fontsFilter = [
 ];
 
 function distFileName(browserName, ext) {
-    var fileName = `dist-${browserName}`;
+    var build = '';
     if (process.env.APPVEYOR_BUILD_NUMBER && process.env.APPVEYOR_BUILD_NUMBER !== '') {
-        fileName += `-${process.env.APPVEYOR_BUILD_NUMBER}`;
+        build = `-${process.env.APPVEYOR_BUILD_NUMBER}`;
     }
 
-    return `${fileName}.${ext}`;
+    return `dist-${browserName}${build}.${ext}`;
 }
 
 function dist(browserName, manifest) {
