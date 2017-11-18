@@ -26,12 +26,21 @@ const fontsFilter = [
     'build/popup/fonts/fontawesome*.woff'
 ];
 
+function distFileName(browserName, ext) {
+    var fileName = `dist-${browserName}`;
+    if (process.env.APPVEYOR_BUILD_NUMBER && process.env.APPVEYOR_BUILD_NUMBER !== '') {
+        fileName += `-${process.env.APPVEYOR_BUILD_NUMBER}`;
+    }
+
+    return `${fileName}.${ext}`;
+}
+
 function dist(browserName, manifest) {
     return gulp.src(paths.build + '**/*')
         .pipe(filter(['**', '!build/edge/**/*'].concat(fontsFilter)))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
-        .pipe(zip(`dist-${browserName}.zip`))
+        .pipe(zip(distFileName(browserName, 'zip')))
         .pipe(gulp.dest(paths.dist));
 }
 
@@ -65,7 +74,8 @@ gulp.task('dist:chrome', (cb) => {
 gulp.task('dist:edge', (cb) => {
     const edgePath = paths.dist + 'Edge/';
     const extensionPath = edgePath + 'Extension/';
-    const appxPath = paths.dist + 'dist-edge.appx';
+    const fileName = distFileName('edge', 'appx');
+    const appxPath = paths.dist + fileName;
 
     return del([edgePath, appxPath])
         .then(() => edgeCopyBuild(paths.build + '**/*', extensionPath))
