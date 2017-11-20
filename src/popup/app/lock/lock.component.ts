@@ -1,19 +1,24 @@
+import * as angular from 'angular';
 import * as template from './lock.component.html';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
+import { UtilsService } from '../../../services/abstractions/utils.service';
 
 class LockController {
     i18n: any;
     masterPassword: string;
 
-    constructor(public $state: any, public i18nService: any,
+    constructor(public $state: any, public i18nService: any, private $timeout: any, private utilsService: UtilsService,
         public cryptoService: CryptoService, public toastr: any, public userService: any,
         public SweetAlert: any) {
         this.i18n = i18nService;
     }
 
     $onInit() {
-        document.getElementById('master-password').focus();
+        this.$timeout(() => {
+            this.utilsService.initListSectionItemListeners(document, angular);
+            document.getElementById('master-password').focus();
+        }, 500);
     }
 
     logOut() {
