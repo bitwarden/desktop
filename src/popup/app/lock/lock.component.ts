@@ -4,7 +4,7 @@ import * as template from './lock.component.html';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
-class LockController {
+export class LockController {
     i18n: any;
     masterPassword: string;
 

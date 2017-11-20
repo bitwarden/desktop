@@ -129,6 +129,27 @@ require('./settings/settingsPremiumController.js');
 require('./settings/settingsEnvironmentController.js');
 require('./tools/toolsPasswordGeneratorHistoryController.js');
 
+// $$ngIsClass fix issue with "class constructors must be invoked with |new|" on Firefox ESR
+// ref: https://github.com/angular/angular.js/issues/14240
+import { ActionButtonsController } from './components/action-buttons.component';
+ActionButtonsController.$$ngIsClass = true;
+import { CipherItemsController } from './components/cipher-items.component';
+CipherItemsController.$$ngIsClass = true;
+import { IconController } from './components/icon.component';
+IconController.$$ngIsClass = true;
+import { PopOutController } from './components/pop-out.component';
+PopOutController.$$ngIsClass = true;
+import { CurrentController } from './current/current.component';
+CurrentController.$$ngIsClass = true;
+import { LockController } from './lock/lock.component';
+LockController.$$ngIsClass = true;
+import { ExportController } from './tools/export.component';
+ExportController.$$ngIsClass = true;
+import { PasswordGeneratorController } from './tools/password-generator.component';
+PasswordGeneratorController.$$ngIsClass = true;
+import { ToolsController } from './tools/tools.component';
+ToolsController.$$ngIsClass = true;
+
 // Bootstrap the angular application
 angular.element(function () {
     angular.bootstrap(document, ['bit']);

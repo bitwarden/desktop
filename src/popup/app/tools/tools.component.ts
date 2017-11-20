@@ -2,7 +2,7 @@ import * as template from './tools.component.html';
 
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
-class ToolsController {
+export class ToolsController {
     showExport: boolean;
     i18n: any;
 

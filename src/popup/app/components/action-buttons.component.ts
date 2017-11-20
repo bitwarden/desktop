@@ -2,7 +2,7 @@ import * as template from './action-buttons.component.html';
 
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
-class ActionButtonsController implements ng.IController {
+export class ActionButtonsController implements ng.IController {
     onView: Function;
 
     cipher: any;

@@ -2,7 +2,7 @@ import * as template from './pop-out.component.html';
 
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
-class PopOutController implements ng.IController {
+export class PopOutController implements ng.IController {
     constructor(private $analytics: any, private $window: any, private utilsService: UtilsService) {
     }
 

@@ -3,7 +3,7 @@ import { CipherType } from '../../../enums/cipherType.enum';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 import * as template from './current.component.html';
 
-class CurrentController {
+export class CurrentController {
     i18n: any;
     pageDetails: any = [];
     loaded: boolean = false;

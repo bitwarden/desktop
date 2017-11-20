@@ -1,6 +1,6 @@
 import * as template from './cipher-items.component.html';
 
-class CipherItemsController implements ng.IController {
+export class CipherItemsController implements ng.IController {
     onSelected: Function;
     onView: Function;
 
