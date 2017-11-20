@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(load, 50);
 
     function load() {
-        var content = document.getElementById('content'),
-            closeButton = document.getElementById('close-button'),
+        var closeButton = document.getElementById('close-button'),
             body = document.querySelector('body'),
             bodyRect = body.getBoundingClientRect();
 
@@ -82,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function setContent(element) {
+        const content = document.getElementById('content');
         while (content.firstChild) {
             content.removeChild(content.firstChild);
         }
