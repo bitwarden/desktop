@@ -155,7 +155,7 @@ class Cipher extends Domain {
 
         const orgId = this.organizationId;
 
-        if (this.attachments != null) {
+        if (this.attachments != null && this.attachments.length > 0) {
             const attachments: any[] = [];
             await this.attachments.reduce((promise, attachment) => {
                 return promise.then(() => {
@@ -167,7 +167,7 @@ class Cipher extends Domain {
             model.attachments = attachments;
         }
 
-        if (this.fields != null) {
+        if (this.fields != null && this.fields.length > 0) {
             const fields: any[] = [];
             await this.fields.reduce((promise, field) => {
                 return promise.then(() => {
