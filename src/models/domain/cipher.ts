@@ -51,6 +51,7 @@ class Cipher extends Domain {
         this.favorite = obj.favorite;
         this.organizationUseTotp = obj.organizationUseTotp;
         this.edit = obj.edit;
+        this.localData = localData;
 
         switch (this.type) {
             case CipherType.Login:
