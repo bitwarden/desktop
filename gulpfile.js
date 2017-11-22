@@ -14,6 +14,7 @@ const gulp = require('gulp'),
 const paths = {
     build: './build/',
     dist: './dist/',
+    coverage: './coverage/',
     libDir: './src/lib/',
     npmDir: './node_modules/',
     popupDir: './src/popup/',
@@ -132,6 +133,14 @@ gulp.task('webfonts', () => {
             cssFilename: 'webfonts.css'
         }))
         .pipe(gulp.dest(paths.cssDir));
+});
+
+gulp.task('ci', ['ci:coverage']);
+
+gulp.task('ci:coverage', (cb) => {
+    return gulp.src(paths.coverage + '**/*')
+        .pipe(zip('coverage.zip'))
+        .pipe(gulp.dest(paths.coverage));
 });
 
 // LEGACY CODE!
