@@ -144,6 +144,7 @@ gulp.task('ci:coverage', (cb) => {
     }
 
     return gulp.src(paths.coverage + '**/*')
+        .pipe(filter(['**', '!coverage/coverage*.zip'].concat(fontsFilter)))
         .pipe(zip(`coverage${build}.zip`))
         .pipe(gulp.dest(paths.coverage));
 });
