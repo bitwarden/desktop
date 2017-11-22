@@ -11,6 +11,7 @@ class CipherResponse {
     data: any;
     revisionDate: string;
     attachments: AttachmentResponse[];
+    collectionIds: string[];
 
     constructor(response: any) {
         this.id = response.Id;
@@ -27,6 +28,13 @@ class CipherResponse {
             this.attachments = [];
             response.Attachments.forEach((attachment: any) => {
                 this.attachments.push(new AttachmentResponse(attachment));
+            });
+        }
+
+        if (response.CollectionIds) {
+            this.collectionIds = [];
+            response.CollectionIds.forEach((id: string) => {
+                this.collectionIds.push(id);
             });
         }
     }

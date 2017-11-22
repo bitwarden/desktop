@@ -1,4 +1,5 @@
 import { CipherResponse } from './cipherResponse';
+import { CollectionResponse } from './collectionResponse';
 import { DomainsResponse } from './domainsResponse';
 import { FolderResponse } from './folderResponse';
 import { ProfileResponse } from './profileResponse';
@@ -6,6 +7,7 @@ import { ProfileResponse } from './profileResponse';
 class SyncResponse {
     profile?: ProfileResponse;
     folders: FolderResponse[] = [];
+    collections: CollectionResponse[] = [];
     ciphers: CipherResponse[] = [];
     domains?: DomainsResponse;
 
@@ -17,6 +19,12 @@ class SyncResponse {
         if (response.Folders) {
             response.Folders.forEach((folder: any) => {
                 this.folders.push(new FolderResponse(folder));
+            });
+        }
+
+        if (response.Collections) {
+            response.Collections.forEach((collection: any) => {
+                this.collections.push(new CollectionResponse(collection));
             });
         }
 

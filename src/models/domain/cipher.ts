@@ -30,6 +30,7 @@ class Cipher extends Domain {
     secureNote: SecureNote;
     attachments: Attachment[];
     fields: Field[];
+    collectionIds: string[];
 
     private utilsService: UtilsService;
 
@@ -51,6 +52,7 @@ class Cipher extends Domain {
         this.favorite = obj.favorite;
         this.organizationUseTotp = obj.organizationUseTotp;
         this.edit = obj.edit;
+        this.collectionIds = obj.collectionIds;
         this.localData = localData;
 
         switch (this.type) {
@@ -104,6 +106,7 @@ class Cipher extends Domain {
             subTitle: null as string,
             attachments: null as any[],
             fields: null as any[],
+            collectionIds: this.collectionIds,
         };
 
         await this.decryptObj(model, {

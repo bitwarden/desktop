@@ -6,6 +6,7 @@ import ApiService from './services/api.service';
 import AppIdService from './services/appId.service';
 import AutofillService from './services/autofill.service';
 import CipherService from './services/cipher.service';
+import CollectionService from './services/collection.service';
 import ConstantsService from './services/constants.service';
 import CryptoService from './services/crypto.service';
 import EnvironmentService from './services/environment.service';
@@ -77,6 +78,7 @@ var bg_isBackground = true,
     bg_settingsService,
     bg_cipherService,
     bg_folderService,
+    bg_collectionService,
     bg_lockService,
     bg_syncService,
     bg_passwordGenerationService,
@@ -106,8 +108,9 @@ var bg_isBackground = true,
     window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService);
     window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_settingsService, bg_apiService);
     window.bg_folderService = bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_i18nService, bg_apiService);
+    window.bg_collectionService = bg_collectionService = new CollectionService(bg_cryptoService, bg_userService, bg_i18nService, bg_apiService);
     window.bg_lockService = bg_lockService = new LockService(bg_cipherService, bg_folderService, bg_cryptoService, bg_utilsService, setIcon, refreshBadgeAndMenu);
-    window.bg_syncService = bg_syncService = new SyncService(bg_userService, bg_apiService, bg_settingsService, bg_folderService, bg_cipherService, bg_cryptoService, logout);
+    window.bg_syncService = bg_syncService = new SyncService(bg_userService, bg_apiService, bg_settingsService, bg_folderService, bg_cipherService, bg_cryptoService, bg_collectionService, logout);
     window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_cryptoService);
     window.bg_totpService = bg_totpService = new TotpService();
     window.bg_autofillService = bg_autofillService = new AutofillService(bg_cipherService, bg_tokenService, bg_totpService, bg_utilsService);

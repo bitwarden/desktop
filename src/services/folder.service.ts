@@ -7,7 +7,6 @@ import { FolderRequest } from '../models/request/folderRequest';
 import { FolderResponse } from '../models/response/folderResponse';
 
 import ApiService from './api.service';
-import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 import UtilsService from './utils.service';
