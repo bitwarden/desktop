@@ -5,11 +5,11 @@ import { UtilsService } from '../../../services/abstractions/utils.service';
 export class ToolsController {
     showExport: boolean;
     i18n: any;
+    private webVaultBaseUrl: string = 'https://vault.bitwarden.com';
 
     constructor(private SweetAlert: any, private i18nService: any,
-                private $analytics: any, private utilsService: UtilsService,
-                private webVaultBaseUrl: string = 'https://vault.bitwarden.com',
-                private environmentService: any) {
+        private $analytics: any, private utilsService: UtilsService,
+        private environmentService: any) {
         this.i18n = i18nService;
         this.showExport = !utilsService.isEdge();
         if (environmentService.baseUrl) {
