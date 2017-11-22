@@ -27,13 +27,16 @@ const fontsFilter = [
     'build/popup/fonts/fontawesome*.woff'
 ];
 
-function distFileName(browserName, ext) {
+function buildString() {
     var build = '';
     if (process.env.APPVEYOR_BUILD_NUMBER && process.env.APPVEYOR_BUILD_NUMBER !== '') {
         build = `-${process.env.APPVEYOR_BUILD_NUMBER}`;
     }
+    return build;
+}
 
-    return `dist-${browserName}${build}.${ext}`;
+function distFileName(browserName, ext) {
+    return `dist-${browserName}${buildString()}.${ext}`;
 }
 
 function dist(browserName, manifest) {
@@ -138,14 +141,9 @@ gulp.task('webfonts', () => {
 gulp.task('ci', ['ci:coverage']);
 
 gulp.task('ci:coverage', (cb) => {
-    var build = '';
-    if (process.env.APPVEYOR_BUILD_NUMBER && process.env.APPVEYOR_BUILD_NUMBER !== '') {
-        build = `-${process.env.APPVEYOR_BUILD_NUMBER}`;
-    }
-
     return gulp.src(paths.coverage + '**/*')
         .pipe(filter(['**', '!coverage/coverage*.zip']))
-        .pipe(zip(`coverage${build}.zip`))
+        .pipe(zip(`coverage${buildString()}.zip`))
         .pipe(gulp.dest(paths.coverage));
 });
 
