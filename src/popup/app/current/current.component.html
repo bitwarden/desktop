@@ -4,7 +4,7 @@
         <a href="" ng-click="$ctrl.refresh()"><i class="fa fa-refresh fa-lg"></i></a>
     </div>
     <div class="search" ng-style="{'visibility': $ctrl.disableSearch ? 'hidden' : 'visible'}">
-        <input type="search" placeholder="{{$ctrl.i18n.searchVault}}" id="search" ng-model="searchText" ng-change="$ctrl.searchVault()" />
+        <input type="search" placeholder="{{$ctrl.i18n.searchVault}}" id="search" ng-model="$ctrl.searchText" ng-change="$ctrl.searchVault()" />
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
