@@ -289,8 +289,7 @@ export default class AutofillService {
     }
 
     private generateLoginFillScript(fillScript: AutofillScript, pageDetails: any,
-        filledFields: { [id: string]: AutofillField; },
-        options: any): AutofillScript {
+        filledFields: { [id: string]: AutofillField; }, options: any): AutofillScript {
         if (!options.cipher.login) {
             return null;
         }
@@ -400,8 +399,7 @@ export default class AutofillService {
     }
 
     private generateCardFillScript(fillScript: AutofillScript, pageDetails: any,
-        filledFields: { [id: string]: AutofillField; },
-        options: any): AutofillScript {
+        filledFields: { [id: string]: AutofillField; }, options: any): AutofillScript {
         if (!options.cipher.card) {
             return null;
         }
@@ -474,8 +472,7 @@ export default class AutofillService {
     }
 
     private generateIdentityFillScript(fillScript: AutofillScript, pageDetails: any,
-        filledFields: { [id: string]: AutofillField; },
-        options: any): AutofillScript {
+        filledFields: { [id: string]: AutofillField; }, options: any): AutofillScript {
         if (!options.cipher.identity) {
             return null;
         }
@@ -671,8 +668,8 @@ export default class AutofillService {
 
     private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean) {
         const arr: AutofillField[] = [];
-        pageDetails.fields.forEach((f: any) => {
-            if (f.type === 'password' && (canBeHidden || f.viewable)) {
+        pageDetails.fields.forEach((f) => {
+            if (!f.disabled && !f.readonly && f.type === 'password' && (canBeHidden || f.viewable)) {
                 arr.push(f);
             }
         });
@@ -689,7 +686,8 @@ export default class AutofillService {
                 break;
             }
 
-            if ((withoutForm || f.form === passwordField.form) && (canBeHidden || f.viewable) &&
+            if (!f.disabled && !f.readonly &&
+                (withoutForm || f.form === passwordField.form) && (canBeHidden || f.viewable) &&
                 (f.type === 'text' || f.type === 'email' || f.type === 'tel')) {
                 usernameField = f;
 
