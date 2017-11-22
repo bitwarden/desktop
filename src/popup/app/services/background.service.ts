@@ -25,3 +25,4 @@ export const settingsService = getBackgroundService<any>('settingsService');
 export const lockService = getBackgroundService<any>('lockService');
 export const totpService = getBackgroundService<any>('totpService');
 export const environmentService = getBackgroundService<any>('environmentService');
+export const collectionService = getBackgroundService<any>('collectionService');

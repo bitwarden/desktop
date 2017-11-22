@@ -2,12 +2,12 @@ angular
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, cipherService, folderService, $q, $state, $stateParams, toastr,
-        syncService, utilsService, $analytics, i18nService, stateService, $timeout, $window) {
+        syncService, utilsService, $analytics, i18nService, stateService, $timeout, $window, collectionService) {
         var stateKey = 'vault',
             state = stateService.getState(stateKey) || {};
 
         $scope.i18n = i18nService;
-        $scope.showFolderCounts = !utilsService.isEdge();
+        $scope.showGroupingCounts = !utilsService.isEdge();
         $scope.disableSearch = utilsService.isEdge();
         document.getElementById('search').focus();
 
@@ -31,6 +31,11 @@ angular
             delayLoad = false;
             $scope.loaded = false;
         }
+        if (!$rootScope.vaultCollections) {
+            $rootScope.vaultCollections = [];
+            delayLoad = false;
+            $scope.loaded = false;
+        }
 
         if (delayLoad) {
             $timeout(setScrollY, 100);
@@ -42,35 +47,49 @@ angular
 
         function loadVault() {
             var decFolders = [];
+            var decCollections = [];
             var decCiphers = [];
-            var promises = [];
 
             var folderPromise = folderService.getAllDecrypted().then(function (folders) {
                 decFolders = folders;
             });
-            promises.push(folderPromise);
+
+            var collectionPromise = collectionService.getAllDecrypted().then(function (collections) {
+                decCollections = collections;
+            });
 
             var cipherPromise = cipherService.getAllDecrypted().then(function (ciphers) {
                 decCiphers = ciphers;
             });
-            promises.push(cipherPromise);
 
-            $q.all(promises).then(function () {
+            $q.all([folderPromise, collectionPromise, cipherPromise]).then(function () {
                 $scope.loaded = true;
                 $rootScope.vaultFolders = decFolders;
+                $rootScope.vaultCollections = decCollections;
                 $rootScope.vaultCiphers = decCiphers;
 
-                if ($scope.showFolderCounts) {
-                    // compute item count for each folder
-                    for (var i = 0; i < decFolders.length; i++) {
-                        var itemCount = 0;
-                        for (var j = 0; j < decCiphers.length; j++) {
+                if ($scope.showGroupingCounts) {
+                    // compute item count for each grouping
+                    for (let i = 0; i < decFolders.length; i++) {
+                        let itemCount = 0;
+                        for (let j = 0; j < decCiphers.length; j++) {
                             if (decCiphers[j].folderId === decFolders[i].id) {
                                 itemCount++;
                             }
                         }
 
                         $rootScope.vaultFolders[i].itemCount = itemCount;
+                    }
+                    for (let i = 0; i < decCollections.length; i++) {
+                        let itemCount = 0;
+                        for (let j = 0; j < decCiphers.length; j++) {
+                            if (decCiphers[j].collectionIds &&
+                                decCiphers[j].collectionIds.indexOf(decCollections[i].id) > -1) {
+                                itemCount++;
+                            }
+                        }
+
+                        $rootScope.vaultCollections[i].itemCount = itemCount;
                     }
                 }
 
@@ -153,10 +172,10 @@ angular
             }, 200);
         };
 
-        $scope.viewFolder = function (folder) {
+        $scope.viewGrouping = function (grouping) {
             storeState();
             $state.go('viewFolder', {
-                folderId: folder.id || '0',
+                folderId: grouping.id || '0',
                 animation: 'in-slide-left'
             });
         };

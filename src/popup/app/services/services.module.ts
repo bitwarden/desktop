@@ -27,5 +27,6 @@ export default angular
     .factory('lockService', backgroundServices.lockService)
     .factory('totpService', backgroundServices.totpService)
     .factory('environmentService', backgroundServices.environmentService)
+    .factory('collectionService', backgroundServices.collectionService)
 
     .name;

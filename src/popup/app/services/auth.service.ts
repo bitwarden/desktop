@@ -67,6 +67,7 @@ class AuthService {
     logOut(callback: Function) {
         this.$rootScope.vaultCiphers = null;
         this.$rootScope.vaultFolders = null;
+        this.$rootScope.vaultCollections = null;
         callback();
     }
 }
