@@ -138,8 +138,13 @@ gulp.task('webfonts', () => {
 gulp.task('ci', ['ci:coverage']);
 
 gulp.task('ci:coverage', (cb) => {
+    var build = '';
+    if (process.env.APPVEYOR_BUILD_NUMBER && process.env.APPVEYOR_BUILD_NUMBER !== '') {
+        build = `-${process.env.APPVEYOR_BUILD_NUMBER}`;
+    }
+
     return gulp.src(paths.coverage + '**/*')
-        .pipe(zip('coverage.zip'))
+        .pipe(zip(`coverage${build}.zip`))
         .pipe(gulp.dest(paths.coverage));
 });
 
