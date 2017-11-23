@@ -143,7 +143,7 @@ export class CurrentController {
 
     private sortUriMatch(cipher: any) {
         // exact matches should sort earlier.
-        return this.url && this.url.startsWith(cipher.uri) ? 0 : 1;
+        return cipher.login && cipher.login.uri && this.url && this.url.startsWith(cipher.login.uri) ? 0 : 1;
     }
 
     private sortLastUsed(cipher: any) {
