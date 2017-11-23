@@ -144,13 +144,17 @@ angular
         };
 
         $scope.viewCipher = function (cipher) {
-            if (cipher.clicked) {
+            var canLaunch = cipher.login && cipher.login.uri &&
+                (cipher.login.uri.startsWith('http://') || cipher.login.uri.startsWith('https://'));
+            if (canLaunch && cipher.clicked) {
                 cipher.cancelClick = true;
+                cipher.clicked = false;
                 $scope.launchWebsite(cipher);
                 return;
             }
 
             cipher.clicked = true;
+            cipher.cancelClick = false;
 
             $timeout(function () {
                 if (cipher.cancelClick) {
@@ -170,6 +174,13 @@ angular
                 cipher.cancelClick = false;
                 cipher.clicked = false;
             }, 200);
+        };
+
+        $scope.launchWebsite = function (cipher) {
+            if (cipher.login && cipher.login.uri) {
+                $analytics.eventTrack('Launched Website');
+                chrome.tabs.create({ url: cipher.login.uri });
+            }
         };
 
         $scope.viewGrouping = function (grouping, folder) {
