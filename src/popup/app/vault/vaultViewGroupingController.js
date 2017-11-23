@@ -1,21 +1,34 @@
 angular
     .module('bit.vault')
 
-    .controller('vaultViewFolderController', function ($scope, cipherService, folderService, $q, $state, $stateParams, toastr,
-        syncService, $analytics, i18nService, stateService, utilsService, $timeout, $window) {
-        var stateKey = 'viewFolder',
+    .controller('vaultViewGroupingController', function ($scope, cipherService, folderService, $q, $state, $stateParams, toastr,
+        syncService, $analytics, i18nService, stateService, utilsService, $timeout, $window, collectionService) {
+        var stateKey = 'viewGrouping',
             state = stateService.getState(stateKey) || {};
 
         state.folderId = $stateParams.folderId || state.folderId;
+        state.collectionId = $stateParams.collectionId || state.collectionId;
 
         var pageSize = 100,
-            decFolder = null,
+            decGrouping = null,
             decCiphers = [];
 
-        $scope.folder = {
-            id: !state.folderId || state.folderId === '0' ? null : state.folderId,
+        $scope.grouping = {
+            id: null,
             name: i18nService.noneFolder
         };
+        $scope.folderGrouping = false;
+        $scope.collectionGrouping = false;
+
+        if (state.folderId && state.folderId !== '0') {
+            $scope.grouping.id = state.folderId;
+            $scope.folderGrouping = true;
+        }
+        else if (state.collectionId && state.collectionId !== '0') {
+            $scope.grouping.id = state.collectionId;
+            $scope.collectionGrouping = true;
+        }
+
         $scope.i18n = i18nService;
         document.getElementById('search').focus();
 
@@ -28,32 +41,41 @@ angular
         function loadVault() {
             var promises = [];
 
-            if ($scope.folder.id) {
-                var getPromise = folderService.get($scope.folder.id).then(function (folder) {
+            if ($scope.grouping.id && $scope.folderGrouping) {
+                var getPromise = folderService.get($scope.grouping.id).then(function (folder) {
                     return folder.decrypt();
                 }).then(function (model) {
-                    decFolder = model;
+                    decGrouping = model;
+                });
+                promises.push(getPromise);
+            }
+            else if ($scope.grouping.id && $scope.collectionGrouping) {
+                var getPromise = collectionService.get($scope.grouping.id).then(function (collection) {
+                    return collection.decrypt();
+                }).then(function (model) {
+                    decGrouping = model;
                 });
                 promises.push(getPromise);
             }
 
-            var cipherPromise = cipherService.getAllDecryptedForFolder($scope.folder.id).then(function (ciphers) {
-                if (utilsService.isEdge()) {
-                    // Edge is super slow at sorting
-                    decCiphers = ciphers;
-                }
-                else {
-                    decCiphers = ciphers.sort(cipherSort);
-                }
-            });
+            var cipherPromise = cipherService.getAllDecryptedForGrouping($scope.grouping.id, $scope.folderGrouping)
+                .then(function (ciphers) {
+                    if (utilsService.isEdge()) {
+                        // Edge is super slow at sorting
+                        decCiphers = ciphers;
+                    }
+                    else {
+                        decCiphers = ciphers.sort(cipherSort);
+                    }
+                });
             promises.push(cipherPromise);
 
             $q.all(promises).then(function () {
                 $scope.loaded = true;
                 $scope.vaultCiphers = decCiphers;
 
-                if (decFolder) {
-                    $scope.folder.name = decFolder.name;
+                if (decGrouping) {
+                    $scope.grouping.name = decGrouping.name;
                 }
 
                 if (state.searchText) {
@@ -153,8 +175,8 @@ angular
             storeState();
             $state.go('addCipher', {
                 animation: 'in-slide-up',
-                from: 'folder',
-                folderId: $scope.folder.id
+                from: 'grouping',
+                folderId: state.folderId
             });
         };
 
@@ -178,7 +200,7 @@ angular
                 $state.go('viewCipher', {
                     cipherId: cipher.id,
                     animation: 'in-slide-up',
-                    from: 'folder'
+                    from: 'grouping'
                 });
 
                 // clean up

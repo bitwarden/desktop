@@ -172,10 +172,11 @@ angular
             }, 200);
         };
 
-        $scope.viewGrouping = function (grouping) {
+        $scope.viewGrouping = function (grouping, folder) {
             storeState();
-            $state.go('viewFolder', {
-                folderId: grouping.id || '0',
+            $state.go('viewGrouping', {
+                folderId: (folder && grouping.id) || '0',
+                collectionId: (!folder && grouping.id) || '0',
                 animation: 'in-slide-left'
             });
         };

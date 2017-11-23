@@ -110,7 +110,7 @@ require('./accounts/accountsHintController.js');
 require('./accounts/accountsRegisterController.js');
 require('./vault/vaultModule.js');
 require('./vault/vaultController.js');
-require('./vault/vaultViewFolderController.js');
+require('./vault/vaultViewGroupingController.js');
 require('./vault/vaultAddCipherController.js');
 require('./vault/vaultEditCipherController.js');
 require('./vault/vaultViewCipherController.js');

@@ -1,4 +1,5 @@
 import CipherService from './cipher.service';
+import CollectionService from './collection.service';
 import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import FolderService from './folder.service';
@@ -6,8 +7,8 @@ import UtilsService from './utils.service';
 
 export default class LockService {
     constructor(private cipherService: CipherService, private folderService: FolderService,
-                private cryptoService: CryptoService, private utilsService: UtilsService,
-                private setIcon: Function, private refreshBadgeAndMenu: Function) {
+        private collectionService: CollectionService, private cryptoService: CryptoService,
+        private utilsService: UtilsService, private setIcon: Function, private refreshBadgeAndMenu: Function) {
         this.checkLock();
         setInterval(() => this.checkLock(), 10 * 1000); // check every 10 seconds
 
@@ -70,6 +71,7 @@ export default class LockService {
         this.setIcon();
         this.folderService.clearCache();
         this.cipherService.clearCache();
+        this.collectionService.clearCache();
         this.refreshBadgeAndMenu();
     }
 

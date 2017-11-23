@@ -3,10 +3,11 @@
         <a ui-sref="tabs.vault({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
     </div>
     <div class="search">
-        <input type="search" placeholder="{{i18n.searchFolder}}" ng-model="searchText" ng-change="searchCiphers()" id="search" />
+        <input type="search" placeholder="{{collectionGrouping ? i18n.searchCollection : i18n.searchFolder}}"
+               ng-model="searchText" ng-change="searchCiphers()" id="search" />
         <i class="fa fa-search"></i>
     </div>
-    <div class="right">
+    <div class="right" ng-if="folderGrouping">
         <a href="" ng-click="addCipher()"><i class="fa fa-plus fa-lg"></i></a>
     </div>
 </div>
@@ -16,7 +17,7 @@
         <div class="list">
             <div class="list-section" style="padding-bottom: 0;">
                 <div class="list-section-header">
-                    {{folder.name}}
+                    {{grouping.name}}
                     <span>{{vaultCiphers.length}}</span>
                 </div>
                 <a href="#" stop-click ng-click="viewCipher(cipher)"

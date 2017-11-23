@@ -39,7 +39,7 @@
                     <span>{{vaultFolders.length}}</span>
                 </div>
                 <div class="list-section-items">
-                    <a href="#" stop-click ng-click="viewGrouping(folder)" class="list-section-item"
+                    <a href="#" stop-click ng-click="viewGrouping(folder, true)" class="list-section-item"
                        ng-repeat="folder in vaultFolders | orderBy: folderSort track by $index">
                         <i class="fa fa-fw text-muted"
                            ng-class="{'fa-folder-open': folder.id, 'fa-folder-open-o': !folder.id}"></i>
@@ -55,7 +55,7 @@
                     <span>{{vaultCollections.length}}</span>
                 </div>
                 <div class="list-section-items">
-                    <a href="#" stop-click ng-click="viewGrouping(collection)" class="list-section-item"
+                    <a href="#" stop-click ng-click="viewGrouping(collection, false)" class="list-section-item"
                        ng-repeat="collection in vaultCollections | orderBy: ['name'] track by $index">
                         <i class="fa fa-cube fa-fw text-muted"></i>
                         {{collection.name}}

@@ -178,12 +178,14 @@ export default class CipherService {
         return this.decryptedCipherCache;
     }
 
-    async getAllDecryptedForFolder(folderId: string): Promise<any[]> {
+    async getAllDecryptedForGrouping(groupingId: string, folder: boolean = true): Promise<any[]> {
         const ciphers = await this.getAllDecrypted();
         const ciphersToReturn: any[] = [];
 
         ciphers.forEach((cipher) => {
-            if (cipher.folderId === folderId) {
+            if (folder && cipher.folderId === groupingId) {
+                ciphersToReturn.push(cipher);
+            } else if (!folder && cipher.collectionIds != null && cipher.collectionIds.indexOf(groupingId) > -1) {
                 ciphersToReturn.push(cipher);
             }
         });

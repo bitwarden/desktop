@@ -128,10 +128,10 @@ angular
                 component: 'tools'
             })
 
-            .state('viewFolder', {
-                url: '/view-folder?folderId',
-                template: require('./vault/views/vaultViewFolder.html'),
-                controller: 'vaultViewFolderController',
+            .state('viewGrouping', {
+                url: '/view-grouping?folderId&collectionId',
+                template: require('./vault/views/vaultViewGrouping.html'),
+                controller: 'vaultViewGroupingController',
                 data: { authorize: true },
                 params: { animation: null, from: 'vault' }
             })
@@ -273,7 +273,7 @@ angular
 
             if ($state.current.name.indexOf('tabs.') > -1 && toState.name.indexOf('tabs.') > -1) {
                 stateService.removeState('vault');
-                stateService.removeState('viewFolder');
+                stateService.removeState('viewGrouping');
             }
 
             const userService = trans.injector().get('userService');

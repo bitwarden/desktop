@@ -485,6 +485,9 @@
   "searchFolder": {
     "message": "Search folder"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"

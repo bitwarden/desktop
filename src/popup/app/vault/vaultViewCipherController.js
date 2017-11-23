@@ -76,8 +76,8 @@ angular
                     animation: 'out-slide-down'
                 });
             }
-            else if (from === 'folder') {
-                $state.go('viewFolder', {
+            else if (from === 'grouping') {
+                $state.go('viewGrouping', {
                     animation: 'out-slide-down'
                 });
             }
