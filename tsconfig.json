@@ -11,7 +11,9 @@
   },
   "exclude": [
     "node_modules",
-    "dist/**",
-    "releases/**"
+    "dist",
+    "build",
+    "coverage",
+    "store"
   ]
 }
