@@ -11,8 +11,8 @@ angular
             $scope.loading = true;
             syncService.fullSync(true).then(function (success) {
                 $scope.loading = false;
-                setLastSync();
                 if (success) {
+                    setLastSync();
                     $analytics.eventTrack('Synced Full');
                     toastr.success(i18nService.syncingComplete);
                 }
