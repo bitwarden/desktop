@@ -17,15 +17,15 @@ angular
             id: null,
             name: i18nService.noneFolder
         };
-        $scope.folderGrouping = false;
+        $scope.folderGrouping = true;
         $scope.collectionGrouping = false;
 
         if (state.folderId && state.folderId !== '0') {
             $scope.grouping.id = state.folderId;
-            $scope.folderGrouping = true;
         }
         else if (state.collectionId && state.collectionId !== '0') {
             $scope.grouping.id = state.collectionId;
+            $scope.folderGrouping = false;
             $scope.collectionGrouping = true;
         }
 

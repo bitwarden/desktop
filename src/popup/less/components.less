@@ -1,4 +1,4 @@
-﻿@import (reference) "variables.less";
+@import (reference) "variables.less";
 @import (reference) "mixins.less";
 
 .header {
@@ -364,9 +364,13 @@
                 max-height: 20px;
                 max-width: 20px;
             }
+
+            &.single-line {
+                height: initial;
+                display: block;
+                text-align: center;
+            }
         }
-
-
 
         .action-buttons {
             float: right;

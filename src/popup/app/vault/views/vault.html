@@ -41,11 +41,17 @@
                 <div class="list-section-items">
                     <a href="#" stop-click ng-click="viewGrouping(folder, true)" class="list-section-item"
                        ng-repeat="folder in vaultFolders | orderBy: folderSort track by $index">
-                        <i class="fa fa-fw text-muted"
-                           ng-class="{'fa-folder-open': folder.id, 'fa-folder-open-o': !folder.id}"></i>
-                        {{folder.name}}
-                        <i class="fa fa-chevron-right fa-lg"></i>
-                        <span class="item-sub-label" ng-if="showGroupingCounts">{{folder.itemCount}}</span>
+                        <div class="pull-right">
+                            <i class="fa fa-chevron-right fa-lg"></i>
+                            <span class="item-sub-label" ng-if="showGroupingCounts">{{folder.itemCount}}</span>
+                        </div>
+                        <div class="icon single-line">
+                            <i class="fa fa-fw fa-lg"
+                               ng-class="{'fa-folder-open': folder.id, 'fa-folder-open-o': !folder.id}"></i>
+                        </div>
+                        <span class="text">
+                            {{folder.name}}
+                        </span>
                     </a>
                 </div>
             </div>
@@ -57,10 +63,16 @@
                 <div class="list-section-items">
                     <a href="#" stop-click ng-click="viewGrouping(collection, false)" class="list-section-item"
                        ng-repeat="collection in vaultCollections | orderBy: ['name'] track by $index">
-                        <i class="fa fa-cube fa-fw text-muted"></i>
-                        {{collection.name}}
-                        <i class="fa fa-chevron-right fa-lg"></i>
-                        <span class="item-sub-label" ng-if="showGroupingCounts">{{collection.itemCount}}</span>
+                        <div class="pull-right">
+                            <i class="fa fa-chevron-right fa-lg"></i>
+                            <span class="item-sub-label" ng-if="showGroupingCounts">{{collection.itemCount}}</span>
+                        </div>
+                        <div class="icon single-line">
+                            <i class="fa fa-fw fa-lg fa-cube"></i>
+                        </div>
+                        <span class="text">
+                            {{collection.name}}
+                        </span>
                     </a>
                 </div>
             </div>
