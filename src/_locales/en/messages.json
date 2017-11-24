@@ -968,5 +968,8 @@
   },
   "popOutNewWindow": {
     "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
   }
 }

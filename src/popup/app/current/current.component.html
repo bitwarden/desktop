@@ -1,7 +1,7 @@
 ﻿<div class="header header-search">
     <pop-out ng-if="!$ctrl.inSidebar" class="left"></pop-out>
     <div class="left" ng-if="$ctrl.inSidebar">
-        <a href="" ng-click="$ctrl.refresh()"><i class="fa fa-refresh fa-lg"></i></a>
+        <a href="" ng-click="$ctrl.refresh()" title="{{::$ctrl.i18n.refresh}}"><i class="fa fa-refresh fa-lg"></i></a>
     </div>
     <div class="search" ng-style="{'visibility': $ctrl.disableSearch ? 'hidden' : 'visible'}">
         <input type="search" placeholder="{{$ctrl.i18n.searchVault}}" id="search" ng-model="$ctrl.searchText" ng-change="$ctrl.searchVault()" />
