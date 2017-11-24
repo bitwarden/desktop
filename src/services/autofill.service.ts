@@ -451,12 +451,35 @@ export default class AutofillService {
         const card = options.cipher.card;
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'cardholderName');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'number');
-        this.makeScriptAction(fillScript, card, fillFields, filledFields, 'expMonth');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'expYear');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'code');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'brand');
 
-        if (fillFields.exp && card.expMonth && card.expYear) {
+        if (fillFields.expMonth && card.expMonth && card.expMonth !== '') {
+            let expMonth = card.expMonth;
+
+            if (fillFields.expMonth.selectInfo && fillFields.expMonth.selectInfo.options) {
+                let index: number = null;
+                if (fillFields.expMonth.selectInfo.options.length === 12) {
+                    index = parseInt(card.expMonth, null) - 1;
+                } else if (fillFields.expMonth.selectInfo.options.length === 13) {
+                    index = parseInt(card.expMonth, null);
+                }
+
+                if (index != null) {
+                    const option = fillFields.expMonth.selectInfo.options[index];
+                    if (option.length > 1) {
+                        expMonth = option[1];
+                    }
+                }
+            }
+
+            filledFields[fillFields.expMonth.opid] = fillFields.expMonth;
+            fillScript.script.push(['click_on_opid', fillFields.expMonth.opid]);
+            fillScript.script.push(['fill_by_opid', fillFields.expMonth.opid, expMonth]);
+        }
+
+        if (fillFields.exp && card.expMonth && card.expMonth !== '' && card.expYear && card.expYear !== '') {
             let year = card.expYear;
             if (year.length === 2) {
                 year = '20' + year;
@@ -506,16 +529,16 @@ export default class AutofillService {
                     ['e-mail', 'email-address'])) {
                     fillFields.email = f;
                 } else if (!fillFields.address && this.isFieldMatch(f[attr],
-                    ['address', 'street-address'], [])) {
+                    ['address', 'street-address', 'addr'], [])) {
                     fillFields.address = f;
                 } else if (!fillFields.address1 && this.isFieldMatch(f[attr],
-                    ['address-1', 'address-line-1'])) {
+                    ['address-1', 'address-line-1', 'addr-1'])) {
                     fillFields.address1 = f;
                 } else if (!fillFields.address2 && this.isFieldMatch(f[attr],
-                    ['address-2', 'address-line-2'])) {
+                    ['address-2', 'address-line-2', 'addr-2'])) {
                     fillFields.address2 = f;
                 } else if (!fillFields.address3 && this.isFieldMatch(f[attr],
-                    ['address-3', 'address-line-3'])) {
+                    ['address-3', 'address-line-3', 'addr-3'])) {
                     fillFields.address3 = f;
                 } else if (!fillFields.city && this.isFieldMatch(f[attr],
                     ['city', 'town', 'address-level-2', 'address-city', 'address-town'])) {
@@ -656,8 +679,7 @@ export default class AutofillService {
     }
 
     private makeScriptAction(fillScript: AutofillScript, cipherData: any, fillFields: any,
-        filledFields: { [id: string]: AutofillField; }, dataProp: string,
-        fieldProp?: string) {
+        filledFields: { [id: string]: AutofillField; }, dataProp: string, fieldProp?: string) {
         fieldProp = fieldProp || dataProp;
         if (cipherData[dataProp] && cipherData[dataProp] !== '' && fillFields[fieldProp]) {
             filledFields[fillFields[fieldProp].opid] = fillFields[fieldProp];

@@ -17,4 +17,5 @@ export default class AutofillField {
     onePasswordFieldType: string;
     form: string;
     autoCompleteType: string;
+    selectInfo: any;
 }
