@@ -69,28 +69,37 @@ angular
                 $rootScope.vaultCiphers = decCiphers;
 
                 if ($scope.showGroupingCounts) {
-                    // compute item count for each grouping
-                    for (let i = 0; i < decFolders.length; i++) {
-                        let itemCount = 0;
-                        for (let j = 0; j < decCiphers.length; j++) {
-                            if (decCiphers[j].folderId === decFolders[i].id) {
-                                itemCount++;
+                    var folderCounts = { 'none': 0 };
+                    var collectionCounts = {};
+
+                    decCiphers.forEach((cipher) => {
+                        if (cipher.folderId) {
+                            if (!folderCounts.hasOwnProperty(cipher.folderId)) {
+                                folderCounts[cipher.folderId] = 0;
                             }
+                            folderCounts[cipher.folderId]++;
+                        }
+                        else {
+                            folderCounts.none++;
                         }
 
-                        $rootScope.vaultFolders[i].itemCount = itemCount;
-                    }
-                    for (let i = 0; i < decCollections.length; i++) {
-                        let itemCount = 0;
-                        for (let j = 0; j < decCiphers.length; j++) {
-                            if (decCiphers[j].collectionIds &&
-                                decCiphers[j].collectionIds.indexOf(decCollections[i].id) > -1) {
-                                itemCount++;
-                            }
+                        if (cipher.collectionIds) {
+                            cipher.collectionIds.forEach((collectionId) => {
+                                if (!collectionCounts.hasOwnProperty(collectionId)) {
+                                    collectionCounts[collectionId] = 0;
+                                }
+                                collectionCounts[collectionId]++;
+                            });
                         }
+                    });
 
-                        $rootScope.vaultCollections[i].itemCount = itemCount;
-                    }
+                    $rootScope.vaultFolders.forEach((folder) => {
+                        folder.itemCount = folderCounts[folder.id || 'none'] || 0;
+                    });
+
+                    $rootScope.vaultCollections.forEach((collection) => {
+                        collection.itemCount = collectionCounts[collection.id] || 0;
+                    });
                 }
 
                 if (!delayLoad) {
