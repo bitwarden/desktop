@@ -64,18 +64,6 @@ export default class UtilsService implements UtilsServiceInterface {
         });
     }
 
-    static extendObject(...objects: any[]): any {
-        for (let i = 1; i < objects.length; i++) {
-            for (const key in objects[i]) {
-                if (objects[i].hasOwnProperty(key)) {
-                    objects[0][key] = objects[i][key];
-                }
-            }
-        }
-
-        return objects[0];
-    }
-
     // EFForg/OpenWireless
     // ref https://github.com/EFForg/OpenWireless/blob/master/app/js/diceware.js
     static secureRandomNumber(min: number, max: number): number {

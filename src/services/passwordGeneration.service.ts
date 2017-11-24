@@ -27,7 +27,7 @@ const MaxPasswordsInHistory = 100;
 export default class PasswordGenerationService {
     static generatePassword(options: any): string {
         // overload defaults with given options
-        const o = UtilsService.extendObject({}, DefaultOptions, options);
+        const o = Object.assign({}, DefaultOptions, options);
 
         // sanitize
         if (o.uppercase && o.minUppercase < 0) {
