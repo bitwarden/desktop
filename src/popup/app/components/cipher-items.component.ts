@@ -4,8 +4,10 @@ export class CipherItemsController implements ng.IController {
     onSelected: Function;
     onView: Function;
 
-    constructor(private i18nService: any) {
+    i18n: any;
 
+    constructor(private i18nService: any) {
+        this.i18n = i18nService;
     }
 
     view(cipher: any) {

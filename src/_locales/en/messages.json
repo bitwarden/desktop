@@ -965,5 +965,8 @@
   },
   "favorites": {
     "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
   }
 }
