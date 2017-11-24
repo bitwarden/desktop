@@ -971,5 +971,11 @@
   },
   "refresh": {
     "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }
