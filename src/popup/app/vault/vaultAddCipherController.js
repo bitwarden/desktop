@@ -88,6 +88,12 @@ angular
             }
         };
 
+        $scope.showPassword = false;
+        $scope.togglePassword = function () {
+            $analytics.eventTrack('Toggled Password');
+            $scope.showPassword = !$scope.showPassword;
+        };
+
         $scope.addField = function (type) {
             if (!$scope.cipher.fields) {
                 $scope.cipher.fields = [];

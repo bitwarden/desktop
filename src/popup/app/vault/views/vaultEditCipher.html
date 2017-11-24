@@ -31,9 +31,16 @@
                             <label for="loginUsername" class="item-label">{{i18n.username}}</label>
                             <input id="loginUsername" type="text" name="Login.Username" ng-model="cipher.login.username">
                         </div>
-                        <div class="list-section-item">
-                            <label for="loginPassword" class="item-label">{{i18n.password}}</label>
-                            <input id="loginPassword" type="password" name="Login.Password" ng-model="cipher.login.password">
+                        <div class="list-section-item flex">
+                            <div class="flex-grow">
+                                <label for="loginPassword" class="item-label">{{i18n.password}}</label>
+                                <input id="loginPassword" type="{{showPassword ? 'text' : 'password'}}" name="Login.Password" ng-model="cipher.login.password">
+                            </div>
+                            <div class="action-buttons">
+                                <a class="btn-list" href="" title="{{i18n.togglePassword}}" ng-click="togglePassword()">
+                                    <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>
+                                </a>
+                            </div>
                         </div>
                         <a class="list-section-item" href="" ng-click="generatePassword()">
                             {{i18n.generatePassword}}
