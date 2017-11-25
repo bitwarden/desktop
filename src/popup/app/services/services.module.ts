@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import AuthService from './auth.service';
 import * as backgroundServices from './background.service';
 import StateService from './state.service';
-import ValidationService from './validation.service';
+import { ValidationService } from './validation.service';
 
 export default angular
     .module('bit.services', ['toastr'])

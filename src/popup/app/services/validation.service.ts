@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 
-class ValidationService {
+export class ValidationService {
     constructor(private toastr: any, private i18nService: any) {
     }
 
@@ -28,5 +28,3 @@ class ValidationService {
     }
 
 }
-
-export default ValidationService;
