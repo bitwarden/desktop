@@ -26,6 +26,7 @@ import ToolsModule from './tools/tools.module';
 import ServicesModule from './services/services.module';
 import LockModule from './lock/lock.module';
 import CurrentModule from './current/current.module';
+import GlobalModule from './global/global.module';
 
 // Model imports
 import { Attachment } from '../../models/domain/attachment';
@@ -83,7 +84,7 @@ angular
         ComponentsModule,
         ServicesModule,
 
-        'bit.global',
+        GlobalModule,
         'bit.accounts',
         CurrentModule,
         'bit.vault',
@@ -93,11 +94,6 @@ angular
     ]);
 
 require('./config');
-require('./global/globalModule.js');
-require('./global/mainController.js');
-require('./global/tabsController.js');
-require('./global/baseController.js');
-require('./global/privateModeController.js');
 require('./accounts/accountsModule.js');
 require('./accounts/accountsLoginController.js');
 require('./accounts/accountsLoginTwoFactorController.js');
