@@ -540,6 +540,10 @@ export default class AutofillService {
                 } else if (!fillFields.address3 && this.isFieldMatch(f[attr],
                     ['address-3', 'address-line-3', 'addr-3'])) {
                     fillFields.address3 = f;
+                } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],
+                    ['postal', 'zip', 'zip2', 'zip-code', 'postal-code', 'address-zip', 'address-postal',
+                        'address-code', 'address-postal-code', 'address-zip-code'])) {
+                    fillFields.postalCode = f;
                 } else if (!fillFields.city && this.isFieldMatch(f[attr],
                     ['city', 'town', 'address-level-2', 'address-city', 'address-town'])) {
                     fillFields.city = f;
@@ -547,10 +551,6 @@ export default class AutofillService {
                     ['state', 'province', 'provence', 'address-level-1', 'address-state',
                         'address-province'])) {
                     fillFields.state = f;
-                } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],
-                    ['postal', 'zip', 'zip2', 'zip-code', 'postal-code', 'address-zip', 'address-postal',
-                        'address-code', 'address-postal-code', 'address-zip-code'])) {
-                    fillFields.postalCode = f;
                 } else if (!fillFields.country && this.isFieldMatch(f[attr],
                     ['country', 'country-code', 'country-name', 'address-country', 'address-country-name',
                         'address-country-code'])) {
