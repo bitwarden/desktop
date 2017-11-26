@@ -27,6 +27,7 @@ import ServicesModule from './services/services.module';
 import LockModule from './lock/lock.module';
 import CurrentModule from './current/current.module';
 import GlobalModule from './global/global.module';
+import SettingsModule from './settings/settings.module';
 
 // Model imports
 import { Attachment } from '../../models/domain/attachment';
@@ -88,7 +89,7 @@ angular
         'bit.accounts',
         CurrentModule,
         'bit.vault',
-        'bit.settings',
+        SettingsModule,
         ToolsModule,
         LockModule
     ]);
@@ -107,18 +108,6 @@ require('./vault/vaultAddCipherController.js');
 require('./vault/vaultEditCipherController.js');
 require('./vault/vaultViewCipherController.js');
 require('./vault/vaultAttachmentsController.js');
-require('./settings/settingsModule.js');
-require('./settings/settingsController.js');
-require('./settings/settingsHelpController.js');
-require('./settings/settingsAboutController.js');
-require('./settings/settingsCreditsController.js');
-require('./settings/settingsFeaturesController.js');
-require('./settings/settingsSyncController.js');
-require('./settings/settingsFoldersController.js');
-require('./settings/settingsAddFolderController.js');
-require('./settings/settingsEditFolderController.js');
-require('./settings/settingsPremiumController.js');
-require('./settings/settingsEnvironmentController.js');
 require('./tools/toolsPasswordGeneratorHistoryController.js');
 
 // $$ngIsClass fix issue with "class constructors must be invoked with |new|" on Firefox ESR

@@ -120,8 +120,7 @@ angular
             })
             .state('tabs.settings', {
                 url: '/settings',
-                template: require('./settings/views/settings.html'),
-                controller: 'settingsController'
+                component: 'settings',
             })
             .state('tabs.tools', {
                 url: '/tools',
@@ -186,72 +185,62 @@ angular
 
             .state('about', {
                 url: '/about',
-                template: require('./settings/views/settingsAbout.html'),
-                controller: 'settingsAboutController',
+                component: 'about',
                 data: { authorize: true },
                 params: { animation: null }
             })
             .state('credits', {
                 url: '/credits',
-                template: require('./settings/views/settingsCredits.html'),
-                controller: 'settingsCreditsController',
+                component: 'credits',
                 data: { authorize: true },
                 params: { animation: null }
             })
             .state('features', {
                 url: '/features',
-                template: require('./settings/views/settingsFeatures.html'),
-                controller: 'settingsFeaturesController',
+                component: 'features',
                 data: { authorize: true },
                 params: { animation: null }
             })
             .state('help', {
                 url: '/help',
-                template: require('./settings/views/settingsHelp.html'),
-                controller: 'settingsHelpController',
+                component: 'help',
                 data: { authorize: true },
                 params: { animation: null }
             })
             .state('sync', {
                 url: '/sync',
-                template: require('./settings/views/settingsSync.html'),
-                controller: 'settingsSyncController',
+                component: 'sync',
                 data: { authorize: true },
                 params: { animation: null }
             })
             .state('premium', {
                 url: '/premium',
-                template: require('./settings/views/settingsPremium.html'),
-                controller: 'settingsPremiumController',
+                component: 'premium',
                 data: { authorize: true },
                 params: { animation: null }
             })
 
             .state('folders', {
                 url: '/folders',
-                template: require('./settings/views/settingsFolders.html'),
-                controller: 'settingsFoldersController',
+                abstract: true,
                 data: { authorize: true },
                 params: { animation: null }
             })
-            .state('addFolder', {
-                url: '/addFolder',
-                template: require('./settings/views/settingsAddFolder.html'),
-                controller: 'settingsAddFolderController',
-                data: { authorize: true },
-                params: { animation: null }
+            .state('folders.list', {
+                url: '',
+                component: 'folders',
             })
-            .state('editFolder', {
-                url: '/editFolder?folderId',
-                template: require('./settings/views/settingsEditFolder.html'),
-                controller: 'settingsEditFolderController',
-                data: { authorize: true },
-                params: { animation: null }
+            .state('folders.add', {
+                url: '/add',
+                component: 'addFolder',
+            })
+            .state('folders.edit', {
+                url: '/{folderId}/edit',
+                component: 'editFolder',
             })
             .state('environment', {
                 url: '/environment',
-                template: require('./settings/views/settingsEnvironment.html'),
-                controller: 'settingsEnvironmentController',
+                component: 'environment',
                 data: { authorize: false },
                 params: { animation: null }
             })

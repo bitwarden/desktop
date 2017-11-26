@@ -1,0 +1,101 @@
+﻿<div class="header">
+    <pop-out class="left"></pop-out>
+    <div class="title">{{$ctrl.i18n.settings}}</div>
+</div>
+<div class="content content-tabs">
+    <div class="list">
+        <div class="list-section">
+            <div class="list-section-header">
+                {{$ctrl.i18n.security}}
+            </div>
+            <div class="list-section-items">
+                <div class="list-section-item">
+                    <label for="lock-option" class="item-label">{{$ctrl.i18n.lockOptions}}</label>
+                    <select id="lock-option" name="LockOption" ng-model="$ctrl.lockOption" ng-change="$ctrl.changeLockOption()">
+                        <option value="0">{{$ctrl.i18n.immediately}}</option>
+                        <option value="1">{{$ctrl.i18n.oneMinute}}</option>
+                        <option value="5">{{$ctrl.i18n.fiveMinutes}}</option>
+                        <option value="15">{{$ctrl.i18n.fifteenMinutes}}</option>
+                        <option value="30">{{$ctrl.i18n.thirtyMinutes}}</option>
+                        <option value="60">{{$ctrl.i18n.oneHour}}</option>
+                        <option value="240">{{$ctrl.i18n.fourHours}}</option>
+                        <option value="-2" ng-if="$ctrl.showOnLocked">{{$ctrl.i18n.onLocked}}</option>
+                        <option value="-1">{{$ctrl.i18n.onRestart}}</option>
+                        <option value="">{{$ctrl.i18n.never}}</option>
+                    </select>
+                </div>
+                <a class="list-section-item" href="" ng-click="$ctrl.lock()">
+                    {{$ctrl.i18n.lockNow}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" href="" ng-click="$ctrl.twoStep()">
+                    {{$ctrl.i18n.twoStepLogin}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-header">
+                {{$ctrl.i18n.account}}
+            </div>
+            <div class="list-section-items">
+                <a class="list-section-item text-primary" ui-sref="premium({animation: 'in-slide-left'})">
+                    <i class="fa fa-star fa-fw"></i> <b>{{$ctrl.i18n.premiumMembership}}</b>
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" href="" ng-click="$ctrl.changePassword()">
+                    {{$ctrl.i18n.changeMasterPassword}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" href="" ng-click="$ctrl.changeEmail()">
+                    {{$ctrl.i18n.changeEmail}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" href="" ng-click="$ctrl.logOut()">
+                    {{$ctrl.i18n.logOut}}
+                </a>
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-header">
+                {{$ctrl.i18n.manage}}
+            </div>
+            <div class="list-section-items">
+                <a class="list-section-item" ui-sref="folders.list({animation: 'in-slide-left'})">
+                    {{$ctrl.i18n.folders}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" ui-sref="sync({animation: 'in-slide-left'})">
+                    {{$ctrl.i18n.sync}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-header">
+                {{$ctrl.i18n.other}}
+            </div>
+            <div class="list-section-items">
+                <a class="list-section-item" ui-sref="features({animation: 'in-slide-left'})">
+                    {{$ctrl.i18n.features}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" ui-sref="about({animation: 'in-slide-left'})">
+                    {{$ctrl.i18n.about}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" ui-sref="help({animation: 'in-slide-left'})">
+                    {{$ctrl.i18n.helpFeedback}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+                <a class="list-section-item" href="" ng-click="$ctrl.rate()">
+                    {{$ctrl.i18n.rateExtension}}
+                    <i class="fa fa-chevron-right fa-lg"></i>
+                </a>
+            </div>
+            <div class="list-section-footer">
+                {{$ctrl.i18n.rateExtensionDesc}}
+            </div>
+        </div>
+    </div>
+</div>

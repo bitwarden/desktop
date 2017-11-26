@@ -1,0 +1,56 @@
+﻿<form name="theForm" ng-submit="$ctrl.save()">
+    <div class="header">
+        <div class="left">
+            <a ui-sref="home({animation: 'out-slide-down'})">{{$ctrl.i18n.close}}</a>
+        </div>
+        <div class="right">
+            <button type="submit" class="btn btn-link">{{$ctrl.i18n.save}}</button>
+        </div>
+        <div class="title">{{$ctrl.i18n.settings}}</div>
+    </div>
+    <div class="content">
+        <div class="list">
+            <div class="list-section">
+                <div class="list-section-header">
+                    {{$ctrl.i18n.selfHostedEnvironment}}
+                </div>
+                <div class="list-section-items">
+                    <div class="list-section-item">
+                        <label for="baseUrl" class="item-label">{{$ctrl.i18n.baseUrl}}</label>
+                        <input id="baseUrl" type="text" name="BaseUrl" ng-model="$ctrl.baseUrl"
+                               placeholder="ex. https://bitwarden.company.com">
+                    </div>
+                </div>
+                <div class="list-section-footer">
+                    {{$ctrl.i18n.selfHostedEnvironmentFooter}}
+                </div>
+            </div>
+            <div class="list-section">
+                <div class="list-section-header">
+                    {{$ctrl.i18n.customEnvironment}}
+                </div>
+                <div class="list-section-items">
+                    <div class="list-section-item">
+                        <label for="webVaultUrl" class="item-label">{{$ctrl.i18n.webVaultUrl}}</label>
+                        <input id="webVaultUrl" type="text" name="WebVaultUrl" ng-model="$ctrl.webVaultUrl">
+                    </div>
+                    <div class="list-section-item">
+                        <label for="apiUrl" class="item-label">{{$ctrl.i18n.apiUrl}}</label>
+                        <input id="apiUrl" type="text" name="ApiUrl" ng-model="$ctrl.apiUrl">
+                    </div>
+                    <div class="list-section-item">
+                        <label for="identityUrl" class="item-label">{{$ctrl.i18n.identityUrl}}</label>
+                        <input id="identityUrl" type="text" name="IdentityUrl" ng-model="$ctrl.identityUrl">
+                    </div>
+                    <div class="list-section-item">
+                        <label for="iconsUrl" class="item-label">{{$ctrl.i18n.iconsUrl}}</label>
+                        <input id="iconsUrl" type="text" name="IconsUrl" ng-model="$ctrl.iconsUrl">
+                    </div>
+                </div>
+                <div class="list-section-footer">
+                    {{$ctrl.i18n.customEnvironmentFooter}}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

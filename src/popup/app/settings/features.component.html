@@ -1,0 +1,82 @@
+﻿<div class="header">
+    <div class="left">
+        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{$ctrl.i18n.back}}</a>
+    </div>
+    <div class="title">{{$ctrl.i18n.features}}</div>
+</div>
+<div class="content">
+    <div class="list">
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="totp-copy">{{$ctrl.i18n.enableAutoFillOnPageLoad}}</label>
+                    <input id="totp-copy" type="checkbox" ng-model="$ctrl.enableAutoFillOnPageLoad"
+                           ng-change="$ctrl.updateAutoFillOnPageLoad()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{$ctrl.i18n.enableAutoFillOnPageLoadDesc}}
+                <b>{{$ctrl.i18n.warning}}</b>: {{$ctrl.i18n.experimentalFeature}}
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="totp-copy">{{$ctrl.i18n.disableAutoTotpCopy}}</label>
+                    <input id="totp-copy" type="checkbox" ng-model="$ctrl.disableAutoTotpCopy"
+                           ng-change="$ctrl.updateAutoTotpCopy()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{$ctrl.i18n.disableAutoTotpCopyDesc}}
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="ga">{{$ctrl.i18n.disableGa}}</label>
+                    <input id="ga" type="checkbox" ng-model="$ctrl.disableGa" ng-change="$ctrl.updateGa()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{$ctrl.i18n.gaDesc}}
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="notification-bar">{{$ctrl.i18n.disableAddLoginNotification}}</label>
+                    <input id="notification-bar" type="checkbox" ng-model="$ctrl.disableAddLoginNotification"
+                           ng-change="$ctrl.updateAddLoginNotification()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{$ctrl.i18n.addLoginNotificationDesc}}
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="context-menu">{{$ctrl.i18n.disableContextMenuItem}}</label>
+                    <input id="context-menu" type="checkbox" ng-model="$ctrl.disableContextMenuItem"
+                           ng-change="$ctrl.updateDisableContextMenuItem()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{$ctrl.i18n.disableContextMenuItemDesc}}
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="list-section-items">
+                <div class="list-section-item list-section-item-checkbox">
+                    <label for="context-menu">{{$ctrl.i18n.disableFavicon}}</label>
+                    <input id="context-menu" type="checkbox" ng-model="$ctrl.disableFavicon"
+                           ng-change="$ctrl.updateDisableFavicon()">
+                </div>
+            </div>
+            <div class="list-section-footer">
+                {{$ctrl.i18n.disableFaviconDesc}}
+            </div>
+        </div>
+    </div>
+</div>

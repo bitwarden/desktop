@@ -1,20 +1,20 @@
 ﻿<div class="header">
     <div class="left">
-        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
+        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{$ctrl.i18n.back}}</a>
     </div>
-    <div class="title">{{i18n.about}}</div>
+    <div class="title">{{$ctrl.i18n.about}}</div>
 </div>
 <div class="content">
     <div class="about-page">
-        <img src="../../../../images/logo@3x.png" alt="bitwarden" />
-        {{i18n.version}} {{version}}<br />
-        &copy; 8bit Solutions LLC 2015-{{year}}
+        <img src="../../../images/logo@3x.png" alt="bitwarden" />
+        {{$ctrl.i18n.version}} {{$ctrl.version}}<br />
+        &copy; 8bit Solutions LLC 2015-{{$ctrl.year}}
     </div>
     <div class="list">
         <div class="list-section">
             <div class="list-section-items">
                 <a class="list-section-item" ui-sref="credits({animation: 'in-slide-left'})">
-                    {{i18n.credits}}
+                    {{$ctrl.i18n.credits}}
                     <i class="fa fa-chevron-right fa-lg"></i>
                 </a>
             </div>

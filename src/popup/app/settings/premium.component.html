@@ -1,0 +1,54 @@
+﻿<div class="header">
+    <div class="left">
+        <a ui-sref="tabs.settings({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{$ctrl.i18n.back}}</a>
+    </div>
+    <div class="title">{{$ctrl.i18n.premiumMembership}}</div>
+</div>
+<div class="content">
+    <div class="premium-page">
+        <div ng-if="!$ctrl.isPremium">
+            <p class="text-center lead">{{$ctrl.i18n.premiumNotCurrentMember}}</p>
+            <p>{{$ctrl.i18n.premiumSignUpAndGet}}</p>
+            <ul class="fa-ul">
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                   {{$ctrl.i18n.ppremiumSignUpStorage}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{$ctrl.i18n.ppremiumSignUpTwoStep}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{$ctrl.i18n.ppremiumSignUpTotp}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{$ctrl.i18n.ppremiumSignUpSupport}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{$ctrl.i18n.ppremiumSignUpFuture}}
+                </li>
+            </ul>
+            <p class="text-center lead">{{$ctrl.i18n.premiumPrice.replace('%price%', $ctrl.price)}}</p>
+            <div class="bottom-buttons">
+                <a class="btn btn-lg btn-primary btn-block" href="#" stop-click ng-click="$ctrl.purchase()">
+                    <b>{{$ctrl.i18n.premiumPurchase}}</b>
+                </a>
+                <a class="btn btn-lg btn-link btn-block" href="#" stop-click ng-click="$ctrl.refresh()">
+                    {{$ctrl.i18n.premiumRefresh}}
+                </a>
+            </div>
+        </div>
+        <div ng-if="isPremium">
+            <p class="text-center lead">{{$ctrl.i18n.premiumCurrentMember}}</p>
+            <p class="text-center">{{$ctrl.i18n.premiumCurrentMemberThanks}}</p>
+            <div class="bottom-buttons">
+                <a class="btn btn-lg btn-primary btn-block" href="#" stop-click ng-click="$ctrl.manage()">
+                    <b>{{$ctrl.i18n.premiumManage}}</b>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

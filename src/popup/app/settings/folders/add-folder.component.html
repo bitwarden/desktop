@@ -1,0 +1,24 @@
+﻿<form name="theForm" ng-submit="$ctrl.save($ctrl.folder)" bit-form="$ctrl.savePromise" autocomplete="off">
+    <div class="header">
+        <div class="left">
+            <a ui-sref="^.list({animation: 'out-slide-down'})">{{$ctrl.i18n.cancel}}</a>
+        </div>
+        <div class="right">
+            <button type="submit" class="btn btn-link" ng-show="!theForm.$loading">{{$ctrl.i18n.save}}</button>
+            <i class="fa fa-spinner fa-lg" ng-show="theForm.$loading" ng-class="{'fa-spin' : theForm.$loading}"></i>
+        </div>
+        <div class="title">{{$ctrl.i18n.addFolder}}</div>
+    </div>
+    <div class="content">
+        <div class="list">
+            <div class="list-section">
+                <div class="list-section-items">
+                    <div class="list-section-item">
+                        <label for="name" class="item-label">{{$ctrl.i18n.name}}</label>
+                        <input id="name" type="text" name="Name" ng-model="$ctrl.folder.name">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
