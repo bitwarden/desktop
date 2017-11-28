@@ -11,8 +11,8 @@ class EditFolderController {
     folder: Folder;
 
     constructor($scope: any, $stateParams: any, private folderService: any, private toastr: any, private $state: any,
-                private SweetAlert: any, utilsService: UtilsService, private $analytics: any, private i18nService: any,
-                $timeout: any) {
+        private SweetAlert: any, utilsService: UtilsService, private $analytics: any, private i18nService: any,
+        $timeout: any) {
         this.i18n = i18nService;
 
         $timeout(() => {
@@ -25,14 +25,11 @@ class EditFolderController {
 
     $onInit() {
         this.folderId = this.$transition$.params('to').folderId;
-
-        this.folderService
-            .get(this.folderId)
-            .then((folder: any) => {
-                return folder.decrypt();
-            }).then((model: Folder) => {
-                this.folder = model;
-            });
+        this.folderService.get(this.folderId).then((folder: any) => {
+            return folder.decrypt();
+        }).then((model: Folder) => {
+            this.folder = model;
+        });
     }
 
     save(model: any) {
@@ -41,17 +38,14 @@ class EditFolderController {
             return;
         }
 
-        this.savePromise = this.folderService
-            .encrypt(model)
-            .then((folderModel: any) => {
-                const folder = new Folder(folderModel, true);
-                return this.folderService.saveWithServer(folder);
-            })
-            .then((folder: any) => {
-                this.$analytics.eventTrack('Edited Folder');
-                this.toastr.success(this.i18nService.editedFolder);
-                this.$state.go('^.list', { animation: 'out-slide-down' });
-            });
+        this.savePromise = this.folderService.encrypt(model).then((folderModel: any) => {
+            const folder = new Folder(folderModel, true);
+            return this.folderService.saveWithServer(folder);
+        }).then((folder: any) => {
+            this.$analytics.eventTrack('Edited Folder');
+            this.toastr.success(this.i18nService.editedFolder);
+            this.$state.go('^.list', { animation: 'out-slide-down' });
+        });
     }
 
     delete() {
@@ -63,15 +57,13 @@ class EditFolderController {
             cancelButtonText: this.i18nService.no,
         }, (confirmed: boolean) => {
             if (confirmed) {
-                this.folderService
-                    .deleteWithServer(this.folderId)
-                    .then(() => {
-                        this.$analytics.eventTrack('Deleted Folder');
-                        this.toastr.success(this.i18nService.deletedFolder);
-                        this.$state.go('^.list', {
-                            animation: 'out-slide-down',
-                        });
+                this.folderService.deleteWithServer(this.folderId).then(() => {
+                    this.$analytics.eventTrack('Deleted Folder');
+                    this.toastr.success(this.i18nService.deletedFolder);
+                    this.$state.go('^.list', {
+                        animation: 'out-slide-down',
                     });
+                });
             }
         });
     }

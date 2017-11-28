@@ -53,7 +53,7 @@ angular
             .state('privateMode', {
                 url: '/private-mode',
                 controller: 'privateModeController',
-                template: require('./global/privateMode.html'),
+                template: require('./global/private-mode.html'),
                 data: { authorize: false },
                 params: { animation: null }
             })

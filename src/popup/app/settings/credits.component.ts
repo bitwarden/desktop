@@ -1,4 +1,4 @@
-﻿import * as template from './credits.component.html';
+import * as template from './credits.component.html';
 
 class CreditsController {
     i18n: any;

@@ -1,4 +1,4 @@
-﻿import { Folder } from '../../../../models/domain/folder';
+import { Folder } from '../../../../models/domain/folder';
 import * as template from './folders.component.html';
 
 class FoldersController {
@@ -8,23 +8,20 @@ class FoldersController {
 
     constructor(private folderService: any, private $state: any, i18nService: any) {
         this.i18n = i18nService;
-
         this.load();
     }
 
     load() {
-        this.folderService
-            .getAllDecrypted()
-            .then((folders: any) => {
-                if (folders.length > 0 && folders[0].id === null) {
-                    // remove the "none" folder
-                    this.folders = folders.slice(1);
-                } else {
-                    this.folders = folders;
-                }
+        this.folderService.getAllDecrypted().then((folders: any) => {
+            if (folders.length > 0 && folders[0].id === null) {
+                // remove the "none" folder
+                this.folders = folders.slice(1);
+            } else {
+                this.folders = folders;
+            }
 
-                this.loaded = true;
-            });
+            this.loaded = true;
+        });
     }
 
     editFolder(folder: any) {

@@ -1,4 +1,4 @@
-﻿import * as template from './about.component.html';
+import * as template from './about.component.html';
 
 class AboutController {
     version: string;

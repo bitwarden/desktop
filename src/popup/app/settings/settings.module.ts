@@ -1,4 +1,4 @@
-﻿import * as angular from 'angular';
+import * as angular from 'angular';
 import { AboutComponent } from './about.component';
 import { CreditsComponent } from './credits.component';
 import { EnvironmentComponent } from './environment.component';

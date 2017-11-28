@@ -1,4 +1,4 @@
-﻿import * as template from './help.component.html';
+import * as template from './help.component.html';
 
 class HelpController {
     i18n: any;

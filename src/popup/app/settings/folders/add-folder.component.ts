@@ -9,7 +9,7 @@ class AddFolderController {
     i18n: any;
 
     constructor(private folderService: any, private $state: any, private toastr: any, utilsService: UtilsService,
-                private $analytics: any, private i18nService: any, $timeout: any) {
+        private $analytics: any, private i18nService: any, $timeout: any) {
         $timeout(() => {
             utilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();
@@ -26,17 +26,14 @@ class AddFolderController {
             return;
         }
 
-        this.savePromise = this.folderService
-            .encrypt(model)
-            .then((folderModel: any) => {
-                const folder = new Folder(folderModel, true);
-                return this.folderService.saveWithServer(folder);
-            })
-            .then((folder: any) => {
-                this.$analytics.eventTrack('Added Folder');
-                this.toastr.success(this.i18nService.addedFolder);
-                this.$state.go('^.list', { animation: 'out-slide-down' });
-            });
+        this.savePromise = this.folderService.encrypt(model).then((folderModel: any) => {
+            const folder = new Folder(folderModel, true);
+            return this.folderService.saveWithServer(folder);
+        }).then((folder: any) => {
+            this.$analytics.eventTrack('Added Folder');
+            this.toastr.success(this.i18nService.addedFolder);
+            this.$state.go('^.list', { animation: 'out-slide-down' });
+        });
     }
 }
 

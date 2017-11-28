@@ -23,8 +23,8 @@ class SettingsController {
     showOnLocked: boolean;
 
     constructor(private $state: any, private SweetAlert: any, private utilsService: UtilsService,
-                private $analytics: any, private i18nService: any, private constantsService: ConstantsService,
-                private cryptoService: CryptoService, private lockService: any, private $timeout: ng.ITimeoutService) {
+        private $analytics: any, private i18nService: any, private constantsService: ConstantsService,
+        private cryptoService: CryptoService, private lockService: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
@@ -77,13 +77,11 @@ class SettingsController {
 
     lock() {
         this.$analytics.eventTrack('Lock Now');
-        this.lockService
-            .lock()
-            .then(() => {
-                return this.$state.go('lock', {
-                    animation: 'in-slide-down',
-                });
+        this.lockService.lock().then(() => {
+            return this.$state.go('lock', {
+                animation: 'in-slide-down',
             });
+        });
     }
 
     logOut() {
@@ -147,7 +145,6 @@ class SettingsController {
 
     rate() {
         this.$analytics.eventTrack('Rate Extension');
-
         chrome.tabs.create({
             url: RateUrls[this.utilsService.getBrowser()],
         });

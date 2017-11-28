@@ -26,15 +26,13 @@ class EnvironmentController {
     }
 
     save() {
-        this.environmentService
-        .setUrls({
+        this.environmentService.setUrls({
             base: this.baseUrl,
             api: this.apiUrl,
             identity: this.identityUrl,
             webVault: this.webVaultUrl,
             icons: this.iconsUrl,
-        })
-        .then((resUrls: any) => {
+        }).then((resUrls: any) => {
             this.$timeout(() => {
                 // re-set urls since service can change them, ex: prefixing https://
                 this.baseUrl = resUrls.base;

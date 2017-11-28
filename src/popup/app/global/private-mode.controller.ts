@@ -1,4 +1,4 @@
-﻿export class PrivateModeController implements ng.IController {
+export class PrivateModeController implements ng.IController {
     constructor($scope: any) {
         $scope.privateModeMessage = chrome.i18n.getMessage('privateModeMessage');
         $scope.learnMoreMessage = chrome.i18n.getMessage('learnMore');
