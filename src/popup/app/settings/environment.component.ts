@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import UtilsService from '../../../services/utils.service';
 import * as template from './environment.component.html';
 
-class EnvironmentController {
+export class EnvironmentController {
     iconsUrl: string;
     identityUrl: string;
     apiUrl: string;

@@ -1,7 +1,7 @@
 import { Folder } from '../../../../models/domain/folder';
 import * as template from './folders.component.html';
 
-class FoldersController {
+export class FoldersController {
     folders: Folder[] = [];
     i18n: any;
     loaded = false;

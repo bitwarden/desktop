@@ -1,6 +1,6 @@
 import * as template from './help.component.html';
 
-class HelpController {
+export class HelpController {
     i18n: any;
 
     constructor(i18nService: any, private $analytics: any) {

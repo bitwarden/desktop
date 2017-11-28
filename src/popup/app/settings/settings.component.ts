@@ -17,7 +17,7 @@ const RateUrls = {
     'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl',
 };
 
-class SettingsController {
+export class SettingsController {
     lockOption = '';
     i18n: any;
     showOnLocked: boolean;

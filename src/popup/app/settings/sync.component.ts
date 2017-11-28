@@ -1,6 +1,6 @@
 import * as template from './sync.component.html';
 
-class SyncController {
+export class SyncController {
     i18n: any;
     lastSync = '--';
     loading = false;

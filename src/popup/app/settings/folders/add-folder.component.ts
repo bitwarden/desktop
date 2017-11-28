@@ -3,7 +3,7 @@ import { Folder } from '../../../../models/domain/folder';
 import { UtilsService } from '../../../../services/abstractions/utils.service';
 import * as template from './add-folder.component.html';
 
-class AddFolderController {
+export class AddFolderController {
     savePromise: any;
     folder: {};
     i18n: any;

@@ -1,6 +1,6 @@
 import * as template from './about.component.html';
 
-class AboutController {
+export class AboutController {
     version: string;
     year: number;
     i18n: any;

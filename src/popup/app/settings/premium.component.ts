@@ -1,6 +1,6 @@
 import * as template from './premium.component.html';
 
-class PremiumController {
+export class PremiumController {
     isPremium: boolean;
     i18n: any;
     price = '$10';

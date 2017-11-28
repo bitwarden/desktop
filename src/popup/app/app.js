@@ -130,6 +130,28 @@ import { PasswordGeneratorController } from './tools/password-generator.componen
 PasswordGeneratorController.$$ngIsClass = true;
 import { ToolsController } from './tools/tools.component';
 ToolsController.$$ngIsClass = true;
+import { AddFolderController } from './settings/folders/add-folder.component';
+AddFolderController.$$ngIsClass = true;
+import { EditFolderController } from './settings/folders/edit-folder.component';
+EditFolderController.$$ngIsClass = true;
+import { FoldersController } from './settings/folders/folders.component';
+FoldersController.$$ngIsClass = true;
+import { AboutController } from './settings/about.component';
+AboutController.$$ngIsClass = true;
+import { CreditsController } from './settings/credits.component';
+CreditsController.$$ngIsClass = true;
+import { EnvironmentController } from './settings/environment.component';
+EnvironmentController.$$ngIsClass = true;
+import { FeaturesController } from './settings/features.component';
+FeaturesController.$$ngIsClass = true;
+import { HelpController } from './settings/help.component';
+HelpController.$$ngIsClass = true;
+import { PremiumController } from './settings/premium.component';
+PremiumController.$$ngIsClass = true;
+import { SettingsController } from './settings/settings.component';
+SettingsController.$$ngIsClass = true;
+import { SyncController } from './settings/sync.component';
+SyncController.$$ngIsClass = true;
 
 // Bootstrap the angular application
 angular.element(function () {

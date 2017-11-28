@@ -3,7 +3,7 @@ import { Folder } from '../../../../models/domain/folder';
 import UtilsService from '../../../../services/utils.service';
 import * as template from './edit-folder.component.html';
 
-class EditFolderController {
+export class EditFolderController {
     $transition$: any;
     folderId: any;
     savePromise: any = null;

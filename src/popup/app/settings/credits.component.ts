@@ -1,6 +1,6 @@
 import * as template from './credits.component.html';
 
-class CreditsController {
+export class CreditsController {
     i18n: any;
 
     constructor(i18nService: any, private $analytics: any) {

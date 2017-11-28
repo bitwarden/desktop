@@ -3,7 +3,7 @@ import { UtilsService } from '../../../services/abstractions/utils.service';
 import StateService from '../services/state.service';
 import * as template from './features.component.html';
 
-class FeaturesController {
+export class FeaturesController {
     disableFavicon = false;
     enableAutoFillOnPageLoad = false;
     disableAutoTotpCopy = false;
