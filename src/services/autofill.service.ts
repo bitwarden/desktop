@@ -206,14 +206,13 @@ export default class AutofillService {
             return;
         }
 
-        const cipher = await this.cipherService.getLastUsedForDomain(tabDomain);
-        if (!cipher) {
+        const lastUsedCipher = await this.cipherService.getLastUsedForDomain(tabDomain);
+        if (!lastUsedCipher) {
             return;
         }
 
         await this.doAutoFill({
-            // tslint:disable-next-line
-            cipher: cipher,
+            cipher: lastUsedCipher,
             // tslint:disable-next-line
             pageDetails: pageDetails,
             fromBackground: true,

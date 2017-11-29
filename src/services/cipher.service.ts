@@ -235,7 +235,7 @@ export default class CipherService {
     async getLastUsedForDomain(domain: string): Promise<any> {
         const ciphers = await this.getAllDecryptedForDomain(domain);
         if (ciphers.length === 0) {
-            throw new Error('No ciphers.');
+            return null;
         }
 
         const sortedCiphers = ciphers.sort(CipherService.sortCiphersByLastUsed);
