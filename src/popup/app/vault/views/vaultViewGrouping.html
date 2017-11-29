@@ -35,7 +35,7 @@
             </div>
         </div>
     </div>
-    <div class="centered-message" ng-if="loaded && !vaultCiphers.length">
+    <div class="centered-message" ng-if="loaded && !vaultCiphers.length && !searchText">
         <p>
             {{i18n.noItemsInList}}
             <button ng-click="addCipher()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addItem}}</button>

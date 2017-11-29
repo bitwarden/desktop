@@ -5,6 +5,7 @@ angular
         syncService, utilsService, $analytics, i18nService, stateService, $timeout, $window, collectionService) {
         var stateKey = 'vault',
             state = stateService.getState(stateKey) || {};
+        stateService.removeState('viewGrouping');
 
         $scope.i18n = i18nService;
         $scope.showGroupingCounts = !utilsService.isEdge();
