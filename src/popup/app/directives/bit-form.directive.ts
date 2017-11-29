@@ -1,6 +1,6 @@
 ﻿import { ValidationService } from '../services/validation.service';
 
-export function FormDirective($rootScope: ng.IRootScopeService, validationService: ValidationService) {
+export function BitFormDirective($rootScope: ng.IRootScopeService, validationService: ValidationService) {
     return {
         require: 'form',
         restrict: 'A',
