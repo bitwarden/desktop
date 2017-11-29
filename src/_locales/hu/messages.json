@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Mappa keresése"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Nincs mappa",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funkciók"
   },
   "gaDesc": {
     "message": "Mi analitikát használunk, hogy megtudjunk többet arról, hogy hogyan használod a kiterjesztést, hogy jobbá tudjuk tenni. Az összes adat gyűjtés teljesen névtelen."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Vissza"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

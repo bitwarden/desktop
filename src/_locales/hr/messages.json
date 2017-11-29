@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Mapa pretraživanja"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Nema mape",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Značajke"
   },
   "gaDesc": {
     "message": "Koristimo Google Analytics kako bismo saznali na koji način se proširenje upotrebljava kako bismo ga mogli poboljšati. Svako prikupljanje podataka potpuno je anonimno."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Natrag"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

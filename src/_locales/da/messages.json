@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Søg mappe"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Ingen Mappe",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funktioner"
   },
   "gaDesc": {
     "message": "Vi bruge analytics til at bedre lære hvordan udvidelsen bruges, således at vi kan gøre det bedre. Al dataindsamling er helt anonym."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Back"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Zoek in map"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Geen map",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Features"
   },
   "gaDesc": {
     "message": "We gebruiken analytics om te weten te komen hoe de extensie gebruikt wordt, zodat we deze kunnen verbeteren. Alle verzamelde data is anoniem."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Back"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

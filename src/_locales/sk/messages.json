@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Prehľadávať priečinok"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Žiadny priečinok",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funkcie"
   },
   "gaDesc": {
     "message": "Používame analytiku, aby sme zistili, ako je rozšírenie používané, aby sme ho mohli vylepšiť. Všetky zhromaždené údaje sú kompletne anonymné."
@@ -748,7 +748,7 @@
     "message": "URL servera identít"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL servera ikôn"
   },
   "environmentSaved": {
     "message": "URL prostredia boli uložené."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Späť"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

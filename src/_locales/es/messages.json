@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Buscar carpeta"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Sin carpeta",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Características"
   },
   "gaDesc": {
     "message": "Realizamos análisis para aprender de como se utiliza la extensión para poder mejorarla. Toda la información recogida es completamente anónima."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Atrás"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

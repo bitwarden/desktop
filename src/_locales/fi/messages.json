@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Hae kansiosta"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Ei kansioa",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Ominaisuudet"
   },
   "gaDesc": {
     "message": "Käytämme Analyticsiä saadaksemme tietoa siitä, kuinka lisäosaa käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Back"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

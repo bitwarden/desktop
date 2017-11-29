@@ -3,11 +3,11 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Free Password Manager",
+    "message": "bitwarden - 無料パスワードマネージャ",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden は、すべてのデバイスの安全で無料のパスワード マネージャーです。",
+    "message": "bitwarden はすべてのデバイスで使える、安全で無料なパスワードマネージャーです。",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -29,19 +29,19 @@
     "message": "送信"
   },
   "emailAddress": {
-    "message": "Eメールアドレス"
+    "message": "メールアドレス"
   },
   "masterPass": {
     "message": "マスターパスワード"
   },
   "masterPassDesc": {
-    "message": "マスターパスワードは、パスワード保管庫へのアクセスに使用するパスワードです。あなたのマスターパスワードを忘れないように注意してください。忘れた場合、パスワードを回復する方法はありません。"
+    "message": "マスターパスワードは、パスワード保管庫へのアクセスに使用するパスワードです。マスターパスワードを忘れないように注意してください。忘れた場合、パスワードを回復する方法はありません。"
   },
   "masterPassHintDesc": {
     "message": "マスターパスワードのヒントは、パスワードを忘れた場合に役立ちます。"
   },
   "reTypeMasterPass": {
-    "message": "新しいパスワードを再入力"
+    "message": "マスターパスワードを再入力"
   },
   "masterPassHint": {
     "message": "マスターパスワードのヒント (省略可能)"
@@ -50,7 +50,7 @@
     "message": "タブ"
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "保管庫"
   },
   "tools": {
     "message": "ツール"
@@ -80,7 +80,7 @@
     "message": "自動入力"
   },
   "generatePasswordCopied": {
-    "message": "パスワードを生成(コピーされました)"
+    "message": "パスワードを生成 (コピーしました)"
   },
   "noMatchingLogins": {
     "message": "一致するログインがありません。"
@@ -89,7 +89,7 @@
     "message": "保管庫がロックされています。"
   },
   "autoFillInfo": {
-    "message": "現在のブラウザータブに自動入力するログインはありません。"
+    "message": "現在のブラウザタブに自動入力するログインはありません。"
   },
   "addLogin": {
     "message": "ログインを追加"
@@ -179,163 +179,163 @@
     "message": "同期"
   },
   "syncVaultNow": {
-    "message": "Sync Vault Now"
+    "message": "データを同期する"
   },
   "lastSync": {
-    "message": "Last Sync:"
+    "message": "前回の同期："
   },
   "passGen": {
-    "message": "Password Generator"
+    "message": "パスワード生成ツール"
   },
   "passGenInfo": {
-    "message": "Automatically generate strong, unique passwords for your logins."
+    "message": "ログインのために強固なユニークパスワードを自動的に生成します。"
   },
   "bitWebVault": {
-    "message": "bitwarden Web Vault"
+    "message": "bitwarden ウェブ保管庫"
   },
   "bitWebVaultInfo": {
     "message": "Manage your logins from any web browser with the bitwarden web vault."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS Vault"
+    "message": "bitwarden iOS保管庫"
   },
   "bitIosVaultInfo": {
     "message": "Manage your logins from your mobile devices with the bitwarden iOS vault."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android Vault"
+    "message": "bitwarden Android保管庫"
   },
   "bitAndrVaultInfo": {
     "message": "Manage your logins from your mobile devices with the bitwarden Android vault."
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "アイテムをインポート"
   },
   "importItemsInfo": {
     "message": "Quickly bulk import your items from other password management applications."
   },
   "select": {
-    "message": "Select"
+    "message": "選択"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "パスワードを生成する"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "パスワードの再生成"
   },
   "options": {
-    "message": "Options"
+    "message": "オプション"
   },
   "length": {
-    "message": "Length"
+    "message": "長さ"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "数字の最小数"
   },
   "minSpecial": {
-    "message": "Minimum Special"
+    "message": "記号の最小数"
   },
   "avoidAmbChar": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "あいまいな文字を省く"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "保管庫を検索"
   },
   "edit": {
-    "message": "Edit"
+    "message": "編集"
   },
   "view": {
-    "message": "View"
+    "message": "表示"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "表示するアイテムがありません"
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "アイテム情報"
   },
   "username": {
-    "message": "Username"
+    "message": "ユーザ名"
   },
   "password": {
-    "message": "Password"
+    "message": "パスワード"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "お気に入り"
   },
   "notes": {
-    "message": "Notes"
+    "message": "メモ"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "項目を編集"
   },
   "folder": {
-    "message": "Folder"
+    "message": "フォルダ"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "項目を削除"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "項目を表示"
   },
   "launchWebsite": {
-    "message": "Launch Website"
+    "message": "ウェブサイトを開く"
   },
   "website": {
-    "message": "Website"
+    "message": "ウェブサイト"
   },
   "togglePassword": {
-    "message": "Toggle Password"
+    "message": "パスワードのトグル"
   },
   "manage": {
-    "message": "Manage"
+    "message": "管理"
   },
   "other": {
-    "message": "Other"
+    "message": "その他"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "解析の無効化"
   },
   "rateExtension": {
-    "message": "Rate the Extension"
+    "message": "拡張機能の評価"
   },
   "rateExtensionDesc": {
-    "message": "Please consider helping us out with a good review!"
+    "message": "良いレビューで私たちを助けてください！"
   },
   "browserNotSupportClipboard": {
-    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message": "お使いのブラウザはクリップボードへのコピーに対応していません。手動でコピーしてください"
   },
   "verifyMasterPassword": {
-    "message": "Verify Master Password"
+    "message": "マスターパスワードの確認"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "マスターパスワードが間違っています"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "ロックオプション"
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "今すぐロック"
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "すぐに"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1分"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 分"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15分"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30分"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1時間"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4時間"
   },
   "onLocked": {
     "message": "On Locked"
@@ -344,7 +344,7 @@
     "message": "再起動時"
   },
   "never": {
-    "message": "行わない"
+    "message": "ロックしない"
   },
   "security": {
     "message": "セキュリティ"
@@ -447,7 +447,7 @@
     "message": "同期に失敗しました"
   },
   "importItemsConfirmation": {
-    "message": "Bitwarden.com web vault から一括でインポートすることができます。ウェブサイトへ移動しますか。"
+    "message": "Bitwarden.com web vault から一括でインポートできます。ウェブサイトへ移動しますか？"
   },
   "passwordCopied": {
     "message": "パスワードをコピーしました"
@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "フォルダの検索"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "機能"
   },
   "gaDesc": {
     "message": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
@@ -584,25 +584,25 @@
     "message": "Select a file."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "最大ファイルサイズ: 100 MB"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "サービスが利用できません"
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "プレミアム会員"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "メンバーシップの管理"
   },
   "premiumManageAlert": {
     "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "メンバーシップの更新"
   },
   "premiumNotCurrentMember": {
     "message": "You are not currently a premium member."
@@ -620,19 +620,19 @@
     "message": "TOTP verification code (2FA) generator for logins in your vault."
   },
   "ppremiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "優先カスタマー サポート。"
   },
   "ppremiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "将来のプレミアム機能全てです。詳細は近日公開予定!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "プレミアム会員に加入"
   },
   "premiumPurchaseAlert": {
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "あなたはプレミアム会員です!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Thank you for supporting bitwarden."
@@ -641,7 +641,7 @@
     "message": "All for just %price% \/year!"
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "更新完了"
   },
   "disableAutoTotpCopy": {
     "message": "Disable Automatic TOTP Copy"
@@ -650,7 +650,7 @@
     "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "必須：プレミアム会員"
   },
   "premiumRequiredDesc": {
     "message": "A premium membership is required to use this feature."
@@ -662,7 +662,7 @@
     "message": "Enter the 6 digit verification code that was emailed to"
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "情報を保存する"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Send verification code email again"
@@ -677,7 +677,7 @@
     "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "ログインができません。"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
@@ -686,23 +686,23 @@
     "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "2段階認証オプション"
   },
   "recoveryCodeDesc": {
     "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "リカバリーコード"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "認証アプリ"
   },
   "authenticatorAppDesc": {
     "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP セキュリティキー"
   },
   "yubiKeyDesc": {
     "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
@@ -715,13 +715,13 @@
     "message": "Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "ファイド U2Fセキュリティキー"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "メールアドレス"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "確認コードをメールにお送りします。"
   },
   "selfHostedEnvironment": {
     "message": "Self-hosted Environment"
@@ -799,70 +799,70 @@
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "ウェブサイトアイコンの無効化"
   },
   "disableFaviconDesc": {
     "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "カードの名義人名"
   },
   "number": {
-    "message": "Number"
+    "message": "番号"
   },
   "brand": {
-    "message": "Brand"
+    "message": "ブランド"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "有効期限月"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "有効期限年"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "有効期限"
   },
   "january": {
-    "message": "January"
+    "message": "1月"
   },
   "february": {
-    "message": "February"
+    "message": "2月"
   },
   "march": {
-    "message": "March"
+    "message": "3月"
   },
   "april": {
-    "message": "April"
+    "message": "4月"
   },
   "may": {
-    "message": "May"
+    "message": "5月"
   },
   "june": {
-    "message": "June"
+    "message": "6月"
   },
   "july": {
-    "message": "July"
+    "message": "7月"
   },
   "august": {
-    "message": "August"
+    "message": "8月"
   },
   "september": {
-    "message": "September"
+    "message": "9月"
   },
   "october": {
-    "message": "October"
+    "message": "10月"
   },
   "november": {
-    "message": "November"
+    "message": "11月"
   },
   "december": {
-    "message": "December"
+    "message": "12月"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "セキュリティコード"
   },
   "ex": {
-    "message": "ex."
+    "message": "例:"
   },
   "title": {
     "message": "Title"
@@ -928,33 +928,51 @@
     "message": "State \/ Province"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "郵便番号"
   },
   "country": {
-    "message": "Country"
+    "message": "国"
   },
   "type": {
-    "message": "Type"
+    "message": "種別"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "ログイン"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "ログイン"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "セキュリティメモ"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "カード"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "ID"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "パスワードの履歴"
   },
   "back": {
-    "message": "Back"
+    "message": "戻る"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

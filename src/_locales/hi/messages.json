@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Search folder"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Features"
   },
   "gaDesc": {
     "message": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Back"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

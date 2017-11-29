@@ -98,7 +98,7 @@
     "message": "Adicionar item"
   },
   "passwordHint": {
-    "message": "Dica de palavra-passe"
+    "message": "Dica da palavra-passe"
   },
   "enterEmailToGetHint": {
     "message": "Digite o endereço de email da sua conta para receber a dica da sua palavra-passe mestra."
@@ -377,7 +377,7 @@
     "message": "O código de verificação é requerido."
   },
   "valueCopied": {
-    "message": " copiado\/a",
+    "message": " copiado(a)",
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Pesquisar pasta"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Nenhuma pasta",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funcionalidades"
   },
   "gaDesc": {
     "message": "Utilizamos o analytics para aprender melhor como a extensão está a ser utilizada para que possamos torná-la melhor. Toda a recolha de dados é completamente anónima."
@@ -536,7 +536,7 @@
     "message": "Partilhado"
   },
   "shareVault": {
-    "message": "Partilhe o seu cofre"
+    "message": "Partilhar o seu cofre"
   },
   "shareVaultInfo": {
     "message": "Crie uma organização para partilhar os seus itens em segurança com outros utilizadores."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Retroceder"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

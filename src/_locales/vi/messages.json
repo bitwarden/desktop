@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Tìm kiếm thư mục"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Không có thư mục",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Tính năng"
   },
   "gaDesc": {
     "message": "Chúng tôi sử dụng phân tích để tìm hiểu rõ hơn cách bạn sử dụng tiện ích mở rộng để chúng tôi có thể làm cho nó tốt hơn. Tất cả dữ liệu sẽ được thu thập ẩn danh."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Quay lại"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

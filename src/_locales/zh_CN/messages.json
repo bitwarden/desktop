@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "搜索文件夹"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "没有文件夹",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "功能"
   },
   "gaDesc": {
     "message": "我们使用 analytics 来帮助分析扩展的使用情况，以便我们改进扩展。所有的数据收集完全是匿名的。"
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "后退"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

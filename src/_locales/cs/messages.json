@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Vyhledat ve složce"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Žádné složky",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funkce"
   },
   "gaDesc": {
     "message": "Používáme analytiku ke sběru informací jakým způsobem je rozšíření používáno, abychom jej mohli i nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Zpět"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

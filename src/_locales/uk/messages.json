@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Пошук в теці"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Без теки",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Додатково"
   },
   "gaDesc": {
     "message": "Ми використовуємо аналітику для розуміння того, як використовується розширення, щоб зробити його кращим. Всі зібрані дані цілком анонімні."
@@ -605,10 +605,10 @@
     "message": "Оновити статус"
   },
   "premiumNotCurrentMember": {
-    "message": "У вас зараз преміум статус."
+    "message": "Зараз у вас немає преміум-статусу."
   },
   "premiumSignUpAndGet": {
-    "message": "Підпишіться на преміум статус і отримайте:"
+    "message": "Підпишіться на преміум-статус і отримайте:"
   },
   "ppremiumSignUpStorage": {
     "message": "1 ГБ зашифрованого сховища для файлів."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Назад"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

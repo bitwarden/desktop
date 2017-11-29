@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Klasör Ara"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Klasör yok",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Özellikler"
   },
   "gaDesc": {
     "message": "Uzantının nasıl kullanıldığını daha iyi öğrenmek için analitikleri kullanırız, böylece onu daha iyi hale getirebiliriz. Tüm veri toplama işlemi tamamen anonimdir."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Geri"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Szukaj folderu"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Brak folderu",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funkcje"
   },
   "gaDesc": {
     "message": "Korzystamy z Analytics, aby lepiej dowiedzieć się, jak nasze rozszerzenie jest używane i nieustannie je ulepszać. Wszystkie zebrane dane są całkowicie anonimowe."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Powrót"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Sök i mapp"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Ingen mapp",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funktioner"
   },
   "gaDesc": {
     "message": "Vi använder analytics för att bättre förstå hur tillägget används så att vi kan göra förbättringar. All datainsamling är helt anonym."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Tillbaka"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

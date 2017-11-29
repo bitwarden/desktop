@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "文件夾"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "沒有文件夾",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "功能"
   },
   "gaDesc": {
     "message": "我们使用 analytics 協助分析擴充元件的使用情況，以便我們改善程式。所有資料均為匿名。"
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Back"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

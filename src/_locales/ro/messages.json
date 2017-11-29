@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Căutare dosar"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "Niciun dosar",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Caracteristici"
   },
   "gaDesc": {
     "message": "Utilizăm datele analitice pentru a afla mai bine modul în care este folosită extensia, astfel încât s-o putem face mai bună. Toate colectările de date sunt complet anonime."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Înapoi"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }

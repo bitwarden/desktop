@@ -65,16 +65,16 @@
     "message": "Copia Password"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Copia URI"
   },
   "copyUsername": {
     "message": "Copia Nome Utente"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "Copia Numero"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "Copia il codice di sicurezza"
   },
   "autoFill": {
     "message": "Auto-riempimento"
@@ -95,7 +95,7 @@
     "message": "Aggiungi un Login"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Aggiungi Elemento"
   },
   "passwordHint": {
     "message": "Indizio Password"
@@ -209,10 +209,10 @@
     "message": "Gestisci i tuoi login dai tuoi dispositivi portatili con la cassaforte bitwarden per Android."
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "Importa Elementi"
   },
   "importItemsInfo": {
-    "message": "Quickly bulk import your items from other password management applications."
+    "message": "Importa rapidamente i dati di accesso da altre applicazioni di gestione password."
   },
   "select": {
     "message": "Seleziona"
@@ -245,10 +245,10 @@
     "message": "Modifica"
   },
   "view": {
-    "message": "View"
+    "message": "Visualizza"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Non ci sono elementi da mostrare."
   },
   "itemInformation": {
     "message": "Item Information"
@@ -485,12 +485,12 @@
   "searchFolder": {
     "message": "Cerca cartella"
   },
+  "searchCollection": {
+    "message": "Search collection"
+  },
   "noneFolder": {
     "message": "No cartella",
     "description": "This is the folder for uncategorized items"
-  },
-  "features": {
-    "message": "Funzionalità"
   },
   "gaDesc": {
     "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi."
@@ -823,43 +823,43 @@
     "message": "Expiration"
   },
   "january": {
-    "message": "January"
+    "message": "Gennaio"
   },
   "february": {
-    "message": "February"
+    "message": "Febbraio"
   },
   "march": {
-    "message": "March"
+    "message": "Marzo"
   },
   "april": {
-    "message": "April"
+    "message": "Aprile"
   },
   "may": {
     "message": "May"
   },
   "june": {
-    "message": "June"
+    "message": "Giugno"
   },
   "july": {
-    "message": "July"
+    "message": "Luglio"
   },
   "august": {
-    "message": "August"
+    "message": "Agosto"
   },
   "september": {
-    "message": "September"
+    "message": "Settembre"
   },
   "october": {
-    "message": "October"
+    "message": "Ottobre"
   },
   "november": {
-    "message": "November"
+    "message": "Novembre"
   },
   "december": {
-    "message": "December"
+    "message": "Dicembre"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Codice di Sicurezza"
   },
   "ex": {
     "message": "ex."
@@ -956,5 +956,23 @@
   },
   "back": {
     "message": "Back"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "cards": {
+    "message": "Cards"
+  },
+  "identities": {
+    "message": "Identities"
   }
 }
