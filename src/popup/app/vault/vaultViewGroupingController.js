@@ -42,20 +42,20 @@ angular
             var promises = [];
 
             if ($scope.grouping.id && $scope.folderGrouping) {
-                var getPromise = folderService.get($scope.grouping.id).then(function (folder) {
+                var getFolderPromise = folderService.get($scope.grouping.id).then(function (folder) {
                     return folder.decrypt();
                 }).then(function (model) {
                     decGrouping = model;
                 });
-                promises.push(getPromise);
+                promises.push(getFolderPromise);
             }
             else if ($scope.grouping.id && $scope.collectionGrouping) {
-                var getPromise = collectionService.get($scope.grouping.id).then(function (collection) {
+                var getCollectionPromise = collectionService.get($scope.grouping.id).then(function (collection) {
                     return collection.decrypt();
                 }).then(function (model) {
                     decGrouping = model;
                 });
-                promises.push(getPromise);
+                promises.push(getCollectionPromise);
             }
 
             var cipherPromise = cipherService.getAllDecryptedForGrouping($scope.grouping.id, $scope.folderGrouping)
