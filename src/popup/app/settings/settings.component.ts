@@ -32,10 +32,9 @@ export class SettingsController {
         }, 500);
 
         this.showOnLocked = !utilsService.isFirefox() && !utilsService.isEdge();
-
-        chrome.storage.local.get(constantsService.lockOptionKey, (obj: any) => {
-            if (obj && (obj[constantsService.lockOptionKey] || obj[constantsService.lockOptionKey] === 0)) {
-                let option = obj[constantsService.lockOptionKey].toString();
+        this.utilsService.getObjFromStorage(constantsService.lockOptionKey).then((lockOption: number) => {
+            if (lockOption != null) {
+                let option = lockOption.toString();
                 if (option === '-2' && !this.showOnLocked) {
                     option = '-1';
                 }
@@ -47,31 +46,26 @@ export class SettingsController {
     }
 
     changeLockOption() {
-        const obj: any = {};
-        obj[this.constantsService.lockOptionKey] = null;
-        if (this.lockOption && this.lockOption !== '') {
-            obj[this.constantsService.lockOptionKey] = parseInt(this.lockOption, 10);
-        }
-
-        chrome.storage.local.set(obj, () => {
-            this.cryptoService.getKeyHash().then((keyHash) => {
-                if (keyHash) {
-                    this.cryptoService.toggleKey();
-                } else {
-                    this.SweetAlert.swal({
-                        title: this.i18nService.loggingOut,
-                        text: this.i18nService.loggingOutConfirmation,
-                        showCancelButton: true,
-                        confirmButtonText: this.i18nService.yes,
-                        cancelButtonText: this.i18nService.cancel,
-                    }, (confirmed: boolean) => {
-                        if (confirmed) {
-                            this.cryptoService.toggleKey();
-                            chrome.runtime.sendMessage({ command: 'logout' });
-                        }
-                    });
-                }
-            });
+        const option = this.lockOption && this.lockOption !== '' ? parseInt(this.lockOption, 10) : null;
+        this.utilsService.saveObjToStorage(this.constantsService.lockOptionKey, option).then(() => {
+            return this.cryptoService.getKeyHash();
+        }).then((keyHash) => {
+            if (keyHash) {
+                this.cryptoService.toggleKey();
+            } else {
+                this.SweetAlert.swal({
+                    title: this.i18nService.loggingOut,
+                    text: this.i18nService.loggingOutConfirmation,
+                    showCancelButton: true,
+                    confirmButtonText: this.i18nService.yes,
+                    cancelButtonText: this.i18nService.cancel,
+                }, (confirmed: boolean) => {
+                    if (confirmed) {
+                        this.cryptoService.toggleKey();
+                        chrome.runtime.sendMessage({ command: 'logout' });
+                    }
+                });
+            }
         });
     }
 
