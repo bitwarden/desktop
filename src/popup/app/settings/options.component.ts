@@ -1,9 +1,9 @@
 import * as angular from 'angular';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 import StateService from '../services/state.service';
-import * as template from './features.component.html';
+import * as template from './options.component.html';
 
-export class FeaturesController {
+export class OptionsController {
     disableFavicon = false;
     enableAutoFillOnPageLoad = false;
     disableAutoTotpCopy = false;
@@ -88,8 +88,8 @@ export class FeaturesController {
     }
 }
 
-export const FeaturesComponent = {
+export const OptionsComponent = {
     bindings: {},
-    controller: FeaturesController,
+    controller: OptionsController,
     template,
 };

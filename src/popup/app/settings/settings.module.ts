@@ -2,11 +2,11 @@ import * as angular from 'angular';
 import { AboutComponent } from './about.component';
 import { CreditsComponent } from './credits.component';
 import { EnvironmentComponent } from './environment.component';
-import { FeaturesComponent } from './features.component';
 import { AddFolderComponent } from './folders/add-folder.component';
 import { EditFolderComponent } from './folders/edit-folder.component';
 import { FoldersComponent } from './folders/folders.component';
 import { HelpComponent } from './help.component';
+import { OptionsComponent } from './options.component';
 import { PremiumComponent } from './premium.component';
 import { SettingsComponent } from './settings.component';
 import { SyncComponent } from './sync.component';
@@ -16,7 +16,7 @@ export default angular
 
     .component('settings', SettingsComponent)
     .component('environment', EnvironmentComponent)
-    .component('features', FeaturesComponent)
+    .component('options', OptionsComponent)
     .component('about', AboutComponent)
     .component('credits', CreditsComponent)
     .component('help', HelpComponent)

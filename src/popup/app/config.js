@@ -195,9 +195,9 @@ angular
                 data: { authorize: true },
                 params: { animation: null }
             })
-            .state('features', {
-                url: '/features',
-                component: 'features',
+            .state('options', {
+                url: '/options',
+                component: 'options',
                 data: { authorize: true },
                 params: { animation: null }
             })
