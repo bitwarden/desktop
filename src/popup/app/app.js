@@ -152,6 +152,14 @@ import { SettingsController } from './settings/settings.component';
 SettingsController.$$ngIsClass = true;
 import { SyncController } from './settings/sync.component';
 SyncController.$$ngIsClass = true;
+import { BaseController } from './global/base.controller';
+BaseController.$$ngIsClass = true;
+import { MainController } from './global/main.controller';
+MainController.$$ngIsClass = true;
+import { PrivateModeController } from './global/private-mode.controller';
+PrivateModeController.$$ngIsClass = true;
+import { TabsController } from './global/tabs.controller';
+TabsController.$$ngIsClass = true;
 
 // Bootstrap the angular application
 angular.element(function () {
