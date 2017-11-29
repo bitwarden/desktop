@@ -38,7 +38,10 @@
     <div class="centered-message" ng-if="loaded && !vaultCiphers.length && !searchText">
         <p>
             {{i18n.noItemsInList}}
-            <button ng-click="addCipher()" style="margin-top: 20px;" class="btn btn-link btn-block">{{i18n.addItem}}</button>
+            <button ng-click="addCipher()" style="margin-top: 20px;" class="btn btn-link btn-block"
+                    ng-show="folderGrouping">
+                {{i18n.addItem}}
+            </button>
         </p>
     </div>
     <div class="page-loading" ng-if="!loaded">
