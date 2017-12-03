@@ -106,6 +106,12 @@
         "default": "Ctrl+Shift+Y",
         "linux": "Ctrl+Shift+U"
       }
+    },
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+Y",
+        "linux": "Alt+Shift+U"
+      }
     }
   },
   "web_accessible_resources": [
