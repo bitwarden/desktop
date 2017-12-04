@@ -98,7 +98,7 @@ var bg_isBackground = true,
     // init services
     window.bg_utilsService = bg_utilsService = new UtilsService();
     window.bg_i18nService = bg_i18nService = new i18nService(bg_utilsService);
-    window.bg_constantsService = bg_constantsService = new ConstantsService(bg_i18nService);
+    window.bg_constantsService = bg_constantsService = new ConstantsService(bg_i18nService, bg_utilsService);
     window.bg_cryptoService = bg_cryptoService = new CryptoService();
     window.bg_tokenService = bg_tokenService = new TokenService();
     window.bg_appIdService = bg_appIdService = new AppIdService();
@@ -108,7 +108,7 @@ var bg_isBackground = true,
     window.bg_settingsService = bg_settingsService = new SettingsService(bg_userService);
     window.bg_cipherService = bg_cipherService = new CipherService(bg_cryptoService, bg_userService, bg_settingsService, bg_apiService);
     window.bg_folderService = bg_folderService = new FolderService(bg_cryptoService, bg_userService, bg_i18nService, bg_apiService);
-    window.bg_collectionService = bg_collectionService = new CollectionService(bg_cryptoService, bg_userService, bg_i18nService, bg_apiService);
+    window.bg_collectionService = bg_collectionService = new CollectionService(bg_cryptoService, bg_userService);
     window.bg_lockService = bg_lockService = new LockService(bg_cipherService, bg_folderService, bg_collectionService, bg_cryptoService, bg_utilsService, setIcon, refreshBadgeAndMenu);
     window.bg_syncService = bg_syncService = new SyncService(bg_userService, bg_apiService, bg_settingsService, bg_folderService, bg_cipherService, bg_cryptoService, bg_collectionService, logout);
     window.bg_passwordGenerationService = bg_passwordGenerationService = new PasswordGenerationService(bg_cryptoService);

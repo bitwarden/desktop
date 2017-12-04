@@ -1,3 +1,5 @@
+import UtilsService from './utils.service';
+
 export default class ConstantsService {
     static readonly environmentUrlsKey: string = 'environmentUrls';
     static readonly disableGaKey: string = 'disableGa';
@@ -55,9 +57,20 @@ export default class ConstantsService {
         remember: 5,
     };
 
-    readonly twoFactorProviderInfo: any[];
+    twoFactorProviderInfo: any[];
 
-    constructor(i18nService: any) {
+    constructor(i18nService: any, utilsService: UtilsService) {
+        if (utilsService.isEdge()) {
+            // delay for i18n fetch
+            setTimeout(() => {
+                this.bootstrap(i18nService);
+            }, 1000);
+        } else {
+            this.bootstrap(i18nService);
+        }
+    }
+
+    private bootstrap(i18nService: any) {
         this.twoFactorProviderInfo = [
             {
                 type: 0,

@@ -3,7 +3,6 @@ import { Collection } from '../models/domain/collection';
 
 import { CollectionData } from '../models/data/collectionData';
 
-import ApiService from './api.service';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 import UtilsService from './utils.service';
@@ -15,8 +14,7 @@ const Keys = {
 export default class CollectionService {
     decryptedCollectionCache: any[];
 
-    constructor(private cryptoService: CryptoService, private userService: UserService,
-        private apiService: ApiService) {
+    constructor(private cryptoService: CryptoService, private userService: UserService) {
     }
 
     clearCache(): void {
