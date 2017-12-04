@@ -70,6 +70,7 @@ gulp.task('dist:chrome', (cb) => {
         delete manifest['-ms-preload'];
         delete manifest.applications;
         delete manifest.sidebar_action;
+        delete manifest.commands._execute_sidebar_action;
         return manifest;
     });
 });
@@ -102,6 +103,7 @@ function edgeCopyBuild(source, dest) {
             .pipe(gulpif('manifest.json', jeditor((manifest) => {
                 delete manifest.applications;
                 delete manifest.sidebar_action;
+                delete manifest.commands._execute_sidebar_action;
                 return manifest;
             })))
             .pipe(gulp.dest(dest))
