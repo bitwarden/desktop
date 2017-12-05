@@ -179,7 +179,7 @@ export default class PasswordGenerationService {
         return this.history || new Array<PasswordHistory>();
     }
 
-    async addHistory(password: string) {
+    async addHistory(password: string): Promise<any> {
         // Prevent duplicates
         if (this.matchesPrevious(password)) {
             return;
@@ -193,12 +193,12 @@ export default class PasswordGenerationService {
         }
 
         const newHistory = await this.encryptHistory();
-        await UtilsService.saveObjToStorage(Keys.history, newHistory);
+        return await UtilsService.saveObjToStorage(Keys.history, newHistory);
     }
 
     async clear(): Promise<any> {
         this.history = [];
-        await UtilsService.removeFromStorage(Keys.history);
+        return await UtilsService.removeFromStorage(Keys.history);
     }
 
     private async encryptHistory(): Promise<PasswordHistory[]> {
@@ -211,11 +211,11 @@ export default class PasswordGenerationService {
             return new PasswordHistory(encrypted.encryptedString, item.date);
         });
 
-        await Promise.all(promises);
+        return await Promise.all(promises);
     }
 
     private async decryptHistory(history: PasswordHistory[]): Promise<PasswordHistory[]> {
-        if (history == null || this.history.length === 0) {
+        if (history == null || history.length === 0) {
             return Promise.resolve([]);
         }
 
@@ -224,7 +224,7 @@ export default class PasswordGenerationService {
             return new PasswordHistory(decrypted, item.date);
         });
 
-        await Promise.all(promises);
+        return await Promise.all(promises);
     }
 
     private matchesPrevious(password: string): boolean {
