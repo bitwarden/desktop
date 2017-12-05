@@ -6,7 +6,7 @@ import CryptoService from './crypto.service';
 import UtilsService from './utils.service';
 
 const DefaultOptions = {
-    length: 10,
+    length: 14,
     ambiguous: false,
     number: true,
     minNumber: 1,
@@ -161,13 +161,16 @@ export default class PasswordGenerationService {
     }
 
     async getOptions() {
-        if (this.optionsCache) {
-            return this.optionsCache;
+        if (this.optionsCache == null) {
+            let options = await UtilsService.getObjFromStorage(Keys.options);
+            if (options == null) {
+                this.optionsCache = DefaultOptions;
+            } else {
+                this.optionsCache = options;
+            }
         }
 
-        const options = await UtilsService.getObjFromStorage(Keys.options);
-        this.optionsCache = options;
-        return options;
+        return this.optionsCache;
     }
 
     async saveOptions(options: any) {
