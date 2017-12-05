@@ -205,7 +205,7 @@ export default class PasswordGenerationService {
         if (this.history == null || this.history.length === 0) {
             return Promise.resolve([]);
         }
-        
+
         const promises = this.history.map(async (item) => {
             const encrypted = await this.cryptoService.encrypt(item.password);
             return new PasswordHistory(encrypted.encryptedString, item.date);

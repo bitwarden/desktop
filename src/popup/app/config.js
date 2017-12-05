@@ -170,9 +170,8 @@ angular
                 params: { animation: null, addState: null, editState: null }
             })
             .state('passwordGeneratorHistory', {
-                url: '/history',
-                template: require('./tools/views/toolsPasswordGeneratorHistory.html'),
-                controller: 'toolsPasswordGeneratorHistoryController',
+                url: '/password-generator-history',
+                component: 'passwordGeneratorHistory',
                 data: { authorize: true },
                 params: { animation: null, addState: null, editState: null }
             })

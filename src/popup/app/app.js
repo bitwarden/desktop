@@ -108,7 +108,6 @@ require('./vault/vaultAddCipherController.js');
 require('./vault/vaultEditCipherController.js');
 require('./vault/vaultViewCipherController.js');
 require('./vault/vaultAttachmentsController.js');
-require('./tools/toolsPasswordGeneratorHistoryController.js');
 
 // $$ngIsClass fix issue with "class constructors must be invoked with |new|" on Firefox ESR
 // ref: https://github.com/angular/angular.js/issues/14240
@@ -128,6 +127,8 @@ import { ExportController } from './tools/export.component';
 ExportController.$$ngIsClass = true;
 import { PasswordGeneratorController } from './tools/password-generator.component';
 PasswordGeneratorController.$$ngIsClass = true;
+import { PasswordGeneratorHistoryController } from './tools/password-generator-history.component';
+PasswordGeneratorHistoryController.$$ngIsClass = true;
 import { ToolsController } from './tools/tools.component';
 ToolsController.$$ngIsClass = true;
 import { AddFolderController } from './settings/folders/add-folder.component';
