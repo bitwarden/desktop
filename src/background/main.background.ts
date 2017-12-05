@@ -75,7 +75,7 @@ export default class MainBackground {
 
         // Other fields
         this.sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ?
-            opr.sidebarAction : chrome.sidebarAction;
+            opr.sidebarAction : (window as any).chrome.sidebarAction;
     }
 
     private async buildContextMenu() {
