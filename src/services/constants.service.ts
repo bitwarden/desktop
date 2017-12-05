@@ -10,7 +10,6 @@ export default class ConstantsService {
     static readonly enableAutoFillOnPageLoadKey: string = 'enableAutoFillOnPageLoad';
     static readonly lockOptionKey: string = 'lockOption';
     static readonly lastActiveKey: string = 'lastActive';
-    static readonly generatedPasswordHistoryKey: string = 'generatedPasswordHistory';
 
     // TODO: remove these instance properties once all references are reading from the static properties
     readonly environmentUrlsKey: string = 'environmentUrls';
@@ -22,7 +21,6 @@ export default class ConstantsService {
     readonly enableAutoFillOnPageLoadKey: string = 'enableAutoFillOnPageLoad';
     readonly lockOptionKey: string = 'lockOption';
     readonly lastActiveKey: string = 'lastActive';
-    readonly generatedPasswordHistoryKey: string = 'generatedPasswordHistory';
 
     // TODO: Convert these objects to enums
     readonly encType: any = {

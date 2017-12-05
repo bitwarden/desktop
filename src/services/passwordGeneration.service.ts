@@ -1,7 +1,6 @@
 import { CipherString } from '../models/domain/cipherString';
 import PasswordHistory from '../models/domain/passwordHistory';
 
-import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import UtilsService from './utils.service';
 
@@ -20,6 +19,7 @@ const DefaultOptions = {
 
 const Keys = {
     options: 'passwordGenerationOptions',
+    history: 'generatedPasswordHistory',
 };
 
 const MaxPasswordsInHistory = 100;
@@ -143,16 +143,13 @@ export default class PasswordGenerationService {
     }
 
     optionsCache: any;
-    history: PasswordHistory[];
+    history: PasswordHistory[] = [];
 
     constructor(private cryptoService: CryptoService) {
-        const self = this;
-
-        const historyKey = ConstantsService.generatedPasswordHistoryKey;
-        UtilsService.getObjFromStorage<PasswordHistory[]>(historyKey).then((encrypted) => {
-            return self.decryptHistory(encrypted);
+        UtilsService.getObjFromStorage<PasswordHistory[]>(Keys.history).then((encrypted) => {
+            return this.decryptHistory(encrypted);
         }).then((history) => {
-            self.history = history;
+            this.history = history;
         });
     }
 
@@ -162,7 +159,7 @@ export default class PasswordGenerationService {
 
     async getOptions() {
         if (this.optionsCache == null) {
-            let options = await UtilsService.getObjFromStorage(Keys.options);
+            const options = await UtilsService.getObjFromStorage(Keys.options);
             if (options == null) {
                 this.optionsCache = DefaultOptions;
             } else {
@@ -179,7 +176,7 @@ export default class PasswordGenerationService {
     }
 
     getHistory() {
-        return this.history;
+        return this.history || new Array<PasswordHistory>();
     }
 
     async addHistory(password: string) {
@@ -195,53 +192,46 @@ export default class PasswordGenerationService {
             this.history.shift();
         }
 
-        await this.saveHistory();
+        const newHistory = await this.encryptHistory();
+        await UtilsService.saveObjToStorage(Keys.history, newHistory);
     }
 
-    clear(): Promise<any> {
+    async clear(): Promise<any> {
         this.history = [];
-        return UtilsService.removeFromStorage(ConstantsService.generatedPasswordHistoryKey);
+        await UtilsService.removeFromStorage(Keys.history);
     }
 
-    private async saveHistory() {
-        const history = await this.encryptHistory();
-        return UtilsService.saveObjToStorage(ConstantsService.generatedPasswordHistoryKey, history);
-    }
-
-    private encryptHistory(): Promise<PasswordHistory[]> {
-        if (this.history == null) {
+    private async encryptHistory(): Promise<PasswordHistory[]> {
+        if (this.history == null || this.history.length === 0) {
             return Promise.resolve([]);
         }
-
-        const self = this;
-        const promises = self.history.map(async (item) => {
-            const encrypted = await self.cryptoService.encrypt(item.password);
+        
+        const promises = this.history.map(async (item) => {
+            const encrypted = await this.cryptoService.encrypt(item.password);
             return new PasswordHistory(encrypted.encryptedString, item.date);
         });
 
-        return Promise.all(promises);
+        await Promise.all(promises);
     }
 
-    private decryptHistory(history: PasswordHistory[]): Promise<PasswordHistory[]> {
-        if (history == null) {
+    private async decryptHistory(history: PasswordHistory[]): Promise<PasswordHistory[]> {
+        if (history == null || this.history.length === 0) {
             return Promise.resolve([]);
         }
 
-        const self = this;
         const promises = history.map(async (item) => {
-            const decrypted = await self.cryptoService.decrypt(new CipherString(item.password));
+            const decrypted = await this.cryptoService.decrypt(new CipherString(item.password));
             return new PasswordHistory(decrypted, item.date);
         });
 
-        return Promise.all(promises);
+        await Promise.all(promises);
     }
 
     private matchesPrevious(password: string): boolean {
-        if (this.history == null) {
+        if (this.history == null || this.history.length === 0) {
             return false;
         }
 
-        const len = this.history.length;
-        return len !== 0 && this.history[len - 1].password === password;
+        return this.history[this.history.length - 1].password === password;
     }
 }
