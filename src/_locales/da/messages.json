@@ -974,5 +974,8 @@
   },
   "identities": {
     "message": "Identities"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

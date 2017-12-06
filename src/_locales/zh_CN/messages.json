@@ -486,7 +486,7 @@
     "message": "搜索文件夹"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "搜索收藏"
   },
   "noneFolder": {
     "message": "没有文件夹",
@@ -958,21 +958,24 @@
     "message": "后退"
   },
   "collections": {
-    "message": "Collections"
+    "message": "收藏"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "常用"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "弹出到新窗口"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "刷新"
   },
   "cards": {
-    "message": "Cards"
+    "message": "卡片"
   },
   "identities": {
-    "message": "Identities"
+    "message": "身份"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

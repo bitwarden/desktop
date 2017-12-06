@@ -486,7 +486,7 @@
     "message": "Vyhledat ve složce"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Hledat v kolekcích"
   },
   "noneFolder": {
     "message": "Žádné složky",
@@ -946,7 +946,7 @@
     "message": "Zabezpečená poznámka"
   },
   "typeCard": {
-    "message": "Kreditní karta"
+    "message": "Karta"
   },
   "typeIdentity": {
     "message": "Identita"
@@ -958,21 +958,24 @@
     "message": "Zpět"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kolekce"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Oblíbené"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Otevřít v novém okně"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Obnovit"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Karty"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identity"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

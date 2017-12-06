@@ -486,7 +486,7 @@
     "message": "Mappa keresése"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Gyűjtemény keresése"
   },
   "noneFolder": {
     "message": "Nincs mappa",
@@ -958,21 +958,24 @@
     "message": "Vissza"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Gyűjtemények"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Kedvencek"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Megnyitás új ablakban"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Frissítés"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Kártyák"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Azonosságok"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

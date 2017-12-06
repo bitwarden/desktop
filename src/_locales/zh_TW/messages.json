@@ -65,7 +65,7 @@
     "message": "複製密碼"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "複製 URI"
   },
   "copyUsername": {
     "message": "複製用戶名稱"
@@ -74,7 +74,7 @@
     "message": "Copy Number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "複製安全代碼"
   },
   "autoFill": {
     "message": "自動輸入"
@@ -95,7 +95,7 @@
     "message": "新增網頁"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "新增項目"
   },
   "passwordHint": {
     "message": "密碼提示"
@@ -209,10 +209,10 @@
     "message": "使用 bitwarden Android 版，從 Android 裝置管理您的密碼。"
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "匯入項目"
   },
   "importItemsInfo": {
-    "message": "Quickly bulk import your items from other password management applications."
+    "message": "快速地從其他密碼管理器一次過匯入登入資料。"
   },
   "select": {
     "message": "選擇"
@@ -245,13 +245,13 @@
     "message": "編輯"
   },
   "view": {
-    "message": "View"
+    "message": "檢視"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "無項目可顯示。"
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "項目資訊"
   },
   "username": {
     "message": "帳戶名稱"
@@ -266,16 +266,16 @@
     "message": "筆記"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "編輯項目"
   },
   "folder": {
     "message": "文件夾"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "刪除項目"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "檢視項目"
   },
   "launchWebsite": {
     "message": "開啟網頁"
@@ -447,7 +447,7 @@
     "message": "同步失敗"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "你可以在 bitwarden 網頁版密碼庫一次過匯入登入資料。現在前往？"
   },
   "passwordCopied": {
     "message": "密碼已複製"
@@ -456,13 +456,13 @@
     "message": "URI"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "新增項目"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "已編輯項目"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "確定要刪除此項目嗎?"
   },
   "deletedItem": {
     "message": "Deleted item"
@@ -974,5 +974,8 @@
   },
   "identities": {
     "message": "Identities"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

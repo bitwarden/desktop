@@ -952,7 +952,7 @@
     "message": "Identity"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "पासवर्ड इतिहास"
   },
   "back": {
     "message": "Back"
@@ -974,5 +974,8 @@
   },
   "identities": {
     "message": "Identities"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

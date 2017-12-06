@@ -486,7 +486,7 @@
     "message": "Поиск папки"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Найти коллекцию"
   },
   "noneFolder": {
     "message": "Без папки",
@@ -958,21 +958,24 @@
     "message": "Назад"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Коллекции"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Избранные"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Перейти в новое окно"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Обновить"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Карты"
   },
   "identities": {
     "message": "Identities"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

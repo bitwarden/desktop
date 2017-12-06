@@ -65,16 +65,16 @@
     "message": "Kopieer Wachtwoord"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopieer URL"
   },
   "copyUsername": {
     "message": "Kopieer Gebruikersnaam"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "Nummer kopiëren"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "Kopieër beveiligingscode"
   },
   "autoFill": {
     "message": "Auto-invullen"
@@ -95,7 +95,7 @@
     "message": "Voeg een website toe"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Voeg item toe"
   },
   "passwordHint": {
     "message": "Wachtwoordhint"
@@ -209,10 +209,10 @@
     "message": "Beheer je logins vanuit elke browser met de bitwarden Android-kluis."
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "Items importeren"
   },
   "importItemsInfo": {
-    "message": "Quickly bulk import your items from other password management applications."
+    "message": "Importeer snel al je gegevens vanuit andere wachtwoordbeheerders."
   },
   "select": {
     "message": "Selecteer"
@@ -245,10 +245,10 @@
     "message": "Bewerk"
   },
   "view": {
-    "message": "View"
+    "message": "Bekijken"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Er zijn geen items om weer te geven."
   },
   "itemInformation": {
     "message": "Item Information"
@@ -266,16 +266,16 @@
     "message": "Aantekeningen"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Item bewerken"
   },
   "folder": {
     "message": "Map"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Item verwijderen"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Item bekijken"
   },
   "launchWebsite": {
     "message": "Open Website"
@@ -974,5 +974,8 @@
   },
   "identities": {
     "message": "Identities"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

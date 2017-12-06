@@ -77,19 +77,19 @@
     "message": "Kopírovať bezpečnostný kód"
   },
   "autoFill": {
-    "message": "Automatické dopĺňanie"
+    "message": "Automatické vypĺňanie"
   },
   "generatePasswordCopied": {
     "message": "Vygenerovať heslo (skopírované)"
   },
   "noMatchingLogins": {
-    "message": "Žiadne zodpovedajúce prihlasovacie mená."
+    "message": "Žiadne zodpovedajúce prihlasovacie údaje."
   },
   "vaultLocked": {
     "message": "Trezor je zamknutý."
   },
   "autoFillInfo": {
-    "message": "Nie sú prístupné žiadne prihlasovacie mená na automatické vyplnenie pre aktuálnu kartu."
+    "message": "Nie sú prístupné žiadne prihlasovacie údaje na automatické vyplnenie pre aktuálnu kartu."
   },
   "addLogin": {
     "message": "Pridať prihlasovacie údaje"
@@ -98,13 +98,13 @@
     "message": "Pridať položku"
   },
   "passwordHint": {
-    "message": "Nápoveda pre heslo"
+    "message": "Nápoveda k heslu"
   },
   "enterEmailToGetHint": {
     "message": "Zadajte emailovú adresu na zaslanie nápovedy pre vaše hlavné heslo."
   },
   "getMasterPasswordHint": {
-    "message": "Získať nápovedu pre hlavné heslo"
+    "message": "Získať nápovedu k hlavnému heslu"
   },
   "continue": {
     "message": "Pokračovať"
@@ -152,7 +152,7 @@
     "message": "Priečinky"
   },
   "noFolders": {
-    "message": "V zozname nie sú žiadne priečinky."
+    "message": "V zozname sa nenachádzajú žiadne priečinky."
   },
   "helpFeedback": {
     "message": "Pomoc a spätná väzba"
@@ -167,7 +167,7 @@
     "message": "Navštívte našu stránku"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Navštívte našu stránku pre získanie pomoci, noviniek, poslať nám email, alebo sa dozvedieť viac, ako používať bitwarden."
+    "message": "Navštívte našu stránku pre získanie pomoci, noviniek, pre poslanie emailu, alebo ak sa chcete dozvedieť viac o používaní správcu hesiel bitwarden."
   },
   "fileBugReport": {
     "message": "Nahlásiť chybu"
@@ -188,7 +188,7 @@
     "message": "Generátor hesla"
   },
   "passGenInfo": {
-    "message": "Automaticky generovať silné a unikátne heslá pre vaše prihlásenia."
+    "message": "Automaticky generovať silné a unikátne heslá k prihlasovacím údajom."
   },
   "bitWebVault": {
     "message": "bitwarden webový trezor"
@@ -233,10 +233,10 @@
     "message": "Minimum číslic"
   },
   "minSpecial": {
-    "message": "Minimum špeciálnych"
+    "message": "Minimum špec. znakov"
   },
   "avoidAmbChar": {
-    "message": "Vyhnúť sa dvojvýznamovým znakom"
+    "message": "Vyhnúť sa zameniteľným znakom"
   },
   "searchVault": {
     "message": "Prehľadávať trezor"
@@ -251,7 +251,7 @@
     "message": "Neexistujú žiadne položky na zobrazenie."
   },
   "itemInformation": {
-    "message": "Informácie k položke"
+    "message": "Informácie o položke"
   },
   "username": {
     "message": "Používateľské meno"
@@ -299,10 +299,10 @@
     "message": "Ohodnotiť rozšírenie"
   },
   "rateExtensionDesc": {
-    "message": "Prosíme, zvážte pomôcť nám dobrým hodnotením!"
+    "message": "Prosíme, zvážte napísanie pozitívnej recenzie!"
   },
   "browserNotSupportClipboard": {
-    "message": "Váš webový prehliadač nepodporuje jednoduché kopírovanie do schránky. Skopírujte manuálne."
+    "message": "Váš webový prehliadač nepodporuje automatické kopírovanie do schránky. Kopírujte manuálne."
   },
   "verifyMasterPassword": {
     "message": "Overenie hlavného hesla"
@@ -311,7 +311,7 @@
     "message": "Neplatné hlavné heslo"
   },
   "lockOptions": {
-    "message": "Možnosti zámku"
+    "message": "Možnosti uzamknutia"
   },
   "lockNow": {
     "message": "Uzamknúť teraz"
@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Na tejto stránke sa nedajú automaticky vyplniť prihlasovacie údaje. Namiesto toho skopírujte\/vložte prihlasovacie meno a\/alebo heslo."
+    "message": "Na tejto stránke sa nedajú automaticky vyplniť prihlasovacie údaje. Namiesto toho skopírujte\/vložte prihlasovacie údaje manuálne."
   },
   "loggedOut": {
     "message": "Odhlásený"
@@ -411,13 +411,13 @@
     "message": "Zmeniť hlavné heslo"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Teraz si môžete zmeniť svoje hlavné heslo na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
+    "message": "Teraz si môžete zmeniť svoje hlavné heslo vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "changeEmailConfirmation": {
-    "message": "Teraz si môžete zmeniť svoju emailovú adresu na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
+    "message": "Teraz si môžete zmeniť svoju emailovú adresu vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Dvojstupňové prihlasovanie robí váš účet bezpečnejsí vyžadovaním bezpečnostného kódu z overovacej aplikácie vždy, keď sa prihlásite. Dvojstupňové prihlasovanie môžete povoliť na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
+    "message": "Dvojstupňové prihlasovanie robí váš účet bezpečnejším vďaka vyžadovaniu bezpečnostného kódu z overovacej aplikácie vždy, keď sa prihlásite. Dvojstupňové prihlasovanie môžete povoliť vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "loggingOut": {
     "message": "Odhlasuje sa"
@@ -438,13 +438,13 @@
     "message": "Začiatočnícka príručka"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Sledujte našu začiatočnícku príručku, aby ste sa naučili, ako dostať čo najviac z nášho rozšírenia prehliadača."
+    "message": "Sledujte našu začiatočnícku príručku, aby ste sa naučili, ako získať maximum z nášho rozšírenia prehliadača."
   },
   "syncingComplete": {
     "message": "Synchronizácia kompletná"
   },
   "syncingFailed": {
-    "message": "Synchronizácia neúspešná"
+    "message": "Synchronizácia zlyhala"
   },
   "importItemsConfirmation": {
     "message": "Môžete hromadne importovať položky z webového trezoru bitwarden.com. Chcete navštíviť túto stránku teraz?"
@@ -486,7 +486,7 @@
     "message": "Prehľadávať priečinok"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Vyhľadať zbierku"
   },
   "noneFolder": {
     "message": "Žiadny priečinok",
@@ -499,10 +499,10 @@
     "message": "Vypnúť notifikáciu Pridať prihlasovacie údaje"
   },
   "addLoginNotificationDesc": {
-    "message": "\"Notifikácia Pridať prihlasovacie údaje\" vás automaticky upozorní na uloženie nových údajov do vášho trezoru vždy, keď sa s nimi prihlasujete po prvý krát."
+    "message": "\"Notifikácia Pridať prihlasovacie údaje\" vás automaticky upozorní na uloženie nových údajov do vášho trezoru vždy, keď sa s nimi prihlasujete poprvýkrát."
   },
   "notificationAddDesc": {
-    "message": "Má si bitwarden pre vás zapamätať toto heslo?"
+    "message": "Má si bitwarden zapamätať toto heslo?"
   },
   "notificationAddSave": {
     "message": "Áno, uložiť teraz"
@@ -524,7 +524,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Tento export obsahuje vaše nešifrované dáta vo formáte .csv. Nemali by ste ich ukladať, ani posielať cez nezabezpečené kanály (napr. email). Okamžite ho odstránte, keď ho prestanete používať."
+    "message": "Tento export obsahuje vaše nešifrované dáta vo formáte .csv. Nemali by ste ich ukladať, ani posielať cez nezabezpečené kanály (napr. email). Odstráňte ho okamžite po použití."
   },
   "exportMasterPassword": {
     "message": "Zadajte vaše hlavné heslo pre export údajov trezoru."
@@ -542,7 +542,7 @@
     "message": "Vytvorte organizáciu pre bezpečné zdieľanie vašich prihlasovacích údajov s inými používateľmi."
   },
   "contribute": {
-    "message": "You can contribute to!"
+    "message": "Taktiež môžete prispieť!"
   },
   "learnMore": {
     "message": "Zistiť viac"
@@ -581,7 +581,7 @@
     "message": "Súbor"
   },
   "selectFile": {
-    "message": "Vyberte súbor."
+    "message": "Vybrať súbor."
   },
   "maxFileSize": {
     "message": "Maximálna veľkosť súboru je 100 MB."
@@ -590,7 +590,7 @@
     "message": "Funkcia nie je k dispozícii"
   },
   "updateKey": {
-    "message": "Túto funkciu nemožno použiť, kým neaktualizujete svoj šifrovací kľúč."
+    "message": "Túto funkciu nemožno použiť, pokým neaktualizujete svoj šifrovací kľúč."
   },
   "premiumMembership": {
     "message": "Prémiové členstvo"
@@ -599,7 +599,7 @@
     "message": "Spravovať členstvo"
   },
   "premiumManageAlert": {
-    "message": "Svoje členstvo môžete spravovať na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
+    "message": "Svoje členstvo môžete spravovať vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "premiumRefresh": {
     "message": "Obnoviť členstvo"
@@ -611,7 +611,7 @@
     "message": "Zaregistrujte sa pre prémiové členstvo a získajte:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB šifrované úložisko."
+    "message": "1 GB šifrovaného úložiska."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Ďalšie možnosti dvojstupňového prihlásenia ako YubiKey, FIDO U2F a Duo."
@@ -629,7 +629,7 @@
     "message": "Zakúpiť Prémiový účet"
   },
   "premiumPurchaseAlert": {
-    "message": "Svoje prémiové členstvo môžete zakúpiť na webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
+    "message": "Svoje prémiové členstvo môžete zakúpiť vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "premiumCurrentMember": {
     "message": "Ste prémiovým členom!"
@@ -677,13 +677,13 @@
     "message": "Vložte váš bezpečnostný kľúč do USB portu počítača. Ak má tlačidlo, stlačte ho."
   },
   "loginUnavailable": {
-    "message": "Prihlásenie nedostupné"
+    "message": "Prihlasovací údaj nedostupný"
   },
   "noTwoStepProviders": {
-    "message": "Tento účet má povolené dvojstupňové prihlásenie, ale žiadny z konfigurovaných poskytovateľov nie je podporovaný týmto prehliadačom."
+    "message": "Tento účet má povolené dvojstupňové prihlásenie, ale žiadny z nakonfigurovaných poskytovateľov nie je podporovaný týmto prehliadačom."
   },
   "noTwoStepProviders2": {
-    "message": "Prosím, použite podporovaný prehliadač (napríklad Chrome) a\/alebo pridajte iných poskytovateľov lepšie podporovanými prehliadačmi (ako napríklad overovacia aplikácia)."
+    "message": "Prosím, použite podporovaný prehliadač (napríklad Chrome) a\/alebo pridajte iných poskytovateľov, ktorí sú lepšie podporovaní prehliadačmi (ako napríklad overovacia aplikácia)."
   },
   "twoStepOptions": {
     "message": "Možnosti dvojstupňového prihlásenia"
@@ -698,14 +698,14 @@
     "message": "Overovacia aplikácia"
   },
   "authenticatorAppDesc": {
-    "message": "Použite overovaciu aplikáciu (napríklad Authy alebo Google Authenticator) na generovanie časovo závislých overovacích kódov.",
+    "message": "Použite overovaciu aplikáciu (napríklad Authy alebo Google Authenticator) na generovanie časovo obmedzených overovacích kódov.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP bezpečnostný kľúč"
   },
   "yubiKeyDesc": {
-    "message": "Použiť YubiKey pre pístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a NEO zariadeniami."
+    "message": "Použiť YubiKey pre prístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a s NEO zariadeniami."
   },
   "duoDesc": {
     "message": "Overiť s Duo Security použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
@@ -724,16 +724,16 @@
     "message": "Verifikačné kódy vám budú zaslané emailom."
   },
   "selfHostedEnvironment": {
-    "message": "Vlastné prostredie hostu"
+    "message": "Sebou hosťované prostredie"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Špecifikujte základnú URL hosta vašej bitwarden inštalácie."
+    "message": "Špecifikujte základnú URL lokálne hosťovanej inštalácie bitwarden."
   },
   "customEnvironment": {
     "message": "Vlastné prostredie"
   },
   "customEnvironmentFooter": {
-    "message": "Pre pokročilých používateľov. Možete špecifikovať základnú URL pre každú službu nezávisle."
+    "message": "Pre pokročilých používateľov. Môžete špecifikovať základnú URL pre každú službu nezávisle."
   },
   "baseUrl": {
     "message": "URL servera"
@@ -757,7 +757,7 @@
     "message": "Povoliť automatické vypĺňanie pri načítaní stránky"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Ak je detekovaný prihlasovací formulár, automaticky vykonať vypĺňanie keď sa stránka načíta."
+    "message": "Ak je prihlasovací formulár detegovaný, automaticky vykonať vypĺňanie pri načítaní stránky."
   },
   "experimentalFeature": {
     "message": "Toto je zatiaľ experimentálna funkcia. Použite na vlastné riziko."
@@ -778,7 +778,7 @@
     "message": "Kopírovať hodnotu"
   },
   "toggleValue": {
-    "message": "Skryť\/zobraziť hodnotu"
+    "message": "Prepnúť hodnotu"
   },
   "value": {
     "message": "Hodnota"
@@ -799,13 +799,13 @@
     "message": "Kliknutie mimo popup okna na prezretie vášho emailu pre overovací kód spôsobí zavretie tohto popupu. Chcete otvoriť tento popup v novom okne tak, aby sa nezavrel?"
   },
   "disableFavicon": {
-    "message": "Vypnúť ikony stránok"
+    "message": "Nezobrazovať ikony stránok"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Ikony stránok poskytujú rozoznateľný obrázok vedľa každého prihlasovacieho údaju vo webovom trezore."
   },
   "cardholderName": {
-    "message": "Meno držiteľa karty"
+    "message": "Meno vlastníka karty"
   },
   "number": {
     "message": "Číslo"
@@ -865,7 +865,7 @@
     "message": "napr."
   },
   "title": {
-    "message": "Titul"
+    "message": "Oslovenie"
   },
   "mr": {
     "message": "Pán"
@@ -883,7 +883,7 @@
     "message": "Krstné meno"
   },
   "middleName": {
-    "message": "Stredné meno"
+    "message": "Druhé meno"
   },
   "lastName": {
     "message": "Priezvisko"
@@ -895,7 +895,7 @@
     "message": "Spoločnosť"
   },
   "ssn": {
-    "message": "Číslo sociálneho poistenia"
+    "message": "Číslo poistenca sociálnej poisťovne"
   },
   "passportNumber": {
     "message": "Číslo pasu"
@@ -925,7 +925,7 @@
     "message": "Mesto"
   },
   "stateProvince": {
-    "message": "Štát \/ Okres"
+    "message": "Región"
   },
   "zipPostalCode": {
     "message": "PSČ"
@@ -940,10 +940,10 @@
     "message": "Prihlásenie"
   },
   "typeLogins": {
-    "message": "Prihlásenia"
+    "message": "Prihlasovacie údaje"
   },
   "typeSecureNote": {
-    "message": "Bezpečná poznámka"
+    "message": "Zabezpečená poznámka"
   },
   "typeCard": {
     "message": "Karta"
@@ -958,21 +958,24 @@
     "message": "Späť"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Zbierky"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Obľúbené"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Otvoriť v novom okne"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Obnoviť"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Karty"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identity"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

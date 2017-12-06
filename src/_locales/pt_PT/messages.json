@@ -486,7 +486,7 @@
     "message": "Pesquisar pasta"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Pesquisar coleção"
   },
   "noneFolder": {
     "message": "Nenhuma pasta",
@@ -958,21 +958,24 @@
     "message": "Retroceder"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Coleções"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoritos"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Enviar para uma nova janela"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Atualizar"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Cartões"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identidades"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

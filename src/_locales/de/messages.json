@@ -176,7 +176,7 @@
     "message": "Melde einen Fehler auf unserem GitHub-Repository."
   },
   "sync": {
-    "message": "Abgleich"
+    "message": "Synchronisierung"
   },
   "syncVaultNow": {
     "message": "Tresor Jetzt Synchronisieren"
@@ -444,7 +444,7 @@
     "message": "Synchronisierung abgeschlossen"
   },
   "syncingFailed": {
-    "message": "Abgleich fehlgeschlagen"
+    "message": "Synchronisierung fehlgeschlagen"
   },
   "importItemsConfirmation": {
     "message": "Du kannst deine Logins über den bitwarden.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?"
@@ -459,13 +459,13 @@
     "message": "Neuer Eintrag"
   },
   "editedItem": {
-    "message": "Bearbeiteter Eintrag"
+    "message": "Eintrag bearbeitet"
   },
   "deleteItemConfirmation": {
     "message": "Soll dieser Eintrag wirklich gelöscht werden?"
   },
   "deletedItem": {
-    "message": "Gelöschter Eintrag"
+    "message": "Eintrag gelöscht"
   },
   "overwritePassword": {
     "message": "Passwort Ersetzen"
@@ -486,7 +486,7 @@
     "message": "Ordner durchsuchen"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Sammlung durchsuchen"
   },
   "noneFolder": {
     "message": "Kein Ordner",
@@ -520,7 +520,7 @@
     "message": "Tresor exportieren"
   },
   "warning": {
-    "message": "WARNUNG",
+    "message": "ACHTUNG",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
@@ -650,7 +650,7 @@
     "message": "Wenn deine Zugangsdaten mit einem Authentifizierungsschlüssel verknüpft sind, wird der TOTP Verifizierungscode automatisch in deine Zwischenablage kopiert wenn du die Zugangsdaten automatisch ausfüllen lässt."
   },
   "premiumRequired": {
-    "message": "Für Premium-Mitglieder"
+    "message": "Erweiterte Mitgliedschaft wird benötigt"
   },
   "premiumRequiredDesc": {
     "message": "Eine Premium-Mitgliedschaft ist für diese Funktion notwendig."
@@ -958,21 +958,24 @@
     "message": "Zurück"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Sammlungen"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoriten"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "In einem neuen Fenster öffnen"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Aktuaklisieren"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Karten"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identitäten"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

@@ -486,7 +486,7 @@
     "message": "Tìm kiếm thư mục"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Tìm kiếm bộ sưu tập"
   },
   "noneFolder": {
     "message": "Không có thư mục",
@@ -958,21 +958,24 @@
     "message": "Quay lại"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Các Bộ Sưu Tập"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Yêu thích"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Mở trong cửa sổ mới"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Làm mới"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Thẻ"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Danh tính"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

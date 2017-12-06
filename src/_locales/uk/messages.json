@@ -128,7 +128,7 @@
     "message": "Вихід"
   },
   "about": {
-    "message": "Про"
+    "message": "Про розширення"
   },
   "version": {
     "message": "Версія"
@@ -486,7 +486,7 @@
     "message": "Пошук в теці"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Пошук в збірках"
   },
   "noneFolder": {
     "message": "Без теки",
@@ -868,16 +868,16 @@
     "message": "Звернення"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Містер"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Місіс"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Міс"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Доктор"
   },
   "firstName": {
     "message": "Ім’я"
@@ -958,21 +958,24 @@
     "message": "Назад"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Збірки"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Обране"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Відкрити в новому вікні"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Оновити"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Карти"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Особисті дані"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

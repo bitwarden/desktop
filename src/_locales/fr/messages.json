@@ -486,7 +486,7 @@
     "message": "Recherche dossier"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Rechercher une collection"
   },
   "noneFolder": {
     "message": "Pas de dossier",
@@ -961,18 +961,21 @@
     "message": "Collections"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoris"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Ouvrir dans une nouvelle fenêtre"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Actualiser"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Cartes"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identités"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

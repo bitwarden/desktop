@@ -417,7 +417,7 @@
     "message": "Puoi cambiare il tuo indirizzo email sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una security key, app di autenticazione, SMS, telefonata o email. Può essere abilitata su bitwarden.com. Vuoi visitare il sito ora?"
+    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una security key, app di autenticazione, SMS, telefonata o email. Può essere abilitata sulla cassaforte online di bitwarden.com. Vuoi visitare il sito ora?"
   },
   "loggingOut": {
     "message": "Disconnettendo"
@@ -444,7 +444,7 @@
     "message": "Sincronizzazione completata"
   },
   "syncingFailed": {
-    "message": "Sinconizzazione fallita"
+    "message": "Sincronizzazione fallita"
   },
   "importItemsConfirmation": {
     "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
@@ -542,16 +542,16 @@
     "message": "Crea un'organizzazione per condividere in sicurezza i tuoi login con gli altri utenti."
   },
   "contribute": {
-    "message": "You can contribute to!"
+    "message": "Puoi contribuire anche tu!"
   },
   "learnMore": {
     "message": "Per saperne di più"
   },
   "authenticatorKeyTotp": {
-    "message": "Chiave di autenticazione (TOTP)"
+    "message": "Chiave di Autenticazione (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Codice di verifica (TOTP)"
+    "message": "Codice di Verifica (TOTP)"
   },
   "copyVerificationCode": {
     "message": "Copia il codice di verifica"
@@ -590,7 +590,7 @@
     "message": "Funzione non disponibile"
   },
   "updateKey": {
-    "message": "Non puoi utilizzare questa funzione finchè non aggiorni la tua chiave di crittografia."
+    "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave di crittografia."
   },
   "premiumMembership": {
     "message": "Abbonamento premium"
@@ -602,7 +602,7 @@
     "message": "Puoi gestire il tuo abbonamento premium online su bitwarden.com. Vuoi visitare ora il sito?"
   },
   "premiumRefresh": {
-    "message": "Aggiorna Premium"
+    "message": "Aggiorna abbonamento"
   },
   "premiumNotCurrentMember": {
     "message": "Al momento non sei un membro premium."
@@ -880,61 +880,61 @@
     "message": "Dr"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Nome"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Secondo nome"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Cognome"
   },
   "identityName": {
     "message": "Identity Name"
   },
   "company": {
-    "message": "Company"
+    "message": "Azienda"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Numero di previdenza sociale\/Codice Fiscale"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Numero del passaporto"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Numero patente"
   },
   "email": {
     "message": "Email"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefono"
   },
   "address": {
-    "message": "Address"
+    "message": "Indirizzo"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Indirizzo 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Indirizzo 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Indirizzo 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Città o comune"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Stato \/ Provincia"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "CAP"
   },
   "country": {
-    "message": "Country"
+    "message": "Paese"
   },
   "type": {
-    "message": "Type"
+    "message": "Tipo"
   },
   "typeLogin": {
     "message": "Login"
@@ -943,36 +943,39 @@
     "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Nota sicura"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Carta"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identità"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Cronologia della Password"
   },
   "back": {
-    "message": "Back"
+    "message": "Indietro"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Raccolte"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Preferiti"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Apri in una nuova finestra"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Aggiorna"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Carte"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identità"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

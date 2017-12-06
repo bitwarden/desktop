@@ -486,7 +486,7 @@
     "message": "Căutare dosar"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Căutare colecție"
   },
   "noneFolder": {
     "message": "Niciun dosar",
@@ -958,21 +958,24 @@
     "message": "Înapoi"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Colecții"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favorite"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Deschidere într-o fereastră nouă"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Reîmprospătare"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Carduri"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identități"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

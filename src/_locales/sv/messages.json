@@ -486,7 +486,7 @@
     "message": "Sök i mapp"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Sök i samling"
   },
   "noneFolder": {
     "message": "Ingen mapp",
@@ -958,21 +958,24 @@
     "message": "Tillbaka"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Samlingar"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoriter"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Poppa ut till ett nytt fönster"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Uppdatera"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Kort"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identiteter"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

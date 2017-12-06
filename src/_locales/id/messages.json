@@ -86,7 +86,7 @@
     "message": "Tidak ada info masuk yang cocok."
   },
   "vaultLocked": {
-    "message": "Berangkas terkunci."
+    "message": "Brankas terkunci."
   },
   "autoFillInfo": {
     "message": "Tidak ada info masuk yang tersedia untuk mengisi secara otomatis tab peramban saat ini."
@@ -486,7 +486,7 @@
     "message": "Cari folder"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Cari koleksi"
   },
   "noneFolder": {
     "message": "Tidak Ada Folder",
@@ -958,21 +958,24 @@
     "message": "Kembali"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Koleksi"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favorit"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Buka di jendela baru"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Segarkan"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Kartu"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identitas"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }
