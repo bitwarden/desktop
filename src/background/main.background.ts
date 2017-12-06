@@ -47,10 +47,10 @@ export default class MainBackground {
     private loginToAutoFill: any = null;
     private pageDetailsToAutoFill: any[] = [];
 
-    constructor(window: Window) {
+    constructor(window: Window, i18nService: any) {
         // Services
+        this.i18nService = i18nService;
         this.utilsService = new UtilsService();
-        this.i18nService = new i18nService(this.utilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.utilsService);
         this.cryptoService = new CryptoService();
         this.tokenService = new TokenService();

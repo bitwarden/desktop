@@ -1,7 +1,7 @@
-export default function i18nService(utilsService) {
+export default function i18nService() {
     this.__edgeMessages = {};
 
-    if (utilsService.isEdge()) {
+    if (navigator.userAgent.indexOf(' Edge/') !== -1) {
         fetch('../_locales/en/messages.json').then((file) => {
             return file.json();
         }).then((locales) => {
