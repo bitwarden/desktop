@@ -111,7 +111,8 @@
       "suggested_key": {
         "default": "Alt+Shift+Y",
         "linux": "Alt+Shift+U"
-      }
+      },
+      "description": " "
     }
   },
   "web_accessible_resources": [

@@ -1,3 +1,5 @@
+import * as forge from 'node-forge';
+
 import { EncryptionType } from '../../enums/encryptionType.enum';
 
 import SymmetricCryptoKeyBuffers from './symmetricCryptoKeyBuffers';
@@ -21,7 +23,7 @@ export default class SymmetricCryptoKey {
             throw new Error('Must provide keyBytes');
         }
 
-        const buffer = forge.util.createBuffer(keyBytes);
+        const buffer = (forge as any).util.createBuffer(keyBytes);
         if (!buffer || buffer.length() === 0) {
             throw new Error('Couldn\'t make buffer');
         }

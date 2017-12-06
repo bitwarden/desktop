@@ -1,3 +1,5 @@
+import * as forge from 'node-forge';
+
 import { EncryptionType } from '../enums/encryptionType.enum';
 
 import { CipherString } from '../models/domain/cipherString';
@@ -249,7 +251,7 @@ export default class CryptoService implements CryptoServiceInterface {
     }
 
     makeKey(password: string, salt: string): SymmetricCryptoKey {
-        const keyBytes: string = forge.pbkdf2(forge.util.encodeUtf8(password), forge.util.encodeUtf8(salt),
+        const keyBytes: string = (forge as any).pbkdf2(forge.util.encodeUtf8(password), forge.util.encodeUtf8(salt),
             5000, 256 / 8, 'sha256');
         return new SymmetricCryptoKey(keyBytes);
     }
@@ -261,7 +263,7 @@ export default class CryptoService implements CryptoServiceInterface {
             throw new Error('Invalid parameters.');
         }
 
-        const hashBits = forge.pbkdf2(key.key, forge.util.encodeUtf8(password), 1, 256 / 8, 'sha256');
+        const hashBits = (forge as any).pbkdf2(key.key, forge.util.encodeUtf8(password), 1, 256 / 8, 'sha256');
         return forge.util.encode64(hashBits);
     }
 
@@ -487,8 +489,8 @@ export default class CryptoService implements CryptoServiceInterface {
             }
         }
 
-        const ctBuffer = forge.util.createBuffer(ctBytes);
-        const decipher = forge.cipher.createDecipher('AES-CBC', theKey.encKey);
+        const ctBuffer = (forge as any).util.createBuffer(ctBytes);
+        const decipher = (forge as any).cipher.createDecipher('AES-CBC', theKey.encKey);
         decipher.start({ iv: ivBytes });
         decipher.update(ctBuffer);
         decipher.finish();
@@ -524,7 +526,7 @@ export default class CryptoService implements CryptoServiceInterface {
     }
 
     private computeMac(dataBytes: string, macKey: string, b64Output: boolean): string {
-        const hmac = forge.hmac.create();
+        const hmac = (forge as any).hmac.create();
         hmac.start('sha256', macKey);
         hmac.update(dataBytes);
         const mac = hmac.digest();
@@ -539,7 +541,7 @@ export default class CryptoService implements CryptoServiceInterface {
     // Safely compare two MACs in a way that protects against timing attacks (Double HMAC Verification).
     // ref: https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2011/february/double-hmac-verification/
     private macsEqual(macKey: string, mac1: string, mac2: string): boolean {
-        const hmac = forge.hmac.create();
+        const hmac = (forge as any).hmac.create();
 
         hmac.start('sha256', macKey);
         hmac.update(mac1);

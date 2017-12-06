@@ -11,7 +11,7 @@ import ConstantsService from '../services/constants.service';
 import CryptoService from '../services/crypto.service';
 import EnvironmentService from '../services/environment.service';
 import FolderService from '../services/folder.service';
-import i18nService from '../services/i18nService.js';
+import i18nService from '../services/i18n.service';
 import LockService from '../services/lock.service';
 import PasswordGenerationService from '../services/passwordGeneration.service';
 import SettingsService from '../services/settings.service';
@@ -22,6 +22,7 @@ import UserService from '../services/user.service';
 import UtilsService from '../services/utils.service';
 
 export default class MainBackground {
+    i18nService: any;
     utilsService: UtilsService;
     constantsService: ConstantsService;
     cryptoService: CryptoService;
@@ -52,9 +53,10 @@ export default class MainBackground {
     private autofillTimeout: number;
     private pendingAuthRequests: any[] = [];
 
-    constructor(public i18nService: any) {
+    constructor() {
         // Services
         this.utilsService = new UtilsService();
+        this.i18nService = i18nService();
         this.constantsService = new ConstantsService(i18nService, this.utilsService);
         this.cryptoService = new CryptoService();
         this.tokenService = new TokenService();

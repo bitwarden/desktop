@@ -12,7 +12,7 @@ const isVendorModule = (module) => {
 module.exports = {
     entry: {
         'popup/app': './src/popup/app/app.js',
-        'background': './src/background.js',
+        'background': './src/background.ts',
         'content/autofill': './src/content/autofill.js',
         'content/autofiller': './src/content/autofiller.js',
         'content/notificationBar': './src/content/notificationBar.js',
