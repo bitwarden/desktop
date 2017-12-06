@@ -82,7 +82,7 @@ export default class MainBackground {
             opr.sidebarAction : (window as any).chrome.sidebarAction;
     }
 
-    bootstrap() {
+    async bootstrap() {
         // Chrome APIs
         if (chrome.commands) {
             chrome.commands.onCommand.addListener((command: any) => {
@@ -323,11 +323,10 @@ export default class MainBackground {
         }
 
         // Bootstrap
-        this.environmentService.setUrlsFromStorage().then(() => {
-            this.setIcon();
-            this.cleanupLoginsToAdd();
-            this.fullSync(true);
-        });
+        await this.environmentService.setUrlsFromStorage();
+        this.setIcon();
+        this.cleanupLoginsToAdd();
+        this.fullSync(true);
     }
 
     private completeAuthRequest(details: any) {
