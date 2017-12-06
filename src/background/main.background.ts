@@ -57,7 +57,7 @@ export default class MainBackground {
         // Services
         this.utilsService = new UtilsService();
         this.i18nService = i18nService(this.utilsService);
-        this.constantsService = new ConstantsService(i18nService, this.utilsService);
+        this.constantsService = new ConstantsService(this.i18nService, this.utilsService);
         this.cryptoService = new CryptoService();
         this.tokenService = new TokenService();
         this.appIdService = new AppIdService();
@@ -67,7 +67,7 @@ export default class MainBackground {
         this.settingsService = new SettingsService(this.userService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
             this.apiService);
-        this.folderService = new FolderService(this.cryptoService, this.userService, i18nService,
+        this.folderService = new FolderService(this.cryptoService, this.userService, this.i18nService,
             this.apiService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
