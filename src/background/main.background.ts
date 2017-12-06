@@ -820,17 +820,13 @@ export default class MainBackground {
         });
     }
 
-    private tabsQueryFirst(options: any): Promise<any> {
-        return new Promise((resolve) => {
-            chrome.tabs.query(options, (tabs: any[]) => {
-                if (tabs.length > 0) {
-                    resolve(tabs[0]);
-                    return;
-                }
+    private async tabsQueryFirst(options: any): Promise<any> {
+        const tabs = await this.tabsQuery(options);
+        if (tabs.length > 0) {
+            return tabs[0];
+        }
 
-                resolve(null);
-            });
-        });
+        return null;
     }
 
     private actionSetIcon(theAction: any, suffix: string): Promise<any> {
