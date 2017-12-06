@@ -47,5 +47,5 @@ export const ActionButtonsComponent = {
         onView: '&',
     },
     controller: ActionButtonsController,
-    template,
+    template: template,
 };

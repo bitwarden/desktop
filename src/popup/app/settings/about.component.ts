@@ -15,5 +15,5 @@ export class AboutController {
 export const AboutComponent = {
     bindings: {},
     controller: AboutController,
-    template,
+    template: template,
 };

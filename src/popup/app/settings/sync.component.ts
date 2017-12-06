@@ -38,5 +38,5 @@ export class SyncController {
 export const SyncComponent = {
     bindings: {},
     controller: SyncController,
-    template,
+    template: template,
 };

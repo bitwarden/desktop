@@ -74,5 +74,5 @@ export const EditFolderComponent = {
         $transition$: '<',
     },
     controller: EditFolderController,
-    template,
+    template: template,
 };

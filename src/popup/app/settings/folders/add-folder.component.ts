@@ -40,5 +40,5 @@ export class AddFolderController {
 export const AddFolderComponent = {
     bindings: {},
     controller: AddFolderController,
-    template,
+    template: template,
 };

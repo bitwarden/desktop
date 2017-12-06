@@ -31,5 +31,5 @@ export class HelpController {
 export const HelpComponent = {
     bindings: {},
     controller: HelpController,
-    template,
+    template: template,
 };

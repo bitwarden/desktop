@@ -166,5 +166,5 @@ export class ExportController {
 export const ExportComponent = {
     bindings: {},
     controller: ExportController,
-    template,
+    template: template,
 };

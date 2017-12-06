@@ -140,5 +140,5 @@ export const PasswordGeneratorComponent = {
         $transition$: '<',
     },
     controller: PasswordGeneratorController,
-    template,
+    template: template,
 };

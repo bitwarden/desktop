@@ -50,5 +50,5 @@ export const PasswordGeneratorHistoryComponent = {
         $transition$: '<',
     },
     controller: PasswordGeneratorHistoryController,
-    template,
+    template: template,
 };

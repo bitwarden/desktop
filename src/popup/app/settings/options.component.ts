@@ -91,5 +91,5 @@ export class OptionsController {
 export const OptionsComponent = {
     bindings: {},
     controller: OptionsController,
-    template,
+    template: template,
 };

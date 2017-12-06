@@ -35,5 +35,5 @@ export class FoldersController {
 export const FoldersComponent = {
     bindings: {},
     controller: FoldersController,
-    template,
+    template: template,
 };

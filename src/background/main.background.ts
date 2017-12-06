@@ -420,18 +420,19 @@ export default class MainBackground {
             return;
         }
 
+        const self = this;
         const tab = await this.tabsQueryFirst({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT });
         if (!tab) {
             return;
         }
 
-        const disabled = await this.utilsService.getObjFromStorage<boolean>(ConstantsService.disableContextMenuItemKey);
+        const disabled = await self.utilsService.getObjFromStorage<boolean>(ConstantsService.disableContextMenuItemKey);
         if (!disabled) {
             await this.buildContextMenu();
             this.contextMenuReady(tab, true);
         } else {
             await this.contextMenusRemoveAll();
-            this.contextMenuReady(tab, false);
+            self.contextMenuReady(tab, false);
         }
     }
 

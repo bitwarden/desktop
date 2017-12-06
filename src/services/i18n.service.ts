@@ -18,10 +18,10 @@ export default function i18nService(utilsService: UtilsService) {
     }
 
     return new Proxy({}, {
-        get(target, name) {
+        get: (target, name) => {
             return chrome.i18n.getMessage(name);
         },
-        set(target, name, value) {
+        set: (target, name, value) => {
             return false;
         },
     });

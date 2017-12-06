@@ -56,5 +56,5 @@ export class PremiumController {
 export const PremiumComponent = {
     bindings: {},
     controller: PremiumController,
-    template,
+    template: template,
 };

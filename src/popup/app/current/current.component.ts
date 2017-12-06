@@ -69,7 +69,7 @@ export class CurrentController {
         }
 
         this.autofillService.doAutoFill({
-            cipher,
+            cipher: cipher,
             pageDetails: this.pageDetails,
             fromBackground: false,
         }).then((totpCode: string) => {
@@ -165,5 +165,5 @@ export class CurrentController {
 export const CurrentComponent = {
     bindings: {},
     controller: CurrentController,
-    template,
+    template: template,
 };

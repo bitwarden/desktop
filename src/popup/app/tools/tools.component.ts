@@ -56,5 +56,5 @@ export class ToolsController {
 export const ToolsComponent = {
     bindings: {},
     controller: ToolsController,
-    template,
+    template: template,
 };

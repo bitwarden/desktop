@@ -56,5 +56,5 @@ export class PopOutController implements ng.IController {
 export const PopOutComponent = {
     bindings: {},
     controller: PopOutController,
-    template,
+    template: template,
 };

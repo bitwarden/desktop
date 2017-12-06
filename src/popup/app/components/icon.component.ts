@@ -78,5 +78,5 @@ export const IconComponent = {
         cipher: '<',
     },
     controller: IconController,
-    template,
+    template: template,
 };

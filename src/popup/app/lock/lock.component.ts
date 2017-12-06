@@ -59,5 +59,5 @@ export class LockController {
 export const LockComponent = {
     bindings: {},
     controller: LockController,
-    template,
+    template: template,
 };

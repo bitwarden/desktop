@@ -19,5 +19,5 @@ export class CreditsController {
 export const CreditsComponent = {
     bindings: {},
     controller: CreditsController,
-    template,
+    template: template,
 };

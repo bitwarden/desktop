@@ -148,5 +148,5 @@ export class SettingsController {
 export const SettingsComponent = {
     bindings: {},
     controller: SettingsController,
-    template,
+    template: template,
 };

@@ -51,5 +51,5 @@ export class EnvironmentController {
 export const EnvironmentComponent = {
     bindings: {},
     controller: EnvironmentController,
-    template,
+    template: template,
 };
