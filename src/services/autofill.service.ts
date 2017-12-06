@@ -10,10 +10,10 @@ import TotpService from './totp.service';
 import UtilsService from './utils.service';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
-    'placeholder'];
+    'placeholder', 'label-left', 'label-top'];
 
 const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
-    'placeholder'];
+    'placeholder', 'label-left', 'label-top'];
 
 const UsernameFieldNames: string[] = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
     'userid', 'user id'];
@@ -483,11 +483,9 @@ export default class AutofillService {
             if (year.length === 2) {
                 year = '20' + year;
             }
-            const exp = year + '-' + ('0' + card.expMonth).slice(-2);
 
-            filledFields[fillFields.exp.opid] = fillFields.exp;
-            fillScript.script.push(['click_on_opid', fillFields.exp.opid]);
-            fillScript.script.push(['fill_by_opid', fillFields.exp.opid, exp]);
+            const exp = year + '-' + ('0' + card.expMonth).slice(-2);
+            this.makeScriptActionWithValue(fillScript, exp, fillFields.exp, filledFields);
         }
 
         return fillScript;
@@ -588,9 +586,7 @@ export default class AutofillService {
             const isoState = IsoStates[stateLower] || IsoProvinces[stateLower];
             if (isoState) {
                 filledState = true;
-                filledFields[fillFields.state.opid] = fillFields.state;
-                fillScript.script.push(['click_on_opid', fillFields.state.opid]);
-                fillScript.script.push(['fill_by_opid', fillFields.state.opid, isoState]);
+                this.makeScriptActionWithValue(fillScript, isoState, fillFields.state, filledFields);
             }
         }
 
@@ -604,9 +600,7 @@ export default class AutofillService {
             const isoCountry = IsoCountries[countryLower];
             if (isoCountry) {
                 filledCountry = true;
-                filledFields[fillFields.country.opid] = fillFields.country;
-                fillScript.script.push(['click_on_opid', fillFields.country.opid]);
-                fillScript.script.push(['fill_by_opid', fillFields.country.opid, isoCountry]);
+                this.makeScriptActionWithValue(fillScript, isoCountry, fillFields.country, filledFields);
             }
         }
 
@@ -632,9 +626,7 @@ export default class AutofillService {
                 fullName += identity.lastName;
             }
 
-            filledFields[fillFields.name.opid] = fillFields.name;
-            fillScript.script.push(['click_on_opid', fillFields.name.opid]);
-            fillScript.script.push(['fill_by_opid', fillFields.name.opid, fullName]);
+            this.makeScriptActionWithValue(fillScript, fullName, fillFields.name, filledFields);
         }
 
         if (fillFields.address && identity.address1 && identity.address1 !== '') {
@@ -655,9 +647,7 @@ export default class AutofillService {
                 address += identity.address3;
             }
 
-            filledFields[fillFields.address.opid] = fillFields.address;
-            fillScript.script.push(['click_on_opid', fillFields.address.opid]);
-            fillScript.script.push(['fill_by_opid', fillFields.address.opid, address]);
+            this.makeScriptActionWithValue(fillScript, address, fillFields.address, filledFields);
         }
 
         return fillScript;
@@ -680,10 +670,40 @@ export default class AutofillService {
     private makeScriptAction(fillScript: AutofillScript, cipherData: any, fillFields: any,
         filledFields: { [id: string]: AutofillField; }, dataProp: string, fieldProp?: string) {
         fieldProp = fieldProp || dataProp;
-        if (cipherData[dataProp] && cipherData[dataProp] !== '' && fillFields[fieldProp]) {
-            filledFields[fillFields[fieldProp].opid] = fillFields[fieldProp];
-            fillScript.script.push(['click_on_opid', fillFields[fieldProp].opid]);
-            fillScript.script.push(['fill_by_opid', fillFields[fieldProp].opid, cipherData[dataProp]]);
+        this.makeScriptActionWithValue(fillScript, cipherData[dataProp], fillFields[fieldProp], filledFields);
+    }
+
+    private makeScriptActionWithValue(fillScript: AutofillScript, dataValue: any, field: any,
+        filledFields: { [id: string]: AutofillField; }) {
+
+        let doFill = false;
+        if (dataValue && dataValue !== '' && field) {
+            if (field.type === 'select-one' && field.selectInfo && field.selectInfo.options) {
+                for (let i = 0; i < field.selectInfo.options.length; i++) {
+                    const option = field.selectInfo.options[i];
+                    for (let j = 0; j < option.length; j++) {
+                        if (option[j].toLowerCase() === dataValue.toLowerCase()) {
+                            doFill = true;
+                            if (option.length > 1) {
+                                dataValue = option[1];
+                            }
+                            break;
+                        }
+                    }
+
+                    if (doFill) {
+                        break;
+                    }
+                }
+            } else {
+                doFill = true;
+            }
+        }
+
+        if (doFill) {
+            filledFields[field.opid] = field;
+            fillScript.script.push(['click_on_opid', field.opid]);
+            fillScript.script.push(['fill_by_opid', field.opid, dataValue]);
         }
     }
 
