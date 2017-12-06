@@ -4,7 +4,7 @@ import { UtilsService } from '../../../services/abstractions/utils.service';
 function getBackgroundService<T>(service: string) {
     return (): T => {
         const page = chrome.extension.getBackgroundPage();
-        return page ? page['bg_' + service] as T : null;
+        return page ? page.bg_main[service] as T : null;
     };
 }
 

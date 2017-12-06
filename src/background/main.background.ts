@@ -1,5 +1,7 @@
 import { CipherType } from '../enums/cipherType.enum';
 
+import { Cipher } from '../models/domain/cipher';
+
 import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
@@ -21,7 +23,6 @@ import UtilsService from '../services/utils.service';
 
 export default class MainBackground {
     utilsService: UtilsService;
-    i18nService: any;
     constantsService: ConstantsService;
     cryptoService: CryptoService;
     tokenService: TokenService;
@@ -46,12 +47,15 @@ export default class MainBackground {
     private menuOptionsLoaded: any[] = [];
     private loginToAutoFill: any = null;
     private pageDetailsToAutoFill: any[] = [];
+    private loginsToAdd: any[] = [];
+    private syncTimeout: number;
+    private autofillTimeout: number;
+    private pendingAuthRequests: any[] = [];
 
-    constructor(window: Window, i18nService: any) {
+    constructor(public i18nService: any) {
         // Services
-        this.i18nService = i18nService;
         this.utilsService = new UtilsService();
-        this.constantsService = new ConstantsService(this.i18nService, this.utilsService);
+        this.constantsService = new ConstantsService(i18nService, this.utilsService);
         this.cryptoService = new CryptoService();
         this.tokenService = new TokenService();
         this.appIdService = new AppIdService();
@@ -59,10 +63,10 @@ export default class MainBackground {
         this.environmentService = new EnvironmentService(this.apiService);
         this.userService = new UserService(this.tokenService);
         this.settingsService = new SettingsService(this.userService);
-        this.cipherService = new CipherService(this.cryptoService, this.userService,
-            this.settingsService, this.apiService);
-        this.folderService = new FolderService(this.cryptoService, this.userService,
-            this.i18nService, this.apiService);
+        this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
+            this.apiService);
+        this.folderService = new FolderService(this.cryptoService, this.userService, i18nService,
+            this.apiService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
             this.cryptoService, this.utilsService, this.setIcon, this.refreshBadgeAndMenu);
@@ -78,6 +82,261 @@ export default class MainBackground {
             opr.sidebarAction : (window as any).chrome.sidebarAction;
     }
 
+    bootstrap() {
+        // Chrome APIs
+        if (chrome.commands) {
+            chrome.commands.onCommand.addListener((command: any) => {
+                if (command === 'generate_password') {
+                    (window as any).ga('send', {
+                        hitType: 'event',
+                        eventAction: 'Generated Password From Command',
+                    });
+                    this.passwordGenerationService.getOptions().then((options) => {
+                        const password = PasswordGenerationService.generatePassword(options);
+                        UtilsService.copyToClipboard(password);
+                        this.passwordGenerationService.addHistory(password);
+                    });
+                } else if (command === 'autofill_login') {
+                    this.tabsQueryFirst({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }).then((tab) => {
+                        if (tab != null) {
+                            (window as any).ga('send', {
+                                hitType: 'event',
+                                eventAction: 'Autofilled From Command',
+                            });
+                            this.collectPageDetailsForContentScript(tab, 'autofill_cmd');
+                        }
+                    });
+                }
+            });
+        }
+
+        chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: any) => {
+            if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
+                this.setIcon();
+                this.refreshBadgeAndMenu();
+            } else if (msg.command === 'logout') {
+                this.logout(msg.expired);
+            } else if (msg.command === 'syncCompleted' && msg.successfully) {
+                setTimeout(async () => await this.refreshBadgeAndMenu(), 2000);
+            } else if (msg.command === 'bgOpenOverlayPopup') {
+                this.currentTabSendMessage('openOverlayPopup', msg.data);
+            } else if (msg.command === 'bgCloseOverlayPopup') {
+                this.currentTabSendMessage('closeOverlayPopup');
+            } else if (msg.command === 'bgOpenNotificationBar') {
+                this.tabSendMessage(sender.tab.id, 'openNotificationBar', msg.data);
+            } else if (msg.command === 'bgCloseNotificationBar') {
+                this.tabSendMessage(sender.tab.id, 'closeNotificationBar');
+            } else if (msg.command === 'bgAdjustNotificationBar') {
+                this.tabSendMessage(sender.tab.id, 'adjustNotificationBar', msg.data);
+            } else if (msg.command === 'bgCollectPageDetails') {
+                this.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
+            } else if (msg.command === 'bgAddLogin') {
+                this.addLogin(msg.login, sender.tab);
+            } else if (msg.command === 'bgAddClose') {
+                this.removeAddLogin(sender.tab);
+            } else if (msg.command === 'bgAddSave') {
+                this.saveAddLogin(sender.tab);
+            } else if (msg.command === 'bgNeverSave') {
+                this.saveNever(sender.tab);
+            } else if (msg.command === 'collectPageDetailsResponse') {
+                if (msg.sender === 'notificationBar') {
+                    const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
+                    this.tabSendMessage(msg.tab.id, 'notificationBarPageDetails', {
+                        details: msg.details,
+                        forms: forms,
+                    });
+                } else if (msg.sender === 'autofiller' || msg.sender === 'autofill_cmd') {
+                    this.autofillService.doAutoFillForLastUsedLogin([{
+                        frameId: sender.frameId,
+                        tab: msg.tab,
+                        details: msg.details,
+                    }], msg.sender === 'autofill_cmd');
+                } else if (msg.sender === 'contextMenu') {
+                    clearTimeout(this.autofillTimeout);
+                    this.pageDetailsToAutoFill.push({ frameId: sender.frameId, tab: msg.tab, details: msg.details });
+                    this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
+                }
+            } else if (msg.command === 'bgUpdateContextMenu') {
+                this.refreshBadgeAndMenu();
+            }
+        });
+
+        if (chrome.runtime.onInstalled) {
+            chrome.runtime.onInstalled.addListener((details: any) => {
+                (window as any).ga('send', {
+                    hitType: 'event',
+                    eventAction: 'onInstalled ' + details.reason,
+                });
+
+                if (details.reason === 'install') {
+                    chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
+                }
+            });
+        }
+
+        chrome.tabs.onActivated.addListener((activeInfo: any) => {
+            this.refreshBadgeAndMenu();
+        });
+
+        chrome.tabs.onReplaced.addListener((addedTabId: any, removedTabId: any) => {
+            if (this.onReplacedRan) {
+                return;
+            }
+            this.onReplacedRan = true;
+            this.checkLoginsToAdd();
+            this.refreshBadgeAndMenu();
+        });
+
+        chrome.tabs.onUpdated.addListener((tabId: any, changeInfo: any, tab: any) => {
+            if (this.onUpdatedRan) {
+                return;
+            }
+            this.onUpdatedRan = true;
+            this.checkLoginsToAdd();
+            this.refreshBadgeAndMenu();
+        });
+
+        if (chrome.windows) {
+            chrome.windows.onFocusChanged.addListener((windowId: any) => {
+                if (windowId === null || windowId < 0) {
+                    return;
+                }
+
+                this.refreshBadgeAndMenu();
+            });
+        }
+
+        if (chrome.contextMenus) {
+            chrome.contextMenus.onClicked.addListener((info: any, tab: any) => {
+                if (info.menuItemId === 'generate-password') {
+                    (window as any).ga('send', {
+                        hitType: 'event',
+                        eventAction: 'Generated Password From Context Menu',
+                    });
+                    this.passwordGenerationService.getOptions().then((options) => {
+                        const password = PasswordGenerationService.generatePassword(options);
+                        UtilsService.copyToClipboard(password);
+                        this.passwordGenerationService.addHistory(password);
+                    });
+                } else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
+                    info.parentMenuItemId === 'copy-password') {
+                    const id = info.menuItemId.split('_')[1];
+                    if (id === 'noop') {
+                        if ((window as any).chrome.browserAction.openPopup) {
+                            (window as any).chrome.browserAction.openPopup();
+                        }
+                        return;
+                    }
+
+                    this.cipherService.getAllDecrypted().then((ciphers) => {
+                        for (let i = 0; i < ciphers.length; i++) {
+                            const cipher = ciphers[i];
+                            if (cipher.id !== id) {
+                                continue;
+                            }
+
+                            if (info.parentMenuItemId === 'autofill') {
+                                (window as any).ga('send', {
+                                    hitType: 'event',
+                                    eventAction: 'Autofilled From Context Menu',
+                                });
+                                this.startAutofillPage(cipher);
+                            } else if (info.parentMenuItemId === 'copy-username') {
+                                (window as any).ga('send', {
+                                    hitType: 'event',
+                                    eventAction: 'Copied Username From Context Menu',
+                                });
+                                UtilsService.copyToClipboard(cipher.login.username);
+                            } else if (info.parentMenuItemId === 'copy-password') {
+                                (window as any).ga('send', {
+                                    hitType: 'event',
+                                    eventAction: 'Copied Password From Context Menu',
+                                });
+                                UtilsService.copyToClipboard(cipher.login.password);
+                            }
+
+                            break;
+                        }
+                    });
+                }
+            });
+        }
+
+        if (chrome.webRequest && chrome.webRequest.onAuthRequired) {
+            (window as any).chrome.webRequest.onAuthRequired.addListener((details: any, callback: any) => {
+                if (!details.url || this.pendingAuthRequests.indexOf(details.requestId) !== -1) {
+                    if (callback) {
+                        callback();
+                    }
+                    return;
+                }
+
+                const domain = UtilsService.getDomain(details.url);
+                if (domain == null) {
+                    if (callback) {
+                        callback();
+                    }
+                    return;
+                }
+
+                this.pendingAuthRequests.push(details.requestId);
+
+                if (this.utilsService.isFirefox()) {
+                    return new Promise((resolve, reject) => {
+                        this.cipherService.getAllDecryptedForDomain(domain).then((ciphers) => {
+                            if (ciphers == null || ciphers.length !== 1) {
+                                reject();
+                                return;
+                            }
+
+                            resolve({
+                                authCredentials: {
+                                    username: ciphers[0].login.username,
+                                    password: ciphers[0].login.password,
+                                },
+                            });
+                        }, () => {
+                            reject();
+                        });
+                    });
+                } else {
+                    this.cipherService.getAllDecryptedForDomain(domain).then((ciphers) => {
+                        if (ciphers == null || ciphers.length !== 1) {
+                            callback();
+                            return;
+                        }
+
+                        callback({
+                            authCredentials: {
+                                username: ciphers[0].login.username,
+                                password: ciphers[0].login.password,
+                            },
+                        });
+                    }, () => {
+                        callback();
+                    });
+                }
+            }, { urls: ['http://*/*', 'https://*/*'] }, [this.utilsService.isFirefox() ? 'blocking' : 'asyncBlocking']);
+
+            chrome.webRequest.onCompleted.addListener(this.completeAuthRequest, { urls: ['http://*/*'] });
+            chrome.webRequest.onErrorOccurred.addListener(this.completeAuthRequest, { urls: ['http://*/*'] });
+        }
+
+        // Bootstrap
+        this.environmentService.setUrlsFromStorage().then(() => {
+            this.setIcon();
+            this.cleanupLoginsToAdd();
+            this.fullSync(true);
+        });
+    }
+
+    private completeAuthRequest(details: any) {
+        const i = this.pendingAuthRequests.indexOf(details.requestId);
+        if (i > -1) {
+            this.pendingAuthRequests.splice(i, 1);
+        }
+    }
+
     private async buildContextMenu() {
         if (!chrome.contextMenus || this.buildingContextMenu) {
             return;
@@ -90,7 +349,7 @@ export default class MainBackground {
             type: 'normal',
             id: 'root',
             contexts: ['all'],
-            title: 'bitwarden'
+            title: 'bitwarden',
         });
 
         await this.contextMenusCreate({
@@ -98,7 +357,7 @@ export default class MainBackground {
             id: 'autofill',
             parentId: 'root',
             contexts: ['all'],
-            title: this.i18nService.autoFill
+            title: this.i18nService.autoFill,
         });
 
         // Firefox & Edge do not support writing to the clipboard from background
@@ -108,7 +367,7 @@ export default class MainBackground {
                 id: 'copy-username',
                 parentId: 'root',
                 contexts: ['all'],
-                title: this.i18nService.copyUsername
+                title: this.i18nService.copyUsername,
             });
 
             await this.contextMenusCreate({
@@ -116,12 +375,12 @@ export default class MainBackground {
                 id: 'copy-password',
                 parentId: 'root',
                 contexts: ['all'],
-                title: this.i18nService.copyPassword
+                title: this.i18nService.copyPassword,
             });
 
             await this.contextMenusCreate({
                 type: 'separator',
-                parentId: 'root'
+                parentId: 'root',
             });
 
             await this.contextMenusCreate({
@@ -129,7 +388,7 @@ export default class MainBackground {
                 id: 'generate-password',
                 parentId: 'root',
                 contexts: ['all'],
-                title: this.i18nService.generatePasswordCopied
+                title: this.i18nService.generatePasswordCopied,
             });
         }
 
@@ -186,7 +445,7 @@ export default class MainBackground {
             return;
         }
 
-        var tabDomain = this.utilsService.getDomain(url);
+        const tabDomain = this.utilsService.getDomain(url);
         if (tabDomain == null) {
             return;
         }
@@ -200,12 +459,12 @@ export default class MainBackground {
             ciphers.sort(this.cipherService.sortCiphersByLastUsedThenName);
 
             if (contextMenuEnabled) {
-                ciphers.forEach((ciphers) => {
-                    this.loadLoginContextMenuOptions(ciphers);
+                ciphers.forEach((cipher) => {
+                    this.loadLoginContextMenuOptions(cipher);
                 });
             }
 
-            var theText = '';
+            let theText = '';
             if (ciphers.length > 0 && ciphers.length < 9) {
                 theText = ciphers.length.toString();
             } else if (ciphers.length > 0) {
@@ -259,7 +518,7 @@ export default class MainBackground {
                 id: 'autofill_' + idSuffix,
                 parentId: 'autofill',
                 contexts: ['all'],
-                title: title
+                title: title,
             });
         }
 
@@ -274,7 +533,7 @@ export default class MainBackground {
                 id: 'copy-username_' + idSuffix,
                 parentId: 'copy-username',
                 contexts: ['all'],
-                title: title
+                title: title,
             });
         }
 
@@ -284,7 +543,7 @@ export default class MainBackground {
                 id: 'copy-password_' + idSuffix,
                 parentId: 'copy-password',
                 contexts: ['all'],
-                title: title
+                title: title,
             });
         }
     }
@@ -299,15 +558,15 @@ export default class MainBackground {
         chrome.tabs.sendMessage(tab.id, {
             command: 'collectPageDetails',
             tab: tab,
-            sender: 'contextMenu'
-        }, function () { });
+            sender: 'contextMenu',
+        });
     }
 
     private async autofillPage() {
         await this.autofillService.doAutoFill({
             cipher: this.loginToAutoFill,
             pageDetails: this.pageDetailsToAutoFill,
-            fromBackground: true
+            fromBackground: true,
         });
 
         // reset
@@ -315,7 +574,7 @@ export default class MainBackground {
         this.pageDetailsToAutoFill = [];
     }
 
-    private async logout(expired: boolean, callback: Function) {
+    private async logout(expired: boolean) {
         const userId = await this.userService.getUserId();
 
         await Promise.all([
@@ -326,26 +585,215 @@ export default class MainBackground {
             this.settingsService.clear(userId),
             this.cipherService.clear(userId),
             this.folderService.clear(userId),
-            this.passwordGenerationService.clear()
+            this.passwordGenerationService.clear(),
         ]);
 
         chrome.runtime.sendMessage({
-            command: 'doneLoggingOut', expired: expired
+            command: 'doneLoggingOut', expired: expired,
         });
 
         await this.setIcon();
         await this.refreshBadgeAndMenu();
+    }
 
-        if (callback != null) {
-            callback();
+    private collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
+        if (tab == null || !tab.id) {
+            return;
+        }
+
+        const options: any = {};
+        if (frameId != null) {
+            options.frameId = frameId;
+        }
+
+        chrome.tabs.sendMessage(tab.id, {
+            command: 'collectPageDetails',
+            tab: tab,
+            sender: sender,
+        }, options, () => {
+            if (chrome.runtime.lastError) {
+                return;
+            }
+        });
+    }
+
+    private async addLogin(loginInfo: any, tab: any) {
+        const loginDomain = UtilsService.getDomain(loginInfo.url);
+        if (loginDomain == null) {
+            return;
+        }
+
+        const ciphers = await this.cipherService.getAllDecryptedForDomain(loginDomain);
+
+        let match = false;
+        for (let i = 0; i < ciphers.length; i++) {
+            if (ciphers[i].login.username === loginInfo.username) {
+                match = true;
+                break;
+            }
+        }
+
+        if (!match) {
+            // remove any old logins for this tab
+            this.removeAddLogin(tab);
+
+            this.loginsToAdd.push({
+                username: loginInfo.username,
+                password: loginInfo.password,
+                name: loginDomain,
+                domain: loginDomain,
+                uri: loginInfo.url,
+                tabId: tab.id,
+                expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
+            });
+
+            await this.checkLoginsToAdd(tab);
         }
     }
 
-    // Browser APIs
+    private cleanupLoginsToAdd() {
+        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
+            if (this.loginsToAdd[i].expires < new Date()) {
+                this.loginsToAdd.splice(i, 1);
+            }
+        }
+
+        setTimeout(() => this.cleanupLoginsToAdd(), 2 * 60 * 1000); // check every 2 minutes
+    }
+
+    private removeAddLogin(tab: any) {
+        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
+            if (this.loginsToAdd[i].tabId === tab.id) {
+                this.loginsToAdd.splice(i, 1);
+            }
+        }
+    }
+
+    private async saveAddLogin(tab: any) {
+        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
+            if (this.loginsToAdd[i].tabId !== tab.id) {
+                continue;
+            }
+
+            const loginInfo = this.loginsToAdd[i];
+            const tabDomain = UtilsService.getDomain(tab.url);
+            if (tabDomain != null && tabDomain !== loginInfo.domain) {
+                continue;
+            }
+
+            this.loginsToAdd.splice(i, 1);
+
+            const cipher = await this.cipherService.encrypt({
+                id: null,
+                folderId: null,
+                favorite: false,
+                name: loginInfo.name,
+                notes: null,
+                type: CipherType.Login,
+                login: {
+                    uri: loginInfo.uri,
+                    username: loginInfo.username,
+                    password: loginInfo.password,
+                },
+            });
+
+            await this.cipherService.saveWithServer(cipher);
+            (window as any).ga('send', {
+                hitType: 'event',
+                eventAction: 'Added Login from Notification Bar',
+            });
+
+            this.tabSendMessage(tab.id, 'closeNotificationBar');
+        }
+    }
+
+    private async checkLoginsToAdd(tab: any = null): Promise<any> {
+        if (!this.loginsToAdd.length) {
+            return;
+        }
+
+        if (tab != null) {
+            this.doCheck(tab);
+            return;
+        }
+
+        const currentTab = await this.tabsQueryFirst({ active: true, currentWindow: true });
+        if (currentTab != null) {
+            this.doCheck(tab);
+        }
+    }
+
+    private doCheck(tab: any) {
+        if (tab == null) {
+            return;
+        }
+
+        const tabDomain = UtilsService.getDomain(tab.url);
+        if (tabDomain == null) {
+            return;
+        }
+
+        for (let i = 0; i < this.loginsToAdd.length; i++) {
+            if (this.loginsToAdd[i].tabId !== tab.id || this.loginsToAdd[i].domain !== tabDomain) {
+                continue;
+            }
+
+            this.tabSendMessage(tab.id, 'openNotificationBar', {
+                type: 'add',
+            });
+            break;
+        }
+    }
+
+    private async saveNever(tab: any) {
+        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
+            if (this.loginsToAdd[i].tabId !== tab.id) {
+                continue;
+            }
+
+            const loginInfo = this.loginsToAdd[i];
+            const tabDomain = UtilsService.getDomain(tab.url);
+            if (tabDomain != null && tabDomain !== loginInfo.domain) {
+                continue;
+            }
+
+            this.loginsToAdd.splice(i, 1);
+            const hostname = UtilsService.getHostname(tab.url);
+            await this.cipherService.saveNeverDomain(hostname);
+            this.tabSendMessage(tab.id, 'closeNotificationBar');
+        }
+    }
+
+    private async fullSync(override: boolean = false) {
+        const syncInternal = 6 * 60 * 60 * 1000; // 6 hours
+        const lastSync = await this.syncService.getLastSync();
+
+        let lastSyncAgo = syncInternal + 1;
+        if (lastSync != null) {
+            lastSyncAgo = new Date().getTime() - lastSync.getTime();
+        }
+
+        if (override || lastSyncAgo >= syncInternal) {
+            await this.syncService.fullSync(override);
+            this.scheduleNextSync();
+        } else {
+            this.scheduleNextSync();
+        }
+    }
+
+    private scheduleNextSync() {
+        if (this.syncTimeout) {
+            clearTimeout(this.syncTimeout);
+        }
+
+        this.syncTimeout = setTimeout(async () => await this.fullSync(), 5 * 60 * 1000); // check every 5 minutes
+    }
+
+    // Browser API Helpers
 
     private contextMenusRemoveAll() {
         return new Promise((resolve) => {
-            chrome.contextMenus.removeAll(function () {
+            chrome.contextMenus.removeAll(() => {
                 resolve();
                 if (chrome.runtime.lastError) {
                     return;
@@ -356,7 +804,7 @@ export default class MainBackground {
 
     private contextMenusCreate(options: any) {
         return new Promise((resolve) => {
-            chrome.contextMenus.create(options, function () {
+            chrome.contextMenus.create(options, () => {
                 resolve();
                 if (chrome.runtime.lastError) {
                     return;
@@ -367,7 +815,7 @@ export default class MainBackground {
 
     private tabsQuery(options: any): Promise<any[]> {
         return new Promise((resolve) => {
-            chrome.tabs.query(options, function (tabs: any[]) {
+            chrome.tabs.query(options, (tabs: any[]) => {
                 resolve(tabs);
             });
         });
@@ -375,7 +823,7 @@ export default class MainBackground {
 
     private tabsQueryFirst(options: any): Promise<any> {
         return new Promise((resolve) => {
-            chrome.tabs.query(options, function (tabs: any[]) {
+            chrome.tabs.query(options, (tabs: any[]) => {
                 if (tabs.length > 0) {
                     resolve(tabs[0]);
                     return;
@@ -394,10 +842,10 @@ export default class MainBackground {
         return new Promise((resolve) => {
             theAction.setIcon({
                 path: {
-                    '19': 'images/icon19' + suffix + '.png',
-                    '38': 'images/icon38' + suffix + '.png',
-                }
-            }, function () {
+                    19: 'images/icon19' + suffix + '.png',
+                    38: 'images/icon38' + suffix + '.png',
+                },
+            }, () => {
                 resolve();
             });
         });
@@ -413,7 +861,7 @@ export default class MainBackground {
         if (chrome.browserAction && chrome.browserAction.setBadgeText) {
             chrome.browserAction.setBadgeText({
                 text: text,
-                tabId: tabId
+                tabId: tabId,
             });
         }
     }
@@ -426,7 +874,7 @@ export default class MainBackground {
         if (this.sidebarAction.setBadgeText) {
             this.sidebarAction.setBadgeText({
                 text: text,
-                tabId: tabId
+                tabId: tabId,
             });
         } else if (this.sidebarAction.setTitle) {
             let title = 'bitwarden';
@@ -436,13 +884,13 @@ export default class MainBackground {
 
             this.sidebarAction.setTitle({
                 title: title,
-                tabId: tabId
+                tabId: tabId,
             });
         }
     }
 
-    private async currentTabSendMessage(command: string, data: any) {
-        var tab = await this.tabsQueryFirst({ active: true, currentWindow: true });
+    private async currentTabSendMessage(command: string, data: any = null) {
+        const tab = await this.tabsQueryFirst({ active: true, currentWindow: true });
         if (tab == null) {
             return;
         }
@@ -450,13 +898,13 @@ export default class MainBackground {
         await this.tabSendMessage(tab.id, command, data);
     }
 
-    private async tabSendMessage(tabId: number, command: string, data: any) {
+    private async tabSendMessage(tabId: number, command: string, data: any = null) {
         if (!tabId) {
             return;
         }
 
         const obj: any = {
-            command: command
+            command: command,
         };
 
         if (data != null) {
@@ -464,7 +912,7 @@ export default class MainBackground {
         }
 
         return new Promise((resolve) => {
-            chrome.tabs.sendMessage(tabId, obj, function () {
+            chrome.tabs.sendMessage(tabId, obj, () => {
                 resolve();
             });
         });

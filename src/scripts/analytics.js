@@ -4,9 +4,14 @@
         return;
     }
 
-    var gaTrackingId = bgPage.bg_utilsService.analyticsId();
+    var bgMain = bgPage.bg_main;
+    if (!bgMain) {
+        return;
+    }
+
+    var gaTrackingId = bgMain.utilsService.analyticsId();
     var gaFunc = null;
-    var isFirefox = bgPage.bg_utilsService.isFirefox();
+    var isFirefox = bgMain.utilsService.isFirefox();
 
     window.GoogleAnalyticsObject = 'ga';
     window[window.GoogleAnalyticsObject] = function (action, param1, param2, param3, param4) {
@@ -47,7 +52,7 @@
         return encodeURIComponent(pagePath);
     }
 
-    bgPage.bg_appIdService.getAnonymousAppId().then(function (gaAnonAppId) {
+    bgMain.appIdService.getAnonymousAppId().then(function (gaAnonAppId) {
         gaFunc = function (action, param1, param2, param3, param4) {
             if (action !== 'send' || !param1) {
                 return;

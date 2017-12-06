@@ -95,7 +95,7 @@ class CipherString {
 
         const self = this;
         if (this.cryptoService == null) {
-            this.cryptoService = chrome.extension.getBackgroundPage().bg_cryptoService as CryptoService;
+            this.cryptoService = chrome.extension.getBackgroundPage().bg_main.cryptoService as CryptoService;
         }
 
         return this.cryptoService.getOrgKey(orgId).then((orgKey: any) => {

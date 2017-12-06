@@ -120,7 +120,7 @@ class Cipher extends Domain {
                 model.subTitle = model.login.username;
                 if (model.login.uri) {
                     if (this.utilsService == null) {
-                        this.utilsService = chrome.extension.getBackgroundPage().bg_utilsService as UtilsService;
+                        this.utilsService = chrome.extension.getBackgroundPage().bg_main.utilsService as UtilsService;
                     }
 
                     model.login.domain = this.utilsService.getDomain(model.login.uri);
