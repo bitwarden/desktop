@@ -6,8 +6,9 @@ export default class AutofillField {
     htmlID: string;
     htmlName: string;
     htmlClass: string;
-    labelRight: string;
-    labelLeft: string;
+    'label-left': string;
+    'label-right': string;
+    'label-top': string;
     'label-tag': string;
     placeholder: string;
     type: string;

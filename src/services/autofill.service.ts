@@ -249,7 +249,7 @@ export default class AutofillService {
             const fieldNames: string[] = [];
 
             fields.forEach((f: any) => {
-                if (f.name && f.name !== '') {
+                if (this.hasValue(f.name)) {
                     fieldNames.push(f.name.toLowerCase());
                 } else {
                     fieldNames.push(null);
@@ -454,7 +454,7 @@ export default class AutofillService {
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'code');
         this.makeScriptAction(fillScript, card, fillFields, filledFields, 'brand');
 
-        if (fillFields.expMonth && card.expMonth && card.expMonth !== '') {
+        if (fillFields.expMonth && this.hasValue(card.expMonth)) {
             let expMonth = card.expMonth;
 
             if (fillFields.expMonth.selectInfo && fillFields.expMonth.selectInfo.options) {
@@ -478,7 +478,7 @@ export default class AutofillService {
             fillScript.script.push(['fill_by_opid', fillFields.expMonth.opid, expMonth]);
         }
 
-        if (fillFields.exp && card.expMonth && card.expMonth !== '' && card.expYear && card.expYear !== '') {
+        if (fillFields.exp && this.hasValue(card.expMonth) && this.hasValue(card.expYear)) {
             let year = card.expYear;
             if (year.length === 2) {
                 year = '20' + year;
@@ -610,16 +610,16 @@ export default class AutofillService {
 
         if (fillFields.name && (identity.firstName || identity.lastName)) {
             let fullName = '';
-            if (identity.firstName && identity.firstName !== '') {
+            if (this.hasValue(identity.firstName)) {
                 fullName = identity.firstName;
             }
-            if (identity.middleName && identity.middleName !== '') {
+            if (this.hasValue(identity.middleName)) {
                 if (fullName !== '') {
                     fullName += ' ';
                 }
                 fullName += identity.middleName;
             }
-            if (identity.lastName && identity.lastName !== '') {
+            if (this.hasValue(identity.lastName)) {
                 if (fullName !== '') {
                     fullName += ' ';
                 }
@@ -629,18 +629,18 @@ export default class AutofillService {
             this.makeScriptActionWithValue(fillScript, fullName, fillFields.name, filledFields);
         }
 
-        if (fillFields.address && identity.address1 && identity.address1 !== '') {
+        if (fillFields.address && this.hasValue(identity.address1)) {
             let address = '';
-            if (identity.address1 && identity.address1 !== '') {
+            if (this.hasValue(identity.address1)) {
                 address = identity.address1;
             }
-            if (identity.address2 && identity.address2 !== '') {
+            if (this.hasValue(identity.address2)) {
                 if (address !== '') {
                     address += ', ';
                 }
                 address += identity.address2;
             }
-            if (identity.address3 && identity.address3 !== '') {
+            if (this.hasValue(identity.address3)) {
                 if (address !== '') {
                     address += ', ';
                 }
@@ -667,17 +667,17 @@ export default class AutofillService {
         return false;
     }
 
-    private makeScriptAction(fillScript: AutofillScript, cipherData: any, fillFields: any,
+    private makeScriptAction(fillScript: AutofillScript, cipherData: any, fillFields: { [id: string]: AutofillField; },
         filledFields: { [id: string]: AutofillField; }, dataProp: string, fieldProp?: string) {
         fieldProp = fieldProp || dataProp;
         this.makeScriptActionWithValue(fillScript, cipherData[dataProp], fillFields[fieldProp], filledFields);
     }
 
-    private makeScriptActionWithValue(fillScript: AutofillScript, dataValue: any, field: any,
+    private makeScriptActionWithValue(fillScript: AutofillScript, dataValue: any, field: AutofillField,
         filledFields: { [id: string]: AutofillField; }) {
 
         let doFill = false;
-        if (dataValue && dataValue !== '' && field) {
+        if (this.hasValue(dataValue) && field) {
             if (field.type === 'select-one' && field.selectInfo && field.selectInfo.options) {
                 for (let i = 0; i < field.selectInfo.options.length; i++) {
                     const option = field.selectInfo.options[i];
@@ -763,7 +763,7 @@ export default class AutofillService {
 
     private fieldPropertyIsMatch(field: any, property: string, name: string): boolean {
         let fieldVal = field[property] as string;
-        if (fieldVal == null || fieldVal === '') {
+        if (!this.hasValue(fieldVal)) {
             return false;
         }
 
@@ -794,18 +794,22 @@ export default class AutofillService {
     }
 
     private fieldIsFuzzyMatch(field: AutofillField, names: string[]): boolean {
-        if (field.htmlID != null && field.htmlID !== '' && this.fuzzyMatch(names, field.htmlID.toLowerCase())) {
+        if (this.hasValue(field.htmlID) && this.fuzzyMatch(names, field.htmlID)) {
             return true;
         }
-        if (field.htmlName != null && field.htmlName !== '' && this.fuzzyMatch(names, field.htmlName.toLowerCase())) {
+        if (this.hasValue(field.htmlName) && this.fuzzyMatch(names, field.htmlName)) {
             return true;
         }
-        if (field['label-tag'] != null && field['label-tag'] !== '' &&
-            this.fuzzyMatch(names, field['label-tag'].replace(/(?:\r\n|\r|\n)/g, '').trim().toLowerCase())) {
+        if (this.hasValue(field['label-tag']) && this.fuzzyMatch(names, field['label-tag'])) {
             return true;
         }
-        if (field.placeholder != null && field.placeholder !== '' &&
-            this.fuzzyMatch(names, field.placeholder.toLowerCase())) {
+        if (this.hasValue(field.placeholder) && this.fuzzyMatch(names, field.placeholder)) {
+            return true;
+        }
+        if (this.hasValue(field['label-left']) && this.fuzzyMatch(names, field['label-left'])) {
+            return true;
+        }
+        if (this.hasValue(field['label-top']) && this.fuzzyMatch(names, field['label-top'])) {
             return true;
         }
 
@@ -817,6 +821,8 @@ export default class AutofillService {
             return false;
         }
 
+        value = value.replace(/(?:\r\n|\r|\n)/g, '').trim().toLowerCase();
+
         for (let i = 0; i < options.length; i++) {
             if (value.indexOf(options[i]) > -1) {
                 return true;
@@ -824,6 +830,10 @@ export default class AutofillService {
         }
 
         return false;
+    }
+
+    private hasValue(str: string): boolean {
+        return str && str !== '';
     }
 
     private setFillScriptForFocus(filledFields: { [id: string]: AutofillField; },
