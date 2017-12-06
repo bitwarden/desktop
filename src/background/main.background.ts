@@ -56,7 +56,7 @@ export default class MainBackground {
     constructor() {
         // Services
         this.utilsService = new UtilsService();
-        this.i18nService = i18nService();
+        this.i18nService = i18nService(this.utilsService);
         this.constantsService = new ConstantsService(i18nService, this.utilsService);
         this.cryptoService = new CryptoService();
         this.tokenService = new TokenService();
