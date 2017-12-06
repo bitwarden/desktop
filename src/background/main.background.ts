@@ -718,7 +718,7 @@ export default class MainBackground {
 
         const currentTab = await this.tabsQueryFirst({ active: true, currentWindow: true });
         if (currentTab != null) {
-            this.doCheck(tab);
+            this.doCheck(currentTab);
         }
     }
 
