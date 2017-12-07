@@ -2,6 +2,8 @@ import { CipherType } from '../enums/cipherType.enum';
 
 import { Cipher } from '../models/domain/cipher';
 
+import WebRequestBackground from './webRequest.background';
+
 import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
@@ -41,6 +43,8 @@ export default class MainBackground {
     totpService: TotpService;
     autofillService: AutofillService;
 
+    private webRequestBackground: WebRequestBackground;
+
     private sidebarAction: any;
     private buildingContextMenu: boolean;
     private onUpdatedRan: boolean;
@@ -51,7 +55,6 @@ export default class MainBackground {
     private loginsToAdd: any[] = [];
     private syncTimeout: number;
     private autofillTimeout: number;
-    private pendingAuthRequests: any[] = [];
 
     constructor() {
         // Services
@@ -82,6 +85,9 @@ export default class MainBackground {
         // Other fields
         this.sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ?
             opr.sidebarAction : (window as any).chrome.sidebarAction;
+
+        // Background
+        this.webRequestBackground = new WebRequestBackground(this.utilsService, this.cipherService);
     }
 
     async bootstrap() {
@@ -264,78 +270,13 @@ export default class MainBackground {
             });
         }
 
-        if (chrome.webRequest && chrome.webRequest.onAuthRequired) {
-            (window as any).chrome.webRequest.onAuthRequired.addListener((details: any, callback: any) => {
-                if (!details.url || this.pendingAuthRequests.indexOf(details.requestId) !== -1) {
-                    if (callback) {
-                        callback();
-                    }
-                    return;
-                }
-
-                const domain = UtilsService.getDomain(details.url);
-                if (domain == null) {
-                    if (callback) {
-                        callback();
-                    }
-                    return;
-                }
-
-                this.pendingAuthRequests.push(details.requestId);
-
-                if (this.utilsService.isFirefox()) {
-                    return new Promise((resolve, reject) => {
-                        this.cipherService.getAllDecryptedForDomain(domain).then((ciphers) => {
-                            if (ciphers == null || ciphers.length !== 1) {
-                                reject();
-                                return;
-                            }
-
-                            resolve({
-                                authCredentials: {
-                                    username: ciphers[0].login.username,
-                                    password: ciphers[0].login.password,
-                                },
-                            });
-                        }, () => {
-                            reject();
-                        });
-                    });
-                } else {
-                    this.cipherService.getAllDecryptedForDomain(domain).then((ciphers) => {
-                        if (ciphers == null || ciphers.length !== 1) {
-                            callback();
-                            return;
-                        }
-
-                        callback({
-                            authCredentials: {
-                                username: ciphers[0].login.username,
-                                password: ciphers[0].login.password,
-                            },
-                        });
-                    }, () => {
-                        callback();
-                    });
-                }
-            }, { urls: ['http://*/*', 'https://*/*'] }, [this.utilsService.isFirefox() ? 'blocking' : 'asyncBlocking']);
-
-            chrome.webRequest.onCompleted.addListener(this.completeAuthRequest, { urls: ['http://*/*'] });
-            chrome.webRequest.onErrorOccurred.addListener(this.completeAuthRequest, { urls: ['http://*/*'] });
-        }
-
         // Bootstrap
+        await this.webRequestBackground.init();
+
         await this.environmentService.setUrlsFromStorage();
         this.setIcon();
         this.cleanupLoginsToAdd();
         this.fullSync(true);
-    }
-
-    private completeAuthRequest(details: any) {
-        const i = this.pendingAuthRequests.indexOf(details.requestId);
-        if (i > -1) {
-            this.pendingAuthRequests.splice(i, 1);
-        }
     }
 
     private async buildContextMenu() {
@@ -492,8 +433,10 @@ export default class MainBackground {
             return;
         }
 
-        const title = cipher.name + (cipher.login.username && cipher.login.username !== '' ?
-            ' (' + cipher.login.username + ')' : '');
+        let title = cipher.name;
+        if (cipher.login.username && cipher.login.username !== '') {
+            title += (' (' + cipher.login.username + ')');
+        }
         await this.loadContextMenuOptions(title, cipher.id, cipher);
     }
 
@@ -831,21 +774,25 @@ export default class MainBackground {
         return null;
     }
 
-    private actionSetIcon(theAction: any, suffix: string): Promise<any> {
+    private async actionSetIcon(theAction: any, suffix: string): Promise<any> {
         if (!theAction || !theAction.setIcon) {
-            return Promise.resolve();
+            return;
         }
 
-        return new Promise((resolve) => {
-            theAction.setIcon({
-                path: {
-                    19: 'images/icon19' + suffix + '.png',
-                    38: 'images/icon38' + suffix + '.png',
-                },
-            }, () => {
-                resolve();
+        const options = {
+            path: {
+                19: 'images/icon19' + suffix + '.png',
+                38: 'images/icon38' + suffix + '.png',
+            },
+        };
+
+        if (this.utilsService.isFirefox()) {
+            await theAction.setIcon(options);
+        } else {
+            return new Promise((resolve) => {
+                theAction.setIcon(options, () => resolve());
             });
-        });
+        }
     }
 
     private actionSetBadgeBackgroundColor(action: any) {
