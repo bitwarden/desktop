@@ -265,7 +265,7 @@ export default class AutofillService {
                 const matchingIndex = this.findMatchingFieldIndex(field, fieldNames);
                 if (matchingIndex > -1) {
                     let val = fields[matchingIndex].value;
-                    if (val == null && fields[matchingIndex].type == FieldType.Boolean) {
+                    if (val == null && fields[matchingIndex].type === FieldType.Boolean) {
                         val = 'false';
                     }
 

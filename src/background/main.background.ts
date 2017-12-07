@@ -2,6 +2,8 @@ import { CipherType } from '../enums/cipherType.enum';
 
 import { Cipher } from '../models/domain/cipher';
 
+import BrowserApi from '../browser/browserApi';
+
 import CommandsBackground from './commands.background';
 import RuntimeBackground from './runtime.background';
 import TabsBackground from './tabs.background';
@@ -49,6 +51,8 @@ export default class MainBackground {
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
+    loginToAutoFill: any = null;
+    loginsToAdd: any[] = [];
 
     private commandsBackground: CommandsBackground;
     private runtimeBackground: RuntimeBackground;
@@ -59,11 +63,7 @@ export default class MainBackground {
     private sidebarAction: any;
     private buildingContextMenu: boolean;
     private menuOptionsLoaded: any[] = [];
-    private loginToAutoFill: any = null;
-    private pageDetailsToAutoFill: any[] = [];
-    private loginsToAdd: any[] = [];
     private syncTimeout: number;
-    private autofillTimeout: number;
 
     constructor() {
         // Services
@@ -98,7 +98,7 @@ export default class MainBackground {
 
         // Background
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
-        this.runtimeBackground = new RuntimeBackground(this);
+        this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService);
         this.tabsBackground = new TabsBackground(this);
         this.webRequestBackground = new WebRequestBackground(this.utilsService, this.cipherService);
         this.windowsBackground = new WindowsBackground(this);
@@ -106,57 +106,6 @@ export default class MainBackground {
 
     async bootstrap() {
         // Chrome APIs
-
-        chrome.runtime.onMessage.addListener(async (msg: any, sender: any, sendResponse: any) => {
-            if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
-                await this.setIcon();
-                await this.refreshBadgeAndMenu();
-            } else if (msg.command === 'logout') {
-                await this.logout(msg.expired);
-            } else if (msg.command === 'syncCompleted' && msg.successfully) {
-                setTimeout(async () => await this.refreshBadgeAndMenu(), 2000);
-            } else if (msg.command === 'bgOpenOverlayPopup') {
-                await this.currentTabSendMessage('openOverlayPopup', msg.data);
-            } else if (msg.command === 'bgCloseOverlayPopup') {
-                await this.currentTabSendMessage('closeOverlayPopup');
-            } else if (msg.command === 'bgOpenNotificationBar') {
-                await this.tabSendMessage(sender.tab.id, 'openNotificationBar', msg.data);
-            } else if (msg.command === 'bgCloseNotificationBar') {
-                await this.tabSendMessage(sender.tab.id, 'closeNotificationBar');
-            } else if (msg.command === 'bgAdjustNotificationBar') {
-                await this.tabSendMessage(sender.tab.id, 'adjustNotificationBar', msg.data);
-            } else if (msg.command === 'bgCollectPageDetails') {
-                this.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
-            } else if (msg.command === 'bgAddLogin') {
-                await this.addLogin(msg.login, sender.tab);
-            } else if (msg.command === 'bgAddClose') {
-                this.removeAddLogin(sender.tab);
-            } else if (msg.command === 'bgAddSave') {
-                await this.saveAddLogin(sender.tab);
-            } else if (msg.command === 'bgNeverSave') {
-                await this.saveNever(sender.tab);
-            } else if (msg.command === 'collectPageDetailsResponse') {
-                if (msg.sender === 'notificationBar') {
-                    const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
-                    await this.tabSendMessage(msg.tab.id, 'notificationBarPageDetails', {
-                        details: msg.details,
-                        forms: forms,
-                    });
-                } else if (msg.sender === 'autofiller' || msg.sender === 'autofill_cmd') {
-                    await this.autofillService.doAutoFillForLastUsedLogin([{
-                        frameId: sender.frameId,
-                        tab: msg.tab,
-                        details: msg.details,
-                    }], msg.sender === 'autofill_cmd');
-                } else if (msg.sender === 'contextMenu') {
-                    clearTimeout(this.autofillTimeout);
-                    this.pageDetailsToAutoFill.push({ frameId: sender.frameId, tab: msg.tab, details: msg.details });
-                    this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
-                }
-            } else if (msg.command === 'bgUpdateContextMenu') {
-                await this.refreshBadgeAndMenu();
-            }
-        });
 
         if (chrome.contextMenus) {
             chrome.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
@@ -283,7 +232,7 @@ export default class MainBackground {
         this.buildingContextMenu = false;
     }
 
-    private async setIcon() {
+    async setIcon() {
         if (!chrome.browserAction && !this.sidebarAction) {
             return;
         }
@@ -307,7 +256,7 @@ export default class MainBackground {
             return;
         }
 
-        const tab = await this.tabsQueryFirst({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT });
+        const tab = await BrowserApi.getTabFromCurrentWindowId();
         if (!tab) {
             return;
         }
@@ -435,7 +384,7 @@ export default class MainBackground {
 
     private async startAutofillPage(cipher: any) {
         this.loginToAutoFill = cipher;
-        const tab = await this.tabsQueryFirst({ active: true, currentWindow: true });
+        const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab == null) {
             return;
         }
@@ -447,19 +396,7 @@ export default class MainBackground {
         });
     }
 
-    private async autofillPage() {
-        await this.autofillService.doAutoFill({
-            cipher: this.loginToAutoFill,
-            pageDetails: this.pageDetailsToAutoFill,
-            fromBackground: true,
-        });
-
-        // reset
-        this.loginToAutoFill = null;
-        this.pageDetailsToAutoFill = [];
-    }
-
-    private async logout(expired: boolean) {
+    async logout(expired: boolean) {
         const userId = await this.userService.getUserId();
 
         await Promise.all([
@@ -502,40 +439,6 @@ export default class MainBackground {
         });
     }
 
-    private async addLogin(loginInfo: any, tab: any) {
-        const loginDomain = UtilsService.getDomain(loginInfo.url);
-        if (loginDomain == null) {
-            return;
-        }
-
-        const ciphers = await this.cipherService.getAllDecryptedForDomain(loginDomain);
-
-        let match = false;
-        for (let i = 0; i < ciphers.length; i++) {
-            if (ciphers[i].login.username === loginInfo.username) {
-                match = true;
-                break;
-            }
-        }
-
-        if (!match) {
-            // remove any old logins for this tab
-            this.removeAddLogin(tab);
-
-            this.loginsToAdd.push({
-                username: loginInfo.username,
-                password: loginInfo.password,
-                name: loginDomain,
-                domain: loginDomain,
-                uri: loginInfo.url,
-                tabId: tab.id,
-                expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
-            });
-
-            await this.checkLoginsToAdd(tab);
-        }
-    }
-
     private cleanupLoginsToAdd() {
         for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
             if (this.loginsToAdd[i].expires < new Date()) {
@@ -544,52 +447,6 @@ export default class MainBackground {
         }
 
         setTimeout(() => this.cleanupLoginsToAdd(), 2 * 60 * 1000); // check every 2 minutes
-    }
-
-    private removeAddLogin(tab: any) {
-        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
-            if (this.loginsToAdd[i].tabId === tab.id) {
-                this.loginsToAdd.splice(i, 1);
-            }
-        }
-    }
-
-    private async saveAddLogin(tab: any) {
-        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
-            if (this.loginsToAdd[i].tabId !== tab.id) {
-                continue;
-            }
-
-            const loginInfo = this.loginsToAdd[i];
-            const tabDomain = UtilsService.getDomain(tab.url);
-            if (tabDomain != null && tabDomain !== loginInfo.domain) {
-                continue;
-            }
-
-            this.loginsToAdd.splice(i, 1);
-
-            const cipher = await this.cipherService.encrypt({
-                id: null,
-                folderId: null,
-                favorite: false,
-                name: loginInfo.name,
-                notes: null,
-                type: CipherType.Login,
-                login: {
-                    uri: loginInfo.uri,
-                    username: loginInfo.username,
-                    password: loginInfo.password,
-                },
-            });
-
-            await this.cipherService.saveWithServer(cipher);
-            (window as any).ga('send', {
-                hitType: 'event',
-                eventAction: 'Added Login from Notification Bar',
-            });
-
-            this.tabSendMessage(tab.id, 'closeNotificationBar');
-        }
     }
 
     async checkLoginsToAdd(tab: any = null): Promise<any> {
@@ -602,7 +459,7 @@ export default class MainBackground {
             return;
         }
 
-        const currentTab = await this.tabsQueryFirst({ active: true, currentWindow: true });
+        const currentTab = await BrowserApi.getTabFromCurrentWindow();
         if (currentTab != null) {
             this.doCheck(currentTab);
         }
@@ -623,29 +480,10 @@ export default class MainBackground {
                 continue;
             }
 
-            this.tabSendMessage(tab.id, 'openNotificationBar', {
+            BrowserApi.tabSendMessage(tab, 'openNotificationBar', {
                 type: 'add',
             });
             break;
-        }
-    }
-
-    private async saveNever(tab: any) {
-        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
-            if (this.loginsToAdd[i].tabId !== tab.id) {
-                continue;
-            }
-
-            const loginInfo = this.loginsToAdd[i];
-            const tabDomain = UtilsService.getDomain(tab.url);
-            if (tabDomain != null && tabDomain !== loginInfo.domain) {
-                continue;
-            }
-
-            this.loginsToAdd.splice(i, 1);
-            const hostname = UtilsService.getHostname(tab.url);
-            await this.cipherService.saveNeverDomain(hostname);
-            this.tabSendMessage(tab.id, 'closeNotificationBar');
         }
     }
 
@@ -696,23 +534,6 @@ export default class MainBackground {
                 }
             });
         });
-    }
-
-    private tabsQuery(options: any): Promise<any[]> {
-        return new Promise((resolve) => {
-            chrome.tabs.query(options, (tabs: any[]) => {
-                resolve(tabs);
-            });
-        });
-    }
-
-    private async tabsQueryFirst(options: any): Promise<any> {
-        const tabs = await this.tabsQuery(options);
-        if (tabs.length > 0) {
-            return tabs[0];
-        }
-
-        return null;
     }
 
     private async actionSetIcon(theAction: any, suffix: string): Promise<any> {
@@ -772,34 +593,5 @@ export default class MainBackground {
                 tabId: tabId,
             });
         }
-    }
-
-    private async currentTabSendMessage(command: string, data: any = null) {
-        const tab = await this.tabsQueryFirst({ active: true, currentWindow: true });
-        if (tab == null) {
-            return;
-        }
-
-        await this.tabSendMessage(tab.id, command, data);
-    }
-
-    private async tabSendMessage(tabId: number, command: string, data: any = null) {
-        if (!tabId) {
-            return;
-        }
-
-        const obj: any = {
-            command: command,
-        };
-
-        if (data != null) {
-            obj.data = data;
-        }
-
-        return new Promise((resolve) => {
-            chrome.tabs.sendMessage(tabId, obj, () => {
-                resolve();
-            });
-        });
     }
 }

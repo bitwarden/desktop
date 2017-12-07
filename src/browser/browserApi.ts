@@ -29,4 +29,24 @@ export default class BrowserApi {
 
         return null;
     }
+
+    static tabSendMessage(tab: any, command: string, data: any = null): Promise<any[]> {
+        if (!tab || !tab.id) {
+            return;
+        }
+
+        const obj: any = {
+            command: command,
+        };
+
+        if (data != null) {
+            obj.data = data;
+        }
+
+        return new Promise((resolve) => {
+            chrome.tabs.sendMessage(tab.id, obj, () => {
+                resolve();
+            });
+        });
+    }
 }
