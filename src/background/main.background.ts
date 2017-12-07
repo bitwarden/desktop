@@ -361,19 +361,18 @@ export default class MainBackground {
             return;
         }
 
-        const self = this;
         const tab = await this.tabsQueryFirst({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT });
         if (!tab) {
             return;
         }
 
-        const disabled = await self.utilsService.getObjFromStorage<boolean>(ConstantsService.disableContextMenuItemKey);
+        const disabled = await this.utilsService.getObjFromStorage<boolean>(ConstantsService.disableContextMenuItemKey);
         if (!disabled) {
             await this.buildContextMenu();
-            this.contextMenuReady(tab, true);
+            await this.contextMenuReady(tab, true);
         } else {
             await this.contextMenusRemoveAll();
-            self.contextMenuReady(tab, false);
+            await this.contextMenuReady(tab, false);
         }
     }
 
@@ -387,7 +386,7 @@ export default class MainBackground {
             return;
         }
 
-        const tabDomain = this.utilsService.getDomain(url);
+        const tabDomain = UtilsService.getDomain(url);
         if (tabDomain == null) {
             return;
         }
@@ -413,7 +412,7 @@ export default class MainBackground {
                 theText = '9+';
             } else {
                 if (contextMenuEnabled) {
-                    this.loadNoLoginsContextMenuOptions(this.i18nService.noMatchingLogins);
+                    await this.loadNoLoginsContextMenuOptions(this.i18nService.noMatchingLogins);
                 }
             }
 
@@ -421,7 +420,7 @@ export default class MainBackground {
             this.sidebarActionSetBadgeText(theText, tabId);
         } catch (e) {
             if (contextMenuEnabled) {
-                this.loadNoLoginsContextMenuOptions(this.i18nService.vaultLocked);
+                await this.loadNoLoginsContextMenuOptions(this.i18nService.vaultLocked);
             }
             this.browserActionSetBadgeText('', tabId);
             this.sidebarActionSetBadgeText('', tabId);
@@ -452,11 +451,7 @@ export default class MainBackground {
 
         this.menuOptionsLoaded.push(idSuffix);
 
-        if (cipher == null) {
-            return;
-        }
-
-        if (cipher.login.password && cipher.login.password !== '') {
+        if (cipher == null || (cipher.login.password && cipher.login.password !== '')) {
             await this.contextMenusCreate({
                 type: 'normal',
                 id: 'autofill_' + idSuffix,
@@ -471,7 +466,7 @@ export default class MainBackground {
             return;
         }
 
-        if (cipher.login.username && cipher.login.username !== '') {
+        if (cipher == null || (cipher.login.username && cipher.login.username !== '')) {
             await this.contextMenusCreate({
                 type: 'normal',
                 id: 'copy-username_' + idSuffix,
@@ -481,7 +476,7 @@ export default class MainBackground {
             });
         }
 
-        if (cipher.login.password && cipher.login.password !== '') {
+        if (cipher == null || (cipher.login.password && cipher.login.password !== '')) {
             await this.contextMenusCreate({
                 type: 'normal',
                 id: 'copy-password_' + idSuffix,
