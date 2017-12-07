@@ -23,69 +23,96 @@ export default class RuntimeBackground {
             return;
         }
 
-        this.runtime.onMessage.addListener(async (msg: any, sender: any, sendResponse: any) => {
-            if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
-                await this.main.setIcon();
-                await this.main.refreshBadgeAndMenu();
-            } else if (msg.command === 'logout') {
-                await this.main.logout(msg.expired);
-            } else if (msg.command === 'syncCompleted' && msg.successfully) {
-                setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
-            } else if (msg.command === 'bgOpenOverlayPopup') {
-                await this.currentTabSendMessage('openOverlayPopup', msg.data);
-            } else if (msg.command === 'bgCloseOverlayPopup') {
-                await this.currentTabSendMessage('closeOverlayPopup');
-            } else if (msg.command === 'bgOpenNotificationBar') {
-                await BrowserApi.tabSendMessage(sender.tab, 'openNotificationBar', msg.data);
-            } else if (msg.command === 'bgCloseNotificationBar') {
-                await BrowserApi.tabSendMessage(sender.tab, 'closeNotificationBar');
-            } else if (msg.command === 'bgAdjustNotificationBar') {
-                await BrowserApi.tabSendMessage(sender.tab, 'adjustNotificationBar', msg.data);
-            } else if (msg.command === 'bgCollectPageDetails') {
-                this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
-            } else if (msg.command === 'bgAddLogin') {
-                await this.addLogin(msg.login, sender.tab);
-            } else if (msg.command === 'bgAddClose') {
-                this.removeAddLogin(sender.tab);
-            } else if (msg.command === 'bgAddSave') {
-                await this.saveAddLogin(sender.tab);
-            } else if (msg.command === 'bgNeverSave') {
-                await this.saveNever(sender.tab);
-            } else if (msg.command === 'collectPageDetailsResponse') {
-                if (msg.sender === 'notificationBar') {
-                    const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
-                    await BrowserApi.tabSendMessage(msg.tab, 'notificationBarPageDetails', {
-                        details: msg.details,
-                        forms: forms,
-                    });
-                } else if (msg.sender === 'autofiller' || msg.sender === 'autofill_cmd') {
-                    await this.autofillService.doAutoFillForLastUsedLogin([{
-                        frameId: sender.frameId,
-                        tab: msg.tab,
-                        details: msg.details,
-                    }], msg.sender === 'autofill_cmd');
-                } else if (msg.sender === 'contextMenu') {
-                    clearTimeout(this.autofillTimeout);
-                    this.pageDetailsToAutoFill.push({ frameId: sender.frameId, tab: msg.tab, details: msg.details });
-                    this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
-                }
-            } else if (msg.command === 'bgUpdateContextMenu') {
-                await this.main.refreshBadgeAndMenu();
-            }
-        });
+        if (this.runtime.onInstalled) {
+            this.runtime.onInstalled.addListener((details: any) => {
+                (window as any).ga('send', {
+                    hitType: 'event',
+                    eventAction: 'onInstalled ' + details.reason,
+                });
 
-        if (!this.runtime.onInstalled) {
-            return;
+                if (details.reason === 'install') {
+                    chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
+                }
+            });
         }
 
-        this.runtime.onInstalled.addListener((details: any) => {
-            (window as any).ga('send', {
-                hitType: 'event',
-                eventAction: 'onInstalled ' + details.reason,
-            });
-
-            if (details.reason === 'install') {
-                chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
+        this.runtime.onMessage.addListener(async (msg: any, sender: any, sendResponse: any) => {
+            switch (msg.command) {
+                case 'loggedIn':
+                case 'unlocked':
+                case 'locked':
+                    await this.main.setIcon();
+                    await this.main.refreshBadgeAndMenu();
+                    break;
+                case 'logout':
+                    await this.main.logout(msg.expired);
+                    break;
+                case 'syncCompleted':
+                    if (msg.successfully) {
+                        setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
+                    }
+                    break;
+                case 'bgOpenOverlayPopup':
+                    await this.currentTabSendMessage('openOverlayPopup', msg.data);
+                    break;
+                case 'bgCloseOverlayPopup':
+                    await this.currentTabSendMessage('closeOverlayPopup');
+                    break;
+                case 'bgOpenNotificationBar':
+                    await BrowserApi.tabSendMessage(sender.tab, 'openNotificationBar', msg.data);
+                    break;
+                case 'bgCloseNotificationBar':
+                    await BrowserApi.tabSendMessage(sender.tab, 'closeNotificationBar');
+                    break;
+                case 'bgAdjustNotificationBar':
+                    await BrowserApi.tabSendMessage(sender.tab, 'adjustNotificationBar', msg.data);
+                    break;
+                case 'bgCollectPageDetails':
+                    this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
+                    break;
+                case 'bgAddLogin':
+                    await this.addLogin(msg.login, sender.tab);
+                    break;
+                case 'bgAddClose':
+                    this.removeAddLogin(sender.tab);
+                    break;
+                case 'bgAddSave':
+                    await this.saveAddLogin(sender.tab);
+                    break;
+                case 'bgNeverSave':
+                    await this.saveNever(sender.tab);
+                    break;
+                case 'bgUpdateContextMenu':
+                    await this.main.refreshBadgeAndMenu();
+                    break;
+                case 'collectPageDetailsResponse':
+                    switch (msg.sender) {
+                        case 'notificationBar':
+                            const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
+                            await BrowserApi.tabSendMessage(msg.tab, 'notificationBarPageDetails', {
+                                details: msg.details,
+                                forms: forms,
+                            });
+                            break;
+                        case 'autofiller':
+                        case 'autofill_cmd':
+                            await this.autofillService.doAutoFillForLastUsedLogin([{
+                                frameId: sender.frameId,
+                                tab: msg.tab,
+                                details: msg.details,
+                            }], msg.sender === 'autofill_cmd');
+                            break;
+                        case 'contextMenu':
+                            clearTimeout(this.autofillTimeout);
+                            this.pageDetailsToAutoFill.push({ frameId: sender.frameId, tab: msg.tab, details: msg.details });
+                            this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
             }
         });
     }
