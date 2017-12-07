@@ -374,11 +374,7 @@ export default class ApiService {
 
     private async handleError(response: Response, tokenError: boolean): Promise<ErrorResponse> {
         if ((tokenError && response.status === 400) || response.status === 401 || response.status === 403) {
-            if (this.logoutCallback) {
-                this.logoutCallback(true);
-            } else {
-                chrome.runtime.sendMessage({ command: 'logout', expired: true });
-            }
+            this.logoutCallback(true);
             return null;
         }
 
