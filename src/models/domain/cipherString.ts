@@ -95,7 +95,8 @@ class CipherString {
 
         const self = this;
         if (this.cryptoService == null) {
-            this.cryptoService = chrome.extension.getBackgroundPage().bg_main.cryptoService as CryptoService;
+            this.cryptoService = chrome.extension.getBackgroundPage()
+                .bitwardenMain.cryptoService as CryptoService;
         }
 
         return this.cryptoService.getOrgKey(orgId).then((orgKey: any) => {

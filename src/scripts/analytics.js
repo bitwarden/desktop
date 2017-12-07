@@ -4,7 +4,7 @@
         return;
     }
 
-    var bgMain = bgPage.bg_main;
+    var bgMain = bgPage.bitwardenMain;
     if (!bgMain) {
         return;
     }
@@ -79,7 +79,7 @@
             request.send(message);
         };
 
-        if (typeof bg_isBackground !== 'undefined') {
+        if (typeof bitwardenIsBackground !== 'undefined') {
             ga('send', 'pageview', '/background.html');
         }
     });
