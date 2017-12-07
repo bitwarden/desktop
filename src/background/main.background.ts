@@ -64,7 +64,7 @@ export default class MainBackground {
         this.cryptoService = new CryptoService();
         this.tokenService = new TokenService();
         this.appIdService = new AppIdService();
-        this.apiService = new ApiService(this.tokenService, this.logout);
+        this.apiService = new ApiService(this.tokenService, (expired: boolean) => this.logout(expired));
         this.environmentService = new EnvironmentService(this.apiService);
         this.userService = new UserService(this.tokenService);
         this.settingsService = new SettingsService(this.userService);
@@ -74,9 +74,10 @@ export default class MainBackground {
             this.apiService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
-            this.cryptoService, this.utilsService, this.setIcon, this.refreshBadgeAndMenu);
+            this.cryptoService, this.utilsService, () => this.setIcon(), () => this.refreshBadgeAndMenu());
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
-            this.folderService, this.cipherService, this.cryptoService, this.collectionService, this.logout);
+            this.folderService, this.cipherService, this.cryptoService, this.collectionService,
+            (expired: boolean) => this.logout(expired));
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService);
         this.totpService = new TotpService();
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
@@ -118,43 +119,43 @@ export default class MainBackground {
             });
         }
 
-        chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: any) => {
+        chrome.runtime.onMessage.addListener(async (msg: any, sender: any, sendResponse: any) => {
             if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
-                this.setIcon();
-                this.refreshBadgeAndMenu();
+                await this.setIcon();
+                await this.refreshBadgeAndMenu();
             } else if (msg.command === 'logout') {
-                this.logout(msg.expired);
+                await this.logout(msg.expired);
             } else if (msg.command === 'syncCompleted' && msg.successfully) {
                 setTimeout(async () => await this.refreshBadgeAndMenu(), 2000);
             } else if (msg.command === 'bgOpenOverlayPopup') {
-                this.currentTabSendMessage('openOverlayPopup', msg.data);
+                await this.currentTabSendMessage('openOverlayPopup', msg.data);
             } else if (msg.command === 'bgCloseOverlayPopup') {
-                this.currentTabSendMessage('closeOverlayPopup');
+                await this.currentTabSendMessage('closeOverlayPopup');
             } else if (msg.command === 'bgOpenNotificationBar') {
-                this.tabSendMessage(sender.tab.id, 'openNotificationBar', msg.data);
+                await this.tabSendMessage(sender.tab.id, 'openNotificationBar', msg.data);
             } else if (msg.command === 'bgCloseNotificationBar') {
-                this.tabSendMessage(sender.tab.id, 'closeNotificationBar');
+                await this.tabSendMessage(sender.tab.id, 'closeNotificationBar');
             } else if (msg.command === 'bgAdjustNotificationBar') {
-                this.tabSendMessage(sender.tab.id, 'adjustNotificationBar', msg.data);
+                await this.tabSendMessage(sender.tab.id, 'adjustNotificationBar', msg.data);
             } else if (msg.command === 'bgCollectPageDetails') {
                 this.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
             } else if (msg.command === 'bgAddLogin') {
-                this.addLogin(msg.login, sender.tab);
+                await this.addLogin(msg.login, sender.tab);
             } else if (msg.command === 'bgAddClose') {
                 this.removeAddLogin(sender.tab);
             } else if (msg.command === 'bgAddSave') {
-                this.saveAddLogin(sender.tab);
+                await this.saveAddLogin(sender.tab);
             } else if (msg.command === 'bgNeverSave') {
-                this.saveNever(sender.tab);
+                await this.saveNever(sender.tab);
             } else if (msg.command === 'collectPageDetailsResponse') {
                 if (msg.sender === 'notificationBar') {
                     const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
-                    this.tabSendMessage(msg.tab.id, 'notificationBarPageDetails', {
+                    await this.tabSendMessage(msg.tab.id, 'notificationBarPageDetails', {
                         details: msg.details,
                         forms: forms,
                     });
                 } else if (msg.sender === 'autofiller' || msg.sender === 'autofill_cmd') {
-                    this.autofillService.doAutoFillForLastUsedLogin([{
+                    await this.autofillService.doAutoFillForLastUsedLogin([{
                         frameId: sender.frameId,
                         tab: msg.tab,
                         details: msg.details,
@@ -165,7 +166,7 @@ export default class MainBackground {
                     this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
                 }
             } else if (msg.command === 'bgUpdateContextMenu') {
-                this.refreshBadgeAndMenu();
+                await this.refreshBadgeAndMenu();
             }
         });
 
@@ -182,50 +183,49 @@ export default class MainBackground {
             });
         }
 
-        chrome.tabs.onActivated.addListener((activeInfo: any) => {
-            this.refreshBadgeAndMenu();
+        chrome.tabs.onActivated.addListener(async (activeInfo: any) => {
+            await this.refreshBadgeAndMenu();
         });
 
-        chrome.tabs.onReplaced.addListener((addedTabId: any, removedTabId: any) => {
+        chrome.tabs.onReplaced.addListener(async (addedTabId: any, removedTabId: any) => {
             if (this.onReplacedRan) {
                 return;
             }
             this.onReplacedRan = true;
-            this.checkLoginsToAdd();
-            this.refreshBadgeAndMenu();
+            await this.checkLoginsToAdd();
+            await this.refreshBadgeAndMenu();
         });
 
-        chrome.tabs.onUpdated.addListener((tabId: any, changeInfo: any, tab: any) => {
+        chrome.tabs.onUpdated.addListener(async (tabId: any, changeInfo: any, tab: any) => {
             if (this.onUpdatedRan) {
                 return;
             }
             this.onUpdatedRan = true;
-            this.checkLoginsToAdd();
-            this.refreshBadgeAndMenu();
+            await this.checkLoginsToAdd();
+            await this.refreshBadgeAndMenu();
         });
 
         if (chrome.windows) {
-            chrome.windows.onFocusChanged.addListener((windowId: any) => {
+            chrome.windows.onFocusChanged.addListener(async (windowId: any) => {
                 if (windowId === null || windowId < 0) {
                     return;
                 }
 
-                this.refreshBadgeAndMenu();
+                await this.refreshBadgeAndMenu();
             });
         }
 
         if (chrome.contextMenus) {
-            chrome.contextMenus.onClicked.addListener((info: any, tab: any) => {
+            chrome.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
                 if (info.menuItemId === 'generate-password') {
                     (window as any).ga('send', {
                         hitType: 'event',
                         eventAction: 'Generated Password From Context Menu',
                     });
-                    this.passwordGenerationService.getOptions().then((options) => {
-                        const password = PasswordGenerationService.generatePassword(options);
-                        UtilsService.copyToClipboard(password);
-                        this.passwordGenerationService.addHistory(password);
-                    });
+                    const options = await this.passwordGenerationService.getOptions();
+                    const password = PasswordGenerationService.generatePassword(options);
+                    UtilsService.copyToClipboard(password);
+                    await this.passwordGenerationService.addHistory(password);
                 } else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
                     info.parentMenuItemId === 'copy-password') {
                     const id = info.menuItemId.split('_')[1];
@@ -236,36 +236,35 @@ export default class MainBackground {
                         return;
                     }
 
-                    this.cipherService.getAllDecrypted().then((ciphers) => {
-                        for (let i = 0; i < ciphers.length; i++) {
-                            const cipher = ciphers[i];
-                            if (cipher.id !== id) {
-                                continue;
-                            }
-
-                            if (info.parentMenuItemId === 'autofill') {
-                                (window as any).ga('send', {
-                                    hitType: 'event',
-                                    eventAction: 'Autofilled From Context Menu',
-                                });
-                                this.startAutofillPage(cipher);
-                            } else if (info.parentMenuItemId === 'copy-username') {
-                                (window as any).ga('send', {
-                                    hitType: 'event',
-                                    eventAction: 'Copied Username From Context Menu',
-                                });
-                                UtilsService.copyToClipboard(cipher.login.username);
-                            } else if (info.parentMenuItemId === 'copy-password') {
-                                (window as any).ga('send', {
-                                    hitType: 'event',
-                                    eventAction: 'Copied Password From Context Menu',
-                                });
-                                UtilsService.copyToClipboard(cipher.login.password);
-                            }
-
-                            break;
+                    const ciphers = await this.cipherService.getAllDecrypted();
+                    for (let i = 0; i < ciphers.length; i++) {
+                        const cipher = ciphers[i];
+                        if (cipher.id !== id) {
+                            continue;
                         }
-                    });
+
+                        if (info.parentMenuItemId === 'autofill') {
+                            (window as any).ga('send', {
+                                hitType: 'event',
+                                eventAction: 'Autofilled From Context Menu',
+                            });
+                            await this.startAutofillPage(cipher);
+                        } else if (info.parentMenuItemId === 'copy-username') {
+                            (window as any).ga('send', {
+                                hitType: 'event',
+                                eventAction: 'Copied Username From Context Menu',
+                            });
+                            UtilsService.copyToClipboard(cipher.login.username);
+                        } else if (info.parentMenuItemId === 'copy-password') {
+                            (window as any).ga('send', {
+                                hitType: 'event',
+                                eventAction: 'Copied Password From Context Menu',
+                            });
+                            UtilsService.copyToClipboard(cipher.login.password);
+                        }
+
+                        break;
+                    }
                 }
             });
         }
@@ -274,9 +273,9 @@ export default class MainBackground {
         await this.webRequestBackground.init();
 
         await this.environmentService.setUrlsFromStorage();
-        this.setIcon();
+        await this.setIcon();
         this.cleanupLoginsToAdd();
-        this.fullSync(true);
+        await this.fullSync(true);
     }
 
     private async buildContextMenu() {

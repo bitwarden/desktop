@@ -66,13 +66,13 @@ export default class LockService {
             this.cryptoService.clearOrgKeys(true),
             this.cryptoService.clearPrivateKey(true),
             this.cryptoService.clearEncKey(true),
+            this.setIcon(),
+            this.refreshBadgeAndMenu(),
         ]);
-
-        this.setIcon();
+        
         this.folderService.clearCache();
         this.cipherService.clearCache();
         this.collectionService.clearCache();
-        this.refreshBadgeAndMenu();
     }
 
     // Helpers
