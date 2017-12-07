@@ -69,7 +69,7 @@ export default class LockService {
             this.setIcon(),
             this.refreshBadgeAndMenu(),
         ]);
-        
+
         this.folderService.clearCache();
         this.cipherService.clearCache();
         this.collectionService.clearCache();
