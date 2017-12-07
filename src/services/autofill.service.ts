@@ -1,4 +1,5 @@
 import { CipherType } from '../enums/cipherType.enum';
+import { FieldType } from '../enums/fieldType.enum';
 
 import AutofillField from '../models/domain/autofillField';
 import AutofillPageDetails from '../models/domain/autofillPageDetails';
@@ -263,9 +264,14 @@ export default class AutofillService {
 
                 const matchingIndex = this.findMatchingFieldIndex(field, fieldNames);
                 if (matchingIndex > -1) {
+                    let val = fields[matchingIndex].value;
+                    if (val == null && fields[matchingIndex].type == FieldType.Boolean) {
+                        val = 'false';
+                    }
+
                     filledFields[field.opid] = field;
                     fillScript.script.push(['click_on_opid', field.opid]);
-                    fillScript.script.push(['fill_by_opid', field.opid, fields[matchingIndex].value]);
+                    fillScript.script.push(['fill_by_opid', field.opid, val]);
                 }
             });
         }
