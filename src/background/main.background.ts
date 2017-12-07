@@ -5,6 +5,7 @@ import { Cipher } from '../models/domain/cipher';
 import BrowserApi from '../browser/browserApi';
 
 import CommandsBackground from './commands.background';
+import ContextMenusBackground from './contextMenus.background';
 import RuntimeBackground from './runtime.background';
 import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
@@ -55,6 +56,7 @@ export default class MainBackground {
     loginsToAdd: any[] = [];
 
     private commandsBackground: CommandsBackground;
+    private contextMenusBackground: ContextMenusBackground;
     private runtimeBackground: RuntimeBackground;
     private tabsBackground: TabsBackground;
     private webRequestBackground: WebRequestBackground;
@@ -98,6 +100,8 @@ export default class MainBackground {
 
         // Background
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
+        this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
+            this.passwordGenerationService);
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService);
         this.tabsBackground = new TabsBackground(this);
         this.webRequestBackground = new WebRequestBackground(this.utilsService, this.cipherService);
@@ -105,64 +109,8 @@ export default class MainBackground {
     }
 
     async bootstrap() {
-        // Chrome APIs
-
-        if (chrome.contextMenus) {
-            chrome.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
-                if (info.menuItemId === 'generate-password') {
-                    (window as any).ga('send', {
-                        hitType: 'event',
-                        eventAction: 'Generated Password From Context Menu',
-                    });
-                    const options = await this.passwordGenerationService.getOptions();
-                    const password = PasswordGenerationService.generatePassword(options);
-                    UtilsService.copyToClipboard(password);
-                    await this.passwordGenerationService.addHistory(password);
-                } else if (info.parentMenuItemId === 'autofill' || info.parentMenuItemId === 'copy-username' ||
-                    info.parentMenuItemId === 'copy-password') {
-                    const id = info.menuItemId.split('_')[1];
-                    if (id === 'noop') {
-                        if ((window as any).chrome.browserAction.openPopup) {
-                            (window as any).chrome.browserAction.openPopup();
-                        }
-                        return;
-                    }
-
-                    const ciphers = await this.cipherService.getAllDecrypted();
-                    for (let i = 0; i < ciphers.length; i++) {
-                        const cipher = ciphers[i];
-                        if (cipher.id !== id) {
-                            continue;
-                        }
-
-                        if (info.parentMenuItemId === 'autofill') {
-                            (window as any).ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Autofilled From Context Menu',
-                            });
-                            await this.startAutofillPage(cipher);
-                        } else if (info.parentMenuItemId === 'copy-username') {
-                            (window as any).ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Copied Username From Context Menu',
-                            });
-                            UtilsService.copyToClipboard(cipher.login.username);
-                        } else if (info.parentMenuItemId === 'copy-password') {
-                            (window as any).ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Copied Password From Context Menu',
-                            });
-                            UtilsService.copyToClipboard(cipher.login.password);
-                        }
-
-                        break;
-                    }
-                }
-            });
-        }
-
-        // Bootstrap
         await this.commandsBackground.init();
+        await this.contextMenusBackground.init();
         await this.runtimeBackground.init();
         await this.tabsBackground.init();
         await this.webRequestBackground.init();
@@ -172,6 +120,104 @@ export default class MainBackground {
         await this.setIcon();
         this.cleanupLoginsToAdd();
         await this.fullSync(true);
+    }
+
+    async setIcon() {
+        if (!chrome.browserAction && !this.sidebarAction) {
+            return;
+        }
+
+        const isAuthenticated = await this.userService.isAuthenticated();
+        const key = await this.cryptoService.getKey();
+
+        let suffix = '';
+        if (!isAuthenticated) {
+            suffix = '_gray';
+        } else if (!key) {
+            suffix = '_locked';
+        }
+
+        await this.actionSetIcon(chrome.browserAction, suffix);
+        await this.actionSetIcon(this.sidebarAction, suffix);
+    }
+
+    async refreshBadgeAndMenu() {
+        if (!chrome.windows || !chrome.contextMenus) {
+            return;
+        }
+
+        const tab = await BrowserApi.getTabFromCurrentWindowId();
+        if (!tab) {
+            return;
+        }
+
+        const disabled = await this.utilsService.getObjFromStorage<boolean>(ConstantsService.disableContextMenuItemKey);
+        if (!disabled) {
+            await this.buildContextMenu();
+            await this.contextMenuReady(tab, true);
+        } else {
+            await this.contextMenusRemoveAll();
+            await this.contextMenuReady(tab, false);
+        }
+    }
+
+    async logout(expired: boolean) {
+        const userId = await this.userService.getUserId();
+
+        await Promise.all([
+            this.syncService.setLastSync(new Date(0)),
+            this.tokenService.clearToken(),
+            this.cryptoService.clearKeys(),
+            this.userService.clear(),
+            this.settingsService.clear(userId),
+            this.cipherService.clear(userId),
+            this.folderService.clear(userId),
+            this.passwordGenerationService.clear(),
+        ]);
+
+        chrome.runtime.sendMessage({
+            command: 'doneLoggingOut', expired: expired,
+        });
+
+        await this.setIcon();
+        await this.refreshBadgeAndMenu();
+    }
+
+    collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
+        if (tab == null || !tab.id) {
+            return;
+        }
+
+        const options: any = {};
+        if (frameId != null) {
+            options.frameId = frameId;
+        }
+
+        chrome.tabs.sendMessage(tab.id, {
+            command: 'collectPageDetails',
+            tab: tab,
+            sender: sender,
+        }, options, () => {
+            if (chrome.runtime.lastError) {
+                return;
+            }
+        });
+    }
+
+    async checkLoginsToAdd(tab: any = null): Promise<any> {
+        if (!this.loginsToAdd.length) {
+            return;
+        }
+
+        if (tab != null) {
+            this.doCheck(tab);
+            return;
+        }
+
+        const currentTab = await BrowserApi.getTabFromCurrentWindow();
+        if (currentTab != null) {
+            this.doCheck(currentTab);
+        }
     }
 
     private async buildContextMenu() {
@@ -230,45 +276,6 @@ export default class MainBackground {
         }
 
         this.buildingContextMenu = false;
-    }
-
-    async setIcon() {
-        if (!chrome.browserAction && !this.sidebarAction) {
-            return;
-        }
-
-        const isAuthenticated = await this.userService.isAuthenticated();
-        const key = await this.cryptoService.getKey();
-
-        let suffix = '';
-        if (!isAuthenticated) {
-            suffix = '_gray';
-        } else if (!key) {
-            suffix = '_locked';
-        }
-
-        await this.actionSetIcon(chrome.browserAction, suffix);
-        await this.actionSetIcon(this.sidebarAction, suffix);
-    }
-
-    async refreshBadgeAndMenu() {
-        if (!chrome.windows || !chrome.contextMenus) {
-            return;
-        }
-
-        const tab = await BrowserApi.getTabFromCurrentWindowId();
-        if (!tab) {
-            return;
-        }
-
-        const disabled = await this.utilsService.getObjFromStorage<boolean>(ConstantsService.disableContextMenuItemKey);
-        if (!disabled) {
-            await this.buildContextMenu();
-            await this.contextMenuReady(tab, true);
-        } else {
-            await this.contextMenusRemoveAll();
-            await this.contextMenuReady(tab, false);
-        }
     }
 
     private async contextMenuReady(tab: any, contextMenuEnabled: boolean) {
@@ -382,63 +389,6 @@ export default class MainBackground {
         }
     }
 
-    private async startAutofillPage(cipher: any) {
-        this.loginToAutoFill = cipher;
-        const tab = await BrowserApi.getTabFromCurrentWindow();
-        if (tab == null) {
-            return;
-        }
-
-        chrome.tabs.sendMessage(tab.id, {
-            command: 'collectPageDetails',
-            tab: tab,
-            sender: 'contextMenu',
-        });
-    }
-
-    async logout(expired: boolean) {
-        const userId = await this.userService.getUserId();
-
-        await Promise.all([
-            this.syncService.setLastSync(new Date(0)),
-            this.tokenService.clearToken(),
-            this.cryptoService.clearKeys(),
-            this.userService.clear(),
-            this.settingsService.clear(userId),
-            this.cipherService.clear(userId),
-            this.folderService.clear(userId),
-            this.passwordGenerationService.clear(),
-        ]);
-
-        chrome.runtime.sendMessage({
-            command: 'doneLoggingOut', expired: expired,
-        });
-
-        await this.setIcon();
-        await this.refreshBadgeAndMenu();
-    }
-
-    collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
-        if (tab == null || !tab.id) {
-            return;
-        }
-
-        const options: any = {};
-        if (frameId != null) {
-            options.frameId = frameId;
-        }
-
-        chrome.tabs.sendMessage(tab.id, {
-            command: 'collectPageDetails',
-            tab: tab,
-            sender: sender,
-        }, options, () => {
-            if (chrome.runtime.lastError) {
-                return;
-            }
-        });
-    }
-
     private cleanupLoginsToAdd() {
         for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
             if (this.loginsToAdd[i].expires < new Date()) {
@@ -447,22 +397,6 @@ export default class MainBackground {
         }
 
         setTimeout(() => this.cleanupLoginsToAdd(), 2 * 60 * 1000); // check every 2 minutes
-    }
-
-    async checkLoginsToAdd(tab: any = null): Promise<any> {
-        if (!this.loginsToAdd.length) {
-            return;
-        }
-
-        if (tab != null) {
-            this.doCheck(tab);
-            return;
-        }
-
-        const currentTab = await BrowserApi.getTabFromCurrentWindow();
-        if (currentTab != null) {
-            this.doCheck(currentTab);
-        }
     }
 
     private doCheck(tab: any) {

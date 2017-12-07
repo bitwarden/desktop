@@ -104,7 +104,11 @@ export default class RuntimeBackground {
                             break;
                         case 'contextMenu':
                             clearTimeout(this.autofillTimeout);
-                            this.pageDetailsToAutoFill.push({ frameId: sender.frameId, tab: msg.tab, details: msg.details });
+                            this.pageDetailsToAutoFill.push({
+                                frameId: sender.frameId,
+                                tab: msg.tab,
+                                details: msg.details,
+                            });
                             this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
                             break;
                         default:
