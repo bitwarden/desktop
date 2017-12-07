@@ -52,12 +52,6 @@ export default class RuntimeBackground {
                         setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
                     }
                     break;
-                case 'bgOpenOverlayPopup':
-                    await this.currentTabSendMessage('openOverlayPopup', msg.data);
-                    break;
-                case 'bgCloseOverlayPopup':
-                    await this.currentTabSendMessage('closeOverlayPopup');
-                    break;
                 case 'bgOpenNotificationBar':
                     await BrowserApi.tabSendMessage(sender.tab, 'openNotificationBar', msg.data);
                     break;
