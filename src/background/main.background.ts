@@ -2,7 +2,11 @@ import { CipherType } from '../enums/cipherType.enum';
 
 import { Cipher } from '../models/domain/cipher';
 
+import CommandsBackground from './commands.background';
+import RuntimeBackground from './runtime.background';
+import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
+import WindowsBackground from './windows.background';
 
 import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
@@ -43,12 +47,17 @@ export default class MainBackground {
     totpService: TotpService;
     autofillService: AutofillService;
 
+    onUpdatedRan: boolean;
+    onReplacedRan: boolean;
+
+    private commandsBackground: CommandsBackground;
+    private runtimeBackground: RuntimeBackground;
+    private tabsBackground: TabsBackground;
     private webRequestBackground: WebRequestBackground;
+    private windowsBackground: WindowsBackground;
 
     private sidebarAction: any;
     private buildingContextMenu: boolean;
-    private onUpdatedRan: boolean;
-    private onReplacedRan: boolean;
     private menuOptionsLoaded: any[] = [];
     private loginToAutoFill: any = null;
     private pageDetailsToAutoFill: any[] = [];
@@ -88,36 +97,15 @@ export default class MainBackground {
             opr.sidebarAction : (window as any).chrome.sidebarAction;
 
         // Background
+        this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
+        this.runtimeBackground = new RuntimeBackground(this);
+        this.tabsBackground = new TabsBackground(this);
         this.webRequestBackground = new WebRequestBackground(this.utilsService, this.cipherService);
+        this.windowsBackground = new WindowsBackground(this);
     }
 
     async bootstrap() {
         // Chrome APIs
-        if (chrome.commands) {
-            chrome.commands.onCommand.addListener((command: any) => {
-                if (command === 'generate_password') {
-                    (window as any).ga('send', {
-                        hitType: 'event',
-                        eventAction: 'Generated Password From Command',
-                    });
-                    this.passwordGenerationService.getOptions().then((options) => {
-                        const password = PasswordGenerationService.generatePassword(options);
-                        UtilsService.copyToClipboard(password);
-                        this.passwordGenerationService.addHistory(password);
-                    });
-                } else if (command === 'autofill_login') {
-                    this.tabsQueryFirst({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }).then((tab) => {
-                        if (tab != null) {
-                            (window as any).ga('send', {
-                                hitType: 'event',
-                                eventAction: 'Autofilled From Command',
-                            });
-                            this.collectPageDetailsForContentScript(tab, 'autofill_cmd');
-                        }
-                    });
-                }
-            });
-        }
 
         chrome.runtime.onMessage.addListener(async (msg: any, sender: any, sendResponse: any) => {
             if (msg.command === 'loggedIn' || msg.command === 'unlocked' || msg.command === 'locked') {
@@ -169,51 +157,6 @@ export default class MainBackground {
                 await this.refreshBadgeAndMenu();
             }
         });
-
-        if (chrome.runtime.onInstalled) {
-            chrome.runtime.onInstalled.addListener((details: any) => {
-                (window as any).ga('send', {
-                    hitType: 'event',
-                    eventAction: 'onInstalled ' + details.reason,
-                });
-
-                if (details.reason === 'install') {
-                    chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
-                }
-            });
-        }
-
-        chrome.tabs.onActivated.addListener(async (activeInfo: any) => {
-            await this.refreshBadgeAndMenu();
-        });
-
-        chrome.tabs.onReplaced.addListener(async (addedTabId: any, removedTabId: any) => {
-            if (this.onReplacedRan) {
-                return;
-            }
-            this.onReplacedRan = true;
-            await this.checkLoginsToAdd();
-            await this.refreshBadgeAndMenu();
-        });
-
-        chrome.tabs.onUpdated.addListener(async (tabId: any, changeInfo: any, tab: any) => {
-            if (this.onUpdatedRan) {
-                return;
-            }
-            this.onUpdatedRan = true;
-            await this.checkLoginsToAdd();
-            await this.refreshBadgeAndMenu();
-        });
-
-        if (chrome.windows) {
-            chrome.windows.onFocusChanged.addListener(async (windowId: any) => {
-                if (windowId === null || windowId < 0) {
-                    return;
-                }
-
-                await this.refreshBadgeAndMenu();
-            });
-        }
 
         if (chrome.contextMenus) {
             chrome.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
@@ -270,7 +213,11 @@ export default class MainBackground {
         }
 
         // Bootstrap
+        await this.commandsBackground.init();
+        await this.runtimeBackground.init();
+        await this.tabsBackground.init();
         await this.webRequestBackground.init();
+        await this.windowsBackground.init();
 
         await this.environmentService.setUrlsFromStorage();
         await this.setIcon();
@@ -355,7 +302,7 @@ export default class MainBackground {
         await this.actionSetIcon(this.sidebarAction, suffix);
     }
 
-    private async refreshBadgeAndMenu() {
+    async refreshBadgeAndMenu() {
         if (!chrome.windows || !chrome.contextMenus) {
             return;
         }
@@ -534,7 +481,7 @@ export default class MainBackground {
         await this.refreshBadgeAndMenu();
     }
 
-    private collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
+    collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {
         if (tab == null || !tab.id) {
             return;
         }
@@ -645,7 +592,7 @@ export default class MainBackground {
         }
     }
 
-    private async checkLoginsToAdd(tab: any = null): Promise<any> {
+    async checkLoginsToAdd(tab: any = null): Promise<any> {
         if (!this.loginsToAdd.length) {
             return;
         }
