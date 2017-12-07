@@ -48,11 +48,13 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
+                exclude: /.*(fontawesome-webfont|glyphicons-halflings-regular)\.svg/,
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
-                        useRelativePath: true
+                        name: '[name].[hash].[ext]',
+                        outputPath: 'popup/images/',
+                        publicPath: '/'
                     }
                 }]
             }
