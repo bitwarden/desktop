@@ -13,11 +13,15 @@ export class ValidationService {
         } else if (!data.validationErrors) {
             errors.push(data.message ? data.message : defaultErrorMessage);
         } else {
-            data.validationErrors.forEach((error: any) => {
-                error.forEach((item: string) => {
+            for (const key in data.validationErrors) {
+                if (!data.validationErrors.hasOwnProperty(key)) {
+                    continue;
+                }
+
+                data.validationErrors[key].forEach((item: string) => {
                     errors.push(item);
                 });
-            });
+            }
         }
 
         if (errors.length) {
