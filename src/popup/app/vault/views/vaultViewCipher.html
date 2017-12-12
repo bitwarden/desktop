@@ -15,12 +15,12 @@
                 <i class="fa fa-share-alt fa-lg pull-right" ng-if="cipher.organizationId" title="{{i18n.shared}}"></i>
             </div>
             <div class="list-section-items">
-                <div class="list-section-item">
+                <div class="list-section-item wrap">
                     <span class="item-label">{{i18n.name}}</span>
                     {{cipher.name}}
                 </div>
                 <div ng-if="cipher.type === constants.cipherType.login">
-                    <div class="list-section-item" ng-if="cipher.login.uri" title="{{cipher.login.uri}}">
+                    <div class="list-section-item wrap" ng-if="cipher.login.uri" title="{{cipher.login.uri}}">
                         <div class="action-buttons">
                             <a class="btn-list" href="" title="{{i18n.launchWebsite}}" ng-click="launchWebsite(cipher)"
                                ng-show="cipher.showLaunch">
@@ -36,7 +36,7 @@
                         <span class="item-label">{{i18n.website}}</span>
                         {{cipher.login.website}}
                     </div>
-                    <div class="list-section-item" ng-if="cipher.login.username">
+                    <div class="list-section-item wrap" ng-if="cipher.login.username">
                         <div class="action-buttons">
                             <a class="btn-list" href="" title="{{i18n.copyUsername}}"
                                ngclipboard ngclipboard-error="clipboardError(e)"
@@ -196,7 +196,7 @@
                 {{i18n.customFields}}
             </div>
             <div class="list-section-items">
-                <div class="list-section-item" ng-repeat="field in cipher.fields">
+                <div class="list-section-item wrap" ng-repeat="field in cipher.fields">
                     <div class="action-buttons">
                         <a class="btn-list" href="" title="{{i18n.toggleValue}}" ng-click="toggleFieldValue(field)"
                            ng-if="field.type === constants.fieldType.hidden">
@@ -228,7 +228,7 @@
                 {{i18n.attachments}}
             </div>
             <div class="list-section-items">
-                <a class="list-section-item list-allow-selection" href="#" stop-click
+                <a class="list-section-item list-allow-selection wrap" href="#" stop-click
                    ng-repeat="attachment in cipher.attachments"
                    ng-click="download(attachment)">
                     <i class="fa fa-download right-icon fa-fw no-animation" ng-if="!attachment.downloading"></i>
