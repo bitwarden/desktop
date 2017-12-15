@@ -75,7 +75,8 @@ export default class MainBackground {
         this.cryptoService = new CryptoService();
         this.tokenService = new TokenService();
         this.appIdService = new AppIdService();
-        this.apiService = new ApiService(this.tokenService, (expired: boolean) => this.logout(expired));
+        this.apiService = new ApiService(this.tokenService, this.utilsService,
+            (expired: boolean) => this.logout(expired));
         this.environmentService = new EnvironmentService(this.apiService);
         this.userService = new UserService(this.tokenService);
         this.settingsService = new SettingsService(this.userService);

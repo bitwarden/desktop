@@ -34,7 +34,8 @@ export default class ApiService {
     identityBaseUrl: string;
     logoutCallback: Function;
 
-    constructor(private tokenService: TokenService, logoutCallback: Function) {
+    constructor(private tokenService: TokenService, private utilsService: UtilsService,
+        logoutCallback: Function) {
         this.logoutCallback = logoutCallback;
     }
 
@@ -85,6 +86,7 @@ export default class ApiService {
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
                 'Accept': 'application/json',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
@@ -124,6 +126,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
@@ -141,8 +144,9 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/accounts/revision-date', {
             cache: 'no-cache',
             headers: new Headers({
-                Accept: 'application/json',
-                Authorization: authHeader,
+                'Accept': 'application/json',
+                'Authorization': authHeader,
+                'Device-Type': this.utilsService.getBrowser(),
             }),
         }));
 
@@ -160,6 +164,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
@@ -176,6 +181,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
@@ -197,6 +203,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
@@ -219,6 +226,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'PUT',
         }));
@@ -237,7 +245,8 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/folders/' + id, {
             cache: 'no-cache',
             headers: new Headers({
-                Authorization: authHeader,
+                'Authorization': authHeader,
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'DELETE',
         }));
@@ -259,6 +268,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
@@ -281,6 +291,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'PUT',
         }));
@@ -299,7 +310,8 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id, {
             cache: 'no-cache',
             headers: new Headers({
-                Authorization: authHeader,
+                'Authorization': authHeader,
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'DELETE',
         }));
@@ -318,8 +330,9 @@ export default class ApiService {
             body: data,
             cache: 'no-cache',
             headers: new Headers({
-                Accept: 'application/json',
-                Authorization: authHeader,
+                'Accept': 'application/json',
+                'Authorization': authHeader,
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
@@ -338,7 +351,8 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id + '/attachment/' + attachmentId, {
             cache: 'no-cache',
             headers: new Headers({
-                Authorization: authHeader,
+                'Authorization': authHeader,
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'DELETE',
         }));
@@ -356,8 +370,9 @@ export default class ApiService {
         const response = await fetch(new Request(this.baseUrl + '/sync', {
             cache: 'no-cache',
             headers: new Headers({
-                Accept: 'application/json',
-                Authorization: authHeader,
+                'Accept': 'application/json',
+                'Authorization': authHeader,
+                'Device-Type': this.utilsService.getBrowser(),
             }),
         }));
 
@@ -415,6 +430,7 @@ export default class ApiService {
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
                 'Accept': 'application/json',
+                'Device-Type': this.utilsService.getBrowser(),
             }),
             method: 'POST',
         }));
