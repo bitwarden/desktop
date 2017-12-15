@@ -86,7 +86,7 @@ export default class ApiService {
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
                 'Accept': 'application/json',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
@@ -126,7 +126,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
@@ -146,7 +146,7 @@ export default class ApiService {
             headers: new Headers({
                 'Accept': 'application/json',
                 'Authorization': authHeader,
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
         }));
 
@@ -164,7 +164,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
@@ -181,7 +181,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Content-Type': 'application/json; charset=utf-8',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
@@ -203,7 +203,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
@@ -226,7 +226,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'PUT',
         }));
@@ -246,7 +246,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Authorization': authHeader,
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'DELETE',
         }));
@@ -268,7 +268,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
@@ -291,7 +291,7 @@ export default class ApiService {
                 'Accept': 'application/json',
                 'Authorization': authHeader,
                 'Content-Type': 'application/json; charset=utf-8',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'PUT',
         }));
@@ -311,7 +311,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Authorization': authHeader,
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'DELETE',
         }));
@@ -332,7 +332,7 @@ export default class ApiService {
             headers: new Headers({
                 'Accept': 'application/json',
                 'Authorization': authHeader,
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
@@ -352,7 +352,7 @@ export default class ApiService {
             cache: 'no-cache',
             headers: new Headers({
                 'Authorization': authHeader,
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'DELETE',
         }));
@@ -372,7 +372,7 @@ export default class ApiService {
             headers: new Headers({
                 'Accept': 'application/json',
                 'Authorization': authHeader,
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
         }));
 
@@ -430,7 +430,7 @@ export default class ApiService {
             headers: new Headers({
                 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
                 'Accept': 'application/json',
-                'Device-Type': this.utilsService.getBrowser(),
+                'Device-Type': this.utilsService.getBrowser().toString(),
             }),
             method: 'POST',
         }));
