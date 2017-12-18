@@ -7,6 +7,8 @@ const AnalyticsIds = {
     [BrowserType.Firefox]: 'UA-81915606-7',
     [BrowserType.Opera]: 'UA-81915606-8',
     [BrowserType.Edge]: 'UA-81915606-9',
+    [BrowserType.Vivaldi]: 'UA-81915606-15',
+    [BrowserType.Safari]: 'UA-81915606-16',
 };
 
 export default class UtilsService implements UtilsServiceInterface {
@@ -234,6 +236,8 @@ export default class UtilsService implements UtilsServiceInterface {
             this.browserCache = BrowserType.Opera;
         } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
             this.browserCache = BrowserType.Edge;
+        } else if (navigator.userAgent.indexOf(' Vivaldi/') !== -1) {
+            this.browserCache = BrowserType.Vivaldi;
         } else if ((window as any).chrome) {
             this.browserCache = BrowserType.Chrome;
         }
@@ -259,6 +263,14 @@ export default class UtilsService implements UtilsServiceInterface {
 
     isOpera(): boolean {
         return this.getBrowser() === BrowserType.Opera;
+    }
+
+    isVivaldi(): boolean {
+        return this.getBrowser() === BrowserType.Vivaldi;
+    }
+
+    isSafari(): boolean {
+        return this.getBrowser() === BrowserType.Safari;
     }
 
     analyticsId(): string {
