@@ -4,5 +4,5 @@ export enum BrowserType {
     Opera = 4,
     Edge = 5,
     Vivaldi = 19,
-    Safari = 20
+    Safari = 20,
 }

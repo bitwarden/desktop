@@ -15,6 +15,10 @@ const RateUrls = {
     'https://addons.opera.com/en/extensions/details/bitwarden-free-password-manager/#feedback-container',
     [BrowserType.Edge]:
     'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl',
+    [BrowserType.Vivaldi]:
+    'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
+    [BrowserType.Safari]:
+    'https://itunes.com', // TODO
 };
 
 export class SettingsController {
