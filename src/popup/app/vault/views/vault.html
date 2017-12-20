@@ -12,7 +12,7 @@
     <!-- Grouping List -->
     <div ng-if="vaultCiphers.length && vaultFolders.length && (!searchText || searchText.length < 2)">
         <div class="list">
-            <div class="list-section" ng-show="favoriteCiphers.length">
+            <div class="list-section" ng-if="favoriteCiphers.length">
                 <div class="list-section-header">
                     {{::i18n.favorites}}
                     <span>{{favoriteCiphers.length}}</span>
@@ -20,8 +20,7 @@
                 <div class="list-section-items">
                     <a href="#" stop-click ng-click="viewCipher(cipher)" class="list-section-item condensed"
                        title="{{::i18n.view}}"
-                       ng-repeat="cipher in favoriteCiphers = (vaultCiphers | filter: {favorite: true} |
-                        orderBy: ['name', 'subTitle']) track by $index">
+                       ng-repeat="cipher in favoriteCiphers | orderBy: ['name', 'subTitle'] track by $index">
                         <action-buttons cipher="cipher"></action-buttons>
                         <icon cipher="cipher"></icon>
                         <span class="text">

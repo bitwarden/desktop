@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, cipherService, folderService, $q, $state, $stateParams, toastr,
-        syncService, utilsService, $analytics, i18nService, stateService, $timeout, $window, collectionService) {
+        syncService, utilsService, $analytics, i18nService, stateService, $timeout, $window, collectionService, $filter) {
         var stateKey = 'vault',
             state = stateService.getState(stateKey) || {};
         stateService.removeState('viewGrouping');
@@ -25,8 +25,13 @@ angular
         $scope.loaded = true;
         if (!$rootScope.vaultCiphers) {
             $rootScope.vaultCiphers = [];
+            $scope.favoriteCiphers = [];
             delayLoad = false;
         }
+        else {
+            $scope.favoriteCiphers = $filter('filter')($rootScope.vaultCiphers, { favorite: true });
+        }
+
         if (!$rootScope.vaultFolders) {
             $rootScope.vaultFolders = [];
             delayLoad = false;
@@ -68,6 +73,7 @@ angular
                 $rootScope.vaultFolders = decFolders;
                 $rootScope.vaultCollections = decCollections;
                 $rootScope.vaultCiphers = decCiphers;
+                $scope.favoriteCiphers = $filter('filter')($rootScope.vaultCiphers, { favorite: true });
 
                 if ($scope.showGroupingCounts) {
                     var folderCounts = { 'none': 0 };
