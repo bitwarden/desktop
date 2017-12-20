@@ -30,6 +30,10 @@ angular
         }
         else {
             $scope.favoriteCiphers = $filter('filter')($rootScope.vaultCiphers, { favorite: true });
+
+            if (!$rootScope.vaultCollections || !$rootScope.vaultCollections.length) {
+                $scope.noFolderCiphers = $filter('filter')($rootScope.vaultCiphers, { folderId: null });
+            }
         }
 
         if (!$rootScope.vaultFolders) {
@@ -37,6 +41,7 @@ angular
             delayLoad = false;
             $scope.loaded = false;
         }
+
         if (!$rootScope.vaultCollections) {
             $rootScope.vaultCollections = [];
             delayLoad = false;
@@ -74,6 +79,14 @@ angular
                 $rootScope.vaultCollections = decCollections;
                 $rootScope.vaultCiphers = decCiphers;
                 $scope.favoriteCiphers = $filter('filter')($rootScope.vaultCiphers, { favorite: true });
+
+                if (!$rootScope.vaultCollections || !$rootScope.vaultCollections.length) {
+                    $scope.noFolderCiphers = $filter('filter')($rootScope.vaultCiphers, { folderId: null });
+
+                    if ($rootScope.vaultFolders && $rootScope.vaultFolders.length && !$rootScope.vaultFolders[0].id) {
+                        $rootScope.vaultFolders = $rootScope.vaultFolders.slice(1);
+                    }
+                }
 
                 if ($scope.showGroupingCounts) {
                     var folderCounts = { 'none': 0 };

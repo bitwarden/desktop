@@ -10,7 +10,7 @@
 </div>
 <div class="content content-tabs">
     <!-- Grouping List -->
-    <div ng-if="vaultCiphers.length && vaultFolders.length && (!searchText || searchText.length < 2)">
+    <div ng-if="vaultCiphers.length && (!searchText || searchText.length < 2)">
         <div class="list">
             <div class="list-section" ng-if="favoriteCiphers.length">
                 <div class="list-section-header">
@@ -32,7 +32,7 @@
                     </a>
                 </div>
             </div>
-            <div class="list-section">
+            <div class="list-section" ng-if="vaultFolders.length">
                 <div class="list-section-header">
                     {{::i18n.folders}}
                     <span>{{vaultFolders.length}}</span>
@@ -72,6 +72,26 @@
                         <span class="text">
                             {{collection.name}}
                         </span>
+                    </a>
+                </div>
+            </div>
+            <div class="list-section" ng-if="noFolderCiphers && noFolderCiphers.length">
+                <div class="list-section-header">
+                    {{::i18n.noneFolder}}
+                    <span>{{noFolderCiphers.length}}</span>
+                </div>
+                <div class="list-section-items">
+                    <a href="#" stop-click ng-click="viewCipher(cipher)" class="list-section-item condensed"
+                       title="{{::i18n.view}}"
+                       ng-repeat="cipher in noFolderCiphers | orderBy: ['name', 'subTitle'] track by $index">
+                        <action-buttons cipher="cipher"></action-buttons>
+                        <icon cipher="cipher"></icon>
+                        <span class="text">
+                            {{cipher.name}}
+                            <i class="fa fa-share-alt text-muted" ng-if="cipher.organizationId" title="{{::i18n.shared}}"></i>
+                            <i class="fa fa-paperclip text-muted" ng-if="cipher.attachments" title="{{::i18n.attachments}}"></i>
+                        </span>
+                        <span class="detail">{{cipher.subTitle}}</span>
                     </a>
                 </div>
             </div>
