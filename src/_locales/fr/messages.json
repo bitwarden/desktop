@@ -194,25 +194,25 @@
     "message": "Coffre en ligne de bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gérer vos identifiants depuis n'importe quel navigateur web à l'aide du coffre en ligne de bitwarden."
+    "message": "Gérez vos identifiants depuis n'importe quel navigateur web à l'aide du coffre en ligne de bitwarden."
   },
   "bitIosVault": {
     "message": "Coffre iOS bitwarden"
   },
   "bitIosVaultInfo": {
-    "message": "Gérer vos identifiants depuis vos appareils mobiles à l'aide du coffre iOS bitwarden."
+    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre iOS bitwarden."
   },
   "bitAndrVault": {
     "message": "Coffre Android bitwarden"
   },
   "bitAndrVaultInfo": {
-    "message": "Gérer vos identifiants depuis vos appareils mobiles à l'aide du coffre Android bitwarden."
+    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre Android bitwarden."
   },
   "importItems": {
     "message": "Importer des identifiants"
   },
   "importItemsInfo": {
-    "message": "Importer rapidement en masse vos identifiants depuis d'autres applications de gestion de mots de passe."
+    "message": "Importer rapidement vos identifiants depuis d'autres applications de gestion de mots de passe."
   },
   "select": {
     "message": "Sélectionner"
@@ -462,7 +462,7 @@
     "message": "Identifiant modifié"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr·e de vouloir supprimer cet identifiant ?"
+    "message": "Êtes-vous sûr•e de vouloir supprimer cet identifiant ?"
   },
   "deletedItem": {
     "message": "Identifiant supprimé"
@@ -486,7 +486,7 @@
     "message": "Recherche dossier"
   },
   "searchCollection": {
-    "message": "Rechercher une collection"
+    "message": "Rechercher dans la collection"
   },
   "noneFolder": {
     "message": "Pas de dossier",
@@ -748,7 +748,7 @@
     "message": "URL du serveur d'identification"
   },
   "iconsUrl": {
-    "message": "Icônes de l'URL du serveur"
+    "message": "URL du serveur d’icônes"
   },
   "environmentSaved": {
     "message": "Les URLs d'environnement ont été enregistrées."
@@ -805,7 +805,7 @@
     "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
   },
   "cardholderName": {
-    "message": "Nom de l'adhérent"
+    "message": "Nom du titulaire de la carte"
   },
   "number": {
     "message": "Nombre"
@@ -976,6 +976,6 @@
     "message": "Identités"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Effacer"
   }
 }

@@ -3,21 +3,21 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Free Password Manager",
+    "message": "bitwarden - Gerenciador de Senhas Gratuito",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden is a secure and free password manager for all of your devices.",
+    "message": "o bitwarden é um gerenciador de senha gratuito para todos os seus dispositivos.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Inicie a sessão ou crie uma nova conta para acessar seu cofre."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Criar Conta"
   },
   "login": {
-    "message": "Log In"
+    "message": "Entrar"
   },
   "cancel": {
     "message": "Cancelar"
@@ -26,31 +26,31 @@
     "message": "Fechar"
   },
   "submit": {
-    "message": "Submeter"
+    "message": "Enviar"
   },
   "emailAddress": {
-    "message": "Endereço de e-mail"
+    "message": "Endereço de E-mail"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Senha Mestra"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "A senha mestra é a senha que você usa para acessar o seu cofre. É muito importante que você não esqueça sua senha mestra. Não há nenhuma maneira de recuperar a senha caso você se esqueça."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Uma dica de senha mestra pode ajudá-lo(a) a lembrá-la caso você esqueça."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Digite Novamente a Senha Mestra"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Dica de Senha Mestra (opcional)"
   },
   "tab": {
     "message": "Aba"
   },
   "myVault": {
-    "message": "Meu cofre"
+    "message": "Meu Cofre"
   },
   "tools": {
     "message": "Ferramentas"
@@ -59,73 +59,73 @@
     "message": "Configurações"
   },
   "currentTab": {
-    "message": "Aba atual"
+    "message": "Aba Atual"
   },
   "copyPassword": {
-    "message": "Copiar senha"
+    "message": "Copiar Senha"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Copiar URL"
   },
   "copyUsername": {
-    "message": "Copiar nome de usuário"
+    "message": "Copiar Nome de Usuário"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "Copiar Número"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "Copiar Código de Segurança"
   },
   "autoFill": {
     "message": "Auto-preencher"
   },
   "generatePasswordCopied": {
-    "message": "Generate Password (copied)"
+    "message": "Gerar Senha (copiada)"
   },
   "noMatchingLogins": {
-    "message": "No matching logins."
+    "message": "Sem credenciais correspondentes."
   },
   "vaultLocked": {
-    "message": "Vault is locked."
+    "message": "O cofre está trancado."
   },
   "autoFillInfo": {
-    "message": "There are no logins available to auto-fill for the current browser tab."
+    "message": "Não há credenciais disponíveis para preenchimento automático para a aba do navegador atual."
   },
   "addLogin": {
     "message": "Adicionar um Login"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Adicionar Item"
   },
   "passwordHint": {
-    "message": "Dica de senha"
+    "message": "Dica da Senha"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Digite o seu endereço de e-mail para receber a dica da sua senha mestra."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Obter dica da senha mestra"
   },
   "continue": {
     "message": "Continuar"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Código de Verificação"
   },
   "account": {
     "message": "Conta"
   },
   "changeMasterPassword": {
-    "message": "Change Master Password"
+    "message": "Alterar Senha Mestra"
   },
   "changeEmail": {
-    "message": "Alterar email"
+    "message": "Alterar E-mail"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Login de Duas Etapas"
   },
   "logOut": {
-    "message": "Deslogar"
+    "message": "Sair"
   },
   "about": {
     "message": "Sobre"
@@ -137,91 +137,91 @@
     "message": "Salvar"
   },
   "addFolder": {
-    "message": "Adicionar pasta"
+    "message": "Adicionar Pasta"
   },
   "name": {
     "message": "Nome"
   },
   "editFolder": {
-    "message": "Editar pasta"
+    "message": "Editar Pasta"
   },
   "deleteFolder": {
-    "message": "Apagar pasta"
+    "message": "Apagar Pasta"
   },
   "folders": {
     "message": "Pastas"
   },
   "noFolders": {
-    "message": "There are no folders to list."
+    "message": "Não existem pastas para listar."
   },
   "helpFeedback": {
-    "message": "Help & Feedback"
+    "message": "Ajuda & Feedback"
   },
   "emailUs": {
-    "message": "Enviar-nos um email"
+    "message": "Envie-nos um E-mail"
   },
   "emailUsDirectly": {
-    "message": "Email us directly to get help or leave feedback."
+    "message": "Envie-nos um e-mail diretamente para obter ajuda ou deixar feedback."
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Visitar o Nosso Site"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
+    "message": "Visite o nosso website para obter ajuda, novidades, enviar-nos um e-mail, e\/ou saber mais sobre como utilizar o bitwarden."
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Enviar um Relatório de Bug"
   },
   "gitHubIssue": {
-    "message": "Open an issue at our GitHub repository."
+    "message": "Abrir um issue no nosso repositório do GitHub."
   },
   "sync": {
     "message": "Sincronizar"
   },
   "syncVaultNow": {
-    "message": "Sync Vault Now"
+    "message": "Sincronizar Cofre Agora"
   },
   "lastSync": {
-    "message": "Última sincronização:"
+    "message": "Última Sincronização:"
   },
   "passGen": {
-    "message": "Password Generator"
+    "message": "Gerador de Senha"
   },
   "passGenInfo": {
-    "message": "Automatically generate strong, unique passwords for your logins."
+    "message": "Gerar automaticamente senhas fortes e únicas para os seus logins."
   },
   "bitWebVault": {
-    "message": "bitwarden Web Vault"
+    "message": "Cofre Web bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Manage your logins from any web browser with the bitwarden web vault."
+    "message": "Gerencie seus logins de qualquer navegador web com o cofre bitwarden para a web."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS Vault"
+    "message": "Cofre bitwarden para iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Manage your logins from your mobile devices with the bitwarden iOS vault."
+    "message": "Gerencie seus logins de dispositivos móveis com o cofre bitwarden para Android."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android Vault"
+    "message": "Cofre bitwarden para Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Manage your logins from your mobile devices with the bitwarden Android vault."
+    "message": "Gerencie seus logins de dispositivos móveis com o cofre bitwarden para Android."
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "Importar Itens"
   },
   "importItemsInfo": {
-    "message": "Quickly bulk import your items from other password management applications."
+    "message": "Importe rapidamente os seus dados de outros aplicativos de gerenciamento de senha."
   },
   "select": {
     "message": "Selecionar"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Gerar senha"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Gerar Nova Senha"
   },
   "options": {
     "message": "Opções"
@@ -230,31 +230,31 @@
     "message": "Tamanho"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Números Mínimos"
   },
   "minSpecial": {
-    "message": "Minimum Special"
+    "message": "Especiais Mínimos"
   },
   "avoidAmbChar": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Evitar Caracteres Ambíguos"
   },
   "searchVault": {
-    "message": "Pesquisar no cofre"
+    "message": "Pesquisar no Cofre"
   },
   "edit": {
     "message": "Editar"
   },
   "view": {
-    "message": "View"
+    "message": "Ver"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Não existem itens para listar."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Informação do Item"
   },
   "username": {
-    "message": "Nome de usuário"
+    "message": "Nome de Usuário"
   },
   "password": {
     "message": "Senha"
@@ -266,25 +266,25 @@
     "message": "Notas"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Editar Item"
   },
   "folder": {
     "message": "Pasta"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Apagar Item"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Ver Item"
   },
   "launchWebsite": {
-    "message": "Launch Website"
+    "message": "Iniciar Site"
   },
   "website": {
-    "message": "Website"
+    "message": "Site"
   },
   "togglePassword": {
-    "message": "Toggle Password"
+    "message": "Alternar Senha"
   },
   "manage": {
     "message": "Gerenciar"
@@ -293,28 +293,28 @@
     "message": "Outros"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Desativar Analytics"
   },
   "rateExtension": {
-    "message": "Rate the Extension"
+    "message": "Avaliar a Extensão"
   },
   "rateExtensionDesc": {
-    "message": "Please consider helping us out with a good review!"
+    "message": "Por favor considere nos ajudar com uma boa análise!"
   },
   "browserNotSupportClipboard": {
-    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message": "O seu navegador web não suporta cópia para a área de transferência. Em alternativa, copie manualmente."
   },
   "verifyMasterPassword": {
-    "message": "Verify Master Password"
+    "message": "Verificar Senha Mestra"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Senha mestra inválida"
   },
   "lockOptions": {
-    "message": "Opções de bloqueio"
+    "message": "Opções de Bloqueio"
   },
   "lockNow": {
-    "message": "Bloquear agora"
+    "message": "Bloquear Agora"
   },
   "immediately": {
     "message": "Imediatamente"
@@ -338,10 +338,10 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "On Locked"
+    "message": "No bloqueio"
   },
   "onRestart": {
-    "message": "Ao reiniciar"
+    "message": "Ao Reiniciar"
   },
   "never": {
     "message": "Nunca"
@@ -350,47 +350,47 @@
     "message": "Segurança"
   },
   "errorsOccurred": {
-    "message": "Errors have occurred"
+    "message": "Ocorreram erros"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Requer endereço de e-mail."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Endereço de e-mail inválido."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Requer senha mestra."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "A senha mestra tem que ter pelo menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "A confirmação da senha mestra não corresponde."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "A sua nova conta foi criada! Agora pode iniciar sessão."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Enviamos um e-mail com a dica da sua senha mestra."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Requer o código de verificação."
   },
   "valueCopied": {
     "message": " copiado",
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
+    "message": "Não é possível auto-preencher o item selecionado nesta página. Em alternativa, copie e cole a informação."
   },
   "loggedOut": {
-    "message": "Sessão terminada"
+    "message": "Sessão encerrada"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "A sua sessão expirou."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Tem certeza que deseja sair?"
   },
   "yes": {
     "message": "Sim"
@@ -399,79 +399,79 @@
     "message": "Não"
   },
   "unexpectedError": {
-    "message": "An unexpected error has occured."
+    "message": "Ocorreu um erro inesperado."
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Requer o nome."
   },
   "addedFolder": {
     "message": "Pasta adicionada"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Alterar Senha Mestra"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Você pode alterar a sua senha mestra no cofre web bitwarden.com. Você deseja visitar o website agora?"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Você pode alterar o seu endereço de e-mail no cofre web bitwarden.com. Você deseja visitar o website agora?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "O login de duas etapas torna a sua conta mais segura ao exigir que digite um código de segurança de um aplicativo de autenticação quando for iniciar a sessão. O login de duas etapas pode ser ativado no cofre web bitwarden.com. Deseja visitar o site agora?"
   },
   "loggingOut": {
-    "message": "Desconectando"
+    "message": "Saindo"
   },
   "loggingOutConfirmation": {
-    "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+    "message": "Você recentemente atualizou de uma versão antiga. Você tem que iniciar a sessão novamente para alterar as suas opções de bloqueio. Deseja terminar a sessão agora?"
   },
   "editedFolder": {
-    "message": "Pasta editada"
+    "message": "Pasta Editada"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Tem certeza que deseja apagar esta pasta?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Pasta apagada"
   },
   "gettingStartedTutorial": {
-    "message": "Getting Started Tutorial"
+    "message": "Tutorial de Introdução"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "Assista o nosso tutorial de introdução e saiba como tirar o máximo de proveito da extensão de navegador."
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Sincronização completada"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Sincronização falhou"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Você pode importar em massa os seus itens a partir do cofre web bitwarden.com. Deseja visitar o site agora?"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "Senha copiada"
   },
   "uri": {
     "message": "URL"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Item adicionado"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Item editado"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Tem certeza de que pretende apagar este item?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Item apagado"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Substituir Senha"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Você tem certeza que deseja substituir a senha atual?"
   },
   "credits": {
     "message": "Créditos"
@@ -486,496 +486,496 @@
     "message": "Pesquisar pasta"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Pesquisar coleção"
   },
   "noneFolder": {
-    "message": "Nenhuma pasta",
+    "message": "Nenhuma Pasta",
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the extension is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Utilizamos o analytics para aprender melhor como a extensão está sendo utilizada para que possamos torná-la melhor. Todos os dados são recolhidos de forma anônima."
   },
   "disableAddLoginNotification": {
-    "message": "Disable Add Login Notification"
+    "message": "Desativar Notificação de Adicionar Login"
   },
   "addLoginNotificationDesc": {
-    "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message": "A \"Notificação de Adicionar Login\" pede para salvar automaticamente novas logins para o seu cofre quando você inicia uma sessão em um site pela primeira vez."
   },
   "notificationAddDesc": {
-    "message": "Should bitwarden remember this password for you?"
+    "message": "O bitwarden deve lembrar esta senha para você?"
   },
   "notificationAddSave": {
-    "message": "Yes, Save Now"
+    "message": "Sim, Salvar Agora"
   },
   "notificationNeverSave": {
-    "message": "Never for this website"
+    "message": "Nunca para este site"
   },
   "disableContextMenuItem": {
-    "message": "Disable Context Menu Options"
+    "message": "Desativar Opções do Menu de Contexto"
   },
   "disableContextMenuItemDesc": {
-    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message": "As opções do menu de contexto providenciam acesso rápido à geração de senha e credenciais para o site na sua aba atual."
   },
   "exportVault": {
-    "message": "Exportar cofre"
+    "message": "Exportar Cofre"
   },
   "warning": {
     "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Esta exportação contém os seus dados não encriptados em formato .csv. Não deve armazená-los ou enviá-los através de canais inseguros (como e-mail). Elimine-os imediatamente após terminar de usá-los."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Digite a sua senha mestra para exportar os dados do seu cofre."
   },
   "exportVaultInfo": {
-    "message": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+    "message": "Exporte os dados do seu cofre em formato .csv para que possa modificá-los facilmente ou movê-los para outro lugar."
   },
   "shared": {
     "message": "Compartilhado"
   },
   "shareVault": {
-    "message": "Share Your Vault"
+    "message": "Compartilhar Seu Cofre"
   },
   "shareVaultInfo": {
-    "message": "Create an organization to securely share your logins with other users."
+    "message": "Crie uma organização para compartilhar com segurança seus logins com outros usuários."
   },
   "contribute": {
-    "message": "You can contribute to!"
+    "message": "Você pode contribuir também!"
   },
   "learnMore": {
     "message": "Saber mais"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Chave de Autenticador (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Código de Verificação (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copy Verification Code"
+    "message": "Copiar Código de Verificação"
   },
   "attachments": {
     "message": "Anexos"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "Apagar anexo"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Tem a certeza de que deseja apagar este anexo?"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Anexo apagado"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Adicionar Novo Anexo"
   },
   "noAttachments": {
-    "message": "No attachments."
+    "message": "Sem anexos."
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "O anexo foi salvo."
   },
   "file": {
     "message": "Arquivo"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Selecione um arquivo."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "O tamanho máximo do arquivo é de 100 MB."
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funcionalidade Indisponível"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Você não pode usar este recurso, até você atualizar sua chave de criptografia."
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Assinatura Premium"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Gerenciar Plano"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Você pode gerenciar a sua assinatura premium no cofre web bitwarden.com. Deseja visitar o site agora?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Atualizar Assinatura"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Você não é atualmente um membro premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Registe-se para uma assinatura premium e obtenha:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB de armazenamento de arquivos encriptado."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Opções de autenticação de duas etapas adicionais como YubiKey, FIDO U2F, e Duo."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."
   },
   "ppremiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Prioridade no suporte ao cliente."
   },
   "ppremiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Acesso a novas funcionalidades premium no futuro. Mais está por vir!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Comprar Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Você pode comprar a assinatura premium no cofre web bitwarden.com. Deseja visitar o site agora?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Você é um membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Obrigado por apoiar o bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% \/year!"
+    "message": "Tudo por apenas %price% \/ano!"
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Atualização completada"
   },
   "disableAutoTotpCopy": {
-    "message": "Disable Automatic TOTP Copy"
+    "message": "Desativar Cópia Automática de TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "Se o seu login tiver uma chave de autenticação anexada, o código de verificação TOTP será copiado automaticamente para a área de transferência quando preencher automaticamente o login."
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Requer Assinatura Premium"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Uma conta premium é necessária para usar esse recurso."
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Digite o código de verificação de 6 dígitos do seu aplicativo de autenticação."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to"
+    "message": "Digite o código de verificação de 6 dígitos que foi enviado por e-mail para"
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Lembrar de mim"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Enviar código de verificação novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Utilizar outro método de verificação de duas etapas"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Introduza a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tem um botão, toque nele."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Login Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message": "Esta conta tem a verificação de duas etapas ativado, no entanto, nenhum dos provedores de verificação de duas etapas configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Opções de Login de Duas Etapas"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Perdeu o acesso a todos os seus provedores de duas etapas? Utilize o seu código de recuperação para desativar todos os provedores de duas etapas da sua conta."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Código de Recuperação"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Aplicativo de Autenticação"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Utilize um aplicativo de autenticação (tal como Authy ou Google Authenticator) para gerar códigos de verificação baseados na hora.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "Chave de Segurança YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Utilize uma YubiKey para acessar a sua conta. Funciona com YubiKey 4, 4 Nano, 4C, e dispositivos NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifique com o Duo Security utilizando o aplicativo Duo Mobile, SMS, chamada telefônica, ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Utilize qualquer chave de segurança ativada por FIDO U2F para acessar à sua conta."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "Chave de Segurança FIDO U2F"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Os códigos de verificação vão ser enviados para você."
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Ambiente Auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Especifique a URL de base da sua instalação local do bitwarden."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Ambiente Personalizado"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Para usuários avançados. Você pode especificar a URL de base de cada serviço independentemente."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL do Servidor"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "URL do Servidor da API"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "URL do Servidor do Cofre Web"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "URL do Servidor de Identidade"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL do Servidor de Ícones"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "As URLs do ambiente foram salvos."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "Habilitar o Auto-preencher ao Carregar a Página"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message": "Se um formulário de login for detectado, realizar automaticamente um auto-preenchimento quando a página web carregar."
   },
   "experimentalFeature": {
-    "message": "This is currently an experimental feature. Use at your own risk."
+    "message": "Esta é atualmente uma funcionalidade experimental. Utilize por sua conta e risco."
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "Auto-preencher o último login utilizado para o site atual."
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard."
+    "message": "Gerar e copiar uma nova senha aleatória para a área de transferência."
   },
   "privateModeMessage": {
-    "message": "Unfortunately this window is not available in private mode for this browser."
+    "message": "Infelizmente esta janela não está disponível no modo privado para este navegador."
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Campos Personalizados"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Copiar Valor"
   },
   "toggleValue": {
-    "message": "Toggle Value"
+    "message": "Alternar Valor"
   },
   "value": {
-    "message": "Value"
+    "message": "Valor"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Novo Campo Personalizado"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Texto"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Ocultado"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Booleano"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "Clicando fora da janela de pop-up para verificar seu e-mail para o seu código de verificação fará com que este pop-up feche. Você quer abrir este pop-up em uma nova janela para que ele não feche?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Desativar Ícones de Site"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "O ícone do site fornece um ícone reconhecível ao lado de cada item de login no seu cofre."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Titular do Cartão"
   },
   "number": {
-    "message": "Number"
+    "message": "Número"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Bandeira"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Mês de Vencimento"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Ano de Vencimento"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Vencimento"
   },
   "january": {
-    "message": "January"
+    "message": "Janeiro"
   },
   "february": {
-    "message": "February"
+    "message": "Fevereiro"
   },
   "march": {
-    "message": "March"
+    "message": "Março"
   },
   "april": {
-    "message": "April"
+    "message": "Abril"
   },
   "may": {
-    "message": "May"
+    "message": "Maio"
   },
   "june": {
-    "message": "June"
+    "message": "Junho"
   },
   "july": {
-    "message": "July"
+    "message": "Julho"
   },
   "august": {
-    "message": "August"
+    "message": "Agosto"
   },
   "september": {
-    "message": "September"
+    "message": "Setembro"
   },
   "october": {
-    "message": "October"
+    "message": "Outubro"
   },
   "november": {
-    "message": "November"
+    "message": "Novembro"
   },
   "december": {
-    "message": "December"
+    "message": "Dezembro"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Código de Segurança"
   },
   "ex": {
     "message": "ex."
   },
   "title": {
-    "message": "Title"
+    "message": "Título"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Sr"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Sra"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Sra"
   },
   "dr": {
     "message": "Dr"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Primeiro Nome"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Segundo Nome"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Último Nome"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Nome de Identidade"
   },
   "company": {
-    "message": "Company"
+    "message": "Empresa"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Número de Segurança Social"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Número do Passaporte"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Número da Licença"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefone"
   },
   "address": {
-    "message": "Address"
+    "message": "Endereço"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Endereço 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Endereço 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Endereço 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Cidade \/ Localidade"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Estado \/ Província"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "CEP \/ Código Postal"
   },
   "country": {
-    "message": "Country"
+    "message": "País"
   },
   "type": {
-    "message": "Type"
+    "message": "Tipo"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Credencial"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "Credenciais"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Nota Segura"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Cartão"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identidade"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Histórico de Senha"
   },
   "back": {
-    "message": "Back"
+    "message": "Voltar"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Coleções"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoritos"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Abrir em uma nova janela"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Atualizar"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Cartões"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identidades"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Limpar"
   }
 }

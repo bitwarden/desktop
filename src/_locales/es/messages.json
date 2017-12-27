@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Identifícate o crea una nueva cuenta para acceder a tu bóveda segura."
+    "message": "Identifícate o crea una nueva cuenta para acceder a tu caja fuerte."
   },
   "createAccount": {
     "message": "Crear cuenta"
@@ -35,7 +35,7 @@
     "message": "Contraseña maestra"
   },
   "masterPassDesc": {
-    "message": "La contraseña maestra es la clave que utilizas para acceder a tu bóveda. Es muy importante que no olvides tu contraseña maestra. No hay forma de recuperarla en el caso de que la hayas olvidado."
+    "message": "La contraseña maestra es la clave que utilizas para acceder a tu caja fuerte. Es muy importante que no olvides tu contraseña maestra. No hay forma de recuperarla si la olvidas."
   },
   "masterPassHintDesc": {
     "message": "Una pista de tu contraseña maestra puede ayudarte a recordarla en caso de que la olvides."
@@ -50,7 +50,7 @@
     "message": "Pestaña"
   },
   "myVault": {
-    "message": "Mi bóveda"
+    "message": "Mi caja fuerte"
   },
   "tools": {
     "message": "Herramientas"
@@ -86,7 +86,7 @@
     "message": "Sin entradas coincidentes."
   },
   "vaultLocked": {
-    "message": "La bóveda está bloqueada."
+    "message": "La caja fuerte está bloqueada."
   },
   "autoFillInfo": {
     "message": "No hay entradas disponibles para autorellenar en la pestaña actual del navegador."
@@ -179,7 +179,7 @@
     "message": "Sincronizar"
   },
   "syncVaultNow": {
-    "message": "Sincronizar bóveda ahora"
+    "message": "Sincronizar caja fuerte ahora"
   },
   "lastSync": {
     "message": "Última sincronización:"
@@ -191,22 +191,22 @@
     "message": "Genera contraseñas fuertes y únicas para tus accesos automáticamente."
   },
   "bitWebVault": {
-    "message": "Bóveda web de bitwarden"
+    "message": "Caja fuerte web de bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gestiona las entradas de cualquier web con la bóveda web de bitwarden."
+    "message": "Gestiona las entradas de cualquier web con la caja fuerte web de bitwarden."
   },
   "bitIosVault": {
-    "message": "Bóveda bitwarden de iOS"
+    "message": "Caja fuerte bitwarden de iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Gestiona las entradas desde tus dispositivos moviles con la bóveda de bitwarden para iOS."
+    "message": "Gestiona las entradas desde tus dispositivos moviles con la caja fuerte de bitwarden para iOS."
   },
   "bitAndrVault": {
-    "message": "Bóveda bitwarden de Android"
+    "message": "Caja fuerte bitwarden de Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Gestiona las entradas desde tus dispositivos moviles con la bóveda de bitwarden para Android."
+    "message": "Gestiona las entradas desde tus dispositivos móviles con la caja fuerte de bitwarden para Android."
   },
   "importItems": {
     "message": "Importar elementos"
@@ -239,7 +239,7 @@
     "message": "Evitar caracteres ambiguos"
   },
   "searchVault": {
-    "message": "Buscar en la bóveda"
+    "message": "Buscar en la caja fuerte."
   },
   "edit": {
     "message": "Editar"
@@ -411,13 +411,13 @@
     "message": "Cambiar contraseña maestra"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Puedes cambiar tu contraseña maestra en la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
+    "message": "Puedes cambiar tu contraseña maestra en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
   "changeEmailConfirmation": {
-    "message": "Puedes cambiar tu correo electrónico en la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
+    "message": "Puedes cambiar tu correo electrónico en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
   "twoStepLoginConfirmation": {
-    "message": "La autenticación en dos pasos hace que tu cuenta sea mucho más segura requiriendo que introduzcas un código de seguridad de una aplicación de autenticación cada vez que accedes. La autenticación en dos pasos puede ser habilitada en la bóveda web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
+    "message": "La autenticación en dos pasos hace que tu cuenta sea mucho más segura, requiriendo que introduzcas un código de seguridad de una aplicación de autenticación cada vez que accedes. La autenticación en dos pasos puede ser habilitada en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
   "loggingOut": {
     "message": "Sessión finalizada"
@@ -447,7 +447,7 @@
     "message": "Sincronización fallida"
   },
   "importItemsConfirmation": {
-    "message": "Puedes importar elementos desde la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
+    "message": "Puedes importar elementos desde la caja fuerte web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "passwordCopied": {
     "message": "Contraseña copiada"
@@ -499,7 +499,7 @@
     "message": "Deshabilitar notificación para añadir entradas"
   },
   "addLoginNotificationDesc": {
-    "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres salvar nuevas entradas en tu bóveda cuando te identificas en un sitio web por primera vez."
+    "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres guardar nuevas entradas en tu caja fuerte cuando te identificas en un sitio web por primera vez."
   },
   "notificationAddDesc": {
     "message": "¿Deberías bitwarden recordar esta contraseña por ti?"
@@ -517,7 +517,7 @@
     "message": "Las opciones del menú contextual permiten un acceso rápido al generador de contraseñas y a las entradas para el sitio abierto en tu pestaña actual."
   },
   "exportVault": {
-    "message": "Exportar bóveda"
+    "message": "Exportar caja fuerte."
   },
   "warning": {
     "message": "ADVERTENCIA",
@@ -527,16 +527,16 @@
     "message": "La exportación contiene tus datos no cifrados en formato .csv. No deberías almacenarlo o enviarlo por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
   },
   "exportMasterPassword": {
-    "message": "Introduce tu contraseña maestra para exportar la información de tu bóveda."
+    "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
   },
   "exportVaultInfo": {
-    "message": "Exportar tu información en formato .csv para poder modificarla facilmente o moverla a cualquiera sitio."
+    "message": "Exporta tu caja fuerte en formato .csv para poder modificarla fácilmente o moverla a cualquiera sitio."
   },
   "shared": {
     "message": "Compartido"
   },
   "shareVault": {
-    "message": "Comparte tu bóveda"
+    "message": "Comparte tu caja fuerte"
   },
   "shareVaultInfo": {
     "message": "Crear una organización para compartir tus entradas de forma segura con otros usuarios."
@@ -599,7 +599,7 @@
     "message": "Gestionar membresía"
   },
   "premiumManageAlert": {
-    "message": "Puedes gestionar tu membresía en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
+    "message": "Puedes gestionar tu membresía en la caja fuerte web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumRefresh": {
     "message": "Actualizar membresía"
@@ -617,7 +617,7 @@
     "message": "Métodos de autenticación en dos pasos adicionales como YubiKey, FIDO U2F y Duo."
   },
   "ppremiumSignUpTotp": {
-    "message": "Generación de códigos TOTP (2FA) para registros de tu bóveda."
+    "message": "Generación de códigos TOTP (2FA) para registros de tu caja fuerte."
   },
   "ppremiumSignUpSupport": {
     "message": "Soporte prioritario."
@@ -629,7 +629,7 @@
     "message": "Comprar Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Puedes comprar la membresía Premium en la bóveda web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
+    "message": "Puedes comprar la membresía Premium en la caja fuerte web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "premiumCurrentMember": {
     "message": "¡Eres un miembro Premium!"
@@ -742,7 +742,7 @@
     "message": "URL del servidor de la API"
   },
   "webVaultUrl": {
-    "message": "URL del servidor de la bóveda web"
+    "message": "URL del servidor de la caja fuerte web"
   },
   "identityUrl": {
     "message": "URL del servidor de identidad"
@@ -802,7 +802,7 @@
     "message": "Deshabilitar iconos del sitio web"
   },
   "disableFaviconDesc": {
-    "message": "Los iconos del sitio web añaden una imagen reconocible al lado de cada entrada de tu bóveda."
+    "message": "Los iconos del sitio web añaden una imagen reconocible al lado de cada entrada de tu caja fuerte."
   },
   "cardholderName": {
     "message": "Nombre en la tarjeta"
@@ -976,6 +976,6 @@
     "message": "Identidades"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Limpiar"
   }
 }

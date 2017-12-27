@@ -344,7 +344,7 @@
     "message": "ブラウザ再起動時"
   },
   "never": {
-    "message": "ロックしない"
+    "message": "なし"
   },
   "security": {
     "message": "セキュリティ"
@@ -715,7 +715,7 @@
     "message": "FIDO U2F が有効なセキュリティキーを使ってアカウントにアクセスできます。"
   },
   "u2fTitle": {
-    "message": "FIDO U2Fセキュリティキー"
+    "message": "FIDO U2F セキュリティキー"
   },
   "emailTitle": {
     "message": "メールアドレス"
@@ -976,6 +976,6 @@
     "message": "ID"
   },
   "clear": {
-    "message": "Clear"
+    "message": "消去する"
   }
 }

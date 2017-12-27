@@ -3,11 +3,11 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - 免費密碼管理器",
+    "message": "bitwarden - 免費密碼管理工具",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden 是一個安全、免費、跨平台的密碼管理器。",
+    "message": "bitwarden 是一個安全、免費、跨平台的密碼管理工具。",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -29,22 +29,22 @@
     "message": "提交"
   },
   "emailAddress": {
-    "message": "電郵"
+    "message": "電子郵件地址"
   },
   "masterPass": {
     "message": "主密碼"
   },
   "masterPassDesc": {
-    "message": "主密碼是你存取密碼庫的密碼。請勿忘記主密碼，我們無法將你的主密碼復原或重置。"
+    "message": "主密碼是你存取密碼庫的密碼。請勿忘記主密碼，我們無法將你的主密碼復原或重設。"
   },
   "masterPassHintDesc": {
-    "message": "主密碼提示可以幫你回想起主密碼。"
+    "message": "主密碼提示可以在你忘記主密碼時幫助你回憶主密碼。"
   },
   "reTypeMasterPass": {
     "message": "重新輸入主密碼"
   },
   "masterPassHint": {
-    "message": "主密码提示（非必須）"
+    "message": "主密碼提示 (選用)"
   },
   "tab": {
     "message": "分頁"
@@ -68,28 +68,28 @@
     "message": "複製 URI"
   },
   "copyUsername": {
-    "message": "複製用戶名稱"
+    "message": "複製使用者名稱"
   },
   "copyNumber": {
-    "message": "Copy Number"
+    "message": "複製號碼"
   },
   "copySecurityCode": {
     "message": "複製安全代碼"
   },
   "autoFill": {
-    "message": "自動輸入"
+    "message": "自動填寫"
   },
   "generatePasswordCopied": {
-    "message": "生成及複製密碼"
+    "message": "產生及複製密碼"
   },
   "noMatchingLogins": {
-    "message": "無吻合網頁。"
+    "message": "沒有相符的登入資料。"
   },
   "vaultLocked": {
     "message": "密碼庫已上鎖"
   },
   "autoFillInfo": {
-    "message": "目前瀏覽器分頁無可以自動填寫登入資訊的位置。"
+    "message": "目前瀏覽器分頁中沒有可以自動填寫登入資料的位置。"
   },
   "addLogin": {
     "message": "新增網頁"
@@ -101,10 +101,10 @@
     "message": "密碼提示"
   },
   "enterEmailToGetHint": {
-    "message": "請輸入帳戶電郵以獲取主密碼提示。"
+    "message": "請輸入帳戶電子郵件地址以接收主密碼提示。"
   },
   "getMasterPasswordHint": {
-    "message": "獲取主密碼提示"
+    "message": "取得主密碼提示"
   },
   "continue": {
     "message": "繼續"
@@ -116,10 +116,10 @@
     "message": "帳戶"
   },
   "changeMasterPassword": {
-    "message": "修改主密碼"
+    "message": "變更主密碼"
   },
   "changeEmail": {
-    "message": "修改電郵"
+    "message": "變更電子郵件"
   },
   "twoStepLogin": {
     "message": "兩步驟登入"
@@ -137,43 +137,43 @@
     "message": "儲存"
   },
   "addFolder": {
-    "message": "新增文件夾"
+    "message": "新增資料夾"
   },
   "name": {
     "message": "名稱"
   },
   "editFolder": {
-    "message": "編輯文件夾"
+    "message": "編輯資料夾"
   },
   "deleteFolder": {
-    "message": "刪除文件夾"
+    "message": "刪除資料夾"
   },
   "folders": {
-    "message": "文件夾"
+    "message": "資料夾"
   },
   "noFolders": {
-    "message": "無文件夾可顯示。"
+    "message": "沒有可顯示的資料夾。"
   },
   "helpFeedback": {
-    "message": "協助與反映"
+    "message": "協助與意見反應"
   },
   "emailUs": {
-    "message": "電郵我們"
+    "message": "傳送電子郵件給我們"
   },
   "emailUsDirectly": {
-    "message": "直接電郵我們以獲取協助或提供反映。"
+    "message": "傳送電子郵件給我們以取得協助或提供意見反應。"
   },
   "visitOurWebsite": {
-    "message": "瀏覽我們的網頁"
+    "message": "瀏覽我們的網站"
   },
   "visitOurWebsiteDirectly": {
-    "message": "瀏覽我們的網頁以獲取協助、了解新消息、email 我們或瀏覽更多使用 bitwarden 的秘訣。"
+    "message": "瀏覽我們的網站以取得協助、了解新消息、傳送電子郵件給我們或瀏覽更多使用 bitwarden 的秘訣。"
   },
   "fileBugReport": {
-    "message": "提交 Bug"
+    "message": "Bug 回報"
   },
   "gitHubIssue": {
-    "message": "在我們的 GitHub 庫中新增問題。"
+    "message": "在我們的 GitHub 存放庫中新增問題。"
   },
   "sync": {
     "message": "同步"
@@ -182,13 +182,13 @@
     "message": "立即同步密碼庫"
   },
   "lastSync": {
-    "message": "上次同步在："
+    "message": "上次同步於："
   },
   "passGen": {
-    "message": "密碼生成器"
+    "message": "密碼產生器"
   },
   "passGenInfo": {
-    "message": "自動生成安全、獨特的密碼予帳戶。"
+    "message": "自動產生安全、獨特的密碼予帳戶。"
   },
   "bitWebVault": {
     "message": "bitwarden 網頁版"
@@ -206,25 +206,25 @@
     "message": "bitwarden Android 版"
   },
   "bitAndrVaultInfo": {
-    "message": "使用 bitwarden Android 版，從 Android 裝置管理您的密碼。"
+    "message": "使用 bitwarden Android 版，從 Android 裝置管理你的密碼。"
   },
   "importItems": {
     "message": "匯入項目"
   },
   "importItemsInfo": {
-    "message": "快速地從其他密碼管理器一次過匯入登入資料。"
+    "message": "快速地從其他密碼管理工具批次匯入你的登入資料。"
   },
   "select": {
     "message": "選擇"
   },
   "generatePassword": {
-    "message": "生成密碼"
+    "message": "產生密碼"
   },
   "regeneratePassword": {
-    "message": "重新生成密碼"
+    "message": "重新產生密碼"
   },
   "options": {
-    "message": "設定"
+    "message": "選項"
   },
   "length": {
     "message": "長度"
@@ -236,7 +236,7 @@
     "message": "符號"
   },
   "avoidAmbChar": {
-    "message": "避免易混淆的字符"
+    "message": "避免易混淆的字元"
   },
   "searchVault": {
     "message": "搜尋"
@@ -248,19 +248,19 @@
     "message": "檢視"
   },
   "noItemsInList": {
-    "message": "無項目可顯示。"
+    "message": "沒有項目可顯示。"
   },
   "itemInformation": {
     "message": "項目資訊"
   },
   "username": {
-    "message": "帳戶名稱"
+    "message": "使用者名稱"
   },
   "password": {
     "message": "密碼"
   },
   "favorite": {
-    "message": "書籤"
+    "message": "我的最愛"
   },
   "notes": {
     "message": "筆記"
@@ -269,7 +269,7 @@
     "message": "編輯項目"
   },
   "folder": {
-    "message": "文件夾"
+    "message": "資料夾"
   },
   "deleteItem": {
     "message": "刪除項目"
@@ -278,10 +278,10 @@
     "message": "檢視項目"
   },
   "launchWebsite": {
-    "message": "開啟網頁"
+    "message": "開啟網站"
   },
   "website": {
-    "message": "網頁"
+    "message": "網站"
   },
   "togglePassword": {
     "message": "切換密碼能見度"
@@ -293,22 +293,22 @@
     "message": "其他"
   },
   "disableGa": {
-    "message": "禁用 Analytics"
+    "message": "停用 Analytics"
   },
   "rateExtension": {
-    "message": "為本擴充元件評分"
+    "message": "為本擴充套件評分"
   },
   "rateExtensionDesc": {
     "message": "給我們留個好評吧！"
   },
   "browserNotSupportClipboard": {
-    "message": "你的瀏覽器不支援簡單複製，請手動複製。"
+    "message": "你的瀏覽器不支援剪貼簿簡單複製，請手動複製。"
   },
   "verifyMasterPassword": {
     "message": "驗證主密碼"
   },
   "invalidMasterPassword": {
-    "message": "主密碼無效"
+    "message": "無效的主密碼"
   },
   "lockOptions": {
     "message": "自動上鎖時間"
@@ -317,7 +317,7 @@
     "message": "立即鎖定"
   },
   "immediately": {
-    "message": "即時"
+    "message": "立即"
   },
   "oneMinute": {
     "message": "1 分鐘"
@@ -350,28 +350,28 @@
     "message": "安全"
   },
   "errorsOccurred": {
-    "message": "錯誤"
+    "message": "發生錯誤"
   },
   "emailRequired": {
-    "message": "必須填寫電郵 。"
+    "message": "必須填寫電子郵件地址 。"
   },
   "invalidEmail": {
-    "message": "電郵無效。"
+    "message": "無效的電子郵件地址。"
   },
   "masterPassRequired": {
     "message": "必須填寫主密碼。"
   },
   "masterPassLength": {
-    "message": "主密碼需要至少8個字符。"
+    "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
-    "message": "兩次主密碼輸入不一致。"
+    "message": "兩次填寫的主密碼不相符。"
   },
   "newAccountCreated": {
     "message": "帳戶已建立！你可以登入了。"
   },
   "masterPassSent": {
-    "message": "包含你的主密碼提示的電郵已寄出。"
+    "message": "已寄出包含你主密碼提示的電子郵件。"
   },
   "verificationCodeRequired": {
     "message": "必須填寫驗證碼。"
@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "無法自動輸入你的帳戶資料。請手動複製／貼上你的帳戶名稱及密碼。"
+    "message": "無法在此頁面自動填寫你的帳戶資料。請手動複製／貼上你的帳戶名稱及密碼。"
   },
   "loggedOut": {
     "message": "已登出"
@@ -390,7 +390,7 @@
     "message": "你的登入階段已過期。"
   },
   "logOutConfirmation": {
-    "message": "您決定要登出嗎？"
+    "message": "你確定要登出嗎？"
   },
   "yes": {
     "message": "是"
@@ -399,46 +399,46 @@
     "message": "否"
   },
   "unexpectedError": {
-    "message": "發生異常錯誤。"
+    "message": "發生了未預期的錯誤。"
   },
   "nameRequired": {
     "message": "必須填寫名稱。"
   },
   "addedFolder": {
-    "message": "已新增文件夾"
+    "message": "已新增資料夾"
   },
   "changeMasterPass": {
-    "message": "修改主密碼"
+    "message": "變更主密碼"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "你可以在 bitwarden 網頁版修改主密碼。現在前往？"
+    "message": "你可以在 bitwarden 網頁版變更主密碼。現在前往？"
   },
   "changeEmailConfirmation": {
-    "message": "你可以在 bitwarden 網頁版修改電郵。現在前往？"
+    "message": "你可以在 bitwarden 網頁版變更電子郵件地址。現在前往？"
   },
   "twoStepLoginConfirmation": {
-    "message": "兩步驟登入需要你登入時輸入由驗證碼程式提供的安全碼，令你的帳戶更安全。兩步驟登入可以在 bitwarden 網頁版開啟。現在前往？"
+    "message": "兩步驟登入需要你登入時輸入一個由驗證碼程式產生的安全碼，為你的帳戶增加一層保障。兩步驟登入可以在 bitwarden 網頁版啟用。現在前往？"
   },
   "loggingOut": {
-    "message": "登出中..."
+    "message": "正在登出"
   },
   "loggingOutConfirmation": {
-    "message": "你最近由一個舊版本更新。你需要重新登入才可修改上鎖設定。立即登出？"
+    "message": "你最近從一個舊版本更新了。你需要重新登入才可變更鎖定選項。立即登出？"
   },
   "editedFolder": {
-    "message": "文件夾已編輯"
+    "message": "已編輯資料夾"
   },
   "deleteFolderConfirmation": {
-    "message": "您肯定要删除此文件夾嗎？"
+    "message": "你確定要刪除此資料夾嗎？"
   },
   "deletedFolder": {
-    "message": "文件夾已刪除"
+    "message": "已刪除的資料夾"
   },
   "gettingStartedTutorial": {
     "message": "新手教學"
   },
   "gettingStartedTutorialVideo": {
-    "message": "觀看我們的新手教學，了解如何充分利用我們的瀏覽器擴充元件。"
+    "message": "觀看我們的新手教學，了解如何充分利用我們的瀏覽器擴充套件。"
   },
   "syncingComplete": {
     "message": "同步完成"
@@ -447,7 +447,7 @@
     "message": "同步失敗"
   },
   "importItemsConfirmation": {
-    "message": "你可以在 bitwarden 網頁版密碼庫一次過匯入登入資料。現在前往？"
+    "message": "你可以在 bitwarden 網頁版密碼庫批次匯入登入資料。現在前往？"
   },
   "passwordCopied": {
     "message": "密碼已複製"
@@ -465,16 +465,16 @@
     "message": "確定要刪除此項目嗎?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "已刪除項目"
   },
   "overwritePassword": {
-    "message": "修改密碼"
+    "message": "覆寫密碼"
   },
   "overwritePasswordConfirmation": {
-    "message": "您确定要修改目的密碼嗎？"
+    "message": "你確定要覆寫目前的密碼嗎？"
   },
   "credits": {
-    "message": "製作人員"
+    "message": "銘謝"
   },
   "thankYou": {
     "message": "感謝"
@@ -483,17 +483,17 @@
     "message": "譯者"
   },
   "searchFolder": {
-    "message": "文件夾"
+    "message": "搜尋資料夾"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "搜尋收藏"
   },
   "noneFolder": {
-    "message": "沒有文件夾",
+    "message": "沒有資料夾",
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
-    "message": "我们使用 analytics 協助分析擴充元件的使用情況，以便我們改善程式。所有資料均為匿名。"
+    "message": "我们使用 analytics 協助分析擴充套件的使用情況，以便我們改善程式。所有資料均為匿名收集。"
   },
   "disableAddLoginNotification": {
     "message": "關閉新增網頁提示"
@@ -505,7 +505,7 @@
     "message": "希望 bitwarden 幫你儲存這個密碼嗎？"
   },
   "notificationAddSave": {
-    "message": "好，立即儲存"
+    "message": "好，現在儲存"
   },
   "notificationNeverSave": {
     "message": "此網站不再提示"
@@ -514,7 +514,7 @@
     "message": "關閉右鍵選項"
   },
   "disableContextMenuItemDesc": {
-    "message": "右鍵選項幫你快速使用密碼生成器，也可以登入分頁的網頁。"
+    "message": "右鍵選項幫你快速使用密碼產生器，也可以登入目前分頁的網站。"
   },
   "exportVault": {
     "message": "匯出密碼庫"
@@ -524,13 +524,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "你的密碼將匯出成未加密的 .csv 檔案。你不應將它存放或經由未加密的方法傳送（例如電郵）。用完後請立即將它刪除。"
+    "message": "你的密碼將匯出成未加密的 .csv 檔案。你不應將它存放或經由未經加密的方式傳送（例如電子郵件）。用完後請立即將它刪除。"
   },
   "exportMasterPassword": {
     "message": "輸入你的主密碼以匯出密碼庫資料。"
   },
   "exportVaultInfo": {
-    "message": "將密碼庫資料匯出成 .csv 檔案，方便修改和轉移資料。"
+    "message": "將密碼庫資料匯出成 .csv 檔案，方便變更與轉移資料。"
   },
   "shared": {
     "message": "共用"
@@ -563,10 +563,10 @@
     "message": "刪除附件"
   },
   "deleteAttachmentConfirmation": {
-    "message": "決定要刪除此附件嗎？"
+    "message": "確定要刪除此附件嗎？"
   },
   "deletedAttachment": {
-    "message": "附件已移除"
+    "message": "附件已刪除"
   },
   "newAttachment": {
     "message": "新增附件"
@@ -593,46 +593,46 @@
     "message": "更新加密金鑰前不能使用此功能。"
   },
   "premiumMembership": {
-    "message": "高級會員"
+    "message": "進階會員"
   },
   "premiumManage": {
-    "message": "管理會籍"
+    "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 bitwarden 網頁版密碼庫管理會籍。現在前往？"
+    "message": "您可以在 bitwarden 網頁版密碼庫管理您的會員資格。現在前往？"
   },
   "premiumRefresh": {
-    "message": "延續會籍"
+    "message": "延續會員資格"
   },
   "premiumNotCurrentMember": {
-    "message": "你目前不是高級會員。"
+    "message": "你目前不是進階會員。"
   },
   "premiumSignUpAndGet": {
-    "message": "成為高級會員並獲取："
+    "message": "成為進階會員並取得："
   },
   "ppremiumSignUpStorage": {
     "message": "1 GB 的加密檔案儲存。"
   },
   "ppremiumSignUpTwoStep": {
-    "message": "YubiKey，FIDO U2F 和 Duo 等額外的兩步驟登錄選項。"
+    "message": "YubiKey，FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
   },
   "ppremiumSignUpTotp": {
-    "message": "用於你的登入資料的 TOTP 驗證碼 (2FA) 生成器。"
+    "message": "用於你的登入資料的 TOTP 驗證碼 (2FA) 產生器。"
   },
   "ppremiumSignUpSupport": {
     "message": "優先客戶支援。"
   },
   "ppremiumSignUpFuture": {
-    "message": "所有未來的高級功能。更多即將推出！"
+    "message": "未來所有的進階功能。即將推出！"
   },
   "premiumPurchase": {
-    "message": "購買高級會籍"
+    "message": "購買進階會員資格"
   },
   "premiumPurchaseAlert": {
-    "message": "您可以在 bitwarden 網頁版密碼庫購買高級會籍。現在前往？"
+    "message": "你可以在 bitwarden 網頁版密碼庫購買進階會員資格。現在前往？"
   },
   "premiumCurrentMember": {
-    "message": "你是高級會員！"
+    "message": "你目前是進階會員！"
   },
   "premiumCurrentMemberThanks": {
     "message": "感謝你支持 bitwardan 。"
@@ -644,68 +644,68 @@
     "message": "重新整理完成"
   },
   "disableAutoTotpCopy": {
-    "message": "禁止自動複製 TOTP"
+    "message": "停用自動複製 TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "如果你的登入資料已有驗證器金鑰，TOTP 驗證碼會在你自動輸入時自動複製到你的剪貼簿。"
+    "message": "如果你的登入資料已包含驗證器金鑰，TOTP 驗證碼會在你自動填寫時自動複製到你的剪貼簿。"
   },
   "premiumRequired": {
-    "message": "需要高級會籍"
+    "message": "需要進階會員資格"
   },
   "premiumRequiredDesc": {
-    "message": "高級會員才可使用此功能。"
+    "message": "進階會員才可使用此功能。"
   },
   "enterVerificationCodeApp": {
-    "message": "輸入驗證器應用程式提供的 6 位驗證碼。"
+    "message": "輸入驗證器應用程式提供的 6 位數驗證碼。"
   },
   "enterVerificationCodeEmail": {
-    "message": "輸入已電郵至 {0} 的 6 位驗證碼"
+    "message": "輸入已傳送至電子郵件地址 {0} 的 6 位數驗證碼"
   },
   "rememberMe": {
-    "message": "記住登入"
+    "message": "記住我的登入資訊"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "再次發送驗證碼電郵"
+    "message": "再次傳送​​包含驗證碼的電子郵件"
   },
   "useAnotherTwoStepMethod": {
     "message": "使用另一種兩步驟登入方法"
   },
   "insertYubiKey": {
-    "message": "將你的 YubiKey 插入電腦的 USB 埠，然後按一下它的按鈕。"
+    "message": "將你的 YubiKey 插入電腦的 USB 連接埠，然後按一下它的按鈕。"
   },
   "insertU2f": {
-    "message": "將你的安全鑰匙插入電腦的 USB 埠，然後按一下它的按鈕（如有）。"
+    "message": "將你的安全鑰匙插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
   "loginUnavailable": {
     "message": "無法登入"
   },
   "noTwoStepProviders": {
-    "message": "此帳戶已啟用兩步驟登入，但是本瀏覽器不支援已設置的兩步驟登入方法。"
+    "message": "此帳戶已啟用兩步驟登入，但是本瀏覽器不支援已設定的兩步驟登入方式。"
   },
   "noTwoStepProviders2": {
-    "message": "請使用受支援的瀏覽器（例如 Chrome ），及／或新增可以更好地跨瀏覽器的兩步驟登入方法（例如驗證器應用程式）。"
+    "message": "請使用已支援的瀏覽器（例如 Chrome ），及／或新增可以更好地跨瀏覽器的兩步驟登入方法（例如驗證器應用程式）。"
   },
   "twoStepOptions": {
     "message": "兩步驟登入選項"
   },
   "recoveryCodeDesc": {
-    "message": "無法使用任何兩步驟登入方式？用復原密碼停用所有兩步驟登入方式。"
+    "message": "無法使用任何兩步驟登入方式？用復原代碼停用所有兩步驟登入方式。"
   },
   "recoveryCodeTitle": {
-    "message": "復原密碼"
+    "message": "復原代碼"
   },
   "authenticatorAppTitle": {
     "message": "驗證器應用程式"
   },
   "authenticatorAppDesc": {
-    "message": "使用驗證器應用程式 （如 Authy 或 Google Authenticator） 生成基於時間的驗證碼。",
+    "message": "使用驗證器應用程式 （如 Authy 或 Google Authenticator） 產生基於時間的驗證碼。",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP 安全鑰匙"
   },
   "yubiKeyDesc": {
-    "message": "使用 YubiKey 存取你的帳戶。兼容於 YubiKey 4, 4 Nano, 4C, 和 NEO 設備。"
+    "message": "使用 YubiKey 存取你的帳戶。相容於 YubiKey 4, 4 Nano, 4C, 和 NEO 裝置。"
   },
   "duoDesc": {
     "message": "與 Duo Security 驗證，可使用 Duo Mobile 程式， SMS ，致電或 U2F 安全鑰匙。",
@@ -718,10 +718,10 @@
     "message": "FIDO U2F 安全鑰匙"
   },
   "emailTitle": {
-    "message": "電郵"
+    "message": "電子郵件"
   },
   "emailDesc": {
-    "message": "驗證碼將會電郵給你。"
+    "message": "驗證碼將使用電子郵件傳送給你。"
   },
   "selfHostedEnvironment": {
     "message": "自我託管的環境"
@@ -736,19 +736,19 @@
     "message": "適用於進階使用者。你可以單獨指定各個服務的基礎 URL。"
   },
   "baseUrl": {
-    "message": "伺服器網址"
+    "message": "伺服器 URL"
   },
   "apiUrl": {
-    "message": "API 伺服器網址"
+    "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "Web 保存庫伺服器 URL"
+    "message": "Web 儲存庫伺服器 URL"
   },
   "identityUrl": {
     "message": "身分伺服器 URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "圖示伺服器 URL"
   },
   "environmentSaved": {
     "message": "環境 URL 已儲存。"
@@ -757,7 +757,7 @@
     "message": "啟用頁面載入時自動填寫表單"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "如果網頁載入時偵測到登入表單，則自動執行表單填寫。"
+    "message": "如果頁面載入時偵測到登入表單，則自動執行表單填寫。"
   },
   "experimentalFeature": {
     "message": "目前這是一項實驗性功能。要使用需自行承擔風險。"
@@ -769,7 +769,7 @@
     "message": "產生並將一個新的隨機密碼複製到剪貼簿中。"
   },
   "privateModeMessage": {
-    "message": "很遺憾，在這個瀏覽器的隱私模式下，此視窗無法使用。"
+    "message": "很遺憾，在瀏覽器的隱私模式下，此視窗無法使用。"
   },
   "customFields": {
     "message": "自訂欄位"
@@ -796,76 +796,76 @@
     "message": "布林值"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "如果你點選彈出式視窗外的任意區域，將導致彈出式視窗關閉。你想在新視窗中開啟此彈出式視窗，以讓它不關閉嗎？"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "停用網站圖示"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "在你密碼庫的每個登入資料旁顯示一個可辨識圖示。"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "持卡人姓名"
   },
   "number": {
-    "message": "Number"
+    "message": "號碼"
   },
   "brand": {
-    "message": "Brand"
+    "message": "品牌"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "到期月份"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "到期年份"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "到期"
   },
   "january": {
-    "message": "January"
+    "message": "一月"
   },
   "february": {
-    "message": "February"
+    "message": "二月"
   },
   "march": {
-    "message": "March"
+    "message": "三月"
   },
   "april": {
-    "message": "April"
+    "message": "四月"
   },
   "may": {
-    "message": "May"
+    "message": "五月"
   },
   "june": {
-    "message": "June"
+    "message": "六月"
   },
   "july": {
-    "message": "July"
+    "message": "七月"
   },
   "august": {
-    "message": "August"
+    "message": "八月"
   },
   "september": {
-    "message": "September"
+    "message": "九月"
   },
   "october": {
-    "message": "October"
+    "message": "十月"
   },
   "november": {
-    "message": "November"
+    "message": "十一月"
   },
   "december": {
-    "message": "December"
+    "message": "十二月"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "安全代碼"
   },
   "ex": {
-    "message": "ex."
+    "message": "例如"
   },
   "title": {
-    "message": "Title"
+    "message": "稱呼"
   },
   "mr": {
     "message": "Mr"
@@ -880,102 +880,102 @@
     "message": "Dr"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "名"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "中間名"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "姓"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "身分名稱"
   },
   "company": {
-    "message": "Company"
+    "message": "公司"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "社會保險號碼"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "護照號碼"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "許可證編號"
   },
   "email": {
-    "message": "Email"
+    "message": "電子郵件"
   },
   "phone": {
-    "message": "Phone"
+    "message": "電話號碼"
   },
   "address": {
-    "message": "Address"
+    "message": "地址"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "地址 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "地址 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "地址 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "市\/鎮"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "州\/省"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "郵遞區號"
   },
   "country": {
-    "message": "Country"
+    "message": "國家"
   },
   "type": {
-    "message": "Type"
+    "message": "類型"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "登入"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "帳戶資料"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "安全記事"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "卡片"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "身分"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "密碼歷程記錄"
   },
   "back": {
-    "message": "Back"
+    "message": "返回"
   },
   "collections": {
-    "message": "Collections"
+    "message": "收藏"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "我的最愛"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "彈出至新視窗"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "重新整理"
   },
   "cards": {
-    "message": "Cards"
+    "message": "卡片"
   },
   "identities": {
-    "message": "Identities"
+    "message": "身分"
   },
   "clear": {
-    "message": "Clear"
+    "message": "清除"
   }
 }

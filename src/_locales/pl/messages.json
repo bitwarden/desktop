@@ -486,7 +486,7 @@
     "message": "Szukaj folderu"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Przeszukaj kolekcje"
   },
   "noneFolder": {
     "message": "Brak folderu",
@@ -958,24 +958,24 @@
     "message": "Powrót"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kolekcje"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Ulubione"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Wyświetl w nowym oknie"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Odśwież"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Karty"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Tożsamości"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Wyczyść"
   }
 }

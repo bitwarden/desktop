@@ -65,16 +65,16 @@
     "message": "Kopieer Wachtwoord"
   },
   "copyUri": {
-    "message": "Kopieer URL"
+    "message": "Kopieer URI"
   },
   "copyUsername": {
     "message": "Kopieer Gebruikersnaam"
   },
   "copyNumber": {
-    "message": "Nummer kopiëren"
+    "message": "Nummer Kopiëren"
   },
   "copySecurityCode": {
-    "message": "Kopieër beveiligingscode"
+    "message": "Kopieër Beveiligingscode"
   },
   "autoFill": {
     "message": "Auto-invullen"
@@ -95,7 +95,7 @@
     "message": "Voeg een website toe"
   },
   "addItem": {
-    "message": "Voeg item toe"
+    "message": "Voeg Item Toe"
   },
   "passwordHint": {
     "message": "Wachtwoordhint"
@@ -194,22 +194,22 @@
     "message": "bitwarden Webkluis"
   },
   "bitWebVaultInfo": {
-    "message": "Beheer je logins vanuit elke browser met de bitwarden webkluis."
+    "message": "Beheer je items vanuit elke browser met de bitwarden webkluis."
   },
   "bitIosVault": {
     "message": "bitwarden iOS-kluis"
   },
   "bitIosVaultInfo": {
-    "message": "Beheer je logins vanuit elke browser met de bitwarden iOS-kluis."
+    "message": "Beheer je items vanaf je mobiele apparaten met de bitwarden iOS-kluis."
   },
   "bitAndrVault": {
     "message": "bitwarden Android-kluis"
   },
   "bitAndrVaultInfo": {
-    "message": "Beheer je logins vanuit elke browser met de bitwarden Android-kluis."
+    "message": "Beheer je items vanaf je mobiele apparaten met de bitwarden Android-kluis."
   },
   "importItems": {
-    "message": "Items importeren"
+    "message": "Items Importeren"
   },
   "importItemsInfo": {
     "message": "Importeer snel al je gegevens vanuit andere wachtwoordbeheerders."
@@ -245,13 +245,13 @@
     "message": "Bewerk"
   },
   "view": {
-    "message": "Bekijken"
+    "message": "Bekijk"
   },
   "noItemsInList": {
     "message": "Er zijn geen items om weer te geven."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Item-informatie"
   },
   "username": {
     "message": "Gebruikersnaam"
@@ -266,16 +266,16 @@
     "message": "Aantekeningen"
   },
   "editItem": {
-    "message": "Item bewerken"
+    "message": "Item Bewerken"
   },
   "folder": {
     "message": "Map"
   },
   "deleteItem": {
-    "message": "Item verwijderen"
+    "message": "Item Verwijderen"
   },
   "viewItem": {
-    "message": "Item bekijken"
+    "message": "Item Bekijken"
   },
   "launchWebsite": {
     "message": "Open Website"
@@ -314,7 +314,7 @@
     "message": "Versleutel"
   },
   "lockNow": {
-    "message": "Nu vergrendelen"
+    "message": "Nu Vergrendelen"
   },
   "immediately": {
     "message": "Onmiddelijk"
@@ -399,7 +399,7 @@
     "message": "Nee"
   },
   "unexpectedError": {
-    "message": "Een onverwachte fout heeft zich voorgedaan."
+    "message": "Er heeft zich een onverwachte fout voorgedaan."
   },
   "nameRequired": {
     "message": "Naam is vereist."
@@ -447,7 +447,7 @@
     "message": "Synchronisatie mislukt"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Je kunt een bulk import van items doen vanuit de bitwarden.com webkluis. Wil je de website nu bezoeken?"
   },
   "passwordCopied": {
     "message": "Wachtwoord gekopieerd"
@@ -456,16 +456,16 @@
     "message": "URI"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Item toegevoegd"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Item bewerkt"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Ben je zeker dat je dit item wilt verwijderen?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Item verwijderd"
   },
   "overwritePassword": {
     "message": "Overschrijf Wachtwoord"
@@ -486,7 +486,7 @@
     "message": "Zoek in map"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Zoek in verzameling"
   },
   "noneFolder": {
     "message": "Geen map",
@@ -617,7 +617,7 @@
     "message": "Extra tweestaps inlogopties zoals YubiKey, FIDO U2F en Duo."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "TOTP verificatiecode (2FA) generator voor logins in je kluis."
   },
   "ppremiumSignUpSupport": {
     "message": "Ondersteuning met hoge prioriteit."
@@ -629,7 +629,7 @@
     "message": "Koop Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Je kunt een premium lidmaatschap aankopen op de bitwarden.com webkluis. Wil je de website nu bezoeken?"
   },
   "premiumCurrentMember": {
     "message": "U bent een premium lid!"
@@ -712,10 +712,10 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Gebruik een FIDO U2F beveiligingssleutel om toegang tot je account te krijgen."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F Veiligheidssleutel"
   },
   "emailTitle": {
     "message": "E-mail"
@@ -727,13 +727,13 @@
     "message": "Zelf gehoste omgeving"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specificeer de basis-URL van je op locatie gehoste bitwarden installatie."
   },
   "customEnvironment": {
     "message": "Aangepaste omgeving"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Voor gevorderde gebruikers. Je kan de basis-URL van iedere service afzonderlijk instellen."
   },
   "baseUrl": {
     "message": "Server URL"
@@ -748,7 +748,7 @@
     "message": "Gebruikersbeheer Server URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Icoontjes-server URL"
   },
   "environmentSaved": {
     "message": "De omgeving URL's zijn opgeslagen."
@@ -799,139 +799,139 @@
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Schakel Website Icoontjes Uit"
   },
   "disableFaviconDesc": {
     "message": "Website Icons provides a recognizable icon next to each login item in your vault."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Naam Kaarthouder"
   },
   "number": {
-    "message": "Number"
+    "message": "Nummer"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Merk"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Vervalmaand"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Vervaljaar"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Vervaldatum"
   },
   "january": {
-    "message": "January"
+    "message": "januari"
   },
   "february": {
-    "message": "February"
+    "message": "februari"
   },
   "march": {
-    "message": "March"
+    "message": "maart"
   },
   "april": {
-    "message": "April"
+    "message": "april"
   },
   "may": {
-    "message": "May"
+    "message": "mei"
   },
   "june": {
-    "message": "June"
+    "message": "juni"
   },
   "july": {
-    "message": "July"
+    "message": "juli"
   },
   "august": {
-    "message": "August"
+    "message": "augustus"
   },
   "september": {
-    "message": "September"
+    "message": "september"
   },
   "october": {
-    "message": "October"
+    "message": "oktober"
   },
   "november": {
-    "message": "November"
+    "message": "november"
   },
   "december": {
-    "message": "December"
+    "message": "december"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Beveiligingscode"
   },
   "ex": {
-    "message": "ex."
+    "message": "bv."
   },
   "title": {
-    "message": "Title"
+    "message": "Titel"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Mr."
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Mvr."
   },
   "ms": {
-    "message": "Ms"
+    "message": "Mej."
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr."
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Voornaam"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Tweede Voornaam"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Achternaam"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Identiteitsnaam"
   },
   "company": {
-    "message": "Company"
+    "message": "Bedrijf"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Rijksregisternummer \/ Burgerservicenummer"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Paspoortnummer"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Rijbewijsnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mailadres"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefoonnummer"
   },
   "address": {
-    "message": "Address"
+    "message": "Adres"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adres 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adres 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adres 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Stag \/ Gemeente"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Staat \/ Provincie"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Postcode"
   },
   "country": {
-    "message": "Country"
+    "message": "Land"
   },
   "type": {
     "message": "Type"
@@ -943,39 +943,39 @@
     "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Veilige Notitie"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kaart"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identiteit"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Wachtwoordgeschiedenis"
   },
   "back": {
-    "message": "Back"
+    "message": "Terug"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Verzamelingen"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favorieten"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Open in een nieuw venster"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Herlaad"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Kaarten"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identiteiten"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Maak leeg"
   }
 }

@@ -486,7 +486,7 @@
     "message": "Mapa pretraživanja"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Zbirka pretraživanja"
   },
   "noneFolder": {
     "message": "Nema mape",
@@ -958,24 +958,24 @@
     "message": "Natrag"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Zbirke"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoriti"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Otvori u novom prozoru"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Osvježi"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Kartice"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identiteti"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Očisti"
   }
 }

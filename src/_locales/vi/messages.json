@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Đăng nhập hoặc tạo tài khoản mới để truy cập hầm an toàn của bạn."
+    "message": "Đăng nhập hoặc tạo tài khoản mới để truy cập kho mật khẩu của bạn."
   },
   "createAccount": {
     "message": "Tạo Tài Khoản"
@@ -35,7 +35,7 @@
     "message": "Mật khẩu chính"
   },
   "masterPassDesc": {
-    "message": "Mật khẩu chính là mật khẩu bạn sử dụng để truy cập hầm an toàn của bạn. Nó rất quan trọng nên không được quên mật khẩu chính của mình. Không có cách nào để khôi phục lại mật khẩu chính trong trường hợp bạn quên nó."
+    "message": "Mật khẩu chính là mật khẩu bạn sử dụng để truy cập kho mật khẩu của bạn. Nó rất quan trọng nên bạn không được quên mật khẩu chính của mình. Không có cách nào để khôi phục lại mật khẩu chính nếu bạn quên nó."
   },
   "masterPassHintDesc": {
     "message": "Một gợi ý mật khẩu có thể giúp bạn nhớ lại mật khẩu chính của bạn nếu bạn quên nó."
@@ -50,7 +50,7 @@
     "message": "Thẻ"
   },
   "myVault": {
-    "message": "Hầm của tôi"
+    "message": "Kho của tôi"
   },
   "tools": {
     "message": "Công cụ"
@@ -86,7 +86,7 @@
     "message": "Không có thông tin đăng nhập phù hợp."
   },
   "vaultLocked": {
-    "message": "Hầm bị khóa."
+    "message": "Kho bị khóa."
   },
   "autoFillInfo": {
     "message": "Không có thông tin đăng nhập nào sẵn có để tự động điền vào tab hiện tại."
@@ -140,7 +140,7 @@
     "message": "Thêm thư mục"
   },
   "name": {
-    "message": "Tên"
+    "message": "Tên mục"
   },
   "editFolder": {
     "message": "Chỉnh sửa thư mục"
@@ -179,7 +179,7 @@
     "message": "Đồng bộ"
   },
   "syncVaultNow": {
-    "message": "Đồng bộ Hầm mật khẩu ngay"
+    "message": "Đồng bộ Kho mật khẩu ngay"
   },
   "lastSync": {
     "message": "Lần đồng bộ gần nhất:"
@@ -191,22 +191,22 @@
     "message": "Tự động tạo mật khẩu mạnh mẽ, duy nhất cho đăng nhập của bạn."
   },
   "bitWebVault": {
-    "message": "Hầm bitwarden trên Web"
+    "message": "Kho bitwarden nền Web"
   },
   "bitWebVaultInfo": {
-    "message": "Quản lý các mục đặng nhập của bạn từ mọi trình duyệt web với hầm bitwarden nền web."
+    "message": "Quản lý các mục đăng nhập của bạn từ mọi trình duyệt web với kho bitwarden nền web."
   },
   "bitIosVault": {
-    "message": "Hầm bitwarden cho iOS"
+    "message": "Kho bitwarden cho iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng hầm bitwarden trên iOS."
+    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng kho bitwarden trên iOS."
   },
   "bitAndrVault": {
-    "message": "Hầm bitwarden cho Android"
+    "message": "Kho bitwarden cho Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng hầm bitwarden trên Android."
+    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng kho bitwarden trên Android."
   },
   "importItems": {
     "message": "Nhập mục"
@@ -239,7 +239,7 @@
     "message": "Tránh các ký tự không rõ ràng"
   },
   "searchVault": {
-    "message": "Tìm kiếm trong hầm"
+    "message": "Tìm kiếm trong kho"
   },
   "edit": {
     "message": "Sửa"
@@ -296,10 +296,10 @@
     "message": "Vô hiệu hóa phân tích"
   },
   "rateExtension": {
-    "message": "Đánh giá tiện ích mở rộng"
+    "message": "Đánh giá Tiện ích mở rộng"
   },
   "rateExtensionDesc": {
-    "message": "Xin hãy nhìn nhận và cho chúng tôi với một đánh giá tốt!"
+    "message": "Xin hãy nhìn nhận và đánh giá tốt cho chúng tôi!"
   },
   "browserNotSupportClipboard": {
     "message": "Trình duyệt web của bạn không hỗ trợ dễ dàng sao chép bộ nhớ tạm. Bạn có thể sao chép nó theo cách thủ công để thay thế."
@@ -411,13 +411,13 @@
     "message": "Thay đổi mật khẩu chính"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Bạn có thể thay đổi mật khẩu chính trên hầm bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
+    "message": "Bạn có thể thay đổi mật khẩu chính trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "changeEmailConfirmation": {
-    "message": "Bạn có thể thay đổi địa chỉ email trên hầm bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
+    "message": "Bạn có thể thay đổi địa chỉ email trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh thông tin đăng nhập của bạn bằng một thiết bị khác như khóa bảo mật, ứng dụng xác thực, SMS, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong hầm bitwarden nền web. Bạn có muốn ghé thăm trang web bây giờ?"
+    "message": "Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh thông tin đăng nhập của bạn bằng một thiết bị khác như khóa bảo mật, ứng dụng xác thực, SMS, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong kho bitwarden nền web. Bạn có muốn ghé thăm trang web bây giờ?"
   },
   "loggingOut": {
     "message": "Đang đăng xuất"
@@ -447,7 +447,7 @@
     "message": "Đồng bộ thất bại"
   },
   "importItemsConfirmation": {
-    "message": "Bạn có thể nhập mục đăng nhập hàng loạt trên hầm bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
+    "message": "Bạn có thể nhập các trường đăng nhập hàng loạt trên kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "passwordCopied": {
     "message": "Đã sao chép mật khẩu"
@@ -489,17 +489,17 @@
     "message": "Tìm kiếm bộ sưu tập"
   },
   "noneFolder": {
-    "message": "Không có thư mục",
+    "message": "Không được phân loại",
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
-    "message": "Chúng tôi sử dụng phân tích để tìm hiểu rõ hơn cách bạn sử dụng tiện ích mở rộng để chúng tôi có thể làm cho nó tốt hơn. Tất cả dữ liệu sẽ được thu thập ẩn danh."
+    "message": "Chúng tôi sử dụng phân tích để hiểu rõ hơn cách bạn sử dụng tiện ích mở rộng, nó chúng tôi cải thiện ứng dụng ngày càng tốt hơn. Tất cả dữ liệu sẽ được thu thập ẩn danh."
   },
   "disableAddLoginNotification": {
     "message": "Vô hiệu thông báo Thêm đăng nhập"
   },
   "addLoginNotificationDesc": {
-    "message": "'Thông báo Thêm đăng nhập' sẽ tự động nhắc bạn lưu các đăng nhập mới vào hầm an toàn của bạn bất cứ khi nào bạn đăng nhập trang web lần đầu tiên."
+    "message": "'Thông báo Thêm đăng nhập' sẽ nhắc bạn lưu thông tin đăng nhập mới vào kho mật khẩu của bạn mỗi khi bạn đăng nhập lần đầu vào một trang web mới."
   },
   "notificationAddDesc": {
     "message": "Nên bitwarden nhớ mật khẩu này cho bạn?"
@@ -511,13 +511,13 @@
     "message": "Không bao giờ lưu thông tin từ trang này"
   },
   "disableContextMenuItem": {
-    "message": "Tắt tuỳ chọn trong Menu Ngữ Cảnh"
+    "message": "Tắt tuỳ chọn trong Menu ngữ cảnh"
   },
   "disableContextMenuItemDesc": {
     "message": "Tùy chọn menu ngữ cảnh giúp bạn truy cập nhanh thông tin đăng nhập và tạo mật khẩu cho trang web trong tab mà bạn đang mở."
   },
   "exportVault": {
-    "message": "Xuất Hầm"
+    "message": "Xuất Kho"
   },
   "warning": {
     "message": "CẢNH BÁO",
@@ -527,16 +527,16 @@
     "message": "Bản xuất ra này chứa dữ liệu không được mã hóa của bạn ở định dạng .csv. Bạn không nên lưu trữ hoặc gửi qua kênh không an toàn (chẳng hạn như email). Xóa nó ngay lập tức sau khi bạn sử dụng nó xong."
   },
   "exportMasterPassword": {
-    "message": "Nhập mật khẩu chính để xuất hầm dữ liệu của bạn."
+    "message": "Nhập mật khẩu chính để xuất kho dữ liệu của bạn."
   },
   "exportVaultInfo": {
-    "message": "Xuất hầm dữ liệu của bạn ở định dạng .csv để bạn có thể dễ dàng chỉnh sửa hoặc mang nó đi nơi khác."
+    "message": "Xuất kho dữ liệu của bạn ở định dạng .csv để bạn có thể dễ dàng chỉnh sửa hoặc mang nó đi nơi khác."
   },
   "shared": {
     "message": "Đã chia sẻ"
   },
   "shareVault": {
-    "message": "Chia sẻ hầm an toàn của bạn"
+    "message": "Chia sẻ kho mật khẩu của bạn"
   },
   "shareVaultInfo": {
     "message": "Tạo một tổ chức để chia sẻ các thông tin đăng nhập của bạn một cách an toàn với những người dùng khác."
@@ -599,7 +599,7 @@
     "message": "Quản lý Thành viên"
   },
   "premiumManageAlert": {
-    "message": "Bạn có thể quản lý các thành viên trên hầm bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
+    "message": "Bạn có thể quản lý các thành viên trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "premiumRefresh": {
     "message": "Làm mới thành viên"
@@ -617,7 +617,7 @@
     "message": "Các tùy chọn xác thực hai lớp bổ sung như YubiKey, FIDO U2F và Duo."
   },
   "ppremiumSignUpTotp": {
-    "message": "Mã xác nhận TOTP (2FA) để đăng nhập vào hầm an toàn của bạn."
+    "message": "Mã xác nhận TOTP (2FA) để đăng nhập vào kho mật khẩu của bạn."
   },
   "ppremiumSignUpSupport": {
     "message": "Hỗ trợ khách hàng ưu tiên."
@@ -629,7 +629,7 @@
     "message": "Mua bản Cao Cấp"
   },
   "premiumPurchaseAlert": {
-    "message": "Bạn có thể nâng cấp làm thành viên cao cấp trên hầm bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
+    "message": "Bạn có thể nâng cấp làm thành viên cao cấp trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "premiumCurrentMember": {
     "message": "Bạn là một thành viên cao cấp!"
@@ -742,7 +742,7 @@
     "message": "Địa chỉ API máy chủ"
   },
   "webVaultUrl": {
-    "message": "Địa chỉ hầm web máy chủ"
+    "message": "Địa chỉ máy chủ kho web"
   },
   "identityUrl": {
     "message": "Địa chỉ nhận dạng máy chủ"
@@ -754,7 +754,7 @@
     "message": "Địa chỉ môi trường đã được lưu."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Bật Tự động điền vào Tải trang"
+    "message": "Bật Tự động điền khi tải xong trang"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Nếu có một biểu mẫu đăng nhập được phát hiện, thực hiện tự động điền khi trang web tải xong."
@@ -802,7 +802,7 @@
     "message": "Vô hiệu hoá biểu tượng trang web"
   },
   "disableFaviconDesc": {
-    "message": "Trang web biểu tượng cung cấp các biểu tượng nhận dạng trang web bên cạnh mỗi mục đăng nhập trong hầm an toàn của bạn."
+    "message": "Biểu tượng trang web cung cấp các biểu tượng nhận dạng trang web bên cạnh mỗi mục đăng nhập trong kho mật khẩu của bạn."
   },
   "cardholderName": {
     "message": "Tên chủ thẻ"
@@ -889,7 +889,7 @@
     "message": "Họ"
   },
   "identityName": {
-    "message": "Tên nhận dạng"
+    "message": "Tên đầy đủ"
   },
   "company": {
     "message": "Công ty"
@@ -976,6 +976,6 @@
     "message": "Danh tính"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Xoá"
   }
 }

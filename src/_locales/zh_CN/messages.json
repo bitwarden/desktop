@@ -808,7 +808,7 @@
     "message": "持卡人姓名"
   },
   "number": {
-    "message": "数字"
+    "message": "号码"
   },
   "brand": {
     "message": "品牌"
@@ -976,6 +976,6 @@
     "message": "身份"
   },
   "clear": {
-    "message": "Clear"
+    "message": "清除"
   }
 }
