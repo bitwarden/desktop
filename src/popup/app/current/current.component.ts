@@ -24,7 +24,11 @@ export class CurrentController {
         this.inSidebar = utilsService.inSidebar($window);
         this.disableSearch = utilsService.isEdge();
 
-        document.getElementById('search').focus();
+        $scope.$on('$viewContentLoaded', function () {
+            $timeout(function () {
+                document.getElementById('search').focus();
+            }, 50);
+        });
 
         $scope.$on('syncCompleted', (event: any, successfully: boolean) => {
             if (this.loaded) {
