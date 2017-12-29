@@ -36,7 +36,7 @@ export class CurrentController {
     }
 
     $onInit() {
-        this.$timeout(function () {
+        this.$timeout(() => {
             document.getElementById('search').focus();
         }, 50);
 
