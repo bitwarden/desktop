@@ -16,8 +16,11 @@ const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName',
 const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top'];
 
-const UsernameFieldNames: string[] = ['username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address',
-    'userid', 'user id'];
+const UsernameFieldNames: string[] = [
+    // English
+    'username', 'user name', 'email', 'email address', 'e-mail', 'e-mail address', 'userid', 'user id',
+    // German
+    'benutzername', 'benutzer name', 'email adresse', 'e-mail adresse', 'benutzerid', 'benutzer id'];
 
 /* tslint:disable */
 const IsoCountries: { [id: string]: string; } = {
