@@ -116,7 +116,6 @@
     }
   },
   "web_accessible_resources": [
-    "overlay/popup.html",
     "notification/bar.html"
   ],
   "-ms-preload": {
