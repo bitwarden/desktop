@@ -11,7 +11,7 @@ import { Identity } from './identity';
 import { Login } from './login';
 import { SecureNote } from './secureNote';
 
-import { BrowserUtilsService } from '../../services/abstractions/browserUtils.service';
+import BrowserUtilsService from '../../services/browserUtils.service';
 
 class Cipher extends Domain {
     id: string;
@@ -31,8 +31,6 @@ class Cipher extends Domain {
     attachments: Attachment[];
     fields: Field[];
     collectionIds: string[];
-
-    private browserUtilsService: BrowserUtilsService;
 
     constructor(obj?: CipherData, alreadyEncrypted: boolean = false, localData: any = null) {
         super();
@@ -119,12 +117,7 @@ class Cipher extends Domain {
                 model.login = await this.login.decrypt(this.organizationId);
                 model.subTitle = model.login.username;
                 if (model.login.uri) {
-                    if (this.browserUtilsService == null) {
-                        this.browserUtilsService = chrome.extension.getBackgroundPage()
-                            .bitwardenMain.browserUtilsService as BrowserUtilsService;
-                    }
-
-                    model.login.domain = this.browserUtilsService.getDomain(model.login.uri);
+                    model.login.domain = BrowserUtilsService.getDomain(model.login.uri);
                 }
                 break;
             case CipherType.SecureNote:

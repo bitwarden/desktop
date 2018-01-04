@@ -19,6 +19,7 @@ import ChromeStorageService from '../services/chromeStorage.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import ConstantsService from '../services/constants.service';
+import ContainerService from '../services/container.service';
 import CryptoService from '../services/crypto.service';
 import EnvironmentService from '../services/environment.service';
 import FolderService from '../services/folder.service';
@@ -80,7 +81,8 @@ export default class MainBackground {
         this.browserUtilsService = new BrowserUtilsService();
         this.i18nService = i18nService(this.browserUtilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.browserUtilsService);
-        this.cryptoService = new CryptoService(this.storageService, this.storageService);
+        this.cryptoService = ContainerService.cryptoService = new CryptoService(this.storageService,
+            this.storageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.browserUtilsService,

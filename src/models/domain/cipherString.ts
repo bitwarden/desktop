@@ -1,5 +1,6 @@
 import { EncryptionType } from '../../enums/encryptionType.enum';
-import { CryptoService } from '../../services/abstractions/crypto.service';
+
+import ContainerService from '../../services/container.service';
 
 class CipherString {
     encryptedString?: string;
@@ -8,8 +9,6 @@ class CipherString {
     cipherText?: string;
     initializationVector?: string;
     mac?: string;
-
-    private cryptoService: CryptoService;
 
     constructor(encryptedStringOrType: string | EncryptionType, ct?: string, iv?: string, mac?: string) {
         if (ct != null) {
@@ -88,25 +87,23 @@ class CipherString {
         }
     }
 
-    decrypt(orgId: string) {
+    decrypt(orgId: string): Promise<string> {
         if (this.decryptedValue) {
             return Promise.resolve(this.decryptedValue);
         }
 
-        const self = this;
-        if (this.cryptoService == null) {
-            this.cryptoService = chrome.extension.getBackgroundPage()
-                .bitwardenMain.cryptoService as CryptoService;
+        if (ContainerService.cryptoService == null) {
+            throw new Error('ContainerService.cryptoService not initialized');
         }
 
-        return this.cryptoService.getOrgKey(orgId).then((orgKey: any) => {
-            return self.cryptoService.decrypt(self, orgKey);
+        return ContainerService.cryptoService.getOrgKey(orgId).then((orgKey: any) => {
+            return ContainerService.cryptoService.decrypt(this, orgKey);
         }).then((decValue: any) => {
-            self.decryptedValue = decValue;
-            return self.decryptedValue;
+            this.decryptedValue = decValue;
+            return this.decryptedValue;
         }).catch(() => {
-            self.decryptedValue = '[error: cannot decrypt]';
-            return self.decryptedValue;
+            this.decryptedValue = '[error: cannot decrypt]';
+            return this.decryptedValue;
         });
     }
 }
