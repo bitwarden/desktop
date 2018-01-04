@@ -1,11 +1,11 @@
 import * as template from './pop-out.component.html';
 
-import { UtilsService } from '../../../services/abstractions/utils.service';
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 
 export class PopOutController implements ng.IController {
     i18n: any;
 
-    constructor(private $analytics: any, private $window: any, private utilsService: UtilsService,
+    constructor(private $analytics: any, private $window: any, private browserUtilsService: BrowserUtilsService,
         private i18nService: any) {
         this.i18n = i18nService;
     }
@@ -14,7 +14,7 @@ export class PopOutController implements ng.IController {
         this.$analytics.eventTrack('Expand Vault');
 
         let href = this.$window.location.href;
-        if (this.utilsService.isEdge()) {
+        if (this.browserUtilsService.isEdge()) {
             const popupIndex = href.indexOf('/popup/');
             if (popupIndex > -1) {
                 href = href.substring(popupIndex);
@@ -39,7 +39,7 @@ export class PopOutController implements ng.IController {
                 height: bodyRect.height,
             });
 
-            if (this.utilsService.inPopup(this.$window)) {
+            if (this.browserUtilsService.inPopup(this.$window)) {
                 this.$window.close();
             }
         } else {

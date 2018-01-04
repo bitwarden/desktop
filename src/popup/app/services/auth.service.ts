@@ -1,13 +1,13 @@
 import { DeviceRequest } from '../../../models/request/deviceRequest';
 import { TokenRequest } from '../../../models/request/tokenRequest';
 
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
-import { UtilsService } from '../../../services/abstractions/utils.service';
 
 class AuthService {
     constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
-        public tokenService: any, public $rootScope: any, public appIdService: any, public utilsService: UtilsService,
-        public constantsService: any) {
+        public tokenService: any, public $rootScope: any, public appIdService: any,
+        public browserUtilsService: BrowserUtilsService, public constantsService: any) {
     }
 
     async logIn(email: string, masterPassword: string, twoFactorProvider?: number,
@@ -19,7 +19,7 @@ class AuthService {
         const storedTwoFactorToken = await this.tokenService.getTwoFactorToken(email);
         const hashedPassword = await this.cryptoService.hashPassword(masterPassword, key);
 
-        const deviceRequest = new DeviceRequest(appId, this.utilsService);
+        const deviceRequest = new DeviceRequest(appId, this.browserUtilsService);
 
         let request: TokenRequest;
 

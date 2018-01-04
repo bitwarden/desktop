@@ -1,14 +1,14 @@
+import BrowserUtilsService from '../services/browserUtils.service';
 import CipherService from '../services/cipher.service';
-import UtilsService from '../services/utils.service';
 
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];
     private webRequest: any;
     private isFirefox: boolean;
 
-    constructor(utilsService: UtilsService, private cipherService: CipherService) {
+    constructor(browserUtilsService: BrowserUtilsService, private cipherService: CipherService) {
         this.webRequest = (window as any).chrome.webRequest;
-        this.isFirefox = utilsService.isFirefox();
+        this.isFirefox = browserUtilsService.isFirefox();
     }
 
     async init() {
@@ -24,7 +24,7 @@ export default class WebRequestBackground {
                 return;
             }
 
-            const domain = UtilsService.getDomain(details.url);
+            const domain = BrowserUtilsService.getDomain(details.url);
             if (domain == null) {
                 if (callback) {
                     callback();

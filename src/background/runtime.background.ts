@@ -5,6 +5,7 @@ import BrowserApi from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import AutofillService from '../services/autofill.service';
+import BrowserUtilsService from '../services/browserUtils.service';
 import CipherService from '../services/cipher.service';
 import UtilsService from '../services/utils.service';
 
@@ -134,7 +135,7 @@ export default class RuntimeBackground {
             }
 
             const loginInfo = this.main.loginsToAdd[i];
-            const tabDomain = UtilsService.getDomain(tab.url);
+            const tabDomain = BrowserUtilsService.getDomain(tab.url);
             if (tabDomain != null && tabDomain !== loginInfo.domain) {
                 continue;
             }
@@ -172,7 +173,7 @@ export default class RuntimeBackground {
             }
 
             const loginInfo = this.main.loginsToAdd[i];
-            const tabDomain = UtilsService.getDomain(tab.url);
+            const tabDomain = BrowserUtilsService.getDomain(tab.url);
             if (tabDomain != null && tabDomain !== loginInfo.domain) {
                 continue;
             }
@@ -185,7 +186,7 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
-        const loginDomain = UtilsService.getDomain(loginInfo.url);
+        const loginDomain = BrowserUtilsService.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
         }

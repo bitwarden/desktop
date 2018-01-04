@@ -1,8 +1,8 @@
 import * as angular from 'angular';
 import { BrowserType } from '../../../enums/browserType.enum';
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { StorageService } from '../../../services/abstractions/storage.service';
-import { UtilsService } from '../../../services/abstractions/utils.service';
 import ConstantsService from '../../../services/constants.service';
 
 import * as template from './settings.component.html';
@@ -27,17 +27,17 @@ export class SettingsController {
     i18n: any;
     showOnLocked: boolean;
 
-    constructor(private $state: any, private SweetAlert: any, private utilsService: UtilsService,
+    constructor(private $state: any, private SweetAlert: any, private browserUtilsService: BrowserUtilsService,
         private $analytics: any, private i18nService: any, private constantsService: ConstantsService,
         private cryptoService: CryptoService, private lockService: any, private storageService: StorageService,
         private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
-        this.showOnLocked = !utilsService.isFirefox() && !utilsService.isEdge();
+        this.showOnLocked = !browserUtilsService.isFirefox() && !browserUtilsService.isEdge();
         this.storageService.get(constantsService.lockOptionKey).then((lockOption: number) => {
             if (lockOption != null) {
                 let option = lockOption.toString();
@@ -146,7 +146,7 @@ export class SettingsController {
     rate() {
         this.$analytics.eventTrack('Rate Extension');
         chrome.tabs.create({
-            url: RateUrls[this.utilsService.getBrowser()],
+            url: RateUrls[this.browserUtilsService.getBrowser()],
         });
     }
 }

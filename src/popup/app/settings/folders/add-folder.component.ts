@@ -1,17 +1,18 @@
 import * as angular from 'angular';
 import { Folder } from '../../../../models/domain/folder';
-import { UtilsService } from '../../../../services/abstractions/utils.service';
 import * as template from './add-folder.component.html';
+
+import { BrowserUtilsService } from '../../../../services/abstractions/browserUtils.service';
 
 export class AddFolderController {
     savePromise: any;
     folder: {};
     i18n: any;
 
-    constructor(private folderService: any, private $state: any, private toastr: any, utilsService: UtilsService,
-        private $analytics: any, private i18nService: any, $timeout: any) {
+    constructor(private folderService: any, private $state: any, private toastr: any,
+        browserUtilsService: BrowserUtilsService, private $analytics: any, private i18nService: any, $timeout: any) {
         $timeout(() => {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();
         }, 500);
 

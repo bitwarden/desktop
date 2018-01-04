@@ -2,15 +2,15 @@ angular
     .module('bit.vault')
 
     .controller('vaultEditCipherController', function ($scope, $state, $stateParams, cipherService, folderService,
-        cryptoService, toastr, SweetAlert, utilsService, $analytics, i18nService, constantsService, $timeout) {
+        cryptoService, toastr, SweetAlert, browserUtilsService, $analytics, i18nService, constantsService, $timeout) {
         $timeout(function () {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();
         }, 500);
 
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
-        $scope.showAttachments = !utilsService.isEdge();
+        $scope.showAttachments = !browserUtilsService.isEdge();
         $scope.addFieldType = constantsService.fieldType.text.toString();
         $scope.selectedType = constantsService.cipherType.login.toString();
         var cipherId = $stateParams.cipherId;
@@ -40,7 +40,7 @@ angular
             $scope.cipher.type = parseInt($scope.selectedType);
 
             $timeout(function () {
-                utilsService.initListSectionItemListeners(document, angular);
+                browserUtilsService.initListSectionItemListeners(document, angular);
             }, 500);
         };
 
@@ -123,7 +123,7 @@ angular
             });
 
             $timeout(function () {
-                utilsService.initListSectionItemListeners(document, angular);
+                browserUtilsService.initListSectionItemListeners(document, angular);
             }, 500);
         };
 

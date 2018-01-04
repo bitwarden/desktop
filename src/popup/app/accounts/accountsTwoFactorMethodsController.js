@@ -1,4 +1,4 @@
-﻿angular
+angular
     .module('bit.accounts')
 
     .controller('accountsTwoFactorMethodsController', function ($scope, $state, $stateParams, constantsService,
@@ -25,7 +25,8 @@
         if (providers.hasOwnProperty(constants.twoFactorProvider.duo)) {
             add(constants.twoFactorProvider.duo);
         }
-        if (providers.hasOwnProperty(constants.twoFactorProvider.u2f) && (utilsService.isChrome() || utilsService.isOpera())) {
+        if (providers.hasOwnProperty(constants.twoFactorProvider.u2f) &&
+            (browserUtilsService.isChrome() || browserUtilsService.isOpera())) {
             add(constants.twoFactorProvider.u2f);
         }
 

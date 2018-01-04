@@ -14,6 +14,7 @@ import WindowsBackground from './windows.background';
 import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
+import BrowserUtilsService from '../services/browserUtils.service';
 import ChromeStorageService from '../services/chromeStorage.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
@@ -36,6 +37,7 @@ import { StorageService } from '../services/abstractions/storage.service';
 export default class MainBackground {
     storageService: StorageService;
     i18nService: any;
+    browserUtilsService: BrowserUtilsService;
     utilsService: UtilsService;
     constantsService: ConstantsService;
     cryptoService: CryptoService;
@@ -75,12 +77,13 @@ export default class MainBackground {
         // Services
         this.storageService = new ChromeStorageService();
         this.utilsService = new UtilsService();
-        this.i18nService = i18nService(this.utilsService);
-        this.constantsService = new ConstantsService(this.i18nService, this.utilsService);
+        this.browserUtilsService = new BrowserUtilsService();
+        this.i18nService = i18nService(this.browserUtilsService);
+        this.constantsService = new ConstantsService(this.i18nService, this.browserUtilsService);
         this.cryptoService = new CryptoService(this.storageService, this.storageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
-        this.apiService = new ApiService(this.tokenService, this.utilsService,
+        this.apiService = new ApiService(this.tokenService, this.browserUtilsService,
             (expired: boolean) => this.logout(expired));
         this.environmentService = new EnvironmentService(this.apiService, this.storageService);
         this.userService = new UserService(this.tokenService, this.storageService);
@@ -91,7 +94,7 @@ export default class MainBackground {
             this.apiService, this.storageService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
-            this.cryptoService, this.utilsService, this.storageService,
+            this.cryptoService, this.browserUtilsService, this.storageService,
             () => this.setIcon(), () => this.refreshBadgeAndMenu());
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
@@ -99,7 +102,7 @@ export default class MainBackground {
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
         this.totpService = new TotpService(this.storageService);
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
-            this.totpService, this.utilsService);
+            this.totpService, this.utilsService, this.browserUtilsService);
 
         // Other fields
         this.sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ?
@@ -111,7 +114,7 @@ export default class MainBackground {
             this.passwordGenerationService);
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService);
         this.tabsBackground = new TabsBackground(this);
-        this.webRequestBackground = new WebRequestBackground(this.utilsService, this.cipherService);
+        this.webRequestBackground = new WebRequestBackground(this.browserUtilsService, this.cipherService);
         this.windowsBackground = new WindowsBackground(this);
     }
 
@@ -251,7 +254,7 @@ export default class MainBackground {
         });
 
         // Firefox & Edge do not support writing to the clipboard from background
-        if (!this.utilsService.isFirefox() && !this.utilsService.isEdge()) {
+        if (!this.browserUtilsService.isFirefox() && !this.browserUtilsService.isEdge()) {
             await this.contextMenusCreate({
                 type: 'normal',
                 id: 'copy-username',
@@ -295,7 +298,7 @@ export default class MainBackground {
             return;
         }
 
-        const tabDomain = UtilsService.getDomain(url);
+        const tabDomain = BrowserUtilsService.getDomain(url);
         if (tabDomain == null) {
             return;
         }
@@ -370,7 +373,7 @@ export default class MainBackground {
             });
         }
 
-        if (this.utilsService.isFirefox()) {
+        if (this.browserUtilsService.isFirefox()) {
             // Firefox does not support writing to the clipboard from background
             return;
         }
@@ -411,7 +414,7 @@ export default class MainBackground {
             return;
         }
 
-        const tabDomain = UtilsService.getDomain(tab.url);
+        const tabDomain = BrowserUtilsService.getDomain(tab.url);
         if (tabDomain == null) {
             return;
         }
@@ -489,7 +492,7 @@ export default class MainBackground {
             },
         };
 
-        if (this.utilsService.isFirefox()) {
+        if (this.browserUtilsService.isFirefox()) {
             await theAction.setIcon(options);
         } else {
             return new Promise((resolve) => {

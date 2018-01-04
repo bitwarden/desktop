@@ -1,16 +1,16 @@
+import BrowserUtilsService from './browserUtils.service';
 import CipherService from './cipher.service';
 import CollectionService from './collection.service';
 import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import FolderService from './folder.service';
-import UtilsService from './utils.service';
 
 import { StorageService } from './abstractions/storage.service';
 
 export default class LockService {
     constructor(private cipherService: CipherService, private folderService: FolderService,
         private collectionService: CollectionService, private cryptoService: CryptoService,
-        private utilsService: UtilsService, private storageService: StorageService,
+        private browserUtilsService: BrowserUtilsService, private storageService: StorageService,
         private setIcon: Function, private refreshBadgeAndMenu: Function) {
         this.checkLock();
         setInterval(() => this.checkLock(), 10 * 1000); // check every 10 seconds
@@ -81,9 +81,9 @@ export default class LockService {
     // Helpers
 
     private sidebarViewName(): string {
-        if ((window as any).chrome.sidebarAction && this.utilsService.isFirefox()) {
+        if ((window as any).chrome.sidebarAction && this.browserUtilsService.isFirefox()) {
             return 'sidebar';
-        } else if (this.utilsService.isOpera() && (typeof opr !== 'undefined') && opr.sidebarAction) {
+        } else if (this.browserUtilsService.isOpera() && (typeof opr !== 'undefined') && opr.sidebarAction) {
             return 'sidebar_panel';
         }
 

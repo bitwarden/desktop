@@ -2,9 +2,9 @@ angular
     .module('bit.vault')
 
     .controller('vaultAttachmentsController', function ($scope, $state, $stateParams, cipherService, toastr,
-        SweetAlert, utilsService, $analytics, i18nService, cryptoService, tokenService, $timeout) {
+        SweetAlert, browserUtilsService, $analytics, i18nService, cryptoService, tokenService, $timeout) {
         $timeout(function () {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         $scope.i18n = i18nService;

@@ -1,5 +1,6 @@
 import { CipherType } from '../../../enums/cipherType.enum';
 
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 import * as template from './current.component.html';
 
@@ -17,12 +18,13 @@ export class CurrentController {
     inSidebar: boolean = false;
     disableSearch: boolean = false;
 
-    constructor($scope: any, private cipherService: any, private utilsService: UtilsService, private toastr: any,
-        private $window: any, private $state: any, private $timeout: any, private autofillService: any,
-        private $analytics: any, private i18nService: any, private $filter: any) {
+    constructor($scope: any, private cipherService: any, private browserUtilsService: BrowserUtilsService,
+        private utilsService: UtilsService, private toastr: any, private $window: any, private $state: any,
+        private $timeout: any, private autofillService: any, private $analytics: any, private i18nService: any,
+        private $filter: any) {
         this.i18n = i18nService;
-        this.inSidebar = utilsService.inSidebar($window);
-        this.disableSearch = utilsService.isEdge();
+        this.inSidebar = browserUtilsService.inSidebar($window);
+        this.disableSearch = browserUtilsService.isEdge();
 
         $scope.$on('syncCompleted', (event: any, successfully: boolean) => {
             if (this.loaded) {
@@ -76,10 +78,10 @@ export class CurrentController {
             fromBackground: false,
         }).then((totpCode: string) => {
             this.$analytics.eventTrack('Autofilled');
-            if (totpCode && this.utilsService.isFirefox()) {
+            if (totpCode && this.browserUtilsService.isFirefox()) {
                 this.utilsService.copyToClipboard(totpCode, document);
             }
-            if (this.utilsService.inPopup(this.$window)) {
+            if (this.browserUtilsService.inPopup(this.$window)) {
                 this.$window.close();
             }
         }).catch(() => {
@@ -105,7 +107,7 @@ export class CurrentController {
                 return;
             }
 
-            this.domain = this.utilsService.getDomain(this.url);
+            this.domain = this.browserUtilsService.getDomain(this.url);
 
             chrome.tabs.sendMessage(tabs[0].id, {
                 command: 'collectPageDetails',

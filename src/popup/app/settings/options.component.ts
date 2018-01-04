@@ -1,6 +1,6 @@
 import * as angular from 'angular';
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { StorageService } from '../../../services/abstractions/storage.service';
-import { UtilsService } from '../../../services/abstractions/utils.service';
 import StateService from '../services/state.service';
 import * as template from './options.component.html';
 
@@ -14,12 +14,12 @@ export class OptionsController {
     i18n: any;
 
     constructor(private i18nService: any, private $analytics: any, private constantsService: any,
-        private utilsService: UtilsService, private totpService: any, private stateService: StateService,
+        private browserUtilsService: BrowserUtilsService, private totpService: any, private stateService: StateService,
         private storageService: StorageService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         this.loadSettings();
@@ -31,7 +31,7 @@ export class OptionsController {
 
         const disableGa = await this.storageService.get<boolean>(
             this.constantsService.disableGaKey);
-        this.disableGa = disableGa || (this.utilsService.isFirefox() && disableGa === undefined);
+        this.disableGa = disableGa || (this.browserUtilsService.isFirefox() && disableGa === undefined);
 
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             this.constantsService.disableAddLoginNotificationKey);

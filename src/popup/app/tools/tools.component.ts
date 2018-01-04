@@ -1,6 +1,6 @@
 import * as template from './tools.component.html';
 
-import { UtilsService } from '../../../services/abstractions/utils.service';
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 
 export class ToolsController {
     showExport: boolean;
@@ -8,10 +8,10 @@ export class ToolsController {
     private webVaultBaseUrl: string = 'https://vault.bitwarden.com';
 
     constructor(private SweetAlert: any, private i18nService: any,
-        private $analytics: any, private utilsService: UtilsService,
+        private $analytics: any, private browserUtilsService: BrowserUtilsService,
         private environmentService: any) {
         this.i18n = i18nService;
-        this.showExport = !utilsService.isEdge();
+        this.showExport = !browserUtilsService.isEdge();
         if (environmentService.baseUrl) {
             this.webVaultBaseUrl = environmentService.baseUrl;
         } else if (environmentService.webVaultUrl) {

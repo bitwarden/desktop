@@ -1,6 +1,6 @@
 import * as template from './action-buttons.component.html';
 
-import { UtilsService } from '../../../services/abstractions/utils.service';
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 
 export class ActionButtonsController implements ng.IController {
     onView: Function;
@@ -11,7 +11,7 @@ export class ActionButtonsController implements ng.IController {
     constants: any;
 
     constructor(private i18nService: any, private $analytics: any, private constantsService: any, private toastr: any,
-        private $timeout: any, private $window: any, private utilsService: UtilsService) {
+        private $timeout: any, private $window: any, private browserUtilsService: BrowserUtilsService) {
         this.i18n = i18nService;
         this.constants = constantsService;
     }
@@ -22,7 +22,7 @@ export class ActionButtonsController implements ng.IController {
             if (self.cipher.login.uri.startsWith('http://') || self.cipher.login.uri.startsWith('https://')) {
                 self.$analytics.eventTrack('Launched Website From Listing');
                 chrome.tabs.create({ url: self.cipher.login.uri });
-                if (self.utilsService.inPopup(self.$window)) {
+                if (self.browserUtilsService.inPopup(self.$window)) {
                     self.$window.close();
                 }
             }

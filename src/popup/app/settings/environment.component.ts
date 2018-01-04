@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import UtilsService from '../../../services/utils.service';
+import BrowserUtilsService from '../../../services/browserUtils.service';
 import * as template from './environment.component.html';
 
 export class EnvironmentController {
@@ -10,12 +10,12 @@ export class EnvironmentController {
     baseUrl: string;
     i18n: any;
 
-    constructor(private i18nService: any, private $analytics: any, utilsService: UtilsService,
+    constructor(private i18nService: any, private $analytics: any, browserUtilsService: BrowserUtilsService,
         private environmentService: any, private toastr: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         this.baseUrl = environmentService.baseUrl || '';

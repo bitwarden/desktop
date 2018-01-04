@@ -20,6 +20,7 @@ export default angular
     .factory('syncService', backgroundServices.syncService)
     .factory('autofillService', backgroundServices.autofillService)
     .factory('passwordGenerationService', backgroundServices.passwordGenerationService)
+    .factory('browserUtilsService', backgroundServices.browserUtilsService)
     .factory('utilsService', backgroundServices.utilsService)
     .factory('appIdService', backgroundServices.appIdService)
     .factory('i18nService', backgroundServices.i18nService)

@@ -1,5 +1,5 @@
 import { BrowserType } from '../../enums/browserType.enum';
-import { UtilsService } from '../../services/abstractions/utils.service';
+import { BrowserUtilsService } from '../../services/abstractions/browserUtils.service';
 
 class DeviceRequest {
     type: BrowserType;
@@ -7,9 +7,9 @@ class DeviceRequest {
     identifier: string;
     pushToken?: string;
 
-    constructor(appId: string, utilsService: UtilsService) {
-        this.type = utilsService.getBrowser();
-        this.name = utilsService.getBrowserString();
+    constructor(appId: string, browserUtilsService: BrowserUtilsService) {
+        this.type = browserUtilsService.getBrowser();
+        this.name = browserUtilsService.getBrowserString();
         this.identifier = appId;
         this.pushToken = null;
     }

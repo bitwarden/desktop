@@ -2,9 +2,9 @@ angular
     .module('bit.accounts')
 
     .controller('accountsLoginController', function ($scope, $state, $stateParams, authService, userService, toastr,
-        utilsService, $analytics, i18nService, $timeout) {
+        browserUtilsService, $analytics, i18nService, $timeout) {
         $timeout(function () {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
             if ($stateParams.email) {
                 document.getElementById('master-password').focus();
             }

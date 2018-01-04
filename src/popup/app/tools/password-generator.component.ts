@@ -1,7 +1,7 @@
 import * as angular from 'angular';
 import * as template from './password-generator.component.html';
 
-import { UtilsService } from '../../../services/abstractions/utils.service';
+import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 
 export class PasswordGeneratorController {
     $transition$: any;
@@ -13,7 +13,7 @@ export class PasswordGeneratorController {
     i18n: any;
 
     constructor(private $state: any, private passwordGenerationService: any,
-                private toastr: any, private utilsService: UtilsService, private $analytics: any,
+                private toastr: any, private browserUtilsService: BrowserUtilsService, private $analytics: any,
                 private i18nService: any, private $timeout: any) {
         this.i18n = i18nService;
 
@@ -41,9 +41,8 @@ export class PasswordGeneratorController {
 
         this.showSelect = this.addState || this.editState;
 
-        const self = this;
         this.$timeout(() => {
-            self.utilsService.initListSectionItemListeners(document, angular);
+            this.browserUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
     }
 

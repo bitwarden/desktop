@@ -1,11 +1,11 @@
 angular
     .module('bit.accounts')
 
-    .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, utilsService, SweetAlert,
+    .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, browserUtilsService, SweetAlert,
         $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService,
         environmentService) {
         $timeout(function () {
-            utilsService.initListSectionItemListeners(document, angular);
+            browserUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         $scope.i18n = i18nService;
@@ -130,7 +130,7 @@ angular
                 var provider = $filter('filter')(constants.twoFactorProviderInfo, { type: keys[i], active: true });
                 if (provider.length && provider[0].priority > providerPriority) {
                     if (provider[0].type == constants.twoFactorProvider.u2f && (typeof $window.u2f === 'undefined') &&
-                        !utilsService.isChrome() && !utilsService.isOpera()) {
+                        !browserUtilsService.isChrome() && !browserUtilsService.isOpera()) {
                         continue;
                     }
 
@@ -183,8 +183,8 @@ angular
                     params = providers[constants.twoFactorProvider.email];
                     $scope.twoFactorEmail = params.Email;
 
-                    if (chrome.extension.getViews({ type: 'popup' }).length > 0 && !utilsService.inSidebar($window) &&
-                        !utilsService.inTab($window) && !utilsService.inPopout($window)) {
+                    if (chrome.extension.getViews({ type: 'popup' }).length > 0 && !browserUtilsService.inSidebar($window) &&
+                        !browserUtilsService.inTab($window) && !browserUtilsService.inPopout($window)) {
                         SweetAlert.swal({
                             title: i18nService.twoStepLogin,
                             text: i18nService.popup2faCloseMessage,
