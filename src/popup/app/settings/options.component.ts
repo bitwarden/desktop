@@ -1,5 +1,6 @@
 import * as angular from 'angular';
 import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
+import { MessagingService } from '../../../services/abstractions/messaging.service';
 import { StorageService } from '../../../services/abstractions/storage.service';
 import StateService from '../services/state.service';
 import * as template from './options.component.html';
@@ -15,7 +16,8 @@ export class OptionsController {
 
     constructor(private i18nService: any, private $analytics: any, private constantsService: any,
         private browserUtilsService: BrowserUtilsService, private totpService: any, private stateService: StateService,
-        private storageService: StorageService, private $timeout: ng.ITimeoutService) {
+        private storageService: StorageService, public messagingService: MessagingService,
+        private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
@@ -64,9 +66,7 @@ export class OptionsController {
     updateDisableContextMenuItem() {
         this.storageService.save(this.constantsService.disableContextMenuItemKey,
             this.disableContextMenuItem).then(() => {
-                chrome.runtime.sendMessage({
-                    command: 'bgUpdateContextMenu',
-                });
+                this.messagingService.send('bgUpdateContextMenu');
             });
         this.callAnalytics('Context Menu Item', !this.disableContextMenuItem);
     }

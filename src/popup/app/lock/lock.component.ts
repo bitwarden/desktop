@@ -3,6 +3,7 @@ import * as template from './lock.component.html';
 
 import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
+import { MessagingService } from '../../../services/abstractions/messaging.service';
 
 export class LockController {
     i18n: any;
@@ -10,7 +11,7 @@ export class LockController {
 
     constructor(public $state: any, public i18nService: any, private $timeout: any,
         private browserUtilsService: BrowserUtilsService, public cryptoService: CryptoService, public toastr: any,
-        public userService: any, public SweetAlert: any) {
+        public userService: any, public messagingService: MessagingService, public SweetAlert: any) {
         this.i18n = i18nService;
     }
 
@@ -30,7 +31,7 @@ export class LockController {
             cancelButtonText: this.i18nService.cancel,
         }, (confirmed: boolean) => {
             if (confirmed) {
-                chrome.runtime.sendMessage({ command: 'logout' });
+                this.messagingService.send('logout');
             }
         });
     }
@@ -48,7 +49,7 @@ export class LockController {
 
         if (storedKeyHash != null && keyHash != null && storedKeyHash === keyHash) {
             await this.cryptoService.setKey(key);
-            chrome.runtime.sendMessage({ command: 'unlocked' });
+            this.messagingService.send('unlocked');
             this.$state.go('tabs.current');
         } else {
             this.toastr.error(this.i18nService.invalidMasterPassword, this.i18nService.errorsOccurred);

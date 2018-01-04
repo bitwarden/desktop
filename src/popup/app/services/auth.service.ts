@@ -3,11 +3,13 @@ import { TokenRequest } from '../../../models/request/tokenRequest';
 
 import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
+import { MessagingService } from '../../../services/abstractions/messaging.service';
 
 class AuthService {
     constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
         public tokenService: any, public $rootScope: any, public appIdService: any,
-        public browserUtilsService: BrowserUtilsService, public constantsService: any) {
+        public browserUtilsService: BrowserUtilsService, public constantsService: any,
+        public messagingService: MessagingService) {
     }
 
     async logIn(email: string, masterPassword: string, twoFactorProvider?: number,
@@ -57,7 +59,7 @@ class AuthService {
         await this.cryptoService.setEncKey(response.key);
         await this.cryptoService.setEncPrivateKey(response.privateKey);
 
-        chrome.runtime.sendMessage({ command: 'loggedIn' });
+        this.messagingService.send('loggedIn');
         return {
             twoFactor: false,
             twoFactorProviders: null,

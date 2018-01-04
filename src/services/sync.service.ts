@@ -17,6 +17,7 @@ import FolderService from './folder.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
 
+import { MessagingService } from './abstractions/messaging.service';
 import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
@@ -30,7 +31,7 @@ export default class SyncService {
         private settingsService: SettingsService, private folderService: FolderService,
         private cipherService: CipherService, private cryptoService: CryptoService,
         private collectionService: CollectionService, private storageService: StorageService,
-        private logoutCallback: Function) {
+        private messagingService: MessagingService, private logoutCallback: Function) {
     }
 
     async getLastSync() {
@@ -50,13 +51,12 @@ export default class SyncService {
 
     syncStarted() {
         this.syncInProgress = true;
-        chrome.runtime.sendMessage({ command: 'syncStarted' });
+        this.messagingService.send('syncStarted');
     }
 
     syncCompleted(successfully: boolean) {
         this.syncInProgress = false;
-        // tslint:disable-next-line
-        chrome.runtime.sendMessage({ command: 'syncCompleted', successfully: successfully });
+        this.messagingService.send('syncCompleted', { successfully: successfully });
     }
 
     async fullSync(forceSync: boolean) {

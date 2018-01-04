@@ -2,6 +2,7 @@ import * as angular from 'angular';
 import { BrowserType } from '../../../enums/browserType.enum';
 import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
+import { MessagingService } from '../../../services/abstractions/messaging.service';
 import { StorageService } from '../../../services/abstractions/storage.service';
 import ConstantsService from '../../../services/constants.service';
 
@@ -30,7 +31,7 @@ export class SettingsController {
     constructor(private $state: any, private SweetAlert: any, private browserUtilsService: BrowserUtilsService,
         private $analytics: any, private i18nService: any, private constantsService: ConstantsService,
         private cryptoService: CryptoService, private lockService: any, private storageService: StorageService,
-        private $timeout: ng.ITimeoutService) {
+        public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
@@ -68,7 +69,7 @@ export class SettingsController {
                 }, (confirmed: boolean) => {
                     if (confirmed) {
                         this.cryptoService.toggleKey();
-                        chrome.runtime.sendMessage({ command: 'logout' });
+                        this.messagingService.send('logout');
                     }
                 });
             }
@@ -93,7 +94,7 @@ export class SettingsController {
             cancelButtonText: this.i18nService.cancel,
         }, (confirmed: boolean) => {
             if (confirmed) {
-                chrome.runtime.sendMessage({ command: 'logout' });
+                this.messagingService.send('logout');
             }
         });
     }

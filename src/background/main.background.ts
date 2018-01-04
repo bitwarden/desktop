@@ -14,6 +14,7 @@ import WindowsBackground from './windows.background';
 import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
+import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserUtilsService from '../services/browserUtils.service';
 import ChromeStorageService from '../services/chromeStorage.service';
 import CipherService from '../services/cipher.service';
@@ -33,9 +34,11 @@ import TotpService from '../services/totp.service';
 import UserService from '../services/user.service';
 import UtilsService from '../services/utils.service';
 
+import { MessagingService } from '../services/abstractions/messaging.service';
 import { StorageService } from '../services/abstractions/storage.service';
 
 export default class MainBackground {
+    messagingService: MessagingService;
     storageService: StorageService;
     i18nService: any;
     browserUtilsService: BrowserUtilsService;
@@ -76,9 +79,10 @@ export default class MainBackground {
 
     constructor() {
         // Services
-        this.storageService = new ChromeStorageService();
         this.utilsService = new UtilsService();
         this.browserUtilsService = new BrowserUtilsService();
+        this.messagingService = new BrowserMessagingService(this.browserUtilsService);
+        this.storageService = new ChromeStorageService();
         this.i18nService = i18nService(this.browserUtilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.browserUtilsService);
         this.cryptoService = ContainerService.cryptoService = new CryptoService(this.storageService,
@@ -100,7 +104,7 @@ export default class MainBackground {
             () => this.setIcon(), () => this.refreshBadgeAndMenu());
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
-            this.storageService, (expired: boolean) => this.logout(expired));
+            this.storageService, this.messagingService, (expired: boolean) => this.logout(expired));
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
         this.totpService = new TotpService(this.storageService);
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
@@ -187,9 +191,7 @@ export default class MainBackground {
             this.passwordGenerationService.clear(),
         ]);
 
-        chrome.runtime.sendMessage({
-            command: 'doneLoggingOut', expired: expired,
-        });
+        this.messagingService.send('doneLoggingOut', { expired: expired });
 
         await this.setIcon();
         await this.refreshBadgeAndMenu();

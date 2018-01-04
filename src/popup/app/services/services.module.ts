@@ -4,12 +4,17 @@ import * as backgroundServices from './background.service';
 import StateService from './state.service';
 import { ValidationService } from './validation.service';
 
+import BrowserMessagingService from '../../../services/browserMessaging.service';
+
+const messagingService = new BrowserMessagingService(backgroundServices.browserUtilsService());
+
 export default angular
     .module('bit.services', ['toastr'])
     .service('stateService', StateService)
     .service('validationService', ValidationService)
     .service('authService', AuthService)
 
+    .factory('messagingService', () => messagingService)
     .factory('storageService', backgroundServices.storageService)
     .factory('tokenService', backgroundServices.tokenService)
     .factory('cryptoService', backgroundServices.cryptoService)

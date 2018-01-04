@@ -265,8 +265,9 @@ angular
             }
 
             const userService = trans.injector().get('userService');
+            const messagingService = trans.injector().get('messagingService');
 
-            if (!userService) {
+            if (!userService || !messagingService) {
                 return;
             }
 
@@ -278,7 +279,7 @@ angular
                 }
                 else if (toState.data && toState.data.authorize) {
                     event.preventDefault();
-                    chrome.runtime.sendMessage({ command: 'logout' });
+                    messagingService.send('logout');
                 }
             });
         });
