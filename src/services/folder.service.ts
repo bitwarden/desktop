@@ -9,7 +9,8 @@ import { FolderResponse } from '../models/response/folderResponse';
 import ApiService from './api.service';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
     foldersPrefix: 'folders_',
@@ -19,7 +20,7 @@ export default class FolderService {
     decryptedFolderCache: any[];
 
     constructor(private cryptoService: CryptoService, private userService: UserService,
-        private i18nService: any, private apiService: ApiService) {
+        private i18nService: any, private apiService: ApiService, private storageService: StorageService) {
     }
 
     clearCache(): void {
@@ -35,7 +36,7 @@ export default class FolderService {
 
     async get(id: string): Promise<Folder> {
         const userId = await this.userService.getUserId();
-        const folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+        const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
         if (folders == null || !folders.hasOwnProperty(id)) {
             return null;
@@ -46,7 +47,7 @@ export default class FolderService {
 
     async getAll(): Promise<Folder[]> {
         const userId = await this.userService.getUserId();
-        const folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+        const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
         const response: Folder[] = [];
         for (const id in folders) {
@@ -103,7 +104,7 @@ export default class FolderService {
 
     async upsert(folder: FolderData | FolderData[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+        let folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
         if (folders == null) {
             folders = {};
@@ -118,24 +119,24 @@ export default class FolderService {
             });
         }
 
-        await UtilsService.saveObjToStorage(Keys.foldersPrefix + userId, folders);
+        await this.storageService.save(Keys.foldersPrefix + userId, folders);
         this.decryptedFolderCache = null;
     }
 
     async replace(folders: { [id: string]: FolderData; }): Promise<any> {
         const userId = await this.userService.getUserId();
-        await UtilsService.saveObjToStorage(Keys.foldersPrefix + userId, folders);
+        await this.storageService.save(Keys.foldersPrefix + userId, folders);
         this.decryptedFolderCache = null;
     }
 
     async clear(userId: string): Promise<any> {
-        await UtilsService.removeFromStorage(Keys.foldersPrefix + userId);
+        await this.storageService.remove(Keys.foldersPrefix + userId);
         this.decryptedFolderCache = null;
     }
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const folders = await UtilsService.getObjFromStorage<{ [id: string]: FolderData; }>(
+        const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
         if (folders == null) {
             return;
@@ -150,7 +151,7 @@ export default class FolderService {
             });
         }
 
-        await UtilsService.saveObjToStorage(Keys.foldersPrefix + userId, folders);
+        await this.storageService.save(Keys.foldersPrefix + userId, folders);
         this.decryptedFolderCache = null;
     }
 

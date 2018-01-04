@@ -1,5 +1,6 @@
 import TokenService from './token.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
     userId: 'userId',
@@ -12,7 +13,7 @@ export default class UserService {
     email: string;
     stamp: string;
 
-    constructor(private tokenService: TokenService) {
+    constructor(private tokenService: TokenService, private storageService: StorageService) {
     }
 
     setUserIdAndEmail(userId: string, email: string): Promise<any> {
@@ -20,14 +21,14 @@ export default class UserService {
         this.userId = userId;
 
         return Promise.all([
-            UtilsService.saveObjToStorage(Keys.userEmail, email),
-            UtilsService.saveObjToStorage(Keys.userId, userId),
+            this.storageService.save(Keys.userEmail, email),
+            this.storageService.save(Keys.userId, userId),
         ]);
     }
 
     setSecurityStamp(stamp: string): Promise<any> {
         this.stamp = stamp;
-        return UtilsService.saveObjToStorage(Keys.stamp, stamp);
+        return this.storageService.save(Keys.stamp, stamp);
     }
 
     async getUserId(): Promise<string> {
@@ -35,7 +36,7 @@ export default class UserService {
             return this.userId;
         }
 
-        this.userId = await UtilsService.getObjFromStorage<string>(Keys.userId);
+        this.userId = await this.storageService.get<string>(Keys.userId);
         return this.userId;
     }
 
@@ -44,7 +45,7 @@ export default class UserService {
             return this.email;
         }
 
-        this.email = await UtilsService.getObjFromStorage<string>(Keys.userEmail);
+        this.email = await this.storageService.get<string>(Keys.userEmail);
         return this.email;
     }
 
@@ -53,15 +54,15 @@ export default class UserService {
             return this.stamp;
         }
 
-        this.stamp = await UtilsService.getObjFromStorage<string>(Keys.stamp);
+        this.stamp = await this.storageService.get<string>(Keys.stamp);
         return this.stamp;
     }
 
     async clear(): Promise<any> {
         await Promise.all([
-            UtilsService.removeFromStorage(Keys.userId),
-            UtilsService.removeFromStorage(Keys.userEmail),
-            UtilsService.removeFromStorage(Keys.stamp),
+            this.storageService.remove(Keys.userId),
+            this.storageService.remove(Keys.userEmail),
+            this.storageService.remove(Keys.stamp),
         ]);
 
         this.userId = this.email = this.stamp = null;

@@ -11,6 +11,7 @@ import ConstantsService from './constants.service';
 import UtilsService from './utils.service';
 
 import { CryptoService as CryptoServiceInterface } from './abstractions/crypto.service';
+import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
     key: 'key',
@@ -40,28 +41,31 @@ export default class CryptoService implements CryptoServiceInterface {
     private privateKey: ArrayBuffer;
     private orgKeys: Map<string, SymmetricCryptoKey>;
 
+    constructor(private storageService: StorageService, private secureStorageService: StorageService) {
+    }
+
     async setKey(key: SymmetricCryptoKey): Promise<any> {
         this.key = key;
 
-        const option = await UtilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
+        const option = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         if (option != null) {
             // if we have a lock option set, we do not store the key
             return;
         }
 
-        return UtilsService.saveObjToStorage(Keys.key, key.keyB64);
+        return this.secureStorageService.save(Keys.key, key.keyB64);
     }
 
     setKeyHash(keyHash: string): Promise<{}> {
         this.keyHash = keyHash;
-        return UtilsService.saveObjToStorage(Keys.keyHash, keyHash);
+        return this.storageService.save(Keys.keyHash, keyHash);
     }
 
     async setEncKey(encKey: string): Promise<{}> {
         if (encKey == null) {
             return;
         }
-        await UtilsService.saveObjToStorage(Keys.encKey, encKey);
+        await this.storageService.save(Keys.encKey, encKey);
         this.encKey = null;
     }
 
@@ -70,7 +74,7 @@ export default class CryptoService implements CryptoServiceInterface {
             return;
         }
 
-        await UtilsService.saveObjToStorage(Keys.encPrivateKey, encPrivateKey);
+        await this.storageService.save(Keys.encPrivateKey, encPrivateKey);
         this.privateKey = null;
     }
 
@@ -80,7 +84,7 @@ export default class CryptoService implements CryptoServiceInterface {
             orgKeys[org.id] = org.key;
         });
 
-        return UtilsService.saveObjToStorage(Keys.encOrgKeys, orgKeys);
+        return this.storageService.save(Keys.encOrgKeys, orgKeys);
     }
 
     async getKey(): Promise<SymmetricCryptoKey> {
@@ -88,12 +92,12 @@ export default class CryptoService implements CryptoServiceInterface {
             return this.key;
         }
 
-        const option = await UtilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
+        const option = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         if (option != null) {
             return null;
         }
 
-        const key = await UtilsService.getObjFromStorage<string>(Keys.key);
+        const key = await this.secureStorageService.get<string>(Keys.key);
         if (key) {
             this.key = new SymmetricCryptoKey(key, true);
         }
@@ -106,7 +110,7 @@ export default class CryptoService implements CryptoServiceInterface {
             return Promise.resolve(this.keyHash);
         }
 
-        return UtilsService.getObjFromStorage<string>(Keys.keyHash);
+        return this.storageService.get<string>(Keys.keyHash);
     }
 
     async getEncKey(): Promise<SymmetricCryptoKey> {
@@ -114,7 +118,7 @@ export default class CryptoService implements CryptoServiceInterface {
             return this.encKey;
         }
 
-        const encKey = await UtilsService.getObjFromStorage<string>(Keys.encKey);
+        const encKey = await this.storageService.get<string>(Keys.encKey);
         if (encKey == null) {
             return null;
         }
@@ -138,7 +142,7 @@ export default class CryptoService implements CryptoServiceInterface {
             return this.privateKey;
         }
 
-        const encPrivateKey = await UtilsService.getObjFromStorage<string>(Keys.encPrivateKey);
+        const encPrivateKey = await this.storageService.get<string>(Keys.encPrivateKey);
         if (encPrivateKey == null) {
             return null;
         }
@@ -155,7 +159,7 @@ export default class CryptoService implements CryptoServiceInterface {
         }
 
         const self = this;
-        const encOrgKeys = await UtilsService.getObjFromStorage<any>(Keys.encOrgKeys);
+        const encOrgKeys = await this.storageService.get<any>(Keys.encOrgKeys);
         if (!encOrgKeys) {
             return null;
         }
@@ -195,12 +199,12 @@ export default class CryptoService implements CryptoServiceInterface {
 
     clearKey(): Promise<any> {
         this.key = this.legacyEtmKey = null;
-        return UtilsService.removeFromStorage(Keys.key);
+        return this.secureStorageService.remove(Keys.key);
     }
 
     clearKeyHash(): Promise<any> {
         this.keyHash = null;
-        return UtilsService.removeFromStorage(Keys.keyHash);
+        return this.storageService.remove(Keys.keyHash);
     }
 
     clearEncKey(memoryOnly?: boolean): Promise<any> {
@@ -208,7 +212,7 @@ export default class CryptoService implements CryptoServiceInterface {
         if (memoryOnly) {
             return Promise.resolve();
         }
-        return UtilsService.removeFromStorage(Keys.encKey);
+        return this.storageService.remove(Keys.encKey);
     }
 
     clearPrivateKey(memoryOnly?: boolean): Promise<any> {
@@ -216,7 +220,7 @@ export default class CryptoService implements CryptoServiceInterface {
         if (memoryOnly) {
             return Promise.resolve();
         }
-        return UtilsService.removeFromStorage(Keys.encPrivateKey);
+        return this.storageService.remove(Keys.encPrivateKey);
     }
 
     clearOrgKeys(memoryOnly?: boolean): Promise<any> {
@@ -224,7 +228,7 @@ export default class CryptoService implements CryptoServiceInterface {
         if (memoryOnly) {
             return Promise.resolve();
         }
-        return UtilsService.removeFromStorage(Keys.encOrgKeys);
+        return this.storageService.remove(Keys.encOrgKeys);
     }
 
     clearKeys(): Promise<any> {
@@ -239,7 +243,7 @@ export default class CryptoService implements CryptoServiceInterface {
 
     async toggleKey(): Promise<any> {
         const key = await this.getKey();
-        const option = await UtilsService.getObjFromStorage(ConstantsService.lockOptionKey);
+        const option = await this.storageService.get(ConstantsService.lockOptionKey);
         if (option != null || option === 0) {
             // if we have a lock option set, clear the key
             await this.clearKey();

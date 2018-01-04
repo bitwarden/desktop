@@ -16,7 +16,4 @@ export interface UtilsService {
     inTab(theWindow: Window): boolean;
     inPopout(theWindow: Window): boolean;
     inPopup(theWindow: Window): boolean;
-    saveObjToStorage(key: string, obj: any): Promise<any>;
-    removeFromStorage(key: string): Promise<any>;
-    getObjFromStorage<T>(key: string): Promise<T>;
 }

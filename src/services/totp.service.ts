@@ -1,5 +1,6 @@
 import ConstantsService from './constants.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 const b32Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 
@@ -9,6 +10,9 @@ const TotpAlgorithm = {
 };
 
 export default class TotpService {
+    constructor(private storageService: StorageService) {
+    }
+
     async getCode(keyb32: string): Promise<string> {
         const epoch = Math.round(new Date().getTime() / 1000.0);
         const timeHex = this.leftpad(this.dec2hex(Math.floor(epoch / 30)), 16, '0');
@@ -32,7 +36,7 @@ export default class TotpService {
     }
 
     async isAutoCopyEnabled(): Promise<boolean> {
-        return !(await UtilsService.getObjFromStorage<boolean>(ConstantsService.disableAutoTotpCopyKey));
+        return !(await this.storageService.get<boolean>(ConstantsService.disableAutoTotpCopyKey));
     }
 
     // Helpers

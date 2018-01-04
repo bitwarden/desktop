@@ -136,34 +136,6 @@ export default class UtilsService implements UtilsServiceInterface {
         return decodeURIComponent(escape(encodedString));
     }
 
-    static saveObjToStorage(key: string, obj: any) {
-        return new Promise((resolve) => {
-            chrome.storage.local.set({ [key]: obj }, () => {
-                resolve();
-            });
-        });
-    }
-
-    static removeFromStorage(key: string) {
-        return new Promise((resolve) => {
-            chrome.storage.local.remove(key, () => {
-                resolve();
-            });
-        });
-    }
-
-    static getObjFromStorage<T>(key: string): Promise<T> {
-        return new Promise((resolve) => {
-            chrome.storage.local.get(key, (obj: any) => {
-                if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
-                    resolve(obj[key] as T);
-                } else {
-                    resolve(null);
-                }
-            });
-        });
-    }
-
     static getDomain(uriString: string): string {
         if (uriString == null) {
             return null;
@@ -391,17 +363,5 @@ export default class UtilsService implements UtilsServiceInterface {
     inPopup(theWindow: Window): boolean {
         return theWindow.location.search === '' || theWindow.location.search.indexOf('uilocation=') === -1 ||
             theWindow.location.search.indexOf('uilocation=popup') > -1;
-    }
-
-    saveObjToStorage(key: string, obj: any): Promise<any> {
-        return UtilsService.saveObjToStorage(key, obj);
-    }
-
-    removeFromStorage(key: string): Promise<any> {
-        return UtilsService.removeFromStorage(key);
-    }
-
-    getObjFromStorage<T>(key: string): Promise<T> {
-        return UtilsService.getObjFromStorage<T>(key);
     }
 }

@@ -1,4 +1,5 @@
 import { CryptoService } from '../../../services/abstractions/crypto.service';
+import { StorageService } from '../../../services/abstractions/storage.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
 function getBackgroundService<T>(service: string) {
@@ -8,6 +9,7 @@ function getBackgroundService<T>(service: string) {
     };
 }
 
+export const storageService = getBackgroundService<StorageService>('storageService');
 export const tokenService = getBackgroundService<any>('tokenService');
 export const cryptoService = getBackgroundService<any>('cryptoService');
 export const userService = getBackgroundService<any>('userService');

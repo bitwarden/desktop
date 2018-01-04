@@ -5,7 +5,8 @@ import { CollectionData } from '../models/data/collectionData';
 
 import CryptoService from './crypto.service';
 import UserService from './user.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
     collectionsPrefix: 'collections_',
@@ -14,7 +15,8 @@ const Keys = {
 export default class CollectionService {
     decryptedCollectionCache: any[];
 
-    constructor(private cryptoService: CryptoService, private userService: UserService) {
+    constructor(private cryptoService: CryptoService, private userService: UserService,
+        private storageService: StorageService) {
     }
 
     clearCache(): void {
@@ -23,7 +25,7 @@ export default class CollectionService {
 
     async get(id: string): Promise<Collection> {
         const userId = await this.userService.getUserId();
-        const collections = await UtilsService.getObjFromStorage<{ [id: string]: CollectionData; }>(
+        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null || !collections.hasOwnProperty(id)) {
             return null;
@@ -34,7 +36,7 @@ export default class CollectionService {
 
     async getAll(): Promise<Collection[]> {
         const userId = await this.userService.getUserId();
-        const collections = await UtilsService.getObjFromStorage<{ [id: string]: CollectionData; }>(
+        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
         const response: Collection[] = [];
         for (const id in collections) {
@@ -71,7 +73,7 @@ export default class CollectionService {
 
     async upsert(collection: CollectionData | CollectionData[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let collections = await UtilsService.getObjFromStorage<{ [id: string]: CollectionData; }>(
+        let collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null) {
             collections = {};
@@ -86,24 +88,24 @@ export default class CollectionService {
             });
         }
 
-        await UtilsService.saveObjToStorage(Keys.collectionsPrefix + userId, collections);
+        await this.storageService.save(Keys.collectionsPrefix + userId, collections);
         this.decryptedCollectionCache = null;
     }
 
     async replace(collections: { [id: string]: CollectionData; }): Promise<any> {
         const userId = await this.userService.getUserId();
-        await UtilsService.saveObjToStorage(Keys.collectionsPrefix + userId, collections);
+        await this.storageService.save(Keys.collectionsPrefix + userId, collections);
         this.decryptedCollectionCache = null;
     }
 
     async clear(userId: string): Promise<any> {
-        await UtilsService.removeFromStorage(Keys.collectionsPrefix + userId);
+        await this.storageService.remove(Keys.collectionsPrefix + userId);
         this.decryptedCollectionCache = null;
     }
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const collections = await UtilsService.getObjFromStorage<{ [id: string]: CollectionData; }>(
+        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null) {
             return;
@@ -118,7 +120,7 @@ export default class CollectionService {
             });
         }
 
-        await UtilsService.saveObjToStorage(Keys.collectionsPrefix + userId, collections);
+        await this.storageService.save(Keys.collectionsPrefix + userId, collections);
         this.decryptedCollectionCache = null;
     }
 }

@@ -5,10 +5,13 @@ import CryptoService from './crypto.service';
 import FolderService from './folder.service';
 import UtilsService from './utils.service';
 
+import { StorageService } from './abstractions/storage.service';
+
 export default class LockService {
     constructor(private cipherService: CipherService, private folderService: FolderService,
         private collectionService: CollectionService, private cryptoService: CryptoService,
-        private utilsService: UtilsService, private setIcon: Function, private refreshBadgeAndMenu: Function) {
+        private utilsService: UtilsService, private storageService: StorageService,
+        private setIcon: Function, private refreshBadgeAndMenu: Function) {
         this.checkLock();
         setInterval(() => this.checkLock(), 10 * 1000); // check every 10 seconds
 
@@ -16,7 +19,7 @@ export default class LockService {
         if ((window as any).chrome.idle && (window as any).chrome.idle.onStateChanged) {
             (window as any).chrome.idle.onStateChanged.addListener(async (newState: string) => {
                 if (newState === 'locked') {
-                    const lockOption = await UtilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
+                    const lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
                     if (lockOption === -2) {
                         self.lock();
                     }
@@ -42,12 +45,12 @@ export default class LockService {
             return;
         }
 
-        const lockOption = await UtilsService.getObjFromStorage<number>(ConstantsService.lockOptionKey);
+        const lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         if (lockOption == null || lockOption < 0) {
             return;
         }
 
-        const lastActive = await UtilsService.getObjFromStorage<number>(ConstantsService.lastActiveKey);
+        const lastActive = await this.storageService.get<number>(ConstantsService.lastActiveKey);
         if (lastActive == null) {
             return;
         }

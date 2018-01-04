@@ -10,6 +10,7 @@ export default angular
     .service('validationService', ValidationService)
     .service('authService', AuthService)
 
+    .factory('storageService', backgroundServices.storageService)
     .factory('tokenService', backgroundServices.tokenService)
     .factory('cryptoService', backgroundServices.cryptoService)
     .factory('userService', backgroundServices.userService)

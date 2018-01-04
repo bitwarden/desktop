@@ -14,6 +14,7 @@ import WindowsBackground from './windows.background';
 import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
+import ChromeStorageService from '../services/chromeStorage.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import ConstantsService from '../services/constants.service';
@@ -30,7 +31,10 @@ import TotpService from '../services/totp.service';
 import UserService from '../services/user.service';
 import UtilsService from '../services/utils.service';
 
+import { StorageService } from '../services/abstractions/storage.service';
+
 export default class MainBackground {
+    storageService: StorageService;
     i18nService: any;
     utilsService: UtilsService;
     constantsService: ConstantsService;
@@ -69,29 +73,31 @@ export default class MainBackground {
 
     constructor() {
         // Services
+        this.storageService = new ChromeStorageService();
         this.utilsService = new UtilsService();
         this.i18nService = i18nService(this.utilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.utilsService);
-        this.cryptoService = new CryptoService();
-        this.tokenService = new TokenService();
-        this.appIdService = new AppIdService();
+        this.cryptoService = new CryptoService(this.storageService, this.storageService);
+        this.tokenService = new TokenService(this.storageService);
+        this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.utilsService,
             (expired: boolean) => this.logout(expired));
-        this.environmentService = new EnvironmentService(this.apiService);
-        this.userService = new UserService(this.tokenService);
-        this.settingsService = new SettingsService(this.userService);
+        this.environmentService = new EnvironmentService(this.apiService, this.storageService);
+        this.userService = new UserService(this.tokenService, this.storageService);
+        this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService);
+            this.apiService, this.storageService);
         this.folderService = new FolderService(this.cryptoService, this.userService, this.i18nService,
-            this.apiService);
-        this.collectionService = new CollectionService(this.cryptoService, this.userService);
+            this.apiService, this.storageService);
+        this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
-            this.cryptoService, this.utilsService, () => this.setIcon(), () => this.refreshBadgeAndMenu());
+            this.cryptoService, this.utilsService, this.storageService,
+            () => this.setIcon(), () => this.refreshBadgeAndMenu());
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
-            (expired: boolean) => this.logout(expired));
-        this.passwordGenerationService = new PasswordGenerationService(this.cryptoService);
-        this.totpService = new TotpService();
+            this.storageService, (expired: boolean) => this.logout(expired));
+        this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
+        this.totpService = new TotpService(this.storageService);
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
             this.totpService, this.utilsService);
 
@@ -152,7 +158,7 @@ export default class MainBackground {
             return;
         }
 
-        const disabled = await this.utilsService.getObjFromStorage<boolean>(ConstantsService.disableContextMenuItemKey);
+        const disabled = await this.storageService.get<boolean>(ConstantsService.disableContextMenuItemKey);
         if (!disabled) {
             await this.buildContextMenu();
             await this.contextMenuReady(tab, true);

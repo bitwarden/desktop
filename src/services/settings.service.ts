@@ -1,5 +1,6 @@
 import UserService from './user.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
     settingsPrefix: 'settings_',
@@ -9,7 +10,7 @@ const Keys = {
 export default class SettingsService {
     private settingsCache: any;
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private storageService: StorageService) {
     }
 
     clearCache(): void {
@@ -25,7 +26,7 @@ export default class SettingsService {
     }
 
     async clear(userId: string): Promise<void> {
-        await UtilsService.removeFromStorage(Keys.settingsPrefix + userId);
+        await this.storageService.remove(Keys.settingsPrefix + userId);
         this.settingsCache = null;
     }
 
@@ -34,7 +35,7 @@ export default class SettingsService {
     private async getSettings(): Promise<any> {
         if (this.settingsCache == null) {
             const userId = await this.userService.getUserId();
-            this.settingsCache = UtilsService.getObjFromStorage(Keys.settingsPrefix + userId);
+            this.settingsCache = this.storageService.get(Keys.settingsPrefix + userId);
         }
         return this.settingsCache;
     }
@@ -55,7 +56,7 @@ export default class SettingsService {
         }
 
         settings[key] = value;
-        await UtilsService.saveObjToStorage(Keys.settingsPrefix + userId, settings);
+        await this.storageService.save(Keys.settingsPrefix + userId, settings);
         this.settingsCache = settings;
     }
 }

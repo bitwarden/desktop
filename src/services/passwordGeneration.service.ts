@@ -4,6 +4,8 @@ import PasswordHistory from '../models/domain/passwordHistory';
 import CryptoService from './crypto.service';
 import UtilsService from './utils.service';
 
+import { StorageService } from './abstractions/storage.service';
+
 const DefaultOptions = {
     length: 14,
     ambiguous: false,
@@ -145,8 +147,8 @@ export default class PasswordGenerationService {
     optionsCache: any;
     history: PasswordHistory[] = [];
 
-    constructor(private cryptoService: CryptoService) {
-        UtilsService.getObjFromStorage<PasswordHistory[]>(Keys.history).then((encrypted) => {
+    constructor(private cryptoService: CryptoService, private storageService: StorageService) {
+        storageService.get<PasswordHistory[]>(Keys.history).then((encrypted) => {
             return this.decryptHistory(encrypted);
         }).then((history) => {
             this.history = history;
@@ -159,7 +161,7 @@ export default class PasswordGenerationService {
 
     async getOptions() {
         if (this.optionsCache == null) {
-            const options = await UtilsService.getObjFromStorage(Keys.options);
+            const options = await this.storageService.get(Keys.options);
             if (options == null) {
                 this.optionsCache = DefaultOptions;
             } else {
@@ -171,7 +173,7 @@ export default class PasswordGenerationService {
     }
 
     async saveOptions(options: any) {
-        await UtilsService.saveObjToStorage(Keys.options, options);
+        await this.storageService.save(Keys.options, options);
         this.optionsCache = options;
     }
 
@@ -193,12 +195,12 @@ export default class PasswordGenerationService {
         }
 
         const newHistory = await this.encryptHistory();
-        return await UtilsService.saveObjToStorage(Keys.history, newHistory);
+        return await this.storageService.save(Keys.history, newHistory);
     }
 
     async clear(): Promise<any> {
         this.history = [];
-        return await UtilsService.removeFromStorage(Keys.history);
+        return await this.storageService.remove(Keys.history);
     }
 
     private async encryptHistory(): Promise<PasswordHistory[]> {

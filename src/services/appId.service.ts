@@ -1,31 +1,27 @@
 import UtilsService from './utils.service';
 
+import { StorageService } from './abstractions/storage.service';
+
 export default class AppIdService {
-    static getAppId(): Promise<string> {
-        return AppIdService.makeAndGetAppId('appId');
+    constructor(private storageService: StorageService) {
     }
 
-    static getAnonymousAppId(): Promise<string> {
-        return AppIdService.makeAndGetAppId('anonymousAppId');
+    getAppId(): Promise<string> {
+        return this.makeAndGetAppId('appId');
     }
 
-    private static async makeAndGetAppId(key: string) {
-        const existingId = await UtilsService.getObjFromStorage<string>(key);
+    getAnonymousAppId(): Promise<string> {
+        return this.makeAndGetAppId('anonymousAppId');
+    }
+
+    private async makeAndGetAppId(key: string) {
+        const existingId = await this.storageService.get<string>(key);
         if (existingId != null) {
             return existingId;
         }
 
         const guid = UtilsService.newGuid();
-        await UtilsService.saveObjToStorage(key, guid);
+        await this.storageService.save(key, guid);
         return guid;
-    }
-
-    // TODO: remove these in favor of static methods
-    getAppId(): Promise<string> {
-        return AppIdService.getAppId();
-    }
-
-    getAnonymousAppId(): Promise<string> {
-        return AppIdService.getAnonymousAppId();
     }
 }

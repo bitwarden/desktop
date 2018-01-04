@@ -1,16 +1,14 @@
-import { UtilsService } from '../../../services/abstractions/utils.service';
+import { StorageService } from '../../../services/abstractions/storage.service';
 
 class StateService {
     private state: any = {};
 
-    constructor(private utilsService: UtilsService, private constantsService: any) {
+    constructor(private storageService: StorageService, private constantsService: any) {
     }
 
     async init() {
-        const faviconsDisabled = await this.utilsService
-            .getObjFromStorage<boolean>(this.constantsService.disableFaviconKey);
-
-        this.saveState('faviconEnabled', !faviconsDisabled);
+        const iconsDisabled = await this.storageService.get<boolean>(this.constantsService.disableFaviconKey);
+        this.saveState('faviconEnabled', !iconsDisabled);
     }
 
     saveState(key: string, data: any) {

@@ -16,7 +16,8 @@ import CryptoService from './crypto.service';
 import FolderService from './folder.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
     lastSyncPrefix: 'lastSync_',
@@ -28,12 +29,13 @@ export default class SyncService {
     constructor(private userService: UserService, private apiService: ApiService,
         private settingsService: SettingsService, private folderService: FolderService,
         private cipherService: CipherService, private cryptoService: CryptoService,
-        private collectionService: CollectionService, private logoutCallback: Function) {
+        private collectionService: CollectionService, private storageService: StorageService,
+        private logoutCallback: Function) {
     }
 
     async getLastSync() {
         const userId = await this.userService.getUserId();
-        const lastSync = await UtilsService.getObjFromStorage<any>(Keys.lastSyncPrefix + userId);
+        const lastSync = await this.storageService.get<any>(Keys.lastSyncPrefix + userId);
         if (lastSync) {
             return new Date(lastSync);
         }
@@ -43,7 +45,7 @@ export default class SyncService {
 
     async setLastSync(date: Date) {
         const userId = await this.userService.getUserId();
-        await UtilsService.saveObjToStorage(Keys.lastSyncPrefix + userId, date.toJSON());
+        await this.storageService.save(Keys.lastSyncPrefix + userId, date.toJSON());
     }
 
     syncStarted() {

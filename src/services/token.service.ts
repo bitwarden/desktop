@@ -1,6 +1,8 @@
 import ConstantsService from './constants.service';
 import UtilsService from './utils.service';
 
+import { StorageService } from './abstractions/storage.service';
+
 const Keys = {
     accessToken: 'accessToken',
     refreshToken: 'refreshToken',
@@ -12,6 +14,9 @@ export default class TokenService {
     decodedToken: any;
     refreshToken: string;
 
+    constructor(private storageService: StorageService) {
+    }
+
     setTokens(accessToken: string, refreshToken: string): Promise<any> {
         return Promise.all([
             this.setToken(accessToken),
@@ -22,7 +27,7 @@ export default class TokenService {
     setToken(token: string): Promise<any> {
         this.token = token;
         this.decodedToken = null;
-        return UtilsService.saveObjToStorage(Keys.accessToken, token);
+        return this.storageService.save(Keys.accessToken, token);
     }
 
     async getToken(): Promise<string> {
@@ -30,13 +35,13 @@ export default class TokenService {
             return this.token;
         }
 
-        this.token = await UtilsService.getObjFromStorage<string>(Keys.accessToken);
+        this.token = await this.storageService.get<string>(Keys.accessToken);
         return this.token;
     }
 
     setRefreshToken(refreshToken: string): Promise<any> {
         this.refreshToken = refreshToken;
-        return UtilsService.saveObjToStorage(Keys.refreshToken, refreshToken);
+        return this.storageService.save(Keys.refreshToken, refreshToken);
     }
 
     async getRefreshToken(): Promise<string> {
@@ -44,20 +49,20 @@ export default class TokenService {
             return this.refreshToken;
         }
 
-        this.refreshToken = await UtilsService.getObjFromStorage<string>(Keys.refreshToken);
+        this.refreshToken = await this.storageService.get<string>(Keys.refreshToken);
         return this.refreshToken;
     }
 
     setTwoFactorToken(token: string, email: string): Promise<any> {
-        return UtilsService.saveObjToStorage(Keys.twoFactorTokenPrefix + email, token);
+        return this.storageService.save(Keys.twoFactorTokenPrefix + email, token);
     }
 
     getTwoFactorToken(email: string): Promise<string> {
-        return UtilsService.getObjFromStorage<string>(Keys.twoFactorTokenPrefix + email);
+        return this.storageService.get<string>(Keys.twoFactorTokenPrefix + email);
     }
 
     clearTwoFactorToken(email: string): Promise<any> {
-        return UtilsService.removeFromStorage(Keys.twoFactorTokenPrefix + email);
+        return this.storageService.remove(Keys.twoFactorTokenPrefix + email);
     }
 
     clearToken(): Promise<any> {
@@ -66,8 +71,8 @@ export default class TokenService {
         this.refreshToken = null;
 
         return Promise.all([
-            UtilsService.removeFromStorage(Keys.accessToken),
-            UtilsService.removeFromStorage(Keys.refreshToken),
+            this.storageService.remove(Keys.accessToken),
+            this.storageService.remove(Keys.refreshToken),
         ]);
     }
 

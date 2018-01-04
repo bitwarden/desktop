@@ -1,6 +1,7 @@
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 import EnvironmentUrls from '../models/domain/environmentUrls';
 
@@ -11,11 +12,11 @@ export default class EnvironmentService {
     identityUrl: string;
     iconsUrl: string;
 
-    constructor(private apiService: ApiService) {
+    constructor(private apiService: ApiService, private storageService: StorageService) {
     }
 
     async setUrlsFromStorage(): Promise<void> {
-        const urlsObj: any = await UtilsService.getObjFromStorage(ConstantsService.environmentUrlsKey);
+        const urlsObj: any = await this.storageService.get(ConstantsService.environmentUrlsKey);
         const urls = urlsObj || {
             base: null,
             api: null,
@@ -46,7 +47,7 @@ export default class EnvironmentService {
         urls.identity = this.formatUrl(urls.identity);
         urls.icons = this.formatUrl(urls.icons);
 
-        await UtilsService.saveObjToStorage(ConstantsService.environmentUrlsKey, {
+        await this.storageService.save(ConstantsService.environmentUrlsKey, {
             base: urls.base,
             api: urls.api,
             identity: urls.identity,

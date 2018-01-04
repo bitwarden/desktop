@@ -1,6 +1,7 @@
 import * as angular from 'angular';
 import { BrowserType } from '../../../enums/browserType.enum';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
+import { StorageService } from '../../../services/abstractions/storage.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 import ConstantsService from '../../../services/constants.service';
 
@@ -28,7 +29,8 @@ export class SettingsController {
 
     constructor(private $state: any, private SweetAlert: any, private utilsService: UtilsService,
         private $analytics: any, private i18nService: any, private constantsService: ConstantsService,
-        private cryptoService: CryptoService, private lockService: any, private $timeout: ng.ITimeoutService) {
+        private cryptoService: CryptoService, private lockService: any, private storageService: StorageService,
+        private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
@@ -36,7 +38,7 @@ export class SettingsController {
         }, 500);
 
         this.showOnLocked = !utilsService.isFirefox() && !utilsService.isEdge();
-        this.utilsService.getObjFromStorage(constantsService.lockOptionKey).then((lockOption: number) => {
+        this.storageService.get(constantsService.lockOptionKey).then((lockOption: number) => {
             if (lockOption != null) {
                 let option = lockOption.toString();
                 if (option === '-2' && !this.showOnLocked) {
@@ -51,7 +53,7 @@ export class SettingsController {
 
     changeLockOption() {
         const option = this.lockOption && this.lockOption !== '' ? parseInt(this.lockOption, 10) : null;
-        this.utilsService.saveObjToStorage(this.constantsService.lockOptionKey, option).then(() => {
+        this.storageService.save(this.constantsService.lockOptionKey, option).then(() => {
             return this.cryptoService.getKeyHash();
         }).then((keyHash) => {
             if (keyHash) {

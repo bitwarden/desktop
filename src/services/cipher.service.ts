@@ -16,7 +16,8 @@ import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
-import UtilsService from './utils.service';
+
+import { StorageService } from './abstractions/storage.service';
 
 const Keys = {
     ciphersPrefix: 'ciphers_',
@@ -68,7 +69,8 @@ export default class CipherService {
     decryptedCipherCache: any[];
 
     constructor(private cryptoService: CryptoService, private userService: UserService,
-        private settingsService: SettingsService, private apiService: ApiService) {
+        private settingsService: SettingsService, private apiService: ApiService,
+        private storageService: StorageService) {
     }
 
     clearCache(): void {
@@ -131,8 +133,8 @@ export default class CipherService {
 
     async get(id: string): Promise<Cipher> {
         const userId = await this.userService.getUserId();
-        const localData = await UtilsService.getObjFromStorage<any>(Keys.localData);
-        const ciphers = await UtilsService.getObjFromStorage<{ [id: string]: CipherData; }>(
+        const localData = await this.storageService.get<any>(Keys.localData);
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null || !ciphers.hasOwnProperty(id)) {
             return null;
@@ -143,8 +145,8 @@ export default class CipherService {
 
     async getAll(): Promise<Cipher[]> {
         const userId = await this.userService.getUserId();
-        const localData = await UtilsService.getObjFromStorage<any>(Keys.localData);
-        const ciphers = await UtilsService.getObjFromStorage<{ [id: string]: CipherData; }>(
+        const localData = await this.storageService.get<any>(Keys.localData);
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
         const response: Cipher[] = [];
         for (const id in ciphers) {
@@ -243,7 +245,7 @@ export default class CipherService {
     }
 
     async updateLastUsedDate(id: string): Promise<void> {
-        let ciphersLocalData = await UtilsService.getObjFromStorage<any>(Keys.localData);
+        let ciphersLocalData = await this.storageService.get<any>(Keys.localData);
         if (!ciphersLocalData) {
             ciphersLocalData = {};
         }
@@ -256,7 +258,7 @@ export default class CipherService {
             };
         }
 
-        await UtilsService.saveObjToStorage(Keys.localData, ciphersLocalData);
+        await this.storageService.save(Keys.localData, ciphersLocalData);
 
         if (this.decryptedCipherCache == null) {
             return;
@@ -276,12 +278,12 @@ export default class CipherService {
             return;
         }
 
-        let domains = await UtilsService.getObjFromStorage<{ [id: string]: any; }>(Keys.neverDomains);
+        let domains = await this.storageService.get<{ [id: string]: any; }>(Keys.neverDomains);
         if (!domains) {
             domains = {};
         }
         domains[domain] = null;
-        await UtilsService.saveObjToStorage(Keys.neverDomains, domains);
+        await this.storageService.save(Keys.neverDomains, domains);
     }
 
     async saveWithServer(cipher: Cipher): Promise<any> {
@@ -339,7 +341,7 @@ export default class CipherService {
 
     async upsert(cipher: CipherData | CipherData[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let ciphers = await UtilsService.getObjFromStorage<{ [id: string]: CipherData; }>(
+        let ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null) {
             ciphers = {};
@@ -354,24 +356,24 @@ export default class CipherService {
             });
         }
 
-        await UtilsService.saveObjToStorage(Keys.ciphersPrefix + userId, ciphers);
+        await this.storageService.save(Keys.ciphersPrefix + userId, ciphers);
         this.decryptedCipherCache = null;
     }
 
     async replace(ciphers: { [id: string]: CipherData; }): Promise<any> {
         const userId = await this.userService.getUserId();
-        await UtilsService.saveObjToStorage(Keys.ciphersPrefix + userId, ciphers);
+        await this.storageService.save(Keys.ciphersPrefix + userId, ciphers);
         this.decryptedCipherCache = null;
     }
 
     async clear(userId: string): Promise<any> {
-        await UtilsService.removeFromStorage(Keys.ciphersPrefix + userId);
+        await this.storageService.remove(Keys.ciphersPrefix + userId);
         this.decryptedCipherCache = null;
     }
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const ciphers = await UtilsService.getObjFromStorage<{ [id: string]: CipherData; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null) {
             return;
@@ -386,7 +388,7 @@ export default class CipherService {
             });
         }
 
-        await UtilsService.saveObjToStorage(Keys.ciphersPrefix + userId, ciphers);
+        await this.storageService.save(Keys.ciphersPrefix + userId, ciphers);
         this.decryptedCipherCache = null;
     }
 
@@ -397,7 +399,7 @@ export default class CipherService {
 
     async deleteAttachment(id: string, attachmentId: string): Promise<void> {
         const userId = await this.userService.getUserId();
-        const ciphers = await UtilsService.getObjFromStorage<{ [id: string]: CipherData; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
 
         if (ciphers == null || !ciphers.hasOwnProperty(id) || ciphers[id].attachments == null) {
@@ -410,7 +412,7 @@ export default class CipherService {
             }
         }
 
-        await UtilsService.saveObjToStorage(Keys.ciphersPrefix + userId, ciphers);
+        await this.storageService.save(Keys.ciphersPrefix + userId, ciphers);
         this.decryptedCipherCache = null;
     }
 
