@@ -212,4 +212,23 @@ export default class BrowserUtilsService implements BrowserUtilsServiceInterface
         return theWindow.location.search === '' || theWindow.location.search.indexOf('uilocation=') === -1 ||
             theWindow.location.search.indexOf('uilocation=popup') > -1;
     }
+
+    isViewOpen(): boolean {
+        const popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
+        const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
+        const sidebarView = this.sidebarViewName();
+        const sidebarOpen = sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
+
+        return popupOpen || tabOpen || sidebarOpen;
+    }
+
+    private sidebarViewName(): string {
+        if ((window as any).chrome.sidebarAction && this.isFirefox()) {
+            return 'sidebar';
+        } else if (this.isOpera() && (typeof opr !== 'undefined') && opr.sidebarAction) {
+            return 'sidebar_panel';
+        }
+
+        return null;
+    }
 }

@@ -29,12 +29,7 @@ export default class LockService {
     }
 
     async checkLock(): Promise<void> {
-        const popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
-        const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
-        const sidebarView = this.sidebarViewName();
-        const sidebarOpen = sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
-
-        if (popupOpen || tabOpen || sidebarOpen) {
+        if (this.browserUtilsService.isViewOpen()) {
             // Do not lock
             return;
         }
@@ -76,17 +71,5 @@ export default class LockService {
         this.folderService.clearCache();
         this.cipherService.clearCache();
         this.collectionService.clearCache();
-    }
-
-    // Helpers
-
-    private sidebarViewName(): string {
-        if ((window as any).chrome.sidebarAction && this.browserUtilsService.isFirefox()) {
-            return 'sidebar';
-        } else if (this.browserUtilsService.isOpera() && (typeof opr !== 'undefined') && opr.sidebarAction) {
-            return 'sidebar_panel';
-        }
-
-        return null;
     }
 }

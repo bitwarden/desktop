@@ -14,4 +14,5 @@ export interface BrowserUtilsService {
     inTab(theWindow: Window): boolean;
     inPopout(theWindow: Window): boolean;
     inPopup(theWindow: Window): boolean;
+    isViewOpen(): boolean;
 }
