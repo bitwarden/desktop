@@ -6,6 +6,7 @@ import BrowserApi from '../browser/browserApi';
 
 import CommandsBackground from './commands.background';
 import ContextMenusBackground from './contextMenus.background';
+import IdleBackground from './idle.background';
 import RuntimeBackground from './runtime.background';
 import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
@@ -67,6 +68,7 @@ export default class MainBackground {
 
     private commandsBackground: CommandsBackground;
     private contextMenusBackground: ContextMenusBackground;
+    private idleBackground: IdleBackground;
     private runtimeBackground: RuntimeBackground;
     private tabsBackground: TabsBackground;
     private webRequestBackground: WebRequestBackground;
@@ -118,6 +120,7 @@ export default class MainBackground {
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
         this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
             this.passwordGenerationService);
+        this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService);
         this.tabsBackground = new TabsBackground(this);
         this.webRequestBackground = new WebRequestBackground(this.browserUtilsService, this.cipherService);
@@ -127,6 +130,7 @@ export default class MainBackground {
     async bootstrap() {
         await this.commandsBackground.init();
         await this.contextMenusBackground.init();
+        await this.idleBackground.init();
         await this.runtimeBackground.init();
         await this.tabsBackground.init();
         await this.webRequestBackground.init();

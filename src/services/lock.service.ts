@@ -14,18 +14,6 @@ export default class LockService {
         private setIcon: Function, private refreshBadgeAndMenu: Function) {
         this.checkLock();
         setInterval(() => this.checkLock(), 10 * 1000); // check every 10 seconds
-
-        const self = this;
-        if ((window as any).chrome.idle && (window as any).chrome.idle.onStateChanged) {
-            (window as any).chrome.idle.onStateChanged.addListener(async (newState: string) => {
-                if (newState === 'locked') {
-                    const lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
-                    if (lockOption === -2) {
-                        self.lock();
-                    }
-                }
-            });
-        }
     }
 
     async checkLock(): Promise<void> {
