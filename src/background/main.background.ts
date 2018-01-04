@@ -15,8 +15,8 @@ import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
 import BrowserMessagingService from '../services/browserMessaging.service';
+import BrowserStorageService from '../services/browserStorage.service';
 import BrowserUtilsService from '../services/browserUtils.service';
-import ChromeStorageService from '../services/chromeStorage.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import ConstantsService from '../services/constants.service';
@@ -82,7 +82,7 @@ export default class MainBackground {
         this.utilsService = new UtilsService();
         this.browserUtilsService = new BrowserUtilsService();
         this.messagingService = new BrowserMessagingService(this.browserUtilsService);
-        this.storageService = new ChromeStorageService();
+        this.storageService = new BrowserStorageService(this.browserUtilsService);
         this.i18nService = i18nService(this.browserUtilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.browserUtilsService);
         this.cryptoService = ContainerService.cryptoService = new CryptoService(this.storageService,
