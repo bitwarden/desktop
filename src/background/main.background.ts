@@ -16,8 +16,8 @@ import ApiService from '../services/api.service';
 import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
 import BrowserMessagingService from '../services/browserMessaging.service';
+import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
-import BrowserUtilsService from '../services/browserUtils.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import ConstantsService from '../services/constants.service';
@@ -83,7 +83,7 @@ export default class MainBackground {
     constructor() {
         // Services
         this.utilsService = new UtilsService();
-        this.platformUtilsService = new BrowserUtilsService();
+        this.platformUtilsService = new BrowserPlatformUtilsService();
         this.messagingService = new BrowserMessagingService(this.platformUtilsService);
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = i18nService(this.platformUtilsService);

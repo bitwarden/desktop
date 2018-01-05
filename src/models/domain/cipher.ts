@@ -11,7 +11,7 @@ import { Identity } from './identity';
 import { Login } from './login';
 import { SecureNote } from './secureNote';
 
-import BrowserUtilsService from '../../services/browserUtils.service';
+import BrowserPlatformUtilsService from '../../services/browserPlatformUtils.service';
 
 class Cipher extends Domain {
     id: string;
@@ -117,7 +117,7 @@ class Cipher extends Domain {
                 model.login = await this.login.decrypt(this.organizationId);
                 model.subTitle = model.login.username;
                 if (model.login.uri) {
-                    model.login.domain = BrowserUtilsService.getDomain(model.login.uri);
+                    model.login.domain = BrowserPlatformUtilsService.getDomain(model.login.uri);
                 }
                 break;
             case CipherType.SecureNote:

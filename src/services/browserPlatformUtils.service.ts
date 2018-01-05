@@ -11,7 +11,7 @@ const AnalyticsIds = {
     [DeviceType.Safari]: 'UA-81915606-16',
 };
 
-export default class BrowserUtilsService implements PlatformUtilsServiceInterface {
+export default class BrowserPlatformUtilsService implements PlatformUtilsServiceInterface {
     static getDomain(uriString: string): string {
         if (uriString == null) {
             return null;
@@ -26,7 +26,7 @@ export default class BrowserUtilsService implements PlatformUtilsServiceInterfac
             try {
                 const url = new URL(uriString);
 
-                if (url.hostname === 'localhost' || BrowserUtilsService.validIpAddress(url.hostname)) {
+                if (url.hostname === 'localhost' || BrowserPlatformUtilsService.validIpAddress(url.hostname)) {
                     return url.hostname;
                 }
 
@@ -193,7 +193,7 @@ export default class BrowserUtilsService implements PlatformUtilsServiceInterfac
     }
 
     getDomain(uriString: string): string {
-        return BrowserUtilsService.getDomain(uriString);
+        return BrowserPlatformUtilsService.getDomain(uriString);
     }
 
     inSidebar(theWindow: Window): boolean {
