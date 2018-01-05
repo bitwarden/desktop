@@ -1,14 +1,14 @@
 import * as tldjs from 'tldjs';
-import { BrowserType } from '../enums/browserType.enum';
+import { DeviceType } from '../enums/deviceType.enum';
 import { BrowserUtilsService as BrowserUtilsServiceInterface } from './abstractions/browserUtils.service';
 
 const AnalyticsIds = {
-    [BrowserType.Chrome]: 'UA-81915606-6',
-    [BrowserType.Firefox]: 'UA-81915606-7',
-    [BrowserType.Opera]: 'UA-81915606-8',
-    [BrowserType.Edge]: 'UA-81915606-9',
-    [BrowserType.Vivaldi]: 'UA-81915606-15',
-    [BrowserType.Safari]: 'UA-81915606-16',
+    [DeviceType.Chrome]: 'UA-81915606-6',
+    [DeviceType.Firefox]: 'UA-81915606-7',
+    [DeviceType.Opera]: 'UA-81915606-8',
+    [DeviceType.Edge]: 'UA-81915606-9',
+    [DeviceType.Vivaldi]: 'UA-81915606-15',
+    [DeviceType.Safari]: 'UA-81915606-16',
 };
 
 export default class BrowserUtilsService implements BrowserUtilsServiceInterface {
@@ -49,56 +49,56 @@ export default class BrowserUtilsService implements BrowserUtilsServiceInterface
         return ipRegex.test(ipString);
     }
 
-    private browserCache: BrowserType = null;
+    private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
 
-    getBrowser(): BrowserType {
-        if (this.browserCache) {
-            return this.browserCache;
+    getDevice(): DeviceType {
+        if (this.deviceCache) {
+            return this.deviceCache;
         }
 
         if (navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1) {
-            this.browserCache = BrowserType.Firefox;
+            this.deviceCache = DeviceType.Firefox;
         } else if ((!!(window as any).opr && !!opr.addons) || !!(window as any).opera ||
             navigator.userAgent.indexOf(' OPR/') >= 0) {
-            this.browserCache = BrowserType.Opera;
+            this.deviceCache = DeviceType.Opera;
         } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
-            this.browserCache = BrowserType.Edge;
+            this.deviceCache = DeviceType.Edge;
         } else if (navigator.userAgent.indexOf(' Vivaldi/') !== -1) {
-            this.browserCache = BrowserType.Vivaldi;
+            this.deviceCache = DeviceType.Vivaldi;
         } else if ((window as any).chrome) {
-            this.browserCache = BrowserType.Chrome;
+            this.deviceCache = DeviceType.Chrome;
         }
 
-        return this.browserCache;
+        return this.deviceCache;
     }
 
-    getBrowserString(): string {
-        return BrowserType[this.getBrowser()].toLowerCase();
+    getDeviceString(): string {
+        return DeviceType[this.getDevice()].toLowerCase();
     }
 
     isFirefox(): boolean {
-        return this.getBrowser() === BrowserType.Firefox;
+        return this.getDevice() === DeviceType.Firefox;
     }
 
     isChrome(): boolean {
-        return this.getBrowser() === BrowserType.Chrome;
+        return this.getDevice() === DeviceType.Chrome;
     }
 
     isEdge(): boolean {
-        return this.getBrowser() === BrowserType.Edge;
+        return this.getDevice() === DeviceType.Edge;
     }
 
     isOpera(): boolean {
-        return this.getBrowser() === BrowserType.Opera;
+        return this.getDevice() === DeviceType.Opera;
     }
 
     isVivaldi(): boolean {
-        return this.getBrowser() === BrowserType.Vivaldi;
+        return this.getDevice() === DeviceType.Vivaldi;
     }
 
     isSafari(): boolean {
-        return this.getBrowser() === BrowserType.Safari;
+        return this.getDevice() === DeviceType.Safari;
     }
 
     analyticsId(): string {
@@ -106,7 +106,7 @@ export default class BrowserUtilsService implements BrowserUtilsServiceInterface
             return this.analyticsIdCache;
         }
 
-        this.analyticsIdCache = AnalyticsIds[this.getBrowser()];
+        this.analyticsIdCache = AnalyticsIds[this.getDevice()];
         return this.analyticsIdCache;
     }
 
@@ -215,11 +215,18 @@ export default class BrowserUtilsService implements BrowserUtilsServiceInterface
 
     isViewOpen(): boolean {
         const popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
-        const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
+        if (popupOpen) {
+            return true;
+        }
+
         const sidebarView = this.sidebarViewName();
         const sidebarOpen = sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
+        if (sidebarOpen) {
+            return true;
+        }
 
-        return popupOpen || tabOpen || sidebarOpen;
+        const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
+        return tabOpen;
     }
 
     private sidebarViewName(): string {

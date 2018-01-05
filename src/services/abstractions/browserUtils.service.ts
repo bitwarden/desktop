@@ -1,8 +1,8 @@
-import { BrowserType } from '../../enums/browserType.enum';
+import { DeviceType } from '../../enums/deviceType.enum';
 
 export interface BrowserUtilsService {
-    getBrowser(): BrowserType;
-    getBrowserString(): string;
+    getDevice(): DeviceType;
+    getDeviceString(): string;
     isFirefox(): boolean;
     isChrome(): boolean;
     isEdge(): boolean;

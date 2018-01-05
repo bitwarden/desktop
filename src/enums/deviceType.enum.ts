@@ -1,4 +1,4 @@
-export enum BrowserType {
+export enum DeviceType {
     Chrome = 2,
     Firefox = 3,
     Opera = 4,

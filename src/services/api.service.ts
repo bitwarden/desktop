@@ -38,7 +38,7 @@ export default class ApiService {
     constructor(private tokenService: TokenService, browserUtilsService: BrowserUtilsService,
         logoutCallback: Function) {
         this.logoutCallback = logoutCallback;
-        this.deviceType = browserUtilsService.getBrowser().toString();
+        this.deviceType = browserUtilsService.getDevice().toString();
     }
 
     setUrls(urls: EnvironmentUrls) {

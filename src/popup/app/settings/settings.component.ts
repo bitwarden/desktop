@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import { BrowserType } from '../../../enums/browserType.enum';
+import { DeviceType } from '../../../enums/deviceType.enum';
 import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { MessagingService } from '../../../services/abstractions/messaging.service';
@@ -9,17 +9,17 @@ import ConstantsService from '../../../services/constants.service';
 import * as template from './settings.component.html';
 
 const RateUrls = {
-    [BrowserType.Chrome]:
+    [DeviceType.Chrome]:
     'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [BrowserType.Firefox]:
+    [DeviceType.Firefox]:
     'https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/#reviews',
-    [BrowserType.Opera]:
+    [DeviceType.Opera]:
     'https://addons.opera.com/en/extensions/details/bitwarden-free-password-manager/#feedback-container',
-    [BrowserType.Edge]:
+    [DeviceType.Edge]:
     'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl',
-    [BrowserType.Vivaldi]:
+    [DeviceType.Vivaldi]:
     'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [BrowserType.Safari]:
+    [DeviceType.Safari]:
     'https://itunes.com', // TODO
 };
 
@@ -147,7 +147,7 @@ export class SettingsController {
     rate() {
         this.$analytics.eventTrack('Rate Extension');
         chrome.tabs.create({
-            url: RateUrls[this.browserUtilsService.getBrowser()],
+            url: RateUrls[this.browserUtilsService.getDevice()],
         });
     }
 }

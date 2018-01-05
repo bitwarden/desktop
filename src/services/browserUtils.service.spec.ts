@@ -1,5 +1,5 @@
 import BrowserUtilsService from './browserUtils.service';
-import { BrowserType } from '../enums/browserType.enum';
+import { DeviceType } from '../enums/deviceType.enum';
 
 describe('Browser Utils Service', () => {
     describe('getDomain', () => {
@@ -48,7 +48,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserUtilsService = new BrowserUtilsService();
-            expect(browserUtilsService.getBrowser()).toBe(BrowserType.Chrome);
+            expect(browserUtilsService.getDevice()).toBe(DeviceType.Chrome);
         });
 
         it('should detect firefox', () => {
@@ -58,7 +58,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserUtilsService = new BrowserUtilsService();
-            expect(browserUtilsService.getBrowser()).toBe(BrowserType.Firefox);
+            expect(browserUtilsService.getDevice()).toBe(DeviceType.Firefox);
         });
 
         it('should detect opera', () => {
@@ -68,7 +68,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserUtilsService = new BrowserUtilsService();
-            expect(browserUtilsService.getBrowser()).toBe(BrowserType.Opera);
+            expect(browserUtilsService.getDevice()).toBe(DeviceType.Opera);
         });
 
         it('should detect edge', () => {
@@ -78,7 +78,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserUtilsService = new BrowserUtilsService();
-            expect(browserUtilsService.getBrowser()).toBe(BrowserType.Edge);
+            expect(browserUtilsService.getDevice()).toBe(DeviceType.Edge);
         });
     });
 });
