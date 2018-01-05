@@ -1,6 +1,6 @@
 import * as angular from 'angular';
-import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { MessagingService } from '../../../services/abstractions/messaging.service';
+import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
 import { StorageService } from '../../../services/abstractions/storage.service';
 import StateService from '../services/state.service';
 import * as template from './options.component.html';
@@ -15,13 +15,13 @@ export class OptionsController {
     i18n: any;
 
     constructor(private i18nService: any, private $analytics: any, private constantsService: any,
-        private browserUtilsService: BrowserUtilsService, private totpService: any, private stateService: StateService,
-        private storageService: StorageService, public messagingService: MessagingService,
-        private $timeout: ng.ITimeoutService) {
+        private platformUtilsService: PlatformUtilsService, private totpService: any,
+        private stateService: StateService, private storageService: StorageService,
+        public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
-            browserUtilsService.initListSectionItemListeners(document, angular);
+            platformUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         this.loadSettings();
@@ -33,7 +33,7 @@ export class OptionsController {
 
         const disableGa = await this.storageService.get<boolean>(
             this.constantsService.disableGaKey);
-        this.disableGa = disableGa || (this.browserUtilsService.isFirefox() && disableGa === undefined);
+        this.disableGa = disableGa || (this.platformUtilsService.isFirefox() && disableGa === undefined);
 
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             this.constantsService.disableAddLoginNotificationKey);

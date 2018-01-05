@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import { Folder } from '../../../../models/domain/folder';
 import * as template from './add-folder.component.html';
 
-import { BrowserUtilsService } from '../../../../services/abstractions/browserUtils.service';
+import { PlatformUtilsService } from '../../../../services/abstractions/platformUtils.service';
 
 export class AddFolderController {
     savePromise: any;
@@ -10,9 +10,10 @@ export class AddFolderController {
     i18n: any;
 
     constructor(private folderService: any, private $state: any, private toastr: any,
-        browserUtilsService: BrowserUtilsService, private $analytics: any, private i18nService: any, $timeout: any) {
+        platformUtilsService: PlatformUtilsService, private $analytics: any, private i18nService: any,
+        $timeout: any) {
         $timeout(() => {
-            browserUtilsService.initListSectionItemListeners(document, angular);
+            platformUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();
         }, 500);
 

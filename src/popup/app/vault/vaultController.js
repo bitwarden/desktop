@@ -2,14 +2,14 @@ angular
     .module('bit.vault')
 
     .controller('vaultController', function ($scope, $rootScope, cipherService, folderService, $q, $state, $stateParams, toastr,
-        syncService, browserUtilsService, $analytics, i18nService, stateService, $timeout, $window, collectionService, $filter) {
+        syncService, platformUtilsService, $analytics, i18nService, stateService, $timeout, $window, collectionService, $filter) {
         var stateKey = 'vault',
             state = stateService.getState(stateKey) || {};
         stateService.removeState('viewGrouping');
 
         $scope.i18n = i18nService;
-        $scope.showGroupingCounts = !browserUtilsService.isEdge();
-        $scope.disableSearch = browserUtilsService.isEdge();
+        $scope.showGroupingCounts = !platformUtilsService.isEdge();
+        $scope.disableSearch = platformUtilsService.isEdge();
         document.getElementById('search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;

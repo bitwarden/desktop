@@ -1,23 +1,23 @@
-import BrowserUtilsService from './browserUtils.service';
 import CipherService from './cipher.service';
 import CollectionService from './collection.service';
 import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import FolderService from './folder.service';
 
+import { PlatformUtilsService } from './abstractions/platformUtils.service';
 import { StorageService } from './abstractions/storage.service';
 
 export default class LockService {
     constructor(private cipherService: CipherService, private folderService: FolderService,
         private collectionService: CollectionService, private cryptoService: CryptoService,
-        private browserUtilsService: BrowserUtilsService, private storageService: StorageService,
+        private platformUtilsService: PlatformUtilsService, private storageService: StorageService,
         private setIcon: Function, private refreshBadgeAndMenu: Function) {
         this.checkLock();
         setInterval(() => this.checkLock(), 10 * 1000); // check every 10 seconds
     }
 
     async checkLock(): Promise<void> {
-        if (this.browserUtilsService.isViewOpen()) {
+        if (this.platformUtilsService.isViewOpen()) {
             // Do not lock
             return;
         }

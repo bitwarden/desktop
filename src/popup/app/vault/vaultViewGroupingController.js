@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewGroupingController', function ($scope, cipherService, folderService, $q, $state, $stateParams, toastr,
-        syncService, $analytics, i18nService, stateService, browserUtilsService, $timeout, $window, collectionService) {
+        syncService, $analytics, i18nService, stateService, platformUtilsService, $timeout, $window, collectionService) {
         var stateKey = 'viewGrouping',
             state = stateService.getState(stateKey) || {};
 
@@ -60,7 +60,7 @@ angular
 
             var cipherPromise = cipherService.getAllDecryptedForGrouping($scope.grouping.id, $scope.folderGrouping)
                 .then(function (ciphers) {
-                    if (browserUtilsService.isEdge()) {
+                    if (platformUtilsService.isEdge()) {
                         // Edge is super slow at sorting
                         decCiphers = ciphers;
                     }

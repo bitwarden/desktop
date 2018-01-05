@@ -36,13 +36,14 @@ import UserService from '../services/user.service';
 import UtilsService from '../services/utils.service';
 
 import { MessagingService } from '../services/abstractions/messaging.service';
+import { PlatformUtilsService } from '../services/abstractions/platformUtils.service';
 import { StorageService } from '../services/abstractions/storage.service';
 
 export default class MainBackground {
     messagingService: MessagingService;
     storageService: StorageService;
     i18nService: any;
-    browserUtilsService: BrowserUtilsService;
+    platformUtilsService: PlatformUtilsService;
     utilsService: UtilsService;
     constantsService: ConstantsService;
     cryptoService: CryptoService;
@@ -82,16 +83,16 @@ export default class MainBackground {
     constructor() {
         // Services
         this.utilsService = new UtilsService();
-        this.browserUtilsService = new BrowserUtilsService();
-        this.messagingService = new BrowserMessagingService(this.browserUtilsService);
-        this.storageService = new BrowserStorageService(this.browserUtilsService);
-        this.i18nService = i18nService(this.browserUtilsService);
-        this.constantsService = new ConstantsService(this.i18nService, this.browserUtilsService);
+        this.platformUtilsService = new BrowserUtilsService();
+        this.messagingService = new BrowserMessagingService(this.platformUtilsService);
+        this.storageService = new BrowserStorageService(this.platformUtilsService);
+        this.i18nService = i18nService(this.platformUtilsService);
+        this.constantsService = new ConstantsService(this.i18nService, this.platformUtilsService);
         this.cryptoService = ContainerService.cryptoService = new CryptoService(this.storageService,
             this.storageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
-        this.apiService = new ApiService(this.tokenService, this.browserUtilsService,
+        this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
             (expired: boolean) => this.logout(expired));
         this.environmentService = new EnvironmentService(this.apiService, this.storageService);
         this.userService = new UserService(this.tokenService, this.storageService);
@@ -102,7 +103,7 @@ export default class MainBackground {
             this.apiService, this.storageService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
-            this.cryptoService, this.browserUtilsService, this.storageService,
+            this.cryptoService, this.platformUtilsService, this.storageService,
             () => this.setIcon(), () => this.refreshBadgeAndMenu());
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
@@ -110,7 +111,7 @@ export default class MainBackground {
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
         this.totpService = new TotpService(this.storageService);
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
-            this.totpService, this.utilsService, this.browserUtilsService);
+            this.totpService, this.utilsService, this.platformUtilsService);
 
         // Other fields
         this.sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ?
@@ -121,9 +122,10 @@ export default class MainBackground {
         this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
             this.passwordGenerationService);
         this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
-        this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService);
+        this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
+            this.platformUtilsService);
         this.tabsBackground = new TabsBackground(this);
-        this.webRequestBackground = new WebRequestBackground(this.browserUtilsService, this.cipherService);
+        this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService);
         this.windowsBackground = new WindowsBackground(this);
     }
 
@@ -262,7 +264,7 @@ export default class MainBackground {
         });
 
         // Firefox & Edge do not support writing to the clipboard from background
-        if (!this.browserUtilsService.isFirefox() && !this.browserUtilsService.isEdge()) {
+        if (!this.platformUtilsService.isFirefox() && !this.platformUtilsService.isEdge()) {
             await this.contextMenusCreate({
                 type: 'normal',
                 id: 'copy-username',
@@ -306,7 +308,7 @@ export default class MainBackground {
             return;
         }
 
-        const tabDomain = BrowserUtilsService.getDomain(url);
+        const tabDomain = this.platformUtilsService.getDomain(url);
         if (tabDomain == null) {
             return;
         }
@@ -381,7 +383,7 @@ export default class MainBackground {
             });
         }
 
-        if (this.browserUtilsService.isFirefox()) {
+        if (this.platformUtilsService.isFirefox()) {
             // Firefox does not support writing to the clipboard from background
             return;
         }
@@ -422,7 +424,7 @@ export default class MainBackground {
             return;
         }
 
-        const tabDomain = BrowserUtilsService.getDomain(tab.url);
+        const tabDomain = this.platformUtilsService.getDomain(tab.url);
         if (tabDomain == null) {
             return;
         }
@@ -500,7 +502,7 @@ export default class MainBackground {
             },
         };
 
-        if (this.browserUtilsService.isFirefox()) {
+        if (this.platformUtilsService.isFirefox()) {
             await theAction.setIcon(options);
         } else {
             return new Promise((resolve) => {

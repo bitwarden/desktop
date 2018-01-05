@@ -5,11 +5,12 @@ import AutofillField from '../models/domain/autofillField';
 import AutofillPageDetails from '../models/domain/autofillPageDetails';
 import AutofillScript from '../models/domain/autofillScript';
 
-import BrowserUtilsService from './browserUtils.service';
 import CipherService from './cipher.service';
 import TokenService from './token.service';
 import TotpService from './totp.service';
 import UtilsService from './utils.service';
+
+import { PlatformUtilsService } from '../services/abstractions/platformUtils.service';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top'];
@@ -94,7 +95,7 @@ var IsoProvinces: { [id: string]: string; } = {
 export default class AutofillService {
     constructor(public cipherService: CipherService, public tokenService: TokenService,
         public totpService: TotpService, public utilsService: UtilsService,
-        public browserUtilsService: BrowserUtilsService) {
+        public platformUtilsService: PlatformUtilsService) {
     }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
@@ -169,7 +170,7 @@ export default class AutofillService {
             }, { frameId: pd.frameId });
 
             if (options.cipher.type !== CipherType.Login || totpPromise ||
-                (options.fromBackground && this.browserUtilsService.isFirefox()) || options.skipTotp ||
+                (options.fromBackground && this.platformUtilsService.isFirefox()) || options.skipTotp ||
                 !options.cipher.login.totp || !this.tokenService.getPremium()) {
                 return;
             }
@@ -207,7 +208,7 @@ export default class AutofillService {
             return;
         }
 
-        const tabDomain = BrowserUtilsService.getDomain(tab.url);
+        const tabDomain = this.platformUtilsService.getDomain(tab.url);
         if (tabDomain == null) {
             return;
         }

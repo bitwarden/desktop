@@ -1,4 +1,4 @@
-import BrowserUtilsService from './browserUtils.service';
+import { PlatformUtilsService } from './abstractions/platformUtils.service';
 
 export default class ConstantsService {
     static readonly environmentUrlsKey: string = 'environmentUrls';
@@ -57,8 +57,8 @@ export default class ConstantsService {
 
     twoFactorProviderInfo: any[];
 
-    constructor(i18nService: any, browserUtilsService: BrowserUtilsService) {
-        if (browserUtilsService.isEdge()) {
+    constructor(i18nService: any, platformUtilsService: PlatformUtilsService) {
+        if (platformUtilsService.isEdge()) {
             // delay for i18n fetch
             setTimeout(() => {
                 this.bootstrap(i18nService);

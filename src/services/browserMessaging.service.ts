@@ -1,8 +1,8 @@
-import { BrowserUtilsService } from './abstractions/browserUtils.service';
 import { MessagingService as MessagingServiceInterface } from './abstractions/messaging.service';
+import { PlatformUtilsService } from './abstractions/platformUtils.service';
 
 export default class BrowserMessagingService implements MessagingServiceInterface {
-    constructor(private browserUtilsService: BrowserUtilsService) {
+    constructor(private platformUtilsService: PlatformUtilsService) {
     }
 
     send(subscriber: string, arg: any = {}) {

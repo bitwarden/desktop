@@ -5,9 +5,10 @@ import BrowserApi from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import AutofillService from '../services/autofill.service';
-import BrowserUtilsService from '../services/browserUtils.service';
 import CipherService from '../services/cipher.service';
 import UtilsService from '../services/utils.service';
+
+import { PlatformUtilsService } from '../services/abstractions/platformUtils.service';
 
 export default class RuntimeBackground {
     private runtime: any;
@@ -15,7 +16,7 @@ export default class RuntimeBackground {
     private pageDetailsToAutoFill: any[] = [];
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
-        private cipherService: CipherService) {
+        private cipherService: CipherService, private platformUtilsService: PlatformUtilsService) {
         this.runtime = chrome.runtime;
     }
 
@@ -135,7 +136,7 @@ export default class RuntimeBackground {
             }
 
             const loginInfo = this.main.loginsToAdd[i];
-            const tabDomain = BrowserUtilsService.getDomain(tab.url);
+            const tabDomain = this.platformUtilsService.getDomain(tab.url);
             if (tabDomain != null && tabDomain !== loginInfo.domain) {
                 continue;
             }
@@ -173,7 +174,7 @@ export default class RuntimeBackground {
             }
 
             const loginInfo = this.main.loginsToAdd[i];
-            const tabDomain = BrowserUtilsService.getDomain(tab.url);
+            const tabDomain = this.platformUtilsService.getDomain(tab.url);
             if (tabDomain != null && tabDomain !== loginInfo.domain) {
                 continue;
             }
@@ -186,7 +187,7 @@ export default class RuntimeBackground {
     }
 
     private async addLogin(loginInfo: any, tab: any) {
-        const loginDomain = BrowserUtilsService.getDomain(loginInfo.url);
+        const loginDomain = this.platformUtilsService.getDomain(loginInfo.url);
         if (loginDomain == null) {
             return;
         }

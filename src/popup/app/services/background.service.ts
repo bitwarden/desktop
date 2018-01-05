@@ -1,5 +1,5 @@
-import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
+import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
 import { StorageService } from '../../../services/abstractions/storage.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';
 
@@ -20,7 +20,7 @@ export const cipherService = getBackgroundService<CryptoService>('cipherService'
 export const syncService = getBackgroundService<any>('syncService');
 export const autofillService = getBackgroundService<any>('autofillService');
 export const passwordGenerationService = getBackgroundService<any>('passwordGenerationService');
-export const browserUtilsService = getBackgroundService<BrowserUtilsService>('browserUtilsService');
+export const platformUtilsService = getBackgroundService<PlatformUtilsService>('platformUtilsService');
 export const utilsService = getBackgroundService<UtilsService>('utilsService');
 export const appIdService = getBackgroundService<any>('appIdService');
 export const i18nService = getBackgroundService<any>('i18nService');

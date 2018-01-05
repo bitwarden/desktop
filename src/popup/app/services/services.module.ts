@@ -6,7 +6,7 @@ import { ValidationService } from './validation.service';
 
 import BrowserMessagingService from '../../../services/browserMessaging.service';
 
-const messagingService = new BrowserMessagingService(backgroundServices.browserUtilsService());
+const messagingService = new BrowserMessagingService(backgroundServices.platformUtilsService());
 
 export default angular
     .module('bit.services', ['toastr'])
@@ -25,7 +25,7 @@ export default angular
     .factory('syncService', backgroundServices.syncService)
     .factory('autofillService', backgroundServices.autofillService)
     .factory('passwordGenerationService', backgroundServices.passwordGenerationService)
-    .factory('browserUtilsService', backgroundServices.browserUtilsService)
+    .factory('platformUtilsService', backgroundServices.platformUtilsService)
     .factory('utilsService', backgroundServices.utilsService)
     .factory('appIdService', backgroundServices.appIdService)
     .factory('i18nService', backgroundServices.i18nService)

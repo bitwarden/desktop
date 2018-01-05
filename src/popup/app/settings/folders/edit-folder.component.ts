@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import { Folder } from '../../../../models/domain/folder';
 import * as template from './edit-folder.component.html';
 
-import { BrowserUtilsService } from '../../../../services/abstractions/browserUtils.service';
+import { PlatformUtilsService } from '../../../../services/abstractions/platformUtils.service';
 
 export class EditFolderController {
     $transition$: any;
@@ -12,12 +12,12 @@ export class EditFolderController {
     folder: Folder;
 
     constructor($scope: any, $stateParams: any, private folderService: any, private toastr: any, private $state: any,
-        private SweetAlert: any, browserUtilsService: BrowserUtilsService, private $analytics: any,
+        private SweetAlert: any, platformUtilsService: PlatformUtilsService, private $analytics: any,
         private i18nService: any, $timeout: any) {
         this.i18n = i18nService;
 
         $timeout(() => {
-            browserUtilsService.initListSectionItemListeners(document, angular);
+            platformUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();
         }, 500);
 

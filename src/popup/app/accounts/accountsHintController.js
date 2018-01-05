@@ -1,10 +1,10 @@
 angular
     .module('bit.accounts')
 
-    .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q, browserUtilsService,
+    .controller('accountsHintController', function ($scope, $state, apiService, toastr, $q, platformUtilsService,
         $analytics, i18nService, $timeout) {
         $timeout(function () {
-            browserUtilsService.initListSectionItemListeners(document, angular);
+            platformUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('email').focus();
         }, 500);
 

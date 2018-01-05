@@ -1,8 +1,8 @@
 import * as angular from 'angular';
 import { DeviceType } from '../../../enums/deviceType.enum';
-import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { MessagingService } from '../../../services/abstractions/messaging.service';
+import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
 import { StorageService } from '../../../services/abstractions/storage.service';
 import ConstantsService from '../../../services/constants.service';
 
@@ -28,17 +28,17 @@ export class SettingsController {
     i18n: any;
     showOnLocked: boolean;
 
-    constructor(private $state: any, private SweetAlert: any, private browserUtilsService: BrowserUtilsService,
+    constructor(private $state: any, private SweetAlert: any, private platformUtilsService: PlatformUtilsService,
         private $analytics: any, private i18nService: any, private constantsService: ConstantsService,
         private cryptoService: CryptoService, private lockService: any, private storageService: StorageService,
         public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
-            browserUtilsService.initListSectionItemListeners(document, angular);
+            platformUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
-        this.showOnLocked = !browserUtilsService.isFirefox() && !browserUtilsService.isEdge();
+        this.showOnLocked = !platformUtilsService.isFirefox() && !platformUtilsService.isEdge();
         this.storageService.get(constantsService.lockOptionKey).then((lockOption: number) => {
             if (lockOption != null) {
                 let option = lockOption.toString();
@@ -147,7 +147,7 @@ export class SettingsController {
     rate() {
         this.$analytics.eventTrack('Rate Extension');
         chrome.tabs.create({
-            url: RateUrls[this.browserUtilsService.getDevice()],
+            url: RateUrls[this.platformUtilsService.getDevice()],
         });
     }
 }

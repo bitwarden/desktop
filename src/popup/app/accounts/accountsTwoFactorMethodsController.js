@@ -26,7 +26,7 @@ angular
             add(constants.twoFactorProvider.duo);
         }
         if (providers.hasOwnProperty(constants.twoFactorProvider.u2f) &&
-            (browserUtilsService.isChrome() || browserUtilsService.isOpera())) {
+            (platformUtilsService.isChrome() || platformUtilsService.isOpera())) {
             add(constants.twoFactorProvider.u2f);
         }
 

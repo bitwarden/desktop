@@ -1,7 +1,8 @@
 import AppIdService from './appId.service';
-import BrowserUtilsService from './browserUtils.service';
 import ConstantsService from './constants.service';
 import TokenService from './token.service';
+
+import { PlatformUtilsService } from './abstractions/platformUtils.service';
 
 import EnvironmentUrls from '../models/domain/environmentUrls';
 
@@ -35,10 +36,10 @@ export default class ApiService {
     deviceType: string;
     logoutCallback: Function;
 
-    constructor(private tokenService: TokenService, browserUtilsService: BrowserUtilsService,
+    constructor(private tokenService: TokenService, platformUtilsService: PlatformUtilsService,
         logoutCallback: Function) {
         this.logoutCallback = logoutCallback;
-        this.deviceType = browserUtilsService.getDevice().toString();
+        this.deviceType = platformUtilsService.getDevice().toString();
     }
 
     setUrls(urls: EnvironmentUrls) {

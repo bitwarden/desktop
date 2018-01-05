@@ -1,8 +1,8 @@
-import { BrowserUtilsService } from './abstractions/browserUtils.service';
+import { PlatformUtilsService } from './abstractions/platformUtils.service';
 import { StorageService as StorageServiceInterface } from './abstractions/storage.service';
 
 export default class BrowserStorageService implements StorageServiceInterface {
-    constructor(private browserUtilsService: BrowserUtilsService) {
+    constructor(private platformUtilsService: PlatformUtilsService) {
     }
 
     get<T>(key: string): Promise<T> {

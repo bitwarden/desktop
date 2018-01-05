@@ -9,9 +9,9 @@
         return;
     }
 
-    var gaTrackingId = bgMain.browserUtilsService.analyticsId();
+    var gaTrackingId = bgMain.platformUtilsService.analyticsId();
     var gaFunc = null;
-    var isFirefox = bgMain.browserUtilsService.isFirefox();
+    var isFirefox = bgMain.platformUtilsService.isFirefox();
 
     window.GoogleAnalyticsObject = 'ga';
     window[window.GoogleAnalyticsObject] = function (action, param1, param2, param3, param4) {

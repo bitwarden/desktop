@@ -1,6 +1,6 @@
 import * as tldjs from 'tldjs';
 import { DeviceType } from '../enums/deviceType.enum';
-import { BrowserUtilsService as BrowserUtilsServiceInterface } from './abstractions/browserUtils.service';
+import { PlatformUtilsService as PlatformUtilsServiceInterface } from './abstractions/platformUtils.service';
 
 const AnalyticsIds = {
     [DeviceType.Chrome]: 'UA-81915606-6',
@@ -11,7 +11,7 @@ const AnalyticsIds = {
     [DeviceType.Safari]: 'UA-81915606-16',
 };
 
-export default class BrowserUtilsService implements BrowserUtilsServiceInterface {
+export default class BrowserUtilsService implements PlatformUtilsServiceInterface {
     static getDomain(uriString: string): string {
         if (uriString == null) {
             return null;

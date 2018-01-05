@@ -1,14 +1,14 @@
 import { DeviceRequest } from '../../../models/request/deviceRequest';
 import { TokenRequest } from '../../../models/request/tokenRequest';
 
-import { BrowserUtilsService } from '../../../services/abstractions/browserUtils.service';
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { MessagingService } from '../../../services/abstractions/messaging.service';
+import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
 
 class AuthService {
     constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
         public tokenService: any, public $rootScope: any, public appIdService: any,
-        public browserUtilsService: BrowserUtilsService, public constantsService: any,
+        public platformUtilsService: PlatformUtilsService, public constantsService: any,
         public messagingService: MessagingService) {
     }
 
@@ -21,7 +21,7 @@ class AuthService {
         const storedTwoFactorToken = await this.tokenService.getTwoFactorToken(email);
         const hashedPassword = await this.cryptoService.hashPassword(masterPassword, key);
 
-        const deviceRequest = new DeviceRequest(appId, this.browserUtilsService);
+        const deviceRequest = new DeviceRequest(appId, this.platformUtilsService);
 
         let request: TokenRequest;
 

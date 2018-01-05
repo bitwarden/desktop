@@ -1,6 +1,6 @@
 import { DeviceType } from '../../enums/deviceType.enum';
 
-export interface BrowserUtilsService {
+export interface PlatformUtilsService {
     getDevice(): DeviceType;
     getDeviceString(): string;
     isFirefox(): boolean;

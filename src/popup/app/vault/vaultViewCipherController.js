@@ -2,11 +2,11 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewCipherController', function ($scope, $state, $stateParams, cipherService, toastr,
-        $analytics, i18nService, browserUtilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert,
+        $analytics, i18nService, platformUtilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert,
         constantsService) {
         $scope.constants = constantsService;
         $scope.i18n = i18nService;
-        $scope.showAttachments = !browserUtilsService.isEdge();
+        $scope.showAttachments = !platformUtilsService.isEdge();
         var from = $stateParams.from,
             totpInterval = null;
 
@@ -30,7 +30,7 @@ angular
 
                 if (model.login.uri) {
                     $scope.cipher.showLaunch = model.login.uri.startsWith('http://') || model.login.uri.startsWith('https://');
-                    var domain = browserUtilsService.getDomain(model.login.uri);
+                    var domain = platformUtilsService.getDomain(model.login.uri);
                     if (domain) {
                         $scope.cipher.login.website = domain;
                     }

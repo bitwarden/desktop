@@ -1,9 +1,9 @@
-import BrowserUtilsService from '../services/browserUtils.service';
+import { PlatformUtilsService } from './abstractions/platformUtils.service';
 
-export default function i18nService(browserUtilsService: BrowserUtilsService) {
+export default function i18nService(platformUtilsService: PlatformUtilsService) {
     const edgeMessages: any = {};
 
-    if (browserUtilsService.isEdge()) {
+    if (platformUtilsService.isEdge()) {
         fetch('../_locales/en/messages.json').then((file) => {
             return file.json();
         }).then((locales) => {
