@@ -1,6 +1,6 @@
 import * as forge from 'node-forge';
 
-import { EncryptionType } from '../../enums/encryptionType.enum';
+import { EncryptionType } from '@bitwarden/jslib';
 
 import SymmetricCryptoKeyBuffers from './symmetricCryptoKeyBuffers';
 
