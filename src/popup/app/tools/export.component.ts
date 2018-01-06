@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import * as papa from 'papaparse';
 import * as template from './export.component.html';
 
-import { CipherType } from '../../../enums/cipherType.enum';
+import { CipherType } from '@bitwarden/jslib';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';

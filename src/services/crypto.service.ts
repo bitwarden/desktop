@@ -1,6 +1,6 @@
 import * as forge from 'node-forge';
 
-import { EncryptionType } from '../enums/encryptionType.enum';
+import { EncryptionType } from '@bitwarden/jslib';
 
 import { CipherString } from '../models/domain/cipherString';
 import EncryptedObject from '../models/domain/encryptedObject';

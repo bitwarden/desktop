@@ -1,4 +1,4 @@
-import { CipherType } from '../../../enums/cipherType.enum';
+import { CipherType } from '@bitwarden/jslib';
 
 import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
 import { UtilsService } from '../../../services/abstractions/utils.service';

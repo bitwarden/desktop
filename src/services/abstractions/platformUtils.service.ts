@@ -1,4 +1,4 @@
-import { DeviceType } from '../../enums/deviceType.enum';
+import { DeviceType } from '@bitwarden/jslib';
 
 export interface PlatformUtilsService {
     getDevice(): DeviceType;

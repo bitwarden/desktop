@@ -1,5 +1,5 @@
 import BrowserPlatformUtilsService from './browserPlatformUtils.service';
-import { DeviceType } from '../enums/deviceType.enum';
+import { DeviceType } from '@bitwarden/jslib';
 
 describe('Browser Utils Service', () => {
     describe('getDomain', () => {

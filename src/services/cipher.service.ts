@@ -1,4 +1,4 @@
-import { CipherType } from '../enums/cipherType.enum';
+import { CipherType } from '@bitwarden/jslib';
 
 import { Cipher } from '../models/domain/cipher';
 import { CipherString } from '../models/domain/cipherString';

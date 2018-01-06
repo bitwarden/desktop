@@ -1,5 +1,5 @@
-import { CipherType } from '../enums/cipherType.enum';
-import { FieldType } from '../enums/fieldType.enum';
+import { CipherType } from '@bitwarden/jslib';
+import { FieldType } from '@bitwarden/jslib';
 
 import AutofillField from '../models/domain/autofillField';
 import AutofillPageDetails from '../models/domain/autofillPageDetails';

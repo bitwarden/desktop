@@ -1,5 +1,7 @@
 import * as tldjs from 'tldjs';
-import { DeviceType } from '../enums/deviceType.enum';
+
+import { DeviceType } from '@bitwarden/jslib';
+
 import { PlatformUtilsService as PlatformUtilsServiceInterface } from './abstractions/platformUtils.service';
 
 const AnalyticsIds = {

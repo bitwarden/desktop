@@ -1,4 +1,4 @@
-import { FieldType } from '../../enums/fieldType.enum';
+import { FieldType } from '@bitwarden/jslib';
 
 import { FieldData } from '../data/fieldData';
 

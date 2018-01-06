@@ -1,4 +1,4 @@
-import { DeviceType } from '../../enums/deviceType.enum';
+import { DeviceType } from '@bitwarden/jslib';
 import { PlatformUtilsService } from '../../services/abstractions/platformUtils.service';
 
 class DeviceRequest {

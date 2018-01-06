@@ -1,4 +1,4 @@
-import { EncryptionType } from '../../enums/encryptionType.enum';
+import { EncryptionType } from '@bitwarden/jslib';
 
 import ContainerService from '../../services/container.service';
 

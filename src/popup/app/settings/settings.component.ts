@@ -1,5 +1,7 @@
 import * as angular from 'angular';
-import { DeviceType } from '../../../enums/deviceType.enum';
+
+import { DeviceType } from '@bitwarden/jslib';
+
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import { MessagingService } from '../../../services/abstractions/messaging.service';
 import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';

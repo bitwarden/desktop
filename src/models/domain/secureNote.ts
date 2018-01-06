@@ -1,4 +1,4 @@
-import { SecureNoteType } from '../../enums/secureNoteType.enum';
+import { SecureNoteType } from '@bitwarden/jslib';
 
 import { SecureNoteData } from '../data/secureNoteData';
 
