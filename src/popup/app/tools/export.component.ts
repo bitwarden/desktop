@@ -2,10 +2,9 @@ import * as angular from 'angular';
 import * as papa from 'papaparse';
 import * as template from './export.component.html';
 
-import { CipherType } from '@bitwarden/jslib';
+import { CipherType, UtilsService } from '@bitwarden/jslib';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
-import { UtilsService } from '../../../services/abstractions/utils.service';
 
 export class ExportController {
     i18n: any;

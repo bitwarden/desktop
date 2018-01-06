@@ -1,4 +1,4 @@
-import { UtilsService as UtilsServiceInterface } from './abstractions/utils.service';
+import { UtilsService as UtilsServiceInterface } from '@bitwarden/jslib';
 
 export default class UtilsService implements UtilsServiceInterface {
     static copyToClipboard(text: string, doc?: Document): void {

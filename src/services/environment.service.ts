@@ -1,7 +1,7 @@
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 import EnvironmentUrls from '../models/domain/environmentUrls';
 

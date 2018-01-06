@@ -1,6 +1,6 @@
 import * as template from './action-buttons.component.html';
 
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export class ActionButtonsController implements ng.IController {
     onView: Function;

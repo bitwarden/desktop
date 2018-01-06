@@ -10,7 +10,7 @@ import ApiService from './api.service';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     foldersPrefix: 'folders_',

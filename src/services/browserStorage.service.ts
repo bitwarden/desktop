@@ -1,5 +1,4 @@
-import { PlatformUtilsService } from './abstractions/platformUtils.service';
-import { StorageService as StorageServiceInterface } from './abstractions/storage.service';
+import { PlatformUtilsService, StorageService as StorageServiceInterface } from '@bitwarden/jslib';
 
 export default class BrowserStorageService implements StorageServiceInterface {
     constructor(private platformUtilsService: PlatformUtilsService) {

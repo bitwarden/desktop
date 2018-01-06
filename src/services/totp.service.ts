@@ -1,6 +1,6 @@
 import ConstantsService from './constants.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const b32Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 

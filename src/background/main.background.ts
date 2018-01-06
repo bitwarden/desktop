@@ -35,9 +35,7 @@ import TotpService from '../services/totp.service';
 import UserService from '../services/user.service';
 import UtilsService from '../services/utils.service';
 
-import { MessagingService } from '../services/abstractions/messaging.service';
-import { PlatformUtilsService } from '../services/abstractions/platformUtils.service';
-import { StorageService } from '../services/abstractions/storage.service';
+import { MessagingService, PlatformUtilsService, StorageService } from '@bitwarden/jslib';
 
 export default class MainBackground {
     messagingService: MessagingService;

@@ -1,4 +1,4 @@
-import { UtilsService } from '../../../services/abstractions/utils.service';
+import { UtilsService } from '@bitwarden/jslib';
 
 export class MainController implements ng.IController {
     smBody: boolean;

@@ -6,7 +6,7 @@ import { CollectionData } from '../models/data/collectionData';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     collectionsPrefix: 'collections_',

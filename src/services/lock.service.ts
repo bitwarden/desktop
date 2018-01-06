@@ -4,8 +4,7 @@ import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import FolderService from './folder.service';
 
-import { PlatformUtilsService } from './abstractions/platformUtils.service';
-import { StorageService } from './abstractions/storage.service';
+import { PlatformUtilsService, StorageService } from '@bitwarden/jslib';
 
 export default class LockService {
     constructor(private cipherService: CipherService, private folderService: FolderService,

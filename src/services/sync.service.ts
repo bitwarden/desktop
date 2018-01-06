@@ -17,8 +17,7 @@ import FolderService from './folder.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
 
-import { MessagingService } from './abstractions/messaging.service';
-import { StorageService } from './abstractions/storage.service';
+import { MessagingService, StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     lastSyncPrefix: 'lastSync_',

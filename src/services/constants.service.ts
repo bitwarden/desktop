@@ -1,4 +1,4 @@
-import { PlatformUtilsService } from './abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export default class ConstantsService {
     static readonly environmentUrlsKey: string = 'environmentUrls';

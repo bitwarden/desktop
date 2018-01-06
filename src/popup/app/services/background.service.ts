@@ -1,7 +1,6 @@
 import { CryptoService } from '../../../services/abstractions/crypto.service';
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
-import { StorageService } from '../../../services/abstractions/storage.service';
-import { UtilsService } from '../../../services/abstractions/utils.service';
+
+import { PlatformUtilsService, StorageService, UtilsService } from '@bitwarden/jslib';
 
 function getBackgroundService<T>(service: string) {
     return (): T => {

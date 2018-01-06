@@ -1,11 +1,8 @@
 import * as angular from 'angular';
 
-import { DeviceType } from '@bitwarden/jslib';
+import { DeviceType, MessagingService, PlatformUtilsService, StorageService } from '@bitwarden/jslib';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
-import { MessagingService } from '../../../services/abstractions/messaging.service';
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
-import { StorageService } from '../../../services/abstractions/storage.service';
 import ConstantsService from '../../../services/constants.service';
 
 import * as template from './settings.component.html';

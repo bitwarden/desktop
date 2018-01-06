@@ -4,7 +4,7 @@ import PasswordHistory from '../models/domain/passwordHistory';
 import CryptoService from './crypto.service';
 import UtilsService from './utils.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const DefaultOptions = {
     length: 14,

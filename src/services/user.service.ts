@@ -1,6 +1,6 @@
 import TokenService from './token.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     userId: 'userId',

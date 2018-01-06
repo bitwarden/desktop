@@ -1,6 +1,6 @@
 import UtilsService from './utils.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 export default class AppIdService {
     constructor(private storageService: StorageService) {

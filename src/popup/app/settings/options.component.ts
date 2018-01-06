@@ -1,7 +1,7 @@
 import * as angular from 'angular';
-import { MessagingService } from '../../../services/abstractions/messaging.service';
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
-import { StorageService } from '../../../services/abstractions/storage.service';
+
+import { MessagingService, PlatformUtilsService, StorageService } from '@bitwarden/jslib';
+
 import StateService from '../services/state.service';
 import * as template from './options.component.html';
 

@@ -1,5 +1,4 @@
-import { DeviceType } from '@bitwarden/jslib';
-import { PlatformUtilsService } from '../../services/abstractions/platformUtils.service';
+import { DeviceType, PlatformUtilsService } from '@bitwarden/jslib';
 
 class DeviceRequest {
     type: DeviceType;

@@ -1,7 +1,7 @@
 import * as angular from 'angular';
 import * as template from './password-generator.component.html';
 
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export class PasswordGeneratorController {
     $transition$: any;

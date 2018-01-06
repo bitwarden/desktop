@@ -2,7 +2,7 @@ import AppIdService from './appId.service';
 import ConstantsService from './constants.service';
 import TokenService from './token.service';
 
-import { PlatformUtilsService } from './abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 import EnvironmentUrls from '../models/domain/environmentUrls';
 

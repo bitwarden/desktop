@@ -2,8 +2,8 @@ import { DeviceRequest } from '../../../models/request/deviceRequest';
 import { TokenRequest } from '../../../models/request/tokenRequest';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
-import { MessagingService } from '../../../services/abstractions/messaging.service';
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
+
+import { MessagingService, PlatformUtilsService } from '@bitwarden/jslib';
 
 class AuthService {
     constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,

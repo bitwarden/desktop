@@ -1,6 +1,6 @@
 import UserService from './user.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     settingsPrefix: 'settings_',

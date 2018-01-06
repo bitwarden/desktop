@@ -1,6 +1,6 @@
 import * as template from './tools.component.html';
 
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export class ToolsController {
     showExport: boolean;

@@ -11,7 +11,8 @@ import ConstantsService from './constants.service';
 import UtilsService from './utils.service';
 
 import { CryptoService as CryptoServiceInterface } from './abstractions/crypto.service';
-import { StorageService } from './abstractions/storage.service';
+
+import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     key: 'key',

@@ -1,4 +1,4 @@
-import { StorageService } from '../../../services/abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 class StateService {
     private state: any = {};

@@ -1,7 +1,6 @@
 import { CipherType } from '@bitwarden/jslib';
 
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
-import { UtilsService } from '../../../services/abstractions/utils.service';
+import { PlatformUtilsService, UtilsService } from '@bitwarden/jslib';
 import * as template from './current.component.html';
 
 export class CurrentController {

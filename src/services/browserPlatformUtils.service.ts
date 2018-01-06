@@ -1,8 +1,6 @@
 import * as tldjs from 'tldjs';
 
-import { DeviceType } from '@bitwarden/jslib';
-
-import { PlatformUtilsService as PlatformUtilsServiceInterface } from './abstractions/platformUtils.service';
+import { DeviceType, PlatformUtilsService as PlatformUtilsServiceInterface } from '@bitwarden/jslib';
 
 const AnalyticsIds = {
     [DeviceType.Chrome]: 'UA-81915606-6',

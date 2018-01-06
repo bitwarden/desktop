@@ -2,8 +2,8 @@ import * as angular from 'angular';
 import * as template from './lock.component.html';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
-import { MessagingService } from '../../../services/abstractions/messaging.service';
-import { PlatformUtilsService } from '../../../services/abstractions/platformUtils.service';
+
+import { MessagingService, PlatformUtilsService } from '@bitwarden/jslib';
 
 export class LockController {
     i18n: any;

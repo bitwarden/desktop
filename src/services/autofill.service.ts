@@ -10,7 +10,7 @@ import TokenService from './token.service';
 import TotpService from './totp.service';
 import UtilsService from './utils.service';
 
-import { PlatformUtilsService } from '../services/abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top'];

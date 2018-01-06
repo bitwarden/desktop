@@ -1,4 +1,4 @@
-import { PlatformUtilsService } from './abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export default function i18nService(platformUtilsService: PlatformUtilsService) {
     const edgeMessages: any = {};

@@ -1,6 +1,6 @@
 import CipherService from '../services/cipher.service';
 
-import { PlatformUtilsService } from '../services/abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];

@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import { Folder } from '../../../../models/domain/folder';
 import * as template from './add-folder.component.html';
 
-import { PlatformUtilsService } from '../../../../services/abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export class AddFolderController {
     savePromise: any;

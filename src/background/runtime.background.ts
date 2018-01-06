@@ -8,7 +8,7 @@ import AutofillService from '../services/autofill.service';
 import CipherService from '../services/cipher.service';
 import UtilsService from '../services/utils.service';
 
-import { PlatformUtilsService } from '../services/abstractions/platformUtils.service';
+import { PlatformUtilsService } from '@bitwarden/jslib';
 
 export default class RuntimeBackground {
     private runtime: any;

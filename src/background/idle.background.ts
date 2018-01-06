@@ -2,7 +2,7 @@ import ConstantsService from '../services/constants.service';
 import LockService from '../services/lock.service';
 import MainBackground from './main.background';
 
-import { StorageService } from '../services/abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 export default class IdleBackground {
     private idle: any;

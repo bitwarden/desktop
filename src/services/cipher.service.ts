@@ -17,7 +17,7 @@ import CryptoService from './crypto.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     ciphersPrefix: 'ciphers_',

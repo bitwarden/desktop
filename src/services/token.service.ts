@@ -1,7 +1,7 @@
 import ConstantsService from './constants.service';
 import UtilsService from './utils.service';
 
-import { StorageService } from './abstractions/storage.service';
+import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     accessToken: 'accessToken',
