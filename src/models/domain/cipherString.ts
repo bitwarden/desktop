@@ -1,6 +1,6 @@
 import { Enums } from '@bitwarden/jslib';
 
-import ContainerService from '../../services/container.service';
+import { CryptoService } from '../../services/abstractions/crypto.service';
 
 class CipherString {
     encryptedString?: string;
@@ -92,12 +92,16 @@ class CipherString {
             return Promise.resolve(this.decryptedValue);
         }
 
-        if (ContainerService.cryptoService == null) {
-            throw new Error('ContainerService.cryptoService not initialized');
+        let cryptoService: CryptoService;
+        const containerService = (window as any).BitwardenContainerService;
+        if (containerService) {
+            cryptoService = containerService.getCryptoService();
+        } else {
+            throw new Error('window.BitwardenContainerService not initialized.');
         }
 
-        return ContainerService.cryptoService.getOrgKey(orgId).then((orgKey: any) => {
-            return ContainerService.cryptoService.decrypt(this, orgKey);
+        return cryptoService.getOrgKey(orgId).then((orgKey: any) => {
+            return cryptoService.decrypt(this, orgKey);
         }).then((decValue: any) => {
             this.decryptedValue = decValue;
             return this.decryptedValue;

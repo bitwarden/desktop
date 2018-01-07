@@ -56,6 +56,7 @@ export default class MainBackground {
     passwordGenerationService: PasswordGenerationService;
     totpService: TotpService;
     autofillService: AutofillService;
+    containerService: ContainerService;
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
@@ -83,7 +84,7 @@ export default class MainBackground {
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = i18nService(this.platformUtilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.platformUtilsService);
-        this.cryptoService = ContainerService.cryptoService = new CryptoService(this.storageService,
+        this.cryptoService = new CryptoService(this.storageService,
             this.storageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
@@ -107,6 +108,7 @@ export default class MainBackground {
         this.totpService = new TotpService(this.storageService);
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
             this.totpService, this.utilsService, this.platformUtilsService);
+        this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
 
         // Other fields
         this.sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ?
@@ -125,6 +127,8 @@ export default class MainBackground {
     }
 
     async bootstrap() {
+        this.containerService.attachToWindow(window);
+
         await this.commandsBackground.init();
         await this.contextMenusBackground.init();
         await this.idleBackground.init();
