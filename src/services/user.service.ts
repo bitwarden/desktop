@@ -1,6 +1,6 @@
 import TokenService from './token.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 const Keys = {
     userId: 'userId',
@@ -13,7 +13,7 @@ export default class UserService {
     email: string;
     stamp: string;
 
-    constructor(private tokenService: TokenService, private storageService: StorageService) {
+    constructor(private tokenService: TokenService, private storageService: Abstractions.StorageService) {
     }
 
     setUserIdAndEmail(userId: string, email: string): Promise<any> {

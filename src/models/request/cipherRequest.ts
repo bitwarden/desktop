@@ -1,7 +1,7 @@
-import { CipherType } from '@bitwarden/jslib';
+import { Enums } from '@bitwarden/jslib';
 
 class CipherRequest {
-    type: CipherType;
+    type: Enums.CipherType;
     folderId: string;
     organizationId: string;
     name: string;
@@ -22,7 +22,7 @@ class CipherRequest {
         this.favorite = cipher.favorite;
 
         switch (this.type) {
-            case CipherType.Login:
+            case Enums.CipherType.Login:
                 this.login = {
                     uri: cipher.login.uri ? cipher.login.uri.encryptedString : null,
                     username: cipher.login.username ? cipher.login.username.encryptedString : null,
@@ -30,12 +30,12 @@ class CipherRequest {
                     totp: cipher.login.totp ? cipher.login.totp.encryptedString : null,
                 };
                 break;
-            case CipherType.SecureNote:
+            case Enums.CipherType.SecureNote:
                 this.secureNote = {
                     type: cipher.secureNote.type,
                 };
                 break;
-            case CipherType.Card:
+            case Enums.CipherType.Card:
                 this.card = {
                     cardholderName: cipher.card.cardholderName ? cipher.card.cardholderName.encryptedString : null,
                     brand: cipher.card.brand ? cipher.card.brand.encryptedString : null,
@@ -45,7 +45,7 @@ class CipherRequest {
                     code: cipher.card.code ? cipher.card.code.encryptedString : null,
                 };
                 break;
-            case CipherType.Identity:
+            case Enums.CipherType.Identity:
                 this.identity = {
                     title: cipher.identity.title ? cipher.identity.title.encryptedString : null,
                     firstName: cipher.identity.firstName ? cipher.identity.firstName.encryptedString : null,

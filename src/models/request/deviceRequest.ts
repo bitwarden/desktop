@@ -1,12 +1,12 @@
-import { DeviceType, PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions, Enums } from '@bitwarden/jslib';
 
 class DeviceRequest {
-    type: DeviceType;
+    type: Enums.DeviceType;
     name: string;
     identifier: string;
     pushToken?: string;
 
-    constructor(appId: string, platformUtilsService: PlatformUtilsService) {
+    constructor(appId: string, platformUtilsService: Abstractions.PlatformUtilsService) {
         this.type = platformUtilsService.getDevice();
         this.name = platformUtilsService.getDeviceString();
         this.identifier = appId;

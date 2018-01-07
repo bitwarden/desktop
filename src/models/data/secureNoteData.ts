@@ -1,7 +1,7 @@
-import { SecureNoteType } from '@bitwarden/jslib';
+import { Enums } from '@bitwarden/jslib';
 
 class SecureNoteData {
-    type: SecureNoteType;
+    type: Enums.SecureNoteType;
 
     constructor(data: any) {
         this.type = data.Type;

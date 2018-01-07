@@ -1,6 +1,6 @@
 import * as forge from 'node-forge';
 
-import { EncryptionType } from '@bitwarden/jslib';
+import { Abstractions, Enums, Services } from '@bitwarden/jslib';
 
 import { CipherString } from '../models/domain/cipherString';
 import EncryptedObject from '../models/domain/encryptedObject';
@@ -8,11 +8,8 @@ import SymmetricCryptoKey from '../models/domain/symmetricCryptoKey';
 import { ProfileOrganizationResponse } from '../models/response/profileOrganizationResponse';
 
 import ConstantsService from './constants.service';
-import UtilsService from './utils.service';
 
 import { CryptoService as CryptoServiceInterface } from './abstractions/crypto.service';
-
-import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     key: 'key',
@@ -42,7 +39,8 @@ export default class CryptoService implements CryptoServiceInterface {
     private privateKey: ArrayBuffer;
     private orgKeys: Map<string, SymmetricCryptoKey>;
 
-    constructor(private storageService: StorageService, private secureStorageService: StorageService) {
+    constructor(private storageService: Abstractions.StorageService,
+        private secureStorageService: Abstractions.StorageService) {
     }
 
     async setKey(key: SymmetricCryptoKey): Promise<any> {
@@ -150,7 +148,7 @@ export default class CryptoService implements CryptoServiceInterface {
 
         const privateKey = await this.decrypt(new CipherString(encPrivateKey), null, 'raw');
         const privateKeyB64 = forge.util.encode64(privateKey);
-        this.privateKey = UtilsService.fromB64ToArray(privateKeyB64).buffer;
+        this.privateKey = Services.UtilsService.fromB64ToArray(privateKeyB64).buffer;
         return this.privateKey;
     }
 
@@ -286,15 +284,15 @@ export default class CryptoService implements CryptoServiceInterface {
 
         let plainValueArr: Uint8Array;
         if (plainValueEncoding === 'utf8') {
-            plainValueArr = UtilsService.fromUtf8ToArray(plainValue as string);
+            plainValueArr = Services.UtilsService.fromUtf8ToArray(plainValue as string);
         } else {
             plainValueArr = plainValue as Uint8Array;
         }
 
         const encValue = await this.aesEncrypt(plainValueArr.buffer, key);
-        const iv = UtilsService.fromBufferToB64(encValue.iv.buffer);
-        const ct = UtilsService.fromBufferToB64(encValue.ct.buffer);
-        const mac = encValue.mac ? UtilsService.fromBufferToB64(encValue.mac.buffer) : null;
+        const iv = Services.UtilsService.fromBufferToB64(encValue.iv.buffer);
+        const ct = Services.UtilsService.fromBufferToB64(encValue.ct.buffer);
+        const mac = encValue.mac ? Services.UtilsService.fromBufferToB64(encValue.mac.buffer) : null;
         return new CipherString(encValue.key.encType, iv, ct, mac);
     }
 
@@ -345,8 +343,8 @@ export default class CryptoService implements CryptoServiceInterface {
         let macBytes: Uint8Array = null;
 
         switch (encType) {
-            case EncryptionType.AesCbc128_HmacSha256_B64:
-            case EncryptionType.AesCbc256_HmacSha256_B64:
+            case Enums.EncryptionType.AesCbc128_HmacSha256_B64:
+            case Enums.EncryptionType.AesCbc256_HmacSha256_B64:
                 if (encBytes.length <= 49) { // 1 + 16 + 32 + ctLength
                     return null;
                 }
@@ -355,7 +353,7 @@ export default class CryptoService implements CryptoServiceInterface {
                 macBytes = encBytes.slice(17, 49);
                 ctBytes = encBytes.slice(49);
                 break;
-            case EncryptionType.AesCbc256_B64:
+            case Enums.EncryptionType.AesCbc256_B64:
                 if (encBytes.length <= 17) { // 1 + 16 + ctLength
                     return null;
                 }
@@ -372,11 +370,11 @@ export default class CryptoService implements CryptoServiceInterface {
 
     async rsaDecrypt(encValue: string): Promise<string> {
         const headerPieces = encValue.split('.');
-        let encType: EncryptionType = null;
+        let encType: Enums.EncryptionType = null;
         let encPieces: string[];
 
         if (headerPieces.length === 1) {
-            encType = EncryptionType.Rsa2048_OaepSha256_B64;
+            encType = Enums.EncryptionType.Rsa2048_OaepSha256_B64;
             encPieces = [headerPieces[0]];
         } else if (headerPieces.length === 2) {
             try {
@@ -386,14 +384,14 @@ export default class CryptoService implements CryptoServiceInterface {
         }
 
         switch (encType) {
-            case EncryptionType.Rsa2048_OaepSha256_B64:
-            case EncryptionType.Rsa2048_OaepSha1_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha256_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha1_B64:
                 if (encPieces.length !== 1) {
                     throw new Error('Invalid cipher format.');
                 }
                 break;
-            case EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64:
-            case EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64:
                 if (encPieces.length !== 2) {
                     throw new Error('Invalid cipher format.');
                 }
@@ -424,15 +422,15 @@ export default class CryptoService implements CryptoServiceInterface {
 
         let rsaAlgorithm: any = null;
         switch (encType) {
-            case EncryptionType.Rsa2048_OaepSha256_B64:
-            case EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha256_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64:
                 rsaAlgorithm = {
                     name: 'RSA-OAEP',
                     hash: { name: 'SHA-256' },
                 };
                 break;
-            case EncryptionType.Rsa2048_OaepSha1_B64:
-            case EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha1_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64:
                 rsaAlgorithm = {
                     name: 'RSA-OAEP',
                     hash: { name: 'SHA-1' },
@@ -443,9 +441,9 @@ export default class CryptoService implements CryptoServiceInterface {
         }
 
         const privateKey = await Subtle.importKey('pkcs8', privateKeyBytes, rsaAlgorithm, false, ['decrypt']);
-        const ctArr = UtilsService.fromB64ToArray(encPieces[0]);
+        const ctArr = Services.UtilsService.fromB64ToArray(encPieces[0]);
         const decBytes = await Subtle.decrypt(rsaAlgorithm, privateKey, ctArr.buffer);
-        const b64DecValue = UtilsService.fromBufferToB64(decBytes);
+        const b64DecValue = Services.UtilsService.fromBufferToB64(decBytes);
         return b64DecValue;
     }
 
@@ -474,7 +472,7 @@ export default class CryptoService implements CryptoServiceInterface {
         return obj;
     }
 
-    private async aesDecrypt(encType: EncryptionType, ctBytes: string, ivBytes: string, macBytes: string,
+    private async aesDecrypt(encType: Enums.EncryptionType, ctBytes: string, ivBytes: string, macBytes: string,
         key: SymmetricCryptoKey): Promise<any> {
         const keyForEnc = await this.getKeyForEncryption(key);
         const theKey = this.resolveLegacyKey(encType, keyForEnc);
@@ -503,7 +501,7 @@ export default class CryptoService implements CryptoServiceInterface {
         return decipher;
     }
 
-    private async aesDecryptWC(encType: EncryptionType, ctBuf: ArrayBuffer, ivBuf: ArrayBuffer,
+    private async aesDecryptWC(encType: Enums.EncryptionType, ctBuf: ArrayBuffer, ivBuf: ArrayBuffer,
         macBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
         const theKey = await this.getKeyForEncryption(key);
         const keyBuf = theKey.getBuffers();
@@ -589,11 +587,12 @@ export default class CryptoService implements CryptoServiceInterface {
         return encKey || (await this.getKey());
     }
 
-    private resolveLegacyKey(encType: EncryptionType, key: SymmetricCryptoKey): SymmetricCryptoKey {
-        if (encType === EncryptionType.AesCbc128_HmacSha256_B64 && key.encType === EncryptionType.AesCbc256_B64) {
+    private resolveLegacyKey(encType: Enums.EncryptionType, key: SymmetricCryptoKey): SymmetricCryptoKey {
+        if (encType === Enums.EncryptionType.AesCbc128_HmacSha256_B64 &&
+            key.encType === Enums.EncryptionType.AesCbc256_B64) {
             // Old encrypt-then-mac scheme, make a new key
             this.legacyEtmKey = this.legacyEtmKey ||
-                new SymmetricCryptoKey(key.key, false, EncryptionType.AesCbc128_HmacSha256_B64);
+                new SymmetricCryptoKey(key.key, false, Enums.EncryptionType.AesCbc128_HmacSha256_B64);
             return this.legacyEtmKey;
         }
 

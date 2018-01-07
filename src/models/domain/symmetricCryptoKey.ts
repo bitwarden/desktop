@@ -1,20 +1,18 @@
 import * as forge from 'node-forge';
 
-import { EncryptionType } from '@bitwarden/jslib';
+import { Enums, Services } from '@bitwarden/jslib';
 
 import SymmetricCryptoKeyBuffers from './symmetricCryptoKeyBuffers';
-
-import UtilsService from '../../services/utils.service';
 
 export default class SymmetricCryptoKey {
     key: string;
     keyB64: string;
     encKey: string;
     macKey: string;
-    encType: EncryptionType;
+    encType: Enums.EncryptionType;
     keyBuf: SymmetricCryptoKeyBuffers;
 
-    constructor(keyBytes: string, b64KeyBytes?: boolean, encType?: EncryptionType) {
+    constructor(keyBytes: string, b64KeyBytes?: boolean, encType?: Enums.EncryptionType) {
         if (b64KeyBytes) {
             keyBytes = forge.util.decode64(keyBytes);
         }
@@ -32,9 +30,9 @@ export default class SymmetricCryptoKey {
 
         if (encType == null) {
             if (bufferLength === 32) {
-                encType = EncryptionType.AesCbc256_B64;
+                encType = Enums.EncryptionType.AesCbc256_B64;
             } else if (bufferLength === 64) {
-                encType = EncryptionType.AesCbc256_HmacSha256_B64;
+                encType = Enums.EncryptionType.AesCbc256_HmacSha256_B64;
             } else {
                 throw new Error('Unable to determine encType.');
             }
@@ -44,13 +42,13 @@ export default class SymmetricCryptoKey {
         this.keyB64 = forge.util.encode64(keyBytes);
         this.encType = encType;
 
-        if (encType === EncryptionType.AesCbc256_B64 && bufferLength === 32) {
+        if (encType === Enums.EncryptionType.AesCbc256_B64 && bufferLength === 32) {
             this.encKey = keyBytes;
             this.macKey = null;
-        } else if (encType === EncryptionType.AesCbc128_HmacSha256_B64 && bufferLength === 32) {
+        } else if (encType === Enums.EncryptionType.AesCbc128_HmacSha256_B64 && bufferLength === 32) {
             this.encKey = buffer.getBytes(16); // first half
             this.macKey = buffer.getBytes(16); // second half
-        } else if (encType === EncryptionType.AesCbc256_HmacSha256_B64 && bufferLength === 64) {
+        } else if (encType === Enums.EncryptionType.AesCbc256_HmacSha256_B64 && bufferLength === 64) {
             this.encKey = buffer.getBytes(32); // first half
             this.macKey = buffer.getBytes(32); // second half
         } else {
@@ -63,7 +61,7 @@ export default class SymmetricCryptoKey {
             return this.keyBuf;
         }
 
-        const key = UtilsService.fromB64ToArray(this.keyB64);
+        const key = Services.UtilsService.fromB64ToArray(this.keyB64);
         const keys = new SymmetricCryptoKeyBuffers(key.buffer);
 
         if (this.macKey) {

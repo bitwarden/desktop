@@ -1,7 +1,6 @@
 import ConstantsService from './constants.service';
-import UtilsService from './utils.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions, Services } from '@bitwarden/jslib';
 
 const Keys = {
     accessToken: 'accessToken',
@@ -14,7 +13,7 @@ export default class TokenService {
     decodedToken: any;
     refreshToken: string;
 
-    constructor(private storageService: StorageService) {
+    constructor(private storageService: Abstractions.StorageService) {
     }
 
     setTokens(accessToken: string, refreshToken: string): Promise<any> {
@@ -93,7 +92,7 @@ export default class TokenService {
             throw new Error('JWT must have 3 parts');
         }
 
-        const decoded = UtilsService.urlBase64Decode(parts[1]);
+        const decoded = Services.UtilsService.urlBase64Decode(parts[1]);
         if (decoded == null) {
             throw new Error('Cannot decode the token');
         }

@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import { Folder } from '../../../../models/domain/folder';
 import * as template from './add-folder.component.html';
 
-import { PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 export class AddFolderController {
     savePromise: any;
@@ -10,7 +10,7 @@ export class AddFolderController {
     i18n: any;
 
     constructor(private folderService: any, private $state: any, private toastr: any,
-        platformUtilsService: PlatformUtilsService, private $analytics: any, private i18nService: any,
+        platformUtilsService: Abstractions.PlatformUtilsService, private $analytics: any, private i18nService: any,
         $timeout: any) {
         $timeout(() => {
             platformUtilsService.initListSectionItemListeners(document, angular);

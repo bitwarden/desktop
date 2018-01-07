@@ -2,7 +2,7 @@ import AppIdService from './appId.service';
 import ConstantsService from './constants.service';
 import TokenService from './token.service';
 
-import { PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 import EnvironmentUrls from '../models/domain/environmentUrls';
 
@@ -36,7 +36,7 @@ export default class ApiService {
     deviceType: string;
     logoutCallback: Function;
 
-    constructor(private tokenService: TokenService, platformUtilsService: PlatformUtilsService,
+    constructor(private tokenService: TokenService, platformUtilsService: Abstractions.PlatformUtilsService,
         logoutCallback: Function) {
         this.logoutCallback = logoutCallback;
         this.deviceType = platformUtilsService.getDevice().toString();

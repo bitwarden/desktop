@@ -1,4 +1,4 @@
-import { CipherType } from '@bitwarden/jslib';
+import { Abstractions, Enums } from '@bitwarden/jslib';
 
 import { Cipher } from '../models/domain/cipher';
 import { CipherString } from '../models/domain/cipherString';
@@ -16,8 +16,6 @@ import ConstantsService from './constants.service';
 import CryptoService from './crypto.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
-
-import { StorageService } from '@bitwarden/jslib';
 
 const Keys = {
     ciphersPrefix: 'ciphers_',
@@ -70,7 +68,7 @@ export default class CipherService {
 
     constructor(private cryptoService: CryptoService, private userService: UserService,
         private settingsService: SettingsService, private apiService: ApiService,
-        private storageService: StorageService) {
+        private storageService: Abstractions.StorageService) {
     }
 
     clearCache(): void {
@@ -223,7 +221,7 @@ export default class CipherService {
         const ciphersToReturn: any[] = [];
 
         ciphers.forEach((cipher) => {
-            if (domain && cipher.type === CipherType.Login && cipher.login.domain &&
+            if (domain && cipher.type === Enums.CipherType.Login && cipher.login.domain &&
                 matchingDomains.indexOf(cipher.login.domain) > -1) {
                 ciphersToReturn.push(cipher);
             } else if (includeOtherTypes && includeOtherTypes.indexOf(cipher.type) > -1) {
@@ -464,7 +462,7 @@ export default class CipherService {
 
     private encryptCipherData(cipher: Cipher, model: any, key: SymmetricCryptoKey): Promise<any> {
         switch (cipher.type) {
-            case CipherType.Login:
+            case Enums.CipherType.Login:
                 model.login = {};
                 return this.encryptObjProperty(cipher.login, model.login, {
                     uri: null,
@@ -472,12 +470,12 @@ export default class CipherService {
                     password: null,
                     totp: null,
                 }, key);
-            case CipherType.SecureNote:
+            case Enums.CipherType.SecureNote:
                 model.secureNote = {
                     type: cipher.secureNote.type,
                 };
                 return Promise.resolve();
-            case CipherType.Card:
+            case Enums.CipherType.Card:
                 model.card = {};
                 return this.encryptObjProperty(cipher.card, model.card, {
                     cardholderName: null,
@@ -487,7 +485,7 @@ export default class CipherService {
                     expYear: null,
                     code: null,
                 }, key);
-            case CipherType.Identity:
+            case Enums.CipherType.Identity:
                 model.identity = {};
                 return this.encryptObjProperty(cipher.identity, model.identity, {
                     title: null,

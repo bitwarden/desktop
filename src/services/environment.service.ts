@@ -1,7 +1,7 @@
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 import EnvironmentUrls from '../models/domain/environmentUrls';
 
@@ -12,7 +12,7 @@ export default class EnvironmentService {
     identityUrl: string;
     iconsUrl: string;
 
-    constructor(private apiService: ApiService, private storageService: StorageService) {
+    constructor(private apiService: ApiService, private storageService: Abstractions.StorageService) {
     }
 
     async setUrlsFromStorage(): Promise<void> {

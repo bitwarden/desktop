@@ -1,7 +1,7 @@
-import { MessagingService as MessagingServiceInterface, PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
-export default class BrowserMessagingService implements MessagingServiceInterface {
-    constructor(private platformUtilsService: PlatformUtilsService) {
+export default class BrowserMessagingService implements Abstractions.MessagingService {
+    constructor(private platformUtilsService: Abstractions.PlatformUtilsService) {
     }
 
     send(subscriber: string, arg: any = {}) {

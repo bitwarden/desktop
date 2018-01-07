@@ -1,11 +1,12 @@
 import * as template from './pop-out.component.html';
 
-import { PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 export class PopOutController implements ng.IController {
     i18n: any;
 
-    constructor(private $analytics: any, private $window: any, private platformUtilsService: PlatformUtilsService,
+    constructor(private $analytics: any, private $window: any,
+        private platformUtilsService: Abstractions.PlatformUtilsService,
         private i18nService: any) {
         this.i18n = i18nService;
     }

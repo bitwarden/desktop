@@ -1,6 +1,6 @@
 import UserService from './user.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 const Keys = {
     settingsPrefix: 'settings_',
@@ -10,7 +10,7 @@ const Keys = {
 export default class SettingsService {
     private settingsCache: any;
 
-    constructor(private userService: UserService, private storageService: StorageService) {
+    constructor(private userService: UserService, private storageService: Abstractions.StorageService) {
     }
 
     clearCache(): void {

@@ -10,7 +10,7 @@ import ApiService from './api.service';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 const Keys = {
     foldersPrefix: 'folders_',
@@ -20,7 +20,8 @@ export default class FolderService {
     decryptedFolderCache: any[];
 
     constructor(private cryptoService: CryptoService, private userService: UserService,
-        private i18nService: any, private apiService: ApiService, private storageService: StorageService) {
+        private i18nService: any, private apiService: ApiService,
+        private storageService: Abstractions.StorageService) {
     }
 
     clearCache(): void {

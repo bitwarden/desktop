@@ -1,17 +1,17 @@
 import * as tldjs from 'tldjs';
 
-import { DeviceType, PlatformUtilsService as PlatformUtilsServiceInterface } from '@bitwarden/jslib';
+import { Abstractions, Enums } from '@bitwarden/jslib';
 
 const AnalyticsIds = {
-    [DeviceType.Chrome]: 'UA-81915606-6',
-    [DeviceType.Firefox]: 'UA-81915606-7',
-    [DeviceType.Opera]: 'UA-81915606-8',
-    [DeviceType.Edge]: 'UA-81915606-9',
-    [DeviceType.Vivaldi]: 'UA-81915606-15',
-    [DeviceType.Safari]: 'UA-81915606-16',
+    [Enums.DeviceType.Chrome]: 'UA-81915606-6',
+    [Enums.DeviceType.Firefox]: 'UA-81915606-7',
+    [Enums.DeviceType.Opera]: 'UA-81915606-8',
+    [Enums.DeviceType.Edge]: 'UA-81915606-9',
+    [Enums.DeviceType.Vivaldi]: 'UA-81915606-15',
+    [Enums.DeviceType.Safari]: 'UA-81915606-16',
 };
 
-export default class BrowserPlatformUtilsService implements PlatformUtilsServiceInterface {
+export default class BrowserPlatformUtilsService implements Abstractions.PlatformUtilsService {
     static getDomain(uriString: string): string {
         if (uriString == null) {
             return null;
@@ -49,56 +49,56 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return ipRegex.test(ipString);
     }
 
-    private deviceCache: DeviceType = null;
+    private deviceCache: Enums.DeviceType = null;
     private analyticsIdCache: string = null;
 
-    getDevice(): DeviceType {
+    getDevice(): Enums.DeviceType {
         if (this.deviceCache) {
             return this.deviceCache;
         }
 
         if (navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1) {
-            this.deviceCache = DeviceType.Firefox;
+            this.deviceCache = Enums.DeviceType.Firefox;
         } else if ((!!(window as any).opr && !!opr.addons) || !!(window as any).opera ||
             navigator.userAgent.indexOf(' OPR/') >= 0) {
-            this.deviceCache = DeviceType.Opera;
+            this.deviceCache = Enums.DeviceType.Opera;
         } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
-            this.deviceCache = DeviceType.Edge;
+            this.deviceCache = Enums.DeviceType.Edge;
         } else if (navigator.userAgent.indexOf(' Vivaldi/') !== -1) {
-            this.deviceCache = DeviceType.Vivaldi;
+            this.deviceCache = Enums.DeviceType.Vivaldi;
         } else if ((window as any).chrome) {
-            this.deviceCache = DeviceType.Chrome;
+            this.deviceCache = Enums.DeviceType.Chrome;
         }
 
         return this.deviceCache;
     }
 
     getDeviceString(): string {
-        return DeviceType[this.getDevice()].toLowerCase();
+        return Enums.DeviceType[this.getDevice()].toLowerCase();
     }
 
     isFirefox(): boolean {
-        return this.getDevice() === DeviceType.Firefox;
+        return this.getDevice() === Enums.DeviceType.Firefox;
     }
 
     isChrome(): boolean {
-        return this.getDevice() === DeviceType.Chrome;
+        return this.getDevice() === Enums.DeviceType.Chrome;
     }
 
     isEdge(): boolean {
-        return this.getDevice() === DeviceType.Edge;
+        return this.getDevice() === Enums.DeviceType.Edge;
     }
 
     isOpera(): boolean {
-        return this.getDevice() === DeviceType.Opera;
+        return this.getDevice() === Enums.DeviceType.Opera;
     }
 
     isVivaldi(): boolean {
-        return this.getDevice() === DeviceType.Vivaldi;
+        return this.getDevice() === Enums.DeviceType.Vivaldi;
     }
 
     isSafari(): boolean {
-        return this.getDevice() === DeviceType.Safari;
+        return this.getDevice() === Enums.DeviceType.Safari;
     }
 
     analyticsId(): string {

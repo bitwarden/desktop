@@ -1,4 +1,4 @@
-import { CipherType } from '@bitwarden/jslib';
+import { Enums } from '@bitwarden/jslib';
 
 import { CipherData } from '../data/cipherData';
 
@@ -19,7 +19,7 @@ class Cipher extends Domain {
     folderId: string;
     name: CipherString;
     notes: CipherString;
-    type: CipherType;
+    type: Enums.CipherType;
     favorite: boolean;
     organizationUseTotp: boolean;
     edit: boolean;
@@ -54,16 +54,16 @@ class Cipher extends Domain {
         this.localData = localData;
 
         switch (this.type) {
-            case CipherType.Login:
+            case Enums.CipherType.Login:
                 this.login = new Login(obj.login, alreadyEncrypted);
                 break;
-            case CipherType.SecureNote:
+            case Enums.CipherType.SecureNote:
                 this.secureNote = new SecureNote(obj.secureNote, alreadyEncrypted);
                 break;
-            case CipherType.Card:
+            case Enums.CipherType.Card:
                 this.card = new Card(obj.card, alreadyEncrypted);
                 break;
-            case CipherType.Identity:
+            case Enums.CipherType.Identity:
                 this.identity = new Identity(obj.identity, alreadyEncrypted);
                 break;
             default:
@@ -113,18 +113,18 @@ class Cipher extends Domain {
         }, this.organizationId);
 
         switch (this.type) {
-            case CipherType.Login:
+            case Enums.CipherType.Login:
                 model.login = await this.login.decrypt(this.organizationId);
                 model.subTitle = model.login.username;
                 if (model.login.uri) {
                     model.login.domain = BrowserPlatformUtilsService.getDomain(model.login.uri);
                 }
                 break;
-            case CipherType.SecureNote:
+            case Enums.CipherType.SecureNote:
                 model.secureNote = await this.secureNote.decrypt(this.organizationId);
                 model.subTitle = null;
                 break;
-            case CipherType.Card:
+            case Enums.CipherType.Card:
                 model.card = await this.card.decrypt(this.organizationId);
                 model.subTitle = model.card.brand;
                 if (model.card.number && model.card.number.length >= 4) {
@@ -134,7 +134,7 @@ class Cipher extends Domain {
                     model.subTitle += ('*' + model.card.number.substr(model.card.number.length - 4));
                 }
                 break;
-            case CipherType.Identity:
+            case Enums.CipherType.Identity:
                 model.identity = await this.identity.decrypt(this.organizationId);
                 model.subTitle = '';
                 if (model.identity.firstName) {

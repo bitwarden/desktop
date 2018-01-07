@@ -1,6 +1,6 @@
 import ConstantsService from './constants.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 const b32Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 
@@ -10,7 +10,7 @@ const TotpAlgorithm = {
 };
 
 export default class TotpService {
-    constructor(private storageService: StorageService) {
+    constructor(private storageService: Abstractions.StorageService) {
     }
 
     async getCode(keyb32: string): Promise<string> {

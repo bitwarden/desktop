@@ -4,7 +4,8 @@ import MainBackground from './main.background';
 
 import CipherService from '../services/cipher.service';
 import PasswordGenerationService from '../services/passwordGeneration.service';
-import UtilsService from '../services/utils.service';
+
+import { Services } from '@bitwarden/jslib';
 
 export default class ContextMenusBackground {
     private contextMenus: any;
@@ -32,7 +33,7 @@ export default class ContextMenusBackground {
     private async generatePasswordToClipboard() {
         const options = await this.passwordGenerationService.getOptions();
         const password = PasswordGenerationService.generatePassword(options);
-        UtilsService.copyToClipboard(password);
+        Services.UtilsService.copyToClipboard(password);
         this.passwordGenerationService.addHistory(password);
 
         (window as any).ga('send', {
@@ -68,13 +69,13 @@ export default class ContextMenusBackground {
                     hitType: 'event',
                     eventAction: 'Copied Username From Context Menu',
                 });
-                UtilsService.copyToClipboard(cipher.login.username);
+                Services.UtilsService.copyToClipboard(cipher.login.username);
             } else if (info.parentMenuItemId === 'copy-password') {
                 (window as any).ga('send', {
                     hitType: 'event',
                     eventAction: 'Copied Password From Context Menu',
                 });
-                UtilsService.copyToClipboard(cipher.login.password);
+                Services.UtilsService.copyToClipboard(cipher.login.password);
             }
 
             break;

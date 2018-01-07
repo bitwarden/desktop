@@ -6,7 +6,7 @@ import { CollectionData } from '../models/data/collectionData';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 const Keys = {
     collectionsPrefix: 'collections_',
@@ -16,7 +16,7 @@ export default class CollectionService {
     decryptedCollectionCache: any[];
 
     constructor(private cryptoService: CryptoService, private userService: UserService,
-        private storageService: StorageService) {
+        private storageService: Abstractions.StorageService) {
     }
 
     clearCache(): void {

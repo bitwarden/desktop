@@ -3,13 +3,13 @@ import { TokenRequest } from '../../../models/request/tokenRequest';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 
-import { MessagingService, PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 class AuthService {
     constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
         public tokenService: any, public $rootScope: any, public appIdService: any,
-        public platformUtilsService: PlatformUtilsService, public constantsService: any,
-        public messagingService: MessagingService) {
+        public platformUtilsService: Abstractions.PlatformUtilsService, public constantsService: any,
+        public messagingService: Abstractions.MessagingService) {
     }
 
     async logIn(email: string, masterPassword: string, twoFactorProvider?: number,

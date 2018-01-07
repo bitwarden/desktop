@@ -1,6 +1,6 @@
-import { PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
-export default function i18nService(platformUtilsService: PlatformUtilsService) {
+export default function i18nService(platformUtilsService: Abstractions.PlatformUtilsService) {
     const edgeMessages: any = {};
 
     if (platformUtilsService.isEdge()) {

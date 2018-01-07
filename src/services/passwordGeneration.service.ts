@@ -2,9 +2,8 @@ import { CipherString } from '../models/domain/cipherString';
 import PasswordHistory from '../models/domain/passwordHistory';
 
 import CryptoService from './crypto.service';
-import UtilsService from './utils.service';
 
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions, Services } from '@bitwarden/jslib';
 
 const DefaultOptions = {
     length: 14,
@@ -81,7 +80,7 @@ export default class PasswordGenerationService {
 
         // shuffle
         positions.sort(() => {
-            return UtilsService.secureRandomNumber(0, 1) * 2 - 1;
+            return Services.UtilsService.secureRandomNumber(0, 1) * 2 - 1;
         });
 
         // build out the char sets
@@ -137,7 +136,7 @@ export default class PasswordGenerationService {
                     break;
             }
 
-            const randomCharIndex = UtilsService.secureRandomNumber(0, positionChars.length - 1);
+            const randomCharIndex = Services.UtilsService.secureRandomNumber(0, positionChars.length - 1);
             password += positionChars.charAt(randomCharIndex);
         }
 
@@ -147,7 +146,7 @@ export default class PasswordGenerationService {
     optionsCache: any;
     history: PasswordHistory[] = [];
 
-    constructor(private cryptoService: CryptoService, private storageService: StorageService) {
+    constructor(private cryptoService: CryptoService, private storageService: Abstractions.StorageService) {
         storageService.get<PasswordHistory[]>(Keys.history).then((encrypted) => {
             return this.decryptHistory(encrypted);
         }).then((history) => {

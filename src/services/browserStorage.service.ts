@@ -1,7 +1,7 @@
-import { PlatformUtilsService, StorageService as StorageServiceInterface } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
-export default class BrowserStorageService implements StorageServiceInterface {
-    constructor(private platformUtilsService: PlatformUtilsService) {
+export default class BrowserStorageService implements Abstractions.StorageService {
+    constructor(private platformUtilsService: Abstractions.PlatformUtilsService) {
     }
 
     get<T>(key: string): Promise<T> {

@@ -1,6 +1,5 @@
-import { CipherType } from '@bitwarden/jslib';
+import { Abstractions, Enums } from '@bitwarden/jslib';
 
-import { PlatformUtilsService, UtilsService } from '@bitwarden/jslib';
 import * as template from './current.component.html';
 
 export class CurrentController {
@@ -17,8 +16,9 @@ export class CurrentController {
     inSidebar: boolean = false;
     disableSearch: boolean = false;
 
-    constructor($scope: any, private cipherService: any, private platformUtilsService: PlatformUtilsService,
-        private utilsService: UtilsService, private toastr: any, private $window: any, private $state: any,
+    constructor($scope: any, private cipherService: any,
+        private platformUtilsService: Abstractions.PlatformUtilsService,
+        private utilsService: Abstractions.UtilsService, private toastr: any, private $window: any, private $state: any,
         private $timeout: any, private autofillService: any, private $analytics: any, private i18nService: any,
         private $filter: any) {
         this.i18n = i18nService;
@@ -117,8 +117,8 @@ export class CurrentController {
             });
 
             const otherTypes = [
-                CipherType.Card,
-                CipherType.Identity,
+                Enums.CipherType.Card,
+                Enums.CipherType.Identity,
             ];
 
             this.cipherService.getAllDecryptedForDomain(this.domain, otherTypes).then((ciphers: any[]) => {
@@ -131,13 +131,13 @@ export class CurrentController {
 
                 sortedCiphers.forEach((cipher: any) => {
                     switch (cipher.type) {
-                        case CipherType.Login:
+                        case Enums.CipherType.Login:
                             loginCiphers.push(cipher);
                             break;
-                        case CipherType.Card:
+                        case Enums.CipherType.Card:
                             cardCiphers.push(cipher);
                             break;
-                        case CipherType.Identity:
+                        case Enums.CipherType.Identity:
                             identityCiphers.push(cipher);
                             break;
                         default:

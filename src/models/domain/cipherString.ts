@@ -1,19 +1,19 @@
-import { EncryptionType } from '@bitwarden/jslib';
+import { Enums } from '@bitwarden/jslib';
 
 import ContainerService from '../../services/container.service';
 
 class CipherString {
     encryptedString?: string;
-    encryptionType?: EncryptionType;
+    encryptionType?: Enums.EncryptionType;
     decryptedValue?: string;
     cipherText?: string;
     initializationVector?: string;
     mac?: string;
 
-    constructor(encryptedStringOrType: string | EncryptionType, ct?: string, iv?: string, mac?: string) {
+    constructor(encryptedStringOrType: string | Enums.EncryptionType, ct?: string, iv?: string, mac?: string) {
         if (ct != null) {
             // ct and header
-            const encType = encryptedStringOrType as EncryptionType;
+            const encType = encryptedStringOrType as Enums.EncryptionType;
             this.encryptedString = encType + '.' + ct;
 
             // iv
@@ -51,13 +51,13 @@ class CipherString {
             }
         } else {
             encPieces = this.encryptedString.split('|');
-            this.encryptionType = encPieces.length === 3 ? EncryptionType.AesCbc128_HmacSha256_B64 :
-                EncryptionType.AesCbc256_B64;
+            this.encryptionType = encPieces.length === 3 ? Enums.EncryptionType.AesCbc128_HmacSha256_B64 :
+                Enums.EncryptionType.AesCbc256_B64;
         }
 
         switch (this.encryptionType) {
-            case EncryptionType.AesCbc128_HmacSha256_B64:
-            case EncryptionType.AesCbc256_HmacSha256_B64:
+            case Enums.EncryptionType.AesCbc128_HmacSha256_B64:
+            case Enums.EncryptionType.AesCbc256_HmacSha256_B64:
                 if (encPieces.length !== 3) {
                     return;
                 }
@@ -66,7 +66,7 @@ class CipherString {
                 this.cipherText = encPieces[1];
                 this.mac = encPieces[2];
                 break;
-            case EncryptionType.AesCbc256_B64:
+            case Enums.EncryptionType.AesCbc256_B64:
                 if (encPieces.length !== 2) {
                     return;
                 }
@@ -74,8 +74,8 @@ class CipherString {
                 this.initializationVector = encPieces[0];
                 this.cipherText = encPieces[1];
                 break;
-            case EncryptionType.Rsa2048_OaepSha256_B64:
-            case EncryptionType.Rsa2048_OaepSha1_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha256_B64:
+            case Enums.EncryptionType.Rsa2048_OaepSha1_B64:
                 if (encPieces.length !== 1) {
                     return;
                 }

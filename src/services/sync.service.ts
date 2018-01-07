@@ -17,7 +17,7 @@ import FolderService from './folder.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
 
-import { MessagingService, StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 const Keys = {
     lastSyncPrefix: 'lastSync_',
@@ -29,8 +29,8 @@ export default class SyncService {
     constructor(private userService: UserService, private apiService: ApiService,
         private settingsService: SettingsService, private folderService: FolderService,
         private cipherService: CipherService, private cryptoService: CryptoService,
-        private collectionService: CollectionService, private storageService: StorageService,
-        private messagingService: MessagingService, private logoutCallback: Function) {
+        private collectionService: CollectionService, private storageService: Abstractions.StorageService,
+        private messagingService: Abstractions.MessagingService, private logoutCallback: Function) {
     }
 
     async getLastSync() {

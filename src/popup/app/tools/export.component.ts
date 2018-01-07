@@ -2,7 +2,7 @@ import * as angular from 'angular';
 import * as papa from 'papaparse';
 import * as template from './export.component.html';
 
-import { CipherType, UtilsService } from '@bitwarden/jslib';
+import { Abstractions, Enums } from '@bitwarden/jslib';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 
@@ -11,7 +11,7 @@ export class ExportController {
     masterPassword: string;
 
     constructor(private $state: any, private cryptoService: CryptoService,
-        private toastr: any, private utilsService: UtilsService, private $analytics: any,
+        private toastr: any, private utilsService: Abstractions.UtilsService, private $analytics: any,
         private i18nService: any, private folderService: any, private cipherService: any,
         private $window: any, private userService: any) {
         this.i18n = i18nService;
@@ -74,7 +74,7 @@ export class ExportController {
         const exportCiphers = [];
         for (const c of decCiphers) {
             // only export logins and secure notes
-            if (c.type !== CipherType.Login && c.type !== CipherType.SecureNote) {
+            if (c.type !== Enums.CipherType.Login && c.type !== Enums.CipherType.SecureNote) {
                 continue;
             }
 
@@ -105,14 +105,14 @@ export class ExportController {
             }
 
             switch (c.type) {
-                case CipherType.Login:
+                case Enums.CipherType.Login:
                     cipher.type = 'login';
                     cipher.login_uri = c.login.uri;
                     cipher.login_username = c.login.username;
                     cipher.login_password = c.login.password;
                     cipher.login_totp = c.login.totp;
                     break;
-                case CipherType.SecureNote:
+                case Enums.CipherType.SecureNote:
                     cipher.type = 'note';
                     break;
                 default:

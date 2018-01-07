@@ -3,7 +3,8 @@ import BrowserApi from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import PasswordGenerationService from '../services/passwordGeneration.service';
-import UtilsService from '../services/utils.service';
+
+import { Services } from '@bitwarden/jslib';
 
 export default class CommandsBackground {
     private commands: any;
@@ -34,7 +35,7 @@ export default class CommandsBackground {
     private async generatePasswordToClipboard() {
         const options = await this.passwordGenerationService.getOptions();
         const password = PasswordGenerationService.generatePassword(options);
-        UtilsService.copyToClipboard(password);
+        Services.UtilsService.copyToClipboard(password);
         this.passwordGenerationService.addHistory(password);
 
         (window as any).ga('send', {

@@ -1,4 +1,4 @@
-import { PlatformUtilsService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 export default class ConstantsService {
     static readonly environmentUrlsKey: string = 'environmentUrls';
@@ -57,7 +57,7 @@ export default class ConstantsService {
 
     twoFactorProviderInfo: any[];
 
-    constructor(i18nService: any, platformUtilsService: PlatformUtilsService) {
+    constructor(i18nService: any, platformUtilsService: Abstractions.PlatformUtilsService) {
         if (platformUtilsService.isEdge()) {
             // delay for i18n fetch
             setTimeout(() => {

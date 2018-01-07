@@ -1,7 +1,7 @@
-import { FieldType } from '@bitwarden/jslib';
+import { Enums } from '@bitwarden/jslib';
 
 class FieldData {
-    type: FieldType;
+    type: Enums.FieldType;
     name: string;
     value: string;
 

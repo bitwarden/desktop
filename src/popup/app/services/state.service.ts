@@ -1,9 +1,9 @@
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions } from '@bitwarden/jslib';
 
 class StateService {
     private state: any = {};
 
-    constructor(private storageService: StorageService, private constantsService: any) {
+    constructor(private storageService: Abstractions.StorageService, private constantsService: any) {
     }
 
     async init() {

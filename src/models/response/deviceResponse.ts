@@ -1,10 +1,10 @@
-import { DeviceType } from '@bitwarden/jslib';
+import { Enums } from '@bitwarden/jslib';
 
 class DeviceResponse {
     id: string;
     name: number;
     identifier: string;
-    type: DeviceType;
+    type: Enums.DeviceType;
     creationDate: string;
 
     constructor(response: any) {

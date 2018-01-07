@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 
-import { DeviceType, MessagingService, PlatformUtilsService, StorageService } from '@bitwarden/jslib';
+import { Abstractions, Enums } from '@bitwarden/jslib';
 
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 import ConstantsService from '../../../services/constants.service';
@@ -8,17 +8,17 @@ import ConstantsService from '../../../services/constants.service';
 import * as template from './settings.component.html';
 
 const RateUrls = {
-    [DeviceType.Chrome]:
+    [Enums.DeviceType.Chrome]:
     'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [DeviceType.Firefox]:
+    [Enums.DeviceType.Firefox]:
     'https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/#reviews',
-    [DeviceType.Opera]:
+    [Enums.DeviceType.Opera]:
     'https://addons.opera.com/en/extensions/details/bitwarden-free-password-manager/#feedback-container',
-    [DeviceType.Edge]:
+    [Enums.DeviceType.Edge]:
     'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl',
-    [DeviceType.Vivaldi]:
+    [Enums.DeviceType.Vivaldi]:
     'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [DeviceType.Safari]:
+    [Enums.DeviceType.Safari]:
     'https://itunes.com', // TODO
 };
 
@@ -27,10 +27,12 @@ export class SettingsController {
     i18n: any;
     showOnLocked: boolean;
 
-    constructor(private $state: any, private SweetAlert: any, private platformUtilsService: PlatformUtilsService,
-        private $analytics: any, private i18nService: any, private constantsService: ConstantsService,
-        private cryptoService: CryptoService, private lockService: any, private storageService: StorageService,
-        public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
+    constructor(private $state: any, private SweetAlert: any,
+        private platformUtilsService: Abstractions.PlatformUtilsService, private $analytics: any,
+        private i18nService: any, private constantsService: ConstantsService,
+        private cryptoService: CryptoService, private lockService: any,
+        private storageService: Abstractions.StorageService,
+        public messagingService: Abstractions.MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {

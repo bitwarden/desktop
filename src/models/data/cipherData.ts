@@ -1,4 +1,4 @@
-import { CipherType } from '@bitwarden/jslib';
+import { Enums } from '@bitwarden/jslib';
 
 import { AttachmentData } from './attachmentData';
 import { CardData } from './cardData';
@@ -18,7 +18,7 @@ class CipherData {
     organizationUseTotp: boolean;
     favorite: boolean;
     revisionDate: string;
-    type: CipherType;
+    type: Enums.CipherType;
     sizeName: string;
     name: string;
     notes: string;
@@ -51,16 +51,16 @@ class CipherData {
         this.notes = response.data.Notes;
 
         switch (this.type) {
-            case CipherType.Login:
+            case Enums.CipherType.Login:
                 this.login = new LoginData(response.data);
                 break;
-            case CipherType.SecureNote:
+            case Enums.CipherType.SecureNote:
                 this.secureNote = new SecureNoteData(response.data);
                 break;
-            case CipherType.Card:
+            case Enums.CipherType.Card:
                 this.card = new CardData(response.data);
                 break;
-            case CipherType.Identity:
+            case Enums.CipherType.Identity:
                 this.identity = new IdentityData(response.data);
                 break;
             default:

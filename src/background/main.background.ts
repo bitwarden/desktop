@@ -1,4 +1,4 @@
-import { CipherType } from '@bitwarden/jslib';
+import { Abstractions, Enums, Services } from '@bitwarden/jslib';
 
 import { Cipher } from '../models/domain/cipher';
 
@@ -33,16 +33,13 @@ import SyncService from '../services/sync.service';
 import TokenService from '../services/token.service';
 import TotpService from '../services/totp.service';
 import UserService from '../services/user.service';
-import UtilsService from '../services/utils.service';
-
-import { MessagingService, PlatformUtilsService, StorageService } from '@bitwarden/jslib';
 
 export default class MainBackground {
-    messagingService: MessagingService;
-    storageService: StorageService;
+    messagingService: Abstractions.MessagingService;
+    storageService: Abstractions.StorageService;
     i18nService: any;
-    platformUtilsService: PlatformUtilsService;
-    utilsService: UtilsService;
+    platformUtilsService: Abstractions.PlatformUtilsService;
+    utilsService: Abstractions.UtilsService;
     constantsService: ConstantsService;
     cryptoService: CryptoService;
     tokenService: TokenService;
@@ -80,7 +77,7 @@ export default class MainBackground {
 
     constructor() {
         // Services
-        this.utilsService = new UtilsService();
+        this.utilsService = new Services.UtilsService();
         this.platformUtilsService = new BrowserPlatformUtilsService();
         this.messagingService = new BrowserMessagingService(this.platformUtilsService);
         this.storageService = new BrowserStorageService(this.platformUtilsService);
@@ -348,7 +345,7 @@ export default class MainBackground {
     }
 
     private async loadLoginContextMenuOptions(cipher: any) {
-        if (cipher == null || cipher.type !== CipherType.Login) {
+        if (cipher == null || cipher.type !== Enums.CipherType.Login) {
             return;
         }
 
@@ -365,7 +362,7 @@ export default class MainBackground {
 
     private async loadContextMenuOptions(title: string, idSuffix: string, cipher: any) {
         if (!chrome.contextMenus || this.menuOptionsLoaded.indexOf(idSuffix) > -1 ||
-            (cipher != null && cipher.type !== CipherType.Login)) {
+            (cipher != null && cipher.type !== Enums.CipherType.Login)) {
             return;
         }
 

@@ -1,9 +1,7 @@
-import UtilsService from './utils.service';
-
-import { StorageService } from '@bitwarden/jslib';
+import { Abstractions, Services } from '@bitwarden/jslib';
 
 export default class AppIdService {
-    constructor(private storageService: StorageService) {
+    constructor(private storageService: Abstractions.StorageService) {
     }
 
     getAppId(): Promise<string> {
@@ -20,7 +18,7 @@ export default class AppIdService {
             return existingId;
         }
 
-        const guid = UtilsService.newGuid();
+        const guid = Services.UtilsService.newGuid();
         await this.storageService.save(key, guid);
         return guid;
     }
