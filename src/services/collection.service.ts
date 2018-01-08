@@ -1,12 +1,10 @@
 import { CipherString } from '../models/domain/cipherString';
 import { Collection } from '../models/domain/collection';
 
-import { CollectionData } from '../models/data/collectionData';
-
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { Abstractions, Data } from '@bitwarden/jslib';
 
 const Keys = {
     collectionsPrefix: 'collections_',
@@ -25,7 +23,7 @@ export default class CollectionService {
 
     async get(id: string): Promise<Collection> {
         const userId = await this.userService.getUserId();
-        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
+        const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null || !collections.hasOwnProperty(id)) {
             return null;
@@ -36,7 +34,7 @@ export default class CollectionService {
 
     async getAll(): Promise<Collection[]> {
         const userId = await this.userService.getUserId();
-        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
+        const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
             Keys.collectionsPrefix + userId);
         const response: Collection[] = [];
         for (const id in collections) {
@@ -71,19 +69,19 @@ export default class CollectionService {
         return this.decryptedCollectionCache;
     }
 
-    async upsert(collection: CollectionData | CollectionData[]): Promise<any> {
+    async upsert(collection: Data.Collection | Data.Collection[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
+        let collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null) {
             collections = {};
         }
 
-        if (collection instanceof CollectionData) {
-            const c = collection as CollectionData;
+        if (collection instanceof Data.Collection) {
+            const c = collection as Data.Collection;
             collections[c.id] = c;
         } else {
-            (collection as CollectionData[]).forEach((c) => {
+            (collection as Data.Collection[]).forEach((c) => {
                 collections[c.id] = c;
             });
         }
@@ -92,7 +90,7 @@ export default class CollectionService {
         this.decryptedCollectionCache = null;
     }
 
-    async replace(collections: { [id: string]: CollectionData; }): Promise<any> {
+    async replace(collections: { [id: string]: Data.Collection; }): Promise<any> {
         const userId = await this.userService.getUserId();
         await this.storageService.save(Keys.collectionsPrefix + userId, collections);
         this.decryptedCollectionCache = null;
@@ -105,7 +103,7 @@ export default class CollectionService {
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
+        const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null) {
             return;

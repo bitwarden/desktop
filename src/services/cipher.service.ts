@@ -1,11 +1,9 @@
-import { Abstractions, Enums, Request, Response } from '@bitwarden/jslib';
+import { Abstractions, Data, Enums, Request, Response } from '@bitwarden/jslib';
 
 import { Cipher } from '../models/domain/cipher';
 import { CipherString } from '../models/domain/cipherString';
 import { Field } from '../models/domain/field';
 import SymmetricCryptoKey from '../models/domain/symmetricCryptoKey';
-
-import { CipherData } from '../models/data/cipherData';
 
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
@@ -128,7 +126,7 @@ export default class CipherService {
     async get(id: string): Promise<Cipher> {
         const userId = await this.userService.getUserId();
         const localData = await this.storageService.get<any>(Keys.localData);
-        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null || !ciphers.hasOwnProperty(id)) {
             return null;
@@ -140,7 +138,7 @@ export default class CipherService {
     async getAll(): Promise<Cipher[]> {
         const userId = await this.userService.getUserId();
         const localData = await this.storageService.get<any>(Keys.localData);
-        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
             Keys.ciphersPrefix + userId);
         const response: Cipher[] = [];
         for (const id in ciphers) {
@@ -292,7 +290,7 @@ export default class CipherService {
         }
 
         const userId = await this.userService.getUserId();
-        const data = new CipherData(response, userId, cipher.collectionIds);
+        const data = new Data.Cipher(response, userId, cipher.collectionIds);
         await this.upsert(data);
     }
 
@@ -321,7 +319,7 @@ export default class CipherService {
                 }
 
                 const userId = await self.userService.getUserId();
-                const data = new CipherData(response, userId, cipher.collectionIds);
+                const data = new Data.Cipher(response, userId, cipher.collectionIds);
                 this.upsert(data);
                 resolve(new Cipher(data));
 
@@ -333,19 +331,19 @@ export default class CipherService {
         });
     }
 
-    async upsert(cipher: CipherData | CipherData[]): Promise<any> {
+    async upsert(cipher: Data.Cipher | Data.Cipher[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
+        let ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null) {
             ciphers = {};
         }
 
-        if (cipher instanceof CipherData) {
-            const c = cipher as CipherData;
+        if (cipher instanceof Data.Cipher) {
+            const c = cipher as Data.Cipher;
             ciphers[c.id] = c;
         } else {
-            (cipher as CipherData[]).forEach((c) => {
+            (cipher as Data.Cipher[]).forEach((c) => {
                 ciphers[c.id] = c;
             });
         }
@@ -354,7 +352,7 @@ export default class CipherService {
         this.decryptedCipherCache = null;
     }
 
-    async replace(ciphers: { [id: string]: CipherData; }): Promise<any> {
+    async replace(ciphers: { [id: string]: Data.Cipher; }): Promise<any> {
         const userId = await this.userService.getUserId();
         await this.storageService.save(Keys.ciphersPrefix + userId, ciphers);
         this.decryptedCipherCache = null;
@@ -367,7 +365,7 @@ export default class CipherService {
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null) {
             return;
@@ -393,7 +391,7 @@ export default class CipherService {
 
     async deleteAttachment(id: string, attachmentId: string): Promise<void> {
         const userId = await this.userService.getUserId();
-        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
             Keys.ciphersPrefix + userId);
 
         if (ciphers == null || !ciphers.hasOwnProperty(id) || ciphers[id].attachments == null) {

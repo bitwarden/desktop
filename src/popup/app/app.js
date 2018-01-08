@@ -38,18 +38,9 @@ import { Identity } from '../../models/domain/identity';
 import { Login } from '../../models/domain/login';
 import { SecureNote } from '../../models/domain/secureNote';
 
-import { AttachmentData } from '../../models/data/attachmentData';
-import { CardData } from '../../models/data/cardData';
-import { CipherData } from '../../models/data/cipherData';
-import { FieldData } from '../../models/data/fieldData';
-import { FolderData } from '../../models/data/folderData';
-import { IdentityData } from '../../models/data/identityData';
-import { LoginData } from '../../models/data/loginData';
-import { SecureNoteData } from '../../models/data/secureNoteData';
-
 import { CipherString } from '../../models/domain/cipherString';
 
-import { Domain, Request, Response } from '@bitwarden/jslib';
+import { Data, Domain, Request, Response } from '@bitwarden/jslib';
 
 angular
     .module('bit', [

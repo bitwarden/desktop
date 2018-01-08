@@ -1,4 +1,4 @@
-import { LoginData } from '../data/loginData';
+import { Data } from '@bitwarden/jslib';
 
 import { CipherString } from './cipherString';
 import Domain from './domain';
@@ -9,7 +9,7 @@ class Login extends Domain {
     password: CipherString;
     totp: CipherString;
 
-    constructor(obj?: LoginData, alreadyEncrypted: boolean = false) {
+    constructor(obj?: Data.Login, alreadyEncrypted: boolean = false) {
         super();
         if (obj == null) {
             return;

@@ -1,4 +1,4 @@
-import { CollectionData } from '../data/collectionData';
+import { Data } from '@bitwarden/jslib';
 
 import { CipherString } from './cipherString';
 import Domain from './domain';
@@ -8,7 +8,7 @@ class Collection extends Domain {
     organizationId: string;
     name: CipherString;
 
-    constructor(obj?: CollectionData, alreadyEncrypted: boolean = false) {
+    constructor(obj?: Data.Collection, alreadyEncrypted: boolean = false) {
         super();
         if (obj == null) {
             return;

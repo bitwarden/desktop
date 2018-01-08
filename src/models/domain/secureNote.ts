@@ -1,13 +1,11 @@
-import { Enums } from '@bitwarden/jslib';
-
-import { SecureNoteData } from '../data/secureNoteData';
+import { Enums, Data } from '@bitwarden/jslib';
 
 import Domain from './domain';
 
 class SecureNote extends Domain {
     type: Enums.SecureNoteType;
 
-    constructor(obj?: SecureNoteData, alreadyEncrypted: boolean = false) {
+    constructor(obj?: Data.SecureNote, alreadyEncrypted: boolean = false) {
         super();
         if (obj == null) {
             return;

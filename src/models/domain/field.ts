@@ -1,6 +1,4 @@
-import { Enums } from '@bitwarden/jslib';
-
-import { FieldData } from '../data/fieldData';
+import { Enums, Data } from '@bitwarden/jslib';
 
 import { CipherString } from './cipherString';
 import Domain from './domain';
@@ -10,7 +8,7 @@ class Field extends Domain {
     vault: CipherString;
     type: Enums.FieldType;
 
-    constructor(obj?: FieldData, alreadyEncrypted: boolean = false) {
+    constructor(obj?: Data.Field, alreadyEncrypted: boolean = false) {
         super();
         if (obj == null) {
             return;

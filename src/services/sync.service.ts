@@ -1,7 +1,3 @@
-import { CipherData } from '../models/data/cipherData';
-import { CollectionData } from '../models/data/collectionData';
-import { FolderData } from '../models/data/folderData';
-
 import ApiService from './api.service';
 import CipherService from './cipher.service';
 import CollectionService from './collection.service';
@@ -10,7 +6,7 @@ import FolderService from './folder.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
 
-import { Abstractions, Response } from '@bitwarden/jslib';
+import { Abstractions, Data, Response } from '@bitwarden/jslib';
 
 const Keys = {
     lastSyncPrefix: 'lastSync_',
@@ -132,25 +128,25 @@ export default class SyncService {
     }
 
     private async syncFolders(userId: string, response: Response.Folder[]) {
-        const folders: { [id: string]: FolderData; } = {};
+        const folders: { [id: string]: Data.Folder; } = {};
         response.forEach((f) => {
-            folders[f.id] = new FolderData(f, userId);
+            folders[f.id] = new Data.Folder(f, userId);
         });
         return await this.folderService.replace(folders);
     }
 
     private async syncCollections(response: Response.Collection[]) {
-        const collections: { [id: string]: CollectionData; } = {};
+        const collections: { [id: string]: Data.Collection; } = {};
         response.forEach((c) => {
-            collections[c.id] = new CollectionData(c);
+            collections[c.id] = new Data.Collection(c);
         });
         return await this.collectionService.replace(collections);
     }
 
     private async syncCiphers(userId: string, response: Response.Cipher[]) {
-        const ciphers: { [id: string]: CipherData; } = {};
+        const ciphers: { [id: string]: Data.Cipher; } = {};
         response.forEach((c) => {
-            ciphers[c.id] = new CipherData(c, userId);
+            ciphers[c.id] = new Data.Cipher(c, userId);
         });
         return await this.cipherService.replace(ciphers);
     }

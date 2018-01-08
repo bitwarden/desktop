@@ -1,4 +1,4 @@
-import { IdentityData } from '../data/identityData';
+import { Data } from '@bitwarden/jslib';
 
 import { CipherString } from './cipherString';
 import Domain from './domain';
@@ -23,7 +23,7 @@ class Identity extends Domain {
     passportNumber: CipherString;
     licenseNumber: CipherString;
 
-    constructor(obj?: IdentityData, alreadyEncrypted: boolean = false) {
+    constructor(obj?: Data.Identity, alreadyEncrypted: boolean = false) {
         super();
         if (obj == null) {
             return;

@@ -1,4 +1,4 @@
-import { AttachmentData } from '../data/attachmentData';
+import { Data } from '@bitwarden/jslib';
 
 import { CipherString } from './cipherString';
 import Domain from './domain';
@@ -10,7 +10,7 @@ class Attachment extends Domain {
     sizeName: string;
     fileName: CipherString;
 
-    constructor(obj?: AttachmentData, alreadyEncrypted: boolean = false) {
+    constructor(obj?: Data.Attachment, alreadyEncrypted: boolean = false) {
         super();
         if (obj == null) {
             return;

@@ -1,6 +1,4 @@
-import { Abstractions, Enums } from '@bitwarden/jslib';
-
-import { CipherData } from '../data/cipherData';
+import { Abstractions, Enums, Data } from '@bitwarden/jslib';
 
 import { Attachment } from './attachment';
 import { Card } from './card';
@@ -30,7 +28,7 @@ class Cipher extends Domain {
     fields: Field[];
     collectionIds: string[];
 
-    constructor(obj?: CipherData, alreadyEncrypted: boolean = false, localData: any = null) {
+    constructor(obj?: Data.Cipher, alreadyEncrypted: boolean = false, localData: any = null) {
         super();
         if (obj == null) {
             return;

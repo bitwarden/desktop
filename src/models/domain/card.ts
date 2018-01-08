@@ -1,4 +1,4 @@
-import { CardData } from '../data/cardData';
+import { Data } from '@bitwarden/jslib';
 
 import { CipherString } from './cipherString';
 import Domain from './domain';
@@ -11,7 +11,7 @@ class Card extends Domain {
     expYear: CipherString;
     code: CipherString;
 
-    constructor(obj?: CardData, alreadyEncrypted: boolean = false) {
+    constructor(obj?: Data.Card, alreadyEncrypted: boolean = false) {
         super();
         if (obj == null) {
             return;
