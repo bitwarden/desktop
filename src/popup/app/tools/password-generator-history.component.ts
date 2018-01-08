@@ -1,10 +1,10 @@
 import * as template from './password-generator-history.component.html';
 
-import PasswordHistory from '../../../models/domain/passwordHistory';
+import { Domain } from '@bitwarden/jslib';
 
 export class PasswordGeneratorHistoryController {
     $transition$: any;
-    history: PasswordHistory[];
+    history: Domain.PasswordHistory[];
     editState: any;
     addState: any;
     i18n: any;

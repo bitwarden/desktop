@@ -1,5 +1,3 @@
-import { CipherString } from '../models/domain/cipherString';
-
 import ApiService from './api.service';
 import CryptoService from './crypto.service';
 import UserService from './user.service';

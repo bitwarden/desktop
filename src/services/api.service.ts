@@ -2,9 +2,7 @@ import AppIdService from './appId.service';
 import ConstantsService from './constants.service';
 import TokenService from './token.service';
 
-import { Abstractions, Request as Req, Response as Res } from '@bitwarden/jslib';
-
-import EnvironmentUrls from '../models/domain/environmentUrls';
+import { Abstractions, Domain, Request as Req, Response as Res } from '@bitwarden/jslib';
 
 export default class ApiService {
     urlsSet: boolean = false;
@@ -19,7 +17,7 @@ export default class ApiService {
         this.deviceType = platformUtilsService.getDevice().toString();
     }
 
-    setUrls(urls: EnvironmentUrls) {
+    setUrls(urls: Domain.EnvironmentUrls) {
         this.urlsSet = true;
 
         if (urls.base != null) {

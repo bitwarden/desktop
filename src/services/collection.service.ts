@@ -1,10 +1,7 @@
-import { CipherString } from '../models/domain/cipherString';
-import { Collection } from '../models/domain/collection';
-
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 
-import { Abstractions, Data } from '@bitwarden/jslib';
+import { Abstractions, Data, Domain } from '@bitwarden/jslib';
 
 const Keys = {
     collectionsPrefix: 'collections_',
@@ -21,7 +18,7 @@ export default class CollectionService {
         this.decryptedCollectionCache = null;
     }
 
-    async get(id: string): Promise<Collection> {
+    async get(id: string): Promise<Domain.Collection> {
         const userId = await this.userService.getUserId();
         const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
             Keys.collectionsPrefix + userId);
@@ -29,17 +26,17 @@ export default class CollectionService {
             return null;
         }
 
-        return new Collection(collections[id]);
+        return new Domain.Collection(collections[id]);
     }
 
-    async getAll(): Promise<Collection[]> {
+    async getAll(): Promise<Domain.Collection[]> {
         const userId = await this.userService.getUserId();
         const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
             Keys.collectionsPrefix + userId);
-        const response: Collection[] = [];
+        const response: Domain.Collection[] = [];
         for (const id in collections) {
             if (collections.hasOwnProperty(id)) {
-                response.push(new Collection(collections[id]));
+                response.push(new Domain.Collection(collections[id]));
             }
         }
         return response;

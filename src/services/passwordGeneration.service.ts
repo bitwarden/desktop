@@ -1,9 +1,6 @@
-import { CipherString } from '../models/domain/cipherString';
-import PasswordHistory from '../models/domain/passwordHistory';
-
 import CryptoService from './crypto.service';
 
-import { Abstractions, Services } from '@bitwarden/jslib';
+import { Abstractions, Domain, Services } from '@bitwarden/jslib';
 
 const DefaultOptions = {
     length: 14,
@@ -144,10 +141,10 @@ export default class PasswordGenerationService {
     }
 
     optionsCache: any;
-    history: PasswordHistory[] = [];
+    history: Domain.PasswordHistory[] = [];
 
     constructor(private cryptoService: CryptoService, private storageService: Abstractions.StorageService) {
-        storageService.get<PasswordHistory[]>(Keys.history).then((encrypted) => {
+        storageService.get<Domain.PasswordHistory[]>(Keys.history).then((encrypted) => {
             return this.decryptHistory(encrypted);
         }).then((history) => {
             this.history = history;
@@ -177,7 +174,7 @@ export default class PasswordGenerationService {
     }
 
     getHistory() {
-        return this.history || new Array<PasswordHistory>();
+        return this.history || new Array<Domain.PasswordHistory>();
     }
 
     async addHistory(password: string): Promise<any> {
@@ -186,7 +183,7 @@ export default class PasswordGenerationService {
             return;
         }
 
-        this.history.push(new PasswordHistory(password, Date.now()));
+        this.history.push(new Domain.PasswordHistory(password, Date.now()));
 
         // Remove old items.
         if (this.history.length > MaxPasswordsInHistory) {
@@ -202,27 +199,27 @@ export default class PasswordGenerationService {
         return await this.storageService.remove(Keys.history);
     }
 
-    private async encryptHistory(): Promise<PasswordHistory[]> {
+    private async encryptHistory(): Promise<Domain.PasswordHistory[]> {
         if (this.history == null || this.history.length === 0) {
             return Promise.resolve([]);
         }
 
         const promises = this.history.map(async (item) => {
             const encrypted = await this.cryptoService.encrypt(item.password);
-            return new PasswordHistory(encrypted.encryptedString, item.date);
+            return new Domain.PasswordHistory(encrypted.encryptedString, item.date);
         });
 
         return await Promise.all(promises);
     }
 
-    private async decryptHistory(history: PasswordHistory[]): Promise<PasswordHistory[]> {
+    private async decryptHistory(history: Domain.PasswordHistory[]): Promise<Domain.PasswordHistory[]> {
         if (history == null || history.length === 0) {
             return Promise.resolve([]);
         }
 
         const promises = history.map(async (item) => {
-            const decrypted = await this.cryptoService.decrypt(new CipherString(item.password));
-            return new PasswordHistory(decrypted, item.date);
+            const decrypted = await this.cryptoService.decrypt(new Domain.CipherString(item.password));
+            return new Domain.PasswordHistory(decrypted, item.date);
         });
 
         return await Promise.all(promises);

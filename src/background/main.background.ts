@@ -1,7 +1,5 @@
 import { Abstractions, Enums, Services } from '@bitwarden/jslib';
 
-import { Cipher } from '../models/domain/cipher';
-
 import BrowserApi from '../browser/browserApi';
 
 import CommandsBackground from './commands.background';

@@ -1,10 +1,6 @@
 import * as forge from 'node-forge';
 
-import { Abstractions, Enums, Response, Services } from '@bitwarden/jslib';
-
-import { CipherString } from '../models/domain/cipherString';
-import EncryptedObject from '../models/domain/encryptedObject';
-import SymmetricCryptoKey from '../models/domain/symmetricCryptoKey';
+import { Abstractions, Domain, Enums, Response, Services } from '@bitwarden/jslib';
 
 import ConstantsService from './constants.service';
 
@@ -31,18 +27,18 @@ const Crypto = window.crypto;
 const Subtle = Crypto.subtle;
 
 export default class CryptoService implements CryptoServiceInterface {
-    private key: SymmetricCryptoKey;
-    private encKey: SymmetricCryptoKey;
-    private legacyEtmKey: SymmetricCryptoKey;
+    private key: Domain.SymmetricCryptoKey;
+    private encKey: Domain.SymmetricCryptoKey;
+    private legacyEtmKey: Domain.SymmetricCryptoKey;
     private keyHash: string;
     private privateKey: ArrayBuffer;
-    private orgKeys: Map<string, SymmetricCryptoKey>;
+    private orgKeys: Map<string, Domain.SymmetricCryptoKey>;
 
     constructor(private storageService: Abstractions.StorageService,
         private secureStorageService: Abstractions.StorageService) {
     }
 
-    async setKey(key: SymmetricCryptoKey): Promise<any> {
+    async setKey(key: Domain.SymmetricCryptoKey): Promise<any> {
         this.key = key;
 
         const option = await this.storageService.get<number>(ConstantsService.lockOptionKey);
@@ -85,7 +81,7 @@ export default class CryptoService implements CryptoServiceInterface {
         return this.storageService.save(Keys.encOrgKeys, orgKeys);
     }
 
-    async getKey(): Promise<SymmetricCryptoKey> {
+    async getKey(): Promise<Domain.SymmetricCryptoKey> {
         if (this.key != null) {
             return this.key;
         }
@@ -97,7 +93,7 @@ export default class CryptoService implements CryptoServiceInterface {
 
         const key = await this.secureStorageService.get<string>(Keys.key);
         if (key) {
-            this.key = new SymmetricCryptoKey(key, true);
+            this.key = new Domain.SymmetricCryptoKey(key, true);
         }
 
         return key == null ? null : this.key;
@@ -111,7 +107,7 @@ export default class CryptoService implements CryptoServiceInterface {
         return this.storageService.get<string>(Keys.keyHash);
     }
 
-    async getEncKey(): Promise<SymmetricCryptoKey> {
+    async getEncKey(): Promise<Domain.SymmetricCryptoKey> {
         if (this.encKey != null) {
             return this.encKey;
         }
@@ -126,12 +122,12 @@ export default class CryptoService implements CryptoServiceInterface {
             return null;
         }
 
-        const decEncKey = await this.decrypt(new CipherString(encKey), key, 'raw');
+        const decEncKey = await this.decrypt(new Domain.CipherString(encKey), key, 'raw');
         if (decEncKey == null) {
             return null;
         }
 
-        this.encKey = new SymmetricCryptoKey(decEncKey);
+        this.encKey = new Domain.SymmetricCryptoKey(decEncKey);
         return this.encKey;
     }
 
@@ -145,13 +141,13 @@ export default class CryptoService implements CryptoServiceInterface {
             return null;
         }
 
-        const privateKey = await this.decrypt(new CipherString(encPrivateKey), null, 'raw');
+        const privateKey = await this.decrypt(new Domain.CipherString(encPrivateKey), null, 'raw');
         const privateKeyB64 = forge.util.encode64(privateKey);
         this.privateKey = Services.UtilsService.fromB64ToArray(privateKeyB64).buffer;
         return this.privateKey;
     }
 
-    async getOrgKeys(): Promise<Map<string, SymmetricCryptoKey>> {
+    async getOrgKeys(): Promise<Map<string, Domain.SymmetricCryptoKey>> {
         if (this.orgKeys != null && this.orgKeys.size > 0) {
             return this.orgKeys;
         }
@@ -162,7 +158,7 @@ export default class CryptoService implements CryptoServiceInterface {
             return null;
         }
 
-        const orgKeys: Map<string, SymmetricCryptoKey> = new Map<string, SymmetricCryptoKey>();
+        const orgKeys: Map<string, Domain.SymmetricCryptoKey> = new Map<string, Domain.SymmetricCryptoKey>();
         let setKey = false;
 
         for (const orgId in encOrgKeys) {
@@ -171,7 +167,7 @@ export default class CryptoService implements CryptoServiceInterface {
             }
 
             const decValueB64 = await this.rsaDecrypt(encOrgKeys[orgId]);
-            orgKeys.set(orgId, new SymmetricCryptoKey(decValueB64, true));
+            orgKeys.set(orgId, new Domain.SymmetricCryptoKey(decValueB64, true));
             setKey = true;
         }
 
@@ -182,7 +178,7 @@ export default class CryptoService implements CryptoServiceInterface {
         return this.orgKeys;
     }
 
-    async getOrgKey(orgId: string): Promise<SymmetricCryptoKey> {
+    async getOrgKey(orgId: string): Promise<Domain.SymmetricCryptoKey> {
         if (orgId == null) {
             return null;
         }
@@ -252,13 +248,13 @@ export default class CryptoService implements CryptoServiceInterface {
         await this.setKey(key);
     }
 
-    makeKey(password: string, salt: string): SymmetricCryptoKey {
+    makeKey(password: string, salt: string): Domain.SymmetricCryptoKey {
         const keyBytes: string = (forge as any).pbkdf2(forge.util.encodeUtf8(password), forge.util.encodeUtf8(salt),
             5000, 256 / 8, 'sha256');
-        return new SymmetricCryptoKey(keyBytes);
+        return new Domain.SymmetricCryptoKey(keyBytes);
     }
 
-    async hashPassword(password: string, key: SymmetricCryptoKey): Promise<string> {
+    async hashPassword(password: string, key: Domain.SymmetricCryptoKey): Promise<string> {
         const storedKey = await this.getKey();
         key = key || storedKey;
         if (!password || !key) {
@@ -269,14 +265,14 @@ export default class CryptoService implements CryptoServiceInterface {
         return forge.util.encode64(hashBits);
     }
 
-    makeEncKey(key: SymmetricCryptoKey): Promise<CipherString> {
+    makeEncKey(key: Domain.SymmetricCryptoKey): Promise<Domain.CipherString> {
         const bytes = new Uint8Array(512 / 8);
         Crypto.getRandomValues(bytes);
         return this.encrypt(bytes, key, 'raw');
     }
 
-    async encrypt(plainValue: string | Uint8Array, key?: SymmetricCryptoKey,
-        plainValueEncoding: string = 'utf8'): Promise<CipherString> {
+    async encrypt(plainValue: string | Uint8Array, key?: Domain.SymmetricCryptoKey,
+        plainValueEncoding: string = 'utf8'): Promise<Domain.CipherString> {
         if (!plainValue) {
             return Promise.resolve(null);
         }
@@ -292,10 +288,10 @@ export default class CryptoService implements CryptoServiceInterface {
         const iv = Services.UtilsService.fromBufferToB64(encValue.iv.buffer);
         const ct = Services.UtilsService.fromBufferToB64(encValue.ct.buffer);
         const mac = encValue.mac ? Services.UtilsService.fromBufferToB64(encValue.mac.buffer) : null;
-        return new CipherString(encValue.key.encType, iv, ct, mac);
+        return new Domain.CipherString(encValue.key.encType, iv, ct, mac);
     }
 
-    async encryptToBytes(plainValue: ArrayBuffer, key?: SymmetricCryptoKey): Promise<ArrayBuffer> {
+    async encryptToBytes(plainValue: ArrayBuffer, key?: Domain.SymmetricCryptoKey): Promise<ArrayBuffer> {
         const encValue = await this.aesEncrypt(plainValue, key);
         let macLen = 0;
         if (encValue.mac) {
@@ -313,7 +309,7 @@ export default class CryptoService implements CryptoServiceInterface {
         return encBytes.buffer;
     }
 
-    async decrypt(cipherString: CipherString, key?: SymmetricCryptoKey,
+    async decrypt(cipherString: Domain.CipherString, key?: Domain.SymmetricCryptoKey,
         outputEncoding: string = 'utf8'): Promise<string> {
         const ivBytes: string = forge.util.decode64(cipherString.initializationVector);
         const ctBytes: string = forge.util.decode64(cipherString.cipherText);
@@ -330,7 +326,7 @@ export default class CryptoService implements CryptoServiceInterface {
         }
     }
 
-    async decryptFromBytes(encBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
+    async decryptFromBytes(encBuf: ArrayBuffer, key: Domain.SymmetricCryptoKey): Promise<ArrayBuffer> {
         if (!encBuf) {
             throw new Error('no encBuf.');
         }
@@ -448,8 +444,8 @@ export default class CryptoService implements CryptoServiceInterface {
 
     // Helpers
 
-    private async aesEncrypt(plainValue: ArrayBuffer, key: SymmetricCryptoKey): Promise<EncryptedObject> {
-        const obj = new EncryptedObject();
+    private async aesEncrypt(plainValue: ArrayBuffer, key: Domain.SymmetricCryptoKey): Promise<Domain.EncryptedObject> {
+        const obj = new Domain.EncryptedObject();
         obj.key = await this.getKeyForEncryption(key);
         const keyBuf = obj.key.getBuffers();
 
@@ -472,7 +468,7 @@ export default class CryptoService implements CryptoServiceInterface {
     }
 
     private async aesDecrypt(encType: Enums.EncryptionType, ctBytes: string, ivBytes: string, macBytes: string,
-        key: SymmetricCryptoKey): Promise<any> {
+        key: Domain.SymmetricCryptoKey): Promise<any> {
         const keyForEnc = await this.getKeyForEncryption(key);
         const theKey = this.resolveLegacyKey(encType, keyForEnc);
 
@@ -501,7 +497,7 @@ export default class CryptoService implements CryptoServiceInterface {
     }
 
     private async aesDecryptWC(encType: Enums.EncryptionType, ctBuf: ArrayBuffer, ivBuf: ArrayBuffer,
-        macBuf: ArrayBuffer, key: SymmetricCryptoKey): Promise<ArrayBuffer> {
+        macBuf: ArrayBuffer, key: Domain.SymmetricCryptoKey): Promise<ArrayBuffer> {
         const theKey = await this.getKeyForEncryption(key);
         const keyBuf = theKey.getBuffers();
         const encKey = await Subtle.importKey('raw', keyBuf.encKey, AesAlgorithm, false, ['decrypt']);
@@ -577,7 +573,7 @@ export default class CryptoService implements CryptoServiceInterface {
         return true;
     }
 
-    private async getKeyForEncryption(key?: SymmetricCryptoKey): Promise<SymmetricCryptoKey> {
+    private async getKeyForEncryption(key?: Domain.SymmetricCryptoKey): Promise<Domain.SymmetricCryptoKey> {
         if (key) {
             return key;
         }
@@ -586,12 +582,12 @@ export default class CryptoService implements CryptoServiceInterface {
         return encKey || (await this.getKey());
     }
 
-    private resolveLegacyKey(encType: Enums.EncryptionType, key: SymmetricCryptoKey): SymmetricCryptoKey {
+    private resolveLegacyKey(encType: Enums.EncryptionType, key: Domain.SymmetricCryptoKey): Domain.SymmetricCryptoKey {
         if (encType === Enums.EncryptionType.AesCbc128_HmacSha256_B64 &&
             key.encType === Enums.EncryptionType.AesCbc256_B64) {
             // Old encrypt-then-mac scheme, make a new key
             this.legacyEtmKey = this.legacyEtmKey ||
-                new SymmetricCryptoKey(key.key, false, Enums.EncryptionType.AesCbc128_HmacSha256_B64);
+                new Domain.SymmetricCryptoKey(key.key, false, Enums.EncryptionType.AesCbc128_HmacSha256_B64);
             return this.legacyEtmKey;
         }
 

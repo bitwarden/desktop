@@ -30,16 +30,6 @@ import GlobalModule from './global/global.module';
 import SettingsModule from './settings/settings.module';
 
 // Model imports
-import { Attachment } from '../../models/domain/attachment';
-import { Card } from '../../models/domain/card';
-import { Cipher } from '../../models/domain/cipher';
-import { Field } from '../../models/domain/field';
-import { Identity } from '../../models/domain/identity';
-import { Login } from '../../models/domain/login';
-import { SecureNote } from '../../models/domain/secureNote';
-
-import { CipherString } from '../../models/domain/cipherString';
-
 import { Data, Domain, Request, Response } from '@bitwarden/jslib';
 
 angular

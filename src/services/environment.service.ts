@@ -1,9 +1,7 @@
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
 
-import { Abstractions } from '@bitwarden/jslib';
-
-import EnvironmentUrls from '../models/domain/environmentUrls';
+import { Abstractions, Domain } from '@bitwarden/jslib';
 
 export default class EnvironmentService {
     baseUrl: string;
@@ -25,7 +23,7 @@ export default class EnvironmentService {
             webVault: null,
         };
 
-        const envUrls = new EnvironmentUrls();
+        const envUrls = new Domain.EnvironmentUrls();
 
         if (urls.base) {
             this.baseUrl = envUrls.base = urls.base;
@@ -61,7 +59,7 @@ export default class EnvironmentService {
         this.identityUrl = urls.identity;
         this.iconsUrl = urls.icons;
 
-        const envUrls = new EnvironmentUrls();
+        const envUrls = new Domain.EnvironmentUrls();
         if (this.baseUrl) {
             envUrls.base = this.baseUrl;
         } else {
