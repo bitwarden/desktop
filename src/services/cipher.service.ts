@@ -2,7 +2,6 @@ import { Abstractions, Data, Domain, Enums, Request, Response } from '@bitwarden
 
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
-import CryptoService from './crypto.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
 
@@ -55,7 +54,7 @@ export default class CipherService {
 
     decryptedCipherCache: any[];
 
-    constructor(private cryptoService: CryptoService, private userService: UserService,
+    constructor(private cryptoService: Abstractions.CryptoService, private userService: UserService,
         private settingsService: SettingsService, private apiService: ApiService,
         private storageService: Abstractions.StorageService) {
     }

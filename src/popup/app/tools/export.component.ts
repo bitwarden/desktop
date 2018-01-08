@@ -4,13 +4,11 @@ import * as template from './export.component.html';
 
 import { Abstractions, Enums } from '@bitwarden/jslib';
 
-import { CryptoService } from '../../../services/abstractions/crypto.service';
-
 export class ExportController {
     i18n: any;
     masterPassword: string;
 
-    constructor(private $state: any, private cryptoService: CryptoService,
+    constructor(private $state: any, private cryptoService: Abstractions.CryptoService,
         private toastr: any, private utilsService: Abstractions.UtilsService, private $analytics: any,
         private i18nService: any, private folderService: any, private cipherService: any,
         private $window: any, private userService: any) {

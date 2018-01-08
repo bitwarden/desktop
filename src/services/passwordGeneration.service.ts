@@ -1,5 +1,3 @@
-import CryptoService from './crypto.service';
-
 import { Abstractions, Domain, Services } from '@bitwarden/jslib';
 
 const DefaultOptions = {
@@ -143,7 +141,8 @@ export default class PasswordGenerationService {
     optionsCache: any;
     history: Domain.PasswordHistory[] = [];
 
-    constructor(private cryptoService: CryptoService, private storageService: Abstractions.StorageService) {
+    constructor(private cryptoService: Abstractions.CryptoService,
+        private storageService: Abstractions.StorageService) {
         storageService.get<Domain.PasswordHistory[]>(Keys.history).then((encrypted) => {
             return this.decryptHistory(encrypted);
         }).then((history) => {

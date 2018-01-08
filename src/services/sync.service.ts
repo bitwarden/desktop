@@ -1,7 +1,6 @@
 import ApiService from './api.service';
 import CipherService from './cipher.service';
 import CollectionService from './collection.service';
-import CryptoService from './crypto.service';
 import FolderService from './folder.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
@@ -17,7 +16,7 @@ export default class SyncService {
 
     constructor(private userService: UserService, private apiService: ApiService,
         private settingsService: SettingsService, private folderService: FolderService,
-        private cipherService: CipherService, private cryptoService: CryptoService,
+        private cipherService: CipherService, private cryptoService: Abstractions.CryptoService,
         private collectionService: CollectionService, private storageService: Abstractions.StorageService,
         private messagingService: Abstractions.MessagingService, private logoutCallback: Function) {
     }

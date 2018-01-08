@@ -1,9 +1,7 @@
 import { Abstractions } from '@bitwarden/jslib';
 
-import { CryptoService } from './abstractions/crypto.service';
-
 export default class ContainerService {
-    constructor(private cryptoService: CryptoService,
+    constructor(private cryptoService: Abstractions.CryptoService,
         private platformUtilsService: Abstractions.PlatformUtilsService) {
     }
 
@@ -13,7 +11,7 @@ export default class ContainerService {
         }
     }
 
-    getCryptoService(): CryptoService {
+    getCryptoService(): Abstractions.CryptoService {
         return this.cryptoService;
     }
 

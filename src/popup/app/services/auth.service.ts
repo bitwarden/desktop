@@ -1,9 +1,7 @@
-import { CryptoService } from '../../../services/abstractions/crypto.service';
-
 import { Abstractions, Request } from '@bitwarden/jslib';
 
 class AuthService {
-    constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
+    constructor(public cryptoService: Abstractions.CryptoService, public apiService: any, public userService: any,
         public tokenService: any, public $rootScope: any, public appIdService: any,
         public platformUtilsService: Abstractions.PlatformUtilsService, public constantsService: any,
         public messagingService: Abstractions.MessagingService) {

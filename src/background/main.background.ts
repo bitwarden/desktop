@@ -20,7 +20,6 @@ import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import ConstantsService from '../services/constants.service';
 import ContainerService from '../services/container.service';
-import CryptoService from '../services/crypto.service';
 import EnvironmentService from '../services/environment.service';
 import FolderService from '../services/folder.service';
 import i18nService from '../services/i18n.service';
@@ -39,7 +38,7 @@ export default class MainBackground {
     platformUtilsService: Abstractions.PlatformUtilsService;
     utilsService: Abstractions.UtilsService;
     constantsService: ConstantsService;
-    cryptoService: CryptoService;
+    cryptoService: Abstractions.CryptoService;
     tokenService: TokenService;
     appIdService: AppIdService;
     apiService: ApiService;
@@ -82,7 +81,7 @@ export default class MainBackground {
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = i18nService(this.platformUtilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.platformUtilsService);
-        this.cryptoService = new CryptoService(this.storageService,
+        this.cryptoService = new Services.CryptoService(this.storageService,
             this.storageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);

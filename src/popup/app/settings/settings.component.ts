@@ -2,7 +2,6 @@ import * as angular from 'angular';
 
 import { Abstractions, Enums } from '@bitwarden/jslib';
 
-import { CryptoService } from '../../../services/abstractions/crypto.service';
 import ConstantsService from '../../../services/constants.service';
 
 import * as template from './settings.component.html';
@@ -30,7 +29,7 @@ export class SettingsController {
     constructor(private $state: any, private SweetAlert: any,
         private platformUtilsService: Abstractions.PlatformUtilsService, private $analytics: any,
         private i18nService: any, private constantsService: ConstantsService,
-        private cryptoService: CryptoService, private lockService: any,
+        private cryptoService: Abstractions.CryptoService, private lockService: any,
         private storageService: Abstractions.StorageService,
         public messagingService: Abstractions.MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;

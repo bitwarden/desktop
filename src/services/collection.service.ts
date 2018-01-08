@@ -1,4 +1,3 @@
-import CryptoService from './crypto.service';
 import UserService from './user.service';
 
 import { Abstractions, Data, Domain } from '@bitwarden/jslib';
@@ -10,7 +9,7 @@ const Keys = {
 export default class CollectionService {
     decryptedCollectionCache: any[];
 
-    constructor(private cryptoService: CryptoService, private userService: UserService,
+    constructor(private cryptoService: Abstractions.CryptoService, private userService: UserService,
         private storageService: Abstractions.StorageService) {
     }
 

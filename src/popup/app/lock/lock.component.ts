@@ -1,8 +1,6 @@
 import * as angular from 'angular';
 import * as template from './lock.component.html';
 
-import { CryptoService } from '../../../services/abstractions/crypto.service';
-
 import { Abstractions } from '@bitwarden/jslib';
 
 export class LockController {
@@ -11,7 +9,7 @@ export class LockController {
 
     constructor(public $state: any, public i18nService: any, private $timeout: any,
         private platformUtilsService: Abstractions.PlatformUtilsService,
-        public cryptoService: CryptoService, public toastr: any, public userService: any,
+        public cryptoService: Abstractions.CryptoService, public toastr: any, public userService: any,
         public messagingService: Abstractions.MessagingService, public SweetAlert: any) {
         this.i18n = i18nService;
     }

@@ -1,14 +1,13 @@
 import CipherService from './cipher.service';
 import CollectionService from './collection.service';
 import ConstantsService from './constants.service';
-import CryptoService from './crypto.service';
 import FolderService from './folder.service';
 
 import { Abstractions } from '@bitwarden/jslib';
 
 export default class LockService {
     constructor(private cipherService: CipherService, private folderService: FolderService,
-        private collectionService: CollectionService, private cryptoService: CryptoService,
+        private collectionService: CollectionService, private cryptoService: Abstractions.CryptoService,
         private platformUtilsService: Abstractions.PlatformUtilsService,
         private storageService: Abstractions.StorageService,
         private setIcon: Function, private refreshBadgeAndMenu: Function) {
