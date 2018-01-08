@@ -6,7 +6,7 @@
     "dev": "gulp build && webpack --config webpack.dev.js",
     "dev:watch": "gulp build && webpack --config webpack.dev.js --watch",
     "prod": "gulp build && webpack --config webpack.prod.js",
-    "dist": "gulp build && webpack --config webpack.prod.js && gulp dist",
+    "dist": "npm run prod && gulp dist",
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
     "test": "karma start --single-run",

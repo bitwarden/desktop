@@ -5,8 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isVendorModule = (module) => {
-    // returns true for everything in node_modules
-    return module.context && module.context.indexOf('node_modules') !== -1;
+    if (!module.context) {
+        return false;
+    }
+
+    const nodeModule = module.context.indexOf('node_modules') !== -1;
+    const bitwardenModule = module.context.indexOf('@bitwarden') !== -1;
+    return nodeModule && !bitwardenModule;
 };
 
 module.exports = {
