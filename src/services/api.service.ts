@@ -2,32 +2,9 @@ import AppIdService from './appId.service';
 import ConstantsService from './constants.service';
 import TokenService from './token.service';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { Abstractions, Request as Req, Response as Res } from '@bitwarden/jslib';
 
 import EnvironmentUrls from '../models/domain/environmentUrls';
-
-import { CipherRequest } from '../models/request/cipherRequest';
-import { DeviceRequest } from '../models/request/deviceRequest';
-import { DeviceTokenRequest } from '../models/request/deviceTokenRequest';
-import { FolderRequest } from '../models/request/folderRequest';
-import { PasswordHintRequest } from '../models/request/passwordHintRequest';
-import { RegisterRequest } from '../models/request/registerRequest';
-import { TokenRequest } from '../models/request/tokenRequest';
-import { TwoFactorEmailRequest } from '../models/request/twoFactorEmailRequest';
-
-import { AttachmentResponse } from '../models/response/attachmentResponse';
-import { CipherResponse } from '../models/response/cipherResponse';
-import { DeviceResponse } from '../models/response/deviceResponse';
-import { DomainsResponse } from '../models/response/domainsResponse';
-import { ErrorResponse } from '../models/response/errorResponse';
-import { FolderResponse } from '../models/response/folderResponse';
-import { GlobalDomainResponse } from '../models/response/globalDomainResponse';
-import { IdentityTokenResponse } from '../models/response/identityTokenResponse';
-import { KeysResponse } from '../models/response/keysResponse';
-import { ListResponse } from '../models/response/listResponse';
-import { ProfileOrganizationResponse } from '../models/response/profileOrganizationResponse';
-import { ProfileResponse } from '../models/response/profileResponse';
-import { SyncResponse } from '../models/response/syncResponse';
 
 export default class ApiService {
     urlsSet: boolean = false;
@@ -82,7 +59,7 @@ export default class ApiService {
 
     // Auth APIs
 
-    async postIdentityToken(request: TokenRequest): Promise<IdentityTokenResponse | any> {
+    async postIdentityToken(request: Req.Token): Promise<Res.IdentityToken | any> {
         const response = await fetch(new Request(this.identityBaseUrl + '/connect/token', {
             body: this.qsStringify(request.toIdentityToken()),
             cache: 'no-cache',
@@ -102,7 +79,7 @@ export default class ApiService {
 
         if (responseJson != null) {
             if (response.status === 200) {
-                return new IdentityTokenResponse(responseJson);
+                return new Res.IdentityToken(responseJson);
             } else if (response.status === 400 && responseJson.TwoFactorProviders2 &&
                 Object.keys(responseJson.TwoFactorProviders2).length) {
                 await this.tokenService.clearTwoFactorToken(request.email);
@@ -110,7 +87,7 @@ export default class ApiService {
             }
         }
 
-        return Promise.reject(new ErrorResponse(responseJson, response.status, true));
+        return Promise.reject(new Res.Error(responseJson, response.status, true));
     }
 
     async refreshIdentityToken(): Promise<any> {
@@ -123,7 +100,7 @@ export default class ApiService {
 
     // Two Factor APIs
 
-    async postTwoFactorEmail(request: TwoFactorEmailRequest): Promise<any> {
+    async postTwoFactorEmail(request: Req.TwoFactorEmail): Promise<any> {
         const response = await fetch(new Request(this.baseUrl + '/two-factor/send-email-login', {
             body: JSON.stringify(request),
             cache: 'no-cache',
@@ -161,7 +138,7 @@ export default class ApiService {
         }
     }
 
-    async postPasswordHint(request: PasswordHintRequest): Promise<any> {
+    async postPasswordHint(request: Req.PasswordHint): Promise<any> {
         const response = await fetch(new Request(this.baseUrl + '/accounts/password-hint', {
             body: JSON.stringify(request),
             cache: 'no-cache',
@@ -178,7 +155,7 @@ export default class ApiService {
         }
     }
 
-    async postRegister(request: RegisterRequest): Promise<any> {
+    async postRegister(request: Req.Register): Promise<any> {
         const response = await fetch(new Request(this.baseUrl + '/accounts/register', {
             body: JSON.stringify(request),
             cache: 'no-cache',
@@ -197,7 +174,7 @@ export default class ApiService {
 
     // Folder APIs
 
-    async postFolder(request: FolderRequest): Promise<FolderResponse> {
+    async postFolder(request: Req.Folder): Promise<Res.Folder> {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/folders', {
             body: JSON.stringify(request),
@@ -213,14 +190,14 @@ export default class ApiService {
 
         if (response.status === 200) {
             const responseJson = await response.json();
-            return new FolderResponse(responseJson);
+            return new Res.Folder(responseJson);
         } else {
             const error = await this.handleError(response, false);
             return Promise.reject(error);
         }
     }
 
-    async putFolder(id: string, request: FolderRequest): Promise<FolderResponse> {
+    async putFolder(id: string, request: Req.Folder): Promise<Res.Folder> {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/folders/' + id, {
             body: JSON.stringify(request),
@@ -236,7 +213,7 @@ export default class ApiService {
 
         if (response.status === 200) {
             const responseJson = await response.json();
-            return new FolderResponse(responseJson);
+            return new Res.Folder(responseJson);
         } else {
             const error = await this.handleError(response, false);
             return Promise.reject(error);
@@ -262,7 +239,7 @@ export default class ApiService {
 
     // Cipher APIs
 
-    async postCipher(request: CipherRequest): Promise<CipherResponse> {
+    async postCipher(request: Req.Cipher): Promise<Res.Cipher> {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/ciphers', {
             body: JSON.stringify(request),
@@ -278,14 +255,14 @@ export default class ApiService {
 
         if (response.status === 200) {
             const responseJson = await response.json();
-            return new CipherResponse(responseJson);
+            return new Res.Cipher(responseJson);
         } else {
             const error = await this.handleError(response, false);
             return Promise.reject(error);
         }
     }
 
-    async putCipher(id: string, request: CipherRequest): Promise<CipherResponse> {
+    async putCipher(id: string, request: Req.Cipher): Promise<Res.Cipher> {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id, {
             body: JSON.stringify(request),
@@ -301,7 +278,7 @@ export default class ApiService {
 
         if (response.status === 200) {
             const responseJson = await response.json();
-            return new CipherResponse(responseJson);
+            return new Res.Cipher(responseJson);
         } else {
             const error = await this.handleError(response, false);
             return Promise.reject(error);
@@ -327,7 +304,7 @@ export default class ApiService {
 
     // Attachments APIs
 
-    async postCipherAttachment(id: string, data: FormData): Promise<CipherResponse> {
+    async postCipherAttachment(id: string, data: FormData): Promise<Res.Cipher> {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/ciphers/' + id + '/attachment', {
             body: data,
@@ -342,7 +319,7 @@ export default class ApiService {
 
         if (response.status === 200) {
             const responseJson = await response.json();
-            return new CipherResponse(responseJson);
+            return new Res.Cipher(responseJson);
         } else {
             const error = await this.handleError(response, false);
             return Promise.reject(error);
@@ -368,7 +345,7 @@ export default class ApiService {
 
     // Sync APIs
 
-    async getSync(): Promise<SyncResponse> {
+    async getSync(): Promise<Res.Sync> {
         const authHeader = await this.handleTokenState();
         const response = await fetch(new Request(this.baseUrl + '/sync', {
             cache: 'no-cache',
@@ -381,7 +358,7 @@ export default class ApiService {
 
         if (response.status === 200) {
             const responseJson = await response.json();
-            return new SyncResponse(responseJson);
+            return new Res.Sync(responseJson);
         } else {
             const error = await this.handleError(response, false);
             return Promise.reject(error);
@@ -390,7 +367,7 @@ export default class ApiService {
 
     // Helpers
 
-    private async handleError(response: Response, tokenError: boolean): Promise<ErrorResponse> {
+    private async handleError(response: Response, tokenError: boolean): Promise<Res.Error> {
         if ((tokenError && response.status === 400) || response.status === 401 || response.status === 403) {
             this.logoutCallback(true);
             return null;
@@ -402,7 +379,7 @@ export default class ApiService {
             responseJson = await response.json();
         }
 
-        return new ErrorResponse(responseJson, response.status, tokenError);
+        return new Res.Error(responseJson, response.status, tokenError);
     }
 
     private async handleTokenState(): Promise<string> {
@@ -417,7 +394,7 @@ export default class ApiService {
         return 'Bearer ' + accessToken;
     }
 
-    private async doRefreshToken(): Promise<IdentityTokenResponse> {
+    private async doRefreshToken(): Promise<Res.IdentityToken> {
         const refreshToken = await this.tokenService.getRefreshToken();
         if (refreshToken == null || refreshToken === '') {
             throw new Error();
@@ -440,7 +417,7 @@ export default class ApiService {
 
         if (response.status === 200) {
             const responseJson = await response.json();
-            const tokenResponse = new IdentityTokenResponse(responseJson);
+            const tokenResponse = new Res.IdentityToken(responseJson);
             await this.tokenService.setTokens(tokenResponse.accessToken, tokenResponse.refreshToken);
             return tokenResponse;
         } else {

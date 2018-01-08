@@ -1,4 +1,4 @@
-import { Enums } from '@bitwarden/jslib';
+import { Data, Enums, Response } from '@bitwarden/jslib';
 
 import { AttachmentData } from './attachmentData';
 import { CardData } from './cardData';
@@ -6,8 +6,6 @@ import { FieldData } from './fieldData';
 import { IdentityData } from './identityData';
 import { LoginData } from './loginData';
 import { SecureNoteData } from './secureNoteData';
-
-import { CipherResponse } from '../response/cipherResponse';
 
 class CipherData {
     id: string;
@@ -30,7 +28,7 @@ class CipherData {
     attachments?: AttachmentData[];
     collectionIds?: string[];
 
-    constructor(response: CipherResponse, userId: string, collectionIds?: string[]) {
+    constructor(response: Response.Cipher, userId: string, collectionIds?: string[]) {
         this.id = response.id;
         this.organizationId = response.organizationId;
         this.folderId = response.folderId;

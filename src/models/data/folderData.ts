@@ -1,4 +1,4 @@
-import { FolderResponse } from '../response/folderResponse';
+import { Response } from '@bitwarden/jslib';
 
 class FolderData {
     id: string;
@@ -6,7 +6,7 @@ class FolderData {
     name: string;
     revisionDate: string;
 
-    constructor(response: FolderResponse, userId: string) {
+    constructor(response: Response.Folder, userId: string) {
         this.userId = userId;
         this.name = response.name;
         this.id = response.id;

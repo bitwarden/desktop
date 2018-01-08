@@ -1,4 +1,4 @@
-import { Abstractions, Enums } from '@bitwarden/jslib';
+import { Abstractions, Enums, Request, Response } from '@bitwarden/jslib';
 
 import { Cipher } from '../models/domain/cipher';
 import { CipherString } from '../models/domain/cipherString';
@@ -6,10 +6,6 @@ import { Field } from '../models/domain/field';
 import SymmetricCryptoKey from '../models/domain/symmetricCryptoKey';
 
 import { CipherData } from '../models/data/cipherData';
-
-import { CipherRequest } from '../models/request/cipherRequest';
-import { CipherResponse } from '../models/response/cipherResponse';
-import { ErrorResponse } from '../models/response/errorResponse';
 
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
@@ -285,9 +281,9 @@ export default class CipherService {
     }
 
     async saveWithServer(cipher: Cipher): Promise<any> {
-        const request = new CipherRequest(cipher);
+        const request = new Request.Cipher(cipher);
 
-        let response: CipherResponse;
+        let response: Response.Cipher;
         if (cipher.id == null) {
             response = await this.apiService.postCipher(request);
             cipher.id = response.id;
@@ -316,11 +312,11 @@ export default class CipherService {
                 const blob = new Blob([encData], { type: 'application/octet-stream' });
                 fd.append('data', blob, encFileName.encryptedString);
 
-                let response: CipherResponse;
+                let response: Response.Cipher;
                 try {
                     response = await self.apiService.postCipherAttachment(cipher.id, fd);
                 } catch (e) {
-                    reject((e as ErrorResponse).getSingleMessage());
+                    reject((e as Response.Error).getSingleMessage());
                     return;
                 }
 
@@ -418,7 +414,7 @@ export default class CipherService {
         try {
             await this.apiService.deleteCipherAttachment(id, attachmentId);
         } catch (e) {
-            return Promise.reject((e as ErrorResponse).getSingleMessage());
+            return Promise.reject((e as Response.Error).getSingleMessage());
         }
         await this.deleteAttachment(id, attachmentId);
     }

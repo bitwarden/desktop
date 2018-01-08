@@ -1,11 +1,10 @@
 import * as forge from 'node-forge';
 
-import { Abstractions, Enums, Services } from '@bitwarden/jslib';
+import { Abstractions, Enums, Response, Services } from '@bitwarden/jslib';
 
 import { CipherString } from '../models/domain/cipherString';
 import EncryptedObject from '../models/domain/encryptedObject';
 import SymmetricCryptoKey from '../models/domain/symmetricCryptoKey';
-import { ProfileOrganizationResponse } from '../models/response/profileOrganizationResponse';
 
 import ConstantsService from './constants.service';
 
@@ -77,7 +76,7 @@ export default class CryptoService implements CryptoServiceInterface {
         this.privateKey = null;
     }
 
-    setOrgKeys(orgs: ProfileOrganizationResponse[]): Promise<{}> {
+    setOrgKeys(orgs: Response.ProfileOrganization[]): Promise<{}> {
         const orgKeys: any = {};
         orgs.forEach((org) => {
             orgKeys[org.id] = org.key;

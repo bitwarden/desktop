@@ -1,14 +1,14 @@
 import { CipherString } from '../../models/domain/cipherString';
 import SymmetricCryptoKey from '../../models/domain/symmetricCryptoKey';
 
-import { ProfileOrganizationResponse } from '../../models/response/profileOrganizationResponse';
+import { Response } from '@bitwarden/jslib';
 
 export interface CryptoService {
     setKey(key: SymmetricCryptoKey): Promise<any>;
     setKeyHash(keyHash: string): Promise<{}>;
     setEncKey(encKey: string): Promise<{}>;
     setEncPrivateKey(encPrivateKey: string): Promise<{}>;
-    setOrgKeys(orgs: ProfileOrganizationResponse[]): Promise<{}>;
+    setOrgKeys(orgs: Response.ProfileOrganization[]): Promise<{}>;
     getKey(): Promise<SymmetricCryptoKey>;
     getKeyHash(): Promise<string>;
     getEncKey(): Promise<SymmetricCryptoKey>;

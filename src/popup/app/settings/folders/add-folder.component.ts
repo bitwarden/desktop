@@ -1,8 +1,7 @@
 import * as angular from 'angular';
-import { Folder } from '../../../../models/domain/folder';
 import * as template from './add-folder.component.html';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { Abstractions, Domain } from '@bitwarden/jslib';
 
 export class AddFolderController {
     savePromise: any;
@@ -29,7 +28,7 @@ export class AddFolderController {
         }
 
         this.savePromise = this.folderService.encrypt(model).then((folderModel: any) => {
-            const folder = new Folder(folderModel, true);
+            const folder = new Domain.Folder(folderModel, true);
             return this.folderService.saveWithServer(folder);
         }).then((folder: any) => {
             this.$analytics.eventTrack('Added Folder');

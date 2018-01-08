@@ -1,4 +1,4 @@
-import { AttachmentResponse } from '../response/attachmentResponse';
+import { Response } from '@bitwarden/jslib';
 
 class AttachmentData {
     id: string;
@@ -7,7 +7,7 @@ class AttachmentData {
     size: number;
     sizeName: string;
 
-    constructor(response: AttachmentResponse) {
+    constructor(response: Response.Attachment) {
         this.id = response.id;
         this.url = response.url;
         this.fileName = response.fileName;

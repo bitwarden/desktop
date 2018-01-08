@@ -1,16 +1,12 @@
 import { CipherString } from '../models/domain/cipherString';
-import { Folder } from '../models/domain/folder';
 
 import { FolderData } from '../models/data/folderData';
-
-import { FolderRequest } from '../models/request/folderRequest';
-import { FolderResponse } from '../models/response/folderResponse';
 
 import ApiService from './api.service';
 import CryptoService from './crypto.service';
 import UserService from './user.service';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { Abstractions, Domain, Request, Response } from '@bitwarden/jslib';
 
 const Keys = {
     foldersPrefix: 'folders_',
@@ -28,14 +24,14 @@ export default class FolderService {
         this.decryptedFolderCache = null;
     }
 
-    async encrypt(model: any): Promise<Folder> {
-        const folder = new Folder();
+    async encrypt(model: any): Promise<Domain.Folder> {
+        const folder = new Domain.Folder();
         folder.id = model.id;
         folder.name = await this.cryptoService.encrypt(model.name);
         return folder;
     }
 
-    async get(id: string): Promise<Folder> {
+    async get(id: string): Promise<Domain.Folder> {
         const userId = await this.userService.getUserId();
         const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
@@ -43,17 +39,17 @@ export default class FolderService {
             return null;
         }
 
-        return new Folder(folders[id]);
+        return new Domain.Folder(folders[id]);
     }
 
-    async getAll(): Promise<Folder[]> {
+    async getAll(): Promise<Domain.Folder[]> {
         const userId = await this.userService.getUserId();
         const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
-        const response: Folder[] = [];
+        const response: Domain.Folder[] = [];
         for (const id in folders) {
             if (folders.hasOwnProperty(id)) {
-                response.push(new Folder(folders[id]));
+                response.push(new Domain.Folder(folders[id]));
             }
         }
         return response;
@@ -87,10 +83,10 @@ export default class FolderService {
         return this.decryptedFolderCache;
     }
 
-    async saveWithServer(folder: Folder): Promise<any> {
-        const request = new FolderRequest(folder);
+    async saveWithServer(folder: Domain.Folder): Promise<any> {
+        const request = new Request.Folder(folder);
 
-        let response: FolderResponse;
+        let response: Response.Folder;
         if (folder.id == null) {
             response = await this.apiService.postFolder(request);
             folder.id = response.id;

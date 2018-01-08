@@ -1,9 +1,6 @@
-import { DeviceRequest } from '../../../models/request/deviceRequest';
-import { TokenRequest } from '../../../models/request/tokenRequest';
-
 import { CryptoService } from '../../../services/abstractions/crypto.service';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { Abstractions, Request } from '@bitwarden/jslib';
 
 class AuthService {
     constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
@@ -21,18 +18,18 @@ class AuthService {
         const storedTwoFactorToken = await this.tokenService.getTwoFactorToken(email);
         const hashedPassword = await this.cryptoService.hashPassword(masterPassword, key);
 
-        const deviceRequest = new DeviceRequest(appId, this.platformUtilsService);
+        const deviceRequest = new Request.Device(appId, this.platformUtilsService);
 
-        let request: TokenRequest;
+        let request: Request.Token;
 
         if (twoFactorToken != null && twoFactorProvider != null) {
-            request = new TokenRequest(email, hashedPassword, twoFactorProvider, twoFactorToken, remember,
+            request = new Request.Token(email, hashedPassword, twoFactorProvider, twoFactorToken, remember,
                 deviceRequest);
         } else if (storedTwoFactorToken) {
-            request = new TokenRequest(email, hashedPassword, this.constantsService.twoFactorProvider.remember,
+            request = new Request.Token(email, hashedPassword, this.constantsService.twoFactorProvider.remember,
                 storedTwoFactorToken, false, deviceRequest);
         } else {
-            request = new TokenRequest(email, hashedPassword, null, null, false, deviceRequest);
+            request = new Request.Token(email, hashedPassword, null, null, false, deviceRequest);
         }
 
         const response = await this.apiService.postIdentityToken(request);
