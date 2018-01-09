@@ -8,13 +8,13 @@ import AutofillPageDetails from '../models/domain/autofillPageDetails';
 import AutofillScript from '../models/domain/autofillScript';
 
 import CipherService from './cipher.service';
-import TokenService from './token.service';
 import TotpService from './totp.service';
 
 import { UtilsService } from 'jslib/services';
 
 import {
     PlatformUtilsService,
+    TokenService,
     UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 

@@ -17,11 +17,11 @@ import {
 } from 'jslib/models/response';
 
 import {
+    ApiService,
     CryptoService,
     StorageService,
 } from 'jslib/abstractions';
 
-import ApiService from './api.service';
 import ConstantsService from './constants.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';

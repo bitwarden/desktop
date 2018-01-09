@@ -1,4 +1,3 @@
-import ApiService from './api.service';
 import UserService from './user.service';
 
 import { FolderData } from 'jslib/models/data';
@@ -10,6 +9,7 @@ import { FolderRequest } from 'jslib/models/request';
 import { FolderResponse } from 'jslib/models/response';
 
 import {
+    ApiService,
     CryptoService,
     StorageService,
 } from 'jslib/abstractions';

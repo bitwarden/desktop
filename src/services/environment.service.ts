@@ -1,9 +1,11 @@
-import ApiService from './api.service';
 import ConstantsService from './constants.service';
 
 import { EnvironmentUrls } from 'jslib/models/domain';
 
-import { StorageService } from 'jslib/abstractions';
+import {
+    ApiService,
+    StorageService,
+} from 'jslib/abstractions';
 
 export default class EnvironmentService {
     baseUrl: string;

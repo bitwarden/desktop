@@ -1,15 +1,21 @@
 import { CipherType } from 'jslib/enums';
 
 import {
+    ApiService,
+    AppIdService,
     CryptoService,
+    TokenService,
     UtilsService,
 } from 'jslib/services';
 
 import {
+    ApiService as ApiServiceAbstraction,
+    AppIdService as AppIdServiceAbstraction,
     CryptoService as CryptoServiceAbstraction,
     MessagingService as MessagingServiceAbstraction,
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
     StorageService as StorageServiceAbstraction,
+    TokenService as TokenServiceAbstraction,
     UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 
@@ -23,8 +29,6 @@ import TabsBackground from './tabs.background';
 import WebRequestBackground from './webRequest.background';
 import WindowsBackground from './windows.background';
 
-import ApiService from '../services/api.service';
-import AppIdService from '../services/appId.service';
 import AutofillService from '../services/autofill.service';
 import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
@@ -40,7 +44,6 @@ import LockService from '../services/lock.service';
 import PasswordGenerationService from '../services/passwordGeneration.service';
 import SettingsService from '../services/settings.service';
 import SyncService from '../services/sync.service';
-import TokenService from '../services/token.service';
 import TotpService from '../services/totp.service';
 import UserService from '../services/user.service';
 
@@ -52,9 +55,9 @@ export default class MainBackground {
     utilsService: UtilsServiceAbstraction;
     constantsService: ConstantsService;
     cryptoService: CryptoServiceAbstraction;
-    tokenService: TokenService;
-    appIdService: AppIdService;
-    apiService: ApiService;
+    tokenService: TokenServiceAbstraction;
+    appIdService: AppIdServiceAbstraction;
+    apiService: ApiServiceAbstraction;
     environmentService: EnvironmentService;
     userService: UserService;
     settingsService: SettingsService;

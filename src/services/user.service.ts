@@ -1,6 +1,4 @@
-import TokenService from './token.service';
-
-import { StorageService } from 'jslib/abstractions';
+import { StorageService, TokenService } from 'jslib/abstractions';
 
 const Keys = {
     userId: 'userId',
