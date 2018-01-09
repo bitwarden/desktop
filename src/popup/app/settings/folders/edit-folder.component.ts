@@ -1,17 +1,19 @@
 import * as angular from 'angular';
 import * as template from './edit-folder.component.html';
 
-import { Abstractions, Domain } from '@bitwarden/jslib';
+import { Folder } from 'jslib/models/domain/';
+
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class EditFolderController {
     $transition$: any;
     folderId: any;
     savePromise: any = null;
     i18n: any;
-    folder: Domain.Folder;
+    folder: Folder;
 
     constructor($scope: any, $stateParams: any, private folderService: any, private toastr: any, private $state: any,
-        private SweetAlert: any, platformUtilsService: Abstractions.PlatformUtilsService, private $analytics: any,
+        private SweetAlert: any, platformUtilsService: PlatformUtilsService, private $analytics: any,
         private i18nService: any, $timeout: any) {
         this.i18n = i18nService;
 
@@ -27,7 +29,7 @@ export class EditFolderController {
         this.folderId = this.$transition$.params('to').folderId;
         this.folderService.get(this.folderId).then((folder: any) => {
             return folder.decrypt();
-        }).then((model: Domain.Folder) => {
+        }).then((model: Folder) => {
             this.folder = model;
         });
     }
@@ -39,7 +41,7 @@ export class EditFolderController {
         }
 
         this.savePromise = this.folderService.encrypt(model).then((folderModel: any) => {
-            const folder = new Domain.Folder(folderModel, true);
+            const folder = new Folder(folderModel, true);
             return this.folderService.saveWithServer(folder);
         }).then((folder: any) => {
             this.$analytics.eventTrack('Edited Folder');

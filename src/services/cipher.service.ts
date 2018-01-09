@@ -1,4 +1,25 @@
-import { Abstractions, Data, Domain, Enums, Request, Response } from '@bitwarden/jslib';
+import { CipherType } from 'jslib/enums';
+
+import { CipherData } from 'jslib/models/data';
+
+import {
+    Cipher,
+    CipherString,
+    Field,
+    SymmetricCryptoKey,
+} from 'jslib/models/domain';
+
+import { CipherRequest } from 'jslib/models/request';
+
+import {
+    CipherResponse,
+    ErrorResponse,
+} from 'jslib/models/response';
+
+import {
+    CryptoService,
+    StorageService,
+} from 'jslib/abstractions';
 
 import ApiService from './api.service';
 import ConstantsService from './constants.service';
@@ -54,17 +75,17 @@ export default class CipherService {
 
     decryptedCipherCache: any[];
 
-    constructor(private cryptoService: Abstractions.CryptoService, private userService: UserService,
+    constructor(private cryptoService: CryptoService, private userService: UserService,
         private settingsService: SettingsService, private apiService: ApiService,
-        private storageService: Abstractions.StorageService) {
+        private storageService: StorageService) {
     }
 
     clearCache(): void {
         this.decryptedCipherCache = null;
     }
 
-    async encrypt(model: any): Promise<Domain.Cipher> {
-        const cipher = new Domain.Cipher();
+    async encrypt(model: any): Promise<Cipher> {
+        const cipher = new Cipher();
         cipher.id = model.id;
         cipher.folderId = model.folderId;
         cipher.favorite = model.favorite;
@@ -87,17 +108,17 @@ export default class CipherService {
         return cipher;
     }
 
-    async encryptFields(fieldsModel: any[], key: Domain.SymmetricCryptoKey): Promise<Domain.Field[]> {
+    async encryptFields(fieldsModel: any[], key: SymmetricCryptoKey): Promise<Field[]> {
         if (!fieldsModel || !fieldsModel.length) {
             return null;
         }
 
         const self = this;
-        const encFields: Domain.Field[] = [];
+        const encFields: Field[] = [];
         await fieldsModel.reduce((promise, field) => {
             return promise.then(() => {
                 return self.encryptField(field, key);
-            }).then((encField: Domain.Field) => {
+            }).then((encField: Field) => {
                 encFields.push(encField);
             });
         }, Promise.resolve());
@@ -105,8 +126,8 @@ export default class CipherService {
         return encFields;
     }
 
-    async encryptField(fieldModel: any, key: Domain.SymmetricCryptoKey): Promise<Domain.Field> {
-        const field = new Domain.Field();
+    async encryptField(fieldModel: any, key: SymmetricCryptoKey): Promise<Field> {
+        const field = new Field();
         field.type = fieldModel.type;
 
         await this.encryptObjProperty(fieldModel, field, {
@@ -117,27 +138,27 @@ export default class CipherService {
         return field;
     }
 
-    async get(id: string): Promise<Domain.Cipher> {
+    async get(id: string): Promise<Cipher> {
         const userId = await this.userService.getUserId();
         const localData = await this.storageService.get<any>(Keys.localData);
-        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null || !ciphers.hasOwnProperty(id)) {
             return null;
         }
 
-        return new Domain.Cipher(ciphers[id], false, localData ? localData[id] : null);
+        return new Cipher(ciphers[id], false, localData ? localData[id] : null);
     }
 
-    async getAll(): Promise<Domain.Cipher[]> {
+    async getAll(): Promise<Cipher[]> {
         const userId = await this.userService.getUserId();
         const localData = await this.storageService.get<any>(Keys.localData);
-        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
-        const response: Domain.Cipher[] = [];
+        const response: Cipher[] = [];
         for (const id in ciphers) {
             if (ciphers.hasOwnProperty(id)) {
-                response.push(new Domain.Cipher(ciphers[id], false, localData ? localData[id] : null));
+                response.push(new Cipher(ciphers[id], false, localData ? localData[id] : null));
             }
         }
         return response;
@@ -209,7 +230,7 @@ export default class CipherService {
         const ciphersToReturn: any[] = [];
 
         ciphers.forEach((cipher) => {
-            if (domain && cipher.type === Enums.CipherType.Login && cipher.login.domain &&
+            if (domain && cipher.type === CipherType.Login && cipher.login.domain &&
                 matchingDomains.indexOf(cipher.login.domain) > -1) {
                 ciphersToReturn.push(cipher);
             } else if (includeOtherTypes && includeOtherTypes.indexOf(cipher.type) > -1) {
@@ -272,10 +293,10 @@ export default class CipherService {
         await this.storageService.save(Keys.neverDomains, domains);
     }
 
-    async saveWithServer(cipher: Domain.Cipher): Promise<any> {
-        const request = new Request.Cipher(cipher);
+    async saveWithServer(cipher: Cipher): Promise<any> {
+        const request = new CipherRequest(cipher);
 
-        let response: Response.Cipher;
+        let response: CipherResponse;
         if (cipher.id == null) {
             response = await this.apiService.postCipher(request);
             cipher.id = response.id;
@@ -284,11 +305,11 @@ export default class CipherService {
         }
 
         const userId = await this.userService.getUserId();
-        const data = new Data.Cipher(response, userId, cipher.collectionIds);
+        const data = new CipherData(response, userId, cipher.collectionIds);
         await this.upsert(data);
     }
 
-    saveAttachmentWithServer(cipher: Domain.Cipher, unencryptedFile: any): Promise<any> {
+    saveAttachmentWithServer(cipher: Cipher, unencryptedFile: any): Promise<any> {
         const self = this;
 
         return new Promise((resolve, reject) => {
@@ -304,18 +325,18 @@ export default class CipherService {
                 const blob = new Blob([encData], { type: 'application/octet-stream' });
                 fd.append('data', blob, encFileName.encryptedString);
 
-                let response: Response.Cipher;
+                let response: CipherResponse;
                 try {
                     response = await self.apiService.postCipherAttachment(cipher.id, fd);
                 } catch (e) {
-                    reject((e as Response.Error).getSingleMessage());
+                    reject((e as ErrorResponse).getSingleMessage());
                     return;
                 }
 
                 const userId = await self.userService.getUserId();
-                const data = new Data.Cipher(response, userId, cipher.collectionIds);
+                const data = new CipherData(response, userId, cipher.collectionIds);
                 this.upsert(data);
-                resolve(new Domain.Cipher(data));
+                resolve(new Cipher(data));
 
             };
 
@@ -325,19 +346,19 @@ export default class CipherService {
         });
     }
 
-    async upsert(cipher: Data.Cipher | Data.Cipher[]): Promise<any> {
+    async upsert(cipher: CipherData | CipherData[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
+        let ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null) {
             ciphers = {};
         }
 
-        if (cipher instanceof Data.Cipher) {
-            const c = cipher as Data.Cipher;
+        if (cipher instanceof CipherData) {
+            const c = cipher as CipherData;
             ciphers[c.id] = c;
         } else {
-            (cipher as Data.Cipher[]).forEach((c) => {
+            (cipher as CipherData[]).forEach((c) => {
                 ciphers[c.id] = c;
             });
         }
@@ -346,7 +367,7 @@ export default class CipherService {
         this.decryptedCipherCache = null;
     }
 
-    async replace(ciphers: { [id: string]: Data.Cipher; }): Promise<any> {
+    async replace(ciphers: { [id: string]: CipherData; }): Promise<any> {
         const userId = await this.userService.getUserId();
         await this.storageService.save(Keys.ciphersPrefix + userId, ciphers);
         this.decryptedCipherCache = null;
@@ -359,7 +380,7 @@ export default class CipherService {
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
         if (ciphers == null) {
             return;
@@ -385,7 +406,7 @@ export default class CipherService {
 
     async deleteAttachment(id: string, attachmentId: string): Promise<void> {
         const userId = await this.userService.getUserId();
-        const ciphers = await this.storageService.get<{ [id: string]: Data.Cipher; }>(
+        const ciphers = await this.storageService.get<{ [id: string]: CipherData; }>(
             Keys.ciphersPrefix + userId);
 
         if (ciphers == null || !ciphers.hasOwnProperty(id) || ciphers[id].attachments == null) {
@@ -406,7 +427,7 @@ export default class CipherService {
         try {
             await this.apiService.deleteCipherAttachment(id, attachmentId);
         } catch (e) {
-            return Promise.reject((e as Response.Error).getSingleMessage());
+            return Promise.reject((e as ErrorResponse).getSingleMessage());
         }
         await this.deleteAttachment(id, attachmentId);
     }
@@ -421,7 +442,7 @@ export default class CipherService {
 
     // Helpers
 
-    private encryptObjProperty(model: any, obj: any, map: any, key: Domain.SymmetricCryptoKey): Promise<void[]> {
+    private encryptObjProperty(model: any, obj: any, map: any, key: SymmetricCryptoKey): Promise<void[]> {
         const promises = [];
         const self = this;
 
@@ -438,7 +459,7 @@ export default class CipherService {
                         return self.cryptoService.encrypt(modelProp, key);
                     }
                     return null;
-                }).then((val: Domain.CipherString) => {
+                }).then((val: CipherString) => {
                     theObj[theProp] = val;
                 });
                 promises.push(p);
@@ -448,9 +469,9 @@ export default class CipherService {
         return Promise.all(promises);
     }
 
-    private encryptCipherData(cipher: Domain.Cipher, model: any, key: Domain.SymmetricCryptoKey): Promise<any> {
+    private encryptCipherData(cipher: Cipher, model: any, key: SymmetricCryptoKey): Promise<any> {
         switch (cipher.type) {
-            case Enums.CipherType.Login:
+            case CipherType.Login:
                 model.login = {};
                 return this.encryptObjProperty(cipher.login, model.login, {
                     uri: null,
@@ -458,12 +479,12 @@ export default class CipherService {
                     password: null,
                     totp: null,
                 }, key);
-            case Enums.CipherType.SecureNote:
+            case CipherType.SecureNote:
                 model.secureNote = {
                     type: cipher.secureNote.type,
                 };
                 return Promise.resolve();
-            case Enums.CipherType.Card:
+            case CipherType.Card:
                 model.card = {};
                 return this.encryptObjProperty(cipher.card, model.card, {
                     cardholderName: null,
@@ -473,7 +494,7 @@ export default class CipherService {
                     expYear: null,
                     code: null,
                 }, key);
-            case Enums.CipherType.Identity:
+            case CipherType.Identity:
                 model.identity = {};
                 return this.encryptObjProperty(cipher.identity, model.identity, {
                     title: null,

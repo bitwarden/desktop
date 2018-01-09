@@ -1,23 +1,28 @@
 import * as angular from 'angular';
 
-import { Abstractions, Enums } from '@bitwarden/jslib';
+import { DeviceType } from 'jslib/enums/deviceType';
+
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 
 import ConstantsService from '../../../services/constants.service';
 
 import * as template from './settings.component.html';
 
 const RateUrls = {
-    [Enums.DeviceType.Chrome]:
+    [DeviceType.Chrome]:
     'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [Enums.DeviceType.Firefox]:
+    [DeviceType.Firefox]:
     'https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/#reviews',
-    [Enums.DeviceType.Opera]:
+    [DeviceType.Opera]:
     'https://addons.opera.com/en/extensions/details/bitwarden-free-password-manager/#feedback-container',
-    [Enums.DeviceType.Edge]:
+    [DeviceType.Edge]:
     'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl',
-    [Enums.DeviceType.Vivaldi]:
+    [DeviceType.Vivaldi]:
     'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [Enums.DeviceType.Safari]:
+    [DeviceType.Safari]:
     'https://itunes.com', // TODO
 };
 
@@ -27,11 +32,11 @@ export class SettingsController {
     showOnLocked: boolean;
 
     constructor(private $state: any, private SweetAlert: any,
-        private platformUtilsService: Abstractions.PlatformUtilsService, private $analytics: any,
+        private platformUtilsService: PlatformUtilsService, private $analytics: any,
         private i18nService: any, private constantsService: ConstantsService,
-        private cryptoService: Abstractions.CryptoService, private lockService: any,
-        private storageService: Abstractions.StorageService,
-        public messagingService: Abstractions.MessagingService, private $timeout: ng.ITimeoutService) {
+        private cryptoService: CryptoService, private lockService: any,
+        private storageService: StorageService,
+        public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {

@@ -1,4 +1,17 @@
-import { Abstractions, Enums, Services } from '@bitwarden/jslib';
+import { CipherType } from 'jslib/enums';
+
+import {
+    CryptoService,
+    UtilsService,
+} from 'jslib/services';
+
+import {
+    CryptoService as CryptoServiceAbstraction,
+    MessagingService as MessagingServiceAbstraction,
+    PlatformUtilsService as PlatformUtilsServiceAbstraction,
+    StorageService as StorageServiceAbstraction,
+    UtilsService as UtilsServiceAbstraction,
+} from 'jslib/abstractions';
 
 import BrowserApi from '../browser/browserApi';
 
@@ -32,13 +45,13 @@ import TotpService from '../services/totp.service';
 import UserService from '../services/user.service';
 
 export default class MainBackground {
-    messagingService: Abstractions.MessagingService;
-    storageService: Abstractions.StorageService;
+    messagingService: MessagingServiceAbstraction;
+    storageService: StorageServiceAbstraction;
     i18nService: any;
-    platformUtilsService: Abstractions.PlatformUtilsService;
-    utilsService: Abstractions.UtilsService;
+    platformUtilsService: PlatformUtilsServiceAbstraction;
+    utilsService: UtilsServiceAbstraction;
     constantsService: ConstantsService;
-    cryptoService: Abstractions.CryptoService;
+    cryptoService: CryptoServiceAbstraction;
     tokenService: TokenService;
     appIdService: AppIdService;
     apiService: ApiService;
@@ -75,13 +88,13 @@ export default class MainBackground {
 
     constructor() {
         // Services
-        this.utilsService = new Services.UtilsService();
+        this.utilsService = new UtilsService();
         this.platformUtilsService = new BrowserPlatformUtilsService();
         this.messagingService = new BrowserMessagingService(this.platformUtilsService);
         this.storageService = new BrowserStorageService(this.platformUtilsService);
         this.i18nService = i18nService(this.platformUtilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.platformUtilsService);
-        this.cryptoService = new Services.CryptoService(this.storageService,
+        this.cryptoService = new CryptoService(this.storageService,
             this.storageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
@@ -346,7 +359,7 @@ export default class MainBackground {
     }
 
     private async loadLoginContextMenuOptions(cipher: any) {
-        if (cipher == null || cipher.type !== Enums.CipherType.Login) {
+        if (cipher == null || cipher.type !== CipherType.Login) {
             return;
         }
 
@@ -363,7 +376,7 @@ export default class MainBackground {
 
     private async loadContextMenuOptions(title: string, idSuffix: string, cipher: any) {
         if (!chrome.contextMenus || this.menuOptionsLoaded.indexOf(idSuffix) > -1 ||
-            (cipher != null && cipher.type !== Enums.CipherType.Login)) {
+            (cipher != null && cipher.type !== CipherType.Login)) {
             return;
         }
 

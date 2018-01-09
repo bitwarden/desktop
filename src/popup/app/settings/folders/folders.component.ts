@@ -1,9 +1,9 @@
 import * as template from './folders.component.html';
 
-import { Domain } from '@bitwarden/jslib';
+import { Folder } from 'jslib/models/domain';
 
 export class FoldersController {
-    folders: Domain.Folder[] = [];
+    folders: Folder[] = [];
     i18n: any;
     loaded = false;
 

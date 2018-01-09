@@ -1,4 +1,10 @@
-import { Abstractions, Enums, Services } from '@bitwarden/jslib';
+import { CipherType } from 'jslib/enums';
+
+import { UtilsService } from 'jslib/services/utils.service';
+
+import {
+    PlatformUtilsService,
+} from 'jslib/abstractions';
 
 import BrowserApi from '../browser/browserApi';
 
@@ -13,7 +19,7 @@ export default class RuntimeBackground {
     private pageDetailsToAutoFill: any[] = [];
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
-        private cipherService: CipherService, private platformUtilsService: Abstractions.PlatformUtilsService) {
+        private cipherService: CipherService, private platformUtilsService: PlatformUtilsService) {
         this.runtime = chrome.runtime;
     }
 
@@ -146,7 +152,7 @@ export default class RuntimeBackground {
                 favorite: false,
                 name: loginInfo.name,
                 notes: null,
-                type: Enums.CipherType.Login,
+                type: CipherType.Login,
                 login: {
                     uri: loginInfo.uri,
                     username: loginInfo.username,
@@ -177,7 +183,7 @@ export default class RuntimeBackground {
             }
 
             this.main.loginsToAdd.splice(i, 1);
-            const hostname = Services.UtilsService.getHostname(tab.url);
+            const hostname = UtilsService.getHostname(tab.url);
             await this.cipherService.saveNeverDomain(hostname);
             BrowserApi.tabSendMessage(tab, 'closeNotificationBar');
         }

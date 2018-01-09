@@ -2,14 +2,17 @@ import * as angular from 'angular';
 import * as papa from 'papaparse';
 import * as template from './export.component.html';
 
-import { Abstractions, Enums } from '@bitwarden/jslib';
+import { CipherType } from 'jslib/enums/cipherType';
+
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { UtilsService } from 'jslib/abstractions/utils.service';
 
 export class ExportController {
     i18n: any;
     masterPassword: string;
 
-    constructor(private $state: any, private cryptoService: Abstractions.CryptoService,
-        private toastr: any, private utilsService: Abstractions.UtilsService, private $analytics: any,
+    constructor(private $state: any, private cryptoService: CryptoService,
+        private toastr: any, private utilsService: UtilsService, private $analytics: any,
         private i18nService: any, private folderService: any, private cipherService: any,
         private $window: any, private userService: any) {
         this.i18n = i18nService;
@@ -72,7 +75,7 @@ export class ExportController {
         const exportCiphers = [];
         for (const c of decCiphers) {
             // only export logins and secure notes
-            if (c.type !== Enums.CipherType.Login && c.type !== Enums.CipherType.SecureNote) {
+            if (c.type !== CipherType.Login && c.type !== CipherType.SecureNote) {
                 continue;
             }
 
@@ -103,14 +106,14 @@ export class ExportController {
             }
 
             switch (c.type) {
-                case Enums.CipherType.Login:
+                case CipherType.Login:
                     cipher.type = 'login';
                     cipher.login_uri = c.login.uri;
                     cipher.login_username = c.login.username;
                     cipher.login_password = c.login.password;
                     cipher.login_totp = c.login.totp;
                     break;
-                case Enums.CipherType.SecureNote:
+                case CipherType.SecureNote:
                     cipher.type = 'note';
                     break;
                 default:

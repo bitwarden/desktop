@@ -2,13 +2,13 @@ import ConstantsService from '../services/constants.service';
 import LockService from '../services/lock.service';
 import MainBackground from './main.background';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { StorageService } from 'jslib/abstractions';
 
 export default class IdleBackground {
     private idle: any;
 
     constructor(private main: MainBackground, private lockService: LockService,
-        private storageService: Abstractions.StorageService) {
+        private storageService: StorageService) {
         this.idle = chrome.idle;
     }
 

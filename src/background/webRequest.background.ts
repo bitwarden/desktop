@@ -1,13 +1,13 @@
 import CipherService from '../services/cipher.service';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { PlatformUtilsService } from 'jslib/abstractions';
 
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];
     private webRequest: any;
     private isFirefox: boolean;
 
-    constructor(private platformUtilsService: Abstractions.PlatformUtilsService,
+    constructor(private platformUtilsService: PlatformUtilsService,
         private cipherService: CipherService) {
         this.webRequest = (window as any).chrome.webRequest;
         this.isFirefox = platformUtilsService.isFirefox();

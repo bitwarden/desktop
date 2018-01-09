@@ -1,14 +1,19 @@
-import { Abstractions, Request } from '@bitwarden/jslib';
+import { DeviceRequest } from 'jslib/models/request/deviceRequest';
+import { TokenRequest } from 'jslib/models/request/tokenRequest';
+
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 class AuthService {
-    constructor(public cryptoService: Abstractions.CryptoService, public apiService: any, public userService: any,
+    constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
         public tokenService: any, public $rootScope: any, public appIdService: any,
-        public platformUtilsService: Abstractions.PlatformUtilsService, public constantsService: any,
-        public messagingService: Abstractions.MessagingService) {
+        public platformUtilsService: PlatformUtilsService, public constantsService: any,
+        public messagingService: MessagingService) {
     }
 
     async logIn(email: string, masterPassword: string, twoFactorProvider?: number,
-                twoFactorToken?: string, remember?: boolean) {
+        twoFactorToken?: string, remember?: boolean) {
         email = email.toLowerCase();
 
         const key = this.cryptoService.makeKey(masterPassword, email);
@@ -16,18 +21,18 @@ class AuthService {
         const storedTwoFactorToken = await this.tokenService.getTwoFactorToken(email);
         const hashedPassword = await this.cryptoService.hashPassword(masterPassword, key);
 
-        const deviceRequest = new Request.Device(appId, this.platformUtilsService);
+        const deviceRequest = new DeviceRequest(appId, this.platformUtilsService);
 
-        let request: Request.Token;
+        let request: TokenRequest;
 
         if (twoFactorToken != null && twoFactorProvider != null) {
-            request = new Request.Token(email, hashedPassword, twoFactorProvider, twoFactorToken, remember,
+            request = new TokenRequest(email, hashedPassword, twoFactorProvider, twoFactorToken, remember,
                 deviceRequest);
         } else if (storedTwoFactorToken) {
-            request = new Request.Token(email, hashedPassword, this.constantsService.twoFactorProvider.remember,
+            request = new TokenRequest(email, hashedPassword, this.constantsService.twoFactorProvider.remember,
                 storedTwoFactorToken, false, deviceRequest);
         } else {
-            request = new Request.Token(email, hashedPassword, null, null, false, deviceRequest);
+            request = new TokenRequest(email, hashedPassword, null, null, false, deviceRequest);
         }
 
         const response = await this.apiService.postIdentityToken(request);

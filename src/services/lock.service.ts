@@ -3,13 +3,17 @@ import CollectionService from './collection.service';
 import ConstantsService from './constants.service';
 import FolderService from './folder.service';
 
-import { Abstractions } from '@bitwarden/jslib';
+import {
+    CryptoService,
+    PlatformUtilsService,
+    StorageService,
+} from 'jslib/abstractions';
 
 export default class LockService {
     constructor(private cipherService: CipherService, private folderService: FolderService,
-        private collectionService: CollectionService, private cryptoService: Abstractions.CryptoService,
-        private platformUtilsService: Abstractions.PlatformUtilsService,
-        private storageService: Abstractions.StorageService,
+        private collectionService: CollectionService, private cryptoService: CryptoService,
+        private platformUtilsService: PlatformUtilsService,
+        private storageService: StorageService,
         private setIcon: Function, private refreshBadgeAndMenu: Function) {
         this.checkLock();
         setInterval(() => this.checkLock(), 10 * 1000); // check every 10 seconds

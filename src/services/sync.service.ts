@@ -5,7 +5,25 @@ import FolderService from './folder.service';
 import SettingsService from './settings.service';
 import UserService from './user.service';
 
-import { Abstractions, Data, Response } from '@bitwarden/jslib';
+import {
+    CryptoService,
+    MessagingService,
+    StorageService,
+} from 'jslib/abstractions';
+
+import {
+    CipherData,
+    CollectionData,
+    FolderData,
+} from 'jslib/models/data';
+
+import {
+    CipherResponse,
+    CollectionResponse,
+    DomainsResponse,
+    FolderResponse,
+    ProfileResponse,
+} from 'jslib/models/response';
 
 const Keys = {
     lastSyncPrefix: 'lastSync_',
@@ -16,9 +34,9 @@ export default class SyncService {
 
     constructor(private userService: UserService, private apiService: ApiService,
         private settingsService: SettingsService, private folderService: FolderService,
-        private cipherService: CipherService, private cryptoService: Abstractions.CryptoService,
-        private collectionService: CollectionService, private storageService: Abstractions.StorageService,
-        private messagingService: Abstractions.MessagingService, private logoutCallback: Function) {
+        private cipherService: CipherService, private cryptoService: CryptoService,
+        private collectionService: CollectionService, private storageService: StorageService,
+        private messagingService: MessagingService, private logoutCallback: Function) {
     }
 
     async getLastSync() {
@@ -110,7 +128,7 @@ export default class SyncService {
         }
     }
 
-    private async syncProfile(response: Response.Profile) {
+    private async syncProfile(response: ProfileResponse) {
         const stamp = await this.userService.getSecurityStamp();
         if (stamp != null && stamp !== response.securityStamp) {
             if (this.logoutCallback != null) {
@@ -126,31 +144,31 @@ export default class SyncService {
         await this.userService.setSecurityStamp(response.securityStamp);
     }
 
-    private async syncFolders(userId: string, response: Response.Folder[]) {
-        const folders: { [id: string]: Data.Folder; } = {};
+    private async syncFolders(userId: string, response: FolderResponse[]) {
+        const folders: { [id: string]: FolderData; } = {};
         response.forEach((f) => {
-            folders[f.id] = new Data.Folder(f, userId);
+            folders[f.id] = new FolderData(f, userId);
         });
         return await this.folderService.replace(folders);
     }
 
-    private async syncCollections(response: Response.Collection[]) {
-        const collections: { [id: string]: Data.Collection; } = {};
+    private async syncCollections(response: CollectionResponse[]) {
+        const collections: { [id: string]: CollectionData; } = {};
         response.forEach((c) => {
-            collections[c.id] = new Data.Collection(c);
+            collections[c.id] = new CollectionData(c);
         });
         return await this.collectionService.replace(collections);
     }
 
-    private async syncCiphers(userId: string, response: Response.Cipher[]) {
-        const ciphers: { [id: string]: Data.Cipher; } = {};
+    private async syncCiphers(userId: string, response: CipherResponse[]) {
+        const ciphers: { [id: string]: CipherData; } = {};
         response.forEach((c) => {
-            ciphers[c.id] = new Data.Cipher(c, userId);
+            ciphers[c.id] = new CipherData(c, userId);
         });
         return await this.cipherService.replace(ciphers);
     }
 
-    private async syncSettings(userId: string, response: Response.Domains) {
+    private async syncSettings(userId: string, response: DomainsResponse) {
         let eqDomains: string[][] = [];
         if (response != null && response.equivalentDomains != null) {
             eqDomains = eqDomains.concat(response.equivalentDomains);

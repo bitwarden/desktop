@@ -1,7 +1,7 @@
 import * as angular from 'angular';
 import * as template from './password-generator.component.html';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { PlatformUtilsService } from 'jslib/abstractions';
 
 export class PasswordGeneratorController {
     $transition$: any;
@@ -13,7 +13,7 @@ export class PasswordGeneratorController {
     i18n: any;
 
     constructor(private $state: any, private passwordGenerationService: any,
-        private toastr: any, private platformUtilsService: Abstractions.PlatformUtilsService,
+        private toastr: any, private platformUtilsService: PlatformUtilsService,
         private $analytics: any, private i18nService: any, private $timeout: any) {
         this.i18n = i18nService;
 

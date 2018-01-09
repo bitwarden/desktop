@@ -1,4 +1,14 @@
-import { Abstractions, Domain, Services } from '@bitwarden/jslib';
+import {
+    CipherString,
+    PasswordHistory,
+} from 'jslib/models/domain';
+
+import { UtilsService } from 'jslib/services/utils.service';
+
+import {
+    CryptoService,
+    StorageService,
+} from 'jslib/abstractions';
 
 const DefaultOptions = {
     length: 14,
@@ -75,7 +85,7 @@ export default class PasswordGenerationService {
 
         // shuffle
         positions.sort(() => {
-            return Services.UtilsService.secureRandomNumber(0, 1) * 2 - 1;
+            return UtilsService.secureRandomNumber(0, 1) * 2 - 1;
         });
 
         // build out the char sets
@@ -131,7 +141,7 @@ export default class PasswordGenerationService {
                     break;
             }
 
-            const randomCharIndex = Services.UtilsService.secureRandomNumber(0, positionChars.length - 1);
+            const randomCharIndex = UtilsService.secureRandomNumber(0, positionChars.length - 1);
             password += positionChars.charAt(randomCharIndex);
         }
 
@@ -139,11 +149,11 @@ export default class PasswordGenerationService {
     }
 
     optionsCache: any;
-    history: Domain.PasswordHistory[] = [];
+    history: PasswordHistory[] = [];
 
-    constructor(private cryptoService: Abstractions.CryptoService,
-        private storageService: Abstractions.StorageService) {
-        storageService.get<Domain.PasswordHistory[]>(Keys.history).then((encrypted) => {
+    constructor(private cryptoService: CryptoService,
+        private storageService: StorageService) {
+        storageService.get<PasswordHistory[]>(Keys.history).then((encrypted) => {
             return this.decryptHistory(encrypted);
         }).then((history) => {
             this.history = history;
@@ -173,7 +183,7 @@ export default class PasswordGenerationService {
     }
 
     getHistory() {
-        return this.history || new Array<Domain.PasswordHistory>();
+        return this.history || new Array<PasswordHistory>();
     }
 
     async addHistory(password: string): Promise<any> {
@@ -182,7 +192,7 @@ export default class PasswordGenerationService {
             return;
         }
 
-        this.history.push(new Domain.PasswordHistory(password, Date.now()));
+        this.history.push(new PasswordHistory(password, Date.now()));
 
         // Remove old items.
         if (this.history.length > MaxPasswordsInHistory) {
@@ -198,27 +208,27 @@ export default class PasswordGenerationService {
         return await this.storageService.remove(Keys.history);
     }
 
-    private async encryptHistory(): Promise<Domain.PasswordHistory[]> {
+    private async encryptHistory(): Promise<PasswordHistory[]> {
         if (this.history == null || this.history.length === 0) {
             return Promise.resolve([]);
         }
 
         const promises = this.history.map(async (item) => {
             const encrypted = await this.cryptoService.encrypt(item.password);
-            return new Domain.PasswordHistory(encrypted.encryptedString, item.date);
+            return new PasswordHistory(encrypted.encryptedString, item.date);
         });
 
         return await Promise.all(promises);
     }
 
-    private async decryptHistory(history: Domain.PasswordHistory[]): Promise<Domain.PasswordHistory[]> {
+    private async decryptHistory(history: PasswordHistory[]): Promise<PasswordHistory[]> {
         if (history == null || history.length === 0) {
             return Promise.resolve([]);
         }
 
         const promises = history.map(async (item) => {
-            const decrypted = await this.cryptoService.decrypt(new Domain.CipherString(item.password));
-            return new Domain.PasswordHistory(decrypted, item.date);
+            const decrypted = await this.cryptoService.decrypt(new CipherString(item.password));
+            return new PasswordHistory(decrypted, item.date);
         });
 
         return await Promise.all(promises);

@@ -1,6 +1,8 @@
 import * as angular from 'angular';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 
 import StateService from '../services/state.service';
 import * as template from './options.component.html';
@@ -15,9 +17,9 @@ export class OptionsController {
     i18n: any;
 
     constructor(private i18nService: any, private $analytics: any, private constantsService: any,
-        private platformUtilsService: Abstractions.PlatformUtilsService, private totpService: any,
-        private stateService: StateService, private storageService: Abstractions.StorageService,
-        public messagingService: Abstractions.MessagingService, private $timeout: ng.ITimeoutService) {
+        private platformUtilsService: PlatformUtilsService, private totpService: any,
+        private stateService: StateService, private storageService: StorageService,
+        public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {

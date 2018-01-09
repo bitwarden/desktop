@@ -1,7 +1,7 @@
 import * as angular from 'angular';
 import * as template from './environment.component.html';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class EnvironmentController {
     iconsUrl: string;
@@ -12,7 +12,7 @@ export class EnvironmentController {
     i18n: any;
 
     constructor(private i18nService: any, private $analytics: any,
-        platformUtilsService: Abstractions.PlatformUtilsService,
+        platformUtilsService: PlatformUtilsService,
         private environmentService: any, private toastr: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 

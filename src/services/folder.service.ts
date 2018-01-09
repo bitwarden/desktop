@@ -1,7 +1,18 @@
 import ApiService from './api.service';
 import UserService from './user.service';
 
-import { Abstractions, Data, Domain, Request, Response } from '@bitwarden/jslib';
+import { FolderData } from 'jslib/models/data';
+
+import { Folder } from 'jslib/models/domain';
+
+import { FolderRequest } from 'jslib/models/request';
+
+import { FolderResponse } from 'jslib/models/response';
+
+import {
+    CryptoService,
+    StorageService,
+} from 'jslib/abstractions';
 
 const Keys = {
     foldersPrefix: 'folders_',
@@ -10,41 +21,41 @@ const Keys = {
 export default class FolderService {
     decryptedFolderCache: any[];
 
-    constructor(private cryptoService: Abstractions.CryptoService, private userService: UserService,
+    constructor(private cryptoService: CryptoService, private userService: UserService,
         private i18nService: any, private apiService: ApiService,
-        private storageService: Abstractions.StorageService) {
+        private storageService: StorageService) {
     }
 
     clearCache(): void {
         this.decryptedFolderCache = null;
     }
 
-    async encrypt(model: any): Promise<Domain.Folder> {
-        const folder = new Domain.Folder();
+    async encrypt(model: any): Promise<Folder> {
+        const folder = new Folder();
         folder.id = model.id;
         folder.name = await this.cryptoService.encrypt(model.name);
         return folder;
     }
 
-    async get(id: string): Promise<Domain.Folder> {
+    async get(id: string): Promise<Folder> {
         const userId = await this.userService.getUserId();
-        const folders = await this.storageService.get<{ [id: string]: Data.Folder; }>(
+        const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
         if (folders == null || !folders.hasOwnProperty(id)) {
             return null;
         }
 
-        return new Domain.Folder(folders[id]);
+        return new Folder(folders[id]);
     }
 
-    async getAll(): Promise<Domain.Folder[]> {
+    async getAll(): Promise<Folder[]> {
         const userId = await this.userService.getUserId();
-        const folders = await this.storageService.get<{ [id: string]: Data.Folder; }>(
+        const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
-        const response: Domain.Folder[] = [];
+        const response: Folder[] = [];
         for (const id in folders) {
             if (folders.hasOwnProperty(id)) {
-                response.push(new Domain.Folder(folders[id]));
+                response.push(new Folder(folders[id]));
             }
         }
         return response;
@@ -78,10 +89,10 @@ export default class FolderService {
         return this.decryptedFolderCache;
     }
 
-    async saveWithServer(folder: Domain.Folder): Promise<any> {
-        const request = new Request.Folder(folder);
+    async saveWithServer(folder: Folder): Promise<any> {
+        const request = new FolderRequest(folder);
 
-        let response: Response.Folder;
+        let response: FolderResponse;
         if (folder.id == null) {
             response = await this.apiService.postFolder(request);
             folder.id = response.id;
@@ -90,23 +101,23 @@ export default class FolderService {
         }
 
         const userId = await this.userService.getUserId();
-        const data = new Data.Folder(response, userId);
+        const data = new FolderData(response, userId);
         await this.upsert(data);
     }
 
-    async upsert(folder: Data.Folder | Data.Folder[]): Promise<any> {
+    async upsert(folder: FolderData | FolderData[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let folders = await this.storageService.get<{ [id: string]: Data.Folder; }>(
+        let folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
         if (folders == null) {
             folders = {};
         }
 
-        if (folder instanceof Data.Folder) {
-            const f = folder as Data.Folder;
+        if (folder instanceof FolderData) {
+            const f = folder as FolderData;
             folders[f.id] = f;
         } else {
-            (folder as Data.Folder[]).forEach((f) => {
+            (folder as FolderData[]).forEach((f) => {
                 folders[f.id] = f;
             });
         }
@@ -115,7 +126,7 @@ export default class FolderService {
         this.decryptedFolderCache = null;
     }
 
-    async replace(folders: { [id: string]: Data.Folder; }): Promise<any> {
+    async replace(folders: { [id: string]: FolderData; }): Promise<any> {
         const userId = await this.userService.getUserId();
         await this.storageService.save(Keys.foldersPrefix + userId, folders);
         this.decryptedFolderCache = null;
@@ -128,7 +139,7 @@ export default class FolderService {
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const folders = await this.storageService.get<{ [id: string]: Data.Folder; }>(
+        const folders = await this.storageService.get<{ [id: string]: FolderData; }>(
             Keys.foldersPrefix + userId);
         if (folders == null) {
             return;

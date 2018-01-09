@@ -1,6 +1,6 @@
 import * as template from './action-buttons.component.html';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class ActionButtonsController implements ng.IController {
     onView: Function;
@@ -12,7 +12,7 @@ export class ActionButtonsController implements ng.IController {
 
     constructor(private i18nService: any, private $analytics: any, private constantsService: any, private toastr: any,
         private $timeout: any, private $window: any,
-        private platformUtilsService: Abstractions.PlatformUtilsService) {
+        private platformUtilsService: PlatformUtilsService) {
         this.i18n = i18nService;
         this.constants = constantsService;
     }

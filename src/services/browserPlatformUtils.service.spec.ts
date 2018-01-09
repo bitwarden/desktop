@@ -1,5 +1,6 @@
 import BrowserPlatformUtilsService from './browserPlatformUtils.service';
-import { Enums } from '@bitwarden/jslib';
+
+import { DeviceType } from 'jslib/enums';
 
 describe('Browser Utils Service', () => {
     describe('getDomain', () => {
@@ -48,7 +49,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService();
-            expect(browserPlatformUtilsService.getDevice()).toBe(Enums.DeviceType.Chrome);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Chrome);
         });
 
         it('should detect firefox', () => {
@@ -58,7 +59,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService();
-            expect(browserPlatformUtilsService.getDevice()).toBe(Enums.DeviceType.Firefox);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Firefox);
         });
 
         it('should detect opera', () => {
@@ -68,7 +69,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService();
-            expect(browserPlatformUtilsService.getDevice()).toBe(Enums.DeviceType.Opera);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Opera);
         });
 
         it('should detect edge', () => {
@@ -78,7 +79,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService();
-            expect(browserPlatformUtilsService.getDevice()).toBe(Enums.DeviceType.Edge);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Edge);
         });
     });
 });

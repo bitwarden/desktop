@@ -1,6 +1,13 @@
 import UserService from './user.service';
 
-import { Abstractions, Data, Domain } from '@bitwarden/jslib';
+import {
+    CryptoService,
+    StorageService,
+} from 'jslib/abstractions';
+
+import { CollectionData } from 'jslib/models/data';
+
+import { Collection } from 'jslib/models/domain';
 
 const Keys = {
     collectionsPrefix: 'collections_',
@@ -9,33 +16,33 @@ const Keys = {
 export default class CollectionService {
     decryptedCollectionCache: any[];
 
-    constructor(private cryptoService: Abstractions.CryptoService, private userService: UserService,
-        private storageService: Abstractions.StorageService) {
+    constructor(private cryptoService: CryptoService, private userService: UserService,
+        private storageService: StorageService) {
     }
 
     clearCache(): void {
         this.decryptedCollectionCache = null;
     }
 
-    async get(id: string): Promise<Domain.Collection> {
+    async get(id: string): Promise<Collection> {
         const userId = await this.userService.getUserId();
-        const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
+        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null || !collections.hasOwnProperty(id)) {
             return null;
         }
 
-        return new Domain.Collection(collections[id]);
+        return new Collection(collections[id]);
     }
 
-    async getAll(): Promise<Domain.Collection[]> {
+    async getAll(): Promise<Collection[]> {
         const userId = await this.userService.getUserId();
-        const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
+        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
-        const response: Domain.Collection[] = [];
+        const response: Collection[] = [];
         for (const id in collections) {
             if (collections.hasOwnProperty(id)) {
-                response.push(new Domain.Collection(collections[id]));
+                response.push(new Collection(collections[id]));
             }
         }
         return response;
@@ -65,19 +72,19 @@ export default class CollectionService {
         return this.decryptedCollectionCache;
     }
 
-    async upsert(collection: Data.Collection | Data.Collection[]): Promise<any> {
+    async upsert(collection: CollectionData | CollectionData[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        let collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
+        let collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null) {
             collections = {};
         }
 
-        if (collection instanceof Data.Collection) {
-            const c = collection as Data.Collection;
+        if (collection instanceof CollectionData) {
+            const c = collection as CollectionData;
             collections[c.id] = c;
         } else {
-            (collection as Data.Collection[]).forEach((c) => {
+            (collection as CollectionData[]).forEach((c) => {
                 collections[c.id] = c;
             });
         }
@@ -86,7 +93,7 @@ export default class CollectionService {
         this.decryptedCollectionCache = null;
     }
 
-    async replace(collections: { [id: string]: Data.Collection; }): Promise<any> {
+    async replace(collections: { [id: string]: CollectionData; }): Promise<any> {
         const userId = await this.userService.getUserId();
         await this.storageService.save(Keys.collectionsPrefix + userId, collections);
         this.decryptedCollectionCache = null;
@@ -99,7 +106,7 @@ export default class CollectionService {
 
     async delete(id: string | string[]): Promise<any> {
         const userId = await this.userService.getUserId();
-        const collections = await this.storageService.get<{ [id: string]: Data.Collection; }>(
+        const collections = await this.storageService.get<{ [id: string]: CollectionData; }>(
             Keys.collectionsPrefix + userId);
         if (collections == null) {
             return;

@@ -30,7 +30,19 @@ import GlobalModule from './global/global.module';
 import SettingsModule from './settings/settings.module';
 
 // Model imports
-import { Data, Domain, Request, Response } from '@bitwarden/jslib';
+import { Attachment } from '../../../node_modules/@bitwarden/jslib/src/models/domain/attachment';
+import { Card } from '../../../node_modules/@bitwarden/jslib/src/models/domain/card';
+import { Cipher } from '../../../node_modules/@bitwarden/jslib/src/models/domain/cipher';
+import { CipherString } from '../../../node_modules/@bitwarden/jslib/src/models/domain/cipherString';
+import { Field } from '../../../node_modules/@bitwarden/jslib/src/models/domain/field';
+import { Folder } from '../../../node_modules/@bitwarden/jslib/src/models/domain/folder';
+import { Identity } from '../../../node_modules/@bitwarden/jslib/src/models/domain/identity';
+import { Login } from '../../../node_modules/@bitwarden/jslib/src/models/domain/login';
+import { SecureNote } from '../../../node_modules/@bitwarden/jslib/src/models/domain/secureNote';
+
+import * as Data from '../../../node_modules/@bitwarden/jslib/src/models/data';
+import * as Request from '../../../node_modules/@bitwarden/jslib/src/models/request';
+import * as Response from '../../../node_modules/@bitwarden/jslib/src/models/response';
 
 angular
     .module('bit', [

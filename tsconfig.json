@@ -8,7 +8,11 @@
     "sourceMap": true,
     "types": [
       "jasmine"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "jslib/*": [ "node_modules/@bitwarden/jslib/src/*" ]
+    }
   },
   "exclude": [
     "node_modules",

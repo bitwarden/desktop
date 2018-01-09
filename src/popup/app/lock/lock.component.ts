@@ -1,16 +1,18 @@
 import * as angular from 'angular';
 import * as template from './lock.component.html';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class LockController {
     i18n: any;
     masterPassword: string;
 
     constructor(public $state: any, public i18nService: any, private $timeout: any,
-        private platformUtilsService: Abstractions.PlatformUtilsService,
-        public cryptoService: Abstractions.CryptoService, public toastr: any, public userService: any,
-        public messagingService: Abstractions.MessagingService, public SweetAlert: any) {
+        private platformUtilsService: PlatformUtilsService,
+        public cryptoService: CryptoService, public toastr: any, public userService: any,
+        public messagingService: MessagingService, public SweetAlert: any) {
         this.i18n = i18nService;
     }
 

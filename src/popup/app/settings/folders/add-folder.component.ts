@@ -1,7 +1,9 @@
 import * as angular from 'angular';
 import * as template from './add-folder.component.html';
 
-import { Abstractions, Domain } from '@bitwarden/jslib';
+import { Folder } from 'jslib/models/domain/';
+
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class AddFolderController {
     savePromise: any;
@@ -9,7 +11,7 @@ export class AddFolderController {
     i18n: any;
 
     constructor(private folderService: any, private $state: any, private toastr: any,
-        platformUtilsService: Abstractions.PlatformUtilsService, private $analytics: any, private i18nService: any,
+        platformUtilsService: PlatformUtilsService, private $analytics: any, private i18nService: any,
         $timeout: any) {
         $timeout(() => {
             platformUtilsService.initListSectionItemListeners(document, angular);
@@ -28,7 +30,7 @@ export class AddFolderController {
         }
 
         this.savePromise = this.folderService.encrypt(model).then((folderModel: any) => {
-            const folder = new Domain.Folder(folderModel, true);
+            const folder = new Folder(folderModel, true);
             return this.folderService.saveWithServer(folder);
         }).then((folder: any) => {
             this.$analytics.eventTrack('Added Folder');

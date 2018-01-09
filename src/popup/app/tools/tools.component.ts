@@ -1,6 +1,6 @@
 import * as template from './tools.component.html';
 
-import { Abstractions } from '@bitwarden/jslib';
+import { PlatformUtilsService } from 'jslib/abstractions';
 
 export class ToolsController {
     showExport: boolean;
@@ -8,7 +8,7 @@ export class ToolsController {
     private webVaultBaseUrl: string = 'https://vault.bitwarden.com';
 
     constructor(private SweetAlert: any, private i18nService: any,
-        private $analytics: any, private platformUtilsService: Abstractions.PlatformUtilsService,
+        private $analytics: any, private platformUtilsService: PlatformUtilsService,
         private environmentService: any) {
         this.i18n = i18nService;
         this.showExport = !platformUtilsService.isEdge();

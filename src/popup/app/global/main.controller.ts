@@ -1,4 +1,4 @@
-import { Abstractions } from '@bitwarden/jslib';
+import { UtilsService } from 'jslib/abstractions/utils.service';
 
 export class MainController implements ng.IController {
     smBody: boolean;
@@ -6,7 +6,7 @@ export class MainController implements ng.IController {
     animation: string;
 
     constructor($scope: any, $transitions: any, $state: any, authService: any, toastr: any,
-        i18nService: any, $analytics: any, utilsService: Abstractions.UtilsService, $window: any) {
+        i18nService: any, $analytics: any, utilsService: UtilsService, $window: any) {
         this.animation = '';
         this.xsBody = $window.screen.availHeight < 600;
         this.smBody = !this.xsBody && $window.screen.availHeight <= 800;

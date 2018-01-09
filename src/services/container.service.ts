@@ -1,8 +1,11 @@
-import { Abstractions } from '@bitwarden/jslib';
+import {
+    CryptoService,
+    PlatformUtilsService,
+} from 'jslib/abstractions';
 
 export default class ContainerService {
-    constructor(private cryptoService: Abstractions.CryptoService,
-        private platformUtilsService: Abstractions.PlatformUtilsService) {
+    constructor(private cryptoService: CryptoService,
+        private platformUtilsService: PlatformUtilsService) {
     }
 
     attachToWindow(win: any) {
@@ -11,11 +14,11 @@ export default class ContainerService {
         }
     }
 
-    getCryptoService(): Abstractions.CryptoService {
+    getCryptoService(): CryptoService {
         return this.cryptoService;
     }
 
-    getPlatformUtilsService(): Abstractions.PlatformUtilsService {
+    getPlatformUtilsService(): PlatformUtilsService {
         return this.platformUtilsService;
     }
 }

@@ -103,7 +103,10 @@ module.exports = {
         ])
     ],
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            jslib: path.join(__dirname, 'node_modules/@bitwarden/jslib/src')
+        }
     },
     output: {
         filename: '[name].js',

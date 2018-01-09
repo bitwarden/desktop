@@ -1,4 +1,7 @@
-import { Abstractions, Enums, Services } from '@bitwarden/jslib';
+import {
+    CipherType,
+    FieldType,
+} from 'jslib/enums';
 
 import AutofillField from '../models/domain/autofillField';
 import AutofillPageDetails from '../models/domain/autofillPageDetails';
@@ -7,6 +10,13 @@ import AutofillScript from '../models/domain/autofillScript';
 import CipherService from './cipher.service';
 import TokenService from './token.service';
 import TotpService from './totp.service';
+
+import { UtilsService } from 'jslib/services';
+
+import {
+    PlatformUtilsService,
+    UtilsService as UtilsServiceAbstraction,
+} from 'jslib/abstractions';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top'];
@@ -90,8 +100,8 @@ var IsoProvinces: { [id: string]: string; } = {
 
 export default class AutofillService {
     constructor(public cipherService: CipherService, public tokenService: TokenService,
-        public totpService: TotpService, public utilsService: Services.UtilsService,
-        public platformUtilsService: Abstractions.PlatformUtilsService) {
+        public totpService: TotpService, public utilsService: UtilsServiceAbstraction,
+        public platformUtilsService: PlatformUtilsService) {
     }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
@@ -165,7 +175,7 @@ export default class AutofillService {
                 fillScript: fillScript,
             }, { frameId: pd.frameId });
 
-            if (options.cipher.type !== Enums.CipherType.Login || totpPromise ||
+            if (options.cipher.type !== CipherType.Login || totpPromise ||
                 (options.fromBackground && this.platformUtilsService.isFirefox()) || options.skipTotp ||
                 !options.cipher.login.totp || !this.tokenService.getPremium()) {
                 return;
@@ -179,7 +189,7 @@ export default class AutofillService {
                 return null;
             }).then((code: string) => {
                 if (code) {
-                    Services.UtilsService.copyToClipboard(code);
+                    UtilsService.copyToClipboard(code);
                 }
 
                 return code;
@@ -267,7 +277,7 @@ export default class AutofillService {
                 const matchingIndex = this.findMatchingFieldIndex(field, fieldNames);
                 if (matchingIndex > -1) {
                     let val = fields[matchingIndex].value;
-                    if (val == null && fields[matchingIndex].type === Enums.FieldType.Boolean) {
+                    if (val == null && fields[matchingIndex].type === FieldType.Boolean) {
                         val = 'false';
                     }
 
@@ -279,13 +289,13 @@ export default class AutofillService {
         }
 
         switch (options.cipher.type) {
-            case Enums.CipherType.Login:
+            case CipherType.Login:
                 fillScript = this.generateLoginFillScript(fillScript, pageDetails, filledFields, options);
                 break;
-            case Enums.CipherType.Card:
+            case CipherType.Card:
                 fillScript = this.generateCardFillScript(fillScript, pageDetails, filledFields, options);
                 break;
-            case Enums.CipherType.Identity:
+            case CipherType.Identity:
                 fillScript = this.generateIdentityFillScript(fillScript, pageDetails, filledFields, options);
                 break;
             default:
