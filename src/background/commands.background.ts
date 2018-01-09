@@ -2,7 +2,7 @@ import BrowserApi from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import PasswordGenerationService from '../services/passwordGeneration.service';
+import { PasswordGenerationService } from 'jslib/abstractions';
 
 import { UtilsService } from 'jslib/services/utils.service';
 
@@ -34,7 +34,7 @@ export default class CommandsBackground {
 
     private async generatePasswordToClipboard() {
         const options = await this.passwordGenerationService.getOptions();
-        const password = PasswordGenerationService.generatePassword(options);
+        const password = await this.passwordGenerationService.generatePassword(options);
         UtilsService.copyToClipboard(password);
         this.passwordGenerationService.addHistory(password);
 
