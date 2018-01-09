@@ -20,11 +20,11 @@ import {
     ApiService,
     CryptoService,
     StorageService,
+    UserService,
 } from 'jslib/abstractions';
 
 import ConstantsService from './constants.service';
 import SettingsService from './settings.service';
-import UserService from './user.service';
 
 const Keys = {
     ciphersPrefix: 'ciphers_',

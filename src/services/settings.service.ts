@@ -1,6 +1,7 @@
-import UserService from './user.service';
-
-import { StorageService } from 'jslib/abstractions';
+import {
+    StorageService,
+    UserService,
+} from 'jslib/abstractions';
 
 const Keys = {
     settingsPrefix: 'settings_',

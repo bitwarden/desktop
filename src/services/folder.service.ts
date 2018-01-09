@@ -1,5 +1,3 @@
-import UserService from './user.service';
-
 import { FolderData } from 'jslib/models/data';
 
 import { Folder } from 'jslib/models/domain';
@@ -12,6 +10,7 @@ import {
     ApiService,
     CryptoService,
     StorageService,
+    UserService,
 } from 'jslib/abstractions';
 
 const Keys = {

@@ -5,6 +5,7 @@ import {
     AppIdService,
     CryptoService,
     TokenService,
+    UserService,
     UtilsService,
 } from 'jslib/services';
 
@@ -16,6 +17,7 @@ import {
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
     StorageService as StorageServiceAbstraction,
     TokenService as TokenServiceAbstraction,
+    UserService as UserServiceAbstraction,
     UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 
@@ -45,7 +47,6 @@ import PasswordGenerationService from '../services/passwordGeneration.service';
 import SettingsService from '../services/settings.service';
 import SyncService from '../services/sync.service';
 import TotpService from '../services/totp.service';
-import UserService from '../services/user.service';
 
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
@@ -59,7 +60,7 @@ export default class MainBackground {
     appIdService: AppIdServiceAbstraction;
     apiService: ApiServiceAbstraction;
     environmentService: EnvironmentService;
-    userService: UserService;
+    userService: UserServiceAbstraction;
     settingsService: SettingsService;
     cipherService: CipherService;
     folderService: FolderService;

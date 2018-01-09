@@ -1,8 +1,7 @@
-import UserService from './user.service';
-
 import {
     CryptoService,
     StorageService,
+    UserService,
 } from 'jslib/abstractions';
 
 import { CollectionData } from 'jslib/models/data';
