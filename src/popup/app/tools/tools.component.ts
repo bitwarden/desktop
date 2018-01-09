@@ -1,6 +1,6 @@
 import * as template from './tools.component.html';
 
-import { PlatformUtilsService } from 'jslib/abstractions';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class ToolsController {
     showExport: boolean;

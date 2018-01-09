@@ -1,7 +1,7 @@
 import * as angular from 'angular';
 import * as template from './password-generator.component.html';
 
-import { PlatformUtilsService } from 'jslib/abstractions';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class PasswordGeneratorController {
     $transition$: any;

@@ -1,6 +1,6 @@
 import * as template from './folders.component.html';
 
-import { Folder } from 'jslib/models/domain';
+import { Folder } from 'jslib/models/domain/folder';
 
 export class FoldersController {
     folders: Folder[] = [];

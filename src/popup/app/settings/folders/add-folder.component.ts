@@ -1,7 +1,7 @@
 import * as angular from 'angular';
 import * as template from './add-folder.component.html';
 
-import { Folder } from 'jslib/models/domain/';
+import { Folder } from 'jslib/models/domain/folder';
 
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
