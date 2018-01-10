@@ -1,12 +1,12 @@
 import CipherService from './cipher.service';
 import CollectionService from './collection.service';
-import SettingsService from './settings.service';
 
 import {
     ApiService,
     CryptoService,
     FolderService,
     MessagingService,
+    SettingsService,
     StorageService,
     UserService,
 } from 'jslib/abstractions';

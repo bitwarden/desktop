@@ -9,6 +9,7 @@ import {
     EnvironmentService,
     FolderService,
     PasswordGenerationService,
+    SettingsService,
     TokenService,
     TotpService,
     UserService,
@@ -24,6 +25,7 @@ import {
     MessagingService as MessagingServiceAbstraction,
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
+    SettingsService as SettingsServiceAbstraction,
     StorageService as StorageServiceAbstraction,
     TokenService as TokenServiceAbstraction,
     TotpService as TotpServiceAbstraction,
@@ -49,7 +51,6 @@ import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import i18nService from '../services/i18n.service';
 import LockService from '../services/lock.service';
-import SettingsService from '../services/settings.service';
 import SyncService from '../services/sync.service';
 
 export default class MainBackground {
@@ -65,7 +66,7 @@ export default class MainBackground {
     apiService: ApiServiceAbstraction;
     environmentService: EnvironmentServiceAbstraction;
     userService: UserServiceAbstraction;
-    settingsService: SettingsService;
+    settingsService: SettingsServiceAbstraction;
     cipherService: CipherService;
     folderService: FolderServiceAbstraction;
     collectionService: CollectionService;
