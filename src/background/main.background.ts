@@ -4,6 +4,7 @@ import {
     ApiService,
     AppIdService,
     CryptoService,
+    EnvironmentService,
     PasswordGenerationService,
     TokenService,
     TotpService,
@@ -15,6 +16,7 @@ import {
     ApiService as ApiServiceAbstraction,
     AppIdService as AppIdServiceAbstraction,
     CryptoService as CryptoServiceAbstraction,
+    EnvironmentService as EnvironmentServiceAbstraction,
     MessagingService as MessagingServiceAbstraction,
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
@@ -43,7 +45,6 @@ import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import ConstantsService from '../services/constants.service';
 import ContainerService from '../services/container.service';
-import EnvironmentService from '../services/environment.service';
 import FolderService from '../services/folder.service';
 import i18nService from '../services/i18n.service';
 import LockService from '../services/lock.service';
@@ -61,7 +62,7 @@ export default class MainBackground {
     tokenService: TokenServiceAbstraction;
     appIdService: AppIdServiceAbstraction;
     apiService: ApiServiceAbstraction;
-    environmentService: EnvironmentService;
+    environmentService: EnvironmentServiceAbstraction;
     userService: UserServiceAbstraction;
     settingsService: SettingsService;
     cipherService: CipherService;
