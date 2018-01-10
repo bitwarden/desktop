@@ -113,7 +113,7 @@ export default class MainBackground {
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
             this.apiService, this.storageService);
-        this.folderService = new FolderService(this.cryptoService, this.userService, this.i18nService,
+        this.folderService = new FolderService(this.cryptoService, this.userService, this.i18nService.noneFolder,
             this.apiService, this.storageService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
