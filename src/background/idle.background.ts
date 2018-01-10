@@ -1,9 +1,11 @@
-import LockService from '../services/lock.service';
 import MainBackground from './main.background';
 
 import { ConstantsService } from 'jslib/services';
 
-import { StorageService } from 'jslib/abstractions';
+import {
+    LockService,
+    StorageService,
+} from 'jslib/abstractions';
 
 export default class IdleBackground {
     private idle: any;
