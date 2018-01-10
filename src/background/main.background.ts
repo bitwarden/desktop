@@ -13,6 +13,7 @@ import {
     LockService,
     PasswordGenerationService,
     SettingsService,
+    SyncService,
     TokenService,
     TotpService,
     UserService,
@@ -33,6 +34,7 @@ import {
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
     SettingsService as SettingsServiceAbstraction,
     StorageService as StorageServiceAbstraction,
+    SyncService as SyncServiceAbstraction,
     TokenService as TokenServiceAbstraction,
     TotpService as TotpServiceAbstraction,
     UserService as UserServiceAbstraction,
@@ -54,7 +56,6 @@ import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
 import i18nService from '../services/i18n.service';
-import SyncService from '../services/sync.service';
 
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
@@ -74,7 +75,7 @@ export default class MainBackground {
     folderService: FolderServiceAbstraction;
     collectionService: CollectionServiceAbstraction;
     lockService: LockServiceAbstraction;
-    syncService: SyncService;
+    syncService: SyncServiceAbstraction;
     passwordGenerationService: PasswordGenerationServiceAbstraction;
     totpService: TotpServiceAbstraction;
     autofillService: AutofillService;

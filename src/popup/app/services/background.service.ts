@@ -12,6 +12,7 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
@@ -31,7 +32,7 @@ export const userService = getBackgroundService<UserService>('userService');
 export const apiService = getBackgroundService<ApiService>('apiService');
 export const folderService = getBackgroundService<FolderService>('folderService');
 export const cipherService = getBackgroundService<CipherService>('cipherService');
-export const syncService = getBackgroundService<any>('syncService');
+export const syncService = getBackgroundService<SyncService>('syncService');
 export const autofillService = getBackgroundService<any>('autofillService');
 export const passwordGenerationService = getBackgroundService<PasswordGenerationService>('passwordGenerationService');
 export const platformUtilsService = getBackgroundService<PlatformUtilsService>('platformUtilsService');
