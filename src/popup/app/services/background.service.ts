@@ -3,9 +3,11 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AppIdService } from 'jslib/abstractions/appId.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -30,7 +32,7 @@ export const folderService = getBackgroundService<FolderService>('folderService'
 export const cipherService = getBackgroundService<CipherService>('cipherService');
 export const syncService = getBackgroundService<any>('syncService');
 export const autofillService = getBackgroundService<any>('autofillService');
-export const passwordGenerationService = getBackgroundService<any>('passwordGenerationService');
+export const passwordGenerationService = getBackgroundService<PasswordGenerationService>('passwordGenerationService');
 export const platformUtilsService = getBackgroundService<PlatformUtilsService>('platformUtilsService');
 export const utilsService = getBackgroundService<UtilsService>('utilsService');
 export const appIdService = getBackgroundService<AppIdService>('appIdService');
@@ -40,4 +42,4 @@ export const settingsService = getBackgroundService<SettingsService>('settingsSe
 export const lockService = getBackgroundService<any>('lockService');
 export const totpService = getBackgroundService<TotpService>('totpService');
 export const environmentService = getBackgroundService<EnvironmentService>('environmentService');
-export const collectionService = getBackgroundService<any>('collectionService');
+export const collectionService = getBackgroundService<CollectionService>('collectionService');

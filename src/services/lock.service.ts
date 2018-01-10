@@ -1,11 +1,10 @@
-import CollectionService from './collection.service';
-
 import {
     ConstantsService,
 } from 'jslib/services';
 
 import {
     CipherService,
+    CollectionService,
     CryptoService,
     FolderService,
     PlatformUtilsService,
