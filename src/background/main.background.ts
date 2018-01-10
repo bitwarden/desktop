@@ -7,6 +7,7 @@ import {
     ContainerService,
     CryptoService,
     EnvironmentService,
+    FolderService,
     PasswordGenerationService,
     TokenService,
     TotpService,
@@ -19,6 +20,7 @@ import {
     AppIdService as AppIdServiceAbstraction,
     CryptoService as CryptoServiceAbstraction,
     EnvironmentService as EnvironmentServiceAbstraction,
+    FolderService as FolderServiceAbstraction,
     MessagingService as MessagingServiceAbstraction,
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
@@ -45,7 +47,6 @@ import BrowserPlatformUtilsService from '../services/browserPlatformUtils.servic
 import BrowserStorageService from '../services/browserStorage.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
-import FolderService from '../services/folder.service';
 import i18nService from '../services/i18n.service';
 import LockService from '../services/lock.service';
 import SettingsService from '../services/settings.service';
@@ -66,7 +67,7 @@ export default class MainBackground {
     userService: UserServiceAbstraction;
     settingsService: SettingsService;
     cipherService: CipherService;
-    folderService: FolderService;
+    folderService: FolderServiceAbstraction;
     collectionService: CollectionService;
     lockService: LockService;
     syncService: SyncService;

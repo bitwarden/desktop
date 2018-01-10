@@ -1,11 +1,11 @@
 import CipherService from './cipher.service';
 import CollectionService from './collection.service';
-import FolderService from './folder.service';
 import SettingsService from './settings.service';
 
 import {
     ApiService,
     CryptoService,
+    FolderService,
     MessagingService,
     StorageService,
     UserService,
