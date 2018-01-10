@@ -1,9 +1,11 @@
-import CipherService from './cipher.service';
 import CollectionService from './collection.service';
 
-import { ConstantsService } from 'jslib/services';
+import {
+    ConstantsService,
+} from 'jslib/services';
 
 import {
+    CipherService,
     CryptoService,
     FolderService,
     PlatformUtilsService,

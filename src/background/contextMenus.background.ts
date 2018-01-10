@@ -2,9 +2,8 @@ import BrowserApi from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import CipherService from '../services/cipher.service';
-
 import {
+    CipherService,
     PasswordGenerationService,
 } from 'jslib/abstractions';
 

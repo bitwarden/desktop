@@ -1,6 +1,7 @@
-import CipherService from '../services/cipher.service';
-
-import { PlatformUtilsService } from 'jslib/abstractions';
+import {
+    CipherService,
+    PlatformUtilsService,
+} from 'jslib/abstractions';
 
 export default class WebRequestBackground {
     private pendingAuthRequests: any[] = [];

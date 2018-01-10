@@ -3,6 +3,7 @@ import { CipherType } from 'jslib/enums';
 import {
     ApiService,
     AppIdService,
+    CipherService,
     ConstantsService,
     ContainerService,
     CryptoService,
@@ -19,6 +20,7 @@ import {
 import {
     ApiService as ApiServiceAbstraction,
     AppIdService as AppIdServiceAbstraction,
+    CipherService as CipherServiceAbstraction,
     CryptoService as CryptoServiceAbstraction,
     EnvironmentService as EnvironmentServiceAbstraction,
     FolderService as FolderServiceAbstraction,
@@ -47,7 +49,6 @@ import AutofillService from '../services/autofill.service';
 import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
-import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
 import i18nService from '../services/i18n.service';
 import LockService from '../services/lock.service';
@@ -67,7 +68,7 @@ export default class MainBackground {
     environmentService: EnvironmentServiceAbstraction;
     userService: UserServiceAbstraction;
     settingsService: SettingsServiceAbstraction;
-    cipherService: CipherService;
+    cipherService: CipherServiceAbstraction;
     folderService: FolderServiceAbstraction;
     collectionService: CollectionService;
     lockService: LockService;

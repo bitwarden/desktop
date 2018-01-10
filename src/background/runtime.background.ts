@@ -3,6 +3,7 @@ import { CipherType } from 'jslib/enums';
 import { UtilsService } from 'jslib/services/utils.service';
 
 import {
+    CipherService,
     PlatformUtilsService,
 } from 'jslib/abstractions';
 
@@ -11,7 +12,6 @@ import BrowserApi from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import AutofillService from '../services/autofill.service';
-import CipherService from '../services/cipher.service';
 
 export default class RuntimeBackground {
     private runtime: any;

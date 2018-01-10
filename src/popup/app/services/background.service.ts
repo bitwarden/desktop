@@ -2,6 +2,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AppIdService } from 'jslib/abstractions/appId.service';
+import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
@@ -26,7 +27,7 @@ export const cryptoService = getBackgroundService<CryptoService>('cryptoService'
 export const userService = getBackgroundService<UserService>('userService');
 export const apiService = getBackgroundService<ApiService>('apiService');
 export const folderService = getBackgroundService<FolderService>('folderService');
-export const cipherService = getBackgroundService<CryptoService>('cipherService');
+export const cipherService = getBackgroundService<CipherService>('cipherService');
 export const syncService = getBackgroundService<any>('syncService');
 export const autofillService = getBackgroundService<any>('autofillService');
 export const passwordGenerationService = getBackgroundService<any>('passwordGenerationService');

@@ -1,8 +1,8 @@
-import CipherService from './cipher.service';
 import CollectionService from './collection.service';
 
 import {
     ApiService,
+    CipherService,
     CryptoService,
     FolderService,
     MessagingService,
