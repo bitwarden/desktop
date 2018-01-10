@@ -4,6 +4,7 @@ import {
     ApiService,
     AppIdService,
     ConstantsService,
+    ContainerService,
     CryptoService,
     EnvironmentService,
     PasswordGenerationService,
@@ -44,7 +45,6 @@ import BrowserPlatformUtilsService from '../services/browserPlatformUtils.servic
 import BrowserStorageService from '../services/browserStorage.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
-import ContainerService from '../services/container.service';
 import FolderService from '../services/folder.service';
 import i18nService from '../services/i18n.service';
 import LockService from '../services/lock.service';
