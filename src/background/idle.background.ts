@@ -1,6 +1,7 @@
-import ConstantsService from '../services/constants.service';
 import LockService from '../services/lock.service';
 import MainBackground from './main.background';
+
+import { ConstantsService } from 'jslib/services';
 
 import { StorageService } from 'jslib/abstractions';
 

@@ -2,12 +2,12 @@ import * as angular from 'angular';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
+import { ConstantsService } from 'jslib/services/constants.service';
+
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
-
-import ConstantsService from '../../../services/constants.service';
 
 import * as template from './settings.component.html';
 

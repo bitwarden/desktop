@@ -16,6 +16,8 @@ import {
     ErrorResponse,
 } from 'jslib/models/response';
 
+import { ConstantsService } from 'jslib/services';
+
 import {
     ApiService,
     CryptoService,
@@ -23,7 +25,6 @@ import {
     UserService,
 } from 'jslib/abstractions';
 
-import ConstantsService from './constants.service';
 import SettingsService from './settings.service';
 
 const Keys = {

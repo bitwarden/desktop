@@ -3,6 +3,7 @@ import { CipherType } from 'jslib/enums';
 import {
     ApiService,
     AppIdService,
+    ConstantsService,
     CryptoService,
     EnvironmentService,
     PasswordGenerationService,
@@ -43,7 +44,6 @@ import BrowserPlatformUtilsService from '../services/browserPlatformUtils.servic
 import BrowserStorageService from '../services/browserStorage.service';
 import CipherService from '../services/cipher.service';
 import CollectionService from '../services/collection.service';
-import ConstantsService from '../services/constants.service';
 import ContainerService from '../services/container.service';
 import FolderService from '../services/folder.service';
 import i18nService from '../services/i18n.service';
