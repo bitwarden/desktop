@@ -9,5 +9,6 @@ webfonts/
 *.pem
 *.zip
 build/
+build.safariextension/
 package-lock.json
 coverage/

@@ -20,11 +20,22 @@ const paths = {
     cssDir: './src/popup/css/'
 };
 
-const fontsFilter = [
-    '!build/popup/fonts/*',
-    'build/popup/fonts/Open_Sans*.woff',
-    'build/popup/fonts/fontawesome*.woff'
-];
+const filters = {
+    fonts: [
+        '!build/popup/fonts/*',
+        'build/popup/fonts/Open_Sans*.woff',
+        'build/popup/fonts/fontawesome*.woff'
+    ],
+    safari: [
+        '!build/Info.plist'
+    ],
+    notSafari: [
+        '!build/manifest.json'
+    ],
+    notEdge: [
+        '!build/edge/**/*'
+    ]
+};
 
 function buildString() {
     var build = '';
@@ -40,7 +51,7 @@ function distFileName(browserName, ext) {
 
 function dist(browserName, manifest) {
     return gulp.src(paths.build + '**/*')
-        .pipe(filter(['**', '!build/edge/**/*'].concat(fontsFilter)))
+        .pipe(filter(['**'].concat(filters.notEdge).concat(filters.fonts).concat(filters.safari)))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
         .pipe(zip(distFileName(browserName, 'zip')))
@@ -97,7 +108,7 @@ function edgeCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter(['**'].concat(fontsFilter)))
+            .pipe(filter(['**'].concat(filters.fonts).concat(filters.safari)))
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'edge')))
             .pipe(gulpif('manifest.json', jeditor((manifest) => {
                 delete manifest.applications;
@@ -147,6 +158,28 @@ gulp.task('ci:coverage', (cb) => {
         .pipe(zip(`coverage${buildString()}.zip`))
         .pipe(gulp.dest(paths.coverage));
 });
+
+gulp.task('safari:build', (cb) => {
+    const buildPath = './build.safariextension/';
+
+    return del([buildPath + '**/*'])
+        .then(() => safariMoveBuild(paths.build + '**/*', buildPath))
+        .then(() => {
+            return cb;
+        }, () => {
+            return cb;
+        });
+});
+
+function safariMoveBuild(source, dest) {
+    return new Promise((resolve, reject) => {
+        gulp.src(source)
+            .on('error', reject)
+            .pipe(filter(['**'].concat(filters.notEdge).concat(filters.fonts).concat(filters.notSafari)))
+            .pipe(gulp.dest(dest))
+            .on('end', resolve);
+    });
+}
 
 // LEGACY CODE!
 
