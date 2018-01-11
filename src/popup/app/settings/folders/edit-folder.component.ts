@@ -14,7 +14,7 @@ export class EditFolderController {
 
     constructor($scope: any, $stateParams: any, private folderService: any, private toastr: any, private $state: any,
         private SweetAlert: any, platformUtilsService: PlatformUtilsService, private $analytics: any,
-        private i18nService: any, $timeout: any) {
+        private i18nService: any, $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {

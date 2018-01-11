@@ -12,7 +12,7 @@ export class AddFolderController {
 
     constructor(private folderService: any, private $state: any, private toastr: any,
         platformUtilsService: PlatformUtilsService, private $analytics: any, private i18nService: any,
-        $timeout: any) {
+        $timeout: ng.ITimeoutService) {
         $timeout(() => {
             platformUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();

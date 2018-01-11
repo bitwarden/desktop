@@ -21,9 +21,9 @@ export class CurrentController {
 
     constructor($scope: any, private cipherService: any,
         private platformUtilsService: PlatformUtilsService,
-        private utilsService: UtilsService, private toastr: any, private $window: any, private $state: any,
-        private $timeout: any, private autofillService: any, private $analytics: any, private i18nService: any,
-        private $filter: any) {
+        private utilsService: UtilsService, private toastr: any, private $window: ng.IWindowService,
+        private $state: any, private $timeout: ng.ITimeoutService, private autofillService: any,
+        private $analytics: any, private i18nService: any, private $filter: any) {
         this.i18n = i18nService;
         this.inSidebar = platformUtilsService.inSidebar($window);
         this.disableSearch = platformUtilsService.isEdge();

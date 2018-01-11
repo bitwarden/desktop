@@ -14,7 +14,7 @@ export class ExportController {
     constructor(private $state: any, private cryptoService: CryptoService,
         private toastr: any, private utilsService: UtilsService, private $analytics: any,
         private i18nService: any, private folderService: any, private cipherService: any,
-        private $window: any, private userService: any) {
+        private $window: ng.IWindowService, private userService: any) {
         this.i18n = i18nService;
     }
 
@@ -128,7 +128,7 @@ export class ExportController {
     }
 
     private downloadFile(csv: string): void {
-        const csvBlob = new Blob([csv]);
+        const csvBlob = new Blob([csv], { type: 'text/plain' });
         const fileName = this.makeFileName();
 
         if (this.$window.navigator.msSaveOrOpenBlob) {
@@ -138,7 +138,7 @@ export class ExportController {
             this.$window.navigator.msSaveBlob(csvBlob, fileName);
         } else {
             const a = this.$window.document.createElement('a');
-            a.href = this.$window.URL.createObjectURL(csvBlob, { type: 'text/plain' });
+            a.href = this.$window.URL.createObjectURL(csvBlob);
             a.download = fileName;
             this.$window.document.body.appendChild(a);
             a.click();

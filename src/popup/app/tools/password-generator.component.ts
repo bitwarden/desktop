@@ -14,7 +14,7 @@ export class PasswordGeneratorController {
 
     constructor(private $state: any, private passwordGenerationService: any,
         private toastr: any, private platformUtilsService: PlatformUtilsService,
-        private $analytics: any, private i18nService: any, private $timeout: any) {
+        private $analytics: any, private i18nService: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         passwordGenerationService.getOptions().then((options: any) => {

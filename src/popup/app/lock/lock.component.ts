@@ -9,7 +9,7 @@ export class LockController {
     i18n: any;
     masterPassword: string;
 
-    constructor(public $state: any, public i18nService: any, private $timeout: any,
+    constructor(public $state: any, public i18nService: any, private $timeout: ng.ITimeoutService,
         private platformUtilsService: PlatformUtilsService,
         public cryptoService: CryptoService, public toastr: any, public userService: any,
         public messagingService: MessagingService, public SweetAlert: any) {

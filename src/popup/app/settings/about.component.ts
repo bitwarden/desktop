@@ -5,7 +5,7 @@ export class AboutController {
     year: number;
     i18n: any;
 
-    constructor(i18nService: any) {
+    constructor(private i18nService: any) {
         this.i18n = i18nService;
         this.year = (new Date()).getFullYear();
         this.version = chrome.runtime.getManifest().version;

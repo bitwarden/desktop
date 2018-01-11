@@ -3,7 +3,7 @@ import * as template from './credits.component.html';
 export class CreditsController {
     i18n: any;
 
-    constructor(i18nService: any, private $analytics: any) {
+    constructor(private i18nService: any, private $analytics: any) {
         this.i18n = i18nService;
     }
 

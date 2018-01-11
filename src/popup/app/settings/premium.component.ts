@@ -6,7 +6,7 @@ export class PremiumController {
     price = '$10';
 
     constructor(private i18nService: any, private tokenService: any, private apiService: any, private toastr: any,
-        private SweetAlert: any, private $analytics: any, private $timeout: any) {
+        private SweetAlert: any, private $analytics: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
         this.isPremium = tokenService.getPremium();
     }
