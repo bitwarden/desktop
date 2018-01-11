@@ -2,6 +2,8 @@ import * as template from './password-generator-history.component.html';
 
 import { PasswordHistory } from 'jslib/models/domain/passwordHistory';
 
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+
 export class PasswordGeneratorHistoryController {
     $transition$: any;
     history: PasswordHistory[];
@@ -9,8 +11,8 @@ export class PasswordGeneratorHistoryController {
     addState: any;
     i18n: any;
 
-    constructor(private $state: any, private passwordGenerationService: any, private toastr: any,
-        private $analytics: any, private i18nService: any) {
+    constructor(private $state: any, private passwordGenerationService: PasswordGenerationService,
+        private toastr: any, private $analytics: any, private i18nService: any) {
         this.i18n = i18nService;
         this.history = passwordGenerationService.getHistory();
     }

@@ -4,7 +4,10 @@ import * as template from './export.component.html';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
+import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { FolderService } from 'jslib/abstractions/folder.service';
+import { UserService } from 'jslib/abstractions/user.service';
 import { UtilsService } from 'jslib/abstractions/utils.service';
 
 export class ExportController {
@@ -13,8 +16,8 @@ export class ExportController {
 
     constructor(private $state: any, private cryptoService: CryptoService,
         private toastr: any, private utilsService: UtilsService, private $analytics: any,
-        private i18nService: any, private folderService: any, private cipherService: any,
-        private $window: ng.IWindowService, private userService: any) {
+        private i18nService: any, private folderService: FolderService, private cipherService: CipherService,
+        private $window: ng.IWindowService, private userService: UserService) {
         this.i18n = i18nService;
     }
 

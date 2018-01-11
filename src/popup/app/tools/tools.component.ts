@@ -1,5 +1,6 @@
 import * as template from './tools.component.html';
 
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class ToolsController {
@@ -9,7 +10,7 @@ export class ToolsController {
 
     constructor(private SweetAlert: any, private i18nService: any,
         private $analytics: any, private platformUtilsService: PlatformUtilsService,
-        private environmentService: any) {
+        private environmentService: EnvironmentService) {
         this.i18n = i18nService;
         this.showExport = !platformUtilsService.isEdge();
         if (environmentService.baseUrl) {
