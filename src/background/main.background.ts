@@ -57,6 +57,8 @@ import BrowserPlatformUtilsService from '../services/browserPlatformUtils.servic
 import BrowserStorageService from '../services/browserStorage.service';
 import i18nService from '../services/i18n.service';
 
+import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
+
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
     storageService: StorageServiceAbstraction;
@@ -78,7 +80,7 @@ export default class MainBackground {
     syncService: SyncServiceAbstraction;
     passwordGenerationService: PasswordGenerationServiceAbstraction;
     totpService: TotpServiceAbstraction;
-    autofillService: AutofillService;
+    autofillService: AutofillServiceAbstraction;
     containerService: ContainerService;
 
     onUpdatedRan: boolean;

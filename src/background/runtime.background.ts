@@ -11,7 +11,7 @@ import BrowserApi from '../browser/browserApi';
 
 import MainBackground from './main.background';
 
-import AutofillService from '../services/autofill.service';
+import { AutofillService } from '../services/abstractions/autofill.service';
 
 export default class RuntimeBackground {
     private runtime: any;

@@ -9,6 +9,8 @@ import AutofillScript from '../models/domain/autofillScript';
 
 import { UtilsService } from 'jslib/services';
 
+import { AutofillService as AutofillServiceInterface } from './abstractions/autofill.service';
+
 import {
     CipherService,
     PlatformUtilsService,
@@ -97,7 +99,7 @@ var IsoProvinces: { [id: string]: string; } = {
 };
 /* tslint:enable */
 
-export default class AutofillService {
+export default class AutofillService implements AutofillServiceInterface {
     constructor(public cipherService: CipherService, public tokenService: TokenService,
         public totpService: TotpService, public utilsService: UtilsServiceAbstraction,
         public platformUtilsService: PlatformUtilsService) {

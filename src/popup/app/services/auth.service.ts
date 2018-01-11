@@ -1,14 +1,20 @@
 import { DeviceRequest } from 'jslib/models/request/deviceRequest';
 import { TokenRequest } from 'jslib/models/request/tokenRequest';
 
+import { ConstantsService } from 'jslib/services/constants.service';
+
+import { ApiService } from 'jslib/abstractions/api.service';
+import { AppIdService } from 'jslib/abstractions/appId.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { TokenService } from 'jslib/abstractions/token.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 class AuthService {
-    constructor(public cryptoService: CryptoService, public apiService: any, public userService: any,
-        public tokenService: any, public $rootScope: any, public appIdService: any,
-        public platformUtilsService: PlatformUtilsService, public constantsService: any,
+    constructor(public cryptoService: CryptoService, public apiService: ApiService, public userService: UserService,
+        public tokenService: TokenService, public $rootScope: any, public appIdService: AppIdService,
+        public platformUtilsService: PlatformUtilsService, public constantsService: ConstantsService,
         public messagingService: MessagingService) {
     }
 

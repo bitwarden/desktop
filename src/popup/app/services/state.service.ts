@@ -1,9 +1,11 @@
+import { ConstantsService } from 'jslib/services/constants.service';
+
 import { StorageService } from 'jslib/abstractions/storage.service';
 
 class StateService {
     private state: any = {};
 
-    constructor(private storageService: StorageService, private constantsService: any) {
+    constructor(private storageService: StorageService, private constantsService: ConstantsService) {
     }
 
     async init() {

@@ -18,6 +18,8 @@ import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { UtilsService } from 'jslib/abstractions/utils.service';
 
+import { AutofillService } from '../../../services/abstractions/autofill.service';
+
 function getBackgroundService<T>(service: string) {
     return (): T => {
         const page = chrome.extension.getBackgroundPage();
@@ -33,7 +35,7 @@ export const apiService = getBackgroundService<ApiService>('apiService');
 export const folderService = getBackgroundService<FolderService>('folderService');
 export const cipherService = getBackgroundService<CipherService>('cipherService');
 export const syncService = getBackgroundService<SyncService>('syncService');
-export const autofillService = getBackgroundService<any>('autofillService');
+export const autofillService = getBackgroundService<AutofillService>('autofillService');
 export const passwordGenerationService = getBackgroundService<PasswordGenerationService>('passwordGenerationService');
 export const platformUtilsService = getBackgroundService<PlatformUtilsService>('platformUtilsService');
 export const utilsService = getBackgroundService<UtilsService>('utilsService');
