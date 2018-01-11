@@ -2,6 +2,8 @@ import * as template from './pop-out.component.html';
 
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
+import PopupUtilsService from '../services/popupUtils.service';
+
 export class PopOutController implements ng.IController {
     i18n: any;
 
@@ -39,7 +41,7 @@ export class PopOutController implements ng.IController {
                 height: bodyRect.height,
             });
 
-            if (this.platformUtilsService.inPopup(this.$window)) {
+            if (PopupUtilsService.inPopup(this.$window)) {
                 this.$window.close();
             }
         } else if (chrome && chrome.tabs && chrome.tabs.create) {

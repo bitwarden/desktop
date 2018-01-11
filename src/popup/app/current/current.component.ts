@@ -8,6 +8,8 @@ import { UtilsService } from 'jslib/abstractions/utils.service';
 
 import { AutofillService } from '../../../services/abstractions/autofill.service';
 
+import PopupUtilsService from '../services/popupUtils.service';
+
 export class CurrentController {
     i18n: any;
     pageDetails: any = [];
@@ -27,7 +29,7 @@ export class CurrentController {
         private $state: any, private $timeout: ng.ITimeoutService, private autofillService: AutofillService,
         private $analytics: any, private i18nService: any, private $filter: ng.IFilterService) {
         this.i18n = i18nService;
-        this.inSidebar = platformUtilsService.inSidebar($window);
+        this.inSidebar = PopupUtilsService.inSidebar($window);
         this.disableSearch = platformUtilsService.isEdge();
 
         $scope.$on('syncCompleted', (event: any, successfully: boolean) => {
@@ -85,7 +87,7 @@ export class CurrentController {
             if (totpCode && this.platformUtilsService.isFirefox()) {
                 this.utilsService.copyToClipboard(totpCode, document);
             }
-            if (this.platformUtilsService.inPopup(this.$window)) {
+            if (PopupUtilsService.inPopup(this.$window)) {
                 this.$window.close();
             }
         }).catch(() => {

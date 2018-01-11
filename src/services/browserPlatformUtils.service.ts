@@ -116,23 +116,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return BrowserPlatformUtilsService.getDomain(uriString);
     }
 
-    inSidebar(theWindow: Window): boolean {
-        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=sidebar') > -1;
-    }
-
-    inTab(theWindow: Window): boolean {
-        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=tab') > -1;
-    }
-
-    inPopout(theWindow: Window): boolean {
-        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=popout') > -1;
-    }
-
-    inPopup(theWindow: Window): boolean {
-        return theWindow.location.search === '' || theWindow.location.search.indexOf('uilocation=') === -1 ||
-            theWindow.location.search.indexOf('uilocation=popup') > -1;
-    }
-
     isViewOpen(): boolean {
         const popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
         if (popupOpen) {

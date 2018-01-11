@@ -81,7 +81,40 @@ export default class PopupUtilsService {
         });
     }
 
+    static inSidebar(theWindow: Window): boolean {
+        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=sidebar') > -1;
+    }
+
+    static inTab(theWindow: Window): boolean {
+        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=tab') > -1;
+    }
+
+    static inPopout(theWindow: Window): boolean {
+        return theWindow.location.search !== '' && theWindow.location.search.indexOf('uilocation=popout') > -1;
+    }
+
+    static inPopup(theWindow: Window): boolean {
+        return theWindow.location.search === '' || theWindow.location.search.indexOf('uilocation=') === -1 ||
+            theWindow.location.search.indexOf('uilocation=popup') > -1;
+    }
+
     initListSectionItemListeners(doc: Document, angular: any): void {
         PopupUtilsService.initListSectionItemListeners(doc, angular);
+    }
+
+    inSidebar(theWindow: Window): boolean {
+        return PopupUtilsService.inSidebar(theWindow);
+    }
+
+    inTab(theWindow: Window): boolean {
+        return PopupUtilsService.inTab(theWindow);
+    }
+
+    inPopout(theWindow: Window): boolean {
+        return PopupUtilsService.inPopout(theWindow);
+    }
+
+    inPopup(theWindow: Window): boolean {
+        return PopupUtilsService.inPopup(theWindow);
     }
 }

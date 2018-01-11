@@ -184,8 +184,8 @@ angular
                     $scope.twoFactorEmail = params.Email;
 
                     if (chrome.extension.getViews({ type: 'popup' }).length > 0 &&
-                        !platformUtilsService.inSidebar($window) && !platformUtilsService.inTab($window) &&
-                        !platformUtilsService.inPopout($window)) {
+                        !popupUtilsService.inSidebar($window) && !popupUtilsService.inTab($window) &&
+                        !popupUtilsService.inPopout($window)) {
                         SweetAlert.swal({
                             title: i18nService.twoStepLogin,
                             text: i18nService.popup2faCloseMessage,
