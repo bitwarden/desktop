@@ -2,7 +2,8 @@ import * as angular from 'angular';
 import * as template from './password-generator.component.html';
 
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+
+import PopupUtilsService from '../services/popupUtils.service';
 
 export class PasswordGeneratorController {
     $transition$: any;
@@ -14,8 +15,8 @@ export class PasswordGeneratorController {
     i18n: any;
 
     constructor(private $state: any, private passwordGenerationService: PasswordGenerationService,
-        private toastr: any, private platformUtilsService: PlatformUtilsService,
-        private $analytics: any, private i18nService: any, private $timeout: ng.ITimeoutService) {
+        private toastr: any, private $analytics: any, private i18nService: any,
+        private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         passwordGenerationService.getOptions().then((options: any) => {
@@ -43,7 +44,7 @@ export class PasswordGeneratorController {
         this.showSelect = this.addState || this.editState;
 
         this.$timeout(() => {
-            this.platformUtilsService.initListSectionItemListeners(document, angular);
+            PopupUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
     }
 

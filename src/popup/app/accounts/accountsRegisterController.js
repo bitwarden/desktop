@@ -3,10 +3,10 @@ angular
 
     .controller(
     'accountsRegisterController',
-    function ($scope, $state, cryptoService, toastr, $q, apiService, platformUtilsService, $analytics,
+    function ($scope, $state, cryptoService, toastr, $q, apiService, popupUtilsService, $analytics,
         i18nService, $timeout) {
         $timeout(function () {
-            platformUtilsService.initListSectionItemListeners(document, angular);
+            popupUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('email').focus();
         }, 500);
 

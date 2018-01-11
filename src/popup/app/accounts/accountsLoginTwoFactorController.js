@@ -3,9 +3,9 @@ angular
 
     .controller('accountsLoginTwoFactorController', function ($scope, $state, authService, toastr, platformUtilsService,
         $analytics, i18nService, $stateParams, $filter, constantsService, $timeout, $window, cryptoService, apiService,
-        environmentService, SweetAlert) {
+        environmentService, SweetAlert, popupUtilsService) {
         $timeout(function () {
-            platformUtilsService.initListSectionItemListeners(document, angular);
+            popupUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         $scope.i18n = i18nService;

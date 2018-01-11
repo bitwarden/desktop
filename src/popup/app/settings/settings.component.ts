@@ -1,4 +1,5 @@
 import * as angular from 'angular';
+import * as template from './settings.component.html';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
@@ -10,7 +11,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
-import * as template from './settings.component.html';
+import PopupUtilsService from '../services/popupUtils.service';
 
 const RateUrls = {
     [DeviceType.Chrome]:
@@ -41,7 +42,7 @@ export class SettingsController {
         this.i18n = i18nService;
 
         $timeout(() => {
-            platformUtilsService.initListSectionItemListeners(document, angular);
+            PopupUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         this.showOnLocked = !platformUtilsService.isFirefox() && !platformUtilsService.isEdge();

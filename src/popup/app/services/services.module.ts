@@ -1,6 +1,7 @@
 import * as angular from 'angular';
 import AuthService from './auth.service';
 import * as backgroundServices from './background.service';
+import PopupUtilsService from './popupUtils.service';
 import StateService from './state.service';
 import { ValidationService } from './validation.service';
 
@@ -13,6 +14,7 @@ export default angular
     .service('stateService', StateService)
     .service('validationService', ValidationService)
     .service('authService', AuthService)
+    .service('popupUtilsService', PopupUtilsService)
 
     .factory('messagingService', () => messagingService)
     .factory('storageService', backgroundServices.storageService)

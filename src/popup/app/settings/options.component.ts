@@ -8,6 +8,7 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 
+import PopupUtilsService from '../services/popupUtils.service';
 import StateService from '../services/state.service';
 
 export class OptionsController {
@@ -26,7 +27,7 @@ export class OptionsController {
         this.i18n = i18nService;
 
         $timeout(() => {
-            platformUtilsService.initListSectionItemListeners(document, angular);
+            PopupUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
         this.loadSettings();

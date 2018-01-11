@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultAddCipherController', function ($scope, $state, $stateParams, cipherService, folderService,
-        cryptoService, toastr, platformUtilsService, $analytics, i18nService, constantsService, $timeout) {
+        cryptoService, toastr, popupUtilsService, $analytics, i18nService, constantsService, $timeout) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.addFieldType = constantsService.fieldType.text.toString();
@@ -31,7 +31,7 @@ angular
         }
 
         $timeout(function () {
-            platformUtilsService.initListSectionItemListeners(document, angular);
+            popupUtilsService.initListSectionItemListeners(document, angular);
 
             if (!$stateParams.cipher && $scope.cipher.name && $scope.cipher.login && $scope.cipher.login.uri) {
                 document.getElementById('loginUsername').focus();
@@ -49,7 +49,7 @@ angular
             $scope.cipher.type = parseInt($scope.selectedType);
 
             $timeout(function () {
-                platformUtilsService.initListSectionItemListeners(document, angular);
+                popupUtilsService.initListSectionItemListeners(document, angular);
             }, 500);
         };
 
@@ -106,7 +106,7 @@ angular
             });
 
             $timeout(function () {
-                platformUtilsService.initListSectionItemListeners(document, angular);
+                popupUtilsService.initListSectionItemListeners(document, angular);
             }, 500);
         };
 

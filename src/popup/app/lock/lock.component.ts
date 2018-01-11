@@ -3,15 +3,15 @@ import * as template from './lock.component.html';
 
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { UserService } from 'jslib/abstractions/user.service';
+
+import PopupUtilsService from '../services/popupUtils.service';
 
 export class LockController {
     i18n: any;
     masterPassword: string;
 
     constructor(public $state: any, public i18nService: any, private $timeout: ng.ITimeoutService,
-        private platformUtilsService: PlatformUtilsService,
         public cryptoService: CryptoService, public toastr: any, public userService: UserService,
         public messagingService: MessagingService, public SweetAlert: any) {
         this.i18n = i18nService;
@@ -19,7 +19,7 @@ export class LockController {
 
     $onInit() {
         this.$timeout(() => {
-            this.platformUtilsService.initListSectionItemListeners(document, angular);
+            PopupUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('master-password').focus();
         }, 500);
     }

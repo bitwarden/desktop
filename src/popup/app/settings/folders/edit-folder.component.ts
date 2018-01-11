@@ -4,7 +4,8 @@ import * as template from './edit-folder.component.html';
 import { Folder } from 'jslib/models/domain/folder';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+
+import PopupUtilsService from '../../services/popupUtils.service';
 
 export class EditFolderController {
     $transition$: any;
@@ -14,12 +15,12 @@ export class EditFolderController {
     folder: Folder;
 
     constructor($scope: any, $stateParams: any, private folderService: FolderService, private toastr: any,
-        private $state: any, private SweetAlert: any, platformUtilsService: PlatformUtilsService,
-        private $analytics: any, private i18nService: any, $timeout: ng.ITimeoutService) {
+        private $state: any, private SweetAlert: any, private $analytics: any, private i18nService: any,
+        $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
-            platformUtilsService.initListSectionItemListeners(document, angular);
+            PopupUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();
         }, 500);
 

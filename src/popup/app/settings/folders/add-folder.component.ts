@@ -4,7 +4,8 @@ import * as template from './add-folder.component.html';
 import { Folder } from 'jslib/models/domain/folder';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+
+import PopupUtilsService from '../../services/popupUtils.service';
 
 export class AddFolderController {
     savePromise: any;
@@ -12,10 +13,9 @@ export class AddFolderController {
     i18n: any;
 
     constructor(private folderService: FolderService, private $state: any, private toastr: any,
-        platformUtilsService: PlatformUtilsService, private $analytics: any, private i18nService: any,
-        $timeout: ng.ITimeoutService) {
+        private $analytics: any, private i18nService: any, $timeout: ng.ITimeoutService) {
         $timeout(() => {
-            platformUtilsService.initListSectionItemListeners(document, angular);
+            PopupUtilsService.initListSectionItemListeners(document, angular);
             document.getElementById('name').focus();
         }, 500);
 
