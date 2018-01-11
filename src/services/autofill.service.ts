@@ -3,9 +3,9 @@ import {
     FieldType,
 } from 'jslib/enums';
 
-import AutofillField from '../models/domain/autofillField';
-import AutofillPageDetails from '../models/domain/autofillPageDetails';
-import AutofillScript from '../models/domain/autofillScript';
+import AutofillField from '../models/autofillField';
+import AutofillPageDetails from '../models/autofillPageDetails';
+import AutofillScript from '../models/autofillScript';
 
 import { UtilsService } from 'jslib/services';
 

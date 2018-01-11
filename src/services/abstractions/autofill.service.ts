@@ -1,4 +1,4 @@
-import AutofillPageDetails from '../../models/domain/autofillPageDetails';
+import AutofillPageDetails from '../../models/autofillPageDetails';
 
 export interface AutofillService {
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[];
