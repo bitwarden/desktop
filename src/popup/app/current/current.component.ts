@@ -1,9 +1,12 @@
+import * as template from './current.component.html';
+
 import { CipherType } from 'jslib/enums/cipherType';
 
+import { CipherService } from 'jslib/abstractions/cipher.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { UtilsService } from 'jslib/abstractions/utils.service';
 
-import * as template from './current.component.html';
+import { AutofillService } from '../../../services/abstractions/autofill.service';
 
 export class CurrentController {
     i18n: any;
@@ -12,18 +15,17 @@ export class CurrentController {
     cardCiphers: any = [];
     identityCiphers: any = [];
     loginCiphers: any = [];
-    url: any;
-    domain: any;
+    url: string;
+    domain: string;
     canAutofill: boolean = false;
     searchText: string = null;
     inSidebar: boolean = false;
     disableSearch: boolean = false;
 
-    constructor($scope: any, private cipherService: any,
-        private platformUtilsService: PlatformUtilsService,
+    constructor($scope: any, private cipherService: CipherService, private platformUtilsService: PlatformUtilsService,
         private utilsService: UtilsService, private toastr: any, private $window: ng.IWindowService,
-        private $state: any, private $timeout: ng.ITimeoutService, private autofillService: any,
-        private $analytics: any, private i18nService: any, private $filter: any) {
+        private $state: any, private $timeout: ng.ITimeoutService, private autofillService: AutofillService,
+        private $analytics: any, private i18nService: any, private $filter: ng.IFilterService) {
         this.i18n = i18nService;
         this.inSidebar = platformUtilsService.inSidebar($window);
         this.disableSearch = platformUtilsService.isEdge();

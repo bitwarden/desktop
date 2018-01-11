@@ -4,6 +4,7 @@ import * as template from './lock.component.html';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 export class LockController {
     i18n: any;
@@ -11,7 +12,7 @@ export class LockController {
 
     constructor(public $state: any, public i18nService: any, private $timeout: ng.ITimeoutService,
         private platformUtilsService: PlatformUtilsService,
-        public cryptoService: CryptoService, public toastr: any, public userService: any,
+        public cryptoService: CryptoService, public toastr: any, public userService: UserService,
         public messagingService: MessagingService, public SweetAlert: any) {
         this.i18n = i18nService;
     }

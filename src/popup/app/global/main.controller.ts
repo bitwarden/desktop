@@ -1,3 +1,5 @@
+import AuthService from '../services/auth.service';
+
 import { UtilsService } from 'jslib/abstractions/utils.service';
 
 export class MainController implements ng.IController {
@@ -5,7 +7,7 @@ export class MainController implements ng.IController {
     xsBody: boolean;
     animation: string;
 
-    constructor($scope: any, $transitions: any, $state: any, authService: any, toastr: any,
+    constructor($scope: any, $transitions: any, $state: any, authService: AuthService, toastr: any,
         i18nService: any, $analytics: any, utilsService: UtilsService, $window: ng.IWindowService) {
         this.animation = '';
         this.xsBody = $window.screen.availHeight < 600;
