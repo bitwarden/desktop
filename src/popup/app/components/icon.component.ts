@@ -1,5 +1,9 @@
 import * as template from './icon.component.html';
 
+import { CipherType } from 'jslib/enums/cipherType';
+
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
+
 export class IconController implements ng.IController {
     cipher: any;
     icon: string;
@@ -9,7 +13,7 @@ export class IconController implements ng.IController {
 
     private iconsUrl: string;
 
-    constructor(private stateService: any, private constantsService: any, private environmentService: any) {
+    constructor(private stateService: any, private environmentService: EnvironmentService) {
         this.imageEnabled = stateService.getState('faviconEnabled');
 
         this.iconsUrl = environmentService.iconsUrl;
@@ -24,17 +28,17 @@ export class IconController implements ng.IController {
 
     $onChanges() {
         switch (this.cipher.type) {
-            case this.constantsService.cipherType.login:
+            case CipherType.Login:
                 this.icon = 'fa-globe';
                 this.setLoginIcon();
                 break;
-            case this.constantsService.cipherType.secureNote:
+            case CipherType.SecureNote:
                 this.icon = 'fa-sticky-note-o';
                 break;
-            case this.constantsService.cipherType.card:
+            case CipherType.Card:
                 this.icon = 'fa-credit-card';
                 break;
-            case this.constantsService.cipherType.identity:
+            case CipherType.Identity:
                 this.icon = 'fa-id-card-o';
                 break;
             default:

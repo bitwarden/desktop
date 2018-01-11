@@ -5,9 +5,8 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 export class PopOutController implements ng.IController {
     i18n: any;
 
-    constructor(private $analytics: any, private $window: any,
-        private platformUtilsService: PlatformUtilsService,
-        private i18nService: any) {
+    constructor(private $analytics: any, private $window: ng.IWindowService,
+        private platformUtilsService: PlatformUtilsService, private i18nService: any) {
         this.i18n = i18nService;
     }
 
@@ -22,7 +21,7 @@ export class PopOutController implements ng.IController {
             }
         }
 
-        if (chrome.windows.create) {
+        if (chrome && chrome.windows && chrome.windows.create) {
             if (href.indexOf('?uilocation=') > -1) {
                 href = href.replace('uilocation=popup', 'uilocation=popout')
                     .replace('uilocation=tab', 'uilocation=popout')
@@ -43,7 +42,7 @@ export class PopOutController implements ng.IController {
             if (this.platformUtilsService.inPopup(this.$window)) {
                 this.$window.close();
             }
-        } else {
+        } else if (chrome && chrome.tabs && chrome.tabs.create) {
             href = href.replace('uilocation=popup', 'uilocation=tab')
                 .replace('uilocation=popout', 'uilocation=tab')
                 .replace('uilocation=sidebar', 'uilocation=tab');
