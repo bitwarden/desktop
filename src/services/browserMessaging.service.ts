@@ -8,8 +8,11 @@ export default class BrowserMessagingService implements MessagingService {
     }
 
     send(subscriber: string, arg: any = {}) {
-        // if safari, else
-        const message = Object.assign({}, { command: subscriber }, arg);
-        chrome.runtime.sendMessage(message);
+        if (this.platformUtilsService.isSafari()) {
+            // send message
+        } else {
+            const message = Object.assign({}, { command: subscriber }, arg);
+            chrome.runtime.sendMessage(message);
+        }
     }
 }
