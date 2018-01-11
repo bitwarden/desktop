@@ -1,11 +1,14 @@
 import * as angular from 'angular';
+import * as template from './options.component.html';
+
+import { ConstantsService } from 'jslib/services/constants.service';
 
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { TotpService } from 'jslib/abstractions/totp.service';
 
 import StateService from '../services/state.service';
-import * as template from './options.component.html';
 
 export class OptionsController {
     disableFavicon = false;
@@ -16,8 +19,8 @@ export class OptionsController {
     disableGa = false;
     i18n: any;
 
-    constructor(private i18nService: any, private $analytics: any, private constantsService: any,
-        private platformUtilsService: PlatformUtilsService, private totpService: any,
+    constructor(private i18nService: any, private $analytics: any, private constantsService: ConstantsService,
+        private platformUtilsService: PlatformUtilsService, private totpService: TotpService,
         private stateService: StateService, private storageService: StorageService,
         public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;

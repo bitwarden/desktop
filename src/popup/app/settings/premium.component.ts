@@ -1,12 +1,15 @@
 import * as template from './premium.component.html';
 
+import { ApiService } from 'jslib/abstractions/api.service';
+import { TokenService } from 'jslib/abstractions/token.service';
+
 export class PremiumController {
     isPremium: boolean;
     i18n: any;
     price = '$10';
 
-    constructor(private i18nService: any, private tokenService: any, private apiService: any, private toastr: any,
-        private SweetAlert: any, private $analytics: any, private $timeout: ng.ITimeoutService) {
+    constructor(private i18nService: any, private tokenService: TokenService, private apiService: ApiService,
+        private toastr: any, private SweetAlert: any, private $analytics: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
         this.isPremium = tokenService.getPremium();
     }

@@ -2,12 +2,14 @@ import * as template from './folders.component.html';
 
 import { Folder } from 'jslib/models/domain/folder';
 
+import { FolderService } from 'jslib/abstractions/folder.service';
+
 export class FoldersController {
     folders: Folder[] = [];
     i18n: any;
     loaded = false;
 
-    constructor(private folderService: any, private $state: any, i18nService: any) {
+    constructor(private folderService: FolderService, private $state: any, i18nService: any) {
         this.i18n = i18nService;
         this.load();
     }

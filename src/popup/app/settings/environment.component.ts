@@ -1,6 +1,7 @@
 import * as angular from 'angular';
 import * as template from './environment.component.html';
 
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class EnvironmentController {
@@ -11,9 +12,8 @@ export class EnvironmentController {
     baseUrl: string;
     i18n: any;
 
-    constructor(private i18nService: any, private $analytics: any,
-        platformUtilsService: PlatformUtilsService,
-        private environmentService: any, private toastr: any, private $timeout: ng.ITimeoutService) {
+    constructor(private i18nService: any, private $analytics: any, private platformUtilsService: PlatformUtilsService,
+        private environmentService: EnvironmentService, private toastr: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {

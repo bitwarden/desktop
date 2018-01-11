@@ -5,6 +5,7 @@ import { DeviceType } from 'jslib/enums/deviceType';
 import { ConstantsService } from 'jslib/services/constants.service';
 
 import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -34,9 +35,9 @@ export class SettingsController {
     constructor(private $state: any, private SweetAlert: any,
         private platformUtilsService: PlatformUtilsService, private $analytics: any,
         private i18nService: any, private constantsService: ConstantsService,
-        private cryptoService: CryptoService, private lockService: any,
-        private storageService: StorageService,
-        public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
+        private cryptoService: CryptoService, private lockService: LockService,
+        private storageService: StorageService, public messagingService: MessagingService,
+        private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {

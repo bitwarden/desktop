@@ -1,11 +1,14 @@
 import * as template from './sync.component.html';
 
+import { SyncService } from 'jslib/abstractions/sync.service';
+
 export class SyncController {
     i18n: any;
     lastSync = '--';
     loading = false;
 
-    constructor(private syncService: any, private toastr: any, private $analytics: any, private i18nService: any) {
+    constructor(private syncService: SyncService, private toastr: any, private $analytics: any,
+        private i18nService: any) {
         this.i18n = i18nService;
         this.setLastSync();
     }

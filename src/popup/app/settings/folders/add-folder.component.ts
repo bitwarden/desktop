@@ -3,6 +3,7 @@ import * as template from './add-folder.component.html';
 
 import { Folder } from 'jslib/models/domain/folder';
 
+import { FolderService } from 'jslib/abstractions/folder.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class AddFolderController {
@@ -10,7 +11,7 @@ export class AddFolderController {
     folder: {};
     i18n: any;
 
-    constructor(private folderService: any, private $state: any, private toastr: any,
+    constructor(private folderService: FolderService, private $state: any, private toastr: any,
         platformUtilsService: PlatformUtilsService, private $analytics: any, private i18nService: any,
         $timeout: ng.ITimeoutService) {
         $timeout(() => {
@@ -29,10 +30,9 @@ export class AddFolderController {
             return;
         }
 
-        this.savePromise = this.folderService.encrypt(model).then((folderModel: any) => {
-            const folder = new Folder(folderModel, true);
+        this.savePromise = this.folderService.encrypt(model).then((folder: Folder) => {
             return this.folderService.saveWithServer(folder);
-        }).then((folder: any) => {
+        }).then(() => {
             this.$analytics.eventTrack('Added Folder');
             this.toastr.success(this.i18nService.addedFolder);
             this.$state.go('^.list', { animation: 'out-slide-down' });
