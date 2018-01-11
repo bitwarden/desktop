@@ -30,7 +30,41 @@
 			</dict>
 		</array>
 		<key>Database Quota</key>
-		<integer>0</integer>
+		<integer>104857600</integer>
+		<key>Global Page</key>
+		<string>background.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>popup/index.html</string>
+				<key>Height</key>
+				<integer>667</integer>
+				<key>Identifier</key>
+				<string>bitwarden-popup</string>
+				<key>Width</key>
+				<integer>375</integer>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>bitwarden-toolbar</string>
+				<key>Image</key>
+				<string>images/icon16.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>bitwarden</string>
+				<key>Palette Label</key>
+				<string>bitwarden-toolbar</string>
+				<key>Popover</key>
+				<string>bitwarden-popup</string>
+				<key>Tool Tip</key>
+				<string>bitwarden</string>
+			</dict>
+		</array>
 	</dict>
 	<key>Description</key>
 	<string>bitwarden - Password Manager</string>
