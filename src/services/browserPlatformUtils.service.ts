@@ -68,6 +68,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             this.deviceCache = DeviceType.Edge;
         } else if (navigator.userAgent.indexOf(' Vivaldi/') !== -1) {
             this.deviceCache = DeviceType.Vivaldi;
+        } else if (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) {
+            this.deviceCache = DeviceType.Safari;
         } else if ((window as any).chrome) {
             this.deviceCache = DeviceType.Chrome;
         }

@@ -81,5 +81,25 @@ describe('Browser Utils Service', () => {
             const browserPlatformUtilsService = new BrowserPlatformUtilsService();
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Edge);
         });
+
+        it('should detect safari', () => {
+            Object.defineProperty(navigator, 'userAgent', {
+                configurable: true,
+                value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8'
+            });
+
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Safari);
+        });
+
+        it('should detect vivaldi', () => {
+            Object.defineProperty(navigator, 'userAgent', {
+                configurable: true,
+                value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.97 Safari/537.36 Vivaldi/1.94.1008.40'
+            });
+
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Vivaldi);
+        });
     });
 });
