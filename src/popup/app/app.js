@@ -13,12 +13,14 @@ require('angulartics');
 require('angulartics-google-analytics');
 require('ng-infinite-scroll');
 
-require('../../scripts/analytics.js');
 require('../../scripts/duo.js');
 require('../../scripts/u2f.js');
 
 require('../less/libs.less');
 require('../less/popup.less');
+
+import Analytics from '../../scripts/analytics';
+new Analytics(window).init(); // await?
 
 import DirectivesModule from './directives/directives.module';
 import ComponentsModule from './components/components.module';

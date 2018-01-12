@@ -41,6 +41,8 @@ import {
     UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 
+import Analytics from '../scripts/analytics';
+
 import BrowserApi from '../browser/browserApi';
 
 import CommandsBackground from './commands.background';
@@ -157,6 +159,7 @@ export default class MainBackground {
     }
 
     async bootstrap() {
+        await new Analytics(window).init();
         this.containerService.attachToWindow(window);
 
         if (!this.isSafari) {

@@ -62,4 +62,14 @@ export default class BrowserApi {
             return null;
         }
     }
+
+    static getApplicationVersion(): any {
+        if (BrowserApi.isChromeApi) {
+            return chrome.runtime.getManifest().version;
+        } else if (BrowserApi.isSafariApi) {
+            return 0; // TODO
+        } else {
+            return null;
+        }
+    }
 }
