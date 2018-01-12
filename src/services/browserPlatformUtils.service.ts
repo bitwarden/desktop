@@ -119,6 +119,11 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     isViewOpen(): boolean {
+        if (this.isSafari()) {
+            // TODO
+            return true;
+        }
+
         const popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
         if (popupOpen) {
             return true;
