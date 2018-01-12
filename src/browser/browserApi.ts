@@ -101,11 +101,11 @@ class BrowserApi {
                 return Promise.reject('Window not found.');
             }
 
-            if (safari.application.activeBrowserWindow.tabs.length < tab.index + 1) {
+            if (win.tabs.length < tab.index + 1) {
                 return Promise.reject('Tab not found.');
             }
 
-            const t = safari.application.activeBrowserWindow.tabs[tab.index];
+            const t = win.tabs[tab.index];
             t.page.dispatchMessage('bitwarden', obj);
             return Promise.resolve();
         }

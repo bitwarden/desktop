@@ -42,6 +42,15 @@ export default class RuntimeBackground {
                 }
             }, true);
 
+            this.runtime.addEventListener('message', async (msgEvent: any) => {
+                await this.processMessage(msgEvent.message, {
+                    tab: {
+                        id: null, // TODO
+                    },
+                    frameId: null,
+                }, () => { /* No responses in Safari */ });
+            }, false);
+
             return;
         }
 
@@ -59,82 +68,86 @@ export default class RuntimeBackground {
         }
 
         this.runtime.onMessage.addListener(async (msg: any, sender: any, sendResponse: any) => {
-            switch (msg.command) {
-                case 'loggedIn':
-                case 'unlocked':
-                case 'locked':
-                    await this.main.setIcon();
-                    await this.main.refreshBadgeAndMenu();
-                    break;
-                case 'logout':
-                    await this.main.logout(msg.expired);
-                    break;
-                case 'syncCompleted':
-                    if (msg.successfully) {
-                        setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
-                    }
-                    break;
-                case 'bgOpenNotificationBar':
-                    await BrowserApi.tabSendMessageData(sender.tab, 'openNotificationBar', msg.data);
-                    break;
-                case 'bgCloseNotificationBar':
-                    await BrowserApi.tabSendMessageData(sender.tab, 'closeNotificationBar');
-                    break;
-                case 'bgAdjustNotificationBar':
-                    await BrowserApi.tabSendMessageData(sender.tab, 'adjustNotificationBar', msg.data);
-                    break;
-                case 'bgCollectPageDetails':
-                    this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
-                    break;
-                case 'bgAddLogin':
-                    await this.addLogin(msg.login, sender.tab);
-                    break;
-                case 'bgAddClose':
-                    this.removeAddLogin(sender.tab);
-                    break;
-                case 'bgAddSave':
-                    await this.saveAddLogin(sender.tab);
-                    break;
-                case 'bgNeverSave':
-                    await this.saveNever(sender.tab);
-                    break;
-                case 'bgUpdateContextMenu':
-                    await this.main.refreshBadgeAndMenu();
-                    break;
-                case 'collectPageDetailsResponse':
-                    switch (msg.sender) {
-                        case 'notificationBar':
-                            const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
-                            await BrowserApi.tabSendMessageData(msg.tab, 'notificationBarPageDetails', {
-                                details: msg.details,
-                                forms: forms,
-                            });
-                            break;
-                        case 'autofiller':
-                        case 'autofill_cmd':
-                            await this.autofillService.doAutoFillForLastUsedLogin([{
-                                frameId: sender.frameId,
-                                tab: msg.tab,
-                                details: msg.details,
-                            }], msg.sender === 'autofill_cmd');
-                            break;
-                        case 'contextMenu':
-                            clearTimeout(this.autofillTimeout);
-                            this.pageDetailsToAutoFill.push({
-                                frameId: sender.frameId,
-                                tab: msg.tab,
-                                details: msg.details,
-                            });
-                            this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
-            }
+            await this.processMessage(msg, sender, sendResponse);
         });
+    }
+
+    private async processMessage(msg: any, sender: any, sendResponse: any) {
+        switch (msg.command) {
+            case 'loggedIn':
+            case 'unlocked':
+            case 'locked':
+                await this.main.setIcon();
+                await this.main.refreshBadgeAndMenu();
+                break;
+            case 'logout':
+                await this.main.logout(msg.expired);
+                break;
+            case 'syncCompleted':
+                if (msg.successfully) {
+                    setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
+                }
+                break;
+            case 'bgOpenNotificationBar':
+                await BrowserApi.tabSendMessageData(sender.tab, 'openNotificationBar', msg.data);
+                break;
+            case 'bgCloseNotificationBar':
+                await BrowserApi.tabSendMessageData(sender.tab, 'closeNotificationBar');
+                break;
+            case 'bgAdjustNotificationBar':
+                await BrowserApi.tabSendMessageData(sender.tab, 'adjustNotificationBar', msg.data);
+                break;
+            case 'bgCollectPageDetails':
+                this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
+                break;
+            case 'bgAddLogin':
+                await this.addLogin(msg.login, sender.tab);
+                break;
+            case 'bgAddClose':
+                this.removeAddLogin(sender.tab);
+                break;
+            case 'bgAddSave':
+                await this.saveAddLogin(sender.tab);
+                break;
+            case 'bgNeverSave':
+                await this.saveNever(sender.tab);
+                break;
+            case 'bgUpdateContextMenu':
+                await this.main.refreshBadgeAndMenu();
+                break;
+            case 'collectPageDetailsResponse':
+                switch (msg.sender) {
+                    case 'notificationBar':
+                        const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
+                        await BrowserApi.tabSendMessageData(msg.tab, 'notificationBarPageDetails', {
+                            details: msg.details,
+                            forms: forms,
+                        });
+                        break;
+                    case 'autofiller':
+                    case 'autofill_cmd':
+                        await this.autofillService.doAutoFillForLastUsedLogin([{
+                            frameId: sender.frameId,
+                            tab: msg.tab,
+                            details: msg.details,
+                        }], msg.sender === 'autofill_cmd');
+                        break;
+                    case 'contextMenu':
+                        clearTimeout(this.autofillTimeout);
+                        this.pageDetailsToAutoFill.push({
+                            frameId: sender.frameId,
+                            tab: msg.tab,
+                            details: msg.details,
+                        });
+                        this.autofillTimeout = setTimeout(async () => await this.autofillPage(), 300);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     private async autofillPage() {

@@ -995,7 +995,7 @@
     */
 
     if ((typeof safari !== 'undefined')) {
-        safari.self.addEventListener('bitwarden', function (msgEvent) {
+        safari.self.addEventListener('message', function (msgEvent) {
             var msg = msgEvent.message;
             if (msg.command === 'collectPageDetails') {
                 var pageDetails = collect(document);
