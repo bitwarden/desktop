@@ -97,11 +97,10 @@ class BrowserApi {
             }
 
             const t = win.tabs[tab.index];
-            if (!t.page) {
-                return Promise.reject('No page on this tab.');
+            if (t.page) {
+                t.page.dispatchMessage('bitwarden', obj);
             }
 
-            t.page.dispatchMessage('bitwarden', obj);
             return Promise.resolve();
         }
     }
