@@ -66,6 +66,20 @@
 			</dict>
 		</array>
 	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>Start</key>
+			<array>
+				<string>content/autofill.js</string>
+			</array>
+		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>content/autofill.css</string>
+		</array>
+	</dict>
 	<key>Description</key>
 	<string>bitwarden - Password Manager</string>
 	<key>DeveloperIdentifier</key>
@@ -79,7 +93,7 @@
 			<key>Include Secure Pages</key>
 			<true/>
 			<key>Level</key>
-			<string>None</string>
+			<string>All</string>
 		</dict>
 	</dict>
 	<key>Website</key>
