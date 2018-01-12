@@ -167,7 +167,14 @@ class BrowserApi {
                 callback(msg, sender, response);
             });
         } else if (BrowserApi.isSafariApi) {
-            // TODO
+            safari.application.addEventListener('message', async (msgEvent: any) => {
+                callback(msgEvent.message, {
+                    tab: {
+                        id: null, // TODO
+                    },
+                    frameId: null,
+                }, () => { /* No responses in Safari */ });
+            }, false);
         }
     }
 }

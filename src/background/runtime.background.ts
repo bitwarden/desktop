@@ -42,15 +42,6 @@ export default class RuntimeBackground {
                 }
             }, true);
 
-            this.runtime.addEventListener('message', async (msgEvent: any) => {
-                await this.processMessage(msgEvent.message, {
-                    tab: {
-                        id: null, // TODO
-                    },
-                    frameId: null,
-                }, () => { /* No responses in Safari */ });
-            }, false);
-
             return;
         }
 
@@ -67,7 +58,7 @@ export default class RuntimeBackground {
             });
         }
 
-        this.runtime.onMessage.addListener(async (msg: any, sender: any, sendResponse: any) => {
+        BrowserApi.messageListener(async (msg: any, sender: any, sendResponse: any) => {
             await this.processMessage(msg, sender, sendResponse);
         });
     }
