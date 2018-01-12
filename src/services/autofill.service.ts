@@ -7,6 +7,8 @@ import AutofillField from '../models/autofillField';
 import AutofillPageDetails from '../models/autofillPageDetails';
 import AutofillScript from '../models/autofillScript';
 
+import { BrowserApi } from '../browser/browserApi';
+
 import { UtilsService } from 'jslib/services';
 
 import { AutofillService as AutofillServiceInterface } from './abstractions/autofill.service';
@@ -170,9 +172,8 @@ export default class AutofillService implements AutofillServiceInterface {
                 this.cipherService.updateLastUsedDate(options.cipher.id);
             }
 
-            chrome.tabs.sendMessage(tab.id, {
+            BrowserApi.tabSendMessage(tab, {
                 command: 'fillForm',
-                // tslint:disable-next-line
                 fillScript: fillScript,
             }, { frameId: pd.frameId });
 
@@ -238,16 +239,13 @@ export default class AutofillService implements AutofillServiceInterface {
 
     // Helpers
 
-    private getActiveTab(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            chrome.tabs.query({ active: true, currentWindow: true }, (tabs: any[]) => {
-                if (tabs.length === 0) {
-                    reject('No tab found.');
-                } else {
-                    resolve(tabs[0]);
-                }
-            });
-        });
+    private async getActiveTab(): Promise<any> {
+        const tab = await BrowserApi.getTabFromCurrentWindow();
+        if (!tab) {
+            throw new Error('No tab found.');
+        }
+
+        return tab;
     }
 
     private generateFillScript(pageDetails: AutofillPageDetails, options: any): AutofillScript {

@@ -1,4 +1,4 @@
-﻿!(function () {
+!(function () {
     /*
     1Password Extension
 
@@ -993,6 +993,26 @@
     /*
     End 1Password Extension
     */
+
+    if ((typeof safari !== 'undefined')) {
+        safari.self.addEventListener('bitwarden', function (msgEvent) {
+            var msg = msgEvent.message;
+            if (msg.command === 'collectPageDetails') {
+                var pageDetails = collect(document);
+                var pageDetailsObj = JSON.parse(pageDetails);
+                safari.self.tab.dispatchMessage('bitwarden', {
+                    command: 'collectPageDetailsResponse',
+                    tab: msg.tab,
+                    details: pageDetailsObj,
+                    sender: msg.sender
+                });
+            }
+            else if (msg.command === 'fillForm') {
+                fill(document, msg.fillScript);
+            }
+        }, false);
+        return;
+    }
 
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         if (msg.command === 'collectPageDetails') {

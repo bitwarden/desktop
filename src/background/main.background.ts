@@ -248,15 +248,11 @@ export default class MainBackground {
             options.frameId = frameId;
         }
 
-        chrome.tabs.sendMessage(tab.id, {
+        BrowserApi.tabSendMessage(tab, {
             command: 'collectPageDetails',
             tab: tab,
             sender: sender,
-        }, options, () => {
-            if (chrome.runtime.lastError) {
-                return;
-            }
-        });
+        }, options);
     }
 
     async checkLoginsToAdd(tab: any = null): Promise<any> {

@@ -91,7 +91,7 @@ export default class ContextMenusBackground {
             return;
         }
 
-        chrome.tabs.sendMessage(tab.id, {
+        BrowserApi.tabSendMessage(tab, {
             command: 'collectPageDetails',
             tab: tab,
             sender: 'contextMenu',

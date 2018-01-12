@@ -81,19 +81,33 @@ class BrowserApi {
         return BrowserApi.tabSendMessage(tab, obj);
     }
 
-    static tabSendMessage(tab: any, obj: any): Promise<any> {
+    static tabSendMessage(tab: any, obj: any, options: any = null): Promise<any> {
         if (!tab || !tab.id) {
             return;
         }
 
         if (BrowserApi.isChromeApi) {
             return new Promise((resolve) => {
-                chrome.tabs.sendMessage(tab.id, obj, () => {
+                chrome.tabs.sendMessage(tab.id, obj, options, () => {
+                    if (chrome.runtime.lastError) {
+                        // Some error happened
+                    }
                     resolve();
                 });
             });
         } else if (BrowserApi.isSafariApi) {
-            return Promise.resolve(); // TODO
+            const win = safari.application.activeBrowserWindow;
+            if (safari.application.browserWindows.indexOf(win) !== tab.windowId) {
+                return Promise.reject('Window not found.');
+            }
+
+            if (safari.application.activeBrowserWindow.tabs.length < tab.index + 1) {
+                return Promise.reject('Tab not found.');
+            }
+
+            const t = safari.application.activeBrowserWindow.tabs[tab.index];
+            t.page.dispatchMessage('bitwarden', obj);
+            return Promise.resolve();
         }
     }
 
