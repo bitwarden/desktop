@@ -73,6 +73,8 @@
     "@types/jquery": "^3.2.16",
     "@types/node-forge": "0.6.10",
     "@types/papaparse": "4.1.31",
+    "@types/safari-extension": "^0.0.27",
+    "@types/safari-extension-content": "^0.0.14",
     "@types/tldjs": "1.7.1",
     "@types/webcrypto": "^0.0.28",
     "@uirouter/angularjs": "^1.0.10",
