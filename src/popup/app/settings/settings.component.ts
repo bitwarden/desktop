@@ -1,6 +1,8 @@
 import * as angular from 'angular';
 import * as template from './settings.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { DeviceType } from 'jslib/enums/deviceType';
 
 import { ConstantsService } from 'jslib/services/constants.service';
@@ -116,7 +118,7 @@ export class SettingsController {
         }, (confirmed: boolean) => {
             this.$analytics.eventTrack('Clicked Change Password');
             if (confirmed) {
-                chrome.tabs.create({ url: 'https://help.bitwarden.com/article/change-your-master-password/' });
+                BrowserApi.createNewTab('https://help.bitwarden.com/article/change-your-master-password/');
             }
         });
     }
@@ -131,7 +133,7 @@ export class SettingsController {
         }, (confirmed: boolean) => {
             this.$analytics.eventTrack('Clicked Change Email');
             if (confirmed) {
-                chrome.tabs.create({ url: 'https://help.bitwarden.com/article/change-your-email/' });
+                BrowserApi.createNewTab('https://help.bitwarden.com/article/change-your-email/');
             }
         });
     }
@@ -146,16 +148,14 @@ export class SettingsController {
         }, (confirmed: boolean) => {
             this.$analytics.eventTrack('Clicked Two-step Login');
             if (confirmed) {
-                chrome.tabs.create({ url: 'https://help.bitwarden.com/article/setup-two-step-login/' });
+                BrowserApi.createNewTab('https://help.bitwarden.com/article/setup-two-step-login/');
             }
         });
     }
 
     rate() {
         this.$analytics.eventTrack('Rate Extension');
-        chrome.tabs.create({
-            url: RateUrls[this.platformUtilsService.getDevice()],
-        });
+        BrowserApi.createNewTab(RateUrls[this.platformUtilsService.getDevice()]);
     }
 }
 

@@ -1,5 +1,7 @@
 import * as template from './icon.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { CipherType } from 'jslib/enums/cipherType';
 
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
@@ -68,7 +70,7 @@ export class IconController implements ng.IController {
                 try {
                     const url = new URL(hostnameUri);
                     this.image = this.iconsUrl + '/' + url.hostname + '/icon.png';
-                    this.fallbackImage = chrome.extension.getURL('images/fa-globe.png');
+                    this.fallbackImage = BrowserApi.getAssetUrl('images/fa-globe.png');
                 } catch (e) { }
             }
         } else {

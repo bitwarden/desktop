@@ -1,5 +1,7 @@
 import * as template from './action-buttons.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { ConstantsService } from 'jslib/services/constants.service';
 
 import PopupUtilsService from '../services/popupUtils.service';
@@ -23,7 +25,7 @@ export class ActionButtonsController implements ng.IController {
         this.$timeout(() => {
             if (self.cipher.login.uri.startsWith('http://') || self.cipher.login.uri.startsWith('https://')) {
                 self.$analytics.eventTrack('Launched Website From Listing');
-                chrome.tabs.create({ url: self.cipher.login.uri });
+                BrowserApi.createNewTab(self.cipher.login.uri);
                 if (PopupUtilsService.inPopup(self.$window)) {
                     self.$window.close();
                 }

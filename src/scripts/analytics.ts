@@ -1,4 +1,4 @@
-import BrowserApi from '../browser/browserApi';
+import { BrowserApi } from '../browser/browserApi';
 
 import { AppIdService } from 'jslib/abstractions/appId.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';

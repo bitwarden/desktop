@@ -52,7 +52,7 @@ angular
 
         $scope.recover = function () {
             $analytics.eventTrack('Selected Recover');
-            chrome.tabs.create({ url: 'https://help.bitwarden.com/article/lost-two-step-device/' });
+            BrowserApi.createNewTab('https://help.bitwarden.com/article/lost-two-step-device/');
         };
 
         function add(type) {

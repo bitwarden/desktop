@@ -23,7 +23,7 @@ export class PopOutController implements ng.IController {
             }
         }
 
-        if (chrome && chrome.windows && chrome.windows.create) {
+        if ((typeof chrome !== 'undefined') && chrome.windows && chrome.windows.create) {
             if (href.indexOf('?uilocation=') > -1) {
                 href = href.replace('uilocation=popup', 'uilocation=popout')
                     .replace('uilocation=tab', 'uilocation=popout')
@@ -44,13 +44,15 @@ export class PopOutController implements ng.IController {
             if (PopupUtilsService.inPopup(this.$window)) {
                 this.$window.close();
             }
-        } else if (chrome && chrome.tabs && chrome.tabs.create) {
+        } else if ((typeof chrome !== 'undefined') && chrome.tabs && chrome.tabs.create) {
             href = href.replace('uilocation=popup', 'uilocation=tab')
                 .replace('uilocation=popout', 'uilocation=tab')
                 .replace('uilocation=sidebar', 'uilocation=tab');
             chrome.tabs.create({
                 url: href,
             });
+        } else if ((typeof safari !== 'undefined')) {
+            // TODO?
         }
     }
 }

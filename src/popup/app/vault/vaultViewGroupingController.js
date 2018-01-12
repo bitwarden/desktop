@@ -216,7 +216,7 @@ angular
         $scope.launchWebsite = function (cipher) {
             if (cipher.login && cipher.login.uri) {
                 $analytics.eventTrack('Launched Website');
-                chrome.tabs.create({ url: cipher.login.uri });
+                BrowserApi.createNewTab(cipher.login.uri);
             }
         };
 

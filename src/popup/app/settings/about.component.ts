@@ -1,6 +1,6 @@
 import * as template from './about.component.html';
 
-import BrowserApi from '../../../browser/browserApi';
+import { BrowserApi } from '../../../browser/browserApi';
 
 export class AboutController {
     version: string;

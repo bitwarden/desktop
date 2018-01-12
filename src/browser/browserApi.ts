@@ -1,4 +1,4 @@
-export default class BrowserApi {
+class BrowserApi {
     static isSafariApi: boolean = (typeof safari !== 'undefined');
     static isChromeApi: boolean = (typeof chrome !== 'undefined');
 
@@ -72,4 +72,37 @@ export default class BrowserApi {
             return null;
         }
     }
+
+    static isPopupOpen(): boolean {
+        if (BrowserApi.isChromeApi) {
+            return chrome.extension.getViews({ type: 'popup' }).length > 0;
+        } else if (BrowserApi.isSafariApi) {
+            return true; // TODO
+        } else {
+            return null;
+        }
+    }
+
+    static createNewTab(url: string): void {
+        if (BrowserApi.isChromeApi) {
+            chrome.tabs.create({ url: url });
+        } else if (BrowserApi.isSafariApi) {
+            return; // TODO
+        } else {
+            return;
+        }
+    }
+
+    static getAssetUrl(path: string): string {
+        if (BrowserApi.isChromeApi) {
+            return chrome.extension.getURL(path);
+        } else if (BrowserApi.isSafariApi) {
+            return './' + path; // TODO?
+        } else {
+            return null;
+        }
+    }
 }
+
+export { BrowserApi };
+(window as any).BrowserApi = BrowserApi;

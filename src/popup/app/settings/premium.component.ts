@@ -1,5 +1,7 @@
 import * as template from './premium.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { ApiService } from 'jslib/abstractions/api.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 
@@ -35,7 +37,7 @@ export class PremiumController {
         }, (confirmed: boolean) => {
             this.$analytics.eventTrack('Clicked Purchase Premium');
             if (confirmed) {
-                chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/?premium=purchase' });
+                BrowserApi.createNewTab('https://vault.bitwarden.com/#/?premium=purchase');
             }
         });
     }
@@ -50,7 +52,7 @@ export class PremiumController {
         }, (confirmed: boolean) => {
             this.$analytics.eventTrack('Clicked Manage Membership');
             if (confirmed) {
-                chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/?premium=manage' });
+                BrowserApi.createNewTab('https://vault.bitwarden.com/#/?premium=manage');
             }
         });
     }

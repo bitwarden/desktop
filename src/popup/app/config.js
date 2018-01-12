@@ -15,7 +15,7 @@ angular
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');
 
-            if ((typeof chrome !== 'undefined') && !chrome.extension.getBackgroundPage()) {
+            if (!BrowserApi.getBackgroundPage()) {
                 $state.go('privateMode');
                 return;
             }

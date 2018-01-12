@@ -27,7 +27,7 @@ angular
                     cancelButtonText: i18nService.cancel
                 }, function (confirmed) {
                     if (confirmed) {
-                        chrome.tabs.create({ url: 'https://vault.bitwarden.com/#/?premium=purchase' });
+                        BrowserApi.createNewTab('https://vault.bitwarden.com/#/?premium=purchase');
                     }
                 });
                 return;
@@ -44,7 +44,7 @@ angular
                             cancelButtonText: i18nService.cancel
                         }, function (confirmed) {
                             if (confirmed) {
-                                chrome.tabs.create({ url: 'https://help.bitwarden.com/article/update-encryption-key/' });
+                                BrowserApi.createNewTab('https://help.bitwarden.com/article/update-encryption-key/');
                             }
                         });
                     }

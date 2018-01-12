@@ -43,7 +43,7 @@ import {
 
 import Analytics from '../scripts/analytics';
 
-import BrowserApi from '../browser/browserApi';
+import { BrowserApi } from '../browser/browserApi';
 
 import CommandsBackground from './commands.background';
 import ContextMenusBackground from './contextMenus.background';

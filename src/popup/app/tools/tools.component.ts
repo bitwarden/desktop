@@ -1,5 +1,7 @@
 import * as template from './tools.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
@@ -22,20 +24,18 @@ export class ToolsController {
 
     launchWebVault(createOrg: any) {
         this.$analytics.eventTrack('Launch Web Vault' + (createOrg ? ' For Share' : ''));
-        chrome.tabs.create({ url: this.webVaultBaseUrl + '/#/' + (createOrg ? '?org=free' : '') });
+        BrowserApi.createNewTab(this.webVaultBaseUrl + '/#/' + (createOrg ? '?org=free' : ''));
     }
 
     launchAndroid() {
         this.$analytics.eventTrack('Launch Android');
-        chrome.tabs.create({ url: 'https://play.google.com/store/apps/details?id=com.x8bit.bitwarden' });
+        BrowserApi.createNewTab('https://play.google.com/store/apps/details?id=com.x8bit.bitwarden');
     }
 
     launchiOS() {
         this.$analytics.eventTrack('Launch iOS');
-        chrome.tabs.create({
-            url: 'https://itunes.apple.com/us/app/bitwarden-free-password-manager/' +
-            'id1137397744?mt=8',
-        });
+        BrowserApi.createNewTab('https://itunes.apple.com/us/app/bitwarden-free-password-manager/' +
+            'id1137397744?mt=8');
     }
 
     launchImport() {
@@ -48,7 +48,7 @@ export class ToolsController {
         }, (confirmed: boolean) => {
             if (confirmed) {
                 this.$analytics.eventTrack('Launch Web Vault For Import');
-                chrome.tabs.create({ url: 'https://help.bitwarden.com/article/import-data/' });
+                BrowserApi.createNewTab('https://help.bitwarden.com/article/import-data/');
             }
         });
     }

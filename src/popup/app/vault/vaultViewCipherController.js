@@ -91,7 +91,7 @@ angular
         $scope.launchWebsite = function (cipher) {
             if (cipher.showLaunch) {
                 $analytics.eventTrack('Launched Website');
-                chrome.tabs.create({ url: cipher.login.uri });
+                BrowserApi.createNewTab(cipher.login.uri);
             }
         };
 
@@ -133,7 +133,7 @@ angular
                     cancelButtonText: i18nService.cancel
                 }, function (confirmed) {
                     if (confirmed) {
-                        chrome.tabs.create({ url: 'https://bitwarden.com' });
+                        BrowserApi.createNewTab('https://bitwarden.com');
                     }
                 });
                 return;

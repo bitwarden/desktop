@@ -7,7 +7,7 @@ import {
     PlatformUtilsService,
 } from 'jslib/abstractions';
 
-import BrowserApi from '../browser/browserApi';
+import { BrowserApi } from '../browser/browserApi';
 
 import MainBackground from './main.background';
 

@@ -1,5 +1,7 @@
 import * as template from './credits.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 export class CreditsController {
     i18n: any;
 
@@ -9,10 +11,7 @@ export class CreditsController {
 
     learnMore() {
         this.$analytics.eventTrack('Contribute Learn More');
-
-        chrome.tabs.create({
-            url: 'https://github.com/bitwarden/browser/blob/master/CONTRIBUTING.md',
-        });
+        BrowserApi.createNewTab('https://github.com/bitwarden/browser/blob/master/CONTRIBUTING.md');
     }
 }
 
