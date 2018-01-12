@@ -18,6 +18,7 @@
     "node_modules",
     "dist",
     "build",
+    "build.safariextension",
     "coverage",
     "store",
     "src/edge"
