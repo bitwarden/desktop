@@ -162,11 +162,11 @@ export default class MainBackground {
         await new Analytics(window).init();
         this.containerService.attachToWindow(window);
 
+        await this.runtimeBackground.init();
         if (!this.isSafari) {
             await this.commandsBackground.init();
             await this.contextMenusBackground.init();
             await this.idleBackground.init();
-            await this.runtimeBackground.init();
             await this.tabsBackground.init();
             await this.webRequestBackground.init();
             await this.windowsBackground.init();

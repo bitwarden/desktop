@@ -17,14 +17,32 @@ export default class RuntimeBackground {
     private runtime: any;
     private autofillTimeout: number;
     private pageDetailsToAutoFill: any[] = [];
+    private isSafari: boolean;
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: PlatformUtilsService) {
-        this.runtime = chrome.runtime;
+        this.isSafari = this.platformUtilsService.isSafari();
+        this.runtime = this.isSafari ? safari.application : chrome.runtime;
     }
 
     async init() {
         if (!this.runtime) {
+            return;
+        }
+
+        if (this.isSafari) {
+            // Reload the popup when it's opened
+            this.runtime.addEventListener('popover', (event: any) => {
+                const win: Window = event.target.contentWindow;
+                const body = win.document.body;
+                let child: Node = body.firstChild;
+                while (child) {
+                    body.removeChild(child);
+                    child = body.firstChild;
+                }
+                win.location.reload();
+            }, true);
+
             return;
         }
 
