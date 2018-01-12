@@ -1,4 +1,7 @@
 export default class BrowserApi {
+    static isSafariApi: boolean = (typeof safari !== 'undefined');
+    static isChromeApi: boolean = (typeof chrome !== 'undefined');
+
     static async getTabFromCurrentWindowId(): Promise<any> {
         return await BrowserApi.tabsQueryFirst({
             active: true,
@@ -48,5 +51,17 @@ export default class BrowserApi {
                 resolve();
             });
         });
+    }
+
+    static getBackgroundPage(): any {
+        function getBackgroundPage(): any {
+            if (BrowserApi.isChromeApi) {
+                return chrome.extension.getBackgroundPage();
+            } else if (BrowserApi.isSafariApi) {
+                return safari.extension.globalPage.contentWindow;
+            } else {
+                return null;
+            }
+        }
     }
 }

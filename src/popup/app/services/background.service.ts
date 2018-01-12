@@ -1,3 +1,5 @@
+import BrowserApi from '../../../browser/browserApi';
+
 import { ConstantsService } from 'jslib/services/constants.service';
 
 import { ApiService } from 'jslib/abstractions/api.service';
@@ -22,7 +24,7 @@ import { AutofillService } from '../../../services/abstractions/autofill.service
 
 function getBackgroundService<T>(service: string) {
     return (): T => {
-        const page = chrome.extension.getBackgroundPage();
+        const page = BrowserApi.getBackgroundPage();
         return page ? page.bitwardenMain[service] as T : null;
     };
 }

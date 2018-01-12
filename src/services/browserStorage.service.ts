@@ -9,26 +9,38 @@ export default class BrowserStorageService implements StorageService {
 
     get<T>(key: string): Promise<T> {
         if (this.platformUtilsService.isSafari()) {
-            // use safari storage
+            return new Promise((resolve) => {
+                const json = window.localStorage.getItem(key);
+                if (json) {
+                    const obj = JSON.parse(json);
+                    if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
+                        resolve(obj[key] as T);
+                        return;
+                    }
+                }
+                resolve(null);
+            });
         } else {
             return new Promise((resolve) => {
                 chrome.storage.local.get(key, (obj: any) => {
                     if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
                         resolve(obj[key] as T);
-                    } else {
-                        resolve(null);
+                        return;
                     }
+                    resolve(null);
                 });
             });
         }
     }
 
     save(key: string, obj: any): Promise<any> {
+        const keyedObj = { [key]: obj };
         if (this.platformUtilsService.isSafari()) {
-            // use safari storage
+            window.localStorage.setItem(key, JSON.stringify(keyedObj));
+            return Promise.resolve();
         } else {
             return new Promise((resolve) => {
-                chrome.storage.local.set({ [key]: obj }, () => {
+                chrome.storage.local.set(keyedObj, () => {
                     resolve();
                 });
             });
@@ -37,7 +49,8 @@ export default class BrowserStorageService implements StorageService {
 
     remove(key: string): Promise<any> {
         if (this.platformUtilsService.isSafari()) {
-            // use safari storage
+            window.localStorage.removeItem(key);
+            return Promise.resolve();
         } else {
             return new Promise((resolve) => {
                 chrome.storage.local.remove(key, () => {
