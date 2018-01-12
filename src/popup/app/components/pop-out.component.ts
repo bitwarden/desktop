@@ -42,7 +42,7 @@ export class PopOutController implements ng.IController {
             });
 
             if (PopupUtilsService.inPopup(this.$window)) {
-                this.$window.close();
+                BrowserApi.closePopup(this.$window);
             }
         } else if ((typeof chrome !== 'undefined') && chrome.tabs && chrome.tabs.create) {
             href = href.replace('uilocation=popup', 'uilocation=tab')

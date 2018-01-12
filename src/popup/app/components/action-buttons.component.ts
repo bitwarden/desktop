@@ -27,7 +27,7 @@ export class ActionButtonsController implements ng.IController {
                 self.$analytics.eventTrack('Launched Website From Listing');
                 BrowserApi.createNewTab(self.cipher.login.uri);
                 if (PopupUtilsService.inPopup(self.$window)) {
-                    self.$window.close();
+                    BrowserApi.closePopup(self.$window);
                 }
             }
         });

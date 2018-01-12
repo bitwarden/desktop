@@ -90,7 +90,7 @@ export class CurrentController {
                 this.utilsService.copyToClipboard(totpCode, document);
             }
             if (PopupUtilsService.inPopup(this.$window)) {
-                this.$window.close();
+                BrowserApi.closePopup(this.$window);
             }
         }).catch(() => {
             this.$analytics.eventTrack('Autofilled Error');

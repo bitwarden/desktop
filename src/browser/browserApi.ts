@@ -170,6 +170,14 @@ class BrowserApi {
         }
     }
 
+    static closePopup(win: Window) {
+        if (BrowserApi.isChromeApi) {
+            win.close();
+        } else if (BrowserApi.isSafariApi && safari.extension.popovers && safari.extension.popovers.length > 0) {
+            safari.extension.popovers[0].hide();
+        }
+    }
+
     private static makeTabObject(tab: any) {
         if (BrowserApi.isChromeApi) {
             return tab;
