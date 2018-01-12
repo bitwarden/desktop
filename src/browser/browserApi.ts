@@ -44,16 +44,7 @@ class BrowserApi {
 
             const returnedTabs: any[] = [];
             tabs.forEach((tab: any) => {
-                const winIndex = safari.application.browserWindows.indexOf(tab.browserWindow);
-                const tabIndex = tab.browserWindow.tabs.indexOf(tab);
-                returnedTabs.push({
-                    id: winIndex + '_' + tabIndex,
-                    index: tabIndex,
-                    windowId: winIndex,
-                    title: tab.title,
-                    active: tab === tab.browserWindow.activeTab,
-                    url: tab.url || 'about:blank',
-                });
+                returnedTabs.push(BrowserApi.makeTabObject(tab));
             });
 
             return Promise.resolve(returnedTabs);
@@ -169,13 +160,32 @@ class BrowserApi {
         } else if (BrowserApi.isSafariApi) {
             safari.application.addEventListener('message', async (msgEvent: any) => {
                 callback(msgEvent.message, {
-                    tab: {
-                        id: null, // TODO
-                    },
+                    tab: BrowserApi.makeTabObject(msgEvent.target),
                     frameId: null,
                 }, () => { /* No responses in Safari */ });
             }, false);
         }
+    }
+
+    private static makeTabObject(tab: any) {
+        if (BrowserApi.isChromeApi) {
+            return tab;
+        }
+
+        if (!tab.browserWindow) {
+            return {};
+        }
+
+        const winIndex = safari.application.browserWindows.indexOf(tab.browserWindow);
+        const tabIndex = tab.browserWindow.tabs.indexOf(tab);
+        return {
+            id: winIndex + '_' + tabIndex,
+            index: tabIndex,
+            windowId: winIndex,
+            title: tab.title,
+            active: tab === tab.browserWindow.activeTab,
+            url: tab.url || 'about:blank',
+        };
     }
 }
 
