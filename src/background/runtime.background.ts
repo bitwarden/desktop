@@ -35,7 +35,7 @@ export default class RuntimeBackground {
             this.runtime.addEventListener('popover', (event: any) => {
                 const win: Window = event.target.contentWindow;
                 const href = win.location.origin + win.location.pathname;
-                if(win.location.toString() === href) {
+                if (win.location.toString() === href) {
                     win.location.reload();
                 } else {
                     win.location.href = href;

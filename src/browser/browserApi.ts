@@ -52,7 +52,7 @@ class BrowserApi {
                     windowId: winIndex,
                     title: tab.title,
                     active: tab === tab.browserWindow.activeTab,
-                    url: tab.url || 'about:blank'
+                    url: tab.url || 'about:blank',
                 });
             });
 
