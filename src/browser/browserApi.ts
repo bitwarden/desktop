@@ -67,7 +67,7 @@ export default class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.runtime.getManifest().version;
         } else if (BrowserApi.isSafariApi) {
-            return 0; // TODO
+            return safari.extension.displayVersion;
         } else {
             return null;
         }
