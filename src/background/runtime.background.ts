@@ -34,13 +34,12 @@ export default class RuntimeBackground {
             // Reload the popup when it's opened
             this.runtime.addEventListener('popover', (event: any) => {
                 const win: Window = event.target.contentWindow;
-                const body = win.document.body;
-                let child: Node = body.firstChild;
-                while (child) {
-                    body.removeChild(child);
-                    child = body.firstChild;
+                const href = win.location.origin + win.location.pathname;
+                if(win.location.toString() === href) {
+                    win.location.reload();
+                } else {
+                    win.location.href = href;
                 }
-                win.location.reload();
             }, true);
 
             return;
