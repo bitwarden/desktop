@@ -62,6 +62,7 @@ import { AutofillService as AutofillServiceAbstraction } from '../services/abstr
 export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
     storageService: StorageServiceAbstraction;
+    secureStorageService: StorageServiceAbstraction;
     i18nService: any;
     platformUtilsService: PlatformUtilsServiceAbstraction;
     utilsService: UtilsServiceAbstraction;
@@ -107,11 +108,11 @@ export default class MainBackground {
         this.utilsService = new UtilsService();
         this.platformUtilsService = new BrowserPlatformUtilsService();
         this.messagingService = new BrowserMessagingService(this.platformUtilsService);
-        this.storageService = new BrowserStorageService(this.platformUtilsService);
+        this.storageService = new BrowserStorageService(this.platformUtilsService, false);
+        this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
         this.i18nService = i18nService(this.platformUtilsService);
         this.constantsService = new ConstantsService(this.i18nService, this.platformUtilsService);
-        this.cryptoService = new CryptoService(this.storageService,
-            this.storageService);
+        this.cryptoService = new CryptoService(this.storageService, this.secureStorageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,

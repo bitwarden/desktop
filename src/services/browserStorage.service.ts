@@ -4,13 +4,21 @@ import {
 } from 'jslib/abstractions';
 
 export default class BrowserStorageService implements StorageService {
-    constructor(private platformUtilsService: PlatformUtilsService) {
+    private safariStorageApi: any;
+    private chromeStorageApi: any;
+
+    constructor(private platformUtilsService: PlatformUtilsService, private secure: boolean) {
+        if (platformUtilsService.isSafari()) {
+            this.safariStorageApi = secure ? safari.extension.secureSettings : safari.extension.settings;
+        } else {
+            this.chromeStorageApi = chrome.storage.local;
+        }
     }
 
     get<T>(key: string): Promise<T> {
-        if (this.platformUtilsService.isSafari()) {
+        if (this.safariStorageApi) {
             return new Promise((resolve) => {
-                const json = window.localStorage.getItem(key);
+                const json = this.safariStorageApi.getItem(key);
                 if (json) {
                     const obj = JSON.parse(json);
                     if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
@@ -22,7 +30,7 @@ export default class BrowserStorageService implements StorageService {
             });
         } else {
             return new Promise((resolve) => {
-                chrome.storage.local.get(key, (obj: any) => {
+                this.chromeStorageApi.get(key, (obj: any) => {
                     if (obj && (typeof obj[key] !== 'undefined') && obj[key] !== null) {
                         resolve(obj[key] as T);
                         return;
@@ -35,12 +43,12 @@ export default class BrowserStorageService implements StorageService {
 
     save(key: string, obj: any): Promise<any> {
         const keyedObj = { [key]: obj };
-        if (this.platformUtilsService.isSafari()) {
-            window.localStorage.setItem(key, JSON.stringify(keyedObj));
+        if (this.safariStorageApi) {
+            this.safariStorageApi.setItem(key, JSON.stringify(keyedObj));
             return Promise.resolve();
         } else {
             return new Promise((resolve) => {
-                chrome.storage.local.set(keyedObj, () => {
+                this.chromeStorageApi.set(keyedObj, () => {
                     resolve();
                 });
             });
@@ -48,12 +56,12 @@ export default class BrowserStorageService implements StorageService {
     }
 
     remove(key: string): Promise<any> {
-        if (this.platformUtilsService.isSafari()) {
-            window.localStorage.removeItem(key);
+        if (this.safariStorageApi) {
+            this.safariStorageApi.removeItem(key);
             return Promise.resolve();
         } else {
             return new Promise((resolve) => {
-                chrome.storage.local.remove(key, () => {
+                this.chromeStorageApi.remove(key, () => {
                     resolve();
                 });
             });
