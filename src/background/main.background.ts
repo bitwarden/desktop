@@ -100,6 +100,7 @@ export default class MainBackground {
     private buildingContextMenu: boolean;
     private menuOptionsLoaded: any[] = [];
     private syncTimeout: number;
+    private isSafari: boolean;
 
     constructor() {
         // Services
@@ -136,7 +137,8 @@ export default class MainBackground {
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
 
         // Other fields
-        this.sidebarAction = (typeof opr !== 'undefined') && opr.sidebarAction ?
+        this.isSafari = this.platformUtilsService.isSafari();
+        this.sidebarAction = this.isSafari ? null : (typeof opr !== 'undefined') && opr.sidebarAction ?
             opr.sidebarAction : (window as any).chrome.sidebarAction;
 
         // Background
@@ -154,13 +156,15 @@ export default class MainBackground {
     async bootstrap() {
         this.containerService.attachToWindow(window);
 
-        await this.commandsBackground.init();
-        await this.contextMenusBackground.init();
-        await this.idleBackground.init();
-        await this.runtimeBackground.init();
-        await this.tabsBackground.init();
-        await this.webRequestBackground.init();
-        await this.windowsBackground.init();
+        if (!this.isSafari) {
+            await this.commandsBackground.init();
+            await this.contextMenusBackground.init();
+            await this.idleBackground.init();
+            await this.runtimeBackground.init();
+            await this.tabsBackground.init();
+            await this.webRequestBackground.init();
+            await this.windowsBackground.init();
+        }
 
         await this.environmentService.setUrlsFromStorage();
         await this.setIcon();
@@ -169,7 +173,7 @@ export default class MainBackground {
     }
 
     async setIcon() {
-        if (!chrome.browserAction && !this.sidebarAction) {
+        if (this.isSafari || (!chrome.browserAction && !this.sidebarAction)) {
             return;
         }
 
@@ -188,7 +192,7 @@ export default class MainBackground {
     }
 
     async refreshBadgeAndMenu() {
-        if (!chrome.windows || !chrome.contextMenus) {
+        if (this.isSafari || !chrome.windows || !chrome.contextMenus) {
             return;
         }
 
@@ -265,7 +269,7 @@ export default class MainBackground {
     }
 
     private async buildContextMenu() {
-        if (!chrome.contextMenus || this.buildingContextMenu) {
+        if (this.isSafari || !chrome.contextMenus || this.buildingContextMenu) {
             return;
         }
 

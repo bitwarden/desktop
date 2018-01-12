@@ -15,7 +15,7 @@ angular
         $urlRouterProvider.otherwise(function ($injector, $location) {
             var $state = $injector.get('$state');
 
-            if (!chrome.extension.getBackgroundPage()) {
+            if ((typeof chrome !== 'undefined') && !chrome.extension.getBackgroundPage()) {
                 $state.go('privateMode');
                 return;
             }
@@ -250,9 +250,8 @@ angular
                 params: { animation: null }
             });
     })
-    .run(function ($trace, $transitions, userService, $state, constantsService, stateService) {
-        //$trace.enable('TRANSITION');
-
+    .run(function ($trace, $transitions, userService, $state, constantsService, stateService,
+        storageService, messagingService) {
         stateService.init();
 
         $transitions.onStart({}, function (trans) {
@@ -265,17 +264,14 @@ angular
             }
 
             const userService = trans.injector().get('userService');
-            const messagingService = trans.injector().get('messagingService');
 
-            if (!userService || !messagingService) {
+            if (!userService) {
                 return;
             }
 
             userService.isAuthenticated().then((isAuthenticated) => {
                 if (isAuthenticated) {
-                    var obj = {};
-                    obj[constantsService.lastActiveKey] = (new Date()).getTime();
-                    chrome.storage.local.set(obj, function () { });
+                    storageService.save(constantsService.lastActiveKey, (new Date()).getTime());
                 }
                 else if (toState.data && toState.data.authorize) {
                     event.preventDefault();
