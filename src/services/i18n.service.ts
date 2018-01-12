@@ -24,7 +24,8 @@ export default function i18nService(platformUtilsService: PlatformUtilsService) 
     }
 
     if (platformUtilsService.isEdge()) {
-        loadMessages('../_locales/', 'en', localeMessages, (prop: string, message: string) => chrome.i18n.getMessage(prop));
+        loadMessages('../_locales/', 'en', localeMessages,
+            (prop: string, message: string) => chrome.i18n.getMessage(prop));
         return localeMessages;
     }
 
