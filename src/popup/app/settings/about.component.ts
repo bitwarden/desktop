@@ -1,5 +1,7 @@
 import * as template from './about.component.html';
 
+import BrowserApi from '../../../browser/browserApi';
+
 export class AboutController {
     version: string;
     year: number;
@@ -8,7 +10,7 @@ export class AboutController {
     constructor(private i18nService: any) {
         this.i18n = i18nService;
         this.year = (new Date()).getFullYear();
-        this.version = chrome.runtime.getManifest().version;
+        this.version = BrowserApi.getApplicationVersion();
     }
 }
 

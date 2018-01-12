@@ -16,6 +16,7 @@ export default class Analytics {
     private gaFunc: Function = null;
     private win: any;
     private isBackground: boolean = false;
+    private appVersion: string = BrowserApi.getApplicationVersion();
 
     constructor(win: Window) {
         const bgPage = BrowserApi.getBackgroundPage();
@@ -70,7 +71,7 @@ export default class Analytics {
                 return;
             }
 
-            const version = encodeURIComponent(BrowserApi.getApplicationVersion());
+            const version = encodeURIComponent(this.appVersion);
             let message = 'v=1&tid=' + this.gaTrackingId + '&cid=' + gaAnonAppId + '&cd1=' + version;
 
             if (param1 === 'pageview' && param2) {
