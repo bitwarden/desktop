@@ -3,10 +3,14 @@ class BrowserApi {
     static isChromeApi: boolean = (typeof chrome !== 'undefined');
 
     static async getTabFromCurrentWindowId(): Promise<any> {
-        return await BrowserApi.tabsQueryFirst({
-            active: true,
-            windowId: chrome.windows.WINDOW_ID_CURRENT,
-        });
+        if (BrowserApi.isChromeApi) {
+            return await BrowserApi.tabsQueryFirst({
+                active: true,
+                windowId: chrome.windows.WINDOW_ID_CURRENT,
+            });
+        } else if (BrowserApi.isSafariApi) {
+            return await BrowserApi.getTabFromCurrentWindow();
+        }
     }
 
     static async getTabFromCurrentWindow(): Promise<any> {
@@ -17,11 +21,43 @@ class BrowserApi {
     }
 
     static tabsQuery(options: any): Promise<any[]> {
-        return new Promise((resolve) => {
-            chrome.tabs.query(options, (tabs: any[]) => {
-                resolve(tabs);
+        if (BrowserApi.isChromeApi) {
+            return new Promise((resolve) => {
+                chrome.tabs.query(options, (tabs: any[]) => {
+                    resolve(tabs);
+                });
             });
-        });
+        } else if (BrowserApi.isSafariApi) {
+            let win: any = null;
+            if (options.currentWindow) {
+                win = safari.application.activeBrowserWindow;
+            }
+
+            if (!win || !win.tabs || !win.tabs.length) {
+                return Promise.resolve([]);
+            }
+
+            const tabs: any[] = [];
+            if (options.active && win.activeTab) {
+                tabs.push(win.activeTab);
+            }
+
+            const returnedTabs: any[] = [];
+            tabs.forEach((tab: any) => {
+                const winIndex = safari.application.browserWindows.indexOf(tab.browserWindow);
+                const tabIndex = tab.browserWindow.tabs.indexOf(tab);
+                returnedTabs.push({
+                    id: winIndex + '_' + tabIndex,
+                    index: tabIndex,
+                    windowId: winIndex,
+                    title: tab.title,
+                    active: tab === tab.browserWindow.activeTab,
+                    url: tab.url || 'about:blank'
+                });
+            });
+
+            return Promise.resolve(returnedTabs);
+        }
     }
 
     static async tabsQueryFirst(options: any): Promise<any> {
