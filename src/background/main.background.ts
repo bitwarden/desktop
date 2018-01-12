@@ -142,15 +142,17 @@ export default class MainBackground {
             opr.sidebarAction : (window as any).chrome.sidebarAction;
 
         // Background
-        this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
-        this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-            this.passwordGenerationService);
-        this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
-        this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
-            this.platformUtilsService);
-        this.tabsBackground = new TabsBackground(this);
-        this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService);
-        this.windowsBackground = new WindowsBackground(this);
+        if (!this.isSafari) {
+            this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
+            this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
+                this.passwordGenerationService);
+            this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
+            this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
+                this.platformUtilsService);
+            this.tabsBackground = new TabsBackground(this);
+            this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService);
+            this.windowsBackground = new WindowsBackground(this);
+        }
     }
 
     async bootstrap() {

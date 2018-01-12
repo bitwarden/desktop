@@ -11,10 +11,10 @@ export default function i18nService(platformUtilsService: PlatformUtilsService) 
         'zh-CN', 'zh-TW',
     ];
 
-    async function loadMessages(locale: string, messagesObj: any,
+    async function loadMessages(localesDir: string, locale: string, messagesObj: any,
         messageCallback: (prop: string, message: string) => string): Promise<any> {
         const formattedLocale = locale.replace('-', '_');
-        const file = await fetch('../_locales/' + formattedLocale + '/messages.json');
+        const file = await fetch(localesDir + formattedLocale + '/messages.json');
         const locales = await file.json();
         for (const prop in locales) {
             if (locales.hasOwnProperty(prop)) {
@@ -24,7 +24,7 @@ export default function i18nService(platformUtilsService: PlatformUtilsService) 
     }
 
     if (platformUtilsService.isEdge()) {
-        loadMessages('en', localeMessages, (prop: string, message: string) => chrome.i18n.getMessage(prop));
+        loadMessages('../_locales/', 'en', localeMessages, (prop: string, message: string) => chrome.i18n.getMessage(prop));
         return localeMessages;
     }
 
@@ -38,9 +38,10 @@ export default function i18nService(platformUtilsService: PlatformUtilsService) 
             }
         }
 
-        loadMessages(lang, localeMessages, (prop: string, message: string) => message);
+        const dir = './_locales/';
+        loadMessages(dir, lang, localeMessages, (prop: string, message: string) => message);
         if (lang !== supportedLocales[0]) {
-            loadMessages(supportedLocales[0], defaultMessages, (prop: string, message: string) => message);
+            loadMessages(dir, supportedLocales[0], defaultMessages, (prop: string, message: string) => message);
         }
     }
 
