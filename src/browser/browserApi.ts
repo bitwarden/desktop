@@ -81,7 +81,7 @@ class BrowserApi {
         return BrowserApi.tabSendMessage(tab, obj);
     }
 
-    static tabSendMessage(tab: any, obj: any): Promise<any[]> {
+    static tabSendMessage(tab: any, obj: any): Promise<any> {
         if (!tab || !tab.id) {
             return;
         }
@@ -93,7 +93,7 @@ class BrowserApi {
                 });
             });
         } else if (BrowserApi.isSafariApi) {
-            // TODO
+            return Promise.resolve(); // TODO
         }
     }
 
