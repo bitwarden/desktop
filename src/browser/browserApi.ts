@@ -44,10 +44,12 @@ class BrowserApi {
 
             const returnedTabs: any[] = [];
             tabs.forEach((tab: any) => {
+                const winIndex = safari.application.browserWindows.indexOf(tab.browserWindow);
+                const tabIndex = tab.browserWindow.tabs.indexOf(tab);
                 returnedTabs.push({
-                    id: BrowserApi.getTabOrWindowId(tab),
-                    index: tab.browserWindow.tabs.indexOf(tab),
-                    windowId: BrowserApi.getTabOrWindowId(tab.browserWindow),
+                    id: winIndex + '_' + tabIndex,
+                    index: tabIndex,
+                    windowId: winIndex,
                     title: tab.title,
                     active: tab === tab.browserWindow.activeTab,
                     url: tab.url || 'about:blank',
@@ -153,22 +155,6 @@ class BrowserApi {
         } else if (BrowserApi.isSafariApi) {
             // TODO
         }
-    }
-
-    private static getTabOrWindowId(tabOrWindow: any) {
-        if (tabOrWindow.id) {
-            return tabOrWindow.id;
-        }
-
-        if (!tabOrWindow.BitwardenCachedId) {
-            tabOrWindow.BitwardenCachedId = BrowserApi.randomInt(1, Number.MAX_SAFE_INTEGER);
-        }
-
-        return tabOrWindow.BitwardenCachedId;
-    }
-
-    private static randomInt(min: number, max: number): number {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
 
