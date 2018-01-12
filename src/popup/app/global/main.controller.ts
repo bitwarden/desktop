@@ -1,3 +1,5 @@
+import { BrowserApi } from '../../../browser/browserApi';
+
 import AuthService from '../services/auth.service';
 
 import { UtilsService } from 'jslib/abstractions/utils.service';
@@ -23,7 +25,7 @@ export class MainController implements ng.IController {
             }
         });
 
-        chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: any) => {
+        BrowserApi.messageListener((msg: any, sender: any, sendResponse: any) => {
             if (msg.command === 'syncCompleted') {
                 $scope.$broadcast('syncCompleted', msg.successfully);
             } else if (msg.command === 'syncStarted') {

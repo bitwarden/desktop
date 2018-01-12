@@ -33,11 +33,7 @@ class BrowserApi {
         return null;
     }
 
-    static tabSendMessage(tab: any, command: string, data: any = null): Promise<any[]> {
-        if (!tab || !tab.id) {
-            return;
-        }
-
+    static tabSendMessageData(tab: any, command: string, data: any = null): Promise<any[]> {
         const obj: any = {
             command: command,
         };
@@ -46,11 +42,23 @@ class BrowserApi {
             obj.data = data;
         }
 
-        return new Promise((resolve) => {
-            chrome.tabs.sendMessage(tab.id, obj, () => {
-                resolve();
+        return BrowserApi.tabSendMessage(tab, obj);
+    }
+
+    static tabSendMessage(tab: any, obj: any): Promise<any[]> {
+        if (!tab || !tab.id) {
+            return;
+        }
+
+        if (BrowserApi.isChromeApi) {
+            return new Promise((resolve) => {
+                chrome.tabs.sendMessage(tab.id, obj, () => {
+                    resolve();
+                });
             });
-        });
+        } else if (BrowserApi.isSafariApi) {
+            // TODO
+        }
     }
 
     static getBackgroundPage(): any {
@@ -100,6 +108,16 @@ class BrowserApi {
             return './' + path; // TODO?
         } else {
             return null;
+        }
+    }
+
+    static messageListener(callback: (message: any, sender: any, response: any) => void) {
+        if (BrowserApi.isChromeApi) {
+            chrome.runtime.onMessage.addListener((msg: any, sender: any, response: any) => {
+                callback(msg, sender, response);
+            });
+        } else if (BrowserApi.isSafariApi) {
+            // TODO
         }
     }
 }

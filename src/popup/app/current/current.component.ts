@@ -1,5 +1,7 @@
 import * as template from './current.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { CipherType } from 'jslib/enums/cipherType';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -103,9 +105,9 @@ export class CurrentController {
     }
 
     private loadVault() {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs: any) => {
-            if (tabs.length > 0) {
-                this.url = tabs[0].url;
+        BrowserApi.getTabFromCurrentWindow().then((tab: any) => {
+            if (tab) {
+                this.url = tab.url;
             } else {
                 this.$timeout(() => {
                     this.loaded = true;
@@ -115,11 +117,11 @@ export class CurrentController {
 
             this.domain = this.platformUtilsService.getDomain(this.url);
 
-            chrome.tabs.sendMessage(tabs[0].id, {
+            BrowserApi.tabSendMessage(tab, {
                 command: 'collectPageDetails',
-                tab: tabs[0],
+                tab: tab,
                 sender: 'currentController',
-            }, () => {
+            }).then(() => {
                 this.canAutofill = true;
             });
 

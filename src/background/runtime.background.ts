@@ -58,13 +58,13 @@ export default class RuntimeBackground {
                     }
                     break;
                 case 'bgOpenNotificationBar':
-                    await BrowserApi.tabSendMessage(sender.tab, 'openNotificationBar', msg.data);
+                    await BrowserApi.tabSendMessageData(sender.tab, 'openNotificationBar', msg.data);
                     break;
                 case 'bgCloseNotificationBar':
-                    await BrowserApi.tabSendMessage(sender.tab, 'closeNotificationBar');
+                    await BrowserApi.tabSendMessageData(sender.tab, 'closeNotificationBar');
                     break;
                 case 'bgAdjustNotificationBar':
-                    await BrowserApi.tabSendMessage(sender.tab, 'adjustNotificationBar', msg.data);
+                    await BrowserApi.tabSendMessageData(sender.tab, 'adjustNotificationBar', msg.data);
                     break;
                 case 'bgCollectPageDetails':
                     this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
@@ -88,7 +88,7 @@ export default class RuntimeBackground {
                     switch (msg.sender) {
                         case 'notificationBar':
                             const forms = this.autofillService.getFormsWithPasswordFields(msg.details);
-                            await BrowserApi.tabSendMessage(msg.tab, 'notificationBarPageDetails', {
+                            await BrowserApi.tabSendMessageData(msg.tab, 'notificationBarPageDetails', {
                                 details: msg.details,
                                 forms: forms,
                             });
@@ -166,7 +166,7 @@ export default class RuntimeBackground {
                 eventAction: 'Added Login from Notification Bar',
             });
 
-            BrowserApi.tabSendMessage(tab, 'closeNotificationBar');
+            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
         }
     }
 
@@ -185,7 +185,7 @@ export default class RuntimeBackground {
             this.main.loginsToAdd.splice(i, 1);
             const hostname = UtilsService.getHostname(tab.url);
             await this.cipherService.saveNeverDomain(hostname);
-            BrowserApi.tabSendMessage(tab, 'closeNotificationBar');
+            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
         }
     }
 
@@ -231,12 +231,12 @@ export default class RuntimeBackground {
         }
     }
 
-    private async currentTabSendMessage(command: string, data: any = null) {
+    private async currenttabSendMessageData(command: string, data: any = null) {
         const tab = await BrowserApi.getTabFromCurrentWindow();
         if (tab == null) {
             return;
         }
 
-        await BrowserApi.tabSendMessage(tab, command, data);
+        await BrowserApi.tabSendMessageData(tab, command, data);
     }
 }

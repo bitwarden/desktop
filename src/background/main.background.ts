@@ -468,7 +468,7 @@ export default class MainBackground {
                 continue;
             }
 
-            BrowserApi.tabSendMessage(tab, 'openNotificationBar', {
+            BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
                 type: 'add',
             });
             break;
