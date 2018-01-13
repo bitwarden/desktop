@@ -147,7 +147,7 @@ export default class MainBackground {
 
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
-            this.platformUtilsService, this.storageService);
+            this.platformUtilsService, this.storageService, this.i18nService);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
 
         if (!this.isSafari) {
