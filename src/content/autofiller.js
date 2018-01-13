@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if ((typeof safari !== 'undefined')) {
         const responseCommand = 'autofillerAutofillOnPageLoadEnabledResponse';
         safari.self.tab.dispatchMessage('bitwarden', {
-            command: 'bgGetAutofillOnPageLoadEnabled',
+            command: 'bgGetDataForTab',
             responseCommand: responseCommand
         });
         safari.self.addEventListener('message', function (msgEvent) {
             const msg = msgEvent.message;
-            if (msg.command === responseCommand && msg.data === true) {
+            if (msg.command === responseCommand && msg.data[enabledKey] === true) {
                 setInterval(doFillIfNeeded, 500);
             }
         }, false);

@@ -84,9 +84,8 @@ export default class RuntimeBackground {
                     setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
                 }
                 break;
-            case 'bgGetAutofillOnPageLoadEnabled':
-                await this.sendStorageValueToTab(ConstantsService.enableAutoFillOnPageLoadKey, sender.tab,
-                    msg.responseCommand);
+            case 'bgGetDataForTab':
+                await this.getDataForTab(sender.tab, msg.responseCommand);
                 break;
             case 'bgOpenNotificationBar':
                 await BrowserApi.tabSendMessageData(sender.tab, 'openNotificationBar', msg.data);
@@ -264,5 +263,19 @@ export default class RuntimeBackground {
     private async sendStorageValueToTab(storageKey: string, tab: any, responseCommand: string) {
         const val = await this.storageService.get<any>(storageKey);
         await BrowserApi.tabSendMessageData(tab, responseCommand, val);
+    }
+
+    private async getDataForTab(tab: any, responseCommand: string) {
+        const responseVal: any = {};
+        if (responseCommand === 'notificationBarDataResponse') {
+            responseVal.neverDomains = await this.storageService.get<string[]>(ConstantsService.neverDomainsKey);
+            responseVal.disableAddLoginNotification = await this.storageService.get<boolean>(
+                ConstantsService.disableAddLoginNotificationKey);
+        } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
+            responseVal.enableAutoFillOnPageLoadKey = await this.storageService.get<boolean>(
+                ConstantsService.enableAutoFillOnPageLoadKey);
+        }
+
+        await BrowserApi.tabSendMessageData(tab, responseCommand, responseVal);
     }
 }

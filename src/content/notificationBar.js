@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     if (isSafariApi) {
         const responseCommand = 'notificationBarDataResponse';
         safari.self.tab.dispatchMessage('bitwarden', {
-            command: 'bgGetNotificationBarData',
+            command: 'bgGetDataForTab',
             responseCommand: responseCommand
         });
         safari.self.addEventListener('message', function (msgEvent) {
