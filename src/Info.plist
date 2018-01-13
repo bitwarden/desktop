@@ -18,17 +18,6 @@
 	<string>1</string>
 	<key>Chrome</key>
 	<dict>
-		<key>Context Menu Items</key>
-		<array>
-			<dict>
-				<key>Command</key>
-				<string></string>
-				<key>Identifier</key>
-				<string>bitwarden-main</string>
-				<key>Title</key>
-				<string>bitwarden</string>
-			</dict>
-		</array>
 		<key>Database Quota</key>
 		<integer>104857600</integer>
 		<key>Global Page</key>
@@ -41,7 +30,7 @@
 				<key>Height</key>
 				<integer>600</integer>
 				<key>Identifier</key>
-				<string>bitwarden-popup</string>
+				<string>bitwarden-popover</string>
 				<key>Width</key>
 				<integer>375</integer>
 			</dict>
@@ -52,15 +41,15 @@
 				<key>Identifier</key>
 				<string>bitwarden-toolbar</string>
 				<key>Image</key>
-				<string>images/icon16.png</string>
+				<string>images/icon18_safari.png</string>
 				<key>Include By Default</key>
 				<true/>
 				<key>Label</key>
 				<string>bitwarden</string>
 				<key>Palette Label</key>
-				<string>bitwarden-toolbar</string>
+				<string>bitwarden</string>
 				<key>Popover</key>
-				<string>bitwarden-popup</string>
+				<string>bitwarden-popover</string>
 				<key>Tool Tip</key>
 				<string>bitwarden</string>
 			</dict>
