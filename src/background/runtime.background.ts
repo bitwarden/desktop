@@ -1,10 +1,12 @@
 import { CipherType } from 'jslib/enums';
 
+import { ConstantsService } from 'jslib/services/constants.service';
 import { UtilsService } from 'jslib/services/utils.service';
 
 import {
     CipherService,
     PlatformUtilsService,
+    StorageService,
 } from 'jslib/abstractions';
 
 import { BrowserApi } from '../browser/browserApi';
@@ -20,7 +22,8 @@ export default class RuntimeBackground {
     private isSafari: boolean;
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
-        private cipherService: CipherService, private platformUtilsService: PlatformUtilsService) {
+        private cipherService: CipherService, private platformUtilsService: PlatformUtilsService,
+        private storageService: StorageService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
     }
@@ -82,6 +85,10 @@ export default class RuntimeBackground {
                 if (msg.successfully) {
                     setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
                 }
+                break;
+            case 'bgGetAutofillOnPageLoadEnabled':
+                await this.sendStorageValueToTab(ConstantsService.enableAutoFillOnPageLoadKey, sender.tab,
+                    msg.responseCommand);
                 break;
             case 'bgOpenNotificationBar':
                 await BrowserApi.tabSendMessageData(sender.tab, 'openNotificationBar', msg.data);
@@ -256,12 +263,8 @@ export default class RuntimeBackground {
         }
     }
 
-    private async currenttabSendMessageData(command: string, data: any = null) {
-        const tab = await BrowserApi.getTabFromCurrentWindow();
-        if (tab == null) {
-            return;
-        }
-
-        await BrowserApi.tabSendMessageData(tab, command, data);
+    private async sendStorageValueToTab(storageKey: string, tab: any, responseCommand: string) {
+        const val = await this.storageService.get<any>(storageKey);
+        await BrowserApi.tabSendMessageData(tab, responseCommand, val);
     }
 }

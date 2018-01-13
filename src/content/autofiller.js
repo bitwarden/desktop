@@ -3,13 +3,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const enabledKey = 'enableAutoFillOnPageLoad';
 
     if ((typeof safari !== 'undefined')) {
-        const json = safari.extension.settings.getItem(enabledKey);
-        if (json) {
-            const obj = JSON.parse(json);
-            if (obj && obj[enabledKey] === true) {
+        const responseCommand = 'autofillerAutofillOnPageLoadEnabledResponse';
+        safari.self.tab.dispatchMessage('bitwarden', {
+            command: 'bgGetAutofillOnPageLoadEnabled',
+            responseCommand: responseCommand
+        });
+        safari.self.addEventListener('message', function (msgEvent) {
+            var msg = msgEvent.message;
+            if (msg.command === responseCommand && msg.data === true) {
                 setInterval(doFillIfNeeded, 500);
             }
-        }
+        }, false);
+        return;
     }
     else {
         chrome.storage.local.get(enabledKey, (obj) => {
