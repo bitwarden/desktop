@@ -147,7 +147,7 @@ export default class MainBackground {
 
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
-            this.platformUtilsService);
+            this.platformUtilsService, this.storageService);
 
         if (!this.isSafari) {
             this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
