@@ -1,8 +1,23 @@
 require('./bar.less');
 
 document.addEventListener('DOMContentLoaded', function () {
-    // delay 50ms so that we get proper body dimensions
-    setTimeout(load, 50);
+    var i18n = {};
+    if (typeof safari !== 'undefined') {
+        // TODO: load when we get i18n strings
+        setTimeout(load, 50);
+    }
+    else {
+        i18n.appName = chrome.i18n.getMessage('appName');
+        i18n.close = chrome.i18n.getMessage('close');
+        i18n.yes = chrome.i18n.getMessage('yes');
+        i18n.never = chrome.i18n.getMessage('never');
+        i18n.notificationAddSave = chrome.i18n.getMessage('notificationAddSave');
+        i18n.notificationNeverSave = chrome.i18n.getMessage('notificationNeverSave');
+        i18n.notificationAddDesc = chrome.i18n.getMessage('notificationAddDesc');
+
+        // delay 50ms so that we get proper body dimensions
+        setTimeout(load, 50);
+    }
 
     function load() {
         var closeButton = document.getElementById('close-button'),
@@ -10,21 +25,21 @@ document.addEventListener('DOMContentLoaded', function () {
             bodyRect = body.getBoundingClientRect();
 
         // i18n
-        body.classList.add('lang-' + chrome.i18n.getUILanguage());
+        body.classList.add('lang-' + window.navigator.language.slice(0, 2));
 
-        document.getElementById('logo-link').title = chrome.i18n.getMessage('appName');
-        closeButton.title = chrome.i18n.getMessage('close');
+        document.getElementById('logo-link').title = i18n.appName;
+        closeButton.title = i18n.close;
 
         if (bodyRect.width < 768) {
-            document.querySelector('#template-add .add-save').textContent = chrome.i18n.getMessage('yes');
-            document.querySelector('#template-add .never-save').textContent = chrome.i18n.getMessage('never');
+            document.querySelector('#template-add .add-save').textContent = i18n.yes;
+            document.querySelector('#template-add .never-save').textContent = i18n.never;
         }
         else {
-            document.querySelector('#template-add .add-save').textContent = chrome.i18n.getMessage('notificationAddSave');
-            document.querySelector('#template-add .never-save').textContent = chrome.i18n.getMessage('notificationNeverSave');
+            document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
+            document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
         }
 
-        document.querySelector('#template-add .add-text').textContent = chrome.i18n.getMessage('notificationAddDesc');
+        document.querySelector('#template-add .add-text').textContent = i18n.notificationAddDesc;
 
         if (getQueryVariable('add')) {
             setContent(document.getElementById('template-add'));
@@ -34,14 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             addButton.addEventListener('click', function (e) {
                 e.preventDefault();
-                chrome.runtime.sendMessage({
+                sendPlatformMessage({
                     command: 'bgAddSave'
                 });
             });
 
             neverButton.addEventListener('click', function (e) {
                 e.preventDefault();
-                chrome.runtime.sendMessage({
+                sendPlatformMessage({
                     command: 'bgNeverSave'
                 });
             });
@@ -53,12 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         closeButton.addEventListener('click', function (e) {
             e.preventDefault();
-            chrome.runtime.sendMessage({
+            sendPlatformMessage({
                 command: 'bgCloseNotificationBar'
             });
         });
 
-        chrome.runtime.sendMessage({
+        sendPlatformMessage({
             command: 'bgAdjustNotificationBar',
             data: {
                 height: body.scrollHeight
@@ -89,5 +104,14 @@ document.addEventListener('DOMContentLoaded', function () {
         var newElement = element.cloneNode(true);
         newElement.id = newElement.id + '-clone';
         content.appendChild(newElement);
+    }
+
+    function sendPlatformMessage(msg) {
+        if (typeof safari !== 'undefined') {
+            safari.self.tab.dispatchMessage('bitwarden', msg);
+        }
+        else {
+            chrome.runtime.sendMessage(msg);
+        }
     }
 });
