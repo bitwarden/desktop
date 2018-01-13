@@ -269,10 +269,10 @@ export default class RuntimeBackground {
         const responseVal: any = {};
         if (responseCommand === 'notificationBarDataResponse') {
             responseVal.neverDomains = await this.storageService.get<string[]>(ConstantsService.neverDomainsKey);
-            responseVal.disableAddLoginNotification = await this.storageService.get<boolean>(
+            responseVal.disabledNotification = await this.storageService.get<boolean>(
                 ConstantsService.disableAddLoginNotificationKey);
         } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
-            responseVal.enableAutoFillOnPageLoad = await this.storageService.get<boolean>(
+            responseVal.autofillEnabled = await this.storageService.get<boolean>(
                 ConstantsService.enableAutoFillOnPageLoadKey);
         }
 

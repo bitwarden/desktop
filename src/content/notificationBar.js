@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     return;
                 }
 
-                if (notificationBarData.disableAddLoginNotification === true) {
+                if (notificationBarData.disabledNotification === true) {
                     return;
                 }
 

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let pageHref = null;
-    const enabledKey = 'enableAutoFillOnPageLoad';
 
     if ((typeof safari !== 'undefined')) {
         const responseCommand = 'autofillerAutofillOnPageLoadEnabledResponse';
@@ -10,13 +9,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
         safari.self.addEventListener('message', function (msgEvent) {
             const msg = msgEvent.message;
-            if (msg.command === responseCommand && msg.data[enabledKey] === true) {
+            if (msg.command === responseCommand && msg.data.autofillEnabled === true) {
                 setInterval(doFillIfNeeded, 500);
             }
         }, false);
         return;
     }
     else {
+        const enabledKey = 'enableAutoFillOnPageLoad';
         chrome.storage.local.get(enabledKey, (obj) => {
             if (obj && obj[enabledKey] === true) {
                 setInterval(doFillIfNeeded, 500);
