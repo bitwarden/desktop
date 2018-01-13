@@ -87,16 +87,20 @@ class BrowserApi {
                 });
             });
         } else if (BrowserApi.isSafariApi) {
-            const win = safari.application.activeBrowserWindow;
-            if (safari.application.browserWindows.indexOf(win) !== tab.windowId) {
-                return Promise.reject('Window not found.');
+            let t = tab.safariTab;
+            if (!t || !t.page) {
+                const win = safari.application.activeBrowserWindow;
+                if (safari.application.browserWindows.indexOf(win) !== tab.windowId) {
+                    return Promise.reject('Window not found.');
+                }
+
+                if (win.tabs.length < tab.index + 1) {
+                    return Promise.reject('Tab not found.');
+                }
+
+                t = win.tabs[tab.index];
             }
 
-            if (win.tabs.length < tab.index + 1) {
-                return Promise.reject('Tab not found.');
-            }
-
-            const t = win.tabs[tab.index];
             if (t.page) {
                 t.page.dispatchMessage('bitwarden', obj);
             }
@@ -206,6 +210,7 @@ class BrowserApi {
             title: tab.title,
             active: tab === tab.browserWindow.activeTab,
             url: tab.url || 'about:blank',
+            safariTab: tab,
         };
     }
 }

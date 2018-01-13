@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             responseCommand: responseCommand
         });
         safari.self.addEventListener('message', function (msgEvent) {
-            var msg = msgEvent.message;
+            const msg = msgEvent.message;
             if (msg.command === responseCommand && msg.data === true) {
                 setInterval(doFillIfNeeded, 500);
             }
