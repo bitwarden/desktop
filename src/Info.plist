@@ -74,6 +74,7 @@
 			<array>
 				<string>content/autofill.js</string>
 				<string>content/autofiller.js</string>
+				<string>content/notificationBar.js</string>
 			</array>
 		</dict>
 		<key>Stylesheets</key>
