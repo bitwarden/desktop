@@ -109,11 +109,12 @@ export default class MainBackground {
         // Services
         this.utilsService = new UtilsService();
         this.platformUtilsService = new BrowserPlatformUtilsService();
+        const delayi18nLoad = this.platformUtilsService.isEdge() || this.platformUtilsService.isSafari() ? 1000 : 0;
         this.messagingService = new BrowserMessagingService(this.platformUtilsService);
         this.storageService = new BrowserStorageService(this.platformUtilsService, false);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
         this.i18nService = i18nService(this.platformUtilsService);
-        this.constantsService = new ConstantsService(this.i18nService, this.platformUtilsService);
+        this.constantsService = new ConstantsService(this.i18nService, delayi18nLoad);
         this.cryptoService = new CryptoService(this.storageService, this.secureStorageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
@@ -124,8 +125,8 @@ export default class MainBackground {
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
             this.apiService, this.storageService);
-        this.folderService = new FolderService(this.cryptoService, this.userService, this.i18nService.noneFolder,
-            this.apiService, this.storageService);
+        this.folderService = new FolderService(this.cryptoService, this.userService,
+            () => this.i18nService.noneFolder, delayi18nLoad, this.apiService, this.storageService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
             this.cryptoService, this.platformUtilsService, this.storageService,
