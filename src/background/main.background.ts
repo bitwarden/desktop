@@ -166,6 +166,7 @@ export default class MainBackground {
 
         await this.runtimeBackground.init();
         await this.tabsBackground.init();
+
         if (!this.isSafari) {
             await this.commandsBackground.init();
             await this.contextMenusBackground.init();

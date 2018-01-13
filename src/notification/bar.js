@@ -3,15 +3,18 @@ require('./bar.less');
 document.addEventListener('DOMContentLoaded', function () {
     var i18n = {};
     if (typeof safari !== 'undefined') {
-        // TODO: load when we get i18n strings
-        i18n.appName = 'bitwarden';
-        i18n.close = 'close';
-        i18n.yes = 'Yes';
-        i18n.never = 'Never';
-        i18n.notificationAddSave = 'Save Site';;
-        i18n.notificationNeverSave = 'Never Save';
-        i18n.notificationAddDesc = 'Want to Save?';
-        setTimeout(load, 50);
+        const responseCommand = 'notificationBarFrameDataResponse';
+        sendPlatformMessage({
+            command: 'bgGetDataForTab',
+            responseCommand: responseCommand
+        });
+        safari.self.addEventListener('message', function (msgEvent) {
+            const msg = msgEvent.message;
+            if (msg.command === responseCommand && msg.data) {
+                i18n = msg.data.i18n;
+                load();
+            }
+        }, false);
     }
     else {
         i18n.appName = chrome.i18n.getMessage('appName');

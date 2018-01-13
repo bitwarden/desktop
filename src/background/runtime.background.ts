@@ -23,7 +23,7 @@ export default class RuntimeBackground {
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: PlatformUtilsService,
-        private storageService: StorageService) {
+        private storageService: StorageService, private i18nService: any) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
     }
@@ -260,22 +260,27 @@ export default class RuntimeBackground {
         }
     }
 
-    private async sendStorageValueToTab(storageKey: string, tab: any, responseCommand: string) {
-        const val = await this.storageService.get<any>(storageKey);
-        await BrowserApi.tabSendMessageData(tab, responseCommand, val);
-    }
-
     private async getDataForTab(tab: any, responseCommand: string) {
-        const responseVal: any = {};
+        const responseData: any = {};
         if (responseCommand === 'notificationBarDataResponse') {
-            responseVal.neverDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
-            responseVal.disabledNotification = await this.storageService.get<boolean>(
+            responseData.neverDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
+            responseData.disabledNotification = await this.storageService.get<boolean>(
                 ConstantsService.disableAddLoginNotificationKey);
         } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
-            responseVal.autofillEnabled = await this.storageService.get<boolean>(
+            responseData.autofillEnabled = await this.storageService.get<boolean>(
                 ConstantsService.enableAutoFillOnPageLoadKey);
+        } else if (responseCommand === 'notificationBarFrameDataResponse') {
+            responseData.i18n = {
+                appName: this.i18nService.appName,
+                close: this.i18nService.close,
+                yes: this.i18nService.yes,
+                never: this.i18nService.never,
+                notificationAddSave: this.i18nService.notificationAddSave,
+                notificationNeverSave: this.i18nService.notificationNeverSave,
+                notificationAddDesc: this.i18nService.notificationAddDesc,
+            };
         }
 
-        await BrowserApi.tabSendMessageData(tab, responseCommand, responseVal);
+        await BrowserApi.tabSendMessageData(tab, responseCommand, responseData);
     }
 }

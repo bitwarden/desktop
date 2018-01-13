@@ -20,7 +20,7 @@ export default class TabsBackground {
             this.tabs.addEventListener('activate', async (ev: any) => {
                 await this.main.refreshBadgeAndMenu();
             }, true);
-            
+
             this.tabs.addEventListener('navigate', async (ev: any) => {
                 await this.main.checkLoginsToAdd();
                 await this.main.refreshBadgeAndMenu();
