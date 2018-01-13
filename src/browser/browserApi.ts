@@ -143,7 +143,7 @@ class BrowserApi {
             if (extensionPage && url.indexOf('/') === 0) {
                 url = BrowserApi.getAssetUrl(url);
             }
-            const tab = safari.application.activeBrowserWindow.browserWindow.openTab();
+            const tab = safari.application.activeBrowserWindow.openTab();
             if (tab) {
                 tab.url = url;
             }
