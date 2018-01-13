@@ -7,6 +7,7 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 export class ToolsController {
     showExport: boolean;
+    showPopout: boolean = true;
     i18n: any;
     private webVaultBaseUrl: string = 'https://vault.bitwarden.com';
 
@@ -15,6 +16,7 @@ export class ToolsController {
         private environmentService: EnvironmentService) {
         this.i18n = i18nService;
         this.showExport = !platformUtilsService.isEdge();
+        this.showPopout = !platformUtilsService.isSafari();
         if (environmentService.baseUrl) {
             this.webVaultBaseUrl = environmentService.baseUrl;
         } else if (environmentService.webVaultUrl) {

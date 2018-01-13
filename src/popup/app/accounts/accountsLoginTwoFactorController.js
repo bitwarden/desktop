@@ -183,8 +183,9 @@ angular
                     params = providers[constants.twoFactorProvider.email];
                     $scope.twoFactorEmail = params.Email;
 
-                    if (BrowserApi.isPopupOpen() && !popupUtilsService.inSidebar($window) &&
-                        !popupUtilsService.inTab($window) && !popupUtilsService.inPopout($window)) {
+                    if (!platformUtilsService.isSafari() && BrowserApi.isPopupOpen() &&
+                        !popupUtilsService.inSidebar($window) && !popupUtilsService.inTab($window) &&
+                        !popupUtilsService.inPopout($window)) {
                         SweetAlert.swal({
                             title: i18nService.twoStepLogin,
                             text: i18nService.popup2faCloseMessage,
@@ -193,7 +194,7 @@ angular
                             cancelButtonText: i18nService.no
                         }, function (confirmed) {
                             if (confirmed) {
-                                BrowserApi.createNewTab('/popup/index.html?uilocation=tab#!/login');
+                                BrowserApi.createNewTab('/popup/index.html?uilocation=tab#!/login', true);
                                 return;
                             }
                             else if (Object.keys(providers).length > 1) {

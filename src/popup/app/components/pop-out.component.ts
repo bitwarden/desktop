@@ -1,5 +1,7 @@
 import * as template from './pop-out.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import PopupUtilsService from '../services/popupUtils.service';
@@ -52,7 +54,7 @@ export class PopOutController implements ng.IController {
                 url: href,
             });
         } else if ((typeof safari !== 'undefined')) {
-            // TODO?
+            // Safari can't open popup in full page tab :(
         }
     }
 }

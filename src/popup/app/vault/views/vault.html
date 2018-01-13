@@ -1,5 +1,5 @@
 ﻿<div class="header header-search">
-    <pop-out class="left"></pop-out>
+    <pop-out ng-if="showPopout" class="left"></pop-out>
     <div class="search" ng-style="{'visibility': disableSearch ? 'hidden' : 'visible'}">
         <input type="search" placeholder="{{::i18n.searchVault}}" id="search" ng-model="searchText" />
         <i class="fa fa-search"></i>

@@ -10,6 +10,7 @@ angular
         $scope.i18n = i18nService;
         $scope.showGroupingCounts = !platformUtilsService.isEdge();
         $scope.disableSearch = platformUtilsService.isEdge();
+        $scope.showPopout = !platformUtilsService.isSafari();
         document.getElementById('search').focus();
 
         var syncOnLoad = $stateParams.syncOnLoad;

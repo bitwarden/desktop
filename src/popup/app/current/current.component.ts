@@ -24,6 +24,7 @@ export class CurrentController {
     canAutofill: boolean = false;
     searchText: string = null;
     inSidebar: boolean = false;
+    showPopout: boolean = true;
     disableSearch: boolean = false;
 
     constructor($scope: any, private cipherService: CipherService, private platformUtilsService: PlatformUtilsService,
@@ -32,6 +33,7 @@ export class CurrentController {
         private $analytics: any, private i18nService: any, private $filter: ng.IFilterService) {
         this.i18n = i18nService;
         this.inSidebar = PopupUtilsService.inSidebar($window);
+        this.showPopout = !this.inSidebar && !platformUtilsService.isSafari();
         this.disableSearch = platformUtilsService.isEdge();
 
         $scope.$on('syncCompleted', (event: any, successfully: boolean) => {

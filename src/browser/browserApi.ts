@@ -129,17 +129,24 @@ class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.extension.getViews({ type: 'popup' }).length > 0;
         } else if (BrowserApi.isSafariApi) {
-            return true; // TODO
+            return safari.extension.popovers && safari.extension.popovers.length &&
+                safari.extension.popovers[0].visible;
         } else {
             return null;
         }
     }
 
-    static createNewTab(url: string): void {
+    static createNewTab(url: string, extensionPage: boolean = false): void {
         if (BrowserApi.isChromeApi) {
             chrome.tabs.create({ url: url });
         } else if (BrowserApi.isSafariApi) {
-            return; // TODO
+            if (extensionPage && url.indexOf('/') === 0) {
+                url = BrowserApi.getAssetUrl(url);
+            }
+            const tab = safari.application.activeBrowserWindow.browserWindow.openTab();
+            if (tab) {
+                tab.url = url;
+            }
         } else {
             return;
         }
@@ -149,7 +156,10 @@ class BrowserApi {
         if (BrowserApi.isChromeApi) {
             return chrome.extension.getURL(path);
         } else if (BrowserApi.isSafariApi) {
-            return './' + path; // TODO?
+            if (path.indexOf('/') === 0) {
+                path = path.substr(1);
+            }
+            return safari.extension.baseURI + path;
         } else {
             return null;
         }

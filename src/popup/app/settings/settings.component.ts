@@ -27,13 +27,14 @@ const RateUrls = {
     [DeviceType.Vivaldi]:
     'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
     [DeviceType.Safari]:
-    'https://itunes.com', // TODO
+    'https://itunes.apple.com/app/bitwarden-password-manager/id1137397744',
 };
 
 export class SettingsController {
     lockOption = '';
     i18n: any;
     showOnLocked: boolean;
+    showPopout: boolean = true;
 
     constructor(private $state: any, private SweetAlert: any,
         private platformUtilsService: PlatformUtilsService, private $analytics: any,
@@ -42,6 +43,7 @@ export class SettingsController {
         private storageService: StorageService, public messagingService: MessagingService,
         private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
+        this.showPopout = !platformUtilsService.isSafari();
 
         $timeout(() => {
             PopupUtilsService.initListSectionItemListeners(document, angular);
