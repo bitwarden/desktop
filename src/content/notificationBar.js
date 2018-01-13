@@ -1,4 +1,8 @@
-﻿document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', function (event) {
+    if (window.location.hostname.indexOf('bitwarden.com') > -1) {
+        return;
+    }
+
     var pageDetails = [],
         formData = [],
         barType = null,
@@ -8,9 +12,38 @@
         collectIfNeededTimeout = null,
         observeDomTimeout = null,
         iframed = isIframed(),
-        submitButtonNames = ['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next'];
+        submitButtonNames = ['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next'],
+        notificationBarData = null,
+        isSafariApi = (typeof safari !== 'undefined');
 
-    if (window.location.hostname.indexOf('bitwarden.com') === -1) {
+    if (isSafariApi) {
+        const responseCommand = 'notificationBarDataResponse';
+        safari.self.tab.dispatchMessage('bitwarden', {
+            command: 'bgGetNotificationBarData',
+            responseCommand: responseCommand
+        });
+        safari.self.addEventListener('message', function (msgEvent) {
+            const msg = msgEvent.message;
+            if (msg.command === responseCommand && msg.data) {
+                notificationBarData = msg.data;
+                if (notificationBarData.neverDomains &&
+                    notificationBarData.neverDomains.hasOwnProperty(window.location.hostname)) {
+                    return;
+                }
+
+                if (notificationBarData.disableAddLoginNotification === true) {
+                    return;
+                }
+
+                collectIfNeededWithTimeout();
+                return;
+            }
+
+            processMessages(msg, function () { /* do nothing on send response for Safari */ });
+        }, false);
+        return;
+    }
+    else {
         chrome.storage.local.get('neverDomains', function (obj) {
             var domains = obj.neverDomains;
             if (domains && domains.hasOwnProperty(window.location.hostname)) {
@@ -19,16 +52,17 @@
 
             chrome.storage.local.get('disableAddLoginNotification', function (obj) {
                 if (!obj || !obj.disableAddLoginNotification) {
-                    if (collectIfNeededTimeout) {
-                        clearTimeout(collectIfNeededTimeout);
-                    }
-                    collectIfNeededTimeout = setTimeout(collectIfNeeded, 1000);
+                    collectIfNeededWithTimeout();
                 }
             });
         });
+
+        chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+            processMessages(msg, sendResponse);
+        });
     }
 
-    chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    function processMessages(msg, sendResponse) {
         if (msg.command === 'openNotificationBar') {
             if (iframed) {
                 return;
@@ -59,7 +93,7 @@
             sendResponse();
             return true;
         }
-    });
+    }
 
     function isIframed() {
         try {
@@ -125,6 +159,13 @@
         }
     }
 
+    function collectIfNeededWithTimeout() {
+        if (collectIfNeededTimeout) {
+            clearTimeout(collectIfNeededTimeout);
+        }
+        collectIfNeededTimeout = setTimeout(collectIfNeeded, 1000);
+    }
+
     function collectIfNeeded() {
         if (pageHref !== window.location.href) {
             pageHref = window.location.href;
@@ -148,7 +189,7 @@
     }
 
     function collect() {
-        chrome.runtime.sendMessage({
+        sendPlatformMessage({
             command: 'bgCollectPageDetails',
             sender: 'notificationBar'
         });
@@ -296,7 +337,7 @@
                         form.dataset.bitwardenProcessed = '0';
                     }, 500);
 
-                    chrome.runtime.sendMessage({
+                    sendPlatformMessage({
                         command: 'bgAddLogin',
                         login: login
                     });
@@ -344,8 +385,10 @@
             return;
         }
 
+        var barPageUrl = isSafariApi ? (safari.extension.baseURI + barPage) : chrome.extension.getURL(barPage);
+
         var iframe = document.createElement('iframe');
-        iframe.src = chrome.extension.getURL(barPage);
+        iframe.src = barPageUrl;
         iframe.style.cssText = 'height: 42px; width: 100%; border: 0;';
         iframe.id = 'bit-notification-bar-iframe';
 
@@ -378,7 +421,7 @@
 
         switch (barType) {
             case 'add':
-                chrome.runtime.sendMessage({
+                sendPlatformMessage({
                     command: 'bgAddClose'
                 });
                 break;
@@ -400,6 +443,15 @@
         var el = document.getElementById(elId);
         if (el) {
             el.style.height = heightStyle;
+        }
+    }
+
+    function sendPlatformMessage(msg) {
+        if (isSafariApi) {
+            safari.self.tab.dispatchMessage('bitwarden', msg);
+        }
+        else {
+            chrome.runtime.sendMessage(msg);
         }
     }
 });
