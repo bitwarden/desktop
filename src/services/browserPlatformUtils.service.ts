@@ -1,5 +1,7 @@
 import * as tldjs from 'tldjs';
 
+import { BrowserApi } from '../browser/browserApi';
+
 import { DeviceType } from 'jslib/enums';
 
 import { PlatformUtilsService } from 'jslib/abstractions';
@@ -119,14 +121,12 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     isViewOpen(): boolean {
-        if (this.isSafari()) {
-            // TODO
+        if (BrowserApi.isPopupOpen()) {
             return true;
         }
 
-        const popupOpen = chrome.extension.getViews({ type: 'popup' }).length > 0;
-        if (popupOpen) {
-            return true;
+        if (this.isSafari()) {
+            return false;
         }
 
         const sidebarView = this.sidebarViewName();
