@@ -68,7 +68,7 @@ export default class RuntimeBackground {
         });
     }
 
-    private async processMessage(msg: any, sender: any, sendResponse: any) {
+    async processMessage(msg: any, sender: any, sendResponse: any) {
         switch (msg.command) {
             case 'loggedIn':
             case 'unlocked':

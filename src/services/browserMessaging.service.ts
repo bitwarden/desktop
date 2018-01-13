@@ -1,3 +1,5 @@
+import { BrowserApi } from '../browser/browserApi';
+
 import {
     MessagingService,
     PlatformUtilsService,
@@ -8,10 +10,12 @@ export default class BrowserMessagingService implements MessagingService {
     }
 
     send(subscriber: string, arg: any = {}) {
+        const message = Object.assign({}, { command: subscriber }, arg);
+
         if (this.platformUtilsService.isSafari()) {
-            // send message
+            const bgPage = BrowserApi.getBackgroundPage();
+            bgPage.bitwardenMain.sendInternalRuntimeMessage(message);
         } else {
-            const message = Object.assign({}, { command: subscriber }, arg);
             chrome.runtime.sendMessage(message);
         }
     }

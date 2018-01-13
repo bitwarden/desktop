@@ -273,6 +273,14 @@ export default class MainBackground {
         }
     }
 
+    sendInternalRuntimeMessage(message: any) {
+        if (!this.isSafari) {
+            throw new Error('Only safari can send internal runtime messages.');
+        }
+
+        this.runtimeBackground.processMessage(message, { tab: null }, () => { /* No response needed. */ });
+    }
+
     private async buildContextMenu() {
         if (this.isSafari || !chrome.contextMenus || this.buildingContextMenu) {
             return;
