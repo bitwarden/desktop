@@ -101,6 +101,10 @@ class BrowserApi {
                 t = win.tabs[tab.index];
             }
 
+            if (obj.tab && obj.tab.safariTab) {
+                delete obj.tab.safariTab;
+            }
+
             if (t.page) {
                 t.page.dispatchMessage('bitwarden', obj);
             }
