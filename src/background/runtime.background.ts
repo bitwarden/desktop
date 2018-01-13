@@ -268,7 +268,7 @@ export default class RuntimeBackground {
     private async getDataForTab(tab: any, responseCommand: string) {
         const responseVal: any = {};
         if (responseCommand === 'notificationBarDataResponse') {
-            responseVal.neverDomains = await this.storageService.get<string[]>(ConstantsService.neverDomainsKey);
+            responseVal.neverDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
             responseVal.disabledNotification = await this.storageService.get<boolean>(
                 ConstantsService.disableAddLoginNotificationKey);
         } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
