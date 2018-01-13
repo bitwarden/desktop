@@ -1,19 +1,38 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let pageHref = null;
+    const enabledKey = 'enableAutoFillOnPageLoad';
 
-    chrome.storage.local.get('enableAutoFillOnPageLoad', (obj) => {
-        if (obj && obj.enableAutoFillOnPageLoad === true) {
-            setInterval(doFillIfNeeded, 500);
+    if ((typeof safari !== 'undefined')) {
+        const json = safari.extension.settings.getItem(enabledKey);
+        if (json) {
+            const obj = JSON.parse(json);
+            if (obj && obj[enabledKey] === true) {
+                setInterval(doFillIfNeeded, 500);
+            }
         }
-    });
+    }
+    else {
+        chrome.storage.local.get(enabledKey, (obj) => {
+            if (obj && obj[enabledKey] === true) {
+                setInterval(doFillIfNeeded, 500);
+            }
+        });
+    }
 
     function doFillIfNeeded() {
         if (pageHref !== window.location.href) {
             pageHref = window.location.href;
-            chrome.runtime.sendMessage({
+            const msg = {
                 command: 'bgCollectPageDetails',
                 sender: 'autofiller'
-            });
+            };
+
+            if ((typeof safari !== 'undefined')) {
+                safari.self.tab.dispatchMessage('bitwarden', msg);
+            }
+            else {
+                chrome.runtime.sendMessage(msg);
+            }
         }
     }
 });
