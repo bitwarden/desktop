@@ -272,7 +272,7 @@ export default class RuntimeBackground {
             responseVal.disableAddLoginNotification = await this.storageService.get<boolean>(
                 ConstantsService.disableAddLoginNotificationKey);
         } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
-            responseVal.enableAutoFillOnPageLoadKey = await this.storageService.get<boolean>(
+            responseVal.enableAutoFillOnPageLoad = await this.storageService.get<boolean>(
                 ConstantsService.enableAutoFillOnPageLoadKey);
         }
 
