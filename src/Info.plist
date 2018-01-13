@@ -39,7 +39,7 @@
 				<key>Filename</key>
 				<string>popup/index.html</string>
 				<key>Height</key>
-				<integer>667</integer>
+				<integer>600</integer>
 				<key>Identifier</key>
 				<string>bitwarden-popup</string>
 				<key>Width</key>
@@ -73,6 +73,7 @@
 			<key>Start</key>
 			<array>
 				<string>content/autofill.js</string>
+				<string>content/autofiller.js</string>
 			</array>
 		</dict>
 		<key>Stylesheets</key>

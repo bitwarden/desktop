@@ -48,21 +48,19 @@ export default class RuntimeBackground {
                     win.location.href = href;
                 }
             }, true);
+        } else {
+            if (this.runtime.onInstalled) {
+                this.runtime.onInstalled.addListener((details: any) => {
+                    (window as any).ga('send', {
+                        hitType: 'event',
+                        eventAction: 'onInstalled ' + details.reason,
+                    });
 
-            return;
-        }
-
-        if (this.runtime.onInstalled) {
-            this.runtime.onInstalled.addListener((details: any) => {
-                (window as any).ga('send', {
-                    hitType: 'event',
-                    eventAction: 'onInstalled ' + details.reason,
+                    if (details.reason === 'install') {
+                        chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
+                    }
                 });
-
-                if (details.reason === 'install') {
-                    chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
-                }
-            });
+            }
         }
 
         BrowserApi.messageListener(async (msg: any, sender: any, sendResponse: any) => {
