@@ -21,40 +21,42 @@ angular
             cipherObj = cipher;
             return cipher.decrypt();
         }).then(function (model) {
-            $scope.cipher = model;
+            $timeout(function() {
+                $scope.cipher = model;
 
-            if (model.type == constantsService.cipherType.login && model.login) {
-                if (model.login.password) {
-                    $scope.cipher.maskedPassword = $scope.maskValue(model.login.password);
-                }
+                if (model.type == constantsService.cipherType.login && model.login) {
+                    if (model.login.password) {
+                        $scope.cipher.maskedPassword = $scope.maskValue(model.login.password);
+                    }
 
-                if (model.login.uri) {
-                    $scope.cipher.showLaunch = model.login.uri.startsWith('http://') || model.login.uri.startsWith('https://');
-                    var domain = platformUtilsService.getDomain(model.login.uri);
-                    if (domain) {
-                        $scope.cipher.login.website = domain;
+                    if (model.login.uri) {
+                        $scope.cipher.showLaunch = model.login.uri.startsWith('http://') || model.login.uri.startsWith('https://');
+                        var domain = platformUtilsService.getDomain(model.login.uri);
+                        if (domain) {
+                            $scope.cipher.login.website = domain;
+                        }
+                        else {
+                            $scope.cipher.login.website = model.login.uri;
+                        }
                     }
                     else {
-                        $scope.cipher.login.website = model.login.uri;
+                        $scope.cipher.showLaunch = false;
                     }
                 }
-                else {
-                    $scope.cipher.showLaunch = false;
-                }
-            }
 
-            if (model.login && model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
-                totpUpdateCode();
-                totpTick();
-
-                if (totpInterval) {
-                    clearInterval(totpInterval);
-                }
-
-                totpInterval = setInterval(function () {
+                if (model.login && model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
+                    totpUpdateCode();
                     totpTick();
-                }, 1000);
-            }
+
+                    if (totpInterval) {
+                        clearInterval(totpInterval);
+                    }
+
+                    totpInterval = setInterval(function () {
+                        totpTick();
+                    }, 1000);
+                }
+            });
         });
 
         $scope.edit = function (cipher) {

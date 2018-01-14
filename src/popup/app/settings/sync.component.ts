@@ -8,7 +8,7 @@ export class SyncController {
     loading = false;
 
     constructor(private syncService: SyncService, private toastr: any, private $analytics: any,
-        private i18nService: any) {
+        private i18nService: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
         this.setLastSync();
     }
@@ -20,20 +20,22 @@ export class SyncController {
             if (success) {
                 this.setLastSync();
                 this.$analytics.eventTrack('Synced Full');
-                this.toastr.success(this.i18nService.syncingComplete);
+                this.toastr.success(this.i18n.syncingComplete);
             } else {
-                this.toastr.error(this.i18nService.syncingFailed);
+                this.toastr.error(this.i18n.syncingFailed);
             }
         });
     }
 
     setLastSync() {
-        this.syncService.getLastSync().then((lastSync: any) => {
-            if (lastSync) {
-                this.lastSync = lastSync.toLocaleDateString() + ' ' + lastSync.toLocaleTimeString();
-            } else {
-                this.lastSync = this.i18nService.never;
-            }
+        this.syncService.getLastSync().then((last: Date) => {
+            this.$timeout(() => {
+                if (last) {
+                    this.lastSync = last.toLocaleDateString() + ' ' + last.toLocaleTimeString();
+                } else {
+                    this.lastSync = this.i18n.never;
+                }
+            });
         });
     }
 }
