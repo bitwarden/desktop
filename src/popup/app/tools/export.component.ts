@@ -2,6 +2,8 @@ import * as angular from 'angular';
 import * as papa from 'papaparse';
 import * as template from './export.component.html';
 
+import { BrowserApi } from '../../../browser/browserApi';
+
 import { CipherType } from 'jslib/enums/cipherType';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -133,20 +135,7 @@ export class ExportController {
     private downloadFile(csv: string): void {
         const csvBlob = new Blob([csv], { type: 'text/plain' });
         const fileName = this.makeFileName();
-
-        if (this.$window.navigator.msSaveOrOpenBlob) {
-            // Currently bugged in Edge. See
-            // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8178877/
-            // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8477778/
-            this.$window.navigator.msSaveBlob(csvBlob, fileName);
-        } else {
-            const a = this.$window.document.createElement('a');
-            a.href = this.$window.URL.createObjectURL(csvBlob);
-            a.download = fileName;
-            this.$window.document.body.appendChild(a);
-            a.click();
-            this.$window.document.body.removeChild(a);
-        }
+        BrowserApi.downloadFile(this.$window, csvBlob, fileName);
     }
 
     private makeFileName(): string {
