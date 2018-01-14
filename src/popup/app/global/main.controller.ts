@@ -25,7 +25,7 @@ export class MainController implements ng.IController {
             }
         });
 
-        BrowserApi.messageListener((msg: any, sender: any, sendResponse: any) => {
+        $window.bitwardenPopupMainMessageListener = (msg: any, sender: any, sendResponse: any) => {
             if (msg.command === 'syncCompleted') {
                 $scope.$broadcast('syncCompleted', msg.successfully);
             } else if (msg.command === 'syncStarted') {
@@ -38,13 +38,16 @@ export class MainController implements ng.IController {
                     }
                     $state.go('home');
                 });
-            } else if (msg.command === 'collectPageDetailsResponse' && msg.sender === 'currentController') {
+            } else if (msg.command === 'collectPageDetailsResponse' &&
+                msg.sender === 'currentController') {
                 $scope.$broadcast('collectPageDetailsResponse', {
                     frameId: sender.frameId,
                     tab: msg.tab,
                     details: msg.details,
                 });
             }
-        });
+        };
+
+        BrowserApi.messageListener($window.bitwardenPopupMainMessageListener);
     }
 }
