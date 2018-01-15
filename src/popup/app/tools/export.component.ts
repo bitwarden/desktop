@@ -73,15 +73,15 @@ export class ExportController {
         await Promise.all(promises);
 
         const foldersMap = new Map<string, any>();
-        for (const f of decFolders) {
+        decFolders.forEach((f: any) => {
             foldersMap.set(f.id, f);
-        }
+        });
 
-        const exportCiphers = [];
-        for (const c of decCiphers) {
+        const exportCiphers: any[] = [];
+        decCiphers.forEach((c: any) => {
             // only export logins and secure notes
             if (c.type !== CipherType.Login && c.type !== CipherType.SecureNote) {
-                continue;
+                return;
             }
 
             const cipher: any = {
@@ -99,7 +99,7 @@ export class ExportController {
             };
 
             if (c.fields) {
-                for (const f of c.fields) {
+                c.fields.forEach((f: any) => {
                     if (!cipher.fields) {
                         cipher.fields = '';
                     } else {
@@ -107,7 +107,7 @@ export class ExportController {
                     }
 
                     cipher.fields += ((f.name || '') + ': ' + f.value);
-                }
+                });
             }
 
             switch (c.type) {
@@ -122,11 +122,11 @@ export class ExportController {
                     cipher.type = 'note';
                     break;
                 default:
-                    continue;
+                    return;
             }
 
             exportCiphers.push(cipher);
-        }
+        });
 
         const csv = papa.unparse(exportCiphers);
         return csv;

@@ -2,15 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf('Safari') !== -1 &&
         navigator.userAgent.indexOf('Chrome') === -1;
 
-    if (isSafari) {
-        safari.self.addEventListener('message', (msgEvent: any) => {
-            doDownload(msgEvent.message);
-        }, false);
-    } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
-        chrome.runtime.onMessage.addListener((msg: any, sender: any, sendResponse: any) => {
-            doDownload(msg);
-        });
+    if (!isSafari) {
+        return;
     }
+
+    safari.self.addEventListener('message', (msgEvent: any) => {
+        doDownload(msgEvent.message);
+    }, false);
 
     function doDownload(msg: any) {
         if (msg.command === 'downloaderPageData' && msg.data) {

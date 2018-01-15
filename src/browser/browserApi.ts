@@ -199,11 +199,11 @@ class BrowserApi {
     }
 
     static downloadFile(win: Window, blobData: any, blobOptions: any, fileName: string) {
-        if (win.navigator.msSaveOrOpenBlob || BrowserApi.isSafariApi) {
+        if (BrowserApi.isSafariApi) {
             const tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('downloader/index.html'));
-            const madeTab = BrowserApi.makeTabObject(tab);
-            setTimeout(() => {
-                BrowserApi.tabSendMessage(madeTab, {
+            const tabToSend = BrowserApi.makeTabObject(tab);
+            setTimeout(async () => {
+                BrowserApi.tabSendMessage(tabToSend, {
                     command: 'downloaderPageData',
                     data: {
                         blobData: blobData,
@@ -214,12 +214,16 @@ class BrowserApi {
             }, 1000);
         } else {
             const blob = new Blob([blobData], blobOptions);
-            const a = win.document.createElement('a');
-            a.href = win.URL.createObjectURL(blob);
-            a.download = fileName;
-            win.document.body.appendChild(a);
-            a.click();
-            win.document.body.removeChild(a);
+            if (navigator.msSaveOrOpenBlob) {
+                navigator.msSaveBlob(blob, fileName);
+            } else {
+                const a = win.document.createElement('a');
+                a.href = win.URL.createObjectURL(blob);
+                a.download = fileName;
+                win.document.body.appendChild(a);
+                a.click();
+                win.document.body.removeChild(a);
+            }
         }
     }
 
