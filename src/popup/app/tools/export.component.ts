@@ -133,9 +133,8 @@ export class ExportController {
     }
 
     private downloadFile(csv: string): void {
-        const csvBlob = new Blob([csv], { type: 'text/plain' });
         const fileName = this.makeFileName();
-        BrowserApi.downloadFile(this.$window, csvBlob, fileName);
+        BrowserApi.downloadFile(this.$window, csv, { type: 'text/plain' }, fileName);
     }
 
     private makeFileName(): string {

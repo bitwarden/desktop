@@ -198,31 +198,28 @@ class BrowserApi {
         }
     }
 
-    static downloadFile(win: Window, blob: Blob, fileName: string) {
-        if (win.navigator.msSaveOrOpenBlob) {
-            // Currently bugged in Edge. See
-            // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8178877/
-            // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8477778/
-            win.navigator.msSaveBlob(blob, fileName);
-        } else if (BrowserApi.isChromeApi) {
-            const a = win.document.createElement('a');
-            a.href = win.URL.createObjectURL(blob);
-            a.download = fileName;
-            win.document.body.appendChild(a);
-            a.click();
-            win.document.body.removeChild(a);
-        } else if (BrowserApi.isSafariApi) {
+    static downloadFile(win: Window, blobData: any, blobOptions: any, fileName: string) {
+        if (win.navigator.msSaveOrOpenBlob || BrowserApi.isSafariApi) {
             const tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('downloader/index.html'));
             const madeTab = BrowserApi.makeTabObject(tab);
             setTimeout(() => {
                 BrowserApi.tabSendMessage(madeTab, {
                     command: 'downloaderPageData',
                     data: {
-                        blob: blob,
+                        blobData: blobData,
+                        blobOptions: blobOptions,
                         fileName: fileName,
                     },
                 });
             }, 1000);
+        } else {
+            const blob = new Blob([blobData], blobOptions);
+            const a = win.document.createElement('a');
+            a.href = win.URL.createObjectURL(blob);
+            a.download = fileName;
+            win.document.body.appendChild(a);
+            a.click();
+            win.document.body.removeChild(a);
         }
     }
 

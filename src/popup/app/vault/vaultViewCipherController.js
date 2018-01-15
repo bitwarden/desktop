@@ -162,21 +162,7 @@ angular
                     return cryptoService.decryptFromBytes(req.response, key);
                 }).then(function (decBuf) {
                     var blob = new Blob([decBuf]);
-
-                    if ($window.navigator.msSaveOrOpenBlob) {
-                        // Currently bugged in Edge. See
-                        // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8178877/
-                        // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8477778/
-                        $window.navigator.msSaveBlob(csvBlob, attachment.fileName);
-                    }
-                    else {
-                        var a = $window.document.createElement('a');
-                        a.href = $window.URL.createObjectURL(blob);
-                        a.download = attachment.fileName;
-                        $window.document.body.appendChild(a);
-                        a.click();
-                        $window.document.body.removeChild(a);
-                    }
+                    BrowserApi.downloadFile($window, decBuf, null, attachment.fileName);
 
                     $timeout(function () {
                         attachment.downloading = false;

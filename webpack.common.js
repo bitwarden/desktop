@@ -22,6 +22,7 @@ module.exports = {
         'content/autofiller': './src/content/autofiller.js',
         'content/notificationBar': './src/content/notificationBar.js',
         'notification/bar': './src/notification/bar.js',
+        'downloader/downloader': './src/downloader/downloader.ts',
     },
     module: {
         rules: [
@@ -93,6 +94,11 @@ module.exports = {
             template: './src/notification/bar.html',
             filename: 'notification/bar.html',
             chunks: ['notification/bar']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/downloader/index.html',
+            filename: 'downloader/index.html',
+            chunks: ['downloader/downloader']
         }),
         new CopyWebpackPlugin([
             './src/manifest.json',
