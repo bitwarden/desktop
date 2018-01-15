@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navigator.msSaveBlob(blob, msg.data.fileName);
             } else {
                 const a = document.createElement('a');
-                a.href = URL.createObjectURL(msg.data.blob);
+                a.href = URL.createObjectURL(blob);
                 a.download = msg.data.fileName;
                 document.body.appendChild(a);
                 a.click();
@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        document.querySelector('#dl-message').remove();
+        window.close();
     }
 });
