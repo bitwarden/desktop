@@ -102,9 +102,9 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             './src/manifest.json',
-            './src/Info.plist',
             { from: './src/_locales', to: '_locales' },
             { from: './src/edge', to: 'edge' },
+            { from: './src/safari', to: 'safari' },
             { from: './src/images', to: 'images' },
             { from: './src/content/autofill.css', to: 'content' }
         ])

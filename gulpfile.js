@@ -27,7 +27,7 @@ const filters = {
         'build/popup/fonts/fontawesome*.woff'
     ],
     safari: [
-        '!build/Info.plist',
+        '!build/safari/**/*',
         '!build/downloader/**/*'
     ],
     webExt: [
@@ -162,9 +162,12 @@ gulp.task('ci:coverage', (cb) => {
 
 gulp.task('safari:build', (cb) => {
     const buildPath = './build.safariextension/';
+    const safariAssetsBuildPath = buildPath + 'safari/';
 
     return del([buildPath + '**/*'])
-        .then(() => safariMoveBuild(paths.build + '**/*', buildPath))
+        .then(() => safariCopyBuild(paths.build + '**/*', buildPath))
+        .then(() => copy(safariAssetsBuildPath + '**/*', buildPath))
+        .then(() => del([safariAssetsBuildPath]))
         .then(() => {
             return cb;
         }, () => {
@@ -172,11 +175,21 @@ gulp.task('safari:build', (cb) => {
         });
 });
 
-function safariMoveBuild(source, dest) {
+function safariCopyBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
             .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.webExt)))
+            .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'safari')))
+            .pipe(gulp.dest(dest))
+            .on('end', resolve);
+    });
+}
+
+function copy(source, dest) {
+    return new Promise((resolve, reject) => {
+        gulp.src(source)
+            .on('error', reject)
             .pipe(gulp.dest(dest))
             .on('end', resolve);
     });
