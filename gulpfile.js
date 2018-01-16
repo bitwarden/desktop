@@ -141,13 +141,15 @@ function edgeCopyAssets(source, dest) {
 }
 
 gulp.task('dist:safari', (cb) => {
-    const buildPath = paths.dist + 'bitwarden.safariextension/';
-    const safariAssetsBuildPath = buildPath + 'safari/';
+    const buildPath = paths.dist + 'Safari/';
+    const extBuildPath = buildPath + 'bitwarden.safariextension/';
+    const extAssetsBuildPath = extBuildPath + 'safari/';
 
     return del([buildPath + '**/*'])
-        .then(() => safariCopyBuild(paths.build + '**/*', buildPath))
-        .then(() => copy(safariAssetsBuildPath + '**/*', buildPath))
-        .then(() => del([safariAssetsBuildPath]))
+        .then(() => safariCopyBuild(paths.build + '**/*', extBuildPath))
+        .then(() => copy(extAssetsBuildPath + '**/*', extBuildPath))
+        .then(() => del([extAssetsBuildPath]))
+        .then(() => safariZip(buildPath))
         .then(() => {
             return cb;
         }, () => {
@@ -162,6 +164,16 @@ function safariCopyBuild(source, dest) {
             .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.webExt)))
             .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'safari')))
             .pipe(gulp.dest(dest))
+            .on('end', resolve);
+    });
+}
+
+function safariZip(buildPath) {
+    return new Promise((resolve, reject) => {
+        gulp.src(buildPath + '**/*')
+            .on('error', reject)
+            .pipe(zip(distFileName('safari', 'zip')))
+            .pipe(gulp.dest(paths.dist))
             .on('end', resolve);
     });
 }
