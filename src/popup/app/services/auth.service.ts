@@ -11,7 +11,7 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
-class AuthService {
+export class AuthService {
     constructor(public cryptoService: CryptoService, public apiService: ApiService, public userService: UserService,
         public tokenService: TokenService, public $rootScope: any, public appIdService: AppIdService,
         public platformUtilsService: PlatformUtilsService, public constantsService: ConstantsService,
@@ -80,4 +80,5 @@ class AuthService {
     }
 }
 
-export default AuthService;
+AuthService.$inject = ['cryptoService', 'apiService', 'userService', 'tokenService', '$rootScope', 'appIdService',
+    'platformUtilsService', 'constantsService', 'messagingService'];

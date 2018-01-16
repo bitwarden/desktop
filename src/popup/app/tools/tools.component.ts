@@ -11,9 +11,8 @@ export class ToolsController {
     i18n: any;
     private webVaultBaseUrl: string = 'https://vault.bitwarden.com';
 
-    constructor(private SweetAlert: any, private i18nService: any,
-        private $analytics: any, private platformUtilsService: PlatformUtilsService,
-        private environmentService: EnvironmentService) {
+    constructor(private SweetAlert: any, private i18nService: any, private $analytics: any,
+        private platformUtilsService: PlatformUtilsService, private environmentService: EnvironmentService) {
         this.i18n = i18nService;
         this.showExport = !platformUtilsService.isEdge();
         this.showPopout = !platformUtilsService.isSafari();
@@ -55,6 +54,8 @@ export class ToolsController {
         });
     }
 }
+
+ToolsController.$inject = ['SweetAlert', 'i18nService', '$analytics', 'platformUtilsService', 'environmentService'];
 
 export const ToolsComponent = {
     bindings: {},

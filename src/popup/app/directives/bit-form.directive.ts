@@ -1,11 +1,10 @@
-﻿import { ValidationService } from '../services/validation.service';
+import { ValidationService } from '../services/validation.service';
 
 export function BitFormDirective($rootScope: ng.IRootScopeService, validationService: ValidationService) {
     return {
         require: 'form',
         restrict: 'A',
-        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes,
-               formCtrl: ng.IFormController) => {
+        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes, formCtrl: ng.IFormController) => {
             const watchPromise = attrs.bitForm || null;
             if (watchPromise) {
                 scope.$watch(watchPromise, formSubmitted.bind(null, formCtrl, scope));

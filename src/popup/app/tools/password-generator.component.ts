@@ -3,7 +3,7 @@ import * as template from './password-generator.component.html';
 
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
 
 export class PasswordGeneratorController {
     $transition$: any;
@@ -15,8 +15,7 @@ export class PasswordGeneratorController {
     i18n: any;
 
     constructor(private $state: any, private passwordGenerationService: PasswordGenerationService,
-        private toastr: any, private $analytics: any, private i18nService: any,
-        private $timeout: ng.ITimeoutService) {
+        private toastr: any, private $analytics: any, private i18nService: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         passwordGenerationService.getOptions().then((options: any) => {
@@ -135,6 +134,9 @@ export class PasswordGeneratorController {
         }
     }
 }
+
+PasswordGeneratorController.$inject = ['$state', 'passwordGenerationService', 'toastr', '$analytics', 'i18nService',
+    '$timeout'];
 
 export const PasswordGeneratorComponent = {
     bindings: {

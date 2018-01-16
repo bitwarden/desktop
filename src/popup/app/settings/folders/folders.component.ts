@@ -35,6 +35,8 @@ export class FoldersController {
     }
 }
 
+FoldersController.$inject = ['folderService', '$state', 'i18nService'];
+
 export const FoldersComponent = {
     bindings: {},
     controller: FoldersController,

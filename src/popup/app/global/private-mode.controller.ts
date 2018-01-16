@@ -9,3 +9,5 @@ export class PrivateModeController implements ng.IController {
         };
     }
 }
+
+PrivateModeController.$inject = ['$scope'];

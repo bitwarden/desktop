@@ -5,7 +5,7 @@ import { Folder } from 'jslib/models/domain/folder';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
 
-import PopupUtilsService from '../../services/popupUtils.service';
+import { PopupUtilsService } from '../../services/popupUtils.service';
 
 export class AddFolderController {
     savePromise: any;
@@ -39,6 +39,8 @@ export class AddFolderController {
         });
     }
 }
+
+AddFolderController.$inject = ['folderService', '$state', 'toastr', '$analytics', 'i18nService', '$timeout'];
 
 export const AddFolderComponent = {
     bindings: {},

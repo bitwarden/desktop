@@ -47,6 +47,9 @@ export class PasswordGeneratorHistoryController {
     }
 }
 
+PasswordGeneratorHistoryController.$inject = ['$state', 'passwordGenerationService', 'toastr', '$analytics',
+    'i18nService'];
+
 export const PasswordGeneratorHistoryComponent = {
     bindings: {
         $transition$: '<',

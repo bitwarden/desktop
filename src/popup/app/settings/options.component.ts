@@ -8,8 +8,8 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
-import StateService from '../services/state.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
+import { StateService } from '../services/state.service';
 
 export class OptionsController {
     disableFavicon = false;
@@ -94,6 +94,9 @@ export class OptionsController {
         this.callAnalytics('Favicon', !this.disableFavicon);
     }
 }
+
+OptionsController.$inject = ['i18nService', '$analytics', 'constantsService', 'platformUtilsService', 'totpService',
+    'stateService', 'storageService', 'messagingService', '$timeout'];
 
 export const OptionsComponent = {
     bindings: {},

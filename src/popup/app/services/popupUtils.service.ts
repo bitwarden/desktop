@@ -1,4 +1,4 @@
-export default class PopupUtilsService {
+export class PopupUtilsService {
     static initListSectionItemListeners(doc: Document, angular: any): void {
         if (!doc) {
             throw new Error('doc parameter required');

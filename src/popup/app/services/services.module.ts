@@ -1,8 +1,8 @@
 import * as angular from 'angular';
-import AuthService from './auth.service';
+import { AuthService } from './auth.service';
 import * as backgroundServices from './background.service';
-import PopupUtilsService from './popupUtils.service';
-import StateService from './state.service';
+import { PopupUtilsService } from './popupUtils.service';
+import { StateService } from './state.service';
 import { ValidationService } from './validation.service';
 
 import BrowserMessagingService from '../../../services/browserMessaging.service';

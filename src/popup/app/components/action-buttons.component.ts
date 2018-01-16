@@ -4,7 +4,7 @@ import { BrowserApi } from '../../../browser/browserApi';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
 
 export class ActionButtonsController implements ng.IController {
     onView: Function;
@@ -43,7 +43,6 @@ export class ActionButtonsController implements ng.IController {
         this.toastr.info(type + this.i18nService.valueCopied);
     }
 }
-
 
 ActionButtonsController.$inject = ['i18nService', '$analytics', 'constantsService', 'toastr', '$timeout', '$window'];
 

@@ -30,6 +30,8 @@ export class HelpController {
     }
 }
 
+HelpController.$inject = ['i18nService', '$analytics'];
+
 export const HelpComponent = {
     bindings: {},
     controller: HelpController,

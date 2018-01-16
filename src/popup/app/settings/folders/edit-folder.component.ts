@@ -5,7 +5,7 @@ import { Folder } from 'jslib/models/domain/folder';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
 
-import PopupUtilsService from '../../services/popupUtils.service';
+import { PopupUtilsService } from '../../services/popupUtils.service';
 
 export class EditFolderController {
     $transition$: any;
@@ -71,6 +71,9 @@ export class EditFolderController {
         });
     }
 }
+
+EditFolderController.$inject = ['$scope', '$stateParams', 'folderService', 'toastr', '$state', 'SweetAlert',
+    '$analytics', 'i18nService', '$timeout'];
 
 export const EditFolderComponent = {
     bindings: {

@@ -4,7 +4,7 @@ import { BrowserApi } from '../../../browser/browserApi';
 
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
 
 export class PopOutController implements ng.IController {
     i18n: any;
@@ -58,6 +58,8 @@ export class PopOutController implements ng.IController {
         }
     }
 }
+
+PopOutController.$inject = ['$analytics', '$window', 'platformUtilsService', 'i18nService'];
 
 export const PopOutComponent = {
     bindings: {},

@@ -5,7 +5,7 @@ import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
 
 export class LockController {
     i18n: any;
@@ -58,6 +58,9 @@ export class LockController {
         }
     }
 }
+
+LockController.$inject = ['$state', 'i18nService', '$timeout', 'cryptoService', 'toastr', 'userService',
+    'messagingService', 'SweetAlert'];
 
 export const LockComponent = {
     bindings: {},

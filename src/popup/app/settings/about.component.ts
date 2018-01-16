@@ -14,6 +14,8 @@ export class AboutController {
     }
 }
 
+AboutController.$inject = ['i18nService'];
+
 export const AboutComponent = {
     bindings: {},
     controller: AboutController,

@@ -13,7 +13,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
 
 const RateUrls = {
     [DeviceType.Chrome]:
@@ -160,6 +160,9 @@ export class SettingsController {
         BrowserApi.createNewTab(RateUrls[this.platformUtilsService.getDevice()]);
     }
 }
+
+SettingsController.$inject = ['$state', 'SweetAlert', 'platformUtilsService', '$analytics', 'i18nService',
+    'constantsService', 'cryptoService', 'lockService', 'storageService', 'messagingService', '$timeout'];
 
 export const SettingsComponent = {
     bindings: {},

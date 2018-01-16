@@ -3,7 +3,7 @@ import * as template from './environment.component.html';
 
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
 
 export class EnvironmentController {
     iconsUrl: string;
@@ -13,8 +13,8 @@ export class EnvironmentController {
     baseUrl: string;
     i18n: any;
 
-    constructor(private i18nService: any, private $analytics: any,
-        private environmentService: EnvironmentService, private toastr: any, private $timeout: ng.ITimeoutService) {
+    constructor(private i18nService: any, private $analytics: any, private environmentService: EnvironmentService,
+        private toastr: any, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
 
         $timeout(() => {
@@ -50,6 +50,8 @@ export class EnvironmentController {
         });
     }
 }
+
+EnvironmentController.$inject = ['i18nService', '$analytics', 'environmentService', 'toastr', '$timeout'];
 
 export const EnvironmentComponent = {
     bindings: {},

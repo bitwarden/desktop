@@ -1,6 +1,6 @@
 import { BrowserApi } from '../../../browser/browserApi';
 
-import AuthService from '../services/auth.service';
+import { AuthService } from '../services/auth.service';
 
 import { UtilsService } from 'jslib/abstractions/utils.service';
 
@@ -51,3 +51,6 @@ export class MainController implements ng.IController {
         BrowserApi.messageListener($window.bitwardenPopupMainMessageListener);
     }
 }
+
+MainController.$inject = ['$scope', '$transitions', '$state', 'authService', 'toastr', 'i18nService', '$analytics',
+    'utilsService', '$window'];

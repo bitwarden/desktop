@@ -32,3 +32,5 @@ export class ValidationService {
     }
 
 }
+
+ValidationService.$inject = ['toastr', 'i18nService'];

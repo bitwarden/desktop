@@ -10,7 +10,7 @@ import { UtilsService } from 'jslib/abstractions/utils.service';
 
 import { AutofillService } from '../../../services/abstractions/autofill.service';
 
-import PopupUtilsService from '../services/popupUtils.service';
+import { PopupUtilsService } from '../services/popupUtils.service';
 
 export class CurrentController {
     i18n: any;

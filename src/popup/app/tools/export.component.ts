@@ -154,6 +154,9 @@ export class ExportController {
     }
 }
 
+ExportController.$inject = ['$state', 'cryptoService', 'toastr', 'utilsService', '$analytics', 'i18nService',
+    'folderService', 'cipherService', '$window', 'userService'];
+
 export const ExportComponent = {
     bindings: {},
     controller: ExportController,

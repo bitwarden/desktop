@@ -58,6 +58,9 @@ export class PremiumController {
     }
 }
 
+PremiumController.$inject = ['i18nService', 'tokenService', 'apiService', 'toastr', 'SweetAlert', '$analytics',
+    '$timeout'];
+
 export const PremiumComponent = {
     bindings: {},
     controller: PremiumController,

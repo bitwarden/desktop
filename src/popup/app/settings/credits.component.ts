@@ -15,6 +15,8 @@ export class CreditsController {
     }
 }
 
+CreditsController.$inject = ['i18nService', '$analytics'];
+
 export const CreditsComponent = {
     bindings: {},
     controller: CreditsController,
