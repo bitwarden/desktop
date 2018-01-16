@@ -172,7 +172,6 @@ export default class AutofillService implements AutofillServiceInterface {
                 this.cipherService.updateLastUsedDate(options.cipher.id);
             }
 
-            console.log('fill');
             BrowserApi.tabSendMessage(tab, {
                 command: 'fillForm',
                 fillScript: fillScript,
@@ -181,7 +180,6 @@ export default class AutofillService implements AutofillServiceInterface {
             if (options.cipher.type !== CipherType.Login || totpPromise ||
                 (options.fromBackground && this.platformUtilsService.isFirefox()) || options.skipTotp ||
                 !options.cipher.login.totp || !this.tokenService.getPremium()) {
-                console.log('return early');
                 return;
             }
 
