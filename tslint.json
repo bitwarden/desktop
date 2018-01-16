@@ -1,0 +1,53 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "align": [ true, "statements", "members" ],
+    "ban-types": {
+      "options": [
+        [ "Object", "Avoid using the `Object` type. Did you mean `object`?" ],
+        [ "Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?" ],
+        [ "Number", "Avoid using the `Number` type. Did you mean `number`?" ],
+        [ "String", "Avoid using the `String` type. Did you mean `string`?" ],
+        [ "Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?" ]
+      ]
+    },
+    "member-access": [ true, "no-public" ],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "public-static-method",
+          "protected-static-field",
+          "protected-static-method",
+          "private-static-field",
+          "private-static-method",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-empty": [ true, "allow-empty-catch" ],
+    "object-literal-sort-keys": false,
+    "object-literal-shorthand": [ true, "never" ],
+    "prefer-for-of": false,
+    "quotemark": [ true, "single" ],
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-module",
+      "check-operator",
+      "check-preblock",
+      "check-separator",
+      "check-type"
+    ]
+  }
+}

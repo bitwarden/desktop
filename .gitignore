@@ -1,0 +1,9 @@
+.vs
+.idea
+node_modules
+npm-debug.log
+dist/
+*.crx
+*.pem
+build/
+package-lock.json
