@@ -55,8 +55,8 @@ export class CurrentController {
         this.loadVault();
     }
 
-    refresh() {
-        this.loadVault();
+    async refresh() {
+        await this.loadVault();
     }
 
     addCipher() {
@@ -106,63 +106,61 @@ export class CurrentController {
         });
     }
 
-    private loadVault() {
-        BrowserApi.getTabFromCurrentWindow().then((tab: any) => {
-            if (tab) {
-                this.url = tab.url;
-            } else {
-                this.$timeout(() => {
-                    this.loaded = true;
-                });
-                return;
+    private async loadVault() {
+        const tab = await BrowserApi.getTabFromCurrentWindow();
+        if (tab) {
+            this.url = tab.url;
+        } else {
+            this.$timeout(() => {
+                this.loaded = true;
+            });
+            return;
+        }
+
+        this.domain = this.platformUtilsService.getDomain(this.url);
+
+        BrowserApi.tabSendMessage(tab, {
+            command: 'collectPageDetails',
+            tab: tab,
+            sender: 'currentController',
+        }).then(() => {
+            this.canAutofill = true;
+        });
+
+        const otherTypes = [
+            CipherType.Card,
+            CipherType.Identity,
+        ];
+
+        const ciphers = await this.cipherService.getAllDecryptedForDomain(this.domain, otherTypes);
+        const loginCiphers: any = [];
+        const cardCiphers: any = [];
+        const identityCiphers: any = [];
+
+        const sortedCiphers = this.$filter('orderBy')(ciphers,
+            [this.sortUriMatch, this.sortLastUsed, 'name', 'subTitle']);
+
+        sortedCiphers.forEach((cipher: any) => {
+            switch (cipher.type) {
+                case CipherType.Login:
+                    loginCiphers.push(cipher);
+                    break;
+                case CipherType.Card:
+                    cardCiphers.push(cipher);
+                    break;
+                case CipherType.Identity:
+                    identityCiphers.push(cipher);
+                    break;
+                default:
+                    break;
             }
+        });
 
-            this.domain = this.platformUtilsService.getDomain(this.url);
-
-            BrowserApi.tabSendMessage(tab, {
-                command: 'collectPageDetails',
-                tab: tab,
-                sender: 'currentController',
-            }).then(() => {
-                this.canAutofill = true;
-            });
-
-            const otherTypes = [
-                CipherType.Card,
-                CipherType.Identity,
-            ];
-
-            this.cipherService.getAllDecryptedForDomain(this.domain, otherTypes).then((ciphers: any[]) => {
-                const loginCiphers: any = [];
-                const cardCiphers: any = [];
-                const identityCiphers: any = [];
-
-                const sortedCiphers = this.$filter('orderBy')(ciphers,
-                    [this.sortUriMatch, this.sortLastUsed, 'name', 'subTitle']);
-
-                sortedCiphers.forEach((cipher: any) => {
-                    switch (cipher.type) {
-                        case CipherType.Login:
-                            loginCiphers.push(cipher);
-                            break;
-                        case CipherType.Card:
-                            cardCiphers.push(cipher);
-                            break;
-                        case CipherType.Identity:
-                            identityCiphers.push(cipher);
-                            break;
-                        default:
-                            break;
-                    }
-                });
-
-                this.$timeout(() => {
-                    this.loginCiphers = loginCiphers;
-                    this.cardCiphers = cardCiphers;
-                    this.identityCiphers = identityCiphers;
-                    this.loaded = true;
-                });
-            });
+        this.$timeout(() => {
+            this.loginCiphers = loginCiphers;
+            this.cardCiphers = cardCiphers;
+            this.identityCiphers = identityCiphers;
+            this.loaded = true;
         });
     }
 
@@ -175,6 +173,10 @@ export class CurrentController {
         return cipher.localData && cipher.localData.lastUsedDate ? -1 * cipher.localData.lastUsedDate : 0;
     }
 }
+
+CurrentController.$inject = ['$scope', 'cipherService', 'platformUtilsService', 'utilsService',
+    'toastr', '$window', '$state', '$timeout', 'autofillService', '$analytics', 'i18nService',
+    '$filter'];
 
 export const CurrentComponent = {
     bindings: {},

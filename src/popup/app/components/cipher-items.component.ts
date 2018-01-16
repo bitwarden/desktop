@@ -19,6 +19,8 @@ export class CipherItemsController implements ng.IController {
     }
 }
 
+CipherItemsController.$inject = ['i18nService'];
+
 export const CipherItemsComponent = {
     bindings: {
         ciphers: '<',

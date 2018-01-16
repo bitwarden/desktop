@@ -79,6 +79,8 @@ export class IconController implements ng.IController {
     }
 }
 
+IconController.$inject = ['stateService', 'environmentService'];
+
 export const IconComponent = {
     bindings: {
         cipher: '<',

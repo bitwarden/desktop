@@ -40,6 +40,8 @@ export class SyncController {
     }
 }
 
+SyncController.$inject = ['syncService', 'toastr', '$analytics', 'i18nService', '$timeout'];
+
 export const SyncComponent = {
     bindings: {},
     controller: SyncController,

@@ -4,3 +4,5 @@ export class TabsController implements ng.IController {
         $scope.i18n = i18nService;
     }
 }
+
+TabsController.$inject = ['$scope', '$state', 'i18nService'];
