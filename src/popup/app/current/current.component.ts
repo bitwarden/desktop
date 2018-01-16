@@ -86,6 +86,7 @@ export class CurrentController {
             cipher: cipher,
             pageDetails: this.pageDetails,
             fromBackground: false,
+            doc: this.$window.document,
         }).then((totpCode: string) => {
             this.$analytics.eventTrack('Autofilled');
             if (totpCode && this.platformUtilsService.isFirefox()) {

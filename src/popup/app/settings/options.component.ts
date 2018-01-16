@@ -17,6 +17,7 @@ export class OptionsController {
     disableAutoTotpCopy = false;
     disableContextMenuItem = false;
     disableAddLoginNotification = false;
+    showDisableContextMenu = true;
     disableGa = false;
     i18n: any;
 
@@ -25,6 +26,7 @@ export class OptionsController {
         private stateService: StateService, private storageService: StorageService,
         public messagingService: MessagingService, private $timeout: ng.ITimeoutService) {
         this.i18n = i18nService;
+        this.showDisableContextMenu = !platformUtilsService.isSafari();
 
         $timeout(() => {
             PopupUtilsService.initListSectionItemListeners(document, angular);
