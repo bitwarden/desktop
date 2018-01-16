@@ -27,12 +27,13 @@ const filters = {
         'build/popup/fonts/fontawesome*.woff'
     ],
     safari: [
-        '!build/Info.plist'
+        '!build/Info.plist',
+        '!build/downloader/**/*'
     ],
-    notSafari: [
+    webExt: [
         '!build/manifest.json'
     ],
-    notEdge: [
+    edge: [
         '!build/edge/**/*'
     ]
 };
@@ -51,7 +52,7 @@ function distFileName(browserName, ext) {
 
 function dist(browserName, manifest) {
     return gulp.src(paths.build + '**/*')
-        .pipe(filter(['**'].concat(filters.notEdge).concat(filters.fonts).concat(filters.safari)))
+        .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.safari)))
         .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
         .pipe(zip(distFileName(browserName, 'zip')))
@@ -175,7 +176,7 @@ function safariMoveBuild(source, dest) {
     return new Promise((resolve, reject) => {
         gulp.src(source)
             .on('error', reject)
-            .pipe(filter(['**'].concat(filters.notEdge).concat(filters.fonts).concat(filters.notSafari)))
+            .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.webExt)))
             .pipe(gulp.dest(dest))
             .on('end', resolve);
     });
