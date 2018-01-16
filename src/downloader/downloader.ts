@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf('Safari') !== -1 &&
+    const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
         navigator.userAgent.indexOf('Chrome') === -1;
 
     if (!isSafari) {
