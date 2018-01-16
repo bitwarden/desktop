@@ -45,8 +45,7 @@ export class ActionButtonsController implements ng.IController {
 }
 
 
-ActionButtonsController.$inject = ['i18nService', '$analytics', 'constantsService', 'toastr',
-    '$timeout', '$window'];
+ActionButtonsController.$inject = ['i18nService', '$analytics', 'constantsService', 'toastr', '$timeout', '$window'];
 
 export const ActionButtonsComponent = {
     bindings: {

@@ -174,9 +174,8 @@ export class CurrentController {
     }
 }
 
-CurrentController.$inject = ['$scope', 'cipherService', 'platformUtilsService', 'utilsService',
-    'toastr', '$window', '$state', '$timeout', 'autofillService', '$analytics', 'i18nService',
-    '$filter'];
+CurrentController.$inject = ['$scope', 'cipherService', 'platformUtilsService', 'utilsService', 'toastr', '$window',
+    '$state', '$timeout', 'autofillService', '$analytics', 'i18nService', '$filter'];
 
 export const CurrentComponent = {
     bindings: {},
