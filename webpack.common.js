@@ -15,8 +15,14 @@ const isVendorModule = (module) => {
 };
 
 module.exports = {
+    devServer: {
+        contentBase: './src',
+        historyApiFallback: true,
+        quiet: true,
+        stats: 'minimal'
+    },
     entry: {
-        'app': './src/app/main.ts'
+        'app': './src/main.ts'
     },
     module: {
         rules: [
@@ -41,17 +47,17 @@ module.exports = {
             path.resolve(__dirname, 'build/*')
         ]),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'app/vendor',
+            name: 'vendor',
             chunks: ['app'],
             minChunks: isVendorModule
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
-            chunks: ['app/vendor', 'app']
+            chunks: ['vendor', 'app']
         }),
         new CopyWebpackPlugin([
-            
+
         ])
     ],
     resolve: {
