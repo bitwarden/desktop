@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './accounts/login.component';
+import { VaultComponent } from './vault/vault.component';
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { LoginComponent } from './accounts/login.component';
     declarations: [
         AppComponent,
         LoginComponent,
+        VaultComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
