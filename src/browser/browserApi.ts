@@ -1,6 +1,7 @@
 class BrowserApi {
-    static isSafariApi: boolean = (typeof safari !== 'undefined');
-    static isChromeApi: boolean = (typeof chrome !== 'undefined');
+    static isSafariApi: boolean = (typeof safari !== 'undefined') &&
+        navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
+    static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
 
     static async getTabFromCurrentWindowId(): Promise<any> {
         if (BrowserApi.isChromeApi) {

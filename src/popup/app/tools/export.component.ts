@@ -42,6 +42,7 @@ export class ExportController {
             const csv = await this.getCsv();
             this.$analytics.eventTrack('Exported Data');
             this.downloadFile(csv);
+            this.$state.go('tabs.tools', { animation: 'out-slide-down' });
         } else {
             this.toastr.error(this.i18n.invalidMasterPassword, this.i18n.errorsOccurred);
         }
