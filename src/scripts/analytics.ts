@@ -13,6 +13,7 @@ export default class Analytics {
     private appIdService: AppIdService;
     private gaTrackingId: string = null;
     private isFirefox = false;
+    private isSafari = false;
     private gaFunc: Function = null;
     private win: any;
     private isBackground: boolean = false;
@@ -35,6 +36,7 @@ export default class Analytics {
 
         this.win = win;
         this.isFirefox = this.platformUtilsService.isFirefox();
+        this.isSafari = this.platformUtilsService.isSafari();
         this.gaTrackingId = this.platformUtilsService.analyticsId();
         this.isBackground = (typeof this.win.bitwardenIsBackground !== 'undefined');
     }
@@ -53,6 +55,10 @@ export default class Analytics {
         this.win.GoogleAnalyticsObject = gaObj;
         this.win[gaObj] = async (action: any, param1: any, param2: any, param3: any, param4: any) => {
             if (!this.gaFunc) {
+                return;
+            }
+
+            if (this.isSafari && safari.application.activeBrowserWindow.activeTab.private) {
                 return;
             }
 
