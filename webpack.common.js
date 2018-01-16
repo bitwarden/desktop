@@ -22,7 +22,7 @@ module.exports = {
         stats: 'minimal'
     },
     entry: {
-        'app': './src/main.ts'
+        'app/main': './src/app/main.ts'
     },
     module: {
         rules: [
@@ -47,17 +47,17 @@ module.exports = {
             path.resolve(__dirname, 'build/*')
         ]),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            chunks: ['app'],
+            name: 'app/vendor',
+            chunks: ['app/main'],
             minChunks: isVendorModule
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
-            chunks: ['vendor', 'app']
+            chunks: ['app/vendor', 'app/main']
         }),
         new CopyWebpackPlugin([
-
+            './src/package.json',
         ])
     ],
     resolve: {
