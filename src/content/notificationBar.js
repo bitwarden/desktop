@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
         iframed = isIframed(),
         submitButtonNames = ['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next'],
         notificationBarData = null,
-        isSafariApi = (typeof safari !== 'undefined');
+        isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
+            navigator.userAgent.indexOf('Chrome') === -1;
 
-    if (isSafariApi) {
+    if (isSafari) {
         const responseCommand = 'notificationBarDataResponse';
         safari.self.tab.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
@@ -385,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             return;
         }
 
-        var barPageUrl = isSafariApi ? (safari.extension.baseURI + barPage) : chrome.extension.getURL(barPage);
+        var barPageUrl = isSafari ? (safari.extension.baseURI + barPage) : chrome.extension.getURL(barPage);
 
         var iframe = document.createElement('iframe');
         iframe.src = barPageUrl;
@@ -447,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     function sendPlatformMessage(msg) {
-        if (isSafariApi) {
+        if (isSafari) {
             safari.self.tab.dispatchMessage('bitwarden', msg);
         }
         else {

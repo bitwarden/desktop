@@ -994,7 +994,8 @@
     End 1Password Extension
     */
 
-    if ((typeof safari !== 'undefined')) {
+    if ((typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
+        navigator.userAgent.indexOf('Chrome') === -1) {
         safari.self.addEventListener('message', function (msgEvent) {
             var msg = msgEvent.message;
             if (msg.command === 'collectPageDetails') {

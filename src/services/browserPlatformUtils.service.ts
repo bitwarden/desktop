@@ -61,7 +61,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             return this.deviceCache;
         }
 
-        if (navigator.userAgent.indexOf('Firefox') !== -1 || navigator.userAgent.indexOf('Gecko/') !== -1) {
+        if (navigator.userAgent.indexOf(' Firefox/') !== -1 || navigator.userAgent.indexOf(' Gecko/') !== -1) {
             this.deviceCache = DeviceType.Firefox;
         } else if ((!!(window as any).opr && !!opr.addons) || !!(window as any).opera ||
             navigator.userAgent.indexOf(' OPR/') >= 0) {
@@ -70,9 +70,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             this.deviceCache = DeviceType.Edge;
         } else if (navigator.userAgent.indexOf(' Vivaldi/') !== -1) {
             this.deviceCache = DeviceType.Vivaldi;
-        } else if (navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1) {
+        } else if ((window as any).safari && navigator.userAgent.indexOf(' Safari/') !== -1 &&
+            navigator.userAgent.indexOf('Chrome') === -1) {
             this.deviceCache = DeviceType.Safari;
-        } else if ((window as any).chrome) {
+        } else if ((window as any).chrome && navigator.userAgent.indexOf(' Chrome/') !== -1) {
             this.deviceCache = DeviceType.Chrome;
         }
 

@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let pageHref = null;
 
-    if ((typeof safari !== 'undefined')) {
+    if ((typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
+        navigator.userAgent.indexOf('Chrome') === -1) {
         const responseCommand = 'autofillerAutofillOnPageLoadEnabledResponse';
         safari.self.tab.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
