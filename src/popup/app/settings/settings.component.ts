@@ -49,7 +49,8 @@ export class SettingsController {
             PopupUtilsService.initListSectionItemListeners(document, angular);
         }, 500);
 
-        this.showOnLocked = !platformUtilsService.isFirefox() && !platformUtilsService.isEdge();
+        this.showOnLocked = !platformUtilsService.isFirefox() && !platformUtilsService.isEdge()
+            && !platformUtilsService.isSafari();
         this.storageService.get(constantsService.lockOptionKey).then((lockOption: number) => {
             if (lockOption != null) {
                 let option = lockOption.toString();
