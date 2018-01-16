@@ -59,7 +59,7 @@ function dist(browserName, manifest) {
         .pipe(gulp.dest(paths.dist));
 }
 
-gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge']);
+gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge', 'dist:safari']);
 
 gulp.task('dist:firefox', (cb) => {
     return dist('firefox', (manifest) => {
@@ -140,28 +140,8 @@ function edgeCopyAssets(source, dest) {
     });
 }
 
-gulp.task('build', ['lint', 'webfonts']);
-
-gulp.task('webfonts', () => {
-    return gulp.src('./webfonts.list')
-        .pipe(googleWebFonts({
-            fontsDir: 'webfonts',
-            cssFilename: 'webfonts.css'
-        }))
-        .pipe(gulp.dest(paths.cssDir));
-});
-
-gulp.task('ci', ['ci:coverage']);
-
-gulp.task('ci:coverage', (cb) => {
-    return gulp.src(paths.coverage + '**/*')
-        .pipe(filter(['**', '!coverage/coverage*.zip']))
-        .pipe(zip(`coverage${buildString()}.zip`))
-        .pipe(gulp.dest(paths.coverage));
-});
-
-gulp.task('safari:build', (cb) => {
-    const buildPath = './build.safariextension/';
+gulp.task('dist:safari', (cb) => {
+    const buildPath = paths.dist + 'bitwarden.safariextension/';
     const safariAssetsBuildPath = buildPath + 'safari/';
 
     return del([buildPath + '**/*'])
@@ -185,6 +165,26 @@ function safariCopyBuild(source, dest) {
             .on('end', resolve);
     });
 }
+
+gulp.task('build', ['lint', 'webfonts']);
+
+gulp.task('webfonts', () => {
+    return gulp.src('./webfonts.list')
+        .pipe(googleWebFonts({
+            fontsDir: 'webfonts',
+            cssFilename: 'webfonts.css'
+        }))
+        .pipe(gulp.dest(paths.cssDir));
+});
+
+gulp.task('ci', ['ci:coverage']);
+
+gulp.task('ci:coverage', (cb) => {
+    return gulp.src(paths.coverage + '**/*')
+        .pipe(filter(['**', '!coverage/coverage*.zip']))
+        .pipe(zip(`coverage${buildString()}.zip`))
+        .pipe(gulp.dest(paths.coverage));
+});
 
 function copy(source, dest) {
     return new Promise((resolve, reject) => {
