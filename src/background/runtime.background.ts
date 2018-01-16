@@ -48,20 +48,9 @@ export default class RuntimeBackground {
                     win.location.href = href;
                 }
             }, true);
-        } else {
-            if (this.runtime.onInstalled) {
-                this.runtime.onInstalled.addListener((details: any) => {
-                    (window as any).ga('send', {
-                        hitType: 'event',
-                        eventAction: 'onInstalled ' + details.reason,
-                    });
-
-                    if (details.reason === 'install') {
-                        chrome.tabs.create({ url: 'https://bitwarden.com/browser-start/' });
-                    }
-                });
-            }
         }
+
+        await this.checkOnInstalled();
 
         BrowserApi.messageListener(async (msg: any, sender: any, sendResponse: any) => {
             await this.processMessage(msg, sender, sendResponse);
@@ -257,6 +246,44 @@ export default class RuntimeBackground {
             if (this.main.loginsToAdd[i].tabId === tab.id) {
                 this.main.loginsToAdd.splice(i, 1);
             }
+        }
+    }
+
+    private async checkOnInstalled() {
+        const gettingStartedUrl = 'https://bitwarden.com/browser-start/';
+
+        if (this.isSafari) {
+            const installedVersionKey = 'installedVersion';
+            const installedVersion = await this.storageService.get<string>(installedVersionKey);
+            let reason: string = null;
+            if (installedVersion == null) {
+                reason = 'install';
+            } else if (BrowserApi.getApplicationVersion() !== installedVersion) {
+                reason = 'update';
+            }
+
+            if (reason != null) {
+                await this.storageService.save(installedVersionKey, BrowserApi.getApplicationVersion());
+                (window as any).ga('send', {
+                    hitType: 'event',
+                    eventAction: 'onInstalled ' + reason,
+                });
+            }
+
+            if (reason === 'install') {
+                BrowserApi.createNewTab(gettingStartedUrl);
+            }
+        } else if (this.runtime.onInstalled) {
+            this.runtime.onInstalled.addListener((details: any) => {
+                (window as any).ga('send', {
+                    hitType: 'event',
+                    eventAction: 'onInstalled ' + details.reason,
+                });
+
+                if (details.reason === 'install') {
+                    BrowserApi.createNewTab(gettingStartedUrl);
+                }
+            });
         }
     }
 
