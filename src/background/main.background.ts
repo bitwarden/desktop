@@ -149,9 +149,10 @@ export default class MainBackground {
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService, this.storageService, this.i18nService);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
+        this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
+            this.platformUtilsService);
 
         if (!this.isSafari) {
-            this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService);
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
                 this.passwordGenerationService);
             this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
@@ -166,9 +167,9 @@ export default class MainBackground {
 
         await this.runtimeBackground.init();
         await this.tabsBackground.init();
+        await this.commandsBackground.init();
 
         if (!this.isSafari) {
-            await this.commandsBackground.init();
             await this.contextMenusBackground.init();
             await this.idleBackground.init();
             await this.webRequestBackground.init();
