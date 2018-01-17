@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     arguments)}}(b))};c.init();r.Mousetrap=c;"undefined"!==typeof module&&module.exports&&(module.exports=c);"function"===typeof define&&define.amd&&define(function(){return c})}})("undefined"!==typeof window?window:null,"undefined"!==typeof window?document:null);
     /* mousetrap v1.6.1 craig.is/killing/mice */
 
-    const autofillCommand = isSafari ? 'mod+shift+l' : 'mod+shift+l';
+    const autofillCommand = isSafari ? 'mod+\\' : 'mod+shift+l';
     Mousetrap.bind(autofillCommand, () => {
         sendMessage('autofill_login');
     });
