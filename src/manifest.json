@@ -18,31 +18,21 @@
     {
       "all_frames": true,
       "js": [
-        "content/autofill.js"
-      ],
-      "matches": [
-        "http://*/*",
-        "https://*/*",
-        "file:///*"
-      ],
-      "run_at": "document_start"
-    },
-    {
-      "all_frames": true,
-      "js": [
-        "content/autofiller.js"
-      ],
-      "matches": [
-        "http://*/*",
-        "https://*/*",
-        "file:///*"
-      ],
-      "run_at": "document_start"
-    },
-    {
-      "all_frames": true,
-      "js": [
+        "content/autofill.js",
+        "content/autofiller.js",
         "content/notificationBar.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": false,
+      "js": [
+        "content/shortcuts.js"
       ],
       "matches": [
         "http://*/*",
