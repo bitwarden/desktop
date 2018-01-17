@@ -93,5 +93,10 @@ export default class CommandsBackground {
         }
 
         safari.extension.toolbarItems[0].showPopover();
+
+        (window as any).ga('send', {
+            hitType: 'event',
+            eventAction: 'Opened Popup From Command',
+        });
     }
 }
