@@ -11,21 +11,20 @@ if (serve) {
 }
 
 function createWindow() {
-    const electronScreen = screen;
-    const size = electronScreen.getPrimaryDisplay().workAreaSize;
+    const primaryScreenSize = screen.getPrimaryDisplay().workAreaSize;
 
     // Create the browser window.
     win = new BrowserWindow({
         x: 0,
         y: 0,
-        width: size.width,
-        height: size.height,
+        width: primaryScreenSize.width,
+        height: primaryScreenSize.height,
     });
 
     // and load the index.html of the app.
     win.loadURL(url.format({
         protocol: 'file:',
-        pathname: path.join(__dirname, '/app/index.html'),
+        pathname: path.join(__dirname, '/index.html'),
         slashes: true,
     }));
 
