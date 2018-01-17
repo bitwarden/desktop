@@ -16,10 +16,13 @@ function createWindow() {
 
     // Create the browser window.
     win = new BrowserWindow({
-        x: 0,
-        y: 0,
-        width: primaryScreenSize.width,
-        height: primaryScreenSize.height,
+        width: primaryScreenSize.width < 950 ? primaryScreenSize.width : 950,
+        height: primaryScreenSize.height < 700 ? primaryScreenSize.height : 700,
+        minWidth: 680,
+        minHeight: 500,
+        title: app.getName(),
+        darkTheme: true,
+        vibrancy: 'ultra-dark',
     });
 
     // and load the index.html of the app.
