@@ -8,7 +8,7 @@
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
     "server": "webpack-dev-server --inline --progress --port 8080 --config webpack.dev.js",
-    "electron:dev": "npm run dev && tsc src/main.ts --outDir build && electron ./build --serve"
+    "electron": "npm run dev && tsc src/main.ts --outDir build && electron ./build --dev --watch"
   },
   "devDependencies": {
     "@bitwarden/jslib": "git+https://github.com/bitwarden/jslib.git",

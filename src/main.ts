@@ -4,9 +4,10 @@ import * as url from 'url';
 
 let win: BrowserWindow;
 const args = process.argv.slice(1);
-const serve = args.some((val) => val === '--serve');
+const watch = args.some((val) => val === '--watch');
+const dev = args.some((val) => val === '--dev');
 
-if (serve) {
+if (watch) {
     require('electron-reload')(__dirname, {});
 }
 
@@ -29,7 +30,7 @@ function createWindow() {
     }));
 
     // Open the DevTools.
-    if (serve) {
+    if (dev) {
         win.webContents.openDevTools();
     }
 
