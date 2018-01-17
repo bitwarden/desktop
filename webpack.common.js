@@ -21,6 +21,7 @@ module.exports = {
         'content/autofill': './src/content/autofill.js',
         'content/autofiller': './src/content/autofiller.js',
         'content/notificationBar': './src/content/notificationBar.js',
+        'content/shortcuts': './src/content/shortcuts.js',
         'notification/bar': './src/notification/bar.js',
         'downloader/downloader': './src/downloader/downloader.ts',
     },

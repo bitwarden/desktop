@@ -25,12 +25,11 @@ export default class CommandsBackground {
         }
 
         if (this.isSafari) {
-            this.commands.addEventListener('message', async (msgEvent: any) => {
-                const msg = msgEvent.message;
-                if (msg.command === 'keyboardShortcutTriggered' && msg.command.shortcut) {
-                    await this.processCommand(msg.command.shortcut);
+            BrowserApi.messageListener(async (msg: any, sender: any, sendResponse: any) => {
+                if (msg.command === 'keyboardShortcutTriggered' && msg.shortcut) {
+                    await this.processCommand(msg.shortcut);
                 }
-            }, false);
+            });
         } else {
             this.commands.onCommand.addListener(async (command: any) => {
                 await this.processCommand(command);
@@ -38,13 +37,13 @@ export default class CommandsBackground {
         }
     }
 
-    private async processCommand(command: string) {
+    private async processCommand(command: string, sender?: any) {
         switch (command) {
             case 'generate_password':
                 await this.generatePasswordToClipboard();
                 break;
             case 'autofill_login':
-                await this.autoFillLogin();
+                await this.autoFillLogin(sender ? sender.tab : null);
                 break;
             case 'open_popup':
                 await this.openPopup();
@@ -55,6 +54,11 @@ export default class CommandsBackground {
     }
 
     private async generatePasswordToClipboard() {
+        if (this.isSafari) {
+            // Safari does not support access to clipboard from background
+            return;
+        }
+
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
         UtilsService.copyToClipboard(password);
@@ -66,8 +70,11 @@ export default class CommandsBackground {
         });
     }
 
-    private async autoFillLogin() {
-        const tab = await BrowserApi.getTabFromCurrentWindowId();
+    private async autoFillLogin(tab?: any) {
+        if (!tab) {
+            tab = await BrowserApi.getTabFromCurrentWindowId();
+        }
+
         if (tab == null) {
             return;
         }

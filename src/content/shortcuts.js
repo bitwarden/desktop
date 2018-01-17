@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     arguments)}}(b))};c.init();r.Mousetrap=c;"undefined"!==typeof module&&module.exports&&(module.exports=c);"function"===typeof define&&define.amd&&define(function(){return c})}})("undefined"!==typeof window?window:null,"undefined"!==typeof window?document:null);
     /* mousetrap v1.6.1 craig.is/killing/mice */
 
-    Mousetrap.bind('mod+shift+l', () => {
+    const autofillCommand = isSafari ? 'mod+shift+l' : 'mod+shift+l';
+    Mousetrap.bind(autofillCommand, () => {
         sendMessage('autofill_login');
     });
 
@@ -27,9 +28,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         sendMessage('open_popup');
     });
 
-    Mousetrap.bind('mod+shift+9', () => {
-        sendMessage('generate_password');
-    });
+    if (!isSafari) {
+        Mousetrap.bind('mod+shift+9', () => {
+            sendMessage('generate_password');
+        });
+    }
 
     function sendMessage(shortcut) {
         if (isSafari) {
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 shortcut: shortcut
             });
         } else {
-            // not supported at this time.
+            // other browsers not supported at this time.
         }
     }
 });
