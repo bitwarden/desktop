@@ -24,6 +24,7 @@ module.exports = {
         'content/shortcuts': './src/content/shortcuts.js',
         'notification/bar': './src/notification/bar.js',
         'downloader/downloader': './src/downloader/downloader.ts',
+        '2fa/2fa': './src/2fa/2fa.ts',
     },
     module: {
         rules: [
@@ -100,6 +101,11 @@ module.exports = {
             template: './src/downloader/index.html',
             filename: 'downloader/index.html',
             chunks: ['downloader/downloader']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/2fa/index.html',
+            filename: '2fa/index.html',
+            chunks: ['2fa/2fa']
         }),
         new CopyWebpackPlugin([
             './src/manifest.json',

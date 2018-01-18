@@ -122,6 +122,12 @@ angular
             u2f = null;
         });
 
+        $scope.$on('2faPageResponse', (event, details) => {
+            if (details.type === 'duo') {
+                $scope.login(details.data.sigValue);
+            }
+        });
+
         function getDefaultProvider(twoFactorProviders) {
             var keys = Object.keys(twoFactorProviders);
             var providerType = null;
@@ -154,17 +160,31 @@ angular
                 var params;
                 if ($scope.providerType === constants.twoFactorProvider.duo) {
                     params = providers[constants.twoFactorProvider.duo];
-
-                    $window.Duo.init({
-                        host: params.Host,
-                        sig_request: params.Signature,
-                        submit_callback: function (theForm) {
-                            var sigElement = theForm.querySelector('input[name="sig_response"]');
-                            if (sigElement) {
-                                $scope.login(sigElement.value);
+                    if (platformUtilsService.isSafari()) {
+                        var tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('2fa/index.html'));
+                        var tabToSend = BrowserApi.makeTabObject(tab);
+                        $timeout(() => {
+                            BrowserApi.tabSendMessage(tabToSend, {
+                                command: '2faPageData',
+                                data: {
+                                    host: params.Host,
+                                    signature: params.Signature
+                                }
+                            });
+                        }, 1000);
+                    }
+                    else {
+                        $window.Duo.init({
+                            host: params.Host,
+                            sig_request: params.Signature,
+                            submit_callback: function (theForm) {
+                                var sigElement = theForm.querySelector('input[name="sig_response"]');
+                                if (sigElement) {
+                                    $scope.login(sigElement.value);
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
                 else if ($scope.providerType === constants.twoFactorProvider.u2f) {
                     params = providers[constants.twoFactorProvider.u2f];

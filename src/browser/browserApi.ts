@@ -228,7 +228,7 @@ class BrowserApi {
         }
     }
 
-    private static makeTabObject(tab: any): any {
+    static makeTabObject(tab: any): any {
         if (BrowserApi.isChromeApi) {
             return tab;
         }

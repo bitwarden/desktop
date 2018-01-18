@@ -45,6 +45,11 @@ export class MainController implements ng.IController {
                     tab: msg.tab,
                     details: msg.details,
                 });
+            } else if (msg.command === '2faPageResponse') {
+                $scope.$broadcast('2faPageResponse', {
+                    type: msg.type,
+                    data: msg.data,
+                });
             }
         };
 
