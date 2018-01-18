@@ -1,3 +1,4 @@
+// tslint:disable-next-line
 require('../scripts/duo.js');
 
 document.addEventListener('DOMContentLoaded', () => {
