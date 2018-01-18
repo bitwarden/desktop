@@ -22,18 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 host: msg.data.host,
                 sig_request: msg.data.signature,
                 submit_callback: (theForm: Document) => {
-                    const sigElement = theForm.querySelector('input[name="sig_response"]');
+                    const sigElement = theForm.querySelector('input[name="sig_response"]') as HTMLInputElement;
                     if (sigElement) {
                         safari.self.tab.dispatchMessage('bitwarden', {
                             command: '2faPageResponse',
                             type: 'duo',
                             data: {
-                                sigValue: sigElement.nodeValue,
+                                sigValue: sigElement.value,
                             },
                         });
                         window.close();
                     }
-                }
+                },
             });
         } else {
             // TODO: others like u2f?

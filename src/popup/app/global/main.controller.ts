@@ -26,6 +26,8 @@ export class MainController implements ng.IController {
         });
 
         $window.bitwardenPopupMainMessageListener = (msg: any, sender: any, sendResponse: any) => {
+            console.log(msg);
+            
             if (msg.command === 'syncCompleted') {
                 $scope.$broadcast('syncCompleted', msg.successfully);
             } else if (msg.command === 'syncStarted') {

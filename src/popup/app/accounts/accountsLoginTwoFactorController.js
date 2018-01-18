@@ -123,6 +123,8 @@ angular
         });
 
         $scope.$on('2faPageResponse', (event, details) => {
+            console.log('got 2fa response');
+            console.log(details);
             if (details.type === 'duo') {
                 $scope.login(details.data.sigValue);
             }
@@ -167,6 +169,7 @@ angular
                             BrowserApi.tabSendMessage(tabToSend, {
                                 command: '2faPageData',
                                 data: {
+                                    type: 'duo',
                                     host: params.Host,
                                     signature: params.Signature
                                 }
