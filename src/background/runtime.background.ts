@@ -272,9 +272,10 @@ export default class RuntimeBackground {
 
             if (reason === 'install') {
                 BrowserApi.createNewTab(gettingStartedUrl);
+                await this.setDefaultSettings();
             }
         } else if (this.runtime.onInstalled) {
-            this.runtime.onInstalled.addListener((details: any) => {
+            this.runtime.onInstalled.addListener(async (details: any) => {
                 (window as any).ga('send', {
                     hitType: 'event',
                     eventAction: 'onInstalled ' + details.reason,
@@ -282,8 +283,17 @@ export default class RuntimeBackground {
 
                 if (details.reason === 'install') {
                     BrowserApi.createNewTab(gettingStartedUrl);
+                    await this.setDefaultSettings();
                 }
             });
+        }
+    }
+
+    private async setDefaultSettings() {
+        // Default lock options to "on restart".
+        const currentLockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
+        if (currentLockOption == null) {
+            await this.storageService.save(ConstantsService.lockOptionKey, -1);
         }
     }
 
