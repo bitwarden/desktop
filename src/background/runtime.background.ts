@@ -20,12 +20,20 @@ export default class RuntimeBackground {
     private autofillTimeout: number;
     private pageDetailsToAutoFill: any[] = [];
     private isSafari: boolean;
+    private onInstalledReason: string = null;
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private i18nService: any) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
+
+        // onInstalled listener must be wired up before anything else, so we do it in the ctor
+        if (!this.isSafari) {
+            this.runtime.onInstalled.addListener((details: any) => {
+                this.onInstalledReason = details.reason;
+            });
+        }
     }
 
     async init() {
@@ -250,43 +258,35 @@ export default class RuntimeBackground {
     }
 
     private async checkOnInstalled() {
-        const gettingStartedUrl = 'https://bitwarden.com/browser-start/';
-
         if (this.isSafari) {
             const installedVersionKey = 'installedVersion';
             const installedVersion = await this.storageService.get<string>(installedVersionKey);
-            let reason: string = null;
             if (installedVersion == null) {
-                reason = 'install';
+                this.onInstalledReason = 'install';
             } else if (BrowserApi.getApplicationVersion() !== installedVersion) {
-                reason = 'update';
+                this.onInstalledReason = 'update';
             }
 
-            if (reason != null) {
+            if (this.onInstalledReason != null) {
                 await this.storageService.save(installedVersionKey, BrowserApi.getApplicationVersion());
+            }
+        }
+
+        setTimeout(async () => {
+            if (this.onInstalledReason != null) {
                 (window as any).ga('send', {
                     hitType: 'event',
-                    eventAction: 'onInstalled ' + reason,
-                });
-            }
-
-            if (reason === 'install') {
-                BrowserApi.createNewTab(gettingStartedUrl);
-                await this.setDefaultSettings();
-            }
-        } else if (this.runtime.onInstalled) {
-            this.runtime.onInstalled.addListener(async (details: any) => {
-                (window as any).ga('send', {
-                    hitType: 'event',
-                    eventAction: 'onInstalled ' + details.reason,
+                    eventAction: 'onInstalled ' + this.onInstalledReason,
                 });
 
-                if (details.reason === 'install') {
-                    BrowserApi.createNewTab(gettingStartedUrl);
+                if (this.onInstalledReason === 'install') {
+                    BrowserApi.createNewTab('https://bitwarden.com/browser-start/');
                     await this.setDefaultSettings();
                 }
-            });
-        }
+
+                this.onInstalledReason = null;
+            }
+        }, 500);
     }
 
     private async setDefaultSettings() {
