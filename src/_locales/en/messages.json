@@ -978,7 +978,7 @@
   "clear": {
     "message": "Clear"
   },
-  "2faNewWindowMessage": {
+  "twoStepNewWindowMessage": {
     "message": "Complete your two-step login request using the new tab."
   }
 }
