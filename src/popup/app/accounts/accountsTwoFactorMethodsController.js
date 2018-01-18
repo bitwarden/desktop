@@ -2,7 +2,7 @@ angular
     .module('bit.accounts')
 
     .controller('accountsTwoFactorMethodsController', function ($scope, $state, $stateParams, constantsService,
-        utilsService, i18nService, $analytics) {
+        utilsService, i18nService, $analytics, platformUtilsService) {
         $scope.i18n = i18nService;
 
         var constants = constantsService;

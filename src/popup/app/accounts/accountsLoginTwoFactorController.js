@@ -77,14 +77,12 @@ angular
             $scope.loginPromise = authService.logIn(email, masterPassword, $scope.providerType, token, $scope.remember.checked);
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
-                $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true }).then(function(){
+                $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true }).then(function () {
                     if (sendSuccessToTab) {
-                        $timeout(function() {
+                        $timeout(function () {
                             BrowserApi.tabSendMessage(sendSuccessToTab, {
                                 command: '2faPageData',
-                                data: {
-                                    type: 'success'
-                                }
+                                data: { type: 'success' }
                             });
                         }, 1000);
                     }
