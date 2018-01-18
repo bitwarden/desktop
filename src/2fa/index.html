@@ -3,9 +3,29 @@
 <head>
     <title>Two-step Login</title>
     <meta charset="utf-8" />
+    <style>
+        html, body {
+            height: 90%;
+            padding: 0;
+        }
+
+        .frameWrapper {
+            background: url('../popup/images/loading.svg') 0 0 no-repeat;
+            width: 100%;
+            height: 100%;
+            margin-bottom: -10px;
+        }
+
+        .frameWrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
-<body style="padding: 30px; text-align: center; font-family: Arial; font-size: 18px;">
-    <div id="loading-message">Loading...</div>
-    <iframe id="duo_iframe"></iframe>
+<body>
+    <div class="frameWrapper">
+        <iframe id="duo_iframe"></iframe>
+    </div>
 </body>
 </html>

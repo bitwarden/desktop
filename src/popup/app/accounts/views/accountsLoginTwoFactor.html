@@ -52,8 +52,11 @@
         <div class="title">Duo</div>
     </div>
     <div class="content">
-        <div id="duoFrameWrapper">
+        <div id="duoFrameWrapper" ng-if="!showNewWindowMessage">
             <iframe id="duo_iframe"></iframe>
+        </div>
+        <div ng-if="showNewWindowMessage">
+            <div class="two-step-window-message">Complete your two-step login request using the new window.</div>
         </div>
         <div class="list">
             <div class="list-section">

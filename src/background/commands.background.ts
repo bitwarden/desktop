@@ -93,12 +93,11 @@ export default class CommandsBackground {
 
     private async openPopup() {
         // Chrome APIs cannot open popup
-        if (!this.isSafari || !safari.extension.toolbarItems || !safari.extension.toolbarItems.length) {
+        if (!this.isSafari) {
             return;
         }
 
-        safari.extension.toolbarItems[0].showPopover();
-
+        this.main.openPopup();
         (window as any).ga('send', {
             hitType: 'event',
             eventAction: 'Opened Popup From Command',

@@ -31,10 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
                                 sigValue: sigElement.value,
                             },
                         });
-                        window.close();
                     }
                 },
             });
+        } else if (msg.data.type === 'success') {
+            safari.self.tab.dispatchMessage('bitwarden', {
+                command: 'openPopup',
+            });
+
+            setTimeout(() => {
+                window.close();
+            }, 500);
         } else {
             // TODO: others like u2f?
         }

@@ -282,6 +282,21 @@ export default class MainBackground {
         this.runtimeBackground.processMessage(message, { tab: null }, () => { /* No response needed. */ });
     }
 
+    async openPopup() {
+        // Chrome APIs cannot open popup
+        if (!this.isSafari || !safari.extension.toolbarItems || !safari.extension.toolbarItems.length) {
+            return;
+        }
+
+        const activeToolBars = safari.extension.toolbarItems.filter((tb: any) => {
+            return tb.browserWindow === safari.application.activeBrowserWindow;
+        });
+
+        if (activeToolBars && activeToolBars.length) {
+            activeToolBars[0].showPopover();
+        }
+    }
+
     private async buildContextMenu() {
         if (this.isSafari || !chrome.contextMenus || this.buildingContextMenu) {
             return;

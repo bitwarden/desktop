@@ -81,6 +81,9 @@ export default class RuntimeBackground {
                     setTimeout(async () => await this.main.refreshBadgeAndMenu(), 2000);
                 }
                 break;
+            case 'openPopup':
+                await this.main.openPopup();
+                break;
             case 'bgGetDataForTab':
                 await this.getDataForTab(sender.tab, msg.responseCommand);
                 break;

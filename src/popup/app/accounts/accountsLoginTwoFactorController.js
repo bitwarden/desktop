@@ -9,6 +9,7 @@ angular
         }, 500);
 
         $scope.i18n = i18nService;
+        $scope.showNewWindowMessage = platformUtilsService.isSafari();
 
         var customWebVaultUrl = null;
         if (environmentService.baseUrl) {
@@ -54,7 +55,7 @@ angular
         init();
 
         $scope.loginPromise = null;
-        $scope.login = function (token) {
+        $scope.login = function (token, sendSuccessToTab) {
             if (!token) {
                 toastr.error(i18nService.verificationCodeRequired, i18nService.errorsOccurred);
                 return;
@@ -76,7 +77,18 @@ angular
             $scope.loginPromise = authService.logIn(email, masterPassword, $scope.providerType, token, $scope.remember.checked);
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
-                $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true });
+                $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true }).then(function(){
+                    if (sendSuccessToTab) {
+                        $timeout(function() {
+                            BrowserApi.tabSendMessage(sendSuccessToTab, {
+                                command: '2faPageData',
+                                data: {
+                                    type: 'success'
+                                }
+                            });
+                        }, 1000);
+                    }
+                });
             }, function () {
                 u2f.start();
             });
@@ -126,7 +138,7 @@ angular
             console.log('got 2fa response');
             console.log(details);
             if (details.type === 'duo') {
-                $scope.login(details.data.sigValue);
+                $scope.login(details.data.sigValue, details.tab);
             }
         });
 
@@ -174,7 +186,7 @@ angular
                                     signature: params.Signature
                                 }
                             });
-                        }, 1000);
+                        }, 500);
                     }
                     else {
                         $window.Duo.init({
