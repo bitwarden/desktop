@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden – 免費密碼管理工具</value>
+    <value>bitwarden - Tasuta paroolihaldur</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>安全、免費、跨平台的密碼管理工具</value>
+    <value>Tasuta ja turvaline paroolihaldur kõikidele Sinu seadmetele</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden 簡單易用，可以安全地儲存你所有的帳戶和密碼，並在多部裝置之間同步。
+    <value>bitwarden muudab kontoandmete ja teiste isiklike andmete kasutamise erinevate seadmete vahel lihtsaks ja turvaliseks.
 
-帳戶被盜是個嚴重的問題，你用的網頁和應用程式每天都遭受攻擊。每當發生安全漏洞，你的密碼就會被盜取。當你在不同網頁和程式用了同一組密碼，駭客就可以一舉獲得你的電子郵件帳戶，甚至銀行帳戶或其他重要帳戶。
+Paroolivargustest on saamas järjest tõsisem probleem. Veebilehed ja rakendused, mida igapäevaselt kasutad, on pidevalt rünnakute all. Muuhulgas toimuvad alalõpmata andmelekked, millega koos saadakse ligipääs ka Sinu paroolidele. Kasutades erinevatel veebilehtedel ühesugust parooli, on häkkeritel lihtne ligi pääseda nii sinu e-postile, pangakontole või teistele tähtsatele kontodele.
 
-安全專家建議你在每個帳戶使用不同、隨機產生的密碼。但要如何管理這些密碼呢？ Bitwarden 讓你輕鬆建立、儲存、存取你的密碼。
+Turvaeksperdid soovitavad kasutada kõikides kasutajakontodes erinevaid, juhuslikult koostatud paroole. Kuidas aga kõiki neid paroole hallata? bitwarden muudab paroolide loomise, talletamise ja nendele ligipääsu lihtsaks ja turvaliseks.
 
-bitwarden 將你所有登入資料儲存在加密的密碼庫中，並同步至你所有的裝置上。由於資料傳送前已經徹底加密，因此只有你可以存取這些資料，甚至連 bitwarden 的開發者都無法讀取你的資料。所有資料均使用 AES-256 加密、加鹽雜湊加密以及 PBKDF2 SHA-256 函式加密。</value>
+bitwarden talletab kõik Sinu andmed krüpteeritud hoidlas, mis sünkroniseeritakse kõikide Sinu poolt kasutatavate seadmete vahel. Kuna hoidla sisu krüpteeritakse enne selle enne seadmest lahkumist, omad andmetele ligipääsu ainult Sina. Ka bitwardeni meeskond ei saa Sinu andmeid vaadata, isegi kui neil selleks tahtmine oleks. Sinu andmed kaitsevad AES-256 bitine krüpteering, salted hashing ja PBKDF2 SHA-256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>安全、免費、跨平台的密碼管理工具</value>
+    <value>Tasuta ja turvaline paroolihaldur kõikidele Sinu seadmetele</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>在多部裝置上同步密碼庫</value>
+    <value>Sünkroniseeri ja halda oma kontot erinevates seadmetes</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>在一個安全的密碼庫裏管理密碼</value>
+    <value>Halda kõiki kontoandmeid turvalises paroolihoidlas</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>幫你在網頁自動填寫帳戶和密碼</value>
+    <value>Täida külastatavatel veebilehtedel oma kasutajakonto andmeid automaatselt ja lihtsalt</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>你可以透過滑鼠右鍵選單快速地存取密碼庫</value>
+    <value>Pääsed paroolihaldurile hõlpsasti ligi ka parema kliki menüüst</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>自動產生強力、隨機並安全的密碼</value>
+    <value>Loo automaatselt tugevaid, erinevaid ja turvalisi paroole</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>所有資料均採用 AES-256 安全加密</value>
+    <value>Sisestatud andmeid käitatakse turvaliselt, kasutades AES-256 bitist krüpteeringut</value>
   </data>
 </root>

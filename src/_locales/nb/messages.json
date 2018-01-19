@@ -1,0 +1,984 @@
+{
+  "appName": {
+    "message": "bitwarden"
+  },
+  "extName": {
+    "message": "bitwarden — Fri passordbehandling",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "bitwarden er en sikker og fri passordbehandler for alle dine PCer og mobiler.",
+    "description": "Extension description"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Logg på eller opprett en ny konto for å få tilgang til ditt sikre hvelv."
+  },
+  "createAccount": {
+    "message": "Opprett en konto"
+  },
+  "login": {
+    "message": "Logg på"
+  },
+  "cancel": {
+    "message": "Lukk"
+  },
+  "close": {
+    "message": "Lukk"
+  },
+  "submit": {
+    "message": "Send inn"
+  },
+  "emailAddress": {
+    "message": "E-postadresse"
+  },
+  "masterPass": {
+    "message": "Superpassord"
+  },
+  "masterPassDesc": {
+    "message": "Superpassordet er passordet du bruker for å få tilgang til hvelvet ditt. Det er veldig viktig at du aldri glemmer ditt superpassord. Det er ingen måter å få tilbake passordet på dersom du noensinne skulle klare å glemme det."
+  },
+  "masterPassHintDesc": {
+    "message": "Et hint for superpassordet kan hjelpe deg med å huske på passordet dersom du skulle glemme det."
+  },
+  "reTypeMasterPass": {
+    "message": "Skriv inn superpassordet på nytt"
+  },
+  "masterPassHint": {
+    "message": "Et hint for superpassordet (valgfritt)"
+  },
+  "tab": {
+    "message": "Fane"
+  },
+  "myVault": {
+    "message": "Mitt hvelv"
+  },
+  "tools": {
+    "message": "Verktøy"
+  },
+  "settings": {
+    "message": "Innstillinger"
+  },
+  "currentTab": {
+    "message": "Nåværende fane"
+  },
+  "copyPassword": {
+    "message": "Kopier passordet"
+  },
+  "copyUri": {
+    "message": "Kopier URIen"
+  },
+  "copyUsername": {
+    "message": "Kopier brukernavnet"
+  },
+  "copyNumber": {
+    "message": "Kopier nummeret"
+  },
+  "copySecurityCode": {
+    "message": "Kopier sikkerhetskoden"
+  },
+  "autoFill": {
+    "message": "Auto-utfylling"
+  },
+  "generatePasswordCopied": {
+    "message": "Generer et passord (Kopiert)"
+  },
+  "noMatchingLogins": {
+    "message": "Ingen samsvarende innlogginger."
+  },
+  "vaultLocked": {
+    "message": "Hvelvet er låst."
+  },
+  "autoFillInfo": {
+    "message": "Det er ingen tilgjengelige innlogginger å auto-utfylle med i den nåværende nettleserfanen."
+  },
+  "addLogin": {
+    "message": "Legg til en innlogging"
+  },
+  "addItem": {
+    "message": "Legg til en gjenstand"
+  },
+  "passwordHint": {
+    "message": "Passordhint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Skriv inn din kontos E-postadresse for å motta hintet til ditt superpassord."
+  },
+  "getMasterPasswordHint": {
+    "message": "Få et hint om superpassordet"
+  },
+  "continue": {
+    "message": "Fortsett"
+  },
+  "verificationCode": {
+    "message": "Verifiseringskode"
+  },
+  "account": {
+    "message": "Konto"
+  },
+  "changeMasterPassword": {
+    "message": "Endre superpassordet"
+  },
+  "changeEmail": {
+    "message": "Endre E-postadresse"
+  },
+  "twoStepLogin": {
+    "message": "2-trinnsinnlogging"
+  },
+  "logOut": {
+    "message": "Logg av"
+  },
+  "about": {
+    "message": "Om"
+  },
+  "version": {
+    "message": "Versjon"
+  },
+  "save": {
+    "message": "Lagre"
+  },
+  "addFolder": {
+    "message": "Legg til en mappe"
+  },
+  "name": {
+    "message": "Navn"
+  },
+  "editFolder": {
+    "message": "Rediger mappen"
+  },
+  "deleteFolder": {
+    "message": "Slett mappen"
+  },
+  "folders": {
+    "message": "Mapper"
+  },
+  "noFolders": {
+    "message": "Det er ingen mapper å liste opp."
+  },
+  "helpFeedback": {
+    "message": "Hjelp og tilbakemelding"
+  },
+  "emailUs": {
+    "message": "Send oss en E-post"
+  },
+  "emailUsDirectly": {
+    "message": "Send en E-post direkte til oss for å få hjelp eller å gi oss tilbakemeldinger."
+  },
+  "visitOurWebsite": {
+    "message": "Besøk nettsidene våre"
+  },
+  "visitOurWebsiteDirectly": {
+    "message": "Besøk vårt nettsted for å få hjelp, nyheter, sende oss E-poster, og\/eller lære mer om å bruke bitwarden."
+  },
+  "fileBugReport": {
+    "message": "Legg inn en feilrapport"
+  },
+  "gitHubIssue": {
+    "message": "Åpne en sak (Issue) på vårt GitHub-lager."
+  },
+  "sync": {
+    "message": "Synkroniser"
+  },
+  "syncVaultNow": {
+    "message": "Synkroniser hvelvet nå"
+  },
+  "lastSync": {
+    "message": "Forrige synkronisering:"
+  },
+  "passGen": {
+    "message": "Passordgenerator"
+  },
+  "passGenInfo": {
+    "message": "Generer automatisk sterke og unike passord for dine innlogginger."
+  },
+  "bitWebVault": {
+    "message": "bitwarden Netthvelv"
+  },
+  "bitWebVaultInfo": {
+    "message": "Behandle dine gjenstander fra enhver nettleser med bitwarden sitt netthvelv."
+  },
+  "bitIosVault": {
+    "message": "bitwarden iOS-hvelv"
+  },
+  "bitIosVaultInfo": {
+    "message": "Behandle dine gjenstander fra dine mobile enheter med bitwarden sitt iOS-hvelv."
+  },
+  "bitAndrVault": {
+    "message": "bitwarden Android-hvelv"
+  },
+  "bitAndrVaultInfo": {
+    "message": "Behandle dine gjenstander fra dine mobile enheter med bitwarden sitt Android-hvelv."
+  },
+  "importItems": {
+    "message": "Importer gjenstander"
+  },
+  "importItemsInfo": {
+    "message": "Importer raskt dine gjenstander i bunker fra andre passordbehandlingsprogrammer."
+  },
+  "select": {
+    "message": "Velg"
+  },
+  "generatePassword": {
+    "message": "Generer et passord"
+  },
+  "regeneratePassword": {
+    "message": "Omgenerer et passord"
+  },
+  "options": {
+    "message": "Alternativer"
+  },
+  "length": {
+    "message": "Lengde"
+  },
+  "minNumbers": {
+    "message": "Minst antall numre"
+  },
+  "minSpecial": {
+    "message": "Minst antall spesialtegn"
+  },
+  "avoidAmbChar": {
+    "message": "Unngå forvekslingsbare tegn"
+  },
+  "searchVault": {
+    "message": "Søk i hvelvet"
+  },
+  "edit": {
+    "message": "Rediger"
+  },
+  "view": {
+    "message": "Vis"
+  },
+  "noItemsInList": {
+    "message": "Det er ingen gjenstander å liste opp."
+  },
+  "itemInformation": {
+    "message": "Gjenstandsinformasjon"
+  },
+  "username": {
+    "message": "Brukernavn"
+  },
+  "password": {
+    "message": "Passord"
+  },
+  "favorite": {
+    "message": "Favoritt"
+  },
+  "notes": {
+    "message": "Notater"
+  },
+  "editItem": {
+    "message": "Rediger gjenstanden"
+  },
+  "folder": {
+    "message": "Mappe"
+  },
+  "deleteItem": {
+    "message": "Slett gjenstanden"
+  },
+  "viewItem": {
+    "message": "Vis gjenstanden"
+  },
+  "launchWebsite": {
+    "message": "Åpne nettsiden"
+  },
+  "website": {
+    "message": "Nettsted"
+  },
+  "togglePassword": {
+    "message": "Vis\/skjul passordet"
+  },
+  "manage": {
+    "message": "Behandle"
+  },
+  "other": {
+    "message": "Annet"
+  },
+  "disableGa": {
+    "message": "Deaktiver analyser"
+  },
+  "rateExtension": {
+    "message": "Gi utvidelsen en rangering"
+  },
+  "rateExtensionDesc": {
+    "message": "Tenk gjerne på om du vil skrive en anmeldelse om oss!"
+  },
+  "browserNotSupportClipboard": {
+    "message": "Nettleseren din støtter ikke kopiering til utklippstavlen på noe enkelt vis. Prøv å kopiere det manuelt i stedet."
+  },
+  "verifyMasterPassword": {
+    "message": "Verifiser superpassordet"
+  },
+  "invalidMasterPassword": {
+    "message": "Ugyldig superpassord"
+  },
+  "lockOptions": {
+    "message": "Låsingsinnstillinger"
+  },
+  "lockNow": {
+    "message": "Lås nå"
+  },
+  "immediately": {
+    "message": "Umiddelbart"
+  },
+  "oneMinute": {
+    "message": "1 minutt"
+  },
+  "fiveMinutes": {
+    "message": "5 minutter"
+  },
+  "fifteenMinutes": {
+    "message": "15 minutter"
+  },
+  "thirtyMinutes": {
+    "message": "30 minutter"
+  },
+  "oneHour": {
+    "message": "1 time"
+  },
+  "fourHours": {
+    "message": "4 timer"
+  },
+  "onLocked": {
+    "message": "Ved maskinlåsing"
+  },
+  "onRestart": {
+    "message": "Ved omstart"
+  },
+  "never": {
+    "message": "Aldri"
+  },
+  "security": {
+    "message": "Sikkerhet"
+  },
+  "errorsOccurred": {
+    "message": "Feil har oppstått"
+  },
+  "emailRequired": {
+    "message": "E-postadressen er påkrevd."
+  },
+  "invalidEmail": {
+    "message": "Ugyldig E-postadresse."
+  },
+  "masterPassRequired": {
+    "message": "Superpassordet er påkrevd."
+  },
+  "masterPassLength": {
+    "message": "Superpassordet må være ≥8 tegn lang."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Superpassord-bekreftelsen er ikke samsvarende."
+  },
+  "newAccountCreated": {
+    "message": "Din nye konto har blitt opprettet! Du kan nå logge på."
+  },
+  "masterPassSent": {
+    "message": "Vi har sendt deg en E-post med hintet til superpassordet."
+  },
+  "verificationCodeRequired": {
+    "message": "En verifiseringskode er påkrevd."
+  },
+  "valueCopied": {
+    "message": " er kopiert",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Klarte ikke å auto-utfylle den valgte gjenstanden på denne siden. Kopier og lim inn informasjonen i stedet."
+  },
+  "loggedOut": {
+    "message": "Logget av"
+  },
+  "loginExpired": {
+    "message": "Din innloggingsøkt har utløpt."
+  },
+  "logOutConfirmation": {
+    "message": "Er du sikker på at du vil logge av?"
+  },
+  "yes": {
+    "message": "Ja"
+  },
+  "no": {
+    "message": "Nei"
+  },
+  "unexpectedError": {
+    "message": "En uventet feil har oppstått."
+  },
+  "nameRequired": {
+    "message": "Et navn er påkrevd."
+  },
+  "addedFolder": {
+    "message": "La til en mappe"
+  },
+  "changeMasterPass": {
+    "message": "Endre superpassordet"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Du kan endre superpassordet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
+  },
+  "changeEmailConfirmation": {
+    "message": "Du kan endre din kontos E-postadresse på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "2-trinnsinnlogging gjør kontoen din mer sikker, ved å kreve at du verifiserer din innlogging med en annen enhet, f.eks. en autentiseringsapp, SMS, E-post, telefonsamtale, eller sikkerhetsnøkkel. 2-trinnsinnlogging kan aktiveres på bitwarden.com-netthvelvet. Vil du besøke den nettsiden nå?"
+  },
+  "loggingOut": {
+    "message": "Logger av"
+  },
+  "loggingOutConfirmation": {
+    "message": "Du har nylig oppdatert fra en eldre versjon. Du må logge inn på nytt for å endre dine låseinnstillinger. Vil du logge av nå?"
+  },
+  "editedFolder": {
+    "message": "Redigerte mappen"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Er du sikker på at du vil slette denne mappen?"
+  },
+  "deletedFolder": {
+    "message": "Slettet mappen"
+  },
+  "gettingStartedTutorial": {
+    "message": "Opplæring om å sette i gang"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Se vår opplæringsvideo for å lære hvordan man får mest mulig ut av nettleserutvidelsen."
+  },
+  "syncingComplete": {
+    "message": "Synkronisering fullført"
+  },
+  "syncingFailed": {
+    "message": "Synkronisering mislyktes"
+  },
+  "importItemsConfirmation": {
+    "message": "Du kan importere gjenstander i bunker på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
+  },
+  "passwordCopied": {
+    "message": "Passordet er kopiert"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "addedItem": {
+    "message": "La til gjenstanden"
+  },
+  "editedItem": {
+    "message": "Redigerte gjenstanden"
+  },
+  "deleteItemConfirmation": {
+    "message": "Er du sikker på at du vil slette denne gjenstanden?"
+  },
+  "deletedItem": {
+    "message": "Slettet gjenstanden"
+  },
+  "overwritePassword": {
+    "message": "Overskriv passordet"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Er du sikker på at du vil overskrive det nåværende passordet?"
+  },
+  "credits": {
+    "message": "Krediteringer"
+  },
+  "thankYou": {
+    "message": "Tusen takk"
+  },
+  "translations": {
+    "message": "Oversettelser"
+  },
+  "searchFolder": {
+    "message": "Søk i mappe"
+  },
+  "searchCollection": {
+    "message": "Søk i samling"
+  },
+  "noneFolder": {
+    "message": "Ingen mappe",
+    "description": "This is the folder for uncategorized items"
+  },
+  "gaDesc": {
+    "message": "Vi bruker analytikere for å bedre lære om hvordan utvidelsen blir brukt, sånn at vi kan gjøre den bedre. All datainnsamling er fullstendig anonymt."
+  },
+  "disableAddLoginNotification": {
+    "message": "Deaktiver «Legg til innlogging»-beskjedene"
+  },
+  "addLoginNotificationDesc": {
+    "message": "\"Legg til innlogging\"-beskjeden ber deg automatisk om å lagre nye innlogginger til hvelvet ditt hver gang du logger på dem for første gang."
+  },
+  "notificationAddDesc": {
+    "message": "Skal bitwarden huske på dette passordet for deg?"
+  },
+  "notificationAddSave": {
+    "message": "Ja, lagre nå"
+  },
+  "notificationNeverSave": {
+    "message": "Aldri for dette nettstedet"
+  },
+  "disableContextMenuItem": {
+    "message": "Deaktiver sammenhengsmeny-innstillinger"
+  },
+  "disableContextMenuItemDesc": {
+    "message": "Sammenhengsmeny-alternativer sørger for rask tilgang til passordgenerering og innlogginger for nettstedet i din nåværende fane."
+  },
+  "exportVault": {
+    "message": "Eksporter hvelvet"
+  },
+  "warning": {
+    "message": "ADVARSEL",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "Eksporten inneholder dine krypterte dataer i .csv-format. Du burde ikke lagre eller sende dem over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
+  },
+  "exportMasterPassword": {
+    "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
+  },
+  "exportVaultInfo": {
+    "message": "Eksporter dine hvelvdataer i .csv-format, sånn at du lett kan modifisere dem eller flytte dem et annet sted."
+  },
+  "shared": {
+    "message": "Delt"
+  },
+  "shareVault": {
+    "message": "Del hvelvet ditt"
+  },
+  "shareVaultInfo": {
+    "message": "Opprett en organisasjon for å sikkert dele dine gjenstander med andre brukere."
+  },
+  "contribute": {
+    "message": "Du kan bidra du også!"
+  },
+  "learnMore": {
+    "message": "Lær mer"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Autentiseringsnøkkel (TOTP)"
+  },
+  "verificationCodeTotp": {
+    "message": "Verifiseringskode (TOTP)"
+  },
+  "copyVerificationCode": {
+    "message": "Kopier verifiseringskoden"
+  },
+  "attachments": {
+    "message": "Vedlegg"
+  },
+  "deleteAttachment": {
+    "message": "Slett vedlegget"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Er du sikker på at du vil slette dette vedlegget?"
+  },
+  "deletedAttachment": {
+    "message": "Slettet vedlegget"
+  },
+  "newAttachment": {
+    "message": "Legg til et nytt vedlegg"
+  },
+  "noAttachments": {
+    "message": "Ingen vedlegg."
+  },
+  "attachmentSaved": {
+    "message": "Vedlegget har blitt lagret."
+  },
+  "file": {
+    "message": "Fil"
+  },
+  "selectFile": {
+    "message": "Velg en fil."
+  },
+  "maxFileSize": {
+    "message": "Den maksimale filstørrelsen er 100 MB."
+  },
+  "featureUnavailable": {
+    "message": "Egenskapen er utilgjengelig"
+  },
+  "updateKey": {
+    "message": "Du kan ikke bruke denne funksjonen før du oppdaterer krypteringsnøkkelen din."
+  },
+  "premiumMembership": {
+    "message": "Premium-medlemskap"
+  },
+  "premiumManage": {
+    "message": "Behandle medlemsskapet"
+  },
+  "premiumManageAlert": {
+    "message": "Du kan behandle medlemskapet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
+  },
+  "premiumRefresh": {
+    "message": "Oppfrisk medlemsskapet"
+  },
+  "premiumNotCurrentMember": {
+    "message": "Du er ikke for øyeblikket et Premium-medlem."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Skriv deg opp på et Premium-abonnement og få:"
+  },
+  "ppremiumSignUpStorage": {
+    "message": "1 GB med kryptert fillagring."
+  },
+  "ppremiumSignUpTwoStep": {
+    "message": "Ytterligere 2-trinnsinnloggingsmuligheter, slik som YubiKey, FIDO U2F, og Duo."
+  },
+  "ppremiumSignUpTotp": {
+    "message": "TOTP-verifiseringskodegenerator (2FA) for innlogginger i ditt hvelv."
+  },
+  "ppremiumSignUpSupport": {
+    "message": "Prioritert kundestøtte."
+  },
+  "ppremiumSignUpFuture": {
+    "message": "Alle fremtidige Premium-egenskaper. Mere er planlagt snart!"
+  },
+  "premiumPurchase": {
+    "message": "Kjøp Premium"
+  },
+  "premiumPurchaseAlert": {
+    "message": "Du kan kjøpe et Premium-medlemskap på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
+  },
+  "premiumCurrentMember": {
+    "message": "Du er et Premium-medlem!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Takk for at du støtter bitwarden."
+  },
+  "premiumPrice": {
+    "message": "Og alt det for %price%\/år!"
+  },
+  "refreshComplete": {
+    "message": "Oppfriskning fullført"
+  },
+  "disableAutoTotpCopy": {
+    "message": "Deaktiver automatisk TOTP-kopiering"
+  },
+  "disableAutoTotpCopyDesc": {
+    "message": "Dersom din innlogging har en autentiseringsnøkkel knyttet til den, blir TOTP-verifiseringskoden automatisk kopiert til utklippstavlen din når enn du auto-utfyller innloggingen."
+  },
+  "premiumRequired": {
+    "message": "Premium er påkrevd"
+  },
+  "premiumRequiredDesc": {
+    "message": "Et Premium-medlemskap er påkrevd for å bruke denne funksjonen."
+  },
+  "enterVerificationCodeApp": {
+    "message": "Skriv inn den 6-sifrede verifiseringskoden som står på din autentiseringsapp."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Skriv inn den 6-sifrede verifiseringskoden som ble sendt til"
+  },
+  "rememberMe": {
+    "message": "Husk på meg"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Send E-posten med verifiseringskoden på nytt"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Bruk en annen 2-trinnsinnloggingsmetode"
+  },
+  "insertYubiKey": {
+    "message": "Sett inn din YubiKey i din datamaskins USB-uttak, og så trykk på dens knapp."
+  },
+  "insertU2f": {
+    "message": "Sett din sikkerhetsnøkkel inn i din datamaskins USB-uttak. Dersom den har en knapp, trykk på den."
+  },
+  "loginUnavailable": {
+    "message": "Innloggingen er utilgjengelig"
+  },
+  "noTwoStepProviders": {
+    "message": "Denne kontoen har aktiver 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne nettleseren."
+  },
+  "noTwoStepProviders2": {
+    "message": "Vennligst bruk en støttet nettleser (f.eks. Chrome) og\/eller legg til flere leverandører som er bedre støttet mellom flere nettlesere (slik som en autentiseringsapp)."
+  },
+  "twoStepOptions": {
+    "message": "2-trinnsinnloggingsalternativer"
+  },
+  "recoveryCodeDesc": {
+    "message": "Har du mistet tilgang til alle dine 2-trinnsleverandører? Bruk din gjenopprettingskode til å fjerne alle 2-trinnsleverandører fra din konto."
+  },
+  "recoveryCodeTitle": {
+    "message": "Gjenopprettingskode"
+  },
+  "authenticatorAppTitle": {
+    "message": "Autentiseringsapp"
+  },
+  "authenticatorAppDesc": {
+    "message": "Bruk en autentiseringsapp (f.eks. Authy eller Google Authenticator) for å generere tidsbegrensede verifiseringskoder.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP-sikkerhetsnøkkel"
+  },
+  "yubiKeyDesc": {
+    "message": "Bruk en YubiKey for å få tilgang til kontoen din. Virker med enheter av typene YubiKey 4, 4 Nano, 4C, og NEO."
+  },
+  "duoDesc": {
+    "message": "Verifiser med Duo Security gjennom Duo Mobile-appen, SMS, telefonsamtale, eller en U2F-sikkerhetsnøkkel.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Bruk enhver FIDO U2F-aktivert sikkerhetsnøkkel til å få tilgang til kontoen din."
+  },
+  "u2fTitle": {
+    "message": "FIDO U2F-sikkerhetsnøkkel"
+  },
+  "emailTitle": {
+    "message": "E-post"
+  },
+  "emailDesc": {
+    "message": "Verifiseringskoder vil bli sendt til deg med E-post."
+  },
+  "selfHostedEnvironment": {
+    "message": "Selvbetjent miljø"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Spesifiser grunn-nettadressen til din selvbetjente bitwarden-installasjon."
+  },
+  "customEnvironment": {
+    "message": "Tilpasset miljø"
+  },
+  "customEnvironmentFooter": {
+    "message": "For avanserte brukere. Du kan bestemme grunn-nettadressen til hver tjeneste separat."
+  },
+  "baseUrl": {
+    "message": "Tjener-nettadresse"
+  },
+  "apiUrl": {
+    "message": "API-tjenernettadresse"
+  },
+  "webVaultUrl": {
+    "message": "Netthvelvets tjenernettadresse"
+  },
+  "identityUrl": {
+    "message": "Identitetstjenerens nettadresse"
+  },
+  "iconsUrl": {
+    "message": "Ikonenes tjenernettadresse"
+  },
+  "environmentSaved": {
+    "message": "Miljø-nettadressene har blitt lagret."
+  },
+  "enableAutoFillOnPageLoad": {
+    "message": "Aktiver auto-utfylling ved sideinnlastning"
+  },
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "Dersom et innloggingskjema blir oppdaget, utfør automatisk en auto-utfylling når nettstedet lastes inn."
+  },
+  "experimentalFeature": {
+    "message": "Dette er for øyeblikket en eksperimentell egenskap. Bruk det på din egen risiko."
+  },
+  "commandAutofillDesc": {
+    "message": "Auto-utfyll den senest brukte innloggingen til den nåværende nettsiden."
+  },
+  "commandGeneratePasswordDesc": {
+    "message": "Generer og kopier et nytt tilfeldig passord til utklippstavlen."
+  },
+  "privateModeMessage": {
+    "message": "Dessverre er dette vinduet ikke tilgjengelig i privat modus for denne nettleseren."
+  },
+  "customFields": {
+    "message": "Tilpassede felter"
+  },
+  "copyValue": {
+    "message": "Kopier verdien"
+  },
+  "toggleValue": {
+    "message": "Vis\/skjul verdien"
+  },
+  "value": {
+    "message": "Verdi"
+  },
+  "newCustomField": {
+    "message": "Nytt egendefinert felt"
+  },
+  "cfTypeText": {
+    "message": "Tekst"
+  },
+  "cfTypeHidden": {
+    "message": "Skjult"
+  },
+  "cfTypeBoolean": {
+    "message": "Boolsk verdi"
+  },
+  "popup2faCloseMessage": {
+    "message": "Å klikke utenfor dette oppsprettsvinduet for å sjekke E-postinnboksen din for en verifiseringskoden, vil lukke denne oppspretten. Vil du åpne oppsprettet i et nytt vindu sånn at den ikke lukkes?"
+  },
+  "disableFavicon": {
+    "message": "Skru av nettstedsikoner"
+  },
+  "disableFaviconDesc": {
+    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hver innloggingsgjenstand i hvelvet ditt."
+  },
+  "cardholderName": {
+    "message": "Kortholderens navn"
+  },
+  "number": {
+    "message": "Nummer"
+  },
+  "brand": {
+    "message": "Merke"
+  },
+  "expirationMonth": {
+    "message": "Utløpsmåned"
+  },
+  "expirationYear": {
+    "message": "Utløpsår"
+  },
+  "expiration": {
+    "message": "Utløp"
+  },
+  "january": {
+    "message": "Januar"
+  },
+  "february": {
+    "message": "Februar"
+  },
+  "march": {
+    "message": "Mars"
+  },
+  "april": {
+    "message": "April"
+  },
+  "may": {
+    "message": "Mai"
+  },
+  "june": {
+    "message": "Juni"
+  },
+  "july": {
+    "message": "Juli"
+  },
+  "august": {
+    "message": "August"
+  },
+  "september": {
+    "message": "September"
+  },
+  "october": {
+    "message": "Oktober"
+  },
+  "november": {
+    "message": "November"
+  },
+  "december": {
+    "message": "Desember"
+  },
+  "securityCode": {
+    "message": "Sikkerhetskode"
+  },
+  "ex": {
+    "message": "f.eks."
+  },
+  "title": {
+    "message": "Tittel"
+  },
+  "mr": {
+    "message": "Herr"
+  },
+  "mrs": {
+    "message": "Frøken"
+  },
+  "ms": {
+    "message": "Fru"
+  },
+  "dr": {
+    "message": "Dr."
+  },
+  "firstName": {
+    "message": "Fornavn"
+  },
+  "middleName": {
+    "message": "Mellomnavn"
+  },
+  "lastName": {
+    "message": "Etternavn"
+  },
+  "identityName": {
+    "message": "Identitetsnavn"
+  },
+  "company": {
+    "message": "Firma"
+  },
+  "ssn": {
+    "message": "Nummer for sosial stønad"
+  },
+  "passportNumber": {
+    "message": "Pass-nummer"
+  },
+  "licenseNumber": {
+    "message": "Lisensnummer"
+  },
+  "email": {
+    "message": "E-post"
+  },
+  "phone": {
+    "message": "Telefon"
+  },
+  "address": {
+    "message": "Adresse"
+  },
+  "address1": {
+    "message": "Adresse 1"
+  },
+  "address2": {
+    "message": "Adresse 2"
+  },
+  "address3": {
+    "message": "Adresse 3"
+  },
+  "cityTown": {
+    "message": "By \/ Tettsted"
+  },
+  "stateProvince": {
+    "message": "Fylke \/ Region"
+  },
+  "zipPostalCode": {
+    "message": "Postnummer"
+  },
+  "country": {
+    "message": "Land"
+  },
+  "type": {
+    "message": "Type"
+  },
+  "typeLogin": {
+    "message": "Innlogging"
+  },
+  "typeLogins": {
+    "message": "Innlogginger"
+  },
+  "typeSecureNote": {
+    "message": "Sikker notis"
+  },
+  "typeCard": {
+    "message": "Kort"
+  },
+  "typeIdentity": {
+    "message": "Identitet"
+  },
+  "passwordHistory": {
+    "message": "Passordhistorikk"
+  },
+  "back": {
+    "message": "Tilbake"
+  },
+  "collections": {
+    "message": "Samlinger"
+  },
+  "favorites": {
+    "message": "Favoritter"
+  },
+  "popOutNewWindow": {
+    "message": "Vis i et nytt vindu"
+  },
+  "refresh": {
+    "message": "Oppfrisk"
+  },
+  "cards": {
+    "message": "Kort"
+  },
+  "identities": {
+    "message": "Identiteter"
+  },
+  "clear": {
+    "message": "Tøm"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
+  }
+}

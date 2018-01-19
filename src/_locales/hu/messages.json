@@ -977,5 +977,8 @@
   },
   "clear": {
     "message": "Töröl"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
   }
 }

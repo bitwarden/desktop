@@ -239,7 +239,7 @@
     "message": "Evitar caracteres ambiguos"
   },
   "searchVault": {
-    "message": "Buscar en la caja fuerte."
+    "message": "Buscar en caja fuerte"
   },
   "edit": {
     "message": "Editar"
@@ -377,7 +377,7 @@
     "message": "Código de verificación requerido."
   },
   "valueCopied": {
-    "message": " copiado",
+    "message": " copiada",
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
@@ -977,5 +977,8 @@
   },
   "clear": {
     "message": "Limpiar"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
   }
 }

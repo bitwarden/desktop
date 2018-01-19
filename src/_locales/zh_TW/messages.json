@@ -92,7 +92,7 @@
     "message": "目前瀏覽器分頁中沒有可以自動填寫登入資料的位置。"
   },
   "addLogin": {
-    "message": "新增網頁"
+    "message": "新增登入資料"
   },
   "addItem": {
     "message": "新增項目"
@@ -101,7 +101,7 @@
     "message": "密碼提示"
   },
   "enterEmailToGetHint": {
-    "message": "請輸入帳戶電子郵件地址以接收主密碼提示。"
+    "message": "請輸入你的帳户電子郵件地址以接收主密碼提示。"
   },
   "getMasterPasswordHint": {
     "message": "取得主密碼提示"
@@ -173,7 +173,7 @@
     "message": "Bug 回報"
   },
   "gitHubIssue": {
-    "message": "在我們的 GitHub 存放庫中新增問題。"
+    "message": "在我們的 GitHub 儲存庫中新增問題。"
   },
   "sync": {
     "message": "同步"
@@ -188,7 +188,7 @@
     "message": "密碼產生器"
   },
   "passGenInfo": {
-    "message": "自動產生安全、獨特的密碼予帳戶。"
+    "message": "自動產生安全、獨特的登入密碼。"
   },
   "bitWebVault": {
     "message": "bitwarden 網頁版"
@@ -224,7 +224,7 @@
     "message": "重新產生密碼"
   },
   "options": {
-    "message": "選項"
+    "message": "進階選項"
   },
   "length": {
     "message": "長度"
@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "無法在此頁面自動填寫你的帳戶資料。請手動複製／貼上你的帳戶名稱及密碼。"
+    "message": "無法在此頁面自動填寫你的帳戶資料。請手動複製／貼上你的帳戶及密碼。"
   },
   "loggedOut": {
     "message": "已登出"
@@ -447,7 +447,7 @@
     "message": "同步失敗"
   },
   "importItemsConfirmation": {
-    "message": "你可以在 bitwarden 網頁版密碼庫批次匯入登入資料。現在前往？"
+    "message": "你可以在 bitwarden 網頁版批次匯入登入資料。現在前往？"
   },
   "passwordCopied": {
     "message": "密碼已複製"
@@ -477,7 +477,7 @@
     "message": "銘謝"
   },
   "thankYou": {
-    "message": "感謝"
+    "message": "非常感謝"
   },
   "translations": {
     "message": "譯者"
@@ -489,17 +489,17 @@
     "message": "搜尋收藏"
   },
   "noneFolder": {
-    "message": "沒有資料夾",
+    "message": "（未分類）",
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
     "message": "我们使用 analytics 協助分析擴充套件的使用情況，以便我們改善程式。所有資料均為匿名收集。"
   },
   "disableAddLoginNotification": {
-    "message": "關閉新增網頁提示"
+    "message": "停用新增登入資料提示"
   },
   "addLoginNotificationDesc": {
-    "message": "當你首次登入時，\"新增網頁提示\" 會自動提醒你在密碼庫加入新網頁。"
+    "message": "當你首次登入時，\"新增登入資料提示\" 會自動提醒你在密碼庫中新增登入資料。"
   },
   "notificationAddDesc": {
     "message": "希望 bitwarden 幫你儲存這個密碼嗎？"
@@ -511,10 +511,10 @@
     "message": "此網站不再提示"
   },
   "disableContextMenuItem": {
-    "message": "關閉右鍵選項"
+    "message": "隱藏右鍵選單選項"
   },
   "disableContextMenuItemDesc": {
-    "message": "右鍵選項幫你快速使用密碼產生器，也可以登入目前分頁的網站。"
+    "message": "右鍵選單選項幫你快速使用密碼產生器，也可以登入目前分頁開啟的網站。"
   },
   "exportVault": {
     "message": "匯出密碼庫"
@@ -539,10 +539,10 @@
     "message": "分享你的密碼庫"
   },
   "shareVaultInfo": {
-    "message": "新增組織以安全地分享你的帳戶資料。"
+    "message": "新增組織以安全地分享你的登入資料。"
   },
   "contribute": {
-    "message": "你也可以協助發展 ！"
+    "message": "你也可以成為貢獻者 ！"
   },
   "learnMore": {
     "message": "了解更多"
@@ -599,7 +599,7 @@
     "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 bitwarden 網頁版密碼庫管理您的會員資格。現在前往？"
+    "message": "你可以在 bitwarden 網頁版管理你的會員資格。現在前往？"
   },
   "premiumRefresh": {
     "message": "延續會員資格"
@@ -617,19 +617,19 @@
     "message": "YubiKey，FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
   },
   "ppremiumSignUpTotp": {
-    "message": "用於你的登入資料的 TOTP 驗證碼 (2FA) 產生器。"
+    "message": "用於你登入資料的 TOTP 驗證碼 (2FA) 產生器。"
   },
   "ppremiumSignUpSupport": {
     "message": "優先客戶支援。"
   },
   "ppremiumSignUpFuture": {
-    "message": "未來所有的進階功能。即將推出！"
+    "message": "未來會有更多進階功能，敬請期待！"
   },
   "premiumPurchase": {
     "message": "購買進階會員資格"
   },
   "premiumPurchaseAlert": {
-    "message": "你可以在 bitwarden 網頁版密碼庫購買進階會員資格。現在前往？"
+    "message": "你可以在 bitwarden 網頁版購買進階會員資格。現在前往？"
   },
   "premiumCurrentMember": {
     "message": "你目前是進階會員！"
@@ -724,7 +724,7 @@
     "message": "驗證碼將使用電子郵件傳送給你。"
   },
   "selfHostedEnvironment": {
-    "message": "自我託管的環境"
+    "message": "自我託管環境"
   },
   "selfHostedEnvironmentFooter": {
     "message": "指定自己設定、託管的 bitwarden 環境之基礎 URL。"
@@ -757,13 +757,13 @@
     "message": "啟用頁面載入時自動填寫表單"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "如果頁面載入時偵測到登入表單，則自動執行表單填寫。"
+    "message": "如果網頁載入時偵測到登入表單，則自動執行表單填寫。"
   },
   "experimentalFeature": {
     "message": "目前這是一項實驗性功能。要使用需自行承擔風險。"
   },
   "commandAutofillDesc": {
-    "message": "自動使用最後一次登入的帳號填寫目前網站"
+    "message": "自動使用最後一次登入的帳戶填寫目前網站"
   },
   "commandGeneratePasswordDesc": {
     "message": "產生並將一個新的隨機密碼複製到剪貼簿中。"
@@ -940,7 +940,7 @@
     "message": "登入"
   },
   "typeLogins": {
-    "message": "帳戶資料"
+    "message": "登入資料"
   },
   "typeSecureNote": {
     "message": "安全記事"
@@ -977,5 +977,8 @@
   },
   "clear": {
     "message": "清除"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
   }
 }

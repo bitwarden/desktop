@@ -977,5 +977,8 @@
   },
   "clear": {
     "message": "清除"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
   }
 }

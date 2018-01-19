@@ -417,7 +417,7 @@
     "message": "Je kunt je e-mailadres veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Tweestaps-verificatie maakt je account veiliger door je bij iedere login een code te vragen van een authenticatie-app. Tweestaps-verificatie kun je aanzetten in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
+    "message": "Inloggen in twee stappen beveiligt uw account beter doordat u uw inlogpoging moet bevestigen met een ander apparaat. Dit kan bijv. een beveiligingssleutel, een verificatie-app, sms, spraakoproep of e-mail zijn. Inloggen in twee stappen kan worden ingeschakeld in de kluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "loggingOut": {
     "message": "Uitloggen"
@@ -447,7 +447,7 @@
     "message": "Synchronisatie mislukt"
   },
   "importItemsConfirmation": {
-    "message": "Je kunt een bulk import van items doen vanuit de bitwarden.com webkluis. Wil je de website nu bezoeken?"
+    "message": "U kunt een bulk import van items doen vanuit de bitwarden.com webkluis. Wilt u de website nu bezoeken?"
   },
   "passwordCopied": {
     "message": "Wachtwoord gekopieerd"
@@ -462,7 +462,7 @@
     "message": "Item bewerkt"
   },
   "deleteItemConfirmation": {
-    "message": "Ben je zeker dat je dit item wilt verwijderen?"
+    "message": "Weet u zeker dat u dit item wilt verwijderen?"
   },
   "deletedItem": {
     "message": "Item verwijderd"
@@ -542,7 +542,7 @@
     "message": "Maak een organisatie om uw logins veilig te delen met andere gebruikers."
   },
   "contribute": {
-    "message": "You can contribute to!"
+    "message": "U kunt ook bijdragen!"
   },
   "learnMore": {
     "message": "Meer weten"
@@ -563,7 +563,7 @@
     "message": "Bijlage verwijderen"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Weet je zeker dat je deze bijlage wilt verwijderen?"
+    "message": "Weet u zeker dat u deze bijlage wilt verwijderen?"
   },
   "deletedAttachment": {
     "message": "Verwijderde bijlage"
@@ -599,7 +599,7 @@
     "message": "Lidmaatschap beheren"
   },
   "premiumManageAlert": {
-    "message": "Je kunt je lidmaatschap veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
+    "message": "U kunt uw lidmaatschap veranderen in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "premiumRefresh": {
     "message": "Lidmaatschap vernieuwen"
@@ -680,7 +680,7 @@
     "message": "Inloggen niet beschikbaar"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message": "Dit account heeft verificatie in twee stappen ingeschakeld, echter wordt geen van de geconfigureerde aanbieders ondersteund door deze webbrowser."
   },
   "noTwoStepProviders2": {
     "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
@@ -689,7 +689,7 @@
     "message": "Inloggen in twee stappen-opties"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Heeft u de toegang tot al uw two-factor aanbieders verloren? Gebruik dan uw herstel-code om alle two-factor aanbieders van uw account te verwijderen."
   },
   "recoveryCodeTitle": {
     "message": "Herstelcode"
@@ -698,17 +698,17 @@
     "message": "Authenticatie-app"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Gebruik een authenticatie app (zoals Authy of Google Authenticator) om op tijd gebaseerde authenticatie codes te genereren.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP-beveiligingssleutel"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Gebruik een YubiKey om uw account te benaderen. Werkt met YubiKey 4, 4 Nano, 4C en Neo apparaten."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifieer met Duo Security door middel van de Duo Mobile app, sms, spraakoproep of een U2F beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -763,7 +763,7 @@
     "message": "Dit is op dit moment een experimentele functie, gebruik op uw eigen risico."
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "Vul automatisch de laatst gebruikte inloggegevens voor de huidige site in."
   },
   "commandGeneratePasswordDesc": {
     "message": "Genereer en kopieer een new willekeurig wachtwoord naar het klembord."
@@ -778,7 +778,7 @@
     "message": "Waarde kopiëren"
   },
   "toggleValue": {
-    "message": "Toggle Value"
+    "message": "Schakel tussen waarde"
   },
   "value": {
     "message": "Waarde"
@@ -796,7 +796,7 @@
     "message": "Conditie 0 of 1 (Boolean)"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "Buiten het pop-up venster klikken om uw e-mail te controleren op een verificatiecode zal de pop-up doen sluiten. Wilt u het pop-up venster openen in een nieuw scherm, zodat het niet wordt gesloten?"
   },
   "disableFavicon": {
     "message": "Schakel Website Icoontjes Uit"
@@ -977,5 +977,8 @@
   },
   "clear": {
     "message": "Maak leeg"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
   }
 }

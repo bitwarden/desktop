@@ -245,7 +245,7 @@
     "message": "Redigér"
   },
   "view": {
-    "message": "View"
+    "message": "Vis"
   },
   "noItemsInList": {
     "message": "There are no items to list."
@@ -835,13 +835,13 @@
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Maj"
   },
   "june": {
-    "message": "June"
+    "message": "Juni"
   },
   "july": {
-    "message": "July"
+    "message": "Juli"
   },
   "august": {
     "message": "August"
@@ -850,7 +850,7 @@
     "message": "September"
   },
   "october": {
-    "message": "October"
+    "message": "Oktober"
   },
   "november": {
     "message": "November"
@@ -859,19 +859,19 @@
     "message": "December"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Sikkerhedskode"
   },
   "ex": {
     "message": "ex."
   },
   "title": {
-    "message": "Title"
+    "message": "Titel"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Hr."
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Fru"
   },
   "ms": {
     "message": "Ms"
@@ -880,19 +880,19 @@
     "message": "Dr"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Fornavn"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Mellemnavn"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Efternavn"
   },
   "identityName": {
     "message": "Identity Name"
   },
   "company": {
-    "message": "Company"
+    "message": "Firma"
   },
   "ssn": {
     "message": "Social Security Number"
@@ -901,37 +901,37 @@
     "message": "Passport Number"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Kørekortnummer"
   },
   "email": {
     "message": "Email"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresse"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresse 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adresse 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adresse 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "By \/ Tætsted"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Region"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Postnummer"
   },
   "country": {
-    "message": "Country"
+    "message": "Land"
   },
   "type": {
     "message": "Type"
@@ -977,5 +977,8 @@
   },
   "clear": {
     "message": "Clear"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
   }
 }

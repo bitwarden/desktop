@@ -889,7 +889,7 @@
     "message": "Nom"
   },
   "identityName": {
-    "message": "Nom de l'identité"
+    "message": "Identité"
   },
   "company": {
     "message": "Société"
@@ -928,7 +928,7 @@
     "message": "Dept. \/ Province"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Code postal"
+    "message": "Code postal"
   },
   "country": {
     "message": "Pays"
@@ -937,7 +937,7 @@
     "message": "Format"
   },
   "typeLogin": {
-    "message": "Identifiants"
+    "message": "Identifiant"
   },
   "typeLogins": {
     "message": "Identifiants"
@@ -977,5 +977,8 @@
   },
   "clear": {
     "message": "Effacer"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
   }
 }

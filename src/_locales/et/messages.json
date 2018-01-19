@@ -1,0 +1,984 @@
+{
+  "appName": {
+    "message": "bitwarden"
+  },
+  "extName": {
+    "message": "bitwarden - Tasuta paroolihaldur",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "bitwarden on tasuta ja turvaline paroolihaldur kõikidele Sinu seadmetele.",
+    "description": "Extension description"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Logi oma olemasolevasse kontosse sisse või loo uus konto."
+  },
+  "createAccount": {
+    "message": "Konto loomine"
+  },
+  "login": {
+    "message": "Logi sisse"
+  },
+  "cancel": {
+    "message": "Tühista"
+  },
+  "close": {
+    "message": "Sulge"
+  },
+  "submit": {
+    "message": "Kinnita"
+  },
+  "emailAddress": {
+    "message": "E-posti aadress"
+  },
+  "masterPass": {
+    "message": "Ülemparool"
+  },
+  "masterPassDesc": {
+    "message": "Ülemparool on parool, millega pääsed oma kontole ligi. On äärmiselt tähtis, et ülemparool ei ununeks. Selle parooli taastamine ei ole mingil moel võimalik."
+  },
+  "masterPassHintDesc": {
+    "message": "Vihje võib abiks olla olukorras, kui oled ülemparooli unustanud."
+  },
+  "reTypeMasterPass": {
+    "message": "Sisesta ülemparool uuesti"
+  },
+  "masterPassHint": {
+    "message": "Ülemparooli vihje (ei ole kohutuslik)"
+  },
+  "tab": {
+    "message": "Kaart"
+  },
+  "myVault": {
+    "message": "Minu hoidla"
+  },
+  "tools": {
+    "message": "Tööriistad"
+  },
+  "settings": {
+    "message": "Seaded"
+  },
+  "currentTab": {
+    "message": "Praegune vahekaart"
+  },
+  "copyPassword": {
+    "message": "Kopeeri parool"
+  },
+  "copyUri": {
+    "message": "Kopeeri URL"
+  },
+  "copyUsername": {
+    "message": "Kopeeri kasutajanimi"
+  },
+  "copyNumber": {
+    "message": "Kopeeri number"
+  },
+  "copySecurityCode": {
+    "message": "Kopeeri turvakood"
+  },
+  "autoFill": {
+    "message": "Automaatne täitmine"
+  },
+  "generatePasswordCopied": {
+    "message": "Genereeri parool (kopeeritakse)"
+  },
+  "noMatchingLogins": {
+    "message": "Sobivaid kontoandmeid ei leitud."
+  },
+  "vaultLocked": {
+    "message": "Hoidla on lukus."
+  },
+  "autoFillInfo": {
+    "message": "Selle vahekaardi automaatseks täitmiseks puuduvad kirjed."
+  },
+  "addLogin": {
+    "message": "Lisa konto andmed"
+  },
+  "addItem": {
+    "message": "Lisa kirje"
+  },
+  "passwordHint": {
+    "message": "Parooli vihje"
+  },
+  "enterEmailToGetHint": {
+    "message": "Ülemparooli vihje saamiseks sisesta oma konto e-posti aadress."
+  },
+  "getMasterPasswordHint": {
+    "message": "Tuleta ülemparooli vihjega meelde"
+  },
+  "continue": {
+    "message": "Jätka"
+  },
+  "verificationCode": {
+    "message": "Kinnituskood"
+  },
+  "account": {
+    "message": "Konto"
+  },
+  "changeMasterPassword": {
+    "message": "Muuda ülemparooli"
+  },
+  "changeEmail": {
+    "message": "Muuda e-posti"
+  },
+  "twoStepLogin": {
+    "message": "Kaheastmeline kinnitamine"
+  },
+  "logOut": {
+    "message": "Logi välja"
+  },
+  "about": {
+    "message": "Rakenduse info"
+  },
+  "version": {
+    "message": "Versioon"
+  },
+  "save": {
+    "message": "Salvesta"
+  },
+  "addFolder": {
+    "message": "Kausta lisamine"
+  },
+  "name": {
+    "message": "Nimi"
+  },
+  "editFolder": {
+    "message": "Muuda kausta"
+  },
+  "deleteFolder": {
+    "message": "Kustuta Kaust"
+  },
+  "folders": {
+    "message": "Kaustad"
+  },
+  "noFolders": {
+    "message": "Puuduvad kaustad, mida kuvada."
+  },
+  "helpFeedback": {
+    "message": "Abi ja tagasiside"
+  },
+  "emailUs": {
+    "message": "Kirjuta meile"
+  },
+  "emailUsDirectly": {
+    "message": "Kirjuta meile abi saamiseks või tagasiside jätmiseks."
+  },
+  "visitOurWebsite": {
+    "message": "Külasta meie kodulehte"
+  },
+  "visitOurWebsiteDirectly": {
+    "message": "Külasta kodulehte abi saamiseks, meiega kontakteerumiseks, uudiste lugemiseks või bitwardeni kohta rohkema teabe saamiseks."
+  },
+  "fileBugReport": {
+    "message": "Esita tarkvaraviga"
+  },
+  "gitHubIssue": {
+    "message": "Ava meie GitHubis probleemi kirjeldus."
+  },
+  "sync": {
+    "message": "Sünkroniseeri"
+  },
+  "syncVaultNow": {
+    "message": "Sünkroniseeri hoidla"
+  },
+  "lastSync": {
+    "message": "Viimane sünkronisatsioon:"
+  },
+  "passGen": {
+    "message": "Parooli genereerimine"
+  },
+  "passGenInfo": {
+    "message": "Loo oma kontodele tugevaid ja unikaalseid paroole."
+  },
+  "bitWebVault": {
+    "message": "bitwardeni Veebihoidla"
+  },
+  "bitWebVaultInfo": {
+    "message": "Halda oma bitwardeni kontot mistahes brauseris."
+  },
+  "bitIosVault": {
+    "message": "bitwardeni Paroolihaldur iOS-ile"
+  },
+  "bitIosVaultInfo": {
+    "message": "Halda oma kontot bitwardeni iOS rakenduse kaudu."
+  },
+  "bitAndrVault": {
+    "message": "bitwardeni Paroolihaldur Androidile"
+  },
+  "bitAndrVaultInfo": {
+    "message": "Halda oma kontot bitwardeni Androidi rakenduse kaudu."
+  },
+  "importItems": {
+    "message": "Impordi andmed"
+  },
+  "importItemsInfo": {
+    "message": "Kiire viis oma konto- ja muude andmete importimiseks teistest paroolihalduritest."
+  },
+  "select": {
+    "message": "Vali"
+  },
+  "generatePassword": {
+    "message": "Loo parool"
+  },
+  "regeneratePassword": {
+    "message": "Genereeri salasõna uuesti"
+  },
+  "options": {
+    "message": "Valikud"
+  },
+  "length": {
+    "message": "Pikkus"
+  },
+  "minNumbers": {
+    "message": "Vähim arv numbreid"
+  },
+  "minSpecial": {
+    "message": "Vähim arv spetsiaalmärke"
+  },
+  "avoidAmbChar": {
+    "message": "Väldi ebamääraseid kirjamärke"
+  },
+  "searchVault": {
+    "message": "Otsi hoidlast"
+  },
+  "edit": {
+    "message": "Muuda"
+  },
+  "view": {
+    "message": "Vaata"
+  },
+  "noItemsInList": {
+    "message": "Puuduvad kirjed, mida kuvada."
+  },
+  "itemInformation": {
+    "message": "Kirje informatsioon"
+  },
+  "username": {
+    "message": "Kasutajanimi"
+  },
+  "password": {
+    "message": "Parool"
+  },
+  "favorite": {
+    "message": "Lemmik"
+  },
+  "notes": {
+    "message": "Märkmed"
+  },
+  "editItem": {
+    "message": "Kirje muutmine"
+  },
+  "folder": {
+    "message": "Kaust"
+  },
+  "deleteItem": {
+    "message": "Kustuta kirje"
+  },
+  "viewItem": {
+    "message": "Kirje vaatamine"
+  },
+  "launchWebsite": {
+    "message": "Ava veebileht"
+  },
+  "website": {
+    "message": "Veebileht"
+  },
+  "togglePassword": {
+    "message": "Parooli kuvamine"
+  },
+  "manage": {
+    "message": "Halda"
+  },
+  "other": {
+    "message": "Muu"
+  },
+  "disableGa": {
+    "message": "Keela analüütika"
+  },
+  "rateExtension": {
+    "message": "Hinda seda laiendust"
+  },
+  "rateExtensionDesc": {
+    "message": "Soovi korral võid meid positiivse hinnanguga toetada!"
+  },
+  "browserNotSupportClipboard": {
+    "message": "Kasutatav brauser ei toeta lihtsat lõikepuhvri kopeerimist. Kopeeri see käsitsi."
+  },
+  "verifyMasterPassword": {
+    "message": "Kinnita ülemparooliga"
+  },
+  "invalidMasterPassword": {
+    "message": "Vale ülemparool"
+  },
+  "lockOptions": {
+    "message": "Automaatne lukustamine"
+  },
+  "lockNow": {
+    "message": "Kliki paroolihoidla lukustamiseks"
+  },
+  "immediately": {
+    "message": "Koheselt"
+  },
+  "oneMinute": {
+    "message": "1 minuti pärast"
+  },
+  "fiveMinutes": {
+    "message": "15 minuti pärast"
+  },
+  "fifteenMinutes": {
+    "message": "15 minuti pärast"
+  },
+  "thirtyMinutes": {
+    "message": "15 minuti pärast"
+  },
+  "oneHour": {
+    "message": "1 tunni pärast"
+  },
+  "fourHours": {
+    "message": "4 tunni pärast"
+  },
+  "onLocked": {
+    "message": "Arvutist väljalogimisel"
+  },
+  "onRestart": {
+    "message": "Arvuti taaskäivitamisel"
+  },
+  "never": {
+    "message": "Mitte kunagi"
+  },
+  "security": {
+    "message": "Turvalisus"
+  },
+  "errorsOccurred": {
+    "message": "Ilmnesid vead"
+  },
+  "emailRequired": {
+    "message": "E-posti aadress on nõutud."
+  },
+  "invalidEmail": {
+    "message": "Vigane e-posti aadress."
+  },
+  "masterPassRequired": {
+    "message": "Vajalik on ülemparooli sisestamine."
+  },
+  "masterPassLength": {
+    "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Ülemparoolid ei ühti."
+  },
+  "newAccountCreated": {
+    "message": "Sinu konto on loodud! Võid nüüd sisse logida."
+  },
+  "masterPassSent": {
+    "message": "Ülemparooli vihje saadeti Sinu e-postile."
+  },
+  "verificationCodeRequired": {
+    "message": "Nõuatav on kontrollkood."
+  },
+  "valueCopied": {
+    "message": " on kopeeritud",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Automaatne täitmine ebaõnnestus. Palun kopeeri informatsioon käsitsi."
+  },
+  "loggedOut": {
+    "message": "Välja logitud"
+  },
+  "loginExpired": {
+    "message": "Sessioon on aegunud."
+  },
+  "logOutConfirmation": {
+    "message": "Oled kindel, et soovid välja logida?"
+  },
+  "yes": {
+    "message": "Jah"
+  },
+  "no": {
+    "message": "Ei"
+  },
+  "unexpectedError": {
+    "message": "Tekkis ootamatu viga."
+  },
+  "nameRequired": {
+    "message": "Nimi on kohustuslik."
+  },
+  "addedFolder": {
+    "message": "Kaust on lisatud"
+  },
+  "changeMasterPass": {
+    "message": "Muuda ülemparooli"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Saad oma ülemparooli muuta bitwarden.com veebihoidlas. Soovid seda kohe teha?"
+  },
+  "changeEmailConfirmation": {
+    "message": "Saad oma e-posti aadressi muuta bitwarden.com veebihoidlas. Soovid seda kohe teha?"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Kaheastmeline kinnitamine aitab konto turvalisust tõsta. Lisaks paroolile pead kontole ligipääsemiseks kinnitama sisselogimise päringu SMS-ga, telefonikõnega, autentimise rakendusega või e-postiga. Kaheastmelist kinnitust saab sisse lülitada bitwarden.com veebihoidlas. Soovid seda kohe avada?"
+  },
+  "loggingOut": {
+    "message": "Väljalogimine"
+  },
+  "loggingOutConfirmation": {
+    "message": "Oled hiljuti uuema bitwardeni versiooni paigaldanud. Lukustamise valikute muutmiseks pead oma kontosse uuesti sisse logima. Soovid välja logida?"
+  },
+  "editedFolder": {
+    "message": "Kaust muudetud"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Oled kindel, et soovid seda kausta kustutada?"
+  },
+  "deletedFolder": {
+    "message": "Kaust kustutatud"
+  },
+  "gettingStartedTutorial": {
+    "message": "Alustamise juhend"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Vaata meie alustamise juhendit, et meie brauseri lisa kohta rohkem teavet saada."
+  },
+  "syncingComplete": {
+    "message": "Sünkroniseerimine on lõpetatud"
+  },
+  "syncingFailed": {
+    "message": "Sünkroniseerimine nurjus"
+  },
+  "importItemsConfirmation": {
+    "message": "Saad suurema koguse kontoandmeid importida bitwardeni veebihoidlas. Soovid seda kohe teha?"
+  },
+  "passwordCopied": {
+    "message": "Parool on kopeeritud"
+  },
+  "uri": {
+    "message": "URL"
+  },
+  "addedItem": {
+    "message": "Kirje on lisatud"
+  },
+  "editedItem": {
+    "message": "Üksus on muudetud"
+  },
+  "deleteItemConfirmation": {
+    "message": "Soovid tõesti selle kirje kustutada?"
+  },
+  "deletedItem": {
+    "message": "Kirje on kustutatud"
+  },
+  "overwritePassword": {
+    "message": "Kirjuta parool üle"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Oled kindel, et soovid olemasolevat parooli üle kirjutada?"
+  },
+  "credits": {
+    "message": "Tänusõnad"
+  },
+  "thankYou": {
+    "message": "Täname teid!"
+  },
+  "translations": {
+    "message": "Tõlkijad"
+  },
+  "searchFolder": {
+    "message": "Otsi kausta"
+  },
+  "searchCollection": {
+    "message": "Otsi kogumikku"
+  },
+  "noneFolder": {
+    "message": "Kaust puudub",
+    "description": "This is the folder for uncategorized items"
+  },
+  "gaDesc": {
+    "message": "Kasutame analüütikat, et brauserilisa kasutamist paremini mõista ja seda paremaks muuta. Kogu andmekorje on anonüümne."
+  },
+  "disableAddLoginNotification": {
+    "message": "Keela \"Lisa konto andmed\" märguanne"
+  },
+  "addLoginNotificationDesc": {
+    "message": "\"Lisa konto andmed\" märguanne ilmub pärast esimest sisselogimist ning võimaldab Sul kontoandmeid automaatselt bitwardenisse lisada."
+  },
+  "notificationAddDesc": {
+    "message": "Kas bitwarden peaks seda parooli meeles pidama?"
+  },
+  "notificationAddSave": {
+    "message": "Jah, salvesta see"
+  },
+  "notificationNeverSave": {
+    "message": "Ära sellel lehel enam küsi"
+  },
+  "disableContextMenuItem": {
+    "message": "Keela parema kliki menüü valikud"
+  },
+  "disableContextMenuItemDesc": {
+    "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
+  },
+  "exportVault": {
+    "message": "Ekspordi hoidla"
+  },
+  "warning": {
+    "message": "HOIATUS",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "Ekspordi tulemusena luuakse ilma krüpteringuta .csv formaadis fail. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
+  },
+  "exportMasterPassword": {
+    "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
+  },
+  "exportVaultInfo": {
+    "message": "Ekspordi hoidla sisu .csv formaati, et saaksid seda lihtsasti muuta või mujal kasutada."
+  },
+  "shared": {
+    "message": "Jagatud"
+  },
+  "shareVault": {
+    "message": "Jaga oma hoidlat"
+  },
+  "shareVaultInfo": {
+    "message": "Loo organisatsioon, et saaksid oma andmeid teiste inimestega turvaliselt jagada."
+  },
+  "contribute": {
+    "message": "Võid ka kaasa aidata!"
+  },
+  "learnMore": {
+    "message": "Loe edasi"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Autentiseerimise võti (TOTP)"
+  },
+  "verificationCodeTotp": {
+    "message": "Kinnituskood (TOTP)"
+  },
+  "copyVerificationCode": {
+    "message": "Kopeeri kinnituskood"
+  },
+  "attachments": {
+    "message": "Manused"
+  },
+  "deleteAttachment": {
+    "message": "Kustuta manus"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Oled kindel, et soovid manuse kustutada?"
+  },
+  "deletedAttachment": {
+    "message": "Manus on kustutatud"
+  },
+  "newAttachment": {
+    "message": "Lisa uus manus"
+  },
+  "noAttachments": {
+    "message": "Manused puuduvad."
+  },
+  "attachmentSaved": {
+    "message": "Manus on salvestatud."
+  },
+  "file": {
+    "message": "Fail"
+  },
+  "selectFile": {
+    "message": "Vali fail."
+  },
+  "maxFileSize": {
+    "message": "Maksimaalne faili suurus on 100 MB."
+  },
+  "featureUnavailable": {
+    "message": "Funktsioon pole saadaval"
+  },
+  "updateKey": {
+    "message": "Seda funktsiooni ei saa enne krüpteerimise võtme uuendamist kasutada."
+  },
+  "premiumMembership": {
+    "message": "Preemium versioon"
+  },
+  "premiumManage": {
+    "message": "Halda Preemium versiooni"
+  },
+  "premiumManageAlert": {
+    "message": "Saad Preemium versiooni hallata bitwarden.com veebihoidlas. Soovid seda kohe teha?"
+  },
+  "premiumRefresh": {
+    "message": "Uuenda staatust"
+  },
+  "premiumNotCurrentMember": {
+    "message": "Sa ei ole hetkel preemium versiooni kasutaja."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Preemium versiooni lisab järgmised eelised:"
+  },
+  "ppremiumSignUpStorage": {
+    "message": "1 GB ulatuses krüpteeritud salvestusruum."
+  },
+  "ppremiumSignUpTwoStep": {
+    "message": "Lisavõimalused kaheastmeliseks kinnitamiseks, näiteks YubiKey, FIDO U2F ja Duo."
+  },
+  "ppremiumSignUpTotp": {
+    "message": "TOTP kinnituskoodide (2FA) genereeria hoidlas olevatele kasutajakontodele."
+  },
+  "ppremiumSignUpSupport": {
+    "message": "Kiirema kasutajatoe."
+  },
+  "ppremiumSignUpFuture": {
+    "message": "Tulevased preemium funktsioonid - tasuta!"
+  },
+  "premiumPurchase": {
+    "message": "Osta Preemium"
+  },
+  "premiumPurchaseAlert": {
+    "message": "Saad Preemium versiooni osta bitwarden.com veebihoidlas. Soovid seda kohe teha?"
+  },
+  "premiumCurrentMember": {
+    "message": "Oled preemium kasutaja!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Täname, et toetad bitwardenit."
+  },
+  "premiumPrice": {
+    "message": "Kõik see ainult %price% aastas!"
+  },
+  "refreshComplete": {
+    "message": "Uuendamine lõpetatud"
+  },
+  "disableAutoTotpCopy": {
+    "message": "Keela automaatne TOTP kopeerimine"
+  },
+  "disableAutoTotpCopyDesc": {
+    "message": "Kui sinu sisselogimise andmetele on juurde lisatud autentiseerimise võti, kopeeritakse TOTP kood automaatse täitmise kasutamisel lõikepuhvrisse."
+  },
+  "premiumRequired": {
+    "message": "Vajalik on Preemium versioon"
+  },
+  "premiumRequiredDesc": {
+    "message": "Selle funktsiooni kasutamiseks on vajalik tasulist kontot omada."
+  },
+  "enterVerificationCodeApp": {
+    "message": "Sisesta autentiseerimise rakendusest 6 kohaline number."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile"
+  },
+  "rememberMe": {
+    "message": "Jäta mind meelde"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Saada kinnituskood uuesti e-postile"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Kasuta teist kaheastmelist sisselogimise meetodit"
+  },
+  "insertYubiKey": {
+    "message": "Sisesta oma YubiKey arvuti USB porti ja kliki sellele nupule."
+  },
+  "insertU2f": {
+    "message": "Sisesta oma turvaline võti arvuti USB porti. Kui sellel on nupp, siis vajuta seda."
+  },
+  "loginUnavailable": {
+    "message": "Sisselogimine ei ole saadaval"
+  },
+  "noTwoStepProviders": {
+    "message": "Sellel kontol on aktiveeritud kaheastmeline kinnitus. Siiski ei toeta konkreetne brauser ühtegi aktiveeritud kaheastmelise kinnitamise teenust."
+  },
+  "noTwoStepProviders2": {
+    "message": "Palun kasuta ühilduvat brauserit (näiteks Chrome) ja\/või lisa uus kaheastmelise teenuse pakkuja, mis töötab rohkemates brauserites (näiteks mõni autentiseerimise rakendus)."
+  },
+  "twoStepOptions": {
+    "message": "Kaheastmelise sisselogimise valikud"
+  },
+  "recoveryCodeDesc": {
+    "message": "Sul ei ole ligipääsu ühelegi kaheastmelise kinnitamise teenusele? Kasuta Taastamise koodi, et kaheastmeline kinnitamine oma kontol välja lülitada."
+  },
+  "recoveryCodeTitle": {
+    "message": "Taastamise kood"
+  },
+  "authenticatorAppTitle": {
+    "message": "Autentiseerimise rakendus"
+  },
+  "authenticatorAppDesc": {
+    "message": "Kausta autentiseerimise rakendust (näiteks Authy või Google Authenticator), et luua ajal baseeruvaid kinnituskoode.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP Turvaline võti"
+  },
+  "yubiKeyDesc": {
+    "message": "Kasuta kontole ligipääsemiseks YubiKey-d. See töötab YubiKey 4, 4 Nano, 4C ja NEO seadmetega."
+  },
+  "duoDesc": {
+    "message": "Kinnita Duo Security abil, kasutades selleks Duo Mobile rakendust, SMS-i, telefonikõnet või U2F turvavõtit.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Kasuta mistahes FIDO U2F toetavad turvalist võtit, et oma kontole ligi pääseda."
+  },
+  "u2fTitle": {
+    "message": "FIDO U2F Turvaline võti"
+  },
+  "emailTitle": {
+    "message": "E-post"
+  },
+  "emailDesc": {
+    "message": "Kinnituskoodid saadetakse e-postiga."
+  },
+  "selfHostedEnvironment": {
+    "message": "Self-hosted Environment"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+  },
+  "customEnvironment": {
+    "message": "Kohandatud keskkond"
+  },
+  "customEnvironmentFooter": {
+    "message": "For advanced users. You can specify the base URL of each service independently."
+  },
+  "baseUrl": {
+    "message": "Serveri URL"
+  },
+  "apiUrl": {
+    "message": "API serveri URL"
+  },
+  "webVaultUrl": {
+    "message": "Web Vault Server URL"
+  },
+  "identityUrl": {
+    "message": "Identity Server URL"
+  },
+  "iconsUrl": {
+    "message": "Ikoonide serveri URL"
+  },
+  "environmentSaved": {
+    "message": "The environment URLs have been saved."
+  },
+  "enableAutoFillOnPageLoad": {
+    "message": "Luba kontoandmete täitmine"
+  },
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "Sisselogimise vormi tuvastamisel sisestatakse sinna kontoandmed automaatselt."
+  },
+  "experimentalFeature": {
+    "message": "See funktsioon on katsetusjärgus. Kasuta omal vastutusel."
+  },
+  "commandAutofillDesc": {
+    "message": "Sisesta lehele viimati kasutatud kontoandmed."
+  },
+  "commandGeneratePasswordDesc": {
+    "message": "Loo ja kopeeri uus juhuslikult koostatud parool lõikepuhvrisse."
+  },
+  "privateModeMessage": {
+    "message": "Kahjuks ei toeta kasutatav brauser seda akent privaatses režiimis."
+  },
+  "customFields": {
+    "message": "Kohandatud väljad"
+  },
+  "copyValue": {
+    "message": "Kopeeri kirje"
+  },
+  "toggleValue": {
+    "message": "Kirje kuvamine"
+  },
+  "value": {
+    "message": "Väärtus"
+  },
+  "newCustomField": {
+    "message": "Uus kohandatud väli"
+  },
+  "cfTypeText": {
+    "message": "Tekst"
+  },
+  "cfTypeHidden": {
+    "message": "Peidetud"
+  },
+  "cfTypeBoolean": {
+    "message": "Boolean"
+  },
+  "popup2faCloseMessage": {
+    "message": "See aken sulgub, kui klikid oma e-posti aknale, et sealt kinnituskoodi vaadata. Soovid selle hüpikakna uues aknas avada, et seda ei juhtuks?"
+  },
+  "disableFavicon": {
+    "message": "Keela veebilehel ikoonid"
+  },
+  "disableFaviconDesc": {
+    "message": "Ikoonid aitavad hoidlas olevaid veebilehti paremini ära tunda."
+  },
+  "cardholderName": {
+    "message": "Kaardiomaniku nimi"
+  },
+  "number": {
+    "message": "Number"
+  },
+  "brand": {
+    "message": "Bränd"
+  },
+  "expirationMonth": {
+    "message": "Aegumise kuu"
+  },
+  "expirationYear": {
+    "message": "Aegumise aasta"
+  },
+  "expiration": {
+    "message": "Aegumine"
+  },
+  "january": {
+    "message": "Jaanuar"
+  },
+  "february": {
+    "message": "Veebruar"
+  },
+  "march": {
+    "message": "Märts"
+  },
+  "april": {
+    "message": "Aprill"
+  },
+  "may": {
+    "message": "Mai"
+  },
+  "june": {
+    "message": "Juuni"
+  },
+  "july": {
+    "message": "Juuli"
+  },
+  "august": {
+    "message": "August"
+  },
+  "september": {
+    "message": "September"
+  },
+  "october": {
+    "message": "Oktoober"
+  },
+  "november": {
+    "message": "November"
+  },
+  "december": {
+    "message": "Detsember"
+  },
+  "securityCode": {
+    "message": "Turvakood"
+  },
+  "ex": {
+    "message": "nt."
+  },
+  "title": {
+    "message": "Pealkiri"
+  },
+  "mr": {
+    "message": "Hr"
+  },
+  "mrs": {
+    "message": "Mrs"
+  },
+  "ms": {
+    "message": "Pr"
+  },
+  "dr": {
+    "message": "Dr"
+  },
+  "firstName": {
+    "message": "Eesnimi"
+  },
+  "middleName": {
+    "message": "Teine eesnimi"
+  },
+  "lastName": {
+    "message": "Perekonnanimi"
+  },
+  "identityName": {
+    "message": "Identiteedi nimi"
+  },
+  "company": {
+    "message": "Ettevõte"
+  },
+  "ssn": {
+    "message": "Isikukood"
+  },
+  "passportNumber": {
+    "message": "Passi number"
+  },
+  "licenseNumber": {
+    "message": "Litsentsi number"
+  },
+  "email": {
+    "message": "E-post"
+  },
+  "phone": {
+    "message": "Telefoninumber"
+  },
+  "address": {
+    "message": "Aadress"
+  },
+  "address1": {
+    "message": "Aadress 1"
+  },
+  "address2": {
+    "message": "Aadress 2"
+  },
+  "address3": {
+    "message": "Aadress 3"
+  },
+  "cityTown": {
+    "message": "Linn \/ asula"
+  },
+  "stateProvince": {
+    "message": "Maakond \/ vald"
+  },
+  "zipPostalCode": {
+    "message": "Postiindeks"
+  },
+  "country": {
+    "message": "Riik"
+  },
+  "type": {
+    "message": "Tüüp"
+  },
+  "typeLogin": {
+    "message": "Kasutajakonto andmed"
+  },
+  "typeLogins": {
+    "message": "Kontod"
+  },
+  "typeSecureNote": {
+    "message": "Turvaline märkus"
+  },
+  "typeCard": {
+    "message": "Pangakaart"
+  },
+  "typeIdentity": {
+    "message": "Identiteet"
+  },
+  "passwordHistory": {
+    "message": "Salasõna ajalugu"
+  },
+  "back": {
+    "message": "Tagasi"
+  },
+  "collections": {
+    "message": "Kogumikud"
+  },
+  "favorites": {
+    "message": "Lemmikud"
+  },
+  "popOutNewWindow": {
+    "message": "Ava uues aknas"
+  },
+  "refresh": {
+    "message": "Uuenda"
+  },
+  "cards": {
+    "message": "Pangakaardid"
+  },
+  "identities": {
+    "message": "Identiteedid"
+  },
+  "clear": {
+    "message": "Tühjenda"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
+  }
+}
