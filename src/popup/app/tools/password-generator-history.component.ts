@@ -10,11 +10,16 @@ export class PasswordGeneratorHistoryController {
     editState: any;
     addState: any;
     i18n: any;
+    loaded: boolean = false;
 
     constructor(private $state: any, private passwordGenerationService: PasswordGenerationService,
         private toastr: any, private $analytics: any, private i18nService: any) {
         this.i18n = i18nService;
-        this.history = passwordGenerationService.getHistory();
+
+        passwordGenerationService.getHistory().then((history) => {
+            this.history = history;
+            this.loaded = true;
+        });
     }
 
     $onInit() {
