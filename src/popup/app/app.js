@@ -20,7 +20,7 @@ require('../less/libs.less');
 require('../less/popup.less');
 
 import Analytics from '../../scripts/analytics';
-new Analytics(window).init(); // await?
+new Analytics(window);
 
 import DirectivesModule from './directives/directives.module';
 import ComponentsModule from './components/components.module';

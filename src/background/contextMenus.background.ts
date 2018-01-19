@@ -1,5 +1,6 @@
 import { BrowserApi } from '../browser/browserApi';
 
+import Analytics from '../scripts/analytics';
 import MainBackground from './main.background';
 
 import {
@@ -13,7 +14,7 @@ export default class ContextMenusBackground {
     private contextMenus: any;
 
     constructor(private main: MainBackground, private cipherService: CipherService,
-        private passwordGenerationService: PasswordGenerationService) {
+        private passwordGenerationService: PasswordGenerationService, private analytics: Analytics) {
         this.contextMenus = chrome.contextMenus;
     }
 
@@ -38,7 +39,7 @@ export default class ContextMenusBackground {
         UtilsService.copyToClipboard(password);
         this.passwordGenerationService.addHistory(password);
 
-        (window as any).ga('send', {
+        this.analytics.ga('send', {
             hitType: 'event',
             eventAction: 'Generated Password From Context Menu',
         });
@@ -61,19 +62,19 @@ export default class ContextMenusBackground {
             }
 
             if (info.parentMenuItemId === 'autofill') {
-                (window as any).ga('send', {
+                this.analytics.ga('send', {
                     hitType: 'event',
                     eventAction: 'Autofilled From Context Menu',
                 });
                 await this.startAutofillPage(cipher);
             } else if (info.parentMenuItemId === 'copy-username') {
-                (window as any).ga('send', {
+                this.analytics.ga('send', {
                     hitType: 'event',
                     eventAction: 'Copied Username From Context Menu',
                 });
                 UtilsService.copyToClipboard(cipher.login.username);
             } else if (info.parentMenuItemId === 'copy-password') {
-                (window as any).ga('send', {
+                this.analytics.ga('send', {
                     hitType: 'event',
                     eventAction: 'Copied Password From Context Menu',
                 });

@@ -1,5 +1,6 @@
 import { BrowserApi } from '../browser/browserApi';
 
+import Analytics from '../scripts/analytics';
 import MainBackground from './main.background';
 
 import {
@@ -16,7 +17,7 @@ export default class CommandsBackground {
     private isVivaldi: boolean;
 
     constructor(private main: MainBackground, private passwordGenerationService: PasswordGenerationService,
-        private platformUtilsService: PlatformUtilsService) {
+        private platformUtilsService: PlatformUtilsService, private analytics: Analytics) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.isEdge = this.platformUtilsService.isEdge();
         this.isVivaldi = this.platformUtilsService.isVivaldi();
@@ -68,7 +69,7 @@ export default class CommandsBackground {
         UtilsService.copyToClipboard(password);
         this.passwordGenerationService.addHistory(password);
 
-        (window as any).ga('send', {
+        this.analytics.ga('send', {
             hitType: 'event',
             eventAction: 'Generated Password From Command',
         });
@@ -85,7 +86,7 @@ export default class CommandsBackground {
 
         this.main.collectPageDetailsForContentScript(tab, 'autofill_cmd');
 
-        (window as any).ga('send', {
+        this.analytics.ga('send', {
             hitType: 'event',
             eventAction: 'Autofilled From Command',
         });
@@ -98,7 +99,7 @@ export default class CommandsBackground {
         }
 
         this.main.openPopup();
-        (window as any).ga('send', {
+        this.analytics.ga('send', {
             hitType: 'event',
             eventAction: 'Opened Popup From Command',
         });

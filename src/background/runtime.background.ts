@@ -11,6 +11,7 @@ import {
 
 import { BrowserApi } from '../browser/browserApi';
 
+import Analytics from '../scripts/analytics';
 import MainBackground from './main.background';
 
 import { AutofillService } from '../services/abstractions/autofill.service';
@@ -24,7 +25,7 @@ export default class RuntimeBackground {
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: PlatformUtilsService,
-        private storageService: StorageService, private i18nService: any) {
+        private storageService: StorageService, private i18nService: any, private analytics: Analytics) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
 
@@ -190,7 +191,7 @@ export default class RuntimeBackground {
             });
 
             await this.cipherService.saveWithServer(cipher);
-            (window as any).ga('send', {
+            this.analytics.ga('send', {
                 hitType: 'event',
                 eventAction: 'Added Login from Notification Bar',
             });
@@ -284,7 +285,7 @@ export default class RuntimeBackground {
                     await this.reseedStorage();
                 }
 
-                (window as any).ga('send', {
+                this.analytics.ga('send', {
                     hitType: 'event',
                     eventAction: 'onInstalled ' + this.onInstalledReason,
                 });

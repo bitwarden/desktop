@@ -85,6 +85,7 @@ export default class MainBackground {
     totpService: TotpServiceAbstraction;
     autofillService: AutofillServiceAbstraction;
     containerService: ContainerService;
+    analytics: Analytics;
 
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
@@ -139,6 +140,7 @@ export default class MainBackground {
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
             this.totpService, this.utilsService, this.platformUtilsService);
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
+        this.analytics = new Analytics(window, this.platformUtilsService, this.storageService, this.appIdService);
 
         // Other fields
         this.isSafari = this.platformUtilsService.isSafari();
@@ -147,14 +149,14 @@ export default class MainBackground {
 
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
-            this.platformUtilsService, this.storageService, this.i18nService);
+            this.platformUtilsService, this.storageService, this.i18nService, this.analytics);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
-            this.platformUtilsService);
+            this.platformUtilsService, this.analytics);
 
         if (!this.isSafari) {
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-                this.passwordGenerationService);
+                this.passwordGenerationService, this.analytics);
             this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
             this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService);
             this.windowsBackground = new WindowsBackground(this);
@@ -162,7 +164,7 @@ export default class MainBackground {
     }
 
     async bootstrap() {
-        await new Analytics(window).init();
+        this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 
         await this.runtimeBackground.init();
