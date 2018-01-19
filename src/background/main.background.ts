@@ -176,10 +176,16 @@ export default class MainBackground {
             await this.windowsBackground.init();
         }
 
-        await this.environmentService.setUrlsFromStorage();
-        await this.setIcon();
-        this.cleanupLoginsToAdd();
-        await this.fullSync(true);
+        return new Promise((resolve) => {
+            setTimeout(async () => {
+                await this.environmentService.setUrlsFromStorage();
+                await this.setIcon();
+                this.cleanupLoginsToAdd();
+                await this.fullSync(true);
+
+                resolve();
+            }, 500);
+        });
     }
 
     async setIcon() {
