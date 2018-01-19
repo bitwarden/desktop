@@ -305,7 +305,7 @@ export default class RuntimeBackground {
         }
 
         const reseed124Key = 'reseededStorage124';
-        const reseeded124 = await this.storageService.get<true>(reseed124Key);
+        const reseeded124 = await this.storageService.get<boolean>(reseed124Key);
         if (reseeded124) {
             return;
         }
