@@ -277,19 +277,59 @@ export default class RuntimeBackground {
 
         setTimeout(async () => {
             if (this.onInstalledReason != null) {
+                if (this.onInstalledReason === 'install') {
+                    BrowserApi.createNewTab('https://bitwarden.com/browser-start/');
+                    await this.setDefaultSettings();
+                } else if (this.onInstalledReason === 'update') {
+                    await this.reseedStorage();
+                }
+
                 (window as any).ga('send', {
                     hitType: 'event',
                     eventAction: 'onInstalled ' + this.onInstalledReason,
                 });
-
-                if (this.onInstalledReason === 'install') {
-                    BrowserApi.createNewTab('https://bitwarden.com/browser-start/');
-                    await this.setDefaultSettings();
-                }
-
                 this.onInstalledReason = null;
             }
-        }, 500);
+        }, 100);
+    }
+
+    private async reseedStorage() {
+        if (!this.platformUtilsService.isChrome() && !this.platformUtilsService.isVivaldi() &&
+            !this.platformUtilsService.isOpera()) {
+            return;
+        }
+
+        const currentLockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
+        if (currentLockOption == null) {
+            return;
+        }
+
+        const reseed124Key = 'reseededStorage124';
+        const reseeded124 = await this.storageService.get<true>(reseed124Key);
+        if (reseeded124) {
+            return;
+        }
+
+        const getStorage = (): Promise<any> => new Promise((resolve) => {
+            chrome.storage.local.get(null, (o: any) => resolve(o));
+        });
+
+        const clearStorage = (): Promise<void> => new Promise((resolve) => {
+            chrome.storage.local.clear(() => resolve());
+        });
+
+        const storage = await getStorage();
+        await clearStorage();
+
+        for (const key in storage) {
+            if (!storage.hasOwnProperty(key)) {
+                continue;
+            }
+
+            await this.storageService.save(key, storage[key]);
+        }
+
+        await this.storageService.save(reseed124Key, true);
     }
 
     private async setDefaultSettings() {
