@@ -1,4 +1,4 @@
-class BrowserApi {
+export class BrowserApi {
     static isSafariApi: boolean = (typeof safari !== 'undefined') &&
         navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
@@ -250,6 +250,3 @@ class BrowserApi {
         };
     }
 }
-
-export { BrowserApi };
-(window as any).BrowserApi = BrowserApi;

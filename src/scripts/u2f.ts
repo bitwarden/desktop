@@ -1,4 +1,4 @@
-class U2f {
+export class U2f {
     private iframe: HTMLIFrameElement = null;
     private connectorLink: HTMLAnchorElement;
 
@@ -71,6 +71,3 @@ class U2f {
             event.data.indexOf('info|') === 0;
     }
 }
-
-export { U2f };
-(window as any).U2f = U2f;

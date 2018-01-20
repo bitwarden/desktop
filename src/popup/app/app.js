@@ -18,7 +18,10 @@ require('../../scripts/duo.js');
 require('../less/libs.less');
 require('../less/popup.less');
 
-import U2f from '../../scripts/u2f';
+import { BrowserApi } from '../../browser/browserApi';
+window.BrowserApi = BrowserApi;
+import { U2f } from '../../scripts/u2f';
+window.U2f = U2f;
 
 import Analytics from '../../scripts/analytics';
 new Analytics(window);
