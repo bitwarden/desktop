@@ -18,11 +18,6 @@ require('../../scripts/duo.js');
 require('../less/libs.less');
 require('../less/popup.less');
 
-import { BrowserApi } from '../../browser/browserApi';
-window.BrowserApi = BrowserApi;
-import { U2f } from '../../scripts/u2f';
-window.U2f = U2f;
-
 import Analytics from '../../scripts/analytics';
 new Analytics(window);
 
@@ -35,20 +30,65 @@ import CurrentModule from './current/current.module';
 import GlobalModule from './global/global.module';
 import SettingsModule from './settings/settings.module';
 
+import { BrowserApi } from '../../browser/browserApi';
+window.BrowserApi = BrowserApi;
+import { U2f } from '../../scripts/u2f';
+window.U2f = U2f;
+
 // Model imports
 import { Attachment } from '../../../node_modules/@bitwarden/jslib/src/models/domain/attachment';
+window.Attachment = Attachment;
 import { Card } from '../../../node_modules/@bitwarden/jslib/src/models/domain/card';
+window.Card = Card;
 import { Cipher } from '../../../node_modules/@bitwarden/jslib/src/models/domain/cipher';
+window.Cipher = Cipher;
 import { CipherString } from '../../../node_modules/@bitwarden/jslib/src/models/domain/cipherString';
+window.CipherString = CipherString;
 import { Field } from '../../../node_modules/@bitwarden/jslib/src/models/domain/field';
+window.Field = Field;
 import { Folder } from '../../../node_modules/@bitwarden/jslib/src/models/domain/folder';
+window.Folder = Folder;
 import { Identity } from '../../../node_modules/@bitwarden/jslib/src/models/domain/identity';
+window.Identity = Identity;
 import { Login } from '../../../node_modules/@bitwarden/jslib/src/models/domain/login';
+window.Login = Login;
 import { SecureNote } from '../../../node_modules/@bitwarden/jslib/src/models/domain/secureNote';
+window.SecureNote = SecureNote;
 
 import * as Data from '../../../node_modules/@bitwarden/jslib/src/models/data';
+window.AttachmentData = AttachmentData;
+window.CardData = CardData;
+window.CipherData = CipherData;
+window.CollectionData = CollectionData;
+window.FieldData = FieldData;
+window.FolderData = FolderData;
+window.IdentityData = IdentityData;
+window.LoginData = LoginData;
+window.SecureNoteData = SecureNoteData;
 import * as Request from '../../../node_modules/@bitwarden/jslib/src/models/request';
+window.CipherRequest = CipherRequest;
+window.DeviceRequest = DeviceRequest;
+window.DeviceTokenRequest = DeviceTokenRequest;
+window.FolderRequest = FolderRequest;
+window.PasswordHintRequest = PasswordHintRequest;
+window.RegisterRequest = RegisterRequest;
+window.TokenRequest = TokenRequest;
+window.TwoFactorEmailRequest = TwoFactorEmailRequest;
 import * as Response from '../../../node_modules/@bitwarden/jslib/src/models/response';
+window.AttachmentResponse = AttachmentResponse;
+window.CipherResponse = CipherResponse;
+window.CollectionResponse = CollectionResponse;
+window.DeviceResponse = DeviceResponse;
+window.DomainsResponse = DomainsResponse;
+window.ErrorResponse = ErrorResponse;
+window.FolderResponse = FolderResponse;
+window.GlobalDomainResponse = GlobalDomainResponse;
+window.IdentityTokenResponse = IdentityTokenResponse;
+window.KeysResponse = KeysResponse;
+window.ListResponse = ListResponse;
+window.ProfileOrganizationResponse = ProfileOrganizationResponse;
+window.ProfileResponse = ProfileResponse;
+window.SyncResponse = SyncResponse;
 
 angular
     .module('bit', [
