@@ -14,10 +14,11 @@ require('angulartics-google-analytics');
 require('ng-infinite-scroll');
 
 require('../../scripts/duo.js');
-require('../../scripts/u2f.js');
 
 require('../less/libs.less');
 require('../less/popup.less');
+
+import U2f from '../../scripts/u2f';
 
 import Analytics from '../../scripts/analytics';
 new Analytics(window);

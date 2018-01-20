@@ -19,7 +19,7 @@ angular
             customWebVaultUrl = environmentService.webVaultUrl;
         }
 
-        var u2f = new U2f(customWebVaultUrl, function (data) {
+        var u2f = new $window.U2f($window, customWebVaultUrl, function (data) {
             $timeout(function () {
                 $scope.login(data);
             });
