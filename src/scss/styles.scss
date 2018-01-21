@@ -17,8 +17,7 @@ html, body {
     padding: 0;
     height: 100%;
     background-color: gray;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
     font-family: Arial;
     font-size: 14px;
     color: #000;
@@ -99,7 +98,7 @@ html, body {
     .content {
         flex: 1 1 auto;
         position: relative;
-        overflow: overlay;
+        overflow: auto;
     }
 
     .footer {
