@@ -1,6 +1,110 @@
-﻿html, body {
+﻿* {
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #aaa;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     background-color: gray;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: Arial;
+    font-size: 14px;
+    color: #000;
+}
+
+#vault {
+    height: 100vh;
+    display: flex;
+
+    #nav {
+        background-color: #1a2226;
+        min-width: 50px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                a {
+                    display: block;
+                    text-align: center;
+                    padding: 20px 0;
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+
+            &.top {
+                flex: 1;
+            }
+        }
+    }
+
+    #categories {
+        background-color: #222d32;
+        width: 15%;
+        min-width: 175px;
+        max-width: 250px;
+        color: white;
+
+        .header {
+            background-color: #367fa9;
+        }
+    }
+
+    #items {
+        background-color: #ecf0f5;
+        width: 25%;
+        min-width: 200px;
+        max-width: 350px;
+    }
+
+    #details {
+        background-color: #f9fafc;
+        flex: 1;
+        min-width: 400px;
+    }
+
+    #categories, #items, #details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        height: 50px;
+        background-color: #3c8dbc;
+        color: #fff;
+        flex: 0 0 auto;
+    }
+
+    .content {
+        flex: 1 1 auto;
+        position: relative;
+        overflow: overlay;
+    }
+
+    .footer {
+        height: 50px;
+        background-color: #fff;
+        flex: 0 0 auto;
+    }
 }
