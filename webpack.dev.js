@@ -6,7 +6,7 @@ module.exports = merge(common, {
     module: {
         rules: [
             {
-                test: /\.less$/,
+                test: /\.scss$/,
                 use: [
                     {
                         loader: 'style-loader'
@@ -15,7 +15,7 @@ module.exports = merge(common, {
                         loader: 'css-loader',
                     },
                     {
-                        loader: 'less-loader',
+                        loader: 'sass-loader',
                     }
                 ]
             }
