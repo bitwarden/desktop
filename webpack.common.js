@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 
 const isVendorModule = (module) => {
     if (!module.context) {
@@ -40,12 +41,35 @@ module.exports = {
                 test: /\.(html)$/,
                 loader: 'html-loader'
             },
+            {
+                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }]
+            }
         ]
     },
     plugins: [
         new CleanWebpackPlugin([
             path.resolve(__dirname, 'build/*')
         ]),
+        new GoogleFontsPlugin({
+            fonts: [
+                {
+                    family: 'Open Sans',
+                    variants: ['300', '300italic', '400', '400italic', '600', '600italic',
+                        '700', '700italic', '800', '800italic'],
+                    subsets: ['cyrillic', 'cyrillic-ext', 'greek', 'greek-ext', 'latin', 'latin-ext']
+                }
+            ],
+            formats: ['woff2'],
+            path: 'fonts/',
+            filename: 'css/fonts.css'
+        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'app/vendor',
             chunks: ['app/main'],
