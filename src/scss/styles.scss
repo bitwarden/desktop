@@ -109,7 +109,10 @@ a {
         min-width: 175px;
         max-width: 250px;
         border-right: 1px solid $border-color-dark;
-        padding: 10px 15px;
+
+        .inner-content {
+            padding: 10px 15px;
+        }
 
         h2 {
             font-size: $font-size-base;
@@ -124,6 +127,7 @@ a {
             li {
                 margin: 0;
                 padding: 0;
+                list-style: none;
 
                 a {
                     display: block;
