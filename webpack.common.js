@@ -16,6 +16,7 @@ const isVendorModule = (module) => {
 };
 
 module.exports = {
+    target: 'electron-renderer',
     devServer: {
         contentBase: './src',
         historyApiFallback: true,
@@ -36,6 +37,10 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules\/(?!(@bitwarden)\/).*/
+            },
+            {
+                test: /\.node$/,
+                loader: 'node-loader'
             },
             {
                 test: /\.(html)$/,

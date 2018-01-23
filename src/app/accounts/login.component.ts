@@ -5,11 +5,17 @@ import {
     OnInit,
 } from '@angular/core';
 
+import { AuthService } from 'jslib/abstractions/auth.service';
+
 @Component({
     selector: 'app-login',
-    template: template,
+    template: template
 })
 export class LoginComponent implements OnInit {
+    constructor(authService: AuthService) {
+        console.log(authService);
+    }
+
     ngOnInit() {
         // TODO?
     }
