@@ -33,11 +33,17 @@ $background-color-alt: #f9fafc;
 div::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-    background-color: #aaa;
+}
+
+div::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 div::-webkit-scrollbar-thumb {
-    background: #888;
+    background-color: rgba(100,100,100,.2);
+    border-radius: 10px;
+    margin-right: 1px;
+    transition: opacity 300ms ease-in-out;
 }
 
 html, body {
