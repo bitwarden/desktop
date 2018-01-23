@@ -3,6 +3,7 @@ import 'zone.js/dist/zone';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { ServicesModule } from './services/services.module';
 
@@ -13,6 +14,7 @@ import { VaultComponent } from './vault/vault.component';
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule,
         AppRoutingModule,
         ServicesModule,
     ],

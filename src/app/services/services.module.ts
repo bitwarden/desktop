@@ -1,4 +1,4 @@
-//import { remote } from 'electron';
+import { webFrame } from 'electron';
 
 import { NgModule } from '@angular/core';
 
@@ -50,6 +50,8 @@ import {
     UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 
+webFrame.registerURLSchemeAsPrivileged('file');
+
 const utilsService = new UtilsService();
 const platformUtilsService = new DesktopPlatformUtilsService();
 const messagingService = new DesktopMessagingService();
@@ -82,11 +84,19 @@ const authService: AuthServiceAbstraction = new AuthService(cryptoService, apiSe
     userService, tokenService, appIdService, platformUtilsService, constantsService,
     messagingService);
 
+containerService.attachToWindow(window);
+environmentService.setUrlsFromStorage().then(() => {
+    return syncService.fullSync(true);
+});
+
 @NgModule({
     imports: [],
     declarations: [],
     providers: [
         { provide: AuthServiceAbstraction, useValue: authService },
+        { provide: CipherServiceAbstraction, useValue: cipherService },
+        { provide: FolderServiceAbstraction, useValue: folderService },
+        { provide: CollectionServiceAbstraction, useValue: collectionService },
     ],
 })
 export class ServicesModule {

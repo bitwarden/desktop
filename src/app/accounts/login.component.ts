@@ -5,6 +5,8 @@ import {
     OnInit,
 } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 import { AuthService } from 'jslib/abstractions/auth.service';
 
 @Component({
@@ -12,11 +14,19 @@ import { AuthService } from 'jslib/abstractions/auth.service';
     template: template
 })
 export class LoginComponent implements OnInit {
-    constructor(authService: AuthService) {
-        console.log(authService);
+    email: string = '';
+    masterPassword: string = '';
+
+    constructor(private authService: AuthService, private router: Router) {
+
     }
 
     ngOnInit() {
         // TODO?
+    }
+
+    async onSubmit() {
+        const response = await this.authService.logIn(this.email, this.masterPassword);
+        this.router.navigate(['vault']);
     }
 }

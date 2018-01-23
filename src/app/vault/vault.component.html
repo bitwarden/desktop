@@ -26,13 +26,15 @@
             </ul>
             <h2><i class="fa fa-folder"></i> Folders</h2>
             <ul>
-                <li><a href="#"><i class="fa fa-fw fa-caret-right"></i> Folder 1</a></li>
-                <li><a href="#"><i class="fa fa-fw fa-caret-right"></i> Folder 2</a></li>
+                <li *ngFor="let folder of vaultFolders">
+                    <a href="#"><i class="fa fa-fw fa-caret-right"></i> {{folder.name}}</a>
+                </li>
             </ul>
             <h2><i class="fa fa-cubes"></i> Collections</h2>
             <ul>
-                <li><a href="#"><i class="fa fa-fw fa-caret-right"></i> Collection 1</a></li>
-                <li><a href="#"><i class="fa fa-fw fa-caret-right"></i> Collection 2</a></li>
+                <li *ngFor="let collection of vaultCollections">
+                    <a href="#"><i class="fa fa-fw fa-caret-right"></i> {{collection.name}}</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -49,32 +51,14 @@
         <div class="content">
             <div class="list">
                 <div class="list-section" style="padding-top: 0; padding-bottom: 0;">
-                    <a href="#"
-                       class="list-section-item condensed" title="View Item">
+                    <a *ngFor="let cipher of vaultCiphers"
+                       href="#" class="list-section-item condensed" title="View Item">
                         <span class="text">
-                            Item 1
-                            <i class="fa fa-share-alt text-muted"></i>
-                            <i class="fa fa-paperclip text-muted"></i>
+                            {{cipher.name}}
+                            <i class="fa fa-share-alt text-muted" *ngIf="cipher.organizationId"></i>
+                            <i class="fa fa-paperclip text-muted" *ngIf="cipher.attachments"></i>
                         </span>
-                        <span class="detail">Sub</span>
-                    </a>
-                    <a href="#"
-                       class="list-section-item condensed" title="View Item">
-                        <span class="text">
-                            Item 1
-                            <i class="fa fa-share-alt text-muted"></i>
-                            <i class="fa fa-paperclip text-muted"></i>
-                        </span>
-                        <span class="detail">Sub</span>
-                    </a>
-                    <a href="#"
-                       class="list-section-item condensed" title="View Item">
-                        <span class="text">
-                            Item 1
-                            <i class="fa fa-share-alt text-muted"></i>
-                            <i class="fa fa-paperclip text-muted"></i>
-                        </span>
-                        <span class="detail">Sub</span>
+                        <span class="detail">{{cipher.subTitle}}</span>
                     </a>
                 </div>
             </div>
