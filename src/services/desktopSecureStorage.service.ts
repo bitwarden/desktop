@@ -1,18 +1,29 @@
-import { getPassword, setPassword, deletePassword } from 'keytar';
-
-import { StorageService } from 'jslib/abstractions';
+import { ipcRenderer } from 'electron';
+import { StorageService } from 'jslib/abstractions/storage.service';
 
 export class DesktopSecureStorageService implements StorageService {
     async get<T>(key: string): Promise<T> {
-        const val: string = await getPassword('bitwarden', key);
-        return val ? JSON.parse(val) as T : null
+        const val = ipcRenderer.sendSync('keytar', {
+            action: 'getPassword',
+            key: key,
+        });
+        return Promise.resolve(val ? JSON.parse(val) as T : null);
     }
 
     async save(key: string, obj: any): Promise<any> {
-        await setPassword('bitwarden', key, JSON.stringify(obj));
+        ipcRenderer.sendSync('keytar', {
+            action: 'setPassword',
+            key: key,
+            value: JSON.stringify(obj),
+        });
+        return Promise.resolve();
     }
 
     async remove(key: string): Promise<any> {
-        await deletePassword('bitwarden', key);
+        ipcRenderer.sendSync('keytar', {
+            action: 'deletePassword',
+            key: key,
+        });
+        return Promise.resolve();
     }
 }

@@ -1,10 +1,30 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, screen, ipcMain } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
+/*
+import { getPassword, setPassword, deletePassword } from 'keytar';
 
-//import { DesktopSecureStorageService } from './services/desktopSecureStorage.service';
-//const secureStorageService = new DesktopSecureStorageService();
-//(global as any).secureStorageService = secureStorageService;
+const keytarService = 'bitwarden';
+ipcMain.on('keytar', async (event: any, message: any) => {
+    try {
+        let val: string = null;
+        if (message.action && message.key) {
+            if (message.action === 'getPassword') {
+                val = await getPassword(keytarService, message.key);
+            } else if (message.action === 'setPassword' && message.value) {
+                await setPassword(keytarService, message.key, message.value);
+            } else if (message.action === 'deletePassword') {
+                await deletePassword(keytarService, message.key);
+            }
+        }
+
+        event.returnValue = val;
+    }
+    catch {
+        event.returnValue = null;
+    }
+});
+*/
 
 let win: BrowserWindow;
 const args = process.argv.slice(1);

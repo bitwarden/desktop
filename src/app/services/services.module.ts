@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { DesktopMessagingService } from '../../services/desktopMessaging.service';
 import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
 import { DesktopStorageService } from '../../services/desktopStorage.service';
+import { DesktopSecureStorageService } from '../../services/desktopSecureStorage.service';
 
 import {
     ApiService,
@@ -53,9 +54,9 @@ const utilsService = new UtilsService();
 const platformUtilsService = new DesktopPlatformUtilsService();
 const messagingService = new DesktopMessagingService();
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
-const secureStorageService: StorageServiceAbstraction = storageService; //remote.getGlobal('secureStorageService');
+const secureStorageService: StorageServiceAbstraction = new DesktopSecureStorageService();
 const constantsService = new ConstantsService({}, 0);
-const cryptoService = new CryptoService(storageService, storageService);
+const cryptoService = new CryptoService(storageService, storageService); // TODO: use secure storage
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
