@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    //"module": "es6",
+    //"target": "ES2016",
+    "allowJs": true,
+    "sourceMap": false,
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "jslib/*": [ "node_modules/@bitwarden/jslib/src/*" ]
+    },
+    "outDir": "build"
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
+}
