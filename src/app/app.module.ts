@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { ServicesModule } from './services/services.module';
 
 import { AppComponent } from './app.component';
+import { IconComponent } from './vault/icon.component';
 import { LoginComponent } from './accounts/login.component';
 import { VaultComponent } from './vault/vault.component';
 
@@ -20,6 +21,7 @@ import { VaultComponent } from './vault/vault.component';
     ],
     declarations: [
         AppComponent,
+        IconComponent,
         LoginComponent,
         VaultComponent,
     ],

@@ -97,6 +97,7 @@ environmentService.setUrlsFromStorage().then(() => {
         { provide: CipherServiceAbstraction, useValue: cipherService },
         { provide: FolderServiceAbstraction, useValue: folderService },
         { provide: CollectionServiceAbstraction, useValue: collectionService },
+        { provide: EnvironmentServiceAbstraction, useValue: environmentService },
     ],
 })
 export class ServicesModule {
