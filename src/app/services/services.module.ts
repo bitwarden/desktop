@@ -1,9 +1,10 @@
+//import { remote } from 'electron';
+
 import { NgModule } from '@angular/core';
 
-import { DesktopMessagingService } from './desktopMessaging.service';
-import { DesktopPlatformUtilsService } from './desktopPlatformUtils.service';
-import { DesktopStorageService } from './desktopStorage.service';
-import { DesktopSecureStorageService } from './desktopSecureStorage.service';
+import { DesktopMessagingService } from '../../services/desktopMessaging.service';
+import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
+import { DesktopStorageService } from '../../services/desktopStorage.service';
 
 import {
     ApiService,
@@ -52,7 +53,7 @@ const utilsService = new UtilsService();
 const platformUtilsService = new DesktopPlatformUtilsService();
 const messagingService = new DesktopMessagingService();
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
-//const secureStorageService: StorageServiceAbstraction = new DesktopSecureStorageService();
+const secureStorageService: StorageServiceAbstraction = storageService; //remote.getGlobal('secureStorageService');
 const constantsService = new ConstantsService({}, 0);
 const cryptoService = new CryptoService(storageService, storageService);
 const tokenService = new TokenService(storageService);

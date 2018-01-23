@@ -1,9 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const isVendorModule = (module) => {
     if (!module.context) {
@@ -15,17 +15,13 @@ const isVendorModule = (module) => {
     return nodeModule && !bitwardenModule;
 };
 
-module.exports = {
-    target: 'electron-renderer',
-    devServer: {
-        contentBase: './src',
-        historyApiFallback: true,
-        quiet: true,
-        stats: 'minimal'
-    },
-    entry: {
-        'app/main': './src/app/main.ts'
-    },
+const extractCss = new ExtractTextPlugin({
+    filename: '[name].css',
+    disable: false,
+    allChunks: true
+});
+
+const common = {
     module: {
         rules: [
             {
@@ -38,10 +34,31 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules\/(?!(@bitwarden)\/).*/
             },
-            {
-                test: /\.node$/,
-                loader: 'node-loader'
-            },
+        ]
+    },
+    plugins: [],
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            jslib: path.join(__dirname, 'node_modules/@bitwarden/jslib/src')
+        }
+    },
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'build')
+    }
+};
+
+const renderer = {
+    target: 'electron-renderer',
+    node: {
+        __dirname: false
+    },
+    entry: {
+        'app/main': './src/app/main.ts'
+    },
+    module: {
+        rules: [
             {
                 test: /\.(html)$/,
                 loader: 'html-loader'
@@ -55,13 +72,23 @@ module.exports = {
                         outputPath: 'fonts/'
                     }
                 }]
-            }
+            },
+            {
+                test: /\.scss$/,
+                use: extractCss.extract({
+                    use: [
+                        {
+                            loader: 'css-loader',
+                        },
+                        {
+                            loader: 'sass-loader',
+                        }
+                    ]
+                })
+            },
         ]
     },
     plugins: [
-        new CleanWebpackPlugin([
-            path.resolve(__dirname, 'build/*')
-        ]),
         new GoogleFontsPlugin({
             fonts: [
                 {
@@ -85,18 +112,12 @@ module.exports = {
             filename: 'index.html',
             chunks: ['app/vendor', 'app/main']
         }),
-        new CopyWebpackPlugin([
-            './src/package.json',
-        ])
-    ],
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-        alias: {
-            jslib: path.join(__dirname, 'node_modules/@bitwarden/jslib/src')
-        }
-    },
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'build')
-    }
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[name].js.map',
+            include: ['app/main.js']
+        }),
+        extractCss
+    ]
 };
+
+module.exports = merge(common, renderer);

@@ -1,5 +1,3 @@
-import { Injectable } from '@angular/core';
-
 import { DeviceType } from 'jslib/enums';
 
 import { PlatformUtilsService } from 'jslib/abstractions';
@@ -10,7 +8,6 @@ const AnalyticsIds = {
     [DeviceType.MacOs]: 'UA-81915606-18',
 };
 
-@Injectable()
 export class DesktopPlatformUtilsService implements PlatformUtilsService {
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;

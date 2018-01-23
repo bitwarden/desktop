@@ -2,6 +2,10 @@ import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
+//import { DesktopSecureStorageService } from './services/desktopSecureStorage.service';
+//const secureStorageService = new DesktopSecureStorageService();
+//(global as any).secureStorageService = secureStorageService;
+
 let win: BrowserWindow;
 const args = process.argv.slice(1);
 const watch = args.some((val) => val === '--watch');
