@@ -1,0 +1,27 @@
+<div class="content">
+    <div class="inner-content">
+        <ul>
+            <li><a href="#"><i class="fa fa-fw fa-spinner"></i> All Items</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-star"></i> Favorites</a></li>
+        </ul>
+        <h2><i class="fa fa-tags"></i> Types</h2>
+        <ul>
+            <li><a href="#"><i class="fa fa-fw fa-globe"></i> Login</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-credit-card"></i> Card</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-id-card-o"></i> Identity</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-sticky-note-o"></i> Secure Note</a></li>
+        </ul>
+        <h2><i class="fa fa-folder"></i> Folders</h2>
+        <ul class="fa-ul">
+            <li *ngFor="let folder of folders">
+                <a href="#"><i class="fa-li fa fa-caret-right"></i> {{folder.name}}</a>
+            </li>
+        </ul>
+        <h2><i class="fa fa-cubes"></i> Collections</h2>
+        <ul class="fa-ul">
+            <li *ngFor="let collection of collections">
+                <a href="#"><i class="fa-li fa fa-caret-right"></i> {{collection.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -8,9 +8,12 @@ import { NgModule } from '@angular/core';
 import { ServicesModule } from './services/services.module';
 
 import { AppComponent } from './app.component';
+import { CiphersComponent } from './vault/ciphers.component';
+import { GroupingsComponent } from './vault/groupings.component';
 import { IconComponent } from './vault/icon.component';
 import { LoginComponent } from './accounts/login.component';
 import { VaultComponent } from './vault/vault.component';
+import { ViewComponent } from './vault/view.component';
 
 @NgModule({
     imports: [
@@ -21,9 +24,12 @@ import { VaultComponent } from './vault/vault.component';
     ],
     declarations: [
         AppComponent,
+        CiphersComponent,
+        GroupingsComponent,
         IconComponent,
         LoginComponent,
         VaultComponent,
+        ViewComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
