@@ -7,15 +7,17 @@ import {
     Output,
 } from '@angular/core';
 
+import { CipherView } from 'jslib/models/view/cipherView';
+
 @Component({
     selector: 'app-vault-ciphers',
     template: template,
 })
 export class CiphersComponent {
-    @Input() ciphers: any[];
-    @Output() onCipherClicked = new EventEmitter<any>();
+    @Input() ciphers: CipherView[];
+    @Output() onCipherClicked = new EventEmitter<CipherView>();
 
-    cipherClicked(cipher: any) {
+    cipherClicked(cipher: CipherView) {
         this.onCipherClicked.emit(cipher);
     }
 }

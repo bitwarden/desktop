@@ -590,13 +590,7 @@ a {
                 border-bottom: 1px solid $border-color;
             }
 
-            &:first-child {
-                padding-top: 20px;
-            }
-
             &:last-child {
-                padding-bottom: 20px;
-
                 &:before {
                     border: none;
                     height: 0;

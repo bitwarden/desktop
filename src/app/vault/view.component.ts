@@ -8,13 +8,15 @@ import {
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 
+import { CipherView } from 'jslib/models/view/cipherView';
+
 @Component({
     selector: 'app-vault-view',
     template: template,
 })
 export class ViewComponent implements OnChanges {
     @Input() cipherId: string;
-    cipher: any;
+    cipher: CipherView;
 
     constructor(private cipherService: CipherService) {
     }
