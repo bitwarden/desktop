@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-    selector: '[appStopClick]'
+    selector: '[appStopClick]',
 })
 export class StopClickDirective {
     @HostListener('click', ['$event']) onClick($event: MouseEvent) {

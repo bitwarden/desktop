@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-    selector: '[appFallbackSrc]'
+    selector: '[appFallbackSrc]',
 })
 export class FallbackSrcDirective {
     @Input('appFallbackSrc') appFallbackSrc: string;

@@ -4,7 +4,6 @@ import {
     Component,
     EventEmitter,
     Input,
-    OnChanges,
     Output,
 } from '@angular/core';
 
@@ -12,17 +11,9 @@ import {
     selector: 'app-vault-ciphers',
     template: template,
 })
-export class CiphersComponent implements OnChanges {
+export class CiphersComponent {
     @Input() ciphers: any[];
     @Output() onCipherClicked = new EventEmitter<any>();
-
-    constructor() {
-        
-    }
-
-    ngOnChanges() {
-        
-    }
 
     cipherClicked(cipher: any) {
         this.onCipherClicked.emit(cipher);
