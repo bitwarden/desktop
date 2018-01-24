@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
 import { GroupingsComponent } from './vault/groupings.component';
+import { I18nPipe } from './pipes/i18n.pipe';
 import { IconComponent } from './vault/icon.component';
 import { LoginComponent } from './accounts/login.component';
 import { StopClickDirective } from './directives/stop-click.directive';
@@ -30,6 +31,7 @@ import { ViewComponent } from './vault/view.component';
         CiphersComponent,
         FallbackSrcDirective,
         GroupingsComponent,
+        I18nPipe,
         IconComponent,
         LoginComponent,
         StopClickDirective,

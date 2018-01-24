@@ -1,11 +1,15 @@
 import { webFrame } from 'electron';
 
-import { NgModule } from '@angular/core';
+import {
+    APP_INITIALIZER,
+    NgModule
+} from '@angular/core';
 
 import { DesktopMessagingService } from '../../services/desktopMessaging.service';
 import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
 import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { DesktopSecureStorageService } from '../../services/desktopSecureStorage.service';
+import { I18nService } from '../../services/i18n.service';
 
 import {
     ApiService,
@@ -52,6 +56,7 @@ import {
 
 webFrame.registerURLSchemeAsPrivileged('file');
 
+const i18nService = new I18nService(window, './_locales');
 const utilsService = new UtilsService();
 const platformUtilsService = new DesktopPlatformUtilsService();
 const messagingService = new DesktopMessagingService();
@@ -69,7 +74,7 @@ const settingsService = new SettingsService(userService, storageService);
 const cipherService = new CipherService(cryptoService, userService, settingsService,
     apiService, storageService);
 const folderService = new FolderService(cryptoService, userService,
-    () => 'No Folder', apiService, storageService);
+    () => i18nService.t('noneFolder'), apiService, storageService);
 const collectionService = new CollectionService(cryptoService, userService, storageService);
 const lockService = new LockService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService,
@@ -89,6 +94,10 @@ environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);
 });
 
+function initFactory(i18n: I18nService): Function {
+    return () => i18n.init();
+}
+
 @NgModule({
     imports: [],
     declarations: [],
@@ -98,6 +107,13 @@ environmentService.setUrlsFromStorage().then(() => {
         { provide: FolderServiceAbstraction, useValue: folderService },
         { provide: CollectionServiceAbstraction, useValue: collectionService },
         { provide: EnvironmentServiceAbstraction, useValue: environmentService },
+        { provide: I18nService, useValue: i18nService },
+        {
+            provide: APP_INITIALIZER,
+            useFactory: initFactory,
+            deps: [I18nService],
+            multi: true
+        }
     ],
 })
 export class ServicesModule {

@@ -9,17 +9,19 @@
                     <span class="row-label">Name</span>
                     {{cipher.name}}
                 </div>
-                <div class="box-content-row">
-                    <span class="row-label">URI</span>
-                    {{cipher.login.uri}}
-                </div>
-                <div class="box-content-row">
-                    <span class="row-label">Username</span>
-                    {{cipher.login.username}}
-                </div>
-                <div class="box-content-row">
-                    <span class="row-label">Password</span>
-                    {{cipher.login.password}}
+                <div *ngIf="cipher.login">
+                    <div class="box-content-row">
+                        <span class="row-label">URI</span>
+                        {{cipher.login.uri}}
+                    </div>
+                    <div class="box-content-row">
+                        <span class="row-label">Username</span>
+                        {{cipher.login.username}}
+                    </div>
+                    <div class="box-content-row">
+                        <span class="row-label">Password</span>
+                        {{cipher.login.password}}
+                    </div>
                 </div>
             </div>
             <div class="box-footer">

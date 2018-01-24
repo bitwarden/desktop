@@ -57,6 +57,7 @@ const main = {
         new CopyWebpackPlugin([
             './src/package.json',
             { from: './src/images', to: 'images' },
+            { from: './src/_locales', to: '_locales' },
         ]),
     ],
     externals: [nodeExternals()]
