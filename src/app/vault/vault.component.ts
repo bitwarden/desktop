@@ -12,13 +12,13 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
     template: template,
 })
 export class VaultComponent implements OnInit {
-    vaultCiphers: any[];
+    ciphers: any[];
 
     constructor(private cipherService: CipherService) {
 
     }
 
     async ngOnInit() {
-        this.vaultCiphers = await this.cipherService.getAllDecrypted();
+        this.ciphers = await this.cipherService.getAllDecrypted();
     }
 }

@@ -80,7 +80,7 @@ a {
     height: 100vh;
     display: flex;
 
-    #categories {
+    #groupings {
         background-color: $background-color-alt;
         width: 15%;
         min-width: 175px;
@@ -142,7 +142,7 @@ a {
         min-width: 400px;
     }
 
-    #categories, #items, #details {
+    #groupings, #items, #details {
         display: flex;
         flex-direction: column;
 
