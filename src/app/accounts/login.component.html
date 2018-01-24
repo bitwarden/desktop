@@ -1,7 +1,7 @@
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-    <label for="email">Email Address</label>
+    <label for="email">{{'emailAddress' | i18n}}</label>
     <input id="email" type="text" [(ngModel)]="email" name="email" required /><br /><br />
-    <label for="master-password">Master Password</label>
+    <label for="master-password">{{'masterPassword' | i18n}}</label>
     <input id="master-password" type="password" [(ngModel)]="masterPassword"
            name="masterPassword" required /><br /><br />
     <button type="submit">Submit</button>

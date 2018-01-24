@@ -1,23 +1,23 @@
 <div class="content">
     <div class="inner-content">
         <ul>
-            <li><a href="#"><i class="fa fa-fw fa-spinner"></i> All Items</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-star"></i> Favorites</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-spinner"></i> {{'allItems' | i18n}}</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-star"></i> {{'favorites' | i18n}}</a></li>
         </ul>
-        <h2><i class="fa fa-tag"></i> Types</h2>
+        <h2><i class="fa fa-tag"></i> {{'types' | i18n}}</h2>
         <ul>
-            <li><a href="#"><i class="fa fa-fw fa-globe"></i> Login</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-credit-card"></i> Card</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-id-card-o"></i> Identity</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-sticky-note-o"></i> Secure Note</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-globe"></i> {{'typeLogin' | i18n}}</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-credit-card"></i> {{'typeCard' | i18n}}</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-id-card-o"></i> {{'typeIdentity' | i18n}}</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-sticky-note-o"></i> {{'typeSecureNote' | i18n}}</a></li>
         </ul>
-        <h2><i class="fa fa-folder"></i> Folders</h2>
+        <h2><i class="fa fa-folder"></i> {{'folders' | i18n}}</h2>
         <ul class="fa-ul">
             <li *ngFor="let folder of folders">
                 <a href="#"><i class="fa-li fa fa-caret-right"></i> {{folder.name}}</a>
             </li>
         </ul>
-        <h2><i class="fa fa-cubes"></i> Collections</h2>
+        <h2><i class="fa fa-cubes"></i> {{'collections' | i18n}}</h2>
         <ul class="fa-ul">
             <li *ngFor="let collection of collections">
                 <a href="#"><i class="fa-li fa fa-caret-right"></i> {{collection.name}}</a>

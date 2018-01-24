@@ -1,22 +1,24 @@
 <div class="header header-search">
     <div class="search">
-        <input type="search" placeholder="Search vault" id="search" />
+        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search" />
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <a href="" title="Add Item"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="" title="{{'addItem' | i18n}}"><i class="fa fa-plus fa-lg"></i></a>
     </div>
 </div>
 <div class="content">
     <div class="list">
         <div class="list-section" style="padding-top: 0; padding-bottom: 0;">
             <a *ngFor="let cipher of ciphers" appStopClick (click)="cipherClicked(cipher)"
-               href="#" class="list-section-item condensed" title="View Item">
+               href="#" class="list-section-item condensed" title="{{'viewItem' | i18n}}">
                 <app-vault-icon [cipher]="cipher"></app-vault-icon>
                 <span class="text">
                     {{cipher.name}}
-                    <i class="fa fa-share-alt text-muted" *ngIf="cipher.organizationId"></i>
-                    <i class="fa fa-paperclip text-muted" *ngIf="cipher.attachments"></i>
+                    <i class="fa fa-share-alt text-muted" *ngIf="cipher.organizationId"
+                       title="{{'shared' | i18n}}"></i>
+                    <i class="fa fa-paperclip text-muted" *ngIf="cipher.attachments"
+                       title="{{'attachments' | i18n}}"></i>
                 </span>
                 <span class="detail">{{cipher.subTitle}}</span>
             </a>
@@ -24,5 +26,5 @@
     </div>
 </div>
 <div class="footer">
-    Add Item
+    {{'addItem' | i18n}}
 </div>

@@ -1,8 +1,74 @@
 ﻿{
-  "hello": {
-    "message": "hello"
+  "bitwarden": {
+    "message": "bitwarden"
   },
-  "world": {
-    "message": "world"
+  "allItems": {
+    "message": "All Items"
+  },
+  "favorites": {
+    "message": "Favorites"
+  },
+  "types": {
+    "message": "Types"
+  },
+  "typeLogin": {
+    "message": "Login"
+  },
+  "typeCard": {
+    "message": "Card"
+  },
+  "typeIdentity": {
+    "message": "Identity"
+  },
+  "typeSecureNote": {
+    "message": "Secure Note"
+  },
+  "folders": {
+    "message": "Folders"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "noFolder": {
+    "message": "No Folder"
+  },
+  "searchVault": {
+    "message": "Search vault"
+  },
+  "addItem": {
+    "message": "Add Item"
+  },
+  "shared": {
+    "message": "Shared"
+  },
+  "attachments": {
+    "message": "Attachments"
+  },
+  "viewItem": {
+    "message": "View Item"
+  },
+  "name": {
+    "message": "Name"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "username": {
+    "message": "Username"
+  },
+  "password": {
+    "message": "Password"
+  },
+  "editItem": {
+    "message": "Edit Item"
+  },
+  "itemInformation": {
+    "message": "Item Information"
+  },
+  "emailAddress": {
+    "message": "Email Address"
+  },
+  "masterPassword": {
+    "message": "Master Password"
   }
 }

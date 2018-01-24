@@ -74,7 +74,7 @@ const settingsService = new SettingsService(userService, storageService);
 const cipherService = new CipherService(cryptoService, userService, settingsService,
     apiService, storageService);
 const folderService = new FolderService(cryptoService, userService,
-    () => i18nService.t('noneFolder'), apiService, storageService);
+    () => i18nService.t('noFolder'), apiService, storageService);
 const collectionService = new CollectionService(cryptoService, userService, storageService);
 const lockService = new LockService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService,
