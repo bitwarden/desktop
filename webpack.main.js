@@ -56,6 +56,7 @@ const main = {
         ]),
         new CopyWebpackPlugin([
             './src/package.json',
+            { from: './src/images', to: 'images' },
         ]),
     ],
     externals: [nodeExternals()]

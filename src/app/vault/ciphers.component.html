@@ -10,7 +10,7 @@
 <div class="content">
     <div class="list">
         <div class="list-section" style="padding-top: 0; padding-bottom: 0;">
-            <a *ngFor="let cipher of ciphers"
+            <a *ngFor="let cipher of ciphers" appStopClick (click)="viewCipher(cipher)"
                href="#" class="list-section-item condensed" title="View Item">
                 <app-vault-icon [cipher]="cipher"></app-vault-icon>
                 <span class="text">

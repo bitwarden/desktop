@@ -20,4 +20,8 @@ export class CiphersComponent implements OnChanges {
     ngOnChanges() {
         
     }
+
+    viewCipher(cipher: any) {
+        console.log(cipher.id);
+    }
 }

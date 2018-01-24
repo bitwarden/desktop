@@ -78,7 +78,7 @@ export class IconComponent implements OnChanges {
                 try {
                     const url = new URL(hostnameUri);
                     this.image = this.iconsUrl + '/' + url.hostname + '/icon.png';
-                    this.fallbackImage = '../images/fa-globe.png'; // TODO?
+                    this.fallbackImage = 'images/fa-globe.png';
                 } catch (e) { }
             }
         } else {

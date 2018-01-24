@@ -9,9 +9,12 @@ import { ServicesModule } from './services/services.module';
 
 import { AppComponent } from './app.component';
 import { CiphersComponent } from './vault/ciphers.component';
+import { FallbackSrcDirective } from './directives/fallback-src.directive';
 import { GroupingsComponent } from './vault/groupings.component';
 import { IconComponent } from './vault/icon.component';
 import { LoginComponent } from './accounts/login.component';
+import { StopClickDirective } from './directives/stop-click.directive';
+import { StopPropDirective } from './directives/stop-prop.directive';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
@@ -25,9 +28,11 @@ import { ViewComponent } from './vault/view.component';
     declarations: [
         AppComponent,
         CiphersComponent,
+        FallbackSrcDirective,
         GroupingsComponent,
         IconComponent,
         LoginComponent,
+        StopClickDirective,
         VaultComponent,
         ViewComponent,
     ],
