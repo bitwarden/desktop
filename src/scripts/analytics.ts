@@ -20,17 +20,13 @@ export default class Analytics {
         }
 
         const bgMain = bgPage.bitwardenMain;
-        if (!bgMain) {
-            return;
-        }
-
-        if (platformUtilsService == null) {
+        if (platformUtilsService == null && bgMain) {
             this.platformUtilsService = bgMain.platformUtilsService as PlatformUtilsService;
         }
-        if (storageService == null) {
+        if (storageService == null && bgMain) {
             this.storageService = bgMain.storageService as StorageService;
         }
-        if (appIdService == null) {
+        if (appIdService == null && bgMain) {
             this.appIdService = bgMain.appIdService as AppIdService;
         }
 
