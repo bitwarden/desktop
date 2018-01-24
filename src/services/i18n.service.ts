@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 // First locale is the default (English)
 const SupportedLocales = [
     'en', 'es',
@@ -49,14 +51,16 @@ export class I18nService {
         return '';
     }
 
-    private async loadMessages(locale: string, messagesObj: any): Promise<any> {
+    private loadMessages(locale: string, messagesObj: any): Promise<any> {
         const formattedLocale = locale.replace('-', '_');
-        const file = await fetch(this.localesDirectory + '/' + formattedLocale + '/messages.json');
-        const locales = await file.json();
+        const filePath = path.join(__dirname, this.localesDirectory + '/' + formattedLocale + '/messages.json');
+        const locales = (window as any).require(filePath);
         for (const prop in locales) {
             if (locales.hasOwnProperty(prop)) {
                 messagesObj[prop] = locales[prop].message;
             }
         }
+
+        return Promise.resolve();
     }
 }

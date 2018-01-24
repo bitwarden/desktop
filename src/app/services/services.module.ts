@@ -2,7 +2,7 @@ import { webFrame } from 'electron';
 
 import {
     APP_INITIALIZER,
-    NgModule
+    NgModule,
 } from '@angular/core';
 
 import { DesktopMessagingService } from '../../services/desktopMessaging.service';
@@ -112,8 +112,8 @@ function initFactory(i18n: I18nService): Function {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
             deps: [I18nService],
-            multi: true
-        }
+            multi: true,
+        },
     ],
 })
 export class ServicesModule {

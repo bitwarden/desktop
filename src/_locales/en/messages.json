@@ -1,5 +1,8 @@
 ﻿{
   "hello": {
     "message": "hello"
+  },
+  "world": {
+    "message": "world"
   }
 }
