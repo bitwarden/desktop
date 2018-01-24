@@ -87,10 +87,6 @@ a {
         max-width: 250px;
         border-right: 1px solid $border-color-dark;
 
-        .inner-content {
-            padding: 10px 15px;
-        }
-
         h2 {
             font-size: $font-size-base;
             font-weight: bold;
@@ -149,6 +145,10 @@ a {
     #categories, #items, #details {
         display: flex;
         flex-direction: column;
+
+        .inner-content {
+            padding: 10px 15px;
+        }
     }
 
     .header {
@@ -556,5 +556,80 @@ a {
         &:hover {
             background-color: white;
         }
+    }
+}
+
+.box {
+    min-width: 400px;
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+
+    .box-header {
+        margin: 0 10px 5px 10px;
+        color: $gray-light;
+        text-transform: uppercase;
+    }
+
+    .box-content {
+        background: $background-color;
+        border-radius: 5px;
+
+        .box-content-row {
+            padding: 10px 15px;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                width: calc(100% - 10px);
+                border-bottom: 1px solid $border-color;
+            }
+
+            &:first-child {
+                padding-top: 20px;
+            }
+
+            &:last-child {
+                padding-bottom: 20px;
+
+                &:before {
+                    border: none;
+                    height: 0;
+                }
+            }
+
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            &:hover, &:focus, &.active {
+                background-color: $background-color-alt;
+            }
+
+            .row-label {
+                font-size: $font-size-small;
+                color: $text-muted;
+                display: block;
+                width: 100%;
+                font-weight: normal;
+                margin-bottom: 5px;
+            }
+
+            input {
+            }
+        }
+    }
+
+    .box-footer {
+        margin: 5px 10px;
+        font-size: $font-size-small;
+        color: $text-muted;
     }
 }
