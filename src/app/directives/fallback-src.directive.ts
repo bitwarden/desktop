@@ -14,7 +14,7 @@ export class FallbackSrcDirective {
     constructor(private el: ElementRef) {
     }
 
-    @HostListener('error') OnError() {
+    @HostListener('error') onError() {
         this.el.nativeElement.src = this.appFallbackSrc;
     }
 }

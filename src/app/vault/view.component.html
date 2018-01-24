@@ -4,22 +4,22 @@
             <div class="box-header">
                 Item Information
             </div>
-            <div class="box-content">
+            <div class="box-content" *ngIf="cipher">
                 <div class="box-content-row">
                     <span class="row-label">Name</span>
-                    Google
+                    {{cipher.name}}
                 </div>
                 <div class="box-content-row">
                     <span class="row-label">URI</span>
-                    https://google.com
+                    {{cipher.login.uri}}
                 </div>
                 <div class="box-content-row">
                     <span class="row-label">Username</span>
-                    hello@bitwarden.com
+                    {{cipher.login.username}}
                 </div>
                 <div class="box-content-row">
                     <span class="row-label">Password</span>
-                    JKsiuhfLKJDOsudfhjksdfjk
+                    {{cipher.login.password}}
                 </div>
             </div>
             <div class="box-footer">

@@ -1,5 +1,5 @@
 <div id="vault">
     <app-vault-groupings id="groupings"></app-vault-groupings>
-    <app-vault-ciphers id="items" [ciphers]="ciphers"></app-vault-ciphers>
-    <app-vault-view id="details" [cipherId]="null"></app-vault-view>
+    <app-vault-ciphers id="items" [ciphers]="ciphers" (onCipherClicked)="viewCipher($event)"></app-vault-ciphers>
+    <app-vault-view id="details" *ngIf="cipher && details === 'view'" [cipherId]="cipher.id"></app-vault-view>
 </div>

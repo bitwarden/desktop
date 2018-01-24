@@ -2,8 +2,10 @@ import * as template from './ciphers.component.html';
 
 import {
     Component,
+    EventEmitter,
     Input,
     OnChanges,
+    Output,
 } from '@angular/core';
 
 @Component({
@@ -12,6 +14,7 @@ import {
 })
 export class CiphersComponent implements OnChanges {
     @Input() ciphers: any[];
+    @Output() onCipherClicked = new EventEmitter<any>();
 
     constructor() {
         
@@ -21,7 +24,7 @@ export class CiphersComponent implements OnChanges {
         
     }
 
-    viewCipher(cipher: any) {
-        console.log(cipher.id);
+    cipherClicked(cipher: any) {
+        this.onCipherClicked.emit(cipher);
     }
 }

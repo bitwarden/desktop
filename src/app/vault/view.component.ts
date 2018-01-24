@@ -6,18 +6,21 @@ import {
     OnChanges,
 } from '@angular/core';
 
+import { CipherService } from 'jslib/abstractions/cipher.service';
+
 @Component({
     selector: 'app-vault-view',
     template: template,
 })
 export class ViewComponent implements OnChanges {
     @Input() cipherId: string;
+    cipher: any;
 
-    constructor() {
-        
+    constructor(private cipherService: CipherService) {
     }
 
-    ngOnChanges() {
-        
+    async ngOnChanges() {
+        const cipher = await this.cipherService.get(this.cipherId);
+        this.cipher = await cipher.decrypt();
     }
 }
