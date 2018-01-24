@@ -26,15 +26,15 @@
                     <li><a href="#"><i class="fa fa-fw fa-sticky-note-o"></i> Secure Note</a></li>
                 </ul>
                 <h2><i class="fa fa-folder"></i> Folders</h2>
-                <ul>
+                <ul class="fa-ul">
                     <li *ngFor="let folder of vaultFolders">
-                        <a href="#"><i class="fa fa-fw fa-caret-right"></i> {{folder.name}}</a>
+                        <a href="#"><i class="fa-li fa fa-caret-right"></i> {{folder.name}}</a>
                     </li>
                 </ul>
                 <h2><i class="fa fa-cubes"></i> Collections</h2>
-                <ul>
+                <ul class="fa-ul">
                     <li *ngFor="let collection of vaultCollections">
-                        <a href="#"><i class="fa fa-fw fa-caret-right"></i> {{collection.name}}</a>
+                        <a href="#"><i class="fa-li fa fa-caret-right"></i> {{collection.name}}</a>
                     </li>
                 </ul>
             </div>
