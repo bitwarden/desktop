@@ -1,4 +1,4 @@
-import * as template from './view.component.html';
+import * as template from './edit.component.html';
 
 import {
     Component,
@@ -13,12 +13,12 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CipherView } from 'jslib/models/view/cipherView';
 
 @Component({
-    selector: 'app-vault-view',
+    selector: 'app-vault-edit',
     template: template,
 })
-export class ViewComponent implements OnChanges {
+export class EditComponent implements OnChanges {
     @Input() cipherId: string;
-    @Output() onEditCipher = new EventEmitter<string>();
+    @Output() onEditCipherClicked = new EventEmitter<string>();
     cipher: CipherView;
 
     constructor(private cipherService: CipherService) {
@@ -29,7 +29,7 @@ export class ViewComponent implements OnChanges {
         this.cipher = await cipher.decrypt();
     }
 
-    edit() {
-        this.onEditCipher.emit(this.cipher.id);
+    editCipherClicked(id: string) {
+        this.onEditCipherClicked.emit(id);
     }
 }

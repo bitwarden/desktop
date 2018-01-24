@@ -15,7 +15,7 @@ import { CipherView } from 'jslib/models/view/cipherView';
 })
 export class VaultComponent implements OnInit {
     ciphers: CipherView[];
-    cipher: CipherView;
+    cipherId: string;
     details: string;
 
     constructor(private cipherService: CipherService) {
@@ -25,8 +25,17 @@ export class VaultComponent implements OnInit {
         this.ciphers = await this.cipherService.getAllDecrypted();
     }
 
-    viewCipher(cipher: CipherView) {
-        this.cipher = cipher;
+    viewCipher(id: string) {
+        this.cipherId = id;
         this.details = 'view';
+    }
+
+    editCipher(id: string) {
+        this.cipherId = id;
+        this.details = 'edit';
+    }
+
+    addCipher() {
+        this.details = 'add';
     }
 }

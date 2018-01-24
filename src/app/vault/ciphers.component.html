@@ -4,7 +4,9 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <a href="" title="{{'addItem' | i18n}}"><i class="fa fa-plus fa-lg"></i></a>
+        <a href="" title="{{'addItem' | i18n}}" appStopClick (click)="addCipher()">
+            <i class="fa fa-plus fa-lg"></i>
+        </a>
     </div>
 </div>
 <div class="content">
@@ -26,5 +28,5 @@
     </div>
 </div>
 <div class="footer">
-    {{'addItem' | i18n}}
+    <button (click)="addCipher()">{{'addItem' | i18n}}</button>
 </div>
