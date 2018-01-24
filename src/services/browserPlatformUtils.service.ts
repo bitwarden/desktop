@@ -113,7 +113,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
             return this.analyticsIdCache;
         }
 
-        this.analyticsIdCache = AnalyticsIds[this.getDevice()];
+        this.analyticsIdCache = (AnalyticsIds as any)[this.getDevice()];
         return this.analyticsIdCache;
     }
 
