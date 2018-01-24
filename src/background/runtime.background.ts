@@ -1,5 +1,8 @@
 import { CipherType } from 'jslib/enums';
 
+import { CipherView } from 'jslib/models/view/cipherView';
+import { LoginView } from 'jslib/models/view/loginView';
+
 import { ConstantsService } from 'jslib/services/constants.service';
 import { UtilsService } from 'jslib/services/utils.service';
 
@@ -176,20 +179,16 @@ export default class RuntimeBackground {
 
             this.main.loginsToAdd.splice(i, 1);
 
-            const cipher = await this.cipherService.encrypt({
-                id: null,
-                folderId: null,
-                favorite: false,
-                name: loginInfo.name,
-                notes: null,
-                type: CipherType.Login,
-                login: {
-                    uri: loginInfo.uri,
-                    username: loginInfo.username,
-                    password: loginInfo.password,
-                },
-            });
+            const loginModel = new LoginView();
+            loginModel.uri = loginInfo.uri;
+            loginModel.username = loginInfo.username;
+            loginModel.password = loginInfo.password;
+            const model = new CipherView();
+            model.name = loginInfo.name;
+            model.type = CipherType.Login;
+            model.login = loginModel;
 
+            const cipher = await this.cipherService.encrypt(model);
             await this.cipherService.saveWithServer(cipher);
             this.analytics.ga('send', {
                 hitType: 'event',

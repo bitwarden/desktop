@@ -158,7 +158,7 @@ export class SettingsController {
 
     rate() {
         this.$analytics.eventTrack('Rate Extension');
-        BrowserApi.createNewTab(RateUrls[this.platformUtilsService.getDevice()]);
+        BrowserApi.createNewTab((RateUrls as any)[this.platformUtilsService.getDevice()]);
     }
 }
 
