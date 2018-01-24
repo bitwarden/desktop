@@ -66,8 +66,7 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
             return this.analyticsIdCache;
         }
 
-        // FIX?
-        // this.analyticsIdCache = AnalyticsIds[this.getDevice() as DeviceType];
+        this.analyticsIdCache = (AnalyticsIds as any)[this.getDevice()];
         return this.analyticsIdCache;
     }
 
