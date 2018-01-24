@@ -1,4 +1,4 @@
-import { app, BrowserWindow, screen, ipcMain } from 'electron';
+import { app, BrowserWindow, ipcMain, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 /*
@@ -25,6 +25,10 @@ ipcMain.on('keytar', async (event: any, message: any) => {
     }
 });
 */
+
+import { I18nService } from './services/i18n.service';
+const i18nService = new I18nService('en', './_locales/');
+i18nService.init().then(() => { });
 
 let win: BrowserWindow;
 const args = process.argv.slice(1);

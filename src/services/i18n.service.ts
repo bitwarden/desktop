@@ -8,12 +8,10 @@ const SupportedLocales = [
 export class I18nService {
     defaultMessages: any = {};
     localeMessages: any = {};
-    systemLanguage: string;
     language: string;
     inited: boolean;
 
-    constructor(win: Window, private localesDirectory: string) {
-        this.systemLanguage = win.navigator.language;
+    constructor(private systemLanguage: string, private localesDirectory: string) {
     }
 
     async init(language?: string) {
@@ -39,10 +37,10 @@ export class I18nService {
     }
 
     t(id: string): string {
-        return this.translation(id);
+        return this.translate(id);
     }
 
-    translation(id: string): string {
+    translate(id: string): string {
         if (this.localeMessages.hasOwnProperty(id) && this.localeMessages[id]) {
             return this.localeMessages[id];
         } else if (this.defaultMessages.hasOwnProperty(id) && this.defaultMessages[id]) {
