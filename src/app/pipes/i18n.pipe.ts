@@ -3,7 +3,7 @@ import {
     PipeTransform,
 } from '@angular/core';
 
-import { I18nService } from '../../services/i18n.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 
 @Pipe({
     name: 'i18n',

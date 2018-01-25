@@ -1,6 +1,9 @@
+import { ipcRenderer, shell } from 'electron';
+
 import { DeviceType } from 'jslib/enums';
 
-import { PlatformUtilsService } from 'jslib/abstractions';
+import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 const AnalyticsIds = {
     [DeviceType.Windows]: 'UA-81915606-17',
@@ -11,6 +14,9 @@ const AnalyticsIds = {
 export class DesktopPlatformUtilsService implements PlatformUtilsService {
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
+
+    constructor(private i18nService: I18nService) {
+    }
 
     getDevice(): DeviceType {
         if (!this.deviceCache) {
@@ -92,5 +98,26 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
 
     isViewOpen(): boolean {
         return true;
+    }
+
+    launchUri(uri: string): void {
+        shell.openExternal(uri);
+    }
+
+    saveFile(win: Window, blobData: any, blobOptions: any, fileName: string): void {
+        const blob = new Blob([blobData], blobOptions);
+        const a = win.document.createElement('a');
+        a.href = win.URL.createObjectURL(blob);
+        a.download = fileName;
+        window.document.body.appendChild(a);
+        a.click();
+        window.document.body.removeChild(a);
+    }
+
+    alertError(title: string, message: string): void {
+        ipcRenderer.send('showError', {
+            title: title || this.i18nService.t('error'),
+            message: message,
+        });
     }
 }

@@ -589,6 +589,9 @@ a {
             padding: 10px 15px;
             position: relative;
             z-index: 1;
+            display: block;
+            color: $text-color;
+            overflow-wrap: break-word;
 
             &:before {
                 content: "";
@@ -624,6 +627,12 @@ a {
             &.pre {
                 white-space: pre;
                 overflow-x: auto;
+            }
+
+            .no-wrap {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .row-label {
@@ -665,6 +674,23 @@ a {
                         padding-right: 2px !important;
                     }
                 }
+            }
+
+            .right-icon {
+                float: right;
+                margin-top: 4px;
+                color: $list-icon-color;
+            }
+
+            .row-sub-label {
+                float: right;
+                display: block;
+                margin-right: 15px;
+                color: $gray-light;
+            }
+
+            small.row-sub-label {
+                margin-top: 2px;
             }
         }
     }

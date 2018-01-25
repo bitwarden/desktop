@@ -91,5 +91,56 @@
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
+  },
+  "cardholderName": {
+    "message": "Cardholder Name"
+  },
+  "number": {
+    "message": "Number"
+  },
+  "brand": {
+    "message": "Brand"
+  },
+  "expiration": {
+    "message": "Expiration"
+  },
+  "securityCode": {
+    "message": "Security Code"
+  },
+  "identityName": {
+    "message": "identityName"
+  },
+  "company": {
+    "message": "Company"
+  },
+  "ssn": {
+    "message": "Social Security Number"
+  },
+  "passportNumber": {
+    "message": "Passport Number"
+  },
+  "licenseNumber": {
+    "message": "License Number"
+  },
+  "email": {
+    "message": "Email"
+  },
+  "phone": {
+    "message": "Phone"
+  },
+  "address": {
+    "message": "Address"
+  },
+  "premiumRequired": {
+    "message": "Premium Required"
+  },
+  "premiumRequiredDesc": {
+    "message": "A premium membership is required to use this feature."
+  },
+  "errorOccurred": {
+    "message": "An error has occurred."
+  },
+  "error": {
+    "message": "Error"
   }
 }

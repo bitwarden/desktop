@@ -1,11 +1,13 @@
 import * as path from 'path';
 
+import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
+
 // First locale is the default (English)
 const SupportedLocales = [
     'en', 'es',
 ];
 
-export class I18nService {
+export class I18nService implements I18nServiceAbstraction {
     defaultMessages: any = {};
     localeMessages: any = {};
     language: string;

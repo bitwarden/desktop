@@ -10,12 +10,19 @@ import {
 } from '@angular/core';
 
 import { CipherType } from 'jslib/enums/cipherType';
+import { FieldType } from 'jslib/enums/fieldType';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
+import { UtilsService } from 'jslib/abstractions/utils.service';
 
+import { AttachmentView } from 'jslib/models/view/attachmentView';
 import { CipherView } from 'jslib/models/view/cipherView';
+import { FieldView } from 'jslib/models/view/fieldView';
 
 @Component({
     selector: 'app-vault-view',
@@ -32,11 +39,14 @@ export class ViewComponent implements OnChanges, OnDestroy {
     totpDash: number;
     totpSec: number;
     totpLow: boolean;
+    fieldType = FieldType;
 
     private totpInterval: NodeJS.Timer;
 
     constructor(private cipherService: CipherService, private totpService: TotpService,
-        private tokenService: TokenService) {
+        private tokenService: TokenService, private utilsService: UtilsService,
+        private cryptoService: CryptoService, private platformUtilsService: PlatformUtilsService,
+        private i18nService: I18nService) {
     }
 
     async ngOnChanges() {
@@ -70,12 +80,57 @@ export class ViewComponent implements OnChanges, OnDestroy {
         this.showPassword = !this.showPassword;
     }
 
+    toggleFieldValue(field: FieldView) {
+        const f = (field as any);
+        f.showValue = !f.showValue;
+    }
+
     launch() {
-        // TODO
+        if (this.cipher.login.uri == null || this.cipher.login.uri.indexOf('://') === -1) {
+            return;
+        }
+
+        this.platformUtilsService.launchUri(this.cipher.login.uri);
     }
 
     copy(value: string) {
-        // TODO
+        if (value == null) {
+            return;
+        }
+
+        this.utilsService.copyToClipboard(value, window.document);
+    }
+
+    async downloadAttachment(attachment: AttachmentView) {
+        const a = (attachment as any);
+        if (a.downloading) {
+            return;
+        }
+
+        if (!this.cipher.organizationId && !this.isPremium) {
+            this.platformUtilsService.alertError(this.i18nService.t('premiumRequired'),
+                this.i18nService.t('premiumRequiredDesc'));
+            return;
+        }
+
+        a.downloading = true;
+        const response = await fetch(new Request(attachment.url, { cache: 'no-cache' }));
+        if (response.status !== 200) {
+            this.platformUtilsService.alertError(null, this.i18nService.t('errorOccurred'));
+            a.downloading = false;
+            return;
+        }
+
+        try {
+            const buf = await response.arrayBuffer();
+            const key = await this.cryptoService.getOrgKey(this.cipher.organizationId);
+            const decBuf = await this.cryptoService.decryptFromBytes(buf, key);
+            this.platformUtilsService.saveFile(window, decBuf, null, attachment.fileName);
+        } catch (e) {
+            this.platformUtilsService.alertError(null, this.i18nService.t('errorOccurred'));
+        }
+
+        a.downloading = false;
     }
 
     private cleanUp() {

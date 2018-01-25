@@ -9,6 +9,7 @@
                     <span class="row-label">{{'name' | i18n}}</span>
                     {{cipher.name}}
                 </div>
+                <!-- Login -->
                 <div *ngIf="cipher.login">
                     <div class="box-content-row" *ngIf="cipher.login.uri">
                         <div class="action-buttons">
@@ -16,7 +17,8 @@
                                *ngIf="cipher.login.canLaunch" (click)="launch()">
                                 <i class="fa fa-lg fa-share-square-o"></i>
                             </a>
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                               (click)="copy(cipher.login.uri)">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -26,7 +28,8 @@
                     </div>
                     <div class="box-content-row" *ngIf="cipher.login.username">
                         <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                               (click)="copy(cipher.login.username)">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -40,7 +43,8 @@
                                 <i class="fa fa-lg"
                                    [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                               (click)="copy(cipher.login.password)">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -51,7 +55,8 @@
                     <div class="box-content-row totp" [ngClass]="{'low': totpLow}"
                          *ngIf="cipher.login.totp && totpCode">
                         <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                               (click)="copy(totpCode)">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -69,6 +74,89 @@
                         <span class="totp-code">{{totpCodeFormatted}}</span>
                     </div>
                 </div>
+                <!-- Card -->
+                <div *ngIf="cipher.card">
+                    <div class="box-content-row" *ngIf="cipher.card.cardholderName">
+                        <span class="row-label">{{'cardholderName' | i18n}}</span>
+                        {{cipher.card.cardholderName}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.card.number">
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                               (click)="copy(cipher.card.number)">
+                                <i class="fa fa-lg fa-clipboard"></i>
+                            </a>
+                        </div>
+                        <span class="row-label">{{'number' | i18n}}</span>
+                        {{cipher.card.number}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.card.brand">
+                        <span class="row-label">{{'brand' | i18n}}</span>
+                        {{cipher.card.brand}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.card.expiration">
+                        <span class="row-label">{{'expiration' | i18n}}</span>
+                        {{cipher.card.expiration}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.card.code">
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                               (click)="copy(cipher.card.code)">
+                                <i class="fa fa-lg fa-clipboard"></i>
+                            </a>
+                        </div>
+                        <span class="row-label">{{'securityCode' | i18n}}</span>
+                        {{cipher.card.code}}
+                    </div>
+                </div>
+                <!-- Identity -->
+                <div *ngIf="cipher.identity">
+                    <div class="box-content-row" *ngIf="cipher.identity.fullName">
+                        <span class="row-label">{{'identityName' | i18n}}</span>
+                        {{cipher.identity.fullName}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.identity.username">
+                        <span class="row-label">{{'username' | i18n}}</span>
+                        {{cipher.identity.username}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.identity.company">
+                        <span class="row-label">{{'company' | i18n}}</span>
+                        {{cipher.identity.company}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.identity.ssn">
+                        <span class="row-label">{{'ssn' | i18n}}</span>
+                        {{cipher.identity.ssn}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.identity.passportNumber">
+                        <span class="row-label">{{'passportNumber' | i18n}}</span>
+                        {{cipher.identity.passportNumber}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.identity.licenseNumber">
+                        <span class="row-label">{{'licenseNumber' | i18n}}</span>
+                        {{cipher.identity.licenseNumber}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.identity.email">
+                        <span class="row-label">{{'email' | i18n}}</span>
+                        {{cipher.identity.email}}
+                    </div>
+                    <div class="box-content-row" *ngIf="cipher.identity.phone">
+                        <span class="row-label">{{'phone' | i18n}}</span>
+                        {{cipher.identity.phone}}
+                    </div>
+                    <div class="box-content-row"
+                         *ngIf="cipher.identity.address1 || cipher.identity.city || cipher.identity.country">
+                        <span class="row-label">{{'address' | i18n}}</span>
+                        <div *ngIf="cipher.identity.address1">{{cipher.identity.address1}}</div>
+                        <div *ngIf="cipher.identity.address2">{{cipher.identity.address2}}</div>
+                        <div *ngIf="cipher.identity.address3">{{cipher.identity.address3}}</div>
+                        <div *ngIf="cipher.identity.city || cipher.identity.state || cipher.identity.postalCode">
+                            {{cipher.identity.city || '-'}},
+                            {{cipher.identity.state || '-'}},
+                            {{cipher.identity.postalCode || '-'}}
+                        </div>
+                        <div *ngIf="cipher.identity.country">{{cipher.identity.country}}</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="box" *ngIf="cipher.notes">
@@ -84,7 +172,31 @@
                 {{'customFields' | i18n}}
             </div>
             <div class="box-content">
-                todo
+                <div class="box-content-row" *ngFor="let field of cipher.fields">
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" appStopClick title="{{'toggleVisibility' | i18n}}"
+                           *ngIf="field.type === fieldType.Hidden" (click)="toggleFieldValue(field)">
+                            <i class="fa fa-lg"
+                               [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
+                        </a>
+                        <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                           *ngIf="field.value && field.type !== fieldType.Boolean" (click)="copy(field.value)">
+                            <i class="fa fa-lg fa-clipboard"></i>
+                        </a>
+                    </div>
+                    <span class="row-label">{{field.name}}</span>
+                    <div *ngIf="field.type === fieldType.Text">
+                        {{field.value || '&nbsp;'}}
+                    </div>
+                    <div *ngIf="field.type === fieldType.Hidden">
+                        <span [hidden]="!field.showValue" class="monospaced">{{field.value}}</span>
+                        <span [hidden]="field.showValue" class="monospaced">{{field.maskedValue}}</span>
+                    </div>
+                    <div *ngIf="field.type === fieldType.Boolean">
+                        <i class="fa fa-check-square-o" *ngIf="field.value === 'true'"></i>
+                        <i class="fa fa-square-o" *ngIf="field.value !== 'true'"></i>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="box" *ngIf="cipher.hasAttachments && isPremium">
@@ -92,7 +204,13 @@
                 {{'attachments' | i18n}}
             </div>
             <div class="box-content">
-                todo
+                <a class="box-content-row" *ngFor="let attachment of cipher.attachments" href="#" appStopClick
+                   (click)="downloadAttachment(attachment)">
+                    <i class="right-icon fa fa-download fa-fw" *ngIf="!attachment.downloading"></i>
+                    <i class="right-icon fa fa-spinner fa-fw fa-spin" *ngIf="attachment.downloading"></i>
+                    <small class="row-sub-label">{{attachment.sizeName}}</small>
+                    {{attachment.fileName}}
+                </a>
             </div>
         </div>
     </div>

@@ -41,6 +41,7 @@ import {
     CryptoService as CryptoServiceAbstraction,
     EnvironmentService as EnvironmentServiceAbstraction,
     FolderService as FolderServiceAbstraction,
+    I18nService as I18nServiceAbstraction,
     LockService as LockServiceAbstraction,
     MessagingService as MessagingServiceAbstraction,
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
@@ -58,7 +59,7 @@ webFrame.registerURLSchemeAsPrivileged('file');
 
 const i18nService = new I18nService(window.navigator.language, './locales');
 const utilsService = new UtilsService();
-const platformUtilsService = new DesktopPlatformUtilsService();
+const platformUtilsService = new DesktopPlatformUtilsService(i18nService);
 const messagingService = new DesktopMessagingService();
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
 const secureStorageService: StorageServiceAbstraction = new DesktopSecureStorageService();
@@ -109,11 +110,14 @@ function initFactory(i18n: I18nService): Function {
         { provide: EnvironmentServiceAbstraction, useValue: environmentService },
         { provide: TotpServiceAbstraction, useValue: totpService },
         { provide: TokenServiceAbstraction, useValue: tokenService },
-        { provide: I18nService, useValue: i18nService },
+        { provide: I18nServiceAbstraction, useValue: i18nService },
+        { provide: UtilsServiceAbstraction, useValue: utilsService },
+        { provide: CryptoServiceAbstraction, useValue: cryptoService },
+        { provide: PlatformUtilsServiceAbstraction, useValue: platformUtilsService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
-            deps: [I18nService],
+            deps: [I18nServiceAbstraction],
             multi: true,
         },
     ],

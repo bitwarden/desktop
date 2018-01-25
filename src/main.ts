@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, screen } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 /*
@@ -25,6 +25,10 @@ ipcMain.on('keytar', async (event: any, message: any) => {
     }
 });
 */
+
+ipcMain.on('showError', async (event: any, message: any) => {
+    dialog.showErrorBox(message.title, message.message);
+});
 
 import { I18nService } from './services/i18n.service';
 const i18nService = new I18nService('en', './locales/');
