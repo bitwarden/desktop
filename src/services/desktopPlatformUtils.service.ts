@@ -71,7 +71,23 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
     }
 
     getDomain(uriString: string): string {
-        return uriString;
+        if (uriString == null) {
+            return null;
+        }
+
+        uriString = uriString.trim();
+        if (uriString === '') {
+            return null;
+        }
+
+        if (uriString.indexOf('://') > -1) {
+            try {
+                const url = new URL(uriString);
+                return url.hostname;
+            } catch (e) { }
+        }
+
+        return null;
     }
 
     isViewOpen(): boolean {

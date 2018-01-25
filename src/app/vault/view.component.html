@@ -1,31 +1,98 @@
 <div class="content">
-    <div class="inner-content">
+    <div class="inner-content" *ngIf="cipher">
         <div class="box">
             <div class="box-header">
                 {{'itemInformation' | i18n}}
             </div>
-            <div class="box-content" *ngIf="cipher">
+            <div class="box-content">
                 <div class="box-content-row">
                     <span class="row-label">{{'name' | i18n}}</span>
                     {{cipher.name}}
                 </div>
                 <div *ngIf="cipher.login">
-                    <div class="box-content-row">
-                        <span class="row-label">{{'uri' | i18n}}</span>
-                        {{cipher.login.uri}}
+                    <div class="box-content-row" *ngIf="cipher.login.uri">
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick title="{{'launch' | i18n}}"
+                               *ngIf="cipher.login.canLaunch" (click)="launch()">
+                                <i class="fa fa-lg fa-share-square-o"></i>
+                            </a>
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                                <i class="fa fa-lg fa-clipboard"></i>
+                            </a>
+                        </div>
+                        <span class="row-label" *ngIf="!cipher.login.isWebsite">{{'uri' | i18n}}</span>
+                        <span class="row-label" *ngIf="cipher.login.isWebsite">{{'website' | i18n}}</span>
+                        {{cipher.login.domainOrUri}}
                     </div>
-                    <div class="box-content-row">
+                    <div class="box-content-row" *ngIf="cipher.login.username">
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                                <i class="fa fa-lg fa-clipboard"></i>
+                            </a>
+                        </div>
                         <span class="row-label">{{'username' | i18n}}</span>
                         {{cipher.login.username}}
                     </div>
-                    <div class="box-content-row">
+                    <div class="box-content-row" *ngIf="cipher.login.password">
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick title="{{'toggleVisibility' | i18n}}"
+                               (click)="togglePassword()">
+                                <i class="fa fa-lg"
+                                   [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                            </a>
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                                <i class="fa fa-lg fa-clipboard"></i>
+                            </a>
+                        </div>
                         <span class="row-label">{{'password' | i18n}}</span>
-                        {{cipher.login.password}}
+                        <span [hidden]="showPassword" class="monospaced">{{cipher.login.maskedPassword}}</span>
+                        <span [hidden]="!showPassword" class="monospaced">{{cipher.login.password}}</span>
+                    </div>
+                    <div class="box-content-row totp" [ngClass]="{'low': totpLow}"
+                         *ngIf="cipher.login.totp && totpCode">
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}">
+                                <i class="fa fa-lg fa-clipboard"></i>
+                            </a>
+                        </div>
+                        <span class="totp-countdown">
+                            <span class="totp-sec">{{totpSec}}</span>
+                            <svg>
+                                <g>
+                                    <circle class="totp-circle inner" r="12.6" cy="16" cx="16"
+                                            [ngStyle]="{'stroke-dashoffset.px': totpDash}"></circle>
+                                    <circle class="totp-circle outer" r="14" cy="16" cx="16"></circle>
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="row-label">{{'verificationCodeTotp' | i18n}}</span>
+                        <span class="totp-code">{{totpCodeFormatted}}</span>
                     </div>
                 </div>
             </div>
-            <div class="box-footer">
-                Some footer information.
+        </div>
+        <div class="box" *ngIf="cipher.notes">
+            <div class="box-header">
+                {{'notes' | i18n}}
+            </div>
+            <div class="box-content">
+                <div class="box-content-row pre">{{cipher.notes}}</div>
+            </div>
+        </div>
+        <div class="box" *ngIf="cipher.hasFields">
+            <div class="box-header">
+                {{'customFields' | i18n}}
+            </div>
+            <div class="box-content">
+                todo
+            </div>
+        </div>
+        <div class="box" *ngIf="cipher.hasAttachments && isPremium">
+            <div class="box-header">
+                {{'attachments' | i18n}}
+            </div>
+            <div class="box-content">
+                todo
             </div>
         </div>
     </div>

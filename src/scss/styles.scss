@@ -2,6 +2,7 @@
 @import "~font-awesome/scss/font-awesome.scss";
 
 $font-family-sans-serif: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-size-base: 14px;
 $font-size-large: 18px;
 $font-size-small: 12px;
@@ -79,6 +80,10 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: $brand-primary;
     text-decoration: none;
+}
+
+.monospaced {
+    font-family: $font-family-monospace;
 }
 
 #vault {
@@ -359,11 +364,6 @@ a {
             }
         }
 
-        &.pre {
-            white-space: pre;
-            overflow-x: auto;
-        }
-
         &.text-primary {
             color: $brand-primary !important;
         }
@@ -568,7 +568,11 @@ a {
     min-width: 400px;
     max-width: 550px;
     width: 100%;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
+
+    &:first-child {
+        margin-top: 10px;
+    }
 
     .box-header {
         margin: 0 10px 5px 10px;
@@ -579,7 +583,7 @@ a {
     .box-content {
         background: $box-background-color;
         border-radius: $border-radius;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 
         .box-content-row {
             padding: 10px 15px;
@@ -617,6 +621,11 @@ a {
                 background-color: $box-background-hover-color;
             }
 
+            &.pre {
+                white-space: pre;
+                overflow-x: auto;
+            }
+
             .row-label {
                 font-size: $font-size-small;
                 color: $text-muted;
@@ -628,6 +637,35 @@ a {
 
             input {
             }
+
+            .action-buttons {
+                float: right;
+
+                .row-btn {
+                    float: left;
+                    cursor: pointer;
+                    padding: 10px 8px;
+                    background: none;
+                    border: none;
+                    color: $brand-primary;
+
+                    &:hover, &:focus {
+                        color: darken($brand-primary, 10%);
+                    }
+
+                    &.disabled {
+                        color: $list-icon-color;
+
+                        &:hover {
+                            color: $list-icon-color;
+                        }
+                    }
+
+                    &:last-child {
+                        padding-right: 2px !important;
+                    }
+                }
+            }
         }
     }
 
@@ -635,5 +673,60 @@ a {
         margin: 5px 10px;
         font-size: $font-size-small;
         color: $text-muted;
+    }
+}
+
+.totp {
+    .totp-code {
+        font-family: $font-family-monospace;
+        font-size: 1.1em;
+    }
+
+    .totp-countdown {
+        margin: 3px 3px 0 0;
+        display: block;
+        user-select: none;
+        float: right;
+
+        .totp-sec {
+            font-size: 0.85em;
+            position: absolute;
+            line-height: 32px;
+            width: 32px;
+            text-align: center;
+        }
+
+        svg {
+            width: 32px;
+            height: 32px;
+            transform: rotate(-90deg);
+        }
+
+        .totp-circle {
+            stroke: $brand-primary;
+            fill: none;
+
+            &.inner {
+                stroke-width: 3;
+                stroke-dasharray: 78.6;
+                stroke-dashoffset: 0;
+            }
+
+            &.outer {
+                stroke-width: 2;
+                stroke-dasharray: 88;
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+
+    &.low {
+        .totp-sec, .totp-code {
+            color: $brand-danger;
+        }
+
+        .totp-circle {
+            stroke: $brand-danger;
+        }
     }
 }

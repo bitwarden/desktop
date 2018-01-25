@@ -107,6 +107,8 @@ function initFactory(i18n: I18nService): Function {
         { provide: FolderServiceAbstraction, useValue: folderService },
         { provide: CollectionServiceAbstraction, useValue: collectionService },
         { provide: EnvironmentServiceAbstraction, useValue: environmentService },
+        { provide: TotpServiceAbstraction, useValue: totpService },
+        { provide: TokenServiceAbstraction, useValue: tokenService },
         { provide: I18nService, useValue: i18nService },
         {
             provide: APP_INITIALIZER,

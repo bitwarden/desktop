@@ -70,5 +70,26 @@
   },
   "masterPassword": {
     "message": "Master Password"
+  },
+  "verificationCodeTotp": {
+    "message": "Verification Code (TOTP)"
+  },
+  "website": {
+    "message": "Website"
+  },
+  "notes": {
+    "message": "Notes"
+  },
+  "customFields": {
+    "message": "Custom Fields"
+  },
+  "launch": {
+    "message": "Launch"
+  },
+  "copyValue": {
+    "message": "Copy Value"
+  },
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   }
 }
