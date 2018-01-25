@@ -7,16 +7,16 @@
                        (onAddCipher)="addCipher($event)">
     </app-vault-ciphers>
     <app-vault-view id="details"
-                    *ngIf="cipherId && details === 'view'"
+                    *ngIf="cipherId && action === 'view'"
                     [cipherId]="cipherId"
                     (onEditCipher)="editCipher($event)">
     </app-vault-view>
     <app-vault-edit id="details"
-                    *ngIf="cipherId && details === 'edit'"
+                    *ngIf="cipherId && action === 'edit'"
                     [cipherId]="cipherId">
     </app-vault-edit>
     <app-vault-add id="details"
-                   *ngIf="details === 'add'"
+                   *ngIf="action === 'add'"
                    [folderId]="null">
     </app-vault-add>
 </div>
