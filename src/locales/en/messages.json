@@ -256,5 +256,8 @@
   },
   "favorite": {
     "message": "Favorite"
+  },
+  "edit": {
+    "message": "Edit"
   }
 }

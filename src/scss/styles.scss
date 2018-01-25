@@ -307,9 +307,14 @@ a {
             border-radius: $border-radius;
             padding: 7px 15px;
             border: 1px solid $button-border-color;
-            margin-right: 15px;
+            margin-right: 10px;
             font-size: $font-size-base;
             color: $button-color;
+
+            &:hover {
+                cursor: pointer;
+                background-color: darken($button-backgound-color, 1.5%);
+            }
 
             &.primary {
                 color: $button-color-primary;

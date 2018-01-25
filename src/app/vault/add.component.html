@@ -163,8 +163,12 @@
     </div>
 </div>
 <div class="footer">
-    <button (click)="save()" class="primary"><i class="fa fa-save fa-lg"></i> {{'save' | i18n}}</button>
-    <button (click)="cancel()">{{'cancel' | i18n}}</button>
+    <button (click)="save()" class="primary" title="{{'save' | i18n}}">
+        <i class="fa fa-save fa-lg"></i> {{'save' | i18n}}
+    </button>
+    <button (click)="cancel()" title="{{'cancel' | i18n}}">
+        {{'cancel' | i18n}}
+    </button>
     <button (click)="delete()" class="danger right" title="{{'delete' | i18n}}">
         <i class="fa fa-trash-o fa-lg"></i>
     </button>
