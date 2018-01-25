@@ -57,7 +57,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
 
         this.isPremium = this.tokenService.getPremium();
 
-        if (this.cipher.type == CipherType.Login && this.cipher.login.totp &&
+        if (this.cipher.type === CipherType.Login && this.cipher.login.totp &&
             (cipher.organizationUseTotp || this.isPremium)) {
             await this.totpUpdateCode();
             await this.totpTick();
