@@ -56,7 +56,7 @@ import {
 
 webFrame.registerURLSchemeAsPrivileged('file');
 
-const i18nService = new I18nService(window.navigator.language, './_locales');
+const i18nService = new I18nService(window.navigator.language, './locales');
 const utilsService = new UtilsService();
 const platformUtilsService = new DesktopPlatformUtilsService();
 const messagingService = new DesktopMessagingService();

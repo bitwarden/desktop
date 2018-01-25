@@ -27,7 +27,7 @@ ipcMain.on('keytar', async (event: any, message: any) => {
 */
 
 import { I18nService } from './services/i18n.service';
-const i18nService = new I18nService('en', './_locales/');
+const i18nService = new I18nService('en', './locales/');
 i18nService.init().then(() => { });
 
 let win: BrowserWindow;
