@@ -40,7 +40,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
     }
 
     async ngOnChanges() {
-        this.showPassword = false;
+        this.cleanUp();
 
         const cipher = await this.cipherService.get(this.cipherId);
         this.cipher = await cipher.decrypt();
@@ -52,10 +52,6 @@ export class ViewComponent implements OnChanges, OnDestroy {
             await this.totpUpdateCode();
             await this.totpTick();
 
-            if (this.totpInterval) {
-                clearInterval(this.totpInterval);
-            }
-
             this.totpInterval = setInterval(async () => {
                 await this.totpTick();
             }, 1000);
@@ -63,9 +59,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
     }
 
     ngOnDestroy() {
-        if (this.totpInterval) {
-            clearInterval(this.totpInterval);
-        }
+        this.cleanUp();
     }
 
     edit() {
@@ -82,6 +76,14 @@ export class ViewComponent implements OnChanges, OnDestroy {
 
     copy(value: string) {
         // TODO
+    }
+
+    private cleanUp() {
+        this.cipher = null;
+        this.showPassword = false;
+        if (this.totpInterval) {
+            clearInterval(this.totpInterval);
+        }
     }
 
     private async totpUpdateCode() {
@@ -111,5 +113,4 @@ export class ViewComponent implements OnChanges, OnDestroy {
             await this.totpUpdateCode();
         }
     }
-
 }

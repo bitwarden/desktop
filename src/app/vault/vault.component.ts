@@ -46,18 +46,30 @@ export class VaultComponent implements OnInit {
     }
 
     viewCipher(id: string) {
+        if (this.action === 'view' && this.cipherId === id) {
+            return;
+        }
+
         this.cipherId = id;
         this.action = 'view';
         this.go({ action: this.action, cipherId: id });
     }
 
     editCipher(id: string) {
+        if (this.action === 'edit' && this.cipherId === id) {
+            return;
+        }
+
         this.cipherId = id;
         this.action = 'edit';
         this.go({ action: this.action, cipherId: id });
     }
 
     addCipher() {
+        if (this.action === 'add') {
+            return;
+        }
+
         this.action = 'add';
         this.go({ action: this.action });
     }
