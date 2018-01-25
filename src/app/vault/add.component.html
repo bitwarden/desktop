@@ -163,5 +163,9 @@
     </div>
 </div>
 <div class="footer">
-    {{'editItem' | i18n}}
+    <button (click)="save()" class="primary"><i class="fa fa-save fa-lg"></i> {{'save' | i18n}}</button>
+    <button (click)="cancel()">{{'cancel' | i18n}}</button>
+    <button (click)="delete()" class="danger right" title="{{'delete' | i18n}}">
+        <i class="fa fa-trash-o fa-lg"></i>
+    </button>
 </div>

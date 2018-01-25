@@ -33,6 +33,12 @@ $box-background-color: $background-color;
 $box-background-hover-color: $background-color-alt;
 $box-border-color: $border-color;
 
+$button-border-color: darken($border-color-dark, 12%);
+$button-backgound-color: white;
+$button-color: lighten($text-color, 40%);
+$button-color-primary: darken($brand-primary, 8%);
+$button-color-danger: darken($brand-danger, 10%);
+
 * {
     box-sizing: border-box;
 }
@@ -292,6 +298,40 @@ a {
         background-color: $background-color-alt;
         flex: 0 0 auto;
         border-top: 1px solid $border-color-dark;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+
+        button {
+            background-color: $button-backgound-color;
+            border-radius: $border-radius;
+            padding: 7px 15px;
+            border: 1px solid $button-border-color;
+            margin-right: 15px;
+            font-size: $font-size-base;
+            color: $button-color;
+
+            &.primary {
+                color: $button-color-primary;
+            }
+
+            &.danger {
+                color: $button-color-danger;
+            }
+
+            &.block {
+                display: block;
+                width: 100%;
+            }
+
+            &.right {
+                margin-left: auto;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
 }
 

@@ -244,5 +244,17 @@
   },
   "country": {
     "message": "Country"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "favorite": {
+    "message": "Favorite"
   }
 }
