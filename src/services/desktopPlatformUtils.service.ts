@@ -100,7 +100,7 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
         return true;
     }
 
-    launchUri(uri: string): void {
+    launchUri(uri: string, options?: any): void {
         shell.openExternal(uri);
     }
 
