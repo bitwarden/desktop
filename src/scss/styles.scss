@@ -635,7 +635,7 @@ a {
                 text-overflow: ellipsis;
             }
 
-            .row-label {
+            .row-label, label {
                 font-size: $font-size-small;
                 color: $text-muted;
                 display: block;
@@ -644,7 +644,24 @@ a {
                 margin-bottom: 5px;
             }
 
-            input {
+            input:not([type="checkbox"]), select, textarea {
+                border: none;
+                width: 100%;
+                background-color: transparent;
+                font-size: $font-size-base;
+
+                &::-webkit-input-placeholder {
+                    color: lighten($gray-light, 35%);
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            input[type="checkbox"] {
+                float: right;
+                display: inline-block;
             }
 
             .action-buttons {
