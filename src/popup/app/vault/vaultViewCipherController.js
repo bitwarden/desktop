@@ -161,7 +161,6 @@ angular
                 cryptoService.getOrgKey($scope.cipher.organizationId).then(function (key) {
                     return cryptoService.decryptFromBytes(req.response, key);
                 }).then(function (decBuf) {
-                    var blob = new Blob([decBuf]);
                     BrowserApi.downloadFile($window, decBuf, null, attachment.fileName);
 
                     $timeout(function () {

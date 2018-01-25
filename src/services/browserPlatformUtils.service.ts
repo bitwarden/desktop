@@ -140,6 +140,18 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return tabOpen;
     }
 
+    launchUri(uri: string, options?: any): void {
+        BrowserApi.createNewTab(uri, options && options.extensionPage === true);
+    }
+
+    saveFile(win: Window, blobData: any, blobOptions: any, fileName: string): void {
+        BrowserApi.downloadFile(win, blobData, blobOptions, fileName);
+    }
+
+    alertError(title: string, message: string): void {
+        // TODO
+    }
+
     private sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';
