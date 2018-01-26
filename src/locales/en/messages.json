@@ -29,9 +29,6 @@
   "collections": {
     "message": "Collections"
   },
-  "noFolder": {
-    "message": "No Folder"
-  },
   "searchVault": {
     "message": "Search vault"
   },
@@ -286,5 +283,24 @@
   },
   "nameRequired": {
     "message": "Name is required."
+  },
+  "addedItem": {
+    "message": "Added item"
+  },
+  "editedItem": {
+    "message": "Edited item"
+  },
+  "deleteItemConfirmation": {
+    "message": "Are you sure you want to delete this item?"
+  },
+  "deletedItem": {
+    "message": "Deleted item"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Are you sure you want to overwrite the current password?"
+  },
+  "noneFolder": {
+    "message": "No Folder",
+    "description": "This is the folder for uncategorized items"
   }
 }

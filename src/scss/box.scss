@@ -1,0 +1,194 @@
+﻿@import "variables.scss";
+
+.box {
+    min-width: 400px;
+    max-width: 550px;
+    width: 100%;
+    margin: 30px auto 0 auto;
+
+    &:first-child {
+        margin-top: 10px;
+    }
+
+    &:last-child {
+        margin-bottom: 30px;
+    }
+
+    .box-header {
+        margin: 0 10px 5px 10px;
+        color: $gray-light;
+        text-transform: uppercase;
+    }
+
+    .box-content {
+        background: $box-background-color;
+        border-radius: $border-radius;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+        .box-content-row {
+            padding: 10px 15px;
+            position: relative;
+            z-index: 1;
+            display: block;
+            color: $text-color;
+            overflow-wrap: break-word;
+
+            &:before {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                width: calc(100% - 10px);
+                border-bottom: 1px solid $box-border-color;
+            }
+
+            &:first-child, &:last-child {
+                border-radius: $border-radius;
+            }
+
+            &:last-child {
+                &:before {
+                    border: none;
+                    height: 0;
+                }
+            }
+
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            &:hover, &:focus, &.active {
+                background-color: $box-background-hover-color;
+            }
+
+            &.pre {
+                white-space: pre;
+                overflow-x: auto;
+            }
+
+            .no-wrap {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &.box-content-row-cf {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                > a {
+                    padding: 8px 10px 8px 5px;
+                    color: $brand-danger;
+                }
+
+                > div {
+                    width: 100%;
+                }
+            }
+
+            .row-label, label {
+                font-size: $font-size-small;
+                color: $text-muted;
+                display: block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
+                label, .row-label {
+                    font-size: $font-size-base;
+                    color: $text-color;
+                    display: inline;
+                    width: initial;
+                    margin-bottom: 0;
+                    float: left;
+                }
+
+                input.row-label {
+                    width: calc(100% - 40px);
+                }
+            }
+
+            input:not([type="checkbox"]), select, textarea {
+                border: none;
+                width: 100%;
+                background-color: transparent;
+
+                &::-webkit-input-placeholder {
+                    color: lighten($gray-light, 35%);
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            input[type="checkbox"] {
+                float: right;
+                display: inline-block;
+            }
+
+            .action-buttons {
+                float: right;
+
+                .row-btn {
+                    float: left;
+                    cursor: pointer;
+                    padding: 10px 8px;
+                    background: none;
+                    border: none;
+                    color: $brand-primary;
+
+                    &:hover, &:focus {
+                        color: darken($brand-primary, 10%);
+                    }
+
+                    &.disabled {
+                        color: $list-icon-color;
+
+                        &:hover {
+                            color: $list-icon-color;
+                        }
+                    }
+
+                    &:last-child {
+                        padding-right: 2px !important;
+                    }
+                }
+            }
+
+            select.field-type {
+                margin: 5px 0 0 25px;
+                width: calc(100% - 25px);
+            }
+
+            .right-icon, .fa-chevron-right {
+                float: right;
+                margin-top: 4px;
+                color: $list-icon-color;
+            }
+
+            .row-sub-label {
+                float: right;
+                display: block;
+                margin-right: 15px;
+                color: $gray-light;
+            }
+
+            small.row-sub-label {
+                margin-top: 2px;
+            }
+        }
+    }
+
+    .box-footer {
+        margin: 5px 10px;
+        font-size: $font-size-small;
+        color: $text-muted;
+    }
+}
+

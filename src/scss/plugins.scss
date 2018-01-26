@@ -1,0 +1,72 @@
+﻿@import "variables.scss";
+
+#toast-container {
+    .toast-close-button {
+        right: -0.15em;
+    }
+
+    .toast {
+        opacity: 1 !important;
+        background-image: none !important;
+        border-radius: $border-radius;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+
+        &:before {
+            position: fixed;
+            font-family: FontAwesome;
+            font-size: 25px;
+            line-height: 20px;
+            float: left;
+            color: #ffffff;
+            padding-right: 0.5em;
+            margin: auto 0 auto -36px;
+        }
+
+        .toaster-icon {
+            display: none;
+        }
+
+        &.toast-danger, &.toast-error {
+            background-image: none !important;
+            background-color: $brand-danger;
+
+            &:before {
+                content: "\f0e7";
+                margin-left: -30px;
+            }
+        }
+
+        &.toast-warning {
+            background-image: none !important;
+            background-color: $brand-warning;
+
+            &:before {
+                content: "\f071";
+            }
+        }
+
+        &.toast-info {
+            background-image: none !important;
+            background-color: $brand-info;
+
+            &:before {
+                content: "\f05a";
+            }
+        }
+
+        &.toast-success {
+            background-image: none !important;
+            background-color: $brand-success;
+
+            &:before {
+                content: "\f00C";
+            }
+        }
+    }
+}

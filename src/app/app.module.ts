@@ -4,10 +4,11 @@ import 'zone.js/dist/zone';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { ServicesModule } from './services/services.module';
+import { ToasterModule } from 'angular2-toaster';
 
 import { AddComponent } from './vault/add.component';
 import { AppComponent } from './app.component';
@@ -25,7 +26,7 @@ import { ViewComponent } from './vault/view.component';
 
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         AppRoutingModule,
         ServicesModule,
@@ -34,6 +35,7 @@ import { ViewComponent } from './vault/view.component';
                 clearQueryParams: true,
             },
         }),
+        ToasterModule,
     ],
     declarations: [
         AddComponent,

@@ -6,6 +6,9 @@ import {
     OnChanges,
 } from '@angular/core';
 
+import { Angulartics2 } from 'angulartics2';
+import { ToasterService } from 'angular2-toaster';
+
 import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';
 import { SecureNoteType } from 'jslib/enums/secureNoteType';
@@ -41,7 +44,8 @@ export class AddComponent implements OnChanges {
     addFieldTypeOptions: any[];
 
     constructor(private cipherService: CipherService, private folderService: FolderService,
-        private i18nService: I18nService, private platformUtilsService: PlatformUtilsService) {
+        private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
+        private analytics: Angulartics2, private toasterService: ToasterService) {
         this.typeOptions = [
             { name: i18nService.t('typeLogin'), value: CipherType.Login },
             { name: i18nService.t('typeCard'), value: CipherType.Card },
@@ -104,15 +108,15 @@ export class AddComponent implements OnChanges {
 
     async save() {
         if (this.cipher.name == null || this.cipher.name === '') {
-            this.platformUtilsService.alertError(this.i18nService.t('errorOccurred'),
+            this.toasterService.popAsync('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('nameRequired'));
             return;
         }
 
         const cipher = await this.cipherService.encrypt(this.cipher);
         await this.cipherService.saveWithServer(cipher);
-        //$analytics.eventTrack('Added Cipher');
-        // TODO: success message
+        this.analytics.eventTrack.next({ action: 'Added Cipher' });
+        this.toasterService.popAsync('success', null, this.i18nService.t('addedItem'));
     };
 
     addField() {
