@@ -3,6 +3,7 @@ import * as template from './vault.component.html';
 import {
     Component,
     OnInit,
+    ViewChild,
 } from '@angular/core';
 
 import {
@@ -12,7 +13,7 @@ import {
 
 import { Location } from '@angular/common';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CiphersComponent } from './ciphers.component';
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
@@ -21,17 +22,15 @@ import { CipherView } from 'jslib/models/view/cipherView';
     template: template,
 })
 export class VaultComponent implements OnInit {
-    ciphers: CipherView[];
+    @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
+
     cipherId: string;
     action: string;
 
-    constructor(private cipherService: CipherService, private route: ActivatedRoute, private router: Router,
-        private location: Location) {
+    constructor(private route: ActivatedRoute, private router: Router, private location: Location) {
     }
 
     async ngOnInit() {
-        this.ciphers = await this.cipherService.getAllDecrypted();
-
         this.route.queryParams.subscribe((params) => {
             if (params['cipherId']) {
                 const cipherView = new CipherView();
@@ -81,10 +80,14 @@ export class VaultComponent implements OnInit {
         this.cipherId = cipher.id;
         this.action = 'view';
         this.go({ action: this.action, cipherId: this.cipherId });
+        this.ciphersComponent.updateCipher(cipher);
     }
 
     deletedCipher(cipher: CipherView) {
-        
+        this.cipherId = null;
+        this.action = null;
+        this.go({ action: this.action, cipherId: this.cipherId });
+        this.ciphersComponent.removeCipher(cipher.id);
     }
 
     editCipherAttachments(cipher: CipherView) {

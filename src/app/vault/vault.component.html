@@ -2,7 +2,6 @@
     <app-vault-groupings id="groupings">
     </app-vault-groupings>
     <app-vault-ciphers id="items"
-                       [ciphers]="ciphers"
                        (onCipherClicked)="viewCipher($event)"
                        (onAddCipher)="addCipher($event)">
     </app-vault-ciphers>
@@ -16,6 +15,7 @@
                         [folderId]="null"
                         [cipherId]="action === 'edit' ? cipherId : null"
                         (onSavedCipher)="savedCipher($event)"
+                        (onDeletedCipher)="deletedCipher($event)"
                         (onEditAttachments)="editCipherAttachments($event)"
                         (onCancelled)="cancelledAddEdit($event)">
     </app-vault-add-edit>

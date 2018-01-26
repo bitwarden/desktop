@@ -36,6 +36,7 @@ export class AddEditComponent implements OnChanges {
     @Input() folderId: string;
     @Input() cipherId: string;
     @Output() onSavedCipher = new EventEmitter<CipherView>();
+    @Output() onDeletedCipher = new EventEmitter<CipherView>();
     @Output() onCancelled = new EventEmitter<CipherView>();
     @Output() onEditAttachments = new EventEmitter<CipherView>();
 
@@ -134,7 +135,7 @@ export class AddEditComponent implements OnChanges {
         this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Cipher' : 'Added Cipher' });
         this.toasterService.popAsync('success', null, this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
         this.onSavedCipher.emit(this.cipher);
-    };
+    }
 
     addField() {
         if (this.cipher.fields == null) {
@@ -144,7 +145,7 @@ export class AddEditComponent implements OnChanges {
         const f = new FieldView();
         f.type = this.addFieldType;
         this.cipher.fields.push(f);
-    };
+    }
 
     removeField(field: FieldView) {
         const i = this.cipher.fields.indexOf(field);
@@ -155,9 +156,20 @@ export class AddEditComponent implements OnChanges {
 
     cancel() {
         this.onCancelled.emit(this.cipher);
-    };
+    }
 
     attachments() {
         this.onEditAttachments.emit(this.cipher);
-    };
+    }
+
+    async delete() {
+        if (!confirm(this.i18nService.t('deleteItemConfirmation'))) {
+            return;
+        }
+
+        await this.cipherService.deleteWithServer(this.cipher.id);
+        this.analytics.eventTrack.next({ action: 'Deleted Cipher' });
+        this.toasterService.popAsync('success', null, this.i18nService.t('deletedItem'));
+        this.onDeletedCipher.emit(this.cipher);
+    }
 }
