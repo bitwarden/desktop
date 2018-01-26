@@ -148,10 +148,6 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         BrowserApi.downloadFile(win, blobData, blobOptions, fileName);
     }
 
-    alertError(title: string, message: string): void {
-        // TODO
-    }
-
     getApplicationVersion(): string {
         return BrowserApi.getApplicationVersion();
     }
