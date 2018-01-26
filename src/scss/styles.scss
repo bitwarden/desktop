@@ -108,6 +108,10 @@ input, select, textarea, button {
     font-size: $font-size-base;
 }
 
+textarea {
+    resize: vertical;
+}
+
 #vault {
     height: 100vh;
     display: flex;
@@ -791,7 +795,7 @@ input, select, textarea, button {
                 width: calc(100% - 25px);
             }
 
-            .right-icon {
+            .right-icon, .fa-chevron-right {
                 float: right;
                 margin-top: 4px;
                 color: $list-icon-color;
