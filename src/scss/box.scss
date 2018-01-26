@@ -47,7 +47,7 @@
                 border-radius: $border-radius;
             }
 
-            &:last-child {
+            &:last-child:not(.box-content-row-cf) {
                 &:before {
                     border: none;
                     height: 0;

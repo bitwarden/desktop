@@ -11,12 +11,12 @@
                     [cipherId]="cipherId"
                     (onEditCipher)="editCipher($event)">
     </app-vault-view>
-    <app-vault-edit id="details"
-                    *ngIf="cipherId && action === 'edit'"
-                    [cipherId]="cipherId">
-    </app-vault-edit>
-    <app-vault-add id="details"
-                   *ngIf="action === 'add'"
-                   [folderId]="null">
-    </app-vault-add>
+    <app-vault-add-edit id="details"
+                        *ngIf="action === 'add' || action === 'edit'"
+                        [folderId]="null"
+                        [cipherId]="action === 'edit' ? cipherId : null"
+                        (onSavedCipher)="savedCipher($event)"
+                        (onEditAttachments)="editCipherAttachments($event)"
+                        (onCancelled)="cancelledAddEdit($event)">
+    </app-vault-add-edit>
 </div>

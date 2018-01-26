@@ -15,11 +15,11 @@ import { CipherView } from 'jslib/models/view/cipherView';
 })
 export class CiphersComponent {
     @Input() ciphers: CipherView[];
-    @Output() onCipherClicked = new EventEmitter<string>();
+    @Output() onCipherClicked = new EventEmitter<CipherView>();
     @Output() onAddCipher = new EventEmitter();
 
     cipherClicked(cipher: CipherView) {
-        this.onCipherClicked.emit(cipher.id);
+        this.onCipherClicked.emit(cipher);
     }
 
     addCipher() {

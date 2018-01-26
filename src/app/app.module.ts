@@ -10,10 +10,9 @@ import { NgModule } from '@angular/core';
 import { ServicesModule } from './services/services.module';
 import { ToasterModule } from 'angular2-toaster';
 
-import { AddComponent } from './vault/add.component';
+import { AddEditComponent } from './vault/add-edit.component';
 import { AppComponent } from './app.component';
 import { CiphersComponent } from './vault/ciphers.component';
-import { EditComponent } from './vault/edit.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
 import { GroupingsComponent } from './vault/groupings.component';
 import { I18nPipe } from './pipes/i18n.pipe';
@@ -38,10 +37,9 @@ import { ViewComponent } from './vault/view.component';
         ToasterModule,
     ],
     declarations: [
-        AddComponent,
+        AddEditComponent,
         AppComponent,
         CiphersComponent,
-        EditComponent,
         FallbackSrcDirective,
         GroupingsComponent,
         I18nPipe,

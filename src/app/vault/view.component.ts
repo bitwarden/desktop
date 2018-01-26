@@ -32,7 +32,7 @@ import { FieldView } from 'jslib/models/view/fieldView';
 })
 export class ViewComponent implements OnChanges, OnDestroy {
     @Input() cipherId: string;
-    @Output() onEditCipher = new EventEmitter<string>();
+    @Output() onEditCipher = new EventEmitter<CipherView>();
     cipher: CipherView;
     showPassword: boolean;
     isPremium: boolean;
@@ -75,7 +75,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
     }
 
     edit() {
-        this.onEditCipher.emit(this.cipher.id);
+        this.onEditCipher.emit(this.cipher);
     }
 
     togglePassword() {

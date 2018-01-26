@@ -1,9 +1,11 @@
-import * as template from './add.component.html';
+import * as template from './add-edit.component.html';
 
 import {
     Component,
+    EventEmitter,
     Input,
     OnChanges,
+    Output,
 } from '@angular/core';
 
 import { Angulartics2 } from 'angulartics2';
@@ -27,11 +29,17 @@ import { LoginView } from 'jslib/models/view/loginView';
 import { SecureNoteView } from 'jslib/models/view/secureNoteView';
 
 @Component({
-    selector: 'app-vault-add',
+    selector: 'app-vault-add-edit',
     template: template,
 })
-export class AddComponent implements OnChanges {
+export class AddEditComponent implements OnChanges {
     @Input() folderId: string;
+    @Input() cipherId: string;
+    @Output() onSavedCipher = new EventEmitter<CipherView>();
+    @Output() onCancelled = new EventEmitter<CipherView>();
+    @Output() onEditAttachments = new EventEmitter<CipherView>();
+
+    editMode: boolean = false;
     cipher: CipherView;
     folders: FolderView[];
     cipherType = CipherType;
@@ -94,14 +102,22 @@ export class AddComponent implements OnChanges {
     }
 
     async ngOnChanges() {
-        this.cipher = new CipherView();
-        this.cipher.folderId = null; // TODO
-        this.cipher.type = CipherType.Login;
-        this.cipher.login = new LoginView();
-        this.cipher.card = new CardView();
-        this.cipher.identity = new IdentityView();
-        this.cipher.secureNote = new SecureNoteView();
-        this.cipher.secureNote.type = SecureNoteType.Generic;
+        this.editMode = this.cipherId != null;
+
+        if (this.editMode) {
+            this.editMode = true;
+            const cipher = await this.cipherService.get(this.cipherId);
+            this.cipher = await cipher.decrypt();
+        } else {
+            this.cipher = new CipherView();
+            this.cipher.folderId = null; // TODO
+            this.cipher.type = CipherType.Login;
+            this.cipher.login = new LoginView();
+            this.cipher.card = new CardView();
+            this.cipher.identity = new IdentityView();
+            this.cipher.secureNote = new SecureNoteView();
+            this.cipher.secureNote.type = SecureNoteType.Generic;
+        }
 
         this.folders = await this.folderService.getAllDecrypted();
     }
@@ -115,8 +131,9 @@ export class AddComponent implements OnChanges {
 
         const cipher = await this.cipherService.encrypt(this.cipher);
         await this.cipherService.saveWithServer(cipher);
-        this.analytics.eventTrack.next({ action: 'Added Cipher' });
-        this.toasterService.popAsync('success', null, this.i18nService.t('addedItem'));
+        this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Cipher' : 'Added Cipher' });
+        this.toasterService.popAsync('success', null, this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
+        this.onSavedCipher.emit(this.cipher);
     };
 
     addField() {
@@ -134,5 +151,13 @@ export class AddComponent implements OnChanges {
         if (i > -1) {
             this.cipher.fields.splice(i, 1);
         }
+    };
+
+    cancel() {
+        this.onCancelled.emit(this.cipher);
+    };
+
+    attachments() {
+        this.onEditAttachments.emit(this.cipher);
     };
 }

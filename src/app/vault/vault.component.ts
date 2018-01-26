@@ -34,10 +34,12 @@ export class VaultComponent implements OnInit {
 
         this.route.queryParams.subscribe((params) => {
             if (params['cipherId']) {
+                const cipherView = new CipherView();
+                cipherView.id = params['cipherId'];
                 if (params['action'] === 'edit') {
-                    this.editCipher(params['cipherId']);
+                    this.editCipher(cipherView);
                 } else {
-                    this.viewCipher(params['cipherId']);
+                    this.viewCipher(cipherView);
                 }
             } else if (params['action'] === 'add') {
                 this.addCipher();
@@ -45,24 +47,24 @@ export class VaultComponent implements OnInit {
         });
     }
 
-    viewCipher(id: string) {
-        if (this.action === 'view' && this.cipherId === id) {
+    viewCipher(cipher: CipherView) {
+        if (this.action === 'view' && this.cipherId === cipher.id) {
             return;
         }
 
-        this.cipherId = id;
+        this.cipherId = cipher.id;
         this.action = 'view';
-        this.go({ action: this.action, cipherId: id });
+        this.go({ action: this.action, cipherId: this.cipherId });
     }
 
-    editCipher(id: string) {
-        if (this.action === 'edit' && this.cipherId === id) {
+    editCipher(cipher: CipherView) {
+        if (this.action === 'edit' && this.cipherId === cipher.id) {
             return;
         }
 
-        this.cipherId = id;
+        this.cipherId = cipher.id;
         this.action = 'edit';
-        this.go({ action: this.action, cipherId: id });
+        this.go({ action: this.action, cipherId: this.cipherId });
     }
 
     addCipher() {
@@ -71,7 +73,28 @@ export class VaultComponent implements OnInit {
         }
 
         this.action = 'add';
-        this.go({ action: this.action });
+        this.cipherId = null;
+        this.go({ action: this.action, cipherId: this.cipherId });
+    }
+
+    savedCipher(cipher: CipherView) {
+        this.cipherId = cipher.id;
+        this.action = 'view';
+        this.go({ action: this.action, cipherId: this.cipherId });
+    }
+
+    deletedCipher(cipher: CipherView) {
+        
+    }
+
+    editCipherAttachments(cipher: CipherView) {
+
+    }
+
+    cancelledAddEdit(cipher: CipherView) {
+        this.cipherId = cipher.id;
+        this.action = this.cipherId != null ? 'view' : null;
+        this.go({ action: this.action, cipherId: this.cipherId });
     }
 
     private go(queryParams: any) {

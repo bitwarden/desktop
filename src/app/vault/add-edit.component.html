@@ -5,7 +5,7 @@
                 {{'itemInformation' | i18n}}
             </div>
             <div class="box-content">
-                <div class="box-content-row">
+                <div class="box-content-row" *ngIf="!editMode">
                     <label for="type">{{'type' | i18n}}</label>
                     <select id="type" name="Type" [(ngModel)]="cipher.type">
                         <option *ngFor="let o of typeOptions" [ngValue]="o.value">{{o.name}}</option>
@@ -176,6 +176,10 @@
                     <label for="favorite">{{'favorite' | i18n}}</label>
                     <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
                 </div>
+                <a class="box-content-row" href="#" appStopClick (click)="attachments()" *ngIf="editMode">
+                    {{'attachments' | i18n}}
+                    <i class="fa fa-chevron-right icon-right"></i>
+                </a>
             </div>
         </div>
         <div class="box">
@@ -233,7 +237,7 @@
     <button (click)="cancel()" title="{{'cancel' | i18n}}">
         {{'cancel' | i18n}}
     </button>
-    <button (click)="delete()" class="danger right" title="{{'delete' | i18n}}">
+    <button (click)="delete()" class="danger right" title="{{'delete' | i18n}}" *ngIf="editMode">
         <i class="fa fa-trash-o fa-lg"></i>
     </button>
 </div>
