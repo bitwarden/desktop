@@ -18,7 +18,7 @@
                                 <i class="fa fa-lg fa-share-square-o"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(cipher.login.uri)">
+                               (click)="copy(cipher.login.uri, 'URI')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -29,7 +29,7 @@
                     <div class="box-content-row" *ngIf="cipher.login.username">
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(cipher.login.username)">
+                               (click)="copy(cipher.login.username, 'Username')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -44,7 +44,7 @@
                                    [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(cipher.login.password)">
+                               (click)="copy(cipher.login.password, 'Password')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -56,7 +56,7 @@
                          *ngIf="cipher.login.totp && totpCode">
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(totpCode)">
+                               (click)="copy(totpCode, 'TOTP')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -83,7 +83,7 @@
                     <div class="box-content-row" *ngIf="cipher.card.number">
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(cipher.card.number)">
+                               (click)="copy(cipher.card.number, 'Number')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -101,7 +101,7 @@
                     <div class="box-content-row" *ngIf="cipher.card.code">
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(cipher.card.code)">
+                               (click)="copy(cipher.card.code, 'Security Code')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -180,7 +180,8 @@
                                [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                         </a>
                         <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                           *ngIf="field.value && field.type !== fieldType.Boolean" (click)="copy(field.value)">
+                           *ngIf="field.value && field.type !== fieldType.Boolean"
+                           (click)="copy(field.value, 'Field')">
                             <i class="fa fa-lg fa-clipboard"></i>
                         </a>
                     </div>
