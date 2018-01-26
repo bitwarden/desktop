@@ -259,5 +259,29 @@
   },
   "edit": {
     "message": "Edit"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Authenticator Key (TOTP)"
+  },
+  "folder": {
+    "message": "Folder"
+  },
+  "newCustomField": {
+    "message": "New Custom Field"
+  },
+  "value": {
+    "message": "Value"
+  },
+  "cfTypeText": {
+    "message": "Text"
+  },
+  "cfTypeHidden": {
+    "message": "Hidden"
+  },
+  "cfTypeBoolean": {
+    "message": "Boolean"
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

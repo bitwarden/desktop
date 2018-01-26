@@ -71,6 +71,7 @@ html, body {
     font-family: $font-family-sans-serif;
     font-size: $font-size-base;
     color: $text-color;
+    line-height: 1.42857143;
 }
 
 body {
@@ -90,6 +91,21 @@ a {
 
 .monospaced {
     font-family: $font-family-monospace;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}
+
+input, select, textarea, button {
+    font-size: $font-size-base;
 }
 
 #vault {
@@ -619,6 +635,10 @@ a {
         margin-top: 10px;
     }
 
+    &:last-child {
+        margin-bottom: 30px;
+    }
+
     .box-header {
         margin: 0 10px 5px 10px;
         color: $gray-light;
@@ -680,20 +700,48 @@ a {
                 text-overflow: ellipsis;
             }
 
+            &.box-content-row-cf {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                > a {
+                    padding: 8px 10px 8px 5px;
+                    color: $brand-danger;
+                }
+
+                > div {
+                    width: 100%;
+                }
+            }
+
             .row-label, label {
                 font-size: $font-size-small;
                 color: $text-muted;
                 display: block;
                 width: 100%;
-                font-weight: normal;
                 margin-bottom: 5px;
+            }
+
+            &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
+                label, .row-label {
+                    font-size: $font-size-base;
+                    color: $text-color;
+                    display: inline;
+                    width: initial;
+                    margin-bottom: 0;
+                    float: left;
+                }
+
+                input.row-label {
+                    width: calc(100% - 40px);
+                }
             }
 
             input:not([type="checkbox"]), select, textarea {
                 border: none;
                 width: 100%;
                 background-color: transparent;
-                font-size: $font-size-base;
 
                 &::-webkit-input-placeholder {
                     color: lighten($gray-light, 35%);
@@ -736,6 +784,11 @@ a {
                         padding-right: 2px !important;
                     }
                 }
+            }
+
+            select.field-type {
+                margin: 5px 0 0 25px;
+                width: calc(100% - 25px);
             }
 
             .right-icon {

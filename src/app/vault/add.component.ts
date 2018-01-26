@@ -16,6 +16,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 
 import { CardView } from 'jslib/models/view/cardView';
 import { CipherView } from 'jslib/models/view/cipherView';
+import { FieldView } from 'jslib/models/view/fieldView';
 import { FolderView } from 'jslib/models/view/folderView';
 import { IdentityView } from 'jslib/models/view/identityView';
 import { LoginView } from 'jslib/models/view/loginView';
@@ -31,10 +32,12 @@ export class AddComponent implements OnChanges {
     folders: FolderView[];
     cipherType = CipherType;
     fieldType = FieldType;
+    addFieldType: FieldType = FieldType.Text;
     typeOptions: any[];
     cardBrandOptions: any[];
     cardExpMonthOptions: any[];
     identityTitleOptions: any[];
+    addFieldTypeOptions: any[];
 
     constructor(private cipherService: CipherService, private folderService: FolderService,
         private i18nService: I18nService) {
@@ -78,6 +81,11 @@ export class AddComponent implements OnChanges {
             { name: i18nService.t('ms'), value: i18nService.t('ms') },
             { name: i18nService.t('dr'), value: i18nService.t('dr') },
         ];
+        this.addFieldTypeOptions = [
+            { name: i18nService.t('cfTypeText'), value: FieldType.Text },
+            { name: i18nService.t('cfTypeHidden'), value: FieldType.Hidden },
+            { name: i18nService.t('cfTypeBoolean'), value: FieldType.Boolean },
+        ];
     }
 
     async ngOnChanges() {
@@ -92,4 +100,21 @@ export class AddComponent implements OnChanges {
 
         this.folders = await this.folderService.getAllDecrypted();
     }
+
+    addField() {
+        if (this.cipher.fields == null) {
+            this.cipher.fields = [];
+        }
+
+        const f = new FieldView();
+        f.type = this.addFieldType;
+        this.cipher.fields.push(f);
+    };
+
+    removeField(field: FieldView) {
+        const i = this.cipher.fields.indexOf(field);
+        if (i > -1) {
+            this.cipher.fields.splice(i, 1);
+        }
+    };
 }

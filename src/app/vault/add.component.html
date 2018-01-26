@@ -160,6 +160,70 @@
                 </div>
             </div>
         </div>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row" *ngIf="cipher.type === cipherType.Login">
+                    <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
+                    <input id="loginTotp" type="text" name="Login.Totp" [(ngModel)]="cipher.login.totp">
+                </div>
+                <div class="box-content-row">
+                    <label for="folder">{{'folder' | i18n}}</label>
+                    <select id="folder" name="FolderId" [(ngModel)]="cipher.folderId">
+                        <option *ngFor="let f of folders" [ngValue]="f.id">{{f.name}}</option>
+                    </select>
+                </div>
+                <div class="box-content-row box-content-row-checkbox">
+                    <label for="favorite">{{'favorite' | i18n}}</label>
+                    <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <label for="notes">{{'notes' | i18n}}</label>
+            </div>
+            <div class="box-content">
+                <div class="box-content-row">
+                    <textarea id="notes" name="Notes" rows="12" [(ngModel)]="cipher.notes"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                {{'customFields' | i18n}}
+            </div>
+            <div class="box-content">
+                <div *ngIf="cipher.hasFields">
+                    <div class="box-content-row box-content-row-cf" *ngFor="let f of cipher.fields; let i = index"
+                         [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
+                        <a href="#" appStopClick (click)="removeField(f)" title="{{'remove' | i18n}}">
+                            <i class="fa fa-close fa-lg"></i>
+                        </a>
+                        <div>
+                            <label for="fieldName{{i}}" class="sr-only">{{'name' | i18n}}</label>
+                            <input id="fieldName{{i}}" type="text" name="Field.Name{{i}}" [(ngModel)]="f.name"
+                                   class="row-label" placeholder="{{'name' | i18n}}">
+                            <label for="fieldValue{{i}}" class="sr-only">{{'value' | i18n}}</label>
+                            <input id="fieldValue{{i}}" type="text" name="Field.Value{{i}}" [(ngModel)]="f.value"
+                                   *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
+                            <input id="fieldValue{{i}}" type="password" name="Field.Value{{i}}" [(ngModel)]="f.value"
+                                   *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
+                            <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox"
+                                   [(ngModel)]="f.value" *ngIf="f.type === fieldType.Boolean">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-content-row">
+                    <a href="#" appStopClick (click)="addField()">
+                        <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newCustomField' | i18n}}
+                    </a>
+                    <label for="addFieldType" class="sr-only">{{'type' | i18n}}</label>
+                    <select id="addFieldType" [(ngModel)]="addFieldType" class="field-type">
+                        <option *ngFor="let o of addFieldTypeOptions" [ngValue]="o.value">{{o.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="footer">
