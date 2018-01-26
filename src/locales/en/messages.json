@@ -283,5 +283,8 @@
   },
   "remove": {
     "message": "Remove"
+  },
+  "nameRequired": {
+    "message": "Name is required."
   }
 }

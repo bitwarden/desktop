@@ -13,6 +13,7 @@ import { SecureNoteType } from 'jslib/enums/secureNoteType';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { CardView } from 'jslib/models/view/cardView';
 import { CipherView } from 'jslib/models/view/cipherView';
@@ -40,7 +41,7 @@ export class AddComponent implements OnChanges {
     addFieldTypeOptions: any[];
 
     constructor(private cipherService: CipherService, private folderService: FolderService,
-        private i18nService: I18nService) {
+        private i18nService: I18nService, private platformUtilsService: PlatformUtilsService) {
         this.typeOptions = [
             { name: i18nService.t('typeLogin'), value: CipherType.Login },
             { name: i18nService.t('typeCard'), value: CipherType.Card },
@@ -100,6 +101,19 @@ export class AddComponent implements OnChanges {
 
         this.folders = await this.folderService.getAllDecrypted();
     }
+
+    async save() {
+        if (this.cipher.name == null || this.cipher.name === '') {
+            this.platformUtilsService.alertError(this.i18nService.t('errorOccurred'),
+                this.i18nService.t('nameRequired'));
+            return;
+        }
+
+        const cipher = await this.cipherService.encrypt(this.cipher);
+        await this.cipherService.saveWithServer(cipher);
+        //$analytics.eventTrack('Added Cipher');
+        // TODO: success message
+    };
 
     addField() {
         if (this.cipher.fields == null) {
