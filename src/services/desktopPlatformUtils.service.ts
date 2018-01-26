@@ -120,4 +120,8 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
             message: message,
         });
     }
+
+    getApplicationVersion(): string {
+        return (window as any).require('electron').remote.app.getVersion();
+    }
 }

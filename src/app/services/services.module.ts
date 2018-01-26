@@ -11,6 +11,8 @@ import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { DesktopSecureStorageService } from '../../services/desktopSecureStorage.service';
 import { I18nService } from '../../services/i18n.service';
 
+import { Analytics } from 'jslib/misc/analytics';
+
 import {
     ApiService,
     AppIdService,
@@ -90,6 +92,7 @@ const authService: AuthServiceAbstraction = new AuthService(cryptoService, apiSe
     userService, tokenService, appIdService, platformUtilsService, constantsService,
     messagingService);
 
+const analytics = new Analytics(window, null, platformUtilsService, storageService, appIdService);
 containerService.attachToWindow(window);
 environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);

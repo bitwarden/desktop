@@ -1,6 +1,8 @@
 import 'core-js';
 import 'zone.js/dist/zone';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -27,6 +29,11 @@ import { ViewComponent } from './vault/view.component';
         FormsModule,
         AppRoutingModule,
         ServicesModule,
+        Angulartics2Module.forRoot([Angulartics2GoogleAnalytics], {
+            pageTracking: {
+                clearQueryParams: true,
+            },
+        }),
     ],
     declarations: [
         AddComponent,
