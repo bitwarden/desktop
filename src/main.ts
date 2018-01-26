@@ -26,10 +26,6 @@ ipcMain.on('keytar', async (event: any, message: any) => {
 });
 */
 
-ipcMain.on('showError', async (event: any, message: any) => {
-    dialog.showErrorBox(message.title, message.message);
-});
-
 import { I18nService } from './services/i18n.service';
 const i18nService = new I18nService('en', './locales/');
 i18nService.init().then(() => { });

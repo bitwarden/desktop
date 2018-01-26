@@ -114,13 +114,6 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
         window.document.body.removeChild(a);
     }
 
-    alertError(title: string, message: string): void {
-        ipcRenderer.send('showError', {
-            title: title || this.i18nService.t('error'),
-            message: message,
-        });
-    }
-
     getApplicationVersion(): string {
         return (window as any).require('electron').remote.app.getVersion();
     }

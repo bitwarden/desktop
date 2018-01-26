@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 
 import { Angulartics2 } from 'angulartics2';
+import { ToasterService } from 'angular2-toaster';
 
 import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';
@@ -48,7 +49,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
     constructor(private cipherService: CipherService, private totpService: TotpService,
         private tokenService: TokenService, private utilsService: UtilsService,
         private cryptoService: CryptoService, private platformUtilsService: PlatformUtilsService,
-        private i18nService: I18nService, private analytics: Angulartics2) {
+        private i18nService: I18nService, private analytics: Angulartics2, private toasterService: ToasterService) {
     }
 
     async ngOnChanges() {
@@ -113,7 +114,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
         }
 
         if (this.cipher.organizationId == null && !this.isPremium) {
-            this.platformUtilsService.alertError(this.i18nService.t('premiumRequired'),
+            this.toasterService.popAsync('error', this.i18nService.t('premiumRequired'),
                 this.i18nService.t('premiumRequiredDesc'));
             return;
         }
@@ -121,7 +122,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
         a.downloading = true;
         const response = await fetch(new Request(attachment.url, { cache: 'no-cache' }));
         if (response.status !== 200) {
-            this.platformUtilsService.alertError(null, this.i18nService.t('errorOccurred'));
+            this.toasterService.popAsync('error', null, this.i18nService.t('errorOccurred'));
             a.downloading = false;
             return;
         }
@@ -132,7 +133,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
             const decBuf = await this.cryptoService.decryptFromBytes(buf, key);
             this.platformUtilsService.saveFile(window, decBuf, null, attachment.fileName);
         } catch (e) {
-            this.platformUtilsService.alertError(null, this.i18nService.t('errorOccurred'));
+            this.toasterService.popAsync('error', null, this.i18nService.t('errorOccurred'));
         }
 
         a.downloading = false;
