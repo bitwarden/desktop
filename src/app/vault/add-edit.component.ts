@@ -152,7 +152,7 @@ export class AddEditComponent implements OnChanges {
         if (i > -1) {
             this.cipher.fields.splice(i, 1);
         }
-    };
+    }
 
     cancel() {
         this.onCancelled.emit(this.cipher);

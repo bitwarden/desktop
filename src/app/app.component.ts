@@ -19,5 +19,6 @@ export class AppComponent {
     });
 
     constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {
+        // ctor
     }
 }
