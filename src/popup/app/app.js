@@ -18,9 +18,6 @@ require('../../scripts/duo.js');
 require('../less/libs.less');
 require('../less/popup.less');
 
-import Analytics from '../../scripts/analytics';
-new Analytics(window);
-
 import DirectivesModule from './directives/directives.module';
 import ComponentsModule from './components/components.module';
 import ToolsModule from './tools/tools.module';
@@ -34,6 +31,15 @@ import { BrowserApi } from '../../browser/browserApi';
 window.BrowserApi = BrowserApi;
 import { U2f } from '../../scripts/u2f';
 window.U2f = U2f;
+
+import { Analytics } from '../../../node_modules/@bitwarden/jslib/src/misc/analytics';
+new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
+    const bgPage = BrowserApi.getBackgroundPage();
+    if (!bgPage || !bgPage.bitwardenMain) {
+        throw 'Cannot resolve background page main.';
+    }
+    return bgPage.bitwardenMain;
+});
 
 // Model imports
 import { Attachment } from '../../../node_modules/@bitwarden/jslib/src/models/domain/attachment';

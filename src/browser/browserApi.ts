@@ -249,4 +249,8 @@ export class BrowserApi {
             safariTab: tab,
         };
     }
+
+    static gaFilter() {
+        return BrowserApi.isSafariApi && safari.application.activeBrowserWindow.activeTab.private;
+    }
 }

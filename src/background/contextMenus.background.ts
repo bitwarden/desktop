@@ -1,7 +1,8 @@
 import { BrowserApi } from '../browser/browserApi';
 
-import Analytics from '../scripts/analytics';
 import MainBackground from './main.background';
+
+import { Analytics } from 'jslib/misc';
 
 import {
     CipherService,

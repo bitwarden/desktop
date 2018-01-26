@@ -6,6 +6,8 @@ import { LoginView } from 'jslib/models/view/loginView';
 import { ConstantsService } from 'jslib/services/constants.service';
 import { UtilsService } from 'jslib/services/utils.service';
 
+import { Analytics } from 'jslib/misc';
+
 import {
     CipherService,
     PlatformUtilsService,
@@ -14,7 +16,6 @@ import {
 
 import { BrowserApi } from '../browser/browserApi';
 
-import Analytics from '../scripts/analytics';
 import MainBackground from './main.background';
 
 import { AutofillService } from '../services/abstractions/autofill.service';

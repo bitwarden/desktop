@@ -41,7 +41,7 @@ import {
     UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 
-import Analytics from '../scripts/analytics';
+import { Analytics } from 'jslib/misc';
 
 import { BrowserApi } from '../browser/browserApi';
 
@@ -140,7 +140,8 @@ export default class MainBackground {
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
             this.totpService, this.utilsService, this.platformUtilsService);
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
-        this.analytics = new Analytics(window, this.platformUtilsService, this.storageService, this.appIdService);
+        this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
+            this.storageService, this.appIdService);
 
         // Other fields
         this.isSafari = this.platformUtilsService.isSafari();

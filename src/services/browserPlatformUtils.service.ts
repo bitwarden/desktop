@@ -152,6 +152,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         // TODO
     }
 
+    getApplicationVersion(): string {
+        return BrowserApi.getApplicationVersion();
+    }
+
     private sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';
