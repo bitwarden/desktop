@@ -9,6 +9,8 @@ import {
     Output,
 } from '@angular/core';
 
+import { Angulartics2 } from 'angulartics2';
+
 import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';
 
@@ -41,12 +43,12 @@ export class ViewComponent implements OnChanges, OnDestroy {
     totpLow: boolean;
     fieldType = FieldType;
 
-    private totpInterval: NodeJS.Timer;
+    private totpInterval: any;
 
     constructor(private cipherService: CipherService, private totpService: TotpService,
         private tokenService: TokenService, private utilsService: UtilsService,
         private cryptoService: CryptoService, private platformUtilsService: PlatformUtilsService,
-        private i18nService: I18nService) {
+        private i18nService: I18nService, private analytics: Angulartics2) {
     }
 
     async ngOnChanges() {
@@ -77,6 +79,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
     }
 
     togglePassword() {
+        this.analytics.eventTrack.next({ action: 'Toggled Password' });
         this.showPassword = !this.showPassword;
     }
 
@@ -86,18 +89,20 @@ export class ViewComponent implements OnChanges, OnDestroy {
     }
 
     launch() {
-        if (this.cipher.login.uri == null || this.cipher.login.uri.indexOf('://') === -1) {
+        if (!this.cipher.login.canLaunch) {
             return;
         }
 
+        this.analytics.eventTrack.next({ action: 'Launched Login URI' });
         this.platformUtilsService.launchUri(this.cipher.login.uri);
     }
 
-    copy(value: string) {
+    copy(value: string, aType: string) {
         if (value == null) {
             return;
         }
 
+        this.analytics.eventTrack.next({ action: 'Copied ' + aType });
         this.utilsService.copyToClipboard(value, window.document);
     }
 
@@ -107,7 +112,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
             return;
         }
 
-        if (!this.cipher.organizationId && !this.isPremium) {
+        if (this.cipher.organizationId == null && !this.isPremium) {
             this.platformUtilsService.alertError(this.i18nService.t('premiumRequired'),
                 this.i18nService.t('premiumRequiredDesc'));
             return;
