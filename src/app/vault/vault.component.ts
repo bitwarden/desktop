@@ -14,6 +14,7 @@ import {
 import { Location } from '@angular/common';
 
 import { CiphersComponent } from './ciphers.component';
+import { GroupingsComponent } from './groupings.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
@@ -27,6 +28,7 @@ import { FolderView } from 'jslib/models/view/folderView';
 })
 export class VaultComponent implements OnInit {
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
+    @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
 
     action: string;
     cipherId: string = null;
@@ -53,14 +55,21 @@ export class VaultComponent implements OnInit {
             }
 
             if (params['favorites']) {
+                this.groupingsComponent.selectedFavorites = true;
                 await this.filterFavorites();
             } else if (params['type']) {
-                await this.filterCipherType(parseInt(params['type']));
+                const t = parseInt(params['type']);
+                this.groupingsComponent.selectedType = t;
+                await this.filterCipherType(t);
             } else if (params['folderId']) {
+                this.groupingsComponent.selectedFolder = true;
+                this.groupingsComponent.selectedFolderId = params['folderId'];
                 await this.filterFolder(params['folderId']);
             } else if (params['collectionId']) {
+                this.groupingsComponent.selectedCollectionId = params['collectionId'];
                 await this.filterCollection(params['collectionId']);
             } else {
+                this.groupingsComponent.selectedAll = true;
                 await this.ciphersComponent.load();
             }
         });
@@ -73,7 +82,7 @@ export class VaultComponent implements OnInit {
 
         this.cipherId = cipher.id;
         this.action = 'view';
-        this.go({ action: this.action, cipherId: this.cipherId });
+        this.go();
     }
 
     editCipher(cipher: CipherView) {
@@ -83,7 +92,7 @@ export class VaultComponent implements OnInit {
 
         this.cipherId = cipher.id;
         this.action = 'edit';
-        this.go({ action: this.action, cipherId: this.cipherId });
+        this.go();
     }
 
     addCipher() {
@@ -93,20 +102,20 @@ export class VaultComponent implements OnInit {
 
         this.action = 'add';
         this.cipherId = null;
-        this.go({ action: this.action, cipherId: this.cipherId });
+        this.go();
     }
 
     savedCipher(cipher: CipherView) {
         this.cipherId = cipher.id;
         this.action = 'view';
-        this.go({ action: this.action, cipherId: this.cipherId });
+        this.go();
         this.ciphersComponent.updateCipher(cipher);
     }
 
     deletedCipher(cipher: CipherView) {
         this.cipherId = null;
         this.action = null;
-        this.go({ action: this.action, cipherId: this.cipherId });
+        this.go();
         this.ciphersComponent.removeCipher(cipher.id);
     }
 
@@ -117,7 +126,7 @@ export class VaultComponent implements OnInit {
     cancelledAddEdit(cipher: CipherView) {
         this.cipherId = cipher.id;
         this.action = this.cipherId != null ? 'view' : null;
-        this.go({ action: this.action, cipherId: this.cipherId });
+        this.go();
     }
 
     async clearGroupingFilters() {

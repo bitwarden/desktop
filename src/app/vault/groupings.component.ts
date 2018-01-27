@@ -30,6 +30,12 @@ export class GroupingsComponent implements OnInit {
     folders: any[];
     collections: any[];
     cipherType = CipherType;
+    selectedAll: boolean = false;
+    selectedFavorites: boolean = false;
+    selectedType: CipherType = null;
+    selectedFolder: boolean = false;
+    selectedFolderId: string = null;
+    selectedCollectionId: string = null;
 
     constructor(private collectionService: CollectionService, private folderService: FolderService) {
         // ctor
@@ -41,22 +47,42 @@ export class GroupingsComponent implements OnInit {
     }
 
     all() {
+        this.clearSelections();
+        this.selectedAll = true;
         this.onAllClicked.emit();
     }
 
     favorites() {
+        this.clearSelections();
+        this.selectedFavorites = true;
         this.onFavoritesClicked.emit();
     }
 
     type(type: CipherType) {
+        this.clearSelections();
+        this.selectedType = type;
         this.onCipherTypeClicked.emit(type);
     }
 
     folder(folder: FolderView) {
+        this.clearSelections();
+        this.selectedFolder = true;
+        this.selectedFolderId = folder.id;
         this.onFolderClicked.emit(folder);
     }
 
     collection(collection: CollectionView) {
+        this.clearSelections();
+        this.selectedCollectionId = collection.id;
         this.onCollectionClicked.emit(collection);
+    }
+
+    clearSelections() {
+        this.selectedAll = false;
+        this.selectedFavorites = false;
+        this.selectedType = null;
+        this.selectedFolder = false;
+        this.selectedFolderId = null;
+        this.selectedCollectionId = null;
     }
 }

@@ -128,6 +128,15 @@ textarea {
                     padding: 5px 0;
                     color: $text-color;
                 }
+
+                &.active {
+                    background-color: darken($background-color-alt, 5%);
+                    border-radius: $border-radius;
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
             }
         }
     }
