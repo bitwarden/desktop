@@ -21,16 +21,28 @@ export class CiphersComponent implements OnInit {
     @Output() onAddCipher = new EventEmitter();
 
     ciphers: CipherView[] = [];
+    private filter: (cipher: CipherView) => boolean = null;
 
     constructor(private cipherService: CipherService) {
     }
 
     async ngOnInit() {
-        await this.loadCiphers();
+        await this.load();
+    }
+
+    async load(filter: (cipher: CipherView) => boolean = null) {
+        this.filter = filter;
+        let ciphers = await this.cipherService.getAllDecrypted();
+
+        if (this.filter == null) {
+            this.ciphers = ciphers;
+        } else {
+            this.ciphers = ciphers.filter(this.filter);
+        }
     }
 
     async refresh() {
-        await this.loadCiphers();
+        await this.load(this.filter);
     }
 
     updateCipher(cipher: CipherView) {
@@ -53,9 +65,5 @@ export class CiphersComponent implements OnInit {
 
     addCipher() {
         this.onAddCipher.emit();
-    }
-
-    private async loadCiphers() {
-        this.ciphers = await this.cipherService.getAllDecrypted();
     }
 }

@@ -15,7 +15,11 @@ import { Location } from '@angular/common';
 
 import { CiphersComponent } from './ciphers.component';
 
+import { CipherType } from 'jslib/enums/cipherType';
+
 import { CipherView } from 'jslib/models/view/cipherView';
+import { CollectionView } from 'jslib/models/view/collectionView';
+import { FolderView } from 'jslib/models/view/folderView';
 
 @Component({
     selector: 'app-vault',
@@ -98,6 +102,26 @@ export class VaultComponent implements OnInit {
         this.cipherId = cipher.id;
         this.action = this.cipherId != null ? 'view' : null;
         this.go({ action: this.action, cipherId: this.cipherId });
+    }
+
+    async clearGroupingFilters() {
+        await this.ciphersComponent.load();
+    }
+
+    async filterFavorites() {
+        await this.ciphersComponent.load((c) => c.favorite);
+    }
+
+    async filterCipherType(type: CipherType) {
+        await this.ciphersComponent.load((c) => c.type === type);
+    }
+
+    async filterFolder(folder: FolderView) {
+        await this.ciphersComponent.load((c) => c.folderId === folder.id);
+    }
+
+    async filterCollection(collection: CollectionView) {
+        await this.ciphersComponent.load((c) => c.collectionIds.indexOf(collection.id) > -1);
     }
 
     private go(queryParams: any) {

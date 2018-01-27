@@ -1,27 +1,61 @@
 <div class="content">
     <div class="inner-content">
         <ul>
-            <li><a href="#"><i class="fa fa-fw fa-spinner"></i> {{'allItems' | i18n}}</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-star"></i> {{'favorites' | i18n}}</a></li>
+            <li>
+                <a href="#" appStopClick (click)="all()">
+                    <i class="fa fa-fw fa-spinner"></i> {{'allItems' | i18n}}
+                </a>
+            </li>
+            <li>
+                <a href="#" appStopClick (click)="favorites()">
+                    <i class="fa fa-fw fa-star"></i> {{'favorites' | i18n}}
+                </a>
+            </li>
         </ul>
         <h2><i class="fa fa-tag"></i> {{'types' | i18n}}</h2>
         <ul>
-            <li><a href="#"><i class="fa fa-fw fa-globe"></i> {{'typeLogin' | i18n}}</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-credit-card"></i> {{'typeCard' | i18n}}</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-id-card-o"></i> {{'typeIdentity' | i18n}}</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-sticky-note-o"></i> {{'typeSecureNote' | i18n}}</a></li>
+            <li>
+                <a href="#" appStopClick (click)="type(cipherType.Login)">
+                    <i class="fa fa-fw fa-globe"></i>
+                    {{'typeLogin' | i18n}}
+                </a>
+            </li>
+            <li>
+                <a href="#" appStopClick (click)="type(cipherType.Card)">
+                    <i class="fa fa-fw fa-credit-card"></i>
+                    {{'typeCard' | i18n}}
+                </a>
+            </li>
+            <li>
+                <a href="#" appStopClick (click)="type(cipherType.Identity)">
+                    <i class="fa fa-fw fa-id-card-o"></i>
+                    {{'typeIdentity' | i18n}}
+                </a>
+            </li>
+            <li>
+                <a href="#" appStopClick (click)="type(cipherType.SecureNote)">
+                    <i class="fa fa-fw fa-sticky-note-o"></i>
+                    {{'typeSecureNote' | i18n}}
+                </a>
+            </li>
         </ul>
         <h2><i class="fa fa-folder"></i> {{'folders' | i18n}}</h2>
         <ul class="fa-ul">
-            <li *ngFor="let folder of folders">
-                <a href="#"><i class="fa-li fa fa-caret-right"></i> {{folder.name}}</a>
+            <li *ngFor="let f of folders">
+                <a href="#" appStopClick (click)="folder(f)">
+                    <i class="fa-li fa fa-caret-right"></i> {{f.name}}
+                </a>
             </li>
         </ul>
-        <h2><i class="fa fa-cubes"></i> {{'collections' | i18n}}</h2>
-        <ul class="fa-ul">
-            <li *ngFor="let collection of collections">
-                <a href="#"><i class="fa-li fa fa-caret-right"></i> {{collection.name}}</a>
-            </li>
-        </ul>
+        <div *ngIf="collections && collections.length">
+            <h2><i class="fa fa-cubes"></i> {{'collections' | i18n}}</h2>
+            <ul class="fa-ul">
+                <li *ngFor="let c of collections">
+                    <a href="#" appStopClick (click)="collection(c)">
+                        <i class="fa-li fa fa-caret-right"></i> {{c.name}}
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

@@ -1,5 +1,10 @@
 <div id="vault">
-    <app-vault-groupings id="groupings">
+    <app-vault-groupings id="groupings"
+                         (onAllClicked)="clearGroupingFilters()"
+                         (onFavoritesClicked)="filterFavorites()"
+                         (onCipherTypeClicked)="filterCipherType($event)"
+                         (onFolderClicked)="filterFolder($event)"
+                         (onCollectionClicked)="filterCollection($event)">
     </app-vault-groupings>
     <app-vault-ciphers id="items"
                        (onCipherClicked)="viewCipher($event)"
