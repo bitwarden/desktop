@@ -302,5 +302,14 @@
   "noneFolder": {
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "Add Folder"
+  },
+  "editFolder": {
+    "message": "Edit Folder"
+  },
+  "deleteFolder": {
+    "message": "Delete Folder"
   }
 }

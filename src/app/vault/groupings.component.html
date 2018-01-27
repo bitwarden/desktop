@@ -2,56 +2,60 @@
     <div class="inner-content">
         <ul>
             <li [ngClass]="{active: selectedAll}">
-                <a href="#" appStopClick (click)="all()">
-                    <i class="fa fa-fw fa-spinner"></i> {{'allItems' | i18n}}
+                <a href="#" appStopClick appBlurClick (click)="all()">
+                    <i class="fa fa-fw fa-spinner"></i>&nbsp;{{'allItems' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedFavorites}">
-                <a href="#" appStopClick (click)="favorites()">
-                    <i class="fa fa-fw fa-star"></i> {{'favorites' | i18n}}
+                <a href="#" appStopClick appBlurClick (click)="favorites()">
+                    <i class="fa fa-fw fa-star"></i>&nbsp;{{'favorites' | i18n}}
                 </a>
             </li>
         </ul>
-        <h2><i class="fa fa-tag"></i> {{'types' | i18n}}</h2>
+        <h2>{{'types' | i18n}}</h2>
         <ul>
             <li [ngClass]="{active: selectedType === cipherType.Login}">
-                <a href="#" appStopClick (click)="type(cipherType.Login)">
-                    <i class="fa fa-fw fa-globe"></i>
-                    {{'typeLogin' | i18n}}
+                <a href="#" appStopClick appBlurClick (click)="type(cipherType.Login)">
+                    <i class="fa fa-fw fa-globe"></i>&nbsp;{{'typeLogin' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.Card}">
-                <a href="#" appStopClick (click)="type(cipherType.Card)">
-                    <i class="fa fa-fw fa-credit-card"></i>
-                    {{'typeCard' | i18n}}
+                <a href="#" appStopClick appBlurClick (click)="type(cipherType.Card)">
+                    <i class="fa fa-fw fa-credit-card"></i>&nbsp;{{'typeCard' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.Identity}">
-                <a href="#" appStopClick (click)="type(cipherType.Identity)">
-                    <i class="fa fa-fw fa-id-card-o"></i>
-                    {{'typeIdentity' | i18n}}
+                <a href="#" appStopClick appBlurClick (click)="type(cipherType.Identity)">
+                    <i class="fa fa-fw fa-id-card-o"></i>&nbsp;{{'typeIdentity' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.SecureNote}">
-                <a href="#" appStopClick (click)="type(cipherType.SecureNote)">
-                    <i class="fa fa-fw fa-sticky-note-o"></i>
-                    {{'typeSecureNote' | i18n}}
+                <a href="#" appStopClick appBlurClick (click)="type(cipherType.SecureNote)">
+                    <i class="fa fa-fw fa-sticky-note-o"></i>&nbsp;{{'typeSecureNote' | i18n}}
                 </a>
             </li>
         </ul>
-        <h2><i class="fa fa-folder"></i> {{'folders' | i18n}}</h2>
+        <h2>
+            {{'folders' | i18n}}
+            <button appBlurClick (click)="addFolder()" title="{{'addFolder' | i18n}}">
+                <i class="fa fa-plus fa-fw"></i>
+            </button>
+        </h2>
         <ul class="fa-ul">
             <li *ngFor="let f of folders" [ngClass]="{active: selectedFolder && f.id === selectedFolderId}">
-                <a href="#" appStopClick (click)="folder(f)">
+                <a href="#" appStopClick appBlurClick (click)="folder(f)">
                     <i class="fa-li fa fa-caret-right"></i> {{f.name}}
+                    <span appStopProp (click)="editFolder(f)" title="{{'editFolder' | i18n}}">
+                        <i class="fa fa-pencil fa-fw"></i>
+                    </span>
                 </a>
             </li>
         </ul>
         <div *ngIf="collections && collections.length">
-            <h2><i class="fa fa-cubes"></i> {{'collections' | i18n}}</h2>
+            <h2>{{'collections' | i18n}}</h2>
             <ul class="fa-ul">
                 <li *ngFor="let c of collections" [ngClass]="{active: c.id === selectedCollectionId}">
-                    <a href="#" appStopClick (click)="collection(c)">
+                    <a href="#" appStopClick appBlurClick (click)="collection(c)">
                         <i class="fa-li fa fa-caret-right"></i> {{c.name}}
                     </a>
                 </li>

@@ -36,6 +36,10 @@ input, select, textarea, button {
     font-family: $font-family-sans-serif;
 }
 
+button {
+    padding: 0;
+}
+
 textarea {
     resize: vertical;
 }

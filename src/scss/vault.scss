@@ -12,9 +12,24 @@
         border-right: 1px solid $border-color-dark;
 
         h2 {
+            color: $gray-light;
+            text-transform: uppercase;
             font-size: $font-size-base;
-            font-weight: bold;
+            font-weight: normal;
             margin-bottom: 5px;
+            display: flex;
+
+            button {
+                margin-left: auto;
+                background: none;
+                border: none;
+                color: lighten($gray-light, 30%);
+
+                &:hover, &:focus {
+                    color: $gray-light;
+                    cursor: pointer;
+                }
+            }
         }
 
         ul:not(.fa-ul) {
@@ -48,9 +63,26 @@
 
             li {
                 a {
-                    display: block;
                     padding: 5px 0;
                     color: $text-color;
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        visibility: hidden;
+                        margin-left: auto;
+                        color: lighten($gray-light, 30%);
+
+                        &:hover {
+                            color: $text-muted;
+                        }
+                    }
+
+                    &:hover, &:focus {
+                        span {
+                            visibility: visible;
+                        }
+                    }
                 }
 
                 &.active {

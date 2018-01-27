@@ -48,6 +48,7 @@ import { ViewComponent } from './vault/view.component';
         IconComponent,
         LoginComponent,
         StopClickDirective,
+        StopPropDirective,
         VaultComponent,
         ViewComponent,
     ],
