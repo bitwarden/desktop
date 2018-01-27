@@ -4,7 +4,7 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <a href="" title="{{'addItem' | i18n}}" appStopClick (click)="addCipher()">
+        <a href="" title="{{'addItem' | i18n}}" appBlurClick appStopClick (click)="addCipher()">
             <i class="fa fa-plus fa-lg"></i>
         </a>
     </div>
@@ -12,21 +12,21 @@
 <div class="content">
     <div class="list">
         <a *ngFor="let cipher of ciphers" appStopClick (click)="cipherClicked(cipher)"
-            href="#" title="{{'viewItem' | i18n}}">
+           href="#" title="{{'viewItem' | i18n}}">
             <app-vault-icon [cipher]="cipher"></app-vault-icon>
             <span class="text">
                 {{cipher.name}}
                 <i class="fa fa-share-alt text-muted" *ngIf="cipher.organizationId"
-                    title="{{'shared' | i18n}}"></i>
+                   title="{{'shared' | i18n}}"></i>
                 <i class="fa fa-paperclip text-muted" *ngIf="cipher.attachments"
-                    title="{{'attachments' | i18n}}"></i>
+                   title="{{'attachments' | i18n}}"></i>
             </span>
             <span class="detail">{{cipher.subTitle}}</span>
         </a>
     </div>
 </div>
 <div class="footer">
-    <button (click)="addCipher()" class="block primary" title="{{'addItem' | i18n}}">
+    <button appBlurClick (click)="addCipher()" class="block primary" title="{{'addItem' | i18n}}">
         <i class="fa fa-plus fa-lg"></i>
     </button>
 </div>

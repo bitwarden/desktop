@@ -12,6 +12,7 @@ import { ToasterModule } from 'angular2-toaster';
 
 import { AddEditComponent } from './vault/add-edit.component';
 import { AppComponent } from './app.component';
+import { BlurClickDirective } from './directives/blur-click.directive';
 import { CiphersComponent } from './vault/ciphers.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
 import { GroupingsComponent } from './vault/groupings.component';
@@ -39,6 +40,7 @@ import { ViewComponent } from './vault/view.component';
     declarations: [
         AddEditComponent,
         AppComponent,
+        BlurClickDirective,
         CiphersComponent,
         FallbackSrcDirective,
         GroupingsComponent,

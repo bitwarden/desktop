@@ -231,13 +231,13 @@
     </div>
 </div>
 <div class="footer">
-    <button (click)="save()" class="primary" title="{{'save' | i18n}}">
+    <button appBlurClick (click)="save()" class="primary" title="{{'save' | i18n}}">
         <i class="fa fa-save fa-lg"></i> {{'save' | i18n}}
     </button>
-    <button (click)="cancel()" title="{{'cancel' | i18n}}">
+    <button appBlurClick (click)="cancel()" title="{{'cancel' | i18n}}">
         {{'cancel' | i18n}}
     </button>
-    <button (click)="delete()" class="danger right" title="{{'delete' | i18n}}" *ngIf="editMode">
+    <button appBlurClick (click)="delete()" class="danger right" title="{{'delete' | i18n}}" *ngIf="editMode">
         <i class="fa fa-trash-o fa-lg"></i>
     </button>
 </div>

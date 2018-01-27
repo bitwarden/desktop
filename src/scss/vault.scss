@@ -95,6 +95,7 @@
         text-align: center;
         overflow: hidden;
         flex: 0 0 auto;
+        border-bottom: 1px solid darken($brand-primary, 7%);
 
         a, button {
             color: white !important;
@@ -231,9 +232,16 @@
             font-size: $font-size-base;
             color: $button-color;
 
-            &:hover {
+            &:hover, &:focus {
                 cursor: pointer;
                 background-color: darken($button-backgound-color, 1.5%);
+                border-color: darken($button-border-color, 17%);
+            }
+
+            &:focus {
+                background-color: darken($button-backgound-color, 6%);
+                border-color: darken($button-border-color, 25%);
+                outline: 0;
             }
 
             &.primary {
