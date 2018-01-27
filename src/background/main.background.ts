@@ -28,6 +28,7 @@ import {
     CryptoService as CryptoServiceAbstraction,
     EnvironmentService as EnvironmentServiceAbstraction,
     FolderService as FolderServiceAbstraction,
+    I18nService as I18nServiceAbstraction,
     LockService as LockServiceAbstraction,
     MessagingService as MessagingServiceAbstraction,
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
@@ -58,6 +59,7 @@ import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
 import i18nService from '../services/i18n.service';
+import I18n2Service from '../services/i18n2.service';
 
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
@@ -66,6 +68,7 @@ export default class MainBackground {
     storageService: StorageServiceAbstraction;
     secureStorageService: StorageServiceAbstraction;
     i18nService: any;
+    i18n2Service: I18nServiceAbstraction;
     platformUtilsService: PlatformUtilsServiceAbstraction;
     utilsService: UtilsServiceAbstraction;
     constantsService: ConstantsService;
@@ -115,6 +118,7 @@ export default class MainBackground {
         this.storageService = new BrowserStorageService(this.platformUtilsService, false);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
         this.i18nService = i18nService(this.platformUtilsService);
+        this.i18n2Service = new I18n2Service(window.navigator.language, i18nService);
         this.constantsService = new ConstantsService(this.i18nService, delayi18nLoad);
         this.cryptoService = new CryptoService(this.storageService, this.secureStorageService);
         this.tokenService = new TokenService(this.storageService);
@@ -125,10 +129,11 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService);
+            this.apiService, this.storageService, this.i18n2Service);
         this.folderService = new FolderService(this.cryptoService, this.userService,
-            () => this.i18nService.noneFolder, this.apiService, this.storageService);
-        this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService);
+            () => this.i18nService.noneFolder, this.apiService, this.storageService, this.i18n2Service);
+        this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
+            this.i18n2Service);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
             this.cryptoService, this.platformUtilsService, this.storageService,
             () => this.setIcon(), () => this.refreshBadgeAndMenu());
