@@ -115,6 +115,10 @@ textarea {
                 a {
                     padding-left: 12px;
                 }
+
+                &.active .fa-li {
+                    left: 4px;
+                }
             }
         }
 
@@ -131,7 +135,6 @@ textarea {
 
                 &.active {
                     background-color: darken($background-color-alt, 5%);
-                    border-radius: $border-radius;
                     margin-left: -15px;
                     margin-right: -15px;
                     padding-left: 15px;
