@@ -107,7 +107,11 @@
     #details {
         background-color: $background-color-alt2;
         flex: 1;
-        min-width: 400px;
+        min-width: 0;
+
+        .inner-content {
+            min-width: 400px;
+        }
     }
 
     #groupings, #items, #details {
