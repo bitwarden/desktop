@@ -340,271 +340,72 @@ textarea {
     }
 }
 
+.list > a {
+    display: block;
+    padding: 3px 10px;
+    background-color: white;
+    text-decoration: none;
+    color: $text-color;
+    position: relative;
+    z-index: 1;
 
-.list {
-    .list-grouped {
-        .list-grouped-header {
-            background-color: transparent;
-            padding: 10px 10px;
-            color: $gray-light;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-
-            small {
-                float: right;
-            }
-        }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 
-    .list-section {
-        padding-bottom: 10px;
-
-        &:first-child {
-            padding-top: 10px;
-        }
-
-        .list-section-header {
-            background-color: transparent;
-            padding: 5px 10px;
-            color: $gray-light;
-            text-transform: uppercase;
-            font-size: ($font-size-base - 1);
-
-            label {
-                font-weight: normal;
-            }
-
-            span {
-                float: right;
-            }
-        }
-
-        .list-section-items {
-            border-top: 1px solid $border-color-dark;
-            border-bottom: 1px solid $border-color-dark;
-        }
-
-        .list-section-footer {
-            padding: 5px 10px;
-            font-size: $font-size-small;
-            color: $gray-light;
-        }
+    &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        width: calc(100% - 10px);
+        border-bottom: 1px solid $border-color;
     }
 
-    .list-grouped-item, .list-section-item {
+    &:last-child:before {
+        border: none;
+        height: 0;
+    }
+
+    &:hover, &:focus, &.active {
+        background-color: $list-item-hover;
+    }
+
+    &:not(:hover):focus {
+        border-left: 5px solid $brand-primary;
+        padding-left: 5px;
+    }
+
+    .text, .detail {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         display: block;
-        padding: 10px 10px;
-        background-color: white;
-        text-decoration: none;
         color: $text-color;
-        position: relative;
-        z-index: 1;
-
-        &:not(.pre) {
-            &:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-        }
-
-        &.text-primary {
-            color: $brand-primary !important;
-        }
-
-        &.text-danger {
-            color: $brand-danger !important;
-        }
-
-        &:not(.wrap) {
-            .text, .detail {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-
-        &:before {
-            content: "";
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            height: 1px;
-            width: calc(100% - 10px);
-            border-bottom: 1px solid $border-color;
-        }
-
-        &:last-child {
-            &:before {
-                border: none;
-                height: 0;
-            }
-        }
-
-        &:hover, &:focus, &.active {
-            background-color: $list-item-hover;
-        }
-
-        &:not(:hover):focus {
-            border-left: 5px solid $brand-primary;
-            padding-left: 5px;
-        }
-
-        .leading-icon {
-            font-size: 35px;
-            float: left;
-            display: inline-block;
-            margin: 0 8px 5px 0;
-        }
-
-        .text {
-            display: block;
-            color: $text-color;
-        }
-
-        .detail {
-            font-size: $font-size-small;
-            color: $gray-light;
-            display: block;
-        }
-
-        .item-label {
-            font-size: $font-size-small;
-            color: $gray-light;
-            display: block;
-            width: 100%;
-            font-weight: normal;
-            margin-bottom: 5px;
-        }
-
-        &.list-section-item-table {
-            display: table;
-            width: 100%;
-        }
-
-        .action-button {
-            padding: 8px 10px 8px 5px;
-            display: table-cell;
-            width: 20px;
-            vertical-align: middle;
-
-            &.text-danger {
-                color: $brand-danger !important;
-            }
-        }
-
-        .action-button-content {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .field-type {
-            margin: 5px 0 0 27px;
-            width: calc(100% - 27px);
-        }
-
-        .icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            float: left;
-            height: 36px;
-            width: 34px;
-            margin-left: -5px;
-            color: $text-muted;
-
-            img {
-                border-radius: $border-radius;
-                max-height: 20px;
-                max-width: 20px;
-            }
-
-            &.single-line {
-                height: initial;
-                display: block;
-                text-align: center;
-            }
-        }
-
-        .action-buttons {
-            float: right;
-
-            .btn-list {
-                float: left;
-                cursor: pointer;
-                padding: 10px 8px;
-                background: none;
-                border: none;
-                color: $brand-primary;
-
-                &:hover, &:focus {
-                    color: darken($brand-primary, 10%);
-                }
-
-                &.disabled {
-                    color: $list-icon-color;
-
-                    &:hover {
-                        color: $list-icon-color;
-                    }
-                }
-
-                &:last-child {
-                    padding-right: 2px !important;
-                }
-            }
-        }
-
-        .fa-chevron-right, .right-icon {
-            float: right;
-            margin-top: 4px;
-            color: $list-icon-color;
-        }
-
-        .item-sub-label {
-            float: right;
-            display: block;
-            margin-right: 15px;
-            color: $gray-light;
-        }
-
-        small.item-sub-label {
-            margin-top: 2px;
-        }
-
-        &.condensed {
-            padding: 3px 10px;
-
-            .action-buttons {
-                .btn-list {
-                    padding: 8px 5px;
-                }
-            }
-
-            &:not(:hover):focus {
-                padding-left: 5px;
-            }
-        }
-
-        &.wrap {
-            overflow-wrap: break-word;
-        }
-
-        &.flex {
-            display: flex;
-        }
-
-        .flex-grow {
-            flex-grow: 1;
-        }
     }
-}
 
-.list-no-selection {
-    .list-grouped-item:not(.list-allow-selection), .list-section-item:not(.list-allow-selection) {
-        &:hover {
-            background-color: white;
+    .detail {
+        font-size: $font-size-small;
+        color: $gray-light;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        height: 36px;
+        width: 34px;
+        margin-left: -5px;
+        color: $text-muted;
+
+        img {
+            border-radius: $border-radius;
+            max-height: 20px;
+            max-width: 20px;
         }
     }
 }

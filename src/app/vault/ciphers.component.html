@@ -11,20 +11,18 @@
 </div>
 <div class="content">
     <div class="list">
-        <div class="list-section" style="padding-top: 0; padding-bottom: 0;">
-            <a *ngFor="let cipher of ciphers" appStopClick (click)="cipherClicked(cipher)"
-               href="#" class="list-section-item condensed" title="{{'viewItem' | i18n}}">
-                <app-vault-icon [cipher]="cipher"></app-vault-icon>
-                <span class="text">
-                    {{cipher.name}}
-                    <i class="fa fa-share-alt text-muted" *ngIf="cipher.organizationId"
-                       title="{{'shared' | i18n}}"></i>
-                    <i class="fa fa-paperclip text-muted" *ngIf="cipher.attachments"
-                       title="{{'attachments' | i18n}}"></i>
-                </span>
-                <span class="detail">{{cipher.subTitle}}</span>
-            </a>
-        </div>
+        <a *ngFor="let cipher of ciphers" appStopClick (click)="cipherClicked(cipher)"
+            href="#" title="{{'viewItem' | i18n}}">
+            <app-vault-icon [cipher]="cipher"></app-vault-icon>
+            <span class="text">
+                {{cipher.name}}
+                <i class="fa fa-share-alt text-muted" *ngIf="cipher.organizationId"
+                    title="{{'shared' | i18n}}"></i>
+                <i class="fa fa-paperclip text-muted" *ngIf="cipher.attachments"
+                    title="{{'attachments' | i18n}}"></i>
+            </span>
+            <span class="detail">{{cipher.subTitle}}</span>
+        </a>
     </div>
 </div>
 <div class="footer">
