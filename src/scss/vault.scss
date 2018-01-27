@@ -1,0 +1,261 @@
+﻿@import "variables.scss";
+
+#vault {
+    height: 100vh;
+    display: flex;
+
+    #groupings {
+        background-color: $background-color-alt;
+        width: 15%;
+        min-width: 175px;
+        max-width: 250px;
+        border-right: 1px solid $border-color-dark;
+
+        h2 {
+            font-size: $font-size-base;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        ul:not(.fa-ul) {
+            li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+        }
+
+        ul.fa-ul {
+            li {
+                .fa-li {
+                    left: -11px;
+                    top: 8px;
+                }
+
+                a {
+                    padding-left: 12px;
+                }
+
+                &.active .fa-li {
+                    left: 4px;
+                }
+            }
+        }
+
+        ul {
+            padding: 0;
+            margin: 0 0 15px 0;
+
+            li {
+                a {
+                    display: block;
+                    padding: 5px 0;
+                    color: $text-color;
+                }
+
+                &.active {
+                    background-color: darken($background-color-alt, 5%);
+                    margin-left: -15px;
+                    margin-right: -15px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+
+    #items {
+        background-color: $background-color;
+        width: 25%;
+        min-width: 200px;
+        max-width: 350px;
+        border-right: 1px solid $border-color-dark;
+    }
+
+    #details {
+        background-color: $background-color-alt2;
+        flex: 1;
+        min-width: 400px;
+    }
+
+    #groupings, #items, #details {
+        display: flex;
+        flex-direction: column;
+
+        .inner-content {
+            padding: 10px 15px;
+        }
+    }
+
+    .header {
+        min-height: 44px;
+        max-height: 44px;
+        background-color: $brand-primary;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+        flex: 0 0 auto;
+
+        a, button {
+            color: white !important;
+            text-decoration: none;
+            background: none;
+
+            &:hover, &:focus {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        .title {
+            font-weight: bold;
+            display: block;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .left {
+            display: block;
+            position: absolute;
+            left: 0;
+            text-align: left;
+
+            a, button {
+                padding: 12px 10px;
+                display: block;
+                float: left;
+            }
+
+            .fa-spinner {
+                padding: 15px;
+                display: block;
+                float: left;
+            }
+        }
+
+        .right {
+            display: block;
+            right: 0;
+            position: absolute;
+            z-index: 99999;
+
+            a, button {
+                padding: 12px 10px;
+                display: block;
+                float: right;
+            }
+
+            .fa-spinner {
+                padding: 15px;
+                display: block;
+                float: right;
+            }
+        }
+
+        &.header-search {
+            .left, .right, .search {
+                display: table-cell;
+                position: relative;
+            }
+
+            .search {
+                padding: 0 7px;
+                width: 100%;
+                text-align: left;
+                position: relative;
+
+                .fa-search {
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    color: lighten($brand-primary, 30%);
+                }
+
+                input {
+                    width: 100%;
+                    margin: 0;
+                    float: none;
+                    background: darken($brand-primary, 8%);
+                    border: none;
+                    color: white;
+                    padding: 5px 10px 5px 30px;
+                    border-radius: $border-radius;
+
+                    &:focus {
+                        border-radius: $border-radius;
+                        outline: none;
+                        background: darken($brand-primary, 10%);
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: lighten($brand-primary, 35%);
+                    }
+                }
+            }
+
+            a {
+                white-space: nowrap;
+                float: none;
+            }
+        }
+    }
+
+    .content {
+        flex: 1 1 auto;
+        position: relative;
+        overflow: auto;
+    }
+
+    .footer {
+        height: 50px;
+        background-color: $background-color-alt;
+        flex: 0 0 auto;
+        border-top: 1px solid $border-color-dark;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+
+        button {
+            background-color: $button-backgound-color;
+            border-radius: $border-radius;
+            padding: 7px 15px;
+            border: 1px solid $button-border-color;
+            margin-right: 10px;
+            font-size: $font-size-base;
+            color: $button-color;
+
+            &:hover {
+                cursor: pointer;
+                background-color: darken($button-backgound-color, 1.5%);
+            }
+
+            &.primary {
+                color: $button-color-primary;
+            }
+
+            &.danger {
+                color: $button-color-danger;
+            }
+
+            &.block {
+                display: block;
+                width: 100%;
+            }
+
+            &.right {
+                margin-left: auto;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

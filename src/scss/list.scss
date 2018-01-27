@@ -1,0 +1,71 @@
+﻿@import "variables.scss";
+
+.list > a {
+    display: block;
+    padding: 3px 10px;
+    background-color: white;
+    text-decoration: none;
+    color: $text-color;
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        width: calc(100% - 10px);
+        border-bottom: 1px solid $border-color;
+    }
+
+    &:last-child:before {
+        border: none;
+        height: 0;
+    }
+
+    &:hover, &:focus, &.active {
+        background-color: $list-item-hover;
+    }
+
+    &:not(:hover):focus {
+        border-left: 5px solid $brand-primary;
+        padding-left: 5px;
+    }
+
+    .text, .detail {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        color: $text-color;
+    }
+
+    .detail {
+        font-size: $font-size-small;
+        color: $gray-light;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        height: 36px;
+        width: 34px;
+        margin-left: -5px;
+        color: $text-muted;
+
+        img {
+            border-radius: $border-radius;
+            max-height: 20px;
+            max-width: 20px;
+        }
+    }
+}
