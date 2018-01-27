@@ -28,14 +28,18 @@ import { FolderView } from 'jslib/models/view/folderView';
 export class VaultComponent implements OnInit {
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
 
-    cipherId: string;
     action: string;
+    cipherId: string = null;
+    favorites: boolean = false;
+    type: CipherType = null;
+    folderId: string = null;
+    collectionId: string = null;
 
     constructor(private route: ActivatedRoute, private router: Router, private location: Location) {
     }
 
     async ngOnInit() {
-        this.route.queryParams.subscribe((params) => {
+        this.route.queryParams.subscribe(async (params) => {
             if (params['cipherId']) {
                 const cipherView = new CipherView();
                 cipherView.id = params['cipherId'];
@@ -46,6 +50,18 @@ export class VaultComponent implements OnInit {
                 }
             } else if (params['action'] === 'add') {
                 this.addCipher();
+            }
+
+            if (params['favorites']) {
+                await this.filterFavorites();
+            } else if (params['type']) {
+                await this.filterCipherType(parseInt(params['type']));
+            } else if (params['folderId']) {
+                await this.filterFolder(params['folderId']);
+            } else if (params['collectionId']) {
+                await this.filterCollection(params['collectionId']);
+            } else {
+                await this.ciphersComponent.load();
             }
         });
     }
@@ -106,25 +122,58 @@ export class VaultComponent implements OnInit {
 
     async clearGroupingFilters() {
         await this.ciphersComponent.load();
+        this.clearFilters();
+        this.go();
     }
 
     async filterFavorites() {
         await this.ciphersComponent.load((c) => c.favorite);
+        this.clearFilters();
+        this.favorites = true;
+        this.go();
     }
 
     async filterCipherType(type: CipherType) {
         await this.ciphersComponent.load((c) => c.type === type);
+        this.clearFilters();
+        this.type = type;
+        this.go();
     }
 
-    async filterFolder(folder: FolderView) {
-        await this.ciphersComponent.load((c) => c.folderId === folder.id);
+    async filterFolder(folderId: string) {
+        folderId = folderId === 'none' ? null : folderId;
+        await this.ciphersComponent.load((c) => c.folderId === folderId);
+        this.clearFilters();
+        this.folderId = folderId == null ? 'none' : folderId;
+        this.go();
     }
 
-    async filterCollection(collection: CollectionView) {
-        await this.ciphersComponent.load((c) => c.collectionIds.indexOf(collection.id) > -1);
+    async filterCollection(collectionId: string) {
+        await this.ciphersComponent.load((c) => c.collectionIds.indexOf(collectionId) > -1);
+        this.clearFilters();
+        this.collectionId = collectionId;
+        this.go();
     }
 
-    private go(queryParams: any) {
+    private clearFilters() {
+        this.folderId = null;
+        this.collectionId = null;
+        this.favorites = false;
+        this.type = null;
+    }
+
+    private go(queryParams: any = null) {
+        if (queryParams == null) {
+            queryParams = {
+                action: this.action,
+                cipherId: this.cipherId,
+                favorites: this.favorites ? true : null,
+                type: this.type,
+                folderId: this.folderId,
+                collectionId: this.collectionId,
+            };
+        }
+
         const url = this.router.createUrlTree(['vault'], { queryParams: queryParams }).toString();
         this.location.go(url);
     }

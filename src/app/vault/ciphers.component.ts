@@ -27,7 +27,7 @@ export class CiphersComponent implements OnInit {
     }
 
     async ngOnInit() {
-        await this.load();
+        //await this.load();
     }
 
     async load(filter: (cipher: CipherView) => boolean = null) {

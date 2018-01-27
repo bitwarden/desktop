@@ -3,8 +3,8 @@
                          (onAllClicked)="clearGroupingFilters()"
                          (onFavoritesClicked)="filterFavorites()"
                          (onCipherTypeClicked)="filterCipherType($event)"
-                         (onFolderClicked)="filterFolder($event)"
-                         (onCollectionClicked)="filterCollection($event)">
+                         (onFolderClicked)="filterFolder($event.id)"
+                         (onCollectionClicked)="filterCollection($event.id)">
     </app-vault-groupings>
     <app-vault-ciphers id="items"
                        (onCipherClicked)="viewCipher($event)"
