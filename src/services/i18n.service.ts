@@ -3,38 +3,41 @@ import * as path from 'path';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
 
 // First locale is the default (English)
-const SupportedLocales = [
+const SupportedTranslationLocales = [
     'en', 'es',
 ];
 
 export class I18nService implements I18nServiceAbstraction {
     defaultMessages: any = {};
     localeMessages: any = {};
-    language: string;
+    locale: string;
+    translationLocale: string;
+    collator: Intl.Collator;
     inited: boolean;
 
     constructor(private systemLanguage: string, private localesDirectory: string) {
     }
 
-    async init(language?: string) {
+    async init(locale?: string) {
         if (this.inited) {
             throw new Error('i18n already initialized.');
         }
 
         this.inited = true;
-        this.language = language != null ? language : this.systemLanguage;
+        this.locale = this.translationLocale = locale != null ? locale : this.systemLanguage;
+        this.collator = new Intl.Collator(this.locale);
 
-        if (SupportedLocales.indexOf(this.language) === -1) {
-            this.language = this.language.slice(0, 2);
+        if (SupportedTranslationLocales.indexOf(this.translationLocale) === -1) {
+            this.translationLocale = this.translationLocale.slice(0, 2);
 
-            if (SupportedLocales.indexOf(this.language) === -1) {
-                this.language = SupportedLocales[0];
+            if (SupportedTranslationLocales.indexOf(this.translationLocale) === -1) {
+                this.translationLocale = SupportedTranslationLocales[0];
             }
         }
 
-        await this.loadMessages(this.language, this.localeMessages);
-        if (this.language !== SupportedLocales[0]) {
-            await this.loadMessages(SupportedLocales[0], this.defaultMessages);
+        await this.loadMessages(this.translationLocale, this.localeMessages);
+        if (this.translationLocale !== SupportedTranslationLocales[0]) {
+            await this.loadMessages(SupportedTranslationLocales[0], this.defaultMessages);
         }
     }
 
