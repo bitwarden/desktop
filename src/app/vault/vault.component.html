@@ -22,6 +22,8 @@
                         (onSavedCipher)="savedCipher($event)"
                         (onDeletedCipher)="deletedCipher($event)"
                         (onEditAttachments)="editCipherAttachments($event)"
-                        (onCancelled)="cancelledAddEdit($event)">
+                        (onCancelled)="cancelledAddEdit($event)"
+                        (onGeneratePassword)="openPasswordGenerator()">
     </app-vault-add-edit>
+    <ng-template #passwordGenerator></ng-template>
 </div>

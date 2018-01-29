@@ -2,8 +2,10 @@ import * as template from './vault.component.html';
 
 import {
     Component,
+    ComponentFactoryResolver,
     OnInit,
     ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 
 import {
@@ -15,6 +17,8 @@ import { Location } from '@angular/common';
 
 import { CiphersComponent } from './ciphers.component';
 import { GroupingsComponent } from './groupings.component';
+import { PasswordGeneratorComponent } from './password-generator.component';
+import { ModalComponent } from '../modal.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
@@ -29,6 +33,7 @@ import { FolderView } from 'jslib/models/view/folderView';
 export class VaultComponent implements OnInit {
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
     @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
+    @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModal: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -37,7 +42,8 @@ export class VaultComponent implements OnInit {
     folderId: string = null;
     collectionId: string = null;
 
-    constructor(private route: ActivatedRoute, private router: Router, private location: Location) {
+    constructor(private route: ActivatedRoute, private router: Router, private location: Location,
+        private componentFactoryResolver: ComponentFactoryResolver) {
     }
 
     async ngOnInit() {
@@ -162,6 +168,19 @@ export class VaultComponent implements OnInit {
         this.clearFilters();
         this.collectionId = collectionId;
         this.go();
+    }
+
+    async openPasswordGenerator() {
+        let factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        let componentRef = this.passwordGeneratorModal.createComponent(factory);
+        let modal = componentRef.instance as ModalComponent;
+        let childComponent = modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
+            this.passwordGeneratorModal);
+        childComponent.in = 'hello';
+        childComponent.out.subscribe((i: string) => {
+            console.log(i);
+            //modal.close();
+        });
     }
 
     private clearFilters() {

@@ -39,6 +39,7 @@ export class AddEditComponent implements OnChanges {
     @Output() onDeletedCipher = new EventEmitter<CipherView>();
     @Output() onCancelled = new EventEmitter<CipherView>();
     @Output() onEditAttachments = new EventEmitter<CipherView>();
+    @Output() onGeneratePassword = new EventEmitter();
 
     editMode: boolean = false;
     cipher: CipherView;
@@ -171,5 +172,9 @@ export class AddEditComponent implements OnChanges {
         this.analytics.eventTrack.next({ action: 'Deleted Cipher' });
         this.toasterService.popAsync('success', null, this.i18nService.t('deletedItem'));
         this.onDeletedCipher.emit(this.cipher);
+    }
+
+    generatePassword() {
+        this.onGeneratePassword.emit();
     }
 }

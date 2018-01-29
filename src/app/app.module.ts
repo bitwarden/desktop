@@ -19,6 +19,8 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { I18nPipe } from './pipes/i18n.pipe';
 import { IconComponent } from './vault/icon.component';
 import { LoginComponent } from './accounts/login.component';
+import { ModalComponent } from './modal.component';
+import { PasswordGeneratorComponent } from './vault/password-generator.component';
 import { StopClickDirective } from './directives/stop-click.directive';
 import { StopPropDirective } from './directives/stop-prop.directive';
 import { VaultComponent } from './vault/vault.component';
@@ -47,10 +49,16 @@ import { ViewComponent } from './vault/view.component';
         I18nPipe,
         IconComponent,
         LoginComponent,
+        ModalComponent,
+        PasswordGeneratorComponent,
         StopClickDirective,
         StopPropDirective,
         VaultComponent,
         ViewComponent,
+    ],
+    entryComponents: [
+        ModalComponent,
+        PasswordGeneratorComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
