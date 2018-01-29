@@ -188,4 +188,9 @@ export class AddEditComponent implements OnChanges {
         this.analytics.eventTrack.next({ action: 'Toggled Password on Edit' });
         this.showPassword = !this.showPassword;
     }
+
+    toggleFieldValue(field: FieldView) {
+        const f = (field as any);
+        f.showValue = !f.showValue;
+    }
 }

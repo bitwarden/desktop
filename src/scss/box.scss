@@ -72,20 +72,22 @@
                 margin-bottom: 5px;
             }
 
+            .row-main {
+                flex-grow: 1;
+            }
+
             &.box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
             &.box-content-row-slider, &.box-content-row-cf {
                 display: flex;
                 align-items: center;
             }
 
-            &.box-content-row-flex {
-                .row-main {
-                    flex-grow: 1;
-                }
-            }
-
             &.box-content-row-cf {
                 width: 100%;
+
+                input:not([type="checkbox"]) {
+                    width: 100%;
+                }
 
                 > a {
                     padding: 8px 10px 8px 5px;
