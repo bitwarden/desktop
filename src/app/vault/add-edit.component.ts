@@ -175,6 +175,11 @@ export class AddEditComponent implements OnChanges {
     }
 
     generatePassword() {
+        if (this.cipher.login != null && this.cipher.login.password != null && this.cipher.login.password.length &&
+            !confirm(this.i18nService.t('overwritePasswordConfirmation'))) {
+            return;
+        }
+
         this.onGeneratePassword.emit();
     }
 }

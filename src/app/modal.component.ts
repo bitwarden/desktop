@@ -4,7 +4,6 @@ import {
     Component,
     ComponentFactoryResolver,
     EventEmitter,
-    Input,
     OnDestroy,
     Output,
     Type,
@@ -17,6 +16,10 @@ import {
     template: `<ng-template #container></ng-template>`,
 })
 export class ModalComponent implements OnDestroy {
+    @Output() onClose = new EventEmitter();
+    @Output() onClosed = new EventEmitter();
+    @Output() onShow = new EventEmitter();
+    @Output() onShown = new EventEmitter();
     @ViewChild('container', { read: ViewContainerRef }) container: ViewContainerRef;
     parentContainer: ViewContainerRef = null;
     fade: boolean = true;
@@ -29,6 +32,7 @@ export class ModalComponent implements OnDestroy {
     }
 
     show<T>(type: Type<T>, parentContainer: ViewContainerRef, fade: boolean = true): T {
+        this.onShow.emit();
         this.parentContainer = parentContainer;
         this.fade = fade;
 
@@ -50,10 +54,13 @@ export class ModalComponent implements OnDestroy {
             });
         }
 
+        this.onShown.emit();
         return componentRef.instance;
     }
 
     close() {
+        this.onClose.emit();
+        this.onClosed.emit();
         if (this.parentContainer != null) {
             this.parentContainer.clear();
         }

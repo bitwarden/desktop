@@ -20,6 +20,7 @@ import { UtilsService } from 'jslib/abstractions/utils.service';
 })
 export class PasswordGeneratorComponent implements OnInit {
     @Input() showSelect: boolean = false;
+    @Output() onSelected = new EventEmitter<string>();
 
     options: any = {};
     password: string = '-';
@@ -82,5 +83,10 @@ export class PasswordGeneratorComponent implements OnInit {
     copy() {
         this.analytics.eventTrack.next({ action: 'Copied Generated Password' });
         this.utilsService.copyToClipboard(this.password, window.document);
+    }
+
+    select() {
+        this.analytics.eventTrack.next({ action: 'Selected Generated Password' });
+        this.onSelected.emit(this.password);
     }
 }

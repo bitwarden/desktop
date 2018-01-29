@@ -15,6 +15,7 @@ import {
 
 import { Location } from '@angular/common';
 
+import { AddEditComponent } from './add-edit.component';
 import { CiphersComponent } from './ciphers.component';
 import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
@@ -31,6 +32,7 @@ import { FolderView } from 'jslib/models/view/folderView';
     template: template,
 })
 export class VaultComponent implements OnInit {
+    @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
     @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
     @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModal: ViewContainerRef;
@@ -176,7 +178,15 @@ export class VaultComponent implements OnInit {
         let modal = componentRef.instance as ModalComponent;
         let childComponent = modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
             this.passwordGeneratorModal);
+
         childComponent.showSelect = true;
+        childComponent.onSelected.subscribe((password: string) => {
+            modal.close();
+            if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
+                this.addEditComponent.cipher.login != null) {
+                this.addEditComponent.cipher.login.password = password;
+            }
+        });
     }
 
     private clearFilters() {
