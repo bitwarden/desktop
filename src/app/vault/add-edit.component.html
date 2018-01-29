@@ -26,15 +26,24 @@
                         <input id="loginUsername" type="text" name="Login.Username"
                                [(ngModel)]="cipher.login.username">
                     </div>
-                    <div class="box-content-row">
-                        <label for="loginPassword">{{'password' | i18n}}</label>
-                        <input id="loginPassword" type="text" name="Login.Password"
-                               [(ngModel)]="cipher.login.password">
+                    <div class="box-content-row box-content-row-flex">
+                        <div class="row-main">
+                            <label for="loginPassword">{{'password' | i18n}}</label>
+                            <input id="loginPassword" class="monospaced" type="{{showPassword ? 'text' : 'password'}}"
+                                   name="Login.Password" [(ngModel)]="cipher.login.password">
+                        </div>
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleVisibility' | i18n}}"
+                               (click)="togglePassword()">
+                                <i class="fa fa-lg"
+                                   [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                            </a>
+                            <a class="row-btn" href="#" appStopClick appBlurClick title="{{'generatePassword' | i18n}}"
+                               (click)="generatePassword()">
+                                <i class="fa fa-lg fa-refresh"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a class="box-content-row" href="#" appStopClick (click)="generatePassword()">
-                        {{'generatePassword' | i18n}}
-                        <i class="fa fa-chevron-right icon-right"></i>
-                    </a>
                 </div>
                 <!-- Card -->
                 <div *ngIf="cipher.type === cipherType.Card">
@@ -203,7 +212,7 @@
                         <a href="#" appStopClick (click)="removeField(f)" title="{{'remove' | i18n}}">
                             <i class="fa fa-close fa-lg"></i>
                         </a>
-                        <div>
+                        <div class="row-main">
                             <label for="fieldName{{i}}" class="sr-only">{{'name' | i18n}}</label>
                             <input id="fieldName{{i}}" type="text" name="Field.Name{{i}}" [(ngModel)]="f.name"
                                    class="row-label" placeholder="{{'name' | i18n}}">
@@ -212,9 +221,9 @@
                                    *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
                             <input id="fieldValue{{i}}" type="password" name="Field.Value{{i}}" [(ngModel)]="f.value"
                                    *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
-                            <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox"
-                                   [(ngModel)]="f.value" *ngIf="f.type === fieldType.Boolean">
                         </div>
+                        <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox"
+                               [(ngModel)]="f.value" *ngIf="f.type === fieldType.Boolean">
                     </div>
                 </div>
                 <div class="box-content-row">

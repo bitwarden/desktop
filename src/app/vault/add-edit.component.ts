@@ -44,6 +44,7 @@ export class AddEditComponent implements OnChanges {
     editMode: boolean = false;
     cipher: CipherView;
     folders: FolderView[];
+    showPassword: boolean = false;
     cipherType = CipherType;
     fieldType = FieldType;
     addFieldType: FieldType = FieldType.Text;
@@ -181,5 +182,10 @@ export class AddEditComponent implements OnChanges {
         }
 
         this.onGeneratePassword.emit();
+    }
+
+    togglePassword() {
+        this.analytics.eventTrack.next({ action: 'Toggled Password on Edit' });
+        this.showPassword = !this.showPassword;
     }
 }
