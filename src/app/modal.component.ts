@@ -39,6 +39,17 @@ export class ModalComponent implements OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory<T>(type);
         const componentRef = this.container.createComponent<T>(factory);
+
+        document.querySelector('.modal-dialog').addEventListener('click', (e: Event) => {
+            e.stopPropagation();
+        });
+
+        for (const closeElement of document.querySelectorAll('.modal, .modal *[data-dismiss="modal"]')) {
+            closeElement.addEventListener('click', (event) => {
+                this.close();
+            });
+        }
+
         return componentRef.instance;
     }
 

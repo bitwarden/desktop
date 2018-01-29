@@ -260,38 +260,7 @@
         padding: 0 15px;
 
         button {
-            background-color: $button-backgound-color;
-            border-radius: $border-radius;
-            padding: 7px 15px;
-            border: 1px solid $button-border-color;
             margin-right: 10px;
-            font-size: $font-size-base;
-            color: $button-color;
-
-            &:hover, &:focus {
-                cursor: pointer;
-                background-color: darken($button-backgound-color, 1.5%);
-                border-color: darken($button-border-color, 17%);
-            }
-
-            &:focus {
-                background-color: darken($button-backgound-color, 6%);
-                border-color: darken($button-border-color, 25%);
-                outline: 0;
-            }
-
-            &.primary {
-                color: $button-color-primary;
-            }
-
-            &.danger {
-                color: $button-color-danger;
-            }
-
-            &.block {
-                display: block;
-                width: 100%;
-            }
 
             &.right {
                 margin-left: auto;

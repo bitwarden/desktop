@@ -45,16 +45,16 @@ textarea {
     resize: vertical;
 }
 
-div::-webkit-scrollbar {
+div:not(.modal)::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-div::-webkit-scrollbar-track {
+div:not(.modal)::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-div::-webkit-scrollbar-thumb {
+div:not(.modal)::-webkit-scrollbar-thumb {
     background-color: rgba(100,100,100,.2);
     border-radius: 10px;
     margin-right: 1px;
