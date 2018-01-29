@@ -311,5 +311,27 @@
   },
   "deleteFolder": {
     "message": "Delete Folder"
+  },
+  "regeneratePassword": {
+    "message": "Regenerate Password"
+  },
+  "copyPassword": {
+    "message": "Copy Password"
+  },
+  "length": {
+    "message": "Length"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "minNumbers": {
+    "message": "Minimum Numbers"
+  },
+  "minSpecial": {
+    "message": "Minimum Special",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Avoid Ambiguous Characters"
   }
 }

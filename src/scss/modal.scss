@@ -13,14 +13,14 @@ $zindex-modal-backdrop: 1040 !default;
 $zindex-modal: 1050 !default;
 
 // Padding applied to the modal body
-$modal-inner-padding: 1rem !default;
+$modal-inner-padding: 10px !default;
 
 $modal-dialog-margin: .5rem !default;
 $modal-dialog-margin-y-sm-up: 1.75rem !default;
 
 $modal-title-line-height: $line-height-base !default;
 
-$modal-content-bg: $white !default;
+$modal-content-bg: $background-color-alt !default;
 $modal-content-border-color: rgba($black, .2) !default;
 $modal-content-border-width: 1px !default;
 $modal-content-box-shadow-xs: none;
@@ -32,7 +32,7 @@ $modal-header-border-color: $border-color-dark !default;
 $modal-footer-border-color: $modal-header-border-color !default;
 $modal-header-border-width: $modal-content-border-width !default;
 $modal-footer-border-width: $modal-header-border-width !default;
-$modal-header-padding: 1rem !default;
+$modal-header-padding: 12px !default;
 
 $modal-lg: 800px !default;
 $modal-md: 500px !default;
@@ -194,15 +194,25 @@ $close-text-shadow: 0 1px 0 $white !default;
     display: flex;
     align-items: flex-start; // so the close btn always stays on the upper right corner
     justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
-    padding: $modal-header-padding;
+    padding: $modal-header-padding $modal-inner-padding;
     border-bottom: $modal-header-border-width solid $modal-header-border-color;
     //@include border-top-radius($border-radius-lg);
-    border-radius: $border-radius-lg;
 
     .close {
-        padding: $modal-header-padding;
+        padding: $modal-header-padding $modal-inner-padding;
         // auto on the left force icon to the right even when there is no .modal-title
-        margin: (-$modal-header-padding) (-$modal-header-padding) (-$modal-header-padding) auto;
+        margin: (-$modal-header-padding) (-$modal-inner-padding) (-$modal-header-padding) auto;
+    }
+
+    h5 {
+        font-size: $font-size-base;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+
+        .fa {
+            margin-right: 5px;
+        }
     }
 }
 
@@ -230,12 +240,17 @@ $close-text-shadow: 0 1px 0 $white !default;
     padding: $modal-inner-padding;
     border-top: $modal-footer-border-width solid $modal-footer-border-color;
     // Easily place margin between footer elements
-    > :not(:first-child) {
-        margin-left: .25rem;
+    button {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
-    > :not(:last-child) {
-        margin-right: .25rem;
+    .right {
+        margin-left: auto;
+        display: flex;
     }
 }
 
@@ -311,3 +326,13 @@ button.close {
     -webkit-appearance: none;
 }
 // stylelint-enable
+
+// box
+
+.modal-content .box {
+    margin-top: 20px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}

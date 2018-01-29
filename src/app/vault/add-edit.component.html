@@ -237,7 +237,9 @@
     <button appBlurClick (click)="cancel()" title="{{'cancel' | i18n}}">
         {{'cancel' | i18n}}
     </button>
-    <button appBlurClick (click)="delete()" class="danger right" title="{{'delete' | i18n}}" *ngIf="editMode">
-        <i class="fa fa-trash-o fa-lg"></i>
-    </button>
+    <div class="right">
+        <button appBlurClick (click)="delete()" class="danger" title="{{'delete' | i18n}}" *ngIf="editMode">
+            <i class="fa fa-trash-o fa-lg"></i>
+        </button>
+    </div>
 </div>

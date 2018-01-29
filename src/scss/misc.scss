@@ -1,5 +1,13 @@
 ﻿@import "variables.scss";
 
+.text-primary {
+    color: $brand-primary !important;
+}
+
+.text-muted {
+    color: $text-muted !important;
+}
+
 .monospaced {
     font-family: $font-family-monospace;
 }
@@ -67,5 +75,16 @@
         .totp-circle {
             stroke: $brand-danger;
         }
+    }
+}
+
+.password-block {
+    font-size: $font-size-large;
+    word-break: break-all;
+    font-family: $font-family-monospace;
+    text-align: center;
+
+    .modal-body & {
+        margin-top: 10px;
     }
 }

@@ -1,18 +1,7 @@
 ﻿@import "variables.scss";
 
 .box {
-    min-width: 400px;
-    max-width: 550px;
     width: 100%;
-    margin: 30px auto 0 auto;
-
-    &:first-child {
-        margin-top: 10px;
-    }
-
-    &:last-child {
-        margin-bottom: 30px;
-    }
 
     .box-header {
         margin: 0 10px 5px 10px;
@@ -99,17 +88,48 @@
             }
 
             &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
+                display: flex;
+                align-items: center;
+
                 label, .row-label {
                     font-size: $font-size-base;
                     color: $text-color;
                     display: inline;
                     width: initial;
                     margin-bottom: 0;
-                    float: left;
                 }
 
-                input.row-label {
-                    width: calc(100% - 40px);
+                > span {
+                    color: $text-muted;
+                }
+
+                > input {
+                    margin: 0 0 0 auto;
+                    padding: 0;
+                }
+
+                > * {
+                    margin-right: 15px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            &.box-content-row-input {
+                label {
+                    white-space: nowrap;
+                }
+
+                input {
+                    text-align: right;
+                }
+            }
+
+            &.box-content-row-slider {
+                input {
+                    height: 10px;
                 }
             }
 
@@ -182,6 +202,11 @@
             small.row-sub-label {
                 margin-top: 2px;
             }
+        }
+
+        &.condensed .box-content-row, .box-content-row.condensed {
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
     }
 

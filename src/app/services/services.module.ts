@@ -117,6 +117,7 @@ function initFactory(i18n: I18nService): Function {
         { provide: UtilsServiceAbstraction, useValue: utilsService },
         { provide: CryptoServiceAbstraction, useValue: cryptoService },
         { provide: PlatformUtilsServiceAbstraction, useValue: platformUtilsService },
+        { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

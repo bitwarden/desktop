@@ -176,11 +176,7 @@ export class VaultComponent implements OnInit {
         let modal = componentRef.instance as ModalComponent;
         let childComponent = modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
             this.passwordGeneratorModal);
-        childComponent.in = 'hello';
-        childComponent.out.subscribe((i: string) => {
-            console.log(i);
-            //modal.close();
-        });
+        childComponent.showSelect = true;
     }
 
     private clearFilters() {

@@ -112,6 +112,19 @@
         .inner-content {
             min-width: 400px;
         }
+
+        .box {
+            max-width: 550px;
+            margin: 30px auto 0 auto;
+
+            &:first-child {
+                margin-top: 10px;
+            }
+
+            &:last-child {
+                margin-bottom: 30px;
+            }
+        }
     }
 
     #groupings, #items, #details {
@@ -262,13 +275,14 @@
         button {
             margin-right: 10px;
 
-            &.right {
-                margin-left: auto;
-            }
-
             &:last-child {
                 margin-right: 0;
             }
+        }
+
+        .right {
+            margin-left: auto;
+            display: flex;
         }
     }
 }
