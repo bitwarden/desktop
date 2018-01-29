@@ -17,6 +17,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
     template: template,
 })
 export class CiphersComponent implements OnInit {
+    @Input() activeCipherId: string = null;
     @Output() onCipherClicked = new EventEmitter<CipherView>();
     @Output() onAddCipher = new EventEmitter();
 

@@ -34,8 +34,13 @@
         background-color: $list-item-hover;
     }
 
-    &:not(:hover):focus {
+    &.active {
         border-left: 5px solid $brand-primary;
+        padding-left: 5px;
+    }
+
+    &:focus:not(.active) {
+        border-left: 5px solid $text-muted;
         padding-left: 5px;
     }
 

@@ -113,7 +113,7 @@ export class AddEditComponent implements OnChanges {
             this.cipher = await cipher.decrypt();
         } else {
             this.cipher = new CipherView();
-            this.cipher.folderId = null; // TODO
+            this.cipher.folderId = this.folderId;
             this.cipher.type = CipherType.Login;
             this.cipher.login = new LoginView();
             this.cipher.card = new CardView();

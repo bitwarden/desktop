@@ -7,6 +7,7 @@
                          (onCollectionClicked)="filterCollection($event.id)">
     </app-vault-groupings>
     <app-vault-ciphers id="items"
+                       [activeCipherId]="cipherId"
                        (onCipherClicked)="viewCipher($event)"
                        (onAddCipher)="addCipher($event)">
     </app-vault-ciphers>
@@ -17,7 +18,7 @@
     </app-vault-view>
     <app-vault-add-edit id="details"
                         *ngIf="action === 'add' || action === 'edit'"
-                        [folderId]="null"
+                        [folderId]="action === 'add' && folderId !== 'none' ? folderId : null"
                         [cipherId]="action === 'edit' ? cipherId : null"
                         (onSavedCipher)="savedCipher($event)"
                         (onDeletedCipher)="deletedCipher($event)"
