@@ -21,6 +21,7 @@ import { IconComponent } from './vault/icon.component';
 import { LoginComponent } from './accounts/login.component';
 import { ModalComponent } from './modal.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
+import { SearchCiphersPipe } from './pipes/search-ciphers.pipe';
 import { StopClickDirective } from './directives/stop-click.directive';
 import { StopPropDirective } from './directives/stop-prop.directive';
 import { VaultComponent } from './vault/vault.component';
@@ -51,6 +52,7 @@ import { ViewComponent } from './vault/view.component';
         LoginComponent,
         ModalComponent,
         PasswordGeneratorComponent,
+        SearchCiphersPipe,
         StopClickDirective,
         StopPropDirective,
         VaultComponent,

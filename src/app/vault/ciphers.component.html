@@ -1,17 +1,12 @@
 <div class="header header-search">
     <div class="search">
-        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search" />
+        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search" [(ngModel)]="searchText" />
         <i class="fa fa-search"></i>
-    </div>
-    <div class="right">
-        <a href="" title="{{'addItem' | i18n}}" appBlurClick appStopClick (click)="addCipher()">
-            <i class="fa fa-plus fa-lg"></i>
-        </a>
     </div>
 </div>
 <div class="content">
     <div class="list">
-        <a *ngFor="let c of ciphers" appStopClick (click)="cipherClicked(c)"
+        <a *ngFor="let c of ciphers | searchCiphers: searchText" appStopClick (click)="cipherClicked(c)"
            href="#" title="{{'viewItem' | i18n}}" [ngClass]="{'active': c.id === activeCipherId}">
             <app-vault-icon [cipher]="c"></app-vault-icon>
             <span class="text">

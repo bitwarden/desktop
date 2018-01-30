@@ -22,6 +22,7 @@ export class CiphersComponent implements OnInit {
     @Output() onAddCipher = new EventEmitter();
 
     ciphers: CipherView[] = [];
+    searchText: string;
     private filter: (cipher: CipherView) => boolean = null;
 
     constructor(private cipherService: CipherService) {

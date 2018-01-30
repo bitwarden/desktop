@@ -140,90 +140,21 @@
         min-height: 44px;
         max-height: 44px;
         background-color: $brand-primary;
-        color: white;
-        text-align: center;
-        overflow: hidden;
         flex: 0 0 auto;
         border-bottom: 1px solid darken($brand-primary, 7%);
-
-        a, button {
-            color: white !important;
-            text-decoration: none;
-            background: none;
-
-            &:hover, &:focus {
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-
-            &:hover {
-                text-decoration: none;
-            }
-
-            &:focus {
-                text-decoration: underline;
-            }
-        }
-
-        .title {
-            font-weight: bold;
-            display: block;
-            padding: 12px 0;
-            text-align: center;
-        }
-
-        .left {
-            display: block;
-            position: absolute;
-            left: 0;
-            text-align: left;
-
-            a, button {
-                padding: 12px 10px;
-                display: block;
-                float: left;
-            }
-
-            .fa-spinner {
-                padding: 15px;
-                display: block;
-                float: left;
-            }
-        }
-
-        .right {
-            display: block;
-            right: 0;
-            position: absolute;
-            z-index: 99999;
-
-            a, button {
-                padding: 12px 10px;
-                display: block;
-                float: right;
-            }
-
-            .fa-spinner {
-                padding: 15px;
-                display: block;
-                float: right;
-            }
-        }
+        display: flex;
+        align-items: center;
 
         &.header-search {
-            .left, .right, .search {
-                display: table-cell;
-                position: relative;
-            }
-
             .search {
                 padding: 0 7px;
                 width: 100%;
                 text-align: left;
                 position: relative;
 
-                .fa-search {
+                .fa {
                     position: absolute;
-                    top: 15px;
+                    top: 7px;
                     left: 15px;
                     color: lighten($brand-primary, 30%);
                 }
@@ -231,7 +162,6 @@
                 input {
                     width: 100%;
                     margin: 0;
-                    float: none;
                     background: darken($brand-primary, 8%);
                     border: none;
                     color: white;
@@ -248,11 +178,6 @@
                         color: lighten($brand-primary, 35%);
                     }
                 }
-            }
-
-            a {
-                white-space: nowrap;
-                float: none;
             }
         }
     }
