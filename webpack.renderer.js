@@ -34,6 +34,17 @@ const common = {
                 use: 'ts-loader',
                 exclude: /node_modules\/(?!(@bitwarden)\/).*/
             },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                exclude: /.*(fontawesome-webfont)\.svg/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'images/',
+                    }
+                }]
+            }
         ]
     },
     plugins: [],

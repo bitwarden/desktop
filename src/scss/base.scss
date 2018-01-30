@@ -8,7 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: $background-color;
+    background-color: $background-color-alt2;
     overflow: hidden;
     font-family: $font-family-sans-serif;
     font-size: $font-size-base;
@@ -25,6 +25,17 @@ h1, h2, h3, h4, h5, h6 {
     color: $text-color;
     margin: 0;
     padding: 0;
+}
+
+p {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 a {

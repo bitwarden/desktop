@@ -1,8 +1,35 @@
-<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-    <label for="email">{{'emailAddress' | i18n}}</label>
-    <input id="email" type="text" [(ngModel)]="email" name="email" required /><br /><br />
-    <label for="master-password">{{'masterPassword' | i18n}}</label>
-    <input id="master-password" type="password" [(ngModel)]="masterPassword"
-           name="masterPassword" required /><br /><br />
-    <button type="submit">Submit</button>
-</form>
+<div id="login">
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <div class="content">
+            <img src="../../images/logo@2x.png" alt="bitwarden">
+            <p>{{'loginOrCreateNewAccount' | i18n}}</p>
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-content-row" appBoxRow>
+                        <label for="email">{{'emailAddress' | i18n}}</label>
+                        <input id="email" type="email" name="Email" [(ngModel)]="email" required appAutofocus>
+                    </div>
+                    <div class="box-content-row" appBoxRow>
+                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                        <input id="masterPassword" type="password" name="MasterPassword" [(ngModel)]="masterPassword"
+                               required>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn primary block">
+                    <i class="fa fa-sign-in"></i> {{'logIn' | i18n}}
+                </button>
+                <button type="button" class="btn block">
+                    <i class="fa fa-pencil-square-o"></i> {{'createAccount' | i18n}}
+                </button>
+            </div>
+            <div class="sub-options">
+                <a href="#">{{'getMasterPasswordHint' | i18n}}</a>
+            </div>
+            <a href="#" class="settings-icon">
+                <i class="fa fa-cog fa-lg"></i><span>&nbsp;{{'settings' | i18n}}</span>
+            </a>
+        </div>
+    </form>
+</div>

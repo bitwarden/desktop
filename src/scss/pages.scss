@@ -1,0 +1,68 @@
+﻿@import "variables.scss";
+
+#login, #register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% + 50px);
+    margin-top: -50px;
+
+    @media (min-height: 750px) {
+        height: calc(100% + 300px);
+        margin-top: -300px;
+    }
+
+    .content {
+        max-width: 300px;
+
+        img {
+            margin: 0 auto 15px;
+            width: 282px;
+            display: block;
+        }
+
+        p {
+            font-size: $font-size-large;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            margin: 15px 0 20px;
+
+            button {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .sub-options {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        a.settings-icon {
+            color: #bbbbbb;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+            span {
+                visibility: hidden;
+            }
+
+            &:hover, &:focus {
+                color: $brand-primary;
+                text-decoration: none;
+
+                span {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

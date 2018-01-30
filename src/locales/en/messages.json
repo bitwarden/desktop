@@ -65,9 +65,6 @@
   "emailAddress": {
     "message": "Email Address"
   },
-  "masterPassword": {
-    "message": "Master Password"
-  },
   "verificationCodeTotp": {
     "message": "Verification Code (TOTP)"
   },
@@ -382,5 +379,44 @@
   },
   "deletedFolder": {
     "message": "Deleted folder"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Log in or create a new account to access your secure vault."
+  },
+  "createAccount": {
+    "message": "Create Account"
+  },
+  "logIn": {
+    "message": "Log In"
+  },
+  "submit": {
+    "message": "Submit"
+  },
+  "masterPass": {
+    "message": "Master Password"
+  },
+  "masterPassDesc": {
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc": {
+    "message": "A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass": {
+    "message": "Re-type Master Password"
+  },
+  "masterPassHint": {
+    "message": "Master Password Hint (optional)"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "passwordHint": {
+    "message": "Password Hint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint": {
+    "message": "Get master password hint"
   }
 }
