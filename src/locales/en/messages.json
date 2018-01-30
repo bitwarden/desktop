@@ -418,5 +418,26 @@
   },
   "getMasterPasswordHint": {
     "message": "Get master password hint"
+  },
+  "emailRequired": {
+    "message": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "We've sent you an email with your master password hint."
   }
 }
