@@ -27,6 +27,8 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { CollectionView } from 'jslib/models/view/collectionView';
 import { FolderView } from 'jslib/models/view/folderView';
 
+import { I18nService } from 'jslib/abstractions/i18n.service';
+
 @Component({
     selector: 'app-vault',
     template: template,
@@ -45,7 +47,7 @@ export class VaultComponent implements OnInit {
     collectionId: string = null;
 
     constructor(private route: ActivatedRoute, private router: Router, private location: Location,
-        private componentFactoryResolver: ComponentFactoryResolver) {
+        private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService) {
     }
 
     async ngOnInit() {
@@ -138,12 +140,14 @@ export class VaultComponent implements OnInit {
     }
 
     async clearGroupingFilters() {
+        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchVault');
         await this.ciphersComponent.load();
         this.clearFilters();
         this.go();
     }
 
     async filterFavorites() {
+        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFavorites');
         await this.ciphersComponent.load((c) => c.favorite);
         this.clearFilters();
         this.favorites = true;
@@ -151,6 +155,7 @@ export class VaultComponent implements OnInit {
     }
 
     async filterCipherType(type: CipherType) {
+        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchType');
         await this.ciphersComponent.load((c) => c.type === type);
         this.clearFilters();
         this.type = type;
@@ -159,6 +164,7 @@ export class VaultComponent implements OnInit {
 
     async filterFolder(folderId: string) {
         folderId = folderId === 'none' ? null : folderId;
+        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFolder');
         await this.ciphersComponent.load((c) => c.folderId === folderId);
         this.clearFilters();
         this.folderId = folderId == null ? 'none' : folderId;
@@ -166,6 +172,7 @@ export class VaultComponent implements OnInit {
     }
 
     async filterCollection(collectionId: string) {
+        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
         await this.ciphersComponent.load((c) => c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();
         this.collectionId = collectionId;

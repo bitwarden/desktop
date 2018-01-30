@@ -23,6 +23,7 @@ export class CiphersComponent implements OnInit {
 
     ciphers: CipherView[] = [];
     searchText: string;
+    searchPlaceholder: string = null;
     private filter: (cipher: CipherView) => boolean = null;
 
     constructor(private cipherService: CipherService) {

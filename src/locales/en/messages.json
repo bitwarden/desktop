@@ -333,5 +333,18 @@
   },
   "ambiguous": {
     "message": "Avoid Ambiguous Characters"
+  },
+  "searchCollection": {
+    "message": "Search collection"
+  },
+  "searchFolder": {
+    "message": "Search folder"
+  },
+  "searchFavorites": {
+    "message": "Search favorites"
+  },
+  "searchType": {
+    "message": "Search type",
+    "description": "Search item type"
   }
 }
