@@ -27,6 +27,7 @@ export class FolderAddEditComponent implements OnInit {
 
     editMode: boolean = false;
     folder: FolderView = new FolderView();
+    title: string;
 
     constructor(private folderService: FolderService, private i18nService: I18nService,
         private analytics: Angulartics2, private toasterService: ToasterService) { }
@@ -36,8 +37,11 @@ export class FolderAddEditComponent implements OnInit {
 
         if (this.editMode) {
             this.editMode = true;
+            this.title = this.i18nService.t('editFolder');
             const folder = await this.folderService.get(this.folderId);
             this.folder = await folder.decrypt();
+        } else {
+            this.title = this.i18nService.t('addFolder');
         }
     }
 
