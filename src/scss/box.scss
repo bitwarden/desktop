@@ -139,7 +139,7 @@
                 }
             }
 
-            input:not([type="checkbox"]), select, textarea {
+            input:not([type="checkbox"]), textarea {
                 border: none;
                 width: 100%;
                 background-color: transparent;
@@ -151,6 +151,12 @@
                 &:focus {
                     outline: none;
                 }
+            }
+
+            select {
+                width: 100%;
+                border: 1px solid darken($border-color-dark, 7%);
+                border-radius: $border-radius;
             }
 
             .action-buttons {
