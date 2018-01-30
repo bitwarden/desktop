@@ -14,6 +14,7 @@ import { AddEditComponent } from './vault/add-edit.component';
 import { AppComponent } from './app.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { BlurClickDirective } from './directives/blur-click.directive';
+import { BoxRowDirective } from './directives/box-row.directive';
 import { CiphersComponent } from './vault/ciphers.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
 import { GroupingsComponent } from './vault/groupings.component';
@@ -46,6 +47,7 @@ import { ViewComponent } from './vault/view.component';
         AppComponent,
         AttachmentsComponent,
         BlurClickDirective,
+        BoxRowDirective,
         CiphersComponent,
         FallbackSrcDirective,
         GroupingsComponent,
