@@ -4,10 +4,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100% + 50px);
-    margin-top: -50px;
+    height: 100%;
 
-    @media (min-height: 750px) {
+    @media (min-height: 500px) {
+        height: calc(100% + 50px);
+        margin-top: -50px;
+    }
+
+    @media (min-height: 800px) {
         height: calc(100% + 300px);
         margin-top: -300px;
     }
