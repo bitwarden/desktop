@@ -12,6 +12,7 @@ import { ToasterModule } from 'angular2-toaster';
 
 import { AddEditComponent } from './vault/add-edit.component';
 import { AppComponent } from './app.component';
+import { AttachmentsComponent } from './vault/attachments.component';
 import { BlurClickDirective } from './directives/blur-click.directive';
 import { CiphersComponent } from './vault/ciphers.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
@@ -43,6 +44,7 @@ import { ViewComponent } from './vault/view.component';
     declarations: [
         AddEditComponent,
         AppComponent,
+        AttachmentsComponent,
         BlurClickDirective,
         CiphersComponent,
         FallbackSrcDirective,
@@ -59,6 +61,7 @@ import { ViewComponent } from './vault/view.component';
         ViewComponent,
     ],
     entryComponents: [
+        AttachmentsComponent,
         ModalComponent,
         PasswordGeneratorComponent,
     ],

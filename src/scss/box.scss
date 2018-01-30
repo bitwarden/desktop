@@ -21,6 +21,7 @@
             z-index: 1;
             color: $text-color;
             overflow-wrap: break-word;
+            word-break: break-all;
 
             &:before {
                 content: "";
@@ -56,12 +57,6 @@
             &.pre {
                 white-space: pre;
                 overflow-x: auto;
-            }
-
-            .no-wrap {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
             }
 
             .row-label, label {
@@ -137,6 +132,10 @@
                 input {
                     height: 10px;
                 }
+
+                label, span {
+                    white-space: nowrap;
+                }
             }
 
             input:not([type="checkbox"]), textarea {
@@ -160,8 +159,10 @@
             }
 
             .action-buttons {
+                display: flex;
+                margin-left: 5px;
+
                 .row-btn {
-                    float: left;
                     cursor: pointer;
                     padding: 10px 8px;
                     background: none;
@@ -184,6 +185,11 @@
                         padding-right: 2px !important;
                     }
                 }
+
+                &.no-pad .row-btn {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
             }
 
             select.field-type {
@@ -191,21 +197,14 @@
                 width: calc(100% - 25px);
             }
 
-            .right-icon, .fa-chevron-right {
-                float: right;
-                margin-top: 4px;
+            .row-sub-icon {
                 color: $list-icon-color;
             }
 
             .row-sub-label {
-                float: right;
-                display: block;
-                margin-right: 15px;
+                margin: 0 15px;
                 color: $gray-light;
-            }
-
-            small.row-sub-label {
-                margin-top: 2px;
+                white-space: nowrap;
             }
         }
 

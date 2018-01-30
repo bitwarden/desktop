@@ -1,0 +1,49 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="box" *ngIf="cipher">
+                    <div class="box-header">
+                        {{'attachments' | i18n}}
+                    </div>
+                    <div class="box-content">
+                        <div *ngIf="cipher.hasAttachments">
+                            <div class="box-content-row box-content-row-flex" *ngFor="let a of cipher.attachments">
+                                <div class="row-main">
+                                    {{a.fileName}}
+                                </div>
+                                <small class="row-sub-label">{{a.sizeName}}</small>
+                                <div class="action-buttons no-pad">
+                                    <a class="row-btn" href="#" appStopClick appBlurClick title="{{'delete' | i18n}}"
+                                       (click)="delete(a)">
+                                        <i class="fa fa-lg fa-trash-o"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-header">
+                        {{'newAttachment' | i18n}}
+                    </div>
+                    <div class="box-content">
+                        <div class="box-content-row">
+                            <label for="file">{{'file' | i18n}}</label>
+                            <input type="file" id="file" name="file">
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        {{'maxFileSize' | i18n}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="primary" appBlurClick (click)="save()">
+                    <i class="fa fa-lg fa-save"></i> {{'save' | i18n}}
+                </button>
+                <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
+            </div>
+        </div>
+    </div>
+</div>

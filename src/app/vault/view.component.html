@@ -219,12 +219,12 @@
                 {{'attachments' | i18n}}
             </div>
             <div class="box-content">
-                <a class="box-content-row" *ngFor="let attachment of cipher.attachments" href="#" appStopClick
-                   (click)="downloadAttachment(attachment)">
-                    <i class="right-icon fa fa-download fa-fw" *ngIf="!attachment.downloading"></i>
-                    <i class="right-icon fa fa-spinner fa-fw fa-spin" *ngIf="attachment.downloading"></i>
+                <a class="box-content-row box-content-row-flex" *ngFor="let attachment of cipher.attachments"
+                   href="#" appStopClick appBlurCLick (click)="downloadAttachment(attachment)">
+                    <span class="row-main">{{attachment.fileName}}</span>
                     <small class="row-sub-label">{{attachment.sizeName}}</small>
-                    {{attachment.fileName}}
+                    <i class="fa fa-download fa-fw row-sub-icon" *ngIf="!attachment.downloading"></i>
+                    <i class="fa fa-spinner fa-fw fa-spin row-sub-icon" *ngIf="attachment.downloading"></i>
                 </a>
             </div>
         </div>

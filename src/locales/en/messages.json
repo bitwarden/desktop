@@ -346,5 +346,29 @@
   "searchType": {
     "message": "Search type",
     "description": "Search item type"
+  },
+  "newAttachment": {
+    "message": "Add New Attachment"
+  },
+  "deletedAttachment": {
+    "message": "Deleted attachment"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Are you sure you want to delete this attachment?"
+  },
+  "attachmentSaved": {
+    "message": "The attachment has been saved."
+  },
+  "file": {
+    "message": "File"
+  },
+  "selectFile": {
+    "message": "Select a file."
+  },
+  "maxFileSize": {
+    "message": "Maximum file size is 100 MB."
+  },
+  "updateKey": {
+    "message": "You cannot use this feature until you update your encryption key."
   }
 }

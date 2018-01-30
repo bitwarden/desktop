@@ -15,6 +15,7 @@ import {
 
 import { Location } from '@angular/common';
 
+import { AttachmentsComponent } from './attachments.component';
 import { AddEditComponent } from './add-edit.component';
 import { CiphersComponent } from './ciphers.component';
 import { GroupingsComponent } from './groupings.component';
@@ -38,6 +39,7 @@ export class VaultComponent implements OnInit {
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
     @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
     @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModal: ViewContainerRef;
+    @ViewChild('attachments', { read: ViewContainerRef }) attachmentsModal: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -130,7 +132,11 @@ export class VaultComponent implements OnInit {
     }
 
     editCipherAttachments(cipher: CipherView) {
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        const modal = this.attachmentsModal.createComponent(factory).instance;
+        const childComponent = modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModal);
 
+        childComponent.cipherId = cipher.id;
     }
 
     cancelledAddEdit(cipher: CipherView) {
@@ -180,10 +186,9 @@ export class VaultComponent implements OnInit {
     }
 
     async openPasswordGenerator() {
-        let factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        let componentRef = this.passwordGeneratorModal.createComponent(factory);
-        let modal = componentRef.instance as ModalComponent;
-        let childComponent = modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        const modal = this.passwordGeneratorModal.createComponent(factory).instance;
+        const childComponent = modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
             this.passwordGeneratorModal);
 
         childComponent.showSelect = true;
