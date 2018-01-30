@@ -1,0 +1,32 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="box">
+                    <div class="box-header">
+                        {{'addFolder' | i18n}}
+                    </div>
+                    <div class="box-content">
+                        <div class="box-content-row" appBoxRow>
+                            <label for="name">{{'name' | i18n}}</label>
+                            <input id="name" type="text" name="Name" [(ngModel)]="folder.name"
+                                   [appAutofocus]="!editMode">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="primary" appBlurClick (click)="save()">
+                    <i class="fa fa-lg fa-save"></i> {{'save' | i18n}}
+                </button>
+                <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
+                <div class="right">
+                    <button appBlurClick (click)="delete()" class="danger" title="{{'delete' | i18n}}"
+                            *ngIf="editMode">
+                        <i class="fa fa-trash-o fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

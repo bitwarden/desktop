@@ -309,9 +309,6 @@
   "editFolder": {
     "message": "Edit Folder"
   },
-  "deleteFolder": {
-    "message": "Delete Folder"
-  },
   "regeneratePassword": {
     "message": "Regenerate Password"
   },
@@ -370,5 +367,20 @@
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
+  },
+  "options": {
+    "message": "Options"
+  },
+  "editedFolder": {
+    "message": "Edited folder"
+  },
+  "addedFolder": {
+    "message": "Added folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Are you sure you want to delete this folder?"
+  },
+  "deletedFolder": {
+    "message": "Deleted folder"
   }
 }

@@ -18,6 +18,7 @@ import { Location } from '@angular/common';
 import { AttachmentsComponent } from './attachments.component';
 import { AddEditComponent } from './add-edit.component';
 import { CiphersComponent } from './ciphers.component';
+import { FolderAddEditComponent } from './folder-add-edit.component';
 import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
 import { ModalComponent } from '../modal.component';
@@ -40,6 +41,7 @@ export class VaultComponent implements OnInit {
     @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
     @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModal: ViewContainerRef;
     @ViewChild('attachments', { read: ViewContainerRef }) attachmentsModal: ViewContainerRef;
+    @ViewChild('folderAddEdit', { read: ViewContainerRef }) folderAddEditModal: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -198,6 +200,34 @@ export class VaultComponent implements OnInit {
                 this.addEditComponent.cipher.login != null) {
                 this.addEditComponent.cipher.login.password = password;
             }
+        });
+    }
+
+    async addFolder() {
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        const modal = this.folderAddEditModal.createComponent(factory).instance;
+        const childComponent = modal.show<FolderAddEditComponent>(FolderAddEditComponent, this.folderAddEditModal);
+
+        childComponent.folderId = null;
+        childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
+            modal.close();
+            await this.groupingsComponent.loadFolders();
+        });
+    }
+
+    async editFolder(folderId: string) {
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        const modal = this.folderAddEditModal.createComponent(factory).instance;
+        const childComponent = modal.show<FolderAddEditComponent>(FolderAddEditComponent, this.folderAddEditModal);
+
+        childComponent.folderId = folderId;
+        childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
+            modal.close();
+            await this.groupingsComponent.loadFolders();
+        });
+        childComponent.onDeletedFolder.subscribe(async (folder: FolderView) => {
+            modal.close();
+            await this.groupingsComponent.loadFolders();
         });
     }
 

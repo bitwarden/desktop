@@ -25,6 +25,8 @@ export class GroupingsComponent implements OnInit {
     @Output() onFavoritesClicked = new EventEmitter();
     @Output() onCipherTypeClicked = new EventEmitter<CipherType>();
     @Output() onFolderClicked = new EventEmitter<FolderView>();
+    @Output() onAddFolder = new EventEmitter();
+    @Output() onEditFolder = new EventEmitter<FolderView>();
     @Output() onCollectionClicked = new EventEmitter<CollectionView>();
 
     folders: any[];
@@ -42,8 +44,12 @@ export class GroupingsComponent implements OnInit {
     }
 
     async ngOnInit() {
-        this.folders = await this.folderService.getAllDecrypted();
+        await this.loadFolders();
         this.collections = await this.collectionService.getAllDecrypted();
+    }
+
+    async loadFolders() {
+        this.folders = await this.folderService.getAllDecrypted();
     }
 
     all() {
@@ -69,6 +75,14 @@ export class GroupingsComponent implements OnInit {
         this.selectedFolder = true;
         this.selectedFolderId = folder.id;
         this.onFolderClicked.emit(folder);
+    }
+
+    addFolder() {
+        this.onAddFolder.emit();
+    }
+
+    editFolder(folder: FolderView) {
+        this.onEditFolder.emit(folder);
     }
 
     collection(collection: CollectionView) {

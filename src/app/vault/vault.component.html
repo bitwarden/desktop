@@ -4,6 +4,8 @@
                          (onFavoritesClicked)="filterFavorites()"
                          (onCipherTypeClicked)="filterCipherType($event)"
                          (onFolderClicked)="filterFolder($event.id)"
+                         (onAddFolder)="addFolder()"
+                         (onEditFolder)="editFolder($event.id)"
                          (onCollectionClicked)="filterCollection($event.id)">
     </app-vault-groupings>
     <app-vault-ciphers id="items"
@@ -28,4 +30,5 @@
     </app-vault-add-edit>
     <ng-template #passwordGenerator></ng-template>
     <ng-template #attachments></ng-template>
+    <ng-template #folderAddEdit></ng-template>
 </div>

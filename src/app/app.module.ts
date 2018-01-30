@@ -13,10 +13,12 @@ import { ToasterModule } from 'angular2-toaster';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AppComponent } from './app.component';
 import { AttachmentsComponent } from './vault/attachments.component';
+import { AutofocusDirective } from './directives/autofocus.directive';
 import { BlurClickDirective } from './directives/blur-click.directive';
 import { BoxRowDirective } from './directives/box-row.directive';
 import { CiphersComponent } from './vault/ciphers.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
+import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
 import { I18nPipe } from './pipes/i18n.pipe';
 import { IconComponent } from './vault/icon.component';
@@ -46,10 +48,12 @@ import { ViewComponent } from './vault/view.component';
         AddEditComponent,
         AppComponent,
         AttachmentsComponent,
+        AutofocusDirective,
         BlurClickDirective,
         BoxRowDirective,
         CiphersComponent,
         FallbackSrcDirective,
+        FolderAddEditComponent,
         GroupingsComponent,
         I18nPipe,
         IconComponent,
@@ -64,6 +68,7 @@ import { ViewComponent } from './vault/view.component';
     ],
     entryComponents: [
         AttachmentsComponent,
+        FolderAddEditComponent,
         ModalComponent,
         PasswordGeneratorComponent,
     ],
