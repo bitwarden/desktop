@@ -173,7 +173,8 @@
             <div class="box-content">
                 <div class="box-content-row" *ngIf="cipher.type === cipherType.Login">
                     <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
-                    <input id="loginTotp" type="text" name="Login.Totp" [(ngModel)]="cipher.login.totp">
+                    <input id="loginTotp" type="text" name="Login.Totp" class="monospaced"
+                           [(ngModel)]="cipher.login.totp">
                 </div>
                 <div class="box-content-row">
                     <label for="folder">{{'folder' | i18n}}</label>

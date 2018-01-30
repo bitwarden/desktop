@@ -212,6 +212,12 @@
             padding-top: 5px;
             padding-bottom: 5px;
         }
+
+        &.no-hover .box-content-row, .box-content-row.no-hover {
+            &:hover, &:focus {
+                background-color: initial;
+            }
+        }
     }
 
     .box-footer {
