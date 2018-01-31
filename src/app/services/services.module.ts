@@ -98,8 +98,13 @@ environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);
 });
 
-function initFactory(i18n: I18nService): Function {
-    return () => i18n.init();
+function initFactory(i18n: I18nService, platformUtilsService: DesktopPlatformUtilsService): Function {
+    return async () => {
+        await i18n.init();
+        const htmlEl = window.document.documentElement;
+        htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
+        htmlEl.classList.add('locale_' + i18n.translationLocale);
+    };
 }
 
 @NgModule({
@@ -121,7 +126,10 @@ function initFactory(i18n: I18nService): Function {
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
-            deps: [I18nServiceAbstraction],
+            deps: [
+                I18nServiceAbstraction, 
+                PlatformUtilsServiceAbstraction,
+            ],
             multi: true,
         },
     ],
