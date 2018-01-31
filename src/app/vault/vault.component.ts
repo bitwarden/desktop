@@ -119,18 +119,18 @@ export class VaultComponent implements OnInit {
         this.go();
     }
 
-    savedCipher(cipher: CipherView) {
+    async savedCipher(cipher: CipherView) {
         this.cipherId = cipher.id;
         this.action = 'view';
         this.go();
-        this.ciphersComponent.updateCipher(cipher);
+        await this.ciphersComponent.refresh();
     }
 
-    deletedCipher(cipher: CipherView) {
+    async deletedCipher(cipher: CipherView) {
         this.cipherId = null;
         this.action = null;
         this.go();
-        this.ciphersComponent.removeCipher(cipher.id);
+        await this.ciphersComponent.refresh();
     }
 
     editCipherAttachments(cipher: CipherView) {

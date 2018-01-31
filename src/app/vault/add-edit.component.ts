@@ -142,6 +142,7 @@ export class AddEditComponent implements OnChanges {
         try {
             this.formPromise = this.cipherService.saveWithServer(cipher);
             await this.formPromise;
+            this.cipher.id = cipher.id;
             this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Cipher' : 'Added Cipher' });
             this.toasterService.popAsync('success', null, this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
             this.onSavedCipher.emit(this.cipher);

@@ -4,7 +4,6 @@ import {
     Component,
     EventEmitter,
     Input,
-    OnInit,
     Output,
 } from '@angular/core';
 
@@ -16,7 +15,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
     selector: 'app-vault-ciphers',
     template: template,
 })
-export class CiphersComponent implements OnInit {
+export class CiphersComponent {
     @Input() activeCipherId: string = null;
     @Output() onCipherClicked = new EventEmitter<CipherView>();
     @Output() onAddCipher = new EventEmitter();
@@ -26,12 +25,7 @@ export class CiphersComponent implements OnInit {
     searchPlaceholder: string = null;
     private filter: (cipher: CipherView) => boolean = null;
 
-    constructor(private cipherService: CipherService) {
-    }
-
-    async ngOnInit() {
-        //await this.load();
-    }
+    constructor(private cipherService: CipherService) {}
 
     async load(filter: (cipher: CipherView) => boolean = null) {
         this.filter = filter;
@@ -46,20 +40,6 @@ export class CiphersComponent implements OnInit {
 
     async refresh() {
         await this.load(this.filter);
-    }
-
-    updateCipher(cipher: CipherView) {
-        const i = this.ciphers.findIndex((c) => c.id === cipher.id);
-        if (i > -1) {
-            this.ciphers[i] = cipher;
-        }
-    }
-
-    removeCipher(cipherId: string) {
-        const i = this.ciphers.findIndex((c) => c.id === cipherId);
-        if (i > -1) {
-            this.ciphers.splice(i, 1);
-        }
     }
 
     cipherClicked(cipher: CipherView) {
