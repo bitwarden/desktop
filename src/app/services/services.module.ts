@@ -5,11 +5,15 @@ import {
     NgModule,
 } from '@angular/core';
 
+import { ToasterModule } from 'angular2-toaster';
+
 import { DesktopMessagingService } from '../../services/desktopMessaging.service';
 import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
 import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { DesktopSecureStorageService } from '../../services/desktopSecureStorage.service';
 import { I18nService } from '../../services/i18n.service';
+
+import { ValidationService } from './validation.service';
 
 import { Analytics } from 'jslib/misc/analytics';
 
@@ -108,9 +112,12 @@ function initFactory(i18n: I18nService, platformUtilsService: DesktopPlatformUti
 }
 
 @NgModule({
-    imports: [],
+    imports: [
+        ToasterModule,
+    ],
     declarations: [],
     providers: [
+        ValidationService,
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
         { provide: FolderServiceAbstraction, useValue: folderService },
@@ -122,6 +129,7 @@ function initFactory(i18n: I18nService, platformUtilsService: DesktopPlatformUti
         { provide: UtilsServiceAbstraction, useValue: utilsService },
         { provide: CryptoServiceAbstraction, useValue: cryptoService },
         { provide: PlatformUtilsServiceAbstraction, useValue: platformUtilsService },
+        { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         {
             provide: APP_INITIALIZER,

@@ -439,5 +439,8 @@
   },
   "masterPassSent": {
     "message": "We've sent you an email with your master password hint."
+  },
+  "unexpectedError": {
+    "message": "An unexpected error has occurred."
   }
 }
