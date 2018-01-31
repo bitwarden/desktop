@@ -8,6 +8,10 @@
     color: $text-muted !important;
 }
 
+.text-center {
+    text-align: center;
+}
+
 [hidden] {
     display: none !important;
 }
@@ -95,3 +99,4 @@
         margin-top: 10px;
     }
 }
+

@@ -442,5 +442,8 @@
   },
   "itemInformation": {
     "message": "Item Information"
+  },
+  "noItemsInList": {
+    "message": "There are no items to list."
   }
 }

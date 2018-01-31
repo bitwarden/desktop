@@ -11,6 +11,10 @@
         max-width: 250px;
         border-right: 1px solid $border-color-dark;
 
+        .inner-content {
+            padding-bottom: 0 !important;
+        }
+
         h2 {
             color: $gray-light;
             text-transform: uppercase;
@@ -102,6 +106,16 @@
         min-width: 200px;
         max-width: 350px;
         border-right: 1px solid $border-color-dark;
+
+        .no-items {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+        }
     }
 
     #details {
@@ -191,6 +205,7 @@
         flex: 1 1 auto;
         position: relative;
         overflow: auto;
+        height: 100%;
     }
 
     .footer {

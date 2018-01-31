@@ -31,6 +31,10 @@ img {
 a {
     color: $brand-primary;
     text-decoration: none;
+
+    &:hover, &:focus {
+        color: darken($brand-primary, 6%);
+    }
 }
 
 input, select, textarea, button {

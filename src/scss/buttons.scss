@@ -39,4 +39,9 @@
         display: block;
         width: 100%;
     }
+
+    &.link {
+        border: none !important;
+        background: none !important;
+    }
 }

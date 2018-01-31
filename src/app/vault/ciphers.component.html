@@ -6,20 +6,26 @@
     </div>
 </div>
 <div class="content">
-    <div class="list">
-        <a *ngFor="let c of ciphers | searchCiphers: searchText" appStopClick (click)="cipherClicked(c)"
-           href="#" title="{{'viewItem' | i18n}}" [ngClass]="{'active': c.id === activeCipherId}">
-            <app-vault-icon [cipher]="c"></app-vault-icon>
-            <span class="text">
-                {{c.name}}
-                <i class="fa fa-share-alt text-muted" *ngIf="c.organizationId"
-                   title="{{'shared' | i18n}}"></i>
-                <i class="fa fa-paperclip text-muted" *ngIf="c.hasAttachments"
-                   title="{{'attachments' | i18n}}"></i>
-            </span>
-            <span class="detail">{{c.subTitle}}</span>
-        </a>
-    </div>
+    <ng-container *ngIf="(ciphers | searchCiphers: searchText) as searchedCiphers">
+        <div class="list" *ngIf="searchedCiphers.length > 0">
+            <a *ngFor="let c of searchedCiphers" appStopClick (click)="cipherClicked(c)"
+               href="#" title="{{'viewItem' | i18n}}" [ngClass]="{'active': c.id === activeCipherId}">
+                <app-vault-icon [cipher]="c"></app-vault-icon>
+                <span class="text">
+                    {{c.name}}
+                    <i class="fa fa-share-alt text-muted" *ngIf="c.organizationId"
+                       title="{{'shared' | i18n}}"></i>
+                    <i class="fa fa-paperclip text-muted" *ngIf="c.hasAttachments"
+                       title="{{'attachments' | i18n}}"></i>
+                </span>
+                <span class="detail">{{c.subTitle}}</span>
+            </a>
+        </div>
+        <div *ngIf="searchedCiphers.length === 0" class="no-items">
+            <p>{{'noItemsInList' | i18n}}</p>
+            <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+        </div>
+    </ng-container>
 </div>
 <div class="footer">
     <button appBlurClick (click)="addCipher()" class="block primary" title="{{'addItem' | i18n}}">
