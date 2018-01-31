@@ -24,7 +24,7 @@ export class LoginComponent {
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService) { }
 
-    async onSubmit() {
+    async submit() {
         if (this.email == null || this.email === '') {
             this.toasterService.popAsync('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('emailRequired'));

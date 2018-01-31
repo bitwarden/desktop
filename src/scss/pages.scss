@@ -31,9 +31,17 @@
             margin-bottom: 20px;
         }
 
+        .box {
+            margin-bottom: 20px;
+
+            &.last {
+                margin-bottom: 15px;
+            }
+        }
+
         .buttons {
             display: flex;
-            margin: 15px 0 20px;
+            margin-bottom: 20px;
 
             button {
                 margin-right: 10px;

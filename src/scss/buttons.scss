@@ -7,6 +7,8 @@
     border: 1px solid $button-border-color;
     font-size: $font-size-base;
     color: $button-color;
+    white-space: nowrap;
+    text-align: center;
 
     &:hover:not([disabled]), &:focus:not([disabled]) {
         cursor: pointer;
