@@ -11,6 +11,7 @@ import { ServicesModule } from './services/services.module';
 import { ToasterModule } from 'angular2-toaster';
 
 import { AddEditComponent } from './vault/add-edit.component';
+import { ApiFormDirective } from './directives/api-form.directive';
 import { AppComponent } from './app.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { AutofocusDirective } from './directives/autofocus.directive';
@@ -46,6 +47,7 @@ import { ViewComponent } from './vault/view.component';
     ],
     declarations: [
         AddEditComponent,
+        ApiFormDirective,
         AppComponent,
         AttachmentsComponent,
         AutofocusDirective,

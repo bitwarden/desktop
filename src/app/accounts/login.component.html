@@ -1,5 +1,5 @@
 <div id="login">
-    <form (ngSubmit)="onSubmit()">
+    <form #form (ngSubmit)="onSubmit()" [appApiForm]="formPromise">
         <div class="content">
             <img src="../../images/logo@2x.png" alt="bitwarden">
             <p>{{'loginOrCreateNewAccount' | i18n}}</p>
@@ -18,9 +18,9 @@
                 </div>
             </div>
             <div class="buttons">
-                <button type="submit" class="btn primary block" [disabled]="loading">
-                    <span [hidden]="loading"><i class="fa fa-sign-in"></i> {{'logIn' | i18n}}</span>
-                    <i class="fa fa-spinner fa-spin" [hidden]="!loading"></i>
+                <button type="submit" class="btn primary block" [disabled]="form.loading">
+                    <span [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'logIn' | i18n}}</span>
+                    <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
                 </button>
                 <button type="button" class="btn block">
                     <i class="fa fa-pencil-square-o"></i> {{'createAccount' | i18n}}

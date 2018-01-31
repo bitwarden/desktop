@@ -12,8 +12,6 @@ import { ToasterService } from 'angular2-toaster';
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 
-import { ValidationService } from '../services/validation.service';
-
 @Component({
     selector: 'app-login',
     template: template,
@@ -21,11 +19,10 @@ import { ValidationService } from '../services/validation.service';
 export class LoginComponent {
     email: string = '';
     masterPassword: string = '';
-    loading: boolean;
+    formPromise: Promise<any>;
 
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
-        private toasterService: ToasterService, private i18nService: I18nService,
-        private validationService: ValidationService) { }
+        private toasterService: ToasterService, private i18nService: I18nService) { }
 
     async onSubmit() {
         if (this.email == null || this.email === '') {
@@ -44,10 +41,9 @@ export class LoginComponent {
             return;
         }
 
-        this.loading = true;
         try {
-            const response = await this.authService.logIn(this.email, this.masterPassword);
-            this.loading = false;
+            this.formPromise = this.authService.logIn(this.email, this.masterPassword);
+            const response = await this.formPromise;
             if (response.twoFactor) {
                 this.analytics.eventTrack.next({ action: 'Logged In To Two-step' });
                 this.router.navigate(['twoFactor']);
@@ -57,9 +53,6 @@ export class LoginComponent {
                 this.router.navigate(['vault']);
                 // TODO: sync on load to vault?
             }
-        } catch (e) {
-            this.loading = false;
-            this.validationService.showError(e);
-        }
+        } catch { }
     }
 }
