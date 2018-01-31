@@ -1,5 +1,5 @@
 <div id="login">
-    <form #form (ngSubmit)="onSubmit()" [appApiForm]="formPromise">
+    <form #form (ngSubmit)="onSubmit()" [appApiAction]="formPromise">
         <div class="content">
             <img src="../../images/logo@2x.png" alt="bitwarden">
             <p>{{'loginOrCreateNewAccount' | i18n}}</p>

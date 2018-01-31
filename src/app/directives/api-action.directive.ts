@@ -8,21 +8,21 @@ import {
 import { ValidationService } from '../services/validation.service';
 
 @Directive({
-    selector: '[appApiForm]',
+    selector: '[appApiAction]',
 })
-export class ApiFormDirective implements OnChanges {
-    @Input() appApiForm: Promise<any>;
+export class ApiActionDirective implements OnChanges {
+    @Input() appApiAction: Promise<any>;
 
     constructor(private el: ElementRef, private validationService: ValidationService) { }
 
     ngOnChanges(changes: any) {
-        if (this.appApiForm == null || this.appApiForm.then == null) {
+        if (this.appApiAction == null || this.appApiAction.then == null) {
             return;
         }
 
         this.el.nativeElement.loading = true;
 
-        this.appApiForm.then((response: any) => {
+        this.appApiAction.then((response: any) => {
             this.el.nativeElement.loading = false;
         }, (e: any) => {
             this.el.nativeElement.loading = false;

@@ -1,6 +1,6 @@
 <div class="modal fade">
     <div class="modal-dialog modal-sm">
-        <div class="modal-content">
+        <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
             <div class="modal-body">
                 <div class="box">
                     <div class="box-header">
@@ -16,17 +16,20 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="primary" appBlurClick (click)="save()">
-                    <i class="fa fa-lg fa-save"></i> {{'save' | i18n}}
+                <button appBlurClick type="submit" class="primary" title="{{'save' | i18n}}" [disabled]="form.loading">
+                    <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading"></i>
+                    <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading"></i>
                 </button>
                 <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
                 <div class="right">
-                    <button appBlurClick (click)="delete()" class="danger" title="{{'delete' | i18n}}"
-                            *ngIf="editMode">
-                        <i class="fa fa-trash-o fa-lg"></i>
+                    <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
+                            title="{{'delete' | i18n}}" *ngIf="editMode" [disabled]="deleteBtn.loading"
+                            [appApiAction]="deletePromise">
+                        <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
+                        <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
                     </button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>

@@ -21,7 +21,7 @@
     }
 
     &[disabled] {
-        background-color: darken($button-backgound-color, 1.5%);
+        opacity: 0.65;
         cursor: default;
     }
 

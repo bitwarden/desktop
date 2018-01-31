@@ -44,6 +44,9 @@ export class AddEditComponent implements OnChanges {
     editMode: boolean = false;
     cipher: CipherView;
     folders: FolderView[];
+    title: string;
+    formPromise: Promise<any>;
+    deletePromise: Promise<any>;
     showPassword: boolean = false;
     cipherType = CipherType;
     fieldType = FieldType;
@@ -109,9 +112,11 @@ export class AddEditComponent implements OnChanges {
 
         if (this.editMode) {
             this.editMode = true;
+            this.title = this.i18nService.t('editItem');
             const cipher = await this.cipherService.get(this.cipherId);
             this.cipher = await cipher.decrypt();
         } else {
+            this.title = this.i18nService.t('addItem');
             this.cipher = new CipherView();
             this.cipher.folderId = this.folderId;
             this.cipher.type = CipherType.Login;
@@ -125,7 +130,7 @@ export class AddEditComponent implements OnChanges {
         this.folders = await this.folderService.getAllDecrypted();
     }
 
-    async save() {
+    async submit() {
         if (this.cipher.name == null || this.cipher.name === '') {
             this.toasterService.popAsync('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('nameRequired'));
@@ -133,10 +138,14 @@ export class AddEditComponent implements OnChanges {
         }
 
         const cipher = await this.cipherService.encrypt(this.cipher);
-        await this.cipherService.saveWithServer(cipher);
-        this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Cipher' : 'Added Cipher' });
-        this.toasterService.popAsync('success', null, this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
-        this.onSavedCipher.emit(this.cipher);
+
+        try {
+            this.formPromise = this.cipherService.saveWithServer(cipher);
+            await this.formPromise;
+            this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Cipher' : 'Added Cipher' });
+            this.toasterService.popAsync('success', null, this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
+            this.onSavedCipher.emit(this.cipher);
+        } catch { }
     }
 
     addField() {
@@ -169,10 +178,13 @@ export class AddEditComponent implements OnChanges {
             return;
         }
 
-        await this.cipherService.deleteWithServer(this.cipher.id);
-        this.analytics.eventTrack.next({ action: 'Deleted Cipher' });
-        this.toasterService.popAsync('success', null, this.i18nService.t('deletedItem'));
-        this.onDeletedCipher.emit(this.cipher);
+        try {
+            this.deletePromise = this.cipherService.deleteWithServer(this.cipher.id);
+            await this.deletePromise;
+            this.analytics.eventTrack.next({ action: 'Deleted Cipher' });
+            this.toasterService.popAsync('success', null, this.i18nService.t('deletedItem'));
+            this.onDeletedCipher.emit(this.cipher);
+        } catch { }
     }
 
     generatePassword() {

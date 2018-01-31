@@ -28,6 +28,8 @@ export class FolderAddEditComponent implements OnInit {
     editMode: boolean = false;
     folder: FolderView = new FolderView();
     title: string;
+    formPromise: Promise<any>;
+    deletePromise: Promise<any>;
 
     constructor(private folderService: FolderService, private i18nService: I18nService,
         private analytics: Angulartics2, private toasterService: ToasterService) { }
@@ -45,19 +47,22 @@ export class FolderAddEditComponent implements OnInit {
         }
     }
 
-    async save() {
+    async submit() {
         if (this.folder.name == null || this.folder.name === '') {
             this.toasterService.popAsync('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('nameRequired'));
             return;
         }
 
-        const folder = await this.folderService.encrypt(this.folder);
-        await this.folderService.saveWithServer(folder);
-        this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Folder' : 'Added Folder' });
-        this.toasterService.popAsync('success', null,
-            this.i18nService.t(this.editMode ? 'editedFolder' : 'addedFolder'));
-        this.onSavedFolder.emit(this.folder);
+        try {
+            const folder = await this.folderService.encrypt(this.folder);
+            this.formPromise = this.folderService.saveWithServer(folder);;
+            await this.formPromise;
+            this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Folder' : 'Added Folder' });
+            this.toasterService.popAsync('success', null,
+                this.i18nService.t(this.editMode ? 'editedFolder' : 'addedFolder'));
+            this.onSavedFolder.emit(this.folder);
+        } catch { }
     }
 
     async delete() {
@@ -65,9 +70,12 @@ export class FolderAddEditComponent implements OnInit {
             return;
         }
 
-        await this.folderService.deleteWithServer(this.folder.id);
-        this.analytics.eventTrack.next({ action: 'Deleted Folder' });
-        this.toasterService.popAsync('success', null, this.i18nService.t('deletedFolder'));
-        this.onDeletedFolder.emit(this.folder);
+        try {
+            this.deletePromise = this.folderService.deleteWithServer(this.folder.id);
+            await this.deletePromise;
+            this.analytics.eventTrack.next({ action: 'Deleted Folder' });
+            this.toasterService.popAsync('success', null, this.i18nService.t('deletedFolder'));
+            this.onDeletedFolder.emit(this.folder);
+        } catch { }
     }
 }
