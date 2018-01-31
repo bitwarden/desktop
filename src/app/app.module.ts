@@ -21,6 +21,7 @@ import { CiphersComponent } from './vault/ciphers.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
+import { HintComponent } from './accounts/hint.component';
 import { I18nPipe } from './pipes/i18n.pipe';
 import { IconComponent } from './vault/icon.component';
 import { LoginComponent } from './accounts/login.component';
@@ -58,6 +59,7 @@ import { ViewComponent } from './vault/view.component';
         FallbackSrcDirective,
         FolderAddEditComponent,
         GroupingsComponent,
+        HintComponent,
         I18nPipe,
         IconComponent,
         LoginComponent,

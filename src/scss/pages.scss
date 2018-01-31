@@ -15,9 +15,15 @@
         height: calc(100% + 300px);
         margin-top: -300px;
     }
+
+    img {
+        margin: 0 auto 15px;
+        width: 282px;
+        display: block;
+    }
 }
 
-#register {
+#register, #hint {
     margin-top: 20px;
 
     .content {
@@ -25,20 +31,15 @@
     }
 }
 
-#login, #register {
+#login, #register, #hint {
     .content {
         max-width: 300px;
 
-        img {
-            margin: 0 auto 15px;
-            width: 282px;
-            display: block;
-        }
-
-        p {
+        p, h1 {
             font-size: $font-size-large;
             text-align: center;
             margin-bottom: 20px;
+            font-weight: normal;
         }
 
         .box {
