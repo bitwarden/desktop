@@ -439,5 +439,8 @@
   },
   "unexpectedError": {
     "message": "An unexpected error has occurred."
+  },
+  "itemInformation": {
+    "message": "Item Information"
   }
 }
