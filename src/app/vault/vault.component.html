@@ -28,6 +28,13 @@
                         (onCancelled)="cancelledAddEdit($event)"
                         (onGeneratePassword)="openPasswordGenerator()">
     </app-vault-add-edit>
+    <div id="logo" *ngIf="action !== 'add' && action !== 'edit' && action !== 'view'">
+        <div class="content">
+            <div class="inner-content">
+                <img src="../../images/logo@2x.png" />
+            </div>
+        </div>
+    </div>
     <ng-template #passwordGenerator></ng-template>
     <ng-template #attachments></ng-template>
     <ng-template #folderAddEdit></ng-template>

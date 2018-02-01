@@ -4,7 +4,7 @@
     height: 100%;
     display: flex;
 
-    #groupings, #items, #details {
+    #groupings, #items, #details, #logo {
         display: flex;
         flex-direction: column;
 
@@ -158,6 +158,35 @@
         > form {
             display: flex;
             flex-direction: column;
+        }
+    }
+
+    #logo {
+        flex: 1;
+        min-width: 0;
+
+        .content {
+            overflow-y: hidden;
+            overflow-x: auto;
+        }
+
+        .inner-content {
+            min-width: 320px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: 282px;
+            opacity: 0.3;
+            transition: all 1s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 
