@@ -46,7 +46,7 @@ export class LoginComponent {
             const response = await this.formPromise;
             if (response.twoFactor) {
                 this.analytics.eventTrack.next({ action: 'Logged In To Two-step' });
-                this.router.navigate(['twoFactor']);
+                this.router.navigate(['2fa']);
                 // TODO: pass 2fa info
             } else {
                 this.analytics.eventTrack.next({ action: 'Logged In' });

@@ -31,6 +31,7 @@ import { RegisterComponent } from './accounts/register.component';
 import { SearchCiphersPipe } from './pipes/search-ciphers.pipe';
 import { StopClickDirective } from './directives/stop-click.directive';
 import { StopPropDirective } from './directives/stop-prop.directive';
+import { TwoFactorComponent } from './accounts/two-factor.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
@@ -69,6 +70,7 @@ import { ViewComponent } from './vault/view.component';
         SearchCiphersPipe,
         StopClickDirective,
         StopPropDirective,
+        TwoFactorComponent,
         VaultComponent,
         ViewComponent,
     ],
