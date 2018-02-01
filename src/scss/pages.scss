@@ -1,6 +1,6 @@
 ﻿@import "variables.scss";
 
-#login {
+#login-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
     }
 }
 
-#register, #hint {
+#register-page, #hint-page {
     margin-top: 20px;
 
     .content {
@@ -31,7 +31,7 @@
     }
 }
 
-#login, #register, #hint {
+#login-page, #register-page, #hint-page {
     .content {
         max-width: 300px;
 

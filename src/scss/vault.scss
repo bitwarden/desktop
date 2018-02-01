@@ -4,7 +4,7 @@
     height: 100%;
     display: flex;
 
-    #groupings, #items, #details, #logo {
+    > #groupings, > #items, > #details, > #logo {
         display: flex;
         flex-direction: column;
 
@@ -13,7 +13,7 @@
         }
     }
 
-    #groupings {
+    > #groupings {
         background-color: $background-color-alt;
         width: 15%;
         min-width: 175px;
@@ -110,7 +110,7 @@
         }
     }
 
-    #items {
+    > #items {
         background-color: $background-color;
         width: 25%;
         min-width: 200px;
@@ -133,7 +133,7 @@
         }
     }
 
-    #details {
+    > #details {
         background-color: $background-color-alt2;
         flex: 1;
         min-width: 0;
@@ -161,7 +161,7 @@
         }
     }
 
-    #logo {
+    > #logo {
         flex: 1;
         min-width: 0;
 
