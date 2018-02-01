@@ -93,11 +93,19 @@ export class PasswordGeneratorComponent implements OnInit {
         }
         if (!this.options.minNumber) {
             this.options.minNumber = 0;
+        } else if (this.options.minNumber > 5) {
+            this.options.minNumber = 5;
         }
+
         if (!this.options.minSpecial) {
             this.options.minSpecial = 0;
+        } else if (this.options.minSpecial > 5) {
+            this.options.minSpecial = 5;
         }
-        if (this.options.length > 128) {
+
+        if (!this.options.length) {
+            this.options.length = 5;
+        } else if (this.options.length > 128) {
             this.options.length = 128;
         }
     }
