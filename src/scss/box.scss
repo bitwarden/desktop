@@ -7,6 +7,13 @@
         margin: 0 10px 5px 10px;
         color: $gray-light;
         text-transform: uppercase;
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: $gray-light;
+            text-transform: uppercase;
+        }
     }
 
     .box-content {

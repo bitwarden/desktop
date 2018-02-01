@@ -24,6 +24,7 @@ export class PasswordGeneratorComponent implements OnInit {
 
     options: any = {};
     password: string = '-';
+    showOptions = false;
 
     constructor(private passwordGenerationService: PasswordGenerationService, private analytics: Angulartics2,
         private utilsService: UtilsService) { }
@@ -88,5 +89,9 @@ export class PasswordGeneratorComponent implements OnInit {
     select() {
         this.analytics.eventTrack.next({ action: 'Selected Generated Password' });
         this.onSelected.emit(this.password);
+    }
+
+    toggleOptions() {
+        this.showOptions = !this.showOptions;
     }
 }

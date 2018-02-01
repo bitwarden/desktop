@@ -9,6 +9,7 @@
     color: $button-color;
     white-space: nowrap;
     text-align: center;
+    cursor: pointer;
 
     &:hover:not([disabled]), &:focus:not([disabled]) {
         cursor: pointer;
