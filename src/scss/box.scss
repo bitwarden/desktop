@@ -136,11 +136,15 @@
             }
 
             &.box-content-row-slider {
-                input {
+                input[type="range"] {
                     height: 10px;
                 }
 
-                label, span {
+                input[type="number"] {
+                    width: 45px;
+                }
+
+                label {
                     white-space: nowrap;
                 }
             }

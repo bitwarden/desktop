@@ -35,7 +35,7 @@ export class PasswordGeneratorComponent implements OnInit {
         this.analytics.eventTrack.next({ action: 'Generated Password' });
         await this.passwordGenerationService.addHistory(this.password);
 
-        const slider = document.querySelector('#length');
+        const slider = document.querySelector('#lengthRange');
         if (slider) {
             // Save password once the slider stop moving.
             slider.addEventListener('change', async (e) => {
@@ -47,26 +47,14 @@ export class PasswordGeneratorComponent implements OnInit {
             // Regenerate while slider moving
             slider.addEventListener('input', (e) => {
                 e.preventDefault();
+                this.normalizeOptions();
                 this.password = this.passwordGenerationService.generatePassword(this.options);
             });
         }
     }
 
     async saveOptions(regenerate: boolean = true) {
-        if (!this.options.uppercase && !this.options.lowercase && !this.options.number && !this.options.special) {
-            this.options.lowercase = true;
-            const lowercase = document.querySelector('#lowercase') as HTMLInputElement;
-            if (lowercase) {
-                lowercase.checked = true;
-            }
-        }
-        if (!this.options.minNumber) {
-            this.options.minNumber = 0;
-        }
-        if (!this.options.minSpecial) {
-            this.options.minSpecial = 0;
-        }
-
+        this.normalizeOptions();
         await this.passwordGenerationService.saveOptions(this.options);
 
         if (regenerate) {
@@ -93,5 +81,24 @@ export class PasswordGeneratorComponent implements OnInit {
 
     toggleOptions() {
         this.showOptions = !this.showOptions;
+    }
+
+    private normalizeOptions() {
+        if (!this.options.uppercase && !this.options.lowercase && !this.options.number && !this.options.special) {
+            this.options.lowercase = true;
+            const lowercase = document.querySelector('#lowercase') as HTMLInputElement;
+            if (lowercase) {
+                lowercase.checked = true;
+            }
+        }
+        if (!this.options.minNumber) {
+            this.options.minNumber = 0;
+        }
+        if (!this.options.minSpecial) {
+            this.options.minSpecial = 0;
+        }
+        if (this.options.length > 128) {
+            this.options.length = 128;
+        }
     }
 }
