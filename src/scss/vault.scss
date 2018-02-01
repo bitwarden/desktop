@@ -115,6 +115,11 @@
             align-items: center;
             text-align: center;
             padding: 0 10px;
+
+            .fa {
+                margin-bottom: 10px;
+                color: $list-icon-color;
+            }
         }
     }
 

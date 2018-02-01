@@ -22,6 +22,7 @@
             </a>
         </div>
         <div *ngIf="searchedCiphers.length === 0" class="no-items">
+            <i class="fa fa-frown-o fa-4x"></i>
             <p>{{'noItemsInList' | i18n}}</p>
             <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
         </div>
