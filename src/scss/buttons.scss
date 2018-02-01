@@ -11,13 +11,31 @@
     text-align: center;
     cursor: pointer;
 
-    &:hover:not([disabled]), &:focus:not([disabled]) {
+    &.primary {
+        color: $button-color-primary;
+    }
+
+    &.danger {
+        color: $button-color-danger;
+    }
+
+    &:hover:not([disabled]) {
         cursor: pointer;
         background-color: darken($button-backgound-color, 1.5%);
         border-color: darken($button-border-color, 17%);
+        color: darken($button-color, 10%);
+
+        &.primary {
+            color: darken($button-color-primary, 6%);
+        }
+
+        &.danger {
+            color: darken($button-color-danger, 6%);
+        }
     }
 
     &:focus:not([disabled]) {
+        cursor: pointer;
         background-color: darken($button-backgound-color, 6%);
         border-color: darken($button-border-color, 25%);
         outline: 0;
@@ -26,14 +44,6 @@
     &[disabled] {
         opacity: 0.65;
         cursor: default;
-    }
-
-    &.primary {
-        color: $button-color-primary;
-    }
-
-    &.danger {
-        color: $button-color-danger;
     }
 
     &.block {
