@@ -4,6 +4,15 @@
     height: 100%;
     display: flex;
 
+    #groupings, #items, #details {
+        display: flex;
+        flex-direction: column;
+
+        .inner-content {
+            padding: 10px 15px;
+        }
+    }
+
     #groupings {
         background-color: $background-color-alt;
         width: 15%;
@@ -12,7 +21,8 @@
         border-right: 1px solid $border-color-dark;
 
         .inner-content {
-            padding-bottom: 0 !important;
+            padding-bottom: 0;
+            padding-right: 5px;
         }
 
         h2 {
@@ -92,9 +102,9 @@
                 &.active {
                     background-color: darken($background-color-alt, 5%);
                     margin-left: -15px;
-                    margin-right: -15px;
+                    margin-right: -5px;
                     padding-left: 15px;
-                    padding-right: 15px;
+                    padding-right: 5px;
                 }
             }
         }
@@ -148,15 +158,6 @@
         > form {
             display: flex;
             flex-direction: column;
-        }
-    }
-
-    #groupings, #items, #details {
-        display: flex;
-        flex-direction: column;
-
-        .inner-content {
-            padding: 10px 15px;
         }
     }
 
