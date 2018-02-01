@@ -20,6 +20,7 @@ export class CiphersComponent {
     @Output() onCipherClicked = new EventEmitter<CipherView>();
     @Output() onAddCipher = new EventEmitter();
 
+    loaded: boolean = false;
     ciphers: CipherView[] = [];
     searchText: string;
     searchPlaceholder: string = null;
@@ -36,6 +37,8 @@ export class CiphersComponent {
         } else {
             this.ciphers = ciphers.filter(this.filter);
         }
+
+        this.loaded = true;
     }
 
     async refresh() {
