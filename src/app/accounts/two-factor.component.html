@@ -2,7 +2,9 @@
     <div class="content">
         <h1>{{title}}</h1>
         <p *ngIf="selectedProviderType === providerType.Authenticator">{{'enterVerificationCodeApp' | i18n}}</p>
-        <p *ngIf="selectedProviderType === providerType.Email">{{'enterVerificationCodeEmail' | i18n}}</p>
+        <p *ngIf="selectedProviderType === providerType.Email">
+            {{'enterVerificationCodeEmail' | i18n : twoFactorEmail}}
+        </p>
         <div class="box last"
              *ngIf="selectedProviderType === providerType.Email || selectedProviderType === providerType.Authenticator">
             <div class="box-content">
@@ -43,7 +45,7 @@
                 </div>
             </div>
         </ng-container>
-        <div class="box last" *ngIf="selectedProviderType === null">
+        <div class="box last" *ngIf="!selectedProviderType">
             <div class="box-content">
                 <div class="box-content-row">
                     <p>{{'noTwoStepProviders' | i18n}}</p>
@@ -52,7 +54,8 @@
             </div>
         </div>
         <div class="buttons">
-            <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
+            <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick
+                    *ngIf="selectedProviderType && selectedProviderType !== providerType.Duo">
                 <span [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'continue' | i18n}}</span>
                 <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
             </button>
@@ -60,6 +63,11 @@
         </div>
         <div class="sub-options">
             <a href="#" appStopClick (click)="anotherMethod()">{{'useAnotherTwoStepMethod' | i18n}}</a>
+            <a href="#" appStopClick (click)="sendEmail(true)" [appApiAction]="emailPromise"
+               *ngIf="selectedProviderType === providerType.Email">
+                {{'sendVerificationCodeEmailAgain' | i18n}}
+            </a>
         </div>
     </div>
 </form>
+<ng-template #twoFactorOptions></ng-template>

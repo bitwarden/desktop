@@ -459,7 +459,22 @@
     "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to"
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Remember me"
@@ -510,5 +525,17 @@
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
+  },
+  "loginUnavailable": {
+    "message": "Login Unavailable"
+  },
+  "noTwoStepProviders": {
+    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+  },
+  "noTwoStepProviders2": {
+    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+  },
+  "twoStepOptions": {
+    "message": "Two-step Login Options"
   }
 }

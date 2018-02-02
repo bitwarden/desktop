@@ -32,6 +32,7 @@ import { SearchCiphersPipe } from './pipes/search-ciphers.pipe';
 import { StopClickDirective } from './directives/stop-click.directive';
 import { StopPropDirective } from './directives/stop-prop.directive';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
@@ -71,15 +72,16 @@ import { ViewComponent } from './vault/view.component';
         StopClickDirective,
         StopPropDirective,
         TwoFactorComponent,
+        TwoFactorOptionsComponent,
         VaultComponent,
         ViewComponent,
-        WebviewDirective,
     ],
     entryComponents: [
         AttachmentsComponent,
         FolderAddEditComponent,
         ModalComponent,
         PasswordGeneratorComponent,
+        TwoFactorOptionsComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

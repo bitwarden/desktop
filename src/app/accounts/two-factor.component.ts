@@ -2,13 +2,19 @@ import * as template from './two-factor.component.html';
 
 import {
     Component,
+    ComponentFactoryResolver,
     OnInit,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 
 import { Router } from '@angular/router';
 
 import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+
+import { TwoFactorOptionsComponent } from './two-factor-options.component';
+import { ModalComponent } from '../modal.component';
 
 import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
 
@@ -26,6 +32,8 @@ import { TwoFactorProviders } from 'jslib/services/auth.service';
     template: template,
 })
 export class TwoFactorComponent implements OnInit {
+    @ViewChild('twoFactorOptions', { read: ViewContainerRef }) twoFactorOptionsModal: ViewContainerRef;
+
     token: string = '';
     remember: boolean = false;
     u2fReady: boolean = false;
@@ -35,14 +43,14 @@ export class TwoFactorComponent implements OnInit {
     u2fSupported: boolean = false;
     u2f: any = null;
     title: string = '';
-    useVerificationCode: boolean = false;
     twoFactorEmail: string = null;
     formPromise: Promise<any>;
     emailPromise: Promise<any>;
 
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService, private apiService: ApiService,
-        private platformUtilsService: PlatformUtilsService) {
+        private platformUtilsService: PlatformUtilsService,
+        private componentFactoryResolver: ComponentFactoryResolver) {
         this.u2fSupported = this.platformUtilsService.supportsU2f(window);
     }
 
@@ -58,10 +66,6 @@ export class TwoFactorComponent implements OnInit {
     }
 
     async init() {
-        this.useVerificationCode = this.selectedProviderType === TwoFactorProviderType.Email ||
-            this.selectedProviderType === TwoFactorProviderType.Authenticator ||
-            this.selectedProviderType === TwoFactorProviderType.Yubikey;
-
         if (this.selectedProviderType == null) {
             this.title = this.i18nService.t('loginUnavailable');
             return;
@@ -135,17 +139,36 @@ export class TwoFactorComponent implements OnInit {
             return;
         }
 
+        if (this.emailPromise != null) {
+            return;
+        }
+
         try {
             const request = new TwoFactorEmailRequest(this.authService.email, this.authService.masterPasswordHash);
             this.emailPromise = this.apiService.postTwoFactorEmail(request);
             await this.emailPromise;
             if (doToast) {
-                // TODO toast
+                this.toasterService.popAsync('success', null,
+                    this.i18nService.t('verificationCodeEmailSent', this.twoFactorEmail));
             }
         } catch { }
+
+        this.emailPromise = null;
     }
 
     anotherMethod() {
-        // TODO
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        const modal = this.twoFactorOptionsModal.createComponent(factory).instance;
+        const childComponent = modal.show<TwoFactorOptionsComponent>(TwoFactorOptionsComponent,
+            this.twoFactorOptionsModal);
+
+        childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
+            modal.close();
+            this.selectedProviderType = provider;
+            await this.init();
+        });
+        childComponent.onRecoverSelected.subscribe(() => {
+            modal.close();
+        });
     }
 }

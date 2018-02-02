@@ -26,8 +26,6 @@
             padding: 10px 15px;
             position: relative;
             z-index: 1;
-            overflow-wrap: break-word;
-            word-break: break-all;
 
             &:before {
                 content: "";
@@ -71,6 +69,21 @@
                 display: block;
                 width: 100%;
                 margin-bottom: 5px;
+            }
+
+            .text, .detail {
+                display: block;
+                color: $text-color;
+            }
+
+            .detail {
+                font-size: $font-size-small;
+                color: $text-muted;
+            }
+
+            .img-right {
+                float: right;
+                margin-left: 10px;
             }
 
             .row-main {
