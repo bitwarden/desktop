@@ -2,6 +2,7 @@ import * as template from './two-factor.component.html';
 
 import {
     Component,
+    OnInit,
 } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -9,28 +10,99 @@ import { Router } from '@angular/router';
 import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
 
-import { RegisterRequest } from 'jslib/models/request/registerRequest';
+import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
+
+import { TwoFactorEmailRequest } from 'jslib/models/request/twoFactorEmailRequest';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
-import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+
+import { TwoFactorProviders } from 'jslib/services/auth.service';
 
 @Component({
     selector: 'app-two-factor',
     template: template,
 })
-export class TwoFactorComponent {
+export class TwoFactorComponent implements OnInit {
     token: string = '';
     remember: boolean = false;
-    providerType: number;
-    email: string;
-    masterPassword: string;
+    u2fReady: boolean = false;
+    providers = TwoFactorProviders;
+    providerType = TwoFactorProviderType;
+    selectedProviderType: TwoFactorProviderType = TwoFactorProviderType.Authenticator;
+    u2fSupported: boolean = false;
+    u2f: any = null;
+    title: string = '';
+    useVerificationCode: boolean = false;
+    twoFactorEmail: string = null;
     formPromise: Promise<any>;
+    emailPromise: Promise<any>;
 
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
-        private toasterService: ToasterService, private i18nService: I18nService,
-        private cryptoService: CryptoService, private apiService: ApiService) { }
+        private toasterService: ToasterService, private i18nService: I18nService, private apiService: ApiService,
+        private platformUtilsService: PlatformUtilsService) {
+        this.u2fSupported = this.platformUtilsService.supportsU2f(window);
+    }
+
+    async ngOnInit() {
+        if (this.authService.email == null || this.authService.masterPasswordHash == null ||
+            this.authService.twoFactorProviders == null) {
+            this.router.navigate(['login']);
+            return;
+        }
+
+        this.selectedProviderType = this.authService.getDefaultTwoFactorProvider(this.u2fSupported);
+        await this.init();
+    }
+
+    async init() {
+        this.useVerificationCode = this.selectedProviderType === TwoFactorProviderType.Email ||
+            this.selectedProviderType === TwoFactorProviderType.Authenticator ||
+            this.selectedProviderType === TwoFactorProviderType.Yubikey;
+
+        if (this.selectedProviderType == null) {
+            this.title = this.i18nService.t('loginUnavailable');
+            return;
+        }
+
+        this.title = (TwoFactorProviders as any)[this.selectedProviderType].name;
+        const params = this.authService.twoFactorProviders.get(this.selectedProviderType);
+        switch (this.selectedProviderType) {
+            case TwoFactorProviderType.U2f:
+                if (!this.u2fSupported) {
+                    break;
+                }
+
+                const challenges = JSON.parse(params['Challenges']);
+                // TODO: init u2f
+                break;
+            case TwoFactorProviderType.Duo:
+                setTimeout(() => {
+                    (window as any).Duo.init({
+                        host: params['Host'],
+                        sig_request: params['Signature'],
+                        submit_callback: async (f: HTMLFormElement) => {
+                            const sig = f.querySelector('input[name="sig_response"]') as HTMLInputElement;
+                            if (sig != null) {
+                                this.token = sig.value;
+                                await this.submit();
+                            }
+                        }
+                    });
+                });
+                break;
+            case TwoFactorProviderType.Email:
+                this.twoFactorEmail = params['Email'];
+                if (this.authService.twoFactorProviders.size > 1) {
+                    await this.sendEmail(false);
+                }
+                break;
+            default:
+                break;
+        }
+    }
 
     async submit() {
         if (this.token == null || this.token === '') {
@@ -39,17 +111,41 @@ export class TwoFactorComponent {
             return;
         }
 
-        // TODO: stop U2f
-        // TODO: normalize token
+        if (this.selectedProviderType === TwoFactorProviderType.U2f) {
+            // TODO: stop U2f
+        } else if (this.selectedProviderType === TwoFactorProviderType.Email ||
+            this.selectedProviderType === TwoFactorProviderType.Authenticator) {
+            this.token = this.token.replace(' ', '').trim();
+        }
 
         try {
-            this.formPromise = this.authService.logIn(this.email, this.masterPassword, this.providerType,
-                this.token, this.remember);
+            this.formPromise = this.authService.logInTwoFactor(this.selectedProviderType, this.token, this.remember);
             await this.formPromise;
             this.analytics.eventTrack.next({ action: 'Logged In From Two-step' });
             this.router.navigate(['vault']);
         } catch {
-            // TODO: start U2F
+            if (this.selectedProviderType === TwoFactorProviderType.U2f) {
+                // TODO: start U2F again
+            }
         }
+    }
+
+    async sendEmail(doToast: boolean) {
+        if (this.selectedProviderType !== TwoFactorProviderType.Email) {
+            return;
+        }
+
+        try {
+            const request = new TwoFactorEmailRequest(this.authService.email, this.authService.masterPasswordHash);
+            this.emailPromise = this.apiService.postTwoFactorEmail(request);
+            await this.emailPromise;
+            if (doToast) {
+                // TODO toast
+            }
+        } catch { }
+    }
+
+    anotherMethod() {
+        // TODO
     }
 }

@@ -445,5 +445,70 @@
   },
   "noItemsInList": {
     "message": "There are no items to list."
+  },
+  "verificationCode": {
+    "message": "Verification Code"
+  },
+  "verificationCodeRequired": {
+    "message": "Verification code is required."
+  },
+  "continue": {
+    "message": "Continue"
+  },
+  "enterVerificationCodeApp": {
+    "message": "Enter the 6 digit verification code from your authenticator app."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Enter the 6 digit verification code that was emailed to"
+  },
+  "rememberMe": {
+    "message": "Remember me"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Send verification code email again"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Use another two-step login method"
+  },
+  "insertYubiKey": {
+    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+  },
+  "insertU2f": {
+    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+  },
+  "recoveryCodeDesc": {
+    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+  },
+  "recoveryCodeTitle": {
+    "message": "Recovery Code"
+  },
+  "authenticatorAppTitle": {
+    "message": "Authenticator App"
+  },
+  "authenticatorAppDesc": {
+    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP Security Key"
+  },
+  "yubiKeyDesc": {
+    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+  },
+  "duoDesc": {
+    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Use any FIDO U2F enabled security key to access your account."
+  },
+  "u2fTitle": {
+    "message": "FIDO U2F Security Key"
+  },
+  "emailTitle": {
+    "message": "Email"
+  },
+  "emailDesc": {
+    "message": "Verification codes will be emailed to you."
   }
 }

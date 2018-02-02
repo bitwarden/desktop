@@ -117,4 +117,10 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
     getApplicationVersion(): string {
         return (window as any).require('electron').remote.app.getVersion();
     }
+
+    supportsU2f(win: Window): boolean {
+        // Not supported in Electron at this time.
+        // ref: https://github.com/electron/electron/issues/3226
+        return false;
+    }
 }

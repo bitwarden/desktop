@@ -45,7 +45,7 @@ function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
         width: primaryScreenSize.width < 950 ? primaryScreenSize.width : 950,
-        height: primaryScreenSize.height < 700 ? primaryScreenSize.height : 700,
+        height: primaryScreenSize.height < 600 ? primaryScreenSize.height : 600,
         minWidth: 680,
         minHeight: 500,
         title: app.getName(),

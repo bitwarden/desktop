@@ -73,6 +73,7 @@ import { ViewComponent } from './vault/view.component';
         TwoFactorComponent,
         VaultComponent,
         ViewComponent,
+        WebviewDirective,
     ],
     entryComponents: [
         AttachmentsComponent,

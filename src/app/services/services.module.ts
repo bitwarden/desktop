@@ -92,8 +92,8 @@ const syncService = new SyncService(userService, apiService, settingsService,
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService);
 const totpService = new TotpService(storageService);
 const containerService = new ContainerService(cryptoService, platformUtilsService);
-const authService: AuthServiceAbstraction = new AuthService(cryptoService, apiService,
-    userService, tokenService, appIdService, platformUtilsService, constantsService,
+const authService = new AuthService(cryptoService, apiService,
+    userService, tokenService, appIdService, i18nService, platformUtilsService, constantsService,
     messagingService);
 
 const analytics = new Analytics(window, null, platformUtilsService, storageService, appIdService);
@@ -105,6 +105,7 @@ environmentService.setUrlsFromStorage().then(() => {
 function initFactory(i18n: I18nService, platformUtilsService: DesktopPlatformUtilsService): Function {
     return async () => {
         await i18n.init();
+        await authService.init();
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
         htmlEl.classList.add('locale_' + i18n.translationLocale);

@@ -23,19 +23,31 @@
     }
 }
 
-#register-page, #hint-page {
+#register-page, #hint-page, #two-factor-page {
     margin-top: 20px;
 
     .content {
         margin: 0 auto;
     }
+
+    img {
+        margin-bottom: 10px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: $border-radius;
+    }
+
+    p {
+        text-align: center
+    }
 }
 
-#login-page, #register-page, #hint-page {
+#login-page, #register-page, #hint-page, #two-factor-page {
     .content {
         max-width: 300px;
 
-        p, h1 {
+        p.lead, h1 {
             font-size: $font-size-large;
             text-align: center;
             margin-bottom: 20px;
