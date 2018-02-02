@@ -28,8 +28,9 @@
         <div class="sub-options">
             <a routerLink="/hint">{{'getMasterPasswordHint' | i18n}}</a>
         </div>
-        <a routerLink="/environment" class="settings-icon">
+        <a href="#" appStopClick (click)="settings()" class="settings-icon">
             <i class="fa fa-cog fa-lg"></i><span>&nbsp;{{'settings' | i18n}}</span>
         </a>
     </div>
 </form>
+<ng-template #environment></ng-template>

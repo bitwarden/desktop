@@ -18,6 +18,7 @@ import { AutofocusDirective } from './directives/autofocus.directive';
 import { BlurClickDirective } from './directives/blur-click.directive';
 import { BoxRowDirective } from './directives/box-row.directive';
 import { CiphersComponent } from './vault/ciphers.component';
+import { EnvironmentComponent } from './accounts/environment.component';
 import { FallbackSrcDirective } from './directives/fallback-src.directive';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
@@ -58,6 +59,7 @@ import { ViewComponent } from './vault/view.component';
         BlurClickDirective,
         BoxRowDirective,
         CiphersComponent,
+        EnvironmentComponent,
         FallbackSrcDirective,
         FolderAddEditComponent,
         GroupingsComponent,
@@ -78,6 +80,7 @@ import { ViewComponent } from './vault/view.component';
     ],
     entryComponents: [
         AttachmentsComponent,
+        EnvironmentComponent,
         FolderAddEditComponent,
         ModalComponent,
         PasswordGeneratorComponent,

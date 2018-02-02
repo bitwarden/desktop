@@ -2,12 +2,18 @@ import * as template from './login.component.html';
 
 import {
     Component,
+    ComponentFactoryResolver,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 
 import { Router } from '@angular/router';
 
 import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+
+import { EnvironmentComponent } from './environment.component';
+import { ModalComponent } from '../modal.component';
 
 import { AuthResult } from 'jslib/models/domain/authResult';
 
@@ -19,12 +25,15 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
     template: template,
 })
 export class LoginComponent {
+    @ViewChild('environment', { read: ViewContainerRef }) environmentModal: ViewContainerRef;
+
     email: string = '';
     masterPassword: string = '';
     formPromise: Promise<AuthResult>;
 
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
-        private toasterService: ToasterService, private i18nService: I18nService) { }
+        private toasterService: ToasterService, private i18nService: I18nService,
+        private componentFactoryResolver: ComponentFactoryResolver) { }
 
     async submit() {
         if (this.email == null || this.email === '') {
@@ -55,5 +64,16 @@ export class LoginComponent {
                 // TODO: sync on load to vault?
             }
         } catch { }
+    }
+
+    settings() {
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        const modal = this.environmentModal.createComponent(factory).instance;
+        const childComponent = modal.show<EnvironmentComponent>(EnvironmentComponent,
+            this.environmentModal);
+
+        childComponent.onSaved.subscribe(() => {
+            modal.close();
+        });
     }
 }
