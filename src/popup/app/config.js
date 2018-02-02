@@ -84,14 +84,14 @@ angular
                 controller: 'accountsLoginTwoFactorController',
                 template: require('./accounts/views/accountsLoginTwoFactor.html'),
                 data: { authorize: false },
-                params: { animation: null, email: null, masterPassword: null, providers: null, provider: null }
+                params: { animation: null, provider: null }
             })
             .state('twoFactorMethods', {
                 url: '/two-factor-methods',
                 controller: 'accountsTwoFactorMethodsController',
                 template: require('./accounts/views/accountsTwoFactorMethods.html'),
                 data: { authorize: false },
-                params: { animation: null, email: null, masterPassword: null, providers: null, provider: null }
+                params: { animation: null, provider: null }
             })
             .state('register', {
                 url: '/register',

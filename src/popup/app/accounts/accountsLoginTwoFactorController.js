@@ -36,17 +36,17 @@ angular
         });
 
         var constants = constantsService;
-        var email = $stateParams.email;
-        var masterPassword = $stateParams.masterPassword;
-        var providers = $stateParams.providers;
+        var email = authService.email;
+        var masterPasswordHash = authService.masterPasswordHash;
+        var providers = authService.twoFactorProviders;
 
-        if (!email || !masterPassword || !providers) {
+        if (!email || !masterPasswordHash || !providers) {
             $state.go('login');
             return;
         }
 
         $scope.providerType = $stateParams.provider || $stateParams.provider === 0 ? $stateParams.provider :
-            getDefaultProvider(providers);
+            authService.getDefaultTwoFactorProvider(platformUtilsService.supportsU2f($window));
         $scope.twoFactorEmail = null;
         $scope.token = null;
         $scope.constantsProvider = constants.twoFactorProvider;
@@ -74,7 +74,7 @@ angular
                 token = token.replace(' ', '');
             }
 
-            $scope.loginPromise = authService.logIn(email, masterPassword, $scope.providerType, token, $scope.remember.checked);
+            $scope.loginPromise = authService.logInTwoFactor($scope.providerType, token, $scope.remember.checked);
             $scope.loginPromise.then(function () {
                 $analytics.eventTrack('Logged In From Two-step');
                 $state.go('tabs.vault', { animation: 'in-slide-left', syncOnLoad: true }).then(function () {
@@ -97,25 +97,19 @@ angular
                 return;
             }
 
-            var key = cryptoService.makeKey(masterPassword, email);
-            cryptoService.hashPassword(masterPassword, key).then(function (hash) {
-                var request = new TwoFactorEmailRequest(email, hash);
-                apiService.postTwoFactorEmail(request, function () {
-                    if (doToast) {
-                        toastr.success('Verification email sent to ' + $scope.twoFactorEmail + '.');
-                    }
-                }, function () {
-                    toastr.error('Could not send verification email.');
-                });
+            var request = new TwoFactorEmailRequest(email, masterPasswordHash);
+            apiService.postTwoFactorEmail(request, function () {
+                if (doToast) {
+                    toastr.success('Verification email sent to ' + $scope.twoFactorEmail + '.');
+                }
+            }, function () {
+                toastr.error('Could not send verification email.');
             });
         };
 
         $scope.anotherMethod = function () {
             $state.go('twoFactorMethods', {
                 animation: 'in-slide-up',
-                email: email,
-                masterPassword: masterPassword,
-                providers: providers,
                 provider: $scope.providerType
             });
         };
@@ -140,25 +134,6 @@ angular
             }
         });
 
-        function getDefaultProvider(twoFactorProviders) {
-            var keys = Object.keys(twoFactorProviders);
-            var providerType = null;
-            var providerPriority = -1;
-            for (var i = 0; i < keys.length; i++) {
-                var provider = $filter('filter')(constants.twoFactorProviderInfo, { type: keys[i], active: true });
-                if (provider.length && provider[0].priority > providerPriority) {
-                    if (provider[0].type == constants.twoFactorProvider.u2f && (typeof $window.u2f === 'undefined') &&
-                        !platformUtilsService.isChrome() && !platformUtilsService.isOpera()) {
-                        continue;
-                    }
-
-                    providerType = provider[0].type;
-                    providerPriority = provider[0].priority;
-                }
-            }
-            return providerType === null ? null : parseInt(providerType);
-        }
-
         function init() {
             u2f.stop();
             u2f.cleanup();
@@ -169,9 +144,8 @@ angular
                     codeInput.focus();
                 }
 
-                var params;
+                var params = providers.get($scope.providerType);
                 if ($scope.providerType === constants.twoFactorProvider.duo) {
-                    params = providers[constants.twoFactorProvider.duo];
                     if (platformUtilsService.isSafari()) {
                         var tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('2fa/index.html'));
                         var tabToSend = BrowserApi.makeTabObject(tab);
@@ -200,7 +174,6 @@ angular
                     }
                 }
                 else if ($scope.providerType === constants.twoFactorProvider.u2f) {
-                    params = providers[constants.twoFactorProvider.u2f];
                     var challenges = JSON.parse(params.Challenges);
 
                     u2f.init({
@@ -213,7 +186,6 @@ angular
                     });
                 }
                 else if ($scope.providerType === constants.twoFactorProvider.email) {
-                    params = providers[constants.twoFactorProvider.email];
                     $scope.twoFactorEmail = params.Email;
 
                     if (!platformUtilsService.isSafari() && BrowserApi.isPopupOpen() &&
@@ -230,12 +202,12 @@ angular
                                 BrowserApi.createNewTab('/popup/index.html?uilocation=tab#!/login', true);
                                 return;
                             }
-                            else if (Object.keys(providers).length > 1) {
+                            else if (providers.size > 1) {
                                 $scope.sendEmail(false);
                             }
                         });
                     }
-                    else if (Object.keys(providers).length > 1) {
+                    else if (providers.size > 1) {
                         $scope.sendEmail(false);
                     }
                 }

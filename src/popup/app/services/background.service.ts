@@ -9,6 +9,7 @@ import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -43,6 +44,7 @@ export const platformUtilsService = getBackgroundService<PlatformUtilsService>('
 export const utilsService = getBackgroundService<UtilsService>('utilsService');
 export const appIdService = getBackgroundService<AppIdService>('appIdService');
 export const i18nService = getBackgroundService<any>('i18nService');
+export const i18n2Service = getBackgroundService<I18nService>('i18n2Service');
 export const constantsService = getBackgroundService<ConstantsService>('constantsService');
 export const settingsService = getBackgroundService<SettingsService>('settingsService');
 export const lockService = getBackgroundService<LockService>('lockService');

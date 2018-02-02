@@ -152,6 +152,14 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return BrowserApi.getApplicationVersion();
     }
 
+    supportsU2f(win: Window): boolean {
+        if (win != null && (win as any).u2f !== 'undefined') {
+            return true;
+        }
+
+        return this.isChrome() || this.isOpera();
+    }
+
     private sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';

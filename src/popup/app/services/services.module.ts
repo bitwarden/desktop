@@ -1,21 +1,27 @@
 import * as angular from 'angular';
-import { AuthService } from './auth.service';
 import * as backgroundServices from './background.service';
 import { PopupUtilsService } from './popupUtils.service';
 import { StateService } from './state.service';
 import { ValidationService } from './validation.service';
 
+import { AuthService } from 'jslib/services/auth.service';
+
 import BrowserMessagingService from '../../../services/browserMessaging.service';
 
 const messagingService = new BrowserMessagingService(backgroundServices.platformUtilsService());
+const authService = new AuthService(backgroundServices.cryptoService(), backgroundServices.apiService(),
+    backgroundServices.userService(), backgroundServices.tokenService(), backgroundServices.appIdService(),
+    backgroundServices.i18n2Service(), backgroundServices.platformUtilsService(),
+    backgroundServices.constantsService(), messagingService);
+authService.init();
 
 export default angular
     .module('bit.services', ['toastr'])
     .service('stateService', StateService)
     .service('validationService', ValidationService)
-    .service('authService', AuthService)
     .service('popupUtilsService', PopupUtilsService)
 
+    .factory('authService', () => authService)
     .factory('messagingService', () => messagingService)
     .factory('storageService', backgroundServices.storageService)
     .factory('tokenService', backgroundServices.tokenService)

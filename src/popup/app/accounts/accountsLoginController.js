@@ -33,7 +33,7 @@ angular
                 return;
             }
 
-            $scope.loginPromise = authService.logIn(model.email, model.masterPassword, null, null);
+            $scope.loginPromise = authService.logIn(model.email, model.masterPassword);
 
             $scope.loginPromise.then(function (response) {
                 if (response.twoFactor) {

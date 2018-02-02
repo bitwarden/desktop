@@ -1,7 +1,6 @@
 import { BrowserApi } from '../../../browser/browserApi';
 
-import { AuthService } from '../services/auth.service';
-
+import { AuthService } from 'jslib/abstractions/auth.service';
 import { UtilsService } from 'jslib/abstractions/utils.service';
 
 export class MainController implements ng.IController {

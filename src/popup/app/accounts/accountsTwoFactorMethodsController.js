@@ -2,50 +2,41 @@ angular
     .module('bit.accounts')
 
     .controller('accountsTwoFactorMethodsController', function ($scope, $state, $stateParams, constantsService,
-        utilsService, i18nService, $analytics, platformUtilsService) {
+        utilsService, i18nService, $analytics, platformUtilsService, authService, $window) {
         $scope.i18n = i18nService;
 
         var constants = constantsService;
-        var masterPassword = $stateParams.masterPassword;
-        var email = $stateParams.email;
-        var providers = $stateParams.providers;
+        var providers = authService.twoFactorProviders;
         var provider = $stateParams.provider;
 
         $scope.providers = [];
 
-        if (providers.hasOwnProperty(constants.twoFactorProvider.authenticator)) {
+        if (providers.get(constants.twoFactorProvider.authenticator)) {
             add(constants.twoFactorProvider.authenticator);
         }
-        if (providers.hasOwnProperty(constants.twoFactorProvider.yubikey)) {
+        if (providers.get(constants.twoFactorProvider.yubikey)) {
             add(constants.twoFactorProvider.yubikey);
         }
-        if (providers.hasOwnProperty(constants.twoFactorProvider.email)) {
+        if (providers.get(constants.twoFactorProvider.email)) {
             add(constants.twoFactorProvider.email);
         }
-        if (providers.hasOwnProperty(constants.twoFactorProvider.duo)) {
+        if (providers.get(constants.twoFactorProvider.duo)) {
             add(constants.twoFactorProvider.duo);
         }
-        if (providers.hasOwnProperty(constants.twoFactorProvider.u2f) &&
-            (platformUtilsService.isChrome() || platformUtilsService.isOpera())) {
+        if (providers.get(constants.twoFactorProvider.u2f) && platformUtilsService.supportsU2f($window)) {
             add(constants.twoFactorProvider.u2f);
         }
 
-        $scope.choose = function (provider) {
+        $scope.choose = function (p) {
             $state.go('twoFactor', {
                 animation: 'out-slide-down',
-                email: email,
-                masterPassword: masterPassword,
-                providers: providers,
-                provider: provider.type
+                provider: p.type
             });
         };
 
         $scope.cancel = function () {
             $state.go('twoFactor', {
                 animation: 'out-slide-down',
-                email: email,
-                masterPassword: masterPassword,
-                providers: providers,
                 provider: provider
             });
         };
