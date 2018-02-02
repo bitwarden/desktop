@@ -19,11 +19,11 @@ export default class I18n2Service implements I18nServiceAbstraction {
         this.collator = new Intl.Collator(this.locale);
     }
 
-    t(id: string): string {
+    t(id: string, p1?: string, p2?: string, p3?: string): string {
         return this.translate(id);
     }
 
-    translate(id: string): string {
+    translate(id: string, p1?: string, p2?: string, p3?: string): string {
         return this.i18nService[id];
     }
 }
