@@ -3,46 +3,46 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alle Einträge"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoriten"
   },
   "types": {
-    "message": "Types"
+    "message": "Typen"
   },
   "typeLogin": {
     "message": "Login"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Karte"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identität"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Sichere Notiz"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Ordner"
   },
   "collections": {
     "message": "Collections"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Tresor durchsuchen"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Neuer Eintrag"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Freigegeben"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Anhänge"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Eintrag anzeigen"
   },
   "name": {
     "message": "Name"
@@ -54,25 +54,25 @@
     "message": "Username"
   },
   "password": {
-    "message": "Password"
+    "message": "Passwort"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Eintrag editieren"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-Mail Adresse"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Verifizierungscode (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Webseite"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Notizen"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Benutzerdefinierte Felder"
   },
   "launch": {
     "message": "Launch"
