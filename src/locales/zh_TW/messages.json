@@ -36,7 +36,7 @@
     "message": "新增項目"
   },
   "shared": {
-    "message": "Shared"
+    "message": "共用"
   },
   "attachments": {
     "message": "Attachments"
@@ -45,13 +45,13 @@
     "message": "View Item"
   },
   "name": {
-    "message": "Name"
+    "message": "名稱"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "使用者名稱"
   },
   "password": {
     "message": "密碼"
@@ -60,25 +60,25 @@
     "message": "編輯項目"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "電子郵件地址"
   },
   "verificationCodeTotp": {
     "message": "Verification Code (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "網站"
   },
   "notes": {
-    "message": "Notes"
+    "message": "筆記"
   },
   "customFields": {
     "message": "Custom Fields"
   },
   "launch": {
-    "message": "Launch"
+    "message": "開啟"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "複製值"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
@@ -87,13 +87,13 @@
     "message": "Cardholder Name"
   },
   "number": {
-    "message": "Number"
+    "message": "號碼"
   },
   "brand": {
-    "message": "Brand"
+    "message": "品牌"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "到期"
   },
   "securityCode": {
     "message": "Security Code"
@@ -102,7 +102,7 @@
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "公司"
   },
   "ssn": {
     "message": "Social Security Number"
@@ -114,13 +114,13 @@
     "message": "License Number"
   },
   "email": {
-    "message": "Email"
+    "message": "電子郵件"
   },
   "phone": {
-    "message": "Phone"
+    "message": "電話號碼"
   },
   "address": {
-    "message": "Address"
+    "message": "地址"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -132,37 +132,37 @@
     "message": "An error has occurred."
   },
   "error": {
-    "message": "Error"
+    "message": "錯誤"
   },
   "january": {
-    "message": "January"
+    "message": "一月"
   },
   "february": {
-    "message": "February"
+    "message": "二月"
   },
   "march": {
-    "message": "March"
+    "message": "三月"
   },
   "april": {
-    "message": "April"
+    "message": "四月"
   },
   "may": {
-    "message": "May"
+    "message": "五月"
   },
   "june": {
-    "message": "June"
+    "message": "六月"
   },
   "july": {
-    "message": "July"
+    "message": "七月"
   },
   "august": {
-    "message": "August"
+    "message": "八月"
   },
   "september": {
-    "message": "September"
+    "message": "九月"
   },
   "october": {
-    "message": "October"
+    "message": "十月"
   },
   "november": {
     "message": "十一月"

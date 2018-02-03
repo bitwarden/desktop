@@ -198,106 +198,106 @@
     "message": "Seleccionar"
   },
   "other": {
-    "message": "Other"
+    "message": "Otro"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Generar contraseña"
   },
   "type": {
-    "message": "Type"
+    "message": "Tipo"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Nombre"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "2º nombre"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Apellido"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Dirección 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Dirección 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Dirección 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Ciudad \/ Pueblo"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Estado \/ Provincia"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Código postal"
   },
   "country": {
-    "message": "Country"
+    "message": "País"
   },
   "save": {
-    "message": "Save"
+    "message": "Guardar"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Cancelar"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Eliminar"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Favorito"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Editar"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Clave de autenticación (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Carpeta"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Nuevo campo personalizado"
   },
   "value": {
-    "message": "Value"
+    "message": "Valor"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Texto"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Oculto"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Booleano"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Eliminar"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Nombre requerido."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Elemento añadido"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Elemento editado"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Eliminar elemento"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Borrar carpeta"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Eliminar archivo adjunto"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "¿Estás seguro de que quieres eliminar este elemento?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Elemento eliminado"
   },
   "overwritePasswordConfirmation": {
     "message": "¿Estás seguro de que quieres sobreescribir la contraseña actual?"
@@ -453,22 +453,22 @@
     "message": "Información del elemento"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "No hay elementos que listar."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Código de verificación"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Código de verificación requerido."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Continuar"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Introduce el código de verificación de 6 dígitos de tu aplicación autenticadora."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Introduce el código de verificación de 6 dígitos que fue enviado a $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Correo de verificación enviado a $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,22 +486,22 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Recordarme"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Reenviar código de verificación por correo electrónico"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Utilizar otro método de autenticación en dos pasos"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Inserta tu YubiKey en el puerto USB de tu equipo y posteriormente pulsa su botón."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Inserta tu llave de seguridad en el puerto USB de tu equipo. Si tiene un botón, púlsalo."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "¿Has perdido el acceso a todos tus métodos de autenticación en dos pasos? Utiliza tu código de recuperación para deshabilitar todos lo mótodos de autenticación en dos pasos de tu cuenta."
   },
   "recoveryCodeTitle": {
     "message": "Recovery Code"
