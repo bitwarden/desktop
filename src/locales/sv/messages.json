@@ -3,166 +3,166 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alla objekt"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoriter"
   },
   "types": {
-    "message": "Types"
+    "message": "Typer"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Inloggning"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kort"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitet"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Säker anteckning"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mappar"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Samlingar"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Sök i valvet"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Lägg till objekt"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Delad"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Bifogade filer"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Visa objekt"
   },
   "name": {
-    "message": "Name"
+    "message": "Namn"
   },
   "uri": {
-    "message": "URI"
+    "message": "URI (länk)"
   },
   "username": {
-    "message": "Username"
+    "message": "Användarnamn"
   },
   "password": {
-    "message": "Password"
+    "message": "Lösenord"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Redigera objekt"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-postadress"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Verifieringskod (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Webbsida"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Anteckningar"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Anpassade fält"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Öppna"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Kopiera värde"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Växla synlighet"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Kortinnehavarens namn"
   },
   "number": {
-    "message": "Number"
+    "message": "Nummer"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Märke"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Utgång"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Säkerhetskod"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Företag"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Personnummer"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Passnummer"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Licensnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-post"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adress"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Premium krävs"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Ett premium-medlemskap krävs för att använda den här funktionen."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Ett fel har inträffat."
   },
   "error": {
-    "message": "Error"
+    "message": "Fel"
   },
   "january": {
-    "message": "January"
+    "message": "Januari"
   },
   "february": {
-    "message": "February"
+    "message": "Februari"
   },
   "march": {
-    "message": "March"
+    "message": "Mars"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Maj"
   },
   "june": {
-    "message": "June"
+    "message": "Juni"
   },
   "july": {
-    "message": "July"
+    "message": "Juli"
   },
   "august": {
-    "message": "August"
+    "message": "Augusti"
   },
   "september": {
     "message": "September"
   },
   "october": {
-    "message": "October"
+    "message": "Oktober"
   },
   "november": {
     "message": "November"
@@ -174,301 +174,301 @@
     "message": "ex."
   },
   "title": {
-    "message": "Title"
+    "message": "Titel"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Herr"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Fru"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Fröken"
   },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Förfallomånad"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Förfalloår"
   },
   "select": {
-    "message": "Select"
+    "message": "Välj"
   },
   "other": {
-    "message": "Other"
+    "message": "Annat"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Skapa lösenord"
   },
   "type": {
-    "message": "Type"
+    "message": "Typ"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Förnamn"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Mellannamn"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Efternamn"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adress 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adress 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adress 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Ort"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Län"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Postnummer"
   },
   "country": {
-    "message": "Country"
+    "message": "Land"
   },
   "save": {
-    "message": "Save"
+    "message": "Spara"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Avbryt"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Ta bort"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Favorit"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Ändra"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Autentiseringsnyckel (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Mapp"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Nytt anpassat fält"
   },
   "value": {
-    "message": "Value"
+    "message": "Värde"
   },
   "cfTypeText": {
     "message": "Text"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Dold"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Ta bort"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Namn krävs."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Skapade objekt"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Ändrade objekt"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Ta bort objekt"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Ta bort mapp"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Ta bort bifogad fil"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Är du säker på att du vill ta bort detta objekt?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Tog bort objekt"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Är du säker på att du vill skriva över det nuvarande lösenordet?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Ingen mapp",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Skapa mapp"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Ändra mapp"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Skapa nytt lösenord"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopiera lösenord"
   },
   "length": {
-    "message": "Length"
+    "message": "Längd"
   },
   "close": {
-    "message": "Close"
+    "message": "Stäng"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Minst antal nummer"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Minst antal speciella tecken",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Undvik mångtydiga tecken"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Sök i samling"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Sök i mapp"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Sök i favoriter"
   },
   "searchType": {
     "message": "Search type",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Bifoga ny fil"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Tog bort bilaga"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Är du säker på att du vill ta bort bilagan?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Den bifogade filen har sparats."
   },
   "file": {
-    "message": "File"
+    "message": "Fil"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Välj en fil."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Filen får vara maximalt 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel."
   },
   "options": {
-    "message": "Options"
+    "message": "Alternativ"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Ändrade mapp"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Skapade mapp"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Är du säker på att du vill ta bort den här mappen?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Tog bort mapp"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Logga in eller skapa ett nytt konto för att komma åt dina lösenord."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Skapa konto"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Logga in"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Skicka"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Huvudlösenord"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Huvudlösenordet är det lösenord som du använder för att komma åt ditt valv. Det är väldigt viktigt att du inte glömmer bort ditt huvudlösenord, eftersom det inte går att återställa lösenordet om du skulle glömma bort det."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Ange huvudlösenordet igen"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Huvudlösenordsledtråd (frivillig)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Inställningar"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Lösenordsledtråd"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Ange din e-postadress för att hämta din huvudlösenordsledtråd."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Hämta huvudlösenordsledtråd"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "E-postadress krävs."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Felaktig e-postadress."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Huvudlösenord krävs."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Huvudlösenordet måste vara minst 8 tecken långt."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Bekräftelsen för huvudlösenordet stämde ej."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Ditt nya konto har blivit skapat! Du kan nu logga in."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Vi har skickat ett mejl till dig med din huvudlösenordsledtråd."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Ett okänt fel har inträffat."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Objektinformation"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Det finns inga objekt att visa."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Verifieringskod"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Verifieringskod krävs."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Fortsätt"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Ange den 6-siffriga verifieringskoden från din autentiseringsapp."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Ange den 6-siffriga verifieringskoden som skickades till $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifieringsmejl skickat till $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Kom ihåg mig"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Skicka verifieringskod-mejlet igen"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Använd en annan inloggningsmetod för tvåstegsverifiering"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Sätt i din YubiKey i en av datorns USB-portar och sätt fingret på knappen."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Sätt i din säkerhetsnyckel i en av datorns USB-portar. Om nyckeln har en knapp, sätt fingret på den."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Förlorat åtkomst till alla dina tvåstegsverifierings-alternativ? Använd din återställningskod för att inaktivera tvåstegsverifiering på ditt konto."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Återställningskod"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Autentiseringsapp"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Använd en autentiseringsapp (till exempel Authy eller Google Authenticator) för att skapa tidsbaserade verifieringskoder.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP säkerhetsnyckel"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Använd en YubiKey för att få åtkomst till ditt konto. Fungerar med YubiKey 4, 4 Nano, 4C och NEO enheter."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifiera med Duo Security genom att använda Duo Mobile-appen, SMS, telefonsamtal eller en U2F säkerhetsnyckel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Använd en FIDO U2F-aktiverad säkerhetsnyckel för att få åtkomst till ditt konto."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F säkerhetsnyckel"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-post"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Verifieringskoder kommer att skickas till dig."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Inloggning inte tillgänglig"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Detta konto har tvåstegsverifiering aktiverat, men inget av de aktiverade alternativen stöds av den här enheten."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Lägg till ytterligare alternativ som stöds bättre mellan enheter (som t.ex. en autentiseringsapp)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Alternativ för tvåstegsverifiering"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Egen-hostad miljö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Ange bas-URL:en för din \"on-premise\"-hostade bitwarden-installation."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Anpassad miljö"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "För avancerade användare. Du kan ange bas-URL:en för varje tjänst oberoende av varandra."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Server-URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API server-URL"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "Webbvalv server-URL"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "Identitetsserver-URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikoner Server-URL"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Miljö-URL:er har sparats."
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Ja"
   },
   "no": {
-    "message": "No"
+    "message": "Nej"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Skriv över lösenord"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Läs mer"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funktionen är inte tillgänglig"
   }
 }
