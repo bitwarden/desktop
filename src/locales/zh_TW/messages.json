@@ -3,37 +3,37 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "所有項目"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "我的最愛"
   },
   "types": {
-    "message": "Types"
+    "message": "類型"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "登入"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "卡片"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "身分"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "安全記事"
   },
   "folders": {
-    "message": "Folders"
+    "message": "資料夾"
   },
   "collections": {
-    "message": "Collections"
+    "message": "收藏"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "搜尋"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "新增項目"
   },
   "shared": {
     "message": "Shared"
@@ -54,10 +54,10 @@
     "message": "Username"
   },
   "password": {
-    "message": "Password"
+    "message": "密碼"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "編輯項目"
   },
   "emailAddress": {
     "message": "Email Address"
@@ -165,16 +165,16 @@
     "message": "October"
   },
   "november": {
-    "message": "November"
+    "message": "十一月"
   },
   "december": {
-    "message": "December"
+    "message": "十二月"
   },
   "ex": {
-    "message": "ex."
+    "message": "例如"
   },
   "title": {
-    "message": "Title"
+    "message": "稱呼"
   },
   "mr": {
     "message": "Mr"
@@ -189,52 +189,52 @@
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "到期月份"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "到期年份"
   },
   "select": {
-    "message": "Select"
+    "message": "選擇"
   },
   "other": {
-    "message": "Other"
+    "message": "其他"
   },
   "generatePassword": {
     "message": "Generate Password"
   },
   "type": {
-    "message": "Type"
+    "message": "類型"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "名"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "中間名"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "姓"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "地址 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "地址 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "地址 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "市\/鎮"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "州\/省"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "郵遞區號"
   },
   "country": {
-    "message": "Country"
+    "message": "國家"
   },
   "save": {
     "message": "Save"
@@ -282,13 +282,13 @@
     "message": "Added item"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "已編輯項目"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "刪除項目"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "刪除資料夾"
   },
   "deleteAttachment": {
     "message": "Delete Attachment"
@@ -297,23 +297,23 @@
     "message": "Are you sure you want to delete this item?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "已刪除項目"
   },
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "（未分類）",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "新增資料夾"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "編輯資料夾"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "重新產生密碼"
   },
   "copyPassword": {
     "message": "Copy Password"
@@ -322,7 +322,7 @@
     "message": "Length"
   },
   "close": {
-    "message": "Close"
+    "message": "關閉"
   },
   "minNumbers": {
     "message": "Minimum Numbers"
@@ -341,65 +341,65 @@
     "message": "Search folder"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "搜尋我的最愛"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "搜尋類型",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "新增附件"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "附件已刪除"
   },
   "deleteAttachmentConfirmation": {
     "message": "Are you sure you want to delete this attachment?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "附件已儲存。"
   },
   "file": {
-    "message": "File"
+    "message": "檔案"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "選擇檔案。"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "最大檔案大小為 100MB。"
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
   },
   "options": {
-    "message": "Options"
+    "message": "進階選項"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "已編輯資料夾"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "已新增資料夾"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "你確定要刪除此資料夾嗎？"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "已刪除的資料夾"
   },
   "loginOrCreateNewAccount": {
     "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "新增帳戶"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "登入"
   },
   "submit": {
-    "message": "Submit"
+    "message": "提交"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "主密碼"
   },
   "masterPassDesc": {
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
@@ -414,10 +414,10 @@
     "message": "Master Password Hint (optional)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "設定"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "密碼提示"
   },
   "enterEmailToGetHint": {
     "message": "Enter your account email address to receive your master password hint."
@@ -426,7 +426,7 @@
     "message": "Get master password hint"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "必須填寫電子郵件地址 。"
   },
   "invalidEmail": {
     "message": "Invalid email address."
@@ -462,10 +462,10 @@
     "message": "Verification code is required."
   },
   "continue": {
-    "message": "Continue"
+    "message": "繼續"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "輸入驗證器應用程式提供的 6 位數驗證碼。"
   },
   "enterVerificationCodeEmail": {
     "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
@@ -486,7 +486,7 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "記住我的登入資訊"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Send verification code email again"
@@ -536,7 +536,7 @@
     "message": "Verification codes will be emailed to you."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "無法登入"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
@@ -545,54 +545,54 @@
     "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "兩步驟登入選項"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "自我託管的環境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "指定自己設定、託管的 bitwarden 環境之基礎 URL。"
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "自訂環境"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "適用於進階使用者。你可以單獨指定各個服務的基礎 URL。"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "伺服器 URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "Web 儲存庫伺服器 URL"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "身分伺服器 URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "圖示伺服器 URL"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "環境 URL 已儲存。"
   },
   "ok": {
-    "message": "Ok"
+    "message": "好"
   },
   "yes": {
-    "message": "Yes"
+    "message": "是"
   },
   "no": {
-    "message": "No"
+    "message": "否"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "覆寫密碼"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "了解更多"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "功能無法使用"
   }
 }
