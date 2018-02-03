@@ -237,49 +237,49 @@
     "message": "國家"
   },
   "save": {
-    "message": "Save"
+    "message": "儲存"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "取消"
   },
   "delete": {
-    "message": "Delete"
+    "message": "刪除"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "我的最愛"
   },
   "edit": {
-    "message": "Edit"
+    "message": "編輯"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "驗證器金鑰 (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "資料夾"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "新增自訂欄位"
   },
   "value": {
-    "message": "Value"
+    "message": "值"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "文字"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "隱藏"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "布林值"
   },
   "remove": {
-    "message": "Remove"
+    "message": "移除"
   },
   "nameRequired": {
     "message": "Name is required."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "新增項目"
   },
   "editedItem": {
     "message": "已編輯項目"
@@ -316,10 +316,10 @@
     "message": "重新產生密碼"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "複製密碼"
   },
   "length": {
-    "message": "Length"
+    "message": "長度"
   },
   "close": {
     "message": "關閉"
@@ -338,7 +338,7 @@
     "message": "Search collection"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "搜尋資料夾"
   },
   "searchFavorites": {
     "message": "搜尋我的最愛"
@@ -507,33 +507,33 @@
     "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "驗證器應用程式"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "使用驗證器應用程式 （如 Authy 或 Google Authenticator） 產生基於時間的驗證碼。",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP 安全鑰匙"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "使用 YubiKey 存取你的帳戶。相容於 YubiKey 4, 4 Nano, 4C, 和 NEO 裝置。"
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "與 Duo Security 驗證，可使用 Duo Mobile 程式， SMS ，致電或 U2F 安全鑰匙。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "使用任何啟用了 FIDO U2F 的安全鑰匙來存取你的帳戶。"
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F 安全鑰匙"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "電子郵件"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "驗證碼將使用電子郵件傳送給你。"
   },
   "loginUnavailable": {
     "message": "無法登入"
