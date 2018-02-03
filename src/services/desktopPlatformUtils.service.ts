@@ -1,4 +1,4 @@
-import { ipcRenderer, shell } from 'electron';
+import { remote, shell } from 'electron';
 
 import { DeviceType } from 'jslib/enums';
 
@@ -122,5 +122,25 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
         // Not supported in Electron at this time.
         // ref: https://github.com/electron/electron/issues/3226
         return false;
+    }
+
+    showDialog(text: string, title?: string, confirmText?: string, cancelText?: string, type?: string):
+        Promise<boolean> {
+        const buttons = [confirmText == null ? this.i18nService.t('ok') : confirmText];
+        if (cancelText != null) {
+            buttons.push(cancelText);
+        }
+
+        const result = remote.dialog.showMessageBox(remote.getCurrentWindow(), {
+            type: type,
+            title: title,
+            message: text,
+            buttons: buttons,
+            cancelId: buttons.length === 2 ? 1 : null,
+            defaultId: 0,
+            noLink: true,
+        });
+
+        return Promise.resolve(result === 0);
     }
 }

@@ -13,6 +13,7 @@ import { ToasterService } from 'angular2-toaster';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { FolderView } from 'jslib/models/view/folderView';
 
@@ -32,7 +33,8 @@ export class FolderAddEditComponent implements OnInit {
     deletePromise: Promise<any>;
 
     constructor(private folderService: FolderService, private i18nService: I18nService,
-        private analytics: Angulartics2, private toasterService: ToasterService) { }
+        private analytics: Angulartics2, private toasterService: ToasterService,
+        private platformUtilsService: PlatformUtilsService) { }
 
     async ngOnInit() {
         this.editMode = this.folderId != null;
@@ -66,7 +68,10 @@ export class FolderAddEditComponent implements OnInit {
     }
 
     async delete() {
-        if (!confirm(this.i18nService.t('deleteFolderConfirmation'))) {
+        const confirmed = await this.platformUtilsService.showDialog(
+            this.i18nService.t('deleteFolderConfirmation'), this.i18nService.t('deleteFolder'),
+            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning')
+        if (!confirmed) {
             return;
         }
 

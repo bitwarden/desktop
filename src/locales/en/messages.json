@@ -284,6 +284,15 @@
   "editedItem": {
     "message": "Edited item"
   },
+  "deleteItem": {
+    "message": "Delete Item"
+  },
+  "deleteFolder": {
+    "message": "Delete Folder"
+  },
+  "deleteAttachment": {
+    "message": "Delete Attachment"
+  },
   "deleteItemConfirmation": {
     "message": "Are you sure you want to delete this item?"
   },
@@ -567,5 +576,23 @@
   },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
+  },
+  "ok": {
+    "message": "Ok"
+  },
+  "yes": {
+    "message": "Yes"
+  },
+  "no": {
+    "message": "No"
+  },
+  "overwritePassword": {
+    "message": "Overwrite Password"
+  },
+  "learnMore": {
+    "message": "Learn more"
+  },
+  "featureUnavailable": {
+    "message": "Feature Unavailable"
   }
 }

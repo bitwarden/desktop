@@ -175,7 +175,10 @@ export class AddEditComponent implements OnChanges {
     }
 
     async delete() {
-        if (!confirm(this.i18nService.t('deleteItemConfirmation'))) {
+        const confirmed = await this.platformUtilsService.showDialog(
+            this.i18nService.t('deleteItemConfirmation'), this.i18nService.t('deleteItem'),
+            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning')
+        if (!confirmed) {
             return;
         }
 
@@ -188,10 +191,14 @@ export class AddEditComponent implements OnChanges {
         } catch { }
     }
 
-    generatePassword() {
-        if (this.cipher.login != null && this.cipher.login.password != null && this.cipher.login.password.length &&
-            !confirm(this.i18nService.t('overwritePasswordConfirmation'))) {
-            return;
+    async generatePassword() {
+        if (this.cipher.login != null && this.cipher.login.password != null && this.cipher.login.password.length) {
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('overwritePasswordConfirmation'), this.i18nService.t('overwritePassword'),
+                this.i18nService.t('yes'), this.i18nService.t('no'))
+            if (!confirmed) {
+                return;
+            }
         }
 
         this.onGeneratePassword.emit();

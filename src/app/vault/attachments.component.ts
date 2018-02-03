@@ -14,6 +14,7 @@ import { ToasterService } from 'angular2-toaster';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 
 import { Cipher } from 'jslib/models/domain/cipher';
@@ -37,7 +38,8 @@ export class AttachmentsComponent implements OnInit {
 
     constructor(private cipherService: CipherService, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService,
-        private cryptoService: CryptoService, private tokenService: TokenService) { }
+        private cryptoService: CryptoService, private tokenService: TokenService,
+        private platformUtilsService: PlatformUtilsService) { }
 
     async ngOnInit() {
         this.cipherDomain = await this.cipherService.get(this.cipherId);
@@ -49,9 +51,19 @@ export class AttachmentsComponent implements OnInit {
         this.canAccessAttachments = isPremium || this.cipher.organizationId != null;
 
         if (!this.canAccessAttachments) {
-            alert(this.i18nService.t('premiumRequiredDesc'));
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('premiumRequiredDesc'), this.i18nService.t('premiumRequired'),
+                this.i18nService.t('learnMore'), this.i18nService.t('cancel'))
+            if (confirmed) {
+                this.platformUtilsService.launchUri('https://vault.bitwarden.com/#/?premium=purchase');
+            }
         } else if (!this.hasUpdatedKey) {
-            alert(this.i18nService.t('updateKey'));
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('updateKey'), this.i18nService.t('featureUnavailable'),
+                this.i18nService.t('learnMore'), this.i18nService.t('cancel'), 'warning')
+            if (confirmed) {
+                this.platformUtilsService.launchUri('https://help.bitwarden.com/article/update-encryption-key/');
+            }
         }
     }
 
@@ -96,7 +108,10 @@ export class AttachmentsComponent implements OnInit {
             return;
         }
 
-        if (!confirm(this.i18nService.t('deleteAttachmentConfirmation'))) {
+        const confirmed = await this.platformUtilsService.showDialog(
+            this.i18nService.t('deleteAttachmentConfirmation'), this.i18nService.t('deleteAttachment'),
+            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning')
+        if (!confirmed) {
             return;
         }
 
