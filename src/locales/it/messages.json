@@ -6,19 +6,19 @@
     "message": "All Items"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Preferiti"
   },
   "types": {
-    "message": "Types"
+    "message": "Tipi"
   },
   "typeLogin": {
     "message": "Login"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Carta"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identità"
   },
   "typeSecureNote": {
     "message": "Secure Note"
