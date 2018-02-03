@@ -387,7 +387,7 @@
     "message": "Ordner gelöscht"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Einloggen oder einen neuen Account erstellen um auf den Tresor zuzugreifen."
   },
   "createAccount": {
     "message": "Account erstellen"
@@ -402,16 +402,16 @@
     "message": "Master-Passwort"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass du das Passwort nicht vergisst, da es keine Möglichkeit gibt es zurückzusetzen."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, solltest du es vergessen."
   },
   "reTypeMasterPass": {
     "message": "Master-Passwort wiederholen"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Master-Passwort-Hinweis (optional)"
   },
   "settings": {
     "message": "Einstellungen"
@@ -420,10 +420,10 @@
     "message": "Passwort-Hinweis"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Geben Sie die E-Mail Adresse Ihres Kontos ein, um den Hinweis für Ihr Masterpasswort zu erhalten."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Hinweis zum Masterpasswort zusenden"
   },
   "emailRequired": {
     "message": "Die E-Mail Adresse ist erforderlich."
