@@ -344,7 +344,7 @@
     "message": "Sök i favoriter"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Sök efter typ",
     "description": "Search item type"
   },
   "newAttachment": {
