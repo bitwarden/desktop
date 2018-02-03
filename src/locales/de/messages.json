@@ -438,7 +438,7 @@
     "message": "Das Master-Passwort muss mindestens 8 Zeichen lang sein."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Die Passwortbestätigung stimmt nicht mit dem Passwort überein."
   },
   "newAccountCreated": {
     "message": "Der Account wurde erstellt! Du kannst dich jetzt anmelden."
@@ -453,7 +453,7 @@
     "message": "Eintrags-Information"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "verificationCode": {
     "message": "Verifizierungscode"
@@ -468,7 +468,7 @@
     "message": "Gib den 6-stelligen Verifizierungscode aus deiner Authenticator App ein."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Gib den 6-stelligen Bestätigungscode ein, der per E-Mail an $EMAIL$ gesendet wurde.",
     "placeholders": {
       "email": {
         "content": "$1",
