@@ -501,98 +501,98 @@
     "message": "Inserta tu llave de seguridad en el puerto USB de tu equipo. Si tiene un botón, púlsalo."
   },
   "recoveryCodeDesc": {
-    "message": "¿Has perdido el acceso a todos tus métodos de autenticación en dos pasos? Utiliza tu código de recuperación para deshabilitar todos lo mótodos de autenticación en dos pasos de tu cuenta."
+    "message": "¿Has perdido el acceso a todos tus métodos de autenticación en dos pasos? Utiliza tu código de recuperación para deshabilitar todos lo métodos de autenticación en dos pasos de tu cuenta."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Código de recuperación"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Aplicación de autenticación"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Utiliza una aplicación de autenticación (como Authy o Google Authenticator) para generar código de verificación basados en tiempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "Llave de seguridad YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Usa un Yubikey para acceder a tu cuenta. Funciona con YubiKey 4, 4 Nano, 4C y dispositivos NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verificar con Duo Security usando la aplicación Duo Mobile, SMS, llamada telefónica o llave de seguridad U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Usa cualquier llave de seguridad FIDO U2F habilitada para acceder a tu cuenta."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "Llave de seguridad FIDO U2F"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "Correo electrónico"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Los códigos de verificación te serán enviados por correo electrónico."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Entrada no disponible"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Esta cuenta tiene autenticación en dos pasos habilitada, pero ninguno de los métodos configurados son soportados por este dispositivo."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Por favor, añade proveedores que estén mejor soportados entre dispositivos (como una aplicación autenticadora)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Opciones de la autenticación en dos pasos"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Entorno de alojamiento propio"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Especifica la URL base de tu instalación de bitwarden de alojamiento propio."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Entorno personalizado"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Para usuarios avanzados. Puedes especificar la URL base de cada servicio de forma independiente."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL del servidor"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "URL del servidor de la API"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "URL del servidor de la caja fuerte web"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "URL del servidor de identidad"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL del servidor de iconos"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Las URLs del entorno han sido guardadas."
   },
   "ok": {
-    "message": "Ok"
+    "message": "Aceptar"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Si"
   },
   "no": {
     "message": "No"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Sobreescribir contraseña"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Más información"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Característica no disponible"
   }
 }
