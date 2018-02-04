@@ -219,7 +219,8 @@
                 {{'attachments' | i18n}}
             </div>
             <div class="box-content">
-                <a class="box-content-row box-content-row-flex" *ngFor="let attachment of cipher.attachments"
+                <a class="box-content-row box-content-row-flex text-default"
+                   *ngFor="let attachment of cipher.attachments"
                    href="#" appStopClick appBlurCLick (click)="downloadAttachment(attachment)">
                     <span class="row-main">{{attachment.fileName}}</span>
                     <small class="row-sub-label">{{attachment.sizeName}}</small>
