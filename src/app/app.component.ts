@@ -6,6 +6,7 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import {
     Component,
+    NgZone,
     OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
@@ -21,6 +22,7 @@ import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { TokenService } from 'jslib/abstractions/token.service';
@@ -47,43 +49,58 @@ export class AppComponent implements OnInit {
         private settingsService: SettingsService, private syncService: SyncService,
         private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
         private authService: AuthService, private router: Router, private analytics: Angulartics2,
-        private toasterService: ToasterService, private i18nService: I18nService) { }
+        private toasterService: ToasterService, private i18nService: I18nService,
+        private platformUtilsService: PlatformUtilsService, private ngZone: NgZone) { }
 
     ngOnInit() {
-        this.broadcasterService.subscribe(async (message: any) => {
-            switch (message.command) {
-                case 'loggedIn':
-                    break;
-                case 'logout':
-                    const userId = await this.userService.getUserId();
-
-                    await Promise.all([
-                        this.syncService.setLastSync(new Date(0)),
-                        this.tokenService.clearToken(),
-                        this.cryptoService.clearKeys(),
-                        this.userService.clear(),
-                        this.settingsService.clear(userId),
-                        this.cipherService.clear(userId),
-                        this.folderService.clear(userId),
-                        this.passwordGenerationService.clear(),
-                    ]);
-
-                    this.doneLoggingOut(message.expired);
-                    break;
-                case 'doneLoggingOut':
-                    this.doneLoggingOut(message.expired);
-                    break;
-                case 'locked':
-                    break;
-                case 'unlocked':
-                    break;
-                case 'syncStarted':
-                    break;
-                case 'syncCompleted':
-                    break;
-                default:
-            }
+        this.broadcasterService.subscribe((message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case 'loggedIn':
+                        break;
+                    case 'logout':
+                        this.logOut(message.expired);
+                        break;
+                    case 'doneLoggingOut':
+                        this.doneLoggingOut(message.expired);
+                        break;
+                    case 'locked':
+                        break;
+                    case 'unlocked':
+                        break;
+                    case 'syncStarted':
+                        break;
+                    case 'syncCompleted':
+                        break;
+                    case 'confirmLogout':
+                        const logoutConfirmed = await this.platformUtilsService.showDialog(
+                            this.i18nService.t('logOutConfirmation'), this.i18nService.t('logOut'),
+                            this.i18nService.t('logOut'), this.i18nService.t('cancel'));
+                        if (logoutConfirmed) {
+                            this.logOut(false);
+                        }
+                        break;
+                    default:
+                }
+            });
         });
+    }
+
+    private async logOut(expired: boolean) {
+        const userId = await this.userService.getUserId();
+
+        await Promise.all([
+            this.syncService.setLastSync(new Date(0)),
+            this.tokenService.clearToken(),
+            this.cryptoService.clearKeys(),
+            this.userService.clear(),
+            this.settingsService.clear(userId),
+            this.cipherService.clear(userId),
+            this.folderService.clear(userId),
+            this.passwordGenerationService.clear(),
+        ]);
+
+        this.doneLoggingOut(expired);
     }
 
     private doneLoggingOut(expired: boolean) {

@@ -21,6 +21,7 @@
     <app-vault-add-edit id="details"
                         *ngIf="action === 'add' || action === 'edit'"
                         [folderId]="action === 'add' && folderId !== 'none' ? folderId : null"
+                        [type]="action === 'add' ? addType : null"
                         [cipherId]="action === 'edit' ? cipherId : null"
                         (onSavedCipher)="savedCipher($event)"
                         (onDeletedCipher)="deletedCipher($event)"

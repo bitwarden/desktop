@@ -12,7 +12,6 @@ export class MessagingMain {
                 case 'logout':
                     break;
                 case 'syncCompleted':
-                    console.log('sync completed!!');
                     break;
                 default:
                     break;

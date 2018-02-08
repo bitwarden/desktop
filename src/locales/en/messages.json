@@ -600,5 +600,11 @@
   },
   "loginExpired": {
     "message": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Are you sure you want to log out?"
+  },
+  "logOut": {
+    "message": "Log Out"
   }
 }

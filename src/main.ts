@@ -17,10 +17,9 @@ if (watch) {
 const i18nService = new I18nService('en', './locales/');
 i18nService.init().then(() => { });
 
-let win: BrowserWindow;
+const windowMain = new WindowMain(dev);
 const messagingMain = new MessagingMain();
-const menuMain = new MenuMain();
-const windowMain = new WindowMain(win, dev);
+const menuMain = new MenuMain(windowMain);
 
 messagingMain.init();
 menuMain.init();

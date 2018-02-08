@@ -2,8 +2,10 @@ import * as template from './vault.component.html';
 
 import { Location } from '@angular/common';
 import {
+    ChangeDetectorRef,
     Component,
     ComponentFactoryResolver,
+    NgZone,
     OnInit,
     ViewChild,
     ViewContainerRef,
@@ -14,6 +16,8 @@ import {
 } from '@angular/router';
 
 import { ModalComponent } from '../modal.component';
+
+import { BroadcasterService } from '../services/broadcaster.service';
 
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
@@ -48,12 +52,46 @@ export class VaultComponent implements OnInit {
     type: CipherType = null;
     folderId: string = null;
     collectionId: string = null;
+    addType: CipherType = null;
 
     constructor(private route: ActivatedRoute, private router: Router, private location: Location,
-        private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService) {
+        private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
+        private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
+        private ngZone: NgZone) {
     }
 
     async ngOnInit() {
+        this.broadcasterService.subscribe((message: any) => {
+            this.ngZone.run(async () => {
+                let detectChanges = true;
+
+                switch (message.command) {
+                    case 'newLogin':
+                        this.addCipher(CipherType.Login);
+                        break;
+                    case 'newCard':
+                        this.addCipher(CipherType.Card);
+                        break;
+                    case 'newIdentity':
+                        this.addCipher(CipherType.Identity);
+                        break;
+                    case 'newSecureNote':
+                        this.addCipher(CipherType.SecureNote);
+                        break;
+                    case 'newFolder':
+                        await this.addFolder();
+                        break;
+                    default:
+                        detectChanges = false;
+                        break;
+                }
+
+                if (detectChanges) {
+                    this.changeDetectorRef.detectChanges();
+                }
+            });
+        });
+
         this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {
                 const cipherView = new CipherView();
@@ -108,11 +146,12 @@ export class VaultComponent implements OnInit {
         this.go();
     }
 
-    addCipher() {
+    addCipher(type: CipherType = null) {
         if (this.action === 'add') {
             return;
         }
 
+        this.addType = type;
         this.action = 'add';
         this.cipherId = null;
         this.go();

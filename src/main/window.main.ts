@@ -3,7 +3,9 @@ import * as path from 'path';
 import * as url from 'url';
 
 export class WindowMain {
-    constructor(private win: BrowserWindow, private dev: boolean) { }
+    win: BrowserWindow;
+
+    constructor(private dev: boolean) { }
 
     init() {
         try {

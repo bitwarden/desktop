@@ -35,6 +35,7 @@ import { SecureNoteView } from 'jslib/models/view/secureNoteView';
 export class AddEditComponent implements OnChanges {
     @Input() folderId: string;
     @Input() cipherId: string;
+    @Input() type: CipherType;
     @Output() onSavedCipher = new EventEmitter<CipherView>();
     @Output() onDeletedCipher = new EventEmitter<CipherView>();
     @Output() onCancelled = new EventEmitter<CipherView>();
@@ -119,7 +120,7 @@ export class AddEditComponent implements OnChanges {
             this.title = this.i18nService.t('addItem');
             this.cipher = new CipherView();
             this.cipher.folderId = this.folderId;
-            this.cipher.type = CipherType.Login;
+            this.cipher.type = this.type == null ? CipherType.Login : this.type;
             this.cipher.login = new LoginView();
             this.cipher.card = new CardView();
             this.cipher.identity = new IdentityView();

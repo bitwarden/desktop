@@ -1,10 +1,69 @@
-import { app, Menu, MenuItemConstructorOptions } from 'electron';
+import {
+    app,
+    BrowserWindow,
+    Menu,
+    MenuItemConstructorOptions,
+    ipcMain,
+} from 'electron';
+
+import { WindowMain } from './window.main';
 
 export class MenuMain {
-    constructor() { }
+    constructor(private windowMain: WindowMain) { }
 
     init() {
+        const self = this;
+
         const template: MenuItemConstructorOptions[] = [
+            {
+                label: 'bitwarden'
+            },
+            {
+                label: 'File',
+                submenu: [
+                    {
+                        label: 'New Item',
+                        submenu: [
+                            {
+                                label: 'New Login',
+                                click() {
+                                    self.send('newLogin');
+                                }
+                            },
+                            {
+                                label: 'New Card',
+                                click() {
+                                    self.send('newCard');
+                                }
+                            },
+                            {
+                                label: 'New Identity',
+                                click() {
+                                    self.send('newIdentity');
+                                }
+                            },
+                            {
+                                label: 'New Secure Note',
+                                click() {
+                                    self.send('newSecureNote');
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        label: 'New Login',
+                        click() {
+                            self.send('newLogin');
+                        }
+                    },
+                    {
+                        label: 'New Folder',
+                        click() {
+                            self.send('newFolder');
+                        }
+                    }
+                ]
+            },
             {
                 label: 'Edit',
                 submenu: [
@@ -34,6 +93,17 @@ export class MenuMain {
                 ]
             },
             {
+                label: 'Account',
+                submenu: [
+                    {
+                        label: 'Log Out',
+                        click() {
+                            self.send('confirmLogout');
+                        }
+                    },
+                ]
+            },
+            {
                 role: 'window',
                 submenu: [
                     { role: 'minimize' },
@@ -52,32 +122,64 @@ export class MenuMain {
         ];
 
         if (process.platform === 'darwin') {
-            template.unshift({
-                label: app.getName(),
-                submenu: [
-                    { role: 'about' },
-                    { type: 'separator' },
-                    { role: 'services', submenu: [] },
-                    { type: 'separator' },
-                    { role: 'hide' },
-                    { role: 'hideothers' },
-                    { role: 'unhide' },
-                    { type: 'separator' },
-                    { role: 'quit' }
-                ]
-            })
+            template[0].submenu = [
+                {
+                    label: 'Settings',
+                    click() {
+                        self.send('openSettings');
+                    }
+                },
+                {
+                    label: 'Lock',
+                    click() {
+                        self.send('lockApp');
+                    }
+                },
+                { type: 'separator' },
+                { role: 'about' },
+                { type: 'separator' },
+                { role: 'services', submenu: [] },
+                { type: 'separator' },
+                { role: 'hide' },
+                { role: 'hideothers' },
+                { role: 'unhide' },
+                { type: 'separator' },
+                { role: 'quit' }
+            ];
 
             // Window menu
-            template[3].submenu = [
+            template[4].submenu = [
                 { role: 'close' },
                 { role: 'minimize' },
                 { role: 'zoom' },
                 { type: 'separator' },
                 { role: 'front' }
             ]
-        };
+        } else {
+            template[0].submenu = [
+                {
+                    label: 'Settings',
+                    click() {
+                        self.send('openSettings');
+                    }
+                },
+                {
+                    label: 'Lock',
+                    click() {
+                        self.send('lockApp');
+                    }
+                },
+            ];
+        }
 
         const menu = Menu.buildFromTemplate(template);
         Menu.setApplicationMenu(menu);
+    }
+
+    send(command: string, message?: any) {
+        this.windowMain.win.webContents.send('messagingService', {
+            command: command,
+            message: message,
+        });
     }
 }

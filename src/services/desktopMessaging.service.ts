@@ -5,7 +5,13 @@ import { MessagingService } from 'jslib/abstractions';
 import { BroadcasterService } from '../app/services/broadcaster.service';
 
 export class DesktopMessagingService implements MessagingService {
-    constructor(private broadcasterService: BroadcasterService) { }
+    constructor(private broadcasterService: BroadcasterService) {
+        ipcRenderer.on('messagingService', async (event: any, message: any) => {
+            if (message.command) {
+                this.send(message.command, message);
+            }
+        });
+    }
 
     send(subscriber: string, arg: any = {}) {
         const message = Object.assign({}, { command: subscriber }, arg);
