@@ -3,472 +3,472 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "所有项目"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "我的收藏"
   },
   "types": {
-    "message": "Types"
+    "message": "类型"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "登录"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "卡片"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "身份"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "安全笔记"
   },
   "folders": {
-    "message": "Folders"
+    "message": "文件夹"
   },
   "collections": {
-    "message": "Collections"
+    "message": "集合"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "搜索密码库"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "添加项目"
   },
   "shared": {
-    "message": "Shared"
+    "message": "分享"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "附件"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "查看项目"
   },
   "name": {
-    "message": "Name"
+    "message": "名称"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "用户名"
   },
   "password": {
-    "message": "Password"
+    "message": "密码"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "编辑项目"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "电子邮件地址"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "验证码 (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "网站"
   },
   "notes": {
-    "message": "Notes"
+    "message": "笔记"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "自定义字段"
   },
   "launch": {
-    "message": "Launch"
+    "message": "启动"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "复制数值"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "切换可见性"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "持卡人姓名"
   },
   "number": {
-    "message": "Number"
+    "message": "号码"
   },
   "brand": {
-    "message": "Brand"
+    "message": "品牌"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "到期日"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "安全码"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "身份名称"
   },
   "company": {
-    "message": "Company"
+    "message": "公司"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "社会保险号码"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "护照号码"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "许可证号码"
   },
   "email": {
-    "message": "Email"
+    "message": "电子邮件地址"
   },
   "phone": {
-    "message": "Phone"
+    "message": "电话"
   },
   "address": {
-    "message": "Address"
+    "message": "地址"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "需要高级版"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "使用此功能需要高级会员资格。"
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "发生错误。"
   },
   "error": {
-    "message": "Error"
+    "message": "错误"
   },
   "january": {
-    "message": "January"
+    "message": "一月"
   },
   "february": {
-    "message": "February"
+    "message": "二月"
   },
   "march": {
-    "message": "March"
+    "message": "三月"
   },
   "april": {
-    "message": "April"
+    "message": "四月"
   },
   "may": {
-    "message": "May"
+    "message": "五月"
   },
   "june": {
-    "message": "June"
+    "message": "六月"
   },
   "july": {
-    "message": "July"
+    "message": "七月"
   },
   "august": {
-    "message": "August"
+    "message": "八月"
   },
   "september": {
-    "message": "September"
+    "message": "九月"
   },
   "october": {
-    "message": "October"
+    "message": "十月"
   },
   "november": {
-    "message": "November"
+    "message": "十一月"
   },
   "december": {
-    "message": "December"
+    "message": "十二月"
   },
   "ex": {
-    "message": "ex."
+    "message": "例如"
   },
   "title": {
-    "message": "Title"
+    "message": "称呼"
   },
   "mr": {
-    "message": "Mr"
+    "message": "先生"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "夫人"
   },
   "ms": {
-    "message": "Ms"
+    "message": "女士"
   },
   "dr": {
-    "message": "Dr"
+    "message": "博士"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "到期月份"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "到期年份"
   },
   "select": {
-    "message": "Select"
+    "message": "选择"
   },
   "other": {
-    "message": "Other"
+    "message": "其他"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "生成密码"
   },
   "type": {
-    "message": "Type"
+    "message": "类型"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "名"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "中间名"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "姓"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "地址 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "地址 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "地址 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "市 \/ 镇"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "州 \/ 省"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "邮政编码"
   },
   "country": {
-    "message": "Country"
+    "message": "国家\/地区"
   },
   "save": {
-    "message": "Save"
+    "message": "保存"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "取消"
   },
   "delete": {
-    "message": "Delete"
+    "message": "删除"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "收藏"
   },
   "edit": {
-    "message": "Edit"
+    "message": "编辑"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "验证器密钥 (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "文件夹"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "新建自定义字段"
   },
   "value": {
-    "message": "Value"
+    "message": "值"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "文本"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "隐藏的"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "布尔值"
   },
   "remove": {
-    "message": "Remove"
+    "message": "移除"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "必须填写名称。"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "项目已添加"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "项目已编辑"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "删除项目"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "删除文件夹"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "删除附件"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "确实要删除此项目吗?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "项目已删除"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "您确定要覆盖当前密码吗？"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "没有文件夹",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "添加文件夹"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "编辑文件夹"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "重新生成密码"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "复制密码"
   },
   "length": {
-    "message": "Length"
+    "message": "长度"
   },
   "close": {
-    "message": "Close"
+    "message": "关闭"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "最小位数"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "最少特殊符号",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "避免模棱两可"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "搜索集合"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "搜索文件夹"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "搜索我的收藏"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "搜索类型",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "添加新附件"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "附件已删除"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "确定删除这个附件？"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "附件已保存。"
   },
   "file": {
-    "message": "File"
+    "message": "文件"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "选择一个文件。"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "文件最大为 100 MB。"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "在您更新加密密钥前，您不能使用此功能。"
   },
   "options": {
-    "message": "Options"
+    "message": "选项"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "已编辑文件夹"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "已添加文件夹"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "您确定要删除此文件夹吗？"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "已删除文件夹"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "登录或者新建一个帐号来访问您的安全密码库。"
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "创建账号"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "登录"
   },
   "submit": {
-    "message": "Submit"
+    "message": "提交"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "主密码"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "主密码是访问密码库的唯一密码。它非常重要，请您不要忘记。忘记主密码后，我们无法为您恢复或重置它。"
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "主密码提示可以在你忘记密码时帮你回忆。"
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "重新输入主密码"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "主密码提示 (可选)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "设置"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "密码提示"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "请输入您账号的电子邮件地址来接收密码提示。"
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "获取主密码提示"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "必须填写电子邮件地址。"
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "无效的电子邮件地址。"
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "必须填写主密码。"
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "主密码至少需要 8 个字符。"
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "两次填写的主密码不一致。"
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "已经为您建立了账户，您可以登录了。"
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "我们已经为您发送了包含主密码提示的邮件。"
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "发生意外错误。"
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "项目信息"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "没有要显示的项目。"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "验证码"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "必须填写验证码。"
   },
   "continue": {
-    "message": "Continue"
+    "message": "继续"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "请输入您的身份验证器应用中的 6 位验证码。"
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "请输入通过电子邮件发送给 $EMAIL$ 的 6 位验证码。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "验证邮件已发送到 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "记住我"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "重发验证代码邮件"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "使用其他两步登录方法"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "将您的 YubiKey 插入计算机的 USB 端口，然后触摸它的按钮。"
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "将您的安全密钥插入计算机的 USB 端口，然后点按它的按钮（如果存在）。"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "您丢失了所有的两步登录方式？使用您的恢复代码来为您的账户禁用所有两步登录方式。"
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "恢复码"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "验证器应用"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "使用身份验证器应用（例如 Authy 或 Google Authenticator）来生成基于时间的验证码。",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey NEO 安全密钥"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "使用 YubiKey 来访问您的账户。可配合 YubiKey 4、4 Nano、4C 和 NEO 设备。"
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全钥匙验证身份。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "使用任何 FIDO U2F 安全钥匙来访问您的账户。"
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F 安全密钥"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "电子邮件地址"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "验证码已发到您的电子邮箱。"
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "登录不可用"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "此账户已启用两步登录，但此设备不支持任何已配置的两步登录方法。"
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "请添加能更好支持跨设备使用的提供商（如一个验证器应用）。"
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "两步登录选项"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "自我托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "指定自己配置、托管的 bitwarden 环境的基础 URL。"
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "自定义环境"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "适用于高级用户。你可以分别指定各个服务的基础 URL。"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "服务器 URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API 服务器 URL"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "Web 密码库服务器 URL"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "身份服务器 URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "图标服务器 URL"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "各环境 URL 已保存。"
   },
   "ok": {
-    "message": "Ok"
+    "message": "确定"
   },
   "yes": {
-    "message": "Yes"
+    "message": "是"
   },
   "no": {
-    "message": "No"
+    "message": "否"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "覆盖密码"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "进一步了解"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "功能不可用"
   }
 }
