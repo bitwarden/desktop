@@ -3,157 +3,157 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Kõik kirjed"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Lemmikud"
   },
   "types": {
-    "message": "Types"
+    "message": "Tüübid"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Kasutajakonto andmed"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Pangakaart"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identiteet"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Turvaline märkus"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Kaustad"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kogumikud"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Otsi hoidlast"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Lisa kirje"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Jagatud"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Manused"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Kirje vaatamine"
   },
   "name": {
-    "message": "Name"
+    "message": "Nimi"
   },
   "uri": {
-    "message": "URI"
+    "message": "URL"
   },
   "username": {
-    "message": "Username"
+    "message": "Kasutajanimi"
   },
   "password": {
-    "message": "Password"
+    "message": "Parool"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Kirje muutmine"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-posti aadress"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Kinnituskood (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Veebileht"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Märkmed"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Kohandatud väljad"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Käivita"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Kopeeri kirje"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Näita sisu"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Kaardiomaniku nimi"
   },
   "number": {
     "message": "Number"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Bränd"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Aegumine"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Turvakood"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Ettevõte"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Isikukood"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Passi number"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Litsentsi number"
   },
   "email": {
-    "message": "Email"
+    "message": "E-post"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefoninumber"
   },
   "address": {
-    "message": "Address"
+    "message": "Aadress"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Vajalik on Preemium versioon"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Selle funktsiooni kasutamiseks on vajalik tasulist kontot omada."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Ilmnes tõrge."
   },
   "error": {
-    "message": "Error"
+    "message": "Viga"
   },
   "january": {
-    "message": "January"
+    "message": "Jaanuar"
   },
   "february": {
-    "message": "February"
+    "message": "Veebruar"
   },
   "march": {
-    "message": "March"
+    "message": "Märts"
   },
   "april": {
-    "message": "April"
+    "message": "Aprill"
   },
   "may": {
-    "message": "May"
+    "message": "Mai"
   },
   "june": {
-    "message": "June"
+    "message": "Juuni"
   },
   "july": {
-    "message": "July"
+    "message": "Juuli"
   },
   "august": {
     "message": "August"
@@ -162,313 +162,313 @@
     "message": "September"
   },
   "october": {
-    "message": "October"
+    "message": "Oktoober"
   },
   "november": {
     "message": "November"
   },
   "december": {
-    "message": "December"
+    "message": "Detsember"
   },
   "ex": {
-    "message": "ex."
+    "message": "nt."
   },
   "title": {
-    "message": "Title"
+    "message": "Pealkiri"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Hr"
   },
   "mrs": {
     "message": "Mrs"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Pr"
   },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Aegumise kuu"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Aegumise aasta"
   },
   "select": {
-    "message": "Select"
+    "message": "Vali"
   },
   "other": {
-    "message": "Other"
+    "message": "Muu"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Loo parool"
   },
   "type": {
-    "message": "Type"
+    "message": "Tüüp"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Eesnimi"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Teine eesnimi"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Perekonnanimi"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Aadress 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Aadress 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Aadress 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Linn \/ asula"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Maakond \/ vald"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Postiindeks"
   },
   "country": {
-    "message": "Country"
+    "message": "Riik"
   },
   "save": {
-    "message": "Save"
+    "message": "Salvesta"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Tühista"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Kustuta"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Lemmik"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Muuda"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Autentiseerimise võti (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Kaust"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Uus kohandatud väli"
   },
   "value": {
-    "message": "Value"
+    "message": "Väärtus"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Peidetud"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Eemalda"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Nimi on kohustuslik."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Kirje on lisatud"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Üksus on muudetud"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Kustuta kirje"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Kustuta Kaust"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Kustuta manus"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Soovid tõesti selle kirje kustutada?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Kirje on kustutatud"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Oled kindel, et soovid olemasolevat parooli üle kirjutada?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Kaust puudub",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Kausta lisamine"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Muuda kausta"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Genereeri salasõna uuesti"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopeeri parool"
   },
   "length": {
-    "message": "Length"
+    "message": "Pikkus"
   },
   "close": {
-    "message": "Close"
+    "message": "Sulge"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Vähim arv numbreid"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Vähim arv spetsiaalmärke",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Väldi ebamääraseid kirjamärke"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Otsi kogumikku"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Otsi kausta"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Otsi lemmikute hulgast"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Otsingu tüüp",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Lisa uus manus"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Manus on kustutatud"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Oled kindel, et soovid manuse kustutada?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Manus on salvestatud."
   },
   "file": {
-    "message": "File"
+    "message": "Fail"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Vali fail."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Maksimaalne faili suurus on 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Seda funktsiooni ei saa enne krüpteerimise võtme uuendamist kasutada."
   },
   "options": {
-    "message": "Options"
+    "message": "Valikud"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Kaust on muudetud"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Kaust on lisatud"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Oled kindel, et soovid seda kausta kustutada?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Kaust on kustutatud"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Logi oma olemasolevasse kontosse sisse või loo uus konto."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Konto loomine"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Logi sisse"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Kinnita"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Ülemparool"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Ülemparool on parool, millega pääsed oma kontole ligi. On äärmiselt tähtis, et ülemparool ei ununeks. Selle parooli taastamine ei ole mingil moel võimalik."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Vihje võib abiks olla olukorras, kui oled ülemparooli unustanud."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Sisesta ülemparool uuesti"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Ülemparooli vihje (ei ole kohutuslik)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Seaded"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Parooli vihje"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Ülemparooli vihje saamiseks sisesta oma konto e-posti aadress."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Tuleta ülemparooli vihjega meelde"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "E-posti aadress on nõutud."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Vigane e-posti aadress."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Vajalik on ülemparooli sisestamine."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Ülemparool peab olema vähemalt 8 tähemärgi pikkune."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Ülemparoolid ei ühti."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Sinu konto on loodud! Võid nüüd sisse logida."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Ülemparooli vihje saadeti Sinu e-postile."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Tekkis ootamatu viga."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Kirje informatsioon"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Puuduvad kirjed, mida kuvada."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Kinnituskood"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Nõuatav on kinnituskood."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Jätka"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Sisesta autentiseerimise rakendusest 6 kohaline number."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Kinnituskood saadeti e-posti aadressile $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,66 +486,66 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Jäta mind meelde"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Saada kinnituskood uuesti e-postile"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Kasuta teist kaheastmelist sisselogimise meetodit"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Sisesta oma YubiKey arvuti USB porti ja kliki sellele nupule."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Sisesta oma turvaline võti arvuti USB porti. Kui sellel on nupp, siis vajuta seda."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Sul ei ole ligipääsu ühelegi kaheastmelise kinnitamise teenusele? Kasuta Taastamise koodi, et kaheastmeline kinnitamine oma kontol välja lülitada."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Taastamise kood"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Autentiseerimise rakendus"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Kausta autentiseerimise rakendust (näiteks Authy või Google Authenticator), et luua ajal baseeruvaid kinnituskoode.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP Turvaline võti"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Kasuta kontole ligipääsemiseks YubiKey-d. See töötab YubiKey 4, 4 Nano, 4C ja NEO seadmetega."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Kinnita Duo Security abil, kasutades selleks Duo Mobile rakendust, SMS-i, telefonikõnet või U2F turvavõtit.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Kasuta mistahes FIDO U2F toetavad turvalist võtit, et oma kontole ligi pääseda."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F Turvaline võti"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-post"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Kinnituskoodid saadetakse e-postiga."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Sisselogimine ei ole saadaval"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Sellel kontol on aktiveeritud kaheastmeline kinnitus. Siiski ei toeta käesolev seade ühtegi aktiveeritud kaheastmelise kinnitamise teenust."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Palun lisa täiendavaid kaheastmelise kinnitamise teenuse pakkujaid, mis toetavad rohkem seadmeid (näiteks mõni autentimisrakendus)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Kaheastmelise sisselogimise valikud"
   },
   "selfHostedEnvironment": {
     "message": "Self-hosted Environment"
@@ -554,16 +554,16 @@
     "message": "Specify the base URL of your on-premise hosted bitwarden installation."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Kohandatud keskkond"
   },
   "customEnvironmentFooter": {
     "message": "For advanced users. You can specify the base URL of each service independently."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Serveri URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API serveri URL"
   },
   "webVaultUrl": {
     "message": "Web Vault Server URL"
@@ -572,7 +572,7 @@
     "message": "Identity Server URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikoonide serveri URL"
   },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
@@ -581,18 +581,18 @@
     "message": "Ok"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Jah"
   },
   "no": {
-    "message": "No"
+    "message": "Ei"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Kirjuta parool üle"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Loe edasi"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funktsioon pole saadaval"
   }
 }
