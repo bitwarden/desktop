@@ -114,13 +114,13 @@
     "message": "License Number"
   },
   "email": {
-    "message": "Email"
+    "message": "อีเมล"
   },
   "phone": {
-    "message": "Phone"
+    "message": "โทรศัพท์"
   },
   "address": {
-    "message": "Address"
+    "message": "ที่อยู่"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -135,22 +135,22 @@
     "message": "Error"
   },
   "january": {
-    "message": "January"
+    "message": "มกราคม"
   },
   "february": {
-    "message": "February"
+    "message": "กุมภาพันธ์"
   },
   "march": {
-    "message": "March"
+    "message": "มีนาคม"
   },
   "april": {
-    "message": "April"
+    "message": "เมษายน"
   },
   "may": {
-    "message": "May"
+    "message": "พฤษภาคม"
   },
   "june": {
-    "message": "June"
+    "message": "มิถุนายน"
   },
   "july": {
     "message": "July"
@@ -216,13 +216,13 @@
     "message": "Last Name"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "ที่อยู่ 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "ที่อยู่ 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "ที่อยู่ 3"
   },
   "cityTown": {
     "message": "City \/ Town"

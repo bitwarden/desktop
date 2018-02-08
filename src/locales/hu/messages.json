@@ -3,166 +3,166 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Összes elem"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Kedvencek"
   },
   "types": {
-    "message": "Types"
+    "message": "Típusok"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Bejelentkezés"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kártya"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Személyazonosság"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Biztonságos jegyzet"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mappák"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Gyűjtemények"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Keresés a széfben"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Elem hozzáadása"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Megosztott"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Mellékletek"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Elem megtekintése"
   },
   "name": {
-    "message": "Name"
+    "message": "Név"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Felhasználónév"
   },
   "password": {
-    "message": "Password"
+    "message": "Jelszó"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Elem szerkesztése"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-mail cím"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Ellenőrző kód (egyszeri-idő alapú)"
   },
   "website": {
-    "message": "Website"
+    "message": "Weboldal"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Jegyzetek"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Egyedi mezők"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Indítás"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Érték másolása"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Láthatóság váltása"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Kártyatulajdonos neve"
   },
   "number": {
-    "message": "Number"
+    "message": "Szám"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Márka"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Lejárat"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Biztonsági Kód"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Cég"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Társadalombiztosítási szám"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Útlevélszám"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Vezetői engedély száma"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefonszám"
   },
   "address": {
-    "message": "Address"
+    "message": "Lakcím"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Prémium szükséges"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "A funkció használatához prémium tagság szükséges."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Valami hiba történt."
   },
   "error": {
-    "message": "Error"
+    "message": "Hiba"
   },
   "january": {
-    "message": "January"
+    "message": "Január"
   },
   "february": {
-    "message": "February"
+    "message": "Február"
   },
   "march": {
-    "message": "March"
+    "message": "Március"
   },
   "april": {
-    "message": "April"
+    "message": "Április"
   },
   "may": {
-    "message": "May"
+    "message": "Május"
   },
   "june": {
-    "message": "June"
+    "message": "Június"
   },
   "july": {
-    "message": "July"
+    "message": "Július"
   },
   "august": {
-    "message": "August"
+    "message": "Augusztus"
   },
   "september": {
-    "message": "September"
+    "message": "Szeptember"
   },
   "october": {
-    "message": "October"
+    "message": "Október"
   },
   "november": {
     "message": "November"
@@ -171,304 +171,304 @@
     "message": "December"
   },
   "ex": {
-    "message": "ex."
+    "message": "pl."
   },
   "title": {
-    "message": "Title"
+    "message": "Titulus"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Úr"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Asszony"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Kisasszony"
   },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Lejárati hónap"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Lejárati év"
   },
   "select": {
-    "message": "Select"
+    "message": "Kijelölés"
   },
   "other": {
-    "message": "Other"
+    "message": "Egyéb"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Jelszó generálása"
   },
   "type": {
-    "message": "Type"
+    "message": "Típus"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Keresztnév"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Középső név"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Családnév"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Cím 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Cím 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Cím 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Település neve"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Megye"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Irányítószám"
   },
   "country": {
-    "message": "Country"
+    "message": "Ország"
   },
   "save": {
-    "message": "Save"
+    "message": "Mentés"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Mégse"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Törlés"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Kedvenc"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Szerkesztés"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Hitelesítő kulcs (egyszeri-idő alapú)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Mappa"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Új egyedi mező"
   },
   "value": {
-    "message": "Value"
+    "message": "Érték"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Szöveg"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Rejtett"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Logikai"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Eltávolít"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Név megadása kötelező."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Elem hozzáadva"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Elem szerkesztve"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Elem törlése"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Mappa törlése"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Mellékletek törlése"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Biztosan törlöd ezt az elemet?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Törölt elem"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Biztosan felül akarod írni a jelenlegi jelszót?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Nincs mappa",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Mappa hozzáadása"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Mappa szerkesztése"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Jelszó újragenerálása"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Jelszó másolása"
   },
   "length": {
-    "message": "Length"
+    "message": "Hossz"
   },
   "close": {
-    "message": "Close"
+    "message": "Bezár"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Legkevesebb szám"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Legkevesebb különleges karakter",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Félreérthető karakterek mellőzése"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Gyűjtemény keresése"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Mappa keresése"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Kedvencek keresése"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Típus keresése",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Melléklet hozzáadása"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Melléklet törlése"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Biztos törölni akarod ezt a mellékletet?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "A melléklet mentésre került."
   },
   "file": {
-    "message": "File"
+    "message": "Fájl"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Válassz ki egy fájlt."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Maximális fájl méret 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Ez a funkció nem használható, amíg nem frissíted a titkosítási kulcsodat."
   },
   "options": {
-    "message": "Options"
+    "message": "Beállítások"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Mappa szerkesztve"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Mappa hozzáadva"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Biztos, hogy törölni akarod ezt a mappát?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Mappa törölve"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Jelentkezz be vagy készíts új fiókot a biztonsági széfed eléréséhez."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Fiók létrehozása"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Bejelentkezés"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Mehet"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Mesterjelszó"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "A mesterjelszó az a jelszó amit a széfed eléréséhez fogsz használni. Nagyon fontos, hogy ne felejtsd el a mesterjelszavad, mert nincs lehetőséged visszaállítani ha elfelejtetted."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "A mesterjelszó emlékeztető segíthet emlékezni a jelszavadra ha elfejetetted volna."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Írd be újra a mesterjelszavad"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Mesterjelszó emlékeztető (nem kötelező)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Beállítások"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Jelszó emlékeztető"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Írd be a fiókod e-mail címét, hogy megkapd a mesterjelszó emlékeztetőt."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Kérj mesterjelszó emlékeztetőt"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "E-mail cím megadása kötelező."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Érvénytelen email cím."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Mesterjelszó megadása kötelező."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Mesterjelszónak legalább 8 karakter hosszúnak kell lennie."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "A megadott két jelszó nem egyezik meg."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Fiókodat létrehoztuk. Most már be tudsz jelentkezni."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Elküldtünk neked egy E-mailt mely tartalmazza a mesterjelszó emlékeztetődet."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Váratlan hiba történt."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Elem információ"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Nincsenek megjeleníthető tételek."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Hitelesítő kód"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Hitelesítő kód szükséges."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Folytatás"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Add meg a 6 számjegyű ellenőrző kódot a hitelesítő alkalmazásodból."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Add meg a 6 számjegyű ellenőrző kódot amit a(z) $EMAIL$ email címedre küldtünk.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Az ellenőrző kód elküldve a(z) $EMAIL$ címre.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Emlékezz rám"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Megerősítő kód újraküldése email-ben"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Másik kétlépcsős bejelentkezés használata"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Illeszd be a YubiKey-t a számítógéped egyik USB portjába, majd nyomd meg rajta a gombot."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Illeszd be biztonsági kulcsod a számítógéped egyik USB portjába. Ha van rajta gomb, nyomd meg."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Elvesztetted a hozzáférésed az összes kétlépcsős szolgáltatódhoz? A visszaállítókódod használatával letilthatod a kétlépcsős kiszolgálókat a fiókodban."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Helyreállító kód"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Hitelesítő alkalmazás"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Használj egy másik alkalmazást (mint például az Authy vagy a Google Authenticator) idő alapú ellenőrzőkód generálásához.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP (One Time Password) biztonsági kulcs"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Használj egy YubiKey-t a fiókodhoz való hozzáféréshez. Működik a YubiKey 4, 4 Nano, 4C, és NEO eszközökkel."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Hitelesítsd Duo Security-val, a Duo Mobile alkalmazás, SMS, telefonhívás vagy U2F biztonsági kulcs használatával.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Használj bármilyen FIDO U2F által engedélyezett biztonsági kulcsot a fiókod eléréséhez."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F biztonsági kulcs"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Az ellenőrző kódokat e-mailben kapod meg."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Bejelentkezés nem érhető el"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Ezen a fiókon kétlépcsős bejelentkezés van engedélyezve, de ez az eszköz nem támogatja egyik beállított kétlépcsős szolgáltatót sem."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Adj hozzá további szolgáltatókat, amik jobban támogatottak a készülékekeden (pl. egy hitelesítő alkalmazás)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Kétlépcsős bejelentkezés opciók"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Saját üzemeltetésű környezet"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Add meg az alap URL-t a helyileg üzemeltetett bitwarden telepítéshez."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Egyéni környezet"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Haladó felhasználóknak. Minden egyes szolgáltatásnak külön megadhatod az alap URL-t."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Szerver URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API szerver URL"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "Webes széf szerver URL"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "Identitás szerver URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikonok kiszolgáló URL-címe"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "A környezeti URL-ek el lettek mentve."
   },
   "ok": {
     "message": "Ok"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Igen"
   },
   "no": {
-    "message": "No"
+    "message": "Nem"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Jelszó felülírása"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "További információ"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Ez a funkció nem érhető el"
   }
 }

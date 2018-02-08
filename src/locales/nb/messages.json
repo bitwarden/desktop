@@ -6,154 +6,154 @@
     "message": "All Items"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoritter"
   },
   "types": {
-    "message": "Types"
+    "message": "Typer"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Innlogging"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kort"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitet"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Sikker notis"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mapper"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Samlinger"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Søk i hvelvet"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Legg til en gjenstand"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Delt"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Vedlegg"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Vis gjenstanden"
   },
   "name": {
-    "message": "Name"
+    "message": "Navn"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Brukernavn"
   },
   "password": {
-    "message": "Password"
+    "message": "Passord"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Rediger gjenstanden"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-postadresse"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Verifiseringskode (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Nettsted"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Notater"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Tilpassede felter"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Åpne"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Kopier verdien"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Kortholderens navn"
   },
   "number": {
-    "message": "Number"
+    "message": "Nummer"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Merke"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Utløp"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Sikkerhetskode"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Firma"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Nummer for sosial stønad"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Pass-nummer"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Lisensnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-post"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresse"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Premium er påkrevd"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Et Premium-medlemskap er påkrevd for å bruke denne funksjonen."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "En feil har oppstått."
   },
   "error": {
-    "message": "Error"
+    "message": "Feil"
   },
   "january": {
-    "message": "January"
+    "message": "Januar"
   },
   "february": {
-    "message": "February"
+    "message": "Februar"
   },
   "march": {
-    "message": "March"
+    "message": "Mars"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Mai"
   },
   "june": {
-    "message": "June"
+    "message": "Juni"
   },
   "july": {
-    "message": "July"
+    "message": "Juli"
   },
   "august": {
     "message": "August"
@@ -162,183 +162,183 @@
     "message": "September"
   },
   "october": {
-    "message": "October"
+    "message": "Oktober"
   },
   "november": {
     "message": "November"
   },
   "december": {
-    "message": "December"
+    "message": "Desember"
   },
   "ex": {
     "message": "ex."
   },
   "title": {
-    "message": "Title"
+    "message": "Tittel"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Herr"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Frøken"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Fru"
   },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Utløpsmåned"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Utløpsår"
   },
   "select": {
-    "message": "Select"
+    "message": "Velg"
   },
   "other": {
-    "message": "Other"
+    "message": "Annet"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Generer et passord"
   },
   "type": {
     "message": "Type"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Fornavn"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Mellomnavn"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Etternavn"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresse 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adresse 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adresse 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "By \/ Tettsted"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Fylke \/ Region"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Postnummer"
   },
   "country": {
-    "message": "Country"
+    "message": "Land"
   },
   "save": {
-    "message": "Save"
+    "message": "Lagre"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Lukk"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Slett"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Favoritt"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Rediger"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Autentiseringsnøkkel (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Mappe"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Nytt egendefinert felt"
   },
   "value": {
-    "message": "Value"
+    "message": "Verdi"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Skjult"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Boolsk verdi"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Fjern"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Et navn er påkrevd."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "La til gjenstanden"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Redigerte gjenstanden"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Slett gjenstanden"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Slett mappen"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Slett vedlegget"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Er du sikker på at du vil slette denne gjenstanden?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Slettet gjenstanden"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Er du sikker på at du vil overskrive det nåværende passordet?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Ingen mappe",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Legg til en mappe"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Rediger mappen"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Omgenerer et passord"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopier passordet"
   },
   "length": {
-    "message": "Length"
+    "message": "Lengde"
   },
   "close": {
-    "message": "Close"
+    "message": "Lukk"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Minst antall numre"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Minst antall spesialtegn",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Unngå forvekslingsbare tegn"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Søk i samling"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Søk i mappe"
   },
   "searchFavorites": {
     "message": "Search favorites"
@@ -348,127 +348,127 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Legg til et nytt vedlegg"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Slettet vedlegget"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Er du sikker på at du vil slette dette vedlegget?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Vedlegget har blitt lagret."
   },
   "file": {
-    "message": "File"
+    "message": "Fil"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Velg en fil."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Den maksimale filstørrelsen er 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Du kan ikke bruke denne funksjonen før du oppdaterer krypteringsnøkkelen din."
   },
   "options": {
-    "message": "Options"
+    "message": "Alternativer"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Redigerte mappen"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "La til en mappe"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Er du sikker på at du vil slette denne mappen?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Slettet mappen"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Logg på eller opprett en ny konto for å få tilgang til ditt sikre hvelv."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Opprett en konto"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Logg på"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Send inn"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Superpassord"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Superpassordet er passordet du bruker for å få tilgang til hvelvet ditt. Det er veldig viktig at du aldri glemmer ditt superpassord. Det er ingen måter å få tilbake passordet på dersom du noensinne skulle klare å glemme det."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Et hint for superpassordet kan hjelpe deg med å huske på passordet dersom du skulle glemme det."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Skriv inn superpassordet på nytt"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Et hint for superpassordet (valgfritt)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Innstillinger"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Passordhint"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Skriv inn din kontos E-postadresse for å motta hintet til ditt superpassord."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Få et hint om superpassordet"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "E-postadressen er påkrevd."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Ugyldig E-postadresse."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Superpassordet er påkrevd."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Superpassordet må være ≥8 tegn lang."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Superpassord-bekreftelsen er ikke samsvarende."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Din nye konto har blitt opprettet! Du kan nå logge på."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Vi har sendt deg en E-post med hintet til superpassordet."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "En uventet feil har oppstått."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Gjenstandsinformasjon"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Det er ingen gjenstander å liste opp."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Verifiseringskode"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "En verifiseringskode er påkrevd."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Fortsett"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Skriv inn den 6-sifrede verifiseringskoden som står på din autentiseringsapp."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Skriv inn den 6-sifrede verifiseringskoden som ble sendt til $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Husk på meg"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Send E-posten med verifiseringskoden på nytt"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Bruk en annen 2-trinnsinnloggingsmetode"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Sett inn din YubiKey i din datamaskins USB-uttak, og så trykk på dens knapp."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Sett din sikkerhetsnøkkel inn i din datamaskins USB-uttak. Dersom den har en knapp, trykk på den."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Har du mistet tilgang til alle dine 2-trinnsleverandører? Bruk din gjenopprettingskode til å fjerne alle 2-trinnsleverandører fra din konto."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Gjenopprettingskode"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Autentiseringsapp"
   },
   "authenticatorAppDesc": {
     "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP-sikkerhetsnøkkel"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Bruk en YubiKey for å få tilgang til kontoen din. Virker med enheter av typene YubiKey 4, 4 Nano, 4C, og NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifiser med Duo Security gjennom Duo Mobile-appen, SMS, telefonsamtale, eller en U2F-sikkerhetsnøkkel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Bruk enhver FIDO U2F-aktivert sikkerhetsnøkkel til å få tilgang til kontoen din."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F-sikkerhetsnøkkel"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-post"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Verifiseringskoder vil bli sendt til deg med E-post."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Innloggingen er utilgjengelig"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Denne kontoen har aktiver 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne enheten."
   },
   "noTwoStepProviders2": {
     "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "2-trinnsinnloggingsalternativer"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Selvbetjent miljø"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Spesifiser grunn-nettadressen til din selvbetjente bitwarden-installasjon."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Tilpasset miljø"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "For avanserte brukere. Du kan bestemme grunn-nettadressen til hver tjeneste separat."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Tjener-nettadresse"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API-tjenernettadresse"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "Netthvelvets tjenernettadresse"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "Identitetstjenerens nettadresse"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikonenes tjenernettadresse"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Miljø-nettadressene har blitt lagret."
   },
   "ok": {
     "message": "Ok"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Ja"
   },
   "no": {
-    "message": "No"
+    "message": "Nei"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Overskriv passordet"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Lær mer"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Egenskapen er utilgjengelig"
   }
 }

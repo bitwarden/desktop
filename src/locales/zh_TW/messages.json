@@ -39,10 +39,10 @@
     "message": "共用"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "附件"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "檢視項目"
   },
   "name": {
     "message": "名稱"
@@ -63,7 +63,7 @@
     "message": "電子郵件地址"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "驗證碼 (TOTP)"
   },
   "website": {
     "message": "網站"
@@ -72,7 +72,7 @@
     "message": "筆記"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "自訂欄位"
   },
   "launch": {
     "message": "開啟"
@@ -81,10 +81,10 @@
     "message": "複製值"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "切換可見度"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "持卡人姓名"
   },
   "number": {
     "message": "號碼"
@@ -96,22 +96,22 @@
     "message": "到期"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "安全代碼"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "身分名稱"
   },
   "company": {
     "message": "公司"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "社會保險號碼"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "護照號碼"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "許可證編號"
   },
   "email": {
     "message": "電子郵件"
@@ -123,13 +123,13 @@
     "message": "地址"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "需要進階會員資格"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "進階會員才可使用此功能。"
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "發生了未預期的錯誤。"
   },
   "error": {
     "message": "錯誤"
@@ -201,7 +201,7 @@
     "message": "其他"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "產生密碼"
   },
   "type": {
     "message": "類型"
@@ -276,7 +276,7 @@
     "message": "移除"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "必須填寫名稱。"
   },
   "addedItem": {
     "message": "新增項目"
@@ -291,16 +291,16 @@
     "message": "刪除資料夾"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "刪除附件"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "確定要刪除此項目嗎?"
   },
   "deletedItem": {
     "message": "已刪除項目"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "你確定要覆寫目前的密碼嗎？"
   },
   "noneFolder": {
     "message": "（未分類）",
@@ -325,17 +325,17 @@
     "message": "關閉"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "數字"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "符號",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "避免易混淆的字元"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "搜尋收藏"
   },
   "searchFolder": {
     "message": "搜尋資料夾"
@@ -354,7 +354,7 @@
     "message": "附件已刪除"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "確定要刪除此附件嗎？"
   },
   "attachmentSaved": {
     "message": "附件已儲存。"
@@ -369,7 +369,7 @@
     "message": "最大檔案大小為 100MB。"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "更新加密金鑰前不能使用此功能。"
   },
   "options": {
     "message": "進階選項"
@@ -387,7 +387,7 @@
     "message": "已刪除的資料夾"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "登入或新增帳戶。"
   },
   "createAccount": {
     "message": "新增帳戶"
@@ -402,16 +402,16 @@
     "message": "主密碼"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "主密碼是你存取密碼庫的密碼。請勿忘記主密碼，我們無法將你的主密碼復原或重設。"
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "主密碼提示可以在你忘記主密碼時幫助你回憶主密碼。"
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "重新輸入主密碼"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "主密碼提示 (選用)"
   },
   "settings": {
     "message": "設定"
@@ -420,46 +420,46 @@
     "message": "密碼提示"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "請輸入你的帳户電子郵件地址以接收主密碼提示。"
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "取得主密碼提示"
   },
   "emailRequired": {
     "message": "必須填寫電子郵件地址 。"
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "無效的電子郵件地址。"
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "必須填寫主密碼。"
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "兩次填寫的主密碼不相符。"
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "帳戶已建立！現在可以登入了。"
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "已寄出包含你主密碼提示的電子郵件。"
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "發生了未預期的錯誤。"
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "項目資訊"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "沒有項目可顯示。"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "驗證碼"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "必須填寫驗證碼。"
   },
   "continue": {
     "message": "繼續"
@@ -468,7 +468,7 @@
     "message": "輸入驗證器應用程式提供的 6 位數驗證碼。"
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "請輸入 6 位數驗證碼，我們已將其傳送至 $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "驗證碼傳送至 $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -489,22 +489,22 @@
     "message": "記住我的登入資訊"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "再次傳送​​包含驗證碼的電子郵件"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "使用另一種兩步驟登入方法"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "將你的 YubiKey 插入電腦的 USB 連接埠，然後按一下它的按鈕。"
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "將你的安全鑰匙插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "無法使用任何兩步驟登入方式？用復原代碼停用所有兩步驟登入方式。"
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "復原代碼"
   },
   "authenticatorAppTitle": {
     "message": "驗證器應用程式"
@@ -539,10 +539,10 @@
     "message": "無法登入"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "此帳戶已啟用兩步驟登入，但是本裝置不支援已設定的兩步驟登入方式。"
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "請新增可以更好地跨裝置的兩步驟登入方法（例如驗證器應用程式）。"
   },
   "twoStepOptions": {
     "message": "兩步驟登入選項"

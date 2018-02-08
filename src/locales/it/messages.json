@@ -3,7 +3,7 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Tutti gli Elementi"
   },
   "favorites": {
     "message": "Preferiti"
@@ -21,31 +21,31 @@
     "message": "Identità"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Nota Sicura"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Cartelle"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Collezioni"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Cerca nella cassaforte"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Aggiungi Elemento"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Condiviso"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Allegati"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Mostra Elemento"
   },
   "name": {
-    "message": "Name"
+    "message": "Nome"
   },
   "uri": {
     "message": "URI"
@@ -57,418 +57,418 @@
     "message": "Password"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Modifica Elemento"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Indirizzo Email"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Codice di Verifica (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Sito Web"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Note"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Campi Personalizzati"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Avvia"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Copia Valore"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Mostra\/Nascondi"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Titolare della Carta"
   },
   "number": {
-    "message": "Number"
+    "message": "Numero"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Marca"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Scadenza"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Codice di Sicurezza"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Nome dell'identità"
   },
   "company": {
-    "message": "Company"
+    "message": "Azienda"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Numero di previdenza sociale\/Codice Fiscale"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Numero del passaporto"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Numero patente"
   },
   "email": {
     "message": "Email"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefono"
   },
   "address": {
-    "message": "Address"
+    "message": "Indirizzo"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Abbonamento Premium Richiesto"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Un abbonamento premium è richiesto per utilizzare questa funzionalità."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Si è verificato un errore."
   },
   "error": {
-    "message": "Error"
+    "message": "Errore"
   },
   "january": {
-    "message": "January"
+    "message": "Gennaio"
   },
   "february": {
-    "message": "February"
+    "message": "Febbraio"
   },
   "march": {
-    "message": "March"
+    "message": "Marzo"
   },
   "april": {
-    "message": "April"
+    "message": "Aprile"
   },
   "may": {
-    "message": "May"
+    "message": "Maggio"
   },
   "june": {
-    "message": "June"
+    "message": "Giugno"
   },
   "july": {
-    "message": "July"
+    "message": "Luglio"
   },
   "august": {
-    "message": "August"
+    "message": "Agosto"
   },
   "september": {
-    "message": "September"
+    "message": "Settembre"
   },
   "october": {
-    "message": "October"
+    "message": "Ottobre"
   },
   "november": {
-    "message": "November"
+    "message": "Novembre"
   },
   "december": {
-    "message": "December"
+    "message": "Dicembre"
   },
   "ex": {
-    "message": "ex."
+    "message": "es."
   },
   "title": {
-    "message": "Title"
+    "message": "Titolo"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Sig"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Sig.ra"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Sig.ra"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dottore"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Mese di Scadenza"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Anno di Scadenza"
   },
   "select": {
-    "message": "Select"
+    "message": "Seleziona"
   },
   "other": {
-    "message": "Other"
+    "message": "Altro"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Genera Password"
   },
   "type": {
-    "message": "Type"
+    "message": "Tipo"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Nome"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Secondo Nome"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Cognome"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Indirizzo 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Indirizzo 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Indirizzo 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Città"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Stato"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "CAP"
   },
   "country": {
-    "message": "Country"
+    "message": "Nazione"
   },
   "save": {
-    "message": "Save"
+    "message": "Salva"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Annulla"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Elimina"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Preferito"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Modifica"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Chiave di Autenticazione (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Cartella"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Nuovo campo personalizzato"
   },
   "value": {
-    "message": "Value"
+    "message": "Valore"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Testo"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Nascosto"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Booleano"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Rimuovi"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Il nome è obbligatorio."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Aggiungi Elemento"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Modifica Elemento"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Elimina elemento"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Cancella Cartella"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Elimina Allegato"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Sei sicuro di voler eliminare questo elemento?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Oggetto eliminato"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Sei sicuro di voler sovrascrivere la password corrente?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Nessuna Cartella",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Aggiungi Cartella"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Modifica Cartella"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Rigenera Password"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Copia Password"
   },
   "length": {
-    "message": "Length"
+    "message": "Lunghezza"
   },
   "close": {
-    "message": "Close"
+    "message": "Chiudi"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Minimo di Numeri"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Minimo di Speciali",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Evitare Caratteri Ambigui"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Cerca collezione"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Cerca cartella"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Cerca preferito"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Tipo di ricerca",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Aggiungi Nuovo Allegato"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Allegato eliminato"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Sei sicuro di voler eliminare questo allegato?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "L'allegato è stato salvato."
   },
   "file": {
     "message": "File"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Seleziona un file."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "La dimensione massima del file è 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave."
   },
   "options": {
-    "message": "Options"
+    "message": "Opzioni"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Cartella modificata"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Cartella aggiunta"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Sei sicuro di voler eliminare questa cartella?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Cartella eliminata"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Fai il log in o crea un nuovo account per accedere alla tua cassaforte."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Crea Account"
   },
   "logIn": {
     "message": "Log In"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Invia"
   },
   "masterPass": {
     "message": "Master Password"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "La master password è quella che usi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Un suggerimento può aiutarti a ricordare la tua master password se la dimentichi."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Ri-digita la tua master password"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Suggerimento per la master password (facoltativo)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Impostazioni"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Suggerimento Password"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della master password."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Ottieni il suggerimento per la master password"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "L'indirizzo email è obbligatorio."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "L'indirizzo email non è valido."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "La master password è obbligatoria."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "La master password deve essere almeno di 8 caratteri."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "La conferma della master password non corrisponde."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Il tuo account è stato creato! Ora puoi effettuare il login."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Ti abbiamo inviato un'email con il tuo indizio per la master password."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Si è verificato un errore imprevisto."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Informazioni sull'elemento"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Non ci sono elementi da mostrare."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Codice di Verifica"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Il codice di verifica è obbligatorio."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Continua"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Inserisci il codice di verifica a 6 cifre dalla tua app di autenticazione."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Inserisci il codice di verifica a 6 cifre che è stato inviato all'indirizzo $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "L'email di verifica è stata inviata all'indirizzo $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Ricordami"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Reinvia il codice di verifica all'indirizzo email"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Usa un altro metodo di login in due fasi"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Inserisci la tua YubiKey nella porta USB del computer, poi premi il suo bottone."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Inserisci la tua security key nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Hai perso l'accesso a tutti i tuoi metodi in due fasi? Usa il tuo codice di recupero per disattivare tutti i metodi in due fasi sul tuo account."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Codice di Recupero"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "App di Autenticazione"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Usa un'app di autenticazione (come Authy o Google Authenticator) per generare codici di verifica a tempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "Chiave di Sicurezza YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Usa YubiKey per accedere al tuo account. Compatibile con YubiKey 4, 4 Nano, 4C, e dispositivi NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Usa una chiave di sicurezza compatibile con FIDO U2F per accedere al tuo account."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "Security key FIDO U2F"
   },
   "emailTitle": {
     "message": "Email"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "I codici di verifica ti saranno inviati per e-mail."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Login non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Questo account ha abilitato il login a due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Si prega di aggiungere altri provider che sono meglio supportati su tutti i dispositivi (ad esempio, un'app di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Opzioni di login in due passaggi"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Ambiente Self-Hosted"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specifica l'URL principale della tua installazione bitwarden self-hosted."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Ambiente Personalizzato"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Per utenti avanzati. Puoi specificare l'URL principale di ogni servizio indipendentemente."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL del server"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "URL del Server API"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "URL della Cassaforte Online"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "URL del Server di Identità"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL del Server di Icone"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Gli URL dell'ambiente sono stati salvati."
   },
   "ok": {
     "message": "Ok"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Sì"
   },
   "no": {
     "message": "No"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Sovrascrivi Password"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Per saperne di più"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funzione Non Disponibile"
   }
 }

@@ -3,472 +3,472 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Всі елементи"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Обране"
   },
   "types": {
-    "message": "Types"
+    "message": "Типи"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Запис"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Картка"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Особисті дані"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Захищена нотатка"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Теки"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Збірки"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Пошук"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Додати запис"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Спільні"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Вкладення"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Переглянути запис"
   },
   "name": {
-    "message": "Name"
+    "message": "Назва"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Ім'я користувача"
   },
   "password": {
-    "message": "Password"
+    "message": "Пароль"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Змінити запис"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Адреса е-пошти"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Код підтвердження (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Веб-сайт"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Нотатки"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Власні поля"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Запустити"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Копіювати значення"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Перемкнути видимість"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Ім'я власника картки"
   },
   "number": {
-    "message": "Number"
+    "message": "Номер"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Тип картки"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Термін дії"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Код безпеки"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Компанія"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Номер соціального страхування"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Номер паспорта"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Номер ліцензії"
   },
   "email": {
-    "message": "Email"
+    "message": "Е-пошта"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Телефон"
   },
   "address": {
-    "message": "Address"
+    "message": "Адреса"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Необхідний преміум статус"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Для використання цієї функції необхідний преміум статус."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Сталася помилка."
   },
   "error": {
-    "message": "Error"
+    "message": "Помилка"
   },
   "january": {
-    "message": "January"
+    "message": "Січень"
   },
   "february": {
-    "message": "February"
+    "message": "Лютий"
   },
   "march": {
-    "message": "March"
+    "message": "Березень"
   },
   "april": {
-    "message": "April"
+    "message": "Квітень"
   },
   "may": {
-    "message": "May"
+    "message": "Травень"
   },
   "june": {
-    "message": "June"
+    "message": "Червень"
   },
   "july": {
-    "message": "July"
+    "message": "Липень"
   },
   "august": {
-    "message": "August"
+    "message": "Серпень"
   },
   "september": {
-    "message": "September"
+    "message": "Вересень"
   },
   "october": {
-    "message": "October"
+    "message": "Жовтень"
   },
   "november": {
-    "message": "November"
+    "message": "Листопад"
   },
   "december": {
-    "message": "December"
+    "message": "Грудень"
   },
   "ex": {
-    "message": "ex."
+    "message": "н-д."
   },
   "title": {
-    "message": "Title"
+    "message": "Звернення"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Містер"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Місіс"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Міс"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Доктор"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Місяць завершення"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Рік завершення"
   },
   "select": {
-    "message": "Select"
+    "message": "Обрати"
   },
   "other": {
-    "message": "Other"
+    "message": "Інше"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Генерувати пароль"
   },
   "type": {
-    "message": "Type"
+    "message": "Тип"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Ім’я"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "По батькові"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Прізвище"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Адреса 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Адреса 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Адреса 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Місто \/ Селище"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Штат \/ Область"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Поштовий індекс"
   },
   "country": {
-    "message": "Country"
+    "message": "Країна"
   },
   "save": {
-    "message": "Save"
+    "message": "Зберегти"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Скасувати"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Видалити"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Обране"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Змінити"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Ключ авторизації (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Тека"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Нове власне поле"
   },
   "value": {
-    "message": "Value"
+    "message": "Значення"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Текст"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Приховано"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Логічне значення"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Видалити"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Потрібна назва."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Доданий запис"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Змінений запис"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Видалити запис"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Видалити теку"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Видалити файл"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Ви дійсно хочете видалити цей запис?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Видалений запис"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Ви дійсно хочете перезаписати поточний пароль?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Без теки",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Додати теку"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Редагувати теку"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Генерувати новий"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Копіювати пароль"
   },
   "length": {
-    "message": "Length"
+    "message": "Довжина"
   },
   "close": {
-    "message": "Close"
+    "message": "Закрити"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Мінімум цифр"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Мінімум спеціальних символів",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Уникати неоднозначних символів"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Пошук в збірках"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Пошук в теці"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Пошук в обраному"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Типу пошуку",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Додати нове вкладення"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Вкладення видалено"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Ви дійсно хочете видалити це вкладення?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Вкладення збережено."
   },
   "file": {
-    "message": "File"
+    "message": "Файл"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Оберіть файл."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Максимальний розмір файлу 100 Мб."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
   },
   "options": {
-    "message": "Options"
+    "message": "Налаштування"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Тека відредагована"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Додано теку"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Ви дійсно хочете видалити цю теку?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Теку видалено"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Для доступу до сховища увійдіть в обліковий запис, або створіть новий."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Створити обліковий запис"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Вхід"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Відправити"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Головний пароль"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Головний пароль використовується для доступу до вашого сховища. Дуже важливо, щоб ви запам'ятали його. Якщо ви забудете головний пароль, його неможливо буде відновити."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Якщо ви забудете головний пароль, підказка може допомогти вам згадати його."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Введіть головний пароль ще раз"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Підказка для головного пароля (необов'язково)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Налаштування"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Підказка для пароля"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Введіть свою адресу е-пошти, щоб отримати підказку для головного пароля."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Отримати підказку для головного пароля"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Необхідно вказати адресу е-пошти."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Неправильна адреса е-пошти."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Потрібен головний пароль."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Довжина головного пароля повинна бути не менше 8 символів."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Підтвердження головного пароля не збігається."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Ваш обліковий запис створений! Тепер ви можете увійти."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Ми надіслали вам лист з підказкою для головного пароля."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Сталася неочікувана помилка."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Інформація про запис"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Немає записів для відображення."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Код підтвердження"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Потрібний код підтвердження."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Продовжити"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Введіть 6-значних код підтвердження з програми авторизації."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Введіть 6-значний код підтвердження, надісланий на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Код підтвердження надіслано на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Запам'ятати мене"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Надіслати код підтвердження ще раз"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Використати інший спосіб двоетапної авторизації"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Вставте свій ключ безпеки в USB порт комп'ютера. Якщо в нього є кнопка, натисніть її."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Втратили доступ до всіх провайдерів двоетапної авторизації? Скористайтеся кодом відновлення, щоб вимкнути двоетапну авторизацію для свого облікового запису."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Код відновлення"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Програма авторизації"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Використовуйте програму авторизації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "Ключ безпеки YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Використовуйте YubiKey для доступу до сховища. Працює з YubiKey 4, 4 Nano, 4C та пристроями NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Використовуйте будь-який ключ безпеки FIDO U2F для доступу до сховища."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "Ключ безпеки FIDO U2F"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "Е-пошта"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Коди підтвердження будуть надсилатися на вашу пошту."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Вхід недоступний"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Для цього облікового запису увімкнено двоетапну авторизацію. Однак, жоден з налаштованих провайдерів двоетапної авторизації не підтримується цим пристроєм."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Додайте інших провайдерів, які краще підтримуються різними пристроями, наприклад програма авторизації."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Налаштування двоетапної авторизації"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Середовище власного хостингу"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення bitwarden."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Власне середовище"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Для досвідчених користувачів. Ви можете вказати основну URL-адресу окремо для кожної служби."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL-адреса сервера"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "URL-адреса API"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "URL-адреса сервера веб-сховища"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "URL-адреса сервера ідентифікації"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL-адреса сервера піктограм"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "URL-адреси середовища збережено."
   },
   "ok": {
     "message": "Ok"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Так"
   },
   "no": {
-    "message": "No"
+    "message": "Ні"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Перезаписати пароль"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Докладніше"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Функція недоступна"
   }
 }

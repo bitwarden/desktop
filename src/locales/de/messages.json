@@ -99,7 +99,7 @@
     "message": "Sicherheitscode"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Identitätsname"
   },
   "company": {
     "message": "Firma"
@@ -252,7 +252,7 @@
     "message": "Bearbeiten"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Schlüssel (TOTP)"
+    "message": "Authentifizierungsschlüssel (TOTP)"
   },
   "folder": {
     "message": "Ordner"
@@ -335,7 +335,7 @@
     "message": "Mehrdeutige Zeichen vermeiden"
   },
   "searchCollection": {
-    "message": "Tresor durchsuchen"
+    "message": "Sammlung durchsuchen"
   },
   "searchFolder": {
     "message": "Ordner durchsuchen"
@@ -348,7 +348,7 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Anhang hinzufügen"
+    "message": "Neuen Anhang hinzufügen"
   },
   "deletedAttachment": {
     "message": "Anhang gelöscht"
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifizierungs Mail gesendet an $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,78 +486,78 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Eingeloggt bleiben"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "E-Mail mit Bestätigungscode erneut versenden"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Verwende eine andere Zwei Faktor Login-Methode"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Stecke deinen YubiKey in einen USB-Port deines Computers, dann berühre den Button."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Stecke deinen Sicherheitsschlüssel in einen USB-Port deines Computers. Falls er einen Knopf hat drücke, drücke diesen."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor Anbieter in deinem Konto zu deaktivieren."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Wiederherstellungscode"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Authentifizierungs-App"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Verwende eine Authentifizierungs-App (wie zum Beispiel Authy oder Google Authenticator) um zeitbasierte Verifizierungscodes zu generieren.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP Sicherheitsschlüssel"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Verwende einen YubiKey um auf dein Konto zuzugreifen. Funtioniert mit YubiKey 4, Nano 4, 4C und NEO Geräten."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifiziere mit Duo Security, indem du die Duo Mobile App, SMS, Anrufe oder U2F Sicherheitsschlüssel benutzt.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Benutze einen FIDO U2F-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F Sicherheitsschlüssel"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-Mail"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Bestätigungscodes werden dir per E-Mail zugesandt."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Login nicht verfügbar"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Dieses Konto hat eine aktive Zwei-Faktor Authentifizierung, allerdings wird keiner der konfigurierten Zwei-Faktor Anbieter von diesem Gerät unterstützt."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Bitte wähle zusätzliche Dienste die über mehrere Geräte funktionieren(zum Beispiel eine Authentifizierung App)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Optionen für Zwei-Faktor Authentifizierung"
   },
   "selfHostedEnvironment": {
     "message": "Selbstgehostete Anwendung"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Bitte gib die Basis-URL deiner selbst gehosteten bitwarden-Installation an."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Benutzerdefinierte Umgebung"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Für fortgeschrittene Benutzer. Du kannst die Basis-URL der jeweiligen Dienste unabhängig voneinander festlegen."
   },
   "baseUrl": {
     "message": "Server URL"
@@ -569,13 +569,13 @@
     "message": "Web-Tresor Server URL"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "Identitätsserver-URL"
   },
   "iconsUrl": {
     "message": "Icons Server URL"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Die URLs der Umgebung wurden gespeichert."
   },
   "ok": {
     "message": "Ok"
