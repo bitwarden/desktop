@@ -3,472 +3,472 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Все элементы"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Избранные"
   },
   "types": {
-    "message": "Types"
+    "message": "Типы"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Логин"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Карта"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Личность"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Защищенная заметка"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Папки"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Коллекции"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Поиск в хранилище"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Добавить элемент"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Общие"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Вложения"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Просмотр элемента"
   },
   "name": {
-    "message": "Name"
+    "message": "Название"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Имя пользователя"
   },
   "password": {
-    "message": "Password"
+    "message": "Пароль"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Изменить элемент"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Адрес email"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Код подтверждения (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Веб-сайт"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Заметки"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Пользовательские поля"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Перейти"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Копировать значение"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Изменить видимость"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Имя владельца карты"
   },
   "number": {
-    "message": "Number"
+    "message": "Номер"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Тип карты"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Срок действия"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Код безопасности"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Компания"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Номер социального страхования"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Номер паспорта"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "ИНН"
   },
   "email": {
     "message": "Email"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Телефон"
   },
   "address": {
-    "message": "Address"
+    "message": "Адрес"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Необходим премиум-статус"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Для использования этой функции требуется премиум-статус."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Произошла ошибка."
   },
   "error": {
-    "message": "Error"
+    "message": "Ошибка"
   },
   "january": {
-    "message": "January"
+    "message": "Январь"
   },
   "february": {
-    "message": "February"
+    "message": "Февраль"
   },
   "march": {
-    "message": "March"
+    "message": "Март"
   },
   "april": {
-    "message": "April"
+    "message": "Апрель"
   },
   "may": {
-    "message": "May"
+    "message": "Май"
   },
   "june": {
-    "message": "June"
+    "message": "Июнь"
   },
   "july": {
-    "message": "July"
+    "message": "Июль"
   },
   "august": {
-    "message": "August"
+    "message": "Август"
   },
   "september": {
-    "message": "September"
+    "message": "Сентябрь"
   },
   "october": {
-    "message": "October"
+    "message": "Октябрь"
   },
   "november": {
-    "message": "November"
+    "message": "Ноябрь"
   },
   "december": {
-    "message": "December"
+    "message": "Декабрь"
   },
   "ex": {
-    "message": "ex."
+    "message": "напр."
   },
   "title": {
-    "message": "Title"
+    "message": "Обращение"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Г-н"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Г-жа"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Г-жа"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Д-р"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Месяц"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Год"
   },
   "select": {
-    "message": "Select"
+    "message": "Выбрать"
   },
   "other": {
-    "message": "Other"
+    "message": "Прочее"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Сгенерировать пароль"
   },
   "type": {
-    "message": "Type"
+    "message": "Тип"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Имя"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Отчество"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Фамилия"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Строка адреса 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Строка адреса 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Строка адреса 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "Город \/ Поселок"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "Регион \/ Область"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "Почтовый индекс"
   },
   "country": {
-    "message": "Country"
+    "message": "Страна"
   },
   "save": {
-    "message": "Save"
+    "message": "Сохранить"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Отмена"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Удалить"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Избранный"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Изменить"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Ключ проверки подлинности (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Папка"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Новое пользовательское поле"
   },
   "value": {
-    "message": "Value"
+    "message": "Значение"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Текст"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Скрыто"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Логическое"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Удалить"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Требуется имя."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Добавленный элемент"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Измененный элемент"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Удалить элемент"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Удалить папку"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Удалить вложение"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Вы действительно хотите удалить этот элемент?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Удаленный элемент"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Вы хотите перезаписать текущий пароль?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Без папки",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Добавить папку"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Изменить папку"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Создать новый пароль"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Копировать пароль"
   },
   "length": {
-    "message": "Length"
+    "message": "Длина"
   },
   "close": {
-    "message": "Close"
+    "message": "Закрыть"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Мин. кол-во цифр"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Мин. кол-во символов",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Избегать неоднозначных символов"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Найти коллекцию"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Поиск папки"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Поиск избранных"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Тип поиска",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Добавить новое вложение"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Удаленное вложение"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Вы действительно хотите удалить это вложение?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Вложение сохранено."
   },
   "file": {
-    "message": "File"
+    "message": "Файл"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Выберите файл."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Максимальный размер файла 100 МБ."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
   },
   "options": {
-    "message": "Options"
+    "message": "Опции"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Папка отредактирована"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Папка добавлена"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Вы хотите удалить эту папку?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Папка удалена"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Войдите или создайте новый аккаунт для доступа к вашему безопасному хранилищу."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Создать аккаунт"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Войти"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Отправить"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Мастер-пароль"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Мастер-пароль - ключ к вашему безопасному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Подсказка к мастер-паролю может помочь вам его вспомнить."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Введите мастер-пароль повторно"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Подсказка к мастер-паролю (необяз.)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Настройки"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Подсказка к паролю"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Введите email учетной записи для получения подсказки к мастер-паролю."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Получить подсказку к мастер-паролю"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Необходимо указать email."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Неверный адрес email."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Требуется мастер-пароль."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Мастер-пароль должен содержать не менее 8 символов."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Мастер-пароли не совпадают."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Ваш аккаунт создан! Теперь вы можете войти в систему."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Мы отправили вам email с подсказкой к мастер-паролю."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Произошла неожиданная ошибка."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Информация об элементе"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Нет элементов для отображения."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Код подтверждения"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Необходим код подтверждения."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Продолжить"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Введите 6-значный код подтверждения из вашего приложения-аутентификатора."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Введите 6-значный код подтверждения, который был отправлен на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Отправлено письмо подтверждения на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Запомнить меня"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Отправить код подтверждения еще раз"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Использовать другой метод двухфакторной аутентификации"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Вставьте свой YubiKey в USB-порт компьютера, затем нажмите его кнопку."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Вставьте свой ключ безопасности в USB-порт компьютера. Если у него есть кнопка, нажмите ее."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Потеряли доступ ко всем вариантам двухфакторной аутентификации? Используйте код восстановления, чтобы отключить двухфакторную аутентификацию для вашей учетной записи."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Код восстановления"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Приложение-аутентификатор"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Используйте приложение-аутентификатор (например, Authy или Google Authenticator) для создания кодов проверки на основе времени.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "Ключ безопасности YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Используйте YubiKey для доступа к вашей учетной записи. Работает с устройствами YubiKey 4, 4 Nano, 4C и NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Проверьте с помощью Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Используйте любой защищенный ключ FIDO U2F для доступа к вашей учетной записи."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "Ключ безопасности FIDO U2F"
   },
   "emailTitle": {
     "message": "Email"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Коды подтверждения будут отправлены вам по электронной почте."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Вход недоступен"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "У этой учетной записи включена двухфакторная аутентификация, однако ни один из настроенных вариантов не поддерживается этим устройством."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Добавьте дополнительные варианты аутентификации, которые поддерживаются большинством устройств (например, приложение-аутентификатор)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Параметры двухфакторной аутентификации"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Среда собственного хостинга"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Укажите URL-адрес bitwarden на вашем сервере."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Настройка среды"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Для продвинутых пользователей. Можно указать URL-адреса отдельно для каждой службы."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL-адрес сервера"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API URL-адреса сервера"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "URL-адрес сервера веб-хранилища"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "URL-адрес сервера идентификации"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL-адрес сервера значков"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "URL-адреса среды сохранены."
   },
   "ok": {
     "message": "Ok"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Да"
   },
   "no": {
-    "message": "No"
+    "message": "Нет"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Перезаписать пароль"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Подробнее"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Функция недоступна"
   }
 }
