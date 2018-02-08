@@ -6,7 +6,7 @@
     "message": "All Items"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favorieten"
   },
   "types": {
     "message": "Types"
@@ -15,142 +15,142 @@
     "message": "Login"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kaart"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identiteit"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Veilige Notitie"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mappen"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Verzamelingen"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Doorzoek kluis"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Voeg Item Toe"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Gedeeld"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Bijlagen"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Item Bekijken"
   },
   "name": {
-    "message": "Name"
+    "message": "Naam"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Gebruikersnaam"
   },
   "password": {
-    "message": "Password"
+    "message": "Wachtwoord"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Item Bewerken"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-mailadres"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Verificatiecode (TOTP)"
   },
   "website": {
     "message": "Website"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Aantekeningen"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Aangepaste velden"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Starten"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Waarde kopiëren"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Naam Kaarthouder"
   },
   "number": {
-    "message": "Number"
+    "message": "Nummer"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Merk"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Vervaldatum"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Beveiligingscode"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Bedrijf"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Rijksregisternummer \/ Burgerservicenummer"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Paspoortnummer"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Rijbewijsnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mailadres"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefoonnummer"
   },
   "address": {
-    "message": "Address"
+    "message": "Adres"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Premium benodigd"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "U heeft een Premium-lidmaatschap nodig om deze functie te kunnen gebruiken."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Er is een fout opgetreden."
   },
   "error": {
-    "message": "Error"
+    "message": "Fout"
   },
   "january": {
-    "message": "January"
+    "message": "Januari"
   },
   "february": {
-    "message": "February"
+    "message": "Februari"
   },
   "march": {
-    "message": "March"
+    "message": "Maart"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Mei"
   },
   "june": {
-    "message": "June"
+    "message": "Juni"
   },
   "july": {
     "message": "July"
@@ -294,54 +294,54 @@
     "message": "Delete Attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Weet u zeker dat u dit item wilt verwijderen?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Item verwijderd"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Weet je zeker dat je het huidige wachtwoord wilt overschrijven?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Geen map",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Nieuwe Map"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Bewerk Map"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Hergenereer Wachtwoord"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopieer Wachtwoord"
   },
   "length": {
-    "message": "Length"
+    "message": "Lengte"
   },
   "close": {
-    "message": "Close"
+    "message": "Sluit"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Minimum aantal getallen"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Minimum aantal speciale tekens",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Vermijd onduidelijke tekens"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Zoek in verzameling"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Map zoeken"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "In favorieten zoeken"
   },
   "searchType": {
     "message": "Search type",
