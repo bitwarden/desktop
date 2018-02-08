@@ -3,46 +3,46 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Tüm öğeler"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoriler"
   },
   "types": {
-    "message": "Types"
+    "message": "Türler"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Giriş"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kart"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Kimlik"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Güvenli Not"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Klasörler"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Koleksiyonlar"
   },
   "searchVault": {
     "message": "Search vault"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Ürün Ekle"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Paylaşılan"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Ekler"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Ürünü İncele"
   },
   "name": {
     "message": "Name"
