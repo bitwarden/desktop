@@ -14,6 +14,7 @@ import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { I18nService } from '../../services/i18n.service';
 
 import { AuthGuardService } from './auth-guard.service';
+import { BroadcasterService } from './broadcaster.service';
 import { ValidationService } from './validation.service';
 
 import { Analytics } from 'jslib/misc/analytics';
@@ -67,7 +68,8 @@ webFrame.registerURLSchemeAsPrivileged('file');
 const i18nService = new I18nService(window.navigator.language, './locales');
 const utilsService = new UtilsService();
 const platformUtilsService = new DesktopPlatformUtilsService(i18nService);
-const messagingService = new DesktopMessagingService();
+const broadcasterService = new BroadcasterService();
+const messagingService = new DesktopMessagingService(broadcasterService);
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
 const secureStorageService: StorageServiceAbstraction = new DesktopSecureStorageService();
 const constantsService = new ConstantsService({}, 0);
@@ -136,6 +138,9 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         { provide: ApiServiceAbstraction, useValue: apiService },
         { provide: SyncServiceAbstraction, useValue: syncService },
         { provide: UserServiceAbstraction, useValue: userService },
+        { provide: MessagingServiceAbstraction, useValue: messagingService },
+        { provide: BroadcasterService, useValue: broadcasterService },
+        { provide: SettingsServiceAbstraction, useValue: settingsService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

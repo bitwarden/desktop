@@ -594,5 +594,11 @@
   },
   "featureUnavailable": {
     "message": "Feature Unavailable"
+  },
+  "loggedOut": {
+    "message": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Your login session has expired."
   }
 }

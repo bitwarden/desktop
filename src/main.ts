@@ -30,6 +30,20 @@ import { I18nService } from './services/i18n.service';
 const i18nService = new I18nService('en', './locales/');
 i18nService.init().then(() => { });
 
+ipcMain.on('messagingService', async (event: any, message: any) => {
+    switch (message.command) {
+        case 'loggedIn':
+            break;
+        case 'logout':
+            break;
+        case 'syncCompleted':
+            console.log('sync completed!!');
+            break;
+        default:
+            break;
+    }
+});
+
 let win: BrowserWindow;
 const args = process.argv.slice(1);
 const watch = args.some((val) => val === '--watch');

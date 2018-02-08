@@ -20,7 +20,7 @@ const routes: Routes = [
     {
         path: 'vault',
         component: VaultComponent,
-        canActivate: [AuthGuardService]
+        canActivate: [AuthGuardService],
     },
     { path: 'hint', component: HintComponent },
 ];
