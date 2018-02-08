@@ -3,178 +3,178 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "全てのアイテム"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "お気に入り"
   },
   "types": {
-    "message": "Types"
+    "message": "タイプ"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "ログイン"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "カード"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "ID"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "セキュアメモ"
   },
   "folders": {
-    "message": "Folders"
+    "message": "フォルダ"
   },
   "collections": {
-    "message": "Collections"
+    "message": "コレクション"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "保管庫を検索"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "アイテムの追加"
   },
   "shared": {
-    "message": "Shared"
+    "message": "共有"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "添付ファイル"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "アイテムの表示"
   },
   "name": {
-    "message": "Name"
+    "message": "名前"
   },
   "uri": {
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "ユーザー名"
   },
   "password": {
-    "message": "Password"
+    "message": "パスワード"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "アイテムの編集"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "メールアドレス"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "認証コード (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "ウェブサイト"
   },
   "notes": {
-    "message": "Notes"
+    "message": "メモ"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "カスタムフィールド"
   },
   "launch": {
-    "message": "Launch"
+    "message": "開く"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "値のコピー"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "表示切り替え"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "カードの名義人名"
   },
   "number": {
-    "message": "Number"
+    "message": "番号"
   },
   "brand": {
-    "message": "Brand"
+    "message": "ブランド"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "有効期限"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "セキュリティコード"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "固有名"
   },
   "company": {
-    "message": "Company"
+    "message": "会社名"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "社会保障番号"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "パスポート番号"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "免許証番号"
   },
   "email": {
-    "message": "Email"
+    "message": "メールアドレス"
   },
   "phone": {
-    "message": "Phone"
+    "message": "電話番号"
   },
   "address": {
-    "message": "Address"
+    "message": "住所"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "プレミアム会員専用"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "この機能はプレミアムメンバー専用です。"
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "エラーが発生しました。"
   },
   "error": {
-    "message": "Error"
+    "message": "エラー"
   },
   "january": {
-    "message": "January"
+    "message": "1月"
   },
   "february": {
-    "message": "February"
+    "message": "2月"
   },
   "march": {
-    "message": "March"
+    "message": "3月"
   },
   "april": {
-    "message": "April"
+    "message": "4月"
   },
   "may": {
-    "message": "May"
+    "message": "5月"
   },
   "june": {
-    "message": "June"
+    "message": "6月"
   },
   "july": {
-    "message": "July"
+    "message": "7月"
   },
   "august": {
-    "message": "August"
+    "message": "8月"
   },
   "september": {
-    "message": "September"
+    "message": "9月"
   },
   "october": {
-    "message": "October"
+    "message": "10月"
   },
   "november": {
-    "message": "November"
+    "message": "11月"
   },
   "december": {
-    "message": "December"
+    "message": "12月"
   },
   "ex": {
-    "message": "ex."
+    "message": "例:"
   },
   "title": {
-    "message": "Title"
+    "message": "敬称"
   },
   "mr": {
     "message": "Mr"
@@ -189,286 +189,286 @@
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "有効期限月"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "有効期限年"
   },
   "select": {
-    "message": "Select"
+    "message": "選択"
   },
   "other": {
-    "message": "Other"
+    "message": "その他"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "パスワードの自動生成"
   },
   "type": {
-    "message": "Type"
+    "message": "タイプ"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "名"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "ミドルネーム"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "姓"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "住所1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "住所2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "住所3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "市町村"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "都道府県"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "郵便番号"
   },
   "country": {
-    "message": "Country"
+    "message": "国"
   },
   "save": {
-    "message": "Save"
+    "message": "保存"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "キャンセル"
   },
   "delete": {
-    "message": "Delete"
+    "message": "削除"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "お気に入り"
   },
   "edit": {
-    "message": "Edit"
+    "message": "編集"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "認証キー (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "フォルダ"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "新規カスタムフィールド"
   },
   "value": {
-    "message": "Value"
+    "message": "値"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "テキスト"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "非表示"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "真偽値"
   },
   "remove": {
-    "message": "Remove"
+    "message": "削除"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "名前は必須項目です。"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "追加されたアイテム"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "編集されたアイテム"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "アイテムの削除"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "フォルダの削除"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "添付ファイルの削除"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "このアイテムを削除してもよろしいですか?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "削除されたアイテム"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "現在のパスワードを上書きしてもよろしいですか?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "フォルダなし",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "フォルダの追加"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "フォルダの編集"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "パスワードの再生成"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "パスワードをコピー"
   },
   "length": {
-    "message": "Length"
+    "message": "長さ"
   },
   "close": {
-    "message": "Close"
+    "message": "閉じる"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "数字の最小数"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "記号の最小数",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "あいまいな文字を省く"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "検索コレクション"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "フォルダの検索"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "お気に入りの検索"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "検索の種類",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "添付ファイルの追加"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "削除された添付ファイル"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "この添付ファイルを削除してよろしいですか？"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "添付ファイルを保存しました。"
   },
   "file": {
-    "message": "File"
+    "message": "ファイル"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "ファイルを選択してください。"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "最大ファイルサイズは100MBです。"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "暗号キーを更新するまでこの機能は使用できません。"
   },
   "options": {
-    "message": "Options"
+    "message": "オプション"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "編集したフォルダ"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "フォルダを追加しました"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "フォルダを削除しますか？"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "削除されたフォルダ"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "安全なデータ保管庫へアクセスするためにログインまたはアカウントを作成してください。"
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "アカウントの作成"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "ログイン"
   },
   "submit": {
-    "message": "Submit"
+    "message": "送信"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "マスターパスワード"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "マスターパスワードは、パスワード保管庫へのアクセスに使用するパスワードです。あなたのマスターパスワードを忘れないように注意してください。忘れた場合、パスワードを回復する方法はありません。"
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "マスターパスワードのヒントは、パスワードを忘れた場合に役立ちます。"
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "新しいパスワードを再入力"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "マスターパスワードのヒント (省略可能)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "設定"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "パスワードのヒント"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "マスターパスワードのヒントを受信するアカウントのメールアドレスを入力してください。"
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "マスターパスワードのヒントを取得する"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "メールアドレスは必須項目です。"
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "無効なメールアドレスです。"
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "マスターパスワードは必須です。"
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "マスターパスワードは、少なくとも8文字以上で設定してください。"
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "マスターパスワードが一致しません。"
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "新しいアカウントを作成しました！今すぐログインできます。"
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "あなたのマスターパスワードのヒントを記載したメールを送信しました。"
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "予期せぬエラーが発生しました。"
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "アイテム情報"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "表示するアイテムがありません"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "認証コード"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "認証コードは必須項目です。"
   },
   "continue": {
-    "message": "Continue"
+    "message": "続行"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "認証アプリに表示された6桁の認証コードを入力してください。"
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "$EMAIL$ に送信された6桁の認証コードを入力してください。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -477,7 +477,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "$EMAIL$ に認証コードを送信しました。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -486,113 +486,113 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "情報を保存する"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "確認コードをメールで再送"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "他の2段階認証方法を使用"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": " YubiKey を USB ポートに挿入し、ボタンをタッチしてください。"
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "セキュリティキーを USB ポートに挿入し、ボタンがある場合はボタンをタッチしてください。"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "すべての2段階認証プロパイダにアクセスできなくなったときは、リカバリーコードを使用するとアカウントの2段階認証を無効化できます。"
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "リカバリーコード"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "認証アプリ"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Authy や Google 認証システムなどの認証アプリで時限式の認証コードを生成してください。",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP セキュリティキー"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "YubiKey を使ってアカウントにアクセスできます。 YubiKey 4、4 Nano、4C、NEOに対応しています。"
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Mobile アプリや SMS、電話や U2F セキュリティキーを使って Duo Security で認証します。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "FIDO U2F が有効なセキュリティキーを使ってアカウントにアクセスできます。"
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F セキュリティキー"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "メールアドレス"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "確認コードをメールにお送りします。"
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "ログインできません。"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "このアカウントは2段階認証が有効ですが、このブラウザに対応した2段階認証プロパイダが一つも設定されていません。"
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "より幅広い端末に対応した認証プロパイダを追加してください。"
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "2段階認証オプション"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "セルフホスティング環境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "セルフホスティングしている bitwarden のベース URL を指定してください。"
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "カスタム環境"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "上級者向けです。各サービスのベース URL を個別に指定できます。"
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "サーバー URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API サーバー URL"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "ウェブ保管庫サーバー URL"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "ID サーバー URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "アイコンサーバー URL"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "環境 URL を保存しました。"
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "yes": {
-    "message": "Yes"
+    "message": "はい"
   },
   "no": {
-    "message": "No"
+    "message": "いいえ"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "パスワードを上書き"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "詳細情報"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "サービスが利用できません"
   }
 }
