@@ -116,6 +116,11 @@ const renderer = {
             path: 'fonts/',
             filename: 'css/fonts.css'
         }),
+        // ref: https://github.com/angular/angular/issues/20357
+        new webpack.ContextReplacementPlugin(
+            /\@angular(\\|\/)core(\\|\/)esm5/,
+            path.resolve(__dirname, './src')
+        ),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'app/vendor',
             chunks: ['app/main'],

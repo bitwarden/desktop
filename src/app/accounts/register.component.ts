@@ -1,13 +1,10 @@
 import * as template from './register.component.html';
 
-import {
-    Component,
-} from '@angular/core';
-
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
 import { RegisterRequest } from 'jslib/models/request/registerRequest';
 

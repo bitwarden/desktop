@@ -9,15 +9,15 @@ import {
 })
 export class AutofocusDirective {
     @Input() set appAutofocus(condition: boolean | string) {
-        this._autofocus = condition === '' || condition === true;
+        this.autofocus = condition === '' || condition === true;
     }
 
-    private _autofocus: boolean;
+    private autofocus: boolean;
 
     constructor(private el: ElementRef) { }
 
     ngOnInit() {
-        if (this._autofocus) {
+        if (this.autofocus) {
             this.el.nativeElement.focus();
         }
     }

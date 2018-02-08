@@ -7,11 +7,10 @@ import {
     OnInit,
     Output,
 } from '@angular/core';
-
 import { Router } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
 import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
 

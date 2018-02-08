@@ -8,8 +8,8 @@ import {
     Output,
 } from '@angular/core';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -19,8 +19,8 @@ import { TokenService } from 'jslib/abstractions/token.service';
 
 import { Cipher } from 'jslib/models/domain/cipher';
 
-import { CipherView } from 'jslib/models/view/cipherView';
 import { AttachmentView } from 'jslib/models/view/attachmentView';
+import { CipherView } from 'jslib/models/view/cipherView';
 
 @Component({
     selector: 'app-vault-attachments',
@@ -53,14 +53,14 @@ export class AttachmentsComponent implements OnInit {
         if (!this.canAccessAttachments) {
             const confirmed = await this.platformUtilsService.showDialog(
                 this.i18nService.t('premiumRequiredDesc'), this.i18nService.t('premiumRequired'),
-                this.i18nService.t('learnMore'), this.i18nService.t('cancel'))
+                this.i18nService.t('learnMore'), this.i18nService.t('cancel'));
             if (confirmed) {
                 this.platformUtilsService.launchUri('https://vault.bitwarden.com/#/?premium=purchase');
             }
         } else if (!this.hasUpdatedKey) {
             const confirmed = await this.platformUtilsService.showDialog(
                 this.i18nService.t('updateKey'), this.i18nService.t('featureUnavailable'),
-                this.i18nService.t('learnMore'), this.i18nService.t('cancel'), 'warning')
+                this.i18nService.t('learnMore'), this.i18nService.t('cancel'), 'warning');
             if (confirmed) {
                 this.platformUtilsService.launchUri('https://help.bitwarden.com/article/update-encryption-key/');
             }
@@ -110,7 +110,7 @@ export class AttachmentsComponent implements OnInit {
 
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('deleteAttachmentConfirmation'), this.i18nService.t('deleteAttachment'),
-            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning')
+            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning');
         if (!confirmed) {
             return;
         }

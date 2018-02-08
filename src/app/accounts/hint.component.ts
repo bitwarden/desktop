@@ -1,13 +1,10 @@
 import * as template from './hint.component.html';
 
-import {
-    Component,
-} from '@angular/core';
-
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
 import { PasswordHintRequest } from 'jslib/models/request/passwordHintRequest';
 

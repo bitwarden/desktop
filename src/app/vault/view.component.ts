@@ -9,8 +9,8 @@ import {
     Output,
 } from '@angular/core';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
 import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';

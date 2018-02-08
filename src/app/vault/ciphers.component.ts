@@ -7,9 +7,9 @@ import {
     Output,
 } from '@angular/core';
 
-import { CipherView } from 'jslib/models/view/cipherView';
-
 import { CipherService } from 'jslib/abstractions/cipher.service';
+
+import { CipherView } from 'jslib/models/view/cipherView';
 
 @Component({
     selector: 'app-vault-ciphers',
@@ -30,7 +30,7 @@ export class CiphersComponent {
 
     async load(filter: (cipher: CipherView) => boolean = null) {
         this.filter = filter;
-        let ciphers = await this.cipherService.getAllDecrypted();
+        const ciphers = await this.cipherService.getAllDecrypted();
 
         if (this.filter == null) {
             this.ciphers = ciphers;

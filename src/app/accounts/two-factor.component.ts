@@ -10,11 +10,12 @@ import {
 
 import { Router } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
+
+import { ModalComponent } from '../modal.component';
 
 import { TwoFactorOptionsComponent } from './two-factor-options.component';
-import { ModalComponent } from '../modal.component';
 
 import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
 
@@ -79,26 +80,26 @@ export class TwoFactorComponent implements OnInit {
                     break;
                 }
 
-                const challenges = JSON.parse(params['Challenges']);
+                const challenges = JSON.parse(params.Challenges);
                 // TODO: init u2f
                 break;
             case TwoFactorProviderType.Duo:
                 setTimeout(() => {
                     (window as any).Duo.init({
-                        host: params['Host'],
-                        sig_request: params['Signature'],
+                        host: params.Host,
+                        sig_request: params.Signature,
                         submit_callback: async (f: HTMLFormElement) => {
                             const sig = f.querySelector('input[name="sig_response"]') as HTMLInputElement;
                             if (sig != null) {
                                 this.token = sig.value;
                                 await this.submit();
                             }
-                        }
+                        },
                     });
                 });
                 break;
             case TwoFactorProviderType.Email:
-                this.twoFactorEmail = params['Email'];
+                this.twoFactorEmail = params.Email;
                 if (this.authService.twoFactorProviders.size > 1) {
                     await this.sendEmail(false);
                 }

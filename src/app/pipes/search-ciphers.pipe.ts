@@ -19,7 +19,7 @@ export class SearchCiphersPipe implements PipeTransform {
         }
 
         searchText = searchText.toLowerCase();
-        return ciphers.filter(c => {
+        return ciphers.filter((c) => {
             if (c.name != null && c.name.toLowerCase().indexOf(searchText) > -1) {
                 return true;
             }

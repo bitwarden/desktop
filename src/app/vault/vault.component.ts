@@ -1,5 +1,6 @@
 import * as template from './vault.component.html';
 
+import { Location } from '@angular/common';
 import {
     Component,
     ComponentFactoryResolver,
@@ -7,21 +8,19 @@ import {
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
-
 import {
     ActivatedRoute,
     Router,
 } from '@angular/router';
 
-import { Location } from '@angular/common';
+import { ModalComponent } from '../modal.component';
 
-import { AttachmentsComponent } from './attachments.component';
 import { AddEditComponent } from './add-edit.component';
+import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
 import { FolderAddEditComponent } from './folder-add-edit.component';
 import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
-import { ModalComponent } from '../modal.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
@@ -56,32 +55,32 @@ export class VaultComponent implements OnInit {
 
     async ngOnInit() {
         this.route.queryParams.subscribe(async (params) => {
-            if (params['cipherId']) {
+            if (params.cipherId) {
                 const cipherView = new CipherView();
-                cipherView.id = params['cipherId'];
-                if (params['action'] === 'edit') {
+                cipherView.id = params.cipherId;
+                if (params.action === 'edit') {
                     this.editCipher(cipherView);
                 } else {
                     this.viewCipher(cipherView);
                 }
-            } else if (params['action'] === 'add') {
+            } else if (params.action === 'add') {
                 this.addCipher();
             }
 
-            if (params['favorites']) {
+            if (params.favorites) {
                 this.groupingsComponent.selectedFavorites = true;
                 await this.filterFavorites();
-            } else if (params['type']) {
-                const t = parseInt(params['type']);
+            } else if (params.type) {
+                const t = parseInt(params.type, null);
                 this.groupingsComponent.selectedType = t;
                 await this.filterCipherType(t);
-            } else if (params['folderId']) {
+            } else if (params.folderId) {
                 this.groupingsComponent.selectedFolder = true;
-                this.groupingsComponent.selectedFolderId = params['folderId'];
-                await this.filterFolder(params['folderId']);
-            } else if (params['collectionId']) {
-                this.groupingsComponent.selectedCollectionId = params['collectionId'];
-                await this.filterCollection(params['collectionId']);
+                this.groupingsComponent.selectedFolderId = params.folderId;
+                await this.filterFolder(params.folderId);
+            } else if (params.collectionId) {
+                this.groupingsComponent.selectedCollectionId = params.collectionId;
+                await this.filterCollection(params.collectionId);
             } else {
                 this.groupingsComponent.selectedAll = true;
                 await this.ciphersComponent.load();

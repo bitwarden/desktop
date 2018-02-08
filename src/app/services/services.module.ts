@@ -9,8 +9,8 @@ import { ToasterModule } from 'angular2-toaster';
 
 import { DesktopMessagingService } from '../../services/desktopMessaging.service';
 import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
-import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { DesktopSecureStorageService } from '../../services/desktopSecureStorage.service';
+import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { I18nService } from '../../services/i18n.service';
 
 import { ValidationService } from './validation.service';
@@ -102,12 +102,12 @@ environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);
 });
 
-function initFactory(i18n: I18nService, platformUtilsService: DesktopPlatformUtilsService): Function {
+function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsService): Function {
     return async () => {
         await i18n.init();
         await authService.init();
         const htmlEl = window.document.documentElement;
-        htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
+        htmlEl.classList.add('os_' + platformUtils.getDeviceString());
         htmlEl.classList.add('locale_' + i18n.translationLocale);
     };
 }
@@ -136,7 +136,7 @@ function initFactory(i18n: I18nService, platformUtilsService: DesktopPlatformUti
             provide: APP_INITIALIZER,
             useFactory: initFactory,
             deps: [
-                I18nServiceAbstraction, 
+                I18nServiceAbstraction,
                 PlatformUtilsServiceAbstraction,
             ],
             multi: true,

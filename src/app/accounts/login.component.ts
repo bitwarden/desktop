@@ -6,14 +6,13 @@ import {
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
-
 import { Router } from '@angular/router';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
-import { EnvironmentComponent } from './environment.component';
 import { ModalComponent } from '../modal.component';
+import { EnvironmentComponent } from './environment.component';
 
 import { AuthResult } from 'jslib/models/domain/authResult';
 

@@ -8,8 +8,8 @@ import {
     Output,
 } from '@angular/core';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -58,7 +58,7 @@ export class FolderAddEditComponent implements OnInit {
 
         try {
             const folder = await this.folderService.encrypt(this.folder);
-            this.formPromise = this.folderService.saveWithServer(folder);;
+            this.formPromise = this.folderService.saveWithServer(folder);
             await this.formPromise;
             this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Folder' : 'Added Folder' });
             this.toasterService.popAsync('success', null,
@@ -70,7 +70,7 @@ export class FolderAddEditComponent implements OnInit {
     async delete() {
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('deleteFolderConfirmation'), this.i18nService.t('deleteFolder'),
-            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning')
+            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning');
         if (!confirmed) {
             return;
         }

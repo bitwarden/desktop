@@ -8,8 +8,8 @@ import {
     Output,
 } from '@angular/core';
 
-import { Angulartics2 } from 'angulartics2';
 import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 
 import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';
@@ -144,7 +144,8 @@ export class AddEditComponent implements OnChanges {
             await this.formPromise;
             this.cipher.id = cipher.id;
             this.analytics.eventTrack.next({ action: this.editMode ? 'Edited Cipher' : 'Added Cipher' });
-            this.toasterService.popAsync('success', null, this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
+            this.toasterService.popAsync('success', null,
+                this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
             this.onSavedCipher.emit(this.cipher);
         } catch { }
     }
@@ -177,7 +178,7 @@ export class AddEditComponent implements OnChanges {
     async delete() {
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('deleteItemConfirmation'), this.i18nService.t('deleteItem'),
-            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning')
+            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning');
         if (!confirmed) {
             return;
         }
@@ -195,7 +196,7 @@ export class AddEditComponent implements OnChanges {
         if (this.cipher.login != null && this.cipher.login.password != null && this.cipher.login.password.length) {
             const confirmed = await this.platformUtilsService.showDialog(
                 this.i18nService.t('overwritePasswordConfirmation'), this.i18nService.t('overwritePassword'),
-                this.i18nService.t('yes'), this.i18nService.t('no'))
+                this.i18nService.t('yes'), this.i18nService.t('no'));
             if (!confirmed) {
                 return;
             }

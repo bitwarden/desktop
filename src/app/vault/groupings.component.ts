@@ -10,8 +10,8 @@ import {
 
 import { CipherType } from 'jslib/enums/cipherType';
 
-import { FolderView } from 'jslib/models/view/folderView';
 import { CollectionView } from 'jslib/models/view/collectionView';
+import { FolderView } from 'jslib/models/view/folderView';
 
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';

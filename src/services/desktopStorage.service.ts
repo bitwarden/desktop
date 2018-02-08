@@ -1,5 +1,6 @@
 import { StorageService } from 'jslib/abstractions';
 
+// tslint:disable-next-line
 const Store = require('electron-store');
 const store = new Store();
 

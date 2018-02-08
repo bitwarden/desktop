@@ -1,5 +1,8 @@
+import {
+    ToasterConfig,
+    ToasterContainerComponent,
+} from 'angular2-toaster';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
-import { ToasterContainerComponent, ToasterConfig } from 'angular2-toaster';
 
 import { Component } from '@angular/core';
 
