@@ -132,6 +132,7 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         { provide: PlatformUtilsServiceAbstraction, useValue: platformUtilsService },
         { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         { provide: ApiServiceAbstraction, useValue: apiService },
+        { provide: SyncServiceAbstraction, useValue: syncService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

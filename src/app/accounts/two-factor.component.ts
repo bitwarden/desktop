@@ -25,6 +25,7 @@ import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { TwoFactorProviders } from 'jslib/services/auth.service';
 
@@ -51,7 +52,7 @@ export class TwoFactorComponent implements OnInit {
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService, private apiService: ApiService,
         private platformUtilsService: PlatformUtilsService,
-        private componentFactoryResolver: ComponentFactoryResolver) {
+        private componentFactoryResolver: ComponentFactoryResolver, private syncService: SyncService) {
         this.u2fSupported = this.platformUtilsService.supportsU2f(window);
     }
 
@@ -126,6 +127,7 @@ export class TwoFactorComponent implements OnInit {
         try {
             this.formPromise = this.authService.logInTwoFactor(this.selectedProviderType, this.token, this.remember);
             await this.formPromise;
+            this.syncService.fullSync(true);
             this.analytics.eventTrack.next({ action: 'Logged In From Two-step' });
             this.router.navigate(['vault']);
         } catch {
