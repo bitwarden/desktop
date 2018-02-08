@@ -4,6 +4,8 @@ import {
     Routes,
 } from '@angular/router';
 
+import { AuthGuardService } from './services/auth-guard.service';
+
 import { HintComponent } from './accounts/hint.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
@@ -11,11 +13,15 @@ import { TwoFactorComponent } from './accounts/two-factor.component';
 import { VaultComponent } from './vault/vault.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '', redirectTo: '/vault', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: '2fa', component: TwoFactorComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'vault', component: VaultComponent },
+    {
+        path: 'vault',
+        component: VaultComponent,
+        canActivate: [AuthGuardService]
+    },
     { path: 'hint', component: HintComponent },
 ];
 

@@ -13,6 +13,7 @@ import { DesktopSecureStorageService } from '../../services/desktopSecureStorage
 import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { I18nService } from '../../services/i18n.service';
 
+import { AuthGuardService } from './auth-guard.service';
 import { ValidationService } from './validation.service';
 
 import { Analytics } from 'jslib/misc/analytics';
@@ -119,6 +120,7 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
     declarations: [],
     providers: [
         ValidationService,
+        AuthGuardService,
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
         { provide: FolderServiceAbstraction, useValue: folderService },
@@ -133,6 +135,7 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         { provide: ApiServiceAbstraction, useValue: apiService },
         { provide: SyncServiceAbstraction, useValue: syncService },
+        { provide: UserServiceAbstraction, useValue: userService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
