@@ -1,10 +1,19 @@
 import { app, ipcMain } from 'electron';
 // import { getPassword, setPassword, deletePassword } from 'keytar';
 
+import { WindowMain } from './window.main';
+
 const KeytarService = 'bitwarden';
+const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
 export class MessagingMain {
+    private syncTimeout: NodeJS.Timer;
+
+    constructor(private windowMain: WindowMain) { }
+
     init() {
+        this.scheduleNextSync();
+
         ipcMain.on('messagingService', async (event: any, message: any) => {
             switch (message.command) {
                 case 'loggedIn':
@@ -12,6 +21,9 @@ export class MessagingMain {
                 case 'logout':
                     break;
                 case 'syncCompleted':
+                    break;
+                case 'scheduleNextSync':
+                    this.scheduleNextSync();
                     break;
                 default:
                     break;
@@ -39,5 +51,17 @@ export class MessagingMain {
             }
         });
         */
+    }
+
+    private scheduleNextSync() {
+        if (this.syncTimeout) {
+            global.clearTimeout(this.syncTimeout);
+        }
+
+        this.syncTimeout = global.setTimeout(() => {
+            this.windowMain.win.webContents.send('messagingService', {
+                command: 'checkSyncVault',
+            });
+        }, SyncInterval);
     }
 }

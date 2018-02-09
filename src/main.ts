@@ -16,7 +16,7 @@ if (watch) {
 
 const i18nService = new I18nService('en', './locales/');
 const windowMain = new WindowMain(dev);
-const messagingMain = new MessagingMain();
+const messagingMain = new MessagingMain(windowMain);
 const menuMain = new MenuMain(windowMain, i18nService);
 
 windowMain.init();

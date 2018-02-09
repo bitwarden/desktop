@@ -36,7 +36,10 @@ import { CollectionView } from 'jslib/models/view/collectionView';
 import { FolderView } from 'jslib/models/view/folderView';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+
+const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 
 @Component({
     selector: 'app-vault',
@@ -64,7 +67,7 @@ export class VaultComponent implements OnInit {
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
-        private toasterService: ToasterService) {
+        private toasterService: ToasterService, private messagingService: MessagingService) {
     }
 
     async ngOnInit() {
@@ -104,8 +107,25 @@ export class VaultComponent implements OnInit {
                             this.toasterService.popAsync('error', null, this.i18nService.t('syncingFailed'));
                         }
                         break;
+                    case 'checkSyncVault':
+                        try {
+                            const lastSync = await this.syncService.getLastSync();
+                            let lastSyncAgo = SyncInterval + 1;
+                            if (lastSync != null) {
+                                lastSyncAgo = new Date().getTime() - lastSync.getTime();
+                            }
+
+                            if (lastSyncAgo >= SyncInterval) {
+                                await this.syncService.fullSync(false);
+                            }
+                        } catch { }
+
+                        this.messagingService.send('scheduleNextSync');
+                        break;
                     case 'syncCompleted':
-                        await this.load();
+                        if (message.successfully) {
+                            await this.load();
+                        }
                         break;
                     default:
                         detectChanges = false;
