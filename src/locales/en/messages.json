@@ -642,5 +642,35 @@
   },
   "blog": {
     "message": "Blog"
+  },
+  "followUs": {
+    "message": "Follow Us"
+  },
+  "syncVault": {
+    "message": "Sync Vault"
+  },
+  "premiumMembership": {
+    "message": "Premium Membership"
+  },
+  "changeMasterPass": {
+    "message": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmail": {
+    "message": "Change Email"
+  },
+  "changeEmailConfirmation": {
+    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "webVault": {
+    "message": "Web Vault"
+  },
+  "getMobileApp": {
+    "message": "Get Mobile App"
+  },
+  "getBrowserExtension": {
+    "message": "Get Browser Extension"
   }
 }

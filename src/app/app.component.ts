@@ -72,14 +72,6 @@ export class AppComponent implements OnInit {
                         break;
                     case 'syncCompleted':
                         break;
-                    case 'confirmLogout':
-                        const logoutConfirmed = await this.platformUtilsService.showDialog(
-                            this.i18nService.t('logOutConfirmation'), this.i18nService.t('logOut'),
-                            this.i18nService.t('logOut'), this.i18nService.t('cancel'));
-                        if (logoutConfirmed) {
-                            this.logOut(false);
-                        }
-                        break;
                     default:
                 }
             });
