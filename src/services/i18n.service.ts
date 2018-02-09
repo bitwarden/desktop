@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import * as path from 'path';
 
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
@@ -73,7 +74,8 @@ export class I18nService implements I18nServiceAbstraction {
     private loadMessages(locale: string, messagesObj: any): Promise<any> {
         const formattedLocale = locale.replace('-', '_');
         const filePath = path.join(__dirname, this.localesDirectory + '/' + formattedLocale + '/messages.json');
-        const locales = (window as any).require(filePath);
+        const localesJson = fs.readFileSync(filePath, 'utf8');
+        const locales = JSON.parse(localesJson.replace(/^\uFEFF/, '')); // strip the BOM
         for (const prop in locales) {
             if (!locales.hasOwnProperty(prop)) {
                 continue;

@@ -15,12 +15,15 @@ if (watch) {
 }
 
 const i18nService = new I18nService('en', './locales/');
-i18nService.init().then(() => { });
-
 const windowMain = new WindowMain(dev);
 const messagingMain = new MessagingMain();
-const menuMain = new MenuMain(windowMain);
+const menuMain = new MenuMain(windowMain, i18nService);
 
-messagingMain.init();
-menuMain.init();
 windowMain.init();
+messagingMain.init();
+
+i18nService.init().then(() => {
+    menuMain.init();
+}, (e: any) => {
+    console.log(e);
+});

@@ -606,5 +606,20 @@
   },
   "logOut": {
     "message": "Log Out"
+  },
+  "addNewLogin": {
+    "message": "Add New Login"
+  },
+  "addNewItem": {
+    "message": "Add New Item"
+  },
+  "addNewFolder": {
+    "message": "Add New Folder"
+  },
+  "view": {
+    "message": "View"
+  },
+  "account": {
+    "message": "Account"
   }
 }
