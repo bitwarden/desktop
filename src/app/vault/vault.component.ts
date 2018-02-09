@@ -55,9 +55,7 @@ export class VaultComponent implements OnInit {
     collectionId: string = null;
     addType: CipherType = null;
 
-    private passwordGeneratorModal: ModalComponent = null;
-    private folderAddEditModal: ModalComponent = null;
-    private attachmentsModal: ModalComponent = null;
+    private modal: ModalComponent = null;
 
     constructor(private route: ActivatedRoute, private router: Router, private location: Location,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
@@ -200,19 +198,18 @@ export class VaultComponent implements OnInit {
     }
 
     editCipherAttachments(cipher: CipherView) {
-        if (this.attachmentsModal != null) {
-            this.attachmentsModal.close();
+        if (this.modal != null) {
+            this.modal.close();
         }
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.attachmentsModal = this.attachmentsModalRef.createComponent(factory).instance;
-        const childComponent = this.attachmentsModal.show<AttachmentsComponent>(
-            AttachmentsComponent, this.attachmentsModalRef);
+        this.modal = this.attachmentsModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModalRef);
 
         childComponent.cipherId = cipher.id;
 
-        this.attachmentsModal.onClosed.subscribe(() => {
-            this.attachmentsModal = null;
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
         });
     }
 
@@ -263,64 +260,72 @@ export class VaultComponent implements OnInit {
     }
 
     async openPasswordGenerator(showSelect: boolean) {
-        if (this.passwordGeneratorModal != null) {
-            this.passwordGeneratorModal.close();
+        if (this.modal != null) {
+            this.modal.close();
         }
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.passwordGeneratorModal = this.passwordGeneratorModalRef.createComponent(factory).instance;
-        const childComponent = this.passwordGeneratorModal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
+        this.modal = this.passwordGeneratorModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
             this.passwordGeneratorModalRef);
 
         childComponent.showSelect = showSelect;
         childComponent.onSelected.subscribe((password: string) => {
-            this.passwordGeneratorModal.close();
+            this.modal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
                 this.addEditComponent.cipher.login != null) {
                 this.addEditComponent.cipher.login.password = password;
             }
         });
 
-        this.passwordGeneratorModal.onClosed.subscribe(() => {
-            this.passwordGeneratorModal = null;
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
         });
     }
 
     async addFolder() {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.folderAddEditModal = this.folderAddEditModalRef.createComponent(factory).instance;
-        const childComponent = this.folderAddEditModal.show<FolderAddEditComponent>(
+        this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<FolderAddEditComponent>(
             FolderAddEditComponent, this.folderAddEditModalRef);
 
         childComponent.folderId = null;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
-            this.folderAddEditModal.close();
+            this.modal.close();
             await this.groupingsComponent.loadFolders();
         });
 
-        this.folderAddEditModal.onClosed.subscribe(() => {
-            this.folderAddEditModal = null;
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
         });
     }
 
     async editFolder(folderId: string) {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.folderAddEditModal = this.folderAddEditModalRef.createComponent(factory).instance;
-        const childComponent = this.folderAddEditModal.show<FolderAddEditComponent>(
+        this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<FolderAddEditComponent>(
             FolderAddEditComponent, this.folderAddEditModalRef);
 
         childComponent.folderId = folderId;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
-            this.folderAddEditModal.close();
+            this.modal.close();
             await this.groupingsComponent.loadFolders();
         });
         childComponent.onDeletedFolder.subscribe(async (folder: FolderView) => {
-            this.folderAddEditModal.close();
+            this.modal.close();
             await this.groupingsComponent.loadFolders();
         });
 
-        this.folderAddEditModal.onClosed.subscribe(() => {
-            this.folderAddEditModal = null;
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
         });
     }
 
