@@ -630,5 +630,17 @@
   },
   "passwordGenerator": {
     "message": "Password Generator"
+  },
+  "emailUs": {
+    "message": "Email Us"
+  },
+  "visitOurWebsite": {
+    "message": "Visit Our Website"
+  },
+  "fileBugReport": {
+    "message": "File a Bug Report"
+  },
+  "blog": {
+    "message": "Blog"
   }
 }

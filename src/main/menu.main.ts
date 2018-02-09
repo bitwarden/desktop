@@ -4,6 +4,7 @@ import {
     Menu,
     MenuItemConstructorOptions,
     ipcMain,
+    shell,
 } from 'electron';
 
 import { WindowMain } from './window.main';
@@ -113,9 +114,9 @@ export class MenuMain {
                         accelerator: 'CmdOrCtrl+F'
                     },
                     { type: 'separator' },
-                    { role: 'resetzoom', accelerator: 'CmdOrCtrl+0' },
                     { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },
                     { role: 'zoomout', accelerator: 'CmdOrCtrl+-' },
+                    { role: 'resetzoom', accelerator: 'CmdOrCtrl+0' },
                     { type: 'separator' },
                     { role: 'togglefullscreen' },
                     { type: 'separator' },
@@ -146,8 +147,53 @@ export class MenuMain {
                 role: 'help',
                 submenu: [
                     {
-                        label: 'Learn More',
-                        click() { require('electron').shell.openExternal('https://electronjs.org') }
+                        label: this.i18nService.t('emailUs'),
+                        click() {
+                            shell.openExternal('mailTo:hello@bitwarden.com')
+                        }
+                    },
+                    {
+                        label: this.i18nService.t('visitOurWebsite'),
+                        click() {
+                            shell.openExternal('https://bitwarden.com/contact')
+                        }
+                    },
+                    {
+                        label: this.i18nService.t('fileBugReport'),
+                        click() {
+                            shell.openExternal('https://github.com/bitwarden/desktop')
+                        }
+                    },
+                    { type: 'separator' },
+                    {
+                        label: this.i18nService.t('blog'),
+                        click() {
+                            shell.openExternal('https://blog.bitwarden.com')
+                        }
+                    },
+                    {
+                        label: 'Twitter',
+                        click() {
+                            shell.openExternal('https://twitter.com/bitwarden_app')
+                        }
+                    },
+                    {
+                        label: 'Facebook',
+                        click() {
+                            shell.openExternal('https://www.facebook.com/bitwarden/')
+                        }
+                    },
+                    {
+                        label: 'Google+',
+                        click() {
+                            shell.openExternal('https://plus.google.com/114869903467947368993')
+                        }
+                    },
+                    {
+                        label: 'GitHub',
+                        click() {
+                            shell.openExternal('https://github.com/bitwarden')
+                        }
                     }
                 ]
             }
