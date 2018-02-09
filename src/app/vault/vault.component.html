@@ -27,7 +27,7 @@
                         (onDeletedCipher)="deletedCipher($event)"
                         (onEditAttachments)="editCipherAttachments($event)"
                         (onCancelled)="cancelledAddEdit($event)"
-                        (onGeneratePassword)="openPasswordGenerator()">
+                        (onGeneratePassword)="openPasswordGenerator(true)">
     </app-vault-add-edit>
     <div id="logo" *ngIf="action !== 'add' && action !== 'edit' && action !== 'view'">
         <div class="content">

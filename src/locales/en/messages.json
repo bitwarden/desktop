@@ -30,7 +30,7 @@
     "message": "Collections"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Search Vault"
   },
   "addItem": {
     "message": "Add Item"
@@ -335,16 +335,16 @@
     "message": "Avoid Ambiguous Characters"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Search Collection"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Search Folder"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Search Favorites"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Search Type",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -624,5 +624,11 @@
   },
   "loading": {
     "message": "Loading..."
+  },
+  "lock": {
+    "message": "Lock"
+  },
+  "passwordGenerator": {
+    "message": "Password Generator"
   }
 }

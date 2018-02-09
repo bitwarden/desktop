@@ -43,9 +43,9 @@ export class VaultComponent implements OnInit {
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
     @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
-    @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModal: ViewContainerRef;
-    @ViewChild('attachments', { read: ViewContainerRef }) attachmentsModal: ViewContainerRef;
-    @ViewChild('folderAddEdit', { read: ViewContainerRef }) folderAddEditModal: ViewContainerRef;
+    @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModalRef: ViewContainerRef;
+    @ViewChild('attachments', { read: ViewContainerRef }) attachmentsModalRef: ViewContainerRef;
+    @ViewChild('folderAddEdit', { read: ViewContainerRef }) folderAddEditModalRef: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -54,6 +54,10 @@ export class VaultComponent implements OnInit {
     folderId: string = null;
     collectionId: string = null;
     addType: CipherType = null;
+
+    private passwordGeneratorModal: ModalComponent = null;
+    private folderAddEditModal: ModalComponent = null;
+    private attachmentsModal: ModalComponent = null;
 
     constructor(private route: ActivatedRoute, private router: Router, private location: Location,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
@@ -82,6 +86,13 @@ export class VaultComponent implements OnInit {
                     case 'newFolder':
                         await this.addFolder();
                         break;
+                    case 'focusSearch':
+                        (document.querySelector('#search') as HTMLInputElement).focus();
+                        detectChanges = false;
+                        break;
+                    case 'openPasswordGenerator':
+                        await this.openPasswordGenerator(false);
+                        break;
                     default:
                         detectChanges = false;
                         break;
@@ -103,9 +114,10 @@ export class VaultComponent implements OnInit {
     }
 
     async load(params?: { [key: string]: any }) {
+        await this.groupingsComponent.load();
+
         if (params == null) {
             this.groupingsComponent.selectedAll = true;
-            await this.groupingsComponent.load();
             await this.ciphersComponent.load();
             return;
         }
@@ -138,7 +150,6 @@ export class VaultComponent implements OnInit {
             await this.filterCollection(params.collectionId);
         } else {
             this.groupingsComponent.selectedAll = true;
-            await this.groupingsComponent.load();
             await this.ciphersComponent.load();
         }
     }
@@ -189,11 +200,20 @@ export class VaultComponent implements OnInit {
     }
 
     editCipherAttachments(cipher: CipherView) {
+        if (this.attachmentsModal != null) {
+            this.attachmentsModal.close();
+        }
+
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        const modal = this.attachmentsModal.createComponent(factory).instance;
-        const childComponent = modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModal);
+        this.attachmentsModal = this.attachmentsModalRef.createComponent(factory).instance;
+        const childComponent = this.attachmentsModal.show<AttachmentsComponent>(
+            AttachmentsComponent, this.attachmentsModalRef);
 
         childComponent.cipherId = cipher.id;
+
+        this.attachmentsModal.onClosed.subscribe(() => {
+            this.attachmentsModal = null;
+        });
     }
 
     cancelledAddEdit(cipher: CipherView) {
@@ -242,47 +262,65 @@ export class VaultComponent implements OnInit {
         this.go();
     }
 
-    async openPasswordGenerator() {
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        const modal = this.passwordGeneratorModal.createComponent(factory).instance;
-        const childComponent = modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
-            this.passwordGeneratorModal);
+    async openPasswordGenerator(showSelect: boolean) {
+        if (this.passwordGeneratorModal != null) {
+            this.passwordGeneratorModal.close();
+        }
 
-        childComponent.showSelect = true;
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.passwordGeneratorModal = this.passwordGeneratorModalRef.createComponent(factory).instance;
+        const childComponent = this.passwordGeneratorModal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
+            this.passwordGeneratorModalRef);
+
+        childComponent.showSelect = showSelect;
         childComponent.onSelected.subscribe((password: string) => {
-            modal.close();
+            this.passwordGeneratorModal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
                 this.addEditComponent.cipher.login != null) {
                 this.addEditComponent.cipher.login.password = password;
             }
         });
+
+        this.passwordGeneratorModal.onClosed.subscribe(() => {
+            this.passwordGeneratorModal = null;
+        });
     }
 
     async addFolder() {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        const modal = this.folderAddEditModal.createComponent(factory).instance;
-        const childComponent = modal.show<FolderAddEditComponent>(FolderAddEditComponent, this.folderAddEditModal);
+        this.folderAddEditModal = this.folderAddEditModalRef.createComponent(factory).instance;
+        const childComponent = this.folderAddEditModal.show<FolderAddEditComponent>(
+            FolderAddEditComponent, this.folderAddEditModalRef);
 
         childComponent.folderId = null;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
-            modal.close();
+            this.folderAddEditModal.close();
             await this.groupingsComponent.loadFolders();
+        });
+
+        this.folderAddEditModal.onClosed.subscribe(() => {
+            this.folderAddEditModal = null;
         });
     }
 
     async editFolder(folderId: string) {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        const modal = this.folderAddEditModal.createComponent(factory).instance;
-        const childComponent = modal.show<FolderAddEditComponent>(FolderAddEditComponent, this.folderAddEditModal);
+        this.folderAddEditModal = this.folderAddEditModalRef.createComponent(factory).instance;
+        const childComponent = this.folderAddEditModal.show<FolderAddEditComponent>(
+            FolderAddEditComponent, this.folderAddEditModalRef);
 
         childComponent.folderId = folderId;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
-            modal.close();
+            this.folderAddEditModal.close();
             await this.groupingsComponent.loadFolders();
         });
         childComponent.onDeletedFolder.subscribe(async (folder: FolderView) => {
-            modal.close();
+            this.folderAddEditModal.close();
             await this.groupingsComponent.loadFolders();
+        });
+
+        this.folderAddEditModal.onClosed.subscribe(() => {
+            this.folderAddEditModal = null;
         });
     }
 

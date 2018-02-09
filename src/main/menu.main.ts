@@ -18,7 +18,7 @@ export class MenuMain {
 
         const template: MenuItemConstructorOptions[] = [
             {
-                label: 'File',
+                label: this.i18nService.t('file'),
                 submenu: [
                     {
                         label: this.i18nService.t('addNewLogin'),
@@ -34,25 +34,29 @@ export class MenuMain {
                                 label: this.i18nService.t('typeLogin'),
                                 click() {
                                     self.send('newLogin');
-                                }
+                                },
+                                accelerator: 'Alt+L'
                             },
                             {
                                 label: this.i18nService.t('typeCard'),
                                 click() {
                                     self.send('newCard');
-                                }
+                                },
+                                accelerator: 'Alt+C'
                             },
                             {
                                 label: this.i18nService.t('typeIdentity'),
                                 click() {
                                     self.send('newIdentity');
-                                }
+                                },
+                                accelerator: 'Alt+I'
                             },
                             {
                                 label: this.i18nService.t('typeSecureNote'),
                                 click() {
                                     self.send('newSecureNote');
-                                }
+                                },
+                                accelerator: 'Alt+S'
                             }
                         ]
                     },
@@ -71,7 +75,7 @@ export class MenuMain {
                         }
                     },
                     {
-                        label: 'Lock',
+                        label: this.i18nService.t('lock'),
                         click() {
                             self.send('lockApp');
                         },
@@ -94,22 +98,30 @@ export class MenuMain {
             {
                 label: this.i18nService.t('view'),
                 submenu: [
-                    { role: 'reload' },
-                    { role: 'forcereload' },
-                    { role: 'toggledevtools' },
-                    { type: 'separator' },
                     {
-                        role: 'resetzoom',
-                        accelerator: 'CmdOrCtrl+0' },
+                        label: this.i18nService.t('passwordGenerator'),
+                        click() {
+                            self.send('openPasswordGenerator');
+                        },
+                        accelerator: 'CmdOrCtrl+G'
+                    },
                     {
-                        role: 'zoomin',
-                        accelerator: 'CmdOrCtrl+=' },
-                    {
-                        role: 'zoomout',
-                        accelerator: 'CmdOrCtrl+-'
+                        label: this.i18nService.t('searchVault'),
+                        click() {
+                            self.send('focusSearch');
+                        },
+                        accelerator: 'CmdOrCtrl+F'
                     },
                     { type: 'separator' },
-                    { role: 'togglefullscreen' }
+                    { role: 'resetzoom', accelerator: 'CmdOrCtrl+0' },
+                    { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },
+                    { role: 'zoomout', accelerator: 'CmdOrCtrl+-' },
+                    { type: 'separator' },
+                    { role: 'togglefullscreen' },
+                    { type: 'separator' },
+                    { role: 'reload', accelerator: 'Alt+Shift+R' },
+                    { role: 'forcereload' },
+                    { role: 'toggledevtools' },
                 ]
             },
             {

@@ -84,6 +84,9 @@ export class PasswordGeneratorComponent implements OnInit {
     }
 
     private normalizeOptions() {
+        this.options.minLowercase = 0;
+        this.options.minUppercase = 0;
+
         if (!this.options.uppercase && !this.options.lowercase && !this.options.number && !this.options.special) {
             this.options.lowercase = true;
             const lowercase = document.querySelector('#lowercase') as HTMLInputElement;
@@ -91,22 +94,31 @@ export class PasswordGeneratorComponent implements OnInit {
                 lowercase.checked = true;
             }
         }
-        if (!this.options.minNumber) {
-            this.options.minNumber = 0;
-        } else if (this.options.minNumber > 5) {
-            this.options.minNumber = 5;
-        }
-
-        if (!this.options.minSpecial) {
-            this.options.minSpecial = 0;
-        } else if (this.options.minSpecial > 5) {
-            this.options.minSpecial = 5;
-        }
 
         if (!this.options.length) {
             this.options.length = 5;
         } else if (this.options.length > 128) {
             this.options.length = 128;
+        }
+
+        if (!this.options.minNumber) {
+            this.options.minNumber = 0;
+        } else if (this.options.minNumber > this.options.length) {
+            this.options.minNumber = this.options.length;
+        } else if (this.options.minNumber > 9) {
+            this.options.minNumber = 9;
+        }
+
+        if (!this.options.minSpecial) {
+            this.options.minSpecial = 0;
+        } else if (this.options.minSpecial > this.options.length) {
+            this.options.minSpecial = this.options.length;
+        } else if (this.options.minSpecial > 9) {
+            this.options.minSpecial = 9;
+        }
+
+        if (this.options.minSpecial + this.options.minNumber > this.options.length) {
+            this.options.minSpecial = this.options.length - this.options.minNumber;
         }
     }
 }
