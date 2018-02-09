@@ -61,9 +61,6 @@ export class AppComponent implements OnInit {
                     case 'logout':
                         this.logOut(message.expired);
                         break;
-                    case 'doneLoggingOut':
-                        this.doneLoggingOut(message.expired);
-                        break;
                     case 'locked':
                         break;
                     case 'unlocked':
@@ -92,10 +89,6 @@ export class AppComponent implements OnInit {
             this.passwordGenerationService.clear(),
         ]);
 
-        this.doneLoggingOut(expired);
-    }
-
-    private doneLoggingOut(expired: boolean) {
         this.authService.logOut(() => {
             this.analytics.eventTrack.next({ action: 'Logged Out' });
             if (expired) {

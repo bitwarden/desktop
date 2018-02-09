@@ -259,7 +259,7 @@ export class MenuMain {
                     },
                     { type: 'separator' },
                     {
-                        label: this.i18nService.t('webVault'),
+                        label: this.i18nService.t('goToWebVault'),
                         click() {
                             shell.openExternal('https://vault.bitwarden.com');
                         }

@@ -664,13 +664,19 @@
   "changeEmailConfirmation": {
     "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "webVault": {
-    "message": "Web Vault"
+  "goToWebVault": {
+    "message": "Go To Web Vault"
   },
   "getMobileApp": {
     "message": "Get Mobile App"
   },
   "getBrowserExtension": {
     "message": "Get Browser Extension"
+  },
+  "syncingComplete": {
+    "message": "Syncing complete"
+  },
+  "syncingFailed": {
+    "message": "Syncing failed"
   }
 }

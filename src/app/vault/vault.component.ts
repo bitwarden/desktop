@@ -15,6 +15,9 @@ import {
     Router,
 } from '@angular/router';
 
+import { ToasterService } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
+
 import { ModalComponent } from '../modal.component';
 
 import { BroadcasterService } from '../services/broadcaster.service';
@@ -60,7 +63,8 @@ export class VaultComponent implements OnInit {
     constructor(private route: ActivatedRoute, private router: Router, private location: Location,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
-        private ngZone: NgZone, private syncService: SyncService) {
+        private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
+        private toasterService: ToasterService) {
     }
 
     async ngOnInit() {
@@ -91,6 +95,18 @@ export class VaultComponent implements OnInit {
                     case 'openPasswordGenerator':
                         await this.openPasswordGenerator(false);
                         break;
+                    case 'syncVault':
+                        try {
+                            await this.syncService.fullSync(true);
+                            this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
+                            this.analytics.eventTrack.next({ action: 'Synced Full' });
+                        } catch {
+                            this.toasterService.popAsync('error', null, this.i18nService.t('syncingFailed'));
+                        }
+                        break;
+                    case 'syncCompleted':
+                        await this.load();
+                        break;
                     default:
                         detectChanges = false;
                         break;
@@ -102,54 +118,52 @@ export class VaultComponent implements OnInit {
             });
         });
 
-        while (this.syncService.syncInProgress) {
-            await new Promise((resolve) => setTimeout(resolve, 200));
+        if (!this.syncService.syncInProgress) {
+            await this.load();
         }
-
-        this.route.queryParams.subscribe(async (params) => {
-            await this.load(params);
-        });
     }
 
-    async load(params?: { [key: string]: any }) {
-        await this.groupingsComponent.load();
+    async load() {
+        this.route.queryParams.subscribe(async (params) => {
+            await this.groupingsComponent.load();
 
-        if (params == null) {
-            this.groupingsComponent.selectedAll = true;
-            await this.ciphersComponent.load();
-            return;
-        }
-
-        if (params.cipherId) {
-            const cipherView = new CipherView();
-            cipherView.id = params.cipherId;
-            if (params.action === 'edit') {
-                this.editCipher(cipherView);
-            } else {
-                this.viewCipher(cipherView);
+            if (params == null) {
+                this.groupingsComponent.selectedAll = true;
+                await this.ciphersComponent.load();
+                return;
             }
-        } else if (params.action === 'add') {
-            this.addCipher();
-        }
 
-        if (params.favorites) {
-            this.groupingsComponent.selectedFavorites = true;
-            await this.filterFavorites();
-        } else if (params.type) {
-            const t = parseInt(params.type, null);
-            this.groupingsComponent.selectedType = t;
-            await this.filterCipherType(t);
-        } else if (params.folderId) {
-            this.groupingsComponent.selectedFolder = true;
-            this.groupingsComponent.selectedFolderId = params.folderId;
-            await this.filterFolder(params.folderId);
-        } else if (params.collectionId) {
-            this.groupingsComponent.selectedCollectionId = params.collectionId;
-            await this.filterCollection(params.collectionId);
-        } else {
-            this.groupingsComponent.selectedAll = true;
-            await this.ciphersComponent.load();
-        }
+            if (params.cipherId) {
+                const cipherView = new CipherView();
+                cipherView.id = params.cipherId;
+                if (params.action === 'edit') {
+                    this.editCipher(cipherView);
+                } else {
+                    this.viewCipher(cipherView);
+                }
+            } else if (params.action === 'add') {
+                this.addCipher();
+            }
+
+            if (params.favorites) {
+                this.groupingsComponent.selectedFavorites = true;
+                await this.filterFavorites();
+            } else if (params.type) {
+                const t = parseInt(params.type, null);
+                this.groupingsComponent.selectedType = t;
+                await this.filterCipherType(t);
+            } else if (params.folderId) {
+                this.groupingsComponent.selectedFolder = true;
+                this.groupingsComponent.selectedFolderId = params.folderId;
+                await this.filterFolder(params.folderId);
+            } else if (params.collectionId) {
+                this.groupingsComponent.selectedCollectionId = params.collectionId;
+                await this.filterCollection(params.collectionId);
+            } else {
+                this.groupingsComponent.selectedAll = true;
+                await this.ciphersComponent.load();
+            }
+        });
     }
 
     viewCipher(cipher: CipherView) {
