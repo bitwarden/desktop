@@ -21,10 +21,13 @@
                 <span class="detail">{{c.subTitle}}</span>
             </a>
         </div>
-        <div *ngIf="loaded && searchedCiphers.length === 0" class="no-items">
-            <i class="fa fa-frown-o fa-4x"></i>
-            <p>{{'noItemsInList' | i18n}}</p>
-            <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+        <div class="no-items" *ngIf="searchedCiphers.length === 0">
+            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
+            <ng-container *ngIf="loaded">
+                <i class="fa fa-frown-o fa-4x"></i>
+                <p>{{'noItemsInList' | i18n}}</p>
+                <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+            </ng-container>
         </div>
     </ng-container>
 </div>

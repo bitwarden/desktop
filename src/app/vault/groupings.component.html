@@ -35,32 +35,35 @@
                 </a>
             </li>
         </ul>
-        <h2>
-            {{'folders' | i18n}}
-            <button appBlurClick (click)="addFolder()" title="{{'addFolder' | i18n}}">
-                <i class="fa fa-plus fa-fw"></i>
-            </button>
-        </h2>
-        <ul class="fa-ul">
-            <li *ngFor="let f of folders" [ngClass]="{active: selectedFolder && f.id === selectedFolderId}">
-                <a href="#" appStopClick appBlurClick (click)="folder(f)">
-                    <i class="fa-li fa fa-caret-right"></i> {{f.name}}
-                    <span appStopProp appStopClick (click)="editFolder(f)" title="{{'editFolder' | i18n}}"
-                          *ngIf="f.id">
-                        <i class="fa fa-pencil fa-fw"></i>
-                    </span>
-                </a>
-            </li>
-        </ul>
-        <div *ngIf="collections && collections.length">
-            <h2>{{'collections' | i18n}}</h2>
+        <p *ngIf="!loaded" class="text-muted">{{'loading' | i18n}}</p>
+        <ng-container *ngIf="loaded">
+            <h2>
+                {{'folders' | i18n}}
+                <button appBlurClick (click)="addFolder()" title="{{'addFolder' | i18n}}">
+                    <i class="fa fa-plus fa-fw"></i>
+                </button>
+            </h2>
             <ul class="fa-ul">
-                <li *ngFor="let c of collections" [ngClass]="{active: c.id === selectedCollectionId}">
-                    <a href="#" appStopClick appBlurClick (click)="collection(c)">
-                        <i class="fa-li fa fa-caret-right"></i> {{c.name}}
+                <li *ngFor="let f of folders" [ngClass]="{active: selectedFolder && f.id === selectedFolderId}">
+                    <a href="#" appStopClick appBlurClick (click)="folder(f)">
+                        <i class="fa-li fa fa-caret-right"></i> {{f.name}}
+                        <span appStopProp appStopClick (click)="editFolder(f)" title="{{'editFolder' | i18n}}"
+                              *ngIf="f.id">
+                            <i class="fa fa-pencil fa-fw"></i>
+                        </span>
                     </a>
                 </li>
             </ul>
-        </div>
+            <div *ngIf="collections && collections.length">
+                <h2>{{'collections' | i18n}}</h2>
+                <ul class="fa-ul">
+                    <li *ngFor="let c of collections" [ngClass]="{active: c.id === selectedCollectionId}">
+                        <a href="#" appStopClick appBlurClick (click)="collection(c)">
+                            <i class="fa-li fa fa-caret-right"></i> {{c.name}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </ng-container>
     </div>
 </div>

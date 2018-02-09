@@ -621,5 +621,8 @@
   },
   "account": {
     "message": "Account"
+  },
+  "loading": {
+    "message": "Loading..."
   }
 }

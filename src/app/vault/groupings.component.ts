@@ -4,7 +4,6 @@ import {
     Component,
     EventEmitter,
     Input,
-    OnInit,
     Output,
 } from '@angular/core';
 
@@ -20,7 +19,7 @@ import { FolderService } from 'jslib/abstractions/folder.service';
     selector: 'app-vault-groupings',
     template: template,
 })
-export class GroupingsComponent implements OnInit {
+export class GroupingsComponent {
     @Output() onAllClicked = new EventEmitter();
     @Output() onFavoritesClicked = new EventEmitter();
     @Output() onCipherTypeClicked = new EventEmitter<CipherType>();
@@ -31,6 +30,7 @@ export class GroupingsComponent implements OnInit {
 
     folders: any[];
     collections: any[];
+    loaded: boolean = false;
     cipherType = CipherType;
     selectedAll: boolean = false;
     selectedFavorites: boolean = false;
@@ -39,12 +39,15 @@ export class GroupingsComponent implements OnInit {
     selectedFolderId: string = null;
     selectedCollectionId: string = null;
 
-    constructor(private collectionService: CollectionService, private folderService: FolderService) {
-        // ctor
+    constructor(private collectionService: CollectionService, private folderService: FolderService) { }
+
+    async load() {
+        await this.loadFolders();
+        await this.loadCollections();
+        this.loaded = true;
     }
 
-    async ngOnInit() {
-        await this.loadFolders();
+    async loadCollections() {
         this.collections = await this.collectionService.getAllDecrypted();
     }
 
