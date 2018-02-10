@@ -52,24 +52,14 @@ export class MenuMain {
                             },
                         ],
                     },
-                    { type: 'separator' },
                     {
                         label: this.i18nService.t('addNewFolder'),
                         click: () => self.send('newFolder'),
                     },
                     { type: 'separator' },
                     {
-                        label: this.i18nService.t('settings'),
-                        click: () => self.send('openSettings'),
-                    },
-                    {
                         label: this.i18nService.t('syncVault'),
                         click: () => self.send('syncVault'),
-                    },
-                    {
-                        label: this.i18nService.t('lockNow'),
-                        click: () => self.send('lockVault'),
-                        accelerator: 'CmdOrCtrl+L',
                     },
                 ],
             },
@@ -300,29 +290,49 @@ export class MenuMain {
             },
         ];
 
+        const firstMenuOptions: MenuItemConstructorOptions[] = [
+            { type: 'separator' },
+            {
+                label: this.i18nService.t('settings'),
+                click: () => self.send('openSettings'),
+            },
+            {
+                label: this.i18nService.t('lockNow'),
+                click: () => self.send('lockVault'),
+                accelerator: 'CmdOrCtrl+L',
+            },
+        ];
+
         if (process.platform === 'darwin') {
-            template[0].label = app.getName();
-            template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat([
-                { type: 'separator' },
+            const firstMenuPart: MenuItemConstructorOptions[] = [
                 { role: 'about' },
-                { type: 'separator' },
-                { role: 'services', submenu: [] },
-                { type: 'separator' },
-                { role: 'hide' },
-                { role: 'hideothers' },
-                { role: 'unhide' },
-                { type: 'separator' },
-                { role: 'quit' },
-            ]);
+            ];
+
+            template.unshift({
+                label: 'Bitwarden',
+                submenu: firstMenuPart.concat(firstMenuOptions, [
+                    { type: 'separator' },
+                    { role: 'services', submenu: [] },
+                    { type: 'separator' },
+                    { role: 'hide' },
+                    { role: 'hideothers' },
+                    { role: 'unhide' },
+                    { type: 'separator' },
+                    { role: 'quit' },
+                ]),
+            });
 
             // Window menu
-            template[4].submenu = [
+            template[template.length - 2].submenu = [
                 { role: 'close' },
                 { role: 'minimize' },
                 { role: 'zoom' },
                 { type: 'separator' },
                 { role: 'front' },
             ];
+        } else {
+            template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
+                firstMenuOptions);
         }
 
         const menu = Menu.buildFromTemplate(template);
