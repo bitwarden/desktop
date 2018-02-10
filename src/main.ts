@@ -11,6 +11,7 @@ const watch = args.some((val) => val === '--watch');
 const dev = args.some((val) => val === '--dev');
 
 if (watch) {
+    // tslint:disable-next-line
     require('electron-reload')(__dirname, {});
 }
 
@@ -25,5 +26,6 @@ windowMain.init().then(() => {
 }).then(() => {
     menuMain.init();
 }, (e: any) => {
+    // tslint:disable-next-line
     console.log(e);
 });

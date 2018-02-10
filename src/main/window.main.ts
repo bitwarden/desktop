@@ -17,7 +17,7 @@ export class WindowMain {
                     this.createWindow();
                     resolve();
                 });
-    
+
                 // Quit when all windows are closed.
                 app.on('window-all-closed', () => {
                     // On OS X it is common for applications and their menu bar
@@ -26,7 +26,7 @@ export class WindowMain {
                         app.quit();
                     }
                 });
-    
+
                 app.on('activate', () => {
                     // On OS X it's common to re-create a window in the app when the
                     // dock icon is clicked and there are no other windows open.
@@ -34,7 +34,7 @@ export class WindowMain {
                         this.createWindow();
                     }
                 });
-    
+
             } catch (e) {
                 // Catch Error
                 // throw e;

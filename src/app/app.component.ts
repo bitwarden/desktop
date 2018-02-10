@@ -16,6 +16,7 @@ import {
 import { Router } from '@angular/router';
 
 import { ModalComponent } from './modal.component';
+
 import { SettingsComponent } from './accounts/settings.component';
 
 import { ToasterService } from 'angular2-toaster';
