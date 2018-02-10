@@ -15,7 +15,7 @@
                         <div class="row-main">
                             <span class="row-label" *ngIf="!cipher.login.isWebsite">{{'uri' | i18n}}</span>
                             <span class="row-label" *ngIf="cipher.login.isWebsite">{{'website' | i18n}}</span>
-                            {{cipher.login.domainOrUri}}
+                            <span title="{{cipher.login.uri}}">{{cipher.login.domainOrUri}}</span>
                         </div>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'launch' | i18n}}"
