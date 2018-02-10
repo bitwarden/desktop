@@ -6,6 +6,7 @@ import {
     Component,
     ComponentFactoryResolver,
     NgZone,
+    OnDestroy,
     OnInit,
     ViewChild,
     ViewContainerRef,
@@ -45,7 +46,7 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
     selector: 'app-vault',
     template: template,
 })
-export class VaultComponent implements OnInit {
+export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
     @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
@@ -141,6 +142,10 @@ export class VaultComponent implements OnInit {
         if (!this.syncService.syncInProgress) {
             await this.load();
         }
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe();
     }
 
     async load() {

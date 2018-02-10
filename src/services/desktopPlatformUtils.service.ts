@@ -97,7 +97,7 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
     }
 
     isViewOpen(): boolean {
-        return true;
+        return false;
     }
 
     launchUri(uri: string, options?: any): void {

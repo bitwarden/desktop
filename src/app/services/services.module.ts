@@ -141,6 +141,7 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         { provide: BroadcasterService, useValue: broadcasterService },
         { provide: SettingsServiceAbstraction, useValue: settingsService },
         { provide: LockServiceAbstraction, useValue: lockService },
+        { provide: StorageServiceAbstraction, useValue: storageService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

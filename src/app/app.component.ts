@@ -25,9 +25,12 @@ import { LockService } from 'jslib/abstractions/lock.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
+
+import { ConstantsService } from 'jslib/services/constants.service';
 
 @Component({
     selector: 'app-root',
@@ -44,17 +47,27 @@ export class AppComponent implements OnInit {
         limit: 5,
     });
 
+    private lastActivity: number = null;
+
     constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
         private broadcasterService: BroadcasterService, private userService: UserService,
-        private tokenService: TokenService, private folderService: FolderService, private cryptoService: CryptoService,
+        private tokenService: TokenService, private folderService: FolderService,
         private settingsService: SettingsService, private syncService: SyncService,
         private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
         private authService: AuthService, private router: Router, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService,
         private platformUtilsService: PlatformUtilsService, private ngZone: NgZone,
-        private lockService: LockService) { }
+        private lockService: LockService, private storageService: StorageService,
+        private cryptoService: CryptoService) { }
 
     ngOnInit() {
+        window.onmousemove = () => this.recordActivity();
+        window.onmousedown = () => this.recordActivity();
+        window.ontouchstart = () => this.recordActivity();
+        window.onclick = () => this.recordActivity();
+        window.onscroll = () => this.recordActivity();
+        window.onkeypress = () => this.recordActivity();
+
         this.broadcasterService.subscribe((message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
@@ -103,5 +116,15 @@ export class AppComponent implements OnInit {
             }
             this.router.navigate(['login']);
         });
+    }
+
+    private async recordActivity() {
+        const now = (new Date()).getTime();
+        if (this.lastActivity != null && now - this.lastActivity < 250) {
+            return;
+        }
+
+        this.lastActivity = now;
+        this.storageService.save(ConstantsService.lastActiveKey, now);
     }
 }
