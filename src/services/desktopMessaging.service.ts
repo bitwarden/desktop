@@ -16,6 +16,6 @@ export class DesktopMessagingService implements MessagingService {
     send(subscriber: string, arg: any = {}) {
         const message = Object.assign({}, { command: subscriber }, arg);
         ipcRenderer.send('messagingService', message);
-        this.broadcasterService.emit(message);
+        this.broadcasterService.send(message);
     }
 }

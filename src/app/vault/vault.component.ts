@@ -41,6 +41,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
+const BroadcasterSubscriptionId = 'VaultComponent';
 
 @Component({
     selector: 'app-vault',
@@ -72,7 +73,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async ngOnInit() {
-        this.broadcasterService.subscribe((message: any) => {
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;
 
@@ -145,7 +146,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.broadcasterService.unsubscribe();
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     async load() {

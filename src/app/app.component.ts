@@ -8,6 +8,7 @@ import {
     Component,
     ComponentFactoryResolver,
     NgZone,
+    OnDestroy,
     OnInit,
     ViewChild,
     ViewContainerRef,
@@ -37,6 +38,8 @@ import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
+
+const BroadcasterSubscriptionId = 'AppComponent';
 
 @Component({
     selector: 'app-root',
@@ -78,7 +81,7 @@ export class AppComponent implements OnInit {
         window.onscroll = () => this.recordActivity();
         window.onkeypress = () => this.recordActivity();
 
-        this.broadcasterService.subscribe((message: any) => {
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'loggedIn':
@@ -105,6 +108,10 @@ export class AppComponent implements OnInit {
                 }
             });
         });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     private async logOut(expired: boolean) {
