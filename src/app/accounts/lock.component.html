@@ -1,0 +1,23 @@
+<form id="lock-page" (ngSubmit)="submit()">
+    <div class="content">
+        <p><i class="fa fa-lock fa-4x"></i></p>
+        <p>{{'yourVaultIsLocked' | i18n}}</p>
+        <div class="box last">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                    <input id="masterPassword" type="password" name="MasterPassword" [(ngModel)]="masterPassword"
+                           required appAutofocus>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn primary block" appBlurClick>
+                <i class="fa fa-unlock-alt"></i> {{'unlock' | i18n}}
+            </button>
+            <button type="button" class="btn block" appBlurClick (click)="logOut()">
+                {{'logOut' | i18n}}
+            </button>
+        </div>
+    </div>
+</form>

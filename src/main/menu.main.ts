@@ -83,9 +83,9 @@ export class MenuMain {
                         }
                     },
                     {
-                        label: this.i18nService.t('lock'),
+                        label: this.i18nService.t('lockVault'),
                         click() {
-                            self.send('lockApp');
+                            self.send('lockVault');
                         },
                         accelerator: 'CmdOrCtrl+L'
                     },

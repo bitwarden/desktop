@@ -21,6 +21,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { LockService } from 'jslib/abstractions/lock.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
@@ -50,7 +51,8 @@ export class AppComponent implements OnInit {
         private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
         private authService: AuthService, private router: Router, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService,
-        private platformUtilsService: PlatformUtilsService, private ngZone: NgZone) { }
+        private platformUtilsService: PlatformUtilsService, private ngZone: NgZone,
+        private lockService: LockService) { }
 
     ngOnInit() {
         this.broadcasterService.subscribe((message: any) => {
@@ -59,9 +61,13 @@ export class AppComponent implements OnInit {
                     case 'loggedIn':
                         break;
                     case 'logout':
-                        this.logOut(message.expired);
+                        this.logOut(!!message.expired);
+                        break;
+                    case 'lockVault':
+                        await this.lockService.lock();
                         break;
                     case 'locked':
+                        this.router.navigate(['lock']);
                         break;
                     case 'unlocked':
                         break;

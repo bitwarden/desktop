@@ -625,8 +625,8 @@
   "loading": {
     "message": "Loading..."
   },
-  "lock": {
-    "message": "Lock"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Password Generator"
@@ -678,5 +678,14 @@
   },
   "syncingFailed": {
     "message": "Syncing failed"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "invalidMasterPassword": {
+    "message": "Invalid master password"
   }
 }

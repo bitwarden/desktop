@@ -17,6 +17,7 @@ import { ModalComponent } from './modal.component';
 
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
+import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
@@ -72,6 +73,7 @@ import { ViewComponent } from './vault/view.component';
         HintComponent,
         I18nPipe,
         IconComponent,
+        LockComponent,
         LoginComponent,
         ModalComponent,
         PasswordGeneratorComponent,

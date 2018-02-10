@@ -1,6 +1,6 @@
 ﻿@import "variables.scss";
 
-#login-page {
+#login-page, #lock-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,15 +37,15 @@
         display: block;
         border-radius: $border-radius;
     }
-
-    p {
-        text-align: center
-    }
 }
 
-#login-page, #register-page, #hint-page, #two-factor-page {
+#login-page, #register-page, #hint-page, #two-factor-page, #lock-page {
     .content {
-        max-width: 300px;
+        width: 300px;
+
+        p {
+            text-align: center
+        }
 
         p.lead, h1 {
             font-size: $font-size-large;

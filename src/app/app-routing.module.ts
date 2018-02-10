@@ -7,6 +7,7 @@ import {
 import { AuthGuardService } from './services/auth-guard.service';
 
 import { HintComponent } from './accounts/hint.component';
+import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
@@ -14,6 +15,7 @@ import { VaultComponent } from './vault/vault.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/vault', pathMatch: 'full' },
+    { path: 'lock', component: LockComponent },
     { path: 'login', component: LoginComponent },
     { path: '2fa', component: TwoFactorComponent },
     { path: 'register', component: RegisterComponent },

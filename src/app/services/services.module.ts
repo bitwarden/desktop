@@ -87,8 +87,7 @@ const folderService = new FolderService(cryptoService, userService,
     () => i18nService.t('noneFolder'), apiService, storageService, i18nService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 const lockService = new LockService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService,
-    () => { /* set icon */ }, () => { /* refresh badge and menu */ });
+    cryptoService, platformUtilsService, storageService, messagingService);
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService,
     storageService, messagingService, (expired: boolean) => { /* log out */ });
@@ -141,6 +140,7 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         { provide: MessagingServiceAbstraction, useValue: messagingService },
         { provide: BroadcasterService, useValue: broadcasterService },
         { provide: SettingsServiceAbstraction, useValue: settingsService },
+        { provide: LockServiceAbstraction, useValue: lockService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
