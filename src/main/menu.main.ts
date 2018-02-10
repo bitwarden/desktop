@@ -83,7 +83,7 @@ export class MenuMain {
                         }
                     },
                     {
-                        label: this.i18nService.t('lockVault'),
+                        label: this.i18nService.t('lockNow'),
                         click() {
                             self.send('lockVault');
                         },
