@@ -329,7 +329,7 @@ export class MenuMain {
 
         if (process.platform === 'darwin') {
             template[0].label = app.getName();
-            (template[0].submenu as MenuItemConstructorOptions[]).concat([
+            template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat([
                 { type: 'separator' },
                 { role: 'about' },
                 { type: 'separator' },

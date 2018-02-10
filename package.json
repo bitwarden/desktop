@@ -8,7 +8,7 @@
     "build:main": "webpack --config webpack.main.js",
     "build:renderer": "webpack --config webpack.renderer.js",
     "build:renderer:watch": "webpack --config webpack.renderer.js --watch",
-    "electron": "(npm run build:main | npm run build:renderer) & (electron ./build --dev --watch | npm run build:renderer:watch)"
+    "electron": "(npm run build:main | npm run build:renderer) && (electron ./build --dev --watch | npm run build:renderer:watch)"
   },
   "devDependencies": {
     "@bitwarden/jslib": "git+https://github.com/bitwarden/jslib.git",

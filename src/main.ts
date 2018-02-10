@@ -19,10 +19,10 @@ const windowMain = new WindowMain(dev);
 const messagingMain = new MessagingMain(windowMain);
 const menuMain = new MenuMain(windowMain, i18nService);
 
-windowMain.init();
-messagingMain.init();
-
-i18nService.init().then(() => {
+windowMain.init().then(() => {
+    messagingMain.init();
+    return i18nService.init();
+}).then(() => {
     menuMain.init();
 }, (e: any) => {
     console.log(e);
