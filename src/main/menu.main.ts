@@ -24,9 +24,7 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.i18nService.t('addNewLogin'),
-                        click: () => {
-                            self.send('newLogin');
-                        },
+                        click: () => self.send('newLogin'),
                         accelerator: 'CmdOrCtrl+N',
                     },
                     {
@@ -34,30 +32,22 @@ export class MenuMain {
                         submenu: [
                             {
                                 label: this.i18nService.t('typeLogin'),
-                                click: () => {
-                                    self.send('newLogin');
-                                },
+                                click: () => self.send('newLogin'),
                                 accelerator: 'Alt+L',
                             },
                             {
                                 label: this.i18nService.t('typeCard'),
-                                click: () => {
-                                    self.send('newCard');
-                                },
+                                click: () => self.send('newCard'),
                                 accelerator: 'Alt+C',
                             },
                             {
                                 label: this.i18nService.t('typeIdentity'),
-                                click: () => {
-                                    self.send('newIdentity');
-                                },
+                                click: () => self.send('newIdentity'),
                                 accelerator: 'Alt+I',
                             },
                             {
                                 label: this.i18nService.t('typeSecureNote'),
-                                click: () => {
-                                    self.send('newSecureNote');
-                                },
+                                click: () => self.send('newSecureNote'),
                                 accelerator: 'Alt+S',
                             },
                         ],
@@ -65,28 +55,20 @@ export class MenuMain {
                     { type: 'separator' },
                     {
                         label: this.i18nService.t('addNewFolder'),
-                        click: () => {
-                            self.send('newFolder');
-                        },
+                        click: () => self.send('newFolder'),
                     },
                     { type: 'separator' },
                     {
                         label: this.i18nService.t('settings'),
-                        click: () => {
-                            self.send('openSettings');
-                        },
+                        click: () => self.send('openSettings'),
                     },
                     {
                         label: this.i18nService.t('syncVault'),
-                        click: () => {
-                            self.send('syncVault');
-                        },
+                        click: () => self.send('syncVault'),
                     },
                     {
                         label: this.i18nService.t('lockNow'),
-                        click: () => {
-                            self.send('lockVault');
-                        },
+                        click: () => self.send('lockVault'),
                         accelerator: 'CmdOrCtrl+L',
                     },
                 ],
@@ -108,16 +90,12 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.i18nService.t('passwordGenerator'),
-                        click: () => {
-                            self.send('openPasswordGenerator');
-                        },
+                        click: () => self.send('openPasswordGenerator'),
                         accelerator: 'CmdOrCtrl+G',
                     },
                     {
                         label: this.i18nService.t('searchVault'),
-                        click: () => {
-                            self.send('focusSearch');
-                        },
+                        click: () => self.send('focusSearch'),
                         accelerator: 'CmdOrCtrl+F',
                     },
                     { type: 'separator' },
@@ -137,9 +115,7 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.i18nService.t('premiumMembership'),
-                        click: () => {
-                            self.send('premiumMembership');
-                        },
+                        click: () => self.send('premiumMembership'),
                     },
                     {
                         label: this.i18nService.t('changeMasterPass'),
@@ -163,6 +139,22 @@ export class MenuMain {
                             const result = dialog.showMessageBox(self.windowMain.win, {
                                 title: self.i18nService.t('changeEmail'),
                                 message: self.i18nService.t('changeEmailConfirmation'),
+                                buttons: [self.i18nService.t('yes'), self.i18nService.t('no')],
+                                cancelId: 1,
+                                defaultId: 0,
+                                noLink: true,
+                            });
+                            if (result === 0) {
+                                shell.openExternal('https://vault.bitwarden.com');
+                            }
+                        },
+                    },
+                    {
+                        label: this.i18nService.t('twoStepLogin'),
+                        click: () => {
+                            const result = dialog.showMessageBox(self.windowMain.win, {
+                                title: self.i18nService.t('twoStepLogin'),
+                                message: self.i18nService.t('twoStepLoginConfirmation'),
                                 buttons: [self.i18nService.t('yes'), self.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
@@ -204,21 +196,15 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.i18nService.t('emailUs'),
-                        click: () => {
-                            shell.openExternal('mailTo:hello@bitwarden.com');
-                        },
+                        click: () => shell.openExternal('mailTo:hello@bitwarden.com'),
                     },
                     {
                         label: this.i18nService.t('visitOurWebsite'),
-                        click: () => {
-                            shell.openExternal('https://bitwarden.com/contact');
-                        },
+                        click: () => shell.openExternal('https://bitwarden.com/contact'),
                     },
                     {
                         label: this.i18nService.t('fileBugReport'),
-                        click: () => {
-                            shell.openExternal('https://github.com/bitwarden/desktop');
-                        },
+                        click: () => shell.openExternal('https://github.com/bitwarden/desktop'),
                     },
                     { type: 'separator' },
                     {
@@ -226,42 +212,30 @@ export class MenuMain {
                         submenu: [
                             {
                                 label: this.i18nService.t('blog'),
-                                click: () => {
-                                    shell.openExternal('https://blog.bitwarden.com');
-                                },
+                                click: () => shell.openExternal('https://blog.bitwarden.com'),
                             },
                             {
                                 label: 'Twitter',
-                                click: () => {
-                                    shell.openExternal('https://twitter.com/bitwarden_app');
-                                },
+                                click: () => shell.openExternal('https://twitter.com/bitwarden_app'),
                             },
                             {
                                 label: 'Facebook',
-                                click: () => {
-                                    shell.openExternal('https://www.facebook.com/bitwarden/');
-                                },
+                                click: () => shell.openExternal('https://www.facebook.com/bitwarden/'),
                             },
                             {
                                 label: 'Google+',
-                                click: () => {
-                                    shell.openExternal('https://plus.google.com/114869903467947368993');
-                                },
+                                click: () => shell.openExternal('https://plus.google.com/114869903467947368993'),
                             },
                             {
                                 label: 'GitHub',
-                                click: () => {
-                                    shell.openExternal('https://github.com/bitwarden');
-                                },
+                                click: () => shell.openExternal('https://github.com/bitwarden'),
                             },
                         ],
                     },
                     { type: 'separator' },
                     {
                         label: this.i18nService.t('goToWebVault'),
-                        click: () => {
-                            shell.openExternal('https://vault.bitwarden.com');
-                        },
+                        click: () => shell.openExternal('https://vault.bitwarden.com'),
                     },
                     {
                         label: this.i18nService.t('getMobileApp'),
