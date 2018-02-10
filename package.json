@@ -1,7 +1,9 @@
 {
   "name": "bitwarden",
-  "version": "0.0.0",
-  "main": "main.js",
+  "productName": "bitwarden",
+  "description": "A secure and free password manager for all of your devices.",
+  "version": "0.0.1",
+  "main": "src/main.js",
   "scripts": {
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
