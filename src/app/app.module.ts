@@ -20,6 +20,7 @@ import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
+import { SettingsComponent } from './accounts/settings.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
@@ -79,6 +80,7 @@ import { ViewComponent } from './vault/view.component';
         PasswordGeneratorComponent,
         RegisterComponent,
         SearchCiphersPipe,
+        SettingsComponent,
         StopClickDirective,
         StopPropDirective,
         TwoFactorComponent,
@@ -92,6 +94,7 @@ import { ViewComponent } from './vault/view.component';
         FolderAddEditComponent,
         ModalComponent,
         PasswordGeneratorComponent,
+        SettingsComponent,
         TwoFactorOptionsComponent,
     ],
     providers: [],

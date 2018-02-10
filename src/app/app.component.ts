@@ -6,10 +6,16 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import {
     Component,
+    ComponentFactoryResolver,
     NgZone,
     OnInit,
+    ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { ModalComponent } from './modal.component';
+import { SettingsComponent } from './accounts/settings.component';
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
@@ -37,9 +43,12 @@ import { ConstantsService } from 'jslib/services/constants.service';
     styles: [],
     template: `
         <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
+        <ng-template #settings></ng-template>
         <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
+    @ViewChild('settings', { read: ViewContainerRef }) settingsRef: ViewContainerRef;
+
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
         mouseoverTimerStop: true,
@@ -48,6 +57,7 @@ export class AppComponent implements OnInit {
     });
 
     private lastActivity: number = null;
+    private modal: ModalComponent = null;
 
     constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
         private broadcasterService: BroadcasterService, private userService: UserService,
@@ -58,7 +68,7 @@ export class AppComponent implements OnInit {
         private toasterService: ToasterService, private i18nService: I18nService,
         private platformUtilsService: PlatformUtilsService, private ngZone: NgZone,
         private lockService: LockService, private storageService: StorageService,
-        private cryptoService: CryptoService) { }
+        private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver) { }
 
     ngOnInit() {
         window.onmousemove = () => this.recordActivity();
@@ -87,6 +97,9 @@ export class AppComponent implements OnInit {
                     case 'syncStarted':
                         break;
                     case 'syncCompleted':
+                        break;
+                    case 'openSettings':
+                        this.openSettings();
                         break;
                     default:
                 }
@@ -126,5 +139,19 @@ export class AppComponent implements OnInit {
 
         this.lastActivity = now;
         this.storageService.save(ConstantsService.lastActiveKey, now);
+    }
+
+    private openSettings() {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.settingsRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<SettingsComponent>(SettingsComponent, this.settingsRef);
+
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
+        });
     }
 }
