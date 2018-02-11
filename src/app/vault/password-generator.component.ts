@@ -25,12 +25,14 @@ export class PasswordGeneratorComponent implements OnInit {
     options: any = {};
     password: string = '-';
     showOptions = false;
+    avoidAmbiguous = false;
 
     constructor(private passwordGenerationService: PasswordGenerationService, private analytics: Angulartics2,
         private utilsService: UtilsService) { }
 
     async ngOnInit() {
         this.options = await this.passwordGenerationService.getOptions();
+        this.avoidAmbiguous = !this.options.ambiguous;
         this.password = this.passwordGenerationService.generatePassword(this.options);
         this.analytics.eventTrack.next({ action: 'Generated Password' });
         await this.passwordGenerationService.addHistory(this.password);
@@ -86,6 +88,7 @@ export class PasswordGeneratorComponent implements OnInit {
     private normalizeOptions() {
         this.options.minLowercase = 0;
         this.options.minUppercase = 0;
+        this.options.ambiguous = !this.avoidAmbiguous;
 
         if (!this.options.uppercase && !this.options.lowercase && !this.options.number && !this.options.special) {
             this.options.lowercase = true;
