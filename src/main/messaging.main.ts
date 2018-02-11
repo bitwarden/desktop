@@ -3,7 +3,7 @@ import { getPassword, setPassword, deletePassword } from 'keytar';
 
 import { WindowMain } from './window.main';
 
-const KeytarService = 'bitwarden';
+const KeytarService = 'Bitwarden';
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
 export class MessagingMain {
