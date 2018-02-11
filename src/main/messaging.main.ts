@@ -1,5 +1,13 @@
-import { app, ipcMain } from 'electron';
-import { getPassword, setPassword, deletePassword } from 'keytar';
+import {
+    app,
+    ipcMain,
+} from 'electron';
+
+import {
+    deletePassword,
+    getPassword,
+    setPassword,
+} from 'keytar';
 
 import { WindowMain } from './window.main';
 
@@ -29,8 +37,7 @@ export class MessagingMain {
                 }
 
                 event.returnValue = val;
-            }
-            catch {
+            } catch {
                 event.returnValue = null;
             }
         });
