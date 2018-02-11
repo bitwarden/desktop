@@ -7,8 +7,8 @@ import {
 
 import { ToasterModule } from 'angular2-toaster';
 
-import { DesktopMessagingService } from '../../services/desktopMessaging.service';
 import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
+import { DesktopRendererMessagingService } from '../../services/desktopRendererMessaging.service';
 import { DesktopSecureStorageService } from '../../services/desktopSecureStorage.service';
 import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { I18nService } from '../../services/i18n.service';
@@ -69,7 +69,7 @@ const i18nService = new I18nService(window.navigator.language, './locales');
 const utilsService = new UtilsService();
 const platformUtilsService = new DesktopPlatformUtilsService(i18nService);
 const broadcasterService = new BroadcasterService();
-const messagingService = new DesktopMessagingService(broadcasterService);
+const messagingService = new DesktopRendererMessagingService(broadcasterService);
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
 const secureStorageService: StorageServiceAbstraction = new DesktopSecureStorageService();
 const constantsService = new ConstantsService({}, 0);

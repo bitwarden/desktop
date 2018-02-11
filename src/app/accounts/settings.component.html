@@ -1,13 +1,46 @@
 <div class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-body form">
                 <div class="box">
                     <div class="box-header">
-                        {{'settings' | i18n}}
+                        {{'security' | i18n}}
                     </div>
-                    <div class="box-content">
-                        Something.
+                    <div class="box-content box-content-padded">
+                        <div class="form-group">
+                            <label for="lockOption">{{'lockOptions' | i18n}}</label>
+                            <select id="lockOption" name="LockOption" [(ngModel)]="lockOption" (change)="save()">
+                                <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
+                            </select>
+                            <small class="help-block">{{'lockOptionsDesc' | i18n}}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-header">
+                        {{'options' | i18n}}
+                    </div>
+                    <div class="box-content box-content-padded">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="disableGa">
+                                    <input id="disableGa" type="checkbox" name="DisableAnalytics"
+                                           [(ngModel)]="disableGa" (change)="save()">
+                                    {{'disableGa' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'gaDesc' | i18n}}</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="disableFavicon">
+                                    <input id="disableFavicon" type="checkbox" name="DisableFavicon"
+                                           [(ngModel)]="disableFavicons" (change)="save()">
+                                    {{'disableFavicon' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'disableFaviconDesc' | i18n}}</small>
+                        </div>
                     </div>
                 </div>
             </div>

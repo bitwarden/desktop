@@ -1,5 +1,9 @@
 ﻿@import "variables.scss";
 
+small {
+    font-size: $font-size-small;
+}
+
 .text-primary {
     color: $brand-primary !important;
 }
@@ -116,12 +120,45 @@
     }
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
+form, .form {
+    .form-group {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 2px;
+        }
+
+        input, select, textarea {
+            border: 1px solid darken($border-color-dark, 7%);
+            border-radius: $border-radius;
+            display: block;
+        }
     }
 
-    to {
-        transform: rotate(360deg);
+    .checkbox {
+        position: relative;
+        display: block;
+        padding-left: 18px;
+
+        label {
+            margin-bottom: 0;
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            margin-top: 4px;
+            margin-left: -18px;
+        }
+    }
+
+    .help-block {
+        margin-top: 3px;
+        color: $text-muted;
+        display: block;
     }
 }

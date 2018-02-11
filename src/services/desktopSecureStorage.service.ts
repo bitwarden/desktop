@@ -7,7 +7,7 @@ export class DesktopSecureStorageService implements StorageService {
             action: 'getPassword',
             key: key,
         });
-        return Promise.resolve(val ? JSON.parse(val) as T : null);
+        return Promise.resolve(val != null ? JSON.parse(val) as T : null);
     }
 
     async save(key: string, obj: any): Promise<any> {

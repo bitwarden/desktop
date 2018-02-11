@@ -693,5 +693,62 @@
   },
   "twoStepLogin": {
     "message": "Two-step Login"
+  },
+  "lockOptions": {
+    "message": "Lock Options"
+  },
+  "lockOptionsDesc": {
+    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+  },
+  "immediately": {
+    "message": "Immediately"
+  },
+  "oneMinute": {
+    "message": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "30 minutes"
+  },
+  "oneHour": {
+    "message": "1 hour"
+  },
+  "fourHours": {
+    "message": "4 hours"
+  },
+  "onIdle": {
+    "message": "On System Idle"
+  },
+  "onSleep": {
+    "message": "On System Sleep"
+  },
+  "onLocked": {
+    "message": "On System Lock"
+  },
+  "onRestart": {
+    "message": "On Restart"
+  },
+  "never": {
+    "message": "Never"
+  },
+  "security": {
+    "message": "Security"
+  },
+  "disableGa": {
+    "message": "Disable Analytics"
+  },
+  "gaDesc": {
+    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableFavicon": {
+    "message": "Disable Website Icons"
+  },
+  "disableFaviconDesc": {
+    "message": "Website Icons provide a recognizable image next to each login item in your vault."
   }
 }

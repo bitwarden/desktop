@@ -13,22 +13,7 @@ export class MessagingMain {
 
     init() {
         this.scheduleNextSync();
-
-        ipcMain.on('messagingService', async (event: any, message: any) => {
-            switch (message.command) {
-                case 'loggedIn':
-                    break;
-                case 'logout':
-                    break;
-                case 'syncCompleted':
-                    break;
-                case 'scheduleNextSync':
-                    this.scheduleNextSync();
-                    break;
-                default:
-                    break;
-            }
-        });
+        ipcMain.on('messagingService', async (event: any, message: any) => this.onMessage(message));
 
         /*
         ipcMain.on('keytar', async (event: any, message: any) => {
@@ -51,6 +36,22 @@ export class MessagingMain {
             }
         });
         */
+    }
+
+    onMessage(message: any) {
+        switch (message.command) {
+            case 'loggedIn':
+                break;
+            case 'logout':
+                break;
+            case 'syncCompleted':
+                break;
+            case 'scheduleNextSync':
+                this.scheduleNextSync();
+                break;
+            default:
+                break;
+        }
     }
 
     private scheduleNextSync() {

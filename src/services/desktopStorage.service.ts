@@ -7,7 +7,7 @@ const store = new Store();
 export class DesktopStorageService implements StorageService {
     get<T>(key: string): Promise<T> {
         const val = store.get(key) as T;
-        return Promise.resolve(val ? val : null);
+        return Promise.resolve(val != null ? val : null);
     }
 
     save(key: string, obj: any): Promise<any> {

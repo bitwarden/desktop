@@ -10,21 +10,21 @@ import {
 
 import { WindowMain } from './window.main';
 
-import { I18nService } from '../services/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 
 export class MenuMain {
-    constructor(private windowMain: WindowMain, private i18nService: I18nService) { }
+    constructor(private windowMain: WindowMain, private i18nService: I18nService,
+        private messagingService: MessagingService) { }
 
     init() {
-        const self = this;
-
         const template: MenuItemConstructorOptions[] = [
             {
                 label: this.i18nService.t('file'),
                 submenu: [
                     {
                         label: this.i18nService.t('addNewLogin'),
-                        click: () => self.send('newLogin'),
+                        click: () => this.messagingService.send('newLogin'),
                         accelerator: 'CmdOrCtrl+N',
                     },
                     {
@@ -32,34 +32,34 @@ export class MenuMain {
                         submenu: [
                             {
                                 label: this.i18nService.t('typeLogin'),
-                                click: () => self.send('newLogin'),
+                                click: () => this.messagingService.send('newLogin'),
                                 accelerator: 'Alt+L',
                             },
                             {
                                 label: this.i18nService.t('typeCard'),
-                                click: () => self.send('newCard'),
+                                click: () => this.messagingService.send('newCard'),
                                 accelerator: 'Alt+C',
                             },
                             {
                                 label: this.i18nService.t('typeIdentity'),
-                                click: () => self.send('newIdentity'),
+                                click: () => this.messagingService.send('newIdentity'),
                                 accelerator: 'Alt+I',
                             },
                             {
                                 label: this.i18nService.t('typeSecureNote'),
-                                click: () => self.send('newSecureNote'),
+                                click: () => this.messagingService.send('newSecureNote'),
                                 accelerator: 'Alt+S',
                             },
                         ],
                     },
                     {
                         label: this.i18nService.t('addNewFolder'),
-                        click: () => self.send('newFolder'),
+                        click: () => this.messagingService.send('newFolder'),
                     },
                     { type: 'separator' },
                     {
                         label: this.i18nService.t('syncVault'),
-                        click: () => self.send('syncVault'),
+                        click: () => this.messagingService.send('syncVault'),
                     },
                 ],
             },
@@ -80,12 +80,12 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.i18nService.t('passwordGenerator'),
-                        click: () => self.send('openPasswordGenerator'),
+                        click: () => this.messagingService.send('openPasswordGenerator'),
                         accelerator: 'CmdOrCtrl+G',
                     },
                     {
                         label: this.i18nService.t('searchVault'),
-                        click: () => self.send('focusSearch'),
+                        click: () => this.messagingService.send('focusSearch'),
                         accelerator: 'CmdOrCtrl+F',
                     },
                     { type: 'separator' },
@@ -105,15 +105,15 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.i18nService.t('premiumMembership'),
-                        click: () => self.send('premiumMembership'),
+                        click: () => this.messagingService.send('premiumMembership'),
                     },
                     {
                         label: this.i18nService.t('changeMasterPass'),
                         click: () => {
-                            const result = dialog.showMessageBox(self.windowMain.win, {
-                                title: self.i18nService.t('changeMasterPass'),
-                                message: self.i18nService.t('changeMasterPasswordConfirmation'),
-                                buttons: [self.i18nService.t('yes'), self.i18nService.t('no')],
+                            const result = dialog.showMessageBox(this.windowMain.win, {
+                                title: this.i18nService.t('changeMasterPass'),
+                                message: this.i18nService.t('changeMasterPasswordConfirmation'),
+                                buttons: [this.i18nService.t('yes'), this.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
@@ -126,10 +126,10 @@ export class MenuMain {
                     {
                         label: this.i18nService.t('changeEmail'),
                         click: () => {
-                            const result = dialog.showMessageBox(self.windowMain.win, {
-                                title: self.i18nService.t('changeEmail'),
-                                message: self.i18nService.t('changeEmailConfirmation'),
-                                buttons: [self.i18nService.t('yes'), self.i18nService.t('no')],
+                            const result = dialog.showMessageBox(this.windowMain.win, {
+                                title: this.i18nService.t('changeEmail'),
+                                message: this.i18nService.t('changeEmailConfirmation'),
+                                buttons: [this.i18nService.t('yes'), this.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
@@ -142,10 +142,10 @@ export class MenuMain {
                     {
                         label: this.i18nService.t('twoStepLogin'),
                         click: () => {
-                            const result = dialog.showMessageBox(self.windowMain.win, {
-                                title: self.i18nService.t('twoStepLogin'),
-                                message: self.i18nService.t('twoStepLoginConfirmation'),
-                                buttons: [self.i18nService.t('yes'), self.i18nService.t('no')],
+                            const result = dialog.showMessageBox(this.windowMain.win, {
+                                title: this.i18nService.t('twoStepLogin'),
+                                message: this.i18nService.t('twoStepLoginConfirmation'),
+                                buttons: [this.i18nService.t('yes'), this.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
@@ -159,16 +159,16 @@ export class MenuMain {
                     {
                         label: this.i18nService.t('logOut'),
                         click: () => {
-                            const result = dialog.showMessageBox(self.windowMain.win, {
-                                title: self.i18nService.t('logOut'),
-                                message: self.i18nService.t('logOutConfirmation'),
-                                buttons: [self.i18nService.t('logOut'), self.i18nService.t('cancel')],
+                            const result = dialog.showMessageBox(this.windowMain.win, {
+                                title: this.i18nService.t('logOut'),
+                                message: this.i18nService.t('logOutConfirmation'),
+                                buttons: [this.i18nService.t('logOut'), this.i18nService.t('cancel')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
                             });
                             if (result === 0) {
-                                self.send('logout');
+                                this.messagingService.send('logout');
                             }
                         },
                     },
@@ -294,11 +294,11 @@ export class MenuMain {
             { type: 'separator' },
             {
                 label: this.i18nService.t('settings'),
-                click: () => self.send('openSettings'),
+                click: () => this.messagingService.send('openSettings'),
             },
             {
                 label: this.i18nService.t('lockNow'),
-                click: () => self.send('lockVault'),
+                click: () => this.messagingService.send('lockVault'),
                 accelerator: 'CmdOrCtrl+L',
             },
         ];
@@ -337,12 +337,5 @@ export class MenuMain {
 
         const menu = Menu.buildFromTemplate(template);
         Menu.setApplicationMenu(menu);
-    }
-
-    send(command: string, message?: any) {
-        this.windowMain.win.webContents.send('messagingService', {
-            command: command,
-            message: message,
-        });
     }
 }
