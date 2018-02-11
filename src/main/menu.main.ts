@@ -10,8 +10,8 @@ import {
 
 import { WindowMain } from './window.main';
 
-import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 
 export class MenuMain {
     constructor(private windowMain: WindowMain, private i18nService: I18nService,
