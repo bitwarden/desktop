@@ -1,7 +1,7 @@
 import { ipcRenderer } from 'electron';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
-export class DesktopSecureStorageService implements StorageService {
+export class DesktopRendererSecureStorageService implements StorageService {
     async get<T>(key: string): Promise<T> {
         const val = ipcRenderer.sendSync('keytar', {
             action: 'getPassword',

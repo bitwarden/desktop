@@ -1,5 +1,5 @@
 import { app, ipcMain } from 'electron';
-// import { getPassword, setPassword, deletePassword } from 'keytar';
+import { getPassword, setPassword, deletePassword } from 'keytar';
 
 import { WindowMain } from './window.main';
 
@@ -15,7 +15,6 @@ export class MessagingMain {
         this.scheduleNextSync();
         ipcMain.on('messagingService', async (event: any, message: any) => this.onMessage(message));
 
-        /*
         ipcMain.on('keytar', async (event: any, message: any) => {
             try {
                 let val: string = null;
@@ -35,7 +34,6 @@ export class MessagingMain {
                 event.returnValue = null;
             }
         });
-        */
     }
 
     onMessage(message: any) {

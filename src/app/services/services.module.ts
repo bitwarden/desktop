@@ -9,7 +9,7 @@ import { ToasterModule } from 'angular2-toaster';
 
 import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
 import { DesktopRendererMessagingService } from '../../services/desktopRendererMessaging.service';
-import { DesktopSecureStorageService } from '../../services/desktopSecureStorage.service';
+import { DesktopRendererSecureStorageService } from '../../services/desktopRendererSecureStorage.service';
 import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { I18nService } from '../../services/i18n.service';
 
@@ -71,9 +71,9 @@ const platformUtilsService = new DesktopPlatformUtilsService(i18nService);
 const broadcasterService = new BroadcasterService();
 const messagingService = new DesktopRendererMessagingService(broadcasterService);
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
-const secureStorageService: StorageServiceAbstraction = new DesktopSecureStorageService();
+const secureStorageService: StorageServiceAbstraction = new DesktopRendererSecureStorageService();
 const constantsService = new ConstantsService({}, 0);
-const cryptoService = new CryptoService(storageService, storageService); // TODO: use secure storage
+const cryptoService = new CryptoService(storageService, secureStorageService);
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
