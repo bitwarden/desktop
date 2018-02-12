@@ -25,8 +25,7 @@
     "build:renderer:watch": "webpack --config webpack.renderer.js --watch",
     "electron": "npm run build:main && (electron ./build --dev --watch | npm run build:renderer:watch)",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "postinstall": "electron-builder install-app-deps"
+    "dist": "electron-builder"
   },
   "build": {
     "appId": "com.bitwarden.desktop",
@@ -36,7 +35,6 @@
       "output": "dist",
       "app": "build"
     },
-    "nodeGypRebuild": true,
     "mac": {
       "category": "public.app-category.productivity"
     },
