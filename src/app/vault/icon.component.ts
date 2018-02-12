@@ -9,6 +9,9 @@ import {
 import { CipherType } from 'jslib/enums/cipherType';
 
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
+import { StateService } from 'jslib/abstractions/state.service';
+
+import { ConstantsService } from 'jslib/services/constants.service';
 
 @Component({
     selector: 'app-vault-icon',
@@ -23,9 +26,7 @@ export class IconComponent implements OnChanges {
 
     private iconsUrl: string;
 
-    constructor(private environmentService: EnvironmentService) {
-        this.imageEnabled = true; // TODO
-
+    constructor(private environmentService: EnvironmentService, private stateService: StateService) {
         this.iconsUrl = environmentService.iconsUrl;
         if (!this.iconsUrl) {
             if (environmentService.baseUrl) {
@@ -36,7 +37,9 @@ export class IconComponent implements OnChanges {
         }
     }
 
-    ngOnChanges() {
+    async ngOnChanges() {
+        this.imageEnabled = !(await this.stateService.get<boolean>(ConstantsService.disableFaviconKey));
+
         switch (this.cipher.type) {
             case CipherType.Login:
                 this.icon = 'fa-globe';

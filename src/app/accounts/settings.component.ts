@@ -10,7 +10,9 @@ import { Angulartics2 } from 'angulartics2';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
@@ -27,7 +29,8 @@ export class SettingsComponent implements OnInit {
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
-        private storageService: StorageService, private lockService: LockService) {
+        private storageService: StorageService, private lockService: LockService,
+        private stateService: StateService, private messagingService: MessagingService) {
         this.lockOptions = [
             // { name: i18nService.t('immediately'), value: 0 },
             { name: i18nService.t('oneMinute'), value: 1 },
@@ -50,9 +53,29 @@ export class SettingsComponent implements OnInit {
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
     }
 
-    async save() {
+    async saveLockOption() {
         await this.lockService.setLockOption(this.lockOption != null ? this.lockOption : null);
+    }
+
+    async saveGa() {
+        if (this.disableGa) {
+            this.callAnalytics('Analytics', !this.disableGa);
+        }
         await this.storageService.save(ConstantsService.disableGaKey, this.disableGa);
+        if (!this.disableGa) {
+            this.callAnalytics('Analytics', !this.disableGa);
+        }
+    }
+
+    async saveFavicons() {
         await this.storageService.save(ConstantsService.disableFaviconKey, this.disableFavicons);
+        await this.stateService.save(ConstantsService.disableFaviconKey, this.disableFavicons);
+        this.messagingService.send('refreshCiphers');
+        this.callAnalytics('Favicons', !this.disableGa);
+    }
+
+    private callAnalytics(name: string, enabled: boolean) {
+        const status = enabled ? 'Enabled' : 'Disabled';
+        this.analytics.eventTrack.next({ action: `${status} ${name}` });
     }
 }

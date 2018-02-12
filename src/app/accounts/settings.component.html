@@ -9,7 +9,8 @@
                     <div class="box-content box-content-padded">
                         <div class="form-group">
                             <label for="lockOption">{{'lockOptions' | i18n}}</label>
-                            <select id="lockOption" name="LockOption" [(ngModel)]="lockOption" (change)="save()">
+                            <select id="lockOption" name="LockOption" [(ngModel)]="lockOption"
+                                    (change)="saveLockOption()">
                                 <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
                             </select>
                             <small class="help-block">{{'lockOptionsDesc' | i18n}}</small>
@@ -25,7 +26,7 @@
                             <div class="checkbox">
                                 <label for="disableGa">
                                     <input id="disableGa" type="checkbox" name="DisableAnalytics"
-                                           [(ngModel)]="disableGa" (change)="save()">
+                                           [(ngModel)]="disableGa" (change)="saveGa()">
                                     {{'disableGa' | i18n}}
                                 </label>
                             </div>
@@ -33,9 +34,9 @@
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
-                                <label for="disableFavicon">
-                                    <input id="disableFavicon" type="checkbox" name="DisableFavicon"
-                                           [(ngModel)]="disableFavicons" (change)="save()">
+                                <label for="disableFavicons">
+                                    <input id="disableFavicons" type="checkbox" name="DisableFavicons"
+                                           [(ngModel)]="disableFavicons" (change)="saveFavicons()">
                                     {{'disableFavicon' | i18n}}
                                 </label>
                             </div>

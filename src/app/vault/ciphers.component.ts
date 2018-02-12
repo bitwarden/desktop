@@ -26,7 +26,7 @@ export class CiphersComponent {
     searchPlaceholder: string = null;
     private filter: (cipher: CipherView) => boolean = null;
 
-    constructor(private cipherService: CipherService) {}
+    constructor(private cipherService: CipherService) { }
 
     async load(filter: (cipher: CipherView) => boolean = null) {
         this.filter = filter;
@@ -42,6 +42,8 @@ export class CiphersComponent {
     }
 
     async refresh() {
+        this.loaded = false;
+        this.ciphers = [];
         await this.load(this.filter);
     }
 

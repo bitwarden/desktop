@@ -33,6 +33,7 @@ import {
     LockService,
     PasswordGenerationService,
     SettingsService,
+    StateService,
     SyncService,
     TokenService,
     TotpService,
@@ -55,6 +56,7 @@ import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
     PlatformUtilsService as PlatformUtilsServiceAbstraction,
     SettingsService as SettingsServiceAbstraction,
+    StateService as StateServiceAbstraction,
     StorageService as StorageServiceAbstraction,
     SyncService as SyncServiceAbstraction,
     TokenService as TokenServiceAbstraction,
@@ -67,6 +69,7 @@ webFrame.registerURLSchemeAsPrivileged('file');
 
 const i18nService = new I18nService(window.navigator.language, './locales');
 const utilsService = new UtilsService();
+const stateService = new StateService();
 const platformUtilsService = new DesktopPlatformUtilsService(i18nService);
 const broadcasterService = new BroadcasterService();
 const messagingService = new DesktopRendererMessagingService(broadcasterService);
@@ -111,6 +114,8 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtils.getDeviceString());
         htmlEl.classList.add('locale_' + i18n.translationLocale);
+        stateService.save(ConstantsService.disableFaviconKey,
+            await storageService.get<boolean>(ConstantsService.disableFaviconKey));
     };
 }
 
@@ -142,6 +147,7 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         { provide: SettingsServiceAbstraction, useValue: settingsService },
         { provide: LockServiceAbstraction, useValue: lockService },
         { provide: StorageServiceAbstraction, useValue: storageService },
+        { provide: StateServiceAbstraction, useValue: stateService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

@@ -129,6 +129,9 @@ export class VaultComponent implements OnInit, OnDestroy {
                             await this.load();
                         }
                         break;
+                    case 'refreshCiphers':
+                        this.ciphersComponent.refresh();
+                        break;
                     default:
                         detectChanges = false;
                         break;
