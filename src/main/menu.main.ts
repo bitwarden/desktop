@@ -353,9 +353,9 @@ export class MenuMain {
                         label: this.i18nService.t('about'),
                         click: () => {
                             const aboutInformation = this.i18nService.t('version', app.getVersion()) +
-                                '\nShell ' + process.versions['electron'] +
-                                '\nRenderer ' + process.versions['chrome'] +
-                                '\nNode ' + process.versions['node'] +
+                                '\nShell ' + process.versions.electron +
+                                '\nRenderer ' + process.versions.chrome +
+                                '\nNode ' + process.versions.node +
                                 '\nArchitecture ' + process.arch;
                             const result = dialog.showMessageBox(this.windowMain.win, {
                                 title: 'Bitwarden',
@@ -369,7 +369,7 @@ export class MenuMain {
                                 clipboard.writeText(aboutInformation);
                             }
                         },
-                    }
+                    },
                 ]);
         }
 
