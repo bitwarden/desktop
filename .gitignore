@@ -7,3 +7,4 @@ dist/
 *.pem
 build/
 package-lock.json
+yarn-error.log

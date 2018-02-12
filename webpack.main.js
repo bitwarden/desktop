@@ -55,7 +55,7 @@ const main = {
             path.resolve(__dirname, 'build/*')
         ]),
         new CopyWebpackPlugin([
-            './package.json',
+            './src/package.json',
             { from: './src/images', to: 'images' },
             { from: './src/locales', to: 'locales' },
         ]),
