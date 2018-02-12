@@ -1,6 +1,7 @@
 import {
     app,
     BrowserWindow,
+    clipboard,
     dialog,
     ipcMain,
     Menu,
@@ -8,14 +9,15 @@ import {
     shell,
 } from 'electron';
 
+import { UpdaterMain } from './updater.main';
 import { WindowMain } from './window.main';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 
 export class MenuMain {
-    constructor(private windowMain: WindowMain, private i18nService: I18nService,
-        private messagingService: MessagingService) { }
+    constructor(private windowMain: WindowMain, private updaterMain: UpdaterMain,
+        private i18nService: I18nService, private messagingService: MessagingService) { }
 
     init() {
         const template: MenuItemConstructorOptions[] = [
@@ -306,6 +308,10 @@ export class MenuMain {
         if (process.platform === 'darwin') {
             const firstMenuPart: MenuItemConstructorOptions[] = [
                 { role: 'about' },
+                {
+                    label: this.i18nService.t('checkForUpdates'),
+                    click: () => this.updaterMain.checkForUpdate(),
+                },
             ];
 
             template.unshift({
@@ -331,8 +337,40 @@ export class MenuMain {
                 { role: 'front' },
             ];
         } else {
+            // File menu
             template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
                 firstMenuOptions);
+
+            // About menu
+            template[template.length - 1].submenu =
+                (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat([
+                    { type: 'separator' },
+                    {
+                        label: this.i18nService.t('checkForUpdates'),
+                        click: () => this.updaterMain.checkForUpdate(),
+                    },
+                    {
+                        label: this.i18nService.t('about'),
+                        click: () => {
+                            const aboutInformation = this.i18nService.t('version', app.getVersion()) +
+                                '\nShell ' + process.versions['electron'] +
+                                '\nRenderer ' + process.versions['chrome'] +
+                                '\nNode ' + process.versions['node'] +
+                                '\nArchitecture ' + process.arch;
+                            const result = dialog.showMessageBox(this.windowMain.win, {
+                                title: 'Bitwarden',
+                                message: 'Bitwarden',
+                                detail: aboutInformation,
+                                type: 'info',
+                                noLink: true,
+                                buttons: [this.i18nService.t('ok'), this.i18nService.t('copy')],
+                            });
+                            if (result === 1) {
+                                clipboard.writeText(aboutInformation);
+                            }
+                        },
+                    }
+                ]);
         }
 
         const menu = Menu.buildFromTemplate(template);

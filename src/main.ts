@@ -3,6 +3,7 @@ import { BrowserWindow } from 'electron';
 import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
+import { UpdaterMain } from './main/updater.main';
 import { WindowMain } from './main/window.main';
 
 import { DesktopMainMessagingService } from './services/desktopMainMessaging.service';
@@ -25,7 +26,8 @@ const i18nService = new I18nService('en', './locales/');
 const storageService = new DesktopStorageService();
 const messagingService = new DesktopMainMessagingService(windowMain, messagingMain);
 
-const menuMain = new MenuMain(windowMain, i18nService, messagingService);
+const updaterMain = new UpdaterMain();
+const menuMain = new MenuMain(windowMain, updaterMain, i18nService, messagingService);
 const powerMonitorMain = new PowerMonitorMain(storageService, messagingService);
 
 windowMain.init().then(() => {
@@ -34,6 +36,7 @@ windowMain.init().then(() => {
 }).then(() => {
     menuMain.init();
     powerMonitorMain.init();
+    updaterMain.init();
 }, (e: any) => {
     // tslint:disable-next-line
     console.log(e);

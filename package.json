@@ -113,10 +113,11 @@
     "@angular/upgrade": "5.2.0",
     "angular2-toaster": "4.0.2",
     "angulartics2": "5.0.1",
-    "core-js": "^2.4.1",
+    "core-js": "2.4.1",
     "desktop-idle": "1.1.1",
-    "keytar": "^4.1.0",
-    "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "electron-updater": "2.20.1",
+    "keytar": "4.1.0",
+    "rxjs": "5.5.6",
+    "zone.js": "0.8.19"
   }
 }

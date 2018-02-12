@@ -750,5 +750,24 @@
   },
   "disableFaviconDesc": {
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  },
+  "about": {
+    "message": "About"
+  },
+  "copy": {
+    "message": "Copy",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "Check For Updates"
+  },
+  "version": {
+    "message": "Version $VERSION_NUM$",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
   }
 }
