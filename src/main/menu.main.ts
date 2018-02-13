@@ -5,6 +5,7 @@ import {
     dialog,
     ipcMain,
     Menu,
+    MenuItem,
     MenuItemConstructorOptions,
     shell,
 } from 'electron';
@@ -20,6 +21,11 @@ export class MenuMain {
         private i18nService: I18nService, private messagingService: MessagingService) { }
 
     init() {
+        this.updaterMain.updateMenuItem = {
+            label: this.i18nService.t('checkForUpdates'),
+            click: () => this.updaterMain.checkForUpdate(true),
+        };
+
         const template: MenuItemConstructorOptions[] = [
             {
                 label: this.i18nService.t('file'),
@@ -308,10 +314,7 @@ export class MenuMain {
         if (process.platform === 'darwin') {
             const firstMenuPart: MenuItemConstructorOptions[] = [
                 { role: 'about' },
-                {
-                    label: this.i18nService.t('checkForUpdates'),
-                    click: () => this.updaterMain.checkForUpdate(),
-                },
+                this.updaterMain.updateMenuItem,
             ];
 
             template.unshift({
@@ -345,10 +348,7 @@ export class MenuMain {
             template[template.length - 1].submenu =
                 (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat([
                     { type: 'separator' },
-                    {
-                        label: this.i18nService.t('checkForUpdates'),
-                        click: () => this.updaterMain.checkForUpdate(),
-                    },
+                    this.updaterMain.updateMenuItem,
                     {
                         label: this.i18nService.t('about'),
                         click: () => {

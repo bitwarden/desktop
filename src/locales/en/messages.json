@@ -770,7 +770,10 @@
       }
     }
   },
-  "updateAvailableDesc": {
+  "restartToUpdate": {
+    "message": "Restart To Update"
+  },
+  "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
     "placeholders": {
       "version_num": {
@@ -782,10 +785,19 @@
   "updateAvailable": {
     "message": "Update Available"
   },
+  "updateAvailableDesc": {
+    "message": "An update was found. Do you want to download it now?"
+  },
   "update": {
     "message": "Update"
   },
   "later": {
     "message": "Later"
+  },
+  "noUpdatesAvailable": {
+    "message": "No updates are currently available. You are using the latest version."
+  },
+  "updateError": {
+    "message": "Update Error"
   }
 }
