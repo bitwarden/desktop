@@ -57,7 +57,7 @@ electron-is-dev@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-0.3.0.tgz#14e6fda5c68e9e4ecbeff9ccf037cbd7c05c5afe"
 
-electron-store@^1.3.0:
+electron-store@1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/electron-store/-/electron-store-1.3.0.tgz#ee488a28a61fb982fd35b658fb9cb6331eb201f8"
   dependencies:
