@@ -26,7 +26,7 @@ const i18nService = new I18nService('en', './locales/');
 const storageService = new DesktopStorageService();
 const messagingService = new DesktopMainMessagingService(windowMain, messagingMain);
 
-const updaterMain = new UpdaterMain();
+const updaterMain = new UpdaterMain(windowMain, i18nService);
 const menuMain = new MenuMain(windowMain, updaterMain, i18nService, messagingService);
 const powerMonitorMain = new PowerMonitorMain(storageService, messagingService);
 

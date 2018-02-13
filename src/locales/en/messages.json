@@ -769,5 +769,23 @@
         "example": "1.2.3"
       }
     }
+  },
+  "updateAvailableDesc": {
+    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "Update Available"
+  },
+  "update": {
+    "message": "Update"
+  },
+  "later": {
+    "message": "Later"
   }
 }
