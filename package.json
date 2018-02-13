@@ -43,16 +43,20 @@
       "contents": [
         {
           "x": 270,
-          "y": 345,
+          "y": 300,
           "type": "link",
           "path": "/Applications"
         },
         {
           "x": 270,
-          "y": 110,
+          "y": 80,
           "type": "file"
         }
-      ]
+      ],
+      "window": {
+        "width": 540,
+        "height": 380
+      }
     },
     "nsis": {
       "perMachine": true
