@@ -165,6 +165,11 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return Promise.resolve(true);
     }
 
+    isDev(): boolean {
+        // TODO?
+        return true;
+    }
+
     private sidebarViewName(): string {
         if ((window as any).chrome.sidebarAction && this.isFirefox()) {
             return 'sidebar';

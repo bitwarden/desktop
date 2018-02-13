@@ -135,8 +135,7 @@ export default class MainBackground {
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18n2Service);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
-            this.cryptoService, this.platformUtilsService, this.storageService,
-            () => this.setIcon(), () => this.refreshBadgeAndMenu());
+            this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService);
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
             this.storageService, this.messagingService, (expired: boolean) => this.logout(expired));
