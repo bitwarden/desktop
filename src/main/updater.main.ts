@@ -23,32 +23,9 @@ export class UpdaterMain {
         global.setTimeout(async () => await this.checkForUpdate(), UpdaterCheckInitalDelay);
         global.setInterval(async () => await this.checkForUpdate(), UpdaterCheckInterval);
 
-        autoUpdater.on('error', (error) => {
-            if (this.doingUpdateCheckWithFeedback) {
-                dialog.showErrorBox(this.i18nService.t('updateError'),
-                    error == null ? "unknown" : (error.stack || error).toString());
-            }
-
-            this.reset();
-        });
-
-        autoUpdater.on('update-downloaded', (info) => {
-            this.updateMenuItem.label = this.i18nService.t('restartToUpdate');
-
-            const result = dialog.showMessageBox(this.windowMain.win, {
-                type: 'info',
-                title: this.i18nService.t('restartToUpdate'),
-                message: this.i18nService.t('restartToUpdate'),
-                detail: this.i18nService.t('restartToUpdateDesc', info.version),
-                buttons: [this.i18nService.t('restart'), this.i18nService.t('later')],
-                cancelId: 1,
-                defaultId: 0,
-                noLink: true,
-            });
-
-            if (result === 0) {
-                autoUpdater.quitAndInstall();
-            }
+        autoUpdater.on('checking-for-update', () => {
+            this.updateMenuItem.enabled = false;
+            this.doingUpdateCheck = true;
         });
 
         autoUpdater.on('update-available', () => {
@@ -81,6 +58,34 @@ export class UpdaterMain {
 
             this.reset();
         });
+
+        autoUpdater.on('update-downloaded', (info) => {
+            this.updateMenuItem.label = this.i18nService.t('restartToUpdate');
+
+            const result = dialog.showMessageBox(this.windowMain.win, {
+                type: 'info',
+                title: this.i18nService.t('restartToUpdate'),
+                message: this.i18nService.t('restartToUpdate'),
+                detail: this.i18nService.t('restartToUpdateDesc', info.version),
+                buttons: [this.i18nService.t('restart'), this.i18nService.t('later')],
+                cancelId: 1,
+                defaultId: 0,
+                noLink: true,
+            });
+
+            if (result === 0) {
+                autoUpdater.quitAndInstall();
+            }
+        });
+
+        autoUpdater.on('error', (error) => {
+            if (this.doingUpdateCheckWithFeedback) {
+                dialog.showErrorBox(this.i18nService.t('updateError'),
+                    error == null ? this.i18nService.t('unknown') : (error.stack || error).toString());
+            }
+
+            this.reset();
+        });
     }
 
     async checkForUpdate(withFeedback: boolean = false) {
@@ -88,18 +93,16 @@ export class UpdaterMain {
             return;
         }
 
-        this.updateMenuItem.enabled = false;
-        this.doingUpdateCheck = true;
         this.doingUpdateCheckWithFeedback = withFeedback;
-
         if (withFeedback) {
-            await autoUpdater.checkForUpdates();
-        } else {
-            await autoUpdater.checkForUpdatesAndNotify();
+            autoUpdater.autoDownload = false;
         }
+
+        await autoUpdater.checkForUpdates();
     }
 
     private reset() {
+        autoUpdater.autoDownload = true;
         this.updateMenuItem.enabled = true;
         this.doingUpdateCheck = false;
     }
