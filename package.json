@@ -42,15 +42,15 @@
       "background": "./resources/background.png",
       "contents": [
         {
-          "x": 135,
-          "y": 190,
-          "type": "link",
-          "path": "/Applications"
+          "x": 150,
+          "y": 185,
+          "type": "file"
         },
         {
-          "x": 405,
-          "y": 190,
-          "type": "file"
+          "x": 390,
+          "y": 180,
+          "type": "link",
+          "path": "/Applications"
         }
       ],
       "window": {
