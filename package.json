@@ -13,7 +13,7 @@
   "homepage": "https://bitwarden.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitwarden/desktop.git"
+    "url": "https://github.com/bitwarden/desktop"
   },
   "license": "GPL-3.0",
   "scripts": {
