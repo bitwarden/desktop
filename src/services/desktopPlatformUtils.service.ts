@@ -1,5 +1,7 @@
 import { remote, shell } from 'electron';
 
+import { isDev } from '../scripts/utils';
+
 import { DeviceType } from 'jslib/enums';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -142,5 +144,9 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
         });
 
         return Promise.resolve(result === 0);
+    }
+
+    isDev(): boolean {
+        return isDev();
     }
 }
