@@ -16,7 +16,6 @@
     "url": "git+https://github.com/bitwarden/desktop.git"
   },
   "license": "GPL-3.0",
-  "main": "main.js",
   "scripts": {
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",

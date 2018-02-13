@@ -7,6 +7,10 @@
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0",
   "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitwarden/desktop.git"
+  },
   "dependencies": {
     "desktop-idle": "1.1.1",
     "electron-updater": "2.20.1",
