@@ -39,24 +39,20 @@
       "category": "public.app-category.productivity"
     },
     "dmg": {
-      "background": "./resources/background@2x.png",
+      "background": "./resources/background.png",
       "contents": [
         {
-          "x": 330,
+          "x": 270,
           "y": 345,
           "type": "link",
           "path": "/Applications"
         },
         {
-          "x": 330,
+          "x": 270,
           "y": 110,
           "type": "file"
         }
-      ],
-      "window": {
-        "width": 660,
-        "height": 480
-      }
+      ]
     },
     "nsis": {
       "perMachine": true
