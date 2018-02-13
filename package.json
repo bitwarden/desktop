@@ -39,16 +39,16 @@
       "category": "public.app-category.productivity"
     },
     "dmg": {
-      "background": "./build/background@2x.png",
+      "background": "./resources/background@2x.png",
       "contents": [
         {
-          "x": 396,
+          "x": 330,
           "y": 345,
           "type": "link",
           "path": "/Applications"
         },
         {
-          "x": 396,
+          "x": 330,
           "y": 110,
           "type": "file"
         }
