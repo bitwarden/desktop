@@ -1,11 +1,14 @@
+import { isDev } from '../scripts/utils';
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
+import { Main } from '../main';
+
 export class WindowMain {
     win: BrowserWindow;
 
-    constructor(private dev: boolean) { }
+    constructor(private main: Main) { }
 
     init(): Promise<any> {
         return new Promise((resolve, reject) => {
@@ -65,7 +68,7 @@ export class WindowMain {
         }));
 
         // Open the DevTools.
-        if (this.dev) {
+        if (isDev()) {
             this.win.webContents.openDevTools();
         }
 

@@ -10,15 +10,10 @@ import {
     shell,
 } from 'electron';
 
-import { UpdaterMain } from './updater.main';
-import { WindowMain } from './window.main';
-
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { Main } from '../main';
 
 export class MenuMain {
-    constructor(private windowMain: WindowMain, private updaterMain: UpdaterMain,
-        private i18nService: I18nService, private messagingService: MessagingService) { }
+    constructor(private main: Main) { }
 
     init() {
         this.initContextMenu();
@@ -51,14 +46,14 @@ export class MenuMain {
             { role: 'selectall' },
         ]);
 
-        this.windowMain.win.webContents.on('context-menu', (e, props) => {
+        this.main.windowMain.win.webContents.on('context-menu', (e, props) => {
             const selected = props.selectionText && props.selectionText.trim() !== '';
             if (props.isEditable && selected) {
-                inputSelectionMenu.popup(this.windowMain.win);
+                inputSelectionMenu.popup(this.main.windowMain.win);
             } else if (props.isEditable) {
-                inputMenu.popup(this.windowMain.win);
+                inputMenu.popup(this.main.windowMain.win);
             } else if (selected) {
-                selectionMenu.popup(this.windowMain.win);
+                selectionMenu.popup(this.main.windowMain.win);
             }
         });
     }
@@ -66,51 +61,51 @@ export class MenuMain {
     private initApplicationMenu() {
         const template: MenuItemConstructorOptions[] = [
             {
-                label: this.i18nService.t('file'),
+                label: this.main.i18nService.t('file'),
                 submenu: [
                     {
-                        label: this.i18nService.t('addNewLogin'),
-                        click: () => this.messagingService.send('newLogin'),
+                        label: this.main.i18nService.t('addNewLogin'),
+                        click: () => this.main.messagingService.send('newLogin'),
                         accelerator: 'CmdOrCtrl+N',
                     },
                     {
-                        label: this.i18nService.t('addNewItem'),
+                        label: this.main.i18nService.t('addNewItem'),
                         submenu: [
                             {
-                                label: this.i18nService.t('typeLogin'),
-                                click: () => this.messagingService.send('newLogin'),
+                                label: this.main.i18nService.t('typeLogin'),
+                                click: () => this.main.messagingService.send('newLogin'),
                                 accelerator: 'Alt+L',
                             },
                             {
-                                label: this.i18nService.t('typeCard'),
-                                click: () => this.messagingService.send('newCard'),
+                                label: this.main.i18nService.t('typeCard'),
+                                click: () => this.main.messagingService.send('newCard'),
                                 accelerator: 'Alt+C',
                             },
                             {
-                                label: this.i18nService.t('typeIdentity'),
-                                click: () => this.messagingService.send('newIdentity'),
+                                label: this.main.i18nService.t('typeIdentity'),
+                                click: () => this.main.messagingService.send('newIdentity'),
                                 accelerator: 'Alt+I',
                             },
                             {
-                                label: this.i18nService.t('typeSecureNote'),
-                                click: () => this.messagingService.send('newSecureNote'),
+                                label: this.main.i18nService.t('typeSecureNote'),
+                                click: () => this.main.messagingService.send('newSecureNote'),
                                 accelerator: 'Alt+S',
                             },
                         ],
                     },
                     {
-                        label: this.i18nService.t('addNewFolder'),
-                        click: () => this.messagingService.send('newFolder'),
+                        label: this.main.i18nService.t('addNewFolder'),
+                        click: () => this.main.messagingService.send('newFolder'),
                     },
                     { type: 'separator' },
                     {
-                        label: this.i18nService.t('syncVault'),
-                        click: () => this.messagingService.send('syncVault'),
+                        label: this.main.i18nService.t('syncVault'),
+                        click: () => this.main.messagingService.send('syncVault'),
                     },
                 ],
             },
             {
-                label: this.i18nService.t('edit'),
+                label: this.main.i18nService.t('edit'),
                 submenu: [
                     { role: 'undo' },
                     { role: 'redo' },
@@ -123,16 +118,16 @@ export class MenuMain {
                 ],
             },
             {
-                label: this.i18nService.t('view'),
+                label: this.main.i18nService.t('view'),
                 submenu: [
                     {
-                        label: this.i18nService.t('passwordGenerator'),
-                        click: () => this.messagingService.send('openPasswordGenerator'),
+                        label: this.main.i18nService.t('passwordGenerator'),
+                        click: () => this.main.messagingService.send('openPasswordGenerator'),
                         accelerator: 'CmdOrCtrl+G',
                     },
                     {
-                        label: this.i18nService.t('searchVault'),
-                        click: () => this.messagingService.send('focusSearch'),
+                        label: this.main.i18nService.t('searchVault'),
+                        click: () => this.main.messagingService.send('focusSearch'),
                         accelerator: 'CmdOrCtrl+F',
                     },
                     { type: 'separator' },
@@ -148,19 +143,19 @@ export class MenuMain {
                 ],
             },
             {
-                label: this.i18nService.t('account'),
+                label: this.main.i18nService.t('account'),
                 submenu: [
                     {
-                        label: this.i18nService.t('premiumMembership'),
-                        click: () => this.messagingService.send('premiumMembership'),
+                        label: this.main.i18nService.t('premiumMembership'),
+                        click: () => this.main.messagingService.send('premiumMembership'),
                     },
                     {
-                        label: this.i18nService.t('changeMasterPass'),
+                        label: this.main.i18nService.t('changeMasterPass'),
                         click: () => {
-                            const result = dialog.showMessageBox(this.windowMain.win, {
-                                title: this.i18nService.t('changeMasterPass'),
-                                message: this.i18nService.t('changeMasterPasswordConfirmation'),
-                                buttons: [this.i18nService.t('yes'), this.i18nService.t('no')],
+                            const result = dialog.showMessageBox(this.main.windowMain.win, {
+                                title: this.main.i18nService.t('changeMasterPass'),
+                                message: this.main.i18nService.t('changeMasterPasswordConfirmation'),
+                                buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
@@ -171,12 +166,12 @@ export class MenuMain {
                         },
                     },
                     {
-                        label: this.i18nService.t('changeEmail'),
+                        label: this.main.i18nService.t('changeEmail'),
                         click: () => {
-                            const result = dialog.showMessageBox(this.windowMain.win, {
-                                title: this.i18nService.t('changeEmail'),
-                                message: this.i18nService.t('changeEmailConfirmation'),
-                                buttons: [this.i18nService.t('yes'), this.i18nService.t('no')],
+                            const result = dialog.showMessageBox(this.main.windowMain.win, {
+                                title: this.main.i18nService.t('changeEmail'),
+                                message: this.main.i18nService.t('changeEmailConfirmation'),
+                                buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
@@ -187,12 +182,12 @@ export class MenuMain {
                         },
                     },
                     {
-                        label: this.i18nService.t('twoStepLogin'),
+                        label: this.main.i18nService.t('twoStepLogin'),
                         click: () => {
-                            const result = dialog.showMessageBox(this.windowMain.win, {
-                                title: this.i18nService.t('twoStepLogin'),
-                                message: this.i18nService.t('twoStepLoginConfirmation'),
-                                buttons: [this.i18nService.t('yes'), this.i18nService.t('no')],
+                            const result = dialog.showMessageBox(this.main.windowMain.win, {
+                                title: this.main.i18nService.t('twoStepLogin'),
+                                message: this.main.i18nService.t('twoStepLoginConfirmation'),
+                                buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
@@ -204,18 +199,18 @@ export class MenuMain {
                     },
                     { type: 'separator' },
                     {
-                        label: this.i18nService.t('logOut'),
+                        label: this.main.i18nService.t('logOut'),
                         click: () => {
-                            const result = dialog.showMessageBox(this.windowMain.win, {
-                                title: this.i18nService.t('logOut'),
-                                message: this.i18nService.t('logOutConfirmation'),
-                                buttons: [this.i18nService.t('logOut'), this.i18nService.t('cancel')],
+                            const result = dialog.showMessageBox(this.main.windowMain.win, {
+                                title: this.main.i18nService.t('logOut'),
+                                message: this.main.i18nService.t('logOutConfirmation'),
+                                buttons: [this.main.i18nService.t('logOut'), this.main.i18nService.t('cancel')],
                                 cancelId: 1,
                                 defaultId: 0,
                                 noLink: true,
                             });
                             if (result === 0) {
-                                this.messagingService.send('logout');
+                                this.main.messagingService.send('logout');
                             }
                         },
                     },
@@ -232,23 +227,23 @@ export class MenuMain {
                 role: 'help',
                 submenu: [
                     {
-                        label: this.i18nService.t('emailUs'),
+                        label: this.main.i18nService.t('emailUs'),
                         click: () => shell.openExternal('mailTo:hello@bitwarden.com'),
                     },
                     {
-                        label: this.i18nService.t('visitOurWebsite'),
+                        label: this.main.i18nService.t('visitOurWebsite'),
                         click: () => shell.openExternal('https://bitwarden.com/contact'),
                     },
                     {
-                        label: this.i18nService.t('fileBugReport'),
+                        label: this.main.i18nService.t('fileBugReport'),
                         click: () => shell.openExternal('https://github.com/bitwarden/desktop'),
                     },
                     { type: 'separator' },
                     {
-                        label: this.i18nService.t('followUs'),
+                        label: this.main.i18nService.t('followUs'),
                         submenu: [
                             {
-                                label: this.i18nService.t('blog'),
+                                label: this.main.i18nService.t('blog'),
                                 click: () => shell.openExternal('https://blog.bitwarden.com'),
                             },
                             {
@@ -271,11 +266,11 @@ export class MenuMain {
                     },
                     { type: 'separator' },
                     {
-                        label: this.i18nService.t('goToWebVault'),
+                        label: this.main.i18nService.t('goToWebVault'),
                         click: () => shell.openExternal('https://vault.bitwarden.com'),
                     },
                     {
-                        label: this.i18nService.t('getMobileApp'),
+                        label: this.main.i18nService.t('getMobileApp'),
                         submenu: [
                             {
                                 label: 'iOS',
@@ -294,7 +289,7 @@ export class MenuMain {
                         ],
                     },
                     {
-                        label: this.i18nService.t('getBrowserExtension'),
+                        label: this.main.i18nService.t('getBrowserExtension'),
                         submenu: [
                             {
                                 label: 'Chrome',
@@ -340,19 +335,19 @@ export class MenuMain {
         const firstMenuOptions: MenuItemConstructorOptions[] = [
             { type: 'separator' },
             {
-                label: this.i18nService.t('settings'),
-                click: () => this.messagingService.send('openSettings'),
+                label: this.main.i18nService.t('settings'),
+                click: () => this.main.messagingService.send('openSettings'),
             },
             {
-                label: this.i18nService.t('lockNow'),
-                click: () => this.messagingService.send('lockVault'),
+                label: this.main.i18nService.t('lockNow'),
+                click: () => this.main.messagingService.send('lockVault'),
                 accelerator: 'CmdOrCtrl+L',
             },
         ];
 
         const updateMenuItem = {
-            label: this.i18nService.t('checkForUpdates'),
-            click: () => this.updaterMain.checkForUpdate(true),
+            label: this.main.i18nService.t('checkForUpdates'),
+            click: () => this.main.updaterMain.checkForUpdate(true),
             id: 'checkForUpdates',
         };
 
@@ -395,20 +390,20 @@ export class MenuMain {
                     { type: 'separator' },
                     updateMenuItem,
                     {
-                        label: this.i18nService.t('about'),
+                        label: this.main.i18nService.t('about'),
                         click: () => {
-                            const aboutInformation = this.i18nService.t('version', app.getVersion()) +
+                            const aboutInformation = this.main.i18nService.t('version', app.getVersion()) +
                                 '\nShell ' + process.versions.electron +
                                 '\nRenderer ' + process.versions.chrome +
                                 '\nNode ' + process.versions.node +
                                 '\nArchitecture ' + process.arch;
-                            const result = dialog.showMessageBox(this.windowMain.win, {
+                            const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: 'Bitwarden',
                                 message: 'Bitwarden',
                                 detail: aboutInformation,
                                 type: 'info',
                                 noLink: true,
-                                buttons: [this.i18nService.t('ok'), this.i18nService.t('copy')],
+                                buttons: [this.main.i18nService.t('ok'), this.main.i18nService.t('copy')],
                             });
                             if (result === 1) {
                                 clipboard.writeText(aboutInformation);

@@ -9,7 +9,7 @@ import {
     setPassword,
 } from 'keytar';
 
-import { WindowMain } from './window.main';
+import { Main } from '../main';
 
 const KeytarService = 'Bitwarden';
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
@@ -17,7 +17,7 @@ const SyncInterval = 5 * 60 * 1000; // 5 minutes
 export class MessagingMain {
     private syncTimeout: NodeJS.Timer;
 
-    constructor(private windowMain: WindowMain) { }
+    constructor(private main: Main) { }
 
     init() {
         this.scheduleNextSync();
@@ -65,7 +65,7 @@ export class MessagingMain {
         }
 
         this.syncTimeout = global.setTimeout(() => {
-            this.windowMain.win.webContents.send('messagingService', {
+            this.main.windowMain.win.webContents.send('messagingService', {
                 command: 'checkSyncVault',
             });
         }, SyncInterval);

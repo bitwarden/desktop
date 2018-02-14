@@ -5,21 +5,18 @@ import {
 } from 'electron';
 import { autoUpdater } from 'electron-updater';
 
+import { Main } from '../main';
 import { isDev } from '../scripts/utils';
-import { WindowMain } from './window.main';
-
-import { I18nService } from 'jslib/abstractions/i18n.service';
 
 const UpdaterCheckInitalDelay = 5 * 1000; // 5 seconds
 const UpdaterCheckInterval = 12 * 60 * 60 * 1000; // 12 hours
 
 export class UpdaterMain {
-
     private doingUpdateCheck = false;
     private doingUpdateCheckWithFeedback = false;
     private updateMenuItem: MenuItem;
 
-    constructor(private windowMain: WindowMain, private i18nService: I18nService) { }
+    constructor(private main: Main) { }
 
     async init() {
         global.setTimeout(async () => await this.checkForUpdate(), UpdaterCheckInitalDelay);
@@ -33,12 +30,12 @@ export class UpdaterMain {
 
         autoUpdater.on('update-available', () => {
             if (this.doingUpdateCheckWithFeedback) {
-                const result = dialog.showMessageBox(this.windowMain.win, {
+                const result = dialog.showMessageBox(this.main.windowMain.win, {
                     type: 'info',
-                    title: this.i18nService.t('updateAvailable'),
-                    message: this.i18nService.t('updateAvailable'),
-                    detail: this.i18nService.t('updateAvailableDesc'),
-                    buttons: [this.i18nService.t('yes'), this.i18nService.t('no')],
+                    title: this.main.i18nService.t('updateAvailable'),
+                    message: this.main.i18nService.t('updateAvailable'),
+                    detail: this.main.i18nService.t('updateAvailableDesc'),
+                    buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
                     cancelId: 1,
                     defaultId: 0,
                     noLink: true,
@@ -54,8 +51,8 @@ export class UpdaterMain {
 
         autoUpdater.on('update-not-available', () => {
             if (this.doingUpdateCheckWithFeedback) {
-                dialog.showMessageBox(this.windowMain.win, {
-                    message: this.i18nService.t('noUpdatesAvailable'),
+                dialog.showMessageBox(this.main.windowMain.win, {
+                    message: this.main.i18nService.t('noUpdatesAvailable'),
                 });
             }
 
@@ -63,14 +60,14 @@ export class UpdaterMain {
         });
 
         autoUpdater.on('update-downloaded', (info) => {
-            this.updateMenuItem.label = this.i18nService.t('restartToUpdate');
+            this.updateMenuItem.label = this.main.i18nService.t('restartToUpdate');
 
-            const result = dialog.showMessageBox(this.windowMain.win, {
+            const result = dialog.showMessageBox(this.main.windowMain.win, {
                 type: 'info',
-                title: this.i18nService.t('restartToUpdate'),
-                message: this.i18nService.t('restartToUpdate'),
-                detail: this.i18nService.t('restartToUpdateDesc', info.version),
-                buttons: [this.i18nService.t('restart'), this.i18nService.t('later')],
+                title: this.main.i18nService.t('restartToUpdate'),
+                message: this.main.i18nService.t('restartToUpdate'),
+                detail: this.main.i18nService.t('restartToUpdateDesc', info.version),
+                buttons: [this.main.i18nService.t('restart'), this.main.i18nService.t('later')],
                 cancelId: 1,
                 defaultId: 0,
                 noLink: true,
@@ -83,8 +80,8 @@ export class UpdaterMain {
 
         autoUpdater.on('error', (error) => {
             if (this.doingUpdateCheckWithFeedback) {
-                dialog.showErrorBox(this.i18nService.t('updateError'),
-                    error == null ? this.i18nService.t('unknown') : (error.stack || error).toString());
+                dialog.showErrorBox(this.main.i18nService.t('updateError'),
+                    error == null ? this.main.i18nService.t('unknown') : (error.stack || error).toString());
             }
 
             this.reset();

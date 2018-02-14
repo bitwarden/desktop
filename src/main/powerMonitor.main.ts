@@ -2,8 +2,7 @@ import { powerMonitor } from 'electron';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
+import { Main } from '../main';
 
 // tslint:disable-next-line
 const desktopIdle = require('desktop-idle');
@@ -13,14 +12,14 @@ const IdleCheckInterval = 30 * 1000; // 30 seconds
 export class PowerMonitorMain {
     private idle: boolean = false;
 
-    constructor(private storageService: StorageService, private messagingService: MessagingService) { }
+    constructor(private main: Main) { }
 
     init() {
         // System sleep
         powerMonitor.on('suspend', async () => {
             const lockOption = await this.getLockOption();
             if (lockOption === -3) {
-                this.messagingService.send('lockVault');
+                this.main.messagingService.send('lockVault');
             }
         });
 
@@ -35,7 +34,7 @@ export class PowerMonitorMain {
 
                 const lockOption = await this.getLockOption();
                 if (lockOption === -4) {
-                    this.messagingService.send('lockVault');
+                    this.main.messagingService.send('lockVault');
                 }
             }
 
@@ -46,6 +45,6 @@ export class PowerMonitorMain {
     }
 
     private async getLockOption(): Promise<number> {
-        return await this.storageService.get<number>(ConstantsService.lockOptionKey);
+        return await this.main.storageService.get<number>(ConstantsService.lockOptionKey);
     }
 }
