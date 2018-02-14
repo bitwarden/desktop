@@ -30,13 +30,12 @@ const updaterMain = new UpdaterMain(windowMain, i18nService);
 const menuMain = new MenuMain(windowMain, updaterMain, i18nService, messagingService);
 const powerMonitorMain = new PowerMonitorMain(storageService, messagingService);
 
-windowMain.init().then(() => {
+windowMain.init().then(async () => {
     messagingMain.init();
-    return i18nService.init();
-}).then(() => {
+    await i18nService.init();
     menuMain.init();
     powerMonitorMain.init();
-    updaterMain.init();
+    await updaterMain.init();
 }, (e: any) => {
     // tslint:disable-next-line
     console.log(e);

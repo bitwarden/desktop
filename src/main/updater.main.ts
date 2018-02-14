@@ -1,9 +1,11 @@
 import {
     dialog,
-    MenuItemConstructorOptions,
+    Menu,
+    MenuItem,
 } from 'electron';
 import { autoUpdater } from 'electron-updater';
 
+import { isDev } from '../scripts/utils';
 import { WindowMain } from './window.main';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -12,16 +14,17 @@ const UpdaterCheckInitalDelay = 5 * 1000; // 5 seconds
 const UpdaterCheckInterval = 12 * 60 * 60 * 1000; // 12 hours
 
 export class UpdaterMain {
-    updateMenuItem: MenuItemConstructorOptions;
 
     private doingUpdateCheck = false;
     private doingUpdateCheckWithFeedback = false;
+    private updateMenuItem: MenuItem;
 
     constructor(private windowMain: WindowMain, private i18nService: I18nService) { }
 
     async init() {
         global.setTimeout(async () => await this.checkForUpdate(), UpdaterCheckInitalDelay);
         global.setInterval(async () => await this.checkForUpdate(), UpdaterCheckInterval);
+        this.updateMenuItem = Menu.getApplicationMenu().getMenuItemById('checkForUpdates');
 
         autoUpdater.on('checking-for-update', () => {
             this.updateMenuItem.enabled = false;
@@ -89,7 +92,7 @@ export class UpdaterMain {
     }
 
     async checkForUpdate(withFeedback: boolean = false) {
-        if (this.doingUpdateCheck) {
+        if (this.doingUpdateCheck || isDev()) {
             return;
         }
 

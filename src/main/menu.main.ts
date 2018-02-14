@@ -21,11 +21,6 @@ export class MenuMain {
         private i18nService: I18nService, private messagingService: MessagingService) { }
 
     init() {
-        this.updaterMain.updateMenuItem = {
-            label: this.i18nService.t('checkForUpdates'),
-            click: () => this.updaterMain.checkForUpdate(true),
-        };
-
         const template: MenuItemConstructorOptions[] = [
             {
                 label: this.i18nService.t('file'),
@@ -311,10 +306,16 @@ export class MenuMain {
             },
         ];
 
+        const updateMenuItem = {
+            label: this.i18nService.t('checkForUpdates'),
+            click: () => this.updaterMain.checkForUpdate(true),
+            id: 'checkForUpdates',
+        };
+
         if (process.platform === 'darwin') {
             const firstMenuPart: MenuItemConstructorOptions[] = [
                 { role: 'about' },
-                this.updaterMain.updateMenuItem,
+                updateMenuItem,
             ];
 
             template.unshift({
@@ -348,7 +349,7 @@ export class MenuMain {
             template[template.length - 1].submenu =
                 (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat([
                     { type: 'separator' },
-                    this.updaterMain.updateMenuItem,
+                    updateMenuItem,
                     {
                         label: this.i18nService.t('about'),
                         click: () => {
