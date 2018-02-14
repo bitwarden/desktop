@@ -30,6 +30,7 @@ import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
@@ -72,9 +73,14 @@ export class AppComponent implements OnInit {
         private toasterService: ToasterService, private i18nService: I18nService,
         private platformUtilsService: PlatformUtilsService, private ngZone: NgZone,
         private lockService: LockService, private storageService: StorageService,
-        private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver) { }
+        private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
+        private messagingService: MessagingService) { }
 
     ngOnInit() {
+        setTimeout(async () => {
+            await this.updateAppMenu();
+        }, 1000);
+
         window.onmousemove = () => this.recordActivity();
         window.onmousedown = () => this.recordActivity();
         window.ontouchstart = () => this.recordActivity();
@@ -82,7 +88,11 @@ export class AppComponent implements OnInit {
         window.onscroll = () => this.recordActivity();
         window.onkeypress = () => this.recordActivity();
 
-        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
+            if (message.command !== 'updateAppMenu') {
+                await this.updateAppMenu();
+            }
+
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'loggedIn':
@@ -115,6 +125,13 @@ export class AppComponent implements OnInit {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
+    private async updateAppMenu() {
+        this.messagingService.send('updateAppMenu', {
+            isAuthenticated: await this.userService.isAuthenticated(),
+            isLocked: (await this.cryptoService.getKey()) == null,
+        });
+    }
+
     private async logOut(expired: boolean) {
         const userId = await this.userService.getUserId();
 
@@ -129,13 +146,14 @@ export class AppComponent implements OnInit {
             this.passwordGenerationService.clear(),
         ]);
 
-        this.authService.logOut(() => {
+        this.authService.logOut(async () => {
             this.analytics.eventTrack.next({ action: 'Logged Out' });
             if (expired) {
                 this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
                     this.i18nService.t('loginExpired'));
             }
-            this.router.navigate(['login']);
+            await this.router.navigate(['login']);
+            this.messagingService.send('loggedOut');
         });
     }
 

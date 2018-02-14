@@ -14,17 +14,15 @@ const UpdaterCheckInterval = 12 * 60 * 60 * 1000; // 12 hours
 export class UpdaterMain {
     private doingUpdateCheck = false;
     private doingUpdateCheckWithFeedback = false;
-    private updateMenuItem: MenuItem;
 
     constructor(private main: Main) { }
 
     async init() {
         global.setTimeout(async () => await this.checkForUpdate(), UpdaterCheckInitalDelay);
         global.setInterval(async () => await this.checkForUpdate(), UpdaterCheckInterval);
-        this.updateMenuItem = Menu.getApplicationMenu().getMenuItemById('checkForUpdates');
 
         autoUpdater.on('checking-for-update', () => {
-            this.updateMenuItem.enabled = false;
+            this.main.menuMain.updateMenuItem.enabled = false;
             this.doingUpdateCheck = true;
         });
 
@@ -60,7 +58,7 @@ export class UpdaterMain {
         });
 
         autoUpdater.on('update-downloaded', (info) => {
-            this.updateMenuItem.label = this.main.i18nService.t('restartToUpdate');
+            this.main.menuMain.updateMenuItem.label = this.main.i18nService.t('restartToUpdate');
 
             const result = dialog.showMessageBox(this.main.windowMain.win, {
                 type: 'info',
@@ -103,7 +101,7 @@ export class UpdaterMain {
 
     private reset() {
         autoUpdater.autoDownload = true;
-        this.updateMenuItem.enabled = true;
+        this.main.menuMain.updateMenuItem.enabled = true;
         this.doingUpdateCheck = false;
     }
 }

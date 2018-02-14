@@ -54,6 +54,9 @@ export class MessagingMain {
             case 'scheduleNextSync':
                 this.scheduleNextSync();
                 break;
+            case 'updateAppMenu':
+                this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked);
+                break;
             default:
                 break;
         }

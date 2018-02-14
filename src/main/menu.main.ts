@@ -13,11 +13,57 @@ import {
 import { Main } from '../main';
 
 export class MenuMain {
+    menu: Menu;
+    updateMenuItem: MenuItem;
+    addNewLogin: MenuItem;
+    addNewItem: MenuItem;
+    addNewFolder: MenuItem;
+    syncVault: MenuItem;
+    settings: MenuItem;
+    lockNow: MenuItem;
+    logOut: MenuItem;
+    twoStepLogin: MenuItem;
+    changeEmail: MenuItem;
+    changeMasterPass: MenuItem;
+    premiumMembership: MenuItem;
+    passwordGenerator: MenuItem;
+    searchVault: MenuItem;
+    unlockedRequiredMenuItems: MenuItem[] = [];
+
     constructor(private main: Main) { }
 
     init() {
         this.initContextMenu();
         this.initApplicationMenu();
+
+        this.updateMenuItem = this.menu.getMenuItemById('checkForUpdates');
+        this.addNewLogin = this.menu.getMenuItemById('addNewLogin');
+        this.addNewItem = this.menu.getMenuItemById('addNewItem');
+        this.addNewFolder = this.menu.getMenuItemById('addNewFolder');
+        this.syncVault = this.menu.getMenuItemById('syncVault');
+        this.settings = this.menu.getMenuItemById('settings');
+        this.lockNow = this.menu.getMenuItemById('lockNow');
+        this.logOut = this.menu.getMenuItemById('logOut');
+        this.twoStepLogin = this.menu.getMenuItemById('twoStepLogin');
+        this.changeEmail = this.menu.getMenuItemById('changeEmail');
+        this.changeMasterPass = this.menu.getMenuItemById('changeMasterPass');
+        this.premiumMembership = this.menu.getMenuItemById('premiumMembership');
+        this.passwordGenerator = this.menu.getMenuItemById('passwordGenerator');
+        this.searchVault = this.menu.getMenuItemById('searchVault');
+
+        this.unlockedRequiredMenuItems = [
+            this.addNewLogin, this.addNewItem, this.addNewFolder,
+            this.syncVault, this.settings, this.lockNow, this.twoStepLogin, this.changeEmail,
+            this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.searchVault];
+        this.updateApplicationMenuState(false, true);
+    }
+
+    updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean) {
+        this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
+            mi.enabled = isAuthenticated && !isLocked;
+        });
+
+        this.logOut.enabled = isAuthenticated;
     }
 
     private initContextMenu() {
@@ -67,9 +113,11 @@ export class MenuMain {
                         label: this.main.i18nService.t('addNewLogin'),
                         click: () => this.main.messagingService.send('newLogin'),
                         accelerator: 'CmdOrCtrl+N',
+                        id: 'addNewLogin',
                     },
                     {
                         label: this.main.i18nService.t('addNewItem'),
+                        id: 'addNewItem',
                         submenu: [
                             {
                                 label: this.main.i18nService.t('typeLogin'),
@@ -95,11 +143,13 @@ export class MenuMain {
                     },
                     {
                         label: this.main.i18nService.t('addNewFolder'),
+                        id: 'addNewFolder',
                         click: () => this.main.messagingService.send('newFolder'),
                     },
                     { type: 'separator' },
                     {
                         label: this.main.i18nService.t('syncVault'),
+                        id: 'syncVault',
                         click: () => this.main.messagingService.send('syncVault'),
                     },
                 ],
@@ -122,11 +172,13 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.main.i18nService.t('passwordGenerator'),
+                        id: 'passwordGenerator',
                         click: () => this.main.messagingService.send('openPasswordGenerator'),
                         accelerator: 'CmdOrCtrl+G',
                     },
                     {
                         label: this.main.i18nService.t('searchVault'),
+                        id: 'searchVault',
                         click: () => this.main.messagingService.send('focusSearch'),
                         accelerator: 'CmdOrCtrl+F',
                     },
@@ -148,9 +200,11 @@ export class MenuMain {
                     {
                         label: this.main.i18nService.t('premiumMembership'),
                         click: () => this.main.messagingService.send('premiumMembership'),
+                        id: 'premiumMembership',
                     },
                     {
                         label: this.main.i18nService.t('changeMasterPass'),
+                        id: 'changeMasterPass',
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('changeMasterPass'),
@@ -167,6 +221,7 @@ export class MenuMain {
                     },
                     {
                         label: this.main.i18nService.t('changeEmail'),
+                        id: 'changeEmail',
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('changeEmail'),
@@ -183,6 +238,7 @@ export class MenuMain {
                     },
                     {
                         label: this.main.i18nService.t('twoStepLogin'),
+                        id: 'twoStepLogin',
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('twoStepLogin'),
@@ -200,6 +256,7 @@ export class MenuMain {
                     { type: 'separator' },
                     {
                         label: this.main.i18nService.t('logOut'),
+                        id: 'logOut',
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('logOut'),
@@ -336,10 +393,12 @@ export class MenuMain {
             { type: 'separator' },
             {
                 label: this.main.i18nService.t('settings'),
+                id: 'settings',
                 click: () => this.main.messagingService.send('openSettings'),
             },
             {
                 label: this.main.i18nService.t('lockNow'),
+                id: 'lockNow',
                 click: () => this.main.messagingService.send('lockVault'),
                 accelerator: 'CmdOrCtrl+L',
             },
@@ -413,7 +472,7 @@ export class MenuMain {
                 ]);
         }
 
-        const menu = Menu.buildFromTemplate(template);
-        Menu.setApplicationMenu(menu);
+        this.menu = Menu.buildFromTemplate(template);
+        Menu.setApplicationMenu(this.menu);
     }
 }
