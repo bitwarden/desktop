@@ -45,12 +45,6 @@ export class MessagingMain {
 
     onMessage(message: any) {
         switch (message.command) {
-            case 'loggedIn':
-                break;
-            case 'logout':
-                break;
-            case 'syncCompleted':
-                break;
             case 'scheduleNextSync':
                 this.scheduleNextSync();
                 break;

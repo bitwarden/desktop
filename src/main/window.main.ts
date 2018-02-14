@@ -1,9 +1,9 @@
-import { isDev } from '../scripts/utils';
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
 import { Main } from '../main';
+import { isDev } from '../scripts/utils';
 
 export class WindowMain {
     win: BrowserWindow;

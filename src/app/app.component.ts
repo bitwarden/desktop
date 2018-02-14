@@ -89,13 +89,12 @@ export class AppComponent implements OnInit {
         window.onkeypress = () => this.recordActivity();
 
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
-            if (message.command !== 'updateAppMenu') {
-                await this.updateAppMenu();
-            }
-
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'loggedIn':
+                    case 'unlocked':
+                    case 'loggedOut':
+                        this.updateAppMenu();
                         break;
                     case 'logout':
                         this.logOut(!!message.expired);
@@ -105,8 +104,7 @@ export class AppComponent implements OnInit {
                         break;
                     case 'locked':
                         this.router.navigate(['lock']);
-                        break;
-                    case 'unlocked':
+                        this.updateAppMenu();
                         break;
                     case 'syncStarted':
                         break;
@@ -152,8 +150,7 @@ export class AppComponent implements OnInit {
                 this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
                     this.i18nService.t('loginExpired'));
             }
-            await this.router.navigate(['login']);
-            this.messagingService.send('loggedOut');
+            this.router.navigate(['login']);
         });
     }
 
