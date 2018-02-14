@@ -162,3 +162,13 @@ form, .form {
         display: block;
     }
 }
+
+app-root > #loading {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: $text-muted;
+}
