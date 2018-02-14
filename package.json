@@ -22,7 +22,7 @@
     "build:main": "webpack --config webpack.main.js",
     "build:renderer": "webpack --config webpack.renderer.js",
     "build:renderer:watch": "webpack --config webpack.renderer.js --watch",
-    "electron": "npm run build:main && (electron ./build --watch | npm run build:renderer:watch)",
+    "electron": "npm run build:main && (electron --inspect=5858 ./build --watch | npm run build:renderer:watch)",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
