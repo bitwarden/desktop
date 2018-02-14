@@ -21,6 +21,49 @@ export class MenuMain {
         private i18nService: I18nService, private messagingService: MessagingService) { }
 
     init() {
+        this.initContextMenu();
+        this.initApplicationMenu();
+    }
+
+    private initContextMenu() {
+        const selectionMenu = Menu.buildFromTemplate([
+            { role: 'copy' },
+            { type: 'separator' },
+            { role: 'selectall' },
+        ]);
+
+        const inputMenu = Menu.buildFromTemplate([
+            { role: 'undo' },
+            { role: 'redo' },
+            { type: 'separator' },
+            { role: 'cut', enabled: false },
+            { role: 'copy', enabled: false },
+            { role: 'paste' },
+            { type: 'separator' },
+            { role: 'selectall' },
+        ]);
+
+        const inputSelectionMenu = Menu.buildFromTemplate([
+            { role: 'cut' },
+            { role: 'copy' },
+            { role: 'paste' },
+            { type: 'separator' },
+            { role: 'selectall' },
+        ]);
+
+        this.windowMain.win.webContents.on('context-menu', (e, props) => {
+            const selected = props.selectionText && props.selectionText.trim() !== '';
+            if (props.isEditable && selected) {
+                inputSelectionMenu.popup(this.windowMain.win);
+            } else if (props.isEditable) {
+                inputMenu.popup(this.windowMain.win);
+            } else if (selected) {
+                selectionMenu.popup(this.windowMain.win);
+            }
+        });
+    }
+
+    private initApplicationMenu() {
         const template: MenuItemConstructorOptions[] = [
             {
                 label: this.i18nService.t('file'),
