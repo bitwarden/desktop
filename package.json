@@ -19,12 +19,17 @@
   "scripts": {
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
+    "build": "npm run build:main | npm run build:renderer",
     "build:main": "webpack --config webpack.main.js",
     "build:renderer": "webpack --config webpack.renderer.js",
     "build:renderer:watch": "webpack --config webpack.renderer.js --watch",
     "electron": "npm run build:main && (electron --inspect=5858 ./build --watch | npm run build:renderer:watch)",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "pack:linux": "build --linux --x64",
+    "pack:mac": "build --mac",
+    "pack:win": "build --win --x64 --ia32",
+    "dist:linux": "npm run build && npm run pack:linux",
+    "dist:mac": "npm run build && npm run pack:mac",
+    "dist:win": "npm run build && npm run pack:win"
   },
   "build": {
     "appId": "com.bitwarden.desktop",
@@ -35,7 +40,28 @@
       "app": "build"
     },
     "mac": {
-      "category": "public.app-category.productivity"
+      "category": "public.app-category.productivity",
+      "target": [ 
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": { 
+      "target": [ 
+        "portable",
+        "nsis"
+      ],
+      "electronUpdaterCompatibility": ">=0.0.1"
+    },
+    "linux": {
+      "target": [
+        "snap",
+        "rpm",
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "synopsis": "A secure and free password manager for all of your devices."
     },
     "dmg": {
       "background": "./resources/background.png",
@@ -58,17 +84,12 @@
       }
     },
     "nsis": {
-      "perMachine": true
-    },
-    "linux": {
-      "target": [
-        "snap",
-        "rpm",
-        "AppImage",
-        "deb"
-      ],
-      "category": "Utility",
-      "synopsis": "A secure and free password manager for all of your devices."
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "uninstallDisplayName": "${productName}",
+      "artifactName": "${productName} Setup.${ext}",
+      "deleteAppDataOnUninstall": true
     }
   },
   "devDependencies": {
