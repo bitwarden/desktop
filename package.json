@@ -44,7 +44,8 @@
       "target": [ 
         "dmg",
         "zip"
-      ]
+      ],
+      "electronUpdaterCompatibility": ">=0.0.1"
     },
     "win": { 
       "target": [ 
@@ -88,7 +89,6 @@
       "perMachine": true,
       "allowToChangeInstallationDirectory": true,
       "uninstallDisplayName": "${productName}",
-      "artifactName": "${productName} Setup.${ext}",
       "deleteAppDataOnUninstall": true
     }
   },
