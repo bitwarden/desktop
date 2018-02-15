@@ -26,10 +26,16 @@
     "electron": "npm run build:main && (electron --inspect=5858 ./build --watch | npm run build:renderer:watch)",
     "pack:linux": "build --linux --x64",
     "pack:mac": "build --mac",
+    "pack:maclinux": "build --mac --linux --x64",
     "pack:win": "build --win --x64 --ia32",
     "dist:linux": "npm run build && npm run pack:linux",
     "dist:mac": "npm run build && npm run pack:mac",
-    "dist:win": "npm run build && npm run pack:win"
+    "dist:maclinux": "npm run build && npm run pack:maclinux",
+    "dist:win": "npm run build && npm run pack:win",
+    "publish:linux": "npm run build && build --linux --x64 -p always",
+    "publish:mac": "npm run build && build --mac -p always",
+    "publish:maclinux": "npm run build && build --mac --linux --x64 -p always",
+    "publish:win": "npm run build && build --win --x64 --ia32 -p always"
   },
   "build": {
     "appId": "com.bitwarden.desktop",
@@ -40,29 +46,29 @@
       "app": "build"
     },
     "mac": {
+      "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
-      "target": [ 
+      "target": [
         "dmg",
         "zip"
-      ],
-      "electronUpdaterCompatibility": ">=0.0.1"
+      ]
     },
-    "win": { 
-      "target": [ 
+    "win": {
+      "electronUpdaterCompatibility": ">=0.0.1",
+      "target": [
         "portable",
         "nsis"
-      ],
-      "electronUpdaterCompatibility": ">=0.0.1"
+      ]
     },
     "linux": {
+      "category": "Utility",
+      "synopsis": "A secure and free password manager for all of your devices.",
       "target": [
         "snap",
         "rpm",
         "AppImage",
         "deb"
-      ],
-      "category": "Utility",
-      "synopsis": "A secure and free password manager for all of your devices."
+      ]
     },
     "dmg": {
       "background": "./resources/background.png",
