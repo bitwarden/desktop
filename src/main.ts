@@ -1,4 +1,5 @@
-import { BrowserWindow } from 'electron';
+import { app, BrowserWindow } from 'electron';
+import * as path from 'path';
 
 import { DesktopMainMessagingService } from './services/desktopMainMessaging.service';
 import { DesktopStorageService } from './services/desktopStorage.service';
@@ -22,6 +23,13 @@ export class Main {
     powerMonitorMain: PowerMonitorMain;
 
     constructor() {
+        // Set paths for portable builds
+        if (process.env.PORTABLE_EXECUTABLE_DIR != null) {
+            const appDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, 'bitwarden-appdata');
+            app.setPath('userData', appDataPath);
+            app.setPath('logs', path.join(appDataPath, 'logs'));
+        }
+
         const args = process.argv.slice(1);
         const watch = args.some((val) => val === '--watch');
 
