@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron';
+
 import { StorageService } from 'jslib/abstractions/storage.service';
 
 export class DesktopRendererSecureStorageService implements StorageService {

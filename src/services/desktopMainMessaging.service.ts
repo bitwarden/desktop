@@ -1,4 +1,4 @@
-import { MessagingService } from 'jslib/abstractions';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 
 import { Main } from '../main';
 

@@ -2,7 +2,7 @@ import { remote, shell } from 'electron';
 
 import { isDev } from '../scripts/utils';
 
-import { DeviceType } from 'jslib/enums';
+import { DeviceType } from 'jslib/enums/deviceType';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
