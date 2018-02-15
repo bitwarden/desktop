@@ -123,7 +123,7 @@ export class WindowMain {
 
     private windowStateChangeHandler(configKey: string, win: BrowserWindow) {
         global.clearTimeout(this.windowStateChangeTimer);
-        this.windowStateChangeTimer = setTimeout(async () => {
+        this.windowStateChangeTimer = global.setTimeout(async () => {
             await this.updateWindowState(configKey, win);
         }, WindowEventHandlingDelay);
     }
@@ -183,11 +183,13 @@ export class WindowMain {
             }
         }
 
-        if (state.width > displayBounds.width) {
-            state.width = displayBounds.width;
-        }
-        if (state.height > displayBounds.height) {
-            state.height = displayBounds.height;
+        if (displayBounds != null) {
+            if (state.width > displayBounds.width) {
+                state.width = displayBounds.width;
+            }
+            if (state.height > displayBounds.height) {
+                state.height = displayBounds.height;
+            }
         }
 
         return state;
