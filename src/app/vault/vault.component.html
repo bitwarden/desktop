@@ -11,7 +11,9 @@
     <app-vault-ciphers id="items"
                        [activeCipherId]="cipherId"
                        (onCipherClicked)="viewCipher($event)"
-                       (onAddCipher)="addCipher($event)">
+                       (onCipherRightClicked)="viewCipherMenu($event)"
+                       (onAddCipher)="addCipher($event)"
+                       (onAddCipherOptions)="addCipherOptions($event)">
     </app-vault-ciphers>
     <app-vault-view id="details"
                     *ngIf="cipherId && action === 'view'"

@@ -34,7 +34,7 @@
                             {{cipher.login.username}}
                         </div>
                         <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                            <a class="row-btn" href="#" appStopClick title="{{'copyUsername' | i18n}}"
                                (click)="copy(cipher.login.username, 'Username')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
@@ -52,7 +52,7 @@
                                 <i class="fa fa-lg"
                                    [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                            <a class="row-btn" href="#" appStopClick title="{{'copyPassword' | i18n}}"
                                (click)="copy(cipher.login.password, 'Password')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
@@ -94,7 +94,7 @@
                             {{cipher.card.number}}
                         </div>
                         <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                            <a class="row-btn" href="#" appStopClick title="{{'copyNumber' | i18n}}"
                                (click)="copy(cipher.card.number, 'Number')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
@@ -114,7 +114,7 @@
                             {{cipher.card.code}}
                         </div>
                         <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                            <a class="row-btn" href="#" appStopClick title="{{'copySecurityCode' | i18n}}"
                                (click)="copy(cipher.card.code, 'Security Code')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>

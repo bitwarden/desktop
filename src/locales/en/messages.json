@@ -78,7 +78,8 @@
     "message": "Launch"
   },
   "copyValue": {
-    "message": "Copy Value"
+    "message": "Copy Value",
+    "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
@@ -802,5 +803,16 @@
   },
   "unknown": {
     "message": "Unknown"
+  },
+  "copyUsername": {
+    "message": "Copy Username"
+  },
+  "copyNumber": {
+    "message": "Copy Number",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Copy Security Code",
+    "description": "Copy credit card security code (CVV)"
   }
 }

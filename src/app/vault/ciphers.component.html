@@ -9,7 +9,8 @@
     <ng-container *ngIf="(ciphers | searchCiphers: searchText) as searchedCiphers">
         <div class="list" *ngIf="searchedCiphers.length > 0">
             <a *ngFor="let c of searchedCiphers" appStopClick (click)="cipherClicked(c)"
-               href="#" title="{{'viewItem' | i18n}}" [ngClass]="{'active': c.id === activeCipherId}">
+               (contextmenu)="cipherRightClicked(c)" href="#" title="{{'viewItem' | i18n}}"
+               [ngClass]="{'active': c.id === activeCipherId}">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
                 <span class="text">
                     {{c.name}}
@@ -32,7 +33,8 @@
     </ng-container>
 </div>
 <div class="footer">
-    <button appBlurClick (click)="addCipher()" class="block primary" title="{{'addItem' | i18n}}">
+    <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()"
+            class="block primary" title="{{'addItem' | i18n}}">
         <i class="fa fa-plus fa-lg"></i>
     </button>
 </div>

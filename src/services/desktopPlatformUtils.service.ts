@@ -1,4 +1,8 @@
-import { remote, shell } from 'electron';
+import {
+    clipboard,
+    remote,
+    shell,
+} from 'electron';
 
 import { isDev } from '../scripts/utils';
 
@@ -148,5 +152,10 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
 
     isDev(): boolean {
         return isDev();
+    }
+
+    copyToClipboard(text: string, options?: any): void {
+        const type = options ? options.type : null;
+        clipboard.writeText(text, type);
     }
 }

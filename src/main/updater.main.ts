@@ -8,8 +8,8 @@ import { autoUpdater } from 'electron-updater';
 
 import { Main } from '../main';
 import {
-    isDev,
     isAppImage,
+    isDev,
 } from '../scripts/utils';
 
 const UpdaterCheckInitalDelay = 5 * 1000; // 5 seconds

@@ -1,5 +1,7 @@
 import * as template from './vault.component.html';
 
+import { remote } from 'electron';
+
 import { Location } from '@angular/common';
 import {
     ChangeDetectorRef,
@@ -38,6 +40,7 @@ import { FolderView } from 'jslib/models/view/folderView';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
@@ -69,8 +72,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
-        private toasterService: ToasterService, private messagingService: MessagingService) {
-    }
+        private toasterService: ToasterService, private messagingService: MessagingService,
+        private platformUtilsService: PlatformUtilsService) { }
 
     async ngOnInit() {
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
@@ -205,6 +208,74 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.go();
     }
 
+    viewCipherMenu(cipher: CipherView) {
+        const menu = new remote.Menu();
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('view'),
+            click: () => {
+                this.ngZone.run(async () => {
+                    this.viewCipher(cipher);
+                    this.changeDetectorRef.detectChanges();
+                });
+            },
+        }));
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('edit'),
+            click: () => {
+                this.ngZone.run(async () => {
+                    this.editCipher(cipher);
+                    this.changeDetectorRef.detectChanges();
+                });
+            },
+        }));
+
+        switch (cipher.type) {
+            case CipherType.Login:
+                if (cipher.login.canLaunch || cipher.login.username != null || cipher.login.password != null) {
+                    menu.append(new remote.MenuItem({ type: 'separator' }));
+                }
+                if (cipher.login.canLaunch) {
+                    menu.append(new remote.MenuItem({
+                        label: this.i18nService.t('launch'),
+                        click: () => this.platformUtilsService.launchUri(cipher.login.uri),
+                    }));
+                }
+                if (cipher.login.username != null) {
+                    menu.append(new remote.MenuItem({
+                        label: this.i18nService.t('copyUsername'),
+                        click: () => this.platformUtilsService.copyToClipboard(cipher.login.username),
+                    }));
+                }
+                if (cipher.login.password != null) {
+                    menu.append(new remote.MenuItem({
+                        label: this.i18nService.t('copyPassword'),
+                        click: () => this.platformUtilsService.copyToClipboard(cipher.login.password),
+                    }));
+                }
+                break;
+            case CipherType.Card:
+                if (cipher.card.number != null || cipher.card.code != null) {
+                    menu.append(new remote.MenuItem({ type: 'separator' }));
+                }
+                if (cipher.card.number != null) {
+                    menu.append(new remote.MenuItem({
+                        label: this.i18nService.t('copyNumber'),
+                        click: () => this.platformUtilsService.copyToClipboard(cipher.card.number),
+                    }));
+                }
+                if (cipher.card.code != null) {
+                    menu.append(new remote.MenuItem({
+                        label: this.i18nService.t('copySecurityCode'),
+                        click: () => this.platformUtilsService.copyToClipboard(cipher.card.code),
+                    }));
+                }
+                break;
+            default:
+                break;
+        }
+        menu.popup(remote.getCurrentWindow());
+    }
+
     editCipher(cipher: CipherView) {
         if (this.action === 'edit' && this.cipherId === cipher.id) {
             return;
@@ -224,6 +295,27 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.action = 'add';
         this.cipherId = null;
         this.go();
+    }
+
+    addCipherOptions() {
+        const menu = new remote.Menu();
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('typeLogin'),
+            click: () => this.addCipherWithChangeDetection(CipherType.Login),
+        }));
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('typeCard'),
+            click: () => this.addCipherWithChangeDetection(CipherType.Card),
+        }));
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('typeIdentity'),
+            click: () => this.addCipherWithChangeDetection(CipherType.Identity),
+        }));
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('typeSecureNote'),
+            click: () => this.addCipherWithChangeDetection(CipherType.SecureNote),
+        }));
+        menu.popup(remote.getCurrentWindow());
     }
 
     async savedCipher(cipher: CipherView) {
@@ -393,5 +485,12 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const url = this.router.createUrlTree(['vault'], { queryParams: queryParams }).toString();
         this.location.go(url);
+    }
+
+    private addCipherWithChangeDetection(type: CipherType = null) {
+        this.ngZone.run(async () => {
+            this.addCipher(type);
+            this.changeDetectorRef.detectChanges();
+        });
     }
 }

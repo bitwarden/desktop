@@ -18,7 +18,9 @@ import { CipherView } from 'jslib/models/view/cipherView';
 export class CiphersComponent {
     @Input() activeCipherId: string = null;
     @Output() onCipherClicked = new EventEmitter<CipherView>();
+    @Output() onCipherRightClicked = new EventEmitter<CipherView>();
     @Output() onAddCipher = new EventEmitter();
+    @Output() onAddCipherOptions = new EventEmitter();
 
     loaded: boolean = false;
     ciphers: CipherView[] = [];
@@ -51,7 +53,15 @@ export class CiphersComponent {
         this.onCipherClicked.emit(cipher);
     }
 
+    cipherRightClicked(cipher: CipherView) {
+        this.onCipherRightClicked.emit(cipher);
+    }
+
     addCipher() {
         this.onAddCipher.emit();
+    }
+
+    addCipherOptions() {
+        this.onAddCipherOptions.emit();
     }
 }
