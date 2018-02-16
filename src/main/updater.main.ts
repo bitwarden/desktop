@@ -56,6 +56,9 @@ export class UpdaterMain {
             if (this.doingUpdateCheckWithFeedback && this.main.windowMain.win != null) {
                 dialog.showMessageBox(this.main.windowMain.win, {
                     message: this.main.i18nService.t('noUpdatesAvailable'),
+                    buttons: [this.main.i18nService.t('ok')],
+                    defaultId: 0,
+                    noLink: true,
                 });
             }
 

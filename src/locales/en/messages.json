@@ -788,8 +788,8 @@
   "updateAvailableDesc": {
     "message": "An update was found. Do you want to download it now?"
   },
-  "update": {
-    "message": "Update"
+  "restart": {
+    "message": "Restart"
   },
   "later": {
     "message": "Later"
