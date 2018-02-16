@@ -6,6 +6,8 @@ import { DeviceType } from 'jslib/enums';
 
 import { PlatformUtilsService } from 'jslib/abstractions';
 
+import { UtilsService } from 'jslib/services';
+
 const AnalyticsIds = {
     [DeviceType.Chrome]: 'UA-81915606-6',
     [DeviceType.Firefox]: 'UA-81915606-7',
@@ -168,6 +170,11 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     isDev(): boolean {
         // TODO?
         return true;
+    }
+
+    copyToClipboard(text: string, options?: any): void {
+        const doc = options ? options.doc : null;
+        UtilsService.copyToClipboard(text, doc);
     }
 
     private sidebarViewName(): string {
