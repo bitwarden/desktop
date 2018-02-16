@@ -106,7 +106,9 @@
         "gconf-service",
         "libnotify4",
         "libxtst6",
-        "libnss3"
+        "libnss3",
+        "libsecret-1-0",
+        "libxss1"
       ]
     }
   },
