@@ -5,3 +5,7 @@ export function isDev() {
     }
     return (process.defaultApp || /node_modules[\\/]electron[\\/]/.test(process.execPath));
 }
+
+export function isAppImage() {
+    return 'APPIMAGE' in process.env;
+}

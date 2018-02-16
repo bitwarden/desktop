@@ -2,11 +2,15 @@ import {
     dialog,
     Menu,
     MenuItem,
+    shell,
 } from 'electron';
 import { autoUpdater } from 'electron-updater';
 
 import { Main } from '../main';
-import { isDev } from '../scripts/utils';
+import {
+    isDev,
+    isAppImage,
+} from '../scripts/utils';
 
 const UpdaterCheckInitalDelay = 5 * 1000; // 5 seconds
 const UpdaterCheckInterval = 12 * 60 * 60 * 1000; // 12 hours
@@ -100,6 +104,14 @@ export class UpdaterMain {
 
     async checkForUpdate(withFeedback: boolean = false) {
         if (this.doingUpdateCheck || isDev()) {
+            return;
+        }
+
+        if (process.platform === 'linux' && !isAppImage()) {
+            if (withFeedback) {
+                shell.openExternal('https://github.com/bitwarden/desktop/releases');
+            }
+
             return;
         }
 
