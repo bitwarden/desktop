@@ -45,7 +45,7 @@
                 </div>
             </div>
         </ng-container>
-        <div class="box last" *ngIf="!selectedProviderType">
+        <div class="box last" *ngIf="selectedProviderType == null">
             <div class="box-content">
                 <div class="box-content-row">
                     <p>{{'noTwoStepProviders' | i18n}}</p>
@@ -55,7 +55,7 @@
         </div>
         <div class="buttons">
             <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick
-                    *ngIf="selectedProviderType && selectedProviderType !== providerType.Duo">
+                    *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo">
                 <span [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'continue' | i18n}}</span>
                 <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
             </button>
