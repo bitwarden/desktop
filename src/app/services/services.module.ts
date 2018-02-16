@@ -109,15 +109,32 @@ environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);
 });
 
-function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsService): Function {
+function initFactory(): Function {
     return async () => {
-        await i18n.init();
+        await i18nService.init();
         await authService.init();
         const htmlEl = window.document.documentElement;
-        htmlEl.classList.add('os_' + platformUtils.getDeviceString());
-        htmlEl.classList.add('locale_' + i18n.translationLocale);
+        htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
+        htmlEl.classList.add('locale_' + i18nService.translationLocale);
         stateService.save(ConstantsService.disableFaviconKey,
             await storageService.get<boolean>(ConstantsService.disableFaviconKey));
+
+        let installAction = null;
+        const installedVersion = await storageService.get<string>(ConstantsService.installedVersionKey);
+        const currentVersion = platformUtilsService.getApplicationVersion();
+        if (installedVersion == null) {
+            installAction = 'install';
+        } else if (installedVersion !== currentVersion) {
+            installAction = 'update';
+        }
+
+        if (installAction != null) {
+            await storageService.save(ConstantsService.installedVersionKey, currentVersion);
+            analytics.ga('send', {
+                hitType: 'event',
+                eventAction: installAction,
+            });
+        }
     };
 }
 
@@ -153,10 +170,7 @@ function initFactory(i18n: I18nService, platformUtils: DesktopPlatformUtilsServi
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
-            deps: [
-                I18nServiceAbstraction,
-                PlatformUtilsServiceAbstraction,
-            ],
+            deps: [],
             multi: true,
         },
     ],
