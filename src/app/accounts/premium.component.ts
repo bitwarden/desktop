@@ -27,7 +27,7 @@ export class PremiumComponent implements OnInit {
         private tokenService: TokenService, private apiService: ApiService) { }
 
     async ngOnInit() {
-        this.isPremium = !this.tokenService.getPremium();
+        this.isPremium = this.tokenService.getPremium();
     }
 
     async refresh() {
