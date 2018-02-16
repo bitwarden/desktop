@@ -67,6 +67,10 @@ export class MenuMain {
     }
 
     private initContextMenu() {
+        if (this.main.windowMain.win == null) {
+            return;
+        }
+
         const selectionMenu = Menu.buildFromTemplate([
             { role: 'copy' },
             { type: 'separator' },

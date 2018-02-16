@@ -7,7 +7,9 @@ export class DesktopMainMessagingService implements MessagingService {
 
     send(subscriber: string, arg: any = {}) {
         const message = Object.assign({}, { command: subscriber }, arg);
-        this.main.windowMain.win.webContents.send('messagingService', message);
         this.main.messagingMain.onMessage(message);
+        if (this.main.windowMain.win != null) {
+            this.main.windowMain.win.webContents.send('messagingService', message);
+        }
     }
 }

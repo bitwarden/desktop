@@ -28,6 +28,11 @@ export class UpdaterMain {
 
         autoUpdater.on('update-available', () => {
             if (this.doingUpdateCheckWithFeedback) {
+                if (this.main.windowMain.win == null) {
+                    this.reset();
+                    return;
+                }
+
                 const result = dialog.showMessageBox(this.main.windowMain.win, {
                     type: 'info',
                     title: this.main.i18nService.t('updateAvailable'),
@@ -48,7 +53,7 @@ export class UpdaterMain {
         });
 
         autoUpdater.on('update-not-available', () => {
-            if (this.doingUpdateCheckWithFeedback) {
+            if (this.doingUpdateCheckWithFeedback && this.main.windowMain.win != null) {
                 dialog.showMessageBox(this.main.windowMain.win, {
                     message: this.main.i18nService.t('noUpdatesAvailable'),
                 });
@@ -59,6 +64,10 @@ export class UpdaterMain {
 
         autoUpdater.on('update-downloaded', (info) => {
             this.main.menuMain.updateMenuItem.label = this.main.i18nService.t('restartToUpdate');
+
+            if (this.main.windowMain.win == null) {
+                return;
+            }
 
             const result = dialog.showMessageBox(this.main.windowMain.win, {
                 type: 'info',

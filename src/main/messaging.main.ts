@@ -62,6 +62,10 @@ export class MessagingMain {
         }
 
         this.syncTimeout = global.setTimeout(() => {
+            if (this.main.windowMain.win == null) {
+                return;
+            }
+
             this.main.windowMain.win.webContents.send('messagingService', {
                 command: 'checkSyncVault',
             });
