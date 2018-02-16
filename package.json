@@ -24,18 +24,16 @@
     "build:renderer": "webpack --config webpack.renderer.js",
     "build:renderer:watch": "webpack --config webpack.renderer.js --watch",
     "electron": "npm run build:main && (electron --inspect=5858 ./build --watch | npm run build:renderer:watch)",
-    "pack:linux": "build --linux --x64",
-    "pack:mac": "build --mac",
-    "pack:maclinux": "build --mac --linux --x64",
-    "pack:win": "build --win --x64 --ia32",
-    "dist:linux": "npm run build && npm run pack:linux",
+    "clean:dist": "rimraf ./dist/*",
+    "pack:lin": "npm run clean:dist && build --linux --x64",
+    "pack:mac": "npm run clean:dist && build --mac",
+    "pack:win": "npm run clean:dist && build --win --x64 --ia32",
+    "dist:lin": "npm run build && npm run pack:lin",
     "dist:mac": "npm run build && npm run pack:mac",
-    "dist:maclinux": "npm run build && npm run pack:maclinux",
     "dist:win": "npm run build && npm run pack:win",
-    "publish:linux": "npm run build && build --linux --x64 -p always",
-    "publish:mac": "npm run build && build --mac -p always",
-    "publish:maclinux": "npm run build && build --mac --linux --x64 -p always",
-    "publish:win": "npm run build && build --win --x64 --ia32 -p always"
+    "publish:lin": "npm run build && npm run clean:dist && build --linux --x64 -p always",
+    "publish:mac": "npm run build && npm run clean:dist && build --mac -p always",
+    "publish:win": "npm run build && npm run clean:dist && build --win --x64 --ia32 -p always"
   },
   "build": {
     "appId": "com.bitwarden.desktop",
@@ -103,7 +101,13 @@
       "artifactName": "${productName} Portable ${version}.${ext}"
     },
     "deb": {
-      "depends": ["gconf2", "gconf-service", "libnotify4", "libxtst6", "libnss3"]
+      "depends": [
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libxtst6",
+        "libnss3"
+      ]
     }
   },
   "devDependencies": {
@@ -124,6 +128,7 @@
     "html-webpack-plugin": "^2.30.1",
     "node-loader": "^0.6.0",
     "node-sass": "^4.7.2",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "ts-loader": "^3.5.0",
     "tslint": "^5.9.1",
