@@ -108,6 +108,7 @@ export class UpdaterMain {
         }
 
         if (process.platform === 'linux' && !isAppImage()) {
+            // Only AppImage packages support auto-update on linux
             if (withFeedback) {
                 shell.openExternal('https://github.com/bitwarden/desktop/releases');
             }
