@@ -8,6 +8,10 @@ small {
     color: $brand-primary !important;
 }
 
+.text-success {
+    color: $brand-success !important;
+}
+
 .text-muted {
     color: $text-muted !important;
 }
@@ -18,6 +22,16 @@ small {
 
 .text-center {
     text-align: center;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+p.lead {
+    font-size: $font-size-large;
+    margin-bottom: 20px;
+    font-weight: normal;
 }
 
 [hidden] {

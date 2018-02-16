@@ -20,6 +20,7 @@ import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
+import { PremiumComponent } from './accounts/premium.component';
 import { RegisterComponent } from './accounts/register.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
@@ -80,6 +81,7 @@ import { ViewComponent } from './vault/view.component';
         LoginComponent,
         ModalComponent,
         PasswordGeneratorComponent,
+        PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
         SettingsComponent,
@@ -96,6 +98,7 @@ import { ViewComponent } from './vault/view.component';
         FolderAddEditComponent,
         ModalComponent,
         PasswordGeneratorComponent,
+        PremiumComponent,
         SettingsComponent,
         TwoFactorOptionsComponent,
     ],

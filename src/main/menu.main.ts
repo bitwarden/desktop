@@ -203,7 +203,7 @@ export class MenuMain {
                 submenu: [
                     {
                         label: this.main.i18nService.t('premiumMembership'),
-                        click: () => this.main.messagingService.send('premiumMembership'),
+                        click: () => this.main.messagingService.send('openPremium'),
                         id: 'premiumMembership',
                     },
                     {

@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 
 import { ModalComponent } from './modal.component';
 
+import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
 
 import { ToasterService } from 'angular2-toaster';
@@ -49,10 +50,12 @@ const BroadcasterSubscriptionId = 'AppComponent';
     template: `
         <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
         <ng-template #settings></ng-template>
+        <ng-template #premium></ng-template>
         <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
     @ViewChild('settings', { read: ViewContainerRef }) settingsRef: ViewContainerRef;
+    @ViewChild('premium', { read: ViewContainerRef }) premiumRef: ViewContainerRef;
 
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
@@ -113,6 +116,9 @@ export class AppComponent implements OnInit {
                     case 'openSettings':
                         this.openSettings();
                         break;
+                    case 'openPremium':
+                        this.openPremium();
+                        break;
                     default:
                 }
             });
@@ -172,6 +178,20 @@ export class AppComponent implements OnInit {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.settingsRef.createComponent(factory).instance;
         const childComponent = this.modal.show<SettingsComponent>(SettingsComponent, this.settingsRef);
+
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
+        });
+    }
+
+    private openPremium() {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.premiumRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<PremiumComponent>(PremiumComponent, this.premiumRef);
 
         this.modal.onClosed.subscribe(() => {
             this.modal = null;
