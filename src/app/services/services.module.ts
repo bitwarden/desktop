@@ -7,6 +7,8 @@ import {
 
 import { ToasterModule } from 'angular2-toaster';
 
+import { isDev } from '../../scripts/utils';
+
 import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
 import { DesktopRendererMessagingService } from '../../services/desktopRendererMessaging.service';
 import { DesktopRendererSecureStorageService } from '../../services/desktopRendererSecureStorage.service';
@@ -101,7 +103,7 @@ const authService = new AuthService(cryptoService, apiService,
     userService, tokenService, appIdService, i18nService, platformUtilsService, constantsService,
     messagingService);
 
-const analytics = new Analytics(window, null, platformUtilsService, storageService, appIdService);
+const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToWindow(window);
 environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);
