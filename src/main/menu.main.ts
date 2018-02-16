@@ -212,7 +212,8 @@ export class MenuMain {
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('changeMasterPass'),
-                                message: this.main.i18nService.t('changeMasterPasswordConfirmation'),
+                                message: this.main.i18nService.t('changeMasterPass'),
+                                detail: this.main.i18nService.t('changeMasterPasswordConfirmation'),
                                 buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
@@ -229,7 +230,8 @@ export class MenuMain {
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('changeEmail'),
-                                message: this.main.i18nService.t('changeEmailConfirmation'),
+                                message: this.main.i18nService.t('changeEmail'),
+                                detail: this.main.i18nService.t('changeEmailConfirmation'),
                                 buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
@@ -246,7 +248,8 @@ export class MenuMain {
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('twoStepLogin'),
-                                message: this.main.i18nService.t('twoStepLoginConfirmation'),
+                                message: this.main.i18nService.t('twoStepLogin'),
+                                detail: this.main.i18nService.t('twoStepLoginConfirmation'),
                                 buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
                                 cancelId: 1,
                                 defaultId: 0,
@@ -264,7 +267,8 @@ export class MenuMain {
                         click: () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('logOut'),
-                                message: this.main.i18nService.t('logOutConfirmation'),
+                                message: this.main.i18nService.t('logOut'),
+                                detail: this.main.i18nService.t('logOutConfirmation'),
                                 buttons: [this.main.i18nService.t('logOut'), this.main.i18nService.t('cancel')],
                                 cancelId: 1,
                                 defaultId: 0,

@@ -140,7 +140,8 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
         const result = remote.dialog.showMessageBox(remote.getCurrentWindow(), {
             type: type,
             title: title,
-            message: text,
+            message: title,
+            detail: text,
             buttons: buttons,
             cancelId: buttons.length === 2 ? 1 : null,
             defaultId: 0,
