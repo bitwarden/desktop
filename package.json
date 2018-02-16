@@ -110,6 +110,13 @@
         "libsecret-1-0",
         "libxss1"
       ]
+    },
+    "snap": {
+      "grade": "stable",
+      "stagePackages": [
+        "default", 
+        "libsecret-1-0"
+      ]
     }
   },
   "devDependencies": {
