@@ -263,8 +263,7 @@ export default class RuntimeBackground {
 
     private async checkOnInstalled() {
         if (this.isSafari) {
-            const installedVersionKey = 'installedVersion';
-            const installedVersion = await this.storageService.get<string>(installedVersionKey);
+            const installedVersion = await this.storageService.get<string>(ConstantsService.installedVersionKey);
             if (installedVersion == null) {
                 this.onInstalledReason = 'install';
             } else if (BrowserApi.getApplicationVersion() !== installedVersion) {
@@ -272,7 +271,8 @@ export default class RuntimeBackground {
             }
 
             if (this.onInstalledReason != null) {
-                await this.storageService.save(installedVersionKey, BrowserApi.getApplicationVersion());
+                await this.storageService.save(ConstantsService.installedVersionKey,
+                    BrowserApi.getApplicationVersion());
             }
         }
 
