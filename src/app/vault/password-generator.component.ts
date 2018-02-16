@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { UtilsService } from 'jslib/abstractions/utils.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 @Component({
     selector: 'password-generator',
@@ -28,7 +28,7 @@ export class PasswordGeneratorComponent implements OnInit {
     avoidAmbiguous = false;
 
     constructor(private passwordGenerationService: PasswordGenerationService, private analytics: Angulartics2,
-        private utilsService: UtilsService) { }
+        private platformUtilsService: PlatformUtilsService) { }
 
     async ngOnInit() {
         this.options = await this.passwordGenerationService.getOptions();
@@ -73,7 +73,7 @@ export class PasswordGeneratorComponent implements OnInit {
 
     copy() {
         this.analytics.eventTrack.next({ action: 'Copied Generated Password' });
-        this.utilsService.copyToClipboard(this.password, window.document);
+        this.platformUtilsService.copyToClipboard(this.password);
     }
 
     select() {

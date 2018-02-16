@@ -21,7 +21,6 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
-import { UtilsService } from 'jslib/abstractions/utils.service';
 
 import { AttachmentView } from 'jslib/models/view/attachmentView';
 import { CipherView } from 'jslib/models/view/cipherView';
@@ -47,10 +46,9 @@ export class ViewComponent implements OnChanges, OnDestroy {
     private totpInterval: any;
 
     constructor(private cipherService: CipherService, private totpService: TotpService,
-        private tokenService: TokenService, private utilsService: UtilsService,
+        private tokenService: TokenService, private toasterService: ToasterService,
         private cryptoService: CryptoService, private platformUtilsService: PlatformUtilsService,
-        private i18nService: I18nService, private analytics: Angulartics2, private toasterService: ToasterService) {
-    }
+        private i18nService: I18nService, private analytics: Angulartics2) { }
 
     async ngOnChanges() {
         this.cleanUp();
@@ -104,7 +102,7 @@ export class ViewComponent implements OnChanges, OnDestroy {
         }
 
         this.analytics.eventTrack.next({ action: 'Copied ' + aType });
-        this.utilsService.copyToClipboard(value, window.document);
+        this.platformUtilsService.copyToClipboard(value);
     }
 
     async downloadAttachment(attachment: AttachmentView) {
