@@ -49,6 +49,8 @@
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
       "target": [
+        "mas-dev",
+        "mas",
         "dmg",
         "zip"
       ]
