@@ -184,11 +184,15 @@ export class WindowMain {
         }
 
         if (displayBounds != null) {
+            if (state.width > displayBounds.width && state.height > displayBounds.height) {
+                state.isMaximized = true;
+            }
+
             if (state.width > displayBounds.width) {
-                state.width = displayBounds.width;
+                state.width = displayBounds.width - 10;
             }
             if (state.height > displayBounds.height) {
-                state.height = displayBounds.height;
+                state.height = displayBounds.height - 10;
             }
         }
 
