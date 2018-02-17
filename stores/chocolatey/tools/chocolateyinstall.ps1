@@ -1,12 +1,16 @@
 ﻿$ErrorActionPreference = 'Stop';
 
+$url = 'https://github.com/bitwarden/desktop/releases/download/v0.0.5/bitwarden-web-setup-0.0.5.exe'
+$checksum = '017E5B289EB583E93DB7F108FB5CB0AD28AB44EEE045A8A096B442CAF822567F'
+
 $packageArgs = @{
-  packageName   = $env:ChocolateyPackageNam
+  packageName   = 'bitwarden'
   fileType      = 'EXE'
-  url           = 'https://github.com/bitwarden/desktop/releases/download/v0.0.5/bitwarden-web-setup-0.0.5.exe'
-  checksum      = '017E5B289EB583E93DB7F108FB5CB0AD28AB44EEE045A8A096B442CAF822567F'
+  softwareName  = 'Bitwarden'
+  url           = $url
+  checksum      = $checksum
   checksumType  = 'sha256'
-  silentArgs   = '/S'
+  silentArgs    = '/S'
   validExitCodes= @(0)
 }
 

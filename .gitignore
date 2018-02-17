@@ -9,3 +9,4 @@ build/
 package-lock.json
 yarn-error.log
 .DS_Store
+*.nupkg
