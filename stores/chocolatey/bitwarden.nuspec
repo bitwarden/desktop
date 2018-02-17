@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -15,6 +14,9 @@
     <projectSourceUrl>https://github.com/bitwarden/desktop/</projectSourceUrl>
     <docsUrl>https://help.bitwarden.com/</docsUrl>
     <bugTrackerUrl>https://github.com/bitwarden/desktop/issues</bugTrackerUrl>
+    <releaseNotes>https://github.com/bitwarden/desktop/releases</releaseNotes>
+    <licenseUrl>https://github.com/bitwarden/desktop/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>bitwarden password manager</tags>
     <summary>A secure and free password manager for all of your devices.</summary>
     <description>
