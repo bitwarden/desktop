@@ -5,7 +5,7 @@
   <metadata>
     <id>bitwarden</id>
     <version>0.0.5</version>
-    <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>
+    <packageSourceUrl>https://github.com/bitwarden/desktop/tree/master/stores/chocolatey</packageSourceUrl>
     <owners>kspearrin</owners>
     <title>Bitwarden</title>
     <authors>8bit Solutions LLC</authors>
