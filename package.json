@@ -113,7 +113,6 @@
     }
   },
   "devDependencies": {
-    "@bitwarden/jslib": "git+https://github.com/bitwarden/jslib.git",
     "@types/keytar": "^4.0.1",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.0",
@@ -151,6 +150,7 @@
     "@angular/platform-browser-dynamic": "5.2.0",
     "@angular/router": "5.2.0",
     "@angular/upgrade": "5.2.0",
+    "@bitwarden/jslib": "git+https://github.com/bitwarden/jslib.git",
     "angular2-toaster": "4.0.2",
     "angulartics2": "5.0.1",
     "core-js": "2.4.1",
