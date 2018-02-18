@@ -68,6 +68,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "@bitwarden/jslib": "git+https://github.com/bitwarden/jslib.git",
     "@types/angular": "^1.6.34",
     "@types/chrome": "0.0.51",
     "@types/jquery": "^3.2.16",
@@ -77,7 +78,6 @@
     "@types/safari-extension-content": "^0.0.14",
     "@types/tldjs": "1.7.1",
     "@types/webcrypto": "^0.0.28",
-    "@uirouter/angularjs": "^1.0.10",
-    "@bitwarden/jslib": "git+https://github.com/bitwarden/jslib.git"
+    "@uirouter/angularjs": "^1.0.10"
   }
 }
