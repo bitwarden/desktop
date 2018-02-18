@@ -874,5 +874,8 @@
   },
   "clear": {
     "message": "Clear"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
   }
 }
