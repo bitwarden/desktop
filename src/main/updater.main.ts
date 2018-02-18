@@ -88,7 +88,7 @@ export class UpdaterMain {
             });
 
             if (result === 0) {
-                autoUpdater.quitAndInstall();
+                autoUpdater.quitAndInstall(false, true);
             }
         });
 
