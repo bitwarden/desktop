@@ -78,7 +78,8 @@
     "message": "開啟"
   },
   "copyValue": {
-    "message": "複製值"
+    "message": "複製值",
+    "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
     "message": "切換可見度"
@@ -594,5 +595,287 @@
   },
   "featureUnavailable": {
     "message": "功能無法使用"
+  },
+  "loggedOut": {
+    "message": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Are you sure you want to log out?"
+  },
+  "logOut": {
+    "message": "Log Out"
+  },
+  "addNewLogin": {
+    "message": "Add New Login"
+  },
+  "addNewItem": {
+    "message": "Add New Item"
+  },
+  "addNewFolder": {
+    "message": "Add New Folder"
+  },
+  "view": {
+    "message": "View"
+  },
+  "account": {
+    "message": "Account"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "lockNow": {
+    "message": "Lock Now"
+  },
+  "passwordGenerator": {
+    "message": "Password Generator"
+  },
+  "emailUs": {
+    "message": "Email Us"
+  },
+  "visitOurWebsite": {
+    "message": "Visit Our Website"
+  },
+  "fileBugReport": {
+    "message": "File a Bug Report"
+  },
+  "blog": {
+    "message": "Blog"
+  },
+  "followUs": {
+    "message": "Follow Us"
+  },
+  "syncVault": {
+    "message": "Sync Vault"
+  },
+  "changeMasterPass": {
+    "message": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmail": {
+    "message": "Change Email"
+  },
+  "changeEmailConfirmation": {
+    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "goToWebVault": {
+    "message": "Go To Web Vault"
+  },
+  "getMobileApp": {
+    "message": "Get Mobile App"
+  },
+  "getBrowserExtension": {
+    "message": "Get Browser Extension"
+  },
+  "syncingComplete": {
+    "message": "Syncing complete"
+  },
+  "syncingFailed": {
+    "message": "Syncing failed"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "invalidMasterPassword": {
+    "message": "Invalid master password"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLogin": {
+    "message": "Two-step Login"
+  },
+  "lockOptions": {
+    "message": "Lock Options"
+  },
+  "lockOptionsDesc": {
+    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+  },
+  "immediately": {
+    "message": "Immediately"
+  },
+  "oneMinute": {
+    "message": "1 minute"
+  },
+  "fiveMinutes": {
+    "message": "5 minutes"
+  },
+  "fifteenMinutes": {
+    "message": "15 minutes"
+  },
+  "thirtyMinutes": {
+    "message": "30 minutes"
+  },
+  "oneHour": {
+    "message": "1 hour"
+  },
+  "fourHours": {
+    "message": "4 hours"
+  },
+  "onIdle": {
+    "message": "On System Idle"
+  },
+  "onSleep": {
+    "message": "On System Sleep"
+  },
+  "onLocked": {
+    "message": "On System Lock"
+  },
+  "onRestart": {
+    "message": "On Restart"
+  },
+  "never": {
+    "message": "Never"
+  },
+  "security": {
+    "message": "Security"
+  },
+  "disableGa": {
+    "message": "Disable Analytics"
+  },
+  "gaDesc": {
+    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableFavicon": {
+    "message": "Disable Website Icons"
+  },
+  "disableFaviconDesc": {
+    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  },
+  "about": {
+    "message": "About"
+  },
+  "copy": {
+    "message": "Copy",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "Check For Updates"
+  },
+  "version": {
+    "message": "Version $VERSION_NUM$",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "restartToUpdate": {
+    "message": "Restart To Update"
+  },
+  "restartToUpdateDesc": {
+    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "Update Available"
+  },
+  "updateAvailableDesc": {
+    "message": "An update was found. Do you want to download it now?"
+  },
+  "restart": {
+    "message": "Restart"
+  },
+  "later": {
+    "message": "Later"
+  },
+  "noUpdatesAvailable": {
+    "message": "No updates are currently available. You are using the latest version."
+  },
+  "updateError": {
+    "message": "Update Error"
+  },
+  "unknown": {
+    "message": "Unknown"
+  },
+  "copyUsername": {
+    "message": "Copy Username"
+  },
+  "copyNumber": {
+    "message": "Copy Number",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Copy Security Code",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "premiumMembership": {
+    "message": "Premium Membership"
+  },
+  "premiumManage": {
+    "message": "Manage Membership"
+  },
+  "premiumManageAlert": {
+    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumRefresh": {
+    "message": "Refresh Membership"
+  },
+  "premiumNotCurrentMember": {
+    "message": "You are not currently a premium member."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Sign up for a premium membership and get:"
+  },
+  "premiumSignUpStorage": {
+    "message": "1 GB of encrypted file storage."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "premiumSignUpTotp": {
+    "message": "TOTP verification code (2FA) generator for logins in your vault."
+  },
+  "premiumSignUpSupport": {
+    "message": "Priority customer support."
+  },
+  "premiumSignUpFuture": {
+    "message": "All future premium features. More coming soon!"
+  },
+  "premiumPurchase": {
+    "message": "Purchase Premium"
+  },
+  "premiumPurchaseAlert": {
+    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumCurrentMember": {
+    "message": "You are a premium member!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Thank you for supporting bitwarden."
+  },
+  "premiumPrice": {
+    "message": "All for just $PRICE$ \/year!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "refreshComplete": {
+    "message": "Refresh complete"
+  },
+  "passwordHistory": {
+    "message": "Password History"
+  },
+  "clear": {
+    "message": "Clear"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
   }
 }
