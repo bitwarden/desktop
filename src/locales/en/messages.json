@@ -868,5 +868,11 @@
   },
   "refreshComplete": {
     "message": "Refresh complete"
+  },
+  "passwordHistory": {
+    "message": "Password History"
+  },
+  "clear": {
+    "message": "Clear"
   }
 }

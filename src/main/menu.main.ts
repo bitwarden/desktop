@@ -27,6 +27,7 @@ export class MenuMain {
     changeMasterPass: MenuItem;
     premiumMembership: MenuItem;
     passwordGenerator: MenuItem;
+    passwordHistory: MenuItem;
     searchVault: MenuItem;
     unlockedRequiredMenuItems: MenuItem[] = [];
 
@@ -49,12 +50,14 @@ export class MenuMain {
         this.changeMasterPass = this.menu.getMenuItemById('changeMasterPass');
         this.premiumMembership = this.menu.getMenuItemById('premiumMembership');
         this.passwordGenerator = this.menu.getMenuItemById('passwordGenerator');
+        this.passwordHistory = this.menu.getMenuItemById('passwordHistory');
         this.searchVault = this.menu.getMenuItemById('searchVault');
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
             this.syncVault, this.settings, this.lockNow, this.twoStepLogin, this.changeEmail,
-            this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.searchVault];
+            this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
+            this.searchVault];
         this.updateApplicationMenuState(false, true);
     }
 
@@ -175,16 +178,22 @@ export class MenuMain {
                 label: this.main.i18nService.t('view'),
                 submenu: [
                     {
+                        label: this.main.i18nService.t('searchVault'),
+                        id: 'searchVault',
+                        click: () => this.main.messagingService.send('focusSearch'),
+                        accelerator: 'CmdOrCtrl+F',
+                    },
+                    { type: 'separator' },
+                    {
                         label: this.main.i18nService.t('passwordGenerator'),
                         id: 'passwordGenerator',
                         click: () => this.main.messagingService.send('openPasswordGenerator'),
                         accelerator: 'CmdOrCtrl+G',
                     },
                     {
-                        label: this.main.i18nService.t('searchVault'),
-                        id: 'searchVault',
-                        click: () => this.main.messagingService.send('focusSearch'),
-                        accelerator: 'CmdOrCtrl+F',
+                        label: this.main.i18nService.t('passwordHistory'),
+                        id: 'passwordHistory',
+                        click: () => this.main.messagingService.send('openPasswordHistory'),
                     },
                     { type: 'separator' },
                     { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },

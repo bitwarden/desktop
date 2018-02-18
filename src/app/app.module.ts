@@ -43,6 +43,7 @@ import { CiphersComponent } from './vault/ciphers.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
 import { IconComponent } from './vault/icon.component';
+import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
@@ -81,6 +82,7 @@ import { ViewComponent } from './vault/view.component';
         LoginComponent,
         ModalComponent,
         PasswordGeneratorComponent,
+        PasswordGeneratorHistoryComponent,
         PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
@@ -98,6 +100,7 @@ import { ViewComponent } from './vault/view.component';
         FolderAddEditComponent,
         ModalComponent,
         PasswordGeneratorComponent,
+        PasswordGeneratorHistoryComponent,
         PremiumComponent,
         SettingsComponent,
         TwoFactorOptionsComponent,

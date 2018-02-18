@@ -15,7 +15,7 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 @Component({
-    selector: 'password-generator',
+    selector: 'app-password-generator',
     template: template,
 })
 export class PasswordGeneratorComponent implements OnInit {
@@ -60,14 +60,13 @@ export class PasswordGeneratorComponent implements OnInit {
         await this.passwordGenerationService.saveOptions(this.options);
 
         if (regenerate) {
-            this.password = this.passwordGenerationService.generatePassword(this.options);
-            await this.passwordGenerationService.addHistory(this.password);
-            this.analytics.eventTrack.next({ action: 'Regenerated Password' });
+            await this.regenerate();
         }
     }
 
-    regenerate() {
+    async regenerate() {
         this.password = this.passwordGenerationService.generatePassword(this.options);
+        await this.passwordGenerationService.addHistory(this.password);
         this.analytics.eventTrack.next({ action: 'Regenerated Password' });
     }
 

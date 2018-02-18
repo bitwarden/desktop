@@ -98,6 +98,7 @@
             &.box-content-row-slider, &.box-content-row-cf {
                 display: flex;
                 align-items: center;
+                word-break: break-word;
             }
 
             &.box-content-row-cf {

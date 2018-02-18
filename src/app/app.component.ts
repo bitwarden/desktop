@@ -10,6 +10,7 @@ import {
     NgZone,
     OnDestroy,
     OnInit,
+    Type,
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
@@ -19,6 +20,7 @@ import { ModalComponent } from './modal.component';
 
 import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
+import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
@@ -51,11 +53,13 @@ const BroadcasterSubscriptionId = 'AppComponent';
         <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
         <ng-template #settings></ng-template>
         <ng-template #premium></ng-template>
+        <ng-template #passwordHistory></ng-template>
         <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
     @ViewChild('settings', { read: ViewContainerRef }) settingsRef: ViewContainerRef;
     @ViewChild('premium', { read: ViewContainerRef }) premiumRef: ViewContainerRef;
+    @ViewChild('passwordHistory', { read: ViewContainerRef }) passwordHistoryRef: ViewContainerRef;
 
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
@@ -114,10 +118,14 @@ export class AppComponent implements OnInit {
                     case 'syncCompleted':
                         break;
                     case 'openSettings':
-                        this.openSettings();
+                        this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
                         break;
                     case 'openPremium':
-                        this.openPremium();
+                        this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
+                        break;
+                    case 'openPasswordHistory':
+                        this.openModal<PasswordGeneratorHistoryComponent>(
+                            PasswordGeneratorHistoryComponent, this.passwordHistoryRef);
                         break;
                     default:
                 }
@@ -170,28 +178,14 @@ export class AppComponent implements OnInit {
         this.storageService.save(ConstantsService.lastActiveKey, now);
     }
 
-    private openSettings() {
+    private openModal<T>(type: Type<T>, ref: ViewContainerRef) {
         if (this.modal != null) {
             this.modal.close();
         }
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.settingsRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<SettingsComponent>(SettingsComponent, this.settingsRef);
-
-        this.modal.onClosed.subscribe(() => {
-            this.modal = null;
-        });
-    }
-
-    private openPremium() {
-        if (this.modal != null) {
-            this.modal.close();
-        }
-
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.premiumRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<PremiumComponent>(PremiumComponent, this.premiumRef);
+        this.modal = ref.createComponent(factory).instance;
+        const childComponent = this.modal.show<T>(type, ref);
 
         this.modal.onClosed.subscribe(() => {
             this.modal = null;
