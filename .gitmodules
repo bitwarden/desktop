@@ -1,4 +1,4 @@
 [submodule "jslib"]
 	path = jslib
-	url = git@github.com:bitwarden/jslib.git
+	url = https://github.com/bitwarden/desktop.git
 	branch = master
