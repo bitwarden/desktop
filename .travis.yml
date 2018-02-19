@@ -1,9 +1,15 @@
 matrix:
   include:
     - language: node_js
+      os: linux
+      dist: trusty
       node_js: 8
-      env: 
-        - NAME="Node 8"
+      addons:
+      apt:
+        packages:
+        - libsecret-1-dev
+        - libxss-dev
+        - pkg-config
       install:
         - npm install
       script:
