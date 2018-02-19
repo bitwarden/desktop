@@ -21,51 +21,49 @@ import { ValidationService } from './validation.service';
 
 import { Analytics } from 'jslib/misc/analytics';
 
-import {
-    ApiService,
-    AppIdService,
-    AuthService,
-    CipherService,
-    CollectionService,
-    ConstantsService,
-    ContainerService,
-    CryptoService,
-    EnvironmentService,
-    FolderService,
-    LockService,
-    PasswordGenerationService,
-    SettingsService,
-    StateService,
-    SyncService,
-    TokenService,
-    TotpService,
-    UserService,
-    UtilsService,
-} from 'jslib/services';
+import { ApiService } from 'jslib/services/api.service';
+import { AppIdService } from 'jslib/services/appId.service';
+import { AuthService } from 'jslib/services/auth.service';
+import { CipherService } from 'jslib/services/cipher.service';
+import { CollectionService } from 'jslib/services/collection.service';
+import { ConstantsService } from 'jslib/services/constants.service';
+import { ContainerService } from 'jslib/services/container.service';
+import { CryptoService } from 'jslib/services/crypto.service';
+import { EnvironmentService } from 'jslib/services/environment.service';
+import { FolderService } from 'jslib/services/folder.service';
+import { LockService } from 'jslib/services/lock.service';
+import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
+import { SettingsService } from 'jslib/services/settings.service';
+import { StateService } from 'jslib/services/state.service';
+import { SyncService } from 'jslib/services/sync.service';
+import { TokenService } from 'jslib/services/token.service';
+import { TotpService } from 'jslib/services/totp.service';
+import { UserService } from 'jslib/services/user.service';
+import { UtilsService } from 'jslib/services/utils.service';
 
+import { ApiService as ApiServiceAbstraction } from 'jslib/abstractions/api.service';
+import { AppIdService as AppIdServiceAbstraction } from 'jslib/abstractions/appId.service';
+import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.service';
+import { CipherService as CipherServiceAbstraction } from 'jslib/abstractions/cipher.service';
+import { CollectionService as CollectionServiceAbstraction } from 'jslib/abstractions/collection.service';
+import { CryptoService as CryptoServiceAbstraction } from 'jslib/abstractions/crypto.service';
+import { EnvironmentService as EnvironmentServiceAbstraction } from 'jslib/abstractions/environment.service';
+import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
+import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
+import { LockService as LockServiceAbstraction } from 'jslib/abstractions/lock.service';
+import { MessagingService as MessagingServiceAbstraction } from 'jslib/abstractions/messaging.service';
 import {
-    ApiService as ApiServiceAbstraction,
-    AppIdService as AppIdServiceAbstraction,
-    AuthService as AuthServiceAbstraction,
-    CipherService as CipherServiceAbstraction,
-    CollectionService as CollectionServiceAbstraction,
-    CryptoService as CryptoServiceAbstraction,
-    EnvironmentService as EnvironmentServiceAbstraction,
-    FolderService as FolderServiceAbstraction,
-    I18nService as I18nServiceAbstraction,
-    LockService as LockServiceAbstraction,
-    MessagingService as MessagingServiceAbstraction,
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
-    PlatformUtilsService as PlatformUtilsServiceAbstraction,
-    SettingsService as SettingsServiceAbstraction,
-    StateService as StateServiceAbstraction,
-    StorageService as StorageServiceAbstraction,
-    SyncService as SyncServiceAbstraction,
-    TokenService as TokenServiceAbstraction,
-    TotpService as TotpServiceAbstraction,
-    UserService as UserServiceAbstraction,
-    UtilsService as UtilsServiceAbstraction,
-} from 'jslib/abstractions';
+} from 'jslib/abstractions/passwordGeneration.service';
+import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from 'jslib/abstractions/platformUtils.service';
+import { SettingsService as SettingsServiceAbstraction } from 'jslib/abstractions/settings.service';
+import { StateService as StateServiceAbstraction } from 'jslib/abstractions/state.service';
+import { StorageService as StorageServiceAbstraction } from 'jslib/abstractions/storage.service';
+import { SyncService as SyncServiceAbstraction } from 'jslib/abstractions/sync.service';
+import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/token.service';
+import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
+import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
+import { UtilsService as UtilsServiceAbstraction } from 'jslib/abstractions/utils.service';
 
 webFrame.registerURLSchemeAsPrivileged('file');
 
