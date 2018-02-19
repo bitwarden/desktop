@@ -50,7 +50,7 @@ module.exports = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'popup/fonts/',
-                        publicPath: '../'
+                        publicPath: './fonts/'
                     }
                 }]
             },
@@ -62,7 +62,7 @@ module.exports = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'popup/images/',
-                        publicPath: '../'
+                        publicPath: './images/'
                     }
                 }]
             }
