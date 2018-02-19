@@ -12,6 +12,8 @@ import {
 
 import { Main } from '../main';
 
+import { ConstantsService } from 'jslib/services/constants.service';
+
 export class MenuMain {
     menu: Menu;
     updateMenuItem: MenuItem;
@@ -218,7 +220,7 @@ export class MenuMain {
                     {
                         label: this.main.i18nService.t('changeMasterPass'),
                         id: 'changeMasterPass',
-                        click: () => {
+                        click: async () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('changeMasterPass'),
                                 message: this.main.i18nService.t('changeMasterPass'),
@@ -229,14 +231,14 @@ export class MenuMain {
                                 noLink: true,
                             });
                             if (result === 0) {
-                                shell.openExternal('https://vault.bitwarden.com');
+                                await this.openWebVault();
                             }
                         },
                     },
                     {
                         label: this.main.i18nService.t('changeEmail'),
                         id: 'changeEmail',
-                        click: () => {
+                        click: async () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('changeEmail'),
                                 message: this.main.i18nService.t('changeEmail'),
@@ -247,14 +249,14 @@ export class MenuMain {
                                 noLink: true,
                             });
                             if (result === 0) {
-                                shell.openExternal('https://vault.bitwarden.com');
+                                await this.openWebVault();
                             }
                         },
                     },
                     {
                         label: this.main.i18nService.t('twoStepLogin'),
                         id: 'twoStepLogin',
-                        click: () => {
+                        click: async () => {
                             const result = dialog.showMessageBox(this.main.windowMain.win, {
                                 title: this.main.i18nService.t('twoStepLogin'),
                                 message: this.main.i18nService.t('twoStepLogin'),
@@ -265,7 +267,7 @@ export class MenuMain {
                                 noLink: true,
                             });
                             if (result === 0) {
-                                shell.openExternal('https://vault.bitwarden.com');
+                                await this.openWebVault();
                             }
                         },
                     },
@@ -341,7 +343,7 @@ export class MenuMain {
                     { type: 'separator' },
                     {
                         label: this.main.i18nService.t('goToWebVault'),
-                        click: () => shell.openExternal('https://vault.bitwarden.com'),
+                        click: async () => await this.openWebVault(),
                     },
                     {
                         label: this.main.i18nService.t('getMobileApp'),
@@ -491,5 +493,18 @@ export class MenuMain {
 
         this.menu = Menu.buildFromTemplate(template);
         Menu.setApplicationMenu(this.menu);
+    }
+
+    private async openWebVault() {
+        let webUrl = 'https://vault.bitwarden.com';
+        const urlsObj: any = await this.main.storageService.get(ConstantsService.environmentUrlsKey);
+        if (urlsObj != null) {
+            if (urlsObj.base != null) {
+                webUrl = urlsObj.base;
+            } else if (urlsObj.webVault != null) {
+                webUrl = urlsObj.webVault;
+            }
+        }
+        shell.openExternal(webUrl);
     }
 }
