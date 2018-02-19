@@ -65,7 +65,6 @@
       "category": "Utility",
       "synopsis": "A secure and free password manager for all of your devices.",
       "target": [
-        "snap",
         "rpm",
         "AppImage",
         "deb"
