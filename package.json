@@ -68,7 +68,6 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "@bitwarden/jslib": "git+https://github.com/bitwarden/jslib.git",
     "@types/angular": "^1.6.34",
     "@types/chrome": "0.0.51",
     "@types/jquery": "^3.2.16",
