@@ -6,7 +6,7 @@ matrix:
       sudo: true
       node_js: 8
       install:
-        - sudo apt-get install pkg-config libxss-dev libsecret-1-dev 
+        - sudo apt-get install pkg-config libxss-dev libsecret-1-dev snapd
         - npm install
       script:
         - npm run dist:lin
