@@ -51,7 +51,7 @@ const common = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
-            jslib: path.join(__dirname, 'node_modules/@bitwarden/jslib/src')
+            jslib: path.join(__dirname, 'jslib/src')
         }
     },
     output: {

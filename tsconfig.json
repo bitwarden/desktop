@@ -11,7 +11,7 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
-      "jslib/*": [ "node_modules/@bitwarden/jslib/src/*" ]
+      "jslib/*": [ "jslib/src/*" ]
     }
   },
   "exclude": [

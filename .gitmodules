@@ -1,0 +1,4 @@
+[submodule "jslib"]
+	path = jslib
+	url = git@github.com:bitwarden/jslib.git
+	branch = master
