@@ -3,14 +3,10 @@ matrix:
     - language: node_js
       os: linux
       dist: trusty
+      sudo: true
       node_js: 8
-      addons:
-      apt:
-        packages:
-        - libsecret-1-dev
-        - libxss-dev
-        - pkg-config
       install:
+        - sudo apt-get install pkg-config libxss-dev libsecret-1-dev 
         - npm install
       script:
         - npm run dist:lin
