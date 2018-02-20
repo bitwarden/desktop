@@ -301,7 +301,7 @@
     "message": "已刪除項目"
   },
   "overwritePasswordConfirmation": {
-    "message": "你確定要覆寫目前的密碼嗎？"
+    "message": "您確定要覆寫目前的密碼嗎？"
   },
   "noneFolder": {
     "message": "（未分類）",
@@ -382,7 +382,7 @@
     "message": "已新增資料夾"
   },
   "deleteFolderConfirmation": {
-    "message": "你確定要刪除此資料夾嗎？"
+    "message": "您確定要刪除此資料夾嗎？"
   },
   "deletedFolder": {
     "message": "已刪除的資料夾"
@@ -403,10 +403,10 @@
     "message": "主密碼"
   },
   "masterPassDesc": {
-    "message": "主密碼是你存取密碼庫的密碼。請勿忘記主密碼，我們無法將你的主密碼復原或重設。"
+    "message": "主密碼是您存取密碼庫的密碼。請勿忘記主密碼，我們無法將您的主密碼復原或重設。"
   },
   "masterPassHintDesc": {
-    "message": "主密碼提示可以在你忘記主密碼時幫助你回憶主密碼。"
+    "message": "主密碼提示可以在您忘記主密碼時幫助您回憶主密碼。"
   },
   "reTypeMasterPass": {
     "message": "重新輸入主密碼"
@@ -421,7 +421,7 @@
     "message": "密碼提示"
   },
   "enterEmailToGetHint": {
-    "message": "請輸入你的帳户電子郵件地址以接收主密碼提示。"
+    "message": "請輸入您的帳户電子郵件地址以接收主密碼提示。"
   },
   "getMasterPasswordHint": {
     "message": "取得主密碼提示"
@@ -445,7 +445,7 @@
     "message": "帳戶已建立！現在可以登入了。"
   },
   "masterPassSent": {
-    "message": "已寄出包含你主密碼提示的電子郵件。"
+    "message": "已寄出包含您主密碼提示的電子郵件。"
   },
   "unexpectedError": {
     "message": "發生了未預期的錯誤。"
@@ -496,10 +496,10 @@
     "message": "使用另一種兩步驟登入方法"
   },
   "insertYubiKey": {
-    "message": "將你的 YubiKey 插入電腦的 USB 連接埠，然後按一下它的按鈕。"
+    "message": "將您的 YubiKey 插入電腦的 USB 連接埠，然後按一下它的按鈕。"
   },
   "insertU2f": {
-    "message": "將你的安全鑰匙插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
+    "message": "將您的安全鑰匙插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
   "recoveryCodeDesc": {
     "message": "無法使用任何兩步驟登入方式？用復原代碼停用所有兩步驟登入方式。"
@@ -518,14 +518,14 @@
     "message": "YubiKey OTP 安全鑰匙"
   },
   "yubiKeyDesc": {
-    "message": "使用 YubiKey 存取你的帳戶。相容於 YubiKey 4, 4 Nano, 4C, 和 NEO 裝置。"
+    "message": "使用 YubiKey 存取您的帳戶。相容於 YubiKey 4, 4 Nano, 4C, 和 NEO 裝置。"
   },
   "duoDesc": {
     "message": "與 Duo Security 驗證，可使用 Duo Mobile 程式， SMS ，致電或 U2F 安全鑰匙。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "使用任何啟用了 FIDO U2F 的安全鑰匙來存取你的帳戶。"
+    "message": "使用任何啟用了 FIDO U2F 的安全鑰匙來存取您的帳戶。"
   },
   "u2fTitle": {
     "message": "FIDO U2F 安全鑰匙"
@@ -534,7 +534,7 @@
     "message": "電子郵件"
   },
   "emailDesc": {
-    "message": "驗證碼將使用電子郵件傳送給你。"
+    "message": "驗證碼將使用電子郵件傳送給您。"
   },
   "loginUnavailable": {
     "message": "無法登入"
@@ -558,7 +558,7 @@
     "message": "自訂環境"
   },
   "customEnvironmentFooter": {
-    "message": "適用於進階使用者。你可以單獨指定各個服務的基礎 URL。"
+    "message": "適用於進階使用者。您可以單獨指定各個服務的基礎 URL。"
   },
   "baseUrl": {
     "message": "伺服器 URL"
@@ -567,7 +567,7 @@
     "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "Web 儲存庫伺服器 URL"
+    "message": "網路版密碼庫伺服器 URL"
   },
   "identityUrl": {
     "message": "身分伺服器 URL"
@@ -597,170 +597,170 @@
     "message": "功能無法使用"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "已登出"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "您的登入階段已過期。"
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "您確定要登出嗎？"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "登出"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "新增登入資料"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "新增項目"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "新增資料夾"
   },
   "view": {
-    "message": "View"
+    "message": "檢視"
   },
   "account": {
-    "message": "Account"
+    "message": "帳戶"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "正在載入..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "立即鎖定"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "密碼產生器"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "傳送電子郵件給我們"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "瀏覽我們的網站"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Bug 回報"
   },
   "blog": {
-    "message": "Blog"
+    "message": "部落格"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "關注我們"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "同步密碼庫"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "變更主密碼"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden 網頁版變更主密碼。現在前往？"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "變更電子郵件"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden 網頁版變更電子郵件地址。現在前往？"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "前往網路版密碼庫"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "取得行動裝置應用程式"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "取得瀏覽器擴充套件"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "同步完成"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "同步失敗"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "密碼庫已鎖定。驗證主密碼以繼續。"
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "解鎖"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "無效的主密碼"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "兩步驟登入需要您登入時輸入一個由驗證碼程式產生的安全碼，為您的帳戶增加一層保障。兩步驟登入可以在 bitwarden 網頁版啟用。現在前往？"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "兩步驟登入"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "自動鎖定時間"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "選擇密碼庫的自動鎖定時間。鎖定後需要重新輸入主密碼才能再次存取密碼庫。"
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "立即"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 分鐘"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 分鐘"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 分鐘"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 分鐘"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 小時"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 小時"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "於系統閒置"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "於系統睡眠"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "於系統鎖定"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "重新啟動時"
   },
   "never": {
-    "message": "Never"
+    "message": "永不"
   },
   "security": {
-    "message": "Security"
+    "message": "安全"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "停用 Analytics"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "我们使用 analytics 協助分析應用程式的使用情況，以便我們改善程式。所有資料均為匿名收集。"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "停用網站圖示"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "在您密碼庫的每個登入資料旁顯示一個可辨識圖示。"
   },
   "about": {
-    "message": "About"
+    "message": "關於"
   },
   "copy": {
-    "message": "Copy",
+    "message": "複製",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "檢查更新"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "版本 $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,10 +769,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "重新啟動以更新"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "$VERSION_NUM$ 版已完成安裝準備工作。您必須重新啟動 Bitwarden 才能完成安裝。要立即重新啟動並更新程式嗎？",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,84 +781,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "有可用的更新"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "發現新版本。您要現在下載嗎？"
   },
   "restart": {
-    "message": "Restart"
+    "message": "重新啟動"
   },
   "later": {
-    "message": "Later"
+    "message": "稍後"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "沒有可用的更新。您目前使用的是最新版本。"
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "更新錯誤"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "不詳"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "複製使用者名稱"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "複製號碼",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "複製安全代碼",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "進階會員"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden 網頁版管理你的會員資格。現在前往？"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "延續會員資格"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "您目前不是進階會員。"
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "成為進階會員並取得："
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB 的加密檔案儲存空間。"
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "YubiKey，FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "用於您的登入資料的 TOTP 驗證碼 (2FA) 產生器。"
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "優先客戶支援。"
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "未來會有更多進階功能，敬請期待！"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "購買進階會員資格"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden 網頁版購買進階會員資格。現在前往？"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "您目前是進階會員！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "感謝您支持 bitwardan 。"
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "每年只需 $PRICE$ ！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -867,15 +867,15 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "重新整理完成"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "密碼歷程記錄"
   },
   "clear": {
-    "message": "Clear"
+    "message": "清除"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "沒有密碼可顯示。"
   }
 }
