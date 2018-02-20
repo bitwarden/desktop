@@ -17,6 +17,7 @@
   },
   "license": "GPL-3.0",
   "scripts": {
+    "updatejslib": "git submodule update --remote",
     "postinstall": "./node_modules/.bin/electron-rebuild",
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
