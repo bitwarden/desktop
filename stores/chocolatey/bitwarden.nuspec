@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>bitwarden</id>
-    <version>0.0.5</version>
+    <version>0.0.0</version>
     <packageSourceUrl>https://github.com/bitwarden/desktop/tree/master/stores/chocolatey</packageSourceUrl>
     <owners>kspearrin</owners>
     <title>Bitwarden</title>
