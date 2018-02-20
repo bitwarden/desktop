@@ -7,7 +7,7 @@ DIST_DIR="$ROOT_DIR/dist"
 CASK_DIR="$ROOT_DIR/stores/homebrew-cask"
 DIST_CASK_DIR="$DIST_DIR/homebrew-cask"
 
-cp -r ./SourceFolder ./DestFolder
+cp -r $CASK_DIR $DIST_CASK_DIR
 
 if [ ! -d "$DIST_CASK_DIR" ]
 then
