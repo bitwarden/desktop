@@ -73,6 +73,7 @@
       ]
     },
     "dmg": {
+      "icon": "dmg.icns",
       "contents": [
         {
           "x": 150,
