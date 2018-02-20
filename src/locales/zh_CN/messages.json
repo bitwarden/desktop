@@ -597,170 +597,170 @@
     "message": "功能不可用"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "已登出"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "您的登录会话已过期。"
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "您确定要登出吗？"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "登出"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "添加网站"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "添加新项目"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "添加文件夹"
   },
   "view": {
-    "message": "View"
+    "message": "查看"
   },
   "account": {
-    "message": "Account"
+    "message": "账户"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "正在加载..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "立即锁定"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "密码生成器"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "给我们发邮件"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "访问我们的网站"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "发送错误报告"
   },
   "blog": {
-    "message": "Blog"
+    "message": "博客"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "关注我们"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "同步密码库"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "修改主密码"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden.com 网页版修改您的主密码。现在为您跳转吗？"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "更改电子邮件"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden.com 网页版修改您的 email 地址。现在为您跳转吗？"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "转到网页版密码库"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "获取手机应用"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "安装浏览器扩展"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "同步完成"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "同步失败"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "您的密码库被锁定，请先验证您的主密码。"
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "解锁​​​​"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "无效的主密码"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "两步登录使您在登录时需要输入一个从认证应用获取的安全码，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版启用。现在要访问吗？"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "两步登录"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "锁定选项"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "选择密码库锁定的时间。必须重新输入主密码才能打开锁定的密码库。"
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "立即"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 分钟"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 分钟"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 分钟"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 分钟"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 小时"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 小时"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "系统空闲时"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "系统休眠时"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "在系统锁定时"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "重启时"
   },
   "never": {
-    "message": "Never"
+    "message": "从不"
   },
   "security": {
-    "message": "Security"
+    "message": "安全"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "禁用 Analytics"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "我们使用 analytics 来帮助分析扩展的使用情况，以便我们改进程序。所有的数据收集完全是匿名的。"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "禁用网站图标"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "在您密码库的每个登录项目旁边显示一个可识别的图标。"
   },
   "about": {
-    "message": "About"
+    "message": "关于"
   },
   "copy": {
-    "message": "Copy",
+    "message": "复制",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "检查更新"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "版本 $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,10 +769,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "重启更新"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "版本 $VERSION_NUM$ 已准备好安装。必须重新启动 Bitwarden 才能完成安装。是否立即重新启动并更新？",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,84 +781,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "发现可更新版本"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "发现更新。是否立即下载？"
   },
   "restart": {
-    "message": "Restart"
+    "message": "重新启动"
   },
   "later": {
-    "message": "Later"
+    "message": "稍后"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "当前没有可用的更新。您使用的是最新版本。"
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "更新错误"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "未知"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "复制用户名"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "复制号码",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "复制安全码",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "高级会员"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "管理会员资格"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden.com 网页版管理您的会员资格。现在要访问吗？"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "刷新会员资格"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "您目前不是一名高级会员。"
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "注册高级会员将获得："
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB 加密文件存储。"
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "其他两步登录选项, 如 YubiKey、FIDO U2F 和 Duo。"
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "为您的密码库登录采用 TOTP 验证码（两步验证）生成器。"
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "优先客户支持。"
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "未来所有高级功能。即将到来！"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "购买高级版"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "您可以在 bitwarden.com 网页版购买高级会员。现在要访问吗？"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "您是一名高级会员！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "感谢您支持 bitwarden。"
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "只需 $PRICE$ \/年！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -867,15 +867,15 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "刷新完成"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "密码历史记录"
   },
   "clear": {
-    "message": "Clear"
+    "message": "清除"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "没有要显示的项目。"
   }
 }
