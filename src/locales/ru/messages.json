@@ -336,13 +336,13 @@
     "message": "Избегать неоднозначных символов"
   },
   "searchCollection": {
-    "message": "Найти коллекцию"
+    "message": "Поиск в коллекции"
   },
   "searchFolder": {
-    "message": "Поиск папки"
+    "message": "Поиск в папке"
   },
   "searchFavorites": {
-    "message": "Поиск избранных"
+    "message": "Поиск в избранном"
   },
   "searchType": {
     "message": "Тип поиска",
@@ -597,170 +597,170 @@
     "message": "Функция недоступна"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Вы вышли из хранилища"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Истек срок действия вашей сессии."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Вы действительно хотите выйти?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Выйти"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Добавить новый логин"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Добавить новый элемент"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Добавить новую папку"
   },
   "view": {
-    "message": "View"
+    "message": "Просмотр"
   },
   "account": {
-    "message": "Account"
+    "message": "Аккаунт"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Загрузка..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Заблокировать"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Генератор паролей"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Напишите нам"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Посетите наш сайт"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Сообщить об ошибке"
   },
   "blog": {
-    "message": "Blog"
+    "message": "Блог"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Подписывайтесь"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Синхронизировать хранилище"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Изменить мастер-пароль"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Вы можете изменить свой мастер-пароль на bitwarden.com. Перейти на сайт сейчас?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Изменить email"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Вы можете изменить свой адрес электронной почты на bitwarden.com. Перейти на сайт сейчас?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Перейти в веб-хранилище"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Получить мобильное приложение"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Получить расширение браузера"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Синхронизация завершена"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Ошибка синхронизации"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Хранилище заблокировано. Проверьте мастер-пароль для продолжения."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Разблокировать"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Неверный мастер-пароль"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Двухфакторная аутентификация делает ваш аккаунт более защищенным, требуя ввода кода безопасности из приложения-аутентификатора при каждом входе в систему. Двухфакторная аутентификация включается на сайте bitwarden.com. Перейти на сайт сейчас?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Двухфакторная аутентификация"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Параметры блокировки"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Выберите условие блокировки вашего хранилища. Для разблокировки хранилища необходимо повторно ввести мастер-пароль."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Немедленно"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "Через 1 минуту"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "Через 5 минут"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "Через 15 минут"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "Через 30 минут"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "Через 1 час"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "Через 4 часа"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "При бездействии"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "В режиме сна"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "При блокировке"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "При перезапуске"
   },
   "never": {
-    "message": "Never"
+    "message": "Никогда"
   },
   "security": {
-    "message": "Security"
+    "message": "Безопасность"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Отключить аналитику"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собранные данные полностью анонимны."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Отключить значки веб-сайтов"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Значки веб-сайтов отображаются рядом с каждым элементом в вашем хранилище."
   },
   "about": {
-    "message": "About"
+    "message": "О нас"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Копировать",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Проверка наличия обновлений"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Версия $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,10 +769,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Перезагрузить для обновления"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Версия $VERSION_NUM$ готова к установке. Для завершения установки необходимо перезапустить Bitwarden. Сделать это сейчас?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,84 +781,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Доступно обновление"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Найдено обновление. Загрузить его сейчас?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Перезапустить"
   },
   "later": {
-    "message": "Later"
+    "message": "Позднее"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Обновлений нет. Вы используете последнюю версию."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Ошибка обновления"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Неизвестно"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Копировать имя пользователя"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Копировать номер",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Копировать код безопасности",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Премиум-статус"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Управление статусом"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Вы можете управлять своим статусом на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Обновить статус"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "В настоящее время у вас нет премиум-статуса."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Подпишитесь на премиум-статус и получите:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 ГБ зашифрованного хранилища файлов."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Дополнительные варианты двухфакторной аутентификации, такие как YubiKey, FIDO U2F и Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Генератор кода подтверждения TOTP для входа в ваше хранилище."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Приоритетную поддержку."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Все будущие функции премиум-статуса. Их будет больше!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Купить премиум"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Вы можете купить премиум-статус на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "У вас премиум-статус!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Благодарим вас за поддержку bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Всего лишь $PRICE$ \/в год!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -867,15 +867,15 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Обновление завершено"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "История паролей"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Очистить"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Нет паролей для отображения."
   }
 }

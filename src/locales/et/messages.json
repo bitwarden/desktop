@@ -597,148 +597,148 @@
     "message": "Funktsioon pole saadaval"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Välja logitud"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Sessioon on aegunud."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Oled kindel, et soovid välja logida?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Logi välja"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Lisa konto andmed"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Lisa uus objekt"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Lisa uus kaust"
   },
   "view": {
-    "message": "View"
+    "message": "Vaata"
   },
   "account": {
-    "message": "Account"
+    "message": "Konto"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Laadimine..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Kliki paroolihoidla lukustamiseks"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Parooli genereerimine"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Kirjuta meile"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Külasta meie kodulehte"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Esita tarkvaraviga"
   },
   "blog": {
-    "message": "Blog"
+    "message": "Blogi"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Jälgi meid"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Sünkroniseeri hoidla"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Muuda ülemparooli"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Saad oma ülemparooli muuta bitwarden.com veebihoidlas. Soovid seda kohe teha?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Muuda e-posti"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Saad oma e-posti aadressi muuta bitwarden.com veebihoidlas. Soovid seda kohe teha?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Ava Veebihoidla"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Hangi mobiilirakendus"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Hangi brauseri lisa"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Sünkroniseerimine on lõpetatud"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Sünkroniseerimine nurjus"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Hoidla on lukus. Jätkamiseks sisesta ülemparool."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Lukusta lahti"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Vale ülemparool"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Kaheastmeline kinnitamine aitab konto turvalisust tõsta. Lisaks paroolile pead kontole ligipääsemiseks kinnitama sisselogimise päringu SMS-ga, telefonikõnega, autentimise rakendusega või e-postiga. Kaheastmelist kinnitust saab sisse lülitada bitwarden.com veebihoidlas. Soovid seda kohe avada?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Kaheastmeline kinnitamine"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Automaatne lukustamine"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Vali, kuna hoidla lukustatakse. Lukustatud hoidlale pääseb ligi pärast ülemparooli sisestamist."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Koheselt"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 minuti pärast"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 minuti pärast"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 minuti pärast"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 minuti pärast"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 tunni pärast"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 tunni pärast"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Kui arvuti on kasutuseta"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Kui arvuti läheb unerežiimi"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Kui arvuti lukustatakse"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Arvuti taaskäivitamisel"
   },
   "never": {
-    "message": "Never"
+    "message": "Mitte kunagi"
   },
   "security": {
-    "message": "Security"
+    "message": "Turvalisus"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Keela analüütika"
   },
   "gaDesc": {
     "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
