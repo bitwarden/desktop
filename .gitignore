@@ -9,3 +9,4 @@ build/
 yarn-error.log
 .DS_Store
 *.nupkg
+*.provisionprofile
