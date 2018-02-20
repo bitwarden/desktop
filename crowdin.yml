@@ -1,6 +1,7 @@
 files:
   - source: /src/_locales/en/messages.json
     translation: /src/_locales/%two_letters_code%/%original_file_name%
+    update_option: update_as_unapproved
     languages_mapping:
       two_letters_code:
         pt-PT: pt_PT
@@ -9,6 +10,7 @@ files:
         zh-TW: zh_TW
   - source: /store/locales/en/copy.resx
     translation: /store/locales/%two_letters_code%/%original_file_name%
+    update_option: update_as_unapproved
     languages_mapping:
       two_letters_code:
         pt-PT: pt_PT
