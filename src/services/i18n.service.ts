@@ -5,7 +5,9 @@ import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.s
 
 // First locale is the default (English)
 const SupportedTranslationLocales = [
-    'en', 'es',
+    'en', 'cs', 'da', 'de', 'es', 'et', 'fi', 'fr', 'hr', 'hu', 'id', 'it', 'ja',
+    'nb', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sv', 'tr', 'uk', 'vi',
+    'zh-CN', 'zh-TW',
 ];
 
 export class I18nService implements I18nServiceAbstraction {
