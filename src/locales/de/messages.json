@@ -597,167 +597,167 @@
     "message": "Funktion nicht verfügbar"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Ausgeloggt"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Deine Sitzung ist abgelaufen."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Bist du sicher, dass du dich ausloggen möchtest?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Abmelden"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Login hinzufügen"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Neues Element hinzufügen"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Neuen Ordner hinzufügen"
   },
   "view": {
-    "message": "View"
+    "message": "Ansicht"
   },
   "account": {
-    "message": "Account"
+    "message": "Konto"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Lade..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Jetzt sperren"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Passwort-Generator"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Kontaktiere Uns"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Unsere Website Besuchen"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Einen Fehler Melden"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Folge uns"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Tresor jetzt synchronisieren"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Master-Passwort Ändern"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kannst dein Master-Passwort im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "E-Mail Adresse Ändern"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kannst deine E-Mail Adresse im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Web Tresor öffnen"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Hole dir die mobile App"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Browser-Erweiterungen installieren"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Synchronisierung abgeschlossen"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Synchronisierung fehlgeschlagen"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort um fortzufahren."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Entsperren"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Ungültiges Master-Passwort"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Mit Zwei-Faktor Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Zwei-Faktor Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Zwei-Faktor Authentifizierung"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Sperroptionen"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Wähle was passiert wenn dein Tresor gesperrt ist. Du musst dein Master-Passwort eingeben um erneut auf den gesperrten Tresor zugreifen zu können."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Sofort"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 Minute"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 Minuten"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 Minuten"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 Minuten"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 Stunde"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 Stunde"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Im Leerlauf"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Im Standby"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Wenn System gesperrt"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Bei Neustart"
   },
   "never": {
-    "message": "Never"
+    "message": "Niemals"
   },
   "security": {
-    "message": "Security"
+    "message": "Sicherheit"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Analytics deaktivieren"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Wir verwenden Analytics um zu erfahren, wie das Programm genutzt wird, sodass wir es verbessern können. Die Sammlung der Daten geschieht völlig anonym."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Webseiten Icons deaktivieren"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
   },
   "about": {
-    "message": "About"
+    "message": "Über Uns"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopieren",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Auf Updates prüfen"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -769,10 +769,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Neu starten um zu updaten"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Version $VERSION_NUM$ steht zu installation bereit. Du musst Bitwarden neustarten um die Installation abzuschließen. Möchtest du jetzt neustarten und updaten?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,84 +781,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Aktualisierung verfügbar"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Ein Update wurde gefunden. Möchtest du es jetzt herunterladen?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Neustarten"
   },
   "later": {
-    "message": "Later"
+    "message": "Später"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Derzeit gibt es keine Updates. Du verwendest die neueste Version."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Update-Fehler"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Unbekannt"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Nutzernamen Kopieren"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Nummer kopieren",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Sicherheitscode kopieren",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium-Mitgliedschaft"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Mitgliedschaft verwalten"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kannst deine Mitgliedschaft im bitwarden.com Webtresor verwalten. Möchtest du die Seite jetzt aufrufen?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Mitgliedschaft erneuern"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Du hast derzeit keine Premium-Mitgliedschaft."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Werde Premium-Mitglied und erhalte dafür:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB verschlüsselter Speicherplatz."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Zusätzliche Zweifaktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "TOTP Prüfcode (2FA) Generator für Anmeldungen in deinem Tresor."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Vorrangiger Kunden-Support."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Alle zukünftigen Premium-Features. Mehr in Kürze!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Premium-Mitgliedschaft kaufen"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kannst deine Premium-Mitgliedschaft im bitwarden.com Web-Tresor kaufen. Möchtest du die Webseite jetzt besuchen?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Du bist jetzt Premium-Mitglied!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Vielen Dank, dass du bitwarden unterstützt."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Das alles für $PRICE$ pro Jahr!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -867,15 +867,15 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Aktualisierung abgeschlossen"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Kennwort-Historie"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Löschen"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Keine Einträge zum Anzeigen vorhanden."
   }
 }
