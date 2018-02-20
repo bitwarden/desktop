@@ -1,5 +1,3 @@
-import { webFrame } from 'electron';
-
 import {
     APP_INITIALIZER,
     NgModule,
@@ -64,8 +62,6 @@ import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/toke
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
 import { UtilsService as UtilsServiceAbstraction } from 'jslib/abstractions/utils.service';
-
-webFrame.registerURLSchemeAsPrivileged('file');
 
 const i18nService = new I18nService(window.navigator.language, './locales');
 const utilsService = new UtilsService();
