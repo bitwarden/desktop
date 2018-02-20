@@ -5,9 +5,9 @@
 
 # Bitwarden Desktop Application
 
-<img src="https://imgur.com/AexH8Yo.png" width="64" height="64"> <img src="https://imgur.com/8TwwMg2.png" width="64" height="64"> <img src="https://imgur.com/I69xe2a.png" width="64" height="64">
+<img src="https://imgur.com/491cc2K.png" width="345" height="100">
 
-The Bitwarden desktop app is written using Electron and Angular.
+The Bitwarden desktop app is written using Electron and Angular. The application installs on Windows, macOS, and Linux distributions.
 
 ![My Vault](http://imgur.com/fdhNCJl.png "My Vault")
 
