@@ -100,7 +100,7 @@
     "message": "Güvenlik Kodu"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Kimlik Adı"
   },
   "company": {
     "message": "Şirket"
@@ -148,7 +148,7 @@
     "message": "Nisan"
   },
   "may": {
-    "message": "May"
+    "message": "Mayıs"
   },
   "june": {
     "message": "Haziran"
@@ -295,7 +295,7 @@
     "message": "Eki Sil"
   },
   "deleteItemConfirmation": {
-    "message": "Bu öğeyi silmek istediğinizden emin misiniz?"
+    "message": "Bu öğeyi silmek istediğinize emin misiniz?"
   },
   "deletedItem": {
     "message": "Öğe Silindi"
@@ -336,16 +336,16 @@
     "message": "Belirsiz Karakterler Kullanma"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Koleksiyon ara"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Klasörü Ara"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Sık Kullanılanlarda ara"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Arama türü",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -382,7 +382,7 @@
     "message": "Klasör eklendi"
   },
   "deleteFolderConfirmation": {
-    "message": "Bu klasörü silmek istediğinizden emin misiniz?"
+    "message": "Bu klasörü silmek istediğinize emin misiniz?"
   },
   "deletedFolder": {
     "message": "Klasör silindi"
@@ -597,170 +597,170 @@
     "message": "Özellik mevcut değil"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Çıkış yapıldı"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Oturumunuzun süresi doldu."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Çıkmak istediğinize emin misiniz?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Çıkış Yap"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Yeni bir oturum ekle"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Yeni Öğe Ekle"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Yeni Klasör Ekle"
   },
   "view": {
-    "message": "View"
+    "message": "Görüntüle"
   },
   "account": {
-    "message": "Account"
+    "message": "Hesap"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Yükleniyor..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Şimdi Kilitle"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Parola oluşturucu"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Bire E-posta Gönderin"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Web sitemizi ziyaret edin"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Bir Hata Raporlayın"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Bizi takip edin"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Kasayı Senkronize Et"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Ana Parolayı Değiştir"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Ana parolanızı bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "E-postayı Değiştir"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "E-posta adresinizi bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Web kasasına git"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Mobil Uygulama Edin"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Tarayıcı uzantıları"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Eşleme tamamlandı"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Eşitleme başarısız oldu"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Kasa dairesi kilitli. Devam etmek için Ana Şifrenizi doğrulayın."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Kilidi Aç"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Geçersiz ana parola"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "İki adımlı oturum açma, oturum açma işleminizi bir güvenlik anahtarı, kimlik doğrulayıcı uygulama, SMS, telefon görüşmesi veya e-posta gibi başka bir cihazla doğrulamanızı isteyerek hesabınızı daha güvenli hale getirir. İki adımlı oturum açma işlemini bitwarden.com web kasası üzerinden etkinleştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "İki Aşamalı Giriş"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Kilit Seçenekleri"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Kasa dairesi kilitlediğinde seçin. Kilitli bir kasada tekrar erişmek için ana şifrenizi yeniden girmeniz gerekir."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Hemen"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 dakika"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 dakika"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 dakika"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 dakika"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 saat"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 saat"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Sistem boşta"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Sistem boşta"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Sistem kilitli"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Yeniden başlat"
   },
   "never": {
-    "message": "Never"
+    "message": "Hiçbir zaman"
   },
   "security": {
-    "message": "Security"
+    "message": "Güvenlik"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Analitikleri Devre Dışı Bırak"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Uzantının nasıl kullanıldığını daha iyi öğrenmek için analitikleri kullanırız, böylece onu daha iyi hale getirebiliriz. Tüm veri toplama işlemi tamamen anonimdir."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Site simgelerini devre dışı bırak"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Web Sitesi Simgeleri, kasanızdaki her giriş bilgisinin yanında o siteyi tanımanıza yardımcı olacak bir görüntü verir."
   },
   "about": {
-    "message": "About"
+    "message": "Hakkında"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopyala",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Güncellemeleri Kontrol Et"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Yorum $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,10 +769,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Güncelleştirmeyi Yeniden Başlat"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Yorum $VERSION_NUM$ yüklenmeye hazır. Bitwarden yüklemeyi tamamlamak için yeniden başlatmanız gerekir. Yeniden başlatmak ve şimdi güncelleştirmek istiyor musunuz?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,42 +781,42 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Güncelleme mevcut"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Bir güncelleştirme bulundu. Şimdi yüklemek istiyor musunuz?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Yeniden başlat"
   },
   "later": {
-    "message": "Later"
+    "message": "Sonra"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Şuan da herhangi bir güncelleştirme yok. En son sürümü kullanıyorsunuz."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Güncelleme Hatası"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Bilinmiyor"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kullanıcı Adını Kopyala"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Numarayı Kopyala",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Güvenlik Kodunu Kopyala",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium Üyelik"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Üyeliği Yönet"
   },
   "premiumManageAlert": {
     "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
