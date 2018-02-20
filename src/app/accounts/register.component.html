@@ -36,7 +36,7 @@
         </div>
         <div class="buttons">
             <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
-                <span [hidden]="form.loading">{{'submit' | i18n}}</span>
+                <b [hidden]="form.loading">{{'submit' | i18n}}</b>
                 <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
             </button>
             <a routerLink="/login" class="btn block">{{'cancel' | i18n}}</a>
