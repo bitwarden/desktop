@@ -24,8 +24,14 @@ export class Main {
 
     constructor() {
         // Set paths for portable builds
-        if (process.env.PORTABLE_EXECUTABLE_DIR != null) {
-            const appDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, 'bitwarden-appdata');
+        let appDataPath = null;
+        if (process.env.BITWARDEN_APPDATA_DIR != null) {
+            appDataPath = process.env.BITWARDEN_APPDATA_DIR;
+        } else if (process.env.PORTABLE_EXECUTABLE_DIR != null) {
+            appDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, 'bitwarden-appdata');
+        }
+
+        if (appDataPath != null) {
             app.setPath('userData', appDataPath);
             app.setPath('logs', path.join(appDataPath, 'logs'));
         }
