@@ -597,170 +597,170 @@
     "message": "Функція недоступна"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Ви вийшли"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Тривалість вашого сеансу завершилась."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Ви дійсно хочете вийти?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Вихід"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Додати новий запис"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Додати новий елемент"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Додати нову теку"
   },
   "view": {
-    "message": "View"
+    "message": "Перегляд"
   },
   "account": {
-    "message": "Account"
+    "message": "Обліковий запис"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Завантаження..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Заблокувати зараз"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Генератор паролів"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Напишіть нам"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Відвідайте наш веб-сайт"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Повідомити про помилку"
   },
   "blog": {
-    "message": "Blog"
+    "message": "Блог"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Слідкуйте за нами"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Синхронізувати сховище"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Змінити головний пароль"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Змінити адресу е-пошти"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Ви можете змінити адресу е-пошти в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Перейти у веб-сховище"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Отримати мобільний додаток"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Отримати розширення браузера"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Синхронізація завершена"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Не вдалося синхронізувати"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Ваше сховище заблоковане. Підтвердьте свій головний пароль для продовження."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Розблокувати"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Неправильний головний пароль"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Двоетапна авторизація робить ваш обліковий запис більш захищеним, вимагаючи підтвердження вашого входу за допомогою іншого пристрою, наприклад, код безпеки, програма авторизації, SMS, телефонний дзвінок, або е-пошта. Ви можете увімкнути двоетапну авторизацію в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Двоетапна авторизація"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Налаштування блокування"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Оберіть, коли блокується ваше сховище. Щоб знову отримати до нього доступ, вам необхідно буде повторно ввести головний пароль."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Негайно"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 хвилина"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 хвилин"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 хвилин"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 хвилин"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 година"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 години"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "При бездіяльності системи"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "При переході в режим сну"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "При блокуванні системи"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "При перезапуску"
   },
   "never": {
-    "message": "Never"
+    "message": "Ніколи"
   },
   "security": {
-    "message": "Security"
+    "message": "Безпека"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Вимкнути аналітику"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Ми використовуємо аналітику для розуміння того, як використовується програма, щоб зробити її кращою. Всі зібрані дані цілком анонімні."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Вимкнути піктограми веб-сайтів"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Впізнавані піктограми веб-сайтів додаються біля кожного запису вашого сховища."
   },
   "about": {
-    "message": "About"
+    "message": "Про програму"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Копіювати",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Перевірити оновлення"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Версія $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,10 +769,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Перезапустити для оновлення"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Версія $VERSION_NUM$ готова до встановлення. Для завершення встановлення ви повинні перезапустити Bitwarden. Хочете зробити це зараз?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,84 +781,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Доступне оновлення"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Знайдено оновлення. Хочете завантажити його зараз?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Перезапустити"
   },
   "later": {
-    "message": "Later"
+    "message": "Пізніше"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Оновлення наразі відсутні. Ви використовуєте найновішу версію."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Помилка оновлення"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Невідомо"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Копіювати ім'я користувача"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Копіювати номер",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Копіювати код безпеки",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Преміум статус"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Керувати статусом"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Ви можете керувати своїм статусом у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Оновити статус"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Зараз у вас немає преміум-статусу."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Підпишіться на преміум-статус і отримайте:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 ГБ зашифрованого сховища для файлів."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Додаткові можливості двоетапної авторизації, наприклад, YubiKey, FIDO U2F та Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Генератор коду авторизації TOTP (2FA) для входу в сховище."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Пріоритетну технічну підтримку."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Всі майбутні функції преміум статусу. Їх буде більше!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Придбати преміум"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Ви можете придбати преміум статус у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "У вас преміум статус!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Дякуємо за підтримку bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Всього лише $PRICE$ \/ за рік!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -867,15 +867,15 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Оновлення завершено"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Історія паролів"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Стерти"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Немає паролів для відображення."
   }
 }
