@@ -17,8 +17,9 @@
   },
   "license": "GPL-3.0",
   "scripts": {
-    "updatesub": "git submodule update --remote",
-    "postinstall": "./node_modules/.bin/electron-rebuild",
+    "sub:init": "git submodule update --init --recursive",
+    "sub:update": "git submodule update --remote",
+    "postinstall": "./node_modules/.bin/electron-rebuild && npm run sub:init",
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
     "build": "npm run build:main | npm run build:renderer",
