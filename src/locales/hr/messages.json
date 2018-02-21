@@ -597,170 +597,170 @@
     "message": "Značajka nije dostupna"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Odjavljen"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Vaša sesija je istekla."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Jeste li sigurni da se želite odjaviti?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Odjavi se"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Dodaj prijavu"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Dodaj novu stavku"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Dodaj novu mapu"
   },
   "view": {
-    "message": "View"
+    "message": "Prikaz"
   },
   "account": {
-    "message": "Account"
+    "message": "Račun"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Učitavanje..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Zaključaj sada"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Generator lozinke"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Pošaljite nam e-poštu"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Posjetite našu web stranicu"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Pošaljite Izvješće o pogrešci"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Pratite nas"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Sinkronizirajte trezor"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Promjena glavne lozinke"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Možete promijeniti svoju glavnu lozinku na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Promijeni e-poštu"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Adresu e-pošte možete promijeniti na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Idi na internetski trezor"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Preuzmi mobilnu aplikaciju"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Preuzmi proširenje za preglednik"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Sinkronizacija dovršena"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Sinkronizacija nije uspjela"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Vaš trezor je zaključan. Potvrdite glavnu lozinku da biste nastavili."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Otključaj"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Nevažeća glavna lozinka"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Prijava u dva koraka čini Vaš račun sigurnijim tako što će zahtijevati da potvrdite prijavu putem drugog uređaja pomoću sigurnosnog koda, aplikacije autentifikatora, SMS porukom, pozivom ili adresom e-pošte. Prijava u dva koraka može se omogućiti na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Prijava u dva koraka"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Opcije zaključavanja"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Odaberite kada se Vaš trezor zaključa. Zaključani trezor zahtijeva da ponovo unesete glavnu lozinku kako biste mu ponovo pristupili."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Odmah"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 minuta"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 minuta"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 minuta"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 minuta"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 sat"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 sata"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Kada je sustav neaktivan"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Kada je sustav u stanju mirovanja"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Kada je sustav zaključan"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Kod ponovnog pokretanja"
   },
   "never": {
-    "message": "Never"
+    "message": "Nikad"
   },
   "security": {
-    "message": "Security"
+    "message": "Sigurnost"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Onemogućite uslugu Google Analytics"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Koristimo Google analytics kako bismo saznali na koji način se aplikacija upotrebljava, kako bi istu mogli poboljšati. Svako prikupljanje podataka potpuno je anonimno."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Onemogući ikone web mjesta"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Ikone web mjesta nude prepoznatljivu ikonu pokraj svake stavke za prijavu u Vašem trezoru."
   },
   "about": {
-    "message": "About"
+    "message": "O aplikaciji"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopiraj",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Provjeri ažuriranja"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Verzija $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,10 +769,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Ponovo pokreni za ažuriranje"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Verzija $VERSION_NUM$ spremna je za instalaciju. Morate ponovno pokrenuti Bitwarden da biste dovršili instalaciju. Želite li ponovo pokrenuti i ažurirati sada?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,84 +781,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Dostupna su ažuriranja"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Pronađeno je ažuriranje. Želite li ga preuzeti sada?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Ponovno pokreni"
   },
   "later": {
-    "message": "Later"
+    "message": "Kasnije"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Trenutačno nema ažuriranja. Koristite najnoviju verziju."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Pogreška pri ažuriranju"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Nepoznato"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kopiraj korisničko ime"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Kopiraj broj",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Kopiraj sigurnosni kod",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium Članstvo"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Upravljaj članstvom"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Možete upravljati svojim članstvom na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Osvježi članstvo"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Trenutno niste premium član."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Prijavite se za premium članstvo i dobijte:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB šifriranog prostora za pohranu podataka."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Dodatne mogućnosti za prijavu u dva koraka kao što su YubiKey, FIDO U2F i Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Generator TOTP kontrolnog koda (2FA) za prijave u vašem trezoru."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Prioritetna korisnička podrška."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Sve buduće vrhunske značajke. Uskoro više!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Kupi Premium članstvo"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Možete kupiti premium članstvo na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Vi ste premium član!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Hvala Vam što podupirete bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Sve samo za $PRICE$ \/godišnje!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -867,15 +867,15 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Osvježavanje završeno"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Povijest lozinke"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Očisti"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nema lozinki na popisu."
   }
 }
