@@ -60,7 +60,8 @@
       "electronUpdaterCompatibility": ">=0.0.1",
       "target": [
         "portable",
-        "nsis-web"
+        "nsis-web",
+        "appx"
       ]
     },
     "linux": {
@@ -102,6 +103,16 @@
     },
     "portable": {
       "artifactName": "${productName} Portable ${version}.${ext}"
+    },
+    "appx": {
+      "backgroundColor": "#3c8dbc",
+      "applicationId": "bitwardendesktop",
+      "identityName": "8bitSolutionsLLC.bitwardendesktop",
+      "publisher": "CN=14D52771-DE3C-4886-B8BF-825BA7690418",
+      "publisherDisplayName": "8bit Solutions LLC",
+      "languages": [
+        "en-US"
+      ]
     },
     "deb": {
       "depends": [
