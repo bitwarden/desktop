@@ -289,7 +289,7 @@
     "message": "Elimina elemento"
   },
   "deleteFolder": {
-    "message": "Cancella Cartella"
+    "message": "Elimina Cartella"
   },
   "deleteAttachment": {
     "message": "Elimina Allegato"
@@ -496,7 +496,7 @@
     "message": "Usa un altro metodo di login in due fasi"
   },
   "insertYubiKey": {
-    "message": "Inserisci la tua YubiKey nella porta USB del computer, poi premi il suo bottone."
+    "message": "Inserisci la tua YubiKey nella porta USB del computer, poi premi il bottone su di essa."
   },
   "insertU2f": {
     "message": "Inserisci la tua security key nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
@@ -534,19 +534,19 @@
     "message": "Email"
   },
   "emailDesc": {
-    "message": "I codici di verifica ti saranno inviati per e-mail."
+    "message": "I codici di verifica ti saranno inviati per email."
   },
   "loginUnavailable": {
     "message": "Login non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "Questo account ha abilitato il login a due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
+    "message": "Questo account ha abilitato il login in due fasi, ma nessuno dei provider configurati è supportato da questo browser web."
   },
   "noTwoStepProviders2": {
     "message": "Si prega di aggiungere altri provider che sono meglio supportati su tutti i dispositivi (ad esempio, un'app di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Opzioni di login in due passaggi"
+    "message": "Opzioni di login in due fasi"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente Self-Hosted"
@@ -834,7 +834,7 @@
     "message": "1 GB di spazio di archiviazione crittografato."
   },
   "premiumSignUpTwoStep": {
-    "message": "Opzioni di login in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
+    "message": "Opzioni di login in due fasi addizionali come YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
