@@ -112,7 +112,7 @@
     "message": "Reisepassnummer"
   },
   "licenseNumber": {
-    "message": "Lizenznummer"
+    "message": "Führerscheinnummer"
   },
   "email": {
     "message": "E-Mail"
@@ -349,7 +349,7 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Neuen Anhang hinzufügen"
+    "message": "Anhang hinzufügen"
   },
   "deletedAttachment": {
     "message": "Anhang gelöscht"

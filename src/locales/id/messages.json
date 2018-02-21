@@ -21,7 +21,7 @@
     "message": "Identitas"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Catatan yang aman"
   },
   "folders": {
     "message": "Folder"
@@ -75,7 +75,7 @@
     "message": "Kolom Ubahsuai"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Meluncurkan"
   },
   "copyValue": {
     "message": "Salin Nilai",
@@ -280,10 +280,10 @@
     "message": "Nama diperlukan."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Item yang Ditambahkan"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Item yang Diedit"
   },
   "deleteItem": {
     "message": "Hapus Item"
@@ -298,7 +298,7 @@
     "message": "Anda yakin Anda ingin menghapus item ini?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Item yang Dihapus"
   },
   "overwritePasswordConfirmation": {
     "message": "Anda yakin ingin menimpa sandi saat ini?"
@@ -352,7 +352,7 @@
     "message": "Tambah Lampiran Baru"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Lampiran dihapus"
   },
   "deleteAttachmentConfirmation": {
     "message": "Anda yakin ingin menghapus lampiran ini?"
@@ -376,7 +376,7 @@
     "message": "Pilihan"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Folder yang di Edit"
   },
   "addedFolder": {
     "message": "Added folder"
@@ -525,7 +525,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Menggunakan FIDO U2F mengaktifkan kunci keamanan untuk mengakses akun anda."
   },
   "u2fTitle": {
     "message": "Kunci Keamanan FIDO U2F"
@@ -543,7 +543,7 @@
     "message": "Akun ini mengaktifkan info masuk dua langkah, namun, tidak satupun dari penyedia dua langkah yang dikonfigurasi didukung oleh perangkat ini."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Silahkan tambahkan penyedia tambahan yang baik didukung di perangkat (seperti aplikasi authenticator)."
   },
   "twoStepOptions": {
     "message": "Pilihan Info Masuk Dua Langkah"
@@ -702,7 +702,7 @@
     "message": "Immediately"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 menit"
   },
   "fiveMinutes": {
     "message": "5 minutes"
@@ -726,16 +726,16 @@
     "message": "On System Sleep"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Sistem kunci"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Pada Mulai Ulang"
   },
   "never": {
-    "message": "Never"
+    "message": "Tidak pernah"
   },
   "security": {
-    "message": "Security"
+    "message": "Keamanan"
   },
   "disableGa": {
     "message": "Disable Analytics"
@@ -852,7 +852,7 @@
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Anda adalah anggota premium!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Thank you for supporting bitwarden."
