@@ -97,14 +97,15 @@
       "oneClick": false,
       "perMachine": true,
       "allowToChangeInstallationDirectory": true,
-      "artifactName": "${productName} Installer ${version}.${ext}",
+      "artifactName": "${productName}-Installer-${version}.${ext}",
       "uninstallDisplayName": "${productName}",
       "deleteAppDataOnUninstall": true
     },
     "portable": {
-      "artifactName": "${productName} Portable ${version}.${ext}"
+      "artifactName": "${productName}-Portable-${version}.${ext}"
     },
     "appx": {
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
       "backgroundColor": "#3c8dbc",
       "applicationId": "bitwardendesktop",
       "identityName": "8bitSolutionsLLC.bitwardendesktop",
@@ -115,6 +116,7 @@
       ]
     },
     "deb": {
+      "artifactName": "${productName}-${version}-${arch}.${ext}",
       "depends": [
         "gconf2",
         "gconf-service",
@@ -124,6 +126,15 @@
         "libsecret-1-0",
         "libxss1"
       ]
+    },
+    "appImage": {
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "rpm": {
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "freebsd": {
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
     }
   },
   "devDependencies": {
