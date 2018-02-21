@@ -68,9 +68,11 @@
       "category": "Utility",
       "synopsis": "A secure and free password manager for all of your devices.",
       "target": [
+        "deb",
+        "freebsd",
         "rpm",
         "AppImage",
-        "deb"
+        "snap"
       ]
     },
     "dmg": {
@@ -134,6 +136,9 @@
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     },
     "freebsd": {
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "snap": {
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     }
   },
