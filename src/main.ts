@@ -57,7 +57,8 @@ export class Main {
 
     bootstrap() {
         this.windowMain.init().then(async () => {
-            await this.i18nService.init();
+            const locale = await require('os-locale')();
+            await this.i18nService.init(locale.replace('_', '-'));
             this.messagingMain.init();
             this.menuMain.init();
             this.powerMonitorMain.init();
