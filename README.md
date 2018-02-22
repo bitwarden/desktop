@@ -5,7 +5,7 @@
 
 # Bitwarden Desktop Application
 
-<img src="https://imgur.com/491cc2K.png" width="345" height="100">
+<img src="https://imgur.com/SLv9paA.png" width="500" height="113">
 
 The Bitwarden desktop app is written using Electron and Angular. The application installs on Windows, macOS, and Linux distributions.
 
