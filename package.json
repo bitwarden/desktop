@@ -58,6 +58,7 @@
     },
     "win": {
       "electronUpdaterCompatibility": ">=0.0.1",
+      "certificateSubjectName": "8bit Solutions LLC",
       "target": [
         "portable",
         "nsis-web",
