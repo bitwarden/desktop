@@ -11,6 +11,8 @@ import { PowerMonitorMain } from './main/powerMonitor.main';
 import { UpdaterMain } from './main/updater.main';
 import { WindowMain } from './main/window.main';
 
+const osLocale = require('os-locale');
+
 export class Main {
     i18nService: I18nService;
     storageService: DesktopStorageService;
@@ -57,7 +59,7 @@ export class Main {
 
     bootstrap() {
         this.windowMain.init().then(async () => {
-            const locale = await require('os-locale')();
+            const locale = await osLocale();
             await this.i18nService.init(locale.replace('_', '-'));
             this.messagingMain.init();
             this.menuMain.init();
