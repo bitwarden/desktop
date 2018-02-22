@@ -137,6 +137,9 @@
     },
     "freebsd": {
       "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "snap": {
+      "useTemplateApp": false
     }
   },
   "devDependencies": {
