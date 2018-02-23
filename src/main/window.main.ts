@@ -21,6 +21,21 @@ export class WindowMain {
     init(): Promise<any> {
         return new Promise((resolve, reject) => {
             try {
+                const shouldQuit = app.makeSingleInstance((args, dir) => {
+                    // Someone tried to run a second instance, we should focus our window.
+                    if (this.win != null) {
+                        if (this.win.isMinimized()) {
+                            this.win.restore();
+                        }
+                        this.win.focus();
+                    }
+                });
+
+                if (shouldQuit) {
+                    app.quit();
+                    return;
+                }
+
                 // This method will be called when Electron has finished
                 // initialization and is ready to create browser windows.
                 // Some APIs can only be used after this event occurs.
