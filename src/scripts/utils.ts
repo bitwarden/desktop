@@ -7,5 +7,17 @@ export function isDev() {
 }
 
 export function isAppImage() {
-    return 'APPIMAGE' in process.env;
+    return process.platform === 'linux' && 'APPIMAGE' in process.env;
+}
+
+export function isMacAppStore() {
+    return process.platform === 'darwin' && process.mas && process.mas === true;
+}
+
+export function isWindowsStore() {
+    return process.platform === 'win32' && process.windowsStore && process.windowsStore === true;
+}
+
+export function isWindowsPortable() {
+    return process.platform === 'win32' && process.env.PORTABLE_EXECUTABLE_DIR != null;
 }

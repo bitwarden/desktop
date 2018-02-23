@@ -10,6 +10,9 @@ import { Main } from '../main';
 import {
     isAppImage,
     isDev,
+    isMacAppStore,
+    isWindowsPortable,
+    isWindowsStore,
 } from '../scripts/utils';
 
 const UpdaterCheckInitalDelay = 5 * 1000; // 5 seconds
@@ -18,8 +21,14 @@ const UpdaterCheckInterval = 12 * 60 * 60 * 1000; // 12 hours
 export class UpdaterMain {
     private doingUpdateCheck = false;
     private doingUpdateCheckWithFeedback = false;
+    private canUpdate = false;
 
-    constructor(private main: Main) { }
+    constructor(private main: Main) {
+        const linuxCanUpdate = process.platform === 'linux' && isAppImage();
+        const windowsCanUpdate = process.platform === 'win32' && !isWindowsStore() && !isWindowsPortable();
+        const macCanUpdate = process.platform === 'darwin' && !isMacAppStore();
+        this.canUpdate = linuxCanUpdate || windowsCanUpdate || macCanUpdate;
+    }
 
     async init() {
         global.setTimeout(async () => await this.checkForUpdate(), UpdaterCheckInitalDelay);
@@ -107,8 +116,7 @@ export class UpdaterMain {
             return;
         }
 
-        if (process.platform === 'linux' && !isAppImage()) {
-            // Only AppImage packages support auto-update on linux
+        if (!this.canUpdate) {
             if (withFeedback) {
                 shell.openExternal('https://github.com/bitwarden/desktop/releases');
             }
