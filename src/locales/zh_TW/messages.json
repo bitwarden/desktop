@@ -15,7 +15,7 @@
     "message": "登入"
   },
   "typeCard": {
-    "message": "卡片"
+    "message": "信用卡"
   },
   "typeIdentity": {
     "message": "身分"
@@ -549,7 +549,7 @@
     "message": "兩步驟登入選項"
   },
   "selfHostedEnvironment": {
-    "message": "自我託管的環境"
+    "message": "自我託管環境"
   },
   "selfHostedEnvironmentFooter": {
     "message": "指定自己設定、託管的 bitwarden 環境之基礎 URL。"
@@ -720,13 +720,13 @@
     "message": "4 小時"
   },
   "onIdle": {
-    "message": "於系統閒置"
+    "message": "系統閒置時"
   },
   "onSleep": {
-    "message": "於系統睡眠"
+    "message": "系統睡眠時"
   },
   "onLocked": {
-    "message": "於系統鎖定"
+    "message": "系統鎖定時"
   },
   "onRestart": {
     "message": "重新啟動時"
@@ -748,9 +748,6 @@
   },
   "disableFaviconDesc": {
     "message": "在您密碼庫的每個登入資料旁顯示一個可辨識圖示。"
-  },
-  "about": {
-    "message": "關於"
   },
   "copy": {
     "message": "複製",
@@ -793,7 +790,7 @@
     "message": "稍後"
   },
   "noUpdatesAvailable": {
-    "message": "沒有可用的更新。您目前使用的是最新版本。"
+    "message": "沒有可用的更新，您目前使用的是最新版本。"
   },
   "updateError": {
     "message": "更新錯誤"
@@ -877,5 +874,72 @@
   },
   "noPasswordsInList": {
     "message": "沒有密碼可顯示。"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "redo": {
+    "message": "Redo"
+  },
+  "cut": {
+    "message": "Cut",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Paste",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Select All"
+  },
+  "zoomIn": {
+    "message": "Zoom In"
+  },
+  "zoomOut": {
+    "message": "Zoom Out"
+  },
+  "resetZoom": {
+    "message": "Reset Zoom"
+  },
+  "toggleFullScreen": {
+    "message": "Toggle Full Screen"
+  },
+  "reload": {
+    "message": "Reload"
+  },
+  "forceReload": {
+    "message": "Force Reload"
+  },
+  "toggleDevTools": {
+    "message": "Toggle Developer Tools"
+  },
+  "minimize": {
+    "message": "Minimize",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Zoom"
+  },
+  "bringAllToFront": {
+    "message": "Bring All to Front",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "About Bitwarden"
+  },
+  "services": {
+    "message": "Services"
+  },
+  "hideBitwarden": {
+    "message": "Hide Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Hide Others"
+  },
+  "showAll": {
+    "message": "Show All"
+  },
+  "quitBitwarden": {
+    "message": "Quit Bitwarden"
   }
 }
