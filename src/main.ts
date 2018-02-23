@@ -11,6 +11,7 @@ import { PowerMonitorMain } from './main/powerMonitor.main';
 import { UpdaterMain } from './main/updater.main';
 import { WindowMain } from './main/window.main';
 
+// tslint:disable-next-line
 const osLocale = require('os-locale');
 
 export class Main {
