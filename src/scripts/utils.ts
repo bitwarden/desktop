@@ -18,6 +18,10 @@ export function isWindowsStore() {
     return process.platform === 'win32' && process.windowsStore && process.windowsStore === true;
 }
 
+export function isSnapStore() {
+    return process.platform === 'linux' && process.env.SNAP_USER_DATA != null;
+}
+
 export function isWindowsPortable() {
     return process.platform === 'win32' && process.env.PORTABLE_EXECUTABLE_DIR != null;
 }
