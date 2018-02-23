@@ -11,8 +11,8 @@ import {
     Output,
 } from '@angular/core';
 
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 @Component({
