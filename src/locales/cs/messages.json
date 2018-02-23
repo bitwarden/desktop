@@ -12,7 +12,7 @@
     "message": "Typy"
   },
   "typeLogin": {
-    "message": "Přihlášení"
+    "message": "Přihlašovací údaje"
   },
   "typeCard": {
     "message": "Karta"
@@ -21,7 +21,7 @@
     "message": "Identita"
   },
   "typeSecureNote": {
-    "message": "Zabezpečená poznámka"
+    "message": "Poznámka"
   },
   "folders": {
     "message": "Složky"
@@ -30,7 +30,7 @@
     "message": "Kolekce"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Vyhledat v trezoru"
   },
   "addItem": {
     "message": "Přidat položku"
@@ -82,7 +82,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Přepnout viditelnost"
   },
   "cardholderName": {
     "message": "Jméno držitele karty"
@@ -100,7 +100,7 @@
     "message": "Bezpečnostní kód"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Název identity"
   },
   "company": {
     "message": "Firma"
@@ -274,16 +274,16 @@
     "message": "Ano\/Ne"
   },
   "remove": {
-    "message": "Odstranit"
+    "message": "Smazat"
   },
   "nameRequired": {
     "message": "Název je povinný."
   },
   "addedItem": {
-    "message": "Přidaná položka"
+    "message": "Položka byla přidána"
   },
   "editedItem": {
-    "message": "Upravená položka"
+    "message": "Položka byla upravena"
   },
   "deleteItem": {
     "message": "Smazat položku"
@@ -298,7 +298,7 @@
     "message": "Opravdu chcete tuto položku smazat?"
   },
   "deletedItem": {
-    "message": "Smazaná položka"
+    "message": "Položka byla smazána"
   },
   "overwritePasswordConfirmation": {
     "message": "Opravdu chcete přepsat aktuální heslo?"
@@ -336,23 +336,23 @@
     "message": "Nepoužít zaměnitelné znaky"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Vyhledat v kolekci"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Vyhledat ve složce"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Vyhledat v oblíbených"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Vyhledat v typech",
     "description": "Search item type"
   },
   "newAttachment": {
     "message": "Přidat přílohu"
   },
   "deletedAttachment": {
-    "message": "Příloha byla úspěšně smazána"
+    "message": "Příloha byla smazána"
   },
   "deleteAttachmentConfirmation": {
     "message": "Opravdu chcete tuto přílohu smazat?"
@@ -376,16 +376,16 @@
     "message": "Možnosti"
   },
   "editedFolder": {
-    "message": "Složka byla úspěšně upravena"
+    "message": "Složka byla upravena"
   },
   "addedFolder": {
-    "message": "Složka byla úspěšně přidána"
+    "message": "Složka byla přidána"
   },
   "deleteFolderConfirmation": {
     "message": "Opravdu chcete tuto složku smazat?"
   },
   "deletedFolder": {
-    "message": "Smazaná složka"
+    "message": "Složka byla smazána"
   },
   "loginOrCreateNewAccount": {
     "message": "Pro přístup do vašeho bezpečného trezoru se přihlašte nebo si vytvořte nový účet."
@@ -478,7 +478,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Ověřovací email byl zaslán na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -543,7 +543,7 @@
     "message": "Tento účet má zapnuté dvoufázové ověřování, ale žádný z nastavených poskytovalů dvoufázového přihlášení není v tomto zařízení podporován."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Přidejte prosím další poskytovatele, kteří jsou lépe podporováni v různých zařízeních (například ověřovací aplikace)."
   },
   "twoStepOptions": {
     "message": "Možnosti dvoufázového přihlášení"
@@ -597,170 +597,167 @@
     "message": "Funkce není dostupná"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Odhlášení"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Platnost přihlášení vypršela."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Opravdu se chcete odhlásit?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Odhlásit se"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Přidat nové přihlašovací údaje"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Přidat novou položku"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Přidat novou složku"
   },
   "view": {
-    "message": "View"
+    "message": "Zobrazit"
   },
   "account": {
-    "message": "Account"
+    "message": "Účet"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Načítání..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Zamknout nyní"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Generátor hesla"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Napište nám"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Navštivit naší webovou stránku"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Nahlásit chybu"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Sledujte nás"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Synchronizovat trezor"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Změnit hlavní heslo"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Hlavní heslo si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Změnit email"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Emailovou adresu si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Otevřít webovou aplikaci"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Stáhnout mobilní aplikaci"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Stáhnout rozšíření do prohlížeče"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Synchronizace je dokončena"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Synchronizace selhala"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat hlavní heslo."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Odemknout"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Chybné hlavní heslo"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Dvoufázové přihlášení činí váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, emailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Dvoufázové přihlášení"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Možnosti zamknutí"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Vyberte kdy dojde k automatickému uzamčení trezoru. Pro opětovný přístup do uzamčeného trezoru bude potřeba znovu zadat hlavního heslo."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Okamžitě"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "Po 1 minutě"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "Po 5 minutách"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "Po 15 minutách"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "Po 30 minutách"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "Po 1 hodině"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "Po 4 hodinách"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Při nečinnosti systému"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Při přechodu do režimu spánku"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Při zamknutí systému"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Při restartu systému"
   },
   "never": {
-    "message": "Never"
+    "message": "Nikdy"
   },
   "security": {
-    "message": "Security"
+    "message": "Zabezpečení"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Zakázat analytiku"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Analytiku používáme ke sběru informací o používání aplikace, abychom jí mohli i nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Zakázat ikonky webových stránek"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
-  },
-  "about": {
-    "message": "About"
+    "message": "Ikonky webových stránek zobrazí snadno rozeznatelný obrázek vedle každé položky ve vašem trezoru."
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopírovat",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Zkontrolovat aktualizace"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Verze $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,10 +766,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Restartovat pro aktualizaci"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Verze $VERSION_NUM$ je připravena k instalaci. Pro dokončení je ovšem potřeba restartovat aplikaci Bitwarden. Chcete nyní provést restart a aktualizaci?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,84 +778,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Aktualizace je dostupná"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Byla nalezena aktualizace. Chcete ji nyní stáhnout?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Restartovat"
   },
   "later": {
-    "message": "Later"
+    "message": "Později"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Nejsou k dispozici žádné aktualizace. Používáte nejnovější verzi."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Chyba aktualizace"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Neznámá"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kopírovat uživatelské jméno"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Kopírovat číslo",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Kopírovat bezpečnostní kód",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Prémiové členství"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Spravovat členství"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Své členství můžete spravovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Obnovit členství"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Momentálně nejste prémiovým členem."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Přihlaste se k prémiovému členství a získejte:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB šifrovaného uložiště."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Prioritní zákaznickou podporu."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Všechny budoucí prémiové funkce. Více již brzy!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Zakoupit prémiové členství"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Prémiové členství můžete zakoupit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Jste prémiovým členem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Děkujeme za podporu bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Vše jen za $PRICE$ ročně!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -867,15 +864,82 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Obnova je dokončena"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Historie hesel"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Vymazat"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nejsou k dispozici žádná hesla."
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "redo": {
+    "message": "Redo"
+  },
+  "cut": {
+    "message": "Cut",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Paste",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Select All"
+  },
+  "zoomIn": {
+    "message": "Zoom In"
+  },
+  "zoomOut": {
+    "message": "Zoom Out"
+  },
+  "resetZoom": {
+    "message": "Reset Zoom"
+  },
+  "toggleFullScreen": {
+    "message": "Toggle Full Screen"
+  },
+  "reload": {
+    "message": "Reload"
+  },
+  "forceReload": {
+    "message": "Force Reload"
+  },
+  "toggleDevTools": {
+    "message": "Toggle Developer Tools"
+  },
+  "minimize": {
+    "message": "Minimize",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Zoom"
+  },
+  "bringAllToFront": {
+    "message": "Bring All to Front",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "About Bitwarden"
+  },
+  "services": {
+    "message": "Services"
+  },
+  "hideBitwarden": {
+    "message": "Hide Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Hide Others"
+  },
+  "showAll": {
+    "message": "Show All"
+  },
+  "quitBitwarden": {
+    "message": "Quit Bitwarden"
   }
 }
