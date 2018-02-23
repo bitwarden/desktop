@@ -1,5 +1,6 @@
 import * as template from './password-generator-history.component.html';
 
+import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import {
@@ -8,6 +9,7 @@ import {
 } from '@angular/core';
 
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { PasswordHistory } from 'jslib/models/domain/passwordHistory';
@@ -17,10 +19,11 @@ import { PasswordHistory } from 'jslib/models/domain/passwordHistory';
     template: template,
 })
 export class PasswordGeneratorHistoryComponent implements OnInit {
-    history: PasswordHistory[];
+    history: PasswordHistory[] = [];
 
     constructor(private passwordGenerationService: PasswordGenerationService, private analytics: Angulartics2,
-        private platformUtilsService: PlatformUtilsService) { }
+        private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
+        private toasterService: ToasterService) { }
 
     async ngOnInit() {
         this.history = await this.passwordGenerationService.getHistory();
@@ -34,5 +37,6 @@ export class PasswordGeneratorHistoryComponent implements OnInit {
     copy(password: string) {
         this.analytics.eventTrack.next({ action: 'Copied Historical Password' });
         this.platformUtilsService.copyToClipboard(password);
+        this.toasterService.popAsync('info', null, this.i18nService.t('valueCopied', this.i18nService.t('password')));
     }
 }

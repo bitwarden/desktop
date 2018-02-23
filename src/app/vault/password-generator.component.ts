@@ -12,6 +12,7 @@ import {
 } from '@angular/core';
 
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 @Component({
@@ -28,7 +29,8 @@ export class PasswordGeneratorComponent implements OnInit {
     avoidAmbiguous = false;
 
     constructor(private passwordGenerationService: PasswordGenerationService, private analytics: Angulartics2,
-        private platformUtilsService: PlatformUtilsService) { }
+        private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
+        private toasterService: ToasterService) { }
 
     async ngOnInit() {
         this.options = await this.passwordGenerationService.getOptions();
@@ -73,6 +75,7 @@ export class PasswordGeneratorComponent implements OnInit {
     copy() {
         this.analytics.eventTrack.next({ action: 'Copied Generated Password' });
         this.platformUtilsService.copyToClipboard(this.password);
+        this.toasterService.popAsync('info', null, this.i18nService.t('valueCopied', this.i18nService.t('password')));
     }
 
     select() {

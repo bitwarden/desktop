@@ -212,21 +212,15 @@ export class VaultComponent implements OnInit, OnDestroy {
         const menu = new remote.Menu();
         menu.append(new remote.MenuItem({
             label: this.i18nService.t('view'),
-            click: () => {
-                this.ngZone.run(async () => {
-                    this.viewCipher(cipher);
-                    this.changeDetectorRef.detectChanges();
-                });
-            },
+            click: () => this.functionWithChangeDetection(() => {
+                this.viewCipher(cipher);
+            }),
         }));
         menu.append(new remote.MenuItem({
             label: this.i18nService.t('edit'),
-            click: () => {
-                this.ngZone.run(async () => {
-                    this.editCipher(cipher);
-                    this.changeDetectorRef.detectChanges();
-                });
-            },
+            click: () => this.functionWithChangeDetection(() => {
+                this.editCipher(cipher);
+            }),
         }));
 
         switch (cipher.type) {
@@ -243,13 +237,13 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.username != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyUsername'),
-                        click: () => this.platformUtilsService.copyToClipboard(cipher.login.username),
+                        click: () => this.copyValue(cipher.login.username, 'username'),
                     }));
                 }
                 if (cipher.login.password != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyPassword'),
-                        click: () => this.platformUtilsService.copyToClipboard(cipher.login.password),
+                        click: () => this.copyValue(cipher.login.password, 'password'),
                     }));
                 }
                 break;
@@ -260,13 +254,13 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.card.number != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyNumber'),
-                        click: () => this.platformUtilsService.copyToClipboard(cipher.card.number),
+                        click: () => this.copyValue(cipher.card.number, 'number'),
                     }));
                 }
                 if (cipher.card.code != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copySecurityCode'),
-                        click: () => this.platformUtilsService.copyToClipboard(cipher.card.code),
+                        click: () => this.copyValue(cipher.card.code, 'securityCode'),
                     }));
                 }
                 break;
@@ -488,8 +482,20 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     private addCipherWithChangeDetection(type: CipherType = null) {
+        this.functionWithChangeDetection(() => this.addCipher(type));
+    }
+
+    private copyValue(value: string, labelI18nKey: string) {
+        this.functionWithChangeDetection(() => {
+            this.platformUtilsService.copyToClipboard(value);
+            this.toasterService.popAsync('info', null,
+                this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
+        });
+    }
+
+    private functionWithChangeDetection(func: Function) {
         this.ngZone.run(async () => {
-            this.addCipher(type);
+            func();
             this.changeDetectorRef.detectChanges();
         });
     }

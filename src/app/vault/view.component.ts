@@ -96,13 +96,15 @@ export class ViewComponent implements OnChanges, OnDestroy {
         this.platformUtilsService.launchUri(this.cipher.login.uri);
     }
 
-    copy(value: string, aType: string) {
+    copy(value: string, typeI18nKey: string, aType: string) {
         if (value == null) {
             return;
         }
 
         this.analytics.eventTrack.next({ action: 'Copied ' + aType });
         this.platformUtilsService.copyToClipboard(value);
+        this.toasterService.popAsync('info', null,
+            this.i18nService.t('valueCopied', this.i18nService.t(typeI18nKey)));
     }
 
     async downloadAttachment(attachment: AttachmentView) {
