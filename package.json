@@ -149,7 +149,7 @@
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
     "electron": "1.8.2",
-    "electron-builder": "^20.1.0",
+    "electron-builder": "^20.1.1",
     "electron-rebuild": "1.7.3",
     "electron-reload": "1.2.2",
     "extract-text-webpack-plugin": "^3.0.1",
