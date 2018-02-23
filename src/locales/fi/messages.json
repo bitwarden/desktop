@@ -749,9 +749,6 @@
   "disableFaviconDesc": {
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
-  "about": {
-    "message": "About"
-  },
   "copy": {
     "message": "Copy",
     "description": "Copy to clipboard"
@@ -877,5 +874,72 @@
   },
   "noPasswordsInList": {
     "message": "There are no passwords to list."
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "redo": {
+    "message": "Redo"
+  },
+  "cut": {
+    "message": "Cut",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Paste",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Select All"
+  },
+  "zoomIn": {
+    "message": "Zoom In"
+  },
+  "zoomOut": {
+    "message": "Zoom Out"
+  },
+  "resetZoom": {
+    "message": "Reset Zoom"
+  },
+  "toggleFullScreen": {
+    "message": "Toggle Full Screen"
+  },
+  "reload": {
+    "message": "Reload"
+  },
+  "forceReload": {
+    "message": "Force Reload"
+  },
+  "toggleDevTools": {
+    "message": "Toggle Developer Tools"
+  },
+  "minimize": {
+    "message": "Minimize",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Zoom"
+  },
+  "bringAllToFront": {
+    "message": "Bring All to Front",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "About Bitwarden"
+  },
+  "services": {
+    "message": "Services"
+  },
+  "hideBitwarden": {
+    "message": "Hide Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Hide Others"
+  },
+  "showAll": {
+    "message": "Show All"
+  },
+  "quitBitwarden": {
+    "message": "Quit Bitwarden"
   }
 }
