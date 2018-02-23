@@ -30,8 +30,10 @@ export class Main {
         let appDataPath = null;
         if (process.env.BITWARDEN_APPDATA_DIR != null) {
             appDataPath = process.env.BITWARDEN_APPDATA_DIR;
-        } else if (process.env.PORTABLE_EXECUTABLE_DIR != null) {
+        } else if (process.platform === 'win32' && process.env.PORTABLE_EXECUTABLE_DIR != null) {
             appDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, 'bitwarden-appdata');
+        } else if (process.platform === 'linux' && process.env.SNAP_USER_DATA != null) {
+            appDataPath = process.env.SNAP_USER_DATA;
         }
 
         if (appDataPath != null) {
