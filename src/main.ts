@@ -33,7 +33,7 @@ export class Main {
         } else if (process.platform === 'win32' && process.env.PORTABLE_EXECUTABLE_DIR != null) {
             appDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, 'bitwarden-appdata');
         } else if (process.platform === 'linux' && process.env.SNAP_USER_DATA != null) {
-            appDataPath = process.env.SNAP_USER_DATA;
+            appDataPath = path.join(process.env.SNAP_USER_DATA, 'appdata');
         }
 
         if (appDataPath != null) {
