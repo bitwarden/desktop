@@ -77,28 +77,66 @@ export class MenuMain {
         }
 
         const selectionMenu = Menu.buildFromTemplate([
-            { role: 'copy' },
+            {
+                label: this.main.i18nService.t('copy'),
+                role: 'copy',
+            },
             { type: 'separator' },
-            { role: 'selectall' },
+            {
+                label: this.main.i18nService.t('selectAll'),
+                role: 'selectall',
+            },
         ]);
 
         const inputMenu = Menu.buildFromTemplate([
-            { role: 'undo' },
-            { role: 'redo' },
+            {
+                label: this.main.i18nService.t('undo'),
+                role: 'undo',
+            },
+            {
+                label: this.main.i18nService.t('redo'),
+                role: 'redo',
+            },
             { type: 'separator' },
-            { role: 'cut', enabled: false },
-            { role: 'copy', enabled: false },
-            { role: 'paste' },
+            {
+                label: this.main.i18nService.t('cut'),
+                role: 'cut',
+                enabled: false,
+            },
+            {
+                label: this.main.i18nService.t('copy'),
+                role: 'copy',
+                enabled: false,
+            },
+            {
+                label: this.main.i18nService.t('paste'),
+                role: 'paste',
+            },
             { type: 'separator' },
-            { role: 'selectall' },
+            {
+                label: this.main.i18nService.t('selectAll'),
+                role: 'selectall',
+            },
         ]);
 
         const inputSelectionMenu = Menu.buildFromTemplate([
-            { role: 'cut' },
-            { role: 'copy' },
-            { role: 'paste' },
+            {
+                label: this.main.i18nService.t('cut'),
+                role: 'cut',
+            },
+            {
+                label: this.main.i18nService.t('copy'),
+                role: 'copy',
+            },
+            {
+                label: this.main.i18nService.t('paste'),
+                role: 'paste',
+            },
             { type: 'separator' },
-            { role: 'selectall' },
+            {
+                label: this.main.i18nService.t('selectAll'),
+                role: 'selectall',
+            },
         ]);
 
         this.main.windowMain.win.webContents.on('context-menu', (e, props) => {
@@ -166,14 +204,32 @@ export class MenuMain {
             {
                 label: this.main.i18nService.t('edit'),
                 submenu: [
-                    { role: 'undo' },
-                    { role: 'redo' },
+                    {
+                        label: this.main.i18nService.t('undo'),
+                        role: 'undo',
+                    },
+                    {
+                        label: this.main.i18nService.t('redo'),
+                        role: 'redo',
+                    },
                     { type: 'separator' },
-                    { role: 'cut' },
-                    { role: 'copy' },
-                    { role: 'paste' },
+                    {
+                        label: this.main.i18nService.t('cut'),
+                        role: 'cut',
+                    },
+                    {
+                        label: this.main.i18nService.t('copy'),
+                        role: 'copy',
+                    },
+                    {
+                        label: this.main.i18nService.t('paste'),
+                        role: 'paste',
+                    },
                     { type: 'separator' },
-                    { role: 'selectall' },
+                    {
+                        label: this.main.i18nService.t('selectAll'),
+                        role: 'selectall',
+                    },
                 ],
             },
             {
@@ -198,15 +254,37 @@ export class MenuMain {
                         click: () => this.main.messagingService.send('openPasswordHistory'),
                     },
                     { type: 'separator' },
-                    { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },
-                    { role: 'zoomout', accelerator: 'CmdOrCtrl+-' },
-                    { role: 'resetzoom', accelerator: 'CmdOrCtrl+0' },
+                    {
+                        label: this.main.i18nService.t('zoomIn'),
+                        role: 'zoomin', accelerator: 'CmdOrCtrl+=',
+                    },
+                    {
+                        label: this.main.i18nService.t('zoomOut'),
+                        role: 'zoomout', accelerator: 'CmdOrCtrl+-',
+                    },
+                    {
+                        label: this.main.i18nService.t('resetZoom'),
+                        role: 'resetzoom', accelerator: 'CmdOrCtrl+0',
+                    },
                     { type: 'separator' },
-                    { role: 'togglefullscreen' },
+                    {
+                        label: this.main.i18nService.t('toggleFullScreen'),
+                        role: 'togglefullscreen',
+                    },
                     { type: 'separator' },
-                    { role: 'reload', accelerator: 'Alt+Shift+R' },
-                    { role: 'forcereload' },
-                    { role: 'toggledevtools' },
+                    {
+                        label: this.main.i18nService.t('reload'),
+                        role: 'reload',
+                        accelerator: 'Alt+Shift+R',
+                    },
+                    {
+                        label: this.main.i18nService.t('forceReload'),
+                        role: 'forcereload',
+                    },
+                    {
+                        label: this.main.i18nService.t('toggleDevTools'),
+                        role: 'toggledevtools',
+                    },
                 ],
             },
             {
@@ -295,8 +373,14 @@ export class MenuMain {
             {
                 role: 'window',
                 submenu: [
-                    { role: 'minimize' },
-                    { role: 'close' },
+                    {
+                        label: this.main.i18nService.t('minimize'),
+                        role: 'minimize',
+                    },
+                    {
+                        label: this.main.i18nService.t('close'),
+                        role: 'close',
+                    },
                 ],
             },
             {
@@ -431,7 +515,10 @@ export class MenuMain {
 
         if (process.platform === 'darwin') {
             const firstMenuPart: MenuItemConstructorOptions[] = [
-                { role: 'about' },
+                {
+                    label: this.main.i18nService.t('aboutBitwarden'),
+                    role: 'about',
+                },
                 updateMenuItem,
             ];
 
@@ -439,23 +526,50 @@ export class MenuMain {
                 label: 'Bitwarden',
                 submenu: firstMenuPart.concat(firstMenuOptions, [
                     { type: 'separator' },
-                    { role: 'services', submenu: [] },
+                    {
+                        label: this.main.i18nService.t('services'),
+                        role: 'services', submenu: [],
+                    },
                     { type: 'separator' },
-                    { role: 'hide' },
-                    { role: 'hideothers' },
-                    { role: 'unhide' },
+                    {
+                        label: this.main.i18nService.t('hideBitwarden'),
+                        role: 'hide',
+                    },
+                    {
+                        label: this.main.i18nService.t('hideOthers'),
+                        role: 'hideothers',
+                    },
+                    {
+                        label: this.main.i18nService.t('showAll'),
+                        role: 'unhide',
+                    },
                     { type: 'separator' },
-                    { role: 'quit' },
+                    {
+                        label: this.main.i18nService.t('quitBitwarden'),
+                        role: 'quit',
+                    },
                 ]),
             });
 
             // Window menu
             template[template.length - 2].submenu = [
-                { role: 'close' },
-                { role: 'minimize' },
-                { role: 'zoom' },
+                {
+                    label: this.main.i18nService.t('close'),
+                    role: 'close',
+                },
+                {
+                    label: this.main.i18nService.t('minimize'),
+                    role: 'minimize',
+                },
+                {
+                    label: this.main.i18nService.t('zoom'),
+                    role: 'zoom',
+                },
                 { type: 'separator' },
-                { role: 'front' },
+                {
+                    label: this.main.i18nService.t('bringAllToFront'),
+                    role: 'front',
+                },
             ];
         } else {
             // File menu
@@ -468,7 +582,7 @@ export class MenuMain {
                     { type: 'separator' },
                     updateMenuItem,
                     {
-                        label: this.main.i18nService.t('about'),
+                        label: this.main.i18nService.t('aboutBitwarden'),
                         click: () => {
                             const aboutInformation = this.main.i18nService.t('version', app.getVersion()) +
                                 '\nShell ' + process.versions.electron +
