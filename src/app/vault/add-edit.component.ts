@@ -209,6 +209,7 @@ export class AddEditComponent implements OnChanges {
     togglePassword() {
         this.analytics.eventTrack.next({ action: 'Toggled Password on Edit' });
         this.showPassword = !this.showPassword;
+        document.getElementById('loginPassword').focus();
     }
 
     toggleFieldValue(field: FieldView) {
