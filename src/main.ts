@@ -4,6 +4,7 @@ import * as path from 'path';
 import { DesktopMainMessagingService } from './services/desktopMainMessaging.service';
 import { DesktopStorageService } from './services/desktopStorage.service';
 import { I18nService } from './services/i18n.service';
+import { LogService } from './services/log.service';
 
 import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
@@ -15,6 +16,7 @@ import { WindowMain } from './main/window.main';
 const osLocale = require('os-locale');
 
 export class Main {
+    logService: LogService;
     i18nService: I18nService;
     storageService: DesktopStorageService;
     messagingService: DesktopMainMessagingService;
@@ -38,8 +40,8 @@ export class Main {
 
         if (appDataPath != null) {
             app.setPath('userData', appDataPath);
-            app.setPath('logs', path.join(appDataPath, 'logs'));
         }
+        app.setPath('logs', path.join(app.getPath('userData'), 'logs'));
 
         const args = process.argv.slice(1);
         const watch = args.some((val) => val === '--watch');
@@ -49,6 +51,7 @@ export class Main {
             require('electron-reload')(__dirname, {});
         }
 
+        this.logService = new LogService(null, app.getPath('logs'));
         this.i18nService = new I18nService('en', './locales/');
         this.storageService = new DesktopStorageService();
         this.messagingService = new DesktopMainMessagingService(this);

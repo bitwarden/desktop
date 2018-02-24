@@ -11,6 +11,7 @@ import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils
 import { DesktopRendererMessagingService } from '../../services/desktopRendererMessaging.service';
 import { DesktopRendererSecureStorageService } from '../../services/desktopRendererSecureStorage.service';
 import { DesktopStorageService } from '../../services/desktopStorage.service';
+import { LogService } from '../../services/log.service';
 import { I18nService } from '../../services/i18n.service';
 
 import { AuthGuardService } from './auth-guard.service';
@@ -49,6 +50,7 @@ import { EnvironmentService as EnvironmentServiceAbstraction } from 'jslib/abstr
 import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
 import { LockService as LockServiceAbstraction } from 'jslib/abstractions/lock.service';
+import { LogService as LogServiceAbstraction } from 'jslib/abstractions/log.service';
 import { MessagingService as MessagingServiceAbstraction } from 'jslib/abstractions/messaging.service';
 import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
@@ -63,6 +65,7 @@ import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.s
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
 import { UtilsService as UtilsServiceAbstraction } from 'jslib/abstractions/utils.service';
 
+const logService = new LogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
 const utilsService = new UtilsService();
 const stateService = new StateService();
@@ -161,6 +164,7 @@ function initFactory(): Function {
         { provide: LockServiceAbstraction, useValue: lockService },
         { provide: StorageServiceAbstraction, useValue: storageService },
         { provide: StateServiceAbstraction, useValue: stateService },
+        { provide: LogServiceAbstraction, useValue: logService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
