@@ -10,14 +10,26 @@ export class UpdaterLogger implements Logger {
     }
 
     info(message?: any): void {
+        if (message == null) {
+            return;
+        }
+
         this.logService.info(message);
     }
 
     warn(message?: any): void {
+        if (message == null) {
+            return;
+        }
+
         this.logService.warning(message);
     }
 
     error(message?: any): void {
+        if (message == null) {
+            return;
+        }
+
         this.logService.error(message);
     }
 }
