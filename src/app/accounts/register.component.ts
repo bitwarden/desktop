@@ -22,6 +22,7 @@ export class RegisterComponent {
     masterPassword: string = '';
     confirmMasterPassword: string = '';
     hint: string = '';
+    showPassword: boolean = false;
     formPromise: Promise<any>;
 
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
@@ -71,5 +72,11 @@ export class RegisterComponent {
         const hashedPassword = await this.cryptoService.hashPassword(this.masterPassword, key);
         const request = new RegisterRequest(this.email, hashedPassword, this.hint, encKey.encryptedString);
         await this.apiService.postRegister(request);
+    }
+
+    togglePassword(confirmField: boolean) {
+        this.analytics.eventTrack.next({ action: 'Toggled Master Password on Register' });
+        this.showPassword = !this.showPassword;
+        document.getElementById(confirmField ? 'masterPasswordRetype' : 'masterPassword').focus();
     }
 }

@@ -29,6 +29,7 @@ export class LoginComponent {
 
     email: string = '';
     masterPassword: string = '';
+    showPassword: boolean = false;
     formPromise: Promise<AuthResult>;
 
     constructor(private authService: AuthService, private router: Router, private analytics: Angulartics2,
@@ -75,5 +76,11 @@ export class LoginComponent {
         childComponent.onSaved.subscribe(() => {
             modal.close();
         });
+    }
+
+    togglePassword() {
+        this.analytics.eventTrack.next({ action: 'Toggled Master Password on Login' });
+        this.showPassword = !this.showPassword;
+        document.getElementById('masterPassword').focus();
     }
 }
