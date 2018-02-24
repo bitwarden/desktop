@@ -16,7 +16,9 @@
   },
   "exclude": [
     "node_modules",
+    "jslib/node_modules",
     "dist",
+    "jslib/dist",
     "build",
     "build.safariextension",
     "coverage",
