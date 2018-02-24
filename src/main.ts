@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import * as fs from 'fs';
 import * as path from 'path';
 
 import { DesktopMainMessagingService } from './services/desktopMainMessaging.service';
@@ -41,7 +42,12 @@ export class Main {
         if (appDataPath != null) {
             app.setPath('userData', appDataPath);
         }
-        app.setPath('logs', path.join(app.getPath('userData'), 'logs'));
+
+        const logsDir = path.join(app.getPath('userData'), 'logs');
+        if (!fs.existsSync(logsDir)) {
+            fs.mkdirSync(logsDir);
+        }
+        app.setPath('logs', logsDir);
 
         const args = process.argv.slice(1);
         const watch = args.some((val) => val === '--watch');
