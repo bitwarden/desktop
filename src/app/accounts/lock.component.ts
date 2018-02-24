@@ -18,6 +18,7 @@ import { UserService } from 'jslib/abstractions/user.service';
 })
 export class LockComponent {
     masterPassword: string = '';
+    showPassword: boolean = false;
 
     constructor(private router: Router, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService,
@@ -52,5 +53,11 @@ export class LockComponent {
         if (confirmed) {
             this.messagingService.send('logout');
         }
+    }
+
+    togglePassword() {
+        this.analytics.eventTrack.next({ action: 'Toggled Master Password on Unlock' });
+        this.showPassword = !this.showPassword;
+        document.getElementById('masterPassword').focus();
     }
 }

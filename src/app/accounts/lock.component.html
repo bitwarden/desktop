@@ -4,10 +4,19 @@
         <p>{{'yourVaultIsLocked' | i18n}}</p>
         <div class="box last">
             <div class="box-content">
-                <div class="box-content-row" appBoxRow>
-                    <label for="masterPassword">{{'masterPass' | i18n}}</label>
-                    <input id="masterPassword" type="password" name="MasterPassword" [(ngModel)]="masterPassword"
-                           required appAutofocus>
+                <div class="box-content-row box-content-row-flex" appBoxRow>
+                    <div class="row-main">
+                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                        <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
+                               class="monospaced" [(ngModel)]="masterPassword" required appAutofocus>
+                    </div>
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" appStopClick appBlurClick
+                           title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
+                            <i class="fa fa-lg"
+                               [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
