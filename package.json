@@ -2,6 +2,9 @@
   "name": "bitwarden",
   "version": "0.0.0",
   "scripts": {
+    "sub:init": "git submodule update --init --recursive",
+    "sub:update": "git submodule update --remote",
+    "postinstall": "npm run sub:init",
     "start:firefox": "web-ext run --source-dir ./dist/",
     "dev": "gulp build && webpack --config webpack.dev.js",
     "dev:watch": "gulp build && webpack --config webpack.dev.js --watch",
