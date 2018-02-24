@@ -11,8 +11,8 @@ import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils
 import { DesktopRendererMessagingService } from '../../services/desktopRendererMessaging.service';
 import { DesktopRendererSecureStorageService } from '../../services/desktopRendererSecureStorage.service';
 import { DesktopStorageService } from '../../services/desktopStorage.service';
-import { LogService } from '../../services/log.service';
 import { I18nService } from '../../services/i18n.service';
+import { LogService } from '../../services/log.service';
 
 import { AuthGuardService } from './auth-guard.service';
 import { BroadcasterService } from './broadcaster.service';

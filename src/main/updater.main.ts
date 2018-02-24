@@ -7,6 +7,7 @@ import {
 import { autoUpdater } from 'electron-updater';
 
 import { Main } from '../main';
+import { UpdaterLogger } from '../scripts/updaterLogger';
 import {
     isAppImage,
     isDev,
@@ -24,6 +25,8 @@ export class UpdaterMain {
     private canUpdate = false;
 
     constructor(private main: Main) {
+        autoUpdater.logger = new UpdaterLogger(main.logService);
+
         const linuxCanUpdate = process.platform === 'linux' && isAppImage();
         const windowsCanUpdate = process.platform === 'win32' && !isWindowsStore() && !isWindowsPortable();
         const macCanUpdate = process.platform === 'darwin' && !isMacAppStore();

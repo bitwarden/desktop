@@ -9,6 +9,11 @@ import { LogService as LogServiceAbstraction } from 'jslib/abstractions/log.serv
 
 export class LogService implements LogServiceAbstraction {
     constructor(private filter: (level: LogLevelType) => boolean = null, logDir: string = null) {
+        if (log.transports == null) {
+            return;
+        }
+
+        log.transports.file.level = 'info';
         if (logDir != null) {
             log.transports.file.file = path.join(logDir, 'app.log');
         }
