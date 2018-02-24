@@ -7,8 +7,8 @@ import {
     ChangeDetectorRef,
     Component,
     EventEmitter,
-    NgZone,
     Input,
+    NgZone,
     OnInit,
     Output,
 } from '@angular/core';
