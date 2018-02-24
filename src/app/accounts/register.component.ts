@@ -65,6 +65,12 @@ export class RegisterComponent {
         } catch { }
     }
 
+    togglePassword(confirmField: boolean) {
+        this.analytics.eventTrack.next({ action: 'Toggled Master Password on Register' });
+        this.showPassword = !this.showPassword;
+        document.getElementById(confirmField ? 'masterPasswordRetype' : 'masterPassword').focus();
+    }
+
     private async register() {
         this.email = this.email.toLowerCase();
         const key = this.cryptoService.makeKey(this.masterPassword, this.email);
@@ -72,11 +78,5 @@ export class RegisterComponent {
         const hashedPassword = await this.cryptoService.hashPassword(this.masterPassword, key);
         const request = new RegisterRequest(this.email, hashedPassword, this.hint, encKey.encryptedString);
         await this.apiService.postRegister(request);
-    }
-
-    togglePassword(confirmField: boolean) {
-        this.analytics.eventTrack.next({ action: 'Toggled Master Password on Register' });
-        this.showPassword = !this.showPassword;
-        document.getElementById(confirmField ? 'masterPasswordRetype' : 'masterPassword').focus();
     }
 }
