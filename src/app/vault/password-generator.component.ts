@@ -4,8 +4,10 @@ import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import {
+    ChangeDetectorRef,
     Component,
     EventEmitter,
+    NgZone,
     Input,
     OnInit,
     Output,
@@ -30,7 +32,8 @@ export class PasswordGeneratorComponent implements OnInit {
 
     constructor(private passwordGenerationService: PasswordGenerationService, private analytics: Angulartics2,
         private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
-        private toasterService: ToasterService) { }
+        private toasterService: ToasterService, private ngZone: NgZone,
+        private changeDetectorRef: ChangeDetectorRef) { }
 
     async ngOnInit() {
         this.options = await this.passwordGenerationService.getOptions();
@@ -44,15 +47,19 @@ export class PasswordGeneratorComponent implements OnInit {
             // Save password once the slider stop moving.
             slider.addEventListener('change', async (e) => {
                 e.preventDefault();
-                this.saveOptions(false);
+                this.functionWithChangeDetection(() => {
+                    this.saveOptions(false);
+                });
                 await this.passwordGenerationService.addHistory(this.password);
                 this.analytics.eventTrack.next({ action: 'Regenerated Password' });
             });
             // Regenerate while slider moving
             slider.addEventListener('input', (e) => {
                 e.preventDefault();
-                this.normalizeOptions();
-                this.password = this.passwordGenerationService.generatePassword(this.options);
+                this.functionWithChangeDetection(() => {
+                    this.normalizeOptions();
+                    this.password = this.passwordGenerationService.generatePassword(this.options);
+                });
             });
         }
     }
@@ -125,5 +132,12 @@ export class PasswordGeneratorComponent implements OnInit {
         if (this.options.minSpecial + this.options.minNumber > this.options.length) {
             this.options.minSpecial = this.options.length - this.options.minNumber;
         }
+    }
+
+    private functionWithChangeDetection(func: Function) {
+        this.ngZone.run(async () => {
+            func();
+            this.changeDetectorRef.detectChanges();
+        });
     }
 }
