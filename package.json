@@ -51,6 +51,9 @@
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
+      "extendInfo": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
       "target": [
         "mas-dev",
         "mas",
