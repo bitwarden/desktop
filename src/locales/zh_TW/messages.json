@@ -21,7 +21,7 @@
     "message": "身分"
   },
   "typeSecureNote": {
-    "message": "安全記事"
+    "message": "安全筆記"
   },
   "folders": {
     "message": "資料夾"
@@ -867,7 +867,7 @@
     "message": "重新整理完成"
   },
   "passwordHistory": {
-    "message": "密碼歷程記錄"
+    "message": "密碼歷史記錄"
   },
   "clear": {
     "message": "清除"
@@ -876,70 +876,80 @@
     "message": "沒有密碼可顯示。"
   },
   "undo": {
-    "message": "Undo"
+    "message": "復原"
   },
   "redo": {
-    "message": "Redo"
+    "message": "重做"
   },
   "cut": {
-    "message": "Cut",
+    "message": "剪下",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "貼上",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "全選"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "放大"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "縮小"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "重設縮放"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "切換全螢幕"
   },
   "reload": {
-    "message": "Reload"
+    "message": "重新載入"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "強制重新載入"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "切換開發人員工具"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "最小化",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "縮放"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "全部移到最上層",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "關於 Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "服務"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "隱藏 Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "隱藏其他"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "顯示全部"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "結束 Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
