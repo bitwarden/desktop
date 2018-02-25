@@ -42,12 +42,7 @@ export class Main {
         if (appDataPath != null) {
             app.setPath('userData', appDataPath);
         }
-
-        const logsDir = path.join(app.getPath('userData'), 'logs');
-        if (!fs.existsSync(logsDir)) {
-            fs.mkdirSync(logsDir);
-        }
-        app.setPath('logs', logsDir);
+        app.setPath('logs', path.join(app.getPath('userData'), 'logs'));
 
         const args = process.argv.slice(1);
         const watch = args.some((val) => val === '--watch');
@@ -57,7 +52,7 @@ export class Main {
             require('electron-reload')(__dirname, {});
         }
 
-        this.logService = new LogService(null, app.getPath('logs'));
+        this.logService = new LogService(null, app.getPath('userData'));
         this.i18nService = new I18nService('en', './locales/');
         this.storageService = new DesktopStorageService();
         this.messagingService = new DesktopMainMessagingService(this);
