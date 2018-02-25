@@ -9,7 +9,7 @@
     "message": "Избранные"
   },
   "types": {
-    "message": "Типы"
+    "message": "Типы элементов"
   },
   "typeLogin": {
     "message": "Логин"
@@ -184,10 +184,10 @@
     "message": "Г-жа"
   },
   "ms": {
-    "message": "Г-жа"
+    "message": "Проф."
   },
   "dr": {
-    "message": "Д-р"
+    "message": "Тов."
   },
   "expirationMonth": {
     "message": "Месяц"
@@ -286,7 +286,7 @@
     "message": "Измененный элемент"
   },
   "deleteItem": {
-    "message": "Удалить элемент"
+    "message": "Удаление элемента"
   },
   "deleteFolder": {
     "message": "Удалить папку"
@@ -345,7 +345,7 @@
     "message": "Поиск в избранном"
   },
   "searchType": {
-    "message": "Тип поиска",
+    "message": "Поиск по типу",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -469,7 +469,7 @@
     "message": "Введите 6-значный код подтверждения из вашего приложения-аутентификатора."
   },
   "enterVerificationCodeEmail": {
-    "message": "Введите 6-значный код подтверждения, который был отправлен на $EMAIL$.",
+    "message": "Введите 6-значный код подтверждения, который был отправлен на email $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -678,7 +678,7 @@
     "message": "Ошибка синхронизации"
   },
   "yourVaultIsLocked": {
-    "message": "Хранилище заблокировано. Проверьте мастер-пароль для продолжения."
+    "message": "Хранилище заблокировано. Введите мастер-пароль для продолжения."
   },
   "unlock": {
     "message": "Разблокировать"
@@ -687,7 +687,7 @@
     "message": "Неверный мастер-пароль"
   },
   "twoStepLoginConfirmation": {
-    "message": "Двухфакторная аутентификация делает ваш аккаунт более защищенным, требуя ввода кода безопасности из приложения-аутентификатора при каждом входе в систему. Двухфакторная аутентификация включается на сайте bitwarden.com. Перейти на сайт сейчас?"
+    "message": "Двухфакторная аутентификация делает ваш аккаунт более защищенным, требуя подтверждения входа на другом устройстве, например, ключом безопасности, приложением-аутентификатором, SMS, телефонным звонком или email. Двухфакторная аутентификация включается на bitwarden.com. Перейти на сайт сейчас?"
   },
   "twoStepLogin": {
     "message": "Двухфакторная аутентификация"
@@ -876,70 +876,80 @@
     "message": "Нет паролей для отображения."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Отменить"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Вернуть"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Вырезать",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Вставить",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Выбрать все"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Увеличить"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Уменьшить"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Сбросить масштаб"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Переключить полноэкранный режим"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Перезагрузка"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Принудительная перезагрузка"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Переключение инструментов разработчика"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Свернуть",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Масштаб"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "На передний план",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "О Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Службы"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Скрыть Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Скрыть другие"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Показать все"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Выйти из Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
