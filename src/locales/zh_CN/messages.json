@@ -295,7 +295,7 @@
     "message": "删除附件"
   },
   "deleteItemConfirmation": {
-    "message": "确实要删除此项目吗?"
+    "message": "确定删除此项目？"
   },
   "deletedItem": {
     "message": "项目已删除"
@@ -388,7 +388,7 @@
     "message": "已删除文件夹"
   },
   "loginOrCreateNewAccount": {
-    "message": "登录或者新建一个帐号来访问您的安全密码库。"
+    "message": "登录或者新建一个账号来访问您的安全密码库。"
   },
   "createAccount": {
     "message": "创建账号"
@@ -515,17 +515,17 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey NEO 安全密钥"
+    "message": "YubiKey OTP 安全密钥"
   },
   "yubiKeyDesc": {
     "message": "使用 YubiKey 来访问您的账户。可配合 YubiKey 4、4 Nano、4C 和 NEO 设备。"
   },
   "duoDesc": {
-    "message": "使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全钥匙验证身份。",
+    "message": "使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全密钥验证身份。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "使用任何 FIDO U2F 安全钥匙来访问您的账户。"
+    "message": "使用任何 FIDO U2F 安全密钥来访问您的账户。"
   },
   "u2fTitle": {
     "message": "FIDO U2F 安全密钥"
@@ -660,7 +660,7 @@
     "message": "更改电子邮件"
   },
   "changeEmailConfirmation": {
-    "message": "您可以在 bitwarden.com 网页版修改您的 email 地址。现在为您跳转吗？"
+    "message": "您可以在 bitwarden.com 网页版修改您的电子邮件地址。现在为您跳转吗？"
   },
   "goToWebVault": {
     "message": "转到网页版密码库"
@@ -738,16 +738,16 @@
     "message": "安全"
   },
   "disableGa": {
-    "message": "禁用 Analytics"
+    "message": "禁用分析"
   },
   "gaDesc": {
-    "message": "我们使用 analytics 来帮助分析扩展的使用情况，以便我们改进程序。所有的数据收集完全是匿名的。"
+    "message": "我们将分析扩展的使用情况，以便我们改进程序。所有收集到的数据完全匿名。"
   },
   "disableFavicon": {
     "message": "禁用网站图标"
   },
   "disableFaviconDesc": {
-    "message": "在您密码库的每个登录项目旁边显示一个可识别的图标。"
+    "message": "在您的密码库的每个登录项旁显示一个可识别的图标。"
   },
   "copy": {
     "message": "复制",
@@ -766,7 +766,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "重启更新"
+    "message": "重启以更新"
   },
   "restartToUpdateDesc": {
     "message": "版本 $VERSION_NUM$ 已准备好安装。必须重新启动 Bitwarden 才能完成安装。是否立即重新启动并更新？",
@@ -831,7 +831,7 @@
     "message": "1 GB 加密文件存储。"
   },
   "premiumSignUpTwoStep": {
-    "message": "其他两步登录选项, 如 YubiKey、FIDO U2F 和 Duo。"
+    "message": "其他两步登录选项，如 YubiKey、FIDO U2F 和 Duo。"
   },
   "premiumSignUpTotp": {
     "message": "为您的密码库登录采用 TOTP 验证码（两步验证）生成器。"
@@ -876,70 +876,80 @@
     "message": "没有要显示的项目。"
   },
   "undo": {
-    "message": "Undo"
+    "message": "撤销"
   },
   "redo": {
-    "message": "Redo"
+    "message": "重做"
   },
   "cut": {
-    "message": "Cut",
+    "message": "剪切",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "粘贴",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "选择所有"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "放大"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "缩小"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "重置缩放"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "切换全屏"
   },
   "reload": {
-    "message": "Reload"
+    "message": "重新加载"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "强制重新加载"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "切换开发工具"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "最小化",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "缩放"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "前置所有",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "关于 Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "服务"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "隐藏 Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "隐藏其他"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "显示全部"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "退出 Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
