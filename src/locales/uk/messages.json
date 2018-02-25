@@ -876,70 +876,80 @@
     "message": "Немає паролів для відображення."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Повернути"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Повторити"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Вирізати",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Вставити",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Вибрати все"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Збільшити"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Зменшити"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Скинути масштаб"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Повноекранний режим"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Перезавантажити"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Примусове перезавантаження"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Інструменти розробника"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Згорнути",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Масштаб"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Все на передній план",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Про Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Сервіси"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Приховати Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Приховати інше"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Показати все"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Вийти з Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
