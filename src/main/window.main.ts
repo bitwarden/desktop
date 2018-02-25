@@ -81,8 +81,7 @@ export class WindowMain {
             x: this.windowStates[Keys.mainWindowSize].x,
             y: this.windowStates[Keys.mainWindowSize].y,
             title: app.getName(),
-            darkTheme: true,
-            vibrancy: 'ultra-dark',
+            icon: path.join(__dirname, '/images/icon.png'),
             show: false,
         });
 
