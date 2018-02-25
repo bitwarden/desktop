@@ -876,70 +876,80 @@
     "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Rückgängig"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Wiederherstellen"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Ausschneiden",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Einfügen",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Alles auswählen"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Vergrößern"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Verkleinern"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Zoom zurücksetzen"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Vollbildmodus umschalten"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Neu laden"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Neu laden erzwingen"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Entwickler-Werkzeuge ein\/aus"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimieren",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Zoomen"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Alle in den Vordergrund",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Über Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Dienste"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Bitwarden ausblenden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Andere ausblenden"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Alles anzeigen"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Bitwarden beenden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }

@@ -336,7 +336,7 @@
     "message": "あいまいな文字を省く"
   },
   "searchCollection": {
-    "message": "検索コレクション"
+    "message": "コレクションの検索"
   },
   "searchFolder": {
     "message": "フォルダの検索"
@@ -597,167 +597,167 @@
     "message": "サービスが利用できません"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "ログアウトしました"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "ログインセッションの有効期限が切れています。"
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "ログアウトしてもよろしいですか？"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "ログアウト"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "新しいログインの追加"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "新しいアイテムの追加"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "新規フォルダーの追加"
   },
   "view": {
-    "message": "View"
+    "message": "表示"
   },
   "account": {
-    "message": "Account"
+    "message": "アカウント"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "読み込み中…"
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "今すぐロック"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "パスワード生成ツール"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "メールでのお問い合わせ"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "ウェブサイトを開く"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "バグレポートを送信"
   },
   "blog": {
-    "message": "Blog"
+    "message": "ブログ"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "フォロー"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "保管庫の同期"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "マスターパスワードの変更"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "マスターパスワードは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "メールアドレスを変更"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "メールアドレスは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "ウェブ保管庫を開く"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "モバイルアプリを取得"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "ブラウザの拡張機能を取得"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "同期が完了しました"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "同期に失敗しました"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "保管庫がロックされています。開くにはマスターパスワードを入力してください。"
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "ロック解除"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "マスターパスワードが間違っています"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "2段階認証を使うと、ログイン時にセキュリティキーや認証アプリ、SMS、電話やメールでの認証を必要にすることでアカウントをさらに安全に出来ます。2段階認証は bitwarden.com ウェブ保管庫で有効化できます。ウェブサイトを開きますか？"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "2段階認証"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "ロックオプション"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "いつ保管庫をロックするか選択します。ロックされた保管庫にアクセスするためにはマスターパスワードを入力する必要があります。"
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "すぐに"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1分"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5分"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15分"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30分"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1時間"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4時間"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "アイドル時"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "スリープ時"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "ロック時"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "再起動時"
   },
   "never": {
-    "message": "Never"
+    "message": "なし"
   },
   "security": {
-    "message": "Security"
+    "message": "セキュリティ"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "解析の無効化"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "アプリの使われ方を解析することでより使いやすくなるよう開発しています。収集されるデータはすべて匿名です。"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "ウェブサイトアイコンの無効化"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "保管庫のアイテム毎にウェブサイトのアイコンを表示します。"
   },
   "copy": {
-    "message": "Copy",
+    "message": "コピー",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "更新を確認"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "バージョン $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -766,10 +766,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "再起動して更新"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "バージョン $VERSION_NUM$ をインストールする準備ができました。インストールを完了するには Bitwarden を再起動する必要があります。再起動して更新しますか？",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -778,84 +778,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "更新があります"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "更新が見つかりました。今すぐダウンロードしますか？"
   },
   "restart": {
-    "message": "Restart"
+    "message": "再起動"
   },
   "later": {
-    "message": "Later"
+    "message": "後で"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "現在更新はありません。最新バージョンを使用しています。"
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "更新エラー"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "不明"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "ユーザー名をコピー"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "番号のコピー",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "セキュリティコードのコピー",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "プレミアム会員"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "会員情報の管理"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "会員情報は bitwarden.com ウェブ保管庫で管理できます。ウェブサイトを開きますか？"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "会員情報の更新"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "あなたは現在プレミアム会員ではありません。"
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "プレミアム会員に登録すると以下の特典を得られます："
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1GB の暗号化されたファイルストレージ"
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "YubiKey、FIDO U2F、Duoなどの追加の2段階認証ログインオプション"
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "保管庫内での2段階認証コード生成"
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "優先カスタマーサポート"
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "将来のプレミアム機能すべて（詳細は近日公開予定！）"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "プレミアム会員に加入"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "プレミアム会員権は bitwarden.com ウェブ保管庫で購入できます。ウェブサイトを開きますか？"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "あなたはプレミアム会員です！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "bitwarden を支援いただき、ありがとうございます。"
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "全部で年間たった$PRICE$！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -864,82 +864,92 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "更新完了"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "パスワードの履歴"
   },
   "clear": {
-    "message": "Clear"
+    "message": "消去する"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "表示するパスワードがありません"
   },
   "undo": {
-    "message": "Undo"
+    "message": "元に戻す"
   },
   "redo": {
-    "message": "Redo"
+    "message": "やり直し"
   },
   "cut": {
-    "message": "Cut",
+    "message": "切り取り",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "貼り付け",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "すべて選択"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "拡大"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "縮小"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "拡大をリセット"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "全画面表示の切り替え"
   },
   "reload": {
-    "message": "Reload"
+    "message": "再読み込み"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "強制再読み込み"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "開発者ツールを表示"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "最小化",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "ズーム"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "すべてを手前に移動",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Bitwarden について"
   },
   "services": {
-    "message": "Services"
+    "message": "サービス"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Bitwarden を隠す"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "他を隠す"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "すべて表示"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Bitwarden の終了"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }

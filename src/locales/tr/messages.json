@@ -633,7 +633,7 @@
     "message": "Parola oluşturucu"
   },
   "emailUs": {
-    "message": "Bire E-posta Gönderin"
+    "message": "Bize E-posta Gönderin"
   },
   "visitOurWebsite": {
     "message": "Web sitemizi ziyaret edin"
@@ -663,7 +663,7 @@
     "message": "E-posta adresinizi bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "goToWebVault": {
-    "message": "Web kasasına git"
+    "message": "Web sayfasına git"
   },
   "getMobileApp": {
     "message": "Mobil Uygulama Edin"
@@ -816,46 +816,46 @@
     "message": "Üyeliği Yönet"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Üyeliklerinizi bitwarden.com web sitesinden yönetebilirsiniz. Şimdi web sitesini ziyaret etmek istiyor musun?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Üyeliği Yenile"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Şu anda premium üyesi değilsiniz."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Premium üyeliği için kaydolun ve şunları elde edin:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB şifrelenmiş dosya deposu."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "YubiKey, FIDO U2F ve Duo gibi ek iki adımlı giriş seçenekleri."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Websitede oturum açma işlemleri için TOTP doğrulama kodu (2FA) üreticisi."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Öncelikli müşteri desteği."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Gelecekteki tüm premium özellikler. Daha fazlası yakında!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Premium Satın Al"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Bitwarde.com web sitesinden premium üyelik satın alabilirsiniz. Şimdi web sitesini ziyaret etmek istiyor musun?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Bir premium üyesisiniz!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Bitwarden'i desteklediğiniz için teşekkür ederiz."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Bunların hepsi sadece $PRICE$ \/yıl!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -864,82 +864,92 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Yenileme tamamlandı"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Parola Geçmişi"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Temizle"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Listelenecek şifre yok."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Geri al"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Yeniden yap"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Kes",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Yapıştır",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Tümünü Seç"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Yakınlaştır"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Uzaklaştır"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Zoom Sıfırla"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Tam Ekrana Geç"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Yeniden yükle"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Reload'u zorla çalıştır"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Geliştirici Araçlarını Açma\/Kapatma"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Küçült",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Yakınlaştır"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Hepsini Öne Getir",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Bitwarden Hakkında"
   },
   "services": {
-    "message": "Services"
+    "message": "Hizmetler"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Bitwarden'i gizle"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Diğerlerini Gizle"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Tümünü Göster"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Bitwarden'den Çık"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
