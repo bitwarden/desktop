@@ -3,7 +3,7 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alle gjenstander"
   },
   "favorites": {
     "message": "Favoritter"
@@ -82,7 +82,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Juster synlighet"
   },
   "cardholderName": {
     "message": "Kortholderens navn"
@@ -172,7 +172,7 @@
     "message": "Desember"
   },
   "ex": {
-    "message": "ex."
+    "message": "f․eks."
   },
   "title": {
     "message": "Tittel"
@@ -187,7 +187,7 @@
     "message": "Fru"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dr․"
   },
   "expirationMonth": {
     "message": "Utløpsmåned"
@@ -478,7 +478,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifiserings-E-post er sendt til $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -511,7 +511,7 @@
     "message": "Autentiseringsapp"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Bruk en autentiseringsapp (f․eks․ Authy eller Google Authenticator) for å generere tidsbegrensede verifiseringskoder.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -543,7 +543,7 @@
     "message": "Denne kontoen har aktiver 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne enheten."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Vennligst legg til ytterligere leverandører som er støttet bedre mellom enheter (f․eks․ en autentiseringsapp)."
   },
   "twoStepOptions": {
     "message": "2-trinnsinnloggingsalternativer"
@@ -579,7 +579,7 @@
     "message": "Miljø-nettadressene har blitt lagret."
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "yes": {
     "message": "Ja"
@@ -597,167 +597,167 @@
     "message": "Egenskapen er utilgjengelig"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Logget av"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Din innloggingsøkt har utløpt."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Er du sikker på at du vil logge av?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Logg av"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Legg til en ny innlogging"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Legg til en ny gjenstand"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Legg til en ny mappe"
   },
   "view": {
-    "message": "View"
+    "message": "Vis"
   },
   "account": {
-    "message": "Account"
+    "message": "Konto"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Laster inn..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Lås nå"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Passordgenerator"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Send oss en E-post"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Besøk nettsidene våre"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Legg inn en feilrapport"
   },
   "blog": {
-    "message": "Blog"
+    "message": "Blogg"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Følg oss"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Synkroniser hvelvet"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Endre superpassordet"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kan endre superpassordet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Endre E-postadresse"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kan endre din kontos E-postadresse på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Gå til netthvelvet"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Skaff deg mobilappene"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Skaff deg nettleserutvidelsene"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Synkronisering fullført"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Synkronisering mislyktes"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Hvelvet ditt er låst. Kontroller superpassordet ditt for å fortsette."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Lås opp"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Ugyldig superpassord"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "2-trinnsinnlogging gjør kontoen din mer sikker, ved å kreve at du verifiserer din innlogging med en annen enhet, f.eks. en autentiseringsapp, SMS, E-post, telefonsamtale, eller sikkerhetsnøkkel. 2-trinnsinnlogging kan aktiveres på bitwarden.com-netthvelvet. Vil du besøke den nettsiden nå?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "2-trinnsinnlogging"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Låsingsinnstillinger"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Velg når hvelvet ditt skal låses. Et låst hvelv innebærer at du må skrive inn superpassordet ditt på nytt for å få tilgang til den igjen."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Umiddelbart"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 minutt"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 minutter"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 minutter"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 minutter"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 time"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 timer"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Når PCen er inaktiv"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Når PCen går i hvilemodus"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Når PCen låses"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Ved omstart"
   },
   "never": {
-    "message": "Never"
+    "message": "Aldri"
   },
   "security": {
-    "message": "Security"
+    "message": "Sikkerhet"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Deaktiver analyser"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Vi bruker analytikere for å bedre lære om hvordan programmet blir brukt, sånn at vi kan gjøre den bedre. All datainnsamling er fullstendig anonymt."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Skru av nettstedsikoner"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hver innloggingsgjenstand i hvelvet ditt."
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopier",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Se etter oppdateringer"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Versjon $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -766,10 +766,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Start på nytt for å oppdatere"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Versjon $VERSION_NUM$ er klar til å installeres. Du må starte Bitwarden på nytt for å fullføre installasjonen. Vil du starte Bitwarden på nytt nå og oppdatere den?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -778,84 +778,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Oppdatering tilgjengelig"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "En oppdatering ble funnet. Vil du laste den ned nå?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Start på nytt"
   },
   "later": {
-    "message": "Later"
+    "message": "Senere"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Ingen oppdateringer er tilgjengelig for øyeblikket. Du bruker den seneste versjonen."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Feil ved oppdatering"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Ukjent"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kopier brukernavnet"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Kopier nummeret",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Kopier sikkerhetskoden",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium-medlemskap"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Behandle medlemsskapet"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kan behandle medlemskapet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Oppfrisk medlemsskapet"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Du er ikke for øyeblikket et Premium-medlem."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Skriv deg opp på et Premium-abonnement og få:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB med kryptert fillagring."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Ytterligere 2-trinnsinnloggingsmuligheter, slik som YubiKey, FIDO U2F, og Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "TOTP-verifiseringskodegenerator (2FA) for innlogginger i ditt hvelv."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Prioritert kundestøtte."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Alle fremtidige Premium-egenskaper. Mere er planlagt snart!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Kjøp Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kan kjøpe et Premium-medlemskap på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Du er et Premium-medlem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Takk for at du støtter bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Alt dette for bare $PRICE$\/år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -864,82 +864,92 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Oppfriskning fullført"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Passordhistorikk"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Tøm"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Det er ingen passord å liste opp."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Angre"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Gjør om"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Klipp ut",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Lim inn",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Velg alt"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Forstørr"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Forminsk"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Tilbakestill forstørring"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Gå inn\/ut av fullskjerm"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Oppfrisk"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Fremtving oppfriskning"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Skru av\/på utviklerverktøy"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimer",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Forstørr"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Plasser fremst",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Om Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Tjenester"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Skjul Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Skjul andre"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Vis alle"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Avslutt Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
