@@ -323,7 +323,7 @@
     "message": "Lengte"
   },
   "close": {
-    "message": "Sluit"
+    "message": "Sluiten"
   },
   "minNumbers": {
     "message": "Minimum aantal getallen"
@@ -345,7 +345,7 @@
     "message": "In favorieten zoeken"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Zoek type",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -540,10 +540,10 @@
     "message": "Inloggen niet beschikbaar"
   },
   "noTwoStepProviders": {
-    "message": "Dit account heeft verificatie in twee stappen ingeschakeld, echter wordt geen van de geconfigureerde aanbieders ondersteund door deze webbrowser."
+    "message": "Dit account heeft verificatie in twee stappen ingeschakeld, echter wordt geen van de geconfigureerde aanbieders ondersteund door dit apparaat."
   },
   "noTwoStepProviders2": {
-    "message": "Voeg aanvullende providers die worden beter ondersteund tussen apparaten (zoals een authenticator app)."
+    "message": "Voeg aanvullende providers toe die beter ondersteund worden tussen apparaten (zoals een authenticator app)."
   },
   "twoStepOptions": {
     "message": "Inloggen in twee stappen-opties"
@@ -597,167 +597,167 @@
     "message": "Functie niet beschikbaar"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Uitgelogd"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Uw login sessie is verlopen."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Weet u zeker dat u wilt uitloggen?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Log uit"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Nieuwe login toevoegen"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Nieuwe item toevoegen"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Nieuwe map toevoegen"
   },
   "view": {
-    "message": "View"
+    "message": "Weergeven"
   },
   "account": {
     "message": "Account"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Bezig met laden..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Nu vergrendelen"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Wachtwoordgenerator"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "E-mail ons"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Bezoek onze website"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Meld een fout (bug)"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Volg ons"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Kluis synchroniseren"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Hoofdwachtwoord wijzigen"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "U kunt uw hoofdwachtwoord wijzigen in de kluis op bitwarden.com Wilt u de website nu bezoeken?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "E-mailadres wijzigen"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "U kunt uw e-mailadres wijzigen in de kluis op bitwarden.com Wilt u de website nu bezoeken?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Ga naar de web kluis"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Download de mobiele app"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Download de browserextensie"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Synchroniseren voltooid"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Synchroniseren mislukt"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Uw kluis is vergrendeld. Controleer uw hoofdwachtwoord om verder te gaan."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Ontgrendel"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Ongeldig hoofdwachtwoord"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Inloggen in twee stappen beveiligt uw account beter doordat u uw inlogpoging moet bevestigen met een ander apparaat. Dit kan bijv. een beveiligingssleutel zijn, maar ook een verificatie-app, SMS, spraakoproep of e-mail. Inloggen in twee stappen kan worden ingeschakeld in de kluis op bitwarden.com Wilt u de website nu bezoeken?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Tweestaps-login"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Vergrendelopties"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Kies wanneer uw kluis wordt gesloten. Een gesloten kluis vereist dat u uw hoofdwachtwoord opnieuw invoert om de kluis opnieuw te mogen gebruiken."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Onmiddelijk"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 minuut"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 minuten"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 minuten"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 minuten"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 uur"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 uur"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Na systeemvergrendeling"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Na systeemslaapmodus"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Na systeemvergrendeling"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Na herstart"
   },
   "never": {
-    "message": "Never"
+    "message": "Nooit"
   },
   "security": {
-    "message": "Security"
+    "message": "Beveiliging"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Analytics uitschakelen"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "We gebruiken analytics om te weten te komen hoe de extensie gebruikt wordt, zodat we deze kunnen verbeteren. Alle verzamelde gegevens zijn anoniem."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Schakel website icoontjes uit"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Website icoontjes bieden een herkenbare afbeelding naast iedere login in uw kluis."
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopiëren",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Controleer op updates"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Versie $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -766,10 +766,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Herstart om te updaten"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Versie $VERSION_NUM$ is klaar om te installeren. U dient Bitwarden te herstarten om de installatie te voltooien. Wilt u nu opnieuw opstarten en updaten?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -778,84 +778,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Update beschikbaar"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Een update is gevonden. Wilt u de update nu downloaden?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Herstart"
   },
   "later": {
     "message": "Later"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Er zijn momenteel geen updates beschikbaar. U gebruikt de laatste versie."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Fout tijdens het updaten"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Onbekend"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Gebruikersnaam kopiëren"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Nummer kopiëren",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Beveiligingscode kopiëren",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium lidmaatschap"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Lidmaatschap beheren"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "U kunt uw lidmaatschap veranderen in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Lidmaatschap vernieuwen"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "U bent momenteel niet een premium-lid."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Meld u aan voor een Premium lidmaatschap en krijg:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB versleutelde opslag."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Extra tweestaps inlogopties zoals YubiKey, FIDO U2F en Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "TOTP verificatiecode (2FA) generator voor logins in uw kluis."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Ondersteuning met hoge prioriteit."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Alle toekomstige premium-functies. Meer binnenkort!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Koop Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "U kunt uw lidmaatschap veranderen in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "U bent een premium lid!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Bedankt voor de ondersteuning van de ontwikkeling van bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Allemaal voor slechts $PRICE$ per jaar!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -864,82 +864,92 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Bijwerken voltooid"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Wachtwoordgeschiedenis"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Wissen"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Er zijn geen wachtwoorden om weer te geven."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Ongedaan maken"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Opnieuw toepassen"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Knippen",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Plakken",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Selecteer alles"
   },
   "zoomIn": {
     "message": "Zoom In"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Zoom uit"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Zoom herstellen"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Volledig scherm aan\/uit"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Herlaad"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Forceer herladen"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Schakel Developer Tools in of uit"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimaliseer",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Inzoomen"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Breng alles naar de voorgrond",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Over Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Diensten"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Bitwarden verbergen"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Anderen verbergen"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Alles tonen"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Bitwarden afsluiten"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
