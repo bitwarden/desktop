@@ -876,70 +876,80 @@
     "message": "Não existem palavras-passe para listar."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Desfazer"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Refazer"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Cortar",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Colar",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Selecionar tudo"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Ampliar"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Reduzir"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Repor zoom"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Alternar ecrã completo"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Recarregar"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Forçar recarregar"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Alternar ferramentas de programador"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimizar",
     "description": "Minimize window"
   },
   "zoom": {
     "message": "Zoom"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Trazer tudo para a frente",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Acerca do Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Serviços"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Ocultar o Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Ocultar outros"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Mostrar todos"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Sair do Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
