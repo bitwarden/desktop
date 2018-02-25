@@ -831,7 +831,7 @@
     "message": "1 GB di spazio di archiviazione crittografato."
   },
   "premiumSignUpTwoStep": {
-    "message": "Opzioni di login in due fasi addizionali come YubiKey, FIDO U2F, e Duo."
+    "message": "Opzioni di login in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
@@ -876,70 +876,80 @@
     "message": "Non ci sono password da elencare."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Annulla"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Ripeti"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Taglia",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Incolla",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Seleziona tutto"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Ingrandisci"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Diminuisci"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Ripristina zoom"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Attiva\/disattiva schermo intero"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Ricarica"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Forza ricarica"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Attiva\/disattiva strumenti di sviluppo"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimizza",
     "description": "Minimize window"
   },
   "zoom": {
     "message": "Zoom"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Porta tutto in primo piano",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Su Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Servizi"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Nascondi Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Nascondi altri"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Mostra tutto"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Esci da Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   }
 }
