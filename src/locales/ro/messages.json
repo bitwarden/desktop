@@ -663,13 +663,13 @@
     "message": "Puteţi modifica adresa de e-mail pe site-ul web bitwarden.com. Doriţi să vizitaţi site-ul acum?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Accesaţi seiful web"
   },
   "getMobileApp": {
     "message": "Obțineți aplicația pentru mobil"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Obţineţi extensie pentru browser"
   },
   "syncingComplete": {
     "message": "Sincronizare completă"
@@ -678,7 +678,7 @@
     "message": "Sincronizare eșuată"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Seiful dvs. este blocat. Verificaţi parola principală pentru a continua."
   },
   "unlock": {
     "message": "Deblocare"
@@ -696,7 +696,7 @@
     "message": "Blocare"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Alegeți când seiful se blochează. Un seif blocat necesită reintroducerea parolei principale pentru a-l accesa din nou."
   },
   "immediately": {
     "message": "Imediat"
@@ -720,13 +720,13 @@
     "message": "4 ore"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Când sistemul este inactiv"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "În repaus"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "La blocarea sistemului"
   },
   "onRestart": {
     "message": "La repornire"
@@ -747,17 +747,17 @@
     "message": "Dezactivare pictograme"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Pictogramele oferă o imagine recognoscibilă alături de fiecare element de conectare din seiful dvs."
   },
   "copy": {
     "message": "Copiere",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Verificaţi pentru actualizări"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Versiune $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -766,10 +766,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Reporniți pentru actualizare"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Versiunea $VERSION_NUM$ este gata pentru instare. Trebuie să reporniţi Bitwarden pentru a finaliza instalarea. Doriţi să reporniţi şi să actualizaţi acum?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,7 +781,7 @@
     "message": "Actualizare disponibilă"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "O actualizare a fost găsită. Doriţi s-o descărcaţi acum?"
   },
   "restart": {
     "message": "Repornire"
@@ -790,7 +790,7 @@
     "message": "Mai târziu"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Nu sunt disponibile actualizări în prezent. Utilizaţi cea mai recentă versiune."
   },
   "updateError": {
     "message": "Eroare la actualizare"
@@ -876,74 +876,74 @@
     "message": "Nu sunt parole în listă."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Anulare"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Refacere"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Decupare",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Lipire",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Selecare totală"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Mărire"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Micşorare"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Resetare Zoom"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Comutare ecran complet"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Reîncărcare"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Reîncărcare forțată"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Comutare instrumente de dezvoltare"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimizare",
     "description": "Minimize window"
   },
   "zoom": {
     "message": "Zoom"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Aducere tot în faţă",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Despre Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Servicii"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Ascundere Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Ascunde celelalte"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Afişare tot"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Închidere Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ copiată",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +953,9 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Ajutor"
   },
   "window": {
-    "message": "Window"
+    "message": "Fereastră"
   }
 }
