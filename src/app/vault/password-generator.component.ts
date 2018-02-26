@@ -41,27 +41,17 @@ export class PasswordGeneratorComponent implements OnInit {
         this.password = this.passwordGenerationService.generatePassword(this.options);
         this.analytics.eventTrack.next({ action: 'Generated Password' });
         await this.passwordGenerationService.addHistory(this.password);
+    }
 
-        const slider = document.querySelector('#lengthRange');
-        if (slider) {
-            // Save password once the slider stop moving.
-            slider.addEventListener('change', async (e) => {
-                e.preventDefault();
-                this.functionWithChangeDetection(() => {
-                    this.saveOptions(false);
-                });
-                await this.passwordGenerationService.addHistory(this.password);
-                this.analytics.eventTrack.next({ action: 'Regenerated Password' });
-            });
-            // Regenerate while slider moving
-            slider.addEventListener('input', (e) => {
-                e.preventDefault();
-                this.functionWithChangeDetection(() => {
-                    this.normalizeOptions();
-                    this.password = this.passwordGenerationService.generatePassword(this.options);
-                });
-            });
-        }
+    async sliderChanged() {
+        this.saveOptions(false);
+        await this.passwordGenerationService.addHistory(this.password);
+        this.analytics.eventTrack.next({ action: 'Regenerated Password' });
+    }
+
+    async sliderInput() {
+        this.normalizeOptions();
+        this.password = this.passwordGenerationService.generatePassword(this.options);
     }
 
     async saveOptions(regenerate: boolean = true) {
