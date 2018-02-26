@@ -876,74 +876,74 @@
     "message": "Puuduvad paroolid, mida kuvada."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Võta tagasi"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Tee uuesti"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Lõika",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Kleebi",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Vali kõik"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Suurenda"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Suumi välja"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Taasta suurendus"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Lülita täisekraanile"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Lae uuesti"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Jõusta uuesti laadimine"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Lülita Arendaja tööriistad sisse"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimeeri",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Suurenda"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Too kõik ette",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Teave Bitwardenist"
   },
   "services": {
-    "message": "Services"
+    "message": "Teenused"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Peida Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Peida teised"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Näita kõiki"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Välju Bitwardenist"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ on kopeeritud",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +953,9 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Abi"
   },
   "window": {
-    "message": "Window"
+    "message": "Aken"
   }
 }
