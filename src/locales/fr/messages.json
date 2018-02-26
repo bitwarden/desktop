@@ -3,7 +3,7 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "Tous les identifiants"
+    "message": "Tous les éléments"
   },
   "favorites": {
     "message": "Favoris"
@@ -33,7 +33,7 @@
     "message": "Rechercher dans le coffre"
   },
   "addItem": {
-    "message": "Ajouter un identifiant"
+    "message": "Ajouter un élément"
   },
   "shared": {
     "message": "Partagé"
@@ -127,7 +127,7 @@
     "message": "Version Premium requise"
   },
   "premiumRequiredDesc": {
-    "message": "Une adhésion premium est requises pour utiliser cette fonctionnalité."
+    "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
   },
   "errorOccurred": {
     "message": "Une erreur est survenue."
@@ -286,7 +286,7 @@
     "message": "Élément modifié"
   },
   "deleteItem": {
-    "message": "Supprimer l'identifiant"
+    "message": "Supprimer l'élément"
   },
   "deleteFolder": {
     "message": "Supprimer le dossier"
@@ -295,7 +295,7 @@
     "message": "Supprimer la pièce jointe"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer cet identifiant ?"
+    "message": "Êtes-vous sûr(e) de vouloir supprimer cet élément ?"
   },
   "deletedItem": {
     "message": "Élément supprimé"
@@ -314,10 +314,10 @@
     "message": "Modifier le dossier"
   },
   "regeneratePassword": {
-    "message": "Re-générer un mot de passe"
+    "message": "Regénérer un mot de passe"
   },
   "copyPassword": {
-    "message": "Copier mot de passe"
+    "message": "Copier le mot de passe"
   },
   "length": {
     "message": "Longueur"
@@ -451,10 +451,10 @@
     "message": "Une erreur inattendue est survenue."
   },
   "itemInformation": {
-    "message": "Information sur l'identifiant"
+    "message": "Informations sur l'élément"
   },
   "noItemsInList": {
-    "message": "Aucun identifiant à afficher."
+    "message": "Aucun élément à afficher."
   },
   "verificationCode": {
     "message": "Code de vérification"
@@ -521,7 +521,7 @@
     "message": "Utiliser une YubiKey pour accéder à votre compte. Fonctionne avec les appareils YubiKey 4, 4 Nano, 4C et NEO."
   },
   "duoDesc": {
-    "message": "Vérifier avec Duo Security via l'application Duo Mobile, SMS, appel vocal ou une clé de sécurité U2F.",
+    "message": "Vérifier avec Duo Security via l'application Duo Mobile, SMS, appel téléphonique ou une clef de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -666,7 +666,7 @@
     "message": "Aller au coffre web"
   },
   "getMobileApp": {
-    "message": "Télécharger l'appli mobile"
+    "message": "Télécharger l'application mobile"
   },
   "getBrowserExtension": {
     "message": "Télécharger l'extension du navigateur"
@@ -687,7 +687,7 @@
     "message": "Mot de passe maître invalide"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'authentification à double facteurs rend votre compte plus sécurisé en vous demandant la saisie d'un code de sécurité à chaque identification depuis l'application d'authentification. L'identification à double facteurs peut être activée dans le coffre web sur bitwarden.com. Voulez-vous visiter le site web maintenant ?"
+    "message": "L'authentification à deux étapes sécurise plus encore votre compte en vous demandant à chaque identification la saisie d'un code de sécurité obtenu depuis un autre appareil, comme une clef de sécurité, une application d'authentification, un SMS, un appel téléphonique ou encore un courriel. L'identification à deux étapes peut être activée dans le coffre web sur bitwarden.com. Voulez-vous vous rendre sur le site web maintenant ?"
   },
   "twoStepLogin": {
     "message": "Identification à deux facteurs"
@@ -747,7 +747,7 @@
     "message": "Désactiver les icônes des sites web"
   },
   "disableFaviconDesc": {
-    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
+    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque élément dans votre coffre."
   },
   "copy": {
     "message": "Copier",
@@ -943,7 +943,7 @@
     "message": "Quitter Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ copié",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +953,9 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Aide"
   },
   "window": {
-    "message": "Window"
+    "message": "Fenêtre"
   }
 }
