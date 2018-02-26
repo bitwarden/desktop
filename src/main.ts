@@ -1,5 +1,4 @@
 import { app, BrowserWindow } from 'electron';
-import * as fs from 'fs';
 import * as path from 'path';
 
 import { DesktopMainMessagingService } from './services/desktopMainMessaging.service';
