@@ -371,6 +371,7 @@ export class MenuMain {
                 ],
             },
             {
+                label: this.main.i18nService.t('window'),
                 role: 'window',
                 submenu: [
                     {
@@ -384,6 +385,7 @@ export class MenuMain {
                 ],
             },
             {
+                label: this.main.i18nService.t('help'),
                 role: 'help',
                 submenu: [
                     {
