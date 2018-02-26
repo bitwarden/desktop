@@ -943,7 +943,7 @@
     "message": "Выйти из Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ скопирован",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -951,5 +951,11 @@
         "example": "Password"
       }
     }
+  },
+  "help": {
+    "message": "Help"
+  },
+  "window": {
+    "message": "Window"
   }
 }
