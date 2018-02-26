@@ -943,7 +943,7 @@
     "message": "Bitwarden beenden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ kopiert",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +953,9 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Hilfe"
   },
   "window": {
-    "message": "Window"
+    "message": "Fenster"
   }
 }
