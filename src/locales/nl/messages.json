@@ -21,7 +21,7 @@
     "message": "Identiteit"
   },
   "typeSecureNote": {
-    "message": "Veilige Notitie"
+    "message": "Veilige notitie"
   },
   "folders": {
     "message": "Mappen"
@@ -893,7 +893,7 @@
     "message": "Selecteer alles"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Zoom in"
   },
   "zoomOut": {
     "message": "Zoom uit"
