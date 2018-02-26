@@ -876,74 +876,74 @@
     "message": "Det finns inga lösenord att lista."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Ångra"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Återställ"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Klipp ut",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Klistra in",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Välj alla"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Zooma in"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Zooma ut"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Återställ zoom"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Växla till\/från helskärm"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Uppdatera"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Tvinga uppdatering"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Växla utvecklingsverktyg"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimera",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Zooma"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Lägg alla överst",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Om Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Tjänster"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Dölj Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Dölj övriga"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Visa alla"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Stäng Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ kopierat",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -951,5 +951,11 @@
         "example": "Password"
       }
     }
+  },
+  "help": {
+    "message": "Help"
+  },
+  "window": {
+    "message": "Window"
   }
 }
