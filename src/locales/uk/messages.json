@@ -951,5 +951,11 @@
         "example": "Password"
       }
     }
+  },
+  "help": {
+    "message": "Help"
+  },
+  "window": {
+    "message": "Window"
   }
 }

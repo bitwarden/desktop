@@ -896,10 +896,10 @@
     "message": "Zoom avant"
   },
   "zoomOut": {
-    "message": "Zoom Arrière"
+    "message": "Zoom arrière"
   },
   "resetZoom": {
-    "message": "Réinitialiser le zoom"
+    "message": "Taille réelle"
   },
   "toggleFullScreen": {
     "message": "Afficher en plein-écran"
@@ -908,17 +908,17 @@
     "message": "Recharger"
   },
   "forceReload": {
-    "message": "Forcer Rechargement"
+    "message": "Forcer le rechargement"
   },
   "toggleDevTools": {
-    "message": "Activer Outils Développement"
+    "message": "Afficher\/cacher les outils de développement"
   },
   "minimize": {
     "message": "Réduire",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Réduire\/agrandir"
   },
   "bringAllToFront": {
     "message": "Tout ramener au premier plan",
@@ -951,5 +951,11 @@
         "example": "Password"
       }
     }
+  },
+  "help": {
+    "message": "Help"
+  },
+  "window": {
+    "message": "Window"
   }
 }

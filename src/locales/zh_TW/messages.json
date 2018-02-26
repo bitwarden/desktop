@@ -819,7 +819,7 @@
     "message": "您可以在 bitwarden 網頁版管理你的會員資格。現在前往？"
   },
   "premiumRefresh": {
-    "message": "延續會員資格"
+    "message": "重新整理會員資訊"
   },
   "premiumNotCurrentMember": {
     "message": "您目前不是進階會員。"
@@ -943,7 +943,7 @@
     "message": "結束 Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ 已複製",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -951,5 +951,11 @@
         "example": "Password"
       }
     }
+  },
+  "help": {
+    "message": "Help"
+  },
+  "window": {
+    "message": "Window"
   }
 }
