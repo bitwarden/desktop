@@ -943,7 +943,7 @@
     "message": "Esci da Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ copiato",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +953,9 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Aiuto"
   },
   "window": {
-    "message": "Window"
+    "message": "Finestra"
   }
 }

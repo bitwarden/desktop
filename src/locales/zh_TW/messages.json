@@ -953,9 +953,9 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "說明"
   },
   "window": {
-    "message": "Window"
+    "message": "視窗"
   }
 }

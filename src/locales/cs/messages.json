@@ -876,74 +876,74 @@
     "message": "Nejsou k dispozici žádná hesla."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Zpět"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Znovu"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Vyjmout",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Vložit",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Vybrat vše"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Přiblížit"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Oddálit"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Obnovit přiblížení"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Režim celé obrazovky"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Obnovit"
   },
   "forceReload": {
-    "message": "Force Reload"
+    "message": "Vynutit obnovení"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Nástroje pro vývojáře"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimalizovat",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Přiblížení"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Přenést vše do popředí",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "O Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Služby"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Skrýt Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Skrýt ostatní"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Zobrazit vše"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Ukončit Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ zkopírováno",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +953,9 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Nápověda"
   },
   "window": {
-    "message": "Window"
+    "message": "Okno"
   }
 }
