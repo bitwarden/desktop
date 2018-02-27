@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Free Password Manager",
+    "message": "Bitwarden - Free Password Manager",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden is a secure and free password manager for all of your devices.",
+    "message": "A secure and free password manager for all of your devices.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Visit Our Website"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visit our website to get help, news, email us, and/or learn more about how to use bitwarden."
+    "message": "Visit our website to get help, news, email us, and/or learn more about how to use Bitwarden."
   },
   "fileBugReport": {
     "message": "File a Bug Report"
@@ -191,22 +191,22 @@
     "message": "Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault": {
-    "message": "bitwarden Web Vault"
+    "message": "Bitwarden Web Vault"
   },
   "bitWebVaultInfo": {
-    "message": "Manage your items from any web browser with the bitwarden web vault."
+    "message": "Manage your items from any web browser with the Bitwarden web vault."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS Vault"
+    "message": "Bitwarden iOS Vault"
   },
   "bitIosVaultInfo": {
-    "message": "Manage your items from your mobile devices with the bitwarden iOS vault."
+    "message": "Manage your items from your mobile devices with the Bitwarden iOS vault."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android Vault"
+    "message": "Bitwarden Android Vault"
   },
   "bitAndrVaultInfo": {
-    "message": "Manage your items from your mobile devices with the bitwarden Android vault."
+    "message": "Manage your items from your mobile devices with the Bitwarden Android vault."
   },
   "importItems": {
     "message": "Import Items"
@@ -502,7 +502,7 @@
     "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc": {
-    "message": "Should bitwarden remember this password for you?"
+    "message": "Should Bitwarden remember this password for you?"
   },
   "notificationAddSave": {
     "message": "Yes, Save Now"
@@ -635,7 +635,7 @@
     "message": "You are a premium member!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
     "message": "All for just %price% /year!"
@@ -727,7 +727,7 @@
     "message": "Self-hosted Environment"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
   },
   "customEnvironment": {
     "message": "Custom Environment"

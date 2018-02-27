@@ -11,7 +11,7 @@
     Version="0.0.0.0"/>
 
   <Properties>
-    <DisplayName>bitwarden - Free Password Manager</DisplayName>
+    <DisplayName>Bitwarden - Free Password Manager</DisplayName>
     <PublisherDisplayName>8bit Solutions LLC</PublisherDisplayName>
     <Logo>Assets/icon_50.png</Logo>
   </Properties>
@@ -30,10 +30,10 @@
     <Application Id="App">
       <uap:VisualElements
         AppListEntry="none"
-        DisplayName="bitwarden - Free Password Manager"
+        DisplayName="Bitwarden - Free Password Manager"
         Square150x150Logo="Assets/icon_150.png"
         Square44x44Logo="Assets/icon_44.png"
-        Description="bitwarden is a secure and free password manager for all of your devices."
+        Description="A secure and free password manager for all of your devices."
         BackgroundColor="white">
       </uap:VisualElements>
       <Extensions>
@@ -41,7 +41,7 @@
         <uap3:AppExtension Name="com.microsoft.edge.extension"
           Id="EdgeExtension"
           PublicFolder="Extension"
-          DisplayName="bitwarden - Free Password Manager">
+          DisplayName="Bitwarden - Free Password Manager">
         </uap3:AppExtension>
       </uap3:Extension>
       </Extensions>

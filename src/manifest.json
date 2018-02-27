@@ -63,7 +63,7 @@
       "19": "images/icon19.png",
       "38": "images/icon38.png"
     },
-    "default_title": "bitwarden",
+    "default_title": "Bitwarden",
     "default_popup": "popup/index.html"
   },
   "permissions": [
@@ -119,7 +119,7 @@
     }
   },
   "sidebar_action": {
-    "default_title": "bitwarden",
+    "default_title": "Bitwarden",
     "default_panel": "popup/index.html?uilocation=sidebar",
     "default_icon": "images/icon19.png"
   }

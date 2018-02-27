@@ -322,7 +322,7 @@ export default class MainBackground {
             type: 'normal',
             id: 'root',
             contexts: ['all'],
-            title: 'bitwarden',
+            title: 'Bitwarden',
         });
 
         await this.contextMenusCreate({
@@ -607,7 +607,7 @@ export default class MainBackground {
                 tabId: tabId,
             });
         } else if (this.sidebarAction.setTitle) {
-            let title = 'bitwarden';
+            let title = 'Bitwarden';
             if (text && text !== '') {
                 title += (' [' + text + ']');
             }
