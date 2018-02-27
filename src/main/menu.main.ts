@@ -573,6 +573,10 @@ export class MenuMain {
                 },
                 { type: 'separator' },
                 {
+                    label: 'Bitwarden',
+                    click: () => { },
+                },
+                {
                     label: this.main.i18nService.t('bringAllToFront'),
                     role: 'front',
                 },
