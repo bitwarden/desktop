@@ -223,8 +223,7 @@ export class AddEditComponent implements OnChanges {
             this.toasterService.popAsync('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('passwordExposed', match.toString()));
         } else {
-            this.toasterService.popAsync('success', null,
-            this.i18nService.t('passwordSafe'));
+            this.toasterService.popAsync('success', null, this.i18nService.t('passwordSafe'));
         }
     }
 

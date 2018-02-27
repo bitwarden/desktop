@@ -959,10 +959,10 @@
     "message": "Window"
   },
   "checkPassword": {
-    "message": "Check if the password have been previously exposed."
+    "message": "Check if this password has been previously exposed."
   },
   "passwordExposed": {
-    "message": "This password have been previously exposed $VALUE$ times in data breaches!",
+    "message": "This password has been exposed in $VALUE$ data breach(es)! You should change it.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -971,6 +971,6 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in a current data breach! It should be safe to use."
+    "message": "This password was not found in any known data breaches. It should be safe to use."
   }
 }
