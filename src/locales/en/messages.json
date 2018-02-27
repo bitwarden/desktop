@@ -957,5 +957,20 @@
   },
   "window": {
     "message": "Window"
+  },
+  "checkPassword": {
+    "message": "Check if the password have been previously exposed."
+  },
+  "passwordExposed": {
+    "message": "This password have been previously exposed $VALUE$ times in data breaches!",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in a current data breach! It should be safe to use."
   }
 }
