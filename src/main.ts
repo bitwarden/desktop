@@ -12,9 +12,6 @@ import { PowerMonitorMain } from './main/powerMonitor.main';
 import { UpdaterMain } from './main/updater.main';
 import { WindowMain } from './main/window.main';
 
-// tslint:disable-next-line
-const osLocale = require('os-locale');
-
 export class Main {
     logService: LogService;
     i18nService: I18nService;
@@ -65,8 +62,8 @@ export class Main {
 
     bootstrap() {
         this.windowMain.init().then(async () => {
-            const locale = await osLocale();
-            await this.i18nService.init(locale.replace('_', '-'));
+            const locale = app.getLocale();
+            await this.i18nService.init(locale);
             this.messagingMain.init();
             this.menuMain.init();
             this.powerMonitorMain.init();
