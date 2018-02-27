@@ -4,7 +4,10 @@ import {
     shell,
 } from 'electron';
 
-import { isDev } from '../scripts/utils';
+import {
+    isDev,
+    isMacAppStore,
+} from '../scripts/utils';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
@@ -71,6 +74,10 @@ export class DesktopPlatformUtilsService implements PlatformUtilsService {
 
     isSafari(): boolean {
         return false;
+    }
+
+    isMacAppStore(): boolean {
+        return isMacAppStore();
     }
 
     analyticsId(): string {
