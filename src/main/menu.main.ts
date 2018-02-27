@@ -11,6 +11,7 @@ import {
 } from 'electron';
 
 import { Main } from '../main';
+import { isMacAppStore } from '../scripts/utils';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -521,8 +522,11 @@ export class MenuMain {
                     label: this.main.i18nService.t('aboutBitwarden'),
                     role: 'about',
                 },
-                updateMenuItem,
             ];
+
+            if (!isMacAppStore()) {
+                firstMenuPart.push(updateMenuItem);
+            }
 
             template.unshift({
                 label: 'Bitwarden',

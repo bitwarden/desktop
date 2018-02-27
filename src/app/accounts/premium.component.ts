@@ -19,6 +19,7 @@ import { TokenService } from 'jslib/abstractions/token.service';
 })
 export class PremiumComponent implements OnInit {
     isPremium: boolean = false;
+    showManageMembership: boolean = false;
     price: string = '$10';
     refreshPromise: Promise<any>;
 
@@ -28,6 +29,7 @@ export class PremiumComponent implements OnInit {
 
     async ngOnInit() {
         this.isPremium = this.tokenService.getPremium();
+        this.showManageMembership = !this.platformUtilsService.isMacAppStore();
     }
 
     async refresh() {
