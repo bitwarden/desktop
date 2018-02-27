@@ -256,7 +256,7 @@
     "message": "認証キー (TOTP)"
   },
   "folder": {
-    "message": "フォルダ"
+    "message": "フォルダー"
   },
   "newCustomField": {
     "message": "新規カスタムフィールド"
@@ -289,7 +289,7 @@
     "message": "アイテムの削除"
   },
   "deleteFolder": {
-    "message": "フォルダの削除"
+    "message": "フォルダーの削除"
   },
   "deleteAttachment": {
     "message": "添付ファイルの削除"
@@ -304,14 +304,14 @@
     "message": "現在のパスワードを上書きしてもよろしいですか?"
   },
   "noneFolder": {
-    "message": "フォルダなし",
+    "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "フォルダの追加"
+    "message": "フォルダーの追加"
   },
   "editFolder": {
-    "message": "フォルダの編集"
+    "message": "フォルダーの編集"
   },
   "regeneratePassword": {
     "message": "パスワードの再生成"
@@ -339,7 +339,7 @@
     "message": "コレクションの検索"
   },
   "searchFolder": {
-    "message": "フォルダの検索"
+    "message": "フォルダーの検索"
   },
   "searchFavorites": {
     "message": "お気に入りの検索"
@@ -379,10 +379,10 @@
     "message": "編集したフォルダ"
   },
   "addedFolder": {
-    "message": "フォルダを追加しました"
+    "message": "フォルダーを追加しました"
   },
   "deleteFolderConfirmation": {
-    "message": "フォルダを削除しますか？"
+    "message": "フォルダーを削除しますか？"
   },
   "deletedFolder": {
     "message": "削除されたフォルダ"
