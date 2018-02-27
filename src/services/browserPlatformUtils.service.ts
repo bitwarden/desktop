@@ -110,6 +110,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return this.getDevice() === DeviceType.Safari;
     }
 
+    isMacAppStore(): boolean {
+        return false;
+    }
+
     analyticsId(): string {
         if (this.analyticsIdCache) {
             return this.analyticsIdCache;
