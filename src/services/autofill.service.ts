@@ -435,8 +435,8 @@ export default class AutofillService implements AutofillServiceInterface {
                     ['cc-name', 'card-name', 'cardholder-name', 'cardholder'])) {
                     fillFields.cardholderName = f;
                 } else if (!fillFields.number && this.isFieldMatch(f[attr],
-                    ['cc-number', 'cc-num', 'card-number', 'card-num', 'number'],
-                    ['cc-number', 'cc-num', 'card-number', 'card-num'])) {
+                    ['cc-number', 'cc-num', 'card-number', 'card-num', 'number', 'cc', 'cc-no'],
+                    ['cc-number', 'cc-num', 'card-number', 'card-num', 'cc-no', 'card-no'])) {
                     fillFields.number = f;
                 } else if (!fillFields.exp && this.isFieldMatch(f[attr],
                     ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex'],
@@ -445,12 +445,12 @@ export default class AutofillService implements AutofillServiceInterface {
                 } else if (!fillFields.expMonth && this.isFieldMatch(f[attr],
                     ['exp-month', 'cc-exp-month', 'cc-month', 'card-month', 'cc-mo', 'card-mo', 'exp-mo',
                         'card-exp-mo', 'cc-exp-mo', 'card-expiration-month', 'expiration-month',
-                        'cc-mm', 'card-mm', 'card-exp-mm', 'cc-exp-mm', 'exp-mm'])) {
+                        'cc-mm', 'cc-m', 'card-mm', 'card-m', 'card-exp-mm', 'cc-exp-mm', 'exp-mm', 'exp-m'])) {
                     fillFields.expMonth = f;
                 } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
                     ['exp-year', 'cc-exp-year', 'cc-year', 'card-year', 'cc-yr', 'card-yr', 'exp-yr',
                         'card-exp-yr', 'cc-exp-yr', 'card-expiration-year', 'expiration-year',
-                        'cc-yy', 'card-yy', 'card-exp-yy', 'cc-exp-yy', 'exp-yy',
+                        'cc-yy', 'cc-y', 'card-yy', 'card-y', 'card-exp-yy', 'cc-exp-yy', 'exp-yy', 'exp-y',
                         'cc-yyyy', 'card-yyyy', 'card-exp-yyyy', 'cc-exp-yyyy'])) {
                     fillFields.expYear = f;
                 } else if (!fillFields.code && this.isFieldMatch(f[attr],
