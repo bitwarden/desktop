@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as url from 'url';
 
 import { Main } from '../main';
-import { isDev } from '../scripts/utils';
+import { isDev, isMacAppStore, isSnapStore } from '../scripts/utils';
 
 const WindowEventHandlingDelay = 100;
 const Keys = {
@@ -21,19 +21,21 @@ export class WindowMain {
     init(): Promise<any> {
         return new Promise((resolve, reject) => {
             try {
-                const shouldQuit = app.makeSingleInstance((args, dir) => {
-                    // Someone tried to run a second instance, we should focus our window.
-                    if (this.win != null) {
-                        if (this.win.isMinimized()) {
-                            this.win.restore();
+                if (!isMacAppStore() && !isSnapStore()) {
+                    const shouldQuit = app.makeSingleInstance((args, dir) => {
+                        // Someone tried to run a second instance, we should focus our window.
+                        if (this.win != null) {
+                            if (this.win.isMinimized()) {
+                                this.win.restore();
+                            }
+                            this.win.focus();
                         }
-                        this.win.focus();
-                    }
-                });
+                    });
 
-                if (shouldQuit) {
-                    app.quit();
-                    return;
+                    if (shouldQuit) {
+                        app.quit();
+                        return;
+                    }
                 }
 
                 // This method will be called when Electron has finished
