@@ -561,7 +561,7 @@ export class MenuMain {
             template[template.length - 2].submenu = [
                 {
                     label: this.main.i18nService.t('close'),
-                    role: 'close',
+                    role: 'quit',
                 },
                 {
                     label: this.main.i18nService.t('minimize'),
@@ -572,10 +572,6 @@ export class MenuMain {
                     role: 'zoom',
                 },
                 { type: 'separator' },
-                {
-                    label: 'Bitwarden',
-                    click: () => { },
-                },
                 {
                     label: this.main.i18nService.t('bringAllToFront'),
                     role: 'front',
