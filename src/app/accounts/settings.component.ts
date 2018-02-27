@@ -49,8 +49,11 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
-        this.disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
+
+        const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
+        const disableGaByDefault = this.platformUtilsService.isFirefox() || this.platformUtilsService.isMacAppStore();
+        this.disableGa = disableGa || (disableGa == null && disableGaByDefault);
     }
 
     async saveLockOption() {
