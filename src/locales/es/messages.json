@@ -336,16 +336,16 @@
     "message": "Evitar caracteres ambiguos"
   },
   "searchCollection": {
-    "message": "Buscar colección"
+    "message": "Buscar en colección"
   },
   "searchFolder": {
-    "message": "Buscar carpeta"
+    "message": "Buscar en carpeta"
   },
   "searchFavorites": {
-    "message": "Buscar favoritos"
+    "message": "Buscar en favoritos"
   },
   "searchType": {
-    "message": "Buscar tipo",
+    "message": "Buscar en tipo",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -696,7 +696,7 @@
     "message": "Opciones de bloqueo"
   },
   "lockOptionsDesc": {
-    "message": "Elige cuando tu caja fuerte se bloquea. Una caja fuerte bloqueada requiere de tu contraseña maestra para acceder nuevamente."
+    "message": "Elige cuando tu caja fuerte se bloquea. Cuando está bloqueada, se requiere de tu contraseña maestra para acceder nuevamente."
   },
   "immediately": {
     "message": "Inmediatamente"
@@ -720,13 +720,13 @@
     "message": "4 horas"
   },
   "onIdle": {
-    "message": "En inactividad del sistema"
+    "message": "En inactividad"
   },
   "onSleep": {
-    "message": "En suspensión del sistema"
+    "message": "Al suspender el sistema"
   },
   "onLocked": {
-    "message": "En bloqueo del sistema"
+    "message": "Al bloquear el sistema"
   },
   "onRestart": {
     "message": "Al reiniciar"
@@ -741,13 +741,13 @@
     "message": "Deshabilitar análisis"
   },
   "gaDesc": {
-    "message": "Utilizamos análisis de uso para aprender como es utilizada la aplicación y así poder mejorarla. Toda la información recopilada es completamente anónima."
+    "message": "Utilizamos los análisis de uso para aprender como es utilizada la aplicación y así poder mejorarla. Toda la información recopilada es completamente anónima."
   },
   "disableFavicon": {
-    "message": "Deshabilitar iconos del sitio web"
+    "message": "Deshabilitar iconos de sitio web"
   },
   "disableFaviconDesc": {
-    "message": "Los iconos del sitio web añaden una imagen reconocible al lado de cada entrada de tu caja fuerte."
+    "message": "Los iconos de sitio web añaden una imagen reconocible al lado de cada entrada de tu caja fuerte."
   },
   "copy": {
     "message": "Copiar",
@@ -911,7 +911,7 @@
     "message": "Forzar recarga"
   },
   "toggleDevTools": {
-    "message": "Alternar herramientas de desarrollo"
+    "message": "Herramientas de desarrollo"
   },
   "minimize": {
     "message": "Minimizar",
