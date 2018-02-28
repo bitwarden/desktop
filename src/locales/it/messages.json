@@ -51,7 +51,7 @@
     "message": "URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Nome Utente"
   },
   "password": {
     "message": "Password"
@@ -226,10 +226,10 @@
     "message": "Indirizzo 3"
   },
   "cityTown": {
-    "message": "Città"
+    "message": "Città o comune"
   },
   "stateProvince": {
-    "message": "Stato"
+    "message": "Stato \/ Provincia"
   },
   "zipPostalCode": {
     "message": "CAP"
