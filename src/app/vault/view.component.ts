@@ -15,6 +15,7 @@ import { Angulartics2 } from 'angulartics2';
 import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';
 
+import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -42,13 +43,15 @@ export class ViewComponent implements OnChanges, OnDestroy {
     totpSec: number;
     totpLow: boolean;
     fieldType = FieldType;
+    checkPasswordPromise: Promise<number>;
 
     private totpInterval: any;
 
     constructor(private cipherService: CipherService, private totpService: TotpService,
         private tokenService: TokenService, private toasterService: ToasterService,
         private cryptoService: CryptoService, private platformUtilsService: PlatformUtilsService,
-        private i18nService: I18nService, private analytics: Angulartics2) { }
+        private i18nService: I18nService, private analytics: Angulartics2,
+        private auditService: AuditService) { }
 
     async ngOnChanges() {
         this.cleanUp();
@@ -80,6 +83,22 @@ export class ViewComponent implements OnChanges, OnDestroy {
     togglePassword() {
         this.analytics.eventTrack.next({ action: 'Toggled Password' });
         this.showPassword = !this.showPassword;
+    }
+
+    async checkPassword() {
+        if (this.cipher.login == null || this.cipher.login.password == null || this.cipher.login.password === '') {
+            return;
+        }
+
+        this.analytics.eventTrack.next({ action: 'Check Password' });
+        this.checkPasswordPromise = this.auditService.passwordLeaked(this.cipher.login.password);
+        const matches = await this.checkPasswordPromise;
+
+        if (matches > 0) {
+            this.toasterService.popAsync('warning', null, this.i18nService.t('passwordExposed', matches.toString()));
+        } else {
+            this.toasterService.popAsync('success', null, this.i18nService.t('passwordSafe'));
+        }
     }
 
     toggleFieldValue(field: FieldView) {

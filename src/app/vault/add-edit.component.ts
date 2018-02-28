@@ -15,7 +15,6 @@ import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';
 import { SecureNoteType } from 'jslib/enums/secureNoteType';
 
-import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -61,8 +60,7 @@ export class AddEditComponent implements OnChanges {
 
     constructor(private cipherService: CipherService, private folderService: FolderService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
-        private analytics: Angulartics2, private toasterService: ToasterService,
-        private auditService: AuditService) {
+        private analytics: Angulartics2, private toasterService: ToasterService) {
         this.typeOptions = [
             { name: i18nService.t('typeLogin'), value: CipherType.Login },
             { name: i18nService.t('typeCard'), value: CipherType.Card },
@@ -212,19 +210,6 @@ export class AddEditComponent implements OnChanges {
         this.analytics.eventTrack.next({ action: 'Toggled Password on Edit' });
         this.showPassword = !this.showPassword;
         document.getElementById('loginPassword').focus();
-    }
-
-    async checkPassword() {
-        this.analytics.eventTrack.next({ action: 'Check Password' });
-
-        const match = await this.auditService.passwordLeaked(this.cipher.login.password);
-
-        if (match > 0) {
-            this.toasterService.popAsync('error', this.i18nService.t('errorOccurred'),
-                this.i18nService.t('passwordExposed', match.toString()));
-        } else {
-            this.toasterService.popAsync('success', null, this.i18nService.t('passwordSafe'));
-        }
     }
 
     toggleFieldValue(field: FieldView) {

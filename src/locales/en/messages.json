@@ -959,14 +959,14 @@
     "message": "Window"
   },
   "checkPassword": {
-    "message": "Check if this password has been previously exposed."
+    "message": "Check if this password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in $VALUE$ data breach(es)! You should change it.",
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
     "placeholders": {
       "value": {
         "content": "$1",
-        "example": "1"
+        "example": "2"
       }
     }
   },

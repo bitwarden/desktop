@@ -36,10 +36,6 @@
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                    title="{{'checkPassword' | i18n}}" (click)="checkPassword()">
-                                    <i class="fa fa-lg fa-check-circle"></i>
-                                </a>
-                                <a class="row-btn" href="#" appStopClick appBlurClick
                                    title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
                                     <i class="fa fa-lg"
                                        [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
