@@ -959,7 +959,7 @@
     "message": "Window"
   },
   "checkPassword": {
-    "message": "Check if this password has been exposed."
+    "message": "Check if password has been exposed."
   },
   "passwordExposed": {
     "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
