@@ -1,6 +1,6 @@
 ﻿{
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "All Items"
@@ -552,7 +552,7 @@
     "message": "Self-hosted Environment"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
   },
   "customEnvironment": {
     "message": "Custom Environment"
@@ -852,7 +852,7 @@
     "message": "You are a premium member!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
     "message": "All for just $PRICE$ /year!",
