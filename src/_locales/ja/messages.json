@@ -979,6 +979,6 @@
     "message": "消去する"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "新しいタブで2段階認証ログイン要求を完了してください。"
   }
 }

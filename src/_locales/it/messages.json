@@ -3,7 +3,7 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gestore Di Password Gratuito",
+    "message": "bitwarden - Gestore di password gratuito",
     "description": "Extension name"
   },
   "extDesc": {
@@ -251,7 +251,7 @@
     "message": "Non ci sono elementi da mostrare."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Informazioni sull'elemento"
   },
   "username": {
     "message": "Nome Utente"
@@ -266,16 +266,16 @@
     "message": "Note"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Modifica Elemento"
   },
   "folder": {
     "message": "Cartella"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Elimina elemento"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Mostra Elemento"
   },
   "launchWebsite": {
     "message": "Vai al Sito"
@@ -447,7 +447,7 @@
     "message": "Sincronizzazione fallita"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Puoi importare in massa i tuoi login dalla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
   },
   "passwordCopied": {
     "message": "Password copiata"
@@ -456,16 +456,16 @@
     "message": "URI"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Elemento aggiunto"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Elemento modificato"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Sei sicuro di voler eliminare questo elemento?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Elemento eliminato"
   },
   "overwritePassword": {
     "message": "Sovrascrivi Password"
@@ -486,7 +486,7 @@
     "message": "Cerca cartella"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Cerca collezione"
   },
   "noneFolder": {
     "message": "No cartella",
@@ -712,7 +712,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Usa una security key qualsiasi abilitata FIDO U2F per accedere al tuo account."
+    "message": "Usa una chiave di sicurezza compatibile con FIDO U2F per accedere al tuo account."
   },
   "u2fTitle": {
     "message": "Security key FIDO U2F"
@@ -748,7 +748,7 @@
     "message": "URL del Server di Identità"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL del Server di Icone"
   },
   "environmentSaved": {
     "message": "Gli URL dell'ambiente sono stati salvati."
@@ -796,31 +796,31 @@
     "message": "Booleano"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "Facendo clic all'esterno della finestra popup per controllare la mail con il codice di verifica chiuderà la finestra di popup. Vuoi aprire questo popup in una nuova finestra?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Disabilita Icone dei Siti Web"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Le icone del Sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login nella tua Cassaforte."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Titolare della Carta"
   },
   "number": {
-    "message": "Number"
+    "message": "Numero"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Marca"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Mese di Scadenza"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Anno di Scadenza"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Scadenza"
   },
   "january": {
     "message": "Gennaio"
@@ -862,22 +862,22 @@
     "message": "Codice di Sicurezza"
   },
   "ex": {
-    "message": "ex."
+    "message": "es."
   },
   "title": {
-    "message": "Title"
+    "message": "Titolo"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Sig"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Sig.ra"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Sig.ra"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Dottore"
   },
   "firstName": {
     "message": "Nome"
@@ -889,7 +889,7 @@
     "message": "Cognome"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Nome dell'identità"
   },
   "company": {
     "message": "Azienda"
@@ -976,9 +976,9 @@
     "message": "Identità"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Pulisci"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Completa la richiesta di accesso in due passaggi utilizzando la nuova scheda."
   }
 }

@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden 是一个安全并免费的跨平台密码管理器。",
+    "message": "bitwarden 是一个安全且免费的跨平台密码管理器。",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -979,6 +979,6 @@
     "message": "清除"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "使用新的标签页完成您的两步登录请求。"
   }
 }

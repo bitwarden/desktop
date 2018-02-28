@@ -338,7 +338,7 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "Bloquear con el sistema"
+    "message": "Bloqueado"
   },
   "onRestart": {
     "message": "Al reiniciar"
@@ -677,7 +677,7 @@
     "message": "Inserta tu llave de seguridad en el puerto USB de tu equipo. Si tiene un botón, púlsalo."
   },
   "loginUnavailable": {
-    "message": "Inicio de sesión no disponible"
+    "message": "Entrada no disponible"
   },
   "noTwoStepProviders": {
     "message": "Esta cuenta tiene autenticación en dos pasos habilitado, pero ninguno de lo métodos configurados es soportado por este navegador web."
@@ -689,7 +689,7 @@
     "message": "Opciones de la autenticación en dos pasos"
   },
   "recoveryCodeDesc": {
-    "message": "¿Has perdido el acceso a todos tus métodos de autenticación en dos pasos? Utiliza tu código de recuperación para deshabilitar todos lo mótodos de autenticación en dos pasos de tu cuenta."
+    "message": "¿Has perdido el acceso a todos tus métodos de autenticación en dos pasos? Utiliza tu código de recuperación para deshabilitar todos los métodos de autenticación en dos pasos de tu cuenta."
   },
   "recoveryCodeTitle": {
     "message": "Código de recuperación"
@@ -979,6 +979,6 @@
     "message": "Limpiar"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Completa tu solicitud de identificación en dos pasos usando la nueva pestaña."
   }
 }

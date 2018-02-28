@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden egy biztonságos és ingyenes jelszó kezelő az összes eszközödre.",
+    "message": "bitwarden egy biztonságos és ingyenes jelsző kezelő az összes eszközödre.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -979,6 +979,6 @@
     "message": "Töröl"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "A kétlépcsős bejelentkezési kérelem befejezése az új fül használatával."
   }
 }

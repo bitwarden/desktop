@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "o bitwarden é um gerenciador de senha gratuito para todos os seus dispositivos.",
+    "message": "O bitwarden é um gerenciador de senhas seguro e gratuito para todos os seus dispositivos.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -38,13 +38,13 @@
     "message": "A senha mestra é a senha que você usa para acessar o seu cofre. É muito importante que você não esqueça sua senha mestra. Não há nenhuma maneira de recuperar a senha caso você se esqueça."
   },
   "masterPassHintDesc": {
-    "message": "Uma dica de senha mestra pode ajudá-lo(a) a lembrá-la caso você esqueça."
+    "message": "Uma dica de senha mestra pode ajudá-lo(a) a lembrá-lo(a) caso você esqueça."
   },
   "reTypeMasterPass": {
     "message": "Digite Novamente a Senha Mestra"
   },
   "masterPassHint": {
-    "message": "Dica de Senha Mestra (opcional)"
+    "message": "Dica da Senha Mestra (opcional)"
   },
   "tab": {
     "message": "Aba"
@@ -167,7 +167,7 @@
     "message": "Visitar o Nosso Site"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visite o nosso website para obter ajuda, novidades, enviar-nos um e-mail, e\/ou saber mais sobre como utilizar o bitwarden."
+    "message": "Visite o nosso website para obter ajuda, novidades, enviar-nos um email, e\/ou saber mais sobre como utilizar o bitwarden."
   },
   "fileBugReport": {
     "message": "Enviar um Relatório de Bug"
@@ -979,6 +979,6 @@
     "message": "Limpar"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Complete o seu pedido de início de sessão de duas etapas utilizando a nova aba."
   }
 }

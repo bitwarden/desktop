@@ -3,7 +3,7 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - ein kostenloser Passwortmanager",
+    "message": "bitwarden - Kostenloser Passwortmanager",
     "description": "Extension name"
   },
   "extDesc": {
@@ -194,7 +194,7 @@
     "message": "bitwarden Web-Tresor"
   },
   "bitWebVaultInfo": {
-    "message": "Verwalte deine Logins in jedem Browser mit dem bitwarden Web-Tresor."
+    "message": "Verwalte deine Zugangsdaten in jedem Browser mit dem bitwarden Web-Tresor."
   },
   "bitIosVault": {
     "message": "bitwarden iOS-Tresor"
@@ -979,6 +979,6 @@
     "message": "Löschen"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Schließe deine Zwei-Faktor Authentifizierung im neuen Tab ab."
   }
 }

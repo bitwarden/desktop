@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "O bitwarden é um gestor de palavras-passe gratuito para todos os seus dispositivos.",
+    "message": "bitwarden é um gestor de palavras-passe seguro e gratuito para todos os seus dispositivos.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -979,6 +979,6 @@
     "message": "Limpar"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Complete o seu pedido de início de sessão de dois passos utilizando o novo separador."
   }
 }

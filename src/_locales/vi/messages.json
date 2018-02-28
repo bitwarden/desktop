@@ -191,22 +191,22 @@
     "message": "Tự động tạo mật khẩu mạnh mẽ, duy nhất cho đăng nhập của bạn."
   },
   "bitWebVault": {
-    "message": "Kho bitwarden nền Web"
+    "message": "Hầm bitwarden trên Web"
   },
   "bitWebVaultInfo": {
-    "message": "Quản lý các mục đăng nhập của bạn từ mọi trình duyệt web với kho bitwarden nền web."
+    "message": "Quản lý các mục đặng nhập của bạn từ mọi trình duyệt web với hầm bitwarden nền web."
   },
   "bitIosVault": {
-    "message": "Kho bitwarden cho iOS"
+    "message": "Hầm bitwarden cho iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng kho bitwarden trên iOS."
+    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng hầm bitwarden trên iOS."
   },
   "bitAndrVault": {
-    "message": "Kho bitwarden cho Android"
+    "message": "Hầm bitwarden cho Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng kho bitwarden trên Android."
+    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng hầm bitwarden trên Android."
   },
   "importItems": {
     "message": "Nhập mục"

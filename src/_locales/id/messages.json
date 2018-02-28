@@ -712,7 +712,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Gunakan FIDO U2F untuk mengaktifkan fitur akses keamanan pada akun Anda."
   },
   "u2fTitle": {
     "message": "Kunci Keamanan FIDO U2F"
@@ -724,16 +724,16 @@
     "message": "Kode verifikasi akan dikirim via email kepada Anda."
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Lingkungan sel-host"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Menetapkan URL dasar instalasi bitwarden host lokal Anda."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Lingkungan custom"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Untuk pengguna tingkat lanjutan. Anda dapat menentukan basis dari URL untuk setiap layanan mandiri."
   },
   "baseUrl": {
     "message": "URL Server"
@@ -751,7 +751,7 @@
     "message": "URL Server Ikon"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Lingkungan dari URL sudah tersimpan."
   },
   "enableAutoFillOnPageLoad": {
     "message": "Aktifkan Pengisian Otomatis Saat Memuat Laman"
@@ -760,13 +760,13 @@
     "message": "Jika formulir info masuk terdeteksi, secara otomatis melakukan pengisian otomatis ketika memuat laman web."
   },
   "experimentalFeature": {
-    "message": "This is currently an experimental feature. Use at your own risk."
+    "message": "Saat ini Anda pada lingkungan sementara. Gunakanlah dengan resiko yang ditanggung sendiri."
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "Login terakhir yang sifatnya otomatis terisi adalah digunakan untuk website tertentu."
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard."
+    "message": "Dibangkitkan dan disalin password acak yang baru ke clipboard."
   },
   "privateModeMessage": {
     "message": "Sayangnya jendela ini tidak tersedia di mode pribadi untuk peramban ini."
@@ -796,7 +796,7 @@
     "message": "Boolean"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "Dengan meng-klik jendela luar pop-up untuk mengecek email Anda yang digunakan sebagai kode verifikasi ini akan mengakibatkan jendela pop-up tertutup. Apakah Anda ingin membuka jendela pop-up di window baru sehingga tidak tertutup?"
   },
   "disableFavicon": {
     "message": "Nonaktifkan Ikon Situs Web"
@@ -976,9 +976,9 @@
     "message": "Identitas"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Jelas"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Lengkapi dua tahap permintaan login Anda dengan menggunakan Tab baru."
   }
 }

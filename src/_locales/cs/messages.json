@@ -146,7 +146,7 @@
     "message": "Upravit složku"
   },
   "deleteFolder": {
-    "message": "Odstranit složku"
+    "message": "Smazat složku"
   },
   "folders": {
     "message": "Složky"
@@ -347,10 +347,10 @@
     "message": "Nikdy"
   },
   "security": {
-    "message": "Bezpečnost"
+    "message": "Zabezpečení"
   },
   "errorsOccurred": {
-    "message": "Došlo k chybám"
+    "message": "Došlo k chybě"
   },
   "emailRequired": {
     "message": "Emailová adresa je povinná."
@@ -405,7 +405,7 @@
     "message": "Název je povinný."
   },
   "addedFolder": {
-    "message": "Složka byla úspěšně přidána"
+    "message": "Složka byla přidána"
   },
   "changeMasterPass": {
     "message": "Změnit hlavní heslo"
@@ -426,13 +426,13 @@
     "message": "Nedávno proběhla aktualizace na nejnovější verzi. Pro změnu nastavení zámku se musíte znovu odhlásit a přihlásit. Chcete se nyní odhlásit?"
   },
   "editedFolder": {
-    "message": "Upravená složka"
+    "message": "Složka byla upravena"
   },
   "deleteFolderConfirmation": {
     "message": "Opravdu chcete tuto složku smazat?"
   },
   "deletedFolder": {
-    "message": "Smazaná složka"
+    "message": "Složka byla smazána"
   },
   "gettingStartedTutorial": {
     "message": "Průvodce pro začátečníky"
@@ -456,16 +456,16 @@
     "message": "URL"
   },
   "addedItem": {
-    "message": "Přidaná položka"
+    "message": "Položka byla přidána"
   },
   "editedItem": {
-    "message": "Upravená položka"
+    "message": "Položka byla upravena"
   },
   "deleteItemConfirmation": {
     "message": "Opravdu chcete tuto položku smazat?"
   },
   "deletedItem": {
-    "message": "Smazaná položka"
+    "message": "Položka byla smazána"
   },
   "overwritePassword": {
     "message": "Přepsat heslo"
@@ -486,10 +486,10 @@
     "message": "Vyhledat ve složce"
   },
   "searchCollection": {
-    "message": "Hledat v kolekcích"
+    "message": "Vyledat v kolekci"
   },
   "noneFolder": {
-    "message": "Žádné složky",
+    "message": "Žádná složka",
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
@@ -524,7 +524,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Tento export obsahuje nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Odstraňte jej okamžitě po jeho použití."
+    "message": "Tento export obsahuje nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Smažte jej okamžitě po jeho použití."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
@@ -566,7 +566,7 @@
     "message": "Opravdu chcete tuto přílohu smazat?"
   },
   "deletedAttachment": {
-    "message": "Příloha byla úspěšně smazána"
+    "message": "Příloha byla smazána"
   },
   "newAttachment": {
     "message": "Přidat přílohu"
@@ -937,13 +937,13 @@
     "message": "Typ"
   },
   "typeLogin": {
-    "message": "Přihlášení"
+    "message": "Přihlašovací údaje"
   },
   "typeLogins": {
     "message": "Přihlašovací údaje"
   },
   "typeSecureNote": {
-    "message": "Zabezpečená poznámka"
+    "message": "Poznámka"
   },
   "typeCard": {
     "message": "Karta"
@@ -976,9 +976,9 @@
     "message": "Identity"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Vymazat"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Dokončete dvoufázové přihlášení pomocí nové karty."
   }
 }

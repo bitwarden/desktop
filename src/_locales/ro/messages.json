@@ -167,7 +167,7 @@
     "message": "Vizitați-ne site-ul web"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Vizitaţi site-ul nostru pentru a primi ajutor, ştiri, pentru a trimite e-mail, şi\/sau aflaţi mai multe despre cum să utilizaţi bitwarden."
+    "message": "Vizitați saitul nostru pentru a obține ajutor, a afla noutăți, a ne trimite un e-mail, și\/sau pentru a afla mai multe despre cum să utilizați bitwarden."
   },
   "fileBugReport": {
     "message": "Raport de Bug"
@@ -191,7 +191,7 @@
     "message": "Generează automat parole puternice, unice pentru datele de conectare."
   },
   "bitWebVault": {
-    "message": "seif Web bitwarden"
+    "message": "Seif bitwarden Web"
   },
   "bitWebVaultInfo": {
     "message": "Gestionați datele de conectare din orice navigator cu seiful web bitwarden."
@@ -338,7 +338,7 @@
     "message": "4 ore"
   },
   "onLocked": {
-    "message": "On Locked"
+    "message": "La blocarea computerului"
   },
   "onRestart": {
     "message": "La repornire"
@@ -502,7 +502,7 @@
     "message": "\"Notificarea de adăugare a datelor de autentificare\" vă solicită automat salvarea de noi conturi în seiful dvs. de fiecare dată când vă conectați pentru prima dată."
   },
   "notificationAddDesc": {
-    "message": "Ar trebui bitwarden să memorizeze această parolă pentru dvs.?"
+    "message": "Ar trebui ca bitwarden să memoreze această parolă pentru dvs.?"
   },
   "notificationAddSave": {
     "message": "Da, salvează acum"
@@ -635,7 +635,7 @@
     "message": "Sunteţi un membru premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Vă mulţumim pentru susţinerea bitwarden."
+    "message": "Vă mulțumim pentru susținerea bitwarden."
   },
   "premiumPrice": {
     "message": "Totul pentru doar %price% \/an!"
@@ -979,6 +979,6 @@
     "message": "Ştergere"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Finalizați solicitarea de conectare în doi pași utilizând o filă nouă."
   }
 }

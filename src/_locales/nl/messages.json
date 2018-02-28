@@ -314,7 +314,7 @@
     "message": "Versleutel"
   },
   "lockNow": {
-    "message": "Nu Vergrendelen"
+    "message": "Nu vergrendelen"
   },
   "immediately": {
     "message": "Onmiddelijk"
@@ -417,7 +417,7 @@
     "message": "Je kunt je e-mailadres veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Inloggen in twee stappen beveiligt uw account beter doordat u uw inlogpoging moet bevestigen met een ander apparaat. Dit kan bijv. een beveiligingssleutel, een verificatie-app, sms, spraakoproep of e-mail zijn. Inloggen in twee stappen kan worden ingeschakeld in de kluis op bitwarden.com. Wilt u de website nu bezoeken?"
+    "message": "Tweestaps-verificatie maakt je account veiliger door je bij iedere login een code te vragen van een authenticatie-app. Tweestaps-verificatie kun je aanzetten in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "loggingOut": {
     "message": "Uitloggen"
@@ -647,7 +647,7 @@
     "message": "TOTP automatisch kopiëren uitschakelen"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "Als uw login beschikt over een sleutel van de verificator, dan wordt de TOTP-verificatiecode automatisch gekopieerd naar uw klembord wanneer de login automatisch wordt ingevuld."
   },
   "premiumRequired": {
     "message": "Premium benodigd"
@@ -683,7 +683,7 @@
     "message": "Dit account heeft verificatie in twee stappen ingeschakeld, echter wordt geen van de geconfigureerde aanbieders ondersteund door deze webbrowser."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "\nGebruik een ondersteunde webbrowser (zoals Chrome) en\/of voeg extra providers toe die beter worden ondersteund in webbrowsers (zoals een authenticator-app)."
   },
   "twoStepOptions": {
     "message": "Inloggen in twee stappen-opties"
@@ -757,7 +757,7 @@
     "message": "Enable Auto-fill On Page Load."
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message": "Als een aanmeldingsformulier wordt gedetecteerd, vul automatisch de toegangs gegevens in."
   },
   "experimentalFeature": {
     "message": "Dit is op dit moment een experimentele functie, gebruik op uw eigen risico."
@@ -979,6 +979,6 @@
     "message": "Maak leeg"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Voltooi uw twee-staps login aanvraag met behulp van het nieuwe tabblad."
   }
 }

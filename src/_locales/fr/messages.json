@@ -3,11 +3,11 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gestionnaire de mots de passe gratuit",
+    "message": "bitwarden - Gestionnaire de mots de passe libre",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden est un gestionnaire de mot de passe sécurisé et gratuit pour tous vos appareils.",
+    "message": "bitwarden est un gestionnaire de mot de passe sécurisé et libre pour tous vos appareils.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -41,7 +41,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Re-taper votre mot de passe maître"
+    "message": "Re-tapez votre mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -95,7 +95,7 @@
     "message": "Ajouter un site"
   },
   "addItem": {
-    "message": "Ajouter un élément"
+    "message": "Ajouter un identifiant"
   },
   "passwordHint": {
     "message": "Indice mot de passe"
@@ -212,7 +212,7 @@
     "message": "Importer des identifiants"
   },
   "importItemsInfo": {
-    "message": "Importer rapidement vos identifiants depuis d'autres applications de gestion de mots de passe."
+    "message": "Importer rapidement en masse vos identifiants depuis d'autres applications de gestion de mots de passe."
   },
   "select": {
     "message": "Sélectionner"
@@ -293,7 +293,7 @@
     "message": "Autre"
   },
   "disableGa": {
-    "message": "Désactiver Analytics"
+    "message": "Désactiver les outils d'analyse"
   },
   "rateExtension": {
     "message": "Noter l'extension"
@@ -441,7 +441,7 @@
     "message": "Regardez notre didacticiel pour savoir comment parfaitement utiliser l'extension du navigateur."
   },
   "syncingComplete": {
-    "message": "Sycnhronisation terminée"
+    "message": "Synchronisation terminée"
   },
   "syncingFailed": {
     "message": "Échec de la synchronisation"
@@ -462,7 +462,7 @@
     "message": "Identifiant modifié"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr•e de vouloir supprimer cet identifiant ?"
+    "message": "Êtes-vous sûr(e) de vouloir supprimer cet identifiant ?"
   },
   "deletedItem": {
     "message": "Identifiant supprimé"
@@ -605,10 +605,10 @@
     "message": "Actualiser l'adhésion"
   },
   "premiumNotCurrentMember": {
-    "message": "Vous n'êtes actuellement pas un membre premium."
+    "message": "Vous n'êtes actuellement pas un(e) membre premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Devenez un membre premium et obtenez :"
+    "message": "Devenez un(e) membre premium et obtenez :"
   },
   "ppremiumSignUpStorage": {
     "message": "1 Go de stockage de fichiers chiffrés."
@@ -769,7 +769,7 @@
     "message": "Générer et copier un nouveau mot de passe aléatoire dans le presse-papiers."
   },
   "privateModeMessage": {
-    "message": "Malheureusement cette fenêtre n'est pas disponible en mode incognito pour ce navigateur."
+    "message": "Malheureusement cette fenêtre n'est pas disponible en navigation privée pour ce navigateur."
   },
   "customFields": {
     "message": "Champs personnalisés"
@@ -979,6 +979,6 @@
     "message": "Effacer"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Terminez votre demande d'authentification à deux étapes en utilisant le nouvel onglet."
   }
 }
