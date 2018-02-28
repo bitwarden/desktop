@@ -62,8 +62,7 @@ export class Main {
 
     bootstrap() {
         this.windowMain.init().then(async () => {
-            const locale = app.getLocale();
-            await this.i18nService.init(locale);
+            await this.i18nService.init(app.getLocale());
             this.messagingMain.init();
             this.menuMain.init();
             this.powerMonitorMain.init();
