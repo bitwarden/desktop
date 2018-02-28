@@ -2,7 +2,7 @@ angular
     .module('bit.vault')
 
     .controller('vaultAddCipherController', function ($scope, $state, $stateParams, cipherService, folderService,
-        cryptoService, toastr, popupUtilsService, $analytics, i18nService, constantsService, $timeout) {
+        cryptoService, toastr, popupUtilsService, $analytics, i18nService, constantsService, $timeout, auditService) {
         $scope.i18n = i18nService;
         $scope.constants = constantsService;
         $scope.addFieldType = constantsService.fieldType.text.toString();
@@ -92,6 +92,20 @@ angular
         $scope.togglePassword = function () {
             $analytics.eventTrack('Toggled Password');
             $scope.showPassword = !$scope.showPassword;
+        };
+
+        $scope.checkPassword = () => {
+            $analytics.eventTrack('Check Password');
+
+            auditService
+                .passwordLeaked($scope.cipher.login.password)
+                .then((matches) => {
+                    if (matches != 0) {
+                        toastr.error(i18nService.passwordExposed, i18nService.errorsOccurred);
+                    } else {
+                        toastr.success(i18nService.passwordSafe)
+                    }
+                })
         };
 
         $scope.addField = function (type) {

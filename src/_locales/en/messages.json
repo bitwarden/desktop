@@ -980,5 +980,14 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Complete your two-step login request using the new tab."
+  },
+  "checkPassword": {
+    "message": "Check if the password have been previously exposed."
+  },
+  "passwordExposed": {
+    "message": "This password have been previously exposed in data breaches!"
+  },
+  "passwordSafe": {
+    "message": "This password was not found in a current data breach! It should be safe to use."
   }
 }

@@ -44,6 +44,9 @@
                                 <input id="loginPassword" type="{{showPassword ? 'text' : 'password'}}" name="Login.Password" ng-model="cipher.login.password">
                             </div>
                             <div class="action-buttons">
+                                <a class="btn-list" href="" title="{{i18n.checkPassword}}" ng-click="checkPassword()">
+                                    <i class="fa fa-lg fa-check-circle"></i>
+                                </a>
                                 <a class="btn-list" href="" title="{{i18n.togglePassword}}" ng-click="togglePassword()">
                                     <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>
                                 </a>

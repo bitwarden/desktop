@@ -4,6 +4,7 @@ import { PopupUtilsService } from './popupUtils.service';
 import { StateService } from './state.service';
 import { ValidationService } from './validation.service';
 
+import { AuditService } from 'jslib/services/audit.service';
 import { AuthService } from 'jslib/services/auth.service';
 
 import BrowserMessagingService from '../../../services/browserMessaging.service';
@@ -43,5 +44,6 @@ export default angular
     .factory('totpService', backgroundServices.totpService)
     .factory('environmentService', backgroundServices.environmentService)
     .factory('collectionService', backgroundServices.collectionService)
+    .factory('auditService', AuditService)
 
     .name;
