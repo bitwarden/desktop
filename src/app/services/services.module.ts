@@ -22,6 +22,7 @@ import { Analytics } from 'jslib/misc/analytics';
 
 import { ApiService } from 'jslib/services/api.service';
 import { AppIdService } from 'jslib/services/appId.service';
+import { AuditService } from 'jslib/services/audit.service';
 import { AuthService } from 'jslib/services/auth.service';
 import { CipherService } from 'jslib/services/cipher.service';
 import { CollectionService } from 'jslib/services/collection.service';
@@ -42,6 +43,7 @@ import { UtilsService } from 'jslib/services/utils.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib/abstractions/api.service';
 import { AppIdService as AppIdServiceAbstraction } from 'jslib/abstractions/appId.service';
+import { AuditService as AuditServiceAbstraction } from 'jslib/abstractions/audit.service';
 import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.service';
 import { CipherService as CipherServiceAbstraction } from 'jslib/abstractions/cipher.service';
 import { CollectionService as CollectionServiceAbstraction } from 'jslib/abstractions/collection.service';
@@ -99,6 +101,7 @@ const containerService = new ContainerService(cryptoService, platformUtilsServic
 const authService = new AuthService(cryptoService, apiService,
     userService, tokenService, appIdService, i18nService, platformUtilsService, constantsService,
     messagingService);
+const auditService = new AuditService(cryptoService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToWindow(window);
@@ -143,6 +146,7 @@ function initFactory(): Function {
     providers: [
         ValidationService,
         AuthGuardService,
+        { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
         { provide: FolderServiceAbstraction, useValue: folderService },
