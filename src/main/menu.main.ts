@@ -153,6 +153,90 @@ export class MenuMain {
     }
 
     private initApplicationMenu() {
+        const accountSubmenu: MenuItemConstructorOptions[] = [
+            {
+                label: this.main.i18nService.t('changeMasterPass'),
+                id: 'changeMasterPass',
+                click: async () => {
+                    const result = dialog.showMessageBox(this.main.windowMain.win, {
+                        title: this.main.i18nService.t('changeMasterPass'),
+                        message: this.main.i18nService.t('changeMasterPass'),
+                        detail: this.main.i18nService.t('changeMasterPasswordConfirmation'),
+                        buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
+                        cancelId: 1,
+                        defaultId: 0,
+                        noLink: true,
+                    });
+                    if (result === 0) {
+                        await this.openWebVault();
+                    }
+                },
+            },
+            {
+                label: this.main.i18nService.t('changeEmail'),
+                id: 'changeEmail',
+                click: async () => {
+                    const result = dialog.showMessageBox(this.main.windowMain.win, {
+                        title: this.main.i18nService.t('changeEmail'),
+                        message: this.main.i18nService.t('changeEmail'),
+                        detail: this.main.i18nService.t('changeEmailConfirmation'),
+                        buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
+                        cancelId: 1,
+                        defaultId: 0,
+                        noLink: true,
+                    });
+                    if (result === 0) {
+                        await this.openWebVault();
+                    }
+                },
+            },
+            {
+                label: this.main.i18nService.t('twoStepLogin'),
+                id: 'twoStepLogin',
+                click: async () => {
+                    const result = dialog.showMessageBox(this.main.windowMain.win, {
+                        title: this.main.i18nService.t('twoStepLogin'),
+                        message: this.main.i18nService.t('twoStepLogin'),
+                        detail: this.main.i18nService.t('twoStepLoginConfirmation'),
+                        buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
+                        cancelId: 1,
+                        defaultId: 0,
+                        noLink: true,
+                    });
+                    if (result === 0) {
+                        await this.openWebVault();
+                    }
+                },
+            },
+            { type: 'separator' },
+            {
+                label: this.main.i18nService.t('logOut'),
+                id: 'logOut',
+                click: () => {
+                    const result = dialog.showMessageBox(this.main.windowMain.win, {
+                        title: this.main.i18nService.t('logOut'),
+                        message: this.main.i18nService.t('logOut'),
+                        detail: this.main.i18nService.t('logOutConfirmation'),
+                        buttons: [this.main.i18nService.t('logOut'), this.main.i18nService.t('cancel')],
+                        cancelId: 1,
+                        defaultId: 0,
+                        noLink: true,
+                    });
+                    if (result === 0) {
+                        this.main.messagingService.send('logout');
+                    }
+                },
+            },
+        ];
+
+        if (!isMacAppStore()) {
+            accountSubmenu.unshift({
+                label: this.main.i18nService.t('premiumMembership'),
+                click: () => this.main.messagingService.send('openPremium'),
+                id: 'premiumMembership',
+            });
+        }
+
         const template: MenuItemConstructorOptions[] = [
             {
                 label: this.main.i18nService.t('file'),
@@ -290,86 +374,7 @@ export class MenuMain {
             },
             {
                 label: this.main.i18nService.t('account'),
-                submenu: [
-                    {
-                        label: this.main.i18nService.t('premiumMembership'),
-                        click: () => this.main.messagingService.send('openPremium'),
-                        id: 'premiumMembership',
-                    },
-                    {
-                        label: this.main.i18nService.t('changeMasterPass'),
-                        id: 'changeMasterPass',
-                        click: async () => {
-                            const result = dialog.showMessageBox(this.main.windowMain.win, {
-                                title: this.main.i18nService.t('changeMasterPass'),
-                                message: this.main.i18nService.t('changeMasterPass'),
-                                detail: this.main.i18nService.t('changeMasterPasswordConfirmation'),
-                                buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
-                                cancelId: 1,
-                                defaultId: 0,
-                                noLink: true,
-                            });
-                            if (result === 0) {
-                                await this.openWebVault();
-                            }
-                        },
-                    },
-                    {
-                        label: this.main.i18nService.t('changeEmail'),
-                        id: 'changeEmail',
-                        click: async () => {
-                            const result = dialog.showMessageBox(this.main.windowMain.win, {
-                                title: this.main.i18nService.t('changeEmail'),
-                                message: this.main.i18nService.t('changeEmail'),
-                                detail: this.main.i18nService.t('changeEmailConfirmation'),
-                                buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
-                                cancelId: 1,
-                                defaultId: 0,
-                                noLink: true,
-                            });
-                            if (result === 0) {
-                                await this.openWebVault();
-                            }
-                        },
-                    },
-                    {
-                        label: this.main.i18nService.t('twoStepLogin'),
-                        id: 'twoStepLogin',
-                        click: async () => {
-                            const result = dialog.showMessageBox(this.main.windowMain.win, {
-                                title: this.main.i18nService.t('twoStepLogin'),
-                                message: this.main.i18nService.t('twoStepLogin'),
-                                detail: this.main.i18nService.t('twoStepLoginConfirmation'),
-                                buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
-                                cancelId: 1,
-                                defaultId: 0,
-                                noLink: true,
-                            });
-                            if (result === 0) {
-                                await this.openWebVault();
-                            }
-                        },
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('logOut'),
-                        id: 'logOut',
-                        click: () => {
-                            const result = dialog.showMessageBox(this.main.windowMain.win, {
-                                title: this.main.i18nService.t('logOut'),
-                                message: this.main.i18nService.t('logOut'),
-                                detail: this.main.i18nService.t('logOutConfirmation'),
-                                buttons: [this.main.i18nService.t('logOut'), this.main.i18nService.t('cancel')],
-                                cancelId: 1,
-                                defaultId: 0,
-                                noLink: true,
-                            });
-                            if (result === 0) {
-                                this.main.messagingService.send('logout');
-                            }
-                        },
-                    },
-                ],
+                submenu: accountSubmenu,
             },
             {
                 label: this.main.i18nService.t('window'),
@@ -561,7 +566,7 @@ export class MenuMain {
             template[template.length - 2].submenu = [
                 {
                     label: this.main.i18nService.t('close'),
-                    role: 'quit',
+                    role: isMacAppStore() ? 'quit' : 'close',
                 },
                 {
                     label: this.main.i18nService.t('minimize'),

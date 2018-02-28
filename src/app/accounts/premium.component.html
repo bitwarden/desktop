@@ -42,8 +42,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="primary" appBlurClick (click)="manage()"
-                        *ngIf="isPremium && showManageMembership">
+                <button type="button" class="primary" appBlurClick (click)="manage()" *ngIf="isPremium">
                     <b>{{'premiumManage' | i18n}}</b>
                 </button>
                 <button type="button" class="primary" appBlurClick (click)="purchase()" *ngIf="!isPremium">
