@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "所有項目"
@@ -277,7 +277,7 @@
     "message": "移除"
   },
   "nameRequired": {
-    "message": "必須填寫名稱。"
+    "message": "必須填入名稱。"
   },
   "addedItem": {
     "message": "新增項目"
@@ -427,19 +427,19 @@
     "message": "取得主密碼提示"
   },
   "emailRequired": {
-    "message": "必須填寫電子郵件地址 。"
+    "message": "必須填入電子郵件地址 。"
   },
   "invalidEmail": {
     "message": "無效的電子郵件地址。"
   },
   "masterPassRequired": {
-    "message": "必須填寫主密碼。"
+    "message": "必須填入主密碼。"
   },
   "masterPassLength": {
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
-    "message": "兩次填寫的主密碼不相符。"
+    "message": "兩次填入的主密碼不符合。"
   },
   "newAccountCreated": {
     "message": "帳戶已建立！現在可以登入了。"
@@ -460,7 +460,7 @@
     "message": "驗證碼"
   },
   "verificationCodeRequired": {
-    "message": "必須填寫驗證碼。"
+    "message": "必須填入驗證碼。"
   },
   "continue": {
     "message": "繼續"
@@ -654,13 +654,13 @@
     "message": "變更主密碼"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "您可以在 bitwarden 網頁版變更主密碼。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版變更主密碼。現在前往？"
   },
   "changeEmail": {
     "message": "變更電子郵件"
   },
   "changeEmailConfirmation": {
-    "message": "您可以在 bitwarden 網頁版變更電子郵件地址。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版變更電子郵件地址。現在前往？"
   },
   "goToWebVault": {
     "message": "前往網路版密碼庫"
@@ -687,7 +687,7 @@
     "message": "無效的主密碼"
   },
   "twoStepLoginConfirmation": {
-    "message": "兩步驟登入需要您登入時輸入一個由驗證碼程式產生的安全碼，為您的帳戶增加一層保障。兩步驟登入可以在 bitwarden 網頁版啟用。現在前往？"
+    "message": "兩步驟登入需要您登入時輸入一個由驗證碼程式產生的安全碼，為您的帳戶增加一層保障。兩步驟登入可以在 Bitwarden 網頁版啟用。現在前往？"
   },
   "twoStepLogin": {
     "message": "兩步驟登入"
@@ -816,7 +816,7 @@
     "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 bitwarden 網頁版管理你的會員資格。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版管理你的會員資格。現在前往？"
   },
   "premiumRefresh": {
     "message": "重新整理會員資訊"
@@ -846,13 +846,13 @@
     "message": "購買進階會員資格"
   },
   "premiumPurchaseAlert": {
-    "message": "您可以在 bitwarden 網頁版購買進階會員資格。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版購買進階會員資格。現在前往？"
   },
   "premiumCurrentMember": {
     "message": "您目前是進階會員！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "感謝您支持 bitwardan 。"
+    "message": "感謝您支持 Bitwarden 。"
   },
   "premiumPrice": {
     "message": "每年只需 $PRICE$ ！",

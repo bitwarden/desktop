@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "所有项目"
@@ -552,7 +552,7 @@
     "message": "自我托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己配置、托管的 bitwarden 环境的基础 URL。"
+    "message": "指定自己配置、托管的 Bitwarden 环境的基础 URL。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -852,7 +852,7 @@
     "message": "您是一名高级会员！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "感谢您支持 bitwarden。"
+    "message": "感谢您支持 Bitwarden。"
   },
   "premiumPrice": {
     "message": "只需 $PRICE$ \/年！",
