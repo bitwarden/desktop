@@ -112,18 +112,19 @@ angular
             $scope.showPassword = !$scope.showPassword;
         };
 
-        $scope.checkPassword = () => {
-            $analytics.eventTrack('Check Password');
+        $scope.checkPassword = function () {
+            if (!$scope.cipher.login || !$scope.cipher.login.password || $scope.cipher.login.password === '') {
+                return;
+            }
 
-            auditService
-                .passwordLeaked($scope.cipher.login.password)
-                .then((matches) => {
-                    if (matches != 0) {
-                        toastr.error(i18nService.passwordExposed, i18nService.errorsOccurred);
-                    } else {
-                        toastr.success(i18nService.passwordSafe)
-                    }
-                })
+            $analytics.eventTrack('Check Password');
+            auditService.passwordLeaked($scope.cipher.login.password).then(function (matches) {
+                if (matches != 0) {
+                    toastr.error(i18nService.passwordExposed);
+                } else {
+                    toastr.success(i18nService.passwordSafe);
+                }
+            });
         };
 
         $scope.addField = function (type) {

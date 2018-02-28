@@ -982,12 +982,12 @@
     "message": "Complete your two-step login request using the new tab."
   },
   "checkPassword": {
-    "message": "Check if the password have been previously exposed."
+    "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password have been previously exposed in data breaches!"
+    "message": "This password has been exposed in data breaches. You should change it."
   },
   "passwordSafe": {
-    "message": "This password was not found in a current data breach! It should be safe to use."
+    "message": "This password was not found in any known data breaches. It should be safe to use."
   }
 }
