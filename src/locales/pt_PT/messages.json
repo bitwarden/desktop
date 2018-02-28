@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Todos os itens"
@@ -552,7 +552,7 @@
     "message": "Ambiente auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifique o URL de base da sua instalação local do bitwarden."
+    "message": "Especifique o URL de base da sua instalação local do Bitwarden."
   },
   "customEnvironment": {
     "message": "Ambiente personalizado"
@@ -852,7 +852,7 @@
     "message": "É um membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Obrigado por apoiar o bitwarden."
+    "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
     "message": "Tudo por apenas $PRICE$ \/ano!",
@@ -943,7 +943,7 @@
     "message": "Sair do Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ copiado\/a",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
