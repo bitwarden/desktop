@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Всі елементи"
@@ -552,7 +552,7 @@
     "message": "Середовище власного хостингу"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення bitwarden."
+    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення Bitwarden."
   },
   "customEnvironment": {
     "message": "Власне середовище"
@@ -852,7 +852,7 @@
     "message": "У вас преміум статус!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Дякуємо за підтримку bitwarden."
+    "message": "Дякуємо за підтримку Bitwarden."
   },
   "premiumPrice": {
     "message": "Всього лише $PRICE$ \/ за рік!",
