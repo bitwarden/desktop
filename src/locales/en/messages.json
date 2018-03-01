@@ -907,9 +907,6 @@
   "reload": {
     "message": "Reload"
   },
-  "forceReload": {
-    "message": "Force Reload"
-  },
   "toggleDevTools": {
     "message": "Toggle Developer Tools"
   },

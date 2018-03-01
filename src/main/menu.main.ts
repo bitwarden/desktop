@@ -254,22 +254,22 @@ export class MenuMain {
                             {
                                 label: this.main.i18nService.t('typeLogin'),
                                 click: () => this.main.messagingService.send('newLogin'),
-                                accelerator: 'Alt+L',
+                                accelerator: 'CmdOrCtrl+Shift+L',
                             },
                             {
                                 label: this.main.i18nService.t('typeCard'),
                                 click: () => this.main.messagingService.send('newCard'),
-                                accelerator: 'Alt+C',
+                                accelerator: 'CmdOrCtrl+Shift+C',
                             },
                             {
                                 label: this.main.i18nService.t('typeIdentity'),
                                 click: () => this.main.messagingService.send('newIdentity'),
-                                accelerator: 'Alt+I',
+                                accelerator: 'CmdOrCtrl+Shift+I',
                             },
                             {
                                 label: this.main.i18nService.t('typeSecureNote'),
                                 click: () => this.main.messagingService.send('newSecureNote'),
-                                accelerator: 'Alt+S',
+                                accelerator: 'CmdOrCtrl+Shift+S',
                             },
                         ],
                     },
@@ -359,16 +359,12 @@ export class MenuMain {
                     { type: 'separator' },
                     {
                         label: this.main.i18nService.t('reload'),
-                        role: 'reload',
-                        accelerator: 'Alt+Shift+R',
-                    },
-                    {
-                        label: this.main.i18nService.t('forceReload'),
                         role: 'forcereload',
                     },
                     {
                         label: this.main.i18nService.t('toggleDevTools'),
                         role: 'toggledevtools',
+                        accelerator: 'F12',
                     },
                 ],
             },
