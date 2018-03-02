@@ -384,7 +384,7 @@ export default class MainBackground {
         this.menuOptionsLoaded = [];
         try {
             const ciphers = await this.cipherService.getAllDecryptedForUrl(url);
-            ciphers.sort(this.cipherService.sortCiphersByLastUsedThenName);
+            ciphers.sort((a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b));
 
             if (contextMenuEnabled) {
                 ciphers.forEach((cipher) => {
