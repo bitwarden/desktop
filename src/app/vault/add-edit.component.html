@@ -194,7 +194,7 @@
                                     {{'autofillDetection' | i18n}} {{(i + 1)}}
                                 </label>
                                 <select id="loginUriMatch{{i}}" name="Login.Uris[{{i}}].Match" [(ngModel)]="u.match"
-                                        [hidden]="!u.showOptions">
+                                        [hidden]="u.showOptions === false || (u.showOptions == null && u.match == null)">
                                     <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
                                 </select>
                             </div>

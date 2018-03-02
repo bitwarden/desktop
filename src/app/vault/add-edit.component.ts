@@ -258,7 +258,7 @@ export class AddEditComponent implements OnChanges {
 
     toggleUriOptions(uri: LoginUriView) {
         const u = (uri as any);
-        u.showOptions = !u.showOptions;
+        u.showOptions = u.showOptions == null && uri.match != null ? false : !u.showOptions;
     }
 
     async checkPassword() {
