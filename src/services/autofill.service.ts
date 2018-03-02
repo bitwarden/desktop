@@ -216,12 +216,7 @@ export default class AutofillService implements AutofillServiceInterface {
             return;
         }
 
-        const tabDomain = this.platformUtilsService.getDomain(tab.url);
-        if (tabDomain == null) {
-            return;
-        }
-
-        const lastUsedCipher = await this.cipherService.getLastUsedForDomain(tabDomain);
+        const lastUsedCipher = await this.cipherService.getLastUsedForUrl(tab.url);
         if (!lastUsedCipher) {
             return;
         }

@@ -27,22 +27,14 @@ export default class WebRequestBackground {
                 return;
             }
 
-            const domain = this.platformUtilsService.getDomain(details.url);
-            if (domain == null) {
-                if (callback) {
-                    callback();
-                }
-                return;
-            }
-
             this.pendingAuthRequests.push(details.requestId);
 
             if (this.isFirefox) {
                 return new Promise(async (resolve, reject) => {
-                    await this.resolveAuthCredentials(domain, resolve, reject);
+                    await this.resolveAuthCredentials(details.url, resolve, reject);
                 });
             } else {
-                await this.resolveAuthCredentials(domain, callback, callback);
+                await this.resolveAuthCredentials(details.url, callback, callback);
             }
         }, { urls: ['http://*/*', 'https://*/*'] }, [this.isFirefox ? 'blocking' : 'asyncBlocking']);
 
@@ -54,7 +46,7 @@ export default class WebRequestBackground {
 
     private async resolveAuthCredentials(domain: string, success: Function, error: Function) {
         try {
-            const ciphers = await this.cipherService.getAllDecryptedForDomain(domain);
+            const ciphers = await this.cipherService.getAllDecryptedForUrl(domain);
             if (ciphers == null || ciphers.length !== 1) {
                 error();
                 return;

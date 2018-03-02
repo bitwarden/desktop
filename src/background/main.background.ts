@@ -129,7 +129,7 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService, this.i18n2Service);
+            this.apiService, this.storageService, this.i18n2Service, this.platformUtilsService, this.utilsService);
         this.folderService = new FolderService(this.cryptoService, this.userService,
             () => this.i18nService.noneFolder, this.apiService, this.storageService, this.i18n2Service);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
@@ -378,17 +378,12 @@ export default class MainBackground {
             return;
         }
 
-        const tabDomain = this.platformUtilsService.getDomain(url);
-        if (tabDomain == null) {
-            return;
-        }
-
         this.actionSetBadgeBackgroundColor(chrome.browserAction);
         this.actionSetBadgeBackgroundColor(this.sidebarAction);
 
         this.menuOptionsLoaded = [];
         try {
-            const ciphers = await this.cipherService.getAllDecryptedForDomain(tabDomain);
+            const ciphers = await this.cipherService.getAllDecryptedForUrl(url);
             ciphers.sort(this.cipherService.sortCiphersByLastUsedThenName);
 
             if (contextMenuEnabled) {

@@ -1,6 +1,7 @@
 import { CipherType } from 'jslib/enums';
 
 import { CipherView } from 'jslib/models/view/cipherView';
+import { LoginUriView } from 'jslib/models/view/loginUriView';
 import { LoginView } from 'jslib/models/view/loginView';
 
 import { ConstantsService } from 'jslib/services/constants.service';
@@ -181,7 +182,9 @@ export default class RuntimeBackground {
             this.main.loginsToAdd.splice(i, 1);
 
             const loginModel = new LoginView();
-            loginModel.uri = loginInfo.uri;
+            const loginUri = new LoginUriView();
+            loginUri.uri = loginInfo.uri;
+            loginModel.uris = [loginUri];
             loginModel.username = loginInfo.username;
             loginModel.password = loginInfo.password;
             const model = new CipherView();
@@ -225,8 +228,7 @@ export default class RuntimeBackground {
             return;
         }
 
-        const ciphers = await this.cipherService.getAllDecryptedForDomain(loginDomain);
-
+        const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
         let match = false;
         for (let i = 0; i < ciphers.length; i++) {
             if (ciphers[i].login.username === loginInfo.username) {

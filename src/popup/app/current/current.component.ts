@@ -133,7 +133,7 @@ export class CurrentController {
             CipherType.Identity,
         ];
 
-        const ciphers = await this.cipherService.getAllDecryptedForDomain(this.domain, otherTypes);
+        const ciphers = await this.cipherService.getAllDecryptedForUrl(this.url, otherTypes);
         const loginCiphers: any = [];
         const cardCiphers: any = [];
         const identityCiphers: any = [];
