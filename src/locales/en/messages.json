@@ -1006,5 +1006,8 @@
   "defaultAutofillDetection": {
     "message": "Default auto-fill detection",
     "description": "Default URI auto-fill match detection."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

@@ -193,9 +193,16 @@
                                 <label for="loginUriMatch{{i}}" class="sr-only">
                                     {{'autofillDetection' | i18n}} {{(i + 1)}}
                                 </label>
-                                <select id="loginUriMatch{{i}}" name="Login.Uris[{{i}}].Match" [(ngModel)]="u.match">
+                                <select id="loginUriMatch{{i}}" name="Login.Uris[{{i}}].Match" [(ngModel)]="u.match"
+                                        [hidden]="!u.showOptions">
                                     <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
                                 </select>
+                            </div>
+                            <div class="action-buttons">
+                                <a class="row-btn" href="#" appStopClick appBlurClick
+                                   title="{{'toggleOptions' | i18n}}" (click)="toggleUriOptions(u)">
+                                    <i class="fa fa-lg fa-cog"></i>
+                                </a>
                             </div>
                         </div>
                     </ng-container>

@@ -256,6 +256,11 @@ export class AddEditComponent implements OnChanges {
         f.showValue = !f.showValue;
     }
 
+    toggleUriOptions(uri: LoginUriView) {
+        const u = (uri as any);
+        u.showOptions = !u.showOptions;
+    }
+
     async checkPassword() {
         if (this.cipher.login == null || this.cipher.login.password == null || this.cipher.login.password === '') {
             return;
