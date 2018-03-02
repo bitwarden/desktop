@@ -114,7 +114,7 @@ export class AddEditComponent implements OnChanges {
         ];
         this.uriMatchOptions = [
             { name: i18nService.t('defaultAutofillDetection'), value: null },
-            { name: i18nService.t('baseDomain'), value: UriMatchType.BaseDomain },
+            { name: i18nService.t('baseDomain'), value: UriMatchType.Domain },
             { name: i18nService.t('host'), value: UriMatchType.Host },
             { name: i18nService.t('startsWith'), value: UriMatchType.StartsWith },
             { name: i18nService.t('regEx'), value: UriMatchType.RegularExpression },
