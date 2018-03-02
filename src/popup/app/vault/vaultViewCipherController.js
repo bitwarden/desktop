@@ -28,20 +28,6 @@ angular
                     if (model.login.password) {
                         $scope.cipher.maskedPassword = $scope.maskValue(model.login.password);
                     }
-
-                    if (model.login.uri) {
-                        $scope.cipher.showLaunch = model.login.uri.startsWith('http://') || model.login.uri.startsWith('https://');
-                        var domain = platformUtilsService.getDomain(model.login.uri);
-                        if (domain) {
-                            $scope.cipher.login.website = domain;
-                        }
-                        else {
-                            $scope.cipher.login.website = model.login.uri;
-                        }
-                    }
-                    else {
-                        $scope.cipher.showLaunch = false;
-                    }
                 }
 
                 if (model.login && model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
@@ -90,11 +76,13 @@ angular
             }
         };
 
-        $scope.launchWebsite = function (cipher) {
-            if (cipher.showLaunch) {
-                $analytics.eventTrack('Launched Website');
-                BrowserApi.createNewTab(cipher.login.uri);
+        $scope.launch = function (uri) {
+            if (!uri.canLaunch) {
+                return;
             }
+
+            $analytics.eventTrack('Launched Login URI');
+            BrowserApi.createNewTab(uri.uri);
         };
 
         $scope.clipboardError = function (e, password) {

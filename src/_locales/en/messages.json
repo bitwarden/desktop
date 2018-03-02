@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Added item"
   },
@@ -989,5 +992,33 @@
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "autofillDetection": {
+    "message": "Auto-fill Detection",
+    "description": "URI auto-fill match detection."
+  },
+  "defaultAutofillDetection": {
+    "message": "Default auto-fill detection",
+    "description": "Default URI auto-fill match detection."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

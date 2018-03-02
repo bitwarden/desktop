@@ -31,10 +31,6 @@
                     </div>
                     <div ng-if="cipher.type === constants.cipherType.login">
                         <div class="list-section-item">
-                            <label for="loginUri" class="item-label">{{i18n.uri}}</label>
-                            <input id="loginUri" type="text" name="Login.Uri" ng-model="cipher.login.uri">
-                        </div>
-                        <div class="list-section-item">
                             <label for="loginUsername" class="item-label">{{i18n.username}}</label>
                             <input id="loginUsername" type="text" name="Login.Username" ng-model="cipher.login.username">
                         </div>
@@ -50,12 +46,15 @@
                                 <a class="btn-list" href="" title="{{i18n.togglePassword}}" ng-click="togglePassword()">
                                     <i class="fa fa-lg" ng-class="[{'fa-eye': !showPassword}, {'fa-eye-slash': showPassword}]"></i>
                                 </a>
+                                <a class="btn-list" href="" title="{{i18n.generatePassword}}" ng-click="generatePassword()">
+                                    <i class="fa fa-lg fa-refresh"></i>
+                                </a>
                             </div>
                         </div>
-                        <a class="list-section-item" href="" ng-click="generatePassword()">
-                            {{i18n.generatePassword}}
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
+                        <div class="list-section-item">
+                            <label for="loginTotp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
+                            <input id="loginTotp" type="text" name="Login.Totp" ng-model="cipher.login.totp">
+                        </div>
                     </div>
                     <div ng-if="cipher.type === constants.cipherType.card">
                         <div class="list-section-item">
@@ -202,12 +201,44 @@
                     </div>
                 </div>
             </div>
+            <div class="list-section" ng-if="cipher.type === constants.cipherType.login">
+                <div class="list-section-items">
+                    <div class="list-section-item list-section-item-table"
+                         ng-if="cipher.login.uris && cipher.login.uris.length" ng-repeat="u in cipher.login.uris">
+                        <a href="#" stop-click ng-click="removeUri(u)" class="action-button text-danger">
+                            <i class="fa fa-minus-circle fa-lg"></i>
+                        </a>
+                        <div class="action-button-content">
+                            <label for="loginUri{{$index}}" class="item-label">{{i18n.uri}} {{$index + 1}}</label>
+                            <input id="loginUri{{$index}}" type="text" name="Login.Uris[{{$index}}].Uri"
+                                   ng-model="u.uri" placeholder="{{i18n.ex}} https://google.com">
+                            <label for="loginUriMatch{{$index}}" class="sr-only">
+                                {{i18n.autofillDetection}} {{$index + 1}}
+                            </label>
+                            <select id="loginUriMatch{{$index}}" name="Login.Uris[{{$index}}].Match"
+                                    ng-hide="u.showOptions === false || (u.showOptions == null && u.match == null)"
+                                    ng-model="u.matchValue" ng-change="uriMatchChanged(u)">
+                                <option value="">{{i18n.defaultAutofillDetection}}</option>
+                                <option value="0">{{i18n.baseDomain}}</option>
+                                <option value="1">{{i18n.host}}</option>
+                                <option value="2">{{i18n.startsWith}}</option>
+                                <option value="4">{{i18n.regEx}}</option>
+                                <option value="3">{{i18n.exact}}</option>
+                                <option value="5">{{i18n.never}}</option>
+                            </select>
+                        </div>
+                        <a href="#" stop-click ng-click="toggleUriOptions(u)" class="action-button"
+                           title="{{i18n.toggleOptions}}">
+                            <i class="fa fa-cog fa-lg"></i>
+                        </a>
+                    </div>
+                    <a class="list-section-item text-primary" href="#" stop-click ng-click="addUri()">
+                        <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{i18n.newUri}}
+                    </a>
+                </div>
+            </div>
             <div class="list-section">
                 <div class="list-section-items">
-                    <div class="list-section-item" ng-if="cipher.type === constants.cipherType.login">
-                        <label for="loginTotp" class="item-label">{{i18n.authenticatorKeyTotp}}</label>
-                        <input id="loginTotp" type="text" name="Login.Totp" ng-model="cipher.login.totp">
-                    </div>
                     <div class="list-section-item">
                         <label for="folder" class="item-label">{{i18n.folder}}</label>
                         <select id="folder" name="FolderId" ng-model="cipher.folderId">
@@ -241,7 +272,7 @@
                          ng-if="cipher.fields && cipher.fields.length" ng-repeat="field in cipher.fields"
                          ng-class="{'list-section-item-checkbox' : field.type === constants.fieldType.boolean}">
                         <a href="#" stop-click ng-click="removeField(field)" class="action-button text-danger">
-                            <i class="fa fa-close fa-lg"></i>
+                            <i class="fa fa-minus-circle fa-lg"></i>
                         </a>
                         <div class="action-button-content">
                             <input id="field_name{{$index}}" type="text" name="Field.Name{{$index}}"

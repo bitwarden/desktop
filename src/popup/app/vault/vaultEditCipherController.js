@@ -24,12 +24,14 @@ angular
 
         if ($stateParams.cipher) {
             angular.extend($scope.cipher, $stateParams.cipher);
+            setUriMatchValues();
         }
         else {
             cipherService.get(cipherId).then(function (cipher) {
                 return cipher.decrypt();
             }).then(function (model) {
                 $scope.cipher = model;
+                setUriMatchValues();
             });
         }
 
@@ -127,6 +129,50 @@ angular
             });
         };
 
+        $scope.addUri = function () {
+            if (!$scope.cipher.login) {
+                return;
+            }
+
+            if (!$scope.cipher.login.uris) {
+                $scope.cipher.login.uris = [];
+            }
+
+            $scope.cipher.login.uris.push({
+                uri: null,
+                match: null,
+            });
+
+            $timeout(function () {
+                popupUtilsService.initListSectionItemListeners(document, angular);
+            }, 500);
+        };
+
+        $scope.removeUri = function (uri) {
+            if (!$scope.cipher.login || !$scope.cipher.login.uris) {
+                return;
+            }
+
+            var index = $scope.cipher.login.uris.indexOf(uri);
+            if (index > -1) {
+                $scope.cipher.login.uris.splice(index, 1);
+            }
+        };
+
+        $scope.uriMatchChanged = function (uri) {
+            uri.showOptions = uri.showOptions == null ? true : uri.showOptions;
+            if ((!uri.matchValue && uri.matchValue !== 0) || uri.matchValue === '') {
+                uri.match = null;
+            }
+            else {
+                uri.match = parseInt(uri.matchValue);
+            }
+        };
+
+        $scope.toggleUriOptions = function (u) {
+            u.showOptions = u.showOptions == null && u.match != null ? false : !u.showOptions;
+        };
+
         $scope.addField = function (type) {
             if (!$scope.cipher.fields) {
                 $scope.cipher.fields = [];
@@ -181,5 +227,15 @@ angular
                     from: from
                 }
             });
+        }
+
+        function setUriMatchValues() {
+            if ($scope.cipher.login && $scope.cipher.login.uris) {
+                for (var i = 0; i < $scope.cipher.login.uris.length; i++) {
+                    $scope.cipher.login.uris[i].matchValue =
+                        $scope.cipher.login.uris[i].match || $scope.cipher.login.uris[i].match === 0 ?
+                            $scope.cipher.login.uris[i].match.toString() : '';
+                }
+            }
         }
     });

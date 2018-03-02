@@ -20,22 +20,6 @@
                     {{cipher.name}}
                 </div>
                 <div ng-if="cipher.type === constants.cipherType.login">
-                    <div class="list-section-item wrap" ng-if="cipher.login.uri" title="{{cipher.login.uri}}">
-                        <div class="action-buttons">
-                            <a class="btn-list" href="" title="{{i18n.launchWebsite}}" ng-click="launchWebsite(cipher)"
-                               ng-show="cipher.showLaunch">
-                                <i class="fa fa-lg fa-share-square-o"></i>
-                            </a>
-                            <a class="btn-list" href="" title="{{i18n.copyUri}}"
-                               ngclipboard ngclipboard-error="clipboardError(e)"
-                               ngclipboard-success="clipboardSuccess(e, i18n.uri, 'URI')"
-                               data-clipboard-text="{{cipher.login.uri}}">
-                                <i class="fa fa-lg fa-clipboard"></i>
-                            </a>
-                        </div>
-                        <span class="item-label">{{i18n.website}}</span>
-                        {{cipher.login.website}}
-                    </div>
                     <div class="list-section-item wrap" ng-if="cipher.login.username">
                         <div class="action-buttons">
                             <a class="btn-list" href="" title="{{i18n.copyUsername}}"
@@ -180,6 +164,28 @@
                 </div>
                 <div ng-if="cipher.type === constants.cipherType.secureNote">
                     <!-- Nothing for now -->
+                </div>
+            </div>
+        </div>
+        <div class="list-section"
+             ng-if="cipher.type === constants.cipherType.login && cipher.login.uris && cipher.login.uris.length">
+            <div class="list-section-items">
+                <div class="list-section-item wrap" title="{{u.uri}}" ng-repeat="u in cipher.login.uris">
+                    <div class="action-buttons">
+                        <a class="btn-list" href="" title="{{i18n.launchWebsite}}" ng-click="launch(u)"
+                           ng-show="u.canLaunch">
+                            <i class="fa fa-lg fa-share-square-o"></i>
+                        </a>
+                        <a class="btn-list" href="" title="{{i18n.copyUri}}"
+                           ngclipboard ngclipboard-error="clipboardError(e)"
+                           ngclipboard-success="clipboardSuccess(e, i18n.uri, 'URI')"
+                           data-clipboard-text="{{u.uri}}">
+                            <i class="fa fa-lg fa-clipboard"></i>
+                        </a>
+                    </div>
+                    <span class="item-label" ng-if="u.isWebsite">{{i18n.website}}</span>
+                    <span class="item-label" ng-if="!u.isWebsite">{{i18n.uri}}</span>
+                    {{u.domainOrUri}}
                 </div>
             </div>
         </div>
