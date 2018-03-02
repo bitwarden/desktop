@@ -86,7 +86,7 @@ const environmentService = new EnvironmentService(apiService, storageService);
 const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
 const cipherService = new CipherService(cryptoService, userService, settingsService,
-    apiService, storageService, i18nService);
+    apiService, storageService, i18nService, platformUtilsService, utilsService);
 const folderService = new FolderService(cryptoService, userService,
     () => i18nService.t('noneFolder'), apiService, storageService, i18nService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
