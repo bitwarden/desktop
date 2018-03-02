@@ -14,6 +14,7 @@ import { Angulartics2 } from 'angulartics2';
 import { CipherType } from 'jslib/enums/cipherType';
 import { FieldType } from 'jslib/enums/fieldType';
 import { SecureNoteType } from 'jslib/enums/secureNoteType';
+import { UriMatchType } from 'jslib/enums/uriMatchType';
 
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -26,6 +27,7 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { FieldView } from 'jslib/models/view/fieldView';
 import { FolderView } from 'jslib/models/view/folderView';
 import { IdentityView } from 'jslib/models/view/identityView';
+import { LoginUriView } from 'jslib/models/view/loginUriView';
 import { LoginView } from 'jslib/models/view/loginView';
 import { SecureNoteView } from 'jslib/models/view/secureNoteView';
 
@@ -59,6 +61,7 @@ export class AddEditComponent implements OnChanges {
     cardExpMonthOptions: any[];
     identityTitleOptions: any[];
     addFieldTypeOptions: any[];
+    uriMatchOptions: any[];
 
     constructor(private cipherService: CipherService, private folderService: FolderService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -109,6 +112,15 @@ export class AddEditComponent implements OnChanges {
             { name: i18nService.t('cfTypeHidden'), value: FieldType.Hidden },
             { name: i18nService.t('cfTypeBoolean'), value: FieldType.Boolean },
         ];
+        this.uriMatchOptions = [
+            { name: i18nService.t('defaultAutofillDetection'), value: null },
+            { name: i18nService.t('baseDomain'), value: UriMatchType.BaseDomain },
+            { name: i18nService.t('fullHostname'), value: UriMatchType.FullHostname },
+            { name: i18nService.t('startsWith'), value: UriMatchType.StartsWith },
+            { name: i18nService.t('regEx'), value: UriMatchType.RegularExpression },
+            { name: i18nService.t('exact'), value: UriMatchType.Exact },
+            { name: i18nService.t('never'), value: UriMatchType.Never },
+        ];
     }
 
     async ngOnChanges() {
@@ -125,6 +137,7 @@ export class AddEditComponent implements OnChanges {
             this.cipher.folderId = this.folderId;
             this.cipher.type = this.type == null ? CipherType.Login : this.type;
             this.cipher.login = new LoginView();
+            this.cipher.login.uris = [new LoginUriView()];
             this.cipher.card = new CardView();
             this.cipher.identity = new IdentityView();
             this.cipher.secureNote = new SecureNoteView();
@@ -152,6 +165,29 @@ export class AddEditComponent implements OnChanges {
                 this.i18nService.t(this.editMode ? 'editedItem' : 'addedItem'));
             this.onSavedCipher.emit(this.cipher);
         } catch { }
+    }
+
+    addUri() {
+        if (this.cipher.type !== CipherType.Login) {
+            return;
+        }
+
+        if (this.cipher.login.uris == null) {
+            this.cipher.login.uris = [];
+        }
+
+        this.cipher.login.uris.push(new LoginUriView());
+    }
+
+    removeUri(uri: LoginUriView) {
+        if (this.cipher.type !== CipherType.Login || this.cipher.login.uris == null) {
+            return;
+        }
+
+        const i = this.cipher.login.uris.indexOf(uri);
+        if (i > -1) {
+            this.cipher.login.uris.splice(i, 1);
+        }
     }
 
     addField() {

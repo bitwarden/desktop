@@ -50,6 +50,18 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
+  },
   "username": {
     "message": "Username"
   },
@@ -172,7 +184,8 @@
     "message": "December"
   },
   "ex": {
-    "message": "ex."
+    "message": "ex.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Title"
@@ -969,5 +982,29 @@
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "fullHostname": {
+    "message": "Full hostname"
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "autofillDetection": {
+    "message": "Auto-fill Detection",
+    "description": "URI auto-fill match detection."
+  },
+  "defaultAutofillDetection": {
+    "message": "Default auto-fill detection",
+    "description": "Default URI auto-fill match detection."
   }
 }

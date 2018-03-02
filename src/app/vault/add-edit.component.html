@@ -19,10 +19,6 @@
                     <!-- Login -->
                     <div *ngIf="cipher.type === cipherType.Login">
                         <div class="box-content-row" appBoxRow>
-                            <label for="loginUri">{{'uri' | i18n}}</label>
-                            <input id="loginUri" type="text" name="Login.Uri" [(ngModel)]="cipher.login.uri">
-                        </div>
-                        <div class="box-content-row" appBoxRow>
                             <label for="loginUsername">{{'username' | i18n}}</label>
                             <input id="loginUsername" type="text" name="Login.Username"
                                    [(ngModel)]="cipher.login.username">
@@ -51,6 +47,11 @@
                                     <i class="fa fa-lg fa-refresh"></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class="box-content-row" appBoxRow>
+                            <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
+                            <input id="loginTotp" type="text" name="Login.Totp" class="monospaced"
+                                   [(ngModel)]="cipher.login.totp">
                         </div>
                     </div>
                     <!-- Card -->
@@ -177,13 +178,34 @@
                     </div>
                 </div>
             </div>
+            <div class="box" *ngIf="cipher.type === cipherType.Login">
+                <div class="box-content">
+                    <ng-container *ngIf="cipher.login.hasUris">
+                        <div class="box-content-row box-content-row-multi" appBoxRow
+                             *ngFor="let u of cipher.login.uris; let i = index">
+                            <a href="#" appStopClick (click)="removeUri(u)" title="{{'remove' | i18n}}">
+                                <i class="fa fa-minus-circle fa-lg"></i>
+                            </a>
+                            <div class="row-main">
+                                <label for="loginUri{{i}}">{{'uriPosition' | i18n : (i + 1)}}</label>
+                                <input id="loginUri{{i}}" type="text" name="Login.Uris[{{i}}].Uri" [(ngModel)]="u.uri"
+                                       placeholder="{{'ex' | i18n}} https://google.com">
+                                <label for="loginUriMatch{{i}}" class="sr-only">
+                                    {{'autofillDetection' | i18n}} {{(i + 1)}}
+                                </label>
+                                <select id="loginUriMatch{{i}}" name="Login.Uris[{{i}}].Match" [(ngModel)]="u.match">
+                                    <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <a href="#" appStopClick appBlurClick (click)="addUri()" class="box-content-row">
+                        <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newUri' | i18n}}
+                    </a>
+                </div>
+            </div>
             <div class="box">
                 <div class="box-content">
-                    <div class="box-content-row" *ngIf="cipher.type === cipherType.Login" appBoxRow>
-                        <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
-                        <input id="loginTotp" type="text" name="Login.Totp" class="monospaced"
-                               [(ngModel)]="cipher.login.totp">
-                    </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="folder">{{'folder' | i18n}}</label>
                         <select id="folder" name="FolderId" [(ngModel)]="cipher.folderId">
@@ -216,12 +238,12 @@
                     {{'customFields' | i18n}}
                 </div>
                 <div class="box-content">
-                    <div *ngIf="cipher.hasFields">
-                        <div class="box-content-row box-content-row-cf" appBoxRow
+                    <ng-container *ngIf="cipher.hasFields">
+                        <div class="box-content-row box-content-row-multi" appBoxRow
                              *ngFor="let f of cipher.fields; let i = index"
                              [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
                             <a href="#" appStopClick (click)="removeField(f)" title="{{'remove' | i18n}}">
-                                <i class="fa fa-close fa-lg"></i>
+                                <i class="fa fa-minus-circle fa-lg"></i>
                             </a>
                             <label for="fieldName{{i}}" class="sr-only">{{'name' | i18n}}</label>
                             <label for="fieldValue{{i}}" class="sr-only">{{'value' | i18n}}</label>
@@ -244,7 +266,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </ng-container>
                     <div class="box-content-row" appBoxRow>
                         <a href="#" appStopClick (click)="addField()">
                             <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newCustomField' | i18n}}

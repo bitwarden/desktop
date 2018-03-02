@@ -26,6 +26,7 @@ import { TotpService } from 'jslib/abstractions/totp.service';
 import { AttachmentView } from 'jslib/models/view/attachmentView';
 import { CipherView } from 'jslib/models/view/cipherView';
 import { FieldView } from 'jslib/models/view/fieldView';
+import { LoginUriView } from 'jslib/models/view/loginUriView';
 
 @Component({
     selector: 'app-vault-view',
@@ -106,13 +107,13 @@ export class ViewComponent implements OnChanges, OnDestroy {
         f.showValue = !f.showValue;
     }
 
-    launch() {
-        if (!this.cipher.login.canLaunch) {
+    launch(uri: LoginUriView) {
+        if (!uri.canLaunch) {
             return;
         }
 
         this.analytics.eventTrack.next({ action: 'Launched Login URI' });
-        this.platformUtilsService.launchUri(this.cipher.login.uri);
+        this.platformUtilsService.launchUri(uri.uri);
     }
 
     copy(value: string, typeI18nKey: string, aType: string) {
@@ -167,7 +168,10 @@ export class ViewComponent implements OnChanges, OnDestroy {
     }
 
     private async totpUpdateCode() {
-        if (this.cipher.type !== CipherType.Login || this.cipher.login.totp == null) {
+        if (this.cipher == null || this.cipher.type !== CipherType.Login || this.cipher.login.totp == null) {
+            if (this.totpInterval) {
+                clearInterval(this.totpInterval);
+            }
             return;
         }
 

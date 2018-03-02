@@ -45,7 +45,7 @@
                 border-radius: $border-radius;
             }
 
-            &:last-child:not(.box-content-row-cf) {
+            &:last-child {
                 &:before {
                     border: none;
                     height: 0;
@@ -95,21 +95,25 @@
             }
 
             &.box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
-            &.box-content-row-slider, &.box-content-row-cf {
+            &.box-content-row-slider, &.box-content-row-multi {
                 display: flex;
                 align-items: center;
                 word-break: break-word;
             }
 
-            &.box-content-row-cf {
+            &.box-content-row-multi {
                 width: 100%;
 
                 input:not([type="checkbox"]) {
                     width: 100%;
                 }
 
+                input + label.sr-only + select {
+                    margin-top: 5px;
+                }
+
                 > a {
-                    padding: 8px 10px 8px 5px;
+                    padding: 8px 8px 8px 4px;
                     color: $brand-danger;
                     margin: 0;
                 }

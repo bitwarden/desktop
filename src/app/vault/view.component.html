@@ -11,23 +11,6 @@
                 </div>
                 <!-- Login -->
                 <div *ngIf="cipher.login">
-                    <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.uri">
-                        <div class="row-main">
-                            <span class="row-label" *ngIf="!cipher.login.isWebsite">{{'uri' | i18n}}</span>
-                            <span class="row-label" *ngIf="cipher.login.isWebsite">{{'website' | i18n}}</span>
-                            <span title="{{cipher.login.uri}}">{{cipher.login.domainOrUri}}</span>
-                        </div>
-                        <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick title="{{'launch' | i18n}}"
-                               *ngIf="cipher.login.canLaunch" (click)="launch()">
-                                <i class="fa fa-lg fa-share-square-o"></i>
-                            </a>
-                            <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(cipher.login.uri, 'uri', 'URI')">
-                                <i class="fa fa-lg fa-clipboard"></i>
-                            </a>
-                        </div>
-                    </div>
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.username">
                         <div class="row-main">
                             <span class="row-label">{{'username' | i18n}}</span>
@@ -173,6 +156,27 @@
                             {{cipher.identity.postalCode || '-'}}
                         </div>
                         <div *ngIf="cipher.identity.country">{{cipher.identity.country}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box" *ngIf="cipher.login && cipher.login.hasUris">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-flex" *ngFor="let u of cipher.login.uris; let i = index">
+                    <div class="row-main">
+                        <span class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</span>
+                        <span class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</span>
+                        <span title="{{u.uri}}">{{u.domainOrUri}}</span>
+                    </div>
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" appStopClick title="{{'launch' | i18n}}"
+                           *ngIf="u.canLaunch" (click)="launch(u)">
+                            <i class="fa fa-lg fa-share-square-o"></i>
+                        </a>
+                        <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                           (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')">
+                            <i class="fa fa-lg fa-clipboard"></i>
+                        </a>
                     </div>
                 </div>
             </div>
