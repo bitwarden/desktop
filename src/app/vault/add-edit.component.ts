@@ -261,6 +261,11 @@ export class AddEditComponent implements OnChanges {
         u.showOptions = u.showOptions == null && uri.match != null ? false : !u.showOptions;
     }
 
+    loginUriMatchChanged(uri: LoginUriView) {
+        const u = (uri as any);
+        u.showOptions = u.showOptions == null ? true : u.showOptions;
+    }
+
     async checkPassword() {
         if (this.cipher.login == null || this.cipher.login.password == null || this.cipher.login.password === '') {
             return;
