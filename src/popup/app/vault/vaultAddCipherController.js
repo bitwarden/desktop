@@ -17,7 +17,8 @@ angular
             login: {
                 uris: [{
                     uri: null,
-                    match: null
+                    match: null,
+                    matchValue: null
                 }]
             },
             identity: {},
@@ -34,8 +35,6 @@ angular
         if ($stateParams.cipher) {
             angular.extend($scope.cipher, $stateParams.cipher);
         }
-
-        setUriMatchValues();
 
         $timeout(function () {
             popupUtilsService.initListSectionItemListeners(document, angular);
@@ -128,6 +127,7 @@ angular
             $scope.cipher.login.uris.push({
                 uri: null,
                 match: null,
+                matchValue: null
             });
 
             $timeout(function () {
@@ -193,14 +193,4 @@ angular
                 }
             });
         };
-
-        function setUriMatchValues() {
-            if ($scope.cipher.login && $scope.cipher.login.uris) {
-                for (var i = 0; i < $scope.cipher.login.uris.length; i++) {
-                    $scope.cipher.login.uris[i].matchValue =
-                        $scope.cipher.login.uris[i].match || $scope.cipher.login.uris[i].match === 0 ?
-                            $scope.cipher.login.uris[i].match.toString() : '';
-                }
-            }
-        }
     });

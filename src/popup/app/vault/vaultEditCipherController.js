@@ -141,6 +141,7 @@ angular
             $scope.cipher.login.uris.push({
                 uri: null,
                 match: null,
+                matchValue: null
             });
 
             $timeout(function () {
