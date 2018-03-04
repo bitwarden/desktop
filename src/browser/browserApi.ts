@@ -1,6 +1,6 @@
 export class BrowserApi {
     static isSafariApi: boolean = (typeof safari !== 'undefined') &&
-        navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
+    navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
 
     static async getTabFromCurrentWindowId(): Promise<any> {
@@ -21,6 +21,12 @@ export class BrowserApi {
         });
     }
 
+    static async getActiveTabs(): Promise<any[]> {
+        return await BrowserApi.tabsQuery({
+            active: true,
+        });
+    }
+
     static tabsQuery(options: any): Promise<any[]> {
         if (BrowserApi.isChromeApi) {
             return new Promise((resolve) => {
@@ -29,23 +35,28 @@ export class BrowserApi {
                 });
             });
         } else if (BrowserApi.isSafariApi) {
-            let win: any = null;
+            let wins: any[] = [];
             if (options.currentWindow) {
-                win = safari.application.activeBrowserWindow;
-            }
-
-            if (!win || !win.tabs || !win.tabs.length) {
-                return Promise.resolve([]);
-            }
-
-            const tabs: any[] = [];
-            if (options.active && win.activeTab) {
-                tabs.push(win.activeTab);
+                if (safari.application.activeBrowserWindow) {
+                    wins.push(safari.application.activeBrowserWindow);
+                }
+            } else {
+                wins = safari.application.browserWindows;
             }
 
             const returnedTabs: any[] = [];
-            tabs.forEach((tab: any) => {
-                returnedTabs.push(BrowserApi.makeTabObject(tab));
+            wins.forEach((win: any) => {
+                if (!win.tabs) {
+                    return;
+                }
+
+                if (options.active && win.activeTab) {
+                    returnedTabs.push(BrowserApi.makeTabObject(win.activeTab));
+                } else if (!options.active) {
+                    win.tabs.forEach((tab: any) => {
+                        returnedTabs.push(BrowserApi.makeTabObject(tab));
+                    });
+                }
             });
 
             return Promise.resolve(returnedTabs);

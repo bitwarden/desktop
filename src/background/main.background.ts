@@ -135,7 +135,10 @@ export default class MainBackground {
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18n2Service);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
-            this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService);
+            this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService, async () => {
+                await this.setIcon();
+                await this.refreshBadgeAndMenu(true);
+            });
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
             this.storageService, this.messagingService, (expired: boolean) => this.logout(expired));
@@ -214,23 +217,27 @@ export default class MainBackground {
         await this.actionSetIcon(this.sidebarAction, suffix);
     }
 
-    async refreshBadgeAndMenu() {
+    async refreshBadgeAndMenu(forLocked: boolean = false) {
         if (this.isSafari || !chrome.windows || !chrome.contextMenus) {
             return;
         }
 
-        const tab = await BrowserApi.getTabFromCurrentWindowId();
-        if (!tab) {
+        const menuDisabled = await this.storageService.get<boolean>(ConstantsService.disableContextMenuItemKey);
+        if (!menuDisabled) {
+            await this.buildContextMenu();
+        } else {
+            await this.contextMenusRemoveAll();
+        }
+
+        if (forLocked) {
+            await this.loadMenuAndUpdateBadgeForLockedState(!menuDisabled);
+            this.onUpdatedRan = this.onReplacedRan = false;
             return;
         }
 
-        const disabled = await this.storageService.get<boolean>(ConstantsService.disableContextMenuItemKey);
-        if (!disabled) {
-            await this.buildContextMenu();
-            await this.contextMenuReady(tab, true);
-        } else {
-            await this.contextMenusRemoveAll();
-            await this.contextMenuReady(tab, false);
+        const tab = await BrowserApi.getTabFromCurrentWindow();
+        if (tab) {
+            await this.contextMenuReady(tab, !menuDisabled);
         }
     }
 
@@ -406,11 +413,23 @@ export default class MainBackground {
             this.browserActionSetBadgeText(theText, tabId);
             this.sidebarActionSetBadgeText(theText, tabId);
         } catch (e) {
-            if (contextMenuEnabled) {
-                await this.loadNoLoginsContextMenuOptions(this.i18nService.vaultLocked);
-            }
-            this.browserActionSetBadgeText('', tabId);
-            this.sidebarActionSetBadgeText('', tabId);
+            await this.loadMenuAndUpdateBadgeForLockedState(contextMenuEnabled);
+        }
+    }
+
+    private async loadMenuAndUpdateBadgeForLockedState(contextMenuEnabled: boolean) {
+        if (contextMenuEnabled) {
+            await this.loadNoLoginsContextMenuOptions(this.i18nService.vaultLocked);
+        }
+
+        const tabs = await BrowserApi.getActiveTabs();
+        if (tabs != null) {
+            tabs.forEach((tab) => {
+                if (tab.id != null) {
+                    this.browserActionSetBadgeText('', tab.id);
+                    this.sidebarActionSetBadgeText('', tab.id);
+                }
+            });
         }
     }
 
