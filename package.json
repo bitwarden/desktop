@@ -20,7 +20,7 @@
     "sub:init": "git submodule update --init --recursive",
     "sub:update": "git submodule update --remote",
     "sub:pull": "git submodule foreach git pull origin master",
-    "sub:commit": "npm run sub:pull && git commit -am 'update submodule'",
+    "sub:commit": "npm run sub:pull && git commit -am \"update submodule\"",
     "postinstall": "./node_modules/.bin/electron-rebuild && npm run sub:init",
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
