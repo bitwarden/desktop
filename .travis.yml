@@ -4,7 +4,7 @@ matrix:
       dist: trusty
       sudo: true
       language: node_js
-      node_js: 8
+      node_js: 9
       install:
         - sudo apt-get install pkg-config libxss-dev libsecret-1-dev rpm
         - npm install
@@ -14,7 +14,7 @@ matrix:
     - os: osx
       osx_image: xcode9.2
       language: node_js
-      node_js: 8
+      node_js: 9
       install:
         - npm install
       script:
