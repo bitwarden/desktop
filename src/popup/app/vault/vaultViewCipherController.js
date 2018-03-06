@@ -94,10 +94,7 @@ angular
                 return value;
             }
 
-            var masked = '';
-            for (var i = 0; i < value.length; i++) {
-                masked += '•';
-            }
+            var masked = '••••••••';
             return masked;
         };
 
