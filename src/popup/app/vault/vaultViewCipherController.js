@@ -23,13 +23,6 @@ angular
         }).then(function (model) {
             $timeout(function() {
                 $scope.cipher = model;
-
-                if (model.type == constantsService.cipherType.login && model.login) {
-                    if (model.login.password) {
-                        $scope.cipher.maskedPassword = $scope.maskValue(model.login.password);
-                    }
-                }
-
                 if (model.login && model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
                     totpUpdateCode();
                     totpTick();
@@ -87,15 +80,6 @@ angular
 
         $scope.clipboardError = function (e, password) {
             toastr.info(i18n.browserNotSupportClipboard);
-        };
-
-        $scope.maskValue = function (value) {
-            if (!value) {
-                return value;
-            }
-
-            var masked = '••••••••';
-            return masked;
         };
 
         $scope.clipboardSuccess = function (e, type, aType) {
