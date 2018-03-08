@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function (event) {
-    if (window.location.hostname.indexOf('bitwarden.com') > -1) {
+    if (window.location.hostname.indexOf('vault.bitwarden.com') > -1) {
         return;
     }
 
