@@ -39,7 +39,7 @@ export class BoxRowDirective implements OnInit {
             if (formEl.tagName.toLowerCase() === 'input') {
                 const inputEl = (formEl as HTMLInputElement);
                 if (inputEl.type != null && inputEl.type.toLowerCase() === 'checkbox') {
-                    inputEl.checked = !inputEl.checked;
+                    inputEl.click();
                     return;
                 }
             }
