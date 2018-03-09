@@ -91,7 +91,7 @@ const folderService = new FolderService(cryptoService, userService,
     () => i18nService.t('noneFolder'), apiService, storageService, i18nService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 const lockService = new LockService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService, messagingService, () => { });
+    cryptoService, platformUtilsService, storageService, messagingService, () => { /* do nothing */ });
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService,
     storageService, messagingService, (expired: boolean) => messagingService.send('logout', { expired: expired }));
