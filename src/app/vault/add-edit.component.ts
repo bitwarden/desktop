@@ -113,7 +113,7 @@ export class AddEditComponent implements OnChanges {
             { name: i18nService.t('cfTypeBoolean'), value: FieldType.Boolean },
         ];
         this.uriMatchOptions = [
-            { name: i18nService.t('defaultAutofillDetection'), value: null },
+            { name: i18nService.t('defaultMatchDetection'), value: null },
             { name: i18nService.t('baseDomain'), value: UriMatchType.Domain },
             { name: i18nService.t('host'), value: UriMatchType.Host },
             { name: i18nService.t('startsWith'), value: UriMatchType.StartsWith },

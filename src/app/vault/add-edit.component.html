@@ -191,7 +191,7 @@
                                 <input id="loginUri{{i}}" type="text" name="Login.Uris[{{i}}].Uri" [(ngModel)]="u.uri"
                                        placeholder="{{'ex' | i18n}} https://google.com">
                                 <label for="loginUriMatch{{i}}" class="sr-only">
-                                    {{'autofillDetection' | i18n}} {{(i + 1)}}
+                                    {{'matchDetection' | i18n}} {{(i + 1)}}
                                 </label>
                                 <select id="loginUriMatch{{i}}" name="Login.Uris[{{i}}].Match" [(ngModel)]="u.match"
                                         [hidden]="u.showOptions === false || (u.showOptions == null && u.match == null)"
