@@ -1010,13 +1010,13 @@
     "message": "Regular expression",
     "description": "A programming term, also known as 'RegEx'."
   },
-  "autofillDetection": {
-    "message": "Auto-fill Detection",
-    "description": "URI auto-fill match detection."
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
   },
-  "defaultAutofillDetection": {
-    "message": "Default auto-fill detection",
-    "description": "Default URI auto-fill match detection."
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
     "message": "Toggle Options"

@@ -206,12 +206,12 @@
                             <input id="loginUri{{$index}}" type="text" name="Login.Uris[{{$index}}].Uri"
                                    ng-model="u.uri" placeholder="{{i18n.ex}} https://google.com">
                             <label for="loginUriMatch{{$index}}" class="sr-only">
-                                {{i18n.autofillDetection}} {{$index + 1}}
+                                {{i18n.matchDetection}} {{$index + 1}}
                             </label>
                             <select id="loginUriMatch{{$index}}" name="Login.Uris[{{$index}}].Match"
                                     ng-hide="u.showOptions === false || (u.showOptions == null && u.match == null)"
                                     ng-model="u.matchValue" ng-change="uriMatchChanged(u)">
-                                <option value="">{{i18n.defaultAutofillDetection}}</option>
+                                <option value="">{{i18n.defaultMatchDetection}}</option>
                                 <option value="0">{{i18n.baseDomain}}</option>
                                 <option value="1">{{i18n.host}}</option>
                                 <option value="2">{{i18n.startsWith}}</option>
