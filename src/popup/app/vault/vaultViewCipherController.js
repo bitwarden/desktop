@@ -21,7 +21,7 @@ angular
             cipherObj = cipher;
             return cipher.decrypt();
         }).then(function (model) {
-            $timeout(function() {
+            $timeout(function () {
                 $scope.cipher = model;
                 if (model.login && model.login.totp && (cipherObj.organizationUseTotp || tokenService.getPremium())) {
                     totpUpdateCode();
@@ -157,6 +157,10 @@ angular
             }
 
             return year;
+        };
+
+        $scope.maskValue = function (value) {
+            return value ? '••••••••' : null;
         };
 
         function totpUpdateCode() {
