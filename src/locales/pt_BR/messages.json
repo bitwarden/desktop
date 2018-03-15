@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Todos os Itens"
@@ -30,7 +30,7 @@
     "message": "Coleções"
   },
   "searchVault": {
-    "message": "Pesquisar no cofre"
+    "message": "Pesquisar no Cofre"
   },
   "addItem": {
     "message": "Adicionar Item"
@@ -48,7 +48,19 @@
     "message": "Nome"
   },
   "uri": {
-    "message": "URI"
+    "message": "URL"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Nome de Usuário"
@@ -172,7 +184,8 @@
     "message": "Dezembro"
   },
   "ex": {
-    "message": "ex."
+    "message": "ex.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Título"
@@ -277,7 +290,7 @@
     "message": "Remover"
   },
   "nameRequired": {
-    "message": "Nome é necessário."
+    "message": "Requer o nome."
   },
   "addedItem": {
     "message": "Item adicionado"
@@ -286,10 +299,10 @@
     "message": "Item editado"
   },
   "deleteItem": {
-    "message": "Apagar Item"
+    "message": "Excluir Item"
   },
   "deleteFolder": {
-    "message": "Apagar Pasta"
+    "message": "Excluir Pasta"
   },
   "deleteAttachment": {
     "message": "Excluir Anexo"
@@ -298,7 +311,7 @@
     "message": "Tem certeza que deseja excluir este item?"
   },
   "deletedItem": {
-    "message": "Item apagado"
+    "message": "Item excluído"
   },
   "overwritePasswordConfirmation": {
     "message": "Tem certeza que deseja substituir a senha atual?"
@@ -320,7 +333,7 @@
     "message": "Copiar Senha"
   },
   "length": {
-    "message": "Tamanho"
+    "message": "Comprimento"
   },
   "close": {
     "message": "Fechar"
@@ -336,23 +349,23 @@
     "message": "Evitar Caracteres Ambíguos"
   },
   "searchCollection": {
-    "message": "Pesquisar coleção"
+    "message": "Pesquisar Coleção"
   },
   "searchFolder": {
-    "message": "Pesquisar pasta"
+    "message": "Pesquisar Pasta"
   },
   "searchFavorites": {
-    "message": "Pesquisar favoritos"
+    "message": "Pesquisar Favoritos"
   },
   "searchType": {
-    "message": "Pesquisar tipo",
+    "message": "Pesquisar Tipo",
     "description": "Search item type"
   },
   "newAttachment": {
     "message": "Adicionar Novo Anexo"
   },
   "deletedAttachment": {
-    "message": "Anexo eliminado"
+    "message": "Anexo Excluído"
   },
   "deleteAttachmentConfirmation": {
     "message": "Tem certeza que deseja excluir esse anexo?"
@@ -382,7 +395,7 @@
     "message": "Pasta adicionada"
   },
   "deleteFolderConfirmation": {
-    "message": "Tem certeza que deseja apagar esta pasta?"
+    "message": "Tem certeza que deseja excluir esta pasta?"
   },
   "deletedFolder": {
     "message": "Pasta apagada"
@@ -394,7 +407,7 @@
     "message": "Criar Conta"
   },
   "logIn": {
-    "message": "Iniciar sessão"
+    "message": "Iniciar Sessão"
   },
   "submit": {
     "message": "Enviar"
@@ -403,7 +416,7 @@
     "message": "Senha Mestra"
   },
   "masterPassDesc": {
-    "message": "A senha mestra é a senha que você usa para acessar o seu cofre. É muito importante que você não esqueça sua senha mestra. Não há nenhuma maneira de recuperar a senha caso você se esqueça."
+    "message": "A senha mestra é a senha que você usa para acessar o seu cofre. É muito importante que você não esqueça sua senha mestra. Não há maneira de recuperar a senha caso você se esqueça."
   },
   "masterPassHintDesc": {
     "message": "Uma dica de senha mestra pode ajudá-lo(a) a lembrá-lo(a) caso você esqueça."
@@ -442,7 +455,7 @@
     "message": "A confirmação da senha mestra não corresponde."
   },
   "newAccountCreated": {
-    "message": "A sua nova conta foi criada! Agora pode iniciar sessão."
+    "message": "A sua nova conta foi criada! Agora você pode iniciar a sessão."
   },
   "masterPassSent": {
     "message": "Enviamos um e-mail com a dica da sua senha mestra."
@@ -493,7 +506,7 @@
     "message": "Enviar código de verificação para o e-mail novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utilizar outro método de verificação de duas etapas"
+    "message": "Utilizar outro método de verificação em duas etapas"
   },
   "insertYubiKey": {
     "message": "Introduza a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
@@ -511,7 +524,7 @@
     "message": "Aplicativo de Autenticação"
   },
   "authenticatorAppDesc": {
-    "message": "Utilize um aplicativo de autenticação (tal como Authy ou Google Authenticator) para gerar códigos de verificação baseados na hora.",
+    "message": "Utilize um aplicativo de autenticação (tal como Authy ou Google Authenticator) para gerar códigos de verificação baseados em tempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -537,22 +550,22 @@
     "message": "Os códigos de verificação vão ser enviados para você."
   },
   "loginUnavailable": {
-    "message": "Login Indisponível"
+    "message": "Sessão Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem o início de sessão de duas etapas ativada, no entanto, nenhum dos provedores de início de sessão de duas etapas configurados são suportados por este dispositivo."
+    "message": "Esta conta tem o início de sessão em duas etapas ativada, no entanto, nenhum dos provedores de início de sessão em duas etapas configurados são suportados por este dispositivo."
   },
   "noTwoStepProviders2": {
-    "message": "Por favor adicione provedores adicionais que são melhor suportados entre dispositivos (como uma aplicação de autenticador)."
+    "message": "Por favor inclua provedores adicionais que são melhor suportados entre dispositivos (como um aplicativo de autenticação)."
   },
   "twoStepOptions": {
-    "message": "Opções de Login de Duas Etapas"
+    "message": "Opções de Login em Duas Etapas"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente Auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifique a URL de base da sua instalação local do bitwarden."
+    "message": "Especifique a URL de base da sua instalação local do Bitwarden."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizado"
@@ -576,7 +589,7 @@
     "message": "URL do Servidor de Ícones"
   },
   "environmentSaved": {
-    "message": "As URLs do ambiente foram salvos."
+    "message": "As URLs do ambiente foram salvas."
   },
   "ok": {
     "message": "Ok"
@@ -603,10 +616,10 @@
     "message": "A sua sessão expirou."
   },
   "logOutConfirmation": {
-    "message": "Tem a certeza de que pretende terminar sessão?"
+    "message": "Tem a certeza de que pretende encerrar a sessão?"
   },
   "logOut": {
-    "message": "Terminar Sessão"
+    "message": "Encerrar a Sessão"
   },
   "addNewLogin": {
     "message": "Adicionar Nova Credencial"
@@ -654,19 +667,19 @@
     "message": "Alterar Senha Mestra"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Você pode alterar a sua senha mestra no cofre web bitwarden.com. Você deseja visitar o site agora?"
+    "message": "Você pode alterar a sua senha mestra no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "changeEmail": {
     "message": "Alterar E-mail"
   },
   "changeEmailConfirmation": {
-    "message": "Você pode alterar o seu endereço de e-mail no cofre web bitwarden.com. Você deseja visitar o site agora?"
+    "message": "Você pode alterar o seu endereço de e-mail no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "goToWebVault": {
     "message": "Ir para o Cofre Web"
   },
   "getMobileApp": {
-    "message": "Obter Aplicativo Móvel"
+    "message": "Obter o Aplicativo Móvel"
   },
   "getBrowserExtension": {
     "message": "Obter Extensão de Navegador"
@@ -675,7 +688,7 @@
     "message": "Sincronização completada"
   },
   "syncingFailed": {
-    "message": "Sincronização falhou"
+    "message": "A sincronização falhou"
   },
   "yourVaultIsLocked": {
     "message": "O seu cofre está bloqueado. Verifique a sua senha mestra para continuar."
@@ -687,16 +700,16 @@
     "message": "Senha mestra inválida"
   },
   "twoStepLoginConfirmation": {
-    "message": "O login em duas etapas torna sua conta mais segura, exigindo que você verifique seu login com outro dispositivo, como uma chave de segurança, um aplicativo de autenticação, SMS, atendimento telefônico ou e-mail. O login de duas etapas pode ser ativado no cofre da web do bitwarden.com. Você quer visitar o site agora?"
+    "message": "O login em duas etapas torna sua conta mais segura, exigindo que você verifique seu login com outro dispositivo, como uma chave de segurança, um aplicativo de autenticação, SMS, chamada telefônica ou e-mail. O login em duas etapas pode ser ativado no cofre web em bitwarden.com. Você quer visitar o site agora?"
   },
   "twoStepLogin": {
-    "message": "Login de Duas Etapas"
+    "message": "Login em Duas Etapas"
   },
   "lockOptions": {
     "message": "Opções de Bloqueio"
   },
   "lockOptionsDesc": {
-    "message": "Escolha quando o seu cofre bloqueia. Um cofre bloqueado requer que você volte a digitar a sua senha mestra para entrar novamente."
+    "message": "Escolha quando o seu cofre bloqueia. Um cofre bloqueado requer que você reinsira a sua senha mestra para entrar novamente."
   },
   "immediately": {
     "message": "Imediatamente"
@@ -754,7 +767,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Procurar Atualizações"
+    "message": "Procurar Por Atualizações"
   },
   "version": {
     "message": "Versão $VERSION_NUM$",
@@ -769,7 +782,7 @@
     "message": "Reiniciar para Atualizar"
   },
   "restartToUpdateDesc": {
-    "message": "A versão $VERSION_NUM$ está pronta para instalar. Tem de reiniciar o Bitwarden para completar a instalação. Pretende reiniciar e atualizar agora?",
+    "message": "A versão $VERSION_NUM$ está pronta para ser instalada. Você deve reiniciar o Bitwarden para completar a instalação. Você quer reiniciar e atualizar agora?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -781,7 +794,7 @@
     "message": "Atualização Disponível"
   },
   "updateAvailableDesc": {
-    "message": "Foi encontrada uma atualização. Pretende baixar agora?"
+    "message": "Uma atualização foi encontrada. Você quer baixá-la agora?"
   },
   "restart": {
     "message": "Reiniciar"
@@ -790,10 +803,10 @@
     "message": "Mais Tarde"
   },
   "noUpdatesAvailable": {
-    "message": "Não existem atualizações disponíveis atualmente. Estás utilizando a versão mais recente."
+    "message": "Não há atualizações disponíveis no momento. Você está usando a versão mais recente."
   },
   "updateError": {
-    "message": "Erro de Atualização"
+    "message": "Erro na Atualização"
   },
   "unknown": {
     "message": "Desconhecido"
@@ -816,22 +829,22 @@
     "message": "Gerenciar Plano"
   },
   "premiumManageAlert": {
-    "message": "Você pode gerenciar a sua assinatura premium no cofre web bitwarden.com. Deseja visitar o site agora?"
+    "message": "Você pode gerenciar a sua assinatura premium no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "premiumRefresh": {
     "message": "Atualizar Assinatura"
   },
   "premiumNotCurrentMember": {
-    "message": "Você não é atualmente um membro premium."
+    "message": "Você não é um membro premium atualmente."
   },
   "premiumSignUpAndGet": {
     "message": "Registe-se para uma assinatura premium e obtenha:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB de armazenamento de arquivos encriptado."
+    "message": "1 GB de armazenamento de arquivos encriptados."
   },
   "premiumSignUpTwoStep": {
-    "message": "Opções de autenticação de duas etapas adicionais como YubiKey, FIDO U2F, e Duo."
+    "message": "Opções de autenticação em duas etapas adicionais como YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpTotp": {
     "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."
@@ -840,19 +853,19 @@
     "message": "Prioridade no suporte ao cliente."
   },
   "premiumSignUpFuture": {
-    "message": "Acesso a novas funcionalidades premium no futuro. Mais está por vir!"
+    "message": "Todos os recursos premium no futuro. Mais em breve!"
   },
   "premiumPurchase": {
     "message": "Comprar Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Você pode comprar a assinatura premium no cofre web bitwarden.com. Deseja visitar o site agora?"
+    "message": "Você pode comprar a assinatura premium no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "premiumCurrentMember": {
     "message": "Você é um membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Obrigado por apoiar o bitwarden."
+    "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
     "message": "Tudo por apenas $PRICE$ \/ano!",
@@ -907,11 +920,8 @@
   "reload": {
     "message": "Recarregar"
   },
-  "forceReload": {
-    "message": "Forçar Recarregamento"
-  },
   "toggleDevTools": {
-    "message": "Alternar para Ferramentas de Programador"
+    "message": "Alternar para Ferramentas de Desenvolvedor"
   },
   "minimize": {
     "message": "Minimizar",
@@ -943,7 +953,7 @@
     "message": "Sair do Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ copiado",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +963,52 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Ajuda"
   },
   "window": {
-    "message": "Window"
+    "message": "Janela"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
