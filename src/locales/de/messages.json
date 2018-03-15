@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Alle Einträge"
@@ -50,8 +50,20 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
+  },
   "username": {
-    "message": "Username"
+    "message": "Nutzername"
   },
   "password": {
     "message": "Passwort"
@@ -127,7 +139,7 @@
     "message": "Premium notwendig"
   },
   "premiumRequiredDesc": {
-    "message": "Eine Premium-Mitgliedschaft ist für diese Funktion notwendig."
+    "message": "Für diese Funktion benötigen Sie eine Premiummitgliedschaft."
   },
   "errorOccurred": {
     "message": "Ein Fehler ist aufgetreten."
@@ -172,7 +184,8 @@
     "message": "Dezember"
   },
   "ex": {
-    "message": "Bsp."
+    "message": "Bsp.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Titel"
@@ -286,7 +299,7 @@
     "message": "Eintrag bearbeitet"
   },
   "deleteItem": {
-    "message": "Eintrag gelöscht"
+    "message": "Eintrag löschen"
   },
   "deleteFolder": {
     "message": "Ordner löschen"
@@ -355,7 +368,7 @@
     "message": "Anhang gelöscht"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Bist du sicher, dass du diese Datei löschen möchtest?"
+    "message": "Bist du sicher, dass du diesen Anhang löschen möchtest?"
   },
   "attachmentSaved": {
     "message": "Die Datei wurde gespeichert."
@@ -367,7 +380,7 @@
     "message": "Wähle eine Datei."
   },
   "maxFileSize": {
-    "message": "Die maximale Dateigröße ist 100 MB."
+    "message": "Die maximale Dateigröße beträgt 100 MB."
   },
   "updateKey": {
     "message": "Sie können diese Funktion nicht nutzen, bevor Sie Ihren Verschlüsselungsschlüssel aktualisiert haben."
@@ -421,10 +434,10 @@
     "message": "Passwort-Hinweis"
   },
   "enterEmailToGetHint": {
-    "message": "Geben Sie die E-Mail Adresse Ihres Kontos ein, um den Hinweis für Ihr Masterpasswort zu erhalten."
+    "message": "Gebe die E-Mail Adresse deines Kontos ein, um den Hinweis für dein Master-Passwort zu erhalten."
   },
   "getMasterPasswordHint": {
-    "message": "Hinweis zum Masterpasswort zusenden"
+    "message": "Hinweis zum Master-Passwort zusenden"
   },
   "emailRequired": {
     "message": "Die E-Mail Adresse ist erforderlich."
@@ -469,7 +482,7 @@
     "message": "Gib den 6-stelligen Verifizierungscode aus deiner Authenticator App ein."
   },
   "enterVerificationCodeEmail": {
-    "message": "Gib den 6-stelligen Bestätigungscode ein, der per E-Mail an $EMAIL$ gesendet wurde.",
+    "message": "Gib den 6-stelligen Bestätigungscode ein, der an $EMAIL$ gesendet wurde.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -478,7 +491,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verifizierungs Mail gesendet an $EMAIL$.",
+    "message": "Verifizierungsmail wurde an $EMAIL$ gesendet.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -493,7 +506,7 @@
     "message": "E-Mail mit Bestätigungscode erneut versenden"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Verwende eine andere Zwei Faktor Login-Methode"
+    "message": "Verwende eine andere Zwei-Faktor Login-Methode"
   },
   "insertYubiKey": {
     "message": "Stecke deinen YubiKey in einen USB-Port deines Computers, dann berühre den Button."
@@ -543,7 +556,7 @@
     "message": "Dieses Konto hat eine aktive Zwei-Faktor Authentifizierung, allerdings wird keiner der konfigurierten Zwei-Faktor Anbieter von diesem Gerät unterstützt."
   },
   "noTwoStepProviders2": {
-    "message": "Bitte wähle zusätzliche Dienste die über mehrere Geräte funktionieren(zum Beispiel eine Authentifizierung App)."
+    "message": "Bitte wähle zusätzliche Dienste, die über mehrere Geräte funktionieren (zum Beispiel eine Authentifizierungs-App)."
   },
   "twoStepOptions": {
     "message": "Optionen für Zwei-Faktor Authentifizierung"
@@ -552,7 +565,7 @@
     "message": "Selbstgehostete Anwendung"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitte gib die Basis-URL deiner selbst gehosteten bitwarden-Installation an."
+    "message": "Bitte gib die Basis-URL deiner selbst gehosteten Bitwarden-Installation an."
   },
   "customEnvironment": {
     "message": "Benutzerdefinierte Umgebung"
@@ -603,7 +616,7 @@
     "message": "Deine Sitzung ist abgelaufen."
   },
   "logOutConfirmation": {
-    "message": "Bist du sicher, dass du dich ausloggen möchtest?"
+    "message": "Bist du sicher, dass du dich abmelden willst?"
   },
   "logOut": {
     "message": "Abmelden"
@@ -633,13 +646,13 @@
     "message": "Passwort-Generator"
   },
   "emailUs": {
-    "message": "Kontaktiere Uns"
+    "message": "Kontaktiere uns"
   },
   "visitOurWebsite": {
-    "message": "Unsere Website Besuchen"
+    "message": "Unsere Website besuchen"
   },
   "fileBugReport": {
-    "message": "Einen Fehler Melden"
+    "message": "Einen Fehler melden"
   },
   "blog": {
     "message": "Blog"
@@ -651,13 +664,13 @@
     "message": "Tresor jetzt synchronisieren"
   },
   "changeMasterPass": {
-    "message": "Master-Passwort Ändern"
+    "message": "Master-Passwort ändern"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Du kannst dein Master-Passwort im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "changeEmail": {
-    "message": "E-Mail Adresse Ändern"
+    "message": "E-Mail Adresse ändern"
   },
   "changeEmailConfirmation": {
     "message": "Du kannst deine E-Mail Adresse im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
@@ -669,7 +682,7 @@
     "message": "Hole dir die mobile App"
   },
   "getBrowserExtension": {
-    "message": "Browser-Erweiterungen installieren"
+    "message": "Browser-Erweiterung installieren"
   },
   "syncingComplete": {
     "message": "Synchronisierung abgeschlossen"
@@ -696,7 +709,7 @@
     "message": "Sperroptionen"
   },
   "lockOptionsDesc": {
-    "message": "Wähle was passiert wenn dein Tresor gesperrt ist. Du musst dein Master-Passwort eingeben um erneut auf den gesperrten Tresor zugreifen zu können."
+    "message": "Wähle was passiert, wenn dein Tresor gesperrt ist. Du musst dein Master-Passwort eingeben um erneut auf den gesperrten Tresor zugreifen zu können."
   },
   "immediately": {
     "message": "Sofort"
@@ -717,7 +730,7 @@
     "message": "1 Stunde"
   },
   "fourHours": {
-    "message": "4 Stunde"
+    "message": "4 Stunden"
   },
   "onIdle": {
     "message": "Im Leerlauf"
@@ -741,7 +754,7 @@
     "message": "Analytics deaktivieren"
   },
   "gaDesc": {
-    "message": "Wir verwenden Analytics um zu erfahren, wie das Programm genutzt wird, sodass wir es verbessern können. Die Sammlung der Daten geschieht völlig anonym."
+    "message": "Wir verwenden Analytics um zu erfahren, wie das Programm genutzt wird, so dass wir es verbessern können. Die Sammlung der Daten geschieht völlig anonym."
   },
   "disableFavicon": {
     "message": "Webseiten Icons deaktivieren"
@@ -766,10 +779,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Neu starten um zu updaten"
+    "message": "Neu starten, um zu updaten"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ steht zu installation bereit. Du musst Bitwarden neustarten um die Installation abzuschließen. Möchtest du jetzt neustarten und updaten?",
+    "message": "Version $VERSION_NUM$ steht zu installation bereit. Du musst Bitwarden neustarten, um die Installation abzuschließen. Möchtest du jetzt neustarten und updaten?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -799,7 +812,7 @@
     "message": "Unbekannt"
   },
   "copyUsername": {
-    "message": "Nutzernamen Kopieren"
+    "message": "Nutzernamen kopieren"
   },
   "copyNumber": {
     "message": "Nummer kopieren",
@@ -831,7 +844,7 @@
     "message": "1 GB verschlüsselter Speicherplatz."
   },
   "premiumSignUpTwoStep": {
-    "message": "Zusätzliche Zweifaktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
+    "message": "Zusätzliche Zwei-Faktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
   },
   "premiumSignUpTotp": {
     "message": "TOTP Prüfcode (2FA) Generator für Anmeldungen in deinem Tresor."
@@ -852,7 +865,7 @@
     "message": "Du bist jetzt Premium-Mitglied!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Vielen Dank, dass du bitwarden unterstützt."
+    "message": "Vielen Dank, dass du Bitwarden unterstützt."
   },
   "premiumPrice": {
     "message": "Das alles für $PRICE$ pro Jahr!",
@@ -907,9 +920,6 @@
   "reload": {
     "message": "Neu laden"
   },
-  "forceReload": {
-    "message": "Neu laden erzwingen"
-  },
   "toggleDevTools": {
     "message": "Entwickler-Werkzeuge ein\/aus"
   },
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Fenster"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
