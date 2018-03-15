@@ -3,70 +3,82 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "รายการทั้งหมด"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "รายการโปรด"
   },
   "types": {
     "message": "Types"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "เข้าสู่ระบบ"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "บัตร"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "ข้อมูลระบุตัวตน"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "บันทึกการรักษาปลอดภัย"
   },
   "folders": {
-    "message": "Folders"
+    "message": "โฟลเดอร์"
   },
   "collections": {
-    "message": "Collections"
+    "message": "คอลเลกชัน"
   },
   "searchVault": {
     "message": "Search vault"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "เพิ่มรายการ"
   },
   "shared": {
-    "message": "Shared"
+    "message": "แบ่งปัน"
   },
   "attachments": {
     "message": "Attachments"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "ดูรายการ"
   },
   "name": {
-    "message": "Name"
+    "message": "ชื่อ"
   },
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
+  },
   "username": {
-    "message": "Username"
+    "message": "ชื่อผู้ใช้"
   },
   "password": {
-    "message": "Password"
+    "message": "รหัสผ่าน"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "แก้ไขรายการ"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "ที่อยู่อีเมล์"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "รหัสยืนยัน (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "เว็บไซต์"
   },
   "notes": {
     "message": "Notes"
@@ -88,31 +100,31 @@
     "message": "Cardholder Name"
   },
   "number": {
-    "message": "Number"
+    "message": "หมายเลข"
   },
   "brand": {
-    "message": "Brand"
+    "message": "แบรนด์"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "วันหมดอายุ"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "รหัสความปลอดภัย"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "บริษัท"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "หมายเลขประกันสังคม"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "หมายเลขหนังสือเดินทาง"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "หมายเลขใบอนุญาต"
   },
   "email": {
     "message": "อีเมล"
@@ -127,13 +139,13 @@
     "message": "Premium Required"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "จำเป็นต้องมีสมาชิกระดับพรีเมียมเพื่อใช้คุณลักษณะนี้"
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "พบข้อผิดพลาด"
   },
   "error": {
-    "message": "Error"
+    "message": "ข้อผิดพลาด"
   },
   "january": {
     "message": "มกราคม"
@@ -154,67 +166,68 @@
     "message": "มิถุนายน"
   },
   "july": {
-    "message": "July"
+    "message": "กรกฎาคม"
   },
   "august": {
-    "message": "August"
+    "message": "สิงหาคม"
   },
   "september": {
-    "message": "September"
+    "message": "กันยายน"
   },
   "october": {
-    "message": "October"
+    "message": "ตุลาคม"
   },
   "november": {
-    "message": "November"
+    "message": "พฤศจิกายน"
   },
   "december": {
-    "message": "December"
+    "message": "ธันวาคม"
   },
   "ex": {
-    "message": "ex."
+    "message": "ex.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "คำนำหน้า"
   },
   "mr": {
-    "message": "Mr"
+    "message": "นาย"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "นาง"
   },
   "ms": {
     "message": "Ms"
   },
   "dr": {
-    "message": "Dr"
+    "message": "ดร."
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "เดือนที่หมดอายุ"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "ปีที่หมดอายุ"
   },
   "select": {
-    "message": "Select"
+    "message": "เลือก"
   },
   "other": {
-    "message": "Other"
+    "message": "อื่น ๆ"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "สร้างรหัสผ่าน"
   },
   "type": {
     "message": "Type"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "ชื่อจริง"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "ชื่อกลาง"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "นามสกุล"
   },
   "address1": {
     "message": "ที่อยู่ 1"
@@ -226,40 +239,40 @@
     "message": "ที่อยู่ 3"
   },
   "cityTown": {
-    "message": "City \/ Town"
+    "message": "เมือง"
   },
   "stateProvince": {
-    "message": "State \/ Province"
+    "message": "รัฐ \/ จังหวัด"
   },
   "zipPostalCode": {
-    "message": "Zip \/ Postal Code"
+    "message": "รหัสไปรษณีย์"
   },
   "country": {
-    "message": "Country"
+    "message": "ประเทศ"
   },
   "save": {
-    "message": "Save"
+    "message": "บันทึก"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "ยกเลิก"
   },
   "delete": {
-    "message": "Delete"
+    "message": "ลบ"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "รายการโปรด"
   },
   "edit": {
-    "message": "Edit"
+    "message": "แก้ไข"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "คีย์ Authenticator (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "โฟลเดอร์"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "สร้างเขตข้อมูลแบบระบุเอง"
   },
   "value": {
     "message": "Value"
@@ -268,7 +281,7 @@
     "message": "Text"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "ซ่อน"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
@@ -277,63 +290,63 @@
     "message": "Remove"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "จำเป็นต้องกรอกชื่อ"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "เพิ่มรายการแล้ว"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "แก้ไขรายการแล้ว"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "ลบรายการ"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "ลบโฟลเดอร์"
   },
   "deleteAttachment": {
     "message": "Delete Attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "คุณแน่ใจว่าจะลบรายการนี้?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "ลบรายการแล้ว"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "คุณแน่ใจว่าต้องการเขียนทับรหัสผ่านปัจจุบัน?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "ไม่มีโฟลเดอร์",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "เพิ่มโฟลเดอร์"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "แก้ไขโฟลเดอร์"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "สร้างรหัสผ่านใหม่"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "คัดลอกรหัสผ่าน"
   },
   "length": {
-    "message": "Length"
+    "message": "ความยาว"
   },
   "close": {
-    "message": "Close"
+    "message": "ปิด"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "จำนวนตัวเลขต่ำสุด"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "จำนวนตัวพิเศษขั้นต่ำ",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "หลีกเลี่ยงอักขระที่ไม่ชัดเจน"
   },
   "searchCollection": {
     "message": "Search collection"
@@ -349,7 +362,7 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "เพิ่มไฟล์แนบใหม่"
   },
   "deletedAttachment": {
     "message": "Deleted attachment"
@@ -364,34 +377,34 @@
     "message": "File"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "เลือกไฟล์"
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "ขนาดไฟล์สูงสุดคือ 100 MB"
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "คุณไม่สามารถใช้คุณลักษณะนี้ได้จนกว่าคุณปรับปรุงคีย์การเข้ารหัสลับของคุณ"
   },
   "options": {
-    "message": "Options"
+    "message": "ตัวเลือก"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "แก้​ไข​โฟลเดอร์แล้ว"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "เพิ่มโฟลเดอร์แล้ว"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "คุณแน่ใจหรือว่าคุณต้องการลบโฟลเดอร์นี้?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "ลบโฟลเดอร์แล้ว"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "ลงชื่อเข้าใช้หรือสร้างบัญชีใหม่เพื่อเข้าสู่ห้องนิรภัยที่ปลอดภัยของคุณ"
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "สร้างบัญชี"
   },
   "logIn": {
     "message": "Log In"
@@ -493,7 +506,7 @@
     "message": "Send verification code email again"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "ใช้วิธีลงชื่อเข้าใช้แบบสองขั้นตอนวิธีอื่น"
   },
   "insertYubiKey": {
     "message": "Insert your YubiKey into your computer's USB port, then touch its button."
@@ -531,13 +544,13 @@
     "message": "FIDO U2F Security Key"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "อีเมล"
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "เข้าสู่ระบบไม่พร้อมใช้งาน"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
@@ -579,19 +592,19 @@
     "message": "The environment URLs have been saved."
   },
   "ok": {
-    "message": "Ok"
+    "message": "ตกลง"
   },
   "yes": {
-    "message": "Yes"
+    "message": "ใช่"
   },
   "no": {
-    "message": "No"
+    "message": "ไม่ใช่"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "เขียนทับรหัสผ่าน"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "เรียนรู้เพิ่มเติม"
   },
   "featureUnavailable": {
     "message": "Feature Unavailable"
@@ -907,9 +920,6 @@
   "reload": {
     "message": "Reload"
   },
-  "forceReload": {
-    "message": "Force Reload"
-  },
   "toggleDevTools": {
     "message": "Toggle Developer Tools"
   },
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Window"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
