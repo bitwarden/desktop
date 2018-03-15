@@ -50,6 +50,18 @@
   "uri": {
     "message": "URL"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
+  },
   "username": {
     "message": "Kasutajanimi"
   },
@@ -172,7 +184,8 @@
     "message": "Detsember"
   },
   "ex": {
-    "message": "nt."
+    "message": "nt.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Pealkiri"
@@ -766,7 +779,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Taaskäivita värskenduse rakendamiseks"
+    "message": "Vajalik on rakenduse taaskäivitamine"
   },
   "restartToUpdateDesc": {
     "message": "Versioon $VERSION_NUM$ on paigaldamiseks valmis. Pead paigaldamise lõpetamiseks Bitwardeni taaskäivitama. Soovid seda kohe teha?",
@@ -893,7 +906,7 @@
     "message": "Vali kõik"
   },
   "zoomIn": {
-    "message": "Suurenda"
+    "message": "Suumi sisse"
   },
   "zoomOut": {
     "message": "Suumi välja"
@@ -906,9 +919,6 @@
   },
   "reload": {
     "message": "Lae uuesti"
-  },
-  "forceReload": {
-    "message": "Jõusta uuesti laadimine"
   },
   "toggleDevTools": {
     "message": "Lülita Arendaja tööriistad sisse"
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Aken"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
