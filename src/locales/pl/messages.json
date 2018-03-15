@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Wszystkie elementy"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Nazwa użytkownika"
@@ -100,7 +112,7 @@
     "message": "Kod zabezpieczający"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Nazwa profilu"
   },
   "company": {
     "message": "Firma"
@@ -172,7 +184,8 @@
     "message": "Grudzień"
   },
   "ex": {
-    "message": "np."
+    "message": "np.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Tytuł"
@@ -202,7 +215,7 @@
     "message": "Inne"
   },
   "generatePassword": {
-    "message": "Wygeneruj Hasło"
+    "message": "Wygeneruj hasło"
   },
   "type": {
     "message": "Typ"
@@ -376,7 +389,7 @@
     "message": "Opcje"
   },
   "editedFolder": {
-    "message": "Edyowany Folder"
+    "message": "Edytowany Folder"
   },
   "addedFolder": {
     "message": "Dodany folder"
@@ -400,7 +413,7 @@
     "message": "Wyślij"
   },
   "masterPass": {
-    "message": "Hasło Główne"
+    "message": "Hasło główne"
   },
   "masterPassDesc": {
     "message": "Hasło główne to hasło, którego używasz, aby uzyskać dostęp do Twojego sejfu. Bardzo ważne jest, abyś pamiętał swoje hasło główne. Jeśli je zapomnisz, nie będzie możliwości, aby je odzyskać."
@@ -409,7 +422,7 @@
     "message": "Wskazówka dotycząca hasła głównego może pomóc Ci przypomnieć sobie hasło, jeśli je zapomnisz."
   },
   "reTypeMasterPass": {
-    "message": "Powtórz Hasło Główne"
+    "message": "Powtórz hasło główne"
   },
   "masterPassHint": {
     "message": "Podpowiedź do hasła głównego (opcjonalnie)"
@@ -552,7 +565,7 @@
     "message": "Samodzielnie hostowane środowisko"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Podaj podstawowy adres URL hostowanej przez Ciebie instalacji bitwarden."
+    "message": "Podaj podstawowy adres URL hostowanej przez Ciebie instalacji Bitwarden."
   },
   "customEnvironment": {
     "message": "Niestandardowe środowisko"
@@ -678,7 +691,7 @@
     "message": "Synchronizacja nie powiodła się"
   },
   "yourVaultIsLocked": {
-    "message": "Twój sejf jest zablokowany. Sprawdź swoje hasło główne, aby kontynuować."
+    "message": "Twój sejf jest zablokowany. Wprowadź swoje hasło główne, aby kontynuować."
   },
   "unlock": {
     "message": "Odblokuj"
@@ -852,7 +865,7 @@
     "message": "Jesteś członkiem premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Dziękujemy za wspieranie bitwarden."
+    "message": "Dziękujemy za wspieranie Bitwarden."
   },
   "premiumPrice": {
     "message": "Wszystko to jedynie za $PRICE$ \/rok!",
@@ -907,9 +920,6 @@
   "reload": {
     "message": "Przeładuj"
   },
-  "forceReload": {
-    "message": "Wymuś przeładowanie"
-  },
   "toggleDevTools": {
     "message": "Przełącz narzędzia dla deweloperów"
   },
@@ -943,7 +953,7 @@
     "message": "Zamknij Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "Skopiowano $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +963,52 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Pomoc"
   },
   "window": {
-    "message": "Window"
+    "message": "Okno"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
