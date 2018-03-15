@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Tutti gli Elementi"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Nome Utente"
@@ -172,7 +184,8 @@
     "message": "Dicembre"
   },
   "ex": {
-    "message": "es."
+    "message": "es.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Titolo"
@@ -400,19 +413,19 @@
     "message": "Invia"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Password Principale"
   },
   "masterPassDesc": {
-    "message": "La master password è quella che usi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
+    "message": "La password principale è quella che usi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
   },
   "masterPassHintDesc": {
-    "message": "Un suggerimento può aiutarti a ricordare la tua master password se la dimentichi."
+    "message": "Un suggerimento può aiutarti a ricordare la tua password principale se la dimentichi."
   },
   "reTypeMasterPass": {
-    "message": "Ri-digita la tua master password"
+    "message": "Ri-digita la tua password principale"
   },
   "masterPassHint": {
-    "message": "Suggerimento per la master password (facoltativo)"
+    "message": "Suggerimento per la password principale (facoltativo)"
   },
   "settings": {
     "message": "Impostazioni"
@@ -421,10 +434,10 @@
     "message": "Suggerimento Password"
   },
   "enterEmailToGetHint": {
-    "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della master password."
+    "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della password principale."
   },
   "getMasterPasswordHint": {
-    "message": "Ottieni il suggerimento per la master password"
+    "message": "Ottieni il suggerimento per la password principale"
   },
   "emailRequired": {
     "message": "L'indirizzo email è obbligatorio."
@@ -433,19 +446,19 @@
     "message": "L'indirizzo email non è valido."
   },
   "masterPassRequired": {
-    "message": "La master password è obbligatoria."
+    "message": "La password principale è obbligatoria."
   },
   "masterPassLength": {
-    "message": "La master password deve essere almeno di 8 caratteri."
+    "message": "La password principale deve essere almeno di 8 caratteri."
   },
   "masterPassDoesntMatch": {
-    "message": "La conferma della master password non corrisponde."
+    "message": "La conferma della password principale non corrisponde."
   },
   "newAccountCreated": {
     "message": "Il tuo account è stato creato! Ora puoi effettuare il login."
   },
   "masterPassSent": {
-    "message": "Ti abbiamo inviato un'email con il tuo indizio per la master password."
+    "message": "Ti abbiamo inviato un'email con il tuo indizio per la password principale."
   },
   "unexpectedError": {
     "message": "Si è verificato un errore imprevisto."
@@ -540,19 +553,19 @@
     "message": "Login non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "Questo account ha abilitato il login in due fasi, ma nessuno dei provider configurati è supportato da questo browser web."
+    "message": "Questo account ha abilitato il login a due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
   },
   "noTwoStepProviders2": {
     "message": "Si prega di aggiungere altri provider che sono meglio supportati su tutti i dispositivi (ad esempio, un'app di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Opzioni di login in due fasi"
+    "message": "Opzioni di login in due passaggi"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente Self-Hosted"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specifica l'URL principale della tua installazione bitwarden self-hosted."
+    "message": "Specifica l'URL principale della tua installazione Bitwarden self-hosted."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizzato"
@@ -852,7 +865,7 @@
     "message": "Sei un membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Grazie per il tuo supporto a bitwarden."
+    "message": "Grazie per il tuo supporto a Bitwarden."
   },
   "premiumPrice": {
     "message": "Il tutto per solo $PRICE$ all'anno!",
@@ -879,7 +892,7 @@
     "message": "Annulla"
   },
   "redo": {
-    "message": "Ripeti"
+    "message": "Rifare"
   },
   "cut": {
     "message": "Taglia",
@@ -906,9 +919,6 @@
   },
   "reload": {
     "message": "Ricarica"
-  },
-  "forceReload": {
-    "message": "Forza ricarica"
   },
   "toggleDevTools": {
     "message": "Attiva\/disattiva strumenti di sviluppo"
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Finestra"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

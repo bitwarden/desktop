@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Alle gjenstander"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Brukernavn"
@@ -100,7 +112,7 @@
     "message": "Sikkerhetskode"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Identitetsnavn"
   },
   "company": {
     "message": "Firma"
@@ -172,7 +184,8 @@
     "message": "Desember"
   },
   "ex": {
-    "message": "f․eks."
+    "message": "f․eks.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Tittel"
@@ -342,10 +355,10 @@
     "message": "Søk i mappe"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Søk i favoritter"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Søk i type",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -478,7 +491,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verifiserings-E-post er sendt til $EMAIL$.",
+    "message": "En verifiserings-E-post har blitt sendt til $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -540,7 +553,7 @@
     "message": "Innloggingen er utilgjengelig"
   },
   "noTwoStepProviders": {
-    "message": "Denne kontoen har aktiver 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne enheten."
+    "message": "Denne kontoen har aktivert 2-trinnsinnlogging, men ingen av de oppsatte 2-trinnsleverandørene er støttet av denne enheten."
   },
   "noTwoStepProviders2": {
     "message": "Vennligst legg til ytterligere leverandører som er støttet bedre mellom enheter (f․eks․ en autentiseringsapp)."
@@ -552,7 +565,7 @@
     "message": "Selvbetjent miljø"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Spesifiser grunn-nettadressen til din selvbetjente bitwarden-installasjon."
+    "message": "Spesifiser grunn-nettadressen til din selvbetjente Bitwarden-installasjon."
   },
   "customEnvironment": {
     "message": "Tilpasset miljø"
@@ -693,7 +706,7 @@
     "message": "2-trinnsinnlogging"
   },
   "lockOptions": {
-    "message": "Låsingsinnstillinger"
+    "message": "Låseinnstillinger"
   },
   "lockOptionsDesc": {
     "message": "Velg når hvelvet ditt skal låses. Et låst hvelv innebærer at du må skrive inn superpassordet ditt på nytt for å få tilgang til den igjen."
@@ -741,7 +754,7 @@
     "message": "Deaktiver analyser"
   },
   "gaDesc": {
-    "message": "Vi bruker analytikere for å bedre lære om hvordan programmet blir brukt, sånn at vi kan gjøre den bedre. All datainnsamling er fullstendig anonymt."
+    "message": "Vi bruker analyseverktøy for å bedre lære om hvordan programmet blir brukt, sånn at vi kan gjøre den bedre. All datainnsamling er fullstendig anonymt."
   },
   "disableFavicon": {
     "message": "Skru av nettstedsikoner"
@@ -852,7 +865,7 @@
     "message": "Du er et Premium-medlem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Takk for at du støtter bitwarden."
+    "message": "Takk for at du støtter Bitwarden."
   },
   "premiumPrice": {
     "message": "Alt dette for bare $PRICE$\/år!",
@@ -907,9 +920,6 @@
   "reload": {
     "message": "Oppfrisk"
   },
-  "forceReload": {
-    "message": "Fremtving oppfriskning"
-  },
   "toggleDevTools": {
     "message": "Skru av\/på utviklerverktøy"
   },
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Vindu"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

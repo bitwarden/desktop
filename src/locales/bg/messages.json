@@ -1,54 +1,54 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
-    "message": "Semua Item"
+    "message": "Всички елементи"
   },
   "favorites": {
-    "message": "Favorit"
+    "message": "Любими"
   },
   "types": {
-    "message": "Tipe"
+    "message": "Types"
   },
   "typeLogin": {
-    "message": "Masuk"
+    "message": "Login"
   },
   "typeCard": {
-    "message": "Kartu"
+    "message": "Card"
   },
   "typeIdentity": {
-    "message": "Identitas"
+    "message": "Самоличност"
   },
   "typeSecureNote": {
-    "message": "Catatan yang aman"
+    "message": "Secure Note"
   },
   "folders": {
-    "message": "Folder"
+    "message": "Папки"
   },
   "collections": {
-    "message": "Koleksi"
+    "message": "Колекции"
   },
   "searchVault": {
-    "message": "Cari brankas"
+    "message": "Търсене в трезора"
   },
   "addItem": {
-    "message": "Tambah Item"
+    "message": "Добавяне на елемент"
   },
   "shared": {
-    "message": "Dibagikan"
+    "message": "Споделено"
   },
   "attachments": {
-    "message": "Lampiran"
+    "message": "Прикачени файлове"
   },
   "viewItem": {
-    "message": "Lihat Item"
+    "message": "Преглед на елемента"
   },
   "name": {
-    "message": "Nama"
+    "message": "Наименование"
   },
   "uri": {
-    "message": "URI"
+    "message": "Адрес"
   },
   "uriPosition": {
     "message": "URI $POSITION$",
@@ -63,426 +63,426 @@
     "message": "New URI"
   },
   "username": {
-    "message": "Nama Pengguna"
+    "message": "Потребителско име"
   },
   "password": {
-    "message": "Kata Sandi"
+    "message": "Парола"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Редактиране на елемента"
   },
   "emailAddress": {
-    "message": "Alamat Email"
+    "message": "Електронна поща"
   },
   "verificationCodeTotp": {
-    "message": "Kode Verifikasi (TOTP)"
+    "message": "Verification Code (TOTP)"
   },
   "website": {
-    "message": "Situs Web"
+    "message": "Сайт"
   },
   "notes": {
-    "message": "Catatan"
+    "message": "Бележки"
   },
   "customFields": {
-    "message": "Kolom Ubahsuai"
+    "message": "Допълнителни полета"
   },
   "launch": {
-    "message": "Meluncurkan"
+    "message": "Пускане"
   },
   "copyValue": {
-    "message": "Salin Nilai",
+    "message": "Копиране на стойността",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
   },
   "cardholderName": {
-    "message": "Nama Pemilik Kartu"
+    "message": "Cardholder Name"
   },
   "number": {
-    "message": "Nomor"
+    "message": "Номер"
   },
   "brand": {
-    "message": "Merek"
+    "message": "Марка"
   },
   "expiration": {
-    "message": "Masa Berlaku"
+    "message": "Изтичане"
   },
   "securityCode": {
-    "message": "Kode Keamanan"
+    "message": "Код за сигурност"
   },
   "identityName": {
-    "message": "Nama Identitas"
+    "message": "Identity Name"
   },
   "company": {
-    "message": "Perusahaan"
+    "message": "Фирма"
   },
   "ssn": {
-    "message": "Nomor Jaminan Sosial"
+    "message": "Social Security Number"
   },
   "passportNumber": {
-    "message": "Nomor Paspor"
+    "message": "Passport Number"
   },
   "licenseNumber": {
-    "message": "Nomor Lisensi"
+    "message": "License Number"
   },
   "email": {
-    "message": "Email"
+    "message": "Електронна поща"
   },
   "phone": {
-    "message": "Telepon"
+    "message": "Телефон"
   },
   "address": {
-    "message": "Alamat"
+    "message": "Адрес"
   },
   "premiumRequired": {
-    "message": "Memerlukan Keanggotaan Premium"
+    "message": "Premium Required"
   },
   "premiumRequiredDesc": {
-    "message": "Keanggotaan premium diperlukan untuk menggunakan fitur ini."
+    "message": "A premium membership is required to use this feature."
   },
   "errorOccurred": {
-    "message": "Terjadi kesalahan."
+    "message": "Възникна грешка."
   },
   "error": {
-    "message": "Galat"
+    "message": "Грешка"
   },
   "january": {
-    "message": "Januari"
+    "message": "Януари"
   },
   "february": {
-    "message": "Februari"
+    "message": "Февруари"
   },
   "march": {
-    "message": "Maret"
+    "message": "Март"
   },
   "april": {
-    "message": "April"
+    "message": "Април"
   },
   "may": {
-    "message": "Mei"
+    "message": "Май"
   },
   "june": {
-    "message": "Juni"
+    "message": "Юни"
   },
   "july": {
-    "message": "Juli"
+    "message": "Юли"
   },
   "august": {
-    "message": "Agustus"
+    "message": "Август"
   },
   "september": {
-    "message": "September"
+    "message": "Септември"
   },
   "october": {
-    "message": "Oktober"
+    "message": "Октомври"
   },
   "november": {
-    "message": "November"
+    "message": "Ноември"
   },
   "december": {
-    "message": "Desember"
+    "message": "Декември"
   },
   "ex": {
-    "message": "contoh",
+    "message": "ex.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Panggilan"
+    "message": "Обръщение"
   },
   "mr": {
-    "message": "Tuan"
+    "message": "Г-н"
   },
   "mrs": {
-    "message": "Nyonya"
+    "message": "Г-жа"
   },
   "ms": {
-    "message": "Nona"
+    "message": "Г-ца"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Д-р"
   },
   "expirationMonth": {
-    "message": "Bulan Kedaluwarsa"
+    "message": "Месец на изтичане"
   },
   "expirationYear": {
-    "message": "Tahun Kedaluwarsa"
+    "message": "Година на изтичане"
   },
   "select": {
-    "message": "Pilih"
+    "message": "Избор"
   },
   "other": {
-    "message": "Lainnya"
+    "message": "Други"
   },
   "generatePassword": {
-    "message": "Buat Kata Sandi"
+    "message": "Генериране на парола"
   },
   "type": {
-    "message": "Tipe"
+    "message": "Вид"
   },
   "firstName": {
-    "message": "Nama Depan"
+    "message": "Собствено име"
   },
   "middleName": {
-    "message": "Nama Tengah"
+    "message": "Презиме"
   },
   "lastName": {
-    "message": "Nama Belakang"
+    "message": "Фамилно име"
   },
   "address1": {
-    "message": "Alamat 1"
+    "message": "Адрес 1"
   },
   "address2": {
-    "message": "Alamat 2"
+    "message": "Адрес 2"
   },
   "address3": {
-    "message": "Alamat 3"
+    "message": "Адрес 3"
   },
   "cityTown": {
-    "message": "Kota \/ Kabupaten"
+    "message": "Град \/ село"
   },
   "stateProvince": {
-    "message": "Negara Bagian \/ Provinsi"
+    "message": "Област"
   },
   "zipPostalCode": {
-    "message": "Kode Pos"
+    "message": "Пощенски код"
   },
   "country": {
-    "message": "Negara"
+    "message": "Държава"
   },
   "save": {
-    "message": "Simpan"
+    "message": "Запазване"
   },
   "cancel": {
-    "message": "Batal"
+    "message": "Отказ"
   },
   "delete": {
-    "message": "Hapus"
+    "message": "Изтриване"
   },
   "favorite": {
-    "message": "Favorit"
+    "message": "Favorite"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Редактиране"
   },
   "authenticatorKeyTotp": {
-    "message": "Kunci Autentikasi (TOTP)"
+    "message": "Authenticator Key (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Папка"
   },
   "newCustomField": {
-    "message": "Kolom Ubahsuai Baru"
+    "message": "Ново потребителско поле"
   },
   "value": {
-    "message": "Nilai"
+    "message": "Стойност"
   },
   "cfTypeText": {
-    "message": "Teks"
+    "message": "Текст"
   },
   "cfTypeHidden": {
-    "message": "Tersembunyi"
+    "message": "Hidden"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "remove": {
-    "message": "Hapus"
+    "message": "Премахване"
   },
   "nameRequired": {
-    "message": "Nama diperlukan."
+    "message": "Името е задължително."
   },
   "addedItem": {
-    "message": "Item yang Ditambahkan"
+    "message": "Added item"
   },
   "editedItem": {
-    "message": "Item yang Diedit"
+    "message": "Edited item"
   },
   "deleteItem": {
-    "message": "Hapus Item"
+    "message": "Изтриване на елемента"
   },
   "deleteFolder": {
-    "message": "Hapus Folder"
+    "message": "Изтриване на папка"
   },
   "deleteAttachment": {
-    "message": "Hapus Lampiran"
+    "message": "Delete Attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Anda yakin Anda ingin menghapus item ini?"
+    "message": "Сигурни ли сте, че искате да изтриете елемента?"
   },
   "deletedItem": {
-    "message": "Item yang Dihapus"
+    "message": "Deleted item"
   },
   "overwritePasswordConfirmation": {
-    "message": "Anda yakin ingin menimpa sandi saat ini?"
+    "message": "Сигурни ли сте, че искате да презапишете текущата парола?"
   },
   "noneFolder": {
-    "message": "Tidak Ada Folder",
+    "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Tambah Folder"
+    "message": "Добавяне на папка"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Редактиране на папка"
   },
   "regeneratePassword": {
-    "message": "Buat Ulang Sandi"
+    "message": "Прегенериране на паролата"
   },
   "copyPassword": {
-    "message": "Salin Kata Sandi"
+    "message": "Копиране на паролата"
   },
   "length": {
-    "message": "Panjang"
+    "message": "Дължина"
   },
   "close": {
-    "message": "Tutup"
+    "message": "Затваряне"
   },
   "minNumbers": {
-    "message": "Angka Minimum"
+    "message": "Минимален брой цифри"
   },
   "minSpecial": {
-    "message": "Karakter Khusus Minimum",
+    "message": "Минимален брой специални знаци",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Hindari Karakter Ambigu"
+    "message": "Avoid Ambiguous Characters"
   },
   "searchCollection": {
-    "message": "Cari koleksi"
+    "message": "Търсене в колекцията"
   },
   "searchFolder": {
-    "message": "Cari folder"
+    "message": "Търсене в папката"
   },
   "searchFavorites": {
-    "message": "Cari favorit"
+    "message": "Търси в любими"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Search Type",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Tambah Lampiran Baru"
+    "message": "Add New Attachment"
   },
   "deletedAttachment": {
-    "message": "Lampiran dihapus"
+    "message": "Deleted attachment"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Anda yakin ingin menghapus lampiran ini?"
+    "message": "Are you sure you want to delete this attachment?"
   },
   "attachmentSaved": {
-    "message": "Lampiran telah disimpan."
+    "message": "The attachment has been saved."
   },
   "file": {
-    "message": "Berkas"
+    "message": "Файл"
   },
   "selectFile": {
-    "message": "Pilih berkas."
+    "message": "Изберете файл."
   },
   "maxFileSize": {
-    "message": "Ukuran berkas maksimal adalah 100 MB."
+    "message": "Максималният размер на файловете е 100 МБ."
   },
   "updateKey": {
-    "message": "Anda tidak dapat menggunakan fitur ini sampai Anda memperbarui kunci enkripsi Anda."
+    "message": "You cannot use this feature until you update your encryption key."
   },
   "options": {
-    "message": "Pilihan"
+    "message": "Настройки"
   },
   "editedFolder": {
-    "message": "Folder yang di Edit"
+    "message": "Edited folder"
   },
   "addedFolder": {
     "message": "Added folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Anda yakin Anda ingin menghapus folder ini?"
+    "message": "Сигурни ли сте, че искате да изтриете тази папка?"
   },
   "deletedFolder": {
     "message": "Deleted folder"
   },
   "loginOrCreateNewAccount": {
-    "message": "Masuk atau buat akun baru untuk mengakses brankas Anda."
+    "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Buat Akun"
+    "message": "Създаване на сметка"
   },
   "logIn": {
-    "message": "Masuk"
+    "message": "Вписване"
   },
   "submit": {
-    "message": "Kirim"
+    "message": "Подаване"
   },
   "masterPass": {
-    "message": "Sandi Utama"
+    "message": "Главна парола"
   },
   "masterPassDesc": {
-    "message": "Kata sandi utama adalah kata sandi yang Anda gunakan untuk mengakses brankas Anda. Sangat penting bahwa Anda tidak lupa kata sandi utama Anda. Tidak ada cara untuk memulihkan kata sandi jika Anda melupakannya."
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc": {
-    "message": "Petunjuk kata sandi utama dapat membantu Anda mengingat kata sandi Anda jika Anda melupakannya."
+    "message": "A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass": {
-    "message": "Ketik Ulang Sandi Utama"
+    "message": "Повторно въвеждане на главната парола"
   },
   "masterPassHint": {
-    "message": "Petunjuk Kata Sandi Utama (pilihan)"
+    "message": "Master Password Hint (optional)"
   },
   "settings": {
-    "message": "Setelan"
+    "message": "Настройки"
   },
   "passwordHint": {
-    "message": "Petunjuk Sandi"
+    "message": "Подсказка за паролата"
   },
   "enterEmailToGetHint": {
-    "message": "Masukkan email akun Anda untuk menerima pentunjuk sandi utama Anda."
+    "message": "Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint": {
-    "message": "Dapatkan petunjuk sandi utama"
+    "message": "Get master password hint"
   },
   "emailRequired": {
-    "message": "Alamat email diperlukan."
+    "message": "Електронната поща е задължителна."
   },
   "invalidEmail": {
-    "message": "Alamat email tidak valid."
+    "message": "Недействителна електронна поща."
   },
   "masterPassRequired": {
-    "message": "Sandi utama diperlukan."
+    "message": "Главната парола е задължителна."
   },
   "masterPassLength": {
-    "message": "Kata sandi utama sedikitnya harus 8 karakter."
+    "message": "Главната парола трябва да съдържа поне 8 знака."
   },
   "masterPassDoesntMatch": {
-    "message": "Konfirmasi sandi utama tidak cocok."
+    "message": "Паролата и потвърждението на главната парола не съвпадат."
   },
   "newAccountCreated": {
-    "message": "Akun baru Anda telah dibuat! Sekarang Anda bisa masuk."
+    "message": "Your new account has been created! You may now log in."
   },
   "masterPassSent": {
-    "message": "Kami telah mengirimi Anda email dengan petunjuk sandi utama Anda."
+    "message": "We've sent you an email with your master password hint."
   },
   "unexpectedError": {
-    "message": "Terjadi kesalahan yang tak diduga."
+    "message": "An unexpected error has occurred."
   },
   "itemInformation": {
-    "message": "Informasi Item"
+    "message": "Сведения за елемента"
   },
   "noItemsInList": {
-    "message": "Tidak ada item yang dapat dicantumkan."
+    "message": "There are no items to list."
   },
   "verificationCode": {
-    "message": "Kode Verifikasi"
+    "message": "Код за потвърждаване"
   },
   "verificationCodeRequired": {
-    "message": "Kode verifikasi diperlukan."
+    "message": "Verification code is required."
   },
   "continue": {
-    "message": "Lanjutkan"
+    "message": "Продължаване"
   },
   "enterVerificationCodeApp": {
-    "message": "Masukkan 6 digit kode verifikasi dari aplikasi autentikasi Anda."
+    "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Masukkan 6 digit kode verifikasi yang dikirim melalui email ke $EMAIL$.",
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -491,7 +491,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Email verifikasi dikirim ke $EMAIL$.",
+    "message": "Verification email sent to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -500,72 +500,72 @@
     }
   },
   "rememberMe": {
-    "message": "Ingat saya"
+    "message": "Remember me"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Kirim ulang email kode verifikasi"
+    "message": "Send verification code email again"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Gunakan metode masuk dua langkah lainnya"
+    "message": "Use another two-step login method"
   },
   "insertYubiKey": {
-    "message": "Masukkan YubiKey Anda ke port USB komputer Anda, lalu sentuh tombol nya."
+    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
   },
   "insertU2f": {
-    "message": "Masukkan kunci keamanan ke port USB komputer Anda. Jika ada tombolnya, tekanlah."
+    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "recoveryCodeDesc": {
-    "message": "Kehilangan akses ke semua penyedia dua faktor Anda? Gunakan kode pemulihan untuk menonaktifkan semua penyedia dua faktor dari akun Anda."
+    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle": {
-    "message": "Kode Pemulihan"
+    "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Aplikasi Autentikasi"
+    "message": "Authenticator App"
   },
   "authenticatorAppDesc": {
-    "message": "Gunakan aplikasi autentikasi (seperti Authy atau Google Authenticator) untuk menghasilkan kode verifikasi berbasis waktu.",
+    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "Kunci Keamanan OTP YubiKey"
+    "message": "YubiKey OTP Security Key"
   },
   "yubiKeyDesc": {
-    "message": "Gunakan YubiKey untuk mengakses akun Anda. Bekerja dengan YubiKey 4, 4 Nano, 4C, dan peranti NEO."
+    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
   },
   "duoDesc": {
-    "message": "Verifikasi dengan Duo Security menggunakan aplikasi Duo Mobile, SMS, panggilan telepon, atau kunci keamanan U2F.",
+    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Menggunakan FIDO U2F mengaktifkan kunci keamanan untuk mengakses akun anda."
+    "message": "Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle": {
-    "message": "Kunci Keamanan FIDO U2F"
+    "message": "FIDO U2F Security Key"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "Електронна поща"
   },
   "emailDesc": {
-    "message": "Kode verifikasi akan dikirim via email kepada Anda."
+    "message": "Verification codes will be emailed to you."
   },
   "loginUnavailable": {
-    "message": "Info Masuk Tidak Tersedia"
+    "message": "Login Unavailable"
   },
   "noTwoStepProviders": {
-    "message": "Akun ini mengaktifkan info masuk dua langkah, namun, tidak satupun dari penyedia dua langkah yang dikonfigurasi didukung oleh perangkat ini."
+    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
   },
   "noTwoStepProviders2": {
-    "message": "Silahkan tambahkan penyedia tambahan yang baik didukung di perangkat (seperti aplikasi authenticator)."
+    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Pilihan Info Masuk Dua Langkah"
+    "message": "Two-step Login Options"
   },
   "selfHostedEnvironment": {
     "message": "Self-hosted Environment"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
   },
   "customEnvironment": {
     "message": "Custom Environment"
@@ -574,40 +574,40 @@
     "message": "For advanced users. You can specify the base URL of each service independently."
   },
   "baseUrl": {
-    "message": "URL Server"
+    "message": "Server URL"
   },
   "apiUrl": {
-    "message": "URL Server API"
+    "message": "API Server URL"
   },
   "webVaultUrl": {
-    "message": "URL Server Brankas Web"
+    "message": "Web Vault Server URL"
   },
   "identityUrl": {
-    "message": "URL Server Identitas"
+    "message": "Identity Server URL"
   },
   "iconsUrl": {
-    "message": "URL Server Ikon"
+    "message": "Icons Server URL"
   },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
   },
   "ok": {
-    "message": "Oke"
+    "message": "Добре"
   },
   "yes": {
-    "message": "Ya"
+    "message": "Да"
   },
   "no": {
-    "message": "Tidak"
+    "message": "Не"
   },
   "overwritePassword": {
-    "message": "Timpa Sandi"
+    "message": "Overwrite Password"
   },
   "learnMore": {
-    "message": "Pelajari lebih lanjut"
+    "message": "Learn more"
   },
   "featureUnavailable": {
-    "message": "Fitur Tidak Tersedia"
+    "message": "Feature Unavailable"
   },
   "loggedOut": {
     "message": "Logged out"
@@ -619,7 +619,7 @@
     "message": "Are you sure you want to log out?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Отписване"
   },
   "addNewLogin": {
     "message": "Add New Login"
@@ -631,46 +631,46 @@
     "message": "Add New Folder"
   },
   "view": {
-    "message": "View"
+    "message": "Преглед"
   },
   "account": {
-    "message": "Account"
+    "message": "Сметка"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Зареждане..."
   },
   "lockNow": {
     "message": "Lock Now"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Генератор на пароли"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Пишете ни"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Посетете нашия сайт"
   },
   "fileBugReport": {
     "message": "File a Bug Report"
   },
   "blog": {
-    "message": "Blog"
+    "message": "Блог"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Следвайте ни"
   },
   "syncVault": {
     "message": "Sync Vault"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Промяна на главната парола"
   },
   "changeMasterPasswordConfirmation": {
     "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Промяна на електронната поща"
   },
   "changeEmailConfirmation": {
     "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
@@ -694,10 +694,10 @@
     "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Отключване"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Недействителна главна парола"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
@@ -712,25 +712,25 @@
     "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Незабавно"
   },
   "oneMinute": {
-    "message": "1 menit"
+    "message": "1 минута"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 минути"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 минути"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 минути"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 час"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 часа"
   },
   "onIdle": {
     "message": "On System Idle"
@@ -739,16 +739,16 @@
     "message": "On System Sleep"
   },
   "onLocked": {
-    "message": "Sistem kunci"
+    "message": "On System Lock"
   },
   "onRestart": {
-    "message": "Pada Mulai Ulang"
+    "message": "On Restart"
   },
   "never": {
-    "message": "Tidak pernah"
+    "message": "Никога"
   },
   "security": {
-    "message": "Keamanan"
+    "message": "Сигурност"
   },
   "disableGa": {
     "message": "Disable Analytics"
@@ -763,11 +763,11 @@
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "copy": {
-    "message": "Copy",
+    "message": "Копиране",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Проверка за обновления"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -791,35 +791,35 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Има налично обновление"
   },
   "updateAvailableDesc": {
     "message": "An update was found. Do you want to download it now?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Повторно пускане"
   },
   "later": {
-    "message": "Later"
+    "message": "По-късно"
   },
   "noUpdatesAvailable": {
     "message": "No updates are currently available. You are using the latest version."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Грешка при обновяване"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Неизвестно"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Копиране на потребителското име"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Копиране на номера",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Копиране на кода да сигурност",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
@@ -862,10 +862,10 @@
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "Anda adalah anggota premium!"
+    "message": "You are a premium member!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
     "message": "All for just $PRICE$ \/year!",
@@ -883,33 +883,33 @@
     "message": "Password History"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Изчистване"
   },
   "noPasswordsInList": {
     "message": "There are no passwords to list."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Отмяна"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Връщане"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Изрязване",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Поставяне",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Избиране на всичко"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Приближаване"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Отдалечаване"
   },
   "resetZoom": {
     "message": "Reset Zoom"
@@ -918,17 +918,17 @@
     "message": "Toggle Full Screen"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Презареждане"
   },
   "toggleDevTools": {
     "message": "Toggle Developer Tools"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Смаляване",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Мащаб"
   },
   "bringAllToFront": {
     "message": "Bring All to Front",
@@ -938,7 +938,7 @@
     "message": "About Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Услуги"
   },
   "hideBitwarden": {
     "message": "Hide Bitwarden"
@@ -947,7 +947,7 @@
     "message": "Hide Others"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Показване на всички"
   },
   "quitBitwarden": {
     "message": "Quit Bitwarden"
@@ -963,10 +963,10 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Помощ"
   },
   "window": {
-    "message": "Window"
+    "message": "Прозорец"
   },
   "checkPassword": {
     "message": "Check if password has been exposed."

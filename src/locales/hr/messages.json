@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Sve stavke"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URL"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Korisničko ime"
@@ -172,7 +184,8 @@
     "message": "Prosinac"
   },
   "ex": {
-    "message": "npr."
+    "message": "npr.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Titula"
@@ -552,7 +565,7 @@
     "message": "Vlastito hosting okruženje"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Navedite osnovni URL Vaše lokalno hostirane bitwarden instalacije."
+    "message": "Navedite osnovni URL Vaše lokalno hostirane Bitwarden instalacije."
   },
   "customEnvironment": {
     "message": "Prilagođeno okruženje"
@@ -852,7 +865,7 @@
     "message": "Vi ste premium član!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Hvala Vam što podupirete bitwarden."
+    "message": "Hvala Vam što podupirete Bitwarden."
   },
   "premiumPrice": {
     "message": "Sve samo za $PRICE$ \/godišnje!",
@@ -876,74 +889,71 @@
     "message": "Nema lozinki na popisu."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Poništi"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Vrati"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Izreži",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Zalijepi",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Odaberi sve"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Povećaj"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Smanji"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Poništi zumiranje"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Uključi\/isključi prikaz preko cijelog zaslona"
   },
   "reload": {
-    "message": "Reload"
-  },
-  "forceReload": {
-    "message": "Force Reload"
+    "message": "Ponovno učitaj"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Uključivanje\/isključivanje razvojnih alata"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Smanji prozor",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Povećaj"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Prikaži sve u prvom planu",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "O Bitwardenu"
   },
   "services": {
-    "message": "Services"
+    "message": "Usluge"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Sakrij Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Sakrij Ostale"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Prikaži sve"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Izađi iz Bitwardena"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ kopirana",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +963,52 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Pomoć"
   },
   "window": {
-    "message": "Window"
+    "message": "Prozor"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

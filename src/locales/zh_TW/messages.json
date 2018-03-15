@@ -50,6 +50,18 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
+  },
   "username": {
     "message": "使用者名稱"
   },
@@ -172,7 +184,8 @@
     "message": "十二月"
   },
   "ex": {
-    "message": "例如"
+    "message": "例如",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "稱呼"
@@ -907,9 +920,6 @@
   "reload": {
     "message": "重新載入"
   },
-  "forceReload": {
-    "message": "強制重新載入"
-  },
   "toggleDevTools": {
     "message": "切換開發人員工具"
   },
@@ -943,7 +953,7 @@
     "message": "結束 Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ 已複製",
+    "message": "已複製 $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "視窗"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

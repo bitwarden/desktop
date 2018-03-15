@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Todos los elementos"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Usuario"
@@ -172,7 +184,8 @@
     "message": "Diciembre"
   },
   "ex": {
-    "message": "ej."
+    "message": "ej.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Título"
@@ -552,7 +565,7 @@
     "message": "Entorno de alojamiento propio"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifica la URL base de tu instalación de bitwarden de alojamiento propio."
+    "message": "Especifica la URL base de tu instalación de Bitwarden de alojamiento propio."
   },
   "customEnvironment": {
     "message": "Entorno personalizado"
@@ -852,7 +865,7 @@
     "message": "¡Eres un miembro Premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Gracias por apoyar el desarrollo de bitwarden."
+    "message": "Gracias por apoyar el desarrollo de Bitwarden."
   },
   "premiumPrice": {
     "message": "¡Todo por sólo $PRICE$\/año!",
@@ -907,9 +920,6 @@
   "reload": {
     "message": "Recargar"
   },
-  "forceReload": {
-    "message": "Forzar recarga"
-  },
   "toggleDevTools": {
     "message": "Herramientas de desarrollo"
   },
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Ventana"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

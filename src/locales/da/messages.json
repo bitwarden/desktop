@@ -30,7 +30,7 @@
     "message": "Samlinger"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Søg i boks"
   },
   "addItem": {
     "message": "Tilføj element"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Brugernavn"
@@ -100,7 +112,7 @@
     "message": "Sikkerhedskode"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Identitetsbenævnelse"
   },
   "company": {
     "message": "Firma"
@@ -172,7 +184,8 @@
     "message": "December"
   },
   "ex": {
-    "message": "eks."
+    "message": "eks.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Titel"
@@ -907,9 +920,6 @@
   "reload": {
     "message": "Genindlæs"
   },
-  "forceReload": {
-    "message": "Tving genindlæsning"
-  },
   "toggleDevTools": {
     "message": "Udviklingsværktøjer til\/fra"
   },
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Vindue"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
