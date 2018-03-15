@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Все элементы"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Имя пользователя"
@@ -172,7 +184,8 @@
     "message": "Декабрь"
   },
   "ex": {
-    "message": "напр."
+    "message": "напр.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Обращение"
@@ -552,7 +565,7 @@
     "message": "Среда собственного хостинга"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Укажите URL-адрес bitwarden на вашем сервере."
+    "message": "Укажите URL-адрес Bitwarden на вашем сервере."
   },
   "customEnvironment": {
     "message": "Настройка среды"
@@ -741,7 +754,7 @@
     "message": "Отключить аналитику"
   },
   "gaDesc": {
-    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собранные данные полностью анонимны."
+    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собираемые данные полностью анонимны."
   },
   "disableFavicon": {
     "message": "Отключить значки веб-сайтов"
@@ -852,7 +865,7 @@
     "message": "У вас премиум-статус!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Благодарим вас за поддержку bitwarden."
+    "message": "Благодарим вас за поддержку Bitwarden."
   },
   "premiumPrice": {
     "message": "Всего лишь $PRICE$ \/в год!",
@@ -907,9 +920,6 @@
   "reload": {
     "message": "Перезагрузка"
   },
-  "forceReload": {
-    "message": "Принудительная перезагрузка"
-  },
   "toggleDevTools": {
     "message": "Переключение инструментов разработчика"
   },
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Окно"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
