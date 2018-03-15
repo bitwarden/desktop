@@ -1,0 +1,1014 @@
+{
+  "bitwarden": {
+    "message": "بیت واردن"
+  },
+  "allItems": {
+    "message": "تمام موارد"
+  },
+  "favorites": {
+    "message": "مورد علاقه"
+  },
+  "types": {
+    "message": "انواع"
+  },
+  "typeLogin": {
+    "message": "ورود"
+  },
+  "typeCard": {
+    "message": "کارت"
+  },
+  "typeIdentity": {
+    "message": "مشخصات"
+  },
+  "typeSecureNote": {
+    "message": "یادداشت امن"
+  },
+  "folders": {
+    "message": "پوشه ها"
+  },
+  "collections": {
+    "message": "مجموعه ها"
+  },
+  "searchVault": {
+    "message": "جستجوی گاوصندوق"
+  },
+  "addItem": {
+    "message": "افزودن مورد"
+  },
+  "shared": {
+    "message": "اشتراک گذاری شد"
+  },
+  "attachments": {
+    "message": "پیوست ها"
+  },
+  "viewItem": {
+    "message": "مشاهده مورد"
+  },
+  "name": {
+    "message": "نام"
+  },
+  "uri": {
+    "message": "نشانی اینترنتی"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
+  },
+  "username": {
+    "message": "نام کاربری"
+  },
+  "password": {
+    "message": "کلمه عبور"
+  },
+  "editItem": {
+    "message": "ویرایش مورد"
+  },
+  "emailAddress": {
+    "message": "آدرس پست الکترونیک"
+  },
+  "verificationCodeTotp": {
+    "message": "کد تایید (TOTP)"
+  },
+  "website": {
+    "message": "وب سایت"
+  },
+  "notes": {
+    "message": "یادداشت ها"
+  },
+  "customFields": {
+    "message": "فیلدهای سفارشی"
+  },
+  "launch": {
+    "message": "راه اندازی"
+  },
+  "copyValue": {
+    "message": "کپی مقدار",
+    "description": "Copy value to clipboard"
+  },
+  "toggleVisibility": {
+    "message": "تغییر قابلیت نمایش"
+  },
+  "cardholderName": {
+    "message": "نام صاحب کارت"
+  },
+  "number": {
+    "message": "شماره"
+  },
+  "brand": {
+    "message": "نام تجاری"
+  },
+  "expiration": {
+    "message": "انقضاء"
+  },
+  "securityCode": {
+    "message": "کد امنیتی"
+  },
+  "identityName": {
+    "message": "نام شناسایی"
+  },
+  "company": {
+    "message": "شرکت"
+  },
+  "ssn": {
+    "message": "شماره امنیتی اجتماعی"
+  },
+  "passportNumber": {
+    "message": "شماره پاسپورت"
+  },
+  "licenseNumber": {
+    "message": "شماره مجوز"
+  },
+  "email": {
+    "message": "ایمیل"
+  },
+  "phone": {
+    "message": "تلفن"
+  },
+  "address": {
+    "message": "آدرس"
+  },
+  "premiumRequired": {
+    "message": "در نسخه پرمیوم کار میکند"
+  },
+  "premiumRequiredDesc": {
+    "message": "برای استفاده از این ویژگی عضویت پرمیوم لازم است."
+  },
+  "errorOccurred": {
+    "message": "خطایی رخ داده است."
+  },
+  "error": {
+    "message": "خطا"
+  },
+  "january": {
+    "message": "ژانویه"
+  },
+  "february": {
+    "message": "فوریه"
+  },
+  "march": {
+    "message": "مارس"
+  },
+  "april": {
+    "message": "آوریل"
+  },
+  "may": {
+    "message": "مِی"
+  },
+  "june": {
+    "message": "ژوئن"
+  },
+  "july": {
+    "message": "جولای"
+  },
+  "august": {
+    "message": "آگوست‌"
+  },
+  "september": {
+    "message": "سپتامبر"
+  },
+  "october": {
+    "message": "اکتبر"
+  },
+  "november": {
+    "message": "نوامبر"
+  },
+  "december": {
+    "message": "دسامبر"
+  },
+  "ex": {
+    "message": "سابق.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "title": {
+    "message": "عنوان"
+  },
+  "mr": {
+    "message": "آقا"
+  },
+  "mrs": {
+    "message": "خانم"
+  },
+  "ms": {
+    "message": "خانم"
+  },
+  "dr": {
+    "message": "دکتر"
+  },
+  "expirationMonth": {
+    "message": "ماه انقضاء"
+  },
+  "expirationYear": {
+    "message": "سال انقضاء"
+  },
+  "select": {
+    "message": "انتخاب"
+  },
+  "other": {
+    "message": "ساير"
+  },
+  "generatePassword": {
+    "message": "تولید رمز عبور"
+  },
+  "type": {
+    "message": "نوع"
+  },
+  "firstName": {
+    "message": "نام"
+  },
+  "middleName": {
+    "message": "نام میانی"
+  },
+  "lastName": {
+    "message": "نام خانوادگی"
+  },
+  "address1": {
+    "message": "نشانی ۱"
+  },
+  "address2": {
+    "message": "نشانی ۲"
+  },
+  "address3": {
+    "message": "نشانی ۳"
+  },
+  "cityTown": {
+    "message": "شهر \/ شهرک"
+  },
+  "stateProvince": {
+    "message": "ایالت \/ استان"
+  },
+  "zipPostalCode": {
+    "message": "کد پستی"
+  },
+  "country": {
+    "message": "کشور"
+  },
+  "save": {
+    "message": "ذخیره"
+  },
+  "cancel": {
+    "message": "انصراف"
+  },
+  "delete": {
+    "message": "حذف"
+  },
+  "favorite": {
+    "message": "مورد علاقه"
+  },
+  "edit": {
+    "message": "ویرایش"
+  },
+  "authenticatorKeyTotp": {
+    "message": "کلید تأیید کننده (TOTP)"
+  },
+  "folder": {
+    "message": "پوشه"
+  },
+  "newCustomField": {
+    "message": "فیلد سفارشی جدید"
+  },
+  "value": {
+    "message": "مقدار"
+  },
+  "cfTypeText": {
+    "message": "متن"
+  },
+  "cfTypeHidden": {
+    "message": "مخفی"
+  },
+  "cfTypeBoolean": {
+    "message": "بولین"
+  },
+  "remove": {
+    "message": "حذف"
+  },
+  "nameRequired": {
+    "message": "نام ضروری است."
+  },
+  "addedItem": {
+    "message": "مورد افزوده شده"
+  },
+  "editedItem": {
+    "message": "مورد ویرایش شده"
+  },
+  "deleteItem": {
+    "message": "حذف مورد"
+  },
+  "deleteFolder": {
+    "message": "حذف پوشه"
+  },
+  "deleteAttachment": {
+    "message": "حذف پیوست"
+  },
+  "deleteItemConfirmation": {
+    "message": "آیا مطمئن هستید می خواهید این مورد را حذف کنید؟"
+  },
+  "deletedItem": {
+    "message": "مورد حذف شده"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
+  },
+  "noneFolder": {
+    "message": "بدون پوشه",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "افزودن پوشه"
+  },
+  "editFolder": {
+    "message": "ويرايش پوشه"
+  },
+  "regeneratePassword": {
+    "message": "تولید رمز عبور"
+  },
+  "copyPassword": {
+    "message": "کپی رمز عبور"
+  },
+  "length": {
+    "message": "طول"
+  },
+  "close": {
+    "message": "بستن"
+  },
+  "minNumbers": {
+    "message": "حداقل اعداد"
+  },
+  "minSpecial": {
+    "message": "حداقل حرف خاص",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "از کاراکتر های تکراری همسان استفاده نکن"
+  },
+  "searchCollection": {
+    "message": "جستجوی مجموعه"
+  },
+  "searchFolder": {
+    "message": "جستجوی پوشه"
+  },
+  "searchFavorites": {
+    "message": "جستجوی علاقمندیها"
+  },
+  "searchType": {
+    "message": "نوع جستجو",
+    "description": "Search item type"
+  },
+  "newAttachment": {
+    "message": "افزودن پیوست جدید"
+  },
+  "deletedAttachment": {
+    "message": "حذف پیوست"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "آیا از پاک کردن این پیوست مطمئن هستید؟"
+  },
+  "attachmentSaved": {
+    "message": "پیوست ذخیره شد."
+  },
+  "file": {
+    "message": "فایل"
+  },
+  "selectFile": {
+    "message": "انتخاب یک فایل."
+  },
+  "maxFileSize": {
+    "message": "بیشترین حجم فایل 100 مگابایت است."
+  },
+  "updateKey": {
+    "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمیتوانید از این قابلیت استفاده کنید."
+  },
+  "options": {
+    "message": "گزینه ها"
+  },
+  "editedFolder": {
+    "message": "پوشه ویرایش شده"
+  },
+  "addedFolder": {
+    "message": "پوشه اضافه شده"
+  },
+  "deleteFolderConfirmation": {
+    "message": "آیا از حذف این پوشه اطمینان دارید؟"
+  },
+  "deletedFolder": {
+    "message": "پوشه حذف شده"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "وارد شوید یا یک حساب کاربری بسازید تا به گاوصندوق امنتان دسترسی یابید."
+  },
+  "createAccount": {
+    "message": "ایجاد حساب کاربری"
+  },
+  "logIn": {
+    "message": "ورود"
+  },
+  "submit": {
+    "message": "ثبت"
+  },
+  "masterPass": {
+    "message": "گذرواژه‌ ی اصلی"
+  },
+  "masterPassDesc": {
+    "message": "گذرواژه اصلی رمز عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن گذرواژه اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
+  },
+  "masterPassHintDesc": {
+    "message": "راهنمای گذرواژه اصلی می تواند کمک کند در صورت فراموشی آن را بیاد بیارید."
+  },
+  "reTypeMasterPass": {
+    "message": "تایپ دوباره گذرواژه اصلی"
+  },
+  "masterPassHint": {
+    "message": "راهنمای گذرواژه اصلی (اختیاری)"
+  },
+  "settings": {
+    "message": "تنظیمات"
+  },
+  "passwordHint": {
+    "message": "راهنمای گذرواژه"
+  },
+  "enterEmailToGetHint": {
+    "message": "برای دریافت راهنمایی گذرواژه اصلی خود آدرس ایملیتان را وارد کنید."
+  },
+  "getMasterPasswordHint": {
+    "message": "دریافت راهنمای گذرواژه اصلی"
+  },
+  "emailRequired": {
+    "message": "آدرس ایمیل ضروری است."
+  },
+  "invalidEmail": {
+    "message": "آدرس ایمیل نامعتبر است."
+  },
+  "masterPassRequired": {
+    "message": "گذرواژه اصلی ضروری است."
+  },
+  "masterPassLength": {
+    "message": "طول گذرواژه اصلی باید حداقل ۸ کاراکتر باشد."
+  },
+  "masterPassDoesntMatch": {
+    "message": "گذرواژه اصلی با تکرار گذرواژه اصلی مطابقت ندارد."
+  },
+  "newAccountCreated": {
+    "message": "حساب شما ساختته شد! حالا میتوانید وارد شوید."
+  },
+  "masterPassSent": {
+    "message": "ما یک ایمیل همراه با راهنمای گذرواژه اصلی برایتان ارسال کردیم."
+  },
+  "unexpectedError": {
+    "message": "یک خطای غیر منتظره رخ داده است."
+  },
+  "itemInformation": {
+    "message": "اطلاعات مورد"
+  },
+  "noItemsInList": {
+    "message": "هیچ موردی برای نمایش وجود ندارد."
+  },
+  "verificationCode": {
+    "message": "کد تایید"
+  },
+  "verificationCodeRequired": {
+    "message": "کد تایید مورد نیاز است."
+  },
+  "continue": {
+    "message": "ادامه"
+  },
+  "enterVerificationCodeApp": {
+    "message": "کد ۶ رقمی تایید را از برنامه تایید کننده وارد کنید."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "کد ۶ رقمی تایید را که به $EMAIL$ ارسال شد را وارد کنید.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "ایمیل تایید به $EMAIL$ ارسال شد.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "مرا به خاطر بسپار"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "ارسال دوباره ایمیل کد تایید"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "استفاده از روش ورود دو مرحله ای دیگر"
+  },
+  "insertYubiKey": {
+    "message": "YubiKey خود را وارد پورت USB رایانه کنید، بعد دکمه آن را بفشارید."
+  },
+  "insertU2f": {
+    "message": "کلید امنیتی خود را وارد پورت USB رایانه کنید، اگر دکمه ای دارد آن را بفشارید."
+  },
+  "recoveryCodeDesc": {
+    "message": "دسترسی به تمامی ارائه دهندگان دو مرحله ای را از دست داده اید؟ از کد بازیابی خود برای غیرفعال سازی ارائه دهندگان دو مرحله ای از حسابتان استفاده کنید."
+  },
+  "recoveryCodeTitle": {
+    "message": "کد بازیابی"
+  },
+  "authenticatorAppTitle": {
+    "message": "برنامه تأیید کننده"
+  },
+  "authenticatorAppDesc": {
+    "message": "از یک اپ تایید کننده (همانند Authy یا Google Authenticator) استفاده کنید تا کدهای تایید بر پایه زمان تولید کنید.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "کلید امنیت YubiKey OTP"
+  },
+  "yubiKeyDesc": {
+    "message": "از یک YubiKey برای دسترسی به حسابتان استفاده کنید. همراه با دستگاه های YubiKey 4،4 Nano، NEO کار میکند."
+  },
+  "duoDesc": {
+    "message": "تایید کنید همراه با Duo Security از اپ موبایل Dou استفاده کنید، پیامک،تماس تلفنی، یا کلید امنیتی U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "از هر FIDO استفاده کنید U2F کلید امنیتی را فعال کنید تا به حساب کاربریتان دسترسی یابید."
+  },
+  "u2fTitle": {
+    "message": "کلید امنیتی FIDO U2F"
+  },
+  "emailTitle": {
+    "message": "ایمیل"
+  },
+  "emailDesc": {
+    "message": "کد تایید برایتان فرستاده می شود."
+  },
+  "loginUnavailable": {
+    "message": "ورود به سیستم موجود نیست"
+  },
+  "noTwoStepProviders": {
+    "message": "این حساب با سیستم دو مرحله ورود فعال است، با این حال، هیچ یک از ارائه دهندگان دو مرحله ای پیکربندی شده توسط این دستگاه پشتیبانی نمی شوند."
+  },
+  "noTwoStepProviders2": {
+    "message": "لطفا ارائه دهندگان اضافی را که بهتر از سایر دستگاه ها پشتیبانی می شوند اضافه کنید (همانند یک اپ تأیید کننده)."
+  },
+  "twoStepOptions": {
+    "message": "گزینه های ورود دو مرحله ای"
+  },
+  "selfHostedEnvironment": {
+    "message": "محیط خود میزبان"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "آدرس اینترنتی پایه فرضی نصب بیت واردن میزبانی شده را مشخص کنید."
+  },
+  "customEnvironment": {
+    "message": "محیط های سفارشی"
+  },
+  "customEnvironmentFooter": {
+    "message": "برای کاربران پیشرفته. شما می توانید آدرس پایه هر سرویس را مستقل تعیین کنید."
+  },
+  "baseUrl": {
+    "message": "آدرس سرور"
+  },
+  "apiUrl": {
+    "message": "آدرس سرور API"
+  },
+  "webVaultUrl": {
+    "message": "آدرس سرور گاوصندوق وب"
+  },
+  "identityUrl": {
+    "message": "آدرس سرور شناسایی"
+  },
+  "iconsUrl": {
+    "message": "آدرس سرور آیکون ها"
+  },
+  "environmentSaved": {
+    "message": "آدرس های اینترنتی محیط ذخیره شد."
+  },
+  "ok": {
+    "message": "تایید"
+  },
+  "yes": {
+    "message": "بله"
+  },
+  "no": {
+    "message": "خیر"
+  },
+  "overwritePassword": {
+    "message": "بازنویسی رمز عبور"
+  },
+  "learnMore": {
+    "message": "بیشتر بدانید"
+  },
+  "featureUnavailable": {
+    "message": "ویژگی موجود نیست"
+  },
+  "loggedOut": {
+    "message": "خارج شده"
+  },
+  "loginExpired": {
+    "message": "جلسه ورود شما منقضی شده است."
+  },
+  "logOutConfirmation": {
+    "message": "آیا مطمئنید که می‌خواهید خارج شوید؟"
+  },
+  "logOut": {
+    "message": "خروج"
+  },
+  "addNewLogin": {
+    "message": "افزودن ورود جدید"
+  },
+  "addNewItem": {
+    "message": "افزودن مورد جدید"
+  },
+  "addNewFolder": {
+    "message": "افزودن پوشه جدید"
+  },
+  "view": {
+    "message": "مشاهده"
+  },
+  "account": {
+    "message": "حساب"
+  },
+  "loading": {
+    "message": "درحال بارگذاری..."
+  },
+  "lockNow": {
+    "message": "الان قفل شود"
+  },
+  "passwordGenerator": {
+    "message": "تولید رمز عبور"
+  },
+  "emailUs": {
+    "message": "ایمیل ما"
+  },
+  "visitOurWebsite": {
+    "message": "از وب‌سایت ما دیدن کنید"
+  },
+  "fileBugReport": {
+    "message": "گزارش یک مشکل"
+  },
+  "blog": {
+    "message": "وبلاگ"
+  },
+  "followUs": {
+    "message": "ﻣﺎ ﺭﺍ ﺩﻧﺒﺎﻝ ﮐﻨﻴﺪ"
+  },
+  "syncVault": {
+    "message": "همگام سازی گاوصندوق"
+  },
+  "changeMasterPass": {
+    "message": "تغییر گذرواژه اصلی"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "شما می توانید رمز عبور اصلی خود را در bitwarden.com تغییر دهید. آیا می خواهید از سایت بازدید کنید؟"
+  },
+  "changeEmail": {
+    "message": "تغییر ایمیل"
+  },
+  "changeEmailConfirmation": {
+    "message": "شما میتوانید آدرس ایمیل را در نسخه وب گاوصندوق bitwarden.com تغییر دهید. میخواهید اکنون از سایت بازدید کنید؟"
+  },
+  "goToWebVault": {
+    "message": "برو به گاوصندق وب"
+  },
+  "getMobileApp": {
+    "message": "دریافت اپ موبایل"
+  },
+  "getBrowserExtension": {
+    "message": "دریافت افزونه مرورگر"
+  },
+  "syncingComplete": {
+    "message": "همگام سازی کامل شد"
+  },
+  "syncingFailed": {
+    "message": "همگام سازی شکست خورد"
+  },
+  "yourVaultIsLocked": {
+    "message": "گاوصندوق شما فقل شد. برای ادامه گذرواژه اصلی را وارد کنید."
+  },
+  "unlock": {
+    "message": "باز کردن قفل"
+  },
+  "invalidMasterPassword": {
+    "message": "گذرواژه اصلی نامعتبر است"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "ورودی دو مرحله ای باعث می شود که حساب کاربری شما با استفاده از یک دستگاه دیگر مانند کلید امنیتی، برنامه تأیید هویت، پیامک، تماس تلفنی و یا ایمیل، اعتبار خود را با ایمنی بیشتر ثابت کند. ورودی دو مرحله ای می تواند در bitwarden.com فعال شود. آیا می خواهید از سایت بازدید کنید؟"
+  },
+  "twoStepLogin": {
+    "message": "ورود دو مرحله ای"
+  },
+  "lockOptions": {
+    "message": "گزینه های قفل"
+  },
+  "lockOptionsDesc": {
+    "message": "انتخاب کنید زمانی که گاوصندوق شما قفل شد. یک گاوصندوق قفل شده درخواست وارد کردن مجدد گذرواژه اصلی را برای دسترسی میدهد."
+  },
+  "immediately": {
+    "message": "بلافاصله"
+  },
+  "oneMinute": {
+    "message": "۱ دقیقه"
+  },
+  "fiveMinutes": {
+    "message": "۵ دقیقه"
+  },
+  "fifteenMinutes": {
+    "message": "۱۵ دقیقه"
+  },
+  "thirtyMinutes": {
+    "message": "۳۰ دقیقه"
+  },
+  "oneHour": {
+    "message": "۱ ساعت"
+  },
+  "fourHours": {
+    "message": "4 ساعت"
+  },
+  "onIdle": {
+    "message": "هنگام بیکاری سیستم"
+  },
+  "onSleep": {
+    "message": "هنگام خواب سیستم"
+  },
+  "onLocked": {
+    "message": "هنگام قفل سیستم"
+  },
+  "onRestart": {
+    "message": "هنگام راه اندازی مجدد"
+  },
+  "never": {
+    "message": "هرگز"
+  },
+  "security": {
+    "message": "امنیت"
+  },
+  "disableGa": {
+    "message": "غیرفعال سازی آنالیزها"
+  },
+  "gaDesc": {
+    "message": "ما از آنالیز استفاده می کنیم تا بهتر بفهمیم که چگونه برنامه استفاده می شود تا بتوانیم آن را بهتر کنیم. تمام جمع آوری داده ها کاملا ناشناس است."
+  },
+  "disableFavicon": {
+    "message": "غیرفعال سازی آیکون های وبسایت"
+  },
+  "disableFaviconDesc": {
+    "message": "آیکون های وبسایت یک تصویر قابل تشخیص در کنار هر داده ورودی ارائه میدهد."
+  },
+  "copy": {
+    "message": "کپی",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "بررسی بروزرسانی ها"
+  },
+  "version": {
+    "message": "نسخه $VERSION_NUM$",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "restartToUpdate": {
+    "message": "برای بروزرسانی راه اندازی مجدد کنید"
+  },
+  "restartToUpdateDesc": {
+    "message": "نسخه ی $VERSION_NUM$ آماده نصب است. باید برای نصب بیت واردن را مجددا راه اندازی کنید. آیا تمایل به راه اندازی مجدد و نصب هستید؟",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "بروزرسانی موجود است"
+  },
+  "updateAvailableDesc": {
+    "message": "یک بروزرسانی یافت شد. مایل به دانلود و نصب آن هستید؟"
+  },
+  "restart": {
+    "message": "راه اندازی مجدد"
+  },
+  "later": {
+    "message": "بعداً"
+  },
+  "noUpdatesAvailable": {
+    "message": "در حال حاظر هیچ بروزرسانی در دسترس نمیباشد. شما در در حال استفاده از آخرین نسخه هستید."
+  },
+  "updateError": {
+    "message": "خطا در بروز رسانی"
+  },
+  "unknown": {
+    "message": "ناشناخته"
+  },
+  "copyUsername": {
+    "message": "کپی نام کاربری"
+  },
+  "copyNumber": {
+    "message": "کپی شماره",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "کپی کد امنیتی",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "premiumMembership": {
+    "message": "عضویت پرمیوم"
+  },
+  "premiumManage": {
+    "message": "مدیریت عضویت"
+  },
+  "premiumManageAlert": {
+    "message": "شما میتوانید عضویت خود را در نسخه وب گاوصندوق در bitwarden.com مدیریت کنید. آیا مایل به دیدن وبسایت هستید؟"
+  },
+  "premiumRefresh": {
+    "message": "نوسازی عضویت"
+  },
+  "premiumNotCurrentMember": {
+    "message": "شما در حال حاظر کاربر پرمیوم نیستید."
+  },
+  "premiumSignUpAndGet": {
+    "message": "ثبت نام برای عضویت پرمیوم و گرفتن:"
+  },
+  "premiumSignUpStorage": {
+    "message": "۱ گیگابایت فضای ذخیره سازی رمزنگاری شده."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
+  },
+  "premiumSignUpTotp": {
+    "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."
+  },
+  "premiumSignUpSupport": {
+    "message": "اولویت پشتیبانی از مشتری."
+  },
+  "premiumSignUpFuture": {
+    "message": "تمام ویژگی های پرمیوم آینده. به زودی بیشتر!"
+  },
+  "premiumPurchase": {
+    "message": "خرید پرمیوم"
+  },
+  "premiumPurchaseAlert": {
+    "message": "شما میوانید عضویت پرمیوم را از وب گاوصندوق bitwarden.com خریداری کنید. مایلید اکنون از وبسایت بازید کنید؟"
+  },
+  "premiumCurrentMember": {
+    "message": "شما یک عضو پرمیوم هستید!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "برای حمایتتان از بیت واردن سپاسگزاریم."
+  },
+  "premiumPrice": {
+    "message": "تمامش فقط $PRICE$ در سال!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "refreshComplete": {
+    "message": "نوسازی کامل شد"
+  },
+  "passwordHistory": {
+    "message": "تاریخچه رمز عبور"
+  },
+  "clear": {
+    "message": "پاک کردن"
+  },
+  "noPasswordsInList": {
+    "message": "هیچ رمز عبوری در لیست وجود ندارد."
+  },
+  "undo": {
+    "message": "عقبگرد"
+  },
+  "redo": {
+    "message": "انجام مجدد"
+  },
+  "cut": {
+    "message": "بریدن",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "جای‌گذاری",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "انتخاب همه"
+  },
+  "zoomIn": {
+    "message": "بزرگنمایی"
+  },
+  "zoomOut": {
+    "message": "کوچک نمایی"
+  },
+  "resetZoom": {
+    "message": "بازگردانی بزرگنمایی"
+  },
+  "toggleFullScreen": {
+    "message": "تغییر به حالت تمام صفحه"
+  },
+  "reload": {
+    "message": "بارگذاری مجدد"
+  },
+  "toggleDevTools": {
+    "message": "تغییر وضعیت ابزارهای توسعه دهنده"
+  },
+  "minimize": {
+    "message": "کوچک کردن",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "بزرگنمایی"
+  },
+  "bringAllToFront": {
+    "message": "آوردن همه به جلو",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "درباره بیت واردن"
+  },
+  "services": {
+    "message": "خدمات"
+  },
+  "hideBitwarden": {
+    "message": "مخفی کردن بیت واردن"
+  },
+  "hideOthers": {
+    "message": "مخفی کردن بقیه"
+  },
+  "showAll": {
+    "message": "نمایش همه"
+  },
+  "quitBitwarden": {
+    "message": "خروج از بیت واردن"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ کپی شد",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "help": {
+    "message": "راهنما"
+  },
+  "window": {
+    "message": "پنجره"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
+  }
+}
