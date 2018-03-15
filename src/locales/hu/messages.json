@@ -50,6 +50,18 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
+  },
   "username": {
     "message": "Felhasználónév"
   },
@@ -172,7 +184,8 @@
     "message": "December"
   },
   "ex": {
-    "message": "pl."
+    "message": "pl.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Titulus"
@@ -876,74 +889,71 @@
     "message": "Nincsenek listázható jelszavak."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Visszavonás"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Ismét"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Kivágás",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Beillesztés",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Mindet kijelöl"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Nagyítás"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Kicsinyítés"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Nagyítás visszaállítása"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Teljes képernyős mód váltása"
   },
   "reload": {
-    "message": "Reload"
-  },
-  "forceReload": {
-    "message": "Force Reload"
+    "message": "Újratöltés"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Fejlesztőeszközök ki-\/ bekapcsolása"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Kis méret",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Nagyítás"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Mindent előrehoz",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Bitwarden névjegye"
   },
   "services": {
-    "message": "Services"
+    "message": "Szolgáltatások"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Bitwarden elrejtése"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Többi elrejtése"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Összes megjelenítése"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Kilépés a Bitwarden-ből"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ másolva",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -953,9 +963,52 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Súgó"
   },
   "window": {
-    "message": "Window"
+    "message": "Ablak"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
