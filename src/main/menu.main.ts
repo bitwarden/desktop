@@ -11,7 +11,7 @@ import {
 } from 'electron';
 
 import { Main } from '../main';
-import { isMacAppStore, isWindowsStore } from '../scripts/utils';
+import { isMacAppStore, isWindowsStore, isSnapStore } from '../scripts/utils';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -588,7 +588,7 @@ export class MenuMain {
                 { type: 'separator' },
             ];
 
-            if (!isWindowsStore()) {
+            if (!isWindowsStore() && !isSnapStore()) {
                 aboutMenuAdditions.push(updateMenuItem);
             }
 
