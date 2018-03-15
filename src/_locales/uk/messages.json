@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Безкоштовний менеджер паролів",
+    "message": "Bitwarden - Безкоштовний менеджер паролів",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden - це захищений і безкоштовний менеджер паролів для всіх ваших пристроїв.",
+    "message": "Bitwarden - це захищений і безкоштовний менеджер паролів для всіх ваших пристроїв.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Відвідайте наш веб-сайт"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо bitwarden."
+    "message": "Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо Bitwarden."
   },
   "fileBugReport": {
     "message": "Повідомити про помилку"
@@ -191,22 +191,22 @@
     "message": "Автоматичне генерування стійких, унікальних паролів."
   },
   "bitWebVault": {
-    "message": "Веб-сховище bitwarden"
+    "message": "Веб-сховище Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Керуйте своїми паролями з будь-якого браузера за допомогою веб-сховища bitwarden."
+    "message": "Керуйте своїми паролями з будь-якого браузера за допомогою веб-сховища Bitwarden."
   },
   "bitIosVault": {
-    "message": "bitwarden для iOS"
+    "message": "Bitwarden для iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для iOS."
+    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою Bitwarden для iOS."
   },
   "bitAndrVault": {
-    "message": "bitwarden для Android"
+    "message": "Bitwarden для Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою bitwarden для Android."
+    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою Bitwarden для Android."
   },
   "importItems": {
     "message": "Імпорт записів"
@@ -224,7 +224,7 @@
     "message": "Генерувати новий"
   },
   "options": {
-    "message": "Налаштування"
+    "message": "Додатково"
   },
   "length": {
     "message": "Довжина"
@@ -266,7 +266,7 @@
     "message": "Нотатки"
   },
   "editItem": {
-    "message": "Змінити запис"
+    "message": "Зміна запису"
   },
   "folder": {
     "message": "Тека"
@@ -275,7 +275,7 @@
     "message": "Видалити запис"
   },
   "viewItem": {
-    "message": "Переглянути запис"
+    "message": "Перегляд запису"
   },
   "launchWebsite": {
     "message": "Відкрити веб-сайт"
@@ -311,7 +311,7 @@
     "message": "Неправильний головний пароль"
   },
   "lockOptions": {
-    "message": "Налаштування блокування"
+    "message": "Час блокування"
   },
   "lockNow": {
     "message": "Заблокувати зараз"
@@ -338,7 +338,7 @@
     "message": "4 години"
   },
   "onLocked": {
-    "message": "Разом з комп'ютером"
+    "message": "При блокуванні системи"
   },
   "onRestart": {
     "message": "При перезавантаженні"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Доданий запис"
   },
@@ -502,7 +505,7 @@
     "message": "Сповіщення про додавання пароля автоматично пропонує зберегти нові паролі у вашому сховищі під час першого входу."
   },
   "notificationAddDesc": {
-    "message": "Чи повинен bitwarden запам'ятати цей пароль?"
+    "message": "Чи повинен Bitwarden запам'ятати цей пароль?"
   },
   "notificationAddSave": {
     "message": "Так, зберегти зараз"
@@ -635,7 +638,7 @@
     "message": "У вас преміум статус!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Дякуємо за підтримку bitwarden."
+    "message": "Дякуємо за підтримку Bitwarden."
   },
   "premiumPrice": {
     "message": "Всього лише %price% \/ за рік!"
@@ -644,7 +647,7 @@
     "message": "Оновлення завершено"
   },
   "disableAutoTotpCopy": {
-    "message": "Вимкнути автоматичне копіювання TOTP"
+    "message": "Вимкнути авто-копіювання TOTP"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Якщо ваш запис має вкладений ключ авторизації, код підтвердження TOTP автоматично копіюється до буфера обміну щоразу при автозаповненні."
@@ -727,7 +730,7 @@
     "message": "Середовище власного хостингу"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення bitwarden."
+    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення Bitwarden."
   },
   "customEnvironment": {
     "message": "Власне середовище"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Завершіть запит двоетапної авторизації на новій вкладці."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

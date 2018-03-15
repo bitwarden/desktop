@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gestor de palavras-passe gratuito",
+    "message": "Bitwarden - Gestor de palavras-passe gratuito",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden é um gestor de palavras-passe seguro e gratuito para todos os seus dispositivos.",
+    "message": "Um gestor de palavras-passe seguro e gratuito para todos os seus dispositivos.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Visitar o nosso website"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visite o nosso website para obter ajuda, notícias, enviar-nos um email, e\/ou saber mais acerca de como utilizar o bitwarden."
+    "message": "Visite o nosso website para obter ajuda, notícias, enviar-nos um email, e\/ou saber mais acerca de como utilizar o Bitwarden."
   },
   "fileBugReport": {
     "message": "Submeter um relatório de bug"
@@ -191,22 +191,22 @@
     "message": "Gera automaticamente palavras-passe fortes e únicas para as suas credenciais."
   },
   "bitWebVault": {
-    "message": "Cofre web bitwarden"
+    "message": "Cofre Web Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gira os seus itens a partir de qualquer navegador web com o cofre web bitwarden."
+    "message": "Gira os seus itens a partir de qualquer navegador web com o cofre web Bitwarden."
   },
   "bitIosVault": {
-    "message": "Cofre iOS bitwarden"
+    "message": "Cofre iOS Bitwarden"
   },
   "bitIosVaultInfo": {
-    "message": "Gira os seus itens a partir dos seus dispositivos móveis com o cofre iOS bitwarden."
+    "message": "Gira os seus itens a partir dos seus dispositivos móveis com o cofre iOS Bitwarden."
   },
   "bitAndrVault": {
-    "message": "Cofre Android bitwarden"
+    "message": "Cofre Android Bitwarden"
   },
   "bitAndrVaultInfo": {
-    "message": "Gira os seus itens a partir dos seus dispositivos móveis com o cofre Android bitwarden."
+    "message": "Gira os seus itens a partir dos seus dispositivos móveis com o cofre Android Bitwarden."
   },
   "importItems": {
     "message": "Importar itens"
@@ -338,7 +338,7 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "No bloqueio"
+    "message": "Quando o sistema está bloqueado"
   },
   "onRestart": {
     "message": "Ao reiniciar"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Item adicionado"
   },
@@ -502,7 +505,7 @@
     "message": "A \"notificação de adicionar credencial\" solicita-o automaticamente a guardar novas credenciais para o seu cofre quando inicia sessão nas mesmas pela primeira vez."
   },
   "notificationAddDesc": {
-    "message": "Deve o bitwarden memorizar esta palavra-passe por si?"
+    "message": "Deve o Bitwarden memorizar esta palavra-passe para si?"
   },
   "notificationAddSave": {
     "message": "Sim, guardar agora"
@@ -635,7 +638,7 @@
     "message": "É um membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Obrigado por apoiar o bitwarden."
+    "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
     "message": "Tudo por apenas %price% \/ano!"
@@ -727,7 +730,7 @@
     "message": "Ambiente auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifique o URL de base da sua instalação local do bitwarden."
+    "message": "Especifique o URL de base da sua instalação local do Bitwarden."
   },
   "customEnvironment": {
     "message": "Ambiente personalizado"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Complete o seu pedido de início de sessão de dois passos utilizando o novo separador."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

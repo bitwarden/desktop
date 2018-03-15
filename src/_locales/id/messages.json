@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Pengelola Sandi Gratis",
+    "message": "Bitwarden - Pengelola Sandi Gratis",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden adalah sebuah pengelola sandi yang aman dan gratis untuk semua perangkat Anda.",
+    "message": "Bitwarden adalah sebuah pengelola sandi yang aman dan gratis untuk semua perangkat Anda.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Kunjungi Situs Web Kami"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Kunjungi situs web kami untuk mendapatkan bantuan, berita, email kami, dan\/atau mempelajari lebih lanjut tentang bagaimana menggunakan bitwarden."
+    "message": "Kunjungi situs web kami untuk mendapatkan bantuan, berita, email kami, dan\/atau mempelajari lebih lanjut tentang bagaimana menggunakan Bitwarden."
   },
   "fileBugReport": {
     "message": "Buat Laporan Masalah"
@@ -191,22 +191,22 @@
     "message": "Secara otomatis membuat sandi yang kuat dan unik untuk info masuk Anda."
   },
   "bitWebVault": {
-    "message": "Brankas Web bitwarden"
+    "message": "Brankas Web Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Kelola item Anda dari berbagai peramban web dengan brankas web bitwarden."
+    "message": "Kelola item Anda dari berbagai peramban web dengan brankas web Bitwarden."
   },
   "bitIosVault": {
-    "message": "Brankas iOS bitwarden"
+    "message": "Brankas iOS Bitwarden"
   },
   "bitIosVaultInfo": {
-    "message": "Kelola item Anda dari ponsel Anda dengan brankas iOS bitwarden."
+    "message": "Kelola item Anda dari ponsel Anda dengan brankas iOS Bitwarden."
   },
   "bitAndrVault": {
-    "message": "Brankas Android bitwarden"
+    "message": "Brankas Android Bitwarden"
   },
   "bitAndrVaultInfo": {
-    "message": "Kelola item Anda dari ponsel Anda dengan brankas Android bitwarden."
+    "message": "Kelola item Anda dari ponsel Anda dengan brankas Android Bitwarden."
   },
   "importItems": {
     "message": "Impor Item"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Item yang Ditambahkan"
   },
@@ -502,7 +505,7 @@
     "message": "\"Notifikasi Penambahan Info Masuk\" secara otomatis akan meminta Anda untuk menyimpan info masuk baru ke brankas Anda saat Anda masuk untuk pertama kalinya."
   },
   "notificationAddDesc": {
-    "message": "Haruskah bitwarden mengingat sandi ini untuk Anda?"
+    "message": "Haruskah Bitwarden mengingat sandi ini untuk Anda?"
   },
   "notificationAddSave": {
     "message": "Ya, Simpan Sekarang"
@@ -617,7 +620,7 @@
     "message": "Pilihan info masuk dua langkah tambahan seperti YubiKey, FIDO U2F, dan Duo."
   },
   "ppremiumSignUpTotp": {
-    "message": "Generator kode verifikasi TOTP (2FA) untuk login di vault anda."
+    "message": "Pembuat kode verifikasi TOTP (2FA) untuk masuk di brankas anda."
   },
   "ppremiumSignUpSupport": {
     "message": "Dukungan pelanggan prioritas."
@@ -635,7 +638,7 @@
     "message": "Anda adalah anggota premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Terima Kasih telah mendukung bitwarden."
+    "message": "Terima kasih telah mendukung Bitwarden."
   },
   "premiumPrice": {
     "message": "Semua untuk hanya %price% \/tahun!"
@@ -671,10 +674,10 @@
     "message": "Gunakan metode masuk dua langkah lainnya"
   },
   "insertYubiKey": {
-    "message": "Masukkan YubiKey anda ke port USB komputer anda, lalu sentuh tombol nya."
+    "message": "Masukkan YubiKey Anda ke port USB komputer Anda, lalu sentuh tombolnya."
   },
   "insertU2f": {
-    "message": "Masukkan kunci keamanan ke port USB komputer anda. Jika ada tombolnya, tekanlah."
+    "message": "Masukkan kunci keamanan ke port USB komputer Anda. Jika ada tombolnya, tekanlah."
   },
   "loginUnavailable": {
     "message": "Info Masuk Tidak Tersedia"
@@ -763,10 +766,10 @@
     "message": "Saat ini Anda pada lingkungan sementara. Gunakanlah dengan resiko yang ditanggung sendiri."
   },
   "commandAutofillDesc": {
-    "message": "Login terakhir yang sifatnya otomatis terisi adalah digunakan untuk website tertentu."
+    "message": "Isi otomatis info masuk yang digunakan terakhir untuk situs ini."
   },
   "commandGeneratePasswordDesc": {
-    "message": "Dibangkitkan dan disalin password acak yang baru ke clipboard."
+    "message": "Buat dan salin sandi acak baru ke clipboard."
   },
   "privateModeMessage": {
     "message": "Sayangnya jendela ini tidak tersedia di mode pribadi untuk peramban ini."
@@ -820,7 +823,7 @@
     "message": "Tahun Kedaluwarsa"
   },
   "expiration": {
-    "message": "Masa berlaku"
+    "message": "Masa Berlaku"
   },
   "january": {
     "message": "Januari"
@@ -865,7 +868,7 @@
     "message": "contoh"
   },
   "title": {
-    "message": "Judul"
+    "message": "Panggilan"
   },
   "mr": {
     "message": "Tuan"
@@ -889,7 +892,7 @@
     "message": "Nama Belakang"
   },
   "identityName": {
-    "message": "Nama identitas"
+    "message": "Nama Identitas"
   },
   "company": {
     "message": "Perusahaan"
@@ -976,9 +979,46 @@
     "message": "Identitas"
   },
   "clear": {
-    "message": "Jelas"
+    "message": "Bersihkan"
   },
   "twoStepNewWindowMessage": {
-    "message": "Lengkapi dua tahap permintaan login Anda dengan menggunakan Tab baru."
+    "message": "Selesaikan permintaan masuk dua langkah Anda menggunakan tab baru."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

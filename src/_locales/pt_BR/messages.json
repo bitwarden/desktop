@@ -1,23 +1,23 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gerenciador de Senhas Gratuito",
+    "message": "Bitwarden - Gerenciador de Senhas Gratuito",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "O bitwarden é um gerenciador de senhas seguro e gratuito para todos os seus dispositivos.",
+    "message": "Um gerenciador de senhas seguro e gratuito para todos os seus dispositivos.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Inicie a sessão ou crie uma nova conta para acessar seu cofre."
+    "message": "Inicie a sessão ou crie uma nova conta para acessar seu cofre seguro."
   },
   "createAccount": {
     "message": "Criar Conta"
   },
   "login": {
-    "message": "Entrar"
+    "message": "Iniciar Sessão"
   },
   "cancel": {
     "message": "Cancelar"
@@ -44,7 +44,7 @@
     "message": "Digite Novamente a Senha Mestra"
   },
   "masterPassHint": {
-    "message": "Dica da Senha Mestra (opcional)"
+    "message": "Dica de Senha Mestra (opcional)"
   },
   "tab": {
     "message": "Aba"
@@ -77,7 +77,7 @@
     "message": "Copiar Código de Segurança"
   },
   "autoFill": {
-    "message": "Auto-preencher"
+    "message": "Autopreencher"
   },
   "generatePasswordCopied": {
     "message": "Gerar Senha (copiada)"
@@ -89,10 +89,10 @@
     "message": "O cofre está trancado."
   },
   "autoFillInfo": {
-    "message": "Não há credenciais disponíveis para preenchimento automático para a aba do navegador atual."
+    "message": "Não há credenciais disponíveis para autopreenchimento para a aba do navegador atual."
   },
   "addLogin": {
-    "message": "Adicionar um Login"
+    "message": "Adicionar uma Credencial"
   },
   "addItem": {
     "message": "Adicionar Item"
@@ -122,10 +122,10 @@
     "message": "Alterar E-mail"
   },
   "twoStepLogin": {
-    "message": "Login de Duas Etapas"
+    "message": "Login em Duas Etapas"
   },
   "logOut": {
-    "message": "Sair"
+    "message": "Encerrar Sessão"
   },
   "about": {
     "message": "Sobre"
@@ -146,7 +146,7 @@
     "message": "Editar Pasta"
   },
   "deleteFolder": {
-    "message": "Apagar Pasta"
+    "message": "Excluir Pasta"
   },
   "folders": {
     "message": "Pastas"
@@ -167,7 +167,7 @@
     "message": "Visitar o Nosso Site"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visite o nosso website para obter ajuda, novidades, enviar-nos um email, e\/ou saber mais sobre como utilizar o bitwarden."
+    "message": "Visite o nosso site para obter ajuda, notícias, enviar-nos um e-mail e\/ou aprender mais sobre como utilizar o Bitwarden."
   },
   "fileBugReport": {
     "message": "Enviar um Relatório de Bug"
@@ -188,37 +188,37 @@
     "message": "Gerador de Senha"
   },
   "passGenInfo": {
-    "message": "Gerar automaticamente senhas fortes e únicas para os seus logins."
+    "message": "Gere automaticamente senhas fortes e únicas para as suas credenciais."
   },
   "bitWebVault": {
-    "message": "Cofre Web bitwarden"
+    "message": "Cofre Web do Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gerencie seus logins de qualquer navegador web com o cofre bitwarden para a web."
+    "message": "Gerencie suas credenciais de qualquer navegador com o cofre web do Bitwarden."
   },
   "bitIosVault": {
-    "message": "Cofre bitwarden para iOS"
+    "message": "Cofre Bitwarden para iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Gerencie seus logins de dispositivos móveis com o cofre bitwarden para Android."
+    "message": "Gerencie seus itens a partir de dispositivos móveis com o cofre Bitwarden para iOS."
   },
   "bitAndrVault": {
-    "message": "Cofre bitwarden para Android"
+    "message": "Cofre Bitwarden para Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Gerencie seus logins de dispositivos móveis com o cofre bitwarden para Android."
+    "message": "Gerencie seus itens a partir de dispositivos móveis com o cofre Bitwarden para Android."
   },
   "importItems": {
     "message": "Importar Itens"
   },
   "importItemsInfo": {
-    "message": "Importe rapidamente os seus dados de outros aplicativos de gerenciamento de senha."
+    "message": "Importe rapidamente os seus itens de outros aplicativos de gerenciamento de senha."
   },
   "select": {
     "message": "Selecionar"
   },
   "generatePassword": {
-    "message": "Gerar senha"
+    "message": "Gerar Senha"
   },
   "regeneratePassword": {
     "message": "Gerar Nova Senha"
@@ -227,7 +227,7 @@
     "message": "Opções"
   },
   "length": {
-    "message": "Tamanho"
+    "message": "Comprimento"
   },
   "minNumbers": {
     "message": "Números Mínimos"
@@ -248,7 +248,7 @@
     "message": "Ver"
   },
   "noItemsInList": {
-    "message": "Não existem itens para listar."
+    "message": "Não há itens para listar."
   },
   "itemInformation": {
     "message": "Informação do Item"
@@ -272,13 +272,13 @@
     "message": "Pasta"
   },
   "deleteItem": {
-    "message": "Apagar Item"
+    "message": "Excluir Item"
   },
   "viewItem": {
     "message": "Ver Item"
   },
   "launchWebsite": {
-    "message": "Iniciar Site"
+    "message": "Abrir Site"
   },
   "website": {
     "message": "Site"
@@ -299,7 +299,7 @@
     "message": "Avaliar a Extensão"
   },
   "rateExtensionDesc": {
-    "message": "Por favor considere nos ajudar com uma boa análise!"
+    "message": "Por favor considere ajudar-nos com uma boa avaliação!"
   },
   "browserNotSupportClipboard": {
     "message": "O seu navegador web não suporta cópia para a área de transferência. Em alternativa, copie manualmente."
@@ -338,7 +338,7 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "No bloqueio"
+    "message": "No Bloqueio do Sistema"
   },
   "onRestart": {
     "message": "Ao Reiniciar"
@@ -368,7 +368,7 @@
     "message": "A confirmação da senha mestra não corresponde."
   },
   "newAccountCreated": {
-    "message": "A sua nova conta foi criada! Agora pode iniciar sessão."
+    "message": "A sua nova conta foi criada! Agora você pode iniciar a sessão."
   },
   "masterPassSent": {
     "message": "Enviamos um e-mail com a dica da sua senha mestra."
@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Não é possível auto-preencher o item selecionado nesta página. Em alternativa, copie e cole a informação."
+    "message": "Não é possível autopreencher o item selecionado nesta página. Em alternativa, copie e cole a informação."
   },
   "loggedOut": {
     "message": "Sessão encerrada"
@@ -411,28 +411,28 @@
     "message": "Alterar Senha Mestra"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Você pode alterar a sua senha mestra no cofre web bitwarden.com. Você deseja visitar o website agora?"
+    "message": "Você pode alterar a sua senha mestra no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "changeEmailConfirmation": {
-    "message": "Você pode alterar o seu endereço de e-mail no cofre web bitwarden.com. Você deseja visitar o website agora?"
+    "message": "Você pode alterar o seu endereço de e-mail no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "twoStepLoginConfirmation": {
-    "message": "O login de duas etapas torna a sua conta mais segura ao exigir que digite um código de segurança de um aplicativo de autenticação quando for iniciar a sessão. O login de duas etapas pode ser ativado no cofre web bitwarden.com. Deseja visitar o site agora?"
+    "message": "O login em duas etapas torna a sua conta mais segura ao exigir que digite um código de segurança de um aplicativo de autenticação quando for iniciar a sessão. O login de duas etapas pode ser ativado no cofre web em bitwarden.com. Deseja visitar o site agora?"
   },
   "loggingOut": {
-    "message": "Saindo"
+    "message": "Encerrando sessão"
   },
   "loggingOutConfirmation": {
-    "message": "Você recentemente atualizou de uma versão antiga. Você tem que iniciar a sessão novamente para alterar as suas opções de bloqueio. Deseja terminar a sessão agora?"
+    "message": "Você recentemente atualizou de uma versão antiga. Você tem que iniciar a sessão novamente para alterar as suas opções de bloqueio. Você deseja encerrar a sessão agora?"
   },
   "editedFolder": {
     "message": "Pasta Editada"
   },
   "deleteFolderConfirmation": {
-    "message": "Tem certeza que deseja apagar esta pasta?"
+    "message": "Tem certeza que deseja excluir esta pasta?"
   },
   "deletedFolder": {
-    "message": "Pasta apagada"
+    "message": "Pasta excluída"
   },
   "gettingStartedTutorial": {
     "message": "Tutorial de Introdução"
@@ -447,13 +447,16 @@
     "message": "Sincronização falhou"
   },
   "importItemsConfirmation": {
-    "message": "Você pode importar em massa os seus itens a partir do cofre web bitwarden.com. Deseja visitar o site agora?"
+    "message": "Você pode importar em massa os seus itens a partir do cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "passwordCopied": {
     "message": "Senha copiada"
   },
   "uri": {
     "message": "URL"
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "addedItem": {
     "message": "Item adicionado"
@@ -462,10 +465,10 @@
     "message": "Item editado"
   },
   "deleteItemConfirmation": {
-    "message": "Tem certeza de que pretende apagar este item?"
+    "message": "Tem certeza de que pretende excluir este item?"
   },
   "deletedItem": {
-    "message": "Item apagado"
+    "message": "Item excluído"
   },
   "overwritePassword": {
     "message": "Substituir Senha"
@@ -496,13 +499,13 @@
     "message": "Utilizamos o analytics para aprender melhor como a extensão está sendo utilizada para que possamos torná-la melhor. Todos os dados são recolhidos de forma anônima."
   },
   "disableAddLoginNotification": {
-    "message": "Desativar Notificação de Adicionar Login"
+    "message": "Desativar Notificação de Adicionar Credencial"
   },
   "addLoginNotificationDesc": {
     "message": "A \"Notificação de Adicionar Login\" pede para salvar automaticamente novas logins para o seu cofre quando você inicia uma sessão em um site pela primeira vez."
   },
   "notificationAddDesc": {
-    "message": "O bitwarden deve lembrar esta senha para você?"
+    "message": "O Bitwarden deve lembrar esta senha para você?"
   },
   "notificationAddSave": {
     "message": "Sim, Salvar Agora"
@@ -548,7 +551,7 @@
     "message": "Saber mais"
   },
   "authenticatorKeyTotp": {
-    "message": "Chave de Autenticador (TOTP)"
+    "message": "Chave de Autenticação (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Código de Verificação (TOTP)"
@@ -560,13 +563,13 @@
     "message": "Anexos"
   },
   "deleteAttachment": {
-    "message": "Apagar anexo"
+    "message": "Excluir anexo"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Tem a certeza de que deseja apagar este anexo?"
+    "message": "Tem a certeza de que deseja excluir este anexo?"
   },
   "deletedAttachment": {
-    "message": "Anexo apagado"
+    "message": "Anexo excluído"
   },
   "newAttachment": {
     "message": "Adicionar Novo Anexo"
@@ -599,7 +602,7 @@
     "message": "Gerenciar Plano"
   },
   "premiumManageAlert": {
-    "message": "Você pode gerenciar a sua assinatura premium no cofre web bitwarden.com. Deseja visitar o site agora?"
+    "message": "Você pode gerenciar a sua assinatura premium no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "premiumRefresh": {
     "message": "Atualizar Assinatura"
@@ -629,13 +632,13 @@
     "message": "Comprar Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Você pode comprar a assinatura premium no cofre web bitwarden.com. Deseja visitar o site agora?"
+    "message": "Você pode comprar a assinatura premium no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "premiumCurrentMember": {
     "message": "Você é um membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Obrigado por apoiar o bitwarden."
+    "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
     "message": "Tudo por apenas %price% \/ano!"
@@ -647,7 +650,7 @@
     "message": "Desativar Cópia Automática de TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Se o seu login tiver uma chave de autenticação anexada, o código de verificação TOTP será copiado automaticamente para a área de transferência quando preencher automaticamente o login."
+    "message": "Se a sua credencial tiver uma chave de autenticação anexada, o código de verificação TOTP será copiado automaticamente para a área de transferência quando preencher automaticamente a credencial."
   },
   "premiumRequired": {
     "message": "Requer Assinatura Premium"
@@ -668,7 +671,7 @@
     "message": "Enviar código de verificação novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utilizar outro método de verificação de duas etapas"
+    "message": "Utilizar outro método de verificação em duas etapas"
   },
   "insertYubiKey": {
     "message": "Introduza a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
@@ -677,16 +680,16 @@
     "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tem um botão, toque nele."
   },
   "loginUnavailable": {
-    "message": "Login Indisponível"
+    "message": "Sessão Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação de duas etapas ativado, no entanto, nenhum dos provedores de verificação de duas etapas configurados são suportados por este navegador web."
+    "message": "Esta conta tem a verificação em duas etapas ativado, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
     "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
   },
   "twoStepOptions": {
-    "message": "Opções de Login de Duas Etapas"
+    "message": "Opções de Login em Duas Etapas"
   },
   "recoveryCodeDesc": {
     "message": "Perdeu o acesso a todos os seus provedores de duas etapas? Utilize o seu código de recuperação para desativar todos os provedores de duas etapas da sua conta."
@@ -727,7 +730,7 @@
     "message": "Ambiente Auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifique a URL de base da sua instalação local do bitwarden."
+    "message": "Especifique a URL de base da sua instalação local do Bitwarden."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizado"
@@ -754,16 +757,16 @@
     "message": "As URLs do ambiente foram salvos."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Habilitar o Auto-preencher ao Carregar a Página"
+    "message": "Habilitar o Autopreencher ao Carregar a Página"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Se um formulário de login for detectado, realizar automaticamente um auto-preenchimento quando a página web carregar."
+    "message": "Se um formulário de login for detectado, realizar automaticamente um autopreenchimento quando a página web carregar."
   },
   "experimentalFeature": {
     "message": "Esta é atualmente uma funcionalidade experimental. Utilize por sua conta e risco."
   },
   "commandAutofillDesc": {
-    "message": "Auto-preencher o último login utilizado para o site atual."
+    "message": "Autopreencher o último login utilizado para o site atual."
   },
   "commandGeneratePasswordDesc": {
     "message": "Gerar e copiar uma nova senha aleatória para a área de transferência."
@@ -979,6 +982,43 @@
     "message": "Limpar"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete o seu pedido de início de sessão de duas etapas utilizando a nova aba."
+    "message": "Complete o seu pedido de início de sessão em duas etapas utilizando a nova aba."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

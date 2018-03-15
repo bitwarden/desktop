@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - 免费密码管理器",
+    "message": "Bitwarden - 免费密码管理器",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden 是一个安全且免费的跨平台密码管理器。",
+    "message": "Bitwarden 是一个安全且免费的跨平台密码管理器。",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "访问我们的网站"
   },
   "visitOurWebsiteDirectly": {
-    "message": "访问我们的网站来获得帮助、新闻，或者学习如何使用 bitwarden。"
+    "message": "访问我们的网站来获得帮助、新闻，或者学习如何使用 Bitwarden。"
   },
   "fileBugReport": {
     "message": "Bug 报告"
@@ -191,22 +191,22 @@
     "message": "自动生成安全可靠唯一的登录密码。"
   },
   "bitWebVault": {
-    "message": "bitwarden 网页版"
+    "message": "Bitwarden 网页版"
   },
   "bitWebVaultInfo": {
-    "message": "使用 bitwarden 网页版可以从任何浏览器管理您的登录项目。"
+    "message": "使用 Bitwarden 网页版可以从任何浏览器管理您的登录项目。"
   },
   "bitIosVault": {
-    "message": "bitwarden iOS 版"
+    "message": "Bitwarden iOS 版"
   },
   "bitIosVaultInfo": {
-    "message": "使用 bitwarden iOS 版可以从 iOS 设备管理您的登录项目。"
+    "message": "使用 Bitwarden iOS 版可以从 iOS 设备管理您的登录项目。"
   },
   "bitAndrVault": {
-    "message": "bitwarden Android 版"
+    "message": "Bitwarden Android 版"
   },
   "bitAndrVaultInfo": {
-    "message": "使用 bitwarden Android 版可以从 Android 设备管理您的登录项目。"
+    "message": "使用 Bitwarden Android 版可以从 Android 设备管理您的登录项目。"
   },
   "importItems": {
     "message": "导入项目"
@@ -338,7 +338,7 @@
     "message": "4 小时"
   },
   "onLocked": {
-    "message": "电脑锁定时"
+    "message": "系统锁定时"
   },
   "onRestart": {
     "message": "重启时"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "项目已添加"
   },
@@ -502,7 +505,7 @@
     "message": "当您第一次登录时，\"添加登录提醒\" 会自动提醒您在密码库里保存新的登录项目。"
   },
   "notificationAddDesc": {
-    "message": "希望 bitwarden 为您保存这个密码吗？"
+    "message": "希望 Bitwarden 为您保存这个密码吗？"
   },
   "notificationAddSave": {
     "message": "是，现在保存"
@@ -635,7 +638,7 @@
     "message": "您是一名高级会员！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "感谢您支持 bitwarden。"
+    "message": "感谢您支持 Bitwarden。"
   },
   "premiumPrice": {
     "message": "只需 %price% \/每年！"
@@ -727,7 +730,7 @@
     "message": "自我托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己配置、托管的 bitwarden 环境的基础 URL。"
+    "message": "指定自己配置、托管的 Bitwarden 环境的基础 URL。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "使用新的标签页完成您的两步登录请求。"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

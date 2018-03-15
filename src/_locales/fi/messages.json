@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden – Ilmainen salasananhallintapalvelu",
+    "message": "Bitwarden – Ilmainen salasananhallinta",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden on turvallinen ja ilmainen salasananhallintapalvelu kaikille laitteillesi.",
+    "message": "Bitwarden on turvallinen ja ilmainen salasananhallintapalvelu kaikille laitteillesi.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Käy sivustollamme"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Käy sivustollamme, jossa voit saada apua bitwardenin käyttämisessä, saada tietoosi palvelun uutisia tai lähettää meille sähköpostia."
+    "message": "Käy sivustollamme, jossa voit saada apua Bitwardenin käyttämisessä, saada tietoosi palvelun uutisia tai lähettää meille sähköpostia."
   },
   "fileBugReport": {
     "message": "Jätä virheilmoitus"
@@ -191,22 +191,22 @@
     "message": "Luo automaattisesti vahvoja, sivustokohtaisia salasanoja kirjautumisiasi varten."
   },
   "bitWebVault": {
-    "message": "bitwardenin verkkoholvi"
+    "message": "Bitwardenin verkkoholvi"
   },
   "bitWebVaultInfo": {
-    "message": "Hallitse kirjautumistietojasi millä tahansa selaimella bitwarden-verkkoholvissa."
+    "message": "Hallitse kohteitasi millä tahansa selaimella Bitwardenin verkkoholvissa."
   },
   "bitIosVault": {
-    "message": "bitwardenin iOS-holvi"
+    "message": "Bitwardenin iOS-holvi"
   },
   "bitIosVaultInfo": {
-    "message": "Hallitse kirjautumistietojasi mobiililaitteillasi bitwardenin iOS-holvin avulla."
+    "message": "Hallitse kohteitasi mobiililaitteillasi bitwardenin iOS-holvin avulla."
   },
   "bitAndrVault": {
-    "message": "bitwardenin Android-holvi"
+    "message": "Bitwardenin Android-holvi"
   },
   "bitAndrVaultInfo": {
-    "message": "Hallitse kirjautumistietojasi mobiililaitteillasi bitwardenin Android-holvin avulla."
+    "message": "Hallitse kohteitasi mobiililaitteillasi Bitwardenin Android-holvin avulla."
   },
   "importItems": {
     "message": "Tuo kohteita"
@@ -338,7 +338,7 @@
     "message": "4 tuntia"
   },
   "onLocked": {
-    "message": "Tietokoneen lukitsemisen yhteydessä"
+    "message": "Järjestelmän lukitsemisen yhteydessä"
   },
   "onRestart": {
     "message": "Uudelleenkäynnistyksen yhteydessä"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Kohde lisätty"
   },
@@ -502,7 +505,7 @@
     "message": "Tallennuskehote kysyy, haluatko tallentaa käyttäjätunnuksen holviisi, kun kirjaudut sivustoille ensimmäistä kertaa."
   },
   "notificationAddDesc": {
-    "message": "Haluatko, että bitwarden muistaa tämän salasanan puolestasi?"
+    "message": "Haluatko, että Bitwarden muistaa tämän salasanan puolestasi?"
   },
   "notificationAddSave": {
     "message": "Kyllä, tallenna nyt"
@@ -584,7 +587,7 @@
     "message": "Valitse tiedosto."
   },
   "maxFileSize": {
-    "message": "Tiedoston enimmäiskoko on 100 Mt."
+    "message": "Tiedoston enimmäiskoko on 100 MB."
   },
   "featureUnavailable": {
     "message": "Toiminto ei ole käytettävissä"
@@ -635,7 +638,7 @@
     "message": "Olet premium-jäsen!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Kiitos, että tuet bitwardenin toimintaa."
+    "message": "Kiitos, että tuet Bitwardenin toimintaa."
   },
   "premiumPrice": {
     "message": "Kaikki nämä vain %price%\/vuosi!"
@@ -727,7 +730,7 @@
     "message": "Itse ylläpidetty ohjelmistoympäristö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Syötä omalla palvelimella ylläpitämäsi bitwarden-asennuksen kanta-URL."
   },
   "customEnvironment": {
     "message": "Mukautettu ohjelmistoympäristö"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Suorita kaksivaihekirjautumisesi loppuun uudella uudellavälilehdellä."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

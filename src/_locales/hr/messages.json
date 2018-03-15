@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
     "message": "bitwarden - Besplatni upravitelj lozinki",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden je siguran i besplatan upravitelj lozinki za sve vaše uređaje.",
+    "message": "Bitwarden je siguran i besplatan upravitelj lozinki za sve Vaše uređaje.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -206,7 +206,7 @@
     "message": "bitwarden Android trezor"
   },
   "bitAndrVaultInfo": {
-    "message": "Upravljajte svojim prijavama s mobilnih uređaja pomoću bitwarden Android trezora."
+    "message": "Upravljajte svojim prijavama s mobilnih uređaja pomoću Bitwarden Android trezora."
   },
   "importItems": {
     "message": "Uvoz stavki"
@@ -338,7 +338,7 @@
     "message": "4 sata"
   },
   "onLocked": {
-    "message": "Kod zaključavanja"
+    "message": "Kod zaključavanja sustava"
   },
   "onRestart": {
     "message": "Kod ponovnog pokretanja"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URL"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Dodaj stavku"
   },
@@ -502,7 +505,7 @@
     "message": "\"Obavijest o dodavanju prijave\" automatski vas traži da spremite nove prijave u svoj trezor kad god se prvi put prijavite na njih."
   },
   "notificationAddDesc": {
-    "message": "Treba li bitwarden zapamtiti ovu lozinku za vas?"
+    "message": "Treba li Bitwarden zapamtiti ovu lozinku?"
   },
   "notificationAddSave": {
     "message": "Da, spremi sad"
@@ -635,7 +638,7 @@
     "message": "Vi ste premium član!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Hvala vam što ste podupirali bitwarden."
+    "message": "Hvala Vam što podupirete Bitwarden."
   },
   "premiumPrice": {
     "message": "Sve samo za %price% \/godišnje!"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Dovršite zahtjev za prijavu u dva koraka pomoću nove kartice."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

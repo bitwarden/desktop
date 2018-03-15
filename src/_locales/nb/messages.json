@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden — Fri passordbehandling",
+    "message": "Bitwarden — Fri passordbehandling",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden er en sikker og fri passordbehandler for alle dine PCer og mobiler.",
+    "message": "Bitwarden er en sikker og fri passordbehandler for alle dine PCer og mobiler.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Besøk nettsidene våre"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Besøk vårt nettsted for å få hjelp, nyheter, sende oss E-poster, og\/eller lære mer om å bruke bitwarden."
+    "message": "Besøk vårt nettsted for å få hjelp, nyheter, sende oss E-poster, og\/eller lære mer om å bruke Bitwarden."
   },
   "fileBugReport": {
     "message": "Legg inn en feilrapport"
@@ -191,22 +191,22 @@
     "message": "Generer automatisk sterke og unike passord for dine innlogginger."
   },
   "bitWebVault": {
-    "message": "bitwarden Netthvelv"
+    "message": "Bitwarden Netthvelv"
   },
   "bitWebVaultInfo": {
-    "message": "Behandle dine gjenstander fra enhver nettleser med bitwarden sitt netthvelv."
+    "message": "Behandle dine gjenstander fra enhver nettleser med Bitwarden sitt netthvelv."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS-hvelv"
+    "message": "Bitwarden iOS-hvelv"
   },
   "bitIosVaultInfo": {
-    "message": "Behandle dine gjenstander fra dine mobile enheter med bitwarden sitt iOS-hvelv."
+    "message": "Behandle dine gjenstander fra dine mobile enheter med Bitwarden sitt iOS-hvelv."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android-hvelv"
+    "message": "Bitwarden Android-hvelv"
   },
   "bitAndrVaultInfo": {
-    "message": "Behandle dine gjenstander fra dine mobile enheter med bitwarden sitt Android-hvelv."
+    "message": "Behandle dine gjenstander fra dine mobile enheter med Bitwarden sitt Android-hvelv."
   },
   "importItems": {
     "message": "Importer gjenstander"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "La til gjenstanden"
   },
@@ -502,7 +505,7 @@
     "message": "\"Legg til innlogging\"-beskjeden ber deg automatisk om å lagre nye innlogginger til hvelvet ditt hver gang du logger på dem for første gang."
   },
   "notificationAddDesc": {
-    "message": "Skal bitwarden huske på dette passordet for deg?"
+    "message": "Skal Bitwarden huske på dette passordet for deg?"
   },
   "notificationAddSave": {
     "message": "Ja, lagre nå"
@@ -635,7 +638,7 @@
     "message": "Du er et Premium-medlem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Takk for at du støtter bitwarden."
+    "message": "Takk for at du støtter Bitwarden."
   },
   "premiumPrice": {
     "message": "Og alt det for %price%\/år!"
@@ -727,7 +730,7 @@
     "message": "Selvbetjent miljø"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Spesifiser grunn-nettadressen til din selvbetjente bitwarden-installasjon."
+    "message": "Spesifiser grunn-nettadressen til din selvbetjente Bitwarden-installasjon."
   },
   "customEnvironment": {
     "message": "Tilpasset miljø"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Fullfør din 2-trinnsinnloggingsforespørsel i den nye fanen."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

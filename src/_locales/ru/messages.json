@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - бесплатный менеджер паролей",
+    "message": "Bitwarden - бесплатный менеджер паролей",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden - безопасный и бесплатный менеджер паролей для всех ваших устройств.",
+    "message": "Bitwarden - безопасный и бесплатный менеджер паролей для всех ваших устройств.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Посетите наш сайт"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Посетите наш веб-сайт, чтобы получить помощь, прочесть новости, связаться с нами или узнать больше о том, как использовать bitwarden."
+    "message": "Посетите наш веб-сайт, чтобы получить помощь, прочесть новости, связаться с нами или узнать больше о том, как использовать Bitwarden."
   },
   "fileBugReport": {
     "message": "Сообщить об ошибке"
@@ -191,22 +191,22 @@
     "message": "Автоматическая генерация стойких и уникальных паролей для ваших аккаунтов."
   },
   "bitWebVault": {
-    "message": "Веб-хранилище bitwarden"
+    "message": "Веб-хранилище Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Управляйте своими элементами из любого браузера при помощи веб-хранилища bitwarden."
+    "message": "Управляйте своими элементами из любого браузера при помощи веб-хранилища Bitwarden."
   },
   "bitIosVault": {
-    "message": "iOS-хранилище bitwarden"
+    "message": "iOS-хранилище Bitwarden"
   },
   "bitIosVaultInfo": {
-    "message": "Управляйте своими элементами со своего мобильного устройства при помощи iOS-хранилища bitwarden."
+    "message": "Управляйте своими элементами со своего мобильного устройства при помощи iOS-хранилища Bitwarden."
   },
   "bitAndrVault": {
-    "message": "Android-хранилище bitwarden"
+    "message": "Android-хранилище Bitwarden"
   },
   "bitAndrVaultInfo": {
-    "message": "Управляйте своими элементами со своего мобильного устройства при помощи Android-хранилища bitwarden."
+    "message": "Управляйте своими элементами со своего мобильного устройства при помощи Android-хранилища Bitwarden."
   },
   "importItems": {
     "message": "Импорт элементов"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Добавленный элемент"
   },
@@ -493,7 +496,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
-    "message": "Мы используем аналитику для понимания как используется расширение, чтобы сделать его лучше. Все собранные данные полностью анонимны."
+    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собираемые данные полностью анонимны."
   },
   "disableAddLoginNotification": {
     "message": "Отключить уведомление о добавлении логина"
@@ -502,7 +505,7 @@
     "message": "Уведомление о добавлении логина автоматически предложит вам сохранить новые логины в хранилище."
   },
   "notificationAddDesc": {
-    "message": "Должен ли bitwarden запомнить этот пароль?"
+    "message": "Должен ли Bitwarden запомнить этот пароль?"
   },
   "notificationAddSave": {
     "message": "Да, сохранить"
@@ -635,7 +638,7 @@
     "message": "У вас премиум-статус!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Благодарим вас за поддержку bitwarden."
+    "message": "Благодарим вас за поддержку Bitwarden."
   },
   "premiumPrice": {
     "message": "Всего лишь %price% \/в год!"
@@ -644,10 +647,10 @@
     "message": "Обновление завершено"
   },
   "disableAutoTotpCopy": {
-    "message": "Отключить автоматическое копирование TOTP"
+    "message": "Отключить копирование TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Если ваш логин имеет прикрепленный к нему ключ проверки подлинности, код подтверждения TOTP автоматически копируется в буфер обмена всякий раз, когда вы автоматически заполняете логин."
+    "message": "Если к вашему логину прикреплен ключ аутентификации, то код подтверждения TOTP будет скопирован при автозаполнении логина."
   },
   "premiumRequired": {
     "message": "Необходим премиум-статус"
@@ -727,7 +730,7 @@
     "message": "Среда собственного хостинга"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Укажите URL-адрес bitwarden на вашем сервере."
+    "message": "Укажите URL-адрес Bitwarden на вашем сервере."
   },
   "customEnvironment": {
     "message": "Настройка среды"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Завершите двухфакторную аутентификацию на новой вкладке."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

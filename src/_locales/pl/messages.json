@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
     "message": "bitwarden - Darmowy Menedżer Haseł",
@@ -167,7 +167,7 @@
     "message": "Odwiedź naszą stronę"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Odwiedź naszą stronę, aby uzyskać pomoc, zobaczyć aktualności, napisać do nas i\/lub dowiedzieć się, jak używać bitwarden."
+    "message": "Odwiedź naszą stronę, aby uzyskać pomoc, zobaczyć aktualności, napisać do nas i\/lub dowiedzieć się, jak używać Bitwarden."
   },
   "fileBugReport": {
     "message": "Zgłoś błąd"
@@ -191,22 +191,22 @@
     "message": "Automatycznie wygeneruj silne, unikatowe hasła dla swoich loginów."
   },
   "bitWebVault": {
-    "message": "Internetowy Sejf bitwarden"
+    "message": "Internetowy Sejf Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Zarządzaj swoimi danymi z poziomu dowolnej przeglądarki za pomocą sejfu internetowego bitwarden."
+    "message": "Zarządzaj swoimi danymi z poziomu dowolnej przeglądarki za pomocą sejfu internetowego Bitwarden."
   },
   "bitIosVault": {
     "message": "Sejf iOS bitwarden"
   },
   "bitIosVaultInfo": {
-    "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu bitwarden iOS."
+    "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu Bitwarden iOS."
   },
   "bitAndrVault": {
     "message": "Sejf Android bitwarden"
   },
   "bitAndrVaultInfo": {
-    "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu bitwarden Android."
+    "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu Bitwarden Android."
   },
   "importItems": {
     "message": "Importuj elementy"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Dodany element"
   },
@@ -502,7 +505,7 @@
     "message": "\"Dodaj powiadomienia logowania\" automatycznie wyświetla monit o zapisanie nowych danych logowania do sejfu przy każdym pierwszym logowaniu."
   },
   "notificationAddDesc": {
-    "message": "Czy bitwarden powinien zapisać dla Ciebie to hasło?"
+    "message": "Czy Bitwarden powinien zapisać dla Ciebie to hasło?"
   },
   "notificationAddSave": {
     "message": "Tak, Zapisz teraz"
@@ -635,7 +638,7 @@
     "message": "Jesteś członkiem premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Dziękujemy za wspieranie bitwarden."
+    "message": "Dziękujemy za wspieranie Bitwarden."
   },
   "premiumPrice": {
     "message": "Wszystko to jedynie za %price% \/rok!"
@@ -727,7 +730,7 @@
     "message": "Samodzielnie hostowane środowisko"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Podaj podstawowy adres URL hostowanej przez Ciebie instalacji bitwarden."
+    "message": "Podaj podstawowy adres URL hostowanej przez Ciebie instalacji Bitwarden."
   },
   "customEnvironment": {
     "message": "Niestandardowe środowisko"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Dokończ uwierzytelnianie dwustopniowe używając nowej karty."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

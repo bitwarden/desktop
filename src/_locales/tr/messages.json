@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Ücretsiz Parola Yöneticisi",
+    "message": "Bitwarden - Ücretsiz Parola Yöneticisi",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden, tüm aygıtlarınız için güvenli ve ücretsiz bir parola yöneticisidir.",
+    "message": "Bitwarden, tüm aygıtlarınız için güvenli ve ücretsiz bir parola yöneticisidir.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -191,22 +191,22 @@
     "message": "Hesaplarınız için otomatik olarak güçlü, özel parolalar oluşturun."
   },
   "bitWebVault": {
-    "message": "bitwarden Web Kasası"
+    "message": "Bitwarden Web Kasası"
   },
   "bitWebVaultInfo": {
-    "message": "bitwarden web kasası ile herhangi bir internet tarayıcısından oturumlarınızı yönetin."
+    "message": "Bitwarden web kasası ile herhangi bir internet tarayıcısından oturumlarınızı yönetin."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS Kasası"
+    "message": "Bitwarden iOS Kasası"
   },
   "bitIosVaultInfo": {
-    "message": "bitwarden iOS kasası ile mobil aygıtlarınızdan oturumlarınızı yönetin."
+    "message": "Bitwarden iOS kasası ile mobil aygıtlarınızdan oturumlarınızı yönetin."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android Kasası"
+    "message": "Bitwarden Android Kasası"
   },
   "bitAndrVaultInfo": {
-    "message": "bitwarden Android kasası ile mobil aygıtlarınızdan oturumlarınızı yönetin."
+    "message": "Bitwarden Android kasası ile mobil aygıtlarınızdan oturumlarınızı yönetin."
   },
   "importItems": {
     "message": "Hesapları İçe Aktar"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URl"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Hesap eklendi"
   },
@@ -502,7 +505,7 @@
     "message": "\"Hesap Ekle Bildirimi\" otomatik olarak, ilk kez oturum açtığınız hesabınızı kasanıza kaydetmeniz için uyarı verir."
   },
   "notificationAddDesc": {
-    "message": "bitwarden bu parolayı sizin için hatırlamalı mı?"
+    "message": "Bitwarden bu parolayı sizin için hatırlamalı mı?"
   },
   "notificationAddSave": {
     "message": "Evet, Şimdi kaydet"
@@ -635,7 +638,7 @@
     "message": "Premium bir üyesiniz!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "bitwarden'ı desteklediğiniz için teşekkür ederiz."
+    "message": "Bitwarden'ı desteklediğiniz için teşekkür ederiz."
   },
   "premiumPrice": {
     "message": "Bunların hepsi sadece %price% \/yıl!"
@@ -727,7 +730,7 @@
     "message": "Öz-barındıran Çevre"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Kurum içi barındırılan bitwarden kurulumunuzun taban URL'sini belirtin."
+    "message": "Kurum içi barındırılan Bitwarden kurulumunuzun taban URL'sini belirtin."
   },
   "customEnvironment": {
     "message": "Özel Çevre"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Yeni sekmeyi kullanarak iki adımlı giriş talebinizi tamamlayın."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

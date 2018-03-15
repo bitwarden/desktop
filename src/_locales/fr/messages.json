@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gestionnaire de mots de passe libre",
+    "message": "Bitwarden - Gestionnaire de mots de passe gratuit",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden est un gestionnaire de mot de passe sécurisé et libre pour tous vos appareils.",
+    "message": "Bitwarden est un gestionnaire de mot de passe sécurisé et gratuit pour tous vos appareils.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Visitez notre site web"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Consultez notre site web pour obtenir de l'aide, les actualités, nous envoyer un e-mail et\/ou mieux apprendre à utiliser bitwarden."
+    "message": "Consultez notre site web pour obtenir de l'aide, les actualités, nous envoyer un e-mail et\/ou mieux apprendre à utiliser Bitwarden."
   },
   "fileBugReport": {
     "message": "Envoyer un rapport de bug"
@@ -191,22 +191,22 @@
     "message": "Générer automatiquement des mots de passe forts et uniques pour vos identifiants."
   },
   "bitWebVault": {
-    "message": "Coffre en ligne de bitwarden"
+    "message": "Coffre en ligne de Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gérez vos identifiants depuis n'importe quel navigateur web à l'aide du coffre en ligne de bitwarden."
+    "message": "Gérez vos identifiants depuis n'importe quel navigateur web à l'aide du coffre en ligne de Bitwarden."
   },
   "bitIosVault": {
-    "message": "Coffre iOS bitwarden"
+    "message": "Coffre iOS Bitwarden"
   },
   "bitIosVaultInfo": {
-    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre iOS bitwarden."
+    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre iOS Bitwarden."
   },
   "bitAndrVault": {
-    "message": "Coffre Android bitwarden"
+    "message": "Coffre Android Bitwarden"
   },
   "bitAndrVaultInfo": {
-    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre Android bitwarden."
+    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre Android Bitwarden."
   },
   "importItems": {
     "message": "Importer des identifiants"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Identifiant ajouté"
   },
@@ -502,7 +505,7 @@
     "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
   },
   "notificationAddDesc": {
-    "message": "Est-ce que bitwarden doit se souvenir de ce mot de passe pour vous?"
+    "message": "Est-ce que Bitwarden doit se souvenir de ce mot de passe pour vous ?"
   },
   "notificationAddSave": {
     "message": "Oui, enregistrer maintenant"
@@ -635,7 +638,7 @@
     "message": "Vous êtes un adhérent premium !"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Merci de supporter bitwarden."
+    "message": "Merci de supporter Bitwarden."
   },
   "premiumPrice": {
     "message": "Tout pour seulement %price% \/an !"
@@ -727,7 +730,7 @@
     "message": "Environnement auto-hébergé"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Spécifiez l'URL de base de votre installation de bitwarden hébergée en interne."
+    "message": "Spécifiez l'URL de base de votre installation de Bitwarden hébergée en interne."
   },
   "customEnvironment": {
     "message": "Environnement personnalisé"
@@ -811,7 +814,7 @@
     "message": "Nombre"
   },
   "brand": {
-    "message": "Marque"
+    "message": "Réseau de paiement"
   },
   "expirationMonth": {
     "message": "Mois d'expiration"
@@ -946,7 +949,7 @@
     "message": "Note sécurisée"
   },
   "typeCard": {
-    "message": "Carte"
+    "message": "Carte de paiement"
   },
   "typeIdentity": {
     "message": "Identité"
@@ -970,7 +973,7 @@
     "message": "Actualiser"
   },
   "cards": {
-    "message": "Cartes"
+    "message": "Cartes de paiement"
   },
   "identities": {
     "message": "Identités"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Terminez votre demande d'authentification à deux étapes en utilisant le nouvel onglet."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

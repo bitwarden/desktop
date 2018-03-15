@@ -1,20 +1,20 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Kostenloser Passwortmanager",
+    "message": "Bitwarden - Kostenloser Passwortmanager",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden ist ein sicherer und kostenloser Passwort Manager für all deine Geräte.",
+    "message": "Bitwarden ist ein sicherer und kostenloser Passwortmanager für all Ihre Geräte.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Einloggen oder einen neuen Account erstellen um auf den Tresor zuzugreifen."
+    "message": "Sie müssen sich anmelden oder einen neuen Account erstellen, um auf den Tresor zugreifen zu können."
   },
   "createAccount": {
-    "message": "Account Erstellen"
+    "message": "Account erstellen"
   },
   "login": {
     "message": "Anmelden"
@@ -32,19 +32,19 @@
     "message": "E-Mail Adresse"
   },
   "masterPass": {
-    "message": "Master-Passwort"
+    "message": "Masterpasswort"
   },
   "masterPassDesc": {
-    "message": "Das Master-Passwort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass du das Passwort nicht vergisst, da es keine Möglichkeit gibt es zurückzusetzen."
+    "message": "Das Masterpasswort wird verwendet, um den Tresor zu öffnen. Es ist sehr wichtig, dass Sie das Passwort nicht vergessen, da es keine Möglichkeit gibt es zurückzusetzen."
   },
   "masterPassHintDesc": {
-    "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, solltest du es vergessen."
+    "message": "Ein Hinweis auf Ihr Masterpasswort kann Ihnen helfen, sich an das Passwort zu erinnern, sollten Sie es vergessen."
   },
   "reTypeMasterPass": {
-    "message": "Master-Passwort wiederholen"
+    "message": "Masterpasswort wiederholen"
   },
   "masterPassHint": {
-    "message": "Master-Passwort-Hinweis (optional)"
+    "message": "Masterpassworthinweis (optional)"
   },
   "tab": {
     "message": "Tab"
@@ -68,10 +68,10 @@
     "message": "URI kopieren"
   },
   "copyUsername": {
-    "message": "Nutzernamen Kopieren"
+    "message": "Nutzernamen kopieren"
   },
   "copyNumber": {
-    "message": "Telefonnummer kopieren"
+    "message": "Nummer kopieren"
   },
   "copySecurityCode": {
     "message": "Sicherheitscode kopieren"
@@ -80,31 +80,31 @@
     "message": "Auto-Ausfüllen"
   },
   "generatePasswordCopied": {
-    "message": "Passwort Generieren (kopiert)"
+    "message": "Passwort generieren (kopiert)"
   },
   "noMatchingLogins": {
-    "message": "Keine passende Seite."
+    "message": "Keine passenden Zugangsdaten."
   },
   "vaultLocked": {
     "message": "Der Tresor ist gesperrt."
   },
   "autoFillInfo": {
-    "message": "Für den aktuellen Browser-Tab gibt es keine passenden Seiten, welche automatisch ausgefüllt werden können."
+    "message": "Für den aktuellen Browser-Tab gibt es keine passenden Zugangsdaten, welche automatisch ausgefüllt werden können."
   },
   "addLogin": {
-    "message": "Seite Hinzufügen"
+    "message": "Zugangsdaten hinzufügen"
   },
   "addItem": {
     "message": "Neuer Eintrag"
   },
   "passwordHint": {
-    "message": "Passwort-Hinweis"
+    "message": "Passworthinweis"
   },
   "enterEmailToGetHint": {
-    "message": "Account-E-Mail angeben, um den Master-Passwort-Hinweis zugeschickt zu bekommen."
+    "message": "Geben Sie die E-Mail Adresse Ihres Kontos ein, um den Hinweis für Ihr Masterpasswort zu erhalten."
   },
   "getMasterPasswordHint": {
-    "message": "Master-Passwort-Hinweis Zusenden"
+    "message": "Hinweis zum Masterpasswort erhalten"
   },
   "continue": {
     "message": "Weiter"
@@ -116,19 +116,19 @@
     "message": "Konto"
   },
   "changeMasterPassword": {
-    "message": "Master-Passwort Ändern"
+    "message": "Masterpasswort ändern"
   },
   "changeEmail": {
-    "message": "E-Mail Adresse Ändern"
+    "message": "E-Mail Adresse ändern"
   },
   "twoStepLogin": {
-    "message": "Two-Step-Login"
+    "message": "Zwei-Faktor Authentifizierung"
   },
   "logOut": {
     "message": "Abmelden"
   },
   "about": {
-    "message": "Über Uns"
+    "message": "Über uns"
   },
   "version": {
     "message": "Version"
@@ -137,16 +137,16 @@
     "message": "Speichern"
   },
   "addFolder": {
-    "message": "Ordner Hinzufügen"
+    "message": "Ordner hinzufügen"
   },
   "name": {
     "message": "Name"
   },
   "editFolder": {
-    "message": "Ordner Bearbeiten"
+    "message": "Ordner bearbeiten"
   },
   "deleteFolder": {
-    "message": "Ordner Löschen"
+    "message": "Ordner löschen"
   },
   "folders": {
     "message": "Ordner"
@@ -158,70 +158,70 @@
     "message": "Hilfe & Feedback"
   },
   "emailUs": {
-    "message": "Kontaktiere Uns"
+    "message": "Schreiben Sie uns"
   },
   "emailUsDirectly": {
-    "message": "Kontaktiere uns direkt, um Hilfe zu bekommen oder um Feedback abzugeben."
+    "message": "Schreiben Sie uns direkt, um Hilfe zu erhalten oder um Feedback abzugeben."
   },
   "visitOurWebsite": {
-    "message": "Unsere Website Besuchen"
+    "message": "Besuchen Sie unsere Website"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Besuche unsere Website um Hilfe, News und mehr über die Verwendung von bitwarden zu erfahren."
+    "message": "Besuchen Sie unsere Webseite um Hilfe zu erhalten, Neuigkeiten zu erfahren, Kontakt aufzunehmen und mehr über die Verwendung von Bitwarden zu lernen."
   },
   "fileBugReport": {
-    "message": "Einen Fehler Melden"
+    "message": "Einen Fehler melden"
   },
   "gitHubIssue": {
-    "message": "Melde einen Fehler auf unserem GitHub-Repository."
+    "message": "Einen Fehler bei GitHub eintragen."
   },
   "sync": {
     "message": "Synchronisierung"
   },
   "syncVaultNow": {
-    "message": "Tresor Jetzt Synchronisieren"
+    "message": "Tresor jetzt synchronisieren"
   },
   "lastSync": {
-    "message": "Letzte Synchronisation:"
+    "message": "Zuletzt synchronisiert:"
   },
   "passGen": {
-    "message": "Passwort-Generator"
+    "message": "Passwortgenerator"
   },
   "passGenInfo": {
-    "message": "Generiere automatisch sichere und eindeutige Passwörter für deine Logins."
+    "message": "Generiert automatisch ein starkes und einzigartiges Passwort."
   },
   "bitWebVault": {
-    "message": "bitwarden Web-Tresor"
+    "message": "Bitwarden Web-Tresor"
   },
   "bitWebVaultInfo": {
-    "message": "Verwalte deine Zugangsdaten in jedem Browser mit dem bitwarden Web-Tresor."
+    "message": "Verwalten Sie Ihre Einträge in jedem Browser mit dem Bitwarden Web-Tresor."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS-Tresor"
+    "message": "Bitwarden iOS-Tresor"
   },
   "bitIosVaultInfo": {
-    "message": "Verwalte deine Logins von deinem Smartphone aus mit dem bitwarden iOS-Tresor."
+    "message": "Verwalten Sie Ihre Einträge von Ihrem Smartphone aus mit dem Bitwarden iOS-Tresor."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android-Tresor"
+    "message": "Bitwarden Android-Tresor"
   },
   "bitAndrVaultInfo": {
-    "message": "Verwalte deine Logins von deinem Smartphone aus mit dem bitwarden Android-Tresor."
+    "message": "Verwalten Sie Ihre Einträge von Ihrem Smartphone aus mit dem Bitwarden Android-Tresor."
   },
   "importItems": {
     "message": "Einträge importieren"
   },
   "importItemsInfo": {
-    "message": "Importiere all deine Logins schnell und einfach von anderen Passwort-Managern."
+    "message": "Importieren Sie all Ihre Zugangsdaten schnell und einfach von anderen Passwortmanagern."
   },
   "select": {
     "message": "Auswählen"
   },
   "generatePassword": {
-    "message": "Passwort Generieren"
+    "message": "Passwort generieren"
   },
   "regeneratePassword": {
-    "message": "Password Neu Generieren"
+    "message": "Password neu generieren"
   },
   "options": {
     "message": "Optionen"
@@ -230,16 +230,16 @@
     "message": "Länge"
   },
   "minNumbers": {
-    "message": "Minimum Zahlen"
+    "message": "Mindestanzahl Zahlen"
   },
   "minSpecial": {
-    "message": "Minimum Sonderzeichen"
+    "message": "Mindestanzahl Sonderzeichen"
   },
   "avoidAmbChar": {
-    "message": "Mehrdeutige Zeichen Vermeiden"
+    "message": "Mehrdeutige Zeichen vermeiden"
   },
   "searchVault": {
-    "message": "Tresor Durchsuchen"
+    "message": "Tresor durchsuchen"
   },
   "edit": {
     "message": "Bearbeiten"
@@ -278,7 +278,7 @@
     "message": "Eintrag anzeigen"
   },
   "launchWebsite": {
-    "message": "Website Öffnen"
+    "message": "Website öffnen"
   },
   "website": {
     "message": "Webseite"
@@ -299,7 +299,7 @@
     "message": "Bewerte die Erweiterung"
   },
   "rateExtensionDesc": {
-    "message": "Wir würden uns freuen, wenn du uns mit einer positiven Bewertung helfen könntest!"
+    "message": "Wir würden uns freuen, wenn Sie uns mit einer positiven Bewertung helfen könnten!"
   },
   "browserNotSupportClipboard": {
     "message": "Den Browser unterstützt das einfache Kopieren nicht. Bitte kopiere es manuell."
@@ -368,7 +368,7 @@
     "message": "Die Master-Passwort-Wiederholung stimmt nicht überein."
   },
   "newAccountCreated": {
-    "message": "Dein neuer Account wurde erstellt! Du kannst dich nun einloggen."
+    "message": "Ihr neues Konto wurde erstellt! Sie können sich jetzt anmelden."
   },
   "masterPassSent": {
     "message": "Wir haben dir eine E-Mail mit dem Master-Passwort-Hinweis geschickt."
@@ -387,10 +387,10 @@
     "message": "Ausgeloggt"
   },
   "loginExpired": {
-    "message": "Deine Login-Sitzung ist abgelaufen."
+    "message": "Ihre Login-Sitzung ist abgelaufen."
   },
   "logOutConfirmation": {
-    "message": "Bist du sicher, dass du dich ausloggen möchtest?"
+    "message": "Sind Sie sicher, dass Sie sich abmelden möchten?"
   },
   "yes": {
     "message": "Ja"
@@ -411,25 +411,25 @@
     "message": "Master-Passwort Ändern"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Du kannst dein Master-Passwort im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
+    "message": "Sie können Ihr Masterpasswort im Bitwarden.com Web-Tresor ändern. Möchten Sie die Website jetzt besuchen?"
   },
   "changeEmailConfirmation": {
-    "message": "Du kannst deine E-Mail Adresse im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
+    "message": "Sie können Ihre E-Mail Adresse im Bitwarden.com Web-Tresor ändern. Möchten Sie die Website jetzt besuchen?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Mit Zwei-Faktor Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Zwei-Faktor Authentifizierung kann im bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
+    "message": "Mit der Zwei-Faktor Authentifizierung wird Ihr Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor Authentifizierung kann im Bitwarden.com Web-Tresor aktiviert werden. Möchten Sie die Seite jetzt öffnen?"
   },
   "loggingOut": {
     "message": "Logge aus"
   },
   "loggingOutConfirmation": {
-    "message": "Aufgrund einer neuen Version musst du dich erneut einloggen um deine Sperroptionen  zu ändern. Möchtest du dich jetzt ausloggen?"
+    "message": "Aufgrund einer neuen Version müssen Sie sich erneut einloggen, um die Sperroptionen zu ändern. Möchten Sie sich jetzt ausloggen?"
   },
   "editedFolder": {
     "message": "Ordner bearbeitet"
   },
   "deleteFolderConfirmation": {
-    "message": "Bist du sicher, dass du diesen Ordner löschen möchtest?"
+    "message": "Soll dieser Ordner wirklich gelöscht werden?"
   },
   "deletedFolder": {
     "message": "Ordner gelöscht"
@@ -438,7 +438,7 @@
     "message": "Erste Schritte Anleitung"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Sieh dir unser Erste Schritte Tutorial an um zu sehen, wie du das Meiste aus der Browser-Erweiterung holen kannst."
+    "message": "Sehen Sie sich unser Tutorial an, um hilfreiche Tipps zum Umgang mit der Browser-Erweiterung zu erfahren."
   },
   "syncingComplete": {
     "message": "Synchronisierung abgeschlossen"
@@ -447,13 +447,16 @@
     "message": "Synchronisierung fehlgeschlagen"
   },
   "importItemsConfirmation": {
-    "message": "Du kannst deine Logins über den bitwarden.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?"
+    "message": "Sie können all Ihre Zugangsdaten über den Bitwarden.com Web-Tresor importieren. Möchten Sie die Seite jetzt öffnen?"
   },
   "passwordCopied": {
     "message": "Passwort kopiert"
   },
   "uri": {
     "message": "URI"
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "addedItem": {
     "message": "Neuer Eintrag"
@@ -471,7 +474,7 @@
     "message": "Passwort Ersetzen"
   },
   "overwritePasswordConfirmation": {
-    "message": "Bist du sicher, dass du das aktuelle Passwort ersetzen möchtest?"
+    "message": "Sind Sie sicher, dass Sie das aktuelle Passwort ersetzen möchten?"
   },
   "credits": {
     "message": "Danksagungen"
@@ -499,10 +502,10 @@
     "message": "\"Login hinzufügen\" Benachrichtigung deaktivieren"
   },
   "addLoginNotificationDesc": {
-    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt dich automatisch ob du neue Zugangsdaten im Tresor speichern möchtest wenn du dich zum ersten mal mit ihnen anmeldest."
+    "message": "Die \"Login hinzufügen\" Benachrichtigung fragt Sie automatisch, ob Sie neue Zugangsdaten im Tresor speichern möchten, wenn Sie sich erstmals mit ihnen anmelden."
   },
   "notificationAddDesc": {
-    "message": "Soll bitwarden sich dein Passwort merken?"
+    "message": "Soll Bitwarden sich dieses Passwort merken?"
   },
   "notificationAddSave": {
     "message": "Ja, jetzt speichern"
@@ -514,7 +517,7 @@
     "message": "Kontextmenü-Optionen deaktivieren"
   },
   "disableContextMenuItemDesc": {
-    "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf Passwort-Generierung und Anmeldungen für die Website in Ihrer aktuellen Registerkarte."
+    "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf die Passwortgenerierung und Zugangsdaten für die Webseite in Ihrem aktuellen Tab."
   },
   "exportVault": {
     "message": "Tresor exportieren"
@@ -524,25 +527,25 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Dieser Export enthält deine unverschlüsselten Daten im CSV-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
+    "message": "Dieser Export enthält Ihre unverschlüsselten Daten im Csv-Format. Sie sollten sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Löschen Sie sie sofort nach ihrer Verwendung."
   },
   "exportMasterPassword": {
-    "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
+    "message": "Geben Sie das Masterpasswort ein, um Ihre Tresordaten zu exportieren."
   },
   "exportVaultInfo": {
-    "message": "Exportiere deine Tresordaten im .csv-Format, so dass du sie leicht ändern oder verschieben kannst."
+    "message": "Exportieren Sie Ihre Tresordaten im .csv-Format, sodass Sie sie einfach ändern oder übertragen können."
   },
   "shared": {
     "message": "Geteilt"
   },
   "shareVault": {
-    "message": "Teile deinen Tresor"
+    "message": "Teilen Sie Ihren Tresor"
   },
   "shareVaultInfo": {
-    "message": "Erstelle eine Organisation um deine Logindaten sicher für andere Benutzer freizugeben."
+    "message": "Erstellen Sie eine Organisation, um Ihre Einträge sicher für andere Benutzer freizugeben."
   },
   "contribute": {
-    "message": "Du kannst auch dazu beitragen!"
+    "message": "Sie können auch dazu beitragen!"
   },
   "learnMore": {
     "message": "Erfahre mehr"
@@ -563,7 +566,7 @@
     "message": "Anhang löschen"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Möchtest du diesen Anhang wirklich löschen?"
+    "message": "Möchten Sie diesen Anhang wirklich löschen?"
   },
   "deletedAttachment": {
     "message": "Gelöschter Anhang"
@@ -590,7 +593,7 @@
     "message": "Eigenschaft nicht verfügbar"
   },
   "updateKey": {
-    "message": "Du kannst diese Eigenschaft nicht nutzen, bevor du deinen Verschlüsselungsschlüssel nicht aktualisiert hast."
+    "message": "Sie können diese Funktion nicht nutzen, solange Sie Ihren Verschlüsselungsschlüssel nicht aktualisiert haben."
   },
   "premiumMembership": {
     "message": "Premium-Mitgliedschaft"
@@ -599,13 +602,13 @@
     "message": "Mitgliedschaft verwalten"
   },
   "premiumManageAlert": {
-    "message": "Du kannst deine Mitgliedschaft im bitwarden.com Webtresor verwalten. Möchtest du die Seite jetzt aufrufen?"
+    "message": "Sie können Ihre Mitgliedschaft im Bitwarden.com Webtresor verwalten. Möchten Sie die Seite jetzt aufrufen?"
   },
   "premiumRefresh": {
     "message": "Mitgliedschaft erneuern"
   },
   "premiumNotCurrentMember": {
-    "message": "Du hast derzeit keine Premium-Mitgliedschaft."
+    "message": "Sie haben derzeit keine Premium-Mitgliedschaft."
   },
   "premiumSignUpAndGet": {
     "message": "Werde Premium-Mitglied und erhalte dafür:"
@@ -629,13 +632,13 @@
     "message": "Premium-Mitgliedschaft kaufen"
   },
   "premiumPurchaseAlert": {
-    "message": "Du kannst deine Premium-Mitgliedschaft im bitwarden.com Web-Tresor kaufen. Möchtest du die Webseite jetzt besuchen?"
+    "message": "Sie können Ihre Premium-Mitgliedschaft im Bitwarden.com Web-Tresor kaufen. Möchten Sie die Webseite jetzt besuchen?"
   },
   "premiumCurrentMember": {
-    "message": "Du bist jetzt Premium-Mitglied!"
+    "message": "Sie sind jetzt Premium-Mitglied!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Vielen Dank, dass du bitwarden unterstützt."
+    "message": "Vielen Dank, dass Sie Bitwarden unterstützen."
   },
   "premiumPrice": {
     "message": "Das alles für %price% pro Jahr!"
@@ -647,7 +650,7 @@
     "message": "Automatisches TOTP Kopieren deaktivieren"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Wenn deine Zugangsdaten mit einem Authentifizierungsschlüssel verknüpft sind, wird der TOTP Verifizierungscode automatisch in deine Zwischenablage kopiert wenn du die Zugangsdaten automatisch ausfüllen lässt."
+    "message": "Ist ein Authentifizierungsschlüssel mit Ihren Zugangsdaten verknüpft, wird der TOTP Bestätigungscode automatisch in die Zwischenablage kopiert, wenn Sie die Zugangsdaten einfügen lassen."
   },
   "premiumRequired": {
     "message": "Erweiterte Mitgliedschaft wird benötigt"
@@ -671,10 +674,10 @@
     "message": "Verwende eine andere zweistufige Login-Methode"
   },
   "insertYubiKey": {
-    "message": "Stecke deinen YubiKey in den USB-Port Ihres Computers, dann berühre den Button."
+    "message": "Stecken Sie Ihren YubiKey in den USB-Port Ihres Computers, dann drücken Sie den Knopf."
   },
   "insertU2f": {
-    "message": "Stecke deinen Sicherheitsschlüssel in den USB-Port deines Computers. Falls ein Knopf vorhanden ist, berühre diesen."
+    "message": "Stecken Sie Ihren Sicherheitsschlüssel in den USB-Port Ihres Computers. Falls ein Knopf vorhanden ist, berühren Sie diesen."
   },
   "loginUnavailable": {
     "message": "Login nicht verfügbar"
@@ -689,7 +692,7 @@
     "message": "Optionen für Zwei-Faktor Authentifizierung"
   },
   "recoveryCodeDesc": {
-    "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutze deinen Wiederherstellungscode, um alle Zwei-Faktor Anbieter in deinem Konto zu deaktivieren."
+    "message": "Zugang zu allen Zwei-Faktor Anbietern verloren? Benutzen Sie Ihren Wiederherstellungscode, um alle Zwei-Faktor Anbieter in Ihrem Konto zu deaktivieren."
   },
   "recoveryCodeTitle": {
     "message": "Wiederherstellungscode"
@@ -698,21 +701,21 @@
     "message": "Authentifizierungs-App"
   },
   "authenticatorAppDesc": {
-    "message": "Verwende eine Authentifizierungs-App (wie zum Beispiel Authy oder Google Authenticator) um zeitbasierte Verifizierungscodes zu generieren.",
+    "message": "Verwenden Sie eine Authentifizierungs-App (wie zum Beispiel Authy oder Google Authenticator), um zeitbasierte Verifizierungscodes zu generieren.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP Sicherheitsschlüssel"
   },
   "yubiKeyDesc": {
-    "message": "Verwende einen YubiKey um auf dein Konto zuzugreifen. Funtioniert mit YubiKey 4, Nano 4, 4C und NEO Geräten."
+    "message": "Verwenden Sie einen YubiKey, um auf Ihr Konto zuzugreifen. Funtioniert mit YubiKey 4, Nano 4, 4C und NEO Geräten."
   },
   "duoDesc": {
-    "message": "Verifiziere mit Duo Security, indem du die Duo Mobile App, SMS, Anrufe oder U2F Sicherheitsschlüssel benutzt.",
+    "message": "Verifizieren Sie mit Duo Security, indem Sie die Duo Mobile App, SMS, Anrufe oder U2F Sicherheitsschlüssel benutzen.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Benutze einen FIDO U2F-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
+    "message": "Benutzen Sie einen FIDO U2F-kompatiblen Sicherheitsschlüssel, um auf Ihr Konto zuzugreifen."
   },
   "u2fTitle": {
     "message": "FIDO U2F Sicherheitsschlüssel"
@@ -727,13 +730,13 @@
     "message": "Selbstgehostete Umgebung"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitte gib die Basis-URL deiner vor Ort gehosteten bitwarden-Installation an."
+    "message": "Bitte geben Sie die Basis-URL Ihrer vor Ort gehosteten Bitwarden-Installation an."
   },
   "customEnvironment": {
     "message": "Benutzerdefinierte Umgebung"
   },
   "customEnvironmentFooter": {
-    "message": "Für fortgeschrittene Benutzer. Du kannst die Basis-URL der jeweiligen Dienste unabhängig voneinander festlegen."
+    "message": "Für fortgeschrittene Benutzer. Sie können die Basis-URL der jeweiligen Dienste unabhängig voneinander festlegen."
   },
   "baseUrl": {
     "message": "Server URL"
@@ -802,7 +805,7 @@
     "message": "Icons der Website deaktivieren"
   },
   "disableFaviconDesc": {
-    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
+    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Eintrag in Ihrem Tresor."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -937,7 +940,7 @@
     "message": "Typ"
   },
   "typeLogin": {
-    "message": "Anmeldung"
+    "message": "Zugangsdaten"
   },
   "typeLogins": {
     "message": "Zugangsdaten"
@@ -979,6 +982,43 @@
     "message": "Löschen"
   },
   "twoStepNewWindowMessage": {
-    "message": "Schließe deine Zwei-Faktor Authentifizierung im neuen Tab ab."
+    "message": "Schließen Sie die Zwei-Faktor Authentifizierung im neuen Tab ab."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

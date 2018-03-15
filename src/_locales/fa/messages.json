@@ -1,0 +1,1024 @@
+{
+  "appName": {
+    "message": "بیت واردن"
+  },
+  "extName": {
+    "message": "Bitwarden - Free Password Manager",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "A secure and free password manager for all of your devices.",
+    "description": "Extension description"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "وارد شوید یا یک حساب کاربری بسازید تا به گاوصندوق امنتان دسترسی یابید."
+  },
+  "createAccount": {
+    "message": "ایجاد حساب کاربری"
+  },
+  "login": {
+    "message": "ورود"
+  },
+  "cancel": {
+    "message": "انصراف"
+  },
+  "close": {
+    "message": "بستن"
+  },
+  "submit": {
+    "message": "ثبت"
+  },
+  "emailAddress": {
+    "message": "آدرس ایمیل"
+  },
+  "masterPass": {
+    "message": "گذرواژه‌ ی اصلی"
+  },
+  "masterPassDesc": {
+    "message": "گذرواژه اصلی رمز عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن گذرواژه اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
+  },
+  "masterPassHintDesc": {
+    "message": "راهنمای گذرواژه اصلی می تواند در صورت فراموشی آن را بیاد بیارید."
+  },
+  "reTypeMasterPass": {
+    "message": "تایپ دوباره گذرواژه اصلی"
+  },
+  "masterPassHint": {
+    "message": "راهنمای گذرواژه اصلی (اختیاری)"
+  },
+  "tab": {
+    "message": "زبانه"
+  },
+  "myVault": {
+    "message": "گاوصندوق من"
+  },
+  "tools": {
+    "message": "ابزار"
+  },
+  "settings": {
+    "message": "تنظیمات"
+  },
+  "currentTab": {
+    "message": "Current Tab"
+  },
+  "copyPassword": {
+    "message": "کپی رمز عبور"
+  },
+  "copyUri": {
+    "message": "Copy URI"
+  },
+  "copyUsername": {
+    "message": "کپی نام کاربری"
+  },
+  "copyNumber": {
+    "message": "کپی شماره"
+  },
+  "copySecurityCode": {
+    "message": "کپی کد امنیتی"
+  },
+  "autoFill": {
+    "message": "Auto-fill"
+  },
+  "generatePasswordCopied": {
+    "message": "Generate Password (copied)"
+  },
+  "noMatchingLogins": {
+    "message": "No matching logins."
+  },
+  "vaultLocked": {
+    "message": "Vault is locked."
+  },
+  "autoFillInfo": {
+    "message": "There are no logins available to auto-fill for the current browser tab."
+  },
+  "addLogin": {
+    "message": "افزودن ورود جدید"
+  },
+  "addItem": {
+    "message": "افزودن مورد"
+  },
+  "passwordHint": {
+    "message": "راهنمای گذرواژه"
+  },
+  "enterEmailToGetHint": {
+    "message": "برای دریافت راهنمایی گذرواژه اصلی خود آدرس ایملیتان را وارد کنید."
+  },
+  "getMasterPasswordHint": {
+    "message": "دریافت راهنمای گذرواژه اصلی"
+  },
+  "continue": {
+    "message": "ادامه"
+  },
+  "verificationCode": {
+    "message": "کد تایید"
+  },
+  "account": {
+    "message": "حساب"
+  },
+  "changeMasterPassword": {
+    "message": "تغییر گذرواژه اصلی"
+  },
+  "changeEmail": {
+    "message": "تغییر ایمیل"
+  },
+  "twoStepLogin": {
+    "message": "ورود دو مرحله ای"
+  },
+  "logOut": {
+    "message": "خروج"
+  },
+  "about": {
+    "message": "درباره ما"
+  },
+  "version": {
+    "message": "نسخه"
+  },
+  "save": {
+    "message": "ذخیره"
+  },
+  "addFolder": {
+    "message": "افزودن پوشه"
+  },
+  "name": {
+    "message": "نام"
+  },
+  "editFolder": {
+    "message": "ويرايش پوشه"
+  },
+  "deleteFolder": {
+    "message": "حذف پوشه"
+  },
+  "folders": {
+    "message": "پوشه ها"
+  },
+  "noFolders": {
+    "message": "هیچ موردی برای نمایش وجود ندارد."
+  },
+  "helpFeedback": {
+    "message": "کمک و بازخورد"
+  },
+  "emailUs": {
+    "message": "ایمیل ما"
+  },
+  "emailUsDirectly": {
+    "message": "برای کمک گرفتن و گذاستن بازخورد بصورت مستقیم به ما ایمیل ارسال کنید."
+  },
+  "visitOurWebsite": {
+    "message": "از وب‌سایت ما دیدن کنید"
+  },
+  "visitOurWebsiteDirectly": {
+    "message": "Visit our website to get help, news, email us, and\/or learn more about how to use Bitwarden."
+  },
+  "fileBugReport": {
+    "message": "گزارش یک مشکل"
+  },
+  "gitHubIssue": {
+    "message": "Open an issue at our GitHub repository."
+  },
+  "sync": {
+    "message": "همگام سازی"
+  },
+  "syncVaultNow": {
+    "message": "همگام سازی گاو صندوق"
+  },
+  "lastSync": {
+    "message": "آخرین همگام سازی:"
+  },
+  "passGen": {
+    "message": "تولید رمز عبور"
+  },
+  "passGenInfo": {
+    "message": "Automatically generate strong, unique passwords for your logins."
+  },
+  "bitWebVault": {
+    "message": "Bitwarden Web Vault"
+  },
+  "bitWebVaultInfo": {
+    "message": "Manage your items from any web browser with the Bitwarden web vault."
+  },
+  "bitIosVault": {
+    "message": "Bitwarden iOS Vault"
+  },
+  "bitIosVaultInfo": {
+    "message": "Manage your items from your mobile devices with the Bitwarden iOS vault."
+  },
+  "bitAndrVault": {
+    "message": "Bitwarden Android Vault"
+  },
+  "bitAndrVaultInfo": {
+    "message": "Manage your items from your mobile devices with the Bitwarden Android vault."
+  },
+  "importItems": {
+    "message": "Import Items"
+  },
+  "importItemsInfo": {
+    "message": "Quickly bulk import your items from other password management applications."
+  },
+  "select": {
+    "message": "انتخاب"
+  },
+  "generatePassword": {
+    "message": "تولید رمز عبور"
+  },
+  "regeneratePassword": {
+    "message": "تولید رمز عبور"
+  },
+  "options": {
+    "message": "گزینه ها"
+  },
+  "length": {
+    "message": "طول"
+  },
+  "minNumbers": {
+    "message": "حداقل اعداد"
+  },
+  "minSpecial": {
+    "message": "حداقل حرف خاص"
+  },
+  "avoidAmbChar": {
+    "message": "از کاراکتر های تکراری همسان استفاده نکن"
+  },
+  "searchVault": {
+    "message": "جستجوی گاوصندوق"
+  },
+  "edit": {
+    "message": "ویرایش"
+  },
+  "view": {
+    "message": "مشاهده"
+  },
+  "noItemsInList": {
+    "message": "هیچ موردی برای نمایش وجود ندارد."
+  },
+  "itemInformation": {
+    "message": "اطلاعات مورد"
+  },
+  "username": {
+    "message": "نام کاربری"
+  },
+  "password": {
+    "message": "کلمه عبور"
+  },
+  "favorite": {
+    "message": "مورد علاقه"
+  },
+  "notes": {
+    "message": "یادداشت ها"
+  },
+  "editItem": {
+    "message": "ویرایش مورد"
+  },
+  "folder": {
+    "message": "پوشه"
+  },
+  "deleteItem": {
+    "message": "حذف مورد"
+  },
+  "viewItem": {
+    "message": "مشاهده مورد"
+  },
+  "launchWebsite": {
+    "message": "Launch Website"
+  },
+  "website": {
+    "message": "وب سایت"
+  },
+  "togglePassword": {
+    "message": "Toggle Password"
+  },
+  "manage": {
+    "message": "مدیریت"
+  },
+  "other": {
+    "message": "ساير"
+  },
+  "disableGa": {
+    "message": "غیرفعال سازی آنالیزها"
+  },
+  "rateExtension": {
+    "message": "Rate the Extension"
+  },
+  "rateExtensionDesc": {
+    "message": "Please consider helping us out with a good review!"
+  },
+  "browserNotSupportClipboard": {
+    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+  },
+  "verifyMasterPassword": {
+    "message": "تایید گذرواژه اصلی"
+  },
+  "invalidMasterPassword": {
+    "message": "گذرواژه اصلی نامعتبر است"
+  },
+  "lockOptions": {
+    "message": "گزینه های قفل"
+  },
+  "lockNow": {
+    "message": "الان قفل شود"
+  },
+  "immediately": {
+    "message": "بلافاصله"
+  },
+  "oneMinute": {
+    "message": "۱ دقیقه"
+  },
+  "fiveMinutes": {
+    "message": "۵ دقیقه"
+  },
+  "fifteenMinutes": {
+    "message": "۱۵ دقیقه"
+  },
+  "thirtyMinutes": {
+    "message": "۳۰ دقیقه"
+  },
+  "oneHour": {
+    "message": "۱ ساعت"
+  },
+  "fourHours": {
+    "message": "4 ساعت"
+  },
+  "onLocked": {
+    "message": "هنگام قفل سیستم"
+  },
+  "onRestart": {
+    "message": "هنگام راه اندازی مجدد"
+  },
+  "never": {
+    "message": "هرگز"
+  },
+  "security": {
+    "message": "امنیت"
+  },
+  "errorsOccurred": {
+    "message": "Errors have occurred"
+  },
+  "emailRequired": {
+    "message": "آدرس ایمیل ضروری است."
+  },
+  "invalidEmail": {
+    "message": "آدرس ایمیل نامعتبر است."
+  },
+  "masterPassRequired": {
+    "message": "گذرواژه اصلی ضروری است."
+  },
+  "masterPassLength": {
+    "message": "طول گذرواژه اصلی باید حداقل ۸ کاراکتر باشد."
+  },
+  "masterPassDoesntMatch": {
+    "message": "گذرواژه اصلی با تکرار گذرواژه اصلی مطابقت ندارد."
+  },
+  "newAccountCreated": {
+    "message": "حساب شما ساختته شد! حالا میتوانید وارد شوید."
+  },
+  "masterPassSent": {
+    "message": "ما یک ایمیل همراه با راهنمای گذرواژه اصلی برایتان ارسال کردیم."
+  },
+  "verificationCodeRequired": {
+    "message": "کد تایید مورد نیاز است."
+  },
+  "valueCopied": {
+    "message": " کپی شده",
+    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+  },
+  "autofillError": {
+    "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
+  },
+  "loggedOut": {
+    "message": "خارج شده"
+  },
+  "loginExpired": {
+    "message": "جلسه ورود شما منقضی شده است."
+  },
+  "logOutConfirmation": {
+    "message": "آیا مطمئنید که می‌خواهید خارج شوید؟"
+  },
+  "yes": {
+    "message": "بله"
+  },
+  "no": {
+    "message": "خیر"
+  },
+  "unexpectedError": {
+    "message": "یک خطای غیر منتظره رخ داده است."
+  },
+  "nameRequired": {
+    "message": "نام ضروری است."
+  },
+  "addedFolder": {
+    "message": "پوشه اضافه شده"
+  },
+  "changeMasterPass": {
+    "message": "تغییر گذرواژه اصلی"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "شما می توانید رمز عبور اصلی خود را در bitwarden.com تغییر دهید. آیا می خواهید از سایت بازدید کنید؟"
+  },
+  "changeEmailConfirmation": {
+    "message": "شما میتوانید آدرس ایمیل را در نسخه وب گاوصندوق bitwarden.com تغییر دهید. میخواهید اکنون از سایت بازدید کنید؟"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "ورودی دو مرحله ای باعث می شود که حساب کاربری شما با استفاده از یک دستگاه دیگر مانند کلید امنیتی، برنامه تأیید هویت، پیامک، تماس تلفنی و یا ایمیل، اعتبار خود را با ایمنی بیشتر ثابت کند. ورودی دو مرحله ای می تواند در bitwarden.com فعال شود. آیا می خواهید از سایت بازدید کنید؟"
+  },
+  "loggingOut": {
+    "message": "درحال خروج"
+  },
+  "loggingOutConfirmation": {
+    "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
+  },
+  "editedFolder": {
+    "message": "پوشه ویرایش شده"
+  },
+  "deleteFolderConfirmation": {
+    "message": "آیا از حذف این پوشه اطمینان دارید؟"
+  },
+  "deletedFolder": {
+    "message": "پوشه حذف شده"
+  },
+  "gettingStartedTutorial": {
+    "message": "Getting Started Tutorial"
+  },
+  "gettingStartedTutorialVideo": {
+    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+  },
+  "syncingComplete": {
+    "message": "همگام سازی کامل شد"
+  },
+  "syncingFailed": {
+    "message": "همگام سازی شکست خورد"
+  },
+  "importItemsConfirmation": {
+    "message": "شما میتوانید عضویت خود را در نسخه وب گاوصندوق در bitwarden.com مدیریت کنید. آیا مایل به دیدن وبسایت هستید؟"
+  },
+  "passwordCopied": {
+    "message": "Password copied"
+  },
+  "uri": {
+    "message": "نشانی اینترنتی"
+  },
+  "newUri": {
+    "message": "New URI"
+  },
+  "addedItem": {
+    "message": "مورد افزوده شده"
+  },
+  "editedItem": {
+    "message": "مورد ویرایش شده"
+  },
+  "deleteItemConfirmation": {
+    "message": "آیا مطمئن هستید می خواهید این مورد را حذف کنید؟"
+  },
+  "deletedItem": {
+    "message": "مورد حذف شده"
+  },
+  "overwritePassword": {
+    "message": "بازنویسی رمز عبور"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
+  },
+  "credits": {
+    "message": "پدید آورندگان"
+  },
+  "thankYou": {
+    "message": "تشکر"
+  },
+  "translations": {
+    "message": "ترجمه ها"
+  },
+  "searchFolder": {
+    "message": "جستجوی پوشه"
+  },
+  "searchCollection": {
+    "message": "جستجوی مجموعه"
+  },
+  "noneFolder": {
+    "message": "بدون پوشه",
+    "description": "This is the folder for uncategorized items"
+  },
+  "gaDesc": {
+    "message": "ما از آنالیز استفاده می کنیم تا بهتر بفهمیم که چگونه برنامه استفاده می شود تا بتوانیم آن را بهتر کنیم. تمام جمع آوری داده ها کاملا ناشناس است."
+  },
+  "disableAddLoginNotification": {
+    "message": "Disable Add Login Notification"
+  },
+  "addLoginNotificationDesc": {
+    "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+  },
+  "notificationAddDesc": {
+    "message": "Should Bitwarden remember this password for you?"
+  },
+  "notificationAddSave": {
+    "message": "Yes, Save Now"
+  },
+  "notificationNeverSave": {
+    "message": "Never for this website"
+  },
+  "disableContextMenuItem": {
+    "message": "Disable Context Menu Options"
+  },
+  "disableContextMenuItemDesc": {
+    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+  },
+  "exportVault": {
+    "message": "Export Vault"
+  },
+  "warning": {
+    "message": "اخطار",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Enter your master password to export your vault data."
+  },
+  "exportVaultInfo": {
+    "message": "Export your vault data in .csv format so that you can easily modify it or move it elsewhere."
+  },
+  "shared": {
+    "message": "Shared"
+  },
+  "shareVault": {
+    "message": "Share Your Vault"
+  },
+  "shareVaultInfo": {
+    "message": "Create an organization to securely share your items with other users."
+  },
+  "contribute": {
+    "message": "You can contribute too!"
+  },
+  "learnMore": {
+    "message": "Learn more"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Authenticator Key (TOTP)"
+  },
+  "verificationCodeTotp": {
+    "message": "Verification Code (TOTP)"
+  },
+  "copyVerificationCode": {
+    "message": "Copy Verification Code"
+  },
+  "attachments": {
+    "message": "پیوست ها"
+  },
+  "deleteAttachment": {
+    "message": "حذف پیوست"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "آیا از پاک کردن این پیوست مطمئن هستید؟"
+  },
+  "deletedAttachment": {
+    "message": "حذف پیوست"
+  },
+  "newAttachment": {
+    "message": "افزودن پیوست جدید"
+  },
+  "noAttachments": {
+    "message": "بدون پیوست."
+  },
+  "attachmentSaved": {
+    "message": "پیوست ذخیره شد."
+  },
+  "file": {
+    "message": "فایل"
+  },
+  "selectFile": {
+    "message": "انتخاب یک فایل."
+  },
+  "maxFileSize": {
+    "message": "بیشترین حجم فایل 100 مگابایت است."
+  },
+  "featureUnavailable": {
+    "message": "ویژگی موجود نیست"
+  },
+  "updateKey": {
+    "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمیتوانید از این قابلیت استفاده کنید."
+  },
+  "premiumMembership": {
+    "message": "عضویت پرمیوم"
+  },
+  "premiumManage": {
+    "message": "مدیریت عضویت"
+  },
+  "premiumManageAlert": {
+    "message": "شما میتوانید عضویت خود را در نسخه وب گاوصندوق در bitwarden.com مدیریت کنید. آیا مایل به دیدن وبسایت هستید؟"
+  },
+  "premiumRefresh": {
+    "message": "نوسازی عضویت"
+  },
+  "premiumNotCurrentMember": {
+    "message": "شما در حال حاظر کاربر پرمیوم نیستید."
+  },
+  "premiumSignUpAndGet": {
+    "message": "ثبت نام برای عضویت پرمیوم و گرفتن:"
+  },
+  "ppremiumSignUpStorage": {
+    "message": "۱ گیگابایت فضای ذخیره سازی رمزنگاری شده."
+  },
+  "ppremiumSignUpTwoStep": {
+    "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
+  },
+  "ppremiumSignUpTotp": {
+    "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."
+  },
+  "ppremiumSignUpSupport": {
+    "message": "اولویت پشتیبانی از مشتری."
+  },
+  "ppremiumSignUpFuture": {
+    "message": "تمام ویژگی های پرمیوم آینده. به زودی بیشتر!"
+  },
+  "premiumPurchase": {
+    "message": "خرید پرمیوم"
+  },
+  "premiumPurchaseAlert": {
+    "message": "شما میوانید عضویت پرمیوم را از وب گاوصندوق bitwarden.com خریداری کنید. مایلید اکنون از وبسایت بازید کنید؟"
+  },
+  "premiumCurrentMember": {
+    "message": "شما یک عضو پرمیوم هستید!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "برای حمایتتان از بیت واردن سپاسگزاریم."
+  },
+  "premiumPrice": {
+    "message": "تمامش فقط $PRICE$ در سال!"
+  },
+  "refreshComplete": {
+    "message": "نوسازی کامل شد"
+  },
+  "disableAutoTotpCopy": {
+    "message": "Disable Automatic TOTP Copy"
+  },
+  "disableAutoTotpCopyDesc": {
+    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+  },
+  "premiumRequired": {
+    "message": "در نسخه پرمیوم کار میکند"
+  },
+  "premiumRequiredDesc": {
+    "message": "برای استفاده از این ویژگی عضویت پرمیوم لازم است."
+  },
+  "enterVerificationCodeApp": {
+    "message": "کد ۶ رقمی تایید را از برنامه تایید کننده وارد کنید."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Enter the 6 digit verification code that was emailed to"
+  },
+  "rememberMe": {
+    "message": "مرا به خاطر بسپار"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "ارسال دوباره ایمیل کد تایید"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "استفاده از روش ورود دو مرحله ای دیگر"
+  },
+  "insertYubiKey": {
+    "message": "YubiKey خود را وارد پورت USB رایانه کنید، بعد دکمه آن را بفشارید."
+  },
+  "insertU2f": {
+    "message": "کلید امنیتی خود را وارد پورت USB رایانه کنید، اگر دکمه ای دارد آن را بفشارید."
+  },
+  "loginUnavailable": {
+    "message": "ورود به سیستم موجود نیست"
+  },
+  "noTwoStepProviders": {
+    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+  },
+  "noTwoStepProviders2": {
+    "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+  },
+  "twoStepOptions": {
+    "message": "گزینه های ورود دو مرحله ای"
+  },
+  "recoveryCodeDesc": {
+    "message": "دسترسی به تمامی ارائه دهندگان دو مرحله ای را از دست داده اید؟ از کد بازیابی خود برای غیرفعال سازی ارائه دهندگان دو مرحله ای از حسابتان استفاده کنید."
+  },
+  "recoveryCodeTitle": {
+    "message": "کد بازیابی"
+  },
+  "authenticatorAppTitle": {
+    "message": "برنامه تأیید کننده"
+  },
+  "authenticatorAppDesc": {
+    "message": "از یک اپ تایید کننده (همانند Authy یا Google Authenticator) استفاده کنید تا کدهای تایید بر پایه زمان تولید کنید.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "کلید امنیت YubiKey OTP"
+  },
+  "yubiKeyDesc": {
+    "message": "از یک YubiKey برای دسترسی به حسابتان استفاده کنید. همراه با دستگاه های YubiKey 4،4 Nano، NEO کار میکند."
+  },
+  "duoDesc": {
+    "message": "تایید کنید همراه با Duo Security از اپ موبایل Dou استفاده کنید، پیامک،تماس تلفنی، یا کلید امنیتی U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "از هر FIDO استفاده کنید U2F کلید امنیتی را فعال کنید تا به حساب کاربریتان دسترسی یابید."
+  },
+  "u2fTitle": {
+    "message": "کلید امنیتی FIDO U2F"
+  },
+  "emailTitle": {
+    "message": "ایمیل"
+  },
+  "emailDesc": {
+    "message": "کد تایید برایتان فرستاده می شود."
+  },
+  "selfHostedEnvironment": {
+    "message": "محیط خود میزبان"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "آدرس اینترنتی پایه فرضی نصب بیت واردن میزبانی شده را مشخص کنید."
+  },
+  "customEnvironment": {
+    "message": "محیط های سفارشی"
+  },
+  "customEnvironmentFooter": {
+    "message": "برای کاربران پیشرفته. شما می توانید آدرس پایه هر سرویس را مستقل تعیین کنید."
+  },
+  "baseUrl": {
+    "message": "آدرس سرور"
+  },
+  "apiUrl": {
+    "message": "آدرس سرور API"
+  },
+  "webVaultUrl": {
+    "message": "آدرس سرور گاوصندوق وب"
+  },
+  "identityUrl": {
+    "message": "آدرس سرور شناسایی"
+  },
+  "iconsUrl": {
+    "message": "آدرس سرور آیکون ها"
+  },
+  "environmentSaved": {
+    "message": "آدرس های اینترنتی محیط ذخیره شد."
+  },
+  "enableAutoFillOnPageLoad": {
+    "message": "Enable Auto-fill On Page Load"
+  },
+  "enableAutoFillOnPageLoadDesc": {
+    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+  },
+  "experimentalFeature": {
+    "message": "This is currently an experimental feature. Use at your own risk."
+  },
+  "commandAutofillDesc": {
+    "message": "Auto-fill the last used login for the current website."
+  },
+  "commandGeneratePasswordDesc": {
+    "message": "Generate and copy a new random password to the clipboard."
+  },
+  "privateModeMessage": {
+    "message": "Unfortunately this window is not available in private mode for this browser."
+  },
+  "customFields": {
+    "message": "فیلدهای سفارشی"
+  },
+  "copyValue": {
+    "message": "کپی مقدار"
+  },
+  "toggleValue": {
+    "message": "Toggle Value"
+  },
+  "value": {
+    "message": "مقدار"
+  },
+  "newCustomField": {
+    "message": "فیلد سفارشی جدید"
+  },
+  "cfTypeText": {
+    "message": "متن"
+  },
+  "cfTypeHidden": {
+    "message": "مخفی"
+  },
+  "cfTypeBoolean": {
+    "message": "بولین"
+  },
+  "popup2faCloseMessage": {
+    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+  },
+  "disableFavicon": {
+    "message": "غیرفعال سازی آیکون های وبسایت"
+  },
+  "disableFaviconDesc": {
+    "message": "آیکون های وبسایت یک تصویر قابل تشخیص در کنار هر داده ورودی ارائه میدهد."
+  },
+  "cardholderName": {
+    "message": "نام صاحب کارت"
+  },
+  "number": {
+    "message": "شماره"
+  },
+  "brand": {
+    "message": "نام تجاری"
+  },
+  "expirationMonth": {
+    "message": "ماه انقضاء"
+  },
+  "expirationYear": {
+    "message": "سال انقضاء"
+  },
+  "expiration": {
+    "message": "انقضاء"
+  },
+  "january": {
+    "message": "January"
+  },
+  "february": {
+    "message": "February"
+  },
+  "march": {
+    "message": "March"
+  },
+  "april": {
+    "message": "April"
+  },
+  "may": {
+    "message": "May"
+  },
+  "june": {
+    "message": "June"
+  },
+  "july": {
+    "message": "July"
+  },
+  "august": {
+    "message": "August"
+  },
+  "september": {
+    "message": "September"
+  },
+  "october": {
+    "message": "October"
+  },
+  "november": {
+    "message": "November"
+  },
+  "december": {
+    "message": "December"
+  },
+  "securityCode": {
+    "message": "Security Code"
+  },
+  "ex": {
+    "message": "ex."
+  },
+  "title": {
+    "message": "Title"
+  },
+  "mr": {
+    "message": "Mr"
+  },
+  "mrs": {
+    "message": "Mrs"
+  },
+  "ms": {
+    "message": "Ms"
+  },
+  "dr": {
+    "message": "Dr"
+  },
+  "firstName": {
+    "message": "First Name"
+  },
+  "middleName": {
+    "message": "Middle Name"
+  },
+  "lastName": {
+    "message": "Last Name"
+  },
+  "identityName": {
+    "message": "Identity Name"
+  },
+  "company": {
+    "message": "Company"
+  },
+  "ssn": {
+    "message": "Social Security Number"
+  },
+  "passportNumber": {
+    "message": "Passport Number"
+  },
+  "licenseNumber": {
+    "message": "شماره مجوز"
+  },
+  "email": {
+    "message": "ایمیل"
+  },
+  "phone": {
+    "message": "تلفن"
+  },
+  "address": {
+    "message": "آدرس"
+  },
+  "address1": {
+    "message": "نشانی ۱"
+  },
+  "address2": {
+    "message": "نشانی ۲"
+  },
+  "address3": {
+    "message": "نشانی ۳"
+  },
+  "cityTown": {
+    "message": "شهر \/ شهرک"
+  },
+  "stateProvince": {
+    "message": "ایالت \/ استان"
+  },
+  "zipPostalCode": {
+    "message": "کد پستی"
+  },
+  "country": {
+    "message": "کشور"
+  },
+  "type": {
+    "message": "نوع"
+  },
+  "typeLogin": {
+    "message": "ورود"
+  },
+  "typeLogins": {
+    "message": "ورود"
+  },
+  "typeSecureNote": {
+    "message": "یادداشت امن"
+  },
+  "typeCard": {
+    "message": "کارت"
+  },
+  "typeIdentity": {
+    "message": "مشخصات"
+  },
+  "passwordHistory": {
+    "message": "تاریخچه رمز عبور"
+  },
+  "back": {
+    "message": "بازگشت"
+  },
+  "collections": {
+    "message": "مجموعه ها"
+  },
+  "favorites": {
+    "message": "مورد علاقه"
+  },
+  "popOutNewWindow": {
+    "message": "Pop out to a new window"
+  },
+  "refresh": {
+    "message": "تازه کردن"
+  },
+  "cards": {
+    "message": "کارتها"
+  },
+  "identities": {
+    "message": "مشخصات"
+  },
+  "clear": {
+    "message": "پاک کردن"
+  },
+  "twoStepNewWindowMessage": {
+    "message": "Complete your two-step login request using the new tab."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
+  }
+}

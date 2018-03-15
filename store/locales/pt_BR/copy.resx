@@ -118,19 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden - Gerenciador de Senhas Gratuito</value>
+    <value>Bitwarden - Gerenciador de Senhas Gratuito</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Um gerenciador de senhas gratuito e seguro para todos os seus dispositivos</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>O bitwarden é a maneira mais fácil e segura de armazenar todas as suas credenciais e senhas mantendo-as convenientemente sincronizadas entre todos os seus dispositivos.
+    <value>O Bitwarden é a maneira mais fácil e segura de armazenar todos os seus usuários e senhas mantendo-os convenientemente sincronizados entre todos os seus dispositivos.
 
-O furto de senhas é um problema sério. Os sites e aplicativos que os utiliza estão sob ataque todos os dias. Quebras de segurança ocorrem e as suas senhas são furtadas. Quando você reutiliza as mesmas senhas entre aplicativos e sites, os hackers podem facilmente acessar o seu e-mail, banco, e outras contas importantes.
+O furto de senhas é um problema sério. Os sites e aplicativos que os utiliza estão sob ataque todos os dias. Brechas de segurança ocorrem e as suas senhas são furtadas. Quando você reutiliza as mesmas senhas entre aplicativos e sites, os hackers podem facilmente acessar o seu e-mail, banco, e outras contas importantes.
 
-Os especialistas de segurança recomendam que utilize uma senha diferente e aleatoriamente gerada para todas as contas que você cria. Mas como gerenciar todas essas senhas? O bitwarden torna-lhe fácil criar, armazenar, e acessar as suas senhas.
+Os especialistas de segurança recomendam que utilize uma senha diferente e aleatoriamente gerada para todas as contas que você cria. Mas como gerenciar todas essas senhas? O Bitwarden torna-lhe fácil criar, armazenar, e acessar as suas senhas.
 
-O bitwarden armazena todas as suas credenciais num cofre encriptado que sincroniza entre todos os seus dispositivos. Como são completamente encriptados antes de se quer sair do seu dispositivo, apenas você tem acesso aos seus dados. Nem se quer a equipe do bitwarden pode ler os seus dados, mesmo se quiséssemos. Os seus dados são selados com encriptação AES-256 bits, salted hashing, e PBKDF2 SHA-256.</value>
+O Bitwarden armazena todas as suas credenciais num cofre encriptado que sincroniza entre todos os seus dispositivos. Como são completamente encriptados antes de se quer sair do seu dispositivo, apenas você tem acesso aos seus dados. Nem se quer a equipe do Bitwarden pode ler os seus dados, mesmo se quiséssemos. Os seus dados são selados com encriptação AES-256 bits, salted hashing, e PBKDF2 SHA-256.
+
+Bitwarden é um software 100% de código aberto. O código-fonte do Bitwarden está hospedado no GitHub e todos são livres para revisar, auditar e contribuir com a base de códigos do Bitwarden.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Um gerenciador de senhas gratuito e seguro para todos os seus dispositivos</value>
@@ -139,10 +141,10 @@ O bitwarden armazena todas as suas credenciais num cofre encriptado que sincroni
     <value>Sincronize e acesse o seu cofre através de múltiplos dispositivos</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Gerencie todas as suas credenciais e senhas a partir de um cofre seguro</value>
+    <value>Gerencie todas as suas credenciais a partir de um cofre seguro</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Auto-preencha rapidamente as suas credenciais dentro de qualquer site que visitar</value>
+    <value>Autopreencha rapidamente as suas credenciais dentro de qualquer site que visitar</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
     <value>O seu cofre é também acessível a partir do menu de contexto pelo clique no botão direito do mouse</value>

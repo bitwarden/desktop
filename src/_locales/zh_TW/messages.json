@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - 免費密碼管理器",
+    "message": "Bitwarden - 免費密碼管理工具",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden 是一個安全、免費、跨平台的密碼管理器。",
+    "message": "Bitwarden 是一個安全、免費、跨平台的密碼管理工具。",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -77,19 +77,19 @@
     "message": "複製安全代碼"
   },
   "autoFill": {
-    "message": "自動填寫"
+    "message": "自動填入"
   },
   "generatePasswordCopied": {
     "message": "產生及複製密碼"
   },
   "noMatchingLogins": {
-    "message": "沒有相符的登入資料。"
+    "message": "沒有符合的登入資料。"
   },
   "vaultLocked": {
     "message": "密碼庫已鎖定"
   },
   "autoFillInfo": {
-    "message": "目前瀏覽器分頁中沒有可以自動填寫登入資料的位置。"
+    "message": "目前瀏覽器分頁中沒有可以自動填入登入資料的位置。"
   },
   "addLogin": {
     "message": "新增登入資料"
@@ -167,7 +167,7 @@
     "message": "瀏覽我們的網站"
   },
   "visitOurWebsiteDirectly": {
-    "message": "瀏覽我們的網站以取得協助、了解新消息、傳送電子郵件給我們或瀏覽更多使用 bitwarden 的秘訣。"
+    "message": "瀏覽我們的網站以取得協助、了解新消息、傳送電子郵件給我們或瀏覽更多使用 Bitwarden 的秘訣。"
   },
   "fileBugReport": {
     "message": "Bug 回報"
@@ -191,22 +191,22 @@
     "message": "自動產生安全、獨特的登入密碼。"
   },
   "bitWebVault": {
-    "message": "bitwarden 網頁版"
+    "message": "Bitwarden 網頁版"
   },
   "bitWebVaultInfo": {
-    "message": "使用 bitwarden 網頁版，從瀏覽器管理您的密碼。"
+    "message": "使用 Bitwarden 網頁版，從瀏覽器管理您的登入資料。"
   },
   "bitIosVault": {
-    "message": "bitwarden iOS 版"
+    "message": "Bitwarden iOS 版"
   },
   "bitIosVaultInfo": {
     "message": "使用 bitwarden iOS 版，從 iOS 裝置管理您的密碼。"
   },
   "bitAndrVault": {
-    "message": "bitwarden Android 版"
+    "message": "Bitwarden Android 版"
   },
   "bitAndrVaultInfo": {
-    "message": "使用 bitwarden Android 版，從 Android 裝置管理您的密碼。"
+    "message": "使用 Bitwarden Android 版，從 Android 裝置管理您的密碼。"
   },
   "importItems": {
     "message": "匯入項目"
@@ -338,7 +338,7 @@
     "message": "4 小時"
   },
   "onLocked": {
-    "message": "已鎖定"
+    "message": "系統鎖定時"
   },
   "onRestart": {
     "message": "重新啟動時"
@@ -353,19 +353,19 @@
     "message": "發生錯誤"
   },
   "emailRequired": {
-    "message": "必須填寫電子郵件地址 。"
+    "message": "必須填入電子郵件地址 。"
   },
   "invalidEmail": {
     "message": "無效的電子郵件地址。"
   },
   "masterPassRequired": {
-    "message": "必須填寫主密碼。"
+    "message": "必須填入主密碼。"
   },
   "masterPassLength": {
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
-    "message": "兩次填寫的主密碼不相符。"
+    "message": "兩次填入的主密碼不符合。"
   },
   "newAccountCreated": {
     "message": "帳戶已建立！現在可以登入了。"
@@ -374,14 +374,14 @@
     "message": "已寄出包含您主密碼提示的電子郵件。"
   },
   "verificationCodeRequired": {
-    "message": "必須填寫驗證碼。"
+    "message": "必須填入驗證碼。"
   },
   "valueCopied": {
     "message": " 已複製",
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "無法在此頁面自動填寫您的帳戶資料。請手動複製／貼上您的帳戶及密碼。"
+    "message": "無法在此頁面自動填入您的帳戶資料。請手動複製／貼上您的帳戶及密碼。"
   },
   "loggedOut": {
     "message": "已登出"
@@ -402,7 +402,7 @@
     "message": "發生了未預期的錯誤。"
   },
   "nameRequired": {
-    "message": "必須填寫名稱。"
+    "message": "必須填入名稱。"
   },
   "addedFolder": {
     "message": "已新增資料夾"
@@ -411,13 +411,13 @@
     "message": "變更主密碼"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "您可以在 bitwarden 網頁版變更主密碼。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版變更主密碼。現在前往？"
   },
   "changeEmailConfirmation": {
-    "message": "您可以在 bitwarden 網頁版變更電子郵件地址。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版變更電子郵件地址。現在前往？"
   },
   "twoStepLoginConfirmation": {
-    "message": "兩步驟登入需要您登入時輸入一個由驗證碼程式產生的安全碼，為您的帳戶增加一層保障。兩步驟登入可以在 bitwarden 網頁版啟用。現在前往？"
+    "message": "兩步驟登入需要您登入時輸入一個由驗證碼程式產生的安全碼，為您的帳戶增加一層保障。兩步驟登入可以在 Bitwarden 網頁版啟用。現在前往？"
   },
   "loggingOut": {
     "message": "正在登出"
@@ -447,13 +447,16 @@
     "message": "同步失敗"
   },
   "importItemsConfirmation": {
-    "message": "您可以在 bitwarden 網頁版批次匯入登入資料。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版批次匯入登入資料。現在前往？"
   },
   "passwordCopied": {
     "message": "密碼已複製"
   },
   "uri": {
     "message": "URI"
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "addedItem": {
     "message": "新增項目"
@@ -502,7 +505,7 @@
     "message": "當您首次登入時，\"新增登入資料提示\" 會自動提醒您在密碼庫中新增登入資料。"
   },
   "notificationAddDesc": {
-    "message": "希望 bitwarden 幫您儲存這個密碼嗎？"
+    "message": "希望 Bitwarden 幫您儲存這個密碼嗎？"
   },
   "notificationAddSave": {
     "message": "好，現在儲存"
@@ -599,7 +602,7 @@
     "message": "管理會員資格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 bitwarden 網頁版管理您的會員資格。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版管理您的會員資格。現在前往？"
   },
   "premiumRefresh": {
     "message": "重新整理會員資訊"
@@ -629,13 +632,13 @@
     "message": "購買進階會員資格"
   },
   "premiumPurchaseAlert": {
-    "message": "您可以在 bitwarden 網頁版購買進階會員資格。現在前往？"
+    "message": "您可以在 Bitwarden 網頁版購買進階會員資格。現在前往？"
   },
   "premiumCurrentMember": {
     "message": "您目前是進階會員！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "感謝您支持 bitwardan 。"
+    "message": "感謝您支持 Bitwarden 。"
   },
   "premiumPrice": {
     "message": "每年只需 %price% ！"
@@ -647,7 +650,7 @@
     "message": "停用自動複製 TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "如果您的登入資料已包含驗證器金鑰，TOTP 驗證碼會在您自動填寫時自動複製到您的剪貼簿。"
+    "message": "如果您的登入資料已包含驗證器金鑰，TOTP 驗證碼會在您自動填入時自動複製到您的剪貼簿。"
   },
   "premiumRequired": {
     "message": "需要進階會員資格"
@@ -727,7 +730,7 @@
     "message": "自我託管環境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己設定、管理的 bitwarden 環境之基礎 URL。"
+    "message": "指定自己設定、管理的 Bitwarden 環境之基礎 URL。"
   },
   "customEnvironment": {
     "message": "自訂環境"
@@ -754,16 +757,16 @@
     "message": "環境 URL 已儲存。"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "啟用頁面載入時自動填寫表單"
+    "message": "啟用頁面載入時自動填入表單"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "如果網頁載入時偵測到登入表單，則自動執行表單填寫。"
+    "message": "如果網頁載入時偵測到登入表單，則自動執行表單填入。"
   },
   "experimentalFeature": {
     "message": "目前這是一項實驗性功能。要使用需自行承擔風險。"
   },
   "commandAutofillDesc": {
-    "message": "自動使用最後一次登入的帳戶填寫目前網站"
+    "message": "自動使用最後一次登入的帳戶填入目前網站"
   },
   "commandGeneratePasswordDesc": {
     "message": "產生並將一個新的隨機密碼複製到剪貼簿中。"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "使用新分頁完成您的兩步驟登入要求。"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

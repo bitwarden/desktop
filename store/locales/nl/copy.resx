@@ -124,13 +124,13 @@
     <value>Een gratis, veilige wachtwoordbeheerder voor al je apparaten</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden is de makkelijkste en veiligste manier om al je logins en wachtwoorden op te slaan en ze tegelijkertijd te synchroniseren tussen al je apparaten.
+    <value>Bitwarden is de eenvoudigste en veiligste manier om al uw logins en wachtwoorden op te slaan en ze tegelijkertijd te synchroniseren tussen al uw apparaten.
 
-Diefstal van wachtwoorden is een ernstig probleem. De websites en apps die je gebruikt worden dagelijks aangevallen. Beveiligingslekken komen voor en wachtwoorden worden gestolen. Wanneer je hetzelfde wachtwoorden voor meerdere apps en websites gebruikt kunnen hackers makkelijk bij je e-mail, bankgegevens en andere belangrijke accounts.
+Diefstal van wachtwoorden is een ernstig probleem. De websites en apps die u gebruikt worden dagelijks aangevallen. Beveiligingslekken komen voor en wachtwoorden worden gestolen. Als u hetzelfde wachtwoord gebruikt voor meerdere apps en websites, dan kunnen hackers gemakkelijk toegang verkrijgen tot uw e-mail, bankgegevens en andere belangrijke accounts.
 
-Beveiligingsexperts bevelen aan dat je een verschillend, willekeurig gegereneerd wachtwoord gebruikt voor ieder account. Maar hoe beheer je al die wachtwoorden? bitwarden maakt het makkelijk voor je om ze te genereren, op te slaan en te gebruiken.
+Beveiligingsexperts raden aan om een verschillend, willekeurig gegereneerd wachtwoord te gebruiken voor ieder account. Maar hoe beheert u al die wachtwoorden? Bitwarden maakt het u gemakkelijk om ze te genereren, op te slaan en te gebruiken.
 
-bitwarden slaat al je logins op in een versleutelde kluis die synchroniseert tussen al je apparaten. Omdat het volledig versleuteld is voor het zelfs maar het internet opgaat, heb alleen jij toegang tot je data. Zelfs het bitwarden-team kan het niet lezen, al zouden we dat willen. Je data is beveiligd met AES-256 bit encryptie, salted hashing en PBKDF2 SHA-256.</value>
+Bitwarden slaat al uw logins op in een versleutelde kluis die gesynchroniseerd wordt tussen al uw apparaten. Omdat het volledig versleuteld is voor het zelfs maar het internet opgaat, heeft alleen u toegang tot uw gegevens. Zelfs het Bitwarden-team kan het niet lezen, al zouden we dat willen. Uw gegevens zijn beveiligd met AES-256 bit-versleuteling, salted hashing en PBKDF2 SHA-256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Een gratis, veilige wachtwoordbeheerder voor al je apparaten</value>

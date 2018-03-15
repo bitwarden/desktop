@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gestor de contraseñas gratuito",
+    "message": "Bitwarden - Gestor de contraseñas gratuito",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden es un gestor de contraseñas seguro y gratuito para todos tus dispositivos.",
+    "message": "Bitwarden es un gestor de contraseñas seguro y gratuito para todos tus dispositivos.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Visita nuestro sitio web"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visita nuestro sitio web para recibir ayuda, noticias, contactarnos por correo y\/o aprender más sobre como utilizar bitwarden."
+    "message": "Visita nuestro sitio web para recibir ayuda, noticias, contactarnos por correo y\/o aprender más sobre como utilizar Bitwarden."
   },
   "fileBugReport": {
     "message": "Reportar un fallo"
@@ -191,22 +191,22 @@
     "message": "Genera contraseñas fuertes y únicas para tus accesos automáticamente."
   },
   "bitWebVault": {
-    "message": "Caja fuerte web de bitwarden"
+    "message": "Caja fuerte web de Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gestiona las entradas de cualquier web con la caja fuerte web de bitwarden."
+    "message": "Gestiona las entradas de cualquier web con la caja fuerte web de Bitwarden."
   },
   "bitIosVault": {
-    "message": "Caja fuerte bitwarden de iOS"
+    "message": "Caja fuerte Bitwarden de iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Gestiona las entradas desde tus dispositivos moviles con la caja fuerte de bitwarden para iOS."
+    "message": "Gestiona las entradas desde tus dispositivos móviles con la caja fuerte de Bitwarden para iOS."
   },
   "bitAndrVault": {
-    "message": "Caja fuerte bitwarden de Android"
+    "message": "Caja fuerte Bitwarden de Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Gestiona las entradas desde tus dispositivos móviles con la caja fuerte de bitwarden para Android."
+    "message": "Gestiona las entradas desde tus dispositivos móviles con la caja fuerte de Bitwarden para Android."
   },
   "importItems": {
     "message": "Importar elementos"
@@ -338,7 +338,7 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "Bloqueado"
+    "message": "Al bloquear el sistema"
   },
   "onRestart": {
     "message": "Al reiniciar"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Elemento añadido"
   },
@@ -502,7 +505,7 @@
     "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres guardar nuevas entradas en tu caja fuerte cuando te identificas en un sitio web por primera vez."
   },
   "notificationAddDesc": {
-    "message": "¿Deberías bitwarden recordar esta contraseña por ti?"
+    "message": "¿Debería Bitwarden recordar esta contraseña por ti?"
   },
   "notificationAddSave": {
     "message": "Si, guardarla"
@@ -635,7 +638,7 @@
     "message": "¡Eres un miembro Premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Gracias por apoyar el desarrollo de bitwarden."
+    "message": "Gracias por apoyar el desarrollo de Bitwarden."
   },
   "premiumPrice": {
     "message": "¡Todo por solo %price% \/año!"
@@ -727,7 +730,7 @@
     "message": "Entorno de alojamiento propio"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifica la URL base de tu instalación de bitwarden de alojamiento propio."
+    "message": "Especifica la URL base de tu instalación de Bitwarden de alojamiento propio."
   },
   "customEnvironment": {
     "message": "Entorno personalizado"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Completa tu solicitud de identificación en dos pasos usando la nueva pestaña."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - gratis lösenordshanterare",
+    "message": "Bitwarden - Gratis lösenordshanterare",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden är en säker och gratis lösenordshanterare för alla dina enheter.",
+    "message": "Bitwarden är en säker och gratis lösenordshanterare för alla dina enheter.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Besök vår webbplats"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Besök vår webbplats för att få hjälp, nyheter, mejla oss och\/eller lära er mer om hur man använder bitwarden."
+    "message": "Besök vår webbplats för att få hjälp, nyheter, mejla oss och\/eller läsa mer om hur man använder Bitwarden."
   },
   "fileBugReport": {
     "message": "Skicka en buggrapport"
@@ -191,22 +191,22 @@
     "message": "Skapa starka och unika lösenord automatiskt för dina inloggningar."
   },
   "bitWebVault": {
-    "message": "bitwardens webbvalv"
+    "message": "Bitwarden webbvalv"
   },
   "bitWebVaultInfo": {
-    "message": "Hantera dina objekt från valfri webbläsare med bitwardens webbvalv."
+    "message": "Hantera dina objekt från valfri webbläsare med Bitwardens webbvalv."
   },
   "bitIosVault": {
-    "message": "bitwardens iOS-valv"
+    "message": "Bitwardens iOS-valv"
   },
   "bitIosVaultInfo": {
-    "message": "Hantera dina objekt från dina mobila enheter med bitwardens iOS-valv."
+    "message": "Hantera dina objekt från dina mobila enheter med Bitwardens iOS-valv."
   },
   "bitAndrVault": {
-    "message": "bitwardens Android-valv"
+    "message": "Bitwardens Android-valv"
   },
   "bitAndrVaultInfo": {
-    "message": "Hantera dina objekt från dina mobila enheter med bitwardens Android-valv."
+    "message": "Hantera dina objekt från dina mobila enheter med Bitwardens Android-valv."
   },
   "importItems": {
     "message": "Importera objekt"
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI (länk)"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Skapade objekt"
   },
@@ -502,7 +505,7 @@
     "message": "Aviseringar för nya inloggningar frågar dig om du vill lägga till en inloggning automatiskt till ditt valv, när du använder en inloggning som inte redan finns i ditt valv."
   },
   "notificationAddDesc": {
-    "message": "Ska bitwarden komma ihåg det här lösenordet åt dig?"
+    "message": "Ska Bitwarden komma ihåg det här lösenordet åt dig?"
   },
   "notificationAddSave": {
     "message": "Ja, spara nu"
@@ -635,7 +638,7 @@
     "message": "Du är en premium-medlem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Tack för att du stödjer bitwarden."
+    "message": "Tack för att du stödjer Bitwarden."
   },
   "premiumPrice": {
     "message": "Allt för endast %price%\/år!"
@@ -727,7 +730,7 @@
     "message": "Egen-hostad miljö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Ange bas-URL:en för din \"on-premise\"-hostade bitwarden-installation."
+    "message": "Ange bas-URL:en för din \"on-premise\"-hostade Bitwarden-installation."
   },
   "customEnvironment": {
     "message": "Anpassad miljö"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "Slutför din inloggningsförfrågan för tvåstegsverifiering med den nya fliken."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

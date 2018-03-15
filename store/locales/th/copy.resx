@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden – Free Password Manager</value>
+    <value>Bitwarden – โปรแกรมจัดการรหัสผ่านฟรี</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>โปรแกรมจัดการรหัสผ่านที่ปลอดภัย และฟรีสำหรับทุกอุปกรณ์ของคุณ</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
@@ -133,13 +133,13 @@ Security experts recommend that you use a different, randomly generated password
 bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>โปรแกรมจัดการรหัสผ่านที่ปลอดภัย และฟรีสำหรับทุกอุปกรณ์ของคุณ</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>ซิงค์และเข้าถึงตู้นิรภัยของคุณจากหลายอุปกรณ์</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>จัดการล็อกอินและรหัสผ่านทั้งหมดของคุณจากตู้นิรภัยที่ปลอดภัย</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
     <value>Quickly auto-fill your login credentials into any website that you visit</value>
@@ -148,9 +148,9 @@ bitwarden stores all of your logins in an encrypted vault that syncs across all 
     <value>Your vault is also conveniently accessible from the right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>สร้างรหัสผ่านที่แข็งแกร่ง สุ่ม และปลอดภัยโดยอัตโนมัติ</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>ข้อมูลของคุณได้รับการจัดการอย่างปลอดภัยโดยใช้การเข้ารหัส AES 256 บิต</value>
   </data>
 </root>

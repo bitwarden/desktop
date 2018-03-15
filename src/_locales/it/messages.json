@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gestore di password gratuito",
+    "message": "Bitwarden - Gestore di password gratuito",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden è un gestore di password sicuro e gratuito per tutti i tuoi dispositivi.",
+    "message": "Un gestore di password sicuro e gratuito per tutti i tuoi dispositivi.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -167,7 +167,7 @@
     "message": "Visita il nostro Sito"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Visita il nostro sito per ottenere aiuto, notizie, mandarci una email, e\/o imparare di più su come usare bitwarden."
+    "message": "Visita il nostro sito per ottenere aiuto, notizie, mandarci una email, e\/o imparare di più su come usare Bitwarden."
   },
   "fileBugReport": {
     "message": "Notificaci di un Bug"
@@ -191,22 +191,22 @@
     "message": "Genera automaticamente password complesse e uniche per i tuoi login."
   },
   "bitWebVault": {
-    "message": "Cassaforte Web bitwarden"
+    "message": "Cassaforte Web Bitwarden"
   },
   "bitWebVaultInfo": {
-    "message": "Gestisci i tuoi login da qualunque browser con la cassaforte web bitwarden."
+    "message": "Gestisci i tuoi login da qualunque browser con la cassaforte web Bitwarden."
   },
   "bitIosVault": {
-    "message": "Cassaforte bitwarden iOS"
+    "message": "Cassaforte Bitwarden iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Gestisci i tuoi login dai tuoi dispositivi portatili con la cassaforte bitwarden per iOS."
+    "message": "Gestisci i tuoi login dai tuoi dispositivi portatili con la cassaforte Bitwarden per iOS."
   },
   "bitAndrVault": {
-    "message": "Cassaforte bitwarden Android"
+    "message": "Cassaforte Bitwarden Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Gestisci i tuoi login dai tuoi dispositivi portatili con la cassaforte bitwarden per Android."
+    "message": "Gestisci i tuoi login dai tuoi dispositivi portatili con la cassaforte Bitwarden per Android."
   },
   "importItems": {
     "message": "Importa Elementi"
@@ -338,7 +338,7 @@
     "message": "4 ore"
   },
   "onLocked": {
-    "message": "Al Blocco Computer"
+    "message": "Al Blocco del Computer"
   },
   "onRestart": {
     "message": "Al Riavvio"
@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Impossibile completare automaticamente il login selezionato per questa pagina. Copia e incolla il tuo nome utente e\/o la tua password manualmente."
+    "message": "Impossibile completare automaticamente il login selezionato per questa pagina. Copia e incolla manualmente le tue credenziali."
   },
   "loggedOut": {
     "message": "Disconnesso"
@@ -399,7 +399,7 @@
     "message": "No"
   },
   "unexpectedError": {
-    "message": "È occorso un errore inaspettato."
+    "message": "Si è verificato un errore imprevisto."
   },
   "nameRequired": {
     "message": "Il nome è obbligatorio."
@@ -455,6 +455,9 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
     "message": "Elemento aggiunto"
   },
@@ -465,7 +468,7 @@
     "message": "Sei sicuro di voler eliminare questo elemento?"
   },
   "deletedItem": {
-    "message": "Elemento eliminato"
+    "message": "Oggetto eliminato"
   },
   "overwritePassword": {
     "message": "Sovrascrivi Password"
@@ -502,7 +505,7 @@
     "message": "\"Aggiungi Notifica di Login\" richiede automaticamente di salvare i nuovi login nella tua cassaforte ogni volta che ti ci connetti per la prima volta."
   },
   "notificationAddDesc": {
-    "message": "Vuoi che bitwarden ricordi questa password per te?"
+    "message": "Vuoi che Bitwarden ricordi questa password per te?"
   },
   "notificationAddSave": {
     "message": "Sì, Salva Ora"
@@ -569,7 +572,7 @@
     "message": "Allegato eliminato"
   },
   "newAttachment": {
-    "message": "Aggiungi nuovo allegato"
+    "message": "Aggiungi Nuovo Allegato"
   },
   "noAttachments": {
     "message": "Nessun allegato."
@@ -614,7 +617,7 @@
     "message": "1 GB di spazio di archiviazione crittografato."
   },
   "ppremiumSignUpTwoStep": {
-    "message": "Opzioni di login in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
+    "message": "Opzioni addizionali di login in due passaggi come YubiKey, FIDO U2F, e Duo."
   },
   "ppremiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
@@ -635,7 +638,7 @@
     "message": "Sei un membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Grazie per il tuo supporto a bitwarden."
+    "message": "Grazie per il tuo supporto a Bitwarden."
   },
   "premiumPrice": {
     "message": "Il tutto per solo %price% all'anno!"
@@ -680,7 +683,7 @@
     "message": "Login non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "Questo account ha abilitato il login a due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
+    "message": "Questo account ha abilitato il login in due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
   },
   "noTwoStepProviders2": {
     "message": "Utilizzare un browser web supportato (come Chrome) e\/o aggiungere altri provider che sono supportati meglio da tutti i browser web (ad esempio un'app di autenticazione)."
@@ -689,7 +692,7 @@
     "message": "Opzioni di login in due passaggi"
   },
   "recoveryCodeDesc": {
-    "message": "Hai perso l'accesso a tutti i tuoi provider a due passaggi? Usa il tuo codice di recuper per disattivarli su tutto il tuo account."
+    "message": "Hai perso l'accesso a tutti i tuoi provider a due passaggi? Usa il tuo codice di recupero per disattivarli dal tuo account."
   },
   "recoveryCodeTitle": {
     "message": "Codice di Recupero"
@@ -721,13 +724,13 @@
     "message": "Email"
   },
   "emailDesc": {
-    "message": "I codici di verifica ti saranno inviati per e-mail."
+    "message": "I codici di verifica ti saranno inviati per email."
   },
   "selfHostedEnvironment": {
     "message": "Ambiente Self-Hosted"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specifica l'URL principale della tua installazione bitwarden self-hosted."
+    "message": "Specifica l'URL principale della tua installazione Bitwarden self-hosted."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizzato"
@@ -736,7 +739,7 @@
     "message": "Per utenti avanzati. Puoi specificare l'URL principale di ogni servizio indipendentemente."
   },
   "baseUrl": {
-    "message": "URL sel Server"
+    "message": "URL del server"
   },
   "apiUrl": {
     "message": "URL del Server API"
@@ -754,13 +757,13 @@
     "message": "Gli URL dell'ambiente sono stati salvati."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load."
+    "message": "Abilita l'auto-completamento al caricamento della pagina"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Se viene rilevato un form di login, effettua un auto-completamento quando la pagina web si carica."
   },
   "experimentalFeature": {
-    "message": "Al momento questa funzionalità è sperimentale. Usa a tuo rischio e pericolo."
+    "message": "Al momento questa funzionalità è sperimentale. Usala tuo rischio e pericolo."
   },
   "commandAutofillDesc": {
     "message": "Auto-completa con l'ultimo login utilizzato sul sito corrente."
@@ -835,7 +838,7 @@
     "message": "Aprile"
   },
   "may": {
-    "message": "May"
+    "message": "Maggio"
   },
   "june": {
     "message": "Giugno"
@@ -931,7 +934,7 @@
     "message": "CAP"
   },
   "country": {
-    "message": "Paese"
+    "message": "Nazione"
   },
   "type": {
     "message": "Tipo"
@@ -958,7 +961,7 @@
     "message": "Indietro"
   },
   "collections": {
-    "message": "Raccolte"
+    "message": "Collezioni"
   },
   "favorites": {
     "message": "Preferiti"
@@ -976,9 +979,46 @@
     "message": "Identità"
   },
   "clear": {
-    "message": "Pulisci"
+    "message": "Elimina tutto"
   },
   "twoStepNewWindowMessage": {
     "message": "Completa la richiesta di accesso in due passaggi utilizzando la nuova scheda."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

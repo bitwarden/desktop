@@ -118,42 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Gestor de contraseñas gratuito</value>
+    <value>Bitwarden – Free Password Manager</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Un gestor de contraseñas seguro y gratuito para todos tus dispositivos</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden es la manera más fácil y segura de guardar todos tus usuarios y contraseñas mientras se mantienen sincronizados entre todos tus dispositivos.
+    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
 
-El robo de contraseñas es un grave problema. Las páginas web y aplicaciones que usas están bajo ataque cada día. Las brechas de seguridad ocurren y tus contraseñas son robadas. Cuando usas la misma contraseña en diferentes aplicaciones o sitios web, los piratas 
-informáticos pueden acceder fácilmente a tu correo electrónico, cuenta bancaria y otras cuentas importantes.
+Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
 
-Expertos en seguridad recomendan utilizar contraseña generadas aleatoriamente y diferentes para cada cuenta que crees. ¿Pero como puedes gestionar todas esas contraseñas? Bitwarden te facilita su creación, guardado y acceso a tus contraseñas.
+Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
 
-Bitwarden guarda todos tus usuarios en una bóveda cifrada sincronizada a través de todos tus dispositivos. Dado que la información está completamente cifrada en tu dispositivo, solo tú tienes acceso a los datos. Ni siquiera el equipo de Bitwarden podría leer tu información aunque quisiera. Tu información está sellada con cifrado AES de 256 bits, con semilla y PBKDF2 SHA-256.
+Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
 
-Bitwarden es un software 100% código abierto. El código fuente de Bitwarden está alojado en GitHub y cualquier persona es libre de revisarlo, auditarlo o contribuir al código base de Bitwarden.</value>
+Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Un gestor de contraseñas seguro y gratuito para todos tus dispositivos</value>
+    <value>A secure and free password manager for all of your devices</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sincroniza y accede a tu caja fuerte desde múltiples dispositivos</value>
+    <value>Sync and access your vault from multiple devices</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Gestiona todos tus usuarios y contraseñas desde una bóveda segura</value>
+    <value>Manage all your logins and passwords from a secure vault</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Autorellena rápidamente tus datos de acceso en cualquier página web que visites</value>
+    <value>Quickly auto-fill your login credentials into any website that you visit</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Tu caja fuerte también es fácilmente accesible desde el menú de clic derecho</value>
+    <value>Your vault is also conveniently accessible from the right-click menu</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Genera contraseñas fuertes, aleatorias y seguras automáticamente</value>
+    <value>Automatically generate strong, random, and secure passwords</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Tu información es gestionada de forma segura con cifrado AES de 256 bits</value>
+    <value>Your information is managed securely using AES-256 bit encryption</value>
   </data>
 </root>

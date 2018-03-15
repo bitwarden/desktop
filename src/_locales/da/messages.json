@@ -3,11 +3,11 @@
     "message": "bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Gratis Adgangskode Administrator",
+    "message": "bitwarden - gratis adgangskode-administrator",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden er en sikker og gratis adgangskode administrator for alle dine enheder.",
+    "message": "bitwarden er en sikker og gratis adgangskode-administrator for alle dine enheder.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -71,10 +71,10 @@
     "message": "Kopier Brugernavn"
   },
   "copyNumber": {
-    "message": "Kopier Nummer"
+    "message": "Kopier nummer"
   },
   "copySecurityCode": {
-    "message": "Kopier Sikkerhedskode"
+    "message": "Kopier sikkerhedskode"
   },
   "autoFill": {
     "message": "Auto-fyld"
@@ -95,7 +95,7 @@
     "message": "Tilføj et Login"
   },
   "addItem": {
-    "message": "Tilføj Emne"
+    "message": "Tilføj element"
   },
   "passwordHint": {
     "message": "Adgangskodetip"
@@ -167,7 +167,7 @@
     "message": "Besøg Vores Hjemmeside"
   },
   "visitOurWebsiteDirectly": {
-    "message": "Besøg vores hjemmeside for at få hjælp, nyheder, send os en e-mail og\/eller lære mere om hvordan du bruger bitwarden."
+    "message": "Besøg vores hjemmeside for at få hjælp, nyheder, sende os en e-mail og\/eller lære mere om hvordan du bruger bitwarden."
   },
   "fileBugReport": {
     "message": "Indsend en Fejlrapport"
@@ -191,28 +191,28 @@
     "message": "Automatisk generere stærke, unikke adgangskoder til dine logins."
   },
   "bitWebVault": {
-    "message": "bitwarden Web Boks"
+    "message": "bitwarden web-boks"
   },
   "bitWebVaultInfo": {
-    "message": "Administrere dine logins fra enhver webbrowser med bitwarden web boks."
+    "message": "Administrer dine logins fra enhver webbrowser med bitwarden web-boks."
   },
   "bitIosVault": {
-    "message": "bitwarden iOS Boks"
+    "message": "bitwarden iOS-boks"
   },
   "bitIosVaultInfo": {
-    "message": "Administrere dine logins fra dine mobile enheder med bitwarden iOS boks."
+    "message": "Administrer dine logins fra dine mobile enheder med bitwarden iOS-boks."
   },
   "bitAndrVault": {
-    "message": "bitwarden Android Boks"
+    "message": "bitwarden Android-boks"
   },
   "bitAndrVaultInfo": {
-    "message": "Administrere dine logins fra dine mobile enheder med bitwarden Android boks."
+    "message": "Administrer dine logins fra dine mobile enheder med bitwarden Android-boks."
   },
   "importItems": {
-    "message": "Importer Emner"
+    "message": "Importer elementer"
   },
   "importItemsInfo": {
-    "message": "Quickly bulk import your items from other password management applications."
+    "message": "Importer hurtigt dine elementer fra andre adgangskode-administrator-programmer."
   },
   "select": {
     "message": "Vælg"
@@ -248,10 +248,10 @@
     "message": "Vis"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Der er ingen elementer at vise."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Elementinformation"
   },
   "username": {
     "message": "Brugernavn"
@@ -266,16 +266,16 @@
     "message": "Noter"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Rediger element"
   },
   "folder": {
     "message": "Mappe"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Slet element"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Vis element"
   },
   "launchWebsite": {
     "message": "Åben Hjemmeside"
@@ -338,7 +338,7 @@
     "message": "4 timer"
   },
   "onLocked": {
-    "message": "Når Låst"
+    "message": "Når systemet er låst"
   },
   "onRestart": {
     "message": "Ved Genstart"
@@ -381,7 +381,7 @@
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
-    "message": "Ikke i stand til at auto-udfylde den valgte login på denne side. Kopier\/Indsæt dit Brugernavn og\/eller adgangskoden i stedet."
+    "message": "Ikke i stand til at auto-udfylde det valgte login på denne side. Kopier\/indsæt dit brugernavn og\/eller adgangskoden i stedet."
   },
   "loggedOut": {
     "message": "Logget ud"
@@ -447,7 +447,7 @@
     "message": "Synkronisering mislykkedes"
   },
   "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Du kan importere logins fra din web-boks på bitwarden.com. Vil du besøge hjemmesiden nu?"
   },
   "passwordCopied": {
     "message": "Adgangskode kopieret"
@@ -455,17 +455,20 @@
   "uri": {
     "message": "URI"
   },
+  "newUri": {
+    "message": "New URI"
+  },
   "addedItem": {
-    "message": "Added item"
+    "message": "Tilføjede element"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Redigerede element"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Er du sikker på, at du vil slette dette element?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Slettede element"
   },
   "overwritePassword": {
     "message": "Overskriv Adgangskode"
@@ -486,7 +489,7 @@
     "message": "Søg mappe"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Søg samling"
   },
   "noneFolder": {
     "message": "Ingen Mappe",
@@ -502,7 +505,7 @@
     "message": "\"Tilføje Login anmeldelse\" beder automatisk dig gemme nye login til din boks, hver gang du logger ind på dem for første gang."
   },
   "notificationAddDesc": {
-    "message": "Bør bitwarden huske denne adgangskode for dig?"
+    "message": "Skal bitwarden huske denne adgangskode for dig?"
   },
   "notificationAddSave": {
     "message": "Ja, Gem Nu"
@@ -539,7 +542,7 @@
     "message": "Del Din Boks"
   },
   "shareVaultInfo": {
-    "message": "Oprette en organisation for at sikkert dele dine logins med andre brugere."
+    "message": "Oprett en organisation for sikkert at dele dine logins med andre brugere."
   },
   "contribute": {
     "message": "Du kan også bidrage!"
@@ -635,7 +638,7 @@
     "message": "Du er premium-medlem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Tak for at støtte bitwarden."
+    "message": "Tak fordi du støtter bitwarden."
   },
   "premiumPrice": {
     "message": "Alt for kun %price% \/år!"
@@ -727,7 +730,7 @@
     "message": "Self-Hosted miljø"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Angiv grund URL i din lokal hostede bitwarden installation."
+    "message": "Angiv grund-URL i din lokal-hostede bitwarden installation."
   },
   "customEnvironment": {
     "message": "Brugerdefinerede Miljø"
@@ -748,7 +751,7 @@
     "message": "Identificering Server URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikonserver URL"
   },
   "environmentSaved": {
     "message": "Miljøet URLs er blevet gemt."
@@ -799,37 +802,37 @@
     "message": "Ved at klikke uden for pop-up-vinduet for at tjekke din e-mail for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Slå webikoner fra"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provides a recognizable icon next to each login item in your vault."
+    "message": "Webikoner vises som et genkendeligt billede ved siden af hvert loginelement i din boks."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Kortindehaverens navn"
   },
   "number": {
-    "message": "Number"
+    "message": "Nummer"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Mærke"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Udløbsmåned"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Udløbsår"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Udløb"
   },
   "january": {
-    "message": "January"
+    "message": "Januar"
   },
   "february": {
-    "message": "February"
+    "message": "Februar"
   },
   "march": {
-    "message": "March"
+    "message": "Marts"
   },
   "april": {
     "message": "April"
@@ -862,7 +865,7 @@
     "message": "Sikkerhedskode"
   },
   "ex": {
-    "message": "ex."
+    "message": "eks."
   },
   "title": {
     "message": "Titel"
@@ -874,10 +877,10 @@
     "message": "Fru"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Frøken"
   },
   "dr": {
-    "message": "Dr"
+    "message": "Doktor"
   },
   "firstName": {
     "message": "Fornavn"
@@ -889,22 +892,22 @@
     "message": "Efternavn"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Identitetsbenævnelse"
   },
   "company": {
     "message": "Firma"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "CPR-nummer"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Pasnummer"
   },
   "licenseNumber": {
     "message": "Kørekortnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
     "message": "Telefon"
@@ -922,7 +925,7 @@
     "message": "Adresse 3"
   },
   "cityTown": {
-    "message": "By \/ Tætsted"
+    "message": "By"
   },
   "stateProvince": {
     "message": "Region"
@@ -943,42 +946,79 @@
     "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Sikker note"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kort"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitet"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Adgangskodehistorik"
   },
   "back": {
-    "message": "Back"
+    "message": "Tilbage"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Samlinger"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoritter"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Åben i nyt vindue"
   },
   "refresh": {
-    "message": "Refresh"
+    "message": "Genindlæs"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Kort"
   },
   "identities": {
-    "message": "Identities"
+    "message": "Identitet"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Ryd"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Fuldfør din to-trins loginanmodning ved hjælp af den nye fane."
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }

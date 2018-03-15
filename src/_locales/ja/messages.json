@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - 無料パスワードマネージャ",
+    "message": "Bitwarden - 無料パスワードマネージャー",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden はあらゆる端末で使える、安全な無料パスワードマネージャです。",
+    "message": "Bitwarden はあらゆる端末で使える、安全な無料パスワードマネージャーです。",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -89,7 +89,7 @@
     "message": "保管庫がロックされています。"
   },
   "autoFillInfo": {
-    "message": "現在のブラウザタブに自動入力するログインはありません。"
+    "message": "現在のブラウザタブに自動入力するログイン情報はありません。"
   },
   "addLogin": {
     "message": "ログイン情報を追加"
@@ -137,22 +137,22 @@
     "message": "保存"
   },
   "addFolder": {
-    "message": "フォルダを追加"
+    "message": "フォルダーを追加"
   },
   "name": {
     "message": "名前"
   },
   "editFolder": {
-    "message": "フォルダを編集"
+    "message": "フォルダーを編集"
   },
   "deleteFolder": {
-    "message": "フォルダを削除"
+    "message": "フォルダーを削除"
   },
   "folders": {
-    "message": "フォルダ"
+    "message": "フォルダー"
   },
   "noFolders": {
-    "message": "一覧表示するフォルダはありません。"
+    "message": "一覧表示するフォルダーはありません。"
   },
   "helpFeedback": {
     "message": "ヘルプ＆フィードバック"
@@ -167,7 +167,7 @@
     "message": "ウェブサイトを開く"
   },
   "visitOurWebsiteDirectly": {
-    "message": "私たちのウェブサイトでヘルプ、ニュース、問い合わせや bitwarden の詳しい使い方をチェックしてください。"
+    "message": "私たちのウェブサイトでヘルプ、ニュース、問い合わせや Bitwarden の詳しい使い方をチェックしてください。"
   },
   "fileBugReport": {
     "message": "バグレポートを送信"
@@ -191,22 +191,22 @@
     "message": "ログインのために強固なユニークパスワードを自動的に生成します。"
   },
   "bitWebVault": {
-    "message": "bitwarden ウェブ保管庫"
+    "message": "Bitwarden ウェブ保管庫"
   },
   "bitWebVaultInfo": {
-    "message": "bitwarden ウェブ保管庫であらゆるブラウザのログイン情報を管理します。"
+    "message": "Bitwarden ウェブ保管庫であらゆるブラウザのログイン情報を管理します。"
   },
   "bitIosVault": {
-    "message": "bitwarden iOS 保管庫"
+    "message": "Bitwarden iOS 保管庫"
   },
   "bitIosVaultInfo": {
-    "message": "bitwarden iOS 保管庫でモバイル端末のログイン情報を管理します。"
+    "message": "Bitwarden iOS 保管庫でモバイル端末のログイン情報を管理します。"
   },
   "bitAndrVault": {
-    "message": "bitwarden Android 保管庫"
+    "message": "Bitwarden Android 保管庫"
   },
   "bitAndrVaultInfo": {
-    "message": "bitwarden Android 保管庫でモバイル端末のログイン情報を管理します。"
+    "message": "Bitwarden Android 保管庫でモバイル端末のログイン情報を管理します。"
   },
   "importItems": {
     "message": "アイテムのインポート"
@@ -218,7 +218,7 @@
     "message": "選択"
   },
   "generatePassword": {
-    "message": "パスワードを生成する"
+    "message": "パスワードの自動生成"
   },
   "regeneratePassword": {
     "message": "パスワードの再生成"
@@ -269,7 +269,7 @@
     "message": "アイテムの編集"
   },
   "folder": {
-    "message": "フォルダ"
+    "message": "フォルダー"
   },
   "deleteItem": {
     "message": "アイテムの削除"
@@ -405,7 +405,7 @@
     "message": "名前は必須項目です。"
   },
   "addedFolder": {
-    "message": "フォルダを追加しました"
+    "message": "フォルダーを追加しました"
   },
   "changeMasterPass": {
     "message": "マスターパスワードの変更"
@@ -426,13 +426,13 @@
     "message": "最近古いバージョンから更新されました。ロックオプションを変更するには、再度ログインする必要があります。ログアウトしますか。"
   },
   "editedFolder": {
-    "message": "編集したフォルダ"
+    "message": "フォルダーを編集しました"
   },
   "deleteFolderConfirmation": {
-    "message": "フォルダを削除しますか？"
+    "message": "フォルダーを削除しますか？"
   },
   "deletedFolder": {
-    "message": "フォルダを削除"
+    "message": "フォルダーを削除しました"
   },
   "gettingStartedTutorial": {
     "message": "使い方のチュートリアル"
@@ -454,6 +454,9 @@
   },
   "uri": {
     "message": "URI"
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "addedItem": {
     "message": "追加されたアイテム"
@@ -483,13 +486,13 @@
     "message": "翻訳"
   },
   "searchFolder": {
-    "message": "フォルダの検索"
+    "message": "フォルダーの検索"
   },
   "searchCollection": {
-    "message": "検索コレクション"
+    "message": "コレクションの検索"
   },
   "noneFolder": {
-    "message": "フォルダなし",
+    "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
@@ -502,7 +505,7 @@
     "message": "初めてログインしたとき保管庫にログイン情報を保存するよう「ログイン情報を追加」通知を自動的に表示します。"
   },
   "notificationAddDesc": {
-    "message": "このパスワードを bitwarden に保存しますか？"
+    "message": "このパスワードを Bitwarden に保存しますか？"
   },
   "notificationAddSave": {
     "message": "保存する"
@@ -635,7 +638,7 @@
     "message": "あなたはプレミアム会員です！"
   },
   "premiumCurrentMemberThanks": {
-    "message": "bitwarden を支援いただき、ありがとうございます。"
+    "message": "Bitwarden を支援いただき、ありがとうございます。"
   },
   "premiumPrice": {
     "message": "全部でなんと %price% \/年だけ！"
@@ -727,7 +730,7 @@
     "message": "セルフホスティング環境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "セルフホスティングしている bitwarden のベース URL を指定してください。"
+    "message": "セルフホスティングしている Bitwarden のベース URL を指定してください。"
   },
   "customEnvironment": {
     "message": "カスタム環境"
@@ -980,5 +983,42 @@
   },
   "twoStepNewWindowMessage": {
     "message": "新しいタブで2段階認証ログイン要求を完了してください。"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed in data breaches. You should change it."
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
