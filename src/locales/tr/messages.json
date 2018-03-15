@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Tüm öğeler"
@@ -12,7 +12,7 @@
     "message": "Türler"
   },
   "typeLogin": {
-    "message": "Giriş"
+    "message": "Oturum aç"
   },
   "typeCard": {
     "message": "Kart"
@@ -30,7 +30,7 @@
     "message": "Koleksiyonlar"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Kasada Ara"
   },
   "addItem": {
     "message": "Ürün Ekle"
@@ -49,6 +49,18 @@
   },
   "uri": {
     "message": "URl"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "New URI"
   },
   "username": {
     "message": "Kullanıcı Adı"
@@ -94,7 +106,7 @@
     "message": "Marka"
   },
   "expiration": {
-    "message": "Son"
+    "message": "Son Kullanma Tarihi"
   },
   "securityCode": {
     "message": "Güvenlik Kodu"
@@ -172,7 +184,8 @@
     "message": "Aralık"
   },
   "ex": {
-    "message": "ör."
+    "message": "ör.",
+    "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Başlık"
@@ -342,7 +355,7 @@
     "message": "Klasörü Ara"
   },
   "searchFavorites": {
-    "message": "Sık Kullanılanlarda ara"
+    "message": "Favorilerde ara"
   },
   "searchType": {
     "message": "Arama türü",
@@ -451,7 +464,7 @@
     "message": "Beklenmedik bir hata oluştu."
   },
   "itemInformation": {
-    "message": "Hesap Bilgisi"
+    "message": "Öğe Bilgisi"
   },
   "noItemsInList": {
     "message": "Görüntülenecek öğe yok."
@@ -463,7 +476,7 @@
     "message": "Doğrulama kodu gereklidir."
   },
   "continue": {
-    "message": "Devam Edin"
+    "message": "Devam Et"
   },
   "enterVerificationCodeApp": {
     "message": "Kimlik doğrulayıcı uygulamanızdaki 6 haneli doğrulama kodunu girin."
@@ -552,7 +565,7 @@
     "message": "Kendisini Barındıran Çevre"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Kurum içi barındırılan bitwarden kurulumunuzun taban URL'sini belirtin."
+    "message": "Kurum içi barındırılan Bitwarden kurulumunuzun taban URL'sini belirtin."
   },
   "customEnvironment": {
     "message": "Özel Çevre"
@@ -663,13 +676,13 @@
     "message": "E-posta adresinizi bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "goToWebVault": {
-    "message": "Web sayfasına git"
+    "message": "Web kasasına git"
   },
   "getMobileApp": {
     "message": "Mobil Uygulama Edin"
   },
   "getBrowserExtension": {
-    "message": "Tarayıcı uzantıları"
+    "message": "Tarayıcı Uzantılarını Edin"
   },
   "syncingComplete": {
     "message": "Eşleme tamamlandı"
@@ -757,7 +770,7 @@
     "message": "Güncellemeleri Kontrol Et"
   },
   "version": {
-    "message": "Yorum $VERSION_NUM$",
+    "message": "Sürüm $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -769,7 +782,7 @@
     "message": "Güncelleştirmeyi Yeniden Başlat"
   },
   "restartToUpdateDesc": {
-    "message": "Yorum $VERSION_NUM$ yüklenmeye hazır. Bitwarden yüklemeyi tamamlamak için yeniden başlatmanız gerekir. Yeniden başlatmak ve şimdi güncelleştirmek istiyor musunuz?",
+    "message": "Versiyon $VERSION_NUM$ yüklenmeye hazır. Bitwarden yüklemeyi tamamlamak için yeniden başlatmanız gerekir. Yeniden başlatmak ve şimdi güncelleştirmek istiyor musunuz?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -846,7 +859,7 @@
     "message": "Premium Satın Al"
   },
   "premiumPurchaseAlert": {
-    "message": "Bitwarde.com web sitesinden premium üyelik satın alabilirsiniz. Şimdi web sitesini ziyaret etmek istiyor musun?"
+    "message": "Bitwarden.com web sitesinden premium üyelik satın alabilirsiniz. Şimdi web sitesini ziyaret etmek istiyor musun?"
   },
   "premiumCurrentMember": {
     "message": "Bir premium üyesisiniz!"
@@ -879,7 +892,7 @@
     "message": "Geri al"
   },
   "redo": {
-    "message": "Yeniden yap"
+    "message": "Yinele"
   },
   "cut": {
     "message": "Kes",
@@ -899,16 +912,13 @@
     "message": "Uzaklaştır"
   },
   "resetZoom": {
-    "message": "Zoom Sıfırla"
+    "message": "Zoom'u Sıfırla"
   },
   "toggleFullScreen": {
     "message": "Tam Ekrana Geç"
   },
   "reload": {
     "message": "Yeniden yükle"
-  },
-  "forceReload": {
-    "message": "Reload'u zorla çalıştır"
   },
   "toggleDevTools": {
     "message": "Geliştirici Araçlarını Açma\/Kapatma"
@@ -957,5 +967,48 @@
   },
   "window": {
     "message": "Pencere"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
   }
 }
