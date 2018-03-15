@@ -11,7 +11,7 @@ import {
 } from 'electron';
 
 import { Main } from '../main';
-import { isMacAppStore } from '../scripts/utils';
+import { isMacAppStore, isWindowsStore } from '../scripts/utils';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -584,32 +584,38 @@ export class MenuMain {
                 firstMenuOptions);
 
             // About menu
+            const aboutMenuAdditions: MenuItemConstructorOptions[] = [
+                { type: 'separator' },
+            ];
+
+            if (!isWindowsStore()) {
+                aboutMenuAdditions.push(updateMenuItem);
+            }
+
+            aboutMenuAdditions.push({
+                label: this.main.i18nService.t('aboutBitwarden'),
+                click: () => {
+                    const aboutInformation = this.main.i18nService.t('version', app.getVersion()) +
+                        '\nShell ' + process.versions.electron +
+                        '\nRenderer ' + process.versions.chrome +
+                        '\nNode ' + process.versions.node +
+                        '\nArchitecture ' + process.arch;
+                    const result = dialog.showMessageBox(this.main.windowMain.win, {
+                        title: 'Bitwarden',
+                        message: 'Bitwarden',
+                        detail: aboutInformation,
+                        type: 'info',
+                        noLink: true,
+                        buttons: [this.main.i18nService.t('ok'), this.main.i18nService.t('copy')],
+                    });
+                    if (result === 1) {
+                        clipboard.writeText(aboutInformation);
+                    }
+                },
+            });
+
             template[template.length - 1].submenu =
-                (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat([
-                    { type: 'separator' },
-                    updateMenuItem,
-                    {
-                        label: this.main.i18nService.t('aboutBitwarden'),
-                        click: () => {
-                            const aboutInformation = this.main.i18nService.t('version', app.getVersion()) +
-                                '\nShell ' + process.versions.electron +
-                                '\nRenderer ' + process.versions.chrome +
-                                '\nNode ' + process.versions.node +
-                                '\nArchitecture ' + process.arch;
-                            const result = dialog.showMessageBox(this.main.windowMain.win, {
-                                title: 'Bitwarden',
-                                message: 'Bitwarden',
-                                detail: aboutInformation,
-                                type: 'info',
-                                noLink: true,
-                                buttons: [this.main.i18nService.t('ok'), this.main.i18nService.t('copy')],
-                            });
-                            if (result === 1) {
-                                clipboard.writeText(aboutInformation);
-                            }
-                        },
-                    },
-                ]);
+                (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat(aboutMenuAdditions);
         }
 
         this.menu = Menu.buildFromTemplate(template);
