@@ -432,8 +432,8 @@ export default class AutofillService implements AutofillServiceInterface {
                 } else if (!fillFields.number && this.isFieldMatch(f[attr],
                     ['cc-number', 'cc-num', 'card-number', 'card-num', 'number', 'cc', 'cc-no', 'card-no',
                         'credit-card', 'numero-carte', 'carte', 'carte-credit', 'num-carte'],
-                    ['cc-number', 'cc-num', 'card-number', 'card-num', 'cc-no', 'card-no', 'credit-card',
-                        'carte-credit', 'numero-carte', 'num-carte'])) {
+                    ['cc-number', 'cc-num', 'card-number', 'card-num', 'cc-no', 'card-no', 'numero-carte',
+                        'num-carte'])) {
                     fillFields.number = f;
                 } else if (!fillFields.exp && this.isFieldMatch(f[attr],
                     ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex', 'card-expire',
@@ -456,7 +456,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.expYear = f;
                 } else if (!fillFields.code && this.isFieldMatch(f[attr],
                     ['cvv', 'cvc', 'cvv2', 'cc-csc', 'cc-cvv', 'card-csc', 'card-cvv', 'cvd', 'cid', 'cvc2', 'cnv',
-                        'cvn2', 'cc-code', 'card-code', 'code-securite'])) {
+                        'cvn2', 'cc-code', 'card-code', 'code-securite', 'security-code'])) {
                     fillFields.code = f;
                 } else if (!fillFields.brand && this.isFieldMatch(f[attr],
                     ['cc-type', 'card-type', 'card-brand', 'cc-brand'])) {
@@ -672,7 +672,7 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     private isFieldMatch(value: string, options: string[], containsOptions?: string[]): boolean {
-        value = value.trim().toLowerCase().replace(/[^a-zA-Z]+/g, '');
+        value = value.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '');
         for (let i = 0; i < options.length; i++) {
             let option = options[i];
             const checkValueContains = containsOptions == null || containsOptions.indexOf(option) > -1;
