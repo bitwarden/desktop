@@ -16,9 +16,9 @@ export class FoldersController {
 
     load() {
         this.folderService.getAllDecrypted().then((folders: any) => {
-            if (folders.length > 0 && folders[0].id === null) {
+            if (folders.length > 0 && folders[folders.length - 1].id === null) {
                 // remove the "none" folder
-                this.folders = folders.slice(1);
+                this.folders = folders.slice(0, folders.length - 1);
             } else {
                 this.folders = folders;
             }

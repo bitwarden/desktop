@@ -34,6 +34,9 @@ angular
 
             if (!$rootScope.vaultCollections || !$rootScope.vaultCollections.length) {
                 $scope.noFolderCiphers = $filter('filter')($rootScope.vaultCiphers, { folderId: null });
+                if ($scope.noFolderCiphers.length >= 100) {
+                    $scope.noFolderCiphers = null;
+                }
             }
         }
 
@@ -83,9 +86,13 @@ angular
 
                 if (!$rootScope.vaultCollections || !$rootScope.vaultCollections.length) {
                     $scope.noFolderCiphers = $filter('filter')($rootScope.vaultCiphers, { folderId: null });
+                    if ($scope.noFolderCiphers.length >= 100) {
+                        $scope.noFolderCiphers = null;
+                    }
 
-                    if ($rootScope.vaultFolders && $rootScope.vaultFolders.length && !$rootScope.vaultFolders[0].id) {
-                        $rootScope.vaultFolders = $rootScope.vaultFolders.slice(1);
+                    if ($scope.noFolderCiphers && $rootScope.vaultFolders && $rootScope.vaultFolders.length &&
+                        !$rootScope.vaultFolders[$rootScope.vaultFolders.length - 1].id) {
+                        $rootScope.vaultFolders = $rootScope.vaultFolders.slice(0, $rootScope.vaultFolders.length - 1);
                     }
                 }
 
@@ -133,14 +140,6 @@ angular
         if (state.searchText || $stateParams.searchText) {
             $scope.searchText = state.searchText || $stateParams.searchText;
         }
-
-        $scope.folderSort = function (item) {
-            if (!item.id) {
-                return '';
-            }
-
-            return item.name.toLowerCase();
-        };
 
         $scope.searchCiphers = function () {
             if (!$scope.searchText || $scope.searchText.length < 2) {

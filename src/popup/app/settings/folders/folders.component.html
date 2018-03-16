@@ -12,7 +12,7 @@
         <div class="list">
             <div class="list-grouped">
                 <a href="" ng-click="$ctrl.editFolder(folder)" class="list-grouped-item" title="{{::$ctrl.i18n.edit}}"
-                   ng-repeat="folder in theFolders = ($ctrl.folders | orderBy: ['name']) track by $index">
+                   ng-repeat="folder in $ctrl.folders track by $index">
                     <span class="text">{{folder.name}}</span>
                 </a>
             </div>
