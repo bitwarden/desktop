@@ -437,7 +437,7 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.number = f;
                 } else if (!fillFields.exp && this.isFieldMatch(f[attr],
                     ['cc-exp', 'card-exp', 'cc-expiration', 'card-expiration', 'cc-ex', 'card-ex', 'card-expire',
-                        'validite', 'expiration'], [])) {
+                        'validite', 'expiration', 'mm-yy', 'mm-yyyy', 'yy-mm', 'yyyy-mm'], [])) {
                     fillFields.exp = f;
                 } else if (!fillFields.expMonth && this.isFieldMatch(f[attr],
                     ['exp-month', 'cc-exp-month', 'cc-month', 'card-month', 'cc-mo', 'card-mo', 'exp-mo',
@@ -497,16 +497,59 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         if (fillFields.exp && this.hasValue(card.expMonth) && this.hasValue(card.expYear)) {
-            let year = card.expYear;
-            if (year.length === 2) {
-                year = '20' + year;
+            const fullMonth = ('0' + card.expMonth).slice(-2);
+
+            let fullYear: string = card.expYear;
+            let partYear: string = null;
+            if (fullYear.length === 2) {
+                partYear = fullYear;
+                fullYear = '20' + fullYear;
+            } else if (fullYear.length === 4) {
+                partYear = fullYear.substr(2, 2);
             }
 
-            const exp = year + '-' + ('0' + card.expMonth).slice(-2);
+            let exp: string;
+            if (this.fieldAttrsContain(fillFields.exp, 'mm/yy') && partYear != null) {
+                exp = fullMonth + '/' + partYear;
+            } else if (this.fieldAttrsContain(fillFields.exp, 'mm/yyyy')) {
+                exp = fullMonth + '/' + fullYear;
+            } else if (this.fieldAttrsContain(fillFields.exp, 'yy/mm') && partYear != null) {
+                exp = partYear + '/' + fullMonth;
+            } else if (this.fieldAttrsContain(fillFields.exp, 'yyyy/mm')) {
+                exp = fullYear + '/' + fullMonth;
+            } else if (this.fieldAttrsContain(fillFields.exp, 'mm-yy') && partYear != null) {
+                exp = fullMonth + '-' + partYear;
+            } else if (this.fieldAttrsContain(fillFields.exp, 'mm-yyyy')) {
+                exp = fullMonth + '-' + fullYear;
+            } else if (this.fieldAttrsContain(fillFields.exp, 'yy-mm') && partYear != null) {
+                exp = partYear + '-' + fullMonth;
+            } else {
+                exp = fullYear + '-' + fullMonth;
+            }
+
             this.makeScriptActionWithValue(fillScript, exp, fillFields.exp, filledFields);
         }
 
         return fillScript;
+    }
+
+    private fieldAttrsContain(field: any, containsVal: string) {
+        if (!field) {
+            return false;
+        }
+
+        let doesContain = false;
+        CardAttributes.forEach((attr) => {
+            if (doesContain || !field.hasOwnProperty(attr) || !field[attr]) {
+                return;
+            }
+
+            let val = field[attr];
+            val = val.replace(/ /g, '').toLowerCase();
+            doesContain = val.indexOf(containsVal) > -1;
+        });
+
+        return doesContain;
     }
 
     private generateIdentityFillScript(fillScript: AutofillScript, pageDetails: any,
