@@ -11,6 +11,7 @@
     "dev:watch": "gulp build && webpack --config webpack.dev.js --watch",
     "prod": "gulp build && webpack --config webpack.prod.js",
     "dist": "npm run prod && gulp dist",
+    "dist:firefox": "npm run prod && gulp dist:firefox",
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
     "test": "karma start --single-run",
