@@ -988,7 +988,7 @@
     "message": "Überprüfen Sie, ob Ihr Kennwort kompromittiert ist."
   },
   "passwordExposed": {
-    "message": "Dieses Kennwort wurde $VALUE$ mal Verstößen gegen die Datenschicherheit ausgesetzt. Sie sollten es ändern."
+    "message": "Dieses Passwort hat in Datenschutzverletzungen ausgesetzt. Sie sollten es ändern."
   },
   "passwordSafe": {
     "message": "Dieses Kennwort wurde in keinen bekannten Datensätzen gefunden. Es sollte sicher sein."

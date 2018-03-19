@@ -988,7 +988,7 @@
     "message": "Vaata, kas parool on lekkinud."
   },
   "passwordExposed": {
-    "message": "See parool on erinevates andmeleketes kokku $VALUE$ korda lekkinud. Peaksid selle ära muutma."
+    "message": "See parool on puutunud andmete rikkumist. Seda tuleks muuta."
   },
   "passwordSafe": {
     "message": "Seda parooli ei õnnestu andmeleketest leida. Parooli edasi kasutamine peaks olema turvaline."
