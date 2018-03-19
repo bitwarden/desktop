@@ -12,6 +12,7 @@
     "prod": "gulp build && webpack --config webpack.prod.js",
     "dist": "npm run prod && gulp dist",
     "dist:firefox": "npm run prod && gulp dist:firefox",
+    "dist:safari": "npm run prod && gulp dist:safari",
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
     "test": "karma start --single-run",
