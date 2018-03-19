@@ -11,7 +11,7 @@ import {
 } from 'electron';
 
 import { Main } from '../main';
-import { isMacAppStore, isWindowsStore, isSnapStore } from '../scripts/utils';
+import { isMacAppStore, isSnapStore, isWindowsStore } from '../scripts/utils';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
