@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "新 URI"
   },
   "username": {
     "message": "用户名"
@@ -969,10 +969,10 @@
     "message": "窗口"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "检查密码是否已泄漏。"
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "此密码已泄漏 $VALUE$ 次。请立即修改。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,34 +981,34 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "没有在已知泄漏密码中找到此密码，它目前是安全的。"
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "基础域"
   },
   "host": {
-    "message": "Host",
+    "message": "主机",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "精确"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "开始于"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "正则表达式",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "匹配检测",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "默认匹配检测",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "切换选项"
   }
 }
