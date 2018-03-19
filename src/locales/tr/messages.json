@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Yeni URI"
   },
   "username": {
     "message": "Kullanıcı Adı"
@@ -969,10 +969,10 @@
     "message": "Pencere"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Parolanız herhangi bir saldırı sonucu açığa çıkmış mı kontrol edin."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Bu parola $VALUE$ sefer saldırı sonucu veri ele geçmesiyle açığa çıkmış. Değiştirmeniz gerekiyor.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,34 +981,34 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Parolanız, herhangi bir saldırı sonucu ele geçirilen veride bulunmadı. Kullanılması güvenli görünüyor."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Ana alanadı"
   },
   "host": {
-    "message": "Host",
+    "message": "Sunucu alanadı",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Tam"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "İle başlar"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Kurallı ifade",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Eşleşme Tanıma",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Varsayılan eşleme tanıma",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Seçenekleri Aç\/Kapa"
   }
 }

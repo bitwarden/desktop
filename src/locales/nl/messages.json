@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nieuwe URI"
   },
   "username": {
     "message": "Gebruikersnaam"
@@ -969,10 +969,10 @@
     "message": "Venster"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Controleer of het wachtwoord is bloodgesteld."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Dit wachtwoord is $VALUE$ keer blootgesteld in gegevens lekken. U zou het moeten veranderen.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,10 +981,10 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Dit wachtwoord is niet gevonden in alle bekende gegevens lekken. It zou veilig moeten zijn om te gebruiken."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Basisdomein"
   },
   "host": {
     "message": "Host",
@@ -994,10 +994,10 @@
     "message": "Exact"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Begint met"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Reguliere expressie",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
