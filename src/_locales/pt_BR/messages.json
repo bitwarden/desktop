@@ -338,7 +338,7 @@
     "message": "4 horas"
   },
   "onLocked": {
-    "message": "No Bloqueio do Sistema"
+    "message": "Quando o Sistema for Bloqueado"
   },
   "onRestart": {
     "message": "Ao Reiniciar"
@@ -353,16 +353,16 @@
     "message": "Ocorreram erros"
   },
   "emailRequired": {
-    "message": "Requer endereço de e-mail."
+    "message": "O endereço de e-mail é necessário."
   },
   "invalidEmail": {
     "message": "Endereço de e-mail inválido."
   },
   "masterPassRequired": {
-    "message": "Requer senha mestra."
+    "message": "A senha mestra é obrigatória."
   },
   "masterPassLength": {
-    "message": "A senha mestra tem que ter pelo menos 8 caracteres."
+    "message": "A senha mestra deve ter pelo menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "A confirmação da senha mestra não corresponde."
@@ -374,7 +374,7 @@
     "message": "Enviamos um e-mail com a dica da sua senha mestra."
   },
   "verificationCodeRequired": {
-    "message": "Requer o código de verificação."
+    "message": "O código de verificação é necessário."
   },
   "valueCopied": {
     "message": " copiado",
@@ -390,7 +390,7 @@
     "message": "A sua sessão expirou."
   },
   "logOutConfirmation": {
-    "message": "Tem certeza que deseja sair?"
+    "message": "Você tem certeza que deseja sair?"
   },
   "yes": {
     "message": "Sim"
@@ -402,7 +402,7 @@
     "message": "Ocorreu um erro inesperado."
   },
   "nameRequired": {
-    "message": "Requer o nome."
+    "message": "O nome é necessário."
   },
   "addedFolder": {
     "message": "Pasta adicionada"
@@ -417,10 +417,10 @@
     "message": "Você pode alterar o seu endereço de e-mail no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "twoStepLoginConfirmation": {
-    "message": "O login em duas etapas torna a sua conta mais segura ao exigir que digite um código de segurança de um aplicativo de autenticação quando for iniciar a sessão. O login de duas etapas pode ser ativado no cofre web em bitwarden.com. Deseja visitar o site agora?"
+    "message": "O login em duas etapas torna a sua conta mais segura ao exigir que você verifique seu login com outro dispositivo como uma chave de segurança, aplicativo de autenticação, SMS, ligação telefônica, ou e-mail. O login em duas etapas pode ser ativado no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "loggingOut": {
-    "message": "Encerrando sessão"
+    "message": "Encerrando a sessão"
   },
   "loggingOutConfirmation": {
     "message": "Você recentemente atualizou de uma versão antiga. Você tem que iniciar a sessão novamente para alterar as suas opções de bloqueio. Você deseja encerrar a sessão agora?"
@@ -441,10 +441,10 @@
     "message": "Assista o nosso tutorial de introdução e saiba como tirar o máximo de proveito da extensão de navegador."
   },
   "syncingComplete": {
-    "message": "Sincronização completada"
+    "message": "Sincronização completa"
   },
   "syncingFailed": {
-    "message": "Sincronização falhou"
+    "message": "A Sincronização falhou"
   },
   "importItemsConfirmation": {
     "message": "Você pode importar em massa os seus itens a partir do cofre web em bitwarden.com. Você deseja visitar o site agora?"
@@ -456,7 +456,7 @@
     "message": "URL"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nova URI"
   },
   "addedItem": {
     "message": "Item adicionado"
@@ -465,7 +465,7 @@
     "message": "Item editado"
   },
   "deleteItemConfirmation": {
-    "message": "Tem certeza de que pretende excluir este item?"
+    "message": "Você tem certeza que deseja excluir este item?"
   },
   "deletedItem": {
     "message": "Item excluído"
@@ -496,13 +496,13 @@
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
-    "message": "Utilizamos o analytics para aprender melhor como a extensão está sendo utilizada para que possamos torná-la melhor. Todos os dados são recolhidos de forma anônima."
+    "message": "Nós utilizamos o analytics para aprender melhor como a extensão está sendo utilizada, para que possamos torná-la melhor. Todos os dados são coletados de forma anônima."
   },
   "disableAddLoginNotification": {
     "message": "Desativar Notificação de Adicionar Credencial"
   },
   "addLoginNotificationDesc": {
-    "message": "A \"Notificação de Adicionar Login\" pede para salvar automaticamente novas logins para o seu cofre quando você inicia uma sessão em um site pela primeira vez."
+    "message": "A \"Notificação de Adicionar Credencial\" pede para salvar automaticamente novas credenciais para o seu cofre quando você iniciar uma sessão em um site pela primeira vez."
   },
   "notificationAddDesc": {
     "message": "O Bitwarden deve lembrar esta senha para você?"
@@ -527,7 +527,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Esta exportação contém os seus dados não encriptados em formato .csv. Não deve armazená-los ou enviá-los através de canais inseguros (como e-mail). Elimine-os imediatamente após terminar de usá-los."
+    "message": "Esta exportação contém os seus dados não encriptados em formato .csv. Você não deve armazená-los ou enviá-los através de canais inseguros (como e-mail). Elimine-os imediatamente após terminar de usá-los."
   },
   "exportMasterPassword": {
     "message": "Digite a sua senha mestra para exportar os dados do seu cofre."
@@ -542,7 +542,7 @@
     "message": "Compartilhar Seu Cofre"
   },
   "shareVaultInfo": {
-    "message": "Crie uma organização para compartilhar com segurança seus logins com outros usuários."
+    "message": "Crie uma organização para compartilhar com segurança seus itens com outros usuários."
   },
   "contribute": {
     "message": "Você pode contribuir também!"
@@ -590,7 +590,7 @@
     "message": "O tamanho máximo do arquivo é de 100 MB."
   },
   "featureUnavailable": {
-    "message": "Funcionalidade Indisponível"
+    "message": "Recurso Indisponível"
   },
   "updateKey": {
     "message": "Você não pode usar este recurso, até você atualizar sua chave de criptografia."
@@ -614,7 +614,7 @@
     "message": "Registe-se para uma assinatura premium e obtenha:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB de armazenamento de arquivos encriptado."
+    "message": "1 GB de armazenamento de arquivos encriptados."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Opções de autenticação de duas etapas adicionais como YubiKey, FIDO U2F, e Duo."
@@ -626,7 +626,7 @@
     "message": "Prioridade no suporte ao cliente."
   },
   "ppremiumSignUpFuture": {
-    "message": "Acesso a novas funcionalidades premium no futuro. Mais está por vir!"
+    "message": "Todos os recursos futuros premium. Mais em breve!"
   },
   "premiumPurchase": {
     "message": "Comprar Premium"
@@ -644,7 +644,7 @@
     "message": "Tudo por apenas %price% \/ano!"
   },
   "refreshComplete": {
-    "message": "Atualização completada"
+    "message": "Atualização completa"
   },
   "disableAutoTotpCopy": {
     "message": "Desativar Cópia Automática de TOTP"
@@ -659,34 +659,34 @@
     "message": "Uma conta premium é necessária para usar esse recurso."
   },
   "enterVerificationCodeApp": {
-    "message": "Digite o código de verificação de 6 dígitos do seu aplicativo de autenticação."
+    "message": "Insira o código de verificação de 6 dígitos do seu aplicativo de autenticação."
   },
   "enterVerificationCodeEmail": {
-    "message": "Digite o código de verificação de 6 dígitos que foi enviado por e-mail para"
+    "message": "Insira o código de verificação de 6 dígitos que foi enviado por e-mail para"
   },
   "rememberMe": {
     "message": "Lembrar de mim"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Enviar código de verificação novamente"
+    "message": "Enviar e-mail do código de verificação novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utilizar outro método de verificação em duas etapas"
+    "message": "Utilizar outro método de login de verificação em duas etapas"
   },
   "insertYubiKey": {
-    "message": "Introduza a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
+    "message": "Insira a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
   },
   "insertU2f": {
-    "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tem um botão, toque nele."
+    "message": "Insira a sua chave de segurança na porta USB do seu computador. Se ele tiver um botão, toque nele."
   },
   "loginUnavailable": {
     "message": "Sessão Indisponível"
   },
   "noTwoStepProviders": {
-    "message": "Esta conta tem a verificação em duas etapas ativado, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
+    "message": "Esta conta tem a verificação em duas etapas ativada, no entanto, nenhum dos provedores de verificação em duas etapas configurados são suportados por este navegador web."
   },
   "noTwoStepProviders2": {
-    "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou adicione provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
+    "message": "Por favor utilize um navegador web suportado (tal como o Chrome) e\/ou inclua provedores adicionais que são melhor suportados entre navegadores web (tal como uma aplicativo de autenticação)."
   },
   "twoStepOptions": {
     "message": "Opções de Login em Duas Etapas"
@@ -701,7 +701,7 @@
     "message": "Aplicativo de Autenticação"
   },
   "authenticatorAppDesc": {
-    "message": "Utilize um aplicativo de autenticação (tal como Authy ou Google Authenticator) para gerar códigos de verificação baseados na hora.",
+    "message": "Utilize um aplicativo de autenticação (tal como Authy ou Google Authenticator) para gerar códigos de verificação baseados no tempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -724,7 +724,7 @@
     "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Os códigos de verificação vão ser enviados para você."
+    "message": "Os códigos de verificação vão ser enviados por e-mail para você."
   },
   "selfHostedEnvironment": {
     "message": "Ambiente Auto-hospedado"
@@ -754,16 +754,16 @@
     "message": "URL do Servidor de Ícones"
   },
   "environmentSaved": {
-    "message": "As URLs do ambiente foram salvos."
+    "message": "As URLs do ambiente foram salvas."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Habilitar o Autopreencher ao Carregar a Página"
+    "message": "Habilitar o Autopreenchimento ao Carregar a Página"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Se um formulário de login for detectado, realizar automaticamente um autopreenchimento quando a página web carregar."
+    "message": "Se um formulário de login for detectado, realize automaticamente um autopreenchimento quando a página web carregar."
   },
   "experimentalFeature": {
-    "message": "Esta é atualmente uma funcionalidade experimental. Utilize por sua conta e risco."
+    "message": "Atualmente, este é um recurso experimental. Utilize por sua conta e risco."
   },
   "commandAutofillDesc": {
     "message": "Autopreencher o último login utilizado para o site atual."
@@ -799,13 +799,13 @@
     "message": "Booleano"
   },
   "popup2faCloseMessage": {
-    "message": "Clicando fora da janela de pop-up para verificar seu e-mail para o seu código de verificação fará com que este pop-up feche. Você quer abrir este pop-up em uma nova janela para que ele não feche?"
+    "message": "Ao clicar fora da janela de pop-up para verificar seu e-mail para o seu código de verificação fará com que este pop-up feche. Você deseja abrir este pop-up em uma nova janela para que ele não seja fechado?"
   },
   "disableFavicon": {
     "message": "Desativar Ícones de Site"
   },
   "disableFaviconDesc": {
-    "message": "O ícone do site fornece um ícone reconhecível ao lado de cada item de login no seu cofre."
+    "message": "O ícone do site fornece uma imagem reconhecível ao lado de cada item de login no seu cofre."
   },
   "cardholderName": {
     "message": "Titular do Cartão"
@@ -886,7 +886,7 @@
     "message": "Primeiro Nome"
   },
   "middleName": {
-    "message": "Segundo Nome"
+    "message": "Nome do Meio"
   },
   "lastName": {
     "message": "Último Nome"
@@ -985,40 +985,40 @@
     "message": "Complete o seu pedido de início de sessão em duas etapas utilizando a nova aba."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Verifique se a senha foi exposta."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "Esta senha foi exposta em brechas de dados. Você deve alterá-la."
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Esta senha não foi encontrada em brechas de dados conhecidas. Deve ser seguro de usar."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Domínio de base"
   },
   "host": {
-    "message": "Host",
+    "message": "Servidor",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Exato"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Começa com"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Expressão regular",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Detecção de Correspondência",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Detecção de correspondência padrão",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Opções de Alternância"
   }
 }

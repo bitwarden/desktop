@@ -124,16 +124,15 @@
     <value>Un gestor de contraseñas seguro y gratuito para todos tus dispositivos</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden es la manera más fácil y segura de guardar todos tus usuarios y contraseñas mientras se mantienen sincronizados entre todos tus dispositivos.
+    <value>Bitwarden es la manera más fácil y segura de guardar todos tus usuarios y contraseñas, manteniéndolos sincronizados entre todos tus dispositivos.
 
-El robo de contraseñas es un grave problema. Las páginas web y aplicaciones que usas están bajo ataque cada día. Las brechas de seguridad ocurren y tus contraseñas son robadas. Cuando usas la misma contraseña en diferentes aplicaciones o sitios web, los piratas 
-informáticos pueden acceder fácilmente a tu correo electrónico, cuenta bancaria y otras cuentas importantes.
+El robo de contraseñas es un grave problema. Las páginas web y aplicaciones que usas son atacadas cada día. Las brechas de seguridad ocurren y tus contraseñas pueden ser robadas. Cuando usas la misma contraseña en diferentes aplicaciones o sitios web, los piratas informáticos pueden acceder fácilmente a tu correo electrónico, cuenta bancaria y otras cuentas importantes.
 
-Expertos en seguridad recomendan utilizar contraseña generadas aleatoriamente y diferentes para cada cuenta que crees. ¿Pero como puedes gestionar todas esas contraseñas? Bitwarden te facilita su creación, guardado y acceso a tus contraseñas.
+Los expertos en seguridad recomiendan utilizar contraseñas generadas aleatoriamente y diferentes para cada cuenta que tengas. ¿Pero cómo puedes gestionar todos esos datos? Bitwarden te facilita la creación, almacenamiento y acceso a tus contraseñas.
 
-Bitwarden guarda todos tus usuarios en una bóveda cifrada sincronizada a través de todos tus dispositivos. Dado que la información está completamente cifrada en tu dispositivo, solo tú tienes acceso a los datos. Ni siquiera el equipo de Bitwarden podría leer tu información aunque quisiera. Tu información está sellada con cifrado AES de 256 bits, con semilla y PBKDF2 SHA-256.
+Bitwarden guarda todos tus datos de acceso a los sitios en una caja fuerte cifrada y sincronizada a través de todos tus dispositivos. Dado que la información está completamente cifrada en tu propio dispositivo, solo tú tienes acceso a ella. Ni siquiera el equipo de Bitwarden podría leerla aunque quisiera. Tus datos están sellados con cifrado AES de 256 bits, _salted hashing_ y PBKDF2 SHA-256.
 
-Bitwarden es un software 100% código abierto. El código fuente de Bitwarden está alojado en GitHub y cualquier persona es libre de revisarlo, auditarlo o contribuir al código base de Bitwarden.</value>
+Bitwarden es un software 100% de código abierto. El código fuente de Bitwarden está alojado en GitHub y cualquier persona puede revisarlo libremente y auditarlo o contribuir al conjunto de código de Bitwarden.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
     <value>Un gestor de contraseñas seguro y gratuito para todos tus dispositivos</value>
@@ -142,7 +141,7 @@ Bitwarden es un software 100% código abierto. El código fuente de Bitwarden es
     <value>Sincroniza y accede a tu caja fuerte desde múltiples dispositivos</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Gestiona todos tus usuarios y contraseñas desde una bóveda segura</value>
+    <value>Gestiona todos tus usuarios y contraseñas desde una caja fuerte segura</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
     <value>Autorellena rápidamente tus datos de acceso en cualquier página web que visites</value>
@@ -151,7 +150,7 @@ Bitwarden es un software 100% código abierto. El código fuente de Bitwarden es
     <value>Tu caja fuerte también es fácilmente accesible desde el menú de clic derecho</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Genera contraseñas fuertes, aleatorias y seguras automáticamente</value>
+    <value>Genera automáticamente contraseñas fuertes, aleatorias y seguras</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
     <value>Tu información es gestionada de forma segura con cifrado AES de 256 bits</value>

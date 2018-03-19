@@ -456,7 +456,7 @@
     "message": "URI (länk)"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Ny URI"
   },
   "addedItem": {
     "message": "Skapade objekt"
@@ -985,40 +985,40 @@
     "message": "Slutför din inloggningsförfrågan för tvåstegsverifiering med den nya fliken."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Kontrollera om lösenord har avslöjats."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "Detta lösenord har avslöjats i dataintrång. Du bör ändra det."
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Detta lösenord hittades inte i något känt dataintrång. Det bör vara säkert att använda."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Basdomän"
   },
   "host": {
-    "message": "Host",
+    "message": "Värd",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Exakt"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Börjar med"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Reguljärt uttryck",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Matchning",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Standardmatchning",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Växla alternativ"
   }
 }

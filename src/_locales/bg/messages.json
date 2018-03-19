@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Free Password Manager",
+    "message": "Bitwarden - безплатен управител на пароли",
     "description": "Extension name"
   },
   "extDesc": {
@@ -38,13 +38,13 @@
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Ако сте забравили главната парола, то подсказването може да ви помогне да си я припомните."
   },
   "reTypeMasterPass": {
-    "message": "Повторно въвеждане на главната парола"
+    "message": "Въведете пак главната парола"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Подсказване за главната парола (по избор)"
   },
   "tab": {
     "message": "Раздел"
@@ -77,7 +77,7 @@
     "message": "Копиране на кода да сигурност"
   },
   "autoFill": {
-    "message": "Автоматично попълване"
+    "message": "Самопопълващо се"
   },
   "generatePasswordCopied": {
     "message": "Generate Password (copied)"
@@ -104,7 +104,7 @@
     "message": "Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Получете подсказване за главната парола"
   },
   "continue": {
     "message": "Продължаване"
@@ -119,7 +119,7 @@
     "message": "Промяна на главната парола"
   },
   "changeEmail": {
-    "message": "Промяна на електронната поща"
+    "message": "Промяна на имейла"
   },
   "twoStepLogin": {
     "message": "Двустепенно удостоверяване"
@@ -134,7 +134,7 @@
     "message": "Версия"
   },
   "save": {
-    "message": "Запазване"
+    "message": "Запис"
   },
   "addFolder": {
     "message": "Добавяне на папка"
@@ -164,7 +164,7 @@
     "message": "Email us directly to get help or leave feedback."
   },
   "visitOurWebsite": {
-    "message": "Посетете нашия сайт"
+    "message": "Посетете сайта ни"
   },
   "visitOurWebsiteDirectly": {
     "message": "Visit our website to get help, news, email us, and\/or learn more about how to use Bitwarden."
@@ -191,19 +191,19 @@
     "message": "Automatically generate strong, unique passwords for your logins."
   },
   "bitWebVault": {
-    "message": "Интернетен трезор"
+    "message": "Уеб трезор Bitwarden"
   },
   "bitWebVaultInfo": {
     "message": "Manage your items from any web browser with the Bitwarden web vault."
   },
   "bitIosVault": {
-    "message": "Bitwarden iOS Vault"
+    "message": "Трезорът Bitwarden за iOS"
   },
   "bitIosVaultInfo": {
     "message": "Manage your items from your mobile devices with the Bitwarden iOS vault."
   },
   "bitAndrVault": {
-    "message": "Bitwarden Android Vault"
+    "message": "Трезорът Bitwarden за Android"
   },
   "bitAndrVaultInfo": {
     "message": "Manage your items from your mobile devices with the Bitwarden Android vault."
@@ -260,7 +260,7 @@
     "message": "Парола"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Любими"
   },
   "notes": {
     "message": "Бележки"
@@ -341,7 +341,7 @@
     "message": "On System Lock"
   },
   "onRestart": {
-    "message": "При повторно пускане"
+    "message": "При рестартиране"
   },
   "never": {
     "message": "Никога"
@@ -365,19 +365,19 @@
     "message": "Главната парола трябва да съдържа поне 8 знака."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Потвърждаването на главната парола не отговаря."
   },
   "newAccountCreated": {
     "message": "Your new account has been created! You may now log in."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Изпратили сме ви ел. писмо с подсказка за главната ви парола."
   },
   "verificationCodeRequired": {
     "message": "Кодът за потвърждение е задължителен."
   },
   "valueCopied": {
-    "message": " copied",
+    "message": " копирано",
     "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
   },
   "autofillError": {
@@ -405,7 +405,7 @@
     "message": "Името е задължително."
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Добавена папка"
   },
   "changeMasterPass": {
     "message": "Промяна на главната парола"
@@ -426,13 +426,13 @@
     "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
   },
   "editedFolder": {
-    "message": "Edited Folder"
+    "message": "Редактирана папка"
   },
   "deleteFolderConfirmation": {
     "message": "Are you sure you want to delete this folder?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Изтрита папка"
   },
   "gettingStartedTutorial": {
     "message": "Getting Started Tutorial"
@@ -441,16 +441,16 @@
     "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Синхронизацията завърши"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Пропадна синхронизирането"
   },
   "importItemsConfirmation": {
     "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "Парола копирана"
   },
   "uri": {
     "message": "Адрес"
@@ -459,16 +459,16 @@
     "message": "New URI"
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Елементът е добавен"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Елементът е редактиран"
   },
   "deleteItemConfirmation": {
     "message": "Сигурни ли сте, че искате да изтриете елемента?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Елементът е изтрит"
   },
   "overwritePassword": {
     "message": "Презаписване на паролата"
@@ -492,7 +492,7 @@
     "message": "Търсене в колекцията"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Няма папка",
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
@@ -508,7 +508,7 @@
     "message": "Should Bitwarden remember this password for you?"
   },
   "notificationAddSave": {
-    "message": "Yes, Save Now"
+    "message": "Да, нека се запише сега"
   },
   "notificationNeverSave": {
     "message": "Никога за този сайт"
@@ -539,10 +539,10 @@
     "message": "Споделено"
   },
   "shareVault": {
-    "message": "Share Your Vault"
+    "message": "Споделяне на трезора ви"
   },
   "shareVaultInfo": {
-    "message": "Create an organization to securely share your items with other users."
+    "message": "Създайте организация, за да споделяте сигурно елементите си с други потребители."
   },
   "contribute": {
     "message": "You can contribute too!"
@@ -551,7 +551,7 @@
     "message": "Научете повече"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Удостоверителен ключ (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Verification Code (TOTP)"
@@ -575,7 +575,7 @@
     "message": "Add New Attachment"
   },
   "noAttachments": {
-    "message": "No attachments."
+    "message": "Няма прикачени файлове."
   },
   "attachmentSaved": {
     "message": "The attachment has been saved."
@@ -587,7 +587,7 @@
     "message": "Изберете файл."
   },
   "maxFileSize": {
-    "message": "Максималният размер на файловете е 100 МБ."
+    "message": "Големината на файла да е най-много 100 МБ."
   },
   "featureUnavailable": {
     "message": "Feature Unavailable"
@@ -596,16 +596,16 @@
     "message": "You cannot use this feature until you update your encryption key."
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Премиум членство"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Управление на членството"
   },
   "premiumManageAlert": {
     "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Освежаване на членството"
   },
   "premiumNotCurrentMember": {
     "message": "You are not currently a premium member."
@@ -629,13 +629,13 @@
     "message": "All future premium features. More coming soon!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Покупка на премиум членство"
   },
   "premiumPurchaseAlert": {
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Имате премиум членство!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Thank you for supporting Bitwarden."
@@ -653,7 +653,7 @@
     "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Изисква се премиум членство"
   },
   "premiumRequiredDesc": {
     "message": "A premium membership is required to use this feature."
@@ -671,7 +671,7 @@
     "message": "Send verification code email again"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Използвайте друг начин на метод двуфакторното удостоверяване"
   },
   "insertYubiKey": {
     "message": "Insert your YubiKey into your computer's USB port, then touch its button."
@@ -745,7 +745,7 @@
     "message": "Адрес на ППИ-сървъра"
   },
   "webVaultUrl": {
-    "message": "Адрес на сървъра за интернетния трезор"
+    "message": "Адрес на сървъра за уеб трезора"
   },
   "identityUrl": {
     "message": "Адрес на сървъра със самоличности"
@@ -793,22 +793,22 @@
     "message": "Текст"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Скрито"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Булев"
   },
   "popup2faCloseMessage": {
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Изключване на иконите на уебсайта"
   },
   "disableFaviconDesc": {
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Име на притежателя на картата"
   },
   "number": {
     "message": "Номер"
@@ -826,40 +826,40 @@
     "message": "Изтичане"
   },
   "january": {
-    "message": "Януари"
+    "message": "януари"
   },
   "february": {
-    "message": "Февруари"
+    "message": "февруари"
   },
   "march": {
-    "message": "Март"
+    "message": "март"
   },
   "april": {
-    "message": "Април"
+    "message": "април"
   },
   "may": {
-    "message": "Май"
+    "message": "май"
   },
   "june": {
-    "message": "Юни"
+    "message": "юни"
   },
   "july": {
-    "message": "Юли"
+    "message": "юли"
   },
   "august": {
-    "message": "Август"
+    "message": "август"
   },
   "september": {
-    "message": "Септември"
+    "message": "септември"
   },
   "october": {
-    "message": "Октомври"
+    "message": "октомври"
   },
   "november": {
-    "message": "Ноември"
+    "message": "ноември"
   },
   "december": {
-    "message": "Декември"
+    "message": "декември"
   },
   "securityCode": {
     "message": "Код за сигурност"
@@ -901,10 +901,10 @@
     "message": "Social Security Number"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Номер на паспорта"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Номер на лиценза"
   },
   "email": {
     "message": "Електронна поща"
@@ -925,7 +925,7 @@
     "message": "Адрес 3"
   },
   "cityTown": {
-    "message": "Град \/ село"
+    "message": "Населено място"
   },
   "stateProvince": {
     "message": "Област"
@@ -940,16 +940,16 @@
     "message": "Вид"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Вход"
   },
   "typeLogins": {
     "message": "Logins"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Бележка за сигурност"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Карта"
   },
   "typeIdentity": {
     "message": "Самоличност"
@@ -967,13 +967,13 @@
     "message": "Любими"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "Отваряне в нов прозорец"
   },
   "refresh": {
     "message": "Опресняване"
   },
   "cards": {
-    "message": "Cards"
+    "message": "Карти"
   },
   "identities": {
     "message": "Самоличности"
@@ -994,17 +994,17 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Основен домейн"
   },
   "host": {
-    "message": "Host",
+    "message": "Сървър",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Точно"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Започва с"
   },
   "regEx": {
     "message": "Regular expression",

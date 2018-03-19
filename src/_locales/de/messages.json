@@ -456,7 +456,7 @@
     "message": "URI"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Neue URL"
   },
   "addedItem": {
     "message": "Neuer Eintrag"
@@ -985,40 +985,40 @@
     "message": "Schließen Sie die Zwei-Faktor Authentifizierung im neuen Tab ab."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Überprüfen Sie, ob Ihr Kennwort kompromittiert ist."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "Dieses Kennwort wurde $VALUE$ mal Verstößen gegen die Datenschicherheit ausgesetzt. Sie sollten es ändern."
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Dieses Kennwort wurde in keinen bekannten Datensätzen gefunden. Es sollte sicher sein."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Basis-Domäne"
   },
   "host": {
-    "message": "Host",
+    "message": "Server",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Exakt"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Beginnt mit"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulärer Ausdruck",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Match-Erkennung",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Standard-Match-Erkennung",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Umschaltoptionen"
   }
 }

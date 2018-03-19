@@ -456,7 +456,7 @@
     "message": "URI"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nouvelle URI"
   },
   "addedItem": {
     "message": "Identifiant ajouté"
@@ -985,40 +985,40 @@
     "message": "Terminez votre demande d'authentification à deux étapes en utilisant le nouvel onglet."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Vérifier si le mot de passe a été exposé."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "Ce mot de passe a été exposé dans des fuites de données. Vous devriez le changer."
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Ce mot de passe n'a été trouvé dans aucune fuite de données connue. Il semble sécurisé."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Domaine de base"
   },
   "host": {
-    "message": "Host",
+    "message": "Hôte",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Commence par"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Expression régulière",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Détection de correspondance",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Détection de correspondance par défaut",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Options de basculement"
   }
 }

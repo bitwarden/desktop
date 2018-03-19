@@ -456,7 +456,7 @@
     "message": "URI"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Новий URI"
   },
   "addedItem": {
     "message": "Доданий запис"
@@ -985,40 +985,40 @@
     "message": "Завершіть запит двоетапної авторизації на новій вкладці."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Перевірити чи пароль було викрито."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "Цей пароль було викрито з витоком даних. Вам слід його змінити."
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Цей пароль не було знайдено у жодних відомих витоках даних. Його можна безпечно використовувати."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Основний домен"
   },
   "host": {
-    "message": "Host",
+    "message": "Вузол",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Точно"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Починається з"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Звичайний вираз",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Виявлення збігів",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Типове виявлення збігів",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Перемкнути налаштування"
   }
 }

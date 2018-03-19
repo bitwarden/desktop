@@ -456,7 +456,7 @@
     "message": "URL"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Uus URL"
   },
   "addedItem": {
     "message": "Kirje on lisatud"
@@ -985,40 +985,40 @@
     "message": "Kasuta uut akent ja vii oma kaheastmeline sisselogimine lõpuni."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Vaata, kas parool on lekkinud."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "See parool on erinevates andmeleketes kokku $VALUE$ korda lekkinud. Peaksid selle ära muutma."
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Seda parooli ei õnnestu andmeleketest leida. Parooli edasi kasutamine peaks olema turvaline."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Baasdomeen"
   },
   "host": {
     "message": "Host",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Täpne"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Algab"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "RegEx",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Sobivuse tuvastamine",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Vaikse sobivuse tuvastamine",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Valik sisse"
   }
 }

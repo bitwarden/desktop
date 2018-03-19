@@ -456,7 +456,7 @@
     "message": "URI"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "新增 URI"
   },
   "addedItem": {
     "message": "新增項目"
@@ -985,40 +985,40 @@
     "message": "使用新分頁完成您的兩步驟登入要求。"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "檢查密碼是否已外洩。"
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "此密碼已外泄，建議變更密碼。"
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "任何已知的外泄密碼資料庫中都沒有此密碼，它目前是安全的‧"
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "基底網域"
   },
   "host": {
-    "message": "Host",
+    "message": "主機",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "完全符合"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "開始於"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "規則運算式",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "相符偵測",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "預設相符偵測",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "切換選項"
   }
 }

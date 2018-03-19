@@ -1007,7 +1007,7 @@
     "message": "Starts with"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Säännöllinen lauseke",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {

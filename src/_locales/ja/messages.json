@@ -456,7 +456,7 @@
     "message": "URI"
   },
   "newUri": {
-    "message": "New URI"
+    "message": "新しい URI"
   },
   "addedItem": {
     "message": "追加されたアイテム"
@@ -985,40 +985,40 @@
     "message": "新しいタブで2段階認証ログイン要求を完了してください。"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "パスワードが漏洩していないか確認する"
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "このパスワードは過去に漏洩したことがあるため、変更するべきです。"
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "このパスワードは過去に漏洩したデータ内にはないため、安全であると思われます。"
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "ベースドメイン"
   },
   "host": {
-    "message": "Host",
+    "message": "ホスト",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "完全一致"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "前方一致"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "正規表現",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "一致検出方法",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "デフォルトの一致検出方法",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "オプションの切り替え"
   }
 }
