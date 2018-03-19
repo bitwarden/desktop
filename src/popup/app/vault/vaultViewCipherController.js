@@ -2,8 +2,8 @@ angular
     .module('bit.vault')
 
     .controller('vaultViewCipherController', function ($scope, $state, $stateParams, cipherService, toastr,
-        $analytics, i18nService, platformUtilsService, totpService, $timeout, tokenService, $window, cryptoService, SweetAlert,
-        constantsService) {
+        $analytics, i18nService, platformUtilsService, totpService, $timeout, tokenService, $window, cryptoService,
+        SweetAlert, constantsService, auditService) {
         $scope.constants = constantsService;
         $scope.i18n = i18nService;
         $scope.showAttachments = !platformUtilsService.isEdge();
@@ -183,6 +183,21 @@ angular
                 });
             });
         }
+
+        $scope.checkPassword = function () {
+            if (!$scope.cipher.login || !$scope.cipher.login.password || $scope.cipher.login.password === '') {
+                return;
+            }
+
+            $analytics.eventTrack('Check Password');
+            auditService.passwordLeaked($scope.cipher.login.password).then(function (matches) {
+                if (matches != 0) {
+                    toastr.error(i18nService.passwordExposed);
+                } else {
+                    toastr.success(i18nService.passwordSafe);
+                }
+            });
+        };
 
         function totpTick() {
             $timeout(function () {
