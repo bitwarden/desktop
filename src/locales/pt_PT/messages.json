@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Novo URI"
   },
   "username": {
     "message": "Nome de utilizador"
@@ -969,10 +969,10 @@
     "message": "Janela"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Verifica se a palavra-passe foi exposta."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Esta palavra-passe foi exposta $VALUE$ vez(es) em brechas de dados. Deve alterá-la.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,34 +981,34 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Esta palavra-passe não foi encontrada em nenhuma brecha de dados conhecida. Esta deve ser segura de utilizar."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Domínio base"
   },
   "host": {
-    "message": "Host",
+    "message": "Servidor",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Exato"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Começa por"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Expressão regular",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Deteção de correspondência",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Deteção de correspondência predefinida",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Alternar opções"
   }
 }
