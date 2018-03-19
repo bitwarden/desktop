@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden - Gestor de palavras-passe gratuito</value>
+    <value>Bitwarden - Gestor de palavras-passe gratuito</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>Um gestor de palavras-passe seguro e gratuito para todos os seus dispositivos</value>
