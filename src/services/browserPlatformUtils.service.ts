@@ -55,6 +55,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return ipRegex.test(ipString);
     }
 
+    identityClientId: string = 'browser';
+
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
 
