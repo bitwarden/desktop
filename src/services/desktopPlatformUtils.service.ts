@@ -21,6 +21,8 @@ const AnalyticsIds = {
 };
 
 export class DesktopPlatformUtilsService implements PlatformUtilsService {
+    identityClientId: string = 'desktop';
+
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
 
