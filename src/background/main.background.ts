@@ -3,6 +3,7 @@ import { CipherType } from 'jslib/enums';
 import {
     ApiService,
     AppIdService,
+    AuditService,
     CipherService,
     CollectionService,
     ConstantsService,
@@ -23,6 +24,7 @@ import {
 import {
     ApiService as ApiServiceAbstraction,
     AppIdService as AppIdServiceAbstraction,
+    AuditService as AuditServiceAbstraction,
     CipherService as CipherServiceAbstraction,
     CollectionService as CollectionServiceAbstraction,
     CryptoService as CryptoServiceAbstraction,
@@ -88,6 +90,7 @@ export default class MainBackground {
     totpService: TotpServiceAbstraction;
     autofillService: AutofillServiceAbstraction;
     containerService: ContainerService;
+    auditService: AuditServiceAbstraction;
     analytics: Analytics;
 
     onUpdatedRan: boolean;
@@ -147,6 +150,7 @@ export default class MainBackground {
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
             this.totpService, this.utilsService, this.platformUtilsService);
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
+        this.auditService = new AuditService(this.cryptoService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
 

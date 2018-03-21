@@ -4,6 +4,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AppIdService } from 'jslib/abstractions/appId.service';
+import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -51,3 +52,4 @@ export const lockService = getBackgroundService<LockService>('lockService');
 export const totpService = getBackgroundService<TotpService>('totpService');
 export const environmentService = getBackgroundService<EnvironmentService>('environmentService');
 export const collectionService = getBackgroundService<CollectionService>('collectionService');
+export const auditService = getBackgroundService<CollectionService>('auditService');
