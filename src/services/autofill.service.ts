@@ -33,6 +33,8 @@ const UsernameFieldNames: string[] = [
     // German
     'benutzername', 'benutzer name', 'email adresse', 'e-mail adresse', 'benutzerid', 'benutzer id'];
 
+const ExcludedAutofillTypes: string[] = ['radio', 'checkbox', 'hidden', 'file', 'button', 'image', 'reset', 'search'];
+
 /* tslint:disable */
 const IsoCountries: { [id: string]: string; } = {
     afghanistan: "AF", "aland islands": "AX", albania: "AL", algeria: "DZ", "american samoa": "AS", andorra: "AD",
@@ -418,6 +420,10 @@ export default class AutofillService implements AutofillServiceInterface {
         const fillFields: { [id: string]: AutofillField; } = {};
 
         pageDetails.fields.forEach((f: any) => {
+            if (this.isExcludedType(f.type, ExcludedAutofillTypes)) {
+                return;
+            }
+
             CardAttributes.forEach((attr) => {
                 if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
                     return;
@@ -561,6 +567,10 @@ export default class AutofillService implements AutofillServiceInterface {
         const fillFields: { [id: string]: AutofillField; } = {};
 
         pageDetails.fields.forEach((f: any) => {
+            if (this.isExcludedType(f.type, ExcludedAutofillTypes)) {
+                return;
+            }
+
             IdentityAttributes.forEach((attr) => {
                 if (!f.hasOwnProperty(attr) || !f[attr] || !f.viewable) {
                     return;
@@ -712,6 +722,10 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         return fillScript;
+    }
+
+    private isExcludedType(type: string, excludedTypes: string[]) {
+        return excludedTypes.indexOf(type) > -1;
     }
 
     private isFieldMatch(value: string, options: string[], containsOptions?: string[]): boolean {
