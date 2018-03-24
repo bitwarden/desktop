@@ -10,7 +10,7 @@
 <a href="https://addons.opera.com/extensions/details/bitwarden-free-password-manager/" target="_blank"><img src="http://imgur.com/nSJ9htU.png" width="64" height="64"></a>
 <a href="https://safari-extensions.apple.com/details/?id=com.bitwarden.safari-LTZ2PFU5D6" target="_blank"><img src="https://imgur.com/ENbaWUu.png" width="64" height="64"></a>
 <a href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" target="_blank"><img src="https://imgur.com/EuDp4vP.png" width="64" height="64"></a>
-<a href="https://brave.com/" target="_blank"><img src="https://imgur.com/bWzsEN8.png" width="64" height="64"></a>
+<a href="https://brave.com/" target="_blank"><img src="https://imgur.com/z8yjLZ2.png" width="64" height="64"></a>
 <a href="https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/" target="_blank"><img src="https://imgur.com/uhb8M86.png" width="64" height="64"></a>
 
 The Bitwarden browser extension is written using the Chrome Web Extension API and AngularJS.
