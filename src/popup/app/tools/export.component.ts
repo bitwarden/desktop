@@ -6,6 +6,9 @@ import { BrowserApi } from '../../../browser/browserApi';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
+import { CipherView } from 'jslib/models/view/cipherView';
+import { FolderView } from 'jslib/models/view/folderView';
+
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
@@ -59,27 +62,27 @@ export class ExportController {
     }
 
     private async getCsv(): Promise<string> {
-        let decFolders: any[] = [];
-        let decCiphers: any[] = [];
+        let decFolders: FolderView[] = [];
+        let decCiphers: CipherView[] = [];
         const promises = [];
 
-        promises.push(this.folderService.getAllDecrypted().then((folders: any[]) => {
+        promises.push(this.folderService.getAllDecrypted().then((folders) => {
             decFolders = folders;
         }));
 
-        promises.push(this.cipherService.getAllDecrypted().then((ciphers: any[]) => {
+        promises.push(this.cipherService.getAllDecrypted().then((ciphers) => {
             decCiphers = ciphers;
         }));
 
         await Promise.all(promises);
 
-        const foldersMap = new Map<string, any>();
-        decFolders.forEach((f: any) => {
+        const foldersMap = new Map<string, FolderView>();
+        decFolders.forEach((f) => {
             foldersMap.set(f.id, f);
         });
 
         const exportCiphers: any[] = [];
-        decCiphers.forEach((c: any) => {
+        decCiphers.forEach((c) => {
             // only export logins and secure notes
             if (c.type !== CipherType.Login && c.type !== CipherType.SecureNote) {
                 return;
@@ -114,10 +117,16 @@ export class ExportController {
             switch (c.type) {
                 case CipherType.Login:
                     cipher.type = 'login';
-                    cipher.login_uri = c.login.uri;
                     cipher.login_username = c.login.username;
                     cipher.login_password = c.login.password;
                     cipher.login_totp = c.login.totp;
+
+                    if (c.login.uris) {
+                        cipher.login_uri = [];
+                        c.login.uris.forEach((u) => {
+                            cipher.login_uri.push(u.uri);
+                        });
+                    }
                     break;
                 case CipherType.SecureNote:
                     cipher.type = 'note';
