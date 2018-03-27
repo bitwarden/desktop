@@ -33,13 +33,16 @@ import { U2f } from '../../scripts/u2f';
 window.U2f = U2f;
 
 import { Analytics } from '../../../jslib/src/misc/analytics';
-new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
-    const bgPage = BrowserApi.getBackgroundPage();
-    if (!bgPage || !bgPage.bitwardenMain) {
-        throw 'Cannot resolve background page main.';
-    }
-    return bgPage.bitwardenMain;
-});
+
+if (BrowserApi.getBackgroundPage()) {
+    new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
+        const bgPage = BrowserApi.getBackgroundPage();
+        if (!bgPage || !bgPage.bitwardenMain) {
+            throw 'Cannot resolve background page main.';
+        }
+        return bgPage.bitwardenMain;
+    });
+}
 
 // Model imports
 import { Attachment } from '../../../jslib/src/models/domain/attachment';

@@ -13,7 +13,10 @@ const authService = new AuthService(backgroundServices.cryptoService(), backgrou
     backgroundServices.userService(), backgroundServices.tokenService(), backgroundServices.appIdService(),
     backgroundServices.i18n2Service(), backgroundServices.platformUtilsService(),
     backgroundServices.constantsService(), messagingService);
-authService.init();
+
+if (backgroundServices.i18n2Service()) {
+    authService.init();
+}
 
 export default angular
     .module('bit.services', ['toastr'])

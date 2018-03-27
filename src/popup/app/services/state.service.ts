@@ -9,8 +9,10 @@ export class StateService {
     }
 
     async init() {
-        const iconsDisabled = await this.storageService.get<boolean>(this.constantsService.disableFaviconKey);
-        this.saveState('faviconEnabled', !iconsDisabled);
+        if (this.storageService != null) {
+            const iconsDisabled = await this.storageService.get<boolean>(this.constantsService.disableFaviconKey);
+            this.saveState('faviconEnabled', !iconsDisabled);
+        }
     }
 
     saveState(key: string, data: any) {
