@@ -41,7 +41,7 @@ export class OptionsController {
 
         const disableGa = await this.storageService.get<boolean>(
             this.constantsService.disableGaKey);
-        this.disableGa = disableGa || (this.platformUtilsService.isFirefox() && disableGa === undefined);
+        this.disableGa = disableGa || (this.platformUtilsService.isFirefox() && disableGa == null);
 
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             this.constantsService.disableAddLoginNotificationKey);
