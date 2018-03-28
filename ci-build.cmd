@@ -11,5 +11,5 @@ cd %DIST_SRC_DIR%
 call git checkout %APPVEYOR_REPO_COMMIT%
 call git submodule update --init --recursive
 cd %DIST_DIR%
-call 7z a browser-source-%APPVEYOR_BUILD_NUMBER%.zip %DIST_SRC_DIR%
+call 7z a browser-source-%APPVEYOR_BUILD_NUMBER%.zip %DIST_SRC_DIR%\*
 cd %APPVEYOR_BUILD_FOLDER%
