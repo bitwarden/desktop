@@ -7,15 +7,11 @@ SET DIST_SRC_DIR=%DIST_DIR%Source\
 SET REPO_URL=https://github.com/%APPVEYOR_REPO_NAME%.git
 
 :: Do normal build
-ECHO
 ECHO ## Build dist
-ECHO
 CALL npm run dist
 
 :: Build sources for reviewers
-ECHO
 ECHO ## Build sources
-ECHO
 CALL git clone --branch=%APPVEYOR_REPO_BRANCH% %REPO_URL% %DIST_SRC_DIR%
 cd %DIST_SRC_DIR%
 CALL git checkout %APPVEYOR_REPO_COMMIT%
