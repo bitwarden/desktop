@@ -147,7 +147,6 @@
       "artifactName": "${productName}-${version}-${arch}.${ext}",
       "backgroundColor": "#3c8dbc",
       "applicationId": "bitwardendesktop",
-      "displayName": "Bitwarden - Free Password Manager",
       "identityName": "8bitSolutionsLLC.bitwardendesktop",
       "publisher": "CN=14D52771-DE3C-4886-B8BF-825BA7690418",
       "publisherDisplayName": "8bit Solutions LLC",
