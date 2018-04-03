@@ -11,22 +11,22 @@ angular
 
         $scope.providers = [];
 
-        if (providers.get(constants.twoFactorProvider.organizationDuo)) {
+        if (providers.has(constants.twoFactorProvider.organizationDuo)) {
             add(constants.twoFactorProvider.organizationDuo);
         }
-        if (providers.get(constants.twoFactorProvider.authenticator)) {
+        if (providers.has(constants.twoFactorProvider.authenticator)) {
             add(constants.twoFactorProvider.authenticator);
         }
-        if (providers.get(constants.twoFactorProvider.yubikey)) {
+        if (providers.has(constants.twoFactorProvider.yubikey)) {
             add(constants.twoFactorProvider.yubikey);
         }
-        if (providers.get(constants.twoFactorProvider.email)) {
+        if (providers.has(constants.twoFactorProvider.email)) {
             add(constants.twoFactorProvider.email);
         }
-        if (providers.get(constants.twoFactorProvider.duo)) {
+        if (providers.has(constants.twoFactorProvider.duo)) {
             add(constants.twoFactorProvider.duo);
         }
-        if (providers.get(constants.twoFactorProvider.u2f) && platformUtilsService.supportsU2f($window)) {
+        if (providers.has(constants.twoFactorProvider.u2f) && platformUtilsService.supportsU2f($window)) {
             add(constants.twoFactorProvider.u2f);
         }
 
