@@ -229,7 +229,7 @@ export class MenuMain {
             },
         ];
 
-        if (!isMacAppStore()) {
+        if (!isMacAppStore() && !isWindowsStore()) {
             accountSubmenu.unshift({
                 label: this.main.i18nService.t('premiumMembership'),
                 click: () => this.main.messagingService.send('openPremium'),
