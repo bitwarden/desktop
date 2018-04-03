@@ -127,8 +127,6 @@ angular
         });
 
         $scope.$on('2faPageResponse', (event, details) => {
-            console.log('got 2fa response');
-            console.log(details);
             if (details.type === 'duo') {
                 $scope.login(details.data.sigValue, details.tab);
             }
@@ -145,7 +143,8 @@ angular
                 }
 
                 var params = providers.get($scope.providerType);
-                if ($scope.providerType === constants.twoFactorProvider.duo) {
+                if ($scope.providerType === constants.twoFactorProvider.duo ||
+                    $scope.providerType === constants.twoFactorProvider.organizationDuo) {
                     if (platformUtilsService.isSafari()) {
                         var tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('2fa/index.html'));
                         var tabToSend = BrowserApi.makeTabObject(tab);

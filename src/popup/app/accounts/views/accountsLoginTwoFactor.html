@@ -44,12 +44,16 @@
     </div>
 </form>
 
-<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.duo" autocomplete="off">
+<form name="theForm" bit-form="loginPromise" ng-if="providerType === constantsProvider.duo ||
+      providerType === constantsProvider.organizationDuo" autocomplete="off">
     <div class="header">
         <div class="left">
             <a ui-sref="login({animation: 'out-slide-right'})"><i class="fa fa-chevron-left"></i> {{i18n.back}}</a>
         </div>
-        <div class="title">Duo</div>
+        <div class="title">
+            Duo
+            <span ng-if="providerType === constantsProvider.organizationDuo">({{i18n.organization}})</span>
+        </div>
     </div>
     <div class="content">
         <div id="duoFrameWrapper" ng-if="!showNewWindowMessage">

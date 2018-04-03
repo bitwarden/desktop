@@ -11,6 +11,9 @@ angular
 
         $scope.providers = [];
 
+        if (providers.get(constants.twoFactorProvider.organizationDuo)) {
+            add(constants.twoFactorProvider.organizationDuo);
+        }
         if (providers.get(constants.twoFactorProvider.authenticator)) {
             add(constants.twoFactorProvider.authenticator);
         }
