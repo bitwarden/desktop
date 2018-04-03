@@ -85,6 +85,7 @@ export class TwoFactorComponent implements OnInit {
                 // TODO: init u2f
                 break;
             case TwoFactorProviderType.Duo:
+            case TwoFactorProviderType.OrganizationDuo:
                 setTimeout(() => {
                     (window as any).Duo.init({
                         host: params.Host,

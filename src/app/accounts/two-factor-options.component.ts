@@ -35,6 +35,10 @@ export class TwoFactorOptionsComponent implements OnInit {
         private platformUtilsService: PlatformUtilsService) { }
 
     ngOnInit() {
+        if (this.authService.twoFactorProviders.has(TwoFactorProviderType.OrganizationDuo)) {
+            this.providers.push(TwoFactorProviders[TwoFactorProviderType.OrganizationDuo]);
+        }
+
         if (this.authService.twoFactorProviders.has(TwoFactorProviderType.Authenticator)) {
             this.providers.push(TwoFactorProviders[TwoFactorProviderType.Authenticator]);
         }

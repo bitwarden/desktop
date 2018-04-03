@@ -34,7 +34,8 @@
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="selectedProviderType === providerType.Duo">
+        <ng-container *ngIf="selectedProviderType === providerType.Duo ||
+                        selectedProviderType === providerType.OrganizationDuo">
             <div id="duo-frame"><iframe id="duo_iframe"></iframe></div>
             <div class="box last">
                 <div class="box-content">
@@ -55,7 +56,8 @@
         </div>
         <div class="buttons">
             <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick
-                    *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo">
+                    *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo && 
+                        selectedProviderType !== providerType.OrganizationDuo">
                 <span [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'continue' | i18n}}</span>
                 <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
             </button>
