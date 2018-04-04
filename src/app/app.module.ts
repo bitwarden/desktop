@@ -42,7 +42,7 @@ import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
-import { IconComponent } from './vault/icon.component';
+import { IconComponent } from 'jslib/angular/components/icon.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
 import { VaultComponent } from './vault/vault.component';

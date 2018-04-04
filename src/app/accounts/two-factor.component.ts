@@ -20,7 +20,7 @@ import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
-import { EnvironmentService } from 'jslib/services/environment.service';
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
