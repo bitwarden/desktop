@@ -14,9 +14,9 @@ import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { I18nService } from '../../services/i18n.service';
 import { LogService } from '../../services/log.service';
 
-import { AuthGuardService } from './auth-guard.service';
+import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from './broadcaster.service';
-import { ValidationService } from './validation.service';
+import { ValidationService } from 'jslib/angular/services/validation.service';
 
 import { Analytics } from 'jslib/misc/analytics';
 

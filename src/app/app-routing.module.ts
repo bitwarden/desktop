@@ -4,7 +4,7 @@ import {
     Routes,
 } from '@angular/router';
 
-import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';

@@ -26,15 +26,15 @@ import { SettingsComponent } from './accounts/settings.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
-import { ApiActionDirective } from './directives/api-action.directive';
-import { AutofocusDirective } from './directives/autofocus.directive';
-import { BlurClickDirective } from './directives/blur-click.directive';
+import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
+import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
+import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
 import { BoxRowDirective } from './directives/box-row.directive';
-import { FallbackSrcDirective } from './directives/fallback-src.directive';
-import { StopClickDirective } from './directives/stop-click.directive';
-import { StopPropDirective } from './directives/stop-prop.directive';
+import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
+import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
+import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 
-import { I18nPipe } from './pipes/i18n.pipe';
+import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from './pipes/search-ciphers.pipe';
 
 import { AddEditComponent } from './vault/add-edit.component';

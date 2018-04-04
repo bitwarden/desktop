@@ -52,7 +52,9 @@ const common = {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
             jslib: path.join(__dirname, 'jslib/src')
-        }
+        },
+        symlinks: false,
+        modules: [path.resolve('node_modules')]
     },
     output: {
         filename: '[name].js',
