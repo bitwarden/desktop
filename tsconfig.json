@@ -2,6 +2,8 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "module": "es6",
     "target": "ES2016",
     "allowJs": true,
@@ -20,6 +22,7 @@
     "dist",
     "jslib/dist",
     "build",
+    "build2",
     "build.safariextension",
     "coverage",
     "store",
