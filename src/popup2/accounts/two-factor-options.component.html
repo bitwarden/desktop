@@ -1,0 +1,28 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="box">
+                    <div class="box-header">
+                        {{'twoStepOptions' | i18n}}
+                    </div>
+                    <div class="box-content">
+                        <a href="#" appStopClick *ngFor="let p of providers" class="box-content-row"
+                           (click)="choose(p)">
+                            <img [src]="'images/two-factor/' + p.type + '.png'" alt="" class="img-right">
+                            <span class="text">{{p.name}}</span>
+                            <span class="detail">{{p.description}}</span>
+                        </a>
+                        <a href="#" appStopClick class="box-content-row" (click)="recover()">
+                            <span class="text">{{'recoveryCodeTitle' | i18n}}</span>
+                            <span class="detail">{{'recoveryCodeDesc' | i18n}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
+            </div>
+        </div>
+    </div>
+</div>

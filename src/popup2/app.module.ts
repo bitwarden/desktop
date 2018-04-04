@@ -15,7 +15,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
+import { EnvironmentComponent } from './accounts/environment.component';
+import { HintComponent } from './accounts/hint.component';
 import { LoginComponent } from './accounts/login.component';
+import { RegisterComponent } from './accounts/register.component';
+import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
+import { TwoFactorComponent } from './accounts/two-factor.component';
 
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
@@ -45,11 +50,16 @@ import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
         AppComponent,
         AutofocusDirective,
         BlurClickDirective,
+        EnvironmentComponent,
         FallbackSrcDirective,
+        HintComponent,
         I18nPipe,
         LoginComponent,
+        RegisterComponent,
         StopClickDirective,
-        StopPropDirective
+        StopPropDirective,
+        TwoFactorOptionsComponent,
+        TwoFactorComponent
     ],
     entryComponents: [
 

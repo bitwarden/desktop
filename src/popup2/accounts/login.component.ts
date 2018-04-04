@@ -24,6 +24,6 @@ export class LoginComponent extends BaseLoginComponent {
     }
 
     settings() {
-        // TODO: navigate to settings
+        this.router.navigate(['environment']);
     }
 }
