@@ -137,7 +137,7 @@ module.exports = {
         ]),
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].js.map',
-            include: ['popup/main.js']
+            include: ['popup/main.js', 'background.js']
         }),
         extractCss
     ],

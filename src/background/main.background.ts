@@ -121,7 +121,7 @@ export default class MainBackground {
         this.storageService = new BrowserStorageService(this.platformUtilsService, false);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
         this.i18nService = i18nService(this.platformUtilsService);
-        this.i18n2Service = new I18n2Service(window.navigator.language, i18nService);
+        this.i18n2Service = new I18n2Service(window.navigator.language, this.i18nService);
         this.constantsService = new ConstantsService(this.i18nService, delayi18nLoad);
         this.cryptoService = new CryptoService(this.storageService, this.secureStorageService);
         this.tokenService = new TokenService(this.storageService);
