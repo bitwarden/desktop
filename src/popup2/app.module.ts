@@ -17,6 +17,15 @@ import { AppComponent } from './app.component';
 
 import { LoginComponent } from './accounts/login.component';
 
+import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
+import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
+import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
+import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
+import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
+import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
+
+import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -32,8 +41,15 @@ import { LoginComponent } from './accounts/login.component';
         ToasterModule,
     ],
     declarations: [
+        ApiActionDirective,
         AppComponent,
+        AutofocusDirective,
+        BlurClickDirective,
+        FallbackSrcDirective,
+        I18nPipe,
         LoginComponent,
+        StopClickDirective,
+        StopPropDirective
     ],
     entryComponents: [
 
