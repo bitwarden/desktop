@@ -32,6 +32,16 @@ small {
     margin: 0 !important;
 }
 
+.no-vmargin {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.no-vpad {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 [hidden] {
     display: none !important;
 }
@@ -62,7 +72,16 @@ small {
 }
 
 #duo-frame {
-    // TODO
+    background: url('../popup2/images/loading.svg') 0 0 no-repeat;
+    width: 100%;
+    height: 470px;
+    margin-bottom: -10px;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
 }
 
 app-root > #loading {

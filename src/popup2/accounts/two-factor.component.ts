@@ -9,6 +9,7 @@ import { Angulartics2 } from 'angulartics2';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
@@ -23,9 +24,10 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     constructor(authService: AuthService, router: Router,
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, apiService: ApiService,
-        platformUtilsService: PlatformUtilsService, syncService: SyncService) {
+        platformUtilsService: PlatformUtilsService, syncService: SyncService,
+        environmentService: EnvironmentService) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
-            platformUtilsService, syncService);
+            platformUtilsService, syncService, window, environmentService);
     }
 
     anotherMethod() {

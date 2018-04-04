@@ -1,7 +1,7 @@
 <form id="two-factor-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
     <header>
         <div class="left">
-            <a routerLink="/login">{{'cancel' | i18n}}</a>
+            <a routerLink="/login">{{'back' | i18n}}</a>
         </div>
         <div class="center">
             <span class="title">{{title}}</span>
@@ -17,13 +17,15 @@
     </header>
     <ng-container *ngIf="selectedProviderType === providerType.Authenticator ||
                   selectedProviderType === providerType.Email">
-        <div class="content">
-            <p *ngIf="selectedProviderType === providerType.Authenticator">{{'enterVerificationCodeApp' | i18n}}</p>
-            <p *ngIf="selectedProviderType === providerType.Email">
+        <div class="content text-center">
+            <span *ngIf="selectedProviderType === providerType.Authenticator">
+                {{'enterVerificationCodeApp' | i18n}}
+            </span>
+            <span *ngIf="selectedProviderType === providerType.Email">
                 {{'enterVerificationCodeEmail' | i18n : twoFactorEmail}}
-            </p>
+            </span>
         </div>
-        <div class="box">
+        <div class="box first">
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="code">{{'verificationCode' | i18n}}</label>
@@ -37,16 +39,33 @@
         </div>
     </ng-container>
     <ng-container *ngIf="selectedProviderType === providerType.Yubikey">
-        <div class="content">
+        <div class="content text-center">
             <p>{{'insertYubiKey' | i18n}}</p>
             <img src="../images/yubikey.jpg" class="img-rounded img-responsive" alt="">
         </div>
-        <div class="box">
+        <div class="box first">
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="code" class="sr-only">{{'verificationCode' | i18n}}</label>
                     <input id="code" type="password" name="Code" [(ngModel)]="token" required appAutofocus>
                 </div>
+                <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <label for="remember">{{'rememberMe' | i18n}}</label>
+                    <input id="remember" type="checkbox" name="Remember" [(ngModel)]="remember">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="selectedProviderType === providerType.U2f">
+        <div class="content text-center">
+            <span *ngIf="!u2fReady">{{'loading' | i18n}}</span>
+            <div *ngIf="u2fReady">
+                <p>{{'insertU2f' | i18n}}</p>
+                <img src="../images/u2fkey.jpg" alt="" class="img-rounded img-responsive" />
+            </div>
+        </div>
+        <div class="box first">
+            <div class="box-content">
                 <div class="box-content-row box-content-row-checkbox" appBoxRow>
                     <label for="remember">{{'rememberMe' | i18n}}</label>
                     <input id="remember" type="checkbox" name="Remember" [(ngModel)]="remember">
@@ -66,18 +85,19 @@
             </div>
         </div>
     </ng-container>
-    <div class="content" *ngIf="selectedProviderType == null">
+    <div class="content text-center" *ngIf="selectedProviderType == null">
         <p>{{'noTwoStepProviders' | i18n}}</p>
         <p>{{'noTwoStepProviders2' | i18n}}</p>
     </div>
-    <div class="content">
-        <p class="text-center">
+    <div class="content no-vpad text-center" *ngIf="selectedProviderType != null">
+        <p>
             <a href="#" appStopClick (click)="anotherMethod()">{{'useAnotherTwoStepMethod' | i18n}}</a>
         </p>
-        <p class="text-center" *ngIf="selectedProviderType === providerType.Email">
+        <p *ngIf="selectedProviderType === providerType.Email">
             <a href="#" appStopClick (click)="sendEmail(true)" [appApiAction]="emailPromise">
                 {{'sendVerificationCodeEmailAgain' | i18n}}
             </a>
         </p>
     </div>
 </form>
+<iframe id="u2f_iframe" hidden></iframe>

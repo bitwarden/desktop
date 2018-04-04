@@ -1049,5 +1049,8 @@
   "organization": {
     "message": "Organization",
     "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "loading": {
+    "message": "Loading..."
   }
 }
