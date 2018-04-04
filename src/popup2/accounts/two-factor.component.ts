@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
+import { BrowserApi } from '../../browser/browserApi';
+
+import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
+
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
@@ -21,6 +25,8 @@ import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/comp
     template: template,
 })
 export class TwoFactorComponent extends BaseTwoFactorComponent {
+    showNewWindowMessage = false;
+
     constructor(authService: AuthService, router: Router,
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, apiService: ApiService,
@@ -28,6 +34,37 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
             platformUtilsService, syncService, window, environmentService);
+    }
+
+    async ngOnInit() {
+        this.showNewWindowMessage = this.platformUtilsService.isSafari();
+        await super.ngOnInit();
+
+        if (this.selectedProviderType == null) {
+            return;
+        }
+
+        var isDuo = this.selectedProviderType == TwoFactorProviderType.Duo ||
+            this.selectedProviderType == TwoFactorProviderType.OrganizationDuo;
+        if (!this.platformUtilsService.isSafari() || !isDuo) {
+            return;
+        }
+
+        const params = this.authService.twoFactorProviders.get(this.selectedProviderType);
+        const tab = BrowserApi.createNewTab(BrowserApi.getAssetUrl('2fa/index.html'));
+        const tabToSend = BrowserApi.makeTabObject(tab);
+        window.setTimeout(() => {
+            BrowserApi.tabSendMessage(tabToSend, {
+                command: '2faPageData',
+                data: {
+                    type: 'duo',
+                    host: params.Host,
+                    signature: params.Signature,
+                }
+            });
+        }, 500);
+
+        // TODO: listen for duo data message response
     }
 
     anotherMethod() {
