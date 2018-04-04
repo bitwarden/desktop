@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
+import { HomeComponent } from './accounts/home.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
@@ -25,6 +26,7 @@ import { TwoFactorComponent } from './accounts/two-factor.component';
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
 import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
+import { BoxRowDirective } from 'jslib/angular/directives/box-row.directive';
 import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
 import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
@@ -50,8 +52,10 @@ import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
         AppComponent,
         AutofocusDirective,
         BlurClickDirective,
+        BoxRowDirective,
         EnvironmentComponent,
         FallbackSrcDirective,
+        HomeComponent,
         HintComponent,
         I18nPipe,
         LoginComponent,

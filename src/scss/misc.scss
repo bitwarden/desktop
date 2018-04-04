@@ -1,0 +1,76 @@
+﻿@import "variables.scss";
+
+small {
+    font-size: $font-size-small;
+}
+
+.text-primary {
+    color: $brand-primary !important;
+}
+
+.text-success {
+    color: $brand-success !important;
+}
+
+.text-muted {
+    color: $text-muted !important;
+}
+
+.text-default {
+    color: $text-color !important;
+}
+
+.text-accent {
+    color: $brand-primary-accent;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.monospaced {
+    font-family: $font-family-monospace;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-rounded {
+    border-radius: 6px;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}
+
+#duo-frame {
+    // TODO
+}
+
+app-root > #loading {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: $text-muted;
+}

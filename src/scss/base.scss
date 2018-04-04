@@ -1,0 +1,143 @@
+﻿@import "variables.scss";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    background-color: $background-color-alt2;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    color: $text-color;
+    line-height: $line-height-base;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    width: 375px !important;
+    height: 600px !important;
+    overflow: hidden;
+
+    &.sm {
+        width: 375px !important;
+        height: 500px !important;
+    }
+
+    &.xs {
+        width: 375px !important;
+        height: 300px !important;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-sans-serif;
+    color: $text-color;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    margin-bottom: 10px;
+}
+
+img {
+    border: none;
+}
+
+a {
+    color: $brand-primary;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: darken($brand-primary, 6%);
+    }
+}
+
+input, select, textarea, button {
+    font-size: $font-size-base;
+    font-family: $font-family-sans-serif;
+}
+
+button {
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+div::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+div::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+div::-webkit-scrollbar-thumb {
+    background-color: rgba(100,100,100,.2);
+    border-radius: 10px;
+    margin-right: 1px;
+
+    &:hover {
+        background-color: rgba(100,100,100,.4);
+    }
+}
+
+header {
+    background-color: $brand-primary;
+    min-height: 44px;
+    max-height: 44px;
+    color: white;
+    display: flex;
+
+    .left, .right {
+        flex: 1;
+        display: flex;
+        min-width: -webkit-min-content; /* Workaround to Chrome bug */
+    }
+
+    .right {
+        justify-content: flex-end;
+    }
+
+    .center {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    button, a {
+        background: $brand-primary;
+        border: none;
+        color: white;
+        padding: 0 10px;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &:hover, &:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .title {
+        font-weight: bold;
+    }
+}
+
+.content {
+    padding: 15px;
+}

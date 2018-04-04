@@ -17,7 +17,8 @@ const paths = {
     coverage: './coverage/',
     npmDir: './node_modules/',
     popupDir: './src/popup/',
-    cssDir: './src/popup/css/'
+    cssDir: './src/popup/css/',
+    cssDir2: './src/css/'
 };
 
 const filters = {
@@ -181,6 +182,8 @@ function safariZip(buildPath) {
 
 gulp.task('build', ['lint', 'webfonts']);
 
+gulp.task('build2', ['webfonts2']);
+
 gulp.task('webfonts', () => {
     return gulp.src('./webfonts.list')
         .pipe(googleWebFonts({
@@ -188,6 +191,15 @@ gulp.task('webfonts', () => {
             cssFilename: 'webfonts.css'
         }))
         .pipe(gulp.dest(paths.cssDir));
+});
+
+gulp.task('webfonts2', () => {
+    return gulp.src('./webfonts.list')
+        .pipe(googleWebFonts({
+            fontsDir: 'webfonts',
+            cssFilename: 'webfonts.css'
+        }))
+        .pipe(gulp.dest(paths.cssDir2));
 });
 
 gulp.task('ci', ['ci:coverage']);

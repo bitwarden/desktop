@@ -20,10 +20,11 @@ export class EnvironmentComponent extends BaseEnvironmentComponent {
         environmentService: EnvironmentService, i18nService: I18nService,
         private router: Router) {
         super(analytics, toasterService, environmentService, i18nService);
+        this.showCustom = true;
     }
 
     saved() {
         super.saved();
-        this.router.navigate(['login']);
+        this.router.navigate(['']);
     }
 }

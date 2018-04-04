@@ -6,13 +6,14 @@ import {
 
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
+import { HomeComponent } from './accounts/home.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: '2fa', component: TwoFactorComponent },
     { path: '2fa-options', component: TwoFactorOptionsComponent },

@@ -30,8 +30,10 @@ export class AppComponent {
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
         mouseoverTimerStop: true,
-        animation: 'flyRight',
-        limit: 5,
+        animation: 'slideUp',
+        limit: 2,
+        positionClass: 'toast-bottom-full-width',
+        newestOnTop: false
     });
 
     constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, private analytics: Angulartics2,
