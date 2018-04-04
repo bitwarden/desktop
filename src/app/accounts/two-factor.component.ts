@@ -20,6 +20,7 @@ import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
+import { EnvironmentService } from 'jslib/services/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
@@ -37,9 +38,9 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
-        private componentFactoryResolver: ComponentFactoryResolver) {
+        environmentService: EnvironmentService, private componentFactoryResolver: ComponentFactoryResolver) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
-            platformUtilsService, syncService);
+            platformUtilsService, syncService, window, environmentService);
     }
 
     anotherMethod() {
