@@ -19,9 +19,6 @@ import { LockComponent as BaseLockComponent } from 'jslib/angular/components/loc
     template: template,
 })
 export class LockComponent extends BaseLockComponent {
-    masterPassword: string = '';
-    showPassword: boolean = false;
-
     constructor(router: Router, analytics: Angulartics2,
         toasterService: ToasterService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
