@@ -13,56 +13,58 @@
             </button>
         </div>
     </header>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row" appBoxRow>
-                <label for="email">{{'emailAddress' | i18n}}</label>
-                <input id="email" type="text" name="Email" [(ngModel)]="email" required
-                       [appAutofocus]="email === ''">
-            </div>
-            <div class="box-content-row box-content-row-flex" appBoxRow>
-                <div class="row-main">
-                    <label for="masterPassword">{{'masterPass' | i18n}}</label>
-                    <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
-                           class="monospaced" [(ngModel)]="masterPassword" required [appAutofocus]="email !== ''">
+    <content>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row" appBoxRow>
+                    <label for="email">{{'emailAddress' | i18n}}</label>
+                    <input id="email" type="text" name="Email" [(ngModel)]="email" required
+                           [appAutofocus]="email === ''">
                 </div>
-                <div class="action-buttons">
-                    <a class="row-btn" href="#" appStopClick appBlurClick
-                       title="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
-                        <i class="fa fa-lg"
-                           [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="box-footer">
-            {{'masterPassDesc' | i18n}}
-        </div>
-    </div>
-    <div class="box last">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-flex" appBoxRow>
-                <div class="row-main">
-                    <label for="masterPasswordRetype">{{'reTypeMasterPass' | i18n}}</label>
-                    <input id="masterPasswordRetype" type="{{showPassword ? 'text' : 'password'}}"
-                           name="MasterPasswordRetype" class="monospaced" [(ngModel)]="confirmMasterPassword"
-                           required>
-                </div>
-                <div class="action-buttons">
-                    <a class="row-btn" href="#" appStopClick appBlurClick
-                       title="{{'toggleVisibility' | i18n}}" (click)="togglePassword(true)">
-                        <i class="fa fa-lg"
-                           [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                    </a>
+                <div class="box-content-row box-content-row-flex" appBoxRow>
+                    <div class="row-main">
+                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                        <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
+                               class="monospaced" [(ngModel)]="masterPassword" required [appAutofocus]="email !== ''">
+                    </div>
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" appStopClick appBlurClick
+                           title="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
+                            <i class="fa fa-lg"
+                               [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="box-content-row" appBoxRow>
-                <label for="hint">{{'masterPassHint' | i18n}}</label>
-                <input id="hint" type="text" name="Hint" [(ngModel)]="hint">
+            <div class="box-footer">
+                {{'masterPassDesc' | i18n}}
             </div>
         </div>
-        <div class="box-footer">
-            {{'masterPassHintDesc' | i18n}}
+        <div class="box last">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-flex" appBoxRow>
+                    <div class="row-main">
+                        <label for="masterPasswordRetype">{{'reTypeMasterPass' | i18n}}</label>
+                        <input id="masterPasswordRetype" type="{{showPassword ? 'text' : 'password'}}"
+                               name="MasterPasswordRetype" class="monospaced" [(ngModel)]="confirmMasterPassword"
+                               required>
+                    </div>
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" appStopClick appBlurClick
+                           title="{{'toggleVisibility' | i18n}}" (click)="togglePassword(true)">
+                            <i class="fa fa-lg"
+                               [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="box-content-row" appBoxRow>
+                    <label for="hint">{{'masterPassHint' | i18n}}</label>
+                    <input id="hint" type="text" name="Hint" [(ngModel)]="hint">
+                </div>
+            </div>
+            <div class="box-footer">
+                {{'masterPassHintDesc' | i18n}}
+            </div>
         </div>
-    </div>
+    </content>
 </form>

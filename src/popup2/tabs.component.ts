@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-tabs',
     template: `
+    <div class="tab-page">
         <router-outlet></router-outlet>
         <nav class="tabs">
             <ul>
@@ -37,6 +38,7 @@ import { Router } from '@angular/router';
                     </a>
                 </li>
             </ul>
-        </nav>`,
+        </nav>
+    </div>`,
 })
 export class TabsComponent { }

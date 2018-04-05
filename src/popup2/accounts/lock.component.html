@@ -8,25 +8,27 @@
             <button type="submit" appBlurClick>{{'submit' | i18n}}</button>
         </div>
     </header>
-    <div class="box">
-        <div class="box-content">
-            <div class="box-content-row box-content-row-flex" appBoxRow>
-                <div class="row-main">
-                    <label for="masterPassword">{{'masterPass' | i18n}}</label>
-                    <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
-                           class="monospaced" [(ngModel)]="masterPassword" required appAutofocus>
-                </div>
-                <div class="action-buttons">
-                    <a class="row-btn" href="#" appStopClick appBlurClick
-                       title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
-                        <i class="fa fa-lg"
-                           [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                    </a>
+    <content>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-flex" appBoxRow>
+                    <div class="row-main">
+                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                        <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
+                               class="monospaced" [(ngModel)]="masterPassword" required appAutofocus>
+                    </div>
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" appStopClick appBlurClick
+                           title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
+                            <i class="fa fa-lg"
+                               [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <p class="text-center">
-        <a href="#" appStopClick (click)="logOut()">{{'logOut' | i18n}}</a>
-    </p>
+        <p class="text-center">
+            <a href="#" appStopClick (click)="logOut()">{{'logOut' | i18n}}</a>
+        </p>
+    </content>
 </form>

@@ -1,0 +1,73 @@
+<header>
+    <div class="left">
+
+    </div>
+    <div class="center">
+        <span class="title">{{'myVault' | i18n}}</span>
+    </div>
+    <div class="right">
+
+    </div>
+</header>
+<content>
+    <div class="box">
+        <div class="box-header">
+            {{'favorites' | i18n}}
+        </div>
+        <div class="box-content">
+            <a *ngFor="let c of favoriteCiphers" href="#" class="box-content-row" appStopClick appBlurClick>
+                {{c.name}}
+            </a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-header">
+            {{'types' | i18n}}
+        </div>
+        <div class="box-content">
+            <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Login)">
+                {{'typeLogin' | i18n}}
+                <span>{{typeCounts.get(cipherType.Login) || 0}}</span>
+            </a>
+            <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Card)">
+                {{'typeCard' | i18n}}
+                <span>{{typeCounts.get(cipherType.Card) || 0}}</span>
+            </a>
+            <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Identity)">
+                {{'typeIdentity' | i18n}}
+                <span>{{typeCounts.get(cipherType.Identity) || 0}}</span>
+            </a>
+            <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.SecureNote)">
+                {{'typeSecureNote' | i18n}}
+                <span>{{typeCounts.get(cipherType.SecureNote) || 0}}</span>
+            </a>
+        </div>
+    </div>
+    <p *ngIf="!loaded" class="text-muted">{{'loading' | i18n}}</p>
+    <ng-container *ngIf="loaded">
+        <div class="box">
+            <div class="box-header">
+                {{'folders' | i18n}}
+            </div>
+            <div class="box-content">
+                <a *ngFor="let f of folders" href="#" class="box-content-row" appStopClick appBlurClick
+                   (click)="selectFolder(f)">
+                    {{f.name}}
+                    <span>{{folderCounts.get(f.id) || 0}}</span>
+                </a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                {{'collections' | i18n}}
+            </div>
+            <div class="box-content">
+                <a *ngFor="let c of collections" href="#" class="box-content-row" appStopClick appBlurClick
+                   (click)="selectCollection(f)">
+                    {{c.name}}
+                    <span>{{collectionCounts.get(c.id) || 0}}</span>
+                </a>
+            </div>
+        </div>
+    </ng-container>
+</content>
