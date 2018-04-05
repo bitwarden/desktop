@@ -28,8 +28,8 @@ export class GroupingsComponent {
     @Output() onEditFolder = new EventEmitter<FolderView>();
     @Output() onCollectionClicked = new EventEmitter<CollectionView>();
 
-    folders: any[];
-    collections: any[];
+    folders: FolderView[];
+    collections: CollectionView[];
     loaded: boolean = false;
     cipherType = CipherType;
     selectedAll: boolean = false;
