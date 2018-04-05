@@ -141,3 +141,58 @@ header {
 .content {
     padding: 15px;
 }
+
+.tabs {
+    width: 100%;
+    height: 55px;
+    background-color: white;
+    border-top: 1px solid $border-color-dark;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    ul {
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            width: 25%;
+            float: left;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+
+            a {
+                text-align: center;
+                display: block;
+                padding: 7px 0;
+                text-decoration: none;
+                color: $gray-light;
+                font-size: 12px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &:hover, &:focus {
+                    background-color: $list-item-hover;
+                }
+
+                i {
+                    display: block;
+                    margin-bottom: 2px;
+                    text-align: center;
+                }
+            }
+
+            &.active {
+                a {
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+}

@@ -34,6 +34,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
             platformUtilsService, syncService, window, environmentService);
+        this.successRoute = '/tabs/vault';
     }
 
     async ngOnInit() {

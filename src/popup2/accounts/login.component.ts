@@ -21,6 +21,7 @@ export class LoginComponent extends BaseLoginComponent {
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, syncService: SyncService) {
         super(authService, router, analytics, toasterService, i18nService, syncService);
+        this.successRoute = '/tabs/vault';
     }
 
     settings() {

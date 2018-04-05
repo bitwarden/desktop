@@ -1,30 +1,20 @@
-<form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+<form (ngSubmit)="submit()">
     <header>
-        <div class="left">
-            <a routerLink="/home">{{'cancel' | i18n}}</a>
-        </div>
+        <div class="left"></div>
         <div class="center">
-            <span class="title">{{'appName' | i18n}}</span>
+            <span class="title">{{'verifyMasterPassword' | i18n}}</span>
         </div>
         <div class="right">
-            <button type="submit" appBlurClick [disabled]="form.loading">
-                <span [hidden]="form.loading">{{'login' | i18n}}</span>
-                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
-            </button>
+            <button type="submit" appBlurClick>{{'submit' | i18n}}</button>
         </div>
     </header>
     <div class="box">
         <div class="box-content">
-            <div class="box-content-row" appBoxRow>
-                <label for="email">{{'emailAddress' | i18n}}</label>
-                <input id="email" type="text" name="Email" [(ngModel)]="email" required
-                       [appAutofocus]="email === ''">
-            </div>
             <div class="box-content-row box-content-row-flex" appBoxRow>
                 <div class="row-main">
                     <label for="masterPassword">{{'masterPass' | i18n}}</label>
                     <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
-                           class="monospaced" [(ngModel)]="masterPassword" required [appAutofocus]="email !== ''">
+                           class="monospaced" [(ngModel)]="masterPassword" required appAutofocus>
                 </div>
                 <div class="action-buttons">
                     <a class="row-btn" href="#" appStopClick appBlurClick
@@ -37,6 +27,6 @@
         </div>
     </div>
     <p class="text-center">
-        <a routerLink="/hint">{{'getMasterPasswordHint' | i18n}}</a>
+        <a href="#" appStopClick (click)="logOut()">{{'logOut' | i18n}}</a>
     </p>
 </form>

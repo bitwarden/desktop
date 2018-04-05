@@ -18,10 +18,14 @@ import { AppComponent } from './app.component';
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
 import { HomeComponent } from './accounts/home.component';
+import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { TabsComponent } from './tabs.component';
+import { CurrentTabComponent } from './vault/current-tab.component';
+import { GroupingsComponent } from './vault/groupings.component';
 
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
@@ -53,15 +57,19 @@ import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
         AutofocusDirective,
         BlurClickDirective,
         BoxRowDirective,
+        CurrentTabComponent,
         EnvironmentComponent,
         FallbackSrcDirective,
+        GroupingsComponent,
         HomeComponent,
         HintComponent,
         I18nPipe,
+        LockComponent,
         LoginComponent,
         RegisterComponent,
         StopClickDirective,
         StopPropDirective,
+        TabsComponent,
         TwoFactorOptionsComponent,
         TwoFactorComponent
     ],
