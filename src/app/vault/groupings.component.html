@@ -2,12 +2,12 @@
     <div class="inner-content">
         <ul>
             <li [ngClass]="{active: selectedAll}">
-                <a href="#" appStopClick appBlurClick (click)="all()">
+                <a href="#" appStopClick appBlurClick (click)="selectAll()">
                     <i class="fa fa-fw fa-th"></i>&nbsp;{{'allItems' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedFavorites}">
-                <a href="#" appStopClick appBlurClick (click)="favorites()">
+                <a href="#" appStopClick appBlurClick (click)="selectFavorites()">
                     <i class="fa fa-fw fa-star"></i>&nbsp;{{'favorites' | i18n}}
                 </a>
             </li>
@@ -15,22 +15,22 @@
         <h2>{{'types' | i18n}}</h2>
         <ul>
             <li [ngClass]="{active: selectedType === cipherType.Login}">
-                <a href="#" appStopClick appBlurClick (click)="type(cipherType.Login)">
+                <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Login)">
                     <i class="fa fa-fw fa-globe"></i>&nbsp;{{'typeLogin' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.Card}">
-                <a href="#" appStopClick appBlurClick (click)="type(cipherType.Card)">
+                <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Card)">
                     <i class="fa fa-fw fa-credit-card"></i>&nbsp;{{'typeCard' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.Identity}">
-                <a href="#" appStopClick appBlurClick (click)="type(cipherType.Identity)">
+                <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Identity)">
                     <i class="fa fa-fw fa-id-card-o"></i>&nbsp;{{'typeIdentity' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.SecureNote}">
-                <a href="#" appStopClick appBlurClick (click)="type(cipherType.SecureNote)">
+                <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.SecureNote)">
                     <i class="fa fa-fw fa-sticky-note-o"></i>&nbsp;{{'typeSecureNote' | i18n}}
                 </a>
             </li>
@@ -45,7 +45,7 @@
             </h2>
             <ul class="fa-ul">
                 <li *ngFor="let f of folders" [ngClass]="{active: selectedFolder && f.id === selectedFolderId}">
-                    <a href="#" appStopClick appBlurClick (click)="folder(f)">
+                    <a href="#" appStopClick appBlurClick (click)="selectFolder(f)">
                         <i class="fa-li fa fa-caret-right"></i> {{f.name}}
                         <span appStopProp appStopClick (click)="editFolder(f)" title="{{'editFolder' | i18n}}"
                               *ngIf="f.id">
@@ -58,7 +58,7 @@
                 <h2>{{'collections' | i18n}}</h2>
                 <ul class="fa-ul">
                     <li *ngFor="let c of collections" [ngClass]="{active: c.id === selectedCollectionId}">
-                        <a href="#" appStopClick appBlurClick (click)="collection(c)">
+                        <a href="#" appStopClick appBlurClick (click)="selectCollection(c)">
                             <i class="fa-li fa fa-caret-right"></i> {{c.name}}
                         </a>
                     </li>

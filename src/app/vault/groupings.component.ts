@@ -55,25 +55,25 @@ export class GroupingsComponent {
         this.folders = await this.folderService.getAllDecrypted();
     }
 
-    all() {
+    selectAll() {
         this.clearSelections();
         this.selectedAll = true;
         this.onAllClicked.emit();
     }
 
-    favorites() {
+    selectFavorites() {
         this.clearSelections();
         this.selectedFavorites = true;
         this.onFavoritesClicked.emit();
     }
 
-    type(type: CipherType) {
+    selectType(type: CipherType) {
         this.clearSelections();
         this.selectedType = type;
         this.onCipherTypeClicked.emit(type);
     }
 
-    folder(folder: FolderView) {
+    selectFolder(folder: FolderView) {
         this.clearSelections();
         this.selectedFolder = true;
         this.selectedFolderId = folder.id;
@@ -88,7 +88,7 @@ export class GroupingsComponent {
         this.onEditFolder.emit(folder);
     }
 
-    collection(collection: CollectionView) {
+    selectCollection(collection: CollectionView) {
         this.clearSelections();
         this.selectedCollectionId = collection.id;
         this.onCollectionClicked.emit(collection);
