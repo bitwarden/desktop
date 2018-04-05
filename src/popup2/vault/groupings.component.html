@@ -63,7 +63,7 @@
             </div>
             <div class="box-content">
                 <a *ngFor="let c of collections" href="#" class="box-content-row" appStopClick appBlurClick
-                   (click)="selectCollection(f)">
+                   (click)="selectCollection(c)">
                     {{c.name}}
                     <span>{{collectionCounts.get(c.id) || 0}}</span>
                 </a>

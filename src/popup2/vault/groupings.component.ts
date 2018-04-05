@@ -77,16 +77,16 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
     selectType(type: CipherType) {
         super.selectType(type);
-        this.router.navigate(['/ciphers', { queryParams: { type: type } }]);
+        this.router.navigate(['/ciphers'], { queryParams: { type: type } });
     }
 
     selectFolder(folder: FolderView) {
         super.selectFolder(folder);
-        this.router.navigate(['/ciphers', { queryParams: { folderId: folder.id } }]);
+        this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id } });
     }
 
     selectCollection(collection: CollectionView) {
         super.selectCollection(collection);
-        this.router.navigate(['/ciphers', { queryParams: { collectionId: collection.id } }]);
+        this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id } });
     }
 }
