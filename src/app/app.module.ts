@@ -35,7 +35,7 @@ import { StopClickDirective } from 'jslib/angular/directives/stop-click.directiv
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 
 import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
-import { SearchCiphersPipe } from './pipes/search-ciphers.pipe';
+import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
