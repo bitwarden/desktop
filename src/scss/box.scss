@@ -255,4 +255,55 @@
         font-size: $font-size-small;
         color: $text-muted;
     }
+
+    &.list {
+        margin-bottom: 0;
+
+        .box-content {
+            .box-content-row {
+                padding: 3px 10px;
+                color: $text-color;
+                text-decoration: none;
+
+                &:hover, &:focus, &.active {
+                    background-color: $list-item-hover;
+                }
+
+                &:focus {
+                    border-left: 5px solid $text-muted;
+                    padding-left: 5px;
+                }
+
+                .text, .detail {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: block;
+                    color: $text-color;
+                }
+
+                .detail {
+                    font-size: $font-size-small;
+                    color: $gray-light;
+                }
+
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    float: left;
+                    height: 36px;
+                    width: 34px;
+                    margin-left: -5px;
+                    color: $text-muted;
+
+                    img {
+                        border-radius: $border-radius;
+                        max-height: 20px;
+                        max-width: 20px;
+                    }
+                }
+            }
+        }
+    }
 }

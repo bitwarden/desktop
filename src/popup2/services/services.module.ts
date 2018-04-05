@@ -25,6 +25,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
+import { StateService as StateServiceAbstraction } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { TokenService } from 'jslib/abstractions/token.service';
@@ -33,11 +34,13 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { UtilsService } from 'jslib/abstractions/utils.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
-
 import BrowserMessagingService from '../../services/browserMessaging.service';
 
 import { AuthService } from 'jslib/services/auth.service';
 import { ConstantsService } from 'jslib/services/constants.service';
+import { StateService } from 'jslib/services/state.service';
+
+import { PopupUtilsService } from './popup-utils.service';
 
 function getBgService<T>(service: string) {
     return (): T => {
@@ -46,6 +49,7 @@ function getBgService<T>(service: string) {
     };
 }
 
+const stateService = new StateService();
 const messagingService = new BrowserMessagingService(getBgService<PlatformUtilsService>('platformUtilsService')());
 const authService = new AuthService(getBgService<CryptoService>('cryptoService')(),
     getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
@@ -53,11 +57,16 @@ const authService = new AuthService(getBgService<CryptoService>('cryptoService')
     getBgService<I18nService>('i18n2Service')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
     getBgService<ConstantsService>('constantsService')(), messagingService);
 
-function initFactory(): Function {
+function initFactory(i18nService: I18nService, storageService: StorageService): Function {
     return async () => {
-        if (getBgService<I18nService>('i18n2Service')() != null) {
+        const htmlEl = window.document.documentElement;
+        if (i18nService != null) {
             authService.init();
+            htmlEl.classList.add('locale_' + i18nService.translationLocale);
         }
+
+        stateService.save(ConstantsService.disableFaviconKey,
+            await storageService.get<boolean>(ConstantsService.disableFaviconKey));
     };
 }
 
@@ -69,8 +78,10 @@ function initFactory(): Function {
     providers: [
         ValidationService,
         AuthGuardService,
+        PopupUtilsService,
         { provide: MessagingService, useValue: messagingService },
         { provide: AuthServiceAbstraction, useValue: authService },
+        { provide: StateServiceAbstraction, useValue: stateService },
         { provide: AuditService, useFactory: getBgService<AuditService>('auditService'), deps: [] },
         { provide: CipherService, useFactory: getBgService<CipherService>('cipherService'), deps: [] },
         { provide: FolderService, useFactory: getBgService<FolderService>('folderService'), deps: [] },
@@ -102,7 +113,7 @@ function initFactory(): Function {
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
-            deps: [],
+            deps: [I18nService, StorageService],
             multi: true,
         },
     ],

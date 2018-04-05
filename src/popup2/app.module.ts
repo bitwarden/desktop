@@ -24,6 +24,7 @@ import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { TabsComponent } from './tabs.component';
+import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
 
@@ -36,6 +37,12 @@ import { StopClickDirective } from 'jslib/angular/directives/stop-click.directiv
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 
 import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
+import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
+
+import { ActionButtonsComponent } from './components/action-buttons.component';
+import { PopOutComponent } from './components/pop-out.component';
+
+import { IconComponent } from 'jslib/angular/components/icon.component';
 
 @NgModule({
     imports: [
@@ -52,11 +59,13 @@ import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
         ToasterModule,
     ],
     declarations: [
+        ActionButtonsComponent,
         ApiActionDirective,
         AppComponent,
         AutofocusDirective,
         BlurClickDirective,
         BoxRowDirective,
+        CiphersComponent,
         CurrentTabComponent,
         EnvironmentComponent,
         FallbackSrcDirective,
@@ -64,9 +73,12 @@ import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
         HomeComponent,
         HintComponent,
         I18nPipe,
+        IconComponent,
         LockComponent,
         LoginComponent,
+        PopOutComponent,
         RegisterComponent,
+        SearchCiphersPipe,
         StopClickDirective,
         StopPropDirective,
         TabsComponent,

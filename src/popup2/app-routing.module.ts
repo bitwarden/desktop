@@ -15,6 +15,7 @@ import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { TabsComponent } from './tabs.component';
+import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
 
@@ -29,6 +30,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'hint', component: HintComponent },
     { path: 'environment', component: EnvironmentComponent },
+    { path: 'ciphers', component: CiphersComponent },
     {
         path: 'tabs', component: TabsComponent,
         children: [

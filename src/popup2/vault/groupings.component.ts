@@ -4,10 +4,13 @@ import {
     Component,
     OnInit,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
+import { CollectionView } from 'jslib/models/view/collectionView';
 import { CipherView } from 'jslib/models/view/cipherView';
+import { FolderView } from 'jslib/models/view/folderView';
 
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -27,15 +30,15 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     typeCounts = new Map<CipherType, number>();
 
     constructor(collectionService: CollectionService, folderService: FolderService,
-        private cipherService: CipherService) {
+        private cipherService: CipherService, private router: Router) {
         super(collectionService, folderService);
     }
 
     async ngOnInit() {
-        this.load();
-        this.loaded = false;
+        super.load();
+        super.loaded = false;
         await this.loadCiphers();
-        this.loaded = true;
+        super.loaded = true;
     }
 
     async loadCiphers() {
@@ -70,5 +73,20 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
                 });
             }
         });
+    }
+
+    selectType(type: CipherType) {
+        super.selectType(type);
+        this.router.navigate(['/ciphers', { queryParams: { type: type } }]);
+    }
+
+    selectFolder(folder: FolderView) {
+        super.selectFolder(folder);
+        this.router.navigate(['/ciphers', { queryParams: { folderId: folder.id } }]);
+    }
+
+    selectCollection(collection: CollectionView) {
+        super.selectCollection(collection);
+        this.router.navigate(['/ciphers', { queryParams: { collectionId: collection.id } }]);
     }
 }

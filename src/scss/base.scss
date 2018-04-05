@@ -113,15 +113,16 @@ header {
         text-align: center;
     }
 
-    button, a {
+    app-pop-out > button, div > button, div > a {
         background: $brand-primary;
         border: none;
         color: white;
         padding: 0 10px;
         text-decoration: none;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
 
         &:hover, &:focus {
             background-color: rgba(255, 255, 255, 0.1);
@@ -131,6 +132,14 @@ header {
         &:focus {
             text-decoration: underline;
         }
+
+        i + span {
+            margin-left: 5px;
+        }
+    }
+
+    app-pop-out {
+        display: flex;
     }
 
     .title {

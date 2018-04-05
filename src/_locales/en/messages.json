@@ -283,8 +283,8 @@
   "viewItem": {
     "message": "View Item"
   },
-  "launchWebsite": {
-    "message": "Launch Website"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Website"
@@ -383,8 +383,14 @@
     "message": "Verification code is required."
   },
   "valueCopied": {
-    "message": " copied",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."

@@ -1,0 +1,50 @@
+<header>
+    <div class="left">
+        <a routerLink="/tabs/vault">
+            <i class="fa fa-chevron-left"></i>
+            <span>{{'back' | i18n}}</span>
+        </a>
+    </div>
+    <div class="center">
+        {{searchPlaceholder || ('searchVault' | i18n)}}
+    </div>
+    <div class="right">
+        <button appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
+            <i class="fa fa-plus fa-lg"></i>
+        </button>
+    </div>
+</header>
+<content>
+    <ng-container *ngIf="(ciphers | searchCiphers: searchText) as searchedCiphers">
+        <div class="box list" *ngIf="searchedCiphers.length > 0">
+            <div class="box-header">
+                Some name here
+            </div>
+            <div class="box-content">
+                <a *ngFor="let c of searchedCiphers" appStopClick (click)="selectCipher(c)"
+                   href="#" title="{{'viewItem' | i18n}}" class="box-content-row box-content-row-flex">
+                    <div class="row-main">
+                        <app-vault-icon [cipher]="c"></app-vault-icon>
+                        <span class="text">
+                            {{c.name}}
+                            <i class="fa fa-share-alt text-muted" *ngIf="c.organizationId"
+                               title="{{'shared' | i18n}}"></i>
+                            <i class="fa fa-paperclip text-muted" *ngIf="c.hasAttachments"
+                               title="{{'attachments' | i18n}}"></i>
+                        </span>
+                        <span class="detail">{{c.subTitle}}</span>
+                    </div>
+                    <app-action-buttons [cipher]="c" class="action-buttons"></app-action-buttons>
+                </a>
+            </div>
+        </div>
+        <div class="no-items" *ngIf="!searchedCiphers.length">
+            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
+            <ng-container *ngIf="loaded">
+                <i class="fa fa-frown-o fa-4x"></i>
+                <p>{{'noItemsInList' | i18n}}</p>
+                <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+            </ng-container>
+        </div>
+    </ng-container>
+</content>
