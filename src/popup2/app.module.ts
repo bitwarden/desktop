@@ -40,6 +40,7 @@ import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 
 import { ActionButtonsComponent } from './components/action-buttons.component';
+import { CiphersListComponent } from './components/ciphers-list.component';
 import { PopOutComponent } from './components/pop-out.component';
 
 import { IconComponent } from 'jslib/angular/components/icon.component';
@@ -66,6 +67,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         BlurClickDirective,
         BoxRowDirective,
         CiphersComponent,
+        CiphersListComponent,
         CurrentTabComponent,
         EnvironmentComponent,
         FallbackSrcDirective,

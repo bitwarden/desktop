@@ -25,9 +25,12 @@ import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/comp
 export class GroupingsComponent extends BaseGroupingsComponent implements OnInit {
     ciphers: CipherView[];
     favoriteCiphers: CipherView[];
+    noFolderCiphers: CipherView[];
+    folderCount: number;
     folderCounts = new Map<string, number>();
     collectionCounts = new Map<string, number>();
     typeCounts = new Map<CipherType, number>();
+    showNoFolderCiphers = false;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router) {
@@ -35,9 +38,20 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async ngOnInit() {
-        super.load();
+        await super.load();
         super.loaded = false;
+
         await this.loadCiphers();
+        this.showNoFolderCiphers = this.noFolderCiphers != null && this.noFolderCiphers.length < 100 &&
+            this.collections.length === 0;
+        if (this.showNoFolderCiphers) {
+            // Remove "No Folder" from folder listing
+            this.folders.pop();
+            this.folderCount = this.folders.length;
+        } else {
+            this.folderCount = this.folders.length - 1;
+        }
+
         super.loaded = true;
     }
 
@@ -49,6 +63,13 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
                     this.favoriteCiphers = [];
                 }
                 this.favoriteCiphers.push(c);
+            }
+
+            if (c.folderId == null) {
+                if (this.noFolderCiphers == null) {
+                    this.noFolderCiphers = [];
+                }
+                this.noFolderCiphers.push(c);
             }
 
             if (this.typeCounts.has(c.type)) {
