@@ -27,6 +27,7 @@ import { TabsComponent } from './tabs.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
+import { ViewComponent } from './vault/view.component';
 
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
@@ -85,7 +86,8 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         StopPropDirective,
         TabsComponent,
         TwoFactorOptionsComponent,
-        TwoFactorComponent
+        TwoFactorComponent,
+        ViewComponent,
     ],
     entryComponents: [
 

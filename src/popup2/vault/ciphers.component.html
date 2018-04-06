@@ -21,7 +21,8 @@
                 Some name here
             </div>
             <div class="box-content">
-                <app-ciphers-list [ciphers]="searchedCiphers" title="{{'viewItem' | i18n}}"></app-ciphers-list>
+                <app-ciphers-list [ciphers]="searchedCiphers" title="{{'viewItem' | i18n}}"
+                                  (onSelected)="selectCipher($event)"></app-ciphers-list>
             </div>
         </div>
         <div class="no-items" *ngIf="!searchedCiphers.length">

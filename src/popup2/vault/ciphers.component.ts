@@ -20,7 +20,8 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
     template: template,
 })
 export class CiphersComponent extends BaseCiphersComponent implements OnInit {
-    constructor(cipherService: CipherService, private route: ActivatedRoute) {
+    constructor(cipherService: CipherService, private route: ActivatedRoute,
+        private router: Router) {
         super(cipherService);
     }
 
@@ -41,5 +42,6 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit {
 
     selectCipher(cipher: CipherView) {
         super.selectCipher(cipher);
+        this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
     }
 }

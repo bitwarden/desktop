@@ -18,6 +18,7 @@ import { TabsComponent } from './tabs.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
+import { ViewComponent } from './vault/view.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/tabs/current', pathMatch: 'full' },
@@ -31,6 +32,7 @@ const routes: Routes = [
     { path: 'hint', component: HintComponent },
     { path: 'environment', component: EnvironmentComponent },
     { path: 'ciphers', component: CiphersComponent },
+    { path: 'view-cipher', component: ViewComponent },
     {
         path: 'tabs', component: TabsComponent,
         children: [
