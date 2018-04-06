@@ -60,10 +60,15 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
 
 export function initFactory(i18nService: I18nService, storageService: StorageService): Function {
     return async () => {
-        const htmlEl = window.document.documentElement;
+        if (window.screen.availHeight < 600) {
+            window.document.body.classList.add('xs');
+        } else if (window.screen.availHeight <= 800) {
+            window.document.body.classList.add('sm');
+        }
+
         if (i18nService != null) {
+            window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
             authService.init();
-            htmlEl.classList.add('locale_' + i18nService.translationLocale);
         }
 
         stateService.save(ConstantsService.disableFaviconKey,
