@@ -1,5 +1,3 @@
-import * as template from './attachments.component.html';
-
 import { Component } from '@angular/core';
 
 import { ToasterService } from 'angular2-toaster';
@@ -15,7 +13,7 @@ import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib/angular/
 
 @Component({
     selector: 'app-vault-attachments',
-    template: template,
+    templateUrl: 'attachments.component.html',
 })
 export class AttachmentsComponent extends BaseAttachmentsComponent {
     constructor(cipherService: CipherService, analytics: Angulartics2,

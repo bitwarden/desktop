@@ -1,5 +1,3 @@
-import * as template from './vault.component.html';
-
 import { remote } from 'electron';
 
 import { Location } from '@angular/common';
@@ -48,7 +46,7 @@ const BroadcasterSubscriptionId = 'VaultComponent';
 
 @Component({
     selector: 'app-vault',
-    template: template,
+    templateUrl: 'vault.component.html',
 })
 export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;

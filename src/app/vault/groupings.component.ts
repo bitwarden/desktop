@@ -1,5 +1,3 @@
-import * as template from './groupings.component.html';
-
 import { Component } from '@angular/core';
 
 import { CollectionService } from 'jslib/abstractions/collection.service';
@@ -9,7 +7,7 @@ import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/comp
 
 @Component({
     selector: 'app-vault-groupings',
-    template: template,
+    templateUrl: 'groupings.component.html',
 })
 export class GroupingsComponent extends BaseGroupingsComponent {
     constructor(collectionService: CollectionService, folderService: FolderService) {

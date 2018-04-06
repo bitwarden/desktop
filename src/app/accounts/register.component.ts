@@ -1,5 +1,3 @@
-import * as template from './register.component.html';
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -15,7 +13,7 @@ import { RegisterComponent as BaseRegisterComponent } from 'jslib/angular/compon
 
 @Component({
     selector: 'app-register',
-    template: template,
+    templateUrl: 'register.component.html',
 })
 export class RegisterComponent extends BaseRegisterComponent {
     constructor(authService: AuthService, router: Router,

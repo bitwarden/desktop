@@ -109,7 +109,7 @@ environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);
 });
 
-function initFactory(): Function {
+export function initFactory(): Function {
     return async () => {
         await i18nService.init();
         await authService.init();

@@ -1,5 +1,3 @@
-import * as template from './password-generator.component.html';
-
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
@@ -19,7 +17,7 @@ import {
 
 @Component({
     selector: 'app-password-generator',
-    template: template,
+    templateUrl: 'password-generator.component.html',
 })
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,

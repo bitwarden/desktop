@@ -1,5 +1,3 @@
-import * as template from './view.component.html';
-
 import {
     Component,
     OnChanges,
@@ -20,7 +18,7 @@ import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/vie
 
 @Component({
     selector: 'app-vault-view',
-    template: template,
+    templateUrl: 'view.component.html',
 })
 export class ViewComponent extends BaseViewComponent implements OnChanges {
     constructor(cipherService: CipherService, totpService: TotpService,

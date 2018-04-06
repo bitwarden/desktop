@@ -1,5 +1,3 @@
-import * as template from './settings.component.html';
-
 import {
     Component,
     OnInit,
@@ -19,7 +17,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 @Component({
     selector: 'app-settings',
-    template: template,
+    templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
     lockOptions: any[];

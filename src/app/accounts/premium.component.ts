@@ -1,5 +1,3 @@
-import * as template from './premium.component.html';
-
 import {
     Component,
     OnInit,
@@ -15,7 +13,7 @@ import { TokenService } from 'jslib/abstractions/token.service';
 
 @Component({
     selector: 'app-premium',
-    template: template,
+    templateUrl: 'premium.component.html',
 })
 export class PremiumComponent implements OnInit {
     isPremium: boolean = false;

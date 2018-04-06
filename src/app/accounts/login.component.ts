@@ -1,5 +1,3 @@
-import * as template from './login.component.html';
-
 import {
     Component,
     ComponentFactoryResolver,
@@ -22,7 +20,7 @@ import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/l
 
 @Component({
     selector: 'app-login',
-    template: template,
+    templateUrl: 'login.component.html',
 })
 export class LoginComponent extends BaseLoginComponent {
     @ViewChild('environment', { read: ViewContainerRef }) environmentModal: ViewContainerRef;

@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 
 const isVendorModule = (module) => {
     if (!module.context) {
@@ -30,9 +31,8 @@ const common = {
                 loader: 'tslint-loader'
             },
             {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules\/(?!(@bitwarden)\/).*/
+                test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+                loader: '@ngtools/webpack'
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
@@ -117,6 +117,11 @@ const renderer = {
             formats: ['woff2'],
             path: 'fonts/',
             filename: 'css/fonts.css'
+        }),
+        new AngularCompilerPlugin({
+            tsConfigPath: 'tsconfig.json',
+            entryModule: 'src/app/app.module#AppModule',
+            sourceMap: true
         }),
         // ref: https://github.com/angular/angular/issues/20357
         new webpack.ContextReplacementPlugin(

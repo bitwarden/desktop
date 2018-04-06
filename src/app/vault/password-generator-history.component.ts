@@ -1,5 +1,3 @@
-import * as template from './password-generator-history.component.html';
-
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
@@ -15,7 +13,7 @@ import {
 
 @Component({
     selector: 'app-password-generator-history',
-    template: template,
+    templateUrl: 'password-generator-history.component.html',
 })
 export class PasswordGeneratorHistoryComponent extends BasePasswordGeneratorHistoryComponent {
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,

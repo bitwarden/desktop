@@ -1,5 +1,3 @@
-import * as template from './add-edit.component.html';
-
 import {
     Component,
     OnChanges,
@@ -18,7 +16,7 @@ import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/componen
 
 @Component({
     selector: 'app-vault-add-edit',
-    template: template,
+    templateUrl: 'add-edit.component.html',
 })
 export class AddEditComponent extends BaseAddEditComponent implements OnChanges {
     constructor(cipherService: CipherService, folderService: FolderService,

@@ -1,5 +1,3 @@
-import * as template from './modal.component.html';
-
 import {
     Component,
     ComponentFactoryResolver,

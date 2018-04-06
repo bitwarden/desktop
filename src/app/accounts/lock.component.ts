@@ -1,5 +1,3 @@
-import * as template from './lock.component.html';
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,7 +14,7 @@ import { LockComponent as BaseLockComponent } from 'jslib/angular/components/loc
 
 @Component({
     selector: 'app-lock',
-    template: template,
+    templateUrl: 'lock.component.html',
 })
 export class LockComponent extends BaseLockComponent {
     constructor(router: Router, analytics: Angulartics2,

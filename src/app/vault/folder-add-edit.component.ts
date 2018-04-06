@@ -1,5 +1,3 @@
-import * as template from './folder-add-edit.component.html';
-
 import {
     Component,
     EventEmitter,
@@ -19,7 +17,7 @@ import { FolderView } from 'jslib/models/view/folderView';
 
 @Component({
     selector: 'app-folder-add-edit',
-    template: template,
+    templateUrl: 'folder-add-edit.component.html',
 })
 export class FolderAddEditComponent implements OnInit {
     @Input() folderId: string;
