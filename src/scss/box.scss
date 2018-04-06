@@ -118,6 +118,11 @@
                 }
             }
 
+
+            &.box-content-row-multi, &.box-content-row-newmulti {
+                padding-left: 10px;
+            }
+
             &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
                 label, .row-label {
                     font-size: $font-size-base;

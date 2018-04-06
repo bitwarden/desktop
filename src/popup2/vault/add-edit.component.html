@@ -220,7 +220,8 @@
                         </div>
                     </div>
                 </ng-container>
-                <a href="#" appStopClick appBlurClick (click)="addUri()" class="box-content-row">
+                <a href="#" appStopClick appBlurClick (click)="addUri()"
+                   class="box-content-row box-content-row-newmulti">
                     <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newUri' | i18n}}
                 </a>
             </div>
@@ -288,7 +289,7 @@
                         </div>
                     </div>
                 </ng-container>
-                <div class="box-content-row" appBoxRow>
+                <div class="box-content-row box-content-row-newmulti" appBoxRow>
                     <a href="#" appStopClick (click)="addField()">
                         <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newCustomField' | i18n}}
                     </a>
