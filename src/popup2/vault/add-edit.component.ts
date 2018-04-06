@@ -45,10 +45,13 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
         });
     }
 
-    async submit() {
+    async submit(): Promise<boolean> {
         if (await super.submit()) {
             this.location.back();
+            return true;
         }
+
+        return false;
     }
 
     cancel() {
