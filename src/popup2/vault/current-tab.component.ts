@@ -33,9 +33,9 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 })
 export class CurrentTabComponent implements OnInit {
     pageDetails: any[] = [];
-    cardCiphers: CipherView[] = [];
-    identityCiphers: CipherView[] = [];
-    loginCiphers: CipherView[] = [];
+    cardCiphers: CipherView[];
+    identityCiphers: CipherView[];
+    loginCiphers: CipherView[];
     url: string;
     domain: string;
     canAutofill = false;
@@ -126,6 +126,10 @@ export class CurrentTabComponent implements OnInit {
             CipherType.Card,
             CipherType.Identity,
         ]);
+
+        this.loginCiphers = [];
+        this.cardCiphers = [];
+        this.identityCiphers = [];
 
         ciphers.forEach((c) => {
             switch (c.type) {

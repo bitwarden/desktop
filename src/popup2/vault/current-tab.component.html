@@ -1,12 +1,15 @@
 <header>
     <div class="left">
-        <app-pop-out></app-pop-out>
+        <app-pop-out *ngIf="showPopout"></app-pop-out>
+        <button type="button" appBlurClick (click)="refresh()" title="{{'refresh' | i18n}}" *ngIf="inSidebar">
+            <i class="fa fa-refresh fa-lg"></i>
+        </button>
     </div>
     <div class="center">
         <span class="title">{{'currentTab' | i18n}}</span>
     </div>
     <div class="right">
-        <button appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
+        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
             <i class="fa fa-plus fa-lg"></i>
         </button>
     </div>
