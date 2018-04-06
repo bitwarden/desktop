@@ -1,5 +1,3 @@
-import * as template from './environment.component.html';
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,7 +11,7 @@ import { EnvironmentComponent as BaseEnvironmentComponent } from 'jslib/angular/
 
 @Component({
     selector: 'app-environment',
-    template: template,
+    templateUrl: 'environment.component.html',
 })
 export class EnvironmentComponent extends BaseEnvironmentComponent {
     constructor(analytics: Angulartics2, toasterService: ToasterService,

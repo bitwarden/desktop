@@ -1,5 +1,3 @@
-import * as template from './pop-out.component.html';
-
 import { Component } from '@angular/core';
 
 import { Angulartics2 } from 'angulartics2';
@@ -12,7 +10,7 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 
 @Component({
     selector: 'app-pop-out',
-    template: template,
+    templateUrl: 'pop-out.component.html',
 })
 export class PopOutComponent {
     constructor(private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService,

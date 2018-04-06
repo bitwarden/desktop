@@ -1,5 +1,3 @@
-import * as template from './two-factor-options.component.html';
-
 import { Component, } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,7 +14,7 @@ import {
 
 @Component({
     selector: 'app-two-factor-options',
-    template: template,
+    templateUrl: 'two-factor-options.component.html',
 })
 export class TwoFactorOptionsComponent extends BaseTwoFactorOptionsComponent {
     constructor(authService: AuthService, router: Router,

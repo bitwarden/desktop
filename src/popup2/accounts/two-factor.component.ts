@@ -1,5 +1,3 @@
-import * as template from './two-factor.component.html';
-
 import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -22,7 +20,7 @@ import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/comp
 
 @Component({
     selector: 'app-two-factor',
-    template: template,
+    templateUrl: 'two-factor.component.html',
 })
 export class TwoFactorComponent extends BaseTwoFactorComponent {
     showNewWindowMessage = false;

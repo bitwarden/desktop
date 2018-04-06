@@ -1,5 +1,3 @@
-import * as template from './home.component.html';
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,7 +8,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 
 @Component({
     selector: 'app-home',
-    template: template,
+    templateUrl: 'home.component.html',
 })
 export class HomeComponent {
     constructor(private router: Router, i18nService: I18nService,

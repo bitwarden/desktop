@@ -1,5 +1,3 @@
-import * as template from './login.component.html';
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,7 +12,7 @@ import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/l
 
 @Component({
     selector: 'app-login',
-    template: template,
+    templateUrl: 'login.component.html',
 })
 export class LoginComponent extends BaseLoginComponent {
     constructor(authService: AuthService, router: Router,

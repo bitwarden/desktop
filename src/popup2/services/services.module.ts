@@ -49,15 +49,15 @@ function getBgService<T>(service: string) {
     };
 }
 
-const stateService = new StateService();
-const messagingService = new BrowserMessagingService(getBgService<PlatformUtilsService>('platformUtilsService')());
-const authService = new AuthService(getBgService<CryptoService>('cryptoService')(),
+export const stateService = new StateService();
+export const messagingService = new BrowserMessagingService(getBgService<PlatformUtilsService>('platformUtilsService')());
+export const authService = new AuthService(getBgService<CryptoService>('cryptoService')(),
     getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
     getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),
     getBgService<I18nService>('i18n2Service')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
     getBgService<ConstantsService>('constantsService')(), messagingService);
 
-function initFactory(i18nService: I18nService, storageService: StorageService): Function {
+export function initFactory(i18nService: I18nService, storageService: StorageService): Function {
     return async () => {
         const htmlEl = window.document.documentElement;
         if (i18nService != null) {

@@ -1,5 +1,3 @@
-import * as template from './ciphers.component.html';
-
 import { Location } from '@angular/common';
 import {
     Component,
@@ -18,7 +16,7 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
 
 @Component({
     selector: 'app-vault-ciphers',
-    template: template,
+    templateUrl: 'ciphers.component.html',
 })
 export class CiphersComponent extends BaseCiphersComponent implements OnInit {
     constructor(cipherService: CipherService, private route: ActivatedRoute,

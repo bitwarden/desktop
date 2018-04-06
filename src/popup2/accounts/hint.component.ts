@@ -1,5 +1,3 @@
-import * as template from './hint.component.html';
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,7 +11,7 @@ import { HintComponent as BaseHintComponent } from 'jslib/angular/components/hin
 
 @Component({
     selector: 'app-hint',
-    template: template,
+    templateUrl: 'hint.component.html',
 })
 export class HintComponent extends BaseHintComponent {
     constructor(router: Router, analytics: Angulartics2,

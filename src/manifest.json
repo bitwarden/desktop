@@ -78,7 +78,6 @@
     "webRequest",
     "webRequestBlocking"
   ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "commands": {
     "autofill_login": {
       "suggested_key": {

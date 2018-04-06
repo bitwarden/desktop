@@ -1,5 +1,3 @@
-import * as template from './groupings.component.html';
-
 import {
     Component,
     OnInit,
@@ -20,7 +18,7 @@ import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/comp
 
 @Component({
     selector: 'app-vault-groupings',
-    template: template,
+    templateUrl: 'groupings.component.html',
 })
 export class GroupingsComponent extends BaseGroupingsComponent implements OnInit {
     ciphers: CipherView[];

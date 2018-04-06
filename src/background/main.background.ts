@@ -109,7 +109,7 @@ export default class MainBackground {
     private sidebarAction: any;
     private buildingContextMenu: boolean;
     private menuOptionsLoaded: any[] = [];
-    private syncTimeout: number;
+    private syncTimeout: any;
     private isSafari: boolean;
 
     constructor() {

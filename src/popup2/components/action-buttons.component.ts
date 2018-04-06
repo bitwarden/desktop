@@ -1,4 +1,3 @@
-import * as template from './action-buttons.component.html';
 import {
     Component,
     EventEmitter,
@@ -22,7 +21,7 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 
 @Component({
     selector: 'app-action-buttons',
-    template: template,
+    templateUrl: 'action-buttons.component.html',
 })
 export class ActionButtonsComponent {
     @Output() onView = new EventEmitter<CipherView>();

@@ -22,12 +22,14 @@
     "test:watch": "karma start"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "5.2.0",
     "@ngtools/webpack": "1.10.2",
     "@types/angular": "^1.6.34",
     "@types/chrome": "0.0.51",
     "@types/jasmine": "^2.8.2",
     "@types/jquery": "^3.2.16",
     "@types/lunr": "2.1.5",
+    "@types/node": "8.0.19",
     "@types/node-forge": "0.6.10",
     "@types/papaparse": "4.1.31",
     "@types/safari-extension": "^0.0.27",

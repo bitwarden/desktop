@@ -1,4 +1,3 @@
-import * as template from './ciphers-list.component.html';
 import {
     Component,
     EventEmitter,
@@ -22,7 +21,7 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 
 @Component({
     selector: 'app-ciphers-list',
-    template: template,
+    templateUrl: 'ciphers-list.component.html',
 })
 export class CiphersListComponent {
     @Output() onSelected = new EventEmitter<CipherView>();

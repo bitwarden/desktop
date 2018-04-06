@@ -23,7 +23,7 @@ import { AutofillService } from '../services/abstractions/autofill.service';
 
 export default class RuntimeBackground {
     private runtime: any;
-    private autofillTimeout: number;
+    private autofillTimeout: any;
     private pageDetailsToAutoFill: any[] = [];
     private isSafari: boolean;
     private onInstalledReason: string = null;
