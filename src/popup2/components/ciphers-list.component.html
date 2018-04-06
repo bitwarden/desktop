@@ -9,5 +9,6 @@
         </span>
         <span class="detail">{{c.subTitle}}</span>
     </div>
-    <app-action-buttons [cipher]="c" class="action-buttons"></app-action-buttons>
+    <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)"
+                        class="action-buttons"></app-action-buttons>
 </a>

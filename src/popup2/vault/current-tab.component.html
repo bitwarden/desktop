@@ -1,0 +1,48 @@
+<header>
+    <div class="left">
+        <app-pop-out></app-pop-out>
+    </div>
+    <div class="center">
+        <span class="title">{{'currentTab' | i18n}}</span>
+    </div>
+    <div class="right">
+        <button appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
+            <i class="fa fa-plus fa-lg"></i>
+        </button>
+    </div>
+</header>
+<content>
+    <p *ngIf="!loaded" class="text-muted">{{'loading' | i18n}}</p>
+    <ng-container *ngIf="loaded">
+        <div class="box list" *ngIf="loginCiphers">
+            <div class="box-header">
+                {{'typeLogins' | i18n}}
+                <span class="flex-right">{{loginCiphers.length}}</span>
+            </div>
+            <div class="box-content">
+                <app-ciphers-list [ciphers]="loginCiphers" title="{{'autoFill' | i18n}}" [showView]="true"
+                                  (onSelected)="fillCipher($event)" (onView)="viewCipher($event)"></app-ciphers-list>
+            </div>
+        </div>
+        <div class="box list" *ngIf="cardCiphers">
+            <div class="box-header">
+                {{'cards' | i18n}}
+                <span class="flex-right">{{cardCiphers.length}}</span>
+            </div>
+            <div class="box-content">
+                <app-ciphers-list [ciphers]="cardCiphers" title="{{'autoFill' | i18n}}" [showView]="true"
+                                  (onSelected)="fillCipher($event)" (onView)="viewCipher($event)"></app-ciphers-list>
+            </div>
+        </div>
+        <div class="box list" *ngIf="identityCiphers">
+            <div class="box-header">
+                {{'identities' | i18n}}
+                <span class="flex-right">{{identityCiphers.length}}</span>
+            </div>
+            <div class="box-content">
+                <app-ciphers-list [ciphers]="identityCiphers" title="{{'autoFill' | i18n}}" [showView]="true"
+                                  (onSelected)="fillCipher($event)" (onView)="viewCipher($event)"></app-ciphers-list>
+            </div>
+        </div>
+    </ng-container>
+</content>

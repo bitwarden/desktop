@@ -25,8 +25,9 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 })
 export class CiphersListComponent {
     @Output() onSelected = new EventEmitter<CipherView>();
+    @Output() onView = new EventEmitter<CipherView>();
     @Input() ciphers: CipherView[];
-    @Input() showView: boolean = false;
+    @Input() showView = false;
     @Input() title: string;
 
     cipherType = CipherType;
@@ -35,5 +36,9 @@ export class CiphersListComponent {
 
     selectCipher(c: CipherView) {
         this.onSelected.emit(c);
+    }
+
+    viewCipher(c: CipherView) {
+        this.onView.emit(c);
     }
 }

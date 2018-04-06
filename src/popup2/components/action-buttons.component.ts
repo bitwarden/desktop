@@ -26,7 +26,7 @@ import { PopupUtilsService } from '../services/popup-utils.service';
 export class ActionButtonsComponent {
     @Output() onView = new EventEmitter<CipherView>();
     @Input() cipher: CipherView;
-    @Input() showView: boolean = false;
+    @Input() showView = false;
 
     cipherType = CipherType;
 
