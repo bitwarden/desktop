@@ -140,10 +140,10 @@ module.exports = {
             { from: './src/images', to: 'images' },
             { from: './src/content/autofill.css', to: 'content' }
         ]),
-        //new webpack.SourceMapDevToolPlugin({
-        //    filename: '[name].js.map',
-        //    include: ['popup/main.js', 'background.js']
-        //}),
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[name].js.map',
+            include: ['popup/main.js', 'background.js']
+        }),
         extractCss
     ],
     resolve: {
