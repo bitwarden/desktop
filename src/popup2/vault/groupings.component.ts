@@ -1,5 +1,8 @@
 import {
+    ChangeDetectorRef,
     Component,
+    NgZone,
+    OnDestroy,
     OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
@@ -14,13 +17,17 @@ import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/components/groupings.component';
+
+const BroadcasterSubscriptionId = 'GroupingsComponent';
 
 @Component({
     selector: 'app-vault-groupings',
     templateUrl: 'groupings.component.html',
 })
-export class GroupingsComponent extends BaseGroupingsComponent implements OnInit {
+export class GroupingsComponent extends BaseGroupingsComponent implements OnInit, OnDestroy {
     ciphers: CipherView[];
     favoriteCiphers: CipherView[];
     noFolderCiphers: CipherView[];
@@ -31,11 +38,37 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     showNoFolderCiphers = false;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
-        private cipherService: CipherService, private router: Router) {
+        private cipherService: CipherService, private router: Router,
+        private ngZone: NgZone, private broadcasterService: BroadcasterService,
+        private changeDetectorRef: ChangeDetectorRef) {
         super(collectionService, folderService);
     }
 
-    async ngOnInit() {
+    ngOnInit() {
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case 'syncCompleted':
+                        window.setTimeout(() => {
+                            this.load();
+                        }, 500);
+                        break;
+                    default:
+                        break;
+                }
+
+                this.changeDetectorRef.detectChanges();
+            })
+        });
+
+        this.load();
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    }
+
+    async load() {
         await super.load();
         super.loaded = false;
 

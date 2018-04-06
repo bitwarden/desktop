@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+    ChangeDetectorRef,
+    Component,
+    NgZone,
+    OnDestroy,
+    OnInit,
+} from '@angular/core';
 
 import { Router } from '@angular/router';
 
@@ -16,7 +22,11 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/components/two-factor.component';
+
+const BroadcasterSubscriptionId = 'TwoFactorComponent';
 
 @Component({
     selector: 'app-two-factor',
@@ -29,13 +39,30 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
-        environmentService: EnvironmentService) {
+        environmentService: EnvironmentService, private ngZone: NgZone,
+        private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
             platformUtilsService, syncService, window, environmentService);
         this.successRoute = '/tabs/vault';
     }
 
     async ngOnInit() {
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case '2faPageResponse':
+                        if (message.type === 'duo') {
+                            this.token = message.data.sigValue;
+                            this.submitWithTab(message.webExtSender.tab);
+                        }
+                    default:
+                        break;
+                }
+
+                this.changeDetectorRef.detectChanges();
+            })
+        });
+
         this.showNewWindowMessage = this.platformUtilsService.isSafari();
         await super.ngOnInit();
 
@@ -62,11 +89,26 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
                 }
             });
         }, 500);
+    }
 
-        // TODO: listen for duo data message response
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        super.ngOnDestroy();
     }
 
     anotherMethod() {
         this.router.navigate(['2fa-options']);
+    }
+
+    async submitWithTab(sendSuccessToTab: any) {
+        await super.submit();
+        if (sendSuccessToTab != null) {
+            window.setTimeout(() => {
+                BrowserApi.tabSendMessage(sendSuccessToTab, {
+                    command: '2faPageData',
+                    data: { type: 'success' }
+                });
+            }, 1000);
+        }
     }
 }

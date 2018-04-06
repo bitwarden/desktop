@@ -1,12 +1,9 @@
 import {
+    ChangeDetectorRef,
     Component,
-    ComponentFactoryResolver,
     NgZone,
     OnDestroy,
     OnInit,
-    Type,
-    ViewChild,
-    ViewContainerRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,6 +11,8 @@ import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { BrowserApi } from '../../browser/browserApi';
+
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
@@ -26,12 +25,15 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { AutofillService } from '../../services/abstractions/autofill.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
+import { setTimeout } from 'timers';
+
+const BroadcasterSubscriptionId = 'CurrentTabComponent';
 
 @Component({
     selector: 'app-current-tab',
     templateUrl: 'current-tab.component.html',
 })
-export class CurrentTabComponent implements OnInit {
+export class CurrentTabComponent implements OnInit, OnDestroy {
     pageDetails: any[] = [];
     cardCiphers: CipherView[];
     identityCiphers: CipherView[];
@@ -48,14 +50,47 @@ export class CurrentTabComponent implements OnInit {
     constructor(private platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
         private popupUtilsService: PopupUtilsService, private autofillService: AutofillService,
         private analytics: Angulartics2, private toasterService: ToasterService,
-        private i18nService: I18nService, private router: Router) {
+        private i18nService: I18nService, private router: Router,
+        private ngZone: NgZone, private broadcasterService: BroadcasterService,
+        private changeDetectorRef: ChangeDetectorRef) {
         this.inSidebar = popupUtilsService.inSidebar(window);
         this.showPopout = !this.inSidebar && !platformUtilsService.isSafari();
         this.disableSearch = platformUtilsService.isEdge();
     }
 
     ngOnInit() {
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case 'syncCompleted':
+                        if (this.loaded) {
+                            setTimeout(() => {
+                                this.load();
+                            }, 500);
+                        }
+                        break;
+                    case 'collectPageDetailsResponse':
+                        if (message.sender === BroadcasterSubscriptionId) {
+                            this.pageDetails.push({
+                                frameId: message.webExtSender.frameId,
+                                tab: message.tab,
+                                details: message.details,
+                            });
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                this.changeDetectorRef.detectChanges();
+            })
+        });
+
         this.load();
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     async refresh() {
@@ -117,7 +152,7 @@ export class CurrentTabComponent implements OnInit {
         BrowserApi.tabSendMessage(tab, {
             command: 'collectPageDetails',
             tab: tab,
-            sender: 'currentController',
+            sender: BroadcasterSubscriptionId,
         }).then(() => {
             this.canAutofill = true;
         });
