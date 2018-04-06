@@ -289,8 +289,8 @@
   "website": {
     "message": "Website"
   },
-  "togglePassword": {
-    "message": "Toggle Password"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Manage"
@@ -819,9 +819,6 @@
   },
   "copyValue": {
     "message": "Copy Value"
-  },
-  "toggleValue": {
-    "message": "Toggle Value"
   },
   "value": {
     "message": "Value"

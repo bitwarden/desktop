@@ -63,7 +63,7 @@ export class CurrentTabComponent implements OnInit {
     }
 
     addCipher() {
-
+        this.router.navigate(['/add-cipher']);
     }
 
     viewCipher(cipher: CipherView) {
