@@ -1,5 +1,6 @@
 import * as template from './ciphers.component.html';
 
+import { Location } from '@angular/common';
 import {
     Component,
     OnInit,
@@ -21,7 +22,7 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
 })
 export class CiphersComponent extends BaseCiphersComponent implements OnInit {
     constructor(cipherService: CipherService, private route: ActivatedRoute,
-        private router: Router) {
+        private router: Router, private location: Location) {
         super(cipherService);
     }
 
@@ -43,5 +44,14 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit {
     selectCipher(cipher: CipherView) {
         super.selectCipher(cipher);
         this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
+    }
+
+    addCipher() {
+        super.addCipher();
+        this.router.navigate(['/add-cipher']);
+    }
+
+    back() {
+        this.location.back();
     }
 }

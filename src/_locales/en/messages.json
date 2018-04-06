@@ -467,6 +467,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "New URI"
   },

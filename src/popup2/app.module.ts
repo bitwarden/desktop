@@ -24,6 +24,7 @@ import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { TabsComponent } from './tabs.component';
+import { AddEditComponent } from './vault/add-edit.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
@@ -62,6 +63,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
     ],
     declarations: [
         ActionButtonsComponent,
+        AddEditComponent,
         ApiActionDirective,
         AppComponent,
         AutofocusDirective,

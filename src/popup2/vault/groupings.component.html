@@ -20,7 +20,8 @@
                 <span class="flex-right">{{favoriteCiphers.length}}</span>
             </div>
             <div class="box-content">
-                <app-ciphers-list [ciphers]="favoriteCiphers" title="{{'viewItem' | i18n}}"></app-ciphers-list>
+                <app-ciphers-list [ciphers]="favoriteCiphers" title="{{'viewItem' | i18n}}"
+                                  (onSelected)="selectCipher($event)"></app-ciphers-list>
             </div>
         </div>
         <div class="box list">
@@ -105,7 +106,8 @@
                 <div class="flex-right">{{noFolderCiphers.length}}</div>
             </div>
             <div class="box-content">
-                <app-ciphers-list [ciphers]="noFolderCiphers" title="{{'viewItem' | i18n}}"></app-ciphers-list>
+                <app-ciphers-list [ciphers]="noFolderCiphers" title="{{'viewItem' | i18n}}"
+                                  (onSelected)="selectCipher($event)"></app-ciphers-list>
             </div>
         </div>
     </ng-container>

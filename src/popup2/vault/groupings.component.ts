@@ -110,4 +110,12 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         super.selectCollection(collection);
         this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id } });
     }
+
+    selectCipher(cipher: CipherView) {
+        this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
+    }
+
+    addCipher() {
+        this.router.navigate(['/add-cipher']);
+    }
 }

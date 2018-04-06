@@ -1,15 +1,15 @@
 <header>
     <div class="left">
-        <a routerLink="/tabs/vault">
+        <button type="button" appBlurClick (click)="back()">
             <i class="fa fa-chevron-left"></i>
             <span>{{'back' | i18n}}</span>
-        </a>
+        </button>
     </div>
     <div class="center">
         {{searchPlaceholder || ('searchVault' | i18n)}}
     </div>
     <div class="right">
-        <button appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
+        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
             <i class="fa fa-plus fa-lg"></i>
         </button>
     </div>

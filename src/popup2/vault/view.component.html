@@ -1,12 +1,12 @@
 <header>
     <div class="left">
-        <button appBlurClick (click)="close()">{{'close' | i18n}}</button>
+        <button type="button" appBlurClick (click)="close()">{{'close' | i18n}}</button>
     </div>
     <div class="center">
-        {{'viewItem' | i18n}}
+        <span class="title">{{'viewItem' | i18n}}</span>
     </div>
     <div class="right">
-        <button appBlurClick (click)="edit()">{{'edit' | i18n}}</button>
+        <button type="button" appBlurClick (click)="edit()">{{'edit' | i18n}}</button>
     </div>
 </header>
 <content *ngIf="cipher">
@@ -183,7 +183,7 @@
                        *ngIf="u.canLaunch" (click)="launch(u)">
                         <i class="fa fa-lg fa-share-square-o"></i>
                     </a>
-                    <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
+                    <a class="row-btn" href="#" appStopClick title="{{'copyUri' | i18n}}"
                        (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')">
                         <i class="fa fa-lg fa-clipboard"></i>
                     </a>
