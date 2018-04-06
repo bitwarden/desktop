@@ -2,7 +2,7 @@ import { ipcRenderer } from 'electron';
 
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 
-import { BroadcasterService } from '../app/services/broadcaster.service';
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 export class DesktopRendererMessagingService implements MessagingService {
     constructor(private broadcasterService: BroadcasterService) {

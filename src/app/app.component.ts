@@ -25,7 +25,7 @@ import { PasswordGeneratorHistoryComponent } from './vault/password-generator-hi
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
-import { BroadcasterService } from './services/broadcaster.service';
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
