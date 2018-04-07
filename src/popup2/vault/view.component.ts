@@ -11,6 +11,8 @@ import {
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
+import { BrowserApi } from '../../browser/browserApi';
+
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -33,7 +35,7 @@ export class ViewComponent extends BaseViewComponent implements OnInit {
         auditService: AuditService, private route: ActivatedRoute,
         private router: Router, private location: Location) {
         super(cipherService, totpService, tokenService, toasterService, cryptoService, platformUtilsService,
-            i18nService, analytics, auditService);
+            i18nService, analytics, auditService, window);
     }
 
     ngOnInit() {
