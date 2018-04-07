@@ -27,7 +27,7 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         i18nService: I18nService, analytics: Angulartics2,
         auditService: AuditService) {
         super(cipherService, totpService, tokenService, toasterService, cryptoService, platformUtilsService,
-            i18nService, analytics, auditService);
+            i18nService, analytics, auditService, window);
     }
 
     async ngOnChanges() {

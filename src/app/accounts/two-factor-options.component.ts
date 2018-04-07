@@ -20,6 +20,6 @@ export class TwoFactorOptionsComponent extends BaseTwoFactorOptionsComponent {
     constructor(authService: AuthService, router: Router,
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService) {
-        super(authService, router, analytics, toasterService, i18nService, platformUtilsService);
+        super(authService, router, analytics, toasterService, i18nService, platformUtilsService, window);
     }
 }
