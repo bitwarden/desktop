@@ -220,6 +220,7 @@ content {
     left: 0;
     right: 0;
     overflow: auto;
+    background-color: $background-color;
 
     &.no-header {
         top: 0;

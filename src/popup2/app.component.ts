@@ -23,12 +23,17 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { routerTransition } from './app-routing.animations';
+
 @Component({
     selector: 'app-root',
     styles: [],
+    animations: [routerTransition],
     template: `
         <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
-        <router-outlet></router-outlet>`,
+        <main [@routerTransition]="getState(o)">
+            <router-outlet #o="outlet"></router-outlet>
+        </main>`,
 })
 export class AppComponent implements OnInit {
     toasterConfig: ToasterConfig = new ToasterConfig({
@@ -72,6 +77,10 @@ export class AppComponent implements OnInit {
         };
 
         BrowserApi.messageListener((window as any).bitwardenPopupMainMessageListener);
+    }
+
+    getState(outlet: any) {
+        return outlet.activatedRouteData.state;
     }
 
     private async recordActivity() {
