@@ -8,10 +8,14 @@
     <div class="right"></div>
 </header>
 <content>
-    <div class="box list">
+    <div class="box">
         <div class="box-content">
             <a routerLink="/generator" class="box-content-row box-content-row-flex text-default">
                 <div class="row-main">{{'passGen' | i18n}}</div>
+                <i class="fa fa-chevron-right row-sub-icon"></i>
+            </a>
+            <a routerLink="/export" class="box-content-row box-content-row-flex text-default">
+                <div class="row-main">{{'exportVault' | i18n}}</div>
                 <i class="fa fa-chevron-right row-sub-icon"></i>
             </a>
         </div>

@@ -31,7 +31,6 @@
     "@types/lunr": "2.1.5",
     "@types/node": "8.0.19",
     "@types/node-forge": "0.6.10",
-    "@types/papaparse": "4.1.31",
     "@types/safari-extension": "^0.0.27",
     "@types/safari-extension-content": "^0.0.14",
     "@types/tldjs": "1.7.1",

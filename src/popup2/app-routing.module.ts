@@ -16,6 +16,7 @@ import { TwoFactorOptionsComponent } from './accounts/two-factor-options.compone
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TabsComponent } from './tabs.component';
+import { ExportComponent } from './tools/export.component';
 import { PasswordGeneratorComponent } from './tools/password-generator.component';
 import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
 import { ToolsComponent } from './tools/tools.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
     { path: 'edit-cipher', component: AddEditComponent, data: { state: 'edit-cipher' } },
     { path: 'generator', component: PasswordGeneratorComponent, data: { state: 'generator' } },
     { path: 'generator-history', component: PasswordGeneratorHistoryComponent, data: { state: 'generator-history' } },
+    { path: 'export', component: ExportComponent, data: { state: 'export' } },
     {
         path: 'tabs', component: TabsComponent,
         data: { state: 'tabs' },

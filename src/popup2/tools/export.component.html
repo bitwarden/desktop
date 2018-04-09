@@ -1,0 +1,39 @@
+<form (ngSubmit)="submit()">
+    <header>
+        <div class="left">
+            <button appBlurClick type="button" (click)="close()">
+                {{'close' | i18n}}
+            </button>
+        </div>
+        <div class="center">
+            <span class="title">{{'exportVault' | i18n}}</span>
+        </div>
+        <div class="right">
+            <button appBlurClick type="submit">{{'submit' | i18n}}</button>
+        </div>
+    </header>
+    <content>
+        <div class="box">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-flex" appBoxRow>
+                    <div class="row-main">
+                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                        <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
+                               class="monospaced" [(ngModel)]="masterPassword" required appAutofocus>
+                    </div>
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" appStopClick appBlurClick
+                           title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
+                            <i class="fa fa-lg"
+                               [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <p>{{'exportMasterPassword' | i18n}}</p>
+                <strong>{{'warning' | i18n}}</strong>: {{'exportWarning' | i18n}}
+            </div>
+        </div>
+    </content>
+</form>

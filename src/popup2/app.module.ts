@@ -25,6 +25,7 @@ import { TwoFactorOptionsComponent } from './accounts/two-factor-options.compone
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TabsComponent } from './tabs.component';
+import { ExportComponent } from './tools/export.component';
 import { PasswordGeneratorComponent } from './tools/password-generator.component';
 import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
 import { ToolsComponent } from './tools/tools.component';
@@ -77,6 +78,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         CiphersListComponent,
         CurrentTabComponent,
         EnvironmentComponent,
+        ExportComponent,
         FallbackSrcDirective,
         GroupingsComponent,
         HomeComponent,
