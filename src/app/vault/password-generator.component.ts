@@ -2,9 +2,7 @@ import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import {
-    ChangeDetectorRef,
     Component,
-    NgZone,
 } from '@angular/core';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -22,9 +20,7 @@ import {
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,
         platformUtilsService: PlatformUtilsService, i18nService: I18nService,
-        toasterService: ToasterService, ngZone: NgZone,
-        changeDetectorRef: ChangeDetectorRef) {
-        super(passwordGenerationService, analytics, platformUtilsService, i18nService,
-            toasterService, ngZone, changeDetectorRef);
+        toasterService: ToasterService) {
+        super(passwordGenerationService, analytics, platformUtilsService, i18nService, toasterService);
     }
 }
