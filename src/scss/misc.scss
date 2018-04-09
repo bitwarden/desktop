@@ -97,3 +97,11 @@ app-root > #loading {
     width: 100%;
     color: $text-muted;
 }
+
+app-password-generator .password-block {
+    font-size: $font-size-large;
+    word-break: break-all;
+    font-family: $font-family-monospace;
+    text-align: center;
+    margin: 20px;
+}

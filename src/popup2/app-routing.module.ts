@@ -14,7 +14,11 @@ import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { SettingsComponent } from './settings/settings.component';
 import { TabsComponent } from './tabs.component';
+import { PasswordGeneratorComponent } from './tools/password-generator.component';
+import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
+import { ToolsComponent } from './tools/tools.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
@@ -36,6 +40,8 @@ const routes: Routes = [
     { path: 'view-cipher', component: ViewComponent, data: { state: 'view-cipher' } },
     { path: 'add-cipher', component: AddEditComponent, data: { state: 'add-cipher' } },
     { path: 'edit-cipher', component: AddEditComponent, data: { state: 'edit-cipher' } },
+    { path: 'generator', component: PasswordGeneratorComponent, data: { state: 'generator' } },
+    { path: 'generator-history', component: PasswordGeneratorHistoryComponent, data: { state: 'generator-history' } },
     {
         path: 'tabs', component: TabsComponent,
         data: { state: 'tabs' },
@@ -52,7 +58,19 @@ const routes: Routes = [
                 component: GroupingsComponent,
                 canActivate: [AuthGuardService],
                 data: { state: 'tabs_vault' },
-            }
+            },
+            {
+                path: 'tools',
+                component: ToolsComponent,
+                canActivate: [AuthGuardService],
+                data: { state: 'tabs_tools' },
+            },
+            {
+                path: 'settings',
+                component: SettingsComponent,
+                canActivate: [AuthGuardService],
+                data: { state: 'tabs_settings' },
+            },
         ]
     }
 ];

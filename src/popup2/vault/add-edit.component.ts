@@ -16,6 +16,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StateService } from 'jslib/abstractions/state.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
 
@@ -27,10 +28,11 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         analytics: Angulartics2, toasterService: ToasterService,
-        auditService: AuditService, private route: ActivatedRoute,
-        private router: Router, private location: Location) {
+        auditService: AuditService, stateService: StateService,
+        private route: ActivatedRoute, private router: Router,
+        private location: Location) {
         super(cipherService, folderService, i18nService, platformUtilsService, analytics,
-            toasterService, auditService);
+            toasterService, auditService, stateService);
     }
 
     ngOnInit() {
@@ -55,5 +57,11 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
     cancel() {
         super.cancel();
         this.location.back();
+    }
+
+    async generatePassword() {
+        await super.generatePassword();
+        this.stateService.save('addEditCipher', this.cipher);
+        this.router.navigate(['generator']);
     }
 }

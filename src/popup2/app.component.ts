@@ -92,6 +92,9 @@ export class AppComponent implements OnInit {
                     this.stateService.remove('GroupingsComponent');
                     this.stateService.remove('CiphersComponent');
                 }
+                if (url.startsWith('/tabs/')) {
+                    this.stateService.remove('addEditCipher');
+                }
                 this.previousUrl = url;
             }
         });

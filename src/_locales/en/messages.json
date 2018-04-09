@@ -1085,5 +1085,8 @@
   },
   "allItems": {
     "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
   }
 }

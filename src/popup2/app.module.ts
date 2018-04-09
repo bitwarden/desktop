@@ -23,7 +23,11 @@ import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { SettingsComponent } from './settings/settings.component';
 import { TabsComponent } from './tabs.component';
+import { PasswordGeneratorComponent } from './tools/password-generator.component';
+import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
+import { ToolsComponent } from './tools/tools.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
@@ -81,12 +85,16 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         IconComponent,
         LockComponent,
         LoginComponent,
+        PasswordGeneratorComponent,
+        PasswordGeneratorHistoryComponent,
         PopOutComponent,
         RegisterComponent,
         SearchCiphersPipe,
+        SettingsComponent,
         StopClickDirective,
         StopPropDirective,
         TabsComponent,
+        ToolsComponent,
         TwoFactorOptionsComponent,
         TwoFactorComponent,
         ViewComponent,

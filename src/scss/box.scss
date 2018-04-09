@@ -368,7 +368,7 @@
                     }
                 }
 
-                .text, .detail {
+                .text:not(.no-ellipsis), .detail {
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -389,6 +389,14 @@
 
         .box-content {
             border-bottom: none;
+        }
+    }
+
+    &.full-list {
+        margin: 0;
+
+        .box-content {
+            border: none;
         }
     }
 }
