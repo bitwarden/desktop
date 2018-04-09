@@ -156,7 +156,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
     async selectFolder(folder: FolderView) {
         super.selectFolder(folder);
-        this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id } });
+        this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id || 'none' } });
     }
 
     async selectCollection(collection: CollectionView) {

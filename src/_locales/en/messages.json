@@ -512,6 +512,9 @@
   "searchCollection": {
     "message": "Search collection"
   },
+  "searchType": {
+    "message": "Search type"
+  },
   "noneFolder": {
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
@@ -1015,6 +1018,12 @@
   "identities": {
     "message": "Identities"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Clear"
   },
@@ -1073,5 +1082,8 @@
   },
   "types": {
     "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
   }
 }
