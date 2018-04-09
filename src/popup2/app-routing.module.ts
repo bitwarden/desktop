@@ -26,29 +26,32 @@ const routes: Routes = [
     { path: 'vault', redirectTo: '/tabs/vault', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, data: { state: 'home' } },
     { path: 'login', component: LoginComponent, data: { state: 'login' } },
-    { path: 'lock', component: LockComponent },
-    { path: '2fa', component: TwoFactorComponent },
-    { path: '2fa-options', component: TwoFactorOptionsComponent },
-    { path: 'register', component: RegisterComponent },
+    { path: 'lock', component: LockComponent, data: { state: 'lock' } },
+    { path: '2fa', component: TwoFactorComponent, data: { state: '2fa' } },
+    { path: '2fa-options', component: TwoFactorOptionsComponent, data: { state: '2fa-options' } },
+    { path: 'register', component: RegisterComponent, data: { state: 'register' } },
     { path: 'hint', component: HintComponent, data: { state: 'hint' } },
-    { path: 'environment', component: EnvironmentComponent },
-    { path: 'ciphers', component: CiphersComponent },
-    { path: 'view-cipher', component: ViewComponent },
-    { path: 'add-cipher', component: AddEditComponent },
-    { path: 'edit-cipher', component: AddEditComponent },
+    { path: 'environment', component: EnvironmentComponent, data: { state: 'environment' } },
+    { path: 'ciphers', component: CiphersComponent, data: { state: 'ciphers' } },
+    { path: 'view-cipher', component: ViewComponent, data: { state: 'view-cipher' } },
+    { path: 'add-cipher', component: AddEditComponent, data: { state: 'add-cipher' } },
+    { path: 'edit-cipher', component: AddEditComponent, data: { state: 'edit-cipher' } },
     {
         path: 'tabs', component: TabsComponent,
+        data: { state: 'tabs' },
         children: [
             { path: '', redirectTo: '/tabs/vault', pathMatch: 'full' },
             {
                 path: 'current',
                 component: CurrentTabComponent,
                 canActivate: [AuthGuardService],
+                data: { state: 'tabs_current' },
             },
             {
                 path: 'vault',
                 component: GroupingsComponent,
                 canActivate: [AuthGuardService],
+                data: { state: 'tabs_vault' },
             }
         ]
     }

@@ -8,7 +8,13 @@ import {
 } from '@angular/animations';
 
 const queryShown = query(':enter, :leave', [
-    style({ position: 'fixed', width: '100%', height: '100%' })
+    style({ position: 'fixed', width: '100%', height: '100%' }),
+], { optional: true });
+
+// ref: https://github.com/angular/angular/issues/15477
+const queryChildRoute = query('router-outlet ~ *', [
+    style({}),
+    animate(1, style({})),
 ], { optional: true });
 
 const speed = '0.4s';
@@ -33,6 +39,7 @@ const inSlideLeft = [
     group([
         queryTranslateX('enter', 100, 0),
         queryTranslateX('leave', 0, -100),
+        queryChildRoute,
     ]),
 ];
 
@@ -49,6 +56,7 @@ const inSlideUp = [
     group([
         queryTranslateY('enter', 100, 0, 1010),
         queryTranslateY('leave', 0, 0),
+        queryChildRoute,
     ]),
 ];
 
@@ -65,6 +73,7 @@ const inSlideDown = [
     group([
         queryTranslateY('enter', -100, 0, 1010),
         queryTranslateY('leave', 0, 0),
+        queryChildRoute,
     ]),
 ];
 
@@ -82,4 +91,16 @@ export const routerTransition = trigger('routerTransition', [
 
     transition('login => hint', inSlideUp),
     transition('hint => login', outSlideDown),
+
+    transition('tabs => ciphers', inSlideLeft),
+    transition('ciphers => tabs', outSlideRight),
+
+    transition('tabs => view-cipher, ciphers => view-cipher', inSlideUp),
+    transition('view-cipher => tabs, view-cipher => ciphers', outSlideDown),
+
+    transition('view-cipher => edit-cipher', inSlideUp),
+    transition('edit-cipher => view-cipher', outSlideDown),
+
+    transition('tabs => add-cipher, ciphers => add-cipher', inSlideUp),
+    transition('add-cipher => tabs, add-cipher => ciphers', outSlideDown),
 ]);

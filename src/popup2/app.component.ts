@@ -8,7 +8,10 @@ import {
     Component,
     OnInit,
 } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+    Router,
+    RouterOutlet,
+} from '@angular/router';
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
@@ -79,7 +82,7 @@ export class AppComponent implements OnInit {
         BrowserApi.messageListener((window as any).bitwardenPopupMainMessageListener);
     }
 
-    getState(outlet: any) {
+    getState(outlet: RouterOutlet) {
         return outlet.activatedRouteData.state;
     }
 
