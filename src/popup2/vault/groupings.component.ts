@@ -19,12 +19,15 @@ import { FolderView } from 'jslib/models/view/folderView';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
+import { StateService } from 'jslib/abstractions/state.service';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/components/groupings.component';
 
-const BroadcasterSubscriptionId = 'GroupingsComponent';
+import { PopupUtilsService } from '../services/popup-utils.service';
+
+const ComponentId = 'GroupingsComponent';
 
 @Component({
     selector: 'app-vault-groupings',
@@ -40,16 +43,20 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     typeCounts = new Map<CipherType, number>();
     showNoFolderCiphers = false;
     searchText: string;
+    state: any;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute) {
+        private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute,
+        private stateService: StateService, private popupUtils: PopupUtilsService) {
         super(collectionService, folderService);
     }
 
     ngOnInit() {
-        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+        this.stateService.remove('CiphersComponent');
+
+        this.broadcasterService.subscribe(ComponentId, (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'syncCompleted':
@@ -66,16 +73,21 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         });
 
         this.route.queryParams.subscribe(async (params) => {
-            if (params.searchText) {
+            this.state = (await this.stateService.get<any>(ComponentId)) || {};
+            if (this.state.searchText) {
+                this.searchText = this.state.searchText;
+            } else if (params.searchText) {
                 this.searchText = params.searchText;
             }
 
             this.load();
+            window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
         });
     }
 
     ngOnDestroy() {
-        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        this.saveState();
+        this.broadcasterService.unsubscribe(ComponentId);
     }
 
     async load() {
@@ -137,26 +149,34 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         });
     }
 
-    selectType(type: CipherType) {
+    async selectType(type: CipherType) {
         super.selectType(type);
         this.router.navigate(['/ciphers'], { queryParams: { type: type } });
     }
 
-    selectFolder(folder: FolderView) {
+    async selectFolder(folder: FolderView) {
         super.selectFolder(folder);
         this.router.navigate(['/ciphers'], { queryParams: { folderId: folder.id } });
     }
 
-    selectCollection(collection: CollectionView) {
+    async selectCollection(collection: CollectionView) {
         super.selectCollection(collection);
         this.router.navigate(['/ciphers'], { queryParams: { collectionId: collection.id } });
     }
 
-    selectCipher(cipher: CipherView) {
+    async selectCipher(cipher: CipherView) {
         this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
     }
 
-    addCipher() {
+    async addCipher() {
         this.router.navigate(['/add-cipher']);
+    }
+
+    private async saveState() {
+        this.state = {
+            scrollY: this.popupUtils.getContentScrollY(window),
+            searchText: this.searchText,
+        };
+        await this.stateService.save(ComponentId, this.state);
     }
 }

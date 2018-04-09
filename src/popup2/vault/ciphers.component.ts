@@ -12,6 +12,7 @@ import {
 } from '@angular/router';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { StateService } from 'jslib/abstractions/state.service';
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
@@ -19,7 +20,9 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/components/ciphers.component';
 
-const BroadcasterSubscriptionId = 'CiphersComponent';
+import { PopupUtilsService } from '../services/popup-utils.service';
+
+const ComponentId = 'CiphersComponent';
 
 @Component({
     selector: 'app-vault-ciphers',
@@ -27,11 +30,13 @@ const BroadcasterSubscriptionId = 'CiphersComponent';
 })
 export class CiphersComponent extends BaseCiphersComponent implements OnInit, OnDestroy {
     searchText: string;
+    state: any;
 
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef) {
+        private changeDetectorRef: ChangeDetectorRef, private stateService: StateService,
+        private popupUtils: PopupUtilsService) {
         super(cipherService);
     }
 
@@ -47,9 +52,15 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
             } else {
                 await super.load();
             }
+
+            this.state = (await this.stateService.get<any>(ComponentId)) || {};
+            if (this.state.searchText) {
+                this.searchText = this.state.searchText;
+            }
+            window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
         });
 
-        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+        this.broadcasterService.subscribe(ComponentId, (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'syncCompleted':
@@ -67,7 +78,8 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     ngOnDestroy() {
-        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        this.saveState();
+        this.broadcasterService.unsubscribe(ComponentId);
     }
 
     selectCipher(cipher: CipherView) {
@@ -82,5 +94,13 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
 
     back() {
         this.location.back();
+    }
+
+    private async saveState() {
+        this.state = {
+            scrollY: this.popupUtils.getContentScrollY(window),
+            searchText: this.searchText,
+        };
+        await this.stateService.save(ComponentId, this.state);
     }
 }

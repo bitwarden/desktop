@@ -9,6 +9,7 @@ import {
     OnInit,
 } from '@angular/core';
 import {
+    NavigationEnd,
     Router,
     RouterOutlet,
 } from '@angular/router';
@@ -22,6 +23,7 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
@@ -49,11 +51,13 @@ export class AppComponent implements OnInit {
     });
 
     private lastActivity: number = null;
+    private previousUrl: string = '';
 
     constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics, private analytics: Angulartics2,
         private toasterService: ToasterService, private storageService: StorageService,
         private broadcasterService: BroadcasterService, private authService: AuthService,
-        private i18nService: I18nService, private router: Router) { }
+        private i18nService: I18nService, private router: Router,
+        private stateService: StateService) { }
 
     ngOnInit() {
         window.onmousemove = () => this.recordActivity();
@@ -80,6 +84,17 @@ export class AppComponent implements OnInit {
         };
 
         BrowserApi.messageListener((window as any).bitwardenPopupMainMessageListener);
+
+        this.router.events.subscribe(event => {
+            if (event instanceof NavigationEnd) {
+                const url = event.urlAfterRedirects || event.url || '';
+                if (url.startsWith('/tabs/') && this.previousUrl.startsWith('/tabs/')) {
+                    this.stateService.remove('GroupingsComponent');
+                    this.stateService.remove('CiphersComponent');
+                }
+                this.previousUrl = url;
+            }
+        });
     }
 
     getState(outlet: RouterOutlet) {
