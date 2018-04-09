@@ -11,7 +11,7 @@ const queryShown = query(':enter, :leave', [
     style({ position: 'fixed', width: '100%', height: '100%' })
 ], { optional: true });
 
-const speed = '0.5s';
+const speed = '0.4s';
 
 export function queryTranslate(direction: string, axis: string, from: number, to: number, zIndex: number = 1000) {
     return query(':' + direction, [
