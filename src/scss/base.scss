@@ -145,6 +145,41 @@ header {
     .title {
         font-weight: bold;
     }
+
+    .search {
+        padding: 7px;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        display: flex;
+
+        .fa {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: lighten($brand-primary, 30%);
+        }
+
+        input {
+            width: 100%;
+            margin: 0;
+            background: darken($brand-primary, 8%);
+            border: none;
+            color: white;
+            padding: 5px 10px 5px 30px;
+            border-radius: $border-radius;
+
+            &:focus {
+                border-radius: $border-radius;
+                outline: none;
+                background: darken($brand-primary, 10%);
+            }
+
+            &::-webkit-input-placeholder {
+                color: lighten($brand-primary, 35%);
+            }
+        }
+    }
 }
 
 .content {
@@ -230,5 +265,19 @@ content {
 .tab-page {
     content {
         bottom: 55px;
+    }
+}
+
+.no-items {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .fa {
+        margin-bottom: 10px;
+        color: $list-icon-color;
     }
 }

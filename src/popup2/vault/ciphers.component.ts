@@ -26,6 +26,8 @@ const BroadcasterSubscriptionId = 'CiphersComponent';
     templateUrl: 'ciphers.component.html',
 })
 export class CiphersComponent extends BaseCiphersComponent implements OnInit, OnDestroy {
+    searchText: string;
+
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,

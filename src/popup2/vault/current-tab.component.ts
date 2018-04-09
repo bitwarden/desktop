@@ -40,8 +40,8 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     loginCiphers: CipherView[];
     url: string;
     domain: string;
+    searchText: string;
     canAutofill = false;
-    searchText: string = null;
     inSidebar = false;
     showPopout = true;
     disableSearch = false;
@@ -135,7 +135,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     searchVault() {
-
+        this.router.navigate(['/tabs/vault'], { queryParams: { searchText: this.searchText } });
     }
 
     private async load() {

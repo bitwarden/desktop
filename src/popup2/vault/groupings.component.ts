@@ -5,7 +5,10 @@ import {
     OnDestroy,
     OnInit,
 } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+    ActivatedRoute,
+    Router,
+} from '@angular/router';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
@@ -36,11 +39,12 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     collectionCounts = new Map<string, number>();
     typeCounts = new Map<CipherType, number>();
     showNoFolderCiphers = false;
+    searchText: string;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef) {
+        private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute) {
         super(collectionService, folderService);
     }
 
@@ -61,7 +65,13 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             })
         });
 
-        this.load();
+        this.route.queryParams.subscribe(async (params) => {
+            if (params.searchText) {
+                this.searchText = params.searchText;
+            }
+
+            this.load();
+        });
     }
 
     ngOnDestroy() {

@@ -5,8 +5,10 @@
             <i class="fa fa-refresh fa-lg"></i>
         </button>
     </div>
-    <div class="center">
-        <span class="title">{{'currentTab' | i18n}}</span>
+    <div class="search">
+        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search"
+               [(ngModel)]="searchText" (input)="searchVault()" appAutofocus>
+        <i class="fa fa-search"></i>
     </div>
     <div class="right">
         <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">

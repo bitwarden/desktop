@@ -2,8 +2,10 @@
     <div class="left">
         <app-pop-out></app-pop-out>
     </div>
-    <div class="center">
-        <span class="title">{{'myVault' | i18n}}</span>
+    <div class="search">
+        <input type="search" placeholder="{{'searchVault' | i18n}}" id="search"
+               [(ngModel)]="searchText" appAutofocus>
+        <i class="fa fa-search"></i>
     </div>
     <div class="right">
         <button appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
@@ -12,8 +14,15 @@
     </div>
 </header>
 <content>
-    <p *ngIf="!loaded" class="text-muted">{{'loading' | i18n}}</p>
-    <ng-container *ngIf="loaded">
+    <div class="no-items" *ngIf="!ciphers || !ciphers.length">
+        <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
+        <ng-container *ngIf="loaded">
+            <i class="fa fa-frown-o fa-4x"></i>
+            <p>{{'noItemsInList' | i18n}}</p>
+            <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+        </ng-container>
+    </div>
+    <ng-container *ngIf="ciphers && ciphers.length && (!searchText || searchText.length < 2)">
         <div class="box list" *ngIf="favoriteCiphers">
             <div class="box-header">
                 {{'favorites' | i18n}}
@@ -107,6 +116,18 @@
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="noFolderCiphers" title="{{'viewItem' | i18n}}"
+                                  (onSelected)="selectCipher($event)"></app-ciphers-list>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="ciphers && ciphers.length && searchText && searchText.length > 1 &&
+                  (ciphers | searchCiphers: searchText) as searchedCiphers">
+        <div class="no-items" *ngIf="!searchedCiphers.length">
+            <p>{{'noItemsInList' | i18n}}</p>
+        </div>
+        <div class="box list only-list" *ngIf="searchedCiphers.length > 0">
+            <div class="box-content">
+                <app-ciphers-list [ciphers]="searchedCiphers" title="{{'viewItem' | i18n}}"
                                   (onSelected)="selectCipher($event)"></app-ciphers-list>
             </div>
         </div>

@@ -5,8 +5,10 @@
             <span>{{'back' | i18n}}</span>
         </button>
     </div>
-    <div class="center">
-        {{searchPlaceholder || ('searchVault' | i18n)}}
+    <div class="search">
+        <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
+               [(ngModel)]="searchText" appAutofocus>
+        <i class="fa fa-search"></i>
     </div>
     <div class="right">
         <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
