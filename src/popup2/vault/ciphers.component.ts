@@ -37,6 +37,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     groupingTitle: string;
     searchText: string;
     state: any;
+    showAdd = true;
 
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
@@ -82,6 +83,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 }
                 await super.load((c) => c.folderId === folderId);
             } else if (params.collectionId) {
+                this.showAdd = false;
                 this.searchPlaceholder = this.i18nService.t('searchCollection');
                 const collection = await this.collectionService.get(params.collectionId);
                 if (collection != null) {

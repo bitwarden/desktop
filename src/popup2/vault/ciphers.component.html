@@ -11,13 +11,22 @@
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
-        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
+        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}" *ngIf="showAdd">
             <i class="fa fa-plus fa-lg"></i>
         </button>
     </div>
 </header>
 <content>
     <ng-container *ngIf="(ciphers | searchCiphers: searchText) as searchedCiphers">
+        <div class="no-items" *ngIf="!searchedCiphers.length">
+            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
+            <ng-container *ngIf="loaded">
+                <p>{{'noItemsInList' | i18n}}</p>
+                <button (click)="addCipher()" class="btn block primary link" *ngIf="showAdd">
+                    {{'addItem' | i18n}}
+                </button>
+            </ng-container>
+        </div>
         <div class="box list only-list" *ngIf="searchedCiphers.length > 0">
             <div class="box-header">
                 {{groupingTitle}}
@@ -27,14 +36,6 @@
                 <app-ciphers-list [ciphers]="searchedCiphers" title="{{'viewItem' | i18n}}"
                                   (onSelected)="selectCipher($event)"></app-ciphers-list>
             </div>
-        </div>
-        <div class="no-items" *ngIf="!searchedCiphers.length">
-            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
-            <ng-container *ngIf="loaded">
-                <i class="fa fa-frown-o fa-4x"></i>
-                <p>{{'noItemsInList' | i18n}}</p>
-                <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
-            </ng-container>
         </div>
     </ng-container>
 </content>
