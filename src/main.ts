@@ -61,7 +61,7 @@ export class Main {
     }
 
     bootstrap() {
-        this.storageService.get<string>('locale').then(async locale => {
+        this.storageService.get<string>('locale').then(async (locale) => {
             this.windowMain.init().then(async () => {
                 await this.i18nService.init(locale !== null ? locale : app.getLocale());
                 this.messagingMain.init();

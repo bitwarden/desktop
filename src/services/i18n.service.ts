@@ -4,17 +4,15 @@ import * as path from 'path';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
 
 // First locale is the default (English)
-const SupportedTranslationLocales = [
-    'en', 'cs', 'da', 'de', 'es', 'et', 'fi', 'fr', 'hr', 'hu', 'id', 'it', 'ja',
-    'nb', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sv', 'tr', 'uk', 'vi',
-    'zh-CN', 'zh-TW',
-];
+export const SupportedLocalesLanguage = {
+    'en': 'English', 'cs': 'Czech', 'da': 'Danish', 'de': 'German', 'es': 'Spanish', 'et': 'Estonian',
+    'fi': 'Finnish', 'fr': 'French', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'it': 'Italian',
+    'ja': 'Japanese', 'nb': 'Norwegian Bokmål', 'nl': 'Dutch', 'pl': 'Polish', 'pt-BR': 'Portuguese (Brazil)',
+    'pt-PT': 'Portuguese', 'ro': 'Romanian', 'ru': 'Russian', 'sk': 'Slovak', 'sv': 'Swedish', 'tr': 'Turkish',
+    'uk': 'Ukrainian', 'vi': 'Vietnamese', 'zh-CN': 'Chinese', 'zh-TW': 'Chinese (Taiwan)',
+};
 
-export const SupportedLocalesLanguage = [
-    { locale: 'en', language: 'English' }, { locale: 'cs', language: 'Czech' }, { locale: 'da', language: 'Danish' }, { locale: 'de', language: 'German' }, { locale: 'es', language: 'Spanish' }, { locale: 'et', language: 'Estonian' }, { locale: 'fi', language: 'Finnish' }, { locale: 'fr', language: 'French' }, { locale: 'hr', language: 'Croatian' }, { locale: 'hu', language: 'Hungarian' }, { locale: 'id', language: 'Indonesian' }, { locale: 'it', language: 'Italian' }, { locale: 'ja', language: 'Japanese' },
-    { locale: 'nb', language: 'Norwegian Bokmål' }, { locale: 'nl', language: 'Dutch' }, { locale: 'pl', language: 'Polish' }, { locale: 'pt-BR', language: 'Portuguese (Brazil)' }, { locale: 'pt-PT', language: 'Portuguese' }, { locale: 'ro', language: 'Romanian' }, { locale: 'ru', language: 'Russian' }, { locale: 'sk', language: 'Slovak' }, { locale: 'sv', language: 'Swedish' }, { locale: 'tr', language: 'Turkish' }, { locale: 'uk', language: 'Ukrainian' }, { locale: 'vi', language: 'Vietnamese' },
-    { locale: 'zh-CN', language: 'Chinese' }, { locale: 'zh-TW', language: 'Chinese (Taiwan)' },
-];
+const SupportedTranslationLocales = Object.keys(SupportedLocalesLanguage);
 
 export class I18nService implements I18nServiceAbstraction {
     defaultMessages: any = {};
