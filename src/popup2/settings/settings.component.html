@@ -8,9 +8,98 @@
     <div class="right"></div>
 </header>
 <content>
-    <div class="box list">
+    <div class="box">
+        <div class="box-header">{{'manage' | i18n}}</div>
         <div class="box-content">
-            
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'folders' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'sync' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
         </div>
+    </div>
+    <div class="box">
+        <div class="box-header">{{'security' | i18n}}</div>
+        <div class="box-content">
+            <div class="box-content-row" appBoxRow>
+                <label for="lockOption">{{'lockOptions' | i18n}}</label>
+                <select id="lockOption" name="LockOptions" [(ngModel)]="lockOption" (change)="saveLockOption()">
+                    <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
+                </select>
+            </div>
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="lock()">
+                <div class="row-main">{{'lockNow' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="twoStep()">
+                <div class="row-main">{{'twoStepLogin' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-header">{{'account' | i18n}}</div>
+        <div class="box-content">
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'premiumMembership' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="changePassword()">
+                <div class="row-main">{{'changeMasterPassword' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="logOut()">
+                <div class="row-main">{{'logOut' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-header">{{'tools' | i18n}}</div>
+        <div class="box-content">
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="import()">
+                <div class="row-main">{{'importItems' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'exportVault' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'shareVault' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-header">{{'other' | i18n}}</div>
+        <div class="box-content">
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'options' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'about' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#">
+                <div class="row-main">{{'helpFeedback' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="rate()">
+                <div class="row-main">{{'rateExtension' | i18n}}</div>
+                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+            </a>
+        </div>
+        <div class="box-footer">{{'rateExtensionDesc' | i18n}}</div>
     </div>
 </content>

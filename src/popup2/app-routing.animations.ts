@@ -112,4 +112,7 @@ export const routerTransition = trigger('routerTransition', [
 
     transition('tabs => export', inSlideUp),
     transition('export => tabs', outSlideDown),
+
+    transition('tabs => lock', inSlideDown),
+    transition('lock => tabs', outSlideUp),
 ]);
