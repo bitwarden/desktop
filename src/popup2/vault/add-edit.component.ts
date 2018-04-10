@@ -87,9 +87,12 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
         this.location.back();
     }
 
-    async generatePassword() {
-        await super.generatePassword();
-        this.stateService.save('addEditCipher', this.cipher);
-        this.router.navigate(['generator']);
+    async generatePassword(): Promise<boolean> {
+        const confirmed = await super.generatePassword();
+        if (confirmed) {
+            this.stateService.save('addEditCipher', this.cipher);
+            this.router.navigate(['generator']);
+        }
+        return confirmed;
     }
 }

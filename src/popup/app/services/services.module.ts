@@ -8,7 +8,7 @@ import { AuthService } from 'jslib/services/auth.service';
 
 import BrowserMessagingService from '../../../services/browserMessaging.service';
 
-const messagingService = new BrowserMessagingService(backgroundServices.platformUtilsService());
+const messagingService = new BrowserMessagingService();
 const authService = new AuthService(backgroundServices.cryptoService(), backgroundServices.apiService(),
     backgroundServices.userService(), backgroundServices.tokenService(), backgroundServices.appIdService(),
     backgroundServices.i18n2Service(), backgroundServices.platformUtilsService(),

@@ -51,7 +51,7 @@ function getBgService<T>(service: string) {
 }
 
 export const stateService = new StateService();
-export const messagingService = new BrowserMessagingService(getBgService<PlatformUtilsService>('platformUtilsService')());
+export const messagingService = new BrowserMessagingService();
 export const authService = new AuthService(getBgService<CryptoService>('cryptoService')(),
     getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
     getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),

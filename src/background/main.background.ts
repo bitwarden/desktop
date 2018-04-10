@@ -115,9 +115,9 @@ export default class MainBackground {
     constructor() {
         // Services
         this.utilsService = new UtilsService();
-        this.platformUtilsService = new BrowserPlatformUtilsService();
+        this.messagingService = new BrowserMessagingService();
+        this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService);
         const delayi18nLoad = this.platformUtilsService.isEdge() || this.platformUtilsService.isSafari() ? 1000 : 0;
-        this.messagingService = new BrowserMessagingService(this.platformUtilsService);
         this.storageService = new BrowserStorageService(this.platformUtilsService, false);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
         this.i18nService = i18nService(this.platformUtilsService);
@@ -161,7 +161,8 @@ export default class MainBackground {
 
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
-            this.platformUtilsService, this.storageService, this.i18nService, this.analytics);
+            this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
+            this.analytics);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics);

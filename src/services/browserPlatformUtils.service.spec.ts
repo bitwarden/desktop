@@ -48,7 +48,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'
             });
     
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Chrome);
         });
 
@@ -58,7 +58,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0'
             });
     
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Firefox);
         });
 
@@ -68,7 +68,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3175.3 Safari/537.36 OPR/49.0.2695.0 (Edition developer)'
             });
     
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Opera);
         });
 
@@ -78,7 +78,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; ServiceUI 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063'
             });
     
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Edge);
         });
 
@@ -88,7 +88,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8'
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Safari);
         });
 
@@ -98,7 +98,7 @@ describe('Browser Utils Service', () => {
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.97 Safari/537.36 Vivaldi/1.94.1008.40'
             });
 
-            const browserPlatformUtilsService = new BrowserPlatformUtilsService();
+            const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
             expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Vivaldi);
         });
     });

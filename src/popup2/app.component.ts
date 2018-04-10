@@ -3,6 +3,7 @@ import {
     ToasterContainerComponent,
 } from 'angular2-toaster';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import swal from 'sweetalert';
 
 import {
     Component,
@@ -23,6 +24,7 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
@@ -57,7 +59,7 @@ export class AppComponent implements OnInit {
         private toasterService: ToasterService, private storageService: StorageService,
         private broadcasterService: BroadcasterService, private authService: AuthService,
         private i18nService: I18nService, private router: Router,
-        private stateService: StateService) { }
+        private stateService: StateService, private messagingService: MessagingService) { }
 
     ngOnInit() {
         window.onmousemove = () => this.recordActivity();
@@ -67,7 +69,7 @@ export class AppComponent implements OnInit {
         window.onscroll = () => this.recordActivity();
         window.onkeypress = () => this.recordActivity();
 
-        (window as any).bitwardenPopupMainMessageListener = (msg: any, sender: any, sendResponse: any) => {
+        (window as any).bitwardenPopupMainMessageListener = async (msg: any, sender: any, sendResponse: any) => {
             if (msg.command === 'doneLoggingOut') {
                 this.authService.logOut(() => {
                     this.analytics.eventTrack.next({ action: 'Logged Out' });
@@ -76,6 +78,22 @@ export class AppComponent implements OnInit {
                             this.i18nService.t('loginExpired'));
                     }
                     this.router.navigate(['home']);
+                });
+            } else if (msg.command === 'showDialog') {
+                const buttons = [msg.confirmText == null ? this.i18nService.t('ok') : msg.confirmText];
+                if (msg.cancelText != null) {
+                    buttons.unshift(msg.cancelText);
+                }
+
+                const confirmed = await swal({
+                    title: msg.title,
+                    text: msg.text,
+                    buttons: buttons,
+                });
+
+                this.messagingService.send('showDialogResolve', {
+                    dialogId: msg.dialogId,
+                    confirmed: confirmed,
                 });
             } else {
                 msg.webExtSender = sender;

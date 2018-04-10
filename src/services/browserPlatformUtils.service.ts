@@ -2,11 +2,12 @@ import * as tldjs from 'tldjs';
 
 import { BrowserApi } from '../browser/browserApi';
 
-import { DeviceType } from 'jslib/enums';
+import { DeviceType } from 'jslib/enums/deviceType';
 
-import { PlatformUtilsService } from 'jslib/abstractions';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 
-import { UtilsService } from 'jslib/services';
+import { UtilsService } from 'jslib/services/utils.service';
 
 const AnalyticsIds = {
     [DeviceType.Chrome]: 'UA-81915606-6',
@@ -16,6 +17,8 @@ const AnalyticsIds = {
     [DeviceType.Vivaldi]: 'UA-81915606-15',
     [DeviceType.Safari]: 'UA-81915606-16',
 };
+
+const DialogPromiseExpiration = 3600000; // 1 hour
 
 export default class BrowserPlatformUtilsService implements PlatformUtilsService {
     static getDomain(uriString: string): string {
@@ -57,8 +60,11 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
     identityClientId: string = 'browser';
 
+    private showDialogResolves = new Map<number, { resolve: (value: boolean) => void, date: Date }>();
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
+
+    constructor(private messagingService: MessagingService) { }
 
     getDevice(): DeviceType {
         if (this.deviceCache) {
@@ -169,8 +175,18 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     showDialog(text: string, title?: string, confirmText?: string, cancelText?: string, type?: string) {
-        // TODO
-        return Promise.resolve(true);
+        const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+        this.messagingService.send('showDialog', {
+            text: text,
+            title: title,
+            confirmText: confirmText,
+            cancelText: cancelText,
+            type: type,
+            dialogId: dialogId,
+        });
+        return new Promise<boolean>((resolve) => {
+            this.showDialogResolves.set(dialogId, { resolve: resolve, date: new Date() });
+        });
     }
 
     isDev(): boolean {
@@ -181,6 +197,26 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     copyToClipboard(text: string, options?: any): void {
         const doc = options ? options.doc : null;
         UtilsService.copyToClipboard(text, doc);
+    }
+
+    resolveDialogPromise(dialogId: number, confirmed: boolean) {
+        if (this.showDialogResolves.has(dialogId)) {
+            const resolveObj = this.showDialogResolves.get(dialogId);
+            resolveObj.resolve(confirmed);
+            this.showDialogResolves.delete(dialogId);
+        }
+
+        // Clean up old promises
+        const deleteIds: number[] = [];
+        this.showDialogResolves.forEach((val, key) => {
+            const age = new Date().getTime() - val.date.getTime();
+            if (age > DialogPromiseExpiration) {
+                deleteIds.push(key);
+            }
+        });
+        deleteIds.forEach((id) => {
+            this.showDialogResolves.delete(id);
+        });
     }
 
     private sidebarViewName(): string {

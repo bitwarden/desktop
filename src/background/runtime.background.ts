@@ -11,7 +11,6 @@ import { Analytics } from 'jslib/misc';
 
 import {
     CipherService,
-    PlatformUtilsService,
     StorageService,
 } from 'jslib/abstractions';
 
@@ -20,6 +19,7 @@ import { BrowserApi } from '../browser/browserApi';
 import MainBackground from './main.background';
 
 import { AutofillService } from '../services/abstractions/autofill.service';
+import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 
 export default class RuntimeBackground {
     private runtime: any;
@@ -29,7 +29,7 @@ export default class RuntimeBackground {
     private onInstalledReason: string = null;
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
-        private cipherService: CipherService, private platformUtilsService: PlatformUtilsService,
+        private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
         private storageService: StorageService, private i18nService: any, private analytics: Analytics) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
@@ -89,6 +89,9 @@ export default class RuntimeBackground {
                 break;
             case 'openPopup':
                 await this.main.openPopup();
+                break;
+            case 'showDialogResolve':
+                this.platformUtilsService.resolveDialogPromise(msg.dialogId, msg.confirmed);
                 break;
             case 'bgGetDataForTab':
                 await this.getDataForTab(sender.tab, msg.responseCommand);
