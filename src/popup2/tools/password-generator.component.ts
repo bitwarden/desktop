@@ -2,12 +2,8 @@ import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
 import { Location } from '@angular/common';
-import {
-    Component,
-} from '@angular/core';
-import {
-    Router,
-} from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
@@ -25,6 +21,8 @@ import {
     templateUrl: 'password-generator.component.html',
 })
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
+    closeText: string;
+
     private cipherState: CipherView;
 
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,
@@ -37,7 +35,8 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
     async ngOnInit() {
         await super.ngOnInit();
         this.cipherState = await this.stateService.get<CipherView>('addEditCipher');
-        super.showSelect = this.cipherState != null;
+        this.showSelect = this.cipherState != null;
+        this.closeText = this.showSelect ? this.i18nService.t('cancel') : this.i18nService.t('close');
     }
 
     select() {
