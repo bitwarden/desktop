@@ -58,12 +58,15 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
     getBgService<I18nService>('i18n2Service')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
     getBgService<ConstantsService>('constantsService')(), messagingService);
 
-export function initFactory(i18nService: I18nService, storageService: StorageService): Function {
+export function initFactory(i18nService: I18nService, storageService: StorageService,
+    popupUtilsService: PopupUtilsService): Function {
     return async () => {
-        if (window.screen.availHeight < 600) {
-            window.document.body.classList.add('xs');
+        if (!popupUtilsService.inPopup(window)) {
+            window.document.body.classList.add('body-full');
+        } else if (window.screen.availHeight < 600) {
+            window.document.body.classList.add('body-xs');
         } else if (window.screen.availHeight <= 800) {
-            window.document.body.classList.add('sm');
+            window.document.body.classList.add('body-sm');
         }
 
         if (i18nService != null) {
@@ -120,7 +123,7 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
-            deps: [I18nService, StorageService],
+            deps: [I18nService, StorageService, PopupUtilsService],
             multi: true,
         },
     ],

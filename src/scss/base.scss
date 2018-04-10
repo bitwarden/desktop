@@ -20,14 +20,19 @@ body {
     height: 600px !important;
     overflow: hidden;
 
-    &.sm {
+    &.body-sm {
         width: 375px !important;
         height: 500px !important;
     }
 
-    &.xs {
+    &.body-xs {
         width: 375px !important;
         height: 300px !important;
+    }
+
+    &.body-full {
+        width: 100% !important;
+        height: 100% !important;
     }
 }
 
@@ -254,7 +259,8 @@ content {
     bottom: 0;
     left: 0;
     right: 0;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: $background-color;
 
     &.no-header {

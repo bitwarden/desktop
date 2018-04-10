@@ -39,37 +39,41 @@
                 <span class="flex-right">4</span>
             </div>
             <div class="box-content single-line">
-                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Login)">
-                    <div class="icon"><i class="fa fa-fw fa-lg fa-globe"></i></div>
-                    {{'typeLogin' | i18n}}
-                    <div class="flex-right">
-                        <span class="row-sub-label">{{typeCounts.get(cipherType.Login) || 0}}</span>
-                        <i class="fa fa-chevron-right fa-lg"></i>
+                <a href="#" class="box-content-row" appStopClick appBlurClick
+                   (click)="selectType(cipherType.Login)">
+                    <div class="row-main">
+                        <div class="icon"><i class="fa fa-fw fa-lg fa-globe"></i></div>
+                        <span class="text">{{'typeLogin' | i18n}}</span>
                     </div>
+                    <span class="row-sub-label">{{typeCounts.get(cipherType.Login) || 0}}</span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
-                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Card)">
-                    <div class="icon"><i class="fa fa-fw fa-lg fa-credit-card"></i></div>
-                    {{'typeCard' | i18n}}
-                    <div class="flex-right">
-                        <span class="row-sub-label">{{typeCounts.get(cipherType.Card) || 0}}</span>
-                        <i class="fa fa-chevron-right fa-lg"></i>
+                <a href="#" class="box-content-row" appStopClick appBlurClick
+                   (click)="selectType(cipherType.Card)">
+                    <div class="row-main">
+                        <div class="icon"><i class="fa fa-fw fa-lg fa-credit-card"></i></div>
+                        <span class="text">{{'typeCard' | i18n}}</span>
                     </div>
+                    <span class="row-sub-label">{{typeCounts.get(cipherType.Card) || 0}}</span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
-                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.Identity)">
-                    <div class="icon"><i class="fa fa-fw fa-lg fa-id-card-o"></i></div>
-                    {{'typeIdentity' | i18n}}
-                    <div class="flex-right">
-                        <span class="row-sub-label">{{typeCounts.get(cipherType.Identity) || 0}}</span>
-                        <i class="fa fa-chevron-right fa-lg"></i>
+                <a href="#" class="box-content-row" appStopClick appBlurClick
+                   (click)="selectType(cipherType.Identity)">
+                    <div class="row-main">
+                        <div class="icon"><i class="fa fa-fw fa-lg fa-id-card-o"></i></div>
+                        <span class="text">{{'typeIdentity' | i18n}}</span>
                     </div>
+                    <span class="row-sub-label">{{typeCounts.get(cipherType.Identity) || 0}}</span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
-                <a href="#" class="box-content-row" appStopClick appBlurClick (click)="selectType(cipherType.SecureNote)">
-                    <div class="icon"><i class="fa fa-fw fa-lg fa-sticky-note-o"></i></div>
-                    {{'typeSecureNote' | i18n}}
-                    <div class="flex-right">
-                        <span class="row-sub-label">{{typeCounts.get(cipherType.SecureNote) || 0}}</span>
-                        <i class="fa fa-chevron-right fa-lg"></i>
+                <a href="#" class="box-content-row" appStopClick appBlurClick
+                   (click)="selectType(cipherType.SecureNote)">
+                    <div class="row-main">
+                        <div class="icon"><i class="fa fa-fw fa-lg fa-sticky-note-o"></i></div>
+                        <span class="text">{{'typeSecureNote' | i18n}}</span>
                     </div>
+                    <span class="row-sub-label">{{typeCounts.get(cipherType.SecureNote) || 0}}</span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
             </div>
         </div>
@@ -79,16 +83,17 @@
                 <span class="flex-right">{{folderCount}}</span>
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let f of folders" href="#" class="box-content-row" appStopClick appBlurClick
-                   (click)="selectFolder(f)">
-                    <div class="icon">
-                        <i class="fa fa-fw fa-lg" [ngClass]="{'fa-folder-open': f.id, 'fa-folder-open-o': !f.id}"></i>
+                <a *ngFor="let f of folders" href="#" class="box-content-row"
+                   appStopClick appBlurClick (click)="selectFolder(f)">
+                    <div class="row-main">
+                        <div class="icon">
+                            <i class="fa fa-fw fa-lg"
+                               [ngClass]="{'fa-folder-open': f.id, 'fa-folder-open-o': !f.id}"></i>
+                        </div>
+                        <span class="text">{{f.name}}</span>
                     </div>
-                    {{f.name}}
-                    <div class="flex-right">
-                        <span class="row-sub-label">{{folderCounts.get(f.id) || 0}}</span>
-                        <i class="fa fa-chevron-right fa-lg"></i>
-                    </div>
+                    <span class="row-sub-label">{{folderCounts.get(f.id) || 0}}</span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
             </div>
         </div>
@@ -98,14 +103,14 @@
                 <span class="flex-right">{{collections.length}}</span>
             </div>
             <div class="box-content single-line">
-                <a *ngFor="let c of collections" href="#" class="box-content-row" appStopClick appBlurClick
-                   (click)="selectCollection(c)">
-                    <div class="icon"><i class="fa fa-fw fa-lg fa-cube"></i></div>
-                    {{c.name}}
-                    <div class="flex-right">
-                        <span class="row-sub-label">{{collectionCounts.get(c.id) || 0}}</span>
-                        <i class="fa fa-chevron-right fa-lg"></i>
+                <a *ngFor="let c of collections" href="#" class="box-content-row"
+                   appStopClick appBlurClick (click)="selectCollection(c)">
+                    <div class="row-main">
+                        <div class="icon"><i class="fa fa-fw fa-lg fa-cube"></i></div>
+                        <span class="text">{{c.name}}</span>
                     </div>
+                    <span class="row-sub-label">{{collectionCounts.get(c.id) || 0}}</span>
+                    <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
                 </a>
             </div>
         </div>

@@ -247,9 +247,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                float: left;
-                height: 36px;
-                width: 34px;
+                min-width: 34px;
+                height: 100%;
                 margin-left: -5px;
                 color: $text-muted;
 
@@ -326,17 +325,6 @@
                 background-color: initial;
             }
         }
-
-        &.single-line {
-            .box-content-row {
-                display: flex;
-
-                .icon {
-                    height: initial;
-                    text-align: center;
-                }
-            }
-        }
     }
 
     .box-footer {
@@ -373,10 +361,20 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
+
+                .row-main {
+                    display: flex;
+                    min-width: 0;
+
+                    .row-main-content {
+                        min-width: 0;
+                    }
+                }
             }
 
             &.single-line {
                 .box-content-row {
+                    display: flex;
                     padding-top: 10px;
                     padding-bottom: 10px;
                 }

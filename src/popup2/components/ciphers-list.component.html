@@ -2,12 +2,14 @@
    class="box-content-row box-content-row-flex">
     <div class="row-main">
         <app-vault-icon [cipher]="c"></app-vault-icon>
-        <span class="text">
-            {{c.name}}
-            <i class="fa fa-share-alt text-muted" *ngIf="c.organizationId" title="{{'shared' | i18n}}"></i>
-            <i class="fa fa-paperclip text-muted" *ngIf="c.hasAttachments" title="{{'attachments' | i18n}}"></i>
-        </span>
-        <span class="detail">{{c.subTitle}}</span>
+        <div class="row-main-content">
+            <span class="text">
+                {{c.name}}
+                <i class="fa fa-share-alt text-muted" *ngIf="c.organizationId" title="{{'shared' | i18n}}"></i>
+                <i class="fa fa-paperclip text-muted" *ngIf="c.hasAttachments" title="{{'attachments' | i18n}}"></i>
+            </span>
+            <span class="detail">{{c.subTitle}}</span>
+        </div>
     </div>
     <app-action-buttons [cipher]="c" [showView]="showView" (onView)="viewCipher(c)"
                         class="action-buttons"></app-action-buttons>
