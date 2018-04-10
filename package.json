@@ -183,6 +183,7 @@
     "@types/lunr": "2.1.5",
     "@types/node": "8.0.19",
     "@types/node-forge": "0.7.1",
+    "@types/papaparse": "4.1.31",
     "@types/webcrypto": "0.0.28",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.0",
