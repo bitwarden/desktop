@@ -52,7 +52,6 @@ export class SettingsComponent implements OnInit {
         Object.keys(SupportedLocalesLanguage).forEach((i) => {
             this.locales.push({locale: i, language: (SupportedLocalesLanguage as any)[i]});
         });
-        // this.locales = this.locales.concat(SupportedLocalesLanguage);
     }
 
     async ngOnInit() {
