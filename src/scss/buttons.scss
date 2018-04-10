@@ -54,5 +54,9 @@
     &.link {
         border: none !important;
         background: none !important;
+
+        &:focus {
+            text-decoration: underline;
+        }
     }
 }

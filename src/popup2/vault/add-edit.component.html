@@ -27,7 +27,7 @@
                 </div>
                 <div class="box-content-row" appBoxRow>
                     <label for="name">{{'name' | i18n}}</label>
-                    <input id="name" type="text" name="Name" [(ngModel)]="cipher.name" [appAutofocus]="!editMode">
+                    <input id="name" type="text" name="Name" [(ngModel)]="cipher.name">
                 </div>
                 <!-- Login -->
                 <div *ngIf="cipher.type === cipherType.Login">

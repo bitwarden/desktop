@@ -98,7 +98,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     addCipher() {
-        this.router.navigate(['/add-cipher']);
+        this.router.navigate(['/add-cipher'], { queryParams: { name: this.domain, uri: this.url } });
     }
 
     viewCipher(cipher: CipherView) {

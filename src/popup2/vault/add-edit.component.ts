@@ -11,6 +11,8 @@ import {
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
+import { CipherType } from 'jslib/enums/cipherType';
+
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
@@ -40,9 +42,35 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
             }
+            if (params.folderId) {
+                this.folderId = params.folderId;
+            }
+            if (params.type) {
+                const type = parseInt(params.type, null);
+                this.type = type;
+            }
             this.editMode = !params.cipherId;
             await this.load();
+
+            if (!this.editMode) {
+                if (params.name) {
+                    this.cipher.name = params.name;
+                }
+                if (params.uri) {
+                    this.cipher.login.uris[0].uri = params.uri;
+                }
+            }
         });
+
+        setTimeout(() => {
+            if (!this.editMode) {
+                if (this.cipher.name != null && this.cipher.name !== '') {
+                    document.getElementById('loginUsername').focus();
+                } else {
+                    document.getElementById('name').focus();
+                }
+            }
+        }, 200);
     }
 
     async submit(): Promise<boolean> {

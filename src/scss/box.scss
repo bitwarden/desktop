@@ -322,7 +322,7 @@
 
         &.no-hover .box-content-row, .box-content-row.no-hover {
             &:hover, &:focus {
-                background-color: initial;
+                background-color: initial !important;
             }
         }
     }
@@ -339,6 +339,11 @@
                 padding: 3px 10px;
                 color: $text-color;
                 text-decoration: none;
+
+                &.padded {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
 
                 &:hover, &:focus, &.active {
                     background-color: $list-item-hover;

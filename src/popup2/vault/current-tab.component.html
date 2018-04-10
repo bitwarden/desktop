@@ -17,7 +17,9 @@
     </div>
 </header>
 <content>
-    <p *ngIf="!loaded" class="text-muted">{{'loading' | i18n}}</p>
+    <div class="no-items" *ngIf="!loaded">
+        <i class="fa fa-spinner fa-spin fa-3x"></i>
+    </div>
     <ng-container *ngIf="loaded">
         <div class="box list" *ngIf="loginCiphers">
             <div class="box-header">
@@ -26,10 +28,17 @@
             </div>
             <div class="box-content">
                 <app-ciphers-list [ciphers]="loginCiphers" title="{{'autoFill' | i18n}}" [showView]="true"
-                                  (onSelected)="fillCipher($event)" (onView)="viewCipher($event)"></app-ciphers-list>
+                                  (onSelected)="fillCipher($event)" (onView)="viewCipher($event)"
+                                  *ngIf="loginCiphers.length"></app-ciphers-list>
+                <div class="box-content-row text-center padded no-hover" *ngIf="!loginCiphers.length">
+                    {{'autoFillInfo' | i18n}}
+                    <button type="button" class="btn primary link block" (click)="addCipher()">
+                        {{'addLogin' | i18n}}
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="box list" *ngIf="cardCiphers">
+        <div class="box list" *ngIf="cardCiphers && cardCiphers.length">
             <div class="box-header">
                 {{'cards' | i18n}}
                 <span class="flex-right">{{cardCiphers.length}}</span>
@@ -39,7 +48,7 @@
                                   (onSelected)="fillCipher($event)" (onView)="viewCipher($event)"></app-ciphers-list>
             </div>
         </div>
-        <div class="box list" *ngIf="identityCiphers">
+        <div class="box list" *ngIf="identityCiphers && identityCiphers.length">
             <div class="box-header">
                 {{'identities' | i18n}}
                 <span class="flex-right">{{identityCiphers.length}}</span>

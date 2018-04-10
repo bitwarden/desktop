@@ -38,6 +38,8 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     searchText: string;
     state: any;
     showAdd = true;
+    folderId: string = null;
+    type: CipherType = null;
 
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
@@ -52,8 +54,8 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         this.route.queryParams.subscribe(async (params) => {
             if (params.type) {
                 this.searchPlaceholder = this.i18nService.t('searchType');
-                const t = parseInt(params.type, null);
-                switch (t) {
+                this.type = parseInt(params.type, null);
+                switch (this.type) {
                     case CipherType.Login:
                         this.groupingTitle = this.i18nService.t('logins');
                         break;
@@ -69,19 +71,19 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                     default:
                         break;
                 }
-                await super.load((c) => c.type === t);
+                await super.load((c) => c.type === this.type);
             } else if (params.folderId) {
-                const folderId = params.folderId === 'none' ? null : params.folderId;
+                this.folderId = params.folderId === 'none' ? null : params.folderId;
                 this.searchPlaceholder = this.i18nService.t('searchFolder');
-                if (folderId != null) {
-                    const folder = await this.folderService.get(folderId);
+                if (this.folderId != null) {
+                    const folder = await this.folderService.get(this.folderId);
                     if (folder != null) {
                         this.groupingTitle = (await folder.decrypt()).name;
                     }
                 } else {
                     this.groupingTitle = this.i18nService.t('noneFolder');
                 }
-                await super.load((c) => c.folderId === folderId);
+                await super.load((c) => c.folderId === this.folderId);
             } else if (params.collectionId) {
                 this.showAdd = false;
                 this.searchPlaceholder = this.i18nService.t('searchCollection');
@@ -89,7 +91,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 if (collection != null) {
                     this.groupingTitle = (await collection.decrypt()).name;
                 }
-                await super.load((c) => c.collectionIds.indexOf(params.collectionId) > -1);
+                await super.load((c) => c.collectionIds != null && c.collectionIds.indexOf(params.collectionId) > -1);
             } else {
                 this.groupingTitle = this.i18nService.t('allItems');
                 await super.load();
@@ -131,7 +133,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
 
     addCipher() {
         super.addCipher();
-        this.router.navigate(['/add-cipher']);
+        this.router.navigate(['/add-cipher'], { queryParams: { folderId: this.folderId, type: this.type } });
     }
 
     back() {
