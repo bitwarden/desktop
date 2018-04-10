@@ -230,6 +230,7 @@
     "keytar": "4.1.0",
     "lunr": "2.1.6",
     "node-forge": "0.7.1",
+    "papaparse": "4.3.5",
     "rxjs": "5.5.6",
     "zone.js": "0.8.19"
   }
