@@ -6,7 +6,9 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import swal from 'sweetalert';
 
 import {
+    ChangeDetectorRef,
     Component,
+    NgZone,
     OnInit,
 } from '@angular/core';
 import {
@@ -59,7 +61,8 @@ export class AppComponent implements OnInit {
         private toasterService: ToasterService, private storageService: StorageService,
         private broadcasterService: BroadcasterService, private authService: AuthService,
         private i18nService: I18nService, private router: Router,
-        private stateService: StateService, private messagingService: MessagingService) { }
+        private stateService: StateService, private messagingService: MessagingService,
+        private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) { }
 
     ngOnInit() {
         window.onmousemove = () => this.recordActivity();
@@ -71,13 +74,16 @@ export class AppComponent implements OnInit {
 
         (window as any).bitwardenPopupMainMessageListener = async (msg: any, sender: any, sendResponse: any) => {
             if (msg.command === 'doneLoggingOut') {
-                this.authService.logOut(() => {
-                    this.analytics.eventTrack.next({ action: 'Logged Out' });
-                    if (msg.expired) {
-                        this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
-                            this.i18nService.t('loginExpired'));
-                    }
-                    this.router.navigate(['home']);
+                this.ngZone.run(async () => {
+                    this.authService.logOut(() => {
+                        this.analytics.eventTrack.next({ action: 'Logged Out' });
+                        if (msg.expired) {
+                            this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
+                                this.i18nService.t('loginExpired'));
+                        }
+                        this.router.navigate(['home']);
+                    });
+                    this.changeDetectorRef.detectChanges();
                 });
             } else if (msg.command === 'showDialog') {
                 const buttons = [msg.confirmText == null ? this.i18nService.t('ok') : msg.confirmText];

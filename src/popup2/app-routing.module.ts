@@ -6,6 +6,8 @@ import {
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 
+import { LaunchGuardService } from './services/launch-guard.service';
+
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
 import { HomeComponent } from './accounts/home.component';
@@ -27,28 +29,115 @@ import { GroupingsComponent } from './vault/groupings.component';
 import { ViewComponent } from './vault/view.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/tabs/current', pathMatch: 'full' },
-    { path: 'vault', redirectTo: '/tabs/vault', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent, data: { state: 'home' } },
-    { path: 'login', component: LoginComponent, data: { state: 'login' } },
-    { path: 'lock', component: LockComponent, data: { state: 'lock' } },
-    { path: '2fa', component: TwoFactorComponent, data: { state: '2fa' } },
-    { path: '2fa-options', component: TwoFactorOptionsComponent, data: { state: '2fa-options' } },
-    { path: 'register', component: RegisterComponent, data: { state: 'register' } },
-    { path: 'hint', component: HintComponent, data: { state: 'hint' } },
-    { path: 'environment', component: EnvironmentComponent, data: { state: 'environment' } },
-    { path: 'ciphers', component: CiphersComponent, data: { state: 'ciphers' } },
-    { path: 'view-cipher', component: ViewComponent, data: { state: 'view-cipher' } },
-    { path: 'add-cipher', component: AddEditComponent, data: { state: 'add-cipher' } },
-    { path: 'edit-cipher', component: AddEditComponent, data: { state: 'edit-cipher' } },
-    { path: 'generator', component: PasswordGeneratorComponent, data: { state: 'generator' } },
-    { path: 'generator-history', component: PasswordGeneratorHistoryComponent, data: { state: 'generator-history' } },
-    { path: 'export', component: ExportComponent, data: { state: 'export' } },
     {
-        path: 'tabs', component: TabsComponent,
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+    },
+    {
+        path: 'vault',
+        redirectTo: '/tabs/vault',
+        pathMatch: 'full',
+    },
+    {
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: 'home' },
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: 'login' },
+    },
+    {
+        path: 'lock',
+        component: LockComponent,
+        data: { state: 'lock' },
+    },
+    {
+        path: '2fa',
+        component: TwoFactorComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: '2fa' },
+    },
+    {
+        path: '2fa-options',
+        component: TwoFactorOptionsComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: '2fa-options' },
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: 'register' },
+    },
+    {
+        path: 'hint',
+        component: HintComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: 'hint' },
+    },
+    {
+        path: 'environment',
+        component: EnvironmentComponent,
+        canActivate: [LaunchGuardService],
+        data: { state: 'environment' },
+    },
+    {
+        path: 'ciphers',
+        component: CiphersComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'ciphers' },
+    },
+    {
+        path: 'view-cipher',
+        component: ViewComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'view-cipher' },
+    },
+    {
+        path: 'add-cipher',
+        component: AddEditComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'add-cipher' },
+    },
+    {
+        path: 'edit-cipher',
+        component: AddEditComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'edit-cipher' },
+    },
+    {
+        path: 'generator',
+        component: PasswordGeneratorComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'generator' },
+    },
+    {
+        path: 'generator-history',
+        component: PasswordGeneratorHistoryComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'generator-history' },
+    },
+    {
+        path: 'export',
+        component: ExportComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'export' },
+    },
+    {
+        path: 'tabs',
+        component: TabsComponent,
         data: { state: 'tabs' },
         children: [
-            { path: '', redirectTo: '/tabs/vault', pathMatch: 'full' },
+            {
+                path: '',
+                redirectTo: '/tabs/vault',
+                pathMatch: 'full',
+            },
             {
                 path: 'current',
                 component: CurrentTabComponent,
