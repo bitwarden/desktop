@@ -1,7 +1,7 @@
 <header>
     <div class="left">
         <button type="button" appBlurClick (click)="back()">
-            <i class="fa fa-chevron-left"></i>
+            <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
             <span>{{'back' | i18n}}</span>
         </button>
     </div>
@@ -10,9 +10,9 @@
                [(ngModel)]="searchText" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
-    <div class="right">
-        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}" *ngIf="showAdd">
-            <i class="fa fa-plus fa-lg"></i>
+    <div class="right" *ngIf="showAdd">
+        <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
+            <i class="fa fa-plus fa-lg fa-fw"></i>
         </button>
     </div>
 </header>

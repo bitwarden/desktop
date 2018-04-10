@@ -2,7 +2,7 @@
     <div class="left">
         <app-pop-out *ngIf="showPopout"></app-pop-out>
         <button type="button" appBlurClick (click)="refresh()" title="{{'refresh' | i18n}}" *ngIf="inSidebar">
-            <i class="fa fa-refresh fa-lg"></i>
+            <i class="fa fa-refresh fa-lg fa-fw"></i>
         </button>
     </div>
     <div class="search">
@@ -12,7 +12,7 @@
     </div>
     <div class="right">
         <button type="button" appBlurClick (click)="addCipher()" title="{{'addItem' | i18n}}">
-            <i class="fa fa-plus fa-lg"></i>
+            <i class="fa fa-plus fa-lg fa-fw"></i>
         </button>
     </div>
 </header>

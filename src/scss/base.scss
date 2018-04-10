@@ -106,6 +106,9 @@ header {
         flex: 1;
         display: flex;
         min-width: -webkit-min-content; /* Workaround to Chrome bug */
+        .header-icon {
+            margin-right: 5px;
+        }
     }
 
     .right {
@@ -116,6 +119,7 @@ header {
         display: flex;
         align-items: center;
         text-align: center;
+        min-width: 0;
     }
 
     app-pop-out > button, div > button, div > a {
@@ -149,10 +153,13 @@ header {
 
     .title {
         font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .search {
-        padding: 7px;
+        padding: 7px 10px;
         width: 100%;
         text-align: left;
         position: relative;
@@ -161,7 +168,7 @@ header {
         .fa {
             position: absolute;
             top: 15px;
-            left: 15px;
+            left: 10px;
             color: lighten($brand-primary, 30%);
         }
 
@@ -184,6 +191,14 @@ header {
                 color: lighten($brand-primary, 35%);
             }
         }
+    }
+
+    .left + .search {
+        padding-left: 0;
+    }
+
+    .search + .right {
+        margin-left: -10px;
     }
 }
 
