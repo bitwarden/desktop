@@ -3,6 +3,9 @@
 @import "~angular2-toaster/toaster";
 
 @import "variables.scss";
+@import "buttons.scss";
+
+// Toaster
 
 #toast-container {
     .toast-close-button {
@@ -76,6 +79,41 @@
             &:before {
                 content: "\f00C";
             }
+        }
+    }
+}
+
+// SweetAlert
+
+.swal-modal {
+    border-radius: $border-radius;
+
+    .swal-icon {
+        margin: 15px auto 0 auto;
+    }
+
+    .swal-title {
+        padding: 10px 10px 15px 10px;
+        margin: 0;
+        font-size: $font-size-large;
+        color: $text-color;
+    }
+
+    .swal-text {
+        color: $text-color;
+        font-size: $font-size-base;
+    }
+
+    .swal-footer {
+        padding: 15px 10px 10px 10px;
+        margin: 0;
+
+        .swal-button {
+            @extend .btn;
+        }
+
+        .swal-button--confirm {
+            @extend .btn.primary;
         }
     }
 }

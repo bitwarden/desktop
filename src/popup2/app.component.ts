@@ -89,6 +89,7 @@ export class AppComponent implements OnInit {
                     title: msg.title,
                     text: msg.text,
                     buttons: buttons,
+                    icon: msg.type,
                 });
 
                 this.messagingService.send('showDialogResolve', {
