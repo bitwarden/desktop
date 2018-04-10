@@ -61,15 +61,17 @@ export class Main {
     }
 
     bootstrap() {
-        this.windowMain.init().then(async () => {
-            await this.i18nService.init(app.getLocale());
-            this.messagingMain.init();
-            this.menuMain.init();
-            this.powerMonitorMain.init();
-            await this.updaterMain.init();
-        }, (e: any) => {
-            // tslint:disable-next-line
-            console.error(e);
+        this.storageService.get<string>('locale').then(async locale => {
+            this.windowMain.init().then(async () => {
+                await this.i18nService.init(locale !== null ? locale : app.getLocale());
+                this.messagingMain.init();
+                this.menuMain.init();
+                this.powerMonitorMain.init();
+                await this.updaterMain.init();
+            }, (e: any) => {
+                // tslint:disable-next-line
+                console.error(e);
+            });
         });
     }
 }

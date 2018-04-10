@@ -10,6 +10,12 @@ const SupportedTranslationLocales = [
     'zh-CN', 'zh-TW',
 ];
 
+export const SupportedLocalesLanguage = [
+    { locale: 'en', language: 'English' }, { locale: 'cs', language: 'Czech' }, { locale: 'da', language: 'Danish' }, { locale: 'de', language: 'German' }, { locale: 'es', language: 'Spanish' }, { locale: 'et', language: 'Estonian' }, { locale: 'fi', language: 'Finnish' }, { locale: 'fr', language: 'French' }, { locale: 'hr', language: 'Croatian' }, { locale: 'hu', language: 'Hungarian' }, { locale: 'id', language: 'Indonesian' }, { locale: 'it', language: 'Italian' }, { locale: 'ja', language: 'Japanese' },
+    { locale: 'nb', language: 'Norwegian Bokmål' }, { locale: 'nl', language: 'Dutch' }, { locale: 'pl', language: 'Polish' }, { locale: 'pt-BR', language: 'Portuguese (Brazil)' }, { locale: 'pt-PT', language: 'Portuguese' }, { locale: 'ro', language: 'Romanian' }, { locale: 'ru', language: 'Russian' }, { locale: 'sk', language: 'Slovak' }, { locale: 'sv', language: 'Swedish' }, { locale: 'tr', language: 'Turkish' }, { locale: 'uk', language: 'Ukrainian' }, { locale: 'vi', language: 'Vietnamese' },
+    { locale: 'zh-CN', language: 'Chinese' }, { locale: 'zh-TW', language: 'Chinese (Taiwan)' },
+];
+
 export class I18nService implements I18nServiceAbstraction {
     defaultMessages: any = {};
     localeMessages: any = {};

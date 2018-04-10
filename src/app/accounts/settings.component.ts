@@ -15,6 +15,8 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { SupportedLocalesLanguage } from '../../services/i18n.service';
+
 @Component({
     selector: 'app-settings',
     templateUrl: 'settings.component.html',
@@ -24,6 +26,8 @@ export class SettingsComponent implements OnInit {
     lockOption: number = null;
     disableGa: boolean = false;
     disableFavicons: boolean = false;
+    locales: any[];
+    locale: string;
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -43,11 +47,15 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('onRestart'), value: -1 },
             { name: i18nService.t('never'), value: null },
         ];
+
+        this.locales = [ { locale: null, language: 'Default' } ];
+        this.locales = this.locales.concat(SupportedLocalesLanguage);
     }
 
     async ngOnInit() {
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
+        this.locale = await this.storageService.get<string>('locale');
 
         const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
         const disableGaByDefault = this.platformUtilsService.isFirefox() || this.platformUtilsService.isMacAppStore();
@@ -78,5 +86,9 @@ export class SettingsComponent implements OnInit {
     private callAnalytics(name: string, enabled: boolean) {
         const status = enabled ? 'Enabled' : 'Disabled';
         this.analytics.eventTrack.next({ action: `${status} ${name}` });
+    }
+
+    async saveLocale() {
+        await this.storageService.save('locale', this.locale);
     }
 }
