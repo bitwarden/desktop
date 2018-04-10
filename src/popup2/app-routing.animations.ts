@@ -87,10 +87,17 @@ const outSlideUp = [
 
 export const routerTransition = trigger('routerTransition', [
     transition('home => login', inSlideLeft),
-    transition('login => home', outSlideRight),
 
+    transition('login => home', outSlideRight),
     transition('login => hint', inSlideUp),
+    transition('login => tabs, login => 2fa', inSlideLeft),
+
     transition('hint => login', outSlideDown),
+
+    transition('2fa => login', outSlideRight),
+    transition('2fa => 2fa-options', inSlideUp),
+    transition('2fa-options => 2fa', outSlideDown),
+    transition('2fa => tabs', inSlideLeft),
 
     transition('tabs => ciphers', inSlideLeft),
     transition('ciphers => tabs', outSlideRight),
