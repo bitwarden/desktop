@@ -1,4 +1,4 @@
-﻿@import "variables.scss";
+@import "variables.scss";
 
 small {
     font-size: $font-size-small;
@@ -76,7 +76,7 @@ small {
 }
 
 #duo-frame {
-    background: url('../popup/images/loading.svg') 0 0 no-repeat;
+    background: url('../images/loading.svg') 0 0 no-repeat;
     width: 100%;
     height: 470px;
     margin-bottom: -10px;

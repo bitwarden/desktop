@@ -17,7 +17,7 @@ const paths = {
     coverage: './coverage/',
     npmDir: './node_modules/',
     popupDir: './src/popup/',
-    cssDir: './src/css/'
+    cssDir: './src/popup/css/'
 };
 
 const filters = {
