@@ -27,6 +27,7 @@ const config = {
         'content/autofiller': './src/content/autofiller.js',
         'content/notificationBar': './src/content/notificationBar.js',
         'content/shortcuts': './src/content/shortcuts.js',
+        'notification/bar': './src/notification/bar.js',
         'downloader/downloader': './src/downloader/downloader.ts',
         '2fa/2fa': './src/2fa/2fa.ts',
     },
@@ -130,6 +131,11 @@ const config = {
             template: './src/background.html',
             filename: 'background.html',
             chunks: ['vendor', 'background'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/notification/bar.html',
+            filename: 'notification/bar.html',
+            chunks: ['notification/bar']
         }),
         new HtmlWebpackPlugin({
             template: './src/downloader/index.html',

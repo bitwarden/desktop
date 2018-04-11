@@ -1,4 +1,4 @@
-require('./bar.less');
+require('./bar.scss');
 
 document.addEventListener('DOMContentLoaded', function () {
     var i18n = {};
