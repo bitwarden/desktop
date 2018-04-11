@@ -176,6 +176,7 @@ export default class MainBackground {
         this.analytics.ga('send', 'pageview', '/background.html');
         this.containerService.attachToWindow(window);
 
+        await (this.i18nService as I18nService).init();
         await this.runtimeBackground.init();
         await this.tabsBackground.init();
         await this.commandsBackground.init();
