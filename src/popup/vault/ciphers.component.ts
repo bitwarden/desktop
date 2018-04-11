@@ -174,6 +174,10 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     loadMore() {
+        if (this.ciphers.length <= PageSize) {
+            return;
+        }
+
         const pagedLength = this.pagedCiphers.length;
         if (this.ciphers.length > pagedLength) {
             this.pagedCiphers = this.pagedCiphers.concat(this.ciphers.slice(pagedLength, pagedLength + PageSize));
@@ -182,11 +186,15 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     isSearching() {
-        const searching = this.searchText != null && this.searchText.length > 1;
+        return this.searchText != null && this.searchText.length > 1;
+    }
+
+    isPaging() {
+        const searching = this.isSearching();
         if (searching && this.didScroll) {
             this.resetPaging();
         }
-        return searching;
+        return !searching && this.ciphers.length > PageSize;
     }
 
     async resetPaging() {

@@ -17,7 +17,7 @@
     </div>
 </header>
 <content>
-    <ng-container *ngIf="(isSearching() ? (ciphers | searchCiphers: searchText) : pagedCiphers) as filteredCiphers">
+    <ng-container *ngIf="(!isPaging() ? (ciphers | searchCiphers: searchText) : pagedCiphers) as filteredCiphers">
         <div class="no-items" *ngIf="!filteredCiphers.length">
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
             <ng-container *ngIf="loaded">
@@ -29,7 +29,7 @@
         </div>
         <div class="box list only-list" *ngIf="filteredCiphers.length > 0"
              infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollContainer]="'content'" [fromRoot]="true"
-             [infiniteScrollDisabled]="isSearching()" (scrolled)="loadMore()">
+             [infiniteScrollDisabled]="!isPaging()" (scrolled)="loadMore()">
             <div class="box-header">
                 {{groupingTitle}}
                 <span class="flex-right">{{isSearching() ? filteredCiphers.length : ciphers.length}}</span>
