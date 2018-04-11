@@ -1,11 +1,14 @@
 ﻿<!DOCTYPE html>
-<html ng-csp class="__BROWSER__">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bitwarden</title>
+    <base href="">
 </head>
-<body ng-controller="mainController as main" class="{{main.animation}}" ng-class="{sm: main.smBody, xs: main.xsBody }">
-    <div ui-view class="main-view"></div>
+<body>
+    <app-root>
+        <div id="loading"><i class="fa fa-spinner fa-spin fa-3x"></i></div>
+    </app-root>
 </body>
 </html>

@@ -33,7 +33,7 @@ By default the extension is targeting the production API. If you are running the
 
 ```
 npm install
-npm run dev:watch
+npm run build:watch
 ```
 
 You can now load the extension into your browser through the browser's extension tools page:

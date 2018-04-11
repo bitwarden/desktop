@@ -17,8 +17,7 @@ const paths = {
     coverage: './coverage/',
     npmDir: './node_modules/',
     popupDir: './src/popup/',
-    cssDir: './src/popup/css/',
-    cssDir2: './src/css/'
+    cssDir: './src/css/'
 };
 
 const filters = {
@@ -180,9 +179,7 @@ function safariZip(buildPath) {
     });
 }
 
-gulp.task('build', ['lint', 'webfonts']);
-
-gulp.task('build2', ['webfonts2']);
+gulp.task('build', ['webfonts']);
 
 gulp.task('webfonts', () => {
     return gulp.src('./webfonts.list')
@@ -191,15 +188,6 @@ gulp.task('webfonts', () => {
             cssFilename: 'webfonts.css'
         }))
         .pipe(gulp.dest(paths.cssDir));
-});
-
-gulp.task('webfonts2', () => {
-    return gulp.src('./webfonts.list')
-        .pipe(googleWebFonts({
-            fontsDir: 'webfonts',
-            cssFilename: 'webfonts.css'
-        }))
-        .pipe(gulp.dest(paths.cssDir2));
 });
 
 gulp.task('ci', ['ci:coverage']);
@@ -219,16 +207,3 @@ function copy(source, dest) {
             .on('end', resolve);
     });
 }
-
-// LEGACY CODE!
-
-gulp.task('lint', () => {
-    return gulp.src([
-        paths.popupDir + '**/*.js',
-        './src/notification/**/*.js',
-        './src/scripts/**/*.js'
-        //'./src/content/**/*.js'
-    ]).pipe(jshint({
-        esversion: 6
-    })).pipe(jshint.reporter('default'));
-});

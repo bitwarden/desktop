@@ -21,7 +21,7 @@ const extractCss = new ExtractTextPlugin({
 
 const config = {
     entry: {
-        'popup/main': './src/popup2/main.ts',
+        'popup/main': './src/popup/main.ts',
         'background': './src/background.ts',
         'content/autofill': './src/content/autofill.js',
         'content/autofiller': './src/content/autofiller.js',
@@ -40,7 +40,7 @@ const config = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'build2'),
+        path: path.resolve(__dirname, 'build'),
     },
     module: {
         rules: [
@@ -99,11 +99,11 @@ const config = {
     },
     plugins: [
         new CleanWebpackPlugin([
-            path.resolve(__dirname, 'build2/*'),
+            path.resolve(__dirname, 'build/*'),
         ]),
         new AngularCompilerPlugin({
             tsConfigPath: 'tsconfig.json',
-            entryModule: 'src/popup2/app.module#AppModule',
+            entryModule: 'src/popup/app.module#AppModule',
             sourceMap: true,
         }),
         // ref: https://github.com/angular/angular/issues/20357
@@ -122,7 +122,7 @@ const config = {
             minChunks: isVendorModule,
         }),
         new HtmlWebpackPlugin({
-            template: './src/popup2/index.html',
+            template: './src/popup/index.html',
             filename: 'popup/index.html',
             chunks: ['popup/vendor', 'popup/main'],
         }),

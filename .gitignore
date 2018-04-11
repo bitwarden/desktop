@@ -3,6 +3,7 @@
 .DS_Store
 node_modules
 npm-debug.log
+vwd.webinfo
 css/
 dist/
 webfonts/
@@ -10,6 +11,5 @@ webfonts/
 *.pem
 *.zip
 build/
-build2/
 build.safariextension/
 coverage/
