@@ -1,4 +1,4 @@
-﻿@import "variables.scss";
+@import "variables.scss";
 
 * {
     box-sizing: border-box;
@@ -140,6 +140,11 @@ header {
 
         &:focus {
             text-decoration: underline;
+        }
+
+        &[disabled] {
+            opacity: 0.65;
+            cursor: default !important;
         }
 
         i + span {
