@@ -1,4 +1,4 @@
-﻿@import "variables.scss";
+@import "variables.scss";
 
 .btn, #vault .footer button, .modal-footer button {
     background-color: $button-backgound-color;
@@ -43,7 +43,7 @@
 
     &[disabled] {
         opacity: 0.65;
-        cursor: default;
+        cursor: default !important;
     }
 
     &.block {
