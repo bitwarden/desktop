@@ -13,11 +13,12 @@
                             </div>
                             <small class="row-sub-label">{{a.sizeName}}</small>
                             <div class="action-buttons no-pad">
-                                <a class="row-btn" href="#" appStopClick appBlurClick title="{{'delete' | i18n}}"
-                                   (click)="delete(a)" #deleteBtn [appApiAction]="deletePromises[a.id]">
+                                <button class="row-btn btn" type="button" appStopClick appBlurClick
+                                        title="{{'delete' | i18n}}" (click)="delete(a)" #deleteBtn
+                                        [appApiAction]="deletePromises[a.id]" [disabled]="deleteBtn.loading">
                                     <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                                     <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
