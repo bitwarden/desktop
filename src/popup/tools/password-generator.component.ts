@@ -21,8 +21,6 @@ import {
     templateUrl: 'password-generator.component.html',
 })
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
-    closeText: string;
-
     private cipherState: CipherView;
 
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,
@@ -36,7 +34,6 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
         await super.ngOnInit();
         this.cipherState = await this.stateService.get<CipherView>('addEditCipher');
         this.showSelect = this.cipherState != null;
-        this.closeText = this.showSelect ? this.i18nService.t('cancel') : this.i18nService.t('close');
     }
 
     select() {

@@ -28,7 +28,6 @@ import { TabsComponent } from './tabs.component';
 import { ExportComponent } from './tools/export.component';
 import { PasswordGeneratorComponent } from './tools/password-generator.component';
 import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
-import { ToolsComponent } from './tools/tools.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
@@ -96,7 +95,6 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         StopClickDirective,
         StopPropDirective,
         TabsComponent,
-        ToolsComponent,
         TwoFactorOptionsComponent,
         TwoFactorComponent,
         ViewComponent,

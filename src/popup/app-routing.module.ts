@@ -21,7 +21,6 @@ import { TabsComponent } from './tabs.component';
 import { ExportComponent } from './tools/export.component';
 import { PasswordGeneratorComponent } from './tools/password-generator.component';
 import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
-import { ToolsComponent } from './tools/tools.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
@@ -151,10 +150,10 @@ const routes: Routes = [
                 data: { state: 'tabs_vault' },
             },
             {
-                path: 'tools',
-                component: ToolsComponent,
+                path: 'generator',
+                component: PasswordGeneratorComponent,
                 canActivate: [AuthGuardService],
-                data: { state: 'tabs_tools' },
+                data: { state: 'tabs_generator' },
             },
             {
                 path: 'settings',

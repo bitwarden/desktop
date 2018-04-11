@@ -1,8 +1,9 @@
 <form (ngSubmit)="submit()">
     <header>
         <div class="left">
-            <button appBlurClick type="button" (click)="close()">
-                {{'close' | i18n}}
+            <button type="button" appBlurClick (click)="close()">
+                <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
+                <span>{{'back' | i18n}}</span>
             </button>
         </div>
         <div class="center">

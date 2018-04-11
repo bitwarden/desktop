@@ -117,14 +117,14 @@ export const routerTransition = trigger('routerTransition', [
     transition('tabs => add-cipher, ciphers => add-cipher', inSlideUp),
     transition('add-cipher => tabs, add-cipher => ciphers', outSlideDown),
 
-    transition('generator => generator-history', inSlideLeft),
-    transition('generator-history => generator', outSlideRight),
+    transition('generator => generator-history, tabs => generator-history', inSlideLeft),
+    transition('generator-history => generator, generator-history => tabs', outSlideRight),
 
-    transition('add-cipher => generator, edit-cipher => generator, tabs => generator', inSlideUp),
-    transition('generator => add-cipher, generator => edit-cipher, generator => tabs', outSlideDown),
+    transition('add-cipher => generator, edit-cipher => generator', inSlideUp),
+    transition('generator => add-cipher, generator => edit-cipher', outSlideDown),
 
-    transition('tabs => export', inSlideUp),
-    transition('export => tabs', outSlideDown),
+    transition('tabs => export', inSlideLeft),
+    transition('export => tabs', outSlideRight),
 
     transition('tabs => lock', inSlideDown),
     transition('lock => tabs', outSlideUp),

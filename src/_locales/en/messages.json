@@ -190,6 +190,10 @@
   "passGen": {
     "message": "Password Generator"
   },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
+  },
   "passGenInfo": {
     "message": "Automatically generate strong, unique passwords for your logins."
   },

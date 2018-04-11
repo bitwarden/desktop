@@ -11,7 +11,7 @@
                     *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo &&
                         selectedProviderType !== providerType.OrganizationDuo">
                 <span [hidden]="form.loading">{{'continue' | i18n}}</span>
-                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
+                <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!form.loading"></i>
             </button>
         </div>
     </header>
