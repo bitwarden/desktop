@@ -1,3 +1,5 @@
+import { Angulartics2 } from 'angulartics2';
+
 import { Location } from '@angular/common';
 import {
     ChangeDetectorRef,
@@ -10,6 +12,8 @@ import {
     ActivatedRoute,
     Router,
 } from '@angular/router';
+
+import { BrowserApi } from '../../browser/browserApi';
 
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
@@ -40,13 +44,16 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     showAdd = true;
     folderId: string = null;
     type: CipherType = null;
+    selectedTimeout: number;
+    preventSelected = false;
 
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private stateService: StateService,
         private popupUtils: PopupUtilsService, private i18nService: I18nService,
-        private folderService: FolderService, private collectionService: CollectionService) {
+        private folderService: FolderService, private collectionService: CollectionService,
+        private analytics: Angulartics2) {
         super(cipherService);
     }
 
@@ -127,8 +134,29 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     selectCipher(cipher: CipherView) {
-        super.selectCipher(cipher);
-        this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
+        this.selectedTimeout = window.setTimeout(() => {
+            if (!this.preventSelected) {
+                super.selectCipher(cipher);
+                this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
+            }
+            this.preventSelected = false;
+        }, 200);
+    }
+
+    async launchCipher(cipher: CipherView) {
+        if (cipher.type != CipherType.Login || !cipher.login.canLaunch) {
+            return;
+        }
+
+        if (this.selectedTimeout != null) {
+            window.clearTimeout(this.selectedTimeout);
+        }
+        this.preventSelected = true;
+        this.analytics.eventTrack.next({ action: 'Launched URI From Listing' });
+        BrowserApi.createNewTab(cipher.login.uri);
+        if (this.popupUtils.inPopup(window)) {
+            BrowserApi.closePopup(window);
+        }
     }
 
     addCipher() {

@@ -1,3 +1,5 @@
+import { Angulartics2 } from 'angulartics2';
+
 import {
     ChangeDetectorRef,
     Component,
@@ -9,6 +11,8 @@ import {
     ActivatedRoute,
     Router,
 } from '@angular/router';
+
+import { BrowserApi } from '../../browser/browserApi';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
@@ -46,13 +50,15 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     searchText: string;
     state: any;
     loadedTimeout: number;
+    selectedTimeout: number;
+    preventSelected = false;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute,
         private stateService: StateService, private popupUtils: PopupUtilsService,
-        private syncService: SyncService) {
+        private syncService: SyncService, private analytics: Angulartics2) {
         super(collectionService, folderService);
     }
 
@@ -85,7 +91,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
             if (!this.syncService.syncInProgress) {
                 this.load();
-                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+                window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             } else {
                 this.loadedTimeout = window.setTimeout(async () => {
                     if (!this.loaded) {
@@ -97,7 +103,12 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     ngOnDestroy() {
-        window.clearTimeout(this.loadedTimeout);
+        if (this.loadedTimeout != null) {
+            window.clearTimeout(this.loadedTimeout);
+        }
+        if (this.selectedTimeout != null) {
+            window.clearTimeout(this.selectedTimeout);
+        }
         this.saveState();
         this.broadcasterService.unsubscribe(ComponentId);
     }
@@ -177,7 +188,28 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async selectCipher(cipher: CipherView) {
-        this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
+        this.selectedTimeout = window.setTimeout(() => {
+            if (!this.preventSelected) {
+                this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
+            }
+            this.preventSelected = false;
+        }, 200);
+    }
+
+    async launchCipher(cipher: CipherView) {
+        if (cipher.type != CipherType.Login || !cipher.login.canLaunch) {
+            return;
+        }
+
+        if (this.selectedTimeout != null) {
+            window.clearTimeout(this.selectedTimeout);
+        }
+        this.preventSelected = true;
+        this.analytics.eventTrack.next({ action: 'Launched URI From Listing' });
+        BrowserApi.createNewTab(cipher.login.uri);
+        if (this.popupUtils.inPopup(window)) {
+            BrowserApi.closePopup(window);
+        }
     }
 
     async addCipher() {
