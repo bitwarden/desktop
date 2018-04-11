@@ -43,7 +43,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     searchText: string;
     canAutofill = false;
     inSidebar = false;
-    showPopout = true;
     disableSearch = false;
     loaded = false;
     loadedTimeout: number;
@@ -55,7 +54,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) {
         this.inSidebar = popupUtilsService.inSidebar(window);
-        this.showPopout = !this.inSidebar && !platformUtilsService.isSafari();
         this.disableSearch = platformUtilsService.isEdge();
     }
 

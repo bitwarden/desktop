@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {
+    Component,
+    Input,
+} from '@angular/core';
 
 import { Angulartics2 } from 'angulartics2';
 
@@ -13,8 +16,12 @@ import { PopupUtilsService } from '../services/popup-utils.service';
     templateUrl: 'pop-out.component.html',
 })
 export class PopOutComponent {
+    @Input() show = true;
+
     constructor(private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService,
-        private popupUtilsService: PopupUtilsService) { }
+        private popupUtilsService: PopupUtilsService) {
+        this.show = !this.platformUtilsService.isSafari();
+    }
 
     expand() {
         this.analytics.eventTrack.next({ action: 'Pop Out Window' });
