@@ -18,10 +18,6 @@ The Bitwarden desktop app is written using Electron and Angular. The application
 - [Node.js](https://nodejs.org/)
 - Windows users: To compile the native node modules used in the app you will need the Visual C++ toolset, available through the standard Visual Studio installer (recommended) or by installing [`windows-build-tools`](https://github.com/felixrieseberg/windows-build-tools) through `npm`. See more at [Compiling native Addon modules](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules).
 
-**API endpoint**
-
-By default the extension is targeting the production API. If you are running the [Core](https://github.com/bitwarden/core) API locally, you'll need to switch the extension to target your local instance. Open `jslib/src/services/api.service.ts` and set `this.baseUrl` and `this.identityBaseUrl` to your local API instance (ex. `http://localhost:5000`).
-
 **Run the app**
 
 ```bash
