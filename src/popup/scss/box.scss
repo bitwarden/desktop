@@ -1,4 +1,4 @@
-﻿@import "variables.scss";
+@import "variables.scss";
 
 .box {
     width: 100%;
@@ -38,10 +38,6 @@
                 height: 1px;
                 width: calc(100% - 10px);
                 border-bottom: 1px solid $box-border-color;
-            }
-
-            &:first-child, &:last-child {
-                border-radius: $border-radius;
             }
 
             &:last-child {
