@@ -22,6 +22,7 @@ import { ExportComponent } from './tools/export.component';
 import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
 import { PasswordGeneratorComponent } from './tools/password-generator.component';
 import { AddEditComponent } from './vault/add-edit.component';
+import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
@@ -108,6 +109,12 @@ const routes: Routes = [
         component: AddEditComponent,
         canActivate: [AuthGuardService],
         data: { state: 'edit-cipher' },
+    },
+    {
+        path: 'attachments',
+        component: AttachmentsComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'attachments' },
     },
     {
         path: 'generator',

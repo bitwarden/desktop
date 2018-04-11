@@ -27,10 +27,10 @@ import { TwoFactorComponent } from './accounts/two-factor.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TabsComponent } from './tabs.component';
 import { ExportComponent } from './tools/export.component';
-import { PasswordGeneratorComponent } from './tools/password-generator.component';
-// tslint:disable-next-line
 import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
+import { PasswordGeneratorComponent } from './tools/password-generator.component';
 import { AddEditComponent } from './vault/add-edit.component';
+import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
@@ -73,6 +73,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         AddEditComponent,
         ApiActionDirective,
         AppComponent,
+        AttachmentsComponent,
         AutofocusDirective,
         BlurClickDirective,
         BoxRowDirective,
