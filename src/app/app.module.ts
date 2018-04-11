@@ -26,6 +26,8 @@ import { SettingsComponent } from './accounts/settings.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
+import { IconComponent } from 'jslib/angular/components/icon.component';
+
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
 import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
@@ -42,7 +44,6 @@ import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
-import { IconComponent } from 'jslib/angular/components/icon.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
 import { VaultComponent } from './vault/vault.component';

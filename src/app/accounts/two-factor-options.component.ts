@@ -1,4 +1,4 @@
-import { Component, } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ToasterService } from 'angular2-toaster';
@@ -9,7 +9,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import {
-    TwoFactorOptionsComponent as BaseTwoFactorOptionsComponent
+    TwoFactorOptionsComponent as BaseTwoFactorOptionsComponent,
 } from 'jslib/angular/components/two-factor-options.component';
 
 @Component({

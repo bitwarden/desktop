@@ -10,7 +10,7 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import {
-    PasswordGeneratorComponent as BasePasswordGeneratorComponent
+    PasswordGeneratorComponent as BasePasswordGeneratorComponent,
 } from 'jslib/angular/components/password-generator.component';
 
 @Component({

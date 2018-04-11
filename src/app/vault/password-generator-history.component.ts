@@ -8,7 +8,7 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import {
-    PasswordGeneratorHistoryComponent as BasePasswordGeneratorHistoryComponent
+    PasswordGeneratorHistoryComponent as BasePasswordGeneratorHistoryComponent,
 } from 'jslib/angular/components/password-generator-history.component';
 
 @Component({
