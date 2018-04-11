@@ -7,6 +7,8 @@ import { LoginView } from 'jslib/models/view/loginView';
 import { ConstantsService } from 'jslib/services/constants.service';
 import { UtilsService } from 'jslib/services/utils.service';
 
+import { I18nService } from 'jslib/abstractions/i18n.service';
+
 import { Analytics } from 'jslib/misc';
 
 import {
@@ -30,7 +32,7 @@ export default class RuntimeBackground {
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
-        private storageService: StorageService, private i18nService: any, private analytics: Analytics) {
+        private storageService: StorageService, private i18nService: I18nService, private analytics: Analytics) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
 
@@ -357,13 +359,13 @@ export default class RuntimeBackground {
                 ConstantsService.enableAutoFillOnPageLoadKey);
         } else if (responseCommand === 'notificationBarFrameDataResponse') {
             responseData.i18n = {
-                appName: this.i18nService.appName,
-                close: this.i18nService.close,
-                yes: this.i18nService.yes,
-                never: this.i18nService.never,
-                notificationAddSave: this.i18nService.notificationAddSave,
-                notificationNeverSave: this.i18nService.notificationNeverSave,
-                notificationAddDesc: this.i18nService.notificationAddDesc,
+                appName: this.i18nService.t('appName'),
+                close: this.i18nService.t('close'),
+                yes: this.i18nService.t('yes'),
+                never: this.i18nService.t('never'),
+                notificationAddSave: this.i18nService.t('notificationAddSave'),
+                notificationNeverSave: this.i18nService.t('notificationNeverSave'),
+                notificationAddDesc: this.i18nService.t('notificationAddDesc'),
             };
         }
 

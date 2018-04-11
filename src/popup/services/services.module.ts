@@ -57,7 +57,7 @@ export const messagingService = new BrowserMessagingService();
 export const authService = new AuthService(getBgService<CryptoService>('cryptoService')(),
     getBgService<ApiService>('apiService')(), getBgService<UserService>('userService')(),
     getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),
-    getBgService<I18nService>('i18n2Service')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
+    getBgService<I18nService>('i18nService')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
     getBgService<ConstantsService>('constantsService')(), messagingService);
 
 export function initFactory(i18nService: I18nService, storageService: StorageService,
@@ -102,7 +102,7 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: EnvironmentService, useFactory: getBgService<EnvironmentService>('environmentService'), deps: [] },
         { provide: TotpService, useFactory: getBgService<TotpService>('totpService'), deps: [] },
         { provide: TokenService, useFactory: getBgService<TokenService>('tokenService'), deps: [] },
-        { provide: I18nService, useFactory: getBgService<I18nService>('i18n2Service'), deps: [] },
+        { provide: I18nService, useFactory: getBgService<I18nService>('i18nService'), deps: [] },
         { provide: UtilsService, useFactory: getBgService<UtilsService>('utilsService'), deps: [] },
         { provide: CryptoService, useFactory: getBgService<CryptoService>('cryptoService'), deps: [] },
         {

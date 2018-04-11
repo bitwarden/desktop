@@ -1,6 +1,6 @@
 export class BrowserApi {
     static isSafariApi: boolean = (typeof safari !== 'undefined') &&
-    navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
+        navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
 
     static async getTabFromCurrentWindowId(): Promise<any> {
@@ -263,5 +263,13 @@ export class BrowserApi {
 
     static gaFilter() {
         return BrowserApi.isSafariApi && safari.application.activeBrowserWindow.activeTab.private;
+    }
+
+    static getUILanguage(win: Window) {
+        if (BrowserApi.isSafariApi) {
+            return win.navigator.language;
+        } else {
+            return chrome.i18n.getUILanguage();
+        }
     }
 }

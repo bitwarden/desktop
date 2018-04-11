@@ -60,8 +60,7 @@ import AutofillService from '../services/autofill.service';
 import BrowserMessagingService from '../services/browserMessaging.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 import BrowserStorageService from '../services/browserStorage.service';
-import i18nService from '../services/i18n.service';
-import I18n2Service from '../services/i18n2.service';
+import I18nService from '../services/i18n.service';
 
 import { AutofillService as AutofillServiceAbstraction } from '../services/abstractions/autofill.service';
 
@@ -69,8 +68,7 @@ export default class MainBackground {
     messagingService: MessagingServiceAbstraction;
     storageService: StorageServiceAbstraction;
     secureStorageService: StorageServiceAbstraction;
-    i18nService: any;
-    i18n2Service: I18nServiceAbstraction;
+    i18nService: I18nServiceAbstraction;
     platformUtilsService: PlatformUtilsServiceAbstraction;
     utilsService: UtilsServiceAbstraction;
     constantsService: ConstantsService;
@@ -117,12 +115,10 @@ export default class MainBackground {
         this.utilsService = new UtilsService();
         this.messagingService = new BrowserMessagingService();
         this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService);
-        const delayi18nLoad = this.platformUtilsService.isEdge() || this.platformUtilsService.isSafari() ? 1000 : 0;
         this.storageService = new BrowserStorageService(this.platformUtilsService, false);
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
-        this.i18nService = i18nService(this.platformUtilsService);
-        this.i18n2Service = new I18n2Service(window.navigator.language, this.i18nService);
-        this.constantsService = new ConstantsService(this.i18nService, delayi18nLoad);
+        this.i18nService = new I18nService(BrowserApi.getUILanguage(window),
+            BrowserApi.isSafariApi ? './_locales/' : null);
         this.cryptoService = new CryptoService(this.storageService, this.secureStorageService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
@@ -132,11 +128,11 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService, this.i18n2Service, this.platformUtilsService, this.utilsService);
+            this.apiService, this.storageService, this.i18nService, this.platformUtilsService, this.utilsService);
         this.folderService = new FolderService(this.cryptoService, this.userService,
-            () => this.i18nService.noneFolder, this.apiService, this.storageService, this.i18n2Service);
+            () => this.i18nService.t('noneFolder'), this.apiService, this.storageService, this.i18nService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
-            this.i18n2Service);
+            this.i18nService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
             this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService, async () => {
                 await this.setIcon();
@@ -342,7 +338,7 @@ export default class MainBackground {
             id: 'autofill',
             parentId: 'root',
             contexts: ['all'],
-            title: this.i18nService.autoFill,
+            title: this.i18nService.t('autoFill'),
         });
 
         // Firefox & Edge do not support writing to the clipboard from background
@@ -352,7 +348,7 @@ export default class MainBackground {
                 id: 'copy-username',
                 parentId: 'root',
                 contexts: ['all'],
-                title: this.i18nService.copyUsername,
+                title: this.i18nService.t('copyUsername'),
             });
 
             await this.contextMenusCreate({
@@ -360,7 +356,7 @@ export default class MainBackground {
                 id: 'copy-password',
                 parentId: 'root',
                 contexts: ['all'],
-                title: this.i18nService.copyPassword,
+                title: this.i18nService.t('copyPassword'),
             });
 
             await this.contextMenusCreate({
@@ -373,7 +369,7 @@ export default class MainBackground {
                 id: 'generate-password',
                 parentId: 'root',
                 contexts: ['all'],
-                title: this.i18nService.generatePasswordCopied,
+                title: this.i18nService.t('generatePasswordCopied'),
             });
         }
 
@@ -411,7 +407,7 @@ export default class MainBackground {
                 theText = '9+';
             } else {
                 if (contextMenuEnabled) {
-                    await this.loadNoLoginsContextMenuOptions(this.i18nService.noMatchingLogins);
+                    await this.loadNoLoginsContextMenuOptions(this.i18nService.t('noMatchingLogins'));
                 }
             }
 
@@ -424,7 +420,7 @@ export default class MainBackground {
 
     private async loadMenuAndUpdateBadgeForLockedState(contextMenuEnabled: boolean) {
         if (contextMenuEnabled) {
-            await this.loadNoLoginsContextMenuOptions(this.i18nService.vaultLocked);
+            await this.loadNoLoginsContextMenuOptions(this.i18nService.t('vaultLocked'));
         }
 
         const tabs = await BrowserApi.getActiveTabs();
