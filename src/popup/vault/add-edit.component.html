@@ -304,12 +304,12 @@
             <div class="box-content single-line">
                 <a class="box-content-row" href="#" appStopClick appBlurClick
                    (click)="delete()" [appApiAction]="deletePromise" #deleteBtn>
-                    <div class="row-main">
+                    <div class="row-main text-danger">
                         <div class="icon text-danger">
                             <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                             <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
                         </div>
-                        <span class="text text-danger">{{'deleteItem' | i18n}}</span>
+                        <span>{{'deleteItem' | i18n}}</span>
                     </div>
                 </a>
             </div>

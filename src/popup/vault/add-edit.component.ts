@@ -102,7 +102,8 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
     }
 
     async delete() {
-        await super.delete();
-        this.router.navigate(['/tabs/vault']);
+        if (await super.delete()) {
+            this.router.navigate(['/tabs/vault']);
+        }
     }
 }
