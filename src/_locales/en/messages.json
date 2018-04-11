@@ -359,8 +359,8 @@
   "security": {
     "message": "Security"
   },
-  "errorsOccurred": {
-    "message": "Errors have occurred"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Email address is required."
