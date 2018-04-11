@@ -153,6 +153,7 @@ const config = {
             { from: './src/edge', to: 'edge' },
             { from: './src/safari', to: 'safari' },
             { from: './src/images', to: 'images' },
+            { from: './src/popup/images', to: 'popup/images' },
             { from: './src/content/autofill.css', to: 'content' },
         ]),
         new webpack.SourceMapDevToolPlugin({

@@ -32,6 +32,7 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
 import { PopupUtilsService } from '../services/popup-utils.service';
 
 const ComponentId = 'CiphersComponent';
+const PageSize = 100;
 
 @Component({
     selector: 'app-vault-ciphers',
@@ -46,6 +47,9 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     type: CipherType = null;
     selectedTimeout: number;
     preventSelected = false;
+    pagedCiphers: CipherView[] = [];
+
+    private didScroll = false;
 
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
@@ -104,6 +108,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 await super.load();
             }
 
+            this.loadMore();
             this.state = (await this.stateService.get<any>(ComponentId)) || {};
             if (this.state.searchText) {
                 this.searchText = this.state.searchText;
@@ -166,6 +171,27 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
 
     back() {
         this.location.back();
+    }
+
+    loadMore() {
+        const pagedLength = this.pagedCiphers.length;
+        if (this.ciphers.length > pagedLength) {
+            this.pagedCiphers = this.pagedCiphers.concat(this.ciphers.slice(pagedLength, pagedLength + PageSize));
+        }
+        this.didScroll = this.pagedCiphers.length > PageSize;
+    }
+
+    isSearching() {
+        const searching = this.searchText != null && this.searchText.length > 1;
+        if (searching && this.didScroll) {
+            this.resetPaging();
+        }
+        return searching;
+    }
+
+    async resetPaging() {
+        this.pagedCiphers = [];
+        this.loadMore();
     }
 
     private async saveState() {

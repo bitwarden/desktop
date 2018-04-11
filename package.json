@@ -102,6 +102,7 @@
     "angulartics2": "5.0.1",
     "core-js": "2.4.1",
     "lunr": "2.1.6",
+    "ngx-infinite-scroll": "0.8.4",
     "node-forge": "0.7.1",
     "papaparse": "4.3.5",
     "rxjs": "5.5.6",

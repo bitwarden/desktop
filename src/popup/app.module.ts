@@ -4,6 +4,7 @@ import 'zone.js/dist/zone';
 import { ToasterModule } from 'angular2-toaster';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services/services.module';
@@ -65,6 +66,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
             },
         }),
         ToasterModule,
+        InfiniteScrollModule,
     ],
     declarations: [
         ActionButtonsComponent,
