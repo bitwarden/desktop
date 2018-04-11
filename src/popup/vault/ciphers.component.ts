@@ -109,7 +109,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 switch (message.command) {
                     case 'syncCompleted':
                         window.setTimeout(() => {
-                            this.load();
+                            this.refresh();
                         }, 500);
                         break;
                     default:

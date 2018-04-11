@@ -21,6 +21,7 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 
@@ -46,25 +47,26 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     showPopout = true;
     disableSearch = false;
     loaded = false;
+    loadedTimeout: number;
 
     constructor(private platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
         private popupUtilsService: PopupUtilsService, private autofillService: AutofillService,
         private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef) {
+        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) {
         this.inSidebar = popupUtilsService.inSidebar(window);
         this.showPopout = !this.inSidebar && !platformUtilsService.isSafari();
         this.disableSearch = platformUtilsService.isEdge();
     }
 
-    ngOnInit() {
+    async ngOnInit() {
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'syncCompleted':
                         if (this.loaded) {
-                            setTimeout(() => {
+                            window.setTimeout(() => {
                                 this.load();
                             }, 500);
                         }
@@ -78,6 +80,12 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                             });
                         }
                         break;
+                    case 'syncCompleted':
+                        console.log('sync complete : ' + message.successfully);
+                        if (message.successfully) {
+                            await this.load();
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -86,10 +94,19 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             })
         });
 
-        this.load();
+        if (!this.syncService.syncInProgress) {
+            await this.load();
+        } else {
+            this.loadedTimeout = window.setTimeout(async () => {
+                if (!this.loaded) {
+                    await this.load();
+                }
+            }, 10000);
+        }
     }
 
     ngOnDestroy() {
+        window.clearTimeout(this.loadedTimeout);
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 

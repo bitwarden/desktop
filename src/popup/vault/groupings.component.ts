@@ -20,6 +20,7 @@ import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { StateService } from 'jslib/abstractions/state.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
@@ -44,12 +45,14 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     showNoFolderCiphers = false;
     searchText: string;
     state: any;
+    loadedTimeout: number;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute,
-        private stateService: StateService, private popupUtils: PopupUtilsService) {
+        private stateService: StateService, private popupUtils: PopupUtilsService,
+        private syncService: SyncService) {
         super(collectionService, folderService);
     }
 
@@ -80,12 +83,21 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
                 this.searchText = params.searchText;
             }
 
-            this.load();
-            window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+            if (!this.syncService.syncInProgress) {
+                this.load();
+                 window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
+            } else {
+                this.loadedTimeout = window.setTimeout(async () => {
+                    if (!this.loaded) {
+                        await this.load();
+                    }
+                }, 10000);
+            }
         });
     }
 
     ngOnDestroy() {
+        window.clearTimeout(this.loadedTimeout);
         this.saveState();
         this.broadcasterService.unsubscribe(ComponentId);
     }
