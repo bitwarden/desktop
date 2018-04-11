@@ -26,7 +26,6 @@ import { SyncService } from 'jslib/abstractions/sync.service';
 import { AutofillService } from '../../services/abstractions/autofill.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
-import { setTimeout } from 'timers';
 
 const BroadcasterSubscriptionId = 'CurrentTabComponent';
 
@@ -81,7 +80,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                         }
                         break;
                     case 'syncCompleted':
-                        console.log('sync complete : ' + message.successfully);
                         if (message.successfully) {
                             await this.load();
                         }
@@ -91,7 +89,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 }
 
                 this.changeDetectorRef.detectChanges();
-            })
+            });
         });
 
         if (!this.syncService.syncInProgress) {

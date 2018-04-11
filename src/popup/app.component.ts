@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
         animation: 'slideUp',
         limit: 2,
         positionClass: 'toast-bottom-full-width',
-        newestOnTop: false
+        newestOnTop: false,
     });
 
     private lastActivity: number = null;
@@ -110,7 +110,7 @@ export class AppComponent implements OnInit {
 
         BrowserApi.messageListener((window as any).bitwardenPopupMainMessageListener);
 
-        this.router.events.subscribe(event => {
+        this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 const url = event.urlAfterRedirects || event.url || '';
                 if (url.startsWith('/tabs/') && this.previousUrl.startsWith('/tabs/')) {

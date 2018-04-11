@@ -8,8 +8,8 @@ require('../scripts/duo.js');
 
 import { AppModule } from './app.module';
 
-//if (!isDev()) {
+// if (!isDev()) {
 //    enableProdMode();
-//}
+// }
 
 platformBrowserDynamic().bootstrapModule(AppModule);

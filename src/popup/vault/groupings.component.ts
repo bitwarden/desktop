@@ -16,12 +16,12 @@ import { BrowserApi } from '../../browser/browserApi';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
-import { CollectionView } from 'jslib/models/view/collectionView';
 import { CipherView } from 'jslib/models/view/cipherView';
+import { CollectionView } from 'jslib/models/view/collectionView';
 import { FolderView } from 'jslib/models/view/folderView';
 
-import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
@@ -78,7 +78,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
                 }
 
                 this.changeDetectorRef.detectChanges();
-            })
+            });
         });
 
         this.route.queryParams.subscribe(async (params) => {
@@ -197,7 +197,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async launchCipher(cipher: CipherView) {
-        if (cipher.type != CipherType.Login || !cipher.login.canLaunch) {
+        if (cipher.type !== CipherType.Login || !cipher.login.canLaunch) {
             return;
         }
 

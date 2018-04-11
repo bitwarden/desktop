@@ -13,7 +13,7 @@ import { StateService } from 'jslib/abstractions/state.service';
 import { CipherView } from 'jslib/models/view/cipherView';
 
 import {
-    PasswordGeneratorComponent as BasePasswordGeneratorComponent
+    PasswordGeneratorComponent as BasePasswordGeneratorComponent,
 } from 'jslib/angular/components/password-generator.component';
 
 @Component({

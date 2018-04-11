@@ -15,9 +15,9 @@ import {
 
 import { BrowserApi } from '../../browser/browserApi';
 
-import { FolderService } from 'jslib/abstractions/folder.service';
-import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CollectionService } from 'jslib/abstractions/collection.service';
+import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { StateService } from 'jslib/abstractions/state.service';
 
@@ -124,7 +124,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
                 }
 
                 this.changeDetectorRef.detectChanges();
-            })
+            });
         });
     }
 
@@ -144,7 +144,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     async launchCipher(cipher: CipherView) {
-        if (cipher.type != CipherType.Login || !cipher.login.canLaunch) {
+        if (cipher.type !== CipherType.Login || !cipher.login.canLaunch) {
             return;
         }
 

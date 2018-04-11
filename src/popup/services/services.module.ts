@@ -15,8 +15,8 @@ import { BrowserApi } from '../../browser/browserApi';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AppIdService } from 'jslib/abstractions/appId.service';
-import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.service';
 import { AuditService } from 'jslib/abstractions/audit.service';
+import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -108,12 +108,12 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         {
             provide: PlatformUtilsService,
             useFactory: getBgService<PlatformUtilsService>('platformUtilsService'),
-            deps: []
+            deps: [],
         },
         {
             provide: PasswordGenerationService,
             useFactory: getBgService<PasswordGenerationService>('passwordGenerationService'),
-            deps: []
+            deps: [],
         },
         { provide: ApiService, useFactory: getBgService<ApiService>('apiService'), deps: [] },
         { provide: SyncService, useFactory: getBgService<SyncService>('syncService'), deps: [] },

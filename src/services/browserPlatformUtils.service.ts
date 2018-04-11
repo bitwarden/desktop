@@ -4,8 +4,8 @@ import { BrowserApi } from '../browser/browserApi';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { UtilsService } from 'jslib/services/utils.service';
 

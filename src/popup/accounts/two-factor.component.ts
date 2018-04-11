@@ -60,7 +60,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
                 }
 
                 this.changeDetectorRef.detectChanges();
-            })
+            });
         });
 
         this.showNewWindowMessage = this.platformUtilsService.isSafari();
@@ -70,8 +70,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             return;
         }
 
-        var isDuo = this.selectedProviderType == TwoFactorProviderType.Duo ||
-            this.selectedProviderType == TwoFactorProviderType.OrganizationDuo;
+        const isDuo = this.selectedProviderType === TwoFactorProviderType.Duo ||
+            this.selectedProviderType === TwoFactorProviderType.OrganizationDuo;
         if (!this.platformUtilsService.isSafari() || !isDuo) {
             return;
         }
@@ -86,7 +86,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
                     type: 'duo',
                     host: params.Host,
                     signature: params.Signature,
-                }
+                },
             });
         }, 500);
     }
@@ -106,7 +106,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
             window.setTimeout(() => {
                 BrowserApi.tabSendMessage(sendSuccessToTab, {
                     command: '2faPageData',
-                    data: { type: 'success' }
+                    data: { type: 'success' },
                 });
             }, 1000);
         }

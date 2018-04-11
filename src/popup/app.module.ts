@@ -27,6 +27,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { TabsComponent } from './tabs.component';
 import { ExportComponent } from './tools/export.component';
 import { PasswordGeneratorComponent } from './tools/password-generator.component';
+// tslint:disable-next-line
 import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { CiphersComponent } from './vault/ciphers.component';

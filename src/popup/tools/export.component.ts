@@ -27,12 +27,12 @@ export class ExportComponent extends BaseExportComponent {
             platformUtilsService, window);
     }
 
+    close() {
+        this.location.back();
+    }
+
     protected saved() {
         super.saved();
         this.close();
-    }
-
-    close() {
-        this.location.back();
     }
 }

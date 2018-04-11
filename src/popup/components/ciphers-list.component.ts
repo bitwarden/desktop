@@ -33,8 +33,6 @@ export class CiphersListComponent {
 
     cipherType = CipherType;
 
-    constructor() { }
-
     selectCipher(c: CipherView) {
         this.onSelected.emit(c);
     }
