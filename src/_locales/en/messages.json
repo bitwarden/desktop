@@ -160,24 +160,6 @@
   "helpFeedback": {
     "message": "Help & Feedback"
   },
-  "emailUs": {
-    "message": "Email Us"
-  },
-  "emailUsDirectly": {
-    "message": "Email us directly to get help or leave feedback."
-  },
-  "visitOurWebsite": {
-    "message": "Visit Our Website"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Visit our website to get help, news, email us, and/or learn more about how to use Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "File a Bug Report"
-  },
-  "gitHubIssue": {
-    "message": "Open an issue at our GitHub repository."
-  },
   "sync": {
     "message": "Sync"
   },
@@ -1074,9 +1056,6 @@
   "organization": {
     "message": "Organization",
     "description": "An entity of multiple related people (ex. a team or business organization)."
-  },
-  "loading": {
-    "message": "Loading..."
   },
   "types": {
     "message": "Types"

@@ -59,7 +59,7 @@
         </ng-container>
         <ng-container *ngIf="selectedProviderType === providerType.U2f">
             <div class="content text-center">
-                <span *ngIf="!u2fReady">{{'loading' | i18n}}</span>
+                <span *ngIf="!u2fReady"><i class="fa fa-spinner fa-spin"></i></span>
                 <div *ngIf="u2fReady">
                     <p>{{'insertU2f' | i18n}}</p>
                     <img src="../images/u2fkey.jpg" alt="" class="img-rounded img-responsive" />
