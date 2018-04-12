@@ -1,4 +1,5 @@
 import { Angulartics2 } from 'angulartics2';
+import swal from 'sweetalert';
 
 import {
     Component,
@@ -125,6 +126,27 @@ export class SettingsComponent implements OnInit {
     import() {
         this.analytics.eventTrack.next({ action: 'Clicked Import Items' });
         BrowserApi.createNewTab('https://help.bitwarden.com/article/import-data/');
+    }
+
+    help() {
+        this.analytics.eventTrack.next({ action: 'Clicked Help and Feedback' });
+        BrowserApi.createNewTab('https://help.bitwarden.com/');
+    }
+
+    about() {
+        this.analytics.eventTrack.next({ action: 'Clicked About' });
+
+        const versionText = document.createTextNode(
+            this.i18nService.t('version') + ': ' + BrowserApi.getApplicationVersion());
+        const div = document.createElement('div');
+        div.innerHTML = `<p><i class="fa fa-shield fa-3x"></i></p>
+            <p><strong>Bitwarden</strong><br>&copy; 8bit Solutions LLC 2015-` + (new Date()).getFullYear() + `</p>`;
+        div.appendChild(versionText);
+
+        swal({
+            content: { element: div },
+            buttons: [this.i18nService.t('close'), false],
+        });
     }
 
     rate() {

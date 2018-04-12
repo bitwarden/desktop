@@ -11,11 +11,11 @@
     <div class="box">
         <div class="box-header">{{'manage' | i18n}}</div>
         <div class="box-content">
-            <a class="box-content-row box-content-row-flex text-default" href="#">
+            <a class="box-content-row box-content-row-flex text-default" routerLink="/folders">
                 <div class="row-main">{{'folders' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#">
+            <a class="box-content-row box-content-row-flex text-default" routerLink="/sync">
                 <div class="row-main">{{'sync' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
@@ -45,7 +45,7 @@
     <div class="box">
         <div class="box-header">{{'account' | i18n}}</div>
         <div class="box-content">
-            <a class="box-content-row box-content-row-flex text-default" href="#">
+            <a class="box-content-row box-content-row-flex text-default"  routerLink="/premium">
                 <div class="row-main">{{'premiumMembership' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
@@ -73,7 +73,8 @@
                 <div class="row-main">{{'exportVault' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#">
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="share()">
                 <div class="row-main">{{'shareVault' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
@@ -82,15 +83,17 @@
     <div class="box">
         <div class="box-header">{{'other' | i18n}}</div>
         <div class="box-content">
-            <a class="box-content-row box-content-row-flex text-default" href="#">
+            <a class="box-content-row box-content-row-flex text-default"  routerLink="/options">
                 <div class="row-main">{{'options' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#">
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="about()">
                 <div class="row-main">{{'about' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
-            <a class="box-content-row box-content-row-flex text-default" href="#">
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="help()">
                 <div class="row-main">{{'helpFeedback' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
