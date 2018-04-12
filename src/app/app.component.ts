@@ -84,16 +84,18 @@ export class AppComponent implements OnInit {
         private messagingService: MessagingService) { }
 
     ngOnInit() {
-        setTimeout(async () => {
-            await this.updateAppMenu();
-        }, 1000);
+        this.ngZone.runOutsideAngular(() => {
+            setTimeout(async () => {
+                await this.updateAppMenu();
+            }, 1000);
 
-        window.onmousemove = () => this.recordActivity();
-        window.onmousedown = () => this.recordActivity();
-        window.ontouchstart = () => this.recordActivity();
-        window.onclick = () => this.recordActivity();
-        window.onscroll = () => this.recordActivity();
-        window.onkeypress = () => this.recordActivity();
+            window.onmousemove = () => this.recordActivity();
+            window.onmousedown = () => this.recordActivity();
+            window.ontouchstart = () => this.recordActivity();
+            window.onclick = () => this.recordActivity();
+            window.onscroll = () => this.recordActivity();
+            window.onkeypress = () => this.recordActivity();
+        });
 
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(async () => {
