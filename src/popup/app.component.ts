@@ -84,9 +84,12 @@ export class AppComponent implements OnInit {
                                 this.i18nService.t('loginExpired'));
                         }
                         this.router.navigate(['home']);
+                        this.stateService.purge();
                     });
                     this.changeDetectorRef.detectChanges();
                 });
+            } else if (msg.command === 'locked') {
+                this.stateService.purge();
             } else if (msg.command === 'showDialog') {
                 const buttons = [msg.confirmText == null ? this.i18nService.t('ok') : msg.confirmText];
                 if (msg.cancelText != null) {

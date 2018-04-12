@@ -33,6 +33,7 @@ import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/comp
 import { PopupUtilsService } from '../services/popup-utils.service';
 
 const ComponentId = 'GroupingsComponent';
+const ScopeStateId = ComponentId + 'Scope';
 
 @Component({
     selector: 'app-vault-groupings',
@@ -42,16 +43,16 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     ciphers: CipherView[];
     favoriteCiphers: CipherView[];
     noFolderCiphers: CipherView[];
-    folderCount: number;
     folderCounts = new Map<string, number>();
     collectionCounts = new Map<string, number>();
     typeCounts = new Map<CipherType, number>();
-    showNoFolderCiphers = false;
     searchText: string;
     state: any;
-    loadedTimeout: number;
-    selectedTimeout: number;
-    preventSelected = false;
+    scopeState: any;
+
+    private loadedTimeout: number;
+    private selectedTimeout: number;
+    private preventSelected = false;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
@@ -62,7 +63,16 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         super(collectionService, folderService);
     }
 
-    ngOnInit() {
+    get showNoFolderCiphers(): boolean {
+        return this.noFolderCiphers != null && this.noFolderCiphers.length < 100 &&
+            this.collections.length === 0;
+    }
+
+    get folderCount(): number {
+        return this.folders.length - (this.showNoFolderCiphers ? 0 : 1);
+    }
+
+    async ngOnInit() {
         this.stateService.remove('CiphersComponent');
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {
@@ -81,6 +91,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             });
         });
 
+        const restoredScopeState = await this.restoreState();
         this.route.queryParams.subscribe(async (params) => {
             this.state = (await this.stateService.get<any>(ComponentId)) || {};
             if (this.state.searchText) {
@@ -91,13 +102,16 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
             if (!this.syncService.syncInProgress) {
                 this.load();
-                window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             } else {
-                this.loadedTimeout = window.setTimeout(async () => {
+                this.loadedTimeout = window.setTimeout(() => {
                     if (!this.loaded) {
-                        await this.load();
+                        this.load();
                     }
                 }, 10000);
+            }
+
+            if (!this.syncService.syncInProgress || restoredScopeState) {
+                window.setTimeout(() => this.popupUtils.setContentScrollY(window, this.state.scrollY), 0);
             }
         });
     }
@@ -114,18 +128,11 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async load() {
-        await super.load();
-        super.loaded = false;
-
+        await super.load(false);
         await this.loadCiphers();
-        this.showNoFolderCiphers = this.noFolderCiphers != null && this.noFolderCiphers.length < 100 &&
-            this.collections.length === 0;
         if (this.showNoFolderCiphers) {
             // Remove "No Folder" from folder listing
             this.folders.pop();
-            this.folderCount = this.folders.length;
-        } else {
-            this.folderCount = this.folders.length - 1;
         }
 
         super.loaded = true;
@@ -133,43 +140,56 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
     async loadCiphers() {
         this.ciphers = await this.cipherService.getAllDecrypted();
+
+        let favoriteCiphers: CipherView[] = null;
+        let noFolderCiphers: CipherView[] = null;
+        const folderCounts = new Map<string, number>();
+        const collectionCounts = new Map<string, number>();
+        const typeCounts = new Map<CipherType, number>();
+
         this.ciphers.forEach((c) => {
             if (c.favorite) {
-                if (this.favoriteCiphers == null) {
-                    this.favoriteCiphers = [];
+                if (favoriteCiphers == null) {
+                    favoriteCiphers = [];
                 }
-                this.favoriteCiphers.push(c);
+                favoriteCiphers.push(c);
             }
 
             if (c.folderId == null) {
-                if (this.noFolderCiphers == null) {
-                    this.noFolderCiphers = [];
+                if (noFolderCiphers == null) {
+                    noFolderCiphers = [];
                 }
-                this.noFolderCiphers.push(c);
+                noFolderCiphers.push(c);
             }
 
-            if (this.typeCounts.has(c.type)) {
-                this.typeCounts.set(c.type, this.typeCounts.get(c.type) + 1);
+            if (typeCounts.has(c.type)) {
+                typeCounts.set(c.type, typeCounts.get(c.type) + 1);
             } else {
-                this.typeCounts.set(c.type, 1);
+                typeCounts.set(c.type, 1);
             }
 
-            if (this.folderCounts.has(c.folderId)) {
-                this.folderCounts.set(c.folderId, this.folderCounts.get(c.folderId) + 1);
+            if (folderCounts.has(c.folderId)) {
+                folderCounts.set(c.folderId, folderCounts.get(c.folderId) + 1);
             } else {
-                this.folderCounts.set(c.folderId, 1);
+                folderCounts.set(c.folderId, 1);
             }
 
             if (c.collectionIds != null) {
                 c.collectionIds.forEach((colId) => {
-                    if (this.collectionCounts.has(colId)) {
-                        this.collectionCounts.set(colId, this.collectionCounts.get(colId) + 1);
+                    if (collectionCounts.has(colId)) {
+                        collectionCounts.set(colId, collectionCounts.get(colId) + 1);
                     } else {
-                        this.collectionCounts.set(colId, 1);
+                        collectionCounts.set(colId, 1);
                     }
                 });
             }
         });
+
+        this.favoriteCiphers = favoriteCiphers;
+        this.noFolderCiphers = noFolderCiphers;
+        this.typeCounts = typeCounts;
+        this.folderCounts = folderCounts;
+        this.collectionCounts = collectionCounts;
     }
 
     async selectType(type: CipherType) {
@@ -222,5 +242,51 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             searchText: this.searchText,
         };
         await this.stateService.save(ComponentId, this.state);
+
+        this.scopeState = {
+            favoriteCiphers: this.favoriteCiphers,
+            noFolderCiphers: this.noFolderCiphers,
+            ciphers: this.ciphers,
+            collectionCounts: this.collectionCounts,
+            folderCounts: this.folderCounts,
+            typeCounts: this.typeCounts,
+            folders: this.folders,
+            collections: this.collections,
+        };
+        await this.stateService.save(ScopeStateId, this.scopeState);
+    }
+
+    private async restoreState(): Promise<boolean> {
+        this.scopeState = await this.stateService.get<any>(ScopeStateId);
+        if (this.scopeState == null) {
+            return false;
+        }
+
+        if (this.scopeState.favoriteCiphers != null) {
+            this.favoriteCiphers = this.scopeState.favoriteCiphers;
+        }
+        if (this.scopeState.noFolderCiphers != null) {
+            this.noFolderCiphers = this.scopeState.noFolderCiphers;
+        }
+        if (this.scopeState.ciphers != null) {
+            this.ciphers = this.scopeState.ciphers;
+        }
+        if (this.scopeState.collectionCounts != null) {
+            this.collectionCounts = this.scopeState.collectionCounts;
+        }
+        if (this.scopeState.folderCounts != null) {
+            this.folderCounts = this.scopeState.folderCounts;
+        }
+        if (this.scopeState.typeCounts != null) {
+            this.typeCounts = this.scopeState.typeCounts;
+        }
+        if (this.scopeState.folders != null) {
+            this.folders = this.scopeState.folders;
+        }
+        if (this.scopeState.collections != null) {
+            this.collections = this.scopeState.collections;
+        }
+
+        return true;
     }
 }

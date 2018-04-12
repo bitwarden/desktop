@@ -45,11 +45,11 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     showAdd = true;
     folderId: string = null;
     type: CipherType = null;
-    selectedTimeout: number;
-    preventSelected = false;
     pagedCiphers: CipherView[] = [];
 
     private didScroll = false;
+    private selectedTimeout: number;
+    private preventSelected = false;
 
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
