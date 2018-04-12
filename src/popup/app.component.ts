@@ -65,12 +65,14 @@ export class AppComponent implements OnInit {
         private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) { }
 
     ngOnInit() {
-        window.onmousemove = () => this.recordActivity();
-        window.onmousedown = () => this.recordActivity();
-        window.ontouchstart = () => this.recordActivity();
-        window.onclick = () => this.recordActivity();
-        window.onscroll = () => this.recordActivity();
-        window.onkeypress = () => this.recordActivity();
+        this.ngZone.runOutsideAngular(() => {
+            window.onmousemove = () => this.recordActivity();
+            window.onmousedown = () => this.recordActivity();
+            window.ontouchstart = () => this.recordActivity();
+            window.onclick = () => this.recordActivity();
+            window.onscroll = () => this.recordActivity();
+            window.onkeypress = () => this.recordActivity();
+        });
 
         (window as any).bitwardenPopupMainMessageListener = async (msg: any, sender: any, sendResponse: any) => {
             if (msg.command === 'doneLoggingOut') {
