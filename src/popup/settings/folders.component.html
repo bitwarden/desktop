@@ -1,0 +1,27 @@
+<header>
+    <div class="left">
+        <button appBlurClick type="button" (click)="close()">
+            <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
+            <span>{{'back' | i18n}}</span>
+        </button>
+    </div>
+    <div class="center">
+        <span class="title">{{'folders' | i18n}}</span>
+    </div>
+    <div class="right">
+        <button appBlurClick (click)="addFolder()" title="{{'addFolder' | i18n}}">
+            <i class="fa fa-plus fa-lg fa-fw"></i>
+        </button>
+    </div>
+</header>
+<content>
+    <div class="box list full-list" *ngIf="folders && folders.length">
+        <div class="box-content">
+            <a href="#" appStopClick (click)="folderSelected(f)" class="box-content-row padded"
+               *ngFor="let f of folders">{{f.name}}</a>
+        </div>
+    </div>
+    <div class="no-items" *ngIf="!folders || !folders.length">
+        <p>{{'noFolders' | i18n}}</p>
+    </div>
+</content>

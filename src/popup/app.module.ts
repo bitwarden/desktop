@@ -24,11 +24,13 @@ import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
+import { PasswordGeneratorComponent } from './generator/password-generator.component';
+import { ExportComponent } from './settings/export.component';
+import { FolderAddEditComponent } from './settings/folder-add-edit.component';
+import { FoldersComponent } from './settings/folders.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TabsComponent } from './tabs.component';
-import { ExportComponent } from './tools/export.component';
-import { PasswordGeneratorHistoryComponent } from './tools/password-generator-history.component';
-import { PasswordGeneratorComponent } from './tools/password-generator.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
@@ -83,6 +85,8 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         EnvironmentComponent,
         ExportComponent,
         FallbackSrcDirective,
+        FolderAddEditComponent,
+        FoldersComponent,
         GroupingsComponent,
         HomeComponent,
         HintComponent,
