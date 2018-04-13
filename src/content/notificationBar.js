@@ -389,7 +389,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         var barPageUrl = isSafari ? (safari.extension.baseURI + barPage) : chrome.extension.getURL(barPage);
 
         var iframe = document.createElement('iframe');
-        iframe.src = barPageUrl;
         iframe.style.cssText = 'height: 42px; width: 100%; border: 0;';
         iframe.id = 'bit-notification-bar-iframe';
 
@@ -398,6 +397,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         frameDiv.style.cssText = 'height: 42px; width: 100%; top: 0; left: 0; padding: 0; position: fixed; z-index: 2147483647; visibility: visible;';
         frameDiv.appendChild(iframe);
         document.body.appendChild(frameDiv);
+
+        iframe.contentWindow.location = barPageUrl;
 
         var spacer = document.createElement('div');
         spacer.id = 'bit-notification-bar-spacer';
