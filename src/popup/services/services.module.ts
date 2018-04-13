@@ -80,10 +80,10 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
             window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
             authService.init();
 
-            new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
+            const analytics = new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
                 const bgPage = BrowserApi.getBackgroundPage();
                 if (bgPage == null || bgPage.bitwardenMain == null) {
-                    throw 'Cannot resolve background page main.';
+                    throw new Error('Cannot resolve background page main.');
                 }
                 return bgPage.bitwardenMain;
             });

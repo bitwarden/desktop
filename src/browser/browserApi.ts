@@ -262,7 +262,8 @@ export class BrowserApi {
     }
 
     static gaFilter() {
-        return BrowserApi.isSafariApi && safari.application.activeBrowserWindow.activeTab.private;
+        return process.env.ENV !== 'production' ||
+            (BrowserApi.isSafariApi && safari.application.activeBrowserWindow.activeTab.private);
     }
 
     static getUILanguage(win: Window) {

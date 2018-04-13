@@ -9,8 +9,8 @@ require('../scripts/duo.js');
 
 import { AppModule } from './app.module';
 
-// if (!isDev()) {
-//    enableProdMode();
-// }
+if (process.env.ENV === 'production') {
+    enableProdMode();
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule);
