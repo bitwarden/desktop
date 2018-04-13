@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import {
     ActivatedRoute,
@@ -23,8 +22,8 @@ import {
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     constructor(folderService: FolderService, i18nService: I18nService,
         analytics: Angulartics2, toasterService: ToasterService,
-        platformUtilsService: PlatformUtilsService, private location: Location,
-        private router: Router, private route: ActivatedRoute) {
+        platformUtilsService: PlatformUtilsService, private router: Router,
+        private route: ActivatedRoute) {
         super(folderService, i18nService, analytics, toasterService, platformUtilsService);
     }
 
@@ -39,21 +38,17 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
 
     async submit(): Promise<boolean> {
         if (await super.submit()) {
-            this.location.back();
+            this.router.navigate(['/folders']);
             return true;
         }
 
         return false;
     }
 
-    cancel() {
-        this.location.back();
-    }
-
     async delete(): Promise<boolean> {
         const confirmed = await super.delete();
         if (confirmed) {
-            this.location.back();
+            this.router.navigate(['/folders']);
         }
         return confirmed;
     }

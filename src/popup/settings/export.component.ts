@@ -1,8 +1,8 @@
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
-import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -22,17 +22,13 @@ export class ExportComponent extends BaseExportComponent {
         cipherService: CipherService, folderService: FolderService,
         cryptoService: CryptoService, userService: UserService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
-        private location: Location) {
+        private router: Router) {
         super(analytics, toasterService, cipherService, folderService, cryptoService, userService, i18nService,
             platformUtilsService, window);
     }
 
-    close() {
-        this.location.back();
-    }
-
     protected saved() {
         super.saved();
-        this.close();
+        this.router.navigate(['/tabs/settings']);
     }
 }

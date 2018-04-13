@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import {
     Component,
     OnInit,
@@ -16,8 +15,7 @@ import { FolderService } from 'jslib/abstractions/folder.service';
 export class FoldersComponent implements OnInit {
     folders: FolderView[];
 
-    constructor(private folderService: FolderService, private location: Location,
-        private router: Router) {
+    constructor(private folderService: FolderService, private router: Router) {
     }
 
     async ngOnInit() {
@@ -30,9 +28,5 @@ export class FoldersComponent implements OnInit {
 
     addFolder() {
         this.router.navigate(['/add-folder']);
-    }
-
-    close() {
-        this.location.back();
     }
 }

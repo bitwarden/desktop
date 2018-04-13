@@ -47,8 +47,4 @@ export class SyncComponent implements OnInit {
             this.lastSync = this.i18nService.t('never');
         }
     }
-
-    close() {
-        this.router.navigate(['/tabs/settings']);
-    }
 }

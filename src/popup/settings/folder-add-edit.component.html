@@ -1,7 +1,7 @@
 <form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
     <header>
         <div class="left">
-            <button type="button" appBlurClick (click)="cancel()">{{'cancel' | i18n}}</button>
+            <a routerLink="/folders">{{'cancel' | i18n}}</a>
         </div>
         <div class="center">
             <span class="title">{{title}}</span>
