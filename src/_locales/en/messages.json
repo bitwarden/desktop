@@ -477,15 +477,6 @@
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
   },
-  "credits": {
-    "message": "Credits"
-  },
-  "thankYou": {
-    "message": "Thank You"
-  },
-  "translations": {
-    "message": "Translations"
-  },
   "searchFolder": {
     "message": "Search folder"
   },
@@ -547,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Create an organization to securely share your items with other users."
-  },
-  "contribute": {
-    "message": "You can contribute too!"
   },
   "learnMore": {
     "message": "Learn more"
