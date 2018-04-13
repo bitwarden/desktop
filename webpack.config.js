@@ -108,10 +108,8 @@ const config = {
             sourceMap: true,
         }),
         // ref: https://github.com/angular/angular/issues/20357
-        new webpack.ContextReplacementPlugin(
-            /\@angular(\\|\/)core(\\|\/)esm5/,
-            path.resolve(__dirname, './src'),
-        ),
+        new webpack.ContextReplacementPlugin(/\@angular(\\|\/)core(\\|\/)esm5/,
+            path.resolve(__dirname, './src')),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'popup/vendor',
             chunks: ['popup/main'],
