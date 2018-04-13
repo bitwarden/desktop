@@ -8,9 +8,9 @@
     <div class="right"></div>
 </header>
 <content>
-    <div class="box">
+    <div class="box list">
         <div class="box-header">{{'manage' | i18n}}</div>
-        <div class="box-content">
+        <div class="box-content single-line">
             <a class="box-content-row box-content-row-flex text-default" routerLink="/folders">
                 <div class="row-main">{{'folders' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
@@ -21,10 +21,10 @@
             </a>
         </div>
     </div>
-    <div class="box">
+    <div class="box list">
         <div class="box-header">{{'security' | i18n}}</div>
-        <div class="box-content">
-            <div class="box-content-row" appBoxRow>
+        <div class="box-content single-line">
+            <div class="box-content-row display-block" appBoxRow>
                 <label for="lockOption">{{'lockOptions' | i18n}}</label>
                 <select id="lockOption" name="LockOptions" [(ngModel)]="lockOption" (change)="saveLockOption()">
                     <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
@@ -42,12 +42,15 @@
             </a>
         </div>
     </div>
-    <div class="box">
+    <div class="box list">
         <div class="box-header">{{'account' | i18n}}</div>
-        <div class="box-content">
-            <a class="box-content-row box-content-row-flex text-default"  routerLink="/premium">
-                <div class="row-main">{{'premiumMembership' | i18n}}</div>
-                <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
+        <div class="box-content single-line">
+            <a class="box-content-row" routerLink="/premium">
+                <div class="row-main">
+                    <div class="icon text-primary"><i class="fa fa-fw fa-lg fa-star"></i></div>
+                    <span class="text text-primary"><b>{{'premiumMembership' | i18n}}</b></span>
+                </div>
+                <span><i class="fa fa-chevron-right fa-lg row-sub-icon"></i></span>
             </a>
             <a class="box-content-row box-content-row-flex text-default" href="#"
                appStopClick appBlurClick (click)="changePassword()">
@@ -61,9 +64,9 @@
             </a>
         </div>
     </div>
-    <div class="box">
+    <div class="box list">
         <div class="box-header">{{'tools' | i18n}}</div>
-        <div class="box-content">
+        <div class="box-content single-line">
             <a class="box-content-row box-content-row-flex text-default" href="#"
                appStopClick appBlurClick (click)="import()">
                 <div class="row-main">{{'importItems' | i18n}}</div>
@@ -80,9 +83,9 @@
             </a>
         </div>
     </div>
-    <div class="box">
+    <div class="box list">
         <div class="box-header">{{'other' | i18n}}</div>
-        <div class="box-content">
+        <div class="box-content single-line">
             <a class="box-content-row box-content-row-flex text-default"  routerLink="/options">
                 <div class="row-main">{{'options' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
