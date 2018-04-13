@@ -60,3 +60,11 @@
         }
     }
 }
+
+.action-buttons {
+    .btn {
+        &:focus {
+            outline: auto;
+        }
+    }
+}
