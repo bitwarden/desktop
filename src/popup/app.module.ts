@@ -30,6 +30,7 @@ import { ExportComponent } from './settings/export.component';
 import { FolderAddEditComponent } from './settings/folder-add-edit.component';
 import { FoldersComponent } from './settings/folders.component';
 import { SettingsComponent } from './settings/settings.component';
+import { SyncComponent } from './settings/sync.component';
 import { TabsComponent } from './tabs.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
@@ -102,6 +103,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         SettingsComponent,
         StopClickDirective,
         StopPropDirective,
+        SyncComponent,
         TabsComponent,
         TwoFactorOptionsComponent,
         TwoFactorComponent,

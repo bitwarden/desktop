@@ -136,4 +136,7 @@ export const routerTransition = trigger('routerTransition', [
     transition('edit-folder => folders, add-folder => folders', outSlideDown),
 
     transition('tabs => lock', inSlideDown),
+
+    transition('tabs => sync', inSlideLeft),
+    transition('sync => tabs', outSlideRight),
 ]);

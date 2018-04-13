@@ -294,12 +294,15 @@ content {
     }
 }
 
-.no-items {
+.center-content, .no-items {
     display: flex;
-    height: 100%;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.no-items {
     text-align: center;
 
     .fa {

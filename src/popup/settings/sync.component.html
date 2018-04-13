@@ -1,0 +1,22 @@
+<header>
+    <div class="left">
+        <button appBlurClick type="button" (click)="close()">
+            <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
+            <span>{{'back' | i18n}}</span>
+        </button>
+    </div>
+    <div class="center">
+        <span class="title">{{'sync' | i18n}}</span>
+    </div>
+    <div class="right"></div>
+</header>
+<content>
+    <div class="content center-content">
+        <button type="button" class="btn block primary" (click)="sync()" #syncBtn
+                [disabled]="syncBtn.loading" [appApiAction]="syncPromise">
+            <span [hidden]="syncBtn.loading">{{'syncVaultNow' | i18n}}</span>
+            <i class="fa fa-spinner fa-lg fa-spin" [hidden]="!syncBtn.loading"></i>
+        </button>
+        <p class="text-center text-muted small">{{'lastSync' | i18n}} {{lastSync}}</p>
+    </div>
+</content>
