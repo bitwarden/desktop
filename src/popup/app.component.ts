@@ -91,22 +91,7 @@ export class AppComponent implements OnInit {
             } else if (msg.command === 'locked') {
                 this.stateService.purge();
             } else if (msg.command === 'showDialog') {
-                const buttons = [msg.confirmText == null ? this.i18nService.t('ok') : msg.confirmText];
-                if (msg.cancelText != null) {
-                    buttons.unshift(msg.cancelText);
-                }
-
-                const confirmed = await swal({
-                    title: msg.title,
-                    text: msg.text,
-                    buttons: buttons,
-                    icon: msg.type,
-                });
-
-                this.messagingService.send('showDialogResolve', {
-                    dialogId: msg.dialogId,
-                    confirmed: confirmed,
-                });
+                await this.showDialog(msg);
             } else {
                 msg.webExtSender = sender;
                 this.broadcasterService.send(msg);
@@ -142,5 +127,61 @@ export class AppComponent implements OnInit {
 
         this.lastActivity = now;
         this.storageService.save(ConstantsService.lastActiveKey, now);
+    }
+
+    private async showDialog(msg: any) {
+        const buttons = [msg.confirmText == null ? this.i18nService.t('ok') : msg.confirmText];
+        if (msg.cancelText != null) {
+            buttons.unshift(msg.cancelText);
+        }
+
+        const contentDiv = document.createElement('div');
+        if (msg.type != null) {
+            const icon = document.createElement('i');
+            icon.classList.add('swal-custom-icon');
+            switch (msg.type) {
+                case 'success':
+                    icon.classList.add('fa', 'fa-check', 'text-success');
+                    break;
+                case 'warning':
+                    icon.classList.add('fa', 'fa-warning', 'text-warning');
+                    break;
+                case 'error':
+                    icon.classList.add('fa', 'fa-bolt', 'text-danger');
+                    break;
+                case 'info':
+                    icon.classList.add('fa', 'fa-info-circle', 'text-info');
+                    break;
+                default:
+                    break;
+            }
+            if (icon.classList.contains('fa')) {
+                contentDiv.appendChild(icon);
+            }
+        }
+
+        if (msg.title != null) {
+            const titleDiv = document.createElement('div');
+            titleDiv.classList.add('swal-title');
+            titleDiv.appendChild(document.createTextNode(msg.title));
+            contentDiv.appendChild(titleDiv);
+        }
+
+        if (msg.text != null) {
+            const textDiv = document.createElement('div');
+            textDiv.classList.add('swal-text');
+            textDiv.appendChild(document.createTextNode(msg.text));
+            contentDiv.appendChild(textDiv);
+        }
+
+        const confirmed = await swal({
+            content: { element: contentDiv },
+            buttons: buttons,
+        });
+
+        this.messagingService.send('showDialogResolve', {
+            dialogId: msg.dialogId,
+            confirmed: confirmed,
+        });
     }
 }

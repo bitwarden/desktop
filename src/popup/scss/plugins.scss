@@ -1,4 +1,4 @@
-﻿$fa-font-path: "~font-awesome/fonts";
+$fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
 @import "~angular2-toaster/toaster";
 
@@ -90,6 +90,23 @@
 
     .swal-icon {
         margin: 15px auto 0 auto;
+    }
+
+    .swal-content {
+        margin: 15px 0 0 0;
+        padding: 0;
+
+        .swal-text {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    i.swal-custom-icon {
+        display: block;
+        margin: 0 auto;
+        font-size: 35px;
     }
 
     .swal-title {
