@@ -35,6 +35,7 @@
     "@types/tldjs": "1.7.1",
     "@types/webcrypto": "^0.0.28",
     "angular": "1.6.9",
+    "angular2-template-loader": "^0.6.2",
     "angular-animate": "1.6.9",
     "angular-sweetalert": "1.1.2",
     "angular-toastr": "2.1.1",

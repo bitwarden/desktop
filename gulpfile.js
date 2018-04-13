@@ -65,6 +65,7 @@ gulp.task('dist', ['dist:firefox', 'dist:chrome', 'dist:opera', 'dist:edge', 'di
 gulp.task('dist:firefox', (cb) => {
     return dist('firefox', (manifest) => {
         delete manifest['-ms-preload'];
+        delete manifest.content_security_policy;
         return manifest;
     });
 });
@@ -73,6 +74,7 @@ gulp.task('dist:opera', (cb) => {
     return dist('opera', (manifest) => {
         delete manifest['-ms-preload'];
         delete manifest.applications;
+        delete manifest.content_security_policy;
         return manifest;
     });
 });
@@ -81,6 +83,7 @@ gulp.task('dist:chrome', (cb) => {
     return dist('chrome', (manifest) => {
         delete manifest['-ms-preload'];
         delete manifest.applications;
+        delete manifest.content_security_policy;
         delete manifest.sidebar_action;
         delete manifest.commands._execute_sidebar_action;
         return manifest;
@@ -116,6 +119,7 @@ function edgeCopyBuild(source, dest) {
                 delete manifest.applications;
                 delete manifest.sidebar_action;
                 delete manifest.commands._execute_sidebar_action;
+                delete manifest.content_security_policy;
                 return manifest;
             })))
             .pipe(gulp.dest(dest))
