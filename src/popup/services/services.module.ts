@@ -43,6 +43,8 @@ import { AuthService } from 'jslib/services/auth.service';
 import { ConstantsService } from 'jslib/services/constants.service';
 import { StateService } from 'jslib/services/state.service';
 
+import { Analytics } from 'jslib/misc/analytics';
+
 import { PopupUtilsService } from './popup-utils.service';
 
 function getBgService<T>(service: string) {
@@ -71,13 +73,21 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
             window.document.body.classList.add('body-sm');
         }
 
-        if (i18nService != null) {
-            window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
-            authService.init();
-        }
-
         stateService.save(ConstantsService.disableFaviconKey,
             await storageService.get<boolean>(ConstantsService.disableFaviconKey));
+
+        if (BrowserApi.getBackgroundPage() != null) {
+            window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
+            authService.init();
+
+            new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {
+                const bgPage = BrowserApi.getBackgroundPage();
+                if (bgPage == null || bgPage.bitwardenMain == null) {
+                    throw 'Cannot resolve background page main.';
+                }
+                return bgPage.bitwardenMain;
+            });
+        }
     };
 }
 
