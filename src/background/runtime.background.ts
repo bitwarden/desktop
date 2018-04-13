@@ -193,7 +193,7 @@ export default class RuntimeBackground {
             loginModel.username = loginInfo.username;
             loginModel.password = loginInfo.password;
             const model = new CipherView();
-            model.name = loginInfo.name;
+            model.name = UtilsService.getHostname(loginInfo.uri) || loginInfo.domain;
             model.type = CipherType.Login;
             model.login = loginModel;
 
@@ -249,7 +249,6 @@ export default class RuntimeBackground {
             this.main.loginsToAdd.push({
                 username: loginInfo.username,
                 password: loginInfo.password,
-                name: loginDomain,
                 domain: loginDomain,
                 uri: loginInfo.url,
                 tabId: tab.id,
