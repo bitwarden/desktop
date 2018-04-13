@@ -29,6 +29,7 @@ import { PasswordGeneratorComponent } from './generator/password-generator.compo
 import { ExportComponent } from './settings/export.component';
 import { FolderAddEditComponent } from './settings/folder-add-edit.component';
 import { FoldersComponent } from './settings/folders.component';
+import { PremiumComponent } from './settings/premium.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SyncComponent } from './settings/sync.component';
 import { TabsComponent } from './tabs.component';
@@ -98,6 +99,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PopOutComponent,
+        PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
         SettingsComponent,

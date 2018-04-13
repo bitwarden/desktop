@@ -333,7 +333,7 @@
     "message": "On System Lock"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "On System Restart"
   },
   "never": {
     "message": "Never"
@@ -633,7 +633,13 @@
     "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% /year!"
+    "message": "All for just $PRICE$ /year!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Refresh complete"

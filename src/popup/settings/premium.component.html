@@ -1,0 +1,58 @@
+<header>
+    <div class="left">
+        <a routerLink="/tabs/settings">
+            <span class="header-icon"><i class="fa fa-chevron-left"></i></span>
+            <span>{{'back' | i18n}}</span>
+        </a>
+    </div>
+    <div class="center">
+        <span class="title">{{'premiumMembership' | i18n}}</span>
+    </div>
+    <div class="right"></div>
+</header>
+<content>
+    <div class="content">
+        <ng-container *ngIf="!isPremium">
+            <p class="text-center lead">{{'premiumNotCurrentMember' | i18n}}</p>
+            <p>{{'premiumSignUpAndGet' | i18n}}</p>
+            <ul class="fa-ul">
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{'ppremiumSignUpStorage' | i18n}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{'ppremiumSignUpTwoStep' | i18n}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{'ppremiumSignUpTotp' | i18n}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{'ppremiumSignUpSupport' | i18n}}
+                </li>
+                <li>
+                    <i class="fa-li fa fa-check text-success"></i>
+                    {{'ppremiumSignUpFuture' | i18n}}
+                </li>
+            </ul>
+            <p class="text-center lead">{{priceString}}</p>
+            <button type="button" class="btn primary block" appBlurClick (click)="purchase()">
+                <b>{{'premiumPurchase' | i18n}}</b>
+            </button>
+            <button #refreshBtn type="button" appBlurClick (click)="refresh()" [disabled]="refreshBtn.loading"
+                    [appApiAction]="refreshPromise" class="btn link block">
+                <span [hidden]="refreshBtn.loading">{{'premiumRefresh' | i18n}}</span>
+                <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!refreshBtn.loading"></i>
+            </button>
+        </ng-container>
+        <ng-container *ngIf="isPremium">
+            <p class="text-center lead">{{'premiumCurrentMember' | i18n}}</p>
+            <p class="text-center">{{'premiumCurrentMemberThanks' | i18n}}</p>
+            <button type="button" class="btn block primary" appBlurClick (click)="manage()">
+                <b>{{'premiumManage' | i18n}}</b>
+            </button>
+        </ng-container>
+    </div>
+</content>

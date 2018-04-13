@@ -139,4 +139,7 @@ export const routerTransition = trigger('routerTransition', [
 
     transition('tabs => sync', inSlideLeft),
     transition('sync => tabs', outSlideRight),
+
+    transition('tabs => premium', inSlideLeft),
+    transition('premium => tabs', outSlideRight),
 ]);

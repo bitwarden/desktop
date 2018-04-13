@@ -40,8 +40,18 @@ small, .small {
     text-align: center;
 }
 
+p.lead {
+    font-size: $font-size-large;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
 .flex-right {
     margin-left: auto;
+}
+
+.flex-bottom {
+    margin-top: auto;
 }
 
 .no-margin {
