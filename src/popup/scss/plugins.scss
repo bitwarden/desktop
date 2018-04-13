@@ -94,12 +94,17 @@ $fa-font-path: "~font-awesome/fonts";
 
     .swal-content {
         margin: 15px 0 0 0;
-        padding: 0;
+        padding: 0 10px;
 
         .swal-text {
             &:last-child {
                 margin-bottom: 0;
             }
+        }
+
+        .swal-title, .swal-text {
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 
