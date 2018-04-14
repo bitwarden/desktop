@@ -60,7 +60,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         private folderService: FolderService, private collectionService: CollectionService,
         private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService) {
         super(cipherService);
-        this.pageSize = platformUtilsService.isEdge() ? 50 : 100;
+        this.pageSize = platformUtilsService.isEdge() ? 40 : 100;
     }
 
     async ngOnInit() {

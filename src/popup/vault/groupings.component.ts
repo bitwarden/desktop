@@ -64,7 +64,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         private syncService: SyncService, private analytics: Angulartics2,
         private platformUtilsService: PlatformUtilsService) {
         super(collectionService, folderService);
-        this.noFolderListSize = platformUtilsService.isEdge() ? 50 : 100;
+        this.noFolderListSize = platformUtilsService.isEdge() ? 40 : 100;
     }
 
     get showNoFolderCiphers(): boolean {
