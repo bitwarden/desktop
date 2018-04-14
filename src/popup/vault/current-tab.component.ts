@@ -195,7 +195,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             }
         });
 
+        this.loginCiphers = this.loginCiphers.sort((a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b));
         this.loaded = true;
     }
-
 }
