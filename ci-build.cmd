@@ -10,6 +10,12 @@ SET REPO_URL=https://github.com/%APPVEYOR_REPO_NAME%.git
 ECHO ## Build dist
 CALL npm run dist
 
+ECHO ## Run test
+CALL npm run test
+
+ECHO ## Package coverage report
+CALL gulp ci
+
 :: Build sources for reviewers
 ECHO ## Build sources
 CALL git clone --branch=%APPVEYOR_REPO_BRANCH% %REPO_URL% %DIST_SRC_DIR%
