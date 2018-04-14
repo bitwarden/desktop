@@ -114,7 +114,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
                     if (!this.loaded) {
                         this.load();
                     }
-                }, 10000);
+                }, 5000);
             }
 
             if (!this.syncService.syncInProgress || restoredScopeState) {

@@ -97,7 +97,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 if (!this.loaded) {
                     await this.load();
                 }
-            }, 10000);
+            }, 5000);
         }
     }
 
