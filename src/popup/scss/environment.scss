@@ -8,3 +8,15 @@ html.browser_firefox, html.browser_edge {
     }
 }
 */
+
+html.browser_safari {
+    header { 
+        .search .fa {
+            left: 25px;
+        }
+
+        .left + .search .fa {
+            left: 15px;
+        }
+    }
+}

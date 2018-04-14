@@ -1,5 +1,5 @@
 <header>
-    <div class="left">
+    <div class="left" *ngIf="showLeftHeader">
         <app-pop-out [show]="!inSidebar"></app-pop-out>
         <button type="button" appBlurClick (click)="refresh()" title="{{'refresh' | i18n}}" *ngIf="inSidebar">
             <i class="fa fa-retweet fa-lg fa-fw"></i>

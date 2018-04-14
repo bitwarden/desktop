@@ -43,7 +43,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     searchText: string;
     canAutofill = false;
     inSidebar = false;
-    disableSearch = false;
+    showLeftHeader = false;
     loaded = false;
     loadedTimeout: number;
 
@@ -52,12 +52,12 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) {
-        this.inSidebar = popupUtilsService.inSidebar(window);
-        this.disableSearch = platformUtilsService.isEdge();
-    }
+        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) {}
 
     async ngOnInit() {
+        this.showLeftHeader = !this.platformUtilsService.isSafari();
+        this.inSidebar = this.popupUtilsService.inSidebar(window);
+
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
