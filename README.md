@@ -13,7 +13,7 @@
 <a href="https://brave.com/" target="_blank"><img src="https://imgur.com/z8yjLZ2.png" width="64" height="64"></a>
 <a href="https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/" target="_blank"><img src="https://imgur.com/uhb8M86.png" width="64" height="64"></a>
 
-The Bitwarden browser extension is written using the Chrome Web Extension API and AngularJS.
+The Bitwarden browser extension is written using the Web Extension API and Angular.
 
 ![Alt text](http://imgur.com/C9p87nk.png "My Vault")
 
@@ -21,7 +21,7 @@ The Bitwarden browser extension is written using the Chrome Web Extension API an
 
 **Requirements**
 
-- [Node.js](https://nodejs.org)
+- [Node.js](https://nodejs.org) v8.11 or greater
 - [Gulp](http://gulpjs.com/) (`npm install --global gulp-cli`)
 - Chrome (preferred), Opera, or Firefox browser
 

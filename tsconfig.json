@@ -25,7 +25,6 @@
     "dist",
     "jslib/dist",
     "build",
-    "build2",
     "build.safariextension",
     "coverage",
     "store",
