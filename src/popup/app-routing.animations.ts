@@ -1,10 +1,10 @@
 import {
-    trigger,
     animate,
-    style,
     group,
     query,
+    style,
     transition,
+    trigger,
 } from '@angular/animations';
 
 const queryShown = query(':enter, :leave', [
