@@ -36,6 +36,7 @@
     3. Unminify and format to meet Mozilla review requirements.
     4. Remove unnecessary input types from getFormElements query selector and limit number of elements returned.
     5. Remove fakeTested prop.
+    6. Rename com.agilebits.* stuff to com.bitwarden.*
     */
 
     function collect(document, undefined) {
@@ -44,8 +45,10 @@
         // END MODIFICATION
 
         document.elementsByOPID = {};
-        document.addEventListener('input', function (canuf) {
-            false !== canuf.a && 'input' === canuf.target.tagName.toLowerCase() && (canuf.target.dataset['com.agilebits.onepassword.userEdited'] = 'yes');
+        document.addEventListener('input', function (inputevent) {
+            inputevent.a !== false &&
+                inputevent.target.tagName.toLowerCase() === 'input' &&
+                (inputevent.target.dataset['com.bitwarden.browser.userEdited'] = 'yes');
         }, true);
 
         function getPageDetails(theDoc, oneShotId) {
@@ -264,7 +267,9 @@
                 addProp(field, 'htmlClass', getElementAttrValue(el, 'class'));
                 addProp(field, 'tabindex', getElementAttrValue(el, 'tabindex'));
                 addProp(field, 'title', getElementAttrValue(el, 'title'));
-                addProp(field, 'userEdited', !!el.dataset['com.agilebits.onepassword.userEdited']);
+                // START MODIFICATION
+                addProp(field, 'userEdited', !!el.dataset['com.browser.browser.userEdited']);
+                // END MODIFICATION
 
                 if ('hidden' != toLowerString(el.type)) {
                     addProp(field, 'label-tag', getLabelTag(el));
@@ -823,9 +828,11 @@
             setValueForElement(el);
             afterValSetFunc(el);
             setValueForElementByEvent(el);
-            canSeeElementToStyle(el) && (el.className += ' com-agilebits-onepassword-extension-animated-fill',
+            canSeeElementToStyle(el) && (el.className += ' com-bitwarden-browser-animated-fill',
                 setTimeout(function () {
-                    el && el.className && (el.className = el.className.replace(/(\\s)?com-agilebits-onepassword-extension-animated-fill/, ''));
+                    // START MODIFICATION
+                    el && el.className && (el.className = el.className.replace(/(\\s)?com-bitwarden-browser-animated-fill/, ''));
+                    // END MODIFICATION
                 }, styleTimeout));
         }
 
