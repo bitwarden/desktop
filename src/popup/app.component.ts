@@ -1,3 +1,5 @@
+import { BrowserApi } from '../browser/browserApi';
+
 import {
     ToasterConfig,
     ToasterContainerComponent,
@@ -65,6 +67,10 @@ export class AppComponent implements OnInit {
         private changeDetectorRef: ChangeDetectorRef, private ngZone: NgZone) { }
 
     ngOnInit() {
+        if (BrowserApi.getBackgroundPage() == null) {
+            return;
+        }
+
         this.ngZone.runOutsideAngular(() => {
             window.onmousemove = () => this.recordActivity();
             window.onmousedown = () => this.recordActivity();

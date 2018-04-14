@@ -18,6 +18,7 @@ import { TwoFactorOptionsComponent } from './accounts/two-factor-options.compone
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
 import { PasswordGeneratorComponent } from './generator/password-generator.component';
+import { PrivateModeComponent } from './private-mode.component';
 import { ExportComponent } from './settings/export.component';
 import { FolderAddEditComponent } from './settings/folder-add-edit.component';
 import { FoldersComponent } from './settings/folders.component';
@@ -174,6 +175,11 @@ const routes: Routes = [
         component: OptionsComponent,
         canActivate: [AuthGuardService],
         data: { state: 'options' },
+    },
+    {
+        path: 'private-mode',
+        component: PrivateModeComponent,
+        data: { state: 'private-mode' },
     },
     {
         path: 'tabs',

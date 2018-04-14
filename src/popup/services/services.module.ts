@@ -73,10 +73,10 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
             window.document.body.classList.add('body-sm');
         }
 
-        stateService.save(ConstantsService.disableFaviconKey,
-            await storageService.get<boolean>(ConstantsService.disableFaviconKey));
-
         if (BrowserApi.getBackgroundPage() != null) {
+            stateService.save(ConstantsService.disableFaviconKey,
+                await storageService.get<boolean>(ConstantsService.disableFaviconKey));
+
             window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
             authService.init();
 

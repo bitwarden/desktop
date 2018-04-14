@@ -14,8 +14,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
-
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
 import { HomeComponent } from './accounts/home.component';
@@ -24,8 +22,10 @@ import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { AppComponent } from './app.component';
 import { PasswordGeneratorHistoryComponent } from './generator/password-generator-history.component';
 import { PasswordGeneratorComponent } from './generator/password-generator.component';
+import { PrivateModeComponent } from './private-mode.component';
 import { ExportComponent } from './settings/export.component';
 import { FolderAddEditComponent } from './settings/folder-add-edit.component';
 import { FoldersComponent } from './settings/folders.component';
@@ -102,6 +102,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         PasswordGeneratorHistoryComponent,
         PopOutComponent,
         PremiumComponent,
+        PrivateModeComponent,
         RegisterComponent,
         SearchCiphersPipe,
         SettingsComponent,
@@ -113,9 +114,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         TwoFactorComponent,
         ViewComponent,
     ],
-    entryComponents: [
-
-    ],
+    entryComponents: [],
     providers: [],
     bootstrap: [AppComponent],
 })

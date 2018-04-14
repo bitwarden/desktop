@@ -30,8 +30,8 @@
                 <app-ciphers-list [ciphers]="loginCiphers" title="{{'autoFill' | i18n}}" [showView]="true"
                                   (onSelected)="fillCipher($event)" (onView)="viewCipher($event)"
                                   *ngIf="loginCiphers.length"></app-ciphers-list>
-                <div class="box-content-row text-center padded no-hover" *ngIf="!loginCiphers.length">
-                    <p>{{'autoFillInfo' | i18n}}</p>
+                <div class="box-content-row padded no-hover" *ngIf="!loginCiphers.length">
+                    <p class="text-center">{{'autoFillInfo' | i18n}}</p>
                     <button type="button" class="btn primary link block" (click)="addCipher()">
                         {{'addLogin' | i18n}}
                     </button>

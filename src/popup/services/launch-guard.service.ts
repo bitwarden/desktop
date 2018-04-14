@@ -1,3 +1,5 @@
+import { BrowserApi } from '../../browser/browserApi';
+
 import { Injectable } from '@angular/core';
 import {
     CanActivate,
@@ -12,6 +14,11 @@ export class LaunchGuardService implements CanActivate {
     constructor(private cryptoService: CryptoService, private userService: UserService, private router: Router) { }
 
     async canActivate() {
+        if (BrowserApi.getBackgroundPage() == null) {
+            this.router.navigate(['private-mode']);
+            return false;
+        }
+
         const isAuthed = await this.userService.isAuthenticated();
         if (!isAuthed) {
             return true;
