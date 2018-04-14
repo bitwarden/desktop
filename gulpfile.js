@@ -54,7 +54,7 @@ function distFileName(browserName, ext) {
 function dist(browserName, manifest) {
     return gulp.src(paths.build + '**/*')
         .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.safari)))
-        .pipe(gulpif('popup/index.html', replace('__BROWSER__', browserName)))
+        .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'browser_' + browserName)))
         .pipe(gulpif('manifest.json', jeditor(manifest)))
         .pipe(zip(distFileName(browserName, 'zip')))
         .pipe(gulp.dest(paths.dist));
@@ -114,7 +114,7 @@ function edgeCopyBuild(source, dest) {
         gulp.src(source)
             .on('error', reject)
             .pipe(filter(['**'].concat(filters.fonts).concat(filters.safari)))
-            .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'edge')))
+            .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'browser_edge')))
             .pipe(gulpif('manifest.json', jeditor((manifest) => {
                 delete manifest.applications;
                 delete manifest.sidebar_action;
@@ -167,7 +167,7 @@ function safariCopyBuild(source, dest) {
         gulp.src(source)
             .on('error', reject)
             .pipe(filter(['**'].concat(filters.edge).concat(filters.fonts).concat(filters.webExt)))
-            .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'safari')))
+            .pipe(gulpif('popup/index.html', replace('__BROWSER__', 'browser_safari')))
             .pipe(gulp.dest(dest))
             .on('end', resolve);
     });
