@@ -41,7 +41,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     url: string;
     domain: string;
     searchText: string;
-    canAutofill = false;
     inSidebar = false;
     showLeftHeader = false;
     loaded = false;
@@ -52,7 +51,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) {}
+        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) { }
 
     async ngOnInit() {
         this.showLeftHeader = !this.platformUtilsService.isSafari();
@@ -119,7 +118,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     async fillCipher(cipher: CipherView) {
-        if (!this.canAutofill) {
+        if (this.pageDetails == null || this.pageDetails.length === 0) {
             this.analytics.eventTrack.next({ action: 'Autofilled Error' });
             this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
             return;
@@ -162,13 +161,10 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         }
 
         this.domain = this.platformUtilsService.getDomain(this.url);
-
         BrowserApi.tabSendMessage(tab, {
             command: 'collectPageDetails',
             tab: tab,
             sender: BroadcasterSubscriptionId,
-        }).then(() => {
-            this.canAutofill = true;
         });
 
         const ciphers = await this.cipherService.getAllDecryptedForUrl(this.url, [

@@ -42,7 +42,8 @@
                     <div class="action-buttons">
                         <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
                                 title="{{'checkPassword' | i18n}}" (click)="checkPassword()"
-                                [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
+                                [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading"
+                                *ngIf="canCheckPasswords">
                             <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"></i>
                             <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"></i>
                         </button>
