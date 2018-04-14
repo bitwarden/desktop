@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function (event) {
+document.addEventListener('DOMContentLoaded', (event) => {
     if (window.location.hostname.indexOf('vault.bitwarden.com') > -1) {
         return;
     }
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             command: 'bgGetDataForTab',
             responseCommand: responseCommand
         });
-        safari.self.addEventListener('message', function (msgEvent) {
+        safari.self.addEventListener('message', (msgEvent) => {
             const msg = msgEvent.message;
             if (msg.command === responseCommand && msg.data) {
                 notificationBarData = msg.data;
@@ -40,25 +40,24 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 return;
             }
 
-            processMessages(msg, function () { /* do nothing on send response for Safari */ });
+            processMessages(msg, () => { /* do nothing on send response for Safari */ });
         }, false);
         return;
-    }
-    else {
-        chrome.storage.local.get('neverDomains', function (obj) {
+    } else {
+        chrome.storage.local.get('neverDomains', (obj) => {
             var domains = obj.neverDomains;
             if (domains && domains.hasOwnProperty(window.location.hostname)) {
                 return;
             }
 
-            chrome.storage.local.get('disableAddLoginNotification', function (obj) {
+            chrome.storage.local.get('disableAddLoginNotification', (obj) => {
                 if (!obj || !obj.disableAddLoginNotification) {
                     collectIfNeededWithTimeout();
                 }
             });
         });
 
-        chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+        chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
             processMessages(msg, sendResponse);
         });
     }
@@ -71,24 +70,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
             closeExistingAndOpenBar(msg.data.type, msg.data.typeData);
             sendResponse();
             return true;
-        }
-        else if (msg.command === 'closeNotificationBar') {
+        } else if (msg.command === 'closeNotificationBar') {
             if (iframed) {
                 return;
             }
             closeBar(true);
             sendResponse();
             return true;
-        }
-        else if (msg.command === 'adjustNotificationBar') {
+        } else if (msg.command === 'adjustNotificationBar') {
             if (iframed) {
                 return;
             }
             adjustBar(msg.data);
             sendResponse();
             return true;
-        }
-        else if (msg.command === 'notificationBarPageDetails') {
+        } else if (msg.command === 'notificationBarPageDetails') {
             pageDetails.push(msg.data.details);
             watchForms(msg.data.forms);
             sendResponse();
@@ -99,8 +95,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     function isIframed() {
         try {
             return window.self !== window.top;
-        }
-        catch (e) {
+        } catch (e) {
             return true;
         }
     }
@@ -108,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     function observeDom() {
         var bodies = document.querySelectorAll('body');
         if (bodies && bodies.length > 0) {
-            observer = new window.MutationObserver(function (mutations) {
+            observer = new window.MutationObserver((mutations) => {
                 if (!mutations || !mutations.length || pageHref !== window.location.href) {
                     return;
                 }
@@ -237,8 +232,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         if (submitButton) {
             submitButton.removeEventListener('click', formSubmitted, false);
             submitButton.addEventListener('click', formSubmitted, false);
-        }
-        else {
+        } else {
             var possibleSubmitButtons = form.querySelectorAll('a, span, button[type="button"], input[type="button"]');
             for (var i = 0; i < possibleSubmitButtons.length; i++) {
                 var button = possibleSubmitButtons[i];
@@ -249,8 +243,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 var buttonText;
                 if (button.tagName.toLowerCase() === 'input') {
                     buttonText = button.value;
-                }
-                else {
+                } else {
                     buttonText = button.innerText;
                 }
 
@@ -311,8 +304,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         var form = null;
         if (e.type === 'click') {
             form = e.target.closest('form');
-        }
-        else {
+        } else {
             form = e.target;
         }
 
@@ -334,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 if (login.username && login.username !== '' && login.password && login.password !== '') {
                     form.dataset.bitwardenProcessed = '1';
-                    setTimeout(function () {
+                    setTimeout(() => {
                         form.dataset.bitwardenProcessed = '0';
                     }, 500);
 
@@ -451,8 +443,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     function sendPlatformMessage(msg) {
         if (isSafari) {
             safari.self.tab.dispatchMessage('bitwarden', msg);
-        }
-        else {
+        } else {
             chrome.runtime.sendMessage(msg);
         }
     }

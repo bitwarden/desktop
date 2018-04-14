@@ -8,15 +8,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
             command: 'bgGetDataForTab',
             responseCommand: responseCommand
         });
-        safari.self.addEventListener('message', function (msgEvent) {
+        safari.self.addEventListener('message', (msgEvent) => {
             const msg = msgEvent.message;
             if (msg.command === responseCommand && msg.data.autofillEnabled === true) {
                 setInterval(doFillIfNeeded, 500);
             }
         }, false);
         return;
-    }
-    else {
+    } else {
         const enabledKey = 'enableAutoFillOnPageLoad';
         chrome.storage.local.get(enabledKey, (obj) => {
             if (obj && obj[enabledKey] === true) {
@@ -35,8 +34,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if ((typeof safari !== 'undefined')) {
                 safari.self.tab.dispatchMessage('bitwarden', msg);
-            }
-            else {
+            } else {
                 chrome.runtime.sendMessage(msg);
             }
         }

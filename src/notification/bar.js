@@ -1,6 +1,6 @@
 require('./bar.scss');
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     var i18n = {};
     if (typeof safari !== 'undefined') {
         const responseCommand = 'notificationBarFrameDataResponse';
@@ -8,15 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
             command: 'bgGetDataForTab',
             responseCommand: responseCommand
         });
-        safari.self.addEventListener('message', function (msgEvent) {
+        safari.self.addEventListener('message', (msgEvent) => {
             const msg = msgEvent.message;
             if (msg.command === responseCommand && msg.data) {
                 i18n = msg.data.i18n;
                 load();
             }
         }, false);
-    }
-    else {
+    } else {
         i18n.appName = chrome.i18n.getMessage('appName');
         i18n.close = chrome.i18n.getMessage('close');
         i18n.yes = chrome.i18n.getMessage('yes');
@@ -43,8 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (bodyRect.width < 768) {
             document.querySelector('#template-add .add-save').textContent = i18n.yes;
             document.querySelector('#template-add .never-save').textContent = i18n.never;
-        }
-        else {
+        } else {
             document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
             document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
         }
@@ -57,26 +55,25 @@ document.addEventListener('DOMContentLoaded', function () {
             var addButton = document.querySelector('#template-add-clone .add-save'),
                 neverButton = document.querySelector('#template-add-clone .never-save');
 
-            addButton.addEventListener('click', function (e) {
+            addButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 sendPlatformMessage({
                     command: 'bgAddSave'
                 });
             });
 
-            neverButton.addEventListener('click', function (e) {
+            neverButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 sendPlatformMessage({
                     command: 'bgNeverSave'
                 });
             });
-        }
-        else if (getQueryVariable('info')) {
+        } else if (getQueryVariable('info')) {
             setContent(document.getElementById('template-alert'));
             document.getElementById('template-alert-clone').textContent = getQueryVariable('info');
         }
 
-        closeButton.addEventListener('click', function (e) {
+        closeButton.addEventListener('click', (e) => {
             e.preventDefault();
             sendPlatformMessage({
                 command: 'bgCloseNotificationBar'
@@ -119,8 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function sendPlatformMessage(msg) {
         if (typeof safari !== 'undefined') {
             safari.self.tab.dispatchMessage('bitwarden', msg);
-        }
-        else {
+        } else {
             chrome.runtime.sendMessage(msg);
         }
     }
