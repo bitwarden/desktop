@@ -1,15 +1,11 @@
-<div class="home-page">
-    <a routerLink="/environment" class="settings-icon">
-        <i class="fa fa-cog fa-lg"></i><span>&nbsp;{{'settings' | i18n}}</span>
-    </a>
-    <img src="../images/logo@2x.png" alt="bitwarden" class="img-responsive" />
-    <p>{{'loginOrCreateNewAccount' | i18n}}</p>
-    <div class="bottom-buttons">
-        <a class="btn btn-lg btn-primary btn-block" routerLink="/register">
-            <strong>{{'createAccount' | i18n}}</strong>
-        </a>
-        <a class="btn btn-lg btn-link btn-block" routerLink="/login">
-            {{'login' | i18n}}
-        </a>
+<div class="center-content">
+    <div class="content">
+        <img src="../images/logo@2x.png" alt="bitwarden" class="img-responsive" />
+        <p class="lead text-center">{{'loginOrCreateNewAccount' | i18n}}</p>
+        <a class="btn primary block" routerLink="/login"><b>{{'login' | i18n}}</b></a>
+        <a class="btn block" routerLink="/register">{{'createAccount' | i18n}}</a>
     </div>
 </div>
+<a routerLink="/environment" class="settings-icon">
+    <i class="fa fa-cog fa-lg"></i><span>&nbsp;{{'settings' | i18n}}</span>
+</a>

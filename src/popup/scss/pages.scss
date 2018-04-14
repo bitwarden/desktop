@@ -15,3 +15,69 @@ app-password-generator .password-block {
     text-align: center;
     margin: 20px;
 }
+
+app-home {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    .center-content {
+        margin-top: -50px;
+        height: calc(100% + 50px);
+    }
+
+    img {
+        width: 282px;
+        margin: 0 auto;
+    }
+
+    p.lead {
+        margin: 30px 0;
+    }
+
+    .btn + .btn {
+        margin-top: 10px;
+    }
+
+    a.settings-icon {
+        color: #bbbbbb;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+
+        span {
+            visibility: hidden;
+        }
+
+        &:hover {
+            color: $brand-primary;
+            text-decoration: none;
+
+            span {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+body.body-sm, body.body-xs {
+    app-home {
+        .center-content {
+            margin-top: 0;
+            height: 100%;
+        }
+
+        p.lead {
+            margin: 15px 0;
+        }
+    }
+}
+
+body.body-full {
+    app-home {
+        .center-content {
+            margin-top: -80px;
+            height: calc(100% + 80px);
+        }
+    }
+}
