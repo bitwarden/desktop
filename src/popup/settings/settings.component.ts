@@ -128,6 +128,15 @@ export class SettingsComponent implements OnInit {
         BrowserApi.createNewTab('https://help.bitwarden.com/article/import-data/');
     }
 
+    export() {
+        if (this.platformUtilsService.isEdge()) {
+            BrowserApi.createNewTab('https://help.bitwarden.com/article/export-your-data/');
+            return;
+        }
+
+        this.router.navigate(['/export']);
+    }
+
     help() {
         this.analytics.eventTrack.next({ action: 'Clicked Help and Feedback' });
         BrowserApi.createNewTab('https://help.bitwarden.com/');

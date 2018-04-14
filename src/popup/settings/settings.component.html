@@ -72,7 +72,8 @@
                 <div class="row-main">{{'importItems' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
-            <a class="box-content-row box-content-row-flex text-default" routerLink="/export">
+            <a class="box-content-row box-content-row-flex text-default" href="#"
+               appStopClick appBlurClick (click)="export()">
                 <div class="row-main">{{'exportVault' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
@@ -86,7 +87,7 @@
     <div class="box list">
         <div class="box-header">{{'other' | i18n}}</div>
         <div class="box-content single-line">
-            <a class="box-content-row box-content-row-flex text-default"  routerLink="/options">
+            <a class="box-content-row box-content-row-flex text-default" routerLink="/options">
                 <div class="row-main">{{'options' | i18n}}</div>
                 <i class="fa fa-chevron-right fa-lg row-sub-icon"></i>
             </a>
