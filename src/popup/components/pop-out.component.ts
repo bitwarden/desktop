@@ -20,11 +20,14 @@ export class PopOutComponent implements OnInit {
     @Input() show = true;
 
     constructor(private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService,
-        private popupUtilsService: PopupUtilsService) {}
+        private popupUtilsService: PopupUtilsService) { }
 
     ngOnInit() {
         if (this.show) {
             this.show = !this.platformUtilsService.isSafari();
+            if (this.show && this.popupUtilsService.inSidebar(window) && this.platformUtilsService.isFirefox()) {
+                this.show = false;
+            }
         }
     }
 

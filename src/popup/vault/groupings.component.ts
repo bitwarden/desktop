@@ -50,6 +50,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     searchText: string;
     state: any;
     scopeState: any;
+    showLeftHeader = true;
 
     private loadedTimeout: number;
     private selectedTimeout: number;
@@ -77,6 +78,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async ngOnInit() {
+        this.showLeftHeader = !(this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox());
         this.stateService.remove('CiphersComponent');
 
         this.broadcasterService.subscribe(ComponentId, (message: any) => {

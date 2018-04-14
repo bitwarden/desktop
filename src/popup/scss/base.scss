@@ -177,7 +177,7 @@ header {
         .fa {
             position: absolute;
             top: 15px;
-            left: 10px;
+            left: 20px;
             color: lighten($brand-primary, 30%);
         }
 
@@ -204,6 +204,10 @@ header {
 
     .left + .search {
         padding-left: 0;
+
+        .fa {
+            left: 10px;
+        }
     }
 
     .search + .right {
