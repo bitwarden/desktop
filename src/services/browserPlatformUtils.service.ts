@@ -18,7 +18,7 @@ const AnalyticsIds = {
     [DeviceType.Safari]: 'UA-81915606-16',
 };
 
-const DialogPromiseExpiration = 3600000; // 1 hour
+const DialogPromiseExpiration = 600000; // 10 minutes
 
 export default class BrowserPlatformUtilsService implements PlatformUtilsService {
     static getDomain(uriString: string): string {

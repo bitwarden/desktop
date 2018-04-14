@@ -181,6 +181,7 @@ export class AppComponent implements OnInit {
         const confirmed = await swal({
             content: { element: contentDiv },
             buttons: buttons,
+            timer: 300000, // 5 minute timeout
         });
 
         this.messagingService.send('showDialogResolve', {
