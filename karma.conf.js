@@ -9,9 +9,11 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'node_modules/@bitwarden/jslib/src/abstractions/**/*.ts',
-            'node_modules/@bitwarden/jslib/src/enums/**/*.ts',
-            'node_modules/@bitwarden/jslib/src/services/**/*.ts',
+            'jslib/src/abstractions/**/*.ts',
+            'jslib/src/enums/**/*.ts',
+            'jslib/src/models/**/*.ts',
+            'jslib/src/services/**/*.ts',
+            'src/browser/**/*.ts',
             'src/services/**/*.ts'
         ],
 

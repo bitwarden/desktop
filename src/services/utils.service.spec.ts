@@ -11,6 +11,7 @@ describe('Utils Service', () => {
         });
 
         it('should handle valid urls', () => {
+            expect(UtilsService.getHostname('bitwarden.com')).toBe('bitwarden.com');
             expect(UtilsService.getHostname('https://bitwarden.com')).toBe('bitwarden.com');
             expect(UtilsService.getHostname('http://bitwarden.com')).toBe('bitwarden.com');
             expect(UtilsService.getHostname('http://vault.bitwarden.com')).toBe('vault.bitwarden.com');
