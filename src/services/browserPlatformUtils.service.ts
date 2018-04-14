@@ -167,7 +167,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     supportsU2f(win: Window): boolean {
-        if (win != null && (win as any).u2f !== 'undefined') {
+        if (win != null && (win as any).u2f != null) {
             return true;
         }
 
@@ -190,8 +190,7 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     isDev(): boolean {
-        // TODO?
-        return true;
+        return process.env.ENV === 'development';
     }
 
     copyToClipboard(text: string, options?: any): void {
