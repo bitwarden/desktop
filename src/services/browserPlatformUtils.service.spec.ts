@@ -33,12 +33,20 @@ describe('Browser Utils Service', () => {
     });
 
     describe('getBrowser', () => {
-        const original = navigator.userAgent;
+        const originalUserAgent = navigator.userAgent;
+        const originalSafari = (window as any).safari;
+        const originalOpr = (window as any).opr;
 
         // Reset the userAgent.
         afterAll(() => {
             Object.defineProperty(navigator, 'userAgent', {
-                value: original
+                value: originalUserAgent
+            });
+            Object.defineProperty(window, 'safari', {
+                value: originalSafari
+            });
+            Object.defineProperty(window, 'opr', {
+                value: originalOpr
             });
         });
 
@@ -66,6 +74,11 @@ describe('Browser Utils Service', () => {
             Object.defineProperty(navigator, 'userAgent', {
                 configurable: true,
                 value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3175.3 Safari/537.36 OPR/49.0.2695.0 (Edition developer)'
+            });
+
+            Object.defineProperty(window, 'opr', {
+                configurable: true,
+                value: {}
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
