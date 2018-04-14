@@ -23,6 +23,7 @@ import { FolderView } from 'jslib/models/view/folderView';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
@@ -53,18 +54,21 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     private loadedTimeout: number;
     private selectedTimeout: number;
     private preventSelected = false;
+    private noFolderListSize = 100;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute,
         private stateService: StateService, private popupUtils: PopupUtilsService,
-        private syncService: SyncService, private analytics: Angulartics2) {
+        private syncService: SyncService, private analytics: Angulartics2,
+        private platformUtilsService: PlatformUtilsService) {
         super(collectionService, folderService);
+        this.noFolderListSize = platformUtilsService.isEdge() ? 50 : 100;
     }
 
     get showNoFolderCiphers(): boolean {
-        return this.noFolderCiphers != null && this.noFolderCiphers.length < 100 &&
+        return this.noFolderCiphers != null && this.noFolderCiphers.length < this.noFolderListSize &&
             this.collections.length === 0;
     }
 

@@ -19,6 +19,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 
 import { CipherType } from 'jslib/enums/cipherType';
@@ -32,7 +33,6 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
 import { PopupUtilsService } from '../services/popup-utils.service';
 
 const ComponentId = 'CiphersComponent';
-const PageSize = 100;
 
 @Component({
     selector: 'app-vault-ciphers',
@@ -50,6 +50,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     private didScroll = false;
     private selectedTimeout: number;
     private preventSelected = false;
+    private pageSize = 100;
 
     constructor(cipherService: CipherService, private route: ActivatedRoute,
         private router: Router, private location: Location,
@@ -57,8 +58,9 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         private changeDetectorRef: ChangeDetectorRef, private stateService: StateService,
         private popupUtils: PopupUtilsService, private i18nService: I18nService,
         private folderService: FolderService, private collectionService: CollectionService,
-        private analytics: Angulartics2) {
+        private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService) {
         super(cipherService);
+        this.pageSize = platformUtilsService.isEdge() ? 50 : 100;
     }
 
     async ngOnInit() {
@@ -174,15 +176,15 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     loadMore() {
-        if (this.ciphers.length <= PageSize) {
+        if (this.ciphers.length <= this.pageSize) {
             return;
         }
 
         const pagedLength = this.pagedCiphers.length;
         if (this.ciphers.length > pagedLength) {
-            this.pagedCiphers = this.pagedCiphers.concat(this.ciphers.slice(pagedLength, pagedLength + PageSize));
+            this.pagedCiphers = this.pagedCiphers.concat(this.ciphers.slice(pagedLength, pagedLength + this.pageSize));
         }
-        this.didScroll = this.pagedCiphers.length > PageSize;
+        this.didScroll = this.pagedCiphers.length > this.pageSize;
     }
 
     isSearching() {
@@ -194,7 +196,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
         if (searching && this.didScroll) {
             this.resetPaging();
         }
-        return !searching && this.ciphers.length > PageSize;
+        return !searching && this.ciphers.length > this.pageSize;
     }
 
     async resetPaging() {
