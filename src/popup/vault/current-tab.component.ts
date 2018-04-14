@@ -153,9 +153,10 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
     private async load() {
         const tab = await BrowserApi.getTabFromCurrentWindow();
-        if (tab) {
+        if (tab != null) {
             this.url = tab.url;
         } else {
+            this.loginCiphers = [];
             this.loaded = true;
             return;
         }
