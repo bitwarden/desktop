@@ -68,6 +68,10 @@ p.lead {
     padding-bottom: 0 !important;
 }
 
+.break-all {
+    word-break: break-all;
+}
+
 [hidden] {
     display: none !important;
 }
@@ -122,14 +126,6 @@ app-root > #loading {
     height: 100%;
     width: 100%;
     color: $text-muted;
-}
-
-app-password-generator .password-block {
-    font-size: $font-size-large;
-    word-break: break-all;
-    font-family: $font-family-monospace;
-    text-align: center;
-    margin: 20px;
 }
 
 app-vault-icon {
