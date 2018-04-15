@@ -30,13 +30,12 @@ $fa-font-path: "~font-awesome/fonts";
         }
 
         &:before {
-            position: fixed;
             font-family: FontAwesome;
             font-size: 25px;
             line-height: 20px;
             float: left;
             color: #ffffff;
-            padding-right: 0.5em;
+            padding-right: 10px;
             margin: auto 0 auto -36px;
         }
 
