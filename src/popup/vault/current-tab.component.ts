@@ -22,6 +22,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+import { UtilsService } from 'jslib/abstractions/utils.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 
@@ -39,7 +40,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     identityCiphers: CipherView[];
     loginCiphers: CipherView[];
     url: string;
-    domain: string;
+    hostname: string;
     searchText: string;
     inSidebar = false;
     showLeftHeader = false;
@@ -51,7 +52,8 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) { }
+        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
+        private utilsService: UtilsService) { }
 
     async ngOnInit() {
         this.showLeftHeader = !this.platformUtilsService.isSafari();
@@ -110,7 +112,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     addCipher() {
-        this.router.navigate(['/add-cipher'], { queryParams: { name: this.domain, uri: this.url } });
+        this.router.navigate(['/add-cipher'], { queryParams: { name: this.hostname, uri: this.url } });
     }
 
     viewCipher(cipher: CipherView) {
@@ -160,7 +162,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             return;
         }
 
-        this.domain = this.platformUtilsService.getDomain(this.url);
+        this.hostname = this.utilsService.getHostname(this.url);
         BrowserApi.tabSendMessage(tab, {
             command: 'collectPageDetails',
             tab: tab,

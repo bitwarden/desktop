@@ -1059,5 +1059,8 @@
   },
   "noPasswordsInList": {
     "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }
