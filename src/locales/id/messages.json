@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "URl Baru"
   },
   "username": {
     "message": "Nama Pengguna"
@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "Salin Kata Sandi"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "Panjang"
   },
@@ -537,6 +540,10 @@
     "message": "Verifikasi dengan Duo Security menggunakan aplikasi Duo Mobile, SMS, panggilan telepon, atau kunci keamanan U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
   "u2fDesc": {
     "message": "Menggunakan FIDO U2F mengaktifkan kunci keamanan untuk mengakses akun anda."
   },
@@ -610,103 +617,103 @@
     "message": "Fitur Tidak Tersedia"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Keluar"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Sesi masuk Anda telah berakhir."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Anda yakin ingin keluar?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Keluar"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Tambahkan Info Masuk Baru"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Tambahkan Item Baru"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Tambahkan Folder Baru"
   },
   "view": {
     "message": "View"
   },
   "account": {
-    "message": "Account"
+    "message": "Akun"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Memuat..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Kunci Sekarang"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Pembuat Kata Sandi"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Kirim Email Ke Kami"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Kunjungi Situs Web Kami"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Buat Laporan Masalah"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Ikuti Kami"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Sinkronisasi Brankas"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Ubah Kata Sandi Utama"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Anda dapat mengubah kata sandi utama Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "Ubah Email"
   },
   "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Anda dapat mengubah alamat email Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Buka Brankas Web"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Dapatkan Aplikasi Seluler"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Dapatkan Ekstensi Peramban"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Sinkronisasi selesai"
   },
   "syncingFailed": {
     "message": "Syncing failed"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Brankas Anda terkunci. Verifikasi sandi utama Anda untuk melanjutkan."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Buka"
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Sandi utama tidak valid"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Info masuk dua langkah membuat akun Anda lebih aman dengan mengharuskan Anda memverifikasi info masuk Anda dengan peranti lain seperti kode keamanan, aplikasi autentikasi, SMS, panggilan telepon, atau email. Info masuk dua langkah dapat diaktifkan di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Info masuk dua langkah"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Pilihan Penguncian"
   },
   "lockOptionsDesc": {
     "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
@@ -718,19 +725,19 @@
     "message": "1 menit"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 menit"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 menit"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 menit"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 jam"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 jam"
   },
   "onIdle": {
     "message": "On System Idle"
@@ -889,39 +896,39 @@
     "message": "There are no passwords to list."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Urungkan"
   },
   "redo": {
     "message": "Redo"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Potong",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Tempel",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Pilih Semua"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Perbesar"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Perkecil"
   },
   "resetZoom": {
     "message": "Reset Zoom"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Aktif\/nonaktifkan Layar Penuh"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Muat ulang"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Aktif\/nonaktifkan Alat Pengembang"
   },
   "minimize": {
     "message": "Minimize",
@@ -935,25 +942,25 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Tentang Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Layanan"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Sembunyikan Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Sembunyikan Lainnya"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Tampilkan Semua"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Keluar dari Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ disalin",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -963,10 +970,10 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Bantuan"
   },
   "window": {
-    "message": "Window"
+    "message": "Jendela"
   },
   "checkPassword": {
     "message": "Check if password has been exposed."
@@ -984,7 +991,7 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Basis domain"
   },
   "host": {
     "message": "Host",
@@ -1010,5 +1017,9 @@
   },
   "toggleOptions": {
     "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }
