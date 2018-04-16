@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "複製密碼"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "長度"
   },
@@ -452,7 +455,7 @@
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
-    "message": "兩次填入的主密碼不符合。"
+    "message": "兩次填寫的主密碼不相符。"
   },
   "newAccountCreated": {
     "message": "帳戶已建立！現在可以登入了。"
@@ -535,6 +538,10 @@
   },
   "duoDesc": {
     "message": "與 Duo Security 驗證，可使用 Duo Mobile 程式， SMS ，致電或 U2F 安全鑰匙。",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -981,7 +988,7 @@
     }
   },
   "passwordSafe": {
-    "message": "任何已知的外泄密碼資料庫中都沒有此密碼，它目前是安全的‧"
+    "message": "任何已知的外泄密碼資料庫中都沒有此密碼，它目前是安全的。"
   },
   "baseDomain": {
     "message": "基底網域"
@@ -1010,5 +1017,9 @@
   },
   "toggleOptions": {
     "message": "切換選項"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }
