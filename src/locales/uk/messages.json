@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "Копіювати пароль"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "Довжина"
   },
@@ -537,6 +540,10 @@
     "message": "Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
   "u2fDesc": {
     "message": "Використовуйте будь-який ключ безпеки FIDO U2F для доступу до сховища."
   },
@@ -691,7 +698,7 @@
     "message": "Не вдалося синхронізувати"
   },
   "yourVaultIsLocked": {
-    "message": "Ваше сховище заблоковане. Підтвердьте свій головний пароль для продовження."
+    "message": "Сховище заблоковано. Введіть головний пароль для продовження."
   },
   "unlock": {
     "message": "Розблокувати"
@@ -1010,5 +1017,9 @@
   },
   "toggleOptions": {
     "message": "Перемкнути налаштування"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }
