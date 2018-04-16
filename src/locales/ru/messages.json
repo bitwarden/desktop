@@ -299,7 +299,7 @@
     "message": "Измененный элемент"
   },
   "deleteItem": {
-    "message": "Удаление элемента"
+    "message": "Удалить элемент"
   },
   "deleteFolder": {
     "message": "Удалить папку"
@@ -311,7 +311,7 @@
     "message": "Вы действительно хотите удалить этот элемент?"
   },
   "deletedItem": {
-    "message": "Удаленный элемент"
+    "message": "Элемент удален"
   },
   "overwritePasswordConfirmation": {
     "message": "Вы хотите перезаписать текущий пароль?"
@@ -331,6 +331,9 @@
   },
   "copyPassword": {
     "message": "Копировать пароль"
+  },
+  "copyUri": {
+    "message": "Copy URI"
   },
   "length": {
     "message": "Длина"
@@ -534,7 +537,11 @@
     "message": "Используйте YubiKey для доступа к вашей учетной записи. Работает с устройствами YubiKey 4, 4 Nano, 4C и NEO."
   },
   "duoDesc": {
-    "message": "Проверьте с помощью Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
+    "message": "Подтвердите при помощи Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -619,7 +626,7 @@
     "message": "Вы действительно хотите выйти?"
   },
   "logOut": {
-    "message": "Выйти"
+    "message": "Выход"
   },
   "addNewLogin": {
     "message": "Добавить новый логин"
@@ -709,7 +716,7 @@
     "message": "Параметры блокировки"
   },
   "lockOptionsDesc": {
-    "message": "Выберите условие блокировки вашего хранилища. Для разблокировки хранилища необходимо повторно ввести мастер-пароль."
+    "message": "Выберите условие блокировки вашего хранилища. Для его разблокировки потребуется повторно ввести мастер-пароль."
   },
   "immediately": {
     "message": "Немедленно"
@@ -1009,6 +1016,10 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Варианты переключения"
+    "message": "Настройки перебора"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

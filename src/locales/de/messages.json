@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "Neuen URI"
+    "message": "Neue URL"
   },
   "username": {
     "message": "Nutzername"
@@ -139,7 +139,7 @@
     "message": "Premium notwendig"
   },
   "premiumRequiredDesc": {
-    "message": "Für diese Funktion benötigen Sie eine Premiummitgliedschaft."
+    "message": "Für diese Funktion ist eine Premium-Mitgliedschaft notwendig."
   },
   "errorOccurred": {
     "message": "Ein Fehler ist aufgetreten."
@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "Passwort kopieren"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "Länge"
   },
@@ -383,7 +386,7 @@
     "message": "Die maximale Dateigröße beträgt 100 MB."
   },
   "updateKey": {
-    "message": "Sie können diese Funktion nicht nutzen, bevor Sie Ihren Verschlüsselungsschlüssel aktualisiert haben."
+    "message": "Du kannst diese Funktion nicht nutzen, bevor du deinen Verschlüsselungsschlüssel aktualisiert hast."
   },
   "options": {
     "message": "Optionen"
@@ -535,6 +538,10 @@
   },
   "duoDesc": {
     "message": "Verifiziere mit Duo Security, indem du die Duo Mobile App, SMS, Anrufe oder U2F Sicherheitsschlüssel benutzt.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -969,10 +976,10 @@
     "message": "Fenster"
   },
   "checkPassword": {
-    "message": "Überprüfen Sie, ob Ihr Kennwort ungeschützt ist."
+    "message": "Überprüfe ob dein Kennwort kompromittiert ist."
   },
   "passwordExposed": {
-    "message": "Dieses Kennwort wurde $VALUE$ mal Verstößen gegen die Datenschicherheit ausgesetzt. Sie sollten es ändern.",
+    "message": "Dieses Kennwort wurde $VALUE$ in öffentlichen Passwortdatenbanken gefunden. Du solltest es ändern.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -987,7 +994,7 @@
     "message": "Basis-Domäne"
   },
   "host": {
-    "message": "Host",
+    "message": "Server",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
@@ -1009,6 +1016,10 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Ein\/aus-Optionen"
+    "message": "Umschaltoptionen"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

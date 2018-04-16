@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Alle elementer"
@@ -39,7 +39,7 @@
     "message": "Delt"
   },
   "attachments": {
-    "message": "Vedhæftelser"
+    "message": "Vedhæftninger"
   },
   "viewItem": {
     "message": "Vis element"
@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Ny URI"
   },
   "username": {
     "message": "Brugernavn"
@@ -72,7 +72,7 @@
     "message": "Rediger element"
   },
   "emailAddress": {
-    "message": "E-mailadresse"
+    "message": "Emailadresse"
   },
   "verificationCodeTotp": {
     "message": "Verifikationskode (TOTP)"
@@ -112,10 +112,10 @@
     "message": "Sikkerhedskode"
   },
   "identityName": {
-    "message": "Identitetsbenævnelse"
+    "message": "Identitetsnavn"
   },
   "company": {
-    "message": "Firma"
+    "message": "Virksomhed"
   },
   "ssn": {
     "message": "CPR-nummer"
@@ -124,10 +124,10 @@
     "message": "Pasnummer"
   },
   "licenseNumber": {
-    "message": "Licensnummer"
+    "message": "Kørekortnummer"
   },
   "email": {
-    "message": "E-mail"
+    "message": "Email"
   },
   "phone": {
     "message": "Telefon"
@@ -191,7 +191,7 @@
     "message": "Titel"
   },
   "mr": {
-    "message": "Hr."
+    "message": "Hr"
   },
   "mrs": {
     "message": "Fru"
@@ -200,7 +200,7 @@
     "message": "Frøken"
   },
   "dr": {
-    "message": "Doktor"
+    "message": "Dr"
   },
   "expirationMonth": {
     "message": "Udløbsmåned"
@@ -263,7 +263,7 @@
     "message": "Favorit"
   },
   "edit": {
-    "message": "Redigér"
+    "message": "Rediger"
   },
   "authenticatorKeyTotp": {
     "message": "Autentificeringsnøgle (TOTP)"
@@ -284,7 +284,7 @@
     "message": "Skjult"
   },
   "cfTypeBoolean": {
-    "message": "Boolsk værdi"
+    "message": "Boolsk"
   },
   "remove": {
     "message": "Fjern"
@@ -296,7 +296,7 @@
     "message": "Tilføjede element"
   },
   "editedItem": {
-    "message": "Regiderede element"
+    "message": "Redigerede element"
   },
   "deleteItem": {
     "message": "Slet element"
@@ -305,16 +305,16 @@
     "message": "Slet mappe"
   },
   "deleteAttachment": {
-    "message": "Slet vedhæftelse"
+    "message": "Slet vedhæftning"
   },
   "deleteItemConfirmation": {
-    "message": "Er du sikker på at du vil slette dette element?"
+    "message": "Er du sikker på, at du vil slette dette element?"
   },
   "deletedItem": {
     "message": "Slettede element"
   },
   "overwritePasswordConfirmation": {
-    "message": "Er du sikker du vil overskrive den aktuelle adgangskode?"
+    "message": "Er du sikker på, at du vil overskrive den aktuelle adgangskode?"
   },
   "noneFolder": {
     "message": "Ingen mappe",
@@ -331,6 +331,9 @@
   },
   "copyPassword": {
     "message": "Kopier kodeord"
+  },
+  "copyUri": {
+    "message": "Copy URI"
   },
   "length": {
     "message": "Længde"
@@ -362,13 +365,13 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Tilføj ny vedhæftelse"
+    "message": "Tilføj ny vedhæftning"
   },
   "deletedAttachment": {
-    "message": "Slettet vedhæftelse"
+    "message": "Slettet vedhæftning"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Er du sikker på du vil slette denne vedhæftelse?"
+    "message": "Er du sikker på du vil slette denne vedhæftning?"
   },
   "attachmentSaved": {
     "message": "Den vedhæftede fil er blevet gemt."
@@ -410,7 +413,7 @@
     "message": "Log ind"
   },
   "submit": {
-    "message": "Bekræft"
+    "message": "Indsend"
   },
   "masterPass": {
     "message": "Hovedadgangskode"
@@ -419,7 +422,7 @@
     "message": "Hovedadgangskoden er den adgangskode, du bruger til at få adgang til din boks. Det er meget vigtigt, at du ikke glemmer din hovedadgangskode. Der er ingen måde hvorpå koden kan genoprettes, i tilfælde af at du glemmer den."
   },
   "masterPassHintDesc": {
-    "message": "Et tip til hovedeadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer den."
+    "message": "Et tip til hovedadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer den."
   },
   "reTypeMasterPass": {
     "message": "Gentast hovedadgangskode"
@@ -434,22 +437,22 @@
     "message": "Adgangskodetip"
   },
   "enterEmailToGetHint": {
-    "message": "Indtast din konto's e-mailadresse for at modtage dit hovedadgangskodetip."
+    "message": "Indtast din kontos emailadresse for at modtage dit hovedadgangskodetip."
   },
   "getMasterPasswordHint": {
     "message": "Få hovedadgangskodetip"
   },
   "emailRequired": {
-    "message": "E-mailadresse er påkrævet."
+    "message": "Emailadresse er påkrævet."
   },
   "invalidEmail": {
-    "message": "Ugyldig e-mailadresse."
+    "message": "Ugyldig emailadresse."
   },
   "masterPassRequired": {
     "message": "Hovedadgangskode er påkrævet."
   },
   "masterPassLength": {
-    "message": "Hovedadgangskode skal være på mindst 8 tegn."
+    "message": "Hovedadgangskoden skal være på mindst 8 tegn."
   },
   "masterPassDoesntMatch": {
     "message": "De to adgangskoder matcher ikke."
@@ -458,7 +461,7 @@
     "message": "Din nye konto er oprettet! Du kan nu logge ind."
   },
   "masterPassSent": {
-    "message": "Vi har sendt dig en e-mail med dit hovedadgangskodetip."
+    "message": "Vi har sendt dig en email med dit hovedadgangskodetip."
   },
   "unexpectedError": {
     "message": "Der opstod en uventet fejl."
@@ -482,7 +485,7 @@
     "message": "Indtast den 6-cifrede verifikationskode fra din autentificeringsapp."
   },
   "enterVerificationCodeEmail": {
-    "message": "Indtast den 6-cifrede verifikationskode der blev sendt til $EMAIL$.",
+    "message": "Indtast den 6-cifrede verifikationskode, der blev sendt til $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -512,10 +515,10 @@
     "message": "Indsæt din YubiKey i din computers USB-port og tryk derefter på dens knap."
   },
   "insertU2f": {
-    "message": "Indsæt din sikkerhedsnøgle til computerens USB-port. Hvis den har en knap, tryk på den."
+    "message": "Indsæt din sikkerhedsnøgle i din computers USB-port. Hvis den har en knap, tryk på den."
   },
   "recoveryCodeDesc": {
-    "message": "Mistet adgang til alle dine to-faktor-udbydere? Brug din genoprettelseskode til at deaktivere alle to-faktor udbydere fra din konto."
+    "message": "Mistet adgang til alle dine to-faktor-udbydere? Brug din genoprettelseskode til at deaktivere alle to-faktor udbydere på din konto."
   },
   "recoveryCodeTitle": {
     "message": "Gendannelseskode"
@@ -528,59 +531,63 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Sikkerhedsnøgle"
+    "message": "YubiKey OTP sikkerhedsnøgle"
   },
   "yubiKeyDesc": {
     "message": "Brug en YubiKey til at få adgang til din konto. Virker med YubiKey 4, 4 Nano, 4C og NEO enheder."
   },
   "duoDesc": {
-    "message": "Kontroller med Duo Sikkerhed ved hjælp af Duo Mobil-app, SMS, telefonopkald eller U2F sikkerhedsnøgle.",
+    "message": "Bekræft med Duo sikkerhed ved hjælp af Duo Mobile app, SMS, telefonopkald eller U2F sikkerhedsnøgle.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
     "message": "Brug hvilken som helst FIDO U2F-aktiveret sikkerhedsnøgle til at få adgang til din konto."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Sikkerhedsnøgle"
+    "message": "FIDO U2F sikkerhedsnøgle"
   },
   "emailTitle": {
-    "message": "E-mail"
+    "message": "Email"
   },
   "emailDesc": {
-    "message": "Bekræftelseskoder vil blive E-mailet til dig."
+    "message": "Bekræftelseskoder vil blive emailet til dig."
   },
   "loginUnavailable": {
     "message": "Login utilgængelig"
   },
   "noTwoStepProviders": {
-    "message": "Denne konto har to-trinslogin aktiveret, men ingen af de konfigurerede to-trinsudbydere understøttes af denne enhed."
+    "message": "Denne konto har to-trins login aktiveret, men ingen af de konfigurerede to-trinsudbydere understøttes af denne enhed."
   },
   "noTwoStepProviders2": {
-    "message": "Tilføj venligst yderligere udbydere, der understøttes bedre på tværs af enheder (såsom en autentificeringsapplikation)."
+    "message": "Tilføj venligst yderligere udbydere, der understøttes bedre på tværs af enheder (såsom en autentificeringsapp)."
   },
   "twoStepOptions": {
-    "message": "To-trins-loginmuligheder"
+    "message": "To-trins-login indstillinger"
   },
   "selfHostedEnvironment": {
     "message": "Selv-hostet miljø"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Angiv grund-URL i din lokal-hostede bitwarden installation."
+    "message": "Angiv grund-URL'en i din lokal-hostede Bitwarden-installation."
   },
   "customEnvironment": {
     "message": "Brugerdefineret miljø"
   },
   "customEnvironmentFooter": {
-    "message": "For avancerede brugere. Du kan angive grund-URL for hver service uafhængigt."
+    "message": "Til avancerede brugere. Du kan angive grund URL'en for hver tjeneste uafhængigt."
   },
   "baseUrl": {
     "message": "Server URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API server URL"
   },
   "webVaultUrl": {
-    "message": "Web-boks Server URL"
+    "message": "Web-boks server URL"
   },
   "identityUrl": {
     "message": "Identitetsserver URL"
@@ -607,19 +614,19 @@
     "message": "Lær mere"
   },
   "featureUnavailable": {
-    "message": "Funktionen er utilgængelig"
+    "message": "Funktion utilgængelig"
   },
   "loggedOut": {
-    "message": "Logget ud"
+    "message": "Logget af"
   },
   "loginExpired": {
     "message": "Din login-session er udløbet."
   },
   "logOutConfirmation": {
-    "message": "Er du sikker på, at du vil logge ud?"
+    "message": "Er du sikker på, at du vil logge af?"
   },
   "logOut": {
-    "message": "Log ud"
+    "message": "Log af"
   },
   "addNewLogin": {
     "message": "Tilføj et login"
@@ -661,19 +668,19 @@
     "message": "Følg os"
   },
   "syncVault": {
-    "message": "Synkroniser boks nu"
+    "message": "Synkroniser boks"
   },
   "changeMasterPass": {
     "message": "Skift hovedadgangskode"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Du kan ændre din hovedadgangskode på bitwarden.com's web-boks. Vil du besøge hjemmesiden nu?"
+    "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "changeEmail": {
-    "message": "Skift E-mailadresse"
+    "message": "Skift emailadresse"
   },
   "changeEmailConfirmation": {
-    "message": "Du kan ændre din e-mailadresse på bitwarden.com's web-boks. Vil du besøge hjemmesiden nu?"
+    "message": "Du kan ændre din emailadresse i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "goToWebVault": {
     "message": "Gå til web-boks"
@@ -691,7 +698,7 @@
     "message": "Synkronisering mislykkedes"
   },
   "yourVaultIsLocked": {
-    "message": "Din boks er låst. Verificer din hovedadgangskode for at fortsætte."
+    "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
   },
   "unlock": {
     "message": "Lås op"
@@ -700,19 +707,19 @@
     "message": "Ugyldig hovedadgangskode"
   },
   "twoStepLoginConfirmation": {
-    "message": "To-trins-login gør din konto mere sikker ved at kræve at du verificerer dit login på en anden enhed med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller e-mail. To-trins-login kan aktiveres på bitwarden.com's web-boks. Vil du besøge hjemmesiden nu?"
+    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller email. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "twoStepLogin": {
-    "message": "To-trins-login"
+    "message": "To-trins login"
   },
   "lockOptions": {
     "message": "Låseindstillinger"
   },
   "lockOptionsDesc": {
-    "message": "Vælg hvornår din boks skal låse. En låst boks kræver at du gentaster din hovedadgangskode for at tilgå den igen."
+    "message": "Vælg hvornår din boks låses. En låst boks kræver at du gentaster din hovedadgangskode for at tilgå den igen."
   },
   "immediately": {
-    "message": "Med det samme"
+    "message": "Straks"
   },
   "oneMinute": {
     "message": "1 minut"
@@ -739,7 +746,7 @@
     "message": "Når systemet sover"
   },
   "onLocked": {
-    "message": "Når systemet er låst"
+    "message": "Når systemet låses"
   },
   "onRestart": {
     "message": "Ved genstart"
@@ -754,7 +761,7 @@
     "message": "Deaktiver Analytics"
   },
   "gaDesc": {
-    "message": "Vi bruger analytics til bedre at lære hvordan udvidelsen bruges, således at vi kan gøre det bedre. Al dataindsamling er helt anonym."
+    "message": "Vi bruger Analytics til at bedre lære hvordan applikationen bruges, således at vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
@@ -767,7 +774,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Tjek for opdateringer"
+    "message": "Søg efter opdateringer"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -782,7 +789,7 @@
     "message": "Genstart for at opdatere"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ er klar til at installeres. Du skal genstarte bitwarden for at færdiggøre installationen. Vil du genstarte og opdatere nu?",
+    "message": "Version $VERSION_NUM$ er klar til at installeres. Du skal genstarte Bitwarden for at færdiggøre installationen. Vil du genstarte og opdatere nu?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -803,7 +810,7 @@
     "message": "Senere"
   },
   "noUpdatesAvailable": {
-    "message": "Ingen opdateringer er tilgængelige i øjeblikket. Du anvender den seneste version."
+    "message": "Ingen opdateringer er tilgængelige i øjeblikket. Du anvender den nyeste version."
   },
   "updateError": {
     "message": "Opdateringsfejl"
@@ -829,13 +836,13 @@
     "message": "Administrer medlemsskab"
   },
   "premiumManageAlert": {
-    "message": "Du kan administrere dit medlemskab på bitwarden.com's web-boks. Vil du besøge hjemmesiden nu?"
+    "message": "Du kan administrere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "premiumRefresh": {
     "message": "Opdater medlemskab"
   },
   "premiumNotCurrentMember": {
-    "message": "Du er ikke i øjeblikket et premium-medlem."
+    "message": "Du er i øjeblikket ikke premium-medlem."
   },
   "premiumSignUpAndGet": {
     "message": "Tilmeld dig et premium medlemskab og få:"
@@ -847,7 +854,7 @@
     "message": "Yderligere to-trins-loginmuligheder såsom YubiKey, FIDO U2F og Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verifikationskode (2FA) generator for logins i din boks."
+    "message": "TOTP verifikationskode (2FA) generator til logins i din boks."
   },
   "premiumSignUpSupport": {
     "message": "Prioriteret kundeservice."
@@ -859,16 +866,16 @@
     "message": "Køb premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Du kan købe premium-medlemskab på din bitwarden.com's web-boks. Vil du besøge hjemmesiden nu?"
+    "message": "Du kan købe premium-medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "premiumCurrentMember": {
-    "message": "Du er et premium-medlem!"
+    "message": "Du er premium-medlem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Tak fordi du støtter bitwarden."
+    "message": "Tak fordi du støtter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Alt for kun $PRICE$ \/år!",
+    "message": "Alt dette for kun $PRICE$ \/år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -877,7 +884,7 @@
     }
   },
   "refreshComplete": {
-    "message": "Genindlæsning komplet"
+    "message": "Opdatering færdig"
   },
   "passwordHistory": {
     "message": "Adgangskodehistorik"
@@ -935,13 +942,13 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "Om bitwarden"
+    "message": "Om Bitwarden"
   },
   "services": {
     "message": "Tjenester"
   },
   "hideBitwarden": {
-    "message": "Skjul bitwarden"
+    "message": "Skjul Bitwarden"
   },
   "hideOthers": {
     "message": "Skjul øvrige"
@@ -950,7 +957,7 @@
     "message": "Vis alle"
   },
   "quitBitwarden": {
-    "message": "Afslut bitwarden"
+    "message": "Afslut Bitwarden"
   },
   "valueCopied": {
     "message": "$VALUE$ kopieret",
@@ -969,10 +976,10 @@
     "message": "Vindue"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Undersøg om adgangskoden er blevet afsløret."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Denne adgangskode er blevet afsløret $VALUE$ gang(e) i datalæk. Du burde skifte den.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,34 +988,38 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Denne adgangskode er ikke fundet i nogen kendte datalæk. Den burde være sikker at bruge."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Grund-domæne"
   },
   "host": {
-    "message": "Host",
+    "message": "Vært",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Nøjagtig"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Begynder med"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulært udtryk",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Matchmetode",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Standard matchmetode",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Skift indstillinger"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Toate elementele"
@@ -39,7 +39,7 @@
     "message": "Partajate"
   },
   "attachments": {
-    "message": "Ataşamente"
+    "message": "Atașamente"
   },
   "viewItem": {
     "message": "Vizualizare articol"
@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "URI nou"
   },
   "username": {
     "message": "Nume de utilizator"
@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "Copiere parolă"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "Lungime"
   },
@@ -339,10 +342,10 @@
     "message": "Închidere"
   },
   "minNumbers": {
-    "message": "Număr minim"
+    "message": "Număr minim de caractere"
   },
   "minSpecial": {
-    "message": "Minim special",
+    "message": "Număr minim de caractere speciale",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -535,6 +538,10 @@
   },
   "duoDesc": {
     "message": "Verificați cu Duo Security utilizând aplicația Duo Mobile, SMS, apel sau cheia de securitate U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -969,10 +976,10 @@
     "message": "Fereastră"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Verificare dacă parola a fost dezvăluită."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Această parolă a fost dezvăluită de $VALUE$ ori într-o breșă de date. Ar trebui să o schimbați.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,34 +988,38 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Aceasta parola nu a fost găsită în nicio breșă de date cunoscută. Ar trebui să fie sigură pentru a fi utilizată."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Domeniu de bază"
   },
   "host": {
-    "message": "Host",
+    "message": "Gazdă",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Începe cu"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Expresie regulată",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Detectare de potriviri",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Detectarea de potriviri implicite",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Activare\/Dezactivare opțiuni"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }
