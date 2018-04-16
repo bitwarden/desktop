@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Копировать пароль"
   },
+  "copyNote": {
+    "message": "Копировать заметку"
+  },
   "copyUri": {
     "message": "Копировать URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Помощь и обратная связь"
   },
-  "emailUs": {
-    "message": "Напишите нам"
-  },
-  "emailUsDirectly": {
-    "message": "Чтобы получить помощь или оставить отзыв, отправьте нам письмо."
-  },
-  "visitOurWebsite": {
-    "message": "Посетите наш сайт"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Посетите наш веб-сайт, чтобы получить помощь, прочесть новости, связаться с нами или узнать больше о том, как использовать Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Сообщить об ошибке"
-  },
-  "gitHubIssue": {
-    "message": "Откройте проблему в нашем репозитории на GitHub."
-  },
   "sync": {
     "message": "Синхронизация"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Генератор паролей"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Автоматическая генерация стойких и уникальных паролей для ваших аккаунтов."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Заметки"
   },
+  "note": {
+    "message": "Заметка"
+  },
   "editItem": {
     "message": "Изменить элемент"
   },
@@ -272,19 +264,19 @@
     "message": "Папка"
   },
   "deleteItem": {
-    "message": "Удаление элемента"
+    "message": "Удалить элемент"
   },
   "viewItem": {
     "message": "Просмотр элемента"
   },
-  "launchWebsite": {
-    "message": "Открыть сайт"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Веб-сайт"
   },
-  "togglePassword": {
-    "message": "Отобразить пароль"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Управление"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Безопасность"
   },
-  "errorsOccurred": {
-    "message": "Произошли ошибки"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Необходимо указать email."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " скопирован",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Не получается автоматически заполнить выбранный элемент на этой странице. Скопируйте и вставьте логин\/пароль напрямую из своего хранилища."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Двухфакторная аутентификация делает ваш аккаунт более защищенным, требуя подтверждения входа на другом устройстве, например, ключом безопасности, приложением-аутентификатором, SMS, телефонным звонком или email. Двухфакторная аутентификация включается на bitwarden.com. Перейти на сайт сейчас?"
   },
-  "loggingOut": {
-    "message": "Выход..."
-  },
-  "loggingOutConfirmation": {
-    "message": "Недавно вы обновились на более новую версию. Чтобы изменить параметры блокировки необходимо авторизоваться повторно. Выйти сейчас?"
-  },
   "editedFolder": {
     "message": "Папка отредактирована"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "Новый URI"
   },
@@ -468,7 +469,7 @@
     "message": "Вы действительно хотите удалить этот элемент?"
   },
   "deletedItem": {
-    "message": "Удаленный элемент"
+    "message": "Элемент удален"
   },
   "overwritePassword": {
     "message": "Перезаписать пароль"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Вы хотите перезаписать текущий пароль?"
   },
-  "credits": {
-    "message": "Благодарности"
-  },
-  "thankYou": {
-    "message": "Спасибо"
-  },
-  "translations": {
-    "message": "Локализации"
-  },
   "searchFolder": {
     "message": "Поиск папки"
   },
   "searchCollection": {
     "message": "Найти коллекцию"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Без папки",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Создайте организацию, чтобы безопасно делиться своими элементами с другими пользователями."
-  },
-  "contribute": {
-    "message": "Вы тоже можете внести свой вклад!"
   },
   "learnMore": {
     "message": "Подробнее"
@@ -641,7 +633,13 @@
     "message": "Благодарим вас за поддержку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всего лишь %price% \/в год!"
+    "message": "Всего лишь %price% \/в год!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Обновление завершено"
@@ -662,7 +660,22 @@
     "message": "Введите 6-значный код подтверждения из вашего приложения-аутентификатора."
   },
   "enterVerificationCodeEmail": {
-    "message": "Введите 6-значный код подтверждения, который был отправлен на email"
+    "message": "Введите 6-значный код подтверждения, который был отправлен на email",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Запомнить меня"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Проверьте с помощью Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Подтвердите при помощи Duo Security для вашей организации, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Копировать значение"
-  },
-  "toggleValue": {
-    "message": "Показать\/Скрыть"
   },
   "value": {
     "message": "Значение"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Личность"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Очистить"
   },
@@ -988,7 +1008,13 @@
     "message": "Проверьте, не скомпрометирован ли пароль."
   },
   "passwordExposed": {
-    "message": "Этот пароль был найден в базах утечек. Вы должны изменить его."
+    "message": "Этот пароль был найден в базах утечек. Вы должны изменить его.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "Этот пароль не был найден в известных базах утечек. Можно продолжать его использовать."
@@ -1019,6 +1045,22 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Варианты переключения"
+    "message": "Настройки перебора"
+  },
+  "organization": {
+    "message": "Организация",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

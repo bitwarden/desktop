@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "複製密碼"
   },
+  "copyNote": {
+    "message": "複製筆記"
+  },
   "copyUri": {
     "message": "複製 URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "協助與意見反應"
   },
-  "emailUs": {
-    "message": "傳送電子郵件給我們"
-  },
-  "emailUsDirectly": {
-    "message": "傳送電子郵件給我們以取得協助或提供意見反應。"
-  },
-  "visitOurWebsite": {
-    "message": "瀏覽我們的網站"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "瀏覽我們的網站以取得協助、了解新消息、傳送電子郵件給我們或瀏覽更多使用 Bitwarden 的秘訣。"
-  },
-  "fileBugReport": {
-    "message": "Bug 回報"
-  },
-  "gitHubIssue": {
-    "message": "在我們的 GitHub 儲存庫中新增問題。"
-  },
   "sync": {
     "message": "同步"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "密碼產生器"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "自動產生安全、獨特的登入密碼。"
@@ -265,6 +254,9 @@
   "notes": {
     "message": "筆記"
   },
+  "note": {
+    "message": "筆記"
+  },
   "editItem": {
     "message": "編輯項目"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "檢視項目"
   },
-  "launchWebsite": {
-    "message": "開啟網站"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "網站"
   },
-  "togglePassword": {
-    "message": "切換密碼能見度"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "管理"
@@ -349,8 +341,8 @@
   "security": {
     "message": "安全"
   },
-  "errorsOccurred": {
-    "message": "發生錯誤"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "必須填入電子郵件地址 。"
@@ -365,7 +357,7 @@
     "message": "主密碼需要至少 8 個字元。"
   },
   "masterPassDoesntMatch": {
-    "message": "兩次填入的主密碼不符合。"
+    "message": "兩次填寫的主密碼不相符。"
   },
   "newAccountCreated": {
     "message": "帳戶已建立！現在可以登入了。"
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " 已複製",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "無法在此頁面自動填入您的帳戶資料。請手動複製／貼上您的帳戶及密碼。"
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "兩步驟登入需要您登入時輸入一個由驗證碼程式產生的安全碼，為您的帳戶增加一層保障。兩步驟登入可以在 Bitwarden 網頁版啟用。現在前往？"
   },
-  "loggingOut": {
-    "message": "正在登出"
-  },
-  "loggingOutConfirmation": {
-    "message": "您最近從一個舊版本更新了。您需要重新登入才可變更鎖定選項。立即登出？"
-  },
   "editedFolder": {
     "message": "已編輯資料夾"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "新增 URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "您確定要覆寫目前的密碼嗎？"
   },
-  "credits": {
-    "message": "銘謝"
-  },
-  "thankYou": {
-    "message": "非常感謝"
-  },
-  "translations": {
-    "message": "譯者"
-  },
   "searchFolder": {
     "message": "搜尋資料夾"
   },
   "searchCollection": {
     "message": "搜尋收藏"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "（未分類）",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "新增組織以安全地分享您的登入資料。"
-  },
-  "contribute": {
-    "message": "您也可以成為貢獻者 ！"
   },
   "learnMore": {
     "message": "了解更多"
@@ -641,7 +633,13 @@
     "message": "感謝您支持 Bitwarden 。"
   },
   "premiumPrice": {
-    "message": "每年只需 %price% ！"
+    "message": "每年只需 %price% ！",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "重新整理完成"
@@ -662,7 +660,22 @@
     "message": "輸入驗證器應用程式提供的 6 位數驗證碼。"
   },
   "enterVerificationCodeEmail": {
-    "message": "請輸入 6 位數驗證碼，我們已將其傳送至"
+    "message": "請輸入 6 位數驗證碼，我們已將其傳送至",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "記住我的登入資訊"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "與 Duo Security 驗證，可使用 Duo Mobile 程式， SMS ，致電或 U2F 安全鑰匙。",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "使用 Duo Security 驗證您的組織，可使用 Duo Mobile 程式， SMS ，致電或 U2F 安全鑰匙。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "複製值"
-  },
-  "toggleValue": {
-    "message": "切換值"
   },
   "value": {
     "message": "值"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "身分"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "清除"
   },
@@ -988,10 +1008,16 @@
     "message": "檢查密碼是否已外洩。"
   },
   "passwordExposed": {
-    "message": "此密碼已外泄，建議變更密碼。"
+    "message": "此密碼已外泄，建議變更密碼。",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "任何已知的外泄密碼資料庫中都沒有此密碼，它目前是安全的‧"
+    "message": "任何已知的外泄密碼資料庫中都沒有此密碼，它目前是安全的。"
   },
   "baseDomain": {
     "message": "基底網域"
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "切換選項"
+  },
+  "organization": {
+    "message": "組織",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

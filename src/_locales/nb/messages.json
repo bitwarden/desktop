@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Kopier passordet"
   },
+  "copyNote": {
+    "message": "Kopier notat"
+  },
   "copyUri": {
     "message": "Kopier URIen"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Hjelp og tilbakemelding"
   },
-  "emailUs": {
-    "message": "Send oss en E-post"
-  },
-  "emailUsDirectly": {
-    "message": "Send en E-post direkte til oss for å få hjelp eller å gi oss tilbakemeldinger."
-  },
-  "visitOurWebsite": {
-    "message": "Besøk nettsidene våre"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Besøk vårt nettsted for å få hjelp, nyheter, sende oss E-poster, og\/eller lære mer om å bruke Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Legg inn en feilrapport"
-  },
-  "gitHubIssue": {
-    "message": "Åpne en sak (Issue) på vårt GitHub-lager."
-  },
   "sync": {
     "message": "Synkroniser"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Passordgenerator"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Generer automatisk sterke og unike passord for dine innlogginger."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Notater"
   },
+  "note": {
+    "message": "Notat"
+  },
   "editItem": {
     "message": "Rediger gjenstanden"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Vis gjenstanden"
   },
-  "launchWebsite": {
-    "message": "Åpne nettsiden"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Nettsted"
   },
-  "togglePassword": {
-    "message": "Vis\/skjul passordet"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Behandle"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Sikkerhet"
   },
-  "errorsOccurred": {
-    "message": "Feil har oppstått"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "E-postadressen er påkrevd."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " er kopiert",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Klarte ikke å auto-utfylle den valgte gjenstanden på denne siden. Kopier og lim inn informasjonen i stedet."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "2-trinnsinnlogging gjør kontoen din mer sikker, ved å kreve at du verifiserer din innlogging med en annen enhet, f.eks. en autentiseringsapp, SMS, E-post, telefonsamtale, eller sikkerhetsnøkkel. 2-trinnsinnlogging kan aktiveres på bitwarden.com-netthvelvet. Vil du besøke den nettsiden nå?"
   },
-  "loggingOut": {
-    "message": "Logger av"
-  },
-  "loggingOutConfirmation": {
-    "message": "Du har nylig oppdatert fra en eldre versjon. Du må logge inn på nytt for å endre dine låseinnstillinger. Vil du logge av nå?"
-  },
   "editedFolder": {
     "message": "Redigerte mappen"
   },
@@ -455,8 +447,17 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "Ny URI"
   },
   "addedItem": {
     "message": "La til gjenstanden"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Er du sikker på at du vil overskrive det nåværende passordet?"
   },
-  "credits": {
-    "message": "Krediteringer"
-  },
-  "thankYou": {
-    "message": "Tusen takk"
-  },
-  "translations": {
-    "message": "Oversettelser"
-  },
   "searchFolder": {
     "message": "Søk i mappe"
   },
   "searchCollection": {
     "message": "Søk i samling"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Ingen mappe",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Opprett en organisasjon for å sikkert dele dine gjenstander med andre brukere."
-  },
-  "contribute": {
-    "message": "Du kan bidra du også!"
   },
   "learnMore": {
     "message": "Lær mer"
@@ -641,7 +633,13 @@
     "message": "Takk for at du støtter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Og alt det for %price%\/år!"
+    "message": "Og alt det for %price%\/år!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Oppfriskning fullført"
@@ -662,7 +660,22 @@
     "message": "Skriv inn den 6-sifrede verifiseringskoden som står på din autentiseringsapp."
   },
   "enterVerificationCodeEmail": {
-    "message": "Skriv inn den 6-sifrede verifiseringskoden som ble sendt til"
+    "message": "Skriv inn den 6-sifrede verifiseringskoden som ble sendt til",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Husk på meg"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Verifiser med Duo Security gjennom Duo Mobile-appen, SMS, telefonsamtale, eller en U2F-sikkerhetsnøkkel.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Kopier verdien"
-  },
-  "toggleValue": {
-    "message": "Vis\/skjul verdien"
   },
   "value": {
     "message": "Verdi"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identiteter"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Tøm"
   },
@@ -985,40 +1005,62 @@
     "message": "Fullfør din 2-trinnsinnloggingsforespørsel i den nye fanen."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Sjekk om passord har blitt utsatt."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "Dette passordet har blitt utsatt i et databrudd. Du burde endre det.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Dette passordet ble ikke funnet i noen kjente databrudd. Det bør være trygt å bruke."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Grunndomene"
   },
   "host": {
-    "message": "Host",
+    "message": "Vert",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Nøyaktig"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Starter med"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulært uttrykk",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Match-gjenkjenning",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Standard match-gjenkjenning",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Veksle Alternativer"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

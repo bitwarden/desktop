@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "复制密码"
   },
+  "copyNote": {
+    "message": "复制笔记"
+  },
   "copyUri": {
     "message": "复制 URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "帮助和反馈"
   },
-  "emailUs": {
-    "message": "给我们发邮件"
-  },
-  "emailUsDirectly": {
-    "message": "给我们直接发邮件来获得帮助或者留下反馈。"
-  },
-  "visitOurWebsite": {
-    "message": "访问我们的网站"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "访问我们的网站来获得帮助、新闻，或者学习如何使用 Bitwarden。"
-  },
-  "fileBugReport": {
-    "message": "Bug 报告"
-  },
-  "gitHubIssue": {
-    "message": "在我们的 GitHub 存储库打开一个问题。"
-  },
   "sync": {
     "message": "同步"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "密码生成器"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "自动生成安全可靠唯一的登录密码。"
@@ -265,6 +254,9 @@
   "notes": {
     "message": "笔记"
   },
+  "note": {
+    "message": "笔记"
+  },
   "editItem": {
     "message": "编辑项目"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "查看项目"
   },
-  "launchWebsite": {
-    "message": "打开网站"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "网站"
   },
-  "togglePassword": {
-    "message": "切换 Password"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "管理"
@@ -349,8 +341,8 @@
   "security": {
     "message": "安全"
   },
-  "errorsOccurred": {
-    "message": "出错了"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "必须填写 Email 地址。"
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " 已复制",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "无法在此页面自动填写所选择的网站。请手工 复制\/粘贴 您的用户名、密码。"
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "两步登录使您在登录时需要输入一个从认证应用获取的安全码，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版启用。现在要访问吗？"
   },
-  "loggingOut": {
-    "message": "登出..."
-  },
-  "loggingOutConfirmation": {
-    "message": "您最近从一个旧版本更新了，您必须重新登录才能修改锁定的选项。您要立即登出吗？"
-  },
   "editedFolder": {
     "message": "文件夹已编辑"
   },
@@ -455,8 +447,17 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "新 URI"
   },
   "addedItem": {
     "message": "项目已添加"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "您确定要覆盖当前密码吗？"
   },
-  "credits": {
-    "message": "鸣谢"
-  },
-  "thankYou": {
-    "message": "非常感谢"
-  },
-  "translations": {
-    "message": "译者"
-  },
   "searchFolder": {
     "message": "搜索文件夹"
   },
   "searchCollection": {
     "message": "搜索收藏"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "没有文件夹",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "创建一个组织来安全地分享您的登录项目。"
-  },
-  "contribute": {
-    "message": "您也可以为我们做出贡献！"
   },
   "learnMore": {
     "message": "进一步了解"
@@ -641,7 +633,13 @@
     "message": "感谢您支持 Bitwarden。"
   },
   "premiumPrice": {
-    "message": "只需 %price% \/每年！"
+    "message": "只需 %price% \/每年！",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "刷新完成"
@@ -662,7 +660,22 @@
     "message": "请输入您的身份验证器应用中的 6 位验证码。"
   },
   "enterVerificationCodeEmail": {
-    "message": "请输入 6 位验证码，我们将其已发至"
+    "message": "请输入 6 位验证码，我们将其已发至",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "记住我"
@@ -711,6 +724,10 @@
     "message": "使用 YubiKey 来访问您的账户。可配合 YubiKey 4、4 Nano、4C 和 NEO 设备。"
   },
   "duoDesc": {
+    "message": "使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全钥匙验证身份。",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
     "message": "使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全钥匙验证身份。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "复制数值"
-  },
-  "toggleValue": {
-    "message": "切换值"
   },
   "value": {
     "message": "值"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "身份"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "清除"
   },
@@ -985,40 +1005,62 @@
     "message": "使用新的标签页完成您的两步登录请求。"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "检查密码是否已经泄露。"
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "没有在已知的数据泄露中发现此密码，它暂时比较安全。"
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "基础域"
   },
   "host": {
-    "message": "Host",
+    "message": "主机",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "精确"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "开头"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "正则表达式",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "匹配检测",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "默认匹配检测",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "切换选项"
+  },
+  "organization": {
+    "message": "组织",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden – Bezplatný správce hesel",
+    "message": "Bitwarden – Bezplatný správce hesel",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden je bezpečný a bezplatný správce hesel pro všechna vaše zařízení.",
+    "message": "Bezpečný a bezplatný správce hesel pro všechna vaše zařízení.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -63,6 +63,9 @@
   },
   "copyPassword": {
     "message": "Kopírovat heslo"
+  },
+  "copyNote": {
+    "message": "Kopírovat poznámku"
   },
   "copyUri": {
     "message": "Kopírovat URL"
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Nápověda a zpětná vazba"
   },
-  "emailUs": {
-    "message": "Napište nám"
-  },
-  "emailUsDirectly": {
-    "message": "Napište nám email pro získání pomoci nebo zanechání zpětné vazby."
-  },
-  "visitOurWebsite": {
-    "message": "Navštivit naší webovou stránku"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Navštivte webovou stránku aplikace pro zobrazení nejnovějších zpráv, nápovědy nebo návodu jak používat bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Nahlásit chybu"
-  },
-  "gitHubIssue": {
-    "message": "Nahlaste chybu přímo v našem GitHub repositáři."
-  },
   "sync": {
     "message": "Synchronizace"
   },
@@ -187,6 +172,10 @@
   "passGen": {
     "message": "Generátor hesla"
   },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
+  },
   "passGenInfo": {
     "message": "Vygenerujte si silné a unikátní heslo pro přihlašovací údaje."
   },
@@ -194,19 +183,19 @@
     "message": "Webová aplikace"
   },
   "bitWebVaultInfo": {
-    "message": "Spravujte přihlašovací údaje z jakéhokoliv prohlížeče pomocí webové aplikace bitwarden."
+    "message": "Spravujte přihlašovací údaje z jakéhokoliv prohlížeče pomocí webové aplikace Bitwarden."
   },
   "bitIosVault": {
     "message": "Aplikace pro iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí iOS aplikace bitwarden."
+    "message": "Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí aplikace Bitwarden pro iOS."
   },
   "bitAndrVault": {
     "message": "Aplikace pro Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí Android aplikace bitwarden."
+    "message": "Spravujte přihlašovací údaje z jakéhokoliv mobilního zařízení pomocí aplikace Bitwarden pro Android."
   },
   "importItems": {
     "message": "Importovat položky"
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Poznámky"
   },
+  "note": {
+    "message": "Poznámka"
+  },
   "editItem": {
     "message": "Upravit položku"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Zobrazit položku"
   },
-  "launchWebsite": {
-    "message": "Otevřít webovou stránku"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Webová stránka"
   },
-  "togglePassword": {
-    "message": "Zobrazit\/Skrýt heslo"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Správa"
@@ -338,7 +330,7 @@
     "message": "Po 4 hodinách"
   },
   "onLocked": {
-    "message": "Při uzamčení"
+    "message": "Při uzamknutí systému"
   },
   "onRestart": {
     "message": "Při restartu"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Zabezpečení"
   },
-  "errorsOccurred": {
-    "message": "Došlo k chybě"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Emailová adresa je povinná."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " zkopírováno",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Vybrané přihlašovací údaje nelze na této stránce automaticky vyplnit. Zkopírujte a vložte své přihlašovací údaje ručně."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Dvoufázové přihlášení činí váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, emailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
-  "loggingOut": {
-    "message": "Odhlašování"
-  },
-  "loggingOutConfirmation": {
-    "message": "Nedávno proběhla aktualizace na nejnovější verzi. Pro změnu nastavení zámku se musíte znovu odhlásit a přihlásit. Chcete se nyní odhlásit?"
-  },
   "editedFolder": {
     "message": "Složka byla upravena"
   },
@@ -455,8 +447,17 @@
   "uri": {
     "message": "URL"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "Nová URI"
   },
   "addedItem": {
     "message": "Položka byla přidána"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Opravdu chcete přepsat aktuální heslo?"
   },
-  "credits": {
-    "message": "Autoři"
-  },
-  "thankYou": {
-    "message": "Poděkování"
-  },
-  "translations": {
-    "message": "Preklady"
-  },
   "searchFolder": {
     "message": "Vyhledat ve složce"
   },
   "searchCollection": {
     "message": "Vyledat v kolekci"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Žádná složka",
@@ -505,7 +500,7 @@
     "message": "Notifikace \"Přidat přihlašovací údaje\" automaticky vyzve k uložení přihlašovacích údajů do trezoru, pokud se s nimi poprvé přihlašujete."
   },
   "notificationAddDesc": {
-    "message": "Má si pro vás bitwarden toto heslo pamatovat?"
+    "message": "Má si pro vás Bitwarden toto heslo pamatovat?"
   },
   "notificationAddSave": {
     "message": "Ano, uložit nyní"
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Vytvořte organizaci pro bezpečné sdílení přihlašovacích údajů s dalšími uživateli."
-  },
-  "contribute": {
-    "message": "Také můžete přispět!"
   },
   "learnMore": {
     "message": "Dozvědět se více"
@@ -638,10 +630,16 @@
     "message": "Jste prémiovým členem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Děkujeme za podporu bitwarden."
+    "message": "Děkujeme za podporu Bitwarden."
   },
   "premiumPrice": {
-    "message": "Vše jen za %price% ročně!"
+    "message": "Vše jen za %price% ročně!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Obnova je dokončena"
@@ -662,7 +660,22 @@
     "message": "Zadejte 6-místný kód z ověřovací aplikace."
   },
   "enterVerificationCodeEmail": {
-    "message": "Zadejte 6-místný kód z emailu."
+    "message": "Zadejte 6-místný kód z emailu.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Pamatuj si mě"
@@ -714,6 +727,10 @@
     "message": "Ověřit pomocí Duo Security prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo U2F bezpečnostního kódu.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
   "u2fDesc": {
     "message": "Použít jakýkoliv FIDO U2F bezpečnostní klíč pro přístup k vašemu trezoru."
   },
@@ -730,7 +747,7 @@
     "message": "Vlastnoručně hostované prostředí"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace bitwarden."
+    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace Bitwarden."
   },
   "customEnvironment": {
     "message": "Vlastní prostředí"
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Zkopírovat hodnotu"
-  },
-  "toggleValue": {
-    "message": "Přepnout hodnotu"
   },
   "value": {
     "message": "Hodnota"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identity"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Vymazat"
   },
@@ -985,40 +1005,62 @@
     "message": "Dokončete dvoufázové přihlášení pomocí nové karty."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Zkontrolujte, zda nedošlo k úniku hesla."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "K úniku tohoto hesla nedošlo v žádném ze známých případů. Mělo by být bezpečné používat jej i nadále."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Základní doména"
   },
   "host": {
     "message": "Host",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Přesně"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Začíná na"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulární výraz",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Zjišťování shody",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Výchozí",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Přepnout možnosti"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

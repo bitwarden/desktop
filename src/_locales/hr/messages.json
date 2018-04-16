@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Kopiraj lozinku"
   },
+  "copyNote": {
+    "message": "Kopiraj bilješku"
+  },
   "copyUri": {
     "message": "Kopiraj URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Pomoć i povratne informacije"
   },
-  "emailUs": {
-    "message": "Pošaljite nam e-poštu"
-  },
-  "emailUsDirectly": {
-    "message": "Pošaljite nam izravno e-poštu kako biste dobili pomoć ili ostavite povratnu informaciju."
-  },
-  "visitOurWebsite": {
-    "message": "Posjetite našu web stranicu"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Posjetite našu web stranicu kako biste dobili pomoć, vijesti, e-poštu i \/ ili saznali više o tome kako koristiti bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Pošaljite Izvješće o pogrešci"
-  },
-  "gitHubIssue": {
-    "message": "Otvorite problem u našem GitHub repozitoriju."
-  },
   "sync": {
     "message": "Sinkronizacija"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Generator lozinke"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Automatski generirajte jake, jedinstvene zaporke za prijavu."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Bilješke"
   },
+  "note": {
+    "message": "Bilješka"
+  },
   "editItem": {
     "message": "Uredi stavku"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Prikaz stavke"
   },
-  "launchWebsite": {
-    "message": "Pokreni web stranicu"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Web stranica"
   },
-  "togglePassword": {
-    "message": "Uključi lozinku"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Upravljanje"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Sigurnost"
   },
-  "errorsOccurred": {
-    "message": "Došlo je do pogreške"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Adresa e-pošte je obavezna."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " kopirano",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Nije moguće automatski ispuniti odabranu prijavu na ovoj stranici. Umjesto toga kopirajte\/zalijepite korisničko ime i\/ili zaporku."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Prijava u dva koraka čini vaš račun sigurnijim tako što će zahtijevati da potvrdite prijavu putem drugog uređaja pomoću sigurnosnog koda, aplikacije autentifikatora, SMS porukom, pozivom ili adresom e-pošte. Prijava u dva koraka može se omogućiti na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
-  "loggingOut": {
-    "message": "Odjavljivanje"
-  },
-  "loggingOutConfirmation": {
-    "message": "Nedavno je odrađeno ažuriranje. Morate se ponovo prijaviti da biste promijenili opcije zaključavanja. Želite li se odjaviti sada?"
-  },
   "editedFolder": {
     "message": "Uređena mapa"
   },
@@ -455,8 +447,17 @@
   "uri": {
     "message": "URL"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "Novi URL"
   },
   "addedItem": {
     "message": "Dodaj stavku"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Jeste li sigurni da želite prebrisati trenutnu zaporku?"
   },
-  "credits": {
-    "message": "Zasluge"
-  },
-  "thankYou": {
-    "message": "Hvala Vam"
-  },
-  "translations": {
-    "message": "Prijevodi"
-  },
   "searchFolder": {
     "message": "Mapa pretraživanja"
   },
   "searchCollection": {
     "message": "Zbirka pretraživanja"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Nema mape",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Izradite organizaciju kako biste sigurno dijelili svoje prijave s drugim korisnicima."
-  },
-  "contribute": {
-    "message": "Možete doprinijeti!"
   },
   "learnMore": {
     "message": "Saznaj više"
@@ -641,7 +633,13 @@
     "message": "Hvala Vam što podupirete Bitwarden."
   },
   "premiumPrice": {
-    "message": "Sve samo za %price% \/godišnje!"
+    "message": "Sve samo za %price% \/godišnje!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Osvježavanje završeno"
@@ -662,7 +660,22 @@
     "message": "Unesite 6-znamenkasti kontrolni kôd iz aplikacije autentifikatora."
   },
   "enterVerificationCodeEmail": {
-    "message": "Unesite 6-znamenkasti kontrolni kôd koji je poslan e-poštom na"
+    "message": "Unesite 6-znamenkasti kontrolni kôd koji je poslan e-poštom na",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Zapamti me"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Potvrdite s Duo Security pomoću Duo Mobile aplikacije, SMS-a, telefonskog poziva ili sigurnosnog ključa U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Kopiraj vrijednost"
-  },
-  "toggleValue": {
-    "message": "Prikaži\/sakrij sadržaj"
   },
   "value": {
     "message": "Vrijednost"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identiteti"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Očisti"
   },
@@ -985,40 +1005,62 @@
     "message": "Dovršite zahtjev za prijavu u dva koraka pomoću nove kartice."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Provjerite je li lozinka kompromitirana."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Lozinka nije pronađena niti u jednoj krađi podataka. Sigurna je za korištenje."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Primarna domena"
   },
   "host": {
-    "message": "Host",
+    "message": "Domaćin",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Točno"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Počinje sa"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regularni izraz",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Otkrivanje podudaranja",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Zadano otkrivanje podudaranja",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Uključi\/isključi opcije"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

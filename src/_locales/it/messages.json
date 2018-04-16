@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Copia Password"
   },
+  "copyNote": {
+    "message": "Copia Nota"
+  },
   "copyUri": {
     "message": "Copia URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Aiuto & Feedback"
   },
-  "emailUs": {
-    "message": "Mandaci una Email"
-  },
-  "emailUsDirectly": {
-    "message": "Mandaci una Email per ottenere aiuto o lascia un feedback"
-  },
-  "visitOurWebsite": {
-    "message": "Visita il nostro Sito"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Visita il nostro sito per ottenere aiuto, notizie, mandarci una email, e\/o imparare di più su come usare Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Notificaci di un Bug"
-  },
-  "gitHubIssue": {
-    "message": "Apri un issue nel nostro repository GitHub."
-  },
   "sync": {
     "message": "Sincronizza"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Generatore di Password"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Genera automaticamente password complesse e uniche per i tuoi login."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Note"
   },
+  "note": {
+    "message": "Nota"
+  },
   "editItem": {
     "message": "Modifica Elemento"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Mostra Elemento"
   },
-  "launchWebsite": {
-    "message": "Vai al Sito"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Sito"
   },
-  "togglePassword": {
-    "message": "Scambia Password"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Gestisci"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Sicurezza"
   },
-  "errorsOccurred": {
-    "message": "Sono comparsi degli errori"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "L'indirizzo Email è obbligatorio."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " copiata",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Impossibile completare automaticamente il login selezionato per questa pagina. Copia e incolla manualmente le tue credenziali."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una security key, app di autenticazione, SMS, telefonata o email. Può essere abilitata sulla cassaforte online di bitwarden.com. Vuoi visitare il sito ora?"
   },
-  "loggingOut": {
-    "message": "Disconnettendo"
-  },
-  "loggingOutConfirmation": {
-    "message": "Hai recentemente aggiornato una vecchia versione. Devi riconnetterti per cambiare le tue impostazioni di chiusura. Vuoi disconnetterti ora?"
-  },
   "editedFolder": {
     "message": "Cartelle Modificate"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "Nuovo URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
   },
-  "credits": {
-    "message": "Crediti"
-  },
-  "thankYou": {
-    "message": "Grazie"
-  },
-  "translations": {
-    "message": "Traduzioni"
-  },
   "searchFolder": {
     "message": "Cerca cartella"
   },
   "searchCollection": {
     "message": "Cerca collezione"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "No cartella",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Crea un'organizzazione per condividere in sicurezza i tuoi login con gli altri utenti."
-  },
-  "contribute": {
-    "message": "Puoi contribuire anche tu!"
   },
   "learnMore": {
     "message": "Per saperne di più"
@@ -641,7 +633,13 @@
     "message": "Grazie per il tuo supporto a Bitwarden."
   },
   "premiumPrice": {
-    "message": "Il tutto per solo %price% all'anno!"
+    "message": "Il tutto per solo %price% all'anno!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Aggiornamento completato"
@@ -662,7 +660,22 @@
     "message": "Inserisci il codice di verifica a 6 cifre dalla tua app di autenticazione."
   },
   "enterVerificationCodeEmail": {
-    "message": "Inserisci il codice di verifica a 6 cifre ricevuto per email"
+    "message": "Inserisci il codice di verifica a 6 cifre ricevuto per email",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Ricordami"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verifica con Duo Security per la tua azienda usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Copia Valore"
-  },
-  "toggleValue": {
-    "message": "Mostra\/Nascondi Valore"
   },
   "value": {
     "message": "Valore"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identità"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Elimina tutto"
   },
@@ -988,7 +1008,13 @@
     "message": "Verifica se la password è stata esposta."
   },
   "passwordExposed": {
-    "message": "Questa password è stata esposta in dati violati. Dovresti cambiarla."
+    "message": "Questa password è stata esposta in dati violati. Dovresti cambiarla.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "Questa password non è stata trovata in dati violati noti. Dovrebbe essere sicura da usare."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Attiva\/Disattiva opzioni"
+  },
+  "organization": {
+    "message": "Società",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

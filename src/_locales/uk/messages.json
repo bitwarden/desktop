@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Копіювати пароль"
   },
+  "copyNote": {
+    "message": "Копіювати нотатку"
+  },
   "copyUri": {
     "message": "Копіювати URI"
   },
@@ -89,7 +92,7 @@
     "message": "Сховище заблоковано."
   },
   "autoFillInfo": {
-    "message": "Для поточної вкладки браузера немає записів для автозаповнення."
+    "message": "Для поточної вкладки браузера немає записів автозаповнення."
   },
   "addLogin": {
     "message": "Додати запис"
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Допомога і зворотній зв'язок"
   },
-  "emailUs": {
-    "message": "Напишіть нам"
-  },
-  "emailUsDirectly": {
-    "message": "Напишіть нам, щоб отримати допомогу чи залишити відгук."
-  },
-  "visitOurWebsite": {
-    "message": "Відвідайте наш веб-сайт"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Повідомити про помилку"
-  },
-  "gitHubIssue": {
-    "message": "Створіть звіт в нашому репозиторії на GitHub."
-  },
   "sync": {
     "message": "Синхронізація"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Генератор паролів"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Автоматичне генерування стійких, унікальних паролів."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Нотатки"
   },
+  "note": {
+    "message": "Нотатка"
+  },
   "editItem": {
     "message": "Зміна запису"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Перегляд запису"
   },
-  "launchWebsite": {
-    "message": "Відкрити веб-сайт"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Веб-сайт"
   },
-  "togglePassword": {
-    "message": "Показати пароль"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Керування"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Безпека"
   },
-  "errorsOccurred": {
-    "message": "Виникли помилки"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Необхідно вказати адресу е-пошти."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " скопійовано",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Не вдається заповнити пароль на цій сторінці. Скопіюйте і вставте ім'я користувача та\/або пароль."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Двоетапна авторизація робить ваш обліковий запис більш захищеним, вимагаючи підтвердження вашого входу за допомогою іншого пристрою, наприклад, код безпеки, програма авторизації, SMS, телефонний дзвінок, або е-пошта. Ви можете увімкнути двоетапну авторизацію в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
-  "loggingOut": {
-    "message": "Вихід"
-  },
-  "loggingOutConfirmation": {
-    "message": "Ви нещодавно оновилися зі старішої версії. Ви повинні повторно увійти, щоб змінити налаштування блокування. Хочете вийти зараз?"
-  },
   "editedFolder": {
     "message": "Тека змінена"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "Новий URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Ви дійсно хочете перезаписати поточний пароль?"
   },
-  "credits": {
-    "message": "Подяки"
-  },
-  "thankYou": {
-    "message": "Дякуємо"
-  },
-  "translations": {
-    "message": "Переклади"
-  },
   "searchFolder": {
     "message": "Пошук в теці"
   },
   "searchCollection": {
     "message": "Пошук в збірках"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Без теки",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Створіть організацію, щоб безпечно ділитися записами з іншими користувачами."
-  },
-  "contribute": {
-    "message": "Ви також можете допомогти!"
   },
   "learnMore": {
     "message": "Докладніше"
@@ -641,7 +633,13 @@
     "message": "Дякуємо за підтримку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всього лише %price% \/ за рік!"
+    "message": "Всього лише %price% \/ за рік!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Оновлення завершено"
@@ -662,7 +660,22 @@
     "message": "Введіть 6-значних код підтвердження з програми авторизації."
   },
   "enterVerificationCodeEmail": {
-    "message": "Введіть 6-значний код підтвердження, надісланий на"
+    "message": "Введіть 6-значний код підтвердження, надісланий на",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Запам'ятати мене"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Авторизуйтесь за допомогою Duo Security для вашої організації з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Копіювати значення"
-  },
-  "toggleValue": {
-    "message": "Показати\/Сховати"
   },
   "value": {
     "message": "Значення"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Особисті дані"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Стерти"
   },
@@ -988,7 +1008,13 @@
     "message": "Перевірити чи пароль було викрито."
   },
   "passwordExposed": {
-    "message": "Цей пароль було викрито з витоком даних. Вам слід його змінити."
+    "message": "Цей пароль було викрито з витоком даних. Вам слід його змінити.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "Цей пароль не було знайдено у жодних відомих витоках даних. Його можна безпечно використовувати."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Перемкнути налаштування"
+  },
+  "organization": {
+    "message": "Організація",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

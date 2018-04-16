@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Kopeeri parool"
   },
+  "copyNote": {
+    "message": "Kopeeri märkus"
+  },
   "copyUri": {
     "message": "Kopeeri URL"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Abi ja tagasiside"
   },
-  "emailUs": {
-    "message": "Kirjuta meile"
-  },
-  "emailUsDirectly": {
-    "message": "Kirjuta meile abi saamiseks või tagasiside jätmiseks."
-  },
-  "visitOurWebsite": {
-    "message": "Külasta meie kodulehte"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Külasta kodulehte abi saamiseks, meiega kontakteerumiseks, uudiste lugemiseks või bitwardeni kohta rohkema teabe saamiseks."
-  },
-  "fileBugReport": {
-    "message": "Esita tarkvaraviga"
-  },
-  "gitHubIssue": {
-    "message": "Ava meie GitHubis probleemi kirjeldus."
-  },
   "sync": {
     "message": "Sünkroniseeri"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Parooli genereerimine"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Loo oma kontodele tugevaid ja unikaalseid paroole."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Märkmed"
   },
+  "note": {
+    "message": "Märkus"
+  },
   "editItem": {
     "message": "Kirje muutmine"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Kirje vaatamine"
   },
-  "launchWebsite": {
-    "message": "Ava veebileht"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Veebileht"
   },
-  "togglePassword": {
-    "message": "Parooli kuvamine"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Halda"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Turvalisus"
   },
-  "errorsOccurred": {
-    "message": "Ilmnesid vead"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "E-posti aadress on nõutud."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " on kopeeritud",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Automaatne täitmine ebaõnnestus. Palun kopeeri informatsioon käsitsi."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Kaheastmeline kinnitamine aitab konto turvalisust tõsta. Lisaks paroolile pead kontole ligipääsemiseks kinnitama sisselogimise päringu SMS-ga, telefonikõnega, autentimise rakendusega või e-postiga. Kaheastmelist kinnitust saab sisse lülitada bitwarden.com veebihoidlas. Soovid seda kohe avada?"
   },
-  "loggingOut": {
-    "message": "Väljalogimine"
-  },
-  "loggingOutConfirmation": {
-    "message": "Oled hiljuti uuema bitwardeni versiooni paigaldanud. Lukustamise valikute muutmiseks pead oma kontosse uuesti sisse logima. Soovid välja logida?"
-  },
   "editedFolder": {
     "message": "Kaust muudetud"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URL"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "Uus URL"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Oled kindel, et soovid olemasolevat parooli üle kirjutada?"
   },
-  "credits": {
-    "message": "Tänusõnad"
-  },
-  "thankYou": {
-    "message": "Täname teid!"
-  },
-  "translations": {
-    "message": "Tõlkijad"
-  },
   "searchFolder": {
     "message": "Otsi kausta"
   },
   "searchCollection": {
     "message": "Otsi kogumikku"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Kaust puudub",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Loo organisatsioon, et saaksid oma andmeid teiste inimestega turvaliselt jagada."
-  },
-  "contribute": {
-    "message": "Võid ka kaasa aidata!"
   },
   "learnMore": {
     "message": "Loe edasi"
@@ -641,7 +633,13 @@
     "message": "Täname, et toetad bitwardenit."
   },
   "premiumPrice": {
-    "message": "Kõik see ainult %price% aastas!"
+    "message": "Kõik see ainult %price% aastas!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Uuendamine lõpetatud"
@@ -662,7 +660,22 @@
     "message": "Sisesta autentiseerimise rakendusest 6 kohaline number."
   },
   "enterVerificationCodeEmail": {
-    "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile"
+    "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Jäta mind meelde"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Kinnita Duo Security abil, kasutades selleks Duo Mobile rakendust, SMS-i, telefonikõnet või U2F turvavõtit.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Kinnita organisatsiooni jaoks Duo Security abil, kasutades selleks Duo Mobile rakendust, SMS-i, telefonikõnet või U2F turvavõtit.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Kopeeri kirje"
-  },
-  "toggleValue": {
-    "message": "Kirje kuvamine"
   },
   "value": {
     "message": "Väärtus"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identiteedid"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Tühjenda"
   },
@@ -988,7 +1008,13 @@
     "message": "Vaata, kas parool on lekkinud."
   },
   "passwordExposed": {
-    "message": "See parool on puutunud andmete rikkumist. Seda tuleks muuta."
+    "message": "See parool on erinevates andmeleketes kokku $VALUE$ korda lekkinud. Peaksid selle ära muutma.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "Seda parooli ei õnnestu andmeleketest leida. Parooli edasi kasutamine peaks olema turvaline."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Valik sisse"
+  },
+  "organization": {
+    "message": "Organisatsioon",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

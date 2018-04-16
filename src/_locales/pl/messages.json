@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Darmowy Menedżer Haseł",
+    "message": "Bitwarden - Darmowy Menedżer Haseł",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden to bezpieczny i darmowy menedżer haseł dla wszystkich Twoich urządzeń.",
+    "message": "Bezpieczny i darmowy menedżer haseł dla wszystkich Twoich urządzeń.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -63,6 +63,9 @@
   },
   "copyPassword": {
     "message": "Skopiuj hasło"
+  },
+  "copyNote": {
+    "message": "Kopiuj notatkę"
   },
   "copyUri": {
     "message": "Skopiuj URI"
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Pomoc i opinie"
   },
-  "emailUs": {
-    "message": "Napisz do nas"
-  },
-  "emailUsDirectly": {
-    "message": "Napisz do nas, jeśli potrzebujesz pomocy lub chcesz przesłać opinię."
-  },
-  "visitOurWebsite": {
-    "message": "Odwiedź naszą stronę"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Odwiedź naszą stronę, aby uzyskać pomoc, zobaczyć aktualności, napisać do nas i\/lub dowiedzieć się, jak używać Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Zgłoś błąd"
-  },
-  "gitHubIssue": {
-    "message": "Zgłoś problem na naszym Githubie."
-  },
   "sync": {
     "message": "Synchronizacja"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Generator haseł"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Automatycznie wygeneruj silne, unikatowe hasła dla swoich loginów."
@@ -203,7 +192,7 @@
     "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu Bitwarden iOS."
   },
   "bitAndrVault": {
-    "message": "Sejf Android bitwarden"
+    "message": "Sejf Android Bitwarden"
   },
   "bitAndrVaultInfo": {
     "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu Bitwarden Android."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Notatki"
   },
+  "note": {
+    "message": "Notatka"
+  },
   "editItem": {
     "message": "Edytuj element"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Zobacz element"
   },
-  "launchWebsite": {
-    "message": "Otwórz stronę"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Strona"
   },
-  "togglePassword": {
-    "message": "Przełącz hasło"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Zarządzaj"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Zabezpieczenia"
   },
-  "errorsOccurred": {
-    "message": "Wystąpiły błędy"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Adres e-mail jest wymagany."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " skopiowane",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Nie można zastosować automatycznego wypełniania na tej stronie. Skopiuj i wklej informacje ręcznie."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Dwustopniowe logowanie sprawia, że Twoje konto jest bardziej bezpieczne poprzez wymuszenie potwierdzenia logowania z innego urządzenia, takiego jak klucz bezpieczeństwa, aplikacja uwierzytelniająca, SMS, telefon lub e-mail. Dwustopniowe logowanie można włączyć w internetowym sejfie bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
-  "loggingOut": {
-    "message": "Wylogowywanie"
-  },
-  "loggingOutConfirmation": {
-    "message": "Niedawno zaktualizowałeś aplikację. Musisz ponownie się zalogować, aby zmienić swoje opcje blokowania. Czy chcesz się teraz wylogować?"
-  },
   "editedFolder": {
     "message": "Edyowany Folder"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "Nowy URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Czy na pewno chcesz zastąpić bieżące hasło?"
   },
-  "credits": {
-    "message": "Podziękowania"
-  },
-  "thankYou": {
-    "message": "Dziękujemy"
-  },
-  "translations": {
-    "message": "Tłumaczenia"
-  },
   "searchFolder": {
     "message": "Szukaj folderu"
   },
   "searchCollection": {
     "message": "Przeszukaj kolekcje"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Brak folderu",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Utwórz organizację, aby bezpiecznie udostępniać innym użytkownikom swoje dane."
-  },
-  "contribute": {
-    "message": "Ty też możesz mieć swój udział!"
   },
   "learnMore": {
     "message": "Dowiedz się więcej"
@@ -641,7 +633,13 @@
     "message": "Dziękujemy za wspieranie Bitwarden."
   },
   "premiumPrice": {
-    "message": "Wszystko to jedynie za %price% \/rok!"
+    "message": "Wszystko to jedynie za %price% \/rok!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Odświeżanie ukończone"
@@ -662,7 +660,22 @@
     "message": "Wprowadź 6-cyfrowy kod weryfikacyjny z Twojej aplikacji uwierzytelniającej."
   },
   "enterVerificationCodeEmail": {
-    "message": "Wprowadź 6-cyfrowy kod weryfikacyjny, który został przesłany do"
+    "message": "Wprowadź 6-cyfrowy kod weryfikacyjny, który został przesłany do",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Zapamiętaj mnie"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Weryfikacja z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Weryfikacja dostępu do Twojej organizacji z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Skopiuj wartość"
-  },
-  "toggleValue": {
-    "message": "Przełącz wartość"
   },
   "value": {
     "message": "Wartość"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Tożsamości"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Wyczyść"
   },
@@ -988,7 +1008,13 @@
     "message": "Sprawdź, czy hasło zostało ujawnione."
   },
   "passwordExposed": {
-    "message": "To hasło znajduje się w wykradzionej bazie danych. Należy je zmienić."
+    "message": "To hasło znajduje się w wykradzionej bazie danych. Należy je zmienić.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "To hasło nie znajduje się w żadnej znanej wykradzionej bazie danych. Powinno być bezpieczne w użyciu."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Przełącz opcje"
+  },
+  "organization": {
+    "message": "Organizacja",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

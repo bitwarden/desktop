@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden este un manager de parole sigur și gratuit pentru toate dispozitivele dvs.",
+    "message": "Un manager de parole sigur și gratuit pentru toate dispozitivele dvs.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -63,6 +63,9 @@
   },
   "copyPassword": {
     "message": "Copiere parolă"
+  },
+  "copyNote": {
+    "message": "Copiere notă"
   },
   "copyUri": {
     "message": "Copiere URL"
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Ajutor și feedback"
   },
-  "emailUs": {
-    "message": "Trimiteți-ne un e-mail"
-  },
-  "emailUsDirectly": {
-    "message": "Trimiteți-ne un e-mail pentru a obține ajutor sau pentru a lăsa un feedback."
-  },
-  "visitOurWebsite": {
-    "message": "Vizitați-ne site-ul web"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Vizitați saitul nostru pentru a obține ajutor, a afla noutăți, a ne trimite un e-mail, și\/sau pentru a afla mai multe despre cum să utilizați bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Raport de Bug"
-  },
-  "gitHubIssue": {
-    "message": "Deschideţi o problemă pe pagina noastră GitHub."
-  },
   "sync": {
     "message": "Sincronizare"
   },
@@ -187,6 +172,10 @@
   "passGen": {
     "message": "Generator de parole"
   },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
+  },
   "passGenInfo": {
     "message": "Generează automat parole puternice, unice pentru datele de conectare."
   },
@@ -197,16 +186,16 @@
     "message": "Gestionați datele de conectare din orice navigator cu seiful web bitwarden."
   },
   "bitIosVault": {
-    "message": "Seif bitwarden iOS"
+    "message": "Seif Bitwarden iOS"
   },
   "bitIosVaultInfo": {
-    "message": "Gestionați datele de conectare de pe dispozitivele mobile cu seiful bitwarden iOS."
+    "message": "Gestionați datele de conectare de pe dispozitivele mobile cu seiful Bitwarden iOS."
   },
   "bitAndrVault": {
-    "message": "Seif bitwarden Android"
+    "message": "Seif Bitwarden Android"
   },
   "bitAndrVaultInfo": {
-    "message": "Gestionați datele de conectare de pe dispozitivele mobile cu seiful bitwarden Android."
+    "message": "Gestionați datele de conectare de pe dispozitivele mobile cu seiful Bitwarden Android."
   },
   "importItems": {
     "message": "Import articole"
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Note"
   },
+  "note": {
+    "message": "Notă"
+  },
   "editItem": {
     "message": "Editare articol"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Vizualizare articol"
   },
-  "launchWebsite": {
-    "message": "Lansarea site-ului web"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Site web"
   },
-  "togglePassword": {
-    "message": "Comutare parolă"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Gestionare"
@@ -341,7 +333,7 @@
     "message": "La blocarea computerului"
   },
   "onRestart": {
-    "message": "La repornire"
+    "message": "La repornirea computerului"
   },
   "never": {
     "message": "Niciodată"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Securitate"
   },
-  "errorsOccurred": {
-    "message": "Au apărut erori"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Adresa de e-mail este necesară."
@@ -377,8 +369,14 @@
     "message": "Codul de verificare este necesar."
   },
   "valueCopied": {
-    "message": " copiat",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "message": " s-a copiat",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Nu se pot completa automat datele de autentificare selectate în această pagină. În schimb, puteți copia și lipi numele de utilizator și\/sau parola."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Autentificarea în două etape face ca contul dvs. să fie mai sigur, solicitând să introduceți un cod de securitate dintr-o aplicație de autentificare ori de câte ori vă conectați. Autentificarea în două etape poate fi activată în seiful web bitwarden.com. Doriți să vizitați site-ul acum?"
   },
-  "loggingOut": {
-    "message": "Deconectare"
-  },
-  "loggingOutConfirmation": {
-    "message": "Ați actualizat recent o versiune mai veche. Trebuie să vă conectați din nou pentru a modifica opțiunile de blocare. Vă deconectaţi acum?"
-  },
   "editedFolder": {
     "message": "Dosar editat"
   },
@@ -455,8 +447,17 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "URI nou"
   },
   "addedItem": {
     "message": "Articol adăugat"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Sunteţi sigur că doriţi să suprascrieţi parola curentă?"
   },
-  "credits": {
-    "message": "Mulţumiri"
-  },
-  "thankYou": {
-    "message": "Mulţumim"
-  },
-  "translations": {
-    "message": "Traduceri"
-  },
   "searchFolder": {
     "message": "Căutare dosar"
   },
   "searchCollection": {
     "message": "Căutare colecție"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Niciun dosar",
@@ -542,10 +537,7 @@
     "message": "Partajaţi seiful"
   },
   "shareVaultInfo": {
-    "message": "Creați o organizație pentru a partaja în siguranță accesul la datele de conectare cu alţi utilizatori."
-  },
-  "contribute": {
-    "message": "Puteţi contribui şi dvs!"
+    "message": "Creați o organizație pentru a partaja în siguranță accesul la datele de conectare cu alți utilizatori."
   },
   "learnMore": {
     "message": "Aflați mai multe"
@@ -641,7 +633,13 @@
     "message": "Vă mulțumim pentru susținerea bitwarden."
   },
   "premiumPrice": {
-    "message": "Totul pentru doar %price% \/an!"
+    "message": "Totul pentru doar %price% \/ an!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Reîmprospătare completă"
@@ -662,7 +660,22 @@
     "message": "Introduceţi codul de verificare din 6 cifre din aplicaţia de autentificare."
   },
   "enterVerificationCodeEmail": {
-    "message": "Introduceţi codul de verificare din 6 cifre, care a fost trimis prin e-mail la"
+    "message": "Introduceți codul de verificare din 6 cifre, care a fost trimis prin e-mail la",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Memorizare"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Verificați cu Duo Security utilizând aplicația Duo Mobile, SMS, apel sau cheia de securitate U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Copiere valoare"
-  },
-  "toggleValue": {
-    "message": "Afișare\/Ascundere"
   },
   "value": {
     "message": "Valoare"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identități"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Ştergere"
   },
@@ -985,40 +1005,62 @@
     "message": "Finalizați solicitarea de conectare în doi pași utilizând o filă nouă."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Verifică dacă parola a fost dezvăluită."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Aceasta parola nu a fost găsită în nicio breșă de date cunoscută. Ar trebui să fie sigură pentru a fi utilizată."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Domeniu de bază"
   },
   "host": {
-    "message": "Host",
+    "message": "Gazdă",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Începe cu"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Expresie regulată",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Detectare de potriviri",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Detectarea de potriviri implicite",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Activare\/dezactivare opțiuni"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

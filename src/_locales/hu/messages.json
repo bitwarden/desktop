@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Jelszó másolása"
   },
+  "copyNote": {
+    "message": "Copy Note"
+  },
   "copyUri": {
     "message": "URI másolása"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Súgó és visszajelzés"
   },
-  "emailUs": {
-    "message": "Küldj e-mailt nekünk"
-  },
-  "emailUsDirectly": {
-    "message": "Írjon nekünk E-mailt közvetlenül a segítség kéréshez vagy visszajelzés beküldéséhez."
-  },
-  "visitOurWebsite": {
-    "message": "Látogasd meg a weboldalunkat"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Látogasd meg a weboldalunkat segítség kéréshez, hírekért, küldj nekünk e-mailt vagy\/és tanuld meg hogyan használd a bitwarden-t."
-  },
-  "fileBugReport": {
-    "message": "Hiba jelentése"
-  },
-  "gitHubIssue": {
-    "message": "Nyiss egy Issuet a mi Gthub repositorynkban."
-  },
   "sync": {
     "message": "Szinkronizálás"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Jelszó generátor"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Automatikusan létrehoz erős, egyedi jelszavakat a bejelentkezéseidhez."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Jegyzetek"
   },
+  "note": {
+    "message": "Note"
+  },
   "editItem": {
     "message": "Elem szerkesztése"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Elem megtekintése"
   },
-  "launchWebsite": {
-    "message": "Weboldal megtekintése"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Weboldal"
   },
-  "togglePassword": {
-    "message": "Jelszó láthatóság ki\/be kapcsolása"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Kezelés"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Biztonság"
   },
-  "errorsOccurred": {
-    "message": "Hibák történtek"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "E-mail cím megadása kötelező."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " másolva",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Nem sikerült automatikusan kitölteni a bejelentkezést ezen a weboldalon. Helyette másold\/illeszt be a felhasználóneved és\/vagy a jelszavadat."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "A kétlépcsős bejelentkezés biztonságosabbá teszi a felhasználódat azáltal, hogy ellenőrizned kell a bejelentkezésedet egy másik készülékkel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy e-mail. Kétlépcsős bejelentkezést a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
-  "loggingOut": {
-    "message": "Kijelentkezés folyamatban"
-  },
-  "loggingOutConfirmation": {
-    "message": "Nemrég frissítettél egy régebbi verzióról. Be kell újra jelentkezned a zárolási beállításaidnak módosításához. Szeretnél most kijelentkezni?"
-  },
   "editedFolder": {
     "message": "Szerkesztett mappa"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "New URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Biztosan felül akarod írni a jelenlegi jelszavad?"
   },
-  "credits": {
-    "message": "Készítők"
-  },
-  "thankYou": {
-    "message": "Köszönjük"
-  },
-  "translations": {
-    "message": "Fordítások"
-  },
   "searchFolder": {
     "message": "Mappa keresése"
   },
   "searchCollection": {
     "message": "Gyűjtemény keresése"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Nincs mappa",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Hozz létre egy szervezetet, hogy biztonságosan megoszthasd bejelentkezéseid másokkal."
-  },
-  "contribute": {
-    "message": "Te is hozzájárulhatsz!"
   },
   "learnMore": {
     "message": "Tudjon meg többet"
@@ -641,7 +633,13 @@
     "message": "Köszönjük, hogy támogatod a bitwardent."
   },
   "premiumPrice": {
-    "message": "Mindez csak %price% évente!"
+    "message": "Mindez csak %price% évente!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Frissítés megtörtént"
@@ -662,7 +660,22 @@
     "message": "Add meg a 6 számjegyű ellenőrző kódot a hitelesítő alkalmazásodból."
   },
   "enterVerificationCodeEmail": {
-    "message": "Add meg a 6 számjegyű ellenőrző kódot ami el lett küldve neked e-mailben"
+    "message": "Add meg a 6 számjegyű ellenőrző kódot ami el lett küldve neked e-mailben",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Emlékezz rám"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Ellenőrizd Duo Security-val a Duo Mobile alkalmazás, SMS, telefon hívás vagy U2F biztonsági kulcs segítségével.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Érték másolása"
-  },
-  "toggleValue": {
-    "message": "Érték megjelenítése"
   },
   "value": {
     "message": "Érték"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Azonosságok"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Töröl"
   },
@@ -988,7 +1008,13 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

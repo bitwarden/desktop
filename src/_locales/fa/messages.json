@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "بیت واردن"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Free Password Manager",
+    "message": "Bitwarden - مدیریت گذرواژه رایگان",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "A secure and free password manager for all of your devices.",
+    "message": "یک مدیریت کننده رمز عبور رایگان برای تمامی دستگاههایتان.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -59,13 +59,16 @@
     "message": "تنظیمات"
   },
   "currentTab": {
-    "message": "Current Tab"
+    "message": "زبانه فعلی"
   },
   "copyPassword": {
     "message": "کپی رمز عبور"
   },
+  "copyNote": {
+    "message": "Copy Note"
+  },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "کپی آدرس اینترنتی"
   },
   "copyUsername": {
     "message": "کپی نام کاربری"
@@ -77,7 +80,7 @@
     "message": "کپی کد امنیتی"
   },
   "autoFill": {
-    "message": "Auto-fill"
+    "message": "پر کردن خودکار"
   },
   "generatePasswordCopied": {
     "message": "Generate Password (copied)"
@@ -86,7 +89,7 @@
     "message": "No matching logins."
   },
   "vaultLocked": {
-    "message": "Vault is locked."
+    "message": "گاوصندوق قفل شد."
   },
   "autoFillInfo": {
     "message": "There are no logins available to auto-fill for the current browser tab."
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "کمک و بازخورد"
   },
-  "emailUs": {
-    "message": "ایمیل ما"
-  },
-  "emailUsDirectly": {
-    "message": "برای کمک گرفتن و گذاستن بازخورد بصورت مستقیم به ما ایمیل ارسال کنید."
-  },
-  "visitOurWebsite": {
-    "message": "از وب‌سایت ما دیدن کنید"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Visit our website to get help, news, email us, and\/or learn more about how to use Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "گزارش یک مشکل"
-  },
-  "gitHubIssue": {
-    "message": "Open an issue at our GitHub repository."
-  },
   "sync": {
     "message": "همگام سازی"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "تولید رمز عبور"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Automatically generate strong, unique passwords for your logins."
@@ -209,7 +198,7 @@
     "message": "Manage your items from your mobile devices with the Bitwarden Android vault."
   },
   "importItems": {
-    "message": "Import Items"
+    "message": "واردن کردن موارد"
   },
   "importItemsInfo": {
     "message": "Quickly bulk import your items from other password management applications."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "یادداشت ها"
   },
+  "note": {
+    "message": "Note"
+  },
   "editItem": {
     "message": "ویرایش مورد"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "مشاهده مورد"
   },
-  "launchWebsite": {
-    "message": "Launch Website"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "وب سایت"
   },
-  "togglePassword": {
-    "message": "Toggle Password"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "مدیریت"
@@ -349,8 +341,8 @@
   "security": {
     "message": "امنیت"
   },
-  "errorsOccurred": {
-    "message": "Errors have occurred"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "آدرس ایمیل ضروری است."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " کپی شده",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "ورودی دو مرحله ای باعث می شود که حساب کاربری شما با استفاده از یک دستگاه دیگر مانند کلید امنیتی، برنامه تأیید هویت، پیامک، تماس تلفنی و یا ایمیل، اعتبار خود را با ایمنی بیشتر ثابت کند. ورودی دو مرحله ای می تواند در bitwarden.com فعال شود. آیا می خواهید از سایت بازدید کنید؟"
   },
-  "loggingOut": {
-    "message": "درحال خروج"
-  },
-  "loggingOutConfirmation": {
-    "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
-  },
   "editedFolder": {
     "message": "پوشه ویرایش شده"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "نشانی اینترنتی"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "New URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
   },
-  "credits": {
-    "message": "پدید آورندگان"
-  },
-  "thankYou": {
-    "message": "تشکر"
-  },
-  "translations": {
-    "message": "ترجمه ها"
-  },
   "searchFolder": {
     "message": "جستجوی پوشه"
   },
   "searchCollection": {
     "message": "جستجوی مجموعه"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "بدون پوشه",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Create an organization to securely share your items with other users."
-  },
-  "contribute": {
-    "message": "You can contribute too!"
   },
   "learnMore": {
     "message": "Learn more"
@@ -638,10 +630,16 @@
     "message": "شما یک عضو پرمیوم هستید!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "برای حمایتتان از بیت واردن سپاسگزاریم."
+    "message": "برای حمایتتان از Bitwarden سپاسگزاریم."
   },
   "premiumPrice": {
-    "message": "تمامش فقط $PRICE$ در سال!"
+    "message": "تمامش فقط $PRICE$ در سال!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "نوسازی کامل شد"
@@ -662,7 +660,22 @@
     "message": "کد ۶ رقمی تایید را از برنامه تایید کننده وارد کنید."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to"
+    "message": "Enter the 6 digit verification code that was emailed to",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "مرا به خاطر بسپار"
@@ -714,6 +727,10 @@
     "message": "تایید کنید همراه با Duo Security از اپ موبایل Dou استفاده کنید، پیامک،تماس تلفنی، یا کلید امنیتی U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
   "u2fDesc": {
     "message": "از هر FIDO استفاده کنید U2F کلید امنیتی را فعال کنید تا به حساب کاربریتان دسترسی یابید."
   },
@@ -730,7 +747,7 @@
     "message": "محیط خود میزبان"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "آدرس اینترنتی پایه فرضی نصب بیت واردن میزبانی شده را مشخص کنید."
+    "message": "آدرس اینترنتی پایه فرضی نصب Bitwarden میزبانی شده را مشخص کنید."
   },
   "customEnvironment": {
     "message": "محیط های سفارشی"
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "کپی مقدار"
-  },
-  "toggleValue": {
-    "message": "Toggle Value"
   },
   "value": {
     "message": "مقدار"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "مشخصات"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "پاک کردن"
   },
@@ -988,7 +1008,13 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

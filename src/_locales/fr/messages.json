@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Copier mot de passe"
   },
+  "copyNote": {
+    "message": "Copier la note"
+  },
   "copyUri": {
     "message": "Copier l'URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Aide et commentaires"
   },
-  "emailUs": {
-    "message": "Nous contacter"
-  },
-  "emailUsDirectly": {
-    "message": "Nous contacter directement pour obtenir de l'aide ou pour donner un avis."
-  },
-  "visitOurWebsite": {
-    "message": "Visitez notre site web"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Consultez notre site web pour obtenir de l'aide, les actualités, nous envoyer un e-mail et\/ou mieux apprendre à utiliser Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Envoyer un rapport de bug"
-  },
-  "gitHubIssue": {
-    "message": "Ouvrez un ticket sur le dépôt GitHub."
-  },
   "sync": {
     "message": "Synchroniser"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Générateur de mot de passe"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Générer automatiquement des mots de passe forts et uniques pour vos identifiants."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Notes"
   },
+  "note": {
+    "message": "Note"
+  },
   "editItem": {
     "message": "Modifier l'identifiant"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Voir l'identifiant"
   },
-  "launchWebsite": {
-    "message": "Ouvrir le site web"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Site web"
   },
-  "togglePassword": {
-    "message": "Basculer le mot de passe"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Gérer"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Sécurité"
   },
-  "errorsOccurred": {
-    "message": "Des erreurs sont survenues"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "L'adresse e-mail est requise."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " copié",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Impossible de remplir automatiquement le site sélectionné sur cette page. Copiez\/collez plutôt votre nom d'utilisateur et\/ou votre mot de passe."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "L'authentification à double facteurs rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'authentification à double facteurs peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
-  "loggingOut": {
-    "message": "Déconnexion"
-  },
-  "loggingOutConfirmation": {
-    "message": "Vous avez récemment mis à jour depuis une ancienne version. Vous devez vous identifier à nouveau pour modifier vos options de verrouillage. Souhaitez-vous vous déconnecter maintenant ?"
-  },
   "editedFolder": {
     "message": "Dossier modifié"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "Nouvelle URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
   },
-  "credits": {
-    "message": "Remerciements"
-  },
-  "thankYou": {
-    "message": "Merci"
-  },
-  "translations": {
-    "message": "Traductions"
-  },
   "searchFolder": {
     "message": "Recherche dossier"
   },
   "searchCollection": {
     "message": "Rechercher dans la collection"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Pas de dossier",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Créez une organisation pour partager de manière sécurisée vos identifiants avec d'autres utilisateurs."
-  },
-  "contribute": {
-    "message": "You can contribute to!"
   },
   "learnMore": {
     "message": "En savoir plus"
@@ -641,7 +633,13 @@
     "message": "Merci de supporter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tout pour seulement %price% \/an !"
+    "message": "Tout pour seulement %price% \/an !",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Actualisation terminée"
@@ -662,7 +660,22 @@
     "message": "Saisissez le code de vérification à 6 chiffres depuis votre application d'authentification."
   },
   "enterVerificationCodeEmail": {
-    "message": "Saisissez le code de vérification à 6 chiffres qui vous a été envoyé par e-mail à"
+    "message": "Saisissez le code de vérification à 6 chiffres qui vous a été envoyé par e-mail à",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Rester connecté"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Vérifier avec Duo Security via l'application Duo Mobile, SMS, appel vocal ou une clé de sécurité U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Sécurisez votre organisation avec Duo Security à l'aide de l'application Duo Mobile, l'envoi d'un SMS, un appel vocal ou une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Copier la valeur"
-  },
-  "toggleValue": {
-    "message": "Changer la valeur"
   },
   "value": {
     "message": "Valeur"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identités"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Effacer"
   },
@@ -988,7 +1008,13 @@
     "message": "Vérifier si le mot de passe a été exposé."
   },
   "passwordExposed": {
-    "message": "Ce mot de passe a été exposé dans des fuites de données. Vous devriez le changer."
+    "message": "Ce mot de passe a été exposé dans des fuites de données. Vous devriez le changer.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "Ce mot de passe n'a été trouvé dans aucune fuite de données connue. Il semble sécurisé."
@@ -1019,6 +1045,22 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Options de basculement"
+    "message": "Afficher\/masquer les options"
+  },
+  "organization": {
+    "message": "Organisation",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

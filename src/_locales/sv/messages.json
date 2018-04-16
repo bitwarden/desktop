@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Kopiera lösenord"
   },
+  "copyNote": {
+    "message": "Kopiera anteckning"
+  },
   "copyUri": {
     "message": "Kopiera URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Hjälp"
   },
-  "emailUs": {
-    "message": "Mejla oss"
-  },
-  "emailUsDirectly": {
-    "message": "Mejla oss för att få hjälp eller för att lämna återkoppling."
-  },
-  "visitOurWebsite": {
-    "message": "Besök vår webbplats"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Besök vår webbplats för att få hjälp, nyheter, mejla oss och\/eller läsa mer om hur man använder Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Skicka en buggrapport"
-  },
-  "gitHubIssue": {
-    "message": "Öppna ett problemärende på vårt GitHub-arkiv."
-  },
   "sync": {
     "message": "Synkronisera"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Lösenordsgenerator"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Skapa starka och unika lösenord automatiskt för dina inloggningar."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Anteckningar"
   },
+  "note": {
+    "message": "Anteckning"
+  },
   "editItem": {
     "message": "Redigera objekt"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Visa objekt"
   },
-  "launchWebsite": {
-    "message": "Öppna webbplats"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Webbsida"
   },
-  "togglePassword": {
-    "message": "Visa\/göm lösenord"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Hantera"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Säkerhet"
   },
-  "errorsOccurred": {
-    "message": "Ett fel har inträffat"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "E-postadress krävs."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " kopierat",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Kunde inte automatiskt fylla i det valda objektet på den här webbsidan. Klipp\/klistra informationen istället."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Tvåstegsverifiering gör ditt konto säkrare genom att kräva att du verifierar din inloggning med en annan enhet, till exempel genom en säkerhetsnyckel, autentiseringsapp, SMS, telefonsamtal eller mejl. Tvåstegsverifiering kan aktiveras på bitwardens webbvalv. Vill du besöka webbplatsen nu?"
   },
-  "loggingOut": {
-    "message": "Loggar ut"
-  },
-  "loggingOutConfirmation": {
-    "message": "Du har nyligen uppdaterat från en äldre version. Du måste logga ut och in igen för att ändra dina låsinställningar. Vill du logga ut nu?"
-  },
   "editedFolder": {
     "message": "Ändrade mapp"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI (länk)"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "Ny URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Är du säker på att du vill skriva över det nuvarande lösenordet?"
   },
-  "credits": {
-    "message": "Credits"
-  },
-  "thankYou": {
-    "message": "Tack"
-  },
-  "translations": {
-    "message": "Översättningar"
-  },
   "searchFolder": {
     "message": "Sök i mapp"
   },
   "searchCollection": {
     "message": "Sök i samling"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Ingen mapp",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Skapa en organisation för att på ett säkert sätt kunna dela dina objekt med andra användare."
-  },
-  "contribute": {
-    "message": "Du kan också bidra!"
   },
   "learnMore": {
     "message": "Läs mer"
@@ -641,7 +633,13 @@
     "message": "Tack för att du stödjer Bitwarden."
   },
   "premiumPrice": {
-    "message": "Allt för endast %price%\/år!"
+    "message": "Allt för endast %price%\/år!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Uppdatering färdig"
@@ -662,7 +660,22 @@
     "message": "Ange den 6-siffriga verifieringskoden från din autentiseringsapp."
   },
   "enterVerificationCodeEmail": {
-    "message": "Ange den 6-siffriga verifieringskoden som skickades till"
+    "message": "Ange den 6-siffriga verifieringskoden som skickades till",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Kom ihåg mig"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Verifiera med Duo Security genom att använda Duo Mobile-appen, SMS, telefonsamtal eller en U2F säkerhetsnyckel.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verifiera med Duo Security för din organisation genom att använda Duo Mobile-appen, SMS, telefonsamtal eller en U2F säkerhetsnyckel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Kopiera värde"
-  },
-  "toggleValue": {
-    "message": "Visa\/göm värde"
   },
   "value": {
     "message": "Värde"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identiteter"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Rensa"
   },
@@ -988,7 +1008,13 @@
     "message": "Kontrollera om lösenord har avslöjats."
   },
   "passwordExposed": {
-    "message": "Detta lösenord har avslöjats i dataintrång. Du bör ändra det."
+    "message": "Detta lösenord har avslöjats i dataintrång. Du bör ändra det.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "Detta lösenord hittades inte i något känt dataintrång. Det bör vara säkert att använda."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Växla alternativ"
+  },
+  "organization": {
+    "message": "Organisation",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

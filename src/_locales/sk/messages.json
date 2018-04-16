@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Kopírovať heslo"
   },
+  "copyNote": {
+    "message": "Copy Note"
+  },
   "copyUri": {
     "message": "Kopírovať URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Pomoc a spätná väzba"
   },
-  "emailUs": {
-    "message": "Napíšte nám"
-  },
-  "emailUsDirectly": {
-    "message": "Získajte pomoc alebo zanechajte spätnú väzbu zaslaním emailu."
-  },
-  "visitOurWebsite": {
-    "message": "Navštívte našu stránku"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Navštívte našu stránku pre získanie pomoci, noviniek, pre poslanie emailu, alebo ak sa chcete dozvedieť viac o používaní správcu hesiel bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Nahlásiť chybu"
-  },
-  "gitHubIssue": {
-    "message": "Nahlásiť problém v našom GitHub repozitári."
-  },
   "sync": {
     "message": "Synchronizácia"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Generátor hesla"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Automaticky generovať silné a unikátne heslá k prihlasovacím údajom."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Poznámky"
   },
+  "note": {
+    "message": "Note"
+  },
   "editItem": {
     "message": "Upraviť položku"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Zobraziť položku"
   },
-  "launchWebsite": {
-    "message": "Spustiť stránku"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Webstránka"
   },
-  "togglePassword": {
-    "message": "Prepnúť heslo"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Spravovať"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Zabezpečenie"
   },
-  "errorsOccurred": {
-    "message": "Vyskytli sa chyby"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Emailová adresa je povinná."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " skopírované",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Na tejto stránke sa nedajú automaticky vyplniť prihlasovacie údaje. Namiesto toho skopírujte\/vložte prihlasovacie údaje manuálne."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Dvojstupňové prihlasovanie robí váš účet bezpečnejším vďaka vyžadovaniu bezpečnostného kódu z overovacej aplikácie vždy, keď sa prihlásite. Dvojstupňové prihlasovanie môžete povoliť vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
-  "loggingOut": {
-    "message": "Odhlasuje sa"
-  },
-  "loggingOutConfirmation": {
-    "message": "Nedávno ste aktualizovali zo staršej verzie. Musíte sa znova prihlásiť, aby ste zmenili nastavenia zámku. Chcete sa odhlásiť teraz?"
-  },
   "editedFolder": {
     "message": "Upravený priečinok"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "New URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Naozaj chcete prepísať aktuálne heslo?"
   },
-  "credits": {
-    "message": "Poďakovania"
-  },
-  "thankYou": {
-    "message": "Ďakujeme Vám"
-  },
-  "translations": {
-    "message": "Preklady"
-  },
   "searchFolder": {
     "message": "Prehľadávať priečinok"
   },
   "searchCollection": {
     "message": "Vyhľadať zbierku"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Žiadny priečinok",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Vytvorte organizáciu pre bezpečné zdieľanie vašich prihlasovacích údajov s inými používateľmi."
-  },
-  "contribute": {
-    "message": "Taktiež môžete prispieť!"
   },
   "learnMore": {
     "message": "Zistiť viac"
@@ -641,7 +633,13 @@
     "message": "Ďakujeme, že podporujete bitwarden."
   },
   "premiumPrice": {
-    "message": "Všetko len za %price% \/rok!"
+    "message": "Všetko len za %price% \/rok!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Obnova kompletná"
@@ -662,7 +660,22 @@
     "message": "Zadajte 6-miestny verifikačný kód z vašej overovacej aplikácie."
   },
   "enterVerificationCodeEmail": {
-    "message": "Zadajte 6-miestny verifikačný kód, ktorý vám bol zaslaný emailom"
+    "message": "Zadajte 6-miestny verifikačný kód, ktorý vám bol zaslaný emailom",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Zapamätať si ma"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Overiť s Duo Security použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Kopírovať hodnotu"
-  },
-  "toggleValue": {
-    "message": "Prepnúť hodnotu"
   },
   "value": {
     "message": "Hodnota"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identity"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Vyčistiť"
   },
@@ -988,7 +1008,13 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

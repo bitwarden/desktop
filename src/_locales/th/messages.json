@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "คัดลอกรหัสผ่าน"
   },
+  "copyNote": {
+    "message": "Copy Note"
+  },
   "copyUri": {
     "message": "คัดลอก URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Help & Feedback"
   },
-  "emailUs": {
-    "message": "Email Us"
-  },
-  "emailUsDirectly": {
-    "message": "Email us directly to get help or leave feedback."
-  },
-  "visitOurWebsite": {
-    "message": "Visit Our Website"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Visit our website to get help, news, email us, and\/or learn more about how to use bitwarden."
-  },
-  "fileBugReport": {
-    "message": "File a Bug Report"
-  },
-  "gitHubIssue": {
-    "message": "Open an issue at our GitHub repository."
-  },
   "sync": {
     "message": "Sync"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Password Generator"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Automatically generate strong, unique passwords for your logins."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "โน้ต"
   },
+  "note": {
+    "message": "Note"
+  },
   "editItem": {
     "message": "แก้ไขรายการ"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "ดูรายการ"
   },
-  "launchWebsite": {
-    "message": "เปิดเว็บไซต์"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "เว็บไซต์"
   },
-  "togglePassword": {
-    "message": "Toggle Password"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "จัดการ"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Security"
   },
-  "errorsOccurred": {
-    "message": "Errors have occurred"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Email address is required."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " copied",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected login on this page. Copy\/paste your username and\/or password instead."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to enter a security code from an authenticator app whenever you log in. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "loggingOut": {
-    "message": "Logging out"
-  },
-  "loggingOutConfirmation": {
-    "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
-  },
   "editedFolder": {
     "message": "Edited Folder"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "New URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
   },
-  "credits": {
-    "message": "Credits"
-  },
-  "thankYou": {
-    "message": "Thank You"
-  },
-  "translations": {
-    "message": "Translations"
-  },
   "searchFolder": {
     "message": "Search folder"
   },
   "searchCollection": {
     "message": "Search collection"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "No Folder",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Create an organization to securely share your logins with other users."
-  },
-  "contribute": {
-    "message": "You can contribute to!"
   },
   "learnMore": {
     "message": "Learn more"
@@ -641,7 +633,13 @@
     "message": "Thank you for supporting bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% \/year!"
+    "message": "All for just %price% \/year!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Refresh complete"
@@ -662,7 +660,22 @@
     "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to"
+    "message": "Enter the 6 digit verification code that was emailed to",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Remember me"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Copy Value"
-  },
-  "toggleValue": {
-    "message": "Toggle Value"
   },
   "value": {
     "message": "Value"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identities"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Clear"
   },
@@ -988,7 +1008,13 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Впишете се или създайте нов сметка, за да получите достъп безопасен трезор."
   },
   "createAccount": {
     "message": "Създаване на сметка"
@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Копиране на паролата"
   },
+  "copyNote": {
+    "message": "Копиране на бележката"
+  },
   "copyUri": {
     "message": "Копиране на адреса"
   },
@@ -83,16 +86,16 @@
     "message": "Generate Password (copied)"
   },
   "noMatchingLogins": {
-    "message": "No matching logins."
+    "message": "Няма съвпадащи записи."
   },
   "vaultLocked": {
     "message": "Трезорът е заключен."
   },
   "autoFillInfo": {
-    "message": "There are no logins available to auto-fill for the current browser tab."
+    "message": "В текущия подпрозорец няма записи, които да бъдат попълнени."
   },
   "addLogin": {
-    "message": "Add a Login"
+    "message": "Добавяне на запис"
   },
   "addItem": {
     "message": "Добавяне на елемент"
@@ -101,7 +104,7 @@
     "message": "Подсказка за паролата"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Въведете електронната си поща, за да получите подсказка за главната парола."
   },
   "getMasterPasswordHint": {
     "message": "Получете подсказване за главната парола"
@@ -119,7 +122,7 @@
     "message": "Промяна на главната парола"
   },
   "changeEmail": {
-    "message": "Промяна на имейла"
+    "message": "Промяна на електронната поща"
   },
   "twoStepLogin": {
     "message": "Двустепенно удостоверяване"
@@ -152,28 +155,10 @@
     "message": "Папки"
   },
   "noFolders": {
-    "message": "There are no folders to list."
+    "message": "Няма папки за показване."
   },
   "helpFeedback": {
     "message": "Помощ и обратна връзка"
-  },
-  "emailUs": {
-    "message": "Пишете ни"
-  },
-  "emailUsDirectly": {
-    "message": "Email us directly to get help or leave feedback."
-  },
-  "visitOurWebsite": {
-    "message": "Посетете сайта ни"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Visit our website to get help, news, email us, and\/or learn more about how to use Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "File a Bug Report"
-  },
-  "gitHubIssue": {
-    "message": "Open an issue at our GitHub repository."
   },
   "sync": {
     "message": "Синхронизиране"
@@ -187,11 +172,15 @@
   "passGen": {
     "message": "Генератор на пароли"
   },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
+  },
   "passGenInfo": {
-    "message": "Automatically generate strong, unique passwords for your logins."
+    "message": "Автоматично създаване на силни и неповторими пароли."
   },
   "bitWebVault": {
-    "message": "Уеб трезор Bitwarden"
+    "message": "Интернетен трезор"
   },
   "bitWebVaultInfo": {
     "message": "Manage your items from any web browser with the Bitwarden web vault."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Бележки"
   },
+  "note": {
+    "message": "Бележка"
+  },
   "editItem": {
     "message": "Редактиране на елемента"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Преглед на елемента"
   },
-  "launchWebsite": {
-    "message": "Посещаване на сайта"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Сайт"
   },
-  "togglePassword": {
-    "message": "Превключване на паролата"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Управление"
@@ -338,10 +330,10 @@
     "message": "4 часа"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "При заключване на системата"
   },
   "onRestart": {
-    "message": "При рестартиране"
+    "message": "При повторно пускане"
   },
   "never": {
     "message": "Никога"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Сигурност"
   },
-  "errorsOccurred": {
-    "message": "Възникнаха грешки"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Електронната поща е задължителна."
@@ -368,7 +360,7 @@
     "message": "Потвърждаването на главната парола не отговаря."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Вашата сметка беше създадена. Вече можете да се впишете."
   },
   "masterPassSent": {
     "message": "Изпратили сме ви ел. писмо с подсказка за главната ви парола."
@@ -378,13 +370,19 @@
   },
   "valueCopied": {
     "message": " копирано",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Бяхте отписани"
   },
   "loginExpired": {
     "message": "Сесията ви изтече."
@@ -419,23 +417,17 @@
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "loggingOut": {
-    "message": "Отписване"
-  },
-  "loggingOutConfirmation": {
-    "message": "You've recently updated from an older version. You must re-log in to change your lock options. Do you want to log out now?"
-  },
   "editedFolder": {
     "message": "Редактирана папка"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Сигурни ли сте, че искате да изтриете тази папка?"
   },
   "deletedFolder": {
     "message": "Изтрита папка"
   },
   "gettingStartedTutorial": {
-    "message": "Getting Started Tutorial"
+    "message": "Въведение"
   },
   "gettingStartedTutorialVideo": {
     "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
@@ -455,8 +447,17 @@
   "uri": {
     "message": "Адрес"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "Нов адрес"
   },
   "addedItem": {
     "message": "Елементът е добавен"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Сигурни ли сте, че искате да презапишете текущата парола?"
   },
-  "credits": {
-    "message": "Благодарности"
-  },
-  "thankYou": {
-    "message": "Благодарим ви!"
-  },
-  "translations": {
-    "message": "Преводи"
-  },
   "searchFolder": {
     "message": "Търсене в папката"
   },
   "searchCollection": {
     "message": "Търсене в колекцията"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Няма папка",
@@ -505,7 +500,7 @@
     "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
   },
   "notificationAddDesc": {
-    "message": "Should Bitwarden remember this password for you?"
+    "message": "Искате ли тази парола да бъде запазена?"
   },
   "notificationAddSave": {
     "message": "Да, нека се запише сега"
@@ -544,9 +539,6 @@
   "shareVaultInfo": {
     "message": "Създайте организация, за да споделяте сигурно елементите си с други потребители."
   },
-  "contribute": {
-    "message": "You can contribute too!"
-  },
   "learnMore": {
     "message": "Научете повече"
   },
@@ -554,31 +546,31 @@
     "message": "Удостоверителен ключ (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Код за потвърждаване (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copy Verification Code"
+    "message": "Копиране на кода за потвърждаване"
   },
   "attachments": {
     "message": "Прикачени файлове"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "Изтриване на прикачения файл"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Сигурни ли сте, че искате да изтриете прикачения файл?"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Прикаченият файл е изтрит"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Прикачване на файл"
   },
   "noAttachments": {
     "message": "Няма прикачени файлове."
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Прикаченият файл е запазен."
   },
   "file": {
     "message": "Файл"
@@ -590,7 +582,7 @@
     "message": "Големината на файла да е най-много 100 МБ."
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Функцията е недостъпна"
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
@@ -605,7 +597,7 @@
     "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
-    "message": "Освежаване на членството"
+    "message": "Опресняване на абонамента"
   },
   "premiumNotCurrentMember": {
     "message": "You are not currently a premium member."
@@ -641,7 +633,13 @@
     "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just %price% \/year!"
+    "message": "All for just %price% \/year!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Refresh complete"
@@ -653,7 +651,7 @@
     "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
   },
   "premiumRequired": {
-    "message": "Изисква се премиум членство"
+    "message": "Изисква се премийно членство"
   },
   "premiumRequiredDesc": {
     "message": "A premium membership is required to use this feature."
@@ -662,7 +660,22 @@
     "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to"
+    "message": "Enter the 6 digit verification code that was emailed to",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Запомняне"
@@ -671,7 +684,7 @@
     "message": "Send verification code email again"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Използвайте друг начин на метод двуфакторното удостоверяване"
+    "message": "Използвайте друг начин на двустепенно удостоверяване"
   },
   "insertYubiKey": {
     "message": "Insert your YubiKey into your computer's USB port, then touch its button."
@@ -680,7 +693,7 @@
     "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Записът не е наличен"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
@@ -689,13 +702,13 @@
     "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Настройки на двустепенното удостоверяване"
   },
   "recoveryCodeDesc": {
     "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Код за възстановяване"
   },
   "authenticatorAppTitle": {
     "message": "Authenticator App"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -766,7 +783,7 @@
     "message": "This is currently an experimental feature. Use at your own risk."
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "Автоматично попълване на последно използвания запис в текущия сайт."
   },
   "commandGeneratePasswordDesc": {
     "message": "Generate and copy a new random password to the clipboard."
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Копиране на стойността"
-  },
-  "toggleValue": {
-    "message": "Превключване на стойността"
   },
   "value": {
     "message": "Стойност"
@@ -802,10 +816,10 @@
     "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
   },
   "disableFavicon": {
-    "message": "Изключване на иконите на уебсайта"
+    "message": "Изключване на иконките на сайтовете"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Иконките на сайтовете са разпознаваемо изображение за всеки запис в трезора."
   },
   "cardholderName": {
     "message": "Име на притежателя на картата"
@@ -892,13 +906,13 @@
     "message": "Фамилно име"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Име на самоличността"
   },
   "company": {
     "message": "Фирма"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Номер на осигуровката"
   },
   "passportNumber": {
     "message": "Номер на паспорта"
@@ -940,10 +954,10 @@
     "message": "Вид"
   },
   "typeLogin": {
-    "message": "Вход"
+    "message": "Запис"
   },
   "typeLogins": {
-    "message": "Logins"
+    "message": "Записи"
   },
   "typeSecureNote": {
     "message": "Бележка за сигурност"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Самоличности"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Изчистване"
   },
@@ -988,7 +1008,13 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
@@ -1007,18 +1033,34 @@
     "message": "Започва с"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Регулярен израз",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Откриване на съвпадения",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Стандартно откриване на съвпадения",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Настройки на превключване"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

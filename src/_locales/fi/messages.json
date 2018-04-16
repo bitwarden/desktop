@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Kopioi salasana"
   },
+  "copyNote": {
+    "message": "Copy Note"
+  },
   "copyUri": {
     "message": "Kopioi URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Tuki & palaute"
   },
-  "emailUs": {
-    "message": "Lähetä sähköpostia"
-  },
-  "emailUsDirectly": {
-    "message": "Lähetä meille sähköpostia saadaksesi tukea tai jättääksesi palautetta."
-  },
-  "visitOurWebsite": {
-    "message": "Käy sivustollamme"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Käy sivustollamme, jossa voit saada apua Bitwardenin käyttämisessä, saada tietoosi palvelun uutisia tai lähettää meille sähköpostia."
-  },
-  "fileBugReport": {
-    "message": "Jätä virheilmoitus"
-  },
-  "gitHubIssue": {
-    "message": "Jätä ilmoitus GitHub-pakettivarastoomme."
-  },
   "sync": {
     "message": "Synkronointi"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Salasanageneraattori"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Luo automaattisesti vahvoja, sivustokohtaisia salasanoja kirjautumisiasi varten."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Merkinnät"
   },
+  "note": {
+    "message": "Note"
+  },
   "editItem": {
     "message": "Muokkaa kohdetta"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Näytä kohde"
   },
-  "launchWebsite": {
-    "message": "Avaa sivusto"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "SIvusto"
   },
-  "togglePassword": {
-    "message": "Näytä\/piilota salasana"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Hallinta"
@@ -341,7 +333,7 @@
     "message": "Järjestelmän lukitsemisen yhteydessä"
   },
   "onRestart": {
-    "message": "Uudelleenkäynnistyksen yhteydessä"
+    "message": "Tietokoneen käynnistyksen yhteydessä"
   },
   "never": {
     "message": "Ei koskaan"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Turvallisuus"
   },
-  "errorsOccurred": {
-    "message": "Tapahtui virheitä"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Sähköpostiosoite vaaditaan."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " kopioitu",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Valitun kohteen automaattinen täyttö tälle sivulle ei onnistu. Kopioi ja liitä kohde manuaalisesti."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä sinulta kirjautumisvahvistuksen todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
-  "loggingOut": {
-    "message": "Kirjaudutaan ulos"
-  },
-  "loggingOutConfirmation": {
-    "message": "Olet hiljattain päivittänyt uuteen versioon. Sinun on kirjauduttava uudelleen vaihtaaksesi lukitsemisasetuksia. Haluatko kirjautua ulos nyt?"
-  },
   "editedFolder": {
     "message": "Kansiota muokattu"
   },
@@ -455,6 +447,15 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
     "message": "New URI"
   },
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Haluatko varmasti korvata nykyisen salasanasi?"
   },
-  "credits": {
-    "message": "Kiitokset"
-  },
-  "thankYou": {
-    "message": "Kiitokset"
-  },
-  "translations": {
-    "message": "Käännökset"
-  },
   "searchFolder": {
     "message": "Hae kansiosta"
   },
   "searchCollection": {
     "message": "Hae valikoimasta"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Ei kansiota",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Luo organisaatio jakaaksesi kohteitasi turvallisesti muiden käyttäjien kanssa."
-  },
-  "contribute": {
-    "message": "Sinäkin voit osallistua!"
   },
   "learnMore": {
     "message": "Lue lisää"
@@ -641,7 +633,13 @@
     "message": "Kiitos, että tuet Bitwardenin toimintaa."
   },
   "premiumPrice": {
-    "message": "Kaikki nämä vain %price%\/vuosi!"
+    "message": "Kaikki nämä vain %price% \/ vuosi!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Päivitys valmis"
@@ -662,7 +660,22 @@
     "message": "Syötä 6-numeroinen vahvistuskoodi todennussovelluksestasi."
   },
   "enterVerificationCodeEmail": {
-    "message": "Syötä 6-numeroinen vahvistuskoodi, joka lähetettiin osoitteeseen"
+    "message": "Syötä 6-numeroinen vahvistuskoodi sähköpostistasi",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Muista minut"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Vahvista kirjautumisesi Duo Securityn kautta käyttämällä Duo Mobile -sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Kopioi teksti"
-  },
-  "toggleValue": {
-    "message": "Näytä\/piilota teksti"
   },
   "value": {
     "message": "Teksti"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Henkilöllisyydet"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Tyhjennä"
   },
@@ -988,7 +1008,13 @@
     "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
     "message": "This password was not found in any known data breaches. It should be safe to use."
@@ -1020,5 +1046,21 @@
   },
   "toggleOptions": {
     "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

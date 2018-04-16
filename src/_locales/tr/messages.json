@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Parolayı Kopyala"
   },
+  "copyNote": {
+    "message": "Notu kopyala"
+  },
   "copyUri": {
     "message": "Linki kopyala"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Yardım & Geribildirim"
   },
-  "emailUs": {
-    "message": "Bize Yazın"
-  },
-  "emailUsDirectly": {
-    "message": "Geribildirimde bulunmak ve yardım almak için bize mail atabilirsiniz."
-  },
-  "visitOurWebsite": {
-    "message": "Web sitemizi ziyaret edin"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Yardım almak, haberlere göz atmak, bize ulaşmak ve bitwarden'ı nasıl kullanacağınızı öğrenmek için web sitemizi ziyaret edin."
-  },
-  "fileBugReport": {
-    "message": "Bir Hata Raporlayın"
-  },
-  "gitHubIssue": {
-    "message": "Bizim GitHub depomuzda bir sorun bildirin."
-  },
   "sync": {
     "message": "Sync"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Parola Oluşturucu"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Hesaplarınız için otomatik olarak güçlü, özel parolalar oluşturun."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Notlar"
   },
+  "note": {
+    "message": "Not"
+  },
   "editItem": {
     "message": "Hesabı düzenle"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Hesabı Görüntüle"
   },
-  "launchWebsite": {
-    "message": "Siteye Git"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Websitesi"
   },
-  "togglePassword": {
-    "message": "Şifreyi Göster\/Gizle"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Yönet"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Güvenlik"
   },
-  "errorsOccurred": {
-    "message": "Hata oluştu"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "E-posta adresi gereklidir."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " kopyalandı",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Bu sayfada seçilen giriş bilgileri otomatik doldurulamıyor. Kullanıcı adınızı kopyala\/yapıştırın ve ya parolanızı kopyala\/yapıştırın."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "İki adımlı oturum açma, oturum açma işleminizi bir güvenlik anahtarı, kimlik doğrulayıcı uygulama, SMS, telefon görüşmesi veya e-posta gibi başka bir cihazla doğrulamanızı isteyerek hesabınızı daha güvenli hale getirir. İki adımlı oturum açma işlemini bitwarden.com web kasası üzerinden etkinleştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
-  "loggingOut": {
-    "message": "Çıkış yapılıyor"
-  },
-  "loggingOutConfirmation": {
-    "message": "Yalın zaman önce yeni bir güncelleme yapıldı. Kilit seçeneklerinizi değiştirmek için yeniden giriş yapmalısınız. Şimdi çıkış yapmak istiyor musunuz?"
-  },
   "editedFolder": {
     "message": "Klasör Düzenlendi"
   },
@@ -455,8 +447,17 @@
   "uri": {
     "message": "URl"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "Yeni URI"
   },
   "addedItem": {
     "message": "Hesap eklendi"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Mevcut parolanın üzerine kaydetmek istediğinize emin misiniz?"
   },
-  "credits": {
-    "message": "Emeği Geçenler"
-  },
-  "thankYou": {
-    "message": "Teşekkürler"
-  },
-  "translations": {
-    "message": "Çeviriler"
-  },
   "searchFolder": {
     "message": "Klasör Ara"
   },
   "searchCollection": {
     "message": "Koleksiyon ara"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Klasör yok",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Diğer kullanıcılar ile giriş bilgilerinizi güvenle paylaşmak için bir organizasyon oluşturun."
-  },
-  "contribute": {
-    "message": "Siz de katkıda bulunabilirsiniz!"
   },
   "learnMore": {
     "message": "Daha fazla bilgi edinin"
@@ -641,7 +633,13 @@
     "message": "Bitwarden'ı desteklediğiniz için teşekkür ederiz."
   },
   "premiumPrice": {
-    "message": "Bunların hepsi sadece %price% \/yıl!"
+    "message": "Bunların hepsi sadece %price% \/yıl!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Yenileme tamamlandı"
@@ -662,7 +660,22 @@
     "message": "Kimlik doğrulayıcı uygulamanızdaki 6 haneli doğrulama kodunu girin."
   },
   "enterVerificationCodeEmail": {
-    "message": "Szie e-postalanan 6 haneli doğrulama kodunu girin"
+    "message": "Szie e-postalanan 6 haneli doğrulama kodunu girin",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Beni hatırla"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Duo Security ile doğrulama için Duo Mobile uygulaması, SMS, telefon görüşmesi veya U2F güvenlik anahtarını kullanın.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Değeri kopyala"
-  },
-  "toggleValue": {
-    "message": "Değeri Değiştir"
   },
   "value": {
     "message": "Değer"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Kimlikler"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Temizle"
   },
@@ -985,40 +1005,62 @@
     "message": "Yeni sekmeyi kullanarak iki adımlı giriş talebinizi tamamlayın."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Parolanız herhangi bir saldırı sonucu açığa çıkmış mı kontrol edin."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Parolanız, herhangi bir saldırı sonucu ele geçirilen veride bulunmadı. Kullanılması güvenli görünüyor."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Ana alanadı"
   },
   "host": {
-    "message": "Host",
+    "message": "Sunucu alanadı",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Tam"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "İle başlar"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Kurallı ifade",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Eşleme Tanıma",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Varsayılan eşleme tanıma",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
     "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }

@@ -64,6 +64,9 @@
   "copyPassword": {
     "message": "Salin Kata Sandi"
   },
+  "copyNote": {
+    "message": "Salin Catatan"
+  },
   "copyUri": {
     "message": "Salin URI"
   },
@@ -157,24 +160,6 @@
   "helpFeedback": {
     "message": "Bantuan & Umpan Balik"
   },
-  "emailUs": {
-    "message": "Kirim Email Ke Kami"
-  },
-  "emailUsDirectly": {
-    "message": "Email kami secara langsung untuk mendapatkan bantuan atau memberikan umpan balik."
-  },
-  "visitOurWebsite": {
-    "message": "Kunjungi Situs Web Kami"
-  },
-  "visitOurWebsiteDirectly": {
-    "message": "Kunjungi situs web kami untuk mendapatkan bantuan, berita, email kami, dan\/atau mempelajari lebih lanjut tentang bagaimana menggunakan Bitwarden."
-  },
-  "fileBugReport": {
-    "message": "Buat Laporan Masalah"
-  },
-  "gitHubIssue": {
-    "message": "Buka sebuah isu di repositori GitHub kami."
-  },
   "sync": {
     "message": "Sinkronisasi"
   },
@@ -186,6 +171,10 @@
   },
   "passGen": {
     "message": "Pembuat Kata Sandi"
+  },
+  "generator": {
+    "message": "Generator",
+    "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
     "message": "Secara otomatis membuat sandi yang kuat dan unik untuk info masuk Anda."
@@ -265,6 +254,9 @@
   "notes": {
     "message": "Catatan"
   },
+  "note": {
+    "message": "Catatan"
+  },
   "editItem": {
     "message": "Edit Item"
   },
@@ -277,14 +269,14 @@
   "viewItem": {
     "message": "Lihat Item"
   },
-  "launchWebsite": {
-    "message": "Buka Situs Web"
+  "launch": {
+    "message": "Launch"
   },
   "website": {
     "message": "Situs Web"
   },
-  "togglePassword": {
-    "message": "Sakelar Sandi"
+  "toggleVisibility": {
+    "message": "Toggle Visibility"
   },
   "manage": {
     "message": "Kelola"
@@ -349,8 +341,8 @@
   "security": {
     "message": "Keamanan"
   },
-  "errorsOccurred": {
-    "message": "Terjadi kesalahan"
+  "errorOccurred": {
+    "message": "An error has occurred"
   },
   "emailRequired": {
     "message": "Alamat email diperlukan."
@@ -378,7 +370,13 @@
   },
   "valueCopied": {
     "message": " disalin",
-    "description": "' copied'. This is part of a sentence so be sure to leave the space prefix. For example: 'Password copied'"
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
   },
   "autofillError": {
     "message": "Tidak dapat mengisi otomatis item yang dipilih pada laman ini. Salin dan tempel informasinya sebagai gantinya."
@@ -419,12 +417,6 @@
   "twoStepLoginConfirmation": {
     "message": "Info masuk dua langkah membuat akun Anda lebih aman dengan mengharuskan Anda memverifikasi info masuk Anda dengan peranti lain seperti kode keamanan, aplikasi autentikasi, SMK, panggilan telepon, atau email. Info masuk dua langkah dapat diaktifkan di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
-  "loggingOut": {
-    "message": "Keluar"
-  },
-  "loggingOutConfirmation": {
-    "message": "Anda baru saja diperbarui dari versi yang lebih lawas. Anda harus masuk kembali untuk mengubah pilihan penguncian Anda. Apakah Anda ingin keluar sekarang?"
-  },
   "editedFolder": {
     "message": "Folder yang di Edit"
   },
@@ -455,8 +447,17 @@
   "uri": {
     "message": "URI"
   },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "newUri": {
-    "message": "New URI"
+    "message": "URl Batu"
   },
   "addedItem": {
     "message": "Item yang Ditambahkan"
@@ -476,20 +477,14 @@
   "overwritePasswordConfirmation": {
     "message": "Anda yakin ingin menimpa sandi saat ini?"
   },
-  "credits": {
-    "message": "Kredit"
-  },
-  "thankYou": {
-    "message": "Terima Kasih"
-  },
-  "translations": {
-    "message": "Terjemahan"
-  },
   "searchFolder": {
     "message": "Cari folder"
   },
   "searchCollection": {
     "message": "Cari koleksi"
+  },
+  "searchType": {
+    "message": "Search type"
   },
   "noneFolder": {
     "message": "Tidak Ada Folder",
@@ -543,9 +538,6 @@
   },
   "shareVaultInfo": {
     "message": "Buat organisasi untuk berbagi info masuk Anda dengan aman dengan pengguna lain."
-  },
-  "contribute": {
-    "message": "Anda juga dapat berkontribusi!"
   },
   "learnMore": {
     "message": "Pelajari lebih lanjut"
@@ -641,7 +633,13 @@
     "message": "Terima kasih telah mendukung Bitwarden."
   },
   "premiumPrice": {
-    "message": "Semua untuk hanya %price% \/tahun!"
+    "message": "Semua untuk hanya %price% \/tahun!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
   },
   "refreshComplete": {
     "message": "Penyegaran selesai"
@@ -662,7 +660,22 @@
     "message": "Masukkan 6 digit kode verifikasi dari aplikasi autentikasi Anda."
   },
   "enterVerificationCodeEmail": {
-    "message": "Masukkan 6 digit kode verifikasi yang dikirim melalui email ke"
+    "message": "Masukkan 6 digit kode verifikasi yang dikirim melalui email ke",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
   },
   "rememberMe": {
     "message": "Ingat saya"
@@ -712,6 +725,10 @@
   },
   "duoDesc": {
     "message": "Verifikasi dengan Duo Security menggunakan aplikasi Duo Mobile, SMS, panggilan telepon, atau kunci keamanan U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verifikasi dengan Duo Security untuk organisasi Anda menggunakan aplikasi Duo Mobile, SMS, panggilan telepon, atau kunci keamanan U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -779,9 +796,6 @@
   },
   "copyValue": {
     "message": "Salin Nilai"
-  },
-  "toggleValue": {
-    "message": "Tampilkan\/Sembunyikan Nilai"
   },
   "value": {
     "message": "Nilai"
@@ -978,6 +992,12 @@
   "identities": {
     "message": "Identitas"
   },
+  "logins": {
+    "message": "Logins"
+  },
+  "secureNotes": {
+    "message": "Secure Notes"
+  },
   "clear": {
     "message": "Bersihkan"
   },
@@ -985,40 +1005,62 @@
     "message": "Selesaikan permintaan masuk dua langkah Anda menggunakan tab baru."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Periksalah jika kata sandi telah terpapar."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it."
+    "message": "This password has been exposed in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Kata sandi ini tidak ditemukan dalam data pelanggaran yang dikenal. Kata sandi tersebut harusnya aman untuk digunakan."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Basis domain"
   },
   "host": {
     "message": "Host",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Tepat"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Mulai dengan"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Ekspresi umum",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Deteksi kecocokan",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Deteksi kecocokan standar",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Ubah Opsi"
+  },
+  "organization": {
+    "message": "Organisasi",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "types": {
+    "message": "Types"
+  },
+  "allItems": {
+    "message": "All Items"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "remove": {
+    "message": "Remove"
   }
 }
