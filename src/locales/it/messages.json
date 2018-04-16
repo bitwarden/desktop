@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "Copia Password"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "Lunghezza"
   },
@@ -535,6 +538,10 @@
   },
   "duoDesc": {
     "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1010,5 +1017,9 @@
   },
   "toggleOptions": {
     "message": "Attiva\/Disattiva opzioni"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }
