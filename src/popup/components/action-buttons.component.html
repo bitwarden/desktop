@@ -1,5 +1,5 @@
-﻿<span class="row-btn" (click)="view()" appStopClick appStopProp title="{{'view' | i18n}}" *ngIf="showView">
-    <i class="fa fa-lg fa-eye"></i>
+<span class="row-btn" (click)="view()" appStopClick appStopProp title="{{'view' | i18n}}" *ngIf="showView">
+    <i class="fa fa-lg fa-list-alt"></i>
 </span>
 <ng-container *ngIf="cipher.type === cipherType.Login">
     <span class="row-btn" appStopClick appStopProp title="{{'launch' | i18n}}" (click)="launch()"
