@@ -120,7 +120,18 @@ export class SettingsComponent implements OnInit {
     }
 
     async share() {
-        // TODO
+        this.analytics.eventTrack.next({ action: 'Clicked Share Vault' });
+        const confirmed = await this.platformUtilsService.showDialog(
+            this.i18nService.t('shareVaultConfirmation'), this.i18nService.t('shareVault'),
+            this.i18nService.t('yes'), this.i18nService.t('cancel'));
+        if (confirmed) {
+            BrowserApi.createNewTab('https://help.bitwarden.com/article/what-is-an-organization/');
+        }
+    }
+
+    async webVault() {
+        this.analytics.eventTrack.next({ action: 'Clicked Web Vault' });
+        BrowserApi.createNewTab('https://vault.bitwarden.com');
     }
 
     import() {
