@@ -459,7 +459,7 @@ export class MenuMain {
                                 label: 'Chrome',
                                 click: () => {
                                     shell.openExternal('https://chrome.google.com/webstore/detail/' +
-                                        +'bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb');
+                                        'bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb');
                                 },
                             },
                             {
