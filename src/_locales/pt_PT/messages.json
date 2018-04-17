@@ -41,7 +41,7 @@
     "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer."
   },
   "reTypeMasterPass": {
-    "message": "Re-digite a palavra-passe mestra"
+    "message": "Reescreva a palavra-passe mestra"
   },
   "masterPassHint": {
     "message": "Dica da palavra-passe mestra (opcional)"
@@ -104,7 +104,7 @@
     "message": "Dica da palavra-passe"
   },
   "enterEmailToGetHint": {
-    "message": "Digite o endereço de email da sua conta para receber a dica da sua palavra-passe mestra."
+    "message": "Introduza o endereço de email da sua conta para receber a dica da sua palavra-passe mestra."
   },
   "getMasterPasswordHint": {
     "message": "Obter dica da palavra-passe mestra"
@@ -173,7 +173,7 @@
     "message": "Gerador de palavras-passe"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Gerador",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Cofre Web Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Gira os seus itens a partir de qualquer navegador web com o cofre web Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "Cofre iOS Bitwarden"
-  },
-  "bitIosVaultInfo": {
-    "message": "Gira os seus itens a partir dos seus dispositivos móveis com o cofre iOS Bitwarden."
-  },
-  "bitAndrVault": {
-    "message": "Cofre Android Bitwarden"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Gira os seus itens a partir dos seus dispositivos móveis com o cofre Android Bitwarden."
-  },
   "importItems": {
     "message": "Importar itens"
-  },
-  "importItemsInfo": {
-    "message": "Importe rapidamente em massa os seus itens de outras aplicações de gestão de palavras-passe."
   },
   "select": {
     "message": "Selecionar"
@@ -270,13 +252,13 @@
     "message": "Ver item"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Iniciar"
   },
   "website": {
     "message": "Website"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Alternar visibilidade"
   },
   "manage": {
     "message": "Gerir"
@@ -333,7 +315,7 @@
     "message": "Quando o sistema está bloqueado"
   },
   "onRestart": {
-    "message": "Ao reiniciar"
+    "message": "Ao reiniciar o sistema"
   },
   "never": {
     "message": "Nunca"
@@ -342,7 +324,7 @@
     "message": "Segurança"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Ocorreu um erro"
   },
   "emailRequired": {
     "message": "O endereço de email é requerido."
@@ -369,7 +351,7 @@
     "message": "O código de verificação é requerido."
   },
   "valueCopied": {
-    "message": " copiado(a)",
+    "message": "$VALUE$ copiado\/a",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -415,7 +397,7 @@
     "message": "Pode alterar o seu endereço de email no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
   "twoStepLoginConfirmation": {
-    "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que digite um código de segurança de uma aplicação de autenticação quando iniciar sessão. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?"
+    "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que verifique o seu início de sessão com outro dispositivo como uma chave de segurança, aplicação de autenticação, SMS, chamada telefónica, ou email. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
   "editedFolder": {
     "message": "Pasta editada"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Pesquisar coleção"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Pesquisar tipo"
   },
   "noneFolder": {
     "message": "Nenhuma pasta",
@@ -525,10 +508,7 @@
     "message": "Esta exportação contém os seus dados não encriptados em formato .csv. Não deve armazená-los ou enviá-los através de canais inseguros (como por email). Elimine-os imediatamente após terminar de usá-los."
   },
   "exportMasterPassword": {
-    "message": "Digite a sua palavra-passe mestra para exportar os dados do seu cofre."
-  },
-  "exportVaultInfo": {
-    "message": "Exporte os dados do seu cofre em formato .csv para que possa modificá-los facilmente ou movê-los para outro lugar."
+    "message": "Introduza a sua palavra-passe mestra para exportar os dados do seu cofre."
   },
   "shared": {
     "message": "Partilhado"
@@ -536,8 +516,8 @@
   "shareVault": {
     "message": "Partilhar o seu cofre"
   },
-  "shareVaultInfo": {
-    "message": "Crie uma organização para partilhar os seus itens em segurança com outros utilizadores."
+  "shareVaultConfirmation": {
+    "message": "O Bitwarden permite-lhe partilhar o seu cofre com outros ao utilizar uma conta de organização. Gostaria de visitar o website bitwarden.com para saber mais?"
   },
   "learnMore": {
     "message": "Saber mais"
@@ -633,7 +613,7 @@
     "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tudo por apenas %price% \/ano!",
+    "message": "Tudo por apenas $PRICE$ \/ano!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -657,10 +637,10 @@
     "message": "É requerida uma adesão premium para utilizar esta funcionalidade."
   },
   "enterVerificationCodeApp": {
-    "message": "Digite o código de verificação de 6 dígitos da sua aplicação de autenticador."
+    "message": "Introduza o código de verificação de 6 dígitos da sua aplicação de autenticador."
   },
   "enterVerificationCodeEmail": {
-    "message": "Digite o código de verificação de 6 dígitos que foi enviado por email para",
+    "message": "Introduza o código de verificação de 6 dígitos que foi enviado por email para $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Email de verificação enviado para $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Identidades"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Credenciais"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Notas seguras"
   },
   "clear": {
     "message": "Limpar"
@@ -1008,7 +988,7 @@
     "message": "Verifica se a palavra-passe foi exposta."
   },
   "passwordExposed": {
-    "message": "Esta palavra-passe foi exposta em brechas de dados. Deve alterá-la.",
+    "message": "Esta palavra-passe foi exposta $VALUE$ vez(es) em brechas de dados. Deve alterá-la.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tipos"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Todos os itens"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Não existem palavras-passe para listar."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Remover"
   }
 }

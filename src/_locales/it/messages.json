@@ -173,7 +173,7 @@
     "message": "Generatore di Password"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Generatore",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Cassaforte Web Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Gestisci i tuoi login da qualunque browser con la cassaforte web Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "Cassaforte Bitwarden iOS"
-  },
-  "bitIosVaultInfo": {
-    "message": "Gestisci i tuoi login dai tuoi dispositivi portatili con la cassaforte Bitwarden per iOS."
-  },
-  "bitAndrVault": {
-    "message": "Cassaforte Bitwarden Android"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Gestisci i tuoi login dai tuoi dispositivi portatili con la cassaforte Bitwarden per Android."
-  },
   "importItems": {
     "message": "Importa Elementi"
-  },
-  "importItemsInfo": {
-    "message": "Importa rapidamente i dati di accesso da altre applicazioni di gestione password."
   },
   "select": {
     "message": "Seleziona"
@@ -270,13 +252,13 @@
     "message": "Mostra Elemento"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Avvia"
   },
   "website": {
     "message": "Sito"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Mostra\/Nascondi"
   },
   "manage": {
     "message": "Gestisci"
@@ -342,7 +324,7 @@
     "message": "Sicurezza"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Si è verificato un errore"
   },
   "emailRequired": {
     "message": "L'indirizzo Email è obbligatorio."
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Cerca collezione"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Tipo di ricerca"
   },
   "noneFolder": {
     "message": "No cartella",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati della tua cassaforte."
   },
-  "exportVaultInfo": {
-    "message": "Esporta i dati della tua cassaforte in formato .csv, così da poterli modificare facilmente o spostarli altrove."
-  },
   "shared": {
     "message": "Condiviso"
   },
   "shareVault": {
     "message": "Condividi La Tua Cassaforte"
   },
-  "shareVaultInfo": {
-    "message": "Crea un'organizzazione per condividere in sicurezza i tuoi login con gli altri utenti."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden ti permette di condividere la tua cassaforte con altri usando un account societario. Vuoi visitare il sito bitwarden.com per saperne di più?"
   },
   "learnMore": {
     "message": "Per saperne di più"
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "L'email di verifica è stata inviata all'indirizzo $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -996,7 +976,7 @@
     "message": "Logins"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Note sicure"
   },
   "clear": {
     "message": "Elimina tutto"
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tipi"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Tutti gli Elementi"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Non ci sono password da elencare."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Rimuovi"
   }
 }
