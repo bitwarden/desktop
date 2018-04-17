@@ -333,7 +333,7 @@
     "message": "On System Lock"
   },
   "onRestart": {
-    "message": "On System Restart"
+    "message": "On Browser Restart"
   },
   "never": {
     "message": "Never"
