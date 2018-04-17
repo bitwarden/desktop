@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "allItems": {
-    "message": "Alle items"
+    "message": "Alle Items"
   },
   "favorites": {
     "message": "Favorieten"
@@ -33,7 +33,7 @@
     "message": "Kluis doorzoeken"
   },
   "addItem": {
-    "message": "Voeg Item Toe"
+    "message": "Item toevoegen"
   },
   "shared": {
     "message": "Gedeeld"
@@ -69,7 +69,7 @@
     "message": "Wachtwoord"
   },
   "editItem": {
-    "message": "Item bewerken"
+    "message": "Item Bewerken"
   },
   "emailAddress": {
     "message": "E-mailadres"
@@ -118,7 +118,7 @@
     "message": "Bedrijf"
   },
   "ssn": {
-    "message": "Rijksregisternummer \/ Burgerservicenummer"
+    "message": "Burgerservicenummer"
   },
   "passportNumber": {
     "message": "Paspoortnummer"
@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "Wachtwoord kopiëren"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "Lengte"
   },
@@ -535,6 +538,10 @@
   },
   "duoDesc": {
     "message": "Verifieer met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1001,14 +1008,18 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Match detectie",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Standaard match detectie",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Opties schakelen"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

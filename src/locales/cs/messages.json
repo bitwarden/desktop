@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Všechny položky"
@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nová URI"
   },
   "username": {
     "message": "Uživatelské jméno"
@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "Kopírovat heslo"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "Délka"
   },
@@ -358,7 +361,7 @@
     "message": "Vyhledat v oblíbených"
   },
   "searchType": {
-    "message": "Vyhledat v typech",
+    "message": "Vyhledat v typu",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -537,6 +540,10 @@
     "message": "Ověřit pomocí Duo Security prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo U2F bezpečnostního kódu.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
   "u2fDesc": {
     "message": "Použít jakýkoliv FIDO U2F bezpečnostní klíč pro přístup k vašemu trezoru."
   },
@@ -565,7 +572,7 @@
     "message": "Vlastnoručně hostované prostředí"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace bitwarden."
+    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace Bitwarden."
   },
   "customEnvironment": {
     "message": "Vlastní prostředí"
@@ -865,7 +872,7 @@
     "message": "Jste prémiovým členem!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Děkujeme za podporu bitwarden."
+    "message": "Děkujeme za podporu Bitwarden."
   },
   "premiumPrice": {
     "message": "Vše jen za $PRICE$ ročně!",
@@ -969,10 +976,10 @@
     "message": "Okno"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Zkontrolujte, zda nedošlo k úniku hesla."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "K úniku tohoto hesla došlo celkem $VALUE$x. Měli byste jej změnit.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,34 +988,38 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "K úniku tohoto hesla nedošlo v žádném ze známých případů. Mělo by být bezpečné používat jej i nadále."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Základní doména"
   },
   "host": {
     "message": "Host",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Přesně"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Začíná na"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulární výraz",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Zjišťování shody",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Výchozí",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Přepnout možnosti"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "بیت واردن"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "تمام موارد"
@@ -51,7 +51,7 @@
     "message": "نشانی اینترنتی"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "آدرس اینترنتی $POSITION$",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -60,7 +60,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "آدرس اینترنتی جدید"
   },
   "username": {
     "message": "نام کاربری"
@@ -332,6 +332,9 @@
   "copyPassword": {
     "message": "کپی رمز عبور"
   },
+  "copyUri": {
+    "message": "Copy URI"
+  },
   "length": {
     "message": "طول"
   },
@@ -537,6 +540,10 @@
     "message": "تایید کنید همراه با Duo Security از اپ موبایل Dou استفاده کنید، پیامک،تماس تلفنی، یا کلید امنیتی U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
   "u2fDesc": {
     "message": "از هر FIDO استفاده کنید U2F کلید امنیتی را فعال کنید تا به حساب کاربریتان دسترسی یابید."
   },
@@ -565,7 +572,7 @@
     "message": "محیط خود میزبان"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "آدرس اینترنتی پایه فرضی نصب بیت واردن میزبانی شده را مشخص کنید."
+    "message": "آدرس اینترنتی پایه فرضی نصب Bitwarden میزبانی شده را مشخص کنید."
   },
   "customEnvironment": {
     "message": "محیط های سفارشی"
@@ -782,7 +789,7 @@
     "message": "برای بروزرسانی راه اندازی مجدد کنید"
   },
   "restartToUpdateDesc": {
-    "message": "نسخه ی $VERSION_NUM$ آماده نصب است. باید برای نصب بیت واردن را مجددا راه اندازی کنید. آیا تمایل به راه اندازی مجدد و نصب هستید؟",
+    "message": "نسخه ی $VERSION_NUM$ آماده نصب است. باید برای نصب Bitwarden را مجددا راه اندازی کنید. آیا تمایل به راه اندازی مجدد و نصب هستید؟",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -865,7 +872,7 @@
     "message": "شما یک عضو پرمیوم هستید!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "برای حمایتتان از بیت واردن سپاسگزاریم."
+    "message": "برای حمایتتان از Bitwarden سپاسگزاریم."
   },
   "premiumPrice": {
     "message": "تمامش فقط $PRICE$ در سال!",
@@ -935,13 +942,13 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "درباره بیت واردن"
+    "message": "درباره Bitwarden"
   },
   "services": {
     "message": "خدمات"
   },
   "hideBitwarden": {
-    "message": "مخفی کردن بیت واردن"
+    "message": "مخفی کردن Bitwarden"
   },
   "hideOthers": {
     "message": "مخفی کردن بقیه"
@@ -950,7 +957,7 @@
     "message": "نمایش همه"
   },
   "quitBitwarden": {
-    "message": "خروج از بیت واردن"
+    "message": "خروج از Bitwarden"
   },
   "valueCopied": {
     "message": "$VALUE$ کپی شد",
@@ -969,10 +976,10 @@
     "message": "پنجره"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "بررسی کنید که آیا رمز عبور افشا شده است."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "این رمز عبور در رخنه داده ها $VALUE$ بار افشا شده است. باید تغییرش دهید.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -981,34 +988,38 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "این رمز عبور در هیچ رخنه داده ای شناخته نشده است. باید برای امنیت از آن استفاده کنید."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "دامنه پایه"
   },
   "host": {
-    "message": "Host",
+    "message": "میزبان",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "دقیق"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "شروع می شود با"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "عبارت منظم",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "بازرسی تطابق",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "بازرسی تطابق پیشفرض",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "گزینه های تبدیل"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }
