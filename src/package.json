@@ -15,7 +15,7 @@
     "desktop-idle": "1.1.1",
     "electron-log": "2.2.14",
     "electron-store": "1.3.0",
-    "electron-updater": "2.20.1",
+    "electron-updater": "2.21.4",
     "keytar": "4.1.0"
   }
 }
