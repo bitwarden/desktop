@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Ana parolanızı bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
-  "changeEmailConfirmation": {
-    "message": "E-posta adresinizi bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
-  },
   "twoStepLoginConfirmation": {
     "message": "İki adımlı oturum açma, oturum açma işleminizi bir güvenlik anahtarı, kimlik doğrulayıcı uygulama, SMS, telefon görüşmesi veya e-posta gibi başka bir cihazla doğrulamanızı isteyerek hesabınızı daha güvenli hale getirir. İki adımlı oturum açma işlemini bitwarden.com web kasası üzerinden etkinleştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Eşitleme başarısız"
-  },
-  "importItemsConfirmation": {
-    "message": "bitwarden.com web kasasından topluca hesaplarınızı içe aktarabilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "passwordCopied": {
     "message": "Parola kopyalandı"

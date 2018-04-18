@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Pode alterar a sua palavra-passe mestra no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
-  "changeEmailConfirmation": {
-    "message": "Pode alterar o seu endereço de email no cofre web bitwarden.com. Pretende visitar o website agora?"
-  },
   "twoStepLoginConfirmation": {
     "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que verifique o seu início de sessão com outro dispositivo como uma chave de segurança, aplicação de autenticação, SMS, chamada telefónica, ou email. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Sincronização falhada"
-  },
-  "importItemsConfirmation": {
-    "message": "Pode importar em massa os seus itens a partir do cofre web bitwarden.com. Pretende visitar o website agora?"
   },
   "passwordCopied": {
     "message": "Palavra-passe copiada"

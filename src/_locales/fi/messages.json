@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
-  "changeEmailConfirmation": {
-    "message": "Voit vaihtaa sähköpostiosoitteesi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Kaksivaiheinen kirjautuminen tekee tilistäsi turvallisemman edellyttämällä sinulta kirjautumisvahvistuksen todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Synkronointi epäonnistui"
-  },
-  "importItemsConfirmation": {
-    "message": "Voit tuoda kerralla kohteitasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "passwordCopied": {
     "message": "Salasana kopioitu"

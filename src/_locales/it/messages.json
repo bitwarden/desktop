@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Puoi cambiare la tua password principale sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
   },
-  "changeEmailConfirmation": {
-    "message": "Puoi cambiare il tuo indirizzo email sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
-  },
   "twoStepLoginConfirmation": {
     "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una security key, app di autenticazione, SMS, telefonata o email. Può essere abilitata sulla cassaforte online di bitwarden.com. Vuoi visitare il sito ora?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Sincronizzazione fallita"
-  },
-  "importItemsConfirmation": {
-    "message": "Puoi importare in massa i tuoi login dalla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
   },
   "passwordCopied": {
     "message": "Password copiata"

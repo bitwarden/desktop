@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Puedes cambiar tu contraseña maestra en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
-  "changeEmailConfirmation": {
-    "message": "Puedes cambiar tu correo electrónico en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
-  },
   "twoStepLoginConfirmation": {
     "message": "La autenticación en dos pasos hace que tu cuenta sea mucho más segura, requiriendo que introduzcas un código de seguridad de una aplicación de autenticación cada vez que accedes. La autenticación en dos pasos puede ser habilitada en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Sincronización fallida"
-  },
-  "importItemsConfirmation": {
-    "message": "Puedes importar elementos desde la caja fuerte web de bitwarden.com. ¿Quieres visitar el sitio web ahora?"
   },
   "passwordCopied": {
     "message": "Contraseña copiada"

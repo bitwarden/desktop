@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Je kunt je hoofdwachtwoord veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
-  "changeEmailConfirmation": {
-    "message": "Je kunt je e-mailadres veranderen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Tweestapsverificatie maakt uw account veiliger door u bij iedere inlogpoging een code te vragen van een authenticatie-app. Tweestapsverificatie kunt u inschakelen in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Synchronisatie mislukt"
-  },
-  "importItemsConfirmation": {
-    "message": "U kunt een bulk-import van items doen vanuit de bitwarden.com-webkluis. Wilt u de website nu bezoeken?"
   },
   "passwordCopied": {
     "message": "Wachtwoord gekopieerd"

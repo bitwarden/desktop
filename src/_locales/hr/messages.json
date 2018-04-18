@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Možete promijeniti svoju glavnu lozinku na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
-  "changeEmailConfirmation": {
-    "message": "Adresu e-pošte možete promijeniti na trezoru web sučelja bitwarden.com. Želite li sada posjetiti web stranicu?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Prijava u dva koraka čini vaš račun sigurnijim tako što će zahtijevati da potvrdite prijavu putem drugog uređaja pomoću sigurnosnog koda, aplikacije autentifikatora, SMS porukom, pozivom ili adresom e-pošte. Prijava u dva koraka može se omogućiti na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Sinkronizacija nije uspjela"
-  },
-  "importItemsConfirmation": {
-    "message": "Možete masovno uvesti prijave sa web-trezora bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
   "passwordCopied": {
     "message": "Lozinka kopirana"

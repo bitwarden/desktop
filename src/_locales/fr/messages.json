@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Vous pouvez modifier votre mot de passe maître depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
-  "changeEmailConfirmation": {
-    "message": "Vous pouvez modifier votre adresse e-mail depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
-  },
   "twoStepLoginConfirmation": {
     "message": "L'authentification à double facteurs rend votre compte plus sécurisé en vous demandant de saisir un code de sécurité depuis une application d'authentification à chaque fois que vous vous identifiez. L'authentification à double facteurs peut être activée depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Échec de la synchronisation"
-  },
-  "importItemsConfirmation": {
-    "message": "Vous pouvez importer en masse vos identifiants depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site maintenant ?"
   },
   "passwordCopied": {
     "message": "Mot de passe copié"

@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Saad oma ülemparooli muuta bitwarden.com veebihoidlas. Soovid seda kohe teha?"
   },
-  "changeEmailConfirmation": {
-    "message": "Saad oma e-posti aadressi muuta bitwarden.com veebihoidlas. Soovid seda kohe teha?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Kaheastmeline kinnitamine aitab konto turvalisust tõsta. Lisaks paroolile pead kontole ligipääsemiseks kinnitama sisselogimise päringu SMS-ga, telefonikõnega, autentimise rakendusega või e-postiga. Kaheastmelist kinnitust saab sisse lülitada bitwarden.com veebihoidlas. Soovid seda kohe avada?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Sünkroniseerimine nurjus"
-  },
-  "importItemsConfirmation": {
-    "message": "Saad suurema koguse kontoandmeid importida bitwardeni veebihoidlas. Soovid seda kohe teha?"
   },
   "passwordCopied": {
     "message": "Parool on kopeeritud"

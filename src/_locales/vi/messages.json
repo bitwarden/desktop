@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Bạn có thể thay đổi mật khẩu chính trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
-  "changeEmailConfirmation": {
-    "message": "Bạn có thể thay đổi địa chỉ email trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh thông tin đăng nhập của bạn bằng một thiết bị khác như khóa bảo mật, ứng dụng xác thực, SMS, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong kho bitwarden nền web. Bạn có muốn ghé thăm trang web bây giờ?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Đồng bộ thất bại"
-  },
-  "importItemsConfirmation": {
-    "message": "Bạn có thể nhập các trường đăng nhập hàng loạt trên kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "passwordCopied": {
     "message": "Đã sao chép mật khẩu"

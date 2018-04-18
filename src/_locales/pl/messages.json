@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Swoje hasło główne możesz zmienić w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
-  "changeEmailConfirmation": {
-    "message": "Swój adres e-mail możesz zmienić w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Dwustopniowe logowanie sprawia, że Twoje konto jest bardziej bezpieczne poprzez wymuszenie potwierdzenia logowania z innego urządzenia, takiego jak klucz bezpieczeństwa, aplikacja uwierzytelniająca, SMS, telefon lub e-mail. Dwustopniowe logowanie można włączyć w internetowym sejfie bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Synchronizacja nie powiodła się"
-  },
-  "importItemsConfirmation": {
-    "message": "Możesz zaimportować wiele elementów z sejfu internetowego bitwarden. Czy chcesz przejść teraz do tej strony?"
   },
   "passwordCopied": {
     "message": "Hasło skopiowane"

@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
-  "changeEmailConfirmation": {
-    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Syncing failed"
-  },
-  "importItemsConfirmation": {
-    "message": "You can bulk import items from the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "passwordCopied": {
     "message": "Password copied"

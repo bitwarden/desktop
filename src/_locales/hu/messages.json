@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Mesterjelszavadat a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
-  "changeEmailConfirmation": {
-    "message": "E-mail címedet a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
-  },
   "twoStepLoginConfirmation": {
     "message": "A kétlépcsős bejelentkezés biztonságosabbá teszi a felhasználódat azáltal, hogy ellenőrizned kell a bejelentkezésedet egy másik készülékkel mint például biztonsági kulcs, hitelesítő alkalmazás, SMS, telefon hívás vagy e-mail. Kétlépcsős bejelentkezést a bitwarden.com webes széfén tudod megváltoztatni. Szeretnéd meglátogatni a most a weboldalt?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Sikertelen szinkronizálás"
-  },
-  "importItemsConfirmation": {
-    "message": "Elemek tömeges importálása a bitwarden.com webes széfből. Szeretnéd most meglátogatni a weboldalt?"
   },
   "passwordCopied": {
     "message": "Jelszó másolva"

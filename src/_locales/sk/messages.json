@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Teraz si môžete zmeniť svoje hlavné heslo vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
-  "changeEmailConfirmation": {
-    "message": "Teraz si môžete zmeniť svoju emailovú adresu vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Dvojstupňové prihlasovanie robí váš účet bezpečnejším vďaka vyžadovaniu bezpečnostného kódu z overovacej aplikácie vždy, keď sa prihlásite. Dvojstupňové prihlasovanie môžete povoliť vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Synchronizácia zlyhala"
-  },
-  "importItemsConfirmation": {
-    "message": "Môžete hromadne importovať položky z webového trezoru bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "passwordCopied": {
     "message": "Heslo skopírované"

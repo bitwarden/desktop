@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "マスターパスワードは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
   },
-  "changeEmailConfirmation": {
-    "message": "メールアドレスは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
-  },
   "twoStepLoginConfirmation": {
     "message": "2段階認証を使うと、ログイン時にセキュリティキーや認証アプリ、SMS、電話やメールでの認証を必要にすることでアカウントをさらに安全に出来ます。2段階認証は bitwarden.com ウェブ保管庫で有効化できます。ウェブサイトを開きますか？"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "同期に失敗しました"
-  },
-  "importItemsConfirmation": {
-    "message": "Bitwarden.com web vault から一括でインポートできます。ウェブサイトへ移動しますか？"
   },
   "passwordCopied": {
     "message": "パスワードをコピーしました"

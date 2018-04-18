@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Du kannst dein Master-Passwort im Bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
-  "changeEmailConfirmation": {
-    "message": "Du kannst deine E-Mail Adresse im Bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Mit der Zwei-Faktor Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor Authentifizierung kann im Bitwarden.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Synchronisierung fehlgeschlagen"
-  },
-  "importItemsConfirmation": {
-    "message": "Du kannst all deine Zugangsdaten über den Bitwarden.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?"
   },
   "passwordCopied": {
     "message": "Passwort kopiert"

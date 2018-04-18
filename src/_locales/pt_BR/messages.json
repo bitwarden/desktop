@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Você pode alterar a sua senha mestra no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
-  "changeEmailConfirmation": {
-    "message": "Você pode alterar o seu endereço de e-mail no cofre web em bitwarden.com. Você deseja visitar o site agora?"
-  },
   "twoStepLoginConfirmation": {
     "message": "O login em duas etapas torna a sua conta mais segura ao exigir que você verifique seu login com outro dispositivo como uma chave de segurança, aplicativo de autenticação, SMS, ligação telefônica, ou e-mail. O login em duas etapas pode ser ativado no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "A Sincronização falhou"
-  },
-  "importItemsConfirmation": {
-    "message": "Você pode importar em massa os seus itens a partir do cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "passwordCopied": {
     "message": "Senha copiada"

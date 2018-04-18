@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Anda dapat mengubah kata sandi utama Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
-  "changeEmailConfirmation": {
-    "message": "Anda dapat mengubah alamat email Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Info masuk dua langkah membuat akun Anda lebih aman dengan mengharuskan Anda memverifikasi info masuk Anda dengan peranti lain seperti kode keamanan, aplikasi autentikasi, SMK, panggilan telepon, atau email. Info masuk dua langkah dapat diaktifkan di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Gagal menyinkronkan"
-  },
-  "importItemsConfirmation": {
-    "message": "Anda dapat mengimpor massal item dari brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
   "passwordCopied": {
     "message": "Sandi disalin"

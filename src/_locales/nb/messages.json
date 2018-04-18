@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Du kan endre superpassordet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
-  "changeEmailConfirmation": {
-    "message": "Du kan endre din kontos E-postadresse på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
-  },
   "twoStepLoginConfirmation": {
     "message": "2-trinnsinnlogging gjør kontoen din mer sikker, ved å kreve at du verifiserer din innlogging med en annen enhet, f.eks. en autentiseringsapp, SMS, E-post, telefonsamtale, eller sikkerhetsnøkkel. 2-trinnsinnlogging kan aktiveres på bitwarden.com-netthvelvet. Vil du besøke den nettsiden nå?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Synkronisering mislyktes"
-  },
-  "importItemsConfirmation": {
-    "message": "Du kan importere gjenstander i bunker på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "passwordCopied": {
     "message": "Passordet er kopiert"

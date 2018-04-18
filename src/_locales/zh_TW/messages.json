@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "您可以在 Bitwarden 網頁版變更主密碼。現在前往？"
   },
-  "changeEmailConfirmation": {
-    "message": "您可以在 Bitwarden 網頁版變更電子郵件地址。現在前往？"
-  },
   "twoStepLoginConfirmation": {
     "message": "兩步驟登入需要您登入時輸入一個由驗證碼程式產生的安全碼，為您的帳戶增加一層保障。兩步驟登入可以在 Bitwarden 網頁版啟用。現在前往？"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "同步失敗"
-  },
-  "importItemsConfirmation": {
-    "message": "您可以在 Bitwarden 網頁版批次匯入登入資料。現在前往？"
   },
   "passwordCopied": {
     "message": "密碼已複製"

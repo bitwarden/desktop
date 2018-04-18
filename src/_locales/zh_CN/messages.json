@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "您可以在 bitwarden.com 网页版修改您的主密码。现在为您跳转吗？"
   },
-  "changeEmailConfirmation": {
-    "message": "您可以在 bitwarden.com 网页版修改您的 email 地址。现在为您跳转吗？"
-  },
   "twoStepLoginConfirmation": {
     "message": "两步登录使您在登录时需要输入一个从认证应用获取的安全码，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版启用。现在要访问吗？"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "同步失败"
-  },
-  "importItemsConfirmation": {
-    "message": "您可以在 bitwarden.com 网页版批量导入登录项目。现在为您跳转吗？"
   },
   "passwordCopied": {
     "message": "密码已复制"

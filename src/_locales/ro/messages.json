@@ -393,9 +393,6 @@
   "changeMasterPasswordConfirmation": {
     "message": "Puteţi modifica parola principală pe site-ul web bitwarden.com. Doriţi să vizitaţi site-ul acum?"
   },
-  "changeEmailConfirmation": {
-    "message": "Puteţi modifica adresa de e-mail pe site-ul web bitwarden.com. Doriţi să vizitaţi site-ul acum?"
-  },
   "twoStepLoginConfirmation": {
     "message": "Autentificarea în două etape face ca contul dvs. să fie mai sigur, solicitând să introduceți un cod de securitate dintr-o aplicație de autentificare ori de câte ori vă conectați. Autentificarea în două etape poate fi activată în seiful web bitwarden.com. Doriți să vizitați site-ul acum?"
   },
@@ -419,9 +416,6 @@
   },
   "syncingFailed": {
     "message": "Sincronizare eșuată"
-  },
-  "importItemsConfirmation": {
-    "message": "Puteți să importați date de conectare din seiful web bitwarden.com. Doriți să vizitați saitul acum?"
   },
   "passwordCopied": {
     "message": "Parolă copiată"
