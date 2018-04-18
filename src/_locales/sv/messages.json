@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden webbvalv"
   },
-  "bitWebVaultInfo": {
-    "message": "Hantera dina objekt från valfri webbläsare med Bitwardens webbvalv."
-  },
-  "bitIosVault": {
-    "message": "Bitwardens iOS-valv"
-  },
-  "bitIosVaultInfo": {
-    "message": "Hantera dina objekt från dina mobila enheter med Bitwardens iOS-valv."
-  },
-  "bitAndrVault": {
-    "message": "Bitwardens Android-valv"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Hantera dina objekt från dina mobila enheter med Bitwardens Android-valv."
-  },
   "importItems": {
     "message": "Importera objekt"
-  },
-  "importItemsInfo": {
-    "message": "Massimportera dina objekt snabbt från andra lösenordshanterare."
   },
   "select": {
     "message": "Välj"
@@ -270,13 +252,13 @@
     "message": "Visa objekt"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Öppna"
   },
   "website": {
     "message": "Webbsida"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Växla synlighet"
   },
   "manage": {
     "message": "Hantera"
@@ -342,7 +324,7 @@
     "message": "Säkerhet"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Ett fel har uppstått"
   },
   "emailRequired": {
     "message": "E-postadress krävs."
@@ -369,7 +351,7 @@
     "message": "Verifieringskod krävs."
   },
   "valueCopied": {
-    "message": " kopierat",
+    "message": "$VALUE$ kopierat",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Sök i samling"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Sök efter typ"
   },
   "noneFolder": {
     "message": "Ingen mapp",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera ditt valv."
   },
-  "exportVaultInfo": {
-    "message": "Exportera dina inloggningar i .csv-format så att du enkelt kan ändra eller flytta på dem."
-  },
   "shared": {
     "message": "Delad"
   },
   "shareVault": {
     "message": "Dela ditt valv"
   },
-  "shareVaultInfo": {
-    "message": "Skapa en organisation för att på ett säkert sätt kunna dela dina objekt med andra användare."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
   },
   "learnMore": {
     "message": "Läs mer"
@@ -633,7 +613,7 @@
     "message": "Tack för att du stödjer Bitwarden."
   },
   "premiumPrice": {
-    "message": "Allt för endast %price%\/år!",
+    "message": "Allt för endast $PRICE$\/år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -660,7 +640,7 @@
     "message": "Ange den 6-siffriga verifieringskoden från din autentiseringsapp."
   },
   "enterVerificationCodeEmail": {
-    "message": "Ange den 6-siffriga verifieringskoden som skickades till",
+    "message": "Ange den 6-siffriga verifieringskoden som skickades till $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifieringsmejl skickat till $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Identiteter"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Inloggningar"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Säkra anteckningar"
   },
   "clear": {
     "message": "Rensa"
@@ -1008,7 +988,7 @@
     "message": "Kontrollera om lösenord har avslöjats."
   },
   "passwordExposed": {
-    "message": "Detta lösenord har avslöjats i dataintrång. Du bör ändra det.",
+    "message": "Detta lösenord har avslöjats $VALUE$ gång(er) i dataintrång. Du bör ändra det.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Typer"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alla objekt"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Det finns inga lösenord att lista."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Ta bort"
   }
 }

@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden Web Kasası"
   },
-  "bitWebVaultInfo": {
-    "message": "Bitwarden web kasası ile herhangi bir internet tarayıcısından oturumlarınızı yönetin."
-  },
-  "bitIosVault": {
-    "message": "Bitwarden iOS Kasası"
-  },
-  "bitIosVaultInfo": {
-    "message": "Bitwarden iOS kasası ile mobil aygıtlarınızdan oturumlarınızı yönetin."
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden Android Kasası"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Bitwarden Android kasası ile mobil aygıtlarınızdan oturumlarınızı yönetin."
-  },
   "importItems": {
     "message": "Hesapları İçe Aktar"
-  },
-  "importItemsInfo": {
-    "message": "Diğer parola yöneticisi uygulamalardan hesaplarınızı topluca ve hızlıca içe aktarın."
   },
   "select": {
     "message": "Seç"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
   },
-  "exportVaultInfo": {
-    "message": "Kasanızı .csv formatında dışa aktarın böylece kolayca düzenleyebilir ve taşıyabilirsiniz."
-  },
   "shared": {
     "message": "Paylaşımlı"
   },
   "shareVault": {
     "message": "Kasanızı Paylaşın"
   },
-  "shareVaultInfo": {
-    "message": "Diğer kullanıcılar ile giriş bilgilerinizi güvenle paylaşmak için bir organizasyon oluşturun."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
   },
   "learnMore": {
     "message": "Daha fazla bilgi edinin"

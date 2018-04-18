@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Hầm bitwarden trên Web"
   },
-  "bitWebVaultInfo": {
-    "message": "Quản lý các mục đặng nhập của bạn từ mọi trình duyệt web với hầm bitwarden nền web."
-  },
-  "bitIosVault": {
-    "message": "Hầm bitwarden cho iOS"
-  },
-  "bitIosVaultInfo": {
-    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng hầm bitwarden trên iOS."
-  },
-  "bitAndrVault": {
-    "message": "Hầm bitwarden cho Android"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Quản lý các mục đăng nhập của bạn từ các thiết bị di động bằng hầm bitwarden trên Android."
-  },
   "importItems": {
     "message": "Nhập mục"
-  },
-  "importItemsInfo": {
-    "message": "Dễ dàng nhập toàn bộ mục đăng nhập của bạn từ các ứng dụng quản lý mật khẩu khác."
   },
   "select": {
     "message": "Chọn"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Nhập mật khẩu chính để xuất kho dữ liệu của bạn."
   },
-  "exportVaultInfo": {
-    "message": "Xuất kho dữ liệu của bạn ở định dạng .csv để bạn có thể dễ dàng chỉnh sửa hoặc mang nó đi nơi khác."
-  },
   "shared": {
     "message": "Đã chia sẻ"
   },
   "shareVault": {
     "message": "Chia sẻ kho mật khẩu của bạn"
   },
-  "shareVaultInfo": {
-    "message": "Tạo một tổ chức để chia sẻ các thông tin đăng nhập của bạn một cách an toàn với những người dùng khác."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
   },
   "learnMore": {
     "message": "Tìm hiểu thêm"

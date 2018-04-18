@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "bitwarden webes széf"
   },
-  "bitWebVaultInfo": {
-    "message": "Kezeld az összes bejelentkezésedet bármely böngészőből a bitwarden webes széfével."
-  },
-  "bitIosVault": {
-    "message": "bitwarden iOS széf"
-  },
-  "bitIosVaultInfo": {
-    "message": "Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden iOS széfével."
-  },
-  "bitAndrVault": {
-    "message": "bitwarden Android széf"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Kezeld a bejelentkezésedet mobil eszközeidről a bitwarden Android széfével."
-  },
   "importItems": {
     "message": "Elemek importálása"
-  },
-  "importItemsInfo": {
-    "message": "Elemek tömeges gyors importálása más jelszókezelő alkalmazásokból."
   },
   "select": {
     "message": "Kiválaszt"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Add meg a jelszavad a széf adataid exportálásához."
   },
-  "exportVaultInfo": {
-    "message": "Exportáld a széf adataidat .csv formátumban, hogy könnyen módosíthasd vagy mozgathasd máshova."
-  },
   "shared": {
     "message": "Megosztott"
   },
   "shareVault": {
     "message": "Széfed megosztása"
   },
-  "shareVaultInfo": {
-    "message": "Hozz létre egy szervezetet, hogy biztonságosan megoszthasd bejelentkezéseid másokkal."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
   },
   "learnMore": {
     "message": "Tudjon meg többet"

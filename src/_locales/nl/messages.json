@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden-webkluis"
   },
-  "bitWebVaultInfo": {
-    "message": "Beheer uw items vanuit elke webbrowser met de Bitwarden-webkluis."
-  },
-  "bitIosVault": {
-    "message": "Bitwarden iOS-kluis"
-  },
-  "bitIosVaultInfo": {
-    "message": "Beheer uw items op uw mobiele apparaten met de Bitwarden iOS-kluis."
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden Android-kluis"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Beheer uw items op uw mobiele apparaten met de Bitwarden Android-kluis."
-  },
   "importItems": {
     "message": "Items importeren"
-  },
-  "importItemsInfo": {
-    "message": "Importeer snel al uw gegevens uit andere wachtwoordbeheerders."
   },
   "select": {
     "message": "Selecteer"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Voer uw hoofdwachtwoord om de gegevens in de kluis te exporteren."
   },
-  "exportVaultInfo": {
-    "message": "Exporteer de gegevens in de kluis in CSV-indeling om deze gemakkelijk te bewerken of verplaatsen."
-  },
   "shared": {
     "message": "Gedeeld"
   },
   "shareVault": {
     "message": "Deel uw kluis"
   },
-  "shareVaultInfo": {
-    "message": "Creëer een organisatie om uw items veilig te delen met andere gebruikers."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
   },
   "learnMore": {
     "message": "Meer informatie"

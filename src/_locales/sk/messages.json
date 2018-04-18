@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "bitwarden webový trezor"
   },
-  "bitWebVaultInfo": {
-    "message": "Spravujte vaše prihlasovacie údaje z akéhokoľvek prehliadača s webovým trezorom bitwarden."
-  },
-  "bitIosVault": {
-    "message": "bitwarden iOS trezor"
-  },
-  "bitIosVaultInfo": {
-    "message": "Spravujte vaše prihlasovacie údaje z vašich mobilných zariadení s bitwarden iOS trezorom."
-  },
-  "bitAndrVault": {
-    "message": "bitwarden Android trezor"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Spravujte vaše prihlasovacie údaje z vašich mobilných zariadení s bitwarden Android trezorom."
-  },
   "importItems": {
     "message": "Importovať položky"
-  },
-  "importItemsInfo": {
-    "message": "Rýchlo hromadne importovať vaše položky z iných aplikácií na správu hesiel."
   },
   "select": {
     "message": "Vybrať"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Zadajte vaše hlavné heslo pre export údajov trezoru."
   },
-  "exportVaultInfo": {
-    "message": "Export vašich dát trezoru v .csv formáte, aby ste ich mohli ľahko upraviť alebo premiestniť inde."
-  },
   "shared": {
     "message": "Zdieľané"
   },
   "shareVault": {
     "message": "Zdieľať trezor"
   },
-  "shareVaultInfo": {
-    "message": "Vytvorte organizáciu pre bezpečné zdieľanie vašich prihlasovacích údajov s inými používateľmi."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
   },
   "learnMore": {
     "message": "Zistiť viac"

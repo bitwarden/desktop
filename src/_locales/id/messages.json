@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Brankas Web Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Kelola item Anda dari berbagai peramban web dengan brankas web Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "Brankas iOS Bitwarden"
-  },
-  "bitIosVaultInfo": {
-    "message": "Kelola item Anda dari ponsel Anda dengan brankas iOS Bitwarden."
-  },
-  "bitAndrVault": {
-    "message": "Brankas Android Bitwarden"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Kelola item Anda dari ponsel Anda dengan brankas Android Bitwarden."
-  },
   "importItems": {
     "message": "Impor Item"
-  },
-  "importItemsInfo": {
-    "message": "Mengimpor massal item Anda dari aplikasi pengelola sandi lainnya dengan cepat."
   },
   "select": {
     "message": "Pilih"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Masukkan sandi utama Anda untuk mengekspor data brankas Anda."
   },
-  "exportVaultInfo": {
-    "message": "Ekspor data brankas Anda dalam format .csv sehingga Anda dapat dengan mudah mengubahnya atau memindahkannya ke tempat lain."
-  },
   "shared": {
     "message": "Dibagikan"
   },
   "shareVault": {
     "message": "Bagikan Brankas Anda"
   },
-  "shareVaultInfo": {
-    "message": "Buat organisasi untuk berbagi info masuk Anda dengan aman dengan pengguna lain."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
   },
   "learnMore": {
     "message": "Pelajari lebih lanjut"
