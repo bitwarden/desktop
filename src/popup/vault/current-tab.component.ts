@@ -103,7 +103,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
         window.setTimeout(() => {
             document.getElementById('search').focus();
-        }, 200);
+        }, 100);
     }
 
     ngOnDestroy() {
