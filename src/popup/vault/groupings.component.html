@@ -78,7 +78,7 @@
                 </a>
             </div>
         </div>
-        <div class="box list">
+        <div class="box list" *ngIf="folders.length">
             <div class="box-header">
                 {{'folders' | i18n}}
                 <span class="flex-right">{{folderCount}}</span>
@@ -98,7 +98,7 @@
                 </a>
             </div>
         </div>
-        <div class="box list">
+        <div class="box list" *ngIf="collections.length">
             <div class="box-header">
                 {{'collections' | i18n}}
                 <span class="flex-right">{{collections.length}}</span>
