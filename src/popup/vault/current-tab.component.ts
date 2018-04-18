@@ -144,7 +144,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             }
 
             if (this.popupUtilsService.inPopup(window)) {
-                BrowserApi.closePopup(window); 
+                BrowserApi.closePopup(window);
             }
         } catch {
             this.analytics.eventTrack.next({ action: 'Autofilled Error' });
