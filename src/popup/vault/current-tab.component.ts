@@ -100,6 +100,10 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 }
             }, 5000);
         }
+
+        window.setTimeout(() => {
+            document.getElementById('search').focus();
+        }, 200);
     }
 
     ngOnDestroy() {
@@ -149,6 +153,9 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     searchVault() {
+        if (this.searchText == null || this.searchText.length < 2) {
+            return;
+        }
         this.router.navigate(['/tabs/vault'], { queryParams: { searchText: this.searchText } });
     }
 

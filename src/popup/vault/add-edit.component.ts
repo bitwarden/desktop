@@ -65,7 +65,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
             }
         });
 
-        setTimeout(() => {
+        window.setTimeout(() => {
             if (!this.editMode) {
                 if (this.cipher.name != null && this.cipher.name !== '') {
                     document.getElementById('loginUsername').focus();
