@@ -23,6 +23,7 @@ const filters = {
     fonts: [
         '!build/popup/fonts/*',
         'build/popup/fonts/Open_Sans*.woff',
+        'build/popup/fonts/fontawesome*.woff2',
         'build/popup/fonts/fontawesome*.woff'
     ],
     safari: [
