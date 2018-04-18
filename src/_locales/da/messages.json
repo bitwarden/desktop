@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden web-boks"
   },
-  "bitWebVaultInfo": {
-    "message": "Administrer dine elementer fra enhver webbrowser med Bitwarden web-boksen."
-  },
-  "bitIosVault": {
-    "message": "Bitwarden iOS-boks"
-  },
-  "bitIosVaultInfo": {
-    "message": "Administrer dine elementer fra dine mobile enheder med Bitwarden iOS-boks."
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden Android-boks"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Administrer dine elementer fra dine mobile enheder med Bitwarden Android-boks."
-  },
   "importItems": {
     "message": "Importer elementer"
-  },
-  "importItemsInfo": {
-    "message": "Importer hurtigt dine elementer fra andre adgangskode manager-programmer."
   },
   "select": {
     "message": "Vælg"
@@ -270,13 +252,13 @@
     "message": "Vis element"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Start"
   },
   "website": {
     "message": "Hjemmeside"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Slå synlighed til\/fra"
   },
   "manage": {
     "message": "Administrer"
@@ -333,7 +315,7 @@
     "message": "Når systemet låses"
   },
   "onRestart": {
-    "message": "Ved genstart"
+    "message": "Ved genstart af browseren"
   },
   "never": {
     "message": "Aldrig"
@@ -342,7 +324,7 @@
     "message": "Sikkerhed"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Der er opstået en fejl"
   },
   "emailRequired": {
     "message": "Emailadresse er påkrævet."
@@ -369,7 +351,7 @@
     "message": "Bekræftelseskode er påkrævet."
   },
   "valueCopied": {
-    "message": " kopieret",
+    "message": "$VALUE$ kopieret",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Søg samling"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Søgetype"
   },
   "noneFolder": {
     "message": "Ingen mappe",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
   },
-  "exportVaultInfo": {
-    "message": "Eksporter dataene fra din boks i .csv-format, så du kan nemt redigere dem eller flytte dem til et andet sted."
-  },
   "shared": {
     "message": "Delt"
   },
   "shareVault": {
     "message": "Del din boks"
   },
-  "shareVaultInfo": {
-    "message": "Opret en organisation for at dele dine elementer med andre brugere på en sikker måde."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden giver dig mulighed for at dele din boks med andre ved at bruge en organisationskonto. Vil du besøge webstedet bitwarden.com for at få mere information?"
   },
   "learnMore": {
     "message": "Lær mere"
@@ -633,7 +613,7 @@
     "message": "Tak fordi du støtter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Alt dette for kun %price% \/år!",
+    "message": "Alt dette for kun $PRICE$ \/år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -660,7 +640,7 @@
     "message": "Indtast den 6-cifrede verifikationskode fra din autentificerings-app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Indtast den 6-cifrede verifikationskode, der blev sendt til",
+    "message": "Indtast den 6-cifrede verifikationskode, der blev sendt til $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Bekræftelsesmail sendt til $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -996,7 +976,7 @@
     "message": "Logins"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Sikre noter"
   },
   "clear": {
     "message": "Ryd"
@@ -1008,7 +988,7 @@
     "message": "Undersøg om adgangskoden er blevet afsløret."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "Denne adgangskode er blevet afsløret $VALUE$ gang(e) i datalæk. Du burde skifte den.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Typer"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alle elementer"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Der er ingen kodeord at vise."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Fjern"
   }
 }

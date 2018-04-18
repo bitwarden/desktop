@@ -173,7 +173,7 @@
     "message": "Генератор паролей"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Генератор",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Веб-хранилище Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Управляйте своими элементами из любого браузера при помощи веб-хранилища Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "iOS-хранилище Bitwarden"
-  },
-  "bitIosVaultInfo": {
-    "message": "Управляйте своими элементами со своего мобильного устройства при помощи iOS-хранилища Bitwarden."
-  },
-  "bitAndrVault": {
-    "message": "Android-хранилище Bitwarden"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Управляйте своими элементами со своего мобильного устройства при помощи Android-хранилища Bitwarden."
-  },
   "importItems": {
     "message": "Импорт элементов"
-  },
-  "importItemsInfo": {
-    "message": "Быстрый импорт ваших элементов из других менеджеров паролей."
   },
   "select": {
     "message": "Выбрать"
@@ -270,13 +252,13 @@
     "message": "Просмотр элемента"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Перейти"
   },
   "website": {
     "message": "Веб-сайт"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Изменить видимость"
   },
   "manage": {
     "message": "Управление"
@@ -342,7 +324,7 @@
     "message": "Безопасность"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Произошла ошибка"
   },
   "emailRequired": {
     "message": "Необходимо указать email."
@@ -369,7 +351,7 @@
     "message": "Необходим код подтверждения."
   },
   "valueCopied": {
-    "message": " скопирован",
+    "message": "$VALUE$ скопирован",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -439,7 +421,7 @@
     "message": "Ошибка синхронизации"
   },
   "importItemsConfirmation": {
-    "message": "Вы можете легко импортировать свои элементы из других менеджеров паролей в свое веб-хранилище bitwarden. Сделать это сейчас?"
+    "message": "Вы можете импортировать свои элементы в свое веб-хранилище на bitwarden.com. Перейти на сайт сейчас?"
   },
   "passwordCopied": {
     "message": "Пароль скопирован"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Найти коллекцию"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Тип поиска"
   },
   "noneFolder": {
     "message": "Без папки",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
   },
-  "exportVaultInfo": {
-    "message": "Экспортировать хранилище в формате .csv для быстрого редактирования или перемещения."
-  },
   "shared": {
     "message": "Общие"
   },
   "shareVault": {
     "message": "Поделиться вашим хранилищем"
   },
-  "shareVaultInfo": {
-    "message": "Создайте организацию, чтобы безопасно делиться своими элементами с другими пользователями."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden позволяет делиться своим хранилищем с другими пользователями, используя учетную запись организации. Хотите посетить сайт bitwarden.com, чтобы узнать больше?"
   },
   "learnMore": {
     "message": "Подробнее"
@@ -633,7 +613,7 @@
     "message": "Благодарим вас за поддержку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всего лишь %price% \/в год!",
+    "message": "Всего лишь $PRICE$ \/в год!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -660,7 +640,7 @@
     "message": "Введите 6-значный код подтверждения из вашего приложения-аутентификатора."
   },
   "enterVerificationCodeEmail": {
-    "message": "Введите 6-значный код подтверждения, который был отправлен на email",
+    "message": "Введите 6-значный код подтверждения, который был отправлен на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Отправлено письмо подтверждения на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Личность"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Логины"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Защищенные заметки"
   },
   "clear": {
     "message": "Очистить"
@@ -1008,7 +988,7 @@
     "message": "Проверьте, не скомпрометирован ли пароль."
   },
   "passwordExposed": {
-    "message": "Этот пароль был найден в базах утечек. Вы должны изменить его.",
+    "message": "Этот пароль был найден в базах утечек $VALUE$ раз(а). Вы должны изменить его.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Типы элементов"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Все элементы"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Нет паролей для отображения."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Удалить"
   }
 }

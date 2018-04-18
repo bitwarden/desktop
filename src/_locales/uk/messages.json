@@ -173,7 +173,7 @@
     "message": "Генератор паролів"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Генератор",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Веб-сховище Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Керуйте своїми паролями з будь-якого браузера за допомогою веб-сховища Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "Bitwarden для iOS"
-  },
-  "bitIosVaultInfo": {
-    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою Bitwarden для iOS."
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden для Android"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Керуйте своїми паролями з мобільних пристроїв за допомогою Bitwarden для Android."
-  },
   "importItems": {
     "message": "Імпорт записів"
-  },
-  "importItemsInfo": {
-    "message": "Швидкий імпорт ваших записів з інших програм керування паролями."
   },
   "select": {
     "message": "Обрати"
@@ -270,13 +252,13 @@
     "message": "Перегляд запису"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Запустити"
   },
   "website": {
     "message": "Веб-сайт"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Змінити видимість"
   },
   "manage": {
     "message": "Керування"
@@ -333,7 +315,7 @@
     "message": "При блокуванні системи"
   },
   "onRestart": {
-    "message": "При перезавантаженні"
+    "message": "При перезапуску браузера"
   },
   "never": {
     "message": "Ніколи"
@@ -342,7 +324,7 @@
     "message": "Безпека"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Сталася помилка"
   },
   "emailRequired": {
     "message": "Необхідно вказати адресу е-пошти."
@@ -369,7 +351,7 @@
     "message": "Потрібний код підтвердження."
   },
   "valueCopied": {
-    "message": " скопійовано",
+    "message": "$VALUE$ скопійовано",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Пошук в збірках"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Типу пошуку"
   },
   "noneFolder": {
     "message": "Без теки",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Введіть головний пароль, щоб експортувати дані сховища."
   },
-  "exportVaultInfo": {
-    "message": "Експортуйте дані сховища в формат .csv для швидкого редагування чи переміщення."
-  },
   "shared": {
     "message": "Спільні"
   },
   "shareVault": {
     "message": "Поділитися своїм сховищем"
   },
-  "shareVaultInfo": {
-    "message": "Створіть організацію, щоб безпечно ділитися записами з іншими користувачами."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden дозволяє вам надавати доступ до свого сховища іншим за допомогою облікового запису організації. Чи не бажаєте перейти на веб-сайт bitwarden.com, щоб дізнатися більше?"
   },
   "learnMore": {
     "message": "Докладніше"
@@ -633,7 +613,7 @@
     "message": "Дякуємо за підтримку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всього лише %price% \/ за рік!",
+    "message": "Всього лише $PRICE$ \/ за рік!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -660,7 +640,7 @@
     "message": "Введіть 6-значних код підтвердження з програми авторизації."
   },
   "enterVerificationCodeEmail": {
-    "message": "Введіть 6-значний код підтвердження, надісланий на",
+    "message": "Введіть 6-значний код підтвердження, надісланий на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Код підтвердження надіслано на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Особисті дані"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Записи"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Захищені нотатки"
   },
   "clear": {
     "message": "Стерти"
@@ -1008,7 +988,7 @@
     "message": "Перевірити чи пароль було викрито."
   },
   "passwordExposed": {
-    "message": "Цей пароль було викрито з витоком даних. Вам слід його змінити.",
+    "message": "Цей пароль було викрито $VALUE$ разів з витоком даних. Вам слід його змінити.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Типи"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Всі елементи"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Немає паролів для відображення."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Вилучити"
   }
 }

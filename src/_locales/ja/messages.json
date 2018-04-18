@@ -173,7 +173,7 @@
     "message": "パスワード生成ツール"
   },
   "generator": {
-    "message": "Generator",
+    "message": "ジェネレーター",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden ウェブ保管庫"
   },
-  "bitWebVaultInfo": {
-    "message": "Bitwarden ウェブ保管庫であらゆるブラウザのログイン情報を管理します。"
-  },
-  "bitIosVault": {
-    "message": "Bitwarden iOS 保管庫"
-  },
-  "bitIosVaultInfo": {
-    "message": "Bitwarden iOS 保管庫でモバイル端末のログイン情報を管理します。"
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden Android 保管庫"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Bitwarden Android 保管庫でモバイル端末のログイン情報を管理します。"
-  },
   "importItems": {
     "message": "アイテムのインポート"
-  },
-  "importItemsInfo": {
-    "message": "他のパスワード管理アプリからアイテムを一括インポートします。"
   },
   "select": {
     "message": "選択"
@@ -270,13 +252,13 @@
     "message": "アイテムの表示"
   },
   "launch": {
-    "message": "Launch"
+    "message": "開く"
   },
   "website": {
     "message": "ウェブサイト"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "表示切り替え"
   },
   "manage": {
     "message": "管理"
@@ -342,7 +324,7 @@
     "message": "セキュリティ"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "エラーが発生しました"
   },
   "emailRequired": {
     "message": "Eメールアドレスは必須項目です。"
@@ -369,7 +351,7 @@
     "message": "認証コードは必須項目です。"
   },
   "valueCopied": {
-    "message": " コピーしました",
+    "message": "$VALUE$ をコピーしました",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "コレクションの検索"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "検索の種類"
   },
   "noneFolder": {
     "message": "フォルダーなし",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
   },
-  "exportVaultInfo": {
-    "message": "編集したり移動したりするために、保管庫のデータを .csv 形式でエクスポートします。"
-  },
   "shared": {
     "message": "共有"
   },
   "shareVault": {
     "message": "保管庫の共有"
   },
-  "shareVaultInfo": {
-    "message": "他のユーザーとアイテムを安全に共有する組織を作成します。"
+  "shareVaultConfirmation": {
+    "message": "Bitwardenでは、組織アカウントを使用して保管庫を他の人と共有できます。 詳細はbitwarden.comのウェブサイトをご覧ください。"
   },
   "learnMore": {
     "message": "さらに詳しく"
@@ -633,7 +613,7 @@
     "message": "Bitwarden を支援いただき、ありがとうございます。"
   },
   "premiumPrice": {
-    "message": "全部でなんと %price% \/年だけ！",
+    "message": "全部でなんと$PRICE$\/年だけ！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -660,7 +640,7 @@
     "message": "認証アプリに表示された6桁の認証コードを入力してください。"
   },
   "enterVerificationCodeEmail": {
-    "message": "に送信された6桁の認証コードを入力してください。",
+    "message": "$EMAIL$に送信された6桁の認証コードを入力してください。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "$EMAIL$に認証コードを送信しました。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "ID"
   },
   "logins": {
-    "message": "Logins"
+    "message": "ログイン"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "セキュアメモ"
   },
   "clear": {
     "message": "消去する"
@@ -1008,7 +988,7 @@
     "message": "パスワードが漏洩していないか確認する"
   },
   "passwordExposed": {
-    "message": "このパスワードは過去に漏洩したことがあるため、変更するべきです。",
+    "message": "このパスワードは過去に$VALUE$回漏洩したことがあるため、変更するべきです。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "種類"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "全てのアイテム"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "表示するパスワードがありません"
   },
   "remove": {
-    "message": "Remove"
+    "message": "削除"
   }
 }

@@ -158,7 +158,7 @@
     "message": "No hay carpetas que listar."
   },
   "helpFeedback": {
-    "message": "Ayuda & Comentarios"
+    "message": "Ayuda y comentarios"
   },
   "sync": {
     "message": "Sincronizar"
@@ -173,35 +173,17 @@
     "message": "Generador de contraseñas"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Generador",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Genera contraseñas fuertes y únicas para tus accesos automáticamente."
+    "message": "Genera automáticamente contraseñas fuertes y únicas para tus accesos."
   },
   "bitWebVault": {
     "message": "Caja fuerte web de Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Gestiona las entradas de cualquier web con la caja fuerte web de Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "Caja fuerte Bitwarden de iOS"
-  },
-  "bitIosVaultInfo": {
-    "message": "Gestiona las entradas desde tus dispositivos móviles con la caja fuerte de Bitwarden para iOS."
-  },
-  "bitAndrVault": {
-    "message": "Caja fuerte Bitwarden de Android"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Gestiona las entradas desde tus dispositivos móviles con la caja fuerte de Bitwarden para Android."
-  },
   "importItems": {
     "message": "Importar elementos"
-  },
-  "importItemsInfo": {
-    "message": "Importa masivamente tus elementos desde otra aplicación gestora de contraseñas."
   },
   "select": {
     "message": "Seleccionar"
@@ -270,13 +252,13 @@
     "message": "Ver elemento"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Iniciar"
   },
   "website": {
     "message": "Web"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Alternar visibilidad"
   },
   "manage": {
     "message": "Gestionar"
@@ -333,7 +315,7 @@
     "message": "Al bloquear el sistema"
   },
   "onRestart": {
-    "message": "Al reiniciar"
+    "message": "Al reiniciar el sistema"
   },
   "never": {
     "message": "Nunca"
@@ -342,7 +324,7 @@
     "message": "Seguridad"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Ha ocurrido un error"
   },
   "emailRequired": {
     "message": "Correo electrónico requerido."
@@ -369,7 +351,7 @@
     "message": "Código de verificación requerido."
   },
   "valueCopied": {
-    "message": " copiada",
+    "message": "$VALUE$ copiado",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -388,10 +370,10 @@
     "message": "Tu sesión ha expirado."
   },
   "logOutConfirmation": {
-    "message": "¿Estás seguro de querer cerrar sesión?"
+    "message": "¿Estás seguro de querer cerrar la sesión?"
   },
   "yes": {
-    "message": "Si"
+    "message": "Sí"
   },
   "no": {
     "message": "No"
@@ -418,7 +400,7 @@
     "message": "La autenticación en dos pasos hace que tu cuenta sea mucho más segura, requiriendo que introduzcas un código de seguridad de una aplicación de autenticación cada vez que accedes. La autenticación en dos pasos puede ser habilitada en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
   "editedFolder": {
-    "message": "Editar carpeta"
+    "message": "Carpeta editada"
   },
   "deleteFolderConfirmation": {
     "message": "¿Estás seguro de querer eliminar esta carpeta?"
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Buscar colección"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Buscar tipo"
   },
   "noneFolder": {
     "message": "Sin carpeta",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
   },
-  "exportVaultInfo": {
-    "message": "Exporta tu caja fuerte en formato .csv para poder modificarla fácilmente o moverla a cualquiera sitio."
-  },
   "shared": {
     "message": "Compartido"
   },
   "shareVault": {
     "message": "Comparte tu caja fuerte"
   },
-  "shareVaultInfo": {
-    "message": "Crear una organización para compartir tus entradas de forma segura con otros usuarios."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden te permite compartir tu caja fuerte con otras personas utilizando una cuenta de organización. ¿Quieres visitar la web bitwarden.com para conocer más?"
   },
   "learnMore": {
     "message": "Más información"
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Correo electrónico de verificación enviado a $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Identidades"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Entradas"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Notas seguras"
   },
   "clear": {
     "message": "Limpiar"
@@ -1008,7 +988,7 @@
     "message": "Comprobar si la contraseña está comprometida."
   },
   "passwordExposed": {
-    "message": "Esta contraseña ha sido encontrada en alguna filtración de datos. Deberías cambiarla.",
+    "message": "Esta contraseña fue encontrada $VALUE$ vez\/veces en filtraciones de datos. Deberías cambiarla.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tipos"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Todos los elementos"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "No hay contraseñas que listar."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Eliminar"
   }
 }

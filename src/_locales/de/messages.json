@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden Web-Tresor"
   },
-  "bitWebVaultInfo": {
-    "message": "Verwalte deine Zugangsdaten in jedem Browser mit dem Bitwarden Web-Tresor."
-  },
-  "bitIosVault": {
-    "message": "Bitwarden iOS-Tresor"
-  },
-  "bitIosVaultInfo": {
-    "message": "Verwalte deine Logins von deinem Smartphone aus mit dem Bitwarden iOS-Tresor."
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden Android-Tresor"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Verwalte deine Logins von deinem Smartphone aus mit dem Bitwarden Android-Tresor."
-  },
   "importItems": {
     "message": "Einträge importieren"
-  },
-  "importItemsInfo": {
-    "message": "Importiere all deine Zugangsdaten schnell und einfach von anderen Passwort-Managern."
   },
   "select": {
     "message": "Auswählen"
@@ -270,13 +252,13 @@
     "message": "Eintrag anzeigen"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Öffnen"
   },
   "website": {
     "message": "Webseite"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Sichtbarkeit umschalten"
   },
   "manage": {
     "message": "Verwalten"
@@ -333,7 +315,7 @@
     "message": "Bei Abmeldung"
   },
   "onRestart": {
-    "message": "Bei Neustart"
+    "message": "Bei Browser Neustart"
   },
   "never": {
     "message": "Nie"
@@ -342,7 +324,7 @@
     "message": "Sicherheit"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Ein Fehler ist aufgetaucht"
   },
   "emailRequired": {
     "message": "Die E-Mail Adresse wird benötigt."
@@ -369,7 +351,7 @@
     "message": "Verifizierungscode wird benötigt."
   },
   "valueCopied": {
-    "message": " kopiert",
+    "message": "$VALUE$ kopiert",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Sammlung durchsuchen"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Suchmodus"
   },
   "noneFolder": {
     "message": "Kein Ordner",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
   },
-  "exportVaultInfo": {
-    "message": "Exportiere deine Tresordaten im .csv-Format, so dass du sie leicht ändern oder verschieben kannst."
-  },
   "shared": {
     "message": "Geteilt"
   },
   "shareVault": {
     "message": "Teile deinen Tresor"
   },
-  "shareVaultInfo": {
-    "message": "Erstelle eine Organisation um deine Logindaten sicher für andere Benutzer freizugeben."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden erlaubt es dir deinen Tresor mit anderen zu teilen wenn du einen Organisations Account hast. Möchtest du bitwarden.com besuchen um mehr zu erfahren?"
   },
   "learnMore": {
     "message": "Erfahre mehr"
@@ -660,7 +640,7 @@
     "message": "Gib den 6-stelligen Verifizierungscode aus deiner Authenticator App ein."
   },
   "enterVerificationCodeEmail": {
-    "message": "Gib den 6-stelligen Bestätigungscode ein der per E-Mail gesendet wurde an",
+    "message": "Gib den 6-stelligen Bestätigungscode ein, der an $EMAIL$ gesendet wurde.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifizierungsmail wurde an $EMAIL$ gesendet.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Identitäten"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Zugangsdaten"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Sichere Notiz"
   },
   "clear": {
     "message": "Löschen"
@@ -1008,7 +988,7 @@
     "message": "Überprüfe ob dein Kennwort kompromittiert ist."
   },
   "passwordExposed": {
-    "message": "Dieses Passwort wurde in öffentlichen Passwortdatenbanken gefunden. Du solltest es ändern.",
+    "message": "Dieses Passwort wurde $VALUE$ mal in öffentlichen Passwortdatenbanken gefunden. Du solltest es ändern.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Typen"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alle Einträge"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Keine Einträge zum Anzeigen vorhanden."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Entfernen"
   }
 }

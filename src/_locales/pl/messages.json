@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Internetowy Sejf Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Zarządzaj swoimi danymi z poziomu dowolnej przeglądarki za pomocą sejfu internetowego Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "Sejf iOS bitwarden"
-  },
-  "bitIosVaultInfo": {
-    "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu Bitwarden iOS."
-  },
-  "bitAndrVault": {
-    "message": "Sejf Android Bitwarden"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Zarządzaj swoimi danymi z poziomu urządzeń mobilnych za pomocą sejfu Bitwarden Android."
-  },
   "importItems": {
     "message": "Importuj elementy"
-  },
-  "importItemsInfo": {
-    "message": "Szybko zaimportuj wiele elementów z innych menedżerów haseł."
   },
   "select": {
     "message": "Wybierz"
@@ -270,13 +252,13 @@
     "message": "Zobacz element"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Uruchom"
   },
   "website": {
     "message": "Strona"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Pokaż \/ Ukryj"
   },
   "manage": {
     "message": "Zarządzaj"
@@ -333,7 +315,7 @@
     "message": "Po zablokowaniu ekranu"
   },
   "onRestart": {
-    "message": "Po restarcie komputera"
+    "message": "Po restarcie przeglądarki"
   },
   "never": {
     "message": "Nigdy"
@@ -342,7 +324,7 @@
     "message": "Zabezpieczenia"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Wystąpił błąd"
   },
   "emailRequired": {
     "message": "Adres e-mail jest wymagany."
@@ -369,7 +351,7 @@
     "message": "Kod weryfikacyjny jest wymagany."
   },
   "valueCopied": {
-    "message": " skopiowane",
+    "message": "Skopiowano $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Przeszukaj kolekcje"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Typ wyszukiwania"
   },
   "noneFolder": {
     "message": "Brak folderu",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Wprowadź hasło główne, aby wyeksportować dane z sejfu."
   },
-  "exportVaultInfo": {
-    "message": "Eksportowanie danych z sejfu w formacie .csv w celu ich łatwej edycji lub przeniesienia."
-  },
   "shared": {
     "message": "Udostępnione"
   },
   "shareVault": {
     "message": "Udostępnij swój sejf"
   },
-  "shareVaultInfo": {
-    "message": "Utwórz organizację, aby bezpiecznie udostępniać innym użytkownikom swoje dane."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden pozwala na udostępnianie zawartości skarbca innym osobom, przy użyciu konta organizacji. Czy chcesz odwiedź witrynę bitwarden.com, aby dowiedzieć się więcej?"
   },
   "learnMore": {
     "message": "Dowiedz się więcej"
@@ -633,7 +613,7 @@
     "message": "Dziękujemy za wspieranie Bitwarden."
   },
   "premiumPrice": {
-    "message": "Wszystko to jedynie za %price% \/rok!",
+    "message": "Wszystko to jedynie za $PRICE$ \/rok!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -660,7 +640,7 @@
     "message": "Wprowadź 6-cyfrowy kod weryfikacyjny z Twojej aplikacji uwierzytelniającej."
   },
   "enterVerificationCodeEmail": {
-    "message": "Wprowadź 6-cyfrowy kod weryfikacyjny, który został przesłany do",
+    "message": "Wprowadź 6-cyfrowy kod weryfikacyjny, który został przesłany do $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Kod weryfikacyjny został przesłany do $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Tożsamości"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Dane logowania"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Bezpieczne notatki"
   },
   "clear": {
     "message": "Wyczyść"
@@ -1008,7 +988,7 @@
     "message": "Sprawdź, czy hasło zostało ujawnione."
   },
   "passwordExposed": {
-    "message": "To hasło znajduje się w wykradzionej bazie danych. Należy je zmienić.",
+    "message": "To hasło znajduje się w $VALUE$ wykradzionej(ych) bazie(ach) danych. Należy je zmienić.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Rodzaje"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Wszystkie elementy"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Brak haseł do wyświetlenia."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Usuń"
   }
 }

@@ -173,7 +173,7 @@
     "message": "密碼產生器"
   },
   "generator": {
-    "message": "Generator",
+    "message": "產生器",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden 網頁版"
   },
-  "bitWebVaultInfo": {
-    "message": "使用 Bitwarden 網頁版，從瀏覽器管理您的登入資料。"
-  },
-  "bitIosVault": {
-    "message": "Bitwarden iOS 版"
-  },
-  "bitIosVaultInfo": {
-    "message": "使用 bitwarden iOS 版，從 iOS 裝置管理您的密碼。"
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden Android 版"
-  },
-  "bitAndrVaultInfo": {
-    "message": "使用 Bitwarden Android 版，從 Android 裝置管理您的密碼。"
-  },
   "importItems": {
     "message": "匯入項目"
-  },
-  "importItemsInfo": {
-    "message": "快速地從其他密碼管理工具批次匯入您的登入資料。"
   },
   "select": {
     "message": "選擇"
@@ -270,13 +252,13 @@
     "message": "檢視項目"
   },
   "launch": {
-    "message": "Launch"
+    "message": "啟動"
   },
   "website": {
     "message": "網站"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "切換可見度"
   },
   "manage": {
     "message": "管理"
@@ -333,7 +315,7 @@
     "message": "系統鎖定時"
   },
   "onRestart": {
-    "message": "重新啟動時"
+    "message": "於瀏覽器重新啟動時"
   },
   "never": {
     "message": "永不"
@@ -342,7 +324,7 @@
     "message": "安全"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "發生錯誤。"
   },
   "emailRequired": {
     "message": "必須填入電子郵件地址 。"
@@ -369,7 +351,7 @@
     "message": "必須填入驗證碼。"
   },
   "valueCopied": {
-    "message": " 已複製",
+    "message": "$VALUE$ 已複製",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "搜尋收藏"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "搜尋類型"
   },
   "noneFolder": {
     "message": "（未分類）",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "輸入您的主密碼以匯出密碼庫資料。"
   },
-  "exportVaultInfo": {
-    "message": "將密碼庫資料匯出成 .csv 檔案，方便變更與轉移資料。"
-  },
   "shared": {
     "message": "共用"
   },
   "shareVault": {
     "message": "分享您的密碼庫"
   },
-  "shareVaultInfo": {
-    "message": "新增組織以安全地分享您的登入資料。"
+  "shareVaultConfirmation": {
+    "message": "Bitwarden 允許您使用組織帳戶與他人共享您的密碼庫。您想造訪 bitwarden.com 網站以了解更多內容嗎？"
   },
   "learnMore": {
     "message": "了解更多"
@@ -660,7 +640,7 @@
     "message": "輸入驗證器應用程式提供的 6 位數驗證碼。"
   },
   "enterVerificationCodeEmail": {
-    "message": "請輸入 6 位數驗證碼，我們已將其傳送至",
+    "message": "輸入已傳送至 $EMAIL$ 的 6 位數驗證碼。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "驗證碼已傳送至 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "身分"
   },
   "logins": {
-    "message": "Logins"
+    "message": "登入資料"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "安全筆記"
   },
   "clear": {
     "message": "清除"
@@ -1008,7 +988,7 @@
     "message": "檢查密碼是否已外洩。"
   },
   "passwordExposed": {
-    "message": "此密碼已外泄，建議變更密碼。",
+    "message": "此密碼已外洩了 $VALUE$ 次，應立即變更密碼。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "類型"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "所有項目"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "沒有密碼可顯示。"
   },
   "remove": {
-    "message": "Remove"
+    "message": "移除"
   }
 }

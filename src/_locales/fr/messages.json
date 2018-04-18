@@ -173,7 +173,7 @@
     "message": "Générateur de mot de passe"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Générateur",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Coffre en ligne de Bitwarden"
   },
-  "bitWebVaultInfo": {
-    "message": "Gérez vos identifiants depuis n'importe quel navigateur web à l'aide du coffre en ligne de Bitwarden."
-  },
-  "bitIosVault": {
-    "message": "Coffre iOS Bitwarden"
-  },
-  "bitIosVaultInfo": {
-    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre iOS Bitwarden."
-  },
-  "bitAndrVault": {
-    "message": "Coffre Android Bitwarden"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Gérez vos identifiants depuis vos appareils mobiles à l'aide du coffre Android Bitwarden."
-  },
   "importItems": {
     "message": "Importer des identifiants"
-  },
-  "importItemsInfo": {
-    "message": "Importer rapidement en masse vos identifiants depuis d'autres applications de gestion de mots de passe."
   },
   "select": {
     "message": "Sélectionner"
@@ -270,13 +252,13 @@
     "message": "Voir l'identifiant"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Démarrer"
   },
   "website": {
     "message": "Site web"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Changer la visibilité"
   },
   "manage": {
     "message": "Gérer"
@@ -342,7 +324,7 @@
     "message": "Sécurité"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Une erreur est survenue"
   },
   "emailRequired": {
     "message": "L'adresse e-mail est requise."
@@ -369,7 +351,7 @@
     "message": "Le code de vérification est requis."
   },
   "valueCopied": {
-    "message": " copié",
+    "message": "$VALUE$ copié",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Rechercher dans la collection"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Type de recherche"
   },
   "noneFolder": {
     "message": "Pas de dossier",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
   },
-  "exportVaultInfo": {
-    "message": "Exportez les données de votre coffre au format .csv afin de les modifier facilement ou les déplacer ailleurs."
-  },
   "shared": {
     "message": "Partagé"
   },
   "shareVault": {
     "message": "Partager votre coffre"
   },
-  "shareVaultInfo": {
-    "message": "Créez une organisation pour partager de manière sécurisée vos identifiants avec d'autres utilisateurs."
+  "shareVaultConfirmation": {
+    "message": "Bitwarden vous permet de partager votre coffre avec d'autres personnes en utilisant un compte d'organisation. Souhaitez-vous visiter le site web bitwarden.com pour en savoir plus ?"
   },
   "learnMore": {
     "message": "En savoir plus"
@@ -633,7 +613,7 @@
     "message": "Merci de supporter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tout pour seulement %price% \/an !",
+    "message": "Tout pour seulement $PRICE$ \/an !",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -660,7 +640,7 @@
     "message": "Saisissez le code de vérification à 6 chiffres depuis votre application d'authentification."
   },
   "enterVerificationCodeEmail": {
-    "message": "Saisissez le code de vérification à 6 chiffres qui vous a été envoyé par e-mail à",
+    "message": "Saisissez le code de vérification à 6 chiffres qui vous a été envoyé par e-mail à $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "E-mail de vérification envoyé à $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Identités"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Identifiants"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Notes sécurisées"
   },
   "clear": {
     "message": "Effacer"
@@ -1008,7 +988,7 @@
     "message": "Vérifier si le mot de passe a été exposé."
   },
   "passwordExposed": {
-    "message": "Ce mot de passe a été exposé dans des fuites de données. Vous devriez le changer.",
+    "message": "Ce mot de passe a été exposé $VALUE$ fois dans des fuites de données. Vous devriez le changer.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1055,12 +1035,12 @@
     "message": "Types"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Tous les éléments"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Aucun mot de passe à afficher."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Supprimer"
   }
 }

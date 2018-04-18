@@ -315,7 +315,7 @@
     "message": "Quando o sistema está bloqueado"
   },
   "onRestart": {
-    "message": "Ao reiniciar o sistema"
+    "message": "Quando reiniciar o navegador"
   },
   "never": {
     "message": "Nunca"

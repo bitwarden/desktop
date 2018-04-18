@@ -173,7 +173,7 @@
     "message": "密码生成器"
   },
   "generator": {
-    "message": "Generator",
+    "message": "生成器",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "Bitwarden 网页版"
   },
-  "bitWebVaultInfo": {
-    "message": "使用 Bitwarden 网页版可以从任何浏览器管理您的登录项目。"
-  },
-  "bitIosVault": {
-    "message": "Bitwarden iOS 版"
-  },
-  "bitIosVaultInfo": {
-    "message": "使用 Bitwarden iOS 版可以从 iOS 设备管理您的登录项目。"
-  },
-  "bitAndrVault": {
-    "message": "Bitwarden Android 版"
-  },
-  "bitAndrVaultInfo": {
-    "message": "使用 Bitwarden Android 版可以从 Android 设备管理您的登录项目。"
-  },
   "importItems": {
     "message": "导入项目"
-  },
-  "importItemsInfo": {
-    "message": "快速从其他密码管理应用批量导入您的登录项目。"
   },
   "select": {
     "message": "选择"
@@ -270,13 +252,13 @@
     "message": "查看项目"
   },
   "launch": {
-    "message": "Launch"
+    "message": "启动"
   },
   "website": {
     "message": "网站"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "切换可见性"
   },
   "manage": {
     "message": "管理"
@@ -333,7 +315,7 @@
     "message": "系统锁定时"
   },
   "onRestart": {
-    "message": "重启时"
+    "message": "重启浏览器时"
   },
   "never": {
     "message": "从不"
@@ -342,7 +324,7 @@
     "message": "安全"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "发生了一个错误"
   },
   "emailRequired": {
     "message": "必须填写 Email 地址。"
@@ -369,7 +351,7 @@
     "message": "必须填写验证码。"
   },
   "valueCopied": {
-    "message": " 已复制",
+    "message": "$VALUE$ 已复制",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -449,6 +431,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "搜索收藏"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "搜索类型"
   },
   "noneFolder": {
     "message": "没有文件夹",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "导出密码库需要输入主密码。"
   },
-  "exportVaultInfo": {
-    "message": "将你的密码库导出为 .csv 格式，以便你修改，或者保存到其他地方。"
-  },
   "shared": {
     "message": "分享"
   },
   "shareVault": {
     "message": "分享你的密码库"
   },
-  "shareVaultInfo": {
-    "message": "创建一个组织来安全地分享您的登录项目。"
+  "shareVaultConfirmation": {
+    "message": "Bitwarden 允许您使用组织帐户与他人共享您的存储库。您想访问 bitwarden.com 网站以了解更多内容吗？"
   },
   "learnMore": {
     "message": "进一步了解"
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "验证邮件已发送到 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "身份"
   },
   "logins": {
-    "message": "Logins"
+    "message": "登录项目"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "安全笔记"
   },
   "clear": {
     "message": "清除"
@@ -1008,7 +988,7 @@
     "message": "检查密码是否已经泄露。"
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "此密码在公开数据中已经泄露 $VALUE$ 次。您应当尽快更改。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "类型"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "所有项目"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "没有要显示的项目。"
   },
   "remove": {
-    "message": "Remove"
+    "message": "移除"
   }
 }

@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "extName": {
-    "message": "bitwarden - Tasuta paroolihaldur",
+    "message": "Bitwarden - Tasuta paroolihaldur",
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "bitwarden on tasuta ja turvaline paroolihaldur kõikidele Sinu seadmetele.",
+    "message": "Tasuta ja turvaline paroolihaldur kõikidele Sinu seadmetele.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -173,7 +173,7 @@
     "message": "Parooli genereerimine"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Genereerija",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -182,26 +182,8 @@
   "bitWebVault": {
     "message": "bitwardeni Veebihoidla"
   },
-  "bitWebVaultInfo": {
-    "message": "Halda oma bitwardeni kontot mistahes brauseris."
-  },
-  "bitIosVault": {
-    "message": "bitwardeni Paroolihaldur iOS-ile"
-  },
-  "bitIosVaultInfo": {
-    "message": "Halda oma kontot bitwardeni iOS rakenduse kaudu."
-  },
-  "bitAndrVault": {
-    "message": "bitwardeni Paroolihaldur Androidile"
-  },
-  "bitAndrVaultInfo": {
-    "message": "Halda oma kontot bitwardeni Androidi rakenduse kaudu."
-  },
   "importItems": {
     "message": "Impordi andmed"
-  },
-  "importItemsInfo": {
-    "message": "Kiire viis oma konto- ja muude andmete importimiseks teistest paroolihalduritest."
   },
   "select": {
     "message": "Vali"
@@ -270,13 +252,13 @@
     "message": "Kirje vaatamine"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Käivita"
   },
   "website": {
     "message": "Veebileht"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Näita"
   },
   "manage": {
     "message": "Halda"
@@ -342,7 +324,7 @@
     "message": "Turvalisus"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Ilmnes viga"
   },
   "emailRequired": {
     "message": "E-posti aadress on nõutud."
@@ -448,7 +430,8 @@
     "message": "URL"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "URL $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -484,7 +467,7 @@
     "message": "Otsi kogumikku"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Otsingu tüüp"
   },
   "noneFolder": {
     "message": "Kaust puudub",
@@ -527,17 +510,14 @@
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
   },
-  "exportVaultInfo": {
-    "message": "Ekspordi hoidla sisu .csv formaati, et saaksid seda lihtsasti muuta või mujal kasutada."
-  },
   "shared": {
     "message": "Jagatud"
   },
   "shareVault": {
     "message": "Jaga oma hoidlat"
   },
-  "shareVaultInfo": {
-    "message": "Loo organisatsioon, et saaksid oma andmeid teiste inimestega turvaliselt jagada."
+  "shareVaultConfirmation": {
+    "message": "Bitwardeniga saad oma hoidlat teistega jagada, kasutades seleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?"
   },
   "learnMore": {
     "message": "Loe edasi"
@@ -669,7 +649,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Kinnituskood saadeti e-posti aadressile $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -993,10 +973,10 @@
     "message": "Identiteedid"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Kontod"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Turvalised märkmed"
   },
   "clear": {
     "message": "Tühjenda"
@@ -1052,15 +1032,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tüübid"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Kõik kirjed"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Puuduvad paroolid, mida kuvada."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Eemalda"
   }
 }
