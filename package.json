@@ -177,9 +177,15 @@
     },
     "snap": {
       "confinement": "strict",
-      "plugs": ["default", "password-manager-service"],
-      "stagePackages": ["default", "libsecret-1-0"]
-     }  
+      "plugs": [
+        "default",
+        "password-manager-service"
+      ],
+      "stagePackages": [
+        "default",
+        "libsecret-1-0"
+      ]
+    }
   },
   "devDependencies": {
     "@angular/compiler-cli": "5.2.0",
