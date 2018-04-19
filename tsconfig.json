@@ -24,6 +24,7 @@
     "jslib/node_modules",
     "dist",
     "jslib/dist",
+    "jslib/spec",
     "build",
     "build.safariextension",
     "coverage",
