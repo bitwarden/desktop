@@ -166,7 +166,7 @@
                     <div class="row-main">
                         <span class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</span>
                         <span class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</span>
-                        <span title="{{u.uri}}">{{u.domainOrUri}}</span>
+                        <span title="{{u.uri}}">{{u.hostnameOrUri}}</span>
                     </div>
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick title="{{'launch' | i18n}}"
