@@ -52,6 +52,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -333,7 +334,7 @@
     "message": "Passwort kopieren"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI kopieren"
   },
   "length": {
     "message": "Länge"
@@ -1019,7 +1020,7 @@
     "message": "Umschaltoptionen"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisation",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

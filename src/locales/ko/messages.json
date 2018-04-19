@@ -1,51 +1,51 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
-    "message": "Semua Item"
+    "message": "모든 항목"
   },
   "favorites": {
-    "message": "Favorit"
+    "message": "즐겨찾기"
   },
   "types": {
-    "message": "Tipe"
+    "message": "Types"
   },
   "typeLogin": {
-    "message": "Masuk"
+    "message": "로그인"
   },
   "typeCard": {
-    "message": "Kartu"
+    "message": "카드"
   },
   "typeIdentity": {
-    "message": "Identitas"
+    "message": "Identity"
   },
   "typeSecureNote": {
-    "message": "Catatan yang aman"
+    "message": "Secure Note"
   },
   "folders": {
-    "message": "Folder"
+    "message": "폴더"
   },
   "collections": {
-    "message": "Koleksi"
+    "message": "Collections"
   },
   "searchVault": {
-    "message": "Cari brankas"
+    "message": "보관함 검색"
   },
   "addItem": {
-    "message": "Tambah Item"
+    "message": "항목 추가"
   },
   "shared": {
-    "message": "Dibagikan"
+    "message": "Shared"
   },
   "attachments": {
-    "message": "Lampiran"
+    "message": "첨부 파일"
   },
   "viewItem": {
-    "message": "Lihat Item"
+    "message": "항목 보기"
   },
   "name": {
-    "message": "Nama"
+    "message": "이름"
   },
   "uri": {
     "message": "URI"
@@ -61,432 +61,432 @@
     }
   },
   "newUri": {
-    "message": "URl Baru"
+    "message": "새 URI"
   },
   "username": {
-    "message": "Nama Pengguna"
+    "message": "사용자 이름"
   },
   "password": {
-    "message": "Kata Sandi"
+    "message": "비밀번호"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "항목 편집"
   },
   "emailAddress": {
-    "message": "Alamat Email"
+    "message": "이메일 주소"
   },
   "verificationCodeTotp": {
-    "message": "Kode Verifikasi (TOTP)"
+    "message": "인증 코드 (TOTP)"
   },
   "website": {
-    "message": "Situs Web"
+    "message": "웹 사이트"
   },
   "notes": {
-    "message": "Catatan"
+    "message": "메모"
   },
   "customFields": {
-    "message": "Kolom Ubahsuai"
+    "message": "Custom Fields"
   },
   "launch": {
-    "message": "Meluncurkan"
+    "message": "열기"
   },
   "copyValue": {
-    "message": "Salin Nilai",
+    "message": "값 복사",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "표시 전환"
   },
   "cardholderName": {
-    "message": "Nama Pemilik Kartu"
+    "message": "카드 소유자 이름"
   },
   "number": {
-    "message": "Nomor"
+    "message": "Number"
   },
   "brand": {
-    "message": "Merek"
+    "message": "Brand"
   },
   "expiration": {
-    "message": "Masa Berlaku"
+    "message": "Expiration"
   },
   "securityCode": {
-    "message": "Kode Keamanan"
+    "message": "Security Code"
   },
   "identityName": {
-    "message": "Nama Identitas"
+    "message": "Identity Name"
   },
   "company": {
-    "message": "Perusahaan"
+    "message": "Company"
   },
   "ssn": {
-    "message": "Nomor Jaminan Sosial"
+    "message": "Social Security Number"
   },
   "passportNumber": {
-    "message": "Nomor Paspor"
+    "message": "Passport Number"
   },
   "licenseNumber": {
-    "message": "Nomor Lisensi"
+    "message": "License Number"
   },
   "email": {
-    "message": "Email"
+    "message": "이메일"
   },
   "phone": {
-    "message": "Telepon"
+    "message": "Phone"
   },
   "address": {
-    "message": "Alamat"
+    "message": "주소"
   },
   "premiumRequired": {
-    "message": "Memerlukan Keanggotaan Premium"
+    "message": "Premium Required"
   },
   "premiumRequiredDesc": {
-    "message": "Keanggotaan premium diperlukan untuk menggunakan fitur ini."
+    "message": "A premium membership is required to use this feature."
   },
   "errorOccurred": {
-    "message": "Terjadi kesalahan."
+    "message": "An error has occurred."
   },
   "error": {
-    "message": "Galat"
+    "message": "오류"
   },
   "january": {
-    "message": "Januari"
+    "message": "1월"
   },
   "february": {
-    "message": "Februari"
+    "message": "2월"
   },
   "march": {
-    "message": "Maret"
+    "message": "3월"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "Mei"
+    "message": "May"
   },
   "june": {
-    "message": "Juni"
+    "message": "June"
   },
   "july": {
-    "message": "Juli"
+    "message": "July"
   },
   "august": {
-    "message": "Agustus"
+    "message": "August"
   },
   "september": {
     "message": "September"
   },
   "october": {
-    "message": "Oktober"
+    "message": "October"
   },
   "november": {
     "message": "November"
   },
   "december": {
-    "message": "Desember"
+    "message": "December"
   },
   "ex": {
-    "message": "contoh",
+    "message": "ex.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Panggilan"
+    "message": "Title"
   },
   "mr": {
-    "message": "Tuan"
+    "message": "Mr"
   },
   "mrs": {
-    "message": "Nyonya"
+    "message": "Mrs"
   },
   "ms": {
-    "message": "Nona"
+    "message": "Ms"
   },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Bulan Kedaluwarsa"
+    "message": "Expiration Month"
   },
   "expirationYear": {
-    "message": "Tahun Kedaluwarsa"
+    "message": "Expiration Year"
   },
   "select": {
-    "message": "Pilih"
+    "message": "Select"
   },
   "other": {
-    "message": "Lainnya"
+    "message": "Other"
   },
   "generatePassword": {
-    "message": "Buat Kata Sandi"
+    "message": "Generate Password"
   },
   "type": {
-    "message": "Tipe"
+    "message": "Type"
   },
   "firstName": {
-    "message": "Nama Depan"
+    "message": "First Name"
   },
   "middleName": {
-    "message": "Nama Tengah"
+    "message": "Middle Name"
   },
   "lastName": {
-    "message": "Nama Belakang"
+    "message": "Last Name"
   },
   "address1": {
-    "message": "Alamat 1"
+    "message": "Address 1"
   },
   "address2": {
-    "message": "Alamat 2"
+    "message": "Address 2"
   },
   "address3": {
-    "message": "Alamat 3"
+    "message": "Address 3"
   },
   "cityTown": {
-    "message": "Kota \/ Kabupaten"
+    "message": "City \/ Town"
   },
   "stateProvince": {
-    "message": "Negara Bagian \/ Provinsi"
+    "message": "State \/ Province"
   },
   "zipPostalCode": {
-    "message": "Kode Pos"
+    "message": "Zip \/ Postal Code"
   },
   "country": {
-    "message": "Negara"
+    "message": "Country"
   },
   "save": {
-    "message": "Simpan"
+    "message": "저장"
   },
   "cancel": {
-    "message": "Batal"
+    "message": "취소"
   },
   "delete": {
-    "message": "Hapus"
+    "message": "삭제"
   },
   "favorite": {
-    "message": "Favorit"
+    "message": "즐겨찾기"
   },
   "edit": {
-    "message": "Edit"
+    "message": "편집"
   },
   "authenticatorKeyTotp": {
-    "message": "Kunci Autentikasi (TOTP)"
+    "message": "Authenticator Key (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "폴더"
   },
   "newCustomField": {
-    "message": "Kolom Ubahsuai Baru"
+    "message": "New Custom Field"
   },
   "value": {
-    "message": "Nilai"
+    "message": "값"
   },
   "cfTypeText": {
-    "message": "Teks"
+    "message": "Text"
   },
   "cfTypeHidden": {
-    "message": "Tersembunyi"
+    "message": "Hidden"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "remove": {
-    "message": "Hapus"
+    "message": "제거"
   },
   "nameRequired": {
-    "message": "Nama diperlukan."
+    "message": "이름은 반드시 입력해야 합니다."
   },
   "addedItem": {
-    "message": "Item yang Ditambahkan"
+    "message": "Added item"
   },
   "editedItem": {
-    "message": "Item yang Diedit"
+    "message": "Edited item"
   },
   "deleteItem": {
-    "message": "Hapus Item"
+    "message": "항목 삭제"
   },
   "deleteFolder": {
-    "message": "Hapus Folder"
+    "message": "폴더 삭제"
   },
   "deleteAttachment": {
-    "message": "Hapus Lampiran"
+    "message": "첨부 파일 삭제"
   },
   "deleteItemConfirmation": {
-    "message": "Anda yakin Anda ingin menghapus item ini?"
+    "message": "Are you sure you want to delete this item?"
   },
   "deletedItem": {
-    "message": "Item yang Dihapus"
+    "message": "Deleted item"
   },
   "overwritePasswordConfirmation": {
-    "message": "Anda yakin ingin menimpa sandi saat ini?"
+    "message": "Are you sure you want to overwrite the current password?"
   },
   "noneFolder": {
-    "message": "Tidak Ada Folder",
+    "message": "폴더 없음",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Tambah Folder"
+    "message": "폴더 추가"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "폴더 편집"
   },
   "regeneratePassword": {
-    "message": "Buat Ulang Sandi"
+    "message": "비밀번호 재생성"
   },
   "copyPassword": {
-    "message": "Salin Kata Sandi"
+    "message": "비밀번호 복사"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI 복사"
   },
   "length": {
-    "message": "Panjang"
+    "message": "길이"
   },
   "close": {
-    "message": "Tutup"
+    "message": "닫기"
   },
   "minNumbers": {
-    "message": "Angka Minimum"
+    "message": "Minimum Numbers"
   },
   "minSpecial": {
-    "message": "Karakter Khusus Minimum",
+    "message": "Minimum Special",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Hindari Karakter Ambigu"
+    "message": "Avoid Ambiguous Characters"
   },
   "searchCollection": {
-    "message": "Cari koleksi"
+    "message": "Search Collection"
   },
   "searchFolder": {
-    "message": "Cari folder"
+    "message": "폴더 검색"
   },
   "searchFavorites": {
-    "message": "Cari favorit"
+    "message": "즐겨찾기 검색"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Search Type",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Tambah Lampiran Baru"
+    "message": "새 첨부 파일 추가"
   },
   "deletedAttachment": {
-    "message": "Lampiran dihapus"
+    "message": "Deleted attachment"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Anda yakin ingin menghapus lampiran ini?"
+    "message": "정말 이 첨부 파일을 삭제하시겠습니까?"
   },
   "attachmentSaved": {
-    "message": "Lampiran telah disimpan."
+    "message": "첨부 파일을 저장했습니다."
   },
   "file": {
-    "message": "Berkas"
+    "message": "파일"
   },
   "selectFile": {
-    "message": "Pilih berkas."
+    "message": "파일을 선택하세요."
   },
   "maxFileSize": {
-    "message": "Ukuran berkas maksimal adalah 100 MB."
+    "message": "최대 파일 크기는 100MB입니다."
   },
   "updateKey": {
-    "message": "Anda tidak dapat menggunakan fitur ini sampai Anda memperbarui kunci enkripsi Anda."
+    "message": "You cannot use this feature until you update your encryption key."
   },
   "options": {
-    "message": "Pilihan"
+    "message": "옵션"
   },
   "editedFolder": {
-    "message": "Folder yang di Edit"
+    "message": "Edited folder"
   },
   "addedFolder": {
     "message": "Added folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Anda yakin Anda ingin menghapus folder ini?"
+    "message": "정말 이 폴더를 삭제하시겠습니까?"
   },
   "deletedFolder": {
     "message": "Deleted folder"
   },
   "loginOrCreateNewAccount": {
-    "message": "Masuk atau buat akun baru untuk mengakses brankas Anda."
+    "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Buat Akun"
+    "message": "Create Account"
   },
   "logIn": {
-    "message": "Masuk"
+    "message": "Log In"
   },
   "submit": {
-    "message": "Kirim"
+    "message": "Submit"
   },
   "masterPass": {
-    "message": "Sandi Utama"
+    "message": "Master Password"
   },
   "masterPassDesc": {
-    "message": "Kata sandi utama adalah kata sandi yang Anda gunakan untuk mengakses brankas Anda. Sangat penting bahwa Anda tidak lupa kata sandi utama Anda. Tidak ada cara untuk memulihkan kata sandi jika Anda melupakannya."
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc": {
-    "message": "Petunjuk kata sandi utama dapat membantu Anda mengingat kata sandi Anda jika Anda melupakannya."
+    "message": "A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass": {
-    "message": "Ketik Ulang Sandi Utama"
+    "message": "Re-type Master Password"
   },
   "masterPassHint": {
-    "message": "Petunjuk Kata Sandi Utama (pilihan)"
+    "message": "Master Password Hint (optional)"
   },
   "settings": {
-    "message": "Setelan"
+    "message": "Settings"
   },
   "passwordHint": {
-    "message": "Petunjuk Sandi"
+    "message": "Password Hint"
   },
   "enterEmailToGetHint": {
-    "message": "Masukkan email akun Anda untuk menerima pentunjuk sandi utama Anda."
+    "message": "Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint": {
-    "message": "Dapatkan petunjuk sandi utama"
+    "message": "Get master password hint"
   },
   "emailRequired": {
-    "message": "Alamat email diperlukan."
+    "message": "Email address is required."
   },
   "invalidEmail": {
-    "message": "Alamat email tidak valid."
+    "message": "Invalid email address."
   },
   "masterPassRequired": {
-    "message": "Sandi utama diperlukan."
+    "message": "Master password is required."
   },
   "masterPassLength": {
-    "message": "Kata sandi utama sedikitnya harus 8 karakter."
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
-    "message": "Konfirmasi sandi utama tidak cocok."
+    "message": "Master password confirmation does not match."
   },
   "newAccountCreated": {
-    "message": "Akun baru Anda telah dibuat! Sekarang Anda bisa masuk."
+    "message": "Your new account has been created! You may now log in."
   },
   "masterPassSent": {
-    "message": "Kami telah mengirimi Anda email dengan petunjuk sandi utama Anda."
+    "message": "We've sent you an email with your master password hint."
   },
   "unexpectedError": {
-    "message": "Terjadi kesalahan yang tak diduga."
+    "message": "An unexpected error has occurred."
   },
   "itemInformation": {
-    "message": "Informasi Item"
+    "message": "Item Information"
   },
   "noItemsInList": {
-    "message": "Tidak ada item yang dapat dicantumkan."
+    "message": "There are no items to list."
   },
   "verificationCode": {
-    "message": "Kode Verifikasi"
+    "message": "Verification Code"
   },
   "verificationCodeRequired": {
-    "message": "Kode verifikasi diperlukan."
+    "message": "Verification code is required."
   },
   "continue": {
-    "message": "Lanjutkan"
+    "message": "Continue"
   },
   "enterVerificationCodeApp": {
-    "message": "Masukkan 6 digit kode verifikasi dari aplikasi autentikasi Anda."
+    "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Masukkan 6 digit kode verifikasi yang dikirim melalui email ke $EMAIL$.",
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -495,7 +495,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Email verifikasi dikirim ke $EMAIL$.",
+    "message": "Verification email sent to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -504,41 +504,41 @@
     }
   },
   "rememberMe": {
-    "message": "Ingat saya"
+    "message": "Remember me"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Kirim ulang email kode verifikasi"
+    "message": "Send verification code email again"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Gunakan metode masuk dua langkah lainnya"
+    "message": "Use another two-step login method"
   },
   "insertYubiKey": {
-    "message": "Masukkan YubiKey Anda ke port USB komputer Anda, lalu sentuh tombol nya."
+    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
   },
   "insertU2f": {
-    "message": "Masukkan kunci keamanan ke port USB komputer Anda. Jika ada tombolnya, tekanlah."
+    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
   },
   "recoveryCodeDesc": {
-    "message": "Kehilangan akses ke semua penyedia dua faktor Anda? Gunakan kode pemulihan untuk menonaktifkan semua penyedia dua faktor dari akun Anda."
+    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle": {
-    "message": "Kode Pemulihan"
+    "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Aplikasi Autentikasi"
+    "message": "Authenticator App"
   },
   "authenticatorAppDesc": {
-    "message": "Gunakan aplikasi autentikasi (seperti Authy atau Google Authenticator) untuk menghasilkan kode verifikasi berbasis waktu.",
+    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "Kunci Keamanan OTP YubiKey"
+    "message": "YubiKey OTP Security Key"
   },
   "yubiKeyDesc": {
-    "message": "Gunakan YubiKey untuk mengakses akun Anda. Bekerja dengan YubiKey 4, 4 Nano, 4C, dan peranti NEO."
+    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
   },
   "duoDesc": {
-    "message": "Verifikasi dengan Duo Security menggunakan aplikasi Duo Mobile, SMS, panggilan telepon, atau kunci keamanan U2F.",
+    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -546,34 +546,34 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Menggunakan FIDO U2F mengaktifkan kunci keamanan untuk mengakses akun anda."
+    "message": "Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle": {
-    "message": "Kunci Keamanan FIDO U2F"
+    "message": "FIDO U2F Security Key"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "이메일"
   },
   "emailDesc": {
-    "message": "Kode verifikasi akan dikirim via email kepada Anda."
+    "message": "Verification codes will be emailed to you."
   },
   "loginUnavailable": {
-    "message": "Info Masuk Tidak Tersedia"
+    "message": "Login Unavailable"
   },
   "noTwoStepProviders": {
-    "message": "Akun ini mengaktifkan info masuk dua langkah, namun, tidak satupun dari penyedia dua langkah yang dikonfigurasi didukung oleh perangkat ini."
+    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
   },
   "noTwoStepProviders2": {
-    "message": "Silahkan tambahkan penyedia tambahan yang baik didukung di perangkat (seperti aplikasi authenticator)."
+    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Pilihan Info Masuk Dua Langkah"
+    "message": "Two-step Login Options"
   },
   "selfHostedEnvironment": {
     "message": "Self-hosted Environment"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
   },
   "customEnvironment": {
     "message": "Custom Environment"
@@ -582,163 +582,163 @@
     "message": "For advanced users. You can specify the base URL of each service independently."
   },
   "baseUrl": {
-    "message": "URL Server"
+    "message": "서버 URL"
   },
   "apiUrl": {
-    "message": "URL Server API"
+    "message": "API 서버 URL"
   },
   "webVaultUrl": {
-    "message": "URL Server Brankas Web"
+    "message": "Web Vault Server URL"
   },
   "identityUrl": {
-    "message": "URL Server Identitas"
+    "message": "Identity Server URL"
   },
   "iconsUrl": {
-    "message": "URL Server Ikon"
+    "message": "아이콘 서버 URL"
   },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
   },
   "ok": {
-    "message": "Oke"
+    "message": "확인"
   },
   "yes": {
-    "message": "Ya"
+    "message": "예"
   },
   "no": {
-    "message": "Tidak"
+    "message": "아니오"
   },
   "overwritePassword": {
-    "message": "Timpa Sandi"
+    "message": "비밀번호 덮어쓰기"
   },
   "learnMore": {
-    "message": "Pelajari lebih lanjut"
+    "message": "더 알아보기"
   },
   "featureUnavailable": {
-    "message": "Fitur Tidak Tersedia"
+    "message": "Feature Unavailable"
   },
   "loggedOut": {
-    "message": "Keluar"
+    "message": "Logged out"
   },
   "loginExpired": {
-    "message": "Sesi masuk Anda telah berakhir."
+    "message": "Your login session has expired."
   },
   "logOutConfirmation": {
-    "message": "Anda yakin ingin keluar?"
+    "message": "Are you sure you want to log out?"
   },
   "logOut": {
-    "message": "Keluar"
+    "message": "로그아웃"
   },
   "addNewLogin": {
-    "message": "Tambahkan Info Masuk Baru"
+    "message": "Add New Login"
   },
   "addNewItem": {
-    "message": "Tambahkan Item Baru"
+    "message": "새 항목 추가"
   },
   "addNewFolder": {
-    "message": "Tambahkan Folder Baru"
+    "message": "새 폴더 추가"
   },
   "view": {
-    "message": "View"
+    "message": "보기"
   },
   "account": {
-    "message": "Akun"
+    "message": "계정"
   },
   "loading": {
-    "message": "Memuat..."
+    "message": "불러오는 중..."
   },
   "lockNow": {
-    "message": "Kunci Sekarang"
+    "message": "Lock Now"
   },
   "passwordGenerator": {
-    "message": "Pembuat Kata Sandi"
+    "message": "비밀번호 생성기"
   },
   "emailUs": {
-    "message": "Kirim Email Ke Kami"
+    "message": "이메일 보내기"
   },
   "visitOurWebsite": {
-    "message": "Kunjungi Situs Web Kami"
+    "message": "Visit Our Website"
   },
   "fileBugReport": {
-    "message": "Buat Laporan Masalah"
+    "message": "File a Bug Report"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Ikuti Kami"
+    "message": "Follow Us"
   },
   "syncVault": {
-    "message": "Sinkronisasi Brankas"
+    "message": "Sync Vault"
   },
   "changeMasterPass": {
-    "message": "Ubah Kata Sandi Utama"
+    "message": "Change Master Password"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Anda dapat mengubah kata sandi utama Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "changeEmail": {
-    "message": "Ubah Email"
+    "message": "Change Email"
   },
   "changeEmailConfirmation": {
-    "message": "Anda dapat mengubah alamat email Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
+    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "goToWebVault": {
-    "message": "Buka Brankas Web"
+    "message": "Go To Web Vault"
   },
   "getMobileApp": {
-    "message": "Dapatkan Aplikasi Seluler"
+    "message": "Get Mobile App"
   },
   "getBrowserExtension": {
-    "message": "Dapatkan Ekstensi Peramban"
+    "message": "Get Browser Extension"
   },
   "syncingComplete": {
-    "message": "Sinkronisasi selesai"
+    "message": "Syncing complete"
   },
   "syncingFailed": {
     "message": "Syncing failed"
   },
   "yourVaultIsLocked": {
-    "message": "Brankas Anda terkunci. Verifikasi sandi utama Anda untuk melanjutkan."
+    "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Buka"
+    "message": "Unlock"
   },
   "invalidMasterPassword": {
-    "message": "Sandi utama tidak valid"
+    "message": "Invalid master password"
   },
   "twoStepLoginConfirmation": {
-    "message": "Info masuk dua langkah membuat akun Anda lebih aman dengan mengharuskan Anda memverifikasi info masuk Anda dengan peranti lain seperti kode keamanan, aplikasi autentikasi, SMS, panggilan telepon, atau email. Info masuk dua langkah dapat diaktifkan di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
+    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLogin": {
-    "message": "Info masuk dua langkah"
+    "message": "2단계 인증"
   },
   "lockOptions": {
-    "message": "Pilihan Penguncian"
+    "message": "잠금 옵션"
   },
   "lockOptionsDesc": {
     "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "즉시"
   },
   "oneMinute": {
-    "message": "1 menit"
+    "message": "1분"
   },
   "fiveMinutes": {
-    "message": "5 menit"
+    "message": "5분"
   },
   "fifteenMinutes": {
-    "message": "15 menit"
+    "message": "15분"
   },
   "thirtyMinutes": {
-    "message": "30 menit"
+    "message": "30분"
   },
   "oneHour": {
-    "message": "1 jam"
+    "message": "1시간"
   },
   "fourHours": {
-    "message": "4 jam"
+    "message": "4시간"
   },
   "onIdle": {
     "message": "On System Idle"
@@ -747,16 +747,16 @@
     "message": "On System Sleep"
   },
   "onLocked": {
-    "message": "Sistem kunci"
+    "message": "On System Lock"
   },
   "onRestart": {
-    "message": "Pada Mulai Ulang"
+    "message": "On Restart"
   },
   "never": {
-    "message": "Tidak pernah"
+    "message": "Never"
   },
   "security": {
-    "message": "Keamanan"
+    "message": "Security"
   },
   "disableGa": {
     "message": "Disable Analytics"
@@ -771,14 +771,14 @@
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "copy": {
-    "message": "Copy",
+    "message": "복사",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "업데이트 확인"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "$VERSION_NUM$ 버전",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -799,35 +799,35 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "업데이트 사용 가능"
   },
   "updateAvailableDesc": {
     "message": "An update was found. Do you want to download it now?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "다시 시작"
   },
   "later": {
-    "message": "Later"
+    "message": "나중에"
   },
   "noUpdatesAvailable": {
     "message": "No updates are currently available. You are using the latest version."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "업데이트 오류"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "알 수 없음"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "사용자 이름 복사"
   },
   "copyNumber": {
     "message": "Copy Number",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "보안 코드 복사",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
@@ -870,10 +870,10 @@
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "Anda adalah anggota premium!"
+    "message": "You are a premium member!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
     "message": "All for just $PRICE$ \/year!",
@@ -897,39 +897,39 @@
     "message": "There are no passwords to list."
   },
   "undo": {
-    "message": "Urungkan"
+    "message": "Undo"
   },
   "redo": {
     "message": "Redo"
   },
   "cut": {
-    "message": "Potong",
+    "message": "Cut",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Tempel",
+    "message": "Paste",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Pilih Semua"
+    "message": "Select All"
   },
   "zoomIn": {
-    "message": "Perbesar"
+    "message": "Zoom In"
   },
   "zoomOut": {
-    "message": "Perkecil"
+    "message": "Zoom Out"
   },
   "resetZoom": {
     "message": "Reset Zoom"
   },
   "toggleFullScreen": {
-    "message": "Aktif\/nonaktifkan Layar Penuh"
+    "message": "Toggle Full Screen"
   },
   "reload": {
-    "message": "Muat ulang"
+    "message": "Reload"
   },
   "toggleDevTools": {
-    "message": "Aktif\/nonaktifkan Alat Pengembang"
+    "message": "Toggle Developer Tools"
   },
   "minimize": {
     "message": "Minimize",
@@ -943,25 +943,25 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "Tentang Bitwarden"
+    "message": "About Bitwarden"
   },
   "services": {
-    "message": "Layanan"
+    "message": "Services"
   },
   "hideBitwarden": {
-    "message": "Sembunyikan Bitwarden"
+    "message": "Hide Bitwarden"
   },
   "hideOthers": {
-    "message": "Sembunyikan Lainnya"
+    "message": "Hide Others"
   },
   "showAll": {
-    "message": "Tampilkan Semua"
+    "message": "Show All"
   },
   "quitBitwarden": {
-    "message": "Keluar dari Bitwarden"
+    "message": "Quit Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ disalin",
+    "message": "$VALUE$ copied",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -971,10 +971,10 @@
     }
   },
   "help": {
-    "message": "Bantuan"
+    "message": "Help"
   },
   "window": {
-    "message": "Jendela"
+    "message": "Window"
   },
   "checkPassword": {
     "message": "Check if password has been exposed."
@@ -992,7 +992,7 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "baseDomain": {
-    "message": "Basis domain"
+    "message": "Base domain"
   },
   "host": {
     "message": "Host",

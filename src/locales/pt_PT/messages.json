@@ -52,6 +52,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -333,7 +334,7 @@
     "message": "Copiar palavra-passe"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Copiar URI"
   },
   "length": {
     "message": "Comprimento"
@@ -425,7 +426,7 @@
     "message": "Uma dica da palavra-passe mestra pode ajudar a lembrar-se da sua palavra-passe se a esquecer."
   },
   "reTypeMasterPass": {
-    "message": "Re-digite a palavra-passe mestra"
+    "message": "Reescreva a palavra-passe mestra"
   },
   "masterPassHint": {
     "message": "Dica da palavra-passe mestra (opcional)"
@@ -437,7 +438,7 @@
     "message": "Dica da palavra-passe"
   },
   "enterEmailToGetHint": {
-    "message": "Digite o endereço de email da sua conta para receber a dica da sua palavra-passe mestra."
+    "message": "Introduza o endereço de email da sua conta para receber a dica da sua palavra-passe mestra."
   },
   "getMasterPasswordHint": {
     "message": "Obter dica da palavra-passe mestra"
@@ -482,10 +483,10 @@
     "message": "Continuar"
   },
   "enterVerificationCodeApp": {
-    "message": "Digite o código de verificação de 6 dígitos da sua aplicação de autenticador."
+    "message": "Introduza o código de verificação de 6 dígitos da sua aplicação de autenticador."
   },
   "enterVerificationCodeEmail": {
-    "message": "Digite o código de verificação de 6 dígitos que foi enviado por email para $EMAIL$.",
+    "message": "Introduza o código de verificação de 6 dígitos que foi enviado por email para $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -541,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifique com Duo Security para a sua organização utilizando a aplicação Duo Mobile, SMS, chamada telefónica, ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -707,7 +708,7 @@
     "message": "Palavra-passe mestra inválida"
   },
   "twoStepLoginConfirmation": {
-    "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que digite um código de segurança de uma aplicação de autenticação quando iniciar sessão. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?"
+    "message": "O início de sessão de dois passos torna a sua conta mais segura ao requerer que verifique o seu início de sessão com outro dispositivo como uma chave de segurança, aplicação de autenticação, SMS, chamada telefónica, ou email. O início de sessão de dois passos pode ser ativado no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
   "twoStepLogin": {
     "message": "Início de sessão de dois passos"
@@ -716,7 +717,7 @@
     "message": "Opções de bloqueio"
   },
   "lockOptionsDesc": {
-    "message": "Escolha quando o seu cofre bloqueia. Um cofre bloqueado requer que volte a digitar a sua palavra-passe mestra para o aceder novamente."
+    "message": "Escolha quando o seu cofre bloqueia. Um cofre bloqueado requer que reintroduza a sua palavra-passe mestra para o aceder novamente."
   },
   "immediately": {
     "message": "Imediatamente"
@@ -1019,7 +1020,7 @@
     "message": "Alternar opções"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organização",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

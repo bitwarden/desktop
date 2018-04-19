@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Kõik kirjed"
@@ -52,6 +52,7 @@
   },
   "uriPosition": {
     "message": "URL $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -333,7 +334,7 @@
     "message": "Kopeeri parool"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopeeri URL"
   },
   "length": {
     "message": "Pikkus"
@@ -541,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Kinnita organisatsiooni jaoks Duo Security abil, kasutades selleks Duo Mobile rakendust, SMS-i, telefonikõnet või U2F turvavõtit.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1019,7 +1020,7 @@
     "message": "Valik sisse"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisatsioon",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

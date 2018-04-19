@@ -52,6 +52,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -333,7 +334,7 @@
     "message": "Copia Password"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Copia URI"
   },
   "length": {
     "message": "Lunghezza"
@@ -541,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifica con Duo Security per la tua azienda usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1019,7 +1020,7 @@
     "message": "Attiva\/Disattiva opzioni"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Società",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }

@@ -52,6 +52,7 @@
   },
   "uriPosition": {
     "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
         "content": "$1",
@@ -142,7 +143,7 @@
     "message": "進階會員才可使用此功能。"
   },
   "errorOccurred": {
-    "message": "發生了未預期的錯誤。"
+    "message": "發生錯誤。"
   },
   "error": {
     "message": "錯誤"
@@ -333,7 +334,7 @@
     "message": "複製密碼"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "複製 URI"
   },
   "length": {
     "message": "長度"
@@ -494,7 +495,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "驗證碼傳送至 $EMAIL$.",
+    "message": "驗證碼已傳送至 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -541,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "使用 Duo Security 驗證您的組織，可使用 Duo Mobile 程式， SMS ，致電或 U2F 安全鑰匙。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -979,7 +980,7 @@
     "message": "檢查密碼是否已外洩。"
   },
   "passwordExposed": {
-    "message": "此密碼已外泄了 $VALUE$ 次，應立即變更密碼。",
+    "message": "此密碼已外洩了 $VALUE$ 次，應立即變更密碼。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1019,7 +1020,7 @@
     "message": "切換選項"
   },
   "organization": {
-    "message": "Organization",
+    "message": "組織",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   }
 }
