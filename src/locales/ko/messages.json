@@ -1,0 +1,1026 @@
+{
+  "bitwarden": {
+    "message": "Bitwarden"
+  },
+  "allItems": {
+    "message": "모든 항목"
+  },
+  "favorites": {
+    "message": "즐겨찾기"
+  },
+  "types": {
+    "message": "Types"
+  },
+  "typeLogin": {
+    "message": "로그인"
+  },
+  "typeCard": {
+    "message": "카드"
+  },
+  "typeIdentity": {
+    "message": "Identity"
+  },
+  "typeSecureNote": {
+    "message": "Secure Note"
+  },
+  "folders": {
+    "message": "폴더"
+  },
+  "collections": {
+    "message": "Collections"
+  },
+  "searchVault": {
+    "message": "보관함 검색"
+  },
+  "addItem": {
+    "message": "항목 추가"
+  },
+  "shared": {
+    "message": "Shared"
+  },
+  "attachments": {
+    "message": "첨부 파일"
+  },
+  "viewItem": {
+    "message": "항목 보기"
+  },
+  "name": {
+    "message": "이름"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "새 URI"
+  },
+  "username": {
+    "message": "사용자 이름"
+  },
+  "password": {
+    "message": "비밀번호"
+  },
+  "editItem": {
+    "message": "항목 편집"
+  },
+  "emailAddress": {
+    "message": "이메일 주소"
+  },
+  "verificationCodeTotp": {
+    "message": "인증 코드 (TOTP)"
+  },
+  "website": {
+    "message": "웹 사이트"
+  },
+  "notes": {
+    "message": "메모"
+  },
+  "customFields": {
+    "message": "Custom Fields"
+  },
+  "launch": {
+    "message": "열기"
+  },
+  "copyValue": {
+    "message": "값 복사",
+    "description": "Copy value to clipboard"
+  },
+  "toggleVisibility": {
+    "message": "표시 전환"
+  },
+  "cardholderName": {
+    "message": "카드 소유자 이름"
+  },
+  "number": {
+    "message": "Number"
+  },
+  "brand": {
+    "message": "Brand"
+  },
+  "expiration": {
+    "message": "Expiration"
+  },
+  "securityCode": {
+    "message": "Security Code"
+  },
+  "identityName": {
+    "message": "Identity Name"
+  },
+  "company": {
+    "message": "Company"
+  },
+  "ssn": {
+    "message": "Social Security Number"
+  },
+  "passportNumber": {
+    "message": "Passport Number"
+  },
+  "licenseNumber": {
+    "message": "License Number"
+  },
+  "email": {
+    "message": "이메일"
+  },
+  "phone": {
+    "message": "Phone"
+  },
+  "address": {
+    "message": "주소"
+  },
+  "premiumRequired": {
+    "message": "Premium Required"
+  },
+  "premiumRequiredDesc": {
+    "message": "A premium membership is required to use this feature."
+  },
+  "errorOccurred": {
+    "message": "An error has occurred."
+  },
+  "error": {
+    "message": "오류"
+  },
+  "january": {
+    "message": "1월"
+  },
+  "february": {
+    "message": "2월"
+  },
+  "march": {
+    "message": "3월"
+  },
+  "april": {
+    "message": "April"
+  },
+  "may": {
+    "message": "May"
+  },
+  "june": {
+    "message": "June"
+  },
+  "july": {
+    "message": "July"
+  },
+  "august": {
+    "message": "August"
+  },
+  "september": {
+    "message": "September"
+  },
+  "october": {
+    "message": "October"
+  },
+  "november": {
+    "message": "November"
+  },
+  "december": {
+    "message": "December"
+  },
+  "ex": {
+    "message": "ex.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "title": {
+    "message": "Title"
+  },
+  "mr": {
+    "message": "Mr"
+  },
+  "mrs": {
+    "message": "Mrs"
+  },
+  "ms": {
+    "message": "Ms"
+  },
+  "dr": {
+    "message": "Dr"
+  },
+  "expirationMonth": {
+    "message": "Expiration Month"
+  },
+  "expirationYear": {
+    "message": "Expiration Year"
+  },
+  "select": {
+    "message": "Select"
+  },
+  "other": {
+    "message": "Other"
+  },
+  "generatePassword": {
+    "message": "Generate Password"
+  },
+  "type": {
+    "message": "Type"
+  },
+  "firstName": {
+    "message": "First Name"
+  },
+  "middleName": {
+    "message": "Middle Name"
+  },
+  "lastName": {
+    "message": "Last Name"
+  },
+  "address1": {
+    "message": "Address 1"
+  },
+  "address2": {
+    "message": "Address 2"
+  },
+  "address3": {
+    "message": "Address 3"
+  },
+  "cityTown": {
+    "message": "City \/ Town"
+  },
+  "stateProvince": {
+    "message": "State \/ Province"
+  },
+  "zipPostalCode": {
+    "message": "Zip \/ Postal Code"
+  },
+  "country": {
+    "message": "Country"
+  },
+  "save": {
+    "message": "저장"
+  },
+  "cancel": {
+    "message": "취소"
+  },
+  "delete": {
+    "message": "삭제"
+  },
+  "favorite": {
+    "message": "즐겨찾기"
+  },
+  "edit": {
+    "message": "편집"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Authenticator Key (TOTP)"
+  },
+  "folder": {
+    "message": "폴더"
+  },
+  "newCustomField": {
+    "message": "New Custom Field"
+  },
+  "value": {
+    "message": "값"
+  },
+  "cfTypeText": {
+    "message": "Text"
+  },
+  "cfTypeHidden": {
+    "message": "Hidden"
+  },
+  "cfTypeBoolean": {
+    "message": "Boolean"
+  },
+  "remove": {
+    "message": "제거"
+  },
+  "nameRequired": {
+    "message": "이름은 반드시 입력해야 합니다."
+  },
+  "addedItem": {
+    "message": "Added item"
+  },
+  "editedItem": {
+    "message": "Edited item"
+  },
+  "deleteItem": {
+    "message": "항목 삭제"
+  },
+  "deleteFolder": {
+    "message": "폴더 삭제"
+  },
+  "deleteAttachment": {
+    "message": "첨부 파일 삭제"
+  },
+  "deleteItemConfirmation": {
+    "message": "Are you sure you want to delete this item?"
+  },
+  "deletedItem": {
+    "message": "Deleted item"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Are you sure you want to overwrite the current password?"
+  },
+  "noneFolder": {
+    "message": "폴더 없음",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "폴더 추가"
+  },
+  "editFolder": {
+    "message": "폴더 편집"
+  },
+  "regeneratePassword": {
+    "message": "비밀번호 재생성"
+  },
+  "copyPassword": {
+    "message": "비밀번호 복사"
+  },
+  "copyUri": {
+    "message": "URI 복사"
+  },
+  "length": {
+    "message": "길이"
+  },
+  "close": {
+    "message": "닫기"
+  },
+  "minNumbers": {
+    "message": "Minimum Numbers"
+  },
+  "minSpecial": {
+    "message": "Minimum Special",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Avoid Ambiguous Characters"
+  },
+  "searchCollection": {
+    "message": "Search Collection"
+  },
+  "searchFolder": {
+    "message": "폴더 검색"
+  },
+  "searchFavorites": {
+    "message": "즐겨찾기 검색"
+  },
+  "searchType": {
+    "message": "Search Type",
+    "description": "Search item type"
+  },
+  "newAttachment": {
+    "message": "새 첨부 파일 추가"
+  },
+  "deletedAttachment": {
+    "message": "Deleted attachment"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "정말 이 첨부 파일을 삭제하시겠습니까?"
+  },
+  "attachmentSaved": {
+    "message": "첨부 파일을 저장했습니다."
+  },
+  "file": {
+    "message": "파일"
+  },
+  "selectFile": {
+    "message": "파일을 선택하세요."
+  },
+  "maxFileSize": {
+    "message": "최대 파일 크기는 100MB입니다."
+  },
+  "updateKey": {
+    "message": "You cannot use this feature until you update your encryption key."
+  },
+  "options": {
+    "message": "옵션"
+  },
+  "editedFolder": {
+    "message": "Edited folder"
+  },
+  "addedFolder": {
+    "message": "Added folder"
+  },
+  "deleteFolderConfirmation": {
+    "message": "정말 이 폴더를 삭제하시겠습니까?"
+  },
+  "deletedFolder": {
+    "message": "Deleted folder"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Log in or create a new account to access your secure vault."
+  },
+  "createAccount": {
+    "message": "Create Account"
+  },
+  "logIn": {
+    "message": "Log In"
+  },
+  "submit": {
+    "message": "Submit"
+  },
+  "masterPass": {
+    "message": "Master Password"
+  },
+  "masterPassDesc": {
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc": {
+    "message": "A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass": {
+    "message": "Re-type Master Password"
+  },
+  "masterPassHint": {
+    "message": "Master Password Hint (optional)"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "passwordHint": {
+    "message": "Password Hint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint": {
+    "message": "Get master password hint"
+  },
+  "emailRequired": {
+    "message": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "We've sent you an email with your master password hint."
+  },
+  "unexpectedError": {
+    "message": "An unexpected error has occurred."
+  },
+  "itemInformation": {
+    "message": "Item Information"
+  },
+  "noItemsInList": {
+    "message": "There are no items to list."
+  },
+  "verificationCode": {
+    "message": "Verification Code"
+  },
+  "verificationCodeRequired": {
+    "message": "Verification code is required."
+  },
+  "continue": {
+    "message": "Continue"
+  },
+  "enterVerificationCodeApp": {
+    "message": "Enter the 6 digit verification code from your authenticator app."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "Remember me"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Send verification code email again"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Use another two-step login method"
+  },
+  "insertYubiKey": {
+    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+  },
+  "insertU2f": {
+    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+  },
+  "recoveryCodeDesc": {
+    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+  },
+  "recoveryCodeTitle": {
+    "message": "Recovery Code"
+  },
+  "authenticatorAppTitle": {
+    "message": "Authenticator App"
+  },
+  "authenticatorAppDesc": {
+    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP Security Key"
+  },
+  "yubiKeyDesc": {
+    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+  },
+  "duoDesc": {
+    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Use any FIDO U2F enabled security key to access your account."
+  },
+  "u2fTitle": {
+    "message": "FIDO U2F Security Key"
+  },
+  "emailTitle": {
+    "message": "이메일"
+  },
+  "emailDesc": {
+    "message": "Verification codes will be emailed to you."
+  },
+  "loginUnavailable": {
+    "message": "Login Unavailable"
+  },
+  "noTwoStepProviders": {
+    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+  },
+  "noTwoStepProviders2": {
+    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+  },
+  "twoStepOptions": {
+    "message": "Two-step Login Options"
+  },
+  "selfHostedEnvironment": {
+    "message": "Self-hosted Environment"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
+  },
+  "customEnvironment": {
+    "message": "Custom Environment"
+  },
+  "customEnvironmentFooter": {
+    "message": "For advanced users. You can specify the base URL of each service independently."
+  },
+  "baseUrl": {
+    "message": "서버 URL"
+  },
+  "apiUrl": {
+    "message": "API 서버 URL"
+  },
+  "webVaultUrl": {
+    "message": "Web Vault Server URL"
+  },
+  "identityUrl": {
+    "message": "Identity Server URL"
+  },
+  "iconsUrl": {
+    "message": "아이콘 서버 URL"
+  },
+  "environmentSaved": {
+    "message": "The environment URLs have been saved."
+  },
+  "ok": {
+    "message": "확인"
+  },
+  "yes": {
+    "message": "예"
+  },
+  "no": {
+    "message": "아니오"
+  },
+  "overwritePassword": {
+    "message": "비밀번호 덮어쓰기"
+  },
+  "learnMore": {
+    "message": "더 알아보기"
+  },
+  "featureUnavailable": {
+    "message": "Feature Unavailable"
+  },
+  "loggedOut": {
+    "message": "Logged out"
+  },
+  "loginExpired": {
+    "message": "Your login session has expired."
+  },
+  "logOutConfirmation": {
+    "message": "Are you sure you want to log out?"
+  },
+  "logOut": {
+    "message": "로그아웃"
+  },
+  "addNewLogin": {
+    "message": "Add New Login"
+  },
+  "addNewItem": {
+    "message": "새 항목 추가"
+  },
+  "addNewFolder": {
+    "message": "새 폴더 추가"
+  },
+  "view": {
+    "message": "보기"
+  },
+  "account": {
+    "message": "계정"
+  },
+  "loading": {
+    "message": "불러오는 중..."
+  },
+  "lockNow": {
+    "message": "Lock Now"
+  },
+  "passwordGenerator": {
+    "message": "비밀번호 생성기"
+  },
+  "emailUs": {
+    "message": "이메일 보내기"
+  },
+  "visitOurWebsite": {
+    "message": "Visit Our Website"
+  },
+  "fileBugReport": {
+    "message": "File a Bug Report"
+  },
+  "blog": {
+    "message": "Blog"
+  },
+  "followUs": {
+    "message": "Follow Us"
+  },
+  "syncVault": {
+    "message": "Sync Vault"
+  },
+  "changeMasterPass": {
+    "message": "Change Master Password"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "changeEmail": {
+    "message": "Change Email"
+  },
+  "changeEmailConfirmation": {
+    "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "goToWebVault": {
+    "message": "Go To Web Vault"
+  },
+  "getMobileApp": {
+    "message": "Get Mobile App"
+  },
+  "getBrowserExtension": {
+    "message": "Get Browser Extension"
+  },
+  "syncingComplete": {
+    "message": "Syncing complete"
+  },
+  "syncingFailed": {
+    "message": "Syncing failed"
+  },
+  "yourVaultIsLocked": {
+    "message": "Your vault is locked. Verify your master password to continue."
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "invalidMasterPassword": {
+    "message": "Invalid master password"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLogin": {
+    "message": "2단계 인증"
+  },
+  "lockOptions": {
+    "message": "잠금 옵션"
+  },
+  "lockOptionsDesc": {
+    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+  },
+  "immediately": {
+    "message": "즉시"
+  },
+  "oneMinute": {
+    "message": "1분"
+  },
+  "fiveMinutes": {
+    "message": "5분"
+  },
+  "fifteenMinutes": {
+    "message": "15분"
+  },
+  "thirtyMinutes": {
+    "message": "30분"
+  },
+  "oneHour": {
+    "message": "1시간"
+  },
+  "fourHours": {
+    "message": "4시간"
+  },
+  "onIdle": {
+    "message": "On System Idle"
+  },
+  "onSleep": {
+    "message": "On System Sleep"
+  },
+  "onLocked": {
+    "message": "On System Lock"
+  },
+  "onRestart": {
+    "message": "On Restart"
+  },
+  "never": {
+    "message": "Never"
+  },
+  "security": {
+    "message": "Security"
+  },
+  "disableGa": {
+    "message": "Disable Analytics"
+  },
+  "gaDesc": {
+    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+  },
+  "disableFavicon": {
+    "message": "Disable Website Icons"
+  },
+  "disableFaviconDesc": {
+    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+  },
+  "copy": {
+    "message": "복사",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "업데이트 확인"
+  },
+  "version": {
+    "message": "$VERSION_NUM$ 버전",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "restartToUpdate": {
+    "message": "Restart To Update"
+  },
+  "restartToUpdateDesc": {
+    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "업데이트 사용 가능"
+  },
+  "updateAvailableDesc": {
+    "message": "An update was found. Do you want to download it now?"
+  },
+  "restart": {
+    "message": "다시 시작"
+  },
+  "later": {
+    "message": "나중에"
+  },
+  "noUpdatesAvailable": {
+    "message": "No updates are currently available. You are using the latest version."
+  },
+  "updateError": {
+    "message": "업데이트 오류"
+  },
+  "unknown": {
+    "message": "알 수 없음"
+  },
+  "copyUsername": {
+    "message": "사용자 이름 복사"
+  },
+  "copyNumber": {
+    "message": "Copy Number",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "보안 코드 복사",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "premiumMembership": {
+    "message": "Premium Membership"
+  },
+  "premiumManage": {
+    "message": "Manage Membership"
+  },
+  "premiumManageAlert": {
+    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumRefresh": {
+    "message": "Refresh Membership"
+  },
+  "premiumNotCurrentMember": {
+    "message": "You are not currently a premium member."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Sign up for a premium membership and get:"
+  },
+  "premiumSignUpStorage": {
+    "message": "1 GB of encrypted file storage."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "premiumSignUpTotp": {
+    "message": "TOTP verification code (2FA) generator for logins in your vault."
+  },
+  "premiumSignUpSupport": {
+    "message": "Priority customer support."
+  },
+  "premiumSignUpFuture": {
+    "message": "All future premium features. More coming soon!"
+  },
+  "premiumPurchase": {
+    "message": "Purchase Premium"
+  },
+  "premiumPurchaseAlert": {
+    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumCurrentMember": {
+    "message": "You are a premium member!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Thank you for supporting Bitwarden."
+  },
+  "premiumPrice": {
+    "message": "All for just $PRICE$ \/year!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "refreshComplete": {
+    "message": "Refresh complete"
+  },
+  "passwordHistory": {
+    "message": "Password History"
+  },
+  "clear": {
+    "message": "Clear"
+  },
+  "noPasswordsInList": {
+    "message": "There are no passwords to list."
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "redo": {
+    "message": "Redo"
+  },
+  "cut": {
+    "message": "Cut",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Paste",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Select All"
+  },
+  "zoomIn": {
+    "message": "Zoom In"
+  },
+  "zoomOut": {
+    "message": "Zoom Out"
+  },
+  "resetZoom": {
+    "message": "Reset Zoom"
+  },
+  "toggleFullScreen": {
+    "message": "Toggle Full Screen"
+  },
+  "reload": {
+    "message": "Reload"
+  },
+  "toggleDevTools": {
+    "message": "Toggle Developer Tools"
+  },
+  "minimize": {
+    "message": "Minimize",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Zoom"
+  },
+  "bringAllToFront": {
+    "message": "Bring All to Front",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "About Bitwarden"
+  },
+  "services": {
+    "message": "Services"
+  },
+  "hideBitwarden": {
+    "message": "Hide Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Hide Others"
+  },
+  "showAll": {
+    "message": "Show All"
+  },
+  "quitBitwarden": {
+    "message": "Quit Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copied",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "help": {
+    "message": "Help"
+  },
+  "window": {
+    "message": "Window"
+  },
+  "checkPassword": {
+    "message": "Check if password has been exposed."
+  },
+  "passwordExposed": {
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "This password was not found in any known data breaches. It should be safe to use."
+  },
+  "baseDomain": {
+    "message": "Base domain"
+  },
+  "host": {
+    "message": "Host",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exact"
+  },
+  "startsWith": {
+    "message": "Starts with"
+  },
+  "regEx": {
+    "message": "Regular expression",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Match Detection",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Default match detection",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Toggle Options"
+  },
+  "organization": {
+    "message": "Organization",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  }
+}
