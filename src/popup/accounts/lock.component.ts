@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {
+    Component,
+    OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ToasterService } from 'angular2-toaster';
@@ -16,7 +19,7 @@ import { LockComponent as BaseLockComponent } from 'jslib/angular/components/loc
     selector: 'app-lock',
     templateUrl: 'lock.component.html',
 })
-export class LockComponent extends BaseLockComponent {
+export class LockComponent extends BaseLockComponent implements OnInit {
     constructor(router: Router, analytics: Angulartics2,
         toasterService: ToasterService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
@@ -24,5 +27,11 @@ export class LockComponent extends BaseLockComponent {
         super(router, analytics, toasterService, i18nService, platformUtilsService,
             messagingService, userService, cryptoService);
         this.successRoute = '/tabs/current';
+    }
+
+    ngOnInit() {
+        window.setTimeout(() => {
+            document.getElementById('masterPassword').focus();
+        }, 100);
     }
 }
