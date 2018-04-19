@@ -19,6 +19,6 @@ export class PasswordGeneratorHistoryComponent extends BasePasswordGeneratorHist
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,
         platformUtilsService: PlatformUtilsService, i18nService: I18nService,
         toasterService: ToasterService) {
-        super(passwordGenerationService, analytics, platformUtilsService, i18nService, toasterService);
+        super(passwordGenerationService, analytics, platformUtilsService, i18nService, toasterService, window);
     }
 }

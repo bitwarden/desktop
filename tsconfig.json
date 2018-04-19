@@ -22,6 +22,7 @@
     "jslib/node_modules",
     "dist",
     "jslib/dist",
-    "build"
+    "build",
+    "jslib/spec"
   ]
 }
