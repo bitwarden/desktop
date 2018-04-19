@@ -156,11 +156,12 @@ export class SettingsComponent implements OnInit {
     about() {
         this.analytics.eventTrack.next({ action: 'Clicked About' });
 
+        const year = (new Date()).getFullYear();
         const versionText = document.createTextNode(
             this.i18nService.t('version') + ': ' + BrowserApi.getApplicationVersion());
         const div = document.createElement('div');
-        div.innerHTML = `<p><i class="fa fa-shield fa-3x"></i></p>
-            <p><strong>Bitwarden</strong><br>&copy; 8bit Solutions LLC 2015-` + (new Date()).getFullYear() + `</p>`;
+        div.innerHTML = `<p class="text-center"><i class="fa fa-shield fa-3x"></i></p>
+            <p class="text-center"><b>Bitwarden</b><br>&copy; 8bit Solutions LLC 2015-` + year + `</p>`;
         div.appendChild(versionText);
 
         swal({
