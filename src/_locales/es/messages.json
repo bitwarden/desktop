@@ -351,7 +351,7 @@
     "message": "Código de verificación requerido."
   },
   "valueCopied": {
-    "message": "$VALUE$ copiado",
+    "message": "$VALUE$ copiada",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {

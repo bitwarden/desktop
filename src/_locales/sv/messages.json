@@ -511,7 +511,7 @@
     "message": "Dela ditt valv"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden gör det möjligt för dig att dela ditt valv med andra genom att använda ett organisationskonto. Vill du besöka bitwarden.com för att lära dig mer?"
   },
   "learnMore": {
     "message": "Läs mer"

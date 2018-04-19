@@ -14,25 +14,25 @@
     "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "계정 만들기"
   },
   "login": {
-    "message": "Log In"
+    "message": "로그인"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "취소"
   },
   "close": {
-    "message": "Close"
+    "message": "닫기"
   },
   "submit": {
     "message": "Submit"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "이메일 주소"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "마스터 비밀번호"
   },
   "masterPassDesc": {
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
@@ -47,37 +47,37 @@
     "message": "Master Password Hint (optional)"
   },
   "tab": {
-    "message": "Tab"
+    "message": "탭"
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "내 보관함"
   },
   "tools": {
-    "message": "Tools"
+    "message": "도구"
   },
   "settings": {
-    "message": "Settings"
+    "message": "설정"
   },
   "currentTab": {
-    "message": "Current Tab"
+    "message": "현재 탭"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "비밀번호 복사"
   },
   "copyNote": {
-    "message": "Copy Note"
+    "message": "메모 복사"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI 복사"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "사용자 이름 복사"
   },
   "copyNumber": {
     "message": "Copy Number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code"
+    "message": "보안 코드 복사"
   },
   "autoFill": {
     "message": "Auto-fill"
@@ -98,10 +98,10 @@
     "message": "Add a Login"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "항목 추가"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "비밀번호 힌트"
   },
   "enterEmailToGetHint": {
     "message": "Enter your account email address to receive your master password hint."
@@ -110,46 +110,46 @@
     "message": "Get master password hint"
   },
   "continue": {
-    "message": "Continue"
+    "message": "계속"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "인증 코드"
   },
   "account": {
-    "message": "Account"
+    "message": "계정"
   },
   "changeMasterPassword": {
-    "message": "Change Master Password"
+    "message": "마스터 비밀번호 변경"
   },
   "changeEmail": {
-    "message": "Change Email"
+    "message": "이메일 변경"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "2단계 인증"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "로그아웃"
   },
   "about": {
-    "message": "About"
+    "message": "정보"
   },
   "version": {
-    "message": "Version"
+    "message": "버전"
   },
   "save": {
-    "message": "Save"
+    "message": "저장"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "폴더 추가"
   },
   "name": {
-    "message": "Name"
+    "message": "이름"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "폴더 편집"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "폴더 삭제"
   },
   "folders": {
     "message": "Folders"
@@ -252,19 +252,19 @@
     "message": "View Item"
   },
   "launch": {
-    "message": "Launch"
+    "message": "열기"
   },
   "website": {
-    "message": "Website"
+    "message": "웹 사이트"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "표시 전환"
   },
   "manage": {
-    "message": "Manage"
+    "message": "관리"
   },
   "other": {
-    "message": "Other"
+    "message": "기타"
   },
   "disableGa": {
     "message": "Disable Analytics"
@@ -285,13 +285,13 @@
     "message": "Invalid master password"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "잠금 옵션"
   },
   "lockNow": {
     "message": "Lock Now"
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "즉시"
   },
   "oneMinute": {
     "message": "1 minute"
@@ -373,16 +373,16 @@
     "message": "Are you sure you want to log out?"
   },
   "yes": {
-    "message": "Yes"
+    "message": "예"
   },
   "no": {
-    "message": "No"
+    "message": "아니오"
   },
   "unexpectedError": {
     "message": "An unexpected error has occurred."
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "이름은 반드시 입력해야 합니다."
   },
   "addedFolder": {
     "message": "Added folder"

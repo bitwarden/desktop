@@ -65,7 +65,7 @@
     "message": "Copiar Senha"
   },
   "copyNote": {
-    "message": "Copiar nota"
+    "message": "Copiar Nota"
   },
   "copyUri": {
     "message": "Copiar URL"
@@ -173,7 +173,7 @@
     "message": "Gerador de Senha"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Gerador",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -252,13 +252,13 @@
     "message": "Ver Item"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Abrir"
   },
   "website": {
     "message": "Site"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Alternar Visibilidade"
   },
   "manage": {
     "message": "Gerenciar"
@@ -324,7 +324,7 @@
     "message": "Segurança"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Ocorreu um erro"
   },
   "emailRequired": {
     "message": "O endereço de e-mail é necessário."
@@ -461,7 +461,7 @@
     "message": "Pesquisar coleção"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Pesquisar tipo"
   },
   "noneFolder": {
     "message": "Nenhuma Pasta",
@@ -511,7 +511,7 @@
     "message": "Compartilhar Seu Cofre"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "O Bitwarden permite compartilhar o seu cofre com outros ao utilizar uma conta de organização. Gostaria de visitar o site bitwarden.com para saber mais?"
   },
   "learnMore": {
     "message": "Saber mais"
@@ -643,7 +643,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "E-mail de verificação enviado para $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -967,10 +967,10 @@
     "message": "Identidades"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Credenciais"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Notas Seguras"
   },
   "clear": {
     "message": "Limpar"
@@ -1026,15 +1026,15 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tipos"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Todos os Itens"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Não existem senhas para listar."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Remover"
   }
 }

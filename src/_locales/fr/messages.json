@@ -315,7 +315,7 @@
     "message": "Au verrouillage"
   },
   "onRestart": {
-    "message": "Au redémarrage"
+    "message": "Au redémarrage du navigateur"
   },
   "never": {
     "message": "Jamais"

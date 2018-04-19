@@ -279,7 +279,7 @@
     "message": "O seu navegador web não suporta cópia fácil da área de transferência. Em alternativa, copie manualmente."
   },
   "verifyMasterPassword": {
-    "message": "Verificar palavra-passe"
+    "message": "Verificar palavra-passe mestra"
   },
   "invalidMasterPassword": {
     "message": "Palavra-passe mestra inválida"
