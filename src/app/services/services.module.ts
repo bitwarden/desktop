@@ -76,7 +76,6 @@ const broadcasterService = new BroadcasterService();
 const messagingService = new DesktopRendererMessagingService(broadcasterService);
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
 const secureStorageService: StorageServiceAbstraction = new DesktopRendererSecureStorageService();
-const constantsService = new ConstantsService({}, 0);
 const cryptoService = new CryptoService(storageService, secureStorageService);
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
@@ -99,8 +98,7 @@ const passwordGenerationService = new PasswordGenerationService(cryptoService, s
 const totpService = new TotpService(storageService);
 const containerService = new ContainerService(cryptoService, platformUtilsService);
 const authService = new AuthService(cryptoService, apiService,
-    userService, tokenService, appIdService, i18nService, platformUtilsService, constantsService,
-    messagingService);
+    userService, tokenService, appIdService, i18nService, platformUtilsService, messagingService);
 const auditService = new AuditService(cryptoService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
