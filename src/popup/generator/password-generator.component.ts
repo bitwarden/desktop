@@ -27,7 +27,7 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
         platformUtilsService: PlatformUtilsService, i18nService: I18nService,
         toasterService: ToasterService, private stateService: StateService,
         private router: Router, private location: Location) {
-        super(passwordGenerationService, analytics, platformUtilsService, i18nService, toasterService);
+        super(passwordGenerationService, analytics, platformUtilsService, i18nService, toasterService, window);
     }
 
     async ngOnInit() {

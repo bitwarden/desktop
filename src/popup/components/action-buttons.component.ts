@@ -52,7 +52,7 @@ export class ActionButtonsComponent {
         }
 
         this.analytics.eventTrack.next({ action: 'Copied ' + aType });
-        this.platformUtilsService.copyToClipboard(value);
+        this.platformUtilsService.copyToClipboard(value, { doc: window.document });
         this.toasterService.popAsync('info', null,
             this.i18nService.t('valueCopied', this.i18nService.t(typeI18nKey)));
     }
