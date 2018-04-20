@@ -1,4 +1,11 @@
-﻿$dir = Split-Path -Parent $MyInvocation.MyCommand.Path;
+﻿# To run:
+# .\choco-pack.ps1
+#
+# and then push to choco with:
+# cd ..\dist\chocolatey
+# choco push
+
+$dir = Split-Path -Parent $MyInvocation.MyCommand.Path;
 $rootDir = $dir + "\..";
 $distDir = $rootDir + "\dist";
 $chocoDir = $rootDir + "\stores\chocolatey";

@@ -5,6 +5,11 @@ set -e
 # 1. brew install jq
 # 2. fork of homebrew-cask repo setup.
 #    see https://github.com/caskroom/homebrew-cask/blob/master/CONTRIBUTING.md#getting-set-up-to-contribute
+#
+# To run:
+# sh ./cask-update.sh
+#
+# then submit PR from fork repo
 
 FORK_GITHUB_USER="kspearrin"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
