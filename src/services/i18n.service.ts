@@ -4,15 +4,11 @@ import * as path from 'path';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
 
 // First locale is the default (English)
-export const SupportedLocalesLanguage = {
-    'en': 'English', 'cs': 'Czech', 'da': 'Danish', 'de': 'German', 'es': 'Spanish', 'et': 'Estonian',
-    'fi': 'Finnish', 'fr': 'French', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'it': 'Italian',
-    'ja': 'Japanese', 'nb': 'Norwegian Bokmål', 'nl': 'Dutch', 'pl': 'Polish', 'pt-BR': 'Portuguese (Brazil)',
-    'pt-PT': 'Portuguese', 'ro': 'Romanian', 'ru': 'Russian', 'sk': 'Slovak', 'sv': 'Swedish', 'tr': 'Turkish',
-    'uk': 'Ukrainian', 'vi': 'Vietnamese', 'zh-CN': 'Chinese', 'zh-TW': 'Chinese (Taiwan)',
-};
-
-const SupportedTranslationLocales = Object.keys(SupportedLocalesLanguage);
+export const SupportedTranslationLocales = [
+    'en', 'cs', 'da', 'de', 'es', 'et', 'fi', 'fr', 'hr', 'hu', 'id', 'it', 'ja',
+    'nb', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sv', 'tr', 'uk', 'vi',
+    'zh-CN', 'zh-TW',
+];
 
 export class I18nService implements I18nServiceAbstraction {
     defaultMessages: any = {};
