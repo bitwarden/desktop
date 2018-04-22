@@ -20,6 +20,7 @@ import {
     UserService,
     UtilsService,
 } from 'jslib/services';
+import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import {
     ApiService as ApiServiceAbstraction,
@@ -43,6 +44,7 @@ import {
     UserService as UserServiceAbstraction,
     UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
+import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 
 import { Analytics } from 'jslib/misc';
 
@@ -119,7 +121,8 @@ export default class MainBackground {
         this.secureStorageService = new BrowserStorageService(this.platformUtilsService, true);
         this.i18nService = new I18nService(BrowserApi.getUILanguage(window),
             BrowserApi.isSafariApi ? './_locales/' : null);
-        this.cryptoService = new CryptoService(this.storageService, this.secureStorageService);
+        const cryptoFunctionService = new WebCryptoFunctionService(window, this.platformUtilsService);
+        this.cryptoService = new CryptoService(this.storageService, this.secureStorageService, cryptoFunctionService);
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
