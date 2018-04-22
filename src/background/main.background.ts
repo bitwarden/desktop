@@ -145,11 +145,11 @@ export default class MainBackground {
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
             this.storageService, this.messagingService, (expired: boolean) => this.logout(expired));
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
-        this.totpService = new TotpService(this.storageService);
+        this.totpService = new TotpService(this.storageService, cryptoFunctionService);
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
             this.totpService, this.utilsService, this.platformUtilsService);
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
-        this.auditService = new AuditService(this.cryptoService);
+        this.auditService = new AuditService(cryptoFunctionService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
 
