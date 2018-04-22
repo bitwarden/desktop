@@ -99,11 +99,11 @@ const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService,
     storageService, messagingService, (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService);
-const totpService = new TotpService(storageService);
+const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService, platformUtilsService);
 const authService = new AuthService(cryptoService, apiService,
     userService, tokenService, appIdService, i18nService, platformUtilsService, messagingService);
-const auditService = new AuditService(cryptoService);
+const auditService = new AuditService(cryptoFunctionService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToWindow(window);
