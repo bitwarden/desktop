@@ -40,6 +40,7 @@ import { TokenService } from 'jslib/services/token.service';
 import { TotpService } from 'jslib/services/totp.service';
 import { UserService } from 'jslib/services/user.service';
 import { UtilsService } from 'jslib/services/utils.service';
+import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib/abstractions/api.service';
 import { AppIdService as AppIdServiceAbstraction } from 'jslib/abstractions/appId.service';
@@ -48,6 +49,7 @@ import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.s
 import { CipherService as CipherServiceAbstraction } from 'jslib/abstractions/cipher.service';
 import { CollectionService as CollectionServiceAbstraction } from 'jslib/abstractions/collection.service';
 import { CryptoService as CryptoServiceAbstraction } from 'jslib/abstractions/crypto.service';
+import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService as EnvironmentServiceAbstraction } from 'jslib/abstractions/environment.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
@@ -76,7 +78,9 @@ const broadcasterService = new BroadcasterService();
 const messagingService = new DesktopRendererMessagingService(broadcasterService);
 const storageService: StorageServiceAbstraction = new DesktopStorageService();
 const secureStorageService: StorageServiceAbstraction = new DesktopRendererSecureStorageService();
-const cryptoService = new CryptoService(storageService, secureStorageService);
+const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
+    platformUtilsService);
+const cryptoService = new CryptoService(storageService, secureStorageService, cryptoFunctionService);
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
