@@ -39,7 +39,6 @@ import { SyncService } from 'jslib/services/sync.service';
 import { TokenService } from 'jslib/services/token.service';
 import { TotpService } from 'jslib/services/totp.service';
 import { UserService } from 'jslib/services/user.service';
-import { UtilsService } from 'jslib/services/utils.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib/abstractions/api.service';
@@ -67,11 +66,9 @@ import { SyncService as SyncServiceAbstraction } from 'jslib/abstractions/sync.s
 import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/token.service';
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
-import { UtilsService as UtilsServiceAbstraction } from 'jslib/abstractions/utils.service';
 
 const logService = new LogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
-const utilsService = new UtilsService();
 const stateService = new StateService();
 const platformUtilsService = new DesktopPlatformUtilsService(i18nService);
 const broadcasterService = new BroadcasterService();
@@ -89,7 +86,7 @@ const environmentService = new EnvironmentService(apiService, storageService);
 const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
 const cipherService = new CipherService(cryptoService, userService, settingsService,
-    apiService, storageService, i18nService, platformUtilsService, utilsService);
+    apiService, storageService, i18nService, platformUtilsService);
 const folderService = new FolderService(cryptoService, userService,
     () => i18nService.t('noneFolder'), apiService, storageService, i18nService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
@@ -157,7 +154,6 @@ export function initFactory(): Function {
         { provide: TotpServiceAbstraction, useValue: totpService },
         { provide: TokenServiceAbstraction, useValue: tokenService },
         { provide: I18nServiceAbstraction, useValue: i18nService },
-        { provide: UtilsServiceAbstraction, useValue: utilsService },
         { provide: CryptoServiceAbstraction, useValue: cryptoService },
         { provide: PlatformUtilsServiceAbstraction, useValue: platformUtilsService },
         { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
