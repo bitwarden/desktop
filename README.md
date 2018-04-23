@@ -5,9 +5,9 @@
 # Bitwarden Browser Extension
 
 <a href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" target="_blank"><img src="https://imgur.com/3C4iKO0.png" width="64" height="64"></a>
-<a href="https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/" target="_blank"><img src="http://imgur.com/Dy442GK.png" width="64" height="64"></a>
+<a href="https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/" target="_blank"><img src="https://imgur.com/Dy442GK.png" width="64" height="64"></a>
 <a href="https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl" target="_blank"><img src="https://imgur.com/RlmwPGO.png" width="64" height="64"></a>
-<a href="https://addons.opera.com/extensions/details/bitwarden-free-password-manager/" target="_blank"><img src="http://imgur.com/nSJ9htU.png" width="64" height="64"></a>
+<a href="https://addons.opera.com/extensions/details/bitwarden-free-password-manager/" target="_blank"><img src="https://imgur.com/nSJ9htU.png" width="64" height="64"></a>
 <a href="https://safari-extensions.apple.com/details/?id=com.bitwarden.safari-LTZ2PFU5D6" target="_blank"><img src="https://imgur.com/ENbaWUu.png" width="64" height="64"></a>
 <a href="https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb" target="_blank"><img src="https://imgur.com/EuDp4vP.png" width="64" height="64"></a>
 <a href="https://brave.com/" target="_blank"><img src="https://imgur.com/z8yjLZ2.png" width="64" height="64"></a>
@@ -22,7 +22,7 @@ The Bitwarden browser extension is written using the Web Extension API and Angul
 **Requirements**
 
 - [Node.js](https://nodejs.org) v8.11 or greater
-- [Gulp](http://gulpjs.com/) (`npm install --global gulp-cli`)
+- [Gulp](https://gulpjs.com/) (`npm install --global gulp-cli`)
 - Chrome (preferred), Opera, or Firefox browser
 
 **Run the app**
