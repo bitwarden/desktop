@@ -153,8 +153,11 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 BrowserApi.closePopup(window);
             }
         }).catch(() => {
-            this.analytics.eventTrack.next({ action: 'Autofilled Error' });
-            this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
+            this.ngZone.run(() => {
+                this.analytics.eventTrack.next({ action: 'Autofilled Error' });
+                this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
+                this.changeDetectorRef.detectChanges();
+            });
         });
 
         // Weird bug in Safari won't allow clipboard copying after a promise call, so we have this workaround
