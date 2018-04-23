@@ -105,10 +105,8 @@ var IsoProvinces: { [id: string]: string; } = {
 /* tslint:enable */
 
 export default class AutofillService implements AutofillServiceInterface {
-    constructor(public cipherService: CipherService, public tokenService: TokenService,
-        public totpService: TotpService, public utilsService: UtilsServiceAbstraction,
-        public platformUtilsService: PlatformUtilsService) {
-    }
+    constructor(private cipherService: CipherService, private tokenService: TokenService,
+        private totpService: TotpService) { }
 
     getFormsWithPasswordFields(pageDetails: AutofillPageDetails): any[] {
         const formData: any[] = [];
@@ -180,8 +178,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 fillScript: fillScript,
             }, { frameId: pd.frameId });
 
-            if (options.cipher.type !== CipherType.Login || totpPromise ||
-                (options.fromBackground && this.platformUtilsService.isFirefox()) || options.skipTotp ||
+            if (options.cipher.type !== CipherType.Login || totpPromise || options.skipTotp ||
                 !options.cipher.login.totp || !this.tokenService.getPremium()) {
                 return;
             }
@@ -190,21 +187,13 @@ export default class AutofillService implements AutofillServiceInterface {
                 if (enabled) {
                     return this.totpService.getCode(options.cipher.login.totp);
                 }
-
                 return null;
-            }).then((code: string) => {
-                if (code) {
-                    UtilsService.copyToClipboard(code, options.doc);
-                }
-
-                return code;
             });
         });
 
         if (didAutofill) {
             if (totpPromise != null) {
-                const totpCode = await totpPromise;
-                return totpCode;
+                return await totpPromise;
             } else {
                 return null;
             }
@@ -224,11 +213,10 @@ export default class AutofillService implements AutofillServiceInterface {
             return;
         }
 
-        await this.doAutoFill({
+        return await this.doAutoFill({
             cipher: lastUsedCipher,
             // tslint:disable-next-line
             pageDetails: pageDetails,
-            fromBackground: true,
             skipTotp: !fromCommand,
             skipLastUsed: true,
             skipUsernameOnlyFill: !fromCommand,

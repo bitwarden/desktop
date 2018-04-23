@@ -136,11 +136,15 @@ export default class RuntimeBackground {
                         break;
                     case 'autofiller':
                     case 'autofill_cmd':
-                        await this.autofillService.doAutoFillForLastUsedLogin([{
+                        const totpCode = await this.autofillService.doAutoFillForLastUsedLogin([{
                             frameId: sender.frameId,
                             tab: msg.tab,
                             details: msg.details,
                         }], msg.sender === 'autofill_cmd');
+
+                        if (totpCode !== null && !this.platformUtilsService.isFirefox()) {
+                            this.platformUtilsService.copyToClipboard(totpCode);
+                        }
                         break;
                     case 'contextMenu':
                         clearTimeout(this.autofillTimeout);
@@ -161,11 +165,14 @@ export default class RuntimeBackground {
     }
 
     private async autofillPage() {
-        await this.autofillService.doAutoFill({
+        const totpCode = await this.autofillService.doAutoFill({
             cipher: this.main.loginToAutoFill,
             pageDetails: this.pageDetailsToAutoFill,
-            fromBackground: true,
         });
+
+        if (totpCode !== null && !this.platformUtilsService.isFirefox()) {
+            this.platformUtilsService.copyToClipboard(totpCode);
+        }
 
         // reset
         this.main.loginToAutoFill = null;

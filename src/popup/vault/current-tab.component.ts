@@ -134,12 +134,11 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             const totpCode = await this.autofillService.doAutoFill({
                 cipher: cipher,
                 pageDetails: this.pageDetails,
-                fromBackground: false,
                 doc: window.document,
             });
 
             this.analytics.eventTrack.next({ action: 'Autofilled' });
-            if (totpCode != null && this.platformUtilsService.isFirefox()) {
+            if (totpCode != null) {
                 this.platformUtilsService.copyToClipboard(totpCode, { doc: window.document });
             }
 
