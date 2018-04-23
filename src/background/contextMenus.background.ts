@@ -7,15 +7,15 @@ import { Analytics } from 'jslib/misc';
 import {
     CipherService,
     PasswordGenerationService,
+    PlatformUtilsService,
 } from 'jslib/abstractions';
-
-import { UtilsService } from 'jslib/services/utils.service';
 
 export default class ContextMenusBackground {
     private contextMenus: any;
 
     constructor(private main: MainBackground, private cipherService: CipherService,
-        private passwordGenerationService: PasswordGenerationService, private analytics: Analytics) {
+        private passwordGenerationService: PasswordGenerationService, private analytics: Analytics,
+        private platformUtilsService: PlatformUtilsService) {
         this.contextMenus = chrome.contextMenus;
     }
 
@@ -36,8 +36,8 @@ export default class ContextMenusBackground {
 
     private async generatePasswordToClipboard() {
         const options = await this.passwordGenerationService.getOptions();
-        const password = this.passwordGenerationService.generatePassword(options);
-        UtilsService.copyToClipboard(password);
+        const password = await this.passwordGenerationService.generatePassword(options);
+        this.platformUtilsService.copyToClipboard(password);
         this.passwordGenerationService.addHistory(password);
 
         this.analytics.ga('send', {
@@ -73,13 +73,13 @@ export default class ContextMenusBackground {
                     hitType: 'event',
                     eventAction: 'Copied Username From Context Menu',
                 });
-                UtilsService.copyToClipboard(cipher.login.username);
+                this.platformUtilsService.copyToClipboard(cipher.login.username);
             } else if (info.parentMenuItemId === 'copy-password') {
                 this.analytics.ga('send', {
                     hitType: 'event',
                     eventAction: 'Copied Password From Context Menu',
                 });
-                UtilsService.copyToClipboard(cipher.login.password);
+                this.platformUtilsService.copyToClipboard(cipher.login.password);
             }
 
             break;

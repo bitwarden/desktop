@@ -9,8 +9,6 @@ import {
     PlatformUtilsService,
 } from 'jslib/abstractions';
 
-import { UtilsService } from 'jslib/services/utils.service';
-
 export default class CommandsBackground {
     private commands: any;
     private isSafari: boolean;
@@ -67,7 +65,7 @@ export default class CommandsBackground {
 
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
-        UtilsService.copyToClipboard(password);
+        this.platformUtilsService.copyToClipboard(password);
         this.passwordGenerationService.addHistory(password);
 
         this.analytics.ga('send', {

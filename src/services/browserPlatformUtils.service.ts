@@ -7,8 +7,6 @@ import { DeviceType } from 'jslib/enums/deviceType';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
-import { UtilsService } from 'jslib/services/utils.service';
-
 const AnalyticsIds = {
     [DeviceType.Chrome]: 'UA-81915606-6',
     [DeviceType.Firefox]: 'UA-81915606-7',
@@ -194,8 +192,28 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     copyToClipboard(text: string, options?: any): void {
-        const doc = options ? options.doc : null;
-        UtilsService.copyToClipboard(text, doc);
+        const doc = options ? options.doc : window.document;
+        if ((window as any).clipboardData && (window as any).clipboardData.setData) {
+            // IE specific code path to prevent textarea being shown while dialog is visible.
+            (window as any).clipboardData.setData('Text', text);
+        } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
+            const textarea = doc.createElement('textarea');
+            textarea.textContent = text;
+            // Prevent scrolling to bottom of page in MS Edge.
+            textarea.style.position = 'fixed';
+            doc.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                // Security exception may be thrown by some browsers.
+                doc.execCommand('copy');
+            } catch (e) {
+                // tslint:disable-next-line
+                console.warn('Copy to clipboard failed.', e);
+            } finally {
+                doc.body.removeChild(textarea);
+            }
+        }
     }
 
     resolveDialogPromise(dialogId: number, confirmed: boolean) {

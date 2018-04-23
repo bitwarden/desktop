@@ -9,8 +9,6 @@ import AutofillScript from '../models/autofillScript';
 
 import { BrowserApi } from '../browser/browserApi';
 
-import { UtilsService } from 'jslib/services';
-
 import { AutofillService as AutofillServiceInterface } from './abstractions/autofill.service';
 
 import {
@@ -18,7 +16,6 @@ import {
     PlatformUtilsService,
     TokenService,
     TotpService,
-    UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',

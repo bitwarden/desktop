@@ -18,7 +18,6 @@ import {
     TokenService,
     TotpService,
     UserService,
-    UtilsService,
 } from 'jslib/services';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
@@ -42,7 +41,6 @@ import {
     TokenService as TokenServiceAbstraction,
     TotpService as TotpServiceAbstraction,
     UserService as UserServiceAbstraction,
-    UtilsService as UtilsServiceAbstraction,
 } from 'jslib/abstractions';
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 
@@ -72,7 +70,6 @@ export default class MainBackground {
     secureStorageService: StorageServiceAbstraction;
     i18nService: I18nServiceAbstraction;
     platformUtilsService: PlatformUtilsServiceAbstraction;
-    utilsService: UtilsServiceAbstraction;
     constantsService: ConstantsService;
     cryptoService: CryptoServiceAbstraction;
     tokenService: TokenServiceAbstraction;
@@ -114,7 +111,6 @@ export default class MainBackground {
 
     constructor() {
         // Services
-        this.utilsService = new UtilsService();
         this.messagingService = new BrowserMessagingService();
         this.platformUtilsService = new BrowserPlatformUtilsService(this.messagingService);
         this.storageService = new BrowserStorageService(this.platformUtilsService, false);
@@ -131,7 +127,7 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService, this.i18nService, this.platformUtilsService, this.utilsService);
+            this.apiService, this.storageService, this.i18nService, this.platformUtilsService);
         this.folderService = new FolderService(this.cryptoService, this.userService,
             () => this.i18nService.t('noneFolder'), this.apiService, this.storageService, this.i18nService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
@@ -168,7 +164,7 @@ export default class MainBackground {
 
         if (!this.isSafari) {
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
-                this.passwordGenerationService, this.analytics);
+                this.passwordGenerationService, this.analytics, this.platformUtilsService);
             this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
             this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService);
             this.windowsBackground = new WindowsBackground(this);

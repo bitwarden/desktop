@@ -22,11 +22,12 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
-import { UtilsService } from 'jslib/abstractions/utils.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 
 import { PopupUtilsService } from '../services/popup-utils.service';
+
+import { Utils } from 'jslib/misc/utils';
 
 const BroadcasterSubscriptionId = 'CurrentTabComponent';
 
@@ -55,8 +56,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
-        private utilsService: UtilsService) { }
+        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) { }
 
     async ngOnInit() {
         this.showLeftHeader = !this.platformUtilsService.isSafari();
@@ -187,7 +187,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             return;
         }
 
-        this.hostname = this.utilsService.getHostname(this.url);
+        this.hostname = Utils.getHostname(this.url);
         BrowserApi.tabSendMessage(tab, {
             command: 'collectPageDetails',
             tab: tab,

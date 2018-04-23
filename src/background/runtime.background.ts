@@ -5,7 +5,6 @@ import { LoginUriView } from 'jslib/models/view/loginUriView';
 import { LoginView } from 'jslib/models/view/loginView';
 
 import { ConstantsService } from 'jslib/services/constants.service';
-import { UtilsService } from 'jslib/services/utils.service';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 
@@ -22,6 +21,8 @@ import MainBackground from './main.background';
 
 import { AutofillService } from '../services/abstractions/autofill.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
+
+import { Utils } from 'jslib/misc/utils';
 
 export default class RuntimeBackground {
     private runtime: any;
@@ -200,7 +201,7 @@ export default class RuntimeBackground {
             loginModel.username = loginInfo.username;
             loginModel.password = loginInfo.password;
             const model = new CipherView();
-            model.name = UtilsService.getHostname(loginInfo.uri) || loginInfo.domain;
+            model.name = Utils.getHostname(loginInfo.uri) || loginInfo.domain;
             model.type = CipherType.Login;
             model.login = loginModel;
 
@@ -228,7 +229,7 @@ export default class RuntimeBackground {
             }
 
             this.main.loginsToAdd.splice(i, 1);
-            const hostname = UtilsService.getHostname(tab.url);
+            const hostname = Utils.getHostname(tab.url);
             await this.cipherService.saveNeverDomain(hostname);
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
         }

@@ -34,7 +34,6 @@ import { SyncService } from 'jslib/abstractions/sync.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
-import { UtilsService } from 'jslib/abstractions/utils.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
 import BrowserMessagingService from '../../services/browserMessaging.service';
@@ -113,7 +112,6 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: TotpService, useFactory: getBgService<TotpService>('totpService'), deps: [] },
         { provide: TokenService, useFactory: getBgService<TokenService>('tokenService'), deps: [] },
         { provide: I18nService, useFactory: getBgService<I18nService>('i18nService'), deps: [] },
-        { provide: UtilsService, useFactory: getBgService<UtilsService>('utilsService'), deps: [] },
         { provide: CryptoService, useFactory: getBgService<CryptoService>('cryptoService'), deps: [] },
         {
             provide: PlatformUtilsService,
