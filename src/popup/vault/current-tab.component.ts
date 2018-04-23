@@ -126,7 +126,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         this.router.navigate(['/view-cipher'], { queryParams: { cipherId: cipher.id } });
     }
 
-    async fillCipher(cipher: CipherView) {
+    fillCipher(cipher: CipherView) {
         this.totpCode = null;
         if (this.totpTimeout != null) {
             window.clearTimeout(this.totpTimeout);
@@ -138,28 +138,27 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             return;
         }
 
-        try {
-            this.totpCode = await this.autofillService.doAutoFill({
-                cipher: cipher,
-                pageDetails: this.pageDetails,
-                doc: window.document,
-            });
-
+        this.autofillService.doAutoFill({
+            cipher: cipher,
+            pageDetails: this.pageDetails,
+            doc: window.document,
+        }).then((totpCode) => {
+            this.totpCode = totpCode;
             this.analytics.eventTrack.next({ action: 'Autofilled' });
-            if (this.totpCode != null && !this.platformUtilsService.isSafari()) {
-                this.platformUtilsService.copyToClipboard(this.totpCode, { doc: window.document });
+            if (totpCode != null && !this.platformUtilsService.isSafari()) {
+                this.platformUtilsService.copyToClipboard(totpCode, { doc: window.document });
             }
 
             if (this.popupUtilsService.inPopup(window)) {
                 BrowserApi.closePopup(window);
             }
-        } catch {
+        }).catch(() => {
             this.analytics.eventTrack.next({ action: 'Autofilled Error' });
             this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
-        }
+        });
 
-        // Weird bug in Safari won't allow clipboard copying after promise call, so we have this workaround
-        if (this.platformUtilsService.isSafari()) {
+        // Weird bug in Safari won't allow clipboard copying after a promise call, so we have this workaround
+        if (cipher.type === CipherType.Login && this.platformUtilsService.isSafari()) {
             this.totpTimeout = window.setTimeout(() => {
                 if (this.totpCode != null) {
                     this.platformUtilsService.copyToClipboard(this.totpCode, { doc: window.document });
