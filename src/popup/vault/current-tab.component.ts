@@ -45,7 +45,10 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     inSidebar = false;
     showLeftHeader = false;
     loaded = false;
-    loadedTimeout: number;
+
+    private totpCode: string;
+    private totpTimeout: number;
+    private loadedTimeout: number;
 
     constructor(private platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
         private popupUtilsService: PopupUtilsService, private autofillService: AutofillService,
@@ -124,6 +127,11 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     async fillCipher(cipher: CipherView) {
+        this.totpCode = null;
+        if (this.totpTimeout != null) {
+            window.clearTimeout(this.totpTimeout);
+        }
+
         if (this.pageDetails == null || this.pageDetails.length === 0) {
             this.analytics.eventTrack.next({ action: 'Autofilled Error' });
             this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
@@ -131,15 +139,15 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         }
 
         try {
-            const totpCode = await this.autofillService.doAutoFill({
+            this.totpCode = await this.autofillService.doAutoFill({
                 cipher: cipher,
                 pageDetails: this.pageDetails,
                 doc: window.document,
             });
 
             this.analytics.eventTrack.next({ action: 'Autofilled' });
-            if (totpCode != null) {
-                this.platformUtilsService.copyToClipboard(totpCode, { doc: window.document });
+            if (this.totpCode != null && !this.platformUtilsService.isSafari()) {
+                this.platformUtilsService.copyToClipboard(this.totpCode, { doc: window.document });
             }
 
             if (this.popupUtilsService.inPopup(window)) {
@@ -148,6 +156,15 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         } catch {
             this.analytics.eventTrack.next({ action: 'Autofilled Error' });
             this.toasterService.popAsync('error', null, this.i18nService.t('autofillError'));
+        }
+
+        // Weird bug in Safari won't allow clipboard copying after promise call, so we have this workaround
+        if (this.platformUtilsService.isSafari()) {
+            this.totpTimeout = window.setTimeout(() => {
+                if (this.totpCode != null) {
+                    this.platformUtilsService.copyToClipboard(this.totpCode, { doc: window.document });
+                }
+            }, 500);
         }
     }
 
