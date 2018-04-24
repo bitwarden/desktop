@@ -5,14 +5,14 @@ import {
 
 import { ToasterModule } from 'angular2-toaster';
 
-import { isDev } from '../../scripts/utils';
+import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
+import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
+import { ElectronRendererSecureStorageService } from 'jslib/electron/services/electronRendererSecureStorage.service';
+import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
+import { isDev } from 'jslib/electron/utils';
 
-import { DesktopPlatformUtilsService } from '../../services/desktopPlatformUtils.service';
 import { DesktopRendererMessagingService } from '../../services/desktopRendererMessaging.service';
-import { DesktopRendererSecureStorageService } from '../../services/desktopRendererSecureStorage.service';
-import { DesktopStorageService } from '../../services/desktopStorage.service';
 import { I18nService } from '../../services/i18n.service';
-import { LogService } from '../../services/log.service';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
@@ -67,14 +67,14 @@ import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/toke
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
 
-const logService = new LogService();
+const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
 const stateService = new StateService();
-const platformUtilsService = new DesktopPlatformUtilsService(i18nService);
+const platformUtilsService = new ElectronPlatformUtilsService(i18nService, true);
 const broadcasterService = new BroadcasterService();
 const messagingService = new DesktopRendererMessagingService(broadcasterService);
-const storageService: StorageServiceAbstraction = new DesktopStorageService();
-const secureStorageService: StorageServiceAbstraction = new DesktopRendererSecureStorageService();
+const storageService: StorageServiceAbstraction = new ElectronStorageService();
+const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
 const cryptoService = new CryptoService(storageService, secureStorageService, cryptoFunctionService);

@@ -8,13 +8,14 @@ import log from 'electron-log';
 import { autoUpdater } from 'electron-updater';
 
 import { Main } from '../main';
+
 import {
     isAppImage,
     isDev,
     isMacAppStore,
     isWindowsPortable,
     isWindowsStore,
-} from '../scripts/utils';
+} from 'jslib/electron/utils';
 
 const UpdaterCheckInitalDelay = 5 * 1000; // 5 seconds
 const UpdaterCheckInterval = 12 * 60 * 60 * 1000; // 12 hours

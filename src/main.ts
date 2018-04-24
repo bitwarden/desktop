@@ -2,20 +2,21 @@ import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 
 import { DesktopMainMessagingService } from './services/desktopMainMessaging.service';
-import { DesktopStorageService } from './services/desktopStorage.service';
 import { I18nService } from './services/i18n.service';
-import { LogService } from './services/log.service';
 
 import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 import { UpdaterMain } from './main/updater.main';
-import { WindowMain } from './main/window.main';
+
+import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
+import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
+import { WindowMain } from 'jslib/electron/window.main';
 
 export class Main {
-    logService: LogService;
+    logService: ElectronLogService;
     i18nService: I18nService;
-    storageService: DesktopStorageService;
+    storageService: ElectronStorageService;
     messagingService: DesktopMainMessagingService;
 
     windowMain: WindowMain;
@@ -48,12 +49,12 @@ export class Main {
             require('electron-reload')(__dirname, {});
         }
 
-        this.logService = new LogService(null, app.getPath('userData'));
+        this.logService = new ElectronLogService(null, app.getPath('userData'));
         this.i18nService = new I18nService('en', './locales/');
-        this.storageService = new DesktopStorageService();
+        this.storageService = new ElectronStorageService();
         this.messagingService = new DesktopMainMessagingService(this);
 
-        this.windowMain = new WindowMain(this);
+        this.windowMain = new WindowMain(this.storageService);
         this.messagingMain = new MessagingMain(this);
         this.updaterMain = new UpdaterMain(this);
         this.menuMain = new MenuMain(this);

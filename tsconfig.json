@@ -8,7 +8,9 @@
     "target": "ES2016",
     "allowJs": true,
     "sourceMap": true,
-    "types": [],
+    "types": [
+      "node"
+    ],
     "baseUrl": ".",
     "paths": {
       "jslib/*": [ "jslib/src/*" ],
@@ -19,6 +21,8 @@
   },
   "exclude": [
     "node_modules",
+    "src/node_modules",
+    "jslib/node_modules/electron/electron.d.ts",
     "jslib/node_modules",
     "dist",
     "jslib/dist",
