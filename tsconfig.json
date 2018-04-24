@@ -16,13 +16,12 @@
       "jslib/*": [ "jslib/src/*" ],
       "@angular/*": [ "node_modules/@angular/*" ],
       "angular2-toaster": [ "node_modules/angular2-toaster" ],
-      "angulartics2": [ "node_modules/angulartics2" ]
+      "angulartics2": [ "node_modules/angulartics2" ],
+      "electron": [ "node_modules/electron" ]
     }
   },
   "exclude": [
     "node_modules",
-    "src/node_modules",
-    "jslib/node_modules/electron/electron.d.ts",
     "jslib/node_modules",
     "dist",
     "jslib/dist",
