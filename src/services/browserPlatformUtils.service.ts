@@ -7,14 +7,7 @@ import { DeviceType } from 'jslib/enums/deviceType';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
-const AnalyticsIds = {
-    [DeviceType.Chrome]: 'UA-81915606-6',
-    [DeviceType.Firefox]: 'UA-81915606-7',
-    [DeviceType.Opera]: 'UA-81915606-8',
-    [DeviceType.Edge]: 'UA-81915606-9',
-    [DeviceType.Vivaldi]: 'UA-81915606-15',
-    [DeviceType.Safari]: 'UA-81915606-16',
-};
+import { AnalyticsIds } from 'jslib/misc/analytics';
 
 const DialogPromiseExpiration = 600000; // 10 minutes
 

@@ -25,6 +25,7 @@
     "dist",
     "jslib/dist",
     "jslib/spec",
+    "jslib/src/electron",
     "build",
     "build.safariextension",
     "coverage",
