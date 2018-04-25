@@ -11,8 +11,8 @@ import { ElectronRendererSecureStorageService } from 'jslib/electron/services/el
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { isDev } from 'jslib/electron/utils';
 
-import { DesktopRendererMessagingService } from '../../services/desktopRendererMessaging.service';
-import { I18nService } from '../../services/i18n.service';
+import { DesktopRendererMessagingService } from '../services/desktopRendererMessaging.service';
+import { I18nService } from '../services/i18n.service';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
