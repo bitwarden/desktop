@@ -17,9 +17,12 @@ import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/l
 export class LoginComponent extends BaseLoginComponent {
     constructor(authService: AuthService, router: Router,
         analytics: Angulartics2, toasterService: ToasterService,
-        i18nService: I18nService, syncService: SyncService) {
-        super(authService, router, analytics, toasterService, i18nService, syncService);
-        this.successRoute = '/tabs/vault';
+        i18nService: I18nService, private syncService: SyncService) {
+        super(authService, router, analytics, toasterService, i18nService);
+        super.onSuccessfullLogin = () => {
+            return syncService.fullSync(true);
+        };
+        super.successRoute = '/tabs/vault';
     }
 
     settings() {

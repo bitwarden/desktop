@@ -42,8 +42,11 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService, private ngZone: NgZone,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
-            platformUtilsService, syncService, window, environmentService);
-        this.successRoute = '/tabs/vault';
+            platformUtilsService, window, environmentService);
+        super.onSuccessfullLogin = () => {
+            return syncService.fullSync(true);
+        };
+        super.successRoute = '/tabs/vault';
     }
 
     async ngOnInit() {
