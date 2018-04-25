@@ -32,6 +32,7 @@ import { CryptoService } from 'jslib/services/crypto.service';
 import { EnvironmentService } from 'jslib/services/environment.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { LockService } from 'jslib/services/lock.service';
+import { NodeCryptoFunctionService } from 'jslib/services/nodeCryptoFunction.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
 import { SettingsService } from 'jslib/services/settings.service';
 import { StateService } from 'jslib/services/state.service';
@@ -39,7 +40,6 @@ import { SyncService } from 'jslib/services/sync.service';
 import { TokenService } from 'jslib/services/token.service';
 import { TotpService } from 'jslib/services/totp.service';
 import { UserService } from 'jslib/services/user.service';
-import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib/abstractions/api.service';
 import { AppIdService as AppIdServiceAbstraction } from 'jslib/abstractions/appId.service';
@@ -75,8 +75,7 @@ const broadcasterService = new BroadcasterService();
 const messagingService = new ElectronRendererMessagingService(broadcasterService);
 const storageService: StorageServiceAbstraction = new ElectronStorageService();
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
-const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
-    platformUtilsService);
+const cryptoFunctionService: CryptoFunctionServiceAbstraction = new NodeCryptoFunctionService();
 const cryptoService = new CryptoService(storageService, secureStorageService, cryptoFunctionService);
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
