@@ -34,14 +34,14 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="loginUsername">{{'username' | i18n}}</label>
                         <input id="loginUsername" type="text" name="Login.Username"
-                               [(ngModel)]="cipher.login.username">
+                               [(ngModel)]="cipher.login.username" inputmode="email" appInputVerbatim>
                     </div>
                     <div class="box-content-row box-content-row-flex" appBoxRow>
                         <div class="row-main">
                             <label for="loginPassword">{{'password' | i18n}}</label>
                             <input id="loginPassword" class="monospaced"
                                    type="{{showPassword ? 'text' : 'password'}}" name="Login.Password"
-                                   [(ngModel)]="cipher.login.password">
+                                   [(ngModel)]="cipher.login.password" appInputVerbatim>
                         </div>
                         <div class="action-buttons">
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
@@ -65,7 +65,7 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
                         <input id="loginTotp" type="text" name="Login.Totp" class="monospaced"
-                               [(ngModel)]="cipher.login.totp">
+                               [(ngModel)]="cipher.login.totp" appInputVerbatim>
                     </div>
                 </div>
                 <!-- Card -->
@@ -77,7 +77,8 @@
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="cardNumber">{{'number' | i18n}}</label>
-                        <input id="cardNumber" type="text" name="Card.Number" [(ngModel)]="cipher.card.number">
+                        <input id="cardNumber" type="text" name="Card.Number" [(ngModel)]="cipher.card.number"
+                               appInputVerbatim>
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="cardBrand">{{'brand' | i18n}}</label>
@@ -98,7 +99,8 @@
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="cardCode">{{'securityCode' | i18n}}</label>
-                        <input id="cardCode" type="text" name="Card.Code" [(ngModel)]="cipher.card.code">
+                        <input id="cardCode" type="text" name="Card.Code" [(ngModel)]="cipher.card.code"
+                               appInputVerbatim>
                     </div>
                 </div>
                 <!-- Identity -->
@@ -127,7 +129,7 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="idUsername">{{'username' | i18n}}</label>
                         <input id="idUsername" type="text" name="Identity.Username"
-                               [(ngModel)]="cipher.identity.username">
+                               [(ngModel)]="cipher.identity.username" appInputVerbatim>
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="idCompany">{{'company' | i18n}}</label>
@@ -136,21 +138,23 @@
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="idSsn">{{'ssn' | i18n}}</label>
-                        <input id="idSsn" type="text" name="Identity.SSN" [(ngModel)]="cipher.identity.ssn">
+                        <input id="idSsn" type="text" name="Identity.SSN" [(ngModel)]="cipher.identity.ssn"
+                               appInputVerbatim>
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="idPassportNumber">{{'passportNumber' | i18n}}</label>
                         <input id="idPassportNumber" type="text" name="Identity.PassportNumber"
-                               [(ngModel)]="cipher.identity.passportNumber">
+                               [(ngModel)]="cipher.identity.passportNumber" appInputVerbatim>
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="idLicenseNumber">{{'licenseNumber' | i18n}}</label>
                         <input id="idLicenseNumber" type="text" name="Identity.LicenseNumber"
-                               [(ngModel)]="cipher.identity.licenseNumber">
+                               [(ngModel)]="cipher.identity.licenseNumber" appInputVerbatim>
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="idEmail">{{'email' | i18n}}</label>
-                        <input id="idEmail" type="text" name="Identity.Email" [(ngModel)]="cipher.identity.email">
+                        <input id="idEmail" type="text" name="Identity.Email" [(ngModel)]="cipher.identity.email"
+                               appInputVerbatim>
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="idPhone">{{'phone' | i18n}}</label>
@@ -203,7 +207,8 @@
                         <div class="row-main">
                             <label for="loginUri{{i}}">{{'uriPosition' | i18n : (i + 1)}}</label>
                             <input id="loginUri{{i}}" type="text" name="Login.Uris[{{i}}].Uri" [(ngModel)]="u.uri"
-                                   placeholder="{{'ex' | i18n}} https://google.com">
+                                   placeholder="{{'ex' | i18n}} https://google.com" inputmode="url"
+                                   appInputVerbatim>
                             <label for="loginUriMatch{{i}}" class="sr-only">
                                 {{'matchDetection' | i18n}} {{(i + 1)}}
                             </label>
@@ -272,11 +277,11 @@
                         <label for="fieldValue{{i}}" class="sr-only">{{'value' | i18n}}</label>
                         <div class="row-main">
                             <input id="fieldName{{i}}" type="text" name="Field.Name{{i}}" [(ngModel)]="f.name"
-                                   class="row-label" placeholder="{{'name' | i18n}}">
+                                   class="row-label" placeholder="{{'name' | i18n}}" appInputVerbatim>
                             <input id="fieldValue{{i}}" type="text" name="Field.Value{{i}}" [(ngModel)]="f.value"
-                                   *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
+                                   *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}" appInputVerbatim>
                             <input id="fieldValue{{i}}" type="{{f.showValue ? 'text' : 'password'}}"
-                                   name="Field.Value{{i}}" [(ngModel)]="f.value" class="monospaced"
+                                   name="Field.Value{{i}}" [(ngModel)]="f.value" class="monospaced" appInputVerbatim
                                    *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
                         </div>
                         <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox"

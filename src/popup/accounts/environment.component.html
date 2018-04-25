@@ -22,7 +22,7 @@
                 <div class="box-content-row" appBoxRow>
                     <label for="baseUrl">{{'baseUrl' | i18n}}</label>
                     <input id="baseUrl" type="text" name="BaseUrl" [(ngModel)]="baseUrl"
-                           placeholder="ex. https://bitwarden.company.com">
+                           placeholder="ex. https://bitwarden.company.com" appInputVerbatim>
                 </div>
             </div>
             <div class="box-footer">
@@ -36,19 +36,22 @@
             <div class="box-content" [hidden]="!showCustom">
                 <div class="box-content-row" appBoxRow>
                     <label for="webVaultUrl">{{'webVaultUrl' | i18n}}</label>
-                    <input id="webVaultUrl" type="text" name="WebVaultUrl" [(ngModel)]="webVaultUrl">
+                    <input id="webVaultUrl" type="text" name="WebVaultUrl" [(ngModel)]="webVaultUrl" inputmode="url"
+                           appInputVerbatim>
                 </div>
                 <div class="box-content-row" appBoxRow>
                     <label for="apiUrl">{{'apiUrl' | i18n}}</label>
-                    <input id="apiUrl" type="text" name="ApiUrl" [(ngModel)]="apiUrl">
+                    <input id="apiUrl" type="text" name="ApiUrl" [(ngModel)]="apiUrl" inputmode="url" appInputVerbatim>
                 </div>
                 <div class="box-content-row" appBoxRow>
                     <label for="identityUrl">{{'identityUrl' | i18n}}</label>
-                    <input id="identityUrl" type="text" name="IdentityUrl" [(ngModel)]="identityUrl">
+                    <input id="identityUrl" type="text" name="IdentityUrl" [(ngModel)]="identityUrl" inputmode="url"
+                           appInputVerbatim>
                 </div>
                 <div class="box-content-row" appBoxRow>
                     <label for="iconsUrl">{{'iconsUrl' | i18n}}</label>
-                    <input id="iconsUrl" type="text" name="IconsUrl" [(ngModel)]="iconsUrl">
+                    <input id="iconsUrl" type="text" name="IconsUrl" [(ngModel)]="iconsUrl" inputmode="url"
+                           appInputVerbatim>
                 </div>
             </div>
             <div class="box-footer" [hidden]="!showCustom">
