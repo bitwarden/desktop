@@ -9,6 +9,8 @@ import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 import { UpdaterMain } from './main/updater.main';
 
+import { ConstantsService } from 'jslib/services/constants.service';
+
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { WindowMain } from 'jslib/electron/window.main';
@@ -62,17 +64,16 @@ export class Main {
     }
 
     bootstrap() {
-        this.storageService.get<string>('locale').then(async (locale) => {
-            this.windowMain.init().then(async () => {
-                await this.i18nService.init(locale !== null ? locale : app.getLocale());
-                this.messagingMain.init();
-                this.menuMain.init();
-                this.powerMonitorMain.init();
-                await this.updaterMain.init();
-            }, (e: any) => {
-                // tslint:disable-next-line
-                console.error(e);
-            });
+        this.windowMain.init().then(async () => {
+            const locale = await this.storageService.get<string>(ConstantsService.localeKey);
+            await this.i18nService.init(locale != null ? locale : app.getLocale());
+            this.messagingMain.init();
+            this.menuMain.init();
+            this.powerMonitorMain.init();
+            await this.updaterMain.init();
+        }, (e: any) => {
+            // tslint:disable-next-line
+            console.error(e);
         });
     }
 }

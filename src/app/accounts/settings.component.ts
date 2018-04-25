@@ -22,12 +22,12 @@ import { SupportedTranslationLocales } from '../../services/i18n.service';
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    lockOptions: any[];
     lockOption: number = null;
     disableGa: boolean = false;
     disableFavicons: boolean = false;
-    locales: any[];
     locale: string;
+    lockOptions: any[];
+    localeOptions: any[];
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -48,16 +48,16 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('never'), value: null },
         ];
 
-        this.locales = [ { locale: null, language: 'Default' } ];
-        Object.keys(SupportedTranslationLocales).forEach((localId) => {
-            this.locales.push({locale: localId, language: i18nService.t(localId)});
+        this.localeOptions = [{ name: i18nService.t('default'), value: null }];
+        SupportedTranslationLocales.forEach((locale) => {
+            this.localeOptions.push({ name: locale, value: locale });
         });
     }
 
     async ngOnInit() {
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
-        this.locale = await this.storageService.get<string>('locale');
+        this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
 
         const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
         const disableGaByDefault = this.platformUtilsService.isFirefox() || this.platformUtilsService.isMacAppStore();
@@ -85,12 +85,13 @@ export class SettingsComponent implements OnInit {
         this.callAnalytics('Favicons', !this.disableGa);
     }
 
+    async saveLocale() {
+        await this.storageService.save(ConstantsService.localeKey, this.locale);
+        this.analytics.eventTrack.next({ action: 'Set Locale ' + this.locale });
+    }
+
     private callAnalytics(name: string, enabled: boolean) {
         const status = enabled ? 'Enabled' : 'Disabled';
         this.analytics.eventTrack.next({ action: `${status} ${name}` });
-    }
-
-    async saveLocale() {
-        await this.storageService.save('locale', this.locale);
     }
 }

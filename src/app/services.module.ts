@@ -110,7 +110,8 @@ environmentService.setUrlsFromStorage().then(() => {
 
 export function initFactory(): Function {
     return async () => {
-        await i18nService.init(await storageService.get<string>('locale'));
+        const locale = await storageService.get<string>(ConstantsService.localeKey);
+        await i18nService.init(locale);
         await authService.init();
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());

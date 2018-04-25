@@ -774,7 +774,7 @@
     "message": "Language"
   },
   "languageDesc": {
-    "message": "Change language. Require restart."
+    "message": "Change the language used by the application. Restart is required."
   },
   "copy": {
     "message": "Copy",
@@ -1028,5 +1028,8 @@
   "organization": {
     "message": "Organization",
     "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Default"
   }
 }
