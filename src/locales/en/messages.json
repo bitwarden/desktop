@@ -770,6 +770,12 @@
   "disableFaviconDesc": {
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
+  "language": {
+    "message": "Language"
+  },
+  "languageDesc": {
+    "message": "Change language. Require restart."
+  },
   "copy": {
     "message": "Copy",
     "description": "Copy to clipboard"

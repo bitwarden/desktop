@@ -42,6 +42,14 @@
                             </div>
                             <small class="help-block">{{'disableFaviconDesc' | i18n}}</small>
                         </div>
+                        <div class="form-group">
+                            <label for="locale">{{'language' | i18n}}</label>
+                            <select id="locale" name="Locale" [(ngModel)]="locale"
+                                    (change)="saveLocale()">
+                                <option *ngFor="let o of locales" [ngValue]="o.locale">{{o.language}}</option>
+                            </select>
+                            <small class="help-block">{{'languageDesc' | i18n}}</small>
+                        </div>
                     </div>
                 </div>
             </div>
