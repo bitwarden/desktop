@@ -6,7 +6,7 @@ import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { AppRoutingModule } from './app-routing.module';
-import { ServicesModule } from './services.module';
+import { ServicesModule } from './services/services.module';
 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
