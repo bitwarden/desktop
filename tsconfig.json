@@ -8,9 +8,7 @@
     "target": "ES2016",
     "allowJs": true,
     "sourceMap": true,
-    "types": [
-      "node"
-    ],
+    "types": [],
     "baseUrl": ".",
     "paths": {
       "jslib/*": [ "jslib/src/*" ],
