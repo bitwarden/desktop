@@ -15,8 +15,6 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
-import { SupportedTranslationLocales } from '../../services/i18n.service';
-
 @Component({
     selector: 'app-settings',
     templateUrl: 'settings.component.html',
@@ -49,7 +47,7 @@ export class SettingsComponent implements OnInit {
         ];
 
         this.localeOptions = [{ name: i18nService.t('default'), value: null }];
-        SupportedTranslationLocales.forEach((locale) => {
+        i18nService.supportedTranslationLocales.forEach((locale) => {
             this.localeOptions.push({ name: locale, value: locale });
         });
     }
