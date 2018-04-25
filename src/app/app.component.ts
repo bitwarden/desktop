@@ -16,14 +16,14 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ModalComponent } from './modal.component';
-
 import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
+
+import { ModalComponent } from 'jslib/angular/components/modal.component';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 

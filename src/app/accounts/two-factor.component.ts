@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
-import { ModalComponent } from '../modal.component';
-
 import { TwoFactorOptionsComponent } from './two-factor-options.component';
 
 import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
@@ -23,6 +21,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
+import { ModalComponent } from 'jslib/angular/components/modal.component';
 import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/components/two-factor.component';
 
 @Component({

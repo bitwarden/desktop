@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
-import { ModalComponent } from '../modal.component';
 import { EnvironmentComponent } from './environment.component';
 
 import { AuthService } from 'jslib/abstractions/auth.service';
@@ -17,6 +16,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
+import { ModalComponent } from 'jslib/angular/components/modal.component';
 
 @Component({
     selector: 'app-login',
