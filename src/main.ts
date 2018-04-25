@@ -11,6 +11,7 @@ import { UpdaterMain } from './main/updater.main';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { WindowMain } from 'jslib/electron/window.main';
@@ -20,6 +21,7 @@ export class Main {
     i18nService: I18nService;
     storageService: ElectronStorageService;
     messagingService: DesktopMainMessagingService;
+    keytarStorageListener: KeytarStorageListener;
 
     windowMain: WindowMain;
     messagingMain: MessagingMain;
@@ -61,9 +63,12 @@ export class Main {
         this.updaterMain = new UpdaterMain(this);
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
+
+        this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
     }
 
     bootstrap() {
+        this.keytarStorageListener.init();
         this.windowMain.init().then(async () => {
             const locale = await this.storageService.get<string>(ConstantsService.localeKey);
             await this.i18nService.init(locale != null ? locale : app.getLocale());

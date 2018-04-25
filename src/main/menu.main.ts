@@ -12,11 +12,13 @@ import {
 
 import { Main } from '../main';
 
+import { BaseMenu } from 'jslib/electron/baseMenu';
+
 import { isMacAppStore, isSnapStore, isWindowsStore } from 'jslib/electron/utils';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
-export class MenuMain {
+export class MenuMain extends BaseMenu {
     menu: Menu;
     updateMenuItem: MenuItem;
     addNewLogin: MenuItem;
@@ -35,9 +37,12 @@ export class MenuMain {
     searchVault: MenuItem;
     unlockedRequiredMenuItems: MenuItem[] = [];
 
-    constructor(private main: Main) { }
+    constructor(private main: Main) {
+        super(main.i18nService, main.windowMain, 'Bitwarden', () => this.main.messagingService.send('logout'));
+    }
 
     init() {
+        this.initProperties();
         this.initContextMenu();
         this.initApplicationMenu();
 
@@ -71,86 +76,6 @@ export class MenuMain {
         });
 
         this.logOut.enabled = isAuthenticated;
-    }
-
-    private initContextMenu() {
-        if (this.main.windowMain.win == null) {
-            return;
-        }
-
-        const selectionMenu = Menu.buildFromTemplate([
-            {
-                label: this.main.i18nService.t('copy'),
-                role: 'copy',
-            },
-            { type: 'separator' },
-            {
-                label: this.main.i18nService.t('selectAll'),
-                role: 'selectall',
-            },
-        ]);
-
-        const inputMenu = Menu.buildFromTemplate([
-            {
-                label: this.main.i18nService.t('undo'),
-                role: 'undo',
-            },
-            {
-                label: this.main.i18nService.t('redo'),
-                role: 'redo',
-            },
-            { type: 'separator' },
-            {
-                label: this.main.i18nService.t('cut'),
-                role: 'cut',
-                enabled: false,
-            },
-            {
-                label: this.main.i18nService.t('copy'),
-                role: 'copy',
-                enabled: false,
-            },
-            {
-                label: this.main.i18nService.t('paste'),
-                role: 'paste',
-            },
-            { type: 'separator' },
-            {
-                label: this.main.i18nService.t('selectAll'),
-                role: 'selectall',
-            },
-        ]);
-
-        const inputSelectionMenu = Menu.buildFromTemplate([
-            {
-                label: this.main.i18nService.t('cut'),
-                role: 'cut',
-            },
-            {
-                label: this.main.i18nService.t('copy'),
-                role: 'copy',
-            },
-            {
-                label: this.main.i18nService.t('paste'),
-                role: 'paste',
-            },
-            { type: 'separator' },
-            {
-                label: this.main.i18nService.t('selectAll'),
-                role: 'selectall',
-            },
-        ]);
-
-        this.main.windowMain.win.webContents.on('context-menu', (e, props) => {
-            const selected = props.selectionText && props.selectionText.trim() !== '';
-            if (props.isEditable && selected) {
-                inputSelectionMenu.popup(this.main.windowMain.win);
-            } else if (props.isEditable) {
-                inputMenu.popup(this.main.windowMain.win);
-            } else if (selected) {
-                selectionMenu.popup(this.main.windowMain.win);
-            }
-        });
     }
 
     private initApplicationMenu() {
@@ -210,24 +135,7 @@ export class MenuMain {
                 },
             },
             { type: 'separator' },
-            {
-                label: this.main.i18nService.t('logOut'),
-                id: 'logOut',
-                click: () => {
-                    const result = dialog.showMessageBox(this.main.windowMain.win, {
-                        title: this.main.i18nService.t('logOut'),
-                        message: this.main.i18nService.t('logOut'),
-                        detail: this.main.i18nService.t('logOutConfirmation'),
-                        buttons: [this.main.i18nService.t('logOut'), this.main.i18nService.t('cancel')],
-                        cancelId: 1,
-                        defaultId: 0,
-                        noLink: true,
-                    });
-                    if (result === 0) {
-                        this.main.messagingService.send('logout');
-                    }
-                },
-            },
+            this.logOutMenuItemOptions,
         ];
 
         if (!isMacAppStore() && !isWindowsStore()) {
@@ -287,40 +195,10 @@ export class MenuMain {
                     },
                 ],
             },
-            {
-                label: this.main.i18nService.t('edit'),
-                submenu: [
-                    {
-                        label: this.main.i18nService.t('undo'),
-                        role: 'undo',
-                    },
-                    {
-                        label: this.main.i18nService.t('redo'),
-                        role: 'redo',
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('cut'),
-                        role: 'cut',
-                    },
-                    {
-                        label: this.main.i18nService.t('copy'),
-                        role: 'copy',
-                    },
-                    {
-                        label: this.main.i18nService.t('paste'),
-                        role: 'paste',
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('selectAll'),
-                        role: 'selectall',
-                    },
-                ],
-            },
+            this.editMenuItemOptions,
             {
                 label: this.main.i18nService.t('view'),
-                submenu: [
+                submenu: ([
                     {
                         label: this.main.i18nService.t('searchVault'),
                         id: 'searchVault',
@@ -340,53 +218,13 @@ export class MenuMain {
                         click: () => this.main.messagingService.send('openPasswordHistory'),
                     },
                     { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('zoomIn'),
-                        role: 'zoomin', accelerator: 'CmdOrCtrl+=',
-                    },
-                    {
-                        label: this.main.i18nService.t('zoomOut'),
-                        role: 'zoomout', accelerator: 'CmdOrCtrl+-',
-                    },
-                    {
-                        label: this.main.i18nService.t('resetZoom'),
-                        role: 'resetzoom', accelerator: 'CmdOrCtrl+0',
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('toggleFullScreen'),
-                        role: 'togglefullscreen',
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('reload'),
-                        role: 'forcereload',
-                    },
-                    {
-                        label: this.main.i18nService.t('toggleDevTools'),
-                        role: 'toggledevtools',
-                        accelerator: 'F12',
-                    },
-                ],
+                ] as MenuItemConstructorOptions[]).concat(this.viewSubMenuItemOptions),
             },
             {
                 label: this.main.i18nService.t('account'),
                 submenu: accountSubmenu,
             },
-            {
-                label: this.main.i18nService.t('window'),
-                role: 'window',
-                submenu: [
-                    {
-                        label: this.main.i18nService.t('minimize'),
-                        role: 'minimize',
-                    },
-                    {
-                        label: this.main.i18nService.t('close'),
-                        role: 'close',
-                    },
-                ],
-            },
+            this.windowMenuItemOptions,
             {
                 label: this.main.i18nService.t('help'),
                 role: 'help',
@@ -531,54 +369,14 @@ export class MenuMain {
             }
 
             template.unshift({
-                label: 'Bitwarden',
+                label: this.appName,
                 submenu: firstMenuPart.concat(firstMenuOptions, [
                     { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('services'),
-                        role: 'services', submenu: [],
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('hideBitwarden'),
-                        role: 'hide',
-                    },
-                    {
-                        label: this.main.i18nService.t('hideOthers'),
-                        role: 'hideothers',
-                    },
-                    {
-                        label: this.main.i18nService.t('showAll'),
-                        role: 'unhide',
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('quitBitwarden'),
-                        role: 'quit',
-                    },
-                ]),
+                ], this.macAppMenuItemOptions),
             });
 
             // Window menu
-            template[template.length - 2].submenu = [
-                {
-                    label: this.main.i18nService.t('close'),
-                    role: isMacAppStore() ? 'quit' : 'close',
-                },
-                {
-                    label: this.main.i18nService.t('minimize'),
-                    role: 'minimize',
-                },
-                {
-                    label: this.main.i18nService.t('zoom'),
-                    role: 'zoom',
-                },
-                { type: 'separator' },
-                {
-                    label: this.main.i18nService.t('bringAllToFront'),
-                    role: 'front',
-                },
-            ];
+            template[template.length - 2].submenu = this.macWindowSubmenuOptions;
         } else {
             // File menu
             template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
@@ -593,27 +391,7 @@ export class MenuMain {
                 aboutMenuAdditions.push(updateMenuItem);
             }
 
-            aboutMenuAdditions.push({
-                label: this.main.i18nService.t('aboutBitwarden'),
-                click: () => {
-                    const aboutInformation = this.main.i18nService.t('version', app.getVersion()) +
-                        '\nShell ' + process.versions.electron +
-                        '\nRenderer ' + process.versions.chrome +
-                        '\nNode ' + process.versions.node +
-                        '\nArchitecture ' + process.arch;
-                    const result = dialog.showMessageBox(this.main.windowMain.win, {
-                        title: 'Bitwarden',
-                        message: 'Bitwarden',
-                        detail: aboutInformation,
-                        type: 'info',
-                        noLink: true,
-                        buttons: [this.main.i18nService.t('ok'), this.main.i18nService.t('copy')],
-                    });
-                    if (result === 1) {
-                        clipboard.writeText(aboutInformation);
-                    }
-                },
-            });
+            aboutMenuAdditions.push(this.aboutMenuItemOptions);
 
             template[template.length - 1].submenu =
                 (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat(aboutMenuAdditions);
