@@ -1,8 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
-
 import { I18nService as BaseI18nService } from 'jslib/services/i18n.service';
 
 export class I18nService extends BaseI18nService {
