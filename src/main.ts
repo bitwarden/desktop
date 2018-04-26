@@ -55,7 +55,11 @@ export class Main {
 
         this.logService = new ElectronLogService(null, app.getPath('userData'));
         this.i18nService = new I18nService('en', './locales/');
-        this.storageService = new ElectronStorageService();
+
+        const storageDefaults: any = {};
+        // Default lock options to "on restart".
+        storageDefaults[ConstantsService.lockOptionKey] = -1;
+        this.storageService = new ElectronStorageService(storageDefaults);
 
         this.windowMain = new WindowMain(this.storageService);
         this.messagingMain = new MessagingMain(this);
