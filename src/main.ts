@@ -1,7 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 
-import { DesktopMainMessagingService } from './services/desktopMainMessaging.service';
 import { I18nService } from './services/i18n.service';
 
 import { MenuMain } from './main/menu.main';
@@ -13,6 +12,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
+import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { WindowMain } from 'jslib/electron/window.main';
 
@@ -20,7 +20,7 @@ export class Main {
     logService: ElectronLogService;
     i18nService: I18nService;
     storageService: ElectronStorageService;
-    messagingService: DesktopMainMessagingService;
+    messagingService: ElectronMainMessagingService;
     keytarStorageListener: KeytarStorageListener;
 
     windowMain: WindowMain;
@@ -56,13 +56,16 @@ export class Main {
         this.logService = new ElectronLogService(null, app.getPath('userData'));
         this.i18nService = new I18nService('en', './locales/');
         this.storageService = new ElectronStorageService();
-        this.messagingService = new DesktopMainMessagingService(this);
 
         this.windowMain = new WindowMain(this.storageService);
         this.messagingMain = new MessagingMain(this);
         this.updaterMain = new UpdaterMain(this);
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
+
+        this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
+            this.messagingMain.onMessage(message);
+        });
 
         this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
     }
