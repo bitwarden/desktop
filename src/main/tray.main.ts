@@ -1,5 +1,5 @@
 import {
-    NativeImage,
+    nativeImage,
     Tray,
 } from 'electron';
 import * as path from 'path';
@@ -10,15 +10,17 @@ import { DesktopConstants } from '../desktopConstants';
 
 export class TrayMain {
     private tray: Tray;
-    private icon: string | NativeImage;
+    private icon: string | Electron.NativeImage;
+    private pressedIcon: Electron.NativeImage;
 
     constructor(private windowMain: WindowMain, private appName: string, private minToTray: () => Promise<boolean>) {
         if (process.platform === 'win32') {
             this.icon = path.join(__dirname, '/images/icon.ico');
         } else if (process.platform === 'darwin') {
-            const nativeImage = NativeImage.createFromPath(path.join(__dirname, '/images/icon-template.png'));
-            nativeImage.setTemplateImage(true);
-            this.icon = nativeImage;
+            const nImage = nativeImage.createFromPath(path.join(__dirname, '/images/icon-template.png'));
+            nImage.setTemplateImage(true);
+            this.icon = nImage;
+            this.pressedIcon = nativeImage.createFromPath(path.join(__dirname, '/images/icon-highlight.png'));
         } else {
             this.icon = path.join(__dirname, '/images/icon.png');
         }
@@ -47,6 +49,9 @@ export class TrayMain {
     private handleHideEvent() {
         this.tray = new Tray(this.icon);
         this.tray.setToolTip(this.appName);
+        if (this.pressedIcon != null) {
+            this.tray.setPressedImage(this.pressedIcon);
+        }
 
         this.tray.on('click', () => {
             if (this.windowMain.win.isVisible()) {
