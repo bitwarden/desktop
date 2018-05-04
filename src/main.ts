@@ -6,6 +6,7 @@ import { I18nService } from './services/i18n.service';
 import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
+import { TrayMain } from './main/tray.main';
 import { UpdaterMain } from './main/updater.main';
 
 import { ConstantsService } from 'jslib/services/constants.service';
@@ -28,6 +29,7 @@ export class Main {
     updaterMain: UpdaterMain;
     menuMain: MenuMain;
     powerMonitorMain: PowerMonitorMain;
+    trayMain: TrayMain;
 
     constructor() {
         // Set paths for portable builds
@@ -66,6 +68,7 @@ export class Main {
         this.updaterMain = new UpdaterMain(this);
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
+        this.trayMain = new TrayMain(this);
 
         this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
             this.messagingMain.onMessage(message);
@@ -82,6 +85,7 @@ export class Main {
             this.messagingMain.init();
             this.menuMain.init();
             this.powerMonitorMain.init();
+            this.trayMain.init();
             await this.updaterMain.init();
         }, (e: any) => {
             // tslint:disable-next-line
