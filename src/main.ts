@@ -16,6 +16,7 @@ import { ElectronLogService } from 'jslib/electron/services/electronLog.service'
 import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { WindowMain } from 'jslib/electron/window.main';
+import { DesktopConstants } from './desktopConstants';
 
 export class Main {
     logService: ElectronLogService;
@@ -68,7 +69,9 @@ export class Main {
         this.updaterMain = new UpdaterMain(this);
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
-        this.trayMain = new TrayMain(this);
+        this.trayMain = new TrayMain(this.windowMain, 'Bitwarden', async () => {
+            return await this.storageService.get<boolean>(DesktopConstants.enableMinimizeToTrayKey);
+        });
 
         this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
             this.messagingMain.onMessage(message);

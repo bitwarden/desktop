@@ -14,7 +14,8 @@ import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
-import { DesktopConstantsService } from '../../services/desktopconstants.service';
+
+import { DesktopConstants } from '../../desktopConstants';
 
 @Component({
     selector: 'app-settings',
@@ -24,7 +25,7 @@ export class SettingsComponent implements OnInit {
     lockOption: number = null;
     disableGa: boolean = false;
     disableFavicons: boolean = false;
-    enableHideInTray: boolean = false;
+    enableMinToTray: boolean = false;
     locale: string;
     lockOptions: any[];
     localeOptions: any[];
@@ -57,7 +58,7 @@ export class SettingsComponent implements OnInit {
     async ngOnInit() {
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
-        this.enableHideInTray = await this.storageService.get<boolean>(DesktopConstantsService.enableHideInTrayKey);
+        this.enableMinToTray = await this.storageService.get<boolean>(DesktopConstants.enableMinimizeToTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
 
         const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
@@ -86,9 +87,9 @@ export class SettingsComponent implements OnInit {
         this.callAnalytics('Favicons', !this.disableFavicons);
     }
 
-    async saveHideInTray() {
-        await this.storageService.save(DesktopConstantsService.enableHideInTrayKey, this.enableHideInTray);
-        this.callAnalytics('HideInTray', this.enableHideInTray);
+    async saveMinToTray() {
+        await this.storageService.save(DesktopConstants.enableMinimizeToTrayKey, this.enableMinToTray);
+        this.callAnalytics('MinimizeToTray', this.enableMinToTray);
     }
 
     async saveLocale() {

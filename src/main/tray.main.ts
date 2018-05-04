@@ -1,34 +1,37 @@
 import { Tray } from 'electron';
-import * as Path from 'path';
-import { Main } from '../main';
-import { DesktopConstantsService } from '../services/desktopconstants.service';
+import * as path from 'path';
+
+import { WindowMain } from 'jslib/electron/window.main';
+
+import { DesktopConstants } from '../desktopConstants';
 
 export class TrayMain {
     private tray: Tray;
     private iconPath: string;
 
-    constructor(private main: Main) {
+    constructor(private windowMain: WindowMain, private appName: string, private minToTray: () => Promise<boolean>) {
         if (process.platform === 'win32') {
-            this.iconPath = Path.join(__dirname, '../resources/icon.ico');
+            this.iconPath = path.join(__dirname, '/images/icon.ico');
         } else {
-            this.iconPath = Path.join(__dirname, '../resources/icon.png');
+            this.iconPath = path.join(__dirname, '/images/icon.png');
         }
     }
 
     init() {
-        this.main.windowMain.win.on('minimize', async (event: Event) => {
-            if (await this.main.storageService.get<boolean>(DesktopConstantsService.enableHideInTrayKey)) {
-                event.preventDefault();
+        this.windowMain.win.on('minimize', async (e: Event) => {
+            if (await this.minToTray()) {
+                e.preventDefault();
                 await this.handleHideEvent();
             }
         });
-        this.main.windowMain.win.on('show', async (event: Event) => {
+
+        this.windowMain.win.on('show', async (e: Event) => {
             await this.handleShowEvent();
         });
     }
 
     private handleShowEvent() {
-        if (this.tray) {
+        if (this.tray != null) {
             this.tray.destroy();
             this.tray = null;
         }
@@ -36,13 +39,16 @@ export class TrayMain {
 
     private handleHideEvent() {
         this.tray = new Tray(this.iconPath);
+        this.tray.setToolTip(this.appName);
+
         this.tray.on('click', () => {
-            if (this.main.windowMain.win.isVisible()) {
-                this.main.windowMain.win.hide();
+            if (this.windowMain.win.isVisible()) {
+                this.windowMain.win.hide();
             } else {
-                this.main.windowMain.win.show();
+                this.windowMain.win.show();
             }
         });
-        this.main.windowMain.win.hide();
+
+        this.windowMain.win.hide();
     }
 }

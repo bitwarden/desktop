@@ -24,16 +24,6 @@
                     <div class="box-content box-content-padded">
                         <div class="form-group">
                             <div class="checkbox">
-                                <label for="disableGa">
-                                    <input id="disableGa" type="checkbox" name="DisableAnalytics"
-                                           [(ngModel)]="disableGa" (change)="saveGa()">
-                                    {{'disableGa' | i18n}}
-                                </label>
-                            </div>
-                            <small class="help-block">{{'gaDesc' | i18n}}</small>
-                        </div>
-                        <div class="form-group">
-                            <div class="checkbox">
                                 <label for="disableFavicons">
                                     <input id="disableFavicons" type="checkbox" name="DisableFavicons"
                                            [(ngModel)]="disableFavicons" (change)="saveFavicons()">
@@ -44,13 +34,23 @@
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
-                                <label for="enableHideInTray">
-                                    <input id="enableHideInTray" type="checkbox" name="EnableHideInTray"
-                                           [(ngModel)]="enableHideInTray" (change)="saveHideInTray()">
-                                    {{'enableHideInTray' | i18n}}
+                                <label for="enableMinToTray">
+                                    <input id="enableMinToTray" type="checkbox" name="EnableMinToTray"
+                                           [(ngModel)]="enableMinToTray" (change)="saveMinToTray()">
+                                    {{'enableMinToTray' | i18n}}
                                 </label>
                             </div>
-                            <small class="help-block">{{'enableHideInTrayDesc' | i18n}}</small>
+                            <small class="help-block">{{'enableMinToTrayDesc' | i18n}}</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="disableGa">
+                                    <input id="disableGa" type="checkbox" name="DisableAnalytics"
+                                           [(ngModel)]="disableGa" (change)="saveGa()">
+                                    {{'disableGa' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'gaDesc' | i18n}}</small>
                         </div>
                         <div class="form-group">
                             <label for="locale">{{'language' | i18n}}</label>
