@@ -27,6 +27,7 @@
     "jslib/spec",
     "jslib/src/electron",
     "jslib/src/angular/components/modal.component.ts",
+    "jslib/src/angular/dummy.module.ts",
     "build",
     "build.safariextension",
     "coverage",
