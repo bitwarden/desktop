@@ -1,4 +1,7 @@
-import { Tray } from 'electron';
+import {
+    NativeImage,
+    Tray,
+} from 'electron';
 import * as path from 'path';
 
 import { WindowMain } from 'jslib/electron/window.main';
@@ -7,13 +10,17 @@ import { DesktopConstants } from '../desktopConstants';
 
 export class TrayMain {
     private tray: Tray;
-    private iconPath: string;
+    private icon: string | NativeImage;
 
     constructor(private windowMain: WindowMain, private appName: string, private minToTray: () => Promise<boolean>) {
         if (process.platform === 'win32') {
-            this.iconPath = path.join(__dirname, '/images/icon.ico');
+            this.icon = path.join(__dirname, '/images/icon.ico');
+        } else if (process.platform === 'darwin') {
+            const nativeImage = NativeImage.createFromPath(path.join(__dirname, '/images/icon-template.png'));
+            nativeImage.setTemplateImage(true);
+            this.icon = nativeImage;
         } else {
-            this.iconPath = path.join(__dirname, '/images/icon.png');
+            this.icon = path.join(__dirname, '/images/icon.png');
         }
     }
 
@@ -38,7 +45,7 @@ export class TrayMain {
     }
 
     private handleHideEvent() {
-        this.tray = new Tray(this.iconPath);
+        this.tray = new Tray(this.icon);
         this.tray.setToolTip(this.appName);
 
         this.tray.on('click', () => {
