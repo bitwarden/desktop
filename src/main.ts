@@ -7,7 +7,6 @@ import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 import { TrayMain } from './main/tray.main';
-import { UpdaterMain } from './main/updater.main';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -15,7 +14,9 @@ import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
 import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
+import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
+
 import { DesktopConstants } from './desktopConstants';
 
 export class Main {
@@ -66,7 +67,13 @@ export class Main {
 
         this.windowMain = new WindowMain(this.storageService);
         this.messagingMain = new MessagingMain(this);
-        this.updaterMain = new UpdaterMain(this);
+        this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
+            this.menuMain.updateMenuItem.enabled = false;
+        }, () => {
+            this.menuMain.updateMenuItem.enabled = true;
+        }, () => {
+            this.menuMain.updateMenuItem.label = this.i18nService.t('restartToUpdate');
+        });
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
         this.trayMain = new TrayMain(this.windowMain, 'Bitwarden', async () => {
