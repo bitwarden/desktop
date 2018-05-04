@@ -770,6 +770,12 @@
   "disableFaviconDesc": {
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
+  "enableHideInTray": {
+    "message": "Hide Bitwarden in tray"
+  },
+  "enableHideInTrayDesc": {
+    "message": "Bitwarden will stay in your system tray when minimizing the window."
+  },
   "language": {
     "message": "Language"
   },
