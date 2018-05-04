@@ -1,4 +1,5 @@
 import {
+    Menu,
     nativeImage,
     Tray,
 } from 'electron';
@@ -10,6 +11,7 @@ import { DesktopConstants } from '../desktopConstants';
 
 export class TrayMain {
     private tray: Tray;
+    private menu: Menu;
     private icon: string | Electron.NativeImage;
     private pressedIcon: Electron.NativeImage;
 
@@ -27,6 +29,13 @@ export class TrayMain {
     }
 
     init() {
+        if (process.platform === 'linux') {
+            this.menu = Menu.buildFromTemplate([{
+                label: this.appName,
+                click: () => this.open(),
+            }]);
+        }
+
         this.windowMain.win.on('minimize', async (e: Event) => {
             if (await this.minToTray()) {
                 e.preventDefault();
@@ -52,15 +61,19 @@ export class TrayMain {
         if (this.pressedIcon != null) {
             this.tray.setPressedImage(this.pressedIcon);
         }
+        if (this.menu != null) {
+            this.tray.setContextMenu(this.menu);
+        }
 
-        this.tray.on('click', () => {
-            if (this.windowMain.win.isVisible()) {
-                this.windowMain.win.hide();
-            } else {
-                this.windowMain.win.show();
-            }
-        });
-
+        this.tray.on('click', () => open());
         this.windowMain.win.hide();
+    }
+
+    private open() {
+        if (this.windowMain.win.isVisible()) {
+            this.windowMain.win.hide();
+        } else {
+            this.windowMain.win.show();
+        }
     }
 }
