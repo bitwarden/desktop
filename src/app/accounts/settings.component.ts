@@ -83,12 +83,12 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ConstantsService.disableFaviconKey, this.disableFavicons);
         await this.stateService.save(ConstantsService.disableFaviconKey, this.disableFavicons);
         this.messagingService.send('refreshCiphers');
-        this.callAnalytics('Favicons', !this.disableGa);
+        this.callAnalytics('Favicons', !this.disableFavicons);
     }
 
     async saveHideInTray() {
         await this.storageService.save(DesktopConstantsService.enableHideInTrayKey, this.enableHideInTray);
-        this.callAnalytics('HideInTray', !this.disableGa);
+        this.callAnalytics('HideInTray', this.enableHideInTray);
     }
 
     async saveLocale() {
