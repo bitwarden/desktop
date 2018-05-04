@@ -13,6 +13,7 @@ module.exports = function(config) {
             'jslib/src/enums/**/*.ts',
             'jslib/src/models/**/*.ts',
             'jslib/src/services/**/*.ts',
+            'jslib/src/misc/**/*.ts',
             'src/browser/**/*.ts',
             'src/services/**/*.ts'
         ],
