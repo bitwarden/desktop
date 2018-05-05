@@ -1,4 +1,8 @@
-import { app, BrowserWindow } from 'electron';
+import {
+    app,
+    BrowserWindow,
+    MenuItemConstructorOptions,
+} from 'electron';
 import * as path from 'path';
 
 import { I18nService } from './services/i18n.service';
@@ -16,8 +20,6 @@ import { ElectronMainMessagingService } from 'jslib/electron/services/electronMa
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
-
-import { DesktopConstants } from './desktopConstants';
 
 export class Main {
     logService: ElectronLogService;
@@ -76,9 +78,7 @@ export class Main {
         });
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
-        this.trayMain = new TrayMain(this.windowMain, 'Bitwarden', async () => {
-            return await this.storageService.get<boolean>(DesktopConstants.enableMinimizeToTrayKey);
-        });
+        this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService, 'Bitwarden');
 
         this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
             this.messagingMain.onMessage(message);
@@ -95,7 +95,12 @@ export class Main {
             this.messagingMain.init();
             this.menuMain.init();
             this.powerMonitorMain.init();
-            this.trayMain.init();
+            this.trayMain.init([{
+                label: this.i18nService.t('lockNow'),
+                enabled: false,
+                id: 'lockNow',
+                click: () => this.messagingService.send('lockVault'),
+            }]);
             await this.updaterMain.init();
         }, (e: any) => {
             // tslint:disable-next-line

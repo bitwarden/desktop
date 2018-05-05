@@ -771,10 +771,16 @@
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray"
+    "message": "Minimize to Tray Icon"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, run Bitwarden as a system tray icon."
+    "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableTray": {
+    "message": "Enable Tray Icon"
+  },
+  "enableTrayDesc": {
+    "message": "Always show an icon in the system tray."
   },
   "language": {
     "message": "Language"
@@ -1037,5 +1043,8 @@
   },
   "default": {
     "message": "Default"
+  },
+  "exit": {
+    "message": "Exit"
   }
 }

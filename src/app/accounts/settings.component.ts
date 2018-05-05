@@ -15,7 +15,7 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
-import { DesktopConstants } from '../../desktopConstants';
+import { ElectronConstants } from 'jslib/electron/electronConstants';
 
 @Component({
     selector: 'app-settings',
@@ -26,6 +26,7 @@ export class SettingsComponent implements OnInit {
     disableGa: boolean = false;
     disableFavicons: boolean = false;
     enableMinToTray: boolean = false;
+    enableTray: boolean = false;
     locale: string;
     lockOptions: any[];
     localeOptions: any[];
@@ -58,7 +59,8 @@ export class SettingsComponent implements OnInit {
     async ngOnInit() {
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
-        this.enableMinToTray = await this.storageService.get<boolean>(DesktopConstants.enableMinimizeToTrayKey);
+        this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
+        this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
 
         const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
@@ -88,8 +90,14 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveMinToTray() {
-        await this.storageService.save(DesktopConstants.enableMinimizeToTrayKey, this.enableMinToTray);
+        await this.storageService.save(ElectronConstants.enableMinimizeToTrayKey, this.enableMinToTray);
         this.callAnalytics('MinimizeToTray', this.enableMinToTray);
+    }
+
+    async saveTray() {
+        await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
+        this.callAnalytics('Tray', this.enableTray);
+        this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
     }
 
     async saveLocale() {

@@ -21,6 +21,16 @@ export class MessagingMain {
                 break;
             case 'updateAppMenu':
                 this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked);
+                this.updateTrayMenu(message.isAuthenticated, message.isLocked);
+                break;
+            case 'showTray':
+                this.main.trayMain.showTray();
+                break;
+            case 'removeTray':
+                this.main.trayMain.removeTray();
+                break;
+            case 'hideToTray':
+                this.main.trayMain.hideToTray();
                 break;
             default:
                 break;
@@ -41,5 +51,12 @@ export class MessagingMain {
                 command: 'checkSyncVault',
             });
         }, SyncInterval);
+    }
+
+    private updateTrayMenu(isAuthenticated: boolean, isLocked: boolean) {
+        const lockNowTrayMenuItem = this.main.trayMain.contextMenu.getMenuItemById('lockNow');
+        if (lockNowTrayMenuItem != null) {
+            lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
+        }
     }
 }
