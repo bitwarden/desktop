@@ -35,12 +35,12 @@ export class TrayMain {
 
     async init(additionalMenuItems: MenuItemConstructorOptions[] = null) {
         const menuItemOptions: MenuItemConstructorOptions[] = [{
-            label: this.appName,
+            label: this.i18nService.t('showHide'),
             click: () => this.toggleWindow(),
         },
         { type: 'separator' },
         {
-            label: this.i18nService.t('exit'),
+            label: process.platform === 'darwin' ? this.i18nService.t('close') : this.i18nService.t('exit'),
             click: () => this.closeWindow(),
         }];
 
@@ -56,14 +56,14 @@ export class TrayMain {
         this.windowMain.win.on('minimize', async (e: Event) => {
             if (await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey)) {
                 e.preventDefault();
-                await this.hideToTray();
+                this.hideToTray();
             }
         });
 
         this.windowMain.win.on('show', async (e: Event) => {
             const enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
             if (!enableTray) {
-                await this.removeTray(false);
+                this.removeTray(false);
             }
         });
     }
