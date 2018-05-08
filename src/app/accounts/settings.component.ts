@@ -6,6 +6,8 @@ import {
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
+import { DeviceType } from 'jslib/enums/deviceType';
+
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
@@ -27,6 +29,7 @@ export class SettingsComponent implements OnInit {
     disableFavicons: boolean = false;
     enableMinToTray: boolean = false;
     enableTray: boolean = false;
+    showMinToTray: boolean = false;
     locale: string;
     lockOptions: any[];
     localeOptions: any[];
@@ -57,6 +60,7 @@ export class SettingsComponent implements OnInit {
     }
 
     async ngOnInit() {
+        this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.Windows;
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);

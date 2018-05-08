@@ -38,7 +38,7 @@ export class MenuMain extends BaseMenu {
     unlockedRequiredMenuItems: MenuItem[] = [];
 
     constructor(private main: Main) {
-        super(main.i18nService, main.windowMain, 'Bitwarden', () => this.main.messagingService.send('logout'));
+        super(main.i18nService, main.windowMain);
     }
 
     init() {
@@ -135,7 +135,24 @@ export class MenuMain extends BaseMenu {
                 },
             },
             { type: 'separator' },
-            this.logOutMenuItemOptions,
+            {
+                label: this.i18nService.t('logOut'),
+                id: 'logOut',
+                click: () => {
+                    const result = dialog.showMessageBox(this.windowMain.win, {
+                        title: this.i18nService.t('logOut'),
+                        message: this.i18nService.t('logOut'),
+                        detail: this.i18nService.t('logOutConfirmation'),
+                        buttons: [this.i18nService.t('logOut'), this.i18nService.t('cancel')],
+                        cancelId: 1,
+                        defaultId: 0,
+                        noLink: true,
+                    });
+                    if (result === 0) {
+                        this.main.messagingService.send('logout');
+                    }
+                },
+            },
         ];
 
         if (!isMacAppStore() && !isWindowsStore()) {
@@ -369,7 +386,7 @@ export class MenuMain extends BaseMenu {
             }
 
             template.unshift({
-                label: this.appName,
+                label: 'Bitwarden',
                 submenu: firstMenuPart.concat(firstMenuOptions, [
                     { type: 'separator' },
                 ], this.macAppMenuItemOptions),
@@ -391,11 +408,37 @@ export class MenuMain extends BaseMenu {
                 aboutMenuAdditions.push(updateMenuItem);
             }
 
-            aboutMenuAdditions.push(this.aboutMenuItemOptions);
+            aboutMenuAdditions.push({
+                label: this.i18nService.t('aboutBitwarden'),
+                click: () => {
+                    const aboutInformation = this.i18nService.t('version', app.getVersion()) +
+                        '\nShell ' + process.versions.electron +
+                        '\nRenderer ' + process.versions.chrome +
+                        '\nNode ' + process.versions.node +
+                        '\nArchitecture ' + process.arch;
+                    const result = dialog.showMessageBox(this.windowMain.win, {
+                        title: 'Bitwarden',
+                        message: 'Bitwarden',
+                        detail: aboutInformation,
+                        type: 'info',
+                        noLink: true,
+                        buttons: [this.i18nService.t('ok'), this.i18nService.t('copy')],
+                    });
+                    if (result === 1) {
+                        clipboard.writeText(aboutInformation);
+                    }
+                },
+            });
 
             template[template.length - 1].submenu =
                 (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat(aboutMenuAdditions);
         }
+
+        (template[template.length - 2].submenu as MenuItemConstructorOptions[]).splice(1, 0, {
+            label: this.main.i18nService.t('hideToTray'),
+            click: () => this.main.messagingService.send('hideToTray'),
+            accelerator: 'CmdOrCtrl+Shift+M',
+        });
 
         this.menu = Menu.buildFromTemplate(template);
         Menu.setApplicationMenu(this.menu);

@@ -42,7 +42,7 @@
                             </div>
                             <small class="help-block">{{'enableTrayDesc' | i18n}}</small>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" *ngIf="showMinToTray">
                             <div class="checkbox">
                                 <label for="enableMinToTray">
                                     <input id="enableMinToTray" type="checkbox" name="EnableMinToTray"
