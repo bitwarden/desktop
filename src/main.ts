@@ -10,7 +10,6 @@ import { I18nService } from './services/i18n.service';
 import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
-import { TrayMain } from './main/tray.main';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -18,6 +17,7 @@ import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
 import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
+import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
 
@@ -78,7 +78,7 @@ export class Main {
         });
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
-        this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService, 'Bitwarden');
+        this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService);
 
         this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
             this.messagingMain.onMessage(message);
@@ -95,7 +95,7 @@ export class Main {
             this.messagingMain.init();
             this.menuMain.init();
             this.powerMonitorMain.init();
-            this.trayMain.init([{
+            await this.trayMain.init('Bitwarden', [{
                 label: this.i18nService.t('lockNow'),
                 enabled: false,
                 id: 'lockNow',
