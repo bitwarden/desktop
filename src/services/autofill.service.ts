@@ -158,6 +158,7 @@ export default class AutofillService implements AutofillServiceInterface {
 
             const fillScript = this.generateFillScript(pd.details, {
                 skipUsernameOnlyFill: options.skipUsernameOnlyFill || false,
+                onlyVisibleFields: options.onlyVisibleFields || false,
                 cipher: options.cipher,
             });
 
@@ -217,6 +218,7 @@ export default class AutofillService implements AutofillServiceInterface {
             skipTotp: !fromCommand,
             skipLastUsed: true,
             skipUsernameOnlyFill: !fromCommand,
+            onlyVisibleFields: !fromCommand,
         });
     }
 
@@ -306,7 +308,7 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         let passwordFields = this.loadPasswordFields(pageDetails, false);
-        if (!passwordFields.length) {
+        if (!passwordFields.length && !options.onlyVisibleFields) {
             // not able to find any viewable password fields. maybe there are some "hidden" ones?
             passwordFields = this.loadPasswordFields(pageDetails, true);
         }
@@ -330,7 +332,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 if (login.username) {
                     username = this.findUsernameField(pageDetails, pf, false, false);
 
-                    if (!username) {
+                    if (!username && !options.onlyVisibleFields) {
                         // not able to find any viewable username fields. maybe there are some "hidden" ones?
                         username = this.findUsernameField(pageDetails, pf, true, false);
                     }
@@ -352,7 +354,7 @@ export default class AutofillService implements AutofillServiceInterface {
             if (login.username && pf.elementNumber > 0) {
                 username = this.findUsernameField(pageDetails, pf, false, true);
 
-                if (!username) {
+                if (!username && !options.onlyVisibleFields) {
                     // not able to find any viewable username fields. maybe there are some "hidden" ones?
                     username = this.findUsernameField(pageDetails, pf, true, true);
                 }
