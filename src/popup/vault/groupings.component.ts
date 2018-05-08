@@ -78,6 +78,8 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async ngOnInit() {
+        document.getElementById('search').focus();
+
         this.showLeftHeader = !this.platformUtilsService.isSafari() &&
             !(this.popupUtils.inSidebar(window) && this.platformUtilsService.isFirefox());
         this.stateService.remove('CiphersComponent');
