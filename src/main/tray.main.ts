@@ -76,7 +76,7 @@ export class TrayMain {
             this.tray = null;
         }
 
-        if (this.windowMain.win != null && !this.windowMain.win.isVisible()) {
+        if (showWindow && this.windowMain.win != null && !this.windowMain.win.isVisible()) {
             this.windowMain.win.show();
         }
     }
