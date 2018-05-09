@@ -66,6 +66,7 @@ gulp.task('dist:firefox', (cb) => {
     return dist('firefox', (manifest) => {
         delete manifest['-ms-preload'];
         delete manifest.content_security_policy;
+        removeShortcuts(manifest);
         return manifest;
     });
 });
@@ -75,6 +76,7 @@ gulp.task('dist:opera', (cb) => {
         delete manifest['-ms-preload'];
         delete manifest.applications;
         delete manifest.content_security_policy;
+        removeShortcuts(manifest);
         return manifest;
     });
 });
@@ -89,6 +91,15 @@ gulp.task('dist:chrome', (cb) => {
         return manifest;
     });
 });
+
+function removeShortcuts(manifest) {
+    if (manifest.content_scripts && manifest.content_scripts.length > 1) {
+        const shortcutsScript = manifest.content_scripts[1];
+        if (shortcutsScript.js.indexOf('content/shortcuts.js') > -1) {
+            manifest.content_scripts.splice(1, 1);
+        }
+    }
+}
 
 // Since Edge extensions require makeappx to be run we temporarily store it in a folder.
 gulp.task('dist:edge', (cb) => {
