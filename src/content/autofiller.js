@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let pageHref = null;
+    const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
+        navigator.userAgent.indexOf('Chrome') === -1;
 
-    if ((typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
-        navigator.userAgent.indexOf('Chrome') === -1) {
+    if (isSafari) {
         const responseCommand = 'autofillerAutofillOnPageLoadEnabledResponse';
         safari.self.tab.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 sender: 'autofiller'
             };
 
-            if ((typeof safari !== 'undefined')) {
+            if (isSafari) {
                 safari.self.tab.dispatchMessage('bitwarden', msg);
             } else {
                 chrome.runtime.sendMessage(msg);
