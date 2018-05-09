@@ -162,7 +162,7 @@ const config = {
         'content/autofill': './src/content/autofill.js',
         'content/autofiller': './src/content/autofiller.ts',
         'content/notificationBar': './src/content/notificationBar.ts',
-        'content/shortcuts': './src/content/shortcuts.js',
+        'content/shortcuts': './src/content/shortcuts.ts',
         'notification/bar': './src/notification/bar.js',
         'downloader/downloader': './src/downloader/downloader.ts',
         '2fa/2fa': './src/2fa/2fa.ts',
