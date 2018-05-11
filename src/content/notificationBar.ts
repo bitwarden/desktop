@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let barType: string = null;
     let pageHref: string = null;
     let observer: MutationObserver = null;
+    const observeIgnoredElements = new Set(['a', 'i', 'b', 'strong', 'span', 'code', 'br', 'img', 'small', 'em', 'hr']);
     let domObservationCollectTimeout: number = null;
     let collectIfNeededTimeout: number = null;
     let observeDomTimeout: number = null;
@@ -121,13 +122,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
                             continue;
                         }
 
-                        if (addedNode.tagName != null && addedNode.tagName.toLowerCase() === 'form' &&
+                        const tagName = addedNode.tagName != null ? addedNode.tagName.toLowerCase() : null;
+                        if (tagName != null && tagName === 'form' &&
                             (addedNode.dataset == null || !addedNode.dataset.bitwardenWatching)) {
                             doCollect = true;
                             break;
                         }
 
-                        if (!addedNode.querySelectorAll) {
+                        if ((tagName != null && observeIgnoredElements.has(tagName)) ||
+                            addedNode.querySelectorAll == null) {
                             continue;
                         }
 
