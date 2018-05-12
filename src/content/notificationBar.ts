@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         navigator.userAgent.indexOf('Chrome') === -1;
 
     if (isSafari) {
+        if (inIframe) {
+            return;
+        }
+
         const responseCommand = 'notificationBarDataResponse';
         safari.self.tab.dispatchMessage('bitwarden', {
             command: 'bgGetDataForTab',
