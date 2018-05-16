@@ -29,6 +29,7 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -81,7 +82,7 @@ export class AppComponent implements OnInit {
         private platformUtilsService: PlatformUtilsService, private ngZone: NgZone,
         private lockService: LockService, private storageService: StorageService,
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
-        private messagingService: MessagingService) { }
+        private messagingService: MessagingService, private collectionService: CollectionService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -157,6 +158,7 @@ export class AppComponent implements OnInit {
             this.settingsService.clear(userId),
             this.cipherService.clear(userId),
             this.folderService.clear(userId),
+            this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
         ]);
 
