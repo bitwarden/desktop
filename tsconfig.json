@@ -26,6 +26,7 @@
     "dist",
     "jslib/dist",
     "build",
-    "jslib/spec"
+    "jslib/spec",
+    "jslib/services/nodeApi.service.ts"
   ]
 }
