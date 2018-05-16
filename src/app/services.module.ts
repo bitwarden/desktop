@@ -90,7 +90,7 @@ const folderService = new FolderService(cryptoService, userService,
     () => i18nService.t('noneFolder'), apiService, storageService, i18nService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 const lockService = new LockService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService, messagingService, () => { /* do nothing */ });
+    cryptoService, platformUtilsService, storageService, messagingService, null);
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
@@ -109,6 +109,7 @@ environmentService.setUrlsFromStorage().then(() => {
 
 export function initFactory(): Function {
     return async () => {
+        lockService.init(true);
         const locale = await storageService.get<string>(ConstantsService.localeKey);
         await i18nService.init(locale);
         await authService.init();
