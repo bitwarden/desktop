@@ -33,6 +33,6 @@
     "coverage",
     "store",
     "src/edge",
-    "jslib/services/nodeApi.service.ts"
+    "jslib/src/services/nodeApi.service.ts"
   ]
 }
