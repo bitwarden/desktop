@@ -80,7 +80,7 @@ const cryptoService = new CryptoService(storageService, secureStorageService, cr
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
-    (expired: boolean) => messagingService.send('logout', { expired: expired }));
+    async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const environmentService = new EnvironmentService(apiService, storageService);
 const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
@@ -92,8 +92,8 @@ const collectionService = new CollectionService(cryptoService, userService, stor
 const lockService = new LockService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, () => { /* do nothing */ });
 const syncService = new SyncService(userService, apiService, settingsService,
-    folderService, cipherService, cryptoService, collectionService,
-    storageService, messagingService, (expired: boolean) => messagingService.send('logout', { expired: expired }));
+    folderService, cipherService, cryptoService, collectionService, storageService, messagingService,
+    async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService);
 const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService, platformUtilsService);
