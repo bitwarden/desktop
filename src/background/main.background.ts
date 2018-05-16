@@ -253,6 +253,7 @@ export default class MainBackground {
             this.settingsService.clear(userId),
             this.cipherService.clear(userId),
             this.folderService.clear(userId),
+            this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
         ]);
 
