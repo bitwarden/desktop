@@ -165,6 +165,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return this.isChrome() || this.isOpera();
     }
 
+    supportsDuo(): boolean {
+        return true;
+    }
+
     showDialog(text: string, title?: string, confirmText?: string, cancelText?: string, type?: string) {
         const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
         this.messagingService.send('showDialog', {
