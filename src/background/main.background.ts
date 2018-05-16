@@ -122,7 +122,7 @@ export default class MainBackground {
         this.tokenService = new TokenService(this.storageService);
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
-            (expired: boolean) => this.logout(expired));
+            async (expired: boolean) => await this.logout(expired));
         this.environmentService = new EnvironmentService(this.apiService, this.storageService);
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
@@ -139,7 +139,7 @@ export default class MainBackground {
             });
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
-            this.storageService, this.messagingService, (expired: boolean) => this.logout(expired));
+            this.storageService, this.messagingService, async (expired: boolean) => await this.logout(expired));
         this.passwordGenerationService = new PasswordGenerationService(this.cryptoService, this.storageService);
         this.totpService = new TotpService(this.storageService, cryptoFunctionService);
         this.autofillService = new AutofillService(this.cipherService, this.tokenService,
