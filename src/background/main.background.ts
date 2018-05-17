@@ -19,6 +19,7 @@ import {
     TotpService,
     UserService,
 } from 'jslib/services';
+import { ExportService } from 'jslib/services/export.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import {
@@ -43,6 +44,7 @@ import {
     UserService as UserServiceAbstraction,
 } from 'jslib/abstractions';
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
+import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 
 import { Analytics } from 'jslib/misc';
 
@@ -88,6 +90,7 @@ export default class MainBackground {
     autofillService: AutofillServiceAbstraction;
     containerService: ContainerService;
     auditService: AuditServiceAbstraction;
+    exportService: ExportServiceAbstraction;
     analytics: Analytics;
 
     onUpdatedRan: boolean;
@@ -146,6 +149,7 @@ export default class MainBackground {
             this.totpService);
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
         this.auditService = new AuditService(cryptoFunctionService);
+        this.exportService = new ExportService(this.folderService, this.cipherService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
 
