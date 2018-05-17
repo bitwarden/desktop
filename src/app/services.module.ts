@@ -30,6 +30,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { ContainerService } from 'jslib/services/container.service';
 import { CryptoService } from 'jslib/services/crypto.service';
 import { EnvironmentService } from 'jslib/services/environment.service';
+import { ExportService } from 'jslib/services/export.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { LockService } from 'jslib/services/lock.service';
 import { NodeCryptoFunctionService } from 'jslib/services/nodeCryptoFunction.service';
@@ -50,6 +51,7 @@ import { CollectionService as CollectionServiceAbstraction } from 'jslib/abstrac
 import { CryptoService as CryptoServiceAbstraction } from 'jslib/abstractions/crypto.service';
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService as EnvironmentServiceAbstraction } from 'jslib/abstractions/environment.service';
+import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
 import { LockService as LockServiceAbstraction } from 'jslib/abstractions/lock.service';
@@ -99,6 +101,7 @@ const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService, platformUtilsService);
 const authService = new AuthService(cryptoService, apiService,
     userService, tokenService, appIdService, i18nService, platformUtilsService, messagingService);
+const exportService = new ExportService(folderService, cipherService);
 const auditService = new AuditService(cryptoFunctionService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
@@ -168,6 +171,7 @@ export function initFactory(): Function {
         { provide: StorageServiceAbstraction, useValue: storageService },
         { provide: StateServiceAbstraction, useValue: stateService },
         { provide: LogServiceAbstraction, useValue: logService },
+        { provide: ExportServiceAbstraction, useValue: exportService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
