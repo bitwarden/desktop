@@ -174,6 +174,7 @@ export default class AutofillService implements AutofillServiceInterface {
             BrowserApi.tabSendMessage(tab, {
                 command: 'fillForm',
                 fillScript: fillScript,
+                url: tab.url,
             }, { frameId: pd.frameId });
 
             if (options.cipher.type !== CipherType.Login || totpPromise || options.skipTotp ||
