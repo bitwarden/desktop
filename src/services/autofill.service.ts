@@ -610,19 +610,19 @@ export default class AutofillService implements AutofillServiceInterface {
                     fillFields.email = f;
                     break;
                 } else if (!fillFields.address && this.isFieldMatch(f[attr],
-                    ['address', 'street-address', 'addr'], [])) {
+                    ['address', 'street-address', 'addr', 'street'], [])) {
                     fillFields.address = f;
                     break;
                 } else if (!fillFields.address1 && this.isFieldMatch(f[attr],
-                    ['address-1', 'address-line-1', 'addr-1'])) {
+                    ['address-1', 'address-line-1', 'addr-1', 'street-1'])) {
                     fillFields.address1 = f;
                     break;
                 } else if (!fillFields.address2 && this.isFieldMatch(f[attr],
-                    ['address-2', 'address-line-2', 'addr-2'])) {
+                    ['address-2', 'address-line-2', 'addr-2', 'street-2'])) {
                     fillFields.address2 = f;
                     break;
                 } else if (!fillFields.address3 && this.isFieldMatch(f[attr],
-                    ['address-3', 'address-line-3', 'addr-3'])) {
+                    ['address-3', 'address-line-3', 'addr-3', 'street-3'])) {
                     fillFields.address3 = f;
                     break;
                 } else if (!fillFields.postalCode && this.isFieldMatch(f[attr],
