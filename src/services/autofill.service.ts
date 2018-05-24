@@ -249,8 +249,6 @@ export default class AutofillService implements AutofillServiceInterface {
             fields.forEach((f: any) => {
                 if (this.hasValue(f.name)) {
                     fieldNames.push(f.name.toLowerCase());
-                } else {
-                    fieldNames.push(null);
                 }
             });
 
