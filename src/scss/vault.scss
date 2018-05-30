@@ -234,7 +234,7 @@
 
         @include themify($themes) {
             background-color: themed('headerBackgroundColor');
-            border-bottom-color: darken(themed('headerBackgroundColor'), 7%);
+            border-bottom-color: themed('headerBorderColor');
         }
 
         &.header-search {
