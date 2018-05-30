@@ -77,7 +77,13 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
             stateService.save(ConstantsService.disableFaviconKey,
                 await storageService.get<boolean>(ConstantsService.disableFaviconKey));
 
+            let theme = await storageService.get<string>(ConstantsService.themeKey);
+            if (theme == null) {
+                theme = 'light';
+            }
             window.document.documentElement.classList.add('locale_' + i18nService.translationLocale);
+            window.document.documentElement.classList.add('theme_' + theme);
+
             authService.init();
 
             const analytics = new Analytics(window, () => BrowserApi.gaFilter(), null, null, null, () => {

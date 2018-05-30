@@ -5,6 +5,7 @@ import {
 
 import { Angulartics2 } from 'angulartics2';
 
+import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
@@ -25,10 +26,19 @@ export class OptionsComponent implements OnInit {
     disableAddLoginNotification = false;
     showDisableContextMenu = true;
     disableGa = false;
+    theme: string;
+    themeOptions: any[];
 
     constructor(private analytics: Angulartics2, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private storageService: StorageService,
-        private stateService: StateService, private totpService: TotpService) { }
+        private stateService: StateService, private totpService: TotpService,
+        private i18nService: I18nService) {
+        this.themeOptions = [
+            { name: i18nService.t('default'), value: null },
+            { name: i18nService.t('light'), value: 'light' },
+            { name: i18nService.t('dark'), value: 'dark' },
+        ];
+    }
 
     async ngOnInit() {
         this.showDisableContextMenu = !this.platformUtilsService.isSafari();
@@ -49,6 +59,8 @@ export class OptionsComponent implements OnInit {
         this.disableAutoTotpCopy = !await this.totpService.isAutoCopyEnabled();
 
         this.disableFavicon = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
+
+        this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
     }
 
     async saveGa() {
@@ -88,6 +100,11 @@ export class OptionsComponent implements OnInit {
         await this.storageService.save(ConstantsService.disableFaviconKey, this.disableFavicon);
         await this.stateService.save(ConstantsService.disableFaviconKey, this.disableFavicon);
         this.callAnalytics('Favicon', !this.disableFavicon);
+    }
+
+    async saveTheme() {
+        await this.storageService.save(ConstantsService.themeKey, this.theme);
+        this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
     }
 
     private callAnalytics(name: string, enabled: boolean) {

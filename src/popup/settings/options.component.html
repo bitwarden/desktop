@@ -71,4 +71,15 @@
         </div>
         <div class="box-footer">{{'disableFaviconDesc' | i18n}}</div>
     </div>
+    <div class="box">
+        <div class="box-content">
+            <div class="box-content-row" appBoxRow>
+                <label for="theme">{{'theme' | i18n}}</label>
+                <select id="theme" name="Theme" [(ngModel)]="theme" (change)="saveTheme()">
+                    <option *ngFor="let o of themeOptions" [ngValue]="o.value">{{o.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="box-footer">{{'themeDesc' | i18n}}</div>
+    </div>
 </content>

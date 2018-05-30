@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 .btn {
-    background-color: $button-backgound-color;
+    background-color: $button-background-color;
     border-radius: $border-radius;
     padding: 7px 15px;
     border: 1px solid $button-border-color;
@@ -21,7 +21,7 @@
 
     &:hover:not([disabled]) {
         cursor: pointer;
-        background-color: darken($button-backgound-color, 1.5%);
+        background-color: darken($button-background-color, 1.5%);
         border-color: darken($button-border-color, 17%);
         color: darken($button-color, 10%);
 
@@ -36,7 +36,7 @@
 
     &:focus:not([disabled]) {
         cursor: pointer;
-        background-color: darken($button-backgound-color, 6%);
+        background-color: darken($button-background-color, 6%);
         border-color: darken($button-border-color, 25%);
         outline: 0;
     }
