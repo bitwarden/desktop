@@ -54,6 +54,9 @@ export class MessagingMain {
     }
 
     private updateTrayMenu(isAuthenticated: boolean, isLocked: boolean) {
+        if (this.main.trayMain == null || this.main.trayMain.contextMenu == null) {
+            return;
+        }
         const lockNowTrayMenuItem = this.main.trayMain.contextMenu.getMenuItemById('lockNow');
         if (lockNowTrayMenuItem != null) {
             lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
