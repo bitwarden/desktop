@@ -119,10 +119,11 @@ export function initFactory(): Function {
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
-        const theme = await storageService.get<string>(ConstantsService.themeKey);
-        if (theme != null) {
-            htmlEl.classList.add('theme_' + theme);
+        let theme = await storageService.get<string>(ConstantsService.themeKey);
+        if (theme == null) {
+            theme = 'light';
         }
+        htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,
             await storageService.get<boolean>(ConstantsService.disableFaviconKey));
 

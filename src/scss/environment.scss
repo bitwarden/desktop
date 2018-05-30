@@ -1,11 +1,9 @@
-﻿@import "variables.scss";
-
-html.os_windows {
+﻿html.os_windows {
     body {
-        border-top: 1px solid #000000;
+        border-top: 1px solid #dddddd;
+    }
 
-        @include themify($themes) {
-            border-top-color: themed('borderColorDark');
-        }
+    &.theme_dark body {
+        border-top-color: #000000;
     }
 }
