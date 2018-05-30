@@ -41,7 +41,6 @@ img {
 }
 
 a {
-    color: $brand-primary;
     text-decoration: none;
 
     @include themify($themes) {
