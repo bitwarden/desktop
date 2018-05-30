@@ -14,11 +14,16 @@
     }
 
     > #groupings {
-        background-color: $background-color-alt;
         width: 22%;
         min-width: 175px;
         max-width: 250px;
+        background-color: $background-color-alt;
         border-right: 1px solid $border-color-dark;
+
+        @include themify($themes) {
+            background-color: themed('backgroundColorAlt');
+            border-right-color: themed('borderColorDark');
+        }
 
         .inner-content {
             padding-bottom: 0;
@@ -111,11 +116,16 @@
     }
 
     > #items {
-        background-color: $background-color;
         width: 28%;
         min-width: 200px;
         max-width: 350px;
+        background-color: $background-color;
         border-right: 1px solid $border-color-dark;
+        
+        @include themify($themes) {
+            background-color: themed('backgroundColor');
+            border-right-color: themed('borderColorDark');
+        }
 
         .no-items {
             display: flex;
@@ -134,9 +144,13 @@
     }
 
     > #details {
-        background-color: $background-color-alt2;
         flex: 1;
         min-width: 0;
+        background-color: $background-color-alt2;
+
+        @include themify($themes) {
+            background-color: themed('backgroundColorAlt2');
+        }
 
         .inner-content {
             min-width: 400px;

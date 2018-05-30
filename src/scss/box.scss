@@ -17,9 +17,13 @@
     }
 
     .box-content {
-        background: $box-background-color;
         border-radius: $border-radius;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+        background-color: $box-background-color;
+
+        @include themify($themes) {
+            background-color: themed('boxBackgroundColor');
+        }
 
         &.box-content-padded {
             padding: 10px 15px;
@@ -39,6 +43,10 @@
                 height: 1px;
                 width: calc(100% - 10px);
                 border-bottom: 1px solid $box-border-color;
+
+                @include themify($themes) {
+                    border-bottom-color: themed('boxBorderColor');
+                }
             }
 
             &:first-child, &:last-child {
@@ -60,6 +68,10 @@
 
             &:hover, &:focus, &.active {
                 background-color: $box-background-hover-color;
+
+                @include themify($themes) {
+                    background-color: themed('boxBackgroundHoverColor');
+                }
             }
 
             &.pre {

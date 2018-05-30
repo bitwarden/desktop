@@ -4,7 +4,6 @@ $font-size-base: 14px;
 $font-size-large: 18px;
 $font-size-small: 12px;
 $text-color: #000000;
-$background-color: #efeff4;
 $border-color: #f0f0f0;
 $border-color-dark: #ddd;
 $list-item-hover: #fbfbfb;
@@ -36,3 +35,46 @@ $button-backgound-color: white;
 $button-color: lighten($text-color, 40%);
 $button-color-primary: darken($brand-primary, 8%);
 $button-color-danger: darken($brand-danger, 10%);
+
+$themes: (
+    light: (
+        textColor: $text-color,
+        borderColor: $border-color,
+        borderColorDark: $border-color-dark,
+        backgroundColor: $background-color,
+        backgroundColorAlt: $background-color-alt,
+        backgroundColorAlt2: $background-color-alt2,
+        boxBackgroundColor: $box-background-color,
+        boxBackgroundHoverColor: $box-background-hover-color,
+        boxBorderColor: $box-border-color,
+    ),
+    dark: (
+        textColor: #ffffff,
+        borderColor: #000000,
+        borderColorDark: #000000,
+        backgroundColor: #5f5f5f,
+        backgroundColorAlt: #5f5f5f,
+        backgroundColorAlt2: #5f5f5f,
+        boxBackgroundColor: #5f5f5f,
+        boxBackgroundHoverColor: #707070,
+        boxBorderColor: #000000,
+    ),
+);
+
+@mixin themify($themes: $themes) {
+    @each $theme, $map in $themes {
+        html.theme_#{$theme} & {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
