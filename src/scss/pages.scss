@@ -100,8 +100,11 @@
             }
 
             &:hover, &:focus {
-                color: $brand-primary;
                 text-decoration: none;
+
+                @include themify($themes) {
+                    color: themed('primaryColor');
+                }
 
                 span {
                     visibility: visible;

@@ -2,6 +2,10 @@
 
 html.os_windows {
     body {
-        border-top: 1px solid $border-color-dark;
+        border-top: 1px solid #000000;
+
+        @include themify($themes) {
+            border-top-color: themed('borderColorDark');
+        }
     }
 }

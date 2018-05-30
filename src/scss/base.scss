@@ -8,16 +8,24 @@
 
 html, body {
     height: 100%;
-    background-color: $background-color-alt2;
     font-family: $font-family-sans-serif;
     font-size: $font-size-base;
-    color: $text-color;
     line-height: $line-height-base;
+}
+
+body {
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('backgroundColorAlt2');
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-sans-serif;
-    color: $text-color;
+    
+    @include themify($themes) {
+        color: themed('textColor');
+    }
 }
 
 p {
@@ -36,13 +44,22 @@ a {
     color: $brand-primary;
     text-decoration: none;
 
+    @include themify($themes) {
+        color: themed('primaryColor');
+    }
+
     &:hover, &:focus {
-        color: darken($brand-primary, 6%);
+        @include themify($themes) {
+            color: darken(themed('primaryColor'), 6%);
+        }
     }
 }
 
 input, select, textarea {
-    color: $text-color;
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('inputBackgroundColor');
+    }
 }
 
 input, select, textarea, button {

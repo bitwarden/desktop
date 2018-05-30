@@ -5,19 +5,27 @@ small {
 }
 
 .text-primary {
-    color: $brand-primary !important;
+    @include themify($themes) {
+        color: themed('primaryColor') !important;
+    }
 }
 
 .text-success {
-    color: $brand-success !important;
+    @include themify($themes) {
+        color: themed('successColor') !important;
+    }
 }
 
 .text-muted {
-    color: $text-muted !important;
+    @include themify($themes) {
+        color: themed('mutedColor') !important;
+    }
 }
 
 .text-default {
-    color: $text-color !important;
+    @include themify($themes) {
+        color: themed('textColor') !important;
+    }
 }
 
 .text-center {
@@ -79,8 +87,11 @@ p.lead {
         }
 
         .totp-circle {
-            stroke: $brand-primary;
             fill: none;
+
+            @include themify($themes) {
+                stroke: themed('totpStrokeColor');
+            }
 
             &.inner {
                 stroke-width: 3;
@@ -98,11 +109,15 @@ p.lead {
 
     &.low {
         .totp-sec, .totp-code {
-            color: $brand-danger;
+            @include themify($themes) {
+                color: themed('dangerColor');
+            }
         }
 
         .totp-circle {
-            stroke: $brand-danger;
+            @include themify($themes) {
+                stroke: themed('dangerColor');
+            }
         }
     }
 }
@@ -148,9 +163,13 @@ form, .form {
         }
 
         input, select, textarea {
-            border: 1px solid darken($border-color-dark, 7%);
+            border: 1px solid #000000;
             border-radius: $border-radius;
             display: block;
+
+            @include themify($themes) {
+                border-color: themed('inputBorderColor');
+            }
         }
     }
 
@@ -172,8 +191,11 @@ form, .form {
 
     .help-block {
         margin-top: 3px;
-        color: $text-muted;
         display: block;
+
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
     }
 }
 
@@ -184,5 +206,8 @@ app-root > #loading {
     align-items: center;
     height: 100%;
     width: 100%;
-    color: $text-muted;
+
+    @include themify($themes) {
+        color: themed('mutedColor');
+    }
 }

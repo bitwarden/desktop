@@ -3,11 +3,14 @@
 .list > a {
     display: block;
     padding: 3px 10px;
-    background-color: white;
     text-decoration: none;
-    color: $text-color;
     position: relative;
     z-index: 1;
+
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('listItemBackgroundColor');
+    }
 
     &:after {
         content: "";
@@ -22,7 +25,11 @@
         bottom: 0;
         height: 1px;
         width: calc(100% - 10px);
-        border-bottom: 1px solid $border-color;
+        border-bottom: 1px solid #000000;
+
+        @include themify($themes) {
+            border-bottom-color: themed('borderColor');
+        }
     }
 
     &:last-child:before {
@@ -31,17 +38,27 @@
     }
 
     &:hover, &:focus, &.active {
-        background-color: $list-item-hover;
+        @include themify($themes) {
+            background-color: themed('listItemBackgroundHoverColor');
+        }
     }
 
     &.active {
-        border-left: 5px solid $brand-primary;
+        border-left: 5px solid #000000;
         padding-left: 5px;
+
+        @include themify($themes) {
+            border-left-color: themed('primaryColor');
+        }
     }
 
     &:focus:not(.active) {
-        border-left: 5px solid $text-muted;
+        border-left: 5px solid #000000;
         padding-left: 5px;
+
+        @include themify($themes) {
+            border-left-color: themed('mutedColor');
+        }
     }
 
     .text, .detail {
@@ -49,12 +66,18 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: block;
-        color: $text-color;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
     }
 
     .detail {
         font-size: $font-size-small;
-        color: $gray-light;
+
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
     }
 
     .icon {
@@ -65,7 +88,10 @@
         height: 36px;
         width: 34px;
         margin-left: -5px;
-        color: $text-muted;
+        
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
 
         img {
             border-radius: $border-radius;
