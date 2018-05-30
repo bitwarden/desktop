@@ -788,6 +788,20 @@
   "languageDesc": {
     "message": "Change the language used by the application. Restart is required."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme. Restart is required."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "copy": {
     "message": "Copy",
     "description": "Copy to clipboard"

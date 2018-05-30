@@ -33,6 +33,8 @@ export class SettingsComponent implements OnInit {
     locale: string;
     lockOptions: any[];
     localeOptions: any[];
+    theme: string;
+    themeOptions: any[];
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -57,6 +59,12 @@ export class SettingsComponent implements OnInit {
         i18nService.supportedTranslationLocales.forEach((locale) => {
             this.localeOptions.push({ name: locale, value: locale });
         });
+
+        this.themeOptions = [
+            { name: i18nService.t('default'), value: null },
+            { name: i18nService.t('light'), value: 'light' },
+            { name: i18nService.t('dark'), value: 'dark' },
+        ];
     }
 
     async ngOnInit() {
@@ -66,6 +74,7 @@ export class SettingsComponent implements OnInit {
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
+        this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
 
         const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
         const disableGaByDefault = this.platformUtilsService.isFirefox() || this.platformUtilsService.isMacAppStore();
@@ -107,6 +116,11 @@ export class SettingsComponent implements OnInit {
     async saveLocale() {
         await this.storageService.save(ConstantsService.localeKey, this.locale);
         this.analytics.eventTrack.next({ action: 'Set Locale ' + this.locale });
+    }
+
+    async saveTheme() {
+        await this.storageService.save(ConstantsService.themeKey, this.theme);
+        this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
     }
 
     private callAnalytics(name: string, enabled: boolean) {
