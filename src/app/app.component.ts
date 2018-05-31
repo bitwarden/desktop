@@ -82,7 +82,9 @@ export class AppComponent implements OnInit {
         private platformUtilsService: PlatformUtilsService, private ngZone: NgZone,
         private lockService: LockService, private storageService: StorageService,
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
-        private messagingService: MessagingService, private collectionService: CollectionService) { }
+        private messagingService: MessagingService, private collectionService: CollectionService) {
+            (window as any).BitwardenToasterService = toasterService;
+        }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
