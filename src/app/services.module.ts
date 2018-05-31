@@ -1,3 +1,5 @@
+import { remote } from 'electron';
+
 import {
     APP_INITIALIZER,
     NgModule,
@@ -9,7 +11,6 @@ import { ElectronLogService } from 'jslib/electron/services/electronLog.service'
 import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib/electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib/electron/services/electronRendererSecureStorage.service';
-import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { isDev } from 'jslib/electron/utils';
 
 import { I18nService } from '../services/i18n.service';
@@ -33,6 +34,7 @@ import { EnvironmentService } from 'jslib/services/environment.service';
 import { ExportService } from 'jslib/services/export.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { LockService } from 'jslib/services/lock.service';
+import { LowdbStorageService } from 'jslib/services/lowdbStorage.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
 import { SettingsService } from 'jslib/services/settings.service';
 import { StateService } from 'jslib/services/state.service';
@@ -75,7 +77,7 @@ const stateService = new StateService();
 const platformUtilsService = new ElectronPlatformUtilsService(i18nService, true);
 const broadcasterService = new BroadcasterService();
 const messagingService = new ElectronRendererMessagingService(broadcasterService);
-const storageService: StorageServiceAbstraction = new ElectronStorageService();
+const storageService: StorageServiceAbstraction = new LowdbStorageService(null, remote.app.getPath('userData'));
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
