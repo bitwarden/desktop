@@ -78,6 +78,7 @@ $themes: (
         successColor: $brand-success,
         infoColor: $brand-info,
         warningColor: $brand-warning,
+        logoSuffix: 'dark',
     ),
     dark: (
         textColor: #ffffff,
@@ -95,7 +96,7 @@ $themes: (
         headerInputColor: #ffffff,
         headerInputPlaceholderColor: #707070,
         listItemBackgroundColor: #363636,
-        listItemBackgroundHoverColor: #464646,
+        listItemBackgroundHoverColor: #3c3c3c,
         groupingsActiveColor: #292929,
         disabledIconColor: #c7c7cd,
         headingColor: #a3a3a3,
@@ -111,7 +112,7 @@ $themes: (
         inputPlaceholderColor: #707070,
         buttonBackgroundColor: #363636,
         buttonBorderColor: #1f1f1f,
-        buttonColor: #ffffff,
+        buttonColor: #e0e0e0,
         buttonPrimaryColor: #46ace7,
         buttonDangerColor: #ff3e24,
         primaryColor: #52bdfb,
@@ -120,6 +121,7 @@ $themes: (
         successColor: $brand-success,
         infoColor: $brand-info,
         warningColor: $brand-warning,
+        logoSuffix: 'white',
     ),
 );
 

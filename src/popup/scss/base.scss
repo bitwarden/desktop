@@ -7,10 +7,8 @@
 }
 
 html, body {
-    background-color: $background-color;
     font-family: $font-family-sans-serif;
     font-size: $font-size-base;
-    color: $text-color;
     line-height: $line-height-base;
     -webkit-font-smoothing: antialiased;
 }
@@ -19,6 +17,13 @@ body {
     width: 375px !important;
     height: 600px !important;
     overflow: hidden;
+    color: $text-color;
+    background-color: $background-color;
+
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('backgroundColor');
+    }
 
     &.body-sm {
         width: 375px !important;
@@ -38,7 +43,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-sans-serif;
-    color: $text-color;
+    
+    @include themify($themes) {
+        color: themed('textColor');
+    }
 }
 
 p {
@@ -54,16 +62,24 @@ img {
 }
 
 a {
-    color: $brand-primary;
     text-decoration: none;
 
+    @include themify($themes) {
+        color: themed('primaryColor');
+    }
+
     &:hover, &:focus {
-        color: darken($brand-primary, 6%);
+        @include themify($themes) {
+            color: darken(themed('primaryColor'), 6%);
+        }
     }
 }
 
 input, select, textarea {
-    color: $text-color;
+    @include themify($themes) {
+        color: themed('textColor');
+        background-color: themed('inputBackgroundColor');
+    }
 }
 
 input, select, textarea, button {
@@ -293,7 +309,10 @@ content {
     right: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: $background-color;
+
+    @include themify($themes) {
+        background-color: themed('backgroundColor');
+    }
 
     &.no-header {
         top: 0;
@@ -319,6 +338,9 @@ content {
 
     .fa {
         margin-bottom: 10px;
-        color: $list-icon-color;
+
+        @include themify($themes) {
+            color: themed('disabledIconColor');
+        }
     }
 }

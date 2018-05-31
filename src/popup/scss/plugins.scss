@@ -45,7 +45,10 @@ $fa-font-path: "~font-awesome/fonts";
 
         &.toast-danger, &.toast-error {
             background-image: none !important;
-            background-color: $brand-danger;
+
+            @include themify($themes) {
+                background-color: themed('dangerColor');
+            }
 
             &:before {
                 content: "\f0e7";
@@ -55,7 +58,10 @@ $fa-font-path: "~font-awesome/fonts";
 
         &.toast-warning {
             background-image: none !important;
-            background-color: $brand-warning;
+
+            @include themify($themes) {
+                background-color: themed('warningColor');
+            }
 
             &:before {
                 content: "\f071";
@@ -64,7 +70,10 @@ $fa-font-path: "~font-awesome/fonts";
 
         &.toast-info {
             background-image: none !important;
-            background-color: $brand-info;
+
+            @include themify($themes) {
+                background-color: themed('infoColor');
+            }
 
             &:before {
                 content: "\f05a";
@@ -73,7 +82,10 @@ $fa-font-path: "~font-awesome/fonts";
 
         &.toast-success {
             background-image: none !important;
-            background-color: $brand-success;
+
+            @include themify($themes) {
+                background-color: themed('successColor');
+            }
 
             &:before {
                 content: "\f00C";

@@ -5,35 +5,45 @@ small, .small {
 }
 
 .text-primary {
-    color: $brand-primary !important;
-}
-
-.text-danger {
-    color: $brand-danger !important;
+    @include themify($themes) {
+        color: themed('primaryColor') !important;
+    }
 }
 
 .text-success {
-    color: $brand-success !important;
-}
-
-.text-info {
-    color: $brand-info !important;
-}
-
-.text-warning {
-    color: $brand-warning !important;
+    @include themify($themes) {
+        color: themed('successColor') !important;
+    }
 }
 
 .text-muted {
-    color: $text-muted !important;
+    @include themify($themes) {
+        color: themed('mutedColor') !important;
+    }
 }
 
 .text-default {
-    color: $text-color !important;
+    @include themify($themes) {
+        color: themed('textColor') !important;
+    }
 }
 
-.text-accent {
-    color: $brand-primary-accent;
+.text-danger {
+    @include themify($themes) {
+        color: themed('dangerColor') !important;
+    }
+}
+
+.text-info {
+    @include themify($themes) {
+        color: themed('infoColor') !important;
+    }
+}
+
+.text-warning {
+    @include themify($themes) {
+        color: themed('warningColor') !important;
+    }
 }
 
 .text-center {
@@ -126,8 +136,18 @@ app-root > #loading {
     height: 100%;
     width: 100%;
     color: $text-muted;
+
+    @include themify($themes) {
+        color: themed('mutedColor');
+    }
 }
 
 app-vault-icon {
     display: flex;
+}
+
+.logo-image {
+    @include themify($themes) {
+        content: url('../images/logo-' + themed('logoSuffix') + '@2x.png');
+    }
 }

@@ -495,7 +495,7 @@
     "message": "Theme"
   },
   "themeDesc": {
-    "message": "Change the application's color theme. You must re-open the window."
+    "message": "Change the application's color theme."
   },
   "dark": {
     "message": "Dark",
