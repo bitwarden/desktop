@@ -99,6 +99,11 @@ $fa-font-path: "~font-awesome/fonts";
 .swal-modal {
     border-radius: $border-radius;
 
+    @include themify($themes) {
+        background-color: themed('backgroundColorAlt');
+        color: themed('textColor');
+    }
+
     .swal-icon {
         margin: 15px auto 0 auto;
     }
@@ -129,12 +134,18 @@ $fa-font-path: "~font-awesome/fonts";
         padding: 10px 10px 15px 10px;
         margin: 0;
         font-size: $font-size-large;
-        color: $text-color;
+        
+        @include themify($themes) {
+            color: themed('textColor');
+        }
     }
 
     .swal-text {
-        color: $text-color;
         font-size: $font-size-base;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
     }
 
     .swal-footer {
@@ -143,6 +154,10 @@ $fa-font-path: "~font-awesome/fonts";
 
         .swal-button {
             @extend .btn;
+
+            &:focus {
+                box-shadow: none;
+            }
         }
 
         .swal-button--confirm {

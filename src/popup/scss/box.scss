@@ -10,15 +10,22 @@
 
     .box-header {
         margin: 0 10px 5px 10px;
-        color: $gray-light;
         text-transform: uppercase;
         display: flex;
+
+        @include themify($themes) {
+            color: themed('headingColor');
+        }
     }
 
     .box-content {
-        background: $box-background-color;
-        border-top: 1px solid $border-color-dark;
-        border-bottom: 1px solid $border-color-dark;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+
+        @include themify($themes) {
+            background-color: themed('boxBackgroundColor');
+            border-color: themed('borderColorDark');
+        }
 
         &.box-content-padded {
             padding: 10px 15px;
@@ -37,7 +44,11 @@
                 bottom: 0;
                 height: 1px;
                 width: calc(100% - 10px);
-                border-bottom: 1px solid $box-border-color;
+                border-bottom: 1px solid #000000;
+
+                @include themify($themes) {
+                    border-bottom-color: themed('boxBorderColor');
+                }
             }
 
             &:last-child {
@@ -54,7 +65,9 @@
             }
 
             &:hover, &:focus, &.active {
-                background-color: $box-background-hover-color;
+                @include themify($themes) {
+                    background-color: themed('boxBackgroundHoverColor');
+                }
             }
 
             &.pre {
@@ -64,20 +77,29 @@
 
             .row-label, label {
                 font-size: $font-size-small;
-                color: $text-muted;
                 display: block;
                 width: 100%;
                 margin-bottom: 5px;
+
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
             }
 
             .text, .detail {
                 display: block;
-                color: $text-color;
+
+                @include themify($themes) {
+                    color: themed('textColor');
+                }
             }
 
             .detail {
                 font-size: $font-size-small;
-                color: $text-muted;
+
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
             }
 
             .img-right {
@@ -109,8 +131,11 @@
 
                 > a {
                     padding: 8px 8px 8px 4px;
-                    color: $brand-danger;
                     margin: 0;
+                
+                    @include themify($themes) {
+                        color: themed('dangerColor');
+                    }
                 }
             }
 
@@ -122,14 +147,19 @@
             &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
                 label, .row-label {
                     font-size: $font-size-base;
-                    color: $text-color;
                     display: inline;
                     width: initial;
                     margin-bottom: 0;
+                
+                    @include themify($themes) {
+                        color: themed('textColor');
+                    }
                 }
 
                 > span {
-                    color: $text-muted;
+                    @include themify($themes) {
+                        color: themed('mutedColor');
+                    }
                 }
 
                 > input {
@@ -176,7 +206,9 @@
                 background-color: transparent;
 
                 &::-webkit-input-placeholder {
-                    color: lighten($gray-light, 35%);
+                    @include themify($themes) {
+                        color: themed('inputPlaceholderColor');
+                    }
                 }
 
                 &:focus {
@@ -186,8 +218,11 @@
 
             select {
                 width: 100%;
-                border: 1px solid darken($border-color-dark, 7%);
                 border-radius: $border-radius;
+                
+                @include themify($themes) {
+                    border-color: themed('inputBorderColor');
+                }
             }
 
             .action-buttons {
@@ -199,17 +234,26 @@
                     padding: 10px 8px;
                     background: none;
                     border: none;
-                    color: $brand-primary;
+                    
+                    @include themify($themes) {
+                        color: themed('boxRowButtonColor');
+                    }
 
                     &:hover, &:focus {
-                        color: darken($brand-primary, 10%);
+                        @include themify($themes) {
+                            color: themed('boxRowButtonHoverColor');
+                        }
                     }
 
                     &.disabled {
-                        color: $list-icon-color;
+                        @include themify($themes) {
+                            color: themed('disabledIconColor');
+                        }
 
                         &:hover {
-                            color: $list-icon-color;
+                            @include themify($themes) {
+                                color: themed('disabledIconColor');
+                            }
                         }
                     }
 
@@ -230,13 +274,18 @@
             }
 
             .row-sub-icon, .row-sub-label + i.fa {
-                color: $list-icon-color;
+                @include themify($themes) {
+                    color: themed('disabledIconColor');
+                }
             }
 
             .row-sub-label {
                 margin: 0 15px;
-                color: $gray-light;
                 white-space: nowrap;
+                
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
             }
 
             .icon {
@@ -246,7 +295,10 @@
                 min-width: 34px;
                 height: 100%;
                 margin-left: -5px;
-                color: $text-muted;
+
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
 
                 img {
                     border-radius: $border-radius;
@@ -282,8 +334,11 @@
                     }
 
                     .totp-circle {
-                        stroke: $brand-primary;
                         fill: none;
+
+                        @include themify($themes) {
+                            stroke: themed('totpStrokeColor');
+                        }
 
                         &.inner {
                             stroke-width: 3;
@@ -301,11 +356,15 @@
 
                 &.low {
                     .totp-sec, .totp-code {
-                        color: $brand-danger;
+                        @include themify($themes) {
+                            color: themed('dangerColor');
+                        }
                     }
 
                     .totp-circle {
-                        stroke: $brand-danger;
+                        @include themify($themes) {
+                            stroke: themed('dangerColor');
+                        }
                     }
                 }
             }
@@ -326,15 +385,21 @@
     .box-footer {
         margin: 5px 10px;
         font-size: $font-size-small;
-        color: $text-muted;
+
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
     }
 
     &.list {
         .box-content {
             .box-content-row {
                 padding: 3px 10px;
-                color: $text-color;
                 text-decoration: none;
+
+                @include themify($themes) {
+                    color: themed('textColor');
+                }
 
                 &.padded {
                     padding-top: 10px;
@@ -342,12 +407,18 @@
                 }
 
                 &:hover, &:focus, &.active {
-                    background-color: $list-item-hover;
+                    @include themify($themes) {
+                        background-color: themed('listItemBackgroundHoverColor');
+                    }
                 }
 
                 &:focus {
-                    border-left: 5px solid $text-muted;
+                    border-left: 5px solid #000000;
                     padding-left: 5px;
+
+                    @include themify($themes) {
+                        border-left-color: themed('mutedColor');
+                    }
                 }
 
                 .action-buttons {
