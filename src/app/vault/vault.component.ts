@@ -265,7 +265,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             default:
                 break;
         }
-        menu.popup(remote.getCurrentWindow());
+        menu.popup({ window: remote.getCurrentWindow() });
     }
 
     editCipher(cipher: CipherView) {
@@ -307,7 +307,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             label: this.i18nService.t('typeSecureNote'),
             click: () => this.addCipherWithChangeDetection(CipherType.SecureNote),
         }));
-        menu.popup(remote.getCurrentWindow());
+        menu.popup({ window: remote.getCurrentWindow() });
     }
 
     async savedCipher(cipher: CipherView) {
