@@ -222,6 +222,7 @@
                 width: 100%;
                 border: 1px solid #000000;
                 border-radius: $border-radius;
+
                 @include themify($themes) {
                     border-color: themed('inputBorderColor');
                 }
@@ -236,6 +237,7 @@
                     padding: 10px 8px;
                     background: none;
                     border: none;
+                    
                     @include themify($themes) {
                         color: themed('boxRowButtonColor');
                     }
