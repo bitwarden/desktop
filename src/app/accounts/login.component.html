@@ -1,6 +1,6 @@
 <form id="login-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
     <div class="content">
-        <img src="../../images/logo@2x.png" alt="bitwarden">
+        <img class="logo-image" alt="Bitwarden">
         <p class="lead">{{'loginOrCreateNewAccount' | i18n}}</p>
         <div class="box last">
             <div class="box-content">
@@ -27,7 +27,7 @@
         </div>
         <div class="buttons">
             <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
-                <span [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'logIn' | i18n}}</span>
+                <b [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'logIn' | i18n}}</b>
                 <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
             </button>
             <a routerLink="/register" class="btn block">

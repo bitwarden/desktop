@@ -206,8 +206,15 @@ app-root > #loading {
     align-items: center;
     height: 100%;
     width: 100%;
+    color: $text-muted;
 
     @include themify($themes) {
         color: themed('mutedColor');
+    }
+}
+
+.logo-image {
+    @include themify($themes) {
+        content: url('../images/logo-' + themed('logoSuffix') + '@2x.png');
     }
 }

@@ -792,7 +792,7 @@
     "message": "Theme"
   },
   "themeDesc": {
-    "message": "Change the application's color theme. Restart is required."
+    "message": "Change the application's color theme."
   },
   "dark": {
     "message": "Dark",

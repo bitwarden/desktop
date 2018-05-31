@@ -121,6 +121,7 @@ export class SettingsComponent implements OnInit {
     async saveTheme() {
         await this.storageService.save(ConstantsService.themeKey, this.theme);
         this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
+        window.setTimeout(() => window.location.reload(), 200);
     }
 
     private callAnalytics(name: string, enabled: boolean) {
