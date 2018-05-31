@@ -191,6 +191,7 @@
     "@angular/compiler-cli": "5.2.0",
     "@ngtools/webpack": "1.10.2",
     "@types/keytar": "^4.0.1",
+    "@types/lowdb": "^1.0.1",
     "@types/lunr": "2.1.5",
     "@types/node": "8.0.19",
     "@types/node-forge": "0.7.1",
