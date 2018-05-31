@@ -90,10 +90,13 @@
         }
 
         a.settings-icon {
-            color: #bbbbbb;
             position: absolute;
             top: 10px;
             left: 10px;
+
+            @include themify($themes) {
+                color: themed('mutedColor');
+            }
 
             span {
                 visibility: hidden;
