@@ -105,7 +105,7 @@ const authService = new AuthService(cryptoService, apiService,
 const exportService = new ExportService(folderService, cipherService);
 const auditService = new AuditService(cryptoFunctionService);
 
-const analytics = new Analytics(window, () => false, platformUtilsService, storageService, appIdService);
+const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToWindow(window);
 environmentService.setUrlsFromStorage().then(() => {
     return syncService.fullSync(true);
