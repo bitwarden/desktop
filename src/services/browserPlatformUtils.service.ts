@@ -169,6 +169,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return true;
     }
 
+    showToast(type: 'error' | 'success' | 'warning' | 'info', title: string, text: string, global?: any): void {
+        throw new Error('showToast not implemented');
+    }
+
     showDialog(text: string, title?: string, confirmText?: string, cancelText?: string, type?: string) {
         const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
         this.messagingService.send('showDialog', {
