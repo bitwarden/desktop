@@ -51,7 +51,7 @@
     "message": "URI"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "URI- $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -61,7 +61,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Új URI"
   },
   "username": {
     "message": "Felhasználónév"
@@ -334,7 +334,7 @@
     "message": "Jelszó másolása"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI másolása"
   },
   "length": {
     "message": "Hossz"
@@ -542,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Ellenőrzés a Duo Security-val a Duo Mobile alkalmazást, SMS-t, telefonhívást vagy U2F biztonsági kulcsot.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -770,6 +770,38 @@
   "disableFaviconDesc": {
     "message": "A webhelyek ikonjai felismerhető ikonként jelennek meg a széfed minden eleme mellett."
   },
+  "enableMinToTray": {
+    "message": "Minimize to Tray Icon"
+  },
+  "enableMinToTrayDesc": {
+    "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableTray": {
+    "message": "Enable Tray Icon"
+  },
+  "enableTrayDesc": {
+    "message": "Always show an icon in the system tray."
+  },
+  "language": {
+    "message": "Language"
+  },
+  "languageDesc": {
+    "message": "Change the language used by the application. Restart is required."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "copy": {
     "message": "Másolás",
     "description": "Copy to clipboard"
@@ -977,10 +1009,10 @@
     "message": "Ablak"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Jelszó ellenőrzése."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Ez a jelszó már $VALUE$ alkalommal ki volt téve az adatok megsértésének. Javasolt a megváltoztatása.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -989,38 +1021,51 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Ez a jelszó nem található egyetlen ismert adatszegésben sem. Biztonságos lehet használni."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Alap domain"
   },
   "host": {
-    "message": "Host",
+    "message": "Hoszt",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Pontos"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Ezzel kezdődik"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Reguláris kifejezés",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Találatfelismerés",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Alapértelmezett találatfelismerés",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Opciók megnyitása"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Szervezet",
     "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Default"
+  },
+  "exit": {
+    "message": "Exit"
+  },
+  "showHide": {
+    "message": "Show \/ Hide",
+    "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
+  },
+  "hideToTray": {
+    "message": "Hide to Tray"
   }
 }
