@@ -28,7 +28,7 @@
         border-bottom: 1px solid #000000;
 
         @include themify($themes) {
-            border-bottom-color: themed('borderColor');
+            border-bottom-color: themed('listItemBorderColor');
         }
     }
 

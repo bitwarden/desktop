@@ -21,7 +21,7 @@
 
         @include themify($themes) {
             background-color: themed('backgroundColorAlt');
-            border-right-color: themed('borderColorDark');
+            border-right-color: themed('borderColor');
         }
 
         .inner-content {
@@ -141,7 +141,7 @@
         
         @include themify($themes) {
             background-color: themed('backgroundColor');
-            border-right-color: themed('borderColorDark');
+            border-right-color: themed('borderColor');
         }
 
         .no-items {
@@ -302,7 +302,7 @@
 
         @include themify($themes) {
             background-color: themed('backgroundColorAlt');
-            border-top-color: themed('borderColorDark');
+            border-top-color: themed('borderColor');
         }
 
         button {

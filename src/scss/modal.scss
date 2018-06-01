@@ -203,7 +203,7 @@ $close-text-shadow: 0 1px 0 $white !default;
     //@include border-top-radius($border-radius-lg);
 
     @include themify($themes) {
-        border-bottom-color: themed('borderColorDark');
+        border-bottom-color: themed('borderColor');
     }
 
     .close {
@@ -249,7 +249,7 @@ $close-text-shadow: 0 1px 0 $white !default;
     border-top: $modal-footer-border-width solid $modal-footer-border-color;
 
     @include themify($themes) {
-        border-top-color: themed('borderColorDark');
+        border-top-color: themed('borderColor');
     }
 
     // Easily place margin between footer elements

@@ -39,8 +39,7 @@ $button-color-danger: darken($brand-danger, 10%);
 $themes: (
     light: (
         textColor: $text-color,
-        borderColor: $border-color,
-        borderColorDark: $border-color-dark,
+        borderColor: $border-color-dark,
         backgroundColor: $background-color,
         backgroundColorAlt: $background-color-alt,
         backgroundColorAlt2: $background-color-alt2,
@@ -57,6 +56,7 @@ $themes: (
         headerInputPlaceholderColor: lighten($brand-primary, 35%),
         listItemBackgroundColor: $background-color,
         listItemBackgroundHoverColor: $list-item-hover,
+        listItemBorderColor: $border-color,
         groupingsActiveColor: darken($background-color-alt, 5%),
         disabledIconColor: $list-icon-color,
         headingColor: $gray-light,
@@ -86,7 +86,6 @@ $themes: (
     dark: (
         textColor: #ffffff,
         borderColor: #2f2f2f,
-        borderColorDark: #2f2f2f,
         backgroundColor: #363636,
         backgroundColorAlt: #3d3d3d,
         backgroundColorAlt2: #222222,
@@ -103,6 +102,7 @@ $themes: (
         headerInputPlaceholderColor: #707070,
         listItemBackgroundColor: #363636,
         listItemBackgroundHoverColor: #3c3c3c,
+        listItemBorderColor: #2f2f2f,
         groupingsActiveColor: #292929,
         disabledIconColor: #c7c7cd,
         headingColor: #a3a3a3,
