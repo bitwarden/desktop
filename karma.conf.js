@@ -20,7 +20,8 @@ module.exports = function(config) {
 
         // list of files to exclude
         exclude: [
-            "jslib/src/services/nodeApi.service.ts"
+            "jslib/src/services/nodeApi.service.ts",
+            "jslib/src/services/lowdbStorage.service.ts"
         ],
 
         // preprocess matching files before serving them to the browser
