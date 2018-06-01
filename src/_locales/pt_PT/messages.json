@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de palavras-passe e credenciais para o website no seu separador atual."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Exportar cofre"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Remover"
+  },
+  "default": {
+    "message": "Default"
   }
 }

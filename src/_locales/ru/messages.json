@@ -240,7 +240,7 @@
     "message": "Заметка"
   },
   "editItem": {
-    "message": "Изменить элемент"
+    "message": "Изменение элемента"
   },
   "folder": {
     "message": "Папка"
@@ -437,10 +437,10 @@
     "message": "Новый URI"
   },
   "addedItem": {
-    "message": "Добавленный элемент"
+    "message": "Элемент добавлен"
   },
   "editedItem": {
-    "message": "Измененный элемент"
+    "message": "Элемент изменен"
   },
   "deleteItemConfirmation": {
     "message": "Вы действительно хотите удалить этот элемент?"
@@ -490,6 +490,20 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта на текущей вкладке."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
   },
   "exportVault": {
     "message": "Экспортировать хранилище"
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Удалить"
+  },
+  "default": {
+    "message": "Default"
   }
 }

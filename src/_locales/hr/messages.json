@@ -252,13 +252,13 @@
     "message": "Prikaz stavke"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Pokreni"
   },
   "website": {
     "message": "Web stranica"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Promijeni vidljivost"
   },
   "manage": {
     "message": "Upravljanje"
@@ -324,7 +324,7 @@
     "message": "Sigurnost"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Došlo je do pogreške"
   },
   "emailRequired": {
     "message": "Adresa e-pošte je obavezna."
@@ -424,7 +424,7 @@
     "message": "URL"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "URL $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -461,7 +461,7 @@
     "message": "Zbirka pretraživanja"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Tip pretrage"
   },
   "noneFolder": {
     "message": "Nema mape",
@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Opcije kontekstnog izbotnika omogućuju brzi pristup generiranju lozinke i prijavama za web stranicu na vašoj trenutačnoj kartici."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Izvoz trezora"
   },
@@ -511,7 +525,7 @@
     "message": "Podijelite trezor"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden omogućuje dijeljenje trezora s drugima pomoću računa organizacije. Želite li posjetiti web stranicu bitwarden.com da biste saznali više?"
   },
   "learnMore": {
     "message": "Saznaj više"
@@ -643,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "E-pošta za potvrdu poslana je na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -702,7 +716,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Potvrdite s Duo Security za svoju organizaciju pomoću Duo Mobile aplikacije, SMS-a, telefonskog poziva ili sigurnosnog ključa U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -967,10 +981,10 @@
     "message": "Identiteti"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Prijave"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Sigurna bilješka"
   },
   "clear": {
     "message": "Očisti"
@@ -1022,19 +1036,22 @@
     "message": "Uključi\/isključi opcije"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organizacija",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Vrste"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Sve stavke"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nema lozinki na popisu."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Ukloni"
+  },
+  "default": {
+    "message": "Default"
   }
 }

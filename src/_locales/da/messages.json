@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Kontekst-menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Eksporter boks"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Fjern"
+  },
+  "default": {
+    "message": "Default"
   }
 }

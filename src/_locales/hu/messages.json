@@ -65,7 +65,7 @@
     "message": "Jelszó másolása"
   },
   "copyNote": {
-    "message": "Copy Note"
+    "message": "Jegyzet másolása"
   },
   "copyUri": {
     "message": "URI másolása"
@@ -173,7 +173,7 @@
     "message": "Jelszó generátor"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Generátor",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -237,7 +237,7 @@
     "message": "Jegyzetek"
   },
   "note": {
-    "message": "Note"
+    "message": "Jegyzet"
   },
   "editItem": {
     "message": "Elem szerkesztése"
@@ -252,13 +252,13 @@
     "message": "Elem megtekintése"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Indítás"
   },
   "website": {
     "message": "Weboldal"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Láthatóság váltása"
   },
   "manage": {
     "message": "Kezelés"
@@ -324,7 +324,7 @@
     "message": "Biztonság"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Hiba történt"
   },
   "emailRequired": {
     "message": "E-mail cím megadása kötelező."
@@ -434,7 +434,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Új URI"
   },
   "addedItem": {
     "message": "Elem hozzáadva"
@@ -461,7 +461,7 @@
     "message": "Gyűjtemény keresése"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Keresés típusa"
   },
   "noneFolder": {
     "message": "Nincs mappa",
@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Helyi menü opciók gyors hozzáférést biztosít jelszó generáláshoz és bejelentkezésekhez a weboldalhoz amin éppen vagy."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Széf exportálása"
   },
@@ -511,7 +525,7 @@
     "message": "Széfed megosztása"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden lehetővé teszi egy szervezeti fiók használatával a fiók megosztását másokkal. Szeretnél többet megtudni a bitwarden.com weboldalon?"
   },
   "learnMore": {
     "message": "Tudjon meg többet"
@@ -643,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Az ellenőrző kód elküldve a(z) $EMAIL$ címre.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -702,7 +716,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Ellenőrzés a Duo Security-val a Duo Mobile alkalmazást, SMS-t, telefonhívást vagy U2F biztonsági kulcsot.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -967,10 +981,10 @@
     "message": "Azonosságok"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Bejelentkezések"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Biztonságos jegyzetek"
   },
   "clear": {
     "message": "Töröl"
@@ -979,7 +993,7 @@
     "message": "A kétlépcsős bejelentkezési kérelem befejezése az új fül használatával."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Jelszó ellenőrzése."
   },
   "passwordExposed": {
     "message": "This password has been exposed in data breaches. You should change it.",
@@ -991,50 +1005,53 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Ez a jelszó nem található egyetlen ismert adatszegésben sem. Biztonságos lehet használni."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Alap domain"
   },
   "host": {
-    "message": "Host",
+    "message": "Hoszt",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Pontos"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Ezzel kezdődik"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Reguláris kifejezés",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Találatfelismerés",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Alapértelmezett találatfelismerés",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Opciók megnyitása"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Szervezet",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Típusok"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Összes elem"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nincsenek listázható jelszavak."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Eltávolít"
+  },
+  "default": {
+    "message": "Default"
   }
 }

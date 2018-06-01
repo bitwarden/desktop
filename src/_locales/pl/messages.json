@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Opcje menu kontekstowego zapewniają szybki dostęp do generowania haseł oraz do danych logowania dla bieżącej karty."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Eksportuj dane skarbca"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Usuń"
+  },
+  "default": {
+    "message": "Default"
   }
 }

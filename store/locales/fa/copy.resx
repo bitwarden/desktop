@@ -118,41 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden – Free Password Manager</value>
+    <value>Bitwarden - مدیریت گذرواژه رایگان</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>یک مدیریت کننده رمز عبور رایگان برای تمامی دستگاههایتان</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>Bitwarden ساده ترین و امن ترین راه گردآوری تمام داده های ورودی و پسوردها است در حالی که به راحتی آنها را بین تمامی دستگاه ها همگام میکند.
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
+سرقت پسورد یک مشکل جدی است. وبسایت ها و اپلیکیشن هایی که شما از آنها استفاده میکنید هر روز تحت حملات قرار دارند. نقص های امنیتی رخ میدهند و پسوردها به سرقت میروند. زمانی که شما مجدداً از همان پسورد برای تمام وبسایت ها و اپلیکیشن ها استفاده میکنید هکرها می‌توانند به راحتی به ایمیل، حساب بانکی، و سایر حسابهای کاربریتان دسترسی داشته باشند.
 
-Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
 
-Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
+متخصصان امنیتی توصیه میکنند که برای هر حساب کاربری که ایجاد میکنید از پسوردهای متفاوت و تصادفی تولید شده استفاده کنید. اما چطور تمامی این پسورها را مدیریت میکنید؟ بیت واردن ساختن، نگهداری، ودسترسی به پسوردهایتان را آسان میکند.
+
+
+Bitwarden تمامی داده های ورودی شما را در یک گاو صندوق رمزنگاری شده نگهداری میکند که قابل همگام سازی توسط تمامی دستگاه های شماست. از آنجا که این داده ها هر زمان قبل از ترک دستگاهتان کاملا رمزنگاری میشود، فقط شما به اطلاعاتتان دسترسی دارید. حتی اگر تیم ما در بیت واردن هم بخواهند نمیتوانند اطلاعات شما را مشاهده کنند. داده های شما توسط رمزگذاری AES-256 بیتی، هَش خرد شده، و PBKDF2SHA-256 رمزنگاری شده است.
+
+Bitwarden ۱۰۰٪ یک برنامه متن باز است. کد منبع بیت واردن در GitHub میزبانی میشود و هر کس آزاد است برای بررسی، تفتیش و کمک به کد دسترسی داشته باشد.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>یک مدیریت کننده رمز عبور رایگان برای تمامی دستگاههایتان</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices</value>
+    <value>همگام سازی و دسترسی به گاوصندوق خود را از دستگاه های مختلف</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>مدیریت تمام اطلاعات ورود و رمزهای عبورتان از یک گاوصندوق امن</value>
   </data>
   <data name="ScreenshotAutofill" xml:space="preserve">
-    <value>Quickly auto-fill your login credentials into any website that you visit</value>
+    <value>پرکردن خودکار معتبر ورودی شما بصورت سریع برای هر وبسایتی که از آن بازدید میکنید</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Your vault is also conveniently accessible from the right-click menu</value>
+    <value>گاوصندوق شما نیز به راحتی از منوی راست کلیک قابل دسترسی است</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>به صورت خودکار کلمات عبور قوی، تصادفی و امن ایجاد کنید</value>
   </data>
   <data name="ScreenshotEdit" xml:space="preserve">
-    <value>Your information is managed securely using AES-256 bit encryption</value>
+    <value>اطلاعات شما با استفاده از رمزگذاری AES-256 بیتی ایمن مدیریت می شود</value>
   </data>
 </root>

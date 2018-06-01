@@ -440,13 +440,13 @@
     "message": "Доданий запис"
   },
   "editedItem": {
-    "message": "Змінений запис"
+    "message": "Запис змінено"
   },
   "deleteItemConfirmation": {
     "message": "Ви дійсно хочете видалити цей запис?"
   },
   "deletedItem": {
-    "message": "Видалений запис"
+    "message": "Запис видалено"
   },
   "overwritePassword": {
     "message": "Перезаписати пароль"
@@ -490,6 +490,20 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Можливості контекстного меню забезпечують швидкий доступ до генерування пароля й входу для веб-сайту поточної вкладки."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
   },
   "exportVault": {
     "message": "Експорт сховища"
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Вилучити"
+  },
+  "default": {
+    "message": "Default"
   }
 }

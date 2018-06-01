@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "コンテキストメニューのオプションで、現在のタブのウェブサイトのログイン情報やパスワード生成に素早くアクセスできます。"
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "保管庫のエクスポート"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "削除"
+  },
+  "default": {
+    "message": "Default"
   }
 }

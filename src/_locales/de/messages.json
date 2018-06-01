@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf die Passwortgenerierung und Zugangsdaten für die Webseite in Ihrem aktuellen Tab."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Tresor exportieren"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Entfernen"
+  },
+  "default": {
+    "message": "Default"
   }
 }

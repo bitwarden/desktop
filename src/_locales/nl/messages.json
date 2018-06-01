@@ -252,13 +252,13 @@
     "message": "Item weergeven"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Starten"
   },
   "website": {
     "message": "Website"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Zichtbaarheid"
   },
   "manage": {
     "message": "Beheer"
@@ -324,7 +324,7 @@
     "message": "Beveiliging"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Er is een fout opgetreden"
   },
   "emailRequired": {
     "message": "E-mailadres is vereist."
@@ -351,7 +351,7 @@
     "message": "Verificatiecode is vereist."
   },
   "valueCopied": {
-    "message": " gekopieerd",
+    "message": "$VALUE$ gekopieerd",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -415,7 +415,7 @@
     "message": "Synchronisatie voltooid"
   },
   "syncingFailed": {
-    "message": "Synchronisatie mislukt"
+    "message": "De synchronisatie is mislukt"
   },
   "passwordCopied": {
     "message": "Wachtwoord gekopieerd"
@@ -461,7 +461,7 @@
     "message": "Verzameling doorzoeken"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Zoekcategorie"
   },
   "noneFolder": {
     "message": "Geen map",
@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Context menu-opties bieden snelle toegang tot wachtwoordgeneratie en logins voor de website in de huidige tab."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Exporteer Kluis"
   },
@@ -511,7 +525,7 @@
     "message": "Deel uw kluis"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Met een organisatie-account kunt u een Bitwarden-kluis met anderen delen. Wilt u op de website bitwarden.com meer informatie lezen?"
   },
   "learnMore": {
     "message": "Meer informatie"
@@ -574,7 +588,7 @@
     "message": "Lidmaatschap vernieuwen"
   },
   "premiumNotCurrentMember": {
-    "message": "U bent momenteel geen premium-lid."
+    "message": "U bent momenteel geen Premium-lid."
   },
   "premiumSignUpAndGet": {
     "message": "Meld u aan voor een Premium-lidmaatschap en verkrijg:"
@@ -601,13 +615,13 @@
     "message": "U kunt een premium-lidmaatschap kopen via de bitwarden.com-webkluis. Wilt u de website nu bezoeken?"
   },
   "premiumCurrentMember": {
-    "message": "U bent een premium-lid!"
+    "message": "U bent een Premium-lid!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Bedankt voor de ondersteuning van Bitwarden."
   },
   "premiumPrice": {
-    "message": "Dit alles voor slechts %price% per jaar!",
+    "message": "Dit alles voor slechts $PRICE$ per jaar!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -643,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verificatie-e-mail is verzonden naar $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -688,7 +702,7 @@
     "message": "Authenticatie-app"
   },
   "authenticatorAppDesc": {
-    "message": "Gebruik een authenticatie-app (zoals Authy of Google Authenticator) om tijdsgebaseerde authenticatiecodes te genereren.",
+    "message": "Gebruik een authenticatie-app (zoals Authy of Google Authenticator) om op tijd gebaseerde authenticatiecodes te genereren.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -698,11 +712,11 @@
     "message": "Gebruik een YubiKey om toegang te krijgen tot uw account. Werkt met YubiKey 4, 4 Nano, 4C en Neo-apparaten."
   },
   "duoDesc": {
-    "message": "Verifiëren met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
+    "message": "Verifieer met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifieer met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -970,7 +984,7 @@
     "message": "Logins"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Beveiligde notities"
   },
   "clear": {
     "message": "Wissen"
@@ -1022,19 +1036,22 @@
     "message": "Schakel Context"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisatie",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
     "message": "Types"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alle Items"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Er zijn geen wachtwoorden om weer te geven."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Verwijderen"
+  },
+  "default": {
+    "message": "Default"
   }
 }

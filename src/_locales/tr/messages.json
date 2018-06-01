@@ -173,7 +173,7 @@
     "message": "Parola Oluşturucu"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Oluşturucu",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -252,13 +252,13 @@
     "message": "Hesabı Görüntüle"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Başlat"
   },
   "website": {
     "message": "Websitesi"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Görünürlüğünü aç\/kapat"
   },
   "manage": {
     "message": "Yönet"
@@ -324,7 +324,7 @@
     "message": "Güvenlik"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Bir hata oluştu"
   },
   "emailRequired": {
     "message": "E-posta adresi gereklidir."
@@ -424,7 +424,7 @@
     "message": "URl"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "URL $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -461,7 +461,7 @@
     "message": "Koleksiyon ara"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Arama türü"
   },
   "noneFolder": {
     "message": "Klasör yok",
@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Sağtık menü seçenekleri, internet siteleri için geçerli sekmenizde şifre oluşturma ve oturum açma işlemlerine hızlı erişim sağlar."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Kasayı Dışa Aktar"
   },
@@ -511,7 +525,7 @@
     "message": "Kasanızı Paylaşın"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden bir kuruluş hesabı kullanarak başkalarıyla kasanızı paylaşmanızı sağlar. Daha fazla bilgi için bitwarden.com sitesini ziyaret etmek ister misiniz?"
   },
   "learnMore": {
     "message": "Daha fazla bilgi edinin"
@@ -643,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Doğrulama e-postası $EMAIL$ 'a gönderildi.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -702,7 +716,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Kuruluşunuzun Duo Security doğrulaması için Duo Mobile uygulaması, SMS, telefon görüşmesi veya U2F güvenlik anahtarını kullanın.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -967,10 +981,10 @@
     "message": "Kimlikler"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Hesaplar"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Güvenli Notlar"
   },
   "clear": {
     "message": "Temizle"
@@ -1019,22 +1033,25 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Aç\/Kapa Seçenekleri"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Kuruluş",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Türler"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Tüm öğeler"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Listelenecek parola yok."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Kaldır"
+  },
+  "default": {
+    "message": "Default"
   }
 }

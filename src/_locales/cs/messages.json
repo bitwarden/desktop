@@ -29,7 +29,7 @@
     "message": "Potvrdit"
   },
   "emailAddress": {
-    "message": "Emailová adresa"
+    "message": "E-mailová adresa"
   },
   "masterPass": {
     "message": "Hlavní heslo"
@@ -173,7 +173,7 @@
     "message": "Generátor hesla"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Generátor",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -315,7 +315,7 @@
     "message": "Při uzamknutí systému"
   },
   "onRestart": {
-    "message": "Při restartu"
+    "message": "Při restartu prohlížeče"
   },
   "never": {
     "message": "Nikdy"
@@ -351,7 +351,7 @@
     "message": "Ověřovací kód je povinný."
   },
   "valueCopied": {
-    "message": " zkopírováno",
+    "message": "Zkopírováno: $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -490,6 +490,20 @@
   },
   "disableContextMenuItemDesc": {
     "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
   },
   "exportVault": {
     "message": "Exportovat přihlašovací údaje"
@@ -634,7 +648,7 @@
     "message": "Zadejte 6-místný kód z ověřovací aplikace."
   },
   "enterVerificationCodeEmail": {
-    "message": "Zadejte 6-místný kód z emailu.",
+    "message": "Zadejte 6místný kód z e-mailu, který byl zaslán na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -643,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Ověřovací e-mail byl zaslán na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1029,12 +1043,15 @@
     "message": "Types"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Všechny položky"
   },
   "noPasswordsInList": {
     "message": "There are no passwords to list."
   },
   "remove": {
     "message": "Remove"
+  },
+  "default": {
+    "message": "Default"
   }
 }

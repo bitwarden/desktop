@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Možnosti kontextového menu ponúkajú rýchly prístup k prihlasovacím údajom a generovaniu hesiel pre stránku vo vašej aktuálnej karte."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Export trezoru"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Remove"
+  },
+  "default": {
+    "message": "Default"
   }
 }

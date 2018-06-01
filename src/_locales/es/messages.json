@@ -351,7 +351,7 @@
     "message": "Código de verificación requerido."
   },
   "valueCopied": {
-    "message": "$VALUE$ copiada",
+    "message": "Valor de $VALUE$ copiado",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -491,8 +491,22 @@
   "disableContextMenuItemDesc": {
     "message": "Las opciones del menú contextual permiten un acceso rápido al generador de contraseñas y a las entradas para el sitio abierto en tu pestaña actual."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
-    "message": "Exportar caja fuerte."
+    "message": "Exportar caja fuerte"
   },
   "warning": {
     "message": "ADVERTENCIA",
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Eliminar"
+  },
+  "default": {
+    "message": "Default"
   }
 }

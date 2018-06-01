@@ -65,7 +65,7 @@
     "message": "Kopioi salasana"
   },
   "copyNote": {
-    "message": "Copy Note"
+    "message": "Kopioi muistiinpano"
   },
   "copyUri": {
     "message": "Kopioi URI"
@@ -173,7 +173,7 @@
     "message": "Salasanageneraattori"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Generaattori",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -237,7 +237,7 @@
     "message": "Merkinnät"
   },
   "note": {
-    "message": "Note"
+    "message": "Muistiinpano"
   },
   "editItem": {
     "message": "Muokkaa kohdetta"
@@ -252,13 +252,13 @@
     "message": "Näytä kohde"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Avaa"
   },
   "website": {
     "message": "SIvusto"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Näytä\/piilota"
   },
   "manage": {
     "message": "Hallinta"
@@ -273,7 +273,7 @@
     "message": "Arvostele laajennus"
   },
   "rateExtensionDesc": {
-    "message": "Autathan meitä jättämällä positiivisen arvostelun!"
+    "message": "Autathan meitä jättämällä hyvän arvostelun!"
   },
   "browserNotSupportClipboard": {
     "message": "Selaimesi ei tue helppoa leikepöydälle kopiointia. Kopioi kohde manuaalisesti."
@@ -315,7 +315,7 @@
     "message": "Järjestelmän lukitsemisen yhteydessä"
   },
   "onRestart": {
-    "message": "Tietokoneen käynnistyksen yhteydessä"
+    "message": "Selaimen käynnistyksen yhteydessä"
   },
   "never": {
     "message": "Ei koskaan"
@@ -324,16 +324,16 @@
     "message": "Turvallisuus"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Tapahtui virhe"
   },
   "emailRequired": {
-    "message": "Sähköpostiosoite vaaditaan."
+    "message": "Sähköpostiosoite on pakollinen."
   },
   "invalidEmail": {
     "message": "Virheellinen sähköpostiosoite."
   },
   "masterPassRequired": {
-    "message": "Pääsalasana vaaditaan."
+    "message": "Pääsalasana on pakollinen."
   },
   "masterPassLength": {
     "message": "Pääsalasanan on oltava vähintään 8 merkkiä pitkä."
@@ -351,7 +351,7 @@
     "message": "Vahvistuskoodi vaaditaan."
   },
   "valueCopied": {
-    "message": " kopioitu",
+    "message": "$VALUE$ kopioitu",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -434,7 +434,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Uusi URI"
   },
   "addedItem": {
     "message": "Kohde lisätty"
@@ -461,7 +461,7 @@
     "message": "Hae valikoimasta"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Hae tämän tyypin kohteista"
   },
   "noneFolder": {
     "message": "Ei kansiota",
@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Hiiren oikealla painikkeella ilmestyvän pikavalikon toiminnoilla voit nopeasti luoda itsellesi salasanan tai täyttää kirjautumiskentät nykyiselle välilehdelle."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Vie holvi"
   },
@@ -511,7 +525,7 @@
     "message": "Jaa holvisi"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Voit jakaa Bitwardenilla holvisi sisällön muiden kanssa käyttämällä organisaatiotiliä. Haluatko käydä bitwarden.com-sivustolla lukemassa lisää?"
   },
   "learnMore": {
     "message": "Lue lisää"
@@ -607,7 +621,7 @@
     "message": "Kiitos, että tuet Bitwardenin toimintaa."
   },
   "premiumPrice": {
-    "message": "Kaikki nämä vain %price% \/ vuosi!",
+    "message": "Kaikki nämä vain $PRICE$ \/ vuosi!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -634,7 +648,7 @@
     "message": "Syötä 6-numeroinen vahvistuskoodi todennussovelluksestasi."
   },
   "enterVerificationCodeEmail": {
-    "message": "Syötä 6-numeroinen vahvistuskoodi sähköpostistasi",
+    "message": "Syötä 6-numeroinen vahvistuskoodi, joka lähetettiin osoitteeseen $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -643,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Vahvistussähköposti lähetettiin osoitteeseen $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -679,7 +693,7 @@
     "message": "Kaksivaiheisen kirjautumisen asetukset"
   },
   "recoveryCodeDesc": {
-    "message": "Etkö voi käyttää mitään kaksivaihemenetelmistäsi? Käytä palautuskoodiasi poistaaksesi käytöstä kaikki kaksivaiheisen todennuksen menetelmät tililtäsi."
+    "message": "Etkö pysty käyttämään mitään kaksivaihemenetelmistäsi? Käytä palautuskoodiasi poistaaksesi käytöstä kaikki kaksivaiheisen todennuksen menetelmät tililtäsi."
   },
   "recoveryCodeTitle": {
     "message": "Palautuskoodi"
@@ -688,7 +702,7 @@
     "message": "Todennussovellus"
   },
   "authenticatorAppDesc": {
-    "message": "Käytä todennussovellusta (Kuten Authyä tai Google Authenticatoria) luodaksesi aikarajallisia vahvistuskoodeja.",
+    "message": "Käytä todennussovellusta (Kuten Authya tai Google Authenticatoria) luodaksesi aikarajallisia vahvistuskoodeja.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -702,7 +716,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Vahvista organisaatiosi kirjautumiset Duo Securityn kautta käyttämällä Duo Mobile ‑sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -721,7 +735,7 @@
     "message": "Itse ylläpidetty ohjelmistoympäristö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Syötä omalla palvelimella ylläpitämäsi bitwarden-asennuksen kanta-URL."
+    "message": "Syötä omalla palvelimella ylläpitämäsi Bitwarden-asennuksen kanta-URL."
   },
   "customEnvironment": {
     "message": "Mukautettu ohjelmistoympäristö"
@@ -781,7 +795,7 @@
     "message": "Teksti"
   },
   "cfTypeHidden": {
-    "message": "Piilotettu"
+    "message": "Piilotettu teksti"
   },
   "cfTypeBoolean": {
     "message": "Valintaruutu"
@@ -967,10 +981,10 @@
     "message": "Henkilöllisyydet"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Käyttäjätunnukset"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Salatut muistiinpanot"
   },
   "clear": {
     "message": "Tyhjennä"
@@ -979,10 +993,10 @@
     "message": "Suorita kaksivaihekirjautumisesi loppuun uudella uudellavälilehdellä."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Tarkista, onko salasana vuotanut."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "Tämä salasana on paljastunut $VALUE$ tietovuodossa. Sinun kannattaa vaihtaa se.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -991,50 +1005,53 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Tätä salasanaa ei löytynyt yhdestäkään tunnetusta tietovuodosta. Sen pitäisi olla turvallinen."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Pääverkkotunnus"
   },
   "host": {
-    "message": "Host",
+    "message": "Osoite",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Täsmälleen…"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Alkaa…"
   },
   "regEx": {
     "message": "Säännöllinen lauseke",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Tunnistustapa",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Oletustunnistustapa",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Näytä\/piilota asetukset"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisaatio",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tyypit"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Kaikki kohteet"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Ei salasanoja näytettäväksi."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Poista"
+  },
+  "default": {
+    "message": "Default"
   }
 }

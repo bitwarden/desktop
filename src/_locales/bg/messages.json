@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Изнасяне на трезора"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Remove"
+  },
+  "default": {
+    "message": "Default"
   }
 }

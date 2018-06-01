@@ -65,7 +65,7 @@
     "message": "کپی رمز عبور"
   },
   "copyNote": {
-    "message": "Copy Note"
+    "message": "کپی یادداشت"
   },
   "copyUri": {
     "message": "کپی آدرس اینترنتی"
@@ -83,16 +83,16 @@
     "message": "پر کردن خودکار"
   },
   "generatePasswordCopied": {
-    "message": "Generate Password (copied)"
+    "message": "ساخت رمز عبور (کپی شد)"
   },
   "noMatchingLogins": {
-    "message": "No matching logins."
+    "message": "ورودیها منتطبق نیست."
   },
   "vaultLocked": {
     "message": "گاوصندوق قفل شد."
   },
   "autoFillInfo": {
-    "message": "There are no logins available to auto-fill for the current browser tab."
+    "message": "پرکردن خودکار برای برگه فعلی مرورگر در دسترس نیست."
   },
   "addLogin": {
     "message": "افزودن ورود جدید"
@@ -173,14 +173,14 @@
     "message": "تولید رمز عبور"
   },
   "generator": {
-    "message": "Generator",
+    "message": "تولید کننده",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
-    "message": "Automatically generate strong, unique passwords for your logins."
+    "message": "به طور خودکار رمزهای عبور قوی و منحصر به فرد برای ورود به سیستم خود ایجاد کنید."
   },
   "bitWebVault": {
-    "message": "Bitwarden Web Vault"
+    "message": "گاوصندوق وب Bitwarden"
   },
   "importItems": {
     "message": "واردن کردن موارد"
@@ -237,7 +237,7 @@
     "message": "یادداشت ها"
   },
   "note": {
-    "message": "Note"
+    "message": "یادداشت"
   },
   "editItem": {
     "message": "ویرایش مورد"
@@ -252,13 +252,13 @@
     "message": "مشاهده مورد"
   },
   "launch": {
-    "message": "Launch"
+    "message": "راه اندازی"
   },
   "website": {
     "message": "وب سایت"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "تغییر قابلیت نمایش"
   },
   "manage": {
     "message": "مدیریت"
@@ -270,13 +270,13 @@
     "message": "غیرفعال سازی آنالیزها"
   },
   "rateExtension": {
-    "message": "Rate the Extension"
+    "message": "به این افزونه امتیاز دهید"
   },
   "rateExtensionDesc": {
-    "message": "Please consider helping us out with a good review!"
+    "message": "لطفاً با یک بررسی خوب به ما کمک کنید!"
   },
   "browserNotSupportClipboard": {
-    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message": "مرورگر شما از کپی کلیپ بورد آسان پشتیبانی نمی کند. به جای آن به صورت دستی کپی کنید."
   },
   "verifyMasterPassword": {
     "message": "تایید گذرواژه اصلی"
@@ -324,7 +324,7 @@
     "message": "امنیت"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "خطایی رخ داده است"
   },
   "emailRequired": {
     "message": "آدرس ایمیل ضروری است."
@@ -361,7 +361,7 @@
     }
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
+    "message": "ناتوان در پرکردن خودکار آیتم انتخاب شده در این صفحه. اطلاعات را کپی و جایگذاری کنید."
   },
   "loggedOut": {
     "message": "خارج شده"
@@ -406,10 +406,10 @@
     "message": "پوشه حذف شده"
   },
   "gettingStartedTutorial": {
-    "message": "Getting Started Tutorial"
+    "message": "آغاز نمودن آموزش"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "برای یادگیری بیشتر نحوه استفاده از افزونه مرورگر آموزش شروع به کار را تماشا کنید."
   },
   "syncingComplete": {
     "message": "همگام سازی کامل شد"
@@ -418,13 +418,13 @@
     "message": "همگام سازی شکست خورد"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "رمز عبور کپی شد"
   },
   "uri": {
     "message": "نشانی اینترنتی"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "آدرس اینترنتی $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -434,7 +434,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "آدرس اینترنتی جدید"
   },
   "addedItem": {
     "message": "مورد افزوده شده"
@@ -461,7 +461,7 @@
     "message": "جستجوی مجموعه"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "نوع جستجو"
   },
   "noneFolder": {
     "message": "بدون پوشه",
@@ -471,59 +471,73 @@
     "message": "ما از آنالیز استفاده می کنیم تا بهتر بفهمیم که چگونه برنامه استفاده می شود تا بتوانیم آن را بهتر کنیم. تمام جمع آوری داده ها کاملا ناشناس است."
   },
   "disableAddLoginNotification": {
-    "message": "Disable Add Login Notification"
+    "message": "غیرفعال کردن اعلانیه اضافه کردن ورودی"
   },
   "addLoginNotificationDesc": {
-    "message": "The \"Add Login Notification\" automatically prompts you to save new logins to your vault whenever you log into them for the first time."
+    "message": "\"افزودن اعلانیه ورود\" به صورت خودکار از شما می خواهد هر بار که برای اولین بار وارد سیستم میشوید ورودی های جدید را در گاوصندوق خود ذخیره کنید."
   },
   "notificationAddDesc": {
-    "message": "Should Bitwarden remember this password for you?"
+    "message": "آیا Bitwarden باید این رمز عبور را برایتان بخاطر بسپرد؟"
   },
   "notificationAddSave": {
-    "message": "Yes, Save Now"
+    "message": "بله، ذخیره کن"
   },
   "notificationNeverSave": {
-    "message": "Never for this website"
+    "message": "برای اين سایت هرگز"
   },
   "disableContextMenuItem": {
-    "message": "Disable Context Menu Options"
+    "message": "غیر فعال کردن گزینه های منوی متن"
   },
   "disableContextMenuItemDesc": {
-    "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
+    "message": "گزینه های منوی متن دسترسی سریع به ساخت رمز عبور و ورود به سیستم برای وبسایت در برگه فعلی را برای شما فراهم میکند."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "صادر کردن گاوصندوق"
   },
   "warning": {
     "message": "اخطار",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "این صادرات شامل اطلاعات رمزگذاری شده شما در فرمت csv می باشد. شما نباید آن را در کانال های ناامن (مانند ایمیل) ذخیره یا ارسال کنید. بعد از اینکه کارتان با آن انجام شد آن را بلافاصله حذف کنید."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "گذرواژه اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
   },
   "shared": {
-    "message": "Shared"
+    "message": "اشتراک گذاری شد"
   },
   "shareVault": {
-    "message": "Share Your Vault"
+    "message": "اشتراک گذاری گاوصندوقتان"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden به شما اجازه می دهد با استفاده از سازماندهی حساب، گاوصندوقهای خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت bitwarden.com برای کسب اطلاعات بیشتر هستید؟"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "بیشتر بدانید"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "کلید تأیید کننده (TOTP)"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "کد تأیید (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Copy Verification Code"
+    "message": "کپی کد تأیید"
   },
   "attachments": {
     "message": "پیوست ها"
@@ -619,10 +633,10 @@
     "message": "نوسازی کامل شد"
   },
   "disableAutoTotpCopy": {
-    "message": "Disable Automatic TOTP Copy"
+    "message": "غیرفعال کردن کپی خودکار TOTP"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "اگر ورود شما دارای یک کلید تأیید کننده است که به آن متصل شده است، هر زمان که بصورت خودکار وارد سایت شوید کد تأیید TOTP به صورت خودکار به کلیپ بورد شما کپی می شود."
   },
   "premiumRequired": {
     "message": "در نسخه پرمیوم کار میکند"
@@ -643,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "ایمیل تایید به $EMAIL$ ارسال شد.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -670,10 +684,10 @@
     "message": "ورود به سیستم موجود نیست"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this web browser."
+    "message": "این حساب با سیستم دو مرحله ورود فعال است، با این حال، هیچ یک از ارائه دهندگان دو مرحله ای پیکربندی شده توسط این مرورگر وب پشتیبانی نمی شوند."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "لطفا از یک مرورگر وب پشتیبانی شده (مانند کروم) استفاده کنید و \/ یا ارائه دهندگان اضافی را که در مرورگر وب بهتر پشتیانی میکنند را اضافه کنید (مانند یک برنامه تأیید کننده هویت)."
   },
   "twoStepOptions": {
     "message": "گزینه های ورود دو مرحله ای"
@@ -702,7 +716,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Security را برای سازماندهی خود با استفاده از برنامه Duo Mobile، SMS، تماس تلفنی یا کلید امنیتی U2F تأیید کنید.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -748,22 +762,22 @@
     "message": "آدرس های اینترنتی محیط ذخیره شد."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Enable Auto-fill On Page Load"
+    "message": "فعال کردن پرکردن خودکار هنگام بارگذاری صفحه"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "If a login form is detected, automatically perform an auto-fill when the web page loads."
+    "message": "اگر یک فرم ورودی شناسایی شود، وقتی صفحه وب بارگذاری می شود، به صورت اتوماتیک انجام می شود."
   },
   "experimentalFeature": {
-    "message": "This is currently an experimental feature. Use at your own risk."
+    "message": "در حال حاضر این یک ویژگی آزمایشی است. با مسئولیت خود استفاده کنید."
   },
   "commandAutofillDesc": {
-    "message": "Auto-fill the last used login for the current website."
+    "message": "آخرین ورودی مورد استفاده برای وب سایت فعلی را به صورت خودکار پر کنید."
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generate and copy a new random password to the clipboard."
+    "message": "یک کلمه عبور تصادفی جدید ایجاد کنید و آن را در کلیپ بورد کپی کنید."
   },
   "privateModeMessage": {
-    "message": "Unfortunately this window is not available in private mode for this browser."
+    "message": "متأسفانه این پنجره در حالت خصوصی برای این مرورگر در دسترس نیست."
   },
   "customFields": {
     "message": "فیلدهای سفارشی"
@@ -787,7 +801,7 @@
     "message": "بولین"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "در خارج از پنجره پاپ آپ کلیک کنید که ایملیتان بررسی شود برای کد تأییدیه که باعث میشود این پنجره بسته شود. آیا می خواهید این پاپ آپ را در یک پنجره جدید باز کنید تا آن را نبندید؟"
   },
   "disableFavicon": {
     "message": "غیرفعال سازی آیکون های وبسایت"
@@ -814,82 +828,82 @@
     "message": "انقضاء"
   },
   "january": {
-    "message": "January"
+    "message": "ژانویه"
   },
   "february": {
-    "message": "February"
+    "message": "فوریه"
   },
   "march": {
-    "message": "March"
+    "message": "مارس"
   },
   "april": {
-    "message": "April"
+    "message": "آوریل"
   },
   "may": {
-    "message": "May"
+    "message": "مِی"
   },
   "june": {
-    "message": "June"
+    "message": "ژوئن"
   },
   "july": {
-    "message": "July"
+    "message": "جولای"
   },
   "august": {
-    "message": "August"
+    "message": "آگوست‌"
   },
   "september": {
-    "message": "September"
+    "message": "سپتامبر"
   },
   "october": {
-    "message": "October"
+    "message": "اکتبر"
   },
   "november": {
-    "message": "November"
+    "message": "نوامبر"
   },
   "december": {
-    "message": "December"
+    "message": "دسامبر"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "کد امنیتی"
   },
   "ex": {
-    "message": "ex."
+    "message": "سابق."
   },
   "title": {
-    "message": "Title"
+    "message": "عنوان"
   },
   "mr": {
-    "message": "Mr"
+    "message": "آقا"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "خانم"
   },
   "ms": {
-    "message": "Ms"
+    "message": "خانم"
   },
   "dr": {
-    "message": "Dr"
+    "message": "دکتر"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "نام"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "نام میانی"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "نام خانوادگی"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "نام شناسایی"
   },
   "company": {
-    "message": "Company"
+    "message": "شرکت"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "شماره امنیتی اجتماعی"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "شماره پاسپورت"
   },
   "licenseNumber": {
     "message": "شماره مجوز"
@@ -955,7 +969,7 @@
     "message": "مورد علاقه"
   },
   "popOutNewWindow": {
-    "message": "Pop out to a new window"
+    "message": "به یک پنجره جدید پاپ بزنید"
   },
   "refresh": {
     "message": "تازه کردن"
@@ -967,19 +981,19 @@
     "message": "مشخصات"
   },
   "logins": {
-    "message": "Logins"
+    "message": "ورود"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "یادداشت های امن"
   },
   "clear": {
     "message": "پاک کردن"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "درخواست ورود دو مرحله ای خود را با استفاده از برگه جدید تکمیل کنید."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "بررسی کنید که آیا رمز عبور افشا شده است."
   },
   "passwordExposed": {
     "message": "This password has been exposed in data breaches. You should change it.",
@@ -991,50 +1005,53 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "این رمز عبور در هیچ رخنه داده ای شناخته نشده است. باید برای امنیت از آن استفاده کنید."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "دامنه پایه"
   },
   "host": {
-    "message": "Host",
+    "message": "میزبان",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "دقیق"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "شروع می شود با"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "عبارت منظم",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "بازرسی تطابق",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "بازرسی تطابق پیشفرض",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "گزینه های تبدیل"
   },
   "organization": {
-    "message": "Organization",
+    "message": "سازماندهی",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "انواع"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "تمام موارد"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "هیچ رمز عبوری در لیست وجود ندارد."
   },
   "remove": {
-    "message": "Remove"
+    "message": "حذف"
+  },
+  "default": {
+    "message": "Default"
   }
 }

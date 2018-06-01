@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "Ekspordi hoidla"
   },
@@ -802,7 +816,7 @@
     "message": "Number"
   },
   "brand": {
-    "message": "Bränd"
+    "message": "Väljastaja"
   },
   "expirationMonth": {
     "message": "Aegumise kuu"
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "Eemalda"
+  },
+  "default": {
+    "message": "Default"
   }
 }

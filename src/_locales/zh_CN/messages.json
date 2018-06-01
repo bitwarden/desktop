@@ -491,6 +491,20 @@
   "disableContextMenuItemDesc": {
     "message": "上下文菜单选项可以让您快速访问密码生成器，也可以登陆当前标签的网站。"
   },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "exportVault": {
     "message": "导出密码库"
   },
@@ -1036,5 +1050,8 @@
   },
   "remove": {
     "message": "移除"
+  },
+  "default": {
+    "message": "Default"
   }
 }
