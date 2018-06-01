@@ -110,12 +110,17 @@ content::-webkit-scrollbar-track {
 }
 
 content::-webkit-scrollbar-thumb {
-    background-color: rgba(100,100,100,.2);
     border-radius: 10px;
     margin-right: 1px;
 
+    @include themify($themes) {
+        background-color: themed('scrollbarColor');
+    }
+
     &:hover {
-        background-color: rgba(100,100,100,.4);
+        @include themify($themes) {
+            background-color: themed('scrollbarHoverColor');
+        }
     }
 }
 
