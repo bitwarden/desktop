@@ -277,7 +277,7 @@ header {
 
     @include themify($themes) {
         background-color: themed('tabBackgroundColor');
-        border-top-color: themed('borderColorDark');
+        border-top-color: themed('borderColor');
     }
 
     ul {

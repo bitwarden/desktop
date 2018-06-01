@@ -39,7 +39,7 @@ $button-color-danger: darken($brand-danger, 10%);
 $themes: (
     light: (
         textColor: $text-color,
-        borderColorDark: $border-color-dark,
+        borderColor: $border-color-dark,
         backgroundColor: $background-color,
         backgroundColorAlt: #ffffff,
         scrollbarColor: rgba(100,100,100,.2),
@@ -83,7 +83,7 @@ $themes: (
     ),
     dark: (
         textColor: #ffffff,
-        borderColorDark: #111111,
+        borderColor: #111111,
         backgroundColor: #222222,
         backgroundColorAlt: #3d3d3d,
         scrollbarColor: #4d4d4d,

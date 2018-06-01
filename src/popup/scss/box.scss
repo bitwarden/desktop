@@ -24,7 +24,7 @@
 
         @include themify($themes) {
             background-color: themed('boxBackgroundColor');
-            border-color: themed('borderColorDark');
+            border-color: themed('borderColor');
         }
 
         &.box-content-padded {
