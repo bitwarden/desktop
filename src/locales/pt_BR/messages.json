@@ -770,6 +770,38 @@
   "disableFaviconDesc": {
     "message": "O ícone do site fornece um ícone reconhecível ao lado de cada crendencial no seu cofre."
   },
+  "enableMinToTray": {
+    "message": "Minimize to Tray Icon"
+  },
+  "enableMinToTrayDesc": {
+    "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableTray": {
+    "message": "Enable Tray Icon"
+  },
+  "enableTrayDesc": {
+    "message": "Always show an icon in the system tray."
+  },
+  "language": {
+    "message": "Language"
+  },
+  "languageDesc": {
+    "message": "Change the language used by the application. Restart is required."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "copy": {
     "message": "Copiar",
     "description": "Copy to clipboard"
@@ -961,7 +993,7 @@
     "message": "Sair do Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copiado",
+    "message": "$VALUE$ copiado(a)",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1022,5 +1054,18 @@
   "organization": {
     "message": "Organização",
     "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Default"
+  },
+  "exit": {
+    "message": "Exit"
+  },
+  "showHide": {
+    "message": "Show \/ Hide",
+    "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
+  },
+  "hideToTray": {
+    "message": "Hide to Tray"
   }
 }

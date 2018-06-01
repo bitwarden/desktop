@@ -70,7 +70,7 @@
     "message": "Wachtwoord"
   },
   "editItem": {
-    "message": "Item Bewerken"
+    "message": "Item bewerken"
   },
   "emailAddress": {
     "message": "E-mailadres"
@@ -192,13 +192,13 @@
     "message": "Titel"
   },
   "mr": {
-    "message": "Mr."
+    "message": "Dhr."
   },
   "mrs": {
-    "message": "Mvr."
+    "message": "Mevr."
   },
   "ms": {
-    "message": "Mvr."
+    "message": "Mej."
   },
   "dr": {
     "message": "Dr."
@@ -240,7 +240,7 @@
     "message": "Adres 3"
   },
   "cityTown": {
-    "message": "Stad \/ Dorp"
+    "message": "Stad \/ gemeente"
   },
   "stateProvince": {
     "message": "Staat \/ Provincie"
@@ -334,7 +334,7 @@
     "message": "Wachtwoord kopiëren"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI kopiëren"
   },
   "length": {
     "message": "Lengte"
@@ -408,7 +408,7 @@
     "message": "Log in of creëer een nieuw account om toegang te krijgen tot uw beveiligde kluis."
   },
   "createAccount": {
-    "message": "Account creëren"
+    "message": "Account aanmaken"
   },
   "logIn": {
     "message": "Inloggen"
@@ -441,7 +441,7 @@
     "message": "Voer het e-mailadres van uw account in om uw hoofdwachwoordhint te ontvangen."
   },
   "getMasterPasswordHint": {
-    "message": "Verkrijg hoofdwachtwoord-hint"
+    "message": "Hoofdwachtwoordhint krijgen"
   },
   "emailRequired": {
     "message": "E-mailadres is vereist."
@@ -459,7 +459,7 @@
     "message": "De hoofdwachtwoorden komen niet overeen."
   },
   "newAccountCreated": {
-    "message": "Uw nieuwe account is gecreëerd! U kunt nu inloggen."
+    "message": "Uw nieuwe account is aangemaakt! U kunt nu inloggen."
   },
   "masterPassSent": {
     "message": "We hebben u een e-mail gestuurd met uw hoofdwachtwoordhint."
@@ -542,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifieer met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -582,22 +582,22 @@
     "message": "Voor gevorderde gebruikers. U kunt de basis-URL van elke dienst afzonderlijk opgeven."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Server-URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API server-URL"
   },
   "webVaultUrl": {
-    "message": "Web Kluis Server URL"
+    "message": "Webkluis server-URL"
   },
   "identityUrl": {
-    "message": "Gebruikersbeheer Server URL"
+    "message": "Gebruikersbeheer server-URL"
   },
   "iconsUrl": {
-    "message": "Icoontjes-server URL"
+    "message": "Pictogrammen server-URL"
   },
   "environmentSaved": {
-    "message": "De omgeving URL's zijn opgeslagen."
+    "message": "De omgeving-URL's zijn opgeslagen."
   },
   "ok": {
     "message": "Oké"
@@ -770,6 +770,38 @@
   "disableFaviconDesc": {
     "message": "Websitepictogrammen bieden een herkenbare afbeelding naast ieder inlogitem in uw kluis."
   },
+  "enableMinToTray": {
+    "message": "Minimize to Tray Icon"
+  },
+  "enableMinToTrayDesc": {
+    "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableTray": {
+    "message": "Enable Tray Icon"
+  },
+  "enableTrayDesc": {
+    "message": "Always show an icon in the system tray."
+  },
+  "language": {
+    "message": "Language"
+  },
+  "languageDesc": {
+    "message": "Change the language used by the application. Restart is required."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
   "copy": {
     "message": "Kopiëren",
     "description": "Copy to clipboard"
@@ -814,7 +846,7 @@
     "message": "Er zijn momenteel geen updates beschikbaar; u gebruikt de nieuwste versie."
   },
   "updateError": {
-    "message": "Updatefout"
+    "message": "Fout tijdens het updaten"
   },
   "unknown": {
     "message": "Onbekend"
@@ -846,7 +878,7 @@
     "message": "U bent momenteel geen premium-lid."
   },
   "premiumSignUpAndGet": {
-    "message": "Meld u aan voor een Premium-lidmaatschap en verkrijg:"
+    "message": "Meld u aan voor een Premium lidmaatschap en krijg:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB versleutelde bestandsopslag."
@@ -1020,7 +1052,20 @@
     "message": "Opties schakelen"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisatie",
     "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Default"
+  },
+  "exit": {
+    "message": "Exit"
+  },
+  "showHide": {
+    "message": "Show \/ Hide",
+    "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
+  },
+  "hideToTray": {
+    "message": "Hide to Tray"
   }
 }
