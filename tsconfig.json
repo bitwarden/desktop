@@ -34,6 +34,6 @@
     "store",
     "src/edge",
     "jslib/src/services/nodeApi.service.ts",
-    "jslib/src/services/lowdbStorageService.service.ts"
+    "jslib/src/services/lowdbStorage.service.ts"
   ]
 }
