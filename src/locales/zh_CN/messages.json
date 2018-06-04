@@ -771,35 +771,35 @@
     "message": "在您的密码库的每个登录项旁显示一个可识别的图标。"
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "最小化到托盘图标"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "最小化窗口后在系统托盘显示一个图标。"
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "启用托盘图标"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "始终在系统托盘中显示一个图标。"
   },
   "language": {
-    "message": "Language"
+    "message": "语言"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "更改本应用程序使用的语言。需要重新启动才能生效。"
   },
   "theme": {
-    "message": "Theme"
+    "message": "主题"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "更改本应用程序的颜色主题。"
   },
   "dark": {
-    "message": "Dark",
+    "message": "暗",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "亮",
     "description": "Light color"
   },
   "copy": {
@@ -822,7 +822,7 @@
     "message": "重启以更新"
   },
   "restartToUpdateDesc": {
-    "message": "版本 $VERSION_NUM$ 已准备好安装。必须重新启动 Bitwarden 才能完成安装。是否立即重新启动并更新？",
+    "message": "版本 $VERSION_NUM$ 已准备好安装。您必须重新启动本应用程序才能完成安装。是否立即重新启动并更新？",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "默认"
   },
   "exit": {
-    "message": "Exit"
+    "message": "退出"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "显示\/隐藏",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "隐藏到托盘"
   }
 }
