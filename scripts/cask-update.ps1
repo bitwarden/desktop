@@ -13,4 +13,4 @@
 # To run:
 # sh ./cask-update.sh -version 1.3.0
 
-cask-repair --cask-version $version --blind-submit bitwarden
+cask-repair --cask-version $version --blind-submit --fail-on-error bitwarden
