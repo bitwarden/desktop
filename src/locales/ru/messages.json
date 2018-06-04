@@ -771,35 +771,35 @@
     "message": "Значки веб-сайтов отображаются рядом с каждым элементом в вашем хранилище."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Минимизировать в трей"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "При сворачивании окна будет отображен значок в системном трее."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Включить значок в трее"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Всегда отображать значок в системном трее."
   },
   "language": {
-    "message": "Language"
+    "message": "Язык"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Изменение языка, используемого приложением. Потребуется перезапуск."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Тема"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Изменение цветовой темы приложения."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Темная",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Светлая",
     "description": "Light color"
   },
   "copy": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "По умолчанию"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Выход"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Показать \/ Скрыть",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Свернуть в трей"
   }
 }

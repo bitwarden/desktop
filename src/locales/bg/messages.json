@@ -9,7 +9,7 @@
     "message": "Любими"
   },
   "types": {
-    "message": "Types"
+    "message": "Видове"
   },
   "typeLogin": {
     "message": "Запис"
@@ -21,7 +21,7 @@
     "message": "Самоличност"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Защитена бележка"
   },
   "folders": {
     "message": "Папки"
@@ -51,7 +51,7 @@
     "message": "Адрес"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "Адрес $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -95,7 +95,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Превключване на видимостта"
   },
   "cardholderName": {
     "message": "Име на притежателя на картата"
@@ -261,7 +261,7 @@
     "message": "Изтриване"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Любими"
   },
   "edit": {
     "message": "Редактиране"
@@ -334,7 +334,7 @@
     "message": "Копиране на паролата"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Копиране на адреса"
   },
   "length": {
     "message": "Дължина"
@@ -350,7 +350,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Избягване на нееднозначни знаци"
   },
   "searchCollection": {
     "message": "Търсене в колекцията"
@@ -362,7 +362,7 @@
     "message": "Търси в любими"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "Търсене по вид",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -393,16 +393,16 @@
     "message": "Настройки"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Редактирана папка"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Добавена папка"
   },
   "deleteFolderConfirmation": {
     "message": "Сигурни ли сте, че искате да изтриете тази папка?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Изтрита папка"
   },
   "loginOrCreateNewAccount": {
     "message": "Впишете се или създайте нов сметка, за да получите достъп безопасен трезор."
@@ -420,10 +420,10 @@
     "message": "Главна парола"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Главната парола се използва за достъп до трезора ви. Запомнете я добре, защото възстановяването й не е възможно."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Ако сте забравили главната парола, то подсказването може да ви помогне да си я припомните."
   },
   "reTypeMasterPass": {
     "message": "Повторно въвеждане на главната парола"
@@ -438,7 +438,7 @@
     "message": "Подсказка за паролата"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Въведете електронната си поща, за да получите подсказка за главната парола."
   },
   "getMasterPasswordHint": {
     "message": "Получете подсказване за главната парола"
@@ -462,7 +462,7 @@
     "message": "Вашата сметка беше създадена. Вече можете да се впишете."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Изпратили сме ви ел. писмо с подсказка за главната ви парола."
   },
   "unexpectedError": {
     "message": "Възникна неочаквана грешка."
@@ -495,7 +495,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Писмото за потвърждение е изпратено на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -507,7 +507,7 @@
     "message": "Запомняне"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Повторно изпращане на писмото за потвърждение"
   },
   "useAnotherTwoStepMethod": {
     "message": "Използвайте друг начин на двустепенно удостоверяване"
@@ -525,7 +525,7 @@
     "message": "Код за възстановяване"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Приложение за удостоверяване"
   },
   "authenticatorAppDesc": {
     "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
@@ -621,10 +621,10 @@
     "message": "Бяхте отписани"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Сесията ви изтече."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Сигурни ли сте, че искате да се отпишете?"
   },
   "logOut": {
     "message": "Отписване"
@@ -684,19 +684,19 @@
     "message": "You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Към интернетния трезор"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Изтегляне на мобилно приложение"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Изтегляне на разширение за мрежовия четец"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Синхронизацията завърши"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Синхронизирането е неуспешно"
   },
   "yourVaultIsLocked": {
     "message": "Your vault is locked. Verify your master password to continue."
@@ -896,13 +896,13 @@
     "message": "All future premium features. More coming soon!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Покупка на премийно членство"
   },
   "premiumPurchaseAlert": {
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Имате премийно членство!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Thank you for supporting Bitwarden."
@@ -920,7 +920,7 @@
     "message": "Refresh complete"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Хронология на паролата"
   },
   "clear": {
     "message": "Изчистване"
@@ -984,13 +984,13 @@
     "message": "Hide Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Скриване на другите"
   },
   "showAll": {
     "message": "Показване на всички"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "Изход"
   },
   "valueCopied": {
     "message": "$VALUE$ copied",
@@ -1024,17 +1024,17 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Основен домейн"
   },
   "host": {
-    "message": "Host",
+    "message": "Сървър",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Точно"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Започва с"
   },
   "regEx": {
     "message": "Регулярен израз",
@@ -1052,17 +1052,17 @@
     "message": "Настройки на превключване"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Организация",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "По подразбиране"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Излизане"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Показване \/ Скриване",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {

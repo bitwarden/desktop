@@ -771,35 +771,35 @@
     "message": "Los iconos de sitio web añaden una imagen reconocible al lado de cada entrada de tu caja fuerte."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimizar a icono en la bandeja"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Cuando se minimiza la ventana, se muestra un icono en la bandeja del sistema."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Activar icono en bandeja"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Mostrar siempre el icono de la bandeja del sistema."
   },
   "language": {
-    "message": "Language"
+    "message": "Idioma"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Cambiar el idioma usado por la aplicación. Es necesario reiniciar."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Cambiar el tema de la aplicación."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Oscuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Claro",
     "description": "Light color"
   },
   "copy": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Por defecto"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Salir"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Mostrar \/ Ocultar",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Ocultar en bandeja"
   }
 }

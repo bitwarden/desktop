@@ -771,35 +771,35 @@
     "message": "Ikoonid aitavad hoidlas olevaid veebilehti paremini ära tunda."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimeeri tegumiribale"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Akent minimeerides kuva üksnes süsteemisalve ikooni."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Luba süsteemisalve ikoon"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Kuva süsteemisalve ikoon alati."
   },
   "language": {
-    "message": "Language"
+    "message": "Keel"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Rakenduse poolt kasutatava keele muutmine. Vajalik on programmi taaskäivitus."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Teema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Muuda rakenduse värvikujundust."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tume",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Hele",
     "description": "Light color"
   },
   "copy": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Vaikimisi"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Välju"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Kuva \/ peida",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Peida süsteemisalve"
   }
 }

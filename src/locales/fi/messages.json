@@ -3,49 +3,49 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Kaikki kohteet"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Suosikit"
   },
   "types": {
-    "message": "Types"
+    "message": "Tyypit"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Käyttäjätunnus"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kortti"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Henkilöllisyys"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Salattu muistiinpano"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Kansiot"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Valikoimat"
   },
   "searchVault": {
     "message": "Search vault"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Lisää kohde"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Jaettu"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Liitteet"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Näytä kohde"
   },
   "name": {
-    "message": "Name"
+    "message": "Nimi"
   },
   "uri": {
     "message": "URI"
@@ -61,110 +61,110 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Uusi URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Käyttäjänimi"
   },
   "password": {
-    "message": "Password"
+    "message": "Salasana"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Muokkaa kohdetta"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Sähköpostiosoite"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Vahvistuskoodi (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Sivusto"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Merkinnät"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Lisäkentät"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Avaa"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "Kopioi teksti",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Näytä\/piilota"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Kortinhaltijan nimi"
   },
   "number": {
-    "message": "Number"
+    "message": "Numero"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Merkki"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Erääntymisaika"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Turvakoodi"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Yhtiö"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Henkilötunnus"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Passin numero"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Rekisterinumero"
   },
   "email": {
-    "message": "Email"
+    "message": "Sähköpostiosoite"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Puhelinnumero"
   },
   "address": {
-    "message": "Address"
+    "message": "Osoite"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Premium vaaditaan"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Tarvitset premium-jäsenyyden tämän toiminnon käyttämiseen."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Tapahtui virhe."
   },
   "error": {
-    "message": "Error"
+    "message": "Virhe"
   },
   "january": {
-    "message": "January"
+    "message": "Tammikuu"
   },
   "february": {
-    "message": "February"
+    "message": "Helmikuu"
   },
   "march": {
-    "message": "March"
+    "message": "Maaliskuu"
   },
   "april": {
-    "message": "April"
+    "message": "Huhtikuu"
   },
   "may": {
-    "message": "May"
+    "message": "Toukokuu"
   },
   "june": {
-    "message": "June"
+    "message": "Kesäkuu"
   },
   "july": {
     "message": "July"
@@ -318,39 +318,39 @@
     "message": "Are you sure you want to overwrite the current password?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Ei kansiota",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Lisää kansio"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Muokkaa kansiota"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Luo uusi salasana"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopioi salasana"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopioi URI"
   },
   "length": {
-    "message": "Length"
+    "message": "Pituus"
   },
   "close": {
-    "message": "Close"
+    "message": "Sulje"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Numeroja vähintään"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Erikoismerkkejä vähintään",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Vältä epäselviä merkkejä"
   },
   "searchCollection": {
     "message": "Search collection"
@@ -366,121 +366,121 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Lisää uusi liite"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Liite poistettu"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Haluatko varmasti poistaa liitteen?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Liite tallennettu."
   },
   "file": {
-    "message": "File"
+    "message": "Tiedosto"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Valitse tiedosto."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Tiedoston enimmäiskoko on 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
   },
   "options": {
-    "message": "Options"
+    "message": "Asetukset"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Kansiota muokattu"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Kansio lisätty"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Haluatko varmasti poistaa tämän kansion?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Kansio poistettu"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Kirjaudu sisään tai luo tili päästäksesi salattuun holviisi."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Luo tili"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Kirjaudu sisään"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Jatka"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Pääsalasana"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Pääsalasanalla pääset käsiksi holviisi. On hyvin tärkeää, että et unohda pääsalasanaasi. Sitä ei voida palauttaa mitenkään, jos satut unohtamaan sen."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Salasanavihje voi auttaa sinua muistamaan pääsalasanasi, jos satut unohtamaan sen."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Syötä pääsalasana uudelleen"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Salasanavihje (valinnainen)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Asetukset"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Salasanavihje"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Syötä tilisi sähköpostiosoite saadaksesi pääsalasanasi vihjeen."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Pyydä salasanavihjettä"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Sähköpostiosoite on pakollinen."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Virheellinen sähköpostiosoite."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Pääsalasana on pakollinen."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Pääsalasanan on oltava vähintään 8 merkkiä pitkä."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Pääsalasanan varmistus ei täsmää."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Uusi tilisi on luotu! Voit nyt kirjautua sisään."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Lähetimme sinulle sähköpostilla pääsalasanasi vihjeen."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Tapahtui odottamaton virhe."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Kohteen tiedot"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Ei näytettäviä kohteita."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Vahvistuskoodi"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Vahvistuskoodi vaaditaan."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Jatka"
   },
   "enterVerificationCodeApp": {
     "message": "Enter the 6 digit verification code from your authenticator app."

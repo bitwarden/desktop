@@ -771,35 +771,35 @@
     "message": "Webbplatsikoner ger en igenkännbar ikon bredvid varje inloggningsobjekt i ditt valv."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimera till systemfältsikon"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "När fönstret minimeras, visa en ikon i systemfältet istället."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Aktivera systemfältsikon"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Visa alltid en ikon i systemfältet."
   },
   "language": {
-    "message": "Language"
+    "message": "Språk"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Ändra språket som används av programmet. Omstart krävs."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Ändra programmets färgtema."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Mörkt",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Ljust",
     "description": "Light color"
   },
   "copy": {
@@ -822,7 +822,7 @@
     "message": "Starta om för att uppdatera"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ är redo att installera. Du måste starta om Bitwarden för att slutföra installationen. Vill du starta om och uppdatera nu?",
+    "message": "Version $VERSION_NUM$ är redo att installeras. Du måste starta om programmet för att slutföra installationen. Vill du starta om och uppdatera nu?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Standard"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Avsluta"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Visa \/ Dölj",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Minimera till systemfältet"
   }
 }

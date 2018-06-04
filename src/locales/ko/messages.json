@@ -36,7 +36,7 @@
     "message": "항목 추가"
   },
   "shared": {
-    "message": "Shared"
+    "message": "공유됨"
   },
   "attachments": {
     "message": "첨부 파일"
@@ -504,7 +504,7 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "기억하기"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "인증 코드 이메일 다시 보내기"
@@ -573,7 +573,7 @@
     "message": "자체 호스팅 환경"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
+    "message": "온-프레미스 Bitwarden이 호스팅되고 있는 서버의 기본 URL을 지정하세요."
   },
   "customEnvironment": {
     "message": "사용자 지정 환경"
@@ -771,35 +771,35 @@
     "message": "웹 사이트 아이콘을 사용하면 보관함 각 항목 옆에 이미지를 보여줍니다."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "알림 영역으로 최소화"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "창을 최소화하면 작업 표시줄 대신 알림 영역에 아이콘을 표시합니다."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "알림 영역 아이콘 사용"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "항상 알림 영역에 아이콘을 표시합니다."
   },
   "language": {
-    "message": "Language"
+    "message": "언어(Language)"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "애플리케이션에 사용할 언어를 변경합니다. 설정을 적용하려면 애플리케이션을 다시 시작해야 합니다."
   },
   "theme": {
-    "message": "Theme"
+    "message": "테마"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "애플리케이션의 색상 테마를 변경합니다."
   },
   "dark": {
-    "message": "Dark",
+    "message": "어두운 테마",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "밝은 테마",
     "description": "Light color"
   },
   "copy": {
@@ -822,7 +822,7 @@
     "message": "다시 시작하여 업데이트"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "$VERSION_NUM$ 버전을 설치할 준비가 되었습니다. 설치를 완료하려면 애플리케이션을 다시 시작해야 합니다. 지금 다시 시작하고 업데이트하시겠습니까?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -984,7 +984,7 @@
     "message": "Bitwarden 숨기기"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "다른 항목 숨기기"
   },
   "showAll": {
     "message": "모두 보기"
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "기본값"
   },
   "exit": {
-    "message": "Exit"
+    "message": "끝내기"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "표시 \/ 숨기기",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "알림 영역으로 숨기기"
   }
 }
