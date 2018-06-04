@@ -1,9 +1,5 @@
 ﻿# To run:
-# .\choco-pack.ps1
-#
-# and then push to choco with:
-# cd ..\dist\chocolatey
-# choco push
+# .\choco-update.ps1
 
 $dir = Split-Path -Parent $MyInvocation.MyCommand.Path;
 $rootDir = $dir + "\..";

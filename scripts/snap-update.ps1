@@ -1,5 +1,5 @@
 ﻿# To run:
-# ./snap-release.ps1
+# ./snap-update.ps1
 
 $dir = Split-Path -Parent $MyInvocation.MyCommand.Path;
 $rootDir = $dir + "/..";
