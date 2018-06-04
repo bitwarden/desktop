@@ -771,35 +771,35 @@
     "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque élément dans votre coffre."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Réduire dans la barre d'outils"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Lorsque la fenêtre est réduite, privilégier l'affichage d'une icône dans la zone de notification."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Activer le raccourci de la barre d'outils"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Toujours afficher une icône dans la zone de notification."
   },
   "language": {
-    "message": "Language"
+    "message": "Langue"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Modifier la langue utilisée par l'application. Un redémarrage est requis."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Thème"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Modifier la couleur du thème de l'application."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Sombre",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Clair",
     "description": "Light color"
   },
   "copy": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Par défaut"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Quitter"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Afficher\/Masquer",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Masquer"
   }
 }
