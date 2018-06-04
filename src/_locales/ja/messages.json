@@ -492,17 +492,17 @@
     "message": "コンテキストメニューのオプションで、現在のタブのウェブサイトのログイン情報やパスワード生成に素早くアクセスできます。"
   },
   "theme": {
-    "message": "Theme"
+    "message": "テーマ"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "アプリのテーマカラーを変更します。"
   },
   "dark": {
-    "message": "Dark",
+    "message": "ダーク",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "ライト",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "削除"
   },
   "default": {
-    "message": "Default"
+    "message": "デフォルト"
   }
 }

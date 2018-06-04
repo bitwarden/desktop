@@ -315,7 +315,7 @@
     "message": "Kiltiliyken"
   },
   "onRestart": {
-    "message": "Yeniden Başlatılırken"
+    "message": "Tarayıcıda Yeniden Başlatma"
   },
   "never": {
     "message": "Asla"
@@ -351,7 +351,7 @@
     "message": "Doğrulama kodu gereklidir."
   },
   "valueCopied": {
-    "message": " kopyalandı",
+    "message": "$VALUE$ kopyalandı",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -492,17 +492,17 @@
     "message": "Sağtık menü seçenekleri, internet siteleri için geçerli sekmenizde şifre oluşturma ve oturum açma işlemlerine hızlı erişim sağlar."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Uygulamanın renk temasını değiştir."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Koyu",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Açık",
     "description": "Light color"
   },
   "exportVault": {
@@ -981,7 +981,7 @@
     "message": "Kimlikler"
   },
   "logins": {
-    "message": "Hesaplar"
+    "message": "Girişler"
   },
   "secureNotes": {
     "message": "Güvenli Notlar"
@@ -996,7 +996,7 @@
     "message": "Parolanız herhangi bir saldırı sonucu açığa çıkmış mı kontrol edin."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "Bu parola $VALUE$ sefer saldırı sonucu veri ele geçmesiyle açığa çıkmış. Değiştirmeniz gerekiyor.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,6 +1052,6 @@
     "message": "Kaldır"
   },
   "default": {
-    "message": "Default"
+    "message": "Varsayılan"
   }
 }

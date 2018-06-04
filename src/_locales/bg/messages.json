@@ -35,7 +35,7 @@
     "message": "Главна парола"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Главната парола се използва за достъп до трезора ви. Запомнете я добре, защото възстановяването й не е възможно."
   },
   "masterPassHintDesc": {
     "message": "Ако сте забравили главната парола, то подсказването може да ви помогне да си я припомните."
@@ -83,7 +83,7 @@
     "message": "Самопопълващо се"
   },
   "generatePasswordCopied": {
-    "message": "Generate Password (copied)"
+    "message": "Генериране на парола (копирана)"
   },
   "noMatchingLogins": {
     "message": "Няма съвпадащи записи."
@@ -173,7 +173,7 @@
     "message": "Генератор на пароли"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Генератор",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -252,13 +252,13 @@
     "message": "Преглед на елемента"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Пускане"
   },
   "website": {
     "message": "Сайт"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Превключване на видимостта"
   },
   "manage": {
     "message": "Управление"
@@ -324,7 +324,7 @@
     "message": "Сигурност"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Възникна грешка"
   },
   "emailRequired": {
     "message": "Електронната поща е задължителна."
@@ -361,7 +361,7 @@
     }
   },
   "autofillError": {
-    "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
+    "message": "Неуспешно автоматично попълване. Вместо това копирайте и поставете данните."
   },
   "loggedOut": {
     "message": "Бяхте отписани"
@@ -424,7 +424,7 @@
     "message": "Адрес"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "Адрес $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -461,7 +461,7 @@
     "message": "Търсене в колекцията"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Търсене по вид"
   },
   "noneFolder": {
     "message": "Няма папка",
@@ -492,17 +492,17 @@
     "message": "Context menu options provide quick access to password generation and logins for the website in your current tab."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Облик"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Промяна на цветовия облик на програмата."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Тъмен",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Светъл",
     "description": "Light color"
   },
   "exportVault": {
@@ -576,7 +576,7 @@
     "message": "You cannot use this feature until you update your encryption key."
   },
   "premiumMembership": {
-    "message": "Премиум членство"
+    "message": "Премийно членство"
   },
   "premiumManage": {
     "message": "Управление на членството"
@@ -588,13 +588,13 @@
     "message": "Опресняване на абонамента"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "В момента нямате премийно членство."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Абонирайте се за премийно членство и получете:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 ГБ шифровано съхранение на файлове."
   },
   "ppremiumSignUpTwoStep": {
     "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
@@ -609,13 +609,13 @@
     "message": "All future premium features. More coming soon!"
   },
   "premiumPurchase": {
-    "message": "Покупка на премиум членство"
+    "message": "Покупка на премийно членство"
   },
   "premiumPurchaseAlert": {
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "Имате премиум членство!"
+    "message": "Имате премийно членство!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Thank you for supporting Bitwarden."
@@ -657,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Писмото за потвърждение е изпратено на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,7 +669,7 @@
     "message": "Запомняне"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Повторно изпращане на писмото за потвърждение"
   },
   "useAnotherTwoStepMethod": {
     "message": "Използвайте друг начин на двустепенно удостоверяване"
@@ -699,7 +699,7 @@
     "message": "Код за възстановяване"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Приложение за удостоверяване"
   },
   "authenticatorAppDesc": {
     "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
@@ -948,7 +948,7 @@
     "message": "Записи"
   },
   "typeSecureNote": {
-    "message": "Бележка за сигурност"
+    "message": "Защитена бележка"
   },
   "typeCard": {
     "message": "Карта"
@@ -981,10 +981,10 @@
     "message": "Самоличности"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Записи"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Защитени бележки"
   },
   "clear": {
     "message": "Изчистване"
@@ -1036,22 +1036,22 @@
     "message": "Настройки на превключване"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Организация",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Видове"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Всички елементи"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Няма пароли за показване."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Премахване"
   },
   "default": {
-    "message": "Default"
+    "message": "По подразбиране"
   }
 }

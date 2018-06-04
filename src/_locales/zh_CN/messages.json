@@ -492,17 +492,17 @@
     "message": "上下文菜单选项可以让您快速访问密码生成器，也可以登陆当前标签的网站。"
   },
   "theme": {
-    "message": "Theme"
+    "message": "主题"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "更改本应用程序的颜色主题。"
   },
   "dark": {
-    "message": "Dark",
+    "message": "暗",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "亮",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "移除"
   },
   "default": {
-    "message": "Default"
+    "message": "默认"
   }
 }

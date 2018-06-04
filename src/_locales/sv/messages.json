@@ -492,17 +492,17 @@
     "message": "Innehållsmenyn (högerklick) ger dig snabbare åtkomst för att skapa ett slumpmässigt lösenord, och för att fylla i en inloggning i den nuvarande fliken."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Ändra programmets färgtema."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Mörkt",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Ljust",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Ta bort"
   },
   "default": {
-    "message": "Default"
+    "message": "Standard"
   }
 }

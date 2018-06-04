@@ -492,17 +492,17 @@
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de palavras-passe e credenciais para o website no seu separador atual."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Altere o tema de cor da aplicação."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Escuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Claro",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Remover"
   },
   "default": {
-    "message": "Default"
+    "message": "Predefinido"
   }
 }

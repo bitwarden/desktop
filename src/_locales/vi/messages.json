@@ -492,17 +492,17 @@
     "message": "Tùy chọn menu ngữ cảnh giúp bạn truy cập nhanh thông tin đăng nhập và tạo mật khẩu cho trang web trong tab mà bạn đang mở."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Giao diện"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Thay đổi màu sắc ứng dụng."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tối",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Sáng",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Xoá"
   },
   "default": {
-    "message": "Default"
+    "message": "Mặc định"
   }
 }

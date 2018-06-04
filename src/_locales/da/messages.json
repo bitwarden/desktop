@@ -492,17 +492,17 @@
     "message": "Kontekst-menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Skift applikationens farvetema."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Mørk",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Lys",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Fjern"
   },
   "default": {
-    "message": "Default"
+    "message": "Standard"
   }
 }

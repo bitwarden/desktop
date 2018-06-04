@@ -492,17 +492,17 @@
     "message": "Опции контекстного меню обеспечивают быстрый доступ к генератору паролей и логинам для сайта на текущей вкладке."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Тема"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Изменение цветовой темы приложения."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Темная",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Светлая",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Удалить"
   },
   "default": {
-    "message": "Default"
+    "message": "По умолчанию"
   }
 }
