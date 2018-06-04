@@ -771,35 +771,35 @@
     "message": "Os ícones de websites providenciam uma imagem reconhecível ao lado de cada item de credencial no seu cofre."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimizar para ícone de bandeja"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Ao minimizar a janela, mostrar um ícone na bandeja do sistema em alternativa."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Ativar ícone de bandeja"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Mostrar sempre um ícone na bandeja do sistema."
   },
   "language": {
-    "message": "Language"
+    "message": "Idioma"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Altere o idioma utilizado pela aplicação. Reinício é requerido."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Altere o tema de cor da aplicação."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Escuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Claro",
     "description": "Light color"
   },
   "copy": {
@@ -822,7 +822,7 @@
     "message": "Reiniciar para atualizar"
   },
   "restartToUpdateDesc": {
-    "message": "A versão $VERSION_NUM$ está pronta para instalar. Tem de reiniciar o Bitwarden para completar a instalação. Pretende reiniciar e atualizar agora?",
+    "message": "A versão $VERSION_NUM$ está pronta para instalar. Tem de reiniciar a aplicação para completar a instalação. Pretende reiniciar e atualizar agora?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Predefinido"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Sair"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Mostrar \/ ocultar",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Ocultar para a bandeja"
   }
 }
