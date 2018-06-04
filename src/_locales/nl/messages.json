@@ -492,17 +492,17 @@
     "message": "Context menu-opties bieden snelle toegang tot wachtwoordgeneratie en logins voor de website in de huidige tab."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Thema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Het kleurenthema van de toepassing wijzigen."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Donker",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Licht",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Verwijderen"
   },
   "default": {
-    "message": "Default"
+    "message": "Standaard"
   }
 }

@@ -492,17 +492,17 @@
     "message": "Parema kliki menüü abil saad kiiresti parooli genereerida ja konkreetse veebilehe kasutajakonto andmeid sisestada."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Teema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Muuda rakenduse värvikujundust."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tume",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Hele",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Eemalda"
   },
   "default": {
-    "message": "Default"
+    "message": "Vaikimisi"
   }
 }

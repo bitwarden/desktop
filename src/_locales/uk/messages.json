@@ -492,17 +492,17 @@
     "message": "Можливості контекстного меню забезпечують швидкий доступ до генерування пароля й входу для веб-сайту поточної вкладки."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Тема"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Змінити колірну тему додатка."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Темна",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Світла",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Вилучити"
   },
   "default": {
-    "message": "Default"
+    "message": "Типово"
   }
 }

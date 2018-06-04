@@ -351,7 +351,7 @@
     "message": "인증 코드는 반드시 입력해야 합니다."
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$를 클립보드에 복사했습니다.",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -418,7 +418,7 @@
     "message": "동기화 실패"
   },
   "passwordCopied": {
-    "message": "Password copied"
+    "message": "비밀번호를 클립보드에 복사했습니다."
   },
   "uri": {
     "message": "URI"
@@ -480,10 +480,10 @@
     "message": "Bitwarden이 이 비밀번호를 기억하도록 하시겠습니까?"
   },
   "notificationAddSave": {
-    "message": "Yes, Save Now"
+    "message": "예, 지금 저장하겠습니다."
   },
   "notificationNeverSave": {
-    "message": "Never for this website"
+    "message": "이 사이트에는 사용 안 함"
   },
   "disableContextMenuItem": {
     "message": "오른쪽 클릭 메뉴 옵션 사용 안 함"
@@ -492,17 +492,17 @@
     "message": "오른쪽 클릭 메뉴 옵션을 사용하면 비밀번호 생성이나 현재 탭 웹 사이트의 로그인에 빠르게 접근할 수 있습니다."
   },
   "theme": {
-    "message": "Theme"
+    "message": "테마"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "애플리케이션의 색상 테마를 변경합니다."
   },
   "dark": {
-    "message": "Dark",
+    "message": "어두운 테마",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "밝은 테마",
     "description": "Light color"
   },
   "exportVault": {
@@ -519,7 +519,7 @@
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
   },
   "shared": {
-    "message": "Shared"
+    "message": "공유됨"
   },
   "shareVault": {
     "message": "내 보관함 공유"
@@ -666,7 +666,7 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "기억하기"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "인증 코드 이메일 다시 보내기"
@@ -693,7 +693,7 @@
     "message": "2단계 인증 옵션"
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "모든 2단계 인증을 사용할 수 없는 상황인가요? 복구 코드를 사용하여 계정의 모든 2단계 인증을 비활성화할 수 있습니다."
   },
   "recoveryCodeTitle": {
     "message": "복구 코드"
@@ -735,13 +735,13 @@
     "message": "자체 호스팅 환경"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
+    "message": "온-프레미스 Bitwarden이 호스팅되고 있는 서버의 기본 URL을 지정하세요."
   },
   "customEnvironment": {
     "message": "사용자 지정 환경"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "고급 사용자 전용 설정입니다. 각 서비스의 기본 URL을 개별적으로 지정할 수 있습니다."
   },
   "baseUrl": {
     "message": "서버 URL"
@@ -777,7 +777,7 @@
     "message": "새 무작위 비밀번호를 만들고 클립보드에 복사합니다."
   },
   "privateModeMessage": {
-    "message": "Unfortunately this window is not available in private mode for this browser."
+    "message": "죄송합니다. 이 브라우저에서는 시크릿 창에서 이 창을 사용할 수 없습니다."
   },
   "customFields": {
     "message": "사용자 지정 필드"
@@ -987,7 +987,7 @@
     "message": "보안 메모"
   },
   "clear": {
-    "message": "Clear"
+    "message": "삭제"
   },
   "twoStepNewWindowMessage": {
     "message": "새 탭을 사용하여 2단계 인증을 완료하세요."
@@ -1052,6 +1052,6 @@
     "message": "제거"
   },
   "default": {
-    "message": "Default"
+    "message": "기본값"
   }
 }

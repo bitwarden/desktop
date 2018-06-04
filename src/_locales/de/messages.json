@@ -492,17 +492,17 @@
     "message": "Kontextmenü-Optionen bieten schnellen Zugriff auf die Passwortgenerierung und Zugangsdaten für die Webseite in Ihrem aktuellen Tab."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Design"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Ändere das Farbschema der Anwendung."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Dunkel",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Hell",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Entfernen"
   },
   "default": {
-    "message": "Default"
+    "message": "Standard"
   }
 }

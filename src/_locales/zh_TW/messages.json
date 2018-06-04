@@ -492,17 +492,17 @@
     "message": "右鍵選單選項幫您快速使用密碼產生器，也可以登入目前分頁開啟的網站。"
   },
   "theme": {
-    "message": "Theme"
+    "message": "主題"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "變更應用程式的主題色彩。"
   },
   "dark": {
-    "message": "Dark",
+    "message": "深色",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "淺色",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "移除"
   },
   "default": {
-    "message": "Default"
+    "message": "預設"
   }
 }

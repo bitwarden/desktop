@@ -492,17 +492,17 @@
     "message": "Las opciones del menú contextual permiten un acceso rápido al generador de contraseñas y a las entradas para el sitio abierto en tu pestaña actual."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Cambiar el tema de la aplicación."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Oscuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Claro",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Eliminar"
   },
   "default": {
-    "message": "Default"
+    "message": "Por defecto"
   }
 }

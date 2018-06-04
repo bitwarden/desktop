@@ -492,17 +492,17 @@
     "message": "Les options de menu contextuelles permettent un accès rapide à la génération de mots de passe et d'identifiants pour le site web de l'onglet actuel"
   },
   "theme": {
-    "message": "Theme"
+    "message": "Thème"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Modifier la couleur du thème de l'application."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Sombre",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Clair",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Supprimer"
   },
   "default": {
-    "message": "Default"
+    "message": "Par défaut"
   }
 }
