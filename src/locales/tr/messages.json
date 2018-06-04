@@ -783,23 +783,23 @@
     "message": "Always show an icon in the system tray."
   },
   "language": {
-    "message": "Language"
+    "message": "Dil"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Uygulama tarafından kullanılan dili değiştirin. Yeniden başlatma gerekli."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Uygulamanın renk temasını değiştir."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Koyu",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Açık",
     "description": "Light color"
   },
   "copy": {
@@ -1056,13 +1056,13 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Varsayılan"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Çıkış"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Göster \/ Gizle",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
