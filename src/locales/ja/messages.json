@@ -771,35 +771,35 @@
     "message": "保管庫のアイテム毎にウェブサイトのアイコンを表示します。"
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "トレイアイコンに最小化"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "ウインドウを最小化するとき、システムトレイにアイコンを表示するようにします。"
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "トレイアイコンの有効化"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "システムトレイにアイコンを常に表示します。"
   },
   "language": {
     "message": "Language"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "アプリで使用する言語を変更します。再起動が必要です。"
   },
   "theme": {
-    "message": "Theme"
+    "message": "テーマ"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "アプリのテーマカラーを変更します。"
   },
   "dark": {
-    "message": "Dark",
+    "message": "ダーク",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "ライト",
     "description": "Light color"
   },
   "copy": {
@@ -822,7 +822,7 @@
     "message": "再起動して更新"
   },
   "restartToUpdateDesc": {
-    "message": "バージョン $VERSION_NUM$ をインストールする準備ができました。インストールを完了するには Bitwarden を再起動する必要があります。再起動して更新しますか？",
+    "message": "バージョン $VERSION_NUM$ をインストールする準備ができました。インストールを完了するにはアプリを再起動する必要があります。再起動して更新しますか？",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "デフォルト"
   },
   "exit": {
-    "message": "Exit"
+    "message": "終了"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "表示 \/ 非表示",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "トレイに隠す"
   }
 }
