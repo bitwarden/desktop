@@ -771,35 +771,35 @@
     "message": "Ikony stron internetowych wstawiają charakterystyczny obrazek obok danych logowania w Twoim sejfie."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimalizuj do zasobnika systemowego"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Po zminimalizowaniu okna, pokaż ikonę w zasobniku systemowym."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Włącz ikonę w zasobniku systemowym"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Zawsze pokazuj ikonę w zasobniku systemowym."
   },
   "language": {
-    "message": "Language"
+    "message": "Język"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Zmień język używany przez aplikację. Wymagane jest ponowne uruchomienie."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Motyw"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Zmień motyw kolorów aplikacji."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Ciemny",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Jasny",
     "description": "Light color"
   },
   "copy": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Domyślny"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Wyjście"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Pokaż \/ Ukryj",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Ukryj w zasobniku systemowym"
   }
 }
