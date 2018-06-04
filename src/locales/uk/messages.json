@@ -771,35 +771,35 @@
     "message": "Впізнавані піктограми веб-сайтів додаються біля кожного запису вашого сховища."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Згортати до системного лотка"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Згортати вікно до системного лотка замість панелі інструментів."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Увімкнути піктограму в системному лотку"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Завжди показувати піктограму в системному лотку."
   },
   "language": {
-    "message": "Language"
+    "message": "Мова"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Змінити мову програми. Потрібен перезапуск."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Тема"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Змінити колірну тему програми."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Темна",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Світла",
     "description": "Light color"
   },
   "copy": {
@@ -822,7 +822,7 @@
     "message": "Перезапустити для оновлення"
   },
   "restartToUpdateDesc": {
-    "message": "Версія $VERSION_NUM$ готова до встановлення. Для завершення встановлення ви повинні перезапустити Bitwarden. Хочете зробити це зараз?",
+    "message": "Версія $VERSION_NUM$ готова до встановлення. Для завершення встановлення ви повинні перезапустити програму. Хочете зробити це зараз?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Типово"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Вийти"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Показати \/ Приховати",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Згорнути в лоток"
   }
 }
