@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const barPageUrl: string = isSafari ? (safari.extension.baseURI + barPage) : chrome.extension.getURL(barPage);
 
         const iframe = document.createElement('iframe');
-        iframe.style.cssText = 'height: 42px; width: 100%; border: 0;';
+        iframe.style.cssText = 'height: 42px; width: 100%; border: 0; min-height: initial;';
         iframe.id = 'bit-notification-bar-iframe';
 
         const frameDiv = document.createElement('div');
