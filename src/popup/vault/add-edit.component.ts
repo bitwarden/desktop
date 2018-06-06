@@ -56,10 +56,10 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
             await this.load();
 
             if (!this.editMode) {
-                if (params.name) {
+                if (params.name && (this.cipher.name == null || this.cipher.name === '')) {
                     this.cipher.name = params.name;
                 }
-                if (params.uri) {
+                if (params.uri && (this.cipher.login.uris[0].uri == null || this.cipher.login.uris[0].uri === '')) {
                     this.cipher.login.uris[0].uri = params.uri;
                 }
             }
