@@ -285,7 +285,8 @@
                                    *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
                         </div>
                         <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox"
-                               [(ngModel)]="f.value" *ngIf="f.type === fieldType.Boolean">
+                               [(ngModel)]="f.value" *ngIf="f.type === fieldType.Boolean"
+                               appTrueFalseValue trueValue="true" falseValue="false">
                         <div class="action-buttons" *ngIf="f.type === fieldType.Hidden">
                             <a class="row-btn" href="#" appStopClick appBlurClick
                                title="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">

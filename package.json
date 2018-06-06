@@ -24,7 +24,6 @@
     "@ngtools/webpack": "1.10.2",
     "@types/chrome": "0.0.51",
     "@types/jasmine": "^2.8.2",
-    "@types/jquery": "^3.2.16",
     "@types/lunr": "2.1.5",
     "@types/mousetrap": "^1.6.0",
     "@types/node": "8.0.19",
@@ -68,8 +67,7 @@
     "tslint": "^5.9.1",
     "tslint-loader": "^3.5.3",
     "typescript": "^2.7.1",
-    "webpack": "^3.10.0",
-    "webpack-merge": "^4.1.0"
+    "webpack": "^3.10.0"
   },
   "dependencies": {
     "@angular/animations": "5.2.0",
