@@ -35,6 +35,7 @@ import { BoxRowDirective } from 'jslib/angular/directives/box-row.directive';
 import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
 import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
+import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
 
 import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
@@ -90,6 +91,7 @@ import { ViewComponent } from './vault/view.component';
         SettingsComponent,
         StopClickDirective,
         StopPropDirective,
+        TrueFalseValueDirective,
         TwoFactorComponent,
         TwoFactorOptionsComponent,
         VaultComponent,

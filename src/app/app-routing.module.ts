@@ -11,6 +11,7 @@ import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+
 import { VaultComponent } from './vault/vault.component';
 
 const routes: Routes = [
