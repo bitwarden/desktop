@@ -21,6 +21,6 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
         cryptoService: CryptoService, tokenService: TokenService,
         platformUtilsService: PlatformUtilsService) {
         super(cipherService, analytics, toasterService, i18nService, cryptoService, tokenService,
-            platformUtilsService);
+            platformUtilsService, window);
     }
 }
