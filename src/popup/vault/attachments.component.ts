@@ -24,7 +24,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
         platformUtilsService: PlatformUtilsService, private location: Location,
         private route: ActivatedRoute) {
         super(cipherService, analytics, toasterService, i18nService, cryptoService, tokenService,
-            platformUtilsService);
+            platformUtilsService, window);
     }
 
     async ngOnInit() {
