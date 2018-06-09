@@ -334,9 +334,16 @@ export class VaultComponent implements OnInit, OnDestroy {
         const childComponent = this.modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModalRef);
 
         childComponent.cipherId = cipher.id;
+        let madeAttachmentChanges = false;
+        childComponent.onUploadedAttachment.subscribe(() => madeAttachmentChanges = true);
+        childComponent.onDeletedAttachment.subscribe(() => madeAttachmentChanges = true);
 
-        this.modal.onClosed.subscribe(() => {
+        this.modal.onClosed.subscribe(async () => {
             this.modal = null;
+            if (madeAttachmentChanges) {
+                await this.ciphersComponent.refresh();
+            }
+            madeAttachmentChanges = false;
         });
     }
 
