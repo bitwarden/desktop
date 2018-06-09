@@ -149,6 +149,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return tabOpen;
     }
 
+    lockTimeout(): number {
+        return null;
+    }
+
     launchUri(uri: string, options?: any): void {
         BrowserApi.createNewTab(uri, options && options.extensionPage === true);
     }
