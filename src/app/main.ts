@@ -5,8 +5,6 @@ import { isDev } from 'jslib/electron/utils';
 
 // tslint:disable-next-line
 require('../scss/styles.scss');
-// tslint:disable-next-line
-require('../scripts/duo.js');
 
 import { AppModule } from './app.module';
 
