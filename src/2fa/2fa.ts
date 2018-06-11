@@ -1,5 +1,4 @@
-// tslint:disable-next-line
-require('../scripts/duo.js');
+import * as DuoWebSDK from 'jslib/misc/duo';
 
 document.addEventListener('DOMContentLoaded', () => {
     const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
@@ -19,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (msg.data.type === 'duo') {
-            (window as any).Duo.init({
+            DuoWebSDK.init({
+                iframe: undefined,
                 host: msg.data.host,
                 sig_request: msg.data.signature,
                 submit_callback: (theForm: Document) => {
