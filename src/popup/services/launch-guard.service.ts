@@ -24,8 +24,8 @@ export class LaunchGuardService implements CanActivate {
             return true;
         }
 
-        const key = await this.cryptoService.getKey();
-        if (key == null) {
+        const hasKey = await this.cryptoService.hasKey();
+        if (!hasKey) {
             this.router.navigate(['lock']);
         } else {
             this.router.navigate(['tabs/current']);

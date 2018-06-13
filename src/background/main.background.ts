@@ -210,12 +210,12 @@ export default class MainBackground {
         }
 
         const isAuthenticated = await this.userService.isAuthenticated();
-        const key = await this.cryptoService.getKey();
+        const hasKey = await this.cryptoService.hasKey();
 
         let suffix = '';
         if (!isAuthenticated) {
             suffix = '_gray';
-        } else if (!key) {
+        } else if (!hasKey) {
             suffix = '_locked';
         }
 
