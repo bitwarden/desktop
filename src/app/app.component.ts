@@ -145,7 +145,7 @@ export class AppComponent implements OnInit {
     private async updateAppMenu() {
         this.messagingService.send('updateAppMenu', {
             isAuthenticated: await this.userService.isAuthenticated(),
-            isLocked: (await this.cryptoService.getKey()) == null,
+            isLocked: !(await this.cryptoService.hasKey()),
         });
     }
 
