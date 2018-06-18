@@ -111,8 +111,8 @@
                 <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.code">
                     <div class="row-main">
                         <span class="row-label">{{'securityCode' | i18n}}</span>
-                        <span [hidden]="showCardCode" >{{cipher.card.maskedCode}}</span>
-                        <span [hidden]="!showCardCode" >{{cipher.card.code}}</span>
+                        <span [hidden]="showCardCode" class="monospaced">{{cipher.card.maskedCode}}</span>
+                        <span [hidden]="!showCardCode" class="monospaced">{{cipher.card.code}}</span>
                     </div>
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick title="{{'toggleVisibility' | i18n}}"
