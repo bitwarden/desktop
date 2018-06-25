@@ -13,12 +13,12 @@ import { DeviceType } from 'jslib/enums/deviceType';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
-import { EnvironmentService } from 'jslib/abstractions/environment.service';
 
 const RateUrls = {
     [DeviceType.Chrome]:
@@ -42,7 +42,6 @@ const RateUrls = {
 export class SettingsComponent implements OnInit {
     lockOptions: any[];
     lockOption: number = null;
-    
 
     constructor(private platformUtilsService: PlatformUtilsService, private i18nService: I18nService,
         private analytics: Angulartics2, private lockService: LockService,
@@ -51,7 +50,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async ngOnInit() {
-        
         const showOnLocked = !this.platformUtilsService.isFirefox() && !this.platformUtilsService.isEdge()
             && !this.platformUtilsService.isSafari();
 
@@ -134,8 +132,11 @@ export class SettingsComponent implements OnInit {
 
     async webVault() {
         this.analytics.eventTrack.next({ action: 'Clicked Web Vault' });
-        let webVaultUrl = this.environmentService.webVaultUrl != undefined ? this.environmentService.webVaultUrl : 'https://vault.bitwarden.com';
-        BrowserApi.createNewTab(webVaultUrl);
+        let url = this.environmentService.getWebVaultUrl();
+        if (url == null) {
+            url = 'https://vault.bitwarden.com';
+        }
+        BrowserApi.createNewTab(url);
     }
 
     import() {
