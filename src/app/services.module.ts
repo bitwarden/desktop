@@ -91,8 +91,8 @@ const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
 const cipherService = new CipherService(cryptoService, userService, settingsService,
     apiService, storageService, i18nService, platformUtilsService);
-const folderService = new FolderService(cryptoService, userService,
-    () => i18nService.t('noneFolder'), apiService, storageService, i18nService);
+const folderService = new FolderService(cryptoService, userService, apiService, storageService,
+    i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 const lockService = new LockService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, null);
