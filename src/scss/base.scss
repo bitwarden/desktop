@@ -67,6 +67,7 @@ input, select, textarea {
 input, select, textarea, button {
     font-size: $font-size-base;
     font-family: $font-family-sans-serif;
+    line-height: $line-height-base;
 }
 
 button {
