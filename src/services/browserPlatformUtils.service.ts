@@ -200,6 +200,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         return process.env.ENV === 'development';
     }
 
+    isSelfHost(): boolean {
+        return false;
+    }
+
     copyToClipboard(text: string, options?: any): void {
         const doc = options ? options.doc : window.document;
         if ((window as any).clipboardData && (window as any).clipboardData.setData) {
