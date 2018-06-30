@@ -48,6 +48,7 @@
       "check-preblock",
       "check-separator",
       "check-type"
-    ]
+    ],
+    "max-classes-per-file": false
   }
 }
