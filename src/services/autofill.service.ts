@@ -13,7 +13,6 @@ import { AutofillService as AutofillServiceInterface } from './abstractions/auto
 
 import {
     CipherService,
-    PlatformUtilsService,
     TokenService,
     TotpService,
 } from 'jslib/abstractions';
@@ -443,7 +442,7 @@ export default class AutofillService implements AutofillServiceInterface {
                         'cc-mm', 'cc-m', 'card-mm', 'card-m', 'card-exp-mm', 'cc-exp-mm', 'exp-mm', 'exp-m',
                         'expire-month', 'expire-mo', 'card-expire-month', 'card-expire-mo', 'mois-validite',
                         'mois-expiration', 'm-validite', 'm-expiration', 'expiry-date-field-month',
-                        'expiration-date-month', 'expiration-date-mm'])) {
+                        'expiration-date-month', 'expiration-date-mm', 'exp-mon'])) {
                     fillFields.expMonth = f;
                     break;
                 } else if (!fillFields.expYear && this.isFieldMatch(f[attr],
@@ -757,7 +756,7 @@ export default class AutofillService implements AutofillServiceInterface {
         for (let i = 0; i < options.length; i++) {
             let option = options[i];
             const checkValueContains = containsOptions == null || containsOptions.indexOf(option) > -1;
-            option = option.replace(/-/g, '');
+            option = option.toLowerCase().replace(/-/g, '');
             if (value === option || (checkValueContains && value.indexOf(option) > -1)) {
                 return true;
             }
