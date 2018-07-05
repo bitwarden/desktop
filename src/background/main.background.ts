@@ -148,7 +148,7 @@ export default class MainBackground {
             this.totpService);
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
         this.auditService = new AuditService(cryptoFunctionService);
-        this.exportService = new ExportService(this.folderService, this.cipherService);
+        this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
 
