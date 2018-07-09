@@ -82,7 +82,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     getDeviceString(): string {
-        return DeviceType[this.getDevice()].toLowerCase();
+        const device = DeviceType[this.getDevice()].toLowerCase();
+        return device.replace('extension', '');
     }
 
     isFirefox(): boolean {
