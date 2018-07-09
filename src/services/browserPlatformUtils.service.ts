@@ -63,19 +63,19 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
         }
 
         if (navigator.userAgent.indexOf(' Firefox/') !== -1 || navigator.userAgent.indexOf(' Gecko/') !== -1) {
-            this.deviceCache = DeviceType.Firefox;
+            this.deviceCache = DeviceType.FirefoxExtension;
         } else if ((!!(window as any).opr && !!opr.addons) || !!(window as any).opera ||
             navigator.userAgent.indexOf(' OPR/') >= 0) {
-            this.deviceCache = DeviceType.Opera;
+            this.deviceCache = DeviceType.OperaExtension;
         } else if (navigator.userAgent.indexOf(' Edge/') !== -1) {
-            this.deviceCache = DeviceType.Edge;
+            this.deviceCache = DeviceType.EdgeExtension;
         } else if (navigator.userAgent.indexOf(' Vivaldi/') !== -1) {
-            this.deviceCache = DeviceType.Vivaldi;
+            this.deviceCache = DeviceType.VivaldiExtension;
         } else if ((window as any).safari && navigator.userAgent.indexOf(' Safari/') !== -1 &&
             navigator.userAgent.indexOf('Chrome') === -1) {
-            this.deviceCache = DeviceType.Safari;
+            this.deviceCache = DeviceType.SafariExtension;
         } else if ((window as any).chrome && navigator.userAgent.indexOf(' Chrome/') !== -1) {
-            this.deviceCache = DeviceType.Chrome;
+            this.deviceCache = DeviceType.ChromeExtension;
         }
 
         return this.deviceCache;
@@ -86,27 +86,27 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     isFirefox(): boolean {
-        return this.getDevice() === DeviceType.Firefox;
+        return this.getDevice() === DeviceType.FirefoxExtension;
     }
 
     isChrome(): boolean {
-        return this.getDevice() === DeviceType.Chrome;
+        return this.getDevice() === DeviceType.ChromeExtension;
     }
 
     isEdge(): boolean {
-        return this.getDevice() === DeviceType.Edge;
+        return this.getDevice() === DeviceType.EdgeExtension;
     }
 
     isOpera(): boolean {
-        return this.getDevice() === DeviceType.Opera;
+        return this.getDevice() === DeviceType.OperaExtension;
     }
 
     isVivaldi(): boolean {
-        return this.getDevice() === DeviceType.Vivaldi;
+        return this.getDevice() === DeviceType.VivaldiExtension;
     }
 
     isSafari(): boolean {
-        return this.getDevice() === DeviceType.Safari;
+        return this.getDevice() === DeviceType.SafariExtension;
     }
 
     isIE(): boolean {

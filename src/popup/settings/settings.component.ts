@@ -21,17 +21,17 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 
 const RateUrls = {
-    [DeviceType.Chrome]:
+    [DeviceType.ChromeExtension]:
         'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [DeviceType.Firefox]:
+    [DeviceType.FirefoxExtension]:
         'https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/#reviews',
-    [DeviceType.Opera]:
+    [DeviceType.OperaExtension]:
         'https://addons.opera.com/en/extensions/details/bitwarden-free-password-manager/#feedback-container',
-    [DeviceType.Edge]:
+    [DeviceType.EdgeExtension]:
         'https://www.microsoft.com/store/p/bitwarden-free-password-manager/9p6kxl0svnnl',
-    [DeviceType.Vivaldi]:
+    [DeviceType.VivaldiExtension]:
         'https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews',
-    [DeviceType.Safari]:
+    [DeviceType.SafariExtension]:
         'https://itunes.apple.com/app/bitwarden-password-manager/id1137397744',
 };
 

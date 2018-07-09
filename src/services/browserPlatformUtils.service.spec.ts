@@ -57,7 +57,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
-            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Chrome);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.ChromeExtension);
         });
 
         it('should detect firefox', () => {
@@ -67,7 +67,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
-            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Firefox);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.FirefoxExtension);
         });
 
         it('should detect opera', () => {
@@ -82,7 +82,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
-            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Opera);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.OperaExtension);
         });
 
         it('should detect edge', () => {
@@ -92,7 +92,7 @@ describe('Browser Utils Service', () => {
             });
     
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
-            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Edge);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.EdgeExtension);
         });
 
         it('should detect safari', () => {
@@ -107,7 +107,7 @@ describe('Browser Utils Service', () => {
             });
 
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
-            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Safari);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.SafariExtension);
         });
 
         it('should detect vivaldi', () => {
@@ -117,7 +117,7 @@ describe('Browser Utils Service', () => {
             });
 
             const browserPlatformUtilsService = new BrowserPlatformUtilsService(null);
-            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.Vivaldi);
+            expect(browserPlatformUtilsService.getDevice()).toBe(DeviceType.VivaldiExtension);
         });
     });
 });
