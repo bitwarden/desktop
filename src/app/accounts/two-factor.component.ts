@@ -38,7 +38,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         environmentService: EnvironmentService, private componentFactoryResolver: ComponentFactoryResolver) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
             platformUtilsService, window, environmentService);
-        super.onSuccessfullLogin = () => {
+        super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
     }
