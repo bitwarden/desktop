@@ -8,6 +8,7 @@ import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { StateService } from 'jslib/abstractions/state.service';
 
 import { RegisterComponent as BaseRegisterComponent } from 'jslib/angular/components/register.component';
 
@@ -19,7 +20,7 @@ export class RegisterComponent extends BaseRegisterComponent {
     constructor(authService: AuthService, router: Router,
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, cryptoService: CryptoService,
-        apiService: ApiService) {
-        super(authService, router, analytics, toasterService, i18nService, cryptoService, apiService);
+        apiService: ApiService, stateService: StateService) {
+        super(authService, router, analytics, toasterService, i18nService, cryptoService, apiService, stateService);
     }
 }
