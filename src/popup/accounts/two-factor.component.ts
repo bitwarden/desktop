@@ -43,7 +43,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef) {
         super(authService, router, analytics, toasterService, i18nService, apiService,
             platformUtilsService, window, environmentService);
-        super.onSuccessfullLogin = () => {
+        super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
         super.successRoute = '/tabs/vault';
