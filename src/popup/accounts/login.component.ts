@@ -20,7 +20,7 @@ export class LoginComponent extends BaseLoginComponent {
         analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, private syncService: SyncService, storageService: StorageService) {
         super(authService, router, analytics, toasterService, i18nService, storageService);
-        super.onSuccessfullLogin = () => {
+        super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
         super.successRoute = '/tabs/vault';
