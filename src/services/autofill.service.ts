@@ -20,6 +20,8 @@ import {
 const CardAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top'];
 
+const CardAttributesExtended: string[] = [...CardAttributes, 'label-right'];
+
 const IdentityAttributes: string[] = ['autoCompleteType', 'data-stripe', 'htmlName', 'htmlID', 'label-tag',
     'placeholder', 'label-left', 'label-top'];
 
@@ -550,7 +552,7 @@ export default class AutofillService implements AutofillServiceInterface {
         }
 
         let doesContain = false;
-        CardAttributes.forEach((attr) => {
+        CardAttributesExtended.forEach((attr) => {
             if (doesContain || !field.hasOwnProperty(attr) || !field[attr]) {
                 return;
             }
@@ -780,7 +782,7 @@ export default class AutofillService implements AutofillServiceInterface {
                 for (let i = 0; i < field.selectInfo.options.length; i++) {
                     const option = field.selectInfo.options[i];
                     for (let j = 0; j < option.length; j++) {
-                        if (option[j].toLowerCase() === dataValue.toLowerCase()) {
+                        if (this.hasValue(option[j]) && option[j].toLowerCase() === dataValue.toLowerCase()) {
                             doFill = true;
                             if (option.length > 1) {
                                 dataValue = option[1];
