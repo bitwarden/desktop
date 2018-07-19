@@ -9,7 +9,7 @@
 
 The Bitwarden desktop app is written using Electron and Angular. The application installs on Windows, macOS, and Linux distributions.
 
-![Desktop Vault](http://imgur.com/oPM44y0.png "My Vault")
+![Desktop Vault](https://raw.githubusercontent.com/bitwarden/brand/master/screenshots/desktop-macos-vault.png "My Vault")
 
 # Build/Run
 
