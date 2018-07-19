@@ -1,7 +1,4 @@
-import {
-    ToasterConfig,
-    ToasterContainerComponent,
-} from 'angular2-toaster';
+import { ToasterConfig } from 'angular2-toaster';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import {
@@ -83,8 +80,8 @@ export class AppComponent implements OnInit {
         private lockService: LockService, private storageService: StorageService,
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
         private messagingService: MessagingService, private collectionService: CollectionService) {
-            (window as any).BitwardenToasterService = toasterService;
-        }
+        (window as any).BitwardenToasterService = toasterService;
+    }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
