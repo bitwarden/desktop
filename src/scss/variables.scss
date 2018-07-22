@@ -1,4 +1,4 @@
-﻿@import 'nord.scss';
+﻿@import '~nord/src/sass/nord.scss';
 
 $font-family-sans-serif: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -133,15 +133,15 @@ $themes: (
     ),
     nord: (
         textColor: $nord5,
-        borderColor: $nord2,
+        borderColor: $nord0,
         backgroundColor: $nord2,
         backgroundColorAlt: $nord1,
         backgroundColorAlt2: $nord1,
         scrollbarColor: $nord4,
-        scrollbarHoverColor: $nord5,
+        scrollbarHoverColor: $nord6,
         boxBackgroundColor: $nord2,
         boxBackgroundHoverColor: $nord3,
-        boxBorderColor: $nord0,
+        boxBorderColor: $nord1,
         headerBackgroundColor: $nord2,
         headerBorderColor: $nord0,
         headerInputBackgroundColor: $nord6,
@@ -150,7 +150,7 @@ $themes: (
         headerInputPlaceholderColor: $nord3,
         listItemBackgroundColor: $nord2,
         listItemBackgroundHoverColor: $nord3,
-        listItemBorderColor: $nord0,
+        listItemBorderColor: $nord1,
         groupingsActiveColor: $nord3,
         disabledIconColor: $nord5,
         headingColor: $nord4,
