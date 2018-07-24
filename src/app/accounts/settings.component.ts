@@ -19,6 +19,8 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 
+import { Utils } from 'jslib/misc/utils';
+
 @Component({
     selector: 'app-settings',
     templateUrl: 'settings.component.html',
@@ -55,10 +57,13 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('never'), value: null },
         ];
 
-        this.localeOptions = [{ name: i18nService.t('default'), value: null }];
+        const localeOptions: any[] = [];
         i18nService.supportedTranslationLocales.forEach((locale) => {
-            this.localeOptions.push({ name: locale, value: locale });
+            localeOptions.push({ name: locale, value: locale });
         });
+        localeOptions.sort(Utils.getSortFunction(i18nService, 'name'));
+        localeOptions.splice(0, 0, { name: i18nService.t('default'), value: null });
+        this.localeOptions = localeOptions;
 
         this.themeOptions = [
             { name: i18nService.t('default'), value: null },
