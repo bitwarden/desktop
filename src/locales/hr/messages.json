@@ -771,35 +771,35 @@
     "message": "Ikone web mjesta nude prepoznatljivu ikonu pokraj svake stavke za prijavu u Vašem trezoru."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Umanjite do ikone alatne trake"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Kod umanjenja prozora, prikaži ikonu na alatnoj traci."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Omogući ikonu na alatnoj traci"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Uvijek prikaži ikonu u alatnoj traci."
   },
   "language": {
-    "message": "Language"
+    "message": "Jezik"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Promijenite jezik koji koristi aplikacija. Potrebno je ponovno pokretanje."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Promijenite temu boja aplikacije."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tamno",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Svjetlo",
     "description": "Light color"
   },
   "copy": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Zadano"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Izlaz"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Prikaži ili sakrij",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Sakrij u alatnoj traci"
   }
 }
