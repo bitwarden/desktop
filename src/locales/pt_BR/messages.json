@@ -48,7 +48,7 @@
     "message": "Nome"
   },
   "uri": {
-    "message": "URL"
+    "message": "URI"
   },
   "uriPosition": {
     "message": "URI $POSITION$",
@@ -309,13 +309,13 @@
     "message": "Excluir Anexo"
   },
   "deleteItemConfirmation": {
-    "message": "Tem certeza que deseja excluir este item?"
+    "message": "Você tem certeza que deseja excluir este item?"
   },
   "deletedItem": {
     "message": "Item excluído"
   },
   "overwritePasswordConfirmation": {
-    "message": "Tem certeza que deseja substituir a senha atual?"
+    "message": "Você tem certeza que deseja substituir a senha atual?"
   },
   "noneFolder": {
     "message": "Nenhuma Pasta",
@@ -399,10 +399,10 @@
     "message": "Pasta adicionada"
   },
   "deleteFolderConfirmation": {
-    "message": "Tem certeza que deseja excluir esta pasta?"
+    "message": "Você tem certeza que deseja excluir esta pasta?"
   },
   "deletedFolder": {
-    "message": "Pasta apagada"
+    "message": "Pasta excluída"
   },
   "loginOrCreateNewAccount": {
     "message": "Inicie a sessão ou crie uma nova conta para acessar seu cofre seguro."
@@ -438,22 +438,22 @@
     "message": "Dica da Senha"
   },
   "enterEmailToGetHint": {
-    "message": "Digite o seu endereço de e-mail para receber a dica da sua senha mestra."
+    "message": "Insira o seu endereço de e-mail para receber a dica da sua senha mestra."
   },
   "getMasterPasswordHint": {
     "message": "Obter dica da senha mestra"
   },
   "emailRequired": {
-    "message": "Requer endereço de e-mail."
+    "message": "O endereço de e-mail é obrigatório."
   },
   "invalidEmail": {
     "message": "Endereço de e-mail inválido."
   },
   "masterPassRequired": {
-    "message": "Requer senha mestra."
+    "message": "A senha mestra é obrigatória."
   },
   "masterPassLength": {
-    "message": "A senha mestra tem que ter pelo menos 8 caracteres."
+    "message": "A senha mestra deve ter pelo menos 8 caracteres."
   },
   "masterPassDoesntMatch": {
     "message": "A confirmação da senha mestra não corresponde."
@@ -471,7 +471,7 @@
     "message": "Informação do Item"
   },
   "noItemsInList": {
-    "message": "Não existem itens para listar."
+    "message": "Não há itens para listar."
   },
   "verificationCode": {
     "message": "Código de Verificação"
@@ -483,10 +483,10 @@
     "message": "Continuar"
   },
   "enterVerificationCodeApp": {
-    "message": "Digite o código de verificação de 6 dígitos do seu aplicativo de autenticação."
+    "message": "Insira o código de verificação de 6 dígitos do seu aplicativo de autenticação."
   },
   "enterVerificationCodeEmail": {
-    "message": "Digite o código de verificação de 6 dígitos que foi enviado por e-mail para $EMAIL$.",
+    "message": "Insira o código de verificação de 6 dígitos que foi enviado por e-mail para $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -516,7 +516,7 @@
     "message": "Introduza a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
   },
   "insertU2f": {
-    "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tem um botão, toque nele."
+    "message": "Insira a sua chave de segurança na porta USB do seu computador. Se ele tiver um botão, toque nele."
   },
   "recoveryCodeDesc": {
     "message": "Perdeu o acesso a todos os seus provedores de duas etapas? Utilize o seu código de recuperação para desativar todos os provedores de duas etapas da sua conta."
@@ -528,7 +528,7 @@
     "message": "Aplicativo de Autenticação"
   },
   "authenticatorAppDesc": {
-    "message": "Utilize um aplicativo de autenticação (tal como Authy ou Google Authenticator) para gerar códigos de verificação baseados em tempo.",
+    "message": "Utilize um aplicativo de autenticação (tal como Authy ou Google Authenticator) para gerar códigos de verificação baseados no tempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -555,7 +555,7 @@
     "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Os códigos de verificação vão ser enviados para você."
+    "message": "Os códigos de verificação vão ser enviados por e-mail para você."
   },
   "loginUnavailable": {
     "message": "Sessão Indisponível"
@@ -624,10 +624,10 @@
     "message": "A sua sessão expirou."
   },
   "logOutConfirmation": {
-    "message": "Tem a certeza de que pretende encerrar a sessão?"
+    "message": "Você tem certeza que deseja sair?"
   },
   "logOut": {
-    "message": "Encerrar a Sessão"
+    "message": "Encerrar Sessão"
   },
   "addNewLogin": {
     "message": "Adicionar Nova Credencial"
@@ -765,41 +765,41 @@
     "message": "Utilizamos Analytics para aprender melhor como o aplicativo está sendo utilizado para que possamos torná-lo melhor. Todo o recolhimento de dados é completamente anônimo."
   },
   "disableFavicon": {
-    "message": "Desativar Ícones de Sites"
+    "message": "Desabilitar Ícones dos Sites"
   },
   "disableFaviconDesc": {
-    "message": "O ícone do site fornece um ícone reconhecível ao lado de cada crendencial no seu cofre."
+    "message": "Os Ícones de Sites fornecem uma imagem reconhecível próxima de cada item de credencial no seu cofre."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimizar para ícone de bandeja"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Ao minimizar a janela, mostre um ícone na bandeja do sistema."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Habilitar ícone de bandeja"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Sempre mostrar um ícone na bandeja do sistema."
   },
   "language": {
-    "message": "Language"
+    "message": "Idioma"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Altere o idioma utilizado pelo aplicativo. É necessário reiniciar."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Altere o tema de cores do aplicativo."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Escuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Claro",
     "description": "Light color"
   },
   "copy": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Padrão"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Sair"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Mostrar \/ Ocultar",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Ocultar para a Bandeja"
   }
 }
