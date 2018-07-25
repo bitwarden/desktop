@@ -30,7 +30,7 @@
     "message": "Collezioni"
   },
   "searchVault": {
-    "message": "Cerca nella cassaforte"
+    "message": "Cerca tra tutti gli elementi"
   },
   "addItem": {
     "message": "Aggiungi Elemento"
@@ -91,14 +91,14 @@
     "message": "Avvia"
   },
   "copyValue": {
-    "message": "Copia Valore",
+    "message": "Copia valore",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
     "message": "Mostra\/Nascondi"
   },
   "cardholderName": {
-    "message": "Titolare della Carta"
+    "message": "Titolare della carta"
   },
   "number": {
     "message": "Numero"
@@ -204,10 +204,10 @@
     "message": "Dottore"
   },
   "expirationMonth": {
-    "message": "Mese di Scadenza"
+    "message": "Mese di scadenza"
   },
   "expirationYear": {
-    "message": "Anno di Scadenza"
+    "message": "Anno di scadenza"
   },
   "select": {
     "message": "Seleziona"
@@ -216,7 +216,7 @@
     "message": "Altro"
   },
   "generatePassword": {
-    "message": "Genera Password"
+    "message": "Genera password"
   },
   "type": {
     "message": "Tipo"
@@ -240,7 +240,7 @@
     "message": "Indirizzo 3"
   },
   "cityTown": {
-    "message": "Città o comune"
+    "message": "Città \/ Comune"
   },
   "stateProvince": {
     "message": "Stato \/ Provincia"
@@ -294,25 +294,25 @@
     "message": "Il nome è obbligatorio."
   },
   "addedItem": {
-    "message": "Aggiungi Elemento"
+    "message": "Elemento aggiunto"
   },
   "editedItem": {
     "message": "Elemento modificato"
   },
   "deleteItem": {
-    "message": "Elimina elemento"
+    "message": "Elimina Elemento"
   },
   "deleteFolder": {
-    "message": "Elimina Cartella"
+    "message": "Elimina cartella"
   },
   "deleteAttachment": {
-    "message": "Elimina Allegato"
+    "message": "Elimina allegato"
   },
   "deleteItemConfirmation": {
     "message": "Sei sicuro di voler eliminare questo elemento?"
   },
   "deletedItem": {
-    "message": "Oggetto eliminato"
+    "message": "Elemento eliminato"
   },
   "overwritePasswordConfirmation": {
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
@@ -328,10 +328,10 @@
     "message": "Modifica Cartella"
   },
   "regeneratePassword": {
-    "message": "Rigenera Password"
+    "message": "Rigenera password"
   },
   "copyPassword": {
-    "message": "Copia Password"
+    "message": "Copia password"
   },
   "copyUri": {
     "message": "Copia URI"
@@ -350,19 +350,19 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Evitare Caratteri Ambigui"
+    "message": "Evita Caratteri Ambigui"
   },
   "searchCollection": {
-    "message": "Cerca collezione"
+    "message": "Cerca nella collezione"
   },
   "searchFolder": {
-    "message": "Cerca cartella"
+    "message": "Cerca nella cartella"
   },
   "searchFavorites": {
-    "message": "Cerca preferito"
+    "message": "Cerca tra i preferiti"
   },
   "searchType": {
-    "message": "Tipo di ricerca",
+    "message": "Cerca in questo tipo",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -384,7 +384,7 @@
     "message": "Seleziona un file."
   },
   "maxFileSize": {
-    "message": "La dimensione massima del file è 100 MB."
+    "message": "La dimensione massima del file è di 100 MB."
   },
   "updateKey": {
     "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave."
@@ -405,7 +405,7 @@
     "message": "Cartella eliminata"
   },
   "loginOrCreateNewAccount": {
-    "message": "Fai il log in o crea un nuovo account per accedere alla tua cassaforte."
+    "message": "Fai il log in o crea un nuovo account per accedere al tuo password manager."
   },
   "createAccount": {
     "message": "Crea Account"
@@ -417,13 +417,13 @@
     "message": "Invia"
   },
   "masterPass": {
-    "message": "Password Principale"
+    "message": "Password principale"
   },
   "masterPassDesc": {
-    "message": "La password principale è quella che usi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
+    "message": "La password principale è quella che usi per accedere al password manager. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
   },
   "masterPassHintDesc": {
-    "message": "Un suggerimento può aiutarti a ricordare la tua password principale se la dimentichi."
+    "message": "Un suggerimento può aiutarti a ricordare la tua password principale nel caso in cui la dimentichi."
   },
   "reTypeMasterPass": {
     "message": "Ri-digita la tua password principale"
@@ -435,7 +435,7 @@
     "message": "Impostazioni"
   },
   "passwordHint": {
-    "message": "Suggerimento Password"
+    "message": "Suggerimento password"
   },
   "enterEmailToGetHint": {
     "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della password principale."
@@ -453,7 +453,7 @@
     "message": "La password principale è obbligatoria."
   },
   "masterPassLength": {
-    "message": "La password principale deve essere almeno di 8 caratteri."
+    "message": "La password principale deve avere almeno 8 caratteri."
   },
   "masterPassDoesntMatch": {
     "message": "La conferma della password principale non corrisponde."
@@ -462,7 +462,7 @@
     "message": "Il tuo account è stato creato! Ora puoi effettuare il login."
   },
   "masterPassSent": {
-    "message": "Ti abbiamo inviato un'email con il tuo indizio per la password principale."
+    "message": "Ti abbiamo inviato un'email con il tuo suggerimento per la password principale."
   },
   "unexpectedError": {
     "message": "Si è verificato un errore imprevisto."
@@ -510,7 +510,7 @@
     "message": "Reinvia il codice di verifica all'indirizzo email"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Usa un altro metodo di login in due fasi"
+    "message": "Usa un altro metodo di verifica in due passaggi"
   },
   "insertYubiKey": {
     "message": "Inserisci la tua YubiKey nella porta USB del computer, poi premi il bottone su di essa."
@@ -519,7 +519,7 @@
     "message": "Inserisci la tua security key nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
   },
   "recoveryCodeDesc": {
-    "message": "Hai perso l'accesso a tutti i tuoi metodi in due fasi? Usa il tuo codice di recupero per disattivare tutti i metodi in due fasi sul tuo account."
+    "message": "Hai perso l'accesso a tutti i tuoi metodi di verifica in due passaggi? Usa il tuo codice di recupero per disattivare tutti i metodi di verifica in due passaggi sul tuo account."
   },
   "recoveryCodeTitle": {
     "message": "Codice di Recupero"
@@ -561,13 +561,13 @@
     "message": "Login non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "Questo account ha abilitato il login a due passaggi, ma nessuno dei provider configurati è supportato da questo browser web."
+    "message": "Questo account ha abilitato la verifica in due passaggi, ma nessuno dei provider configurati è supportato da questo browser."
   },
   "noTwoStepProviders2": {
     "message": "Si prega di aggiungere altri provider che sono meglio supportati su tutti i dispositivi (ad esempio, un'app di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Opzioni di login in due passaggi"
+    "message": "Opzioni di verifica in due passaggi"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente Self-Hosted"
@@ -588,7 +588,7 @@
     "message": "URL del Server API"
   },
   "webVaultUrl": {
-    "message": "URL della Cassaforte Online"
+    "message": "URL del password manager online"
   },
   "identityUrl": {
     "message": "URL del Server di Identità"
@@ -609,7 +609,7 @@
     "message": "No"
   },
   "overwritePassword": {
-    "message": "Sovrascrivi Password"
+    "message": "Sovrascrivi password"
   },
   "learnMore": {
     "message": "Per saperne di più"
@@ -630,10 +630,10 @@
     "message": "Disconnetti"
   },
   "addNewLogin": {
-    "message": "Aggiungi Nuovo Login"
+    "message": "Aggiungi nuovo login"
   },
   "addNewItem": {
-    "message": "Aggiungi Nuovo Elemento"
+    "message": "Aggiungi nuovo elemento"
   },
   "addNewFolder": {
     "message": "Aggiungi nuova cartella"
@@ -651,16 +651,16 @@
     "message": "Blocca Ora"
   },
   "passwordGenerator": {
-    "message": "Generatore di Password"
+    "message": "Generatore di password"
   },
   "emailUs": {
-    "message": "Mandaci una Email"
+    "message": "Mandaci un'email"
   },
   "visitOurWebsite": {
-    "message": "Visita il nostro Sito"
+    "message": "Visita il nostro sito"
   },
   "fileBugReport": {
-    "message": "Notificaci un Bug"
+    "message": "Segnala un bug"
   },
   "blog": {
     "message": "Blog"
@@ -669,28 +669,28 @@
     "message": "Seguici"
   },
   "syncVault": {
-    "message": "Sincronizza La Tua Cassaforte"
+    "message": "Sincronizza il password manager"
   },
   "changeMasterPass": {
     "message": "Cambia Password Principale"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Puoi cambiare la tua password principale sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
+    "message": "Puoi cambiare la tua password principale su bitwarden.com. Vuoi visitare ora il sito?"
   },
   "changeEmail": {
     "message": "Cambia indirizzo Email"
   },
   "changeEmailConfirmation": {
-    "message": "Puoi cambiare il tuo indirizzo email sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
+    "message": "Puoi cambiare il tuo indirizzo email su bitwarden.com. Vuoi visitare ora il sito?"
   },
   "goToWebVault": {
-    "message": "Vai Alla Cassaforte Online"
+    "message": "Vai al password manager online"
   },
   "getMobileApp": {
-    "message": "Ottieni App Mobile"
+    "message": "Scarica l'app per smartphone"
   },
   "getBrowserExtension": {
-    "message": "Ottieni Estensione del Browser"
+    "message": "Scarica l'addon per browser"
   },
   "syncingComplete": {
     "message": "Sincronizzazione completata"
@@ -699,7 +699,7 @@
     "message": "Sincronizzazione fallita"
   },
   "yourVaultIsLocked": {
-    "message": "La tua Cassaforte è bloccata. Verifica la tua password principale per continuare."
+    "message": "Il password manager è bloccato. Verifica la tua password principale per continuare."
   },
   "unlock": {
     "message": "Sblocca"
@@ -717,7 +717,7 @@
     "message": "Opzioni di blocco"
   },
   "lockOptionsDesc": {
-    "message": "Scegli quando bloccare la tua Cassaforte. Una Cassaforte bloccata richiede l'inserimento della password principale per potervi accedere."
+    "message": "Scegli quando bloccare il password manager. Un password manager bloccato richiede l'inserimento della password principale per potervi accedere."
   },
   "immediately": {
     "message": "Immediatamente"
@@ -741,16 +741,16 @@
     "message": "4 ore"
   },
   "onIdle": {
-    "message": "Con il sistema inattivo"
+    "message": "Quando il sistema è inattivo"
   },
   "onSleep": {
-    "message": "Con il sistema in Sleep"
+    "message": "Quando il sistema è sospeso"
   },
   "onLocked": {
-    "message": "Con il sistema bloccato"
+    "message": "Quando il sistema è bloccato"
   },
   "onRestart": {
-    "message": "Al Riavvio"
+    "message": "Al riavvio"
   },
   "never": {
     "message": "Mai"
@@ -759,47 +759,47 @@
     "message": "Sicurezza"
   },
   "disableGa": {
-    "message": "Disabilita Analytics"
+    "message": "Disabilita analytics"
   },
   "gaDesc": {
     "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi."
   },
   "disableFavicon": {
-    "message": "Disabilita Icone dei Siti Web"
+    "message": "Disabilita icone dei siti web"
   },
   "disableFaviconDesc": {
-    "message": "Le icone del Sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login nella tua Cassaforte."
+    "message": "Le icone dei siti web forniscono un'immagine riconoscibile accanto ad ogni elemento di login nel password manager."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimizza nell'area di notifica"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Usa l'area di notifica"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Mosta sempre un'icona nell'area di notifica."
   },
   "language": {
-    "message": "Language"
+    "message": "Lingua"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Cambia la lingua dell'applicazione. Riavvio necessario."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Cambia lo schema di colori dell'applicazione."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Scuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Chiaro",
     "description": "Light color"
   },
   "copy": {
@@ -807,7 +807,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Controlla Aggiornamenti"
+    "message": "Controlla aggiornamenti"
   },
   "version": {
     "message": "Versione $VERSION_NUM$",
@@ -852,10 +852,10 @@
     "message": "Sconosciuto"
   },
   "copyUsername": {
-    "message": "Copia Nome Utente"
+    "message": "Copia nome utente"
   },
   "copyNumber": {
-    "message": "Copia Numero",
+    "message": "Copia numero",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
@@ -884,10 +884,10 @@
     "message": "1 GB di spazio di archiviazione crittografato."
   },
   "premiumSignUpTwoStep": {
-    "message": "Opzioni di login in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
+    "message": "Opzioni di verifica in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpTotp": {
-    "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
+    "message": "Generatore di codice di verifica TOTP (2FA) per i login nel password manager."
   },
   "premiumSignUpSupport": {
     "message": "Supporto clienti prioritario."
@@ -920,19 +920,19 @@
     "message": "Aggiornamento completato"
   },
   "passwordHistory": {
-    "message": "Cronologia delle Password"
+    "message": "Cronologia delle password"
   },
   "clear": {
     "message": "Elimina tutto"
   },
   "noPasswordsInList": {
-    "message": "Non ci sono password da elencare."
+    "message": "Non ci sono password da mostrare."
   },
   "undo": {
     "message": "Annulla"
   },
   "redo": {
-    "message": "Rifare"
+    "message": "Rifai"
   },
   "cut": {
     "message": "Taglia",
@@ -964,7 +964,7 @@
     "message": "Attiva\/disattiva strumenti di sviluppo"
   },
   "minimize": {
-    "message": "Minimizza",
+    "message": "Riduci a icona",
     "description": "Minimize window"
   },
   "zoom": {
@@ -1056,16 +1056,16 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Predefinito"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Esci"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Mostra \/ Nascondi",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Nascondi nell'area di notifica"
   }
 }

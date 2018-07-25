@@ -771,7 +771,7 @@
     "message": "Web Sitesi Simgeleri, kasanızdaki her giriş bilgisinin yanında o siteyi tanımanıza yardımcı olacak bir görüntü verir."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Sistem çubuğu ikonuna küçült"
   },
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."

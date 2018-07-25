@@ -538,15 +538,15 @@
     "message": "YubiKey를 사용하여 사용자의 계정에 접근합니다. YubiKey 4, 4 Nano, 4C 및 NEO 기기를 사용할 수 있습니다."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Mobile 앱, SMS, 전화 통화를 사용한 Duo Security 또는 U2F 보안 키를 사용하여 인증하세요.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Mobile 앱, SMS, 전화 통화를 사용한 조직용 Duo Security 또는 U2F 보안 키를 사용하여 인증하세요.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "FIDO U2F가 활성화된 보안 키를 사용하여 계정에 접근하세요."
   },
   "u2fTitle": {
     "message": "FIDO U2F 보안 키"
@@ -564,7 +564,7 @@
     "message": "이 계정은 2단계 인증을 사용합니다. 그러나 설정된 2단계 인증 중 이 기기에서 지원하는 방식이 없습니다."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "더 많은 기기를 지원하는 2단계 인증 방식(인증 앱 등)을 추가하세요."
   },
   "twoStepOptions": {
     "message": "2단계 인증 옵션"
@@ -855,7 +855,7 @@
     "message": "사용자 이름 복사"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "번호 복사",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
@@ -887,7 +887,7 @@
     "message": "YubiKey나 FIDO U2F, Duo 등의 추가적인 2단계 인증 옵션."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "보관함에 등록된 로그인 항목을 위한 TOTP 인증 코드(2FA) 생성기."
   },
   "premiumSignUpSupport": {
     "message": "고객 지원 우선 순위 제공."
@@ -908,7 +908,7 @@
     "message": "Bitwarden을 지원해 주셔서 감사합니다."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "이 모든 기능을 연 $PRICE$에 이용하실 수 있습니다!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -923,7 +923,7 @@
     "message": "비밀번호 변경 기록"
   },
   "clear": {
-    "message": "Clear"
+    "message": "삭제"
   },
   "noPasswordsInList": {
     "message": "비밀번호가 없습니다."
@@ -952,7 +952,7 @@
     "message": "축소"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "확대 \/ 축소 수준 초기화"
   },
   "toggleFullScreen": {
     "message": "전체 화면 전환"
@@ -971,7 +971,7 @@
     "message": "확대\/축소"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "모두 앞으로 가져오기",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
@@ -993,7 +993,7 @@
     "message": "Bitwarden 종료"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$를 클립보드에 복사했습니다.",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
