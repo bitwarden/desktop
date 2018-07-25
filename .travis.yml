@@ -9,7 +9,7 @@ matrix:
         - sudo apt-get install pkg-config libxss-dev libsecret-1-dev rpm
         - npm install
       script:
-        - npm run dist:lin
+        - npm run build
 
     - os: osx
       osx_image: xcode9.2
@@ -18,4 +18,4 @@ matrix:
       install:
         - npm install
       script:
-        - npm run dist:mac
+        - npm run build
