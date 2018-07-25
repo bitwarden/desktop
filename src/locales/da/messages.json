@@ -762,7 +762,7 @@
     "message": "Deaktiver Analytics"
   },
   "gaDesc": {
-    "message": "Vi bruger Analytics til at bedre lære hvordan applikationen bruges, således at vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
+    "message": "Vi bruger Analytics for bedre at lære hvordan applikationen bruges, således at vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
