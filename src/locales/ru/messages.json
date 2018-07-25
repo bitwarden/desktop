@@ -113,7 +113,7 @@
     "message": "Код безопасности"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Имя"
   },
   "company": {
     "message": "Компания"
@@ -264,7 +264,7 @@
     "message": "Избранный"
   },
   "edit": {
-    "message": "Изменить"
+    "message": "Правка"
   },
   "authenticatorKeyTotp": {
     "message": "Ключ проверки подлинности (TOTP)"
@@ -369,7 +369,7 @@
     "message": "Добавить новое вложение"
   },
   "deletedAttachment": {
-    "message": "Удаленное вложение"
+    "message": "Вложение удалено"
   },
   "deleteAttachmentConfirmation": {
     "message": "Вы действительно хотите удалить это вложение?"
@@ -486,7 +486,7 @@
     "message": "Введите 6-значный код подтверждения из вашего приложения-аутентификатора."
   },
   "enterVerificationCodeEmail": {
-    "message": "Введите 6-значный код подтверждения, который был отправлен на email $EMAIL$.",
+    "message": "Введите 6-значный код подтверждения, который был отправлен на $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -639,7 +639,7 @@
     "message": "Добавить новую папку"
   },
   "view": {
-    "message": "Просмотр"
+    "message": "Вид"
   },
   "account": {
     "message": "Аккаунт"
@@ -819,7 +819,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Перезагрузить для обновления"
+    "message": "Перезапустить для обновления"
   },
   "restartToUpdateDesc": {
     "message": "Версия $VERSION_NUM$ готова к установке. Для завершения установки необходимо перезапустить Bitwarden. Сделать это сейчас?",
