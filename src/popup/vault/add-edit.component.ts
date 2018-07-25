@@ -27,7 +27,7 @@ import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/componen
     templateUrl: 'add-edit.component.html',
 })
 export class AddEditComponent extends BaseAddEditComponent implements OnInit {
-    canCheckPasswords = true;
+    showAttachments = true;
 
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
@@ -40,7 +40,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.canCheckPasswords = !this.platformUtilsService.isEdge();
+        this.showAttachments = !this.platformUtilsService.isEdge();
         this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;

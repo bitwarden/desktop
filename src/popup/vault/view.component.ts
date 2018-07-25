@@ -28,7 +28,7 @@ import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/vie
     templateUrl: 'view.component.html',
 })
 export class ViewComponent extends BaseViewComponent implements OnInit {
-    canCheckPasswords = true;
+    showAttachments = true;
 
     constructor(cipherService: CipherService, totpService: TotpService,
         tokenService: TokenService, toasterService: ToasterService,
@@ -41,7 +41,7 @@ export class ViewComponent extends BaseViewComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.canCheckPasswords = !this.platformUtilsService.isEdge();
+        this.showAttachments = !this.platformUtilsService.isEdge();
         this.route.queryParams.subscribe(async (params) => {
             if (params.cipherId) {
                 this.cipherId = params.cipherId;
