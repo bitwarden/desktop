@@ -492,17 +492,17 @@
     "message": "گزینه های منوی متن دسترسی سریع به ساخت رمز عبور و ورود به سیستم برای وبسایت در برگه فعلی را برای شما فراهم میکند."
   },
   "theme": {
-    "message": "Theme"
+    "message": "پوسته"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "تغییر رنگ پوسته برنامه."
   },
   "dark": {
-    "message": "Dark",
+    "message": "تاریک",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "روشن",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "حذف"
   },
   "default": {
-    "message": "Default"
+    "message": "پیش فرض"
   }
 }

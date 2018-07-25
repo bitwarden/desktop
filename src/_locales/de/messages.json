@@ -315,7 +315,7 @@
     "message": "Bei Abmeldung"
   },
   "onRestart": {
-    "message": "Bei Browser Neustart"
+    "message": "Bei Browser-Neustart"
   },
   "never": {
     "message": "Nie"

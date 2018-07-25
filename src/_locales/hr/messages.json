@@ -492,17 +492,17 @@
     "message": "Opcije kontekstnog izbotnika omogućuju brzi pristup generiranju lozinke i prijavama za web stranicu na vašoj trenutačnoj kartici."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Promijenite temu boja aplikacije."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tamno",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Svjetlo",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Ukloni"
   },
   "default": {
-    "message": "Default"
+    "message": "Zadano"
   }
 }

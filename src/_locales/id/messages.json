@@ -173,7 +173,7 @@
     "message": "Pembuat Kata Sandi"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Pembuat Sandi",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -252,7 +252,7 @@
     "message": "Lihat Item"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Luncurkan"
   },
   "website": {
     "message": "Situs Web"
@@ -315,7 +315,7 @@
     "message": "Saat Komputer Terkunci"
   },
   "onRestart": {
-    "message": "Pada Mulai Ulang"
+    "message": "Saat Peramban Dimulai Ulang"
   },
   "never": {
     "message": "Jangan pernah"
@@ -324,7 +324,7 @@
     "message": "Keamanan"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Terjadi kesalahan"
   },
   "emailRequired": {
     "message": "Alamat email diperlukan."
@@ -351,7 +351,7 @@
     "message": "Kode verifikasi diperlukan."
   },
   "valueCopied": {
-    "message": " disalin",
+    "message": "$VALUE$ disalin",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -434,7 +434,7 @@
     }
   },
   "newUri": {
-    "message": "URl Batu"
+    "message": "URl Baru"
   },
   "addedItem": {
     "message": "Item yang Ditambahkan"
@@ -461,7 +461,7 @@
     "message": "Cari koleksi"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Jenis pencarian"
   },
   "noneFolder": {
     "message": "Tidak Ada Folder",
@@ -492,17 +492,17 @@
     "message": "Pilihan menu konteks menyediakan akses cepat ke pembuat sandi dan info masuk untuk situs web di tab Anda saat ini."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Ubah tema warna aplikasi."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Gelap",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Terang",
     "description": "Light color"
   },
   "exportVault": {
@@ -525,7 +525,7 @@
     "message": "Bagikan Brankas Anda"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden memungkinkan Anda berbagi brankas Anda dengan orang lain menggunakan akun organisasi. Anda ingin mengunjungi btiwarden.com untuk memperlajari lebih lanjut?"
   },
   "learnMore": {
     "message": "Pelajari lebih lanjut"
@@ -648,7 +648,7 @@
     "message": "Masukkan 6 digit kode verifikasi dari aplikasi autentikasi Anda."
   },
   "enterVerificationCodeEmail": {
-    "message": "Masukkan 6 digit kode verifikasi yang dikirim melalui email ke",
+    "message": "Masukkan 6 digit kode verifikasi yang dikirim melalui email ke $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -657,7 +657,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Email verifikasi dikirim ke $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -981,10 +981,10 @@
     "message": "Identitas"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Info Masuk"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Catatan Aman"
   },
   "clear": {
     "message": "Bersihkan"
@@ -1008,7 +1008,7 @@
     "message": "Kata sandi ini tidak ditemukan dalam data pelanggaran yang dikenal. Kata sandi tersebut harusnya aman untuk digunakan."
   },
   "baseDomain": {
-    "message": "Basis domain"
+    "message": "Domain basis"
   },
   "host": {
     "message": "Host",
@@ -1040,18 +1040,18 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Tipe"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Semua Item"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Tidak ada sandi yang dapat dicantumkan."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Hapus"
   },
   "default": {
-    "message": "Default"
+    "message": "Bawaan"
   }
 }

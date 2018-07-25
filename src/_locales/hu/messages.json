@@ -492,17 +492,17 @@
     "message": "Helyi menü opciók gyors hozzáférést biztosít jelszó generáláshoz és bejelentkezésekhez a weboldalhoz amin éppen vagy."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Téma"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Az alkalmazás színének megváltoztatása."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Sötét",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Világos",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Eltávolít"
   },
   "default": {
-    "message": "Default"
+    "message": "Alapértelmezett"
   }
 }

@@ -351,7 +351,7 @@
     "message": "Il codice di verifica è obbligatorio."
   },
   "valueCopied": {
-    "message": " copiata",
+    "message": "$VALUE$ copiato",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -461,7 +461,7 @@
     "message": "Cerca collezione"
   },
   "searchType": {
-    "message": "Tipo di ricerca"
+    "message": "Cerca in questo tipo"
   },
   "noneFolder": {
     "message": "No cartella",
@@ -492,17 +492,17 @@
     "message": "il menu contestuale di bitwarden fornisce l'accesso rapido ai login per la tab corrente."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Cambia lo schema di colori dell'applicazione."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Scuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Chiaro",
     "description": "Light color"
   },
   "exportVault": {
@@ -1052,6 +1052,6 @@
     "message": "Rimuovi"
   },
   "default": {
-    "message": "Default"
+    "message": "Predefinito"
   }
 }

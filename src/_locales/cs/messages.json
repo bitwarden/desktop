@@ -258,7 +258,7 @@
     "message": "Webová stránka"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Přepnout viditelnost"
   },
   "manage": {
     "message": "Správa"
@@ -324,7 +324,7 @@
     "message": "Zabezpečení"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Došlo k chybě"
   },
   "emailRequired": {
     "message": "Emailová adresa je povinná."
@@ -461,7 +461,7 @@
     "message": "Vyledat v kolekci"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Typ hledání"
   },
   "noneFolder": {
     "message": "Žádná složka",
@@ -492,17 +492,17 @@
     "message": "Kontextové menu poskytuje rychlý přístup k automatickému vyplnění, zkopírování nebo vygenerování přihlašovacích údajů pro aktuální stránku."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Motiv"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Změna barevného motivu aplikace."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tmavý",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Světlý",
     "description": "Light color"
   },
   "exportVault": {
@@ -525,7 +525,7 @@
     "message": "Sdílet trezor"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden umožňuje sdílet váš trezor s ostatními prostřednictvím účtu organizace. Chcete přejít na bitwarden.com a dozvědět se víc?"
   },
   "learnMore": {
     "message": "Dozvědět se více"
@@ -716,7 +716,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Ověřit pomocí Duo Security pro vaši organizaci prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo U2F bezpečnostního kódu.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -981,10 +981,10 @@
     "message": "Identity"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Přihlašovací údaje"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Zabezpečené poznámky"
   },
   "clear": {
     "message": "Vymazat"
@@ -1036,22 +1036,22 @@
     "message": "Přepnout možnosti"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organizace",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Typy"
   },
   "allItems": {
     "message": "Všechny položky"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nejsou k dispozici žádná hesla."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Smazat"
   },
   "default": {
-    "message": "Default"
+    "message": "Výchozí"
   }
 }

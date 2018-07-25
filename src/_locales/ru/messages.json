@@ -458,7 +458,7 @@
     "message": "Поиск папки"
   },
   "searchCollection": {
-    "message": "Найти коллекцию"
+    "message": "Поиск в коллекции"
   },
   "searchType": {
     "message": "Тип поиска"
@@ -549,7 +549,7 @@
     "message": "Вы действительно хотите удалить это вложение?"
   },
   "deletedAttachment": {
-    "message": "Удаленное вложение"
+    "message": "Вложение удалено"
   },
   "newAttachment": {
     "message": "Добавить новое вложение"
@@ -894,7 +894,7 @@
     "message": "Фамилия"
   },
   "identityName": {
-    "message": "Имя по паспорту"
+    "message": "Имя"
   },
   "company": {
     "message": "Компания"

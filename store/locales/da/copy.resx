@@ -138,7 +138,7 @@ Bitwarden er 100% open source software. Kildekoden til Bitwarden ligger på GitH
     <value>En sikker og gratis adgangskode manager til alle dine enheder</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
-    <value>Synkroniser, og få adgang til din boks fra flere enheder</value>
+    <value>Synkroniser og få adgang til din boks fra flere enheder</value>
   </data>
   <data name="ScreenshotVault" xml:space="preserve">
     <value>Administrer alle din logins og adgangskoder fra en sikker boks</value>
@@ -147,7 +147,7 @@ Bitwarden er 100% open source software. Kildekoden til Bitwarden ligger på GitH
     <value>Auto-udfyld hurtigt dine loginoplysninger på enhver hjemmeside, som du besøger</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Din boks er også bekvemt tilgængeligt fra højreklik-menuen</value>
+    <value>Din boks er også bekvemt tilgængelig fra højreklik-menuen</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
     <value>Opret automatisk stærke, tilfældige og sikre adgangskoder</value>

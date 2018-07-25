@@ -35,7 +35,7 @@
     "message": "Senha Mestra"
   },
   "masterPassDesc": {
-    "message": "A senha mestra é a senha que você usa para acessar o seu cofre. É muito importante que você não esqueça sua senha mestra. Não há nenhuma maneira de recuperar a senha caso você se esqueça."
+    "message": "A senha mestra é a senha que você usa para acessar o seu cofre. É muito importante que você não esqueça sua senha mestra. Não há maneira de recuperar a senha caso você se esqueça."
   },
   "masterPassHintDesc": {
     "message": "Uma dica de senha mestra pode ajudá-lo(a) a lembrá-lo(a) caso você esqueça."
@@ -44,7 +44,7 @@
     "message": "Digite Novamente a Senha Mestra"
   },
   "masterPassHint": {
-    "message": "Dica de Senha Mestra (opcional)"
+    "message": "Dica da Senha Mestra (opcional)"
   },
   "tab": {
     "message": "Aba"
@@ -104,7 +104,7 @@
     "message": "Dica da Senha"
   },
   "enterEmailToGetHint": {
-    "message": "Digite o seu endereço de e-mail para receber a dica da sua senha mestra."
+    "message": "Insira o seu endereço de e-mail para receber a dica da sua senha mestra."
   },
   "getMasterPasswordHint": {
     "message": "Obter dica da senha mestra"
@@ -327,7 +327,7 @@
     "message": "Ocorreu um erro"
   },
   "emailRequired": {
-    "message": "O endereço de e-mail é necessário."
+    "message": "O endereço de e-mail é obrigatório."
   },
   "invalidEmail": {
     "message": "Endereço de e-mail inválido."
@@ -400,7 +400,7 @@
     "message": "Pasta Editada"
   },
   "deleteFolderConfirmation": {
-    "message": "Tem certeza que deseja excluir esta pasta?"
+    "message": "Você tem certeza que deseja excluir esta pasta?"
   },
   "deletedFolder": {
     "message": "Pasta excluída"
@@ -492,17 +492,17 @@
     "message": "As opções do menu de contexto providenciam acesso rápido à geração de senha e credenciais para o site na sua aba atual."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Altere o tema de cores do aplicativo."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Escuro",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Claro",
     "description": "Light color"
   },
   "exportVault": {
@@ -606,7 +606,7 @@
     "message": "Prioridade no suporte ao cliente."
   },
   "ppremiumSignUpFuture": {
-    "message": "Todos os recursos futuros premium. Mais em breve!"
+    "message": "Todos os recursos premium no futuro. Mais em breve!"
   },
   "premiumPurchase": {
     "message": "Comprar Premium"
@@ -648,7 +648,7 @@
     "message": "Insira o código de verificação de 6 dígitos do seu aplicativo de autenticação."
   },
   "enterVerificationCodeEmail": {
-    "message": "Insira o código de verificação de 6 dígitos que foi enviado por e-mail para",
+    "message": "Insira o código de verificação de 6 dígitos que foi enviado por e-mail para $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -669,10 +669,10 @@
     "message": "Lembrar de mim"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Enviar e-mail do código de verificação novamente"
+    "message": "Enviar código de verificação para o e-mail novamente"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Utilizar outro método de login de verificação em duas etapas"
+    "message": "Utilizar outro método de verificação em duas etapas"
   },
   "insertYubiKey": {
     "message": "Insira a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
@@ -804,10 +804,10 @@
     "message": "Ao clicar fora da janela de pop-up para verificar seu e-mail para o seu código de verificação fará com que este pop-up feche. Você deseja abrir este pop-up em uma nova janela para que ele não seja fechado?"
   },
   "disableFavicon": {
-    "message": "Desativar Ícones de Site"
+    "message": "Desabilitar Ícones dos Sites"
   },
   "disableFaviconDesc": {
-    "message": "O ícone do site fornece uma imagem reconhecível ao lado de cada item de login no seu cofre."
+    "message": "O ícone do site fornece um ícone reconhecível ao lado de cada credencial no seu cofre."
   },
   "cardholderName": {
     "message": "Titular do Cartão"
@@ -996,7 +996,7 @@
     "message": "Verifique se a senha foi exposta."
   },
   "passwordExposed": {
-    "message": "Esta senha foi exposta em brechas de dados. Você deve alterá-la.",
+    "message": "Esta senha foi exposta $VALUE$ vez(es) em brechas de dados. Você deve alterá-la.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1052,6 +1052,6 @@
     "message": "Remover"
   },
   "default": {
-    "message": "Default"
+    "message": "Padrão"
   }
 }

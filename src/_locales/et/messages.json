@@ -7,14 +7,14 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Tasuta ja turvaline paroolihaldur kõikidele Sinu seadmetele.",
+    "message": "Turvaline ja tasuta paroolihaldur kõikidele Sinu seadmetele.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Logi oma olemasolevasse kontosse sisse või loo uus konto."
+    "message": "Logi sisse või loo konto, et pääseda oma turvalisse hoidlasse."
   },
   "createAccount": {
-    "message": "Konto loomine"
+    "message": "Loo konto"
   },
   "login": {
     "message": "Logi sisse"
@@ -35,7 +35,7 @@
     "message": "Ülemparool"
   },
   "masterPassDesc": {
-    "message": "Ülemparool on parool, millega pääsed oma kontole ligi. On äärmiselt tähtis, et ülemparool ei ununeks. Selle parooli taastamine ei ole mingil moel võimalik."
+    "message": "Ülemparool on parool, millega pääsed oma kontole ligi. See on väga oluline, et sa oma ülemparooli ei unustaks. Selle parooli taastamine ei ole mitte mingil moel võimalik."
   },
   "masterPassHintDesc": {
     "message": "Vihje võib abiks olla olukorras, kui oled ülemparooli unustanud."

@@ -273,7 +273,7 @@
     "message": "확장 프로그램 평가"
   },
   "rateExtensionDesc": {
-    "message": "Please consider helping us out with a good review!"
+    "message": "좋은 리뷰를 남겨 저희를 도와주세요!"
   },
   "browserNotSupportClipboard": {
     "message": "사용하고 있는 웹 브라우저가 쉬운 클립보드 복사를 지원하지 않습니다. 직접 복사하세요."
@@ -409,7 +409,7 @@
     "message": "시작하기 튜토리얼"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Watch our getting started tutorial to learn how to get the most out of the browser extension."
+    "message": "브라우저 확장 프로그램을 최대한 활용하는 방법을 알아보려면 시작하기 튜토리얼을 확인하세요."
   },
   "syncingComplete": {
     "message": "동기화 완료"
@@ -600,7 +600,7 @@
     "message": "YubiKey나 FIDO U2F, Duo 등의 추가적인 2단계 인증 옵션."
   },
   "ppremiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "보관함에 등록된 로그인 항목을 위한 TOTP 인증 코드(2FA) 생성기."
   },
   "ppremiumSignUpSupport": {
     "message": "고객 지원 우선 순위 제공."
@@ -621,7 +621,7 @@
     "message": "Bitwarden을 지원해 주셔서 감사합니다."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "이 모든 기능을 연 $PRICE$에 이용하실 수 있습니다!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -636,7 +636,7 @@
     "message": "TOTP 자동 복사 사용 안 함"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "If your login has an authenticator key attached to it, the TOTP verification code is automatically copied to your clipboard whenever you auto-fill the login."
+    "message": "로그인에 인증 키가 연결되어 있을 경우, 그 로그인을 자동 완성할 때마다 TOTP 인증 코드가 클립보드에 자동으로 복사됩니다."
   },
   "premiumRequired": {
     "message": "프리미엄 멤버십 필요"
@@ -687,7 +687,7 @@
     "message": "이 계정은 2단계 인증을 사용합니다. 그러나 설정된 2단계 인증 중 이 웹 브라우저에서 지원하는 방식이 없습니다."
   },
   "noTwoStepProviders2": {
-    "message": "Please use a supported web browser (such as Chrome) and\/or add additional providers that are better supported across web browsers (such as an authenticator app)."
+    "message": "지원하는 웹 브라우저(Chrome 등)를 사용하거나 더 많은 브라우저를 지원하는 2단계 인증 방식(인증 앱 등)을 추가하세요."
   },
   "twoStepOptions": {
     "message": "2단계 인증 옵션"
@@ -712,15 +712,15 @@
     "message": "YubiKey를 사용하여 사용자의 계정에 접근합니다. YubiKey 4, 4 Nano, 4C 및 NEO 기기를 사용할 수 있습니다."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Mobile 앱, SMS, 전화 통화를 사용한 Duo Security 또는 U2F 보안 키를 사용하여 인증하세요.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Duo Mobile 앱, SMS, 전화 통화를 사용한 조직용 Duo Security 또는 U2F 보안 키를 사용하여 인증하세요.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "FIDO U2F가 활성화된 보안 키를 사용하여 계정에 접근하세요."
   },
   "u2fTitle": {
     "message": "FIDO U2F 보안 키"
@@ -801,7 +801,7 @@
     "message": "참 \/ 거짓"
   },
   "popup2faCloseMessage": {
-    "message": "Clicking outside the popup window to check your email for your verification code will cause this popup to close. Do you want to open this popup in a new window so that it does not close?"
+    "message": "인증 코드가 담긴 이메일을 확인하기 위해 팝업 창의 바깥쪽을 누르면 이 팝업이 닫힙니다. 팝업 창이 닫히는 것을 방지하기 위해 이 팝업을 새 창에서 다시 여시겠습니까?"
   },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
