@@ -2,6 +2,8 @@ import { powerMonitor } from 'electron';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { isSnapStore } from 'jslib/electron/utils';
+
 import { Main } from '../main';
 
 // tslint:disable-next-line
@@ -15,13 +17,16 @@ export class PowerMonitorMain {
     constructor(private main: Main) { }
 
     init() {
-        // System sleep
-        powerMonitor.on('suspend', async () => {
-            const lockOption = await this.getLockOption();
-            if (lockOption === -3) {
-                this.main.messagingService.send('lockVault');
-            }
-        });
+        // ref: https://github.com/electron/electron/issues/13767
+        if (!isSnapStore()) {
+            // System sleep
+            powerMonitor.on('suspend', async () => {
+                const lockOption = await this.getLockOption();
+                if (lockOption === -3) {
+                    this.main.messagingService.send('lockVault');
+                }
+            });
+        }
 
         // System idle
         global.setInterval(async () => {
