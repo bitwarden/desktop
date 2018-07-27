@@ -1,5 +1,6 @@
 ﻿param (
-    [string] $version = ""
+    [Parameter(Mandatory=$true)]
+    [string] $version
 )
 
 # Dependencies:
@@ -11,6 +12,6 @@
 # 4. Environment variables for GITHUB_USER and GITHUB_TOKEN set.
 #
 # To run:
-# sh ./cask-update.sh -version 1.3.0
+# ./cask-update.ps1 -version 1.3.0
 
 cask-repair --cask-version $version --blind-submit --fail-on-error bitwarden
