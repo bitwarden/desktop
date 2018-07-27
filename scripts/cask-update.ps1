@@ -12,6 +12,6 @@
 # 4. Environment variables for GITHUB_USER and GITHUB_TOKEN set.
 #
 # To run:
-# ./cask-update.ps1 -version 1.3.0
+# pwsh ./cask-update.ps1 -version 1.3.0
 
 cask-repair --cask-version $version --blind-submit --fail-on-error bitwarden
