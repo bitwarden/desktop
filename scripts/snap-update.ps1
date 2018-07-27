@@ -6,4 +6,4 @@ $rootDir = $dir + "/..";
 $distDir = $rootDir + "/dist";
 $distSnap = $distDir + "/bitwarden*.snap";
 
-snap push $distSnap --release stable
+snapcraft push $distSnap --release stable
