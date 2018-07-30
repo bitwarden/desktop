@@ -1067,5 +1067,13 @@
   },
   "hideToTray": {
     "message": "Minimera till systemfältet"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }

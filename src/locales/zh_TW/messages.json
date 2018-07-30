@@ -414,7 +414,7 @@
     "message": "登入"
   },
   "submit": {
-    "message": "提交"
+    "message": "送出"
   },
   "masterPass": {
     "message": "主密碼"
@@ -519,10 +519,10 @@
     "message": "將您的安全鑰匙插入電腦的 USB 連接埠，然後按一下它的按鈕（如有的話）。"
   },
   "recoveryCodeDesc": {
-    "message": "無法使用任何兩步驟登入方式？用復原代碼停用所有兩步驟登入方式。"
+    "message": "無法使用任何兩步驟登入方式？用復原碼停用所有兩步驟登入方式。"
   },
   "recoveryCodeTitle": {
-    "message": "復原代碼"
+    "message": "復原碼"
   },
   "authenticatorAppTitle": {
     "message": "驗證器應用程式"
@@ -588,7 +588,7 @@
     "message": "API 伺服器 URL"
   },
   "webVaultUrl": {
-    "message": "網路版密碼庫伺服器 URL"
+    "message": "網頁版密碼庫伺服器 URL"
   },
   "identityUrl": {
     "message": "身分伺服器 URL"
@@ -684,7 +684,7 @@
     "message": "您可以在 Bitwarden 網頁版變更電子郵件地址。現在前往？"
   },
   "goToWebVault": {
-    "message": "前往網路版密碼庫"
+    "message": "前往網頁版密碼庫"
   },
   "getMobileApp": {
     "message": "取得行動裝置應用程式"
@@ -1067,5 +1067,13 @@
   },
   "hideToTray": {
     "message": "隱藏到系統匣"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }

@@ -1067,5 +1067,13 @@
   },
   "hideToTray": {
     "message": "Nur in der Taskleiste anzeigen"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }

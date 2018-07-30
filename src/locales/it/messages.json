@@ -30,7 +30,7 @@
     "message": "Collezioni"
   },
   "searchVault": {
-    "message": "Cerca tra tutti gli elementi"
+    "message": "Cerca nella cassaforte"
   },
   "addItem": {
     "message": "Aggiungi Elemento"
@@ -405,7 +405,7 @@
     "message": "Cartella eliminata"
   },
   "loginOrCreateNewAccount": {
-    "message": "Fai il log in o crea un nuovo account per accedere al tuo password manager."
+    "message": "Fai il log in o crea un nuovo account per accedere alla tua cassaforte."
   },
   "createAccount": {
     "message": "Crea Account"
@@ -420,7 +420,7 @@
     "message": "Password principale"
   },
   "masterPassDesc": {
-    "message": "La password principale è quella che usi per accedere al password manager. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
+    "message": "La password principale è quella che usi per accedere alla cassaforte. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
   },
   "masterPassHintDesc": {
     "message": "Un suggerimento può aiutarti a ricordare la tua password principale nel caso in cui la dimentichi."
@@ -513,7 +513,7 @@
     "message": "Usa un altro metodo di verifica in due passaggi"
   },
   "insertYubiKey": {
-    "message": "Inserisci la tua YubiKey nella porta USB del computer, poi premi il bottone su di essa."
+    "message": "Inserisci la tua YubiKey nella porta USB del computer e poi premi il tasto."
   },
   "insertU2f": {
     "message": "Inserisci la tua security key nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
@@ -561,10 +561,10 @@
     "message": "Login non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "Questo account ha abilitato la verifica in due passaggi, ma nessuno dei provider configurati è supportato da questo browser."
+    "message": "La verifica in due passaggi è abilitata su questo account, ma nessuno dei metodi configurati è supportato da questo browser."
   },
   "noTwoStepProviders2": {
-    "message": "Si prega di aggiungere altri provider che sono meglio supportati su tutti i dispositivi (ad esempio, un'app di autenticazione)."
+    "message": "Si prega di aggiungere altri metodi che sono supportati meglio su tutti i dispositivi (ad esempio, un'app di autenticazione)."
   },
   "twoStepOptions": {
     "message": "Opzioni di verifica in due passaggi"
@@ -588,7 +588,7 @@
     "message": "URL del Server API"
   },
   "webVaultUrl": {
-    "message": "URL del password manager online"
+    "message": "URL della Cassaforte Online"
   },
   "identityUrl": {
     "message": "URL del Server di Identità"
@@ -669,7 +669,7 @@
     "message": "Seguici"
   },
   "syncVault": {
-    "message": "Sincronizza il password manager"
+    "message": "Sincronizza La Tua Cassaforte"
   },
   "changeMasterPass": {
     "message": "Cambia Password Principale"
@@ -684,7 +684,7 @@
     "message": "Puoi cambiare il tuo indirizzo email su bitwarden.com. Vuoi visitare ora il sito?"
   },
   "goToWebVault": {
-    "message": "Vai al password manager online"
+    "message": "Vai Alla Cassaforte Online"
   },
   "getMobileApp": {
     "message": "Scarica l'app per smartphone"
@@ -699,7 +699,7 @@
     "message": "Sincronizzazione fallita"
   },
   "yourVaultIsLocked": {
-    "message": "Il password manager è bloccato. Verifica la tua password principale per continuare."
+    "message": "La tua cassaforte è bloccata. Verifica la tua password principale per continuare."
   },
   "unlock": {
     "message": "Sblocca"
@@ -717,7 +717,7 @@
     "message": "Opzioni di blocco"
   },
   "lockOptionsDesc": {
-    "message": "Scegli quando bloccare il password manager. Un password manager bloccato richiede l'inserimento della password principale per potervi accedere."
+    "message": "Scegli quando bloccare la tua cassaforte. Una cassaforte bloccata richiede l'inserimento della password principale per potervi accedere."
   },
   "immediately": {
     "message": "Immediatamente"
@@ -768,7 +768,7 @@
     "message": "Disabilita icone dei siti web"
   },
   "disableFaviconDesc": {
-    "message": "Le icone dei siti web forniscono un'immagine riconoscibile accanto ad ogni elemento di login nel password manager."
+    "message": "Le icone del Sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login nella tua Cassaforte."
   },
   "enableMinToTray": {
     "message": "Minimizza nell'area di notifica"
@@ -887,7 +887,7 @@
     "message": "Opzioni di verifica in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpTotp": {
-    "message": "Generatore di codice di verifica TOTP (2FA) per i login nel password manager."
+    "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
   },
   "premiumSignUpSupport": {
     "message": "Supporto clienti prioritario."
@@ -1067,5 +1067,13 @@
   },
   "hideToTray": {
     "message": "Nascondi nell'area di notifica"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }
