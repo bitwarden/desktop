@@ -10,6 +10,7 @@
     "build:watch": "gulp build && webpack --config webpack.config.js --watch",
     "build:prod": "gulp build && cross-env NODE_ENV=production webpack --config webpack.config.js",
     "build:prod:watch": "gulp build && cross-env NODE_ENV=production webpack --config webpack.config.js --watch",
+    "clean:l10n": "git push origin --delete l10n_master",
     "dist": "npm run build:prod && gulp dist",
     "dist:firefox": "npm run build:prod && gulp dist:firefox",
     "dist:opera": "npm run build:prod && gulp dist:opera",
