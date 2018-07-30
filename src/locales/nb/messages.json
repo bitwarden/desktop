@@ -61,7 +61,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Ny URI"
   },
   "username": {
     "message": "Brukernavn"
@@ -195,10 +195,10 @@
     "message": "Herr"
   },
   "mrs": {
-    "message": "Frøken"
+    "message": "Fru"
   },
   "ms": {
-    "message": "Fru"
+    "message": "Frøken"
   },
   "dr": {
     "message": "Dr․"
@@ -334,7 +334,7 @@
     "message": "Kopier passordet"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopier URIen"
   },
   "length": {
     "message": "Lengde"
@@ -783,23 +783,23 @@
     "message": "Always show an icon in the system tray."
   },
   "language": {
-    "message": "Language"
+    "message": "Språk"
   },
   "languageDesc": {
     "message": "Change the language used by the application. Restart is required."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Endre appens fargetema."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Mørkt",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Lyst",
     "description": "Light color"
   },
   "copy": {
@@ -822,7 +822,7 @@
     "message": "Start på nytt for å oppdatere"
   },
   "restartToUpdateDesc": {
-    "message": "Versjon $VERSION_NUM$ er klar til å installeres. Du må starte Bitwarden på nytt for å fullføre installasjonen. Vil du starte Bitwarden på nytt nå og oppdatere den?",
+    "message": "Versjon $VERSION_NUM$ er klar til å installeres. Du må starte appen på nytt for å fullføre installasjonen. Vil du starte Bitwarden på nytt nå og oppdatere den?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1009,10 +1009,10 @@
     "message": "Vindu"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Sjekk om passordet har blitt utsatt."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Dette passordet har blitt utsatt $VALUE$ gang(er) i et databrudd. Du burde endre det.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1021,51 +1021,59 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Dette passordet ble ikke funnet i noen kjente databrudd. Det burde være trygt å bruke."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Grunndomene"
   },
   "host": {
-    "message": "Host",
+    "message": "Vert",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Nøyaktig"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Starter med"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulært uttrykk",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Match-gjenkjenning",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Standard match-gjenkjenning",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
     "message": "Toggle Options"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisasjon",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Standard"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Avslutt"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Vis\/Skjul",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
     "message": "Hide to Tray"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }
