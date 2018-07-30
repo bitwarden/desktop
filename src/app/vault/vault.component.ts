@@ -29,11 +29,11 @@ import { CiphersComponent } from './ciphers.component';
 import { FolderAddEditComponent } from './folder-add-edit.component';
 import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
+import { PasswordHistoryComponent } from './password-history.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
 import { CipherView } from 'jslib/models/view/cipherView';
-import { CollectionView } from 'jslib/models/view/collectionView';
 import { FolderView } from 'jslib/models/view/folderView';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -55,6 +55,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModalRef: ViewContainerRef;
     @ViewChild('attachments', { read: ViewContainerRef }) attachmentsModalRef: ViewContainerRef;
     @ViewChild('folderAddEdit', { read: ViewContainerRef }) folderAddEditModalRef: ViewContainerRef;
+    @ViewChild('passwordHistory', { read: ViewContainerRef }) passwordHistoryModalRef: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -344,6 +345,22 @@ export class VaultComponent implements OnInit, OnDestroy {
                 await this.ciphersComponent.refresh();
             }
             madeAttachmentChanges = false;
+        });
+    }
+
+    viewCipherPasswordHistory(cipher: CipherView) {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.passwordHistoryModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<PasswordHistoryComponent>(PasswordHistoryComponent,
+            this.passwordHistoryModalRef);
+
+        childComponent.cipherId = cipher.id;
+        this.modal.onClosed.subscribe(async () => {
+            this.modal = null;
         });
     }
 

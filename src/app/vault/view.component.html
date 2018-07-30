@@ -245,6 +245,29 @@
                 </a>
             </div>
         </div>
+        <div class="box">
+            <div class="box-header">
+                {{'other' | i18n}}
+            </div>
+            <div class="box-content">
+                <div class="box-content-row">
+                    <span class="row-label">{{'dateUpdated' | i18n}}</span>
+                    {{cipher.revisionDate | date:'medium'}}
+                </div>
+                <div class="box-content-row box-content-row-flex" *ngIf="cipher.passwordRevisionDisplayDate">
+                    <div class="row-main">
+                        <span class="row-label">{{'datePasswordUpdated' | i18n}}</span>
+                        {{cipher.passwordRevisionDisplayDate | date:'medium'}}
+                    </div>
+                    <div class="action-buttons" *ngIf="cipher.hasPasswordHistory">
+                        <a class="row-btn" href="#" appStopClick title="{{'passwordHistory' | i18n}}"
+                           (click)="viewHistory(c)">
+                            <i class="fa fa-lg fa-clock-o"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="footer">

@@ -18,7 +18,8 @@
     <app-vault-view id="details"
                     *ngIf="cipherId && action === 'view'"
                     [cipherId]="cipherId"
-                    (onEditCipher)="editCipher($event)">
+                    (onEditCipher)="editCipher($event)"
+                    (onViewCipherPasswordHistory)="viewCipherPasswordHistory($event)">
     </app-vault-view>
     <app-vault-add-edit id="details"
                         *ngIf="action === 'add' || action === 'edit'"
@@ -41,4 +42,5 @@
     <ng-template #passwordGenerator></ng-template>
     <ng-template #attachments></ng-template>
     <ng-template #folderAddEdit></ng-template>
+    <ng-template #passwordHistory></ng-template>
 </div>
