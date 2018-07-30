@@ -1,6 +1,8 @@
 import {
     Component,
+    EventEmitter,
     OnChanges,
+    Output,
 } from '@angular/core';
 
 import { ToasterService } from 'angular2-toaster';
@@ -16,11 +18,15 @@ import { TotpService } from 'jslib/abstractions/totp.service';
 
 import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/view.component';
 
+import { CipherView } from 'jslib/models/view/cipherView';
+
 @Component({
     selector: 'app-vault-view',
     templateUrl: 'view.component.html',
 })
 export class ViewComponent extends BaseViewComponent implements OnChanges {
+    @Output() onViewCipherPasswordHistory = new EventEmitter<CipherView>();
+
     constructor(cipherService: CipherService, totpService: TotpService,
         tokenService: TokenService, toasterService: ToasterService,
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
@@ -32,5 +38,10 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
 
     async ngOnChanges() {
         await super.load();
+    }
+
+    viewHistory() {
+        this.analytics.eventTrack.next({ action: 'View Password History' });
+        this.onViewCipherPasswordHistory.emit(this.cipher);
     }
 }
