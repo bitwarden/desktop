@@ -32,6 +32,7 @@ import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
+import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ViewComponent } from './vault/view.component';
 
 const routes: Routes = [
@@ -103,6 +104,12 @@ const routes: Routes = [
         component: ViewComponent,
         canActivate: [AuthGuardService],
         data: { state: 'view-cipher' },
+    },
+    {
+        path: 'cipher-password-history',
+        component: PasswordHistoryComponent,
+        canActivate: [AuthGuardService],
+        data: { state: 'cipher-password-history' },
     },
     {
         path: 'add-cipher',

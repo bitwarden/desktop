@@ -39,6 +39,7 @@ import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
 import { CurrentTabComponent } from './vault/current-tab.component';
 import { GroupingsComponent } from './vault/groupings.component';
+import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ViewComponent } from './vault/view.component';
 
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
@@ -103,6 +104,7 @@ import { IconComponent } from 'jslib/angular/components/icon.component';
         OptionsComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
+        PasswordHistoryComponent,
         PopOutComponent,
         PremiumComponent,
         PrivateModeComponent,

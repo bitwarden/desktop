@@ -3,7 +3,6 @@ import { Angulartics2 } from 'angulartics2';
 
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
@@ -26,7 +25,7 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
     constructor(passwordGenerationService: PasswordGenerationService, analytics: Angulartics2,
         platformUtilsService: PlatformUtilsService, i18nService: I18nService,
         toasterService: ToasterService, private stateService: StateService,
-        private router: Router, private location: Location) {
+        private location: Location) {
         super(passwordGenerationService, analytics, platformUtilsService, i18nService, toasterService, window);
     }
 

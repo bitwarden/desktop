@@ -108,8 +108,8 @@ export const routerTransition = trigger('routerTransition', [
     transition('tabs => view-cipher, ciphers => view-cipher', inSlideUp),
     transition('view-cipher => tabs, view-cipher => ciphers', outSlideDown),
 
-    transition('view-cipher => edit-cipher', inSlideUp),
-    transition('edit-cipher => view-cipher, edit-cipher => tabs', outSlideDown),
+    transition('view-cipher => edit-cipher, view-cipher => cipher-password-history', inSlideUp),
+    transition('edit-cipher => view-cipher, cipher-password-history => view-cipher, edit-cipher => tabs', outSlideDown),
 
     transition('tabs => add-cipher, ciphers => add-cipher', inSlideUp),
     transition('add-cipher => tabs, add-cipher => ciphers', outSlideDown),
