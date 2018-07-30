@@ -30,6 +30,7 @@
     "build:renderer:watch": "webpack --config webpack.renderer.js --watch",
     "electron": "npm run build:main && concurrently -k -n Main,Rend -c yellow,cyan \"electron --inspect=5858 ./build --watch\" \"npm run build:renderer:watch\"",
     "clean:dist": "rimraf ./dist/*",
+    "clean:l10n": "git push origin --delete l10n_master",
     "pack:lin": "npm run clean:dist && build --linux --x64 -p never",
     "pack:mac": "npm run clean:dist && build --mac -p never",
     "pack:win": "npm run clean:dist && build --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
