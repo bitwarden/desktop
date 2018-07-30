@@ -48,7 +48,7 @@
     "message": "Název"
   },
   "uri": {
-    "message": "URL"
+    "message": "URI"
   },
   "uriPosition": {
     "message": "URI $POSITION$",
@@ -73,7 +73,7 @@
     "message": "Upravit položku"
   },
   "emailAddress": {
-    "message": "Emailová adresa"
+    "message": "E-mailová adresa"
   },
   "verificationCodeTotp": {
     "message": "Ověřovací kód (TOTP)"
@@ -128,7 +128,7 @@
     "message": "Číslo dokladu totožnosti"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
     "message": "Telefon"
@@ -173,7 +173,7 @@
     "message": "Srpen"
   },
   "september": {
-    "message": "Záři"
+    "message": "Září"
   },
   "october": {
     "message": "Říjen"
@@ -334,7 +334,7 @@
     "message": "Kopírovat heslo"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopírovat URI"
   },
   "length": {
     "message": "Délka"
@@ -375,7 +375,7 @@
     "message": "Opravdu chcete tuto přílohu smazat?"
   },
   "attachmentSaved": {
-    "message": "Příloha byla úspěšně uložena."
+    "message": "Příloha byla uložena"
   },
   "file": {
     "message": "Soubor"
@@ -438,16 +438,16 @@
     "message": "Nápověda k heslu"
   },
   "enterEmailToGetHint": {
-    "message": "Zadejte emailovou adresu pro zaslání nápovědy k hlavnímu heslu."
+    "message": "Zadejte e-mailovou adresu pro zaslání nápovědy k hlavnímu heslu."
   },
   "getMasterPasswordHint": {
     "message": "Získat nápovědu pro hlavní heslo"
   },
   "emailRequired": {
-    "message": "Emailová adresa je povinná."
+    "message": "E-mailová adresa je povinná."
   },
   "invalidEmail": {
-    "message": "Chybná emailová adresa."
+    "message": "Neplatná e-mailová adresa."
   },
   "masterPassRequired": {
     "message": "Hlavní heslo je povinné."
@@ -462,7 +462,7 @@
     "message": "Váš účet byl vytvořen! Můžete se přihlásit."
   },
   "masterPassSent": {
-    "message": "Odeslali jsme vám email s nápovědou k hlavnímu heslu."
+    "message": "Poslali jsme vám e-mail s nápovědou k hlavnímu heslu."
   },
   "unexpectedError": {
     "message": "Došlo k neznámé chybě."
@@ -486,7 +486,7 @@
     "message": "Zadejte 6-místný kód z ověřovací aplikace."
   },
   "enterVerificationCodeEmail": {
-    "message": "Zadejte 6-místný kód, který byl odeslán na email $EMAIL$.",
+    "message": "Zadejte 6místný kód z e-mailu, který byl zaslán na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -495,7 +495,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Ověřovací email byl zaslán na $EMAIL$.",
+    "message": "Ověřovací e-mail byl zaslán na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -507,7 +507,7 @@
     "message": "Pamatuj si mě"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Zaslat znovu ověřovací kód na email"
+    "message": "Zaslat znovu ověřovací kód na e-mail"
   },
   "useAnotherTwoStepMethod": {
     "message": "Použít jinou metodu dvoufázového přihlášení"
@@ -542,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Ověřit pomocí Duo Security pro vaši organizaci prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo U2F bezpečnostního kódu.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -552,10 +552,10 @@
     "message": "FIDO U2F bezpečnostní klíč"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Ověřovací kódy vám budou zaslány emailem."
+    "message": "Ověřovací kódy vám budou zaslány e-mailem."
   },
   "loginUnavailable": {
     "message": "Přihlášení není dostupné"
@@ -597,7 +597,7 @@
     "message": "URL serveru ikonek"
   },
   "environmentSaved": {
-    "message": "URL adresy vlastního prostředí byly uloženy."
+    "message": "URL adresy vlastního prostředí byly uloženy"
   },
   "ok": {
     "message": "Ok"
@@ -678,10 +678,10 @@
     "message": "Hlavní heslo si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "changeEmail": {
-    "message": "Změnit email"
+    "message": "Změnit e-mail"
   },
   "changeEmailConfirmation": {
-    "message": "Emailovou adresu si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+    "message": "E-mailovou adresu si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "goToWebVault": {
     "message": "Otevřít webovou aplikaci"
@@ -708,7 +708,7 @@
     "message": "Chybné hlavní heslo"
   },
   "twoStepLoginConfirmation": {
-    "message": "Dvoufázové přihlášení činí váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, emailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+    "message": "Dvoufázové přihlášení činí váš účet mnohem bezpečnějším díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, e-mailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "twoStepLogin": {
     "message": "Dvoufázové přihlášení"
@@ -771,35 +771,35 @@
     "message": "Ikonky webových stránek zobrazí snadno rozeznatelný obrázek vedle každé položky ve vašem trezoru."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimalizovat do systémové lišty"
   },
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Povolit ikonu v systémové liště"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Vždy zobrazovat ikonu v systémové liště."
   },
   "language": {
-    "message": "Language"
+    "message": "Jazyk"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Změna jazyku používaného aplikací. Je vyžadován restart."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Motiv"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Změna barevného motivu aplikace."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tmavý",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Světlý",
     "description": "Light color"
   },
   "copy": {
@@ -1052,20 +1052,28 @@
     "message": "Přepnout možnosti"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organizace",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Výchozí"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Ukončit"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Zobrazit \/ skrýt",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Skrýt do systémové lišty"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }
