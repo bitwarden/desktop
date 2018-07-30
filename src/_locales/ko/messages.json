@@ -1053,5 +1053,13 @@
   },
   "default": {
     "message": "기본값"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }

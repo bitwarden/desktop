@@ -252,7 +252,7 @@
     "message": "Vis gjenstanden"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Åpne"
   },
   "website": {
     "message": "Nettsted"
@@ -315,7 +315,7 @@
     "message": "Ved maskinlåsing"
   },
   "onRestart": {
-    "message": "Ved omstart"
+    "message": "Ved nettleseromstart"
   },
   "never": {
     "message": "Aldri"
@@ -324,7 +324,7 @@
     "message": "Sikkerhet"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "En feil har oppstått"
   },
   "emailRequired": {
     "message": "E-postadressen er påkrevd."
@@ -351,7 +351,7 @@
     "message": "En verifiseringskode er påkrevd."
   },
   "valueCopied": {
-    "message": " er kopiert",
+    "message": "$VALUE$ er kopiert",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -461,7 +461,7 @@
     "message": "Søk i samling"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Søketype"
   },
   "noneFolder": {
     "message": "Ingen mappe",
@@ -492,17 +492,17 @@
     "message": "Sammenhengsmeny-alternativer sørger for rask tilgang til passordgenerering og innlogginger for nettstedet i din nåværende fane."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Mørkt",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Lyst",
     "description": "Light color"
   },
   "exportVault": {
@@ -876,10 +876,10 @@
     "message": "Herr"
   },
   "mrs": {
-    "message": "Frøken"
+    "message": "Fru"
   },
   "ms": {
-    "message": "Fru"
+    "message": "Frøken"
   },
   "dr": {
     "message": "Dr."
@@ -993,10 +993,10 @@
     "message": "Fullfør din 2-trinnsinnloggingsforespørsel i den nye fanen."
   },
   "checkPassword": {
-    "message": "Sjekk om passord har blitt utsatt."
+    "message": "Sjekk om passordet har blitt utsatt."
   },
   "passwordExposed": {
-    "message": "Dette passordet har blitt utsatt i et databrudd. Du burde endre det.",
+    "message": "Dette passordet har blitt utsatt $VALUE$ gang(er) i et databrudd. Du burde endre det.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1005,7 +1005,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Dette passordet ble ikke funnet i noen kjente databrudd. Det bør være trygt å bruke."
+    "message": "Dette passordet ble ikke funnet i noen kjente databrudd. Det burde være trygt å bruke."
   },
   "baseDomain": {
     "message": "Grunndomene"
@@ -1033,25 +1033,33 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Veksle Alternativer"
+    "message": "Skru av\/på innstillinger"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisasjon",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Typer"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Alle gjenstander"
   },
   "noPasswordsInList": {
     "message": "There are no passwords to list."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Fjern"
   },
   "default": {
-    "message": "Default"
+    "message": "Standard"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }

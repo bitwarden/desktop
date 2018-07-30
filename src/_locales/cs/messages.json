@@ -68,7 +68,7 @@
     "message": "Kopírovat poznámku"
   },
   "copyUri": {
-    "message": "Kopírovat URL"
+    "message": "Kopírovat URI"
   },
   "copyUsername": {
     "message": "Kopírovat uživatelské jméno"
@@ -104,7 +104,7 @@
     "message": "Nápověda k heslu"
   },
   "enterEmailToGetHint": {
-    "message": "Zadejte emailovou adresu pro zaslání nápovědy k hlavnímu heslu."
+    "message": "Zadejte e-mailovou adresu pro zaslání nápovědy k hlavnímu heslu."
   },
   "getMasterPasswordHint": {
     "message": "Získat nápovědu pro hlavní heslo"
@@ -122,7 +122,7 @@
     "message": "Změnit hlavní heslo"
   },
   "changeEmail": {
-    "message": "Změnit email"
+    "message": "Změnit e-mail"
   },
   "twoStepLogin": {
     "message": "Dvoufázové přihlášení"
@@ -252,7 +252,7 @@
     "message": "Zobrazit položku"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Spustit"
   },
   "website": {
     "message": "Webová stránka"
@@ -273,7 +273,7 @@
     "message": "Ohodnotit rozšíření"
   },
   "rateExtensionDesc": {
-    "message": "Pomozte nám získat napsáním dobré recenze!"
+    "message": "Pomozte nám napsáním dobré recenze!"
   },
   "browserNotSupportClipboard": {
     "message": "Váš webový prohlížeč nepodporuje automatické kopírování do schránky. Musíte ho zkopírovat ručně."
@@ -327,10 +327,10 @@
     "message": "Došlo k chybě"
   },
   "emailRequired": {
-    "message": "Emailová adresa je povinná."
+    "message": "E-mailová adresa je povinná."
   },
   "invalidEmail": {
-    "message": "Chybná emailová adresa."
+    "message": "Neplatná e-mailová adresa."
   },
   "masterPassRequired": {
     "message": "Hlavní heslo je povinné."
@@ -345,7 +345,7 @@
     "message": "Váš účet byl vytvořen! Můžete se přihlásit."
   },
   "masterPassSent": {
-    "message": "Poslali jsme vám email s nápovědou k hlavnímu heslu."
+    "message": "Poslali jsme vám e-mail s nápovědou k hlavnímu heslu."
   },
   "verificationCodeRequired": {
     "message": "Ověřovací kód je povinný."
@@ -394,7 +394,7 @@
     "message": "Hlavní heslo si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Dvoufázové přihlášení činí váš účet mnohem bezpečnější díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, emailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+    "message": "Dvoufázové přihlášení činí váš účet mnohem bezpečnějším díky nutnosti po každém úspěšném přihlášení zadat ověřovací kód získaný z aplikace, SMS, e-mailu nebo telefonního hovoru. Dvoufázové přihlášení lze aktivovat na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
   },
   "editedFolder": {
     "message": "Složka byla upravena"
@@ -418,10 +418,10 @@
     "message": "Synchronizace selhala"
   },
   "passwordCopied": {
-    "message": "Heslo bylo úspěšně zkopírováno"
+    "message": "Heslo bylo zkopírováno"
   },
   "uri": {
-    "message": "URL"
+    "message": "URI"
   },
   "uriPosition": {
     "message": "URI $POSITION$",
@@ -513,7 +513,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Tento export obsahuje nezašifrované data ve formátu .csv. Neměli byste je ukládat ani odesílat přes nezabezpečené kanály jakým je například email. Smažte jej okamžitě po jeho použití."
+    "message": "Soubor exportu obsahuje nezašifrovaná data ve formátu .csv. Neměli byste ho ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Smažte jej okamžitě po jeho použití."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
@@ -558,7 +558,7 @@
     "message": "Žádné přílohy."
   },
   "attachmentSaved": {
-    "message": "Příloha byla úspěšně uložena."
+    "message": "Příloha byla uložena"
   },
   "file": {
     "message": "Soubor"
@@ -669,7 +669,7 @@
     "message": "Pamatuj si mě"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Zaslat znovu ověřovací kód na email"
+    "message": "Zaslat znovu ověřovací kód na e-mail"
   },
   "useAnotherTwoStepMethod": {
     "message": "Použít jinou metodu dvoufázového přihlášení"
@@ -726,10 +726,10 @@
     "message": "FIDO U2F bezpečnostní klíč"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Ověřovací kódy vám budou zaslány emailem."
+    "message": "Ověřovací kódy vám budou zaslány e-mailem."
   },
   "selfHostedEnvironment": {
     "message": "Vlastnoručně hostované prostředí"
@@ -759,7 +759,7 @@
     "message": "URL serveru ikonek"
   },
   "environmentSaved": {
-    "message": "URL adresy vlastního prostředí byly uloženy."
+    "message": "URL adresy vlastního prostředí byly uloženy"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Povolit automatické vyplnění při načtení stránky"
@@ -801,7 +801,7 @@
     "message": "Ano\/Ne"
   },
   "popup2faCloseMessage": {
-    "message": "Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na email způsobí zavření vyskakovacího okna. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
+    "message": "Klepnutím mimo vyskakovací okno při zjišťování ověřovacího kódu zaslaného na e-mail bude vyskakovací okno zavřeno. Chcete otevřít toto vyskakovací okno v novém okně, aby se nezavřelo?"
   },
   "disableFavicon": {
     "message": "Zakázat ikonky webových stránek"
@@ -852,7 +852,7 @@
     "message": "Srpen"
   },
   "september": {
-    "message": "Záři"
+    "message": "Září"
   },
   "october": {
     "message": "Říjen"
@@ -906,10 +906,10 @@
     "message": "Číslo cestovního pasu"
   },
   "licenseNumber": {
-    "message": "Licenční číslo"
+    "message": "Číslo dokladu totožnosti"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
     "message": "Telefon"
@@ -996,7 +996,7 @@
     "message": "Zkontrolujte, zda nedošlo k úniku hesla."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "Došlo k úniku tohoto hesla v některém ze známých případů. Měli byste jej změnit.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1053,5 +1053,13 @@
   },
   "default": {
     "message": "Výchozí"
+  },
+  "dateUpdated": {
+    "message": "Updated",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
   }
 }
