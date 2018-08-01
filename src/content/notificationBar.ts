@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let collectIfNeededTimeout: number = null;
     let observeDomTimeout: number = null;
     const inIframe = isInIframe();
-    const submitButtonNames = new Set(['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next']);
+    const cancelButtonNames = new Set(['cancel', 'close', 'back']);
+    const logInButtonNames = new Set(['log in', 'sign in', 'login', 'go', 'submit', 'continue', 'next']);
+    const changePasswordButtonNames = new Set(['save password', 'update password', 'change password', 'change']);
+    const changePasswordButtonContainsNames = new Set(['pass', 'change', 'contras', 'senha']);
     let notificationBarData = null;
     const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
         navigator.userAgent.indexOf('Chrome') === -1;
@@ -212,9 +215,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         forms.forEach((f: any) => {
             const formId: string = f.form != null ? f.form.htmlID : null;
-            let formEl: HTMLElement = null;
+            let formEl: HTMLFormElement = null;
             if (formId != null && formId !== '') {
-                formEl = document.getElementById(formId);
+                formEl = document.getElementById(formId) as HTMLFormElement;
             }
 
             if (formEl == null) {
@@ -238,39 +241,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    function listen(form: HTMLElement) {
+    function listen(form: HTMLFormElement) {
         form.removeEventListener('submit', formSubmitted, false);
         form.addEventListener('submit', formSubmitted, false);
-        const submitButton = form.querySelector('input[type="submit"], input[type="image"], ' +
-            'button[type="submit"], button:not([type])');
+        const submitButton = getFormSubmitButton(form, logInButtonNames);
         if (submitButton != null) {
             submitButton.removeEventListener('click', formSubmitted, false);
             submitButton.addEventListener('click', formSubmitted, false);
-        } else {
-            const possibleSubmitButtons = Array.from(form.querySelectorAll('a, span, button[type="button"], ' +
-                'input[type="button"]')) as HTMLElement[];
-            possibleSubmitButtons.forEach((button) => {
-                if (button == null || button.tagName == null) {
-                    return;
-                }
-
-                let buttonText: string = null;
-                if (button.tagName.toLowerCase() === 'input') {
-                    buttonText = (button as HTMLInputElement).value;
-                } else {
-                    buttonText = button.innerText;
-                }
-
-                if (buttonText == null) {
-                    return;
-                }
-
-                buttonText = buttonText.trim().toLowerCase();
-                if (submitButtonNames.has(buttonText)) {
-                    button.removeEventListener('click', formSubmitted, false);
-                    button.addEventListener('click', formSubmitted, false);
-                }
-            });
         }
     }
 
@@ -279,7 +256,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         formDataObj.usernameEl = locateField(formDataObj.formEl, formDataObj.data.username, inputs);
         if (formDataObj.usernameEl != null && formDataObj.data.password != null) {
             formDataObj.passwordEl = locatePassword(formDataObj.formEl, formDataObj.data.password, inputs, true);
-        } else if (formDataObj.data.passwords != null && formDataObj.data.passwords.length === 3) {
+        } else if (formDataObj.data.passwords != null) {
             formDataObj.passwordEls = [];
             formDataObj.data.passwords.forEach((pData: any) => {
                 const el = locatePassword(formDataObj.formEl, pData, inputs, false);
@@ -287,7 +264,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     formDataObj.passwordEls.push(el);
                 }
             });
-            if (formDataObj.passwordEls.length !== 3) {
+            if (formDataObj.passwordEls.length === 0) {
                 formDataObj.passwordEls = null;
             }
         }
@@ -357,34 +334,84 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     break;
                 }
             }
-            if (!disabledChangedPasswordNotification && formData[i].passwordEls != null &&
-                formData[i].passwordEls.length === 3) {
+            if (!disabledChangedPasswordNotification && formData[i].passwordEls != null) {
                 const passwords = formData[i].passwordEls
                     .filter((el: HTMLInputElement) => el.value != null && el.value !== '')
                     .map((el: HTMLInputElement) => el.value);
-                if (passwords.length === 3) {
-                    const newPass: string = passwords[1];
-                    let curPass: string = null;
+
+                let curPass: string = null;
+                let newPass: string = null;
+                if (formData[i].passwordEls.length === 3 && passwords.length === 3) {
+                    newPass = passwords[1];
                     if (passwords[0] !== newPass && newPass === passwords[2]) {
                         curPass = passwords[0];
                     } else if (newPass !== passwords[2] && passwords[0] === newPass) {
                         curPass = passwords[2];
                     }
-                    if (newPass != null && curPass != null) {
-                        processedForm(form);
-                        sendPlatformMessage({
-                            command: 'bgChangedPassword',
-                            data: {
-                                newPassword: newPass,
-                                currentPassword: curPass,
-                                url: document.URL,
-                            },
-                        });
-                        break;
+                } else if (formData[i].passwordEls.length === 2 && passwords.length === 2) {
+                    const buttonText = getButtonText(getFormSubmitButton(form, changePasswordButtonNames));
+                    const matches = Array.from(changePasswordButtonContainsNames)
+                        .filter((n) => buttonText.indexOf(n) > -1);
+                    if (matches.length > 0) {
+                        curPass = passwords[0];
+                        newPass = passwords[1];
                     }
+                }
+
+                if (newPass != null && curPass != null) {
+                    processedForm(form);
+                    sendPlatformMessage({
+                        command: 'bgChangedPassword',
+                        data: {
+                            newPassword: newPass,
+                            currentPassword: curPass,
+                            url: document.URL,
+                        },
+                    });
+                    break;
                 }
             }
         }
+    }
+
+    function getFormSubmitButton(form: HTMLFormElement, buttonNames: Set<string>) {
+        let submitButton = form.querySelector('input[type="submit"], input[type="image"], ' +
+            'button[type="submit"], button:not([type])') as HTMLElement;
+        if (submitButton != null && submitButton.getAttribute('type') == null) {
+            const buttonText = getButtonText(submitButton);
+            if (buttonText != null && cancelButtonNames.has(buttonText.trim().toLowerCase())) {
+                submitButton = null;
+            }
+        }
+        if (submitButton == null) {
+            const possibleSubmitButtons = Array.from(form.querySelectorAll('a, span, button[type="button"], ' +
+                'input[type="button"], button:not([type])')) as HTMLElement[];
+            possibleSubmitButtons.forEach((button) => {
+                if (submitButton != null || button == null || button.tagName == null) {
+                    return;
+                }
+                const buttonText = getButtonText(button);
+                if (buttonText != null) {
+                    if (button.tagName.toLowerCase() === 'button' && submitButton.getAttribute('type') == null &&
+                        !cancelButtonNames.has(buttonText.trim().toLowerCase())) {
+                        submitButton = button;
+                    } else if (buttonNames.has(buttonText.trim().toLowerCase())) {
+                        submitButton = button;
+                    }
+                }
+            });
+        }
+        return submitButton;
+    }
+
+    function getButtonText(button: HTMLElement) {
+        let buttonText: string = null;
+        if (button.tagName.toLowerCase() === 'input') {
+            buttonText = (button as HTMLInputElement).value;
+        } else {
+            buttonText = button.innerText;
+        }
+        return buttonText;
     }
 
     function processedForm(form: HTMLFormElement) {
