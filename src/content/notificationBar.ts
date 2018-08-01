@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function listen(form: HTMLFormElement) {
         form.removeEventListener('submit', formSubmitted, false);
         form.addEventListener('submit', formSubmitted, false);
-        const submitButton = getFormSubmitButton(form, logInButtonNames);
+        const submitButton = getSubmitButton(form, logInButtonNames);
         if (submitButton != null) {
             submitButton.removeEventListener('click', formSubmitted, false);
             submitButton.addEventListener('click', formSubmitted, false);
@@ -305,6 +305,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let form: HTMLFormElement = null;
         if (e.type === 'click') {
             form = (e.target as HTMLElement).closest('form');
+            if (form == null) {
+                const parentModal = (e.target as HTMLElement).closest('div.modal');
+                if (parentModal != null) {
+                    const modalForms = parentModal.querySelectorAll('form');
+                    if (modalForms.length === 1) {
+                        form = modalForms[0];
+                    }
+                }
+            }
         } else {
             form = e.target as HTMLFormElement;
         }
@@ -349,7 +358,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         curPass = passwords[2];
                     }
                 } else if (formData[i].passwordEls.length === 2 && passwords.length === 2) {
-                    const buttonText = getButtonText(getFormSubmitButton(form, changePasswordButtonNames));
+                    const buttonText = getButtonText(getSubmitButton(form, changePasswordButtonNames));
                     const matches = Array.from(changePasswordButtonContainsNames)
                         .filter((n) => buttonText.indexOf(n) > -1);
                     if (matches.length > 0) {
@@ -374,8 +383,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    function getFormSubmitButton(form: HTMLFormElement, buttonNames: Set<string>) {
-        let submitButton = form.querySelector('input[type="submit"], input[type="image"], ' +
+    function getSubmitButton(wrappingEl: HTMLElement, buttonNames: Set<string>) {
+        if (wrappingEl == null) {
+            return null;
+        }
+        let submitButton = wrappingEl.querySelector('input[type="submit"], input[type="image"], ' +
             'button[type="submit"], button:not([type])') as HTMLElement;
         if (submitButton != null && submitButton.getAttribute('type') == null) {
             const buttonText = getButtonText(submitButton);
@@ -384,7 +396,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         }
         if (submitButton == null) {
-            const possibleSubmitButtons = Array.from(form.querySelectorAll('a, span, button[type="button"], ' +
+            const possibleSubmitButtons = Array.from(wrappingEl.querySelectorAll('a, span, button[type="button"], ' +
                 'input[type="button"], button:not([type])')) as HTMLElement[];
             possibleSubmitButtons.forEach((button) => {
                 if (submitButton != null || button == null || button.tagName == null) {
@@ -392,7 +404,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
                 const buttonText = getButtonText(button);
                 if (buttonText != null) {
-                    if (button.tagName.toLowerCase() === 'button' && submitButton.getAttribute('type') == null &&
+                    if (button.tagName.toLowerCase() === 'button' && button.getAttribute('type') == null &&
                         !cancelButtonNames.has(buttonText.trim().toLowerCase())) {
                         submitButton = button;
                     } else if (buttonNames.has(buttonText.trim().toLowerCase())) {
@@ -400,6 +412,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     }
                 }
             });
+        }
+        if (submitButton == null && wrappingEl.tagName.toLowerCase() === 'form') {
+            // Maybe it's in a modal?
+            const parentModal = wrappingEl.closest('div.modal') as HTMLElement;
+            if (parentModal != null) {
+                const modalForms = parentModal.querySelectorAll('form');
+                if (modalForms.length === 1) {
+                    submitButton = getSubmitButton(parentModal, buttonNames);
+                }
+            }
         }
         return submitButton;
     }
