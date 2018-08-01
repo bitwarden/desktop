@@ -22,7 +22,7 @@ export default class TabsBackground {
             }, true);
 
             this.tabs.addEventListener('navigate', async (ev: any) => {
-                await this.main.checkLoginsToAdd();
+                await this.main.checkNotificationQueue();
                 await this.main.refreshBadgeAndMenu();
             }, true);
 
@@ -38,7 +38,7 @@ export default class TabsBackground {
                 return;
             }
             this.main.onReplacedRan = true;
-            await this.main.checkLoginsToAdd();
+            await this.main.checkNotificationQueue();
             await this.main.refreshBadgeAndMenu();
         });
 
@@ -47,7 +47,7 @@ export default class TabsBackground {
                 return;
             }
             this.main.onUpdatedRan = true;
-            await this.main.checkLoginsToAdd();
+            await this.main.checkNotificationQueue();
             await this.main.refreshBadgeAndMenu();
         });
     }

@@ -119,24 +119,19 @@ export default class AutofillService implements AutofillServiceInterface {
                 continue;
             }
 
-            for (let i = 0; i < passwordFields.length; i++) {
-                const pf = passwordFields[i];
-                if (formKey !== pf.form) {
-                    continue;
-                }
-
-                let uf = this.findUsernameField(pageDetails, pf, false, false);
+            const formPasswordFields = passwordFields.filter((pf) => formKey === pf.form);
+            if (formPasswordFields.length > 0) {
+                let uf = this.findUsernameField(pageDetails, formPasswordFields[0], false, false);
                 if (uf == null) {
                     // not able to find any viewable username fields. maybe there are some "hidden" ones?
-                    uf = this.findUsernameField(pageDetails, pf, true, false);
+                    uf = this.findUsernameField(pageDetails, formPasswordFields[0], true, false);
                 }
-
                 formData.push({
                     form: pageDetails.forms[formKey],
-                    password: pf,
+                    password: formPasswordFields[0],
                     username: uf,
+                    passwords: formPasswordFields,
                 });
-                break;
             }
         }
 

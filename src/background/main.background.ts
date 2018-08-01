@@ -95,7 +95,7 @@ export default class MainBackground {
     onUpdatedRan: boolean;
     onReplacedRan: boolean;
     loginToAutoFill: any = null;
-    loginsToAdd: any[] = [];
+    notificationQueue: any[] = [];
 
     private commandsBackground: CommandsBackground;
     private contextMenusBackground: ContextMenusBackground;
@@ -195,9 +195,8 @@ export default class MainBackground {
             setTimeout(async () => {
                 await this.environmentService.setUrlsFromStorage();
                 await this.setIcon();
-                this.cleanupLoginsToAdd();
+                this.cleanupNotificationQueue();
                 await this.fullSync(true);
-
                 resolve();
             }, 500);
         });
@@ -284,19 +283,19 @@ export default class MainBackground {
         }, options);
     }
 
-    async checkLoginsToAdd(tab: any = null): Promise<any> {
-        if (!this.loginsToAdd.length) {
+    async checkNotificationQueue(tab: any = null): Promise<any> {
+        if (this.notificationQueue.length === 0) {
             return;
         }
 
         if (tab != null) {
-            this.doCheck(tab);
+            this.doNotificationQueueCheck(tab);
             return;
         }
 
         const currentTab = await BrowserApi.getTabFromCurrentWindow();
         if (currentTab != null) {
-            this.doCheck(currentTab);
+            this.doNotificationQueueCheck(currentTab);
         }
     }
 
@@ -499,17 +498,16 @@ export default class MainBackground {
         }
     }
 
-    private cleanupLoginsToAdd() {
-        for (let i = this.loginsToAdd.length - 1; i >= 0; i--) {
-            if (this.loginsToAdd[i].expires < new Date()) {
-                this.loginsToAdd.splice(i, 1);
+    private cleanupNotificationQueue() {
+        for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
+            if (this.notificationQueue[i].expires < new Date()) {
+                this.notificationQueue.splice(i, 1);
             }
         }
-
-        setTimeout(() => this.cleanupLoginsToAdd(), 2 * 60 * 1000); // check every 2 minutes
+        setTimeout(() => this.cleanupNotificationQueue(), 2 * 60 * 1000); // check every 2 minutes
     }
 
-    private doCheck(tab: any) {
+    private doNotificationQueueCheck(tab: any) {
         if (tab == null) {
             return;
         }
@@ -519,14 +517,19 @@ export default class MainBackground {
             return;
         }
 
-        for (let i = 0; i < this.loginsToAdd.length; i++) {
-            if (this.loginsToAdd[i].tabId !== tab.id || this.loginsToAdd[i].domain !== tabDomain) {
+        for (let i = 0; i < this.notificationQueue.length; i++) {
+            if (this.notificationQueue[i].tabId !== tab.id || this.notificationQueue[i].domain !== tabDomain) {
                 continue;
             }
-
-            BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
-                type: 'add',
-            });
+            if (this.notificationQueue[i].type === 'addLogin') {
+                BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
+                    type: 'add',
+                });
+            } else if (this.notificationQueue[i].type === 'changePassword') {
+                BrowserApi.tabSendMessageData(tab, 'openNotificationBar', {
+                    type: 'change',
+                });
+            }
             break;
         }
     }

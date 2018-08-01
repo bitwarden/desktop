@@ -222,6 +222,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     formEl: formEl,
                     usernameEl: null,
                     passwordEl: null,
+                    passwordEls: null,
                 };
                 locateFields(formDataObj);
                 formData.push(formDataObj);
@@ -240,8 +241,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             submitButton.removeEventListener('click', formSubmitted, false);
             submitButton.addEventListener('click', formSubmitted, false);
         } else {
-            const possibleSubmitButtons = form.querySelectorAll('a, span, button[type="button"], ' +
-                'input[type="button"]') as NodeListOf<HTMLElement>;
+            const possibleSubmitButtons = Array.from(form.querySelectorAll('a, span, button[type="button"], ' +
+                'input[type="button"]')) as HTMLElement[];
             possibleSubmitButtons.forEach((button) => {
                 if (button == null || button.tagName == null) {
                     return;
@@ -268,41 +269,53 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function locateFields(formDataObj: any) {
-        const passwordId: string = formDataObj.data.password != null ? formDataObj.data.password.htmlID : null;
-        const usernameId: string = formDataObj.data.username != null ? formDataObj.data.username.htmlID : null;
-        const passwordName: string = formDataObj.data.password != null ? formDataObj.data.password.htmlName : null;
-        const usernameName: string = formDataObj.data.username != null ? formDataObj.data.username.htmlName : null;
-        const inputs = document.getElementsByTagName('input');
-
-        if (passwordId != null && passwordId !== '') {
-            try {
-                formDataObj.passwordEl = formDataObj.formEl.querySelector('#' + passwordId);
-            } catch { }
-        }
-        if (formDataObj.passwordEl == null && passwordName !== '') {
-            formDataObj.passwordEl = formDataObj.formEl.querySelector('input[name="' + passwordName + '"]');
-        }
-        if (formDataObj.passwordEl == null && formDataObj.passwordEl != null) {
-            formDataObj.passwordEl = inputs[formDataObj.data.password.elementNumber];
-            if (formDataObj.passwordEl != null && formDataObj.passwordEl.type !== 'password') {
-                formDataObj.passwordEl = null;
+        const inputs = Array.from(document.getElementsByTagName('input'));
+        formDataObj.usernameEl = locateField(formDataObj.formEl, formDataObj.data.username, inputs);
+        if (formDataObj.usernameEl != null && formDataObj.data.password != null) {
+            formDataObj.passwordEl = locatePassword(formDataObj.formEl, formDataObj.data.password, inputs, true);
+        } else if (formDataObj.data.passwords != null && formDataObj.data.passwords.length === 3) {
+            formDataObj.passwordEls = [];
+            formDataObj.data.passwords.forEach((pData: any) => {
+                const el = locatePassword(formDataObj.formEl, pData, inputs, false);
+                if (el != null) {
+                    formDataObj.passwordEls.push(el);
+                }
+            });
+            if (formDataObj.passwordEls.length !== 3) {
+                formDataObj.passwordEls = null;
             }
         }
-        if (formDataObj.passwordEl == null) {
-            formDataObj.passwordEl = formDataObj.formEl.querySelector('input[type="password"]');
-        }
+    }
 
-        if (usernameId != null && usernameId !== '') {
+    function locatePassword(form: HTMLFormElement, passwordData: any, inputs: HTMLInputElement[],
+        doLastFallback: boolean) {
+        let el = locateField(form, passwordData, inputs);
+        if (el != null && el.type !== 'password') {
+            el = null;
+        }
+        if (doLastFallback && el == null) {
+            el = form.querySelector('input[type="password"]');
+        }
+        return el;
+    }
+
+    function locateField(form: HTMLFormElement, fieldData: any, inputs: HTMLInputElement[]) {
+        if (fieldData == null) {
+            return;
+        }
+        let el: HTMLInputElement = null;
+        if (fieldData.htmlID != null && fieldData.htmlID !== '') {
             try {
-                formDataObj.usernameEl = formDataObj.formEl.querySelector('#' + usernameId);
+                el = form.querySelector('#' + fieldData.htmlID);
             } catch { }
         }
-        if (formDataObj.usernameEl == null && usernameName !== '') {
-            formDataObj.usernameEl = formDataObj.formEl.querySelector('input[name="' + usernameName + '"]');
+        if (el == null && fieldData.htmlName != null && fieldData.htmlName !== '') {
+            el = form.querySelector('input[name="' + fieldData.htmlName + '"]');
         }
-        if (formDataObj.usernameEl == null && formDataObj.data.username != null) {
-            formDataObj.usernameEl = inputs[formDataObj.data.username.elementNumber];
+        if (el == null && fieldData.elementNumber != null) {
+            el = inputs[fieldData.elementNumber];
         }
+        return el;
     }
 
     function formSubmitted(e: Event) {
@@ -321,29 +334,57 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (formData[i].formEl !== form) {
                 continue;
             }
-            if (formData[i].usernameEl == null || formData[i].passwordEl == null) {
-                break;
+            if (formData[i].usernameEl != null && formData[i].passwordEl != null) {
+                const login = {
+                    username: formData[i].usernameEl.value,
+                    password: formData[i].passwordEl.value,
+                    url: document.URL,
+                };
+
+                if (login.username != null && login.username !== '' &&
+                    login.password != null && login.password !== '') {
+                    processedForm(form);
+                    sendPlatformMessage({
+                        command: 'bgAddLogin',
+                        login: login,
+                    });
+                    break;
+                }
             }
-
-            const login = {
-                username: formData[i].usernameEl.value,
-                password: formData[i].passwordEl.value,
-                url: document.URL,
-            };
-
-            if (login.username != null && login.username !== '' && login.password != null && login.password !== '') {
-                form.dataset.bitwardenProcessed = '1';
-                window.setTimeout(() => {
-                    form.dataset.bitwardenProcessed = '0';
-                }, 500);
-
-                sendPlatformMessage({
-                    command: 'bgAddLogin',
-                    login: login,
-                });
-                break;
+            if (formData[i].passwordEls != null && formData[i].passwordEls.length === 3) {
+                const passwords = formData[i].passwordEls
+                    .filter((el: HTMLInputElement) => el.value != null && el.value !== '')
+                    .map((el: HTMLInputElement) => el.value);
+                if (passwords.length === 3) {
+                    const newPass: string = passwords[1];
+                    let curPass: string = null;
+                    if (passwords[0] !== newPass && newPass === passwords[2]) {
+                        curPass = passwords[0];
+                    } else if (newPass !== passwords[2] && passwords[0] === newPass) {
+                        curPass = passwords[2];
+                    }
+                    if (newPass != null && curPass != null) {
+                        processedForm(form);
+                        sendPlatformMessage({
+                            command: 'bgChangedPassword',
+                            data: {
+                                newPassword: newPass,
+                                currentPassword: curPass,
+                                url: document.URL,
+                            },
+                        });
+                        break;
+                    }
+                }
             }
         }
+    }
+
+    function processedForm(form: HTMLFormElement) {
+        form.dataset.bitwardenProcessed = '1';
+        window.setTimeout(() => {
+            form.dataset.bitwardenProcessed = '0';
+        }, 500);
     }
 
     function closeExistingAndOpenBar(type: string, typeData: any) {
@@ -363,6 +404,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 break;
             case 'add':
                 barPage = barPage + '?add=1';
+                break;
+            case 'change':
+                barPage = barPage + '?change=1';
                 break;
             default:
                 break;
@@ -424,6 +468,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             case 'add':
                 sendPlatformMessage({
                     command: 'bgAddClose',
+                });
+                break;
+            case 'change':
+                sendPlatformMessage({
+                    command: 'bgChangeClose',
                 });
                 break;
             default:

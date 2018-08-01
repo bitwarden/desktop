@@ -485,6 +485,12 @@
   "notificationNeverSave": {
     "message": "Never for this website"
   },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Disable Context Menu Options"
   },

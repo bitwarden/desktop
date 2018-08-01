@@ -114,11 +114,18 @@ export default class RuntimeBackground {
             case 'bgAddLogin':
                 await this.addLogin(msg.login, sender.tab);
                 break;
+            case 'bgChangedPassword':
+                await this.changedPassword(msg.data, sender.tab);
+                break;
             case 'bgAddClose':
-                this.removeAddLogin(sender.tab);
+            case 'bgChangeClose':
+                this.removeTabFromNotificationQueue(sender.tab);
                 break;
             case 'bgAddSave':
                 await this.saveAddLogin(sender.tab);
+                break;
+            case 'bgChangeSave':
+                await this.saveChangePassword(sender.tab);
                 break;
             case 'bgNeverSave':
                 await this.saveNever(sender.tab);
@@ -181,27 +188,27 @@ export default class RuntimeBackground {
     }
 
     private async saveAddLogin(tab: any) {
-        for (let i = this.main.loginsToAdd.length - 1; i >= 0; i--) {
-            if (this.main.loginsToAdd[i].tabId !== tab.id) {
+        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
+            const queueMessage = this.main.notificationQueue[i];
+            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
                 continue;
             }
 
-            const loginInfo = this.main.loginsToAdd[i];
             const tabDomain = this.platformUtilsService.getDomain(tab.url);
-            if (tabDomain != null && tabDomain !== loginInfo.domain) {
+            if (tabDomain != null && tabDomain !== queueMessage.domain) {
                 continue;
             }
 
-            this.main.loginsToAdd.splice(i, 1);
+            this.main.notificationQueue.splice(i, 1);
 
             const loginModel = new LoginView();
             const loginUri = new LoginUriView();
-            loginUri.uri = loginInfo.uri;
+            loginUri.uri = queueMessage.uri;
             loginModel.uris = [loginUri];
-            loginModel.username = loginInfo.username;
-            loginModel.password = loginInfo.password;
+            loginModel.username = queueMessage.username;
+            loginModel.password = queueMessage.password;
             const model = new CipherView();
-            model.name = Utils.getHostname(loginInfo.uri) || loginInfo.domain;
+            model.name = Utils.getHostname(queueMessage.uri) || queueMessage.domain;
             model.type = CipherType.Login;
             model.login = loginModel;
 
@@ -216,19 +223,49 @@ export default class RuntimeBackground {
         }
     }
 
-    private async saveNever(tab: any) {
-        for (let i = this.main.loginsToAdd.length - 1; i >= 0; i--) {
-            if (this.main.loginsToAdd[i].tabId !== tab.id) {
+    private async saveChangePassword(tab: any) {
+        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
+            const queueMessage = this.main.notificationQueue[i];
+            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'changePassword') {
                 continue;
             }
 
-            const loginInfo = this.main.loginsToAdd[i];
             const tabDomain = this.platformUtilsService.getDomain(tab.url);
-            if (tabDomain != null && tabDomain !== loginInfo.domain) {
+            if (tabDomain != null && tabDomain !== queueMessage.domain) {
                 continue;
             }
 
-            this.main.loginsToAdd.splice(i, 1);
+            this.main.notificationQueue.splice(i, 1);
+
+            const cipher = await this.cipherService.get(queueMessage.cipherId);
+            if (cipher != null && cipher.type === CipherType.Login) {
+                const model = await cipher.decrypt();
+                model.login.password = queueMessage.newPassword;
+                const newCipher = await this.cipherService.encrypt(model);
+                await this.cipherService.saveWithServer(newCipher);
+                this.analytics.ga('send', {
+                    hitType: 'event',
+                    eventAction: 'Changed Password from Notification Bar',
+                });
+            }
+
+            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
+        }
+    }
+
+    private async saveNever(tab: any) {
+        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
+            const queueMessage = this.main.notificationQueue[i];
+            if (queueMessage.tabId !== tab.id || queueMessage.type !== 'addLogin') {
+                continue;
+            }
+
+            const tabDomain = this.platformUtilsService.getDomain(tab.url);
+            if (tabDomain != null && tabDomain !== queueMessage.domain) {
+                continue;
+            }
+
+            this.main.notificationQueue.splice(i, 1);
             const hostname = Utils.getHostname(tab.url);
             await this.cipherService.saveNeverDomain(hostname);
             BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
@@ -251,10 +288,10 @@ export default class RuntimeBackground {
         }
 
         if (!match) {
-            // remove any old logins for this tab
-            this.removeAddLogin(tab);
-
-            this.main.loginsToAdd.push({
+            // remove any old messages for this tab
+            this.removeTabFromNotificationQueue(tab);
+            this.main.notificationQueue.push({
+                type: 'addLogin',
                 username: loginInfo.username,
                 password: loginInfo.password,
                 domain: loginDomain,
@@ -262,15 +299,37 @@ export default class RuntimeBackground {
                 tabId: tab.id,
                 expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
             });
-
-            await this.main.checkLoginsToAdd(tab);
+            await this.main.checkNotificationQueue(tab);
         }
     }
 
-    private removeAddLogin(tab: any) {
-        for (let i = this.main.loginsToAdd.length - 1; i >= 0; i--) {
-            if (this.main.loginsToAdd[i].tabId === tab.id) {
-                this.main.loginsToAdd.splice(i, 1);
+    private async changedPassword(changeData: any, tab: any) {
+        const loginDomain = this.platformUtilsService.getDomain(changeData.url);
+        if (loginDomain == null) {
+            return;
+        }
+
+        const ciphers = await this.cipherService.getAllDecryptedForUrl(changeData.url);
+        const matches = ciphers.filter((c) => c.login.password === changeData.currentPassword);
+        if (matches.length === 1) {
+            // remove any old messages for this tab
+            this.removeTabFromNotificationQueue(tab);
+            this.main.notificationQueue.push({
+                type: 'changePassword',
+                cipherId: matches[0].id,
+                newPassword: changeData.newPassword,
+                domain: loginDomain,
+                tabId: tab.id,
+                expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
+            });
+            await this.main.checkNotificationQueue(tab);
+        }
+    }
+
+    private removeTabFromNotificationQueue(tab: any) {
+        for (let i = this.main.notificationQueue.length - 1; i >= 0; i--) {
+            if (this.main.notificationQueue[i].tabId === tab.id) {
+                this.main.notificationQueue.splice(i, 1);
             }
         }
     }
@@ -373,6 +432,8 @@ export default class RuntimeBackground {
                 notificationAddSave: this.i18nService.t('notificationAddSave'),
                 notificationNeverSave: this.i18nService.t('notificationNeverSave'),
                 notificationAddDesc: this.i18nService.t('notificationAddDesc'),
+                notificationChangeSave: this.i18nService.t('notificationChangeSave'),
+                notificationChangeDesc: this.i18nService.t('notificationChangeDesc'),
             };
         }
 

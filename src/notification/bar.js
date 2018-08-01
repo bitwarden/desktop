@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         i18n.notificationAddSave = chrome.i18n.getMessage('notificationAddSave');
         i18n.notificationNeverSave = chrome.i18n.getMessage('notificationNeverSave');
         i18n.notificationAddDesc = chrome.i18n.getMessage('notificationAddDesc');
+        i18n.notificationChangeSave = chrome.i18n.getMessage('notificationChangeSave');
+        i18n.notificationChangeDesc = chrome.i18n.getMessage('notificationChangeDesc');
 
         // delay 50ms so that we get proper body dimensions
         setTimeout(load, 50);
@@ -42,12 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (bodyRect.width < 768) {
             document.querySelector('#template-add .add-save').textContent = i18n.yes;
             document.querySelector('#template-add .never-save').textContent = i18n.never;
+            document.querySelector('#template-change .change-save').textContent = i18n.yes;
         } else {
             document.querySelector('#template-add .add-save').textContent = i18n.notificationAddSave;
             document.querySelector('#template-add .never-save').textContent = i18n.notificationNeverSave;
+            document.querySelector('#template-change .change-save').textContent = i18n.notificationChangeSave;
         }
 
         document.querySelector('#template-add .add-text').textContent = i18n.notificationAddDesc;
+        document.querySelector('#template-change .change-text').textContent = i18n.notificationChangeDesc;
 
         if (getQueryVariable('add')) {
             setContent(document.getElementById('template-add'));
@@ -66,6 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 sendPlatformMessage({
                     command: 'bgNeverSave'
+                });
+            });
+        } else if (getQueryVariable('change')) {
+            setContent(document.getElementById('template-change'));
+            var changeButton = document.querySelector('#template-change-clone .change-save');
+            changeButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                sendPlatformMessage({
+                    command: 'bgChangeSave'
                 });
             });
         } else if (getQueryVariable('info')) {
