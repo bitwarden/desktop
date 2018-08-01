@@ -45,12 +45,22 @@
     <div class="box">
         <div class="box-content">
             <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                <label for="notification-bar">{{'disableAddLoginNotification' | i18n}}</label>
-                <input id="notification-bar" type="checkbox" (change)="updateAddLoginNotification()"
+                <label for="addlogin-notification-bar">{{'disableAddLoginNotification' | i18n}}</label>
+                <input id="addlogin-notification-bar" type="checkbox" (change)="updateAddLoginNotification()"
                        [(ngModel)]="disableAddLoginNotification">
             </div>
         </div>
         <div class="box-footer">{{'addLoginNotificationDesc' | i18n}}</div>
+    </div>
+    <div class="box">
+        <div class="box-content">
+            <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                <label for="changedpass-notification-bar">{{'disableChangedPasswordNotification' | i18n}}</label>
+                <input id="changedpass-notification-bar" type="checkbox" (change)="updateChangedPasswordNotification()"
+                       [(ngModel)]="disableChangedPasswordNotification">
+            </div>
+        </div>
+        <div class="box-footer">{{'disableChangedPasswordNotificationDesc' | i18n}}</div>
     </div>
     <div class="box" *ngIf="showDisableContextMenu">
         <div class="box-content">

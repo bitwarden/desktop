@@ -24,6 +24,7 @@ export class OptionsComponent implements OnInit {
     disableAutoTotpCopy = false;
     disableContextMenuItem = false;
     disableAddLoginNotification = false;
+    disableChangedPasswordNotification = false;
     showDisableContextMenu = true;
     disableGa = false;
     theme: string;
@@ -53,6 +54,9 @@ export class OptionsComponent implements OnInit {
         this.disableAddLoginNotification = await this.storageService.get<boolean>(
             ConstantsService.disableAddLoginNotificationKey);
 
+        this.disableChangedPasswordNotification = await this.storageService.get<boolean>(
+            ConstantsService.disableChangedPasswordNotificationKey);
+
         this.disableContextMenuItem = await this.storageService.get<boolean>(
             ConstantsService.disableContextMenuItemKey);
 
@@ -77,6 +81,12 @@ export class OptionsComponent implements OnInit {
         await this.storageService.save(ConstantsService.disableAddLoginNotificationKey,
             this.disableAddLoginNotification);
         this.callAnalytics('Add Login Notification', !this.disableAddLoginNotification);
+    }
+
+    async updateChangedPasswordNotification() {
+        await this.storageService.save(ConstantsService.disableChangedPasswordNotificationKey,
+            this.disableChangedPasswordNotification);
+        this.callAnalytics('Changed Password Notification', !this.disableChangedPasswordNotification);
     }
 
     async updateDisableContextMenuItem() {

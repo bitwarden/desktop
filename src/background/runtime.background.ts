@@ -200,6 +200,7 @@ export default class RuntimeBackground {
             }
 
             this.main.notificationQueue.splice(i, 1);
+            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
             const loginModel = new LoginView();
             const loginUri = new LoginUriView();
@@ -218,8 +219,6 @@ export default class RuntimeBackground {
                 hitType: 'event',
                 eventAction: 'Added Login from Notification Bar',
             });
-
-            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
         }
     }
 
@@ -236,6 +235,7 @@ export default class RuntimeBackground {
             }
 
             this.main.notificationQueue.splice(i, 1);
+            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
 
             const cipher = await this.cipherService.get(queueMessage.cipherId);
             if (cipher != null && cipher.type === CipherType.Login) {
@@ -248,8 +248,6 @@ export default class RuntimeBackground {
                     eventAction: 'Changed Password from Notification Bar',
                 });
             }
-
-            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
         }
     }
 
@@ -266,9 +264,10 @@ export default class RuntimeBackground {
             }
 
             this.main.notificationQueue.splice(i, 1);
+            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
+
             const hostname = Utils.getHostname(tab.url);
             await this.cipherService.saveNeverDomain(hostname);
-            BrowserApi.tabSendMessageData(tab, 'closeNotificationBar');
         }
     }
 
@@ -418,8 +417,10 @@ export default class RuntimeBackground {
         const responseData: any = {};
         if (responseCommand === 'notificationBarDataResponse') {
             responseData.neverDomains = await this.storageService.get<any>(ConstantsService.neverDomainsKey);
-            responseData.disabledNotification = await this.storageService.get<boolean>(
+            responseData.disabledAddLoginNotification = await this.storageService.get<boolean>(
                 ConstantsService.disableAddLoginNotificationKey);
+            responseData.disabledChangedPasswordNotification = await this.storageService.get<boolean>(
+                ConstantsService.disableChangedPasswordNotificationKey);
         } else if (responseCommand === 'autofillerAutofillOnPageLoadEnabledResponse') {
             responseData.autofillEnabled = await this.storageService.get<boolean>(
                 ConstantsService.enableAutoFillOnPageLoadKey);

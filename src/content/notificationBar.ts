@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let notificationBarData = null;
     const isSafari = (typeof safari !== 'undefined') && navigator.userAgent.indexOf(' Safari/') !== -1 &&
         navigator.userAgent.indexOf('Chrome') === -1;
+    let disabledAddLoginNotification = false;
+    let disabledChangedPasswordNotification = false;
 
     if (isSafari) {
         if (inIframe) {
@@ -37,12 +39,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     return;
                 }
 
-                if (notificationBarData.disabledNotification === true) {
-                    return;
+                disabledAddLoginNotification = notificationBarData.disabledAddLoginNotification === true;
+                disabledChangedPasswordNotification = notificationBarData.disabledChangedPasswordNotification === true;
+                if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
+                    collectIfNeededWithTimeout();
                 }
-
-                collectIfNeededWithTimeout();
-                return;
             }
 
             processMessages(msg, () => { /* do nothing on send response for Safari */ });
@@ -55,10 +56,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 return;
             }
 
-            chrome.storage.local.get('disableAddLoginNotification', (disObj: any) => {
-                if (disObj == null || !disObj.disableAddLoginNotification) {
-                    collectIfNeededWithTimeout();
-                }
+            chrome.storage.local.get('disableAddLoginNotification', (disAddObj: any) => {
+                disabledAddLoginNotification = disAddObj != null && disAddObj.disableAddLoginNotification === true;
+                chrome.storage.local.get('disableChangedPasswordNotification', (disChangedObj: any) => {
+                    disabledChangedPasswordNotification = disChangedObj != null &&
+                        disChangedObj.disableChangedPasswordNotification === true;
+                    if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
+                        collectIfNeededWithTimeout();
+                    }
+                });
             });
         });
 
@@ -334,7 +340,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (formData[i].formEl !== form) {
                 continue;
             }
-            if (formData[i].usernameEl != null && formData[i].passwordEl != null) {
+            if (!disabledAddLoginNotification && formData[i].usernameEl != null && formData[i].passwordEl != null) {
                 const login = {
                     username: formData[i].usernameEl.value,
                     password: formData[i].passwordEl.value,
@@ -351,7 +357,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     break;
                 }
             }
-            if (formData[i].passwordEls != null && formData[i].passwordEls.length === 3) {
+            if (!disabledChangedPasswordNotification && formData[i].passwordEls != null &&
+                formData[i].passwordEls.length === 3) {
                 const passwords = formData[i].passwordEls
                     .filter((el: HTMLInputElement) => el.value != null && el.value !== '')
                     .map((el: HTMLInputElement) => el.value);
