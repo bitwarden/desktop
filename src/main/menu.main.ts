@@ -25,6 +25,7 @@ export class MenuMain extends BaseMenu {
     addNewItem: MenuItem;
     addNewFolder: MenuItem;
     syncVault: MenuItem;
+    exportVault: MenuItem;
     settings: MenuItem;
     lockNow: MenuItem;
     logOut: MenuItem;
@@ -51,6 +52,7 @@ export class MenuMain extends BaseMenu {
         this.addNewItem = this.menu.getMenuItemById('addNewItem');
         this.addNewFolder = this.menu.getMenuItemById('addNewFolder');
         this.syncVault = this.menu.getMenuItemById('syncVault');
+        this.exportVault = this.menu.getMenuItemById('exportVault');
         this.settings = this.menu.getMenuItemById('settings');
         this.lockNow = this.menu.getMenuItemById('lockNow');
         this.logOut = this.menu.getMenuItemById('logOut');
@@ -64,7 +66,7 @@ export class MenuMain extends BaseMenu {
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
-            this.syncVault, this.settings, this.lockNow, this.twoStepLogin, this.changeEmail,
+            this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.changeEmail,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
             this.searchVault];
         this.updateApplicationMenuState(false, true);
@@ -209,6 +211,11 @@ export class MenuMain extends BaseMenu {
                         label: this.main.i18nService.t('syncVault'),
                         id: 'syncVault',
                         click: () => this.main.messagingService.send('syncVault'),
+                    },
+                    {
+                        label: this.main.i18nService.t('exportVault'),
+                        id: 'exportVault',
+                        click: () => this.main.messagingService.send('exportVault'),
                     },
                 ],
             },

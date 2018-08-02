@@ -43,6 +43,7 @@ import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
+import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
@@ -75,6 +76,7 @@ import { ViewComponent } from './vault/view.component';
         BoxRowDirective,
         CiphersComponent,
         EnvironmentComponent,
+        ExportComponent,
         FallbackSrcDirective,
         FolderAddEditComponent,
         GroupingsComponent,
@@ -102,6 +104,7 @@ import { ViewComponent } from './vault/view.component';
     entryComponents: [
         AttachmentsComponent,
         EnvironmentComponent,
+        ExportComponent,
         FolderAddEditComponent,
         ModalComponent,
         PasswordGeneratorComponent,

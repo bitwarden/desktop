@@ -26,6 +26,7 @@ import { ModalComponent } from 'jslib/angular/components/modal.component';
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
+import { ExportComponent } from './export.component';
 import { FolderAddEditComponent } from './folder-add-edit.component';
 import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
@@ -56,6 +57,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild('attachments', { read: ViewContainerRef }) attachmentsModalRef: ViewContainerRef;
     @ViewChild('folderAddEdit', { read: ViewContainerRef }) folderAddEditModalRef: ViewContainerRef;
     @ViewChild('passwordHistory', { read: ViewContainerRef }) passwordHistoryModalRef: ViewContainerRef;
+    @ViewChild('exportVault', { read: ViewContainerRef }) exportVaultModalRef: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -101,6 +103,9 @@ export class VaultComponent implements OnInit, OnDestroy {
                         break;
                     case 'openPasswordGenerator':
                         await this.openPasswordGenerator(false);
+                        break;
+                    case 'exportVault':
+                        await this.openExportVault();
                         break;
                     case 'syncVault':
                         try {
@@ -427,6 +432,24 @@ export class VaultComponent implements OnInit, OnDestroy {
                 this.addEditComponent.cipher.login != null) {
                 this.addEditComponent.cipher.login.password = password;
             }
+        });
+
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
+        });
+    }
+
+    async openExportVault() {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.exportVaultModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<ExportComponent>(ExportComponent, this.exportVaultModalRef);
+
+        childComponent.onSaved.subscribe(() => {
+            this.modal.close();
         });
 
         this.modal.onClosed.subscribe(() => {
