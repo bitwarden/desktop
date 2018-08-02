@@ -1,5 +1,6 @@
 import {
     APP_INITIALIZER,
+    LOCALE_ID,
     NgModule,
 } from '@angular/core';
 
@@ -144,6 +145,11 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
             useFactory: initFactory,
             deps: [I18nService, StorageService, PopupUtilsService],
             multi: true,
+        },
+        {
+            provide: LOCALE_ID,
+            useFactory: () => getBgService<I18nService>('i18nService')().translationLocale,
+            deps: [],
         },
     ],
 })
