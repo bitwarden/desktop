@@ -2,6 +2,7 @@ import { remote } from 'electron';
 
 import {
     APP_INITIALIZER,
+    LOCALE_ID,
     NgModule,
 } from '@angular/core';
 
@@ -185,6 +186,11 @@ export function initFactory(): Function {
             useFactory: initFactory,
             deps: [],
             multi: true,
+        },
+        {
+            provide: LOCALE_ID,
+            useFactory: () => i18nService.translationLocale,
+            deps: [],
         },
     ],
 })
