@@ -98,7 +98,7 @@
     "message": "Mostra\/Nascondi"
   },
   "cardholderName": {
-    "message": "Titolare della carta"
+    "message": "Titolare della Carta"
   },
   "number": {
     "message": "Numero"
@@ -204,10 +204,10 @@
     "message": "Dottore"
   },
   "expirationMonth": {
-    "message": "Mese di scadenza"
+    "message": "Mese di Scadenza"
   },
   "expirationYear": {
-    "message": "Anno di scadenza"
+    "message": "Anno di Scadenza"
   },
   "select": {
     "message": "Seleziona"
@@ -216,7 +216,7 @@
     "message": "Altro"
   },
   "generatePassword": {
-    "message": "Genera password"
+    "message": "Genera Password"
   },
   "type": {
     "message": "Tipo"
@@ -303,10 +303,10 @@
     "message": "Elimina Elemento"
   },
   "deleteFolder": {
-    "message": "Elimina cartella"
+    "message": "Elimina Cartella"
   },
   "deleteAttachment": {
-    "message": "Elimina allegato"
+    "message": "Elimina Allegato"
   },
   "deleteItemConfirmation": {
     "message": "Sei sicuro di voler eliminare questo elemento?"
@@ -328,10 +328,10 @@
     "message": "Modifica Cartella"
   },
   "regeneratePassword": {
-    "message": "Rigenera password"
+    "message": "Rigenera Password"
   },
   "copyPassword": {
-    "message": "Copia password"
+    "message": "Copia Password"
   },
   "copyUri": {
     "message": "Copia URI"
@@ -417,7 +417,7 @@
     "message": "Invia"
   },
   "masterPass": {
-    "message": "Password principale"
+    "message": "Password Principale"
   },
   "masterPassDesc": {
     "message": "La password principale è quella che usi per accedere alla cassaforte. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
@@ -435,7 +435,7 @@
     "message": "Impostazioni"
   },
   "passwordHint": {
-    "message": "Suggerimento password"
+    "message": "Suggerimento Password"
   },
   "enterEmailToGetHint": {
     "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della password principale."
@@ -609,7 +609,7 @@
     "message": "No"
   },
   "overwritePassword": {
-    "message": "Sovrascrivi password"
+    "message": "Sovrascrivi Password"
   },
   "learnMore": {
     "message": "Per saperne di più"
@@ -630,13 +630,13 @@
     "message": "Disconnetti"
   },
   "addNewLogin": {
-    "message": "Aggiungi nuovo login"
+    "message": "Aggiungi Nuovo Login"
   },
   "addNewItem": {
-    "message": "Aggiungi nuovo elemento"
+    "message": "Aggiungi Nuovo Elemento"
   },
   "addNewFolder": {
-    "message": "Aggiungi nuova cartella"
+    "message": "Aggiungi Nuova Cartella"
   },
   "view": {
     "message": "Visualizza"
@@ -651,7 +651,7 @@
     "message": "Blocca Ora"
   },
   "passwordGenerator": {
-    "message": "Generatore di password"
+    "message": "Generatore di Password"
   },
   "emailUs": {
     "message": "Mandaci un'email"
@@ -759,7 +759,7 @@
     "message": "Sicurezza"
   },
   "disableGa": {
-    "message": "Disabilita analytics"
+    "message": "Disabilita Analytics"
   },
   "gaDesc": {
     "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi."
@@ -807,7 +807,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Controlla aggiornamenti"
+    "message": "Controlla Aggiornamenti"
   },
   "version": {
     "message": "Versione $VERSION_NUM$",
@@ -852,10 +852,10 @@
     "message": "Sconosciuto"
   },
   "copyUsername": {
-    "message": "Copia nome utente"
+    "message": "Copia Nome Utente"
   },
   "copyNumber": {
-    "message": "Copia numero",
+    "message": "Copia Numero",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
@@ -920,7 +920,7 @@
     "message": "Aggiornamento completato"
   },
   "passwordHistory": {
-    "message": "Cronologia delle password"
+    "message": "Cronologia delle Password"
   },
   "clear": {
     "message": "Elimina tutto"
@@ -1069,11 +1069,24 @@
     "message": "Nascondi nell'area di notifica"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Aggiornato",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Password Aggiornata",
     "description": "ex. Date this password was updated"
+  },
+  "exportVault": {
+    "message": "Export Vault"
+  },
+  "warning": {
+    "message": "WARNING",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Enter your master password to export your vault data."
   }
 }
