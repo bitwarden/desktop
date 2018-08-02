@@ -471,7 +471,7 @@
     "message": "項目資訊"
   },
   "noItemsInList": {
-    "message": "沒有項目可顯示。"
+    "message": "沒有可顯示的項目。"
   },
   "verificationCode": {
     "message": "驗證碼"
@@ -926,7 +926,7 @@
     "message": "清除"
   },
   "noPasswordsInList": {
-    "message": "沒有密碼可顯示。"
+    "message": "沒有可顯示的密碼。"
   },
   "undo": {
     "message": "復原"
@@ -1069,11 +1069,24 @@
     "message": "隱藏到系統匣"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "已更新",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "密碼已更新",
     "description": "ex. Date this password was updated"
+  },
+  "exportVault": {
+    "message": "Export Vault"
+  },
+  "warning": {
+    "message": "WARNING",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Enter your master password to export your vault data."
   }
 }
