@@ -1069,11 +1069,24 @@
     "message": "トレイに隠す"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "更新日",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "パスワード更新日",
     "description": "ex. Date this password was updated"
+  },
+  "exportVault": {
+    "message": "Export Vault"
+  },
+  "warning": {
+    "message": "WARNING",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarning": {
+    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Enter your master password to export your vault data."
   }
 }
