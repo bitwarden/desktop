@@ -35,6 +35,16 @@ $fa-font-path: "~font-awesome/fonts";
             display: none;
         }
 
+        .toast-message {
+            p {
+                margin-bottom: 0.5rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
         &.toast-danger, &.toast-error {
             background-image: none !important;
 
