@@ -805,11 +805,14 @@ export default class AutofillService implements AutofillServiceInterface {
     private loadPasswordFields(pageDetails: AutofillPageDetails, canBeHidden: boolean) {
         const arr: AutofillField[] = [];
         pageDetails.fields.forEach((f) => {
-            if (!f.disabled && !f.readonly && f.type === 'password' && (canBeHidden || f.viewable)) {
+            const isPassword = f.type === 'password';
+            const isLikePassword = f.type === 'text' && ((f.htmlID != null && f.htmlID.toLowerCase() === 'password') ||
+                (f.htmlName != null && f.htmlName.toLowerCase() === 'password') ||
+                (f.placeholder != null && f.placeholder.toLowerCase() === 'password'));
+            if (!f.disabled && !f.readonly && (isPassword || isLikePassword) && (canBeHidden || f.viewable)) {
                 arr.push(f);
             }
         });
-
         return arr;
     }
 
