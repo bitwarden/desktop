@@ -278,15 +278,8 @@ export default class RuntimeBackground {
         }
 
         const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
-        let match = false;
-        for (let i = 0; i < ciphers.length; i++) {
-            if (ciphers[i].login.username === loginInfo.username) {
-                match = true;
-                break;
-            }
-        }
-
-        if (!match) {
+        const usernameMatches = ciphers.filter((c) => c.login.username === loginInfo.username);
+        if (usernameMatches.length === 0) {
             // remove any old messages for this tab
             this.removeTabFromNotificationQueue(tab);
             this.main.notificationQueue.push({
@@ -299,6 +292,8 @@ export default class RuntimeBackground {
                 expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
             });
             await this.main.checkNotificationQueue(tab);
+        } else if (usernameMatches.length === 1 && usernameMatches[0].login.password !== loginInfo.password) {
+            this.addChangedPasswordToQueue(usernameMatches[0].id, loginDomain, loginInfo.password, tab);
         }
     }
 
@@ -309,20 +304,24 @@ export default class RuntimeBackground {
         }
 
         const ciphers = await this.cipherService.getAllDecryptedForUrl(changeData.url);
-        const matches = ciphers.filter((c) => c.login.password === changeData.currentPassword);
-        if (matches.length === 1) {
-            // remove any old messages for this tab
-            this.removeTabFromNotificationQueue(tab);
-            this.main.notificationQueue.push({
-                type: 'changePassword',
-                cipherId: matches[0].id,
-                newPassword: changeData.newPassword,
-                domain: loginDomain,
-                tabId: tab.id,
-                expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
-            });
-            await this.main.checkNotificationQueue(tab);
+        const passwordMatches = ciphers.filter((c) => c.login.password === changeData.currentPassword);
+        if (passwordMatches.length === 1) {
+            this.addChangedPasswordToQueue(passwordMatches[0].id, loginDomain, changeData.newPassword, tab);
         }
+    }
+
+    private async addChangedPasswordToQueue(cipherId: string, loginDomain: string, newPassword: string, tab: any) {
+        // remove any old messages for this tab
+        this.removeTabFromNotificationQueue(tab);
+        this.main.notificationQueue.push({
+            type: 'changePassword',
+            cipherId: cipherId,
+            newPassword: newPassword,
+            domain: loginDomain,
+            tabId: tab.id,
+            expires: new Date((new Date()).getTime() + 30 * 60000), // 30 minutes
+        });
+        await this.main.checkNotificationQueue(tab);
     }
 
     private removeTabFromNotificationQueue(tab: any) {
