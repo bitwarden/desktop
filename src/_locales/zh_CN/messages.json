@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "忽略此网站"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "关闭上下文菜单选项"
   },
@@ -1055,11 +1067,11 @@
     "message": "默认"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "更新于",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "密码更新于",
     "description": "ex. Date this password was updated"
   }
 }

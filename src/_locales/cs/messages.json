@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Nikdy pro tuto stránku"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Zakázat kontextové menu"
   },
@@ -996,7 +1008,7 @@
     "message": "Zkontrolujte, zda nedošlo k úniku hesla."
   },
   "passwordExposed": {
-    "message": "Došlo k úniku tohoto hesla v některém ze známých případů. Měli byste jej změnit.",
+    "message": "K úniku tohoto hesla došlo celkem $VALUE$x. Měli byste jej změnit.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1005,7 +1017,7 @@
     }
   },
   "passwordSafe": {
-    "message": "K úniku tohoto hesla nedošlo v žádném ze známých případů. Mělo by být bezpečné používat jej i nadále."
+    "message": " V žádném ze známých případů nedošlo k úniku tohoto hesla. Mělo by být bezpečné používat jej i nadále."
   },
   "baseDomain": {
     "message": "Základní doména"
@@ -1055,11 +1067,11 @@
     "message": "Výchozí"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Změněno",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Heslo bylo změněno",
     "description": "ex. Date this password was updated"
   }
 }

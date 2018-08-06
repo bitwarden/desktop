@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Nunca para este site"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Desativar Opções do Menu de Contexto"
   },
@@ -513,10 +525,10 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Esta exportação contém os seus dados não encriptados em formato .csv. Você não deve armazená-los ou enviá-los através de canais inseguros (como e-mail). Elimine-os imediatamente após terminar de usá-los."
+    "message": "Essa exportação contém seus dados não criptografados no formato .csv. Você não deve armazená-lo ou enviá-lo por canais inseguros (como e-mail). Exclua imediatamente após terminar de usá-lo."
   },
   "exportMasterPassword": {
-    "message": "Digite a sua senha mestra para exportar os dados do seu cofre."
+    "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
   },
   "shared": {
     "message": "Compartilhado"
@@ -1055,11 +1067,11 @@
     "message": "Padrão"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Atualizado",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Senha Atualizada",
     "description": "ex. Date this password was updated"
   }
 }

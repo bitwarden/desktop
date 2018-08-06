@@ -437,7 +437,7 @@
     "message": "Новий URI"
   },
   "addedItem": {
-    "message": "Доданий запис"
+    "message": "Запис додано"
   },
   "editedItem": {
     "message": "Запис змінено"
@@ -484,6 +484,18 @@
   },
   "notificationNeverSave": {
     "message": "Ніколи для цього сайту"
+  },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
   },
   "disableContextMenuItem": {
     "message": "Вимкнути в контекстному меню"
@@ -942,10 +954,10 @@
     "message": "Тип"
   },
   "typeLogin": {
-    "message": "Запис"
+    "message": "Вхід"
   },
   "typeLogins": {
-    "message": "Записи"
+    "message": "Записи входу"
   },
   "typeSecureNote": {
     "message": "Захищена нотатка"
@@ -981,7 +993,7 @@
     "message": "Особисті дані"
   },
   "logins": {
-    "message": "Записи"
+    "message": "Записи входу"
   },
   "secureNotes": {
     "message": "Захищені нотатки"
@@ -1055,11 +1067,11 @@
     "message": "Типово"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Оновлено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Пароль оновлено",
     "description": "ex. Date this password was updated"
   }
 }

@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "برای اين سایت هرگز"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "غیر فعال کردن گزینه های منوی متن"
   },
@@ -1055,11 +1067,11 @@
     "message": "پیش فرض"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "بروزرسانی شد",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "گذرواژه بروز رسانی شد",
     "description": "ex. Date this password was updated"
   }
 }

@@ -50,7 +50,7 @@
     "message": "Onglet"
   },
   "myVault": {
-    "message": "Mon Coffre"
+    "message": "Mon coffre"
   },
   "tools": {
     "message": "Outils"
@@ -258,7 +258,7 @@
     "message": "Site web"
   },
   "toggleVisibility": {
-    "message": "Changer la visibilité"
+    "message": "Afficher\/Masquer"
   },
   "manage": {
     "message": "Gérer"
@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Jamais pour ce site web"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Désactiver les options de menu contextuelles"
   },
@@ -573,7 +585,7 @@
     "message": "Fonctionnalité non disponible"
   },
   "updateKey": {
-    "message": "Vous ne pouvez pas utiliser cette fonctionnalité tant que vous ne mettez à jour votre clé de chiffrement."
+    "message": "Vous ne pouvez pas utiliser cette fonctionnalité avant de mettre à jour votre clé de chiffrement."
   },
   "premiumMembership": {
     "message": "Adhésion Premium"
@@ -1055,11 +1067,11 @@
     "message": "Par défaut"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Mis à jour",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Mot de passe mis à jour",
     "description": "ex. Date this password was updated"
   }
 }

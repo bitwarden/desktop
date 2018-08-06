@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Aldrig for denne hjemmeside"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Deaktiver Kontekst-menu valgmuligheder"
   },
@@ -1055,11 +1067,11 @@
     "message": "Standard"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Opdateret",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Adgangskode opdateret",
     "description": "ex. Date this password was updated"
   }
 }

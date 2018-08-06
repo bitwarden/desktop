@@ -65,7 +65,7 @@
     "message": "Kopírovať heslo"
   },
   "copyNote": {
-    "message": "Copy Note"
+    "message": "Kopírovať poznámku"
   },
   "copyUri": {
     "message": "Kopírovať URI"
@@ -173,7 +173,7 @@
     "message": "Generátor hesla"
   },
   "generator": {
-    "message": "Generator",
+    "message": "Generátor",
     "description": "Short for 'Password Generator'."
   },
   "passGenInfo": {
@@ -237,7 +237,7 @@
     "message": "Poznámky"
   },
   "note": {
-    "message": "Note"
+    "message": "Poznámka"
   },
   "editItem": {
     "message": "Upraviť položku"
@@ -252,13 +252,13 @@
     "message": "Zobraziť položku"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Spustiť"
   },
   "website": {
     "message": "Webstránka"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Prepnúť viditeľnosť"
   },
   "manage": {
     "message": "Spravovať"
@@ -324,7 +324,7 @@
     "message": "Zabezpečenie"
   },
   "errorOccurred": {
-    "message": "An error has occurred"
+    "message": "Vyskytla sa chyba"
   },
   "emailRequired": {
     "message": "Emailová adresa je povinná."
@@ -434,7 +434,7 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nové URI"
   },
   "addedItem": {
     "message": "Pridaná položka"
@@ -461,7 +461,7 @@
     "message": "Vyhľadať zbierku"
   },
   "searchType": {
-    "message": "Search type"
+    "message": "Typ vyhľadávania"
   },
   "noneFolder": {
     "message": "Žiadny priečinok",
@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Nikdy pre túto stránku"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Vypnúť možnosti kontextového menu"
   },
@@ -492,17 +504,17 @@
     "message": "Možnosti kontextového menu ponúkajú rýchly prístup k prihlasovacím údajom a generovaniu hesiel pre stránku vo vašej aktuálnej karte."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Motív"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Zmeniť motív aplikácie."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tmavý",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Svetlý",
     "description": "Light color"
   },
   "exportVault": {
@@ -525,7 +537,7 @@
     "message": "Zdieľať trezor"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden vám umožňuje zdieľať váš trezor s ostatnými ak používate konto v Organizácii. Chcete navštíviť stránku bitwarden.com a dozvedieť sa viac?"
   },
   "learnMore": {
     "message": "Zistiť viac"
@@ -657,7 +669,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Overovací e-mail odoslaný na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -716,7 +728,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Overiť s Duo Security vašej organizácie použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -981,19 +993,19 @@
     "message": "Identity"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Prihlasovacie údaje"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Zabezpečené poznámky"
   },
   "clear": {
     "message": "Vyčistiť"
   },
   "twoStepNewWindowMessage": {
-    "message": "Complete your two-step login request using the new tab."
+    "message": "Dokončite dvojsrupňové prihlásenie v novej záložke."
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Overiť či došlo k úniku hesla."
   },
   "passwordExposed": {
     "message": "This password has been exposed in data breaches. You should change it.",
@@ -1005,61 +1017,61 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Heslo nebolo nájdene v žiadnom úniku dát. Malo by byť bezpečné."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Základná doména"
   },
   "host": {
-    "message": "Host",
+    "message": "Hostiteľ",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Presný"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Začína na"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Regulárny výraz",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Spôsob mapovania",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Predvolené mapovanie",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Voľby prepínača"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organizácia",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "types": {
-    "message": "Types"
+    "message": "Typy"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Všetky položky"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Neboli nájdené žiadne heslá."
   },
   "remove": {
-    "message": "Remove"
+    "message": "Odstrániť"
   },
   "default": {
-    "message": "Default"
+    "message": "Predvolené"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Aktualizované",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Heslo bolo aktualizované",
     "description": "ex. Date this password was updated"
   }
 }

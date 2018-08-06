@@ -219,7 +219,7 @@
     "message": "檢視"
   },
   "noItemsInList": {
-    "message": "沒有項目可顯示。"
+    "message": "沒有可顯示的項目。"
   },
   "itemInformation": {
     "message": "項目資訊"
@@ -484,6 +484,18 @@
   },
   "notificationNeverSave": {
     "message": "此網站不再提示"
+  },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
   },
   "disableContextMenuItem": {
     "message": "隱藏右鍵選單選項"
@@ -1046,7 +1058,7 @@
     "message": "所有項目"
   },
   "noPasswordsInList": {
-    "message": "沒有密碼可顯示。"
+    "message": "沒有可顯示的密碼。"
   },
   "remove": {
     "message": "移除"
@@ -1055,11 +1067,11 @@
     "message": "預設"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "已更新",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "密碼已更新",
     "description": "ex. Date this password was updated"
   }
 }

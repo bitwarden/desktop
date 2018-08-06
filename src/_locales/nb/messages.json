@@ -258,7 +258,7 @@
     "message": "Nettsted"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Juster synlighet"
   },
   "manage": {
     "message": "Behandle"
@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Aldri for dette nettstedet"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Deaktiver sammenhengsmeny-innstillinger"
   },
@@ -495,7 +507,7 @@
     "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Endre appens fargetema."
   },
   "dark": {
     "message": "Mørkt",
@@ -525,7 +537,7 @@
     "message": "Del hvelvet ditt"
   },
   "shareVaultConfirmation": {
-    "message": "Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?"
+    "message": "Bitwarden lar deg dele hvelvet ditt med andre ved å bruke en organisasjonskonto. Vil du besøke bitwarden.com-nettstedet for å lære mer?"
   },
   "learnMore": {
     "message": "Lær mer"
@@ -657,7 +669,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "En verifiserings-E-post har blitt sendt til $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -716,7 +728,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifiser med Duo Security for din organisasjon gjennom Duo Mobile-appen, SMS, telefonsamtale, eller en U2F-sikkerhetsnøkkel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -981,10 +993,10 @@
     "message": "Identiteter"
   },
   "logins": {
-    "message": "Logins"
+    "message": "Innlogginger"
   },
   "secureNotes": {
-    "message": "Secure Notes"
+    "message": "Sikre notiser"
   },
   "clear": {
     "message": "Tøm"
@@ -1046,7 +1058,7 @@
     "message": "Alle gjenstander"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Det er ingen passord å liste opp."
   },
   "remove": {
     "message": "Fjern"
@@ -1055,11 +1067,11 @@
     "message": "Standard"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Oppdatert den",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Passordet ble oppdatert den",
     "description": "ex. Date this password was updated"
   }
 }

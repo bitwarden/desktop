@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Игнорировать этот сайт"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Отключить опции контекстного меню"
   },
@@ -506,7 +518,7 @@
     "description": "Light color"
   },
   "exportVault": {
-    "message": "Экспортировать хранилище"
+    "message": "Экспорт хранилища"
   },
   "warning": {
     "message": "ВНИМАНИЕ",
@@ -1055,11 +1067,11 @@
     "message": "По умолчанию"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Обновлено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Пароль обновлен",
     "description": "ex. Date this password was updated"
   }
 }

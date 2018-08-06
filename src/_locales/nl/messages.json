@@ -485,6 +485,18 @@
   "notificationNeverSave": {
     "message": "Nooit voor deze website"
   },
+  "disableChangedPasswordNotification": {
+    "message": "Disable Changed Password Notification"
+  },
+  "disableChangedPasswordNotificationDesc": {
+    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+  },
+  "notificationChangeDesc": {
+    "message": "Do you want to update this password in Bitwarden?"
+  },
+  "notificationChangeSave": {
+    "message": "Yes, Update Now"
+  },
   "disableContextMenuItem": {
     "message": "Context Menu-opties uitschakelen"
   },
@@ -1055,11 +1067,11 @@
     "message": "Standaard"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Bijgewerkt",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Wachtwoord bijgewerkt",
     "description": "ex. Date this password was updated"
   }
 }
