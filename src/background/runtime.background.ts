@@ -280,6 +280,11 @@ export default class RuntimeBackground {
         const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
         const usernameMatches = ciphers.filter((c) => c.login.username === loginInfo.username);
         if (usernameMatches.length === 0) {
+            const disabledAddLogin = await this.storageService.get<boolean>(
+                ConstantsService.disableAddLoginNotificationKey);
+            if (disabledAddLogin) {
+                return;
+            }
             // remove any old messages for this tab
             this.removeTabFromNotificationQueue(tab);
             this.main.notificationQueue.push({
@@ -293,6 +298,11 @@ export default class RuntimeBackground {
             });
             await this.main.checkNotificationQueue(tab);
         } else if (usernameMatches.length === 1 && usernameMatches[0].login.password !== loginInfo.password) {
+            const disabledChangePassword = await this.storageService.get<boolean>(
+                ConstantsService.disableChangedPasswordNotificationKey);
+            if (disabledChangePassword) {
+                return;
+            }
             this.addChangedPasswordToQueue(usernameMatches[0].id, loginDomain, loginInfo.password, tab);
         }
     }

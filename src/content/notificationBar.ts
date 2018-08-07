@@ -326,7 +326,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (formData[i].formEl !== form) {
                 continue;
             }
-            if (!disabledAddLoginNotification && formData[i].usernameEl != null && formData[i].passwordEl != null) {
+            const disabledBoth = disabledChangedPasswordNotification && disabledAddLoginNotification;
+            if (!disabledBoth && formData[i].usernameEl != null && formData[i].passwordEl != null) {
                 const login = {
                     username: formData[i].usernameEl.value,
                     password: formData[i].passwordEl.value,
