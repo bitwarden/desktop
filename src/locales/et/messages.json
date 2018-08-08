@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Ekspordi hoidla"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "HOIATUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Ekspordi tulemusena luuakse ilma krüpteringuta .csv formaadis fail. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
   }
 }

@@ -95,7 +95,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Changer la visibilité"
+    "message": "Afficher\/Masquer"
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"
@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Exporter le coffre"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "AVERTISSEMENT",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Cet export contient des données non chiffrées au format .csv. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
   }
 }

@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "صادر کردن گاوصندوق"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "اخطار",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "این صادرات شامل اطلاعات رمزگذاری شده شما در فرمت csv می باشد. شما نباید آن را در کانال های ناامن (مانند ایمیل) ذخیره یا ارسال کنید. بعد از اینکه کارتان با آن انجام شد آن را بلافاصله حذف کنید."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "گذرواژه اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
   }
 }

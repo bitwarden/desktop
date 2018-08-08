@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Kluis exporteren"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "WAARSCHUWING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Deze export bevat niet-versleutelde gegevens in CSV-indeling. Deze dient niet te worden opgeslagen of over onveilige kanalen (zoals email) verstuurd te worden. Verwijder het zodra het niet meer nodig is."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Voer uw hoofdwachtwoord in om uw kluis-gegevens te exporteren."
   }
 }

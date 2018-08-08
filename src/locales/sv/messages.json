@@ -1069,24 +1069,24 @@
     "message": "Minimera till systemfältet"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Uppdaterad",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Lösenord uppdaterat",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Exportera valv"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "VARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Den här exporten innehåller din okrypterade data i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (genom t.ex. mejl). Radera filen efter du är färdig med den."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Ange ditt huvudlösenord för att exportera datan i ditt valv."
   }
 }

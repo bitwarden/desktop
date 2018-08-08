@@ -542,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifiser med Duo Security for din organisasjon gjennom Duo Mobile-appen, SMS, telefonsamtale, eller en U2F-sikkerhetsnøkkel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -771,22 +771,22 @@
     "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hver innloggingsgjenstand i hvelvet ditt."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Ikonet for minimering til verktøykassen"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Når du minimaliserer vinduet, skal et ikon vises i verktøykassen i stedet."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Skru på verktøykasseikon"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Vis et ikon i verktøykassen til enhver tid."
   },
   "language": {
     "message": "Språk"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Endre språket som brukes av programmet. En programomstart er påkrevd."
   },
   "theme": {
     "message": "Tema"
@@ -1049,7 +1049,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Skru av\/på innstillinger"
   },
   "organization": {
     "message": "Organisasjon",
@@ -1066,27 +1066,27 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Skjul til verktøykassen"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Oppdatert den",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Passordet ble oppdatert den",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Eksporter hvelvet"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Eksporten inneholder dine krypterte dataer i .csv-format. Du burde ikke lagre eller sende dem over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
   }
 }

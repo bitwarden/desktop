@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Esporta Cassaforte"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "ATTENZIONE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Questo file contiene i tuoi dati in formato .csv non crittografati. Non dovresti memorizzarlo o inviarlo attraverso canali non sicuri (come un'email). Assicurati di eliminarlo non appena hai finito di usarlo."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."
   }
 }

@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Eksportuj sejf"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "UWAGA",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Ten plik eksportu zawiera Twoje niezaszyfrowane dane w formacie .csv. Nie powinieneś go przechowywać ani przesyłać poprzez niezabezpieczone kanały (takie jak e-mail). Skasuj go natychmiast po użyciu."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Wprowadź hasło główne, aby wyeksportować dane z sejfu."
   }
 }

@@ -3,49 +3,49 @@
     "message": "bitwarden"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Všetky položky"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Obľúbené"
   },
   "types": {
-    "message": "Types"
+    "message": "Typy"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Prihlásenie"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Karta"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identita"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Zabezpečená poznámka"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Priečinky"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Zbierky"
   },
   "searchVault": {
     "message": "Search vault"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Pridať položku"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Zdieľané"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Prílohy"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Zobraziť položku"
   },
   "name": {
-    "message": "Name"
+    "message": "Meno"
   },
   "uri": {
     "message": "URI"
@@ -61,110 +61,110 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nové URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Používateľské meno"
   },
   "password": {
-    "message": "Password"
+    "message": "Heslo"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Upraviť položku"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Emailová adresa"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Overovací kód (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Webstránka"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Poznámky"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Vlastné polia"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Spustiť"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "Kopírovať hodnotu",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Prepnúť viditeľnosť"
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Meno vlastníka karty"
   },
   "number": {
-    "message": "Number"
+    "message": "Číslo"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Značka"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Expirácia"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Bezpečnostný kód"
   },
   "identityName": {
     "message": "identityName"
   },
   "company": {
-    "message": "Company"
+    "message": "Spoločnosť"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Číslo poistenca sociálnej poisťovne"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Číslo pasu"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Číslo vodičského preukazu"
   },
   "email": {
     "message": "Email"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefón"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresa"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Vyžaduje prémiový účet"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Pre použitie tejto funkcie je potrebné prémiové členstvo."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Vyskytla sa chyba."
   },
   "error": {
-    "message": "Error"
+    "message": "Chyba"
   },
   "january": {
-    "message": "January"
+    "message": "Január"
   },
   "february": {
-    "message": "February"
+    "message": "Február"
   },
   "march": {
-    "message": "March"
+    "message": "Marec"
   },
   "april": {
-    "message": "April"
+    "message": "Apríl"
   },
   "may": {
-    "message": "May"
+    "message": "Máj"
   },
   "june": {
-    "message": "June"
+    "message": "Jún"
   },
   "july": {
     "message": "July"
@@ -318,39 +318,39 @@
     "message": "Are you sure you want to overwrite the current password?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Žiadny priečinok",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Pridať priečinok"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Upraviť priečinok"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Vygenerovať nové heslo"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopírovať heslo"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopírovať URI"
   },
   "length": {
-    "message": "Length"
+    "message": "Dĺžka"
   },
   "close": {
-    "message": "Close"
+    "message": "Zavrieť"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Minimum číslic"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Minimum špec. znakov",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Vyhnúť sa zameniteľným znakom"
   },
   "searchCollection": {
     "message": "Search collection"
@@ -366,61 +366,61 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Pridať novú prílohu"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Príloha odstránená"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Naozaj chcete odstrániť prílohu?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Príloha bola uložená."
   },
   "file": {
-    "message": "File"
+    "message": "Súbor"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Vybrať súbor."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Maximálna veľkosť súboru je 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Túto funkciu nemožno použiť, kým neaktualizujete svoj šifrovací kľúč."
   },
   "options": {
-    "message": "Options"
+    "message": "Možnosti"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Priečinok upravený"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Priečinok pridaný"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Naozaj chcete odstrániť tento priečinok?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Priečinok odstránený"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Prihláste sa, alebo vytvorte nový účet pre prístup k vášmu bezpečnému trezoru."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Vytvoriť účet"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Prihlásiť sa"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Potvrdiť"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Hlavné heslo"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Hlavné heslo je heslo, ktoré použijete na prístup k svojmu trezoru. Je veľmi dôležité, aby ste svoje hlavné heslo nezabudli. Neexistuje možnosť, ako heslo obnoviť v prípade, že ho zabudnete."
   },
   "masterPassHintDesc": {
     "message": "A master password hint can help you remember your password if you forget it."

@@ -993,7 +993,7 @@
     "message": "Sair do Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copiado\/a",
+    "message": "$VALUE$ copiado(a)",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1069,24 +1069,24 @@
     "message": "Ocultar para a bandeja"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Atualizado",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Palavra passe atualizada",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Exportar cofre"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Esta exportação contém os seus dados desencriptados no formato .csv. Não a deve armazenar ou transmitir em vias inseguras (como email). Apague-a imediatamente após a utilizar."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Introduza a sua palavra-passe mestra para exportar os dados do seu cofre."
   }
 }

@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "导出密码库"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "导出会将你的数据存储成未经加密的 .csv 文件。你不应该长期保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "输入主密码来导出你的密码库。"
   }
 }

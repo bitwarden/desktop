@@ -1021,7 +1021,7 @@
     }
   },
   "passwordSafe": {
-    "message": "K úniku tohoto hesla nedošlo v žádném ze známých případů. Mělo by být bezpečné používat jej i nadále."
+    "message": " V žádném ze známých případů nedošlo k úniku tohoto hesla. Mělo by být bezpečné používat jej i nadále."
   },
   "baseDomain": {
     "message": "Základní doména"
@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Exportovat trezor"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "VAROVÁNÍ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Soubor exportu obsahuje nezašifrovaná data ve formátu .csv. Neměli byste ho ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Smažte jej okamžitě po jeho použití."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Zadejte své hlavní heslo pro export dat."
   }
 }
