@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Экспорт хранилища"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Файл экспорта содержит ваши данные в открытом виде. Его не следует хранить или отправлять по небезопасным каналам (например, email). Удалите его сразу после использования."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Для экспорта данных из хранилища введите мастер-пароль."
   }
 }
