@@ -1069,24 +1069,24 @@
     "message": "Ocultar en bandeja"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Actualizada",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Contraseña actualizada",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Exportar caja fuerte"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "ADVERTENCIA",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "La exportación contiene tus datos no cifrados en formato .csv. No deberías almacenarlo o enviarlo por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
   }
 }
