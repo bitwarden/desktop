@@ -12,7 +12,7 @@
     "message": "Типи"
   },
   "typeLogin": {
-    "message": "Запис"
+    "message": "Вхід"
   },
   "typeCard": {
     "message": "Картка"
@@ -294,7 +294,7 @@
     "message": "Потрібна назва."
   },
   "addedItem": {
-    "message": "Доданий запис"
+    "message": "Запис додано"
   },
   "editedItem": {
     "message": "Запис змінено"
@@ -1069,24 +1069,24 @@
     "message": "Згорнути в лоток"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Оновлено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Пароль оновлено",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Експорт сховища"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "ПОПЕРЕДЖЕННЯ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "При експорті ваші дані зберігаються в незашифрованому вигляді в форматі .csv. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Введіть головний пароль, щоб експортувати дані сховища."
   }
 }
