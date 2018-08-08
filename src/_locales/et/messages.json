@@ -486,16 +486,16 @@
     "message": "Ära sellel lehel enam küsi"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Keela Muudetud parooli teavitus"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "Kui mistahes veebilehel on toimunud parooli vahetamine, annab \"Muudetud parooli teavitus\" sulle märku, et vahetaksid selle ära ka Bitwardeni paroolihoidlas."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Soovid seda parooli ka Bitwardenis uuendada?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Jah, uuenda"
   },
   "disableContextMenuItem": {
     "message": "Keela parema kliki menüü valikud"

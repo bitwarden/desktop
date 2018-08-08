@@ -486,16 +486,16 @@
     "message": "Jamais pour ce site web"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Désactiver la notification de changement de mot de passe"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "La \"Notification de changement de mot de passe\" vous demande automatiquement de mettre à jour un mot de passe dans votre coffre lorsqu'il est changé sur un site web."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Souhaitez-vous mettre à jour ce mot de passe dans Bitwarden ?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Oui, mettre à jour maintenant"
   },
   "disableContextMenuItem": {
     "message": "Désactiver les options de menu contextuelles"

@@ -486,16 +486,16 @@
     "message": "忽略此网站"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "禁用密码变更通知"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "检测到您已变更网站上的密码时，“密码变更通知” 自动提醒您更改密码库中相应项的密码。"
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "是否要在 Bitwarden 中更新此密码？"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "是，立即更新"
   },
   "disableContextMenuItem": {
     "message": "关闭上下文菜单选项"

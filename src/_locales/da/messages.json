@@ -486,16 +486,16 @@
     "message": "Aldrig for denne hjemmeside"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Deaktiver besked om ændret adgangskode"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"Besked om ændret kodeord\" beder dig automatisk om at opdatere en adgangskode i din boks, når det opdager, at du har ændret den på en hjemmeside."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Vil du opdatere denne adgangskode i Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Ja, opdater nu"
   },
   "disableContextMenuItem": {
     "message": "Deaktiver Kontekst-menu valgmuligheder"

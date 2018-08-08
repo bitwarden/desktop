@@ -486,16 +486,16 @@
     "message": "Игнорировать этот сайт"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Отключить уведомление об изменении пароля"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"Уведомление об изменении пароля\" автоматически предложит вам обновить пароль входа в хранилище, когда обнаружит, что вы изменили его на веб-сайте."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Вы хотите обновить этот пароль в Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Да, обновить сейчас"
   },
   "disableContextMenuItem": {
     "message": "Отключить опции контекстного меню"

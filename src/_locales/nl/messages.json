@@ -486,16 +486,16 @@
     "message": "Nooit voor deze website"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Melding van gewijzigd wachtwoord uitschakelen"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "De \"Melding van gewijzigd wachtwoord\" stelt automatisch voor om een wachtwoord in de kluis bij te werken wanneer het op een website is gewijzigd."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Wilt u dit wachtwoord in Bitwarden bijwerken?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Ja, nu bijwerken"
   },
   "disableContextMenuItem": {
     "message": "Context Menu-opties uitschakelen"

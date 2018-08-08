@@ -486,16 +486,16 @@
     "message": "Nunca para este site"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Desativar Notificação de Alteração da Senha"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "A \"Notificação de Alteração da Senha\" solicita automaticamente que você atualize a senha de uma credencial no seu cofre quando detecta que você a alterou em um site."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Você quer atualizar esta senha no Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Sim, Atualizar Agora"
   },
   "disableContextMenuItem": {
     "message": "Desativar Opções do Menu de Contexto"
@@ -816,7 +816,7 @@
     "message": "Ao clicar fora da janela de pop-up para verificar seu e-mail para o seu código de verificação fará com que este pop-up feche. Você deseja abrir este pop-up em uma nova janela para que ele não seja fechado?"
   },
   "disableFavicon": {
-    "message": "Desabilitar Ícones dos Sites"
+    "message": "Desativar Ícones de Site"
   },
   "disableFaviconDesc": {
     "message": "O ícone do site fornece um ícone reconhecível ao lado de cada credencial no seu cofre."

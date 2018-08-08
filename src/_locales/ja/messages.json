@@ -486,16 +486,16 @@
     "message": "このサイトではしない"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "パスワードの変更通知を無効化"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "ウェブサイトでパスワードを変更したことを検出したとき、保管庫のパスワードを更新するために自動的に「パスワードの変更通知」を表示します。"
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Bitwarden でこのパスワードを更新しますか？"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "今すぐ更新する"
   },
   "disableContextMenuItem": {
     "message": "コンテキストメニューオプションを無効化"

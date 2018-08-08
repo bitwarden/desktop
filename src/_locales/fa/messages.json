@@ -486,16 +486,16 @@
     "message": "برای اين سایت هرگز"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "غیر فعال کردن اعلان تغییر رمز عبور"
   },
   "disableChangedPasswordNotificationDesc": {
     "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "آیا مایل به بروزرسانی این پسورد در Bitwarden هستید؟"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "بله، بروزرسانی کن"
   },
   "disableContextMenuItem": {
     "message": "غیر فعال کردن گزینه های منوی متن"
