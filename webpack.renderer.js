@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 
@@ -84,9 +83,8 @@ const renderer = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'fonts/',
-                        publicPath: '../'
-                    }
-                }]
+                    },
+                }],
             },
             {
                 test: /\.scss$/,
@@ -105,19 +103,6 @@ const renderer = {
         ]
     },
     plugins: [
-        new GoogleFontsPlugin({
-            fonts: [
-                {
-                    family: 'Open Sans',
-                    variants: ['300', '300italic', '400', '400italic', '600', '600italic',
-                        '700', '700italic', '800', '800italic'],
-                    subsets: ['cyrillic', 'cyrillic-ext', 'greek', 'greek-ext', 'latin', 'latin-ext']
-                }
-            ],
-            formats: ['woff2'],
-            path: 'fonts/',
-            filename: 'css/fonts.css'
-        }),
         new AngularCompilerPlugin({
             tsConfigPath: 'tsconfig.json',
             entryModule: 'src/app/app.module#AppModule',
