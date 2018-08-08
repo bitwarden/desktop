@@ -1077,16 +1077,16 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "保管庫のエクスポート"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "暗号化していないデータを .csv 形式でエクスポートします。メールなどの安全でない手段で保管したり共有したりしないでください。使用した後はすぐに削除してください。"
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
   }
 }
