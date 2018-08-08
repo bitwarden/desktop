@@ -1069,24 +1069,24 @@
     "message": "Nur in der Taskleiste anzeigen"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Aktualisiert",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Passwort aktualisiert",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Tresor exportieren"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "WARNUNG",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Dieser Export enthält deine unverschlüsselten Daten im CSV-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
   }
 }
