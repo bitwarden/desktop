@@ -1,7 +1,7 @@
 <div class="header header-search">
     <div class="search">
         <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
-               [(ngModel)]="searchText" (ngModelChange)="search(200)" appAutofocus>
+               [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
 </div>
