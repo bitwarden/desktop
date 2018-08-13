@@ -146,7 +146,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
             this.totpCode = totpCode;
             this.analytics.eventTrack.next({ action: 'Autofilled' });
             if (totpCode != null && !this.platformUtilsService.isSafari()) {
-                this.platformUtilsService.copyToClipboard(totpCode, { doc: window.document });
+                this.platformUtilsService.copyToClipboard(totpCode, { window: window });
             }
 
             if (this.popupUtilsService.inPopup(window)) {
@@ -164,7 +164,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
         if (cipher.type === CipherType.Login && this.platformUtilsService.isSafari()) {
             this.totpTimeout = window.setTimeout(() => {
                 if (this.totpCode != null) {
-                    this.platformUtilsService.copyToClipboard(this.totpCode, { doc: window.document });
+                    this.platformUtilsService.copyToClipboard(this.totpCode, { window: window });
                 }
             }, 500);
         }

@@ -65,7 +65,7 @@ export default class CommandsBackground {
 
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
-        this.platformUtilsService.copyToClipboard(password);
+        this.platformUtilsService.copyToClipboard(password, { window: window });
         this.passwordGenerationService.addHistory(password);
 
         this.analytics.ga('send', {

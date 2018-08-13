@@ -149,9 +149,8 @@ export default class RuntimeBackground {
                             tab: msg.tab,
                             details: msg.details,
                         }], msg.sender === 'autofill_cmd');
-
-                        if (totpCode !== null && !this.platformUtilsService.isFirefox()) {
-                            this.platformUtilsService.copyToClipboard(totpCode);
+                        if (totpCode !== null) {
+                            this.platformUtilsService.copyToClipboard(totpCode, { window: window });
                         }
                         break;
                     case 'contextMenu':
@@ -178,8 +177,8 @@ export default class RuntimeBackground {
             pageDetails: this.pageDetailsToAutoFill,
         });
 
-        if (totpCode !== null && !this.platformUtilsService.isFirefox()) {
-            this.platformUtilsService.copyToClipboard(totpCode);
+        if (totpCode !== null) {
+            this.platformUtilsService.copyToClipboard(totpCode, { window: window });
         }
 
         // reset

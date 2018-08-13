@@ -37,7 +37,7 @@ export default class ContextMenusBackground {
     private async generatePasswordToClipboard() {
         const options = await this.passwordGenerationService.getOptions();
         const password = await this.passwordGenerationService.generatePassword(options);
-        this.platformUtilsService.copyToClipboard(password);
+        this.platformUtilsService.copyToClipboard(password, { window: window });
         this.passwordGenerationService.addHistory(password);
 
         this.analytics.ga('send', {
@@ -73,13 +73,13 @@ export default class ContextMenusBackground {
                     hitType: 'event',
                     eventAction: 'Copied Username From Context Menu',
                 });
-                this.platformUtilsService.copyToClipboard(cipher.login.username);
+                this.platformUtilsService.copyToClipboard(cipher.login.username, { window: window });
             } else if (info.parentMenuItemId === 'copy-password') {
                 this.analytics.ga('send', {
                     hitType: 'event',
                     eventAction: 'Copied Password From Context Menu',
                 });
-                this.platformUtilsService.copyToClipboard(cipher.login.password);
+                this.platformUtilsService.copyToClipboard(cipher.login.password, { window: window });
             }
 
             break;
