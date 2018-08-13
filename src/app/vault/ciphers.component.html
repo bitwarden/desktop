@@ -1,14 +1,14 @@
 <div class="header header-search">
     <div class="search">
         <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
-               [(ngModel)]="searchText" appAutofocus>
+               [(ngModel)]="searchText" (ngModelChange)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
 </div>
 <div class="content">
-    <ng-container *ngIf="(ciphers | searchCiphers: searchText) as searchedCiphers">
-        <div class="list" *ngIf="searchedCiphers.length > 0">
-            <a *ngFor="let c of searchedCiphers" appStopClick (click)="selectCipher(c)"
+    <ng-container *ngIf="ciphers">
+        <div class="list" *ngIf="ciphers.length > 0">
+            <a *ngFor="let c of ciphers" appStopClick (click)="selectCipher(c)"
                (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
                [ngClass]="{'active': c.id === activeCipherId}">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
@@ -22,7 +22,7 @@
                 <span class="detail">{{c.subTitle}}</span>
             </a>
         </div>
-        <div class="no-items" *ngIf="searchedCiphers.length === 0">
+        <div class="no-items" *ngIf="ciphers.length === 0">
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
             <ng-container *ngIf="loaded">
                 <i class="fa fa-frown-o fa-4x"></i>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
+import { SearchService } from 'jslib/abstractions/search.service';
 
 import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/components/ciphers.component';
 
@@ -9,7 +9,7 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
     templateUrl: 'ciphers.component.html',
 })
 export class CiphersComponent extends BaseCiphersComponent {
-    constructor(cipherService: CipherService) {
-        super(cipherService);
+    constructor(searchService: SearchService) {
+        super(searchService);
     }
 }
