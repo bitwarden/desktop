@@ -15,11 +15,11 @@ import {
 
 import { BrowserApi } from '../../browser/browserApi';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SearchService } from 'jslib/abstractions/search.service';
 import { StateService } from 'jslib/abstractions/state.service';
 
 import { CipherType } from 'jslib/enums/cipherType';
@@ -40,7 +40,6 @@ const ComponentId = 'CiphersComponent';
 })
 export class CiphersComponent extends BaseCiphersComponent implements OnInit, OnDestroy {
     groupingTitle: string;
-    searchText: string;
     state: any;
     showAdd = true;
     folderId: string = null;
@@ -52,14 +51,14 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     private preventSelected = false;
     private pageSize = 100;
 
-    constructor(cipherService: CipherService, private route: ActivatedRoute,
+    constructor(searchService: SearchService, private route: ActivatedRoute,
         private router: Router, private location: Location,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
         private changeDetectorRef: ChangeDetectorRef, private stateService: StateService,
         private popupUtils: PopupUtilsService, private i18nService: I18nService,
         private folderService: FolderService, private collectionService: CollectionService,
         private analytics: Angulartics2, private platformUtilsService: PlatformUtilsService) {
-        super(cipherService);
+        super(searchService);
         this.pageSize = platformUtilsService.isEdge() ? 25 : 100;
     }
 
@@ -188,7 +187,7 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
     }
 
     isSearching() {
-        return this.searchText != null && this.searchText.length > 1;
+        return !this.searchPending && this.searchService.isSearchable(this.searchText);
     }
 
     isPaging() {

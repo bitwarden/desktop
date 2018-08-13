@@ -24,6 +24,7 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SearchService } from 'jslib/abstractions/search.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
@@ -51,11 +52,15 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     state: any;
     scopeState: any;
     showLeftHeader = true;
+    searchPending = false;
 
     private loadedTimeout: number;
     private selectedTimeout: number;
     private preventSelected = false;
     private noFolderListSize = 100;
+    private searchTimeout: any = null;
+    private hasSearched = false;
+    private hasLoadedAllCiphers = false;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
@@ -63,7 +68,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute,
         private stateService: StateService, private popupUtils: PopupUtilsService,
         private syncService: SyncService, private analytics: Angulartics2,
-        private platformUtilsService: PlatformUtilsService) {
+        private platformUtilsService: PlatformUtilsService, private searchService: SearchService) {
         super(collectionService, folderService);
         this.noFolderListSize = platformUtilsService.isEdge() ? 25 : 100;
     }
@@ -146,8 +151,10 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async loadCiphers() {
-        this.ciphers = await this.cipherService.getAllDecrypted();
-
+        if (!this.hasLoadedAllCiphers) {
+            this.hasLoadedAllCiphers = !this.searchService.isSearchable(this.searchText);
+        }
+        await this.search(null);
         let favoriteCiphers: CipherView[] = null;
         let noFolderCiphers: CipherView[] = null;
         const folderCounts = new Map<string, number>();
@@ -199,6 +206,28 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         this.collectionCounts = collectionCounts;
     }
 
+    async search(timeout: number = null) {
+        this.searchPending = false;
+        if (this.searchTimeout != null) {
+            clearTimeout(this.searchTimeout);
+        }
+        if (timeout == null) {
+            this.hasSearched = this.searchService.isSearchable(this.searchText);
+            this.ciphers = await this.searchService.searchCiphers(this.searchText, null);
+            return;
+        }
+        this.searchPending = true;
+        this.searchTimeout = setTimeout(async () => {
+            this.hasSearched = this.searchService.isSearchable(this.searchText);
+            if (!this.hasLoadedAllCiphers && !this.hasSearched) {
+                await this.loadCiphers();
+            } else {
+                this.ciphers = await this.searchService.searchCiphers(this.searchText, null);
+            }
+            this.searchPending = false;
+        }, timeout);
+    }
+
     async selectType(type: CipherType) {
         super.selectType(type);
         this.router.navigate(['/ciphers'], { queryParams: { type: type } });
@@ -241,6 +270,10 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
 
     async addCipher() {
         this.router.navigate(['/add-cipher']);
+    }
+
+    showSearching() {
+        return this.hasSearched || (!this.searchPending && this.searchService.isSearchable(this.searchText));
     }
 
     private async saveState() {

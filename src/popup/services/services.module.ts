@@ -29,6 +29,7 @@ import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SearchService } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StateService as StateServiceAbstraction } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -139,7 +140,8 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: StorageService, useFactory: getBgService<StorageService>('storageService'), deps: [] },
         { provide: AppIdService, useFactory: getBgService<AppIdService>('appIdService'), deps: [] },
         { provide: AutofillService, useFactory: getBgService<AutofillService>('autofillService'), deps: [] },
-        { provide: ExportService, useFactory: getBgService<AppIdService>('exportService'), deps: [] },
+        { provide: ExportService, useFactory: getBgService<ExportService>('exportService'), deps: [] },
+        { provide: SearchService, useFactory: getBgService<SearchService>('searchService'), deps: [] },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

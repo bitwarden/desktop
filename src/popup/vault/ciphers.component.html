@@ -7,7 +7,7 @@
     </div>
     <div class="search">
         <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
-               [(ngModel)]="searchText" appAutofocus>
+               [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
     <div class="right" *ngIf="showAdd">
@@ -17,7 +17,7 @@
     </div>
 </header>
 <content>
-    <ng-container *ngIf="(!isPaging() ? (ciphers | searchCiphers: searchText) : pagedCiphers) as filteredCiphers">
+    <ng-container *ngIf="(!isPaging() ? ciphers : pagedCiphers) as filteredCiphers">
         <div class="no-items" *ngIf="!filteredCiphers.length">
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
             <ng-container *ngIf="loaded">

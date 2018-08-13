@@ -4,7 +4,7 @@
     </div>
     <div class="search">
         <input type="search" placeholder="{{'searchVault' | i18n}}" id="search"
-               [(ngModel)]="searchText" appAutofocus>
+               [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
         <i class="fa fa-search"></i>
     </div>
     <div class="right">
@@ -14,7 +14,7 @@
     </div>
 </header>
 <content>
-    <div class="no-items" *ngIf="!ciphers || !ciphers.length">
+    <div class="no-items" *ngIf="(!ciphers || !ciphers.length) && !showSearching()">
         <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
         <ng-container *ngIf="loaded">
             <i class="fa fa-frown-o fa-4x"></i>
@@ -22,7 +22,7 @@
             <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
         </ng-container>
     </div>
-    <ng-container *ngIf="ciphers && ciphers.length && (!searchText || searchText.length < 2)">
+    <ng-container *ngIf="ciphers && ciphers.length && !showSearching()">
         <div class="box list" *ngIf="favoriteCiphers">
             <div class="box-header">
                 {{'favorites' | i18n}}
@@ -127,14 +127,13 @@
             </div>
         </div>
     </ng-container>
-    <ng-container *ngIf="ciphers && ciphers.length && searchText && searchText.length > 1 &&
-                  (ciphers | searchCiphers: searchText) as searchedCiphers">
-        <div class="no-items" *ngIf="!searchedCiphers.length">
+    <ng-container *ngIf="showSearching()">
+        <div class="no-items" *ngIf="!ciphers || !ciphers.length">
             <p>{{'noItemsInList' | i18n}}</p>
         </div>
-        <div class="box list full-list" *ngIf="searchedCiphers.length > 0">
+        <div class="box list full-list" *ngIf="ciphers && ciphers.length > 0">
             <div class="box-content">
-                <app-ciphers-list [ciphers]="searchedCiphers" title="{{'viewItem' | i18n}}"
+                <app-ciphers-list [ciphers]="ciphers" title="{{'viewItem' | i18n}}"
                                   (onSelected)="selectCipher($event)"
                                   (onDoubleSelected)="launchCipher($event)"></app-ciphers-list>
             </div>

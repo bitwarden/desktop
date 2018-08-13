@@ -21,6 +21,7 @@ import { CipherView } from 'jslib/models/view/cipherView';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SearchService } from 'jslib/abstractions/search.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { AutofillService } from '../../services/abstractions/autofill.service';
@@ -50,13 +51,15 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     private totpCode: string;
     private totpTimeout: number;
     private loadedTimeout: number;
+    private searchTimeout: number;
 
     constructor(private platformUtilsService: PlatformUtilsService, private cipherService: CipherService,
         private popupUtilsService: PopupUtilsService, private autofillService: AutofillService,
         private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private router: Router,
         private ngZone: NgZone, private broadcasterService: BroadcasterService,
-        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService) { }
+        private changeDetectorRef: ChangeDetectorRef, private syncService: SyncService,
+        private searchService: SearchService) { }
 
     async ngOnInit() {
         this.showLeftHeader = !this.platformUtilsService.isSafari();
@@ -171,10 +174,15 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     searchVault() {
-        if (this.searchText == null || this.searchText.length < 2) {
+        if (this.searchTimeout != null) {
+            clearTimeout(this.searchTimeout);
+        }
+        if (!this.searchService.isSearchable(this.searchText)) {
             return;
         }
-        this.router.navigate(['/tabs/vault'], { queryParams: { searchText: this.searchText } });
+        this.searchTimeout = window.setTimeout(async () => {
+            this.router.navigate(['/tabs/vault'], { queryParams: { searchText: this.searchText } });
+        }, 200);
     }
 
     private async load() {

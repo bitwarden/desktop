@@ -20,6 +20,7 @@ import {
     UserService,
 } from 'jslib/services';
 import { ExportService } from 'jslib/services/export.service';
+import { SearchService } from 'jslib/services/search.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import {
@@ -44,6 +45,7 @@ import {
     UserService as UserServiceAbstraction,
 } from 'jslib/abstractions';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
+import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 
 import { Analytics } from 'jslib/misc';
 
@@ -90,6 +92,7 @@ export default class MainBackground {
     containerService: ContainerService;
     auditService: AuditServiceAbstraction;
     exportService: ExportServiceAbstraction;
+    searchService: SearchServiceAbstraction;
     analytics: Analytics;
 
     onUpdatedRan: boolean;
@@ -129,7 +132,8 @@ export default class MainBackground {
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
-            this.apiService, this.storageService, this.i18nService, this.platformUtilsService);
+            this.apiService, this.storageService, this.i18nService, this.platformUtilsService,
+            () => this.searchService);
         this.folderService = new FolderService(this.cryptoService, this.userService, this.apiService,
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
@@ -139,6 +143,7 @@ export default class MainBackground {
                 await this.setIcon();
                 await this.refreshBadgeAndMenu(true);
             });
+        this.searchService = new SearchService(this.cipherService, this.platformUtilsService);
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
             this.storageService, this.messagingService, async (expired: boolean) => await this.logout(expired));
