@@ -5,7 +5,6 @@ import {
     Component,
     ComponentFactoryResolver,
     NgZone,
-    OnDestroy,
     OnInit,
     Type,
     ViewChild,
@@ -34,6 +33,7 @@ import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SearchService } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
@@ -79,7 +79,8 @@ export class AppComponent implements OnInit {
         private platformUtilsService: PlatformUtilsService, private ngZone: NgZone,
         private lockService: LockService, private storageService: StorageService,
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
-        private messagingService: MessagingService, private collectionService: CollectionService) {
+        private messagingService: MessagingService, private collectionService: CollectionService,
+        private searchService: SearchService) {
         (window as any).BitwardenToasterService = toasterService;
     }
 
@@ -161,6 +162,7 @@ export class AppComponent implements OnInit {
             this.passwordGenerationService.clear(),
         ]);
 
+        this.searchService.clearIndex();
         this.authService.logOut(async () => {
             this.analytics.eventTrack.next({ action: 'Logged Out' });
             if (expired) {
