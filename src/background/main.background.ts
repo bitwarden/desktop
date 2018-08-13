@@ -138,12 +138,13 @@ export default class MainBackground {
             this.storageService, this.i18nService, this.cipherService);
         this.collectionService = new CollectionService(this.cryptoService, this.userService, this.storageService,
             this.i18nService);
+        this.searchService = new SearchService(this.cipherService, this.platformUtilsService);
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
-            this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService, async () => {
+            this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService,
+            this.searchService, async () => {
                 await this.setIcon();
                 await this.refreshBadgeAndMenu(true);
             });
-        this.searchService = new SearchService(this.cipherService, this.platformUtilsService);
         this.syncService = new SyncService(this.userService, this.apiService, this.settingsService,
             this.folderService, this.cipherService, this.cryptoService, this.collectionService,
             this.storageService, this.messagingService, async (expired: boolean) => await this.logout(expired));
@@ -265,6 +266,7 @@ export default class MainBackground {
             this.passwordGenerationService.clear(),
         ]);
 
+        this.searchService.clearIndex();
         this.messagingService.send('doneLoggingOut', { expired: expired });
 
         await this.setIcon();
