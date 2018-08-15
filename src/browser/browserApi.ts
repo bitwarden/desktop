@@ -1,7 +1,10 @@
 export class BrowserApi {
+    static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');
     static isSafariApi: boolean = (typeof safari !== 'undefined') &&
         navigator.userAgent.indexOf(' Safari/') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
     static isChromeApi: boolean = !BrowserApi.isSafariApi && (typeof chrome !== 'undefined');
+    static isFirefoxOnAndroid: boolean =
+        navigator.userAgent.indexOf('Firefox/') !== -1 && navigator.userAgent.indexOf('Android') !== -1;
 
     static async getTabFromCurrentWindowId(): Promise<any> {
         if (BrowserApi.isChromeApi) {
@@ -203,7 +206,12 @@ export class BrowserApi {
     }
 
     static closePopup(win: Window) {
-        if (BrowserApi.isChromeApi) {
+        if (BrowserApi.isWebExtensionsApi && BrowserApi.isFirefoxOnAndroid) {
+            // COMPAT: Reactivating the active tab dismisses the popout-tab. The promise final
+            // condition is only called if the popout wasn't already dismissed (future proofing).
+            // BUGZILLA: https://bugzilla.mozilla.org/show_bug.cgi?id=1433604
+            browser.tabs.update({active: true}).finally(win.close);
+        } else if (browserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
             win.close();
         } else if (BrowserApi.isSafariApi && safari.extension.popovers && safari.extension.popovers.length > 0) {
             safari.extension.popovers[0].hide();
