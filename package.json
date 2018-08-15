@@ -92,7 +92,7 @@
     "papaparse": "4.3.5",
     "rxjs": "5.5.6",
     "sweetalert": "2.1.0",
-    "tldjs": "2.0.0",
+    "tldjs": "2.3.1",
     "web-animations-js": "2.3.1",
     "zone.js": "0.8.19"
   }
