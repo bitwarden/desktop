@@ -211,7 +211,7 @@ export class BrowserApi {
             // condition is only called if the popout wasn't already dismissed (future proofing).
             // BUGZILLA: https://bugzilla.mozilla.org/show_bug.cgi?id=1433604
             browser.tabs.update({ active: true }).finally(win.close);
-        }  else if (browserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
+        }  else if (BrowserApi.isWebExtensionsApi || BrowserApi.isChromeApi) {
             win.close();
         } else if (BrowserApi.isSafariApi && safari.extension.popovers && safari.extension.popovers.length > 0) {
             safari.extension.popovers[0].hide();
