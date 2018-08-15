@@ -83,7 +83,7 @@ export class SettingsComponent implements OnInit {
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
 
         const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
-        const disableGaByDefault = this.platformUtilsService.isFirefox() || this.platformUtilsService.isMacAppStore();
+        const disableGaByDefault = this.platformUtilsService.isMacAppStore();
         this.disableGa = disableGa || (disableGa == null && disableGaByDefault);
     }
 
