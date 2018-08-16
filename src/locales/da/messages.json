@@ -70,10 +70,10 @@
     "message": "Kodeord"
   },
   "editItem": {
-    "message": "Rediger element"
+    "message": "Redigér element"
   },
   "emailAddress": {
-    "message": "Emailadresse"
+    "message": "E-mailadresse"
   },
   "verificationCodeTotp": {
     "message": "Verifikationskode (TOTP)"
@@ -91,7 +91,7 @@
     "message": "Kør"
   },
   "copyValue": {
-    "message": "Kopier værdi",
+    "message": "Kopiér værdi",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
@@ -128,7 +128,7 @@
     "message": "Kørekortnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
     "message": "Telefon"
@@ -216,7 +216,7 @@
     "message": "Andet"
   },
   "generatePassword": {
-    "message": "Generer kodeord"
+    "message": "Generér adgangskode"
   },
   "type": {
     "message": "Type"
@@ -255,7 +255,7 @@
     "message": "Gem"
   },
   "cancel": {
-    "message": "Annuller"
+    "message": "Annullér"
   },
   "delete": {
     "message": "Slet"
@@ -264,7 +264,7 @@
     "message": "Favorit"
   },
   "edit": {
-    "message": "Rediger"
+    "message": "Redigér"
   },
   "authenticatorKeyTotp": {
     "message": "Autentificeringsnøgle (TOTP)"
@@ -325,16 +325,16 @@
     "message": "Tilføj mappe"
   },
   "editFolder": {
-    "message": "Rediger mappe"
+    "message": "Redigér mappe"
   },
   "regeneratePassword": {
-    "message": "Regenerer adgangskode"
+    "message": "Regenerér adgangskode"
   },
   "copyPassword": {
-    "message": "Kopier kodeord"
+    "message": "Kopiér kodeord"
   },
   "copyUri": {
-    "message": "Kopier URI"
+    "message": "Kopiér URI"
   },
   "length": {
     "message": "Længde"
@@ -438,16 +438,16 @@
     "message": "Adgangskodetip"
   },
   "enterEmailToGetHint": {
-    "message": "Indtast din kontos emailadresse for at modtage dit hovedadgangskodetip."
+    "message": "Indtast din kontos e-mailadresse for at modtage dit hovedadgangskodetip."
   },
   "getMasterPasswordHint": {
     "message": "Få hovedadgangskodetip"
   },
   "emailRequired": {
-    "message": "Emailadresse er påkrævet."
+    "message": "E-mailadresse er påkrævet."
   },
   "invalidEmail": {
-    "message": "Ugyldig emailadresse."
+    "message": "Ugyldig e-mailadresse."
   },
   "masterPassRequired": {
     "message": "Hovedadgangskode er påkrævet."
@@ -462,7 +462,7 @@
     "message": "Din nye konto er oprettet! Du kan nu logge ind."
   },
   "masterPassSent": {
-    "message": "Vi har sendt dig en email med dit hovedadgangskodetip."
+    "message": "Vi har sendt dig en e-mail med dit hovedadgangskodetip."
   },
   "unexpectedError": {
     "message": "Der opstod en uventet fejl."
@@ -552,10 +552,10 @@
     "message": "FIDO U2F sikkerhedsnøgle"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Bekræftelseskoder vil blive emailet til dig."
+    "message": "Bekræftelseskoder vil blive e-mailet til dig."
   },
   "loginUnavailable": {
     "message": "Login utilgængelig"
@@ -618,16 +618,16 @@
     "message": "Funktion utilgængelig"
   },
   "loggedOut": {
-    "message": "Logget af"
+    "message": "Logget ud"
   },
   "loginExpired": {
     "message": "Din login-session er udløbet."
   },
   "logOutConfirmation": {
-    "message": "Er du sikker på, at du vil logge af?"
+    "message": "Er du sikker på, at du vil logge ud?"
   },
   "logOut": {
-    "message": "Log af"
+    "message": "Log ud"
   },
   "addNewLogin": {
     "message": "Tilføj et login"
@@ -654,7 +654,7 @@
     "message": "Adgangskodegenerator"
   },
   "emailUs": {
-    "message": "Email os"
+    "message": "E-mail os"
   },
   "visitOurWebsite": {
     "message": "Besøg vores hjemmeside"
@@ -678,10 +678,10 @@
     "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "changeEmail": {
-    "message": "Skift emailadresse"
+    "message": "Skift e-mailadresse"
   },
   "changeEmailConfirmation": {
-    "message": "Du kan ændre din emailadresse i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+    "message": "Du kan ændre din e-mailadresse i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "goToWebVault": {
     "message": "Gå til web-boks"
@@ -708,7 +708,7 @@
     "message": "Ugyldig hovedadgangskode"
   },
   "twoStepLoginConfirmation": {
-    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller email. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "twoStepLogin": {
     "message": "To-trins login"
@@ -759,7 +759,7 @@
     "message": "Sikkerhed"
   },
   "disableGa": {
-    "message": "Deaktiver Analytics"
+    "message": "Deaktivér Analytics"
   },
   "gaDesc": {
     "message": "Vi bruger Analytics for bedre at lære hvordan applikationen bruges, således at vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
@@ -803,7 +803,7 @@
     "description": "Light color"
   },
   "copy": {
-    "message": "Kopier",
+    "message": "Kopiér",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
@@ -852,21 +852,21 @@
     "message": "Ukendt"
   },
   "copyUsername": {
-    "message": "Kopier brugernavn"
+    "message": "Kopiér brugernavn"
   },
   "copyNumber": {
-    "message": "Kopier nummer",
+    "message": "Kopiér nummer",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Kopier sikkerhedskode",
+    "message": "Kopiér sikkerhedskode",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
     "message": "Premium-medlemskab"
   },
   "premiumManage": {
-    "message": "Administrer medlemsskab"
+    "message": "Administrér medlemsskab"
   },
   "premiumManageAlert": {
     "message": "Du kan administrere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
@@ -932,7 +932,7 @@
     "message": "Fortryd"
   },
   "redo": {
-    "message": "Annuller fortryd"
+    "message": "Annullér fortryd"
   },
   "cut": {
     "message": "Klip",
@@ -1084,7 +1084,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. email). Slet den umiddelbart efter at du er færdig med at bruge den."
+    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. e-mail). Slet den umiddelbart efter at du er færdig med at bruge den."
   },
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
