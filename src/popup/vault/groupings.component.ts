@@ -1,5 +1,6 @@
 import { Angulartics2 } from 'angulartics2';
 
+import { Location } from '@angular/common';
 import {
     ChangeDetectorRef,
     Component,
@@ -68,7 +69,8 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         private changeDetectorRef: ChangeDetectorRef, private route: ActivatedRoute,
         private stateService: StateService, private popupUtils: PopupUtilsService,
         private syncService: SyncService, private analytics: Angulartics2,
-        private platformUtilsService: PlatformUtilsService, private searchService: SearchService) {
+        private platformUtilsService: PlatformUtilsService, private searchService: SearchService,
+        private location: Location) {
         super(collectionService, folderService);
         this.noFolderListSize = platformUtilsService.isEdge() ? 25 : 100;
     }
@@ -110,6 +112,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
                 this.searchText = this.state.searchText;
             } else if (params.searchText) {
                 this.searchText = params.searchText;
+                this.location.replaceState('vault');
             }
 
             if (!this.syncService.syncInProgress) {
