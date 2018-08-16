@@ -1069,24 +1069,24 @@
     "message": "Sakrij u alatnoj traci"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Ažurirano",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Lozinka ažurirana",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Izvoz trezora"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "UPOZORENJE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Ovaj izvoz sadrži Vaše nešifirane podatke u .csv formatu. Ne biste ga trebali spremati ili poslati preko nesigurnih kanala (kao što je e-pošta). Obrišite ga odmah nakon što ste završili s upotrebom."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
   }
 }
