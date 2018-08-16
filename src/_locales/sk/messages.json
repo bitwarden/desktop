@@ -437,16 +437,16 @@
     "message": "Nové URI"
   },
   "addedItem": {
-    "message": "Pridaná položka"
+    "message": "Položka pridaná"
   },
   "editedItem": {
-    "message": "Upravená položka"
+    "message": "Položka upravená"
   },
   "deleteItemConfirmation": {
     "message": "Naozaj chcete odstrániť túto položku?"
   },
   "deletedItem": {
-    "message": "Odstránená položka"
+    "message": "Položka odstránená"
   },
   "overwritePassword": {
     "message": "Prepísať heslo"
@@ -486,16 +486,16 @@
     "message": "Nikdy pre túto stránku"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Vypnúť oznámenie o zmene hesla"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "Oznámenie o zmene hesla sa vás automaticky opýta na aktualizáciu prihlasovacích údajov vo vašom trezore vždy, keď zistí, že ste ho zmenili na stránke."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Chcete aktualizovať toto heslo v Bitwarden?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Áno, aktualizovať"
   },
   "disableContextMenuItem": {
     "message": "Vypnúť možnosti kontextového menu"
@@ -1008,7 +1008,7 @@
     "message": "Overiť či došlo k úniku hesla."
   },
   "passwordExposed": {
-    "message": "This password has been exposed in data breaches. You should change it.",
+    "message": "Toto heslo uniklo $VALUE$ krát. Mali by ste ho zmeniť.",
     "placeholders": {
       "value": {
         "content": "$1",

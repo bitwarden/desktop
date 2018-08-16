@@ -20,7 +20,7 @@
     "message": "Log ind"
   },
   "cancel": {
-    "message": "Annuller"
+    "message": "Annullér"
   },
   "close": {
     "message": "Luk"
@@ -29,7 +29,7 @@
     "message": "Bekræft"
   },
   "emailAddress": {
-    "message": "Emailadresse"
+    "message": "E-mailadresse"
   },
   "masterPass": {
     "message": "Hovedadgangskode"
@@ -62,28 +62,28 @@
     "message": "Aktuel fane"
   },
   "copyPassword": {
-    "message": "Kopier adgangskode"
+    "message": "Kopiér adgangskode"
   },
   "copyNote": {
-    "message": "Kopier note"
+    "message": "Kopiér note"
   },
   "copyUri": {
-    "message": "Kopier URI"
+    "message": "Kopiér URI"
   },
   "copyUsername": {
-    "message": "Kopier brugernavn"
+    "message": "Kopiér brugernavn"
   },
   "copyNumber": {
-    "message": "Kopier nummer"
+    "message": "Kopiér nummer"
   },
   "copySecurityCode": {
-    "message": "Kopier sikkerhedskode"
+    "message": "Kopiér sikkerhedskode"
   },
   "autoFill": {
     "message": "Auto-udfyld"
   },
   "generatePasswordCopied": {
-    "message": "Generer adgangskode (kopieret)"
+    "message": "Generér adgangskode (kopieret)"
   },
   "noMatchingLogins": {
     "message": "Ingen matchende logins."
@@ -104,7 +104,7 @@
     "message": "Adgangskodetip"
   },
   "enterEmailToGetHint": {
-    "message": "Indtast din kontos emailadresse for at modtage dit hovedadgangskodetip."
+    "message": "Indtast din kontos e-mailadresse for at modtage dit hovedadgangskodetip."
   },
   "getMasterPasswordHint": {
     "message": "Få hovedadgangskodetip"
@@ -122,13 +122,13 @@
     "message": "Skift hovedadgangskode"
   },
   "changeEmail": {
-    "message": "Skift emailadresse"
+    "message": "Skift e-mailadresse"
   },
   "twoStepLogin": {
     "message": "To-trins login"
   },
   "logOut": {
-    "message": "Log af"
+    "message": "Log ud"
   },
   "about": {
     "message": "Om"
@@ -146,7 +146,7 @@
     "message": "Navn"
   },
   "editFolder": {
-    "message": "Rediger mappe"
+    "message": "Redigér mappe"
   },
   "deleteFolder": {
     "message": "Slet mappe"
@@ -183,16 +183,16 @@
     "message": "Bitwarden web-boks"
   },
   "importItems": {
-    "message": "Importer elementer"
+    "message": "Importér elementer"
   },
   "select": {
     "message": "Vælg"
   },
   "generatePassword": {
-    "message": "Generer adgangskode"
+    "message": "Generér adgangskode"
   },
   "regeneratePassword": {
-    "message": "Regenerer adgangskode"
+    "message": "Regenerér adgangskode"
   },
   "options": {
     "message": "Indstillinger"
@@ -240,7 +240,7 @@
     "message": "Note"
   },
   "editItem": {
-    "message": "Rediger element"
+    "message": "Redigér element"
   },
   "folder": {
     "message": "Mappe"
@@ -261,13 +261,13 @@
     "message": "Slå synlighed til\/fra"
   },
   "manage": {
-    "message": "Administrer"
+    "message": "Administrér"
   },
   "other": {
     "message": "Andre"
   },
   "disableGa": {
-    "message": "Deaktiver Analytics"
+    "message": "Deaktivér Analytics"
   },
   "rateExtension": {
     "message": "Bedøm udvidelsen"
@@ -276,7 +276,7 @@
     "message": "Overvej om du vil hjælpe os med en god anmeldelse!"
   },
   "browserNotSupportClipboard": {
-    "message": "Din webbrowser understøtter ikke udklipsholder kopiering. Kopier det manuelt i stedet."
+    "message": "Din webbrowser understøtter ikke udklipsholder kopiering. Kopiér det manuelt i stedet."
   },
   "verifyMasterPassword": {
     "message": "Bekræft hovedadgangskode"
@@ -327,10 +327,10 @@
     "message": "Der er opstået en fejl"
   },
   "emailRequired": {
-    "message": "Emailadresse er påkrævet."
+    "message": "E-mailadresse er påkrævet."
   },
   "invalidEmail": {
-    "message": "Ugyldig emailadresse."
+    "message": "Ugyldig e-mailadresse."
   },
   "masterPassRequired": {
     "message": "Hovedadgangskode er påkrævet."
@@ -345,7 +345,7 @@
     "message": "Din nye konto er oprettet! Du kan nu logge ind."
   },
   "masterPassSent": {
-    "message": "Vi har sendt dig en email med dit hovedadgangskodetip."
+    "message": "Vi har sendt dig en e-mail med dit hovedadgangskodetip."
   },
   "verificationCodeRequired": {
     "message": "Bekræftelseskode er påkrævet."
@@ -361,16 +361,16 @@
     }
   },
   "autofillError": {
-    "message": "Ikke i stand til at auto-udfylde det valgte element på denne side. Kopier og indsæt dataene i stedet for."
+    "message": "Ikke i stand til at auto-udfylde det valgte element på denne side. Kopiér og indsæt dataene i stedet for."
   },
   "loggedOut": {
-    "message": "Logget af"
+    "message": "Logget ud"
   },
   "loginExpired": {
     "message": "Din login-session er udløbet."
   },
   "logOutConfirmation": {
-    "message": "Er du sikker på, at du vil logge af?"
+    "message": "Er du sikker på, du vil logge ud?"
   },
   "yes": {
     "message": "Ja"
@@ -394,7 +394,7 @@
     "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "twoStepLoginConfirmation": {
-    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller email. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+    "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, med en sikkerhedsnøgle, autentificerings app, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "editedFolder": {
     "message": "Redigerede mappe"
@@ -471,7 +471,7 @@
     "message": "Vi bruger Analytics for bedre at lære hvordan udvidelsen benyttes, så vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
   },
   "disableAddLoginNotification": {
-    "message": "Deaktiver Tilføj login notifikation"
+    "message": "Deaktivér Tilføj login notifikation"
   },
   "addLoginNotificationDesc": {
     "message": "\"Tilføj login notifikation\" spørger dig automatisk om du vil gemme nye logins til din boks, når du logger ind med dem for første gang."
@@ -486,7 +486,7 @@
     "message": "Aldrig for denne hjemmeside"
   },
   "disableChangedPasswordNotification": {
-    "message": "Deaktiver besked om ændret adgangskode"
+    "message": "Deaktivér besked om ændret adgangskode"
   },
   "disableChangedPasswordNotificationDesc": {
     "message": "\"Besked om ændret kodeord\" beder dig automatisk om at opdatere en adgangskode i din boks, når det opdager, at du har ændret den på en hjemmeside."
@@ -498,7 +498,7 @@
     "message": "Ja, opdater nu"
   },
   "disableContextMenuItem": {
-    "message": "Deaktiver Kontekst-menu valgmuligheder"
+    "message": "Deaktivér Kontekst-menu valgmuligheder"
   },
   "disableContextMenuItemDesc": {
     "message": "Kontekst-menu valgmuligheder giver hurtig adgang til adgangskode generering og login til hjemmesiden i din aktuelle fane."
@@ -525,7 +525,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. email). Slet den umiddelbart efter at du er færdig med at bruge den."
+    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. e-mail). Slet den umiddelbart efter at du er færdig med at bruge den."
   },
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
@@ -549,7 +549,7 @@
     "message": "Bekræftelseskode (TOTP)"
   },
   "copyVerificationCode": {
-    "message": "Kopier bekræftelseskoden"
+    "message": "Kopiér bekræftelseskoden"
   },
   "attachments": {
     "message": "Vedhæftninger"
@@ -591,7 +591,7 @@
     "message": "Premium-medlemskab"
   },
   "premiumManage": {
-    "message": "Administrer medlemsskab"
+    "message": "Administrér medlemsskab"
   },
   "premiumManageAlert": {
     "message": "Du kan administrere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
@@ -645,7 +645,7 @@
     "message": "Opdatering færdig"
   },
   "disableAutoTotpCopy": {
-    "message": "Deaktiver Automatisk TOTP kopi"
+    "message": "Deaktivér Automatisk TOTP kopi"
   },
   "disableAutoTotpCopyDesc": {
     "message": "Hvis dit login har en autentificeringsnøgle tilknyttet, kopieres TOTP verifikationskoden automatisk til din udklipsholder når du auto-udfylder login."
@@ -681,7 +681,7 @@
     "message": "Husk mig"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verifikationskode email igen"
+    "message": "Send verifikationskode-email igen"
   },
   "useAnotherTwoStepMethod": {
     "message": "Brug en anden to-trins login metode"
@@ -738,10 +738,10 @@
     "message": "FIDO U2F sikkerhedsnøgle"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "emailDesc": {
-    "message": "Bekræftelseskoder vil blive emailet til dig."
+    "message": "Bekræftelseskoder vil blive e-mailet til dig."
   },
   "selfHostedEnvironment": {
     "message": "Selv-hosted miljø"
@@ -774,7 +774,7 @@
     "message": "Miljøets URLs er blevet gemt."
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Aktiver Auto-udfyld ved sideindlæsning"
+    "message": "Aktivér Auto-udfyld ved sideindlæsning"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Hvis en login-formular er opdaget, så udfør automatisk en auto-udfyld når hjemmesiden indlæses."
@@ -786,7 +786,7 @@
     "message": "Auto-udfyld det sidste anvendte login for den aktuelle hjemmeside."
   },
   "commandGeneratePasswordDesc": {
-    "message": "Generer og kopier en ny tilfældig adgangskode til udklipsholderen."
+    "message": "Generér og kopiér en ny tilfældig adgangskode til udklipsholderen."
   },
   "privateModeMessage": {
     "message": "Desværre er dette vindue ikke tilgængelig i privat modus i denne browser."
@@ -795,7 +795,7 @@
     "message": "Brugerdefinerede felter"
   },
   "copyValue": {
-    "message": "Kopier værdi"
+    "message": "Kopiér værdi"
   },
   "value": {
     "message": "Værdi"
@@ -813,7 +813,7 @@
     "message": "Boolsk"
   },
   "popup2faCloseMessage": {
-    "message": "Ved at klikke uden for pop-up-vinduet for at tjekke din email for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
+    "message": "Ved at klikke uden for pop-up-vinduet for at tjekke din e-mail for din bekræftelseskode vil få denne popup til at lukke. Vil du åbne denne popup i et nyt vindue, så det ikke lukker?"
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
@@ -921,7 +921,7 @@
     "message": "Kørekortnummer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-mail"
   },
   "phone": {
     "message": "Telefon"

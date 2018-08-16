@@ -486,13 +486,13 @@
     "message": "Niemals für diese Webseite"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Passwort geändert Benachrichtigung deaktivieren"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "Die \"Passwort geändert Benachrichtigung\" fragt automatisch danach ein Passwort in deinem Vault zu aktualisieren, sobald erkannt wurde das du es auf einer Webseite geändert hast."
   },
   "notificationChangeDesc": {
-    "message": "Möchten Sie ihr Bitwarden-Passwort aktualisieren?"
+    "message": "Möchtest du dieses Passwort in Bitwarden aktualisieren?"
   },
   "notificationChangeSave": {
     "message": "Ja, jetzt aktualisieren"

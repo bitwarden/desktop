@@ -7,7 +7,7 @@
     "description": "Extension name"
   },
   "extDesc": {
-    "message": "Bitwarden est un gestionnaire de mot de passe sécurisé et gratuit pour tous vos appareils.",
+    "message": "Un gestionnaire de mots de passe sécurisé et gratuit pour tous vos appareils.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -62,7 +62,7 @@
     "message": "Onglet actif"
   },
   "copyPassword": {
-    "message": "Copier mot de passe"
+    "message": "Copier le mot de passe"
   },
   "copyNote": {
     "message": "Copier la note"
@@ -71,7 +71,7 @@
     "message": "Copier l'URI"
   },
   "copyUsername": {
-    "message": "Copier nom d'utilisateur"
+    "message": "Copier le nom d'utilisateur"
   },
   "copyNumber": {
     "message": "Copier le numéro"
@@ -468,13 +468,13 @@
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
-    "message": "Nous utilisons analytics pour mieux apprendre comment l'extension est utilisée et ainsi, la rendre meilleure. Toutes les données récoltées sont complètement anonymes."
+    "message": "Nous utilisons des outils d'analyse pour mieux apprendre comment l'extension est utilisée et ainsi, la rendre meilleure. Toutes les données récoltées sont complètement anonymes."
   },
   "disableAddLoginNotification": {
     "message": "Désactiver la notification de demande d'ajout d'identifiant"
   },
   "addLoginNotificationDesc": {
-    "message": "La \"Notification de demande d'ajout d'identifiant\" apparait automatiquement pour vous demander d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
+    "message": "La \"Notification de demande d'ajout d'identifiant\" apparaît automatiquement pour vous proposer d'enregistrer dans votre coffre les identifiants que vous utilisez pour la première fois."
   },
   "notificationAddDesc": {
     "message": "Est-ce que Bitwarden doit se souvenir de ce mot de passe pour vous ?"
@@ -501,7 +501,7 @@
     "message": "Désactiver les options de menu contextuelles"
   },
   "disableContextMenuItemDesc": {
-    "message": "Les options de menu contextuelles permettent un accès rapide à la génération de mots de passe et d'identifiants pour le site web de l'onglet actuel"
+    "message": "Les options du menu contextuel permettent un accès rapide à la génération de mots de passe et aux identifiants enregistrés pour le site web de l'onglet actuel."
   },
   "theme": {
     "message": "Thème"

@@ -486,16 +486,16 @@
     "message": "Nikad za ovu stranicu"
   },
   "disableChangedPasswordNotification": {
-    "message": "Disable Changed Password Notification"
+    "message": "Onemogući obavijest o promjeni lozinke"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"Obavijest o promijenjenoj lozinci\" automatski Vas traži da ažurirate zaporku za prijavu u trezoru svaki put kad otkrije da je promijenjena na web stranici."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Da li želite ažurirati ovu lozinku i u Bitwarden aplikaciji?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Da, ažuriraj sada"
   },
   "disableContextMenuItem": {
     "message": "Onemogući mogućnosti kontekstnog izbornika"
@@ -1067,11 +1067,11 @@
     "message": "Zadano"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Ažurirano",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Lozinka ažurirana",
     "description": "ex. Date this password was updated"
   }
 }

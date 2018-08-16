@@ -489,13 +489,13 @@
     "message": "Disable Changed Password Notification"
   },
   "disableChangedPasswordNotificationDesc": {
-    "message": "The \"Changed Password Notification\" automatically prompts you to update a login's password in your vault whenever it detects that you have changed it on a website."
+    "message": "\"Vaihdettu salasana ilmoitus\" kehottaa automaattisesti päivittämään kirjautumissalasanasi holvissasi, kun se havaitsee, että olet vaihtanut sen verkkosivulla."
   },
   "notificationChangeDesc": {
-    "message": "Do you want to update this password in Bitwarden?"
+    "message": "Haluatko päivittää tämän salasanan Bitwardenissa?"
   },
   "notificationChangeSave": {
-    "message": "Yes, Update Now"
+    "message": "Kyllä, päivitä nyt"
   },
   "disableContextMenuItem": {
     "message": "Älä näytä toimintoja pikavalikossa"
@@ -504,17 +504,17 @@
     "message": "Hiiren oikealla painikkeella ilmestyvän pikavalikon toiminnoilla voit nopeasti luoda itsellesi salasanan tai täyttää kirjautumiskentät nykyiselle välilehdelle."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Teema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Vaihda sovelluksen väriteema."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tumma",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Vaalea",
     "description": "Light color"
   },
   "exportVault": {
@@ -1064,14 +1064,14 @@
     "message": "Poista"
   },
   "default": {
-    "message": "Default"
+    "message": "Oletus"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Päivitetty",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Salasana päivitetty",
     "description": "ex. Date this password was updated"
   }
 }

@@ -135,7 +135,7 @@ Bitwarden stocke tous vos identifiants dans un coffre chiffré qui est synchroni
 Bitwarden est un logiciel 100% open source. Le code source de Bitwarden est hébergé sur Github et tout le monde est libre de le consulter, de l'auditer et de contribuer au code de Bitwarden.</value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Un gestionnaire de mot de passe sécurisé et gratuit pour tous vos appareils</value>
+    <value>Un gestionnaire de mots de passe sécurisé et gratuit pour tous vos appareils</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
     <value>Synchroniser et accéder à votre coffre depuis plusieurs appareils</value>
@@ -147,7 +147,7 @@ Bitwarden est un logiciel 100% open source. Le code source de Bitwarden est héb
     <value>Remplissage automatique et rapide de vos identifiants sur n'importe quel site que vous visitez</value>
   </data>
   <data name="ScreenshotMenu" xml:space="preserve">
-    <value>Votre coffre est facilement accessible depuis le menu contextuel de droite</value>
+    <value>Votre coffre est également facilement accessible depuis le menu contextuel</value>
   </data>
   <data name="ScreenshotPassword" xml:space="preserve">
     <value>Générer automatiquement des mots de passe forts, aléatoires et sécurisés</value>

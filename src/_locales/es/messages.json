@@ -468,7 +468,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "gaDesc": {
-    "message": "Realizamos análisis para aprender de como se utiliza la extensión para poder mejorarla. Toda la información recogida es completamente anónima."
+    "message": "Realizamos análisis para aprender de cómo se utiliza la extensión para poder mejorarla. Toda la información recogida es completamente anónima."
   },
   "disableAddLoginNotification": {
     "message": "Deshabilitar notificación para añadir entradas"
