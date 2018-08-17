@@ -29,7 +29,7 @@ import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { SearchService } from 'jslib/abstractions/search.service';
+import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StateService as StateServiceAbstraction } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -43,10 +43,12 @@ import BrowserMessagingService from '../../services/browserMessaging.service';
 
 import { AuthService } from 'jslib/services/auth.service';
 import { ConstantsService } from 'jslib/services/constants.service';
+import { SearchService } from 'jslib/services/search.service';
 import { StateService } from 'jslib/services/state.service';
 
 import { Analytics } from 'jslib/misc/analytics';
 
+import { PopupSearchService } from './popup-search.service';
 import { PopupUtilsService } from './popup-utils.service';
 
 function getBgService<T>(service: string) {
@@ -63,6 +65,8 @@ export const authService = new AuthService(getBgService<CryptoService>('cryptoSe
     getBgService<TokenService>('tokenService')(), getBgService<AppIdService>('appIdService')(),
     getBgService<I18nService>('i18nService')(), getBgService<PlatformUtilsService>('platformUtilsService')(),
     messagingService);
+export const searchService = new PopupSearchService(getBgService<SearchService>('searchService')(),
+    getBgService<CipherService>('cipherService')(), getBgService<PlatformUtilsService>('platformUtilsService')());
 
 export function initFactory(i18nService: I18nService, storageService: StorageService,
     popupUtilsService: PopupUtilsService): Function {
@@ -113,6 +117,7 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: MessagingService, useValue: messagingService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: StateServiceAbstraction, useValue: stateService },
+        { provide: SearchServiceAbstraction, useValue: searchService },
         { provide: AuditService, useFactory: getBgService<AuditService>('auditService'), deps: [] },
         { provide: CipherService, useFactory: getBgService<CipherService>('cipherService'), deps: [] },
         { provide: FolderService, useFactory: getBgService<FolderService>('folderService'), deps: [] },
@@ -141,7 +146,6 @@ export function initFactory(i18nService: I18nService, storageService: StorageSer
         { provide: AppIdService, useFactory: getBgService<AppIdService>('appIdService'), deps: [] },
         { provide: AutofillService, useFactory: getBgService<AutofillService>('autofillService'), deps: [] },
         { provide: ExportService, useFactory: getBgService<ExportService>('exportService'), deps: [] },
-        { provide: SearchService, useFactory: getBgService<SearchService>('searchService'), deps: [] },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

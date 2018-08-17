@@ -62,6 +62,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     private searchTimeout: any = null;
     private hasSearched = false;
     private hasLoadedAllCiphers = false;
+    private allCiphers: CipherView[] = null;
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         private cipherService: CipherService, private router: Router,
@@ -154,6 +155,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
     }
 
     async loadCiphers() {
+        this.allCiphers = await this.cipherService.getAllDecrypted();
         if (!this.hasLoadedAllCiphers) {
             this.hasLoadedAllCiphers = !this.searchService.isSearchable(this.searchText);
         }
@@ -216,7 +218,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
         }
         if (timeout == null) {
             this.hasSearched = this.searchService.isSearchable(this.searchText);
-            this.ciphers = await this.searchService.searchCiphers(this.searchText, null);
+            this.ciphers = await this.searchService.searchCiphers(this.searchText, null, this.allCiphers);
             return;
         }
         this.searchPending = true;
@@ -225,7 +227,7 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             if (!this.hasLoadedAllCiphers && !this.hasSearched) {
                 await this.loadCiphers();
             } else {
-                this.ciphers = await this.searchService.searchCiphers(this.searchText, null);
+                this.ciphers = await this.searchService.searchCiphers(this.searchText, null, this.allCiphers);
             }
             this.searchPending = false;
         }, timeout);
