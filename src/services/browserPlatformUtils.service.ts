@@ -208,8 +208,8 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     copyToClipboard(text: string, options?: any): void {
         let win = window;
         let doc = window.document;
-        if (options && options.window) {
-            win = options.window;
+        if (options && (options.window || options.win)) {
+            win = options.window || options.win;
             doc = win.document;
         } else if (options && options.doc) {
             doc = options.doc;
