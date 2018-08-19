@@ -203,7 +203,7 @@
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
     "del": "^3.0.0",
-    "electron": "2.0.5",
+    "electron": "2.0.7",
     "electron-builder": "^20.25.0",
     "electron-rebuild": "1.8.1",
     "electron-reload": "1.2.5",
