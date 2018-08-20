@@ -31,6 +31,7 @@ import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { NotificationsService } from 'jslib/abstractions/notifications.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SearchService } from 'jslib/abstractions/search.service';
@@ -80,7 +81,7 @@ export class AppComponent implements OnInit {
         private lockService: LockService, private storageService: StorageService,
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
         private messagingService: MessagingService, private collectionService: CollectionService,
-        private searchService: SearchService) {
+        private searchService: SearchService, private notificationsService: NotificationsService) {
         (window as any).BitwardenToasterService = toasterService;
     }
 
@@ -102,8 +103,11 @@ export class AppComponent implements OnInit {
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'loggedIn':
-                    case 'unlocked':
                     case 'loggedOut':
+                        this.notificationsService.updateConnection();
+                        this.updateAppMenu();
+                        break;
+                    case 'unlocked':
                         this.updateAppMenu();
                         break;
                     case 'logout':

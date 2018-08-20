@@ -36,6 +36,7 @@ import { ExportService } from 'jslib/services/export.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { LockService } from 'jslib/services/lock.service';
 import { LowdbStorageService } from 'jslib/services/lowdbStorage.service';
+import { NotificationsService } from 'jslib/services/notifications.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
 import { SearchService } from 'jslib/services/search.service';
 import { SettingsService } from 'jslib/services/settings.service';
@@ -61,6 +62,7 @@ import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.s
 import { LockService as LockServiceAbstraction } from 'jslib/abstractions/lock.service';
 import { LogService as LogServiceAbstraction } from 'jslib/abstractions/log.service';
 import { MessagingService as MessagingServiceAbstraction } from 'jslib/abstractions/messaging.service';
+import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
 import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
 } from 'jslib/abstractions/passwordGeneration.service';
@@ -111,19 +113,20 @@ const authService = new AuthService(cryptoService, apiService,
     userService, tokenService, appIdService, i18nService, platformUtilsService, messagingService);
 const exportService = new ExportService(folderService, cipherService, apiService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
+const notificationsService = new NotificationsService(userService, tokenService, syncService, appIdService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToWindow(window);
-environmentService.setUrlsFromStorage().then(() => {
-    return syncService.fullSync(true);
-});
 
 export function initFactory(): Function {
     return async () => {
+        await environmentService.setUrlsFromStorage();
+        syncService.fullSync(true);
         lockService.init(true);
         const locale = await storageService.get<string>(ConstantsService.localeKey);
         await i18nService.init(locale);
         await authService.init();
+        setTimeout(() => notificationsService.init(environmentService), 3000);
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
@@ -186,6 +189,7 @@ export function initFactory(): Function {
         { provide: LogServiceAbstraction, useValue: logService },
         { provide: ExportServiceAbstraction, useValue: exportService },
         { provide: SearchServiceAbstraction, useValue: searchService },
+        { provide: NotificationsServiceAbstraction, useValue: notificationsService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

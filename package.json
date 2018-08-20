@@ -238,6 +238,7 @@
     "@angular/platform-browser-dynamic": "5.2.0",
     "@angular/router": "5.2.0",
     "@angular/upgrade": "5.2.0",
+    "@aspnet/signalr": "1.0.2",
     "angular2-toaster": "4.0.2",
     "angulartics2": "5.0.1",
     "core-js": "2.4.1",
