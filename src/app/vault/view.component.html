@@ -257,8 +257,7 @@
                 </div>
                 <div *ngIf="cipher.hasPasswordHistory">
                     <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b> 
-                    <a href="#" (click)="viewHistory()" appStopClick title="{{'passwordHistory' | i18n}}"
-                       class="text-muted">
+                    <a href="#" (click)="viewHistory()" appStopClick title="{{'passwordHistory' | i18n}}">
                         {{cipher.passwordHistory.length}}
                     </a>
                 </div>

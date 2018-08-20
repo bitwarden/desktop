@@ -1,6 +1,8 @@
 import {
+    ChangeDetectorRef,
     Component,
     EventEmitter,
+    NgZone,
     OnChanges,
     Output,
 } from '@angular/core';
@@ -15,6 +17,8 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
+
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/view.component';
 
@@ -31,9 +35,10 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         tokenService: TokenService, toasterService: ToasterService,
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         i18nService: I18nService, analytics: Angulartics2,
-        auditService: AuditService) {
+        auditService: AuditService, broadcasterService: BroadcasterService,
+        ngZone: NgZone, changeDetectorRef: ChangeDetectorRef) {
         super(cipherService, totpService, tokenService, toasterService, cryptoService, platformUtilsService,
-            i18nService, analytics, auditService, window);
+            i18nService, analytics, auditService, window, broadcasterService, ngZone, changeDetectorRef);
     }
 
     async ngOnChanges() {
