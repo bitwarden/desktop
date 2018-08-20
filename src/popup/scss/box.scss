@@ -147,7 +147,7 @@
             &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
                 label, .row-label {
                     font-size: $font-size-base;
-                    display: inline;
+                    display: block;
                     width: initial;
                     margin-bottom: 0;
                 
@@ -183,6 +183,10 @@
 
                 input {
                     text-align: right;
+
+                    &[type="number"] {
+                        max-width: 50px;
+                    }
                 }
             }
 
