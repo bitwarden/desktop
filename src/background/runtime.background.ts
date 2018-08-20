@@ -22,6 +22,8 @@ import MainBackground from './main.background';
 import { AutofillService } from '../services/abstractions/autofill.service';
 import BrowserPlatformUtilsService from '../services/browserPlatformUtils.service';
 
+import { NotificationsService } from 'jslib/abstractions/notifications.service';
+
 import { Utils } from 'jslib/misc/utils';
 
 export default class RuntimeBackground {
@@ -33,7 +35,8 @@ export default class RuntimeBackground {
 
     constructor(private main: MainBackground, private autofillService: AutofillService,
         private cipherService: CipherService, private platformUtilsService: BrowserPlatformUtilsService,
-        private storageService: StorageService, private i18nService: I18nService, private analytics: Analytics) {
+        private storageService: StorageService, private i18nService: I18nService,
+        private analytics: Analytics, private notificationsService: NotificationsService) {
         this.isSafari = this.platformUtilsService.isSafari();
         this.runtime = this.isSafari ? safari.application : chrome.runtime;
 
@@ -77,6 +80,10 @@ export default class RuntimeBackground {
     async processMessage(msg: any, sender: any, sendResponse: any) {
         switch (msg.command) {
             case 'loggedIn':
+                await this.main.setIcon();
+                await this.main.refreshBadgeAndMenu(false);
+                this.notificationsService.updateConnection();
+                break;
             case 'unlocked':
             case 'locked':
                 await this.main.setIcon();

@@ -121,9 +121,11 @@ export class CiphersComponent extends BaseCiphersComponent implements OnInit, On
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'syncCompleted':
-                        window.setTimeout(() => {
-                            this.refresh();
-                        }, 500);
+                        if (message.successfully) {
+                            window.setTimeout(() => {
+                                this.refresh();
+                            }, 500);
+                        }
                         break;
                     default:
                         break;

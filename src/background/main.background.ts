@@ -20,6 +20,7 @@ import {
     UserService,
 } from 'jslib/services';
 import { ExportService } from 'jslib/services/export.service';
+import { NotificationsService } from 'jslib/services/notifications.service';
 import { SearchService } from 'jslib/services/search.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
@@ -45,6 +46,7 @@ import {
     UserService as UserServiceAbstraction,
 } from 'jslib/abstractions';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
+import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
 
 import { Analytics } from 'jslib/misc';
@@ -93,6 +95,7 @@ export default class MainBackground {
     auditService: AuditServiceAbstraction;
     exportService: ExportServiceAbstraction;
     searchService: SearchServiceAbstraction;
+    notificationsService: NotificationsServiceAbstraction;
     analytics: Analytics;
 
     onUpdatedRan: boolean;
@@ -128,7 +131,6 @@ export default class MainBackground {
         this.appIdService = new AppIdService(this.storageService);
         this.apiService = new ApiService(this.tokenService, this.platformUtilsService,
             async (expired: boolean) => await this.logout(expired));
-        this.environmentService = new EnvironmentService(this.apiService, this.storageService);
         this.userService = new UserService(this.tokenService, this.storageService);
         this.settingsService = new SettingsService(this.userService, this.storageService);
         this.cipherService = new CipherService(this.cryptoService, this.userService, this.settingsService,
@@ -155,6 +157,10 @@ export default class MainBackground {
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
         this.auditService = new AuditService(cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
+        this.notificationsService = new NotificationsService(this.userService, this.tokenService,
+            this.syncService, this.appIdService);
+        this.environmentService = new EnvironmentService(this.apiService, this.storageService,
+            this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
             this.storageService, this.appIdService);
 
@@ -166,7 +172,7 @@ export default class MainBackground {
         // Background
         this.runtimeBackground = new RuntimeBackground(this, this.autofillService, this.cipherService,
             this.platformUtilsService as BrowserPlatformUtilsService, this.storageService, this.i18nService,
-            this.analytics);
+            this.analytics, this.notificationsService);
         this.tabsBackground = new TabsBackground(this, this.platformUtilsService);
         this.commandsBackground = new CommandsBackground(this, this.passwordGenerationService,
             this.platformUtilsService, this.analytics);
@@ -202,7 +208,8 @@ export default class MainBackground {
                 await this.environmentService.setUrlsFromStorage();
                 await this.setIcon();
                 this.cleanupNotificationQueue();
-                await this.fullSync(true);
+                this.fullSync(true);
+                setTimeout(() => this.notificationsService.init(this.environmentService), 2500);
                 resolve();
             }, 500);
         });
@@ -271,6 +278,7 @@ export default class MainBackground {
 
         await this.setIcon();
         await this.refreshBadgeAndMenu();
+        this.notificationsService.updateConnection();
     }
 
     collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {

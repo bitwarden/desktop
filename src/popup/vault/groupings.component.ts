@@ -94,9 +94,11 @@ export class GroupingsComponent extends BaseGroupingsComponent implements OnInit
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'syncCompleted':
-                        window.setTimeout(() => {
-                            this.load();
-                        }, 500);
+                        if (message.successfully) {
+                            window.setTimeout(() => {
+                                this.load();
+                            }, 500);
+                        }
                         break;
                     default:
                         break;
