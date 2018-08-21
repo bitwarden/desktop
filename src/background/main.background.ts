@@ -158,7 +158,7 @@ export default class MainBackground {
         this.auditService = new AuditService(cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
         this.notificationsService = new NotificationsService(this.userService, this.tokenService,
-            this.syncService, this.appIdService);
+            this.syncService, this.appIdService, this.apiService);
         this.environmentService = new EnvironmentService(this.apiService, this.storageService,
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,
