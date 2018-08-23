@@ -144,6 +144,9 @@ export default class MainBackground {
         this.lockService = new LockService(this.cipherService, this.folderService, this.collectionService,
             this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService,
             this.searchService, async () => {
+                if (this.notificationsService != null) {
+                    this.notificationsService.updateConnection();
+                }
                 await this.setIcon();
                 await this.refreshBadgeAndMenu(true);
             });
@@ -157,8 +160,8 @@ export default class MainBackground {
         this.containerService = new ContainerService(this.cryptoService, this.platformUtilsService);
         this.auditService = new AuditService(cryptoFunctionService, this.apiService);
         this.exportService = new ExportService(this.folderService, this.cipherService, this.apiService);
-        this.notificationsService = new NotificationsService(this.userService, this.tokenService,
-            this.syncService, this.appIdService, this.apiService);
+        this.notificationsService = new NotificationsService(this.userService, this.syncService, this.appIdService,
+            this.apiService, this.cryptoService);
         this.environmentService = new EnvironmentService(this.apiService, this.storageService,
             this.notificationsService);
         this.analytics = new Analytics(window, () => BrowserApi.gaFilter(), this.platformUtilsService,

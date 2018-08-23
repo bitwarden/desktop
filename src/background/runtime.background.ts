@@ -80,14 +80,11 @@ export default class RuntimeBackground {
     async processMessage(msg: any, sender: any, sendResponse: any) {
         switch (msg.command) {
             case 'loggedIn':
-                await this.main.setIcon();
-                await this.main.refreshBadgeAndMenu(false);
-                this.notificationsService.updateConnection();
-                break;
             case 'unlocked':
             case 'locked':
                 await this.main.setIcon();
                 await this.main.refreshBadgeAndMenu(msg.command === 'locked');
+                this.notificationsService.updateConnection();
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);
