@@ -145,7 +145,7 @@ export default class MainBackground {
             this.cryptoService, this.platformUtilsService, this.storageService, this.messagingService,
             this.searchService, async () => {
                 if (this.notificationsService != null) {
-                    this.notificationsService.updateConnection();
+                    this.notificationsService.updateConnection(false);
                 }
                 await this.setIcon();
                 await this.refreshBadgeAndMenu(true);
@@ -281,7 +281,7 @@ export default class MainBackground {
 
         await this.setIcon();
         await this.refreshBadgeAndMenu();
-        this.notificationsService.updateConnection();
+        this.notificationsService.updateConnection(false);
     }
 
     collectPageDetailsForContentScript(tab: any, sender: string, frameId: number = null) {

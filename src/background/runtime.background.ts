@@ -84,7 +84,7 @@ export default class RuntimeBackground {
             case 'locked':
                 await this.main.setIcon();
                 await this.main.refreshBadgeAndMenu(msg.command === 'locked');
-                this.notificationsService.updateConnection();
+                this.notificationsService.updateConnection(msg.command === 'unlocked');
                 break;
             case 'logout':
                 await this.main.logout(msg.expired);
