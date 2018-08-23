@@ -180,7 +180,7 @@ export default class MainBackground {
         if (!this.isSafari) {
             this.contextMenusBackground = new ContextMenusBackground(this, this.cipherService,
                 this.passwordGenerationService, this.analytics, this.platformUtilsService);
-            this.idleBackground = new IdleBackground(this, this.lockService, this.storageService);
+            this.idleBackground = new IdleBackground(this.lockService, this.storageService, this.notificationsService);
             this.webRequestBackground = new WebRequestBackground(this.platformUtilsService, this.cipherService);
             this.windowsBackground = new WindowsBackground(this);
         }

@@ -1,23 +1,40 @@
-import MainBackground from './main.background';
-
-import { ConstantsService } from 'jslib/services';
+import { ConstantsService } from 'jslib/services/constants.service';
 
 import {
     LockService,
     StorageService,
 } from 'jslib/abstractions';
+import { NotificationsService } from 'jslib/abstractions/notifications.service';
+
+const IdleInterval = 60 * 5; // 5 minutes
 
 export default class IdleBackground {
     private idle: any;
+    private idleTimer: number = null;
+    private idleState = 'active';
 
-    constructor(private main: MainBackground, private lockService: LockService,
-        private storageService: StorageService) {
-        this.idle = chrome.idle;
+    constructor(private lockService: LockService, private storageService: StorageService,
+        private notificationsService: NotificationsService) {
+        this.idle = chrome.idle || browser.idle;
     }
 
     async init() {
         if (!this.idle) {
             return;
+        }
+
+        const idleHandler = (newState: string) => {
+            if (newState === 'active') {
+                this.notificationsService.reconnectFromActivity();
+            } else {
+                this.notificationsService.disconnectFromInactivity();
+            }
+        };
+        if (this.idle.onStateChanged && this.idle.setDetectionInterval) {
+            this.idle.setDetectionInterval(IdleInterval);
+            this.idle.onStateChanged.addListener(idleHandler);
+        } else {
+            this.pollIdle(idleHandler);
         }
 
         if (this.idle.onStateChanged) {
@@ -30,5 +47,19 @@ export default class IdleBackground {
                 }
             });
         }
+    }
+
+    private pollIdle(handler: (newState: string) => void) {
+        if (this.idleTimer != null) {
+            window.clearTimeout(this.idleTimer);
+            this.idleTimer = null;
+        }
+        this.idle.queryState(IdleInterval, (state: string) => {
+            if (state !== this.idleState) {
+                this.idleState = state;
+                handler(state);
+            }
+            this.idleTimer = window.setTimeout(() => this.pollIdle(handler), 5000);
+        });
     }
 }
