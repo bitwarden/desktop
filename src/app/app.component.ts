@@ -44,6 +44,7 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { ConstantsService } from 'jslib/services/constants.service';
 
 const BroadcasterSubscriptionId = 'AppComponent';
+const IdleTimeout = 60000 * 10; // 10 minutes
 
 @Component({
     selector: 'app-root',
@@ -69,6 +70,8 @@ export class AppComponent implements OnInit {
 
     private lastActivity: number = null;
     private modal: ModalComponent = null;
+    private idleTimer: number = null;
+    private isIdle = false;
 
     constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
         private broadcasterService: BroadcasterService, private userService: UserService,
@@ -104,10 +107,8 @@ export class AppComponent implements OnInit {
                 switch (message.command) {
                     case 'loggedIn':
                     case 'loggedOut':
-                        this.notificationsService.updateConnection();
-                        this.updateAppMenu();
-                        break;
                     case 'unlocked':
+                        this.notificationsService.updateConnection();
                         this.updateAppMenu();
                         break;
                     case 'logout':
@@ -118,6 +119,7 @@ export class AppComponent implements OnInit {
                         break;
                     case 'locked':
                         this.router.navigate(['lock']);
+                        this.notificationsService.updateConnection();
                         this.updateAppMenu();
                         break;
                     case 'syncStarted':
@@ -185,6 +187,30 @@ export class AppComponent implements OnInit {
 
         this.lastActivity = now;
         this.storageService.save(ConstantsService.lastActiveKey, now);
+
+        // Idle states
+        if (this.isIdle) {
+            this.isIdle = false;
+            this.idleStateChanged();
+        }
+        if (this.idleTimer != null) {
+            window.clearTimeout(this.idleTimer);
+            this.idleTimer = null;
+        }
+        this.idleTimer = window.setTimeout(() => {
+            if (!this.isIdle) {
+                this.isIdle = true;
+                this.idleStateChanged();
+            }
+        }, IdleTimeout);
+    }
+
+    private idleStateChanged() {
+        if (this.isIdle) {
+            this.notificationsService.disconnectFromInactivity();
+        } else {
+            this.notificationsService.reconnectFromActivity();
+        }
     }
 
     private openModal<T>(type: Type<T>, ref: ViewContainerRef) {
@@ -194,7 +220,7 @@ export class AppComponent implements OnInit {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = ref.createComponent(factory).instance;
-        const childComponent = this.modal.show<T>(type, ref);
+        this.modal.show<T>(type, ref);
 
         this.modal.onClosed.subscribe(() => {
             this.modal = null;
