@@ -243,7 +243,7 @@
     "angular2-toaster": "4.0.2",
     "angulartics2": "5.0.1",
     "core-js": "2.4.1",
-    "desktop-idle": "1.1.1",
+    "desktop-idle": "1.1.2",
     "electron-log": "2.2.14",
     "electron-updater": "3.0.3",
     "keytar": "4.2.1",
