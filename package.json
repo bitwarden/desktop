@@ -17,6 +17,7 @@
   },
   "license": "GPL-3.0",
   "scripts": {
+    "start": "cross-env ELECTRON_IS_DEV=0 ELECTRON_NO_UPDATER=1 electron ./build",
     "sub:init": "git submodule update --init --recursive",
     "sub:update": "git submodule update --remote",
     "sub:pull": "git submodule foreach git pull origin master",
@@ -201,6 +202,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "concurrently": "3.5.1",
     "copy-webpack-plugin": "^4.2.0",
+    "cross-env": "^5.1.4",
     "css-loader": "^0.28.7",
     "del": "^3.0.0",
     "electron": "2.0.7",

@@ -125,7 +125,7 @@ const renderer = {
             filename: '[name].js.map',
             include: ['app/main.js']
         }),
-        extractCss
+        extractCss,
     ]
 };
 
