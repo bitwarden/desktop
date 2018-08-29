@@ -230,7 +230,7 @@
                 </div>
             </div>
         </div>
-        <div class="box" *ngIf="cipher.hasAttachments && isPremium">
+        <div class="box" *ngIf="cipher.hasAttachments && canAccessPremium">
             <div class="box-header">
                 {{'attachments' | i18n}}
             </div>
