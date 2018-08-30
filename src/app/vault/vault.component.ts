@@ -98,7 +98,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         await this.addFolder();
                         break;
                     case 'focusSearch':
-                        (document.querySelector('#search') as HTMLInputElement).focus();
+                        (document.querySelector('#search') as HTMLInputElement).select();
                         detectChanges = false;
                         break;
                     case 'openPasswordGenerator':
