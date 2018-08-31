@@ -32,7 +32,9 @@
                                     {{'premiumSignUpFuture' | i18n}}
                                 </li>
                             </ul>
-                            <p class="text-center lead no-margin">{{'premiumPrice' | i18n : price}}</p>
+                            <p class="text-center lead no-margin">
+                                {{'premiumPrice' | i18n : (price | currency:'$')}}
+                            </p>
                         </div>
                         <div *ngIf="isPremium">
                             <p class="text-center lead">{{'premiumCurrentMember' | i18n}}</p>
