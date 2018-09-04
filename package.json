@@ -250,7 +250,7 @@
     "electron-updater": "3.0.3",
     "keytar": "4.2.1",
     "lowdb": "1.0.0",
-    "lunr": "2.3.1",
+    "lunr": "2.3.3",
     "node-forge": "0.7.1",
     "nord": "0.2.1",
     "papaparse": "4.3.5",
