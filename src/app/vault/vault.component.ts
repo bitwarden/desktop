@@ -409,7 +409,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     async filterCollection(collectionId: string) {
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
-        await this.ciphersComponent.load((c) => c.collectionIds.indexOf(collectionId) > -1);
+        await this.ciphersComponent.load((c) => c.collectionIds != null && c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();
         this.collectionId = collectionId;
         this.go();
