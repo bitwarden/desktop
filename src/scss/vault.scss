@@ -68,6 +68,8 @@
 
         ul.fa-ul {
             li {
+                word-break: break-all;
+
                 .fa-li {
                     left: -11px;
                     top: 8px;
