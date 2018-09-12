@@ -18,8 +18,14 @@ function webfonts() {
             format: 'woff',
         }))
         .pipe(gulp.dest(paths.cssDir));
-};
+}
+
+// ref: https://github.com/angular/angular/issues/22524
+function cleanupAotIssue() {
+    return del(['./node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts']);
+}
 
 gulp.task('clean', clean);
+gulp.task('cleanupAotIssue', cleanupAotIssue);
 gulp.task('webfonts', ['clean'], webfonts);
-gulp.task('prebuild:renderer', ['webfonts']);
+gulp.task('prebuild:renderer', ['webfonts', 'cleanupAotIssue']);

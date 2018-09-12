@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -11,48 +10,49 @@ const common = {
             {
                 test: /\.ts$/,
                 enforce: 'pre',
-                loader: 'tslint-loader'
+                loader: 'tslint-loader',
             },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
-                exclude: /node_modules\/(?!(@bitwarden)\/).*/
+                exclude: /node_modules\/(?!(@bitwarden)\/).*/,
             },
-        ]
+        ],
     },
     plugins: [],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
-            jslib: path.join(__dirname, 'jslib/src')
-        }
+            jslib: path.join(__dirname, 'jslib/src'),
+        },
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'build')
-    }
+        path: path.resolve(__dirname, 'build'),
+    },
 };
 
 const main = {
+    mode: 'production',
     target: 'electron-main',
     node: {
         __dirname: false,
-        __filename: false
+        __filename: false,
     },
     entry: {
-        'main': './src/main.ts'
+        'main': './src/main.ts',
     },
     module: {
         rules: [
             {
                 test: /\.node$/,
-                loader: 'node-loader'
+                loader: 'node-loader',
             },
-        ]
+        ],
     },
     plugins: [
         new CleanWebpackPlugin([
-            path.resolve(__dirname, 'build/*')
+            path.resolve(__dirname, 'build/*'),
         ]),
         new CopyWebpackPlugin([
             './src/package.json',
@@ -60,7 +60,7 @@ const main = {
             { from: './src/locales', to: 'locales' },
         ]),
     ],
-    externals: [nodeExternals()]
+    externals: [nodeExternals()],
 };
 
 module.exports = merge(common, main);
