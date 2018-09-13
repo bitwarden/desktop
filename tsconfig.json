@@ -37,6 +37,9 @@
       ]
     }
   },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true
+  },
   "exclude": [
     "node_modules",
     "jslib/node_modules",

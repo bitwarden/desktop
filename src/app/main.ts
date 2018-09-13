@@ -12,7 +12,7 @@ if (!isDev()) {
     enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic().bootstrapModule(AppModule, { preserveWhitespaces: true });
 
 // Disable drag and drop to prevent malicious links from executing in the context of the app
 document.addEventListener('dragover', (event) => event.preventDefault());
