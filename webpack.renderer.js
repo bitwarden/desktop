@@ -61,6 +61,7 @@ const renderer = {
         'app/main': './src/app/main.ts',
     },
     optimization: {
+        minimize: false,
         splitChunks: {
             cacheGroups: {
                 commons: {

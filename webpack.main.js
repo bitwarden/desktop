@@ -42,6 +42,9 @@ const main = {
     entry: {
         'main': './src/main.ts',
     },
+    optimization: {
+        minimize: false,
+    },
     module: {
         rules: [
             {
