@@ -294,10 +294,10 @@
     "message": "이름은 반드시 입력해야 합니다."
   },
   "addedItem": {
-    "message": "추가한 항목"
+    "message": "항목 추가함"
   },
   "editedItem": {
-    "message": "편집한 항목"
+    "message": "항목 편집함"
   },
   "deleteItem": {
     "message": "항목 삭제"
@@ -312,7 +312,7 @@
     "message": "정말 이 항목을 삭제하시겠습니까?"
   },
   "deletedItem": {
-    "message": "삭제한 항목"
+    "message": "항목 삭제함"
   },
   "overwritePasswordConfirmation": {
     "message": "정말 현재 비밀번호를 덮어쓰시겠습니까?"
@@ -369,7 +369,7 @@
     "message": "새 첨부 파일 추가"
   },
   "deletedAttachment": {
-    "message": "삭제한 첨부 파일"
+    "message": "첨부 파일 삭제함"
   },
   "deleteAttachmentConfirmation": {
     "message": "정말 이 첨부 파일을 삭제하시겠습니까?"
@@ -393,16 +393,16 @@
     "message": "옵션"
   },
   "editedFolder": {
-    "message": "편집한 폴더"
+    "message": "폴더 편집함"
   },
   "addedFolder": {
-    "message": "추가한 폴더"
+    "message": "폴더 추가함"
   },
   "deleteFolderConfirmation": {
     "message": "정말 이 폴더를 삭제하시겠습니까?"
   },
   "deletedFolder": {
-    "message": "삭제한 폴더"
+    "message": "폴더 삭제함"
   },
   "loginOrCreateNewAccount": {
     "message": "안전 보관함에 접근하려면 로그인하거나 새 계정을 만드세요."
@@ -592,6 +592,9 @@
   },
   "identityUrl": {
     "message": "ID 서버 URL"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "아이콘 서버 URL"
@@ -993,7 +996,7 @@
     "message": "Bitwarden 종료"
   },
   "valueCopied": {
-    "message": "$VALUE$를 클립보드에 복사했습니다.",
+    "message": "$VALUE$를 클립보드에 복사함",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1069,24 +1072,24 @@
     "message": "알림 영역으로 숨기기"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "업데이트됨",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "비밀번호 업데이트됨",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "보관함 내보내기"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "경고",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "내보낸 파일에는 암호화되지 않은 .csv 형식의 데이터가 포함되어 있습니다. 이메일 등의 안전하지 않은 방법을 통해 전송하거나 보관하지 마시고, 사용이 끝나면 바로 삭제하세요."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
   }
 }

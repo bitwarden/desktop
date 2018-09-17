@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "身分伺服器 URL"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "圖示伺服器 URL"
   },

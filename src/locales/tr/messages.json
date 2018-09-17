@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "Kimlik Sunucu URL'si"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "Simge Sunucu URL'si"
   },
@@ -777,10 +780,10 @@
     "message": "When minimizing the window, show an icon in the system tray instead."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Sistem ikonunu etkinleştir."
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Sistem çubuğunda her zaman ikonu göster."
   },
   "language": {
     "message": "Dil"
@@ -1069,24 +1072,24 @@
     "message": "Hide to Tray"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Güncellendi.",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Parola güncellendi",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
     "message": "Export Vault"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "UYARI",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Bu dışa aktarma .csv formatında şifrelenmemiş verilerinizi barındırır. Bunu güvenli olmayan kanallarla göndermeyin (e-posta gibi) ve ya saklamayın. İşiniz bittikten sonra bu dosyayı hemen silin."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
   }
 }

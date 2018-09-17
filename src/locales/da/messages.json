@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "Identitetsserver URL"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "Ikonserver URL"
   },
@@ -669,7 +672,7 @@
     "message": "Følg os"
   },
   "syncVault": {
-    "message": "Synkroniser boks"
+    "message": "Synkronisér boks"
   },
   "changeMasterPass": {
     "message": "Skift hovedadgangskode"
@@ -866,10 +869,10 @@
     "message": "Premium-medlemskab"
   },
   "premiumManage": {
-    "message": "Administrér medlemsskab"
+    "message": "Håndtér medlemsskab"
   },
   "premiumManageAlert": {
-    "message": "Du kan administrere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
+    "message": "Du kan håndtere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "premiumRefresh": {
     "message": "Opdater medlemskab"
@@ -1077,7 +1080,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Eksporter boks"
+    "message": "Eksportér boks"
   },
   "warning": {
     "message": "ADVARSEL",

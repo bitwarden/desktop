@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Kaikki kohteet"
@@ -384,7 +384,7 @@
     "message": "Valitse tiedosto."
   },
   "maxFileSize": {
-    "message": "Tiedoston enimmäiskoko on 100 MB."
+    "message": "Tiedoston enimmäiskoko on 100 Mt."
   },
   "updateKey": {
     "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "Identiteettipalvelimen URL"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "Kuvakepalvelimen URL"
   },
@@ -600,7 +603,7 @@
     "message": "Ohjelmistoympäristön URL:t tallennettu."
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "yes": {
     "message": "Kyllä"
@@ -789,28 +792,28 @@
     "message": "Vaihda sovelluksen kieli. Vaatii uudelleenkäynnistyksen."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Teema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Vaihda sovelluksen väriteemaa."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tumma",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Vaalea",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopioi",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Tarkista päivitykset"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Versio $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -819,7 +822,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Käynnistä uudelleen päivittääksesi"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
@@ -831,84 +834,84 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Päivitys saatavilla"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Päivitys löydetty. Haluatko ladata sen nyt?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Käynnistä uudelleen"
   },
   "later": {
-    "message": "Later"
+    "message": "Myöhemmin"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Ei päivityksiä saatavilla. Käytät uusinta versiota."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Päivitysvirhe"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Tuntematon"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kopioi käyttäjänimi"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Kopioi numero",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Kopioi turvakoodi",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium-jäsenyys"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Hallitse jäsenyyttä"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Voit hallita jäsenyyttäsi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Päivitä jäsenyys"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Et ole tällä hetkellä premium-jäsen."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Ryhdy premium-jäseneksi saadaksesi:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "yhden gigatavun salattua tallennustilaa"
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "lisävaihtoehtoja kaksivaiheiselle kirjautumiselle, kuten YubiKey, FIDO U2F ja Duo"
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "TOTP-vahvistuskoodigeneraattorin (2FA) holvisi käyttäjätunnuksille"
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "etusijan asiakastuessa"
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "kaikki tulevat premium-ominaisuudet. Lisää tulossa pian!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Osta premium"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Voit ostaa premium-jäsenyyden bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Olet premium-jäsen!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Thank you for supporting bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Kaikki tämä vain $PRICE$ \/ vuosi!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -917,58 +920,58 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Päivitys valmis"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Salasanahistoria"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Tyhjennä"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Ei salasanoja näytettäväksi."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Kumoa"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Tee uudelleen"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Leikkaa",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Liitä",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Valitse kaikki"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Lähennä"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Loitonna"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Palauta Lähennys"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Koko näytön tila päälle\/pois"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Lataa uudelleen"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Kehittäjätyökalut päälle\/pois"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Pienennä",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Lähennä"
   },
   "bringAllToFront": {
     "message": "Tuo kaikki eteen",
@@ -1069,24 +1072,24 @@
     "message": "Piilota ilmoitusalueelle"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Päivitetty",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Salasana päivitetty",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Vie holvi"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "VAROITUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Tämä vienti sisältää tietosi suojaamattomana .csv-muodossa. Tiedostoa ei kannata tallentaa tai lähettää turvattomia kanavia pitkin (kuten sähköposti). Poista se välittömästi, kun et enää tarvitse sitä."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Syötä pääsalasanasi viedäksesi holvisi tiedot."
   }
 }

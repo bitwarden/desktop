@@ -350,7 +350,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Onduidelijke tekens vermijden"
+    "message": "Dubbelzinnige tekens vermijden"
   },
   "searchCollection": {
     "message": "Verzameling doorzoeken"
@@ -592,6 +592,9 @@
   },
   "identityUrl": {
     "message": "Gebruikersbeheer server-URL"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "Pictogrammen server-URL"

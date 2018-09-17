@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "allItems": {
     "message": "Semua Item"
@@ -334,7 +334,7 @@
     "message": "Salin Kata Sandi"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Salin URI"
   },
   "length": {
     "message": "Panjang"
@@ -396,13 +396,13 @@
     "message": "Folder yang di Edit"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Tambah Folder"
   },
   "deleteFolderConfirmation": {
     "message": "Anda yakin Anda ingin menghapus folder ini?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Folder yang terhapus"
   },
   "loginOrCreateNewAccount": {
     "message": "Masuk atau buat akun baru untuk mengakses brankas Anda."
@@ -542,7 +542,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Verifikasi dengan Duo Security untuk organisasi anda dengan menggunakan Aplikasi Duo Mobile, SMS, panggilan telepon atau kunci keamanan U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -576,7 +576,7 @@
     "message": "Specify the base URL of your on-premise hosted bitwarden installation."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Lingkungan Kustom"
   },
   "customEnvironmentFooter": {
     "message": "For advanced users. You can specify the base URL of each service independently."
@@ -592,6 +592,9 @@
   },
   "identityUrl": {
     "message": "URL Server Identitas"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "URL Server Ikon"
@@ -639,7 +642,7 @@
     "message": "Tambahkan Folder Baru"
   },
   "view": {
-    "message": "View"
+    "message": "Tampilan"
   },
   "account": {
     "message": "Akun"
@@ -696,7 +699,7 @@
     "message": "Sinkronisasi selesai"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Gagal menyinkronkan"
   },
   "yourVaultIsLocked": {
     "message": "Brankas Anda terkunci. Verifikasi sandi utama Anda untuk melanjutkan."
@@ -759,10 +762,10 @@
     "message": "Keamanan"
   },
   "disableGa": {
-    "message": "Disable Analytics"
+    "message": "Nonaktifkan Analitik"
   },
   "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
+    "message": "Kami menggunakan analitik untuk lebih mempelajari bagaimana aplikasi digunakan sehingga kami dapat membuatnya lebih baik. Semua pengumpulan data benar-benar anonim."
   },
   "disableFavicon": {
     "message": "Disable Website Icons"
@@ -777,40 +780,40 @@
     "message": "When minimizing the window, show an icon in the system tray instead."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Aktifkan Ikon Baki"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Selalu tampilkan ikon di dalam baki sistem."
   },
   "language": {
-    "message": "Language"
+    "message": "Bahasa"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Ubah bahasa yang di gunakan oleh aplikasi. Mulai Ulang diperlukan."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Ubah tema warna aplikasi."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Gelap",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Terang",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Salin",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Periksa Pembaruan"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Versi $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -819,7 +822,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Mulai ulang untuk Perbarui"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
@@ -831,54 +834,54 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Pembaruan Tersedia"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Pembaruan telah di temukan. Apakah anda ingin mengunduhnya sekarang?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Mulai Ulang"
   },
   "later": {
-    "message": "Later"
+    "message": "Nanti"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Tidak ada update saat ini. Kamu menggunakan versi terbaru."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Kesalahan pada Pembaruan"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Tidak diketahui"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Salin Nama Pengguna"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Salin Nomor",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Salin Kode Keamanan",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Keanggotaan Premium"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Kelola Keanggotaan"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Anda dapat mengelola keanggotaan anda di Brankas Web bitwarden.com. Apakah anda ingin mengunjungi situs web itu sekarang?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Segarkan Keanggotaan"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Anda saat ini bukanlah pengguna Premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Daftar untuk keanggotaan Premium dan dapatkan:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB of encrypted file storage."
@@ -890,16 +893,16 @@
     "message": "TOTP verification code (2FA) generator for logins in your vault."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Dukungan pelanggan Prioritas."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Semua fitur Premium kedepannya. Selebihnya, akan segera hadir!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Beli Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Kamu bisa membeli keanggotaan Premium di Brankas Web bitwarden.com. Apakah kamu ingin mengunjungi situs web itu sekarang?"
   },
   "premiumCurrentMember": {
     "message": "Anda adalah anggota premium!"
@@ -908,7 +911,7 @@
     "message": "Thank you for supporting bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "Semua itu hanya $PRICE$\/tahun!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -917,13 +920,13 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Penyegaran selesai"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Riwayat Kata Sandi"
   },
   "clear": {
-    "message": "Clear"
+    "message": "Bersihkan"
   },
   "noPasswordsInList": {
     "message": "There are no passwords to list."
@@ -1009,10 +1012,10 @@
     "message": "Jendela"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Periksa jika kata sandi telah terpapar."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Kata sandi ini telah terpapar di dalam pelanggaran data selama $VALUE$ kali. Anda harus mengubahnya.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1021,7 +1024,7 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Kata sandi ini tidak di temukan di dalam pelanggaran data yang di kenal. Harusnya aman untuk di gunakan."
   },
   "baseDomain": {
     "message": "Basis domain"
@@ -1031,10 +1034,10 @@
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Tepat"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "Mulai dengan"
   },
   "regEx": {
     "message": "Regular expression",
@@ -1052,41 +1055,41 @@
     "message": "Toggle Options"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organisasi",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Bawaan"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Keluar"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Tampilkan \/ Sembunyikan",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Sembunyi ke Tray"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Di perbarui",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Kata Sandi telah Diperbarui",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Ekspor Brankas"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "PERINGATAN",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Ekspor ini berisi data anda yang tidak ter-enkripsi dalam format .csv. Anda seharusnya tidak menyimpan atau mengirimnya lewat kanal yang tidak aman (seperti e-mail). Hapus berkas ini dengan segera jika anda selesai menggunakannya."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Masukkan kata sandi utama untuk ekspor data brankas anda."
   }
 }
