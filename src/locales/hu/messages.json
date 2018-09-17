@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "Identitás szerver URL"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "Ikonok kiszolgáló URL-címe"
   },
@@ -1069,24 +1072,24 @@
     "message": "Elrejtés a tálcára"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Frissítve",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Jelszó frissítve",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Széf exportálása"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "FIGYELEM",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+    "message": "Ez az exportálás nem titkosított adatokat tartalmaz .csv formátumban. Ne tárold, vagy küldd el nem biztonságos csatornákon (mint például e-mail). Töröld azonnal miután végeztél a használatával."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Add meg a mesterjelszót a széf adatainak exportálásához."
   }
 }
