@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "آدرس سرور شناسایی"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "آدرس سرور آیکون ها"
   },
