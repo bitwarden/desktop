@@ -343,10 +343,10 @@
     "message": "Fermer"
   },
   "minNumbers": {
-    "message": "Minimum de chiffres"
+    "message": "Nombre minimum de chiffres"
   },
   "minSpecial": {
-    "message": "Minimum de caractères spéciaux",
+    "message": "Nombre minimum de caractères spéciaux",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -592,6 +592,9 @@
   },
   "identityUrl": {
     "message": "URL du serveur d'identification"
+  },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
     "message": "URL du serveur d’icônes"
