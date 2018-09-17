@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "Địa chỉ nhận dạng máy chủ"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "Biểu tượng địa chỉ máy chủ"
   },
