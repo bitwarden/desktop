@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "URL serveru identity"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "URL serveru ikonek"
   },
