@@ -593,6 +593,9 @@
   "identityUrl": {
     "message": "URL server de identificare"
   },
+  "notificationsUrl": {
+    "message": "Notifications Server URL"
+  },
   "iconsUrl": {
     "message": "URL server de pictograme"
   },
