@@ -7,9 +7,6 @@ import {
     Output,
 } from '@angular/core';
 
-import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
-
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -33,14 +30,13 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     @Output() onViewCipherPasswordHistory = new EventEmitter<CipherView>();
 
     constructor(cipherService: CipherService, totpService: TotpService,
-        tokenService: TokenService, toasterService: ToasterService,
+        tokenService: TokenService, i18nService: I18nService,
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
-        i18nService: I18nService, analytics: Angulartics2,
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
         userService: UserService) {
-        super(cipherService, totpService, tokenService, toasterService, cryptoService, platformUtilsService,
-            i18nService, analytics, auditService, window, broadcasterService, ngZone, changeDetectorRef, userService);
+        super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService);
     }
 
     async ngOnChanges() {
@@ -48,7 +44,7 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     }
 
     viewHistory() {
-        this.analytics.eventTrack.next({ action: 'View Password History' });
+        this.platformUtilsService.eventTrack('View Password History');
         this.onViewCipherPasswordHistory.emit(this.cipher);
     }
 }

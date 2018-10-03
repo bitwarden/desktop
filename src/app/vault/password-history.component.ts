@@ -1,6 +1,3 @@
-import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
-
 import { Component } from '@angular/core';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -16,9 +13,8 @@ import {
     templateUrl: 'password-history.component.html',
 })
 export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
-    constructor(cipherService: CipherService, analytics: Angulartics2,
-        platformUtilsService: PlatformUtilsService, i18nService: I18nService,
-        toasterService: ToasterService) {
-        super(cipherService, analytics, platformUtilsService, i18nService, toasterService, window);
+    constructor(cipherService: CipherService, platformUtilsService: PlatformUtilsService,
+        i18nService: I18nService) {
+        super(cipherService, platformUtilsService, i18nService, window);
     }
 }

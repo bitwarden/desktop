@@ -39,7 +39,7 @@ export class SettingsComponent implements OnInit {
     themeOptions: any[];
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
-        private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
+        i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private lockService: LockService,
         private stateService: StateService, private messagingService: MessagingService) {
         this.lockOptions = [

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 
-import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
-
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -17,8 +14,7 @@ import {
 })
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     constructor(folderService: FolderService, i18nService: I18nService,
-        analytics: Angulartics2, toasterService: ToasterService,
         platformUtilsService: PlatformUtilsService) {
-        super(folderService, i18nService, analytics, toasterService, platformUtilsService);
+        super(folderService, i18nService, platformUtilsService);
     }
 }

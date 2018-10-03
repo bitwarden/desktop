@@ -79,9 +79,9 @@ import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.s
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
 const stateService = new StateService();
-const platformUtilsService = new ElectronPlatformUtilsService(i18nService, true);
 const broadcasterService = new BroadcasterService();
 const messagingService = new ElectronRendererMessagingService(broadcasterService);
+const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messagingService, true);
 const storageService: StorageServiceAbstraction = new LowdbStorageService(null, remote.app.getPath('userData'));
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,

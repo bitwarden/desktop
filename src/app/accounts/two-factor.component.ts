@@ -7,9 +7,6 @@ import {
 
 import { Router } from '@angular/router';
 
-import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
-
 import { TwoFactorOptionsComponent } from './two-factor-options.component';
 
 import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
@@ -32,12 +29,10 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     @ViewChild('twoFactorOptions', { read: ViewContainerRef }) twoFactorOptionsModal: ViewContainerRef;
 
     constructor(authService: AuthService, router: Router,
-        analytics: Angulartics2, toasterService: ToasterService,
         i18nService: I18nService, apiService: ApiService,
-        platformUtilsService: PlatformUtilsService, private syncService: SyncService,
+        platformUtilsService: PlatformUtilsService, syncService: SyncService,
         environmentService: EnvironmentService, private componentFactoryResolver: ComponentFactoryResolver) {
-        super(authService, router, analytics, toasterService, i18nService, apiService,
-            platformUtilsService, window, environmentService);
+        super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
