@@ -5,6 +5,7 @@ import {
     ToasterContainerComponent,
     ToasterService,
 } from 'angular2-toaster';
+import { Angulartics2 } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import {
@@ -23,8 +24,6 @@ import { Router } from '@angular/router';
 import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
-
-import { Angulartics2 } from 'angulartics2';
 
 import { ModalComponent } from 'jslib/angular/components/modal.component';
 
@@ -141,7 +140,7 @@ export class AppComponent implements OnInit {
                             PasswordGeneratorHistoryComponent, this.passwordHistoryRef);
                         break;
                     case 'showToast':
-                        await this.showToast(message);
+                        this.showToast(message);
                         break;
                     case 'analyticsEventTrack':
                         this.analytics.eventTrack.next({
@@ -240,7 +239,7 @@ export class AppComponent implements OnInit {
         });
     }
 
-    private async showToast(msg: any) {
+    private showToast(msg: any) {
         const toast: Toast = {
             type: msg.type,
             title: msg.title,

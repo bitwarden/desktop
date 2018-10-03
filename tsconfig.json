@@ -17,12 +17,6 @@
       "@angular/*": [
         "node_modules/@angular/*"
       ],
-      "angular2-toaster": [
-        "node_modules/angular2-toaster"
-      ],
-      "angulartics2": [
-        "node_modules/angulartics2"
-      ],
       "electron": [
         "node_modules/electron"
       ],
