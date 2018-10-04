@@ -126,7 +126,7 @@ export function initFactory(): Function {
         lockService.init(true);
         const locale = await storageService.get<string>(ConstantsService.localeKey);
         await i18nService.init(locale);
-        await authService.init();
+        authService.init();
         setTimeout(() => notificationsService.init(environmentService), 3000);
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
