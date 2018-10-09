@@ -69,6 +69,9 @@
   "password": {
     "message": "Mật khẩu"
   },
+  "passphrase": {
+    "message": "Passphrase"
+  },
   "editItem": {
     "message": "Chỉnh sửa mục"
   },
@@ -338,6 +341,12 @@
   },
   "length": {
     "message": "Độ dài"
+  },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
   },
   "close": {
     "message": "Đóng"
