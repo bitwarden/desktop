@@ -69,6 +69,9 @@
   "password": {
     "message": "Salasana"
   },
+  "passphrase": {
+    "message": "Passphrase"
+  },
   "editItem": {
     "message": "Muokkaa kohdetta"
   },
@@ -276,16 +279,16 @@
     "message": "Uusi lisäkenttä"
   },
   "value": {
-    "message": "Teksti"
+    "message": "Arvo"
   },
   "cfTypeText": {
     "message": "Teksti"
   },
   "cfTypeHidden": {
-    "message": "Piilotettu teksti"
+    "message": "Piilotettu"
   },
   "cfTypeBoolean": {
-    "message": "Valintaruutu"
+    "message": "Totuusarvo"
   },
   "remove": {
     "message": "Poista"
@@ -339,6 +342,12 @@
   "length": {
     "message": "Pituus"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "close": {
     "message": "Sulje"
   },
@@ -353,16 +362,16 @@
     "message": "Vältä epäselviä merkkejä"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Hae kokoelmasta"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "Hae kansiosta"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "Hae suosikeista"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "Hakutyyppi",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -573,7 +582,7 @@
     "message": "Itse ylläpidetty ohjelmistoympäristö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted bitwarden installation."
+    "message": "Määritä omalla palvelimella ylläpidetyn Bitwarden-asennuksen kanta-URL."
   },
   "customEnvironment": {
     "message": "Mukautettu ohjelmistoympäristö"
@@ -594,7 +603,7 @@
     "message": "Identiteettipalvelimen URL"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Ilmoituspalvelimen URL"
   },
   "iconsUrl": {
     "message": "Kuvakepalvelimen URL"
@@ -825,7 +834,7 @@
     "message": "Käynnistä uudelleen päivittääksesi"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart Bitwarden to complete the installation. Do you want to restart and update now?",
+    "message": "Versio $VERSION_NUM$ on valmis asennettavaksi. Sovellus tulee käynnistää uudelleen, jotta asennus voidaan suorittaa loppuun. Haluatko käynnistää sovelluksen uudelleen ja päivittää nyt?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -908,7 +917,7 @@
     "message": "Olet premium-jäsen!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting bitwarden."
+    "message": "Kiitos kun tuit Bitwardenia."
   },
   "premiumPrice": {
     "message": "Kaikki tämä vain $PRICE$ \/ vuosi!",

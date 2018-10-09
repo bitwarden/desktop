@@ -69,6 +69,9 @@
   "password": {
     "message": "Hasło"
   },
+  "passphrase": {
+    "message": "Passphrase"
+  },
   "editItem": {
     "message": "Edytuj element"
   },
@@ -339,6 +342,12 @@
   "length": {
     "message": "Długość"
   },
+  "numWords": {
+    "message": "Number of Words"
+  },
+  "wordSeparator": {
+    "message": "Word Separator"
+  },
   "close": {
     "message": "Zamknij"
   },
@@ -594,7 +603,7 @@
     "message": "URL serwera tożsamości"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Adres URL serwera powiadomień"
   },
   "iconsUrl": {
     "message": "URL serwera ikon"
