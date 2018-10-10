@@ -165,6 +165,114 @@ export class MenuMain extends BaseMenu {
             });
         }
 
+        const helpSubmenu: MenuItemConstructorOptions[] = [
+            {
+                label: this.main.i18nService.t('emailUs'),
+                click: () => shell.openExternal('mailTo:hello@bitwarden.com'),
+            },
+            {
+                label: this.main.i18nService.t('visitOurWebsite'),
+                click: () => shell.openExternal('https://bitwarden.com/contact'),
+            },
+            {
+                label: this.main.i18nService.t('fileBugReport'),
+                click: () => shell.openExternal('https://github.com/bitwarden/desktop'),
+            },
+            { type: 'separator' },
+            {
+                label: this.main.i18nService.t('followUs'),
+                submenu: [
+                    {
+                        label: this.main.i18nService.t('blog'),
+                        click: () => shell.openExternal('https://blog.bitwarden.com'),
+                    },
+                    {
+                        label: 'Twitter',
+                        click: () => shell.openExternal('https://twitter.com/bitwarden_app'),
+                    },
+                    {
+                        label: 'Facebook',
+                        click: () => shell.openExternal('https://www.facebook.com/bitwarden/'),
+                    },
+                    {
+                        label: 'Google+',
+                        click: () => shell.openExternal('https://plus.google.com/114869903467947368993'),
+                    },
+                    {
+                        label: 'GitHub',
+                        click: () => shell.openExternal('https://github.com/bitwarden'),
+                    },
+                ],
+            },
+            { type: 'separator' },
+            {
+                label: this.main.i18nService.t('goToWebVault'),
+                click: async () => await this.openWebVault(),
+            },
+        ];
+
+        if (!isWindowsStore()) {
+            helpSubmenu.push({
+                label: this.main.i18nService.t('getMobileApp'),
+                submenu: [
+                    {
+                        label: 'iOS',
+                        click: () => {
+                            shell.openExternal('https://itunes.apple.com/app/' +
+                                'bitwarden-free-password-manager/id1137397744?mt=8');
+                        },
+                    },
+                    {
+                        label: 'Android',
+                        click: () => {
+                            shell.openExternal('https://play.google.com/store/apps/' +
+                                'details?id=com.x8bit.bitwarden');
+                        },
+                    },
+                ],
+            });
+            helpSubmenu.push({
+                label: this.main.i18nService.t('getBrowserExtension'),
+                submenu: [
+                    {
+                        label: 'Chrome',
+                        click: () => {
+                            shell.openExternal('https://chrome.google.com/webstore/detail/' +
+                                'bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb');
+                        },
+                    },
+                    {
+                        label: 'Firefox',
+                        click: () => {
+                            shell.openExternal('https://addons.mozilla.org/firefox/addon/' +
+                                'bitwarden-password-manager/');
+                        },
+                    },
+                    {
+                        label: 'Opera',
+                        click: () => {
+                            shell.openExternal('https://addons.opera.com/extensions/details/' +
+                                'bitwarden-free-password-manager/');
+                        },
+                    },
+                    {
+                        label: 'Edge',
+                        click: () => {
+                            shell.openExternal('https://www.microsoft.com/store/p/' +
+                                'bitwarden-free-password-manager/9p6kxl0svnnl');
+                        },
+                    },
+                    {
+                        label: 'Safari',
+                        click: () => {
+                            shell.openExternal('https://safari-extensions.apple.com/details/' +
+                                '?id=com.bitwarden.safari-LTZ2PFU5D6');
+                        },
+                    },
+                ],
+            });
+        }
+
         const template: MenuItemConstructorOptions[] = [
             {
                 label: this.main.i18nService.t('file'),
@@ -252,110 +360,7 @@ export class MenuMain extends BaseMenu {
             {
                 label: this.main.i18nService.t('help'),
                 role: 'help',
-                submenu: [
-                    {
-                        label: this.main.i18nService.t('emailUs'),
-                        click: () => shell.openExternal('mailTo:hello@bitwarden.com'),
-                    },
-                    {
-                        label: this.main.i18nService.t('visitOurWebsite'),
-                        click: () => shell.openExternal('https://bitwarden.com/contact'),
-                    },
-                    {
-                        label: this.main.i18nService.t('fileBugReport'),
-                        click: () => shell.openExternal('https://github.com/bitwarden/desktop'),
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('followUs'),
-                        submenu: [
-                            {
-                                label: this.main.i18nService.t('blog'),
-                                click: () => shell.openExternal('https://blog.bitwarden.com'),
-                            },
-                            {
-                                label: 'Twitter',
-                                click: () => shell.openExternal('https://twitter.com/bitwarden_app'),
-                            },
-                            {
-                                label: 'Facebook',
-                                click: () => shell.openExternal('https://www.facebook.com/bitwarden/'),
-                            },
-                            {
-                                label: 'Google+',
-                                click: () => shell.openExternal('https://plus.google.com/114869903467947368993'),
-                            },
-                            {
-                                label: 'GitHub',
-                                click: () => shell.openExternal('https://github.com/bitwarden'),
-                            },
-                        ],
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('goToWebVault'),
-                        click: async () => await this.openWebVault(),
-                    },
-                    {
-                        label: this.main.i18nService.t('getMobileApp'),
-                        submenu: [
-                            {
-                                label: 'iOS',
-                                click: () => {
-                                    shell.openExternal('https://itunes.apple.com/app/' +
-                                        'bitwarden-free-password-manager/id1137397744?mt=8');
-                                },
-                            },
-                            {
-                                label: 'Android',
-                                click: () => {
-                                    shell.openExternal('https://play.google.com/store/apps/' +
-                                        'details?id=com.x8bit.bitwarden');
-                                },
-                            },
-                        ],
-                    },
-                    {
-                        label: this.main.i18nService.t('getBrowserExtension'),
-                        submenu: [
-                            {
-                                label: 'Chrome',
-                                click: () => {
-                                    shell.openExternal('https://chrome.google.com/webstore/detail/' +
-                                        'bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb');
-                                },
-                            },
-                            {
-                                label: 'Firefox',
-                                click: () => {
-                                    shell.openExternal('https://addons.mozilla.org/firefox/addon/' +
-                                        'bitwarden-password-manager/');
-                                },
-                            },
-                            {
-                                label: 'Opera',
-                                click: () => {
-                                    shell.openExternal('https://addons.opera.com/extensions/details/' +
-                                        'bitwarden-free-password-manager/');
-                                },
-                            },
-                            {
-                                label: 'Edge',
-                                click: () => {
-                                    shell.openExternal('https://www.microsoft.com/store/p/' +
-                                        'bitwarden-free-password-manager/9p6kxl0svnnl');
-                                },
-                            },
-                            {
-                                label: 'Safari',
-                                click: () => {
-                                    shell.openExternal('https://safari-extensions.apple.com/details/' +
-                                        '?id=com.bitwarden.safari-LTZ2PFU5D6');
-                                },
-                            },
-                        ],
-                    },
-                ],
+                submenu: helpSubmenu,
             },
         ];
 
