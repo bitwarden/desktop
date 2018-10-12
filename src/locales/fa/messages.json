@@ -70,7 +70,7 @@
     "message": "کلمه عبور"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "کلمه عبور"
   },
   "editItem": {
     "message": "ویرایش مورد"
@@ -343,10 +343,10 @@
     "message": "طول"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "تعداد کلمات"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "کلمه جداکننده"
   },
   "close": {
     "message": "بستن"
