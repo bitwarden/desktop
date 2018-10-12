@@ -70,7 +70,7 @@
     "message": "パスワード"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "パスフレーズ"
   },
   "editItem": {
     "message": "アイテムの編集"
@@ -343,10 +343,10 @@
     "message": "長さ"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "単語数"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "単語の区切り"
   },
   "close": {
     "message": "閉じる"
