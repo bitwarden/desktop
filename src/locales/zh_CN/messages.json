@@ -70,7 +70,7 @@
     "message": "密码"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "密码"
   },
   "editItem": {
     "message": "编辑项目"
@@ -343,10 +343,10 @@
     "message": "长度"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "字数"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "单词分隔符"
   },
   "close": {
     "message": "关闭"

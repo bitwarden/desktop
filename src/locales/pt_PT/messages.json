@@ -70,7 +70,7 @@
     "message": "Palavra-passe"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Frase-passe"
   },
   "editItem": {
     "message": "Editar item"
@@ -343,10 +343,10 @@
     "message": "Comprimento"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Número de palavras"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Separador de palavras"
   },
   "close": {
     "message": "Fechar"

@@ -70,7 +70,7 @@
     "message": "Passwort"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Passwort"
   },
   "editItem": {
     "message": "Eintrag editieren"
@@ -343,10 +343,10 @@
     "message": "Länge"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Anzahl der Wörter"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Worttrennzeichen"
   },
   "close": {
     "message": "Schließen"
@@ -603,7 +603,7 @@
     "message": "Identitätsserver-URL"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "URL des Benachrichtigungsserver"
   },
   "iconsUrl": {
     "message": "Icons Server URL"

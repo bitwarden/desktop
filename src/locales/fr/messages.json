@@ -70,7 +70,7 @@
     "message": "Mot de passe"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Phrase de passe"
   },
   "editItem": {
     "message": "Modifier l'identifiant"
@@ -343,10 +343,10 @@
     "message": "Longueur"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Nombre de mots"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Séparateur de mots"
   },
   "close": {
     "message": "Fermer"

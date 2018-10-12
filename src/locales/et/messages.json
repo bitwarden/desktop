@@ -343,10 +343,10 @@
     "message": "Pikkus"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Sõnade arv"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Sõna eraldaja"
   },
   "close": {
     "message": "Sulge"
