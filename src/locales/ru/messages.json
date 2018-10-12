@@ -70,7 +70,7 @@
     "message": "Пароль"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Парольная фраза"
   },
   "editItem": {
     "message": "Изменение элемента"
@@ -343,10 +343,10 @@
     "message": "Длина"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Количество слов"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Разделитель слов"
   },
   "close": {
     "message": "Закрыть"
