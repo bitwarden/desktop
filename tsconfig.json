@@ -11,6 +11,9 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
+      "tldjs": [
+        "jslib/src/misc/tldjs.noop"
+      ],
       "jslib/*": [
         "jslib/src/*"
       ],
