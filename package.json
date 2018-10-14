@@ -197,7 +197,6 @@
     "@types/node-forge": "^0.7.5",
     "@types/papaparse": "^4.5.3",
     "@types/semver": "^5.5.0",
-    "@types/tldjs": "^2.3.0",
     "@types/webcrypto": "^0.0.28",
     "@types/webpack": "^4.4.11",
     "clean-webpack-plugin": "^0.1.19",
