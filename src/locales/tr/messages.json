@@ -70,7 +70,7 @@
     "message": "Şifre"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Parola"
   },
   "editItem": {
     "message": "Öğeyi Düzenle"
@@ -343,10 +343,10 @@
     "message": "Uzunluk"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Kelime Sayısı"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Kelime Ayracı"
   },
   "close": {
     "message": "Kapat"
