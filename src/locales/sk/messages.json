@@ -70,7 +70,7 @@
     "message": "Heslo"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Heslo"
   },
   "editItem": {
     "message": "Upraviť položku"
@@ -343,10 +343,10 @@
     "message": "Dĺžka"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Počet slov"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Oddeľovač slov"
   },
   "close": {
     "message": "Zavrieť"
@@ -603,7 +603,7 @@
     "message": "URL servera identít"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "URL adresa servera pre oznámenia"
   },
   "iconsUrl": {
     "message": "URL servera ikôn"
