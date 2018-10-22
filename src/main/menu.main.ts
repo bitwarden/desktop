@@ -370,6 +370,7 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('settings'),
                 id: 'settings',
                 click: () => this.main.messagingService.send('openSettings'),
+                accelerator: 'CmdOrCtrl+,',
             },
             {
                 label: this.main.i18nService.t('lockNow'),
