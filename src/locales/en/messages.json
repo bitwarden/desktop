@@ -1118,5 +1118,11 @@
   },
   "noCollectionsInList": {
     "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
   }
 }

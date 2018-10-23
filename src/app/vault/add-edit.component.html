@@ -303,6 +303,36 @@
                     </div>
                 </div>
             </div>
+            <div class="box" *ngIf="!editMode && ownershipOptions && ownershipOptions.length > 1">
+                <div class="box-header">
+                    {{'ownership' | i18n}}
+                </div>
+                <div class="box-content">
+                    <div class="box-content-row" appBoxRow>
+                        <label for="organizationId">{{'whoOwnsThisItem' | i18n}}</label>
+                        <select id="organizationId" class="form-control" name="OrganizationId"
+                                [(ngModel)]="cipher.organizationId" (change)="organizationChanged()">
+                            <option *ngFor="let o of ownershipOptions" [ngValue]="o.value">{{o.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="box" *ngIf="!editMode && cipher.organizationId">
+                <div class="box-header">
+                    {{'collections' | i18n}}
+                </div>
+                <div class="box-content" *ngIf="!collections || !collections.length">
+                    {{'noCollectionsInList' | i18n}}
+                </div>
+                <div class="box-content" *ngIf="collections && collections.length">
+                    <div class="box-content-row box-content-row-checkbox"
+                         *ngFor="let c of collections; let i = index" appBoxRow>
+                        <label for="collection_{{i}}">{{c.name}}</label>
+                        <input id="collection_{{i}}" type="checkbox" [(ngModel)]="c.checked"
+                               name="Collection[{{i}}].Checked">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer">
