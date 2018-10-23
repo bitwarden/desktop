@@ -26,11 +26,13 @@ import { ModalComponent } from 'jslib/angular/components/modal.component';
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
+import { CollectionsComponent } from './collections.component';
 import { ExportComponent } from './export.component';
 import { FolderAddEditComponent } from './folder-add-edit.component';
 import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
 import { PasswordHistoryComponent } from './password-history.component';
+import { ShareComponent } from './share.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
 
@@ -58,6 +60,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild('folderAddEdit', { read: ViewContainerRef }) folderAddEditModalRef: ViewContainerRef;
     @ViewChild('passwordHistory', { read: ViewContainerRef }) passwordHistoryModalRef: ViewContainerRef;
     @ViewChild('exportVault', { read: ViewContainerRef }) exportVaultModalRef: ViewContainerRef;
+    @ViewChild('share', { read: ViewContainerRef }) shareModalRef: ViewContainerRef;
+    @ViewChild('collections', { read: ViewContainerRef }) collectionsModalRef: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -350,6 +354,45 @@ export class VaultComponent implements OnInit, OnDestroy {
                 await this.ciphersComponent.refresh();
             }
             madeAttachmentChanges = false;
+        });
+    }
+
+    shareCipher(cipher: CipherView) {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.shareModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<ShareComponent>(ShareComponent, this.shareModalRef);
+        childComponent.cipherId = cipher.id;
+
+        childComponent.onSharedCipher.subscribe(async () => {
+            this.modal.close();
+            this.viewCipher(cipher);
+            await this.ciphersComponent.refresh();
+        });
+        this.modal.onClosed.subscribe(async () => {
+            this.modal = null;
+        });
+    }
+
+    cipherCollections(cipher: CipherView) {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.collectionsModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<CollectionsComponent>(CollectionsComponent, this.collectionsModalRef);
+        childComponent.cipherId = cipher.id;
+
+        childComponent.onSavedCollections.subscribe(() => {
+            this.modal.close();
+            this.viewCipher(cipher);
+        });
+        this.modal.onClosed.subscribe(async () => {
+            this.modal = null;
         });
     }
 

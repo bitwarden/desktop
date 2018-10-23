@@ -43,12 +43,14 @@ import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
+import { CollectionsComponent } from './vault/collections.component';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
+import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
@@ -138,6 +140,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BlurClickDirective,
         BoxRowDirective,
         CiphersComponent,
+        CollectionsComponent,
         EnvironmentComponent,
         ExportComponent,
         FallbackSrcDirective,
@@ -156,6 +159,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SettingsComponent,
+        ShareComponent,
         StopClickDirective,
         StopPropDirective,
         TrueFalseValueDirective,
@@ -166,6 +170,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
     ],
     entryComponents: [
         AttachmentsComponent,
+        CollectionsComponent,
         EnvironmentComponent,
         ExportComponent,
         FolderAddEditComponent,
@@ -175,6 +180,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordHistoryComponent,
         PremiumComponent,
         SettingsComponent,
+        ShareComponent,
         TwoFactorOptionsComponent,
     ],
     providers: [],
