@@ -38,6 +38,18 @@
   "shared": {
     "message": "共用"
   },
+  "share": {
+    "message": "Share"
+  },
+  "shareItem": {
+    "message": "Share Item"
+  },
+  "sharedItem": {
+    "message": "Shared Item"
+  },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  },
   "attachments": {
     "message": "附件"
   },
@@ -70,7 +82,7 @@
     "message": "密碼"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "密碼"
   },
   "editItem": {
     "message": "編輯項目"
@@ -343,10 +355,10 @@
     "message": "長度"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "字數"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "文字分隔字元"
   },
   "close": {
     "message": "關閉"
@@ -1100,5 +1112,17 @@
   },
   "exportMasterPassword": {
     "message": "輸入您的主密碼以匯出密碼庫資料。"
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
   }
 }
