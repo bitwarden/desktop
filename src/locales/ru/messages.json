@@ -39,16 +39,16 @@
     "message": "Общие"
   },
   "share": {
-    "message": "Share"
+    "message": "Поделиться"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Поделиться элементом"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Общий элемент"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Выберите организацию, которой вы хотите предоставить доступ к этому элементу. После выполнения этой операции права на элемент будут переданы организации и вы не будете являться непосредственным владельцем этого элемента."
   },
   "attachments": {
     "message": "Вложения"
@@ -1114,15 +1114,15 @@
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Вы не являетесь членом какой-либо организации. Организации позволяют безопасно обмениваться элементами с другими пользователями."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Нет коллекций для отображения."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Владелец"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Кому принадлежит этот элемент?"
   }
 }
