@@ -38,6 +38,18 @@
   "shared": {
     "message": "Dibagikan"
   },
+  "share": {
+    "message": "Share"
+  },
+  "shareItem": {
+    "message": "Share Item"
+  },
+  "sharedItem": {
+    "message": "Shared Item"
+  },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  },
   "attachments": {
     "message": "Lampiran"
   },
@@ -70,7 +82,7 @@
     "message": "Kata Sandi"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Frasa sandi"
   },
   "editItem": {
     "message": "Edit Item"
@@ -98,7 +110,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Alihkan Visibilitas"
   },
   "cardholderName": {
     "message": "Nama Pemilik Kartu"
@@ -343,10 +355,10 @@
     "message": "Panjang"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Jumlah kata"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Pemisah Kata"
   },
   "close": {
     "message": "Tutup"
@@ -579,7 +591,7 @@
     "message": "Pilihan Info Masuk Dua Langkah"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Lingkungan Hos-mandiri"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Specify the base URL of your on-premise hosted bitwarden installation."
@@ -588,7 +600,7 @@
     "message": "Lingkungan Kustom"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Untuk pengguna lanjutan. Anda dapat menentukan basis dari URL untuk setiap layanan mandiri."
   },
   "baseUrl": {
     "message": "URL Server"
@@ -603,13 +615,13 @@
     "message": "URL Server Identitas"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Pemberitahuan URL Server"
   },
   "iconsUrl": {
     "message": "URL Server Ikon"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "Lingkungan dari URL sudah tersimpan."
   },
   "ok": {
     "message": "Oke"
@@ -729,10 +741,10 @@
     "message": "Pilihan Penguncian"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Tentukan kapan brankas anda akan di kunci. Jika brankas terkunci, maka anda harus memasukkan kata sandi utama anda untuk mengakses nya lagi."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Segera"
   },
   "oneMinute": {
     "message": "1 menit"
@@ -753,10 +765,10 @@
     "message": "4 jam"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Saat sistem menganggur"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Saat sistem tidur"
   },
   "onLocked": {
     "message": "Sistem kunci"
@@ -777,16 +789,16 @@
     "message": "Kami menggunakan analitik untuk lebih mempelajari bagaimana aplikasi digunakan sehingga kami dapat membuatnya lebih baik. Semua pengumpulan data benar-benar anonim."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Nonaktifkan Ikon Situs Web"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Ikon Situs Web menyediakan gambar yang dikenali di sebelah item info masuk di brankas Anda."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Kecilkan ke Ikon Baki"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Ketika jendela di perkecil, tampilkan ikon di dalam sistem baki sebagai gantinya."
   },
   "enableTray": {
     "message": "Aktifkan Ikon Baki"
@@ -893,13 +905,13 @@
     "message": "Daftar untuk keanggotaan Premium dan dapatkan:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB penyimpanan berkas yang dienkripsi."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Pilihan info masuk dua langkah tambahan seperti YubiKey, FIDO U2F, dan Duo."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Pembuat kode verifikasi TOTP (2FA) untuk masuk di brankas anda."
   },
   "premiumSignUpSupport": {
     "message": "Dukungan pelanggan Prioritas."
@@ -938,13 +950,13 @@
     "message": "Bersihkan"
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Tidak ada sandi yang dapat dicantumkan."
   },
   "undo": {
     "message": "Urungkan"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Mengulangi"
   },
   "cut": {
     "message": "Potong",
@@ -964,7 +976,7 @@
     "message": "Perkecil"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Set Ulang Zum"
   },
   "toggleFullScreen": {
     "message": "Aktif\/nonaktifkan Layar Penuh"
@@ -976,14 +988,14 @@
     "message": "Aktif\/nonaktifkan Alat Pengembang"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Perkecil",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Zum"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Bawa Semua ke Depan",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
@@ -1049,19 +1061,19 @@
     "message": "Mulai dengan"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Ekspresi umum",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Deteksi kecocokan",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Deteksi kecocokan standar",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Ubah Opsi"
   },
   "organization": {
     "message": "Organisasi",
@@ -1100,5 +1112,17 @@
   },
   "exportMasterPassword": {
     "message": "Masukkan kata sandi utama untuk ekspor data brankas anda."
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
   }
 }
