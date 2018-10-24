@@ -38,6 +38,18 @@
   "shared": {
     "message": "Споделено"
   },
+  "share": {
+    "message": "Share"
+  },
+  "shareItem": {
+    "message": "Share Item"
+  },
+  "sharedItem": {
+    "message": "Shared Item"
+  },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  },
   "attachments": {
     "message": "Прикачени файлове"
   },
@@ -1100,5 +1112,17 @@
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
   }
 }
