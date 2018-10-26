@@ -316,6 +316,14 @@
             @include themify($themes) {
                 background: themed('warningColor');
             }
+
+            .box-content-row {
+                &:hover, &:focus, &.active {
+                    @include themify($themes) {
+                        background: themed('warningColor');
+                    }
+                }
+            }
         }
     }
 
