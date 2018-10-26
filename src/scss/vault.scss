@@ -309,6 +309,14 @@
             flex-direction: column;
             height: 100%;
         }
+
+        .box.warning .box-content{
+            color: #fff;
+
+            @include themify($themes) {
+                background: themed('warningColor');
+            }
+        }
     }
 
     > #logo {

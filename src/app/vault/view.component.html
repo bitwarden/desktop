@@ -1,5 +1,12 @@
 <div class="content">
     <div class="inner-content" *ngIf="cipher">
+        <div class="box warning" *ngIf="exposed">
+            <div class="box-content">
+                    <div class="box-content-row">
+                        {{'passwordExposed' | i18n: exposed}}
+                    </div>
+            </div>
+        </div>
         <div class="box">
             <div class="box-header">
                 {{'itemInformation' | i18n}}
