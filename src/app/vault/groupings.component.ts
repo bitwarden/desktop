@@ -12,5 +12,7 @@ import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/comp
 export class GroupingsComponent extends BaseGroupingsComponent {
     constructor(collectionService: CollectionService, folderService: FolderService) {
         super(collectionService, folderService);
+        this.loadNestedCollections = true;
+        this.loadNestedFolders = true;
     }
 }
