@@ -70,6 +70,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     folderId: string = null;
     collectionId: string = null;
     addType: CipherType = null;
+    addOrganizationId: string = null;
+    addCollectionIds: string[] = null;
 
     private modal: ModalComponent = null;
 
@@ -296,6 +298,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.addType = type;
         this.action = 'add';
         this.cipherId = null;
+        this.updateCollectionProperties();
         this.go();
     }
 
@@ -455,6 +458,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         await this.ciphersComponent.load((c) => c.collectionIds != null && c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();
         this.collectionId = collectionId;
+        this.updateCollectionProperties();
         this.go();
     }
 
@@ -551,6 +555,9 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.collectionId = null;
         this.favorites = false;
         this.type = null;
+        this.addCollectionIds = null;
+        this.addType = null;
+        this.addOrganizationId = null;
     }
 
     private go(queryParams: any = null) {
@@ -586,5 +593,18 @@ export class VaultComponent implements OnInit, OnDestroy {
             func();
             this.changeDetectorRef.detectChanges();
         });
+    }
+
+    private updateCollectionProperties() {
+        if (this.collectionId != null) {
+            const collection = this.groupingsComponent.collections.filter((c) => c.id === this.collectionId);
+            if (collection.length > 0) {
+                this.addOrganizationId = collection[0].organizationId;
+                this.addCollectionIds = [this.collectionId];
+                return;
+            }
+        }
+        this.addOrganizationId = null;
+        this.addCollectionIds = null;
     }
 }

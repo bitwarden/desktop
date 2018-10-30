@@ -27,7 +27,12 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
             userService, collectionService);
     }
 
+    async ngOnInit() {
+        // We use ngOnChanges instead.
+    }
+
     async ngOnChanges() {
+        await super.init();
         await super.load();
     }
 }
