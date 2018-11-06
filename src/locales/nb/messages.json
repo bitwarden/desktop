@@ -39,16 +39,16 @@
     "message": "Delt"
   },
   "share": {
-    "message": "Share"
+    "message": "Del"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Del element"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Delte elementet"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Velg en organisasjon som du ønsker å dele denne gjenstanden med. Deling overfører gjenstandens eierskap til organisasjonen. Du vil ikke lenger være den direkte eieren av denne gjenstanden når den først har blitt delt."
   },
   "attachments": {
     "message": "Vedlegg"
@@ -82,7 +82,7 @@
     "message": "Passord"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Passfrase"
   },
   "editItem": {
     "message": "Rediger gjenstanden"
@@ -355,10 +355,10 @@
     "message": "Lengde"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Antall ord"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Ordadskiller"
   },
   "close": {
     "message": "Lukk"
@@ -1114,15 +1114,15 @@
     "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å sikkert dele gjenstander med andre brukere."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Det er ingen samlinger å liste opp."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Eierskap"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Hvem eier dette elementet?"
   }
 }

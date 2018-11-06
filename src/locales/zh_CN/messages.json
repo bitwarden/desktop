@@ -39,16 +39,16 @@
     "message": "分享"
   },
   "share": {
-    "message": "Share"
+    "message": "共享"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "共享项目"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "已共享的项目"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "选择要与之共享此项目的组织。共享将项目的所有权转移到组织。一旦共享, 您将不再是此项目的直接所有者。"
   },
   "attachments": {
     "message": "附件"
@@ -1114,15 +1114,15 @@
     "message": "输入主密码来导出你的密码库。"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "您没有加入任何组织。同一组织的用户可以安全地共享密钥等内容。"
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "目前还没有可以显示的集合。"
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "所有权"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "谁拥有这个项目？"
   }
 }

@@ -39,16 +39,16 @@
     "message": "Partagé"
   },
   "share": {
-    "message": "Share"
+    "message": "Partager"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Partager l'élément"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Élément partagé"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Choisissez une organisation avec laquelle vous voulez partager cet élément. Le partage transfère la propriété de l'élément à l'organisation. Vous ne serez plus le propriétaire direct de cet élément après le partage."
   },
   "attachments": {
     "message": "Pièces jointes"
@@ -1114,15 +1114,15 @@
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Vous ne faites partie d'aucune organisation. Les organisations vous permettent de partager des éléments de façon sécurisée avec d'autres utilisateurs."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Aucune collection à afficher."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Propriété"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "À qui appartient cet élément ?"
   }
 }

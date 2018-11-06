@@ -39,16 +39,16 @@
     "message": "Gedeeld"
   },
   "share": {
-    "message": "Share"
+    "message": "Delen"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Object delen"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Gedeeld object"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Kies een organisatie waarmee u dit item wil delen. Door het delen krijgt de organisatie de eigendomsrechten van het item. U bent niet langer meer de directe eigenaar van het item wanneer u deze deelt."
   },
   "attachments": {
     "message": "Bijlagen"
@@ -82,7 +82,7 @@
     "message": "Wachtwoord"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Wachtwoordzin"
   },
   "editItem": {
     "message": "Item bewerken"
@@ -155,7 +155,7 @@
     "message": "Premium vereist"
   },
   "premiumRequiredDesc": {
-    "message": "U heeft een Premium-lidmaatschap nodig om deze functie te kunnen gebruiken."
+    "message": "U heeft een premium-lidmaatschap nodig om deze functie te kunnen gebruiken."
   },
   "errorOccurred": {
     "message": "Er is een fout opgetreden."
@@ -355,10 +355,10 @@
     "message": "Lengte"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Aantal woorden"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Woordscheidingsteken"
   },
   "close": {
     "message": "Sluiten"
@@ -893,7 +893,7 @@
     "message": "Lidmaatschap beheren"
   },
   "premiumManageAlert": {
-    "message": "U kunt uw lidmaatschap wijzigen n de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
+    "message": "U kunt uw lidmaatschap wijzigen in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "premiumRefresh": {
     "message": "Lidmaatschap vernieuwen"
@@ -1045,7 +1045,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Dit wachtwoord is niet gevonden in alle bekende gegevens lekken. It zou veilig moeten zijn om te gebruiken."
+    "message": "Dit wachtwoord is niet gevonden in alle bekende gegevens lekken. Het zou veilig moeten zijn om te gebruiken."
   },
   "baseDomain": {
     "message": "Basisdomein"
@@ -1114,15 +1114,15 @@
     "message": "Voer uw hoofdwachtwoord in om uw kluis-gegevens te exporteren."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "U behoort niet tot een organisatie. Organisaties geven de mogelijkheid om op een veilige manier items te delen met andere gebruikers."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Er zijn geen verzamelingen om weer te geven."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Eigendom"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Wie is eigenaar van dit object?"
   }
 }

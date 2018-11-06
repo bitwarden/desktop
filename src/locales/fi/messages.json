@@ -39,13 +39,13 @@
     "message": "Jaettu"
   },
   "share": {
-    "message": "Share"
+    "message": "Jaa"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Jaa kohde"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Jaettu kohde"
   },
   "shareDesc": {
     "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
@@ -1114,15 +1114,15 @@
     "message": "Syötä pääsalasanasi viedäksesi holvisi tiedot."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Et kuulu yhteenkään organisaatioon. Organisaatiot mahdollistavat kohteiden jakamisen turvallisesti muiden käyttäjien kanssa."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Ei kokoelmia listattavaksi."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Omistajuus"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Kuka omistaa tämän kohteen?"
   }
 }
