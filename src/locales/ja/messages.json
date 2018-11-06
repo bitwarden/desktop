@@ -39,16 +39,16 @@
     "message": "共有"
   },
   "share": {
-    "message": "Share"
+    "message": "共有"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "アイテムを共有する"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "共有されたアイテム"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "このアイテムを共有する組織を選択してください。共有するとアイテムの所有権は組織に移行し、あなたはもはやこのアイテムの直接のオーナーではなくなります。"
   },
   "attachments": {
     "message": "添付ファイル"
@@ -1114,15 +1114,15 @@
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "あなたはどの組織にも属していません。組織では他のユーザーとアイテムを安全に共有できます。"
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "表示するコレクションがありません"
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "所有者"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "このアイテムは誰が所有していますか？"
   }
 }
