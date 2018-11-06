@@ -39,16 +39,16 @@
     "message": "Udostępnione"
   },
   "share": {
-    "message": "Share"
+    "message": "Udostępnij"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Udostępnij element"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Element udostępniony"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Wybierz organizację, której chcesz udostępnić ten element. Udostępnianie przenosi właścicielstwo elementu do organizacji. Nie będziesz już bezpośrednim właścicielem tej pozycji, gdy zostanie on udostępniony."
   },
   "attachments": {
     "message": "Załączniki"
@@ -1114,15 +1114,15 @@
     "message": "Wprowadź hasło główne, aby wyeksportować dane z sejfu."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Nie należysz do żadnych organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Brak kolekcji do wyświetlenia."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Własność"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Kto jest właścicielem tego elementu?"
   }
 }
