@@ -39,16 +39,16 @@
     "message": "Freigegeben"
   },
   "share": {
-    "message": "Share"
+    "message": "Teilen"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Geteilter Eintrag"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Geteilter Eintrag"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Wählen Sie eine Organisation aus, für die Sie diesen Eintrag freigeben möchten. Die gemeinsame Nutzung überträgt das Eigentum an dem Eintrag auf diese Organisation. Sie sind dann nicht mehr der direkte Besitzer dieses Eintrags, sobald er geteilt wurde."
   },
   "attachments": {
     "message": "Anhänge"
@@ -1114,15 +1114,15 @@
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Sie sind kein Mitglied einer Organisation. Organisationen erlauben es Ihnen Passwörter sicher mit anderen Nutzern zu teilen."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Keine Sammlungen vorhanden."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Besitzer"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Wem gehört dieser Eintrag?"
   }
 }
