@@ -39,16 +39,16 @@
     "message": "Jagatud"
   },
   "share": {
-    "message": "Share"
+    "message": "Jaga"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Jaga kirjet"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Kirje on jagatud"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Vali organisatsioon, millega soovid seda kirjet jagada. Jagamisega saab kirje omanikuks organisatsioon. Pärast kirje jagamist ei ole sa enam selle otsene omanik."
   },
   "attachments": {
     "message": "Manused"
@@ -1114,15 +1114,15 @@
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Sa ei kuulu ühessegi organisatsiooni. Organisatsioonid võimaldavad sul kirjeid turvaliselt teiste kasutajatega jagada."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Puuduvad kollektsioonid, mida kuvada."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Omanik"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Kes seda üksust omab?"
   }
 }
