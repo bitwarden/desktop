@@ -39,16 +39,16 @@
     "message": "Compartilhado"
   },
   "share": {
-    "message": "Share"
+    "message": "Compartilhar"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Compartilhar Item"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Compartilhar Item"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Escolha uma organização com a qual você deseja compartilhar este item. O compartilhamento transfere a propriedade do item para a organização. Você não será mais o proprietário direto deste item depois que ele for compartilhado."
   },
   "attachments": {
     "message": "Anexos"
@@ -1114,15 +1114,15 @@
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe compartilhar itens em segurança com outros usuários."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Não há coleções para listar."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Propriedade"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Quem possui este item?"
   }
 }
