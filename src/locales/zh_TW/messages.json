@@ -39,16 +39,16 @@
     "message": "共用"
   },
   "share": {
-    "message": "Share"
+    "message": "分享"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "分享項目"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "已分享項目"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "選擇您希望分享這個項目的組織。項目的擁有權將會轉移到組織。一經分享，您將不再是此項目的直接擁有者。"
   },
   "attachments": {
     "message": "附件"
@@ -1114,15 +1114,15 @@
     "message": "輸入您的主密碼以匯出密碼庫資料。"
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "您沒有加入任何組織。同一組織的使用者可以安全地分享登入帳密等資料。"
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "沒有可顯示的收藏。"
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "所有權"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "誰擁有這個項目？"
   }
 }
