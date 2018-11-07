@@ -184,8 +184,7 @@
         "password-manager-service"
       ],
       "stagePackages": [
-        "default",
-        "libsecret-1-0"
+        "default"
       ]
     }
   },
@@ -206,7 +205,7 @@
     "css-loader": "^1.0.0",
     "del": "^3.0.0",
     "electron": "2.0.11",
-    "electron-builder": "^20.25.0",
+    "electron-builder": "^20.31.2",
     "electron-rebuild": "1.8.1",
     "electron-reload": "1.2.5",
     "extract-text-webpack-plugin": "next",
