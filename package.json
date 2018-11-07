@@ -184,7 +184,8 @@
         "password-manager-service"
       ],
       "stagePackages": [
-        "default"
+        "default",
+        "libsecret-1-0"
       ]
     }
   },
@@ -205,7 +206,7 @@
     "css-loader": "^1.0.0",
     "del": "^3.0.0",
     "electron": "2.0.11",
-    "electron-builder": "^20.31.2",
+    "electron-builder": "^20.25.0",
     "electron-rebuild": "1.8.1",
     "electron-reload": "1.2.5",
     "extract-text-webpack-plugin": "next",
@@ -247,8 +248,8 @@
     "core-js": "2.5.7",
     "desktop-idle": "1.1.2",
     "electron-log": "2.2.14",
-    "electron-updater": "3.1.6",
-    "keytar": "4.3.0",
+    "electron-updater": "3.0.3",
+    "keytar": "4.2.1",
     "lowdb": "1.0.0",
     "lunr": "2.3.3",
     "node-forge": "0.7.6",
