@@ -184,8 +184,7 @@
         "password-manager-service"
       ],
       "stagePackages": [
-        "default",
-        "libsecret-1-0"
+        "default"
       ]
     }
   },
