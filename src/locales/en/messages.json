@@ -112,6 +112,10 @@
   "toggleVisibility": {
     "message": "Toggle Visibility"
   },
+  "toggleCollapse": {
+    "message": "Toggle Collapse",
+    "description": "Toggling an expand/collapse state."
+  },
   "cardholderName": {
     "message": "Cardholder Name"
   },
