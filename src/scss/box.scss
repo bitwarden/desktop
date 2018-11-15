@@ -96,6 +96,10 @@
                 @include themify($themes) {
                     color: themed('mutedColor');
                 }
+
+                .sub-label {
+                    margin-left: 10px;
+                }
             }
 
             .text, .detail {

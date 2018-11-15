@@ -11,7 +11,13 @@
                 <div class="box-content-row" appBoxRow>
                     <div class="box-content-row-flex">
                         <div class="row-main">
-                            <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                            <label for="masterPassword">
+                                {{'masterPass' | i18n}}
+                                <span class="sub-label text-{{masterPasswordScoreColor}}"
+                                      *ngIf="masterPasswordScoreText">
+                                    {{masterPasswordScoreText}}
+                                </span>
+                            </label>
                             <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}"
                                    name="MasterPassword" class="monospaced" [(ngModel)]="masterPassword"
                                    required [appAutofocus]="email !== ''" (input)="updatePasswordStrength()">

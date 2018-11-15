@@ -46,6 +46,12 @@ small {
     }
 }
 
+.text-danger {
+    @include themify($themes) {
+        color: themed('dangerColor') !important;
+    }
+}
+
 .text-muted {
     @include themify($themes) {
         color: themed('mutedColor') !important;
