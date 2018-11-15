@@ -198,6 +198,7 @@
     "@types/semver": "^5.5.0",
     "@types/webcrypto": "^0.0.28",
     "@types/webpack": "^4.4.11",
+    "@types/zxcvbn": "4.4.0",
     "clean-webpack-plugin": "^0.1.19",
     "concurrently": "^4.0.1",
     "copy-webpack-plugin": "^4.2.0",
@@ -256,6 +257,7 @@
     "nord": "0.2.1",
     "papaparse": "4.6.0",
     "rxjs": "6.3.2",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "zxcvbn": "4.4.2"
   }
 }

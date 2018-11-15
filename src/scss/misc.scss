@@ -4,6 +4,36 @@ small {
     font-size: $font-size-small;
 }
 
+.bg-primary {
+    @include themify($themes) {
+        background-color: themed('primaryColor') !important;
+    }
+}
+
+.bg-success {
+    @include themify($themes) {
+        background-color: themed('successColor') !important;
+    }
+}
+
+.bg-danger {
+    @include themify($themes) {
+        background-color: themed('dangerColor') !important;
+    }
+}
+
+.bg-info {
+    @include themify($themes) {
+        background-color: themed('infoColor') !important;
+    }
+}
+
+.bg-warning {
+    @include themify($themes) {
+        background-color: themed('warningColor') !important;
+    }
+}
+
 .text-primary {
     @include themify($themes) {
         color: themed('primaryColor') !important;

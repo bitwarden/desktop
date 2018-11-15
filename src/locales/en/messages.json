@@ -1128,5 +1128,11 @@
   },
   "whoOwnsThisItem": {
     "message": "Who owns this item?"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }

@@ -56,6 +56,11 @@
 
             &:first-child, &:last-child {
                 border-radius: $border-radius;
+
+                .progress {
+                    border-bottom-left-radius: $border-radius;
+                    border-bottom-right-radius: $border-radius;
+                }
             }
 
             &:last-child {
@@ -118,7 +123,7 @@
                 flex-grow: 1;
             }
 
-            &.box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
+            &.box-content-row-flex, .box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
             &.box-content-row-slider, &.box-content-row-multi {
                 display: flex;
                 align-items: center;
@@ -288,6 +293,21 @@
                 
                 @include themify($themes) {
                     color: themed('mutedColor');
+                }
+            }
+
+            .progress {
+                display: flex;
+                height: 5px;
+                overflow: hidden;
+                margin: 5px -15px -10px;
+
+                .progress-bar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    white-space: nowrap;
+                    background-color: $brand-primary;
                 }
             }
         }

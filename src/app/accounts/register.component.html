@@ -8,18 +8,26 @@
                     <input id="email" type="text" name="Email" [(ngModel)]="email" required
                            [appAutofocus]="email === ''">
                 </div>
-                <div class="box-content-row box-content-row-flex" appBoxRow>
-                    <div class="row-main">
-                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
-                        <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
-                               class="monospaced" [(ngModel)]="masterPassword" required [appAutofocus]="email !== ''">
+                <div class="box-content-row" appBoxRow>
+                    <div class="box-content-row-flex">
+                        <div class="row-main">
+                            <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                            <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}"
+                                   name="MasterPassword" class="monospaced" [(ngModel)]="masterPassword"
+                                   required [appAutofocus]="email !== ''" (input)="updatePasswordStrength()">
+                        </div>
+                        <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick appBlurClick
+                                title="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
+                                <i class="fa fa-lg"
+                                    [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick
-                           title="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
-                            <i class="fa fa-lg"
-                               [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                        </a>
+                    <div class="progress">
+                        <div class="progress-bar bg-{{masterPasswordScoreColor}}" role="progressbar" aria-valuenow="0"
+                            aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: (masterPasswordScoreWidth + '%')}"
+                            attr.aria-valuenow="{{masterPasswordScoreWidth}}"></div>
                     </div>
                 </div>
             </div>
