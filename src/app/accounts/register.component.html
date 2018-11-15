@@ -13,10 +13,10 @@
                         <div class="row-main">
                             <label for="masterPassword">
                                 {{'masterPass' | i18n}}
-                                <span class="sub-label text-{{masterPasswordScoreColor}}"
+                                <strong class="sub-label text-{{masterPasswordScoreColor}}"
                                       *ngIf="masterPasswordScoreText">
                                     {{masterPasswordScoreText}}
-                                </span>
+                                </strong>
                             </label>
                             <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}"
                                    name="MasterPassword" class="monospaced" [(ngModel)]="masterPassword"

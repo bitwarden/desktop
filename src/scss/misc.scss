@@ -52,6 +52,12 @@ small {
     }
 }
 
+.text-warning {
+    @include themify($themes) {
+        color: themed('warningColor') !important;
+    }
+}
+
 .text-muted {
     @include themify($themes) {
         color: themed('mutedColor') !important;
