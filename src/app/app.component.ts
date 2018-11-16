@@ -141,11 +141,12 @@ export class AppComponent implements OnInit {
                         const fingerprint = await this.cryptoService.getFingerprint(
                             await this.userService.getUserId());
                         const result = await this.platformUtilsService.showDialog(
-                            this.i18nService.t('yourAccountsFingerprint') + ': ' + fingerprint.join('-'),
+                            this.i18nService.t('yourAccountsFingerprint') + ':\n' + fingerprint.join('-'),
                             this.i18nService.t('fingerprintPhrase'), this.i18nService.t('learnMore'),
                             this.i18nService.t('close'));
                         if (result) {
-                            this.platformUtilsService.launchUri('https://help.bitwarden.com');
+                            this.platformUtilsService.launchUri(
+                                'https://help.bitwarden.com/article/fingerprint-phrase/');
                         }
                         break;
                     case 'openPasswordHistory':
