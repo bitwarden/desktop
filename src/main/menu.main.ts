@@ -30,7 +30,7 @@ export class MenuMain extends BaseMenu {
     lockNow: MenuItem;
     logOut: MenuItem;
     twoStepLogin: MenuItem;
-    changeEmail: MenuItem;
+    fingerprintPhrase: MenuItem;
     changeMasterPass: MenuItem;
     premiumMembership: MenuItem;
     passwordGenerator: MenuItem;
@@ -57,7 +57,7 @@ export class MenuMain extends BaseMenu {
         this.lockNow = this.menu.getMenuItemById('lockNow');
         this.logOut = this.menu.getMenuItemById('logOut');
         this.twoStepLogin = this.menu.getMenuItemById('twoStepLogin');
-        this.changeEmail = this.menu.getMenuItemById('changeEmail');
+        this.fingerprintPhrase = this.menu.getMenuItemById('fingerprintPhrase');
         this.changeMasterPass = this.menu.getMenuItemById('changeMasterPass');
         this.premiumMembership = this.menu.getMenuItemById('premiumMembership');
         this.passwordGenerator = this.menu.getMenuItemById('passwordGenerator');
@@ -66,7 +66,7 @@ export class MenuMain extends BaseMenu {
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
-            this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.changeEmail,
+            this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
             this.searchVault];
         this.updateApplicationMenuState(false, true);
@@ -101,24 +101,6 @@ export class MenuMain extends BaseMenu {
                 },
             },
             {
-                label: this.main.i18nService.t('changeEmail'),
-                id: 'changeEmail',
-                click: async () => {
-                    const result = dialog.showMessageBox(this.main.windowMain.win, {
-                        title: this.main.i18nService.t('changeEmail'),
-                        message: this.main.i18nService.t('changeEmail'),
-                        detail: this.main.i18nService.t('changeEmailConfirmation'),
-                        buttons: [this.main.i18nService.t('yes'), this.main.i18nService.t('no')],
-                        cancelId: 1,
-                        defaultId: 0,
-                        noLink: true,
-                    });
-                    if (result === 0) {
-                        await this.openWebVault();
-                    }
-                },
-            },
-            {
                 label: this.main.i18nService.t('twoStepLogin'),
                 id: 'twoStepLogin',
                 click: async () => {
@@ -135,6 +117,11 @@ export class MenuMain extends BaseMenu {
                         await this.openWebVault();
                     }
                 },
+            },
+            {
+                label: this.main.i18nService.t('fingerprintPhrase'),
+                id: 'fingerprintPhrase',
+                click: () => this.main.messagingService.send('showFingerprintPhrase'),
             },
             { type: 'separator' },
             {
