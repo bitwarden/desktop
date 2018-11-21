@@ -112,6 +112,10 @@
   "toggleVisibility": {
     "message": "Promijeni vidljivost"
   },
+  "toggleCollapse": {
+    "message": "Toggle Collapse",
+    "description": "Toggling an expand\/collapse state."
+  },
   "cardholderName": {
     "message": "Ime vlasnika kartice"
   },
@@ -701,11 +705,13 @@
   "changeMasterPasswordConfirmation": {
     "message": "Možete promijeniti svoju glavnu lozinku na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
   },
-  "changeEmail": {
-    "message": "Promijeni e-poštu"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
-  "changeEmailConfirmation": {
-    "message": "Adresu e-pošte možete promijeniti na internetskom trezoru bitwarden.com. Želite li sada posjetiti web stranicu?"
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
     "message": "Idi na internetski trezor"
@@ -1124,5 +1130,23 @@
   },
   "whoOwnsThisItem": {
     "message": "Who owns this item?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }

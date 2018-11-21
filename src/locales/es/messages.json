@@ -39,16 +39,16 @@
     "message": "Compartido"
   },
   "share": {
-    "message": "Share"
+    "message": "Compartir"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Compartir elemento"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Elemento compartido"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Elige una organización con la que quieras compartir este elemento. Compartir transfiere la propiedad del elemento a la organización. No podrás volver a ser el propietario de este elemento una vez haya sido compartido."
   },
   "attachments": {
     "message": "Adjuntos"
@@ -111,6 +111,10 @@
   },
   "toggleVisibility": {
     "message": "Alternar visibilidad"
+  },
+  "toggleCollapse": {
+    "message": "Toggle Collapse",
+    "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
     "message": "Nombre en la tarjeta"
@@ -701,11 +705,13 @@
   "changeMasterPasswordConfirmation": {
     "message": "Puedes cambiar tu contraseña maestra en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
   },
-  "changeEmail": {
-    "message": "Cambiar correo electrónico"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
-  "changeEmailConfirmation": {
-    "message": "Puedes cambiar tu correo electrónico en la caja fuerte web de bitwarden.com. ¿Quieres visitar ahora el sitio web?"
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
     "message": "Ir a la caja fuerte web"
@@ -1114,15 +1120,33 @@
     "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "No perteneces a ninguna organización. Las organizaciones te permiten compartir elementos con otros usuarios de forma segura."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "No hay colecciones que listar."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Propiedad"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "¿Quién posee este elemento?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }

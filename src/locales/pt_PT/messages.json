@@ -39,16 +39,16 @@
     "message": "Partilhado"
   },
   "share": {
-    "message": "Share"
+    "message": "Partilhar"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Partilhar item"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Item partilhado"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Escolha uma organização com que queira partilhar este item. Partilhar transfere a propriedade do item para a organização. Uma vez transferido já não será o proprietário direto deste item."
   },
   "attachments": {
     "message": "Anexos"
@@ -111,6 +111,10 @@
   },
   "toggleVisibility": {
     "message": "Alternar visibilidade"
+  },
+  "toggleCollapse": {
+    "message": "Toggle Collapse",
+    "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
     "message": "Titular do cartão"
@@ -367,7 +371,7 @@
     "message": "Números mínimos"
   },
   "minSpecial": {
-    "message": "Especiais minímos",
+    "message": "Especiais mínimos",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -534,10 +538,10 @@
     "message": "Utilizar outro método de início de sessão de dois passos"
   },
   "insertYubiKey": {
-    "message": "Introduza a sua YubiKey na porta USB do seu computador, e depois toque no botão da mesma."
+    "message": "Introduza a sua YubiKey na porta USB do seu computador, depois toque no botão da mesma."
   },
   "insertU2f": {
-    "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tem um botão, toque no mesmo."
+    "message": "Introduza a sua chave de segurança na porta USB do seu computador. Se tiver um botão, toque no mesmo."
   },
   "recoveryCodeDesc": {
     "message": "Perdeu o acesso a todos os seus provedores de dois passos? Utilize o seu código de recuperação para desativar todos os provedores de dois passos da sua conta."
@@ -701,11 +705,13 @@
   "changeMasterPasswordConfirmation": {
     "message": "Pode alterar a sua palavra-passe mestra no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
-  "changeEmail": {
-    "message": "Alterar email"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
-  "changeEmailConfirmation": {
-    "message": "Pode alterar o seu endereço de email no cofre web bitwarden.com. Pretende visitar o website agora?"
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
     "message": "Ir para o cofre web"
@@ -1114,15 +1120,33 @@
     "message": "Introduza a sua palavra-passe mestra para exportar os dados do seu cofre."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe partilhar itens em segurança com outros utilizadores."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Não existem coleções para exibir."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Propriedade"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Quem é dono deste item?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }

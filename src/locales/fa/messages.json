@@ -112,6 +112,10 @@
   "toggleVisibility": {
     "message": "تغییر قابلیت نمایش"
   },
+  "toggleCollapse": {
+    "message": "Toggle Collapse",
+    "description": "Toggling an expand\/collapse state."
+  },
   "cardholderName": {
     "message": "نام صاحب کارت"
   },
@@ -701,11 +705,13 @@
   "changeMasterPasswordConfirmation": {
     "message": "شما می توانید رمز عبور اصلی خود را در bitwarden.com تغییر دهید. آیا می خواهید از سایت بازدید کنید؟"
   },
-  "changeEmail": {
-    "message": "تغییر ایمیل"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
-  "changeEmailConfirmation": {
-    "message": "شما میتوانید آدرس ایمیل را در نسخه وب گاوصندوق bitwarden.com تغییر دهید. میخواهید اکنون از سایت بازدید کنید؟"
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
     "message": "برو به گاوصندق وب"
@@ -1124,5 +1130,23 @@
   },
   "whoOwnsThisItem": {
     "message": "Who owns this item?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }

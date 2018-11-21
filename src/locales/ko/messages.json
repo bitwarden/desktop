@@ -112,6 +112,10 @@
   "toggleVisibility": {
     "message": "표시 전환"
   },
+  "toggleCollapse": {
+    "message": "Toggle Collapse",
+    "description": "Toggling an expand\/collapse state."
+  },
   "cardholderName": {
     "message": "카드 소유자 이름"
   },
@@ -701,11 +705,13 @@
   "changeMasterPasswordConfirmation": {
     "message": "bitwarden.com 웹 보관함에서 마스터 비밀번호를 바꿀 수 있습니다. 지금 웹 사이트를 방문하시겠습니까?"
   },
-  "changeEmail": {
-    "message": "이메일 변경"
+  "fingerprintPhrase": {
+    "message": "Fingerprint Phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
-  "changeEmailConfirmation": {
-    "message": "bitwarden.com 웹 보관함에서 이메일 주소를 바꿀 수 있습니다. 지금 웹 사이트를 방문하시겠습니까?"
+  "yourAccountsFingerprint": {
+    "message": "Your account's fingerprint phrase",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
     "message": "웹 보관함으로 이동"
@@ -1124,5 +1130,23 @@
   },
   "whoOwnsThisItem": {
     "message": "Who owns this item?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   }
 }
