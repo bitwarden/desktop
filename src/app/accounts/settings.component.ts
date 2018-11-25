@@ -32,6 +32,7 @@ export class SettingsComponent implements OnInit {
     enableMinToTray: boolean = false;
     enableTray: boolean = false;
     showMinToTray: boolean = false;
+    startMinimized: boolean = false;
     locale: string;
     lockOptions: any[];
     localeOptions: any[];
@@ -79,6 +80,7 @@ export class SettingsComponent implements OnInit {
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
+        this.startMinimized = await this.storageService.get<boolean>(ElectronConstants.enableStartMinimizedKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
 
@@ -117,6 +119,11 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
         this.callAnalytics('Tray', this.enableTray);
         this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
+    }
+
+    async saveStartMinimized() {
+        await this.storageService.save(ElectronConstants.enableStartMinimizedKey, this.startMinimized);
+        this.callAnalytics('StartMinimized', this.startMinimized);
     }
 
     async saveLocale() {

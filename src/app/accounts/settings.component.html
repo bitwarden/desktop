@@ -54,6 +54,16 @@
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
+                                <label for="startMinimized">
+                                    <input id="startMinimized" type="checkbox" name="StartMinimized"
+                                           [(ngModel)]="startMinimized" (change)="saveStartMinimized()">
+                                    {{'startMinimized' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'startMinimizedDesc' | i18n}}</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
                                 <label for="disableGa">
                                     <input id="disableGa" type="checkbox" name="DisableAnalytics"
                                            [(ngModel)]="disableGa" (change)="saveGa()">
