@@ -253,6 +253,7 @@
     "keytar": "4.2.1",
     "lowdb": "1.0.0",
     "lunr": "2.3.3",
+    "natives": "^1.1.6",
     "node-forge": "0.7.6",
     "nord": "0.2.1",
     "papaparse": "4.6.0",
