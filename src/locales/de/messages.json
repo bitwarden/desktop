@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster minimiert wird."
   },
+  "enableCloseToTray": {
+    "message": "Beim Schließen minimieren"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "Bitwarden zu einem Symbol in der Taskleiste minimieren sobald das Fenster geschlossen wird."
+  },
   "enableTray": {
     "message": "Taskleisten-Symbol einschalten"
   },

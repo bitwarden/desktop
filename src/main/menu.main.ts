@@ -365,6 +365,10 @@ export class MenuMain extends BaseMenu {
                 click: () => this.main.messagingService.send('lockVault'),
                 accelerator: 'CmdOrCtrl+L',
             },
+            {
+                label: this.i18nService.t('quitBitwarden'),
+                role: 'quit',
+            },
         ];
 
         const updateMenuItem = {
