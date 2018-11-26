@@ -113,7 +113,7 @@
     "message": "Sichtbarkeit umschalten"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Schalter ausklappen",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -706,11 +706,11 @@
     "message": "Du kannst dein Master-Passwort im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Fingerabdruck-Wort",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Das Fingerabdruck-Wort deines Kontos",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -1132,21 +1132,21 @@
     "message": "Wem gehört dieser Eintrag?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Stark",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Gut",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Schwach",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Schwaches Haupt-Passwort"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Das Haupt-Passwort, das Sie gewählt haben ist schwach. Sie sollten ein starkes Haupt-Passwort auswählen, um Ihr Bitwarden-Konto richtig zu schützen. Sind Sie sicher, dass Sie dieses Haupt-Passwort verwenden sollen?"
   }
 }
