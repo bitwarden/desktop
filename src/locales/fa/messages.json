@@ -39,13 +39,13 @@
     "message": "اشتراک گذاری شد"
   },
   "share": {
-    "message": "Share"
+    "message": "اشتراک گذاری"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "اشتراک گذاری مورد"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "مورد اشتراک گذاری شد"
   },
   "shareDesc": {
     "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
@@ -706,11 +706,11 @@
     "message": "شما می توانید رمز عبور اصلی خود را در bitwarden.com تغییر دهید. آیا می خواهید از سایت بازدید کنید؟"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "عبارت اثر انگشت",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "عبارت اثر انگشت حساب شما",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -1123,28 +1123,28 @@
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "هیچ مجموعه ای برای لیست کردن وجود ندارد."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "مالکیت"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "چه کسی مالک این مورد است؟"
   },
   "strong": {
-    "message": "Strong",
+    "message": "قوی",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "خوب",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "ضعیف",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "گذرواژه اصلی ضعیف"
   },
   "weakMasterPasswordDesc": {
     "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
