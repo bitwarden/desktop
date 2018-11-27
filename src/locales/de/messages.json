@@ -812,12 +812,6 @@
   "enableTrayDesc": {
     "message": "Dauerhaft ein Symbol in der Taskleiste anzeigen."
   },
-  "startMinimized": {
-    "message": "Minimiert starten"
-  },
-  "startMinimizedDesc": {
-    "message": "Nach dem Starten wird nur ein Symbol in der Taskleiste angezeigt."
-  },
   "language": {
     "message": "Sprache"
   },
