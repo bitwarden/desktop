@@ -138,9 +138,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         this.messagingService.send('scheduleNextSync');
                         break;
                     case 'syncCompleted':
-                        if (message.successfully) {
-                            await this.load();
-                        }
+                        await this.load();
                         break;
                     case 'refreshCiphers':
                         this.ciphersComponent.refresh();
