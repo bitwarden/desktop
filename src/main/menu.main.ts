@@ -365,6 +365,9 @@ export class MenuMain extends BaseMenu {
                 click: () => this.main.messagingService.send('lockVault'),
                 accelerator: 'CmdOrCtrl+L',
             },
+        ];
+
+        const firstMenuOptionsWindowsLinux: MenuItemConstructorOptions[] = [
             {
                 label: this.i18nService.t('quitBitwarden'),
                 role: 'quit',
@@ -402,6 +405,10 @@ export class MenuMain extends BaseMenu {
             // File menu
             template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
                 firstMenuOptions);
+            if(process.platform === 'linux' || process.platform === 'win32') {
+                template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
+                    firstMenuOptionsWindowsLinux);
+            }
 
             // About menu
             const aboutMenuAdditions: MenuItemConstructorOptions[] = [
