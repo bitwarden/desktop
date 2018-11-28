@@ -75,7 +75,7 @@ export class SettingsComponent implements OnInit {
     }
 
     async ngOnInit() {
-        this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop || this.platformUtilsService.getDevice() === DeviceType.LinuxDesktop;
+        this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
