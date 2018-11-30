@@ -1,6 +1,5 @@
 import { remote } from 'electron';
 
-import { Location } from '@angular/common';
 import {
     ChangeDetectorRef,
     Component,
@@ -75,7 +74,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     private modal: ModalComponent = null;
 
-    constructor(private route: ActivatedRoute, private router: Router, private location: Location,
+    constructor(private route: ActivatedRoute, private router: Router,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
@@ -570,8 +569,11 @@ export class VaultComponent implements OnInit, OnDestroy {
             };
         }
 
-        const url = this.router.createUrlTree(['vault'], { queryParams: queryParams }).toString();
-        this.location.go(url);
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams,
+            replaceUrl: true,
+        });
     }
 
     private addCipherWithChangeDetection(type: CipherType = null) {
