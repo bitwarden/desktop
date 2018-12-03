@@ -30,6 +30,7 @@ export class SettingsComponent implements OnInit {
     disableGa: boolean = false;
     disableFavicons: boolean = false;
     enableMinToTray: boolean = false;
+    enableCloseToTray: boolean = false;
     enableTray: boolean = false;
     showMinToTray: boolean = false;
     locale: string;
@@ -78,6 +79,7 @@ export class SettingsComponent implements OnInit {
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
+        this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
@@ -111,6 +113,11 @@ export class SettingsComponent implements OnInit {
     async saveMinToTray() {
         await this.storageService.save(ElectronConstants.enableMinimizeToTrayKey, this.enableMinToTray);
         this.callAnalytics('MinimizeToTray', this.enableMinToTray);
+    }
+
+    async saveCloseToTray() {
+        await this.storageService.save(ElectronConstants.enableCloseToTrayKey, this.enableCloseToTray);
+        this.callAnalytics('CloseToTray', this.enableCloseToTray);
     }
 
     async saveTray() {

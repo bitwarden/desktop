@@ -367,6 +367,13 @@ export class MenuMain extends BaseMenu {
             },
         ];
 
+        const firstMenuOptionsWindowsLinux: MenuItemConstructorOptions[] = [
+            {
+                label: this.i18nService.t('quitBitwarden'),
+                role: 'quit',
+            },
+        ];
+
         const updateMenuItem = {
             label: this.main.i18nService.t('checkForUpdates'),
             click: () => this.main.updaterMain.checkForUpdate(true),
@@ -398,6 +405,10 @@ export class MenuMain extends BaseMenu {
             // File menu
             template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
                 firstMenuOptions);
+            if(process.platform === 'linux' || process.platform === 'win32') {
+                template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
+                    firstMenuOptionsWindowsLinux);
+            }
 
             // About menu
             const aboutMenuAdditions: MenuItemConstructorOptions[] = [
