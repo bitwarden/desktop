@@ -88,10 +88,6 @@ p.lead {
     font-weight: normal;
 }
 
-[hidden] {
-    display: none !important;
-}
-
 .monospaced {
     font-family: $font-family-monospace;
 }
@@ -170,16 +166,33 @@ p.lead {
 
 .password-block {
     font-size: $font-size-large;
-    word-break: break-all;
     font-family: $font-family-monospace;
-    min-height: 60px;
+    min-height: 50px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
 
     .modal-body & {
         margin-top: 10px;
+    }
+}
+
+.password-wrapper {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.password-number {
+    @include themify($themes) {
+        color: themed('passwordNumberColor');
+    }
+}
+
+.password-special {
+    @include themify($themes) {
+        color: themed('passwordSpecialColor');
     }
 }
 
@@ -263,4 +276,8 @@ app-root > #loading {
     @include themify($themes) {
         content: url('../images/logo-' + themed('logoSuffix') + '@2x.png');
     }
+}
+
+[hidden] {
+    display: none !important;
 }

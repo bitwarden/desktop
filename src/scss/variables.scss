@@ -41,8 +41,6 @@ $button-color-danger: darken($brand-danger, 10%);
 $themes: (
     light: (
         textColor: $text-color,
-        passwordNumberColor: #007fde,
-        passwordSpecialColor: #c40800,
         borderColor: $border-color-dark,
         backgroundColor: $background-color,
         backgroundColorAlt: $background-color-alt,
@@ -86,11 +84,11 @@ $themes: (
         infoColor: $brand-info,
         warningColor: $brand-warning,
         logoSuffix: 'dark',
+        passwordNumberColor: #007fde,
+        passwordSpecialColor: #c40800,
     ),
     dark: (
         textColor: #ffffff,
-        passwordNumberColor: #9fd9ff,
-        passwordSpecialColor: #ff7c70,
         borderColor: #2f2f2f,
         backgroundColor: #363636,
         backgroundColorAlt: #3d3d3d,
@@ -134,11 +132,11 @@ $themes: (
         infoColor: $brand-info,
         warningColor: $brand-warning,
         logoSuffix: 'white',
+        passwordNumberColor: #52bdfb,
+        passwordSpecialColor: #ff7c70,
     ),
     nord: (
         textColor: $nord5,
-        passwordNumberColor: $nord8,
-        passwordSpecialColor: $nord12,
         borderColor: $nord0,
         backgroundColor: $nord2,
         backgroundColorAlt: $nord1,
@@ -182,6 +180,8 @@ $themes: (
         infoColor: $nord9,
         warningColor: $nord12,
         logoSuffix: 'white',
+        passwordNumberColor: $nord8,
+        passwordSpecialColor: $nord12,
     ),
 );
 

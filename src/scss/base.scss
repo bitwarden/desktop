@@ -64,18 +64,6 @@ input, select, textarea {
     }
 }
 
-.passwordNumber {
-    @include themify($themes) {
-        color: themed('passwordNumberColor');
-    }
-}
-
-.passwordSpecial {
-    @include themify($themes) {
-        color: themed('passwordSpecialColor');
-    }
-}
-
 input, select, textarea, button {
     font-size: $font-size-base;
     font-family: $font-family-sans-serif;

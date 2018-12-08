@@ -26,8 +26,10 @@
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.password">
                         <div class="row-main">
                             <span class="row-label">{{'password' | i18n}}</span>
-                            <span [hidden]="showPassword" class="monospaced">{{cipher.login.maskedPassword}}</span>
-                            <span [hidden]="!showPassword" class="monospaced" [innerHTML]="cipher.login.password | colorPassword"></span>
+                            <div [hidden]="showPassword" class="monospaced password-wrapper">
+                                {{cipher.login.maskedPassword}}</div>
+                            <div [hidden]="!showPassword" class="monospaced password-wrapper"
+                                 [innerHTML]="cipher.login.password | colorPassword"></div>
                         </div>
                         <div class="action-buttons">
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
