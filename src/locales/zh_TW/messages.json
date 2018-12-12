@@ -113,7 +113,7 @@
     "message": "切換可見度"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "切換折疊",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -706,11 +706,11 @@
     "message": "您可以在 Bitwarden 網頁版變更主密碼。現在前往？"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "指紋短語",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "您帳戶的指紋短語",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -805,6 +805,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "將視窗最小化時，於系統匣顯示圖示。"
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "啟用系統匣圖示"
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey，FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "用於您的登入資料的 TOTP 驗證碼 (2FA) 產生器。"
@@ -1132,21 +1141,21 @@
     "message": "誰擁有這個項目？"
   },
   "strong": {
-    "message": "Strong",
+    "message": "強",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "好",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "脆弱",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "脆弱的主密碼"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (複雜密碼) 來正確保護您的 bitwarden 帳戶。仍要使用此密碼嗎？"
   }
 }
