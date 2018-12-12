@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Lorsque la fenêtre est réduite, privilégier l'affichage d'une icône dans la zone de notification."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Activer le raccourci de la barre d'outils"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Options d'identification à double facteurs additionnelles comme YubiKey, FIDO U2F et Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "La génération d'un code de vérification TOTP (double facteurs \/ 2FA) pour les identifiants de votre coffre."
