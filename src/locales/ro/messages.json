@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "La minimizarea ferestrei se afișează în schimb o pictogramă în zona de notificare."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Activare pictogramă în zona de notificare"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Opțiuni adiţionale de conectare în doi pași, cum ar fi YubiKey, FIDO U2F şi Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Generatorul codului de verificare TOTP (2FA) pentru autentificările din seif."
