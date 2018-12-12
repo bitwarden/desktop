@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Enable Tray Icon"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verification code (2FA) generator for logins in your vault."
