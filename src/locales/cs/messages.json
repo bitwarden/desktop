@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Při minimalizaci okna, zobrazit ikonu na hlavním panelu systému."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Povolit ikonu v systémové liště"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."

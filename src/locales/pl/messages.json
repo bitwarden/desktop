@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Po zminimalizowaniu okna, pokaż ikonę w zasobniku systemowym."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Włącz ikonę w zasobniku systemowym"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Dodatkowe opcje dwustopniowego logowania, takie jak YubiKey, FIDO U2F i Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Generator kodów weryfikacyjnych TOTP (2FA) dla danych logowania w Twoim sejfie."

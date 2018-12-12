@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Enable Tray Icon"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Các tùy chọn xác thực hai lớp bổ sung như YubiKey, FIDO U2F và Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Mã xác nhận TOTP (2FA) để đăng nhập vào kho mật khẩu của bạn."

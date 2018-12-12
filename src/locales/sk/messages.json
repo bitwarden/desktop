@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Namiesto minimalizácie okna zobraziť ikonu v systémovej lište."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Povoliť ikonu na systémovej lište"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Ďalšie možnosti dvojstupňového prihlásenia ako YubiKey, FIDO U2F a Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Generátor TOTP verifikačného kódu (2FA) pre kontá vo vašom trezore."

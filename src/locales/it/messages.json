@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Usa l'area di notifica"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Opzioni di verifica in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."

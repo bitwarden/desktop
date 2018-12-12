@@ -710,7 +710,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Фраза відбитку вашого облікового запису",
+    "message": "Фраза відбитку пальця облікового запису",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -805,6 +805,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Згортати вікно до системного лотка замість панелі інструментів."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Увімкнути піктограму в системному лотку"
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Додаткові можливості двохетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Генератор коду авторизації TOTP (2FA) для входу в сховище."
@@ -1132,7 +1141,7 @@
     "message": "Хто є власником цього елемента?"
   },
   "strong": {
-    "message": "Сильний",
+    "message": "Надійний",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
@@ -1147,6 +1156,6 @@
     "message": "Слабкий головний пароль"
   },
   "weakMasterPasswordDesc": {
-    "message": "Головний пароль, який ви ввели, заслабкий. Щоб належно захистити Ваш обліковий запис Bitwarden, ви повинні використовувати сильний головний пароль (або парольну фразу). Ви впевнені, що хочете використати цей пароль?"
+    "message": "Обраний вами головний пароль є слабким. Для належного захисту свого облікового запису Bitwarden, вам слід використовувати надійний головний пароль (або парольну фразу). Ви впевнені, що хочете використати цей пароль?"
   }
 }

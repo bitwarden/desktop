@@ -619,7 +619,7 @@
     "message": "Identitetstjenerens nettadresse"
   },
   "notificationsUrl": {
-    "message": "Varslingsserver URL"
+    "message": "Varslingstjener-URL"
   },
   "iconsUrl": {
     "message": "Ikonenes tjenernettadresse"
@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Når du minimaliserer vinduet, skal et ikon vises i verktøykassen i stedet."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Skru på verktøykasseikon"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Ytterligere 2-trinnsinnloggingsmuligheter, slik som YubiKey, FIDO U2F, og Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP-verifiseringskodegenerator (2FA) for innlogginger i ditt hvelv."
@@ -1144,9 +1153,9 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Svakt Superpassord"
+    "message": "Svakt superpassord"
   },
   "weakMasterPasswordDesc": {
-    "message": "Superpassordet du har valgt er svakt. Du bør bruke et sterkt superpassord (eller en passordfrase) for å sikre Bitwarden kontoen din på en forsvarlig måte. Er du sikker på at du vil bruke dette superpassordet?"
+    "message": "Superpassordet du har valgt er svakt. Du bør bruke et sterkt superpassord (eller en passordfrase) for å sikre Bitwarden-kontoen din på en forsvarlig måte. Er du sikker på at du vil bruke dette superpassordet?"
   }
 }

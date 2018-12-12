@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "هنگام کوچک کردن پنچره، یک آیکون در قسمت tray بجای آن نشان بده."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "فعال کردن Tray Icon"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."

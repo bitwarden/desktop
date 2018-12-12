@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Ao minimizar a janela, mostre um ícone na bandeja do sistema."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Habilitar ícone de bandeja"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Opções de autenticação em duas etapas adicionais como YubiKey, FIDO U2F, e Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."

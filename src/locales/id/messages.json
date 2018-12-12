@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Ketika jendela di perkecil, tampilkan ikon di dalam sistem baki sebagai gantinya."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Aktifkan Ikon Baki"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Pilihan info masuk dua langkah tambahan seperti YubiKey, FIDO U2F, dan Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Pembuat kode verifikasi TOTP (2FA) untuk masuk di brankas anda."

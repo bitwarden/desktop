@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Når vinduet minimeres, vis i stedet et ikon i meddelelsesområdet."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Aktivér bakkeikon"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Yderligere to-trins-loginmuligheder såsom YubiKey, FIDO U2F og Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verifikationskode (2FA) generator til logins i din boks."
@@ -1114,7 +1123,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarning": {
-    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. e-mail). Slet den umiddelbart efter at du er færdig med at bruge den."
+    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. email). Slet den umiddelbart efter at du er færdig med at bruge den."
   },
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."

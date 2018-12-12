@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Ao minimizar a janela, mostrar um ícone na bandeja do sistema em alternativa."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Ativar ícone de bandeja"
   },
@@ -864,7 +870,7 @@
     "message": "Atualização disponível"
   },
   "updateAvailableDesc": {
-    "message": "Foi encontrada uma atualização. Pretende descarregá-la agora?"
+    "message": "Foi encontrada uma atualização. Pretende transferi-la agora?"
   },
   "restart": {
     "message": "Reiniciar"
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Opções de início de sessão de dois passos adicionais como YubiKey, FIDO U2F, e Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."
