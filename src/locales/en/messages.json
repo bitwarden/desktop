@@ -917,10 +917,13 @@
     "message": "Sign up for a premium membership and get:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB encrypted storage for file attachments."
   },
   "premiumSignUpTwoStep": {
     "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verification code (2FA) generator for logins in your vault."
