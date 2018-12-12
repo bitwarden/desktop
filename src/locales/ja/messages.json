@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "ウインドウを最小化するとき、システムトレイにアイコンを表示するようにします。"
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "トレイアイコンの有効化"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey、FIDO U2F、Duoなどの追加の2段階認証ログインオプション"
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "保管庫内での2段階認証コード生成"
