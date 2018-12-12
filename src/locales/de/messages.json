@@ -706,11 +706,11 @@
     "message": "Du kannst dein Master-Passwort im bitwarden.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerabdruck-Wort",
+    "message": "Prüfschlüssel",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Das Fingerabdruck-Wort deines Kontos",
+    "message": "Prüfschlüssel für deinen Account",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -805,6 +805,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster minimiert wird."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Taskleisten-Symbol einschalten"
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Zusätzliche Zwei-Faktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP Prüfcode (2FA) Generator für Anmeldungen in deinem Tresor."
@@ -1147,6 +1156,6 @@
     "message": "Schwaches Haupt-Passwort"
   },
   "weakMasterPasswordDesc": {
-    "message": "Das Haupt-Passwort, das Sie gewählt haben ist schwach. Sie sollten ein starkes Haupt-Passwort auswählen, um Ihr Bitwarden-Konto richtig zu schützen. Sind Sie sicher, dass Sie dieses Haupt-Passwort verwenden sollen?"
+    "message": "Das Haupt-Passwort, das du gewählt hast ist schwach. Du solltest ein starkes Haupt-Passwort auswählen, um dein Bitwarden-Konto richtig zu schützen. Bist du sicher, dass du dieses Haupt-Passwort verwenden sollen?"
   }
 }
