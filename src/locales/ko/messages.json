@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "창을 최소화하면 작업 표시줄 대신 알림 영역에 아이콘을 표시합니다."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "알림 영역 아이콘 사용"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey나 FIDO U2F, Duo 등의 추가적인 2단계 인증 옵션."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "보관함에 등록된 로그인 항목을 위한 TOTP 인증 코드(2FA) 생성기."
