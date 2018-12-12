@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "Pencereyi küçültün, bunun yerine sistem tepsisinde bir simge gösterin."
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "Sistem ikonunu etkinleştir."
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey, FIDO U2F ve Duo gibi ek iki adımlı giriş seçenekleri."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Websitede oturum açma işlemleri için TOTP doğrulama kodu (2FA) üreticisi."
