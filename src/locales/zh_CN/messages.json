@@ -806,6 +806,12 @@
   "enableMinToTrayDesc": {
     "message": "最小化窗口后在系统托盘显示一个图标。"
   },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
   "enableTray": {
     "message": "启用托盘图标"
   },
@@ -915,6 +921,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "其他两步登录选项，如 YubiKey、FIDO U2F 和 Duo。"
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "为您的密码库登录采用 TOTP 验证码（两步验证）生成器。"
@@ -1147,6 +1156,6 @@
     "message": "脆弱的主密码"
   },
   "weakMasterPasswordDesc": {
-    "message": "您选择的主密码较弱。您应该使用强密码（或密码短语）来正确保护您的 bitwarden 账户。仍要使用此主密码吗？"
+    "message": "您选择的主密码较弱。您应该使用强密码（或密码短语）来正确保护您的 Bitwarden 账户。仍要使用此主密码吗？"
   }
 }
