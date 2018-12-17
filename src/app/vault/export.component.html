@@ -7,6 +7,13 @@
                         {{'exportVault' | i18n}}
                     </div>
                     <div class="box-content">
+                        <div class="box-content-row" appBoxRow>
+                            <label for="format">{{'fileFormat' | i18n}}</label>
+                            <select id="format" name="Format" [(ngModel)]="format">
+                                <option value="json">.json</option>
+                                <option value="csv">.csv</option>
+                            </select>
+                        </div>
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
                                 <label for="masterPassword">{{'masterPass' | i18n}}</label>
@@ -25,7 +32,7 @@
                     </div>
                     <div class="box-footer">
                         <p>{{'exportMasterPassword' | i18n}}</p>
-                        <strong>{{'warning' | i18n}}</strong>: {{'exportWarning' | i18n}}
+                        <strong>{{'warning' | i18n}}</strong>: {{'exportWarningDesc' | i18n}}
                     </div>
                 </div>
             </div>
