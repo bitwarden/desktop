@@ -807,10 +807,10 @@
     "message": "將視窗最小化時，於系統匣顯示圖示。"
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "關閉後縮小至系統匣"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "將視窗關閉時，於系統匣顯示圖示。"
   },
   "enableTray": {
     "message": "啟用系統匣圖示"
@@ -917,7 +917,7 @@
     "message": "成為進階會員並取得："
   },
   "premiumSignUpStorage": {
-    "message": "1 GB 的加密檔案儲存空間。"
+    "message": "用於檔案附件的 1 GB 的加密檔案儲存空間。"
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey，FIDO U2F 和 Duo 等額外的兩步驟登入選項。"
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "匯出密碼庫"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "您的密碼將匯出成未加密的 .csv 檔案。您不應將它存放或經由未經加密的方式傳送（例如電子郵件）。用完後請立即將它刪除。"
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "輸入您的主密碼以匯出密碼庫資料。"

@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Tresor exportieren"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "WARNUNG",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Dieser Export enthält deine unverschlüsselten Daten im CSV-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."

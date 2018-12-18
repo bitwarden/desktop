@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Ekspor Brankas"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "PERINGATAN",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Ekspor ini berisi data anda yang tidak ter-enkripsi dalam format .csv. Anda seharusnya tidak menyimpan atau mengirimnya lewat kanal yang tidak aman (seperti e-mail). Hapus berkas ini dengan segera jika anda selesai menggunakannya."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Masukkan kata sandi utama untuk ekspor data brankas anda."

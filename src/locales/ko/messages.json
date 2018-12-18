@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "보관함 내보내기"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "경고",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "내보낸 파일에는 암호화되지 않은 .csv 형식의 데이터가 포함되어 있습니다. 이메일 등의 안전하지 않은 방법을 통해 전송하거나 보관하지 마시고, 사용이 끝나면 바로 삭제하세요."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."

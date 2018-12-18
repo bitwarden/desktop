@@ -807,10 +807,10 @@
     "message": "最小化窗口后在系统托盘显示一个图标。"
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "关闭到托盘"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "关闭此窗口后，在系统的托盘中显示一个图标。"
   },
   "enableTray": {
     "message": "启用托盘图标"
@@ -923,7 +923,7 @@
     "message": "其他两步登录选项，如 YubiKey、FIDO U2F 和 Duo。"
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "密码健康、账户体检以及数据泄露报告，保障您的密码库安全。"
   },
   "premiumSignUpTotp": {
     "message": "为您的密码库登录采用 TOTP 验证码（两步验证）生成器。"
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "导出密码库"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "导出会将你的数据存储成未经加密的 .csv 文件。你不应该长期保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "输入主密码来导出你的密码库。"

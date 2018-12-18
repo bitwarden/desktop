@@ -807,10 +807,10 @@
     "message": "При сворачивании окна будет отображен значок в системном трее."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Закрывать в трей"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "При закрытии окна будет отображен значок в системном трее."
   },
   "enableTray": {
     "message": "Включить значок в трее"
@@ -917,13 +917,13 @@
     "message": "Подпишитесь на премиум-статус и получите:"
   },
   "premiumSignUpStorage": {
-    "message": "1 ГБ зашифрованного хранилища файлов."
+    "message": "1 ГБ зашифрованного хранилища для вложенных файлов."
   },
   "premiumSignUpTwoStep": {
     "message": "Дополнительные варианты двухфакторной аутентификации, такие как YubiKey, FIDO U2F и Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Гигиена паролей, здоровье учетной записи и отчеты об утечках данных для обеспечения безопасности вашего хранилища."
   },
   "premiumSignUpTotp": {
     "message": "Генератор кода подтверждения TOTP для входа в ваше хранилище."
@@ -1051,7 +1051,7 @@
     "message": "Проверьте, не скомпрометирован ли пароль."
   },
   "passwordExposed": {
-    "message": "Этот пароль был найден в базах утечек $VALUE$ раз(а). Вы должны изменить его.",
+    "message": "Этот пароль был скомпрометирован $VALUE$ раз(а). Вы должны изменить его.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Экспорт хранилища"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Файл экспорта содержит ваши данные в открытом виде. Его не следует хранить или отправлять по небезопасным каналам (например, email). Удалите его сразу после использования."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."

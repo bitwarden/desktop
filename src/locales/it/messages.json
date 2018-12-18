@@ -807,10 +807,10 @@
     "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Chiudi nell'area di notifica"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Quando si chiude la finestra, mostrare invece un'icona nella barra delle applicazioni."
   },
   "enableTray": {
     "message": "Usa l'area di notifica"
@@ -923,7 +923,7 @@
     "message": "Opzioni di verifica in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Sicurezza delle password, integrità dell'account, e rapporti sulla violazione dei dati per mantenere sicura la tua cassaforte."
   },
   "premiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Esporta Cassaforte"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "ATTENZIONE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Questo file contiene i tuoi dati in formato .csv non crittografati. Non dovresti memorizzarlo o inviarlo attraverso canali non sicuri (come un'email). Assicurati di eliminarlo non appena hai finito di usarlo."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."

@@ -807,10 +807,10 @@
     "message": "Згортати вікно до системного лотка замість панелі інструментів."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Згорнути в лоток"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "При закритті вікна згортати в системний лоток."
   },
   "enableTray": {
     "message": "Увімкнути піктограму в системному лотку"
@@ -923,7 +923,7 @@
     "message": "Додаткові можливості двохетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Гігієна паролів, здоров'я облікового запису, а також звіти про вразливості даних, щоб зберігати ваше сховище в безпеці."
   },
   "premiumSignUpTotp": {
     "message": "Генератор коду авторизації TOTP (2FA) для входу в сховище."
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Експорт сховища"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "ПОПЕРЕДЖЕННЯ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "При експорті ваші дані зберігаються в незашифрованому вигляді в форматі .csv. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Введіть головний пароль, щоб експортувати дані сховища."
