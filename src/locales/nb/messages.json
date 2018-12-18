@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Eksporter hvelvet"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Eksporten inneholder dine krypterte dataer i .csv-format. Du burde ikke lagre eller sende dem over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
