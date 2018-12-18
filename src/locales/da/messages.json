@@ -807,10 +807,10 @@
     "message": "Når vinduet minimeres, vis i stedet et ikon i meddelelsesområdet."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Luk til ikon i meddelelsesområdet"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Når vinduet lukkes, vis i stedet et ikon i meddelelsesområdet."
   },
   "enableTray": {
     "message": "Aktivér bakkeikon"
@@ -917,13 +917,13 @@
     "message": "Tilmeld dig et premium medlemskab og få:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB krypteret filopbevaring."
+    "message": "1 GB krypteret lager til vedhæftede filer."
   },
   "premiumSignUpTwoStep": {
     "message": "Yderligere to-trins-loginmuligheder såsom YubiKey, FIDO U2F og Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Adgangskodehygiejne, kontosundhed og rapporter om datalæk til at holde din boks sikker."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verifikationskode (2FA) generator til logins i din boks."
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Eksportér boks"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. email). Slet den umiddelbart efter at du er færdig med at bruge den."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
