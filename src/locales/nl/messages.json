@@ -723,10 +723,10 @@
     "message": "Download de browserextensie"
   },
   "syncingComplete": {
-    "message": "Synchroniseren voltooid"
+    "message": "Synchronisatie voltooid"
   },
   "syncingFailed": {
-    "message": "Synchroniseren mislukt"
+    "message": "Synchronisatie mislukt"
   },
   "yourVaultIsLocked": {
     "message": "Uw kluis is vergrendeld. Controleer uw hoofdwachtwoord om door te gaan."
@@ -807,10 +807,10 @@
     "message": "Pictogram in het systeemvak weergeven bij het minimaliseren van het venster."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Sluiten naar systeemvak"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Pictogram in het systeemvak weergeven bij het sluiten van het venster."
   },
   "enableTray": {
     "message": "Pictogram in het systeemvak inschakelen"
@@ -923,7 +923,7 @@
     "message": "Extra tweestapsinlogopties zoals YubiKey, FIDO U2F en Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Wachtwoordhygiëne, gezondheid van uw account en gegevensinbreuk om uw kluis om veilig te houden."
   },
   "premiumSignUpTotp": {
     "message": "TOTP-verificatiecodegenerator (2FA) voor logins in uw kluis."
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Kluis exporteren"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "WAARSCHUWING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Deze export bevat niet-versleutelde gegevens in CSV-indeling. Deze dient niet te worden opgeslagen of over onveilige kanalen (zoals email) verstuurd te worden. Verwijder het zodra het niet meer nodig is."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Voer uw hoofdwachtwoord in om uw kluis-gegevens te exporteren."
