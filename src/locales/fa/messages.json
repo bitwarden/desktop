@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "صادر کردن گاوصندوق"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "اخطار",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "این صادرات شامل اطلاعات رمزگذاری شده شما در فرمت csv می باشد. شما نباید آن را در کانال های ناامن (مانند ایمیل) ذخیره یا ارسال کنید. بعد از اینکه کارتان با آن انجام شد آن را بلافاصله حذف کنید."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "گذرواژه اصلی خود را برای صادرات داده ها از گاوصندوقتان وارد کنید."
