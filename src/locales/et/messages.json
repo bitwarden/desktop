@@ -807,10 +807,10 @@
     "message": "Akent minimeerides kuva üksnes süsteemisalve ikooni."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Minimeeri süsteemisalvele"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Akna sulgedes minimeeritakse see süsteemisalvele."
   },
   "enableTray": {
     "message": "Luba süsteemisalve ikoon"
@@ -923,7 +923,7 @@
     "message": "Lisavõimalused kaheastmeliseks kinnitamiseks, näiteks YubiKey, FIDO U2F ja Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Parooli hügieen, konto seisukord ja andmelekete raportid aitavad hoidlat turvalisena hoida."
   },
   "premiumSignUpTotp": {
     "message": "TOTP kinnituskoodide (2FA) genereeria hoidlas olevatele kasutajakontodele."
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Ekspordi hoidla"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "HOIATUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Ekspordi tulemusena luuakse ilma krüpteringuta .csv formaadis fail. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
