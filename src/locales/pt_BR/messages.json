@@ -807,10 +807,10 @@
     "message": "Ao minimizar a janela, mostre um ícone na bandeja do sistema."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Fechar para Ícone da Bandeja"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Quando fechar a janela, mostre um ícone na bandeja do sistema."
   },
   "enableTray": {
     "message": "Habilitar ícone de bandeja"
@@ -923,7 +923,7 @@
     "message": "Opções de autenticação em duas etapas adicionais como YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Higiene de senha, saúde da conta, e relatórios sobre violação de dados para manter o seu cofre seguro."
   },
   "premiumSignUpTotp": {
     "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Exportar Cofre"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Essa exportação contém seus dados não criptografados no formato .csv. Você não deve armazená-lo ou enviá-lo por canais inseguros (como e-mail). Exclua imediatamente após terminar de usá-lo."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
