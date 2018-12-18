@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Kasayı Dışa Aktar"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "UYARI",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Bu dışa aktarma .csv formatında şifrelenmemiş verilerinizi barındırır. Bunu güvenli olmayan kanallarla göndermeyin (e-posta gibi) ve ya saklamayın. İşiniz bittikten sonra bu dosyayı hemen silin."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
