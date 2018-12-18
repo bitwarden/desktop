@@ -807,10 +807,10 @@
     "message": "ウインドウを最小化するとき、システムトレイにアイコンを表示するようにします。"
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "トレイアイコンへ閉じる"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "ウインドウを閉じたとき、システムトレイにアイコンを表示するようにします。"
   },
   "enableTray": {
     "message": "トレイアイコンの有効化"
@@ -923,7 +923,7 @@
     "message": "YubiKey、FIDO U2F、Duoなどの追加の2段階認証ログインオプション"
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "保管庫を安全に保つための、パスワードやアカウントの健全性、データ侵害に関するレポート"
   },
   "premiumSignUpTotp": {
     "message": "保管庫内での2段階認証コード生成"
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "保管庫のエクスポート"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "暗号化していないデータを .csv 形式でエクスポートします。メールなどの安全でない手段で保管したり共有したりしないでください。使用した後はすぐに削除してください。"
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
