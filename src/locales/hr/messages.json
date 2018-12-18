@@ -45,10 +45,10 @@
     "message": "Podijeli stavku"
   },
   "sharedItem": {
-    "message": "Zajedničke stavke"
+    "message": "Podijeljene stavka"
   },
   "shareDesc": {
-    "message": "Odaberite organizaciju s kojom želite prodijeliti ovu stavku. Dijeljenje prenosi vlasništvo stavke na organizaciju. Vi više nećete biti izravni vlasnik ove stavke jednom kada je podijelite."
+    "message": "Odaberite organizaciju s kojom želite podijeliti ovu stavku. Dijeljenje prenosi vlasništvo stavke na organizaciju. Više nećete biti izravni vlasnik ove stavke jednom kada je podijelite."
   },
   "attachments": {
     "message": "Privitci"
@@ -113,7 +113,7 @@
     "message": "Promijeni vidljivost"
   },
   "toggleCollapse": {
-    "message": "Prekidač sažimanja",
+    "message": "Sažmi\/Proširi",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -362,7 +362,7 @@
     "message": "Broj riječi"
   },
   "wordSeparator": {
-    "message": "Separator riječi"
+    "message": "Razdjelitelj riječi"
   },
   "close": {
     "message": "Zatvori"
@@ -807,10 +807,10 @@
     "message": "Kod umanjenja prozora, prikaži ikonu na alatnoj traci."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Zatvori u ikonu ladice"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Kod zatvaranja prozora, prikaži ikonu na alatnoj traci."
   },
   "enableTray": {
     "message": "Omogući ikonu na alatnoj traci"
@@ -923,7 +923,7 @@
     "message": "Dodatne mogućnosti za prijavu u dva koraka kao što su YubiKey, FIDO U2F i Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Higijena lozinki, zdravlje računa i izvještaji o kršenju sigurnosti podataka radi zaštite Vašeg trezora."
   },
   "premiumSignUpTotp": {
     "message": "Generator TOTP kontrolnog koda (2FA) za prijave u vašem trezoru."
@@ -1118,12 +1118,15 @@
   "exportVault": {
     "message": "Izvoz trezora"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "UPOZORENJE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Ovaj izvoz sadrži Vaše nešifirane podatke u .csv formatu. Ne biste ga trebali spremati ili poslati preko nesigurnih kanala (kao što je e-pošta). Obrišite ga odmah nakon što ste završili s upotrebom."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
