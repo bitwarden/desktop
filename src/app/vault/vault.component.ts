@@ -163,45 +163,45 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async load() {
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             await this.groupingsComponent.load();
 
             if (params == null) {
                 this.groupingsComponent.selectedAll = true;
                 await this.ciphersComponent.load();
-                return;
-            }
-
-            if (params.cipherId) {
-                const cipherView = new CipherView();
-                cipherView.id = params.cipherId;
-                if (params.action === 'edit') {
-                    this.editCipher(cipherView);
-                } else {
-                    this.viewCipher(cipherView);
-                }
-            } else if (params.action === 'add') {
-                this.addCipher();
-            }
-
-            if (params.favorites) {
-                this.groupingsComponent.selectedFavorites = true;
-                await this.filterFavorites();
-            } else if (params.type) {
-                const t = parseInt(params.type, null);
-                this.groupingsComponent.selectedType = t;
-                await this.filterCipherType(t);
-            } else if (params.folderId) {
-                this.groupingsComponent.selectedFolder = true;
-                this.groupingsComponent.selectedFolderId = params.folderId;
-                await this.filterFolder(params.folderId);
-            } else if (params.collectionId) {
-                this.groupingsComponent.selectedCollectionId = params.collectionId;
-                await this.filterCollection(params.collectionId);
             } else {
-                this.groupingsComponent.selectedAll = true;
-                await this.ciphersComponent.load();
+                if (params.cipherId) {
+                    const cipherView = new CipherView();
+                    cipherView.id = params.cipherId;
+                    if (params.action === 'edit') {
+                        this.editCipher(cipherView);
+                    } else {
+                        this.viewCipher(cipherView);
+                    }
+                } else if (params.action === 'add') {
+                    this.addCipher();
+                }
+
+                if (params.favorites) {
+                    this.groupingsComponent.selectedFavorites = true;
+                    await this.filterFavorites();
+                } else if (params.type) {
+                    const t = parseInt(params.type, null);
+                    this.groupingsComponent.selectedType = t;
+                    await this.filterCipherType(t);
+                } else if (params.folderId) {
+                    this.groupingsComponent.selectedFolder = true;
+                    this.groupingsComponent.selectedFolderId = params.folderId;
+                    await this.filterFolder(params.folderId);
+                } else if (params.collectionId) {
+                    this.groupingsComponent.selectedCollectionId = params.collectionId;
+                    await this.filterCollection(params.collectionId);
+                } else {
+                    this.groupingsComponent.selectedAll = true;
+                    await this.ciphersComponent.load();
+                }
             }
+            queryParamsSub.unsubscribe();
         });
     }
 
