@@ -209,7 +209,7 @@
                             {{field.value || '&nbsp;'}}
                         </div>
                         <div *ngIf="field.type === fieldType.Hidden">
-                            <span [hidden]="!field.showValue" class="monospaced">{{field.value}}</span>
+                            <span [hidden]="!field.showValue" class="monospaced show-whitespace">{{field.value}}</span>
                             <span [hidden]="field.showValue" class="monospaced">{{field.maskedValue}}</span>
                         </div>
                         <div *ngIf="field.type === fieldType.Boolean">

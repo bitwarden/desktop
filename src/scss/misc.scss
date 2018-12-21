@@ -92,6 +92,10 @@ p.lead {
     font-family: $font-family-monospace;
 }
 
+.show-whitespace {
+    white-space: pre-wrap;
+}
+
 .sr-only {
     position: absolute !important;
     width: 1px !important;
@@ -182,6 +186,10 @@ p.lead {
 .password-wrapper {
     display: flex !important;
     flex-wrap: wrap;
+
+    span {
+        white-space: pre;
+    }
 }
 
 .password-number {
