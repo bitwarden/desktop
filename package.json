@@ -206,7 +206,7 @@
     "css-loader": "^1.0.0",
     "del": "^3.0.0",
     "electron": "3.0.13",
-    "electron-builder": "20.38.4",
+    "electron-builder": "20.31.2",
     "electron-rebuild": "^1.8.2",
     "electron-reload": "^1.4.0",
     "extract-text-webpack-plugin": "next",
