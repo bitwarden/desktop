@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "desktop-idle": "1.1.2",
-    "electron-log": "2.2.14",
+    "electron-log": "2.2.17",
     "electron-updater": "3.0.3",
     "keytar": "4.2.1",
     "lowdb": "1.0.0"
