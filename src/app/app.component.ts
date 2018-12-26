@@ -123,7 +123,7 @@ export class AppComponent implements OnInit {
                         await this.lockService.lock();
                         break;
                     case 'locked':
-                        this.router.navigate(['lock']);
+                        this.router.navigate(['lock'], { queryParams: { refresh: true } });
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
                         break;
