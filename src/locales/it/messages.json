@@ -1119,14 +1119,14 @@
     "message": "Esporta Cassaforte"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Formato file"
   },
   "warning": {
     "message": "ATTENZIONE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Questa esportazione contiene i dati della cassaforte in un formato non criptato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."
