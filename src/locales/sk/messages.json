@@ -807,10 +807,10 @@
     "message": "Namiesto minimalizácie okna zobraziť ikonu v systémovej lište."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Zatvoriť do systémovej lišty"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Namiesto zatvorenia okna zobraziť ikonu v systémovej lište."
   },
   "enableTray": {
     "message": "Povoliť ikonu na systémovej lište"
@@ -923,7 +923,7 @@
     "message": "Ďalšie možnosti dvojstupňového prihlásenia ako YubiKey, FIDO U2F a Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Správy o sile hesla, zabezpečení účtov a únikoch dát ktoré vám pomôžu udržať vaše kontá v bezpečí."
   },
   "premiumSignUpTotp": {
     "message": "Generátor TOTP verifikačného kódu (2FA) pre kontá vo vašom trezore."
@@ -1119,14 +1119,14 @@
     "message": "Export trezoru"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Formát Súboru"
   },
   "warning": {
     "message": "UPOZORNENIE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Tento export obsahuje vaše dáta v nešifrovanom formáte. Nemali by ste ich ukladať, ani posielať cez nezabezpečené kanály (napr. email). Okamžite ho odstráňte, keď ho prestanete používať."
   },
   "exportMasterPassword": {
     "message": "Zadajte vaše hlavné heslo pre export údajov trezoru."
