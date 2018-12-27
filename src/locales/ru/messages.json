@@ -156,10 +156,10 @@
     "message": "Адрес"
   },
   "premiumRequired": {
-    "message": "Необходим премиум-статус"
+    "message": "Необходим Премиум"
   },
   "premiumRequiredDesc": {
-    "message": "Для использования этой функции требуется премиум-статус."
+    "message": "Для использования этой функции требуется Премиум."
   },
   "errorOccurred": {
     "message": "Произошла ошибка."
@@ -899,22 +899,22 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Премиум-статус"
+    "message": "Премиум"
   },
   "premiumManage": {
-    "message": "Управление статусом"
+    "message": "Управление Премиум"
   },
   "premiumManageAlert": {
-    "message": "Вы можете управлять своим статусом на bitwarden.com. Перейти на сайт сейчас?"
+    "message": "Вы можете управлять Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Обновить статус"
+    "message": "Обновить Премиум"
   },
   "premiumNotCurrentMember": {
-    "message": "В настоящее время у вас нет премиум-статуса."
+    "message": "На текущий момент у вас отсутствует Премиум."
   },
   "premiumSignUpAndGet": {
-    "message": "Подпишитесь на премиум-статус и получите:"
+    "message": "Подпишитесь на Премиум и получите:"
   },
   "premiumSignUpStorage": {
     "message": "1 ГБ зашифрованного хранилища для вложенных файлов."
@@ -926,22 +926,22 @@
     "message": "Гигиена паролей, здоровье учетной записи и отчеты об утечках данных для обеспечения безопасности вашего хранилища."
   },
   "premiumSignUpTotp": {
-    "message": "Генератор кода подтверждения TOTP для входа в ваше хранилище."
+    "message": "TOTP-генератор кодов (2ФА) для логинов вашего хранилища."
   },
   "premiumSignUpSupport": {
-    "message": "Приоритетную поддержку."
+    "message": "Приоритетная поддержка."
   },
   "premiumSignUpFuture": {
-    "message": "Все будущие функции премиум-статуса. Их будет больше!"
+    "message": "Все будущие функции Премиум. Их будет больше!"
   },
   "premiumPurchase": {
     "message": "Купить премиум"
   },
   "premiumPurchaseAlert": {
-    "message": "Вы можете купить премиум-статус на bitwarden.com. Перейти на сайт сейчас?"
+    "message": "Вы можете купить Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumCurrentMember": {
-    "message": "У вас премиум-статус!"
+    "message": "У вас есть Премиум!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Благодарим вас за поддержку Bitwarden."
@@ -1119,14 +1119,14 @@
     "message": "Экспорт хранилища"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Формат файла"
   },
   "warning": {
     "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Экспортируемый файл содержит данные вашего хранилища в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например, по электронной почте). Удалите его сразу после использования."
   },
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
