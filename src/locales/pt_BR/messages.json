@@ -1119,14 +1119,14 @@
     "message": "Exportar Cofre"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Formato do Arquivo"
   },
   "warning": {
     "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Esta exportação contém os dados do seu cofre em um formato não criptografado. Você não deve armazenar ou enviar o arquivo exportado por canais inseguros (como e-mail). Exclua imediatamente após terminar de usá-lo."
   },
   "exportMasterPassword": {
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
