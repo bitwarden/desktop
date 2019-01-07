@@ -238,7 +238,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.canLaunch) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('launch'),
-                        click: () => this.platformUtilsService.launchUri(cipher.login.uri),
+                        click: () => this.platformUtilsService.launchUri(cipher.login.launchUri),
                     }));
                 }
                 if (cipher.login.username != null) {
