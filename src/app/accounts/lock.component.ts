@@ -2,7 +2,6 @@ import {
     Component,
     NgZone,
     OnDestroy,
-    OnInit,
 } from '@angular/core';
 import {
     ActivatedRoute,
@@ -24,7 +23,7 @@ import { LockComponent as BaseLockComponent } from 'jslib/angular/components/loc
     selector: 'app-lock',
     templateUrl: 'lock.component.html',
 })
-export class LockComponent extends BaseLockComponent implements OnInit, OnDestroy {
+export class LockComponent extends BaseLockComponent implements OnDestroy {
     private reloadInterval: number = null;
 
     constructor(router: Router, i18nService: I18nService,
@@ -35,7 +34,8 @@ export class LockComponent extends BaseLockComponent implements OnInit, OnDestro
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService);
     }
 
-    ngOnInit() {
+    async ngOnInit() {
+        await super.ngOnInit();
         this.route.queryParams.subscribe((params) => {
             if (params.refresh === 'true') {
                 // Refresh the renderer window when locked to enure that all purged memory is cleaned up
