@@ -190,24 +190,31 @@
             &.box-content-row-input {
                 label {
                     white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
                 input {
                     text-align: right;
+                    width: 45px !important;
                 }
             }
 
             &.box-content-row-slider {
                 input[type="range"] {
                     height: 10px;
+                    width: 110px !important;
                 }
 
                 input[type="number"] {
-                    width: 45px;
+                    text-align: right;
+                    width: 45px !important;
                 }
 
                 label {
                     white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
 
