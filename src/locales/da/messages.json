@@ -88,7 +88,7 @@
     "message": "Redigér element"
   },
   "emailAddress": {
-    "message": "E-mailadresse"
+    "message": "Emailadresse"
   },
   "verificationCodeTotp": {
     "message": "Verifikationskode (TOTP)"
@@ -144,7 +144,7 @@
     "message": "Pasnummer"
   },
   "licenseNumber": {
-    "message": "Kørekortnummer"
+    "message": "Licensnummer"
   },
   "email": {
     "message": "E-mail"
@@ -655,7 +655,7 @@
     "message": "Er du sikker på, at du vil logge ud?"
   },
   "logOut": {
-    "message": "Log ud"
+    "message": "Log af"
   },
   "addNewLogin": {
     "message": "Tilføj et login"
@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Lås op"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Ugyldig hovedadgangskode"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Sikkerhed"
-  },
-  "disableGa": {
-    "message": "Deaktivér Analytics"
-  },
-  "gaDesc": {
-    "message": "Vi bruger Analytics for bedre at lære hvordan applikationen bruges, således at vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
