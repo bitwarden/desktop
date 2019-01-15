@@ -734,15 +734,6 @@
   "unlock": {
     "message": "Розблокувати"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Неправильний головний пароль"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "Безпека"
+  },
+  "disableGa": {
+    "message": "Вимкнути аналітику"
+  },
+  "gaDesc": {
+    "message": "Ми використовуємо аналітику для розуміння того, як використовується програма, щоб зробити її кращою. Всі зібрані дані цілком анонімні."
   },
   "disableFavicon": {
     "message": "Вимкнути піктограми веб-сайтів"

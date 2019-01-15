@@ -734,15 +734,6 @@
   "unlock": {
     "message": "解鎖"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "無效的主密碼"
   },
@@ -797,8 +788,14 @@
   "security": {
     "message": "安全"
   },
+  "disableGa": {
+    "message": "停用 Analytics"
+  },
+  "gaDesc": {
+    "message": "我们使用 analytics 協助分析應用程式的使用情況，以便我們改善程式。所有資料均為匿名收集。"
+  },
   "disableFavicon": {
-    "message": "停用網站圖示顯示功能"
+    "message": "停用網站圖示"
   },
   "disableFaviconDesc": {
     "message": "在您密碼庫的每個登入資料旁顯示一個可辨識圖示。"

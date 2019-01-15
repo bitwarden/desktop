@@ -734,15 +734,6 @@
   "unlock": {
     "message": "Lås upp"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Felaktigt huvudlösenord"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "Säkerhet"
+  },
+  "disableGa": {
+    "message": "Inaktivera Analytics"
+  },
+  "gaDesc": {
+    "message": "Vi använder analytics för att bättre förstå hur programmet används så att vi kan göra förbättringar. All datainsamling är helt anonym."
   },
   "disableFavicon": {
     "message": "Inaktivera webbplatsikoner"

@@ -734,15 +734,6 @@
   "unlock": {
     "message": "Deblocare"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Parola principală este incorectă"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "Securitate"
+  },
+  "disableGa": {
+    "message": "Dezactivaţi datele analitice"
+  },
+  "gaDesc": {
+    "message": "Utilizăm datele analitice pentru a afla mai bine modul în care este folosită aplicația, astfel încât s-o putem face mai bună. Toate colectările de date sunt complet anonime."
   },
   "disableFavicon": {
     "message": "Dezactivare pictograme"

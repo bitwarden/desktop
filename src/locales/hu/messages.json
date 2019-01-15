@@ -734,15 +734,6 @@
   "unlock": {
     "message": "Feloldás"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Érvénytelen mesterjelszó"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "Biztonság"
+  },
+  "disableGa": {
+    "message": "Analitika kikapcsolása"
+  },
+  "gaDesc": {
+    "message": "Az alkalmazás jobbá tétele érdekében analitikát használunk, hogy többet többet tudjunk arról hogyan használod az alkalmazást. Az adatok gyűjtése teljesen névtelen."
   },
   "disableFavicon": {
     "message": "Honlap ikonok letiltása"

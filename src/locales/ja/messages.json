@@ -734,15 +734,6 @@
   "unlock": {
     "message": "ロック解除"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "マスターパスワードが間違っています"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "セキュリティ"
+  },
+  "disableGa": {
+    "message": "解析の無効化"
+  },
+  "gaDesc": {
+    "message": "アプリの使われ方を解析することでより使いやすくなるよう開発しています。収集されるデータはすべて匿名です。"
   },
   "disableFavicon": {
     "message": "ウェブサイトアイコンの無効化"

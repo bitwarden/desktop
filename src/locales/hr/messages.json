@@ -734,15 +734,6 @@
   "unlock": {
     "message": "Otključaj"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Nevažeća glavna lozinka"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "Sigurnost"
+  },
+  "disableGa": {
+    "message": "Onemogućite uslugu Google Analytics"
+  },
+  "gaDesc": {
+    "message": "Koristimo Google analytics kako bismo saznali na koji način se aplikacija upotrebljava, kako bi istu mogli poboljšati. Svako prikupljanje podataka potpuno je anonimno."
   },
   "disableFavicon": {
     "message": "Onemogući ikone web mjesta"
@@ -1122,14 +1119,14 @@
     "message": "Izvoz trezora"
   },
   "fileFormat": {
-    "message": "Format datoteke"
+    "message": "File Format"
   },
   "warning": {
     "message": "UPOZORENJE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Ovaj izvoz sadrži podatke trezora u nešifriranom obliku. Izvezenu datoteku ne smijete pohranjivati ili slati preko nesigurnih kanala (kao što je e-pošta). Izbrišite je odmah nakon završetka korištenja."
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."

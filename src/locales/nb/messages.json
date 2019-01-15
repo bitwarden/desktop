@@ -734,15 +734,6 @@
   "unlock": {
     "message": "Lås opp"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Ugyldig superpassord"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "Sikkerhet"
+  },
+  "disableGa": {
+    "message": "Deaktiver analyser"
+  },
+  "gaDesc": {
+    "message": "Vi bruker analyseverktøy for å bedre lære om hvordan programmet blir brukt, sånn at vi kan gjøre den bedre. All datainnsamling er fullstendig anonymt."
   },
   "disableFavicon": {
     "message": "Skru av nettstedsikoner"

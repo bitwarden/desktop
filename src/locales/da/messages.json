@@ -734,15 +734,6 @@
   "unlock": {
     "message": "Lås op"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "invalidMasterPassword": {
     "message": "Ugyldig hovedadgangskode"
   },
@@ -796,6 +787,12 @@
   },
   "security": {
     "message": "Sikkerhed"
+  },
+  "disableGa": {
+    "message": "Deaktivér Analytics"
+  },
+  "gaDesc": {
+    "message": "Vi bruger Analytics for bedre at lære hvordan applikationen bruges, således at vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
