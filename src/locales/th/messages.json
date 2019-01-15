@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Unlock"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Invalid master password"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Security"
-  },
-  "disableGa": {
-    "message": "Disable Analytics"
-  },
-  "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
   },
   "disableFavicon": {
     "message": "Disable Website Icons"
