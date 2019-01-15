@@ -804,7 +804,7 @@
     "message": "Website icons provide a recognisable image next to each login item in your vault."
   },
   "enableMinToTray": {
-    "message": "Minimize to tray icon"
+    "message": "Minimise to tray icon"
   },
   "enableMinToTrayDesc": {
     "message": "When minimising the window, show an icon in the system tray instead."
