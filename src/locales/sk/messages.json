@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Odomknúť"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Neplatné hlavné heslo"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Zabezpečenie"
-  },
-  "disableGa": {
-    "message": "Vypnúť analytiku"
-  },
-  "gaDesc": {
-    "message": "Používame analytiku, aby sme zistili, ako je aplikácia používaná, aby sme ju mohli vylepšiť. Všetky zhromaždené údaje sú kompletne anonymné."
   },
   "disableFavicon": {
     "message": "Nezobrazovať ikony stránok"
