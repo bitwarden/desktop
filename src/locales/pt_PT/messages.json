@@ -735,7 +735,7 @@
     "message": "Desbloquear"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Sessão iniciada como $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
