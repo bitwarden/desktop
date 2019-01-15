@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "allItems": {
-    "message": "Tous les éléments"
+    "message": "Tous les identifiants"
   },
   "favorites": {
     "message": "Favoris"
@@ -33,7 +33,7 @@
     "message": "Rechercher dans le coffre"
   },
   "addItem": {
-    "message": "Ajouter un élément"
+    "message": "Ajouter un identifiant"
   },
   "shared": {
     "message": "Partagé"
@@ -54,7 +54,7 @@
     "message": "Pièces jointes"
   },
   "viewItem": {
-    "message": "Voir l'identifiant"
+    "message": "Voir l'élément"
   },
   "name": {
     "message": "Nom"
@@ -85,7 +85,7 @@
     "message": "Phrase de passe"
   },
   "editItem": {
-    "message": "Modifier l'identifiant"
+    "message": "Modifier l'élément"
   },
   "emailAddress": {
     "message": "Adresse e-mail"
@@ -110,7 +110,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Afficher\/Masquer"
+    "message": "Changer la visibilité"
   },
   "toggleCollapse": {
     "message": "Déplier ou replier",
@@ -132,7 +132,7 @@
     "message": "Code de sécurité"
   },
   "identityName": {
-    "message": "Identité"
+    "message": "identityName"
   },
   "company": {
     "message": "Société"
@@ -319,7 +319,7 @@
     "message": "Élément modifié"
   },
   "deleteItem": {
-    "message": "Supprimer l'élément"
+    "message": "Supprimer l'identifiant"
   },
   "deleteFolder": {
     "message": "Supprimer le dossier"
@@ -347,10 +347,10 @@
     "message": "Modifier le dossier"
   },
   "regeneratePassword": {
-    "message": "Regénérer un mot de passe"
+    "message": "Re-générer un mot de passe"
   },
   "copyPassword": {
-    "message": "Copier le mot de passe"
+    "message": "Copier mot de passe"
   },
   "copyUri": {
     "message": "Copier l'URI"
@@ -368,10 +368,10 @@
     "message": "Fermer"
   },
   "minNumbers": {
-    "message": "Nombre minimum de chiffres"
+    "message": "Minimum de chiffres"
   },
   "minSpecial": {
-    "message": "Nombre minimum de caractères spéciaux",
+    "message": "Minimum de caractères spéciaux",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -451,7 +451,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Retapez votre mot de passe maître"
+    "message": "Re-tapez votre mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -493,7 +493,7 @@
     "message": "Une erreur inattendue est survenue."
   },
   "itemInformation": {
-    "message": "Informations sur l'élément"
+    "message": "Information sur l'identifiant"
   },
   "noItemsInList": {
     "message": "Aucun élément à afficher."
@@ -685,7 +685,7 @@
     "message": "Nous contacter"
   },
   "visitOurWebsite": {
-    "message": "Visitez notre site web"
+    "message": "Visiter notre site web"
   },
   "fileBugReport": {
     "message": "Envoyer un rapport de bug"
@@ -717,10 +717,10 @@
     "message": "Aller au coffre web"
   },
   "getMobileApp": {
-    "message": "Télécharger l'appli mobile"
+    "message": "Télécharger l'application mobile"
   },
   "getBrowserExtension": {
-    "message": "Télécharger l'extension web"
+    "message": "Télécharger l'extension du navigateur"
   },
   "syncingComplete": {
     "message": "Synchronisation terminée"
@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Déverrouiller"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Mot de passe maître invalide"
   },
@@ -741,7 +750,7 @@
     "message": "L'authentification à deux étapes sécurise plus encore votre compte en vous demandant à chaque identification la saisie d'un code de sécurité obtenu depuis un autre appareil, comme une clef de sécurité, une application d'authentification, un SMS, un appel téléphonique ou encore un courriel. L'identification à deux étapes peut être activée dans le coffre web sur bitwarden.com. Voulez-vous vous rendre sur le site web maintenant ?"
   },
   "twoStepLogin": {
-    "message": "Identification à deux étapes"
+    "message": "Identification à deux facteurs"
   },
   "lockOptions": {
     "message": "Options de verrouillage"
@@ -788,17 +797,11 @@
   "security": {
     "message": "Sécurité"
   },
-  "disableGa": {
-    "message": "Désactiver les outils d'analyse"
-  },
-  "gaDesc": {
-    "message": "Nous utilisons des outils d'analyse pour mieux comprendre comment l'application est utilisée et ainsi l'améliorer. Toutes les données collectées sont entièrement anonymes."
-  },
   "disableFavicon": {
     "message": "Désactiver les icônes des sites web"
   },
   "disableFaviconDesc": {
-    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque élément dans votre coffre."
+    "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
   },
   "enableMinToTray": {
     "message": "Réduire dans la barre d'outils"
@@ -888,7 +891,7 @@
     "message": "Inconnu"
   },
   "copyUsername": {
-    "message": "Copier le nom d'utilisateur"
+    "message": "Copier nom d'utilisateur"
   },
   "copyNumber": {
     "message": "Copier le numéro",
@@ -991,7 +994,7 @@
     "message": "Zoom arrière"
   },
   "resetZoom": {
-    "message": "Réinitialiser le zoom"
+    "message": "Taille réelle"
   },
   "toggleFullScreen": {
     "message": "Afficher en plein écran"
