@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Déverrouiller"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Mot de passe maître invalide"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Sécurité"
-  },
-  "disableGa": {
-    "message": "Désactiver les outils d'analyse"
-  },
-  "gaDesc": {
-    "message": "Nous utilisons des outils d'analyse pour mieux comprendre comment l'application est utilisée et ainsi l'améliorer. Toutes les données collectées sont entièrement anonymes."
   },
   "disableFavicon": {
     "message": "Désactiver les icônes des sites web"
