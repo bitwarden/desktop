@@ -734,6 +734,15 @@
   "unlock": {
     "message": "باز کردن قفل"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "گذرواژه اصلی نامعتبر است"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "امنیت"
-  },
-  "disableGa": {
-    "message": "غیرفعال سازی آنالیزها"
-  },
-  "gaDesc": {
-    "message": "ما از آنالیز استفاده می کنیم تا بهتر بفهمیم که چگونه برنامه استفاده می شود تا بتوانیم آن را بهتر کنیم. تمام جمع آوری داده ها کاملا ناشناس است."
   },
   "disableFavicon": {
     "message": "غیرفعال سازی آیکون های وبسایت"
