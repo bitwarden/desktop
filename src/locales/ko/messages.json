@@ -734,6 +734,15 @@
   "unlock": {
     "message": "잠금 해제"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "잘못된 마스터 비밀번호"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "보안"
-  },
-  "disableGa": {
-    "message": "분석 사용 안 함"
-  },
-  "gaDesc": {
-    "message": "저희는 애플리케이션이 어떻게 사용되고 있는지 확인하여 개선하기 위해 분석 자료를 사용합니다. 자료는 완전한 익명으로 수집됩니다."
   },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
