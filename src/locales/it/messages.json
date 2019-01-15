@@ -106,7 +106,7 @@
     "message": "Avvia"
   },
   "copyValue": {
-    "message": "Copia valore",
+    "message": "Copia Valore",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
@@ -117,7 +117,7 @@
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
-    "message": "Titolare della Carta"
+    "message": "Titolare della carta"
   },
   "number": {
     "message": "Numero"
@@ -223,10 +223,10 @@
     "message": "Dottore"
   },
   "expirationMonth": {
-    "message": "Mese di Scadenza"
+    "message": "Mese di scadenza"
   },
   "expirationYear": {
-    "message": "Anno di Scadenza"
+    "message": "Anno di scadenza"
   },
   "select": {
     "message": "Seleziona"
@@ -235,7 +235,7 @@
     "message": "Altro"
   },
   "generatePassword": {
-    "message": "Genera Password"
+    "message": "Genera password"
   },
   "type": {
     "message": "Tipo"
@@ -259,7 +259,7 @@
     "message": "Indirizzo 3"
   },
   "cityTown": {
-    "message": "Città \/ Comune"
+    "message": "Città o comune"
   },
   "stateProvince": {
     "message": "Stato \/ Provincia"
@@ -319,13 +319,13 @@
     "message": "Elemento modificato"
   },
   "deleteItem": {
-    "message": "Elimina Elemento"
+    "message": "Elimina elemento"
   },
   "deleteFolder": {
-    "message": "Elimina Cartella"
+    "message": "Elimina cartella"
   },
   "deleteAttachment": {
-    "message": "Elimina Allegato"
+    "message": "Elimina allegato"
   },
   "deleteItemConfirmation": {
     "message": "Sei sicuro di voler eliminare questo elemento?"
@@ -347,10 +347,10 @@
     "message": "Modifica Cartella"
   },
   "regeneratePassword": {
-    "message": "Rigenera Password"
+    "message": "Rigenera password"
   },
   "copyPassword": {
-    "message": "Copia Password"
+    "message": "Copia password"
   },
   "copyUri": {
     "message": "Copia URI"
@@ -375,19 +375,19 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Evita Caratteri Ambigui"
+    "message": "Evitare Caratteri Ambigui"
   },
   "searchCollection": {
-    "message": "Cerca nella collezione"
+    "message": "Cerca collezione"
   },
   "searchFolder": {
-    "message": "Cerca nella cartella"
+    "message": "Cerca cartella"
   },
   "searchFavorites": {
-    "message": "Cerca tra i preferiti"
+    "message": "Cerca preferito"
   },
   "searchType": {
-    "message": "Cerca in questo tipo",
+    "message": "Tipo di ricerca",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -442,7 +442,7 @@
     "message": "Invia"
   },
   "masterPass": {
-    "message": "Password Principale"
+    "message": "Password principale"
   },
   "masterPassDesc": {
     "message": "La password principale è quella che usi per accedere alla cassaforte. È molto importante che tu non la dimentichi. Non c'è alcun modo di recuperarla nel caso la dimenticassi."
@@ -451,16 +451,16 @@
     "message": "Un suggerimento può aiutarti a ricordare la tua password principale nel caso in cui la dimentichi."
   },
   "reTypeMasterPass": {
-    "message": "Ri-digita la tua password principale"
+    "message": "Ri-digita la tua master password"
   },
   "masterPassHint": {
-    "message": "Suggerimento per la password principale (facoltativo)"
+    "message": "Suggerimento per la master password (facoltativo)"
   },
   "settings": {
     "message": "Impostazioni"
   },
   "passwordHint": {
-    "message": "Suggerimento Password"
+    "message": "Suggerimento password"
   },
   "enterEmailToGetHint": {
     "message": "Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della password principale."
@@ -586,13 +586,13 @@
     "message": "Login non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "La verifica in due passaggi è abilitata su questo account, ma nessuno dei metodi configurati è supportato da questo browser."
+    "message": "Questo account ha abilitato la verifica in due passaggi, ma nessuno dei provider configurati è supportato da questo browser."
   },
   "noTwoStepProviders2": {
     "message": "Si prega di aggiungere altri metodi che sono supportati meglio su tutti i dispositivi (ad esempio, un'app di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Opzioni di verifica in due passaggi"
+    "message": "Opzioni di login in due passaggi"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente Self-Hosted"
@@ -613,7 +613,7 @@
     "message": "URL del Server API"
   },
   "webVaultUrl": {
-    "message": "URL della Cassaforte Online"
+    "message": "URL del password manager online"
   },
   "identityUrl": {
     "message": "URL del Server di Identità"
@@ -637,7 +637,7 @@
     "message": "No"
   },
   "overwritePassword": {
-    "message": "Sovrascrivi Password"
+    "message": "Sovrascrivi password"
   },
   "learnMore": {
     "message": "Per saperne di più"
@@ -658,10 +658,10 @@
     "message": "Disconnetti"
   },
   "addNewLogin": {
-    "message": "Aggiungi Nuovo Login"
+    "message": "Aggiungi nuovo login"
   },
   "addNewItem": {
-    "message": "Aggiungi Nuovo Elemento"
+    "message": "Aggiungi nuovo elemento"
   },
   "addNewFolder": {
     "message": "Aggiungi Nuova Cartella"
@@ -679,16 +679,16 @@
     "message": "Blocca Ora"
   },
   "passwordGenerator": {
-    "message": "Generatore di Password"
+    "message": "Generatore di password"
   },
   "emailUs": {
-    "message": "Mandaci un'email"
+    "message": "Mandaci una Email"
   },
   "visitOurWebsite": {
-    "message": "Visita il nostro sito"
+    "message": "Visita il nostro Sito"
   },
   "fileBugReport": {
-    "message": "Segnala un bug"
+    "message": "Notificaci un Bug"
   },
   "blog": {
     "message": "Blog"
@@ -697,7 +697,7 @@
     "message": "Seguici"
   },
   "syncVault": {
-    "message": "Sincronizza La Tua Cassaforte"
+    "message": "Sincronizza il password manager"
   },
   "changeMasterPass": {
     "message": "Cambia Password Principale"
@@ -714,7 +714,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Vai Alla Cassaforte Online"
+    "message": "Vai al password manager online"
   },
   "getMobileApp": {
     "message": "Scarica l'app per smartphone"
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Sblocca"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Password principale errata"
@@ -780,7 +789,7 @@
     "message": "Quando il sistema è bloccato"
   },
   "onRestart": {
-    "message": "Al riavvio"
+    "message": "Al Riavvio"
   },
   "never": {
     "message": "Mai"
@@ -788,17 +797,11 @@
   "security": {
     "message": "Sicurezza"
   },
-  "disableGa": {
-    "message": "Disabilita Analytics"
-  },
-  "gaDesc": {
-    "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi."
-  },
   "disableFavicon": {
-    "message": "Disabilita icone dei siti web"
+    "message": "Disabilita Icone dei Siti Web"
   },
   "disableFaviconDesc": {
-    "message": "Le icone del Sito web forniscono un'immagine riconoscibile accanto a ogni elemento di login nella tua Cassaforte."
+    "message": "Le icone dei siti web forniscono un'immagine riconoscibile accanto ad ogni elemento di login nel password manager."
   },
   "enableMinToTray": {
     "message": "Minimizza nell'area di notifica"
@@ -1003,7 +1006,7 @@
     "message": "Attiva\/disattiva strumenti di sviluppo"
   },
   "minimize": {
-    "message": "Riduci a icona",
+    "message": "Minimizza",
     "description": "Minimize window"
   },
   "zoom": {
