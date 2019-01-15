@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Sblocca"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Password principale errata"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Sicurezza"
-  },
-  "disableGa": {
-    "message": "Disabilita Analytics"
-  },
-  "gaDesc": {
-    "message": "Usiamo analytics per capire meglio come l'estensione viene usata in modo da migliorarla. Tutti i dati collezionati sono completamente anonimi."
   },
   "disableFavicon": {
     "message": "Disabilita icone dei siti web"
