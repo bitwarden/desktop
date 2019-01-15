@@ -714,7 +714,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Web kasasına git"
+    "message": "Web sayfasına git"
   },
   "getMobileApp": {
     "message": "Mobil Uygulama Edin"
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Kilidi Aç"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Geçersiz ana parola"
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Güvenlik"
-  },
-  "disableGa": {
-    "message": "Analitikleri Devre Dışı Bırak"
-  },
-  "gaDesc": {
-    "message": "Uzantının nasıl kullanıldığını daha iyi öğrenmek için analitikleri kullanırız, böylece onu daha iyi hale getirebiliriz. Tüm veri toplama işlemi tamamen anonimdir."
   },
   "disableFavicon": {
     "message": "Site simgelerini devre dışı bırak"
@@ -991,7 +994,7 @@
     "message": "Uzaklaştır"
   },
   "resetZoom": {
-    "message": "Zoom'u Sıfırla"
+    "message": "Zoom Sıfırla"
   },
   "toggleFullScreen": {
     "message": "Tam Ekrana Geç"
