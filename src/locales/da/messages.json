@@ -88,7 +88,7 @@
     "message": "Redigér element"
   },
   "emailAddress": {
-    "message": "E-mailadresse"
+    "message": "Emailadresse"
   },
   "verificationCodeTotp": {
     "message": "Verifikationskode (TOTP)"
@@ -144,7 +144,7 @@
     "message": "Pasnummer"
   },
   "licenseNumber": {
-    "message": "Kørekortnummer"
+    "message": "Licensnummer"
   },
   "email": {
     "message": "E-mail"
@@ -655,7 +655,7 @@
     "message": "Er du sikker på, at du vil logge ud?"
   },
   "logOut": {
-    "message": "Log ud"
+    "message": "Log af"
   },
   "addNewLogin": {
     "message": "Tilføj et login"
