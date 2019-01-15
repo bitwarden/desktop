@@ -30,7 +30,7 @@
     "message": "Kolekcje"
   },
   "searchVault": {
-    "message": "Znajdź w sejfie"
+    "message": "Szukaj w sejfie"
   },
   "addItem": {
     "message": "Dodaj element"
@@ -129,7 +129,7 @@
     "message": "Wygaśnięcie"
   },
   "securityCode": {
-    "message": "Kod zabezpieczający"
+    "message": "Kod CVV\/CVC"
   },
   "identityName": {
     "message": "Nazwa profilu"
@@ -138,7 +138,7 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "Numer ubezpieczenia społecznego"
+    "message": "PESEL"
   },
   "passportNumber": {
     "message": "Numer paszportu"
@@ -159,7 +159,7 @@
     "message": "Wymagane konto premium"
   },
   "premiumRequiredDesc": {
-    "message": "Członkostwo premium jest wymagane do korzystania z tej funkcji."
+    "message": "Musisz posiadać konto Premium, aby skorzystać z tej funkcji."
   },
   "errorOccurred": {
     "message": "Wystąpił błąd."
@@ -301,7 +301,7 @@
     "message": "Tekst"
   },
   "cfTypeHidden": {
-    "message": "Ukryty"
+    "message": "Pole maskowane"
   },
   "cfTypeBoolean": {
     "message": "Wartość logiczna"
@@ -337,7 +337,7 @@
     "message": "Czy na pewno chcesz zastąpić bieżące hasło?"
   },
   "noneFolder": {
-    "message": "Brak folderu",
+    "message": "Nieprzypisane",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -347,7 +347,7 @@
     "message": "Edytuj folder"
   },
   "regeneratePassword": {
-    "message": "Odtwórz hasło"
+    "message": "Wygeneruj hasło"
   },
   "copyPassword": {
     "message": "Skopiuj hasło"
@@ -387,11 +387,11 @@
     "message": "Szukaj w ulubionych"
   },
   "searchType": {
-    "message": "Typ wyszukiwania",
+    "message": "Szukaj elementów wybranego rodzaju",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Dodaj nowy załącznik"
+    "message": "Dodaj załącznik"
   },
   "deletedAttachment": {
     "message": "Usunięty załącznik"
@@ -418,7 +418,7 @@
     "message": "Opcje"
   },
   "editedFolder": {
-    "message": "Edytowany Folder"
+    "message": "Folder zaktualizowany"
   },
   "addedFolder": {
     "message": "Dodany folder"
@@ -496,7 +496,7 @@
     "message": "Informacje o elemencie"
   },
   "noItemsInList": {
-    "message": "Brak elementów do wyświetlenia."
+    "message": "Brak elementów."
   },
   "verificationCode": {
     "message": "Kod weryfikacyjny"
@@ -544,7 +544,7 @@
     "message": "Włóż klucz bezpieczeństwa do portu USB komputera. Jeśli klucz posiada przycisk, dotknij go."
   },
   "recoveryCodeDesc": {
-    "message": "Utraciłeś dostęp do wszystkich swoich dostawców dwustopniowego logowania? Użyj kodów odzyskiwania, aby wyłączyć dwustopniowego logowanie na Twoim koncie."
+    "message": "Utraciłeś dostęp do wszystkich swoich mechanizmów dwustopniowego logowania? Użyj kodów odzyskiwania, aby wyłączyć dwustopniowe logowanie na Twoim koncie."
   },
   "recoveryCodeTitle": {
     "message": "Kod odzyskiwania"
@@ -586,10 +586,10 @@
     "message": "Dane logowania niedostępne"
   },
   "noTwoStepProviders": {
-    "message": "Dla tego konta aktywowano dwustopniowe logowanie, jednak to urządzenie nie wspiera żadnego ze skonfigurowanych dostawców dwustopniowej autoryzacji."
+    "message": "Dla tego konta aktywowano dwustopniowe logowanie, jednak to urządzenie nie wspiera żadnego ze skonfigurowanych mechanizmów dwustopniowej autoryzacji."
   },
   "noTwoStepProviders2": {
-    "message": "Proszę dodać dodatkowych dostawców, którzy są lepiej obsługiwani przez urządzenia (np. aplikacja uwierzytelniająca)."
+    "message": "Dodaj dodatkowe mechanizmy, które są lepiej obsługiwane przez różne urządzenia (np. aplikacje uwierzytelniające)."
   },
   "twoStepOptions": {
     "message": "Opcje logowania dwustopniowego"
@@ -658,13 +658,13 @@
     "message": "Wyloguj się"
   },
   "addNewLogin": {
-    "message": "Dodaj nowy login"
+    "message": "Dodaj dane logowania"
   },
   "addNewItem": {
-    "message": "Dodaj nowy element"
+    "message": "Dodaj element"
   },
   "addNewFolder": {
-    "message": "Dodaj nowy folder"
+    "message": "Dodaj folder"
   },
   "view": {
     "message": "Pokaż"
@@ -703,14 +703,14 @@
     "message": "Zmień hasło główne"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Swoje hasło główne możesz zmienić w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
+    "message": "Swoje hasło główne możesz zmienić na stronie sejfu bitwarden.com. Czy chcesz teraz przejść do tej strony?"
   },
   "fingerprintPhrase": {
-    "message": "Hasło szyfrujące",
+    "message": "Unikalny identyfikator konta",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Hasło szyfrujące dla Twojego konta",
+    "message": "Unikalny identyfikator dla Twojego konta",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Odblokuj"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Nieprawidłowe hasło główne"
   },
@@ -744,7 +753,7 @@
     "message": "Dwustopniowe logowanie"
   },
   "lockOptions": {
-    "message": "Opcje blokowania"
+    "message": "Czas automatycznego blokowania"
   },
   "lockOptionsDesc": {
     "message": "Wybierz, kiedy twój sejf się zablokuje. Odblokowanie sejfu będzie wymagało ponownego wprowadzenia hasła głównego."
@@ -753,31 +762,31 @@
     "message": "Natychmiast"
   },
   "oneMinute": {
-    "message": "1 minuta"
+    "message": "po 1 minucie"
   },
   "fiveMinutes": {
-    "message": "5 minut"
+    "message": "po 5 minutach"
   },
   "fifteenMinutes": {
-    "message": "15 minut"
+    "message": "po 15 minutach"
   },
   "thirtyMinutes": {
-    "message": "30 minut"
+    "message": "po 30 minutach"
   },
   "oneHour": {
-    "message": "1 godzina"
+    "message": "po 1 godzinie"
   },
   "fourHours": {
-    "message": "4 godziny"
+    "message": "po 4 godzinach"
   },
   "onIdle": {
-    "message": "Podczas bezczynności systemu"
+    "message": "Gdy nie korzystasz z komputera"
   },
   "onSleep": {
-    "message": "Podczas uśpienia systemu"
+    "message": "Gdy uśpisz komputer"
   },
   "onLocked": {
-    "message": "Wraz z blokadą systemu"
+    "message": "Gdy zablokujesz komputer"
   },
   "onRestart": {
     "message": "Po restarcie komputera"
@@ -788,17 +797,11 @@
   "security": {
     "message": "Zabezpieczenia"
   },
-  "disableGa": {
-    "message": "Wyłącz analitykę"
-  },
-  "gaDesc": {
-    "message": "Korzystamy z analityki, aby lepiej zrozumieć, jak nasza aplikacja jest używana i nieustannie ją ulepszać. Wszystkie zebrane dane są całkowicie anonimowe."
-  },
   "disableFavicon": {
     "message": "Wyłącz ikony stron"
   },
   "disableFaviconDesc": {
-    "message": "Ikony stron internetowych wstawiają charakterystyczny obrazek obok danych logowania w Twoim sejfie."
+    "message": "Możesz wyświetlać rozpoznawalną ikonę serwisu obok danych logowania w Twoim sejfie."
   },
   "enableMinToTray": {
     "message": "Minimalizuj do zasobnika systemowego"
@@ -895,35 +898,35 @@
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Skopiuj kod zabezpieczający",
+    "message": "Skopiuj kod CVV\/CVC",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Członkostwo premium"
+    "message": "Konto Premium"
   },
   "premiumManage": {
-    "message": "Zarządzaj członkostwem"
+    "message": "Zarządzaj kontem Premium"
   },
   "premiumManageAlert": {
-    "message": "Swoim członkostwem możesz zarządzać w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
+    "message": "Swoim kontem Premium możesz zarządzać na stronie sejfu bitwarden.com. Czy chcesz teraz otworzyć tą stronę?"
   },
   "premiumRefresh": {
-    "message": "Odśwież członkostwo"
+    "message": "Przedłuż konto Premium"
   },
   "premiumNotCurrentMember": {
-    "message": "Nie jesteś obecnie członkiem premium."
+    "message": "Nie masz aktualnie konta Premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Zarejestruj się jako członek premium i uzyskaj:"
+    "message": "Zarejestruj konto Premium, aby otrzymać:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB miejsca na zaszyfrowane pliki."
+    "message": "1 GB miejsca na zaszyfrowane załączniki."
   },
   "premiumSignUpTwoStep": {
     "message": "Dodatkowe opcje dwustopniowego logowania, takie jak YubiKey, FIDO U2F i Duo."
   },
   "premiumSignUpReports": {
-    "message": "Higiena haseł, zdrowie konta i raporty dotyczące naruszenia danych, aby chronić Twój sejf."
+    "message": "Raporty bezpieczeństwa haseł, stanu konta i dotyczące wykradzionych haseł, aby Twoje dane były bezpieczne."
   },
   "premiumSignUpTotp": {
     "message": "Generator kodów weryfikacyjnych TOTP (2FA) dla danych logowania w Twoim sejfie."
@@ -935,13 +938,13 @@
     "message": "Wszystkie przyszłe funkcje premium. Więcej już wkrótce!"
   },
   "premiumPurchase": {
-    "message": "Kup Premium"
+    "message": "Zamów konto Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Członkostwo premium możesz zakupić w sejfie internetowym bitwarden.com. Czy chcesz teraz przejść do tej strony?"
+    "message": "Konto Premium możesz zakupić na stronie sejfu bitwarden.com. Czy chcesz teraz otworzyć tą stronę?"
   },
   "premiumCurrentMember": {
-    "message": "Jesteś członkiem premium!"
+    "message": "Posiadasz konto Premium!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Dziękujemy za wspieranie Bitwarden."
@@ -956,7 +959,7 @@
     }
   },
   "refreshComplete": {
-    "message": "Odświeżanie ukończone"
+    "message": "Odnowienie zakończone"
   },
   "passwordHistory": {
     "message": "Historia haseł"
@@ -965,7 +968,7 @@
     "message": "Wyczyść"
   },
   "noPasswordsInList": {
-    "message": "Brak haseł do wyświetlenia."
+    "message": "Brak haseł."
   },
   "undo": {
     "message": "Cofnij"
@@ -997,10 +1000,10 @@
     "message": "Włącz\/wyłącz pełny ekran"
   },
   "reload": {
-    "message": "Przeładuj"
+    "message": "Odśwież"
   },
   "toggleDevTools": {
-    "message": "Przełącz narzędzia dla deweloperów"
+    "message": "Włącz\/wyłącz narzędzia dla deweloperów"
   },
   "minimize": {
     "message": "Zminimalizuj",
@@ -1010,7 +1013,7 @@
     "message": "Powiększenie"
   },
   "bringAllToFront": {
-    "message": "Umieść wszystko na wierzchu",
+    "message": "Przenieś wszystko na wierzch",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
@@ -1063,14 +1066,14 @@
     "message": "To hasło nie znajduje się w żadnej znanej wykradzionej bazie danych. Powinno być bezpieczne w użyciu."
   },
   "baseDomain": {
-    "message": "Domena podstawowa"
+    "message": "Domena nadrzędna"
   },
   "host": {
-    "message": "Serwer",
+    "message": "Nazwa domeny",
     "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Dokładny"
+    "message": "Dokładnie"
   },
   "startsWith": {
     "message": "Zaczyna się od"
@@ -1088,7 +1091,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Przełącz opcje"
+    "message": "Zmień opcje"
   },
   "organization": {
     "message": "Organizacja",
@@ -1132,13 +1135,13 @@
     "message": "Wprowadź hasło główne, aby wyeksportować dane z sejfu."
   },
   "noOrganizationsList": {
-    "message": "Nie należysz do żadnych organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
+    "message": "Nie należysz do żadnej organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
   },
   "noCollectionsInList": {
     "message": "Brak kolekcji do wyświetlenia."
   },
   "ownership": {
-    "message": "Własność"
+    "message": "Właściciel"
   },
   "whoOwnsThisItem": {
     "message": "Kto jest właścicielem tego elementu?"
