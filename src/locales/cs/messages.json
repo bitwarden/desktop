@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Odemknout"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Chybné hlavní heslo"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Zabezpečení"
-  },
-  "disableGa": {
-    "message": "Zakázat analytiku"
-  },
-  "gaDesc": {
-    "message": "Analytiku používáme ke sběru informací o používání aplikace, abychom jí mohli i nadále vylepšovat. Veškerý sběr dat je zcela anonymní."
   },
   "disableFavicon": {
     "message": "Zakázat ikonky webových stránek"
@@ -917,7 +920,7 @@
     "message": "Přihlaste se k prémiovému členství a získejte:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB šifrovaného uložiště."
+    "message": "1 GB šifrovaného uložiště pro přílohy."
   },
   "premiumSignUpTwoStep": {
     "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
@@ -1119,7 +1122,7 @@
     "message": "Exportovat trezor"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Formát souboru"
   },
   "warning": {
     "message": "VAROVÁNÍ",

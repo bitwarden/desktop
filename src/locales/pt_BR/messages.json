@@ -73,7 +73,7 @@
     }
   },
   "newUri": {
-    "message": "Nova URI"
+    "message": "Novo URI"
   },
   "username": {
     "message": "Nome de Usuário"
@@ -138,7 +138,7 @@
     "message": "Empresa"
   },
   "ssn": {
-    "message": "Número de Segurança Social"
+    "message": "Cadastro de Pessoas Físicas (CPF)"
   },
   "passportNumber": {
     "message": "Número do Passaporte"
@@ -247,7 +247,7 @@
     "message": "Nome do Meio"
   },
   "lastName": {
-    "message": "Último Nome"
+    "message": "Sobrenome"
   },
   "address1": {
     "message": "Endereço 1"
@@ -301,7 +301,7 @@
     "message": "Texto"
   },
   "cfTypeHidden": {
-    "message": "Ocultado"
+    "message": "Oculto"
   },
   "cfTypeBoolean": {
     "message": "Booleano"
@@ -368,7 +368,7 @@
     "message": "Fechar"
   },
   "minNumbers": {
-    "message": "Números Mínimos"
+    "message": "Mínimo de números"
   },
   "minSpecial": {
     "message": "Especiais Mínimos",
@@ -734,11 +734,20 @@
   "unlock": {
     "message": "Desbloquear"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Senha mestra inválida"
   },
   "twoStepLoginConfirmation": {
-    "message": "O login em duas etapas torna sua conta mais segura, exigindo que você verifique seu login com outro dispositivo, como uma chave de segurança, um aplicativo de autenticação, SMS, chamada telefônica ou e-mail. O login em duas etapas pode ser ativado no cofre web em bitwarden.com. Você quer visitar o site agora?"
+    "message": "A autenticação em duas etapas torna sua conta mais segura, exigindo que você verifique o seu login com outro dispositivo, como uma chave de segurança, um aplicativo de autenticação, SMS, chamada telefônica ou e-mail. A autenticação em duas etapas pode ser ativada no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "twoStepLogin": {
     "message": "Login em Duas Etapas"
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Segurança"
-  },
-  "disableGa": {
-    "message": "Desativar Analytics"
-  },
-  "gaDesc": {
-    "message": "Utilizamos Analytics para aprender melhor como o aplicativo está sendo utilizado para que possamos torná-lo melhor. Todo o recolhimento de dados é completamente anônimo."
   },
   "disableFavicon": {
     "message": "Desabilitar Ícones dos Sites"

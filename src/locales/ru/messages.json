@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Разблокировать"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Неверный мастер-пароль"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Безопасность"
-  },
-  "disableGa": {
-    "message": "Отключить аналитику"
-  },
-  "gaDesc": {
-    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собираемые данные полностью анонимны."
   },
   "disableFavicon": {
     "message": "Отключить значки веб-сайтов"

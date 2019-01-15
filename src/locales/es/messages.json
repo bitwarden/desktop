@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Desbloquear"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Contraseña maestra no válida"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Seguridad"
-  },
-  "disableGa": {
-    "message": "Deshabilitar análisis"
-  },
-  "gaDesc": {
-    "message": "Utilizamos los análisis de uso para aprender como es utilizada la aplicación y así poder mejorarla. Toda la información recopilada es completamente anónima."
   },
   "disableFavicon": {
     "message": "Deshabilitar iconos de sitio web"

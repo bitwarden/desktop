@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Buka"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Sandi utama tidak valid"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Keamanan"
-  },
-  "disableGa": {
-    "message": "Nonaktifkan Analitik"
-  },
-  "gaDesc": {
-    "message": "Kami menggunakan analitik untuk lebih mempelajari bagaimana aplikasi digunakan sehingga kami dapat membuatnya lebih baik. Semua pengumpulan data benar-benar anonim."
   },
   "disableFavicon": {
     "message": "Nonaktifkan Ikon Situs Web"
