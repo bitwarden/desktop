@@ -6,7 +6,7 @@
     "message": "所有项目"
   },
   "favorites": {
-    "message": "收藏夹"
+    "message": "我的收藏"
   },
   "types": {
     "message": "类型"
@@ -557,7 +557,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP 安全密钥"
+    "message": "YubiKey NEO 安全密钥"
   },
   "yubiKeyDesc": {
     "message": "使用 YubiKey 来访问您的账户。可配合 YubiKey 4、4 Nano、4C 和 NEO 设备。"
