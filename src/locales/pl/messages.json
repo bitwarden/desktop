@@ -129,7 +129,7 @@
     "message": "Wygaśnięcie"
   },
   "securityCode": {
-    "message": "Kod zabezpieczający"
+    "message": "Kod CVV\/CVC"
   },
   "identityName": {
     "message": "Nazwa profilu"
