@@ -714,7 +714,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Web kasasına git"
+    "message": "Web sayfasına git"
   },
   "getMobileApp": {
     "message": "Mobil Uygulama Edin"
@@ -994,7 +994,7 @@
     "message": "Uzaklaştır"
   },
   "resetZoom": {
-    "message": "Zoom'u Sıfırla"
+    "message": "Zoom Sıfırla"
   },
   "toggleFullScreen": {
     "message": "Tam Ekrana Geç"
