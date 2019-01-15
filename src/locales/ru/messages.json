@@ -132,7 +132,7 @@
     "message": "Код безопасности"
   },
   "identityName": {
-    "message": "Имя"
+    "message": "identityName"
   },
   "company": {
     "message": "Компания"
@@ -156,7 +156,7 @@
     "message": "Адрес"
   },
   "premiumRequired": {
-    "message": "Необходим Премиум"
+    "message": "Необходим премиум-статус"
   },
   "premiumRequiredDesc": {
     "message": "Для использования этой функции требуется Премиум."
@@ -319,7 +319,7 @@
     "message": "Элемент изменен"
   },
   "deleteItem": {
-    "message": "Удалить элемент"
+    "message": "Удаление элемента"
   },
   "deleteFolder": {
     "message": "Удалить папку"
@@ -858,7 +858,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Перезапустить для обновления"
+    "message": "Перезагрузить для обновления"
   },
   "restartToUpdateDesc": {
     "message": "Версия $VERSION_NUM$ готова к установке. Для завершения установки необходимо перезапустить Bitwarden. Сделать это сейчас?",
@@ -902,16 +902,16 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Премиум"
+    "message": "Премиум-статус"
   },
   "premiumManage": {
-    "message": "Управление Премиум"
+    "message": "Управление статусом"
   },
   "premiumManageAlert": {
     "message": "Вы можете управлять Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Обновить Премиум"
+    "message": "Обновить статус"
   },
   "premiumNotCurrentMember": {
     "message": "На текущий момент у вас отсутствует Премиум."
