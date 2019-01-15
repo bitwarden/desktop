@@ -110,7 +110,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Alternar Visibilidade"
+    "message": "Alternar visibilidade"
   },
   "toggleCollapse": {
     "message": "Alternar colapso",
@@ -371,7 +371,7 @@
     "message": "Números mínimos"
   },
   "minSpecial": {
-    "message": "Especiais minímos",
+    "message": "Especiais mínimos",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {

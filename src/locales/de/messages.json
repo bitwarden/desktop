@@ -319,7 +319,7 @@
     "message": "Eintrag bearbeitet"
   },
   "deleteItem": {
-    "message": "Eintrag gelöscht"
+    "message": "Eintrag löschen"
   },
   "deleteFolder": {
     "message": "Ordner löschen"
@@ -362,7 +362,7 @@
     "message": "Anzahl der Wörter"
   },
   "wordSeparator": {
-    "message": "Worttrennzeichen"
+    "message": "Trennzeichen"
   },
   "close": {
     "message": "Schließen"
@@ -682,7 +682,7 @@
     "message": "Passwort-Generator"
   },
   "emailUs": {
-    "message": "Kontaktiere Uns"
+    "message": "Kontaktiere uns"
   },
   "visitOurWebsite": {
     "message": "Unsere Website besuchen"
@@ -801,7 +801,7 @@
     "message": "Webseiten Icons deaktivieren"
   },
   "disableFaviconDesc": {
-    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in Ihrem Tresor."
+    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
   },
   "enableMinToTray": {
     "message": "Minimieren und in der Taskleiste anzeigen"

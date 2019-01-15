@@ -735,7 +735,7 @@
     "message": "Desbloquear"
   },
   "loggedInAs": {
-    "message": "Sesión iniciada como $EMAIL$.",
+    "message": "Logged in as $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -780,7 +780,7 @@
     "message": "4 horas"
   },
   "onIdle": {
-    "message": "En inactividad del sistema"
+    "message": "En inactividad"
   },
   "onSleep": {
     "message": "Al suspender el sistema"

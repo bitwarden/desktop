@@ -706,7 +706,7 @@
     "message": "マスターパスワードは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
   },
   "fingerprintPhrase": {
-    "message": "指紋フレーズ",
+    "message": "指紋認証用フレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {

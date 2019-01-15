@@ -21,7 +21,7 @@
     "message": "Identita"
   },
   "typeSecureNote": {
-    "message": "Zabezpečená poznámka"
+    "message": "Poznámka"
   },
   "folders": {
     "message": "Složky"
@@ -88,7 +88,7 @@
     "message": "Upravit položku"
   },
   "emailAddress": {
-    "message": "Emailová adresa"
+    "message": "E-mailová adresa"
   },
   "verificationCodeTotp": {
     "message": "Ověřovací kód (TOTP)"
@@ -132,7 +132,7 @@
     "message": "Bezpečnostní kód"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Název identity"
   },
   "company": {
     "message": "Firma"
@@ -387,7 +387,7 @@
     "message": "Vyhledat v oblíbených"
   },
   "searchType": {
-    "message": "Vyhledat v typech",
+    "message": "Vyhledat v typu",
     "description": "Search item type"
   },
   "newAttachment": {
