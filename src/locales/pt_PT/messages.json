@@ -110,7 +110,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Alternar visibilidade"
+    "message": "Alternar Visibilidade"
   },
   "toggleCollapse": {
     "message": "Alternar colapso",
@@ -371,7 +371,7 @@
     "message": "Números mínimos"
   },
   "minSpecial": {
-    "message": "Especiais mínimos",
+    "message": "Especiais minímos",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Desbloquear"
   },
+  "loggedInAs": {
+    "message": "Sessão iniciada como $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Palavra-passe mestra inválida"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Segurança"
-  },
-  "disableGa": {
-    "message": "Desativar analítica"
-  },
-  "gaDesc": {
-    "message": "Utilizamos analítica para aprender melhor como a aplicação está a ser utilizada para que possamos torná-la melhor. Toda a recolha de dados é completamente anónima."
   },
   "disableFavicon": {
     "message": "Desativar ícones de websites"

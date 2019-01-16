@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Lukusta lahti"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Vale ülemparool"
   },
@@ -787,12 +796,6 @@
   },
   "security": {
     "message": "Turvalisus"
-  },
-  "disableGa": {
-    "message": "Keela analüütika"
-  },
-  "gaDesc": {
-    "message": "Kasutame analüütikat, et rakenduse kasutamist paremini mõista ja seda paremaks muuta. Kogu andmekorje on anonüümne."
   },
   "disableFavicon": {
     "message": "Keela veebilehel ikoonid"
