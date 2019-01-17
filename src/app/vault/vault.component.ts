@@ -201,7 +201,9 @@ export class VaultComponent implements OnInit, OnDestroy {
                     await this.ciphersComponent.load();
                 }
             }
-            queryParamsSub.unsubscribe();
+            if (queryParamsSub != null) {
+                queryParamsSub.unsubscribe();
+            }
         });
     }
 
