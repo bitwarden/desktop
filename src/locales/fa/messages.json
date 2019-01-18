@@ -735,7 +735,7 @@
     "message": "باز کردن قفل"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "با عنوان $EMAIL$ وارد شده.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -813,7 +813,7 @@
     "message": "Close to Tray Icon"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "هنگام بستن پنچره، یک آیکون در قسمت tray بجای آن نشان میدهد."
   },
   "enableTray": {
     "message": "فعال کردن Tray Icon"
