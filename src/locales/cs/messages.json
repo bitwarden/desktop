@@ -21,7 +21,7 @@
     "message": "Identita"
   },
   "typeSecureNote": {
-    "message": "Zabezpečená poznámka"
+    "message": "Poznámka"
   },
   "folders": {
     "message": "Složky"
@@ -88,7 +88,7 @@
     "message": "Upravit položku"
   },
   "emailAddress": {
-    "message": "Emailová adresa"
+    "message": "E-mailová adresa"
   },
   "verificationCodeTotp": {
     "message": "Ověřovací kód (TOTP)"
@@ -132,7 +132,7 @@
     "message": "Bezpečnostní kód"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Název identity"
   },
   "company": {
     "message": "Firma"
@@ -387,7 +387,7 @@
     "message": "Vyhledat v oblíbených"
   },
   "searchType": {
-    "message": "Vyhledat v typech",
+    "message": "Vyhledat v typu",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -400,7 +400,7 @@
     "message": "Opravdu chcete tuto přílohu smazat?"
   },
   "attachmentSaved": {
-    "message": "Příloha byla uložena"
+    "message": "Příloha byla uložena."
   },
   "file": {
     "message": "Soubor"
@@ -628,7 +628,7 @@
     "message": "URL adresy vlastního prostředí byly uloženy"
   },
   "ok": {
-    "message": "Ok"
+    "message": "OK"
   },
   "yes": {
     "message": "Ano"
@@ -735,7 +735,7 @@
     "message": "Odemknout"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Přihlášen jako $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -926,7 +926,7 @@
     "message": "Další možnosti dvoufázového přihlášení, jako je například YubiKey, FIDO U2F a Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Reporty o hygieně vašich hesel, zdraví účtu a narušeních bezpečnosti."
   },
   "premiumSignUpTotp": {
     "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
@@ -1129,7 +1129,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Tento export obsahuje data vašeho trezoru v nezašifrovaném formátu. Soubor exportu byste neměli ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Odstraňte jej okamžitě po jeho použití."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
