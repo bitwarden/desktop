@@ -132,7 +132,7 @@
     "message": "Код безопасности"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Имя"
   },
   "company": {
     "message": "Компания"
@@ -156,7 +156,7 @@
     "message": "Адрес"
   },
   "premiumRequired": {
-    "message": "Необходим премиум-статус"
+    "message": "Необходим Премиум"
   },
   "premiumRequiredDesc": {
     "message": "Для использования этой функции требуется Премиум."
@@ -286,7 +286,7 @@
     "message": "Правка"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ проверки подлинности (TOTP)"
+    "message": "Ключ аутентификатора (TOTP)"
   },
   "folder": {
     "message": "Папка"
@@ -319,7 +319,7 @@
     "message": "Элемент изменен"
   },
   "deleteItem": {
-    "message": "Удаление элемента"
+    "message": "Удалить элемент"
   },
   "deleteFolder": {
     "message": "Удалить папку"
@@ -430,7 +430,7 @@
     "message": "Папка удалена"
   },
   "loginOrCreateNewAccount": {
-    "message": "Войдите или создайте новый аккаунт для доступа к вашему безопасному хранилищу."
+    "message": "Войдите или создайте новый аккаунт для доступа к вашему защищенному хранилищу."
   },
   "createAccount": {
     "message": "Создать аккаунт"
@@ -655,7 +655,7 @@
     "message": "Вы действительно хотите выйти?"
   },
   "logOut": {
-    "message": "Выход"
+    "message": "Выйти"
   },
   "addNewLogin": {
     "message": "Добавить новый логин"
@@ -735,7 +735,7 @@
     "message": "Разблокировать"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Вы вошли как $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -858,7 +858,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Перезагрузить для обновления"
+    "message": "Перезапустить для обновления"
   },
   "restartToUpdateDesc": {
     "message": "Версия $VERSION_NUM$ готова к установке. Для завершения установки необходимо перезапустить Bitwarden. Сделать это сейчас?",
@@ -902,16 +902,16 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Премиум-статус"
+    "message": "Премиум"
   },
   "premiumManage": {
-    "message": "Управление статусом"
+    "message": "Управление Премиум"
   },
   "premiumManageAlert": {
     "message": "Вы можете управлять Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Обновить статус"
+    "message": "Обновить Премиум"
   },
   "premiumNotCurrentMember": {
     "message": "На текущий момент у вас отсутствует Премиум."
@@ -938,7 +938,7 @@
     "message": "Все будущие функции Премиум. Их будет больше!"
   },
   "premiumPurchase": {
-    "message": "Купить премиум"
+    "message": "Купить Премиум"
   },
   "premiumPurchaseAlert": {
     "message": "Вы можете купить Премиум на bitwarden.com. Перейти на сайт сейчас?"
@@ -1003,7 +1003,7 @@
     "message": "Перезагрузка"
   },
   "toggleDevTools": {
-    "message": "Переключение инструментов разработчика"
+    "message": "Переключить инструменты разработчика"
   },
   "minimize": {
     "message": "Свернуть",
@@ -1091,7 +1091,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Настройки перебора"
+    "message": "Переключить настройки"
   },
   "organization": {
     "message": "Организация",
