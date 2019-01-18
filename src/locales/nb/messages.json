@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "allItems": {
-    "message": "Alle gjenstander"
+    "message": "Alle elementer"
   },
   "favorites": {
     "message": "Favoritter"
@@ -33,7 +33,7 @@
     "message": "Søk i hvelvet"
   },
   "addItem": {
-    "message": "Legg til en gjenstand"
+    "message": "Legg til element"
   },
   "shared": {
     "message": "Delt"
@@ -48,13 +48,13 @@
     "message": "Delte elementet"
   },
   "shareDesc": {
-    "message": "Velg en organisasjon som du ønsker å dele denne gjenstanden med. Deling overfører gjenstandens eierskap til organisasjonen. Du vil ikke lenger være den direkte eieren av denne gjenstanden når den først har blitt delt."
+    "message": "Velg en organisasjon som du ønsker å dele dette elementet med. Deling overføringer eierskap av elementet til organisasjonen. Du vil ikke lenger være den direkte eieren av elementet når det er delt."
   },
   "attachments": {
     "message": "Vedlegg"
   },
   "viewItem": {
-    "message": "Vis gjenstanden"
+    "message": "Vis element"
   },
   "name": {
     "message": "Navn"
@@ -85,7 +85,7 @@
     "message": "Passfrase"
   },
   "editItem": {
-    "message": "Rediger gjenstanden"
+    "message": "Rediger element"
   },
   "emailAddress": {
     "message": "E-postadresse"
@@ -138,10 +138,10 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "Nummer for sosial stønad"
+    "message": "Personnummer"
   },
   "passportNumber": {
-    "message": "Pass-nummer"
+    "message": "Passnummer"
   },
   "licenseNumber": {
     "message": "Lisensnummer"
@@ -319,7 +319,7 @@
     "message": "Redigerte gjenstanden"
   },
   "deleteItem": {
-    "message": "Slett gjenstanden"
+    "message": "Slett element"
   },
   "deleteFolder": {
     "message": "Slett mappen"
@@ -347,7 +347,7 @@
     "message": "Rediger mappen"
   },
   "regeneratePassword": {
-    "message": "Omgenerer et passord"
+    "message": "Regenerer passord"
   },
   "copyPassword": {
     "message": "Kopier passordet"
@@ -362,7 +362,7 @@
     "message": "Antall ord"
   },
   "wordSeparator": {
-    "message": "Ordadskiller"
+    "message": "Ordskiller"
   },
   "close": {
     "message": "Lukk"
@@ -375,7 +375,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Unngå forvekslingsbare tegn"
+    "message": "Unngå tvetydige tegn"
   },
   "searchCollection": {
     "message": "Søk i samling"
@@ -442,7 +442,7 @@
     "message": "Send inn"
   },
   "masterPass": {
-    "message": "Superpassord"
+    "message": "Hovedpassord"
   },
   "masterPassDesc": {
     "message": "Superpassordet er passordet du bruker for å få tilgang til hvelvet ditt. Det er veldig viktig at du aldri glemmer ditt superpassord. Det er ingen måter å få tilbake passordet på dersom du noensinne skulle klare å glemme det."
@@ -451,10 +451,10 @@
     "message": "Et hint for superpassordet kan hjelpe deg med å huske på passordet dersom du skulle glemme det."
   },
   "reTypeMasterPass": {
-    "message": "Skriv inn superpassordet på nytt"
+    "message": "Skriv inn hovedpassordet på nytt"
   },
   "masterPassHint": {
-    "message": "Et hint for superpassordet (valgfritt)"
+    "message": "Hint for hovedpassordet (valgfritt)"
   },
   "settings": {
     "message": "Innstillinger"
@@ -493,7 +493,7 @@
     "message": "En uventet feil har oppstått."
   },
   "itemInformation": {
-    "message": "Gjenstandsinformasjon"
+    "message": "Element Informasjon"
   },
   "noItemsInList": {
     "message": "Det er ingen gjenstander å liste opp."
@@ -592,7 +592,7 @@
     "message": "Vennligst legg til ytterligere leverandører som er støttet bedre mellom enheter (f․eks․ en autentiseringsapp)."
   },
   "twoStepOptions": {
-    "message": "2-trinnsinnloggingsalternativer"
+    "message": "Totrinns Påloggingsvalg"
   },
   "selfHostedEnvironment": {
     "message": "Selvbetjent miljø"
@@ -613,7 +613,7 @@
     "message": "API-tjenernettadresse"
   },
   "webVaultUrl": {
-    "message": "Netthvelvets tjenernettadresse"
+    "message": "Netthvelvets tjeneradresse"
   },
   "identityUrl": {
     "message": "Identitetstjenerens nettadresse"
@@ -735,7 +735,7 @@
     "message": "Lås opp"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Logget på som $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
