@@ -735,7 +735,7 @@
     "message": "Lukusta lahti"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Sisse logitud kasutajaga $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
