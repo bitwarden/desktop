@@ -88,7 +88,7 @@
     "message": "Redigér element"
   },
   "emailAddress": {
-    "message": "Emailadresse"
+    "message": "E-mailadresse"
   },
   "verificationCodeTotp": {
     "message": "Verifikationskode (TOTP)"
@@ -144,7 +144,7 @@
     "message": "Pasnummer"
   },
   "licenseNumber": {
-    "message": "Licensnummer"
+    "message": "Kørekortnummer"
   },
   "email": {
     "message": "E-mail"
@@ -378,13 +378,13 @@
     "message": "Undgå tvetydige tegn"
   },
   "searchCollection": {
-    "message": "Søg samling"
+    "message": "Søg i samling"
   },
   "searchFolder": {
-    "message": "Søg mappe"
+    "message": "Søg i mappe"
   },
   "searchFavorites": {
-    "message": "Søg favoritter"
+    "message": "Søg i favoritter"
   },
   "searchType": {
     "message": "Søg type",
@@ -454,7 +454,7 @@
     "message": "Gentast hovedadgangskode"
   },
   "masterPassHint": {
-    "message": "Hovedadgangskode tip (valgfri)"
+    "message": "Hovedadgangskodetip (valgfri)"
   },
   "settings": {
     "message": "Indstillinger"
@@ -655,10 +655,10 @@
     "message": "Er du sikker på, at du vil logge ud?"
   },
   "logOut": {
-    "message": "Log af"
+    "message": "Log ud"
   },
   "addNewLogin": {
-    "message": "Tilføj et login"
+    "message": "Tilføj nyt login"
   },
   "addNewItem": {
     "message": "Tilføj nyt element"
@@ -735,7 +735,7 @@
     "message": "Lås op"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Logget ind som $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -911,7 +911,7 @@
     "message": "Du kan håndtere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "premiumRefresh": {
-    "message": "Opdater medlemskab"
+    "message": "Opdatér medlemskab"
   },
   "premiumNotCurrentMember": {
     "message": "Du er i øjeblikket ikke premium-medlem."
@@ -1013,7 +1013,7 @@
     "message": "Zoom"
   },
   "bringAllToFront": {
-    "message": "Placer alt forrest",
+    "message": "Placér alle forrest",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
