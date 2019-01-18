@@ -735,7 +735,7 @@
     "message": "解锁​​​​"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "已登录为 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",

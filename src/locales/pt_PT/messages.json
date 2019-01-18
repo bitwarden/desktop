@@ -110,7 +110,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Alternar Visibilidade"
+    "message": "Alternar visibilidade"
   },
   "toggleCollapse": {
     "message": "Alternar colapso",
@@ -325,7 +325,7 @@
     "message": "Eliminar pasta"
   },
   "deleteAttachment": {
-    "message": "Eliminar Anexo"
+    "message": "Eliminar anexo"
   },
   "deleteItemConfirmation": {
     "message": "Tem a certeza de que pretende eliminar este item?"
@@ -371,7 +371,7 @@
     "message": "Números mínimos"
   },
   "minSpecial": {
-    "message": "Especiais minímos",
+    "message": "Especiais mínimos",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {

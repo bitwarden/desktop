@@ -319,7 +319,7 @@
     "message": "Eintrag bearbeitet"
   },
   "deleteItem": {
-    "message": "Eintrag gelöscht"
+    "message": "Eintrag löschen"
   },
   "deleteFolder": {
     "message": "Ordner löschen"
@@ -735,7 +735,7 @@
     "message": "Entsperren"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Als $EMAIL$ angemeldet.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -801,7 +801,7 @@
     "message": "Webseiten Icons deaktivieren"
   },
   "disableFaviconDesc": {
-    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in Ihrem Tresor."
+    "message": "Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor."
   },
   "enableMinToTray": {
     "message": "Minimieren und in der Taskleiste anzeigen"
@@ -920,7 +920,7 @@
     "message": "Werde Premium-Mitglied und erhalte dafür:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB verschlüsselter Speicherplatz."
+    "message": "1 GB verschlüsselter Speicherplatz für Dateianhänge."
   },
   "premiumSignUpTwoStep": {
     "message": "Zusätzliche Zwei-Faktor-Anmeldung über YubiKey, FIDO U2F, und Duo."
@@ -1129,7 +1129,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Dieser Export enthält ihre unverschlüsselten Daten im CSV-Format. Sie sollten ihn nicht speichern oder über unsichere Kanäle (z. B. E-Mail) versenden. Löschen sie ihn sofort nach seiner Verwendung."
+    "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."

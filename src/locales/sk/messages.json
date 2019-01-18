@@ -735,7 +735,7 @@
     "message": "Odomknúť"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Prihlásený ako $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
