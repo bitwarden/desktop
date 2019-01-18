@@ -735,7 +735,7 @@
     "message": "Otključaj"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Prijavljen kao $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
