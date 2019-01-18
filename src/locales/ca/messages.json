@@ -1,0 +1,1167 @@
+{
+  "bitwarden": {
+    "message": "Bitwarden"
+  },
+  "allItems": {
+    "message": "Tots els elements"
+  },
+  "favorites": {
+    "message": "Preferits"
+  },
+  "types": {
+    "message": "Tipus"
+  },
+  "typeLogin": {
+    "message": "Inici de sessió"
+  },
+  "typeCard": {
+    "message": "Targeta"
+  },
+  "typeIdentity": {
+    "message": "Identitat"
+  },
+  "typeSecureNote": {
+    "message": "Nota segura"
+  },
+  "folders": {
+    "message": "Carpetes"
+  },
+  "collections": {
+    "message": "Col·leccions"
+  },
+  "searchVault": {
+    "message": "Cerca en el dipòsit"
+  },
+  "addItem": {
+    "message": "Afegeix element"
+  },
+  "shared": {
+    "message": "Compartit"
+  },
+  "share": {
+    "message": "Comparteix"
+  },
+  "shareItem": {
+    "message": "Comparteix element"
+  },
+  "sharedItem": {
+    "message": "Element compartit"
+  },
+  "shareDesc": {
+    "message": "Trieu una organització amb la qual vulgueu compartir aquest element. Compartir les transferències de la propietat de l'element a l'organització. Ja no sereu el propietari directe d'aquest element una vegada que s'haja compartit."
+  },
+  "attachments": {
+    "message": "Adjunts"
+  },
+  "viewItem": {
+    "message": "Veure element"
+  },
+  "name": {
+    "message": "Nom"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "Nova URI"
+  },
+  "username": {
+    "message": "Nom d'usuari"
+  },
+  "password": {
+    "message": "Contrasenya"
+  },
+  "passphrase": {
+    "message": "Frase de pas"
+  },
+  "editItem": {
+    "message": "Edita l'element"
+  },
+  "emailAddress": {
+    "message": "Adreça electrònica"
+  },
+  "verificationCodeTotp": {
+    "message": "Codi de verificació (TOTP)"
+  },
+  "website": {
+    "message": "Lloc web"
+  },
+  "notes": {
+    "message": "Notes"
+  },
+  "customFields": {
+    "message": "Camps personalitzats"
+  },
+  "launch": {
+    "message": "Inicia"
+  },
+  "copyValue": {
+    "message": "Copia el valor",
+    "description": "Copy value to clipboard"
+  },
+  "toggleVisibility": {
+    "message": "Commuta la visibilitat"
+  },
+  "toggleCollapse": {
+    "message": "Redueix\/Amplia",
+    "description": "Toggling an expand\/collapse state."
+  },
+  "cardholderName": {
+    "message": "Nom del titular de la targeta"
+  },
+  "number": {
+    "message": "Número"
+  },
+  "brand": {
+    "message": "Marca"
+  },
+  "expiration": {
+    "message": "Caducitat"
+  },
+  "securityCode": {
+    "message": "Codi de seguretat"
+  },
+  "identityName": {
+    "message": "Nom d'identitat"
+  },
+  "company": {
+    "message": "Empresa"
+  },
+  "ssn": {
+    "message": "Número de la Seguretat Social"
+  },
+  "passportNumber": {
+    "message": "Número de passaport"
+  },
+  "licenseNumber": {
+    "message": "Número de llicència"
+  },
+  "email": {
+    "message": "Correu electrònic"
+  },
+  "phone": {
+    "message": "Telèfon"
+  },
+  "address": {
+    "message": "Adreça"
+  },
+  "premiumRequired": {
+    "message": "Premium requerit"
+  },
+  "premiumRequiredDesc": {
+    "message": "Cal una membresía premium per utilitzar aquesta funció."
+  },
+  "errorOccurred": {
+    "message": "S'ha produït un error."
+  },
+  "error": {
+    "message": "Error"
+  },
+  "january": {
+    "message": "Gener"
+  },
+  "february": {
+    "message": "Febrer"
+  },
+  "march": {
+    "message": "Març"
+  },
+  "april": {
+    "message": "Abril"
+  },
+  "may": {
+    "message": "Maig"
+  },
+  "june": {
+    "message": "Juny"
+  },
+  "july": {
+    "message": "Juliol"
+  },
+  "august": {
+    "message": "Agost"
+  },
+  "september": {
+    "message": "Setembre"
+  },
+  "october": {
+    "message": "Octubre"
+  },
+  "november": {
+    "message": "Novembre"
+  },
+  "december": {
+    "message": "Desembre"
+  },
+  "ex": {
+    "message": "ex.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "title": {
+    "message": "Títol"
+  },
+  "mr": {
+    "message": "Sr."
+  },
+  "mrs": {
+    "message": "Sra."
+  },
+  "ms": {
+    "message": "Sra."
+  },
+  "dr": {
+    "message": "Dr."
+  },
+  "expirationMonth": {
+    "message": "Mes de venciment"
+  },
+  "expirationYear": {
+    "message": "Any de venciment"
+  },
+  "select": {
+    "message": "Selecciona"
+  },
+  "other": {
+    "message": "Altres"
+  },
+  "generatePassword": {
+    "message": "Genera contrasenya"
+  },
+  "type": {
+    "message": "Tipus"
+  },
+  "firstName": {
+    "message": "Nom"
+  },
+  "middleName": {
+    "message": "Segon nom"
+  },
+  "lastName": {
+    "message": "Cognoms"
+  },
+  "address1": {
+    "message": "Adreça 1"
+  },
+  "address2": {
+    "message": "Adreça 2"
+  },
+  "address3": {
+    "message": "Adreça 3"
+  },
+  "cityTown": {
+    "message": "Ciutat \/ poble"
+  },
+  "stateProvince": {
+    "message": "Estat \/ província"
+  },
+  "zipPostalCode": {
+    "message": "Codi postal"
+  },
+  "country": {
+    "message": "País"
+  },
+  "save": {
+    "message": "Guarda"
+  },
+  "cancel": {
+    "message": "Cancel·la"
+  },
+  "delete": {
+    "message": "Suprimeix"
+  },
+  "favorite": {
+    "message": "Preferit"
+  },
+  "edit": {
+    "message": "Edita"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Clau d'autenticació (TOTP)"
+  },
+  "folder": {
+    "message": "Carpeta"
+  },
+  "newCustomField": {
+    "message": "Nou camp personalitzat"
+  },
+  "value": {
+    "message": "Valor"
+  },
+  "cfTypeText": {
+    "message": "Text"
+  },
+  "cfTypeHidden": {
+    "message": "Amagat"
+  },
+  "cfTypeBoolean": {
+    "message": "Booleà"
+  },
+  "remove": {
+    "message": "Suprimeix"
+  },
+  "nameRequired": {
+    "message": "El nom és obligatori."
+  },
+  "addedItem": {
+    "message": "Element afegit"
+  },
+  "editedItem": {
+    "message": "Element editat"
+  },
+  "deleteItem": {
+    "message": "Suprimeix element"
+  },
+  "deleteFolder": {
+    "message": "Suprimeix carpeta"
+  },
+  "deleteAttachment": {
+    "message": "Suprimeix adjunt"
+  },
+  "deleteItemConfirmation": {
+    "message": "Esteu segur que voleu suprimir aquest element?"
+  },
+  "deletedItem": {
+    "message": "Element suprimit"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Esteu segur que voleu sobreescriure la contrasenya actual?"
+  },
+  "noneFolder": {
+    "message": "Cap carpeta",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "Afegeix carpeta"
+  },
+  "editFolder": {
+    "message": "Edita la carpeta"
+  },
+  "regeneratePassword": {
+    "message": "Regenera contrasenya"
+  },
+  "copyPassword": {
+    "message": "Copia contrasenya"
+  },
+  "copyUri": {
+    "message": "Copia URI"
+  },
+  "length": {
+    "message": "Longitud"
+  },
+  "numWords": {
+    "message": "Nombre de paraules"
+  },
+  "wordSeparator": {
+    "message": "Separador de paraules"
+  },
+  "close": {
+    "message": "Tanca"
+  },
+  "minNumbers": {
+    "message": "Números mínims"
+  },
+  "minSpecial": {
+    "message": "Especial mínim",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Eviteu caràcters ambigus"
+  },
+  "searchCollection": {
+    "message": "Cerca en la col·lecció"
+  },
+  "searchFolder": {
+    "message": "Cerca en la carpeta"
+  },
+  "searchFavorites": {
+    "message": "Cerca als preferits"
+  },
+  "searchType": {
+    "message": "Tipus de Cerca",
+    "description": "Search item type"
+  },
+  "newAttachment": {
+    "message": "Afegeix un nou adjunt"
+  },
+  "deletedAttachment": {
+    "message": "Adjunt suprimit"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Esteu segur que voleu suprimir aquest adjunt?"
+  },
+  "attachmentSaved": {
+    "message": "S'ha guardat el fitxer adjunt."
+  },
+  "file": {
+    "message": "Fitxer"
+  },
+  "selectFile": {
+    "message": "Seleccioneu un fitxer."
+  },
+  "maxFileSize": {
+    "message": "La mida màxima del fitxer és de 100 MB."
+  },
+  "updateKey": {
+    "message": "No podeu utilitzar aquesta funció fins que actualitzeu la vostra clau de xifratge."
+  },
+  "options": {
+    "message": "Opcions"
+  },
+  "editedFolder": {
+    "message": "Carpeta editada"
+  },
+  "addedFolder": {
+    "message": "Carpeta afegida"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Esteu segur que voleu suprimir aquesta carpeta?"
+  },
+  "deletedFolder": {
+    "message": "Carpeta suprimida"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Inicieu sessió o creeu un compte nou per accedir al dipòsit segur."
+  },
+  "createAccount": {
+    "message": "Crea un compte"
+  },
+  "logIn": {
+    "message": "Inicia sessió"
+  },
+  "submit": {
+    "message": "Envia"
+  },
+  "masterPass": {
+    "message": "Contrasenya mestra"
+  },
+  "masterPassDesc": {
+    "message": "La contrasenya mestra és la contrasenya que utilitzeu per accedir al vostre dipòsit. És molt important que no oblideu la vostra contrasenya mestra. No hi ha manera de recuperar la contrasenya en cas que l'oblideu."
+  },
+  "masterPassHintDesc": {
+    "message": "Una suggerència de contrasenya mestra pot ajudar a recordar la vostra contrasenya si l'oblideu."
+  },
+  "reTypeMasterPass": {
+    "message": "Torneu a escriure la contrasenya mestra"
+  },
+  "masterPassHint": {
+    "message": "Suggeriment de la contrasenya mestra (opcional)"
+  },
+  "settings": {
+    "message": "Configuració"
+  },
+  "passwordHint": {
+    "message": "Pista per a la contrasenya"
+  },
+  "enterEmailToGetHint": {
+    "message": "Introduïu l'adreça electrònica del vostre compte per rebre la contrasenya mestra."
+  },
+  "getMasterPasswordHint": {
+    "message": "Obteniu el suggeriment de contrasenya mestra"
+  },
+  "emailRequired": {
+    "message": "L'adreça de correu electrònic és obligatoria."
+  },
+  "invalidEmail": {
+    "message": "L’adreça electrònica no és vàlida."
+  },
+  "masterPassRequired": {
+    "message": "La contrasenya és obligatòria."
+  },
+  "masterPassLength": {
+    "message": "La contrasenya ha de contenir almenys 8 caràcters."
+  },
+  "masterPassDoesntMatch": {
+    "message": "La confirmació de la contrasenya mestra no coincideix."
+  },
+  "newAccountCreated": {
+    "message": "El vostre compte s'ha activat correctament. Ara ja podeu entrar."
+  },
+  "masterPassSent": {
+    "message": "Hem enviat un correu electrònic amb la vostra contrasenya mestra."
+  },
+  "unexpectedError": {
+    "message": "S'ha produït un error inesperat."
+  },
+  "itemInformation": {
+    "message": "Informació de l'element"
+  },
+  "noItemsInList": {
+    "message": "No hi ha cap element a llistar."
+  },
+  "verificationCode": {
+    "message": "Codi de verificació"
+  },
+  "verificationCodeRequired": {
+    "message": "El codi de verificació és obligatori."
+  },
+  "continue": {
+    "message": "Continua"
+  },
+  "enterVerificationCodeApp": {
+    "message": "Introduïu el codi de verificació de 6 dígits de l'aplicació autenticadora."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Introduïu el codi de verificació de 6 dígits que s'ha enviat per correu electrònic a $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Correu electrònic de verificació enviat a $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "Recorda'm"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Envia el codi de verificació altra vegada"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Utilitzeu un altre mètode d'inici de sessió en dues passes"
+  },
+  "insertYubiKey": {
+    "message": "Introduïu el vostre YubiKey al port USB de l'ordinador i, a continuació, premeu el seu botó."
+  },
+  "insertU2f": {
+    "message": "Introduïu la vostra clau de seguretat al port USB de l'ordinador. Si té un botó, premeu-lo."
+  },
+  "recoveryCodeDesc": {
+    "message": "Heu perdut l'accés a tots els vostres proveïdors de dos factors? Utilitzeu el vostre codi de recuperació per desactivar tots els proveïdors de dos factors del vostre compte."
+  },
+  "recoveryCodeTitle": {
+    "message": "Codi de recuperació"
+  },
+  "authenticatorAppTitle": {
+    "message": "Aplicació autenticadora"
+  },
+  "authenticatorAppDesc": {
+    "message": "Utilitzeu una aplicació autenticadora (com Authy o Google Authenticator) per generar codis de verificació basats en el temps.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "Clau de seguretat OTP de YubiKey"
+  },
+  "yubiKeyDesc": {
+    "message": "Utilitzeu una YubiKey per accedir al vostre compte. Funciona amb els dispositius YubiKey 4, 4 Nano, 4C i NEO."
+  },
+  "duoDesc": {
+    "message": "Verifiqueu amb Duo Security mitjançant l'aplicació Duo Mobile, SMS, trucada telefònica o clau de seguretat U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verifiqueu amb Duo Security per a la vostra organització mitjançant l'aplicació Duo Mobile, SMS, trucada telefònica o clau de seguretat U2F.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Utilitzeu qualsevol clau de seguretat habilitada per FIDO U2F per accedir al vostre compte."
+  },
+  "u2fTitle": {
+    "message": "Clau de seguretat FIDO U2F"
+  },
+  "emailTitle": {
+    "message": "Correu electrònic"
+  },
+  "emailDesc": {
+    "message": "Els codis de verificació els rebreu per correu electrònic."
+  },
+  "loginUnavailable": {
+    "message": "Inici de sessió no disponible"
+  },
+  "noTwoStepProviders": {
+    "message": "Aquest compte té habilitat l'inici de sessió en dues passes, però aquest navegador web no admet cap dels dos proveïdors configurats."
+  },
+  "noTwoStepProviders2": {
+    "message": "Afegiu proveïdors addicionals que s'adapten millor als dispositius (com ara una aplicació d'autenticació)."
+  },
+  "twoStepOptions": {
+    "message": "Opcions d'inici de sessió en dues passes"
+  },
+  "selfHostedEnvironment": {
+    "message": "Entorn d'allotjament propi"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Especifiqueu l'URL base de la vostra instal·lació Bitwarden allotjada en entorn propi."
+  },
+  "customEnvironment": {
+    "message": "Entorn personalitzat"
+  },
+  "customEnvironmentFooter": {
+    "message": "Per a usuaris avançats. Podeu especificar l'URL base de cada servei independentment."
+  },
+  "baseUrl": {
+    "message": "URL del servidor"
+  },
+  "apiUrl": {
+    "message": "URL del servidor API"
+  },
+  "webVaultUrl": {
+    "message": "URL del servidor del dipòsit web"
+  },
+  "identityUrl": {
+    "message": "URL del servidor d'identitat"
+  },
+  "notificationsUrl": {
+    "message": "URL del servidor de notificacions"
+  },
+  "iconsUrl": {
+    "message": "URL del servidor d'icones"
+  },
+  "environmentSaved": {
+    "message": "S'han guardat les URL de l'entorn."
+  },
+  "ok": {
+    "message": "D’acord"
+  },
+  "yes": {
+    "message": "Sí"
+  },
+  "no": {
+    "message": "No"
+  },
+  "overwritePassword": {
+    "message": "Sobreescriu la contrasenya"
+  },
+  "learnMore": {
+    "message": "Més informació"
+  },
+  "featureUnavailable": {
+    "message": "Característica no disponible"
+  },
+  "loggedOut": {
+    "message": "Desconnectat"
+  },
+  "loginExpired": {
+    "message": "La vostra sessió ha caducat."
+  },
+  "logOutConfirmation": {
+    "message": "Segur que voleu tancar la sessió?"
+  },
+  "logOut": {
+    "message": "Tanca la sessió"
+  },
+  "addNewLogin": {
+    "message": "Afegeix un inici de sessió nou"
+  },
+  "addNewItem": {
+    "message": "Afegeix element nou"
+  },
+  "addNewFolder": {
+    "message": "Afegeix una carpeta nova"
+  },
+  "view": {
+    "message": "Mostra"
+  },
+  "account": {
+    "message": "Compte"
+  },
+  "loading": {
+    "message": "S'està carregant..."
+  },
+  "lockNow": {
+    "message": "Bloqueja ara"
+  },
+  "passwordGenerator": {
+    "message": "Generador de contrasenyes"
+  },
+  "emailUs": {
+    "message": "Envia'ns un correu electrònic"
+  },
+  "visitOurWebsite": {
+    "message": "Visiteu el nostre lloc web"
+  },
+  "fileBugReport": {
+    "message": "Presenta un informe d'error"
+  },
+  "blog": {
+    "message": "Blog"
+  },
+  "followUs": {
+    "message": "Seguiu-nos"
+  },
+  "syncVault": {
+    "message": "Sincronitza el dipòsit"
+  },
+  "changeMasterPass": {
+    "message": "Canvia la contrasenya mestra"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Podeu canviar la contrasenya mestra al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+  },
+  "fingerprintPhrase": {
+    "message": "Frase d'empremta digital",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Frase d'empremta digital del vostre compte",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "goToWebVault": {
+    "message": "Vés al dipòsit web"
+  },
+  "getMobileApp": {
+    "message": "Obteniu l'aplicació per a mòbil"
+  },
+  "getBrowserExtension": {
+    "message": "Obteniu la extensió del navegador"
+  },
+  "syncingComplete": {
+    "message": "S'ha completat la sincronització"
+  },
+  "syncingFailed": {
+    "message": "Ha fallat la sincronització"
+  },
+  "yourVaultIsLocked": {
+    "message": "El dipòsit està bloquejat. Verifiqueu la contrasenya mestra per continuar."
+  },
+  "unlock": {
+    "message": "Desbloqueja"
+  },
+  "loggedInAs": {
+    "message": "S'ha iniciat la sessió com a $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
+  "invalidMasterPassword": {
+    "message": "Contrasenya mestra no vàlida"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "L'inici de sessió en dues passes fa que el vostre compte siga més segur, ja que obliga a verificar el vostre inici de sessió amb un altre dispositiu, com ara una clau de seguretat, una aplicació autenticadora, un SMS, una trucada telefònica o un correu electrònic. Es pot habilitar l'inici de sessió en dues passes al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+  },
+  "twoStepLogin": {
+    "message": "Inici de sessió en dues passes"
+  },
+  "lockOptions": {
+    "message": "Opcions de bloqueig"
+  },
+  "lockOptionsDesc": {
+    "message": "Trieu quan es bloqueja el vostre dipòsit. Una volta bloquejat requereix que torneu a introduir la vostra contrasenya mestra per accedir-hi de nou."
+  },
+  "immediately": {
+    "message": "Immediatament"
+  },
+  "oneMinute": {
+    "message": "1 minut"
+  },
+  "fiveMinutes": {
+    "message": "5 Minuts"
+  },
+  "fifteenMinutes": {
+    "message": "15 minuts"
+  },
+  "thirtyMinutes": {
+    "message": "30 minuts"
+  },
+  "oneHour": {
+    "message": "1 hora"
+  },
+  "fourHours": {
+    "message": "4 hores"
+  },
+  "onIdle": {
+    "message": "En inactivitat del sistema"
+  },
+  "onSleep": {
+    "message": "En aturada temporal del sistema"
+  },
+  "onLocked": {
+    "message": "En bloquejar el sistema"
+  },
+  "onRestart": {
+    "message": "En reiniciar"
+  },
+  "never": {
+    "message": "Mai"
+  },
+  "security": {
+    "message": "Seguretat"
+  },
+  "disableFavicon": {
+    "message": "Deshabilitar icones del lloc web"
+  },
+  "disableFaviconDesc": {
+    "message": "Les icones del lloc web proporcionen una imatge que es pot reconèixer al costat de cada element d'inici de sessió al vostre dipòsit."
+  },
+  "enableMinToTray": {
+    "message": "Minimitza a icona en la safata"
+  },
+  "enableMinToTrayDesc": {
+    "message": "En minimitzar la finestra, mostra una icona a la safata del sistema."
+  },
+  "enableCloseToTray": {
+    "message": "Tanca a la icona de safata"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "En tancar la finestra, mostra una icona a la safata del sistema."
+  },
+  "enableTray": {
+    "message": "Habilita la icona de safata"
+  },
+  "enableTrayDesc": {
+    "message": "Mostra sempre una icona a la safata de sistema."
+  },
+  "language": {
+    "message": "Idioma"
+  },
+  "languageDesc": {
+    "message": "Canvia l'idioma que utilitza l'aplicació. Es requereix un reinici."
+  },
+  "theme": {
+    "message": "Tema"
+  },
+  "themeDesc": {
+    "message": "Canvia el color del tema de l'aplicació."
+  },
+  "dark": {
+    "message": "Fosc",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Clar",
+    "description": "Light color"
+  },
+  "copy": {
+    "message": "Copia",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "Cerca actualitzacions"
+  },
+  "version": {
+    "message": "Versió $VERSION_NUM$",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "restartToUpdate": {
+    "message": "Reinicia per actualitzar"
+  },
+  "restartToUpdateDesc": {
+    "message": "La versió $VERSION_NUM$ està a punt per instal·lar-se. Heu de reiniciar l'aplicació per completar la instal·lació. Voleu reiniciar i actualitzar ara?",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "Actualització disponible"
+  },
+  "updateAvailableDesc": {
+    "message": "S'ha trobat una actualització. Voleu descarregar-la ara?"
+  },
+  "restart": {
+    "message": "Reinicia"
+  },
+  "later": {
+    "message": "Més tard"
+  },
+  "noUpdatesAvailable": {
+    "message": "No hi ha actualitzacions disponibles actualment. Esteu utilitzant l'última versió."
+  },
+  "updateError": {
+    "message": "Error d'actualizació"
+  },
+  "unknown": {
+    "message": "Desconegut"
+  },
+  "copyUsername": {
+    "message": "Copia el nom d'usuari"
+  },
+  "copyNumber": {
+    "message": "Copia el número",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Copia el codi de seguretat",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "premiumMembership": {
+    "message": "Subscripció Premium"
+  },
+  "premiumManage": {
+    "message": "Administra la subscripció"
+  },
+  "premiumManageAlert": {
+    "message": "Podeu gestionar la vostra subscripció al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+  },
+  "premiumRefresh": {
+    "message": "Actualitza la subscripció"
+  },
+  "premiumNotCurrentMember": {
+    "message": "No sou actualment un membre premium."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Inscriviu-vos per una subscripció premium i obteniu:"
+  },
+  "premiumSignUpStorage": {
+    "message": "1 GB d'emmagatzematge xifrat per als fitxers adjunts."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Opcions addicionals d'inici de sessió en dues passes com ara YubiKey, FIDO U2F i Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Requisits d'higiene de la contrasenya, salut del compte i informe d'infraccions de dades per mantenir la seguretat del vostre dipòsit."
+  },
+  "premiumSignUpTotp": {
+    "message": "Generador de codi de verificació TOTP (2FA) per a inici de sessió al vostre dipòsit."
+  },
+  "premiumSignUpSupport": {
+    "message": "Prioritat d'atenció al client."
+  },
+  "premiumSignUpFuture": {
+    "message": "Totes les funcions premium futures. Aviat, més!"
+  },
+  "premiumPurchase": {
+    "message": "Compra Premium"
+  },
+  "premiumPurchaseAlert": {
+    "message": "Podeu comprar la vostra subscripció al dipòsit web de bitwarden.com. Voleu visitar el lloc web ara?"
+  },
+  "premiumCurrentMember": {
+    "message": "Sou un membre premium!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Gràcies per donar suport a Bitwarden."
+  },
+  "premiumPrice": {
+    "message": "Tot per només $PRICE$ \/ any!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "refreshComplete": {
+    "message": "Actualització completa"
+  },
+  "passwordHistory": {
+    "message": "Historial de les contrasenyes"
+  },
+  "clear": {
+    "message": "Esborra"
+  },
+  "noPasswordsInList": {
+    "message": "No hi ha cap contrasenya a llistar."
+  },
+  "undo": {
+    "message": "Desfés"
+  },
+  "redo": {
+    "message": "Refés"
+  },
+  "cut": {
+    "message": "Retalla",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Enganxa",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Selecciona-ho tot"
+  },
+  "zoomIn": {
+    "message": "Amplia"
+  },
+  "zoomOut": {
+    "message": "Allunya"
+  },
+  "resetZoom": {
+    "message": "Reinicialitza Zoom"
+  },
+  "toggleFullScreen": {
+    "message": "Commuta pantalla completa"
+  },
+  "reload": {
+    "message": "Torna a carregar"
+  },
+  "toggleDevTools": {
+    "message": "Commuta eines de desenvolupadors"
+  },
+  "minimize": {
+    "message": "Minimitza",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Zoom"
+  },
+  "bringAllToFront": {
+    "message": "Porta-ho tot al davant",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "Sobre Bitwarden"
+  },
+  "services": {
+    "message": "Serveis"
+  },
+  "hideBitwarden": {
+    "message": "Amaga Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Amaga els altres"
+  },
+  "showAll": {
+    "message": "Mostra-ho tot"
+  },
+  "quitBitwarden": {
+    "message": "Tanca Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ copiat",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "help": {
+    "message": "Ajuda"
+  },
+  "window": {
+    "message": "Finestra"
+  },
+  "checkPassword": {
+    "message": "Comprova si la contrasenya ha estat exposada."
+  },
+  "passwordExposed": {
+    "message": "Aquesta contrasenya ha estat exposada $VALUE$ vegades en errors de seguretat de dades. Heu de canviar-la.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "Aquesta contrasenya no s'ha trobat en cap filtració de dades coneguda. Hauries de poder utilitzar-la de manera segura."
+  },
+  "baseDomain": {
+    "message": "Domini base"
+  },
+  "host": {
+    "message": "Amfitrió",
+    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Exacte"
+  },
+  "startsWith": {
+    "message": "Comença amb"
+  },
+  "regEx": {
+    "message": "Expressió regular",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Detecció de coincidències",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Detecció de coincidències per defecte",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Commuta opcions"
+  },
+  "organization": {
+    "message": "Organització",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Per defecte"
+  },
+  "exit": {
+    "message": "Tanca"
+  },
+  "showHide": {
+    "message": "Mostra\/Amaga",
+    "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
+  },
+  "hideToTray": {
+    "message": "Amaga a la safata"
+  },
+  "dateUpdated": {
+    "message": "Actualitzat",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Contrasenya actualitzada",
+    "description": "ex. Date this password was updated"
+  },
+  "exportVault": {
+    "message": "Exporta dipòsit"
+  },
+  "fileFormat": {
+    "message": "Format de fitxer"
+  },
+  "warning": {
+    "message": "ADVERTIMENT",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarningDesc": {
+    "message": "Aquesta exportació conté les dades del vostre dipòsit en un format no xifrat. No hauríeu d'emmagatzemar o enviar el fitxer exportat a través de canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver acabat d'usar-lo."
+  },
+  "exportMasterPassword": {
+    "message": "Introduïu la contrasenya mestra per exportar les dades del dipòsit."
+  },
+  "noOrganizationsList": {
+    "message": "No pertanyeu a cap organització. Les organitzacions permeten compartir elements amb seguretat amb altres usuaris."
+  },
+  "noCollectionsInList": {
+    "message": "No hi ha cap col·lecció a llistar."
+  },
+  "ownership": {
+    "message": "Propietat"
+  },
+  "whoOwnsThisItem": {
+    "message": "Qui és propietari d'aquest element?"
+  },
+  "strong": {
+    "message": "Forta",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Bona",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Poc segura",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Contrasenya mestra poc segura"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "La contrasenya mestra que heu triat és poc segura. Heu d'utilitzar una contrasenya mestra segura (o una frase de pas) per protegir correctament el vostre compte Bitwarden. Esteu segur que voleu utilitzar aquesta contrasenya mestra?"
+  }
+}
