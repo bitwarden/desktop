@@ -735,7 +735,7 @@
     "message": "Déverrouiller"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Connecté en tant que $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -962,7 +962,7 @@
     "message": "Actualisation terminée"
   },
   "passwordHistory": {
-    "message": "Historique des mots de passe"
+    "message": "Historique des mots de passe "
   },
   "clear": {
     "message": "Effacer"
@@ -1115,7 +1115,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Mot de passe mis à jour",
+    "message": "Mot de passe mis à jour ",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
