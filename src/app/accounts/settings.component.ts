@@ -32,7 +32,7 @@ export class SettingsComponent implements OnInit {
     enableCloseToTray: boolean = false;
     enableTray: boolean = false;
     showMinToTray: boolean = false;
-    startMinimized: boolean = false;
+    startToTray: boolean = false;
     locale: string;
     lockOptions: any[];
     localeOptions: any[];
@@ -81,7 +81,7 @@ export class SettingsComponent implements OnInit {
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
-        this.startMinimized = await this.storageService.get<boolean>(ElectronConstants.enableStartMinimizedKey);
+        this.startToTray = await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
     }
@@ -113,9 +113,9 @@ export class SettingsComponent implements OnInit {
         this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
     }
 
-    async saveStartMinimized() {
-        await this.storageService.save(ElectronConstants.enableStartMinimizedKey, this.startMinimized);
-        this.callAnalytics('StartMinimized', this.startMinimized);
+    async saveStartToTray() {
+        await this.storageService.save(ElectronConstants.enableStartToTrayKey, this.startToTray);
+        this.callAnalytics('StartToTray', this.startToTray);
     }
 
     async saveLocale() {

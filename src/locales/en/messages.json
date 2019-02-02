@@ -821,11 +821,11 @@
   "enableTrayDesc": {
     "message": "Always show an icon in the system tray."
   },
-  "startMinimized": {
-    "message": "Start minimized"
+  "startToTray": {
+    "message": "Start To Tray Icon"
   },
-  "startMinimizedDesc": {
-    "message": "When starting the application, it will only show an icon in the system tray."
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
   },
   "language": {
     "message": "Language"

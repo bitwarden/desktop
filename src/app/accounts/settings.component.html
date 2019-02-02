@@ -54,16 +54,6 @@
                         </div>
                         <div class="form-group" *ngIf="showMinToTray">
                             <div class="checkbox">
-                                <label for="startMinimized">
-                                    <input id="startMinimized" type="checkbox" name="StartMinimized"
-                                           [(ngModel)]="startMinimized" (change)="saveStartMinimized()">
-                                    {{'startMinimized' | i18n}}
-                                </label>
-                            </div>
-                            <small class="help-block">{{'startMinimizedDesc' | i18n}}</small>
-                        </div>
-                        <div class="form-group">
-                            <div class="checkbox">
                                 <label for="enableCloseToTray">
                                     <input id="enableCloseToTray" type="checkbox" name="EnableCloseToTray"
                                            [(ngModel)]="enableCloseToTray" (change)="saveCloseToTray()">
@@ -71,6 +61,16 @@
                                 </label>
                             </div>
                             <small class="help-block">{{'enableCloseToTrayDesc' | i18n}}</small>
+                        </div>
+                        <div class="form-group" *ngIf="showMinToTray">
+                            <div class="checkbox">
+                                <label for="startToTray">
+                                    <input id="startToTray" type="checkbox" name="StartToTray"
+                                           [(ngModel)]="startToTray" (change)="saveStartToTray()">
+                                    {{'startToTray' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'startToTrayDesc' | i18n}}</small>
                         </div>
                         <div class="form-group">
                             <label for="theme">{{'theme' | i18n}}</label>
