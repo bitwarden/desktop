@@ -12,6 +12,7 @@ import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 
 import { ConstantsService } from 'jslib/services/constants.service';
+import { ElectronConstants } from 'jslib/electron/electronConstants';
 import { LowdbStorageService } from 'jslib/services/lowdbStorage.service';
 
 import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
@@ -103,6 +104,10 @@ export class Main {
                 click: () => this.messagingService.send('lockVault'),
             }]);
             await this.updaterMain.init();
+
+            if(await this.storageService.get<boolean>(ElectronConstants.enableStartMinimizedKey)) {
+                this.trayMain.hideToTray();
+            }
         }, (e: any) => {
             // tslint:disable-next-line
             console.error(e);
