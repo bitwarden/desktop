@@ -113,7 +113,7 @@
     "message": "Alihkan Visibilitas"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Buka Tutup",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -706,11 +706,11 @@
     "message": "Anda dapat mengubah kata sandi utama Anda di brankas web bitwarden.com. Anda ingin mengunjungi situs web sekarang?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Frase Fingerprint",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Frase fingerprint milik Anda",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Buka"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Sandi utama tidak valid"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Keamanan"
   },
-  "disableGa": {
-    "message": "Nonaktifkan Analitik"
-  },
-  "gaDesc": {
-    "message": "Kami menggunakan analitik untuk lebih mempelajari bagaimana aplikasi digunakan sehingga kami dapat membuatnya lebih baik. Semua pengumpulan data benar-benar anonim."
-  },
   "disableFavicon": {
     "message": "Nonaktifkan Ikon Situs Web"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Ketika jendela di perkecil, tampilkan ikon di dalam sistem baki sebagai gantinya."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Aktifkan Ikon Baki"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Pilihan info masuk dua langkah tambahan seperti YubiKey, FIDO U2F, dan Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Pembuat kode verifikasi TOTP (2FA) untuk masuk di brankas anda."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Ekspor Brankas"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "PERINGATAN",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Ekspor ini berisi data anda yang tidak ter-enkripsi dalam format .csv. Anda seharusnya tidak menyimpan atau mengirimnya lewat kanal yang tidak aman (seperti e-mail). Hapus berkas ini dengan segera jika anda selesai menggunakannya."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Masukkan kata sandi utama untuk ekspor data brankas anda."
@@ -1132,21 +1147,21 @@
     "message": "Pemilik item ini?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Kuat",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Baik",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Lemah",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Kata Sandi Utama Lemah"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Sandi utama yang Anda pilih itu lemah. Anda harus menggunakan sandi yang kuat (atau sebuah passphrase) untuk melindungi akun Bitwarden Anda. Apakah Anda yakin ingin menggunakan sandi ini?"
   }
 }

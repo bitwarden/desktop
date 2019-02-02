@@ -25,7 +25,7 @@ function cleanupAotIssue() {
     return del(['./node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts']);
 }
 
-gulp.task('clean', clean);
-gulp.task('cleanupAotIssue', cleanupAotIssue);
-gulp.task('webfonts', ['clean'], webfonts);
-gulp.task('prebuild:renderer', ['webfonts', 'cleanupAotIssue']);
+exports.clean = clean;
+exports.cleanupAotIssue = cleanupAotIssue;
+exports.webfonts = gulp.series(clean, webfonts);
+exports['prebuild:renderer'] = gulp.parallel(webfonts, cleanupAotIssue);;

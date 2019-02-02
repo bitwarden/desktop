@@ -1,6 +1,5 @@
 import { remote } from 'electron';
 
-import { Location } from '@angular/common';
 import {
     ChangeDetectorRef,
     Component,
@@ -75,7 +74,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     private modal: ModalComponent = null;
 
-    constructor(private route: ActivatedRoute, private router: Router, private location: Location,
+    constructor(private route: ActivatedRoute, private router: Router,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
@@ -138,9 +137,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         this.messagingService.send('scheduleNextSync');
                         break;
                     case 'syncCompleted':
-                        if (message.successfully) {
-                            await this.load();
-                        }
+                        await this.load();
                         break;
                     case 'refreshCiphers':
                         this.ciphersComponent.refresh();
@@ -166,44 +163,46 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async load() {
-        this.route.queryParams.subscribe(async (params) => {
+        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
             await this.groupingsComponent.load();
 
             if (params == null) {
                 this.groupingsComponent.selectedAll = true;
                 await this.ciphersComponent.load();
-                return;
-            }
-
-            if (params.cipherId) {
-                const cipherView = new CipherView();
-                cipherView.id = params.cipherId;
-                if (params.action === 'edit') {
-                    this.editCipher(cipherView);
-                } else {
-                    this.viewCipher(cipherView);
-                }
-            } else if (params.action === 'add') {
-                this.addCipher();
-            }
-
-            if (params.favorites) {
-                this.groupingsComponent.selectedFavorites = true;
-                await this.filterFavorites();
-            } else if (params.type) {
-                const t = parseInt(params.type, null);
-                this.groupingsComponent.selectedType = t;
-                await this.filterCipherType(t);
-            } else if (params.folderId) {
-                this.groupingsComponent.selectedFolder = true;
-                this.groupingsComponent.selectedFolderId = params.folderId;
-                await this.filterFolder(params.folderId);
-            } else if (params.collectionId) {
-                this.groupingsComponent.selectedCollectionId = params.collectionId;
-                await this.filterCollection(params.collectionId);
             } else {
-                this.groupingsComponent.selectedAll = true;
-                await this.ciphersComponent.load();
+                if (params.cipherId) {
+                    const cipherView = new CipherView();
+                    cipherView.id = params.cipherId;
+                    if (params.action === 'edit') {
+                        this.editCipher(cipherView);
+                    } else {
+                        this.viewCipher(cipherView);
+                    }
+                } else if (params.action === 'add') {
+                    this.addCipher();
+                }
+
+                if (params.favorites) {
+                    this.groupingsComponent.selectedFavorites = true;
+                    await this.filterFavorites();
+                } else if (params.type) {
+                    const t = parseInt(params.type, null);
+                    this.groupingsComponent.selectedType = t;
+                    await this.filterCipherType(t);
+                } else if (params.folderId) {
+                    this.groupingsComponent.selectedFolder = true;
+                    this.groupingsComponent.selectedFolderId = params.folderId;
+                    await this.filterFolder(params.folderId);
+                } else if (params.collectionId) {
+                    this.groupingsComponent.selectedCollectionId = params.collectionId;
+                    await this.filterCollection(params.collectionId);
+                } else {
+                    this.groupingsComponent.selectedAll = true;
+                    await this.ciphersComponent.load();
+                }
+            }
+            if (queryParamsSub != null) {
+                queryParamsSub.unsubscribe();
             }
         });
     }
@@ -241,7 +240,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.canLaunch) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('launch'),
-                        click: () => this.platformUtilsService.launchUri(cipher.login.uri),
+                        click: () => this.platformUtilsService.launchUri(cipher.login.launchUri),
                     }));
                 }
                 if (cipher.login.username != null) {
@@ -476,7 +475,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         childComponent.onSelected.subscribe((password: string) => {
             this.modal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
-                this.addEditComponent.cipher.login != null) {
+                this.addEditComponent.cipher.type === CipherType.Login && this.addEditComponent.cipher.login != null) {
                 this.addEditComponent.cipher.login.password = password;
             }
         });
@@ -572,8 +571,11 @@ export class VaultComponent implements OnInit, OnDestroy {
             };
         }
 
-        const url = this.router.createUrlTree(['vault'], { queryParams: queryParams }).toString();
-        this.location.go(url);
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams,
+            replaceUrl: true,
+        });
     }
 
     private addCipherWithChangeDetection(type: CipherType = null) {

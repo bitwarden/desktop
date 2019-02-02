@@ -76,7 +76,7 @@ export class Main {
             this.menuMain.updateMenuItem.enabled = true;
         }, () => {
             this.menuMain.updateMenuItem.label = this.i18nService.t('restartToUpdate');
-        });
+        }, 'bitwarden');
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
         this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService);

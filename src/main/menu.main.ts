@@ -397,7 +397,10 @@ export class MenuMain extends BaseMenu {
         } else {
             // File menu
             template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
-                firstMenuOptions);
+                firstMenuOptions, {
+                    label: this.i18nService.t('quitBitwarden'),
+                    role: 'quit',
+                });
 
             // About menu
             const aboutMenuAdditions: MenuItemConstructorOptions[] = [

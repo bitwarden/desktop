@@ -27,9 +27,9 @@ import { Utils } from 'jslib/misc/utils';
 })
 export class SettingsComponent implements OnInit {
     lockOption: number = null;
-    disableGa: boolean = false;
     disableFavicons: boolean = false;
     enableMinToTray: boolean = false;
+    enableCloseToTray: boolean = false;
     enableTray: boolean = false;
     showMinToTray: boolean = false;
     startMinimized: boolean = false;
@@ -79,28 +79,15 @@ export class SettingsComponent implements OnInit {
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
+        this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
         this.startMinimized = await this.storageService.get<boolean>(ElectronConstants.enableStartMinimizedKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
-
-        const disableGa = await this.storageService.get<boolean>(ConstantsService.disableGaKey);
-        const disableGaByDefault = this.platformUtilsService.isMacAppStore();
-        this.disableGa = disableGa || (disableGa == null && disableGaByDefault);
     }
 
     async saveLockOption() {
         await this.lockService.setLockOption(this.lockOption != null ? this.lockOption : null);
-    }
-
-    async saveGa() {
-        if (this.disableGa) {
-            this.callAnalytics('Analytics', !this.disableGa);
-        }
-        await this.storageService.save(ConstantsService.disableGaKey, this.disableGa);
-        if (!this.disableGa) {
-            this.callAnalytics('Analytics', !this.disableGa);
-        }
     }
 
     async saveFavicons() {
@@ -113,6 +100,11 @@ export class SettingsComponent implements OnInit {
     async saveMinToTray() {
         await this.storageService.save(ElectronConstants.enableMinimizeToTrayKey, this.enableMinToTray);
         this.callAnalytics('MinimizeToTray', this.enableMinToTray);
+    }
+
+    async saveCloseToTray() {
+        await this.storageService.save(ElectronConstants.enableCloseToTrayKey, this.enableCloseToTray);
+        this.callAnalytics('CloseToTray', this.enableCloseToTray);
     }
 
     async saveTray() {

@@ -49,7 +49,7 @@ export class PowerMonitorMain {
         // TODO: System locked
     }
 
-    private async getLockOption(): Promise<number> {
-        return await this.main.storageService.get<number>(ConstantsService.lockOptionKey);
+    private getLockOption(): Promise<number> {
+        return this.main.storageService.get<number>(ConstantsService.lockOptionKey);
     }
 }

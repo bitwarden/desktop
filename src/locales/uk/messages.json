@@ -113,7 +113,7 @@
     "message": "Перемкнути видимість"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Згорнути\/розгорнути",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -706,11 +706,11 @@
     "message": "Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Фраза відбитку",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Фраза відбитку пальця облікового запису",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Розблокувати"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Неправильний головний пароль"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Безпека"
   },
-  "disableGa": {
-    "message": "Вимкнути аналітику"
-  },
-  "gaDesc": {
-    "message": "Ми використовуємо аналітику для розуміння того, як використовується програма, щоб зробити її кращою. Всі зібрані дані цілком анонімні."
-  },
   "disableFavicon": {
     "message": "Вимкнути піктограми веб-сайтів"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Згортати вікно до системного лотка замість панелі інструментів."
+  },
+  "enableCloseToTray": {
+    "message": "Згорнути в лоток"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "При закритті вікна згортати в системний лоток."
   },
   "enableTray": {
     "message": "Увімкнути піктограму в системному лотку"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Додаткові можливості двохетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Гігієна паролів, здоров'я облікового запису, а також звіти про вразливості даних, щоб зберігати ваше сховище в безпеці."
   },
   "premiumSignUpTotp": {
     "message": "Генератор коду авторизації TOTP (2FA) для входу в сховище."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Експорт сховища"
   },
+  "fileFormat": {
+    "message": "Формат файлу"
+  },
   "warning": {
     "message": "ПОПЕРЕДЖЕННЯ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "При експорті ваші дані зберігаються в незашифрованому вигляді в форматі .csv. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
+  "exportWarningDesc": {
+    "message": "Експортовані дані вашого сховища знаходяться в незашифрованому вигляді. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
   },
   "exportMasterPassword": {
     "message": "Введіть головний пароль, щоб експортувати дані сховища."
@@ -1132,21 +1147,21 @@
     "message": "Хто є власником цього елемента?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Надійний",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Хороший",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Слабкий",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Слабкий головний пароль"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Обраний вами головний пароль є слабким. Для належного захисту свого облікового запису Bitwarden, вам слід використовувати надійний головний пароль (або парольну фразу). Ви впевнені, що хочете використати цей пароль?"
   }
 }

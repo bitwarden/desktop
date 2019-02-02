@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Lås upp"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Felaktigt huvudlösenord"
   },
@@ -788,12 +797,6 @@
   "security": {
     "message": "Säkerhet"
   },
-  "disableGa": {
-    "message": "Inaktivera Analytics"
-  },
-  "gaDesc": {
-    "message": "Vi använder analytics för att bättre förstå hur programmet används så att vi kan göra förbättringar. All datainsamling är helt anonym."
-  },
   "disableFavicon": {
     "message": "Inaktivera webbplatsikoner"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "När fönstret minimeras, visa en ikon i systemfältet istället."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Aktivera systemfältsikon"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Ytterligare alternativ för tvåstegsverifiering såsom YubiKey, FIDO U2F och Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verifieringskod-generator (2FA) för inloggningar i ditt valv."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Exportera valv"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "VARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Den här exporten innehåller din okrypterade data i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (genom t.ex. mejl). Radera filen efter du är färdig med den."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera datan i ditt valv."

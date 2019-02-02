@@ -2,7 +2,7 @@
   "name": "bitwarden",
   "productName": "Bitwarden",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "1.11.0",
+  "version": "1.13.1",
   "author": "8bit Solutions LLC <hello@bitwarden.com> (https://bitwarden.com)",
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0",
@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "desktop-idle": "1.1.2",
-    "electron-log": "2.2.14",
-    "electron-updater": "3.0.3",
+    "electron-log": "2.2.17",
+    "electron-updater": "4.0.6",
     "keytar": "4.2.1",
     "lowdb": "1.0.0"
   }

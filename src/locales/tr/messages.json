@@ -714,7 +714,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Web kasasına git"
+    "message": "Web sayfasına git"
   },
   "getMobileApp": {
     "message": "Mobil Uygulama Edin"
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Kilidi Aç"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Geçersiz ana parola"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Güvenlik"
   },
-  "disableGa": {
-    "message": "Analitikleri Devre Dışı Bırak"
-  },
-  "gaDesc": {
-    "message": "Uzantının nasıl kullanıldığını daha iyi öğrenmek için analitikleri kullanırız, böylece onu daha iyi hale getirebiliriz. Tüm veri toplama işlemi tamamen anonimdir."
-  },
   "disableFavicon": {
     "message": "Site simgelerini devre dışı bırak"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Pencereyi küçültün, bunun yerine sistem tepsisinde bir simge gösterin."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Sistem ikonunu etkinleştir."
@@ -916,6 +925,9 @@
   "premiumSignUpTwoStep": {
     "message": "YubiKey, FIDO U2F ve Duo gibi ek iki adımlı giriş seçenekleri."
   },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+  },
   "premiumSignUpTotp": {
     "message": "Websitede oturum açma işlemleri için TOTP doğrulama kodu (2FA) üreticisi."
   },
@@ -982,7 +994,7 @@
     "message": "Uzaklaştır"
   },
   "resetZoom": {
-    "message": "Zoom'u Sıfırla"
+    "message": "Zoom Sıfırla"
   },
   "toggleFullScreen": {
     "message": "Tam Ekrana Geç"
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Kasayı Dışa Aktar"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "UYARI",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Bu dışa aktarma .csv formatında şifrelenmemiş verilerinizi barındırır. Bunu güvenli olmayan kanallarla göndermeyin (e-posta gibi) ve ya saklamayın. İşiniz bittikten sonra bu dosyayı hemen silin."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."

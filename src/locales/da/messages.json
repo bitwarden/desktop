@@ -113,7 +113,7 @@
     "message": "Slå synlighed til\/fra"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Fold sammen\/fold ud",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -378,13 +378,13 @@
     "message": "Undgå tvetydige tegn"
   },
   "searchCollection": {
-    "message": "Søg samling"
+    "message": "Søg i samling"
   },
   "searchFolder": {
-    "message": "Søg mappe"
+    "message": "Søg i mappe"
   },
   "searchFavorites": {
-    "message": "Søg favoritter"
+    "message": "Søg i favoritter"
   },
   "searchType": {
     "message": "Søg type",
@@ -454,7 +454,7 @@
     "message": "Gentast hovedadgangskode"
   },
   "masterPassHint": {
-    "message": "Hovedadgangskode tip (valgfri)"
+    "message": "Hovedadgangskodetip (valgfri)"
   },
   "settings": {
     "message": "Indstillinger"
@@ -658,7 +658,7 @@
     "message": "Log ud"
   },
   "addNewLogin": {
-    "message": "Tilføj et login"
+    "message": "Tilføj nyt login"
   },
   "addNewItem": {
     "message": "Tilføj nyt element"
@@ -706,11 +706,11 @@
     "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Fingeraftrykssætning",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Din kontos fingeraftrykssætning",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Lås op"
+  },
+  "loggedInAs": {
+    "message": "Logget ind som $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Ugyldig hovedadgangskode"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Sikkerhed"
   },
-  "disableGa": {
-    "message": "Deaktivér Analytics"
-  },
-  "gaDesc": {
-    "message": "Vi bruger Analytics for bedre at lære hvordan applikationen bruges, således at vi kan gøre den bedre. Al dataindsamling er fuldstændig anonym."
-  },
   "disableFavicon": {
     "message": "Slå webikoner fra"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Når vinduet minimeres, vis i stedet et ikon i meddelelsesområdet."
+  },
+  "enableCloseToTray": {
+    "message": "Luk til ikon i meddelelsesområdet"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "Når vinduet lukkes, vis i stedet et ikon i meddelelsesområdet."
   },
   "enableTray": {
     "message": "Aktivér bakkeikon"
@@ -902,7 +911,7 @@
     "message": "Du kan håndtere dit medlemskab i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "premiumRefresh": {
-    "message": "Opdater medlemskab"
+    "message": "Opdatér medlemskab"
   },
   "premiumNotCurrentMember": {
     "message": "Du er i øjeblikket ikke premium-medlem."
@@ -911,10 +920,13 @@
     "message": "Tilmeld dig et premium medlemskab og få:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB krypteret filopbevaring."
+    "message": "1 GB krypteret lager til vedhæftede filer."
   },
   "premiumSignUpTwoStep": {
     "message": "Yderligere to-trins-loginmuligheder såsom YubiKey, FIDO U2F og Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Adgangskodehygiejne, kontosundhed og rapporter om datalæk til at holde din boks sikker."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verifikationskode (2FA) generator til logins i din boks."
@@ -1001,7 +1013,7 @@
     "message": "Zoom"
   },
   "bringAllToFront": {
-    "message": "Placer alt forrest",
+    "message": "Placér alle forrest",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Eksportér boks"
   },
+  "fileFormat": {
+    "message": "Filformat"
+  },
   "warning": {
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Denne eksport indeholder dine ikke-krypterede data i .csv-format. Du bør ikke gemme eller sende den over usikre kanaler (f.eks. e-mail). Slet den umiddelbart efter at du er færdig med at bruge den."
+  "exportWarningDesc": {
+    "message": "Denne eksport indeholder dine boksdata i ukrypteret form. Du bør ikke gemme eller sende den eksporterede fil over usikre kanaler (f.eks. e-mail). Slet den straks efter at du er færdig med at bruge den."
   },
   "exportMasterPassword": {
     "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
@@ -1132,21 +1147,21 @@
     "message": "Hvem ejer dette element?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Stærk",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "God",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Svag",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Svag hovedadgangskode"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Hovedadgangskoden du har valgt er svag. Du skal bruge en stærk hovedadgangskode (eller en adgangssætning) for at beskytte din Bitwarden-konto korrekt. Er du sikker på, at du vil bruge denne hovedadgangskode?"
   }
 }

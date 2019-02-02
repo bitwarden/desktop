@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Mở khóa"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Mật khẩu chính không hợp lệ"
   },
@@ -788,12 +797,6 @@
   "security": {
     "message": "Bảo mật"
   },
-  "disableGa": {
-    "message": "Vô hiệu hóa phân tích"
-  },
-  "gaDesc": {
-    "message": "Chúng tôi sử dụng phân tích để hiểu rõ hơn cách bạn sử dụng ứng dụng, nó chúng tôi cải thiện ứng dụng ngày càng tốt hơn. Tất cả dữ liệu sẽ được thu thập ẩn danh."
-  },
   "disableFavicon": {
     "message": "Vô hiệu hoá biểu tượng trang web"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Enable Tray Icon"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Các tùy chọn xác thực hai lớp bổ sung như YubiKey, FIDO U2F và Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Mã xác nhận TOTP (2FA) để đăng nhập vào kho mật khẩu của bạn."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Export Vault"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "WARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."

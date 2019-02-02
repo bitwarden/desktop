@@ -31,6 +31,9 @@
       ],
       "node": [
         "node_modules/@types/node"
+      ],
+      "duo_web_sdk": [
+        "node_modules/duo_web_sdk"
       ]
     }
   },

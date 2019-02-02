@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Avaa"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Virheellinen pääsalasana"
   },
@@ -788,12 +797,6 @@
   "security": {
     "message": "Turvallisuus"
   },
-  "disableGa": {
-    "message": "Älä osallistu tiedonkeruuseen"
-  },
-  "gaDesc": {
-    "message": "Hyödynnämme analytiikkaa saadaksemme tietoa siitä, kuinka sovellusta käytetään. Näin voimme kehittää sitä paremmaksi. Kaikki tiedonkeruu on täysin nimetöntä."
-  },
   "disableFavicon": {
     "message": "Älä näytä sivustokuvakkeita"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Pienennä ikkuna kuvakkeeksi järjestelmän ilmoitusalueelle."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Näytä ilmoitusalueen kuvake"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "lisävaihtoehtoja kaksivaiheiselle kirjautumiselle, kuten YubiKey, FIDO U2F ja Duo"
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP-vahvistuskoodigeneraattorin (2FA) holvisi käyttäjätunnuksille"
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Vie holvi"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "VAROITUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Tämä vienti sisältää tietosi suojaamattomana .csv-muodossa. Tiedostoa ei kannata tallentaa tai lähettää turvattomia kanavia pitkin (kuten sähköposti). Poista se välittömästi, kun et enää tarvitse sitä."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Syötä pääsalasanasi viedäksesi holvisi tiedot."

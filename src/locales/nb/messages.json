@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "allItems": {
-    "message": "Alle gjenstander"
+    "message": "Alle elementer"
   },
   "favorites": {
     "message": "Favoritter"
@@ -33,7 +33,7 @@
     "message": "Søk i hvelvet"
   },
   "addItem": {
-    "message": "Legg til en gjenstand"
+    "message": "Legg til element"
   },
   "shared": {
     "message": "Delt"
@@ -48,13 +48,13 @@
     "message": "Delte elementet"
   },
   "shareDesc": {
-    "message": "Velg en organisasjon som du ønsker å dele denne gjenstanden med. Deling overfører gjenstandens eierskap til organisasjonen. Du vil ikke lenger være den direkte eieren av denne gjenstanden når den først har blitt delt."
+    "message": "Velg en organisasjon som du ønsker å dele dette elementet med. Deling overføringer eierskap av elementet til organisasjonen. Du vil ikke lenger være den direkte eieren av elementet når det er delt."
   },
   "attachments": {
     "message": "Vedlegg"
   },
   "viewItem": {
-    "message": "Vis gjenstanden"
+    "message": "Vis element"
   },
   "name": {
     "message": "Navn"
@@ -85,7 +85,7 @@
     "message": "Passfrase"
   },
   "editItem": {
-    "message": "Rediger gjenstanden"
+    "message": "Rediger element"
   },
   "emailAddress": {
     "message": "E-postadresse"
@@ -113,7 +113,7 @@
     "message": "Juster synlighet"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Bytt mellom skjul\/utvid",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -138,10 +138,10 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "Nummer for sosial stønad"
+    "message": "Personnummer"
   },
   "passportNumber": {
-    "message": "Pass-nummer"
+    "message": "Passnummer"
   },
   "licenseNumber": {
     "message": "Lisensnummer"
@@ -319,7 +319,7 @@
     "message": "Redigerte gjenstanden"
   },
   "deleteItem": {
-    "message": "Slett gjenstanden"
+    "message": "Slett element"
   },
   "deleteFolder": {
     "message": "Slett mappen"
@@ -347,7 +347,7 @@
     "message": "Rediger mappen"
   },
   "regeneratePassword": {
-    "message": "Omgenerer et passord"
+    "message": "Regenerer passord"
   },
   "copyPassword": {
     "message": "Kopier passordet"
@@ -362,7 +362,7 @@
     "message": "Antall ord"
   },
   "wordSeparator": {
-    "message": "Ordadskiller"
+    "message": "Ordskiller"
   },
   "close": {
     "message": "Lukk"
@@ -375,7 +375,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Unngå forvekslingsbare tegn"
+    "message": "Unngå tvetydige tegn"
   },
   "searchCollection": {
     "message": "Søk i samling"
@@ -442,7 +442,7 @@
     "message": "Send inn"
   },
   "masterPass": {
-    "message": "Superpassord"
+    "message": "Hovedpassord"
   },
   "masterPassDesc": {
     "message": "Superpassordet er passordet du bruker for å få tilgang til hvelvet ditt. Det er veldig viktig at du aldri glemmer ditt superpassord. Det er ingen måter å få tilbake passordet på dersom du noensinne skulle klare å glemme det."
@@ -451,10 +451,10 @@
     "message": "Et hint for superpassordet kan hjelpe deg med å huske på passordet dersom du skulle glemme det."
   },
   "reTypeMasterPass": {
-    "message": "Skriv inn superpassordet på nytt"
+    "message": "Skriv inn hovedpassordet på nytt"
   },
   "masterPassHint": {
-    "message": "Et hint for superpassordet (valgfritt)"
+    "message": "Hint for hovedpassordet (valgfritt)"
   },
   "settings": {
     "message": "Innstillinger"
@@ -493,7 +493,7 @@
     "message": "En uventet feil har oppstått."
   },
   "itemInformation": {
-    "message": "Gjenstandsinformasjon"
+    "message": "Element Informasjon"
   },
   "noItemsInList": {
     "message": "Det er ingen gjenstander å liste opp."
@@ -592,7 +592,7 @@
     "message": "Vennligst legg til ytterligere leverandører som er støttet bedre mellom enheter (f․eks․ en autentiseringsapp)."
   },
   "twoStepOptions": {
-    "message": "2-trinnsinnloggingsalternativer"
+    "message": "Totrinns Påloggingsvalg"
   },
   "selfHostedEnvironment": {
     "message": "Selvbetjent miljø"
@@ -613,13 +613,13 @@
     "message": "API-tjenernettadresse"
   },
   "webVaultUrl": {
-    "message": "Netthvelvets tjenernettadresse"
+    "message": "Netthvelvets tjeneradresse"
   },
   "identityUrl": {
     "message": "Identitetstjenerens nettadresse"
   },
   "notificationsUrl": {
-    "message": "Varsler Server URL"
+    "message": "Varslingstjener-URL"
   },
   "iconsUrl": {
     "message": "Ikonenes tjenernettadresse"
@@ -706,11 +706,11 @@
     "message": "Du kan endre superpassordet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Fingeravtrykksfrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Din kontos fingeravtrykksfrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Lås opp"
+  },
+  "loggedInAs": {
+    "message": "Logget på som $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Ugyldig superpassord"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Sikkerhet"
   },
-  "disableGa": {
-    "message": "Deaktiver analyser"
-  },
-  "gaDesc": {
-    "message": "Vi bruker analyseverktøy for å bedre lære om hvordan programmet blir brukt, sånn at vi kan gjøre den bedre. All datainnsamling er fullstendig anonymt."
-  },
   "disableFavicon": {
     "message": "Skru av nettstedsikoner"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Når du minimaliserer vinduet, skal et ikon vises i verktøykassen i stedet."
+  },
+  "enableCloseToTray": {
+    "message": "Lukk til verktøykassen"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "Når du lukker vinduet, skal et ikon vises i verktøykassen i stedet."
   },
   "enableTray": {
     "message": "Skru på verktøykasseikon"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Ytterligere 2-trinnsinnloggingsmuligheter, slik som YubiKey, FIDO U2F, og Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Passordhygiene, kontohelse, og databruddsrapporter som holder hvelvet ditt trygt."
   },
   "premiumSignUpTotp": {
     "message": "TOTP-verifiseringskodegenerator (2FA) for innlogginger i ditt hvelv."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Eksporter hvelvet"
   },
+  "fileFormat": {
+    "message": "Filformat"
+  },
   "warning": {
     "message": "ADVARSEL",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Eksporten inneholder dine krypterte dataer i .csv-format. Du burde ikke lagre eller sende dem over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
+  "exportWarningDesc": {
+    "message": "Eksporten inneholder dine hvelvdataer i et ukryptert format. Du burde ikke lagre eller sende den eksporterte filen over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
   },
   "exportMasterPassword": {
     "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
@@ -1132,21 +1147,21 @@
     "message": "Hvem eier dette elementet?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Sterkt",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Bra",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Svakt",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Svakt superpassord"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Superpassordet du har valgt er svakt. Du bør bruke et sterkt superpassord (eller en passordfrase) for å sikre Bitwarden-kontoen din på en forsvarlig måte. Er du sikker på at du vil bruke dette superpassordet?"
   }
 }

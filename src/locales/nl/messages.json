@@ -113,7 +113,7 @@
     "message": "Zichtbaarheid"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Inklappen\/uitklappen",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -706,11 +706,11 @@
     "message": "U kunt uw hoofdwachtwoord wijzigen in de kluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Vingerafdrukfrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Uw account's vingerafdrukfrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -723,16 +723,25 @@
     "message": "Download de browserextensie"
   },
   "syncingComplete": {
-    "message": "Synchroniseren voltooid"
+    "message": "Synchronisatie voltooid"
   },
   "syncingFailed": {
-    "message": "Synchroniseren mislukt"
+    "message": "Synchronisatie mislukt"
   },
   "yourVaultIsLocked": {
     "message": "Uw kluis is vergrendeld. Controleer uw hoofdwachtwoord om door te gaan."
   },
   "unlock": {
     "message": "Ontgrendelen"
+  },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Ongeldig hoofdwachtwoord"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Beveiliging"
   },
-  "disableGa": {
-    "message": "Statistieken uitschakelen"
-  },
-  "gaDesc": {
-    "message": "We gebruiken statistieken om te weten te komen hoe de applicatie gebruikt wordt, zodat we deze kunnen verbeteren. Alle verzamelde gegevens worden geanonimiseerd."
-  },
   "disableFavicon": {
     "message": "Websitepictogrammen uitschakelen"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Pictogram in het systeemvak weergeven bij het minimaliseren van het venster."
+  },
+  "enableCloseToTray": {
+    "message": "Sluiten naar systeemvak"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "Pictogram in het systeemvak weergeven bij het sluiten van het venster."
   },
   "enableTray": {
     "message": "Pictogram in het systeemvak inschakelen"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Extra tweestapsinlogopties zoals YubiKey, FIDO U2F en Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Wachtwoordhygiëne, gezondheid van uw account en gegevensinbreuk om uw kluis om veilig te houden."
   },
   "premiumSignUpTotp": {
     "message": "TOTP-verificatiecodegenerator (2FA) voor logins in uw kluis."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Kluis exporteren"
   },
+  "fileFormat": {
+    "message": "Bestandsindeling"
+  },
   "warning": {
     "message": "WAARSCHUWING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Deze export bevat niet-versleutelde gegevens in CSV-indeling. Deze dient niet te worden opgeslagen of over onveilige kanalen (zoals email) verstuurd te worden. Verwijder het zodra het niet meer nodig is."
+  "exportWarningDesc": {
+    "message": "Deze export bevat uw gegevens in niet-versleutelde indeling. Deze dient niet te worden opgeslagen of verstuurd over onveilige kanalen (zoals e-mail). Verwijder de export zodra deze niet meer nodig is."
   },
   "exportMasterPassword": {
     "message": "Voer uw hoofdwachtwoord in om uw kluis-gegevens te exporteren."
@@ -1132,21 +1147,21 @@
     "message": "Wie is eigenaar van dit object?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Sterk",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Goed",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Zwak",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Zwak hoofdwachtwoord"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "U hebt een zwak hoofdwachtwoord gekozen. Om uw Bitwarden account goed te beschermen zou u een sterk hoofdwachtwoord (of wachtwoordzin) moeten gebruiken. Weet u zeker dat u dit hoofdwachtwoord wilt gebruiken?"
   }
 }

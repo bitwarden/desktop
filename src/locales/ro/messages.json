@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Deblocare"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Parola principală este incorectă"
   },
@@ -788,12 +797,6 @@
   "security": {
     "message": "Securitate"
   },
-  "disableGa": {
-    "message": "Dezactivaţi datele analitice"
-  },
-  "gaDesc": {
-    "message": "Utilizăm datele analitice pentru a afla mai bine modul în care este folosită aplicația, astfel încât s-o putem face mai bună. Toate colectările de date sunt complet anonime."
-  },
   "disableFavicon": {
     "message": "Dezactivare pictograme"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "La minimizarea ferestrei se afișează în schimb o pictogramă în zona de notificare."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Activare pictogramă în zona de notificare"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "Opțiuni adiţionale de conectare în doi pași, cum ar fi YubiKey, FIDO U2F şi Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "Generatorul codului de verificare TOTP (2FA) pentru autentificările din seif."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Export Vault"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "WARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."

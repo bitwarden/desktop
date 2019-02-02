@@ -33,10 +33,12 @@ import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive
 import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
 import { BoxRowDirective } from 'jslib/angular/directives/box-row.directive';
 import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
+import { FlexCopyDirective } from 'jslib/angular/directives/flex-copy.directive';
 import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
 
+import { ColorPasswordPipe } from 'jslib/angular/pipes/color-password.pipe';
 import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 
@@ -56,9 +58,11 @@ import { ViewComponent } from './vault/view.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeBg from '@angular/common/locales/bg';
+import localeCa from '@angular/common/locales/ca';
 import localeCs from '@angular/common/locales/cs';
 import localeDa from '@angular/common/locales/da';
 import localeDe from '@angular/common/locales/de';
+import localEnGb from '@angular/common/locales/en-GB';
 import localeEs from '@angular/common/locales/es';
 import localeEt from '@angular/common/locales/et';
 import localeFa from '@angular/common/locales/fa';
@@ -87,9 +91,11 @@ import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
 registerLocaleData(localeBg, 'bg');
+registerLocaleData(localeCa, 'ca');
 registerLocaleData(localeCs, 'cs');
 registerLocaleData(localeDa, 'da');
 registerLocaleData(localeDe, 'de');
+registerLocaleData(localEnGb, 'en-GB');
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeEt, 'et');
 registerLocaleData(localeFa, 'fa');
@@ -141,9 +147,11 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BoxRowDirective,
         CiphersComponent,
         CollectionsComponent,
+        ColorPasswordPipe,
         EnvironmentComponent,
         ExportComponent,
         FallbackSrcDirective,
+        FlexCopyDirective,
         FolderAddEditComponent,
         GroupingsComponent,
         HintComponent,

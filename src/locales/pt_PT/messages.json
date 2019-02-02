@@ -113,7 +113,7 @@
     "message": "Alternar visibilidade"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Alternar colapso",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -325,7 +325,7 @@
     "message": "Eliminar pasta"
   },
   "deleteAttachment": {
-    "message": "Eliminar Anexo"
+    "message": "Eliminar anexo"
   },
   "deleteItemConfirmation": {
     "message": "Tem a certeza de que pretende eliminar este item?"
@@ -706,11 +706,11 @@
     "message": "Pode alterar a sua palavra-passe mestra no cofre web bitwarden.com. Pretende visitar o website agora?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Frase de impressão digital",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "A frase de impressão digital da sua conta",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Desbloquear"
+  },
+  "loggedInAs": {
+    "message": "Sessão iniciada como $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Palavra-passe mestra inválida"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Segurança"
   },
-  "disableGa": {
-    "message": "Desativar analítica"
-  },
-  "gaDesc": {
-    "message": "Utilizamos analítica para aprender melhor como a aplicação está a ser utilizada para que possamos torná-la melhor. Toda a recolha de dados é completamente anónima."
-  },
   "disableFavicon": {
     "message": "Desativar ícones de websites"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Ao minimizar a janela, mostrar um ícone na bandeja do sistema em alternativa."
+  },
+  "enableCloseToTray": {
+    "message": "Fechar para ícone de bandeja"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "Ao fechar a janela, mostrar um ícone na bandeja do sistema em alternativa."
   },
   "enableTray": {
     "message": "Ativar ícone de bandeja"
@@ -864,7 +873,7 @@
     "message": "Atualização disponível"
   },
   "updateAvailableDesc": {
-    "message": "Foi encontrada uma atualização. Pretende descarregá-la agora?"
+    "message": "Foi encontrada uma atualização. Pretende transferi-la agora?"
   },
   "restart": {
     "message": "Reiniciar"
@@ -911,10 +920,13 @@
     "message": "Registe-se para uma adesão premium e obtenha:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB de armazenamento de ficheiros encriptado."
+    "message": "1 GB de armazenamento encriptado para anexos de ficheiros."
   },
   "premiumSignUpTwoStep": {
     "message": "Opções de início de sessão de dois passos adicionais como YubiKey, FIDO U2F, e Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Higiene de palavras-passe, saúde das contas, e relatórios de brechas de dados para manter o seu cofre seguro."
   },
   "premiumSignUpTotp": {
     "message": "Gerador de códigos de verificação TOTP (2FA) para credenciais no seu cofre."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Exportar cofre"
   },
+  "fileFormat": {
+    "message": "Formato do ficheiro"
+  },
   "warning": {
     "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Esta exportação contém os seus dados desencriptados no formato .csv. Não a deve armazenar ou transmitir em vias inseguras (como email). Apague-a imediatamente após a utilizar."
+  "exportWarningDesc": {
+    "message": "Esta exportação contém os seus dados do cofre num formato desencriptado. Não deve armazenar ou enviar o ficheiro exportado através de canais inseguros (como email). Elimine-o imediatamente após o utilizar."
   },
   "exportMasterPassword": {
     "message": "Introduza a sua palavra-passe mestra para exportar os dados do seu cofre."
@@ -1129,24 +1144,24 @@
     "message": "Propriedade"
   },
   "whoOwnsThisItem": {
-    "message": "Quem é dono deste item?"
+    "message": "Quem é o proprietário deste item?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Forte",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Boa",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Fraca",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Palavra-passe mestra fraca"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "A palavra-passe mestra que escolheu é fraca. Deve utilizar uma palavra-passe mestra forte (ou uma frase-passe) para proteger adequadamente a sua conta Bitwarden. Tem a certeza de que pretende utilizar esta palavra-passe mestra?"
   }
 }

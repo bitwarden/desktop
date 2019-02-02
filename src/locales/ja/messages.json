@@ -113,7 +113,7 @@
     "message": "表示切り替え"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "開く\/閉じる",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -706,11 +706,11 @@
     "message": "マスターパスワードは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "指紋フレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "アカウントの指紋認証用フレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "ロック解除"
+  },
+  "loggedInAs": {
+    "message": "$EMAIL$ としてログインしました",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "マスターパスワードが間違っています"
@@ -788,12 +797,6 @@
   "security": {
     "message": "セキュリティ"
   },
-  "disableGa": {
-    "message": "解析の無効化"
-  },
-  "gaDesc": {
-    "message": "アプリの使われ方を解析することでより使いやすくなるよう開発しています。収集されるデータはすべて匿名です。"
-  },
   "disableFavicon": {
     "message": "ウェブサイトアイコンの無効化"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "ウインドウを最小化するとき、システムトレイにアイコンを表示するようにします。"
+  },
+  "enableCloseToTray": {
+    "message": "トレイアイコンへ閉じる"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "ウインドウを閉じたとき、システムトレイにアイコンを表示するようにします。"
   },
   "enableTray": {
     "message": "トレイアイコンの有効化"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey、FIDO U2F、Duoなどの追加の2段階認証ログインオプション"
+  },
+  "premiumSignUpReports": {
+    "message": "保管庫を安全に保つための、パスワードやアカウントの健全性、データ侵害に関するレポート"
   },
   "premiumSignUpTotp": {
     "message": "保管庫内での2段階認証コード生成"
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "保管庫のエクスポート"
   },
+  "fileFormat": {
+    "message": "ファイル形式"
+  },
   "warning": {
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "暗号化していないデータを .csv 形式でエクスポートします。メールなどの安全でない手段で保管したり共有したりしないでください。使用した後はすぐに削除してください。"
+  "exportWarningDesc": {
+    "message": "このエクスポートデータは暗号化されていない形式の保管庫データを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。"
   },
   "exportMasterPassword": {
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
@@ -1132,21 +1147,21 @@
     "message": "このアイテムは誰が所有していますか？"
   },
   "strong": {
-    "message": "Strong",
+    "message": "強力",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "良好",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "脆弱",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "脆弱なマスターパスワード"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "設定されたマスターパスワードの強度は脆弱です。Bitwarden アカウントを適切に保護するために、強力なマスターパスワード（またはパスフレーズ）を使用すべきです。本当にこのマスターパスワードを使用しますか？"
   }
 }

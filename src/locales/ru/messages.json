@@ -113,7 +113,7 @@
     "message": "Изменить видимость"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Свернуть\/Развернуть",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -156,10 +156,10 @@
     "message": "Адрес"
   },
   "premiumRequired": {
-    "message": "Необходим премиум-статус"
+    "message": "Необходим Премиум"
   },
   "premiumRequiredDesc": {
-    "message": "Для использования этой функции требуется премиум-статус."
+    "message": "Для использования этой функции требуется Премиум."
   },
   "errorOccurred": {
     "message": "Произошла ошибка."
@@ -286,7 +286,7 @@
     "message": "Правка"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ проверки подлинности (TOTP)"
+    "message": "Ключ аутентификатора (TOTP)"
   },
   "folder": {
     "message": "Папка"
@@ -430,7 +430,7 @@
     "message": "Папка удалена"
   },
   "loginOrCreateNewAccount": {
-    "message": "Войдите или создайте новый аккаунт для доступа к вашему безопасному хранилищу."
+    "message": "Войдите или создайте новый аккаунт для доступа к вашему защищенному хранилищу."
   },
   "createAccount": {
     "message": "Создать аккаунт"
@@ -655,7 +655,7 @@
     "message": "Вы действительно хотите выйти?"
   },
   "logOut": {
-    "message": "Выход"
+    "message": "Выйти"
   },
   "addNewLogin": {
     "message": "Добавить новый логин"
@@ -706,11 +706,11 @@
     "message": "Вы можете изменить свой мастер-пароль на bitwarden.com. Перейти на сайт сейчас?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Фраза отпечатка",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Фраза отпечатка вашего аккаунта",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -733,6 +733,15 @@
   },
   "unlock": {
     "message": "Разблокировать"
+  },
+  "loggedInAs": {
+    "message": "Вы вошли как $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   },
   "invalidMasterPassword": {
     "message": "Неверный мастер-пароль"
@@ -788,12 +797,6 @@
   "security": {
     "message": "Безопасность"
   },
-  "disableGa": {
-    "message": "Отключить аналитику"
-  },
-  "gaDesc": {
-    "message": "Мы используем аналитику для понимания как используется приложение, чтобы сделать его лучше. Все собираемые данные полностью анонимны."
-  },
   "disableFavicon": {
     "message": "Отключить значки веб-сайтов"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "При сворачивании окна будет отображен значок в системном трее."
+  },
+  "enableCloseToTray": {
+    "message": "Закрывать в трей"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "При закрытии окна будет отображен значок в системном трее."
   },
   "enableTray": {
     "message": "Включить значок в трее"
@@ -893,46 +902,49 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Премиум-статус"
+    "message": "Премиум"
   },
   "premiumManage": {
-    "message": "Управление статусом"
+    "message": "Управление Премиум"
   },
   "premiumManageAlert": {
-    "message": "Вы можете управлять своим статусом на bitwarden.com. Перейти на сайт сейчас?"
+    "message": "Вы можете управлять Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumRefresh": {
-    "message": "Обновить статус"
+    "message": "Обновить Премиум"
   },
   "premiumNotCurrentMember": {
-    "message": "В настоящее время у вас нет премиум-статуса."
+    "message": "На текущий момент у вас отсутствует Премиум."
   },
   "premiumSignUpAndGet": {
-    "message": "Подпишитесь на премиум-статус и получите:"
+    "message": "Подпишитесь на Премиум и получите:"
   },
   "premiumSignUpStorage": {
-    "message": "1 ГБ зашифрованного хранилища файлов."
+    "message": "1 ГБ зашифрованного хранилища для вложенных файлов."
   },
   "premiumSignUpTwoStep": {
     "message": "Дополнительные варианты двухфакторной аутентификации, такие как YubiKey, FIDO U2F и Duo."
   },
+  "premiumSignUpReports": {
+    "message": "Гигиена паролей, здоровье учетной записи и отчеты об утечках данных для обеспечения безопасности вашего хранилища."
+  },
   "premiumSignUpTotp": {
-    "message": "Генератор кода подтверждения TOTP для входа в ваше хранилище."
+    "message": "TOTP-генератор кодов (2ФА) для логинов вашего хранилища."
   },
   "premiumSignUpSupport": {
-    "message": "Приоритетную поддержку."
+    "message": "Приоритетная поддержка."
   },
   "premiumSignUpFuture": {
-    "message": "Все будущие функции премиум-статуса. Их будет больше!"
+    "message": "Все будущие функции Премиум. Их будет больше!"
   },
   "premiumPurchase": {
-    "message": "Купить премиум"
+    "message": "Купить Премиум"
   },
   "premiumPurchaseAlert": {
-    "message": "Вы можете купить премиум-статус на bitwarden.com. Перейти на сайт сейчас?"
+    "message": "Вы можете купить Премиум на bitwarden.com. Перейти на сайт сейчас?"
   },
   "premiumCurrentMember": {
-    "message": "У вас премиум-статус!"
+    "message": "У вас есть Премиум!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Благодарим вас за поддержку Bitwarden."
@@ -991,7 +1003,7 @@
     "message": "Перезагрузка"
   },
   "toggleDevTools": {
-    "message": "Переключение инструментов разработчика"
+    "message": "Переключить инструменты разработчика"
   },
   "minimize": {
     "message": "Свернуть",
@@ -1042,7 +1054,7 @@
     "message": "Проверьте, не скомпрометирован ли пароль."
   },
   "passwordExposed": {
-    "message": "Этот пароль был найден в базах утечек $VALUE$ раз(а). Вы должны изменить его.",
+    "message": "Этот пароль был скомпрометирован $VALUE$ раз(а). Вы должны изменить его.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1079,7 +1091,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Настройки перебора"
+    "message": "Переключить настройки"
   },
   "organization": {
     "message": "Организация",
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Экспорт хранилища"
   },
+  "fileFormat": {
+    "message": "Формат файла"
+  },
   "warning": {
     "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Файл экспорта содержит ваши данные в открытом виде. Его не следует хранить или отправлять по небезопасным каналам (например, email). Удалите его сразу после использования."
+  "exportWarningDesc": {
+    "message": "Экспортируемый файл содержит данные вашего хранилища в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например, по электронной почте). Удалите его сразу после использования."
   },
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
@@ -1132,21 +1147,21 @@
     "message": "Кому принадлежит этот элемент?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Сильный",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Хороший",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Слабый",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Слабый мастер-пароль"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Мастер-пароль, выбранный вами, является слабым. Для надлежащей защиты аккаунта Bitwarden следует использовать сильный мастер-пароль (или парольную фразу). Вы действительно хотите использовать этот мастер-пароль?"
   }
 }

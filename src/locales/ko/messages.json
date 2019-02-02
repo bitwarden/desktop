@@ -734,6 +734,15 @@
   "unlock": {
     "message": "잠금 해제"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "잘못된 마스터 비밀번호"
   },
@@ -788,12 +797,6 @@
   "security": {
     "message": "보안"
   },
-  "disableGa": {
-    "message": "분석 사용 안 함"
-  },
-  "gaDesc": {
-    "message": "저희는 애플리케이션이 어떻게 사용되고 있는지 확인하여 개선하기 위해 분석 자료를 사용합니다. 자료는 완전한 익명으로 수집됩니다."
-  },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "창을 최소화하면 작업 표시줄 대신 알림 영역에 아이콘을 표시합니다."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "알림 영역 아이콘 사용"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey나 FIDO U2F, Duo 등의 추가적인 2단계 인증 옵션."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "보관함에 등록된 로그인 항목을 위한 TOTP 인증 코드(2FA) 생성기."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "보관함 내보내기"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "경고",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "내보낸 파일에는 암호화되지 않은 .csv 형식의 데이터가 포함되어 있습니다. 이메일 등의 안전하지 않은 방법을 통해 전송하거나 보관하지 마시고, 사용이 끝나면 바로 삭제하세요."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."

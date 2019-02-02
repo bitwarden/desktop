@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Feloldás"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Érvénytelen mesterjelszó"
   },
@@ -788,12 +797,6 @@
   "security": {
     "message": "Biztonság"
   },
-  "disableGa": {
-    "message": "Analitika kikapcsolása"
-  },
-  "gaDesc": {
-    "message": "Az alkalmazás jobbá tétele érdekében analitikát használunk, hogy többet többet tudjunk arról hogyan használod az alkalmazást. Az adatok gyűjtése teljesen névtelen."
-  },
   "disableFavicon": {
     "message": "Honlap ikonok letiltása"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "Az ablak lekicsinyítésekor egy tálcaikon fog megjelenni."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Tálcaikon engedélyezése"
@@ -915,6 +924,9 @@
   },
   "premiumSignUpTwoStep": {
     "message": "További két lépcsős bejelentkezés lehetőségek, mint például YubiKey, FIDO U2F és Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP ellenőrző kód (2FA) generátor a széfedben lévő bejelentkezésekhez."
@@ -1109,12 +1121,15 @@
   "exportVault": {
     "message": "Széf exportálása"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "FIGYELEM",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "Ez az exportálás nem titkosított adatokat tartalmaz .csv formátumban. Ne tárold, vagy küldd el nem biztonságos csatornákon (mint például e-mail). Töröld azonnal miután végeztél a használatával."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Add meg a mesterjelszót a széf adatainak exportálásához."

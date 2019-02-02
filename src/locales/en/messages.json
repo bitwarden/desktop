@@ -734,6 +734,15 @@
   "unlock": {
     "message": "Unlock"
   },
+  "loggedInAs": {
+    "message": "Logged in as $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Invalid master password"
   },
@@ -788,12 +797,6 @@
   "security": {
     "message": "Security"
   },
-  "disableGa": {
-    "message": "Disable Analytics"
-  },
-  "gaDesc": {
-    "message": "We use analytics to better learn how the application is being used so that we can make it better. All data collection is completely anonymous."
-  },
   "disableFavicon": {
     "message": "Disable Website Icons"
   },
@@ -805,6 +808,12 @@
   },
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
   },
   "enableTray": {
     "message": "Enable Tray Icon"
@@ -917,10 +926,13 @@
     "message": "Sign up for a premium membership and get:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB of encrypted file storage."
+    "message": "1 GB encrypted storage for file attachments."
   },
   "premiumSignUpTwoStep": {
     "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verification code (2FA) generator for logins in your vault."
@@ -1115,12 +1127,15 @@
   "exportVault": {
     "message": "Export Vault"
   },
+  "fileFormat": {
+    "message": "File Format"
+  },
   "warning": {
     "message": "WARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
-  "exportWarning": {
-    "message": "This export contains your unencrypted data in .csv format. You should not store or send it over unsecure channels (such as email). Delete it immediately after your are done using it."
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."

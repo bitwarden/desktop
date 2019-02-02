@@ -26,8 +26,10 @@
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.password">
                         <div class="row-main">
                             <span class="row-label">{{'password' | i18n}}</span>
-                            <span [hidden]="showPassword" class="monospaced">{{cipher.login.maskedPassword}}</span>
-                            <span [hidden]="!showPassword" class="monospaced">{{cipher.login.password}}</span>
+                            <div [hidden]="showPassword" class="monospaced password-wrapper" appFlexCopy>
+                                {{cipher.login.maskedPassword}}</div>
+                            <div [hidden]="!showPassword" class="monospaced password-wrapper" appFlexCopy
+                                 [innerHTML]="cipher.login.password | colorPassword"></div>
                         </div>
                         <div class="action-buttons">
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
@@ -207,7 +209,7 @@
                             {{field.value || '&nbsp;'}}
                         </div>
                         <div *ngIf="field.type === fieldType.Hidden">
-                            <span [hidden]="!field.showValue" class="monospaced">{{field.value}}</span>
+                            <span [hidden]="!field.showValue" class="monospaced show-whitespace">{{field.value}}</span>
                             <span [hidden]="field.showValue" class="monospaced">{{field.maskedValue}}</span>
                         </div>
                         <div *ngIf="field.type === fieldType.Boolean">
