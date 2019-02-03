@@ -193,7 +193,7 @@
                 <div class="box-content">
                     <ng-container *ngIf="cipher.login.hasUris">
                         <div class="box-content-row box-content-row-multi" appBoxRow
-                             *ngFor="let u of cipher.login.uris; let i = index">
+                             *ngFor="let u of cipher.login.uris; let i = index; trackBy:trackByFunction">
                             <a href="#" appStopClick (click)="removeUri(u)" title="{{'remove' | i18n}}">
                                 <i class="fa fa-minus-circle fa-lg"></i>
                             </a>
@@ -264,7 +264,7 @@
                 <div class="box-content">
                     <ng-container *ngIf="cipher.hasFields">
                         <div class="box-content-row box-content-row-multi" appBoxRow
-                             *ngFor="let f of cipher.fields; let i = index"
+                             *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
                              [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
                             <a href="#" appStopClick (click)="removeField(f)" title="{{'remove' | i18n}}">
                                 <i class="fa fa-minus-circle fa-lg"></i>
