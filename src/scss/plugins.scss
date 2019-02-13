@@ -95,3 +95,53 @@ $fa-font-path: "~font-awesome/fonts";
         }
     }
 }
+
+// SweetAlert
+
+.swal-modal {
+    border-radius: $border-radius;
+
+    @include themify($themes) {
+        background-color: themed('backgroundColorAlt');
+        color: themed('textColor');
+    }
+
+    .swal-text {
+        font-size: $font-size-base;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
+    }
+
+    > .swal-text:first-child {
+        margin-top: 20px;
+    }
+
+    .swal-content__input, .swal-content__textarea {
+        border: 1px solid #000000;
+        border-radius: $border-radius;
+        @include themify($themes) {
+            border-color: themed('inputBorderColor');
+            color: themed('textColor');
+            background-color: themed('inputBackgroundColor');
+        }
+    }
+
+    .swal-footer {
+        padding: 15px 10px 10px 10px;
+        margin: 0;
+
+        .swal-button {
+            @extend .btn;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .swal-button--confirm {
+            @extend .btn.primary;
+        }
+    }
+}

@@ -1,11 +1,16 @@
 <form id="lock-page" (ngSubmit)="submit()">
     <div class="content">
         <p><i class="fa fa-lock fa-4x text-muted"></i></p>
-        <p>{{'yourVaultIsLocked' | i18n}}</p>
+        <p>{{(pinLock ? 'yourVaultIsLockedPinCode' : 'yourVaultIsLocked') | i18n}}</p>
         <div class="box last">
             <div class="box-content">
                 <div class="box-content-row box-content-row-flex" appBoxRow>
-                    <div class="row-main">
+                    <div class="row-main" *ngIf="pinLock">
+                        <label for="pin">{{'pin' | i18n}}</label>
+                        <input id="pin" type="{{showPassword ? 'text' : 'password'}}" name="PIN"
+                               class="monospaced" [(ngModel)]="pin" required appAutofocus>
+                    </div>
+                    <div class="row-main" *ngIf="!pinLock">
                         <label for="masterPassword">{{'masterPass' | i18n}}</label>
                         <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
                                class="monospaced" [(ngModel)]="masterPassword" required appAutofocus>

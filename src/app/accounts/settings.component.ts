@@ -5,15 +5,18 @@ import {
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
+import swal from 'sweetalert';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
+import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -27,6 +30,7 @@ import { Utils } from 'jslib/misc/utils';
 })
 export class SettingsComponent implements OnInit {
     lockOption: number = null;
+    pin: boolean = null;
     disableFavicons: boolean = false;
     enableMinToTray: boolean = false;
     enableCloseToTray: boolean = false;
@@ -40,9 +44,10 @@ export class SettingsComponent implements OnInit {
     themeOptions: any[];
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
-        i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
+        private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private lockService: LockService,
-        private stateService: StateService, private messagingService: MessagingService) {
+        private stateService: StateService, private messagingService: MessagingService,
+        private userService: UserService, private cryptoService: CryptoService) {
         this.lockOptions = [
             // { name: i18nService.t('immediately'), value: 0 },
             { name: i18nService.t('oneMinute'), value: 1 },
@@ -77,6 +82,7 @@ export class SettingsComponent implements OnInit {
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
+        this.pin = await this.lockService.isPinLockSet();
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
@@ -88,6 +94,31 @@ export class SettingsComponent implements OnInit {
 
     async saveLockOption() {
         await this.lockService.setLockOption(this.lockOption != null ? this.lockOption : null);
+    }
+
+    async updatePin() {
+        if (this.pin) {
+            const pin = await swal({
+                text: this.i18nService.t('setYourPinCode'),
+                content: { element: 'input' },
+                buttons: [this.i18nService.t('cancel'), this.i18nService.t('submit')],
+            });
+
+            if (pin != null && pin.trim() !== '') {
+                const kdf = await this.userService.getKdf();
+                const kdfIterations = await this.userService.getKdfIterations();
+                const email = await this.userService.getEmail();
+                const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
+                const key = await this.cryptoService.getKey();
+                const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
+                await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
+            } else {
+                this.pin = false;
+            }
+        }
+        if (!this.pin) {
+            await this.storageService.remove(ConstantsService.pinProtectedKey);
+        }
     }
 
     async saveFavicons() {
