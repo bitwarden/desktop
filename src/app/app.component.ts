@@ -120,7 +120,7 @@ export class AppComponent implements OnInit {
                         this.logOut(!!message.expired);
                         break;
                     case 'lockVault':
-                        await this.lockService.lock();
+                        await this.lockService.lock(true);
                         break;
                     case 'locked':
                         this.router.navigate(['lock'], { queryParams: { refresh: true } });
@@ -175,7 +175,7 @@ export class AppComponent implements OnInit {
     private async updateAppMenu() {
         this.messagingService.send('updateAppMenu', {
             isAuthenticated: await this.userService.isAuthenticated(),
-            isLocked: !(await this.cryptoService.hasKey()),
+            isLocked: await this.lockService.isLocked(),
         });
     }
 
@@ -192,8 +192,10 @@ export class AppComponent implements OnInit {
             this.folderService.clear(userId),
             this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
+            this.lockService.clear(),
         ]);
 
+        this.lockService.pinLocked = false;
         this.searchService.clearIndex();
         this.authService.logOut(async () => {
             this.analytics.eventTrack.next({ action: 'Logged Out' });

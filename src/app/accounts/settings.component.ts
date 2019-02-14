@@ -82,7 +82,8 @@ export class SettingsComponent implements OnInit {
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
         this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
-        this.pin = await this.lockService.isPinLockSet();
+        const pinSet = await this.lockService.isPinLockSet();
+        this.pin = pinSet[0] || pinSet[1];
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
@@ -98,26 +99,49 @@ export class SettingsComponent implements OnInit {
 
     async updatePin() {
         if (this.pin) {
-            const pin = await swal({
+            const div = document.createElement('div');
+            const label = document.createElement('label');
+            label.className = 'checkbox';
+            const checkboxText = document.createElement('span');
+            const restartText = document.createTextNode(this.i18nService.t('lockWithMasterPassOnRestart'));
+            checkboxText.appendChild(restartText);
+            label.innerHTML = '<input type="checkbox" id="master-pass-restart" checked>';
+            label.appendChild(checkboxText);
+            div.innerHTML = '<input type="text" class="swal-content__input" id="pin-val">';
+            (div.querySelector('#pin-val') as HTMLInputElement).placeholder = this.i18nService.t('pin');
+            div.appendChild(label);
+
+            const submitted = await swal({
                 text: this.i18nService.t('setYourPinCode'),
-                content: { element: 'input' },
+                content: { element: div },
                 buttons: [this.i18nService.t('cancel'), this.i18nService.t('submit')],
             });
-
+            let pin: string = null;
+            let masterPassOnRestart: boolean = null;
+            if (submitted) {
+                pin = (document.getElementById('pin-val') as HTMLInputElement).value;
+                masterPassOnRestart = (document.getElementById('master-pass-restart') as HTMLInputElement).checked;
+            }
             if (pin != null && pin.trim() !== '') {
-                const kdf = await this.userService.getKdf();
-                const kdfIterations = await this.userService.getKdfIterations();
-                const email = await this.userService.getEmail();
-                const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
-                const key = await this.cryptoService.getKey();
-                const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
-                await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
+                if (masterPassOnRestart) {
+                    const encPin = await this.cryptoService.encrypt(pin);
+                    await this.storageService.save(ConstantsService.protectedPin, encPin.encryptedString);
+                } else {
+                    const kdf = await this.userService.getKdf();
+                    const kdfIterations = await this.userService.getKdfIterations();
+                    const email = await this.userService.getEmail();
+                    const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
+                    const key = await this.cryptoService.getKey();
+                    const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
+                    await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
+                }
             } else {
                 this.pin = false;
             }
         }
         if (!this.pin) {
             await this.storageService.remove(ConstantsService.pinProtectedKey);
+            await this.storageService.remove(ConstantsService.protectedPin);
         }
     }
 

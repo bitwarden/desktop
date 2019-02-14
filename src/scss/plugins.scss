@@ -106,6 +106,21 @@ $fa-font-path: "~font-awesome/fonts";
         color: themed('textColor');
     }
 
+    .swal-content {
+        font-size: $font-size-base;
+
+        label.checkbox {
+            margin-top: 10px;
+            display: flex;
+            text-align: left;
+            align-items: top;
+
+            input {
+                margin: 3px 5px 0 1px;
+            }
+        }
+    }
+
     .swal-text {
         font-size: $font-size-base;
 

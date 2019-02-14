@@ -113,7 +113,7 @@ const authService = new AuthService(cryptoService, apiService,
 const exportService = new ExportService(folderService, cipherService, apiService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
-    apiService, cryptoService, async () => messagingService.send('logout', { expired: true }));
+    apiService, lockService, async () => messagingService.send('logout', { expired: true }));
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
