@@ -735,7 +735,7 @@
     "message": "Ontgrendelen"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Ingelogd als $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -820,6 +820,12 @@
   },
   "enableTrayDesc": {
     "message": "Altijd een pictogram in het systeemvak weergeven."
+  },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
   },
   "language": {
     "message": "Taal"
@@ -1051,7 +1057,7 @@
     "message": "Venster"
   },
   "checkPassword": {
-    "message": "Controleer of het wachtwoord is bloodgesteld."
+    "message": "Controleer of het wachtwoord is blootgesteld."
   },
   "passwordExposed": {
     "message": "Dit wachtwoord is $VALUE$ keer blootgesteld in gegevens lekken. U zou het moeten veranderen.",
@@ -1163,5 +1169,27 @@
   },
   "weakMasterPasswordDesc": {
     "message": "U hebt een zwak hoofdwachtwoord gekozen. Om uw Bitwarden account goed te beschermen zou u een sterk hoofdwachtwoord (of wachtwoordzin) moeten gebruiken. Weet u zeker dat u dit hoofdwachtwoord wilt gebruiken?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
   }
 }

@@ -821,6 +821,12 @@
   "enableTrayDesc": {
     "message": "Dauerhaft ein Symbol in der Taskleiste anzeigen."
   },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
+  },
   "language": {
     "message": "Sprache"
   },
@@ -1163,5 +1169,27 @@
   },
   "weakMasterPasswordDesc": {
     "message": "Das Haupt-Passwort, das du gewählt hast ist schwach. Du solltest ein starkes Haupt-Passwort auswählen, um dein Bitwarden-Konto richtig zu schützen. Bist du sicher, dass du dieses Haupt-Passwort verwenden sollen?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
   }
 }

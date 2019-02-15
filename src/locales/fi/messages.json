@@ -27,10 +27,10 @@
     "message": "Kansiot"
   },
   "collections": {
-    "message": "Valikoimat"
+    "message": "Kokoelmat"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Hae holvista"
   },
   "addItem": {
     "message": "Lisää kohde"
@@ -48,7 +48,7 @@
     "message": "Jaettu kohde"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Valitse organisaatio, jonka kanssa haluat jakaa tämän kohteen. Jakaminen siirtää kohteen omistajuuden organisaatiolle. Kohteen jakamisen jälkeen et ole enää kohteen suora omistaja."
   },
   "attachments": {
     "message": "Liitteet"
@@ -454,7 +454,7 @@
     "message": "Syötä pääsalasana uudelleen"
   },
   "masterPassHint": {
-    "message": "Salasanavihje (valinnainen)"
+    "message": "Pääsalasanan vihje (valinnainen)"
   },
   "settings": {
     "message": "Asetukset"
@@ -466,7 +466,7 @@
     "message": "Syötä tilisi sähköpostiosoite saadaksesi pääsalasanasi vihjeen."
   },
   "getMasterPasswordHint": {
-    "message": "Pyydä salasanavihjettä"
+    "message": "Pyydä pääsalasanavihjettä"
   },
   "emailRequired": {
     "message": "Sähköpostiosoite on pakollinen."
@@ -706,7 +706,7 @@
     "message": "Voit vaihtaa pääsalasanasi bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Sormenjälkilause",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -735,7 +735,7 @@
     "message": "Avaa"
   },
   "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+    "message": "Kirjautunut tilillä $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -810,16 +810,22 @@
     "message": "Pienennä ikkuna kuvakkeeksi järjestelmän ilmoitusalueelle."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Sulje ilmoitusalueelle"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Kun ikkuna suljetaan, näytä sulkemisen sijaan kuvake ilmoitusalueella."
   },
   "enableTray": {
     "message": "Näytä ilmoitusalueen kuvake"
   },
   "enableTrayDesc": {
     "message": "Näytä aina kuvake ilmoitusalueella."
+  },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
   },
   "language": {
     "message": "Kieli"
@@ -1122,14 +1128,14 @@
     "message": "Vie holvi"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Tiedostomuoto"
   },
   "warning": {
     "message": "VAROITUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Tämä vienti sisältää holvisi tiedot salaamattomassa muodossa. Vietyä tiedostoa EI pidä säilyttää tai lähettää salaamattomana (kuten sähköpostitse). Poista tiedosto välittömästi, kun et enää tarvitse sitä."
   },
   "exportMasterPassword": {
     "message": "Syötä pääsalasanasi viedäksesi holvisi tiedot."
@@ -1147,21 +1153,43 @@
     "message": "Kuka omistaa tämän kohteen?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Vahva",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Hyvä",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Heikko",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Heikko pääsalasana"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Valitsemasi pääsalasana on heikko. Sinun kannattaa käyttää vahvaa pääsalasanaa (tai ‑salalauseketta) suojataksesi Bitwarden-tilisi kunnolla. Haluatko varmasti käyttää tätä pääsalasanaa?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
   }
 }

@@ -821,6 +821,12 @@
   "enableTrayDesc": {
     "message": "Selalu tampilkan ikon di dalam baki sistem."
   },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
+  },
   "language": {
     "message": "Bahasa"
   },
@@ -1163,5 +1169,27 @@
   },
   "weakMasterPasswordDesc": {
     "message": "Sandi utama yang Anda pilih itu lemah. Anda harus menggunakan sandi yang kuat (atau sebuah passphrase) untuk melindungi akun Bitwarden Anda. Apakah Anda yakin ingin menggunakan sandi ini?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
   }
 }

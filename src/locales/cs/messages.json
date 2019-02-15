@@ -375,7 +375,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Nepoužít zaměnitelné znaky"
+    "message": "Použít nezaměnitelné znaky"
   },
   "searchCollection": {
     "message": "Vyhledat v kolekci"
@@ -430,7 +430,7 @@
     "message": "Složka byla smazána"
   },
   "loginOrCreateNewAccount": {
-    "message": "Pro přístup do vašeho bezpečného trezoru se přihlašte nebo si vytvořte nový účet."
+    "message": "Pro přístup do vašeho bezpečného trezoru se přihlaste nebo si vytvořte nový účet."
   },
   "createAccount": {
     "message": "Vytvořit účet"
@@ -810,16 +810,22 @@
     "message": "Při minimalizaci okna, zobrazit ikonu na hlavním panelu systému."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Zavřít do oznamovací oblasti"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Při zavírání okna zobrazit ikonu v systémové oznamovací oblasti."
   },
   "enableTray": {
     "message": "Povolit ikonu v systémové liště"
   },
   "enableTrayDesc": {
     "message": "Vždy zobrazovat ikonu v systémové liště."
+  },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
   },
   "language": {
     "message": "Jazyk"
@@ -1163,5 +1169,27 @@
   },
   "weakMasterPasswordDesc": {
     "message": "Hlavní heslo, které jste si vybrali, je slabé. Pro správnou ochranu účtu Bitwarden byste měli použít silné hlavní heslo (nebo heslovou frázi). Opravdu chcete toto heslo použít?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
   }
 }
