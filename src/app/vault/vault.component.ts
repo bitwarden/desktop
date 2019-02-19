@@ -103,12 +103,13 @@ export class VaultComponent implements OnInit, OnDestroy {
                         await this.addFolder();
                         break;
                     case 'copyUsername':
-                        if (this.cipherId != null && this.selectedCipher().login.username != null) {
+                        if (this.selectedCipher() != null && this.selectedCipher().login.username != null) {
                             this.copyValue(this.selectedCipher().login.username, 'username');
                         }
                         break;
                     case 'copyPassword':
-                        if (this.cipherId != null && this.selectedCipher().login.password != null) {
+                        console.log(this.selectedCipher());
+                        if (this.selectedCipher() != null && this.selectedCipher().login.password != null) {
                             this.copyValue(this.selectedCipher().login.password, 'password');
                         }
                         break;
@@ -621,6 +622,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     private selectedCipher() {
-        return this.ciphersComponent.ciphers.find(cipher => cipher.id == this.cipherId);
+        if (this.cipherId == null) {
+            return null;
+        } else {
+            return this.ciphersComponent.ciphers.find(cipher => cipher.id == this.cipherId);
+        }
     }
 }
