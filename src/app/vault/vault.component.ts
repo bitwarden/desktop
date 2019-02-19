@@ -102,9 +102,17 @@ export class VaultComponent implements OnInit, OnDestroy {
                     case 'newFolder':
                         await this.addFolder();
                         break;
+                    case 'copyUsername':
+                        if (this.cipherId != null && this.selectedCipher().login.username != null) {
+                            this.copyValue(this.selectedCipher().login.username, 'username');
+                        }
+                        break;
+                    case 'copyPassword':
+                        if (this.cipherId != null && this.selectedCipher().login.password != null) {
+                            this.copyValue(this.selectedCipher().login.password, 'password');
+                        }
+                        break;
                     case 'focusSearch':
-                        (document.querySelector('#search') as HTMLInputElement).select();
-                        detectChanges = false;
                         break;
                     case 'openPasswordGenerator':
                         await this.openPasswordGenerator(false);
@@ -246,12 +254,14 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.username != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyUsername'),
+                        accelerator: 'CmdOrCtrl+shift+U',
                         click: () => this.copyValue(cipher.login.username, 'username'),
                     }));
                 }
                 if (cipher.login.password != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyPassword'),
+                        accelerator: 'CmdOrCtrl+shift+P',
                         click: () => this.copyValue(cipher.login.password, 'password'),
                     }));
                 }
@@ -608,5 +618,9 @@ export class VaultComponent implements OnInit, OnDestroy {
         }
         this.addOrganizationId = null;
         this.addCollectionIds = null;
+    }
+
+    private selectedCipher() {
+        return this.ciphersComponent.ciphers.find(cipher => cipher.id == this.cipherId);
     }
 }

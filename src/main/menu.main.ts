@@ -314,7 +314,24 @@ export class MenuMain extends BaseMenu {
                     },
                 ],
             },
-            this.editMenuItemOptions,
+            {
+                label: this.main.i18nService.t('edit'),
+                submenu: ([
+                    {
+                        label: this.i18nService.t('copyUsername'),
+                        role: 'copyUsername',
+                        accelerator: 'CmdOrCtrl+shift+U',
+                        click: () => this.main.messagingService.send('copyUsername'),
+                    },
+                    {
+                        label: this.i18nService.t('copyPassword'),
+                        role: 'copyPassword',
+                        accelerator: 'CmdOrCtrl+shift+P',
+                        click: () => this.main.messagingService.send('copyPassword'),
+                    },
+                    { type: 'separator' },
+                ] as MenuItemConstructorOptions[]).concat(this.editSubMenuItemOptions),
+            },
             {
                 label: this.main.i18nService.t('view'),
                 submenu: ([
