@@ -108,7 +108,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                         }
                         break;
                     case 'copyPassword':
-                        console.log(this.selectedCipher());
                         if (this.selectedCipher() != null && this.selectedCipher().login.password != null) {
                             this.copyValue(this.selectedCipher().login.password, 'password');
                         }
