@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "allItems": {
-    "message": "Tous les identifiants"
+    "message": "Tous les éléments"
   },
   "favorites": {
     "message": "Favoris"
@@ -33,7 +33,7 @@
     "message": "Rechercher dans le coffre"
   },
   "addItem": {
-    "message": "Ajouter un identifiant"
+    "message": "Ajouter un élément"
   },
   "shared": {
     "message": "Partagé"
@@ -110,7 +110,7 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Changer la visibilité"
+    "message": "Afficher\/Masquer"
   },
   "toggleCollapse": {
     "message": "Déplier ou replier",
@@ -132,7 +132,7 @@
     "message": "Code de sécurité"
   },
   "identityName": {
-    "message": "identityName"
+    "message": "Identité"
   },
   "company": {
     "message": "Société"
@@ -319,7 +319,7 @@
     "message": "Élément modifié"
   },
   "deleteItem": {
-    "message": "Supprimer l'identifiant"
+    "message": "Supprimer l'élément"
   },
   "deleteFolder": {
     "message": "Supprimer le dossier"
@@ -347,10 +347,10 @@
     "message": "Modifier le dossier"
   },
   "regeneratePassword": {
-    "message": "Re-générer un mot de passe"
+    "message": "Générer un nouveau mot de passe"
   },
   "copyPassword": {
-    "message": "Copier mot de passe"
+    "message": "Copier le mot de passe"
   },
   "copyUri": {
     "message": "Copier l'URI"
@@ -368,10 +368,10 @@
     "message": "Fermer"
   },
   "minNumbers": {
-    "message": "Minimum de chiffres"
+    "message": "Nombre minimum de chiffres"
   },
   "minSpecial": {
-    "message": "Minimum de caractères spéciaux",
+    "message": "Nombre minimum de caractères spéciaux",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -381,13 +381,13 @@
     "message": "Rechercher dans la collection"
   },
   "searchFolder": {
-    "message": "Rechercher dans un dossier"
+    "message": "Rechercher dans le dossier"
   },
   "searchFavorites": {
     "message": "Rechercher dans les favoris"
   },
   "searchType": {
-    "message": "Type de recherche",
+    "message": "Recherche par type",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -451,7 +451,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Re-tapez votre mot de passe maître"
+    "message": "Saisir à nouveau le mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -460,7 +460,7 @@
     "message": "Paramètres"
   },
   "passwordHint": {
-    "message": "Indice mot de passe"
+    "message": "Indice du mot de passe"
   },
   "enterEmailToGetHint": {
     "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
@@ -493,7 +493,7 @@
     "message": "Une erreur inattendue est survenue."
   },
   "itemInformation": {
-    "message": "Information sur l'identifiant"
+    "message": "Informations sur l'élément"
   },
   "noItemsInList": {
     "message": "Aucun élément à afficher."
@@ -583,16 +583,16 @@
     "message": "Les codes de vérification vont vous être envoyés par e-mail."
   },
   "loginUnavailable": {
-    "message": "Identifiant non disponible"
+    "message": "Connexion impossible"
   },
   "noTwoStepProviders": {
-    "message": "Ce compte dispose d'une authentification à deux étapes, cependant, aucun service d'authentification à deux étapes n'est supporté par ce navigateur web."
+    "message": "Ce compte dispose d'une authentification en deux étapes, cependant aucun de vos services d'authentification en deux étapes n'est supporté par cet appareil."
   },
   "noTwoStepProviders2": {
-    "message": "Veuillez ajouter des services additionnels qui supportent une utilisation sur plusieurs appareils (comme une appli d'authentification)."
+    "message": "Veuillez ajouter des services additionnels qui supportent une utilisation sur plusieurs appareils (comme une application d'authentification)."
   },
   "twoStepOptions": {
-    "message": "Options d'identification à deux étapes"
+    "message": "Options d'identification en deux étapes"
   },
   "selfHostedEnvironment": {
     "message": "Environnement auto-hébergé"
@@ -658,13 +658,13 @@
     "message": "Déconnexion"
   },
   "addNewLogin": {
-    "message": "Ajouter un site"
+    "message": "Ajouter un nouvel identifiant"
   },
   "addNewItem": {
     "message": "Ajouter un nouvel élément"
   },
   "addNewFolder": {
-    "message": "Ajouter un dossier"
+    "message": "Ajouter un nouveau dossier"
   },
   "view": {
     "message": "Voir"
@@ -685,7 +685,7 @@
     "message": "Nous contacter"
   },
   "visitOurWebsite": {
-    "message": "Visiter notre site web"
+    "message": "Visitez notre site web"
   },
   "fileBugReport": {
     "message": "Envoyer un rapport de bug"
@@ -697,7 +697,7 @@
     "message": "Suivez-nous"
   },
   "syncVault": {
-    "message": "Synchroniser le coffre maintenant"
+    "message": "Synchroniser le coffre"
   },
   "changeMasterPass": {
     "message": "Modifier le mot de passe maître"
@@ -720,7 +720,7 @@
     "message": "Télécharger l'application mobile"
   },
   "getBrowserExtension": {
-    "message": "Télécharger l'extension du navigateur"
+    "message": "Télécharger l'extension de navigateur"
   },
   "syncingComplete": {
     "message": "Synchronisation terminée"
@@ -747,10 +747,10 @@
     "message": "Mot de passe maître invalide"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'authentification à deux étapes sécurise plus encore votre compte en vous demandant à chaque identification la saisie d'un code de sécurité obtenu depuis un autre appareil, comme une clef de sécurité, une application d'authentification, un SMS, un appel téléphonique ou encore un courriel. L'identification à deux étapes peut être activée dans le coffre web sur bitwarden.com. Voulez-vous vous rendre sur le site web maintenant ?"
+    "message": "L'identification en deux étapes sécurise plus encore votre compte en vous demandant à chaque identification la saisie d'un code de sécurité obtenu depuis un autre appareil, comme une clef de sécurité, une application d'authentification, un SMS, un appel téléphonique ou encore un courriel. L'identification en deux étapes peut être activée dans le coffre web sur bitwarden.com. Voulez-vous vous rendre sur le site web maintenant ?"
   },
   "twoStepLogin": {
-    "message": "Identification à deux facteurs"
+    "message": "Identification en deux étapes"
   },
   "lockOptions": {
     "message": "Options de verrouillage"
@@ -804,7 +804,7 @@
     "message": "Les icônes des sites web permettent d'avoir une icône reconnaissable à côté de chaque identifiant dans votre coffre."
   },
   "enableMinToTray": {
-    "message": "Réduire dans la barre d'outils"
+    "message": "Réduire dans la zone de notification"
   },
   "enableMinToTrayDesc": {
     "message": "Lorsque la fenêtre est réduite, privilégier l'affichage d'une icône dans la zone de notification."
@@ -816,10 +816,16 @@
     "message": "Lors de la fermeture de la fenêtre, afficher une icône dans la zone de notification."
   },
   "enableTray": {
-    "message": "Activer le raccourci de la barre d'outils"
+    "message": "Activer le raccourci dans la zone de notifications"
   },
   "enableTrayDesc": {
     "message": "Toujours afficher une icône dans la zone de notification."
+  },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
   },
   "language": {
     "message": "Langue"
@@ -891,7 +897,7 @@
     "message": "Inconnu"
   },
   "copyUsername": {
-    "message": "Copier nom d'utilisateur"
+    "message": "Copier le nom d'utilisateur"
   },
   "copyNumber": {
     "message": "Copier le numéro",
@@ -923,7 +929,7 @@
     "message": "1 Go de stockage de fichiers chiffrés."
   },
   "premiumSignUpTwoStep": {
-    "message": "Options d'identification à double facteurs additionnelles comme YubiKey, FIDO U2F et Duo."
+    "message": "Options d'identification en deux étapes additionnelles comme YubiKey, FIDO U2F et Duo."
   },
   "premiumSignUpReports": {
     "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
@@ -938,7 +944,7 @@
     "message": "Toutes les futures options premium. Prochainement !"
   },
   "premiumPurchase": {
-    "message": "Achat Premium"
+    "message": "Acheter Premium"
   },
   "premiumPurchaseAlert": {
     "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?"
@@ -962,7 +968,7 @@
     "message": "Actualisation terminée"
   },
   "passwordHistory": {
-    "message": "Historique des mots de passe "
+    "message": "Historique des mots de passe"
   },
   "clear": {
     "message": "Effacer"
@@ -994,7 +1000,7 @@
     "message": "Zoom arrière"
   },
   "resetZoom": {
-    "message": "Taille réelle"
+    "message": "Réinitialiser le zoom"
   },
   "toggleFullScreen": {
     "message": "Afficher en plein écran"
@@ -1003,7 +1009,7 @@
     "message": "Recharger"
   },
   "toggleDevTools": {
-    "message": "Afficher les outils de développement"
+    "message": "Afficher\/cacher les outils de développement"
   },
   "minimize": {
     "message": "Réduire",
@@ -1091,7 +1097,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Options de basculement"
+    "message": "Afficher\/masquer les options"
   },
   "organization": {
     "message": "Organisation",
@@ -1115,7 +1121,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Mot de passe mis à jour ",
+    "message": "Mot de passe mis à jour",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1163,5 +1169,27 @@
   },
   "weakMasterPasswordDesc": {
     "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
   }
 }

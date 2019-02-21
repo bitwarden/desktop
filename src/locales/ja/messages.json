@@ -821,6 +821,12 @@
   "enableTrayDesc": {
     "message": "システムトレイにアイコンを常に表示します。"
   },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
+  },
   "language": {
     "message": "Language"
   },
@@ -1163,5 +1169,27 @@
   },
   "weakMasterPasswordDesc": {
     "message": "設定されたマスターパスワードの強度は脆弱です。Bitwarden アカウントを適切に保護するために、強力なマスターパスワード（またはパスフレーズ）を使用すべきです。本当にこのマスターパスワードを使用しますか？"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
   }
 }
