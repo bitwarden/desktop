@@ -21,29 +21,29 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="loginUsername">{{'username' | i18n}}</label>
                             <input id="loginUsername" type="text" name="Login.Username"
-                                   [(ngModel)]="cipher.login.username">
+                                [(ngModel)]="cipher.login.username">
                         </div>
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
                                 <label for="loginPassword">{{'password' | i18n}}</label>
                                 <input id="loginPassword" class="monospaced"
-                                       type="{{showPassword ? 'text' : 'password'}}" name="Login.Password"
-                                       [(ngModel)]="cipher.login.password">
+                                    type="{{showPassword ? 'text' : 'password'}}" name="Login.Password"
+                                    [(ngModel)]="cipher.login.password">
                             </div>
                             <div class="action-buttons">
                                 <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
-                                        title="{{'checkPassword' | i18n}}" (click)="checkPassword()"
-                                        [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
+                                    title="{{'checkPassword' | i18n}}" (click)="checkPassword()"
+                                    [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
                                     <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"></i>
                                     <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"></i>
                                 </button>
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                   title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
+                                    title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
                                     <i class="fa fa-lg"
-                                       [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                                        [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                                 </a>
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                   title="{{'generatePassword' | i18n}}" (click)="generatePassword()">
+                                    title="{{'generatePassword' | i18n}}" (click)="generatePassword()">
                                     <i class="fa fa-lg fa-refresh"></i>
                                 </a>
                             </div>
@@ -51,7 +51,7 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
                             <input id="loginTotp" type="text" name="Login.Totp" class="monospaced"
-                                   [(ngModel)]="cipher.login.totp">
+                                [(ngModel)]="cipher.login.totp">
                         </div>
                     </div>
                     <!-- Card -->
@@ -59,7 +59,7 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="cardCardholderName">{{'cardholderName' | i18n}}</label>
                             <input id="cardCardholderName" type="text" name="Card.CardCardholderName"
-                                   [(ngModel)]="cipher.card.cardholderName">
+                                [(ngModel)]="cipher.card.cardholderName">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="cardNumber">{{'number' | i18n}}</label>
@@ -80,20 +80,19 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="cardExpYear">{{'expirationYear' | i18n}}</label>
                             <input id="cardExpYear" type="text" name="Card.ExpYear" [(ngModel)]="cipher.card.expYear"
-                                   placeholder="{{'ex' | i18n}} 2019">
+                                placeholder="{{'ex' | i18n}} 2019">
                         </div>
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
                                 <label for="cardCode">{{'securityCode' | i18n}}</label>
-                                <input id="cardCode" class="monospaced"
-                                       type="{{showCardCode ? 'text' : 'password'}}" name="Card.Code"
-                                       [(ngModel)]="cipher.card.code">
+                                <input id="cardCode" class="monospaced" type="{{showCardCode ? 'text' : 'password'}}"
+                                    name="Card.Code" [(ngModel)]="cipher.card.code">
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                   title="{{'toggleVisibility' | i18n}}" (click)="toggleCardCode()">
+                                    title="{{'toggleVisibility' | i18n}}" (click)="toggleCardCode()">
                                     <i class="fa fa-lg"
-                                       [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
+                                        [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
                                 </a>
                             </div>
                         </div>
@@ -109,27 +108,27 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="idFirstName">{{'firstName' | i18n}}</label>
                             <input id="idFirstName" type="text" name="Identity.FirstName"
-                                   [(ngModel)]="cipher.identity.firstName">
+                                [(ngModel)]="cipher.identity.firstName">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idMiddleName">{{'middleName' | i18n}}</label>
                             <input id="idMiddleName" type="text" name="Identity.MiddleName"
-                                   [(ngModel)]="cipher.identity.middleName">
+                                [(ngModel)]="cipher.identity.middleName">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idLastName">{{'lastName' | i18n}}</label>
                             <input id="idLastName" type="text" name="Identity.LastName"
-                                   [(ngModel)]="cipher.identity.lastName">
+                                [(ngModel)]="cipher.identity.lastName">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idUsername">{{'username' | i18n}}</label>
                             <input id="idUsername" type="text" name="Identity.Username"
-                                   [(ngModel)]="cipher.identity.username">
+                                [(ngModel)]="cipher.identity.username">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idCompany">{{'company' | i18n}}</label>
                             <input id="idCompany" type="text" name="Identity.Company"
-                                   [(ngModel)]="cipher.identity.company">
+                                [(ngModel)]="cipher.identity.company">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idSsn">{{'ssn' | i18n}}</label>
@@ -138,12 +137,12 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="idPassportNumber">{{'passportNumber' | i18n}}</label>
                             <input id="idPassportNumber" type="text" name="Identity.PassportNumber"
-                                   [(ngModel)]="cipher.identity.passportNumber">
+                                [(ngModel)]="cipher.identity.passportNumber">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idLicenseNumber">{{'licenseNumber' | i18n}}</label>
                             <input id="idLicenseNumber" type="text" name="Identity.LicenseNumber"
-                                   [(ngModel)]="cipher.identity.licenseNumber">
+                                [(ngModel)]="cipher.identity.licenseNumber">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idEmail">{{'email' | i18n}}</label>
@@ -156,17 +155,17 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="idAddress1">{{'address1' | i18n}}</label>
                             <input id="idAddress1" type="text" name="Identity.Address1"
-                                   [(ngModel)]="cipher.identity.address1">
+                                [(ngModel)]="cipher.identity.address1">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idAddress2">{{'address2' | i18n}}</label>
                             <input id="idAddress2" type="text" name="Identity.Address2"
-                                   [(ngModel)]="cipher.identity.address2">
+                                [(ngModel)]="cipher.identity.address2">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idAddress3">{{'address3' | i18n}}</label>
                             <input id="idAddress3" type="text" name="Identity.Address3"
-                                   [(ngModel)]="cipher.identity.address3">
+                                [(ngModel)]="cipher.identity.address3">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idCity">{{'cityTown' | i18n}}</label>
@@ -179,12 +178,12 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="idPostalCode">{{'zipPostalCode' | i18n}}</label>
                             <input id="idPostalCode" type="text" name="Identity.PostalCode"
-                                   [(ngModel)]="cipher.identity.postalCode">
+                                [(ngModel)]="cipher.identity.postalCode">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="idCountry">{{'country' | i18n}}</label>
                             <input id="idCountry" type="text" name="Identity.Country"
-                                   [(ngModel)]="cipher.identity.country">
+                                [(ngModel)]="cipher.identity.country">
                         </div>
                     </div>
                 </div>
@@ -193,26 +192,26 @@
                 <div class="box-content">
                     <ng-container *ngIf="cipher.login.hasUris">
                         <div class="box-content-row box-content-row-multi" appBoxRow
-                             *ngFor="let u of cipher.login.uris; let i = index; trackBy:trackByFunction">
+                            *ngFor="let u of cipher.login.uris; let i = index; trackBy:trackByFunction">
                             <a href="#" appStopClick (click)="removeUri(u)" title="{{'remove' | i18n}}">
                                 <i class="fa fa-minus-circle fa-lg"></i>
                             </a>
                             <div class="row-main">
                                 <label for="loginUri{{i}}">{{'uriPosition' | i18n : (i + 1)}}</label>
                                 <input id="loginUri{{i}}" type="text" name="Login.Uris[{{i}}].Uri" [(ngModel)]="u.uri"
-                                       placeholder="{{'ex' | i18n}} https://google.com">
+                                    placeholder="{{'ex' | i18n}} https://google.com">
                                 <label for="loginUriMatch{{i}}" class="sr-only">
                                     {{'matchDetection' | i18n}} {{(i + 1)}}
                                 </label>
                                 <select id="loginUriMatch{{i}}" name="Login.Uris[{{i}}].Match" [(ngModel)]="u.match"
-                                        [hidden]="u.showOptions === false || (u.showOptions == null && u.match == null)"
-                                        (change)="loginUriMatchChanged(u)">
+                                    [hidden]="u.showOptions === false || (u.showOptions == null && u.match == null)"
+                                    (change)="loginUriMatchChanged(u)">
                                     <option *ngFor="let o of uriMatchOptions" [ngValue]="o.value">{{o.name}}</option>
                                 </select>
                             </div>
                             <div class="action-buttons">
-                                <a class="row-btn" href="#" appStopClick appBlurClick
-                                   title="{{'toggleOptions' | i18n}}" (click)="toggleUriOptions(u)">
+                                <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleOptions' | i18n}}"
+                                    (click)="toggleUriOptions(u)">
                                     <i class="fa fa-lg fa-cog"></i>
                                 </a>
                             </div>
@@ -236,12 +235,12 @@
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
                     </div>
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
-                       (click)="attachments()" *ngIf="editMode">
+                        (click)="attachments()" *ngIf="editMode">
                         <div class="row-main">{{'attachments' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon"></i>
                     </a>
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
-                       (click)="editCollections()" *ngIf="editMode && cipher.organizationId">
+                        (click)="editCollections()" *ngIf="editMode && cipher.organizationId">
                         <div class="row-main">{{'collections' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon"></i>
                     </a>
@@ -264,8 +263,8 @@
                 <div class="box-content">
                     <ng-container *ngIf="cipher.hasFields">
                         <div class="box-content-row box-content-row-multi" appBoxRow
-                             *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
-                             [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
+                            *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
+                            [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
                             <a href="#" appStopClick (click)="removeField(f)" title="{{'remove' | i18n}}">
                                 <i class="fa fa-minus-circle fa-lg"></i>
                             </a>
@@ -273,21 +272,21 @@
                             <label for="fieldValue{{i}}" class="sr-only">{{'value' | i18n}}</label>
                             <div class="row-main">
                                 <input id="fieldName{{i}}" type="text" name="Field.Name{{i}}" [(ngModel)]="f.name"
-                                       class="row-label" placeholder="{{'name' | i18n}}">
+                                    class="row-label" placeholder="{{'name' | i18n}}">
                                 <input id="fieldValue{{i}}" type="text" name="Field.Value{{i}}" [(ngModel)]="f.value"
-                                       *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
+                                    *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
                                 <input id="fieldValue{{i}}" type="{{f.showValue ? 'text' : 'password'}}"
-                                       name="Field.Value{{i}}" [(ngModel)]="f.value" class="monospaced"
-                                       *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
+                                    name="Field.Value{{i}}" [(ngModel)]="f.value" class="monospaced"
+                                    *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
                             </div>
-                            <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox"
-                                   [(ngModel)]="f.value" *ngIf="f.type === fieldType.Boolean"
-                                   appTrueFalseValue trueValue="true" falseValue="false">
+                            <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox" [(ngModel)]="f.value"
+                                *ngIf="f.type === fieldType.Boolean" appTrueFalseValue trueValue="true"
+                                falseValue="false">
                             <div class="action-buttons" *ngIf="f.type === fieldType.Hidden">
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                   title="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">
+                                    title="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">
                                     <i class="fa fa-lg"
-                                       [ngClass]="{'fa-eye': !f.showValue, 'fa-eye-slash': f.showValue}"></i>
+                                        [ngClass]="{'fa-eye': !f.showValue, 'fa-eye-slash': f.showValue}"></i>
                                 </a>
                             </div>
                         </div>
@@ -311,7 +310,7 @@
                     <div class="box-content-row" appBoxRow>
                         <label for="organizationId">{{'whoOwnsThisItem' | i18n}}</label>
                         <select id="organizationId" class="form-control" name="OrganizationId"
-                                [(ngModel)]="cipher.organizationId" (change)="organizationChanged()">
+                            [(ngModel)]="cipher.organizationId" (change)="organizationChanged()">
                             <option *ngFor="let o of ownershipOptions" [ngValue]="o.value">{{o.name}}</option>
                         </select>
                     </div>
@@ -325,11 +324,11 @@
                     {{'noCollectionsInList' | i18n}}
                 </div>
                 <div class="box-content" *ngIf="collections && collections.length">
-                    <div class="box-content-row box-content-row-checkbox"
-                         *ngFor="let c of collections; let i = index" appBoxRow>
+                    <div class="box-content-row box-content-row-checkbox" *ngFor="let c of collections; let i = index"
+                        appBoxRow>
                         <label for="collection_{{i}}">{{c.name}}</label>
                         <input id="collection_{{i}}" type="checkbox" [(ngModel)]="c.checked"
-                               name="Collection[{{i}}].Checked">
+                            name="Collection[{{i}}].Checked">
                     </div>
                 </div>
             </div>
@@ -345,12 +344,11 @@
         </button>
         <div class="right">
             <button appBlurClick type="button" (click)="share()" title="{{'shareItem' | i18n}}"
-                    *ngIf="editMode && cipher && !cipher.organizationId">
+                *ngIf="editMode && cipher && !cipher.organizationId">
                 <i class="fa fa-share-alt fa-lg fa-fw"></i>
             </button>
-            <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
-                    title="{{'delete' | i18n}}" *ngIf="editMode" [disabled]="deleteBtn.loading"
-                    [appApiAction]="deletePromise">
+            <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger" title="{{'delete' | i18n}}"
+                *ngIf="editMode" [disabled]="deleteBtn.loading" [appApiAction]="deletePromise">
                 <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                 <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
             </button>

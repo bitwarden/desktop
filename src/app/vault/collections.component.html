@@ -11,7 +11,7 @@
                     </div>
                     <div class="box-content" *ngIf="collections && collections.length">
                         <div class="box-content-row box-content-row-checkbox"
-                             *ngFor="let c of collections; let i = index" appBoxRow>
+                            *ngFor="let c of collections; let i = index" appBoxRow>
                             <label for="collection_{{i}}">{{c.name}}</label>
                             <input id="collection_{{i}}" type="checkbox" [(ngModel)]="c.checked"
                                 name="Collection[{{i}}].Checked">

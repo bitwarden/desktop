@@ -6,7 +6,7 @@
             {{'enterVerificationCodeEmail' | i18n : twoFactorEmail}}
         </p>
         <div class="box last"
-             *ngIf="selectedProviderType === providerType.Email || selectedProviderType === providerType.Authenticator">
+            *ngIf="selectedProviderType === providerType.Email || selectedProviderType === providerType.Authenticator">
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="code">{{'verificationCode' | i18n}}</label>
@@ -55,8 +55,7 @@
             </div>
         </div>
         <div class="buttons">
-            <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick
-                    *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo && 
+            <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick *ngIf="selectedProviderType != null && selectedProviderType !== providerType.Duo && 
                         selectedProviderType !== providerType.OrganizationDuo">
                 <span [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'continue' | i18n}}</span>
                 <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
@@ -66,7 +65,7 @@
         <div class="sub-options">
             <a href="#" appStopClick (click)="anotherMethod()">{{'useAnotherTwoStepMethod' | i18n}}</a>
             <a href="#" appStopClick (click)="sendEmail(true)" [appApiAction]="emailPromise"
-               *ngIf="selectedProviderType === providerType.Email">
+                *ngIf="selectedProviderType === providerType.Email">
                 {{'sendVerificationCodeEmailAgain' | i18n}}
             </a>
         </div>
