@@ -39,7 +39,7 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
     async ngOnInit() {
         await super.ngOnInit();
         this.route.queryParams.subscribe((params) => {
-            if (params.refresh === 'true') {
+            if (params.refresh === 'true' && !this.lockService.pinLocked) {
                 // Refresh the renderer window when locked to enure that all purged memory is cleaned up
                 this.ngZone.runOutsideAngular(() => {
                     this.reloadInterval = window.setInterval(async () => {
