@@ -111,10 +111,15 @@ export class AppComponent implements OnInit {
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'loggedIn':
-                    case 'loggedOut':
                     case 'unlocked':
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
+                        this.lockService.cancelLockReload();
+                        break;
+                    case 'loggedOut':
+                        this.notificationsService.updateConnection();
+                        this.updateAppMenu();
+                        this.lockService.startLockReload();
                         break;
                     case 'logout':
                         this.logOut(!!message.expired);
@@ -123,9 +128,13 @@ export class AppComponent implements OnInit {
                         await this.lockService.lock(true);
                         break;
                     case 'locked':
-                        this.router.navigate(['lock'], { queryParams: { refresh: true } });
+                        this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
+                        this.lockService.startLockReload();
+                        break;
+                    case 'reloadProcess':
+                        window.location.reload(true);
                         break;
                     case 'syncStarted':
                         break;
