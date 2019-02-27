@@ -42,6 +42,7 @@ import { SearchService } from 'jslib/services/search.service';
 import { SettingsService } from 'jslib/services/settings.service';
 import { StateService } from 'jslib/services/state.service';
 import { SyncService } from 'jslib/services/sync.service';
+import { SystemService } from 'jslib/services/system.service';
 import { TokenService } from 'jslib/services/token.service';
 import { TotpService } from 'jslib/services/totp.service';
 import { UserService } from 'jslib/services/user.service';
@@ -72,6 +73,7 @@ import { SettingsService as SettingsServiceAbstraction } from 'jslib/abstraction
 import { StateService as StateServiceAbstraction } from 'jslib/abstractions/state.service';
 import { StorageService as StorageServiceAbstraction } from 'jslib/abstractions/storage.service';
 import { SyncService as SyncServiceAbstraction } from 'jslib/abstractions/sync.service';
+import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/system.service';
 import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/token.service';
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
@@ -115,6 +117,7 @@ const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
     apiService, lockService, async () => messagingService.send('logout', { expired: true }));
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
+const systemService = new SystemService(storageService, lockService, messagingService, platformUtilsService, null);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);
@@ -191,6 +194,7 @@ export function initFactory(): Function {
         { provide: ExportServiceAbstraction, useValue: exportService },
         { provide: SearchServiceAbstraction, useValue: searchService },
         { provide: NotificationsServiceAbstraction, useValue: notificationsService },
+        { provide: SystemServiceAbstraction, useValue: systemService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

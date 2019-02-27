@@ -31,6 +31,14 @@
                     </div>
                     <div class="box-content box-content-padded">
                         <div class="form-group">
+                            <label for="clearClipboard">{{'clearClipboard' | i18n}}</label>
+                            <select id="clearClipboard" name="ClearClipboard" [(ngModel)]="clearClipboard"
+                                (change)="saveClearClipboard()">
+                                <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">{{o.name}}</option>
+                            </select>
+                            <small class="help-block">{{'clearClipboardDesc' | i18n}}</small>
+                        </div>
+                        <div class="form-group">
                             <div class="checkbox">
                                 <label for="disableFavicons">
                                     <input id="disableFavicons" type="checkbox" name="DisableFavicons"
