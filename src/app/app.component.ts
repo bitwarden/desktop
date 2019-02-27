@@ -121,6 +121,7 @@ export class AppComponent implements OnInit {
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
                         this.systemService.startProcessReload();
+                        await this.systemService.clearPendingClipboard();
                         break;
                     case 'logout':
                         this.logOut(!!message.expired);
@@ -133,6 +134,7 @@ export class AppComponent implements OnInit {
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
                         this.systemService.startProcessReload();
+                        await this.systemService.clearPendingClipboard();
                         break;
                     case 'reloadProcess':
                         window.location.reload(true);
