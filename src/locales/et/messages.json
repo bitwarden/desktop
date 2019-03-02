@@ -316,7 +316,7 @@
     "message": "Kirje on lisatud"
   },
   "editedItem": {
-    "message": "Üksus on muudetud"
+    "message": "Kirje on muudetud"
   },
   "deleteItem": {
     "message": "Kustuta kirje"
@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Koheselt"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 minuti pärast"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 minuti pärast"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Turvalisus"
   },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Keela veebilehel ikoonid"
   },
@@ -822,10 +842,10 @@
     "message": "Kuva süsteemisalve ikoon alati."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Käivita süsteemisalves"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Rakenduse esmasel käivitusel kuvatakse seda ainult süsteemisalve ikoonina."
   },
   "language": {
     "message": "Keel"
@@ -1150,7 +1170,7 @@
     "message": "Omanik"
   },
   "whoOwnsThisItem": {
-    "message": "Kes seda üksust omab?"
+    "message": "Kes seda kirjet omab?"
   },
   "strong": {
     "message": "Tugev",
@@ -1175,21 +1195,21 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Ava PIN-iga"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Määra Bitwardeni lahtilukustamiseks PIN kood. Rakendusest täielikult välja logides nullitakse ka PIN koodi seaded."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Nõutakse PIN koodi."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Vale PIN kood."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
   }
 }
