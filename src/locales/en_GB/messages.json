@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Immediately"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 minute"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 minutes"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Security"
   },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Disable website icons"
   },
@@ -822,7 +842,7 @@
     "message": "Always show an icon in the system tray."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Start to tray icon"
   },
   "startToTrayDesc": {
     "message": "When the application is first started, only show an icon in the system tray."
