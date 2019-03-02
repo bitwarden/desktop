@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Okamžitě"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "Po 1 minutě"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "Po 5 minutách"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Zabezpečení"
   },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Zakázat ikonky webových stránek"
   },
@@ -807,13 +827,13 @@
     "message": "Minimalizovat do systémové lišty"
   },
   "enableMinToTrayDesc": {
-    "message": "Při minimalizaci okna, zobrazit ikonu na hlavním panelu systému."
+    "message": "Při minimalizaci okna zobrazit ikonu v systémové liště."
   },
   "enableCloseToTray": {
-    "message": "Zavřít do oznamovací oblasti"
+    "message": "Zavřít do systémové lišty"
   },
   "enableCloseToTrayDesc": {
-    "message": "Při zavírání okna zobrazit ikonu v systémové oznamovací oblasti."
+    "message": "Při zavírání okna zobrazit ikonu v systémové liště."
   },
   "enableTray": {
     "message": "Povolit ikonu v systémové liště"
@@ -822,10 +842,10 @@
     "message": "Vždy zobrazovat ikonu v systémové liště."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Spustit do systémové lišty"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Při prvním spuštění aplikace zobrazit pouze ikonu v systémové liště."
   },
   "language": {
     "message": "Jazyk"
@@ -935,7 +955,7 @@
     "message": "Reporty o hygieně vašich hesel, zdraví účtu a narušeních bezpečnosti."
   },
   "premiumSignUpTotp": {
-    "message": "Generátor TOTP ověřovacího kódu (2FA) pro přihlášení do trezoru."
+    "message": "Generátor TOTP kódu dvoufázového přihlašování (2FA) pro přihlašovací údaje ve vašem trezoru."
   },
   "premiumSignUpSupport": {
     "message": "Prioritní zákaznickou podporu."
@@ -1175,21 +1195,21 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Odemknout pomocí PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Nastavte svůj PIN kód pro odemknutí trezoru. Pokud se zcela odhlásíte z aplikace bude váš současný PIN bude resetován."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN kód je vyžadován."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Neplatný PIN kód."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat PIN."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Zamknout trezor při restartu pomocí hlavního hesla"
   }
 }
