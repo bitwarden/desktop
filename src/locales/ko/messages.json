@@ -761,8 +761,20 @@
   "immediately": {
     "message": "즉시"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1분"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5분"
@@ -796,6 +808,14 @@
   },
   "security": {
     "message": "보안"
+  },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
