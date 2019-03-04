@@ -762,19 +762,19 @@
     "message": "Straks"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekunder"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekunder"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekunder"
   },
   "oneMinute": {
     "message": "1 minut"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minutter"
   },
   "fiveMinutes": {
     "message": "5 minutter"
@@ -810,11 +810,11 @@
     "message": "Sikkerhed"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Ryd udklipsholder",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Fjern automatisk kopierede data fra din udklipsholder.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
