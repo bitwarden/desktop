@@ -762,19 +762,19 @@
     "message": "Immediatament"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 segons"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 segons"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 segons"
   },
   "oneMinute": {
     "message": "1 minut"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minuts"
   },
   "fiveMinutes": {
     "message": "5 Minuts"
@@ -810,11 +810,11 @@
     "message": "Seguretat"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Neteja el porta-retalls",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Esborra automàticament els valors copiats del porta-retalls.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
