@@ -762,19 +762,19 @@
     "message": "Natychmiast"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekund"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekund"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekund"
   },
   "oneMinute": {
     "message": "po 1 minucie"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minuty"
   },
   "fiveMinutes": {
     "message": "po 5 minutach"
@@ -810,18 +810,18 @@
     "message": "Zabezpieczenia"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Wyczyść schowek",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Automatycznie czyść ze schowka skopiowane wartości.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Wyłącz ikony stron"
   },
   "disableFaviconDesc": {
-    "message": "Możesz wyświetlać rozpoznawalną ikonę serwisu obok danych logowania w Twoim sejfie."
+    "message": "Wyświetlaj rozpoznawalną ikonę serwisu obok danych logowania w Twoim sejfie."
   },
   "enableMinToTray": {
     "message": "Minimalizuj do zasobnika systemowego"
