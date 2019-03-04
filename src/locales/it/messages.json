@@ -762,19 +762,19 @@
     "message": "Immediatamente"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 secondi"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 secondi"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 secondi"
   },
   "oneMinute": {
     "message": "1 minuto"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 Minuti"
   },
   "fiveMinutes": {
     "message": "5 minuti"
@@ -810,11 +810,11 @@
     "message": "Sicurezza"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Cancella appunti",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Cancella automaticamente i valori copiati dagli appunti.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
