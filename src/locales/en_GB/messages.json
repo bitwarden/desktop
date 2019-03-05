@@ -810,7 +810,7 @@
     "message": "Security"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Clear clipboard",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {

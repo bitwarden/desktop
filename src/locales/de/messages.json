@@ -762,19 +762,19 @@
     "message": "Sofort"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 Sekunden"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 Sekunden"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 Sekunden"
   },
   "oneMinute": {
     "message": "1 Minute"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 Minuten"
   },
   "fiveMinutes": {
     "message": "5 Minuten"
@@ -810,11 +810,11 @@
     "message": "Sicherheit"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Zwischenablage leeren",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Kopierten Inhalt automatisch aus der Zwischenablage löschen.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
@@ -845,7 +845,7 @@
     "message": "Minimiert Im System Tray starten"
   },
   "startToTrayDesc": {
-    "message": "Wenn die Anwendung startet, wird nur ein Symbol in dem System Tray angezeigt."
+    "message": "Beim ersten Start der Anwenung nur als Symbol im System Tray anzeigen."
   },
   "language": {
     "message": "Sprache"
@@ -1207,7 +1207,7 @@
     "message": "Ungültiger PIN Code."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Ihr Tresor ist gesperrt. Bestätigen sie ihren PIN Code um fortzufahren."
+    "message": "Ihr Tresor ist gesperrt. Geben sie ihren PIN Code ein um fortzufahren."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"
