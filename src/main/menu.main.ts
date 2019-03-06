@@ -175,7 +175,7 @@ export class MenuMain extends BaseMenu {
                     },
                     {
                         label: 'Twitter',
-                        click: () => shell.openExternal('https://twitter.com/bitwarden_app'),
+                        click: () => shell.openExternal('https://twitter.com/bitwarden'),
                     },
                     {
                         label: 'Facebook',
