@@ -120,7 +120,8 @@ export class SettingsComponent implements OnInit {
             checkboxText.appendChild(restartText);
             label.innerHTML = '<input type="checkbox" id="master-pass-restart" checked>';
             label.appendChild(checkboxText);
-            div.innerHTML = '<input type="text" class="swal-content__input" id="pin-val">';
+            div.innerHTML = '<input type="text" class="swal-content__input" id="pin-val" autocomplete="off" ' +
+                'autocapitalize="none" autocorrect="none" spellcheck="false" inputmode="verbatim">';
             (div.querySelector('#pin-val') as HTMLInputElement).placeholder = this.i18nService.t('pin');
             div.appendChild(label);
 
