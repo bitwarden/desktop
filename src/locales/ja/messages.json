@@ -762,19 +762,19 @@
     "message": "すぐに"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10秒"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20秒"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30秒"
   },
   "oneMinute": {
     "message": "1分"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2分"
   },
   "fiveMinutes": {
     "message": "5分"
@@ -810,11 +810,11 @@
     "message": "セキュリティ"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "クリップボードの消去",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "選択した時間が経過した後、自動的にクリップボードを消去します。",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
