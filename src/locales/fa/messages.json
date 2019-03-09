@@ -762,19 +762,19 @@
     "message": "بلافاصله"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "۱۰ ثانیه"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "۲۰ ثانیه"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "۳۰ ثانیه"
   },
   "oneMinute": {
     "message": "۱ دقیقه"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "۲ دقیقه"
   },
   "fiveMinutes": {
     "message": "۵ دقیقه"
@@ -810,11 +810,11 @@
     "message": "امنیت"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "پاک‌سازی کلیپ‌برد",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "به صورت خودکار، مقادیر کپی شده را از کلیپ‌برد پاک کن.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
@@ -842,10 +842,10 @@
     "message": "همیشه یک آیکون در قسمت Tray سیستم نشان بده."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "شروع به نماد سینی"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "زمانی که برنامه برای بار اول شروع می‌شود، فقط یک نماد در سینی نمادهای سیستم نشان بده."
   },
   "language": {
     "message": "زبان"
@@ -952,7 +952,7 @@
     "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "دانش رمزعبور، سلامت حساب کاربری و گزارش‌های نقص اطلاعات، برای حفظ امنیت شما."
   },
   "premiumSignUpTotp": {
     "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."
@@ -1188,28 +1188,28 @@
     "message": "گذرواژه اصلی ضعیف"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "رمزعبور اصلی که شما انتخاب کرده‌اید، ضعیف است. شما باید از یک رمزعبور (یا عبارت عبور) قوی استفاده کنید تا از حساب کاربری Bitwarden خود به خوبی محافظت کنید. آیا مطمئنید که می‌خواهید این رمزعبور را استفاده کنید؟"
   },
   "pin": {
-    "message": "PIN",
+    "message": "پین",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "بازکردن با پین"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "کد پین خود را برای باز کردن Bitwarden تنظیم کنید. تنظیمات پین شما از بین می‌رود، اگر شما به طور کامل از برنامه خارج شوید (Log out)."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "کد پین الزامیست."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "کد پین غیر معتبر است."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تایید کنید."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "در زمان شروع مجدد، با رمز اصلی قفل کن"
   }
 }
