@@ -842,7 +842,7 @@
     "message": "Dauerhaft ein Symbol in der Taskleiste anzeigen."
   },
   "startToTray": {
-    "message": "Minimiert Im System Tray starten"
+    "message": "Minimiert in Taskleiste starten"
   },
   "startToTrayDesc": {
     "message": "Beim ersten Start der Anwenung nur als Symbol im System Tray anzeigen."
@@ -1195,16 +1195,16 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Mit PIN Code entsperren"
+    "message": "Mit PIN-Code entsperren"
   },
   "setYourPinCode": {
-    "message": "Geben Sie Ihren PIN Code für das Entsperren von Bitwarden ein. Ihre PIN Einstellungen werden zurückgesetzt, wenn Sie sich vollständig von der Anwendung abmelden."
+    "message": "Geben Sie Ihren PIN-Code für das Entsperren von Bitwarden ein. Ihre PIN-Einstellungen werden zurückgesetzt, wenn Sie sich vollständig von der Anwendung abmelden."
   },
   "pinRequired": {
-    "message": "PIN Code ist erforderlich."
+    "message": "PIN-Code ist erforderlich."
   },
   "invalidPin": {
-    "message": "Ungültiger PIN Code."
+    "message": "Ungültiger PIN-Code."
   },
   "yourVaultIsLockedPinCode": {
     "message": "Ihr Tresor ist gesperrt. Geben sie ihren PIN Code ein um fortzufahren."
