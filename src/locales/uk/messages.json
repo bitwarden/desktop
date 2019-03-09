@@ -103,7 +103,7 @@
     "message": "Власні поля"
   },
   "launch": {
-    "message": "Запустити"
+    "message": "Перейти"
   },
   "copyValue": {
     "message": "Копіювати значення",
@@ -204,7 +204,7 @@
     "message": "Грудень"
   },
   "ex": {
-    "message": "н-д.",
+    "message": "зразок",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
@@ -508,7 +508,7 @@
     "message": "Продовжити"
   },
   "enterVerificationCodeApp": {
-    "message": "Введіть 6-значних код підтвердження з програми авторизації."
+    "message": "Введіть 6-значний код підтвердження з програми авторизації."
   },
   "enterVerificationCodeEmail": {
     "message": "Введіть 6-значний код підтвердження, надісланий на $EMAIL$.",
@@ -535,7 +535,7 @@
     "message": "Надіслати код підтвердження ще раз"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Використати інший спосіб двохетапної перевірки"
+    "message": "Інший спосіб двохетапної перевірки"
   },
   "insertYubiKey": {
     "message": "Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
