@@ -8,12 +8,12 @@ import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 
 import { ConstantsService } from 'jslib/services/constants.service';
-import { LowdbStorageService } from 'jslib/services/lowdbStorage.service';
 
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
 import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
+import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
@@ -21,7 +21,7 @@ import { WindowMain } from 'jslib/electron/window.main';
 export class Main {
     logService: ElectronLogService;
     i18nService: I18nService;
-    storageService: LowdbStorageService;
+    storageService: ElectronStorageService;
     messagingService: ElectronMainMessagingService;
     keytarStorageListener: KeytarStorageListener;
 
@@ -62,7 +62,7 @@ export class Main {
         const storageDefaults: any = {};
         // Default lock options to "on restart".
         storageDefaults[ConstantsService.lockOptionKey] = -1;
-        this.storageService = new LowdbStorageService(storageDefaults, app.getPath('userData'));
+        this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
         this.windowMain = new WindowMain(this.storageService);
         this.messagingMain = new MessagingMain(this);
@@ -85,7 +85,6 @@ export class Main {
     }
 
     bootstrap() {
-        this.storageService.init();
         this.keytarStorageListener.init();
         this.windowMain.init().then(async () => {
             const locale = await this.storageService.get<string>(ConstantsService.localeKey);
