@@ -1,5 +1,5 @@
 image:
-- Visual Studio 2017
+#- Visual Studio 2017
 - Ubuntu1804
 
 branches:
@@ -32,13 +32,12 @@ before_build:
 
 build_script:
 - npm install
-- sh: npm run dist:lin
-- ps: npm run dist:win:ci
 - ps: |
     if($isLinux) {
-      
+      npm run dist:lin
     }
     else {
+      npm run dist:win:ci
       Push-AppveyorArtifact .\dist\Bitwarden-Portable-$env:package_version.exe
       Push-AppveyorArtifact .\dist\nsis-web\Bitwarden-Installer-$env:package_version.exe
       Push-AppveyorArtifact .\dist\Bitwarden-$env:package_version-x64.appx
