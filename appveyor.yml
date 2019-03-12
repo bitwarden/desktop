@@ -1,5 +1,5 @@
 image:
-#- Visual Studio 2017
+- Visual Studio 2017
 - Ubuntu1804
 
 branches:
@@ -48,17 +48,17 @@ build_script:
     }
 
 for:
-- matrix:
+- 
+  matrix:
     only:
       - image: Visual Studio 2017
-
   cache:
   - '%USERPROFILE%\.electron -> appveyor.yml'
 
-- matrix:
+-
+  matrix:
     only:
       - image: Ubuntu1804
-
   cache:
   - '/home/appveyor/.cache/electron -> appveyor.yml'
   - '/home/appveyor/.cache/electron-builder -> appveyor.yml'
