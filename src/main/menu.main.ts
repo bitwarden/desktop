@@ -74,10 +74,14 @@ export class MenuMain extends BaseMenu {
 
     updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean) {
         this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
-            mi.enabled = isAuthenticated && !isLocked;
+            if (mi != null) {
+                mi.enabled = isAuthenticated && !isLocked;
+            }
         });
 
-        this.logOut.enabled = isAuthenticated;
+        if (this.logOut != null) {
+            this.logOut.enabled = isAuthenticated;
+        }
     }
 
     private initApplicationMenu() {
