@@ -1,20 +1,9 @@
 matrix:
   include:
-    - os: linux
-      dist: trusty
-      sudo: true
-      language: node_js
-      node_js: 9
-      install:
-        - sudo apt-get install pkg-config libxss-dev libsecret-1-dev rpm
-        - npm install
-      script:
-        - npm run build
-
     - os: osx
       osx_image: xcode9.2
       language: node_js
-      node_js: 9
+      node_js: 10
       install:
         - npm install
       script:
