@@ -91,17 +91,17 @@ export class Main {
             await this.i18nService.init(locale != null ? locale : app.getLocale());
             this.messagingMain.init();
             this.menuMain.init();
-            this.powerMonitorMain.init();
             await this.trayMain.init('Bitwarden', [{
                 label: this.i18nService.t('lockNow'),
                 enabled: false,
                 id: 'lockNow',
                 click: () => this.messagingService.send('lockVault'),
             }]);
-            await this.updaterMain.init();
             if (await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey)) {
                 this.trayMain.hideToTray();
             }
+            this.powerMonitorMain.init();
+            await this.updaterMain.init();
         }, (e: any) => {
             // tslint:disable-next-line
             console.error(e);
