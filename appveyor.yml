@@ -8,6 +8,14 @@ branches:
 
 stack: node 10
 
+init:
+- sh: sudo apt-get update
+- sh: sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
+- ps: |
+    if($isWindows) {
+      Install-Product node 10
+    }
+
 install:
 - ps: $env:package_version = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
 - ps: |
@@ -43,9 +51,6 @@ for:
 - matrix:
     only:
       - image: Visual Studio 2017
-  
-  init:
-  - ps: Install-Product node 10
 
   cache:
   - '%USERPROFILE%\.electron -> appveyor.yml'
@@ -53,10 +58,6 @@ for:
 - matrix:
     only:
       - image: Ubuntu1804
-
-  init:
-  - sh: sudo apt-get update
-  - sh: sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
   cache:
   - '/home/appveyor/.cache/electron -> appveyor.yml'
