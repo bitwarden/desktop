@@ -6,9 +6,6 @@ branches:
   except:
     - l10n_master
 
-services:
-- docker
-
 stack: node 10
 
 init:
@@ -36,6 +33,11 @@ build_script:
 - ps: |
     if($isLinux) {
       npm run dist:lin
+      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-x86_64.AppImage
+      Push-AppveyorArtifact ./dist/bitwarden_$env:package_version_amd64.snap
+      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-amd64.deb
+      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-x64.freebsd
+      Push-AppveyorArtifact ./dist/dist/Bitwarden-$env:package_version-x86_64.rpm
     }
     else {
       npm run dist:win:ci
@@ -44,3 +46,8 @@ build_script:
       Push-AppveyorArtifact .\dist\Bitwarden-$env:package_version-x64.appx
       Push-AppveyorArtifact .\dist\Bitwarden-$env:package_version-ia32.appx
     }
+
+cache:
+- '~/.cache/electron -> appveyor.yml'
+- '~/.cache/electron-builder -> appveyor.yml'
+- '%USERPROFILE%\.electron -> appveyor.yml'
