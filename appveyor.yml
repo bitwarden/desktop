@@ -1,0 +1,37 @@
+image:
+- Visual Studio 2017
+- Ubuntu1804
+
+branches:
+  except:
+    - l10n_master
+
+environment:
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
+
+services:
+- docker
+
+stack: node 10
+
+init:
+- ps: Install-Product node $env:nodejs_version
+
+install:
+- ps: choco install cloc --no-progress
+- ps: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+- ps: $env:package_version = (Get-Content -Raw -Path package.json | ConvertFrom-Json).version
+
+before_build:
+- node --version
+- npm --version
+
+build_script:
+- npm install
+- sh: npm run build:prod
+- ps: npm run dist:win:ci
+- ps: |
+    Push-AppveyorArtifact .\dist\Bitwarden-Portable-$env:package_version.exe
+    Push-AppveyorArtifact .\dist\nsis-web\Bitwarden-Installer-$env:package_version.exe
+    Push-AppveyorArtifact .\dist\Bitwarden-$env:package_version-x64.appx
+    Push-AppveyorArtifact .\dist\Bitwarden-$env:package_version-ia32.appx
