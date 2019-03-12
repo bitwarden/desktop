@@ -47,6 +47,7 @@
     "jslib/dist",
     "build",
     "jslib/spec",
-    "jslib/src/services/nodeApi.service.ts"
+    "jslib/src/services/nodeApi.service.ts",
+    "jslib/src/services/lowdbStorage.service.ts"
   ]
 }
