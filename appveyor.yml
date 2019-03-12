@@ -37,7 +37,7 @@ build_script:
       Push-AppveyorArtifact ./dist/bitwarden_$env:package_version_amd64.snap
       Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-amd64.deb
       Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-x64.freebsd
-      Push-AppveyorArtifact ./dist/dist/Bitwarden-$env:package_version-x86_64.rpm
+      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-x86_64.rpm
     }
     else {
       npm run dist:win:ci
