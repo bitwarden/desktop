@@ -18,6 +18,7 @@ init:
     }
 
 install:
+- sh: sudo apt-get update
 - sh: sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 - ps: $env:package_version = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
 - ps: |
