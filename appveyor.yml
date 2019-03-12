@@ -53,11 +53,13 @@ build_script:
 
 after_build:
 - ps: |
-    if($isLinux && $env:prod_deploy) {
-      echo "Deploy Linux..."
-    }
-    else if($env:prod_deploy) {
-      echo "Deploy Windows..."
+    if($env:prod_deploy) {
+      if($isLinux) {
+        echo "Deploy Linux..."
+      }
+      else {
+        echo "Deploy Windows..."
+      }
     }
 
 for:
