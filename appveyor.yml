@@ -30,8 +30,7 @@ install:
       cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
     }
 - sh: |
-    echo "prod deploy: ${PROD_DEPLOY}"
-    if [ "${SNAP_TOKEN}" != "" -a "${PROD_DEPLOY}" == "false" ]
+    if [ "${SNAP_TOKEN}" != "" ]
     then
         echo "login to snap"
         echo "$SNAP_TOKEN" | snapcraft login --with -
