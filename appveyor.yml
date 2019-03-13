@@ -20,9 +20,9 @@ init:
 install:
 - ps: |
     $PACKAGE_VERSION = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
-    $PROD_DEPLOY = $false
+    $PROD_DEPLOY = "false"
     if($env:APPVEYOR_REPO_TAG -eq "true" -and $env:APPVEYOR_RE_BUILD -eq "True") {
-      $PROD_DEPLOY = $true
+      $PROD_DEPLOY = "true"
       echo "This is a production deployment."
     }
     if($isWindows) {
@@ -30,11 +30,10 @@ install:
       cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
     }
 - sh: |
+    echo "prod deploy: ${PROD_DEPLOY}"
     if [ "${SNAP_TOKEN}" != "" ]
     then
-        echo "login to snap"
-        echo "$SNAP_TOKEN" | snapcraft login --with -
-        snapcraft whoami
+      echo "$SNAP_TOKEN" | snapcraft login --with -
     fi
 
 before_build:
@@ -62,7 +61,7 @@ build_script:
 
 after_build:
 - ps: |
-    if($PROD_DEPLOY) {
+    if($PROD_DEPLOY -eq "true") {
       if($isLinux) {
         echo "Deploy Linux..."
       }
@@ -70,6 +69,11 @@ after_build:
         echo "Deploy Windows..."
       }
     }
+- sh: |
+    if [ "${SNAP_TOKEN}" != "" ]
+    then
+      snapcraft logout
+    fi
 
 for:
 - 
