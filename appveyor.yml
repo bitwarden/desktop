@@ -18,10 +18,11 @@ init:
 
 install:
 - ps: |
-    $env:package_version = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
-    $env:prod_deploy=$false
-    if($env:APPVEYOR_REPO_TAG_NAME -and $env:APPVEYOR_RE_BUILD) {
-      $env:prod_deploy=$true
+    $packageVersion = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
+    $prodDeploy = $false
+    if($env:APPVEYOR_REPO_TAG -eq "true" -and $env:APPVEYOR_RE_BUILD -eq "True") {
+      $prodDeploy = $true
+      echo "This is a production deployment."
     }
     if($isWindows) {
       choco install cloc --no-progress
@@ -37,23 +38,23 @@ build_script:
 - ps: |
     if($isLinux) {
       npm run dist:lin
-      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-x86_64.AppImage
-      Push-AppveyorArtifact ./dist/bitwarden_${env:package_version}_amd64.snap
-      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-amd64.deb
-      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-x64.freebsd
-      Push-AppveyorArtifact ./dist/Bitwarden-$env:package_version-x86_64.rpm
+      Push-AppveyorArtifact ./dist/Bitwarden-${packageVersion}-x86_64.AppImage
+      Push-AppveyorArtifact ./dist/bitwarden_${packageVersion}_amd64.snap
+      Push-AppveyorArtifact ./dist/Bitwarden-${packageVersion}-amd64.deb
+      Push-AppveyorArtifact ./dist/Bitwarden-${packageVersion}-x64.freebsd
+      Push-AppveyorArtifact ./dist/Bitwarden-${packageVersion}-x86_64.rpm
     }
     else {
       npm run dist:win:ci
-      Push-AppveyorArtifact .\dist\Bitwarden-Portable-$env:package_version.exe
-      Push-AppveyorArtifact .\dist\nsis-web\Bitwarden-Installer-$env:package_version.exe
-      Push-AppveyorArtifact .\dist\Bitwarden-$env:package_version-x64.appx
-      Push-AppveyorArtifact .\dist\Bitwarden-$env:package_version-ia32.appx
+      Push-AppveyorArtifact .\dist\Bitwarden-Portable-${packageVersion}.exe
+      Push-AppveyorArtifact .\dist\nsis-web\Bitwarden-Installer-${packageVersion}.exe
+      Push-AppveyorArtifact .\dist\Bitwarden-${packageVersion}-x64.appx
+      Push-AppveyorArtifact .\dist\Bitwarden-${packageVersion}-ia32.appx
     }
 
 after_build:
 - ps: |
-    if($env:prod_deploy) {
+    if($prodDeploy) {
       if($isLinux) {
         echo "Deploy Linux..."
       }
