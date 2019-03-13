@@ -39,7 +39,7 @@ before_build:
       echo "$SNAP_TOKEN" | snapcraft login --with -
     fi
 - ps: |
-    if($isWindows -and $env:CHOCO_API_KEY -ne $null -and $env:PROD_DEPLOY -eq "false") {
+    if($isWindows -and $env:CHOCO_API_KEY -ne $null -and $env:PROD_DEPLOY -eq "true") {
       choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
     }
 
