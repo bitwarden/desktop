@@ -11,7 +11,6 @@ stack: node 10
 init:
 - sh: sudo apt-get update
 - sh: sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
-- sh: sudo snap install snapcraft --classic
 - ps: |
     if($isWindows) {
       Install-Product node 10
@@ -38,6 +37,7 @@ before_build:
 - sh: |
     if [ "${SNAP_TOKEN}" != "" -a "${PROD_DEPLOY}" == "true" ]
     then
+      sudo snap install snapcraft --classic
       echo "$SNAP_TOKEN" | snapcraft login --with -
     fi
 - ps: |
