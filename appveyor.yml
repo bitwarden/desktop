@@ -69,7 +69,8 @@ for:
     only:
       - image: Visual Studio 2017
   cache:
-  - '%USERPROFILE%\.electron -> appveyor.yml'
+  - '%LOCALAPPDATA%\electron -> appveyor.yml'
+  - '%LOCALAPPDATA%\electron-builder -> appveyor.yml'
 
 -
   matrix:
