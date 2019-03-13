@@ -33,6 +33,8 @@ install:
 before_build:
 - node --version
 - npm --version
+# Get new $SNAP_TOKEN with:
+# $ snapcraft export-login --snaps bitwarden --acls package_push,package_release -
 - sh: |
     if [ "${SNAP_TOKEN}" != "" -a "${PROD_DEPLOY}" == "true" ]
     then
