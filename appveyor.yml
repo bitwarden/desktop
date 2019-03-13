@@ -32,7 +32,9 @@ install:
 - sh: |
     if [ "${SNAP_TOKEN}" != "" -a "$prodDeploy" == "false" ]
     then
+        echo "login to snap"
         echo "$SNAP_TOKEN" | snapcraft login --with -
+        snapcraft whoami
     fi
 
 before_build:
