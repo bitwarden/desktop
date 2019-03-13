@@ -11,6 +11,7 @@ stack: node 10
 init:
 - sh: sudo apt-get update
 - sh: sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
+- sh: sudo snap install snapcraft --classic
 - ps: |
     if($isWindows) {
       Install-Product node 10
@@ -28,6 +29,11 @@ install:
       choco install cloc --no-progress
       cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
     }
+- sh: |
+    if [ "${SNAP_TOKEN}" != "" -a "$prodDeploy" == "false" ]
+    then
+        echo "$SNAP_TOKEN" | snapcraft login --with -
+    fi
 
 before_build:
 - node --version
