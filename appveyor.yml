@@ -19,10 +19,10 @@ init:
 
 install:
 - ps: |
-    $PACKAGE_VERSION = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
-    $PROD_DEPLOY = "false"
+    $env:PACKAGE_VERSION = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
+    $env:PROD_DEPLOY = "false"
     if($env:APPVEYOR_REPO_TAG -eq "true" -and $env:APPVEYOR_RE_BUILD -eq "True") {
-      $PROD_DEPLOY = "true"
+      $env:PROD_DEPLOY = "true"
       echo "This is a production deployment."
     }
     if($isWindows) {
@@ -35,41 +35,41 @@ before_build:
 - npm --version
 - sh: |
     echo "sh PROD_DEPLOY ${PROD_DEPLOY}"
-    if [ "${SNAP_TOKEN}" != "" ]
+    if [ "${SNAP_TOKEN}" != "" -a "${PROD_DEPLOY}" == "true" ]
     then
       echo "$SNAP_TOKEN" | snapcraft login --with -
     fi
-- ps: echo "ps PROD_DEPLOY ${PROD_DEPLOY}"
+- ps: echo "ps PROD_DEPLOY ${env:PROD_DEPLOY}"
 
 build_script:
 - npm install
 - ps: |
     if($isLinux) {
       npm run dist:lin
-      Push-AppveyorArtifact ./dist/Bitwarden-${PACKAGE_VERSION}-x86_64.AppImage
-      Push-AppveyorArtifact ./dist/bitwarden_${PACKAGE_VERSION}_amd64.snap
-      Push-AppveyorArtifact ./dist/Bitwarden-${PACKAGE_VERSION}-amd64.deb
-      Push-AppveyorArtifact ./dist/Bitwarden-${PACKAGE_VERSION}-x64.freebsd
-      Push-AppveyorArtifact ./dist/Bitwarden-${PACKAGE_VERSION}-x86_64.rpm
+      Push-AppveyorArtifact ./dist/Bitwarden-${env:PACKAGE_VERSION}-x86_64.AppImage
+      Push-AppveyorArtifact ./dist/bitwarden_${env:PACKAGE_VERSION}_amd64.snap
+      Push-AppveyorArtifact ./dist/Bitwarden-${env:PACKAGE_VERSION}-amd64.deb
+      Push-AppveyorArtifact ./dist/Bitwarden-${env:PACKAGE_VERSION}-x64.freebsd
+      Push-AppveyorArtifact ./dist/Bitwarden-${env:PACKAGE_VERSION}-x86_64.rpm
     }
     else {
       npm run dist:win:ci
-      Push-AppveyorArtifact .\dist\Bitwarden-Portable-${PACKAGE_VERSION}.exe
-      Push-AppveyorArtifact .\dist\nsis-web\Bitwarden-Installer-${PACKAGE_VERSION}.exe
-      Push-AppveyorArtifact .\dist\Bitwarden-${PACKAGE_VERSION}-x64.appx
-      Push-AppveyorArtifact .\dist\Bitwarden-${PACKAGE_VERSION}-ia32.appx
+      Push-AppveyorArtifact .\dist\Bitwarden-Portable-${env:PACKAGE_VERSION}.exe
+      Push-AppveyorArtifact .\dist\nsis-web\Bitwarden-Installer-${env:PACKAGE_VERSION}.exe
+      Push-AppveyorArtifact .\dist\Bitwarden-${env:PACKAGE_VERSION}-x64.appx
+      Push-AppveyorArtifact .\dist\Bitwarden-${env:PACKAGE_VERSION}-ia32.appx
     }
 
 after_build:
 - ps: |
-    if($PROD_DEPLOY -eq "true") {
+    if($env:PROD_DEPLOY -eq "true") {
       if($isLinux) {
         echo "Deploy Linux..."
-        ./scripts/snap-update.ps1 -version $PACKAGE_VERSION
+        ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
       }
       else {
         echo "Deploy Windows..."
-        ./scripts/choco-update.ps1 -version $PACKAGE_VERSION
+        ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
       }
     }
 - sh: |
