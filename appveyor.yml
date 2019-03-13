@@ -29,16 +29,17 @@ install:
       choco install cloc --no-progress
       cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
     }
-- sh: |
-    echo "prod deploy: ${PROD_DEPLOY}"
-    if [ "${SNAP_TOKEN}" != "" ]
-    then
-      echo "$SNAP_TOKEN" | snapcraft login --with -
-    fi
 
 before_build:
 - node --version
 - npm --version
+- sh: |
+    echo "sh PROD_DEPLOY ${PROD_DEPLOY}"
+    if [ "${SNAP_TOKEN}" != "" ]
+    then
+      echo "$SNAP_TOKEN" | snapcraft login --with -
+    fi
+- ps: echo "ps PROD_DEPLOY ${PROD_DEPLOY}"
 
 build_script:
 - npm install
@@ -64,9 +65,11 @@ after_build:
     if($PROD_DEPLOY -eq "true") {
       if($isLinux) {
         echo "Deploy Linux..."
+        ./scripts/snap-update.ps1 -version $PACKAGE_VERSION
       }
       else {
         echo "Deploy Windows..."
+        ./scripts/choco-update.ps1 -version $PACKAGE_VERSION
       }
     }
 - sh: |
