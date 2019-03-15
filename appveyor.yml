@@ -9,6 +9,11 @@ branches:
 stack: node 10
 
 init:
+- ps: |
+    if($isWindows -and $env:DEBUG_RDP -eq "true") {
+      iex ((new-object net.webclient).DownloadString(`
+        'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+    }
 - sh: sudo apt-get update
 - sh: sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 - ps: |
@@ -81,6 +86,14 @@ after_build:
     then
       snapcraft logout
     fi
+
+on_finish:
+  - ps: |
+      if($isWindows -and $env:DEBUG_RDP -eq "true") {
+        $blockRdp = $true
+        iex ((new-object net.webclient).DownloadString(`
+          'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+      }
 
 for:
 - 
