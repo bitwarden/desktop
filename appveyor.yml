@@ -78,7 +78,7 @@ after_build:
       }
       else {
         echo "Deploy Windows..."
-        ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+        .\scripts\choco-update.ps1 -version $env:PACKAGE_VERSION
       }
     }
 - sh: |
