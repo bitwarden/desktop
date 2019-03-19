@@ -7,7 +7,9 @@
                         {{'share' | i18n}}
                     </div>
                     <div class="box-content" *ngIf="!organizations || !organizations.length">
-                        {{'noOrganizationsList' | i18n}}
+                        <div class="box-content-row">
+                            {{'noOrganizationsList' | i18n}}
+                        </div>
                     </div>
                     <div class="box-content" *ngIf="organizations && organizations.length">
                         <div class="box-content-row" appBoxRow>

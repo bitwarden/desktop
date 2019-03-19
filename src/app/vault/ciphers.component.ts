@@ -11,5 +11,6 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
 export class CiphersComponent extends BaseCiphersComponent {
     constructor(searchService: SearchService) {
         super(searchService);
+        this.pageSize = 250;
     }
 }
