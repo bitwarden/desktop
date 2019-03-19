@@ -103,7 +103,7 @@ const folderService = new FolderService(cryptoService, userService, apiService, 
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 searchService = new SearchService(cipherService, platformUtilsService);
 const lockService = new LockService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService, messagingService, searchService, null);
+    cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, null);
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
