@@ -1,4 +1,4 @@
-import { app } from 'electron';
+import { app, globalShortcut} from 'electron';
 import * as path from 'path';
 
 import { I18nService } from './services/i18n.service';
@@ -17,6 +17,7 @@ import { ElectronStorageService } from 'jslib/electron/services/electronStorage.
 import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
+import { HotWindowMain } from 'jslib/electron/hotWindow.main';
 
 export class Main {
     logService: ElectronLogService;
@@ -26,6 +27,7 @@ export class Main {
     keytarStorageListener: KeytarStorageListener;
 
     windowMain: WindowMain;
+    hotWindowMain: HotWindowMain;
     messagingMain: MessagingMain;
     updaterMain: UpdaterMain;
     menuMain: MenuMain;
@@ -65,6 +67,7 @@ export class Main {
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
         this.windowMain = new WindowMain(this.storageService);
+        this.hotWindowMain= new HotWindowMain(this.storageService);
         this.messagingMain = new MessagingMain(this);
         this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
             this.menuMain.updateMenuItem.enabled = false;
@@ -87,6 +90,8 @@ export class Main {
     bootstrap() {
         this.keytarStorageListener.init();
         this.windowMain.init().then(async () => {
+            this.hotWindowMain.init()
+
             const locale = await this.storageService.get<string>(ConstantsService.localeKey);
             await this.i18nService.init(locale != null ? locale : app.getLocale());
             this.messagingMain.init();

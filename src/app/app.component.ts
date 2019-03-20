@@ -15,8 +15,10 @@ import {
     OnInit,
     SecurityContext,
     Type,
+    Input,
     ViewChild,
     ViewContainerRef,
+    ElementRef,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -80,7 +82,8 @@ export class AppComponent implements OnInit {
     private idleTimer: number = null;
     private isIdle = false;
 
-    constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
+    constructor(
+        private elementRef: ElementRef, private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
         private broadcasterService: BroadcasterService, private userService: UserService,
         private tokenService: TokenService, private folderService: FolderService,
         private settingsService: SettingsService, private syncService: SyncService,
@@ -107,6 +110,8 @@ export class AppComponent implements OnInit {
             window.onscroll = () => this.recordActivity();
             window.onkeypress = () => this.recordActivity();
         });
+
+        this.platformUtilsService.setWindowType(this.elementRef.nativeElement.getAttribute('context'))
 
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(async () => {

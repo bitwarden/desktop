@@ -63,6 +63,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild('collections', { read: ViewContainerRef }) collectionsModalRef: ViewContainerRef;
 
     action: string;
+    windowType: string = 'normal';
     cipherId: string = null;
     favorites: boolean = false;
     type: CipherType = null;
@@ -82,6 +83,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private platformUtilsService: PlatformUtilsService) { }
 
     async ngOnInit() {
+        this.windowType = this.platformUtilsService.getWindowType()
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;

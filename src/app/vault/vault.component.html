@@ -1,5 +1,5 @@
 <div id="vault">
-    <app-vault-groupings id="groupings" (onAllClicked)="clearGroupingFilters()" (onFavoritesClicked)="filterFavorites()"
+    <app-vault-groupings id="groupings" *ngIf="windowType !== 'hotwindow'" (onAllClicked)="clearGroupingFilters()" (onFavoritesClicked)="filterFavorites()"
         (onCipherTypeClicked)="filterCipherType($event)" (onFolderClicked)="filterFolder($event.id)"
         (onAddFolder)="addFolder()" (onEditFolder)="editFolder($event.id)"
         (onCollectionClicked)="filterCollection($event.id)">
