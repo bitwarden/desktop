@@ -46,7 +46,7 @@
   },
   "build": {
     "appId": "com.bitwarden.desktop",
-    "copyright": "Copyright © 2015-2018 8bit Solutions LLC",
+    "copyright": "Copyright © 2015-2019 8bit Solutions LLC",
     "directories": {
       "buildResources": "resources",
       "output": "dist",
