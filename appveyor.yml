@@ -101,13 +101,13 @@ for:
     only:
       - image: Visual Studio 2017
   cache:
-  - '%LOCALAPPDATA%\electron -> appveyor.yml'
-  - '%LOCALAPPDATA%\electron-builder -> appveyor.yml'
+  - '%LOCALAPPDATA%\electron'
+  - '%LOCALAPPDATA%\electron-builder'
 
 -
   matrix:
     only:
       - image: Ubuntu1804
   cache:
-  - '/home/appveyor/.cache/electron -> appveyor.yml'
-  - '/home/appveyor/.cache/electron-builder -> appveyor.yml'
+  - '/home/appveyor/.cache/electron'
+  - '/home/appveyor/.cache/electron-builder'
