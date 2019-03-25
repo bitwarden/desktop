@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Välittömästi"
   },
+  "tenSeconds": {
+    "message": "10 seconds"
+  },
+  "twentySeconds": {
+    "message": "20 seconds"
+  },
+  "thirtySeconds": {
+    "message": "30 seconds"
+  },
   "oneMinute": {
     "message": "1 minuutti"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 minuuttia"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Turvallisuus"
   },
+  "clearClipboard": {
+    "message": "Clear Clipboard",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Älä näytä sivustokuvakkeita"
   },
@@ -822,10 +842,10 @@
     "message": "Näytä aina kuvake ilmoitusalueella."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Käynnistä ilmoitusalueelle"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Kun sovellus käynnistetään, näytä vain kuvake ilmoitusalueella."
   },
   "language": {
     "message": "Kieli"
@@ -1175,19 +1195,19 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Avaa PIN-koodilla"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Aseta PIN-koodi Bitwardenin avaamista varten. PIN-asetukset nollautuvat, jos kirjaudut täysin ulos sovelluksesta."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN-koodi vaaditaan."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Virheellinen PIN-koodi."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"

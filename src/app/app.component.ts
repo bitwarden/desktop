@@ -44,6 +44,7 @@ import { SearchService } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+import { SystemService } from 'jslib/abstractions/system.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
@@ -91,7 +92,7 @@ export class AppComponent implements OnInit {
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
         private messagingService: MessagingService, private collectionService: CollectionService,
         private searchService: SearchService, private notificationsService: NotificationsService,
-        private platformUtilsService: PlatformUtilsService) { }
+        private platformUtilsService: PlatformUtilsService, private systemService: SystemService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -111,10 +112,16 @@ export class AppComponent implements OnInit {
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'loggedIn':
-                    case 'loggedOut':
                     case 'unlocked':
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
+                        this.systemService.cancelProcessReload();
+                        break;
+                    case 'loggedOut':
+                        this.notificationsService.updateConnection();
+                        this.updateAppMenu();
+                        this.systemService.startProcessReload();
+                        await this.systemService.clearPendingClipboard();
                         break;
                     case 'logout':
                         this.logOut(!!message.expired);
@@ -123,9 +130,14 @@ export class AppComponent implements OnInit {
                         await this.lockService.lock(true);
                         break;
                     case 'locked':
-                        this.router.navigate(['lock'], { queryParams: { refresh: true } });
+                        this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
+                        this.systemService.startProcessReload();
+                        await this.systemService.clearPendingClipboard();
+                        break;
+                    case 'reloadProcess':
+                        window.location.reload(true);
                         break;
                     case 'syncStarted':
                         break;
@@ -161,6 +173,9 @@ export class AppComponent implements OnInit {
                             action: message.action,
                             properties: { label: message.label },
                         });
+                        break;
+                    case 'copiedToClipboard':
+                        this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
                         break;
                     default:
                 }

@@ -761,8 +761,20 @@
   "immediately": {
     "message": "立即"
   },
+  "tenSeconds": {
+    "message": "10 秒鐘"
+  },
+  "twentySeconds": {
+    "message": "20 秒鐘"
+  },
+  "thirtySeconds": {
+    "message": "30 秒鐘"
+  },
   "oneMinute": {
     "message": "1 分鐘"
+  },
+  "twoMinutes": {
+    "message": "2 分鐘"
   },
   "fiveMinutes": {
     "message": "5 分鐘"
@@ -796,6 +808,14 @@
   },
   "security": {
     "message": "安全"
+  },
+  "clearClipboard": {
+    "message": "清除剪貼簿",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatically clear copied values from your clipboard.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
     "message": "停用網站圖示顯示功能"
@@ -1171,23 +1191,23 @@
     "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (複雜密碼) 來正確保護您的 bitwarden 帳戶。仍要使用此密碼嗎？"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN 碼",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "用 PIN 碼解鎖"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "需要 PIN 碼。"
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "無效的 PIN 碼。"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "密碼庫已鎖定。驗證 PIN 碼以繼續。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"

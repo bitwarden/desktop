@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Onmiddelijk"
   },
+  "tenSeconds": {
+    "message": "10 seconden"
+  },
+  "twentySeconds": {
+    "message": "20 seconden"
+  },
+  "thirtySeconds": {
+    "message": "30 seconden"
+  },
   "oneMinute": {
     "message": "1 minuut"
+  },
+  "twoMinutes": {
+    "message": "2 minuten"
   },
   "fiveMinutes": {
     "message": "5 minuten"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Beveiliging"
   },
+  "clearClipboard": {
+    "message": "Klembord wissen",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatisch gekopieerde waarden van uw klembord wissen.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Websitepictogrammen uitschakelen"
   },
@@ -822,10 +842,10 @@
     "message": "Altijd een pictogram in het systeemvak weergeven."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Opstarten als pictogram in het systeemvak"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Wanneer de toepassing voor het eerst wordt gestart, alleen een pictogram in het systeemvak weergeven."
   },
   "language": {
     "message": "Taal"
@@ -1175,21 +1195,21 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Ontgrendelen met PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Uw PIN-code voor het ontgrendelen van Bitwarden instellen. Als u zich ooit volledig afmeldt bij de toepassing zullen uw PIN-instellingen opnieuw worden ingesteld."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN-code is vereist."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Ongeldige PIN-code."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Uw kluis is vergrendeld. Controleer uw PIN-code om door te gaan."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Vergrendelen met hoofdwachtwoord bij herstart"
   }
 }

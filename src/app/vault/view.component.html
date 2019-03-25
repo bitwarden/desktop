@@ -18,7 +18,7 @@
                         </div>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'copyUsername' | i18n}}"
-                               (click)="copy(cipher.login.username, 'username', 'Username')">
+                                (click)="copy(cipher.login.username, 'username', 'Username')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -29,28 +29,28 @@
                             <div [hidden]="showPassword" class="monospaced password-wrapper" appFlexCopy>
                                 {{cipher.login.maskedPassword}}</div>
                             <div [hidden]="!showPassword" class="monospaced password-wrapper" appFlexCopy
-                                 [innerHTML]="cipher.login.password | colorPassword"></div>
+                                [innerHTML]="cipher.login.password | colorPassword"></div>
                         </div>
                         <div class="action-buttons">
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
-                                    title="{{'checkPassword' | i18n}}" (click)="checkPassword()"
-                                    [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
+                                title="{{'checkPassword' | i18n}}" (click)="checkPassword()"
+                                [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
                                 <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"></i>
                                 <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"></i>
                             </button>
                             <a class="row-btn" href="#" appStopClick title="{{'toggleVisibility' | i18n}}"
-                               (click)="togglePassword()">
+                                (click)="togglePassword()">
                                 <i class="fa fa-lg"
-                                   [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                                    [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick title="{{'copyPassword' | i18n}}"
-                               (click)="copy(cipher.login.password, 'password', 'Password')">
+                                (click)="copy(cipher.login.password, 'password', 'Password')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
                     </div>
                     <div class="box-content-row box-content-row-flex totp" [ngClass]="{'low': totpLow}"
-                         *ngIf="cipher.login.totp && totpCode">
+                        *ngIf="cipher.login.totp && totpCode">
                         <div class="row-main">
                             <span class="row-label">{{'verificationCodeTotp' | i18n}}</span>
                             <span class="totp-code">{{totpCodeFormatted}}</span>
@@ -60,14 +60,14 @@
                             <svg>
                                 <g>
                                     <circle class="totp-circle inner" r="12.6" cy="16" cx="16"
-                                            [ngStyle]="{'stroke-dashoffset.px': totpDash}"></circle>
+                                        [ngStyle]="{'stroke-dashoffset.px': totpDash}"></circle>
                                     <circle class="totp-circle outer" r="14" cy="16" cx="16"></circle>
                                 </g>
                             </svg>
                         </span>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                               (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')">
+                                (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'copyNumber' | i18n}}"
-                               (click)="copy(cipher.card.number, 'number', 'Number')">
+                                (click)="copy(cipher.card.number, 'number', 'Number')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -107,12 +107,12 @@
                         </div>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick title="{{'toggleVisibility' | i18n}}"
-                               (click)="toggleCardCode()">
+                                (click)="toggleCardCode()">
                                 <i class="fa fa-lg"
-                                   [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
+                                    [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick title="{{'copySecurityCode' | i18n}}"
-                               (click)="copy(cipher.card.code, 'securityCode', 'Security Code')">
+                                (click)="copy(cipher.card.code, 'securityCode', 'Security Code')">
                                 <i class="fa fa-lg fa-clipboard"></i>
                             </a>
                         </div>
@@ -153,7 +153,7 @@
                         {{cipher.identity.phone}}
                     </div>
                     <div class="box-content-row"
-                         *ngIf="cipher.identity.address1 || cipher.identity.city || cipher.identity.country">
+                        *ngIf="cipher.identity.address1 || cipher.identity.city || cipher.identity.country">
                         <span class="row-label">{{'address' | i18n}}</span>
                         <div *ngIf="cipher.identity.address1">{{cipher.identity.address1}}</div>
                         <div *ngIf="cipher.identity.address2">{{cipher.identity.address2}}</div>
@@ -177,12 +177,12 @@
                         <span title="{{u.uri}}">{{u.hostnameOrUri}}</span>
                     </div>
                     <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick title="{{'launch' | i18n}}"
-                           *ngIf="u.canLaunch" (click)="launch(u)">
+                        <a class="row-btn" href="#" appStopClick title="{{'launch' | i18n}}" *ngIf="u.canLaunch"
+                            (click)="launch(u)">
                             <i class="fa fa-lg fa-share-square-o"></i>
                         </a>
                         <a class="row-btn" href="#" appStopClick title="{{'copyUri' | i18n}}"
-                           (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')">
+                            (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')">
                             <i class="fa fa-lg fa-clipboard"></i>
                         </a>
                     </div>
@@ -219,13 +219,13 @@
                     </div>
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick title="{{'toggleVisibility' | i18n}}"
-                           *ngIf="field.type === fieldType.Hidden" (click)="toggleFieldValue(field)">
+                            *ngIf="field.type === fieldType.Hidden" (click)="toggleFieldValue(field)">
                             <i class="fa fa-lg"
-                               [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
+                                [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                         </a>
                         <a class="row-btn" href="#" appStopClick title="{{'copyValue' | i18n}}"
-                           *ngIf="field.value && field.type !== fieldType.Boolean"
-                           (click)="copy(field.value, 'value', 'Field')">
+                            *ngIf="field.value && field.type !== fieldType.Boolean"
+                            (click)="copy(field.value, 'value', 'Field')">
                             <i class="fa fa-lg fa-clipboard"></i>
                         </a>
                     </div>
@@ -238,8 +238,8 @@
             </div>
             <div class="box-content">
                 <a class="box-content-row box-content-row-flex text-default"
-                   *ngFor="let attachment of cipher.attachments"
-                   href="#" appStopClick appBlurCLick (click)="downloadAttachment(attachment)">
+                    *ngFor="let attachment of cipher.attachments" href="#" appStopClick appBlurCLick
+                    (click)="downloadAttachment(attachment)">
                     <span class="row-main">{{attachment.fileName}}</span>
                     <small class="row-sub-label">{{attachment.sizeName}}</small>
                     <i class="fa fa-download fa-fw row-sub-icon" *ngIf="!attachment.downloading"></i>
@@ -258,7 +258,7 @@
                     {{cipher.passwordRevisionDisplayDate | date:'medium'}}
                 </div>
                 <div *ngIf="cipher.hasPasswordHistory">
-                    <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b> 
+                    <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b>
                     <a href="#" (click)="viewHistory()" appStopClick title="{{'passwordHistory' | i18n}}">
                         {{cipher.passwordHistory.length}}
                     </a>

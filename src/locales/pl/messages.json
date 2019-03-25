@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Natychmiast"
   },
+  "tenSeconds": {
+    "message": "10 sekund"
+  },
+  "twentySeconds": {
+    "message": "20 sekund"
+  },
+  "thirtySeconds": {
+    "message": "30 sekund"
+  },
   "oneMinute": {
     "message": "po 1 minucie"
+  },
+  "twoMinutes": {
+    "message": "2 minuty"
   },
   "fiveMinutes": {
     "message": "po 5 minutach"
@@ -797,11 +809,19 @@
   "security": {
     "message": "Zabezpieczenia"
   },
+  "clearClipboard": {
+    "message": "Wyczyść schowek",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Automatycznie czyść ze schowka skopiowane wartości.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Wyłącz ikony stron"
   },
   "disableFaviconDesc": {
-    "message": "Możesz wyświetlać rozpoznawalną ikonę serwisu obok danych logowania w Twoim sejfie."
+    "message": "Wyświetlaj rozpoznawalną ikonę serwisu obok danych logowania w Twoim sejfie."
   },
   "enableMinToTray": {
     "message": "Minimalizuj do zasobnika systemowego"
@@ -822,10 +842,10 @@
     "message": "Zawsze pokazuj ikonę w zasobniku systemowym."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Uruchamiaj zminimalizowany do zasobnika"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Przy pierwszym uruchomieniu aplikacji, pokaż tylko ikonę w zasobniku systemowym."
   },
   "language": {
     "message": "Język"
@@ -1171,25 +1191,25 @@
     "message": "Wybrane przez Ciebie hasło główne jest słabe. Powinieneś użyć silniejszego hasła (lub frazy), aby właściwie chronić swoje konto Bitwarden. Czy na pewno chcesz użyć tego hasła głównego?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "Kod PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Odblokuj kodem PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Ustaw kod PIN do odblokowania sejfu. Ustawienia odblokowania kodem PIN zostaną zresetowane po pełnym wylogowaniu."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Wymagany jest kod PIN."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Nieprawidłowy kod PIN."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Twój sejf jest zablokowany. Wprowadź swój kod PIN, aby kontynuować."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Zablokuj hasłem głównym po restarcie"
   }
 }

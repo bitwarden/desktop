@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Straks"
   },
+  "tenSeconds": {
+    "message": "10 sekunder"
+  },
+  "twentySeconds": {
+    "message": "20 sekunder"
+  },
+  "thirtySeconds": {
+    "message": "30 sekunder"
+  },
   "oneMinute": {
     "message": "1 minut"
+  },
+  "twoMinutes": {
+    "message": "2 minutter"
   },
   "fiveMinutes": {
     "message": "5 minutter"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Sikkerhed"
   },
+  "clearClipboard": {
+    "message": "Ryd udklipsholder",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Fjern automatisk kopierede data fra din udklipsholder.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Slå webikoner fra"
   },
@@ -822,10 +842,10 @@
     "message": "Vis altid et ikon i meddelelsesområdet."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Start som ikon i meddelelsesområdet"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Når applikationen startes første gang, skal der kun vises et ikon i meddelelsesområdet."
   },
   "language": {
     "message": "Sprog"
@@ -1171,25 +1191,25 @@
     "message": "Hovedadgangskoden du har valgt er svag. Du skal bruge en stærk hovedadgangskode (eller en adgangssætning) for at beskytte din Bitwarden-konto korrekt. Er du sikker på, at du vil bruge denne hovedadgangskode?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "Pinkode",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Lås op med pinkode"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Indstil din pinkode til at låse Bitwarden op. Dine pin-indstillinger nulstilles, hvis du nogensinde logger helt ud af programmet."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Pinkode er påkrævet."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Ugyldig pinkode."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Din boks er låst. Bekræft din pinkode for at fortsætte."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Lås med hovedadgangskode ved genstart"
   }
 }

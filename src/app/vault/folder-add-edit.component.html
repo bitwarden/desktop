@@ -10,7 +10,7 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="name">{{'name' | i18n}}</label>
                             <input id="name" type="text" name="Name" [(ngModel)]="folder.name"
-                                   [appAutofocus]="!editMode">
+                                [appAutofocus]="!editMode">
                         </div>
                     </div>
                 </div>
@@ -23,8 +23,8 @@
                 <button type="button" data-dismiss="modal">{{'cancel' | i18n}}</button>
                 <div class="right">
                     <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
-                            title="{{'delete' | i18n}}" *ngIf="editMode" [disabled]="deleteBtn.loading"
-                            [appApiAction]="deletePromise">
+                        title="{{'delete' | i18n}}" *ngIf="editMode" [disabled]="deleteBtn.loading"
+                        [appApiAction]="deletePromise">
                         <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                         <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
                     </button>

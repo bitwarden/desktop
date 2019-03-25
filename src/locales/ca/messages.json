@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Immediatament"
   },
+  "tenSeconds": {
+    "message": "10 segons"
+  },
+  "twentySeconds": {
+    "message": "20 segons"
+  },
+  "thirtySeconds": {
+    "message": "30 segons"
+  },
   "oneMinute": {
     "message": "1 minut"
+  },
+  "twoMinutes": {
+    "message": "2 minuts"
   },
   "fiveMinutes": {
     "message": "5 Minuts"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Seguretat"
   },
+  "clearClipboard": {
+    "message": "Neteja el porta-retalls",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Esborra automàticament els valors copiats del porta-retalls.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Inhabilita icones del lloc web"
   },
@@ -822,10 +842,10 @@
     "message": "Mostra sempre una icona a la safata de sistema."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Inicia a la icona de safata"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Quan l'aplicació s’inicia, mostra només una icona a la safata de sistema."
   },
   "language": {
     "message": "Idioma"
@@ -1175,21 +1195,21 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Desbloqueja amb codi PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Configureu el vostre codi PIN per desbloquejar Bitwarden. La configuració del PIN es restablirà si tanqueu la sessió definitivament."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Es necessita el codi PIN."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "El codi PIN no és vàlid."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "La caixa forta està bloquejada. Verifiqueu El codi PIN per continuar."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Bloqueja amb la contrasenya mestra en reiniciar"
   }
 }

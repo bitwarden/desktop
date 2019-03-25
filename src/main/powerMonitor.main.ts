@@ -28,6 +28,16 @@ export class PowerMonitorMain {
             });
         }
 
+        if (process.platform !== 'linux') {
+            // System locked
+            powerMonitor.on('lock-screen', async () => {
+                const lockOption = await this.getLockOption();
+                if (lockOption === -2) {
+                    this.main.messagingService.send('lockVault');
+                }
+            });
+        }
+
         // System idle
         global.setInterval(async () => {
             const idleSeconds: number = desktopIdle.getIdleTime();
@@ -45,8 +55,6 @@ export class PowerMonitorMain {
 
             this.idle = idle;
         }, IdleCheckInterval);
-
-        // TODO: System locked
     }
 
     private getLockOption(): Promise<number> {

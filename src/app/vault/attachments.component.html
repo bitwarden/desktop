@@ -14,8 +14,8 @@
                             <small class="row-sub-label">{{a.sizeName}}</small>
                             <div class="action-buttons no-pad">
                                 <button class="row-btn btn" type="button" appStopClick appBlurClick
-                                        title="{{'delete' | i18n}}" (click)="delete(a)" #deleteBtn
-                                        [appApiAction]="deletePromises[a.id]" [disabled]="deleteBtn.loading">
+                                    title="{{'delete' | i18n}}" (click)="delete(a)" #deleteBtn
+                                    [appApiAction]="deletePromises[a.id]" [disabled]="deleteBtn.loading">
                                     <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                                     <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
                                 </button>

@@ -761,8 +761,20 @@
   "immediately": {
     "message": "立即"
   },
+  "tenSeconds": {
+    "message": "10 秒"
+  },
+  "twentySeconds": {
+    "message": "20 秒"
+  },
+  "thirtySeconds": {
+    "message": "30 秒"
+  },
   "oneMinute": {
     "message": "1 分钟"
+  },
+  "twoMinutes": {
+    "message": "2 分钟"
   },
   "fiveMinutes": {
     "message": "5 分钟"
@@ -797,6 +809,14 @@
   "security": {
     "message": "安全"
   },
+  "clearClipboard": {
+    "message": "清除剪贴板",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "自动清除复制到剪贴板的值。",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "禁用网站图标"
   },
@@ -822,10 +842,10 @@
     "message": "始终在系统托盘中显示一个图标。"
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "启动到托盘"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "应用程序首次启动时，启动到系统托盘。"
   },
   "language": {
     "message": "语言"
@@ -1175,21 +1195,21 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "使用 PIN 解锁"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "设定您用来解锁 Bitwarden 的 PIN 码。您的 PIN 设置将在您完全退出本应用程序时被重置。"
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "需要 PIN 码。"
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "无效 PIN 码。"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "您的密码库已锁定。请输入您的 PIN 码以继续。"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "重启后改用主密码锁定"
   }
 }

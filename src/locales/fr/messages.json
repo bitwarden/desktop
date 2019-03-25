@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Immédiatement"
   },
+  "tenSeconds": {
+    "message": "10 secondes"
+  },
+  "twentySeconds": {
+    "message": "20 secondes"
+  },
+  "thirtySeconds": {
+    "message": "30 secondes"
+  },
   "oneMinute": {
     "message": "1 minute"
+  },
+  "twoMinutes": {
+    "message": "2 minutes"
   },
   "fiveMinutes": {
     "message": "5 minutes"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Sécurité"
   },
+  "clearClipboard": {
+    "message": "Effacer le presse-papiers",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Effacer automatiquement de votre presse-papiers les valeurs copiées.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Désactiver les icônes des sites web"
   },
@@ -822,10 +842,10 @@
     "message": "Toujours afficher une icône dans la zone de notification."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Démarrer dans la zone de notifications"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la zone de notifications."
   },
   "language": {
     "message": "Langue"
@@ -1171,25 +1191,25 @@
     "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "Code PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Déverrouiller avec un code PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Définissez votre code PIN pour déverrouiller Bitwarden. Les paramètres relatifs à votre code PIN seront réinitialisés si vous vous déconnectez complètement de l'application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Le code PIN est requis."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Code PIN invalide."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Votre coffre est verrouillé. Vérifiez votre code PIN pour continuer."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
   }
 }

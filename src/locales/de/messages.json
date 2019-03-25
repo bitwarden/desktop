@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Sofort"
   },
+  "tenSeconds": {
+    "message": "10 Sekunden"
+  },
+  "twentySeconds": {
+    "message": "20 Sekunden"
+  },
+  "thirtySeconds": {
+    "message": "30 Sekunden"
+  },
   "oneMinute": {
     "message": "1 Minute"
+  },
+  "twoMinutes": {
+    "message": "2 Minuten"
   },
   "fiveMinutes": {
     "message": "5 Minuten"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Sicherheit"
   },
+  "clearClipboard": {
+    "message": "Zwischenablage leeren",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Kopierten Inhalt automatisch aus der Zwischenablage löschen.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Webseiten Icons deaktivieren"
   },
@@ -822,10 +842,10 @@
     "message": "Dauerhaft ein Symbol in der Taskleiste anzeigen."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Minimiert in Taskleiste starten"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Beim ersten Start der Anwenung nur als Symbol im System Tray anzeigen."
   },
   "language": {
     "message": "Sprache"
@@ -1175,21 +1195,21 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Mit PIN-Code entsperren"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Geben Sie Ihren PIN-Code für das Entsperren von Bitwarden ein. Ihre PIN-Einstellungen werden zurückgesetzt, wenn Sie sich vollständig von der Anwendung abmelden."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN-Code ist erforderlich."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Ungültiger PIN-Code."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Ihr Tresor ist gesperrt. Geben sie ihren PIN Code ein um fortzufahren."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Beim Neustart mit Master-Passwort sperren"
   }
 }

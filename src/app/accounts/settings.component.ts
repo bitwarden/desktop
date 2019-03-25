@@ -42,6 +42,8 @@ export class SettingsComponent implements OnInit {
     localeOptions: any[];
     theme: string;
     themeOptions: any[];
+    clearClipboard: number;
+    clearClipboardOptions: any[];
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -58,10 +60,16 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('fourHours'), value: 240 },
             { name: i18nService.t('onIdle'), value: -4 },
             { name: i18nService.t('onSleep'), value: -3 },
-            // { name: i18nService.t('onLocked'), value: -2 },
+        ];
+
+        if (this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop) {
+            this.lockOptions.push({ name: i18nService.t('onLocked'), value: -2 });
+        }
+
+        this.lockOptions = this.lockOptions.concat([
             { name: i18nService.t('onRestart'), value: -1 },
             { name: i18nService.t('never'), value: null },
-        ];
+        ]);
 
         const localeOptions: any[] = [];
         i18nService.supportedTranslationLocales.forEach((locale) => {
@@ -77,6 +85,16 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('dark'), value: 'dark' },
             { name: 'Nord', value: 'nord' },
         ];
+
+        this.clearClipboardOptions = [
+            { name: i18nService.t('never'), value: null },
+            { name: i18nService.t('tenSeconds'), value: 10 },
+            { name: i18nService.t('twentySeconds'), value: 20 },
+            { name: i18nService.t('thirtySeconds'), value: 30 },
+            { name: i18nService.t('oneMinute'), value: 60 },
+            { name: i18nService.t('twoMinutes'), value: 120 },
+            { name: i18nService.t('fiveMinutes'), value: 300 },
+        ];
     }
 
     async ngOnInit() {
@@ -91,6 +109,7 @@ export class SettingsComponent implements OnInit {
         this.startToTray = await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
+        this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
     }
 
     async saveLockOption() {
@@ -107,7 +126,8 @@ export class SettingsComponent implements OnInit {
             checkboxText.appendChild(restartText);
             label.innerHTML = '<input type="checkbox" id="master-pass-restart" checked>';
             label.appendChild(checkboxText);
-            div.innerHTML = '<input type="text" class="swal-content__input" id="pin-val">';
+            div.innerHTML = '<input type="text" class="swal-content__input" id="pin-val" autocomplete="off" ' +
+                'autocapitalize="none" autocorrect="none" spellcheck="false" inputmode="verbatim">';
             (div.querySelector('#pin-val') as HTMLInputElement).placeholder = this.i18nService.t('pin');
             div.appendChild(label);
 
@@ -182,6 +202,13 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ConstantsService.themeKey, this.theme);
         this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
         window.setTimeout(() => window.location.reload(), 200);
+    }
+
+    async saveClearClipboard() {
+        await this.storageService.save(ConstantsService.clearClipboardKey, this.clearClipboard);
+        this.analytics.eventTrack.next({
+            action: 'Set Clear Clipboard ' + (this.clearClipboard == null ? 'Disabled' : this.clearClipboard),
+        });
     }
 
     private callAnalytics(name: string, enabled: boolean) {

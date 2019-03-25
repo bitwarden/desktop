@@ -12,6 +12,7 @@ import { ElectronLogService } from 'jslib/electron/services/electronLog.service'
 import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib/electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib/electron/services/electronRendererSecureStorage.service';
+import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { isDev } from 'jslib/electron/utils';
 
 import { I18nService } from '../services/i18n.service';
@@ -35,13 +36,13 @@ import { EnvironmentService } from 'jslib/services/environment.service';
 import { ExportService } from 'jslib/services/export.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { LockService } from 'jslib/services/lock.service';
-import { LowdbStorageService } from 'jslib/services/lowdbStorage.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
 import { SearchService } from 'jslib/services/search.service';
 import { SettingsService } from 'jslib/services/settings.service';
 import { StateService } from 'jslib/services/state.service';
 import { SyncService } from 'jslib/services/sync.service';
+import { SystemService } from 'jslib/services/system.service';
 import { TokenService } from 'jslib/services/token.service';
 import { TotpService } from 'jslib/services/totp.service';
 import { UserService } from 'jslib/services/user.service';
@@ -72,6 +73,7 @@ import { SettingsService as SettingsServiceAbstraction } from 'jslib/abstraction
 import { StateService as StateServiceAbstraction } from 'jslib/abstractions/state.service';
 import { StorageService as StorageServiceAbstraction } from 'jslib/abstractions/storage.service';
 import { SyncService as SyncServiceAbstraction } from 'jslib/abstractions/sync.service';
+import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/system.service';
 import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/token.service';
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
@@ -82,7 +84,7 @@ const stateService = new StateService();
 const broadcasterService = new BroadcasterService();
 const messagingService = new ElectronRendererMessagingService(broadcasterService);
 const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messagingService, true);
-const storageService: StorageServiceAbstraction = new LowdbStorageService(null, remote.app.getPath('userData'));
+const storageService: StorageServiceAbstraction = new ElectronStorageService(remote.app.getPath('userData'));
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
@@ -101,7 +103,7 @@ const folderService = new FolderService(cryptoService, userService, apiService, 
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 searchService = new SearchService(cipherService, platformUtilsService);
 const lockService = new LockService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService, messagingService, searchService, null);
+    cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, null);
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
@@ -115,6 +117,7 @@ const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
     apiService, lockService, async () => messagingService.send('logout', { expired: true }));
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
+const systemService = new SystemService(storageService, lockService, messagingService, platformUtilsService, null);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);
@@ -191,6 +194,7 @@ export function initFactory(): Function {
         { provide: ExportServiceAbstraction, useValue: exportService },
         { provide: SearchServiceAbstraction, useValue: searchService },
         { provide: NotificationsServiceAbstraction, useValue: notificationsService },
+        { provide: SystemServiceAbstraction, useValue: systemService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

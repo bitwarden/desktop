@@ -8,7 +8,7 @@
                     </div>
                     <div class="box-content">
                         <a href="#" appStopClick *ngFor="let p of providers" class="box-content-row"
-                           (click)="choose(p)">
+                            (click)="choose(p)">
                             <img [src]="'images/two-factor/' + p.type + '.png'" alt="" class="img-right">
                             <span class="text">{{p.name}}</span>
                             <span class="detail">{{p.description}}</span>

@@ -103,7 +103,7 @@
     "message": "Власні поля"
   },
   "launch": {
-    "message": "Запустити"
+    "message": "Перейти"
   },
   "copyValue": {
     "message": "Копіювати значення",
@@ -204,7 +204,7 @@
     "message": "Грудень"
   },
   "ex": {
-    "message": "н-д.",
+    "message": "зразок",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
@@ -508,7 +508,7 @@
     "message": "Продовжити"
   },
   "enterVerificationCodeApp": {
-    "message": "Введіть 6-значних код підтвердження з програми авторизації."
+    "message": "Введіть 6-значний код підтвердження з програми авторизації."
   },
   "enterVerificationCodeEmail": {
     "message": "Введіть 6-значний код підтвердження, надісланий на $EMAIL$.",
@@ -535,7 +535,7 @@
     "message": "Надіслати код підтвердження ще раз"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Використати інший спосіб двохетапної перевірки"
+    "message": "Інший спосіб двохетапної перевірки"
   },
   "insertYubiKey": {
     "message": "Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Негайно"
   },
+  "tenSeconds": {
+    "message": "10 секунд"
+  },
+  "twentySeconds": {
+    "message": "20 секунд"
+  },
+  "thirtySeconds": {
+    "message": "30 секунд"
+  },
   "oneMinute": {
     "message": "1 хвилина"
+  },
+  "twoMinutes": {
+    "message": "2 хвилини"
   },
   "fiveMinutes": {
     "message": "5 хвилин"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Безпека"
   },
+  "clearClipboard": {
+    "message": "Очистити буфер обміну",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Автоматично очищати скопійовані значення з буфера обміну.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Вимкнути піктограми веб-сайтів"
   },
@@ -810,7 +830,7 @@
     "message": "Згортати вікно до системного лотка замість панелі інструментів."
   },
   "enableCloseToTray": {
-    "message": "Згорнути в лоток"
+    "message": "Закривати до системного лотка"
   },
   "enableCloseToTrayDesc": {
     "message": "При закритті вікна згортати в системний лоток."
@@ -822,10 +842,10 @@
     "message": "Завжди показувати піктограму в системному лотку."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Запускати в згорнутому вигляді"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "При першому запуску програми відображатиметься лише піктограма в системному лотку."
   },
   "language": {
     "message": "Мова"
@@ -1171,25 +1191,25 @@
     "message": "Обраний вами головний пароль є слабким. Для належного захисту свого облікового запису Bitwarden, вам слід використовувати надійний головний пароль (або парольну фразу). Ви впевнені, що хочете використати цей пароль?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-код",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Розблокування з PIN-кодом"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Встановіть PIN-код для розблокування Bitwarden. Налаштування PIN-коду будуть скинуті, якщо ви коли-небудь повністю вийдете з програми."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Необхідний PIN-код."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Неправильний PIN-код."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Блокувати головним паролем при перезапуску"
   }
 }

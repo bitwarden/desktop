@@ -761,8 +761,20 @@
   "immediately": {
     "message": "すぐに"
   },
+  "tenSeconds": {
+    "message": "10秒"
+  },
+  "twentySeconds": {
+    "message": "20秒"
+  },
+  "thirtySeconds": {
+    "message": "30秒"
+  },
   "oneMinute": {
     "message": "1分"
+  },
+  "twoMinutes": {
+    "message": "2分"
   },
   "fiveMinutes": {
     "message": "5分"
@@ -797,6 +809,14 @@
   "security": {
     "message": "セキュリティ"
   },
+  "clearClipboard": {
+    "message": "クリップボードの消去",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "選択した時間が経過した後、自動的にクリップボードを消去します。",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "ウェブサイトアイコンの無効化"
   },
@@ -822,10 +842,10 @@
     "message": "システムトレイにアイコンを常に表示します。"
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "起動時にトレイアイコンのみ表示"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "アプリを初めて起動した際、システムトレイにアイコンを表示するだけにします。"
   },
   "language": {
     "message": "Language"
@@ -1175,21 +1195,21 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "PIN でロック解除"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Bitwarden のロックを解除するための PIN コードを設定します。アプリから完全にログアウトすると、PIN 設定はリセットされます。"
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN コードが必要です。"
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "PIN コードが間違っています。"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "保管庫がロックされています。PIN コードで確認してください。"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "再起動時にマスターパスワードでロック"
   }
 }

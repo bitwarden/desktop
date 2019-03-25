@@ -761,8 +761,20 @@
   "immediately": {
     "message": "Немедленно"
   },
+  "tenSeconds": {
+    "message": "10 секунд"
+  },
+  "twentySeconds": {
+    "message": "20 секунд"
+  },
+  "thirtySeconds": {
+    "message": "30 секунд"
+  },
   "oneMinute": {
     "message": "Через 1 минуту"
+  },
+  "twoMinutes": {
+    "message": "2 минуты"
   },
   "fiveMinutes": {
     "message": "Через 5 минут"
@@ -797,6 +809,14 @@
   "security": {
     "message": "Безопасность"
   },
+  "clearClipboard": {
+    "message": "Очистить буфер обмена",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Автоматически очищать скопированные значения в вашем буфере обмена.",
+    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+  },
   "disableFavicon": {
     "message": "Отключить значки веб-сайтов"
   },
@@ -822,10 +842,10 @@
     "message": "Всегда отображать значок в системном трее."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Начинать со значка в трее"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "При первом запуске приложения будет отображаться только значок в трее."
   },
   "language": {
     "message": "Язык"
@@ -1041,7 +1061,7 @@
     "message": "Выйти из Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ скопирован",
+    "message": "$VALUE$ скопировано",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1171,25 +1191,25 @@
     "message": "Мастер-пароль, выбранный вами, является слабым. Для надлежащей защиты аккаунта Bitwarden следует использовать сильный мастер-пароль (или парольную фразу). Вы действительно хотите использовать этот мастер-пароль?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-код",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Разблокировать с помощью PIN-кода"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Установите PIN-код для разблокировки Bitwarden. Настройки PIN-кода будут сброшены, если вы когда-либо полностью выйдете из приложения."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Требуется PIN-код."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Неверный PIN-код."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Ваше хранилище заблокировано. Подтвердите свой PIN-код, чтобы продолжить."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Блокировать мастер-паролем при перезапуске"
   }
 }
