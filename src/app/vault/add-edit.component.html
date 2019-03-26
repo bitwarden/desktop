@@ -261,36 +261,42 @@
                     {{'customFields' | i18n}}
                 </div>
                 <div class="box-content">
-                    <ng-container *ngIf="cipher.hasFields">
-                        <div class="box-content-row box-content-row-multi" appBoxRow
-                            *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
-                            [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
-                            <a href="#" appStopClick (click)="removeField(f)" title="{{'remove' | i18n}}">
-                                <i class="fa fa-minus-circle fa-lg"></i>
-                            </a>
-                            <label for="fieldName{{i}}" class="sr-only">{{'name' | i18n}}</label>
-                            <label for="fieldValue{{i}}" class="sr-only">{{'value' | i18n}}</label>
-                            <div class="row-main">
-                                <input id="fieldName{{i}}" type="text" name="Field.Name{{i}}" [(ngModel)]="f.name"
-                                    class="row-label" placeholder="{{'name' | i18n}}">
-                                <input id="fieldValue{{i}}" type="text" name="Field.Value{{i}}" [(ngModel)]="f.value"
-                                    *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
-                                <input id="fieldValue{{i}}" type="{{f.showValue ? 'text' : 'password'}}"
-                                    name="Field.Value{{i}}" [(ngModel)]="f.value" class="monospaced"
-                                    *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
-                            </div>
-                            <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox" [(ngModel)]="f.value"
-                                *ngIf="f.type === fieldType.Boolean" appTrueFalseValue trueValue="true"
-                                falseValue="false">
-                            <div class="action-buttons" *ngIf="f.type === fieldType.Hidden">
-                                <a class="row-btn" href="#" appStopClick appBlurClick
-                                    title="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">
-                                    <i class="fa fa-lg"
-                                        [ngClass]="{'fa-eye': !f.showValue, 'fa-eye-slash': f.showValue}"></i>
+                    <div cdkDropList (cdkDropListDropped)="drop($event)">
+                        <ng-container *ngIf="cipher.hasFields">
+                            <div class="box-content-row box-content-row-multi box-draggable-row" cdkDrag
+                                *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
+                                [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
+                                <span class="box-drag-handle" title="{{'drag' | i18n}}" cdkDragHandle>
+                                    <i class="fa fa-bars"></i>
+                                </span>
+                                <a href="#" class="box-content-delete" appStopClick (click)="removeField(f)"
+                                    title="{{'remove' | i18n}}">
+                                    <i class="fa fa-minus-circle fa-lg"></i>
                                 </a>
+                                <label for="fieldName{{i}}" class="sr-only">{{'name' | i18n}}</label>
+                                <label for="fieldValue{{i}}" class="sr-only">{{'value' | i18n}}</label>
+                                <div class="row-main">
+                                    <input id="fieldName{{i}}" type="text" name="Field.Name{{i}}" [(ngModel)]="f.name"
+                                        class="row-label" placeholder="{{'name' | i18n}}">
+                                    <input id="fieldValue{{i}}" type="text" name="Field.Value{{i}}" [(ngModel)]="f.value"
+                                        *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
+                                    <input id="fieldValue{{i}}" type="{{f.showValue ? 'text' : 'password'}}"
+                                        name="Field.Value{{i}}" [(ngModel)]="f.value" class="monospaced"
+                                        *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}">
+                                </div>
+                                <input id="fieldValue{{i}}" name="Field.Value{{i}}" type="checkbox" [(ngModel)]="f.value"
+                                    *ngIf="f.type === fieldType.Boolean" appTrueFalseValue trueValue="true"
+                                    falseValue="false">
+                                <div class="action-buttons" *ngIf="f.type === fieldType.Hidden">
+                                    <a class="row-btn" href="#" appStopClick appBlurClick
+                                        title="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">
+                                        <i class="fa fa-lg"
+                                            [ngClass]="{'fa-eye': !f.showValue, 'fa-eye-slash': f.showValue}"></i>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </ng-container>
+                        </ng-container>
+                    </div>
                     <div class="box-content-row" appBoxRow>
                         <a href="#" appStopClick (click)="addField()">
                             <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newCustomField' | i18n}}

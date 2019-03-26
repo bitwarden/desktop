@@ -1,6 +1,7 @@
 @import "variables.scss";
 
 .box {
+    position: relative;
     width: 100%;
 
     .box-header {
@@ -34,300 +35,6 @@
             padding: 10px 15px;
         }
 
-        .box-content-row {
-            display: block;
-            padding: 10px 15px;
-            position: relative;
-            z-index: 1;
-
-            &:before {
-                content: "";
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                height: 1px;
-                width: calc(100% - 10px);
-                border-bottom: 1px solid #000000;
-
-                @include themify($themes) {
-                    border-bottom-color: themed('boxBorderColor');
-                }
-            }
-
-            &:first-child, &:last-child {
-                border-radius: $border-radius;
-
-                .progress {
-                    border-bottom-left-radius: $border-radius;
-                    border-bottom-right-radius: $border-radius;
-                }
-            }
-
-            &:last-child {
-                &:before {
-                    border: none;
-                    height: 0;
-                }
-            }
-
-            &:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-
-            &:hover, &:focus, &.active {
-                @include themify($themes) {
-                    background-color: themed('boxBackgroundHoverColor');
-                }
-            }
-
-            &.pre {
-                white-space: pre;
-                overflow-x: auto;
-            }
-
-            &.pre-line {
-                white-space: pre-line;
-                overflow-x: auto;
-            }
-
-            .row-label, label {
-                font-size: $font-size-small;
-                display: block;
-                width: 100%;
-                margin-bottom: 5px;
-
-                @include themify($themes) {
-                    color: themed('mutedColor');
-                }
-
-                .sub-label {
-                    margin-left: 10px;
-                }
-            }
-
-            .text, .detail {
-                display: block;
-
-                @include themify($themes) {
-                    color: themed('textColor');
-                }
-            }
-
-            .detail {
-                font-size: $font-size-small;
-                
-                @include themify($themes) {
-                    color: themed('mutedColor');
-                }
-            }
-
-            .img-right {
-                float: right;
-                margin-left: 10px;
-            }
-
-            .row-main {
-                flex-grow: 1;
-            }
-
-            &.box-content-row-flex, .box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
-            &.box-content-row-slider, &.box-content-row-multi {
-                display: flex;
-                align-items: center;
-                word-break: break-word;
-            }
-
-            &.box-content-row-multi {
-                width: 100%;
-
-                input:not([type="checkbox"]) {
-                    width: 100%;
-                }
-
-                input + label.sr-only + select {
-                    margin-top: 5px;
-                }
-
-                > a {
-                    padding: 8px 8px 8px 4px;
-                    margin: 0;
-                
-                    @include themify($themes) {
-                        color: themed('dangerColor');
-                    }
-                }
-            }
-
-            &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
-                label, .row-label {
-                    font-size: $font-size-base;
-                    display: inline;
-                    width: initial;
-                    margin-bottom: 0;
-                
-                    @include themify($themes) {
-                        color: themed('textColor');
-                    }
-                }
-
-                > span {
-                    @include themify($themes) {
-                        color: themed('mutedColor');
-                    }
-                }
-
-                > input {
-                    margin: 0 0 0 auto;
-                    padding: 0;
-                }
-
-                > * {
-                    margin-right: 15px;
-
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                }
-            }
-
-            &.box-content-row-input {
-                label {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-
-                input {
-                    text-align: right;
-                    width: 45px !important;
-                }
-            }
-
-            &.box-content-row-slider {
-                input[type="range"] {
-                    height: 10px;
-                    width: 110px !important;
-                }
-
-                input[type="number"] {
-                    text-align: right;
-                    width: 45px !important;
-                }
-
-                label {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-            }
-
-            input:not([type="checkbox"]), textarea {
-                border: none;
-                width: 100%;
-                background-color: transparent;
-
-                &::-webkit-input-placeholder {
-                    @include themify($themes) {
-                        color: themed('inputPlaceholderColor');
-                    }
-                }
-
-                &:focus {
-                    outline: none;
-                }
-            }
-
-            select {
-                width: 100%;
-                border: 1px solid #000000;
-                border-radius: $border-radius;
-
-                @include themify($themes) {
-                    border-color: themed('inputBorderColor');
-                }
-            }
-
-            .action-buttons {
-                display: flex;
-                margin-left: 5px;
-
-                .row-btn {
-                    cursor: pointer;
-                    padding: 10px 8px;
-                    background: none;
-                    border: none;
-                    
-                    @include themify($themes) {
-                        color: themed('boxRowButtonColor');
-                    }
-
-                    &:hover, &:focus {
-                        @include themify($themes) {
-                            color: themed('boxRowButtonHoverColor');
-                        }
-                    }
-
-                    &.disabled {
-                        @include themify($themes) {
-                            color: themed('disabledIconColor');
-                        }
-
-                        &:hover {
-                            @include themify($themes) {
-                                color: themed('disabledIconColor');
-                            }
-                        }
-                    }
-
-                    &:last-child {
-                        padding-right: 2px !important;
-                    }
-                }
-
-                &.no-pad .row-btn {
-                    padding-top: 0;
-                    padding-bottom: 0;
-                }
-            }
-
-            select.field-type {
-                margin: 5px 0 0 25px;
-                width: calc(100% - 25px);
-            }
-
-            .row-sub-icon {
-                @include themify($themes) {
-                    color: themed('disabledIconColor');
-                }
-            }
-
-            .row-sub-label {
-                margin: 0 15px;
-                white-space: nowrap;
-                
-                @include themify($themes) {
-                    color: themed('mutedColor');
-                }
-            }
-
-            .progress {
-                display: flex;
-                height: 5px;
-                overflow: hidden;
-                margin: 5px -15px -10px;
-
-                .progress-bar {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    white-space: nowrap;
-                    background-color: $brand-primary;
-                }
-            }
-        }
-
         &.condensed .box-content-row, .box-content-row.condensed {
             padding-top: 5px;
             padding-bottom: 5px;
@@ -347,5 +54,325 @@
         @include themify($themes) {
             color: themed('mutedColor');
         }
+    }
+}
+
+.box-content-row {
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        width: calc(100% - 10px);
+        border-bottom: 1px solid #000000;
+
+        @include themify($themes) {
+            border-bottom-color: themed('boxBorderColor');
+        }
+    }
+
+    &:first-child, &:last-child {
+        border-radius: $border-radius;
+
+        .progress {
+            border-bottom-left-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
+
+    &:last-child {
+        &:before {
+            border: none;
+            height: 0;
+        }
+    }
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &:hover, &:focus, &.active {
+        @include themify($themes) {
+            background-color: themed('boxBackgroundHoverColor');
+        }
+    }
+
+    &.pre {
+        white-space: pre;
+        overflow-x: auto;
+    }
+
+    &.pre-line {
+        white-space: pre-line;
+        overflow-x: auto;
+    }
+
+    .row-label, label {
+        font-size: $font-size-small;
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+
+        .sub-label {
+            margin-left: 10px;
+        }
+    }
+
+    .text, .detail {
+        display: block;
+
+        @include themify($themes) {
+            color: themed('textColor');
+        }
+    }
+
+    .detail {
+        font-size: $font-size-small;
+
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+    }
+
+    .img-right {
+        float: right;
+        margin-left: 10px;
+    }
+
+    .row-main {
+        flex-grow: 1;
+    }
+
+    &.box-content-row-flex, .box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
+    &.box-content-row-slider, &.box-content-row-multi {
+        display: flex;
+        align-items: center;
+        word-break: break-word;
+    }
+
+    &.box-content-row-multi {
+        width: 100%;
+
+        input:not([type="checkbox"]) {
+            width: 100%;
+        }
+
+        input + label.sr-only + select {
+            margin-top: 5px;
+        }
+
+        > a {
+            padding: 8px 8px 8px 4px;
+            margin: 0;
+
+            @include themify($themes) {
+                color: themed('dangerColor');
+            }
+        }
+    }
+
+    &.box-content-row-checkbox, &.box-content-row-input, &.box-content-row-slider {
+        label, .row-label {
+            font-size: $font-size-base;
+            display: inline;
+            width: initial;
+            margin-bottom: 0;
+
+            @include themify($themes) {
+                color: themed('textColor');
+            }
+        }
+
+        > span {
+            @include themify($themes) {
+                color: themed('mutedColor');
+            }
+        }
+
+        > input {
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+
+        > * {
+            margin-right: 15px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.box-content-row-input {
+        label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        input {
+            text-align: right;
+            width: 45px !important;
+        }
+    }
+
+    &.box-content-row-slider {
+        input[type="range"] {
+            height: 10px;
+            width: 110px !important;
+        }
+
+        input[type="number"] {
+            text-align: right;
+            width: 45px !important;
+        }
+
+        label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    input:not([type="checkbox"]), textarea {
+        border: none;
+        width: 100%;
+        background-color: transparent;
+
+        &::-webkit-input-placeholder {
+            @include themify($themes) {
+                color: themed('inputPlaceholderColor');
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    select {
+        width: 100%;
+        border: 1px solid #000000;
+        border-radius: $border-radius;
+
+        @include themify($themes) {
+            border-color: themed('inputBorderColor');
+        }
+    }
+
+    .action-buttons {
+        display: flex;
+        margin-left: 5px;
+
+        .row-btn {
+            cursor: pointer;
+            padding: 10px 8px;
+            background: none;
+            border: none;
+
+            @include themify($themes) {
+                color: themed('boxRowButtonColor');
+            }
+
+            &:hover, &:focus {
+                @include themify($themes) {
+                    color: themed('boxRowButtonHoverColor');
+                }
+            }
+
+            &.disabled {
+                @include themify($themes) {
+                    color: themed('disabledIconColor');
+                }
+
+                &:hover {
+                    @include themify($themes) {
+                        color: themed('disabledIconColor');
+                    }
+                }
+            }
+
+            &:last-child {
+                padding-right: 2px !important;
+            }
+        }
+
+        &.no-pad .row-btn {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    select.field-type {
+        margin: 5px 0 0 25px;
+        width: calc(100% - 25px);
+    }
+
+    .row-sub-icon {
+        @include themify($themes) {
+            color: themed('disabledIconColor');
+        }
+    }
+
+    .row-sub-label {
+        margin: 0 15px;
+        white-space: nowrap;
+
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+    }
+
+    .progress {
+        display: flex;
+        height: 5px;
+        overflow: hidden;
+        margin: 5px -15px -10px;
+
+        .progress-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            white-space: nowrap;
+            background-color: $brand-primary;
+        }
+    }
+}
+
+.box-drag-handle {
+    cursor: move;
+    margin-right: 5px !important;
+    user-select: none;
+    opacity: .8;
+
+    @include themify($themes) {
+        color: themed('mutedColor');
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.cdk-drag-preview {
+    position: relative;
+    display: flex;
+    align-items: center;
+    opacity: .8;
+
+    @include themify($themes) {
+        background-color: themed('boxBackgroundColor');
     }
 }

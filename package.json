@@ -232,6 +232,7 @@
   },
   "dependencies": {
     "@angular/animations": "7.2.1",
+    "@angular/cdk": "latest",
     "@angular/common": "7.2.1",
     "@angular/compiler": "7.2.1",
     "@angular/core": "7.2.1",

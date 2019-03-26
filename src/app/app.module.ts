@@ -9,6 +9,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -138,6 +139,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         }),
         ToasterModule.forRoot(),
         InfiniteScrollModule,
+        DragDropModule,
     ],
     declarations: [
         AddEditComponent,
