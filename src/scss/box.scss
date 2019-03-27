@@ -353,7 +353,7 @@
 
 .box-drag-handle {
     cursor: move;
-    margin-right: 5px !important;
+    margin-left: 5px;
     user-select: none;
 
     @include themify($themes) {
