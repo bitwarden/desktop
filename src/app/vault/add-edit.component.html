@@ -266,7 +266,7 @@
                             <div class="box-content-row box-content-row-multi box-draggable-row" cdkDrag
                                 *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
                                 [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
-                                <span class="box-drag-handle" title="{{'drag' | i18n}}" cdkDragHandle>
+                                <span class="box-drag-handle" title="{{'dragToSort' | i18n}}" cdkDragHandle>
                                     <i class="fa fa-bars"></i>
                                 </span>
                                 <a href="#" appStopClick (click)="removeField(f)"

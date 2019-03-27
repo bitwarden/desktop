@@ -297,6 +297,9 @@
   "value": {
     "message": "Value"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
