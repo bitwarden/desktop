@@ -355,14 +355,9 @@
     cursor: move;
     margin-right: 5px !important;
     user-select: none;
-    opacity: .8;
 
     @include themify($themes) {
         color: themed('mutedColor');
-    }
-
-    &:hover {
-        opacity: .8;
     }
 }
 
