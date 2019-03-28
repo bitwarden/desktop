@@ -303,15 +303,38 @@
                     }
                 }
             }
-
-            &:last-child {
-                padding-right: 2px !important;
-            }
         }
 
         &.no-pad .row-btn {
             padding-top: 0;
             padding-bottom: 0;
+        }
+    }
+
+    &:not(.box-draggable-row) {
+        .action-buttons .row-btn:last-child {
+            padding-right: 2px !important;
+        }
+    }
+
+    .drag-handle {
+        cursor: move;
+        padding: 10px 2px 10px 8px;
+        user-select: none;
+    
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+    }
+
+    &.cdk-drag-preview {
+        position: relative;
+        display: flex;
+        align-items: center;
+        opacity: 0.8;
+    
+        @include themify($themes) {
+            background-color: themed('boxBackgroundColor');
         }
     }
 
@@ -348,26 +371,5 @@
             white-space: nowrap;
             background-color: $brand-primary;
         }
-    }
-}
-
-.box-drag-handle {
-    cursor: move;
-    margin-left: 5px;
-    user-select: none;
-
-    @include themify($themes) {
-        color: themed('mutedColor');
-    }
-}
-
-.cdk-drag-preview {
-    position: relative;
-    display: flex;
-    align-items: center;
-    opacity: .8;
-
-    @include themify($themes) {
-        background-color: themed('boxBackgroundColor');
     }
 }
