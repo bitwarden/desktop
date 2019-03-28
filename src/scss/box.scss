@@ -317,6 +317,14 @@
         }
     }
 
+    &.box-draggable-row {
+        &.box-content-row-checkbox {
+            input[type="checkbox"] + .drag-handle {
+                margin-left: 10px;
+            }
+        }
+    }
+
     .drag-handle {
         cursor: move;
         padding: 10px 2px 10px 8px;
