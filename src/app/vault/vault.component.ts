@@ -163,7 +163,12 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async load() {
+        let loaded = false;
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+            if (loaded) {
+                return;
+            }
+            loaded = true;
             await this.groupingsComponent.load();
 
             if (params == null) {
