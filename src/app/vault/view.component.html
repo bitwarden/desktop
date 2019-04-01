@@ -26,9 +26,9 @@
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.password">
                         <div class="row-main">
                             <span class="row-label">{{'password' | i18n}}</span>
-                            <div [hidden]="showPassword" class="monospaced password-wrapper" appFlexCopy>
+                            <div [hidden]="showPassword" class="monospaced">
                                 {{cipher.login.maskedPassword}}</div>
-                            <div [hidden]="!showPassword" class="monospaced password-wrapper" appFlexCopy
+                            <div [hidden]="!showPassword" class="monospaced password-wrapper" appSelectCopy
                                 [innerHTML]="cipher.login.password | colorPassword"></div>
                         </div>
                         <div class="action-buttons">

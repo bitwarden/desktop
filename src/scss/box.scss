@@ -153,6 +153,7 @@
 
     .row-main {
         flex-grow: 1;
+        min-width: 0;
     }
 
     &.box-content-row-flex, .box-content-row-flex, &.box-content-row-checkbox, &.box-content-row-input,
