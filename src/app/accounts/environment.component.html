@@ -10,7 +10,7 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="baseUrl">{{'baseUrl' | i18n}}</label>
                             <input id="baseUrl" type="text" name="BaseUrl" [(ngModel)]="baseUrl"
-                                   placeholder="{{'ex' | i18n}} https://bitwarden.company.com">
+                                placeholder="{{'ex' | i18n}} https://bitwarden.company.com">
                         </div>
                     </div>
                     <div class="box-footer">
@@ -19,9 +19,9 @@
                 </div>
                 <div class="box">
                     <div class="box-header">
-                        <button type="button" (click)="toggleCustom()">
-                            <i class="fa fa-plus-square-o" [hidden]="showCustom"></i>
-                            <i class="fa fa-minus-square-o" [hidden]="!showCustom"></i>
+                        <button type="button" (click)="toggleCustom()" appA11yTitle="{{'toggleVisibility' | i18n}}">
+                            <i class="fa fa-plus-square-o" [hidden]="showCustom" aria-hidden="true"></i>
+                            <i class="fa fa-minus-square-o" [hidden]="!showCustom" aria-hidden="true"></i>
                             {{'customEnvironment' | i18n}}
                         </button>
                     </div>
@@ -41,7 +41,7 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="notificationsUrl">{{'notificationsUrl' | i18n}}</label>
                             <input id="notificationsUrl" type="text" name="NotificationsUrl"
-                                   [(ngModel)]="notificationsUrl">
+                                [(ngModel)]="notificationsUrl">
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="iconsUrl">{{'iconsUrl' | i18n}}</label>

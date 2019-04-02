@@ -220,7 +220,7 @@
                         </div>
                     </ng-container>
                     <a href="#" appStopClick appBlurClick (click)="addUri()" class="box-content-row">
-                        <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newUri' | i18n}}
+                        <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{'newUri' | i18n}}
                     </a>
                 </div>
             </div>
@@ -239,12 +239,12 @@
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="attachments()" *ngIf="editMode">
                         <div class="row-main">{{'attachments' | i18n}}</div>
-                        <i class="fa fa-chevron-right row-sub-icon"></i>
+                        <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
                     </a>
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="editCollections()" *ngIf="editMode && cipher.organizationId">
                         <div class="row-main">{{'collections' | i18n}}</div>
-                        <i class="fa fa-chevron-right row-sub-icon"></i>
+                        <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -298,7 +298,7 @@
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <a href="#" appStopClick (click)="addField()">
-                            <i class="fa fa-plus-circle fa-fw fa-lg"></i> {{'newCustomField' | i18n}}
+                            <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{'newCustomField' | i18n}}
                         </a>
                         <label for="addFieldType" class="sr-only">{{'type' | i18n}}</label>
                         <select id="addFieldType" name="AddFieldType" [(ngModel)]="addFieldType" class="field-type">

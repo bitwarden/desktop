@@ -26,18 +26,18 @@
         </div>
         <div class="buttons">
             <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
-                <b [hidden]="form.loading"><i class="fa fa-sign-in"></i> {{'logIn' | i18n}}</b>
-                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
+                <b [hidden]="form.loading"><i class="fa fa-sign-in" aria-hidden="true"></i> {{'logIn' | i18n}}</b>
+                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
             <a routerLink="/register" class="btn block">
-                <i class="fa fa-pencil-square-o"></i> {{'createAccount' | i18n}}
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'createAccount' | i18n}}
             </a>
         </div>
         <div class="sub-options">
             <a routerLink="/hint">{{'getMasterPasswordHint' | i18n}}</a>
         </div>
         <a href="#" appStopClick (click)="settings()" class="settings-icon">
-            <i class="fa fa-cog fa-lg"></i><span>&nbsp;{{'settings' | i18n}}</span>
+            <i class="fa fa-cog fa-lg" aria-hidden="true"></i><span>&nbsp;{{'settings' | i18n}}</span>
         </a>
     </div>
 </form>

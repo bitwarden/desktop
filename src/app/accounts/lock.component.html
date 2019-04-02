@@ -1,6 +1,6 @@
 <form id="lock-page" (ngSubmit)="submit()">
     <div class="content">
-        <p><i class="fa fa-lock fa-4x text-muted"></i></p>
+        <p aria-hidden="true"><i class="fa fa-lock fa-4x text-muted"></i></p>
         <p>{{(pinLock ? 'yourVaultIsLockedPinCode' : 'yourVaultIsLocked') | i18n}}</p>
         <div class="box last">
             <div class="box-content">
@@ -30,7 +30,7 @@
         </div>
         <div class="buttons">
             <button type="submit" class="btn primary block" appBlurClick>
-                <i class="fa fa-unlock-alt"></i> <b>{{'unlock' | i18n}}</b>
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
             </button>
             <button type="button" class="btn block" appBlurClick (click)="logOut()">
                 {{'logOut' | i18n}}

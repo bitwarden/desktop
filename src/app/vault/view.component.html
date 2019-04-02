@@ -215,8 +215,9 @@
                             <span [hidden]="field.showValue" class="monospaced">{{field.maskedValue}}</span>
                         </div>
                         <div *ngIf="field.type === fieldType.Boolean">
-                            <i class="fa fa-check-square-o" *ngIf="field.value === 'true'"></i>
-                            <i class="fa fa-square-o" *ngIf="field.value !== 'true'"></i>
+                            <i class="fa fa-check-square-o" *ngIf="field.value === 'true'" aria-hidden="true"></i>
+                            <i class="fa fa-square-o" *ngIf="field.value !== 'true'" aria-hidden="true"></i>
+                            <span class="sr-only">{{field.value}}</span>
                         </div>
                     </div>
                     <div class="action-buttons">
@@ -244,8 +245,9 @@
                     (click)="downloadAttachment(attachment)">
                     <span class="row-main">{{attachment.fileName}}</span>
                     <small class="row-sub-label">{{attachment.sizeName}}</small>
-                    <i class="fa fa-download fa-fw row-sub-icon" *ngIf="!attachment.downloading"></i>
-                    <i class="fa fa-spinner fa-fw fa-spin row-sub-icon" *ngIf="attachment.downloading"></i>
+                    <i class="fa fa-download fa-fw row-sub-icon" *ngIf="!attachment.downloading" aria-hidden="true"></i>
+                    <i class="fa fa-spinner fa-fw fa-spin row-sub-icon" *ngIf="attachment.downloading"
+                        aria-hidden="true"></i>
                 </a>
             </div>
         </div>
