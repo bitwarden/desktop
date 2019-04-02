@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "All Items"
   },

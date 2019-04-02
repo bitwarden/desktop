@@ -57,7 +57,7 @@ const IdleTimeout = 60000 * 10; // 10 minutes
     selector: 'app-root',
     styles: [],
     template: `
-        <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
+        <toaster-container [toasterconfig]="toasterConfig" aria-live="polite"></toaster-container>
         <ng-template #settings></ng-template>
         <ng-template #premium></ng-template>
         <ng-template #passwordHistory></ng-template>

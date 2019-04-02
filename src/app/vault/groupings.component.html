@@ -1,5 +1,6 @@
 <div class="content">
     <div class="inner-content">
+        <h2 class="sr-only">{{'filters' | i18n}}</h2>
         <ul>
             <li [ngClass]="{active: selectedAll}">
                 <a href="#" appStopClick appBlurClick (click)="selectAll()">
@@ -37,12 +38,12 @@
         </ul>
         <p *ngIf="!loaded" class="text-muted">{{'loading' | i18n}}</p>
         <ng-container *ngIf="loaded">
-            <h2>
-                {{'folders' | i18n}}
+            <div class="heading">
+                <h2>{{'folders' | i18n}}</h2>
                 <button appBlurClick (click)="addFolder()" appA11yTitle="{{'addFolder' | i18n}}">
                     <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
                 </button>
-            </h2>
+            </div>
             <ul class="fa-ul">
                 <ng-template #recursiveFolders let-folders>
                     <li *ngFor="let f of folders"
