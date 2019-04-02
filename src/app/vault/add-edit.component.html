@@ -32,18 +32,18 @@
                             </div>
                             <div class="action-buttons">
                                 <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
-                                    title="{{'checkPassword' | i18n}}" (click)="checkPassword()"
+                                    appA11yTitle="{{'checkPassword' | i18n}}" (click)="checkPassword()"
                                     [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
                                     <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"></i>
                                     <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"></i>
                                 </button>
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                    title="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
+                                    appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
                                     <i class="fa fa-lg"
                                         [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                                 </a>
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                    title="{{'generatePassword' | i18n}}" (click)="generatePassword()">
+                                    appA11yTitle="{{'generatePassword' | i18n}}" (click)="generatePassword()">
                                     <i class="fa fa-lg fa-refresh"></i>
                                 </a>
                             </div>
@@ -90,7 +90,7 @@
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                    title="{{'toggleVisibility' | i18n}}" (click)="toggleCardCode()">
+                                    appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardCode()">
                                     <i class="fa fa-lg"
                                         [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
                                 </a>
@@ -193,7 +193,7 @@
                     <ng-container *ngIf="cipher.login.hasUris">
                         <div class="box-content-row box-content-row-multi" appBoxRow
                             *ngFor="let u of cipher.login.uris; let i = index; trackBy:trackByFunction">
-                            <a href="#" appStopClick (click)="removeUri(u)" title="{{'remove' | i18n}}">
+                            <a href="#" appStopClick (click)="removeUri(u)" appA11yTitle="{{'remove' | i18n}}">
                                 <i class="fa fa-minus-circle fa-lg"></i>
                             </a>
                             <div class="row-main">
@@ -210,8 +210,8 @@
                                 </select>
                             </div>
                             <div class="action-buttons">
-                                <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleOptions' | i18n}}"
-                                    (click)="toggleUriOptions(u)">
+                                <a class="row-btn" href="#" appStopClick appBlurClick
+                                    appA11yTitle="{{'toggleOptions' | i18n}}" (click)="toggleUriOptions(u)">
                                     <i class="fa fa-lg fa-cog"></i>
                                 </a>
                             </div>
@@ -265,7 +265,7 @@
                         <div class="box-content-row box-content-row-multi box-draggable-row" cdkDrag
                             *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
                             [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
-                            <a href="#" appStopClick (click)="removeField(f)" title="{{'remove' | i18n}}">
+                            <a href="#" appStopClick (click)="removeField(f)" appA11yTitle="{{'remove' | i18n}}">
                                 <i class="fa fa-minus-circle fa-lg"></i>
                             </a>
                             <label for="fieldName{{i}}" class="sr-only">{{'name' | i18n}}</label>
@@ -284,12 +284,12 @@
                                 falseValue="false">
                             <div class="action-buttons" *ngIf="f.type === fieldType.Hidden">
                                 <a class="row-btn" href="#" appStopClick appBlurClick
-                                    title="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">
+                                    appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">
                                     <i class="fa fa-lg"
                                         [ngClass]="{'fa-eye': !f.showValue, 'fa-eye-slash': f.showValue}"></i>
                                 </a>
                             </div>
-                            <div class="drag-handle" title="{{'dragToSort' | i18n}}" cdkDragHandle>
+                            <div class="drag-handle" appA11yTitle="{{'dragToSort' | i18n}}" cdkDragHandle>
                                 <i class="fa fa-bars"></i>
                             </div>
                         </div>
@@ -338,20 +338,21 @@
         </div>
     </div>
     <div class="footer">
-        <button appBlurClick type="submit" class="primary" title="{{'save' | i18n}}" [disabled]="form.loading">
+        <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}" [disabled]="form.loading">
             <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading"></i>
             <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading"></i>
         </button>
-        <button appBlurClick type="button" (click)="cancel()" title="{{'cancel' | i18n}}">
+        <button appBlurClick type="button" (click)="cancel()">
             {{'cancel' | i18n}}
         </button>
         <div class="right">
-            <button appBlurClick type="button" (click)="share()" title="{{'shareItem' | i18n}}"
+            <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'shareItem' | i18n}}"
                 *ngIf="editMode && cipher && !cipher.organizationId">
                 <i class="fa fa-share-alt fa-lg fa-fw"></i>
             </button>
-            <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger" title="{{'delete' | i18n}}"
-                *ngIf="editMode" [disabled]="deleteBtn.loading" [appApiAction]="deletePromise">
+            <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
+                appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode" [disabled]="deleteBtn.loading"
+                [appApiAction]="deletePromise">
                 <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                 <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
             </button>

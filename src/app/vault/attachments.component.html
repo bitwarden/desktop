@@ -14,7 +14,7 @@
                             <small class="row-sub-label">{{a.sizeName}}</small>
                             <div class="action-buttons no-pad">
                                 <button class="row-btn btn" type="button" appStopClick appBlurClick
-                                    title="{{'delete' | i18n}}" (click)="delete(a)" #deleteBtn
+                                    appA11yTitle="{{'delete' | i18n}}" (click)="delete(a)" #deleteBtn
                                     [appApiAction]="deletePromises[a.id]" [disabled]="deleteBtn.loading">
                                     <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"></i>
                                     <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"></i>
@@ -39,7 +39,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button appBlurClick type="submit" class="primary" title="{{'save' | i18n}}" [disabled]="form.loading">
+                <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}"
+                    [disabled]="form.loading">
                     <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading"></i>
                     <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading"></i>
                 </button>

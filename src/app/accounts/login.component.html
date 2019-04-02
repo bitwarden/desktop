@@ -15,8 +15,8 @@
                             class="monospaced" [(ngModel)]="masterPassword" required>
                     </div>
                     <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleVisibility' | i18n}}"
-                            (click)="togglePassword()">
+                        <a class="row-btn" href="#" appStopClick appBlurClick
+                            appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
                             <i class="fa fa-lg" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                         </a>
                     </div>

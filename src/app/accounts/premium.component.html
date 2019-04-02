@@ -57,7 +57,7 @@
                 <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
                 <div class="right" *ngIf="!isPremium">
                     <button #refreshBtn type="button" appBlurClick (click)="refresh()" [disabled]="refreshBtn.loading"
-                        title="{{'premiumRefresh' | i18n}}" [appApiAction]="refreshPromise">
+                        appA11yTitle="{{'premiumRefresh' | i18n}}" [appApiAction]="refreshPromise">
                         <i class="fa fa-refresh fa-lg fa-fw" [hidden]="refreshBtn.loading"></i>
                         <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!refreshBtn.loading"></i>
                     </button>

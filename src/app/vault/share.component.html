@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button appBlurClick type="submit" class="primary" title="{{'save' | i18n}}"
+                <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}"
                     [disabled]="form.loading || !canSave" *ngIf="organizations && organizations.length">
                     <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading"></i>
                     <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading"></i>
