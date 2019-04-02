@@ -1,4 +1,4 @@
-<div id="vault">
+<div id="vault" attr.aria-hidden="{{showingModal}}">
     <app-vault-groupings id="groupings" (onAllClicked)="clearGroupingFilters()" (onFavoritesClicked)="filterFavorites()"
         (onCipherTypeClicked)="filterCipherType($event)" (onFolderClicked)="filterFolder($event.id)"
         (onAddFolder)="addFolder()" (onEditFolder)="editFolder($event.id)"
@@ -24,15 +24,15 @@
     <div id="logo" *ngIf="action !== 'add' && action !== 'edit' && action !== 'view'">
         <div class="content">
             <div class="inner-content">
-                <img class="logo-image" />
+                <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
             </div>
         </div>
     </div>
-    <ng-template #passwordGenerator></ng-template>
-    <ng-template #attachments></ng-template>
-    <ng-template #collections></ng-template>
-    <ng-template #share></ng-template>
-    <ng-template #folderAddEdit></ng-template>
-    <ng-template #passwordHistory></ng-template>
-    <ng-template #exportVault></ng-template>
 </div>
+<ng-template #passwordGenerator></ng-template>
+<ng-template #attachments></ng-template>
+<ng-template #collections></ng-template>
+<ng-template #share></ng-template>
+<ng-template #folderAddEdit></ng-template>
+<ng-template #passwordHistory></ng-template>
+<ng-template #exportVault></ng-template>

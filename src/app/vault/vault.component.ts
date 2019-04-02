@@ -71,6 +71,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     addType: CipherType = null;
     addOrganizationId: string = null;
     addCollectionIds: string[] = null;
+    showingModal = false;
 
     private modal: ModalComponent = null;
 
@@ -141,6 +142,12 @@ export class VaultComponent implements OnInit, OnDestroy {
                         break;
                     case 'refreshCiphers':
                         this.ciphersComponent.refresh();
+                        break;
+                    case 'modalShown':
+                        this.showingModal = true;
+                        break;
+                    case 'modalClosed':
+                        this.showingModal = false;
                         break;
                     default:
                         detectChanges = false;
