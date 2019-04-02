@@ -22,8 +22,8 @@
             <div class="modal-footer">
                 <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}"
                     [disabled]="form.loading">
-                    <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading"></i>
-                    <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading"></i>
+                    <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
+                    <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
                 </button>
                 <button type="button" data-dismiss="modal">{{'cancel' | i18n}}</button>
             </div>

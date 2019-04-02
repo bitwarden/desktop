@@ -58,8 +58,9 @@
                 <div class="right" *ngIf="!isPremium">
                     <button #refreshBtn type="button" appBlurClick (click)="refresh()" [disabled]="refreshBtn.loading"
                         appA11yTitle="{{'premiumRefresh' | i18n}}" [appApiAction]="refreshPromise">
-                        <i class="fa fa-refresh fa-lg fa-fw" [hidden]="refreshBtn.loading"></i>
-                        <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!refreshBtn.loading"></i>
+                        <i class="fa fa-refresh fa-lg fa-fw" [hidden]="refreshBtn.loading" aria-hidden="true"></i>
+                        <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!refreshBtn.loading"
+                            aria-hidden="true"></i>
                     </button>
                 </div>
             </div>

@@ -19,7 +19,7 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUsername' | i18n}}"
                                 (click)="copy(cipher.login.username, 'username', 'Username')">
-                                <i class="fa fa-lg fa-clipboard"></i>
+                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -35,17 +35,19 @@
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
                                 appA11yTitle="{{'checkPassword' | i18n}}" (click)="checkPassword()"
                                 [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
-                                <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"></i>
-                                <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"></i>
+                                <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"
+                                    aria-hidden="true"></i>
+                                <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"
+                                    aria-hidden="true"></i>
                             </button>
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
                                 (click)="togglePassword()">
-                                <i class="fa fa-lg"
+                                <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyPassword' | i18n}}"
                                 (click)="copy(cipher.login.password, 'password', 'Password')">
-                                <i class="fa fa-lg fa-clipboard"></i>
+                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -68,7 +70,7 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
                                 (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')">
-                                <i class="fa fa-lg fa-clipboard"></i>
+                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -87,7 +89,7 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyNumber' | i18n}}"
                                 (click)="copy(cipher.card.number, 'number', 'Number')">
-                                <i class="fa fa-lg fa-clipboard"></i>
+                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -108,12 +110,12 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
                                 (click)="toggleCardCode()">
-                                <i class="fa fa-lg"
+                                <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
                             </a>
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copySecurityCode' | i18n}}"
                                 (click)="copy(cipher.card.code, 'securityCode', 'Security Code')">
-                                <i class="fa fa-lg fa-clipboard"></i>
+                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -179,11 +181,11 @@
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'launch' | i18n}}" *ngIf="u.canLaunch"
                             (click)="launch(u)">
-                            <i class="fa fa-lg fa-share-square-o"></i>
+                            <i class="fa fa-lg fa-share-square-o" aria-hidden="true"></i>
                         </a>
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUri' | i18n}}"
                             (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')">
-                            <i class="fa fa-lg fa-clipboard"></i>
+                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -220,13 +222,13 @@
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
                             *ngIf="field.type === fieldType.Hidden" (click)="toggleFieldValue(field)">
-                            <i class="fa fa-lg"
+                            <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                         </a>
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
                             *ngIf="field.value && field.type !== fieldType.Boolean"
                             (click)="copy(field.value, 'value', 'Field')">
-                            <i class="fa fa-lg fa-clipboard"></i>
+                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -261,7 +263,7 @@
                     <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b>
                     <a href="#" (click)="viewHistory()" appStopClick
                         appA11yTitle="{{'passwordHistory' | i18n}}, {{cipher.passwordHistory.length}}">
-                        {{cipher.passwordHistory.length}}
+                        <span aria-hidden="true">{{cipher.passwordHistory.length}}</span>
                     </a>
                 </div>
             </div>
@@ -270,6 +272,6 @@
 </div>
 <div class="footer">
     <button appBlurClick class="primary" (click)="edit()" appA11yTitle="{{'edit' | i18n}}">
-        <i class="fa fa-pencil fa-fw fa-lg"></i>
+        <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
     </button>
 </div>

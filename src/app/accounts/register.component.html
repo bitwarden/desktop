@@ -25,7 +25,7 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appBlurClick
                                 appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
-                                <i class="fa fa-lg"
+                                <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
                         </div>
@@ -52,7 +52,8 @@
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appBlurClick
                             appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(true)">
-                            <i class="fa fa-lg" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                            <i class="fa fa-lg" aria-hidden="true"
+                                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                         </a>
                     </div>
                 </div>
