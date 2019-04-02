@@ -28,6 +28,8 @@ import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/comp
 export class TwoFactorComponent extends BaseTwoFactorComponent {
     @ViewChild('twoFactorOptions', { read: ViewContainerRef }) twoFactorOptionsModal: ViewContainerRef;
 
+    showingModal = false;
+
     constructor(authService: AuthService, router: Router,
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
@@ -41,9 +43,17 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     anotherMethod() {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         const modal = this.twoFactorOptionsModal.createComponent(factory).instance;
+        modal.onShown.subscribe(() => {
+            this.showingModal = true;
+        });
+        modal.onClosed.subscribe(() => {
+            this.showingModal = false;
+            modal.onShown.unsubscribe();
+            modal.onClosed.unsubscribe();
+        });
+
         const childComponent = modal.show<TwoFactorOptionsComponent>(TwoFactorOptionsComponent,
             this.twoFactorOptionsModal);
-
         childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
             modal.close();
             this.selectedProviderType = provider;

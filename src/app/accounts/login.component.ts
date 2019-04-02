@@ -24,6 +24,8 @@ import { ModalComponent } from 'jslib/angular/components/modal.component';
 export class LoginComponent extends BaseLoginComponent {
     @ViewChild('environment', { read: ViewContainerRef }) environmentModal: ViewContainerRef;
 
+    showingModal = false;
+
     constructor(authService: AuthService, router: Router,
         i18nService: I18nService, syncService: SyncService,
         private componentFactoryResolver: ComponentFactoryResolver, storageService: StorageService,
@@ -37,9 +39,17 @@ export class LoginComponent extends BaseLoginComponent {
     settings() {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         const modal = this.environmentModal.createComponent(factory).instance;
+        modal.onShown.subscribe(() => {
+            this.showingModal = true;
+        });
+        modal.onClosed.subscribe(() => {
+            this.showingModal = false;
+            modal.onShown.unsubscribe();
+            modal.onClosed.unsubscribe();
+        });
+
         const childComponent = modal.show<EnvironmentComponent>(EnvironmentComponent,
             this.environmentModal);
-
         childComponent.onSaved.subscribe(() => {
             modal.close();
         });

@@ -1,4 +1,4 @@
-<form id="two-factor-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+<form id="two-factor-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise" attr.aria-hidden="{{showingModal}}">
     <div class="content">
         <h1>{{title}}</h1>
         <p *ngIf="selectedProviderType === providerType.Authenticator">{{'enterVerificationCodeApp' | i18n}}</p>
