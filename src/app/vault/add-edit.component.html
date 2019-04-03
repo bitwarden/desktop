@@ -39,12 +39,12 @@
                                     <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"
                                         aria-hidden="true"></i>
                                 </button>
-                                <a class="row-btn" href="#" appStopClick appBlurClick
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
                                     appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
                                     <i class="fa fa-lg" aria-hidden="true"
                                         [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                                 </a>
-                                <a class="row-btn" href="#" appStopClick appBlurClick
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
                                     appA11yTitle="{{'generatePassword' | i18n}}" (click)="generatePassword()">
                                     <i class="fa fa-lg fa-refresh" aria-hidden="true"></i>
                                 </a>
@@ -91,7 +91,7 @@
                                     name="Card.Code" [(ngModel)]="cipher.card.code">
                             </div>
                             <div class="action-buttons">
-                                <a class="row-btn" href="#" appStopClick appBlurClick
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
                                     appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardCode()">
                                     <i class="fa fa-lg" aria-hidden="true"
                                         [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
@@ -196,7 +196,7 @@
                         <div class="box-content-row box-content-row-multi" appBoxRow
                             *ngFor="let u of cipher.login.uris; let i = index; trackBy:trackByFunction">
                             <a href="#" appStopClick (click)="removeUri(u)" appA11yTitle="{{'remove' | i18n}}">
-                                <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
+                                <i class="fa fa-minus-circle fa-lg" aria-hidden="true" role="button"></i>
                             </a>
                             <div class="row-main">
                                 <label for="loginUri{{i}}">{{'uriPosition' | i18n : (i + 1)}}</label>
@@ -212,14 +212,14 @@
                                 </select>
                             </div>
                             <div class="action-buttons">
-                                <a class="row-btn" href="#" appStopClick appBlurClick
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
                                     appA11yTitle="{{'toggleOptions' | i18n}}" (click)="toggleUriOptions(u)">
                                     <i class="fa fa-lg fa-cog" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
                     </ng-container>
-                    <a href="#" appStopClick appBlurClick (click)="addUri()" class="box-content-row">
+                    <a href="#" appStopClick appBlurClick (click)="addUri()" class="box-content-row" role="button">
                         <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{'newUri' | i18n}}
                     </a>
                 </div>
@@ -237,12 +237,12 @@
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
                     </div>
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
-                        (click)="attachments()" *ngIf="editMode">
+                        (click)="attachments()" *ngIf="editMode" role="button">
                         <div class="row-main">{{'attachments' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
                     </a>
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
-                        (click)="editCollections()" *ngIf="editMode && cipher.organizationId">
+                        (click)="editCollections()" *ngIf="editMode && cipher.organizationId" role="button">
                         <div class="row-main">{{'collections' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
                     </a>
@@ -267,7 +267,8 @@
                         <div class="box-content-row box-content-row-multi box-draggable-row" cdkDrag
                             *ngFor="let f of cipher.fields; let i = index; trackBy:trackByFunction"
                             [ngClass]="{'box-content-row-checkbox': f.type === fieldType.Boolean}">
-                            <a href="#" appStopClick (click)="removeField(f)" appA11yTitle="{{'remove' | i18n}}">
+                            <a href="#" appStopClick (click)="removeField(f)" appA11yTitle="{{'remove' | i18n}}"
+                                role="button">
                                 <i class="fa fa-minus-circle fa-lg" aria-hidden="true"></i>
                             </a>
                             <label for="fieldName{{i}}" class="sr-only">{{'name' | i18n}}</label>
@@ -285,7 +286,7 @@
                                 *ngIf="f.type === fieldType.Boolean" appTrueFalseValue trueValue="true"
                                 falseValue="false">
                             <div class="action-buttons" *ngIf="f.type === fieldType.Hidden">
-                                <a class="row-btn" href="#" appStopClick appBlurClick
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
                                     appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleFieldValue(f)">
                                     <i class="fa fa-lg" aria-hidden="true"
                                         [ngClass]="{'fa-eye': !f.showValue, 'fa-eye-slash': f.showValue}"></i>
@@ -297,7 +298,7 @@
                         </div>
                     </div>
                     <div class="box-content-row" appBoxRow>
-                        <a href="#" appStopClick (click)="addField()">
+                        <a href="#" appStopClick (click)="addField()" role="button">
                             <i class="fa fa-plus-circle fa-fw fa-lg" aria-hidden="true"></i> {{'newCustomField' | i18n}}
                         </a>
                         <label for="addFieldType" class="sr-only">{{'type' | i18n}}</label>
