@@ -163,10 +163,12 @@ export class VaultComponent implements OnInit, OnDestroy {
         if (!this.syncService.syncInProgress) {
             await this.load();
         }
+        document.body.classList.remove('layout_frontend');
     }
 
     ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        document.body.classList.add('layout_frontend');
     }
 
     async load() {
