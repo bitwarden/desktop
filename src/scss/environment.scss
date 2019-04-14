@@ -7,3 +7,33 @@
         border-top-color: #000000;
     }
 }
+
+html.os_macos {
+    body {
+        -webkit-app-region: drag
+    }
+
+    button, a, span, input, p, h1, h2, h3, h4, h5, h6, img, select, textarea, .box {
+        -webkit-app-region: no-drag;
+    }
+
+    #login-page, #register-page, #hint-page, #two-factor-page, #lock-page {
+        .content {
+            a.settings-icon {
+                position: absolute;
+                left: unset;
+                right: 10px;
+
+                span {
+                    margin-right: 8px;
+                    float: left;
+                }
+            }
+        }
+    }
+
+    #groupings {
+        padding-top: 24px;
+    }
+
+}
