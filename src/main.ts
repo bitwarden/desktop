@@ -64,7 +64,7 @@ export class Main {
         storageDefaults[ConstantsService.lockOptionKey] = -1;
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
-        this.windowMain = new WindowMain(this.storageService);
+        this.windowMain = new WindowMain(this.storageService, true);
         this.messagingMain = new MessagingMain(this);
         this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
             this.menuMain.updateMenuItem.enabled = false;
