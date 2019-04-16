@@ -1,4 +1,6 @@
-﻿html.os_windows {
+﻿@import "variables.scss";
+
+html.os_windows {
     body {
         border-top: 1px solid #dddddd;
     }
@@ -12,10 +14,12 @@ html.os_macos {
     body.layout_frontend {
         -webkit-app-region: drag;
 
-        button, a, span, input, p, h1, h2, h3, h4, h5, h6, img, select,
-        textarea, label, .box, .modal-backdrop {
-            -webkit-app-region: no-drag;
-        }
+
+    }
+
+    button, a, span, input, p, h1, h2, h3, h4, h5, h6, img, select,
+    textarea, label, .box, .modal-backdrop {
+        -webkit-app-region: no-drag;
     }
 
     #login-page {
@@ -44,5 +48,78 @@ html.os_macos {
 
     #vault > #logo {
         -webkit-app-region: drag;
+    }
+
+    body::before {
+        content:"";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 37px; /* this is the height of vault .mac-bar */
+        background: transparent;
+        -webkit-app-region: drag
+    }
+
+    #vault {
+        > #items {
+            position: relative;
+
+            .header {
+                width: calc(100% - 44px);
+            }
+
+            .footer {
+                position: absolute;
+                //Potisioning near header div
+                right: 0px;
+                top: 0px;
+                width: 44px;
+                height: 44px;
+                padding: 8px;
+                border-top: none;
+
+                button {
+                    height: 28px;
+                    width: 28px;
+                    padding: 4px 6px;
+                }
+            }
+        }
+
+        > #details {
+            position: relative;
+
+            .content {
+                margin-top: 44px;
+            }
+
+            .footer {
+                position: absolute;
+                //Potisioning near header div
+                left: 0px;
+                top: 0px;
+                height: 44px;
+                width: 100%;
+                border-top: none;
+
+                button {
+                    height: 28px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                }
+            }
+        }
+
+    }
+}
+
+#vault {
+    .footer {
+        @include themify_with_class('os_macos', $themes) {
+            background-color: themed('headerBackgroundColor');
+            border-bottom: 1px solid themed('headerBorderColor');
+        }
     }
 }
