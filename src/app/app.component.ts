@@ -123,6 +123,9 @@ export class AppComponent implements OnInit {
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
+                    case 'authBlocked':
+                        this.router.navigate(['login']);
+                        break;
                     case 'logout':
                         this.logOut(!!message.expired);
                         break;
