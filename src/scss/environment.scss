@@ -11,10 +11,12 @@ html.os_windows {
 }
 
 html.os_macos {
+
     body.layout_frontend {
         -webkit-app-region: drag;
+    }
 
-
+    body {
     }
 
     button, a, span, input, p, h1, h2, h3, h4, h5, h6, img, select,
@@ -38,8 +40,12 @@ html.os_macos {
     }
 
     #vault .mac-bar {
-        height: 37px;
+        height: 40px;
         -webkit-app-region: drag;
+    }
+
+    #vault > #groupings {
+        background-color: transparent !important;
     }
 
     #vault > #groupings > .content > .inner-content {
@@ -68,6 +74,17 @@ html.os_macos {
 
             .header {
                 width: calc(100% - 44px);
+                height: 37px;
+                min-height: 37px;
+                max-height: 37px;
+
+                input {
+                    padding: 3px 10px 3px 30px;
+                }
+
+                .search .fa {
+                    top: 5px
+                }
             }
 
             .footer {
@@ -76,14 +93,14 @@ html.os_macos {
                 right: 0px;
                 top: 0px;
                 width: 44px;
-                height: 44px;
+                height: 37px;
                 padding: 8px;
                 border-top: none;
 
                 button {
-                    height: 28px;
-                    width: 28px;
-                    padding: 4px 6px;
+                    height: 24px;
+                    width: 26px;
+                    padding: 2px 5px;
                 }
             }
         }
@@ -92,7 +109,7 @@ html.os_macos {
             position: relative;
 
             .content {
-                margin-top: 44px;
+                margin-top: 37px;
             }
 
             .footer {
@@ -100,14 +117,14 @@ html.os_macos {
                 //Potisioning near header div
                 left: 0px;
                 top: 0px;
-                height: 44px;
+                height: 37px;
                 width: 100%;
                 border-top: none;
 
                 button {
-                    height: 28px;
-                    padding-top: 4px;
-                    padding-bottom: 4px;
+                    height: 24px;
+                    padding-top: 1px;
+                    padding-bottom: 1px;
                 }
             }
         }
@@ -117,9 +134,30 @@ html.os_macos {
 
 #vault {
     .footer {
-        @include themify_with_class('os_macos', $themes) {
+        @include themify_if_class('os_macos', $themes) {
             background-color: themed('headerBackgroundColor');
             border-bottom: 1px solid themed('headerBorderColor');
         }
     }
+
+    > #logo {
+        @include themify_if_class('os_macos', $themes) {
+            background-color: themed('backgroundColorAlt2');
+        }
+    }
 }
+
+html, body {
+    @include themify_if_class('os_macos', $themes) {
+        background-color: rgba(themed('backgroundColorAlt2'), .6);
+    }
+}
+
+body.layout_frontend {
+    @include themify_if_class('os_macos', $themes) {
+        background-color: themed('backgroundColorAlt2');
+    }
+}
+
+
+

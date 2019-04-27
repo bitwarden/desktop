@@ -84,6 +84,8 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('light'), value: 'light' },
             { name: i18nService.t('dark'), value: 'dark' },
             { name: 'Nord', value: 'nord' },
+            { name: 'macOS ' + i18nService.t('dark'), value: 'mac_dark' },
+            { name: 'macOS ' + i18nService.t('light'), value: 'mac_light' },
         ];
 
         this.clearClipboardOptions = [
