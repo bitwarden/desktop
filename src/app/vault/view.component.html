@@ -160,11 +160,7 @@
                         <div *ngIf="cipher.identity.address1">{{cipher.identity.address1}}</div>
                         <div *ngIf="cipher.identity.address2">{{cipher.identity.address2}}</div>
                         <div *ngIf="cipher.identity.address3">{{cipher.identity.address3}}</div>
-                        <div *ngIf="cipher.identity.city || cipher.identity.state || cipher.identity.postalCode">
-                            {{cipher.identity.city || '-'}},
-                            {{cipher.identity.state || '-'}},
-                            {{cipher.identity.postalCode || '-'}}
-                        </div>
+                        <div *ngIf="cipher.identity.fullAddressPart2">{{cipher.identity.fullAddressPart2}}</div>
                         <div *ngIf="cipher.identity.country">{{cipher.identity.country}}</div>
                     </div>
                 </div>
