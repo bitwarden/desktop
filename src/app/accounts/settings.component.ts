@@ -31,7 +31,7 @@ import { Utils } from 'jslib/misc/utils';
 export class SettingsComponent implements OnInit {
     lockOption: number = null;
     pin: boolean = null;
-    disableFavicons: boolean = false;
+    disableFavicons: boolean = true;
     enableMinToTray: boolean = false;
     enableCloseToTray: boolean = false;
     enableTray: boolean = false;
