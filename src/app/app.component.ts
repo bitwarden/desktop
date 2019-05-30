@@ -178,7 +178,9 @@ export class AppComponent implements OnInit {
                         });
                         break;
                     case 'copiedToClipboard':
-                        this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
+                        if (!message.clearing) {
+                            this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
+                        }
                         break;
                     default:
                 }
