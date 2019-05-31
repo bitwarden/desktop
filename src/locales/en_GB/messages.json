@@ -743,6 +743,19 @@
       }
     }
   },
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $WEBVAULTHOSTNAME$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "webVaultHostname": {
+        "content": "$2",
+        "example": "bitwarden.example.com"
+      }
+    }
+  },
   "invalidMasterPassword": {
     "message": "Invalid master password"
   },
