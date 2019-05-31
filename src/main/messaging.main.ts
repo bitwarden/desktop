@@ -32,6 +32,9 @@ export class MessagingMain {
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
                 break;
+            case 'alwaysOnTop':
+                this.main.windowMain.alwaysOnTop();
+                break;
             default:
                 break;
         }

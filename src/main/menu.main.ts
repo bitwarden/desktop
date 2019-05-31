@@ -441,11 +441,20 @@ export class MenuMain extends BaseMenu {
                 (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat(aboutMenuAdditions);
         }
 
-        (template[template.length - 2].submenu as MenuItemConstructorOptions[]).splice(1, 0, {
-            label: this.main.i18nService.t('hideToTray'),
-            click: () => this.main.messagingService.send('hideToTray'),
-            accelerator: 'CmdOrCtrl+Shift+M',
-        });
+        (template[template.length - 2].submenu as MenuItemConstructorOptions[]).splice(1, 0,
+            {
+                label: this.main.i18nService.t('hideToTray'),
+                click: () => this.main.messagingService.send('hideToTray'),
+                accelerator: 'CmdOrCtrl+Shift+M',
+            },
+            {
+                type: 'checkbox',
+                label: this.main.i18nService.t('alwaysOnTop'),
+                checked: this.windowMain.win.isAlwaysOnTop() ? true : false,
+                click: () => this.main.messagingService.send('alwaysOnTop'),
+                accelerator: 'CmdOrCtrl+Shift+T',
+            },
+        );
 
         this.menu = Menu.buildFromTemplate(template);
         Menu.setApplicationMenu(this.menu);

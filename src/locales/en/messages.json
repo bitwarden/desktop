@@ -1143,6 +1143,10 @@
   "hideToTray": {
     "message": "Hide to Tray"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Bitwarden window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Updated",
     "description": "ex. Date this item was updated"
