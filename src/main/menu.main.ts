@@ -358,7 +358,7 @@ export class MenuMain extends BaseMenu {
         const firstMenuOptions: MenuItemConstructorOptions[] = [
             { type: 'separator' },
             {
-                label: this.main.i18nService.t('settings'),
+                label: this.main.i18nService.t(process.platform === 'darwin' ? 'preferences' : 'settings'),
                 id: 'settings',
                 click: () => this.main.messagingService.send('openSettings'),
                 accelerator: 'CmdOrCtrl+,',

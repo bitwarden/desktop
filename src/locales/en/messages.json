@@ -1218,5 +1218,14 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
   }
 }
