@@ -450,8 +450,8 @@ export class MenuMain extends BaseMenu {
             {
                 type: 'checkbox',
                 label: this.main.i18nService.t('alwaysOnTop'),
-                checked: this.windowMain.win.isAlwaysOnTop() ? true : false,
-                click: () => this.main.messagingService.send('alwaysOnTop'),
+                checked: this.windowMain.win.isAlwaysOnTop(),
+                click: () => this.main.windowMain.toggleAlwaysOnTop(),
                 accelerator: 'CmdOrCtrl+Shift+T',
             },
         );
