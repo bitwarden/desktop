@@ -118,6 +118,9 @@ export class AppComponent implements OnInit {
                         this.systemService.cancelProcessReload();
                         break;
                     case 'loggedOut':
+                        if (this.modal != null) {
+                            this.modal.close();
+                        }
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
                         this.systemService.startProcessReload();
@@ -133,6 +136,9 @@ export class AppComponent implements OnInit {
                         await this.lockService.lock(true);
                         break;
                     case 'locked':
+                        if (this.modal != null) {
+                            this.modal.close();
+                        }
                         this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
