@@ -44,12 +44,18 @@ export class SettingsComponent implements OnInit {
     themeOptions: any[];
     clearClipboard: number;
     clearClipboardOptions: any[];
+    enableTrayText: string;
+    enableTrayDescText: string;
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private lockService: LockService,
         private stateService: StateService, private messagingService: MessagingService,
         private userService: UserService, private cryptoService: CryptoService) {
+        const trayKey = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop ?
+            'enableMenuBar' : 'enableTray';
+        this.enableTrayText = this.i18nService.t(trayKey);
+        this.enableTrayDescText = this.i18nService.t(trayKey + 'Desc');
         this.lockOptions = [
             // { name: i18nService.t('immediately'), value: 0 },
             { name: i18nService.t('oneMinute'), value: 1 },
