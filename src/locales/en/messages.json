@@ -1227,5 +1227,8 @@
   },
   "enableMenuBarDesc": {
     "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
   }
 }
