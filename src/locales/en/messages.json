@@ -1145,7 +1145,7 @@
   },
   "alwaysOnTop": {
     "message": "Always on Top",
-    "description": "Bitwarden window should always stay on top of other windows"
+    "description": "Application indow should always stay on top of other windows"
   },
   "dateUpdated": {
     "message": "Updated",
