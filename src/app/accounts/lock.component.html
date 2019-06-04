@@ -24,7 +24,10 @@
                     </div>
                 </div>
             </div>
-            <div class="box-footer">
+            <div class="box-footer" *ngIf="webVaultHostname">
+                {{'loggedInAsOn' | i18n : email:webVaultHostname}}
+            </div>
+            <div class="box-footer" *ngIf="!webVaultHostname">
                 {{'loggedInAs' | i18n : email}}
             </div>
         </div>
