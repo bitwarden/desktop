@@ -740,25 +740,16 @@
   "unlock": {
     "message": "Unlock"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
-    "placeholders": {
-      "email": {
-        "content": "$1",
-        "example": "name@example.com"
-      }
-    }
-  },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $WEBVAULTHOSTNAME$.",
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
       },
-      "webVaultHostname": {
+      "hostname": {
         "content": "$2",
-        "example": "bitwarden.example.com"
+        "example": "bitwarden.com"
       }
     }
   },

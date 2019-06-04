@@ -20,7 +20,8 @@ export class LockComponent extends BaseLockComponent {
     constructor(router: Router, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
         userService: UserService, cryptoService: CryptoService,
-        storageService: StorageService, lockService: LockService, environmentService: EnvironmentService) {
+        storageService: StorageService, lockService: LockService,
+        environmentService: EnvironmentService) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
             storageService, lockService, environmentService);
     }
