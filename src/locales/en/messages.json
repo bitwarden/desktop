@@ -1238,5 +1238,8 @@
   },
   "hideToMenuBar": {
     "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
