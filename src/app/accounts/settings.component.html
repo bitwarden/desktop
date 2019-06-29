@@ -104,6 +104,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="box">
+                    <div class="box-header">
+                        {{'autoType' | i18n}}
+                    </div>
+                    <div class="box-content box-content-padded">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="enableAutoType">
+                                    <input id="enableAutoType" type="checkbox" name="enableAutoType" [(ngModel)]="enableAutoType" (change)="saveAutoType()">
+                                    {{'enableAutoType' | i18n}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="AutoTypeHotkey">{{'globalKeyboardShortcut' | i18n}}</label>
+                            <input id="AutoTypeHotkey" name="AutoTypeHotkey" [(ngModel)]="autoTypeHotkey"
+                                    (keypress)="saveAutoTypeHotkey($event)" type="text"/>
+                            <small class="help-block">{{'globalKeyboardShortcutHelp' | i18n}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="AutoTypeDefaultSequence">{{'autoTypeDefaultSequence' | i18n}}</label>
+                            <input id="AutoTypeDefaultSequence" name="AutoTypeDefaultSequence" [(ngModel)]="autoTypeDefaultSequence"
+                                   (change)="saveAutoTypeDefaultSequence()" type="text"/>
+                            <small class="help-block">{{'autoTypeSequenceHelp' | i18n}}</small>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>

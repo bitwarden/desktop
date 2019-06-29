@@ -1,28 +1,26 @@
-import {
-    Component,
-    OnInit,
-} from '@angular/core';
+import {Component, OnInit,} from '@angular/core';
 
-import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
+import {ToasterService} from 'angular2-toaster';
+import {Angulartics2} from 'angulartics2';
 import swal from 'sweetalert';
 
-import { DeviceType } from 'jslib/enums/deviceType';
+import {DeviceType} from 'jslib/enums/deviceType';
 
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { LockService } from 'jslib/abstractions/lock.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { StateService } from 'jslib/abstractions/state.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
-import { UserService } from 'jslib/abstractions/user.service';
+import {CryptoService} from 'jslib/abstractions/crypto.service';
+import {I18nService} from 'jslib/abstractions/i18n.service';
+import {LockService} from 'jslib/abstractions/lock.service';
+import {MessagingService} from 'jslib/abstractions/messaging.service';
+import {PlatformUtilsService} from 'jslib/abstractions/platformUtils.service';
+import {StateService} from 'jslib/abstractions/state.service';
+import {StorageService} from 'jslib/abstractions/storage.service';
+import {UserService} from 'jslib/abstractions/user.service';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import {ConstantsService} from 'jslib/services/constants.service';
+import {keyboardEventToAccelerator} from '../../services/auto-type.service';
 
-import { ElectronConstants } from 'jslib/electron/electronConstants';
+import {ElectronConstants} from 'jslib/electron/electronConstants';
 
-import { Utils } from 'jslib/misc/utils';
+import {Utils} from 'jslib/misc/utils';
 
 @Component({
     selector: 'app-settings',
@@ -33,6 +31,7 @@ export class SettingsComponent implements OnInit {
     pin: boolean = null;
     disableFavicons: boolean = false;
     enableMinToTray: boolean = false;
+    enableAutoType: boolean = false;
     enableCloseToTray: boolean = false;
     enableTray: boolean = false;
     showMinToTray: boolean = false;
@@ -46,6 +45,8 @@ export class SettingsComponent implements OnInit {
     clearClipboardOptions: any[];
     enableTrayText: string;
     enableTrayDescText: string;
+    autoTypeHotkey: string;
+    autoTypeDefaultSequence: string;
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -110,6 +111,10 @@ export class SettingsComponent implements OnInit {
         this.pin = pinSet[0] || pinSet[1];
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
+        this.enableAutoType = await this.storageService.get<boolean>(ElectronConstants.enableAutoTypeKey);
+        this.autoTypeHotkey = await this.storageService.get<string>(ElectronConstants.AutoTypeHotkeyKey);
+        this.autoTypeDefaultSequence =
+            await this.storageService.get<string>(ElectronConstants.AutoTypeDefaultSequenceKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
         this.startToTray = await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey);
@@ -181,6 +186,26 @@ export class SettingsComponent implements OnInit {
     async saveMinToTray() {
         await this.storageService.save(ElectronConstants.enableMinimizeToTrayKey, this.enableMinToTray);
         this.callAnalytics('MinimizeToTray', this.enableMinToTray);
+    }
+
+    async saveAutoType() {
+        await this.storageService.save(ElectronConstants.enableAutoTypeKey, this.enableAutoType);
+        this.callAnalytics('AutoType', this.enableAutoType);
+        this.messagingService.send('updateAutoTypeHotkey');
+    }
+
+    async saveAutoTypeHotkey(event: KeyboardEvent) {
+        if (event.repeat) { return; }
+        const accelerator = keyboardEventToAccelerator(event);
+        if (accelerator) {
+            this.autoTypeHotkey = accelerator;
+            await this.storageService.save(ElectronConstants.AutoTypeHotkeyKey, this.autoTypeHotkey);
+            this.messagingService.send('updateAutoTypeHotkey');
+        }
+    }
+
+    async saveAutoTypeDefaultSequence() {
+        await this.storageService.save(ElectronConstants.AutoTypeDefaultSequenceKey, this.autoTypeDefaultSequence);
     }
 
     async saveCloseToTray() {

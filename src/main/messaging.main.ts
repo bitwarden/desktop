@@ -1,6 +1,6 @@
-import { ipcMain } from 'electron';
+import {ipcMain} from 'electron';
 
-import { Main } from '../main';
+import {Main} from '../main';
 
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
@@ -31,6 +31,13 @@ export class MessagingMain {
                 break;
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
+                break;
+            case 'showWindow':
+                this.main.windowMain.win.show();  // TODO More work needs to be done to abstract showing the window.
+                                      // Code is sprinkled everywere that does this and there are issues if win == null.
+                break;
+            case 'updateAutoTypeHotkey':
+                this.main.autoTypeService.update();
                 break;
             default:
                 break;

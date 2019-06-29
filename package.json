@@ -42,7 +42,8 @@
     "dist:win:ci": "npm run build && npm run pack:win:ci",
     "publish:lin": "npm run build && npm run clean:dist && build --linux --x64 -p always",
     "publish:mac": "npm run build && npm run clean:dist && build --mac -p always",
-    "publish:win": "npm run build && npm run clean:dist && build --win --x64 --ia32 -p always -c.win.certificateSubjectName=\"8bit Solutions LLC\""
+    "publish:win": "npm run build && npm run clean:dist && build --win --x64 --ia32 -p always -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
+    "rebuild": "npm rebuild --runtime=electron --target=1.1.3 --disturl=https://atom.io/download/atom-shell --abi=48"
   },
   "build": {
     "appId": "com.bitwarden.desktop",
@@ -262,5 +263,8 @@
     "sweetalert": "2.1.2",
     "zone.js": "0.8.28",
     "zxcvbn": "4.4.2"
+  },
+  "optionalDependencies": {
+    "windows-build-tools": ""
   }
 }

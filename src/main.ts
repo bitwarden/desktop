@@ -1,28 +1,30 @@
-import { app } from 'electron';
+import {app} from 'electron';
 import * as path from 'path';
 
-import { I18nService } from './services/i18n.service';
+import {I18nService} from './services/i18n.service';
 
-import { MenuMain } from './main/menu.main';
-import { MessagingMain } from './main/messaging.main';
-import { PowerMonitorMain } from './main/powerMonitor.main';
+import {MenuMain} from './main/menu.main';
+import {MessagingMain} from './main/messaging.main';
+import {PowerMonitorMain} from './main/powerMonitor.main';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import {ConstantsService} from 'jslib/services/constants.service';
 
-import { ElectronConstants } from 'jslib/electron/electronConstants';
-import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
-import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
-import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
-import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
-import { TrayMain } from 'jslib/electron/tray.main';
-import { UpdaterMain } from 'jslib/electron/updater.main';
-import { WindowMain } from 'jslib/electron/window.main';
+import {ElectronConstants} from 'jslib/electron/electronConstants';
+import {KeytarStorageListener} from 'jslib/electron/keytarStorageListener';
+import {ElectronLogService} from 'jslib/electron/services/electronLog.service';
+import {ElectronMainMessagingService} from 'jslib/electron/services/electronMainMessaging.service';
+import {ElectronStorageService} from 'jslib/electron/services/electronStorage.service';
+import {TrayMain} from 'jslib/electron/tray.main';
+import {UpdaterMain} from 'jslib/electron/updater.main';
+import {WindowMain} from 'jslib/electron/window.main';
+import {AutoTypeService} from './services/auto-type.service';
 
 export class Main {
     logService: ElectronLogService;
     i18nService: I18nService;
     storageService: ElectronStorageService;
     messagingService: ElectronMainMessagingService;
+    autoTypeService: AutoTypeService;
     keytarStorageListener: KeytarStorageListener;
 
     windowMain: WindowMain;
@@ -80,6 +82,8 @@ export class Main {
         this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
             this.messagingMain.onMessage(message);
         });
+
+        //this.autoTypeService = new AutoTypeService(this.storageService, );
 
         this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
     }

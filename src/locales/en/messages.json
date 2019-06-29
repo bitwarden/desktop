@@ -105,6 +105,42 @@
   "customFields": {
     "message": "Custom Fields"
   },
+  "autoType": {
+    "message": "Auto-type"
+  },
+  "autoTypeTargets": {
+    "message": "Auto-Type Targets"
+  },
+  "globalKeyboardShortcut": {
+    "message": "Global Keyboard Shortcut"
+  },
+  "globalKeyboardShortcutHelp": {
+    "message": "WRITE ME!"
+  },
+  "autoTypeDefaultSequence": {
+    "message": "Default sequence"
+  },
+  "autoTypeSequenceHelp": {
+    "message": "WRITE ME!"
+  },
+  "newAutoTypeTarget": {
+    "message": "New auto-type target"
+  },
+  "enableAutoType": {
+    "message": "Enable auto-type"
+  },
+  "autoTypeTarget": {
+    "message": "Target"
+  },
+  "selectAutoTypeTarget": {
+    "message": "Select target"
+  },
+  "autoTypeSequence": {
+    "message": "Sequence"
+  },
+  "autoTypeTCATO": {
+    "message": "Two-Channel Auto-Type Obfuscation"
+  },
   "launch": {
     "message": "Launch"
   },
