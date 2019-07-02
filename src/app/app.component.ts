@@ -42,6 +42,7 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SearchService } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
+import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { SystemService } from 'jslib/abstractions/system.service';
@@ -92,7 +93,8 @@ export class AppComponent implements OnInit {
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
         private messagingService: MessagingService, private collectionService: CollectionService,
         private searchService: SearchService, private notificationsService: NotificationsService,
-        private platformUtilsService: PlatformUtilsService, private systemService: SystemService) { }
+        private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
+        private stateService: StateService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -139,6 +141,7 @@ export class AppComponent implements OnInit {
                         if (this.modal != null) {
                             this.modal.close();
                         }
+                        this.stateService.purge();
                         this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
@@ -219,6 +222,7 @@ export class AppComponent implements OnInit {
             this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
             this.lockService.clear(),
+            this.stateService.purge(),
         ]);
 
         this.lockService.pinLocked = false;

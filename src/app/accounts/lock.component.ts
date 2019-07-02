@@ -7,6 +7,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
@@ -21,8 +22,8 @@ export class LockComponent extends BaseLockComponent {
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
         userService: UserService, cryptoService: CryptoService,
         storageService: StorageService, lockService: LockService,
-        environmentService: EnvironmentService) {
+        environmentService: EnvironmentService, stateService: StateService) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
-            storageService, lockService, environmentService);
+            storageService, lockService, environmentService, stateService);
     }
 }
