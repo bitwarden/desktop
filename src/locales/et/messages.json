@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtrid"
   },
   "allItems": {
     "message": "Kõik kirjed"
@@ -301,7 +301,7 @@
     "message": "Väärtus"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Lohista sorteerimiseks"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -371,11 +371,11 @@
     "message": "Sõna eraldaja"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Suurtäht",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Lisa number"
   },
   "close": {
     "message": "Sulge"
