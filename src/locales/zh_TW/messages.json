@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "所有項目"
   },
@@ -82,7 +85,7 @@
     "message": "密碼"
   },
   "passphrase": {
-    "message": "密碼"
+    "message": "密碼短語"
   },
   "editItem": {
     "message": "編輯項目"
@@ -297,6 +300,9 @@
   "value": {
     "message": "值"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "文字"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "文字分隔字元"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "關閉"
@@ -598,7 +611,7 @@
     "message": "自我託管環境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己設定、託管的 bitwarden 環境之基礎 URL。"
+    "message": "指定自己設定、託管的 Bitwarden 環境之基礎 URL。"
   },
   "customEnvironment": {
     "message": "自訂環境"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "解鎖"
   },
-  "loggedInAs": {
-    "message": "已登入為 $EMAIL$",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -814,7 +831,7 @@
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "自動清除剪貼簿中複製的值。",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
@@ -842,10 +859,10 @@
     "message": "永遠在系統匣顯示圖示"
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "啟動時隱藏至系統匣"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "應用程式首次啟動時，將圖示隱藏至系統匣。"
   },
   "language": {
     "message": "語言"
@@ -991,7 +1008,8 @@
     "message": "密碼歷史記錄"
   },
   "clear": {
-    "message": "清除"
+    "message": "清除",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "沒有可顯示的密碼。"
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "隱藏至系統匣"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "已更新",
     "description": "ex. Date this item was updated"
@@ -1188,7 +1210,7 @@
     "message": "主密碼強度太弱"
   },
   "weakMasterPasswordDesc": {
-    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (複雜密碼) 來正確保護您的 bitwarden 帳戶。仍要使用此密碼嗎？"
+    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (或密碼短語) 來正確保護您的 bitwarden 帳戶。仍要使用這組主密碼嗎？"
   },
   "pin": {
     "message": "PIN 碼",
@@ -1198,7 +1220,7 @@
     "message": "用 PIN 碼解鎖"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "設定您用來解鎖 Bitwarden 的 PIN 碼。您的 PIN 設定將在您完全結束本應用程式時被重設。"
   },
   "pinRequired": {
     "message": "需要 PIN 碼。"
@@ -1210,6 +1232,21 @@
     "message": "密碼庫已鎖定。驗證 PIN 碼以繼續。"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "重啟後使用主密碼鎖定"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
