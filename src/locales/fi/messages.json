@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "Kaikki kohteet"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Arvo"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Teksti"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Sanaerotin"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "Sulje"
@@ -710,7 +723,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Tilisi tunnistelauseke",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Avaa"
   },
-  "loggedInAs": {
-    "message": "Kirjautunut tilillä $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -762,19 +779,19 @@
     "message": "Välittömästi"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekuntia"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekuntia"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekuntia"
   },
   "oneMinute": {
     "message": "1 minuutti"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minuuttia"
   },
   "fiveMinutes": {
     "message": "5 minuuttia"
@@ -810,11 +827,11 @@
     "message": "Turvallisuus"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Tyhjennä leikepöytä",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Poista kopioidut tekstit leikepöydältä automaattisesti.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
@@ -952,7 +969,7 @@
     "message": "lisävaihtoehtoja kaksivaiheiselle kirjautumiselle, kuten YubiKey, FIDO U2F ja Duo"
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Salasanahygienia-, tiliturvallisuus- ja tietovuotoraportteja jotka pitävät holvisi turvassa."
   },
   "premiumSignUpTotp": {
     "message": "TOTP-vahvistuskoodigeneraattorin (2FA) holvisi käyttäjätunnuksille"
@@ -991,7 +1008,8 @@
     "message": "Salasanahistoria"
   },
   "clear": {
-    "message": "Tyhjennä"
+    "message": "Tyhjennä",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Ei salasanoja näytettäväksi."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Piilota ilmoitusalueelle"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Päivitetty",
     "description": "ex. Date this item was updated"
@@ -1210,6 +1232,21 @@
     "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
