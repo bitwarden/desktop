@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "Todos os Itens"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Valor"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Texto"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Separador de Palavra"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "Fechar"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Desbloquear"
   },
-  "loggedInAs": {
-    "message": "Sessão iniciada como $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "Histórico de Senha"
   },
   "clear": {
-    "message": "Limpar"
+    "message": "Limpar",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Não existem senhas para listar."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Ocultar para a Bandeja"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Atualizado",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

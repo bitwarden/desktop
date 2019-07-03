@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "全てのアイテム"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "値"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "テキスト"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "単語の区切り"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "閉じる"
@@ -706,11 +719,11 @@
     "message": "マスターパスワードは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
   },
   "fingerprintPhrase": {
-    "message": "指紋フレーズ",
+    "message": "パスフレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "アカウントの指紋認証用フレーズ",
+    "message": "アカウントのパスフレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "ロック解除"
   },
-  "loggedInAs": {
-    "message": "$EMAIL$ としてログインしました",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "パスワードの履歴"
   },
   "clear": {
-    "message": "消去する"
+    "message": "消去する",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "表示するパスワードがありません"
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "トレイに隠す"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "更新日",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }

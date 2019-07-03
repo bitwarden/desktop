@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "Sve stavke"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Vrijednost"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Razdjelitelj riječi"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "Zatvori"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Otključaj"
   },
-  "loggedInAs": {
-    "message": "Prijavljen kao $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -762,19 +779,19 @@
     "message": "Odmah"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekundi"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekundi"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekundi"
   },
   "oneMinute": {
     "message": "1 minuta"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minute"
   },
   "fiveMinutes": {
     "message": "5 minuta"
@@ -810,11 +827,11 @@
     "message": "Sigurnost"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Očisti međuspremnik",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Automatski očisti kopirane vrijednosti iz vašeg međuspremnika.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
@@ -842,10 +859,10 @@
     "message": "Uvijek prikaži ikonu u alatnoj traci."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Započni minimizirano s ikonom na traci"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Kada se aplikacija prvi puta pokrene, samo prikazi ikonu na traci."
   },
   "language": {
     "message": "Jezik"
@@ -991,7 +1008,8 @@
     "message": "Povijest lozinke"
   },
   "clear": {
-    "message": "Očisti"
+    "message": "Očisti",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Nema lozinki na popisu."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Sakrij u alatnoj traci"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Ažurirano",
     "description": "ex. Date this item was updated"
@@ -1195,21 +1217,36 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Otključaj s PIN-om"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Postavite vaš PIN kod za otključavanje Bitwardena. Vaše postavke PIN-a će biti resetirane ako se ikada potpuno odjavite iz aplikacije."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Potreban je PIN kod."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Nevažeći PIN kod."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Vaš trezor je zaključan. Potvrdite vaš PIN da biste nastavili."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Zaključaj s glavnom lozinkom kod ponovnog pokretanja"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
