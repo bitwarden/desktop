@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "Alle Einträge"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Wert"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Worttrennzeichen"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "Schließen"
@@ -598,7 +611,7 @@
     "message": "Selbstgehostete Anwendung"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitte gib die Basis-URL deiner selbst gehosteten Bitwarden-Installation an."
+    "message": "Bitte geben Sie die Basis-URL Ihrer vor Ort gehosteten Bitwarden-Installation an."
   },
   "customEnvironment": {
     "message": "Benutzerdefinierte Umgebung"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Entsperren"
   },
-  "loggedInAs": {
-    "message": "Als $EMAIL$ angemeldet.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -830,7 +847,7 @@
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster minimiert wird."
   },
   "enableCloseToTray": {
-    "message": "In der Nähe des Taskleisten-Symbols"
+    "message": "In Taskleiste minimieren"
   },
   "enableCloseToTrayDesc": {
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster geschlossen wird."
@@ -845,7 +862,7 @@
     "message": "Minimiert in Taskleiste starten"
   },
   "startToTrayDesc": {
-    "message": "Beim ersten Start der Anwenung nur als Symbol im System Tray anzeigen."
+    "message": "Beim ersten Start der Anwendung nur minimiert in der Taskleiste anzeigen."
   },
   "language": {
     "message": "Sprache"
@@ -991,7 +1008,8 @@
     "message": "Kennwort-Historie"
   },
   "clear": {
-    "message": "Löschen"
+    "message": "Löschen",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Keine Einträge zum Anzeigen vorhanden."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Nur in der Taskleiste anzeigen"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Aktualisiert",
     "description": "ex. Date this item was updated"
@@ -1198,7 +1220,7 @@
     "message": "Mit PIN-Code entsperren"
   },
   "setYourPinCode": {
-    "message": "Geben Sie Ihren PIN-Code für das Entsperren von Bitwarden ein. Ihre PIN-Einstellungen werden zurückgesetzt, wenn Sie sich vollständig von der Anwendung abmelden."
+    "message": "Gebe deinen PIN-Code für das Entsperren von Bitwarden ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmelden."
   },
   "pinRequired": {
     "message": "PIN-Code ist erforderlich."
@@ -1207,9 +1229,24 @@
     "message": "Ungültiger PIN-Code."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Ihr Tresor ist gesperrt. Geben sie ihren PIN Code ein um fortzufahren."
+    "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
