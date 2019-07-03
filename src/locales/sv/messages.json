@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "Alla objekt"
   },
@@ -39,16 +42,16 @@
     "message": "Delad"
   },
   "share": {
-    "message": "Share"
+    "message": "Dela"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Dela objekt"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Delat objekt"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Välj en organisation som du vill dela detta objekt med. Delning överför ägandet av objektet till organisationen. Du kommer inte längre att vara direkt ägare till detta objekt när det har delats."
   },
   "attachments": {
     "message": "Bifogade filer"
@@ -82,7 +85,7 @@
     "message": "Lösenord"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Lösenordsfras"
   },
   "editItem": {
     "message": "Redigera objekt"
@@ -113,7 +116,7 @@
     "message": "Växla synlighet"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Växla synlig\/dold",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
@@ -297,6 +300,9 @@
   "value": {
     "message": "Värde"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -359,10 +365,17 @@
     "message": "Längd"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Antal ord"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Ordseparator"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "Stäng"
@@ -706,11 +719,11 @@
     "message": "Du kan ändra ditt huvudlösenord på bitwardens webbvalv. Vill du besöka webbplatsen nu?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Fingeravtrycksfras",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Ditt kontos fingeravtrycksfras",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Lås upp"
   },
-  "loggedInAs": {
-    "message": "Logged in as $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -762,19 +779,19 @@
     "message": "Omedelbart"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekunder"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekunder"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekunder"
   },
   "oneMinute": {
     "message": "1 minut"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minuter"
   },
   "fiveMinutes": {
     "message": "5 minuter"
@@ -810,11 +827,11 @@
     "message": "Säkerhet"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Rensa urklipp",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Rensa automatiskt kopierade värden från urklipp.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
@@ -830,10 +847,10 @@
     "message": "När fönstret minimeras, visa en ikon i systemfältet istället."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Stäng till systemfältsikon"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "När fönstret stängs, visa en ikon i systemfältet istället."
   },
   "enableTray": {
     "message": "Aktivera systemfältsikon"
@@ -842,10 +859,10 @@
     "message": "Visa alltid en ikon i systemfältet."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Starta i systemfältet"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "När programmet startas, visa endast en ikon i systemfältet."
   },
   "language": {
     "message": "Språk"
@@ -952,7 +969,7 @@
     "message": "Ytterligare alternativ för tvåstegsverifiering såsom YubiKey, FIDO U2F och Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Lösenordshygien, kontohälsa och dataintrångsrapporter för att hålla ditt valv säkert."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verifieringskod-generator (2FA) för inloggningar i ditt valv."
@@ -991,7 +1008,8 @@
     "message": "Lösenordshistorik"
   },
   "clear": {
-    "message": "Rensa"
+    "message": "Rensa",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Det finns inga lösenord att lista."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Minimera till systemfältet"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Uppdaterad",
     "description": "ex. Date this item was updated"
@@ -1148,68 +1170,83 @@
     "message": "Exportera valv"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Filformat"
   },
   "warning": {
     "message": "VARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Den här exporten innehåller ditt valvs okrypterade data i .csv-format. Du bör inte lagra eller skicka filen över osäkra anslutningar (genom t.ex. mejl). Radera filen efter du är färdig med den."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera datan i ditt valv."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Du tillhör inte någon organisation. Organisationer möjliggör säker delning av objekt med andra användare."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Det finns inga samlingar att visa."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Ägarskap"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Vem äger detta objekt?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Stark",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Bra",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Svagt",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Svagt huvudlösenord"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Huvudlösenordet du har valt är svagt. Du bör använda ett starkt huvudlösenord (eller en lösenfras) för att skydda ditt Bitwarden-konto ordentligt. Är du säker på att du vill använda detta huvudlösenord?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-kod",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Lås upp med PIN-kod"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Ange en PIN-kod för att låsa upp Bitwarden. Dina PIN-inställningar återställs om du någonsin loggar ut helt från programmet."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN-kod behövs."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Ogiltig PIN-kod."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Valvet är låst. Kontrollera din PIN-kod för att fortsätta."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Lås med huvudlösenordet vid omstart"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
