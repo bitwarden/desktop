@@ -455,7 +455,7 @@
     "message": "ثبت"
   },
   "masterPass": {
-    "message": "گذرواژه‌ ی اصلی"
+    "message": "گذرواژه‌ اصلی"
   },
   "masterPassDesc": {
     "message": "گذرواژه اصلی رمز عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن گذرواژه اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
@@ -1241,12 +1241,12 @@
     "message": "فعال کردن آیکون نوار منو"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "همیشه یک آیکون در نوار منو نشان بده."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "پنهان کردن در نوار منو"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
   }
 }
