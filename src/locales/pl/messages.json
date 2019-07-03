@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtry"
   },
   "allItems": {
     "message": "Wszystkie elementy"
@@ -301,7 +301,7 @@
     "message": "Wartość"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Przeciągnij by posortować"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -371,11 +371,11 @@
     "message": "Separator wyrazów"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Duże litery",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Uwzględnij Cyfry"
   },
   "close": {
     "message": "Zamknij"
@@ -748,7 +748,7 @@
     "message": "Odblokuj"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Zalogowano jako $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Ukryj w zasobniku systemowym"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Zawsze na wierzchu",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Zablokuj hasłem głównym po restarcie"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Ustawienia"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Włącz ikonę w pasku menu"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Zawsze pokazuj ikonę na pasku menu."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Schowaj do paska menu"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Musisz wybrać co najmniej jedną kolekcję."
   }
 }
