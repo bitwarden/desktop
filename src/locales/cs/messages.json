@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtry"
   },
   "allItems": {
     "message": "Všechny položky"
@@ -301,7 +301,7 @@
     "message": "Hodnota"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Přetáhnutím seřadíte"
   },
   "cfTypeText": {
     "message": "Text"
