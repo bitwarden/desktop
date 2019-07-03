@@ -1244,9 +1244,9 @@
     "message": "Mostra sempre una icona a la barra de menú."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Amaga la barra de menú"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Heu d'escollir com a mínim una col·lecció."
   }
 }
