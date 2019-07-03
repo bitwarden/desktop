@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "所有项目"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "值"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "文本"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "单词分隔符"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "关闭"
@@ -598,7 +611,7 @@
     "message": "自我托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己配置、托管的 Bitwarden 环境的基础 URL。"
+    "message": "指定自己配置、托管的 bitwarden 环境的基础 URL。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "解锁​​​​"
   },
-  "loggedInAs": {
-    "message": "已登录为 $EMAIL$。",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "密码历史记录"
   },
   "clear": {
-    "message": "清除"
+    "message": "清除",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "没有要显示的项目。"
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "隐藏到托盘"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "更新于",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "重启后改用主密码锁定"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
