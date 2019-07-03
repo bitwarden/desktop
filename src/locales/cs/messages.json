@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "Všechny položky"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Hodnota"
   },
+  "dragToSort": {
+    "message": "Drag to sort"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Oddělovač slov"
+  },
+  "capitalize": {
+    "message": "Capitalize",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Include Number"
   },
   "close": {
     "message": "Zavřít"
@@ -598,7 +611,7 @@
     "message": "Vlastnoručně hostované prostředí"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace Bitwarden."
+    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace bitwarden."
   },
   "customEnvironment": {
     "message": "Vlastní prostředí"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Odemknout"
   },
-  "loggedInAs": {
-    "message": "Přihlášen jako $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -762,19 +779,19 @@
     "message": "Okamžitě"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekund"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekund"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekund"
   },
   "oneMinute": {
     "message": "Po 1 minutě"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minuty"
   },
   "fiveMinutes": {
     "message": "Po 5 minutách"
@@ -810,11 +827,11 @@
     "message": "Zabezpečení"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Vyčistit schránku",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Automaticky vymazat zkopírované hodnoty z vaší schránky.",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
@@ -991,7 +1008,8 @@
     "message": "Historie hesel"
   },
   "clear": {
-    "message": "Vymazat"
+    "message": "Vymazat",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Nejsou k dispozici žádná hesla."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Skrýt do systémové lišty"
   },
+  "alwaysOnTop": {
+    "message": "Always on Top",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Změněno",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
   }
 }
