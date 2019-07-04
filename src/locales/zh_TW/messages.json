@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "篩選器"
   },
   "allItems": {
     "message": "所有項目"
@@ -301,7 +301,7 @@
     "message": "值"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "透過拖曳來排序"
   },
   "cfTypeText": {
     "message": "文字"
@@ -371,11 +371,11 @@
     "message": "文字分隔字元"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "大寫",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "包含數字"
   },
   "close": {
     "message": "關閉"
@@ -748,7 +748,7 @@
     "message": "解鎖"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "已經在 $HOSTNAME$ 使用 $EMAIL$ 身份登入。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "隱藏至系統匣"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "總在最上層",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "重啟後使用主密碼鎖定"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "偏好設定"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "開啟選單列圖示"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "永遠在選單列中顯示圖示。"
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "隱藏至選單列"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "您必須至少選擇一個收藏。"
   }
 }

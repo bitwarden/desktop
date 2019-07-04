@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtrid"
   },
   "allItems": {
     "message": "Kõik kirjed"
@@ -301,7 +301,7 @@
     "message": "Väärtus"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Lohista sorteerimiseks"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -371,11 +371,11 @@
     "message": "Sõna eraldaja"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Suurtäht",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Lisa number"
   },
   "close": {
     "message": "Sulge"
@@ -748,7 +748,7 @@
     "message": "Lukusta lahti"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Sisse logitud kontoga $EMAIL$ aadressil $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Peida süsteemisalve"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Alati kõige peal",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Eelistused"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Lülita menüüriba ikoon sisse"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Kuva alati süsteemisalve ikooni."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Peida süsteemisalve ikoon"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Pead valima vähemalt ühe kogumiku."
   }
 }

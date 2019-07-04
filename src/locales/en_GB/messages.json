@@ -371,11 +371,11 @@
     "message": "Word separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Capitalise",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Include number"
   },
   "close": {
     "message": "Close"
@@ -1155,7 +1155,7 @@
     "message": "Hide to tray"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Always on top",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1238,13 +1238,13 @@
     "message": "Preferences"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Enable menu bar icon"
   },
   "enableMenuBarDesc": {
     "message": "Always show an icon in the menu bar."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Hide to menu bar"
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."

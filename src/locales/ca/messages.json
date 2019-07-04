@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtres"
   },
   "allItems": {
     "message": "Tots els elements"
@@ -301,7 +301,7 @@
     "message": "Valor"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Arrossega per ordenar"
   },
   "cfTypeText": {
     "message": "Text"
@@ -371,11 +371,11 @@
     "message": "Separador de paraules"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Majúscules inicials",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Inclou número"
   },
   "close": {
     "message": "Tanca"
@@ -611,7 +611,7 @@
     "message": "Entorn d'allotjament propi"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifiqueu l'URL base de la vostra instal·lació Bitwarden allotjada en entorn propi."
+    "message": "Especifiqueu l'URL base de la vostra instal·lació Bitwarden allotjada en un entorn propi."
   },
   "customEnvironment": {
     "message": "Entorn personalitzat"
@@ -748,7 +748,7 @@
     "message": "Desbloqueja"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Heu iniciat sessió com a $EMAIL$ en $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Amaga a la safata"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Sempre visible",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferències"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Habilita la icona de la barra de menús"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Mostra sempre una icona a la barra de menú."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Amaga la barra de menú"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Heu d'escollir com a mínim una col·lecció."
   }
 }

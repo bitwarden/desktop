@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "筛选"
   },
   "allItems": {
     "message": "所有项目"
@@ -301,7 +301,7 @@
     "message": "值"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "拖动排序"
   },
   "cfTypeText": {
     "message": "文本"
@@ -371,11 +371,11 @@
     "message": "单词分隔符"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "大写",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "包含数字"
   },
   "close": {
     "message": "关闭"
@@ -748,7 +748,7 @@
     "message": "解锁​​​​"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "以 $EMAIL$ 在 $HOSTNAME$ 上登录。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "隐藏到托盘"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "总是在最前面(&A)",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "重启后改用主密码锁定"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "设置"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "启用菜单栏图标"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "始终在系统托盘中显示一个图标。"
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "隐藏到菜单栏"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "您必须选择至少一个收藏。"
   }
 }

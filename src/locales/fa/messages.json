@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "فیلترها"
   },
   "allItems": {
     "message": "تمام موارد"
@@ -301,7 +301,7 @@
     "message": "مقدار"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "کشیدن آیتم برای مرتب کردن"
   },
   "cfTypeText": {
     "message": "متن"
@@ -371,11 +371,11 @@
     "message": "کلمه جداکننده"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "بزرگ نوشتن حرف اول",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "شامل عدد"
   },
   "close": {
     "message": "بستن"
@@ -455,7 +455,7 @@
     "message": "ثبت"
   },
   "masterPass": {
-    "message": "گذرواژه‌ ی اصلی"
+    "message": "گذرواژه‌ اصلی"
   },
   "masterPassDesc": {
     "message": "گذرواژه اصلی رمز عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن گذرواژه اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
@@ -748,7 +748,7 @@
     "message": "باز کردن قفل"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "وارد شده با $EMAIL$ در $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "مخفی کردن در Tray"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "همشه در بالا",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "در زمان شروع مجدد، با رمز اصلی قفل کن"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "تنظیمات"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "فعال کردن آیکون نوار منو"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "همیشه یک آیکون در نوار منو نشان بده."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "پنهان کردن در نوار منو"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
   }
 }

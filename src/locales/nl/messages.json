@@ -301,7 +301,7 @@
     "message": "Waarde"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Sleep om te sorteren"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -371,11 +371,11 @@
     "message": "Woordscheidingsteken"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Beginhoofdletters",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Nummer opnemen"
   },
   "close": {
     "message": "Sluiten"
@@ -748,7 +748,7 @@
     "message": "Ontgrendelen"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Ingelogd als $EMAIL$ op $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Naar het systeemvak verbergen"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Altijd op voorgrond",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Vergrendelen met hoofdwachtwoord bij herstart"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Voorkeuren"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Icoon in de menubalk"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Altijd een pictogram in de menubalk weergeven."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Verbergen naar de menubalk"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "U moet tenminste één collectie selecteren."
   }
 }

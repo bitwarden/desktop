@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "allItems": {
     "message": "Tutti gli Elementi"
@@ -301,7 +301,7 @@
     "message": "Valore"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Trascina per ordinare"
   },
   "cfTypeText": {
     "message": "Testo"
@@ -371,11 +371,11 @@
     "message": "Separatore parole"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Rendi maiuscolo",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Includi numero"
   },
   "close": {
     "message": "Chiudi"
@@ -748,7 +748,7 @@
     "message": "Sblocca"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Accesso effettuato come $EMAIL$ su $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Nascondi nell'area di notifica"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Tieni in primo piano",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Blocca con la password principale al riavvio"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferenze"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Abilita icona barra dei menu"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Mostra sempre un'icona nella barra dei menu."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Nascondi nella barra dei menu"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Devi selezionare almeno una categoria."
   }
 }

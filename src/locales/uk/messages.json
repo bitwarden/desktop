@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Фільтри"
   },
   "allItems": {
     "message": "Всі елементи"
@@ -301,7 +301,7 @@
     "message": "Значення"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Перетягніть, щоб відсортувати"
   },
   "cfTypeText": {
     "message": "Текст"
@@ -371,11 +371,11 @@
     "message": "Розділювач слів"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Великі літери",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Включити число"
   },
   "close": {
     "message": "Закрити"
@@ -748,7 +748,7 @@
     "message": "Розблокувати"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Ви увійшли як $EMAIL$ на $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Згорнути в лоток"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Завжди вгорі",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Блокувати головним паролем при перезапуску"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Налаштування"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Увімкнути піктограму панелі меню"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Завжди показувати піктограму в панелі меню."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Приховати до панелі меню"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Ви повинні обрати принаймні одну збірку."
   }
 }
