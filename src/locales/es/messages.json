@@ -371,11 +371,11 @@
     "message": "Separador de palabras"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Mayúsculas iniciales",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Incluir número"
   },
   "close": {
     "message": "Cerrar"
@@ -1235,7 +1235,7 @@
     "message": "Bloquear con contraseña maestra al reiniciar"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferencias"
   },
   "enableMenuBar": {
     "message": "Activar ícono de barra de menú"
