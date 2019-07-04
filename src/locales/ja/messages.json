@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "フィルター"
   },
   "allItems": {
     "message": "全てのアイテム"
@@ -301,7 +301,7 @@
     "message": "値"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "ドラッグして並べ替え"
   },
   "cfTypeText": {
     "message": "テキスト"
@@ -371,11 +371,11 @@
     "message": "単語の区切り"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "先頭を大文字",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "数字を含む"
   },
   "close": {
     "message": "閉じる"
@@ -748,7 +748,7 @@
     "message": "ロック解除"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$ の $EMAIL$ としてログインしました。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "トレイに隠す"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "常に最前面",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "再起動時にマスターパスワードでロック"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "設定"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "メニューバーアイコンを有効化"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "メニューバーに常にアイコンを表示します。"
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "メニューバーに隠す"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "最低でも一つのコレクションを選んでください。"
   }
 }
