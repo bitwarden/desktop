@@ -611,7 +611,7 @@
     "message": "Vlastnoručně hostované prostředí"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace bitwarden."
+    "message": "Zadejte základní URL adresu vlastnoručně hostované aplikace Bitwarden."
   },
   "customEnvironment": {
     "message": "Vlastní prostředí"
@@ -827,7 +827,7 @@
     "message": "Zabezpečení"
   },
   "clearClipboard": {
-    "message": "Vyčistit schránku",
+    "message": "Vymazat schránku",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
