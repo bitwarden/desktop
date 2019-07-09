@@ -224,7 +224,8 @@
                         </a>
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
                             *ngIf="field.value && field.type !== fieldType.Boolean"
-                            (click)="copy(field.value, 'value', 'Field')" role="button">
+                            (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')"
+                            role="button">
                             <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
                         </a>
                     </div>

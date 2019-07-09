@@ -33,6 +33,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { ContainerService } from 'jslib/services/container.service';
 import { CryptoService } from 'jslib/services/crypto.service';
 import { EnvironmentService } from 'jslib/services/environment.service';
+import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { LockService } from 'jslib/services/lock.service';
@@ -57,6 +58,7 @@ import { CollectionService as CollectionServiceAbstraction } from 'jslib/abstrac
 import { CryptoService as CryptoServiceAbstraction } from 'jslib/abstractions/crypto.service';
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService as EnvironmentServiceAbstraction } from 'jslib/abstractions/environment.service';
+import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
@@ -117,6 +119,7 @@ const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
     apiService, lockService, async () => messagingService.send('logout', { expired: true }));
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
+const eventService = new EventService(storageService, apiService, userService, cipherService);
 const systemService = new SystemService(storageService, lockService, messagingService, platformUtilsService, null);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
@@ -129,6 +132,7 @@ export function initFactory(): Function {
         lockService.init(true);
         const locale = await storageService.get<string>(ConstantsService.localeKey);
         await i18nService.init(locale);
+        eventService.init(true);
         authService.init();
         setTimeout(() => notificationsService.init(environmentService), 3000);
         const htmlEl = window.document.documentElement;
@@ -195,6 +199,7 @@ export function initFactory(): Function {
         { provide: SearchServiceAbstraction, useValue: searchService },
         { provide: NotificationsServiceAbstraction, useValue: notificationsService },
         { provide: SystemServiceAbstraction, useValue: systemService },
+        { provide: EventServiceAbstraction, useValue: eventService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

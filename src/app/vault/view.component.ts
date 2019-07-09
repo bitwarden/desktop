@@ -10,6 +10,7 @@ import {
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { TokenService } from 'jslib/abstractions/token.service';
@@ -34,9 +35,9 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
-        userService: UserService) {
+        userService: UserService, eventService: EventService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService);
     }
 
     async ngOnChanges() {
