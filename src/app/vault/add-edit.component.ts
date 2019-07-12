@@ -6,6 +6,7 @@ import {
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
+import { EventService } from 'jslib/abstractions/event.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
@@ -24,9 +25,9 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
         userService: UserService, collectionService: CollectionService,
-        messagingService: MessagingService) {
+        messagingService: MessagingService, eventService: EventService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
-            userService, collectionService, messagingService);
+            userService, collectionService, messagingService, eventService);
     }
 
     async ngOnInit() {
