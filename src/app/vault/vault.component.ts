@@ -34,10 +34,12 @@ import { PasswordHistoryComponent } from './password-history.component';
 import { ShareComponent } from './share.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
+import { EventType } from 'jslib/enums/eventType';
 
 import { CipherView } from 'jslib/models/view/cipherView';
 import { FolderView } from 'jslib/models/view/folderView';
 
+import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -80,7 +82,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
         private toasterService: ToasterService, private messagingService: MessagingService,
-        private platformUtilsService: PlatformUtilsService) { }
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService) { }
 
     async ngOnInit() {
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
@@ -266,7 +268,10 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.password != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyPassword'),
-                        click: () => this.copyValue(cipher.login.password, 'password'),
+                        click: () => {
+                            this.copyValue(cipher.login.password, 'password');
+                            this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+                        },
                     }));
                 }
                 break;
@@ -283,7 +288,10 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.card.code != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copySecurityCode'),
-                        click: () => this.copyValue(cipher.card.code, 'securityCode'),
+                        click: () => {
+                            this.copyValue(cipher.card.code, 'securityCode');
+                            this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
+                        },
                     }));
                 }
                 break;
