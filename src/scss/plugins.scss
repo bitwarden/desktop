@@ -141,6 +141,11 @@ $fa-font-path: "~font-awesome/fonts";
             color: themed('textColor');
             background-color: themed('inputBackgroundColor');
         }
+        &::-webkit-input-placeholder {
+            @include themify($themes) {
+                color: themed('inputPlaceholderColor');
+            }
+        }
     }
 
     .swal-footer {
