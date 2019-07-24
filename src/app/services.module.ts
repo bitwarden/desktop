@@ -15,6 +15,8 @@ import { ElectronRendererSecureStorageService } from 'jslib/electron/services/el
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { isDev } from 'jslib/electron/utils';
 
+import { DeviceType } from 'jslib/enums/deviceType';
+
 import { I18nService } from '../services/i18n.service';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
@@ -140,7 +142,8 @@ export function initFactory(): Function {
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
         let theme = await storageService.get<string>(ConstantsService.themeKey);
         if (theme == null) {
-            theme = 'light';
+            theme = platformUtilsService.getDevice() === DeviceType.MacOsDesktop &&
+                remote.systemPreferences.isDarkMode() ? 'dark' : 'light';
         }
         htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,
