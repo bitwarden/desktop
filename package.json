@@ -53,10 +53,15 @@
       "output": "dist",
       "app": "build"
     },
+    "afterSign": "scripts/notarize.js",
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
       "darkModeSupport": true,
+      "gatekeeperAssess": false,
+      "hardenedRuntime": true,
+      "entitlements": "resources/entitlements.mac.plist",
+      "entitlementsInherit": "resources/entitlements.mac.plist",
       "extendInfo": {
         "ITSAppUsesNonExemptEncryption": false,
         "CFBundleLocalizations": [
@@ -136,6 +141,10 @@
         "height": 380
       }
     },
+    "mas": {
+      "entitlements": "resources/entitlements.mas.plist",
+      "entitlementsInherit": "resources/entitlements.mas.plist"
+    },
     "nsisWeb": {
       "oneClick": false,
       "perMachine": true,
@@ -208,6 +217,7 @@
     "del": "^3.0.0",
     "electron": "5.0.8",
     "electron-builder": "21.1.5",
+    "electron-notarize": "^0.1.1",
     "electron-rebuild": "^1.8.5",
     "electron-reload": "^1.4.1",
     "extract-text-webpack-plugin": "next",
