@@ -12,7 +12,7 @@ html.os_macos {
     body.layout_frontend {
         -webkit-app-region: drag;
 
-        button, a, span, input, p, h1, h2, h3, h4, h5, h6, img, select,
+        button, a, i, b, span, input, p, h1, h2, h3, h4, h5, h6, img, select,
         textarea, label, .box, .modal-backdrop {
             -webkit-app-region: no-drag;
         }
@@ -30,6 +30,14 @@ html.os_macos {
                     float: left;
                 }
             }
+        }
+    }
+
+    #vault .header-search {
+        -webkit-app-region: drag;
+
+        input, i {
+            -webkit-app-region: no-drag;
         }
     }
 
