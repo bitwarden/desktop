@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { notarize } = require('electron-notarize');
 
 exports.default = async function notarizing(context) {
@@ -5,11 +6,12 @@ exports.default = async function notarizing(context) {
     if (electronPlatformName !== 'darwin') {
         return;
     }
+    const appleId = process.env.APPLEID;
     const appName = context.packager.appInfo.productFilename;
     return await notarize({
         appBundleId: 'com.bitwarden.desktop',
-        appPath: appOutDir + '/' + appName + '.app',
-        appleId: '@keychain:"Apple Id Notarization Id"',
-        appleIdPassword: '@keychain:"Apple Id Notarization Password"',
+        appPath: `${appOutDir}/${appName}.app`,
+        appleId: appleId,
+        appleIdPassword: `@keychain:AC_PASSWORD`,
     });
 };
