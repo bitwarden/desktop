@@ -34,15 +34,11 @@ html.os_macos {
     }
 
     #vault .mac-bar {
-        height: 37px;
+        height: 48px;
         -webkit-app-region: drag;
     }
 
     #vault > #groupings > .content > .inner-content {
         padding-top: 0;
-    }
-
-    #vault > #logo {
-        -webkit-app-region: drag;
     }
 }
