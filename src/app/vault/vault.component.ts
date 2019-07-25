@@ -365,9 +365,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.attachmentsModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModalRef);
-
-        childComponent.cipherId = cipher.id;
+        const childComponent = this.modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModalRef,
+            true, (comp) => comp.cipherId = cipher.id);
         let madeAttachmentChanges = false;
         childComponent.onUploadedAttachment.subscribe(() => madeAttachmentChanges = true);
         childComponent.onDeletedAttachment.subscribe(() => madeAttachmentChanges = true);
@@ -388,8 +387,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.shareModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<ShareComponent>(ShareComponent, this.shareModalRef);
-        childComponent.cipherId = cipher.id;
+        const childComponent = this.modal.show<ShareComponent>(ShareComponent, this.shareModalRef, true,
+            (comp) => comp.cipherId = cipher.id);
 
         childComponent.onSharedCipher.subscribe(async () => {
             this.modal.close();
@@ -408,8 +407,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.collectionsModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<CollectionsComponent>(CollectionsComponent, this.collectionsModalRef);
-        childComponent.cipherId = cipher.id;
+        const childComponent = this.modal.show<CollectionsComponent>(CollectionsComponent, this.collectionsModalRef,
+            true, (comp) => comp.cipherId = cipher.id);
 
         childComponent.onSavedCollections.subscribe(() => {
             this.modal.close();
@@ -427,10 +426,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.passwordHistoryModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<PasswordHistoryComponent>(PasswordHistoryComponent,
-            this.passwordHistoryModalRef);
-
-        childComponent.cipherId = cipher.id;
+        this.modal.show<PasswordHistoryComponent>(PasswordHistoryComponent,
+            this.passwordHistoryModalRef, true, (comp) => comp.cipherId = cipher.id);
         this.modal.onClosed.subscribe(async () => {
             this.modal = null;
         });
@@ -492,9 +489,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.passwordGeneratorModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
-            this.passwordGeneratorModalRef);
+            this.passwordGeneratorModalRef, true, (comp) => comp.showSelect = showSelect);
 
-        childComponent.showSelect = showSelect;
         childComponent.onSelected.subscribe((password: string) => {
             this.modal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
@@ -534,9 +530,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef);
+            FolderAddEditComponent, this.folderAddEditModalRef, true, (comp) => comp.folderId = null);
 
-        childComponent.folderId = null;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
             this.modal.close();
             await this.groupingsComponent.loadFolders();
@@ -555,9 +550,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef);
+            FolderAddEditComponent, this.folderAddEditModalRef, true, (comp) => comp.folderId = folderId);
 
-        childComponent.folderId = folderId;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
             this.modal.close();
             await this.groupingsComponent.loadFolders();
