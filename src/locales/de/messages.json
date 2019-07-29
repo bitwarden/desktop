@@ -375,7 +375,7 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Ziffer hinzufügen"
   },
   "close": {
     "message": "Schließen"
@@ -1238,15 +1238,15 @@
     "message": "Einstellungen"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Menüleisten-Symbol aktivieren"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Immer ein Symbol in der Menüleiste anzeigen."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "In Menüleiste ausblenden"
   },
   "selectOneCollection": {
-    "message": "Sie müssen zumindest eine Sammlung auswählen."
+    "message": "Sie müssen mindestens eine Sammlung auswählen."
   }
 }
