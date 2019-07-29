@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtros"
   },
   "allItems": {
     "message": "Todos os itens"
@@ -301,7 +301,7 @@
     "message": "Valor"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Arraste para ordenar"
   },
   "cfTypeText": {
     "message": "Texto"
@@ -371,11 +371,11 @@
     "message": "Separador de palavras"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Capitalizar",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Incluir número"
   },
   "close": {
     "message": "Fechar"
@@ -611,7 +611,7 @@
     "message": "Ambiente auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifique o URL de base da sua instalação local do Bitwarden."
+    "message": "Especifique o URL de base da sua instalação do Bitwarden alojada nas suas premissas."
   },
   "customEnvironment": {
     "message": "Ambiente personalizado"
@@ -748,7 +748,7 @@
     "message": "Desbloquear"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Sessão iniciada como $EMAIL$ em $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Ocultar para a bandeja"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Sempre no topo",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Bloquear com palavra-passe mestra ao reiniciar"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferências"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Ativar ícone da barra de menu"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Mostrar sempre um ícone na barra de menu."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Ocultar para a barra de menu"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Tem de selecionar pelo menos uma coleção."
   }
 }

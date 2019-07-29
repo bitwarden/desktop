@@ -1,9 +1,9 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Szűrők"
   },
   "allItems": {
     "message": "Összes elem"
@@ -301,7 +301,7 @@
     "message": "Érték"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Húzd a rendezéshez"
   },
   "cfTypeText": {
     "message": "Szöveg"
@@ -371,11 +371,11 @@
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Nagy kezdőbetű",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Tartalmazzon számot"
   },
   "close": {
     "message": "Bezár"
@@ -748,7 +748,7 @@
     "message": "Feloldás"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Bejelentkezve, mint $EMAIL$ - $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -969,7 +969,7 @@
     "message": "További két lépcsős bejelentkezés lehetőségek, mint például YubiKey, FIDO U2F és Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Jelszó higiénia, felhasználói fiók biztonsága, és adatszivárgási jelentések a széfed biztonsága érdekében."
   },
   "premiumSignUpTotp": {
     "message": "TOTP ellenőrző kód (2FA) generátor a széfedben lévő bejelentkezésekhez."
@@ -1155,7 +1155,7 @@
     "message": "Elrejtés a tálcára"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Mindig felül legyen",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1186,13 +1186,13 @@
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Nincsenek megjeleníthető gyűjtemények."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Tulajdonjog"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Kié ez a tétel?"
   },
   "strong": {
     "message": "Erős",
@@ -1223,30 +1223,30 @@
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN kód szükséges."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Érvénytelen PIN kód."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "A széfed zárolva van. A folytatáshoz add meg a PIN kódot."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Beállítások"
   },
   "enableMenuBar": {
     "message": "Enable Menu Bar Icon"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Mindig jelenjen meg a tálcaikon az értesítési területen."
   },
   "hideToMenuBar": {
     "message": "Hide to Menu Bar"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Legalább egy gyűjteményt ki kell választanod."
   }
 }

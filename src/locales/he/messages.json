@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "מסננים"
   },
   "allItems": {
     "message": "כל הפריטים"
@@ -301,7 +301,7 @@
     "message": "ערך"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "גרור כדי למיין"
   },
   "cfTypeText": {
     "message": "טקסט"
@@ -319,7 +319,7 @@
     "message": "דרוש שם."
   },
   "addedItem": {
-    "message": "פריט שנוסף"
+    "message": "פריט שהתווסף"
   },
   "editedItem": {
     "message": "פריט שנערך"
@@ -340,23 +340,23 @@
     "message": "פריט שנמחק"
   },
   "overwritePasswordConfirmation": {
-    "message": "לשכתב על הססמה הנוכחית?"
+    "message": "האם אתה בטוח שברצונך לדרוס את הסיסמה הנוכחית?"
   },
   "noneFolder": {
     "message": "ללא תיקיה",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "הוספת תיקייה"
+    "message": "הוסף תיקיה"
   },
   "editFolder": {
-    "message": "עריכת תיקייה"
+    "message": "ערוך תיקייה"
   },
   "regeneratePassword": {
-    "message": "יצירת ססמה חדשה"
+    "message": "צור סיסמה חדשה"
   },
   "copyPassword": {
-    "message": "העתקת ססמה"
+    "message": "העתק סיסמה"
   },
   "copyUri": {
     "message": "העתק שורת כתובת"
@@ -371,14 +371,14 @@
     "message": "מפריד מילים"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "הפוך אותיות ראשונות לגדולות",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "כלול מספרים"
   },
   "close": {
-    "message": "סגירה"
+    "message": "סגור"
   },
   "minNumbers": {
     "message": "מינימום ספרות"
@@ -434,40 +434,40 @@
     "message": "תיקיה שנערכה"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "תיקיה שנוספה"
   },
   "deleteFolderConfirmation": {
-    "message": "למחוק את התיקייה הזאת?"
+    "message": "האם אתה בטוח שברצונך למחוק את התיקייה?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "תיקיה שנמחקה"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "היכנס או צור חשבון חדש כדי לגשת לכספת המאובטחת שלך."
   },
   "createAccount": {
-    "message": "יצירת חשבון"
+    "message": "צור חשבון"
   },
   "logIn": {
-    "message": "כניסה"
+    "message": "התחבר"
   },
   "submit": {
-    "message": "שליחה"
+    "message": "שלח"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "סיסמה ראשית"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "הסיסמה הראשית היא הסיסמה שבאמצעותה תיגש לכספת שלך. חשוב מאוד שלא תשכח את הסיסמה הזו. אין שום דרך לשחזר אותה במקרה ושכחת אותה."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "ניתן להשתמש ברמז לסיסמה הראשית אם שכחת אותה."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "הקלד שוב סיסמה ראשית"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "רמז לסיסמה ראשית (אופציונאלי)"
   },
   "settings": {
     "message": "הגדרות"
@@ -557,7 +557,7 @@
     "message": "הכנס את מפתח האבטחה שלך אל כניסת ה-USB במחשבך. אם יש לו כפתור, גע בו."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "איבדת גישה לכל ספקי האימות הדו-שלבי שלך? השתמש בקוד האימות כדי לבטל את הספקים הקיימים מתוך החשבון שלך."
   },
   "recoveryCodeTitle": {
     "message": "קוד שחזור"
@@ -566,82 +566,82 @@
     "message": "אפליקציית אימות"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "השתמש באפליקצית אימות (כמו לדוגמא Authy או Google Authenticator) לייצור סיסמאות אימות מבוססות זמן.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "מפתח אבטחה OTP של YubiKey"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "השתמש בYubiKey עבור גישה לחשבון שלך. עובד עם YubiKey בגירסאות 4, 4C, 4Nano, ומכשירי NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "בצע אימות מול Duo Security באמצעות אפליקצית Duo לפלאפון, SMS, שיחת טלפון, או מפתח אבטחה U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "בצע אימות מול Duo Security עבור הארגון שלך באמצעות אפליקצית Duo לפלאפון, SMS, שיחת טלפון, או מפתח אבטחה U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "השתמש בכל מפתח אבטחה התומך בFIDO U2F עבור גישה לחשבונך."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "מפתח אבטחה FIDO U2F"
   },
   "emailTitle": {
     "message": "אימייל"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "קודים לאימות יישלחו אליך באימייל."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "פרטי כניסה לא זמינים"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "כניסה דו-שלבית פעילה בחשבון זה, אך אף אחד מספקי הכניסה הדו-שלבית לא נתמכים במכשיר זה."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "אנא הוסף ספקים אחרים שיש להם תמיכה במכשירים נוספים (לדוגמא - אפליקציית אימות)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "אפשרויות כניסה דו שלבית"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "סביבה על שרתים מקומיים"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
+    "message": "הזן את כתובת השרת המקומי של Bitwarden."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "סביבה מותאמת אישית"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "למשתמשים מתקדמים. באפשרותך לציין את כתובת השרת עבור כל שירות בנפרד."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "כתובת שרת"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "כתובת שרת הAPI"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "כתובת שרת הכספת"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "כתובת שרת הזהות"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "כתובת שרת הודעות"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "כתובת שרת אייקונים"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "כתובות הסביבה נשמרו."
   },
   "ok": {
-    "message": "Ok"
+    "message": "אישור"
   },
   "yes": {
     "message": "כן"
@@ -650,19 +650,19 @@
     "message": "לא"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "דרוס סיסמה"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "למידע נוסף"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "יכולת זו לא זמינה"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "בוצעה יציאה"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "תוקף החיבור שלך הסתיים."
   },
   "logOutConfirmation": {
     "message": "האם אתה בטוח שברצונך להתנתק?"
@@ -671,7 +671,7 @@
     "message": "התנתק"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "הוסף פרטי כניסה חדשה"
   },
   "addNewItem": {
     "message": "הוספת פריט חדש"
@@ -680,7 +680,7 @@
     "message": "הוספת תיקייה חדשה"
   },
   "view": {
-    "message": "View"
+    "message": "הצג"
   },
   "account": {
     "message": "חשבון"
@@ -689,66 +689,66 @@
     "message": "טוען..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "נעל עכשיו"
   },
   "passwordGenerator": {
     "message": "יוצר הסיסמאות"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "שלח לנו אימייל"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "בקרו באתר שלנו"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "דווח על באג"
   },
   "blog": {
     "message": "בלוג"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "עקוב אחרינו"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "סנכרן כספת"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "החלף סיסמה ראשית"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "באפשרותך לשנות את הסיסמה הראשית שלך דרך הכספת באתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "סיסמת טביעת אצבע",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "הסיסמה של טביעת האצבעות בחשבון שלך",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "עבור לכספת באתר"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "הורד את האפליקציה לפלאפון"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "הורד תוסף לדפדפן"
   },
   "syncingComplete": {
     "message": "הסינכרון הושלם"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "הסינכרון נכשל"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "הכספת שלך נעולה. הזן את הסיסמה הראשית שלך כדי להמשיך."
   },
   "unlock": {
     "message": "בטל נעילה"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "מחובר כ $EMAIL$ באתר $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -761,138 +761,138 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "סיסמה ראשית שגויה"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "התחברות בשני-שלבים הופכת את החשבון שלך למאובטח יותר בכך שאתה נדרש לוודא בכל כניסה בעזרת מכשיר אחר כדוגמת מפתח אבטחה, תוכנת אימות, SMS, שיחת טלפון, או אימייל. ניתן להפעיל את \"התחברות בשני-שלבים\" בכספת שבאתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "התחברות בשני-שלבים"
   },
   "lockOptions": {
     "message": "אפשרויות נעילה"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "הגדר מתי הכספת שלך ננעלת. כספת נעולה דורשת שתזין את הסיסמה הראשית בכדי לגשת לפרטים שבתוכה."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "באופן מיידי"
   },
   "tenSeconds": {
     "message": "10 שניות"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 שניות"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 שניות"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "דקה אחת"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 דקות"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 דקות"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 דקות"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 דקות"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "שעה אחת"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 שעות"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "כשהמערכת מזהה חוסר פעילות"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "כשהמערכת נכנסת למצב שינה"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "בזמן נעילת המערכת"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "בהפעלה מחדש"
   },
   "never": {
-    "message": "Never"
+    "message": "לעולם לא"
   },
   "security": {
-    "message": "Security"
+    "message": "אבטחה"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "נקה לוח העתקות",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "נקה אוטומטית ערכים שהועתקו ללוח ההעתקות (clipboard).",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "בטל אייקונים של האתר"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "יכולת הצג אייקונים-של-האתר מאפשרת הצגה של תמונה או אייקון מוכר ליד פרטי הכניסה שבכספת שלך."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "מזער למגש המערכת"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "בלחיצה על מזעור החלון, יופיע אייקון במגש המערכת (לרוב, ליד השעון)."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "סגור למגש המערכת"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "בלחיצה על סגירת החלון, יופיע אייקון במגש המערכת (לרוב, ליד השעון)."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "אפשר אייקון במגש המערכת"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "הצג תמיד אייקון במגש המערכת."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "התחל עם אייקון במגש המערכת"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "בהפעלה הראשונה של האפליקציה, הצג אייקון במגש המערכת (מבלי לפתוח את החלון הראשי)."
   },
   "language": {
-    "message": "Language"
+    "message": "שפה"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "שנה את שפת האפליקציה. יש להפעיל מחדש את האפליקציה להחלת השינויים."
   },
   "theme": {
-    "message": "Theme"
+    "message": "ערכת נושא"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "שנה את ערכת הצבע של האפליקציה."
   },
   "dark": {
-    "message": "Dark",
+    "message": "כהה",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "בהיר",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "העתק",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "חפש עדכונים"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "גירסה $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -901,7 +901,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "הפעל מחדש להתקנת העדכון"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
