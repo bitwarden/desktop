@@ -343,7 +343,7 @@
     "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
   },
   "noneFolder": {
-    "message": "Pas de dossier",
+    "message": "Aucun dossier",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -371,11 +371,11 @@
     "message": "Séparateur de mots"
   },
   "capitalize": {
-    "message": "Mettre la première lettre en majuscule",
+    "message": "Mettre la première lettre de chaque mot en majuscule",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Inclure le numéro"
+    "message": "Inclure un chiffre"
   },
   "close": {
     "message": "Fermer"
@@ -611,7 +611,7 @@
     "message": "Environnement auto-hébergé"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Spécifiez l'URL de base de votre installation de bitwarden hébergée en interne."
+    "message": "Spécifiez l'URL de base de votre installation Bitwarden auto-hébergée."
   },
   "customEnvironment": {
     "message": "Environnement personnalisé"
@@ -1210,7 +1210,7 @@
     "message": "Mot de passe maître faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase secrète) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
   },
   "pin": {
     "message": "Code PIN",
