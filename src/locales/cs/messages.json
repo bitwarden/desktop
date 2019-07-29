@@ -371,11 +371,11 @@
     "message": "Oddělovač slov"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Velká písmena na začátku slova",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Zahrnout číslo"
   },
   "close": {
     "message": "Zavřít"
@@ -748,7 +748,7 @@
     "message": "Odemknout"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Přihlášen jako $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Skrýt do systémové lišty"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Vždy navrchu",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Nastavení"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Povolit ikonu panelu nabídek"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Vždy zobrazit ikonu v panelu nabídek."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Schovat do panelu nabídek"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Musíte vybrat alespoň jednu kolekci."
   }
 }
