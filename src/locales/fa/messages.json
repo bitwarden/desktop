@@ -388,7 +388,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "از کاراکتر های تکراری همسان استفاده نکن"
+    "message": "از کاراکترهای مبهم اجتناب شود"
   },
   "searchCollection": {
     "message": "جستجوی مجموعه"
