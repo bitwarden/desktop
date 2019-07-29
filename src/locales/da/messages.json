@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "allItems": {
     "message": "Alle elementer"
@@ -301,7 +301,7 @@
     "message": "Værdi"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Træk for at sortere"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -371,11 +371,11 @@
     "message": "Ordseparator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Stort begyndelsesbogstav",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Inkludér ciffer"
   },
   "close": {
     "message": "Luk"
@@ -748,7 +748,7 @@
     "message": "Lås op"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Logget ind som $EMAIL$ på $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Skjul til bakke"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Altid øverst",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,18 @@
     "message": "Lås med hovedadgangskode ved genstart"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Indstillinger"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Aktivér menulinjeikon"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Vis altid et ikon på menulinjen."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Skjul på menulinjen"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Du skal vælge minimum én samling."
   }
 }
