@@ -197,7 +197,9 @@
       "stagePackages": [
         "default"
       ],
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     }
   },
   "devDependencies": {
