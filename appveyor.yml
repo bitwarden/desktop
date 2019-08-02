@@ -20,6 +20,9 @@ init:
     if($isWindows) {
       Install-Product node 10
     }
+    if($env:APPVEYOR_REPO_TAG -eq "true") {
+      $env:RELEASE_NAME = $env:APPVEYOR_REPO_TAG_NAME.TrimStart("v")
+    }
 
 install:
 - ps: |
@@ -63,10 +66,14 @@ build_script:
     }
     else {
       npm run dist:win:ci
+      Rename-Item -Path .\dist\Bitwarden-${env:PACKAGE_VERSION}-x64.appx `
+        -NewName Bitwarden-${env:PACKAGE_VERSION}-x64-store.appx
+      Rename-Item -Path .\dist\Bitwarden-${env:PACKAGE_VERSION}-ia32.appx `
+        -NewName Bitwarden-${env:PACKAGE_VERSION}-ia32-store.appx
       Push-AppveyorArtifact .\dist\Bitwarden-Portable-${env:PACKAGE_VERSION}.exe
       Push-AppveyorArtifact .\dist\nsis-web\Bitwarden-Installer-${env:PACKAGE_VERSION}.exe
-      Push-AppveyorArtifact .\dist\Bitwarden-${env:PACKAGE_VERSION}-x64.appx
-      Push-AppveyorArtifact .\dist\Bitwarden-${env:PACKAGE_VERSION}-ia32.appx
+      Push-AppveyorArtifact .\dist\Bitwarden-${env:PACKAGE_VERSION}-x64-store.appx
+      Push-AppveyorArtifact .\dist\Bitwarden-${env:PACKAGE_VERSION}-ia32-store.appx
     }
 
 after_build:
@@ -79,6 +86,7 @@ after_build:
       else {
         echo "Deploy Windows..."
         .\scripts\choco-update.ps1 -version $env:PACKAGE_VERSION
+        Push-AppveyorArtifact .\dist\chocolatey\bitwarden.${env:PACKAGE_VERSION}.nupkg
       }
     }
 - sh: |
@@ -111,3 +119,14 @@ for:
   cache:
   - '/home/appveyor/.cache/electron'
   - '/home/appveyor/.cache/electron-builder'
+
+deploy:
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  release: $(RELEASE_NAME)
+  provider: GitHub
+  auth_token: $(GH_TOKEN)
+  artifact: .*(\.nupkg|_store\.appx)$
+  force_update: true
+  on:
+    branch: master
+    APPVEYOR_REPO_TAG: true
