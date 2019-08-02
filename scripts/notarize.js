@@ -8,9 +8,11 @@ exports.default = async function notarizing(context) {
     }
     const appleId = process.env.APPLEID;
     const appName = context.packager.appInfo.productFilename;
+    const appPath = `${appOutDir}/${appName}.app`;
+    console.log('Notarizing ' + appPath);
     return await notarize({
         appBundleId: 'com.bitwarden.desktop',
-        appPath: `${appOutDir}/${appName}.app`,
+        appPath: appPath,
         appleId: appleId,
         appleIdPassword: `@keychain:AC_PASSWORD`,
     });
