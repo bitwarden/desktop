@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Pas de dossier",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Écraser le mot de passe"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "En savoir plus"

@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "정말 현재 비밀번호를 덮어쓰시겠습니까?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "폴더 없음",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "비밀번호 덮어쓰기"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "더 알아보기"

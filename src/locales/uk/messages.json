@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Ви дійсно хочете перезаписати поточний пароль?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Без теки",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Перезаписати пароль"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Докладніше"

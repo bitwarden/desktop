@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Weet u zeker dat u het huidige wachtwoord wilt overschrijven?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Geen map",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Wachtwoord overschrijven"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Meer informatie"

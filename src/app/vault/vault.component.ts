@@ -223,14 +223,19 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
-    viewCipher(cipher: CipherView) {
+    async viewCipher(cipher: CipherView) {
         if (this.action === 'view' && this.cipherId === cipher.id) {
             return;
         }
-
-        this.cipherId = cipher.id;
-        this.action = 'view';
-        this.go();
+        
+        if (this.changed()) {
+            const confirm = await this.overwriteChanges();
+            if(confirm){
+                this.changeChipher(cipher.id, 'view');
+            }
+        } else {
+            this.changeChipher(cipher.id, 'view');
+        }
     }
 
     viewCipherMenu(cipher: CipherView) {
@@ -301,26 +306,34 @@ export class VaultComponent implements OnInit, OnDestroy {
         menu.popup({ window: remote.getCurrentWindow() });
     }
 
-    editCipher(cipher: CipherView) {
+    async editCipher(cipher: CipherView) {
         if (this.action === 'edit' && this.cipherId === cipher.id) {
             return;
         }
 
-        this.cipherId = cipher.id;
-        this.action = 'edit';
-        this.go();
+        if (this.changed()) {
+            const confirm = await this.overwriteChanges();
+            if(confirm){
+                this.changeChipher(cipher.id, 'edit');
+            }
+        } else {
+            this.changeChipher(cipher.id, 'edit');   
+        }
     }
 
-    addCipher(type: CipherType = null) {
+    async addCipher(type: CipherType = null) {
         if (this.action === 'add') {
             return;
         }
 
-        this.addType = type;
-        this.action = 'add';
-        this.cipherId = null;
-        this.updateCollectionProperties();
-        this.go();
+        if (this.changed()) {
+            const confirm = await this.overwriteChanges();
+            if(confirm){
+                this.changeChipher(null, 'add', type);
+            }
+        } else {
+            this.changeChipher(null, 'add', type);      
+        }
     }
 
     addCipherOptions() {
@@ -625,5 +638,35 @@ export class VaultComponent implements OnInit, OnDestroy {
         }
         this.addOrganizationId = null;
         this.addCollectionIds = null;
+    }
+
+    private changeChipher(cipherId: string, action: string, type: CipherType = null) {
+        if (type) {
+            this.addType = type;
+            this.action = 'add';
+            this.cipherId = null;
+            this.updateCollectionProperties();
+            this.go();  
+        } else {
+            this.cipherId = cipherId;
+            this.action = action;
+            this.go();
+        }
+    }
+
+    private changed(){
+        if (document.getElementsByClassName("ng-dirty")[0]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    async overwriteChanges() {
+        const confirmed = await this.platformUtilsService.showDialog(
+            this.i18nService.t('overwriteChangesConfirmation'), this.i18nService.t('overwriteChanges'),
+            this.i18nService.t('yes'), this.i18nService.t('no'));
+        console.log(confirmed);
+        return confirmed;
     }
 }

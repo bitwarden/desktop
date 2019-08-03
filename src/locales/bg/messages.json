@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Сигурни ли сте, че искате да презапишете текущата парола?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Няма папка",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Презаписване на паролата"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Научете повече"

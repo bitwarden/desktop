@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "您確定要覆寫目前的密碼嗎？"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "（未分類）",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "覆寫密碼"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "了解更多"

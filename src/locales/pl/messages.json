@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Czy na pewno chcesz zastąpić bieżące hasło?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Nieprzypisane",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Zastąp hasło"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Dowiedz się więcej"

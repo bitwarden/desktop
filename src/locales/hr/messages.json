@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Jeste li sigurni da želite prebrisati trenutnu zaporku?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Nema mape",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Prebriši zaporku"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Saznaj više"

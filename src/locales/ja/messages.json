@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "現在のパスワードを上書きしてもよろしいですか?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "パスワードを上書き"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "詳細情報"

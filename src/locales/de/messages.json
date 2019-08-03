@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Bist du sicher, dass du das Passwort überschreiben möchtest?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Kein Ordner",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Passwort ersetzen"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Erfahre mehr"

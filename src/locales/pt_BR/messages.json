@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Você tem certeza que deseja substituir a senha atual?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Nenhuma Pasta",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Substituir Senha"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Saber mais"

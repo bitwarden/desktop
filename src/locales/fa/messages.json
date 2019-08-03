@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "بدون پوشه",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "بازنویسی رمز عبور"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "بیشتر بدانید"

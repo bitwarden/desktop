@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Biztosan felül akarod írni a jelenlegi jelszót?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Nincs mappa",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Jelszó felülírása"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "További információ"

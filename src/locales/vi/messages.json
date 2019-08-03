@@ -342,6 +342,9 @@
   "overwritePasswordConfirmation": {
     "message": "Bạn có chắc chắn muốn ghi đè mật khẩu hiện tại không?"
   },
+  "overwriteChangesConfirmation": {
+    "message": "Are you sure you want to leave without saving your changes?"
+  },
   "noneFolder": {
     "message": "Không được phân loại",
     "description": "This is the folder for uncategorized items"
@@ -651,6 +654,9 @@
   },
   "overwritePassword": {
     "message": "Ghi đè lên mật khẩu"
+  },
+  "overwriteChanges": {
+    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Tìm hiểu thêm"
