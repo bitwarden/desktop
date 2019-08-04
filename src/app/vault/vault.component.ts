@@ -666,7 +666,6 @@ export class VaultComponent implements OnInit, OnDestroy {
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('overwriteChangesConfirmation'), this.i18nService.t('overwriteChanges'),
             this.i18nService.t('yes'), this.i18nService.t('no'));
-        console.log(confirmed);
         return confirmed;
     }
 }
