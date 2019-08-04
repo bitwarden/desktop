@@ -342,9 +342,6 @@
   "overwritePasswordConfirmation": {
     "message": "Esteu segur que voleu sobreescriure la contrasenya actual?"
   },
-  "overwriteChangesConfirmation": {
-    "message": "Are you sure you want to leave without saving your changes?"
-  },
   "noneFolder": {
     "message": "Cap carpeta",
     "description": "This is the folder for uncategorized items"
@@ -654,9 +651,6 @@
   },
   "overwritePassword": {
     "message": "Sobreescriu la contrasenya"
-  },
-  "overwriteChanges": {
-    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Més informació"

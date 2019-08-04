@@ -342,9 +342,6 @@
   "overwritePasswordConfirmation": {
     "message": "คุณแน่ใจว่าต้องการเขียนทับรหัสผ่านปัจจุบัน?"
   },
-  "overwriteChangesConfirmation": {
-    "message": "Are you sure you want to leave without saving your changes?"
-  },
   "noneFolder": {
     "message": "ไม่มีโฟลเดอร์",
     "description": "This is the folder for uncategorized items"
@@ -654,9 +651,6 @@
   },
   "overwritePassword": {
     "message": "เขียนทับรหัสผ่าน"
-  },
-  "overwriteChanges": {
-    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "เรียนรู้เพิ่มเติม"

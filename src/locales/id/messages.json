@@ -342,9 +342,6 @@
   "overwritePasswordConfirmation": {
     "message": "Anda yakin ingin menimpa sandi saat ini?"
   },
-  "overwriteChangesConfirmation": {
-    "message": "Are you sure you want to leave without saving your changes?"
-  },
   "noneFolder": {
     "message": "Tidak Ada Folder",
     "description": "This is the folder for uncategorized items"
@@ -654,9 +651,6 @@
   },
   "overwritePassword": {
     "message": "Timpa Sandi"
-  },
-  "overwriteChanges": {
-    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Pelajari lebih lanjut"

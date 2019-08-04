@@ -342,9 +342,6 @@
   "overwritePasswordConfirmation": {
     "message": "Opravdu chcete přepsat aktuální heslo?"
   },
-  "overwriteChangesConfirmation": {
-    "message": "Are you sure you want to leave without saving your changes?"
-  },
   "noneFolder": {
     "message": "Žádná složka",
     "description": "This is the folder for uncategorized items"
@@ -654,9 +651,6 @@
   },
   "overwritePassword": {
     "message": "Přepsat heslo"
-  },
-  "overwriteChanges": {
-    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Dozvědět se více"

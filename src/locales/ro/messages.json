@@ -342,9 +342,6 @@
   "overwritePasswordConfirmation": {
     "message": "Sunteţi sigur că doriţi să suprascrieţi parola curentă?"
   },
-  "overwriteChangesConfirmation": {
-    "message": "Are you sure you want to leave without saving your changes?"
-  },
   "noneFolder": {
     "message": "Niciun dosar",
     "description": "This is the folder for uncategorized items"
@@ -654,9 +651,6 @@
   },
   "overwritePassword": {
     "message": "Suprascrie parola"
-  },
-  "overwriteChanges": {
-    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Aflați mai multe"

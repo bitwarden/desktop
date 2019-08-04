@@ -342,9 +342,6 @@
   "overwritePasswordConfirmation": {
     "message": "Er du sikker på, at du vil overskrive den aktuelle adgangskode?"
   },
-  "overwriteChangesConfirmation": {
-    "message": "Are you sure you want to leave without saving your changes?"
-  },
   "noneFolder": {
     "message": "Ingen mappe",
     "description": "This is the folder for uncategorized items"
@@ -654,9 +651,6 @@
   },
   "overwritePassword": {
     "message": "Overskriv adgangskode"
-  },
-  "overwriteChanges": {
-    "message": "Overwrite Changes"
   },
   "learnMore": {
     "message": "Lær mere"
