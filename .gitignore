@@ -13,3 +13,4 @@ yarn-error.log
 *.nupkg
 *.provisionprofile
 *.env
+PlugIns/safari.appex/
