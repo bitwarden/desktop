@@ -57,6 +57,7 @@
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
+      "extraFiles": ["PlugIns/"],
       "darkModeSupport": true,
       "gatekeeperAssess": false,
       "hardenedRuntime": true,
