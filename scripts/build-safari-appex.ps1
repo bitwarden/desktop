@@ -35,5 +35,5 @@ if (-not ([string]::IsNullOrEmpty($version))) {
 
 npm i
 npm run dist:safari
-Copy-Item -Path $distSafariAppex -Destination $pluginsAppex
+Copy-Item -Path $distSafariAppex -Destination $pluginsAppex –Recurse
 cd $rootDir
