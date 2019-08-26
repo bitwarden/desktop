@@ -16,6 +16,7 @@ $distSafariDir = $distDir + "\safari";
 $distSafariAppex = $distSafariDir + "\src\dist\Safari\build\Release\safari.appex";
 $pluginsAppex = $rootDir + "\PlugIns\safari.appex";
 
+New-Item $distSafariDir -ItemType Directory -ea 0
 cd $distSafariDir
 git clone https://github.com/bitwarden/browser.github
 cd browser
