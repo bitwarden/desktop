@@ -228,7 +228,6 @@ export class AppComponent implements OnInit {
             this.stateService.purge(),
         ]);
 
-        this.lockService.pinLocked = false;
         this.searchService.clearIndex();
         this.authService.logOut(async () => {
             this.analytics.eventTrack.next({ action: 'Logged Out' });

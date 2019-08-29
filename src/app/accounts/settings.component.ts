@@ -149,16 +149,17 @@ export class SettingsComponent implements OnInit {
                 masterPassOnRestart = (document.getElementById('master-pass-restart') as HTMLInputElement).checked;
             }
             if (pin != null && pin.trim() !== '') {
+                const kdf = await this.userService.getKdf();
+                const kdfIterations = await this.userService.getKdfIterations();
+                const email = await this.userService.getEmail();
+                const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
+                const key = await this.cryptoService.getKey();
+                const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
                 if (masterPassOnRestart) {
                     const encPin = await this.cryptoService.encrypt(pin);
                     await this.storageService.save(ConstantsService.protectedPin, encPin.encryptedString);
+                    this.lockService.pinProtectedKey = pinProtectedKey;
                 } else {
-                    const kdf = await this.userService.getKdf();
-                    const kdfIterations = await this.userService.getKdfIterations();
-                    const email = await this.userService.getEmail();
-                    const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
-                    const key = await this.cryptoService.getKey();
-                    const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
                     await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
                 }
             } else {
@@ -166,8 +167,8 @@ export class SettingsComponent implements OnInit {
             }
         }
         if (!this.pin) {
-            await this.storageService.remove(ConstantsService.pinProtectedKey);
-            await this.storageService.remove(ConstantsService.protectedPin);
+            await this.cryptoService.clearPinProtectedKey();
+            await this.lockService.clear();
         }
     }
 
