@@ -73,7 +73,7 @@
                     <ng-template #recursiveCollections let-collections>
                         <li *ngFor="let c of collections" [ngClass]="{active: c.node.id === selectedCollectionId}">
                             <a href="#" appStopClick appBlurClick (click)="selectCollection(c.node)">
-                                <i class="fa-li fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
+                                <i *ngIf="c.children.length" class="fa-li fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
                                     [ngClass]="{'fa-caret-right': isCollapsed(c.node), 'fa-caret-down': !isCollapsed(c.node)}"
                                     (click)="collapse(c.node)" appStopProp></i>
                                 {{c.node.name}}
