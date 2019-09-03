@@ -50,7 +50,7 @@
                     <li *ngFor="let f of folders"
                         [ngClass]="{active: selectedFolder && f.node.id === selectedFolderId}">
                         <a href="#" appStopClick appBlurClick (click)="selectFolder(f.node)">
-                            <i class="fa-li fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
+                            <i *ngIf="f.children.length" class="fa-li fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
                                 [ngClass]="{'fa-caret-right': isCollapsed(f.node), 'fa-caret-down': !isCollapsed(f.node)}"
                                 (click)="collapse(f.node)" appStopProp></i>
                             {{f.node.name}}
