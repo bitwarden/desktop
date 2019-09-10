@@ -13,10 +13,8 @@ $dir = Split-Path -Parent $MyInvocation.MyCommand.Path;
 $rootDir = $dir + "\..";
 $distDir = $rootDir + "\dist";
 $distSafariDir = $distDir + "\safari";
-$distSafariAppex = $distSafariDir + "\browser\dist\Safari\dmg\build\Release\safari.appex";
-if($mas) {
-  $distSafariAppex = $distSafariDir + "\browser\dist\Safari\mas\build\Release\safari.appex";
-}
+$distSafariAppexDmg = $distSafariDir + "\browser\dist\Safari\dmg\build\Release\safari.appex";
+$distSafariAppexMas = $distSafariDir + "\browser\dist\Safari\mas\build\Release\safari.appex";
 $pluginsAppex = $rootDir + "\PlugIns\safari.appex";
 
 if(Test-Path -Path $distSafariDir) {
@@ -32,12 +30,16 @@ cd $distSafariDir
 git clone git@github.com:bitwarden/browser.git
 cd browser
 
-if (-not ([string]::IsNullOrEmpty($version))) {
+if(-not ([string]::IsNullOrEmpty($version))) {
   $tag = "v" + $version
   git checkout tags/$tag
 }
 
 npm i
 npm run dist:safari
-Copy-Item -Path $distSafariAppex -Destination $pluginsAppex –Recurse
+if($mas) {
+  Copy-Item -Path $distSafariAppexMas -Destination $pluginsAppex –Recurse
+} else {
+  Copy-Item -Path $distSafariAppexDmg -Destination $pluginsAppex –Recurse
+}
 cd $rootDir
