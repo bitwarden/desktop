@@ -26,7 +26,7 @@ import { Utils } from 'jslib/misc/utils';
     templateUrl: 'premium.component.html',
 })
 export class PremiumComponent extends BasePremiumComponent {
-    formPromise: Promise<any>;
+    purchasePromise: Promise<any>;
     canMakeMacAppStorePayments = false;
 
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
@@ -51,7 +51,7 @@ export class PremiumComponent extends BasePremiumComponent {
                     return;
                 }
                 // Check each transaction.
-                transactions.forEach((transaction) => {
+                transactions.forEach(async (transaction) => {
                     const payment = transaction.payment;
                     switch (transaction.transactionState) {
                         case 'purchasing':
@@ -72,11 +72,12 @@ export class PremiumComponent extends BasePremiumComponent {
                             fd.append('paymentToken', receiptB64);
                             fd.append('additionalStorageGb', '0');
                             try {
-                                this.formPromise = this.apiService.postPremium(fd).then((paymentResponse) => {
+                                this.purchasePromise = this.apiService.postPremium(fd).then((paymentResponse) => {
                                     if (paymentResponse.success) {
                                         return this.finalizePremium();
                                     }
                                 });
+                                await this.purchasePromise;
                             } catch { }
                             // Finish the transaction.
                             remote.inAppPurchase.finishTransactionByDate(transaction.transactionDate);
@@ -111,7 +112,8 @@ export class PremiumComponent extends BasePremiumComponent {
         try {
             const request = new IapCheckRequest();
             request.paymentMethodType = PaymentMethodType.AppleInApp;
-            await this.apiService.postIapCheck(request);
+            this.purchasePromise = this.apiService.postIapCheck(request);
+            await this.purchasePromise;
             remote.inAppPurchase.purchaseProduct('premium_annually', 1, (isValid) => {
                 if (!isValid) {
                     // TODO?

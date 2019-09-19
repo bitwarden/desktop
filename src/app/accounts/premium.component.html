@@ -51,7 +51,8 @@
                 <button type="button" class="primary" appBlurClick (click)="manage()" *ngIf="isPremium">
                     <b>{{'premiumManage' | i18n}}</b>
                 </button>
-                <button type="button" class="primary" appBlurClick (click)="purchase()" *ngIf="!isPremium">
+                <button #purchaseBtn type="button" class="primary" appBlurClick (click)="purchase()" *ngIf="!isPremium"
+                    [disabled]="purchaseBtn.loading" [appApiAction]="purchasePromise">
                     <b>{{'premiumPurchase' | i18n}}</b>
                 </button>
                 <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
