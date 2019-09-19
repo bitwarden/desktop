@@ -73,9 +73,11 @@ export class PremiumComponent extends BasePremiumComponent {
                             break;
                         case 'failed':
                             // tslint:disable-next-line
-                            console.log(`Failed to purchase ${payment.productIdentifier}.` +
+                            console.log(`Failed to purchase ${payment.productIdentifier}. ` +
                                 `${transaction.errorCode} = ${transaction.errorMessage}`);
-                            this.platformUtilsService.showToast('error', null, transaction.errorMessage);
+                            if (transaction.errorCode !== 2) {
+                                this.platformUtilsService.showToast('error', null, transaction.errorMessage);
+                            }
                             // Finish the transaction.
                             remote.inAppPurchase.finishTransactionByDate(transaction.transactionDate);
                             break;
