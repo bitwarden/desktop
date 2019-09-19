@@ -983,6 +983,9 @@
   "premiumPurchase": {
     "message": "Purchase Premium"
   },
+  "premiumRestore": {
+    "message": "Restore Premium"
+  },
   "premiumPurchaseAlert": {
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
@@ -1248,5 +1251,8 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
   }
 }

@@ -27,7 +27,9 @@ import { Utils } from 'jslib/misc/utils';
 })
 export class PremiumComponent extends BasePremiumComponent {
     purchasePromise: Promise<any>;
+    restorePromise: Promise<any>;
     canMakeMacAppStorePayments = false;
+    canRestorePurchase = false;
 
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         tokenService: TokenService, apiService: ApiService,
@@ -45,6 +47,7 @@ export class PremiumComponent extends BasePremiumComponent {
         if (!this.canMakeMacAppStorePayments) {
             return;
         }
+        this.setCanRestorePurchase();
         remote.inAppPurchase.on('transactions-updated', (event, transactions) => {
             this.ngZone.run(async () => {
                 if (!Array.isArray(transactions)) {
@@ -64,27 +67,15 @@ export class PremiumComponent extends BasePremiumComponent {
                             if (payment.productIdentifier !== 'premium_annually') {
                                 return;
                             }
-                            const receiptUrl = remote.inAppPurchase.getReceiptURL();
-                            const receiptBuffer = fs.readFileSync(receiptUrl);
-                            const receiptB64 = Utils.fromBufferToB64(receiptBuffer);
-                            const fd = new FormData();
-                            fd.append('paymentMethodType', '6');
-                            fd.append('paymentToken', receiptB64);
-                            fd.append('additionalStorageGb', '0');
-                            try {
-                                this.purchasePromise = this.apiService.postPremium(fd).then((paymentResponse) => {
-                                    if (paymentResponse.success) {
-                                        return this.finalizePremium();
-                                    }
-                                });
-                                await this.purchasePromise;
-                            } catch { }
+                            await this.makePremium(this.purchasePromise);
                             // Finish the transaction.
                             remote.inAppPurchase.finishTransactionByDate(transaction.transactionDate);
                             break;
                         case 'failed':
                             // tslint:disable-next-line
-                            console.log(`Failed to purchase ${payment.productIdentifier}.`);
+                            console.log(`Failed to purchase ${payment.productIdentifier}.` +
+                                `${transaction.errorCode} = ${transaction.errorMessage}`);
+                            this.platformUtilsService.showToast('error', null, transaction.errorMessage);
                             // Finish the transaction.
                             remote.inAppPurchase.finishTransactionByDate(transaction.transactionDate);
                             break;
@@ -122,11 +113,56 @@ export class PremiumComponent extends BasePremiumComponent {
         } catch { }
     }
 
+    async restore() {
+        if (this.isPremium || !this.canMakeMacAppStorePayments) {
+            return;
+        }
+        let makePremium = false;
+        try {
+            const request = new IapCheckRequest();
+            request.paymentMethodType = PaymentMethodType.AppleInApp;
+            this.restorePromise = this.apiService.postIapCheck(request);
+            await this.restorePromise;
+            makePremium = true;
+        } catch { }
+        if (makePremium) {
+            await this.makePremium(this.restorePromise);
+        }
+    }
+
+    private async makePremium(promise: Promise<any>) {
+        const receiptUrl = remote.inAppPurchase.getReceiptURL();
+        const receiptBuffer = fs.readFileSync(receiptUrl);
+        const receiptB64 = Utils.fromBufferToB64(receiptBuffer);
+        const fd = new FormData();
+        fd.append('paymentMethodType', '6');
+        fd.append('paymentToken', receiptB64);
+        fd.append('additionalStorageGb', '0');
+        try {
+            promise = this.apiService.postPremium(fd).then((paymentResponse) => {
+                if (paymentResponse.success) {
+                    return this.finalizePremium();
+                }
+            });
+            await promise;
+        } catch { }
+    }
+
     private async finalizePremium() {
         await this.apiService.refreshIdentityToken();
         await this.syncService.fullSync(true);
         this.platformUtilsService.showToast('success', null, this.i18nService.t('premiumUpdated'));
         this.messagingService.send('purchasedPremium');
         this.isPremium = this.tokenService.getPremium();
+        this.setCanRestorePurchase();
+    }
+
+    private setCanRestorePurchase() {
+        if (!this.isPremium && this.canMakeMacAppStorePayments) {
+            const receiptUrl = remote.inAppPurchase.getReceiptURL();
+            this.canRestorePurchase = receiptUrl != null;
+        } else {
+            this.canRestorePurchase = false;
+        }
     }
 }

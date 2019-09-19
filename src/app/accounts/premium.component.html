@@ -55,6 +55,10 @@
                     [disabled]="purchaseBtn.loading" [appApiAction]="purchasePromise">
                     <b>{{'premiumPurchase' | i18n}}</b>
                 </button>
+                <button #restoreBtn type="button" class="primary" appBlurClick (click)="restore()"
+                    *ngIf="canRestorePurchase" [disabled]="restoreBtn.loading" [appApiAction]="restorePromise">
+                    <b>{{'premiumRestore' | i18n}}</b>
+                </button>
                 <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
                 <div class="right" *ngIf="!isPremium">
                     <button #refreshBtn type="button" appBlurClick (click)="refresh()" [disabled]="refreshBtn.loading"
