@@ -15,6 +15,10 @@ import { TokenService } from 'jslib/abstractions/token.service';
 
 import { PremiumComponent as BasePremiumComponent } from 'jslib/angular/components/premium.component';
 
+import { PaymentMethodType } from 'jslib/enums/paymentMethodType';
+
+import { IapCheckRequest } from 'jslib/models/request/iapCheckRequest';
+
 import { Utils } from 'jslib/misc/utils';
 
 @Component({
@@ -64,7 +68,7 @@ export class PremiumComponent extends BasePremiumComponent {
                             const receiptBuffer = fs.readFileSync(receiptUrl);
                             const receiptB64 = Utils.fromBufferToB64(receiptBuffer);
                             const fd = new FormData();
-                            fd.append('paymentMethodType', '1');
+                            fd.append('paymentMethodType', '6');
                             fd.append('paymentToken', receiptB64);
                             fd.append('additionalStorageGb', '0');
                             try {
@@ -104,11 +108,16 @@ export class PremiumComponent extends BasePremiumComponent {
             await super.purchase();
             return;
         }
-        remote.inAppPurchase.purchaseProduct('premium_annually', 1, (isValid) => {
-            if (!isValid) {
-                // TODO?
-            }
-        });
+        try {
+            const request = new IapCheckRequest();
+            request.paymentMethodType = PaymentMethodType.AppleInApp;
+            await this.apiService.postIapCheck(request);
+            remote.inAppPurchase.purchaseProduct('premium_annually', 1, (isValid) => {
+                if (!isValid) {
+                    // TODO?
+                }
+            });
+        } catch { }
     }
 
     private async finalizePremium() {
