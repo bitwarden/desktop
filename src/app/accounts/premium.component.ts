@@ -81,7 +81,7 @@ export class PremiumComponent extends BasePremiumComponent {
                             if (payment.productIdentifier !== AppStorePremiumPlan) {
                                 return;
                             }
-                            await this.makePremium(this.purchasePromise);
+                            await this.makePremium(false);
                             // Finish the transaction.
                             remote.inAppPurchase.finishTransactionByDate(transaction.transactionDate);
                             break;
@@ -142,7 +142,7 @@ export class PremiumComponent extends BasePremiumComponent {
             makePremium = true;
         } catch { }
         if (makePremium) {
-            await this.makePremium(this.restorePromise);
+            await this.makePremium(true);
         }
     }
 
@@ -158,7 +158,7 @@ export class PremiumComponent extends BasePremiumComponent {
         }
     }
 
-    private async makePremium(promise: Promise<any>) {
+    private async makePremium(restore: boolean) {
         const receiptUrl = remote.inAppPurchase.getReceiptURL();
         const receiptBuffer = fs.readFileSync(receiptUrl);
         const receiptB64 = Utils.fromBufferToB64(receiptBuffer);
@@ -167,12 +167,18 @@ export class PremiumComponent extends BasePremiumComponent {
         fd.append('paymentToken', receiptB64);
         fd.append('additionalStorageGb', '0');
         try {
-            promise = this.apiService.postPremium(fd).then((paymentResponse) => {
+            const p = this.apiService.postPremium(fd).then((paymentResponse) => {
                 if (paymentResponse.success) {
                     return this.finalizePremium();
                 }
             });
-            await promise;
+            if (restore) {
+                this.restorePromise = p;
+                await this.restorePromise;
+            } else {
+                this.purchasePromise = p;
+                await this.purchasePromise;
+            }
         } catch { }
     }
 
