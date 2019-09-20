@@ -52,7 +52,7 @@ export class PremiumComponent extends BasePremiumComponent {
         }
         const pricePromise = new Promise((resolve) => {
             remote.inAppPurchase.getProducts([AppStorePremiumPlan], (products) => {
-                this.ngZone.run(async () => {
+                this.ngZone.run(() => {
                     if (products == null || !Array.isArray(products) || products.length === 0) {
                         return;
                     }
