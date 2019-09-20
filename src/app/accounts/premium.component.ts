@@ -21,6 +21,8 @@ import { IapCheckRequest } from 'jslib/models/request/iapCheckRequest';
 
 import { Utils } from 'jslib/misc/utils';
 
+const AppStorePremiumPlan = 'premium_annually';
+
 @Component({
     selector: 'app-premium',
     templateUrl: 'premium.component.html',
@@ -29,6 +31,7 @@ export class PremiumComponent extends BasePremiumComponent {
     purchasePromise: Promise<any>;
     restorePromise: Promise<any>;
     canMakeMacAppStorePayments = false;
+    appStoreFormattedPrice = '$14.99';
     canRestorePurchase = false;
 
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
@@ -47,10 +50,21 @@ export class PremiumComponent extends BasePremiumComponent {
         if (!this.canMakeMacAppStorePayments) {
             return;
         }
+        const pricePromise = new Promise((resolve) => {
+            remote.inAppPurchase.getProducts([AppStorePremiumPlan], (products) => {
+                this.ngZone.run(async () => {
+                    if (products == null || !Array.isArray(products) || products.length === 0) {
+                        return;
+                    }
+                    this.appStoreFormattedPrice = products[0].formattedPrice;
+                    resolve();
+                });
+            });
+        });
         this.setCanRestorePurchase();
         remote.inAppPurchase.on('transactions-updated', (event, transactions) => {
             this.ngZone.run(async () => {
-                if (!Array.isArray(transactions)) {
+                if (transactions == null || !Array.isArray(transactions)) {
                     return;
                 }
                 // Check each transaction.
@@ -64,7 +78,7 @@ export class PremiumComponent extends BasePremiumComponent {
                         case 'purchased':
                             // tslint:disable-next-line
                             console.log(`${payment.productIdentifier} purchased.`);
-                            if (payment.productIdentifier !== 'premium_annually') {
+                            if (payment.productIdentifier !== AppStorePremiumPlan) {
                                 return;
                             }
                             await this.makePremium(this.purchasePromise);
@@ -107,7 +121,7 @@ export class PremiumComponent extends BasePremiumComponent {
             request.paymentMethodType = PaymentMethodType.AppleInApp;
             this.purchasePromise = this.apiService.postIapCheck(request);
             await this.purchasePromise;
-            remote.inAppPurchase.purchaseProduct('premium_annually', 1, (isValid) => {
+            remote.inAppPurchase.purchaseProduct(AppStorePremiumPlan, 1, (isValid) => {
                 if (!isValid) {
                     // TODO?
                 }
@@ -129,6 +143,18 @@ export class PremiumComponent extends BasePremiumComponent {
         } catch { }
         if (makePremium) {
             await this.makePremium(this.restorePromise);
+        }
+    }
+
+    async manage() {
+        if (!this.canMakeMacAppStorePayments || remote.inAppPurchase.getReceiptURL() == null) {
+            await super.manage();
+            return;
+        }
+        const confirmed = await this.platformUtilsService.showDialog(this.i18nService.t('premiumManageAlertAppStore'),
+            this.i18nService.t('premiumManage'), this.i18nService.t('yes'), this.i18nService.t('cancel'));
+        if (confirmed) {
+            this.platformUtilsService.launchUri('itms-apps://apps.apple.com/account/subscriptions');
         }
     }
 

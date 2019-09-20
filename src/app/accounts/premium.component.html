@@ -37,7 +37,12 @@
                                 </li>
                             </ul>
                             <p class="text-center lead no-margin">
-                                {{'premiumPrice' | i18n : (price | currency:'$')}}
+                                <span *ngIf="canMakeMacAppStorePayments">
+                                    {{'premiumPrice' | i18n : appStoreFormattedPrice}}
+                                </span>
+                                <span *ngIf="!canMakeMacAppStorePayments">
+                                    {{'premiumPrice' | i18n : (price | currency:'$')}}
+                                </span>
                             </p>
                         </div>
                         <div *ngIf="isPremium">
