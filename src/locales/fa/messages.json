@@ -1250,12 +1250,12 @@
     "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "شما به پرمیوم ارتقاء یافتید."
   },
   "restore": {
-    "message": "Restore"
+    "message": "بازیابی"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "می توانید اشتراک خود را از اپ استور مدیریت کنید. آیا می خواهید هم اکنون از اپ استور دیدن کنید؟"
   }
 }
