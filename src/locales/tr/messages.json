@@ -113,11 +113,11 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Görünürlüğünü aç\/kapat"
+    "message": "Görünürlüğünü aç/kapat"
   },
   "toggleCollapse": {
     "message": "Toggle Collapse",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Kart Sahibinin Adı"
@@ -262,10 +262,10 @@
     "message": "Adres 3"
   },
   "cityTown": {
-    "message": "Şehir\/Kasaba"
+    "message": "Şehir/Kasaba"
   },
   "stateProvince": {
-    "message": "Eyalet \/ İl"
+    "message": "Eyalet / İl"
   },
   "zipPostalCode": {
     "message": "Posta Kodu"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Clear Clipboard",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatically clear copied values from your clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Site simgelerini devre dışı bırak"
@@ -993,7 +993,7 @@
     "message": "Bitwarden'i desteklediğiniz için teşekkür ederiz."
   },
   "premiumPrice": {
-    "message": "Bunların hepsi sadece $PRICE$ \/yıl!",
+    "message": "Bunların hepsi sadece $PRICE$ /yıl!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1047,7 +1047,7 @@
     "message": "Yeniden yükle"
   },
   "toggleDevTools": {
-    "message": "Geliştirici Araçlarını Açma\/Kapatma"
+    "message": "Geliştirici Araçlarını Açma/Kapatma"
   },
   "minimize": {
     "message": "Küçült",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Sunucu alanadı",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Tam"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Seçenekleri Aç\/Kapa"
+    "message": "Seçenekleri Aç/Kapa"
   },
   "organization": {
     "message": "Kuruluş",
@@ -1148,7 +1148,7 @@
     "message": "Çıkış"
   },
   "showHide": {
-    "message": "Göster \/ Gizle",
+    "message": "Göster / Gizle",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
