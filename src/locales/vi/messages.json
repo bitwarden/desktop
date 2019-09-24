@@ -113,11 +113,11 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Bật\/tắt khả năng hiển thị"
+    "message": "Bật/tắt khả năng hiển thị"
   },
   "toggleCollapse": {
     "message": "Toggle Collapse",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Tên chủ thẻ"
@@ -262,10 +262,10 @@
     "message": "Địa chỉ 3"
   },
   "cityTown": {
-    "message": "Quận\/Huyện\/Thị trấn"
+    "message": "Quận/Huyện/Thị trấn"
   },
   "stateProvince": {
-    "message": "Tỉnh\/Thành Phố"
+    "message": "Tỉnh/Thành Phố"
   },
   "zipPostalCode": {
     "message": "Mã bưu chính"
@@ -310,7 +310,7 @@
     "message": "Ẩn"
   },
   "cfTypeBoolean": {
-    "message": "Đúng\/Sai"
+    "message": "Đúng/Sai"
   },
   "remove": {
     "message": "Xoá"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Clear Clipboard",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatically clear copied values from your clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Vô hiệu hoá biểu tượng trang web"
@@ -993,7 +993,7 @@
     "message": "Cảm ơn bạn đã hỗ trợ Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tất cả chỉ với $PRICE$ \/năm!",
+    "message": "Tất cả chỉ với $PRICE$ /năm!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1041,13 +1041,13 @@
     "message": "Đặt lại thu phóng"
   },
   "toggleFullScreen": {
-    "message": "Bật\/Tắt Toàn Màn Hình"
+    "message": "Bật/Tắt Toàn Màn Hình"
   },
   "reload": {
     "message": "Tải lại"
   },
   "toggleDevTools": {
-    "message": "Bật\/Tắt Công Cụ Nhà Phát Triển"
+    "message": "Bật/Tắt Công Cụ Nhà Phát Triển"
   },
   "minimize": {
     "message": "Thu nhỏ",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Máy chủ",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Chính xác"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Bật\/tắt tùy chọn"
+    "message": "Bật/tắt tùy chọn"
   },
   "organization": {
     "message": "Organization",
@@ -1148,7 +1148,7 @@
     "message": "Exit"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Show / Hide",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
