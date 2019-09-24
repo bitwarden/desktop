@@ -113,11 +113,11 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Mostra\/Nascondi"
+    "message": "Mostra/Nascondi"
   },
   "toggleCollapse": {
-    "message": "Attiva\/disattiva Collasso",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Attiva/disattiva Collasso",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Titolare della carta"
@@ -141,7 +141,7 @@
     "message": "Azienda"
   },
   "ssn": {
-    "message": "Numero di previdenza sociale\/Codice Fiscale"
+    "message": "Numero di previdenza sociale/Codice Fiscale"
   },
   "passportNumber": {
     "message": "Numero del passaporto"
@@ -265,7 +265,7 @@
     "message": "Città o comune"
   },
   "stateProvince": {
-    "message": "Stato \/ Provincia"
+    "message": "Stato / Provincia"
   },
   "zipPostalCode": {
     "message": "CAP"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Cancella appunti",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Cancella automaticamente i valori copiati dagli appunti.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Disabilita Icone dei Siti Web"
@@ -1041,13 +1041,13 @@
     "message": "Ripristina zoom"
   },
   "toggleFullScreen": {
-    "message": "Attiva\/disattiva schermo intero"
+    "message": "Attiva/disattiva schermo intero"
   },
   "reload": {
     "message": "Ricarica"
   },
   "toggleDevTools": {
-    "message": "Attiva\/disattiva strumenti di sviluppo"
+    "message": "Attiva/disattiva strumenti di sviluppo"
   },
   "minimize": {
     "message": "Minimizza",
@@ -1098,7 +1098,7 @@
     "message": "Verifica se la password è stata esposta."
   },
   "passwordExposed": {
-    "message": "Questa password è stata esposta $VALUE$ volta\/e in dati violati. Dovresti cambiarla.",
+    "message": "Questa password è stata esposta $VALUE$ volta/e in dati violati. Dovresti cambiarla.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Esatto"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Attiva\/Disattiva opzioni"
+    "message": "Attiva/Disattiva opzioni"
   },
   "organization": {
     "message": "Società",
@@ -1148,7 +1148,7 @@
     "message": "Esci"
   },
   "showHide": {
-    "message": "Mostra \/ Nascondi",
+    "message": "Mostra / Nascondi",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "Devi selezionare almeno una categoria."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
