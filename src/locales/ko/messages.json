@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "필터"
   },
   "allItems": {
     "message": "모든 항목"
@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "감추기 전환",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "카드 소유자 이름"
@@ -262,10 +262,10 @@
     "message": "주소 3"
   },
   "cityTown": {
-    "message": "읍 \/ 면 \/ 동"
+    "message": "읍 / 면 / 동"
   },
   "stateProvince": {
-    "message": "시 \/ 도"
+    "message": "시 / 도"
   },
   "zipPostalCode": {
     "message": "우편번호"
@@ -301,7 +301,7 @@
     "message": "값"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "드래그하여 정렬"
   },
   "cfTypeText": {
     "message": "텍스트"
@@ -310,7 +310,7 @@
     "message": "숨김"
   },
   "cfTypeBoolean": {
-    "message": "참 \/ 거짓"
+    "message": "참 / 거짓"
   },
   "remove": {
     "message": "제거"
@@ -371,11 +371,11 @@
     "message": "구분 기호"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "첫 문자를 대문자로",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "숫자 추가"
   },
   "close": {
     "message": "닫기"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "클립보드 비우기",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "자동으로 클립보드에 복사된 값을 제거합니다.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "웹 사이트 아이콘 사용 안 함"
@@ -1038,7 +1038,7 @@
     "message": "축소"
   },
   "resetZoom": {
-    "message": "확대 \/ 축소 수준 초기화"
+    "message": "확대 / 축소 수준 초기화"
   },
   "toggleFullScreen": {
     "message": "전체 화면 전환"
@@ -1054,7 +1054,7 @@
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "확대\/축소"
+    "message": "확대/축소"
   },
   "bringAllToFront": {
     "message": "모두 앞으로 가져오기",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "호스트",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "정확히 일치"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "표시 \/ 숨기기"
+    "message": "표시 / 숨기기"
   },
   "organization": {
     "message": "조직",
@@ -1148,14 +1148,14 @@
     "message": "끝내기"
   },
   "showHide": {
-    "message": "표시 \/ 숨기기",
+    "message": "표시 / 숨기기",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
     "message": "알림 영역으로 숨기기"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "항상 위에",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,7 +1235,7 @@
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "설정"
   },
   "enableMenuBar": {
     "message": "Enable Menu Bar Icon"
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
