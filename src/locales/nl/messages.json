@@ -116,8 +116,8 @@
     "message": "Zichtbaarheid"
   },
   "toggleCollapse": {
-    "message": "Inklappen\/uitklappen",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Inklappen/uitklappen",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Naam van kaarthouder"
@@ -262,10 +262,10 @@
     "message": "Adres 3"
   },
   "cityTown": {
-    "message": "Stad \/ gemeente"
+    "message": "Stad / gemeente"
   },
   "stateProvince": {
-    "message": "Staat \/ Provincie"
+    "message": "Staat / Provincie"
   },
   "zipPostalCode": {
     "message": "Postcode"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Klembord wissen",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatisch gekopieerde waarden van uw klembord wissen.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Websitepictogrammen uitschakelen"
@@ -889,7 +889,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Controleren op updates"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -901,10 +901,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Herstart om bij te werken"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
+    "message": "Versie $VERSION_NUM$ kan worden geïnstalleerd. U dient Bitwarden te herstarten om de installatie te voltooien. Wilt u nu herstarten en bijwerken?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -913,10 +913,10 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Update beschikbaar"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Er is een update beschikbaar. Wilt u de update nu downloaden?"
   },
   "restart": {
     "message": "Herstarten"
@@ -1041,13 +1041,13 @@
     "message": "Zoomniveau herstellen"
   },
   "toggleFullScreen": {
-    "message": "Volledig scherm in-\/uitschakelen"
+    "message": "Volledig scherm in-/uitschakelen"
   },
   "reload": {
     "message": "Herladen"
   },
   "toggleDevTools": {
-    "message": "Ontwikkelaarshulpmiddelen in-\/uitschakelen"
+    "message": "Ontwikkelaarshulpmiddelen in-/uitschakelen"
   },
   "minimize": {
     "message": "Minimaliseren",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
@@ -1148,7 +1148,7 @@
     "message": "Afsluiten"
   },
   "showHide": {
-    "message": "Tonen\/Verbergen",
+    "message": "Tonen/Verbergen",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "U moet tenminste één collectie selecteren."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
