@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "Alternar colapso",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Titular do cartão"
@@ -262,10 +262,10 @@
     "message": "Endereço 3"
   },
   "cityTown": {
-    "message": "Cidade \/ localidade"
+    "message": "Cidade / localidade"
   },
   "stateProvince": {
-    "message": "Estado \/ província"
+    "message": "Estado / província"
   },
   "zipPostalCode": {
     "message": "Código postal"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Limpar área de transferência",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Limpar automaticamente valores copiados da sua área de transferência.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Desativar ícones de websites"
@@ -993,7 +993,7 @@
     "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tudo por apenas $PRICE$ \/ano!",
+    "message": "Tudo por apenas $PRICE$ /ano!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Servidor",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exato"
@@ -1148,7 +1148,7 @@
     "message": "Sair"
   },
   "showHide": {
-    "message": "Mostrar \/ ocultar",
+    "message": "Mostrar / ocultar",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "Tem de selecionar pelo menos uma coleção."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
