@@ -43,11 +43,11 @@ export class PremiumComponent extends BasePremiumComponent {
 
     async ngOnInit() {
         await super.ngOnInit();
-        if (this.isPremium || !this.platformUtilsService.isMacAppStore()) {
-            return;
+        const isMacAppStore = this.platformUtilsService.isMacAppStore();
+        if (isMacAppStore) {
+            this.canMakeMacAppStorePayments = remote.inAppPurchase.canMakePayments();
         }
-        this.canMakeMacAppStorePayments = remote.inAppPurchase.canMakePayments();
-        if (!this.canMakeMacAppStorePayments) {
+        if (this.isPremium || !isMacAppStore || !this.canMakeMacAppStorePayments) {
             return;
         }
         const pricePromise = new Promise((resolve) => {
@@ -147,7 +147,7 @@ export class PremiumComponent extends BasePremiumComponent {
     }
 
     async manage() {
-        if (!this.canMakeMacAppStorePayments || remote.inAppPurchase.getReceiptURL() == null) {
+        if (!this.canMakeMacAppStorePayments || this.getReceiptUrl() == null) {
             await super.manage();
             return;
         }
@@ -159,7 +159,7 @@ export class PremiumComponent extends BasePremiumComponent {
     }
 
     private async makePremium(restore: boolean) {
-        const receiptUrl = remote.inAppPurchase.getReceiptURL();
+        const receiptUrl = this.getReceiptUrl();
         const receiptBuffer = fs.readFileSync(receiptUrl);
         const receiptB64 = Utils.fromBufferToB64(receiptBuffer);
         const fd = new FormData();
@@ -193,10 +193,18 @@ export class PremiumComponent extends BasePremiumComponent {
 
     private setCanRestorePurchase() {
         if (!this.isPremium && this.canMakeMacAppStorePayments) {
-            const receiptUrl = remote.inAppPurchase.getReceiptURL();
+            const receiptUrl = this.getReceiptUrl();
             this.canRestorePurchase = receiptUrl != null;
         } else {
             this.canRestorePurchase = false;
         }
+    }
+
+    private getReceiptUrl(): string {
+        const receiptUrl = remote.inAppPurchase.getReceiptURL();
+        if (receiptUrl != null) {
+            return fs.existsSync(receiptUrl) ? receiptUrl : null;
+        }
+        return null;
     }
 }
