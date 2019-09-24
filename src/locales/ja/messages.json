@@ -116,8 +116,8 @@
     "message": "表示切り替え"
   },
   "toggleCollapse": {
-    "message": "開く\/閉じる",
-    "description": "Toggling an expand\/collapse state."
+    "message": "開く/閉じる",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "カードの名義人名"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "クリップボードの消去",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "選択した時間が経過した後、自動的にクリップボードを消去します。",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "ウェブサイトアイコンの無効化"
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "ホスト",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "完全一致"
@@ -1148,7 +1148,7 @@
     "message": "終了"
   },
   "showHide": {
-    "message": "表示 \/ 非表示",
+    "message": "表示 / 非表示",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "最低でも一つのコレクションを選んでください。"
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
