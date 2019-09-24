@@ -113,11 +113,11 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Slå synlighed til\/fra"
+    "message": "Slå synlighed til/fra"
   },
   "toggleCollapse": {
-    "message": "Fold sammen\/fold ud",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Fold sammen/fold ud",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Kortindehaverens navn"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Ryd udklipsholder",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Fjern automatisk kopierede data fra din udklipsholder.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Slå webikoner fra"
@@ -993,7 +993,7 @@
     "message": "Tak fordi du støtter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Alt dette for kun $PRICE$ \/år!",
+    "message": "Alt dette for kun $PRICE$ /år!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1041,13 +1041,13 @@
     "message": "Nulstil zoom"
   },
   "toggleFullScreen": {
-    "message": "Aktivér\/deaktivér fuld skærm"
+    "message": "Aktivér/deaktivér fuld skærm"
   },
   "reload": {
     "message": "Genindlæs"
   },
   "toggleDevTools": {
-    "message": "Udviklingsværktøjer til\/fra"
+    "message": "Udviklingsværktøjer til/fra"
   },
   "minimize": {
     "message": "Minimér",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Vært",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Nøjagtig"
@@ -1148,7 +1148,7 @@
     "message": "Afslut"
   },
   "showHide": {
-    "message": "Vis \/ skjul",
+    "message": "Vis / skjul",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "Du skal vælge minimum én samling."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
