@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "allItems": {
     "message": "Sve stavke"
@@ -116,8 +116,8 @@
     "message": "Promijeni vidljivost"
   },
   "toggleCollapse": {
-    "message": "Sažmi\/Proširi",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Sažmi/Proširi",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Ime vlasnika kartice"
@@ -132,7 +132,7 @@
     "message": "Istek"
   },
   "securityCode": {
-    "message": "Sigurnosni kôd"
+    "message": "Sigurnosni kod"
   },
   "identityName": {
     "message": "identityName"
@@ -262,10 +262,10 @@
     "message": "Adresa 3"
   },
   "cityTown": {
-    "message": "Grad \/ Mjesto"
+    "message": "Grad / Mjesto"
   },
   "stateProvince": {
-    "message": "Država \/ Pokrajina"
+    "message": "Država / Pokrajina"
   },
   "zipPostalCode": {
     "message": "Poštanski broj"
@@ -301,7 +301,7 @@
     "message": "Vrijednost"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Povucite za sortiranje"
   },
   "cfTypeText": {
     "message": "Tekst"
@@ -371,11 +371,11 @@
     "message": "Razdjelitelj riječi"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Pretvori u velika početna slova",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Uključi broj"
   },
   "close": {
     "message": "Zatvori"
@@ -515,16 +515,16 @@
     "message": "Kod za provjeru"
   },
   "verificationCodeRequired": {
-    "message": "Potvrdni kôd je obavezan."
+    "message": "Potvrdni kod je obavezan."
   },
   "continue": {
     "message": "Nastavi"
   },
   "enterVerificationCodeApp": {
-    "message": "Unesite 6-znamenkasti kontrolni kôd iz aplikacije autentifikatora."
+    "message": "Unesite 6-znamenkasti kontrolni kod iz aplikacije autentifikatora."
   },
   "enterVerificationCodeEmail": {
-    "message": "Unesite 6-znamenkasti kontrolni kôd koji je poslan e-poštom na $EMAIL$.",
+    "message": "Unesite 6-znamenkasti kontrolni kod koji je poslan e-poštom na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -557,10 +557,10 @@
     "message": "Umetnite sigurnosni ključ u USB priključak računala. Ako ima gumb, dodirnite ga."
   },
   "recoveryCodeDesc": {
-    "message": "Izgubili ste pristup svim pružateljima dvofaktorskih usluga? Koristite svoj kôd za oporavak da biste onemogućili sve pružatelje dvofaktorskih usluga sa svog računa."
+    "message": "Izgubili ste pristup svim pružateljima dvofaktorskih usluga? Koristite svoj kod za oporavak da biste onemogućili sve pružatelje dvofaktorskih usluga sa svog računa."
   },
   "recoveryCodeTitle": {
-    "message": "Kôd za oporavak"
+    "message": "Kod za oporavak"
   },
   "authenticatorAppTitle": {
     "message": "Aplikacija autentifikatora"
@@ -593,7 +593,7 @@
     "message": "E-pošta"
   },
   "emailDesc": {
-    "message": "Kontrolni kodovi bit će vam poslani e-poštom."
+    "message": "Kontrolni kodovi bit će Vam poslani e-poštom."
   },
   "loginUnavailable": {
     "message": "Prijava nije dostupna"
@@ -748,7 +748,7 @@
     "message": "Otključaj"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prijavljen kao $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Očisti međuspremnik",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatski očisti kopirane vrijednosti iz vašeg međuspremnika.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Onemogući ikone web mjesta"
@@ -972,7 +972,7 @@
     "message": "Higijena lozinki, zdravlje računa i izvještaji o kršenju sigurnosti podataka radi zaštite Vašeg trezora."
   },
   "premiumSignUpTotp": {
-    "message": "Generator TOTP kontrolnog koda (2FA) za prijave u vašem trezoru."
+    "message": "Generator TOTP kontrolnog koda (2FA) za prijave u Vašem trezoru."
   },
   "premiumSignUpSupport": {
     "message": "Prioritetna korisnička podrška."
@@ -993,7 +993,7 @@
     "message": "Hvala Vam što podupirete Bitwarden."
   },
   "premiumPrice": {
-    "message": "Sve samo za $PRICE$ \/godišnje!",
+    "message": "Sve samo za $PRICE$ /godišnje!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1041,13 +1041,13 @@
     "message": "Poništi zumiranje"
   },
   "toggleFullScreen": {
-    "message": "Uključi\/isključi prikaz preko cijelog zaslona"
+    "message": "Uključi/isključi prikaz preko cijelog zaslona"
   },
   "reload": {
     "message": "Ponovno učitaj"
   },
   "toggleDevTools": {
-    "message": "Uključivanje\/isključivanje razvojnih alata"
+    "message": "Uključivanje/isključivanje razvojnih alata"
   },
   "minimize": {
     "message": "Smanji prozor",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Domaćin",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Točno"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Uključi\/isključi opcije"
+    "message": "Uključi/isključi opcije"
   },
   "organization": {
     "message": "Organizacija",
@@ -1155,7 +1155,7 @@
     "message": "Sakrij u alatnoj traci"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Uvijek Na Vrhu",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1186,7 +1186,7 @@
     "message": "Ne pripadate ni jednoj organizaciji. Organizacije Vam omogućuju sigurno dijeljenje stavki s drugim korisnicima."
   },
   "noCollectionsInList": {
-    "message": "Nema kolekcija za prikaz."
+    "message": "Nema zbirki za prikaz."
   },
   "ownership": {
     "message": "Vlasništvo"
@@ -1235,18 +1235,27 @@
     "message": "Zaključaj s glavnom lozinkom kod ponovnog pokretanja"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Postavke"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Omogući ikonu trake izbornika"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Uvijek prikaži ikonu na traci izbornika."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Sakrij u traci izbornika"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Morate odabrati barem jednu zbirku."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
