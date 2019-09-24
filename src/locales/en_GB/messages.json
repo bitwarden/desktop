@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "Toggle collapse",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Cardholder name"
@@ -262,7 +262,7 @@
     "message": "Address 3"
   },
   "cityTown": {
-    "message": "City \/ town"
+    "message": "City / town"
   },
   "stateProvince": {
     "message": "County"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Clear clipboard",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automatically clear copied values from your clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Disable website icons"
@@ -993,7 +993,7 @@
     "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ \/year!",
+    "message": "All for just $PRICE$ /year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Host",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
@@ -1148,7 +1148,7 @@
     "message": "Exit"
   },
   "showHide": {
-    "message": "Show \/ hide",
+    "message": "Show / hide",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
