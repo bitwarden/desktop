@@ -1250,12 +1250,12 @@
     "message": "U moet tenminste één collectie selecteren."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "U bent opgewaardeerd naar premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Terugzetten"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "U kunt uw abonnement beheren vanuit de App Store. Wilt u de App Store nu bezoeken?"
   }
 }
