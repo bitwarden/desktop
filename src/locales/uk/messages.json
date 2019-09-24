@@ -116,8 +116,8 @@
     "message": "Перемкнути видимість"
   },
   "toggleCollapse": {
-    "message": "Згорнути\/розгорнути",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Згорнути/розгорнути",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Ім'я власника картки"
@@ -262,10 +262,10 @@
     "message": "Адреса 3"
   },
   "cityTown": {
-    "message": "Місто \/ Селище"
+    "message": "Місто / Селище"
   },
   "stateProvince": {
-    "message": "Штат \/ Область"
+    "message": "Штат / Область"
   },
   "zipPostalCode": {
     "message": "Поштовий індекс"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Очистити буфер обміну",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Автоматично очищати скопійовані значення з буфера обміну.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Вимкнути піктограми веб-сайтів"
@@ -993,7 +993,7 @@
     "message": "Дякуємо за підтримку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всього лише $PRICE$ \/ за рік!",
+    "message": "Всього лише $PRICE$ / за рік!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Вузол",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Точно"
@@ -1148,7 +1148,7 @@
     "message": "Вийти"
   },
   "showHide": {
-    "message": "Показати \/ Приховати",
+    "message": "Показати / Приховати",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,14 @@
   },
   "selectOneCollection": {
     "message": "Ви повинні обрати принаймні одну збірку."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   }
 }
