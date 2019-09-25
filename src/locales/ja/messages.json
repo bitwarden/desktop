@@ -1250,12 +1250,12 @@
     "message": "最低でも一つのコレクションを選んでください。"
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "プレミアムにアップグレードしました。"
   },
   "restore": {
-    "message": "Restore"
+    "message": "リストア"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "App Store でサブスクリプションを管理できます。今すぐ開きますか？"
   }
 }
