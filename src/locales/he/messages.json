@@ -1250,12 +1250,12 @@
     "message": "עליך לבחור לפחות אוסף אחד."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "שדרגת לפרימיום."
   },
   "restore": {
-    "message": "Restore"
+    "message": "שחזור"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "ניתן לנהל את המינוי שלך דרך ה־App Store. האם ברצונך לבקר ב־App Store כעת?"
   }
 }
