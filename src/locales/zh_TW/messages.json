@@ -1250,12 +1250,12 @@
     "message": "您必須至少選擇一個收藏。"
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "您已升級至進階版。"
   },
   "restore": {
-    "message": "Restore"
+    "message": "恢復"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "可到 App Store 管理訂閱內容。您想要現在前往 App Store 嗎？"
   }
 }
