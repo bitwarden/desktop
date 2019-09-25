@@ -23,7 +23,7 @@
     "sub:pull": "git submodule foreach git pull origin master",
     "sub:commit": "npm run sub:pull && git commit -am \"update submodule\"",
     "postinstall": "./node_modules/.bin/electron-rebuild && npm run sub:init && gulp postinstall",
-    "simlink:win": "rm -rf ./jslib && cmd /c mklink /J .\\jslib ..\\jslib",
+    "symlink:win": "rm -rf ./jslib && cmd /c mklink /J .\\jslib ..\\jslib",
     "lint": "tslint src/**/*.ts || true",
     "lint:fix": "tslint src/**/*.ts --fix",
     "build": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main\" \"npm run build:renderer\"",
