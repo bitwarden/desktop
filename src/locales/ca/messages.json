@@ -1250,12 +1250,12 @@
     "message": "Heu d'escollir com a mínim una col·lecció."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Heu actualitzat a la versió premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Restaura"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Podeu gestionar la vostra subscripció des de l'App Store. \nVoleu visitar l'App Store ara?"
   }
 }
