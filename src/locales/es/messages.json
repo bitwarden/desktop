@@ -1250,12 +1250,12 @@
     "message": "Debes seleccionar al menos una colección."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Has actualizado a premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Restaurar"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Puedes administrar tu suscripción desde la App Store. ¿Quieres visitar la App Store ahora?"
   }
 }
