@@ -1250,12 +1250,12 @@
     "message": "Devi selezionare almeno una categoria."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Hai effettuato l'aggiornamento a Premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Ripristina"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Puoi gestire il tuo abbonamento dall'App Store. Vuoi visitare l'App Store adesso?"
   }
 }
