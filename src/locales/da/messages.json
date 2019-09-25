@@ -1250,12 +1250,12 @@
     "message": "Du skal vælge minimum én samling."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Du har opgraderet til premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Gendan"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Du kan administrere dit abonnement fra app butikken. Vil du besøge app butikken nu?"
   }
 }
