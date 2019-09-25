@@ -1253,9 +1253,9 @@
     "message": "Вы обновились до Премиум."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Восстановить"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Вы можете управлять своей подпиской из App Store. Вы хотите посетить App Store?"
   }
 }
