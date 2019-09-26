@@ -1250,10 +1250,10 @@
     "message": "Legalább egy gyűjteményt ki kell választani."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Megtörtént az áttérés a Prémium verzóra."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Visszaállítás"
   },
   "premiumManageAlertAppStore": {
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
