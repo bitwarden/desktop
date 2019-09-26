@@ -1259,13 +1259,13 @@
     "message": "Ви можете керувати своєю передплатою з App Store. Хочете перейти в App Store зараз?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Юридична інформація",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Умови користування"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Політика приватності"
   }
 }
