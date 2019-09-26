@@ -1259,13 +1259,13 @@
     "message": "ניתן לנהל את המינוי שלך דרך ה־App Store. האם ברצונך לבקר ב־App Store כעת?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "משפטי",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "תנאי שירות"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "מדיניות הפרטיות"
   }
 }
