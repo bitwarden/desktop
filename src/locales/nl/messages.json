@@ -1259,13 +1259,13 @@
     "message": "U kunt uw abonnement beheren vanuit de App Store. Wilt u de App Store nu bezoeken?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Juridisch",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Gebruiksvoorwaarden"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privacybeleid"
   }
 }
