@@ -156,7 +156,7 @@ export class MenuMain extends BaseMenu {
             });
         }
 
-        const helpSubmenu: MenuItemConstructorOptions[] = [
+        let helpSubmenu: MenuItemConstructorOptions[] = [
             {
                 label: this.main.i18nService.t('emailUs'),
                 click: () => shell.openExternal('mailTo:hello@bitwarden.com'),
@@ -169,6 +169,25 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('fileBugReport'),
                 click: () => shell.openExternal('https://github.com/bitwarden/desktop'),
             },
+        ];
+
+        if (isMacAppStore()) {
+            helpSubmenu.push({
+                label: this.main.i18nService.t('legal'),
+                submenu: [
+                    {
+                        label: this.main.i18nService.t('termsOfService'),
+                        click: () => shell.openExternal('https://bitwarden.com/terms/'),
+                    },
+                    {
+                        label: this.main.i18nService.t('privacyPolicy'),
+                        click: () => shell.openExternal('https://bitwarden.com/privacy/'),
+                    },
+                ],
+            });
+        }
+
+        helpSubmenu = helpSubmenu.concat([
             { type: 'separator' },
             {
                 label: this.main.i18nService.t('followUs'),
@@ -196,7 +215,7 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('goToWebVault'),
                 click: async () => await this.openWebVault(),
             },
-        ];
+        ]);
 
         if (!isWindowsStore()) {
             helpSubmenu.push({
@@ -397,9 +416,9 @@ export class MenuMain extends BaseMenu {
             // File menu
             template[0].submenu = (template[0].submenu as MenuItemConstructorOptions[]).concat(
                 firstMenuOptions, {
-                    label: this.i18nService.t('quitBitwarden'),
-                    role: 'quit',
-                });
+                label: this.i18nService.t('quitBitwarden'),
+                role: 'quit',
+            });
 
             // About menu
             const aboutMenuAdditions: MenuItemConstructorOptions[] = [
