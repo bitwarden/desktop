@@ -1259,13 +1259,13 @@
     "message": "Du kan administrere dit abonnement fra app butikken. Vil du besøge app butikken nu?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Juridisk",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Servicevilkår"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Fortrolighedspolitik"
   }
 }
