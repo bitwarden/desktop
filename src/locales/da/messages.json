@@ -1257,5 +1257,15 @@
   },
   "premiumManageAlertAppStore": {
     "message": "Du kan administrere dit abonnement fra app butikken. Vil du besøge app butikken nu?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
