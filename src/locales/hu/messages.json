@@ -1256,16 +1256,16 @@
     "message": "Visszaállítás"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "A felirakozás kezelhető az App Store szolgáltatásból. Felkeressük az App Store-t most?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Törvényes",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Használati feltételek"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Adatvédelem"
   }
 }
