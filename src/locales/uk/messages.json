@@ -1257,5 +1257,15 @@
   },
   "premiumManageAlertAppStore": {
     "message": "Ви можете керувати своєю передплатою з App Store. Хочете перейти в App Store зараз?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
