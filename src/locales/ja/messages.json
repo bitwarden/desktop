@@ -1257,5 +1257,15 @@
   },
   "premiumManageAlertAppStore": {
     "message": "App Store でサブスクリプションを管理できます。今すぐ開きますか？"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
