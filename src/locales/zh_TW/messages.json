@@ -1257,5 +1257,15 @@
   },
   "premiumManageAlertAppStore": {
     "message": "可到 App Store 管理訂閱內容。您想要現在前往 App Store 嗎？"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
