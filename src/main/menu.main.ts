@@ -186,10 +186,6 @@ export class MenuMain extends BaseMenu {
                         click: () => shell.openExternal('https://www.facebook.com/bitwarden/'),
                     },
                     {
-                        label: 'Google+',
-                        click: () => shell.openExternal('https://plus.google.com/114869903467947368993'),
-                    },
-                    {
                         label: 'GitHub',
                         click: () => shell.openExternal('https://github.com/bitwarden'),
                     },
@@ -256,8 +252,7 @@ export class MenuMain extends BaseMenu {
                     {
                         label: 'Safari',
                         click: () => {
-                            shell.openExternal('https://safari-extensions.apple.com/details/' +
-                                '?id=com.bitwarden.safari-LTZ2PFU5D6');
+                            shell.openExternal('https://bitwarden.com/#download');
                         },
                     },
                 ],
