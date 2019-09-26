@@ -1257,5 +1257,15 @@
   },
   "premiumManageAlertAppStore": {
     "message": "می توانید اشتراک خود را از اپ استور مدیریت کنید. آیا می خواهید هم اکنون از اپ استور دیدن کنید؟"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
