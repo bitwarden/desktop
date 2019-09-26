@@ -1259,13 +1259,13 @@
     "message": "Możesz zarządzać swoją subskrypcją w App Store. Chcesz odwiedzić App Store teraz?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Informacje prawne",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Warunki świadczenia usług"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Polityka prywatności"
   }
 }
