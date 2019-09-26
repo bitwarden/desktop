@@ -1250,22 +1250,22 @@
     "message": "Vous devez sélectionner au moins une collection."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Vous avez mis à niveau vers premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Restaurer"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Vous pouvez gérer votre abonnement depuis l'App Store. Voulez-vous visiter l'App Store maintenant ?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Légal",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Conditions d'utilisation"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Politique de confidentialité"
   }
 }
