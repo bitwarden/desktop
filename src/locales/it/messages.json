@@ -1257,5 +1257,15 @@
   },
   "premiumManageAlertAppStore": {
     "message": "Puoi gestire il tuo abbonamento dall'App Store. Vuoi visitare l'App Store adesso?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
