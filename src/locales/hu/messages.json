@@ -1250,16 +1250,16 @@
     "message": "Legalább egy gyűjteményt ki kell választani."
   },
   "premiumUpdated": {
-    "message": "Megtörtént az áttérés a Prémium verzóra."
+    "message": "Megtörtént az áttérés a Prémium verzióra."
   },
   "restore": {
     "message": "Visszaállítás"
   },
   "premiumManageAlertAppStore": {
-    "message": "A felirakozás kezelhető az App Store szolgáltatásból. Felkeressük az App Store-t most?"
+    "message": "A feliratkozás az App Store szolgáltatásból kezelhető  Felkeressük az App Store-t most?"
   },
   "legal": {
-    "message": "Törvényes",
+    "message": "Jogi információk",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
