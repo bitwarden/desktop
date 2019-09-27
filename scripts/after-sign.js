@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { notarize } = require('electron-notarize');
 const fs = require('fs');
+const child = child = require('child_process');
 
 exports.default = run;
 
