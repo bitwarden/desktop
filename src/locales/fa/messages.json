@@ -1259,13 +1259,13 @@
     "message": "می توانید اشتراک خود را از اپ استور مدیریت کنید. آیا می خواهید هم اکنون از اپ استور دیدن کنید؟"
   },
   "legal": {
-    "message": "Legal",
+    "message": "قانونی",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "شرایط استفاده از خدمات"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "سیاست حفظ حریم خصوصی"
   }
 }
