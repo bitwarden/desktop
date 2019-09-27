@@ -1259,13 +1259,13 @@
     "message": "Вы можете управлять своей подпиской из App Store. Вы хотите посетить App Store?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Правовая информация",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Условия использования"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Политика конфиденциальности"
   }
 }
