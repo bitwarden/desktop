@@ -59,7 +59,7 @@
       "output": "dist",
       "app": "build"
     },
-    "afterSign": "scripts/notarize.js",
+    "afterSign": "scripts/after-sign.js",
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
