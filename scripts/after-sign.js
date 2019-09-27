@@ -14,7 +14,7 @@ async function run(context) {
 
     if (masBuild || macBuild) {
         console.log('### Signing Safari App Extension Libs');
-        const resourcesPath = context.packager.MacPackager.info.Packager._buildResourcesDir;
+        const resourcesPath = context.packager.info._buildResourcesDir;
         const devId = masBuild ? '3rd Party Mac Developer Application: 8bit Solutions LLC' :
             'Developer ID Application: 8bit Solutions LLC';
         await signSafariAppLibs(appPath, resourcesPath, devId);
