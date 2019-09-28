@@ -44,18 +44,16 @@ function pkgMas(cb) {
     const safariAppexFrameworkPath = safariAppexPath + '/Contents/Frameworks/';
     const safariEntitlementsPath = paths.resources + 'safari.entitlements';
 
-    return del([paths.dist + 'Bitwarden*.pkg'])
+    return del([paths.dist + 'mas/Bitwarden*.pkg'])
         .then(() => {
             const libs = fs.readdirSync(safariAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
-                .map((p) => builtAppexFrameworkPath + p);
+                .map((p) => safariAppexFrameworkPath + p);
             const allItems = libs.concat([safariAppexPath]);
             const promises = [];
             allItems.forEach((i) => {
                 const proc = child.spawn('codesign', [
                     '--verbose',
                     '--force',
-                    '-o',
-                    'runtime',
                     '--sign',
                     '3rd Party Mac Developer Application: 8bit Solutions LLC',
                     '--entitlements',
@@ -66,20 +64,13 @@ function pkgMas(cb) {
             });
             return Promise.all(promises);
         }).then(() => {
-            const libs = fs.readdirSync(safariAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
-                .map((p) => builtAppexFrameworkPath + p);
-            const allItems = libs.concat([safariAppexPath]);
-            const promises = [];
-            allItems.forEach((i) => {
-                const proc = child.spawn('productbuild', [
-                    '--component',
-                    appPath,
-                    '/Applications',
-                    pkgPath]);
-                stdOutProc(proc);
-                promises.push(new Promise((resolve) => proc.on('close', resolve)));
-            });
-            return Promise.all(promises);
+            const proc = child.spawn('productbuild', [
+                '--component',
+                appPath,
+                '/Applications',
+                pkgPath]);
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
             return cb;
         }, () => {
