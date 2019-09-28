@@ -60,7 +60,6 @@
       "app": "build"
     },
     "afterSign": "scripts/after-sign.js",
-    "artifactBuildStarted": "scripts/start-artifact.js",
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
