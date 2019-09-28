@@ -40,6 +40,7 @@ function fixSweetAlert(cb) {
 function pkgMas(cb) {
     const appPath = paths.dist + 'mas/Bitwarden.app';
     const pkgPath = paths.dist + 'mas/Bitwarden-mas.pkg';
+    const pkgSignedPath = paths.dist + 'mas/Bitwarden-mas-signed.pkg';
     const safariAppexPath = appPath + '/Contents/PlugIns/safari.appex';
     const safariAppexFrameworkPath = safariAppexPath + '/Contents/Frameworks/';
     const safariEntitlementsPath = paths.resources + 'safari.entitlements';
@@ -69,6 +70,14 @@ function pkgMas(cb) {
                 appPath,
                 '/Applications',
                 pkgPath]);
+            stdOutProc(proc);
+            return new Promise((resolve) => proc.on('close', resolve));
+        }).then(() => {
+            const proc = child.spawn('productsign', [
+                '--sign',
+                '3rd Party Mac Developer Installer: 8bit Solutions LLC',
+                pkgPath,
+                pkgSignedPath]);
             stdOutProc(proc);
             return new Promise((resolve) => proc.on('close', resolve));
         }).then(() => {
