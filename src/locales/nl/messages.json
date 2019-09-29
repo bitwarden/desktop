@@ -629,13 +629,13 @@
     "message": "Webkluis server-URL"
   },
   "identityUrl": {
-    "message": "Gebruikersbeheer server-URL"
+    "message": "Identiteitserver-URL"
   },
   "notificationsUrl": {
     "message": "Meldingenserver-URL"
   },
   "iconsUrl": {
-    "message": "Pictogrammen server-URL"
+    "message": "Pictogrammenserver-URL"
   },
   "environmentSaved": {
     "message": "De omgeving-URL's zijn opgeslagen."
