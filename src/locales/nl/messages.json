@@ -491,13 +491,13 @@
     "message": "Hoofdwachtwoord vereist."
   },
   "masterPassLength": {
-    "message": "Het hoofdwachtwoord moet minstens 8 tekens lang zijn."
+    "message": "Het hoofdwachtwoord moet minimaal 8 tekens lang zijn."
   },
   "masterPassDoesntMatch": {
     "message": "De hoofdwachtwoorden komen niet overeen."
   },
   "newAccountCreated": {
-    "message": "Uw nieuwe account is aangemaakt! U kunt nu inloggen."
+    "message": "Je nieuwe account is aangemaakt! Je kunt nu inloggen."
   },
   "masterPassSent": {
     "message": "We hebben je een e-mail gestuurd met je hoofdwachtwoordhint."
@@ -593,7 +593,7 @@
     "message": "E-mailadres"
   },
   "emailDesc": {
-    "message": "Verificatiecodes zullen naar u worden gemaild."
+    "message": "Je ontvangt verificatiecodes via e-mail."
   },
   "loginUnavailable": {
     "message": "Inloggen niet beschikbaar"
@@ -605,13 +605,13 @@
     "message": "Voeg aanbieders toe die beter ondersteuning bieden voor meerdere apparaten (zoals een authenticatie-app)."
   },
   "twoStepOptions": {
-    "message": "Tweestapsinlogopties"
+    "message": "Opties voor tweestapsaanmelding"
   },
   "selfHostedEnvironment": {
     "message": "Zelf-gehoste omgeving"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specificeer de basis-URL van uw op locatie gehoste Bitwarden-installatie."
+    "message": "Geef de basis-URL van jouw zelf-gehoste Bitwarden-installatie."
   },
   "customEnvironment": {
     "message": "Aangepaste omgeving"
@@ -1180,10 +1180,10 @@
     "message": "Deze export bevat jouw kluisgegevens in een niet-versleuteld formaat. Je moet het geëxporteerde bestand niet opslaan of verzenden over onbeveiligde kanalen (zoals e-mail). Verwijder het exportbestand direct na gebruik."
   },
   "exportMasterPassword": {
-    "message": "Voer het hoofdwachtwoord in om de kluisgegevens te exporteren."
+    "message": "Voer je hoofdwachtwoord in om de kluisgegevens te exporteren."
   },
   "noOrganizationsList": {
-    "message": "Je behoort niet tot een organisatie. Organisaties stellen u in staat om veilig items te delen met andere gebruikers."
+    "message": "Je behoort niet tot een organisatie. Via organisaties deel je veilig items met andere gebruikers."
   },
   "noCollectionsInList": {
     "message": "Er zijn geen verzamelingen om weer te geven."
@@ -1210,7 +1210,7 @@
     "message": "Zwak hoofdwachtwoord"
   },
   "weakMasterPasswordDesc": {
-    "message": "Je hebt een zwak hoofdwachtwoord gekozen. Om jouw Bitwarden account goed te beschermen zou je een sterk hoofdwachtwoord (of wachtwoordzin) moeten gebruiken. Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
+    "message": "Je hebt een zwak hoofdwachtwoord gekozen. Gebruik, om jouw Bitwarden-account goed te beschermen, een sterk hoofdwachtwoord (of wachtwoordzin). Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
   },
   "pin": {
     "message": "PIN",
@@ -1223,22 +1223,22 @@
     "message": "Je PIN-code voor het ontgrendelen van Bitwarden instellen. Deze instellingen worden opnieuw ingesteld als je je ooit volledig afmeldt bij de applicatie."
   },
   "pinRequired": {
-    "message": "PIN-code is vereist."
+    "message": "PIN-code vereist."
   },
   "invalidPin": {
     "message": "Ongeldige PIN-code."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Uw kluis is vergrendeld. Controleer uw PIN-code om door te gaan."
+    "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Vergrendelen met hoofdwachtwoord bij herstart"
+    "message": "Bij herstart vergrendelen met hoofdwachtwoord"
   },
   "preferences": {
     "message": "Voorkeuren"
   },
   "enableMenuBar": {
-    "message": "Icoon in de menubalk"
+    "message": "Pictogram in de menubalk"
   },
   "enableMenuBarDesc": {
     "message": "Altijd een pictogram in de menubalk weergeven."
@@ -1247,16 +1247,16 @@
     "message": "Verbergen naar de menubalk"
   },
   "selectOneCollection": {
-    "message": "U moet tenminste één collectie selecteren."
+    "message": "Je moet tenminste één collectie selecteren."
   },
   "premiumUpdated": {
-    "message": "U bent opgewaardeerd naar premium."
+    "message": "Je bent opgewaardeerd naar premium."
   },
   "restore": {
     "message": "Herstellen"
   },
   "premiumManageAlertAppStore": {
-    "message": "U kunt uw abonnement beheren vanuit de App Store. Wilt u de App Store nu bezoeken?"
+    "message": "Je kunt je abonnement beheren vanuit de App Store. Wil je de App Store nu bezoeken?"
   },
   "legal": {
     "message": "Juridisch",
