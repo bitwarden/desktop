@@ -319,10 +319,10 @@
     "message": "Naam is vereist."
   },
   "addedItem": {
-    "message": "Item is toegevoegd"
+    "message": "Item toegevoegd"
   },
   "editedItem": {
-    "message": "Item is bewerkt"
+    "message": "Item bewerkt"
   },
   "deleteItem": {
     "message": "Item verwijderen"
@@ -410,7 +410,7 @@
     "message": "Bijlage is verwijderd"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Weet u zeker dat u deze bijlage wilt verwijderen?"
+    "message": "Weet je zeker dat je deze bijlage wilt verwijderen?"
   },
   "attachmentSaved": {
     "message": "De bijlage is opgeslagen."
@@ -425,7 +425,7 @@
     "message": "De maximale bestandsgrootte is 100 MB."
   },
   "updateKey": {
-    "message": "U kunt deze functie niet gebruiken zolang u uw encryptiesleutel niet hebt bijgewerkt."
+    "message": "Je kunt deze functie pas gebruiken als je je encryptiesleutel bijwerkt."
   },
   "options": {
     "message": "Opties"
@@ -437,13 +437,13 @@
     "message": "Map is toegevoegd"
   },
   "deleteFolderConfirmation": {
-    "message": "Weet u zeker dat u deze map wilt verwijderen?"
+    "message": "Weet je zeker dat je deze map wilt verwijderen?"
   },
   "deletedFolder": {
     "message": "Map is verwijderd"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in of creëer een nieuw account om toegang te krijgen tot uw beveiligde kluis."
+    "message": "Inloggen of een nieuw account aanmaken om toegang te krijgen tot je beveiligde kluis."
   },
   "createAccount": {
     "message": "Account aanmaken"
@@ -458,7 +458,7 @@
     "message": "Hoofdwachtwoord"
   },
   "masterPassDesc": {
-    "message": "Het hoofdwachtwoord is het wachtwoord waarmee u toegang krijgt tot uw beveiligde kluis. Het is erg belangrijk dat u het hoofdwachtwoord niet vergeet, want er is geen manier om het te herstellen."
+    "message": "Het hoofdwachtwoord is het wachtwoord waarmee je toegang krijgt tot je beveiligde kluis. Het is belangrijk dat je het hoofdwachtwoord niet vergeet, want er is geen manier om het te herstellen."
   },
   "masterPassHintDesc": {
     "message": "Een hoofdwachtwoordhint kan u helpen uw wachtwoord te herinneren als u hem vergeten bent."
@@ -773,7 +773,7 @@
     "message": "Vergrendelingsopties"
   },
   "lockOptionsDesc": {
-    "message": "Kies wanneer uw kluis wordt vergrendeld. Een vergrendelde kluis vereist dat u uw hoofdwachtwoord opnieuw invoert om de kluis opnieuw te mogen gebruiken."
+    "message": "Kies wanneer je kluis moet worden vergrendeld. Een vergrendelde kluis wordt pas weer toegankelijk nadat het hoofdwachtwoord opnieuw is ingevoerd."
   },
   "immediately": {
     "message": "Onmiddelijk"
@@ -809,16 +809,16 @@
     "message": "4 uur"
   },
   "onIdle": {
-    "message": "Na systeeminactiviteit"
+    "message": "Bij systeeminactiviteit"
   },
   "onSleep": {
-    "message": "Na systeemslaapmodus"
+    "message": "Bij slaapmodus"
   },
   "onLocked": {
-    "message": "Na systeemvergrendeling"
+    "message": "Bij systeemvergrendeling"
   },
   "onRestart": {
-    "message": "Na herstart"
+    "message": "Bij herstart"
   },
   "never": {
     "message": "Nooit"
@@ -838,28 +838,28 @@
     "message": "Websitepictogrammen uitschakelen"
   },
   "disableFaviconDesc": {
-    "message": "Websitepictogrammen bieden een herkenbare afbeelding naast ieder inlogitem in uw kluis."
+    "message": "Websitepictogrammen geven een herkenbare afbeelding naast elk item in de kluis."
   },
   "enableMinToTray": {
-    "message": "Naar systeemvak minimaliseren"
+    "message": "Minimaliseren naar systeemvak"
   },
   "enableMinToTrayDesc": {
-    "message": "Pictogram in het systeemvak weergeven bij het minimaliseren van het venster."
+    "message": "Wanneer het venster wordt geminimaliseerd, een pictogram in het systeemvak tonen."
   },
   "enableCloseToTray": {
     "message": "Sluiten naar systeemvak"
   },
   "enableCloseToTrayDesc": {
-    "message": "Pictogram in het systeemvak weergeven bij het sluiten van het venster."
+    "message": "Wanneer het venster wordt gesloten, een pictogram in het systeemvak tonen."
   },
   "enableTray": {
-    "message": "Pictogram in het systeemvak inschakelen"
+    "message": "Systeemvakpictogram inschakelen"
   },
   "enableTrayDesc": {
     "message": "Altijd een pictogram in het systeemvak weergeven."
   },
   "startToTray": {
-    "message": "Opstarten als pictogram in het systeemvak"
+    "message": "Opstarten als systeemvakpictogram"
   },
   "startToTrayDesc": {
     "message": "Wanneer de toepassing voor het eerst wordt gestart, alleen een pictogram in het systeemvak weergeven."
