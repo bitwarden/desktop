@@ -773,7 +773,7 @@
     "message": "Vergrendelingsopties"
   },
   "lockOptionsDesc": {
-    "message": "Kies wanneer je kluis moet worden vergrendeld. Een vergrendelde kluis wordt pas weer toegankelijk nadat het hoofdwachtwoord opnieuw is ingevoerd."
+    "message": "Kies wanneer je kluis vergrendelt. Een vergrendelde kluis is pas weer toegankelijk als je je hoofdwachtwoord opnieuw invoert."
   },
   "immediately": {
     "message": "Onmiddelijk"
@@ -831,7 +831,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatisch gekopieerde waarden van uw klembord wissen.",
+    "message": "Automatisch gekopieerde waarden van je klembord wissen.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
@@ -850,7 +850,7 @@
     "message": "Sluiten naar systeemvak"
   },
   "enableCloseToTrayDesc": {
-    "message": "Wanneer het venster wordt gesloten, een pictogram in het systeemvak tonen."
+    "message": "Bij het sluiten van het venster, een pictogram in het systeemvak weergeven."
   },
   "enableTray": {
     "message": "Systeemvakpictogram inschakelen"
@@ -862,19 +862,19 @@
     "message": "Opstarten als systeemvakpictogram"
   },
   "startToTrayDesc": {
-    "message": "Wanneer de toepassing voor het eerst wordt gestart, alleen een pictogram in het systeemvak weergeven."
+    "message": "Wanneer de applicatie voor het eerst wordt gestart, alleen een pictogram in het systeemvak weergeven."
   },
   "language": {
     "message": "Taal"
   },
   "languageDesc": {
-    "message": "De taal van de toepassing wijzigen. Opnieuw opstarten is vereist."
+    "message": "De taal van de applicatie wijzigen. Werkt pas na opnieuw opstarten."
   },
   "theme": {
     "message": "Thema"
   },
   "themeDesc": {
-    "message": "Het kleurenthema van de toepassing wijzigen."
+    "message": "Het kleurenthema van de applicatie wijzigen."
   },
   "dark": {
     "message": "Donker",
@@ -901,7 +901,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Opnieuw starten om bij te werken"
+    "message": "Opnieuw opstarten om bij te werken"
   },
   "restartToUpdateDesc": {
     "message": "Versie $VERSION_NUM$ is klaar voor installatie. Je moet Bitwarden opnieuw opstarten om de installatie af te ronden. Wil je nu opnieuw opstarten en bijwerken?",
@@ -919,13 +919,13 @@
     "message": "Er is een nieuwe versie is beschikbaar. Wil je deze nu downloaden?"
   },
   "restart": {
-    "message": "Opnieuw starten"
+    "message": "Opnieuw opstarten"
   },
   "later": {
     "message": "Later"
   },
   "noUpdatesAvailable": {
-    "message": "Er zijn momenteel geen updates beschikbaar. U gebruikt de laatste versie."
+    "message": "Er zijn momenteel geen updates beschikbaar. Je gebruikt de laatste versie."
   },
   "updateError": {
     "message": "Fout tijdens het bijwerken"
@@ -957,19 +957,19 @@
     "message": "Lidmaatschap vernieuwen"
   },
   "premiumNotCurrentMember": {
-    "message": "U bent momenteel geen Premium-lid."
+    "message": "Je bent momenteel geen Premium-lid."
   },
   "premiumSignUpAndGet": {
     "message": "Meld je aan voor een Premium lidmaatschap en krijg:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB versleutelde opslag voor bestandsbijlagen."
+    "message": "1 GB versleutelde opslag voor bijlagen."
   },
   "premiumSignUpTwoStep": {
-    "message": "Extra twee-staps inlogopties zoals YubiKey, FIDO U2F en Duo."
+    "message": "Extra opties voor tweestapsaanmelding zoals YubiKey, FIDO U2F en Duo."
   },
   "premiumSignUpReports": {
-    "message": "Rapportage op wachtwoordhygiëne, gezondheid van je account en gegevensinbreuk om je kluis om veilig te houden."
+    "message": "Rapportage op wachtwoordhygiëne, gezondheid van je account en gegevensinbreuk om je kluis veilig te houden."
   },
   "premiumSignUpTotp": {
     "message": "TOTP-verificatiecodegenerator (2FA) voor logins in je kluis."
@@ -978,13 +978,13 @@
     "message": "Klantondersteuning met hoge prioriteit."
   },
   "premiumSignUpFuture": {
-    "message": "Alle toekomstige Premium-functies. Binnenkort meer!"
+    "message": "Alle toekomstige Premium-functionaliteiten. Binnenkort meer!"
   },
   "premiumPurchase": {
-    "message": "Koop Premium"
+    "message": "Premium aanschaffen"
   },
   "premiumPurchaseAlert": {
-    "message": "Je kan je lidmaatschap aanpassen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
+    "message": "Je kunt je lidmaatschap aanschaffen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "premiumCurrentMember": {
     "message": "Je bent Premium-lid!"
@@ -1047,7 +1047,7 @@
     "message": "Opnieuw laden"
   },
   "toggleDevTools": {
-    "message": "Ontwikkelaarsgereedschap in-/uitschakelen"
+    "message": "Ontwikkelaarshulpmiddelen in-/uitschakelen"
   },
   "minimize": {
     "message": "Minimaliseren",
@@ -1098,7 +1098,7 @@
     "message": "Controleer of wachtwoord is gelekt."
   },
   "passwordExposed": {
-    "message": "Dit wachtwoord is $VALUE$ keer blootgesteld in gegevens lekken. U zou het moeten veranderen.",
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1107,7 +1107,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Dit wachtwoord is niet gevonden in alle bekende gegevens lekken. Het zou veilig moeten zijn om te gebruiken."
+    "message": "Dit wachtwoord is niet aangetroffen in de bekende gegevenslekken. Het kan veilig gebruikt worden."
   },
   "baseDomain": {
     "message": "Basisdomein"
@@ -1127,11 +1127,11 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match detectie",
+    "message": "Overeenkomstdetectie",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Standaard match detectie",
+    "message": "Standaard overeenkomstdetectie",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -1148,14 +1148,14 @@
     "message": "Afsluiten"
   },
   "showHide": {
-    "message": "Tonen/Verbergen",
+    "message": "Weergeven/Verbergen",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Naar het systeemvak verbergen"
+    "message": "Verbergen naar het systeemvak"
   },
   "alwaysOnTop": {
-    "message": "Altijd op voorgrond",
+    "message": "Altijd op de voorgrond",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1177,13 +1177,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Deze export bevat uw gegevens in niet-versleutelde indeling. Deze dient niet te worden opgeslagen of verstuurd over onveilige kanalen (zoals e-mail). Verwijder de export zodra deze niet meer nodig is."
+    "message": "Deze export bevat jouw kluisgegevens in een niet-versleuteld formaat. Je moet het geëxporteerde bestand niet opslaan of verzenden over onbeveiligde kanalen (zoals e-mail). Verwijder het exportbestand direct na gebruik."
   },
   "exportMasterPassword": {
-    "message": "Voer uw hoofdwachtwoord in om uw kluis-gegevens te exporteren."
+    "message": "Voer het hoofdwachtwoord in om de kluisgegevens te exporteren."
   },
   "noOrganizationsList": {
-    "message": "U behoort niet tot een organisatie. Organisaties geven de mogelijkheid om op een veilige manier items te delen met andere gebruikers."
+    "message": "Je behoort niet tot een organisatie. Organisaties stellen u in staat om veilig items te delen met andere gebruikers."
   },
   "noCollectionsInList": {
     "message": "Er zijn geen verzamelingen om weer te geven."
@@ -1192,7 +1192,7 @@
     "message": "Eigendom"
   },
   "whoOwnsThisItem": {
-    "message": "Wie is eigenaar van dit object?"
+    "message": "Wie is eigenaar van dit item?"
   },
   "strong": {
     "message": "Sterk",
@@ -1210,7 +1210,7 @@
     "message": "Zwak hoofdwachtwoord"
   },
   "weakMasterPasswordDesc": {
-    "message": "U hebt een zwak hoofdwachtwoord gekozen. Om uw Bitwarden account goed te beschermen zou u een sterk hoofdwachtwoord (of wachtwoordzin) moeten gebruiken. Weet u zeker dat u dit hoofdwachtwoord wilt gebruiken?"
+    "message": "Je hebt een zwak hoofdwachtwoord gekozen. Om jouw Bitwarden account goed te beschermen zou je een sterk hoofdwachtwoord (of wachtwoordzin) moeten gebruiken. Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
   },
   "pin": {
     "message": "PIN",
@@ -1220,7 +1220,7 @@
     "message": "Ontgrendelen met PIN"
   },
   "setYourPinCode": {
-    "message": "Uw PIN-code voor het ontgrendelen van Bitwarden instellen. Als u zich ooit volledig afmeldt bij de toepassing zullen uw PIN-instellingen opnieuw worden ingesteld."
+    "message": "Je PIN-code voor het ontgrendelen van Bitwarden instellen. Deze instellingen worden opnieuw ingesteld als je je ooit volledig afmeldt bij de applicatie."
   },
   "pinRequired": {
     "message": "PIN-code is vereist."
