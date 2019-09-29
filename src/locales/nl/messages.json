@@ -51,7 +51,7 @@
     "message": "Gedeeld object"
   },
   "shareDesc": {
-    "message": "Kies een organisatie waarmee u dit item wil delen. Door het delen krijgt de organisatie de eigendomsrechten van het item. U bent niet langer meer de directe eigenaar van het item wanneer u deze deelt."
+    "message": "Kies een organisatie waarmee u dit item wil delen. Door het delen draag je het eigendom van dit item over aan de organisatie. Je bent niet langer de directe eigenaar van het item wanneer deze is gedeeld."
   },
   "attachments": {
     "message": "Bijlagen"
@@ -162,7 +162,7 @@
     "message": "Premium vereist"
   },
   "premiumRequiredDesc": {
-    "message": "U heeft een premium-lidmaatschap nodig om deze functie te kunnen gebruiken."
+    "message": "Voor deze functionaliteit heb je een Premium-lidmaatschap nodig."
   },
   "errorOccurred": {
     "message": "Er is een fout opgetreden."
@@ -545,7 +545,7 @@
     "message": "Mijn gegevens onthouden"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Verificatiecode-e-mail opnieuw versturen"
+    "message": "E-mail met verificatiecode opnieuw versturen"
   },
   "useAnotherTwoStepMethod": {
     "message": "Andere tweestapsinlogmethode gebruiken"
@@ -764,10 +764,10 @@
     "message": "Ongeldig hoofdwachtwoord"
   },
   "twoStepLoginConfirmation": {
-    "message": "Inloggen in twee stappen beveiligt uw account beter doordat u uw inlogpoging moet bevestigen met een ander apparaat. Dit kan bijv. een beveiligingssleutel zijn, maar ook een verificatie-app, SMS, spraakoproep of e-mail. Inloggen in twee stappen kan worden ingeschakeld in de kluis op bitwarden.com. Wilt u de website nu bezoeken?"
+    "message": "Twee-staps login biedt een betere beveiliging van je account doordat een inlogpoging moet worden bevestigd met een ander apparaat. Dit kan bijv. een beveiligingssleutel zijn, maar ook een verificatie-app, SMS, spraakoproep of e-mail. Inloggen in twee stappen kan worden ingeschakeld in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "twoStepLogin": {
-    "message": "Tweestapslogin"
+    "message": "Twee-staps login"
   },
   "lockOptions": {
     "message": "Vergrendelingsopties"
