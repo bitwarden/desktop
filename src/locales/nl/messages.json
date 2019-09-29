@@ -443,7 +443,7 @@
     "message": "Map is verwijderd"
   },
   "loginOrCreateNewAccount": {
-    "message": "Inloggen of een nieuw account aanmaken om toegang te krijgen tot je beveiligde kluis."
+    "message": "Log in of maak een nieuw account aan om toegang te krijgen tot je beveiligde kluis."
   },
   "createAccount": {
     "message": "Account aanmaken"
@@ -680,7 +680,7 @@
     "message": "Nieuwe map toevoegen"
   },
   "view": {
-    "message": "Weergeven"
+    "message": "Weergave"
   },
   "account": {
     "message": "Account"
@@ -767,7 +767,7 @@
     "message": "Tweestapsaanmelding beschermt je account door je inlogpoging te bevestigen met een ander apparaat zoals een beveiligingssleutel, authenticatie-app, SMS, spraakoproep of e-mail. Je kunt Tweestapsaanmelding inschakelen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "twoStepLogin": {
-    "message": "Twee-stapsaanmelding"
+    "message": "Tweestapsaanmelding"
   },
   "lockOptions": {
     "message": "Vergrendelingsopties"
@@ -776,7 +776,7 @@
     "message": "Kies wanneer je kluis vergrendelt. Een vergrendelde kluis is pas weer toegankelijk als je je hoofdwachtwoord opnieuw invoert."
   },
   "immediately": {
-    "message": "Onmiddelijk"
+    "message": "Onmiddellijk"
   },
   "tenSeconds": {
     "message": "10 seconden"
@@ -1098,7 +1098,7 @@
     "message": "Controleer of wachtwoord is gelekt."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Dit wachtwoord is $VALUE$ keer blootgesteld in een datalek. Je kunt het beter veranderen.",
     "placeholders": {
       "value": {
         "content": "$1",
