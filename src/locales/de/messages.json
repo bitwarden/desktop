@@ -1250,13 +1250,13 @@
     "message": "Sie müssen mindestens eine Sammlung auswählen."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Sie haben zum Premium Abo gewechselt."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Wiederherstellen"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Sie können Ihr Abonnement über den App Store verwalten. Wollen Sie jetzt den App Store öffnen?"
   },
   "legal": {
     "message": "Legal",
