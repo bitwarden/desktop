@@ -599,10 +599,10 @@
     "message": "Inloggen niet beschikbaar"
   },
   "noTwoStepProviders": {
-    "message": "Dit account heeft tweestapsverificatie ingeschakeld, maar geen van de geconfigureerde aanbieders worden ondersteund door dit apparaat."
+    "message": "Dit account heeft tweestapsaanmelding ingeschakeld, maar dit apparaat ondersteunt geen van de geconfigureerde aanbieders."
   },
   "noTwoStepProviders2": {
-    "message": "Voeg aanvullende aanbieders toe die beter ondersteund worden tussen apparaten (zoals een authenticatie-app)."
+    "message": "Voeg aanbieders toe die beter ondersteuning bieden voor meerdere apparaten (zoals een authenticatie-app)."
   },
   "twoStepOptions": {
     "message": "Tweestapsinlogopties"
@@ -617,7 +617,7 @@
     "message": "Aangepaste omgeving"
   },
   "customEnvironmentFooter": {
-    "message": "Voor gevorderde gebruikers. U kunt de basis-URL van elke dienst afzonderlijk opgeven."
+    "message": "Voor gevorderde gebruikers. Je kunt de basis-URL van elke dienst afzonderlijk instellen."
   },
   "baseUrl": {
     "message": "Server-URL"
@@ -656,16 +656,16 @@
     "message": "Meer informatie"
   },
   "featureUnavailable": {
-    "message": "Functie niet beschikbaar"
+    "message": "Functionaliteit niet beschikbaar"
   },
   "loggedOut": {
     "message": "Uitgelogd"
   },
   "loginExpired": {
-    "message": "De sessie is verlopen."
+    "message": "Je inlogsessie is verlopen."
   },
   "logOutConfirmation": {
-    "message": "Weet je zeker dat u wilt uitloggen?"
+    "message": "Weet je zeker dat je wilt uitloggen?"
   },
   "logOut": {
     "message": "Uitloggen"
@@ -716,7 +716,7 @@
     "message": "Hoofdwachtwoord wijzigen"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Het hoofdwachtwoord kan worden gewijzigd in de kluis op bitwarden.com. Wil je de website nu bezoeken?"
+    "message": "Je kunt je hoofdwachtwoord wijzigen in de kluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "fingerprintPhrase": {
     "message": "Vingerafdrukzin",
@@ -742,7 +742,7 @@
     "message": "Synchronisatie mislukt"
   },
   "yourVaultIsLocked": {
-    "message": "Uw kluis is vergrendeld. Voer het hoofdwachtwoord in om door te gaan."
+    "message": "Je kluis is vergrendeld. Voer je hoofdwachtwoord in om door te gaan."
   },
   "unlock": {
     "message": "Ontgrendelen"
@@ -767,7 +767,7 @@
     "message": "Twee-staps login biedt een betere beveiliging van je account doordat een inlogpoging moet worden bevestigd met een ander apparaat. Dit kan bijv. een beveiligingssleutel zijn, maar ook een verificatie-app, SMS, spraakoproep of e-mail. Inloggen in twee stappen kan worden ingeschakeld in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "twoStepLogin": {
-    "message": "Twee-staps login"
+    "message": "Twee-stapsaanmelding"
   },
   "lockOptions": {
     "message": "Vergrendelingsopties"
@@ -987,10 +987,10 @@
     "message": "Je kan je lidmaatschap aanpassen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "premiumCurrentMember": {
-    "message": "U bent een premium-lid!"
+    "message": "Je bent Premium-lid!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Bedankt voor de ondersteuning van Bitwarden."
+    "message": "Bedankt voor het ondersteunen van Bitwarden."
   },
   "premiumPrice": {
     "message": "Dit alles voor slechts $PRICE$ per jaar!",
@@ -1018,7 +1018,7 @@
     "message": "Ongedaan maken"
   },
   "redo": {
-    "message": "Opnieuw toepassen"
+    "message": "Opnieuw"
   },
   "cut": {
     "message": "Knippen",
@@ -1041,13 +1041,13 @@
     "message": "Zoomniveau herstellen"
   },
   "toggleFullScreen": {
-    "message": "Volledig scherm in-/uitschakelen"
+    "message": "Volledig scherm aan/uit"
   },
   "reload": {
-    "message": "Herladen"
+    "message": "Opnieuw laden"
   },
   "toggleDevTools": {
-    "message": "Ontwikkelaarshulpmiddelen in-/uitschakelen"
+    "message": "Ontwikkelaarsgereedschap in-/uitschakelen"
   },
   "minimize": {
     "message": "Minimaliseren",
@@ -1057,7 +1057,7 @@
     "message": "Inzoomen"
   },
   "bringAllToFront": {
-    "message": "Alles naar voorgrond verplaatsen",
+    "message": "Alles naar voorgrond brengen",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
@@ -1089,13 +1089,13 @@
     }
   },
   "help": {
-    "message": "Hulp"
+    "message": "Help"
   },
   "window": {
     "message": "Venster"
   },
   "checkPassword": {
-    "message": "Controleer of het wachtwoord is blootgesteld."
+    "message": "Controleer of wachtwoord is gelekt."
   },
   "passwordExposed": {
     "message": "Dit wachtwoord is $VALUE$ keer blootgesteld in gegevens lekken. U zou het moeten veranderen.",
