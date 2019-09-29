@@ -6,7 +6,7 @@
     "message": "Filters"
   },
   "allItems": {
-    "message": "Alle Items"
+    "message": "Alle items"
   },
   "favorites": {
     "message": "Favorieten"
@@ -120,7 +120,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Naam van kaarthouder"
+    "message": "Naam kaarthouder"
   },
   "number": {
     "message": "Nummer"
@@ -334,7 +334,7 @@
     "message": "Bijlage verwijderen"
   },
   "deleteItemConfirmation": {
-    "message": "Weet u zeker dat u dit item wilt verwijderen?"
+    "message": "Weet je zeker dat je dit item wilt verwijderen?"
   },
   "deletedItem": {
     "message": "Item is verwijderd"
@@ -638,7 +638,7 @@
     "message": "Pictogrammenserver-URL"
   },
   "environmentSaved": {
-    "message": "De omgeving-URL's zijn opgeslagen."
+    "message": "De omgevings-URL's zijn opgeslagen."
   },
   "ok": {
     "message": "Oké"
@@ -662,10 +662,10 @@
     "message": "Uitgelogd"
   },
   "loginExpired": {
-    "message": "Uw sessie is verlopen."
+    "message": "De sessie is verlopen."
   },
   "logOutConfirmation": {
-    "message": "Weet u zeker dat u wilt uitloggen?"
+    "message": "Weet je zeker dat u wilt uitloggen?"
   },
   "logOut": {
     "message": "Uitloggen"
@@ -686,7 +686,7 @@
     "message": "Account"
   },
   "loading": {
-    "message": "Bezig met laden..."
+    "message": "Laden..."
   },
   "lockNow": {
     "message": "Nu vergrendelen"
@@ -716,14 +716,14 @@
     "message": "Hoofdwachtwoord wijzigen"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "U kunt uw hoofdwachtwoord wijzigen in de kluis op bitwarden.com. Wilt u de website nu bezoeken?"
+    "message": "Het hoofdwachtwoord kan worden gewijzigd in de kluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "fingerprintPhrase": {
-    "message": "Vingerafdruk zin",
+    "message": "Vingerafdrukzin",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Uw account's vingerafdrukfrase",
+    "message": "Uw account's vingerafdrukzin",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -742,7 +742,7 @@
     "message": "Synchronisatie mislukt"
   },
   "yourVaultIsLocked": {
-    "message": "Uw kluis is vergrendeld. Controleer uw hoofdwachtwoord om door te gaan."
+    "message": "Uw kluis is vergrendeld. Voer het hoofdwachtwoord in om door te gaan."
   },
   "unlock": {
     "message": "Ontgrendelen"
@@ -904,7 +904,7 @@
     "message": "Herstart om bij te werken"
   },
   "restartToUpdateDesc": {
-    "message": "Versie $VERSION_NUM$ kan worden geïnstalleerd. U dient Bitwarden te herstarten om de installatie te voltooien. Wilt u nu herstarten en bijwerken?",
+    "message": "Versie $VERSION_NUM$ is klaar voor installatie. Je moet Bitwarden opnieuw opstarten om de installatie af te ronden. Wil je nu opnieuw opstarten en bijwerken?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -928,7 +928,7 @@
     "message": "Er zijn momenteel geen updates beschikbaar; u gebruikt de nieuwste versie."
   },
   "updateError": {
-    "message": "Fout tijdens het updaten"
+    "message": "Fout tijdens het bijwerken"
   },
   "unknown": {
     "message": "Onbekend"
