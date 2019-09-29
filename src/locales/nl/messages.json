@@ -461,7 +461,7 @@
     "message": "Het hoofdwachtwoord is het wachtwoord waarmee je toegang krijgt tot je beveiligde kluis. Het is belangrijk dat je het hoofdwachtwoord niet vergeet, want er is geen manier om het te herstellen."
   },
   "masterPassHintDesc": {
-    "message": "Een hoofdwachtwoordhint kan u helpen uw wachtwoord te herinneren als u hem vergeten bent."
+    "message": "Een hoofdwachtwoordhint kan je helpen je wachtwoord te herinneren als je het vergeten bent."
   },
   "reTypeMasterPass": {
     "message": "Hoofdwachtwoord opnieuw invoeren"
@@ -476,19 +476,19 @@
     "message": "Wachtwoordhint"
   },
   "enterEmailToGetHint": {
-    "message": "Voer het e-mailadres van uw account in om uw hoofdwachwoordhint te ontvangen."
+    "message": "Voer het e-mailadres van je account in om je hoofdwachtwoordhint te ontvangen."
   },
   "getMasterPasswordHint": {
     "message": "Hoofdwachtwoordhint krijgen"
   },
   "emailRequired": {
-    "message": "E-mailadres is vereist."
+    "message": "E-mailadres vereist."
   },
   "invalidEmail": {
     "message": "Ongeldig e-mailadres."
   },
   "masterPassRequired": {
-    "message": "Hoofdwachtwoord is vereist."
+    "message": "Hoofdwachtwoord vereist."
   },
   "masterPassLength": {
     "message": "Het hoofdwachtwoord moet minstens 8 tekens lang zijn."
@@ -500,7 +500,7 @@
     "message": "Uw nieuwe account is aangemaakt! U kunt nu inloggen."
   },
   "masterPassSent": {
-    "message": "We hebben u een e-mail gestuurd met uw hoofdwachtwoordhint."
+    "message": "We hebben je een e-mail gestuurd met je hoofdwachtwoordhint."
   },
   "unexpectedError": {
     "message": "Er is een onverwachte fout opgetreden."
@@ -515,16 +515,16 @@
     "message": "Verificatiecode"
   },
   "verificationCodeRequired": {
-    "message": "Verificatiecode is vereist."
+    "message": "Verificatiecode vereist."
   },
   "continue": {
     "message": "Doorgaan"
   },
   "enterVerificationCodeApp": {
-    "message": "Voer de 6-cijferige verificatiecode in die in uw authenticatie-app staat."
+    "message": "Voer de 6-cijferige verificatiecode uit je authenticatie-app in."
   },
   "enterVerificationCodeEmail": {
-    "message": "Voer de 6-cijferige verificatiecode in die gemaild is naar $EMAIL$",
+    "message": "Voer de 6-cijferige verificatiecode in die via e-mail is verstuurd naar $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -551,13 +551,13 @@
     "message": "Andere tweestapsinlogmethode gebruiken"
   },
   "insertYubiKey": {
-    "message": "Steek uw YubiKey in de USB-poort van uw computer en druk op de knop."
+    "message": "Steek je YubiKey in de USB-poort van je computer en druk op de knop."
   },
   "insertU2f": {
-    "message": "Steek uw beveilingssleutel in de USB-poort van uw computer. Als het een knop heeft, druk deze dan in."
+    "message": "Steek je beveilingssleutel in de USB-poort van je computer. Als het een knop heeft, druk deze dan in."
   },
   "recoveryCodeDesc": {
-    "message": "Heeft u geen toegang meer tot al uw tweestapsaanbieders? Gebruik dan uw herstelcode om alle tweestapsaanbieders van uw account uit te schakelen."
+    "message": "Ben je de toegang tot al je tweestapsaanbieders verloren? Gebruik dan je herstelcode voor het uitschakelen van alle tweestapsaanbieders op je account."
   },
   "recoveryCodeTitle": {
     "message": "Herstelcode"
@@ -573,18 +573,18 @@
     "message": "YubiKey OTP-beveiligingssleutel"
   },
   "yubiKeyDesc": {
-    "message": "Gebruik een YubiKey om toegang te krijgen tot uw account. Werkt met YubiKey 4, 4 Nano, 4C en Neo-apparaten."
+    "message": "Gebruik een YubiKey om toegang te krijgen tot je account. Werkt met YubiKey 4, 4 Nano, 4C en Neo-apparaten."
   },
   "duoDesc": {
     "message": "Verifieer met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifieer met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
+    "message": "Verifieer met Duo Security voor jouw organisatie middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Gebruik een FIDO U2F-beveiligingssleutel om toegang te krijgen tot uw account."
+    "message": "Gebruik een FIDO U2F-beveiligingssleutel om toegang te krijgen tot je account."
   },
   "u2fTitle": {
     "message": "FIDO U2F-beveiligingssleutel"
@@ -889,7 +889,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Controleren op updates"
+    "message": "Controleren op nieuwe versies"
   },
   "version": {
     "message": "Versie $VERSION_NUM$",
@@ -901,7 +901,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Herstart om bij te werken"
+    "message": "Opnieuw starten om bij te werken"
   },
   "restartToUpdateDesc": {
     "message": "Versie $VERSION_NUM$ is klaar voor installatie. Je moet Bitwarden opnieuw opstarten om de installatie af te ronden. Wil je nu opnieuw opstarten en bijwerken?",
@@ -913,19 +913,19 @@
     }
   },
   "updateAvailable": {
-    "message": "Update beschikbaar"
+    "message": "Nieuwe versie beschikbaar"
   },
   "updateAvailableDesc": {
-    "message": "Er is een update beschikbaar. Wilt u de update nu downloaden?"
+    "message": "Er is een nieuwe versie is beschikbaar. Wil je deze nu downloaden?"
   },
   "restart": {
-    "message": "Herstarten"
+    "message": "Opnieuw starten"
   },
   "later": {
     "message": "Later"
   },
   "noUpdatesAvailable": {
-    "message": "Er zijn momenteel geen updates beschikbaar; u gebruikt de nieuwste versie."
+    "message": "Er zijn momenteel geen updates beschikbaar. U gebruikt de laatste versie."
   },
   "updateError": {
     "message": "Fout tijdens het bijwerken"
@@ -951,40 +951,40 @@
     "message": "Lidmaatschap beheren"
   },
   "premiumManageAlert": {
-    "message": "U kunt uw lidmaatschap wijzigen in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
+    "message": "Je kan je lidmaatschap aanpassen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "premiumRefresh": {
     "message": "Lidmaatschap vernieuwen"
   },
   "premiumNotCurrentMember": {
-    "message": "U bent momenteel geen premium-lid."
+    "message": "U bent momenteel geen Premium-lid."
   },
   "premiumSignUpAndGet": {
-    "message": "Meld u aan voor een Premium lidmaatschap en krijg:"
+    "message": "Meld je aan voor een Premium lidmaatschap en krijg:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB versleutelde bestandsopslag."
+    "message": "1 GB versleutelde opslag voor bestandsbijlagen."
   },
   "premiumSignUpTwoStep": {
-    "message": "Extra tweestapsinlogopties zoals YubiKey, FIDO U2F en Duo."
+    "message": "Extra twee-staps inlogopties zoals YubiKey, FIDO U2F en Duo."
   },
   "premiumSignUpReports": {
-    "message": "Wachtwoordhygiëne, gezondheid van uw account en gegevensinbreuk om uw kluis om veilig te houden."
+    "message": "Rapportage op wachtwoordhygiëne, gezondheid van je account en gegevensinbreuk om je kluis om veilig te houden."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP-verificatiecodegenerator (2FA) voor logins in uw kluis."
+    "message": "TOTP-verificatiecodegenerator (2FA) voor logins in je kluis."
   },
   "premiumSignUpSupport": {
     "message": "Klantondersteuning met hoge prioriteit."
   },
   "premiumSignUpFuture": {
-    "message": "Alle toekomstige premium-functies. Binnenkort volgen er meer!"
+    "message": "Alle toekomstige Premium-functies. Binnenkort meer!"
   },
   "premiumPurchase": {
-    "message": "Premium kopen"
+    "message": "Koop Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "U kunt uw lidmaatschap wijzigen in de webkluis op bitwarden.com. Wilt u de website nu bezoeken?"
+    "message": "Je kan je lidmaatschap aanpassen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "premiumCurrentMember": {
     "message": "U bent een premium-lid!"
