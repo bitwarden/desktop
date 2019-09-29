@@ -126,7 +126,7 @@
     "message": "Nummer"
   },
   "brand": {
-    "message": "Soort"
+    "message": "Merk"
   },
   "expiration": {
     "message": "Vervaldatum"
@@ -340,7 +340,7 @@
     "message": "Item is verwijderd"
   },
   "overwritePasswordConfirmation": {
-    "message": "Weet u zeker dat u het huidige wachtwoord wilt overschrijven?"
+    "message": "Weet je zeker dat je het huidige wachtwoord wilt overschrijven?"
   },
   "noneFolder": {
     "message": "Geen map",
@@ -723,7 +723,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Uw account's vingerafdrukzin",
+    "message": "Jouw account's vingerafdrukzin",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -838,7 +838,7 @@
     "message": "Websitepictogrammen uitschakelen"
   },
   "disableFaviconDesc": {
-    "message": "Websitepictogrammen geven een herkenbare afbeelding naast elk item in de kluis."
+    "message": "Websitepictogrammen geven een herkenbare afbeelding naast elk item in je kluis."
   },
   "enableMinToTray": {
     "message": "Minimaliseren naar systeemvak"
@@ -1210,7 +1210,7 @@
     "message": "Zwak hoofdwachtwoord"
   },
   "weakMasterPasswordDesc": {
-    "message": "Je hebt een zwak hoofdwachtwoord gekozen. Gebruik, om jouw Bitwarden-account goed te beschermen, een sterk hoofdwachtwoord (of wachtwoordzin). Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
+    "message": "Je hebt een zwak hoofdwachtwoord gekozen. Gebruik een sterk hoofdwachtwoord (of wachtwoordzin) om jouw Bitwarden-account goed te beschermen. Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
   },
   "pin": {
     "message": "PIN",
@@ -1250,7 +1250,7 @@
     "message": "Je moet tenminste één collectie selecteren."
   },
   "premiumUpdated": {
-    "message": "Je bent opgewaardeerd naar premium."
+    "message": "Je bent opgewaardeerd naar Premium."
   },
   "restore": {
     "message": "Herstellen"
