@@ -45,10 +45,10 @@
     "message": "Delen"
   },
   "shareItem": {
-    "message": "Object delen"
+    "message": "Item delen"
   },
   "sharedItem": {
-    "message": "Gedeeld object"
+    "message": "Gedeeld item"
   },
   "shareDesc": {
     "message": "Kies een organisatie waarmee u dit item wil delen. Door het delen draag je het eigendom van dit item over aan de organisatie. Je bent niet langer de directe eigenaar van het item wanneer deze is gedeeld."
@@ -368,7 +368,7 @@
     "message": "Aantal woorden"
   },
   "wordSeparator": {
-    "message": "Woordscheidingsteken"
+    "message": "Scheidingsteken"
   },
   "capitalize": {
     "message": "Beginhoofdletters",
@@ -764,7 +764,7 @@
     "message": "Ongeldig hoofdwachtwoord"
   },
   "twoStepLoginConfirmation": {
-    "message": "Twee-staps login biedt een betere beveiliging van je account doordat een inlogpoging moet worden bevestigd met een ander apparaat. Dit kan bijv. een beveiligingssleutel zijn, maar ook een verificatie-app, SMS, spraakoproep of e-mail. Inloggen in twee stappen kan worden ingeschakeld in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
+    "message": "Tweestapsaanmelding beschermt je account door je inlogpoging te bevestigen met een ander apparaat zoals een beveiligingssleutel, authenticatie-app, SMS, spraakoproep of e-mail. Je kunt Tweestapsaanmelding inschakelen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "twoStepLogin": {
     "message": "Twee-stapsaanmelding"
@@ -1220,7 +1220,7 @@
     "message": "Ontgrendelen met PIN"
   },
   "setYourPinCode": {
-    "message": "Je PIN-code voor het ontgrendelen van Bitwarden instellen. Deze instellingen worden opnieuw ingesteld als je je ooit volledig afmeldt bij de applicatie."
+    "message": "Stel je PIN-code in voor het ontgrendelen van Bitwarden. Je PIN-code wordt opnieuw ingesteld als je je ooit volledig afmeldt bij de applicatie."
   },
   "pinRequired": {
     "message": "PIN-code vereist."
