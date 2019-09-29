@@ -542,7 +542,7 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Mijn gegevens onthouden"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Verificatiecode-e-mail opnieuw versturen"
@@ -713,10 +713,10 @@
     "message": "Kluis synchroniseren"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Hoofdwachtwoord wijzigen"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "U kunt uw hoofdwachtwoord wijzigen in de kluis op bitwarden.com. Wilt u de website nu bezoeken?"
   },
   "fingerprintPhrase": {
     "message": "Vingerafdruk zin",
@@ -881,18 +881,18 @@
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Licht",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopiëren",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
     "message": "Controleren op updates"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Versie $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
