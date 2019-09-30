@@ -15,7 +15,7 @@ async function run(context) {
 
     if (macBuild) {
         console.log('### Sign Safari App Extension');
-        const proc = child.spawn('npm', ['run', 'signMac']);
+        const proc = child.spawn('gulp', ['signMac']);
         stdOutProc(proc);
         await new Promise((resolve) => proc.on('close', resolve));
 
