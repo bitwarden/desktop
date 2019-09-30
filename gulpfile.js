@@ -108,6 +108,7 @@ function signSafariExt(cb, dir) {
         const proc = child.spawn('codesign', args);
         stdOutProc(proc);
         promises.push(new Promise((resolve) => proc.on('close', resolve)));
+        promises.push(new Promise((resolve) => setTimeout(() => resolve(), 10000)));
     });
     return Promise.all(promises).then(() => {
         return cb;
