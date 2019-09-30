@@ -41,29 +41,10 @@ function pkgMas(cb) {
     const appPath = paths.dist + 'mas/Bitwarden.app';
     const pkgPath = paths.dist + 'mas/Bitwarden-mas.pkg';
     const pkgSignedPath = paths.dist + 'mas/Bitwarden-mas-signed.pkg';
-    const safariAppexPath = appPath + '/Contents/PlugIns/safari.appex';
-    const safariAppexFrameworkPath = safariAppexPath + '/Contents/Frameworks/';
-    const safariEntitlementsPath = paths.resources + 'safari.entitlements';
 
     return del([paths.dist + 'mas/Bitwarden*.pkg'])
         .then(() => {
-            const libs = fs.readdirSync(safariAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
-                .map((p) => safariAppexFrameworkPath + p);
-            const allItems = libs.concat([safariAppexPath]);
-            const promises = [];
-            allItems.forEach((i) => {
-                const proc = child.spawn('codesign', [
-                    '--verbose',
-                    '--force',
-                    '--sign',
-                    '3rd Party Mac Developer Application: 8bit Solutions LLC',
-                    '--entitlements',
-                    safariEntitlementsPath,
-                    i]);
-                stdOutProc(proc);
-                promises.push(new Promise((resolve) => proc.on('close', resolve)));
-            });
-            return Promise.all(promises);
+            return signLibs(cb, 'mas');
         }).then(() => {
             const proc = child.spawn('productbuild', [
                 '--component',
@@ -87,6 +68,54 @@ function pkgMas(cb) {
         });
 }
 
+
+function signMac(cb) {
+    return signSafariExt(cb, 'mac');
+}
+
+function signSafariExt(cb, dir) {
+    const appPath = paths.dist + dir + '/Bitwarden.app';
+    const safariAppexPath = appPath + '/Contents/PlugIns/safari.appex';
+    const safariAppexFrameworkPath = safariAppexPath + '/Contents/Frameworks/';
+    const safariEntitlementsPath = paths.resources + 'safari.entitlements';
+
+    const libs = fs.readdirSync(safariAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
+        .map((p) => safariAppexFrameworkPath + p);
+    const allItems = libs.concat([safariAppexPath]);
+    const promises = [];
+    allItems.forEach((i) => {
+        var args = dir === 'mas' ?
+            [
+                '--verbose',
+                '--force',
+                '--sign',
+                '3rd Party Mac Developer Application: 8bit Solutions LLC',
+                '--entitlements',
+                safariEntitlementsPath,
+                i
+            ] :
+            [
+                '--verbose',
+                '--force',
+                '-o',
+                'runtime',
+                '--sign',
+                'Developer ID Application: 8bit Solutions LLC',
+                '--entitlements',
+                safariEntitlementsPath,
+                i
+            ];
+        const proc = child.spawn('codesign', args);
+        stdOutProc(proc);
+        promises.push(new Promise((resolve) => proc.on('close', resolve)));
+    });
+    return Promise.all(promises).then(() => {
+        return cb;
+    }, () => {
+        return cb;
+    });
+}
+
 function stdOutProc(proc) {
     proc.stdout.on('data', (data) => console.log(data.toString()));
     proc.stderr.on('data', (data) => console.error(data.toString()));
@@ -98,4 +127,5 @@ exports.webfonts = gulp.series(clean, webfonts);
 exports['prebuild:renderer'] = gulp.parallel(webfonts, cleanupAotIssue);
 exports.fixSweetAlert = fixSweetAlert;
 exports.pkgMas = pkgMas;
+exports.signMac = signMac;
 exports.postinstall = fixSweetAlert;

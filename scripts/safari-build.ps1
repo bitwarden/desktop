@@ -1,6 +1,5 @@
 ﻿param (
-    [string] $version,
-    [switch] $mas
+    [string] $version
 )
 
 # Dependencies:
@@ -13,8 +12,7 @@ $dir = Split-Path -Parent $MyInvocation.MyCommand.Path;
 $rootDir = $dir + "\..";
 $distDir = $rootDir + "\dist";
 $distSafariDir = $distDir + "\safari";
-$distSafariAppexDmg = $distSafariDir + "\browser\dist\Safari\dmg\build\Release\safari.appex";
-$distSafariAppexMas = $distSafariDir + "\browser\dist\Safari\mas\build\Release\safari.appex";
+$distSafariAppex = $distSafariDir + "\browser\dist\Safari\build\Release\safari.appex";
 $pluginsAppex = $rootDir + "\PlugIns\safari.appex";
 
 if(Test-Path -Path $distSafariDir) {
@@ -37,9 +35,5 @@ if(-not ([string]::IsNullOrEmpty($version))) {
 
 npm i
 npm run dist:safari
-if($mas) {
-  Copy-Item -Path $distSafariAppexMas -Destination $pluginsAppex –Recurse
-} else {
-  Copy-Item -Path $distSafariAppexDmg -Destination $pluginsAppex –Recurse
-}
+Copy-Item -Path $distSafariAppex -Destination $pluginsAppex –Recurse
 cd $rootDir
