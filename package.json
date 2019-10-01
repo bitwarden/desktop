@@ -47,7 +47,7 @@
     "dist:win:ci": "npm run build && npm run pack:win:ci",
     "publish:lin": "npm run build && npm run clean:dist && electron-builder --linux --x64 -p always",
     "publish:mac": "npm run build && npm run clean:dist && electron-builder --mac -p always",
-    "publish:mac:mas": "dist:mac:mas && npm run upload:mas",
+    "publish:mac:mas": "npm run dist:mac:mas && npm run upload:mas",
     "publish:win": "npm run build && npm run clean:dist && electron-builder --win --x64 --ia32 -p always -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
     "upload:mas": "xcrun altool --upload-app --type osx --file \"./dist/mas/Bitwarden-mas-signed.pkg\" --username $APPLE_ID_USERNAME --password $APPLE_ID_PASSWORD"
   },
