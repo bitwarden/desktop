@@ -69,18 +69,19 @@ function pkgMas(cb) {
 }
 
 function signMas(cb) {
-    return signSafariExt(cb, 'mas');
+    return signApp(cb, 'mas');
 }
 
 function signMac(cb) {
-    return signSafariExt(cb, 'mac');
+    return signApp(cb, 'mac');
 }
 
-function signSafariExt(cb, dir) {
+function signApp(cb, dir) {
     const appPath = paths.dist + dir + '/Bitwarden.app';
     const safariAppexPath = appPath + '/Contents/PlugIns/safari.appex';
     const safariAppexFrameworkPath = safariAppexPath + '/Contents/Frameworks/';
     const safariEntitlementsPath = paths.resources + 'safari.entitlements';
+    const appEntitlementsPath = paths.resources + 'entitlements.' + dir + '.plist';
 
     const libs = fs.readdirSync(safariAppexFrameworkPath).filter((p) => p.endsWith('.dylib'))
         .map((p) => safariAppexFrameworkPath + p);
@@ -91,8 +92,7 @@ function signSafariExt(cb, dir) {
             '--force',
             '--sign',
             '3rd Party Mac Developer Application: 8bit Solutions LLC',
-            '--entitlements',
-            safariEntitlementsPath
+            '--entitlements'
         ] :
         [
             '--verbose',
@@ -101,17 +101,20 @@ function signSafariExt(cb, dir) {
             'runtime',
             '--sign',
             'Developer ID Application: 8bit Solutions LLC',
-            '--entitlements',
-            safariEntitlementsPath
+            '--entitlements'
         ];
     libs.forEach((i) => {
-        const proc = child.spawn('codesign', args.concat([i]));
+        const proc = child.spawn('codesign', args.concat([safariEntitlementsPath, i]));
         stdOutProc(proc);
         libPromises.push(new Promise((resolve) => proc.on('close', resolve)));
         libPromises.push(new Promise((resolve) => setTimeout(() => resolve(), 10000)));
     });
     return Promise.all(libPromises).then(() => {
-        const proc = child.spawn('codesign', args.concat([safariAppexPath]));
+        const proc = child.spawn('codesign', args.concat([safariEntitlementsPath, safariAppexPath]));
+        stdOutProc(proc);
+        return new Promise((resolve) => proc.on('close', resolve));
+    }).then(() => {
+        const proc = child.spawn('codesign', args.concat([appEntitlementsPath, appPath]));
         stdOutProc(proc);
         return new Promise((resolve) => proc.on('close', resolve));
     }).then(() => {
