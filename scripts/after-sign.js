@@ -14,10 +14,12 @@ async function run(context) {
     const macBuild = context.electronPlatformName === 'darwin';
 
     if (macBuild) {
+        /*
         console.log('### Sign App w/ Safari Extension');
         const proc = child.spawn('gulp', ['signMac']);
         stdOutProc(proc);
         await new Promise((resolve) => proc.on('close', resolve));
+        */
 
         console.log('### Notarizing ' + appPath);
         return await notarize({
