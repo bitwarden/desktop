@@ -116,8 +116,8 @@
     "message": "Alternar visibilidad"
   },
   "toggleCollapse": {
-    "message": "Colapsar\/Expandir",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Colapsar/Expandir",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Nombre en la tarjeta"
@@ -262,10 +262,10 @@
     "message": "Dirección 3"
   },
   "cityTown": {
-    "message": "Ciudad \/ Pueblo"
+    "message": "Ciudad / Pueblo"
   },
   "stateProvince": {
-    "message": "Estado \/ Provincia"
+    "message": "Estado / Provincia"
   },
   "zipPostalCode": {
     "message": "Código postal"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Limpiar el Portapapeles",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Borrar automáticamente los valores copiados de su portapapeles.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Deshabilitar iconos de sitio web"
@@ -993,7 +993,7 @@
     "message": "Gracias por apoyar el desarrollo de Bitwarden."
   },
   "premiumPrice": {
-    "message": "¡Todo por sólo $PRICE$\/año!",
+    "message": "¡Todo por sólo $PRICE$/año!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1098,7 +1098,7 @@
     "message": "Comprobar si la contraseña está comprometida."
   },
   "passwordExposed": {
-    "message": "Esta contraseña fue encontrada $VALUE$ vez\/veces en filtraciones de datos. Deberías cambiarla.",
+    "message": "Esta contraseña fue encontrada $VALUE$ vez/veces en filtraciones de datos. Deberías cambiarla.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Servidor",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exacta"
@@ -1148,7 +1148,7 @@
     "message": "Salir"
   },
   "showHide": {
-    "message": "Mostrar \/ Ocultar",
+    "message": "Mostrar / Ocultar",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "Debes seleccionar al menos una colección."
+  },
+  "premiumUpdated": {
+    "message": "Has actualizado a premium."
+  },
+  "restore": {
+    "message": "Restaurar"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Puedes administrar tu suscripción desde la App Store. ¿Quieres visitar la App Store ahora?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Términos y condiciones del servicio"
+  },
+  "privacyPolicy": {
+    "message": "Política de privacidad"
   }
 }
