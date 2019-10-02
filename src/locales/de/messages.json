@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "Schalter ausklappen",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Name des Karteninhabers"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Zwischenablage leeren",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Kopierten Inhalt automatisch aus der Zwischenablage löschen.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Webseiten Icons deaktivieren"
@@ -1047,7 +1047,7 @@
     "message": "Neu laden"
   },
   "toggleDevTools": {
-    "message": "Entwickler-Werkzeuge ein\/aus"
+    "message": "Entwickler-Werkzeuge ein/aus"
   },
   "minimize": {
     "message": "Minimieren",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Server",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exakt"
@@ -1148,7 +1148,7 @@
     "message": "Beenden"
   },
   "showHide": {
-    "message": "Zeigen \/ Verbergen",
+    "message": "Zeigen / Verbergen",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "Sie müssen mindestens eine Sammlung auswählen."
+  },
+  "premiumUpdated": {
+    "message": "Sie haben zum Premium Abo gewechselt."
+  },
+  "restore": {
+    "message": "Wiederherstellen"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Sie können Ihr Abonnement über den App Store verwalten. Wollen Sie jetzt den App Store öffnen?"
+  },
+  "legal": {
+    "message": "Rechtliches",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Allgemeine Geschäftsbedingungen"
+  },
+  "privacyPolicy": {
+    "message": "Datenschutzerklärung"
   }
 }
