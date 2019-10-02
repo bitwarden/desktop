@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Suodattimet"
   },
   "allItems": {
     "message": "Kaikki kohteet"
@@ -113,11 +113,11 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Näytä\/piilota"
+    "message": "Näytä/piilota"
   },
   "toggleCollapse": {
     "message": "Toggle Collapse",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Kortinhaltijan nimi"
@@ -265,7 +265,7 @@
     "message": "Paikkakunta"
   },
   "stateProvince": {
-    "message": "Osavaltio\/maakunta"
+    "message": "Osavaltio/maakunta"
   },
   "zipPostalCode": {
     "message": "Postinumero"
@@ -301,7 +301,7 @@
     "message": "Arvo"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Lajittele vetämällä"
   },
   "cfTypeText": {
     "message": "Teksti"
@@ -371,11 +371,11 @@
     "message": "Sanaerotin"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Isot kirjaimet",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Sisällytä numero"
   },
   "close": {
     "message": "Sulje"
@@ -748,7 +748,7 @@
     "message": "Avaa"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Kirjautuneena käyttäjänä $EMAIL$ palvelimelle $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Tyhjennä leikepöytä",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Poista kopioidut tekstit leikepöydältä automaattisesti.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Älä näytä sivustokuvakkeita"
@@ -993,7 +993,7 @@
     "message": "Kiitos kun tuit Bitwardenia."
   },
   "premiumPrice": {
-    "message": "Kaikki tämä vain $PRICE$ \/ vuosi!",
+    "message": "Kaikki tämä vain $PRICE$ / vuosi!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1041,13 +1041,13 @@
     "message": "Palauta Lähennys"
   },
   "toggleFullScreen": {
-    "message": "Koko näytön tila päälle\/pois"
+    "message": "Koko näytön tila päälle/pois"
   },
   "reload": {
     "message": "Lataa uudelleen"
   },
   "toggleDevTools": {
-    "message": "Kehittäjätyökalut päälle\/pois"
+    "message": "Kehittäjätyökalut päälle/pois"
   },
   "minimize": {
     "message": "Pienennä",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Osoite",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Täsmälleen…"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Näytä\/piilota asetukset"
+    "message": "Näytä/piilota asetukset"
   },
   "organization": {
     "message": "Organisaatio",
@@ -1148,14 +1148,14 @@
     "message": "Poistu"
   },
   "showHide": {
-    "message": "Näytä\/piilota",
+    "message": "Näytä/piilota",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
     "message": "Piilota ilmoitusalueelle"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Aina päällimmäisenä",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,37 @@
     "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Asetukset"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Käytä valikkopalkin kuvaketta"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Näytä aina kuvake valikkopalkissa."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Piilota valikkopalkkiin"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Valitse vähintään yksi kokoelma."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
