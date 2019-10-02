@@ -1,6 +1,7 @@
 ﻿param (
-    [string] $version,
-    [switch] $mas
+  [string] $version,
+  [switch] $mas,
+  [switch] $masdev
 )
 
 # Dependencies:
@@ -15,13 +16,14 @@ $distDir = $rootDir + "\dist";
 $distSafariDir = $distDir + "\safari";
 $distSafariAppexDmg = $distSafariDir + "\browser\dist\Safari\dmg\build\Release\safari.appex";
 $distSafariAppexMas = $distSafariDir + "\browser\dist\Safari\mas\build\Release\safari.appex";
+$distSafariAppexMasDev = $distSafariDir + "\browser\dist\Safari\masdev\build\Release\safari.appex";
 $pluginsAppex = $rootDir + "\PlugIns\safari.appex";
 
-if(Test-Path -Path $distSafariDir) {
+if (Test-Path -Path $distSafariDir) {
   Remove-Item -Recurse -Force $distSafariDir
 }
 
-if(Test-Path -Path $pluginsAppex) {
+if (Test-Path -Path $pluginsAppex) {
   Remove-Item -Recurse -Force $pluginsAppex
 }
 
@@ -30,16 +32,20 @@ cd $distSafariDir
 git clone git@github.com:bitwarden/browser.git
 cd browser
 
-if(-not ([string]::IsNullOrEmpty($version))) {
+if (-not ([string]::IsNullOrEmpty($version))) {
   $tag = "v" + $version
   git checkout tags/$tag
 }
 
 npm i
 npm run dist:safari
-if($mas) {
+if ($mas) {
   Copy-Item -Path $distSafariAppexMas -Destination $pluginsAppex –Recurse
-} else {
+}
+elseif ($masdev) {
+  Copy-Item -Path $distSafariAppexMasDev -Destination $pluginsAppex –Recurse
+}
+else {
   Copy-Item -Path $distSafariAppexDmg -Destination $pluginsAppex –Recurse
 }
 cd $rootDir
