@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "切换折叠",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "持卡人姓名"
@@ -262,16 +262,16 @@
     "message": "地址 3"
   },
   "cityTown": {
-    "message": "市 \/ 镇"
+    "message": "市 / 镇"
   },
   "stateProvince": {
-    "message": "州 \/ 省"
+    "message": "州 / 省"
   },
   "zipPostalCode": {
     "message": "邮政编码"
   },
   "country": {
-    "message": "国家\/地区"
+    "message": "国家/地区"
   },
   "save": {
     "message": "保存"
@@ -611,7 +611,7 @@
     "message": "自我托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己配置、托管的 bitwarden 环境的基础 URL。"
+    "message": "指定自己配置、托管的 Bitwarden 环境的基础 URL。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "清除剪贴板",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "自动清除复制到剪贴板的值。",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "禁用网站图标"
@@ -993,7 +993,7 @@
     "message": "感谢您支持 Bitwarden。"
   },
   "premiumPrice": {
-    "message": "只需 $PRICE$ \/年！",
+    "message": "只需 $PRICE$ /年！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "主机",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "精确"
@@ -1148,7 +1148,7 @@
     "message": "退出"
   },
   "showHide": {
-    "message": "显示\/隐藏",
+    "message": "显示/隐藏",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "您必须选择至少一个收藏。"
+  },
+  "premiumUpdated": {
+    "message": "您已升级到高级会员。"
+  },
+  "restore": {
+    "message": "还原"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "您可以从 App Store 管理您的订阅。现在要访问 App Store 吗？"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
