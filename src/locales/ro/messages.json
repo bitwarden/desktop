@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "Toggle Collapse",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Deținător card"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Goliţi Clipboardul",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Şterge automat valorile copiate din clipboard.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Dezactivare pictograme"
@@ -993,7 +993,7 @@
     "message": "Vă mulţumim pentru susţinerea bitwarden."
   },
   "premiumPrice": {
-    "message": "Totul pentru doar $PRICE$ \/an!",
+    "message": "Totul pentru doar $PRICE$ /an!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Gazdă",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Activare\/Dezactivare opțiuni"
+    "message": "Activare/Dezactivare opțiuni"
   },
   "organization": {
     "message": "Organizație",
@@ -1148,7 +1148,7 @@
     "message": "Ieșire"
   },
   "showHide": {
-    "message": "Afișare\/Ascundere",
+    "message": "Afișare/Ascundere",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }

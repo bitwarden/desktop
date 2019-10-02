@@ -116,8 +116,8 @@
     "message": "Commuta la visibilitat"
   },
   "toggleCollapse": {
-    "message": "Redueix\/Amplia",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Redueix/Amplia",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Nom del titular de la targeta"
@@ -265,7 +265,7 @@
     "message": "Localitat"
   },
   "stateProvince": {
-    "message": "Estat\/província"
+    "message": "Estat/província"
   },
   "zipPostalCode": {
     "message": "Codi postal"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Neteja el porta-retalls",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Esborra automàticament els valors copiats del porta-retalls.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Inhabilita icones del lloc web"
@@ -993,7 +993,7 @@
     "message": "Gràcies per donar suport a Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tot per només $PRICE$\/any!",
+    "message": "Tot per només $PRICE$/any!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1079,7 +1079,7 @@
     "message": "Tanca Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copiat",
+    "message": "S'ha copiat $VALUE$",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Amfitrió",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exacte"
@@ -1148,7 +1148,7 @@
     "message": "Tanca"
   },
   "showHide": {
-    "message": "Mostra\/Amaga",
+    "message": "Mostra/Amaga",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "Heu d'escollir com a mínim una col·lecció."
+  },
+  "premiumUpdated": {
+    "message": "Heu actualitzat a la versió premium."
+  },
+  "restore": {
+    "message": "Restaura"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Podeu gestionar la vostra subscripció des de l'App Store. \nVoleu visitar l'App Store ara?"
+  },
+  "legal": {
+    "message": "Informació legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Condicions del servei"
+  },
+  "privacyPolicy": {
+    "message": "Política de privacitat"
   }
 }

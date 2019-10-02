@@ -116,8 +116,8 @@
     "message": "Изменить видимость"
   },
   "toggleCollapse": {
-    "message": "Свернуть\/Развернуть",
-    "description": "Toggling an expand\/collapse state."
+    "message": "Свернуть/Развернуть",
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Имя владельца карты"
@@ -262,10 +262,10 @@
     "message": "Строка адреса 3"
   },
   "cityTown": {
-    "message": "Город \/ Поселок"
+    "message": "Город / Поселок"
   },
   "stateProvince": {
-    "message": "Регион \/ Область"
+    "message": "Регион / Область"
   },
   "zipPostalCode": {
     "message": "Почтовый индекс"
@@ -770,7 +770,7 @@
     "message": "Двухфакторная аутентификация"
   },
   "lockOptions": {
-    "message": "Настройки блокировки"
+    "message": "Параметры блокировки"
   },
   "lockOptionsDesc": {
     "message": "Выберите условие блокировки вашего хранилища. Для его разблокировки потребуется повторно ввести мастер-пароль."
@@ -815,7 +815,7 @@
     "message": "В режиме сна"
   },
   "onLocked": {
-    "message": "При блокировке"
+    "message": "Вместе с компьютером"
   },
   "onRestart": {
     "message": "При перезапуске"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Очистка буфера обмена",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Автоматически очищать скопированные значения в вашем буфере обмена.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Отключить значки веб-сайтов"
@@ -901,7 +901,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Перезапустить для обновления"
+    "message": "Перезапуск для обновления"
   },
   "restartToUpdateDesc": {
     "message": "Версия $VERSION_NUM$ готова к установке. Для завершения установки необходимо перезапустить Bitwarden. Сделать это сейчас?",
@@ -993,7 +993,7 @@
     "message": "Благодарим вас за поддержку Bitwarden."
   },
   "premiumPrice": {
-    "message": "Всего лишь $PRICE$ \/в год!",
+    "message": "Всего лишь $PRICE$ /в год!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Хост",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Точно"
@@ -1148,7 +1148,7 @@
     "message": "Выход"
   },
   "showHide": {
-    "message": "Показать \/ Скрыть",
+    "message": "Показать / Скрыть",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "Необходимо выбрать хотя бы одну коллекцию."
+  },
+  "premiumUpdated": {
+    "message": "Вы обновились до Премиум."
+  },
+  "restore": {
+    "message": "Восстановить"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Вы можете управлять своей подпиской из App Store. Вы хотите посетить App Store?"
+  },
+  "legal": {
+    "message": "Правовая информация",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Условия использования"
+  },
+  "privacyPolicy": {
+    "message": "Политика конфиденциальности"
   }
 }

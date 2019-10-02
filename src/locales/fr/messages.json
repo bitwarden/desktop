@@ -113,11 +113,11 @@
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Afficher\/Masquer"
+    "message": "Afficher/Masquer"
   },
   "toggleCollapse": {
     "message": "Déplier ou replier",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Nom du titulaire de la carte"
@@ -265,7 +265,7 @@
     "message": "Ville"
   },
   "stateProvince": {
-    "message": "État \/ Région"
+    "message": "État / Région"
   },
   "zipPostalCode": {
     "message": "Code postal"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Effacer le presse-papiers",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Effacer automatiquement de votre presse-papiers les valeurs copiées.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Désactiver les icônes des sites web"
@@ -972,7 +972,7 @@
     "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
   },
   "premiumSignUpTotp": {
-    "message": "La génération d'un code de vérification TOTP (double facteurs \/ 2FA) pour les identifiants de votre coffre."
+    "message": "La génération d'un code de vérification TOTP (double facteurs / 2FA) pour les identifiants de votre coffre."
   },
   "premiumSignUpSupport": {
     "message": "Support client prioritaire."
@@ -993,7 +993,7 @@
     "message": "Merci de supporter Bitwarden."
   },
   "premiumPrice": {
-    "message": "Tout pour seulement $PRICE$ \/an !",
+    "message": "Tout pour seulement $PRICE$ /an !",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1047,7 +1047,7 @@
     "message": "Recharger"
   },
   "toggleDevTools": {
-    "message": "Afficher\/cacher les outils de développement"
+    "message": "Afficher/cacher les outils de développement"
   },
   "minimize": {
     "message": "Réduire",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Hôte",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Exact"
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Afficher\/masquer les options"
+    "message": "Afficher/masquer les options"
   },
   "organization": {
     "message": "Organisation",
@@ -1148,7 +1148,7 @@
     "message": "Quitter"
   },
   "showHide": {
-    "message": "Afficher\/Masquer",
+    "message": "Afficher/Masquer",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "Vous devez sélectionner au moins une collection."
+  },
+  "premiumUpdated": {
+    "message": "Vous avez mis à niveau vers premium."
+  },
+  "restore": {
+    "message": "Restaurer"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Vous pouvez gérer votre abonnement depuis l'App Store. Voulez-vous visiter l'App Store maintenant ?"
+  },
+  "legal": {
+    "message": "Légal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Conditions d'utilisation"
+  },
+  "privacyPolicy": {
+    "message": "Politique de confidentialité"
   }
 }
