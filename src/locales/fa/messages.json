@@ -51,10 +51,10 @@
     "message": "مورد اشتراک گذاری شد"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "تشکیلاتی که می‌خواهید این مورد را با آن به اشتراک بگذارید انتخاب کنید. پس از اشتراک‌گذاری مالکیت موارد به آن تشکیلات انتقال می‌یابد. شما دیگر نمی‌توانید صاحب اصلی این مورد پس از اشتراک‌گذاری آن باشید."
   },
   "attachments": {
-    "message": "پیوست ها"
+    "message": "پیوست‌ها"
   },
   "viewItem": {
     "message": "مشاهده مورد"
@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "Toggle Collapse",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "نام صاحب کارت"
@@ -262,10 +262,10 @@
     "message": "نشانی ۳"
   },
   "cityTown": {
-    "message": "شهر \/ شهرک"
+    "message": "شهر / شهرک"
   },
   "stateProvince": {
-    "message": "ایالت \/ استان"
+    "message": "ایالت / استان"
   },
   "zipPostalCode": {
     "message": "کد پستی"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "پاک‌سازی کلیپ‌برد",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "به صورت خودکار، مقادیر کپی شده را از کلیپ‌برد پاک کن.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "غیرفعال سازی آیکون های وبسایت"
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "میزبان",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "دقیق"
@@ -1148,7 +1148,7 @@
     "message": "خروج"
   },
   "showHide": {
-    "message": "نمایش\/پنهان",
+    "message": "نمایش/پنهان",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
+  },
+  "premiumUpdated": {
+    "message": "شما به پرمیوم ارتقاء یافتید."
+  },
+  "restore": {
+    "message": "بازیابی"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "می توانید اشتراک خود را از اپ استور مدیریت کنید. آیا می خواهید هم اکنون از اپ استور دیدن کنید؟"
+  },
+  "legal": {
+    "message": "قانونی",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "شرایط استفاده از خدمات"
+  },
+  "privacyPolicy": {
+    "message": "سیاست حفظ حریم خصوصی"
   }
 }
