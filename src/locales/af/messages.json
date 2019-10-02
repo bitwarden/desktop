@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "Toggle Collapse",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Cardholder Name"
@@ -262,10 +262,10 @@
     "message": "Adres 3"
   },
   "cityTown": {
-    "message": "Stad \/ Dorp"
+    "message": "Stad / Dorp"
   },
   "stateProvince": {
-    "message": "Staat \/ Provinsie"
+    "message": "Staat / Provinsie"
   },
   "zipPostalCode": {
     "message": "Poskode"
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Wis Knipbord",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Wis gekopieerde waardes outomaties vanuit u knipbord.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Deaktiveer Webwerfikone"
@@ -993,7 +993,7 @@
     "message": "Dankie dat u Bitwarden ondersteun."
   },
   "premiumPrice": {
-    "message": "Alles vir slegs $PRICE$ \/jaar!",
+    "message": "Alles vir slegs $PRICE$ /jaar!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Gasheer",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Presies"
@@ -1148,7 +1148,7 @@
     "message": "Verlaat"
   },
   "showHide": {
-    "message": "Show \/ Hide",
+    "message": "Show / Hide",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1248,5 +1248,24 @@
   },
   "selectOneCollection": {
     "message": "U moet ten minste een versameling kies."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
   }
 }
