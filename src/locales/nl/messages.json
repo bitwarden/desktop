@@ -1213,7 +1213,7 @@
     "message": "Je hebt een zwak hoofdwachtwoord gekozen. Gebruik een sterk hoofdwachtwoord (of wachtwoordzin) om jouw Bitwarden-account goed te beschermen. Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-code",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
