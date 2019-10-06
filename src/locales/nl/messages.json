@@ -12,7 +12,7 @@
     "message": "Favorieten"
   },
   "types": {
-    "message": "Typen"
+    "message": "Categorieën"
   },
   "typeLogin": {
     "message": "Login"
@@ -123,7 +123,7 @@
     "message": "Naam kaarthouder"
   },
   "number": {
-    "message": "Nummer"
+    "message": "Kaartnummer"
   },
   "brand": {
     "message": "Merk"
@@ -159,7 +159,7 @@
     "message": "Adres"
   },
   "premiumRequired": {
-    "message": "Premium vereist"
+    "message": "Premium is vereist"
   },
   "premiumRequiredDesc": {
     "message": "Voor deze functionaliteit heb je een Premium-abonnement nodig."
@@ -211,7 +211,7 @@
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Titel"
+    "message": "Aanhef"
   },
   "mr": {
     "message": "Dhr."
@@ -241,7 +241,7 @@
     "message": "Wachtwoord genereren"
   },
   "type": {
-    "message": "Type"
+    "message": "Categorie"
   },
   "firstName": {
     "message": "Voornaam"
@@ -400,7 +400,7 @@
     "message": "Favorieten doorzoeken"
   },
   "searchType": {
-    "message": "Type zoeken",
+    "message": "Categorie doorzoeken",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -671,13 +671,13 @@
     "message": "Uitloggen"
   },
   "addNewLogin": {
-    "message": "Nieuwe login toevoegen"
+    "message": "Nieuwe login"
   },
   "addNewItem": {
-    "message": "Nieuw item toevoegen"
+    "message": "Nieuw item"
   },
   "addNewFolder": {
-    "message": "Nieuwe map toevoegen"
+    "message": "Nieuwe map"
   },
   "view": {
     "message": "Beeld"

@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtreler"
   },
   "allItems": {
     "message": "Tüm öğeler"
@@ -301,7 +301,7 @@
     "message": "Değer"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Sıralamak için sürükleyin"
   },
   "cfTypeText": {
     "message": "Metin"
@@ -371,11 +371,11 @@
     "message": "Kelime Ayracı"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Baş Harfleri Büyük Yap",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Sayı Ekle"
   },
   "close": {
     "message": "Kapat"
@@ -723,7 +723,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Hesabınızın parmak izi şifresi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -748,7 +748,7 @@
     "message": "Kilidi Aç"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$ üzerinde $EMAIL$ olarak oturum açıldı.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -779,19 +779,19 @@
     "message": "Hemen"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 saniye"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 saniye"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 saniye"
   },
   "oneMinute": {
     "message": "1 dakika"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 dakika"
   },
   "fiveMinutes": {
     "message": "5 dakika"
@@ -827,11 +827,11 @@
     "message": "Güvenlik"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Panoyu Temizle",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Kopyalanan değerleri panodan otomatik olarak temizle.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
@@ -859,10 +859,10 @@
     "message": "Sistem çubuğunda her zaman ikonu göster."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Tepsi Simgesi Olarak Başlat"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Uygulama ilk başlatıldığında, sistem tepsisinde sadece bir simge gösterin."
   },
   "language": {
     "message": "Dil"
@@ -969,7 +969,7 @@
     "message": "YubiKey, FIDO U2F ve Duo gibi ek iki adımlı giriş seçenekleri."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Kasanızı güvende tutmak için parola hijyeni, hesap sağlığı, ve veri ihlali raporları."
   },
   "premiumSignUpTotp": {
     "message": "Websitede oturum açma işlemleri için TOTP doğrulama kodu (2FA) üreticisi."
@@ -1155,7 +1155,7 @@
     "message": "Tepsiyi Gizle"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Her Zaman Üstte",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1186,7 +1186,7 @@
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Listelenecek koleksiyon yok."
   },
   "ownership": {
     "message": "Sahiplik"
@@ -1217,55 +1217,55 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "PIN kodu ile kilidi aç"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Bitwarden'ı açmak için bir PIN kodu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "PIN kodu gereklidir."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Geçersiz PIN kodu."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Kasanız kilitlendi. Devam etmek için PIN kodunuzu doğrulayın."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Yeniden başlatmada ana şifre ile kilitle"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Tercihler"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Menü Çubuğu Simgesini Etkinleştir"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Menü çubuğunda her zaman bir simge göster."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Menü Çubuğuna Gizle"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "En az bir koleksiyon seçmelisiniz."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Premium'a yükselttiniz."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Geri Yükle"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Aboneliğinizi App Store'dan yönetebilirsiniz. App Store'u şimdi ziyaret etmek ister misiniz?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Hukuki",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Hizmet Koşulları"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Gizlilik Politikası"
   }
 }
