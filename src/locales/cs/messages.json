@@ -1250,22 +1250,22 @@
     "message": "Musíte vybrat alespoň jednu kolekci."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Povýšili jste na premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Obnovit"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Svá předplatní můžete spravovat z App Store. Přejít do App Store?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Právní záležitosti",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Podmínky použití"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Zásady ochrany osobních údajů"
   }
 }
