@@ -34,6 +34,8 @@ export class PremiumComponent extends BasePremiumComponent {
     appStoreFormattedPrice = '$14.99';
     canRestorePurchase = false;
 
+    private makingPremiumAfterPurchase = false;
+
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         tokenService: TokenService, apiService: ApiService,
         private ngZone: NgZone, private messagingService: MessagingService,
@@ -78,10 +80,14 @@ export class PremiumComponent extends BasePremiumComponent {
                         case 'purchased':
                             // tslint:disable-next-line
                             console.log(`${payment.productIdentifier} purchased.`);
-                            if (payment.productIdentifier !== AppStorePremiumPlan) {
+                            if (this.makingPremiumAfterPurchase || payment.productIdentifier !== AppStorePremiumPlan) {
                                 return;
                             }
-                            await this.makePremium(false);
+                            try {
+                                this.makingPremiumAfterPurchase = true;
+                                await this.makePremium(false);
+                            } catch { }
+                            this.makingPremiumAfterPurchase = false;
                             // Finish the transaction.
                             remote.inAppPurchase.finishTransactionByDate(transaction.transactionDate);
                             break;
