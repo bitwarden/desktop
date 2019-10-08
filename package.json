@@ -150,9 +150,7 @@
     },
     "mas": {
       "entitlements": "resources/entitlements.mas.plist",
-      "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
-      "hardenedRuntime": false,
-      "asarUnpack": "*.node"
+      "entitlementsInherit": "resources/entitlements.mas.inherit.plist"
     },
     "nsisWeb": {
       "oneClick": false,
