@@ -850,7 +850,7 @@
     "message": "Görev çubuğu ikonuna küçült"
   },
   "enableCloseToTrayDesc": {
-    "message": "Pencere kapatıldığında, sistem panelinde simge olarak göster."
+    "message": "Pencere kapatıldığında görev çubuğunda simge olarak gözüksün."
   },
   "enableTray": {
     "message": "Sistem ikonunu etkinleştir."
@@ -859,10 +859,10 @@
     "message": "Sistem çubuğunda her zaman ikonu göster."
   },
   "startToTray": {
-    "message": "Tepsi Simgesi Olarak Başlat"
+    "message": "Görev Çubuğu Simgesi Olarak Başlat"
   },
   "startToTrayDesc": {
-    "message": "Uygulama ilk başlatıldığında, sistem tepsisinde sadece bir simge gösterin."
+    "message": "Uygulama açıldığında görev çubuğunda simge olarak gözüksün."
   },
   "language": {
     "message": "Dil"
