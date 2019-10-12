@@ -925,7 +925,7 @@
     "message": "Sonra"
   },
   "noUpdatesAvailable": {
-    "message": "Şuan da herhangi bir güncelleştirme yok. En son sürümü kullanıyorsunuz."
+    "message": "Şu anda en son sürümü kullanıyorsunuz. Yüklenebilecek bir güncelleme yok."
   },
   "updateError": {
     "message": "Güncelleme Hatası"
