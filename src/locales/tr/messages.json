@@ -6,7 +6,7 @@
     "message": "Filtreler"
   },
   "allItems": {
-    "message": "Tüm öğeler"
+    "message": "Tüm Öğeler"
   },
   "favorites": {
     "message": "Favoriler"
@@ -36,7 +36,7 @@
     "message": "Kasada Ara"
   },
   "addItem": {
-    "message": "Ürün Ekle"
+    "message": "Öge Ekle"
   },
   "shared": {
     "message": "Paylaşılan"
@@ -283,7 +283,7 @@
     "message": "Sil"
   },
   "favorite": {
-    "message": "Favori"
+    "message": "Favorilere Ekle"
   },
   "edit": {
     "message": "Düzenle"
@@ -394,7 +394,7 @@
     "message": "Koleksiyon ara"
   },
   "searchFolder": {
-    "message": "Klasörü Ara"
+    "message": "Klasörde Ara"
   },
   "searchFavorites": {
     "message": "Favorilerde ara"
