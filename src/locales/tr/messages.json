@@ -353,7 +353,7 @@
     "message": "Klasörü Düzenle"
   },
   "regeneratePassword": {
-    "message": "Tekrar Parola Oluştur"
+    "message": "Yeni Parola Oluştur"
   },
   "copyPassword": {
     "message": "Parolayı Kopyala"
@@ -397,10 +397,10 @@
     "message": "Klasörde Ara"
   },
   "searchFavorites": {
-    "message": "Favorilerde ara"
+    "message": "Favorilerde Ara"
   },
   "searchType": {
-    "message": "Arama türü",
+    "message": "Arama Yap",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -692,7 +692,7 @@
     "message": "Şimdi Kilitle"
   },
   "passwordGenerator": {
-    "message": "Parola oluşturucu"
+    "message": "Parola Oluşturucu"
   },
   "emailUs": {
     "message": "Bize E-posta Gönderin"
@@ -1152,7 +1152,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Tepsiyi Gizle"
+    "message": "Görev Çubuğuna Küçült"
   },
   "alwaysOnTop": {
     "message": "Her Zaman Üstte",
