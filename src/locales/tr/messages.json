@@ -719,7 +719,7 @@
     "message": "Ana parolanızı bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Parmak İzi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -847,7 +847,7 @@
     "message": "Pencereyi küçültün, bunun yerine sistem tepsisinde bir simge gösterin."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Görev çubuğu ikonuna küçült"
   },
   "enableCloseToTrayDesc": {
     "message": "Pencere kapatıldığında, sistem panelinde simge olarak göster."
