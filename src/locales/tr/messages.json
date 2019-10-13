@@ -818,7 +818,7 @@
     "message": "Sistem kilitli"
   },
   "onRestart": {
-    "message": "Yeniden başlat"
+    "message": "Yeniden başlatmada"
   },
   "never": {
     "message": "Hiçbir zaman"
