@@ -130,6 +130,24 @@
         }
     }
 
+    &.checkbox-row {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-content: space-between;
+
+        span {
+            display: inline-block;
+            width: 62px;
+            text-align: center;
+
+            label {
+                display: inline-block;
+                width: 12px;
+            }
+        }
+    }
+
     .text, .detail {
         display: block;
 
