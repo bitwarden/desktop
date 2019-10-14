@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "allItems": {
     "message": "Všetky položky"
@@ -301,7 +301,7 @@
     "message": "Hodnota"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Zoradiť presúvaním"
   },
   "cfTypeText": {
     "message": "Text"
@@ -371,11 +371,11 @@
     "message": "Oddeľovač slov"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Prvé písmeno veľkým",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Zahrnúť číslo"
   },
   "close": {
     "message": "Zavrieť"
@@ -748,7 +748,7 @@
     "message": "Odomknúť"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prihlásený ako $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1155,7 +1155,7 @@
     "message": "Skryť do systémovej lišty"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Vždy na vrchu",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,37 +1235,37 @@
     "message": "Pri reštarte zamknúť s hlavným heslom"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Predvoľby"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Povoliť ikonu na paneli úloh"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Vždy zobraziť ikonu na paneli úloh."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Skryť do panela úloh"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Musíte vybrať aspoň jednu zbierku."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Povýšili ste na prémium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Obnoviť"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Predplatné môžete spravovať cez App Store. Chcete navštíviť App Store teraz?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Právne informácie",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Podmienky používania"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Zásady ochrany osobných údajov"
   }
 }
