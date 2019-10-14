@@ -150,7 +150,8 @@
     },
     "mas": {
       "entitlements": "resources/entitlements.mas.plist",
-      "entitlementsInherit": "resources/entitlements.mas.inherit.plist"
+      "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
+      "hardenedRuntime": false
     },
     "nsisWeb": {
       "oneClick": false,
