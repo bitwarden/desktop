@@ -289,7 +289,7 @@
     "message": "Bewerken"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticatiesleutel (TOTP)"
+    "message": "Authenticatiecode (TOTP)"
   },
   "folder": {
     "message": "Map"
