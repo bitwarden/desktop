@@ -117,7 +117,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         break;
                     case 'syncVault':
                         try {
-                            await this.syncService.fullSync(true);
+                            await this.syncService.fullSync(true, true);
                             this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
                             this.analytics.eventTrack.next({ action: 'Synced Full' });
                         } catch {
