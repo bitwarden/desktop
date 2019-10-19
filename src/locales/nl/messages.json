@@ -353,7 +353,7 @@
     "message": "Map bewerken"
   },
   "regeneratePassword": {
-    "message": "Wachtwoord opnieuw genereren"
+    "message": "Opnieuw genereren"
   },
   "copyPassword": {
     "message": "Wachtwoord kopiëren"
@@ -1005,7 +1005,7 @@
     "message": "Bijwerken voltooid"
   },
   "passwordHistory": {
-    "message": "Wachtwoordgeschiedenis"
+    "message": "Geschiedenis"
   },
   "clear": {
     "message": "Wissen",
