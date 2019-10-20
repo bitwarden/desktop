@@ -12,7 +12,7 @@
                 <!-- Login -->
                 <div *ngIf="cipher.login">
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.username">
-                        <div class="row-main">
+                        <div class="row-main" draggable="true" (dragstart)="setTextDataOnDrag($event, cipher.login.username)">
                             <span class="row-label">{{'username' | i18n}}</span>
                             {{cipher.login.username}}
                         </div>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.password">
-                        <div class="row-main">
+                        <div class="row-main" draggable="true" (dragstart)="setTextDataOnDrag($event, cipher.login.password)">
                             <span class="row-label">{{'password' | i18n}}</span>
                             <div [hidden]="showPassword" class="monospaced">
                                 {{cipher.login.maskedPassword}}</div>
@@ -52,7 +52,8 @@
                         </div>
                     </div>
                     <div class="box-content-row box-content-row-flex totp" [ngClass]="{'low': totpLow}"
-                        *ngIf="cipher.login.totp && totpCode">
+                        *ngIf="cipher.login.totp && totpCode"
+                        draggable="true" (dragstart)="setTextDataOnDrag($event, totpCode)">
                         <div class="row-main">
                             <span class="row-label">{{'verificationCodeTotp' | i18n}}</span>
                             <span class="totp-code">{{totpCodeFormatted}}</span>
