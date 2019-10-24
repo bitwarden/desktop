@@ -286,3 +286,7 @@ app-root > #loading {
 [hidden] {
     display: none !important;
 }
+
+.draggable {
+    cursor: move;
+}
