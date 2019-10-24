@@ -33,7 +33,7 @@
     "message": "Kolekcija"
   },
   "searchVault": {
-    "message": "Pretraži sef"
+    "message": "Pretraži trezor"
   },
   "addItem": {
     "message": "Dodatj stavku"
@@ -135,7 +135,7 @@
     "message": "Siguronosni kod"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Ime identiteta"
   },
   "company": {
     "message": "Kompanija"
@@ -425,40 +425,40 @@
     "message": "Maximalna veličina datoteke je 100 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Ovu funkciju ne možete da koristite dok ne ažurirate ključ za šifrovanje."
   },
   "options": {
-    "message": "Options"
+    "message": "Opcije"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Izmijenjena fascikla"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Dodata fascikla"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Jeste li sigurni da želite da izbrišete ovu fasciklu?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Obrisana fascikla"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Prijavite se ili otvorite novi nalog da biste pristupili svom sigurnom trezoru."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Kreiraj nalog"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Prijavi se"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Podnesi"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Glavna lozinka"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Glavna lozinka je lozinka koju koristite za pristup trezoru. Veoma je važno da ne zaboravite svoju glavnu lozinku. Nema načina da vratite lozinku u slučaju da je zaboravite."
   },
   "masterPassHintDesc": {
     "message": "A master password hint can help you remember your password if you forget it."
