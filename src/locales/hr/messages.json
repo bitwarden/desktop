@@ -1250,7 +1250,7 @@
     "message": "Morate odabrati barem jednu zbirku."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Nadograđeni ste na premium."
   },
   "restore": {
     "message": "Restore"
@@ -1259,7 +1259,7 @@
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Pravne Informacije",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
