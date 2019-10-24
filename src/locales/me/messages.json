@@ -301,22 +301,22 @@
     "message": "Vrijednost"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Prevucite za sortiranje"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Sakriveno"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Ukloni"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Potrebno je ime."
   },
   "addedItem": {
     "message": "Dodata stavka"
@@ -325,16 +325,16 @@
     "message": "Uredi stavku"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Obriši stavku"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Obriši fasciklu"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Obriši prilog"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Jeste li sigurni da želite da izbrišete ovu stavku?"
   },
   "deletedItem": {
     "message": "Obrisana stavka"
