@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filteri"
   },
   "allItems": {
     "message": "Sve stavke"
@@ -51,22 +51,22 @@
     "message": "Podijeljena stavka"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Izaberi organizaciju sa kojom želiš da podijeliš ovu stavku. Dijeljenje prenosi vlasništvo nad stavkom organizaciji. Nećete više biti direktni vlasnik ove stavke jer je dijeljenja."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Prilog"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Vidi stavku"
   },
   "name": {
-    "message": "Name"
+    "message": "Ime"
   },
   "uri": {
-    "message": "URI"
+    "message": "Link"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "Link $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -76,28 +76,28 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Novi link"
   },
   "username": {
-    "message": "Username"
+    "message": "Korisničko ime"
   },
   "password": {
-    "message": "Password"
+    "message": "Lozinka"
   },
   "passphrase": {
     "message": "Passphrase"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Uredi stavku"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "Email adresa"
   },
   "verificationCodeTotp": {
     "message": "Verification Code (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Internet strana"
   },
   "notes": {
     "message": "Notes"
@@ -106,33 +106,33 @@
     "message": "Custom Fields"
   },
   "launch": {
-    "message": "Launch"
+    "message": "Pokreni"
   },
   "copyValue": {
     "message": "Copy Value",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Isključi vidljivost"
   },
   "toggleCollapse": {
     "message": "Toggle Collapse",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Ime vlasnika kartice"
   },
   "number": {
-    "message": "Number"
+    "message": "Broj"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Vrsta kartice"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Datum do kada važi kartica"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Siguronosni kod"
   },
   "identityName": {
     "message": "Identity Name"
