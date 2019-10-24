@@ -545,7 +545,7 @@
     "message": "Zapamti me"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Pošalji ponovo verifikacioni kod na email"
   },
   "useAnotherTwoStepMethod": {
     "message": "Use another two-step login method"
