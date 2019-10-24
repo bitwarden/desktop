@@ -141,13 +141,13 @@
     "message": "Kompanija"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Broj socijalnog osiguranja"
   },
   "passportNumber": {
     "message": "Broj pasoša"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Broj licence"
   },
   "email": {
     "message": "Email"
@@ -162,7 +162,7 @@
     "message": "Premium obavezan"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Za upotrebu ove funkcije potrebno je premium članstvo."
   },
   "errorOccurred": {
     "message": "Dogodila se greška."
@@ -241,7 +241,7 @@
     "message": "Generiši lozinku"
   },
   "type": {
-    "message": "Type"
+    "message": "Tip"
   },
   "firstName": {
     "message": "Ime"
@@ -265,22 +265,22 @@
     "message": "Grad"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "Država/Provincija"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "Poštanski kod"
   },
   "country": {
-    "message": "Country"
+    "message": "Država"
   },
   "save": {
-    "message": "Save"
+    "message": "Sačuvaj"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Poništi"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Obriši"
   },
   "favorite": {
     "message": "Favorite"
