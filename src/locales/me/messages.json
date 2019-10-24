@@ -461,7 +461,7 @@
     "message": "Glavna lozinka je lozinka koju koristite za pristup trezoru. Veoma je važno da ne zaboravite svoju glavnu lozinku. Nema načina da vratite lozinku u slučaju da je zaboravite."
   },
   "masterPassHintDesc": {
-    "message": "Nagovještaj glavne lozinke vam može pomoći da zapamtite lozinku ako je zaboravite."
+    "message": "Podsjetnik na glavnu lozinku vam može pomoći da zapamtite lozinku ako je zaboravite."
   },
   "reTypeMasterPass": {
     "message": "Prekucaj glavnu lozinku"
@@ -470,61 +470,61 @@
     "message": "Podsjetnik glavne lozinke (opcija)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Podešavanja"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Podsjetnik na lozinku"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Unesi email svog naloga kako bi ste primili podsjetnik na glavnu lozinku."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Podsjetnik na glavnu lozinku"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Potrebna je email adresa."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Nepravilna email adresa."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Potrebna je glavna lozinka."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Glavna lozinka mora imati najmanje 8 karaktera."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Potvrda glavne lozinke ne odgovara."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Vaš novi nalog je kreiran! Sada se možete prijaviti."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Poslali smo vam email sa podsjetnikom na glavnu lozinku."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Došlo je do neočekivane greške."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Informacija o stavki"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Nema stavki u listi."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Verifikacioni kod (TOTP)"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Potreban je verifikacioni kod."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Nastavi"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Unesi kod sa 6 cifri iz vaše aplikacije za autentifikaciju."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Unesi kod sa 6 cifri koji vam je poslat na email $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -533,7 +533,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifikacioni email poslat na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -542,7 +542,7 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Zapamti me"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Send verification code email again"
