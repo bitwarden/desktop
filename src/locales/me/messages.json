@@ -204,7 +204,7 @@
     "message": "Novembar"
   },
   "december": {
-    "message": "December"
+    "message": "Decembar"
   },
   "ex": {
     "message": "ex.",
@@ -226,43 +226,43 @@
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Mjesec isticanja"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Godina isticanja"
   },
   "select": {
-    "message": "Select"
+    "message": "Odaberi"
   },
   "other": {
-    "message": "Other"
+    "message": "Drugo"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Generiši lozinku"
   },
   "type": {
     "message": "Type"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Ime"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Srednje ime"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Prezime"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresa 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adresa 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adresa 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "Grad"
   },
   "stateProvince": {
     "message": "State / Province"
@@ -375,54 +375,54 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Uključi broj"
   },
   "close": {
-    "message": "Close"
+    "message": "Zatvori"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Minimum brojeva"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Minimum specijalnih",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Izbjegni dvosmislene karaktere"
   },
   "searchCollection": {
-    "message": "Search Collection"
+    "message": "Pretraži kolekciju"
   },
   "searchFolder": {
-    "message": "Search Folder"
+    "message": "Pretraži fasciklu"
   },
   "searchFavorites": {
-    "message": "Search Favorites"
+    "message": "Pretraži favorite"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "Pretraži tip",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Dodaj novi prilog"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Obrisani prilog"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Da li ste sigurni da želite da obrišete ovaj prilog?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Prilog je sačuvan."
   },
   "file": {
-    "message": "File"
+    "message": "Datoteka"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Izaberi datoteku."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Maximalna veličina datoteke je 100 MB."
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
