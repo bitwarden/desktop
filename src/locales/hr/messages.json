@@ -1253,7 +1253,7 @@
     "message": "Nadograđeni ste na premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Vrati"
   },
   "premiumManageAlertAppStore": {
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
@@ -1263,9 +1263,9 @@
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Uvjeti korištenja"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Pravila privatnosti"
   }
 }
