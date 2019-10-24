@@ -39,7 +39,7 @@
     "message": "Dodatj stavku"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Podijeljeno"
   },
   "share": {
     "message": "Podijeli"
@@ -85,7 +85,7 @@
     "message": "Lozinka"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Pristupna fraza"
   },
   "editItem": {
     "message": "Uredi stavku"
@@ -94,7 +94,7 @@
     "message": "Email adresa"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Verifikacioni kod (TOTP)"
   },
   "website": {
     "message": "Internet strana"
@@ -109,7 +109,7 @@
     "message": "Pokreni"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "Kopiraj vrijednost",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
@@ -138,13 +138,13 @@
     "message": "Identity Name"
   },
   "company": {
-    "message": "Company"
+    "message": "Kompanija"
   },
   "ssn": {
     "message": "Social Security Number"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Broj pasoša"
   },
   "licenseNumber": {
     "message": "License Number"
@@ -153,55 +153,55 @@
     "message": "Email"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresa"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Premium obavezan"
   },
   "premiumRequiredDesc": {
     "message": "A premium membership is required to use this feature."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Dogodila se greška."
   },
   "error": {
-    "message": "Error"
+    "message": "Greška"
   },
   "january": {
-    "message": "January"
+    "message": "Januar"
   },
   "february": {
-    "message": "February"
+    "message": "Februar"
   },
   "march": {
-    "message": "March"
+    "message": "Mart"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Maj"
   },
   "june": {
-    "message": "June"
+    "message": "Jun"
   },
   "july": {
-    "message": "July"
+    "message": "Jul"
   },
   "august": {
-    "message": "August"
+    "message": "Avgust"
   },
   "september": {
-    "message": "September"
+    "message": "Septembar"
   },
   "october": {
-    "message": "October"
+    "message": "Oktobar"
   },
   "november": {
-    "message": "November"
+    "message": "Novembar"
   },
   "december": {
     "message": "December"
