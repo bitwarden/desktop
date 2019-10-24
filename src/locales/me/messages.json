@@ -6,49 +6,49 @@
     "message": "Filters"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Sve stavke"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoriti"
   },
   "types": {
-    "message": "Types"
+    "message": "Tipovi"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Prijava"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kartica"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitet"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Sigurna belješka"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Fascikla"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kolekcija"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "Pretraži sef"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Dodatj stavku"
   },
   "shared": {
     "message": "Shared"
   },
   "share": {
-    "message": "Share"
+    "message": "Podijeli"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Podijeli stavku"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Podijeljena stavka"
   },
   "shareDesc": {
     "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
