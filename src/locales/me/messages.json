@@ -340,38 +340,38 @@
     "message": "Obrisana stavka"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Jeste li sigurni da želite da zamijenite trenutnu lozinku?"
   },
   "noneFolder": {
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Dodaj fasciklu"
   },
   "editFolder": {
     "message": "Uredi fasciklu"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Regereniši lozinku"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopiraj lozinku"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopiraj link"
   },
   "length": {
     "message": "Length"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Broj riječi"
   },
   "wordSeparator": {
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Velika slova",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -461,13 +461,13 @@
     "message": "Glavna lozinka je lozinka koju koristite za pristup trezoru. Veoma je važno da ne zaboravite svoju glavnu lozinku. Nema načina da vratite lozinku u slučaju da je zaboravite."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Nagovještaj glavne lozinke vam može pomoći da zapamtite lozinku ako je zaboravite."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Prekucaj glavnu lozinku"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Podsjetnik glavne lozinke (opcija)"
   },
   "settings": {
     "message": "Settings"
