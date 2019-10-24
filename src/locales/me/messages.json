@@ -551,10 +551,10 @@
     "message": "Use another two-step login method"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Priključi svoj YubiKey u USB port na kompjuteru i onda takni njegovo dugme."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Priključi svoj sigurnonosni ključ u USB port na kompjuteru. Ako ima dugme, takni ga."
   },
   "recoveryCodeDesc": {
     "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
@@ -563,17 +563,17 @@
     "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Aplikacija za autentifikaciju"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Koristi aplikaciju za autentifkaciju (kao što su Authy ili Google autentificator) da generišeš verfikacione kodove bazirane na vremenu.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP siguronosni ključ"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Koristi YubiKey da pristupis svom nalogu. Radi sa YubiKey 4, 4 Nano, 4C i NEO uređajima."
   },
   "duoDesc": {
     "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
