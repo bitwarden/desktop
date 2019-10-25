@@ -1098,7 +1098,7 @@
     "message": "Provjerite da li je lozinka izložena."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "Ova lozinka je izložena kradji podataka $VALUE$ put(a). Trebalo bi da je promijenite.",
     "placeholders": {
       "value": {
         "content": "$1",
