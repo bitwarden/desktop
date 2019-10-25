@@ -211,7 +211,7 @@
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "Naslov"
   },
   "mr": {
     "message": "G"
@@ -548,7 +548,7 @@
     "message": "Pošalji ponovo verifikacioni kod na email"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Koristi drugi metod prijave u dva koraka"
   },
   "insertYubiKey": {
     "message": "Priključi svoj YubiKey u USB port na kompjuteru i onda takni njegovo dugme."
@@ -557,7 +557,7 @@
     "message": "Priključi svoj sigurnonosni ključ u USB port na kompjuteru. Ako ima dugme, takni ga."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Izgubili ste pristup svim dobavljačima prijave u dva koraka? Upotrijebite sigurnonosni kod kako biste onemogućili sve prijave u dva koraka na vaš račun."
   },
   "recoveryCodeTitle": {
     "message": "Sigurnosni kod"
@@ -584,7 +584,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "Za pristup nalogu koristite bilo koji sigurnosni ključ koji podržava FIDO U2F."
   },
   "u2fTitle": {
     "message": "FIDO U2F Sigurnosni ključ"
@@ -599,7 +599,7 @@
     "message": "Prijava nije dostupna"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Na ovom nalogu je omogućena prijava u dva koraka, međutim, ovaj uređaj ne podržava nijednog od konfigurisanih dobavljača u dva koraka."
   },
   "noTwoStepProviders2": {
     "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
@@ -677,10 +677,10 @@
     "message": "Dodaj novu stavku"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Dodaj novu fasciklu"
   },
   "view": {
-    "message": "View"
+    "message": "Pogled"
   },
   "account": {
     "message": "Nalog"
@@ -716,7 +716,7 @@
     "message": "Promjena glavne lozinke"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Možete promijeniti svoju glavnu lozinku u trezoru na internet strani bitwarden.com. Da li želite da posjetite internet lokaciju sada?"
   },
   "fingerprintPhrase": {
     "message": "Fingerprint Phrase",
@@ -987,7 +987,7 @@
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Vi ste premijum član!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Thank you for supporting Bitwarden."
