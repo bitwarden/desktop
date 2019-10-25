@@ -214,13 +214,13 @@
     "message": "Title"
   },
   "mr": {
-    "message": "Mr"
+    "message": "G"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Gđa"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Gđica"
   },
   "dr": {
     "message": "Dr"
@@ -343,7 +343,7 @@
     "message": "Jeste li sigurni da želite da zamijenite trenutnu lozinku?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "Nema fascikle",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -362,7 +362,7 @@
     "message": "Kopiraj link"
   },
   "length": {
-    "message": "Length"
+    "message": "Dužina"
   },
   "numWords": {
     "message": "Broj riječi"
@@ -593,7 +593,7 @@
     "message": "Email"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Verifikacioni kodovi će vam biti poslati na email adresu."
   },
   "loginUnavailable": {
     "message": "Login Unavailable"
