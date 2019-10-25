@@ -617,16 +617,16 @@
     "message": "Custom Environment"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Za napredne korisnike. Možete odrediti osnovni URL svake usluge nezavisno."
   },
   "baseUrl": {
-    "message": "Server link"
+    "message": "Server URL"
   },
   "apiUrl": {
-    "message": "API server link"
+    "message": "API server URL"
   },
   "webVaultUrl": {
-    "message": "Link tresora na internetu"
+    "message": "URL trezora na internetu"
   },
   "identityUrl": {
     "message": "Identity Server URL"
@@ -1089,10 +1089,10 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Pomoć"
   },
   "window": {
-    "message": "Window"
+    "message": "Prozor"
   },
   "checkPassword": {
     "message": "Check if password has been exposed."
@@ -1159,11 +1159,11 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Ažurirano",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "Lozinka ažurirana",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1173,7 +1173,7 @@
     "message": "File Format"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "UPOZORENJE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
@@ -1189,10 +1189,10 @@
     "message": "There are no collections to list."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Vlasništvo"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Ko je vlasnik ove stavke?"
   },
   "strong": {
     "message": "Jaka",
@@ -1210,7 +1210,7 @@
     "message": "Slaba glavna lozinka"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Glavna lozinka koju ste odabrali je slaba. Trebate koristiti jaku glavnu lozinku (ili pristupnu frazu) da biste pravilno zaštitili svoj Bitwarden nalog. Jeste li sigurni da želite da koristite ovu glavnu lozinku?"
   },
   "pin": {
     "message": "PIN",
