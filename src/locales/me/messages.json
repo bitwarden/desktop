@@ -868,7 +868,7 @@
     "message": "Jezik"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Promijenite jezik koji koristi aplikacija. Potrebno je ponovno pokretanje."
   },
   "theme": {
     "message": "Tema"
@@ -969,16 +969,16 @@
     "message": "Dodatne opcije prijave u dva koraka kao što su YubiKey, FIDO U2F i Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Higijena lozinke, zdravlje računa i podaci o krađi podataka kako bi trezor bio siguran."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Generator TOTP verifikacionog koda (2FA) za prijavu u vaš trezor."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Prioritetna korisnička podrška."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Sve buduće premijum karakteristike. Više uskoro!"
   },
   "premiumPurchase": {
     "message": "Kupi Premijum članstvo"
@@ -993,7 +993,7 @@
     "message": "Hvala vam što podržavate Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ /year!",
+    "message": "Sve za $PRICE$ /godišnje!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1067,10 +1067,10 @@
     "message": "Services"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "Sakrij Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "Sakrij ostale"
   },
   "showAll": {
     "message": "Pokaži sve"
@@ -1079,7 +1079,7 @@
     "message": "Napusti Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ kopiran",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1095,7 +1095,7 @@
     "message": "Prozor"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "Provjerite da li je lozinka izložena."
   },
   "passwordExposed": {
     "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
