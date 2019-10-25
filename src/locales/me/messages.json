@@ -683,10 +683,10 @@
     "message": "View"
   },
   "account": {
-    "message": "Account"
+    "message": "Nalog"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Učitavanje..."
   },
   "lockNow": {
     "message": "Zaključaj sada"
@@ -701,7 +701,7 @@
     "message": "Posjeti našu internet stranu"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Pošaljite izvještaj o grešci"
   },
   "blog": {
     "message": "Blog"
@@ -727,22 +727,22 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Idi na internet stranu trezora"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Preuzmi mobilnu aplikaciju"
   },
   "getBrowserExtension": {
     "message": "Get Browser Extension"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Završena sinhronizacija"
   },
   "syncingFailed": {
     "message": "Syncing failed"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Vaš trezor je zaključan. Verifikuj svoju glavnu lozinku za nastavak."
   },
   "unlock": {
     "message": "Otključaj"
@@ -761,7 +761,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Nevažeća glavna lozinka"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
