@@ -733,7 +733,7 @@
     "message": "Preuzmi mobilnu aplikaciju"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Preuzmi ekstenziju za pretraživač"
   },
   "syncingComplete": {
     "message": "Završena sinhronizacija"
@@ -770,7 +770,7 @@
     "message": "Two-step Login"
   },
   "lockOptions": {
-    "message": "Lock Options"
+    "message": "Opcije zaključavanja"
   },
   "lockOptionsDesc": {
     "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
@@ -865,7 +865,7 @@
     "message": "When the application is first started, only show an icon in the system tray."
   },
   "language": {
-    "message": "Language"
+    "message": "Jezik"
   },
   "languageDesc": {
     "message": "Change the language used by the application. Restart is required."
@@ -889,7 +889,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Provjeri ažuriranje"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -901,7 +901,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Ponovo pokreni za ažuriranje"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
@@ -913,16 +913,16 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Dostupna su ažuriranja"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Pronađeno je ažuriranje. Želite li ga preuzeti sada?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Ponovno pokretanje"
   },
   "later": {
-    "message": "Later"
+    "message": "Kasnije"
   },
   "noUpdatesAvailable": {
     "message": "No updates are currently available. You are using the latest version."
@@ -931,10 +931,10 @@
     "message": "Update Error"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Nepoznat"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kopiraj korisnički nalog"
   },
   "copyNumber": {
     "message": "Kopiraj broj",
@@ -1073,7 +1073,7 @@
     "message": "Hide Others"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "Pokaži sve"
   },
   "quitBitwarden": {
     "message": "Napusti Bitwarden"
