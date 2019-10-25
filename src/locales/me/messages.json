@@ -605,7 +605,7 @@
     "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Opcije prijave u dva koraka"
   },
   "selfHostedEnvironment": {
     "message": "Self-hosted Environment"
@@ -659,13 +659,13 @@
     "message": "Feature Unavailable"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Odjavljen"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Vaša sesija je istekla."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Jeste li sigurni da se želite odjaviti?"
   },
   "logOut": {
     "message": "Log Out"
@@ -748,7 +748,7 @@
     "message": "Otključaj"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prijavljen kao $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -764,7 +764,7 @@
     "message": "Nevažeća glavna lozinka"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Prijavljivanje u dva koraka čini vaš nalog sigurnijim tako što ćete morati da verifikujete prijavu na drugom uređaju, kao što su bezbjedonosni ključ, aplikacija za potvrđivanje, SMS, telefonski poziv ili e-pošta. Prijava u dva koraka može se omogućiti u trezoru na internet strani bitwarden.com. Da li želite da posjetite internet lokaciju sada?"
   },
   "twoStepLogin": {
     "message": "Two-step Login"
