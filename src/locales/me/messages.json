@@ -1167,7 +1167,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Izvezi trezor"
   },
   "fileFormat": {
     "message": "File Format"
@@ -1177,10 +1177,10 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Ovaj izvoz sadrži vaše podatke o trezoru u nešifrovanom formatu. Izvezenu datoteku ne treba da čuvate ili šaljete preko nesigurnih kanala (kao što je e-pošta). Izbrišite ga odmah nakon što završite."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
   },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
