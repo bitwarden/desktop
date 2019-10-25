@@ -560,7 +560,7 @@
     "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Sigurnosni kod"
   },
   "authenticatorAppTitle": {
     "message": "Aplikacija za autentifikaciju"
@@ -576,18 +576,18 @@
     "message": "Koristi YubiKey da pristupis svom nalogu. Radi sa YubiKey 4, 4 Nano, 4C i NEO uređajima."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Potvrdite sa Duo Security, korišćenjem Duo Mobile aplikacije, SMS-a, telefonskog poziva ili U2F sigurnosnog ključa.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Potvrdite sa Duo Security za svoju organizaciju pomoću aplikacije Duo Mobile, SMS-a, telefonskog poziva ili U2F sigurnosnog ključa.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
     "message": "Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F Sigurnosni ključ"
   },
   "emailTitle": {
     "message": "Email"
@@ -596,7 +596,7 @@
     "message": "Verifikacioni kodovi će vam biti poslati na email adresu."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Prijava nije dostupna"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
