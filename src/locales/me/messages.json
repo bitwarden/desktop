@@ -100,7 +100,7 @@
     "message": "Internet strana"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Bilješka"
   },
   "customFields": {
     "message": "Custom Fields"
@@ -928,7 +928,7 @@
     "message": "No updates are currently available. You are using the latest version."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Ažuriraj grešku"
   },
   "unknown": {
     "message": "Nepoznat"
@@ -945,22 +945,22 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premijum članstvo"
   },
   "premiumManage": {
     "message": "Manage Membership"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Svojim članstvom možete upravljati na trezoru u sklopu internet strane bitwarden.com. Da li želite da posjetite internet lokaciju sada?"
   },
   "premiumRefresh": {
     "message": "Refresh Membership"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Trenutno nijeste premijum član."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Prijavite se za premijum članstvo i dobijte:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB encrypted storage for file attachments."
