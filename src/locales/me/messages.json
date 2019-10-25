@@ -602,7 +602,7 @@
     "message": "Na ovom nalogu je omogućena prijava u dva koraka, međutim, ovaj uređaj ne podržava nijednog od konfigurisanih dobavljača u dva koraka."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Dodajte dodatne dobavljače koji su bolje podržani na svim uređajima (poput aplikacije za autentifikaciju)."
   },
   "twoStepOptions": {
     "message": "Opcije prijave u dva koraka"
@@ -1012,7 +1012,7 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nema lozinki za prikazivanje."
   },
   "undo": {
     "message": "Undo"
@@ -1107,7 +1107,7 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "Ova lozinka nije pronađena ni u jednoj poznatoj krađi podataka. Trebala bi biti sigurna za upotrebu."
   },
   "baseDomain": {
     "message": "Base domain"
@@ -1117,7 +1117,7 @@
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "Tačan"
   },
   "startsWith": {
     "message": "Počinje sa"
