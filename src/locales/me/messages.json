@@ -668,7 +668,7 @@
     "message": "Jeste li sigurni da se želite odjaviti?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Odjavi se"
   },
   "addNewLogin": {
     "message": "Dodaj novu prijavu"
@@ -767,7 +767,7 @@
     "message": "Prijavljivanje u dva koraka čini vaš nalog sigurnijim tako što ćete morati da verifikujete prijavu na drugom uređaju, kao što su bezbjedonosni ključ, aplikacija za potvrđivanje, SMS, telefonski poziv ili e-pošta. Prijava u dva koraka može se omogućiti u trezoru na internet strani bitwarden.com. Da li želite da posjetite internet lokaciju sada?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Prijava u dva koraka"
   },
   "lockOptions": {
     "message": "Opcije zaključavanja"
@@ -874,7 +874,7 @@
     "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Promijenite boju teme aplikacije."
   },
   "dark": {
     "message": "Tamna",
@@ -892,7 +892,7 @@
     "message": "Provjeri ažuriranje"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Verzija $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -904,7 +904,7 @@
     "message": "Ponovo pokreni za ažuriranje"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
+    "message": "Verzija $VERSION_NUM$ je spremna za instaliranje. Da biste dovršili instalaciju, morate ponovo pokrenuti aplikaciju. Da li želite da ponovo pokrenete i ažurirate?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -925,7 +925,7 @@
     "message": "Kasnije"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Trenutno nema dostupnih ažuriranja. Koristite najnoviju verziju."
   },
   "updateError": {
     "message": "Ažuriraj grešku"
@@ -948,13 +948,13 @@
     "message": "Premijum članstvo"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Upravljanje članstvom"
   },
   "premiumManageAlert": {
     "message": "Svojim članstvom možete upravljati na trezoru u sklopu internet strane bitwarden.com. Da li želite da posjetite internet lokaciju sada?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Osvježi članstvo"
   },
   "premiumNotCurrentMember": {
     "message": "Trenutno nijeste premijum član."
@@ -966,7 +966,7 @@
     "message": "1 GB šifrovanog skladišta za priloge datoteka."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Dodatne opcije prijave u dva koraka kao što su YubiKey, FIDO U2F i Duo."
   },
   "premiumSignUpReports": {
     "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
@@ -981,16 +981,16 @@
     "message": "All future premium features. More coming soon!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Kupi Premijum članstvo"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Premium članstvo možete kupiti u trezoru na internet strani bitwarden.com. Da li želite da posjetite internet lokaciju sada?"
   },
   "premiumCurrentMember": {
     "message": "Vi ste premijum član!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "Hvala vam što podržavate Bitwarden."
   },
   "premiumPrice": {
     "message": "All for just $PRICE$ /year!",
