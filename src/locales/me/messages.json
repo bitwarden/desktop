@@ -103,7 +103,7 @@
     "message": "Bilješka"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Prilagođeno polje"
   },
   "launch": {
     "message": "Pokreni"
@@ -295,7 +295,7 @@
     "message": "Fascikla"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Novo prilagođeno polje"
   },
   "value": {
     "message": "Vrijednost"
@@ -310,7 +310,7 @@
     "message": "Sakriveno"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "Binarna promjenljiva"
   },
   "remove": {
     "message": "Ukloni"
