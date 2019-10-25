@@ -596,7 +596,7 @@
     "message": "Verifikacioni kodovi će vam biti poslati na email adresu."
   },
   "loginUnavailable": {
-    "message": "Server link"
+    "message": "Login Unavailable"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
@@ -689,16 +689,16 @@
     "message": "Loading..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "Zaključaj sada"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Generator lozinki"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "Posalji nam email"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "Posjeti našu internet stranu"
   },
   "fileBugReport": {
     "message": "File a Bug Report"
@@ -707,13 +707,13 @@
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Prati nas"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Sinhronizacija trezora"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Promjena glavne lozinke"
   },
   "changeMasterPasswordConfirmation": {
     "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
