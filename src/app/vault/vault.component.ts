@@ -223,9 +223,18 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
-    viewCipher(cipher: CipherView) {
+    async viewCipher(cipher: CipherView) {
         if (this.action === 'view' && this.cipherId === cipher.id) {
             return;
+        } else if (document.getElementsByClassName("ng-dirty").length > 0 && (this.action == 'add' || this.action === 'edit')) {
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('unsavedChanges'),
+                this.i18nService.t('unsavedChangesTitle'),
+                this.i18nService.t('resume'),
+                this.i18nService.t('leave'),
+                "warning"
+            );
+            if (confirmed) return;
         }
 
         this.cipherId = cipher.id;
