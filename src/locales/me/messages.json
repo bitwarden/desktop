@@ -116,7 +116,7 @@
     "message": "Isključi vidljivost"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Sažmi/Proširi",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -1041,13 +1041,13 @@
     "message": "Reset Zoom"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "Uključi/isključi prikaz preko cijelog ekrana"
   },
   "reload": {
     "message": "Reload"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "Uključivanje/Isključivanje razvojnih alata"
   },
   "minimize": {
     "message": "Minimize",
@@ -1135,7 +1135,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "Uključi/Isključi opcije"
   },
   "organization": {
     "message": "Organizacija",
@@ -1148,7 +1148,7 @@
     "message": "Izađi"
   },
   "showHide": {
-    "message": "Show / Hide",
+    "message": "Prikaži/Sakrij",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
