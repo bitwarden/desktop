@@ -629,13 +629,13 @@
     "message": "URL trezora na internetu"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "URL servera indentifikacije"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "URL servera obavjetenja"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL servera ikonica"
   },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
@@ -656,7 +656,7 @@
     "message": "Saznaj više"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funkcija nije dostupna"
   },
   "loggedOut": {
     "message": "Odjavljen"
@@ -739,7 +739,7 @@
     "message": "Završena sinhronizacija"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Sinhronizacija nije uspjela"
   },
   "yourVaultIsLocked": {
     "message": "Vaš trezor je zaključan. Verifikuj svoju glavnu lozinku za nastavak."
@@ -773,7 +773,7 @@
     "message": "Opcije zaključavanja"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "Izaberite kada se će vaš trezor zaključati. Zaključani trezor zahtijeva da ponovo unesete svoju glavnu lozinku da biste mu ponovo pristupili."
   },
   "immediately": {
     "message": "Odmah"
@@ -809,16 +809,16 @@
     "message": "4 Sata"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Kada je sistem neaktivan"
   },
   "onSleep": {
     "message": "On System Sleep"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Kada je sistem zaključan"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Na restart"
   },
   "never": {
     "message": "Nikada"
