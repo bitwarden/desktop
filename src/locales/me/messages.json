@@ -1170,7 +1170,7 @@
     "message": "Izvezi trezor"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Format datoteke"
   },
   "warning": {
     "message": "UPOZORENJE",
@@ -1183,10 +1183,10 @@
     "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Ne pripadate nijednoj organizaciji. Organizacije vam omogućavaju da bezbjedno dijelite stavke sa drugim korisnicima."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Ne postoje kolekcije u listi."
   },
   "ownership": {
     "message": "Vlasništvo"
@@ -1253,10 +1253,10 @@
     "message": "Nadogradili ste na premijum."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Vrati"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Pretplatom možete da upravljate iz App Store-a. Da li želite da posjetite App Store sada?"
   },
   "legal": {
     "message": "Pravne informacije",
