@@ -827,7 +827,7 @@
     "message": "Bezbjednost"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Obrisati međuspremnik",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -1021,11 +1021,11 @@
     "message": "Redo"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Izreži",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Zalijepi",
     "description": "Paste from clipboard"
   },
   "selectAll": {
@@ -1217,25 +1217,25 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Otključaj sa PINom"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Podesite svoj PIN kod za otključavanje Bitwarden-a. Podešavanja PIN-a će se resetovati ako se ikada u potpunosti odjavite iz aplikacije."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Potreban je PIN kod."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Nevažeći PIN kod."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Vaš trezor je zaključan. Potvrdite svoj PIN kod da biste nastavili."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Zaključajte glavnom lozinkom pri ponovnom pokretanju"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Podešavanja"
   },
   "enableMenuBar": {
     "message": "Enable Menu Bar Icon"
@@ -1247,10 +1247,10 @@
     "message": "Hide to Menu Bar"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Morate izabrati barem jednu kolekciju."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Nadogradili ste na premijum."
   },
   "restore": {
     "message": "Restore"
@@ -1259,13 +1259,13 @@
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Pravne informacije",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Uslovi korišćenja"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Pravila o privatnosti"
   }
 }
