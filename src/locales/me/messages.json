@@ -608,10 +608,10 @@
     "message": "Opcije prijave u dva koraka"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Okruženje lokalne instalacije (SELF HOST)"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
+    "message": "Navedite osnovni URL vaše lokalne instalacije (HOST) Bitwardena."
   },
   "customEnvironment": {
     "message": "Custom Environment"
@@ -1113,7 +1113,7 @@
     "message": "Base domain"
   },
   "host": {
-    "message": "Host",
+    "message": "Lokalna instalacija (HOST)",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
