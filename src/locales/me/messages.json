@@ -853,10 +853,10 @@
     "message": "Kada se zatvori prozor, prikaži ikonu u sistemskoj traci."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "Omogući sistemsku traku"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Uvijek prikaži ikonu u sistemskoj traci."
   },
   "startToTray": {
     "message": "Start To Tray Icon"
@@ -1155,7 +1155,7 @@
     "message": "Hide to Tray"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Uvijek na vrhu",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1238,7 +1238,7 @@
     "message": "Podešavanja"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Omogući ikonu trake menija"
   },
   "enableMenuBarDesc": {
     "message": "Always show an icon in the menu bar."
