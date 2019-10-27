@@ -859,10 +859,10 @@
     "message": "Uvijek prikaži ikonu u sistemskoj traci."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Pokreni samo ikonu sistemske trake"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Kada se aplikacija prvi put pokrene, prikaži samo ikonu u sistemskoj traci."
   },
   "language": {
     "message": "Jezik"
@@ -1142,7 +1142,7 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Uobičajeno"
   },
   "exit": {
     "message": "Izađi"
@@ -1152,7 +1152,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "Sakrij u sistemskoj traci"
   },
   "alwaysOnTop": {
     "message": "Uvijek na vrhu",
@@ -1241,10 +1241,10 @@
     "message": "Omogući ikonu trake menija"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Uvijek prikaži ikonu trake menija."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Sakrij u traci menija"
   },
   "selectOneCollection": {
     "message": "Morate izabrati barem jednu kolekciju."
