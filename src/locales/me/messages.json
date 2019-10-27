@@ -614,7 +614,7 @@
     "message": "Navedite osnovni URL vaše lokalne instalacije (HOST) Bitwardena."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Prilagođeno okruženje"
   },
   "customEnvironmentFooter": {
     "message": "Za napredne korisnike. Možete odrediti osnovni URL svake usluge nezavisno."
@@ -638,7 +638,7 @@
     "message": "URL servera ikonica"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "URL-ovi okruženja su sačuvani."
   },
   "ok": {
     "message": "Ok"
@@ -650,7 +650,7 @@
     "message": "Ne"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Zamijeni lozinku"
   },
   "learnMore": {
     "message": "Saznaj više"
@@ -812,7 +812,7 @@
     "message": "Kada je sistem neaktivan"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Kada je sistem u hibernaciji"
   },
   "onLocked": {
     "message": "Kada je sistem zaključan"
@@ -1002,7 +1002,7 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Osvježavanje završeno"
   },
   "passwordHistory": {
     "message": "Istorija lozinki"
@@ -1032,10 +1032,10 @@
     "message": "Izaberi sve"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Uveličati"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Umanjiti"
   },
   "resetZoom": {
     "message": "Reset Zoom"
@@ -1044,7 +1044,7 @@
     "message": "Uključi/isključi prikaz preko cijelog ekrana"
   },
   "reload": {
-    "message": "Reload"
+    "message": "Osvježi"
   },
   "toggleDevTools": {
     "message": "Uključivanje/Isključivanje razvojnih alata"
@@ -1110,7 +1110,7 @@
     "message": "Ova lozinka nije pronađena ni u jednoj poznatoj krađi podataka. Trebala bi biti sigurna za upotrebu."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Osnovni domen"
   },
   "host": {
     "message": "Lokalna instalacija (HOST)",
