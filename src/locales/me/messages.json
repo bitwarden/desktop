@@ -838,19 +838,19 @@
     "message": "Onesposobi ikone internet strane"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "Ikone internet strane omogućavaju prepoznatljivu sliku pored svake stavke za prijavu u vašem trezoru."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "MInimiziraj u sistemsku traku"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "Kada se minimizira prozor, prikaži ikonu u sistemskoj traci."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Zatvori u sistemsku traku"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Kada se zatvori prozor, prikaži ikonu u sistemskoj traci."
   },
   "enableTray": {
     "message": "Enable Tray Icon"
