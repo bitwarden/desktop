@@ -719,11 +719,11 @@
     "message": "Možete promijeniti svoju glavnu lozinku u trezoru na internet strani bitwarden.com. Da li želite da posjetite internet lokaciju sada?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Fraza računa",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Jedinstvena fraza vašeg računa",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -1008,17 +1008,17 @@
     "message": "Istorija lozinki"
   },
   "clear": {
-    "message": "Clear",
+    "message": "Očisti",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Nema lozinki za prikazivanje."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Poništi"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Vrati"
   },
   "cut": {
     "message": "Izreži",
@@ -1038,7 +1038,7 @@
     "message": "Umanjiti"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Reset povećavanja"
   },
   "toggleFullScreen": {
     "message": "Uključi/isključi prikaz preko cijelog ekrana"
@@ -1050,14 +1050,14 @@
     "message": "Uključivanje/Isključivanje razvojnih alata"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimiziraj",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Povećavanje"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "Prikaži sve",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
@@ -1123,15 +1123,15 @@
     "message": "Počinje sa"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "Uobičajeni izraz",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "Otkrivanje podudaranja",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "Zadato otkrivanje podudaranja",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -1142,7 +1142,7 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Uobičajeno"
+    "message": "Zadato"
   },
   "exit": {
     "message": "Izađi"
