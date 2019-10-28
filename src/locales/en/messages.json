@@ -1268,16 +1268,10 @@
   "privacyPolicy": {
     "message": "Privacy Policy"
   },
-  "unsavedChanges": {
-    "message": "If you leave now then your current information won't be saved"
+  "unsavedChangesConfirmation": {
+    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
-  },
-  "resume": {
-    "message": "Resume"
-  },
-  "leave": {
-    "message": "Leave"
+    "message": "There Are Unsaved Changes"
   }
 }

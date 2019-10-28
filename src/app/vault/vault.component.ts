@@ -228,13 +228,13 @@ export class VaultComponent implements OnInit, OnDestroy {
             return;
         } else if (document.getElementsByClassName("ng-dirty").length > 0 && (this.action == 'add' || this.action === 'edit')) {
             const confirmed = await this.platformUtilsService.showDialog(
-                this.i18nService.t('unsavedChanges'),
+                this.i18nService.t('unsavedChangesConfirmation'),
                 this.i18nService.t('unsavedChangesTitle'),
-                this.i18nService.t('resume'),
-                this.i18nService.t('leave'),
+                this.i18nService.t('yes'),
+                this.i18nService.t('no'),
                 "warning"
             );
-            if (confirmed) return;
+            if (!confirmed) return;
         }
 
         this.cipherId = cipher.id;
