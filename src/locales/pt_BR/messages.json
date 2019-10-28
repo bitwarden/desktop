@@ -1259,13 +1259,13 @@
     "message": "Você pode gerenciar sua assinatura da App Store. Você quer visitar a App Store agora?"
   },
   "legal": {
-    "message": "Aspetos legais",
+    "message": "Aspectos Legais",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Termos de serviço"
+    "message": "Termos de Serviço"
   },
   "privacyPolicy": {
-    "message": "Política de privacidade"
+    "message": "Política de Privacidade"
   }
 }
