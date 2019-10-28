@@ -27,16 +27,16 @@
     "message": "Sigurna belješka"
   },
   "folders": {
-    "message": "Fascikla"
+    "message": "Fascikle"
   },
   "collections": {
-    "message": "Kolekcija"
+    "message": "Kolekcije"
   },
   "searchVault": {
     "message": "Pretraži trezor"
   },
   "addItem": {
-    "message": "Dodatj stavku"
+    "message": "Dodaj stavku"
   },
   "shared": {
     "message": "Podijeljeno"
@@ -51,7 +51,7 @@
     "message": "Podijeljena stavka"
   },
   "shareDesc": {
-    "message": "Izaberi organizaciju sa kojom želiš da podijeliš ovu stavku. Dijeljenje prenosi vlasništvo nad stavkom organizaciji. Nećete više biti direktni vlasnik ove stavke jer je dijeljenja."
+    "message": "Izaberi organizaciju sa kojom želiš da podijeliš ovu stavku. Dijeljenje prenosi vlasništvo nad stavkom organizaciji. Nećete više biti direktni vlasnik ove stavke kada je podijelite."
   },
   "attachments": {
     "message": "Prilog"
