@@ -632,7 +632,7 @@
     "message": "URL servera indentifikacije"
   },
   "notificationsUrl": {
-    "message": "URL servera obavjetenja"
+    "message": "URL servera obavještenja"
   },
   "iconsUrl": {
     "message": "URL servera ikonica"
@@ -1177,7 +1177,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Ovaj izvoz sadrži vaše podatke o trezoru u nešifrovanom formatu. Izvezenu datoteku ne treba da čuvate ili šaljete preko nesigurnih kanala (kao što je e-pošta). Izbrišite ga odmah nakon što završite."
+    "message": "Ovaj izvoz sadrži vaše podatke o trezoru u nešifrovanom formatu. Izvezenu datoteku ne treba da čuvate ili šaljete preko nesigurnih kanala (kao što je e-pošta). Izbrišite ga odmah nakon što završite sa upotrebom."
   },
   "exportMasterPassword": {
     "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
