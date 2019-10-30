@@ -458,7 +458,7 @@
     "message": "Glavna lozinka"
   },
   "masterPassDesc": {
-    "message": "Glavna lozinka je lozinka koju koristite za pristup trezoru. Veoma je važno da ne zaboravite svoju glavnu lozinku. Nema načina da vratite lozinku u slučaju da je zaboravite."
+    "message": "Glavna lozinka je lozinka koju koristite za pristup trezoru. Veoma je važno da ne zaboravite svoju glavnu lozinku. Nema načina da povratite lozinku u slučaju da je zaboravite."
   },
   "masterPassHintDesc": {
     "message": "Podsjetnik na glavnu lozinku vam može pomoći da zapamtite lozinku ako je zaboravite."
