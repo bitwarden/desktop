@@ -1250,22 +1250,22 @@
     "message": "Valitse vähintään yksi kokoelma."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Päivitit premiumiin."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Palauta"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Voit hallita tilaustasi App Storessa. Haluatko siirtyä App Storeen nyt?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Oikeudelliset tiedot",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Käyttöehdot"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Tietosuojakäytäntö"
   }
 }
