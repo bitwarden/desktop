@@ -226,13 +226,16 @@ export class VaultComponent implements OnInit, OnDestroy {
     async viewCipher(cipher: CipherView) {
         if (this.action === 'view' && this.cipherId === cipher.id) {
             return;
-        } else if (document.getElementsByClassName("ng-dirty").length > 0 && (this.action == 'add' || this.action === 'edit')) {
+        } else if (
+            (this.action == 'add' || this.action === 'edit')
+            && document.getElementById('details').getElementsByClassName('ng-dirty').length > 0
+        ) {
             const confirmed = await this.platformUtilsService.showDialog(
                 this.i18nService.t('unsavedChangesConfirmation'),
                 this.i18nService.t('unsavedChangesTitle'),
                 this.i18nService.t('yes'),
                 this.i18nService.t('no'),
-                "warning"
+                'warning'
             );
             if (!confirmed) return;
         }
