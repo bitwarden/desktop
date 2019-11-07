@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Política de privacidad"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "¿Estás seguro que deseas salir? Si sales ahora, tu información actual no será guardada"
+  },
+  "unsavedChangesTitle": {
+    "message": "Hay cambios sin guardar"
   }
 }
