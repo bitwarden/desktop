@@ -1269,9 +1269,9 @@
     "message": "Privaatsuspoliitika"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+    "message": "Oled kindel, et soovid lahkuda? Kui sa praegu lahkud, ei salvestata sisestatud või muudetud andmeid"
   },
   "unsavedChangesTitle": {
-    "message": "There Are Unsaved Changes"
+    "message": "Salvestamata muudatused"
   }
 }
