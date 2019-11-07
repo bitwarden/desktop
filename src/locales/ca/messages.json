@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Política de privacitat"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Segur que voleu marxar? Si marxeu ara, la vostra informació actual no es guardarà"
+  },
+  "unsavedChangesTitle": {
+    "message": "Hi ha canvis sense guardar"
   }
 }
