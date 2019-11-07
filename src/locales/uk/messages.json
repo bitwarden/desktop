@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Політика приватності"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Ви справді хочете піти? Якщо ви зараз підете, вашу поточну інформацію не буде збережено"
+  },
+  "unsavedChangesTitle": {
+    "message": "Є незбережені зміни"
   }
 }
