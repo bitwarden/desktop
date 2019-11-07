@@ -1269,9 +1269,9 @@
     "message": "隐私条款"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "您确定要离开吗？如果您现在离开，您当前的信息不会被保存。"
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "未保存的更改"
   }
 }
