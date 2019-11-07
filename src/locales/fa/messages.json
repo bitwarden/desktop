@@ -969,25 +969,25 @@
     "message": "گزینه‌های ورود دو مرحله‌ای اضافی مانند YubiKey, FIDO U2F و Duo."
   },
   "premiumSignUpReports": {
-    "message": "دانش رمزعبور، سلامت حساب کاربری و گزارش‌های نقص اطلاعات، برای حفظ امنیت شما."
+    "message": "دانش کلمه عبور، سلامت حساب کاربری و گزارش‌های نقص اطلاعات، برای حفظ امنیت گاوصندوق شما."
   },
   "premiumSignUpTotp": {
-    "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورود به گاوصندوقتان."
+    "message": "تولید کننده کد تایید (2FA) از نوع TOTP برای ورودهای موجود در گاوصندوقتان."
   },
   "premiumSignUpSupport": {
-    "message": "اولویت پشتیبانی از مشتری."
+    "message": "پشتیبانی از مشتری با اولویت."
   },
   "premiumSignUpFuture": {
-    "message": "تمام ویژگی های پرمیوم آینده. به زودی بیشتر!"
+    "message": "تمام ویژگی‌های پریمیوم آینده. به زودی بیشتر!"
   },
   "premiumPurchase": {
-    "message": "خرید پرمیوم"
+    "message": "خرید پریمیوم"
   },
   "premiumPurchaseAlert": {
-    "message": "شما میوانید عضویت پرمیوم را از وب گاوصندوق bitwarden.com خریداری کنید. مایلید اکنون از وبسایت بازید کنید؟"
+    "message": "شما می‌توانید عضویت پریمیوم را از گاوصندوق وب bitwarden.com خریداری کنید. آیا مایلید اکنون از وبسایت بازید کنید؟"
   },
   "premiumCurrentMember": {
-    "message": "شما یک عضو پرمیوم هستید!"
+    "message": "شما یک عضو پریمیوم هستید!"
   },
   "premiumCurrentMemberThanks": {
     "message": "برای حمایتتان از Bitwarden سپاسگزاریم."
@@ -1005,17 +1005,17 @@
     "message": "نوسازی کامل شد"
   },
   "passwordHistory": {
-    "message": "تاریخچه رمز عبور"
+    "message": "تاریخچه کلمه عبور"
   },
   "clear": {
     "message": "پاک کردن",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "هیچ رمز عبوری در لیست وجود ندارد."
+    "message": "هیچ کلمه عبوری در لیست وجود ندارد."
   },
   "undo": {
-    "message": "عقبگرد"
+    "message": "بازگرداندن"
   },
   "redo": {
     "message": "انجام مجدد"
@@ -1032,13 +1032,13 @@
     "message": "انتخاب همه"
   },
   "zoomIn": {
-    "message": "بزرگنمایی"
+    "message": "بزرگ‌نمایی"
   },
   "zoomOut": {
-    "message": "کوچک نمایی"
+    "message": "کوچک‌نمایی"
   },
   "resetZoom": {
-    "message": "بازگردانی بزرگنمایی"
+    "message": "بازگردانی بزرگ‌نمایی"
   },
   "toggleFullScreen": {
     "message": "تغییر به حالت تمام صفحه"
@@ -1054,7 +1054,7 @@
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "بزرگنمایی"
+    "message": "بزرگ‌نمایی"
   },
   "bringAllToFront": {
     "message": "آوردن همه به جلو",
@@ -1170,7 +1170,7 @@
     "message": "صادر کردن گاوصندوق"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "فرمت پرونده"
   },
   "warning": {
     "message": "اخطار",
@@ -1186,7 +1186,7 @@
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "هیچ مجموعه ای برای لیست کردن وجود ندارد."
+    "message": "هیچ مجموعه‌ای برای نمایش وجود ندارد."
   },
   "ownership": {
     "message": "مالکیت"
@@ -1207,7 +1207,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "گذرواژه اصلی ضعیف"
+    "message": "کلمه عبور اصلی ضعیف"
   },
   "weakMasterPasswordDesc": {
     "message": "رمزعبور اصلی که شما انتخاب کرده‌اید، ضعیف است. شما باید از یک رمزعبور (یا عبارت عبور) قوی استفاده کنید تا از حساب کاربری Bitwarden خود به خوبی محافظت کنید. آیا مطمئنید که می‌خواهید این رمزعبور را استفاده کنید؟"
