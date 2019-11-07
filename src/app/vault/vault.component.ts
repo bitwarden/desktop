@@ -626,7 +626,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     private functionWithChangeDetection(func: Function) {
-        this.ngZone.run(async () => {
+        this.ngZone.run(() => {
             func();
             this.changeDetectorRef.detectChanges();
         });
