@@ -1259,13 +1259,19 @@
     "message": "您可以从 App Store 管理您的订阅。现在要访问 App Store 吗？"
   },
   "legal": {
-    "message": "Legal",
+    "message": "法律条款",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "服务条款"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "隐私条款"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+  },
+  "unsavedChangesTitle": {
+    "message": "Unsaved Changes"
   }
 }
