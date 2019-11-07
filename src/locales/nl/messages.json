@@ -289,7 +289,7 @@
     "message": "Bewerken"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticatiesleutel (TOTP)"
+    "message": "Authenticatiecode (TOTP)"
   },
   "folder": {
     "message": "Map"
@@ -353,7 +353,7 @@
     "message": "Map bewerken"
   },
   "regeneratePassword": {
-    "message": "Wachtwoord opnieuw genereren"
+    "message": "Opnieuw genereren"
   },
   "copyPassword": {
     "message": "Wachtwoord kopiëren"
@@ -452,7 +452,7 @@
     "message": "Inloggen"
   },
   "submit": {
-    "message": "Versturen"
+    "message": "Opslaan"
   },
   "masterPass": {
     "message": "Hoofdwachtwoord"
@@ -506,7 +506,7 @@
     "message": "Er is een onverwachte fout opgetreden."
   },
   "itemInformation": {
-    "message": "Item-informatie"
+    "message": "Item"
   },
   "noItemsInList": {
     "message": "Er zijn geen items om weer te geven."
@@ -596,7 +596,7 @@
     "message": "Je ontvangt verificatiecodes via e-mail."
   },
   "loginUnavailable": {
-    "message": "Inloggen niet beschikbaar"
+    "message": "Login niet beschikbaar"
   },
   "noTwoStepProviders": {
     "message": "Dit account heeft tweestapsaanmelding ingeschakeld, maar dit apparaat ondersteunt geen van de geconfigureerde aanbieders."
@@ -831,7 +831,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatisch gekopieerde waarden van je klembord wissen.",
+    "message": "Gekopieerde waarden automatisch van het klembord wissen.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
@@ -1005,7 +1005,7 @@
     "message": "Bijwerken voltooid"
   },
   "passwordHistory": {
-    "message": "Wachtwoordgeschiedenis"
+    "message": "Geschiedenis"
   },
   "clear": {
     "message": "Wissen",
@@ -1213,7 +1213,7 @@
     "message": "Je hebt een zwak hoofdwachtwoord gekozen. Gebruik een sterk hoofdwachtwoord (of wachtwoordzin) om jouw Bitwarden-account goed te beschermen. Weet je zeker dat je dit hoofdwachtwoord wilt gebruiken?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN-code",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Privacybeleid"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Weet je zeker dat je wilt afsluiten? Als je nu afsluiten, gaan je laatste wijzigingen verloren."
+  },
+  "unsavedChangesTitle": {
+    "message": "Niet-opgeslagen wijzigingen"
   }
 }
