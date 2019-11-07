@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Политика за поверителност"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+  },
+  "unsavedChangesTitle": {
+    "message": "Unsaved Changes"
   }
 }

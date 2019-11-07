@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Политика конфиденциальности"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Вы уверены, что хотите выйти? В этом случае ваша текущая информация не будет сохранена."
+  },
+  "unsavedChangesTitle": {
+    "message": "Несохраненные изменения"
   }
 }

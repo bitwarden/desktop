@@ -371,7 +371,7 @@
     "message": "Worttrennzeichen"
   },
   "capitalize": {
-    "message": "Großschreiben",
+    "message": "Wortanfänge großschreiben",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -1250,7 +1250,7 @@
     "message": "Sie müssen mindestens eine Sammlung auswählen."
   },
   "premiumUpdated": {
-    "message": "Sie haben zum Premium Abo gewechselt."
+    "message": "Sie haben ein Premium-Abo aktiviert."
   },
   "restore": {
     "message": "Wiederherstellen"
@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Datenschutzerklärung"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Wollen Sie wirklich aufhören? Wenn Sie jetzt aufhören, werden Ihre aktuellen Eingaben nicht gespeichert"
+  },
+  "unsavedChangesTitle": {
+    "message": "Es gibt ungesicherte Änderungen"
   }
 }

@@ -1253,7 +1253,7 @@
     "message": "您已升級至進階版。"
   },
   "restore": {
-    "message": "恢復"
+    "message": "還原"
   },
   "premiumManageAlertAppStore": {
     "message": "可到 App Store 管理訂閱內容。您想要現在前往 App Store 嗎？"
@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "隱私權政策"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "您真的要離開嗎？現在離開的話將不會儲存目前資訊"
+  },
+  "unsavedChangesTitle": {
+    "message": "有尚未儲存的變更"
   }
 }
