@@ -1269,9 +1269,9 @@
     "message": "Política de privacitat"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+    "message": "Segur que voleu marxar? Si marxeu ara, la vostra informació actual no es guardarà"
   },
   "unsavedChangesTitle": {
-    "message": "There Are Unsaved Changes"
+    "message": "Hi ha canvis sense guardar"
   }
 }
