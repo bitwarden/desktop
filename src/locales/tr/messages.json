@@ -1269,9 +1269,9 @@
     "message": "Gizlilik Politikası"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+    "message": "Çıkmak istediğinize emin misiniz? Eğer şimdi çıkarsanız bilgileriniz kayıt edilmeyecektir"
   },
   "unsavedChangesTitle": {
-    "message": "There Are Unsaved Changes"
+    "message": "Kayıt edilmemiş değişiklikler var"
   }
 }
