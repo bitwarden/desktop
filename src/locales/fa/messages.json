@@ -63,10 +63,10 @@
     "message": "نام"
   },
   "uri": {
-    "message": "نشانی اینترنتی"
+    "message": "URI"
   },
   "uriPosition": {
-    "message": "آدرس اینترنتی $POSITION$",
+    "message": "URI $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -76,7 +76,7 @@
     }
   },
   "newUri": {
-    "message": "آدرس اینترنتی جدید"
+    "message": "URI جدید"
   },
   "username": {
     "message": "نام کاربری"
@@ -310,7 +310,7 @@
     "message": "مخفی"
   },
   "cfTypeBoolean": {
-    "message": "بولین"
+    "message": "بولی"
   },
   "remove": {
     "message": "حذف"
@@ -359,7 +359,7 @@
     "message": "رونوشت کلمه عبور"
   },
   "copyUri": {
-    "message": "کپی آدرس اینترنتی"
+    "message": "رونوشت URI"
   },
   "length": {
     "message": "طول"
@@ -1183,7 +1183,7 @@
     "message": "کلمه عبور اصلی خود را برای خروجی گرفتن از گاوصندوقتان وارد کنید."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "شما به هیچ سازمانی تعلق ندارید. سازمان‌ها به شما اجازه می‌دهند تا داده‌های خود را را با کاربران دیگر به صورت امن به اشتراک بگذارید."
   },
   "noCollectionsInList": {
     "message": "هیچ مجموعه‌ای برای نمایش وجود ندارد."
