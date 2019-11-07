@@ -841,25 +841,25 @@
     "message": "آیکون‌های وبسایت یک تصویر قابل تشخیص در کنار هر داده ورودی ارائه می‌دهد."
   },
   "enableMinToTray": {
-    "message": "کوچک کردن به Tray Icon"
+    "message": "کوچک کردن به نماد Tray"
   },
   "enableMinToTrayDesc": {
-    "message": "هنگام کوچک‌کردن پنچره، یک آیکون در قسمت tray بجای آن نشان بده."
+    "message": "هنگام کوچک‌کردن پنچره، یک نماد در قسمت نمادهای سیستم بجای آن نشان بده."
   },
   "enableCloseToTray": {
-    "message": "بستن به آیکون Tray"
+    "message": "بستن به نماد Tray"
   },
   "enableCloseToTrayDesc": {
-    "message": "هنگام بستن پنچره، یک آیکون در قسمت tray بجای آن نشان بده."
+    "message": "هنگام بستن پنچره، یک نماد در قسمت نمادهای سیستم بجای آن نشان بده."
   },
   "enableTray": {
-    "message": "فعال کردن آیکون Tray"
+    "message": "فعال کردن نماد Tray"
   },
   "enableTrayDesc": {
-    "message": "همیشه یک آیکون در قسمت Tray سیستم نشان بده."
+    "message": "همیشه یک نماد در قسمت نمادهای سیستم نشان بده."
   },
   "startToTray": {
-    "message": "در زمان شروع، به آیکون Tray برو"
+    "message": "در زمان شروع، به نماد Tray برو"
   },
   "startToTrayDesc": {
     "message": "زمانی که برنامه برای بار اول شروع می‌شود، فقط یک نماد در نمادهای سیستم نشان بده."
@@ -868,7 +868,7 @@
     "message": "زبان"
   },
   "languageDesc": {
-    "message": "تغییر زبان توسط برنامه انجام شد. نیاز به راه اندازی مجدد."
+    "message": "تغییر زبان مورد استفاده برنامه انجام شد. نیاز به راه اندازی مجدد."
   },
   "theme": {
     "message": "پوسته"
@@ -877,7 +877,7 @@
     "message": "تغییر رنگ پوسته برنامه."
   },
   "dark": {
-    "message": "تاریک",
+    "message": "تیره",
     "description": "Dark color"
   },
   "light": {
@@ -885,11 +885,11 @@
     "description": "Light color"
   },
   "copy": {
-    "message": "کپی",
+    "message": "رونوشت",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "بررسی بروزرسانی ها"
+    "message": "بررسی برای بروزرسانی‌ها"
   },
   "version": {
     "message": "نسخه $VERSION_NUM$",
@@ -904,7 +904,7 @@
     "message": "برای بروزرسانی راه اندازی مجدد کنید"
   },
   "restartToUpdateDesc": {
-    "message": "نسخه ی $VERSION_NUM$ آماده نصب است. باید برای نصب Bitwarden را مجددا راه اندازی کنید. آیا تمایل به راه اندازی مجدد و نصب هستید؟",
+    "message": "نسخه $VERSION_NUM$ آماده نصب است. برای تکمیل نصب باید Bitwarden را مجددا راه اندازی کنید. آیا تمایل به راه اندازی مجدد و نصب دارید؟",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1079,7 +1079,7 @@
     "message": "خروج از Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ کپی شد",
+    "message": "$VALUE$ رونوشت شد",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1095,10 +1095,10 @@
     "message": "پنجره"
   },
   "checkPassword": {
-    "message": "بررسی کنید که آیا رمز عبور افشا شده است."
+    "message": "بررسی اینکه که آیا کلمه عبور افشا شده است."
   },
   "passwordExposed": {
-    "message": "این رمز عبور در رخنه داده ها $VALUE$ بار افشا شده است. باید تغییرش دهید.",
+    "message": "این کلمه عبور $VALUE$ بار در رخنه داده‌ها افشا شده است. باید آن را تغییر دهید.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1107,7 +1107,7 @@
     }
   },
   "passwordSafe": {
-    "message": "این رمز عبور در هیچ رخنه داده ای شناخته نشده است. باید برای امنیت از آن استفاده کنید."
+    "message": "این کلمه عبور در هیچ رخنه داده‌ای شناخته نشده است. باید برای استفاده امن باشد."
   },
   "baseDomain": {
     "message": "دامنه پایه"
