@@ -150,16 +150,16 @@
     "message": "شماره مجوز"
   },
   "email": {
-    "message": "ایمیل"
+    "message": "رایانامه"
   },
   "phone": {
     "message": "تلفن"
   },
   "address": {
-    "message": "آدرس"
+    "message": "نشانی"
   },
   "premiumRequired": {
-    "message": "در نسخه پرمیوم کار میکند"
+    "message": "در نسخه پرمیوم کار می‌کند"
   },
   "premiumRequiredDesc": {
     "message": "برای استفاده از این ویژگی عضویت پرمیوم لازم است."
@@ -207,7 +207,7 @@
     "message": "دسامبر"
   },
   "ex": {
-    "message": "سابق.",
+    "message": "مثال.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
@@ -217,7 +217,7 @@
     "message": "آقا"
   },
   "mrs": {
-    "message": "خانم"
+    "message": "بانو"
   },
   "ms": {
     "message": "خانم"
@@ -238,7 +238,7 @@
     "message": "ساير"
   },
   "generatePassword": {
-    "message": "تولید رمز عبور"
+    "message": "تولید کلمه عبور"
   },
   "type": {
     "message": "نوع"
