@@ -1269,9 +1269,9 @@
     "message": "Privacy Policy"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+    "message": "Tem a certeza que pretende sair? Se sair agora, as suas informações atuais não irão ser guardadas"
   },
   "unsavedChangesTitle": {
-    "message": "There Are Unsaved Changes"
+    "message": "Existem alterações não guardadas"
   }
 }
