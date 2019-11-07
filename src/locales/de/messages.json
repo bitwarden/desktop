@@ -371,7 +371,7 @@
     "message": "Worttrennzeichen"
   },
   "capitalize": {
-    "message": "Großschreiben",
+    "message": "Wortanfänge großschreiben",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Datenschutzerklärung"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+  },
+  "unsavedChangesTitle": {
+    "message": "There Are Unsaved Changes"
   }
 }
