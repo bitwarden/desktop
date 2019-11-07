@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Privaatsuspoliitika"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Oled kindel, et soovid lahkuda? Kui sa praegu lahkud, ei salvestata sisestatud või muudetud andmeid"
+  },
+  "unsavedChangesTitle": {
+    "message": "Salvestamata muudatused"
   }
 }
