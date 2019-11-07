@@ -1269,9 +1269,9 @@
     "message": "Privacybeleid"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Weet je zeker dat je wilt afsluiten? Als je nu afsluiten, gaan je laatste wijzigingen verloren."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Niet-opgeslagen wijzigingen"
   }
 }
