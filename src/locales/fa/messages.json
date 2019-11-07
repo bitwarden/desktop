@@ -521,10 +521,10 @@
     "message": "ادامه"
   },
   "enterVerificationCodeApp": {
-    "message": "کد ۶ رقمی تایید را از برنامه تایید کننده وارد کنید."
+    "message": "کد تایید ۶ رقمی را از برنامه تایید کننده‌تان وارد کنید."
   },
   "enterVerificationCodeEmail": {
-    "message": "کد ۶ رقمی تایید را که به $EMAIL$ ارسال شد را وارد کنید.",
+    "message": "کد تایید ۶ رقمی که به $EMAIL$ ارسال شد را وارد کنید.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -533,7 +533,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "ایمیل تایید به $EMAIL$ ارسال شد.",
+    "message": "رایانامه تایید به $EMAIL$ ارسال شد.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -545,38 +545,38 @@
     "message": "مرا به خاطر بسپار"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "ارسال دوباره ایمیل کد تایید"
+    "message": "ارسال دوباره رایانامه کد تایید"
   },
   "useAnotherTwoStepMethod": {
-    "message": "استفاده از روش ورود دو مرحله ای دیگر"
+    "message": "استفاده از روش ورود دو مرحله‌ای دیگر"
   },
   "insertYubiKey": {
     "message": "YubiKey خود را وارد پورت USB رایانه کنید، بعد دکمه آن را بفشارید."
   },
   "insertU2f": {
-    "message": "کلید امنیتی خود را وارد پورت USB رایانه کنید، اگر دکمه ای دارد آن را بفشارید."
+    "message": "کلید امنیتی خود را وارد پورت USB رایانه کنید، اگر دکمه‌ای دارد آن را بفشارید."
   },
   "recoveryCodeDesc": {
-    "message": "دسترسی به تمامی ارائه دهندگان دو مرحله ای را از دست داده اید؟ از کد بازیابی خود برای غیرفعال سازی ارائه دهندگان دو مرحله ای از حسابتان استفاده کنید."
+    "message": "دسترسی به تمامی ارائه‌دهندگان دو مرحله‌ای را از دست داده‌اید؟ از کد بازیابی خود برای غیرفعال‌سازی ارائه‌دهندگان دو مرحله‌ای حسابتان استفاده کنید."
   },
   "recoveryCodeTitle": {
     "message": "کد بازیابی"
   },
   "authenticatorAppTitle": {
-    "message": "برنامه تأیید کننده"
+    "message": "برنامه تاییدکننده"
   },
   "authenticatorAppDesc": {
-    "message": "از یک اپ تایید کننده (همانند Authy یا Google Authenticator) استفاده کنید تا کدهای تایید بر پایه زمان تولید کنید.",
+    "message": "از یک برنامه تاییدکننده (همانند Authy یا Google Authenticator) استفاده کنید تا کدهای تایید بر پایه زمان تولید کنید.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "کلید امنیت YubiKey OTP"
+    "message": "کلید امنیتی YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "از یک YubiKey برای دسترسی به حسابتان استفاده کنید. همراه با دستگاه های YubiKey 4،4 Nano، NEO کار میکند."
+    "message": "از یک YubiKey برای دسترسی به حسابتان استفاده کنید. همراه با دستگاه‌های YubiKey 4،4 Nano، NEO کار میکند."
   },
   "duoDesc": {
-    "message": "تایید کنید همراه با Duo Security از اپ موبایل Dou استفاده کنید، پیامک،تماس تلفنی، یا کلید امنیتی U2F.",
+    "message": "با Duo Security با استفاده از برنامه تلفن همراه، پیامک، تماس تلفنی، یا کلید امنیتی U2F تایید کنید.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
