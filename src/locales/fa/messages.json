@@ -334,7 +334,7 @@
     "message": "حذف پیوست"
   },
   "deleteItemConfirmation": {
-    "message": "آیا مطمئن هستید می خواهید این مورد را حذف کنید؟"
+    "message": "آیا مطمئن هستید که می‌خواهید این مورد را حذف کنید؟"
   },
   "deletedItem": {
     "message": "مورد حذف شد"
@@ -353,10 +353,10 @@
     "message": "ويرايش پوشه"
   },
   "regeneratePassword": {
-    "message": "تولید رمز عبور"
+    "message": "تولید دوباره کلمه عبور"
   },
   "copyPassword": {
-    "message": "کپی رمز عبور"
+    "message": "رونوشت کلمه عبور"
   },
   "copyUri": {
     "message": "کپی آدرس اینترنتی"
@@ -368,7 +368,7 @@
     "message": "تعداد کلمات"
   },
   "wordSeparator": {
-    "message": "کلمه جداکننده"
+    "message": "جداکننده کلمات"
   },
   "capitalize": {
     "message": "بزرگ نوشتن حرف اول",
@@ -397,7 +397,7 @@
     "message": "جستجوی پوشه"
   },
   "searchFavorites": {
-    "message": "جستجوی علاقمندیها"
+    "message": "جستجوی مورد علاقه‌ها"
   },
   "searchType": {
     "message": "نوع جستجو",
@@ -407,7 +407,7 @@
     "message": "افزودن پیوست جدید"
   },
   "deletedAttachment": {
-    "message": "حذف پیوست"
+    "message": "پیوست حذف شد"
   },
   "deleteAttachmentConfirmation": {
     "message": "آیا از پاک کردن این پیوست مطمئن هستید؟"
@@ -416,25 +416,25 @@
     "message": "پیوست ذخیره شد."
   },
   "file": {
-    "message": "فایل"
+    "message": "پرونده"
   },
   "selectFile": {
-    "message": "انتخاب یک فایل."
+    "message": "ﺍﻧﺘﺨﺎﺏ یک ﭘﺮﻭﻧﺪﻩ."
   },
   "maxFileSize": {
-    "message": "بیشترین حجم فایل 100 مگابایت است."
+    "message": "بیشترین حجم فایل ۱۰۰ مگابایت است."
   },
   "updateKey": {
-    "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمیتوانید از این قابلیت استفاده کنید."
+    "message": "تا زمانی که کد رمزنگاری را به روز نکنید نمی‌توانید از این قابلیت استفاده کنید."
   },
   "options": {
-    "message": "گزینه ها"
+    "message": "گزینه‌ها"
   },
   "editedFolder": {
-    "message": "پوشه ویرایش شده"
+    "message": "پوشه ویرایش شد"
   },
   "addedFolder": {
-    "message": "پوشه اضافه شده"
+    "message": "پوشه اضافه شد"
   },
   "deleteFolderConfirmation": {
     "message": "آیا از حذف این پوشه اطمینان دارید؟"
