@@ -51,7 +51,7 @@
     "message": "مورد اشتراک‌گذاری شد"
   },
   "shareDesc": {
-    "message": "تشکیلاتی که می‌خواهید این مورد را با آن به اشتراک بگذارید انتخاب کنید. پس از اشتراک‌گذاری مالکیت موارد به آن تشکیلات انتقال می‌یابد. شما دیگر نمی‌توانید صاحب اصلی این مورد پس از اشتراک‌گذاری آن باشید."
+    "message": "تشکیلاتی که می‌خواهید این مورد را با آن به اشتراک بگذارید انتخاب کنید. پس از اشتراک‌گذاری مالکیت موارد به آن تشکیلات انتقال می‌یابد. پس از اشتراک‌گذاری این مورد شما دیگر نمی‌توانید صاحب اصلی آن باشید."
   },
   "attachments": {
     "message": "پیوست‌ها"
@@ -85,13 +85,13 @@
     "message": "کلمه عبور"
   },
   "passphrase": {
-    "message": "کلمه عبور"
+    "message": "عبارت عبور"
   },
   "editItem": {
     "message": "ویرایش مورد"
   },
   "emailAddress": {
-    "message": "آدرس پست الکترونیک"
+    "message": "نشانی رایانامه"
   },
   "verificationCodeTotp": {
     "message": "کد تایید (TOTP)"
@@ -100,7 +100,7 @@
     "message": "وب سایت"
   },
   "notes": {
-    "message": "یادداشت ها"
+    "message": "یادداشت‌ها"
   },
   "customFields": {
     "message": "فیلدهای سفارشی"
@@ -109,14 +109,14 @@
     "message": "راه اندازی"
   },
   "copyValue": {
-    "message": "کپی مقدار",
+    "message": "رونوشت مقدار",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "تغییر قابلیت نمایش"
+    "message": "نمایش"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "باز و بسته کردن",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
