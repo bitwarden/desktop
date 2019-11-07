@@ -1269,9 +1269,9 @@
     "message": "Politique de confidentialité"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+    "message": "Êtes-vous certain de vouloir partir ? Si vous quittez maintenant, vos informations actuelles ne seront pas sauvegardées"
   },
   "unsavedChangesTitle": {
-    "message": "There Are Unsaved Changes"
+    "message": "Il y a des modifications non enregistrées"
   }
 }
