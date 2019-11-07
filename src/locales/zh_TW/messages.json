@@ -1269,9 +1269,9 @@
     "message": "隱私權政策"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+    "message": "您真的要離開嗎？現在離開的話將不會儲存目前資訊"
   },
   "unsavedChangesTitle": {
-    "message": "There Are Unsaved Changes"
+    "message": "有尚未儲存的變更"
   }
 }
