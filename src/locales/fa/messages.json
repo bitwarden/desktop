@@ -425,7 +425,7 @@
     "message": "بیشترین حجم فایل ۱۰۰ مگابایت است."
   },
   "updateKey": {
-    "message": "تا زمانی که کد رمزنگاری را به روز نکنید نمی‌توانید از این قابلیت استفاده کنید."
+    "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمی‌توانید از این قابلیت استفاده کنید."
   },
   "options": {
     "message": "گزینه‌ها"
@@ -904,7 +904,7 @@
     "message": "برای بروزرسانی راه اندازی مجدد کنید"
   },
   "restartToUpdateDesc": {
-    "message": "نسخه $VERSION_NUM$ آماده نصب است. برای تکمیل نصب باید Bitwarden را مجددا راه اندازی کنید. آیا تمایل به راه اندازی مجدد و نصب دارید؟",
+    "message": "نسخه $VERSION_NUM$ آماده نصب است. برای تکمیل نصب باید Bitwarden را مجددا راه اندازی کنید. آیا تمایل به راه اندازی مجدد و بروزرسانی دارید؟",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -922,51 +922,51 @@
     "message": "راه اندازی مجدد"
   },
   "later": {
-    "message": "بعداً"
+    "message": "بعدا"
   },
   "noUpdatesAvailable": {
-    "message": "در حال حاظر هیچ بروزرسانی در دسترس نمیباشد. شما در در حال استفاده از آخرین نسخه هستید."
+    "message": "در حال حاظر هیچ بروزرسانی در دسترس نمی‌باشد. شما در در حال استفاده از آخرین نسخه هستید."
   },
   "updateError": {
-    "message": "خطا در بروز رسانی"
+    "message": "خطا در بروزرسانی"
   },
   "unknown": {
     "message": "ناشناخته"
   },
   "copyUsername": {
-    "message": "کپی نام کاربری"
+    "message": "رونوشت نام کاربری"
   },
   "copyNumber": {
-    "message": "کپی شماره",
+    "message": "رونوشت شماره",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "کپی کد امنیتی",
+    "message": "رونوشت کد امنیتی",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "عضویت پرمیوم"
+    "message": "عضویت پریمیوم"
   },
   "premiumManage": {
     "message": "مدیریت عضویت"
   },
   "premiumManageAlert": {
-    "message": "شما میتوانید عضویت خود را در نسخه وب گاوصندوق در bitwarden.com مدیریت کنید. آیا مایل به دیدن وبسایت هستید؟"
+    "message": "شما می‌توانید عضویت خود را در نسخه وب گاوصندوق در bitwarden.com مدیریت کنید. آیا مایل به دیدن وبسایت هستید؟"
   },
   "premiumRefresh": {
     "message": "نوسازی عضویت"
   },
   "premiumNotCurrentMember": {
-    "message": "شما در حال حاظر کاربر پرمیوم نیستید."
+    "message": "شما در حال حاظر کاربر پریمیوم نیستید."
   },
   "premiumSignUpAndGet": {
     "message": "ثبت نام برای عضویت پرمیوم و گرفتن:"
   },
   "premiumSignUpStorage": {
-    "message": "۱ گیگابایت فضای ذخیره سازی رمزنگاری شده."
+    "message": "۱ گیگابایت فضای ذخیره‌سازی رمزنگاری شده برای پرونده‌های پیوست."
   },
   "premiumSignUpTwoStep": {
-    "message": "گزینه های ورود اضافی دو مرحله ای مانند YubiKey, FIDO U2F و Duo."
+    "message": "گزینه‌های ورود دو مرحله‌ای اضافی مانند YubiKey, FIDO U2F و Duo."
   },
   "premiumSignUpReports": {
     "message": "دانش رمزعبور، سلامت حساب کاربری و گزارش‌های نقص اطلاعات، برای حفظ امنیت شما."
@@ -1067,10 +1067,10 @@
     "message": "خدمات"
   },
   "hideBitwarden": {
-    "message": "مخفی کردن Bitwarden"
+    "message": "پنهان‌سازی Bitwarden"
   },
   "hideOthers": {
-    "message": "مخفی کردن بقیه"
+    "message": "پنهان‌سازی بقیه"
   },
   "showAll": {
     "message": "نمایش همه"
@@ -1127,18 +1127,18 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "بازرسی تطابق",
+    "message": "تشخیص تطابق",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "بازرسی تطابق پیشفرض",
+    "message": "تشخیص تطابق پیشفرض",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
     "message": "گزینه های تبدیل"
   },
   "organization": {
-    "message": "سازماندهی",
+    "message": "سازمان",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
@@ -1148,11 +1148,11 @@
     "message": "خروج"
   },
   "showHide": {
-    "message": "نمایش/پنهان",
+    "message": "نمایش / پنهان‌سازی",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "مخفی کردن در Tray"
+    "message": "پنهان‌سازی در قسمت نمادهای سیستم"
   },
   "alwaysOnTop": {
     "message": "همشه در بالا",
@@ -1163,7 +1163,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "گذرواژه بروز رسانی شد",
+    "message": "کلمه عبور بروزرسانی شد",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1244,7 +1244,7 @@
     "message": "همیشه یک آیکون در نوار منو نشان بده."
   },
   "hideToMenuBar": {
-    "message": "پنهان کردن در نوار منو"
+    "message": "پنهان‌سازی در نوار منو"
   },
   "selectOneCollection": {
     "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
