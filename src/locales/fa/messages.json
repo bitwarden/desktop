@@ -1269,9 +1269,9 @@
     "message": "سیاست حفظ حریم خصوصی"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+    "message": "آیا مطمئن هستید که می‌خواهید خارج شوید؟ اگر الان خارج شوید اطلاعات فعلی ذخیره نخواهند شد"
   },
   "unsavedChangesTitle": {
-    "message": "There Are Unsaved Changes"
+    "message": "تغییرات ذخیره نشده وجود دارند"
   }
 }
