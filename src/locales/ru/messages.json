@@ -1269,7 +1269,7 @@
     "message": "Политика конфиденциальности"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Вы уверены, что хотите выйти? В этом случае ваша текущая информация не будет сохранена."
   },
   "unsavedChangesTitle": {
     "message": "Unsaved Changes"
