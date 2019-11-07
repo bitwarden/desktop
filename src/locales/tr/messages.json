@@ -6,7 +6,7 @@
     "message": "Filtreler"
   },
   "allItems": {
-    "message": "Tüm öğeler"
+    "message": "Tüm Ögeler"
   },
   "favorites": {
     "message": "Favoriler"
@@ -36,7 +36,7 @@
     "message": "Kasada Ara"
   },
   "addItem": {
-    "message": "Ürün Ekle"
+    "message": "Öge Ekle"
   },
   "shared": {
     "message": "Paylaşılan"
@@ -88,7 +88,7 @@
     "message": "Parola"
   },
   "editItem": {
-    "message": "Öğeyi Düzenle"
+    "message": "Ögeyi Düzenle"
   },
   "emailAddress": {
     "message": "Eposta Adresi"
@@ -283,7 +283,7 @@
     "message": "Sil"
   },
   "favorite": {
-    "message": "Favori"
+    "message": "Favorilere Ekle"
   },
   "edit": {
     "message": "Düzenle"
@@ -325,7 +325,7 @@
     "message": "Öğe düzenlendi"
   },
   "deleteItem": {
-    "message": "Öğeyi Sil"
+    "message": "Ögeyi Sil"
   },
   "deleteFolder": {
     "message": "Klasörü Sil"
@@ -353,7 +353,7 @@
     "message": "Klasörü Düzenle"
   },
   "regeneratePassword": {
-    "message": "Tekrar Parola Oluştur"
+    "message": "Yeni Parola Oluştur"
   },
   "copyPassword": {
     "message": "Parolayı Kopyala"
@@ -394,13 +394,13 @@
     "message": "Koleksiyon ara"
   },
   "searchFolder": {
-    "message": "Klasörü Ara"
+    "message": "Klasörde Ara"
   },
   "searchFavorites": {
-    "message": "Favorilerde ara"
+    "message": "Favorilerde Ara"
   },
   "searchType": {
-    "message": "Arama türü",
+    "message": "Arama Yap",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -506,7 +506,7 @@
     "message": "Beklenmedik bir hata oluştu."
   },
   "itemInformation": {
-    "message": "Öğe Bilgisi"
+    "message": "Öge Bilgisi"
   },
   "noItemsInList": {
     "message": "Görüntülenecek öğe yok."
@@ -674,7 +674,7 @@
     "message": "Yeni bir oturum ekle"
   },
   "addNewItem": {
-    "message": "Yeni Öğe Ekle"
+    "message": "Yeni Öge Ekle"
   },
   "addNewFolder": {
     "message": "Yeni Klasör Ekle"
@@ -692,7 +692,7 @@
     "message": "Şimdi Kilitle"
   },
   "passwordGenerator": {
-    "message": "Parola oluşturucu"
+    "message": "Parola Oluşturucu"
   },
   "emailUs": {
     "message": "Bize E-posta Gönderin"
@@ -719,7 +719,7 @@
     "message": "Ana parolanızı bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Parmak İzi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -818,7 +818,7 @@
     "message": "Sistem kilitli"
   },
   "onRestart": {
-    "message": "Yeniden başlat"
+    "message": "Yeniden başlatmada"
   },
   "never": {
     "message": "Hiçbir zaman"
@@ -847,10 +847,10 @@
     "message": "Pencereyi küçültün, bunun yerine sistem tepsisinde bir simge gösterin."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "Görev çubuğu ikonuna küçült"
   },
   "enableCloseToTrayDesc": {
-    "message": "Pencere kapatıldığında, sistem panelinde simge olarak göster."
+    "message": "Pencere kapatıldığında görev çubuğunda simge olarak gözüksün."
   },
   "enableTray": {
     "message": "Sistem ikonunu etkinleştir."
@@ -859,10 +859,10 @@
     "message": "Sistem çubuğunda her zaman ikonu göster."
   },
   "startToTray": {
-    "message": "Tepsi Simgesi Olarak Başlat"
+    "message": "Görev Çubuğu Simgesi Olarak Başlat"
   },
   "startToTrayDesc": {
-    "message": "Uygulama ilk başlatıldığında, sistem tepsisinde sadece bir simge gösterin."
+    "message": "Uygulama açıldığında görev çubuğunda simge olarak gözüksün."
   },
   "language": {
     "message": "Dil"
@@ -874,7 +874,7 @@
     "message": "Tema"
   },
   "themeDesc": {
-    "message": "Uygulamanın renk temasını değiştir."
+    "message": "Uygulamanın temasını değiştirin."
   },
   "dark": {
     "message": "Koyu",
@@ -1152,7 +1152,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Tepsiyi Gizle"
+    "message": "Görev Çubuğuna Küçült"
   },
   "alwaysOnTop": {
     "message": "Her Zaman Üstte",
@@ -1192,7 +1192,7 @@
     "message": "Sahiplik"
   },
   "whoOwnsThisItem": {
-    "message": "Bu öğenin sahibi kim?"
+    "message": "Bu ögenin sahibi kim?"
   },
   "strong": {
     "message": "Güçlü",
@@ -1267,5 +1267,11 @@
   },
   "privacyPolicy": {
     "message": "Gizlilik Politikası"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Are you sure you want to leave? If you leave now then your current information won't be saved"
+  },
+  "unsavedChangesTitle": {
+    "message": "There Are Unsaved Changes"
   }
 }
