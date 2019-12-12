@@ -1,4 +1,4 @@
-import { app } from 'electron';
+import { app, globalShortcut } from 'electron';
 import * as path from 'path';
 
 import { I18nService } from './services/i18n.service';
@@ -42,6 +42,26 @@ export class Main {
         } else if (process.platform === 'linux' && process.env.SNAP_USER_DATA != null) {
             appDataPath = path.join(process.env.SNAP_USER_DATA, 'appdata');
         }
+
+        app.on('ready', () => {
+          globalShortcut.register('CommandOrControl+Shift+L', async () => {
+            if (this.windowMain.win === null) {
+              await this.windowMain.createWindow();
+            }
+
+            this.messagingService.send('focusSearch');
+            this.windowMain.win.show();
+          });
+
+          globalShortcut.register('CommandOrControl+Shift+G', async () => {
+            if (this.windowMain.win === null) {
+              await this.windowMain.createWindow();
+            }
+
+            this.messagingService.send('openPasswordGenerator');
+            this.windowMain.win.show();
+          });
+        });
 
         if (appDataPath != null) {
             app.setPath('userData', appDataPath);
