@@ -182,8 +182,6 @@
     "deb": {
       "artifactName": "${productName}-${version}-${arch}.${ext}",
       "depends": [
-        "gconf2",
-        "gconf-service",
         "libnotify4",
         "libxtst6",
         "libnss3",
