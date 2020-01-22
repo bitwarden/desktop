@@ -53,6 +53,7 @@ const common = {
 
 const renderer = {
     mode: 'production',
+    devtool: false,
     target: 'electron-renderer',
     node: {
         __dirname: false,
@@ -127,7 +128,6 @@ const renderer = {
             chunks: ['app/vendor', 'app/main'],
         }),
         new webpack.SourceMapDevToolPlugin({
-            filename: '[name].js.map',
             include: ['app/main.js'],
         }),
         extractCss,
