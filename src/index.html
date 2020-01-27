@@ -13,6 +13,8 @@
     </app-root>
 
     <script nonce="5Uf8QQzQdAu2sRVG8A8O">
+        if (!(process.platform === 'win32')) return;
+
         const customElectronTitlebar = require('custom-electron-titlebar');
 
         function getCurrentBodyColor() {
