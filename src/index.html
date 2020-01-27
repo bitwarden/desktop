@@ -2,9 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';
-        img-src 'self' data: *; child-src *; frame-src *; connect-src *;">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'nonce-5Uf8QQzQdAu2sRVG8A8O'; style-src 'self' 'unsafe-inline'; img-src 'self' data: *; child-src *; frame-src *; connect-src *;">
     <title>Bitwarden</title>
     <base href="">
 </head>
@@ -12,5 +11,34 @@
     <app-root>
         <div id="loading"><i class="fa fa-spinner fa-spin fa-3x" aria-hidden="true"></i></div>
     </app-root>
+
+    <script nonce="5Uf8QQzQdAu2sRVG8A8O">
+        const customElectronTitlebar = require('custom-electron-titlebar');
+
+        function getCurrentBodyColor() {
+            var rgb = window.getComputedStyle(document.body).backgroundColor.replace("rgb(", "").replace(")", "").split(", ");
+            return new customElectronTitlebar.Color(new customElectronTitlebar.RGBA(parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2]), 255));
+        }
+
+        let bitwardenTitleBar = new customElectronTitlebar.Titlebar({
+            backgroundColor: getCurrentBodyColor(),
+            icon: "./images/icon.ico",
+            shadow: true,
+            title: "Bitwarden"
+        });
+
+        const observer = new MutationObserver((mutations) => {
+            document.documentElement.classList.forEach(function(className) {
+                if (className.startsWith("theme")) {
+                    bitwardenTitleBar.updateBackground(getCurrentBodyColor());
+                }
+            });
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeOldValue: true,
+            attributeFilter: ['class']
+        });
+    </script>
 </body>
 </html>
