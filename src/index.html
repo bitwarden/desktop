@@ -13,34 +13,34 @@
     </app-root>
 
     <script nonce="5Uf8QQzQdAu2sRVG8A8O">
-        if (!(process.platform === 'win32')) return;
+        if (process.platform === 'win32') {
+            const customElectronTitlebar = require('custom-electron-titlebar');
 
-        const customElectronTitlebar = require('custom-electron-titlebar');
+            function getCurrentBodyColor() {
+                var rgb = window.getComputedStyle(document.body).backgroundColor.replace("rgb(", "").replace(")", "").split(", ");
+                return new customElectronTitlebar.Color(new customElectronTitlebar.RGBA(parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2]), 255));
+            }
 
-        function getCurrentBodyColor() {
-            var rgb = window.getComputedStyle(document.body).backgroundColor.replace("rgb(", "").replace(")", "").split(", ");
-            return new customElectronTitlebar.Color(new customElectronTitlebar.RGBA(parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2]), 255));
-        }
-
-        let bitwardenTitleBar = new customElectronTitlebar.Titlebar({
-            backgroundColor: getCurrentBodyColor(),
-            icon: "./images/icon.ico",
-            shadow: true,
-            title: "Bitwarden"
-        });
-
-        const observer = new MutationObserver((mutations) => {
-            document.documentElement.classList.forEach(function(className) {
-                if (className.startsWith("theme")) {
-                    bitwardenTitleBar.updateBackground(getCurrentBodyColor());
-                }
+            let bitwardenTitleBar = new customElectronTitlebar.Titlebar({
+                backgroundColor: getCurrentBodyColor(),
+                icon: "./images/icon.ico",
+                shadow: true,
+                title: "Bitwarden"
             });
-        });
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeOldValue: true,
-            attributeFilter: ['class']
-        });
+
+            const observer = new MutationObserver((mutations) => {
+                document.documentElement.classList.forEach(function(className) {
+                    if (className.startsWith("theme")) {
+                        bitwardenTitleBar.updateBackground(getCurrentBodyColor());
+                    }
+                });
+            });
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeOldValue: true,
+                attributeFilter: ['class']
+            });
+        };
     </script>
 </body>
 </html>
