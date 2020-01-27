@@ -90,7 +90,7 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('changeMasterPass'),
                 id: 'changeMasterPass',
                 click: async () => {
-                    const result = dialog.showMessageBox(this.main.windowMain.win, {
+                    const result = await dialog.showMessageBox(this.main.windowMain.win, {
                         title: this.main.i18nService.t('changeMasterPass'),
                         message: this.main.i18nService.t('changeMasterPass'),
                         detail: this.main.i18nService.t('changeMasterPasswordConfirmation'),
@@ -99,7 +99,7 @@ export class MenuMain extends BaseMenu {
                         defaultId: 0,
                         noLink: true,
                     });
-                    if (result === 0) {
+                    if (result.response === 0) {
                         await this.openWebVault();
                     }
                 },
@@ -108,7 +108,7 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('twoStepLogin'),
                 id: 'twoStepLogin',
                 click: async () => {
-                    const result = dialog.showMessageBox(this.main.windowMain.win, {
+                    const result = await dialog.showMessageBox(this.main.windowMain.win, {
                         title: this.main.i18nService.t('twoStepLogin'),
                         message: this.main.i18nService.t('twoStepLogin'),
                         detail: this.main.i18nService.t('twoStepLoginConfirmation'),
@@ -117,7 +117,7 @@ export class MenuMain extends BaseMenu {
                         defaultId: 0,
                         noLink: true,
                     });
-                    if (result === 0) {
+                    if (result.response === 0) {
                         await this.openWebVault();
                     }
                 },
@@ -131,8 +131,8 @@ export class MenuMain extends BaseMenu {
             {
                 label: this.i18nService.t('logOut'),
                 id: 'logOut',
-                click: () => {
-                    const result = dialog.showMessageBox(this.windowMain.win, {
+                click: async () => {
+                    const result = await dialog.showMessageBox(this.windowMain.win, {
                         title: this.i18nService.t('logOut'),
                         message: this.i18nService.t('logOut'),
                         detail: this.i18nService.t('logOutConfirmation'),
@@ -141,7 +141,7 @@ export class MenuMain extends BaseMenu {
                         defaultId: 0,
                         noLink: true,
                     });
-                    if (result === 0) {
+                    if (result.response === 0) {
                         this.main.messagingService.send('logout');
                     }
                 },
@@ -431,13 +431,13 @@ export class MenuMain extends BaseMenu {
 
             aboutMenuAdditions.push({
                 label: this.i18nService.t('aboutBitwarden'),
-                click: () => {
+                click: async () => {
                     const aboutInformation = this.i18nService.t('version', app.getVersion()) +
                         '\nShell ' + process.versions.electron +
                         '\nRenderer ' + process.versions.chrome +
                         '\nNode ' + process.versions.node +
                         '\nArchitecture ' + process.arch;
-                    const result = dialog.showMessageBox(this.windowMain.win, {
+                    const result = await dialog.showMessageBox(this.windowMain.win, {
                         title: 'Bitwarden',
                         message: 'Bitwarden',
                         detail: aboutInformation,
@@ -445,7 +445,7 @@ export class MenuMain extends BaseMenu {
                         noLink: true,
                         buttons: [this.i18nService.t('ok'), this.i18nService.t('copy')],
                     });
-                    if (result === 1) {
+                    if (result.response === 1) {
                         clipboard.writeText(aboutInformation);
                     }
                 },
