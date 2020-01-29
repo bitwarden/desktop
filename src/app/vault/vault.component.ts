@@ -189,7 +189,9 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (params.cipherId) {
                     const cipherView = new CipherView();
                     cipherView.id = params.cipherId;
-                    if (params.action === 'edit') {
+                    if (params.action === 'clone') {
+                        await this.cloneCipher(cipherView);
+                    } else if (params.action === 'edit') {
                         await this.editCipher(cipherView);
                     } else {
                         await this.viewCipher(cipherView);
@@ -247,6 +249,12 @@ export class VaultComponent implements OnInit, OnDestroy {
             label: this.i18nService.t('edit'),
             click: () => this.functionWithChangeDetection(() => {
                 this.editCipher(cipher);
+            }),
+        }));
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('clone'),
+            click: () => this.functionWithChangeDetection(() => {
+                this.cloneCipher(cipher);
             }),
         }));
 
@@ -312,6 +320,18 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         this.cipherId = cipher.id;
         this.action = 'edit';
+        this.go();
+    }
+
+    async cloneCipher(cipher: CipherView) {
+        if (this.action === 'clone' && this.cipherId === cipher.id) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        this.cipherId = cipher.id;
+        this.action = 'clone';
         this.go();
     }
 
