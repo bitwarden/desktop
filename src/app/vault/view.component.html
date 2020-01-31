@@ -276,4 +276,7 @@
     <button appBlurClick class="primary" (click)="edit()" appA11yTitle="{{'edit' | i18n}}">
         <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
     </button>
+    <button appBlurClick class="primary" *ngIf="!cipher?.organizationId" (click)="clone()" appA11yTitle="{{'clone' | i18n}}">
+        <i class="fa fa-clone fa-fw fa-lg" aria-hidden="true"></i>
+    </button>
 </div>
