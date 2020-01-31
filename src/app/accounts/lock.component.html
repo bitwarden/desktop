@@ -30,10 +30,10 @@
         </div>
         <div class="buttons">
             <button type="submit" class="btn primary block" appBlurClick>
-                <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>&ensp;<b>{{'unlock' | i18n}}</b>
             </button>
-            <button type="button" class="btn block" appBlurClick (click)="logOut()">
-                {{'logOut' | i18n}}
+            <button type="button" class="btn danger block" appBlurClick (click)="logOut()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>&ensp;{{'logOut' | i18n}}
             </button>
         </div>
     </div>
