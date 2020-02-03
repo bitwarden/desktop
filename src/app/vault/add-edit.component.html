@@ -242,7 +242,7 @@
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
                     </a>
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
-                        (click)="editCollections()" *ngIf="editMode && cipher.organizationId" role="button">
+                        (click)="editCollections()" *ngIf="editMode && !cloneMode && cipher.organizationId" role="button">
                         <div class="row-main">{{'collections' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
                     </a>
@@ -308,7 +308,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box" *ngIf="!editMode && ownershipOptions && ownershipOptions.length > 1">
+            <div class="box" *ngIf="(!editMode || cloneMode) && ownershipOptions && ownershipOptions.length > 1">
                 <div class="box-header">
                     {{'ownership' | i18n}}
                 </div>
@@ -322,7 +322,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box" *ngIf="!editMode && cipher.organizationId">
+            <div class="box" *ngIf="(!editMode || cloneMode) && cipher.organizationId">
                 <div class="box-header">
                     {{'collections' | i18n}}
                 </div>
