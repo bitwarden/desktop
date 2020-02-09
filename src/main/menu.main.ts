@@ -36,6 +36,8 @@ export class MenuMain extends BaseMenu {
     passwordGenerator: MenuItem;
     passwordHistory: MenuItem;
     searchVault: MenuItem;
+    copyUsername: MenuItem;
+    copyPassword: MenuItem;
     unlockedRequiredMenuItems: MenuItem[] = [];
 
     constructor(private main: Main) {
@@ -63,12 +65,14 @@ export class MenuMain extends BaseMenu {
         this.passwordGenerator = this.menu.getMenuItemById('passwordGenerator');
         this.passwordHistory = this.menu.getMenuItemById('passwordHistory');
         this.searchVault = this.menu.getMenuItemById('searchVault');
+        this.copyUsername = this.menu.getMenuItemById('copyUsername');
+        this.copyPassword = this.menu.getMenuItemById('copyPassword');
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
             this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
-            this.searchVault];
+            this.searchVault, this.copyUsername, this.copyPassword];
         this.updateApplicationMenuState(false, true);
     }
 
@@ -353,6 +357,19 @@ export class MenuMain extends BaseMenu {
                         label: this.main.i18nService.t('passwordHistory'),
                         id: 'passwordHistory',
                         click: () => this.main.messagingService.send('openPasswordHistory'),
+                    },
+                    { type: 'separator' },
+                    {
+                        label: this.main.i18nService.t('copyUsername'),
+                        id: 'copyUsername',
+                        click: () => this.main.messagingService.send('copyUsername'),
+                        accelerator: 'CmdOrCtrl+U',
+                    },
+                    {
+                        label: this.main.i18nService.t('copyPassword'),
+                        id: 'copyPassword',
+                        click: () => this.main.messagingService.send('copyPassword'),
+                        accelerator: 'CmdOrCtrl+P',
                     },
                     { type: 'separator' },
                 ] as MenuItemConstructorOptions[]).concat(this.viewSubMenuItemOptions),
