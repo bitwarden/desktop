@@ -151,6 +151,18 @@ export class VaultComponent implements OnInit, OnDestroy {
                     case 'modalClosed':
                         this.showingModal = false;
                         break;
+                    case 'copyUsername':
+                        const selectedCipherU = this.cipherId != null ? this.ciphersComponent.ciphers.find(cipher => cipher.id == this.cipherId) : null;
+                        if (selectedCipherU != null && selectedCipherU.login != null && selectedCipherU.login.username != null) {
+                          this.copyValue(selectedCipherU.login.username, 'username');
+                        }
+                        break;
+                    case 'copyPassword':
+                        const selectedCipherP = this.cipherId != null ? this.ciphersComponent.ciphers.find(cipher => cipher.id == this.cipherId) : null;
+                        if (selectedCipherP != null && selectedCipherP.login != null && selectedCipherP.login.password != null) {
+                          this.copyValue(selectedCipherP.login.password, 'password');
+                        }
+                        break;
                     default:
                         detectChanges = false;
                         break;
