@@ -32,6 +32,7 @@ import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
 import { PasswordHistoryComponent } from './password-history.component';
 import { ShareComponent } from './share.component';
+import { ViewComponent } from './view.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
 import { EventType } from 'jslib/enums/eventType';
@@ -53,6 +54,7 @@ const BroadcasterSubscriptionId = 'VaultComponent';
     templateUrl: 'vault.component.html',
 })
 export class VaultComponent implements OnInit, OnDestroy {
+    @ViewChild(ViewComponent) viewComponent: ViewComponent;
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
     @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
     @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
@@ -152,15 +154,19 @@ export class VaultComponent implements OnInit, OnDestroy {
                         this.showingModal = false;
                         break;
                     case 'copyUsername':
-                        const selectedCipherU = this.cipherId != null ? this.ciphersComponent.ciphers.find(cipher => cipher.id == this.cipherId) : null;
-                        if (selectedCipherU != null && selectedCipherU.login != null && selectedCipherU.login.username != null) {
-                          this.copyValue(selectedCipherU.login.username, 'username');
+                        const uComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
+                        const uCipher = uComponent != null ? uComponent.cipher : null;
+                        if (this.cipherId != null && uCipher != null && uCipher.id === this.cipherId &&
+                            uCipher.login != null && uCipher.login.username != null) {
+                            this.copyValue(uCipher.login.username, 'username');
                         }
                         break;
                     case 'copyPassword':
-                        const selectedCipherP = this.cipherId != null ? this.ciphersComponent.ciphers.find(cipher => cipher.id == this.cipherId) : null;
-                        if (selectedCipherP != null && selectedCipherP.login != null && selectedCipherP.login.password != null) {
-                          this.copyValue(selectedCipherP.login.password, 'password');
+                        const pComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
+                        const pCipher = pComponent != null ? pComponent.cipher : null;
+                        if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
+                            pCipher.login != null && pCipher.login.password != null) {
+                            this.copyValue(pCipher.login.password, 'password');
                         }
                         break;
                     default:

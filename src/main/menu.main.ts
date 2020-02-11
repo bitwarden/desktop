@@ -152,6 +152,22 @@ export class MenuMain extends BaseMenu {
             },
         ];
 
+        this.editMenuItemOptions.submenu = (this.editMenuItemOptions.submenu as MenuItemConstructorOptions[]).concat([
+            { type: 'separator' },
+            {
+                label: this.main.i18nService.t('copyUsername'),
+                id: 'copyUsername',
+                click: () => this.main.messagingService.send('copyUsername'),
+                accelerator: 'CmdOrCtrl+U',
+            },
+            {
+                label: this.main.i18nService.t('copyPassword'),
+                id: 'copyPassword',
+                click: () => this.main.messagingService.send('copyPassword'),
+                accelerator: 'CmdOrCtrl+P',
+            },
+        ]);
+
         if (!isWindowsStore()) {
             accountSubmenu.unshift({
                 label: this.main.i18nService.t('premiumMembership'),
@@ -357,19 +373,6 @@ export class MenuMain extends BaseMenu {
                         label: this.main.i18nService.t('passwordHistory'),
                         id: 'passwordHistory',
                         click: () => this.main.messagingService.send('openPasswordHistory'),
-                    },
-                    { type: 'separator' },
-                    {
-                        label: this.main.i18nService.t('copyUsername'),
-                        id: 'copyUsername',
-                        click: () => this.main.messagingService.send('copyUsername'),
-                        accelerator: 'CmdOrCtrl+U',
-                    },
-                    {
-                        label: this.main.i18nService.t('copyPassword'),
-                        id: 'copyPassword',
-                        click: () => this.main.messagingService.send('copyPassword'),
-                        accelerator: 'CmdOrCtrl+P',
                     },
                     { type: 'separator' },
                 ] as MenuItemConstructorOptions[]).concat(this.viewSubMenuItemOptions),
