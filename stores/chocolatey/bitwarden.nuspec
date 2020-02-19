@@ -7,17 +7,17 @@
     <packageSourceUrl>https://github.com/bitwarden/desktop/tree/master/stores/chocolatey</packageSourceUrl>
     <owners>kspearrin</owners>
     <title>Bitwarden</title>
-    <authors>8bit Solutions LLC</authors>
+    <authors>Bitwarden Inc.</authors>
     <projectUrl>https://bitwarden.com/</projectUrl>
     <iconUrl>https://cdn.rawgit.com/bitwarden/desktop/51dd1341/resources/icon.png</iconUrl>
-    <copyright>Copyright © 2015-2019 8bit Solutions LLC</copyright>
+    <copyright>Copyright © 2015-2020 Bitwarden Inc.</copyright>
     <projectSourceUrl>https://github.com/bitwarden/desktop/</projectSourceUrl>
     <docsUrl>https://help.bitwarden.com/</docsUrl>
     <bugTrackerUrl>https://github.com/bitwarden/desktop/issues</bugTrackerUrl>
     <releaseNotes>https://github.com/bitwarden/desktop/releases</releaseNotes>
     <licenseUrl>https://github.com/bitwarden/desktop/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <tags>bitwarden password manager 8bit</tags>
+    <tags>bitwarden password manager</tags>
     <summary>A secure and free password manager for all of your devices.</summary>
     <description>
       Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.

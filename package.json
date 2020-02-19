@@ -9,7 +9,7 @@
     "vault",
     "password manager"
   ],
-  "author": "8bit Solutions LLC <hello@bitwarden.com> (https://bitwarden.com)",
+  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
   "homepage": "https://bitwarden.com",
   "repository": {
     "type": "git",
@@ -55,7 +55,7 @@
   },
   "build": {
     "appId": "com.bitwarden.desktop",
-    "copyright": "Copyright © 2015-2019 8bit Solutions LLC",
+    "copyright": "Copyright © 2015-2020 Bitwarden Inc.",
     "directories": {
       "buildResources": "resources",
       "output": "dist",

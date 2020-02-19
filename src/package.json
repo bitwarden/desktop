@@ -3,7 +3,7 @@
   "productName": "Bitwarden",
   "description": "A secure and free password manager for all of your devices.",
   "version": "1.16.11",
-  "author": "8bit Solutions LLC <hello@bitwarden.com> (https://bitwarden.com)",
+  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0",
   "main": "main.js",
