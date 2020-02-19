@@ -36,6 +36,11 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
 
     async ngOnChanges() {
         await super.init();
-        await super.load();
+        await this.load();
+    }
+
+    async load() {
+        this.cipher = null;
+        super.load();
     }
 }
