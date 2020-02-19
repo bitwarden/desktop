@@ -611,7 +611,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     private dirtyInput(): boolean {
-        return (this.action === 'add' || this.action === 'edit') &&
+        return (this.action === 'add' || this.action === 'edit' || this.action === 'clone') &&
             document.querySelectorAll('app-vault-add-edit .ng-dirty').length > 0;
     }
 
