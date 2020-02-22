@@ -1,6 +1,7 @@
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
 @import "~angular2-toaster/toaster";
+@import "~sweetalert2/src/sweetalert2.scss";
 
 @import "variables.scss";
 
@@ -96,18 +97,22 @@ $fa-font-path: "~font-awesome/fonts";
     }
 }
 
-// SweetAlert
+// SweetAlert2
 
-.swal-modal {
+.swal2-popup {
     border-radius: $border-radius;
+    padding: 0;
+    width: 34em;
 
     @include themify($themes) {
         background-color: themed('backgroundColorAlt');
         color: themed('textColor');
     }
 
-    .swal-content {
+    .swal2-content {
+        padding: 20px 20px 15px;
         font-size: $font-size-base;
+        color: inherit;
 
         label.checkbox {
             margin-top: 10px;
@@ -119,9 +124,34 @@ $fa-font-path: "~font-awesome/fonts";
                 margin: 3px 5px 0 1px;
             }
         }
+
+        .swal2-input, .swal2-textarea {
+            border: 1px solid #000000;
+            border-radius: $border-radius;
+            margin-bottom: 0;
+
+            // Inherit theme font-size
+            font-size: inherit;
+
+            // Sweetalert 1 did not have box-shadow
+            &:focus {
+                box-shadow: none;
+            }
+            @include themify($themes) {
+                border-color: themed('inputBorderColor');
+                color: themed('textColor');
+                background-color: themed('inputBackgroundColor');
+            }
+            &::-webkit-input-placeholder {
+                @include themify($themes) {
+                    color: themed('inputPlaceholderColor');
+                }
+            }
+        }
     }
 
-    .swal-text {
+    .swal2-text {
+        text-align: left; // sweetalert1 behaviour
         font-size: $font-size-base;
 
         @include themify($themes) {
@@ -129,30 +159,16 @@ $fa-font-path: "~font-awesome/fonts";
         }
     }
 
-    > .swal-text:first-child {
+    > .swal2-text:first-child {
         margin-top: 20px;
     }
 
-    .swal-content__input, .swal-content__textarea {
-        border: 1px solid #000000;
-        border-radius: $border-radius;
-        @include themify($themes) {
-            border-color: themed('inputBorderColor');
-            color: themed('textColor');
-            background-color: themed('inputBackgroundColor');
-        }
-        &::-webkit-input-placeholder {
-            @include themify($themes) {
-                color: themed('inputPlaceholderColor');
-            }
-        }
-    }
-
-    .swal-footer {
-        padding: 15px 10px 10px 10px;
+    .swal2-actions {
+        padding: 0 10px 10px 10px; // 0 due to padding to content being 15px
         margin: 0;
+        justify-content: flex-end;
 
-        .swal-button {
+        .swal2-styled {
             @extend .btn;
 
             &:focus {
@@ -160,7 +176,12 @@ $fa-font-path: "~font-awesome/fonts";
             }
         }
 
-        .swal-button--confirm {
+        .swal2-confirm {
+            // Overwrite border-left and border-right-color
+            @include themify($themes) {
+                border-color: themed('buttonBorderColor') !important;
+            }
+
             @extend .btn.primary;
         }
     }
