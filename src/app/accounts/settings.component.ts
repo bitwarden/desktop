@@ -37,6 +37,7 @@ export class SettingsComponent implements OnInit {
     enableTray: boolean = false;
     showMinToTray: boolean = false;
     startToTray: boolean = false;
+    minimizeOnCopyToClipboard: boolean = false;
     locale: string;
     lockOptions: any[];
     localeOptions: any[];
@@ -120,6 +121,8 @@ export class SettingsComponent implements OnInit {
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
+        this.minimizeOnCopyToClipboard =
+            await this.storageService.get<boolean>(ConstantsService.minimizeOnCopyToClipboardKey);
     }
 
     async saveLockOption() {
@@ -222,6 +225,11 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ConstantsService.themeKey, this.theme);
         this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
         window.setTimeout(() => window.location.reload(), 200);
+    }
+
+    async saveMinOnCopyToClipboard() {
+        await this.storageService.save(ConstantsService.minimizeOnCopyToClipboardKey, this.minimizeOnCopyToClipboard);
+        this.callAnalytics('MinOnCopyToClipboard', this.minimizeOnCopyToClipboard);
     }
 
     async saveClearClipboard() {

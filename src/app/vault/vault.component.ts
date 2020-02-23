@@ -44,7 +44,10 @@ import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+
+import { ConstantsService } from 'jslib/services/constants.service';
 
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 const BroadcasterSubscriptionId = 'VaultComponent';
@@ -84,7 +87,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
         private toasterService: ToasterService, private messagingService: MessagingService,
-        private platformUtilsService: PlatformUtilsService, private eventService: EventService) { }
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService,
+        private storageService: StorageService) { }
 
     async ngOnInit() {
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
@@ -159,6 +163,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         if (this.cipherId != null && uCipher != null && uCipher.id === this.cipherId &&
                             uCipher.login != null && uCipher.login.username != null) {
                             this.copyValue(uCipher.login.username, 'username');
+                            this.minimizeIfNeeded();
                         }
                         break;
                     case 'copyPassword':
@@ -167,6 +172,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
                             pCipher.login != null && pCipher.login.password != null) {
                             this.copyValue(pCipher.login.password, 'password');
+                            this.minimizeIfNeeded();
                         }
                         break;
                     default:
@@ -661,6 +667,14 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
         });
+    }
+
+    private async minimizeIfNeeded(): Promise<void> {
+        const shouldMinimize =
+          await this.storageService.get<boolean>(ConstantsService.minimizeOnCopyToClipboardKey);
+        if (shouldMinimize) {
+            this.messagingService.send('minimize');
+        }
     }
 
     private functionWithChangeDetection(func: Function) {

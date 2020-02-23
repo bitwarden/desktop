@@ -112,6 +112,12 @@
     "message": "Copy Value",
     "description": "Copy value to clipboard"
   },
+  "minimizeOnCopyToClipboard": {
+    "message": "Minimize when copying to clipboard"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Bitwarden will minimize when credentials are copied to clipboard."
+  },
   "toggleVisibility": {
     "message": "Toggle Visibility"
   },
