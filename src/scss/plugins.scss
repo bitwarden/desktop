@@ -129,7 +129,7 @@ $fa-font-path: "~font-awesome/fonts";
             border: 1px solid #000000;
             border-radius: $border-radius;
             margin-bottom: 0;
-
+            box-shadow: none;
             // Inherit theme font-size
             font-size: inherit;
 
@@ -168,21 +168,14 @@ $fa-font-path: "~font-awesome/fonts";
         margin: 0;
         justify-content: flex-end;
 
-        .swal2-styled {
+        button {
+            margin-left: 10px;
             @extend .btn;
 
-            &:focus {
-                box-shadow: none;
+            &.swal2-confirm {
+                @extend .btn.primary;
+                font-weight: bold;
             }
-        }
-
-        .swal2-confirm {
-            // Overwrite border-left and border-right-color
-            @include themify($themes) {
-                border-color: themed('buttonBorderColor') !important;
-            }
-
-            @extend .btn.primary;
         }
     }
 }

@@ -137,7 +137,7 @@ export class SettingsComponent implements OnInit {
             label.innerHTML = '<input type="checkbox" id="master-pass-restart" checked>';
             label.appendChild(checkboxText);
 
-            div.innerHTML = 
+            div.innerHTML =
                 `<div class="swal2-text">${this.i18nService.t('setYourPinCode')}</div>` +
                 '<input type="text" class="swal2-input" id="pin-val" autocomplete="off" ' +
                 'autocapitalize="none" autocorrect="none" spellcheck="false" inputmode="verbatim">';
@@ -146,9 +146,10 @@ export class SettingsComponent implements OnInit {
             div.appendChild(label);
 
             const submitted = await Swal.fire({
+                heightAuto: false,
+                buttonsStyling: false,
                 text: this.i18nService.t('setYourPinCode'),
                 html: div,
-
                 showCancelButton: true,
                 cancelButtonText: this.i18nService.t('cancel'),
                 showConfirmButton: true,
