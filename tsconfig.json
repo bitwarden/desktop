@@ -8,7 +8,7 @@
     "target": "ES2016",
     "allowJs": true,
     "sourceMap": true,
-    "types": [],
+    "types": ["sweetalert2"],
     "baseUrl": ".",
     "paths": {
       "tldjs": [
