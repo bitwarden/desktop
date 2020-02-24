@@ -148,7 +148,6 @@ export class SettingsComponent implements OnInit {
             const submitted = await Swal.fire({
                 heightAuto: false,
                 buttonsStyling: false,
-                text: this.i18nService.t('setYourPinCode'),
                 html: div,
                 showCancelButton: true,
                 cancelButtonText: this.i18nService.t('cancel'),
