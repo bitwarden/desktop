@@ -47,7 +47,7 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ElectronConstants } from 'jslib/electron/electronConstants';
 
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 const BroadcasterSubscriptionId = 'VaultComponent';
@@ -671,7 +671,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     private async minimizeIfNeeded(): Promise<void> {
         const shouldMinimize =
-          await this.storageService.get<boolean>(ConstantsService.minimizeOnCopyToClipboardKey);
+            await this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey);
         if (shouldMinimize) {
             this.messagingService.send('minimize');
         }

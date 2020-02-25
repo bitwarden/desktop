@@ -122,7 +122,7 @@ export class SettingsComponent implements OnInit {
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
         this.minimizeOnCopyToClipboard =
-            await this.storageService.get<boolean>(ConstantsService.minimizeOnCopyToClipboardKey);
+            await this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey);
     }
 
     async saveLockOption() {
@@ -228,7 +228,7 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveMinOnCopyToClipboard() {
-        await this.storageService.save(ConstantsService.minimizeOnCopyToClipboardKey, this.minimizeOnCopyToClipboard);
+        await this.storageService.save(ElectronConstants.minimizeOnCopyToClipboardKey, this.minimizeOnCopyToClipboard);
         this.callAnalytics('MinOnCopyToClipboard', this.minimizeOnCopyToClipboard);
     }
 

@@ -25,7 +25,7 @@ export class MessagingMain {
                 break;
             case 'minimize':
                 if (this.main.windowMain.win != null) {
-                  this.main.windowMain.win.minimize();
+                    this.main.windowMain.win.minimize();
                 }
                 break;
             case 'showTray':
