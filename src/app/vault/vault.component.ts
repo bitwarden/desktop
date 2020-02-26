@@ -163,7 +163,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                         if (this.cipherId != null && uCipher != null && uCipher.id === this.cipherId &&
                             uCipher.login != null && uCipher.login.username != null) {
                             this.copyValue(uCipher.login.username, 'username');
-                            this.minimizeIfNeeded();
                         }
                         break;
                     case 'copyPassword':
@@ -172,7 +171,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                         if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
                             pCipher.login != null && pCipher.login.password != null) {
                             this.copyValue(pCipher.login.password, 'password');
-                            this.minimizeIfNeeded();
                         }
                         break;
                     default:
@@ -666,15 +664,8 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.platformUtilsService.copyToClipboard(value);
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
+            this.viewComponent.minimizeIfNeeded();
         });
-    }
-
-    private async minimizeIfNeeded(): Promise<void> {
-        const shouldMinimize =
-            await this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey);
-        if (shouldMinimize) {
-            this.messagingService.send('minimize');
-        }
     }
 
     private functionWithChangeDetection(func: Function) {
