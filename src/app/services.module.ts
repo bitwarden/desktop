@@ -114,7 +114,7 @@ const lockService = new LockService(cipherService, folderService, collectionServ
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
-const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService);
+const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
 const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService,
