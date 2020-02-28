@@ -27,6 +27,7 @@ import { SettingsComponent } from './accounts/settings.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
+import { CalloutComponent } from 'jslib/angular/components/callout.component';
 import { IconComponent } from 'jslib/angular/components/icon.component';
 import { ModalComponent } from 'jslib/angular/components/modal.component';
 
@@ -151,6 +152,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         AutofocusDirective,
         BlurClickDirective,
         BoxRowDirective,
+        CalloutComponent,
         CiphersComponent,
         CollectionsComponent,
         ColorPasswordPipe,
