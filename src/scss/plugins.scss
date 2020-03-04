@@ -190,7 +190,8 @@ $fa-font-path: "~font-awesome/fonts";
 
     .swal2-actions {
         margin: 20px auto 0;
-        justify-content: flex-end;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
 
         button {
             margin-left: 10px;
