@@ -100,8 +100,8 @@ $fa-font-path: "~font-awesome/fonts";
 // SweetAlert2
 
 .swal2-popup {
+    padding: 15px;
     border-radius: $border-radius;
-    padding: 0;
     width: 34em;
 
     @include themify($themes) {
@@ -109,10 +109,19 @@ $fa-font-path: "~font-awesome/fonts";
         color: themed('textColor');
     }
 
+    .swal2-icon {
+        margin: 0 auto;
+        width: auto;
+        height: auto;
+        border: none;
+    }
+
     .swal2-content {
-        padding: 20px 20px 15px;
+        margin: 0;
         font-size: $font-size-base;
-        color: inherit;
+        @include themify($themes) {
+            color: themed('textColor');
+        }
 
         label.checkbox {
             margin-top: 10px;
@@ -150,6 +159,22 @@ $fa-font-path: "~font-awesome/fonts";
         }
     }
 
+    i.swal-custom-icon {
+        display: block;
+        margin: 0 auto;
+        font-size: 35px;
+    }
+
+    .swal2-title {
+        padding: 10px 0 15px;
+        margin: 0;
+        font-size: $font-size-large;
+        
+        @include themify($themes) {
+            color: themed('textColor');
+        }
+    }
+
     .swal2-text {
         text-align: left; // sweetalert1 behaviour
         font-size: $font-size-base;
@@ -164,8 +189,7 @@ $fa-font-path: "~font-awesome/fonts";
     }
 
     .swal2-actions {
-        padding: 0 10px 10px 10px; // 0 due to padding to content being 15px
-        margin: 0;
+        margin: 20px auto 0;
         justify-content: flex-end;
 
         button {
