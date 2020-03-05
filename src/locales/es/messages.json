@@ -969,7 +969,7 @@
     "message": "Métodos de autenticación en dos pasos adicionales como YubiKey, FIDO U2F y Duo."
   },
   "premiumSignUpReports": {
-    "message": "Higiene de contraseña, salud de la cuenta e informes de violaciones de datos para mantener su bóveda segura."
+    "message": "Higiene de contraseña, salud de la cuenta e informes de violaciones de datos para mantener su caja fuerte segura."
   },
   "premiumSignUpTotp": {
     "message": "Generación de códigos TOTP (2FA) para registros de tu caja fuerte."
@@ -1177,7 +1177,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Esta exportación contiene tus datos de la bóveda en un formato no cifrado. No deberías almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
+    "message": "Esta exportación contiene tus datos de la caja fuerte en un formato no cifrado. No deberías almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
   },
   "exportMasterPassword": {
     "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "Hay cambios sin guardar"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
