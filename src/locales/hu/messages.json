@@ -1269,9 +1269,15 @@
     "message": "Adatvédelem"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Biztos a kilépés? A kilépés esetén az aktuális információ nem kerül mentésre."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Mentetlen változások"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
