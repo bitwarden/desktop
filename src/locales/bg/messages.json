@@ -126,7 +126,7 @@
     "message": "Номер"
   },
   "brand": {
-    "message": "Оператор"
+    "message": "Вид"
   },
   "expiration": {
     "message": "Изтичане"
@@ -295,7 +295,7 @@
     "message": "Папка"
   },
   "newCustomField": {
-    "message": "Ново потребителско поле"
+    "message": "Ново допълнително поле"
   },
   "value": {
     "message": "Стойност"
@@ -1159,7 +1159,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Обновена",
+    "message": "Обновено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1269,9 +1269,15 @@
     "message": "Политика за поверителност"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Сигурни ли сте, че искате да напуснете? Текущата ви информация няма да бъде запазена."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Незапазени промени"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
