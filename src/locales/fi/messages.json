@@ -1269,9 +1269,15 @@
     "message": "Tietosuojakäytäntö"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Haluatko varmasti poistua? Jos poistut nyt, nykyisiä tietoja ei tallenneta."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Tallentamattomia muutoksia"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
