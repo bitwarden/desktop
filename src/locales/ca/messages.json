@@ -1269,9 +1269,15 @@
     "message": "Política de privacitat"
   },
   "unsavedChangesConfirmation": {
-    "message": "Segur que voleu marxar? Si marxeu ara, la vostra informació actual no es guardarà"
+    "message": "Segur que voleu marxar? Si marxeu ara, la vostra informació actual no es guardarà."
   },
   "unsavedChangesTitle": {
     "message": "Hi ha canvis sense guardar"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
