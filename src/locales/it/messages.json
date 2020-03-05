@@ -1269,9 +1269,15 @@
     "message": "Informativa sulla privacy"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Sei sicuro di voler uscire? Se esci adesso, le informazioni attuali non verranno salvate."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Modifiche non salvate"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
