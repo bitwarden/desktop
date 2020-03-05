@@ -45,13 +45,13 @@
     "message": "Paylaş"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Öge Paylaş"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Öge Paylaşıldı"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Bu ögeyi paylaşmak istediğiniz bir organizasyonu seçiniz. Paylaşmak, bu ögenin sahipliğini organizasyona devreder. Paylaştığınız andan itibaren bu ögenin sahipliğini kaybedersiniz."
   },
   "attachments": {
     "message": "Ekler"
@@ -91,7 +91,7 @@
     "message": "Ögeyi Düzenle"
   },
   "emailAddress": {
-    "message": "Eposta Adresi"
+    "message": "Email adresi"
   },
   "verificationCodeTotp": {
     "message": "Doğrulama kodu (TOTP)"
@@ -116,7 +116,7 @@
     "message": "Görünürlüğünü aç/kapat"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Büyüt/Küçült",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -262,7 +262,7 @@
     "message": "Adres 3"
   },
   "cityTown": {
-    "message": "Şehir/Kasaba"
+    "message": "Şehir / Kasaba"
   },
   "stateProvince": {
     "message": "Eyalet / İl"
@@ -353,7 +353,7 @@
     "message": "Klasörü Düzenle"
   },
   "regeneratePassword": {
-    "message": "Yeni Parola Oluştur"
+    "message": "Yeniden Parola Oluştur"
   },
   "copyPassword": {
     "message": "Parolayı Kopyala"
@@ -400,7 +400,7 @@
     "message": "Favorilerde Ara"
   },
   "searchType": {
-    "message": "Arama Yap",
+    "message": "Arama türü",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -596,10 +596,10 @@
     "message": "Doğrulama kodu size e-postalanacak."
   },
   "loginUnavailable": {
-    "message": "Oturum Açma Kullanılamıyor"
+    "message": "Oturum Açma Mevcut Değil"
   },
   "noTwoStepProviders": {
-    "message": "Bu hesapta iki adımlı giriş özelliği etkin, ancak yapılandırılmış iki adımlı sağlayıcılarının hiçbiri bu internet tarayıcısı tarafından desteklenmiyor."
+    "message": "Bu hesapta iki adımlı giriş özelliği etkin, ancak yapılandırılmış iki adımlı giriş sağlayıcılarının hiçbiri bu cihaz tarafından desteklenmiyor."
   },
   "noTwoStepProviders2": {
     "message": "Lütfen daha iyi aygıtları (örneğin, bir kimlik doğrulayıcı app) arasında desteklenen ek sağlayıcıları ekleyin."
@@ -632,10 +632,10 @@
     "message": "Kimlik Sunucu URL'si"
   },
   "notificationsUrl": {
-    "message": "Sunucu Bildirimler URL'si"
+    "message": "Bildirim Sunucusu URL'si"
   },
   "iconsUrl": {
-    "message": "Simge Sunucu URL'si"
+    "message": "Simgenin Sunucu URL'si"
   },
   "environmentSaved": {
     "message": "Çevre URL'ler kaydedildi."
@@ -719,21 +719,21 @@
     "message": "Ana parolanızı bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
   },
   "fingerprintPhrase": {
-    "message": "Parmak İzi",
+    "message": "Parmak izi ifadesi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Hesabınızın parmak izi şifresi",
+    "message": "Hesabınızın parmak izi ifadesi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Web sayfasına git"
+    "message": "Web Kasasına Git"
   },
   "getMobileApp": {
-    "message": "Mobil Uygulama Edin"
+    "message": "Mobil Uygulamayı Edin"
   },
   "getBrowserExtension": {
-    "message": "Tarayıcı Uzantılarını Edin"
+    "message": "Tarayıcı Uzantısını Edin"
   },
   "syncingComplete": {
     "message": "Eşleme tamamlandı"
@@ -1177,7 +1177,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "Bu dışa aktarımda kasanızdaki ögeler şifrelenmemiş bir şekilde olacak. Çıkan dosyayı güvensiz yöntemlerle depolamayın veya yollamayın (örneğin email). Kullandıktan sonra hemen silin."
   },
   "exportMasterPassword": {
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
@@ -1207,10 +1207,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Ana Şifre Zayıf"
   },
   "weakMasterPasswordDesc": {
-    "message": "Seçtiğiniz ana porala kolayca tahmin edilebilir. Bitwarden hesabınızı korumak istiyorsanız daha güçlü bir ana parola (veya şifre)  seçmelisiniz. Bu ana parolayı kullanmak istediğinizden emin misiniz?"
+    "message": "Seçtiğiniz ana parola zayıf. Bitwarden hesabınızı korumak istiyorsanız daha güçlü bir ana parola (veya kelimelerden oluşturulmuş uzun cümleler) seçmelisiniz. Bu ana parolayı kullanmak istediğinizden emin misiniz?"
   },
   "pin": {
     "message": "PIN",
@@ -1229,7 +1229,7 @@
     "message": "Geçersiz PIN kodu."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Kasanız kilitlendi. Devam etmek için PIN kodunuzu doğrulayın."
+    "message": "Kasanız kilitli. Devam etmek için PIN kodunuzu doğrulayın."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yeniden başlatmada ana şifre ile kilitle"
@@ -1250,7 +1250,7 @@
     "message": "En az bir koleksiyon seçmelisiniz."
   },
   "premiumUpdated": {
-    "message": "Premium'a yükselttiniz."
+    "message": "Premium'a yükseltildiniz."
   },
   "restore": {
     "message": "Geri Yükle"
@@ -1269,9 +1269,15 @@
     "message": "Gizlilik Politikası"
   },
   "unsavedChangesConfirmation": {
-    "message": "Çıkmak istediğinize emin misiniz? Eğer şimdi çıkarsanız bilgileriniz kayıt edilmeyecektir"
+    "message": "Çıkmak istediğinize emin misiniz? Eğer şimdi çıkarsanız bilgileriniz kayıt edilmeyecektir."
   },
   "unsavedChangesTitle": {
     "message": "Kayıt edilmemiş değişiklikler var"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }
