@@ -1250,28 +1250,34 @@
     "message": "Tem de selecionar pelo menos uma coleção."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Atualizou para premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Restaurar"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Pode gerir a sua assinatura através da App Store. Pretende visitar a App Store agora?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Informação legal",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Termos de serviço"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Política de privacidade"
   },
   "unsavedChangesConfirmation": {
     "message": "Tem a certeza que pretende sair? Se sair agora, as suas informações atuais não irão ser guardadas"
   },
   "unsavedChangesTitle": {
-    "message": "Existem alterações não guardadas"
+    "message": "Alterações por guardar"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

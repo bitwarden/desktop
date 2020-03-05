@@ -57,7 +57,7 @@
     "message": "Aanhegsels"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Bekyk Item"
   },
   "name": {
     "message": "Naam"
@@ -138,25 +138,25 @@
     "message": "Identity Name"
   },
   "company": {
-    "message": "Company"
+    "message": "Maatskappy"
   },
   "ssn": {
     "message": "Social Security Number"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Paspoortnommer"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Lisensienommer"
   },
   "email": {
-    "message": "Email"
+    "message": "E-pos"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefoon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adres"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -165,49 +165,49 @@
     "message": "A premium membership is required to use this feature."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "’n Fout het voorgekom."
   },
   "error": {
-    "message": "Error"
+    "message": "Fout"
   },
   "january": {
-    "message": "January"
+    "message": "Januarie"
   },
   "february": {
-    "message": "February"
+    "message": "Februarie"
   },
   "march": {
-    "message": "March"
+    "message": "Maart"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Mei"
   },
   "june": {
-    "message": "June"
+    "message": "Junie"
   },
   "july": {
-    "message": "July"
+    "message": "Julie"
   },
   "august": {
-    "message": "August"
+    "message": "Augustus"
   },
   "september": {
     "message": "September"
   },
   "october": {
-    "message": "October"
+    "message": "Oktober"
   },
   "november": {
     "message": "November"
   },
   "december": {
-    "message": "December"
+    "message": "Desember"
   },
   "ex": {
-    "message": "ex.",
+    "message": "bv.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
@@ -482,28 +482,28 @@
     "message": "Kry hoofwagwoordwenk"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "E-posadres word benodig."
   },
   "invalidEmail": {
     "message": "Ongeldige e-posadres."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Hoofwagwoord word benodig."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Hoofwagwoord moet ten minste 8 karakters lank wees."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Hoofwagwoordbevestiging stem nie ooreen nie."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "U nuwe rekening is geskep! U kan nou aanteken."
   },
   "masterPassSent": {
     "message": "We've sent you an email with your master password hint."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "'n Onverwagte fout het voorgekom."
   },
   "itemInformation": {
     "message": "Iteminligting"
@@ -573,7 +573,7 @@
     "message": "YubiKey OTP Security Key"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Gebruik ’n YubiKey vir toegang tot u rekening. Werk met YubiKey 4, 4 Nano, 4C en NEO-toestelle."
   },
   "duoDesc": {
     "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
@@ -945,28 +945,28 @@
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premie-lidmaatskap"
   },
   "premiumManage": {
     "message": "Bestuur Lidmaatskap"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "U kan u lidmaatskap op die bitwarden.com-webkluis bestuur. Wil u nou na die webwerf gaan?"
   },
   "premiumRefresh": {
     "message": "Refresh Membership"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "U is nie tans ’n premie-lid nie."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Teken aan vir ’n premie-lidmaatskap en kry:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB encrypted storage for file attachments."
+    "message": "1 GG geënkripteerde berging vir lêeraanhegsels."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Bykomende tweestapaantekenopsies soos YubiKey, FIDO U2F en Duo."
   },
   "premiumSignUpReports": {
     "message": "Wagwoordhigiëne, rekeningwelstand en databreukverslae om u kluis veilig te hou."
@@ -975,19 +975,19 @@
     "message": "TOTP verification code (2FA) generator for logins in your vault."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Klantediens met hoë prioriteit."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Alle toekomstige premie-funksies. Binnekort meer!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Koop Premie"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "U kan lidmaatskap op die bitwarden.com-webkluis koop. Wil u nou na die webwerf gaan?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "U is ’n premie-lid!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Dankie dat u Bitwarden ondersteun."
@@ -1263,15 +1263,21 @@
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Gebruiksvoorwaardes"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Privaatheidsbeleid"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Is u seker u wil afsluit? Indien u nou afsluit sal u huidige inligting nie bewaar word nie."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Onbewaarde Veranderinge"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

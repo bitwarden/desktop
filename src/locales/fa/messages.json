@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "تغییرات ذخیره نشده وجود دارند"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

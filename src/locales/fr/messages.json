@@ -57,7 +57,7 @@
     "message": "Pièces jointes"
   },
   "viewItem": {
-    "message": "Voir l'élément"
+    "message": "Afficher l'élément"
   },
   "name": {
     "message": "Nom"
@@ -76,7 +76,7 @@
     }
   },
   "newUri": {
-    "message": "Nouvelle URI"
+    "message": "Nouvel URI"
   },
   "username": {
     "message": "Nom d'utilisateur"
@@ -106,7 +106,7 @@
     "message": "Champs personnalisés"
   },
   "launch": {
-    "message": "Démarrer"
+    "message": "Ouvrir"
   },
   "copyValue": {
     "message": "Copier la valeur",
@@ -123,7 +123,7 @@
     "message": "Nom du titulaire de la carte"
   },
   "number": {
-    "message": "Nombre"
+    "message": "Numéro"
   },
   "brand": {
     "message": "Réseau de paiement"
@@ -159,7 +159,7 @@
     "message": "Adresse"
   },
   "premiumRequired": {
-    "message": "Version Premium requise"
+    "message": "Adhésion Premium requise"
   },
   "premiumRequiredDesc": {
     "message": "Une adhésion premium est requise pour utiliser cette fonctionnalité."
@@ -241,7 +241,7 @@
     "message": "Générer un mot de passe"
   },
   "type": {
-    "message": "Format"
+    "message": "Type"
   },
   "firstName": {
     "message": "Prénom"
@@ -410,7 +410,7 @@
     "message": "Pièce jointe supprimée"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Êtes-vous sûr⋅e de vouloir supprimer cette pièce jointe ?"
+    "message": "Êtes-vous sûr(e) de vouloir supprimer cette pièce jointe ?"
   },
   "attachmentSaved": {
     "message": "La pièce jointe a été enregistrée."
@@ -443,7 +443,7 @@
     "message": "Dossier supprimé"
   },
   "loginOrCreateNewAccount": {
-    "message": "S'identifier ou créer un nouveau compte pour accéder à votre coffre sécurisé."
+    "message": "Identifiez-vous ou créez un nouveau compte pour accéder à votre coffre sécurisé."
   },
   "createAccount": {
     "message": "Créer un compte"
@@ -464,7 +464,7 @@
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
   },
   "reTypeMasterPass": {
-    "message": "Saisir à nouveau le mot de passe maître"
+    "message": "Saisissez à nouveau le mot de passe maître"
   },
   "masterPassHint": {
     "message": "Indice du mot de passe maître (facultatif)"
@@ -576,7 +576,7 @@
     "message": "Utiliser une YubiKey pour accéder à votre compte. Fonctionne avec les appareils YubiKey 4, 4 Nano, 4C et NEO."
   },
   "duoDesc": {
-    "message": "Vérifier avec Duo Security via l'application Duo Mobile, SMS, appel téléphonique ou une clef de sécurité U2F.",
+    "message": "S'authentifier avec Duo Security via l'application Duo Mobile, un SMS, un appel téléphonique, ou une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -742,7 +742,7 @@
     "message": "Échec de la synchronisation"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -764,7 +764,7 @@
     "message": "Mot de passe maître invalide"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'identification en deux étapes sécurise plus encore votre compte en vous demandant à chaque identification la saisie d'un code de sécurité obtenu depuis un autre appareil, comme une clef de sécurité, une application d'authentification, un SMS, un appel téléphonique ou encore un courriel. L'identification en deux étapes peut être activée dans le coffre web sur bitwarden.com. Voulez-vous vous rendre sur le site web maintenant ?"
+    "message": "L'identification en deux étapes sécurise davantage votre compte en vous demandant à chaque connexion de saisir un code de sécurité obtenu depuis un autre appareil, via une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique, ou un e-mail. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Voulez-vous vous visiter le site web maintenant ?"
   },
   "twoStepLogin": {
     "message": "Identification en deux étapes"
@@ -844,25 +844,25 @@
     "message": "Réduire dans la zone de notification"
   },
   "enableMinToTrayDesc": {
-    "message": "Lorsque la fenêtre est réduite, privilégier l'affichage d'une icône dans la zone de notification."
+    "message": "Lorsque la fenêtre est réduite, afficher une icône dans la zone de notification à la place."
   },
   "enableCloseToTray": {
-    "message": "Réduire dans la zone de notifications"
+    "message": "Fermer dans la zone de notification"
   },
   "enableCloseToTrayDesc": {
-    "message": "Lors de la fermeture de la fenêtre, afficher une icône dans la zone de notification."
+    "message": "Lorsque la fenêtre est fermée, afficher une icône dans la zone de notification."
   },
   "enableTray": {
-    "message": "Activer le raccourci dans la zone de notifications"
+    "message": "Activer le raccourci dans la zone de notification"
   },
   "enableTrayDesc": {
     "message": "Toujours afficher une icône dans la zone de notification."
   },
   "startToTray": {
-    "message": "Démarrer dans la zone de notifications"
+    "message": "Démarrer dans la zone de notification"
   },
   "startToTrayDesc": {
-    "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la zone de notifications."
+    "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la zone de notification."
   },
   "language": {
     "message": "Langue"
@@ -916,7 +916,7 @@
     "message": "Mise à jour disponible"
   },
   "updateAvailableDesc": {
-    "message": "Une mise à jour a été trouvée. Souhaitez-vous la téléchargement maintenant ?"
+    "message": "Une mise à jour a été trouvée. Souhaitez-vous la télécharger maintenant ?"
   },
   "restart": {
     "message": "Redémarrer"
@@ -925,7 +925,7 @@
     "message": "Plus tard"
   },
   "noUpdatesAvailable": {
-    "message": "Aucune mise à jour actuellement disponible. Vous utilisez la dernière version."
+    "message": "Aucune mise à jour n'est actuellement disponible. Vous utilisez la dernière version."
   },
   "updateError": {
     "message": "Erreur de mise à jour"
@@ -951,7 +951,7 @@
     "message": "Gérer l'adhésion"
   },
   "premiumManageAlert": {
-    "message": "Vous pouvez gérer votre adhésion depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?"
+    "message": "Vous pouvez gérer votre adhésion depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site web maintenant ?"
   },
   "premiumRefresh": {
     "message": "Actualiser l'adhésion"
@@ -972,19 +972,19 @@
     "message": "Rapports sur l'hygiène des mots de passe, la santé des comptes et les fuites de données pour assurer la sécurité de votre coffre."
   },
   "premiumSignUpTotp": {
-    "message": "La génération d'un code de vérification TOTP (double facteurs / 2FA) pour les identifiants de votre coffre."
+    "message": "Génération d'un code de vérification TOTP (2FA) pour les identifiants de votre coffre."
   },
   "premiumSignUpSupport": {
     "message": "Support client prioritaire."
   },
   "premiumSignUpFuture": {
-    "message": "Toutes les futures options premium. Prochainement !"
+    "message": "Toutes les futures options premium. D'autres suivront prochainement !"
   },
   "premiumPurchase": {
     "message": "Acheter Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous consulter le site web maintenant ?"
+    "message": "Vous pouvez opter pour une adhésion premium depuis le coffre web sur bitwarden.com. Souhaitez-vous visiter le site web maintenant ?"
   },
   "premiumCurrentMember": {
     "message": "Vous êtes un adhérent premium !"
@@ -1159,7 +1159,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Mis à jour",
+    "message": "Mis à jour ",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1177,7 +1177,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que l'e-mail). Supprimez-le immédiatement après l'avoir utilisé."
+    "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que par e-mail). Supprimez-le immédiatement après l'avoir utilisé."
   },
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
@@ -1210,7 +1210,7 @@
     "message": "Mot de passe maître faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase secrète) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase secrète) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr(e) de vouloir utiliser ce mot de passe maître ?"
   },
   "pin": {
     "message": "Code PIN",
@@ -1229,7 +1229,7 @@
     "message": "Code PIN invalide."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Votre coffre est verrouillé. Vérifiez votre code PIN pour continuer."
+    "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
@@ -1250,7 +1250,7 @@
     "message": "Vous devez sélectionner au moins une collection."
   },
   "premiumUpdated": {
-    "message": "Vous avez mis à niveau vers premium."
+    "message": "Vous venez de passer à un compte Premium."
   },
   "restore": {
     "message": "Restaurer"
@@ -1269,9 +1269,15 @@
     "message": "Politique de confidentialité"
   },
   "unsavedChangesConfirmation": {
-    "message": "Êtes-vous certain de vouloir partir ? Si vous quittez maintenant, vos informations actuelles ne seront pas sauvegardées"
+    "message": "Êtes-vous sûr(e) de vouloir quitter ? Si vous le faites maintenant, vos informations actuelles ne seront pas sauvegardées."
   },
   "unsavedChangesTitle": {
-    "message": "Il y a des modifications non enregistrées"
+    "message": "Modifications non sauvegardées"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

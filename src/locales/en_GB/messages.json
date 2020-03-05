@@ -1269,9 +1269,15 @@
     "message": "Privacy policy"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Are you sure you want to leave? If you leave now, your current information won't be saved."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Unsaved changes"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

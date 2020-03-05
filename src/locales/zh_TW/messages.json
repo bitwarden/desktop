@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "有尚未儲存的變更"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

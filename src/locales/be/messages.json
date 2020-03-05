@@ -1,0 +1,1283 @@
+{
+  "bitwarden": {
+    "message": "Bitwarden"
+  },
+  "filters": {
+    "message": "Фільтры"
+  },
+  "allItems": {
+    "message": "Усе элементы"
+  },
+  "favorites": {
+    "message": "Абраныя"
+  },
+  "types": {
+    "message": "Тыпы"
+  },
+  "typeLogin": {
+    "message": "Імя карыстальніка"
+  },
+  "typeCard": {
+    "message": "Картка"
+  },
+  "typeIdentity": {
+    "message": "Пасведчанне"
+  },
+  "typeSecureNote": {
+    "message": "Бяспечныя нататкі"
+  },
+  "folders": {
+    "message": "Папкі"
+  },
+  "collections": {
+    "message": "Калекцыі"
+  },
+  "searchVault": {
+    "message": "Пошук у сховішчы"
+  },
+  "addItem": {
+    "message": "Дадаць элемент"
+  },
+  "shared": {
+    "message": "Абагуленыя"
+  },
+  "share": {
+    "message": "Абагуліць"
+  },
+  "shareItem": {
+    "message": "Абагуліць элемент"
+  },
+  "sharedItem": {
+    "message": "Абагулены элемент"
+  },
+  "shareDesc": {
+    "message": "Выберыце арганізацыю, якой вы хочаце даць доступ да гэтага элемента. Пасля выканання гэтай аперацыі, правы на элемент будуць перададзены арганізацыі і вы не будзеце з'яўляцца непасрэдным уладальнікам гэтага элемента."
+  },
+  "attachments": {
+    "message": "Далучэнні"
+  },
+  "viewItem": {
+    "message": "Прагляд элемента"
+  },
+  "name": {
+    "message": "Назва"
+  },
+  "uri": {
+    "message": "URI"
+  },
+  "uriPosition": {
+    "message": "URI $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "Новы URI"
+  },
+  "username": {
+    "message": "Імя карыстальніка"
+  },
+  "password": {
+    "message": "Пароль"
+  },
+  "passphrase": {
+    "message": "Парольная фраза"
+  },
+  "editItem": {
+    "message": "Рэдагаванне элемента"
+  },
+  "emailAddress": {
+    "message": "Адрас эл. пошты"
+  },
+  "verificationCodeTotp": {
+    "message": "Код праверкі (TOTP)"
+  },
+  "website": {
+    "message": "Вэб-сайт"
+  },
+  "notes": {
+    "message": "Нататкі"
+  },
+  "customFields": {
+    "message": "Карыстальніцкія палі"
+  },
+  "launch": {
+    "message": "Запусціць"
+  },
+  "copyValue": {
+    "message": "Капіяваць значэнне",
+    "description": "Copy value to clipboard"
+  },
+  "toggleVisibility": {
+    "message": "Пераключыць бачнасць"
+  },
+  "toggleCollapse": {
+    "message": "Згарнуць/Разгарнуць",
+    "description": "Toggling an expand/collapse state."
+  },
+  "cardholderName": {
+    "message": "Імя ўладальніка карткі"
+  },
+  "number": {
+    "message": "Нумар"
+  },
+  "brand": {
+    "message": "Тып карткі"
+  },
+  "expiration": {
+    "message": "Тэрмін дзеяння"
+  },
+  "securityCode": {
+    "message": "Код бяспекі"
+  },
+  "identityName": {
+    "message": "Імя"
+  },
+  "company": {
+    "message": "Кампанія"
+  },
+  "ssn": {
+    "message": "Нумар сацыяльнага страхавання"
+  },
+  "passportNumber": {
+    "message": "Нумар пашпарта"
+  },
+  "licenseNumber": {
+    "message": "Нумар ліцэнзіі"
+  },
+  "email": {
+    "message": "Электронная пошта"
+  },
+  "phone": {
+    "message": "Тэлефон"
+  },
+  "address": {
+    "message": "Адрас"
+  },
+  "premiumRequired": {
+    "message": "Патрабуецца прэміяльны статус"
+  },
+  "premiumRequiredDesc": {
+    "message": "Для выкарыстання гэтай функцыі патрабуецца прэміяльны статус."
+  },
+  "errorOccurred": {
+    "message": "Адбылася памылка."
+  },
+  "error": {
+    "message": "Памылка"
+  },
+  "january": {
+    "message": "Студзень"
+  },
+  "february": {
+    "message": "Люты"
+  },
+  "march": {
+    "message": "Сакавік"
+  },
+  "april": {
+    "message": "Красавік"
+  },
+  "may": {
+    "message": "Май"
+  },
+  "june": {
+    "message": "Чэрвень"
+  },
+  "july": {
+    "message": "Ліпень"
+  },
+  "august": {
+    "message": "Жнівень"
+  },
+  "september": {
+    "message": "Верасень"
+  },
+  "october": {
+    "message": "Кастрычнік"
+  },
+  "november": {
+    "message": "Лістапад"
+  },
+  "december": {
+    "message": "Снежань"
+  },
+  "ex": {
+    "message": "напр.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "title": {
+    "message": "Зварот"
+  },
+  "mr": {
+    "message": "С-р"
+  },
+  "mrs": {
+    "message": "С-ня"
+  },
+  "ms": {
+    "message": "Пані"
+  },
+  "dr": {
+    "message": "Док."
+  },
+  "expirationMonth": {
+    "message": "Месяц заканчэння"
+  },
+  "expirationYear": {
+    "message": "Год заканчэння"
+  },
+  "select": {
+    "message": "Выбраць"
+  },
+  "other": {
+    "message": "Iншае"
+  },
+  "generatePassword": {
+    "message": "Згенерыраваць пароль"
+  },
+  "type": {
+    "message": "Тып"
+  },
+  "firstName": {
+    "message": "Імя"
+  },
+  "middleName": {
+    "message": "Імя па бацьку"
+  },
+  "lastName": {
+    "message": "Прозвішча"
+  },
+  "address1": {
+    "message": "Радок адрасу 1"
+  },
+  "address2": {
+    "message": "Радок адрасу 2"
+  },
+  "address3": {
+    "message": "Радок адрасу 3"
+  },
+  "cityTown": {
+    "message": "Горад / Пасёлак"
+  },
+  "stateProvince": {
+    "message": "Рэгіён / Вобласць"
+  },
+  "zipPostalCode": {
+    "message": "Паштовы індэкс"
+  },
+  "country": {
+    "message": "Краіна"
+  },
+  "save": {
+    "message": "Захаваць"
+  },
+  "cancel": {
+    "message": "Скасаваць"
+  },
+  "delete": {
+    "message": "Выдаліць"
+  },
+  "favorite": {
+    "message": "Абраны"
+  },
+  "edit": {
+    "message": "Рэдагаваць"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Ключ праверкі сапраўднасці (TOTP)"
+  },
+  "folder": {
+    "message": "Папка"
+  },
+  "newCustomField": {
+    "message": "Новае карыстальніцкае поле"
+  },
+  "value": {
+    "message": "Значэнне"
+  },
+  "dragToSort": {
+    "message": "Перацягніце для сартавання"
+  },
+  "cfTypeText": {
+    "message": "Тэкст"
+  },
+  "cfTypeHidden": {
+    "message": "Схавана"
+  },
+  "cfTypeBoolean": {
+    "message": "Лагічнае"
+  },
+  "remove": {
+    "message": "Выдаліць"
+  },
+  "nameRequired": {
+    "message": "Патрэбна назва."
+  },
+  "addedItem": {
+    "message": "Элемент дададзены"
+  },
+  "editedItem": {
+    "message": "Элемент адрэдагаваны"
+  },
+  "deleteItem": {
+    "message": "Выдаліць элемент"
+  },
+  "deleteFolder": {
+    "message": "Выдаліць папку"
+  },
+  "deleteAttachment": {
+    "message": "Выдаліць далучэнне"
+  },
+  "deleteItemConfirmation": {
+    "message": "Вы ўпэўнены, што хочаце выдаліць гэты элемент?"
+  },
+  "deletedItem": {
+    "message": "Выдалены элемент"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Вы ўпэўнены, што хочаце перазапісаць бягучы пароль?"
+  },
+  "noneFolder": {
+    "message": "Без папкі",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "Дадаць папку"
+  },
+  "editFolder": {
+    "message": "Рэдагаваць папку"
+  },
+  "regeneratePassword": {
+    "message": "Стварыць новы пароль"
+  },
+  "copyPassword": {
+    "message": "Капіяваць пароль"
+  },
+  "copyUri": {
+    "message": "Капіяваць URI"
+  },
+  "length": {
+    "message": "Даўжыня"
+  },
+  "numWords": {
+    "message": "Колькасць слоў"
+  },
+  "wordSeparator": {
+    "message": "Раздзяляльнік слоў"
+  },
+  "capitalize": {
+    "message": "З вялікай літары",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Уключыць лічбу"
+  },
+  "close": {
+    "message": "Закрыць"
+  },
+  "minNumbers": {
+    "message": "Мін. колькасць лічбаў"
+  },
+  "minSpecial": {
+    "message": "Мін. колькасць сімвалаў",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Пазбягаць неадназначных сімвалаў"
+  },
+  "searchCollection": {
+    "message": "Пошук у калекцыі"
+  },
+  "searchFolder": {
+    "message": "Пошук у папцы"
+  },
+  "searchFavorites": {
+    "message": "Пошук у абраным"
+  },
+  "searchType": {
+    "message": "Пошук па тыпу",
+    "description": "Search item type"
+  },
+  "newAttachment": {
+    "message": "Дадаць новае далучэнне"
+  },
+  "deletedAttachment": {
+    "message": "Далучэнне выдалена"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Вы ўпэўнены, што хочаце выдаліць гэта далучэнне?"
+  },
+  "attachmentSaved": {
+    "message": "Далучэнне захавана."
+  },
+  "file": {
+    "message": "Файл"
+  },
+  "selectFile": {
+    "message": "Выберыце файл."
+  },
+  "maxFileSize": {
+    "message": "Максімальны памер файла 100 МБ."
+  },
+  "updateKey": {
+    "message": "Вы не можаце выкарыстоўваць гэту функцыю, пакуль не абнавіце свой ключ шыфравання."
+  },
+  "options": {
+    "message": "Параметры"
+  },
+  "editedFolder": {
+    "message": "Папка адрэдагавана"
+  },
+  "addedFolder": {
+    "message": "Папка дададзена"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Вы ўпэўнены, што хочаце выдаліць гэту папку?"
+  },
+  "deletedFolder": {
+    "message": "Папка выдалена"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Увайдзіце або стварыце новы ўліковы запіс для доступу да бяспечнага сховішча."
+  },
+  "createAccount": {
+    "message": "Стварыць уліковы запіс"
+  },
+  "logIn": {
+    "message": "Увайсці"
+  },
+  "submit": {
+    "message": "Адправіць"
+  },
+  "masterPass": {
+    "message": "Майстар-пароль"
+  },
+  "masterPassDesc": {
+    "message": "Майстар-пароль — ключ да вашага бяспечнага сховішча. Ён вельмі важны, таму не забывайце яго. Аднавіць майстар-пароль немагчыма."
+  },
+  "masterPassHintDesc": {
+    "message": "Падказка да майстра-пароля можа дапамагчы вам яго ўспомніць."
+  },
+  "reTypeMasterPass": {
+    "message": "Увядзіце майстар-пароль паўторна"
+  },
+  "masterPassHint": {
+    "message": "Падказка да майстра-пароля (неабавязкова)"
+  },
+  "settings": {
+    "message": "Налады"
+  },
+  "passwordHint": {
+    "message": "Падказка да пароля"
+  },
+  "enterEmailToGetHint": {
+    "message": "Увядзіце адрас электроннай пошты ўліковага запісу для атрымання падказкі для пароля."
+  },
+  "getMasterPasswordHint": {
+    "message": "Атрымаць падказку для майстра-пароля"
+  },
+  "emailRequired": {
+    "message": "Патрабуецца адрас электроннай пошты."
+  },
+  "invalidEmail": {
+    "message": "Памылковы адрас электроннай пошты."
+  },
+  "masterPassRequired": {
+    "message": "Патрабуецца майстар-пароль."
+  },
+  "masterPassLength": {
+    "message": "Майстар-пароль павінен быць даўжынёй не менш за 8 сімвалаў."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Майстры-паролі не супадаюць."
+  },
+  "newAccountCreated": {
+    "message": "Ваш уліковы запіс створаны! Вы можаце ўвайсці."
+  },
+  "masterPassSent": {
+    "message": "Мы адправілі вам на электронную пошту падказку для майстра-пароля."
+  },
+  "unexpectedError": {
+    "message": "Адбылася нечаканая памылка."
+  },
+  "itemInformation": {
+    "message": "Звесткі аб элеменце"
+  },
+  "noItemsInList": {
+    "message": "Няма элементаў для паказу."
+  },
+  "verificationCode": {
+    "message": "Код праверкі"
+  },
+  "verificationCodeRequired": {
+    "message": "Патрабуецца код праверкі."
+  },
+  "continue": {
+    "message": "Працягнуць"
+  },
+  "enterVerificationCodeApp": {
+    "message": "Увядзіце 6 лічбаў кода праверкі з вашай праграмы праверкі сапраўднасці."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Увядзіце 6 лічбаў кода праверкі, які быў адпраўлены на $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Адпраўлены ліст для пацвярджэння $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "Запомніць мяне"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Адправіць код пацвярджэння зноў"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Выкарыстоўваць іншы метад двухэтапнага ўваходу"
+  },
+  "insertYubiKey": {
+    "message": "Устаўце ваш YubiKey ў порт USB вашага камп'ютара, затым націсніце на кнопку."
+  },
+  "insertU2f": {
+    "message": "Устаўце ваш ключ бяспекі ў порт USB вашага камп'ютара. Калі на ім ёсць кнопка, націсніце на яе."
+  },
+  "recoveryCodeDesc": {
+    "message": "Згубілі доступ да ўсіх варыянтаў двухэтапнага ўваходу? Скарыстайцеся кодам аднаўлення, каб адключыць двухэтапны ўваход для вашага ўліковага запісу."
+  },
+  "recoveryCodeTitle": {
+    "message": "Код аднаўлення"
+  },
+  "authenticatorAppTitle": {
+    "message": "Праграма праверкі сапраўднасці"
+  },
+  "authenticatorAppDesc": {
+    "message": "Выкарыстоўвайце праграму для праверкі сапраўднасці (напрыклад, Authy або Google Authenticator) для стварэння кодаў праверкі на аснове часу.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "Ключ бяспекі YubiKey OTP"
+  },
+  "yubiKeyDesc": {
+    "message": "Выкарыстоўвайце YubiKey для доступу да вашага ўліковага запісу. Працуе з прыладамі YubiKey серый 4, 5 і NEO."
+  },
+  "duoDesc": {
+    "message": "Пацвярдзіце з дапамогай Duo Security, выкарыстоўваючы праграму Duo Mobile, SMS, тэлефонны выклік або ключ бяспекі.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Пацвярдзіце з дапамогай Duo Security для вашай арганізацыі, выкарыстоўваючы праграму Duo Mobile, SMS, тэлефонны выклік або ключ бяспекі.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Выкарыстоўвайце любы ключ бяспекі FIDO U2F для доступу да вашага ўліковага запісу."
+  },
+  "u2fTitle": {
+    "message": "Ключ бяспекі FIDO U2F"
+  },
+  "emailTitle": {
+    "message": "Электронная пошта"
+  },
+  "emailDesc": {
+    "message": "Коды пацвярджэння будуць адпраўлены вам па электроннай пошце."
+  },
+  "loginUnavailable": {
+    "message": "Уваход недаступны"
+  },
+  "noTwoStepProviders": {
+    "message": "У гэтага ўліковага запісу ўключаны двухэтапны ўваход, аднак ні адзін з наладжаных варыянтаў не падтрымліваецца гэтай прыладай."
+  },
+  "noTwoStepProviders2": {
+    "message": "Дадайце дадатковыя варыянты двухэтапнага ўваходу, якія падтрымліваюцца большасцю прылад (напрыклад, праграма праверкі сапраўднасці)."
+  },
+  "twoStepOptions": {
+    "message": "Параметры двухэтапнага ўваходу"
+  },
+  "selfHostedEnvironment": {
+    "message": "Асяроддзе ўласнага хостынгу"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Увядзіце асноўны URL-адрас на вашым серверы."
+  },
+  "customEnvironment": {
+    "message": "Налады асяроддзя"
+  },
+  "customEnvironmentFooter": {
+    "message": "Для вопытных карыстальнікаў. Можна ўвесці URL-адрасы асобна для кжонай службы."
+  },
+  "baseUrl": {
+    "message": "URL-адрас сервера"
+  },
+  "apiUrl": {
+    "message": "API URL-адраса сервера"
+  },
+  "webVaultUrl": {
+    "message": "URL-адрас сервера вэб-сховішча"
+  },
+  "identityUrl": {
+    "message": "URL-адрас сервера ідэнтыфікацыі"
+  },
+  "notificationsUrl": {
+    "message": "URL-адрас сервера апавяшчэнняў"
+  },
+  "iconsUrl": {
+    "message": "URL-адрас сервера значкоў"
+  },
+  "environmentSaved": {
+    "message": "URL-адрас сервера асяроддзя захаваны."
+  },
+  "ok": {
+    "message": "ОК"
+  },
+  "yes": {
+    "message": "Так"
+  },
+  "no": {
+    "message": "Не"
+  },
+  "overwritePassword": {
+    "message": "Перазапісаць пароль"
+  },
+  "learnMore": {
+    "message": "Даведацца больш"
+  },
+  "featureUnavailable": {
+    "message": "Функцыя недаступна"
+  },
+  "loggedOut": {
+    "message": "Вы выйшлі са сховішча"
+  },
+  "loginExpired": {
+    "message": "Скончыўся тэрмін дзеяння вашага сеансу."
+  },
+  "logOutConfirmation": {
+    "message": "Вы ўпэўнены, што хочаце выйсці?"
+  },
+  "logOut": {
+    "message": "Выйсці"
+  },
+  "addNewLogin": {
+    "message": "Дадаць новае імя карыстальніка"
+  },
+  "addNewItem": {
+    "message": "Дадаць новы элемент"
+  },
+  "addNewFolder": {
+    "message": "Дадаць новую папку"
+  },
+  "view": {
+    "message": "Выгляд"
+  },
+  "account": {
+    "message": "Уліковы запіс"
+  },
+  "loading": {
+    "message": "Загрузка..."
+  },
+  "lockNow": {
+    "message": "Заблакіраваць"
+  },
+  "passwordGenerator": {
+    "message": "Генератар пароляў"
+  },
+  "emailUs": {
+    "message": "Напішыце нам"
+  },
+  "visitOurWebsite": {
+    "message": "Наведайце наш вэб-сайт"
+  },
+  "fileBugReport": {
+    "message": "Паведаміць аб памылцы"
+  },
+  "blog": {
+    "message": "Блог"
+  },
+  "followUs": {
+    "message": "Падпісвайцеся"
+  },
+  "syncVault": {
+    "message": "Сінхранізаваць сховішча"
+  },
+  "changeMasterPass": {
+    "message": "Змяніць майстар-пароль"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "Вы можаце змяніць свой майстар-пароль на bitwarden.com. Перайсці на сайт зараз?"
+  },
+  "fingerprintPhrase": {
+    "message": "Фраза адбітка пальца",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Фраза адбітка пальца вашага ўліковага запісу",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "goToWebVault": {
+    "message": "Перайсці ў вэб-сховішча"
+  },
+  "getMobileApp": {
+    "message": "Атрымаць мабільную праграму"
+  },
+  "getBrowserExtension": {
+    "message": "Атрымаць пашырэнне для браўзера"
+  },
+  "syncingComplete": {
+    "message": "Сінхранізацыя завершана"
+  },
+  "syncingFailed": {
+    "message": "Памылка сінхранізацыі"
+  },
+  "yourVaultIsLocked": {
+    "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце майстар-пароль."
+  },
+  "unlock": {
+    "message": "Разблакіраваць"
+  },
+  "loggedInAsOn": {
+    "message": "Выкананы ўваход на $HOSTNAME$ як $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "invalidMasterPassword": {
+    "message": "Памылковы майстар-пароль"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Двухэтапны ўваход робіць ваш уліковы запіс больш бяспечным, патрабуючы пацвярджэння ўваходу на іншай прыладзе, напрыклад, ключом бяспекі, праграмай для праверкі бяспекі, SMS, тэлефонным выклікам або электроннай поштай. Двухэтапны ўваход уключаецца на bitwarden.com. Перайсці на сайт зараз?"
+  },
+  "twoStepLogin": {
+    "message": "Двухэтапны ўваход"
+  },
+  "lockOptions": {
+    "message": "Параметры блакіроўкі"
+  },
+  "lockOptionsDesc": {
+    "message": "Выберыце ўмовы блакіравання вашага сховвішча. Для яго разблакіроўкі патрабуецца паўторна ўвесці майстар-пароль."
+  },
+  "immediately": {
+    "message": "Адразу"
+  },
+  "tenSeconds": {
+    "message": "10 секунд"
+  },
+  "twentySeconds": {
+    "message": "20 секунд"
+  },
+  "thirtySeconds": {
+    "message": "30 секунд"
+  },
+  "oneMinute": {
+    "message": "1 хвіліна"
+  },
+  "twoMinutes": {
+    "message": "2 хвіліны"
+  },
+  "fiveMinutes": {
+    "message": "5 хвілін"
+  },
+  "fifteenMinutes": {
+    "message": "15 хвілін"
+  },
+  "thirtyMinutes": {
+    "message": "30 хвілін"
+  },
+  "oneHour": {
+    "message": "1 гадзіна"
+  },
+  "fourHours": {
+    "message": "4 гадзіны"
+  },
+  "onIdle": {
+    "message": "Пры бяздзейнасці"
+  },
+  "onSleep": {
+    "message": "У рэжыме сну"
+  },
+  "onLocked": {
+    "message": "Разам з камп'ютарам"
+  },
+  "onRestart": {
+    "message": "Пры перазапуску"
+  },
+  "never": {
+    "message": "Ніколі"
+  },
+  "security": {
+    "message": "Бяспека"
+  },
+  "clearClipboard": {
+    "message": "Ачыстка буфера абмену",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Аўтаматычна ачышчаць скапіяваныя значэнні з вашага буфера абмену.",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
+  },
+  "disableFavicon": {
+    "message": "Адключыць значкі вэб-сайтаў"
+  },
+  "disableFaviconDesc": {
+    "message": "Значкі вэб-сайтаў паказваюцца з кожным элементам у вашым сховішчы."
+  },
+  "enableMinToTray": {
+    "message": "Згарунць у вобласць апавяшчэнняў"
+  },
+  "enableMinToTrayDesc": {
+    "message": "Пры згортванні акна, будзе паказвацца значок у вообласці апавяшчэнняў."
+  },
+  "enableCloseToTray": {
+    "message": "Закрываць у вобласць апавяшчэнняў"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "Пры закрыцці акна, будзе паказвацца значок у вообласці апавяшчэнняў."
+  },
+  "enableTray": {
+    "message": "Уключыць значок у вобласці апавяшчэнняў"
+  },
+  "enableTrayDesc": {
+    "message": "Заўсёды паказваць значок у вобласці апавяшчэнняў."
+  },
+  "startToTray": {
+    "message": "Запускаць у згорнутым выглядзе"
+  },
+  "startToTrayDesc": {
+    "message": "Пры першым запуску праграмы, будзе паказвацца значок у вобласці апавяшчэнняў."
+  },
+  "language": {
+    "message": "Мова"
+  },
+  "languageDesc": {
+    "message": "Змена мовы, якая выкарыстоўваецца праграмай. Патрабуецца перазапуск."
+  },
+  "theme": {
+    "message": "Тэма"
+  },
+  "themeDesc": {
+    "message": "Змена колеравай тэмы праграмы."
+  },
+  "dark": {
+    "message": "Цёмная",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Светлая",
+    "description": "Light color"
+  },
+  "copy": {
+    "message": "Капіяваць",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "Праверыць абнаўленні"
+  },
+  "version": {
+    "message": "Версія $VERSION_NUM$",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "restartToUpdate": {
+    "message": "Перазапуск для абнаўлення"
+  },
+  "restartToUpdateDesc": {
+    "message": "Версія $VERSION_NUM$ гатовая да ўсталявання. Вы павінны перазапусціць праграму, каб завершыць усталяванне. Вы хочаце перазапусціць і абнавіць зараз?",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "Даступна абнаўленне"
+  },
+  "updateAvailableDesc": {
+    "message": "Знойдзена абнаўленне. Спампаваць яго зараз?"
+  },
+  "restart": {
+    "message": "Перазапусціць"
+  },
+  "later": {
+    "message": "Пазней"
+  },
+  "noUpdatesAvailable": {
+    "message": "Абнаўленняў няма. Вы выкарыстоўваеце апошнюю версію."
+  },
+  "updateError": {
+    "message": "Памылка абнаўлення"
+  },
+  "unknown": {
+    "message": "Невядома"
+  },
+  "copyUsername": {
+    "message": "Капіяваць імя карыстальніка"
+  },
+  "copyNumber": {
+    "message": "Капіяваць нумар",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Капіяваць код бяспекі",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "premiumMembership": {
+    "message": "Прэміяльны статус"
+  },
+  "premiumManage": {
+    "message": "Кіраванне статусам"
+  },
+  "premiumManageAlert": {
+    "message": "Вы можаце кіраваць сваім статусам на bitwarden.com. Перайсці на сайт зараз?"
+  },
+  "premiumRefresh": {
+    "message": "Абнавіць статус"
+  },
+  "premiumNotCurrentMember": {
+    "message": "На дадзены момант у вас не прэміяльны статус."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Падпішыцеся на прэміяльны статус і атрымайце:"
+  },
+  "premiumSignUpStorage": {
+    "message": "1 ГБ зашыфраванага сховішча для далучаных файлаў."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Дадатковыя варыянты двухэтапнага ўваходу, такія як YubiKey, FIDO U2F і Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Гігіена пароляў, здароўе ўліковага запісу і справаздачы аб уцечках даных для забеспячэння бяспекі вашага сховішча."
+  },
+  "premiumSignUpTotp": {
+    "message": "TOTP-генератар кодаў (2ФА) для імён карыстальнікаў вашага сховішча."
+  },
+  "premiumSignUpSupport": {
+    "message": "Прыярытэтная падтрымка."
+  },
+  "premiumSignUpFuture": {
+    "message": "Усе будучыя функцыі прэміяльнага статусу. Іх будзе больш!"
+  },
+  "premiumPurchase": {
+    "message": "Купіць прэміяльны статус"
+  },
+  "premiumPurchaseAlert": {
+    "message": "Вы можаце купіць прэміяльны статус на bitwarden.com. Перайсці на сайт зараз?"
+  },
+  "premiumCurrentMember": {
+    "message": "У вас прэміяльны статус!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Дзякуем вам за падтрымку Bitwarden."
+  },
+  "premiumPrice": {
+    "message": "Усяго толькі за $PRICE$ на год!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "refreshComplete": {
+    "message": "Абнаўленне завершана"
+  },
+  "passwordHistory": {
+    "message": "Гісторыя пароляў"
+  },
+  "clear": {
+    "message": "Ачысціць",
+    "description": "To clear something out. example: To clear browser history."
+  },
+  "noPasswordsInList": {
+    "message": "Няма пароляў для паказу."
+  },
+  "undo": {
+    "message": "Адрабіць"
+  },
+  "redo": {
+    "message": "Вярнуць"
+  },
+  "cut": {
+    "message": "Выразаць",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Уставіць",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Выбраць усё"
+  },
+  "zoomIn": {
+    "message": "Павялічыць"
+  },
+  "zoomOut": {
+    "message": "Паменшыць"
+  },
+  "resetZoom": {
+    "message": "Скінуць маштаб"
+  },
+  "toggleFullScreen": {
+    "message": "Пераключыць поўнаэкранны рэжым"
+  },
+  "reload": {
+    "message": "Перазагрузка"
+  },
+  "toggleDevTools": {
+    "message": "Пераключыць інструменты для распрацоўшчыкаў"
+  },
+  "minimize": {
+    "message": "Згарнуць",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Маштаб"
+  },
+  "bringAllToFront": {
+    "message": "На пярэдні план",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "Пра Bitwarden"
+  },
+  "services": {
+    "message": "Службы"
+  },
+  "hideBitwarden": {
+    "message": "Схаваць Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Схаваць іншыя"
+  },
+  "showAll": {
+    "message": "Паказаць усе"
+  },
+  "quitBitwarden": {
+    "message": "Выйсці з Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ скапіяваны(-а)",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "help": {
+    "message": "Даведка"
+  },
+  "window": {
+    "message": "Акно"
+  },
+  "checkPassword": {
+    "message": "Праверце, ці не скампраметаваны пароль."
+  },
+  "passwordExposed": {
+    "message": "Гэты пароль быў скампраметаваны $VALUE$ раз(-ы/-оў). Вы павінны змяніць яго.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "Гэты пароль не быў знойдзены ў вядомых базах уцечак. Можна працягваць яго выкарыстоўваць."
+  },
+  "baseDomain": {
+    "message": "Асноўны дамен"
+  },
+  "host": {
+    "message": "Хост",
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Дакладна"
+  },
+  "startsWith": {
+    "message": "Пачынаецца з"
+  },
+  "regEx": {
+    "message": "Рэгулярны выраз",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Выяўленне супадзенняў",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Метад выяўлення па змаўчанні",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Пераключыць параметры"
+  },
+  "organization": {
+    "message": "Арганізацыя",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Па змаўчанні"
+  },
+  "exit": {
+    "message": "Выхад"
+  },
+  "showHide": {
+    "message": "Паказаць / Схаваць",
+    "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
+  },
+  "hideToTray": {
+    "message": "Схаваць у вобласць апавяшчэнняў"
+  },
+  "alwaysOnTop": {
+    "message": "Па-над усімі вокнамі",
+    "description": "Application window should always stay on top of other windows"
+  },
+  "dateUpdated": {
+    "message": "Абноўлена",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Пароль абноўлены",
+    "description": "ex. Date this password was updated"
+  },
+  "exportVault": {
+    "message": "Экспарт сховішча"
+  },
+  "fileFormat": {
+    "message": "Фармат файла"
+  },
+  "warning": {
+    "message": "УВАГА",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarningDesc": {
+    "message": "Экспартуемы файл утрымлівае даныя вашага сховішча ў незашыфраваным фармаце. Яго не варта захоўваць ці адпраўляць па небяспечным каналам (напрыклад, па электроннай пошце). Выдаліце яго адразу пасля выкарыстання."
+  },
+  "exportMasterPassword": {
+    "message": "Увядзіце ваш майстар-пароль для экспарту даных са сховішча."
+  },
+  "noOrganizationsList": {
+    "message": "Вы не з'яўляецеся членам якой-небудзь арганізацыі. Арганізацыі дазваляюць бяспечна абменьвацца элементамі з іншымі карыстальнікамі."
+  },
+  "noCollectionsInList": {
+    "message": "Няма калекцый для паказу."
+  },
+  "ownership": {
+    "message": "Уладальнік"
+  },
+  "whoOwnsThisItem": {
+    "message": "Каму належыць гэты элемент?"
+  },
+  "strong": {
+    "message": "Моцны",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Добры",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Слабы",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Слабы майстар-пароль"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "Майстар-пароль, выбраны вамі, з'яўляецца слабым. Для належнай абароны ўліковага запісу Bitwarden, вам належыць выкарыстоўваць моцны майстар-пароль (або парольную фразу). Вы ўпэўнены, што хочаце выкарыстоўваць гэты майстар-пароль?"
+  },
+  "pin": {
+    "message": "PIN-код",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Разблакіраваць PIN-кодам"
+  },
+  "setYourPinCode": {
+    "message": "Задайце PIN-код для разблакіроўкі Bitwarden. Налады PIN-кода будуць скінуты, калі вы калі-небудзь цалкам выйдзеце з праграмы."
+  },
+  "pinRequired": {
+    "message": "Патрабуецца PIN-код."
+  },
+  "invalidPin": {
+    "message": "Памылковы PIN-код."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Блакіраваць майстрам-паролем пры перазапуску"
+  },
+  "preferences": {
+    "message": "Налады"
+  },
+  "enableMenuBar": {
+    "message": "Уключыць значок у радку меню"
+  },
+  "enableMenuBarDesc": {
+    "message": "Заўсёды паказваць значок у радку меню."
+  },
+  "hideToMenuBar": {
+    "message": "Схаваць у радку меню"
+  },
+  "selectOneCollection": {
+    "message": "Вы павінны выбраць прынамсі адну калекцыю."
+  },
+  "premiumUpdated": {
+    "message": "Вы абнавіліся да прэміяльнага статусу."
+  },
+  "restore": {
+    "message": "Аднавіць"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Вы можаце кіраваць сваёй падпіскай з App Store. Вы хочаце наведаць App Store?"
+  },
+  "legal": {
+    "message": "Правы",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Умовы выкарыстання"
+  },
+  "privacyPolicy": {
+    "message": "Палітыка прыватнасці"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Вы ўпэўнены, што хочаце выйсці? У такім выпадку, ваша інфармацыя не будзе захавана."
+  },
+  "unsavedChangesTitle": {
+    "message": "Незахаваныя змены"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
+  }
+}
