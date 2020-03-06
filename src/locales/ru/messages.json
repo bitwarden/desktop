@@ -1275,9 +1275,9 @@
     "message": "Несохраненные изменения"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Клонировать"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Одна или несколько политик организации влияют на настройки генератора."
   }
 }

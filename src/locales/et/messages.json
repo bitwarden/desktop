@@ -1275,9 +1275,9 @@
     "message": "Salvestamata muudatused"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klooni"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Organisatsiooni seaded mõjutavad parooli genereerija sätteid."
   }
 }
