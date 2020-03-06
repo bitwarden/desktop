@@ -1275,9 +1275,9 @@
     "message": "Ikke-gemte ændringer"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klon"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Én eller flere organisationspolitikker påvirker dine generatorindstillinger."
   }
 }
