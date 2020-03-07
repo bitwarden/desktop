@@ -7,6 +7,8 @@ import {
     Output,
 } from '@angular/core';
 
+import { EventType } from 'jslib/enums/eventType';
+
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -25,6 +27,8 @@ import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/vie
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
+import { ElectronConstants } from 'jslib/electron/electronConstants';
+
 @Component({
     selector: 'app-vault-view',
     templateUrl: 'view.component.html',
@@ -38,10 +42,9 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
         userService: UserService, eventService: EventService,
-        messagingService: MessagingService, storageService: StorageService) {
+        protected messagingService: MessagingService, protected storageService: StorageService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService,
-            messagingService, storageService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService);
     }
 
     async ngOnChanges() {
@@ -51,5 +54,34 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     viewHistory() {
         this.platformUtilsService.eventTrack('View Password History');
         this.onViewCipherPasswordHistory.emit(this.cipher);
+    }
+
+    copy(value: string, typeI18nKey: string, aType: string) {
+        if (value == null) {
+            return;
+        }
+
+        this.platformUtilsService.eventTrack('Copied ' + aType);
+        const copyOptions = this.win != null ? { window: this.win } : null;
+        this.platformUtilsService.copyToClipboard(value, copyOptions);
+        this.platformUtilsService.showToast('info', null,
+            this.i18nService.t('valueCopied', this.i18nService.t(typeI18nKey)));
+        this.minimizeIfNeeded();
+
+        if (typeI18nKey === 'password') {
+            this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, this.cipherId);
+        } else if (typeI18nKey === 'securityCode') {
+            this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, this.cipherId);
+        } else if (aType === 'H_Field') {
+            this.eventService.collect(EventType.Cipher_ClientCopiedHiddenField, this.cipherId);
+        }
+    }
+
+    public async minimizeIfNeeded(): Promise<void> {
+        const shouldMinimize =
+            await this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey);
+        if (shouldMinimize) {
+            this.messagingService.send('minimize');
+        }
     }
 }
