@@ -57,6 +57,7 @@ before_build:
 
 build_script:
 - npm install
+- npm run lint
 - ps: |
     if($isLinux) {
       npm run dist:lin
