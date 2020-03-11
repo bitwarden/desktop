@@ -44,23 +44,25 @@ export class Main {
         }
 
         app.on('ready', () => {
-          globalShortcut.register('CommandOrControl+Shift+L', async () => {
-            if (this.windowMain.win === null) {
-              await this.windowMain.createWindow();
-            }
+            /*
+            globalShortcut.register('CommandOrControl+Shift+L', async () => {
+                if (this.windowMain.win === null) {
+                    await this.windowMain.createWindow();
+                }
 
-            this.messagingService.send('focusSearch');
-            this.windowMain.win.show();
-          });
+                this.messagingService.send('focusSearch');
+                this.windowMain.win.show();
+            });
+            */
 
-          globalShortcut.register('CommandOrControl+Shift+G', async () => {
-            if (this.windowMain.win === null) {
-              await this.windowMain.createWindow();
-            }
+            globalShortcut.register('CommandOrControl+Shift+G', async () => {
+                if (this.windowMain.win === null) {
+                    await this.windowMain.createWindow();
+                }
 
-            this.messagingService.send('openPasswordGenerator');
-            this.windowMain.win.show();
-          });
+                this.messagingService.send('openPasswordGenerator');
+                this.windowMain.win.show();
+            });
         });
 
         if (appDataPath != null) {
