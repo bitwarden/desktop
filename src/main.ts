@@ -53,7 +53,6 @@ export class Main {
                 this.messagingService.send('focusSearch');
                 this.windowMain.win.show();
             });
-            */
 
             globalShortcut.register('CommandOrControl+Shift+G', async () => {
                 if (this.windowMain.win === null) {
@@ -63,6 +62,7 @@ export class Main {
                 this.messagingService.send('openPasswordGenerator');
                 this.windowMain.win.show();
             });
+            */
         });
 
         if (appDataPath != null) {
