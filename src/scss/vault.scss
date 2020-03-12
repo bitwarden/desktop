@@ -27,6 +27,7 @@
         .inner-content {
             padding-bottom: 0;
             padding-right: 5px;
+            user-select: none;
 
             > ul, > div > ul {
                 margin: 0 0 15px 0;
