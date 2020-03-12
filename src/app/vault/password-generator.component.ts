@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {
+    ChangeDetectorRef,
+    Component,
+    NgZone,
+} from '@angular/core';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
@@ -14,7 +18,14 @@ import {
 })
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
     constructor(passwordGenerationService: PasswordGenerationService, platformUtilsService: PlatformUtilsService,
-        i18nService: I18nService) {
+        i18nService: I18nService, private ngZone: NgZone, private changeDetectorRef: ChangeDetectorRef) {
         super(passwordGenerationService, platformUtilsService, i18nService, window);
+    }
+
+    async saveOptions() {
+        this.ngZone.run(async () => {
+            await super.saveOptions();
+            this.changeDetectorRef.detectChanges();
+        });
     }
 }
