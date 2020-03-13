@@ -1275,9 +1275,9 @@
     "message": "저장되지 않은 변경 사항"
   },
   "clone": {
-    "message": "Clone"
+    "message": "복제"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "하나 이상의 단체 정책이 생성기 규칙에 영항을 미치고 있습니다."
   }
 }
