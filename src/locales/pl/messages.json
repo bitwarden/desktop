@@ -109,7 +109,7 @@
     "message": "Uruchom"
   },
   "copyValue": {
-    "message": "Skopiuj wartość",
+    "message": "Kopiuj wartość",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
@@ -126,10 +126,10 @@
     "message": "Numer"
   },
   "brand": {
-    "message": "Marka"
+    "message": "Wydawca"
   },
   "expiration": {
-    "message": "Wygaśnięcie"
+    "message": "Data wygaśnięcia"
   },
   "securityCode": {
     "message": "Kod zabezpieczający"
@@ -141,7 +141,7 @@
     "message": "Firma"
   },
   "ssn": {
-    "message": "PESEL"
+    "message": "Numer PESEL"
   },
   "passportNumber": {
     "message": "Numer paszportu"
@@ -150,7 +150,7 @@
     "message": "Numer prawa jazdy"
   },
   "email": {
-    "message": "Email"
+    "message": "Adres e-mail"
   },
   "phone": {
     "message": "Telefon"
@@ -359,7 +359,7 @@
     "message": "Kopiuj hasło"
   },
   "copyUri": {
-    "message": "Skopiuj URI"
+    "message": "Kopiuj URI"
   },
   "length": {
     "message": "Długość"
@@ -400,7 +400,7 @@
     "message": "Szukaj w ulubionych"
   },
   "searchType": {
-    "message": "Typ wyszukiwania",
+    "message": "Szukaj elementu",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -533,7 +533,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Kod weryfikacyjny został przesłany do $EMAIL$.",
+    "message": "Kod weryfikacyjny został wysłany na adres $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -590,10 +590,10 @@
     "message": "Klucz bezpieczeństwa FIDO U2F"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "Adres e-mail"
   },
   "emailDesc": {
-    "message": "Kody weryfikacyjne zostaną wysłane do Ciebie e-mailem."
+    "message": "Kody weryfikacyjne zostaną wysłane do Ciebie wiadomością e-mail."
   },
   "loginUnavailable": {
     "message": "Logowanie jest niedostępne"
@@ -620,7 +620,7 @@
     "message": "Dla zaawansowanych użytkowników. Możesz wpisać podstawowy adres URL niezależnie dla każdej usługi."
   },
   "baseUrl": {
-    "message": "URL serwera"
+    "message": "Adres URL serwera"
   },
   "apiUrl": {
     "message": "Adres URL serwera API"
@@ -723,7 +723,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Unikalny identyfikator dla Twojego konta",
+    "message": "Unikalny identyfikator Twojego konta",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -788,37 +788,37 @@
     "message": "30 sekund"
   },
   "oneMinute": {
-    "message": "po 1 minucie"
+    "message": "1 minuta"
   },
   "twoMinutes": {
     "message": "2 minuty"
   },
   "fiveMinutes": {
-    "message": "po 5 minutach"
+    "message": "5 minut"
   },
   "fifteenMinutes": {
-    "message": "po 15 minutach"
+    "message": "15 minut"
   },
   "thirtyMinutes": {
-    "message": "po 30 minutach"
+    "message": "30 minut"
   },
   "oneHour": {
-    "message": "po 1 godzinie"
+    "message": "1 godzina"
   },
   "fourHours": {
-    "message": "po 4 godzinach"
+    "message": "4 godziny"
   },
   "onIdle": {
-    "message": "Gdy nie korzystasz z komputera"
+    "message": "Po bezczynności przez 5 minut"
   },
   "onSleep": {
-    "message": "Gdy uśpisz komputer"
+    "message": "Po uśpieniu komputera"
   },
   "onLocked": {
-    "message": "Gdy zablokujesz komputer"
+    "message": "Po zablokowaniu komputera"
   },
   "onRestart": {
-    "message": "Po uruchomieniu ponownym"
+    "message": "Po restarcie aplikacji"
   },
   "never": {
     "message": "Nigdy"
@@ -934,10 +934,10 @@
     "message": "Nieznane"
   },
   "copyUsername": {
-    "message": "Skopiuj nazwę użytkownika"
+    "message": "Kopiuj nazwę użytkownika"
   },
   "copyNumber": {
-    "message": "Skopiuj numer",
+    "message": "Kopiuj numer karty",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
