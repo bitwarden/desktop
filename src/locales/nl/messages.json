@@ -1275,9 +1275,9 @@
     "message": "Niet-opgeslagen wijzigingen"
   },
   "clone": {
-    "message": "Kopiëren"
+    "message": "Dupliceren"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Een of meer beleidseisen van organisaties hebben invloed op de instellingen van je generator."
+    "message": "Een of meer organisatiebeleidseisen heeft invloed op de instellingen van je generator."
   }
 }
