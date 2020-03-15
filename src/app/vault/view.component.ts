@@ -57,24 +57,8 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     }
 
     copy(value: string, typeI18nKey: string, aType: string) {
-        if (value == null) {
-            return;
-        }
-
-        this.platformUtilsService.eventTrack('Copied ' + aType);
-        const copyOptions = this.win != null ? { window: this.win } : null;
-        this.platformUtilsService.copyToClipboard(value, copyOptions);
-        this.platformUtilsService.showToast('info', null,
-            this.i18nService.t('valueCopied', this.i18nService.t(typeI18nKey)));
+        super.copy(value, typeI18nKey, aType);
         this.minimizeIfNeeded();
-
-        if (typeI18nKey === 'password') {
-            this.eventService.collect(EventType.Cipher_ClientToggledHiddenFieldVisible, this.cipherId);
-        } else if (typeI18nKey === 'securityCode') {
-            this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, this.cipherId);
-        } else if (aType === 'H_Field') {
-            this.eventService.collect(EventType.Cipher_ClientCopiedHiddenField, this.cipherId);
-        }
     }
 
     public async minimizeIfNeeded(): Promise<void> {
