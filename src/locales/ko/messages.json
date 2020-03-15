@@ -748,7 +748,7 @@
     "message": "잠금 해제"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$ 에 $EMAIL$ 로 로그인했습니다.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1238,40 +1238,46 @@
     "message": "설정"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "메뉴 모음 아이콘 활성화"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "항상 메뉴 모음에 아이콘을 표시합니다."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "메뉴 모음에 숨기기"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "반드시 하나 이상의 모음을 선택해야 합니다."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "프리미엄으로 업그레이드했습니다."
   },
   "restore": {
-    "message": "Restore"
+    "message": "복원"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "App Store에서 구독을 관리할 수 있습니다. 지금 App Store에 접속하시겠습니까?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "법적",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "이용약관"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "개인정보처리방침"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "정말로 떠나시겠습니까? 지금 떠난다면 현재 정보는 저장되지 않습니다."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "저장되지 않은 변경 사항"
+  },
+  "clone": {
+    "message": "복제"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "하나 이상의 단체 정책이 생성기 규칙에 영항을 미치고 있습니다."
   }
 }

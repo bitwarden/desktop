@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "Unsaved Changes"
+  },
+  "clone": {
+    "message": "Klon"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Jedno ili više pravila organizacije utiču na podešavanje vašeg generatora."
   }
 }

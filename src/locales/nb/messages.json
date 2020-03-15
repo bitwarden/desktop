@@ -51,7 +51,7 @@
     "message": "Delte elementet"
   },
   "shareDesc": {
-    "message": "Velg en organisasjon som du ønsker å dele dette elementet med. Deling overføringer eierskap av elementet til organisasjonen. Du vil ikke lenger være den direkte eieren av elementet når det er delt."
+    "message": "Velg en organisasjon som du ønsker å dele dette elementet med. Deling overfører elementets eierskap til organisasjonen. Du vil ikke lenger være den direkte eieren av dette elementet når det først har blitt delt."
   },
   "attachments": {
     "message": "Vedlegg"
@@ -506,7 +506,7 @@
     "message": "En uventet feil har oppstått."
   },
   "itemInformation": {
-    "message": "Element Informasjon"
+    "message": "Elementinformasjon"
   },
   "noItemsInList": {
     "message": "Det er ingen gjenstander å liste opp."
@@ -605,7 +605,7 @@
     "message": "Vennligst legg til ytterligere leverandører som er støttet bedre mellom enheter (f․eks․ en autentiseringsapp)."
   },
   "twoStepOptions": {
-    "message": "Totrinns Påloggingsvalg"
+    "message": "Totrinns innloggingsalternativer"
   },
   "selfHostedEnvironment": {
     "message": "Selvbetjent miljø"
@@ -656,7 +656,7 @@
     "message": "Lær mer"
   },
   "featureUnavailable": {
-    "message": "Egenskapen er utilgjengelig"
+    "message": "Funksjonen er utilgjengelig"
   },
   "loggedOut": {
     "message": "Logget av"
@@ -674,7 +674,7 @@
     "message": "Legg til en ny innlogging"
   },
   "addNewItem": {
-    "message": "Legg til en ny gjenstand"
+    "message": "Legg til et nytt element"
   },
   "addNewFolder": {
     "message": "Legg til en ny mappe"
@@ -695,7 +695,7 @@
     "message": "Passordgenerator"
   },
   "emailUs": {
-    "message": "Send oss en E-post"
+    "message": "Send oss en e-post"
   },
   "visitOurWebsite": {
     "message": "Besøk nettsidene våre"
@@ -713,7 +713,7 @@
     "message": "Synkroniser hvelvet"
   },
   "changeMasterPass": {
-    "message": "Endre superpassordet"
+    "message": "Endre hovedpassordet"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Du kan endre superpassordet ditt på bitwarden.net-netthvelvet. Vil du besøke det nettstedet nå?"
@@ -838,31 +838,31 @@
     "message": "Skru av nettstedsikoner"
   },
   "disableFaviconDesc": {
-    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hver innloggingsgjenstand i hvelvet ditt."
+    "message": "Nettstedsikoner sørger for et gjenkjennelig bilde ved siden av hvert innloggingselement i hvelvet ditt."
   },
   "enableMinToTray": {
-    "message": "Ikonet for minimering til verktøykassen"
+    "message": "Minimer til oppgavelinjen"
   },
   "enableMinToTrayDesc": {
-    "message": "Når du minimaliserer vinduet, skal et ikon vises i verktøykassen i stedet."
+    "message": "Når du lukker vinduet, skal et ikon vises i oppgavelinjen i stedet."
   },
   "enableCloseToTray": {
-    "message": "Lukk til verktøykassen"
+    "message": "Lukk til oppgavelinjen"
   },
   "enableCloseToTrayDesc": {
     "message": "Når du lukker vinduet, skal et ikon vises i verktøykassen i stedet."
   },
   "enableTray": {
-    "message": "Skru på verktøykasseikon"
+    "message": "Skru på oppgavelinjeikon"
   },
   "enableTrayDesc": {
     "message": "Vis et ikon i verktøykassen til enhver tid."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Start med oppgavelinjeikonet"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Når applikasjonen starter for første gang, vises et ikon i oppgavelinjen."
   },
   "language": {
     "message": "Språk"
@@ -1152,7 +1152,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Skjul til verktøykassen"
+    "message": "Skjul til oppgavelinjen"
   },
   "alwaysOnTop": {
     "message": "Foran andre vinduer",
@@ -1256,7 +1256,7 @@
     "message": "Gjenopprett"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Du kan administrere abonnementet ditt fra App Store. Ønsker du å besøke App Store nå?"
   },
   "legal": {
     "message": "Juridisk",
@@ -1266,12 +1266,18 @@
     "message": "Vilkår for bruk"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Personvern"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Er du sikker på at du ønsker å avslutte? Hvis du avslutter nå, blir ikke den nåværende informasjonen lagret."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Ikke lagrede endringer"
+  },
+  "clone": {
+    "message": "Klon"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "En eller flere av organisasjons retningslinjer påvirker generatorinnstillingene dine."
   }
 }

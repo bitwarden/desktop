@@ -48,7 +48,7 @@
     "message": "アイテムを共有する"
   },
   "sharedItem": {
-    "message": "共有されたアイテム"
+    "message": "共有しました"
   },
   "shareDesc": {
     "message": "このアイテムを共有する組織を選択してください。共有するとアイテムの所有権は組織に移行し、あなたはもはやこのアイテムの直接の所有者ではなくなります。"
@@ -319,10 +319,10 @@
     "message": "名前は必須項目です。"
   },
   "addedItem": {
-    "message": "追加されたアイテム"
+    "message": "追加しました"
   },
   "editedItem": {
-    "message": "編集されたアイテム"
+    "message": "編集しました"
   },
   "deleteItem": {
     "message": "アイテムの削除"
@@ -337,7 +337,7 @@
     "message": "このアイテムを削除してもよろしいですか?"
   },
   "deletedItem": {
-    "message": "削除されたアイテム"
+    "message": "削除しました"
   },
   "overwritePasswordConfirmation": {
     "message": "現在のパスワードを上書きしてもよろしいですか?"
@@ -1269,9 +1269,15 @@
     "message": "プライバシーポリシー"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "本当に閉じますか？今閉じると変更した情報は保存されません。"
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "変更が保存されていません"
+  },
+  "clone": {
+    "message": "複製"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "一つ以上の組織のポリシーがパスワード生成の設定に影響しています。"
   }
 }

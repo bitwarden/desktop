@@ -371,7 +371,7 @@
     "message": "Worttrennzeichen"
   },
   "capitalize": {
-    "message": "Wortanfänge großschreiben",
+    "message": "Großschreiben",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -1272,6 +1272,12 @@
     "message": "Wollen Sie wirklich aufhören? Wenn Sie jetzt aufhören, werden Ihre aktuellen Eingaben nicht gespeichert"
   },
   "unsavedChangesTitle": {
-    "message": "Es gibt ungesicherte Änderungen"
+    "message": "Nicht gespeicherte Änderungen"
+  },
+  "clone": {
+    "message": "Duplizieren"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen Ihre Generator-Einstellungen."
   }
 }

@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "Niet-opgeslagen wijzigingen"
+  },
+  "clone": {
+    "message": "Dupliceren"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Een of meer organisatiebeleidseisen heeft invloed op de instellingen van je generator."
   }
 }

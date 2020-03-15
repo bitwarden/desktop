@@ -1282,5 +1282,8 @@
   },
   "clone": {
     "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

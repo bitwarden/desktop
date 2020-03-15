@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Bộ lọc"
   },
   "allItems": {
     "message": "Tất cả các mục"
@@ -42,7 +42,7 @@
     "message": "Đã chia sẻ"
   },
   "share": {
-    "message": "Share"
+    "message": "Chia sẻ"
   },
   "shareItem": {
     "message": "Share Item"
@@ -85,7 +85,7 @@
     "message": "Mật khẩu"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Cụm từ mật khẩu"
   },
   "editItem": {
     "message": "Chỉnh sửa mục"
@@ -301,7 +301,7 @@
     "message": "Giá trị"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Kéo để sắp xếp"
   },
   "cfTypeText": {
     "message": "Văn bản"
@@ -359,7 +359,7 @@
     "message": "Sao chép Mật khẩu"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Sao chép URI"
   },
   "length": {
     "message": "Độ dài"
@@ -371,11 +371,11 @@
     "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Viết hoa",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Bao gồm cả số"
   },
   "close": {
     "message": "Đóng"
@@ -748,7 +748,7 @@
     "message": "Mở khóa"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Đã đăng nhập bằng $EMAIL$ trên $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -779,19 +779,19 @@
     "message": "Tức thì"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 giây"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 giây"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 giây"
   },
   "oneMinute": {
     "message": "1 phút"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 phút"
   },
   "fiveMinutes": {
     "message": "5 phút"
@@ -827,11 +827,11 @@
     "message": "Bảo mật"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Dọn dẹp khay nhớ tạm",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Tự động dọn dẹp giá trị được sao chép khỏi khay nhớ tạm của bạn.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
@@ -850,7 +850,7 @@
     "message": "Close to Tray Icon"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Khi đóng cửa sổ, thay vào đó sẽ hiện một biểu tượng trên khay hệ thống."
   },
   "enableTray": {
     "message": "Enable Tray Icon"
@@ -865,23 +865,23 @@
     "message": "When the application is first started, only show an icon in the system tray."
   },
   "language": {
-    "message": "Language"
+    "message": "Ngôn ngữ"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Thay đổi ngôn ngữ được ứng dụng sử dụng. Yêu cầu khởi động lại."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Chủ đề"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tối",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Sáng",
     "description": "Light color"
   },
   "copy": {
@@ -1142,10 +1142,10 @@
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Mặc định"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Thoát ra"
   },
   "showHide": {
     "message": "Show / Hide",
@@ -1155,11 +1155,11 @@
     "message": "Hide to Tray"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Luôn trên cùng",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "Ngày cập nhật",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1173,7 +1173,7 @@
     "message": "File Format"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "CẢNH BÁO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
@@ -1189,21 +1189,21 @@
     "message": "There are no collections to list."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Quyền sở hữu"
   },
   "whoOwnsThisItem": {
     "message": "Who owns this item?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Mạnh",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Tốt",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Yếu",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "Unsaved Changes"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
   }
 }

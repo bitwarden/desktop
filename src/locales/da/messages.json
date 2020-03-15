@@ -1269,9 +1269,15 @@
     "message": "Fortrolighedspolitik"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Er du sikker på, at du vil lukke? Hvis du lukker nu, gemmes dine nuværende oplysninger ikke."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Ikke-gemte ændringer"
+  },
+  "clone": {
+    "message": "Klon"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Én eller flere organisationspolitikker påvirker dine generatorindstillinger."
   }
 }

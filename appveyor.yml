@@ -45,6 +45,8 @@ before_build:
 - sh: |
     if [ "${SNAP_TOKEN}" != "" -a "${PROD_DEPLOY}" == "true" ]
     then
+      sudo apt-get update
+      sudo apt-get -y install snapd
       sudo snap install snapcraft --classic
       echo "$SNAP_TOKEN" | snapcraft login --with -
     fi
@@ -55,6 +57,7 @@ before_build:
 
 build_script:
 - npm install
+- npm run lint
 - ps: |
     if($isLinux) {
       npm run dist:lin

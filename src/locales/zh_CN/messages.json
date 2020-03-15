@@ -1177,7 +1177,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "本次导出会将你的数据未经加密存为 .csv 文件。你不应该长期保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
+    "message": "本次导出会将你的数据存为未经加密的文件。你不应该长期保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
   },
   "exportMasterPassword": {
     "message": "输入主密码来导出你的密码库。"
@@ -1269,9 +1269,15 @@
     "message": "隐私条款"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "您确定要离开吗？如果您现在离开，您当前的信息不会被保存。"
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "未保存的更改"
+  },
+  "clone": {
+    "message": "克隆"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "一个或多个组织策略正在影响您的生成器设置。"
   }
 }

@@ -1269,9 +1269,15 @@
     "message": "Zásady ochrany osobných údajov"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Ste si istý, že chcete odísť? Ak teraz odídete, vaše aktuálne informácie nebudú uložené."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Neuložené zmeny"
+  },
+  "clone": {
+    "message": "Klonovať"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Jedno alebo viac nastavení organizácie ovplyvňujú vaše nastavenia generátora."
   }
 }

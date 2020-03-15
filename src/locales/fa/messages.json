@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "تغییرات ذخیره نشده وجود دارند"
+  },
+  "clone": {
+    "message": "شبیه سازی"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "یک یا چند خط مشی سازمان بر تنظیمات تولیدکننده شما تأثیر می گذارد."
   }
 }

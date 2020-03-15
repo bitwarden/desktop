@@ -1273,5 +1273,11 @@
   },
   "unsavedChangesTitle": {
     "message": "Salvestamata muudatused"
+  },
+  "clone": {
+    "message": "Klooni"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "Organisatsiooni seaded mõjutavad parooli genereerija sätteid."
   }
 }

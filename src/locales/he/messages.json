@@ -1269,9 +1269,15 @@
     "message": "מדיניות הפרטיות"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "האם אתה בטוח שברצונך לצאת? אם תצא כעת המידע הנוכחי לא ישמר."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "שינויים שלא נשמרו"
+  },
+  "clone": {
+    "message": "שכפול"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "מדיניות ארגונית אחת או יותר משפיעה על הגדרות המחולל שלך."
   }
 }
