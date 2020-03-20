@@ -484,6 +484,21 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async clearGroupingFilters() {
+        if (this.groupingsComponent.selectedAll) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.groupingsComponent != null) {
+            this.groupingsComponent.clearSelections();
+            this.groupingsComponent.selectedAll = true;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchVault');
         await this.ciphersComponent.reload();
         this.clearFilters();
@@ -491,6 +506,21 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterFavorites() {
+        if (this.groupingsComponent.selectedFavorites) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.groupingsComponent != null) {
+            this.groupingsComponent.clearSelections();
+            this.groupingsComponent.selectedFavorites = true;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFavorites');
         await this.ciphersComponent.reload((c) => c.favorite);
         this.clearFilters();
@@ -499,6 +529,21 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterCipherType(type: CipherType) {
+        if (this.groupingsComponent.selectedType === type) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.groupingsComponent != null) {
+            this.groupingsComponent.clearSelections();
+            this.groupingsComponent.selectedType = type;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchType');
         await this.ciphersComponent.reload((c) => c.type === type);
         this.clearFilters();
@@ -507,6 +552,22 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterFolder(folderId: string) {
+        if (this.groupingsComponent.selectedFolderId === folderId) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.groupingsComponent != null) {
+            this.groupingsComponent.clearSelections();
+            this.groupingsComponent.selectedFolder = true;
+            this.groupingsComponent.selectedFolderId = folderId;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         folderId = folderId === 'none' ? null : folderId;
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFolder');
         await this.ciphersComponent.reload((c) => c.folderId === folderId);
@@ -516,6 +577,21 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterCollection(collectionId: string) {
+        if (this.groupingsComponent.selectedCollectionId === collectionId) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.groupingsComponent != null) {
+            this.groupingsComponent.clearSelections();
+            this.groupingsComponent.selectedCollectionId = collectionId;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
         await this.ciphersComponent.reload((c) => c.collectionIds != null &&
             c.collectionIds.indexOf(collectionId) > -1);
@@ -526,6 +602,14 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async openPasswordGenerator(showSelect: boolean) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         if (this.modal != null) {
             this.modal.close();
         }
@@ -549,6 +633,14 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async openExportVault() {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         if (this.modal != null) {
             this.modal.close();
         }
@@ -567,6 +659,14 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async addFolder() {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         if (this.modal != null) {
             this.modal.close();
         }
@@ -587,6 +687,14 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async editFolder(folderId: string) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+
+        if (this.action === 'add' || this.action === 'edit' || this.action === 'clone') {
+            this.cancelledAddEdit(this.addEditComponent.cipher);
+        }
+
         if (this.modal != null) {
             this.modal.close();
         }
