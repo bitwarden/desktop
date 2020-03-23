@@ -40,7 +40,10 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
     }
 
     async load() {
-        this.cipher = null;
+        if (document.querySelectorAll('app-vault-add-edit .ng-dirty').length === 0 ||
+            (this.cipher != null && this.cipherId !== this.cipher.id)) {
+            this.cipher = null;
+        }
         super.load();
     }
 }
