@@ -80,7 +80,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p artifacts
-          if [ "$RUNNER_OS" == "Linux" ];then
+          if [ "$RUNNER_OS" == "Linux" ]; then
             cp ./dist/*.{snap,AppImage,deb,rpm,freebsd} ./artifacts
           elif [ "$RUNNER_OS" == "Windows ]; then
             cp ./dist/Bitwarden-*-x64.appx ./artifacts/Bitwarden-$PACKAGE_VERSION-x64-store.appx
