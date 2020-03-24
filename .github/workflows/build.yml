@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '10.x'
 
-      - name: Setup environment
+      - name: Set up environment
         shell: pwsh
         run: |
           npm install -g cloc
@@ -39,7 +39,21 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+      - name: Determine deployment variables
+        shell: pwsh
+        env:
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          $PACKAGE_VERSION = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
+          $PROD_DEPLOY = "false"
+          if($env.GITHUB_REF.StartsWith("refs/tags/v")) {
+            echo "::set-env name=RELEASE_NAME::$env.GITHUB_REF.Replace('refs/tags/v', '')"
+          }
+          echo "::set-env name=PACKAGE_VERSION::$PACKAGE_VERSION"
+          echo "::set-env name=PROD_DEPLOY::$PROD_DEPLOY"
+
       - name: Print LOC
+        shell: bash
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
       - name: Install Node dependencies
@@ -51,7 +65,7 @@ jobs:
       - name: Dist build application
         shell: pwsh
         run: |
-          npm install -g cloc
+          echo "Building dist for $env:PACKAGE_VERSION"
           if($env:RUNNER_OS -eq "Linux") {
             npm run dist:lin
           }
@@ -59,5 +73,5 @@ jobs:
             npm run dist:win
           }
           elseif($env:RUNNER_OS -eq "macOS") {
-            npm run dist:mac
+            npm run build
           }
