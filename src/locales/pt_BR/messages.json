@@ -1275,9 +1275,9 @@
     "message": "Alterações não Salvas"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Clonar"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Uma ou mais políticas da organização estão afetando as suas configurações do gerador."
   }
 }

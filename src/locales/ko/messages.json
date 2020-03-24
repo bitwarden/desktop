@@ -719,7 +719,7 @@
     "message": "bitwarden.com 웹 보관함에서 마스터 비밀번호를 바꿀 수 있습니다. 지금 웹 사이트를 방문하시겠습니까?"
   },
   "fingerprintPhrase": {
-    "message": "지문 구문",
+    "message": "지문 구절",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -1210,7 +1210,7 @@
     "message": "취약한 마스터 비밀번호"
   },
   "weakMasterPasswordDesc": {
-    "message": "선택된 마스터 비밀번호는 취약합니다. Bitwarden 계정을 제대로 보호하기 위해서는 강력한 마스터 비밀번호(혹은 패스프레이즈)를 사용해야 합니다. 정말 마스터 비밀번호로 사용하시겠습니까?"
+    "message": "선택한 마스터 비밀번호는 취약합니다. Bitwarden 계정을 확실히 보호하려면 강력한 마스터 비밀번호(혹은 패스프레이즈)를 사용해야 합니다. 정말 이 마스터 비밀번호를 사용하시겠습니까?"
   },
   "pin": {
     "message": "PIN",
@@ -1229,7 +1229,7 @@
     "message": "잘못된 PIN 코드입니다."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "보관함이 잠겨 있습니다. PIN 코드를 를 입력하여 계속하세요."
+    "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
   },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
@@ -1238,10 +1238,10 @@
     "message": "설정"
   },
   "enableMenuBar": {
-    "message": "메뉴 모음 아이콘 활성화"
+    "message": "메뉴 막대 아이콘 사용"
   },
   "enableMenuBarDesc": {
-    "message": "항상 메뉴 모음에 아이콘을 표시합니다."
+    "message": "항상 메뉴 막대에 아이콘을 표시합니다."
   },
   "hideToMenuBar": {
     "message": "메뉴 모음에 숨기기"
@@ -1266,7 +1266,7 @@
     "message": "이용약관"
   },
   "privacyPolicy": {
-    "message": "개인정보처리방침"
+    "message": "개인 정보 보호 정책"
   },
   "unsavedChangesConfirmation": {
     "message": "정말로 떠나시겠습니까? 지금 떠난다면 현재 정보는 저장되지 않습니다."
