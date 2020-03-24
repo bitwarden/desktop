@@ -46,8 +46,8 @@ jobs:
         run: |
           $PACKAGE_VERSION = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
           $PROD_DEPLOY = "false"
-          if($env.GITHUB_REF.StartsWith("refs/tags/v")) {
-            echo "::set-env name=RELEASE_NAME::$env.GITHUB_REF.Replace('refs/tags/v', '')"
+          if($env:GITHUB_REF.StartsWith("refs/tags/v")) {
+            echo "::set-env name=RELEASE_NAME::$env:GITHUB_REF.Replace('refs/tags/v', '')"
           }
           echo "::set-env name=PACKAGE_VERSION::$PACKAGE_VERSION"
           echo "::set-env name=PROD_DEPLOY::$PROD_DEPLOY"
