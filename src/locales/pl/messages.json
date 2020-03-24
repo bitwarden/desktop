@@ -91,7 +91,7 @@
     "message": "Edytuj element"
   },
   "emailAddress": {
-    "message": "Adres email"
+    "message": "Adres e-mail"
   },
   "verificationCodeTotp": {
     "message": "Kod weryfikacyjny (TOTP)"
@@ -241,7 +241,7 @@
     "message": "Generuj hasło"
   },
   "type": {
-    "message": "Typ"
+    "message": "Rodzaj"
   },
   "firstName": {
     "message": "Imię"
