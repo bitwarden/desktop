@@ -70,7 +70,7 @@ jobs:
             npm run dist:lin
           }
           elseif($env:RUNNER_OS -eq "Windows") {
-            npm run dist:win
+            npm run dist:win:ci
           }
           elseif($env:RUNNER_OS -eq "macOS") {
             npm run build
