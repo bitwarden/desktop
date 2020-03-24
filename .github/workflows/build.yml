@@ -93,5 +93,5 @@ jobs:
         if: runner.os == 'Linux' || runner.os == 'Windows'
         uses: actions/upload-artifact@v2-preview
         with:
-          name: artifacts
+          name: desktop-artifacts
           path: artifacts/*
