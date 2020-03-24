@@ -1,0 +1,63 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Setup environment
+        shell: pwsh
+        run: |
+          npm install -g cloc
+          if($env:RUNNER_OS -eq "Linux") {
+            sudo apt-get update
+            sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
+          }
+          elseif($env:RUNNER_OS -eq "Windows") {
+            choco --version
+          }
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          git --version
+          cloc --version
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Print LOC
+        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Dist build application
+        shell: pwsh
+        run: |
+          npm install -g cloc
+          if($env:RUNNER_OS -eq "Linux") {
+            npm run dist:lin
+          }
+          elseif($env:RUNNER_OS -eq "Windows") {
+            npm run dist:win
+          }
+          elseif($env:RUNNER_OS -eq "macOS") {
+            npm run dist:mac
+          }
