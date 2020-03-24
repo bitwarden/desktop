@@ -1275,7 +1275,7 @@
     "message": "Tallentamattomia muutoksia"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Kloonaa"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
