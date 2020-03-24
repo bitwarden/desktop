@@ -62,7 +62,7 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Dist build application
+      - name: Build application
         shell: pwsh
         run: |
           echo "Building dist for $env:PACKAGE_VERSION"
@@ -75,3 +75,10 @@ jobs:
           elseif($env:RUNNER_OS -eq "macOS") {
             npm run build
           }
+
+      - name: Upload artifacts
+        if: runner.os == 'Linux' || runner.os == 'Windows'
+        uses: actions/upload-artifact@v2-preview
+        with:
+          name: dist
+          path: dist/*
