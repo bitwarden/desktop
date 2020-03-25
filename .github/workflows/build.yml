@@ -1,0 +1,97 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Set up environment
+        shell: pwsh
+        run: |
+          npm install -g cloc
+          if($env:RUNNER_OS -eq "Linux") {
+            sudo apt-get update
+            sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
+          }
+          elseif($env:RUNNER_OS -eq "Windows") {
+            choco --version
+          }
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          git --version
+          cloc --version
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Determine deployment variables
+        shell: pwsh
+        env:
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          $PACKAGE_VERSION = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
+          $PROD_DEPLOY = "false"
+          if($env:GITHUB_REF.StartsWith("refs/tags/v")) {
+            echo "::set-env name=RELEASE_NAME::$env:GITHUB_REF.Replace('refs/tags/v', '')"
+          }
+          echo "::set-env name=PACKAGE_VERSION::$PACKAGE_VERSION"
+          echo "::set-env name=PROD_DEPLOY::$PROD_DEPLOY"
+
+      - name: Print LOC
+        shell: bash
+        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build application
+        shell: pwsh
+        run: |
+          echo "Building dist for $env:PACKAGE_VERSION"
+          if($env:RUNNER_OS -eq "Linux") {
+            npm run dist:lin
+          }
+          elseif($env:RUNNER_OS -eq "Windows") {
+            npm run dist:win:ci
+          }
+          elseif($env:RUNNER_OS -eq "macOS") {
+            npm run build
+          }
+
+      - name: Compile artifacts
+        shell: bash
+        run: |
+          mkdir -p artifacts
+          if [ "$RUNNER_OS" == "Linux" ]; then
+            cp ./dist/*.{snap,AppImage,deb,rpm,freebsd} ./artifacts
+          elif [ "$RUNNER_OS" == "Windows" ]; then
+            cp ./dist/Bitwarden-*-x64.appx ./artifacts/Bitwarden-$PACKAGE_VERSION-x64-store.appx
+            cp ./dist/Bitwarden-*-ia32.appx ./artifacts/Bitwarden-$PACKAGE_VERSION-ia32-store.appx
+            cp ./dist/Bitwarden-Portable-*.exe ./artifacts
+            cp ./dist/nsis-web/Bitwarden-Installer-*.exe ./artifacts
+          fi
+
+      - name: Upload artifacts
+        if: runner.os == 'Linux' || runner.os == 'Windows'
+        uses: actions/upload-artifact@v2-preview
+        with:
+          name: desktop-artifacts
+          path: artifacts/*
