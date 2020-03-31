@@ -21,9 +21,10 @@ export class PowerMonitorMain {
         if (!isSnapStore()) {
             // System sleep
             powerMonitor.on('suspend', async () => {
-                const lockOption = await this.getLockOption();
-                if (lockOption === -3) {
-                    this.main.messagingService.send('lockVault');
+                const options = await this.getVaultTimeoutOptions();
+                if (options[0] === -3) {
+                    options[1] === 'lock' ? this.main.messagingService.send('lockVault') :
+                        this.main.messagingService.send('logout', { expired: false });
                 }
             });
         }
@@ -31,9 +32,10 @@ export class PowerMonitorMain {
         if (process.platform !== 'linux') {
             // System locked
             powerMonitor.on('lock-screen', async () => {
-                const lockOption = await this.getLockOption();
-                if (lockOption === -2) {
-                    this.main.messagingService.send('lockVault');
+                const options = await this.getVaultTimeoutOptions();
+                if (options[0] === -2) {
+                    options[1] === 'lock' ? this.main.messagingService.send('lockVault') :
+                        this.main.messagingService.send('logout', { expired: false });
                 }
             });
         }
@@ -47,9 +49,10 @@ export class PowerMonitorMain {
                     return;
                 }
 
-                const lockOption = await this.getLockOption();
-                if (lockOption === -4) {
-                    this.main.messagingService.send('lockVault');
+                const options = await this.getVaultTimeoutOptions();
+                if (options[0] === -4) {
+                    options[1] === 'lock' ? this.main.messagingService.send('lockVault') :
+                        this.main.messagingService.send('logout', { expired: false });
                 }
             }
 
@@ -57,7 +60,9 @@ export class PowerMonitorMain {
         }, IdleCheckInterval);
     }
 
-    private getLockOption(): Promise<number> {
-        return this.main.storageService.get<number>(ConstantsService.lockOptionKey);
+    private async getVaultTimeoutOptions(): Promise<[number, string]> {
+        const timeout = await this.main.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        const action = await this.main.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
+        return [timeout, action];
     }
 }
