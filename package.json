@@ -23,7 +23,7 @@
     "sub:pull": "git submodule foreach git pull origin master",
     "sub:commit": "npm run sub:pull && git commit -am \"update submodule\"",
     "postinstall": "./node_modules/.bin/electron-rebuild && npm run sub:init",
-    "symlink:win": "rm -rf ./jslib && cmd /c mklink /J .\\jslib ..\\jslib",
+    "symlink:win": "rmdir /S /Q ./jslib && cmd /c mklink /J .\\jslib ..\\jslib",
     "symlink:mac": "npm run symlink:lin",
     "symlink:lin": "rm -rf ./jslib && ln -s ../jslib ./jslib",
     "lint": "tslint src/**/*.ts",
