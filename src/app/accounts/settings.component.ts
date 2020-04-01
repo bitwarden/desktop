@@ -11,12 +11,12 @@ import { DeviceType } from 'jslib/enums/deviceType';
 
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
-import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -29,7 +29,8 @@ import { Utils } from 'jslib/misc/utils';
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    lockOption: number = null;
+    vaultTimeout: number = null;
+    vaultTimeoutAction: string;
     pin: boolean = null;
     disableFavicons: boolean = false;
     enableMinToTray: boolean = false;
@@ -38,7 +39,7 @@ export class SettingsComponent implements OnInit {
     showMinToTray: boolean = false;
     startToTray: boolean = false;
     locale: string;
-    lockOptions: any[];
+    vaultTimeouts: any[];
     localeOptions: any[];
     theme: string;
     themeOptions: any[];
@@ -49,14 +50,14 @@ export class SettingsComponent implements OnInit {
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
-        private storageService: StorageService, private lockService: LockService,
+        private storageService: StorageService, private vaultTimeoutService: VaultTimeoutService,
         private stateService: StateService, private messagingService: MessagingService,
         private userService: UserService, private cryptoService: CryptoService) {
         const trayKey = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop ?
             'enableMenuBar' : 'enableTray';
         this.enableTrayText = this.i18nService.t(trayKey);
         this.enableTrayDescText = this.i18nService.t(trayKey + 'Desc');
-        this.lockOptions = [
+        this.vaultTimeouts = [
             // { name: i18nService.t('immediately'), value: 0 },
             { name: i18nService.t('oneMinute'), value: 1 },
             { name: i18nService.t('fiveMinutes'), value: 5 },
@@ -69,10 +70,10 @@ export class SettingsComponent implements OnInit {
         ];
 
         if (this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop) {
-            this.lockOptions.push({ name: i18nService.t('onLocked'), value: -2 });
+            this.vaultTimeouts.push({ name: i18nService.t('onLocked'), value: -2 });
         }
 
-        this.lockOptions = this.lockOptions.concat([
+        this.vaultTimeouts = this.vaultTimeouts.concat([
             { name: i18nService.t('onRestart'), value: -1 },
             { name: i18nService.t('never'), value: null },
         ]);
@@ -109,8 +110,9 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
-        this.lockOption = await this.storageService.get<number>(ConstantsService.lockOptionKey);
-        const pinSet = await this.lockService.isPinLockSet();
+        this.vaultTimeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        this.vaultTimeoutAction = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
+        const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
@@ -122,8 +124,9 @@ export class SettingsComponent implements OnInit {
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
     }
 
-    async saveLockOption() {
-        await this.lockService.setLockOption(this.lockOption != null ? this.lockOption : null);
+    async saveVaultTimeoutOptions() {
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
+            this.vaultTimeoutAction);
     }
 
     async updatePin() {
@@ -171,7 +174,7 @@ export class SettingsComponent implements OnInit {
                 if (masterPassOnRestart) {
                     const encPin = await this.cryptoService.encrypt(pin);
                     await this.storageService.save(ConstantsService.protectedPin, encPin.encryptedString);
-                    this.lockService.pinProtectedKey = pinProtectedKey;
+                    this.vaultTimeoutService.pinProtectedKey = pinProtectedKey;
                 } else {
                     await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
                 }
@@ -181,7 +184,7 @@ export class SettingsComponent implements OnInit {
         }
         if (!this.pin) {
             await this.cryptoService.clearPinProtectedKey();
-            await this.lockService.clear();
+            await this.vaultTimeoutService.clear();
         }
     }
 

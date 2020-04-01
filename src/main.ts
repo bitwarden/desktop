@@ -82,8 +82,9 @@ export class Main {
         this.i18nService = new I18nService('en', './locales/');
 
         const storageDefaults: any = {};
-        // Default lock options to "on restart".
-        storageDefaults[ConstantsService.lockOptionKey] = -1;
+        // Default vault timeout to "on restart", and action to "lock"
+        storageDefaults[ConstantsService.vaultTimeoutKey] = -1;
+        storageDefaults[ConstantsService.vaultTimeoutActionKey] = 'lock';
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
         this.windowMain = new WindowMain(this.storageService, true);

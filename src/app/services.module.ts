@@ -38,7 +38,6 @@ import { EnvironmentService } from 'jslib/services/environment.service';
 import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
 import { FolderService } from 'jslib/services/folder.service';
-import { LockService } from 'jslib/services/lock.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
 import { PolicyService } from 'jslib/services/policy.service';
@@ -50,6 +49,7 @@ import { SystemService } from 'jslib/services/system.service';
 import { TokenService } from 'jslib/services/token.service';
 import { TotpService } from 'jslib/services/totp.service';
 import { UserService } from 'jslib/services/user.service';
+import { VaultTimeoutService } from 'jslib/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib/abstractions/api.service';
@@ -65,7 +65,6 @@ import { EventService as EventServiceAbstraction } from 'jslib/abstractions/even
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
-import { LockService as LockServiceAbstraction } from 'jslib/abstractions/lock.service';
 import { LogService as LogServiceAbstraction } from 'jslib/abstractions/log.service';
 import { MessagingService as MessagingServiceAbstraction } from 'jslib/abstractions/messaging.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/abstractions/notifications.service';
@@ -83,6 +82,7 @@ import { SystemService as SystemServiceAbstraction } from 'jslib/abstractions/sy
 import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/token.service';
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
+import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib/abstractions/vaultTimeout.service';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
@@ -109,8 +109,9 @@ const folderService = new FolderService(cryptoService, userService, apiService, 
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 searchService = new SearchService(cipherService, platformUtilsService);
 const policyService = new PolicyService(userService, storageService);
-const lockService = new LockService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, null);
+const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
+    cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, null,
+    async () => messagingService.send('logout', { expired: false }));
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
@@ -122,10 +123,11 @@ const authService = new AuthService(cryptoService, apiService,
 const exportService = new ExportService(folderService, cipherService, apiService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
-    apiService, lockService, async () => messagingService.send('logout', { expired: true }));
+    apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }));
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
 const eventService = new EventService(storageService, apiService, userService, cipherService);
-const systemService = new SystemService(storageService, lockService, messagingService, platformUtilsService, null);
+const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
+    null);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);
@@ -134,7 +136,7 @@ export function initFactory(): Function {
     return async () => {
         await environmentService.setUrlsFromStorage();
         syncService.fullSync(true);
-        lockService.init(true);
+        vaultTimeoutService.init(true);
         const locale = await storageService.get<string>(ConstantsService.localeKey);
         await i18nService.init(locale);
         eventService.init(true);
@@ -197,7 +199,7 @@ export function initFactory(): Function {
         { provide: MessagingServiceAbstraction, useValue: messagingService },
         { provide: BroadcasterService, useValue: broadcasterService },
         { provide: SettingsServiceAbstraction, useValue: settingsService },
-        { provide: LockServiceAbstraction, useValue: lockService },
+        { provide: VaultTimeoutServiceAbstraction, useValue: vaultTimeoutService },
         { provide: StorageServiceAbstraction, useValue: storageService },
         { provide: StateServiceAbstraction, useValue: stateService },
         { provide: LogServiceAbstraction, useValue: logService },
