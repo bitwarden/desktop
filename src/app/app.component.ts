@@ -36,11 +36,11 @@ import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
-import { LockService } from 'jslib/abstractions/lock.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SearchService } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StateService } from 'jslib/abstractions/state.service';
@@ -49,6 +49,7 @@ import { SyncService } from 'jslib/abstractions/sync.service';
 import { SystemService } from 'jslib/abstractions/system.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
@@ -90,12 +91,13 @@ export class AppComponent implements OnInit {
         private authService: AuthService, private router: Router, private analytics: Angulartics2,
         private toasterService: ToasterService, private i18nService: I18nService,
         private sanitizer: DomSanitizer, private ngZone: NgZone,
-        private lockService: LockService, private storageService: StorageService,
+        private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
         private messagingService: MessagingService, private collectionService: CollectionService,
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
-        private stateService: StateService, private eventService: EventService) { }
+        private stateService: StateService, private eventService: EventService,
+        private policyService: PolicyService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -136,7 +138,7 @@ export class AppComponent implements OnInit {
                         this.logOut(!!message.expired);
                         break;
                     case 'lockVault':
-                        await this.lockService.lock(true);
+                        await this.vaultTimeoutService.lock(true);
                         break;
                     case 'locked':
                         if (this.modal != null) {
@@ -205,7 +207,7 @@ export class AppComponent implements OnInit {
     private async updateAppMenu() {
         this.messagingService.send('updateAppMenu', {
             isAuthenticated: await this.userService.isAuthenticated(),
-            isLocked: await this.lockService.isLocked(),
+            isLocked: await this.vaultTimeoutService.isLocked(),
         });
     }
 
@@ -224,8 +226,9 @@ export class AppComponent implements OnInit {
             this.folderService.clear(userId),
             this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
-            this.lockService.clear(),
+            this.vaultTimeoutService.clear(),
             this.stateService.purge(),
+            this.policyService.clear(userId),
         ]);
 
         this.searchService.clearIndex();

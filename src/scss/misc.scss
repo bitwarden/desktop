@@ -253,6 +253,27 @@ form, .form {
         }
     }
 
+    .radio {
+        position: relative;
+        display: block;
+        padding-left: 18px;
+        margin-top: 4px;
+
+        &.radio-mt-2 {
+            margin-top: 2px;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        input[type="radio"] {
+            position: absolute;
+            margin-top: 4px;
+            margin-left: -18px;
+        }
+    }
+
     .help-block {
         margin-top: 3px;
         display: block;

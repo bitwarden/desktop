@@ -8,12 +8,33 @@
                     </div>
                     <div class="box-content box-content-padded">
                         <div class="form-group">
-                            <label for="lockOption">{{'lockOptions' | i18n}}</label>
-                            <select id="lockOption" name="LockOption" [(ngModel)]="lockOption"
-                                (change)="saveLockOption()">
-                                <option *ngFor="let o of lockOptions" [ngValue]="o.value">{{o.name}}</option>
+                            <label for="vaultTimeouts">{{'vaultTimeout' | i18n}}</label>
+                            <select id="vaultTimeouts" name="VaultTimeouts" [(ngModel)]="vaultTimeout"
+                                (change)="saveVaultTimeoutOptions()">
+                                <option *ngFor="let o of vaultTimeouts" [ngValue]="o.value">{{o.name}}</option>
                             </select>
-                            <small class="help-block">{{'lockOptionsDesc' | i18n}}</small>
+                            <small class="help-block">{{'vaultTimeoutDesc' | i18n}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label>{{'vaultTimeoutAction' | i18n}}</label>
+                            <div class="radio radio-mt-2">
+                                <label for="vaultTimeoutActionLock">
+                                    <input type="radio" name="VaultTimeoutAction" id="vaultTimeoutActionLock"
+                                        value="lock" [(ngModel)]="vaultTimeoutAction"
+                                        (change)="saveVaultTimeoutOptions()">
+                                    {{'lock' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'vaultTimeoutActionLockDesc' | i18n}}</small>
+                            <div class="radio">
+                                <label for="vaultTimeoutActionLogOut">
+                                    <input type="radio" name="VaultTimeoutAction" id="vaultTimeoutActionLogOut"
+                                        value="logOut" [(ngModel)]="vaultTimeoutAction"
+                                        (change)="saveVaultTimeoutOptions()">
+                                    {{'logOut' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'vaultTimeoutActionLogOutDesc' | i18n}}</small>
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
