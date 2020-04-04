@@ -7,8 +7,6 @@ import {
     Output,
 } from '@angular/core';
 
-import { EventType } from 'jslib/enums/eventType';
-
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
