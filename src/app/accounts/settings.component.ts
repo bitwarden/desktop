@@ -123,8 +123,8 @@ export class SettingsComponent implements OnInit {
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
-        this.minimizeOnCopyToClipboard =
-            await this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey);
+        this.minimizeOnCopyToClipboard = await this.storageService.get<boolean>(
+            ElectronConstants.minimizeOnCopyToClipboardKey);
     }
 
     async saveVaultTimeoutOptions() {

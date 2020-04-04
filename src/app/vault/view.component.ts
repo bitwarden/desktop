@@ -42,7 +42,7 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
         userService: UserService, eventService: EventService,
-        protected messagingService: MessagingService, protected storageService: StorageService) {
+        private messagingService: MessagingService, private storageService: StorageService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
             auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService);
     }
@@ -61,9 +61,9 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         this.minimizeIfNeeded();
     }
 
-    public async minimizeIfNeeded(): Promise<void> {
-        const shouldMinimize =
-            await this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey);
+    async minimizeIfNeeded(): Promise<void> {
+        const shouldMinimize = await this.storageService.get<boolean>(
+            ElectronConstants.minimizeOnCopyToClipboardKey);
         if (shouldMinimize) {
             this.messagingService.send('minimize');
         }
