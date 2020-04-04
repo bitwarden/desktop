@@ -46,15 +46,12 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
-import { WindowMain } from '../../main/window.main';
-
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 const BroadcasterSubscriptionId = 'VaultComponent';
 
 @Component({
     selector: 'app-vault',
     templateUrl: 'vault.component.html',
-    providers: [ WindowMain ],
 })
 export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild(ViewComponent) viewComponent: ViewComponent;
@@ -87,8 +84,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
         private toasterService: ToasterService, private messagingService: MessagingService,
-        private platformUtilsService: PlatformUtilsService, private eventService: EventService,
-        private windowMain: WindowMain) { }
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService) { }
 
     async ngOnInit() {
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
@@ -664,7 +660,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.platformUtilsService.copyToClipboard(value);
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
-            this.windowMain.minimizeIfNeeded();
+            this.viewComponent.minimizeIfNeeded();
         });
     }
 
