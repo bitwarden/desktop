@@ -110,8 +110,8 @@ const collectionService = new CollectionService(cryptoService, userService, stor
 searchService = new SearchService(cipherService, platformUtilsService);
 const policyService = new PolicyService(userService, storageService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, null,
-    async () => messagingService.send('logout', { expired: false }));
+    cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, tokenService,
+    null, async () => messagingService.send('logout', { expired: false }));
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
