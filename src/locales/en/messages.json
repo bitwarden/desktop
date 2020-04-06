@@ -1290,6 +1290,7 @@
     "message": "A logged out vault requires that you re-authenticate to access it again."
   },
   "lock": {
-    "message": "Lock"
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
   }
 }
