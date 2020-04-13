@@ -2,7 +2,7 @@
     <app-vault-groupings id="groupings" (onAllClicked)="clearGroupingFilters()" (onFavoritesClicked)="filterFavorites()"
         (onCipherTypeClicked)="filterCipherType($event)" (onFolderClicked)="filterFolder($event.id)"
         (onAddFolder)="addFolder()" (onEditFolder)="editFolder($event.id)"
-        (onCollectionClicked)="filterCollection($event.id)">
+        (onCollectionClicked)="filterCollection($event.id)" (onTrashClicked)="filterDeleted()">
     </app-vault-groupings>
     <app-vault-ciphers id="items" [activeCipherId]="cipherId" (onCipherClicked)="viewCipher($event)"
         (onCipherRightClicked)="viewCipherMenu($event)" (onAddCipher)="addCipher($event)"
@@ -10,7 +10,8 @@
     </app-vault-ciphers>
     <app-vault-view id="details" *ngIf="cipherId && action === 'view'" [cipherId]="cipherId"
         (onCloneCipher)="cloneCipher($event)" (onEditCipher)="editCipher($event)" 
-        (onViewCipherPasswordHistory)="viewCipherPasswordHistory($event)">
+        (onViewCipherPasswordHistory)="viewCipherPasswordHistory($event)" (onRestoredCipher)="restoredCipher($event)"
+        (onDeletedCipher)="deletedCipher($event)">
     </app-vault-view>
     <app-vault-add-edit id="details" *ngIf="action === 'add' || action === 'edit' || action === 'clone'"
         [cloneMode]="action === 'clone'"
