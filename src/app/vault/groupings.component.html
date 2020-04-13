@@ -13,6 +13,11 @@
                     <i class="fa fa-fw fa-star" aria-hidden="true"></i>&nbsp;{{'favorites' | i18n}}
                 </a>
             </li>
+            <li [ngClass]="{active: selectedTrash}">
+                <a href="#" appStopClick appBlurClick (click)="selectTrash()">
+                    <i class="fa fa-fw fa-trash-o" aria-hidden="true"></i>&nbsp;{{'trash' | i18n}}
+                </a>
+            </li>
         </ul>
         <h2>{{'types' | i18n}}</h2>
         <ul>

@@ -76,6 +76,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     addOrganizationId: string = null;
     addCollectionIds: string[] = null;
     showingModal = false;
+    deleted = false;
 
     private modal: ModalComponent = null;
 
@@ -218,7 +219,10 @@ export class VaultComponent implements OnInit, OnDestroy {
                     await this.addCipher();
                 }
 
-                if (params.favorites) {
+                if (params.deleted) {
+                    this.groupingsComponent.selectedTrash = true;
+                    await this.filterDeleted();
+                } else if (params.favorites) {
                     this.groupingsComponent.selectedFavorites = true;
                     await this.filterFavorites();
                 } else if (params.type) {
@@ -263,18 +267,20 @@ export class VaultComponent implements OnInit, OnDestroy {
                 this.viewCipher(cipher);
             }),
         }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('edit'),
-            click: () => this.functionWithChangeDetection(() => {
-                this.editCipher(cipher);
-            }),
-        }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('clone'),
-            click: () => this.functionWithChangeDetection(() => {
-                this.cloneCipher(cipher);
-            }),
-        }));
+        if (!cipher.isDeleted) {
+            menu.append(new remote.MenuItem({
+                label: this.i18nService.t('edit'),
+                click: () => this.functionWithChangeDetection(() => {
+                    this.editCipher(cipher);
+                }),
+            }));
+            menu.append(new remote.MenuItem({
+                label: this.i18nService.t('clone'),
+                click: () => this.functionWithChangeDetection(() => {
+                    this.cloneCipher(cipher);
+                }),
+            }));
+        }
 
         switch (cipher.type) {
             case CipherType.Login:
@@ -402,6 +408,13 @@ export class VaultComponent implements OnInit, OnDestroy {
         await this.ciphersComponent.refresh();
     }
 
+    async restoredCipher(cipher: CipherView) {
+        this.cipherId = null;
+        this.action = null;
+        this.go();
+        await this.ciphersComponent.refresh();
+    }
+
     editCipherAttachments(cipher: CipherView) {
         if (this.modal != null) {
             this.modal.close();
@@ -495,6 +508,15 @@ export class VaultComponent implements OnInit, OnDestroy {
         await this.ciphersComponent.reload((c) => c.favorite);
         this.clearFilters();
         this.favorites = true;
+        this.go();
+    }
+
+    async filterDeleted() {
+        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchTrash');
+        this.ciphersComponent.deleted = true;
+        await this.ciphersComponent.reload(null, true);
+        this.clearFilters();
+        this.deleted = true;
         this.go();
     }
 
@@ -630,6 +652,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.addCollectionIds = null;
         this.addType = null;
         this.addOrganizationId = null;
+        this.deleted = false;
     }
 
     private go(queryParams: any = null) {
@@ -641,6 +664,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                 type: this.type,
                 folderId: this.folderId,
                 collectionId: this.collectionId,
+                deleted: this.deleted ? true : null,
             };
         }
 
