@@ -660,6 +660,9 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.platformUtilsService.copyToClipboard(value);
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
+            if (this.viewComponent != null && this.action === 'view') {
+                this.viewComponent.minimizeIfNeeded();
+            }
         });
     }
 

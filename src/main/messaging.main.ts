@@ -23,6 +23,11 @@ export class MessagingMain {
                 this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked);
                 this.updateTrayMenu(message.isAuthenticated, message.isLocked);
                 break;
+            case 'minimize':
+                if (this.main.windowMain.win != null) {
+                    this.main.windowMain.win.minimize();
+                }
+                break;
             case 'showTray':
                 this.main.trayMain.showTray();
                 break;

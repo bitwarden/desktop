@@ -12,7 +12,9 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { StorageService } from 'jslib/abstractions/storage.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
@@ -22,6 +24,8 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/view.component';
 
 import { CipherView } from 'jslib/models/view/cipherView';
+
+import { ElectronConstants } from 'jslib/electron/electronConstants';
 
 @Component({
     selector: 'app-vault-view',
@@ -35,7 +39,8 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
-        userService: UserService, eventService: EventService) {
+        userService: UserService, eventService: EventService,
+        private messagingService: MessagingService, private storageService: StorageService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
             auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService);
     }
@@ -47,5 +52,18 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     viewHistory() {
         this.platformUtilsService.eventTrack('View Password History');
         this.onViewCipherPasswordHistory.emit(this.cipher);
+    }
+
+    copy(value: string, typeI18nKey: string, aType: string) {
+        super.copy(value, typeI18nKey, aType);
+        this.minimizeIfNeeded();
+    }
+
+    async minimizeIfNeeded(): Promise<void> {
+        const shouldMinimize = await this.storageService.get<boolean>(
+            ElectronConstants.minimizeOnCopyToClipboardKey);
+        if (shouldMinimize) {
+            this.messagingService.send('minimize');
+        }
     }
 }
