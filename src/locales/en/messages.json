@@ -337,7 +337,7 @@
     "message": "Are you sure you want to delete this item?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Sent item to trash"
   },
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
