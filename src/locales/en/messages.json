@@ -116,7 +116,7 @@
     "message": "Minimize when copying to clipboard"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Bitwarden will minimize when credentials are copied to clipboard."
+    "message": "Minimize when copying an item's data to the clipboard."
   },
   "toggleVisibility": {
     "message": "Toggle Visibility"
