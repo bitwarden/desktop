@@ -2,12 +2,16 @@ import { ipcMain } from 'electron';
 
 import { Main } from '../main';
 
+import { ElectronConstants } from 'jslib/electron/electronConstants';
+
+import { StorageService } from 'jslib/abstractions/storage.service';
+
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
 export class MessagingMain {
     private syncTimeout: NodeJS.Timer;
 
-    constructor(private main: Main) { }
+    constructor(private main: Main, private storageService: StorageService) { }
 
     init() {
         this.scheduleNextSync();
@@ -23,10 +27,13 @@ export class MessagingMain {
                 this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked);
                 this.updateTrayMenu(message.isAuthenticated, message.isLocked);
                 break;
-            case 'minimize':
-                if (this.main.windowMain.win != null) {
-                    this.main.windowMain.win.minimize();
-                }
+            case 'minimizeOnCopy':
+                this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey).then(
+                    (shouldMinimize) => {
+                        if (shouldMinimize && this.main.windowMain.win != null) {
+                            this.main.windowMain.win.minimize();
+                        }
+                    });
                 break;
             case 'showTray':
                 this.main.trayMain.showTray();

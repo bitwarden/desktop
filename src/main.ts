@@ -88,7 +88,7 @@ export class Main {
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
         this.windowMain = new WindowMain(this.storageService, true);
-        this.messagingMain = new MessagingMain(this);
+        this.messagingMain = new MessagingMain(this, this.storageService);
         this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
             this.menuMain.updateMenuItem.enabled = false;
         }, () => {

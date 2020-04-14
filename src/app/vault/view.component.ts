@@ -25,8 +25,6 @@ import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/vie
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
-import { ElectronConstants } from 'jslib/electron/electronConstants';
-
 @Component({
     selector: 'app-vault-view',
     templateUrl: 'view.component.html',
@@ -56,14 +54,6 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
 
     copy(value: string, typeI18nKey: string, aType: string) {
         super.copy(value, typeI18nKey, aType);
-        this.minimizeIfNeeded();
-    }
-
-    async minimizeIfNeeded(): Promise<void> {
-        const shouldMinimize = await this.storageService.get<boolean>(
-            ElectronConstants.minimizeOnCopyToClipboardKey);
-        if (shouldMinimize) {
-            this.messagingService.send('minimize');
-        }
+        this.messagingService.send('minimizeOnCopy');
     }
 }
