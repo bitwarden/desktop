@@ -1298,5 +1298,11 @@
   "lock": {
     "message": "Lock",
     "description": "Verb form: to make secure or inaccesible by"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }
