@@ -128,6 +128,16 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveVaultTimeoutOptions() {
+        if (this.vaultTimeoutAction === 'logOut') {
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('vaultTimeoutLogOutConfirmation'),
+                this.i18nService.t('vaultTimeoutLogOutConfirmationTitle'),
+                this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
+            if (!confirmed) {
+                this.vaultTimeoutAction = 'lock';
+                return;
+            }
+        }
         await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
             this.vaultTimeoutAction);
     }
