@@ -130,7 +130,12 @@
         "rpm",
         "AppImage",
         "snap"
-      ]
+      ],
+      "desktop": {
+        "Name": "Bitwarden",
+        "Type": "Application",
+        "GenericName": "Password Manager"
+      }
     },
     "dmg": {
       "icon": "dmg.icns",
