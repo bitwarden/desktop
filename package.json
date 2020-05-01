@@ -211,7 +211,8 @@
       "confinement": "strict",
       "plugs": [
         "default",
-        "password-manager-service"
+        "password-manager-service",
+        "u2f-devices"
       ],
       "stagePackages": [
         "default"
