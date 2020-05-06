@@ -242,7 +242,7 @@
     "electron-notarize": "^0.2.1",
     "electron-rebuild": "^1.9.0",
     "electron-reload": "^1.5.0",
-    "extract-text-webpack-plugin": "next",
+    "mini-css-extract-plugin": "^0.9.0",
     "file-loader": "^2.0.0",
     "font-awesome": "4.7.0",
     "gulp": "^4.0.0",
