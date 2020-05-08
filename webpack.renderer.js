@@ -93,10 +93,10 @@ const renderer = {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             publicPath: '../',
-                        }
+                        },
                     },
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
                 ],
             },
             // Hide System.import warnings. ref: https://github.com/angular/angular/issues/21560
@@ -125,8 +125,8 @@ const renderer = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
-            chunkFilename: '[id].[hash].css'
-        })
+            chunkFilename: '[id].[hash].css',
+        }),
     ],
 };
 
