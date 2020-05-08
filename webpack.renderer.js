@@ -2,14 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
-
-const extractCss = new ExtractTextPlugin({
-    filename: '[name].css',
-    disable: false,
-    allChunks: true,
-});
 
 const common = {
     module: {
@@ -94,17 +88,16 @@ const renderer = {
             },
             {
                 test: /\.scss$/,
-                use: extractCss.extract({
-                    use: [
-                        {
-                            loader: 'css-loader',
-                        },
-                        {
-                            loader: 'sass-loader',
-                        },
-                    ],
-                    publicPath: '../',
-                }),
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../',
+                        }
+                    },
+                    'css-loader',
+                    'sass-loader'
+                ],
             },
             // Hide System.import warnings. ref: https://github.com/angular/angular/issues/21560
             {
@@ -130,7 +123,10 @@ const renderer = {
         new webpack.SourceMapDevToolPlugin({
             include: ['app/main.js'],
         }),
-        extractCss,
+        new MiniCssExtractPlugin({
+            filename: '[name].[hash].css',
+            chunkFilename: '[id].[hash].css'
+        })
     ],
 };
 
