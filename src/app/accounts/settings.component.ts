@@ -38,6 +38,7 @@ export class SettingsComponent implements OnInit {
     enableTray: boolean = false;
     showMinToTray: boolean = false;
     startToTray: boolean = false;
+    minimizeOnCopyToClipboard: boolean = false;
     locale: string;
     vaultTimeouts: any[];
     localeOptions: any[];
@@ -122,9 +123,21 @@ export class SettingsComponent implements OnInit {
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
+        this.minimizeOnCopyToClipboard = await this.storageService.get<boolean>(
+            ElectronConstants.minimizeOnCopyToClipboardKey);
     }
 
     async saveVaultTimeoutOptions() {
+        if (this.vaultTimeoutAction === 'logOut') {
+            const confirmed = await this.platformUtilsService.showDialog(
+                this.i18nService.t('vaultTimeoutLogOutConfirmation'),
+                this.i18nService.t('vaultTimeoutLogOutConfirmationTitle'),
+                this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
+            if (!confirmed) {
+                this.vaultTimeoutAction = 'lock';
+                return;
+            }
+        }
         await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
             this.vaultTimeoutAction);
     }
@@ -225,6 +238,11 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ConstantsService.themeKey, this.theme);
         this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
         window.setTimeout(() => window.location.reload(), 200);
+    }
+
+    async saveMinOnCopyToClipboard() {
+        await this.storageService.save(ElectronConstants.minimizeOnCopyToClipboardKey, this.minimizeOnCopyToClipboard);
+        this.callAnalytics('MinOnCopyToClipboard', this.minimizeOnCopyToClipboard);
     }
 
     async saveClearClipboard() {
