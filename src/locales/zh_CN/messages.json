@@ -51,7 +51,7 @@
     "message": "已共享的项目"
   },
   "shareDesc": {
-    "message": "选择要与之共享此项目的组织。共享将项目的所有权转移到组织。一旦共享, 您将不再是此项目的直接所有者。"
+    "message": "选择要与之共享此项目的组织。共享会将此项目的所有权转移到组织。一旦共享，您将不再是此项目的直接所有者。"
   },
   "attachments": {
     "message": "附件"
@@ -85,7 +85,7 @@
     "message": "密码"
   },
   "passphrase": {
-    "message": "密码"
+    "message": "密码短语"
   },
   "editItem": {
     "message": "编辑项目"
@@ -109,8 +109,14 @@
     "message": "启动"
   },
   "copyValue": {
-    "message": "复制数值",
+    "message": "复制值",
     "description": "Copy value to clipboard"
+  },
+  "minimizeOnCopyToClipboard": {
+    "message": "Minimize when copying to clipboard"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Minimize when copying an item's data to the clipboard."
   },
   "toggleVisibility": {
     "message": "切换可见性"
@@ -159,7 +165,7 @@
     "message": "地址"
   },
   "premiumRequired": {
-    "message": "需要高级版"
+    "message": "需要高级会员"
   },
   "premiumRequiredDesc": {
     "message": "使用此功能需要高级会员资格。"
@@ -334,7 +340,7 @@
     "message": "删除附件"
   },
   "deleteItemConfirmation": {
-    "message": "确定删除此项目？"
+    "message": "您确定要删除此项目吗？"
   },
   "deletedItem": {
     "message": "项目已删除"
@@ -365,7 +371,7 @@
     "message": "长度"
   },
   "numWords": {
-    "message": "字数"
+    "message": "单词数"
   },
   "wordSeparator": {
     "message": "单词分隔符"
@@ -381,10 +387,10 @@
     "message": "关闭"
   },
   "minNumbers": {
-    "message": "最小位数"
+    "message": "数字最少个数"
   },
   "minSpecial": {
-    "message": "最少特殊符号",
+    "message": "符号最少个数",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -397,7 +403,7 @@
     "message": "搜索文件夹"
   },
   "searchFavorites": {
-    "message": "搜索我的收藏"
+    "message": "搜索收藏"
   },
   "searchType": {
     "message": "搜索类型",
@@ -410,7 +416,7 @@
     "message": "附件已删除"
   },
   "deleteAttachmentConfirmation": {
-    "message": "确定删除这个附件？"
+    "message": "您确定要删除此附件吗？"
   },
   "attachmentSaved": {
     "message": "附件已保存。"
@@ -431,16 +437,16 @@
     "message": "选项"
   },
   "editedFolder": {
-    "message": "已编辑文件夹"
+    "message": "文件夹已编辑"
   },
   "addedFolder": {
-    "message": "已添加文件夹"
+    "message": "文件夹已添加"
   },
   "deleteFolderConfirmation": {
     "message": "您确定要删除此文件夹吗？"
   },
   "deletedFolder": {
-    "message": "已删除文件夹"
+    "message": "文件夹已删除"
   },
   "loginOrCreateNewAccount": {
     "message": "登录或者新建一个账号来访问您的安全密码库。"
@@ -509,7 +515,7 @@
     "message": "项目信息"
   },
   "noItemsInList": {
-    "message": "没有要显示的项目。"
+    "message": "没有可列出的项目。"
   },
   "verificationCode": {
     "message": "验证码"
@@ -545,22 +551,22 @@
     "message": "记住我"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "重发验证码邮件"
+    "message": "重发验证码电子邮件"
   },
   "useAnotherTwoStepMethod": {
     "message": "使用其他两步登录方法"
   },
   "insertYubiKey": {
-    "message": "将您的 YubiKey 插入计算机的 USB 端口，然后触摸它的按钮。"
+    "message": "将您的 YubiKey 插入计算机的 USB 端口，然后按下按钮。"
   },
   "insertU2f": {
-    "message": "将您的安全密钥插入计算机的 USB 端口，然后点按它的按钮（如果存在）。"
+    "message": "将您的安全钥匙插入计算机的 USB 端口。如果它有一个按钮，按下它。"
   },
   "recoveryCodeDesc": {
-    "message": "您丢失了所有的两步登录方式？使用您的恢复代码来为您的账户禁用所有两步登录方式。"
+    "message": "失去访问您所有的双重身份验证设备？请使用您的恢复代码来禁用您账户中所有的两步登录提供程序。"
   },
   "recoveryCodeTitle": {
-    "message": "恢复码"
+    "message": "恢复代码"
   },
   "authenticatorAppTitle": {
     "message": "验证器应用"
@@ -570,48 +576,48 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey NEO 安全密钥"
+    "message": "YubiKey NEO 安全钥匙"
   },
   "yubiKeyDesc": {
-    "message": "使用 YubiKey 来访问您的账户。可配合 YubiKey 4、4 Nano、4C 和 NEO 设备。"
+    "message": "使用 YubiKey 来访问您的账户。支持 YubiKey 4、4 Nano、4C 以及 NEO 设备。"
   },
   "duoDesc": {
-    "message": "使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全密钥验证身份。",
+    "message": "使用 Duo Security 的 Duo 移动应用、短信、电话或 U2F 安全钥匙来进行验证。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "使用 Duo Security 的 Duo Mobile 应用、短信、电话呼叫或 U2F 安全钥匙验证身份。",
+    "message": "为您的组织使用 Duo Security 的 Duo 移动应用、短信、电话或 U2F 安全钥匙来进行验证。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "使用任何 FIDO U2F 安全密钥来访问您的账户。"
+    "message": "使用任何支持 FIDO U2F 的安全钥匙来访问您的帐户。"
   },
   "u2fTitle": {
-    "message": "FIDO U2F 安全密钥"
+    "message": "FIDO U2F 安全钥匙"
   },
   "emailTitle": {
     "message": "电子邮件地址"
   },
   "emailDesc": {
-    "message": "验证码已发到您的电子邮箱。"
+    "message": "验证码将会发送到您的电子邮箱。"
   },
   "loginUnavailable": {
     "message": "登录不可用"
   },
   "noTwoStepProviders": {
-    "message": "此账户已启用两步登录，但此设备不支持任何已配置的两步登录方法。"
+    "message": "此账户已启用两步登录，但此设备不支持任何已配置的两步登录提供程序。"
   },
   "noTwoStepProviders2": {
-    "message": "请添加能更好支持跨设备使用的提供商（如一个验证器应用）。"
+    "message": "请添加能更好支持跨设备使用的提供程序（比如身份验证器应用）。"
   },
   "twoStepOptions": {
     "message": "两步登录选项"
   },
   "selfHostedEnvironment": {
-    "message": "自我托管环境"
+    "message": "自托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己配置、托管的 Bitwarden 环境的基础 URL。"
+    "message": "指定您本地托管的 Bitwarden 安装的基础 URL。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -626,7 +632,7 @@
     "message": "API 服务器 URL"
   },
   "webVaultUrl": {
-    "message": "Web 密码库服务器 URL"
+    "message": "网页密码库服务器 URL"
   },
   "identityUrl": {
     "message": "身份服务器 URL"
@@ -671,7 +677,7 @@
     "message": "登出"
   },
   "addNewLogin": {
-    "message": "添加网站"
+    "message": "添加新的登录"
   },
   "addNewItem": {
     "message": "添加新项目"
@@ -716,7 +722,7 @@
     "message": "修改主密码"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "您可以在 bitwarden.com 网页版修改您的主密码。现在为您跳转吗？"
+    "message": "您可以在 bitwarden.com 网页密码库修改您的主密码。现在要访问吗？"
   },
   "fingerprintPhrase": {
     "message": "指纹短语",
@@ -733,7 +739,7 @@
     "message": "获取手机应用"
   },
   "getBrowserExtension": {
-    "message": "安装浏览器扩展"
+    "message": "获取浏览器扩展"
   },
   "syncingComplete": {
     "message": "同步完成"
@@ -742,7 +748,7 @@
     "message": "同步失败"
   },
   "yourVaultIsLocked": {
-    "message": "您的密码库被锁定，请先验证您的主密码。"
+    "message": "您的密码库已锁定，请验证您的主密码以继续。"
   },
   "unlock": {
     "message": "解锁​​​​"
@@ -764,16 +770,16 @@
     "message": "无效的主密码"
   },
   "twoStepLoginConfirmation": {
-    "message": "两步登录使您在登录时需要输入一个从认证应用获取的安全码，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版启用。现在要访问吗？"
+    "message": "两步登录要求您从其他设备（例如安全钥匙、验证器应用、短信、电话或者电子邮件）来验证你的登录，这能使您的账户更加安全。两步登录可以在 bitwarden.com 网页版密码库启用。现在要访问吗？"
   },
   "twoStepLogin": {
     "message": "两步登录"
   },
-  "lockOptions": {
-    "message": "锁定选项"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
-  "lockOptionsDesc": {
-    "message": "选择密码库锁定的时间。必须重新输入主密码才能打开锁定的密码库。"
+  "vaultTimeoutDesc": {
+    "message": "Choose when your vault will timeout and perform the selected action."
   },
   "immediately": {
     "message": "立即"
@@ -850,13 +856,13 @@
     "message": "关闭到托盘"
   },
   "enableCloseToTrayDesc": {
-    "message": "关闭此窗口后，在系统的托盘中显示一个图标。"
+    "message": "关闭窗口后在系统托盘显示一个图标。"
   },
   "enableTray": {
     "message": "启用托盘图标"
   },
   "enableTrayDesc": {
-    "message": "始终在系统托盘中显示一个图标。"
+    "message": "始终显示系统托盘图标。"
   },
   "startToTray": {
     "message": "启动到托盘"
@@ -951,49 +957,49 @@
     "message": "管理会员资格"
   },
   "premiumManageAlert": {
-    "message": "您可以在 bitwarden.com 网页版管理您的会员资格。现在要访问吗？"
+    "message": "您可以在 bitwarden.com 网页版密码库管理您的会员资格。现在要访问吗？"
   },
   "premiumRefresh": {
     "message": "刷新会员资格"
   },
   "premiumNotCurrentMember": {
-    "message": "您目前不是一名高级会员。"
+    "message": "您目前不是高级会员。"
   },
   "premiumSignUpAndGet": {
     "message": "注册高级会员将获得："
   },
   "premiumSignUpStorage": {
-    "message": "1 GB 加密文件存储。"
+    "message": "1 GB 文件附件加密存储。"
   },
   "premiumSignUpTwoStep": {
-    "message": "其他两步登录选项，如 YubiKey、FIDO U2F 和 Duo。"
+    "message": "额外的两步登录选项，如 YubiKey、FIDO U2F 和 Duo。"
   },
   "premiumSignUpReports": {
     "message": "密码健康、账户体检以及数据泄露报告，保障您的密码库安全。"
   },
   "premiumSignUpTotp": {
-    "message": "为您的密码库登录采用 TOTP 验证码（两步验证）生成器。"
+    "message": "用于密码库中登录的 TOTP 验证码（两步验证）生成器。"
   },
   "premiumSignUpSupport": {
     "message": "优先客户支持。"
   },
   "premiumSignUpFuture": {
-    "message": "未来所有高级功能。即将到来！"
+    "message": "所有未来的高级功能。即将推出！"
   },
   "premiumPurchase": {
     "message": "购买高级版"
   },
   "premiumPurchaseAlert": {
-    "message": "您可以在 bitwarden.com 网页版购买高级会员。现在要访问吗？"
+    "message": "您可以在 bitwarden.com 网页版密码库购买高级会员。现在要访问吗？"
   },
   "premiumCurrentMember": {
-    "message": "您是一名高级会员！"
+    "message": "您是高级会员！"
   },
   "premiumCurrentMemberThanks": {
     "message": "感谢您支持 Bitwarden。"
   },
   "premiumPrice": {
-    "message": "只需 $PRICE$ /年！",
+    "message": "每年只需 $PRICE$ ！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1012,7 +1018,7 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "没有要显示的项目。"
+    "message": "没有可列出的密码。"
   },
   "undo": {
     "message": "撤销"
@@ -1095,10 +1101,10 @@
     "message": "窗口"
   },
   "checkPassword": {
-    "message": "检查密码是否已泄漏。"
+    "message": "检查密码是否已经被公开。"
   },
   "passwordExposed": {
-    "message": "此密码已泄漏 $VALUE$ 次。请立即修改。",
+    "message": "此密码在泄露数据中已被公开 $VALUE$ 次。请立即修改。",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1107,7 +1113,7 @@
     }
   },
   "passwordSafe": {
-    "message": "没有在已知泄漏密码中找到此密码，它目前是安全的。"
+    "message": "没有在已知的数据泄露中发现此密码，它暂时比较安全。"
   },
   "baseDomain": {
     "message": "基础域"
@@ -1155,7 +1161,7 @@
     "message": "隐藏到托盘"
   },
   "alwaysOnTop": {
-    "message": "总是在最前面(&A)",
+    "message": "总是在最前面",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1177,16 +1183,16 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "本次导出会将你的数据存为未经加密的文件。你不应该长期保存，或者通过不加密的方式传送这个文件（例如电子邮件）。请在使用完之后立即删除这个文件。"
+    "message": "导出的密码库数据包含未加密格式。您不应该通过不安全的渠道（例如电子邮件）来存储或发送导出的文件。用完后请立即将其删除。"
   },
   "exportMasterPassword": {
     "message": "输入主密码来导出你的密码库。"
   },
   "noOrganizationsList": {
-    "message": "您没有加入任何组织。同一组织的用户可以安全地共享密钥等内容。"
+    "message": "您没有加入任何组织。同一组织的用户可以安全地与其他用户共享项目。"
   },
   "noCollectionsInList": {
-    "message": "目前还没有可以显示的集合。"
+    "message": "没有可列出的集合。"
   },
   "ownership": {
     "message": "所有权"
@@ -1229,7 +1235,7 @@
     "message": "无效 PIN 码。"
   },
   "yourVaultIsLockedPinCode": {
-    "message": "您的密码库已锁定。请输入您的 PIN 码以继续。"
+    "message": "您的密码库已锁定。请验证您的 PIN 码以继续。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "重启后改用主密码锁定"
@@ -1241,13 +1247,13 @@
     "message": "启用菜单栏图标"
   },
   "enableMenuBarDesc": {
-    "message": "始终在系统托盘中显示一个图标。"
+    "message": "始终显示菜单栏图标。"
   },
   "hideToMenuBar": {
     "message": "隐藏到菜单栏"
   },
   "selectOneCollection": {
-    "message": "您必须选择至少一个收藏。"
+    "message": "您必须至少选择一个集合。"
   },
   "premiumUpdated": {
     "message": "您已升级到高级会员。"
@@ -1279,5 +1285,52 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "一个或多个组织策略正在影响您的生成器设置。"
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "A locked vault requires that you re-enter your master password to access it again."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "A logged out vault requires that you re-authenticate to access it again."
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "permanentlyDelete": {
+    "message": "Permanently Delete"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }
