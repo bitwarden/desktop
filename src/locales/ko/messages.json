@@ -112,6 +112,12 @@
     "message": "값 복사",
     "description": "Copy value to clipboard"
   },
+  "minimizeOnCopyToClipboard": {
+    "message": "Minimize when copying to clipboard"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Minimize when copying an item's data to the clipboard."
+  },
   "toggleVisibility": {
     "message": "표시 전환"
   },
@@ -371,11 +377,11 @@
     "message": "구분 기호"
   },
   "capitalize": {
-    "message": "첫 문자를 대문자로",
+    "message": "첫 글자를 대문자로",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "숫자 추가"
+    "message": "숫자 포함"
   },
   "close": {
     "message": "닫기"
@@ -769,11 +775,11 @@
   "twoStepLogin": {
     "message": "2단계 인증"
   },
-  "lockOptions": {
-    "message": "잠금 옵션"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
-  "lockOptionsDesc": {
-    "message": "보관함을 언제 잠글 것인지 선택하세요. 잠긴 보관함에 다시 접근하려면 마스터 비밀번호를 입력해야 합니다."
+  "vaultTimeoutDesc": {
+    "message": "Choose when your vault will timeout and perform the selected action."
   },
   "immediately": {
     "message": "즉시"
@@ -1247,7 +1253,7 @@
     "message": "메뉴 모음에 숨기기"
   },
   "selectOneCollection": {
-    "message": "반드시 하나 이상의 모음을 선택해야 합니다."
+    "message": "반드시 하나 이상의 컬렉션을 선택해야 합니다."
   },
   "premiumUpdated": {
     "message": "프리미엄으로 업그레이드했습니다."
@@ -1279,5 +1285,52 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "하나 이상의 단체 정책이 생성기 규칙에 영항을 미치고 있습니다."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "A locked vault requires that you re-enter your master password to access it again."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "A logged out vault requires that you re-authenticate to access it again."
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "permanentlyDelete": {
+    "message": "Permanently Delete"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }

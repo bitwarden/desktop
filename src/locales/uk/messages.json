@@ -112,6 +112,12 @@
     "message": "Копіювати значення",
     "description": "Copy value to clipboard"
   },
+  "minimizeOnCopyToClipboard": {
+    "message": "Minimize when copying to clipboard"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Minimize when copying an item's data to the clipboard."
+  },
   "toggleVisibility": {
     "message": "Перемкнути видимість"
   },
@@ -548,7 +554,7 @@
     "message": "Надіслати код підтвердження ще раз"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Інший спосіб двохетапної перевірки"
+    "message": "Інший спосіб двоетапної перевірки"
   },
   "insertYubiKey": {
     "message": "Вставте свій YubiKey в USB порт комп'ютера, потім торкніться цієї кнопки."
@@ -557,7 +563,7 @@
     "message": "Вставте свій ключ безпеки в USB порт комп'ютера. Якщо в нього є кнопка, натисніть її."
   },
   "recoveryCodeDesc": {
-    "message": "Втратили доступ до всіх провайдерів двохетапної перевірки? Скористайтеся кодом відновлення, щоб вимкнути двохетапну перевірку для свого облікового запису."
+    "message": "Втратили доступ до всіх провайдерів двоетапної перевірки? Скористайтеся кодом відновлення, щоб вимкнути двоетапну перевірку для свого облікового запису."
   },
   "recoveryCodeTitle": {
     "message": "Код відновлення"
@@ -599,13 +605,13 @@
     "message": "Вхід недоступний"
   },
   "noTwoStepProviders": {
-    "message": "Для цього облікового запису увімкнено двохетапну перевірку. Однак, жоден з налаштованих провайдерів двохетапної перевірки не підтримується цим пристроєм."
+    "message": "Для цього облікового запису увімкнено двоетапну перевірку. Однак, жоден з налаштованих провайдерів двоетапної перевірки не підтримується цим пристроєм."
   },
   "noTwoStepProviders2": {
     "message": "Додайте інших провайдерів, які краще підтримуються різними пристроями, наприклад програма авторизації."
   },
   "twoStepOptions": {
-    "message": "Налаштування двохетапної перевірки"
+    "message": "Налаштування двоетапної перевірки"
   },
   "selfHostedEnvironment": {
     "message": "Середовище власного хостингу"
@@ -764,16 +770,16 @@
     "message": "Неправильний головний пароль"
   },
   "twoStepLoginConfirmation": {
-    "message": "Двохетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двохетапну перевірку в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+    "message": "Двоетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двоетапну перевірку в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
   },
   "twoStepLogin": {
-    "message": "Двохетапна перевірка"
+    "message": "Двоетапна перевірка"
   },
-  "lockOptions": {
-    "message": "Налаштування блокування"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
-  "lockOptionsDesc": {
-    "message": "Оберіть, коли блокується ваше сховище. Щоб знову отримати до нього доступ, вам необхідно буде повторно ввести головний пароль."
+  "vaultTimeoutDesc": {
+    "message": "Choose when your vault will timeout and perform the selected action."
   },
   "immediately": {
     "message": "Негайно"
@@ -966,7 +972,7 @@
     "message": "1 ГБ зашифрованого сховища для файлів."
   },
   "premiumSignUpTwoStep": {
-    "message": "Додаткові можливості двохетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
+    "message": "Додаткові можливості двоетапної перевірки, наприклад, YubiKey, FIDO U2F та Duo."
   },
   "premiumSignUpReports": {
     "message": "Гігієна паролів, здоров'я облікового запису, а також звіти про вразливості даних, щоб зберігати ваше сховище в безпеці."
@@ -1279,5 +1285,52 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Політика однієї або декількох організацій впливає на ваші параметри генерування."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "A locked vault requires that you re-enter your master password to access it again."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "A logged out vault requires that you re-authenticate to access it again."
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "permanentlyDelete": {
+    "message": "Permanently Delete"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }
