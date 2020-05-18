@@ -112,6 +112,12 @@
     "message": "Kopiuj wartość",
     "description": "Copy value to clipboard"
   },
+  "minimizeOnCopyToClipboard": {
+    "message": "Minimize when copying to clipboard"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Minimize when copying an item's data to the clipboard."
+  },
   "toggleVisibility": {
     "message": "Pokaż / Ukryj"
   },
@@ -599,7 +605,7 @@
     "message": "Logowanie jest niedostępne"
   },
   "noTwoStepProviders": {
-    "message": "Konto ma włączoną opcję logowania dwustopniowego, jednak to urządzenie nie wspiera żadnego ze skonfigurowanych mechanizmów autoryzacji dwustopniowej."
+    "message": "Konto posiada włączoną opcję logowania dwustopniowego, jednak to urządzenie nie wspiera żadnego ze skonfigurowanych mechanizmów autoryzacji dwustopniowej."
   },
   "noTwoStepProviders2": {
     "message": "Dodaj dodatkowe mechanizmy, które są lepiej obsługiwane przez różne urządzenia (np. aplikacje uwierzytelniające)."
@@ -638,7 +644,7 @@
     "message": "Adres URL serwera ikon"
   },
   "environmentSaved": {
-    "message": "URLe środowiska zostały zapisane."
+    "message": "Adresy URL środowiska zostały zapisane."
   },
   "ok": {
     "message": "Ok"
@@ -769,11 +775,11 @@
   "twoStepLogin": {
     "message": "Logowanie dwustopniowe"
   },
-  "lockOptions": {
-    "message": "Czas automatycznego blokowania"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
-  "lockOptionsDesc": {
-    "message": "Wybierz, kiedy sejf się zablokuje. Odblokowanie sejfu będzie wymagało ponownego wpisania hasła głównego."
+  "vaultTimeoutDesc": {
+    "message": "Choose when your vault will timeout and perform the selected action."
   },
   "immediately": {
     "message": "Natychmiast"
@@ -1110,10 +1116,10 @@
     "message": "To hasło nie znajduje się w żadnej znanej wykradzionej bazie danych. Powinno być bezpieczne w użyciu."
   },
   "baseDomain": {
-    "message": "Domena nadrzędna"
+    "message": "Domena podstawowa"
   },
   "host": {
-    "message": "Domena",
+    "message": "Host",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
@@ -1279,5 +1285,52 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia generatora."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "A locked vault requires that you re-enter your master password to access it again."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "A logged out vault requires that you re-authenticate to access it again."
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "permanentlyDelete": {
+    "message": "Permanently Delete"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }
