@@ -112,6 +112,12 @@
     "message": "Kopiraj vrijednost",
     "description": "Copy value to clipboard"
   },
+  "minimizeOnCopyToClipboard": {
+    "message": "Minimize when copying to clipboard"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Minimize when copying an item's data to the clipboard."
+  },
   "toggleVisibility": {
     "message": "Isključi vidljivost"
   },
@@ -769,11 +775,11 @@
   "twoStepLogin": {
     "message": "Prijava u dva koraka"
   },
-  "lockOptions": {
-    "message": "Opcije zaključavanja"
+  "vaultTimeout": {
+    "message": "Vault Timeout"
   },
-  "lockOptionsDesc": {
-    "message": "Izaberite kada se će vaš trezor zaključati. Zaključani trezor zahtijeva da ponovo unesete svoju glavnu lozinku da biste mu ponovo pristupili."
+  "vaultTimeoutDesc": {
+    "message": "Choose when your vault will timeout and perform the selected action."
   },
   "immediately": {
     "message": "Odmah"
@@ -1279,5 +1285,52 @@
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "Jedno ili više pravila organizacije utiču na podešavanje vašeg generatora."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "A locked vault requires that you re-enter your master password to access it again."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "A logged out vault requires that you re-authenticate to access it again."
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Trash",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Search trash"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Permanently Delete Item"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Are you sure you want to permanently delete this item?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Permanently Deleted item"
+  },
+  "restoreItem": {
+    "message": "Restore Item"
+  },
+  "restoreItemConfirmation": {
+    "message": "Are you sure you want to restore this item?"
+  },
+  "restoredItem": {
+    "message": "Restored Item"
+  },
+  "permanentlyDelete": {
+    "message": "Permanently Delete"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
   }
 }
