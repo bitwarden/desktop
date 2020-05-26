@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "پایین کشیدن پنجره موقع کپی کردن در کلیپ بورد"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "پایین کشیدن پنجره موقع کپی کردن اطلاعات یک مورد در کلیپ بورد."
   },
   "toggleVisibility": {
     "message": "نمایش"
@@ -776,10 +776,10 @@
     "message": "ورود دو مرحله‌ای"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "متوقف شدن گاو‌صندوق"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "انتخاب کنید که گاو‌صندوق شما چه موقع متوقف شود و عملکرد انتخاب شده را انجام دهد."
   },
   "immediately": {
     "message": "بلافاصله"
@@ -1287,50 +1287,50 @@
     "message": "یک یا چند خط مشی سازمان بر تنظیمات تولیدکننده شما تأثیر می گذارد."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "عمل متوقف شدن گاو‌صندوق"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "یک گاوصندوق قفل شده درخواست وارد کردن مجدد گذرواژه اصلی را برای دسترسی میدهد."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "یک گاوصندوق خارج شده درخواست احراز هویت مجدد را برای دسترسی آن میدهد."
   },
   "lock": {
-    "message": "Lock",
+    "message": "قفل",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "زباله ها",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "جستجوی زباله ها"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "حذف دائمی مورد"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "آیا مطمئن هستید که می خواهید این مورد را برای همیشه حذف کنید؟"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "مورد برای همیشه حذف شد"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "بازیابی مورد"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "آیا مطمئن هستید می خواهید این مورد را بازیابی کنید؟"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "مورد بازیابی شد"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "حذف دائمی"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "خروج از سیستم تمام دسترسی ها به گاو‌صندوق شما را از بین می برد و نیاز به احراز هویت آنلاین پس از مدت زمان توقف دارد. آیا مطمئن هستید که می خواهید از این تنظیمات استفاده کنید؟"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "تایید عمل توقف"
   }
 }

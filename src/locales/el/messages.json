@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Ελαχιστοποίηση κατά την αντιγραφή στο πρόχειρο"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Ελαχιστοποίηση κατά την αντιγραφή των δεδομένων ενός στοιχείου στο πρόχειρο."
   },
   "toggleVisibility": {
     "message": "Εναλλαγή Ορατότητας"
@@ -776,10 +776,10 @@
     "message": "Σύνδεση σε δύο βήματα"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Χρόνος Λήξης Vault"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Επιλέξτε πότε θα λήξει το vault και πραγματοποιήστε την επιλεγμένη ενέργεια."
   },
   "immediately": {
     "message": "Άμεσα"
@@ -1287,50 +1287,50 @@
     "message": "Μία ή περισσότερες πολιτικές του οργανισμού επηρεάζουν τις ρυθμίσεις της γεννήτριας."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Ενέργεια Χρόνου Λήξης Vault"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Ένα κλειδωμένο vault απαιτεί να εισάγετε ξανά τον κύριο κωδικό για να αποκτήσετε ξανά πρόσβαση σε αυτόν."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Ένα αποσυνδεδεμένο vault απαιτεί να κάνετε ξανά έλεγχο ταυτότητας για να αποκτήσετε πρόσβαση σε αυτό."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Κλείδωμα",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Κάδος Απορριμάτων",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Αναζήτηση Κάδου"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Μόνιμη Διαγραφή Αντικειμένου"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα αυτό το στοιχείο;"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Μόνιμα Διεγραμμένο Στοιχείο"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Ανάκτηση Στοιχείου"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Είστε βέβαιοι ότι θέλετε να ανακτήσετε αυτό το στοιχείο;"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Στοιχείο που έχει Ανακτηθεί"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Μόνιμη Διαγραφή"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Η αποσύνδεση θα καταργήσει όλη την πρόσβαση στο vault σας και απαιτεί online έλεγχο ταυτότητας μετά το χρονικό όριο λήξης. Είστε βέβαιοι ότι θέλετε να χρησιμοποιήσετε αυτήν τη ρύθμιση;"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Επιβεβαίωση Ενέργειας Χρονικού Ορίου"
   }
 }

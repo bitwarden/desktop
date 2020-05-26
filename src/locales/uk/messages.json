@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Згортати при копіюванні в буфер обміну"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Згортати при копіюванні даних запису в буфер обміну."
   },
   "toggleVisibility": {
     "message": "Перемкнути видимість"
@@ -343,7 +343,7 @@
     "message": "Ви дійсно хочете видалити цей запис?"
   },
   "deletedItem": {
-    "message": "Запис видалено"
+    "message": "Запис перенесено до смітника"
   },
   "overwritePasswordConfirmation": {
     "message": "Ви дійсно хочете перезаписати поточний пароль?"
@@ -776,10 +776,10 @@
     "message": "Двоетапна перевірка"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Час очікування сховища"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Оберіть дію, яка виконається після завершення часу очікування вашого сховища."
   },
   "immediately": {
     "message": "Негайно"
@@ -1287,50 +1287,50 @@
     "message": "Політика однієї або декількох організацій впливає на ваші параметри генерування."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Дія після часу очікування сховища"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Щоб відновити доступ до заблокованого сховища, необхідно повторно ввести головний пароль."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Щоб відновити доступ до сховища після виходу, необхідно повторно авторизуватись."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Заблокувати",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Смітник",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Пошук у смітнику"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Остаточно видалити запис"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Ви дійсно хочете остаточно видалити цей запис?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Запис остаточно видалено"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Відновити запис"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Ви дійсно хочете відновити цей запис?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Запис відновлено"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Остаточно видалити"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Вихід скасує всі права доступу до вашого сховища і вимагатиме авторизації після завершення часу очікування. Ви дійсно хочете використати цей параметр?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Підтвердження дії часу очікування"
   }
 }

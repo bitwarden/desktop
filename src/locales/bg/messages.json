@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Минимизиране при копиране"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Минимизиране при копиране на данните на записа."
   },
   "toggleVisibility": {
     "message": "Превключване на видимостта"
@@ -776,10 +776,10 @@
     "message": "Двустепенно удостоверяване"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Време за достъп"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Изберете колко да е времето за достъп и какво ще е действието след това."
   },
   "immediately": {
     "message": "Незабавно"
@@ -1287,50 +1287,50 @@
     "message": "Поне една политика на организация влияе на настройките на генерирането на паролите."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Действие при изтичане на времето"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "При заключване на трезора ще ви се наложи отново да въведете паролата си, за да го достъпите."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "При изход от трезора ще ви се наложи отново да се идентифицирате, за да го достъпите."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Заключване",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Кошче",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Търсене в кошчето"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Окончателно изтриване на запис"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Сигурни ли сте, че искате да изтриете записа окончателно?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Записът е изтрит окончателно"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Възстановяване на запис"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Сигурни ли сте, че искате да възстановите записа?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Записът е възстановен"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Окончателно изтриване"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Излизането от трезора изцяло спира достъпа до него след изтичане на времето. Ще ви се наложи отново да се идентифицирате, за да го достъпите. Сигурни ли сте, че искате това действие?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Потвърждаване на действието"
   }
 }

@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimaliseren bij kopiëren naar klembord"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimaliseren bij het kopiëren van itemgegevens naar het klembord."
   },
   "toggleVisibility": {
     "message": "Zichtbaarheid wisselen"
@@ -776,10 +776,10 @@
     "message": "Tweestapsaanmelding"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Time-out van de kluis"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Stel de time-out van de kluis en de bijbehorende actie in."
   },
   "immediately": {
     "message": "Onmiddellijk"
@@ -1287,50 +1287,50 @@
     "message": "Een of meer organisatiebeleidseisen heeft invloed op de instellingen van je generator."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Actie bij time-out van de kluis"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Om toegang te krijgen tot een vergrendelde kluis moet het hoofdwachtwoord opnieuw worden ingevoerd."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Om toegang te krijgen tot een uitgelogde kluis te krijgen moet je opnieuw inloggen."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Vergrendelen",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Prullenbak",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Prullenbak doorzoeken"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Item definitief verwijderen"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Weet je zeker dat je dit item definitief wilt verwijderen?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Definitief verwijderd item"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Item herstellen"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Weet je zeker dat je dit item wilt herstellen?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Hersteld item"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Definitief verwijderen"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Uitloggen ontneemt je de toegang tot je kluis en vereist online authenticatie na een periode van time-out. Weet je zeker dat je deze instelling wilt gebruiken?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Bevestiging actie bij time-out"
   }
 }

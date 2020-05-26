@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Réduire lors de la copie dans le presse-papiers"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Réduire lors de la copie des données d'un élément dans le presse-papiers."
   },
   "toggleVisibility": {
     "message": "Afficher/Masquer"
@@ -343,7 +343,7 @@
     "message": "Êtes-vous sûr(e) de vouloir supprimer cet élément ?"
   },
   "deletedItem": {
-    "message": "Élément supprimé"
+    "message": "L'élément a été envoyé à la corbeille"
   },
   "overwritePasswordConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
@@ -776,10 +776,10 @@
     "message": "Identification en deux étapes"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Délai d'expiration du coffre"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Choisissez quand votre coffre expirera et effectuera l'action sélectionnée."
   },
   "immediately": {
     "message": "Immédiatement"
@@ -1287,50 +1287,50 @@
     "message": "Une ou plusieurs politiques d'organisation affectent les paramètres de votre générateur."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Action lors de l'expiration du délai du coffre"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Un coffre verrouillé requiert la saisie de votre mot de passe maître pour y avoir à nouveau accès."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Un coffre déconnecté nécessite que vous vous ré-authentifiez pour y accéder de nouveau."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Verrouiller",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Corbeille",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Rechercher dans la corbeille"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Supprimer définitivement l'élément"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Êtes-vous sûr(e) de vouloir supprimer définitivement cet élément ?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Élément supprimé définitivement"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Restaurer l'élément"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Êtes-vous sûr(e) de vouloir restaurer cet élément ?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Élément restauré"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Supprimer définitivement"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "La déconnexion supprimera tous les accès à votre coffre et nécessite une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Confirmation de l'action lors de l'expiration du délai"
   }
 }
