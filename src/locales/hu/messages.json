@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimalizálás vágólapra másoláskor"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimalizálás egy elem adatainak vágólapra való másolásakor."
   },
   "toggleVisibility": {
     "message": "Láthatóság váltása"
@@ -776,10 +776,10 @@
     "message": "Kétlépcsős bejelentkezés"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Széf időkorlát"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Állítsd be a széfedhez egy időkorlátot és egy végrehajtandó műveletet."
   },
   "immediately": {
     "message": "Azonnal"
@@ -1287,50 +1287,50 @@
     "message": "Egy vagy több szervezeti szabály érinti a generátor beállításokat."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Széf időkorlát művelet"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Egy zárolt széfnél újra meg kell adni a mesterjelszót az ismételt hozzáféréshez."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "A lezárt széfnél szükséges az újbóli hitelesítés az ismételt hozzáféréshez."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Zárolás",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Lomtár",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Keresés a lomtárban"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Az elem végleges törlése"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Biztosan véglegesen törlésre kerüljön ez az elem?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Elem végleges törlése"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Elem visszaállítása"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Biztosan visszaállításra kerüljön ezt az elem?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Visszaállított elem"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Végleges törlés"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Kijelentkezve az összes széf elérés eltávolításra kerül és webes hitelesítésre van szükség az időkifutás után. Biztosan szeretnénk használni ezt a beállítást?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Időkifutáskori művelet megerősítése"
   }
 }
