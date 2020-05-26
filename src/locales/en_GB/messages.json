@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimise when copying to clipboard"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimise when copying an item's data to the clipboard."
   },
   "toggleVisibility": {
     "message": "Toggle visibility"
@@ -343,7 +343,7 @@
     "message": "Are you sure you want to delete this item?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "Sent item to bin"
   },
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
@@ -776,7 +776,7 @@
     "message": "Two-step login"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Vault timeout"
   },
   "vaultTimeoutDesc": {
     "message": "Choose when your vault will timeout and perform the selected action."
@@ -1287,7 +1287,7 @@
     "message": "One or more organisation policies are affecting your generator settings."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Vault timeout action"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "A locked vault requires that you re-enter your master password to access it again."
@@ -1300,37 +1300,37 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Bin",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Search bin"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Permanently delete item"
   },
   "permanentlyDeleteItemConfirmation": {
     "message": "Are you sure you want to permanently delete this item?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Permanently deleted item"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Restore item"
   },
   "restoreItemConfirmation": {
     "message": "Are you sure you want to restore this item?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Restored item"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Permanently delete"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Timeout action confirmation"
   }
 }
