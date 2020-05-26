@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimizar ao copiar para a área de transferência"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimizar ao copiar dados de um item para a área de transferência."
   },
   "toggleVisibility": {
     "message": "Alternar visibilidade"
@@ -343,7 +343,7 @@
     "message": "Tem a certeza de que pretende eliminar este item?"
   },
   "deletedItem": {
-    "message": "Item eliminado"
+    "message": "Item enviado para o lixo"
   },
   "overwritePasswordConfirmation": {
     "message": "Tem a certeza de que pretende sobreescrever a palavra-passe atual?"
@@ -1296,39 +1296,39 @@
     "message": "A logged out vault requires that you re-authenticate to access it again."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Bloquear",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Lixo",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Pesquisar lixo"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Eliminar item permanentemente"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Tem a certeza de que pretende eliminar este item permanentemente?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Item eliminado permanentemente"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Restaurar item"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Tem a certeza de que pretende restaurar este item?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Item restaurado"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Eliminar permanentemente"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Terminar sessão irá remover todos os acessos ao seu cofre e requer autenticação online após o período de espera. Tem a certeza de que pretende utilizar esta definição?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Timeout Action Confirmation"
