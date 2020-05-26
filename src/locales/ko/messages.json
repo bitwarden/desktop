@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "클립보드로 복사할 때 최소화"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "항목의 데이터를 클립보드로 복사할 때 최소화합니다."
   },
   "toggleVisibility": {
     "message": "표시 전환"
@@ -776,10 +776,10 @@
     "message": "2단계 인증"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "보관함 시간 제한"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "보관함이 언제까지 시간을 제한하고 선택된 행동을 수행하지 선택해주세요."
   },
   "immediately": {
     "message": "즉시"
@@ -1287,50 +1287,50 @@
     "message": "하나 이상의 단체 정책이 생성기 규칙에 영항을 미치고 있습니다."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "보관함 시간 제한 초과시 동작"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "잠긴 보관함에 다시 접근하려면 마스터 비밀번호를 입력해야 합니다."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "로그아웃한 보관함에 다시 접근하려면 다시 인증해야 합니다."
   },
   "lock": {
-    "message": "Lock",
+    "message": "잠금",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "휴지통",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "휴지통 검색"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "영구적으로 항목 삭제"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "정말로 이 항목을 영구적으로 삭제하시겠습니까?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "영구적으로 삭제된 항목"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "항목 복구"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "정말로 이 항목을 복구하시겠습니까?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "복구된 항목"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "영구적으로 삭제"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "로그아웃하면 보관함에 대한 모든 접근이 제거되며 시간 제한을 초과하면 온라인 인증을 요구합니다. 정말로 이 설정을 사용하시겠습니까?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "시간 제한 초과시 동작 확인"
   }
 }
