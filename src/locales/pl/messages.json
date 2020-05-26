@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimalizuj podczas kopiowania do schowka"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimalizuj podczas kopiowania danych elementu do schowka."
   },
   "toggleVisibility": {
     "message": "Pokaż / Ukryj"
@@ -343,7 +343,7 @@
     "message": "Czy na pewno chcesz usunąć ten element?"
   },
   "deletedItem": {
-    "message": "Element został usunięty"
+    "message": "Przenieś element do kosza"
   },
   "overwritePasswordConfirmation": {
     "message": "Czy na pewno chcesz zastąpić obecne hasło?"
@@ -397,7 +397,7 @@
     "message": "Unikaj niejednoznacznych znaków"
   },
   "searchCollection": {
-    "message": "Przeszukaj kolekcje"
+    "message": "Szukaj w kolekcji"
   },
   "searchFolder": {
     "message": "Szukaj w folderze"
@@ -416,7 +416,7 @@
     "message": "Załącznik został usunięty"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Jesteś pewien, że chcesz usunąć ten załącznik?"
+    "message": "Czy na pewno chcesz usunąć ten załącznik?"
   },
   "attachmentSaved": {
     "message": "Załącznik został zapisany."
@@ -776,10 +776,10 @@
     "message": "Logowanie dwustopniowe"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Blokowanie sejfu"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Wybierz kiedy sejf zostanie zablokowany i wykonaj następującą akcję."
   },
   "immediately": {
     "message": "Natychmiast"
@@ -1056,7 +1056,7 @@
     "message": "Włącz/wyłącz narzędzia dla deweloperów"
   },
   "minimize": {
-    "message": "Zminimalizuj",
+    "message": "Minimalizuj",
     "description": "Minimize window"
   },
   "zoom": {
@@ -1169,7 +1169,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Hasło zostało zaktualizowane",
+    "message": "Aktualizacja hasła",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1287,50 +1287,50 @@
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia generatora."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Sposób blokowania sejfu"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Po zablokowaniu sejfu, musisz ponownie wpisać hasło główne, aby uzyskać do niego dostęp."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Po wylogowaniu się z sejfu, musisz ponownie zalogować się, aby uzyskać do niego dostęp."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Zablokuj",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Kosz",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Szukaj w koszu"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Usuń trwale element"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Czy na pewno chcesz usunąć trwale ten element?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Element został trwale usunięty"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Przywróć element"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Czy na pewno chcesz przywrócić ten element?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Element został przywrócony"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Usuń trwale"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Po wylogowaniu się z sejfu musisz ponownie zalogować się, aby uzyskać do niego dostęp. Czy na pewno chcesz użyć tego ustawienia?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Potwierdzenie sposobu blokowania sejfu"
   }
 }
