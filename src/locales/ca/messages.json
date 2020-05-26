@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimitzeu quan feu una còpia al porta-retalls"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimitzeu quan copieu dades d'un element al porta-retalls."
   },
   "toggleVisibility": {
     "message": "Commuta la visibilitat"
@@ -343,7 +343,7 @@
     "message": "Esteu segur que voleu suprimir aquest element?"
   },
   "deletedItem": {
-    "message": "Element suprimit"
+    "message": "S'ha enviat l'element a la paperera"
   },
   "overwritePasswordConfirmation": {
     "message": "Esteu segur que voleu sobreescriure la contrasenya actual?"
@@ -776,10 +776,10 @@
     "message": "Inici de sessió en dues passes"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Temps d'espera de la caixa forta"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Trieu quan es tancarà la vostra caixa forta i feu l'acció seleccionada."
   },
   "immediately": {
     "message": "Immediatament"
@@ -1287,50 +1287,50 @@
     "message": "Una o més polítiques d’organització afecten la configuració del generador."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Acció del temps d'espera de la caixa forta"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Una caixa forta bloquejada requereix que torneu a introduir la contrasenya principal per accedir-ne de nou."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Una caixa forta desconnectada requereix que torneu a autentificar-vos per accedir-hi de nou."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Bloqueja",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Paperera",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Cerca a la paperera"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Element suprimit definitivament"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Esteu segur que voleu suprimir aquest element definitivament?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Element suprimit definitivament"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Restaura l'element"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Esteu segur que voleu restaurar aquest element?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Element restaurat"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Suprimeix definitivament"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "En tancar la sessió s'eliminarà tot l'accés a la vostra caixa forta i es requerirà una autenticació en línia després del període de temps d'espera. Esteu segur que voleu utilitzar aquesta configuració?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Confirmació de l’acció de temps d'espera de la caixa forta"
   }
 }
