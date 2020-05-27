@@ -33,7 +33,7 @@
                             <div [hidden]="!showPassword" class="monospaced password-wrapper" appSelectCopy
                                 [innerHTML]="cipher.login.password | colorPassword"></div>
                         </div>
-                        <div class="action-buttons">
+                        <div class="action-buttons" *ngIf=cipher.viewPassword>
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
                                 appA11yTitle="{{'checkPassword' | i18n}}" (click)="checkPassword()"
                                 [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
