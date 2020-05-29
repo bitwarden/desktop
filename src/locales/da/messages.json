@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimér, når du kopierer til udklipsholder"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimér, når du kopierer et elements data til udklipsholderen."
   },
   "toggleVisibility": {
     "message": "Slå synlighed til/fra"
@@ -343,7 +343,7 @@
     "message": "Er du sikker på, at du vil slette dette element?"
   },
   "deletedItem": {
-    "message": "Slettede element"
+    "message": "Element sendt til papirkurven"
   },
   "overwritePasswordConfirmation": {
     "message": "Er du sikker på, at du vil overskrive den aktuelle adgangskode?"
@@ -776,10 +776,10 @@
     "message": "To-trins login"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Boks timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Vælg timeout for din boks, hvorefter den vil udføre den valgte handling."
   },
   "immediately": {
     "message": "Straks"
@@ -1287,50 +1287,50 @@
     "message": "Én eller flere organisationspolitikker påvirker dine generatorindstillinger."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Boks timeout-handling"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "En låst boks kræver at du gentaster din hovedadgangskode for at tilgå den igen."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "En boks der er logget ud kræver, at du godkender igen for at få adgang til den."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Lås",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Papirkurv",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Søg i papirkurven"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Slet element permanent"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Er du sikker på, at du vil slette dette element permanent?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Element slettet permanent"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Gendan element"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Er du sikker på, at du vil gendanne dette element?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Element gendannet"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Slette permanent"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Ved at logge ud fjernes al adgang til din boks og kræver online-godkendelse efter timeout-perioden. Er du sikker på, at du vil bruge denne indstilling?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Bekræft timeout-handling"
   }
 }
