@@ -116,7 +116,7 @@
     "message": "复制到剪贴板时最小化"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "复制项目数据到剪贴板时最小化"
+    "message": "复制项目数据到剪贴板时最小化。"
   },
   "toggleVisibility": {
     "message": "切换可见性"
@@ -1290,10 +1290,10 @@
     "message": "密码库超时操作"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "已锁定的密码库需要重新输入主密码才能再次访问"
+    "message": "已锁定的密码库需要重新输入主密码才能再次访问。"
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "已登出的密码库需要重新输入主密码才能再次访问"
+    "message": "已注销的密码库需要重新输入主密码才能再次访问。"
   },
   "lock": {
     "message": "锁定",
@@ -1310,7 +1310,7 @@
     "message": "永久删除项目"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "您确定要永久删除此项目？"
+    "message": "您确定要永久删除此项目吗？"
   },
   "permanentlyDeletedItem": {
     "message": "已永久删除项目"
@@ -1319,7 +1319,7 @@
     "message": "恢复项目"
   },
   "restoreItemConfirmation": {
-    "message": "确定要恢复此项目？"
+    "message": "您确定要恢复此项目吗？"
   },
   "restoredItem": {
     "message": "已恢复项目"
@@ -1328,7 +1328,7 @@
     "message": "永久删除"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "登出将会在超时后删除您访问密码库的所有权限，并且需要进行在线认证。 您确定要使用此设置吗？"
+    "message": "注销时将会移除密码库的所有访问权限，并且需要在超时后进行在线认证。 您确定要使用此设置吗？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "超时操作确认"
