@@ -272,7 +272,7 @@
         </div>
     </div>
 </div>
-<div class="footer">
+<div class="footer" *ngIf="cipher">
     <button appBlurClick class="primary" (click)="edit()" appA11yTitle="{{'edit' | i18n}}" *ngIf="!cipher.isDeleted">
         <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
     </button>
