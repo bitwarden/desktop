@@ -376,6 +376,10 @@
   "wordSeparator": {
     "message": "Word Separator"
   },
+  "shortWords": {
+    "message": "Only short words",
+    "description": "Limit the character count per word to 5."
+  },
   "capitalize": {
     "message": "Capitalize",
     "description": "Make the first letter of a work uppercase."
