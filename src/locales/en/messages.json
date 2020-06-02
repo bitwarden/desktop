@@ -85,7 +85,10 @@
     "message": "Password"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Passphrase (word count)"
+  },
+  "passphrase_limited": {
+    "message": "Passphrase (character limited)"
   },
   "editItem": {
     "message": "Edit Item"
@@ -370,8 +373,11 @@
   "length": {
     "message": "Length"
   },
+  "maxLength": {
+    "message": "Max. length"
+  },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Words"
   },
   "wordSeparator": {
     "message": "Word Separator"
