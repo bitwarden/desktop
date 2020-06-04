@@ -776,10 +776,10 @@
     "message": "Início de sessão de dois passos"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Tempo de expiração do Cofre"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Escolha quando o seu cofre irá de expirar e a ação que irá executar."
   },
   "immediately": {
     "message": "Imediatamente"
@@ -1287,13 +1287,13 @@
     "message": "Uma ou mais políticas de organização estão a afetar as suas definições do gerador."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Ação de expiração do Cofre"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Um cofre bloqueado requer que você reinsira a sua palavra-passe mestra para o aceder novamente."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Um cofre com a sessão desligada requer que você se autentique novamente para o poder aceder."
   },
   "lock": {
     "message": "Bloquear",
@@ -1331,6 +1331,6 @@
     "message": "Terminar sessão irá remover todos os acessos ao seu cofre e requer autenticação online após o período de espera. Tem a certeza de que pretende utilizar esta definição?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Confirmação de expiração do Cofre"
   }
 }

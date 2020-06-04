@@ -23,8 +23,8 @@ export class PowerMonitorMain {
             powerMonitor.on('suspend', async () => {
                 const options = await this.getVaultTimeoutOptions();
                 if (options[0] === -3) {
-                    options[1] === 'lock' ? this.main.messagingService.send('lockVault') :
-                        this.main.messagingService.send('logout', { expired: false });
+                    options[1] === 'logOut' ? this.main.messagingService.send('logout', { expired: false }) :
+                        this.main.messagingService.send('lockVault');
                 }
             });
         }
@@ -34,8 +34,8 @@ export class PowerMonitorMain {
             powerMonitor.on('lock-screen', async () => {
                 const options = await this.getVaultTimeoutOptions();
                 if (options[0] === -2) {
-                    options[1] === 'lock' ? this.main.messagingService.send('lockVault') :
-                        this.main.messagingService.send('logout', { expired: false });
+                    options[1] === 'logOut' ? this.main.messagingService.send('logout', { expired: false }) :
+                        this.main.messagingService.send('lockVault');
                 }
             });
         }
@@ -51,8 +51,8 @@ export class PowerMonitorMain {
 
                 const options = await this.getVaultTimeoutOptions();
                 if (options[0] === -4) {
-                    options[1] === 'lock' ? this.main.messagingService.send('lockVault') :
-                        this.main.messagingService.send('logout', { expired: false });
+                    options[1] === 'logOut' ? this.main.messagingService.send('logout', { expired: false }) :
+                        this.main.messagingService.send('lockVault');
                 }
             }
 
