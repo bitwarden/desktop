@@ -48,7 +48,7 @@
     "message": "Öge Paylaş"
   },
   "sharedItem": {
-    "message": "Öge Paylaşıldı"
+    "message": "Paylaşılan Öğe"
   },
   "shareDesc": {
     "message": "Bu ögeyi paylaşmak istediğiniz bir organizasyonu seçiniz. Paylaşmak, bu ögenin sahipliğini organizasyona devreder. Paylaştığınız andan itibaren bu ögenin sahipliğini kaybedersiniz."
@@ -57,7 +57,7 @@
     "message": "Ekler"
   },
   "viewItem": {
-    "message": "Ürünü İncele"
+    "message": "Öğe'yi İncele"
   },
   "name": {
     "message": "İsim"
@@ -91,7 +91,7 @@
     "message": "Ögeyi Düzenle"
   },
   "emailAddress": {
-    "message": "Email adresi"
+    "message": "Eposta Adresi"
   },
   "verificationCodeTotp": {
     "message": "Doğrulama kodu (TOTP)"
@@ -109,14 +109,14 @@
     "message": "Başlat"
   },
   "copyValue": {
-    "message": "Değeri kopyala",
+    "message": "Değeri Kopyala",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
     "message": "Minimize when copying to clipboard"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Bir öğenin verilerini panoya kopyalarken simge durumuna küçültün."
   },
   "toggleVisibility": {
     "message": "Görünürlüğünü aç/kapat"
@@ -153,7 +153,7 @@
     "message": "Pasaport Numarası"
   },
   "licenseNumber": {
-    "message": "Lisans numarası"
+    "message": "Lisans Numarası"
   },
   "email": {
     "message": "E-posta"
@@ -274,7 +274,7 @@
     "message": "Eyalet / İl"
   },
   "zipPostalCode": {
-    "message": "Posta Kodu"
+    "message": "Zip / Posta Kodu"
   },
   "country": {
     "message": "Ülke"
@@ -289,7 +289,7 @@
     "message": "Sil"
   },
   "favorite": {
-    "message": "Favorilere Ekle"
+    "message": "Favori"
   },
   "edit": {
     "message": "Düzenle"
@@ -343,7 +343,7 @@
     "message": "Bu öğeyi silmek istediğinize emin misiniz?"
   },
   "deletedItem": {
-    "message": "Öge Silindi"
+    "message": "Öge'yi Çöp'e gönder"
   },
   "overwritePasswordConfirmation": {
     "message": "Mevcut parolanın üzerine kaydetmek istediğinize emin misiniz?"
@@ -377,11 +377,11 @@
     "message": "Kelime Ayracı"
   },
   "capitalize": {
-    "message": "Baş Harfleri Büyük Yap",
+    "message": "Baş harfleri büyük yap (her kelime)",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Sayı Ekle"
+    "message": "Sayı ekle (kelimenin sonuna)"
   },
   "close": {
     "message": "Kapat"
@@ -512,7 +512,7 @@
     "message": "Beklenmedik bir hata oluştu."
   },
   "itemInformation": {
-    "message": "Öge Bilgisi"
+    "message": "Öğe Bilgisi"
   },
   "noItemsInList": {
     "message": "Görüntülenecek öğe yok."
@@ -776,10 +776,10 @@
     "message": "İki Aşamalı Giriş"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Kasa Zaman Aşımı"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Kasanızın zaman aşımına uğrayacağı ve seçilen işlemi gerçekleştirmede seçin."
   },
   "immediately": {
     "message": "Hemen"
@@ -969,7 +969,7 @@
     "message": "Premium üyeliği için kaydolun ve şunları elde edin:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB şifrelenmiş dosya deposu."
+    "message": "Dosya ekleri için 1 GB şifreli depolama."
   },
   "premiumSignUpTwoStep": {
     "message": "YubiKey, FIDO U2F ve Duo gibi ek iki adımlı giriş seçenekleri."
@@ -1044,7 +1044,7 @@
     "message": "Uzaklaştır"
   },
   "resetZoom": {
-    "message": "Zoom Sıfırla"
+    "message": "Yakınlaştırmayı sıfırla"
   },
   "toggleFullScreen": {
     "message": "Tam Ekrana Geç"
@@ -1176,7 +1176,7 @@
     "message": "Kasayı Dışa Aktar"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Dosya Formatı"
   },
   "warning": {
     "message": "UYARI",
@@ -1189,7 +1189,7 @@
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Hiçbir organizasyonda bulunmuyorsunuz. Organizasyonlar öğelerinizi diğer kullanıcılarla güvenle paylaşmanıza izin verir."
   },
   "noCollectionsInList": {
     "message": "Listelenecek koleksiyon yok."
@@ -1213,7 +1213,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Ana Şifre Zayıf"
+    "message": "Zayıf Ana Şifre"
   },
   "weakMasterPasswordDesc": {
     "message": "Seçtiğiniz ana parola zayıf. Bitwarden hesabınızı korumak istiyorsanız daha güçlü bir ana parola (veya kelimelerden oluşturulmuş uzun cümleler) seçmelisiniz. Bu ana parolayı kullanmak istediğinizden emin misiniz?"
@@ -1278,7 +1278,7 @@
     "message": "Çıkmak istediğinize emin misiniz? Eğer şimdi çıkarsanız bilgileriniz kayıt edilmeyecektir."
   },
   "unsavedChangesTitle": {
-    "message": "Kayıt edilmemiş değişiklikler var"
+    "message": "Kaydedilmemiş Değişiklikler"
   },
   "clone": {
     "message": "Klonla"
@@ -1287,50 +1287,50 @@
     "message": "Bir ya da daha fazla organizasyon ilkesi oluşturucu ayarlarınızı etkiliyor."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Kasa Zaman Aşımı Eylemi"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Kilitli bir kasaya tekrar erişebilmeniz için ana şifrenizi tekrar girmeniz gerekir."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Çıkış yapılmış bir kasaya tekrardan erişmek için yeniden kimlik doğrulaması gerekir."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Kilitle",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Çöp Kutusu",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Çöplerde ara"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Ögeyi Kalıcı Olarak Sil"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Bu ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Kalıcı Olarak Silinmiş Öge"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Ögeyi Geri Yükle"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Bu ögeyi geri yüklemek istediğinizden emin misiniz?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Kurtarılan Öğe"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Kalıcı Olarak Sil"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Oturumu kapatmak kasanıza olan tüm erişiminizi kaldırır ve zaman aşımından sonra çevrimiçi kimlik doğrulaması gerektirir. Bu ayarı kullanmak istediğinizden emin misiniz?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Zaman Aşımı Eylem Onayı"
   }
 }
