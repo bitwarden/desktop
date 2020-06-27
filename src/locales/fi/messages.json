@@ -122,7 +122,7 @@
     "message": "Muuta näkyvyyttä"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Laajenna/pienennä",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
