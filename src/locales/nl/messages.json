@@ -874,7 +874,7 @@
     "message": "Taal"
   },
   "languageDesc": {
-    "message": "De taal van de applicatie wijzigen. Werkt pas na opnieuw opstarten."
+    "message": "De taal van de applicatie wijzigen. Werkt pas na herstarten."
   },
   "theme": {
     "message": "Thema"
@@ -907,7 +907,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Opnieuw opstarten om bij te werken"
+    "message": "Herstart om bij te werken"
   },
   "restartToUpdateDesc": {
     "message": "Versie $VERSION_NUM$ is klaar voor installatie. Je moet Bitwarden opnieuw opstarten om de installatie af te ronden. Wil je nu opnieuw opstarten en bijwerken?",
@@ -925,7 +925,7 @@
     "message": "Er is een update gevonden. Wil je deze nu downloaden?"
   },
   "restart": {
-    "message": "Opnieuw opstarten"
+    "message": "Herstarten"
   },
   "later": {
     "message": "Later"
@@ -1287,7 +1287,7 @@
     "message": "Een of meer organisatiebeleidseisen heeft invloed op de instellingen van je generator."
   },
   "vaultTimeoutAction": {
-    "message": "Actie bij time-out van de kluis"
+    "message": "Actie bij time-out"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Om toegang te krijgen tot een vergrendelde kluis moet het hoofdwachtwoord opnieuw worden ingevoerd."
