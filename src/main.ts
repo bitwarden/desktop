@@ -17,6 +17,7 @@ import { ElectronStorageService } from 'jslib/electron/services/electronStorage.
 import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
+import { BiometricMain } from 'jslib/electron/biometric.main';
 
 export class Main {
     logService: ElectronLogService;
@@ -31,6 +32,7 @@ export class Main {
     menuMain: MenuMain;
     powerMonitorMain: PowerMonitorMain;
     trayMain: TrayMain;
+    biometricMain: BiometricMain;
 
     constructor() {
         // Set paths for portable builds
@@ -105,6 +107,7 @@ export class Main {
         });
 
         this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
+        this.biometricMain = new BiometricMain(this.storageService);
     }
 
     bootstrap() {
@@ -125,6 +128,7 @@ export class Main {
             }
             this.powerMonitorMain.init();
             await this.updaterMain.init();
+            await this.biometricMain.init();
         }, (e: any) => {
             // tslint:disable-next-line
             console.error(e);

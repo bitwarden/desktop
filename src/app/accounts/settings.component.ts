@@ -48,6 +48,8 @@ export class SettingsComponent implements OnInit {
     clearClipboardOptions: any[];
     enableTrayText: string;
     enableTrayDescText: string;
+    supportsBiometric: boolean;
+    biometric: boolean;
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -125,6 +127,15 @@ export class SettingsComponent implements OnInit {
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
         this.minimizeOnCopyToClipboard = await this.storageService.get<boolean>(
             ElectronConstants.minimizeOnCopyToClipboardKey);
+        this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
+        this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
+    }
+
+    getBiometricName() {
+        const current = this.biometric;
+        if (this.biometric) {
+            this.biometric = false;
+        }
     }
 
     async saveVaultTimeoutOptions() {
@@ -199,6 +210,25 @@ export class SettingsComponent implements OnInit {
             await this.cryptoService.clearPinProtectedKey();
             await this.vaultTimeoutService.clear();
         }
+    }
+
+    async updateBiometric() {
+        const current = this.biometric;
+        if (this.biometric) {
+            this.biometric = false;
+        } else if (this.supportsBiometric) {
+            this.biometric = await this.platformUtilsService.authenticateBiometric();
+        }
+        if (this.biometric === current) {
+            return;
+        }
+        if (this.biometric) {
+            await this.storageService.save(ConstantsService.biometricUnlockKey, true);
+        } else {
+            await this.storageService.remove(ConstantsService.biometricUnlockKey);
+        }
+        this.vaultTimeoutService.biometricLocked = false;
+        await this.cryptoService.toggleKey();
     }
 
     async saveFavicons() {

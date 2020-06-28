@@ -231,6 +231,7 @@ export class AppComponent implements OnInit {
             this.policyService.clear(userId),
         ]);
 
+        this.vaultTimeoutService.biometricLocked = true;
         this.searchService.clearIndex();
         this.authService.logOut(async () => {
             this.analytics.eventTrack.next({ action: 'Logged Out' });

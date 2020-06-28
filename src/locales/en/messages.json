@@ -1237,6 +1237,9 @@
   "yourVaultIsLockedPinCode": {
     "message": "Your vault is locked. Verify your PIN code to continue."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
