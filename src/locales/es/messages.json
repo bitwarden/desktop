@@ -779,7 +779,7 @@
     "message": "Tiempo de espera de la bóveda"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Elija cuando se agotará el tiempo de espera de su bóveda y se ejecutará la acción seleccionada."
   },
   "immediately": {
     "message": "Inmediatamente"
