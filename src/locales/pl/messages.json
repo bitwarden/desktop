@@ -963,7 +963,7 @@
     "message": "Przedłuż konto Premium"
   },
   "premiumNotCurrentMember": {
-    "message": "Nie masz aktualnie konta Premium."
+    "message": "Nie posiadasz obecnie konta Premium."
   },
   "premiumSignUpAndGet": {
     "message": "Zarejestruj konto Premium, aby otrzymać:"
@@ -1275,7 +1275,7 @@
     "message": "Polityka prywatności"
   },
   "unsavedChangesConfirmation": {
-    "message": "Czy na pewno chcesz wyjść? Jeśli wyjdziesz, aktualne informacje nie zostaną zapisane."
+    "message": "Czy na pewno chcesz wyjść? Jeśli wyjdziesz, obecne informacje nie zostaną zapisane."
   },
   "unsavedChangesTitle": {
     "message": "Niezapisane zmiany"
