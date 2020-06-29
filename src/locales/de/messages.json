@@ -779,7 +779,7 @@
     "message": "Tresor-Timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Wählen Sie, wann der Timeout Ihres Tresors aktiviert werden soll und welche Aktion er bewirken soll."
+    "message": "Legen Sie einen Timeout für den Tresor und die auszuführende Aktion fest."
   },
   "immediately": {
     "message": "Sofort"
