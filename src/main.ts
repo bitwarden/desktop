@@ -9,6 +9,7 @@ import { PowerMonitorMain } from './main/powerMonitor.main';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
+import { BiometricMain } from 'jslib/electron/biometric.main';
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
@@ -17,7 +18,6 @@ import { ElectronStorageService } from 'jslib/electron/services/electronStorage.
 import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
-import { BiometricMain } from 'jslib/electron/biometric.main';
 
 export class Main {
     logService: ElectronLogService;
@@ -107,7 +107,7 @@ export class Main {
         });
 
         this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
-        this.biometricMain = new BiometricMain(this.storageService);
+        this.biometricMain = new BiometricMain(this.storageService, this.i18nService);
     }
 
     bootstrap() {
