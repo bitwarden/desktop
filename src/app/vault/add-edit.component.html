@@ -82,7 +82,7 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="cardExpYear">{{'expirationYear' | i18n}}</label>
                             <input id="cardExpYear" type="text" name="Card.ExpYear" [(ngModel)]="cipher.card.expYear"
-                                placeholder="{{'ex' | i18n}} 2019">
+                                placeholder="{{'ex' | i18n}} {{currentDate | date: 'yyyy'}}">
                         </div>
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
