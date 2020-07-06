@@ -50,6 +50,7 @@ export class SettingsComponent implements OnInit {
     enableTrayDescText: string;
     supportsBiometric: boolean;
     biometric: boolean;
+    biometricText: string;
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -129,13 +130,7 @@ export class SettingsComponent implements OnInit {
             ElectronConstants.minimizeOnCopyToClipboardKey);
         this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
-    }
-
-    getBiometricName() {
-        const current = this.biometric;
-        if (this.biometric) {
-            this.biometric = false;
-        }
+        this.biometricText = await this.storageService.get<string>(ConstantsService.biometricText);
     }
 
     async saveVaultTimeoutOptions() {
