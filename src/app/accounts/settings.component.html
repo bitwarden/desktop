@@ -48,7 +48,7 @@
                             <div class="checkbox">
                                 <label for="biometric">
                                     <input id="biometric" type="checkbox" name="biometric" [checked]="biometric" (change)="updateBiometric()">
-                                    {{'unlockWithWindowsHello' | i18n}}
+                                    {{biometricText | i18n}}
                                 </label>
                             </div>
                         </div>

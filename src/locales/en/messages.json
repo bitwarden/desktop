@@ -1243,6 +1243,12 @@
   "windowsHelloConsentMessage": {
     "message": "Please authenticate yourself to unlock the Bitwarden Vault."
   },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Please authenticate yourself to unlock the Bitwarden Vault."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
