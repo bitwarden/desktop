@@ -779,7 +779,7 @@
     "message": "Tiempo de espera de la bóveda"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Elija cuando se agotará el tiempo de espera de su bóveda y se ejecutará la acción seleccionada."
   },
   "immediately": {
     "message": "Inmediatamente"
@@ -1287,7 +1287,7 @@
     "message": "Una o más políticas de la organización están afectando la configuración del generador."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Tiempo de espera de la caja fuerte"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Una bóveda bloqueada requiere que introduzcas de nuevo tu contraseña maestra para acceder nuevamente."
@@ -1331,6 +1331,6 @@
     "message": "Cerrar sesión eliminará todo el acceso a su bóveda y requiere autenticación en línea después del período de espera. ¿Estás seguro de que quieres usar esta configuración?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Confirmación de acción del tiempo de espera de la caja fuerte"
   }
 }

@@ -97,7 +97,7 @@
     "message": "Код підтвердження (TOTP)"
   },
   "website": {
-    "message": "Веб-сайт"
+    "message": "Вебсайт"
   },
   "notes": {
     "message": "Нотатки"
@@ -632,7 +632,7 @@
     "message": "URL-адреса API"
   },
   "webVaultUrl": {
-    "message": "URL-адреса сервера веб-сховища"
+    "message": "URL-адреса сервера веб сховища"
   },
   "identityUrl": {
     "message": "URL-адреса сервера ідентифікації"
@@ -674,7 +674,7 @@
     "message": "Ви дійсно хочете вийти?"
   },
   "logOut": {
-    "message": "Вихід"
+    "message": "Вийти"
   },
   "addNewLogin": {
     "message": "Додати новий запис"
@@ -704,7 +704,7 @@
     "message": "Напишіть нам"
   },
   "visitOurWebsite": {
-    "message": "Відвідайте наш веб-сайт"
+    "message": "Відвідайте наш вебсайт"
   },
   "fileBugReport": {
     "message": "Повідомити про помилку"
@@ -722,7 +722,7 @@
     "message": "Змінити головний пароль"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+    "message": "Ви можете змінити головний пароль в сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "fingerprintPhrase": {
     "message": "Фраза відбитку",
@@ -733,7 +733,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Перейти у веб-сховище"
+    "message": "Перейти у веб сховище"
   },
   "getMobileApp": {
     "message": "Отримати мобільний додаток"
@@ -770,7 +770,7 @@
     "message": "Неправильний головний пароль"
   },
   "twoStepLoginConfirmation": {
-    "message": "Двоетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двоетапну перевірку в сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+    "message": "Двоетапна перевірка робить ваш обліковий запис більш захищеним, вимагаючи підтвердження входу з використанням іншого пристрою, наприклад, за допомогою коду безпеки, програми авторизації, SMS, телефонного виклику, або е-пошти. Ви можете увімкнути двоетапну перевірку в сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "twoStepLogin": {
     "message": "Двоетапна перевірка"
@@ -841,10 +841,10 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
-    "message": "Вимкнути піктограми веб-сайтів"
+    "message": "Вимкнути піктограми вебсайтів"
   },
   "disableFaviconDesc": {
-    "message": "Впізнавані піктограми веб-сайтів додаються біля кожного запису вашого сховища."
+    "message": "Впізнавані піктограми вебсайтів додаються біля кожного запису вашого сховища."
   },
   "enableMinToTray": {
     "message": "Згортати до системного лотка"
@@ -957,7 +957,7 @@
     "message": "Керувати статусом"
   },
   "premiumManageAlert": {
-    "message": "Ви можете керувати своїм статусом у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+    "message": "Ви можете керувати своїм статусом у сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "premiumRefresh": {
     "message": "Оновити статус"
@@ -990,7 +990,7 @@
     "message": "Придбати преміум"
   },
   "premiumPurchaseAlert": {
-    "message": "Ви можете придбати преміум статус у сховищі на bitwarden.com. Хочете перейти на веб-сайт зараз?"
+    "message": "Ви можете придбати преміум статус у сховищі на bitwarden.com. Хочете перейти на вебсайт зараз?"
   },
   "premiumCurrentMember": {
     "message": "У вас преміум статус!"
@@ -1296,7 +1296,7 @@
     "message": "Щоб відновити доступ до сховища після виходу, необхідно повторно авторизуватись."
   },
   "lock": {
-    "message": "Заблокувати",
+    "message": "Блокувати",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {

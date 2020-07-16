@@ -1,6 +1,10 @@
 name: Build
 
-on: push
+on:
+  push:
+    branches-ignore:
+      - 'l10n_master'
+      - 'gh-pages'
 
 jobs:
   build:

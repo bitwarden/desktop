@@ -1290,7 +1290,7 @@
     "message": "Aktion bei Tresor-Timeout"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Ein gesperrter Tresor erfordert die Eingabe des Master-Passworts, um erneut darauf zugreifen zu können."
+    "message": "Ein gesperrter Tresor erfordert die erneute Eingabe des Master-Passworts, um abermals darauf zugreifen zu können."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Ein ausgeloggter Tresor erfordert eine Neu-Authentifizierung, um erneut darauf zugreifen zu können."
