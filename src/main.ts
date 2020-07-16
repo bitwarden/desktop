@@ -10,8 +10,6 @@ import { PowerMonitorMain } from './main/powerMonitor.main';
 import { ConstantsService } from 'jslib/services/constants.service';
 
 import { BiometricMain } from 'jslib/abstractions/biometric.main';
-import { BiometricDarwinMain } from 'jslib/electron/biometric.darwin.main';
-import { BiometricWindowsMain } from 'jslib/electron/biometric.windows.main';
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
@@ -111,8 +109,10 @@ export class Main {
         this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
 
         if (process.platform === 'win32') {
+            const BiometricWindowsMain = require('jslib/electron/biometric.windows.main').default;
             this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService);
         } else if (process.platform === 'darwin') {
+            const BiometricDarwinMain = require('jslib/electron/biometric.darwin.main').default;
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
     }
