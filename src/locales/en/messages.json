@@ -1241,13 +1241,13 @@
     "message": "Unlock with Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Please authenticate yourself to unlock the Bitwarden Vault."
+    "message": "Verify for Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Unlock with Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Please authenticate yourself to unlock the Bitwarden Vault."
+    "message": "Verify for Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
