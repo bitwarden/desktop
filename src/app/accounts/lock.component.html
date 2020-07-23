@@ -36,5 +36,10 @@
                 {{'logOut' | i18n}}
             </button>
         </div>
+        <div class="button" *ngIf="supportsBiometric && biometricLock">
+            <a class="btn primary block" appBlurClick (click)="unlockBiometric()">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{biometricText | i18n}}</b>
+            </a>
+        </div>
     </div>
 </form>

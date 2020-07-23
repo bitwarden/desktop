@@ -89,8 +89,8 @@ const i18nService = new I18nService(window.navigator.language, './locales');
 const stateService = new StateService();
 const broadcasterService = new BroadcasterService();
 const messagingService = new ElectronRendererMessagingService(broadcasterService);
-const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messagingService, true);
 const storageService: StorageServiceAbstraction = new ElectronStorageService(remote.app.getPath('userData'));
+const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messagingService, true, storageService);
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
@@ -118,8 +118,8 @@ const syncService = new SyncService(userService, apiService, settingsService,
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
 const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
-const authService = new AuthService(cryptoService, apiService,
-    userService, tokenService, appIdService, i18nService, platformUtilsService, messagingService);
+const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
+    i18nService, platformUtilsService, messagingService, vaultTimeoutService);
 const exportService = new ExportService(folderService, cipherService, apiService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
