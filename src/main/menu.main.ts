@@ -168,7 +168,7 @@ export class MenuMain extends BaseMenu {
             },
         ]);
 
-        if (!isWindowsStore()) {
+        if (!isWindowsStore() && !isMacAppStore()) {
             accountSubmenu.unshift({
                 label: this.main.i18nService.t('premiumMembership'),
                 click: () => this.main.messagingService.send('openPremium'),
