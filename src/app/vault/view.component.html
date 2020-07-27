@@ -20,7 +20,7 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUsername' | i18n}}"
                                 (click)="copy(cipher.login.username, 'username', 'Username')" role="button">
-                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             </a>
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyPassword' | i18n}}"
                                 (click)="copy(cipher.login.password, 'password', 'Password')" role="button">
-                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
                                 (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')" role="button">
-                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyNumber' | i18n}}"
                                 (click)="copy(cipher.card.number, 'number', 'Number')" role="button">
-                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                             </a>
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copySecurityCode' | i18n}}"
                                 (click)="copy(cipher.card.code, 'securityCode', 'Security Code')" role="button">
-                                <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                         </a>
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUri' | i18n}}"
                             (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')" role="button">
-                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -230,7 +230,7 @@
                             *ngIf="field.value && field.type !== fieldType.Boolean && !(field.type === fieldType.Hidden && !cipher.viewPassword)"
                             (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')"
                             role="button">
-                            <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>
+                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
