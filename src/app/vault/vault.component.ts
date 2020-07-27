@@ -166,7 +166,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const pComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
                         const pCipher = pComponent != null ? pComponent.cipher : null;
                         if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
-                            pCipher.login != null && pCipher.login.password != null) {
+                            pCipher.login != null && pCipher.login.password != null && pCipher.viewPassword) {
                             this.copyValue(pCipher.login.password, 'password');
                         }
                         break;
@@ -299,7 +299,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         click: () => this.copyValue(cipher.login.username, 'username'),
                     }));
                 }
-                if (cipher.login.password != null) {
+                if (cipher.login.password != null && cipher.viewPassword) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyPassword'),
                         click: () => {

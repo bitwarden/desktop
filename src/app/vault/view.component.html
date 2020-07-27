@@ -33,7 +33,7 @@
                             <div [hidden]="!showPassword" class="monospaced password-wrapper" appSelectCopy
                                 [innerHTML]="cipher.login.password | colorPassword"></div>
                         </div>
-                        <div class="action-buttons">
+                        <div class="action-buttons" *ngIf=cipher.viewPassword>
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
                                 appA11yTitle="{{'checkPassword' | i18n}}" (click)="checkPassword()"
                                 [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
@@ -175,7 +175,7 @@
                     <div class="row-main">
                         <span class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</span>
                         <span class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</span>
-                        <span title="{{u.uri}}">{{u.hostnameOrUri}}</span>
+                        <span title="{{u.uri}}">{{u.hostOrUri}}</span>
                     </div>
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'launch' | i18n}}" *ngIf="u.canLaunch"
@@ -221,12 +221,13 @@
                     </div>
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
-                            *ngIf="field.type === fieldType.Hidden" (click)="toggleFieldValue(field)" role="button">
+                            *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
+                            (click)="toggleFieldValue(field)" role="button">
                             <i class="fa fa-lg" aria-hidden="true"
                                 [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                         </a>
                         <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
-                            *ngIf="field.value && field.type !== fieldType.Boolean"
+                            *ngIf="field.value && field.type !== fieldType.Boolean && !(field.type === fieldType.Hidden && !cipher.viewPassword)"
                             (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')"
                             role="button">
                             <i class="fa fa-lg fa-clipboard" aria-hidden="true"></i>

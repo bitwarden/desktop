@@ -63,8 +63,14 @@
         }
 
         .buttons {
-            display: flex;
-            margin-bottom: 20px;
+            &:not(.with-rows), .buttons-row {
+                display: flex;
+                margin-bottom: 10px;
+            }
+
+            &:not(.with-rows), .buttons-row:last-child {
+                margin-bottom: 20px;
+            }
 
             button {
                 margin-right: 10px;

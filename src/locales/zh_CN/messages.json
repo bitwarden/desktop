@@ -779,7 +779,7 @@
     "message": "密码库超时"
   },
   "vaultTimeoutDesc": {
-    "message": "选择您的密码库何时超时并执行所选的操作。"
+    "message": "选择您的密码库何时超时并执行所选的动作。"
   },
   "immediately": {
     "message": "立即"
@@ -1287,13 +1287,13 @@
     "message": "一个或多个组织策略正在影响您的生成器设置。"
   },
   "vaultTimeoutAction": {
-    "message": "密码库超时操作"
+    "message": "密码库超时动作"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "已锁定的密码库需要重新输入主密码才能再次访问。"
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "已注销的密码库需要重新输入主密码才能再次访问。"
+    "message": "已登出的密码库需要重新认证才能再次访问。"
   },
   "lock": {
     "message": "锁定",
@@ -1328,9 +1328,9 @@
     "message": "永久删除"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "注销时将会移除密码库的所有访问权限，并且需要在超时后进行在线认证。 您确定要使用此设置吗？"
+    "message": "超时后登出将解除对密码库的所有访问权限，并需要进行在线认证。确定使用此设置吗？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "超时操作确认"
+    "message": "超时动作确认"
   }
 }

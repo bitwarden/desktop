@@ -1,4 +1,4 @@
-﻿{
+{
   "bitwarden": {
     "message": "Bitwarden"
   },
@@ -60,7 +60,7 @@
     "message": "View Item"
   },
   "name": {
-    "message": "Name"
+    "message": "නම"
   },
   "uri": {
     "message": "URI"
@@ -1236,18 +1236,6 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Your vault is locked. Verify your PIN code to continue."
-  },
-  "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
-  },
-  "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
-  },
-  "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
-  },
-  "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"

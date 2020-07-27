@@ -277,6 +277,7 @@
     "@angular/upgrade": "7.2.1",
     "@microsoft/signalr": "3.1.0",
     "@microsoft/signalr-protocol-msgpack": "3.1.0",
+    "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
     "angular2-toaster": "6.1.0",
     "angulartics2": "6.3.0",
     "big-integer": "1.6.36",

@@ -28,13 +28,20 @@
                 {{'loggedInAsOn' | i18n : email : webVaultHostname}}
             </div>
         </div>
-        <div class="buttons">
-            <button type="submit" class="btn primary block" appBlurClick>
-                <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
-            </button>
-            <button type="button" class="btn block" appBlurClick (click)="logOut()">
-                {{'logOut' | i18n}}
-            </button>
+        <div class="buttons with-rows">
+            <div class="buttons-row">
+                <button type="submit" class="btn primary block" appBlurClick>
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
+                </button>
+                <button type="button" class="btn block" appBlurClick (click)="logOut()">
+                    {{'logOut' | i18n}}
+                </button>
+            </div>
+            <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
+                <a class="btn block" appBlurClick (click)="unlockBiometric()">
+                    {{biometricText | i18n}}
+                </a>
+            </div>
         </div>
     </div>
 </form>

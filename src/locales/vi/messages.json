@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Thu nhỏ sau khi sao chép vào bộ nhớ đệm"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Thu nhỏ sau khi sao chép thông tin của một mục vào bộ nhớ đệm."
   },
   "toggleVisibility": {
     "message": "Bật/tắt khả năng hiển thị"
@@ -729,7 +729,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Cụm từ mật khẩu tài khoản của bạn",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -776,10 +776,10 @@
     "message": "Xác thực hai lớp"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Thời Gian Chờ Của Kho"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Chọn khi nào thì kho của bạn sẽ hết thời gian chờ và thực hiện hành động đã được chọn."
   },
   "immediately": {
     "message": "Tức thì"
@@ -862,13 +862,13 @@
     "message": "Enable Tray Icon"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "Luôn hiện biểu tượng trên khay hệ thống."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Khởi động vào khay hệ thống"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Khi ứng dụng mới mở, chỉ hiện biểu tượng trên khay hệ thống."
   },
   "language": {
     "message": "Ngôn ngữ"
@@ -975,7 +975,7 @@
     "message": "Các tùy chọn xác thực hai lớp bổ sung như YubiKey, FIDO U2F và Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Thanh lọc mật khẩu, kiểm tra an toàn tài khoản và các báo cáo rò rĩ dữ liệu là để giữ cho kho của bạn an toàn."
   },
   "premiumSignUpTotp": {
     "message": "Mã xác nhận TOTP (2FA) để đăng nhập vào kho mật khẩu của bạn."
@@ -1186,19 +1186,19 @@
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "Nhập mật khẩu chính để trích xuất kho của bạn."
   },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Không có bộ sưu tập nào để liệt kê."
   },
   "ownership": {
     "message": "Quyền sở hữu"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Ai sở hữu mục này?"
   },
   "strong": {
     "message": "Mạnh",
@@ -1216,121 +1216,121 @@
     "message": "Weak Master Password"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Mật khẩu chính bạn vừa chọn có vẻ yếu. Bạn nên chọn mật khẩu chính (hoặc cụm từ mật khẩu) mạnh để bảo vệ đúng cách tài khoản Bitwarden của bạn. Bạn có thực sự muốn dùng mật khẩu chính này?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "Mã PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Mở khóa với mã PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Đặt mã PIN của bạn để mở khóa Bitwarden. Cài đặt mã PIN của bạn sẽ bị xóa nếu bạn hoàn toàn đăng xuất khỏi ứng dụng."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Mã PIN là bắt buộc."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Mã PIN không hợp lệ."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Khóa với mật khẩu chính khi khởi động lại"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Tuỳ chỉnh"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Bật biểu tượng thanh menu"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Luôn hiển biểu tượng trên thanh menu."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Ẩn vào thanh menu"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Bạn phải chọn ít nhất một bộ sưu tập."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Bạn đã nâng cấp lên Cao Cấp."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Khôi phục"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Bạn có thể quản lý đăng ký của từ App Store. Bạn có muốn truy cập vào App Store ngay không?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Pháp lý",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Điều khoản dịch vụ"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Chính sách bảo mật"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Bạn có chắc là muốn thoát? Nếu bạn thoát bây giờ, thông tin hiện tại sẽ không được lưu lại."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Những thay đổi chưa được lưu"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Tạo bản sao"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Có một hoặc vài chính sách của tổ chức đang làm ảnh hưởng đến cài đặt tạo mật khẩu của bạn."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Hành Động Khi Hết Thời Gian Chờ"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Kho bị khóa sẽ yêu cầu bạn nhập lại mật khẩu chính để có thể truy cập."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Kho bị đăng xuất sẽ yêu cầu bạn xác thực lại để có thể truy cập."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Khóa",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Thùng rác",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Tìm kiếm thùng rác"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Xoá vĩnh viễn mục"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Bạn có chắc chắn muốn xóa vĩnh viễn mục này không?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Đã xóa vĩnh viễn mục"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Khôi phục mục"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Bạn có chắc chắn muốn khôi phục mục này không?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Mục đã được khôi phục"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Xóa Vĩnh Viễn"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Đăng xuất sẽ xóa tất các truy cập vào kho của bạn và yêu cầu xác thực trực tuyến sau khi khoảng thời gian chờ hết. Bạn có chắc bạn muốn dùng cài đặt này?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Xác nhận hành động khi hết thời gian chờ"
   }
 }

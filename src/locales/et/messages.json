@@ -359,7 +359,7 @@
     "message": "Muuda kausta"
   },
   "regeneratePassword": {
-    "message": "Genereeri salasõna uuesti"
+    "message": "Genereeri parool uuesti"
   },
   "copyPassword": {
     "message": "Kopeeri parool"
@@ -1011,7 +1011,7 @@
     "message": "Värskendamine lõpetatud"
   },
   "passwordHistory": {
-    "message": "Salasõna ajalugu"
+    "message": "Paroolide ajalugu"
   },
   "clear": {
     "message": "Tühjenda",
