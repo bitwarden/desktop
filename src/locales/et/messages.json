@@ -910,7 +910,7 @@
     "message": "Vajalik on rakenduse taaskäivitamine"
   },
   "restartToUpdateDesc": {
-    "message": "Versioon $VERSION_NUM$ on paigaldamiseks valmis. Pead paigaldamise lõpetamiseks Bitwardeni taaskäivitama. Soovid seda kohe teha?",
+    "message": "Versioon $VERSION_NUM$ on paigaldamiseks valmis. Paigaldamise lõpetamiseks on vajalik Bitwarden taaskäivitama. Soovid seda kohe teha?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -922,7 +922,7 @@
     "message": "Saadaval on värskendus"
   },
   "updateAvailableDesc": {
-    "message": "Leiti värskendus. Soovid selle kohe alla laadida?"
+    "message": "Soovid selle kohe alla laadida?"
   },
   "restart": {
     "message": "Taaskäivita"
@@ -1236,6 +1236,18 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
+  },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
