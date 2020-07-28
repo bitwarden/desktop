@@ -907,7 +907,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Herstart om bij te werken"
+    "message": "Herstart Bitwarden om bij te werken"
   },
   "restartToUpdateDesc": {
     "message": "Versie $VERSION_NUM$ is klaar voor installatie. Je moet Bitwarden opnieuw opstarten om de installatie af te ronden. Wil je nu opnieuw opstarten en bijwerken?",
@@ -1236,6 +1236,18 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
+  },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bij herstart vergrendelen met hoofdwachtwoord"
