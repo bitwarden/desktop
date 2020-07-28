@@ -33,10 +33,10 @@
     "message": "Versamelings"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "Deursoek kluis"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Voeg item toe"
   },
   "shared": {
     "message": "Gedeel"
@@ -141,7 +141,7 @@
     "message": "Security Code"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Identiteitnaam"
   },
   "company": {
     "message": "Maatskappy"
@@ -707,10 +707,10 @@
     "message": "Besoek Ons Webwerf"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Rapporteer ’n fout"
   },
   "blog": {
-    "message": "Blog"
+    "message": "Woernaal"
   },
   "followUs": {
     "message": "Volg Ons"
@@ -895,7 +895,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Gaan na vir bywerkings"
   },
   "version": {
     "message": "Weergawe $VERSION_NUM$",
@@ -960,7 +960,7 @@
     "message": "U kan u lidmaatskap op die bitwarden.com-webkluis bestuur. Wil u nou na die webwerf gaan?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Verfris lidmaatskap"
   },
   "premiumNotCurrentMember": {
     "message": "U is nie tans ’n premie-lid nie."
@@ -1021,10 +1021,10 @@
     "message": "Daar is geen wagwoorde om te lys nie."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Ontdoen"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Herdoen"
   },
   "cut": {
     "message": "Knip",
@@ -1038,13 +1038,13 @@
     "message": "Kies Alles"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "Zoem in"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "Zoem uit"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "Stel zoem terug"
   },
   "toggleFullScreen": {
     "message": "Tokkel Volskerm"
@@ -1060,7 +1060,7 @@
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "Zoem"
   },
   "bringAllToFront": {
     "message": "Bring Alles na Vore",
@@ -1154,7 +1154,7 @@
     "message": "Verlaat"
   },
   "showHide": {
-    "message": "Show / Hide",
+    "message": "Vertoon/Versteek",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1189,7 +1189,7 @@
     "message": "Voer u hoofwagwoord in om u kluisdata uit te stuur."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "U behoort aan geen organisasies nie. Organisasies laat u toe om items op beveiligde wyse met ander gebruikers te deel."
   },
   "noCollectionsInList": {
     "message": "Daar is geen versamelings om te lys nie."
@@ -1216,7 +1216,7 @@
     "message": "Swak Hoofwagwoord"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "U gekose hoofwagwoord is swak. U moet ’n sterk hoofwagwoord (of ’n wagfrase) gebruik ten einde u Bitwarde-rekening te beveilig. Is u seker u wil hierdie wagwoord gebruik?"
   },
   "pin": {
     "message": "PIN",
@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "U kluis is gesluit. Verifieer u PIN-kode om voort te gaan."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
@@ -1256,7 +1268,7 @@
     "message": "U moet ten minste een versameling kies."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "U het na premie opgegradeer."
   },
   "restore": {
     "message": "Restore"
@@ -1300,7 +1312,7 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Asblik",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
