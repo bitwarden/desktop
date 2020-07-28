@@ -779,7 +779,7 @@
     "message": "Tresor-Timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Legen Sie einen Timeout für den Tresor und die auszuführende Aktion fest."
+    "message": "Wählen Sie, wann der Timeout Ihres Tresors aktiviert werden soll und welche Aktion er bewirken soll."
   },
   "immediately": {
     "message": "Sofort"
@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"
   },
@@ -1275,7 +1287,7 @@
     "message": "Datenschutzerklärung"
   },
   "unsavedChangesConfirmation": {
-    "message": "Wollen Sie wirklich aufhören? Wenn Sie jetzt aufhören, werden Ihre aktuellen Eingaben nicht gespeichert"
+    "message": "Wollen Sie wirklich aufhören? Wenn Sie jetzt aufhören, werden Ihre aktuellen Eingaben nicht gespeichert."
   },
   "unsavedChangesTitle": {
     "message": "Nicht gespeicherte Änderungen"
