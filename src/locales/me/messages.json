@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "Vaš trezor je zaključan. Potvrdite svoj PIN kod da biste nastavili."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Zaključajte glavnom lozinkom pri ponovnom pokretanju"
   },
