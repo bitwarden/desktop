@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "Трезорът е заключен. Въведете своя ПИН, за да продължите."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Заключване с главната парола при повторно пускане"
   },
