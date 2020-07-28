@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Saring"
   },
   "allItems": {
     "message": "Semua Item"
@@ -116,7 +116,7 @@
     "message": "Minimize when copying to clipboard"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimalkan saat menyalin data item ke clipboard."
   },
   "toggleVisibility": {
     "message": "Alihkan Visibilitas"
@@ -307,7 +307,7 @@
     "message": "Nilai"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Geser untuk sortir"
   },
   "cfTypeText": {
     "message": "Teks"
@@ -377,11 +377,11 @@
     "message": "Pemisah Kata"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Gunakan Huruf Besar",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Termasuk angka"
   },
   "close": {
     "message": "Tutup"
@@ -754,7 +754,7 @@
     "message": "Buka"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Telah log in sebagai $EMAIL$ di $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1229,13 +1229,25 @@
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "Diperlukan kode PIN."
   },
   "invalidPin": {
     "message": "Invalid PIN code."
   },
   "yourVaultIsLockedPinCode": {
     "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
@@ -1265,7 +1277,7 @@
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "Hukum",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
@@ -1281,10 +1293,10 @@
     "message": "Unsaved Changes"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klon"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "Satu atau lebih kebijakan organisasi mempengaruhi pengaturan generator anda."
   },
   "vaultTimeoutAction": {
     "message": "Vault Timeout Action"
@@ -1296,11 +1308,11 @@
     "message": "A logged out vault requires that you re-authenticate to access it again."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Kunci",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Sampah",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
