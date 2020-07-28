@@ -113,7 +113,7 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Not panosuna kaydederken simge durumuna küçült"
   },
   "minimizeOnCopyToClipboardDesc": {
     "message": "Bir öğenin verilerini panoya kopyalarken simge durumuna küçültün."
@@ -1236,6 +1236,18 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Kasanız kilitli. Devam etmek için PIN kodunuzu doğrulayın."
+  },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yeniden başlatmada ana şifre ile kilitle"

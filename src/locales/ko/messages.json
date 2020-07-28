@@ -343,7 +343,7 @@
     "message": "정말 이 항목을 삭제하시겠습니까?"
   },
   "deletedItem": {
-    "message": "항목 삭제함"
+    "message": "삭제한 항목"
   },
   "overwritePasswordConfirmation": {
     "message": "정말 현재 비밀번호를 덮어쓰시겠습니까?"
@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
   },
@@ -1250,7 +1262,7 @@
     "message": "항상 메뉴 막대에 아이콘을 표시합니다."
   },
   "hideToMenuBar": {
-    "message": "메뉴 모음에 숨기기"
+    "message": "메뉴 막대에 숨기기"
   },
   "selectOneCollection": {
     "message": "반드시 하나 이상의 컬렉션을 선택해야 합니다."

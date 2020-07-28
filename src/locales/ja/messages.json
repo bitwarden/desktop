@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "保管庫がロックされています。PIN コードで確認してください。"
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"
   },

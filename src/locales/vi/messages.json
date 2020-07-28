@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Khóa với mật khẩu chính khi khởi động lại"
   },

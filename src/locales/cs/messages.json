@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat PIN."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"
   },

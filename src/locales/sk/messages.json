@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimalizovať pri kopírovaní do schránky"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimalizovať pri kopírovaní údajov z položky do schránky."
   },
   "toggleVisibility": {
     "message": "Prepnúť viditeľnosť"
@@ -776,10 +776,10 @@
     "message": "Dvojstupňové prihlásenie"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Časový limit pre trezor"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Vyberte kedy vyprší časový limit trezora a vykoná sa zvolená akcia."
   },
   "immediately": {
     "message": "Okamžite"
@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "Váš trezor je uzamknutý. Overte sa PIN kódom ak chcete pokračovať."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte zamknúť s hlavným heslom"
   },
@@ -1287,50 +1299,50 @@
     "message": "Jedno alebo viac nastavení organizácie ovplyvňujú vaše nastavenia generátora."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Akcia pri vypršaní času pre trezor"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Uzamknutý trezor sa dá odomknúť opätovným zadaním hlavného hesla."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Odhlásený trezor bude vyžadovať opätovné prihlásenie aby ste k nemu mohli pristupovať."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Uzamknúť",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Kôš",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Hľadať v koši"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Natrvalo odstrániť položku"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Naozaj chcete natrvalo odstrániť túto položku?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Položka natrvalo odstránená"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Obnoviť položku"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Naozaj chcete obnoviť túto položku?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Obnovená položka"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Natrvalo odstrániť"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Odhlásenie bude vyžadovať online prihlásenie po vypršaní časového limitu. Naozaj chcete použiť toto nastavenie?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Potvrdenie akcie pre vypršaný časový limit"
   }
 }

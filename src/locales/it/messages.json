@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio"
   },

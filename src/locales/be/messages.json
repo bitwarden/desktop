@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Блакіраваць майстрам-паролем пры перазапуску"
   },

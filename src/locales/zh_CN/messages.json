@@ -1237,6 +1237,18 @@
   "yourVaultIsLockedPinCode": {
     "message": "您的密码库已锁定。请验证您的 PIN 码以继续。"
   },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "重启后改用主密码锁定"
   },
