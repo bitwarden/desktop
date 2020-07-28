@@ -36,7 +36,7 @@
     "message": "Søk i hvelvet"
   },
   "addItem": {
-    "message": "Legg til element"
+    "message": "Legg til objekt"
   },
   "shared": {
     "message": "Delt"
@@ -45,7 +45,7 @@
     "message": "Del"
   },
   "shareItem": {
-    "message": "Del element"
+    "message": "Del objekt"
   },
   "sharedItem": {
     "message": "Delte elementet"
@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimer vinduet ved kopiering til utklippstavlen"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Bitwarden-vinduet minimeres automatisk når et objekts data kopieres til utklippstavlen."
   },
   "toggleVisibility": {
     "message": "Juster synlighet"
@@ -343,7 +343,7 @@
     "message": "Er du sikker på at du vil slette denne gjenstanden?"
   },
   "deletedItem": {
-    "message": "Slettet gjenstanden"
+    "message": "Slettet objektet"
   },
   "overwritePasswordConfirmation": {
     "message": "Er du sikker på at du vil overskrive det nåværende passordet?"
@@ -776,10 +776,10 @@
     "message": "2-trinnsinnlogging"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Tidsavbrudd i hvelvet"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Velg når hvelvet ditt skal tidsavbrytes og utføre den valgte handlingen."
   },
   "immediately": {
     "message": "Umiddelbart"
@@ -1213,7 +1213,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Svakt superpassord"
+    "message": "Svakt hovedpassord"
   },
   "weakMasterPasswordDesc": {
     "message": "Superpassordet du har valgt er svakt. Du bør bruke et sterkt superpassord (eller en passordfrase) for å sikre Bitwarden-kontoen din på en forsvarlig måte. Er du sikker på at du vil bruke dette superpassordet?"
@@ -1236,6 +1236,18 @@
   },
   "yourVaultIsLockedPinCode": {
     "message": "Hvelvet ditt er låst. Bekreft PIN-koden din for å fortsette."
+  },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedpassord ved omstart"
@@ -1287,50 +1299,50 @@
     "message": "En eller flere av organisasjons retningslinjer påvirker generatorinnstillingene dine."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Handling ved tidsavbrudd i hvelvet"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Et låst hvelv krever at du skriver inn hovedpassordet ditt på nytt for å få tilgang til hvelvet igjen."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Et utlogget hvelv krever at du autentiserer deg selv på nytt for å få tilgang til det igjen."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Lås",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Papirkurv",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Søk i papirkurven"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Slett objektet permanent"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Er du sikker på at du vil slette dette objektet permanent?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Slett objektet permanent"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Gjenopprett objekt"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Er du sikker på at du vil gjenopprette dette objektet?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Gjenopprettet objekt"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Slett permanent"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Hvis du logger ut, fjerner du all tilgang til hvelvet ditt og det vil bli krevd online autentisering på nytt etter tidsavbruddet. Er du sikker på at du vil bruke denne innstillingen?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Bekreftelse av handling ved tidsavbrudd"
   }
 }
