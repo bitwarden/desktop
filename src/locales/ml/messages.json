@@ -30,7 +30,7 @@
     "message": "ഫോൾഡറുകൾ"
   },
   "collections": {
-    "message": "Collections"
+    "message": "കളക്ഷൻസ്"
   },
   "searchVault": {
     "message": "വാൾട് തിരയുക"
@@ -48,7 +48,7 @@
     "message": "ഇനങ്ങൾ പങ്കിടുക"
   },
   "sharedItem": {
-    "message": "പങ്കിട്ടവ"
+    "message": "പങ്കിട്ട ഇനം"
   },
   "shareDesc": {
     "message": "ഈ ഇനം പങ്കിടാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന ഒരു ഓർഗനൈസേഷൻ തിരഞ്ഞെടുക്കുക. പങ്കിടൽ ഇനത്തിന്റെ ഉടമസ്ഥാവകാശം ഓർഗനൈസേഷന് കൈമാറുന്നു. ഈ ഇനം പങ്കിട്ടുകഴിഞ്ഞാൽ നിങ്ങൾ അതിന്റെ നേരിട്ടുള്ള ഉടമയാകില്ല."
@@ -66,7 +66,7 @@
     "message": "URL"
   },
   "uriPosition": {
-    "message": "യൂ. അർ. ൽ $POSITION$",
+    "message": "URL $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -76,13 +76,13 @@
     }
   },
   "newUri": {
-    "message": "പുതിയ യൂ. അർ. ൽ"
+    "message": "പുതിയ URL"
   },
   "username": {
     "message": "ഉപയോക്തൃനാമം"
   },
   "password": {
-    "message": "പാസ്സ്‌വേർഡ്‌"
+    "message": "പാസ്സ്‌വേഡ്‌"
   },
   "passphrase": {
     "message": "പാസ്‌ഫ്രെയ്‌സ്"
@@ -141,7 +141,7 @@
     "message": "സുരക്ഷാ കോഡ് സിവി‌വി"
   },
   "identityName": {
-    "message": "ഐഡന്റിറ്റി"
+    "message": "ഐഡന്റിറ്റിയുടെ പേര്"
   },
   "company": {
     "message": "കമ്പനി"
@@ -168,7 +168,7 @@
     "message": "പ്രീമിയം അംഗത്വം ആവശ്യമാണ്"
   },
   "premiumRequiredDesc": {
-    "message": "ഒരു പ്രീമിയം അംഗത്വം ആവശ്യമാണ്."
+    "message": "ഈ സവിശേഷത ഉപയോഗിക്കുന്നതിന് പ്രീമിയം അംഗത്വം ആവശ്യമാണ്."
   },
   "errorOccurred": {
     "message": "ഒരു പിഴവ് സംഭവിച്ചിരിക്കുന്നു."
@@ -220,22 +220,22 @@
     "message": "ശീർഷകം"
   },
   "mr": {
-    "message": "Mr"
+    "message": "ശ്രീ"
   },
   "mrs": {
-    "message": "ജൂലൈ"
+    "message": "ശ്രിമതി"
   },
   "ms": {
-    "message": "മിസ്"
+    "message": "കുമാരി"
   },
   "dr": {
-    "message": "Dr"
+    "message": "ഡോ"
   },
   "expirationMonth": {
-    "message": "കാലഹരണപ്പെടൽ മാസം"
+    "message": "കാലഹരണപ്പെടുന്ന മാസം"
   },
   "expirationYear": {
-    "message": "15/5000\nകാലഹരണപ്പെടുന്ന വർഷം"
+    "message": "കാലഹരണപ്പെടുന്ന വർഷം"
   },
   "select": {
     "message": "തിരഞ്ഞെടുക്കുക"
@@ -295,7 +295,7 @@
     "message": "തിരുത്തുക"
   },
   "authenticatorKeyTotp": {
-    "message": "പ്രാമാണീകരണ കീ"
+    "message": "ഓതന്റിക്കേറ്റർ കീ (TOTP)"
   },
   "folder": {
     "message": "ഫോൾഡർ"
@@ -397,7 +397,7 @@
     "message": "അവ്യക്തമായ പ്രതീകങ്ങൾ ഒഴിവാക്കുക"
   },
   "searchCollection": {
-    "message": "ഫോൾഡറുകൾ തിരയുക"
+    "message": "കളക്ഷൻസ് തിരയുക"
   },
   "searchFolder": {
     "message": "ഫോൾഡറുകൾ തിരയുക"
@@ -754,7 +754,7 @@
     "message": "അൺലോക്ക്"
   },
   "loggedInAsOn": {
-    "message": "ലോഗ് ഇൻ ചെയ്തിരിക്കുന്ന $EMAIL$ ഓൺ $HOSTNAME$.",
+    "message": "$HOSTNAME$ൽ$EMAIL$ലോഗിൻ ചെയ്തിരിക്കുന്നു.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1027,7 +1027,7 @@
     "message": "പുതിയപടിയാക്കുക"
   },
   "cut": {
-    "message": "മുറിക്കുക",
+    "message": "കട്ട്",
     "description": "Cut to clipboard"
   },
   "paste": {
@@ -1238,16 +1238,16 @@
     "message": "ഒന്നിലധികം ഉപകരണങ്ങളിൽ നിന്ന് നിങ്ങളുടെ വാൾട് സമന്വയിപ്പിച്ച് ആക്‌സസ്സുചെയ്യുക\n\n- ഫോൺ\n- ടാബ്‌ലെറ്റ്\n- ഡെസ്ക്ടോപ്പ്\n- വെബ്."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Windows Hello ഉപയോഗിച്ച് അൺലോക്കുചെയ്യുക"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden വേണ്ടി പരിശോധിച്ചുറപ്പിക്കുക."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Touch ID ഉപയോഗിച്ച് അൺലോക്കുചെയ്യുക"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden വേണ്ടി പരിശോധിച്ചുറപ്പിക്കുക."
   },
   "lockWithMasterPassOnRestart": {
     "message": "പുനരാരംഭിക്കുമ്പോൾ മാസ്റ്റർ പാസ്‌വേഡ് ഉപയോഗിച്ച് ലോക്കുചെയ്യുക"
