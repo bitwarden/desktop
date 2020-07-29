@@ -1238,13 +1238,13 @@
     "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
   },
   "unlockWithWindowsHello": {
-    "message": "Розблокувати за допомогою Windows Hello"
+    "message": "Розблокувати з Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Перевірити на Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Розблокувати за допомогою Touch ID"
+    "message": "Розблокувати з Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "Перевірити на Bitwarden."
