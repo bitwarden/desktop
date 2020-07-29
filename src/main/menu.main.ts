@@ -291,7 +291,7 @@ export class MenuMain extends BaseMenu {
                     {
                         label: 'Safari',
                         click: () => {
-                            shell.openExternal('https://bitwarden.com/#download');
+                            shell.openExternal('https://bitwarden.com/download/');
                         },
                     },
                 ],
