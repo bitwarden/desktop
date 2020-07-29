@@ -1238,16 +1238,16 @@
     "message": "Tu caja fuerte está bloqueada. Verifica tu código PIN para continuar."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Desbloquear con Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Verificar para Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Desbloquear con Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Verificar para Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar"
