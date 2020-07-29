@@ -1238,16 +1238,16 @@
     "message": "O seu cofre está bloqueado. Verifique o seu PIN para continuar."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Desbloquear com Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Verificar para Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Desbloquear com Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Verificar para Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com palavra-passe mestra ao reiniciar"
