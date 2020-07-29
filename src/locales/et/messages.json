@@ -1238,16 +1238,16 @@
     "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Lukusta lahti Windows Helloga"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Kinnita Bitwardenisse sisselogimine."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Lukusta lahti Touch ID-ga"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Kinnita Bitwardenisse sisselogimine."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
