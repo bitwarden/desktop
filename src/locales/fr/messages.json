@@ -1238,13 +1238,13 @@
     "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Déverrouiller avec Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Verify for Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Déverrouiller avec Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "Verify for Bitwarden."
