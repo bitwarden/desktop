@@ -1238,16 +1238,16 @@
     "message": "A széf zárolásra került. A folytatáshoz meg kel adni a pinkódot."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Feloldás Windows Hello segítségével"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden ellenőrzés."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Feloldás Touch ID segítségével"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden ellenőrzés."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval újraindításkor"

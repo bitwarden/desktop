@@ -1238,16 +1238,16 @@
     "message": "密碼庫已鎖定。驗證 PIN 碼以繼續。"
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "使用 Windows Hello 解鎖"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "確認使用 Bitwarden。"
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "使用 Touch ID 解鎖"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "確認使用 Bitwarden。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "重啟後使用主密碼鎖定"
