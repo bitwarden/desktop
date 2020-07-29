@@ -1238,16 +1238,16 @@
     "message": "保管庫がロックされています。PIN コードで確認してください。"
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Windows Hello でロック解除"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden の認証を行います。"
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Touch ID でロック解除"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden の認証を行います。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"
