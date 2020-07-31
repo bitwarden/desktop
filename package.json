@@ -119,6 +119,12 @@
         "portable",
         "nsis-web",
         "appx"
+      ],
+      "extraFiles": [
+        {
+          "from": "resources/vccorlib140.dll",
+          "to": "vccorlib140.dll"
+        }
       ]
     },
     "linux": {
