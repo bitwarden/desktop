@@ -122,7 +122,7 @@
       ],
       "extraFiles": [
         {
-          "from": "win-dlls/vccorlib140.dll",
+          "from": "resources/vccorlib140.dll",
           "to": "vccorlib140.dll"
         }
       ]
