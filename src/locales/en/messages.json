@@ -1344,5 +1344,11 @@
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Timeout Action Confirmation"
+  },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
+  "loggingInPleaseWait": {
+    "message": "Logging in, please wait..."
   }
 }

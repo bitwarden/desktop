@@ -6,6 +6,7 @@ import {
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 
+import { ChangePasswordComponent } from './accounts/change-password.component';
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
     },
     { path: 'hint', component: HintComponent },
+    { path: 'change-password', component: ChangePasswordComponent },
 ];
 
 @NgModule({
