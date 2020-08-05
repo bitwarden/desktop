@@ -207,6 +207,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PremiumComponent,
         SettingsComponent,
         ShareComponent,
+        SsoComponent,
         TwoFactorOptionsComponent,
     ],
     providers: [],

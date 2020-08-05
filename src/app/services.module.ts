@@ -209,6 +209,7 @@ export function initFactory(): Function {
         { provide: SystemServiceAbstraction, useValue: systemService },
         { provide: EventServiceAbstraction, useValue: eventService },
         { provide: PolicyServiceAbstraction, useValue: policyService },
+        { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
