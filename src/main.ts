@@ -89,7 +89,7 @@ export class Main {
         storageDefaults[ConstantsService.vaultTimeoutActionKey] = 'lock';
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
-        this.windowMain = new WindowMain(this.storageService, true);
+        this.windowMain = new WindowMain(this.storageService, true, 950, 600, (arg) => this.processDeepLink(arg));
         this.messagingMain = new MessagingMain(this, this.storageService);
         this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
             this.menuMain.updateMenuItem.enabled = false;
@@ -138,9 +138,30 @@ export class Main {
             if (this.biometricMain != null) {
                 await this.biometricMain.init();
             }
+
+            if (!app.isDefaultProtocolClient('bitwarden')) {
+                app.setAsDefaultProtocolClient('bitwarden');
+            }
+
+            // Process protocol for macOS
+            app.on('open-url', (event, url) => {
+                event.preventDefault();
+                this.processDeepLink([url]);
+            });
         }, (e: any) => {
             // tslint:disable-next-line
             console.error(e);
+        });
+    }
+
+    private processDeepLink(argv: string[]): void {
+        argv.filter((s) => s.indexOf('bitwarden://') === 0).forEach((s) => {
+            const url = new URL(s);
+            const code = url.searchParams.get('code');
+            const receivedState = url.searchParams.get('state');
+            if (code != null && receivedState != null) {
+                this.messagingService.send('ssoCallback', { code: code, state: receivedState });
+            }
         });
     }
 }

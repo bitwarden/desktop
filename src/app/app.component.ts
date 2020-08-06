@@ -194,6 +194,8 @@ export class AppComponent implements OnInit {
                             this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
                         }
                         break;
+                    case 'ssoCallback':
+                        this.router.navigate(['sso'], { queryParams: { code: message.code, state: message.state } });
                     default:
                 }
             });
