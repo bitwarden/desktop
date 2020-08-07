@@ -1,6 +1,6 @@
 ﻿@import "variables.scss";
 
-#login-page, #lock-page {
+#login-page, #lock-page, #sso-page, #change-password-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     }
 }
 
-#login-page, #register-page, #hint-page, #two-factor-page, #lock-page {
+#login-page, #register-page, #hint-page, #two-factor-page, #lock-page, #sso-page, #change-password-page {
     .content {
         width: 300px;
 
