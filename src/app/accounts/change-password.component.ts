@@ -46,6 +46,36 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
             platformUtilsService, folderService, cipherService, syncService, policyService, router);
     }
 
+    get masterPasswordScoreWidth() {
+        return this.masterPasswordScore == null ? 0 : (this.masterPasswordScore + 1) * 20;
+    }
+
+    get masterPasswordScoreColor() {
+        switch (this.masterPasswordScore) {
+            case 4:
+                return 'success';
+            case 3:
+                return 'primary';
+            case 2:
+                return 'warning';
+            default:
+                return 'danger';
+        }
+    }
+
+    get masterPasswordScoreText() {
+        switch (this.masterPasswordScore) {
+            case 4:
+                return this.i18nService.t('strong');
+            case 3:
+                return this.i18nService.t('good');
+            case 2:
+                return this.i18nService.t('weak');
+            default:
+                return this.masterPasswordScore != null ? this.i18nService.t('weak') : null;
+        }
+    }
+
     async performSubmitActions(newMasterPasswordHash: string, newKey: SymmetricCryptoKey,
         newEncKey: [SymmetricCryptoKey, CipherString]) {
         const setRequest = new SetPasswordRequest();
