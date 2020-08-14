@@ -1348,9 +1348,6 @@
   "enterpriseSingleSignOn": {
     "message": "Enterprise Single Sign-On"
   },
-  "loggingInPleaseWait": {
-    "message": "Logging in, please wait..."
-  },
   "setMasterPassword": {
     "message": "Set Master Password"
   },
