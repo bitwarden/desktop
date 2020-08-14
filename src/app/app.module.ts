@@ -29,8 +29,6 @@ import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
-import { PasswordStrengthComponent } from './components/password-strength.component';
-
 import { CalloutComponent } from 'jslib/angular/components/callout.component';
 import { IconComponent } from 'jslib/angular/components/icon.component';
 import { ModalComponent } from 'jslib/angular/components/modal.component';
@@ -177,7 +175,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
-        PasswordStrengthComponent,
         PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
@@ -195,7 +192,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
     ],
     entryComponents: [
         AttachmentsComponent,
-        ChangePasswordComponent,
         CollectionsComponent,
         EnvironmentComponent,
         ExportComponent,
@@ -207,7 +203,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PremiumComponent,
         SettingsComponent,
         ShareComponent,
-        SsoComponent,
         TwoFactorOptionsComponent,
     ],
     providers: [],
