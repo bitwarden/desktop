@@ -28,7 +28,7 @@ import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/comp
     templateUrl: 'two-factor.component.html',
 })
 export class TwoFactorComponent extends BaseTwoFactorComponent {
-    @ViewChild('twoFactorOptions', { read: ViewContainerRef }) twoFactorOptionsModal: ViewContainerRef;
+    @ViewChild('twoFactorOptions', { read: ViewContainerRef, static: true }) twoFactorOptionsModal: ViewContainerRef;
 
     showingModal = false;
 
