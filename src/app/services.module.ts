@@ -191,6 +191,7 @@ export function initFactory(): Function {
         { provide: TokenServiceAbstraction, useValue: tokenService },
         { provide: I18nServiceAbstraction, useValue: i18nService },
         { provide: CryptoServiceAbstraction, useValue: cryptoService },
+        { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: PlatformUtilsServiceAbstraction, useValue: platformUtilsService },
         { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         { provide: ApiServiceAbstraction, useValue: apiService },
