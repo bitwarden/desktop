@@ -56,15 +56,15 @@ const BroadcasterSubscriptionId = 'VaultComponent';
 export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild(ViewComponent) viewComponent: ViewComponent;
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
-    @ViewChild(CiphersComponent) ciphersComponent: CiphersComponent;
-    @ViewChild(GroupingsComponent) groupingsComponent: GroupingsComponent;
-    @ViewChild('passwordGenerator', { read: ViewContainerRef }) passwordGeneratorModalRef: ViewContainerRef;
-    @ViewChild('attachments', { read: ViewContainerRef }) attachmentsModalRef: ViewContainerRef;
-    @ViewChild('folderAddEdit', { read: ViewContainerRef }) folderAddEditModalRef: ViewContainerRef;
-    @ViewChild('passwordHistory', { read: ViewContainerRef }) passwordHistoryModalRef: ViewContainerRef;
-    @ViewChild('exportVault', { read: ViewContainerRef }) exportVaultModalRef: ViewContainerRef;
-    @ViewChild('share', { read: ViewContainerRef }) shareModalRef: ViewContainerRef;
-    @ViewChild('collections', { read: ViewContainerRef }) collectionsModalRef: ViewContainerRef;
+    @ViewChild(CiphersComponent, { static: true }) ciphersComponent: CiphersComponent;
+    @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
+    @ViewChild('passwordGenerator', { read: ViewContainerRef, static: true }) passwordGeneratorModalRef: ViewContainerRef;
+    @ViewChild('attachments', { read: ViewContainerRef, static: true }) attachmentsModalRef: ViewContainerRef;
+    @ViewChild('folderAddEdit', { read: ViewContainerRef, static: true }) folderAddEditModalRef: ViewContainerRef;
+    @ViewChild('passwordHistory', { read: ViewContainerRef, static: true }) passwordHistoryModalRef: ViewContainerRef;
+    @ViewChild('exportVault', { read: ViewContainerRef, static: true }) exportVaultModalRef: ViewContainerRef;
+    @ViewChild('share', { read: ViewContainerRef, static: true }) shareModalRef: ViewContainerRef;
+    @ViewChild('collections', { read: ViewContainerRef, static: true }) collectionsModalRef: ViewContainerRef;
 
     action: string;
     cipherId: string = null;

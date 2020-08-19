@@ -138,7 +138,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         FormsModule,
         AppRoutingModule,
         ServicesModule,
-        Angulartics2Module.forRoot([Angulartics2GoogleAnalytics], {
+        Angulartics2Module.forRoot({
             pageTracking: {
                 clearQueryParams: true,
             },

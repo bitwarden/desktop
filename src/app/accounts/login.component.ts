@@ -21,24 +21,25 @@ import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
 import { ModalComponent } from 'jslib/angular/components/modal.component';
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
 
 @Component({
     selector: 'app-login',
     templateUrl: 'login.component.html',
 })
 export class LoginComponent extends BaseLoginComponent {
-    @ViewChild('environment', { read: ViewContainerRef }) environmentModal: ViewContainerRef;
+    @ViewChild('environment', { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
 
     showingModal = false;
 
-    constructor(authService: AuthService, router: Router,
-        i18nService: I18nService, syncService: SyncService,
-        private componentFactoryResolver: ComponentFactoryResolver, storageService: StorageService,
+    constructor(authService: AuthService, router: Router, i18nService: I18nService,
+        syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
-        cryptoFunctionService: CryptoFunctionService) {
-        super(authService, router, platformUtilsService, i18nService, stateService,
-            environmentService, passwordGenerationService, cryptoFunctionService, storageService);
+        cryptoFunctionService: CryptoFunctionService, storageService: StorageService) {
+        super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
