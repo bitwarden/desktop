@@ -17,13 +17,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
-import { ChangePasswordComponent } from './accounts/change-password.component';
 import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { PremiumComponent } from './accounts/premium.component';
 import { RegisterComponent } from './accounts/register.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
@@ -157,7 +157,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BlurClickDirective,
         BoxRowDirective,
         CalloutComponent,
-        ChangePasswordComponent,
         CiphersComponent,
         CollectionsComponent,
         ColorPasswordPipe,
@@ -179,6 +178,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SetPasswordComponent,
         SettingsComponent,
         ShareComponent,
         SsoComponent,

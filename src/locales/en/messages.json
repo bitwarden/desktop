@@ -1352,7 +1352,7 @@
     "message": "Set Master Password"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password below. Make sure to choose a strong password/passphrase and comply with all applied organizational policies."
+    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
   },
   "newMasterPass": {
     "message": "New Master Password"

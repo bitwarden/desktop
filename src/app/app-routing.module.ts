@@ -6,11 +6,11 @@ import {
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 
-import { ChangePasswordComponent } from './accounts/change-password.component';
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
 import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
@@ -28,7 +28,7 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
     },
     { path: 'hint', component: HintComponent },
-    { path: 'change-password', component: ChangePasswordComponent },
+    { path: 'set-password', component: SetPasswordComponent },
     { path: 'sso', component: SsoComponent },
 ];
 

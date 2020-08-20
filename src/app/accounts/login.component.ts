@@ -21,9 +21,6 @@ import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
 import { ModalComponent } from 'jslib/angular/components/modal.component';
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
-import { EnvironmentService } from 'jslib/abstractions/environment.service';
 
 @Component({
     selector: 'app-login',
@@ -39,7 +36,8 @@ export class LoginComponent extends BaseLoginComponent {
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService) {
-        super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
+        super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
+            passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
