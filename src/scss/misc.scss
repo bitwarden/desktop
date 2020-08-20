@@ -392,11 +392,8 @@ app-root > #loading {
         }
     }
 
-    &[role="alert"] {
-        ul {
-            padding-left: 40px;
-            padding-inline-start: 40px;
-            margin: 0;
-        }
+    ul {
+        padding-left: 40px;
+        margin: 0;
     }
 }
