@@ -1,6 +1,6 @@
 ﻿@import "variables.scss";
 
-#login-page, #lock-page {
+#login-page, #lock-page, #sso-page, #set-password-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,6 +119,66 @@
                     visibility: visible;
                 }
             }
+        }
+    }
+}
+
+#sso-page {
+    .content {
+        width: 300px;
+
+        .box {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    }
+}
+
+#set-password-page {
+    .content {
+        width: 500px;
+
+        p {
+            text-align: center
+        }
+
+        p.lead, h1 {
+            font-size: $font-size-large;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        
+        .buttons {
+            &:not(.with-rows), .buttons-row {
+                display: flex;
+                margin-bottom: 10px;
+            }
+
+            &:not(.with-rows), .buttons-row:last-child {
+                margin-bottom: 20px;
+            }
+
+            button {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .box {
+            margin-bottom: 15px;
+
+            &.last {
+                margin-bottom: 20px;
+            }
+        }
+
+        .box-content {
+            margin-bottom: 10px;
         }
     }
 }

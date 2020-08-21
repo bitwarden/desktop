@@ -67,9 +67,9 @@ const IdleTimeout = 60000 * 10; // 10 minutes
         <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
-    @ViewChild('settings', { read: ViewContainerRef }) settingsRef: ViewContainerRef;
-    @ViewChild('premium', { read: ViewContainerRef }) premiumRef: ViewContainerRef;
-    @ViewChild('passwordHistory', { read: ViewContainerRef }) passwordHistoryRef: ViewContainerRef;
+    @ViewChild('settings', { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
+    @ViewChild('premium', { read: ViewContainerRef, static: true }) premiumRef: ViewContainerRef;
+    @ViewChild('passwordHistory', { read: ViewContainerRef, static: true }) passwordHistoryRef: ViewContainerRef;
 
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
@@ -194,6 +194,8 @@ export class AppComponent implements OnInit {
                             this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
                         }
                         break;
+                    case 'ssoCallback':
+                        this.router.navigate(['sso'], { queryParams: { code: message.code, state: message.state } });
                     default:
                 }
             });

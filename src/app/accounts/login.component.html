@@ -33,6 +33,11 @@
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'createAccount' | i18n}}
             </a>
         </div>
+        <div class="buttons">
+            <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
+                <i class="fa fa-bank" aria-hidden="true"></i> {{'enterpriseSingleSignOn' | i18n}}
+            </a>
+        </div>
         <div class="sub-options">
             <a routerLink="/hint">{{'getMasterPasswordHint' | i18n}}</a>
         </div>

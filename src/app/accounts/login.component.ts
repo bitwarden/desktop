@@ -4,6 +4,7 @@ import {
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
+
 import { Router } from '@angular/router';
 
 import { EnvironmentComponent } from './environment.component';
@@ -26,16 +27,15 @@ import { ModalComponent } from 'jslib/angular/components/modal.component';
     templateUrl: 'login.component.html',
 })
 export class LoginComponent extends BaseLoginComponent {
-    @ViewChild('environment', { read: ViewContainerRef }) environmentModal: ViewContainerRef;
+    @ViewChild('environment', { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
 
     showingModal = false;
 
-    constructor(authService: AuthService, router: Router,
-        i18nService: I18nService, syncService: SyncService,
-        private componentFactoryResolver: ComponentFactoryResolver, storageService: StorageService,
+    constructor(authService: AuthService, router: Router, i18nService: I18nService,
+        syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
-        cryptoFunctionService: CryptoFunctionService, environmentService: EnvironmentService,
-        passwordGenerationService: PasswordGenerationService) {
+        environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
+        cryptoFunctionService: CryptoFunctionService, storageService: StorageService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {

@@ -10,6 +10,8 @@ import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { RegisterComponent } from './accounts/register.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
+import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
 import { VaultComponent } from './vault/vault.component';
@@ -26,6 +28,8 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
     },
     { path: 'hint', component: HintComponent },
+    { path: 'set-password', component: SetPasswordComponent },
+    { path: 'sso', component: SsoComponent },
 ];
 
 @NgModule({
