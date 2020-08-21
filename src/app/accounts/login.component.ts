@@ -4,12 +4,16 @@ import {
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
+
 import { Router } from '@angular/router';
 
 import { EnvironmentComponent } from './environment.component';
 
 import { AuthService } from 'jslib/abstractions/auth.service';
+import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -35,7 +39,8 @@ export class LoginComponent extends BaseLoginComponent {
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService) {
-        super(authService, router, platformUtilsService, i18nService, stateService, environmentService, passwordGenerationService, cryptoFunctionService, storageService);
+        super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
+            passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

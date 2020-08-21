@@ -23,7 +23,9 @@ import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { PremiumComponent } from './accounts/premium.component';
 import { RegisterComponent } from './accounts/register.component';
+import { SetPasswordComponent } from './accounts/set-password.component';
 import { SettingsComponent } from './accounts/settings.component';
+import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
@@ -176,8 +178,10 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SetPasswordComponent,
         SettingsComponent,
         ShareComponent,
+        SsoComponent,
         StopClickDirective,
         StopPropDirective,
         TrueFalseValueDirective,
