@@ -1398,5 +1398,8 @@
         "example": "!@#$%^&*"
       }
     }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }
