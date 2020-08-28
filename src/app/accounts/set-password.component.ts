@@ -9,6 +9,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
 import {
@@ -23,9 +24,10 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
     constructor(apiService: ApiService, i18nService: I18nService,
         cryptoService: CryptoService, messagingService: MessagingService,
         userService: UserService, passwordGenerationService: PasswordGenerationService,
-        platformUtilsService: PlatformUtilsService, policyService: PolicyService, router: Router) {
+        platformUtilsService: PlatformUtilsService, policyService: PolicyService, router: Router,
+        syncService: SyncService) {
         super(i18nService, cryptoService, messagingService, userService, passwordGenerationService,
-            platformUtilsService, policyService, router, apiService);
+            platformUtilsService, policyService, router, apiService, syncService);
     }
 
     get masterPasswordScoreWidth() {
