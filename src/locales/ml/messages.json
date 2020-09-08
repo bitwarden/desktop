@@ -15,7 +15,7 @@
     "message": "തരങ്ങൾ"
   },
   "typeLogin": {
-    "message": "ലോഗിൻ"
+    "message": "പ്രവേശനം"
   },
   "typeCard": {
     "message": "കാർഡ്"
@@ -51,7 +51,7 @@
     "message": "പങ്കിട്ട ഇനം"
   },
   "shareDesc": {
-    "message": "ഈ ഇനം പങ്കിടാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന ഒരു ഓർഗനൈസേഷൻ തിരഞ്ഞെടുക്കുക. പങ്കിടൽ ഇനത്തിന്റെ ഉടമസ്ഥാവകാശം ഓർഗനൈസേഷന് കൈമാറുന്നു. ഈ ഇനം പങ്കിട്ടുകഴിഞ്ഞാൽ നിങ്ങൾ അതിന്റെ നേരിട്ടുള്ള ഉടമയാകില്ല."
+    "message": "ഈ ഇനം പങ്കിടാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന ഒരു സംഘടന തിരഞ്ഞെടുക്കുക. പങ്കിട്ട ഇനത്തിന്റെ ഉടമസ്ഥാവകാശം ആ സംഘടനക്ക് കൈമാറുന്നു. ഈ ഇനം പങ്കിട്ടുകഴിഞ്ഞാൽ നിങ്ങൾ അതിന്റെ നേരിട്ടുള്ള ഉടമയാകില്ല."
   },
   "attachments": {
     "message": "അറ്റാച്ചുമെന്റുകൾ"
@@ -63,10 +63,10 @@
     "message": "പേര്"
   },
   "uri": {
-    "message": "URL"
+    "message": "URI"
   },
   "uriPosition": {
-    "message": "URL $POSITION$",
+    "message": "URI $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -76,7 +76,7 @@
     }
   },
   "newUri": {
-    "message": "പുതിയ URL"
+    "message": "പുതിയ URI"
   },
   "username": {
     "message": "ഉപയോക്തൃനാമം"
@@ -94,7 +94,7 @@
     "message": "ഈ - മെയില് വിലാസം"
   },
   "verificationCodeTotp": {
-    "message": "പരിശോധിച്ചുറപ്പിക്കൽ കോഡ്(TOTP)"
+    "message": "സ്ഥിരീകരണ കോഡ് (TOTP)"
   },
   "website": {
     "message": "വെബ്സൈറ്റ്"
@@ -232,10 +232,10 @@
     "message": "ഡോ"
   },
   "expirationMonth": {
-    "message": "കാലഹരണപ്പെടുന്ന മാസം"
+    "message": "കാലാവതി കഴിയുന്ന മാസം"
   },
   "expirationYear": {
-    "message": "കാലഹരണപ്പെടുന്ന വർഷം"
+    "message": "കാലാവതി കഴിയുന്ന വർഷം"
   },
   "select": {
     "message": "തിരഞ്ഞെടുക്കുക"
@@ -271,7 +271,7 @@
     "message": "നഗരം / പട്ടണം"
   },
   "stateProvince": {
-    "message": "സംസ്ഥാനം"
+    "message": "സംസ്ഥാനം/ ദേശം"
   },
   "zipPostalCode": {
     "message": "പിൻകോഡ്"
@@ -280,13 +280,13 @@
     "message": "രാജ്യം"
   },
   "save": {
-    "message": "സേവ്"
+    "message": "സംരക്ഷിക്കുക"
   },
   "cancel": {
     "message": "റദ്ദാക്കുക"
   },
   "delete": {
-    "message": "ഇല്ലാതാക്കുക"
+    "message": "നീക്കംചെയ്യുക"
   },
   "favorite": {
     "message": "പ്രിയങ്കരം"
@@ -319,7 +319,7 @@
     "message": "ബൂളിയൻ"
   },
   "remove": {
-    "message": "നീക്കുക"
+    "message": "നീക്കംചെയ്യുക"
   },
   "nameRequired": {
     "message": "പേര് നിർബന്ധമാണ്‌."
@@ -328,10 +328,10 @@
     "message": "ചേർക്കപ്പെട്ട ഇനം"
   },
   "editedItem": {
-    "message": "എഡിറ്റുചെയ്‌ത ഇനം"
+    "message": "തിരുത്തപ്പെട്ട ഇനം"
   },
   "deleteItem": {
-    "message": "മായ്ച്ച ഇനങ്ങൾ"
+    "message": "ഇനം ഇല്ലാതാക്കുക"
   },
   "deleteFolder": {
     "message": "ഫോൾഡർ ഇല്ലാതാക്കുക"
@@ -349,7 +349,7 @@
     "message": "നിലവിലെ പാസ്‌വേഡ് പുനരാലേഖനം ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?"
   },
   "noneFolder": {
-    "message": "ഫോൾഡറൊന്നുമില്ല",
+    "message": "ഫോൾഡറിൽ ഉൾപ്പെടാത്ത",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -359,16 +359,16 @@
     "message": "ഫോൾഡർ തിരുത്തുക"
   },
   "regeneratePassword": {
-    "message": "പാസ്സ്‌വേഡ് ഒന്നൂടെ സൃഷ്ടിക്കുക"
+    "message": "പാസ്സ്‌വേഡ് വീണ്ടും സൃഷ്ടിക്കുക"
   },
   "copyPassword": {
     "message": "പാസ്‌വേഡ് പകർത്തുക"
   },
   "copyUri": {
-    "message": "യുആർഎൽ പകർത്തുക"
+    "message": "URL പകർത്തുക"
   },
   "length": {
-    "message": "നീളം"
+    "message": "ദൈര്‍ഘ്യം"
   },
   "numWords": {
     "message": "വാക്കുകളുടെ എണ്ണം"
@@ -455,7 +455,7 @@
     "message": "അക്കൗണ്ട് സൃഷ്ടിക്കുക"
   },
   "logIn": {
-    "message": "ലോഗിൻ"
+    "message": "പ്രവേശിക്കുക"
   },
   "submit": {
     "message": "സമർപ്പിക്കുക"
@@ -530,7 +530,7 @@
     "message": "നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ അപ്ലിക്കേഷനിൽ നിന്ന് 6 അക്ക സ്ഥിരീകരണ കോഡ് നൽകുക."
   },
   "enterVerificationCodeEmail": {
-    "message": "ഇമെയിൽ ചെയ്ത 6 അക്ക സ്ഥിരീകരണ കോഡ് നൽകുക$EMAIL$.",
+    "message": "$EMAIL$ൽ ഇമെയിൽ ചെയ്ത 6 അക്ക സ്ഥിരീകരണ കോഡ് നൽകുക.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -551,13 +551,13 @@
     "message": "എന്നെ ഓർക്കണം"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "സ്ഥിരീകരണ കോഡ് ഇമെയിൽ വഴി അയയ്ക്കുക"
+    "message": "സ്ഥിരീകരണ കോഡ് ഇമെയിൽ വഴി വീണ്ടും അയയ്ക്കുക"
   },
   "useAnotherTwoStepMethod": {
-    "message": "മറ്റൊരു രണ്ട് ഘട്ട ലോഗിൻ രീതി ഉപയോഗിക്കുക"
+    "message": "മറ്റൊരു രണ്ട് ഘട്ട പ്രവേശന രീതി ഉപയോഗിക്കുക"
   },
   "insertYubiKey": {
-    "message": "നിങ്ങളുടെ കമ്പ്യൂട്ടറിന്റെ യു‌എസ്‌ബി പോർട്ടിലേക്ക് യുബിക്കി ഇടുക, തുടർന്ന് അതിന്റെ ബട്ടൺ അമർത്തുക."
+    "message": "നിങ്ങളുടെ കമ്പ്യൂട്ടറിന്റെ യു‌എസ്‌ബി പോർട്ടിലേക്ക് YubiKey ഇടുക, തുടർന്ന് അതിന്റെ ബട്ടൺ അമർത്തുക."
   },
   "insertU2f": {
     "message": "നിങ്ങളുടെ കമ്പ്യൂട്ടറിന്റെ യുഎസ്ബി പോർട്ടിൽ സുരക്ഷാ കീ ഇടുക. അതിന് ഒരു ബട്ടൺ ഉണ്ടെങ്കിൽ അത് അമർത്തുക."
@@ -602,16 +602,16 @@
     "message": "സ്ഥിരീകരണ കോഡുകൾ നിങ്ങൾക്ക് ഇമെയിൽ ചെയ്യും."
   },
   "loginUnavailable": {
-    "message": "ലോഗിൻ ലഭ്യമല്ല"
+    "message": "പ്രവേശനം ലഭ്യമല്ല"
   },
   "noTwoStepProviders": {
-    "message": "ഈ അക്കൗണ്ടിന് രണ്ട്-ഘട്ട ലോഗിൻ പ്രാപ്തമാക്കിയിട്ടുണ്ട്, എന്നിരുന്നാലും, ക്രമീകരിച്ച രണ്ട്-ഘട്ട ദാതാക്കളെയൊന്നും ഈ ഉപകരണം പിന്തുണയ്ക്കുന്നില്ല."
+    "message": "ഈ അക്കൗണ്ടിന് രണ്ട്-ഘട്ട പ്രവേശനം പ്രാപ്തമാക്കിയിട്ടുണ്ട്, എന്നിരുന്നാലും, ക്രമീകരിച്ച രണ്ട്-ഘട്ട ദാതാക്കളെയൊന്നും ഈ ഉപകരണം പിന്തുണയ്ക്കുന്നില്ല."
   },
   "noTwoStepProviders2": {
-    "message": "മികച്ച പിന്തുണയുള്ള അധിക ദാതാക്കളെ ദയവായി ചേർക്കുക (ഒരു ഓതന്റിക്കേറ്റർ അപ്ലിക്കേഷൻ പോലുള്ളവ)."
+    "message": "മികച്ച പിന്തുണയുള്ള, കൂടുതൽ ദാതാക്കളെ ദയവായി ചേർക്കുക (ഒരു ഓതന്റിക്കേറ്റർ അപ്ലിക്കേഷൻ പോലുള്ളവ)."
   },
   "twoStepOptions": {
-    "message": "രണ്ട്-ഘട്ട ലോഗിൻ ഓപ്ഷനുകൾ"
+    "message": "രണ്ട്-ഘട്ട പ്രവേശനം ഓപ്ഷനുകൾ"
   },
   "selfHostedEnvironment": {
     "message": "സ്വയം ഹോസ്റ്റുചെയ്‌ത എൻവിയോണ്മെന്റ്"
@@ -650,22 +650,22 @@
     "message": "ശരി"
   },
   "yes": {
-    "message": "ശരി"
+    "message": "അതെ"
   },
   "no": {
-    "message": "തെറ്റ്"
+    "message": "അല്ല"
   },
   "overwritePassword": {
     "message": "പാസ്‌വേഡ് പുനരാലേഖനം ചെയ്യുക"
   },
   "learnMore": {
-    "message": "കൂടുതലറിവ് നേടുക"
+    "message": "കൂടുതൽ അറിയുക"
   },
   "featureUnavailable": {
-    "message": "ഫീച്ചർ ലഭ്യമല്ല"
+    "message": "സവിശേഷത ലഭ്യമല്ല"
   },
   "loggedOut": {
-    "message": "ലോഗേഡ് ഔട്ട്"
+    "message": "ലോഗ് ഔട്ട് ചെയ്തിരിക്കുന്നു"
   },
   "loginExpired": {
     "message": "നിങ്ങളുടെ പ്രവർത്തന സമയം കഴിഞ്ഞിരിക്കുന്നു."
@@ -674,10 +674,10 @@
     "message": "നിങ്ങൾക്ക് ലോഗ് ഔട്ട് ചെയ്യണമെന്ന് ഉറപ്പാണോ?"
   },
   "logOut": {
-    "message": "ലോഗ് ഔട്ട്"
+    "message": "ലോഗൗട്ട്"
   },
   "addNewLogin": {
-    "message": "പുതിയ ലോഗിൻ ചേർക്കുക"
+    "message": "പുതിയ പ്രവേശനം ചേർക്കുക"
   },
   "addNewItem": {
     "message": "പുതിയ ഇനം ചേർക്കുക"
@@ -686,7 +686,7 @@
     "message": "പുതിയ ഫോൾഡർ ചേർക്കുക"
   },
   "view": {
-    "message": "കാണുക"
+    "message": "പ്രദർശനം"
   },
   "account": {
     "message": "അക്കൗണ്ട്"
@@ -742,7 +742,7 @@
     "message": "ബ്രൌസർ എക്സ്റ്റൻഷൻ എടുക്കുക"
   },
   "syncingComplete": {
-    "message": "സിങ്ക് പൂർത്തിയായി"
+    "message": "സമന്വയിപ്പിക്കൽ പൂർത്തിയായി"
   },
   "syncingFailed": {
     "message": "സിങ്ക് ചെയ്യാൻ പരാജയപെട്ടു"
@@ -773,7 +773,7 @@
     "message": "സുരക്ഷാ കീ, ഓതന്റിക്കേറ്റർ അപ്ലിക്കേഷൻ, SMS, ഫോൺ കോൾ അല്ലെങ്കിൽ ഇമെയിൽ പോലുള്ള മറ്റൊരു ഉപകരണം ഉപയോഗിച്ച് തങ്ങളുടെ ലോഗിൻ സ്ഥിരീകരിക്കാൻ ആവശ്യപ്പെടുന്നതിലൂടെ രണ്ട്-ഘട്ട ലോഗിൻ തങ്ങളുടെ അക്കൗണ്ടിനെ കൂടുതൽ സുരക്ഷിതമാക്കുന്നു. bitwarden.com വെബ് വാൾട്ടിൽ രണ്ട്-ഘട്ട ലോഗിൻ പ്രവർത്തനക്ഷമമാക്കാനാകും.തങ്ങള്ക്കു ഇപ്പോൾ വെബ്സൈറ്റ് സന്ദർശിക്കാൻ ആഗ്രഹമുണ്ടോ?"
   },
   "twoStepLogin": {
-    "message": "രണ്ട്-ഘട്ട ലോഗിൻ"
+    "message": "രണ്ട്-ഘട്ട പ്രവേശനം"
   },
   "vaultTimeout": {
     "message": "വാൾട് ടൈംഔട്ട്"
@@ -844,7 +844,7 @@
     "message": "വെബ്‌സൈറ്റ് ഐക്കണുകൾ പ്രവർത്തനരഹിതമാക്കുക"
   },
   "disableFaviconDesc": {
-    "message": "വെബ്സൈറ്റ് ഐക്കണുകൾ തങ്ങളുടെ വാൾട്ടിലെ ലോഗിൻ ഇന്നതിന്റ്റെ അടുത്തായി തിരിച്ചറിയുന്ന ഒരു ചിത്രം ഉൾപ്പെടുത്തുന്നു."
+    "message": "വെബ്സൈറ്റ് ഐക്കണുകൾ നിങ്ങളുടെ വാൾട്ടിലെ പ്രവേശനങ്ങളുടെ അടുത്തായി തിരിച്ചറിയുന്ന ഒരു ചിത്രം ഉൾപ്പെടുത്തുന്നു."
   },
   "enableMinToTray": {
     "message": "ട്രേ ഐക്കണിലേക്ക് ചെറുതാക്കുക"
@@ -856,7 +856,7 @@
     "message": "ട്രേ ഐക്കണിൽ ക്ലോസ് ചെയ്യുക"
   },
   "enableCloseToTrayDesc": {
-    "message": "വിൻഡോ അടയ്‌ക്കുമ്പോൾ, പകരം സിസ്റ്റം ട്രേയിൽ ഒരു ഐക്കൺ കാണിക്കുക."
+    "message": "വിൻഡോ അടയ്‌ക്കുമ്പോൾ, സിസ്റ്റം ട്രേയിൽ ഒരു ഐക്കൺ പകരമായി കാണിക്കുക."
   },
   "enableTray": {
     "message": "ട്രേ ഐക്കൺ പ്രവർത്തനക്ഷമമാക്കുക"
@@ -865,7 +865,7 @@
     "message": "സിസ്റ്റം ട്രേയിൽ എല്ലായ്പ്പോഴും ഒരു ഐക്കൺ കാണിക്കുക."
   },
   "startToTray": {
-    "message": "ട്രേ ഐക്കണിൽ സ്റ്റാർട്ട് ചെയ്യുക"
+    "message": "ട്രേ ഐക്കണിൽ ആരംഭിക്കുക"
   },
   "startToTrayDesc": {
     "message": "അപ്ലിക്കേഷൻ ആദ്യം ആരംഭിക്കുമ്പോൾ, സിസ്റ്റം ട്രേയിൽ ഒരു ഐക്കൺ മാത്രം കാണിക്കുക."
@@ -883,7 +883,7 @@
     "message": "അപ്ലിക്കേഷന്റെ തീമും വർണ്ണങ്ങളും മാറ്റുക."
   },
   "dark": {
-    "message": "ഡാർക്ക്",
+    "message": "ഇരുണ്ടത്",
     "description": "Dark color"
   },
   "light": {
@@ -910,7 +910,7 @@
     "message": "അപ്‌ഡേറ്റുചെയ്യാൻ പുനരാരംഭിക്കുക"
   },
   "restartToUpdateDesc": {
-    "message": "പതിപ്പ് $VERSION_NUM$ ഇൻസ്റ്റാൾ ചെയ്യാൻ തയ്യാറാണ്. ഇൻസ്റ്റാളേഷൻ പൂർത്തിയാക്കുന്നതിന് നിങ്ങൾ അപ്ലിക്കേഷൻ പുനരാരംഭിക്കണം. ഇപ്പോൾ പുനരാരംഭിച്ച് അപ്‌ഡേറ്റ് ചെയ്യാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?",
+    "message": "വേർഷൻ $VERSION_NUM$ ഇൻസ്റ്റാൾ ചെയ്യാൻ തയ്യാറാണ്. ഇൻസ്റ്റാളേഷൻ പൂർത്തിയാക്കുന്നതിന് നിങ്ങൾ അപ്ലിക്കേഷൻ പുനരാരംഭിക്കണം. ഇപ്പോൾ പുനരാരംഭിച്ച് അപ്‌ഡേറ്റ് ചെയ്യാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -934,7 +934,7 @@
     "message": "അപ്‌ഡേറ്റുകളൊന്നും നിലവിൽ ലഭ്യമല്ല. നിങ്ങൾ ഏറ്റവും പുതിയ വേർഷൻ ഉപയോഗിക്കുന്നു."
   },
   "updateError": {
-    "message": "അപ്ഡേറ്റ് എറർ"
+    "message": "അപ്ഡേറ്റിൽ പിശക് സംഭവിച്ചു"
   },
   "unknown": {
     "message": "അറിയപ്പെടാത്ത"
@@ -957,10 +957,10 @@
     "message": "അംഗത്വം നിയന്ത്രിക്കുക"
   },
   "premiumManageAlert": {
-    "message": "നിങ്ങളുടെ അംഗത്വം bitwarden.com വെബ് വാൾട്ടിൽ മാനേജുചെയ്യാൻ കഴിയും. തങ്ങൾക്ക് ഇപ്പോൾ വെബ്സൈറ്റ് സന്ദർശിക്കാൻ ആഗ്രഹമുണ്ടോ?"
+    "message": "നിങ്ങളുടെ അംഗത്വം bitwarden.com വെബ് വാൾട്ടിൽ നിയന്ദ്രിക്കാൻ സാധിക്കും. നിങ്ങൾക്ക് ഇപ്പോൾ വെബ്സൈറ്റ് സന്ദർശിക്കാൻ ആഗ്രഹമുണ്ടോ?"
   },
   "premiumRefresh": {
-    "message": "അംഗത്വം പുതുക്കുക"
+    "message": "അംഗത്വം റിഫ്രഷ് ചെയ്യുക"
   },
   "premiumNotCurrentMember": {
     "message": "നിങ്ങൾ നിലവിൽ ഒരു പ്രീമിയം അംഗമല്ല."
@@ -972,19 +972,19 @@
     "message": "ഫയൽ അറ്റാച്ചുമെന്റുകൾക്കായി 1 ജിബി എൻക്രിപ്റ്റുചെയ്‌ത സംഭരണം."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "രണ്ട്-ഘട്ട പ്രവേശന ഓപ്ഷനുകളായ Yubikey, FIDO U2F, Duo."
   },
   "premiumSignUpReports": {
     "message": "നിങ്ങളുടെ വാൾട് സൂക്ഷിക്കുന്നതിന്. പാസ്‌വേഡ് ശുചിത്വം, അക്കൗണ്ട് ആരോഗ്യം, ഡാറ്റ ലംഘന റിപ്പോർട്ടുകൾ."
   },
   "premiumSignUpTotp": {
-    "message": "നിങ്ങളുടെ നിലവറയിലെ ലോഗിനുകൾക്കായി TOTP പരിശോധന കോഡ് (2FA) ജനറേറ്റർ."
+    "message": "നിങ്ങളുടെ വാൾട്ടിലെ പ്രവേശനങ്ങൾക്കായി TOTP പരിശോധന കോഡ് (2FA) സൃഷ്ടാവ്."
   },
   "premiumSignUpSupport": {
     "message": "മുൻ‌ഗണന ഉപഭോക്തൃ പിന്തുണ."
   },
   "premiumSignUpFuture": {
-    "message": "ഭാവിയിലെ എല്ലാ പ്രീമിയം സവിശേഷതകളും. കൂടുതൽ ഉടനെ വരും!"
+    "message": "ഭാവിയിലെ എല്ലാ പ്രീമിയം സവിശേഷതകളും. കൂടുതൽ ഉടനെ വരുന്നു !"
   },
   "premiumPurchase": {
     "message": "പ്രീമിയം വാങ്ങുക"
@@ -1011,7 +1011,7 @@
     "message": "റിഫ്രഷ് പൂർത്തിയായി"
   },
   "passwordHistory": {
-    "message": "പാസ്സ്‌വേർഡ് ഹിസ്റ്ററി"
+    "message": "പാസ്സ്‌വേഡ് നാൾവഴി"
   },
   "clear": {
     "message": "മായ്ക്കുക",
@@ -1021,7 +1021,7 @@
     "message": "ലിസ്റ്റ് ചെയ്യാൻ പാസ്സ്‌വേർഡുകൾ ഒന്നും ഇല്ല."
   },
   "undo": {
-    "message": "പഴയതിലെക് മടങ്ങുക"
+    "message": "പഴയപടിയാക്കുക"
   },
   "redo": {
     "message": "പുതിയപടിയാക്കുക"
@@ -1169,11 +1169,11 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "പാസ്സ്‌വേഡ് മെച്ചപ്പെടുത്തി",
+    "message": "പാസ്‍വേഡ് പുതുക്കി",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "വാൾട് കയറ്റുമതി ചെയ്യുക"
+    "message": "വാൾട് എക്സ്പോർട്"
   },
   "fileFormat": {
     "message": "ഫയൽ ഫോർമാറ്റ്"
@@ -1189,10 +1189,10 @@
     "message": "നിങ്ങളുടെവാൾട് ഡാറ്റ എക്‌സ്‌പോർട്ടുചെയ്യാൻ മാസ്റ്റർ പാസ്‌വേഡ് നൽകുക."
   },
   "noOrganizationsList": {
-    "message": "താങ്കൾ ഒരു ഓർഗനൈസേഷന്റെയും അംഗമല്ല. മറ്റ് ഉപയോക്താക്കളുമായി ഇനങ്ങൾ സുരക്ഷിതമായി പങ്കിടാൻ ഓർഗനൈസേഷനുകൾ നിങ്ങളെ അനുവദിക്കുന്നു."
+    "message": "താങ്കൾ ഒരു സംഘടനയുടെയും അംഗമല്ല. മറ്റ് ഉപയോക്താക്കളുമായി ഇനങ്ങൾ സുരക്ഷിതമായി പങ്കിടാൻ ഓർഗനൈസേഷനുകൾ നിങ്ങളെ അനുവദിക്കുന്നു."
   },
   "noCollectionsInList": {
-    "message": "ലിസ്റ്റ് ചെയ്യാൻ കളക്ഷൻസ് ഒന്നും ഇല്ല."
+    "message": "പ്രദർശിപ്പിക്കാൻ കളക്ഷൻസ് ഒന്നും ഇല്ല."
   },
   "ownership": {
     "message": "ഉടമസ്ഥാവകാശം"
@@ -1201,11 +1201,11 @@
     "message": "ഈ ഇനം ആരുടേതാണ്?"
   },
   "strong": {
-    "message": "ശക്തം",
+    "message": "ശക്തമാണ്",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "നല്ലത്",
+    "message": "നല്ലതാണ്",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
@@ -1229,13 +1229,13 @@
     "message": "Bitwarden അൺലോക്കുചെയ്യുന്നതിന് തങ്ങളുടെ പിൻ കോഡ് സജ്ജമാക്കുക. തങ്ങൾ എപ്പോഴെങ്കിലും അപ്ലിക്കേഷനിൽ നിന്ന് പൂർണ്ണമായി ലോഗ് ഔട്ട് ചെയ്യുകയാണെങ്കിൽ, പിൻ ക്രമീകരണങ്ങൾ പുനസജ്ജമാക്കും."
   },
   "pinRequired": {
-    "message": "പിന് കോഡ് നിര്ബന്ധമാണ്."
+    "message": "പിൻ കോഡ് നിർബന്ധമാണ്‌."
   },
   "invalidPin": {
     "message": "അസാധുവായ പിൻ കോഡ്."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "ഒന്നിലധികം ഉപകരണങ്ങളിൽ നിന്ന് നിങ്ങളുടെ വാൾട് സമന്വയിപ്പിച്ച് ആക്‌സസ്സുചെയ്യുക\n\n- ഫോൺ\n- ടാബ്‌ലെറ്റ്\n- ഡെസ്ക്ടോപ്പ്\n- വെബ്."
+    "message": "നിങ്ങളുടെ വാൾട് പൂട്ടിയിരിക്കുന്നു. തുടരാൻ പിൻ കോഡ് സ്ഥിരീകരിക്കുക."
   },
   "unlockWithWindowsHello": {
     "message": "Windows Hello ഉപയോഗിച്ച് അൺലോക്കുചെയ്യുക"
@@ -1250,13 +1250,13 @@
     "message": "Bitwarden വേണ്ടി പരിശോധിച്ചുറപ്പിക്കുക."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "പുനരാരംഭിക്കുമ്പോൾ മാസ്റ്റർ പാസ്‌വേഡ് ഉപയോഗിച്ച് ലോക്കുചെയ്യുക"
+    "message": "പുനരാരംഭിക്കുമ്പോൾ മാസ്റ്റർ പാസ്‌വേഡ് ഉപയോഗിച്ച് പൂട്ടുക"
   },
   "preferences": {
     "message": "ക്രമീകരണങ്ങൾ"
   },
   "enableMenuBar": {
-    "message": "മെനു ബാർ ഐക്കണുകൾ പ്രാപ്തമാക്കുക"
+    "message": "മെനു ബാറിലെ ഐക്കണുകൾ പ്രാപ്തമാക്കുക"
   },
   "enableMenuBarDesc": {
     "message": "മെനു ബാറിൽ എല്ലായ്പ്പോഴും ഐക്കൺ കാണിക്കുക."
@@ -1265,13 +1265,13 @@
     "message": "മെനു ബാറിലേക്ക് മറയ്‌ക്കുക"
   },
   "selectOneCollection": {
-    "message": "നിങ്ങൾ ഒരു ശേഖരമെങ്കിലും തിരഞ്ഞെടുക്കണം."
+    "message": "നിങ്ങൾ ഒരു കളക്ഷനെങ്കിലും തിരഞ്ഞെടുക്കണം."
   },
   "premiumUpdated": {
     "message": "നിങ്ങൾ പ്രീമിയത്തിലേക്ക് അപ്‌ഗ്രേഡുചെയ്‌തു."
   },
   "restore": {
-    "message": "പുനസ്ഥാപിക്കുക"
+    "message": "വീണ്ടെടുക്കുക"
   },
   "premiumManageAlertAppStore": {
     "message": "ആപ്പ് സ്റ്റോറിൽ നിന്ന് നിങ്ങളുടെ സബ്‌സ്‌ക്രിപ്‌ഷൻ മാനേജുചെയ്യാനാകും. തങ്ങൾക്കു ഇപ്പോൾ ആപ്പ് സ്റ്റോർ സന്ദർശിക്കണോ?"
@@ -1287,7 +1287,7 @@
     "message": "സ്വകാര്യതാനയം"
   },
   "unsavedChangesConfirmation": {
-    "message": "നിങ്ങൾക്ക് പോകണമെന്ന് ഉറപ്പാണോ? നിങ്ങൾ ഇപ്പോൾ പോയാൽ നിങ്ങളുടെ നിലവിലെ വിവരങ്ങൾ സേവ് ആകില്ല."
+    "message": "നിങ്ങൾക്ക് പോകണമെന്ന് ഉറപ്പാണോ? നിങ്ങൾ ഇപ്പോൾ പോയാൽ നിങ്ങളുടെ നിലവിലെ വിവരങ്ങൾ സംരക്ഷിക്കില്ല."
   },
   "unsavedChangesTitle": {
     "message": "സ്ഥിരപ്പെടാത്ത മാറ്റങ്ങൾ"
@@ -1296,7 +1296,7 @@
     "message": "ക്ലോൺ"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "ഒന്നോ അതിലധികമോ ഓർഗനൈസേഷൻ നയങ്ങൾ നിങ്ങളുടെ പാസ്സ്‌വേഡ് ജനറേറ്റർ ക്രമീകരണങ്ങളെ ബാധിക്കുന്നു."
+    "message": "ഒന്നോ അതിലധികമോ സംഘടന നയങ്ങൾ നിങ്ങളുടെ പാസ്സ്‌വേഡ് സൃഷ്ടാവിൻ്റെ ക്രമീകരണങ്ങളെ ബാധിക്കുന്നു."
   },
   "vaultTimeoutAction": {
     "message": "വാൾട് ടൈം ഔട്ട് ആക്ഷൻ"
@@ -1319,30 +1319,87 @@
     "message": "ട്രാഷ് തിരയുക"
   },
   "permanentlyDeleteItem": {
-    "message": "ശാശ്വതമായി ഇല്ലാതാക്കുക"
+    "message": "ഇനം എന്നെന്നേക്കുമായി നീക്കം ചെയ്യുക"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "ഈ ഇനം ശാശ്വതമായി ഇല്ലാതാക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
+    "message": "ഈ എന്നെന്നേക്കുമായി നീക്കം ചെയ്യാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
   },
   "permanentlyDeletedItem": {
-    "message": "ശാശ്വതമായി ഇല്ലാതാക്കിയ ഇനം"
+    "message": "എന്നെന്നേക്കുമായി നീക്കം ചെയ്ത ഇനം"
   },
   "restoreItem": {
-    "message": "ഇനം പുന. സ്ഥാപിക്കുക"
+    "message": "ഇനം വീണ്ടെടുക്കുക"
   },
   "restoreItemConfirmation": {
-    "message": "ഈ ഇനം പുന സ്ഥാപിക്കാൻ തങ്ങൾ ആഗ്രഹിക്കുന്നുവെന്ന് ഉറപ്പാണോ?"
+    "message": "ഈ ഇനം വീണ്ടെടുക്കണമെന്ന് ഉറപ്പാണോ?"
   },
   "restoredItem": {
-    "message": "പുനസ്ഥാപിച്ച ഇനങ്ങൾ"
+    "message": "വീണ്ടെടുത്ത ഇനങ്ങൾ"
   },
   "permanentlyDelete": {
-    "message": "ശാശ്വതമായി ഇല്ലാതാക്കുക"
+    "message": "എന്നെന്നേക്കുമായി നീക്കം ചെയ്യുക"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "ലോഗ് ഔട്ട് ചെയ്യുന്നത് തങ്ങളുടെ വാൾട്ടിലേക്കുള്ള എല്ലാ ആക്സസും നീക്കംചെയ്യുകയും. കാലയളവിനുശേഷം ഓൺലൈൻ ഓതന്റിക്കേറ്റർ ആവശ്യമാണ്. ഈ ക്രമീകരണം ഉപയോഗിക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "ടൈംഔട് ആക്ഷൻ സ്ഥിരീകരണം"
+  },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "ssoCompleteRegistration": {
+    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+  },
+  "newMasterPass": {
+    "message": "New Master Password"
+  },
+  "confirmNewMasterPass": {
+    "message": "Confirm New Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }
