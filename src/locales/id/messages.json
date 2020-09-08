@@ -113,7 +113,7 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimalkan saat menyalin ke clipboard"
   },
   "minimizeOnCopyToClipboardDesc": {
     "message": "Minimalkan saat menyalin data item ke clipboard."
@@ -776,10 +776,10 @@
     "message": "Info masuk dua langkah"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Batas Waktu Brankas"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Pilih kapan brankas Anda akan timeout dan melakukan tindakan yang dipilih."
   },
   "immediately": {
     "message": "Segera"
@@ -856,7 +856,7 @@
     "message": "Close to Tray Icon"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "Saat menutup jendela, tampilkan ikon di baki sistem sebagai gantinya."
   },
   "enableTray": {
     "message": "Aktifkan Ikon Baki"
@@ -865,10 +865,10 @@
     "message": "Selalu tampilkan ikon di dalam baki sistem."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "Mulai Pada Baki Sistem"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Saat aplikasi pertama kali dijalankan, hanya tampilkan ikon di baki sistem."
   },
   "language": {
     "message": "Bahasa"
@@ -975,7 +975,7 @@
     "message": "Pilihan info masuk dua langkah tambahan seperti YubiKey, FIDO U2F, dan Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Kebersihan kata sandi, kesehatan akun, dan laporan pelanggaran data untuk menjaga brankas Anda tetap aman."
   },
   "premiumSignUpTotp": {
     "message": "Pembuat kode verifikasi TOTP (2FA) untuk masuk di brankas anda."
@@ -1161,7 +1161,7 @@
     "message": "Sembunyi ke Tray"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Selalu di Atas",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1223,74 +1223,74 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Buka kunci dengan PIN"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "Setel kode PIN Anda untuk membuka kunci Bitwarden. Pengaturan PIN Anda akan diatur ulang jika Anda pernah keluar secara menyeluruh dari aplikasi."
   },
   "pinRequired": {
     "message": "Diperlukan kode PIN."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Kode PIN tidak valid."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "Brankas Anda terkunci. Verifikasi kode PIN Anda untuk melanjutkan."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Buka dengan Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Verifikasi untuk Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Buka kunci dengan Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Verifikasi untuk Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "Kunci dengan kata sandi utama saat komputer dihidupkan ulang"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Preferensi"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Aktifkan Ikon Menu Bar"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Selalu tampilkan ikon pada menu bar."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Sembunyikan ke Menu Bar"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Anda harus memilih setidaknya satu koleksi."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "Anda telah ditingkatkan ke premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Pulihkan"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "Anda dapat mengelola langganan Anda di App Store. Apakah Anda ingin mengunjungi App Store sekarang?"
   },
   "legal": {
     "message": "Hukum",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "Persyaratan Layanan"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "Kebijakan Privasi"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "Anda yakin ingin keluar? Jika Anda keluar sekarang maka informasi Anda saat ini tidak akan disimpan."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Perubahan Tidak Disimpan"
   },
   "clone": {
     "message": "Klon"
@@ -1299,13 +1299,13 @@
     "message": "Satu atau lebih kebijakan organisasi mempengaruhi pengaturan generator anda."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Aksi Batas Waktu Penyimpanan"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Brankas yang terkunci membutuhkan Anda untuk memasukkan ulang password utama untuk mengakses kembali."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Brankas akan keluar dan Anda diminta untuk memasukkan password utama untuk mengakses kembali."
   },
   "lock": {
     "message": "Kunci",
@@ -1316,33 +1316,90 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Cari di sampah"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Hapus Item Permanen"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Apakah Anda yakin ingin menghapus item ini secara permanen?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Item Terhapus Permanen"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Pulihkan Item"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Apakah Anda yakin ingin memulihkan item ini?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Item Yang Dipulihkan"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Hapus Secara Permanen"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Keluar akan menghapus semua akses ke Brankas Anda dan memerlukan otentikasi online setelah batas waktu yang ditentukan. Anda yakin ingin menggunakan pengaturan ini?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Konfirmasi Aksi Batas Waktu"
+  },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
+  "setMasterPassword": {
+    "message": "Set Master Password"
+  },
+  "ssoCompleteRegistration": {
+    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+  },
+  "newMasterPass": {
+    "message": "New Master Password"
+  },
+  "confirmNewMasterPass": {
+    "message": "Confirm New Master Password"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Contain one or more numbers"
+  },
+  "policyInEffectSpecial": {
+    "message": "Contain one or more of the following special characters $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
   }
 }
