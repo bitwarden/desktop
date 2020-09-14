@@ -1346,25 +1346,25 @@
     "message": "Підтвердження дії часу очікування"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Єдиний корпоративний вхід (SSO)"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Встановити головний пароль"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Щоб завершити налаштування входу з SSO, встановіть головний пароль для доступу і захисту сховища."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Новий головний пароль"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Підтвердьте новий головний пароль"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Політика однієї або декількох організацій зобов'язує дотримання таких вимог для головного пароля:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Мінімальна оцінка складності $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Мінімальна довжина $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Наявність одного чи більше символів верхнього регістру"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Наявність одного чи більше символів нижнього регістру"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Наявність однієї чи більше цифр"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Наявність одного чи більше таких спеціальних символів $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ваш новий головний пароль не задовольняє вимоги політики."
   }
 }

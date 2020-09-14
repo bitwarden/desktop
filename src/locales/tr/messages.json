@@ -1241,13 +1241,13 @@
     "message": "Windows Hello ile Kilit Aç"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden için doğrulayın."
   },
   "unlockWithTouchId": {
     "message": "Touch ID ile kilidi aç"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden için doğrulayın."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yeniden başlatmada ana şifre ile kilitle"
@@ -1346,25 +1346,25 @@
     "message": "Zaman Aşımı Eylem Onayı"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Kurumsal Tek Oturum Açma (SSO)"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Ana Parolayı Belirle"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Tek Oturum Açma (SSO) ile oturum açmayı tamamlamak için lütfen kasanıza erişebilmek ve onu korumak için bir ana parola ayarlayın."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Yeni Ana Parola"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Yeni Ana Parolayı Onaylayın"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Bir veya daha fazla organizasyon ilkesi, aşağıdaki gereksinimleri karşılamak için ana parolanızı gerektirir:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimum karmaşıklık puanı $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimum uzunluk $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Bir veya daha fazla büyük harfli karakter içermeli"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Bir veya daha fazla küçük harfli karakter içermeli"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Bir veya daha fazla rakam içermeli"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Aşağıdaki özel karakterlerden birini veya daha fazlasını içermeli $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Yeni ana parolanız ilke gereksinimlerini karşılamıyor."
   }
 }

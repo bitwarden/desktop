@@ -853,7 +853,7 @@
     "message": "창을 최소화하면 작업 표시줄 대신 알림 영역에 아이콘을 표시합니다."
   },
   "enableCloseToTray": {
-    "message": "트레이 아이콘으로 종료"
+    "message": "트레이 아이콘으로 닫기"
   },
   "enableCloseToTrayDesc": {
     "message": "창을 닫으면 프로그램 종료 대신 알림 영역에 아이콘으로 표시합니다."
@@ -1223,7 +1223,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "PIN 코드로 잠금 해제"
+    "message": "PIN 코드를 사용하여 잠금 해제"
   },
   "setYourPinCode": {
     "message": "Bitwarden 잠금해제에 사용될 PIN 코드를 설정합니다. 이 애플리케이션에서 완전히 로그아웃할 경우 PIN 설정이 초기화됩니다."
@@ -1238,13 +1238,13 @@
     "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Windows Hello를 사용하여 잠금 해제"
   },
   "windowsHelloConsentMessage": {
     "message": "Verify for Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Touch ID를 사용하여 잠금 해제"
   },
   "touchIdConsentMessage": {
     "message": "Verify for Bitwarden."
@@ -1328,13 +1328,13 @@
     "message": "영구적으로 삭제된 항목"
   },
   "restoreItem": {
-    "message": "항목 복구"
+    "message": "항목 복원"
   },
   "restoreItemConfirmation": {
-    "message": "정말로 이 항목을 복구하시겠습니까?"
+    "message": "정말 이 항목을 복원하시겠습니까?"
   },
   "restoredItem": {
-    "message": "복구된 항목"
+    "message": "복원된 항목"
   },
   "permanentlyDelete": {
     "message": "영구적으로 삭제"
@@ -1349,22 +1349,22 @@
     "message": "Enterprise Single Sign-On"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "마스터 비밀번호 설정"
   },
   "ssoCompleteRegistration": {
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "새 마스터 비밀번호"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "새 마스터 비밀번호 확인"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "하나 이상의 단체 정책이 마스터 비밀번호가 다음 사항을 따르도록 요구합니다:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "최소 복잡도 점수 $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1382,13 +1382,13 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "하나 이상의 대문자 포함"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "하나 이상의 소문자 포함"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "하나 이상의 숫자 포함"
   },
   "policyInEffectSpecial": {
     "message": "Contain one or more of the following special characters $CHARS$",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "새 마스터 비밀번호가 정책 요구 사항을 따르지 않습니다."
   }
 }

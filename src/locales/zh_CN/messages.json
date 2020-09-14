@@ -1241,13 +1241,13 @@
     "message": "使用 Windows Hello 解锁"
   },
   "windowsHelloConsentMessage": {
-    "message": "验证Bitwarden。"
+    "message": "验证 Bitwarden。"
   },
   "unlockWithTouchId": {
-    "message": "使用 Touch ID 解锁"
+    "message": "使用触控 ID 解锁"
   },
   "touchIdConsentMessage": {
-    "message": "验证Bitwarden。"
+    "message": "验证 Bitwarden。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "重启后改用主密码锁定"
@@ -1346,25 +1346,25 @@
     "message": "超时动作确认"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "企业单点登录（SSO）"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "设置主密码"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "为使用单点登录（SSO）功能，请设置一个主密码以访问和保护您的密码库。"
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "新的主密码"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "确认新的主密码"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "一个或多个组织策略要求您的主密码满足下列要求："
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "最小复杂度为 $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "最小长度为 $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "至少包含一个大写字符"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "至少包含一个小写字符"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "至少包含一个数字"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "至少包含一个下列的特殊字符：$CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "您的新主密码不符合策略要求。"
   }
 }

@@ -1346,25 +1346,25 @@
     "message": "تایید عمل توقف"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "ورود به سیستم پروژه"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "تنظیم کلمه عبور اصلی"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "برای تکمیل ورود به سیستم با SSO ، لطفاً یک کلمه عبور اصلی برای دسترسی و محافظت از گاوصندوق خود تنظیم کنید."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "کلمه عبور اصلی جدید"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "تایید کلمه عبور اصلی جدید"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "یک یا چند سیاست سازمانی برای تأمین شرایط زیر به گذرواژه اصلی شما احتیاج دارد:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "حداقل نمره پیچیدگی $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "حداقل طول $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "حاوی یک یا چند کاراکتر بزرگ"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "حاوی یک یا چند کاراکتر کوچک"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "حاوی یک یا چند عدد بیشتر"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "حاوی یک یا چند کاراکتر خاص زیر است $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "کلمه عبور اصلی جدید شما از شرایط سیاست پپیروی نمی کند."
   }
 }

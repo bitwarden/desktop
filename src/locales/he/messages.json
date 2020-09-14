@@ -1346,25 +1346,25 @@
     "message": "אישור פעולת אימות לאחר חוסר פעילות"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "כניסה אחודה ארגונית"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "הגדרת סיסמה ראשית"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "כדי להשלים את הכניסה עם SSO, נא להגדיר סיסמה ראשית כדי לגשת ולהגן על הכספת שלך."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "סיסמה ראשית חדשה"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "אימות סיסמה ראשית חדשה"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "אחד או יותר מאילוצי המדיניות של הארגון דורשים שהסיסמה הראשית שלך תעמוד בדרישות הבאות:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "ניקוד מורכבות מזערי של $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "אורך מזערי של $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "תכיל אות גדולה אחת או יותר"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "תכיל אות קטנה אחת או יותר"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "תכיל ספרה אחת או יותר"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "תכיל תו מיוחד אחד או יותר מבין התווים האלו $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "הסיסמה הראשית החדשה השלך לא עומדת בדרישות המדיניות."
   }
 }
