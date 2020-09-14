@@ -1346,25 +1346,25 @@
     "message": "Ajalõpu tegevuse kinnitamine"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Ettevõtte Single Sign-On"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Määra ülemparool"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "SSO-ga sisselogimise kinnitamiseks tuleb määrata ülemparool. See kaitseb sinu hoidlat ning võimaldab sellele ligi pääseda."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Uus ülemparool"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Kinnita uus ülemparool"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Üks või enam organisatsiooni eeskirja nõuavad, et ülemparool vastaks nendele nõudmistele:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimaalne keerulisuse skoor peab olema $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimaalne pikkus peab olema $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Sisaldab üht või enamat suurtähte"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Sisaldab üht või enamat väiketähte"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Sisaldab üht või rohkem numbreid"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Sisaldab üht või enamat järgnevatest märkidest: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Uus ülemparool ei vasta eeskirjades väljatoodud tingimustele."
   }
 }
