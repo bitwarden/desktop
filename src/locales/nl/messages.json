@@ -1349,22 +1349,22 @@
     "message": "Enterprise Single Sign-On"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Hoofdwachtwoord instellen"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Voor het inloggen met SSO moet je een hoofdwachtwoord instellen voor toegang tot en bescherming van je kluis."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Nieuw hoofdwachtwoord"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Nieuw hoofdwachtwoord bevestigen"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Een of meer organisatiebeleidseisen stelt de volgende eisen aan je hoofdwachtwoord:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimale complexiteitsscore van $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimale lengte van $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Bevat een of meer hoofdletters"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Bevat een of meer kleine letters"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Bevat een of meer cijfers"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Bevat een of meer van de volgende speciale tekens $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Je nieuwe hoofdwachtwoord voldoet niet aan de beleidseisen."
   }
 }
