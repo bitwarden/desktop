@@ -1238,13 +1238,13 @@
     "message": "Váš trezor je uzamknutý. Overte sa PIN kódom ak chcete pokračovať."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Odomknúť pomocou Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Verify for Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Odomknúť s Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "Verify for Bitwarden."
@@ -1346,25 +1346,25 @@
     "message": "Potvrdenie akcie pre vypršaný časový limit"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Prihlásenie cez prihlasovací formulár spoločnosti (SSO)"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Nastaviť hlavné heslo"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Aby ste dokončili nastavenie prihlasovacieho portálu (SSO), prosím nastavte hlavné heslo na prístup a ochranu vášho trezora."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Nové hlavné heslo"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Potvrďte nové hlavné heslo"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Jedno alebo viac pravidiel organizácie požadujú aby vaše hlavné heslo spĺňalo nasledujúce požiadavky:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimálna úroveň zložitosti $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimálna dĺžka $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Obsahuje aspoň jedno veľké písmeno"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Obsahuje aspoň jedno malé písmeno"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Obsahuje aspoň jednu číslicu"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Obsahuje aspoň jeden z následujúcich špeciálnych znakov $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Vaše nové hlavné heslo nespĺňa pravidlá."
   }
 }
