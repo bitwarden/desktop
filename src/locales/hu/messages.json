@@ -1346,25 +1346,25 @@
     "message": "Időkifutáskori művelet megerősítése"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Vállalati önálló bejelentkezés"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Mesterjelszó beállítása"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Az SSO-val történő bejelentkezés befejezéséhez mesterjelszót kell beállítani a széf eléréséhez és védelméhez."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Új mesterjelszó"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Új mesterjelszó megerősítése"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Egy vagy több szervezeti rendszabályhoz mesterjelszó szükséges a következő követelmények megfeleléséhez:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimális összetettségi pontszám $SCORE$ értékhez",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimális hossz $LENGTH$ értékből",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Egy vagy több nagybetűs karaktert tartalmaz"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Egy vagy több kisbetűs karaktert tartalmaz"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Egy vagy több számot tartalmaz"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "$CHARS$ speciális karakterekből egyet vagy többet tartalmaz",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Az új mesterjelszó nem felel meg a szabály követelményeknek."
   }
 }
