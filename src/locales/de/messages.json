@@ -1349,22 +1349,22 @@
     "message": "Enterprise Single Sign-On"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Masterpasswort festlegen"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Bitte legen Sie ein Masterpasswort für den Schutz Ihres Tresors fest, um die Anmeldung über SSO abzuschließen."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Neues Masterpasswort"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Neues Masterpasswort bestätigen"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass Ihr Masterpasswort die folgenden Anforderungen erfüllt:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Kleinster Komplexitätsgrad von $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Mindestlänge von $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Enthält einen oder mehrere Großbuchstaben"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Enthält einen oder mehrere Kleinbuchstaben"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Enthält eine oder mehrere Zahlen"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Enthält eines oder mehrere der folgenden Sonderzeichen $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ihr neues Masterpasswort entspricht nicht den Anforderungen der Richtlinie."
   }
 }
