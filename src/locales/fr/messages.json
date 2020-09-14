@@ -1346,25 +1346,25 @@
     "message": "Confirmation de l'action lors de l'expiration du délai"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Portail de connexion unique d'entreprise"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Définir le mot de passe maître"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Afin de terminer la connexion avec SSO, veuillez définir un mot de passe maître pour accéder à votre coffre et le protéger."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Nouveau mot de passe maître"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Confirmer le nouveau mot de passe maître"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Une ou plusieurs politiques de l'organisation exigent que votre mot de passe maître réponde aux exigences suivantes :"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Score de complexité minimum de $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Longueur minimale de $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Contenir une ou plusieurs majuscules"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Contenir une ou plusieurs minuscules"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Contenir un ou plusieurs chiffres"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Contenir un ou plusieurs des caractères spéciaux suivants $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Votre nouveau mot de passe maître ne répond pas aux exigences de la politique."
   }
 }
